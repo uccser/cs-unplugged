@@ -16,13 +16,24 @@ The binary number system plays a central role in how information of all kinds is
 
 [Images]
 
-[Video links about the big ideas]
 
-[CS Unplugged Binary numbers](https://www.youtube.com/watch?v=b6vHZ95XDwU)
+[CS Unplugged Video of the Big Ideas overview ](https://www.youtube.com/watch?v=b6vHZ95XDwU)
 
 ## Key Concepts
 {comment What are the key concepts that students need to understand}
 
+- Everything that is stored on a computer is represented using zeros and ones. This includes images, sound files, videos, even programs!
+
+- Each zero or one is called a bit (short for binary digit)
+
+- One bit on its own can’t represent much, but as you'll soon find out when we use more than one bit the amount of information we can represent gets bigger very fast!
+
+- Bits are usually grouped together in groups of 8 bits, these groups are called bytes (and 4 is called a nibble!)
+
+- Zeros and ones are used often, but you can actually use anything you want, as long as you use two different things. The point is that useing only 2 different things, you can represent much more complicated data. Instead of 0 and 1 you could use:
+  - Up and down
+  - Left and right
+  - :sunny: and :snowflake:
 
 ## Achievement objectives and learning outcomes
 {comment}
