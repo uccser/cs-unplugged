@@ -20,4 +20,8 @@ CS Unplugged is licensed under a Creative Commons Attribution-ShareAlike 4.0 Int
 
 ## Contact
 
-This repository is currently primarily managed by [Jack Morgan](http://jackmorgannz.github.io/) and [Caitlin Duncan](https://github.com/caitlind), with [Hayley van Waas](http://hayleyavw.com/) and [Tim Bell](mailto:tim.bell@canterbury.ac.nz) as backup administrators.
+This repository is currently managed by 
+- [Jack Morgan](http://jackmorgannz.github.io/)
+- [Caitlin Duncan](https://github.com/caitlind)
+- [Hayley van Waas](http://hayleyavw.com/)
+- [Tim Bell](mailto:tim.bell@canterbury.ac.nz)
