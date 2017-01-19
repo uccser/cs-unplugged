@@ -9,3 +9,7 @@ def index(request):
     template = loader.get_template('index.html')
     # return render(request, template)
     return HttpResponse(template.render({}, request))
+
+def example(request):
+    template = loader.get_template('example.html')
+    return HttpResponse(template.render({}, request))
