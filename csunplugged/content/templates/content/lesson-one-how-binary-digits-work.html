@@ -1,3 +1,5 @@
+{% extends "base.html" %}
+{% block content %}
 <div class="z-depth-0 page-title-header">
 <div class="container">
 <h1 class="section-heading anchor-link"><span class="section_number">{{ chapter.number }}.</span> Lesson One: How Binary Digits Work</h1>
@@ -55,9 +57,12 @@ What is the binary number system? </p>
 </ol>
 <div class="row">
 <div class="content col s12 m8 offset-m2 center-align" content="">
-  <a data-featherlight="image" data-featherlight-close-on-click="anywhere" href="{% static 'main/images/pic1.png' %}">
-  <img class="responsive-img" src="{% static 'main/images/pic1.png' %}" />
-</a></div>
+<div>{% load static %}
+<a data-featherlight="image" data-featherlight-close-on-click="anywhere" href="{% static 'csunplugged/pic1.png' %}">
+  <img class="responsive-img" src="{% static 'csunplugged/pic1.png' %}" />
+</a>
+</div>
+</div>
 </div>
 <ol>
 <li>Ask the class what the number of dots on the next card will be. Get them to explain why they think that.</li>
@@ -76,3 +81,4 @@ What is the binary number system? </p>
 </li>
 </ul>
 </div>
+{% endblock %}
