@@ -1,0 +1,3 @@
+[submodule "kordac"]
+	path = kordac
+	url = git@github.com:uccser/kordac.git

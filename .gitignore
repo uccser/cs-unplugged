@@ -1,7 +1,6 @@
 *__pycache__/
 
 venv/
-kordac/
 
 # Ignore secret settings file (passwords, secret keys, etc)
 csunplugged/csunplugged/settings_secret.py
