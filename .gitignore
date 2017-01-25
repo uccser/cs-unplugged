@@ -3,4 +3,4 @@
 venv/
 
 # Ignore secret settings file (passwords, secret keys, etc)
-csunplugged/csunplugged/settings_secret.py
+csunplugged/config/settings_secret.py
