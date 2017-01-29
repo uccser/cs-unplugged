@@ -1,5 +1,6 @@
 from django.core.management.base import BaseCommand, CommandError
 from activities.models import Activity
+from django.utils.text import slugify
 import json
 import os
 import os.path
@@ -47,5 +48,7 @@ class Command(BaseCommand):
             self.save_activity(activity, html)
 
     def save_activity(self, activity, html):
-        activity = Activity(name=activity['name'], description=html)
+        activity = Activity(name=activity['name'],
+            description=html,
+            slug=slugify(activity['name']))
         activity.save()

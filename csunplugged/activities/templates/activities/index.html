@@ -1,7 +1,7 @@
 {% if all_activities %}
     <ul>
     {% for activity in all_activities %}
-        <li><a href="/activities/{{ activity.id }}/">{{ activity.name }}</a></li>
+        <li><a href="{% url 'activities:activity' activity.slug %}">{{ activity.name }}</a></li>
     {% endfor %}
     </ul>
 {% else %}

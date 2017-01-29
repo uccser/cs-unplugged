@@ -1,5 +1,4 @@
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from .models import Activity
 
 def index(request):
@@ -9,5 +8,6 @@ def index(request):
     }
     return render(request, 'activities/index.html', context)
 
-def description(request, activity_name):
-    return HttpResponse("This is the description page for {}".format(activity_name))
+def activity(request, activity_slug):
+    activity = get_object_or_404(Activity, slug=activity_slug)
+    return render(request, 'activities/activity.html', {'activity': activity})
