@@ -1,13 +1,18 @@
 from django.shortcuts import get_object_or_404, render
+from django.views import generic
+
 from .models import Activity
 
-def index(request):
-    all_activities = Activity.objects.order_by('name')
-    context = {
-        'all_activities': all_activities
-    }
-    return render(request, 'activities/index.html', context)
+class IndexView(generic.ListView):
+    template_name = 'activities/index.html'
+    context_object_name = 'all_activities'
 
-def activity(request, activity_slug):
-    activity = get_object_or_404(Activity, slug=activity_slug)
-    return render(request, 'activities/activity.html', {'activity': activity})
+    def get_queryset(self):
+        """Return all activities"""
+        return Activity.objects.order_by('name')
+
+
+class ActivityView(generic.DetailView):
+    model = Activity
+    template_name = 'activities/activity.html'
+    slug_url_kwarg = 'slug'
