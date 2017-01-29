@@ -1,0 +1,9 @@
+{% if all_activities %}
+    <ul>
+    {% for activity in all_activities %}
+        <li><a href="/activities/{{ activity.id }}/">{{ activity.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No activities are available.</p>
+{% endif %}
