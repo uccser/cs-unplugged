@@ -1,0 +1,12 @@
+{
+  "activities": [
+    {
+      "name": "Binary numbers",
+      "file": "binary-numbers/index.md"
+    },
+    {
+      "name": "Error detection and correction",
+      "file": "error-detection-correction/index.md"
+    }
+  ]
+}

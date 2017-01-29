@@ -1,0 +1,28 @@
+{
+    "panel": {
+        "pattern_start": "^\\{panel ?(?P<args>[^\\}]*)\\}",
+        "pattern_end": "\\{panel end\\}"
+    },
+    "glossary": {
+        "pattern": "\\{glossary-link term=\"([a-zA-Z]| )*\"( reference-text=\"([a-zA-Z]| )*\"){0,1}\\}.*\\{glossary-link end\\}"
+    },
+    "comment_block": {
+        "pattern_start": "^\\{comment\\}",
+        "pattern_end": "\\{comment end\\}"
+    },
+    "comment_pre": {
+        "pattern" : "\\{comment ((?!end)|end)[^\\}]+\\}"
+    },
+    "video": {
+        "pattern": "^\\{video (?P<args>[^\\}]*)\\}"
+    },
+    "image": {
+        "pattern": "^\\{image (?P<args>[^\\}]*)\\}"
+    },
+    "interactive": {
+        "pattern": "^\\{interactive ?(?P<args>[^\\}]*)\\}$"
+    },
+    "heading": {
+        "pattern": "r'(^|\n)(?P<level>#{1,6})(?P<header>.*?)#*(\n|$)'"
+    }
+}

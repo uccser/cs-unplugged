@@ -1,0 +1,53 @@
+<ul id='nav-mobile' class='side-nav fixed'>
+  <li class='logo no-padding'>
+    <a id='logo-container' href='{{ path_to_guide_root }}index.html'>
+      <div class='title'>{{ translations.project_title }}</div>
+      {% if guide.version == 'teacher' %}
+      <div class='subtitle'>{{ translations.teacher_version_text }}</div>
+      {% endif %}
+    </a>
+  </li>
+  <li class='no-highlight nav-subtitle text-lighten-1'>{{ translations.menu_navigation }}</li>
+  <div class='divider'></div>
+  <li class='bold no-padding{% if 'about' == current_page %} active{% endif %}'><a href='{{ path_to_guide_root }}about.html' class='waves-effect'>{{ translations.menu_item_about }}</a></li>
+  <li class='no-padding no-highlight'>
+    <ul class='collapsible' data-collapsible='expandable'>
+      {%- for folder in root_folder.folders %}
+      <li class='bold{% if folder.name == current_folder %} active{% endif %}'>
+        <a class='collapsible-header waves-effect{% if folder.name == current_folder %} active{% endif %}'>{{ folder.title }}<div class='dropdown-menu-arrow'>&#9660;</div></a>
+        <div class='collapsible-body'>
+          <ul>
+            {%- if folder.files or folder.folders %}
+
+            {%- for file in folder.files %}
+            {%- if file.tracked %}
+            <li{% if file.path == current_page %} class='active'{% endif %}><a href='{{ path_to_guide_root }}{{ file.path }}.html'>{{ file.section.title }}</a></li>
+            {%- endif %}
+            {%- endfor %}
+
+            {%- for subfolder in folder.folders %}
+            <li{% if subfolder.path == current_page %} class='active'{% endif %}><a href='{{ path_to_guide_root }}{{ subfolder.path }}/index.html'>{{ subfolder.title }}</a></li>
+            {%- endfor %}
+
+            {%- endif %}
+          </ul>
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </li>
+  <div class='divider'></div>
+  <li class='no-padding'>
+    <a href='#feedback-modal' class='waves-effect modal-trigger'>{{ translations.menu_item_feedback }}</a>
+  </li>
+  <li class='no-padding'>
+    <a href='{{ path_to_guide_root }}search.html' class='waves-effect'>{{ translations.menu_item_search }}</a>
+  </li>
+  <li class='no-padding'>
+    <a href='https://github.com/uccser/cs-field-guide' class='waves-effect'>{{ translations.menu_item_contribute }}</a>
+  </li>
+  <div class='divider'></div>
+  <li class='no-padding'>
+    <a href='{{ path_to_output_root }}index.html' class='waves-effect'>{{ translations.menu_item_language }}</a>
+  </li>
+</ul>

@@ -1,0 +1,2 @@
+<p><a class="glossary-anchor-link glossary-link-back-reference" href="../further-information/glossary.html#binary-search" id="glossary-binary-search-2">binary-search</a>
+ a few trailing characters</p>
