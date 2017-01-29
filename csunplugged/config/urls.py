@@ -19,5 +19,6 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    url(r'', include('content.urls'))
-] + static(settings.STATIC_URL, documnet_root=settings.STATIC_ROOT)
+    url(r'^activities/', include('activities.urls'))
+]
+# ] + static(settings.STATIC_URL, documnet_root=settings.STATIC_ROOT)
