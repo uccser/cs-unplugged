@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from activities.models import Activity
+from topics.models import Topic
 from django.utils.text import slugify
 import json
 import os
@@ -12,13 +12,13 @@ class Command(BaseCommand):
     help = 'Converts Markdown files listed in structure file and stores'
 
     def handle(self, *args, **options):
-        """The function called when the loadactivitiescontent command is given"""
+        """The function called when the loadtopicscontent command is given"""
 
         # This path should be calculated, hardcoded for prototype
-        self.BASE_PATH = 'activities/content/en/'
+        self.BASE_PATH = 'topics/content/en/'
 
         structure = self.read_structure()
-        self.process_activities(structure)
+        self.process_topics(structure)
 
 
     def read_structure(self):
@@ -26,7 +26,7 @@ class Command(BaseCommand):
         structure_file_contents = structure_file.read()
         return json.loads(structure_file_contents)
 
-    def process_activities(self, structure):
+    def process_topics(self, structure):
         # Would import Kordac as required package, rather than submodule in final release
         django_wd = os.getcwd()
         os.chdir(os.path.join(self.BASE_PATH, '../kordac/'))
@@ -41,14 +41,14 @@ class Command(BaseCommand):
             kordac_ext])
         os.chdir(django_wd)
 
-        for activity in structure['activities']:
-            activity_file = open(os.path.join(self.BASE_PATH, activity['file']), encoding='UTF-8')
-            raw_content = activity_file.read()
+        for topic in structure['topics']:
+            topic_file = open(os.path.join(self.BASE_PATH, topic['file']), encoding='UTF-8')
+            raw_content = topic_file.read()
             html = converter.convert(raw_content)
-            self.save_activity(activity, html)
+            self.save_topic(topic, html)
 
-    def save_activity(self, activity, html):
-        activity = Activity(name=activity['name'],
+    def save_topic(self, topic, html):
+        topic = Topic(name=topic['name'],
             description=html,
-            slug=slugify(activity['name']))
-        activity.save()
+            slug=slugify(topic['name']))
+        topic.save()

@@ -1,5 +1,5 @@
 {
-  "activities": [
+  "topics": [
     {
       "name": "Binary numbers",
       "file": "binary-numbers/index.md"

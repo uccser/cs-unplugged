@@ -8,12 +8,12 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('activities', '0001_initial'),
+        ('topics', '0001_initial'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='activity',
+            model_name='topic',
             name='slug',
             field=models.SlugField(default='default-slug'),
             preserve_default=False,

@@ -1,0 +1,9 @@
+{% if all_topics %}
+    <ul>
+    {% for topic in all_topics %}
+        <li><a href="{% url 'topics:topic' topic.slug %}">{{ topic.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No topics are available.</p>
+{% endif %}

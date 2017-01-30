@@ -1,0 +1,8 @@
+<h1>{{ topic.name }}</h1>
+
+<p><em>Slug: {{ topic.slug }}</em></p>
+
+<h2>Description</h2>
+{% autoescape off %}
+    {{ topic.description }}
+{% endautoescape %}
