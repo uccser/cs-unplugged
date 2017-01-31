@@ -1,5 +1,7 @@
+{% extends "base.html" %}
 {% load i18n %}
 
+{% block content %}
 <h1>{% trans "Topics" %}</h1>
 {% if all_topics %}
   <ul>
@@ -10,3 +12,4 @@
 {% else %}
   <p>No topics are available.</p>
 {% endif %}
+{% endblock %}

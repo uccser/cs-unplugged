@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+
 <h1>{{ topic.name }}</h1>
 
 <p><em>Slug: {{ topic.slug }}</em></p>
@@ -6,3 +10,4 @@
 {% autoescape off %}
     {{ topic.description }}
 {% endautoescape %}
+{% endblock %}

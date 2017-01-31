@@ -1,38 +1,35 @@
 
 body {
-  /*padding: 15%;*/
   font-family: "Roboto", sans-serif;
 }
-
 header img {
   height: 100px;
   display: block;
   margin: 0 auto;
 }
-
 h2, h3 {
   color: #e33333;
 }
-
 .collapsible-header {
   background-color: #e57373;
 }
-
 li.panel-selector.panel-teacher-note {
   background-color: #ffebee;
 }
-
 img {
   max-width: 100%;
 }
-
-ul li a {
+ul li {
   background-color: #e33333;
   padding: 2%;
-  width: 30%;
   border-radius: 5px;
   text-align: center;
-  color: #fff;
   text-decoration: none;
+  list-style: none;
 }
-
+ul li a {
+  color: #fff;
+}
+ul li a:hover {
+  color: #aaa;
+}
