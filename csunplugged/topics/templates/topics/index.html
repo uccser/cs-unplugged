@@ -1,4 +1,6 @@
-<h1>Topics</h1>
+{% load i18n %}
+
+<h1>{% trans "Topics" %}</h1>
 {% if all_topics %}
   <ul>
   {% for topic in all_topics %}

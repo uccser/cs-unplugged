@@ -14,12 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import include, url
+from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
-urlpatterns = [
+urlpatterns = i18n_patterns(
     url(r'^topics/', include('topics.urls')),
     url(r'^admin/', include(admin.site.urls)),
-]
+)
 # ] + static(settings.STATIC_URL, documnet_root=settings.STATIC_ROOT)
