@@ -47,8 +47,9 @@ class Command(BaseCommand):
             html = converter.convert(raw_content)
             self.save_topic(topic, html)
 
-    def save_topic(self, topic, html):
-        topic = Topic(name=topic['name'],
+    def save_topic(self, topic_data, html):
+        topic = Topic(name=topic_data['name'],
             description=html,
-            slug=slugify(topic['name']))
+            slug=slugify(topic_data['name']))
+        self.stdout.write('Added topic: {}'.format(topic_data['name']))
         topic.save()
