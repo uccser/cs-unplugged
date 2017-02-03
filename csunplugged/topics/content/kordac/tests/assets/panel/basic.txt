@@ -1,4 +1,0 @@
-{panel type="extra-for-experts" "Algorithm complexity"}
-Words words words
-{panel end}
-

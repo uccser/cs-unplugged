@@ -1,1 +1,0 @@
-there is not comment block in this string

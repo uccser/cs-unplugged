@@ -1,7 +1,0 @@
-<div class="row">
-<div class="content col s12 m10 offset-m1 center-align" content="">
-<div class="video-container no-controls">
-<iframe allowfullscreen="allowfullscreen" frameborder="0" src="http://www.youtube.com/embed/superawesomevideo?rel=0"></iframe>
-</div>
-</div>
-</div>

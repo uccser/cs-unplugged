@@ -1,4 +1,0 @@
-this is a test
-{glossary-link term="algorithm"}algorithm{glossary-link end}
-still a test
-

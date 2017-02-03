@@ -1,2 +1,0 @@
-<p>lots of leading characters <a class="glossary-anchor-link glossary-link-back-reference" href="../further-information/glossary.html#binary-search" id="glossary-binary-search-1">binary-search</a>
-</p>
