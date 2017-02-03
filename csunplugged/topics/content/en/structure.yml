@@ -1,0 +1,25 @@
+# The following is a list of topics to list on the CS Unplugged website.
+# Notes:
+#   - The order of documents dictates the order on the website
+#   - Each entry should link the to structure YAML file for each topic
+
+topics:
+  - slug: binary-numbers
+    structure: binary-numbers/binary-numbers.yml
+    md-file: binary-numbers/index.md
+    icon: images/binary-numbers.png
+    unit-plans:
+      - binary-numbers/unit-plan/unit-plan.yml
+    programming-exercises: binary-numbers/programming-exercises/programming-exercises.yml
+    follow-up-activities: binary-numbers/follow-up-activities/follow-up-activities.yml
+    other-resources-md-file: binary-numbers/other-resources.md
+
+  - slug: error-detection-and-correction
+    structure: error-detection-correction/error-detection-correction.yml
+    md-file: error-detection-correction/index.md
+    icon: images/error-detection-correction.png
+    unit-plans:
+      - error-detection-correction/unit-plan/unit-plan.yml
+    programming-exercises:
+    follow-up-activities:
+    other-resources-md-file: 
