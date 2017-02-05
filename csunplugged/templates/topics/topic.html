@@ -1,13 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<h1>{{ topic.name }}</h1>
-
-<p><em>Slug: {{ topic.slug }}</em></p>
-
-<h2>Description</h2>
 {% autoescape off %}
-    {{ topic.description }}
+{{ topic.content }}
 {% endautoescape %}
+
+{% if follow_up_activities %}
+<h2>Follow Up Activities</h2>
+  {% for activity in follow_up_activities %}
+      <p><a class="button button-primary" href="{% url 'topics:activity' topic.slug activity.slug %}">{{ activity.name }}</a></p>
+  {% endfor %}
+{% endif %}
+
+<h3 style="padding-top:20em;">Prototype Debugging Values</h3>
+<pre>
+Name: {{ topic.name }}
+Slug: {{ topic.slug }}
+</pre>
+
 {% endblock %}

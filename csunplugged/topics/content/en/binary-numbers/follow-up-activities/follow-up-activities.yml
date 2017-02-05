@@ -1,4 +1,9 @@
-- id: binary-number-bracelets
-  markdown-file: binary-numbers/follow-up-activities/bracelets.md
+- slug: binary-number-bracelets
+  md-file: binary-numbers/follow-up-activities/bracelets.md
+  curriculum-links:
+    - arts
+    - design
+- slug: binary-number-bracelets-2
+  md-file: binary-numbers/follow-up-activities/bracelets.md
   curriculum-links:
     - arts

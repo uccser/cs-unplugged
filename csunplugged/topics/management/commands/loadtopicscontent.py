@@ -1,7 +1,7 @@
 from django.core.management.base import BaseCommand, CommandError
-from topics.models import Topic
+from topics.models import Topic, CurriculumLink
 from django.utils.text import slugify
-import json
+import yaml
 import os
 import os.path
 import sys
@@ -17,39 +17,63 @@ class Command(BaseCommand):
         # This path should be calculated, hardcoded for prototype
         self.BASE_PATH = 'topics/content/en/'
 
-        structure = self.read_structure()
-        self.process_topics(structure)
-
-
-    def read_structure(self):
-        structure_file = open(os.path.join(self.BASE_PATH, 'structure.json'), encoding='UTF-8')
-        structure_file_contents = structure_file.read()
-        return json.loads(structure_file_contents)
-
-    def process_topics(self, structure):
-        # Would import Kordac as required package, rather than submodule in final release
-        django_wd = os.getcwd()
+        # Would import Kordac as required package,
+        # rather than submodule in final release.
+        # Current functions have to switch to Kordac path
+        # every time they need to run Kordac.
+        self.django_wd = os.getcwd()
         os.chdir(os.path.join(self.BASE_PATH, '../kordac/'))
         sys.path.insert(0, os.getcwd())
         import Kordac
-        kordac_ext = Kordac.Kordac()
-        converter = markdown.Markdown(extensions=[
-            'markdown.extensions.fenced_code',
-            'markdown.extensions.codehilite',
-            'markdown.extensions.sane_lists',
-            mdx_math.MathExtension(enable_dollar_delimiter=True),
-            kordac_ext])
-        os.chdir(django_wd)
+        self.kordac = Kordac.Kordac()
+        os.chdir(self.django_wd)
 
-        for topic in structure['topics']:
-            topic_file = open(os.path.join(self.BASE_PATH, topic['file']), encoding='UTF-8')
+        language_structure = self.read_language_structure()
+        self.load_topics(language_structure)
+
+
+    def read_language_structure(self):
+        structure_file = open(os.path.join(self.BASE_PATH, 'structure.yml'), encoding='UTF-8')
+        return yaml.load(structure_file.read())
+
+    def load_topics(self, structure):
+        for topic_data in structure['topics']:
+            topic_file = open(os.path.join(self.BASE_PATH, topic_data['md-file']), encoding='UTF-8')
             raw_content = topic_file.read()
-            html = converter.convert(raw_content)
-            self.save_topic(topic, html)
+            os.chdir(os.path.join(self.BASE_PATH, '../kordac/'))
+            topic_content = self.kordac.run(raw_content)
+            os.chdir(self.django_wd)
+            topic = Topic(
+                slug=topic_data['slug'],
+                # TODO: Set name from coverted content
+                name=topic_data['slug'],
+                content=topic_content.html_string,
+                icon=topic_data['icon']
+            )
+            topic.save()
+            self.stdout.write('Added Topic: {}'.format(topic.name))
+            self.load_follow_up_activities(topic_data['follow-up-activities'], topic)
 
-    def save_topic(self, topic_data, html):
-        topic = Topic(name=topic_data['name'],
-            description=html,
-            slug=slugify(topic_data['name']))
-        self.stdout.write('Added topic: {}'.format(topic_data['name']))
-        topic.save()
+    def load_follow_up_activities(self, follow_up_activities_structure, topic):
+        if follow_up_activities_structure:
+            structure = yaml.load(open(os.path.join(self.BASE_PATH, follow_up_activities_structure), encoding='UTF-8').read())
+
+            for activity_data in structure:
+                activity_file = open(os.path.join(self.BASE_PATH, activity_data['md-file']), encoding='UTF-8')
+                raw_content = activity_file.read()
+                os.chdir(os.path.join(self.BASE_PATH, '../kordac/'))
+                activity_content = self.kordac.run(raw_content)
+                os.chdir(self.django_wd)
+                activity = topic.topic_follow_up_activities.create(
+                    slug=activity_data['slug'],
+                    # TODO: Set name from coverted content
+                    name=activity_data['slug'],
+                    content=activity_content.html_string,
+                )
+                activity.save()
+                for link in activity_data['curriculum-links']:
+                     (object, created) = CurriculumLink.objects.get_or_create(
+                        name=link
+                     )
+                     activity.curriculum_links.add(object)
+                self.stdout.write('Added Activity: {}'.format(activity.name))
