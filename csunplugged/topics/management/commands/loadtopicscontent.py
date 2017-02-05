@@ -1,6 +1,7 @@
 from django.core.management.base import BaseCommand, CommandError
 from topics.models import Topic, CurriculumLink
 from django.utils.text import slugify
+from django.db import transaction
 import yaml
 import os
 import os.path
@@ -21,11 +22,18 @@ class Command(BaseCommand):
         language_structure = self.read_language_structure()
         self.load_topics(language_structure)
 
+
     def read_language_structure(self):
         structure_file = open(os.path.join(self.BASE_PATH, 'structure.yml'), encoding='UTF-8')
         return yaml.load(structure_file.read())
 
+    def print_load_log(self):
+        for log in self.load_log:
+            self.stdout.write(log)
+
+    @transaction.atomic
     def load_topics(self, structure):
+        self.load_log = []
         for topic_data in structure['topics']:
             topic_file = open(os.path.join(self.BASE_PATH, topic_data['md-file']), encoding='UTF-8')
             raw_content = topic_file.read()
@@ -38,8 +46,9 @@ class Command(BaseCommand):
                 icon=topic_data['icon']
             )
             topic.save()
-            self.stdout.write('Added Topic: {}'.format(topic.name))
+            self.load_log.append('Added Topic: {}'.format(topic.name))
             self.load_follow_up_activities(topic_data['follow-up-activities'], topic)
+        self.print_load_log()
 
     def load_follow_up_activities(self, follow_up_activities_structure, topic):
         if follow_up_activities_structure:
@@ -61,4 +70,4 @@ class Command(BaseCommand):
                         name=link
                      )
                      activity.curriculum_links.add(object)
-                self.stdout.write('Added Activity: {}'.format(activity.name))
+                self.load_log.append('Added Activity: {}'.format(activity.name))
