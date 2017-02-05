@@ -33,8 +33,13 @@ class ActivityList(generic.ListView):
     def get_queryset(self, **kwargs):
         """Return all activities for topic"""
         # TODO: Is this the best way to raise 404 if invalid topic?
-        topic = get_object_or_404(Topic, name=self.kwargs.get('topic_slug', None))
-        return FollowUpActivity.objects.filter(topic__name=self.kwargs.get('topic_slug', None)).order_by('name')
+        topic = get_object_or_404(Topic, slug=self.kwargs.get('topic_slug', None))
+        return FollowUpActivity.objects.filter(topic__slug=self.kwargs.get('topic_slug', None)).order_by('name')
+
+    def get_context_data(self, **kwargs):
+        context = super(ActivityList, self).get_context_data(**kwargs)
+        context['topic'] = get_object_or_404(Topic, slug=self.kwargs.get('topic_slug', None))
+        return context
 
 
 class ActivityView(generic.DetailView):
@@ -46,8 +51,8 @@ class ActivityView(generic.DetailView):
     def get_object(self, **kwargs):
         return get_object_or_404(
             self.model,
-            topic__name=self.kwargs.get('topic_slug', None),
-            name=self.kwargs.get('activity_slug', None)
+            topic__slug=self.kwargs.get('topic_slug', None),
+            slug=self.kwargs.get('activity_slug', None)
         )
 
     def get_context_data(self, **kwargs):

@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-
 <h2>Follow Up Activities</h2>
 {% if all_follow_up_activities %}
   {% for activity in all_follow_up_activities %}
-    <p><a class="button button-primary" href="#">{{ activity.name }}</a></p>
+    <p><a class="button button-primary" href="{% url 'topics:activity' topic.slug activity.slug %}">{{ activity.name }}</a></p>
   {% endfor %}
 {% else %}
 <p>No follow up activities for {{ topic }}.</p>
