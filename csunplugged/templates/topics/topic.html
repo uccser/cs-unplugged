@@ -7,14 +7,19 @@
 
 {% if follow_up_activities %}
 <h2>Follow Up Activities</h2>
-  {% for activity in follow_up_activities %}
-      <p><a class="button button-primary" href="{% url 'topics:activity' topic.slug activity.slug %}">{{ activity.name }}</a></p>
-  {% endfor %}
+<div class="list-group">
+{% for activity in follow_up_activities %}
+  <a href="{% url 'topics:activity' topic.slug activity.slug %}" class="list-group-item list-group-item-action">{{ activity.name }}</a>
+{% endfor %}
+</div>
+{% else %}
+<p>No follow up activities for {{ topic }}.</p>
 {% endif %}
+
 
 {% if topic.other_resources %}
 <h2>Looking for more?</h2>
-<p><a class="button button-primary" href="{% url 'topics:other_resources' topic.slug %}">Click here for other resources</a></p>
+<p><a class="btn btn-secondary" href="{% url 'topics:other_resources' topic.slug %}">Click here for other resources</a></p>
 {% endif %}
 
 <h3 style="padding-top:20em;">Prototype Debugging Values</h3>
