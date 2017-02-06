@@ -61,3 +61,9 @@ class ActivityView(generic.DetailView):
         # Add in a QuerySet of all the connected follow up activities
         context['activity_curriculum_links'] = self.object.curriculum_links.all()
         return context
+
+
+class OtherResourcesView(generic.DetailView):
+    model = Topic
+    template_name = 'topics/topic-other-resources.html'
+    slug_url_kwarg = 'topic_slug'

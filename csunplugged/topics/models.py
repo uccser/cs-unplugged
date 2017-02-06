@@ -22,6 +22,7 @@ class Topic(models.Model):
     slug = models.SlugField(unique=True)
     name = models.CharField(max_length=100)
     content = models.TextField()
+    other_resources = models.TextField()
     icon = models.CharField(max_length=100)
 
     def __str__(self):

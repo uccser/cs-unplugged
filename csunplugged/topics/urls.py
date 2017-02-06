@@ -28,15 +28,15 @@ urlpatterns = [
         views.ActivityView.as_view(),
         name='activity'
     ),
+    # eg: /topics/binary-numbers/other-resources
+    url(
+        r'^(?P<topic_slug>[-\w]+)/other-resources/$',
+        views.OtherResourcesView.as_view(),
+        name='other_resources'
+    ),
 
     # TODO: The following need to be implemented
 
-    # eg: /topics/binary-numbers/other-resources
-    # url(
-    #     r'^(?P<topic_slug>[-\w]+)/other-resources/$',
-    #     views.OtherResourcesList.as_view(),
-    #     name='other_resources_list'
-    # ),
     # # eg: /topics/binary-numbers/unit-plan
     # url(
     #     r'^(?P<topic_slug>[-\w]+)/(?P<unit_plan_slug>[-\w]+)/$',

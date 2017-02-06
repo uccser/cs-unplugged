@@ -12,6 +12,11 @@
   {% endfor %}
 {% endif %}
 
+{% if topic.other_resources %}
+<h2>Looking for more?</h2>
+<p><a class="button button-primary" href="{% url 'topics:other_resources' topic.slug %}">Click here for other resources</a></p>
+{% endif %}
+
 <h3 style="padding-top:20em;">Prototype Debugging Values</h3>
 <pre>
 Name: {{ topic.name }}
