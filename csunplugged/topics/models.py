@@ -59,7 +59,7 @@ class Lesson(models.Model):
     slug = models.SlugField()
     name = models.CharField(max_length=100)
     number = models.IntegerField()
-    age_bracket = models.CharField(max_length=10)
+    age_bracket = models.CharField(max_length=20)
     content = models.TextField()
     learning_outcomes = models.ManyToManyField(
         LearningOutcome,

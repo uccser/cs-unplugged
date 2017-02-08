@@ -7,9 +7,11 @@
 
 {% if activity.curriculum_links %}
 <h2>Curriculum Links</h2>
-  {% for link in activity_curriculum_links %}
-    <p><a class="button button-primary" href="#">{{ link.name }}</a></p>
-  {% endfor %}
+<p>
+{% for link in activity_curriculum_links %}
+  <span class="badge badge-default">{{ link.name }}</span>
+{% endfor %}
+</p>
 {% endif %}
 
 <h3 style="padding-top:20em;">Prototype Debugging Values</h3>

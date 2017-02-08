@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from topics.models import Topic, CurriculumLink
+from topics.models import Topic, CurriculumLink, LearningOutcome
 from django.utils.text import slugify
 from django.db import transaction
 import yaml
@@ -28,8 +28,9 @@ class Command(BaseCommand):
         return yaml.load(structure_file.read())
 
     def print_load_log(self):
-        for log in self.load_log:
-            self.stdout.write(log)
+        for (log, indent) in self.load_log:
+            self.stdout.write('{indent}{text}'.format(indent='  '*indent,text=log))
+        self.stdout.write('\n')
 
     @transaction.atomic
     def load_topics(self, structure):
@@ -52,17 +53,78 @@ class Command(BaseCommand):
                 icon=topic_structure['icon']
             )
             topic.save()
-            self.load_log.append('Added Topic: {}'.format(topic.name))
+            self.load_log.append(('\nAdded Topic: {}'.format(topic.name), 0))
 
-            self.stdout.write(topic_structure['follow-up-activities'])
+            # Load unit plans
+            for unit_plan_structure_file in topic_structure['unit-plans']:
+                self.load_unit_plan(unit_plan_structure_file, topic)
+
+            # Load follow up activities
             if topic_structure['follow-up-activities']:
                 self.load_follow_up_activities(topic_structure['follow-up-activities'], topic)
+
+        # Print log output
         self.print_load_log()
 
     def convert_md_file(self, file_path):
         """Returns the Kordac object for a given Markdown file"""
         content = open(os.path.join(self.BASE_PATH, file_path), encoding='UTF-8').read()
         return self.converter.run(content)
+
+
+    def load_unit_plan(self, unit_plan_structure_file, topic):
+        # TODO: Should create generic functions for loading YAML and reading file
+        unit_plan_structure = yaml.load(open(os.path.join(self.BASE_PATH, unit_plan_structure_file), encoding='UTF-8').read())
+
+        unit_plan_file = open(os.path.join(self.BASE_PATH, unit_plan_structure['md-file']), encoding='UTF-8')
+        raw_content = unit_plan_file.read()
+        unit_plan_content = self.converter.run(raw_content)
+
+        unit_plan = topic.topic_unit_plans.create(
+            slug=unit_plan_structure['slug'],
+            name=unit_plan_content.heading,
+            content=unit_plan_content.html,
+        )
+        unit_plan.save()
+        self.load_log.append(('Added Unit Plan: {}'.format(unit_plan.name), 1))
+
+        lessons_structure = unit_plan_structure['lessons']
+        self.load_lessons(lessons_structure, topic, unit_plan)
+
+
+    def load_lessons(self, lessons_structure, topic, unit_plan):
+        for age_bracket, age_bracket_lessons in lessons_structure.items():
+            for lesson_structure in age_bracket_lessons:
+                self.load_lesson(lesson_structure, topic, unit_plan, age_bracket)
+
+
+    def load_lesson(self, lesson_structure, topic, unit_plan, age_bracket):
+        lesson_file = open(os.path.join(self.BASE_PATH, lesson_structure['md-file']), encoding='UTF-8')
+        raw_content = lesson_file.read()
+        lesson_content = self.converter.run(raw_content)
+
+        lesson = topic.topic_lessons.create(
+            unit_plan=unit_plan,
+            slug=lesson_structure['slug'],
+            name=lesson_content.heading,
+            number=lesson_structure['lesson-number'],
+            age_bracket=age_bracket,
+            content=lesson_content.html,
+        )
+        lesson.save()
+        # Add learning outcomes
+        for outcome in lesson_structure['learning-outcomes']:
+            (object, created) = LearningOutcome.objects.get_or_create(
+                text=outcome
+            )
+            lesson.learning_outcomes.add(object)
+        # Add curriculum links
+        for link in lesson_structure['curriculum-links']:
+            (object, created) = CurriculumLink.objects.get_or_create(
+                name=link
+            )
+            lesson.curriculum_links.add(object)
+        self.load_log.append(('Added Lesson: {}'.format(lesson.__str__()), 2))
 
 
     def load_follow_up_activities(self, follow_up_activities_structure, topic):
@@ -80,8 +142,8 @@ class Command(BaseCommand):
                 )
                 activity.save()
                 for link in activity_data['curriculum-links']:
-                     (object, created) = CurriculumLink.objects.get_or_create(
+                    (object, created) = CurriculumLink.objects.get_or_create(
                         name=link
-                     )
-                     activity.curriculum_links.add(object)
-                self.load_log.append('Added Activity: {}'.format(activity.name))
+                    )
+                    activity.curriculum_links.add(object)
+                self.load_log.append(('Added Activity: {}'.format(activity.name), 1))

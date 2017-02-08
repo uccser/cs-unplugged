@@ -3,9 +3,9 @@ md-file: binary-numbers/unit-plan/unit-plan.md
 slug: unit-plan
 
 lessons:
-  age 5 - 7:
-    - name: An exciting lesson
-      lesson-number: 1
+  Ages 5 - 7:
+    - lesson-number: 1
+      slug: lesson-1
       md-file: binary-numbers/unit-plan/lessons/5-7/lesson-1.md
       handout: binary-numbers/unit-plan/lessons/5-7/lesson-1-handout.md
       glossary: binary-numbers/unit-plan/lessons/5-7/lesson-1-glossary.md
@@ -27,8 +27,8 @@ lessons:
       curriculum-links:
         - maths
 
-    - name: An exciting lesson
-      lesson-number: 2
+    - lesson-number: 2
+      slug: lesson-2
       md-file: binary-numbers/unit-plan/lessons/5-7/lesson-2.md
       handout: binary-numbers/unit-plan/lessons/5-7/lesson-2-handout.md
       glossary: binary-numbers/unit-plan/lessons/5-7/lesson-2-glossary.md
@@ -39,8 +39,8 @@ lessons:
         - maths
         - science
 
-    - name: An exciting lesson
-      lesson-number: 3
+    - lesson-number: 3
+      slug: lesson-3
       md-file: binary-numbers/unit-plan/lessons/5-7/lesson-3.md
       handout: binary-numbers/unit-plan/lessons/5-7/lesson-3-handout.md
       glossary: binary-numbers/unit-plan/lessons/5-7/lesson-3-glossary.md
@@ -54,9 +54,9 @@ lessons:
         - maths
         - art
 
-  age 8 - 10:
-    - name: An exciting lesson
-      lesson-number: 1
+  Ages 8 - 10:
+    - lesson-number: 1
+      slug: lesson-1
       md-file: binary-numbers/unit-plan/lessons/8-10/lesson-1.md
       handout: binary-numbers/unit-plan/lessons/8-10/lesson-1-handout.md
       glossary: binary-numbers/unit-plan/lessons/8-10/lesson-1-glossary.md
@@ -78,8 +78,8 @@ lessons:
       curriculum-links:
         - maths
 
-    - name: An exciting lesson
-      lesson-number: 2
+    - lesson-number: 2
+      slug: lesson-2
       md-file: binary-numbers/unit-plan/lessons/8-10/lesson-2.md
       handout: binary-numbers/unit-plan/lessons/8-10/lesson-2-handout.md
       glossary: binary-numbers/unit-plan/lessons/8-10/lesson-2-glossary.md
@@ -90,9 +90,9 @@ lessons:
         - maths
         - science
 
-  age 11 - 14:
-    - name: An exciting lesson
-      lesson-number: 1
+  Ages 11 - 14:
+    - lesson-number: 1
+      slug: lesson-1
       md-file: binary-numbers/unit-plan/lessons/11-14/lesson-1.md
       handout: binary-numbers/unit-plan/lessons/11-14/lesson-1-handout.md
       glossary: binary-numbers/unit-plan/lessons/11-14/lesson-1-glossary.md

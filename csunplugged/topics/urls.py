@@ -34,15 +34,15 @@ urlpatterns = [
         views.OtherResourcesView.as_view(),
         name='other_resources'
     ),
+    # eg: /topics/binary-numbers/unit-plan
+    url(
+        r'^(?P<topic_slug>[-\w]+)/(?P<unit_plan_slug>[-\w]+)/$',
+        views.UnitPlanView.as_view(),
+        name='unit_plan'
+    ),
 
     # TODO: The following need to be implemented
 
-    # # eg: /topics/binary-numbers/unit-plan
-    # url(
-    #     r'^(?P<topic_slug>[-\w]+)/(?P<unit_plan_slug>[-\w]+)/$',
-    #     views.UnitPlanView.as_view(),
-    #     name='unit_plan'
-    # ),
     # # eg: /topics/binary-numbers/unit-plan/5-7
     # # TODO: Should this page just be a query of the given ages?
     # url(
@@ -57,7 +57,7 @@ urlpatterns = [
     #     views.LessonView.as_view(),
     #     name='lesson'
     # ),
-    # # eg: /topics/binary-numbers/unit-plan/lesson-1
+    # # eg: /topics/binary-numbers/programming/
     # url(
     #     r'^(?P<topic_slug>[-\w]+)/programming/$',
     #     views.ProgrammingExercisesList.as_view(),

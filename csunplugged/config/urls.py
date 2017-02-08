@@ -20,7 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = i18n_patterns(
-    url(r'', include('general.urls')),
+    url(r'', include('general.urls', namespace='general')),
     url(r'^topics/', include('topics.urls', namespace='topics')),
     url(r'^admin/', include(admin.site.urls)),
 )
