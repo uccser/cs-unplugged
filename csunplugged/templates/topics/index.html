@@ -2,14 +2,19 @@
 {% load i18n %}
 
 {% block content %}
-<h1>{% trans "Topics" %}</h1>
-{% if all_topics %}
-  <div class="list-group">
-  {% for topic in all_topics %}
-    <a href="{% url 'topics:topic' topic.slug %}" class="list-group-item list-group-item-action">{{ topic.name }}</a>
-  {% endfor %}
-  </div>
-{% else %}
-<p>No topics are available.</p>
-{% endif %}
+  <h1>{% trans "Topics" %}</h1>
+  {% if all_topics %}
+    <div class="card-deck">
+      {% for topic in all_topics %}
+        <a class="card card-inverse card-danger text-center" href="{% url 'topics:topic' topic.slug %}">
+          <img class="card-img-top" src="http://placehold.it/238x200">
+          <div class="card-block">
+            <h4 class="card-title">{{ topic.name }}</h4>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No topics are available.</p>
+  {% endif %}
 {% endblock %}
