@@ -20,6 +20,19 @@ class Command(BaseCommand):
         self.BASE_PATH = 'topics/content/en/'
         self.converter = Kordac()
         language_structure = self.read_language_structure()
+
+        # TODO: Think about how to store tag and HTML templates override for Kordac
+        # Currently this needs to be called on each call to run() however
+        # soon this will only be required on creation on Kordac converter
+        self.tag_override = [
+            'headingpre',
+            'commentpre',
+            'comment',
+            'button',
+            'video',
+            'image',
+        ]
+
         self.load_topics(language_structure)
 
 
@@ -69,7 +82,7 @@ class Command(BaseCommand):
     def convert_md_file(self, file_path):
         """Returns the Kordac object for a given Markdown file"""
         content = open(os.path.join(self.BASE_PATH, file_path), encoding='UTF-8').read()
-        return self.converter.run(content)
+        return self.converter.run(content, tags=self.tag_override)
 
 
     def load_unit_plan(self, unit_plan_structure_file, topic):
@@ -78,7 +91,7 @@ class Command(BaseCommand):
 
         unit_plan_file = open(os.path.join(self.BASE_PATH, unit_plan_structure['md-file']), encoding='UTF-8')
         raw_content = unit_plan_file.read()
-        unit_plan_content = self.converter.run(raw_content)
+        unit_plan_content = self.converter.run(raw_content, tags=self.tag_override)
 
         unit_plan = topic.topic_unit_plans.create(
             slug=unit_plan_structure['slug'],
@@ -101,7 +114,7 @@ class Command(BaseCommand):
     def load_lesson(self, lesson_structure, topic, unit_plan, age_bracket):
         lesson_file = open(os.path.join(self.BASE_PATH, lesson_structure['md-file']), encoding='UTF-8')
         raw_content = lesson_file.read()
-        lesson_content = self.converter.run(raw_content)
+        lesson_content = self.converter.run(raw_content, tags=self.tag_override)
 
         lesson = topic.topic_lessons.create(
             unit_plan=unit_plan,
@@ -134,7 +147,7 @@ class Command(BaseCommand):
             for activity_data in structure:
                 activity_file = open(os.path.join(self.BASE_PATH, activity_data['md-file']), encoding='UTF-8')
                 raw_content = activity_file.read()
-                activity_content = self.converter.run(raw_content)
+                activity_content = self.converter.run(raw_content, tags=self.tag_override)
                 activity = topic.topic_follow_up_activities.create(
                     slug=activity_data['slug'],
                     name=activity_content.heading,
