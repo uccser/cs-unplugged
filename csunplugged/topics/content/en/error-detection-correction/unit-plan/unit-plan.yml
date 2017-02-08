@@ -3,8 +3,9 @@ md-file: error-detection-correction/unit-plan/unit-plan.md
 slug: unit-plan
 
 lessons:
-  age 8 - 10:
+  Ages 8 - 10:
     - lesson-number: 1
+      slug: lesson-intro
       md-file: error-detection-correction/unit-plan/lessons/8-10/lesson-1.md
       # Title for lesson is extracted from md-file
       learning-outcomes:

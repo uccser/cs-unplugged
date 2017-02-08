@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from topics.models import Topic, CurriculumLink
+from topics.models import Topic, CurriculumLink, LearningOutcome
 from django.utils.text import slugify
 from django.db import transaction
 import yaml
@@ -87,6 +87,44 @@ class Command(BaseCommand):
         unit_plan.save()
         self.load_log.append('Added Unit Plan: {}'.format(unit_plan.name))
 
+        lessons_structure = unit_plan_structure['lessons']
+        self.load_lessons(lessons_structure, topic, unit_plan)
+
+
+    def load_lessons(self, lessons_structure, topic, unit_plan):
+        for age_bracket, age_bracket_lessons in lessons_structure.items():
+            for lesson_structure in age_bracket_lessons:
+                self.load_lesson(lesson_structure, topic, unit_plan, age_bracket)
+
+
+    def load_lesson(self, lesson_structure, topic, unit_plan, age_bracket):
+        lesson_file = open(os.path.join(self.BASE_PATH, lesson_structure['md-file']), encoding='UTF-8')
+        raw_content = lesson_file.read()
+        lesson_content = self.converter.run(raw_content)
+
+        lesson = topic.topic_lessons.create(
+            unit_plan=unit_plan,
+            slug=lesson_structure['slug'],
+            name=lesson_content.heading,
+            number=lesson_structure['lesson-number'],
+            age_bracket=age_bracket,
+            content=lesson_content.html,
+        )
+        lesson.save()
+        # Add learning outcomes
+        for outcome in lesson_structure['learning-outcomes']:
+            (object, created) = LearningOutcome.objects.get_or_create(
+                text=outcome
+            )
+            lesson.learning_outcomes.add(object)
+        # Add curriculum links
+        for link in lesson_structure['curriculum-links']:
+            (object, created) = CurriculumLink.objects.get_or_create(
+                name=link
+            )
+            lesson.curriculum_links.add(object)
+        self.load_log.append('Added Lesson: {}'.format(lesson.name))
+
 
     def load_follow_up_activities(self, follow_up_activities_structure, topic):
         if follow_up_activities_structure:
@@ -103,8 +141,8 @@ class Command(BaseCommand):
                 )
                 activity.save()
                 for link in activity_data['curriculum-links']:
-                     (object, created) = CurriculumLink.objects.get_or_create(
+                    (object, created) = CurriculumLink.objects.get_or_create(
                         name=link
-                     )
-                     activity.curriculum_links.add(object)
+                    )
+                    activity.curriculum_links.add(object)
                 self.load_log.append('Added Activity: {}'.format(activity.name))
