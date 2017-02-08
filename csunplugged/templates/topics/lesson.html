@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% autoescape off %}
+{{ lesson.content }}
+{% endautoescape %}
+
+<h2>Learning Outcomes</h2>
+{% if lesson_learning_outcomes %}
+  <ul>
+  {% for learning_outcome in lesson_learning_outcomes %}
+    <li>{{ learning_outcome.text }}</li>
+  {% endfor %}
+</ul>
+{% else %}
+  <p>No learning outcomes listed for {{ lesson.name }}.</p>
+{% endif %}
+
+<h2>Curriculum Links</h2>
+{% if lesson_curriculum_links %}
+  <ul>
+  {% for curriculum_link in lesson_curriculum_links %}
+    <li>{{ curriculum_link.name }}</li>
+  {% endfor %}
+</ul>
+{% else %}
+  <p>No curriculum links listed for {{ lesson.name }}.</p>
+{% endif %}
+
+{% endblock content %}

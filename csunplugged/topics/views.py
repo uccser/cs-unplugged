@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, get_list_or_404
 from django.views import generic
 
-from .models import Topic, FollowUpActivity, UnitPlan
+from .models import Topic, FollowUpActivity, UnitPlan, Lesson
 
 class IndexView(generic.ListView):
     template_name = 'topics/index.html'
@@ -40,6 +40,29 @@ class UnitPlanView(generic.DetailView):
         )
 
 
+class LessonView(generic.DetailView):
+    model = Lesson
+    template_name = 'topics/lesson.html'
+    context_object_name = 'lesson'
+
+    def get_object(self, **kwargs):
+        return get_object_or_404(
+            self.model,
+            topic__slug=self.kwargs.get('topic_slug', None),
+            unit_plan__slug=self.kwargs.get('unit_plan_slug', None),
+            age_bracket_slug=self.kwargs.get('age_bracket', None),
+            slug=self.kwargs.get('lesson_slug', None),
+        )
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(LessonView, self).get_context_data(**kwargs)
+        # Add all the connected curriculum links
+        context['lesson_curriculum_links'] = self.object.curriculum_links.all()
+        # Add all the connected learning outcomes
+        context['lesson_learning_outcomes'] = self.object.learning_outcomes.all()
+        return context
+
 class ActivityList(generic.ListView):
     model = FollowUpActivity
     template_name = 'topics/activity_list.html'
@@ -73,7 +96,7 @@ class ActivityView(generic.DetailView):
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         context = super(ActivityView, self).get_context_data(**kwargs)
-        # Add in a QuerySet of all the connected follow up activities
+        # Add in a QuerySet of all the connected curriculum links
         context['activity_curriculum_links'] = self.object.curriculum_links.all()
         return context
 
