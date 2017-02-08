@@ -104,6 +104,7 @@ class ProgrammingExercise(models.Model):
     )
     slug = models.SlugField()
     name = models.CharField(max_length=200)
+    exercise_number = models.IntegerField()
     content = models.TextField()
     scratch_hints = models.TextField()
     scratch_solution = models.TextField()

@@ -72,6 +72,10 @@ class Command(BaseCommand):
             for unit_plan_structure_file in topic_structure['unit-plans']:
                 self.load_unit_plan(unit_plan_structure_file, topic)
 
+            # Load programming exercises
+            if topic_structure['programming-exercises']:
+                self.load_programming_exercises(topic_structure['programming-exercises'], topic)
+
             # Load follow up activities
             if topic_structure['follow-up-activities']:
                 self.load_follow_up_activities(topic_structure['follow-up-activities'], topic)
@@ -141,6 +145,32 @@ class Command(BaseCommand):
         self.load_log.append(('Added Lesson: {}'.format(lesson.__str__()), 2))
 
 
+    def load_programming_exercises(self, programming_exercises_structure, topic):
+        structure = yaml.load(open(os.path.join(self.BASE_PATH, programming_exercises_structure), encoding='UTF-8').read())
+
+        for programming_exercise_data in structure:
+            programming_exercise_content = self.convert_md_file(programming_exercise_data['md-file'])
+
+            programming_exercise = topic.topic_programming_exercises.create(
+                slug=programming_exercise_data['slug'],
+                name=programming_exercise_content.heading,
+                exercise_number=programming_exercise_data['exercise-number'],
+                content=programming_exercise_content.html_string,
+                scratch_hints=self.convert_md_file(programming_exercise_data['scratch']['hints']).html_string,
+                scratch_solution=self.convert_md_file(programming_exercise_data['scratch']['solution']).html_string,
+                python_hints=self.convert_md_file(programming_exercise_data['python']['hints']).html_string,
+                python_solution=self.convert_md_file(programming_exercise_data['python']['solution']).html_string,
+            )
+            programming_exercise.save()
+
+            for learning_outcome in programming_exercise_data['learning-outcomes']:
+                (object, created) = LearningOutcome.objects.get_or_create(
+                    text=learning_outcome
+                )
+                programming_exercise.learning_outcomes.add(object)
+            self.load_log.append(('Added Programming Exercise: {}'.format(programming_exercise.name), 1))
+
+
     def load_follow_up_activities(self, follow_up_activities_structure, topic):
         if follow_up_activities_structure:
             structure = yaml.load(open(os.path.join(self.BASE_PATH, follow_up_activities_structure), encoding='UTF-8').read())
@@ -161,3 +191,10 @@ class Command(BaseCommand):
                     )
                     activity.curriculum_links.add(object)
                 self.load_log.append(('Added Activity: {}'.format(activity.name), 1))
+
+
+    def convert_md_file(self, filepath):
+        file_object = open(os.path.join(self.BASE_PATH, filepath), encoding='UTF-8')
+        raw_content = file_object.read()
+        converted_file = self.converter.run(raw_content, tags=self.tag_override)
+        return converted_file

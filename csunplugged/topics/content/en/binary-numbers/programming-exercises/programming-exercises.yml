@@ -1,5 +1,5 @@
 - slug: count-to-10
-  name: Count to 10
+  exercise-number: 1
   md-file: binary-numbers/programming-exercises/exercise-1/index.md
   learning-outcomes:
     - Learned maths
@@ -11,7 +11,7 @@
     hints: binary-numbers/programming-exercises/exercise-1/python-hints.md
     solution: binary-numbers/programming-exercises/exercise-1/python-solution.md
 - slug: count-to-a-million
-  name: Count to a Million!
+  exercise-number: 2
   md-file: binary-numbers/programming-exercises/exercise-2/index.md
   learning-outcomes:
     - Learned maths
