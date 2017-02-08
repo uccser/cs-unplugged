@@ -7,10 +7,10 @@
 {% endautoescape %}
 
 <h2>Lessons</h2>
-<div class="list-group">
 {% for lesson in lessons %}
-  <a href="{% url 'topics:lesson' topic.slug unit_plan.slug lesson.age_bracket_slug lesson.slug %}" class="list-group-item list-group-item-action">{{ lesson.age_bracket }}: {{ lesson.name }}</a>
+  <p>
+    <a href="{% url 'topics:lesson' topic.slug unit_plan.slug lesson.age_bracket_slug lesson.slug %}" class="btn btn-outline-danger">{{ lesson.age_bracket }}: {{ lesson.name }}</a>
+  </p>
 {% endfor %}
-</div>
 
 {% endblock content %}

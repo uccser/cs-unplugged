@@ -6,41 +6,45 @@
 {% endautoescape %}
 
 {% if unit_plans %}
-<h2>Unit Plans</h2>
-<div class="list-group">
-{% for unit_plan in unit_plans %}
-  <a href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}" class="list-group-item list-group-item-action">{{ unit_plan.name }}</a>
-{% endfor %}
-</div>
+  <h2>Unit Plans</h2>
+  <div class="list-group">
+  {% for unit_plan in unit_plans %}
+    <p>
+      <a href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}" class="btn btn-outline-danger">{{ unit_plan.name }}</a>
+    </p>
+  {% endfor %}
+  </div>
 {% else %}
-<p>No unit plans for {{ topic }}.</p>
+  <p>No unit plans for {{ topic }}.</p>
 {% endif %}
 
 {% if programming_exercises %}
   <h2>Programming Exercises</h2>
-  <div class="list-group">
   {% for programming_exercise in programming_exercises %}
-    <a href="{% url 'topics:programming_exercise' topic.slug programming_exercise.slug %}" class="list-group-item list-group-item-action">{{ programming_exercise.name }}</a>
+    <p>
+      <a href="{% url 'topics:programming_exercise' topic.slug programming_exercise.slug %}" class="btn btn-outline-danger">{{ programming_exercise.name }}</a>
+    </p>
   {% endfor %}
-  </div>
 {% else %}
   <p>No programming exercises for {{ topic }}.</p>
 {% endif %}
 
 {% if follow_up_activities %}
   <h2>Follow Up Activities</h2>
-  <div class="list-group">
   {% for activity in follow_up_activities %}
-    <a href="{% url 'topics:activity' topic.slug activity.slug %}" class="list-group-item list-group-item-action">{{ activity.name }}</a>
+    <p>
+      <a href="{% url 'topics:activity' topic.slug activity.slug %}" class="btn btn-outline-danger">{{ activity.name }}</a>
+    </p>
   {% endfor %}
-  </div>
 {% else %}
   <p>No follow up activities for {{ topic }}.</p>
 {% endif %}
 
 {% if topic.other_resources %}
   <h2>Looking for more?</h2>
-  <p><a class="btn btn-secondary" href="{% url 'topics:other_resources' topic.slug %}">Click here for other resources</a></p>
+  <p>
+    <a href="{% url 'topics:other_resources' topic.slug %}" class="btn btn-outline-danger">Click here for other resources</a>
+  </p>
 {% endif %}
 
 {% endblock %}

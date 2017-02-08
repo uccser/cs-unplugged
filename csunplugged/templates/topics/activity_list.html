@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>{{ topic.name }} Follow Up Activities</h2>
-{% if all_follow_up_activities %}
-<div class="list-group">
-{% for activity in all_follow_up_activities %}
-  <a href="{% url 'topics:activity' topic.slug activity.slug %}" class="list-group-item list-group-item-action">{{ activity.name }}</a>
-{% endfor %}
-</div>
-{% else %}
-<p>No follow up activities for {{ topic }}.</p>
-{% endif %}
+  <h2>{{ topic.name }} Follow Up Activities</h2>
+  {% if all_follow_up_activities %}
+    {% for activity in all_follow_up_activities %}
+      <p>
+        <a href="{% url 'topics:activity' topic.slug activity.slug %}" class="btn btn-outline-danger">{{ activity.name }}</a>
+      </p>
+    {% endfor %}
+  {% else %}
+    <p>No follow up activities for {{ topic }}.</p>
+  {% endif %}
 
 {% endblock content %}
