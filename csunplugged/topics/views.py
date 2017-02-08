@@ -22,6 +22,8 @@ class TopicView(generic.DetailView):
         context = super(TopicView, self).get_context_data(**kwargs)
         # Add in a QuerySet of all the connected unit plans
         context['unit_plans'] = UnitPlan.objects.filter(topic=self.object).order_by('name')
+        # Add in a QuerySet of all the connected programming exercises
+        context['programming_exercises'] = ProgrammingExercise.objects.filter(topic=self.object).order_by('exercise_number')
         # Add in a QuerySet of all the connected follow up activities
         context['follow_up_activities'] = FollowUpActivity.objects.filter(topic=self.object).order_by('name')
         return context
