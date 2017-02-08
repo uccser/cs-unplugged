@@ -54,7 +54,6 @@ class Command(BaseCommand):
             topic.save()
             self.load_log.append('Added Topic: {}'.format(topic.name))
 
-            self.stdout.write(topic_structure['follow-up-activities'])
             if topic_structure['follow-up-activities']:
                 self.load_follow_up_activities(topic_structure['follow-up-activities'], topic)
         self.print_load_log()
