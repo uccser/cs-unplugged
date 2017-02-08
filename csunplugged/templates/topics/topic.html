@@ -5,6 +5,17 @@
 {{ topic.content }}
 {% endautoescape %}
 
+{% if unit_plans %}
+<h2>Unit Plans</h2>
+<div class="list-group">
+{% for unit_plan in unit_plans %}
+  <a href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}" class="list-group-item list-group-item-action">{{ unit_plan.name }}</a>
+{% endfor %}
+</div>
+{% else %}
+<p>No unit plans for {{ topic }}.</p>
+{% endif %}
+
 {% if follow_up_activities %}
 <h2>Follow Up Activities</h2>
 <div class="list-group">
@@ -15,7 +26,6 @@
 {% else %}
 <p>No follow up activities for {{ topic }}.</p>
 {% endif %}
-
 
 {% if topic.other_resources %}
 <h2>Looking for more?</h2>
