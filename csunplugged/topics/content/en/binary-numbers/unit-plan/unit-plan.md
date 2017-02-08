@@ -22,8 +22,8 @@ These are place-holder videos, new videos are planned to be developed to represe
 - [Video two](https://www.youtube.com/watch?v=Pz7dLWvi2w0)
 - [Video three](https://www.youtube.com/watch?v=xc0stfTVE_8)
 - [Video four](https://www.youtube.com/watch?v=GUqle9RE3Y8)
-
-##Vocabulary Explained
+
+## Vocabulary Explained
 
 ### Binary Digits
 
