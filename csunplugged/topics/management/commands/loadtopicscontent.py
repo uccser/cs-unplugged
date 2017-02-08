@@ -41,14 +41,14 @@ class Command(BaseCommand):
             other_resources_file = topic_structure['other-resources-md-file']
             if other_resources_file:
                 other_resources_data = self.convert_md_file(other_resources_file)
-                other_resources_html = other_resources_data.html
+                other_resources_html = other_resources_data.html_string
             else:
                 other_resources_html = ''
 
             topic = Topic(
                 slug=topic_structure['slug'],
                 name=topic_data.heading,
-                content=topic_data.html,
+                content=topic_data.html_string,
                 other_resources=other_resources_html,
                 icon=topic_structure['icon']
             )
@@ -83,7 +83,7 @@ class Command(BaseCommand):
         unit_plan = topic.topic_unit_plans.create(
             slug=unit_plan_structure['slug'],
             name=unit_plan_content.heading,
-            content=unit_plan_content.html,
+            content=unit_plan_content.html_string,
         )
         unit_plan.save()
         self.load_log.append(('Added Unit Plan: {}'.format(unit_plan.name), 1))
@@ -109,7 +109,7 @@ class Command(BaseCommand):
             name=lesson_content.heading,
             number=lesson_structure['lesson-number'],
             age_bracket=age_bracket,
-            content=lesson_content.html,
+            content=lesson_content.html_string,
         )
         lesson.save()
         # Add learning outcomes
@@ -138,7 +138,7 @@ class Command(BaseCommand):
                 activity = topic.topic_follow_up_activities.create(
                     slug=activity_data['slug'],
                     name=activity_content.heading,
-                    content=activity_content.html,
+                    content=activity_content.html_string,
                 )
                 activity.save()
                 for link in activity_data['curriculum-links']:
