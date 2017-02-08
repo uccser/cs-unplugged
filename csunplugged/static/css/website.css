@@ -3,8 +3,9 @@ header img {
   display: block;
   margin: 0 auto;
 }
-h2, h3 {
+h1, h2, h3 {
   color: #e33333;
+  margin-top: 1.5rem;
 }
 img {
   max-width: 100%;
