@@ -46,6 +46,12 @@ urlpatterns = [
         views.LessonView.as_view(),
         name='lesson'
     ),
+    # eg: /topics/binary-numbers/programming/exercise-1
+    url(
+        r'^(?P<topic_slug>[-\w]+)/programming/(?P<programming_exercise_slug>[-\w]+)$',
+        views.ProgrammingExerciseView.as_view(),
+        name='programming_exercise'
+    ),
 
     # TODO: The following need to be implemented
 
@@ -62,10 +68,5 @@ urlpatterns = [
     #     r'^(?P<topic_slug>[-\w]+)/programming/$',
     #     views.ProgrammingExercisesList.as_view(),
     #     name='programming_exercises_list'
-    # ),
-    # url(
-    #     r'^(?P<topic_slug>[-\w]+)/programming/(?P<programming_exercise_slug>[-\w]+)$',
-    #     views.ProgrammingExercisesView.as_view(),
-    #     name='programming_exercise'
     # ),
 ]

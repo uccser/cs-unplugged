@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% autoescape off %}
+{{ programming_exercise.content }}
+{% endautoescape %}
+
+<h2>Learning Outcomes</h2>
+{% if programming_exercise_learning_outcomes %}
+  <ul>
+  {% for learning_outcome in programming_exercise_learning_outcomes %}
+    <li>{{ learning_outcome.text }}</li>
+  {% endfor %}
+</ul>
+{% else %}
+  <p>No learning outcomes listed for {{ programming_exercise.name }}.</p>
+{% endif %}
+
+{% if programming_exercise.scratch_hints or programming_exercise.scratch_solution %}
+  <h2>Scratch</h2>
+
+  {% if programming_exercise.scratch_hints %}
+    <h3>Hints</h3>
+    {% autoescape off %}
+      {{ programming_exercise.scratch_hints }}
+    {% endautoescape %}
+  {% endif %}
+
+  {% if programming_exercise.scratch_solution %}
+    <h3>Solution</h3>
+    {% autoescape off %}
+      {{ programming_exercise.scratch_solution }}
+    {% endautoescape %}
+  {% endif %}
+{% endif %}
+
+{% if programming_exercise.python_hints or programming_exercise.python_solution %}
+  <h2>Python</h2>
+
+  {% if programming_exercise.python_hints %}
+    <h3>Hints</h3>
+    {% autoescape off %}
+      {{ programming_exercise.python_hints }}
+    {% endautoescape %}
+  {% endif %}
+
+  {% if programming_exercise.python_solution %}
+    <h3>Solution</h3>
+    {% autoescape off %}
+      {{ programming_exercise.python_solution }}
+    {% endautoescape %}
+  {% endif %}
+{% endif %}
+
+{% endblock content %}

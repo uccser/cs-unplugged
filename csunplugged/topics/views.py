@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, get_list_or_404
 from django.views import generic
 
-from .models import Topic, FollowUpActivity, UnitPlan, Lesson
+from .models import Topic, FollowUpActivity, UnitPlan, Lesson, ProgrammingExercise
 
 class IndexView(generic.ListView):
     template_name = 'topics/index.html'
@@ -71,6 +71,27 @@ class LessonView(generic.DetailView):
         # Add all the connected learning outcomes
         context['lesson_learning_outcomes'] = self.object.learning_outcomes.all()
         return context
+
+
+class ProgrammingExerciseView(generic.DetailView):
+    model = ProgrammingExercise
+    template_name = 'topics/programming_exercise.html'
+    context_object_name = 'programming_exercise'
+
+    def get_object(self, **kwargs):
+        return get_object_or_404(
+            self.model,
+            topic__slug=self.kwargs.get('topic_slug', None),
+            slug=self.kwargs.get('programming_exercise_slug', None)
+        )
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(ProgrammingExerciseView, self).get_context_data(**kwargs)
+        # Add all the connected learning outcomes
+        context['programming_exercise_learning_outcomes'] = self.object.learning_outcomes.all()
+        return context
+
 
 class ActivityList(generic.ListView):
     model = FollowUpActivity
