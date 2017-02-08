@@ -39,6 +39,15 @@ class UnitPlanView(generic.DetailView):
             slug=self.kwargs.get('unit_plan_slug', None)
         )
 
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(UnitPlanView, self).get_context_data(**kwargs)
+        # Add connected topic
+        context['topic'] = get_object_or_404(Topic, slug=self.kwargs.get('topic_slug', None))
+        # Add all the connected lessons
+        context['lessons'] = self.object.unit_plan_lessons.order_by('age_bracket', 'number')
+        return context
+
 
 class LessonView(generic.DetailView):
     model = Lesson
