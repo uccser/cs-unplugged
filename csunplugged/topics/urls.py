@@ -36,15 +36,15 @@ urlpatterns = [
     ),
     # eg: /topics/binary-numbers/programming/
     url(
-    r'^(?P<topic_slug>[-\w]+)/programming/$',
-    views.ProgrammingExerciseList.as_view(),
-    name='programming_exercises_list'
+        r'^(?P<topic_slug>[-\w]+)/programming/$',
+        views.ProgrammingExerciseList.as_view(),
+        name='programming_exercises_list'
     ),
     # eg: /topics/binary-numbers/programming/exercise-1
     url(
-    r'^(?P<topic_slug>[-\w]+)/programming/(?P<programming_exercise_slug>[-\w]+)$',
-    views.ProgrammingExerciseView.as_view(),
-    name='programming_exercise'
+        r'^(?P<topic_slug>[-\w]+)/programming/(?P<programming_exercise_slug>[-\w]+)$',
+        views.ProgrammingExerciseView.as_view(),
+        name='programming_exercise'
     ),
     # eg: /topics/binary-numbers/unit-plan
     url(
