@@ -28,8 +28,9 @@ class Command(BaseCommand):
         return yaml.load(structure_file.read())
 
     def print_load_log(self):
-        for log in self.load_log:
-            self.stdout.write(log)
+        for (log, indent) in self.load_log:
+            self.stdout.write('{indent}{text}'.format(indent='  '*indent,text=log))
+        self.stdout.write('\n')
 
     @transaction.atomic
     def load_topics(self, structure):
@@ -52,7 +53,7 @@ class Command(BaseCommand):
                 icon=topic_structure['icon']
             )
             topic.save()
-            self.load_log.append('Added Topic: {}'.format(topic.name))
+            self.load_log.append(('\nAdded Topic: {}'.format(topic.name), 0))
 
             # Load unit plans
             for unit_plan_structure_file in topic_structure['unit-plans']:
@@ -85,7 +86,7 @@ class Command(BaseCommand):
             content=unit_plan_content.html,
         )
         unit_plan.save()
-        self.load_log.append('Added Unit Plan: {}'.format(unit_plan.name))
+        self.load_log.append(('Added Unit Plan: {}'.format(unit_plan.name), 1))
 
         lessons_structure = unit_plan_structure['lessons']
         self.load_lessons(lessons_structure, topic, unit_plan)
@@ -123,7 +124,7 @@ class Command(BaseCommand):
                 name=link
             )
             lesson.curriculum_links.add(object)
-        self.load_log.append('Added Lesson: {}'.format(lesson.name))
+        self.load_log.append(('Added Lesson: {}'.format(lesson.__str__()), 2))
 
 
     def load_follow_up_activities(self, follow_up_activities_structure, topic):
@@ -145,4 +146,4 @@ class Command(BaseCommand):
                         name=link
                     )
                     activity.curriculum_links.add(object)
-                self.load_log.append('Added Activity: {}'.format(activity.name))
+                self.load_log.append(('Added Activity: {}'.format(activity.name), 1))
