@@ -14,7 +14,7 @@ class Command(BaseCommand):
     help = 'Converts Markdown files listed in structure file and stores'
 
     def handle(self, *args, **options):
-        """The function called when the loadtopicscontent command is given"""
+        """The function called when the loadtopics command is given"""
 
         # This path should be calculated, hardcoded for prototype
         self.BASE_PATH = 'topics/content/en/'
