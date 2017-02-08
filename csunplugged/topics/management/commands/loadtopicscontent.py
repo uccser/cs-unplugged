@@ -54,14 +54,38 @@ class Command(BaseCommand):
             topic.save()
             self.load_log.append('Added Topic: {}'.format(topic.name))
 
+            # Load unit plans
+            for unit_plan_structure_file in topic_structure['unit-plans']:
+                self.load_unit_plan(unit_plan_structure_file, topic)
+
+            # Load follow up activities
             if topic_structure['follow-up-activities']:
                 self.load_follow_up_activities(topic_structure['follow-up-activities'], topic)
+
+        # Print log output
         self.print_load_log()
 
     def convert_md_file(self, file_path):
         """Returns the Kordac object for a given Markdown file"""
         content = open(os.path.join(self.BASE_PATH, file_path), encoding='UTF-8').read()
         return self.converter.run(content)
+
+
+    def load_unit_plan(self, unit_plan_structure_file, topic):
+        # TODO: Should create generic functions for loading YAML and reading file
+        unit_plan_structure = yaml.load(open(os.path.join(self.BASE_PATH, unit_plan_structure_file), encoding='UTF-8').read())
+
+        unit_plan_file = open(os.path.join(self.BASE_PATH, unit_plan_structure['md-file']), encoding='UTF-8')
+        raw_content = unit_plan_file.read()
+        unit_plan_content = self.converter.run(raw_content)
+
+        unit_plan = topic.topic_unit_plans.create(
+            slug=unit_plan_structure['slug'],
+            name=unit_plan_content.heading,
+            content=unit_plan_content.html,
+        )
+        unit_plan.save()
+        self.load_log.append('Added Unit Plan: {}'.format(unit_plan.name))
 
 
     def load_follow_up_activities(self, follow_up_activities_structure, topic):

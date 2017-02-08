@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, get_list_or_404
 from django.views import generic
 
-from .models import Topic, FollowUpActivity
+from .models import Topic, FollowUpActivity, UnitPlan
 
 class IndexView(generic.ListView):
     template_name = 'topics/index.html'
@@ -23,6 +23,19 @@ class TopicView(generic.DetailView):
         # Add in a QuerySet of all the connected follow up activities
         context['follow_up_activities'] = FollowUpActivity.objects.filter(topic=self.object).order_by('name')
         return context
+
+
+class UnitPlanView(generic.DetailView):
+    model = UnitPlan
+    template_name = 'topics/unit_plan.html'
+    context_object_name = 'unit_plan'
+
+    def get_object(self, **kwargs):
+        return get_object_or_404(
+            self.model,
+            topic__slug=self.kwargs.get('topic_slug', None),
+            slug=self.kwargs.get('unit_plan_slug', None)
+        )
 
 
 class ActivityList(generic.ListView):
