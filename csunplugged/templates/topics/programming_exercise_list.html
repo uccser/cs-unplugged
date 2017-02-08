@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>{{ topic.name }} Programming Exercises</h2>
+
+  {% if all_programming_exercises %}
+    <div class="list-group">
+    {% for programming_exercise in all_programming_exercises %}
+      <a href="{% url 'topics:programming_exercise' topic.slug programming_exercise.slug %}" class="list-group-item list-group-item-action">{{ programming_exercise.name }}</a>
+    {% endfor %}
+    </div>
+  {% else %}
+    <p>No programming exercises for {{ topic }}.</p>
+  {% endif %}
+
+{% endblock content %}

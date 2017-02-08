@@ -34,6 +34,18 @@ urlpatterns = [
         views.OtherResourcesView.as_view(),
         name='other_resources'
     ),
+    # eg: /topics/binary-numbers/programming/
+    url(
+    r'^(?P<topic_slug>[-\w]+)/programming/$',
+    views.ProgrammingExerciseList.as_view(),
+    name='programming_exercises_list'
+    ),
+    # eg: /topics/binary-numbers/programming/exercise-1
+    url(
+    r'^(?P<topic_slug>[-\w]+)/programming/(?P<programming_exercise_slug>[-\w]+)$',
+    views.ProgrammingExerciseView.as_view(),
+    name='programming_exercise'
+    ),
     # eg: /topics/binary-numbers/unit-plan
     url(
         r'^(?P<topic_slug>[-\w]+)/(?P<unit_plan_slug>[-\w]+)/$',
@@ -46,12 +58,6 @@ urlpatterns = [
         views.LessonView.as_view(),
         name='lesson'
     ),
-    # eg: /topics/binary-numbers/programming/exercise-1
-    url(
-        r'^(?P<topic_slug>[-\w]+)/programming/(?P<programming_exercise_slug>[-\w]+)$',
-        views.ProgrammingExerciseView.as_view(),
-        name='programming_exercise'
-    ),
 
     # TODO: The following need to be implemented
 
@@ -62,11 +68,5 @@ urlpatterns = [
     #     # Currently redirect to unit plan
     #     views.UnitPlanView.as_view(),
     #     name='age_bracket'
-    # ),
-    # # eg: /topics/binary-numbers/programming/
-    # url(
-    #     r'^(?P<topic_slug>[-\w]+)/programming/$',
-    #     views.ProgrammingExercisesList.as_view(),
-    #     name='programming_exercises_list'
     # ),
 ]

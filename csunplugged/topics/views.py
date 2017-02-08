@@ -73,6 +73,23 @@ class LessonView(generic.DetailView):
         return context
 
 
+class ProgrammingExerciseList(generic.ListView):
+    model = ProgrammingExercise
+    template_name = 'topics/programming_exercise_list.html'
+    context_object_name = 'all_programming_exercises'
+
+    def get_queryset(self, **kwargs):
+        """Return all activities for topic"""
+        # TODO: Is this the best way to raise 404 if invalid topic?
+        topic = get_object_or_404(Topic, slug=self.kwargs.get('topic_slug', None))
+        return ProgrammingExercise.objects.filter(topic__slug=self.kwargs.get('topic_slug', None)).order_by('exercise_number')
+
+    def get_context_data(self, **kwargs):
+        context = super(ProgrammingExerciseList, self).get_context_data(**kwargs)
+        context['topic'] = get_object_or_404(Topic, slug=self.kwargs.get('topic_slug', None))
+        return context
+
+
 class ProgrammingExerciseView(generic.DetailView):
     model = ProgrammingExercise
     template_name = 'topics/programming_exercise.html'
