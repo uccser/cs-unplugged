@@ -6,7 +6,7 @@
 topics:
   - slug: binary-numbers
     md-file: binary-numbers/index.md
-    icon: images/binary-numbers.png
+    icon: img/binary-numbers-0-1.png
     unit-plans:
       - binary-numbers/unit-plan/unit-plan.yml
     programming-exercises: binary-numbers/programming-exercises/programming-exercises.yml
@@ -15,7 +15,7 @@ topics:
 
   - slug: error-detection-and-correction
     md-file: error-detection-correction/index.md
-    icon: images/error-detection-correction.png
+    icon: img/error-detection-correction-parity-example.png
     unit-plans:
       - error-detection-correction/unit-plan/unit-plan.yml
     programming-exercises:

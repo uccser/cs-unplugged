@@ -10,3 +10,7 @@ h1, h2, h3 {
 img {
   max-width: 100%;
 }
+.topic-img-logo {
+  height: 200px;
+  object-fit: contain;
+}

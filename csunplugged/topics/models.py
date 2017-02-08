@@ -23,7 +23,7 @@ class Topic(models.Model):
     name = models.CharField(max_length=100)
     content = models.TextField()
     other_resources = models.TextField()
-    icon = models.CharField(max_length=100)
+    icon = models.CharField(max_length=100, null=True)
 
     def __str__(self):
         return self.name
