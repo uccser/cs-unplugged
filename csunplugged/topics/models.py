@@ -59,7 +59,9 @@ class Lesson(models.Model):
     slug = models.SlugField()
     name = models.CharField(max_length=100)
     number = models.IntegerField()
+    # TODO: Store age_brackets in different model (see issue #2)
     age_bracket = models.CharField(max_length=20)
+    age_bracket_slug = models.CharField(max_length=20)
     content = models.TextField()
     learning_outcomes = models.ManyToManyField(
         LearningOutcome,

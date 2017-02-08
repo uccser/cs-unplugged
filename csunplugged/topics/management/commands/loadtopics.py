@@ -122,6 +122,7 @@ class Command(BaseCommand):
             name=lesson_content.heading,
             number=lesson_structure['lesson-number'],
             age_bracket=age_bracket,
+            age_bracket_slug=slugify(age_bracket),
             content=lesson_content.html_string,
         )
         lesson.save()
