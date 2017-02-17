@@ -6,7 +6,6 @@ import yaml
 import os
 import os.path
 import sys
-import markdown
 import mdx_math
 from kordac import Kordac
 
