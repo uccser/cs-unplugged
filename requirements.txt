@@ -1,0 +1,7 @@
+Django==1.10.5
+psycopg2>=2.5
+PyYAML>=3.12
+Markdown>=2.6.8
+kordac>=0.0.3
+sphinx>=1.5.2
+sphinx_rtd_theme>=0.1.9

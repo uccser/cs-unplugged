@@ -1,0 +1,24 @@
+- slug: count-to-10
+  exercise-number: 1
+  md-file: binary-numbers/programming-exercises/exercise-1/index.md
+  learning-outcomes:
+    - Learned maths
+    - Is smiling
+  scratch:
+    hints: binary-numbers/programming-exercises/exercise-1/scratch-hints.md
+    solution: binary-numbers/programming-exercises/exercise-1/scratch-solution.md
+  python:
+    hints: binary-numbers/programming-exercises/exercise-1/python-hints.md
+    solution: binary-numbers/programming-exercises/exercise-1/python-solution.md
+- slug: count-to-a-million
+  exercise-number: 2
+  md-file: binary-numbers/programming-exercises/exercise-2/index.md
+  learning-outcomes:
+    - Learned maths
+    - Is smiling
+  scratch:
+    hints: binary-numbers/programming-exercises/exercise-2/scratch-hints.md
+    solution: binary-numbers/programming-exercises/exercise-2/scratch-solution.md
+  python:
+    hints: binary-numbers/programming-exercises/exercise-2/python-hints.md
+    solution: binary-numbers/programming-exercises/exercise-2/python-solution.md

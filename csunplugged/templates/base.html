@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>CS Unplugged</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/website.css' %}">
+  <!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
+</head>
+<body>
+  <nav class="navbar navbar-toggleable-sm navbar-light bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="{% url 'general:home' %}">
+      <img src="{% static 'img/logo.png' %}" height="30" alt="">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="{% url 'general:home' %}">Home</a>
+      <a class="nav-item nav-link" href="{% url 'topics:index' %}">Topics</a>
+      <a class="nav-item nav-link" href="{% url 'general:about' %}">About</a>
+    </div>
+  </div>
+  <span style="float:right;width: 20rem;color: red;">Prototype - Internal Use Only</span>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-9">
+        {% block content %}
+        {% endblock content%}
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery first, then Tether, then Bootstrap JS. -->
+  <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+  <script src="{% static 'js/tether.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>

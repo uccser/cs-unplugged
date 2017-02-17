@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>{{ topic.name }} Programming Exercises</h2>
+
+  {% if all_programming_exercises %}
+    {% for programming_exercise in all_programming_exercises %}
+      <p>
+        <a href="{% url 'topics:programming_exercise' topic.slug programming_exercise.slug %}" class="btn btn-outline-danger">{{ programming_exercise.name }}</a>
+      </p>
+    {% endfor %}
+  {% else %}
+    <p>No programming exercises for {{ topic }}.</p>
+  {% endif %}
+
+{% endblock content %}

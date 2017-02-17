@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% autoescape off %}
+{{ activity.content }}
+{% endautoescape %}
+
+{% if activity.curriculum_links %}
+<h2>Curriculum Links</h2>
+<p>
+{% for link in activity_curriculum_links %}
+  <span class="badge badge-default">{{ link.name }}</span>
+{% endfor %}
+</p>
+{% endif %}
+
+{% endblock content %}
