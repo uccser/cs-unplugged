@@ -34,15 +34,15 @@ urlpatterns = [
         views.OtherResourcesView.as_view(),
         name='other_resources'
     ),
-    # eg: /topics/binary-numbers/programming/
+    # eg: /topics/binary-numbers/plugged-in/
     url(
-        r'^(?P<topic_slug>[-\w]+)/programming/$',
+        r'^(?P<topic_slug>[-\w]+)/plugged-in/$',
         views.ProgrammingExerciseList.as_view(),
         name='programming_exercises_list'
     ),
-    # eg: /topics/binary-numbers/programming/exercise-1
+    # eg: /topics/binary-numbers/plugged-in/exercise-1
     url(
-        r'^(?P<topic_slug>[-\w]+)/programming/(?P<programming_exercise_slug>[-\w]+)$',
+        r'^(?P<topic_slug>[-\w]+)/plugged-in/(?P<programming_exercise_slug>[-\w]+)$',
         views.ProgrammingExerciseView.as_view(),
         name='programming_exercise'
     ),

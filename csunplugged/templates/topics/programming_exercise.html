@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>{{ programming_exercise.name }}</h1>
+<h1><span class="subtitle">Plugged In:</span> {{ programming_exercise.name }}</h1>
 
 {% autoescape off %}
 {{ programming_exercise.content }}

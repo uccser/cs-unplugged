@@ -21,7 +21,7 @@
 {% endif %}
 
 {% if programming_exercises %}
-  <h2>Programming Exercises</h2>
+  <h2>Plugged In <span class="subtitle">(programming exercises)</span></h2>
   {% for programming_exercise in programming_exercises %}
     <p>
       <a href="{% url 'topics:programming_exercise' topic.slug programming_exercise.slug %}" class="btn btn-outline-danger">{{ programming_exercise.name }}</a>
