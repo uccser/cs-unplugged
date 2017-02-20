@@ -6,7 +6,6 @@ import yaml
 import os
 import os.path
 import sys
-import markdown
 import mdx_math
 from kordac import Kordac
 
@@ -15,26 +14,26 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         """The function called when the loadtopics command is given"""
-
-        # This path should be calculated, hardcoded for prototype
-        self.BASE_PATH = 'topics/content/en/'
-        self.converter = Kordac()
+        self.BASE_PATH = 'topics/content/en/' # TODO: Hardcoded for prototype
         language_structure = self.read_language_structure()
-
-        # TODO: Think about how to store tag and HTML templates override for Kordac
-        # Currently this needs to be called on each call to run() however
-        # soon this will only be required on creation on Kordac converter
-        self.tag_override = [
-            'headingpre',
-            'commentpre',
-            'comment',
-            'button',
-            'video',
-            'image',
-        ]
-
+        self.setup_converter()
         self.load_topics(language_structure)
 
+    def setup_converter(self):
+        """Create Kordac converter with custom processors, html templates,
+        and extensions.
+        """
+        templates = dict()
+        extensions = [
+            'markdown.extensions.fenced_code',
+            'markdown.extensions.codehilite',
+            'markdown.extensions.sane_lists',
+            mdx_math.MathExtension(enable_dollar_delimiter=True)
+        ]
+        self.converter = Kordac(html_templates=templates, extensions=extensions)
+        custom_processors = self.converter.processor_defaults()
+        custom_processors.add('remove-title')
+        self.converter.update_processors(custom_processors)
 
     def read_language_structure(self):
         structure_file = open(os.path.join(self.BASE_PATH, 'structure.yml'), encoding='UTF-8')
@@ -60,7 +59,7 @@ class Command(BaseCommand):
 
             topic = Topic(
                 slug=topic_structure['slug'],
-                name=topic_data.heading,
+                name=topic_data.title,
                 content=topic_data.html_string,
                 other_resources=other_resources_html,
                 icon=topic_structure['icon']
@@ -86,20 +85,16 @@ class Command(BaseCommand):
     def convert_md_file(self, file_path):
         """Returns the Kordac object for a given Markdown file"""
         content = open(os.path.join(self.BASE_PATH, file_path), encoding='UTF-8').read()
-        return self.converter.run(content, tags=self.tag_override)
-
+        return self.converter.convert(content)
 
     def load_unit_plan(self, unit_plan_structure_file, topic):
         # TODO: Should create generic functions for loading YAML and reading file
         unit_plan_structure = yaml.load(open(os.path.join(self.BASE_PATH, unit_plan_structure_file), encoding='UTF-8').read())
-
-        unit_plan_file = open(os.path.join(self.BASE_PATH, unit_plan_structure['md-file']), encoding='UTF-8')
-        raw_content = unit_plan_file.read()
-        unit_plan_content = self.converter.run(raw_content, tags=self.tag_override)
+        unit_plan_content = self.convert_md_file(unit_plan_structure['md-file'])
 
         unit_plan = topic.topic_unit_plans.create(
             slug=unit_plan_structure['slug'],
-            name=unit_plan_content.heading,
+            name=unit_plan_content.title,
             content=unit_plan_content.html_string,
         )
         unit_plan.save()
@@ -108,22 +103,17 @@ class Command(BaseCommand):
         lessons_structure = unit_plan_structure['lessons']
         self.load_lessons(lessons_structure, topic, unit_plan)
 
-
     def load_lessons(self, lessons_structure, topic, unit_plan):
         for age_bracket, age_bracket_lessons in lessons_structure.items():
             for lesson_structure in age_bracket_lessons:
                 self.load_lesson(lesson_structure, topic, unit_plan, age_bracket)
 
-
     def load_lesson(self, lesson_structure, topic, unit_plan, age_bracket):
-        lesson_file = open(os.path.join(self.BASE_PATH, lesson_structure['md-file']), encoding='UTF-8')
-        raw_content = lesson_file.read()
-        lesson_content = self.converter.run(raw_content, tags=self.tag_override)
-
+        lesson_content = self.convert_md_file(lesson_structure['md-file'])
         lesson = topic.topic_lessons.create(
             unit_plan=unit_plan,
             slug=lesson_structure['slug'],
-            name=lesson_content.heading,
+            name=lesson_content.title,
             number=lesson_structure['lesson-number'],
             age_bracket=age_bracket,
             age_bracket_slug=slugify(age_bracket),
@@ -144,7 +134,6 @@ class Command(BaseCommand):
             lesson.curriculum_links.add(object)
         self.load_log.append(('Added Lesson: {}'.format(lesson.__str__()), 2))
 
-
     def load_programming_exercises(self, programming_exercises_structure, topic):
         structure = yaml.load(open(os.path.join(self.BASE_PATH, programming_exercises_structure), encoding='UTF-8').read())
 
@@ -153,7 +142,7 @@ class Command(BaseCommand):
 
             programming_exercise = topic.topic_programming_exercises.create(
                 slug=programming_exercise_data['slug'],
-                name=programming_exercise_content.heading,
+                name=programming_exercise_content.title,
                 exercise_number=programming_exercise_data['exercise-number'],
                 content=programming_exercise_content.html_string,
                 scratch_hints=self.convert_md_file(programming_exercise_data['scratch']['hints']).html_string,
@@ -170,18 +159,15 @@ class Command(BaseCommand):
                 programming_exercise.learning_outcomes.add(object)
             self.load_log.append(('Added Programming Exercise: {}'.format(programming_exercise.name), 1))
 
-
     def load_follow_up_activities(self, follow_up_activities_structure, topic):
         if follow_up_activities_structure:
             structure = yaml.load(open(os.path.join(self.BASE_PATH, follow_up_activities_structure), encoding='UTF-8').read())
 
             for activity_data in structure:
-                activity_file = open(os.path.join(self.BASE_PATH, activity_data['md-file']), encoding='UTF-8')
-                raw_content = activity_file.read()
-                activity_content = self.converter.run(raw_content, tags=self.tag_override)
+                activity_content = self.convert_md_file(activity_data['md-file'])
                 activity = topic.topic_follow_up_activities.create(
                     slug=activity_data['slug'],
-                    name=activity_content.heading,
+                    name=activity_content.title,
                     content=activity_content.html_string,
                 )
                 activity.save()
@@ -191,10 +177,3 @@ class Command(BaseCommand):
                     )
                     activity.curriculum_links.add(object)
                 self.load_log.append(('Added Activity: {}'.format(activity.name), 1))
-
-
-    def convert_md_file(self, filepath):
-        file_object = open(os.path.join(self.BASE_PATH, filepath), encoding='UTF-8')
-        raw_content = file_object.read()
-        converted_file = self.converter.run(raw_content, tags=self.tag_override)
-        return converted_file
