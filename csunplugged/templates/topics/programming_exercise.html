@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
+<h1>{{ programming_exercise.name }}</h1>
+
 {% autoescape off %}
 {{ programming_exercise.content }}
 {% endautoescape %}
