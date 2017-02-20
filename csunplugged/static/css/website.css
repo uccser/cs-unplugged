@@ -7,6 +7,11 @@ h1, h2, h3 {
   color: #e33333;
   margin-top: 1.5rem;
 }
+h1 span.subtitle,
+h2 span.subtitle,
+h3 span.subtitle {
+  color: #888;
+}
 img {
   max-width: 100%;
 }
