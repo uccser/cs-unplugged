@@ -11,9 +11,9 @@ urlpatterns = [
         name='index'
     ),
     # eg: /resource/example-resource/
-    # url(
-    #     r'^(?P<resource_slug>[-\w]+)/$',
-    #     views.ResourceView.as_view(),
-    #     name='resource'
-    # )
+    url(
+        r'^(?P<resource_slug>[-\w]+)/$',
+        views.ResourceView.as_view(),
+        name='resource'
+    )
 ]

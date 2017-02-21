@@ -7,7 +7,7 @@
   {% if all_resources %}
     {% for resource in all_resources %}
       <p>
-        <a href="">{{ resource.name }}</a>
+        <a href="{% url 'resources:resource' resource.slug %}">{{ resource.name }}</a>
       </p>
     {% endfor %}
   {% else %}
