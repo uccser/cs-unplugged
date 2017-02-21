@@ -3,6 +3,7 @@ from django.db import models
 
 class LearningOutcome(models.Model):
     #  Auto-incrementing 'id' field is automatically set by Django
+    slug = models.SlugField(unique=True)
     text = models.CharField(max_length=200, unique=True)
 
     def __str__(self):
