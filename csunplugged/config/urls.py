@@ -22,6 +22,7 @@ from django.conf.urls.static import static
 urlpatterns = i18n_patterns(
     url(r'', include('general.urls', namespace='general')),
     url(r'^topics/', include('topics.urls', namespace='topics')),
+    url(r'^resources/', include('resources.urls', namespace='resources')),
     url(r'^admin/', include(admin.site.urls)),
 )
 # ] + static(settings.STATIC_URL, documnet_root=settings.STATIC_ROOT)
