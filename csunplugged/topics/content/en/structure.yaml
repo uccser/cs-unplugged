@@ -8,18 +8,18 @@ topics:
     md-file: binary-numbers/index.md
     icon: img/binary-numbers-0-1.png
     unit-plans:
-      - binary-numbers/unit-plan/unit-plan.yml
-    programming-exercises: binary-numbers/programming-exercises/programming-exercises.yml
-    follow-up-activities: binary-numbers/follow-up-activities/follow-up-activities.yml
+      - binary-numbers/unit-plan/unit-plan.yaml
+    programming-exercises: binary-numbers/programming-exercises/programming-exercises.yaml
+    follow-up-activities: binary-numbers/follow-up-activities/follow-up-activities.yaml
     other-resources-md-file: binary-numbers/other-resources.md
 
   - slug: error-detection-and-correction
     md-file: error-detection-correction/index.md
     icon: img/error-detection-correction-parity-example.png
     unit-plans:
-      - error-detection-correction/unit-plan/unit-plan.yml
+      - error-detection-correction/unit-plan/unit-plan.yaml
     programming-exercises:
-    follow-up-activities: error-detection-correction/follow-up-activities/follow-up-activities.yml
+    follow-up-activities: error-detection-correction/follow-up-activities/follow-up-activities.yaml
     other-resources-md-file:
 
 learning-outcomes: learning-outcomes.yaml

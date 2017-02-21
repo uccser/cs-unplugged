@@ -38,7 +38,7 @@ class Command(BaseCommand):
         self.converter.update_processors(custom_processors)
 
     def read_language_structure(self):
-        structure_file = open(os.path.join(self.BASE_PATH, 'structure.yml'), encoding='UTF-8')
+        structure_file = open(os.path.join(self.BASE_PATH, 'structure.yaml'), encoding='UTF-8')
         return yaml.load(structure_file.read())
 
     def print_load_log(self):
