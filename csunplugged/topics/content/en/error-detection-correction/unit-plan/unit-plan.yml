@@ -9,7 +9,6 @@ lessons:
       md-file: error-detection-correction/unit-plan/lessons/8-10/lesson-1.md
       # Title for lesson is extracted from md-file
       learning-outcomes:
-        - Can spot an error
-        - Can fix an error
+        - parity-justify-usage
       curriculum-links:
         - maths

@@ -21,3 +21,5 @@ topics:
     programming-exercises:
     follow-up-activities: error-detection-correction/follow-up-activities/follow-up-activities.yml
     other-resources-md-file:
+
+learning-outcomes: learning-outcomes.yaml

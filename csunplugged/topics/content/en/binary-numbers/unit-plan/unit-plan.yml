@@ -10,20 +10,10 @@ lessons:
       handout: binary-numbers/unit-plan/lessons/5-7/lesson-1-handout.md
       glossary: binary-numbers/unit-plan/lessons/5-7/lesson-1-glossary.md
       learning-outcomes:
-        - Explain how a binary digit is represented using two contrasting values.
-        - Demonstrate how to represent any number between 0 and 31 using binary.
-        - Perform a demonstration of how the binary number system works by converting any decimal number into a binary number.
-        - Justify why there aren’t 0’s and 1’s zooming around inside a computer.
-        - Argue that 0’s and 1’s are still a correct way to represent what is stored in the computer.
-        - Generalise recognise that we can use any two different states or things to represent binary; it doesn’t have to just be 0’s and 1’sby converting any decimal number into a binary number.
-        - Justify why there aren’t 0’s and 1’s zooming around inside a computer.
-        - Argue that 0’s and 1’s are still a correct way to represent what is stored in the computer.
-        - Generalise recognise that we can use any two different states or things to represent binary; it doesn’t have to just be 0’s and 1’s.
-        - Explain the logic of why the first bit needs to be a one.
-        - Understand that we only need two values and using more isn’t needed.
-        - Explain why a particular card must be visible for a given number
-        - Use logical reasoning to predict what value the next card in the sequence will have (e.g. the last one is 32, what is the next one? 64. The next one? 128. Next? 256…)
-        - Explain why we only need one more bit to represent twice as many numbers.
+        - binary-data-representation
+        - binary-count
+        - binary-convert-decimal
+        - binary-justify-representation
       curriculum-links:
         - maths
 
@@ -33,8 +23,8 @@ lessons:
       handout: binary-numbers/unit-plan/lessons/5-7/lesson-2-handout.md
       glossary: binary-numbers/unit-plan/lessons/5-7/lesson-2-glossary.md
       learning-outcomes:
-        - How to count from 0 to 8 or more using binary numbers.
-        - How you would work out the number 22.
+        - binary-data-representation
+        - binary-count
       curriculum-links:
         - maths
         - science
@@ -45,11 +35,8 @@ lessons:
       handout: binary-numbers/unit-plan/lessons/5-7/lesson-3-handout.md
       glossary: binary-numbers/unit-plan/lessons/5-7/lesson-3-glossary.md
       learning-outcomes:
-        - Recognise how computers represent alphabet characters as bits using a simplified method.
-        - Create their own message using binary code.
-        - Interpret a message using binary code.
-        - Explain how codes for larger alphabets could be created.
-        - Explain how they would adapt the representation to include more characters, such as diacritics, capital letters or different symbols.
+        - binary-convert-decimal
+        - binary-justify-representation
       curriculum-links:
         - maths
         - art
@@ -61,20 +48,8 @@ lessons:
       handout: binary-numbers/unit-plan/lessons/8-10/lesson-1-handout.md
       glossary: binary-numbers/unit-plan/lessons/8-10/lesson-1-glossary.md
       learning-outcomes:
-        - Explain how a binary digit is represented using two contrasting values.
-        - Demonstrate how to represent any number between 0 and 31 using binary.
-        - Perform a demonstration of how the binary number system works by converting any decimal number into a binary number.
-        - Justify why there aren’t 0’s and 1’s zooming around inside a computer.
-        - Argue that 0’s and 1’s are still a correct way to represent what is stored in the computer.
-        - Generalise recognise that we can use any two different states or things to represent binary; it doesn’t have to just be 0’s and 1’sby converting any decimal number into a binary number.
-        - Justify why there aren’t 0’s and 1’s zooming around inside a computer.
-        - Argue that 0’s and 1’s are still a correct way to represent what is stored in the computer.
-        - Generalise recognise that we can use any two different states or things to represent binary; it doesn’t have to just be 0’s and 1’s.
-        - Explain the logic of why the first bit needs to be a one.
-        - Understand that we only need two values and using more isn’t needed.
-        - Explain why a particular card must be visible for a given number
-        - Use logical reasoning to predict what value the next card in the sequence will have (e.g. the last one is 32, what is the next one? 64. The next one? 128. Next? 256…)
-        - Explain why we only need one more bit to represent twice as many numbers.
+        - binary-convert-decimal
+        - binary-justify-representation
       curriculum-links:
         - maths
 
@@ -84,8 +59,7 @@ lessons:
       handout: binary-numbers/unit-plan/lessons/8-10/lesson-2-handout.md
       glossary: binary-numbers/unit-plan/lessons/8-10/lesson-2-glossary.md
       learning-outcomes:
-        - How to count from 0 to 8 or more using binary numbers.
-        - How you would work out the number 22.
+        - binary-convert-decimal
       curriculum-links:
         - maths
         - science
@@ -97,8 +71,7 @@ lessons:
       handout: binary-numbers/unit-plan/lessons/11-14/lesson-1-handout.md
       glossary: binary-numbers/unit-plan/lessons/11-14/lesson-1-glossary.md
       learning-outcomes:
-        - How to count from 0 to 8 or more using binary numbers.
-        - How you would work out the number 22.
+        - binary-convert-decimal
       curriculum-links:
         - maths
         - science

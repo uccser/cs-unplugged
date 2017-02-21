@@ -2,8 +2,7 @@
   exercise-number: 1
   md-file: binary-numbers/programming-exercises/exercise-1/index.md
   learning-outcomes:
-    - Learned maths
-    - Is smiling
+    - programming-basic-logic
   scratch:
     hints: binary-numbers/programming-exercises/exercise-1/scratch-hints.md
     solution: binary-numbers/programming-exercises/exercise-1/scratch-solution.md
@@ -14,8 +13,7 @@
   exercise-number: 2
   md-file: binary-numbers/programming-exercises/exercise-2/index.md
   learning-outcomes:
-    - Learned maths
-    - Is smiling
+    - programming-basic-logic
   scratch:
     hints: binary-numbers/programming-exercises/exercise-2/scratch-hints.md
     solution: binary-numbers/programming-exercises/exercise-2/scratch-solution.md
