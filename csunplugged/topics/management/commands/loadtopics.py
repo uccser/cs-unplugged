@@ -17,6 +17,8 @@ class Command(BaseCommand):
         self.BASE_PATH = 'topics/content/en/' # TODO: Hardcoded for prototype
         language_structure = self.read_language_structure()
         self.setup_converter()
+        self.load_log = []
+        self.load_learning_outcomes(language_structure['learning-outcomes'])
         self.load_topics(language_structure)
 
     def setup_converter(self):
@@ -43,10 +45,25 @@ class Command(BaseCommand):
         for (log, indent) in self.load_log:
             self.stdout.write('{indent}{text}'.format(indent='  '*indent,text=log))
         self.stdout.write('\n')
+        self.load_log = []
+
+    @transaction.atomic
+    def load_learning_outcomes(self, learning_outcomes_file):
+        learning_outcomes = yaml.load(open(os.path.join(self.BASE_PATH, learning_outcomes_file), encoding='UTF-8').read())
+        for (outcome_slug, outcome_text) in learning_outcomes.items():
+            outcome = LearningOutcome(
+                slug=outcome_slug,
+                text=outcome_text
+            )
+            outcome.save()
+            self.load_log.append(('Added Learning Outcome: {}'.format(outcome.__str__()), 0))
+
+        # Print log output
+        self.print_load_log()
+
 
     @transaction.atomic
     def load_topics(self, structure):
-        self.load_log = []
         for topic_structure in structure['topics']:
             topic_data = self.convert_md_file(topic_structure['md-file'])
 
@@ -121,11 +138,11 @@ class Command(BaseCommand):
         )
         lesson.save()
         # Add learning outcomes
-        for outcome in lesson_structure['learning-outcomes']:
-            (object, created) = LearningOutcome.objects.get_or_create(
-                text=outcome
+        for learning_outcome_slug in lesson_structure['learning-outcomes']:
+            learning_outcome = LearningOutcome.objects.get(
+                slug=learning_outcome_slug
             )
-            lesson.learning_outcomes.add(object)
+            lesson.learning_outcomes.add(learning_outcome)
         # Add curriculum links
         for link in lesson_structure['curriculum-links']:
             (object, created) = CurriculumLink.objects.get_or_create(
@@ -152,11 +169,11 @@ class Command(BaseCommand):
             )
             programming_exercise.save()
 
-            for learning_outcome in programming_exercise_data['learning-outcomes']:
-                (object, created) = LearningOutcome.objects.get_or_create(
-                    text=learning_outcome
+            for learning_outcome_slug in programming_exercise_data['learning-outcomes']:
+                learning_outcome = LearningOutcome.objects.get(
+                    slug=learning_outcome_slug
                 )
-                programming_exercise.learning_outcomes.add(object)
+                programming_exercise.learning_outcomes.add(learning_outcome)
             self.load_log.append(('Added Programming Exercise: {}'.format(programming_exercise.name), 1))
 
     def load_follow_up_activities(self, follow_up_activities_structure, topic):
