@@ -1,6 +1,7 @@
 from django.conf.urls import url
 
-from . import views
+from .views import views
+from .views.resource import example_resource
 
 app_name = 'resources'
 urlpatterns = [
@@ -13,7 +14,12 @@ urlpatterns = [
     # eg: /resource/example-resource/
     url(
         r'^(?P<resource_slug>[-\w]+)/$',
-        views.ResourceView.as_view(),
+        views.resource,
         name='resource'
-    )
+    ),
+    # eg: /resource/example-resource/pdf/
+    url(
+        r'^(?P<resource_slug>[-\w]+)/pdf$',
+        views.pdf_handler
+    ),
 ]
