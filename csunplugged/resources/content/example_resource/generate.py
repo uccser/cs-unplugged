@@ -3,15 +3,15 @@ from django.template.loader import render_to_string
 
 from weasyprint import HTML, CSS
 
-def pdf(request, resource_slug, **kwargs):
+def pdf(request, resource, **kwargs):
     context = dict()
     context['paper_size'] = request.GET['size']
-    template = 'resources/{}/resource.html'.format(resource_slug)
+    template = '{}/resource.html'.format(resource.folder)
     html_string = render_to_string(template, context)
 
     html = HTML(string=html_string)
     base_css = CSS(string=open('static/css/print-resource-pdf.css', encoding='UTF-8').read())
-    resource_css = CSS(string=open('static/css/print-resource-{}-pdf.css'.format(resource_slug), encoding='UTF-8').read())
+    resource_css = CSS(string=open('static/css/print-resource-{}-pdf.css'.format(resource.slug), encoding='UTF-8').read())
     pdf_file = html.write_pdf(stylesheets=[base_css, resource_css]);
 
     response = HttpResponse(pdf_file, content_type='application/pdf')

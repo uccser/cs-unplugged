@@ -33,7 +33,8 @@ class Command(BaseCommand):
         for (resource_slug, resource_data) in resource_list.items():
             resource = Resource(
                 slug=resource_slug,
-                name=resource_data['name']
+                name=resource_data['name'],
+                folder=resource_data['folder'],
             )
             resource.save()
             self.load_log.append(('\nAdded Resource: {}'.format(resource.name), 0))

@@ -14,16 +14,18 @@ class IndexView(generic.ListView):
         return Resource.objects.order_by('name')
 
 def resource(request, resource_slug):
-    template_string = 'resources/{}/index.html'.format(resource_slug)
+    resource = get_object_or_404(Resource, slug=resource_slug)
+    template_string = '{}/index.html'.format(resource.folder)
     context = dict()
-    context['resource'] = get_object_or_404(Resource, slug=resource_slug)
+    context['resource'] = resource
     return render(request, template_string, context)
 
 def generate_resource(request, resource_slug, **kwargs):
     module_name = resource_slug.replace('-', '_')
-    module_path = 'resources.views.resource.{}'.format(module_name)
+    resource = get_object_or_404(Resource, slug=resource_slug)
+    module_path = 'resources.content.{}.generate'.format(resource.folder)
     try:
         pdf_view = importlib.import_module(module_path)
     except ImportError:
         raise Http404("PDF generation does not exist for resource: {}".format(resource_slug))
-    return pdf_view.pdf(request, resource_slug, **kwargs)
+    return pdf_view.pdf(request, resource, **kwargs)

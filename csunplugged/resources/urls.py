@@ -1,7 +1,6 @@
 from django.conf.urls import url
 
-from .views import views
-from .views.resource import example_resource
+from . import views
 
 app_name = 'resources'
 urlpatterns = [
