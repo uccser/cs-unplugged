@@ -1,0 +1,19 @@
+<html>
+<head>
+  <title>Test</title>
+  <style>
+    @page {
+      {% if paper_size == "a4" %}
+        size: A4;
+      {% elif paper_size == "letter" %}
+        size: letter;
+      {% endif %}
+    }
+  </style>
+</head>
+<body>
+  {% block content %}
+
+  {% endblock content %}
+</body>
+</html>

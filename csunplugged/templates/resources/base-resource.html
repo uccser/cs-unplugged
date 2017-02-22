@@ -7,4 +7,13 @@
 
   {% endblock description %}
 
+  <h2>Create Resource</h2>
+
+  <form action="{% url 'resources:generate' resource.slug %}" method="get">
+    {% block generation_form %}
+
+    {% endblock generation_form %}
+    <input type="submit" value="Generate Resource" />
+  </form>
+
 {% endblock content %}

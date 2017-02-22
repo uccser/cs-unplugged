@@ -19,11 +19,11 @@ def resource(request, resource_slug):
     context['resource'] = get_object_or_404(Resource, slug=resource_slug)
     return render(request, template_string, context)
 
-def pdf_handler(request, resource_slug, **kwargs):
+def generate_resource(request, resource_slug, **kwargs):
     module_name = resource_slug.replace('-', '_')
     module_path = 'resources.views.resource.{}'.format(module_name)
     try:
         pdf_view = importlib.import_module(module_path)
     except ImportError:
         raise Http404("PDF generation does not exist for resource: {}".format(resource_slug))
-    return pdf_view.pdf(request, **kwargs)
+    return pdf_view.pdf(request, resource_slug, **kwargs)

@@ -7,3 +7,16 @@
 {% block description %}
 <p>This is a sample description.</p>
 {% endblock description %}
+
+{% block generation_form %}
+  <fieldset>
+    <legend>Paper Size</legend>
+
+    <input type="radio" name="size" id="size_a4" value="a4" checked="checked">
+    <label for="size_a4">A4</label>
+    <br>
+    <input type="radio" name="size" id="size_letter" value="letter">
+    <label for="size_letter">US Letter</label>
+
+  </fieldset>
+{% endblock generation_form %}
