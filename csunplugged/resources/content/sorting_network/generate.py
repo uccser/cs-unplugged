@@ -68,7 +68,7 @@ def pdf(request, resource, **kwargs):
         font_size = 90
 
     # Create resource image
-    base_image_path = 'resources/content/example_resource/sorting-network-colour.png'
+    base_image_path = 'resources/content/{}/sorting-network-colour.png'.format(resource.folder)
     font_path = 'resources/content/fonts/PatrickHand-Regular.ttf'
 
     with Pool() as pool:

@@ -1,3 +1,3 @@
-example-resource:
-  name: Example Resource
-  folder: example_resource
+sorting-network:
+  name: Sorting Network
+  folder: sorting_network
