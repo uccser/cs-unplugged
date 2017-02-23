@@ -1,0 +1,597 @@
+WEBVTT
+
+NOTE
+Computer Science Education Research,
+University of Canterbury, New Zealand
+Subtitle file for the video "CS Unplugged: Parity Magic"
+Author: Alasdair Smith
+Date: 13/02/2017
+
+00:00.000 --> 00:04.000
+CS Unplugged
+<i>Computer Science without a computer</i>
+
+00:04.600 --> 00:06.200
+Parity Magic
+
+00:06.200 --> 00:10.000
+Cool so, hands up who thinks
+computers are a little bit magical,
+
+00:10.000 --> 00:13.600
+they do stuff and we're not too sure how they do it.
+
+00:13.600 --> 00:18.400
+Does anyone think they're a little bit magical
+or have thought they have been in the past? Cool.
+
+00:18.400 --> 00:21.600
+Well I'm going to teach you a magic trick today.
+
+00:21.600 --> 00:26.400
+So, what I need is a volunteer
+who can make a five by five grid
+
+00:26.400 --> 00:32.800
+with these magnetic cards. So it could be white,
+or it could be black and it has to be totally random.
+
+00:32.800 --> 00:36.200
+Who would like to do that?
+Oh thanks Ellie, you come up?
+
+00:36.200 --> 00:39.200
+You do that.
+Hopefully that's enough cards there, cool.
+
+00:39.200 --> 00:42.000
+If you could just make a five by five
+grid up here that's great.
+
+00:42.000 --> 00:45.000
+Now while she's doing that I want
+to explain a little bit
+
+00:45.000 --> 00:51.200
+about what's happening. So, I said before
+that this is one bit; each of these magnets represents
+
+00:51.200 --> 00:57.800
+one bit. A bit can be turned off,
+or a bit can be turned on.
+
+00:57.800 --> 01:04.200
+Where else have we learned about bits before?
+Turn to the person next to you and tell them about that.
+
+NOTE
+[silence]
+
+01:18.000 --> 01:20.800
+And eyes this way.
+
+01:20.800 --> 01:25.000
+So bits, did anyone mention in their whispering,
+
+01:25.000 --> 01:30.600
+did anyone mention the words Binary Numbers
+when we learned about Binary Numbers the other day?
+
+NOTE changed 'word' to 'words' in the above sentence
+
+01:30.600 --> 01:34.600
+Yeah? So these are bits, and these could
+be like the Binary Numbers right?
+
+01:34.600 --> 01:37.200
+They could be on,
+or they could be off.
+
+01:37.200 --> 01:40.000
+Cool has she got five by five?
+
+01:40.000 --> 01:45.400
+Yeah? Cool thanks Ellie, so I'm going to make
+this magic trick just a little bit harder for myself,
+
+01:45.400 --> 01:51.200
+and I'm going to put an extra column down here,
+
+01:51.200 --> 01:57.800
+and I'm going to put an extra row under here,
+
+01:57.800 --> 02:00.600
+just to make it hard.
+
+02:06.600 --> 02:09.000
+Okay
+
+02:10.400 --> 02:13.400
+Right I've done that, now,
+
+02:13.400 --> 02:19.200
+I've got a really bad memory,
+and I can't see very well when I take off my glasses.
+
+02:19.200 --> 02:21.600
+Ooh, I can't see at all now.
+
+02:21.600 --> 02:25.600
+I'm going to ask someone to go up
+and turn one of them over,
+
+02:25.600 --> 02:29.200
+hands up who thinks I'd be able to guess where it is?
+
+02:29.200 --> 02:31.600
+Hands up who thinks that's impossible
+if you've got a bad memory,
+
+02:31.600 --> 02:35.200
+or is even impossible
+if you've got a good memory? Hands up?
+
+02:35.200 --> 02:38.000
+Okay, let's see,
+Rhylee can you go up and turn one over?
+
+02:38.000 --> 02:41.000
+Everyone else you need to check
+either that he is turning it over
+
+02:41.000 --> 02:42.800
+or you need to check that I'm not cheating,
+
+02:42.800 --> 02:47.000
+and I'm not looking.
+I'll take my glasses off to be even sure.
+
+02:49.200 --> 02:51.800
+Everyone say "done" when he's done it.
+
+02:51.800 --> 02:53.000
+["Done"]
+
+02:53.000 --> 02:59.000
+Right, Hmm, Rhylee Rhylee Rhylee.
+
+03:03.400 --> 03:05.400
+Right or wrong?
+
+03:05.400 --> 03:06.600
+["Right"]
+
+03:06.600 --> 03:09.000
+Was it a fluke, it could have been a fluke right?
+
+03:09.000 --> 03:12.200
+Thanks Rhylee let's give him a big hand. Thanks Rhylee.
+
+03:12.200 --> 03:15.800
+Okay, who thinks they can trick me,
+maybe because it was on the bottom row?
+
+03:15.800 --> 03:18.600
+I'd memorised the bottom row? Maybe maybe maybe.
+
+03:18.600 --> 03:22.200
+Sammy, I'm going over here this time
+so I'm definitely not cheating,
+
+03:22.200 --> 03:26.200
+you guys need to watch if Sammy's turned one over
+and some of you need to check that I'm not cheating
+
+03:26.200 --> 03:32.000
+and I'll even turn off the eyes in the back of my head
+just to be sure that's not happening.
+
+03:34.800 --> 03:36.000
+["Done"]
+
+03:36.000 --> 03:41.000
+Right let's have a look. Sammy Sammy Sammy.
+
+03:45.400 --> 03:47.000
+Right or wrong?
+
+03:47.000 --> 03:50.200
+[Confused chorus]
+
+03:50.200 --> 03:52.600
+Was I right? Awesome!
+
+03:52.600 --> 03:56.800
+So if I get it right two times is it a magic trick?
+
+03:56.800 --> 04:01.000
+Or is something else going on?
+Hands up if you still think it's still a magic trick?
+
+04:01.000 --> 04:04.200
+Hands up if you think there must be something going on.
+
+04:04.200 --> 04:09.000
+Cool, let's look at what is going on.
+
+04:10.600 --> 04:16.800
+If we had these just as we had them before
+and we go through the rows,
+
+04:16.800 --> 04:22.000
+how many black cards can you see in this row?
+
+04:22.000 --> 04:23.400
+["Four"]
+
+04:23.400 --> 04:25.600
+And how many black cards in this one?
+
+04:25.600 --> 04:33.000
+["Four"] <04:27.400> ["Four"] <04:29.200> ["Two"]
+<04:30.800> ["Four"] <04:32.400> ["Four"]
+
+04:33.000 --> 04:38.200
+Okay, now let's look at these columns,
+how many are in this column?
+
+NOTE changed 'how many is in' to 'how many are in'
+
+04:38.200 --> 04:48.000
+["Two"] <04:40.400> ["Six"] <04:42.200> ["Four"]
+<04:43.600> ["Two"] <04:45.000> ["Four"] <04:46.600> ["Four"]
+
+04:48.000 --> 04:52.000
+Hmm, what do those numbers all have in common?
+
+04:52.000 --> 04:56.000
+What are they? How would we classify those numbers?
+Yes?
+
+04:56.000 --> 04:57.400
+<i>Even Numbers?</i>
+
+04:57.400 --> 05:00.000
+Hmm, hands up if you agree with that statement?
+
+05:00.000 --> 05:03.000
+They're even numbers and you are right.
+
+05:03.000 --> 05:11.000
+You are right because I said I was going to make it
+harder by adding the extra column and row right?
+
+05:11.000 --> 05:12.800
+Did I make it harder or easier?
+
+05:12.800 --> 05:14.000
+["Easier"]
+
+05:14.000 --> 05:20.000
+How did I make it easier when I
+added a black card here onto this row?
+
+NOTE Changed 'Why' to 'How'
+
+05:20.000 --> 05:22.000
+What was I doing?
+
+05:22.000 --> 05:28.000
+<i>Um, You were making it as, so,
+add one more so you could memorise them easily?</i>
+
+05:28.000 --> 05:31.600
+Yeah? Well if I didn't do that
+how many black cards are there now?
+
+05:31.600 --> 05:32.800
+["Three"]
+
+05:32.800 --> 05:36.600
+When I add a black card there what am I making it? Taking it from odd to?
+
+05:36.600 --> 05:42.400
+["Even"] Even right, so actually
+by adding that column and adding that row,
+
+05:42.400 --> 05:50.200
+I made all of the black cards even,
+so I was able to correct the mistake, correct the error
+
+05:50.200 --> 05:53.400
+which is the one that got flipped over.
+
+05:53.400 --> 05:59.200
+So let's see how that worked.
+I'm going to actually take away the extra column,
+
+05:59.200 --> 06:02.800
+and the extra row,
+and you're going to tell me what to put.
+
+06:02.800 --> 06:08.600
+Now, I am also going to rub out the numbers
+so you've got no prompts,<06:07.04> okay?
+
+06:08.600 --> 06:11.000
+Are you ready?
+I want you to call out black or white
+
+06:11.000 --> 06:13.800
+and tell me what I have to do here.
+What do I have to do here?
+
+06:13.800 --> 06:18.800
+["Black"] <06:15.600> ["Black"]
+<06:17.200>[Confused chorus]
+
+06:18.800 --> 06:22.400
+<i>Black</i>
+
+06:22.400 --> 06:27.200
+["White"] <06:25.200> ["Black"]
+
+06:27.200 --> 06:30.600
+Alright, now, all those rows are done, let's do the columns.
+
+06:30.600 --> 06:37.800
+["Black"] <06:32.200> ["Black"]
+<06:34.400> ["Black"] <06:36.200> ["White"]
+
+06:37.800 --> 06:40.200
+Oops, sorry
+
+06:40.200 --> 06:43.600
+["Black"] <06:42.200> ["White"]
+
+06:43.600 --> 06:47.200
+Okay I want you to see what's happening here,
+
+06:47.200 --> 06:53.400
+because if I put it white there:
+Does that make that column correct?
+
+06:53.400 --> 06:54.600
+["Yes"]
+
+06:54.600 --> 06:58.000
+Does it make that row correct?
+<06:57.000> ["Yes"]
+
+06:58.000 --> 07:04.000
+So that corner there, it actually is putting
+two of the rows and the columns into place,
+
+07:04.000 --> 07:07.600
+so it's quite an important card isn't it?
+
+07:07.600 --> 07:15.600
+Okay. So, now that you've seen how it works,
+who thinks they would like to have a go at doing this?
+
+07:15.600 --> 07:18.600
+Who thinks they'd like to have a go?
+Robert, do you think you can do it?
+
+07:18.600 --> 07:21.800
+Okay, so you're going to stand over there.
+Close your eyes, turn off the eyes
+
+07:21.800 --> 07:24.400
+in the back of your head, power them down.
+
+07:24.400 --> 07:28.800
+And I need someone who's going
+to come up and change it.
+
+07:28.800 --> 07:35.400
+Jack, come up and change it for us. Change one,
+you guys look and check that he's just changing one,
+
+07:35.400 --> 07:40.600
+I'm going to check that
+Robert's not going to turn around.
+
+07:49.000 --> 07:51.000
+Cool, what are we going to tell Robert?
+["Done"]
+
+07:51.000 --> 07:54.200
+Okay, Robert come over here
+and we're just going to help you with this.
+
+07:54.200 --> 07:57.400
+So, this row here, how many are there?
+
+07:57.400 --> 07:59.000
+<i>Four</i>
+Is that okay? <i>Yes</i>
+
+07:59.000 --> 08:02.200
+What about this one? <i>Four</i>
+Is that okay? <i>Yes</i>
+
+08:02.200 --> 08:04.800
+What about this one? <i>Four</i>
+Is that okay? <i>Yes</i>
+
+08:04.800 --> 08:07.400
+What about this one? <i>Two</i>
+Is that okay? <i>Yes</i>
+
+08:07.400 --> 08:10.400
+What about this one?
+<08:08.400><i>Three, so there must be a problem.</i>
+
+08:10.400 --> 08:14.600
+Ahahahahaa! Let's put a circle around there,
+
+08:14.600 --> 08:18.600
+because I think you're right.
+I think there is a problem, because it's an odd number.
+
+08:18.600 --> 08:21.400
+Do we have to check the next row?
+<08:20.600>["No"]
+
+08:21.400 --> 08:24.400
+Why not?
+<08:22.04><i>Because we're already found the answer.</i>
+
+08:24.400 --> 08:28.800
+We've already found the answer and we know
+there's only one error to detect right?
+
+08:28.800 --> 08:32.000
+So now let's look at the columns:
+How many are in here?
+
+NOTE changed 'is' to 'are'
+
+08:32.000 --> 08:32.800
+<i>Two</i>
+
+08:32.800 --> 08:34.000
+Is that alright?
+<i>Yes</i>
+
+08:34.000 --> 08:36.800
+What about this one? <i>Six</i>
+Is that okay? <i>Yes</i>
+
+08:36.800 --> 08:39.600
+What about this one? <i>Four</i>
+Is that okay? <i>Yes</i>
+
+08:39.600 --> 08:43.600
+What about this one?
+<i>One, so there must be detected problem.</i>
+
+08:43.600 --> 08:46.400
+There is a problem in there, let's have a look at that.
+
+08:46.400 --> 08:49.400
+So, which card was flipped Robert?
+
+08:49.400 --> 08:53.600
+<i>This one, because there's a line around there
+and a line around there.</i>
+
+08:53.600 --> 08:57.000
+<i>So it already gives me
+a direct spot to where it is.</i>
+
+08:57.000 --> 08:59.400
+Turn it over good work!
+
+08:59.400 --> 09:02.800
+Okay hands up if you agree with Robert
+that that was the one that was changed?
+
+09:02.800 --> 09:11.400
+Cool let's give him a hand well done, cool.
+<09:07.600>Thanks Robert.
+
+09:11.400 --> 09:15.200
+So, why are we learning this with
+a whole lot of magnets on the board
+
+09:15.200 --> 09:17.500
+and how does this relate back to the computers?
+
+09:17.500 --> 09:21.200
+Because, what we've actually got here
+is a representation.
+
+09:21.200 --> 09:28.000
+This here that Ellie put up, this is the data
+for a piece of music she's written,
+
+09:28.000 --> 09:32.000
+and she's now uploading that up to the internet.
+
+09:32.000 --> 09:36.000
+Now, if she's doing that,
+she's probably using phone wires and things,
+
+09:36.000 --> 09:41.600
+and so what we're doing is just adding
+a little bit more data to her file here,
+
+09:41.600 --> 09:46.300
+and her data, and what that's doing,
+is if there's any interference;
+
+09:46.300 --> 09:53.400
+if for some reason
+a signal is off rather than on,
+
+09:53.400 --> 09:59.400
+it means that all of this together can be
+corrected in the computer and it stays the same
+
+09:59.400 --> 10:02.200
+for the person who's receiving it at the other end.
+
+10:02.200 --> 10:07.200
+And that's the same with your CDs and DVDs,
+so hands up if you've ever had a DVD
+
+10:07.200 --> 10:12.000
+where it's starting to glitch,
+it's started to get pixelated or the sound's not working?
+
+10:12.000 --> 10:20.600
+Right so, hand's down, if you turn your DVD over
+you'll see lots and lots of shiny and dull,
+
+10:20.600 --> 10:26.200
+things on it? Each of those is a bit, and it holds
+billions of bits on your DVD.
+
+10:26.200 --> 10:31.000
+And what happens, is if you get a scratch on it,
+or if you get one fleck of dust,
+
+10:31.000 --> 10:35.400
+if you didn't have this extra data,
+your DVD would be of no use,
+
+10:35.400 --> 10:37.000
+you'd have to throw it away.
+
+10:37.000 --> 10:43.400
+But, the DVD has this extra data on it,
+and so if one fleck of dust gets on,
+
+10:43.400 --> 10:45.600
+it can cope with that it'll just correct it.
+
+10:45.600 --> 10:50.200
+And it has to be quite a decent scratch
+before it starts to pixelate.
+
+10:50.200 --> 10:53.600
+Have you seen the scratches?
+Have you taken the DVD out, looked at it and gone
+
+10:53.600 --> 10:57.000
+"Woah, that's really dirty and scratched.
+That must be why it's not working."
+
+10:57.000 --> 10:58.400
+Have you ever done that?
+
+10:58.400 --> 11:02.600
+Cool, and you clean it,
+and it works again right hopefully?
+
+11:02.600 --> 11:05.800
+And that's because you have gotten it to a state again
+
+11:05.800 --> 11:09.800
+that it can now read and it can correct
+all the errors and the detections
+
+11:09.800 --> 11:13.600
+Cool, thanks.
