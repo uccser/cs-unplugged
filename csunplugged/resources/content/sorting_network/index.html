@@ -11,15 +11,18 @@ a thing called a sorting network.</p>
 
 {% block generation_form %}
   <fieldset>
-    <legend>Difficulty</legend>
-    <input type="radio" name="difficulty" id="easy" value="easy" checked="checked">
-    <label for="size_easy">Easy</label>
+    <legend>Prefill with Numbers</legend>
+    <input type="radio" name="prefilled_values" id="none" value="blank" checked="checked">
+    <label for="blank">None (Blank)</label>
     <br>
-    <input type="radio" name="difficulty" id="medium" value="medium">
-    <label for="medium">Medium</label>
+    <input type="radio" name="prefilled_values" id="easy" value="easy">
+    <label for="size_easy">Easy Numbers (1 digit)</label>
     <br>
-    <input type="radio" name="difficulty" id="hard" value="hard">
-    <label for="hard">Hard</label>
+    <input type="radio" name="prefilled_values" id="medium" value="medium">
+    <label for="medium">Medium Numbers (2 digits)</label>
+    <br>
+    <input type="radio" name="prefilled_values" id="hard" value="hard">
+    <label for="hard">Hard Numbers (3 digits)</label>
   </fieldset>
 
   <fieldset>

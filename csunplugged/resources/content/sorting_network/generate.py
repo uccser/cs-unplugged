@@ -10,34 +10,35 @@ from multiprocessing import Pool
 
 MM_TO_PIXEL_RATIO = 3.78
 
-def generate_image(paper_size, range_min, range_max, base_image_path, font):
-    numbers = sample(range(range_min, range_max), 6)
-
-    # Load image for adding text
-    base_image = Image.open(base_image_path)
+def generate_image(base_image_settings):
+    # Load image
+    base_image = Image.open(base_image_settings['base_image_path'])
     draw = ImageDraw.Draw(base_image)
 
-    # Add numbers to text
-    base_coord_x = 70
-    base_coord_y = 2560
-    coord_x_increment = 204
-    for number in numbers:
-        text = str(number)
-        text_width, text_height = draw.textsize(text, font=font)
-        coord_x = base_coord_x - (text_width / 2)
-        coord_y = base_coord_y - (text_height / 2)
-        draw.text(
-            (coord_x, coord_y),
-            text,
-            font=font,
-            fill='#000'
-        )
-        base_coord_x += coord_x_increment
+    # Add numbers to text if needed
+    if base_image_settings['prefilled_values'] != 'blank':
+        font = ImageFont.truetype(base_image_settings['font_path'], base_image_settings['font_size'])
+        numbers = sample(range(base_image_settings['range_min'], base_image_settings['range_max']), 6)
+        base_coord_x = 70
+        base_coord_y = 2560
+        coord_x_increment = 204
+        for number in numbers:
+            text = str(number)
+            text_width, text_height = draw.textsize(text, font=font)
+            coord_x = base_coord_x - (text_width / 2)
+            coord_y = base_coord_y - (text_height / 2)
+            draw.text(
+                (coord_x, coord_y),
+                text,
+                font=font,
+                fill='#000'
+            )
+            base_coord_x += coord_x_increment
 
     # Resize image to reduce file size
-    if paper_size == "a4":
+    if base_image_settings['paper_size'] == "a4":
         max_pixel_height = 267 * MM_TO_PIXEL_RATIO
-    elif paper_size == "letter":
+    elif base_image_settings['paper_size'] == "letter":
         max_pixel_height = 249 * MM_TO_PIXEL_RATIO
     (width, height) = base_image.size
     if height > max_pixel_height:
@@ -52,42 +53,39 @@ def generate_image(paper_size, range_min, range_max, base_image_path, font):
     return base64.b64encode(image_buffer.getvalue())
 
 class PageCreator(object):
-    def __init__(self, paper_size, range_min, range_max, base_image_path, font_path, font_size):
-        self.paper_size = paper_size
-        self.range_min = range_min
-        self.range_max = range_max
-        self.base_image_path = base_image_path
-        self.font_path = font_path
-        self.font_size = font_size
+    def __init__(self, base_image_settings):
+        self.base_image_settings = base_image_settings
 
     def __call__(self, call_num):
-        font = ImageFont.truetype(self.font_path, self.font_size)
-        return generate_image(self.paper_size, self.range_min, self.range_max, self.base_image_path, font)
+        return generate_image(self.base_image_settings)
 
 def pdf(request, resource, **kwargs):
     context = dict()
 
-    # Create numbers to add to image
-    difficulty = request.GET['difficulty']
-    if difficulty == 'easy':
-        range_min = 1
-        range_max = 10
-        font_size = 150
-    elif difficulty == 'medium':
-        range_min = 10
-        range_max = 100
-        font_size = 120
-    else:
-        range_min = 100
-        range_max = 1000
-        font_size = 90
+    prefilled_values = request.GET['prefilled_values']
+    paper_size = request.GET['size']
+
+    base_image_settings = dict()
+    base_image_settings['prefilled_values'] = prefilled_values
+    base_image_settings['paper_size'] = paper_size
+    if prefilled_values == 'easy':
+        base_image_settings['range_min'] = 1
+        base_image_settings['range_max'] = 10
+        base_image_settings['font_size'] = 150
+    elif prefilled_values == 'medium':
+        base_image_settings['range_min'] = 10
+        base_image_settings['range_max'] = 100
+        base_image_settings['font_size'] = 120
+    elif prefilled_values == 'hard':
+        base_image_settings['range_min'] = 100
+        base_image_settings['range_max'] = 1000
+        base_image_settings['font_size'] = 90
 
     # Create resource image
-    base_image_path = 'resources/content/{}/sorting-network-colour.png'.format(resource.folder)
-    font_path = 'resources/content/fonts/PatrickHand-Regular.ttf'
-    paper_size = request.GET['size']
+    base_image_settings['base_image_path'] = 'resources/content/{}/sorting-network-colour.png'.format(resource.folder)
+    base_image_settings['font_path'] = 'resources/content/fonts/PatrickHand-Regular.ttf'
     with Pool() as pool:
-        context['resource_images'] = pool.map(PageCreator(paper_size, range_min, range_max, base_image_path, font_path, font_size), range(0, int(request.GET['copies'])))
+        context['resource_images'] = pool.map(PageCreator(base_image_settings), range(0, int(request.GET['copies'])))
 
     # Write to PDF
     context['paper_size'] = paper_size
