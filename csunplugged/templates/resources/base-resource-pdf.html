@@ -21,10 +21,11 @@
   </style>
 </head>
 <body>
-  <div id="base-image-container">
-    <img id="base-image" src="data:image/png;base64,{{ image_data }}" />
-  </div>
-
+  {% for resource_image_data in resource_images %}
+    <div id="base-image-container">
+      <img id="base-image" src="data:image/png;base64,{{ resource_image_data }}" />
+    </div>
+  {% endfor %}
   <footer>
     <strong class="logo-text">CS Unplugged</strong> - {{ resource.name }} - csunplugged.org{% url 'resources:resource' resource.slug %}
   </footer>

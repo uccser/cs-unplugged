@@ -9,9 +9,7 @@ from random import sample
 
 def pdf(request, resource, **kwargs):
     context = dict()
-
-    # Create resource image
-    base_image = Image.open('resources/content/example_resource/sorting-network-colour.png')
+    context['resource_images'] = []
 
     # Create numbers to add to image
     difficulty = request.GET['difficulty']
@@ -28,34 +26,39 @@ def pdf(request, resource, **kwargs):
         range_max = 1000
         font_size = 90
 
-    numbers = sample(range(range_min, range_max), 6)
-
-    # Load image for adding text
-    draw = ImageDraw.Draw(base_image)
+    # Create resource image
+    base_image_path = 'resources/content/example_resource/sorting-network-colour.png'
     font_path = 'resources/content/fonts/PatrickHand-Regular.ttf'
     font = ImageFont.truetype(font_path, font_size)
 
-    # Add numbers to text
-    base_coord_x = 70
-    base_coord_y = 2560
-    coord_x_increment = 204
-    for number in numbers:
-        text = str(number)
-        text_width, text_height = draw.textsize(text, font=font)
-        coord_x = base_coord_x - (text_width / 2)
-        coord_y = base_coord_y - (text_height / 2)
-        draw.text(
-            (coord_x, coord_y),
-            text,
-            font=font,
-            fill='#000'
-        )
-        base_coord_x += coord_x_increment
+    for page_num in range(0, int(request.GET['copies'])):
+        numbers = sample(range(range_min, range_max), 6)
 
-    # Save image to buffer
-    image_buffer = BytesIO()
-    base_image.save(image_buffer, format='PNG')
-    context['image_data'] = base64.b64encode(image_buffer.getvalue())
+        # Load image for adding text
+        base_image = Image.open(base_image_path)
+        draw = ImageDraw.Draw(base_image)
+
+        # Add numbers to text
+        base_coord_x = 70
+        base_coord_y = 2560
+        coord_x_increment = 204
+        for number in numbers:
+            text = str(number)
+            text_width, text_height = draw.textsize(text, font=font)
+            coord_x = base_coord_x - (text_width / 2)
+            coord_y = base_coord_y - (text_height / 2)
+            draw.text(
+                (coord_x, coord_y),
+                text,
+                font=font,
+                fill='#000'
+            )
+            base_coord_x += coord_x_increment
+
+        # Save image to buffer
+        image_buffer = BytesIO()
+        base_image.save(image_buffer, format='PNG')
+        context['resource_images'].append(base64.b64encode(image_buffer.getvalue()))
 
     # Write to PDF
     context['paper_size'] = request.GET['size']
