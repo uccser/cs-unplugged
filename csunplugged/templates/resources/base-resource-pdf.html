@@ -3,17 +3,24 @@
   <title>Test</title>
   <style>
     @page {
+      margin: 15mm 20mm;
       {% if paper_size == "a4" %}
         size: A4;
       {% elif paper_size == "letter" %}
         size: letter;
       {% endif %}
     }
+    img#base-image {
+      {% if paper_size == "a4" %}
+        max-height: 267mm !important;
+      {% elif paper_size == "letter" %}
+        max-height: 249mm !important;
+      {% endif %}
+    }
+
   </style>
 </head>
 <body>
-  {% block content %}
-
-  {% endblock content %}
+  <img id="base-image" src="data:image/png;base64,{{ image_data }}" />
 </body>
 </html>

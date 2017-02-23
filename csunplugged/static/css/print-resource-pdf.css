@@ -1,3 +1,9 @@
-p {
-  color: red;
+body {
+  text-align: center;
+}
+img#base-image {
+  max-width: 100%;
+  page-break-after: always;
+  page-break-before: always;
+  page-break-inside: avoid;
 }
