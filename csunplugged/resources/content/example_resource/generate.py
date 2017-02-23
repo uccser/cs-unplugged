@@ -59,6 +59,7 @@ def pdf(request, resource, **kwargs):
 
     # Write to PDF
     context['paper_size'] = request.GET['size']
+    context['resource'] = resource
     template = '{}/resource.html'.format(resource.folder)
     html_string = render_to_string(template, context)
 

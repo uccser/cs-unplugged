@@ -21,6 +21,12 @@
   </style>
 </head>
 <body>
-  <img id="base-image" src="data:image/png;base64,{{ image_data }}" />
+  <div id="base-image-container">
+    <img id="base-image" src="data:image/png;base64,{{ image_data }}" />
+  </div>
+
+  <footer>
+    <strong class="logo-text">CS Unplugged</strong> - {{ resource.name }} - csunplugged.org{% url 'resources:resource' resource.slug %}
+  </footer>
 </body>
 </html>

@@ -1,4 +1,4 @@
-body {
+div#base-image-container {
   text-align: center;
 }
 img#base-image {
@@ -6,4 +6,15 @@ img#base-image {
   page-break-after: always;
   page-break-before: always;
   page-break-inside: avoid;
+}
+footer {
+  position: fixed;
+  bottom: 100%;
+  margin-bottom: 1em;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8em;
+  color: #888;
+}
+footer .logo-text {
+  color: #cc0423;
 }
