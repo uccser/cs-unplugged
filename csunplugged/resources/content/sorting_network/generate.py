@@ -8,7 +8,9 @@ import base64
 from random import sample
 from multiprocessing import Pool
 
-def generate_image(range_min, range_max, base_image_path, font):
+MM_TO_PIXEL_RATIO = 3.78
+
+def generate_image(paper_size, range_min, range_max, base_image_path, font):
     numbers = sample(range(range_min, range_max), 6)
 
     # Load image for adding text
@@ -32,13 +34,26 @@ def generate_image(range_min, range_max, base_image_path, font):
         )
         base_coord_x += coord_x_increment
 
+    # Resize image to reduce file size
+    if paper_size == "a4":
+        max_pixel_height = 267 * MM_TO_PIXEL_RATIO
+    elif paper_size == "letter":
+        max_pixel_height = 249 * MM_TO_PIXEL_RATIO
+    (width, height) = base_image.size
+    if height > max_pixel_height:
+        ratio = max_pixel_height / height
+        width *= ratio
+        height *= ratio
+        base_image = base_image.resize((int(width), int(height)), Image.ANTIALIAS)
+
     # Save image to buffer
     image_buffer = BytesIO()
     base_image.save(image_buffer, format='PNG')
     return base64.b64encode(image_buffer.getvalue())
 
 class PageCreator(object):
-    def __init__(self, range_min, range_max, base_image_path, font_path, font_size):
+    def __init__(self, paper_size, range_min, range_max, base_image_path, font_path, font_size):
+        self.paper_size = paper_size
         self.range_min = range_min
         self.range_max = range_max
         self.base_image_path = base_image_path
@@ -47,7 +62,7 @@ class PageCreator(object):
 
     def __call__(self, call_num):
         font = ImageFont.truetype(self.font_path, self.font_size)
-        return generate_image(self.range_min, self.range_max, self.base_image_path, font)
+        return generate_image(self.paper_size, self.range_min, self.range_max, self.base_image_path, font)
 
 def pdf(request, resource, **kwargs):
     context = dict()
@@ -70,12 +85,12 @@ def pdf(request, resource, **kwargs):
     # Create resource image
     base_image_path = 'resources/content/{}/sorting-network-colour.png'.format(resource.folder)
     font_path = 'resources/content/fonts/PatrickHand-Regular.ttf'
-
+    paper_size = request.GET['size']
     with Pool() as pool:
-        context['resource_images'] = pool.map(PageCreator(range_min, range_max, base_image_path, font_path, font_size), range(0, int(request.GET['copies'])))
+        context['resource_images'] = pool.map(PageCreator(paper_size, range_min, range_max, base_image_path, font_path, font_size), range(0, int(request.GET['copies'])))
 
     # Write to PDF
-    context['paper_size'] = request.GET['size']
+    context['paper_size'] = paper_size
     context['resource'] = resource
     html_string = render_to_string('resources/base-resource-pdf.html', context)
 
