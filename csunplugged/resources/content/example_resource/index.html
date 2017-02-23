@@ -10,6 +10,20 @@
 
 {% block generation_form %}
   <fieldset>
+    <legend>Difficulty</legend>
+
+    <input type="radio" name="difficulty" id="easy" value="easy" checked="checked">
+    <label for="size_easy">Easy</label>
+    <br>
+    <input type="radio" name="difficulty" id="medium" value="medium">
+    <label for="medium">Medium</label>
+    <br>
+    <input type="radio" name="difficulty" id="hard" value="hard">
+    <label for="hard">Hard</label>
+
+  </fieldset>
+  <fieldset>
+
     <legend>Paper Size</legend>
 
     <input type="radio" name="size" id="size_a4" value="a4" checked="checked">
