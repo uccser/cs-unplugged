@@ -7,6 +7,7 @@ from io import BytesIO
 import base64
 from random import sample
 from multiprocessing import Pool
+from django.utils.translation import ugettext as _
 
 MM_TO_PIXEL_RATIO = 3.78
 
@@ -92,7 +93,7 @@ def pdf(request, resource, **kwargs):
     context['resource'] = resource
     html_string = render_to_string('resources/base-resource-pdf.html', context)
 
-    html = HTML(string=html_string)
+    html = HTML(string=html_string, base_url=request.build_absolute_uri())
     base_css = CSS(string=open('static/css/print-resource-pdf.css', encoding='UTF-8').read())
     pdf_file = html.write_pdf(stylesheets=[base_css]);
 

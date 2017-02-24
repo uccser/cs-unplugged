@@ -15,6 +15,10 @@ img#base-image {
   font-size: 0.8em;
   color: #888;
 }
+.fixed-running-element img {
+  max-height: 1.5em;
+  vertical-align: text-bottom;
+}
 .fixed-running-element .logo-text {
   color: #cc0423;
 }

@@ -29,7 +29,8 @@
     </div>
   {% endfor %}
   <footer class="fixed-running-element">
-    <strong class="logo-text">CS Unplugged</strong> - {{ resource.name }} - csunplugged.org{% url 'resources:resource' resource.slug %}
+    {% load static %}
+    <img src="{% static 'img/logo-without-subtitle-scribble.png' %}"> - {{ resource.name }} - csunplugged.org{% url 'resources:resource' resource.slug %}
   </footer>
 </body>
 </html>
