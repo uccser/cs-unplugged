@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+  <h1>{% trans "Resources" %}</h1>
+  {% if all_resources %}
+    {% for resource in all_resources %}
+      <p>
+        <a href="{% url 'resources:resource' resource.slug %}">{{ resource.name }}</a>
+      </p>
+    {% endfor %}
+  {% else %}
+    <p>No resources are available.</p>
+  {% endif %}
+{% endblock %}
