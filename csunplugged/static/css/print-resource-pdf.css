@@ -4,15 +4,23 @@ div#base-image-container {
 }
 img#base-image {
   max-width: 100%;
+  margin: 8mm;
 }
-footer {
+.fixed-running-element{
+  text-align: center;
+  width: 100%;
   position: fixed;
-  bottom: 100%;
-  margin-bottom: 1em;
+  margin: 0;
   font-family: 'Open Sans', sans-serif;
   font-size: 0.8em;
   color: #888;
 }
-footer .logo-text {
+.fixed-running-element .logo-text {
   color: #cc0423;
+}
+footer {
+  bottom: 0;
+}
+header {
+  top: 0;
 }

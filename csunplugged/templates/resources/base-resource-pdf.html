@@ -3,7 +3,7 @@
   <title>Test</title>
   <style>
     @page {
-      margin: 15mm 20mm;
+      margin: 10mm 10mm;
       {% if paper_size == "a4" %}
         size: A4;
       {% elif paper_size == "letter" %}
@@ -12,21 +12,23 @@
     }
     img#base-image {
       {% if paper_size == "a4" %}
-        max-height: 267mm !important;
+        max-height: 257mm !important;
       {% elif paper_size == "letter" %}
-        max-height: 249mm !important;
+        max-height: 239mm !important;
       {% endif %}
     }
 
   </style>
 </head>
 <body>
+  <header class="fixed-running-element">
+  </header>
   {% for resource_image_data in resource_images %}
     <div id="base-image-container">
       <img id="base-image" src="data:image/png;base64,{{ resource_image_data }}" />
     </div>
   {% endfor %}
-  <footer>
+  <footer class="fixed-running-element">
     <strong class="logo-text">CS Unplugged</strong> - {{ resource.name }} - csunplugged.org{% url 'resources:resource' resource.slug %}
   </footer>
 </body>
