@@ -46,8 +46,6 @@ def generate_resource_image(get_request, resource, module_path, copy_num):
     Returns:
         Base 64 string of a generated resource image.
     """
-    print(args)
-
     # Get image from resource image creator
     resource_image_generator = importlib.import_module(module_path)
     image = resource_image_generator.resource_image(get_request, resource)
