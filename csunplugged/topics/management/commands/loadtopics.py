@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from topics.models import Topic, CurriculumLink, LearningOutcome
+from topics.models import Topic, CurriculumLink, LearningOutcome, ClassroomResource
 from django.utils.text import slugify
 from django.db import transaction
 import yaml
@@ -149,6 +149,13 @@ class Command(BaseCommand):
                 name=link
             )
             lesson.curriculum_links.add(object)
+        # Add classroom resources
+        if 'resources-classroom' in lesson_structure:
+            for resource in lesson_structure['resources-classroom']:
+                (object, created) = ClassroomResource.objects.get_or_create(
+                    text=resource
+                )
+                lesson.classroom_resources.add(object)
         self.load_log.append(('Added Lesson: {}'.format(lesson.__str__()), 2))
 
     def load_programming_exercises(self, programming_exercises_structure, topic):
