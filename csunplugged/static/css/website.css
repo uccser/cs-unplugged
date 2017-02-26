@@ -19,3 +19,7 @@ img {
   height: 200px;
   object-fit: contain;
 }
+img.resource-thumbnail {
+  border: 1px solid #555;
+  border-radius: 0.6em;
+}

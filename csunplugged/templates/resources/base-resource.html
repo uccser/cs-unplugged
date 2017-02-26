@@ -1,19 +1,31 @@
 {% extends "base.html" %}
 
-{% block content %}
-  <h1>{% block name %}{% endblock name %}</h1>
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>{% block name %}{% endblock name %}</h1>
+      {% block description %}
 
-  {% block description %}
+      {% endblock description %}
+    </div>
+    <div class="col-12 col-sm-8">
+      <h2>Create Resource</h2>
 
-  {% endblock description %}
+      <form action="{% url 'resources:generate' resource.slug %}" method="get">
+        {% block generation_form %}
 
-  <h2>Create Resource</h2>
-
-  <form action="{% url 'resources:generate' resource.slug %}" method="get">
-    {% block generation_form %}
-
-    {% endblock generation_form %}
-    <input type="submit" value="Generate Resource" />
-  </form>
-
-{% endblock content %}
+        {% endblock generation_form %}
+        <input type="submit" value="Generate Resource" />
+      </form>
+    </div>
+    <div class="col-12 col-sm-4">
+      {% if thumbnail %}
+        <h2>Preview</h2>
+        {% load static %}
+        <img class="resource-thumbnail" src="{% static thumbnail %}">
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock body %}
