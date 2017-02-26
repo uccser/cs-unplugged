@@ -1,7 +1,6 @@
-header img {
-  height: 100px;
-  display: block;
-  margin: 0 auto;
+img#navbar-brand-logo {
+  height: 30px;
+  margin-right: 1rem;
 }
 h1, h2, h3 {
   color: #e33333;
@@ -12,14 +11,7 @@ h2 span.subtitle,
 h3 span.subtitle {
   color: #888;
 }
-img {
-  max-width: 100%;
-}
 .topic-img-logo {
   height: 200px;
   object-fit: contain;
-}
-img.resource-thumbnail {
-  border: 1px solid #555;
-  border-radius: 0.6em;
 }

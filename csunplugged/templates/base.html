@@ -19,8 +19,8 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="{% url 'general:home' %}">
-      <img src="{% static 'img/logo.png' %}" height="30" alt="">
+    <a class="float-left" href="{% url 'general:home' %}">
+      <img src="{% static 'img/logo-without-subtitle.png' %}" id="navbar-brand-logo" alt="">
     </a>
     <div class="collapse navbar-collapse" id="navbarNav">
     <div class="navbar-nav">
@@ -30,7 +30,7 @@
       <a class="nav-item nav-link" href="{% url 'general:about' %}">About</a>
     </div>
   </div>
-  <span style="float:right;width: 20rem;color: red;">Prototype - Internal Use Only</span>
+  <span class="float-right" style="width: 20rem;color: red;">Prototype - Internal Use Only</span>
   </nav>
 
   {% block body %}
