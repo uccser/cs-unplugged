@@ -38,6 +38,8 @@ lessons:
       curriculum-links:
         - maths
         - science
+      resources-classroom:
+        - Pens
 
     - lesson-number: 3
       slug: lesson-3
