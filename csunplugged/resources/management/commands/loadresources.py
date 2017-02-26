@@ -35,6 +35,7 @@ class Command(BaseCommand):
                 slug=resource_slug,
                 name=resource_data['name'],
                 folder=resource_data['folder'],
+                thumbnail_static_path=resource_data['thumbnail_static_path'],
             )
             resource.save()
             self.load_log.append(('\nAdded Resource: {}'.format(resource.name), 0))

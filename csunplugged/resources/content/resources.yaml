@@ -1,3 +1,4 @@
 sorting-network:
   name: Sorting Network
   folder: sorting_network
+  thumbnail_static_path: img/resource-sorting-network-thumbnail-example.png
