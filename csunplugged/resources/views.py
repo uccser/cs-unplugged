@@ -3,6 +3,7 @@ from django.utils.translation import ugettext
 from django.shortcuts import get_object_or_404, render
 from django.http import Http404
 from resources.models import Resource
+from resources.generate_resource_pdf import generate_resource_pdf
 import importlib
 
 class IndexView(generic.ListView):
@@ -20,12 +21,14 @@ def resource(request, resource_slug):
     context['resource'] = resource
     return render(request, template_string, context)
 
-def generate_resource(request, resource_slug, **kwargs):
-    module_name = resource_slug.replace('-', '_')
+def generate_resource(request, resource_slug):
+    """Try to import and call resource image generator, 404 if not found."""
     resource = get_object_or_404(Resource, slug=resource_slug)
-    module_path = 'resources.content.{}.generate'.format(resource.folder)
+    module_path = 'resources.content.{}.image_generator'.format(resource.folder)
     try:
-        pdf_view = importlib.import_module(module_path)
+        importlib.import_module(module_path)
     except ImportError:
         raise Http404("PDF generation does not exist for resource: {}".format(resource_slug))
-    return pdf_view.pdf(request, resource, **kwargs)
+    else:
+        # TODO: Add creation of PDF as job to job queue
+        return generate_resource_pdf(request, resource, module_path)
