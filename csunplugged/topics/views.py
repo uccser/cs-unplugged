@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404, get_list_or_404
 from django.views import generic
+from django.db.models import Max, Min
 
 from .models import Topic, FollowUpActivity, UnitPlan, Lesson, ProgrammingExercise, ConnectedGeneratedResource
 
@@ -47,7 +48,10 @@ class UnitPlanView(generic.DetailView):
         # Add connected topic
         context['topic'] = get_object_or_404(Topic, slug=self.kwargs.get('topic_slug', None))
         # Add all the connected lessons
-        context['lessons'] = self.object.unit_plan_lessons.order_by('age_bracket', 'number')
+        context['lessons'] = self.object.unit_plan_lessons.annotate(
+            min_age=Min('ages__age'),
+            max_age=Max('ages__age')
+        ).order_by('min_age', 'max_age', 'number')
         return context
 
 
@@ -61,7 +65,6 @@ class LessonView(generic.DetailView):
             self.model,
             topic__slug=self.kwargs.get('topic_slug', None),
             unit_plan__slug=self.kwargs.get('unit_plan_slug', None),
-            age_bracket_slug=self.kwargs.get('age_bracket', None),
             slug=self.kwargs.get('lesson_slug', None),
         )
 

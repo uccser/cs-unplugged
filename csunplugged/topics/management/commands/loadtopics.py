@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from topics.models import Topic, CurriculumLink, LearningOutcome, ClassroomResource, ConnectedGeneratedResource
+from topics.models import Topic, CurriculumLink, LearningOutcome, ClassroomResource, ConnectedGeneratedResource, Age
 from resources.models import Resource
 from django.utils.text import slugify
 from django.db import transaction
@@ -122,22 +122,26 @@ class Command(BaseCommand):
         self.load_lessons(lessons_structure, topic, unit_plan)
 
     def load_lessons(self, lessons_structure, topic, unit_plan):
-        for age_bracket, age_bracket_lessons in lessons_structure.items():
-            for lesson_structure in age_bracket_lessons:
-                self.load_lesson(lesson_structure, topic, unit_plan, age_bracket)
+        for lesson_structure in lessons_structure:
+            self.load_lesson(lesson_structure, topic, unit_plan)
 
-    def load_lesson(self, lesson_structure, topic, unit_plan, age_bracket):
+    def load_lesson(self, lesson_structure, topic, unit_plan):
         lesson_content = self.convert_md_file(lesson_structure['md-file'])
         lesson = topic.topic_lessons.create(
             unit_plan=unit_plan,
             slug=lesson_structure['slug'],
             name=lesson_content.title,
             number=lesson_structure['lesson-number'],
-            age_bracket=age_bracket,
-            age_bracket_slug=slugify(age_bracket),
             content=lesson_content.html_string,
         )
         lesson.save()
+        # Add ages
+        ages = lesson_structure['ages'].split(',')
+        for age in ages:
+            (object, created) = Age.objects.get_or_create(
+                age=age
+            )
+            lesson.ages.add(object)
         # Add learning outcomes
         for learning_outcome_slug in lesson_structure['learning-outcomes']:
             learning_outcome = LearningOutcome.objects.get(

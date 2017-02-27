@@ -26,6 +26,14 @@ class ClassroomResource(models.Model):
         return self.text
 
 
+class Age(models.Model):
+#  Auto-incrementing 'id' field is automatically set by Django
+    age = models.PositiveSmallIntegerField()
+
+    def __str__(self):
+        return self.age
+
+
 class Topic(models.Model):
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(unique=True)
@@ -68,10 +76,11 @@ class Lesson(models.Model):
     slug = models.SlugField()
     name = models.CharField(max_length=100)
     number = models.IntegerField()
-    # TODO: Store age_brackets in different model (see issue #2)
-    age_bracket = models.CharField(max_length=20)
-    age_bracket_slug = models.CharField(max_length=20)
     content = models.TextField()
+    ages = models.ManyToManyField(
+        Age,
+        related_name='lesson_ages'
+    )
     learning_outcomes = models.ManyToManyField(
         LearningOutcome,
         related_name='lesson_learning_outcomes'
@@ -91,7 +100,7 @@ class Lesson(models.Model):
     )
 
     def __str__(self):
-        return '{0} ({1})'.format(self.name, self.age_bracket)
+        return self.name
 
 
 class FollowUpActivity(models.Model):
