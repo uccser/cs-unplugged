@@ -1,5 +1,6 @@
 from django.core.management.base import BaseCommand, CommandError
-from topics.models import Topic, CurriculumLink, LearningOutcome, ClassroomResource
+from topics.models import Topic, CurriculumLink, LearningOutcome, ClassroomResource, ConnectedGeneratedResource
+from resources.models import Resource
 from django.utils.text import slugify
 from django.db import transaction
 import yaml
@@ -156,6 +157,16 @@ class Command(BaseCommand):
                     text=resource
                 )
                 lesson.classroom_resources.add(object)
+        # Add generated resources
+        if 'resources-generated' in lesson_structure:
+            for resource_data in lesson_structure['resources-generated']:
+                resource = Resource.objects.get(slug=resource_data['resource-slug'])
+                relationship = ConnectedGeneratedResource(
+                    resource=resource,
+                    lesson=lesson,
+                    description=resource_data['description']
+                )
+                relationship.save()
         self.load_log.append(('Added Lesson: {}'.format(lesson.__str__()), 2))
 
     def load_programming_exercises(self, programming_exercises_structure, topic):

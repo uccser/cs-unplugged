@@ -3,6 +3,24 @@
 {% block content %}
 <h1>{{ lesson.name }}</h1>
 
+<h2>CS Unplugged Resources</h2>
+{% if lesson_generated_resources %}
+  <ul>
+    {% for generated_resource in lesson_generated_resources %}
+      <li>
+        <a href="{% url 'resources:resource' generated_resource.slug %}">
+          {% load static %}
+          <img class="img-thumbnail resource-thumbnail" src="{% static generated_resource.thumbnail %}">
+          <p><strong>{{ generated_resource.name }}</strong></p>
+        </a>
+        <p>{{ generated_resource.description }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No CS Unplugged resources required.</p>
+{% endif %}
+
 <h2>Classroom Resources</h2>
 {% if lesson_classroom_resources %}
   <ul>
