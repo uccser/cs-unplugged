@@ -1,5 +1,5 @@
 from django.db import models
-
+from resources.models import Resource
 
 class LearningOutcome(models.Model):
     #  Auto-incrementing 'id' field is automatically set by Django
@@ -16,6 +16,14 @@ class CurriculumLink(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class ClassroomResource(models.Model):
+    #  Auto-incrementing 'id' field is automatically set by Django
+    text = models.CharField(max_length=300, unique=True)
+
+    def __str__(self):
+        return self.text
 
 
 class Topic(models.Model):
@@ -72,6 +80,15 @@ class Lesson(models.Model):
         CurriculumLink,
         related_name='lesson_curriculum_links'
     )
+    classroom_resources = models.ManyToManyField(
+        ClassroomResource,
+        related_name='lesson_classroom_resources'
+    )
+    generated_resources = models.ManyToManyField(
+        Resource,
+        through='ConnectedGeneratedResource',
+        related_name='lesson_generated_resources'
+    )
 
     def __str__(self):
         return '{0} ({1})'.format(self.name, self.age_bracket)
@@ -118,3 +135,10 @@ class ProgrammingExercise(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class ConnectedGeneratedResource(models.Model):
+    #  Auto-incrementing 'id' field is automatically set by Django
+    resource = models.ForeignKey(Resource, on_delete=models.CASCADE)
+    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
+    description = models.CharField(max_length=300)

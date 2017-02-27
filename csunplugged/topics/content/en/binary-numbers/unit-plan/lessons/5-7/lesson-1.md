@@ -7,11 +7,6 @@ We’ve noticed that once students understand how the binary number system works
 
 45 minutes
 
-## Resources
-
-- 1 set of large binary cards from 1 to 128 dots (8 cards)
-- 1 set per pair of students of student binary cards from 1 to 16 dots (5 cards)
-
 ## Key Questions
 
 - What different number systems do we know about?

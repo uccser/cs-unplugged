@@ -15,3 +15,6 @@ h3 span.subtitle {
   height: 200px;
   object-fit: contain;
 }
+img.resource-thumbnail {
+  max-height: 15rem;
+}

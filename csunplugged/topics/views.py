@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, get_list_or_404
 from django.views import generic
 
-from .models import Topic, FollowUpActivity, UnitPlan, Lesson, ProgrammingExercise
+from .models import Topic, FollowUpActivity, UnitPlan, Lesson, ProgrammingExercise, ConnectedGeneratedResource
 
 class IndexView(generic.ListView):
     template_name = 'topics/index.html'
@@ -72,6 +72,21 @@ class LessonView(generic.DetailView):
         context['lesson_curriculum_links'] = self.object.curriculum_links.all()
         # Add all the connected learning outcomes
         context['lesson_learning_outcomes'] = self.object.learning_outcomes.all()
+        # Add all the connected classroom resources
+        context['lesson_classroom_resources'] = self.object.classroom_resources.all()
+        # Add all the connected classroom resources
+        related_resources = self.object.generated_resources.all()
+        generated_resources = []
+        for related_resource in related_resources:
+            generated_resource = dict()
+            generated_resource['slug'] = related_resource.slug
+            generated_resource['name'] = related_resource.name
+            generated_resource['thumbnail'] = related_resource.thumbnail_static_path
+            relationship = ConnectedGeneratedResource.objects.get(resource=related_resource, lesson=self.object)
+            generated_resource['description'] = relationship.description
+            generated_resources.append(generated_resource)
+        context['lesson_generated_resources'] = generated_resources
+
         return context
 
 
