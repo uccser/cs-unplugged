@@ -19,6 +19,7 @@ def resource(request, resource_slug):
     template_string = '{}/index.html'.format(resource.folder)
     context = dict()
     context['resource'] = resource
+    context['lessons'] = resource.lesson_generated_resources.all()
     if resource.thumbnail_static_path:
         context['thumbnail'] = resource.thumbnail_static_path
     return render(request, template_string, context)
