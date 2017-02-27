@@ -47,7 +47,7 @@ class UnitPlanView(generic.DetailView):
         # Add connected topic
         context['topic'] = get_object_or_404(Topic, slug=self.kwargs.get('topic_slug', None))
         # Add all the connected lessons
-        context['lessons'] = self.object.unit_plan_lessons.order_by('age_bracket', 'number')
+        context['lessons'] = self.object.unit_plan_lessons.order_by('number')
         return context
 
 
@@ -61,7 +61,6 @@ class LessonView(generic.DetailView):
             self.model,
             topic__slug=self.kwargs.get('topic_slug', None),
             unit_plan__slug=self.kwargs.get('unit_plan_slug', None),
-            age_bracket_slug=self.kwargs.get('age_bracket', None),
             slug=self.kwargs.get('lesson_slug', None),
         )
 

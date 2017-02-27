@@ -31,7 +31,7 @@
         <h2>Related Lessons</h2>
         {% for lesson in lessons %}
           <p>
-            <a href="{% url 'topics:lesson' lesson.topic.slug lesson.unit_plan.slug lesson.age_bracket_slug lesson.slug %}" class="btn btn-outline-danger">{{ lesson.age_bracket }}: {{ lesson.name }}</a>
+            <a href="{% url 'topics:lesson' lesson.topic.slug lesson.unit_plan.slug lesson.slug %}" class="btn btn-outline-danger">{{ lesson.topic.name }}: {{ lesson.name }}</a>
           </p>
         {% endfor %}
     </div>

@@ -11,7 +11,7 @@
 <h2>Lessons</h2>
 {% for lesson in lessons %}
   <p>
-    <a href="{% url 'topics:lesson' topic.slug unit_plan.slug lesson.age_bracket_slug lesson.slug %}" class="btn btn-outline-danger">{{ lesson.age_bracket }}: {{ lesson.name }}</a>
+    <a href="{% url 'topics:lesson' topic.slug unit_plan.slug lesson.slug %}" class="btn btn-outline-danger">{{ lesson.number }}: {{ lesson.name }}</a>
   </p>
 {% endfor %}
 
