@@ -202,6 +202,9 @@ class Command(BaseCommand):
                 scratch_solution=self.convert_md_file(programming_exercise_data['scratch']['solution']).html_string,
                 python_hints=self.convert_md_file(programming_exercise_data['python']['hints']).html_string,
                 python_solution=self.convert_md_file(programming_exercise_data['python']['solution']).html_string,
+                difficulty=ProgrammingExerciseDifficulty.objects.get(
+                    level=programming_exercise_data['difficulty-level']
+                )
             )
             programming_exercise.save()
 

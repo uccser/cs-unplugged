@@ -150,6 +150,11 @@ class ProgrammingExercise(models.Model):
         LearningOutcome,
         related_name='programming_exercise_learning_outcomes'
     )
+    difficulty = models.ForeignKey(
+        ProgrammingExerciseDifficulty,
+        on_delete=models.CASCADE,
+        related_name='difficulty_programming_exercises'
+    )
 
     def __str__(self):
         return self.name
