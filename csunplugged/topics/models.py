@@ -122,6 +122,15 @@ class FollowUpActivity(models.Model):
         return self.name
 
 
+class ProgrammingExerciseDifficulty(models.Model):
+    #  Auto-incrementing 'id' field is automatically set by Django
+    level = models.PositiveSmallIntegerField(unique=True)
+    name = models.CharField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
 class ProgrammingExercise(models.Model):
     #  Auto-incrementing 'id' field is automatically set by Django
     topic = models.ForeignKey(
