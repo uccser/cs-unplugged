@@ -274,7 +274,7 @@ To install the project requirements, type the following commands in terminal:
 
     One of the requirements ``Kordac`` is not yet available on PyPI,
     see the `Kordac documentation`_ on how to install Kordac.
-    You will need to do this before running the commands above.
+    You will need to do this before using the system.
 
 Step 12: Install text editor/IDE (optional)
 =================================================
