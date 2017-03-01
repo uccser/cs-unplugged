@@ -1,0 +1,2 @@
+Understanding the project structure
+###########################################
