@@ -1,5 +1,3 @@
-import yaml
-import os
 from django.db import transaction
 from topics.management.commands.BaseLoader import BaseLoader
 from topics.models import Age, LearningOutcome, CurriculumLink, ClassroomResource, Resource, ConnectedGeneratedResource

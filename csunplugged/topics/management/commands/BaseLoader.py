@@ -1,4 +1,3 @@
-from django.core.management.base import BaseCommand
 import yaml
 import os.path
 import mdx_math
@@ -7,8 +6,7 @@ import sys
 from kordac import Kordac
 
 
-# TODO: Should create generic functions for loading YAML and reading file
-class BaseLoader(BaseCommand):
+class BaseLoader():
 
     def __init__(self):
         self.BASE_PATH = 'topics/content/en/' # TODO: Hardcoded for prototype
@@ -46,6 +44,10 @@ class BaseLoader(BaseCommand):
         """Returns the Kordac object for a given Markdown file"""
         content = open(os.path.join(self.BASE_PATH, file_path), encoding='UTF-8').read()
         return self.converter.convert(content)
+
+    def load_yaml_file(self, file_path):
+        return yaml.load(open(os.path.join(self.BASE_PATH, file_path), encoding='UTF-8').read())
+
 
     @abc.abstractmethod
     def load(self):

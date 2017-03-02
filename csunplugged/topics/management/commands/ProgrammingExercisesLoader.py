@@ -1,5 +1,3 @@
-import yaml
-import os
 from django.db import transaction
 from topics.management.commands.BaseLoader import BaseLoader
 from topics.models import LearningOutcome
@@ -12,7 +10,7 @@ class ProgrammingExercisesLoader(BaseLoader):
         self.topic = topic
 
     def load(self):
-        structure = yaml.load(open(os.path.join(self.BASE_PATH, self.programming_exercises_structure), encoding='UTF-8').read())
+        structure = self.load_yaml_file(self.programming_exercises_structure)
 
         for programming_exercise_data in structure:
             programming_exercise_content = self.convert_md_file(programming_exercise_data['md-file'])

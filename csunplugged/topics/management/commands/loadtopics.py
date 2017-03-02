@@ -1,10 +1,4 @@
 from django.core.management.base import BaseCommand
-import yaml
-import os # NTS maybe don't need this...
-import os.path
-import mdx_math
-import abc
-from kordac import Kordac
 from topics.management.commands.BaseLoader import BaseLoader
 from topics.management.commands.LearningOutcomesLoader import LearningOutcomesLoader
 from topics.management.commands.TopicsLoader import TopicsLoader

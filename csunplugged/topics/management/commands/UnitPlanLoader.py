@@ -1,5 +1,3 @@
-import yaml
-import os
 from topics.management.commands.BaseLoader import BaseLoader
 from topics.management.commands.LessonsLoader import LessonsLoader
 
@@ -11,7 +9,7 @@ class UnitPlanLoader(BaseLoader):
         self.topic = topic
 
     def load(self):
-        unit_plan_structure = yaml.load(open(os.path.join(self.BASE_PATH, self.unit_plan_structure_file), encoding='UTF-8').read())
+        unit_plan_structure = self.load_yaml_file(self.unit_plan_structure_file)
         unit_plan_content = self.convert_md_file(unit_plan_structure['md-file'])
 
         unit_plan = self.topic.topic_unit_plans.create(

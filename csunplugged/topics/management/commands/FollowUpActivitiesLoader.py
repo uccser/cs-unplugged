@@ -1,5 +1,3 @@
-import yaml
-import os
 from django.db import transaction
 from topics.management.commands.BaseLoader import BaseLoader
 from topics.models import CurriculumLink
@@ -13,7 +11,7 @@ class FollowUpActivitiesLoader(BaseLoader):
 
     def load(self):
         if self.follow_up_activities_structure:
-            structure = yaml.load(open(os.path.join(self.BASE_PATH, self.follow_up_activities_structure), encoding='UTF-8').read())
+            structure = self.load_yaml_file(self.follow_up_activities_structure)
 
             for activity_data in structure:
                 activity_content = self.convert_md_file(activity_data['md-file'])
