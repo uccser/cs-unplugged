@@ -95,3 +95,6 @@ ENV/
 
 # vim files
 *.swp
+
+# custom git configs
+.gitconfig
