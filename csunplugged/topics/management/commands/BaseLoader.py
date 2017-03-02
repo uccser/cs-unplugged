@@ -14,7 +14,6 @@ class BaseLoader():
         self.BASE_PATH = 'topics/content/en/' # TODO: Hardcoded for prototype
         self.language_structure = self.load_yaml_file('structure.yaml')
         self.setup_md_to_html_converter()
-        # self.load_log = []
 
     def setup_md_to_html_converter(self):
         """Create Kordac converter with custom processors, html templates,
@@ -64,7 +63,6 @@ class BaseLoader():
 
     @abc.abstractmethod
     def load(self):
-        pass
-        # raise <something>
+        raise NotImplementedError('subclass does not implement this method')
 
 
