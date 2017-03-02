@@ -15,4 +15,4 @@ class LessonsLoader(BaseLoader):
 
     def load(self):
         for lesson_structure in self.lessons_structure:
-            LessonLoader.load(lesson_structure, self.topic, self.unit_plan)
+            LessonLoader(lesson_structure, self.topic, self.unit_plan).load()

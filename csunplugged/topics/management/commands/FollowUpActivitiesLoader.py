@@ -16,7 +16,7 @@ class FollowUpActivitiesLoader(BaseLoader):
             structure = yaml.load(open(os.path.join(self.BASE_PATH, self.follow_up_activities_structure), encoding='UTF-8').read())
 
             for activity_data in structure:
-                activity_content = BaseLoader.convert_md_file(activity_data['md-file'])
+                activity_content = self.convert_md_file(activity_data['md-file'])
                 activity = self.topic.topic_follow_up_activities.create(
                     slug=activity_data['slug'],
                     name=activity_content.title,
@@ -28,4 +28,4 @@ class FollowUpActivitiesLoader(BaseLoader):
                         name=link
                     )
                     activity.curriculum_links.add(object)
-                BaseLoader.load_log.append(('Added Activity: {}'.format(activity.name), 1))
+                self.load_log.append(('Added Activity: {}'.format(activity.name), 1))

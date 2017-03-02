@@ -2,18 +2,18 @@ import yaml
 import os
 from django.db import transaction
 from topics.management.commands.BaseLoader import BaseLoader
-from topics.models import CurriculumLink, LearningOutcome, ClassroomResource, ConnectedGeneratedResource
+from topics.models import Age, LearningOutcome, CurriculumLink, ClassroomResource, Resource, ConnectedGeneratedResource
 
 class LessonLoader(BaseLoader):
 
-    def __init__(self, lesson_stucture, topic, unit_plan):
+    def __init__(self, lesson_structure, topic, unit_plan):
         super().__init__()
         self.lesson_structure = lesson_structure
         self.topic = topic
         self.unit_plan = unit_plan
 
     def load(self):
-        lesson_content = BaseLoader.convert_md_file(self.lesson_structure['md-file'])
+        lesson_content = self.convert_md_file(self.lesson_structure['md-file'])
         lesson = self.topic.topic_lessons.create(
             unit_plan=self.unit_plan,
             slug=self.lesson_structure['slug'],
@@ -58,4 +58,4 @@ class LessonLoader(BaseLoader):
                     description=resource_data['description']
                 )
                 relationship.save()
-        BaseLoader.load_log.append(('Added Lesson: {}'.format(lesson.__str__()), 2))
+        self.load_log.append(('Added Lesson: {}'.format(lesson.__str__()), 2))

@@ -14,7 +14,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         """The function called when the loadtopics command is given"""
-        thing = BaseLoader()
-        LearningOutcomesLoader(thing.language_structure['learning-outcomes']).load()
-        TopicsLoader(thing.language_structure).load()
+        base_loader = BaseLoader()
+        LearningOutcomesLoader(base_loader.language_structure['learning-outcomes']).load()
+        TopicsLoader(base_loader.language_structure).load()
 

@@ -1,9 +1,9 @@
 from django.core.management.base import BaseCommand
 import yaml
-import os # NTS maybe don't need this...
 import os.path
 import mdx_math
 import abc
+import sys
 from kordac import Kordac
 
 
@@ -38,8 +38,8 @@ class BaseLoader(BaseCommand):
 
     def print_load_log(self):
         for (log, indent) in self.load_log:
-            self.stdout.write('{indent}{text}'.format(indent='  '*indent,text=log))
-        self.stdout.write('\n')
+            sys.stdout.write('{indent}{text}'.format(indent='  '*indent,text=log))
+        sys.stdout.write('\n')
         self.load_log = []
 
     def convert_md_file(self, file_path):

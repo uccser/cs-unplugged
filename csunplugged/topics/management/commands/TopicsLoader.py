@@ -5,6 +5,7 @@ from topics.management.commands.BaseLoader import BaseLoader
 from topics.management.commands.FollowUpActivitiesLoader import FollowUpActivitiesLoader
 from topics.management.commands.ProgrammingExercisesLoader import ProgrammingExercisesLoader
 from topics.management.commands.UnitPlanLoader import UnitPlanLoader
+from topics.models import Topic
 
 
 class TopicsLoader(BaseLoader):
@@ -16,11 +17,11 @@ class TopicsLoader(BaseLoader):
     @transaction.atomic
     def load(self):
         for topic_structure in self.structure['topics']:
-            topic_data = BaseLoader.convert_md_file(topic_structure['md-file'])
+            topic_data = self.convert_md_file(topic_structure['md-file'])
 
             other_resources_file = topic_structure['other-resources-md-file']
             if other_resources_file:
-                other_resources_data = BaseLoader.convert_md_file(other_resources_file)
+                other_resources_data = self.convert_md_file(other_resources_file)
                 other_resources_html = other_resources_data.html_string
             else:
                 other_resources_html = ''
@@ -33,19 +34,19 @@ class TopicsLoader(BaseLoader):
                 icon=topic_structure['icon']
             )
             topic.save()
-            BaseLoader.load_log.append(('\nAdded Topic: {}'.format(topic.name), 0))
+            self.load_log.append(('\nAdded Topic: {}'.format(topic.name), 0))
 
             # Load unit plans
             for unit_plan_structure_file in topic_structure['unit-plans']:
-                UnitPlanLoader.load(unit_plan_structure_file, topic)
+                UnitPlanLoader(unit_plan_structure_file, topic).load()
 
             # Load programming exercises
             if topic_structure['programming-exercises']:
-                ProgrammingExercisesLoader.load(topic_structure['programming-exercises'], topic)
+                ProgrammingExercisesLoader(topic_structure['programming-exercises'], topic).load()
 
             # Load follow up activities
             if topic_structure['follow-up-activities']:
-                FollowUpActivitiesLoader.load(topic_structure['follow-up-activities'], topic)
+                FollowUpActivitiesLoader(topic_structure['follow-up-activities'], topic).load()
 
         # Print log output
         self.print_load_log()

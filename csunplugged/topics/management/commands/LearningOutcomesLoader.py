@@ -12,7 +12,6 @@ class LearningOutcomesLoader(BaseLoader):
 
     @transaction.atomic
     def load(self):
-        print(dir(BaseLoader))
         learning_outcomes = yaml.load(open(os.path.join(self.BASE_PATH, self.learning_outcomes_file), encoding='UTF-8').read())
         for (outcome_slug, outcome_text) in learning_outcomes.items():
             outcome = LearningOutcome(
