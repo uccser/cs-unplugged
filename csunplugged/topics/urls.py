@@ -45,7 +45,7 @@ urlpatterns = [
         r'^(?P<topic_slug>[-\w]+)/plugged-in/(?P<programming_exercise_slug>[-\w]+)$',
         views.ProgrammingExerciseView.as_view(),
         name='programming_exercise'
-    ),    
+    ),
     # eg: /topics/binary-numbers/unit-plan
     url(
         r'^(?P<topic_slug>[-\w]+)/(?P<unit_plan_slug>[-\w]+)/$',
