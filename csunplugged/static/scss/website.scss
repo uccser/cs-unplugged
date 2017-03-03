@@ -1,0 +1,22 @@
+@import "bootstrap/bootstrap";
+
+img {
+  &#navbar-brand-logo {
+    height: 30px;
+    margin-right: 1rem;
+  }
+  &.resource-thumbnail {
+    max-height: 15rem;
+  }
+  &.topic-img-logo {
+    height: 200px;
+    object-fit: contain;
+  }
+}
+h1, h2, h3 {
+  color: #e33333;
+  margin-top: 1.5rem;
+  span.subtitle {
+    color: #888;
+  }
+}
