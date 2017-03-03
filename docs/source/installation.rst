@@ -1,4 +1,4 @@
-Installation steps
+Installation guide
 #################################################
 
 This page will set your machine up for working on the CS Unplugged project.
