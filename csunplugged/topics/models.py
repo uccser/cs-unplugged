@@ -122,6 +122,15 @@ class FollowUpActivity(models.Model):
         return self.name
 
 
+class ProgrammingExerciseDifficulty(models.Model):
+    #  Auto-incrementing 'id' field is automatically set by Django
+    level = models.PositiveSmallIntegerField(unique=True)
+    name = models.CharField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
 class ProgrammingExercise(models.Model):
     #  Auto-incrementing 'id' field is automatically set by Django
     topic = models.ForeignKey(
@@ -140,6 +149,11 @@ class ProgrammingExercise(models.Model):
     learning_outcomes = models.ManyToManyField(
         LearningOutcome,
         related_name='programming_exercise_learning_outcomes'
+    )
+    difficulty = models.ForeignKey(
+        ProgrammingExerciseDifficulty,
+        on_delete=models.CASCADE,
+        related_name='difficulty_programming_exercises'
     )
 
     def __str__(self):

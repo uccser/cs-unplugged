@@ -3,6 +3,10 @@
 {% block content %}
 <h1><span class="subtitle">Plugged In:</span> {{ programming_exercise.name }}</h1>
 
+<h2>
+  Difficulty: {{ difficulty }}
+</h2>
+
 {% autoescape off %}
 {{ programming_exercise.content }}
 {% endautoescape %}

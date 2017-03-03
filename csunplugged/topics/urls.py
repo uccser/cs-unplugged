@@ -58,4 +58,10 @@ urlpatterns = [
         views.LessonView.as_view(),
         name='lesson'
     ),
+    # eg: /topics/plugged-in/difficulty/1
+    url(
+        r'^plugged-in/difficulty/(?P<programming_exercise_difficulty_level>[0-9]+)$',
+        views.ProgrammingExerciseDifficultyView.as_view(),
+        name='programming_exercise_difficulty'
+    ),
 ]

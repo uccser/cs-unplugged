@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from topics.models import Topic, CurriculumLink, LearningOutcome, ClassroomResource, ConnectedGeneratedResource, Age
+from topics.models import Topic, CurriculumLink, LearningOutcome, ClassroomResource, ConnectedGeneratedResource, Age, ProgrammingExerciseDifficulty
 from resources.models import Resource
 from django.utils.text import slugify
 from django.db import transaction
@@ -20,6 +20,7 @@ class Command(BaseCommand):
         self.setup_converter()
         self.load_log = []
         self.load_learning_outcomes(language_structure['learning-outcomes'])
+        self.load_programming_exercises_difficulties(language_structure['programming-exercises-difficulty'])
         self.load_topics(language_structure)
 
     def setup_converter(self):
@@ -62,6 +63,19 @@ class Command(BaseCommand):
         # Print log output
         self.print_load_log()
 
+    @transaction.atomic
+    def load_programming_exercises_difficulties(self, difficulty_file):
+        difficulties = yaml.load(open(os.path.join(self.BASE_PATH, difficulty_file), encoding='UTF-8').read())
+        for difficulty_data in difficulties:
+            difficulty = ProgrammingExerciseDifficulty(
+                level=difficulty_data['level'],
+                name=difficulty_data['name']
+            )
+            difficulty.save()
+            self.load_log.append(('Added Difficulty Level: {}'.format(difficulty.__str__()), 0))
+
+        # Print log output
+        self.print_load_log()
 
     @transaction.atomic
     def load_topics(self, structure):
@@ -188,6 +202,9 @@ class Command(BaseCommand):
                 scratch_solution=self.convert_md_file(programming_exercise_data['scratch']['solution']).html_string,
                 python_hints=self.convert_md_file(programming_exercise_data['python']['hints']).html_string,
                 python_solution=self.convert_md_file(programming_exercise_data['python']['solution']).html_string,
+                difficulty=ProgrammingExerciseDifficulty.objects.get(
+                    level=programming_exercise_data['difficulty-level']
+                )
             )
             programming_exercise.save()
 
