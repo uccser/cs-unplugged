@@ -9,7 +9,9 @@ Welcome to CS Unplugged
 .. toctree::
     :maxdepth: 2
     :caption: Contents
+    :titlesonly:
 
+    installation
     getting_started/index
     author/index
     developer/index

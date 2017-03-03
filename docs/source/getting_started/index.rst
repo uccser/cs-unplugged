@@ -6,5 +6,4 @@ The following pages take you step by step with getting started with the CS Unplu
 .. toctree::
     :maxdepth: 1
 
-    install_developer
     project_structure

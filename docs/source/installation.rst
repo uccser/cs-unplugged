@@ -1,9 +1,9 @@
-Setting up for developement
+Installation steps
 #################################################
 
 This page will set your machine up for working on the CS Unplugged project.
-You should only need to do these steps once (unless the required steps for
-setup change).
+You should only need to do these installation steps once (unless the required
+steps for setup change).
 
 Recommended Reading
 =================================================
@@ -206,8 +206,7 @@ Step 9: Download the CS Unplugged project
 =================================================
 
 Firstly create the folder you wish to hold the CS Unplugged project folder
-( called ``cs-unplugged``) in if you wish to store the data in a specific
-location.
+in if you wish to store the data in a specific location.
 Once you have decided upon the location, change the working directory of the
 terminal to this folder.
 
@@ -250,12 +249,15 @@ You can change the virtual environment name to whatever you wish.
 
 .. note::
 
-    If you installed ``virtualenvwrapper``, then type to create a virtual
-    environment called ``csunplugged``:
+    If you installed ``virtualenvwrapper``, then type the following command to
+    to create a virtual environment called ``csunplugged``, with Python within
+    the virtual environment already set to Python 3.
+    You will need to replace the ``x`` with the version number of Python you
+    have (for example: ``python3.5``):
 
     .. code-block:: none
 
-        mkvirtualenv --python=/usr/bin/python3.5 csunplugged
+        mkvirtualenv --python=/usr/bin/python3.x csunplugged
 
 You should now have the name of your virtual environment before the terminal
 prompt.
