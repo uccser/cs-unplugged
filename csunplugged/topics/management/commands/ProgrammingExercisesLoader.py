@@ -1,6 +1,6 @@
 from django.db import transaction
 from topics.management.commands.BaseLoader import BaseLoader
-from topics.models import LearningOutcome
+from topics.models import LearningOutcome, ProgrammingExerciseDifficulty
 
 class ProgrammingExercisesLoader(BaseLoader):
     """Loader for programming exercises"""
@@ -33,6 +33,9 @@ class ProgrammingExercisesLoader(BaseLoader):
                     scratch_solution=self.convert_md_file(programming_exercise_data['scratch']['solution']).html_string,
                     python_hints=self.convert_md_file(programming_exercise_data['python']['hints']).html_string,
                     python_solution=self.convert_md_file(programming_exercise_data['python']['solution']).html_string,
+                    difficulty=ProgrammingExerciseDifficulty.objects.get(
+                        level=programming_exercise_data['difficulty-level']
+                    )
                 )
                 programming_exercise.save()
 

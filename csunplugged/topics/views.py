@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404, get_list_or_404
 from django.views import generic
 from django.db.models import Max, Min
 
-from .models import Topic, FollowUpActivity, UnitPlan, Lesson, ProgrammingExercise, ConnectedGeneratedResource
+from .models import Topic, FollowUpActivity, UnitPlan, Lesson, ProgrammingExercise, ConnectedGeneratedResource, ProgrammingExerciseDifficulty
 
 class IndexView(generic.ListView):
     template_name = 'topics/index.html'
@@ -127,6 +127,7 @@ class ProgrammingExerciseView(generic.DetailView):
         context = super(ProgrammingExerciseView, self).get_context_data(**kwargs)
         # Add all the connected learning outcomes
         context['programming_exercise_learning_outcomes'] = self.object.learning_outcomes.all()
+        context['difficulty'] = self.object.difficulty.name
         return context
 
 
@@ -172,3 +173,22 @@ class OtherResourcesView(generic.DetailView):
     model = Topic
     template_name = 'topics/topic-other-resources.html'
     slug_url_kwarg = 'topic_slug'
+
+
+class ProgrammingExerciseDifficultyView(generic.DetailView):
+    model = ProgrammingExerciseDifficulty
+    template_name = 'topics/programming_exercise_difficulty.html'
+    context_object_name = 'difficulty'
+
+    def get_object(self, **kwargs):
+        return get_object_or_404(
+            self.model,
+            level=self.kwargs.get('programming_exercise_difficulty_level', None)
+        )
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(ProgrammingExerciseDifficultyView, self).get_context_data(**kwargs)
+        # Add in a QuerySet of all the connected programming exercises
+        context['programming_exercises'] = self.object.difficulty_programming_exercises.all()
+        return context

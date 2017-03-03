@@ -34,7 +34,7 @@ class BaseLoader():
     def print_load_log(self):
         """Output log messages from loader to console"""
         for (log, indent) in self.load_log:
-            sys.stdout.write('{indent}{text}\n'.format(indent='  '*indent,text=log))
+            sys.stdout.write('{indent}{text}\n'.format(indent='  '*indent, text=log))
         self.load_log = []
 
     def convert_md_file(self, file_path):
