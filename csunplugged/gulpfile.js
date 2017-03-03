@@ -14,7 +14,8 @@ var argv = require('yargs').argv;
 // sass
 var sass = require('gulp-sass');
 var postcss = require('gulp-postcss');
-var autoprefixer = require('autoprefixer-core');
+var postcssFlexbugFixes = require('postcss-flexbugs-fixes');
+var autoprefixer = require('autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 // BrowserSync
 var browserSync = require('browser-sync');
@@ -113,7 +114,7 @@ var tasks = {
       .pipe(gulpif(!production, sourcemaps.init({
         'loadMaps': true
       })))
-      .pipe(postcss([autoprefixer({browsers: ['last 2 versions']})]))
+      .pipe(postcss([autoprefixer({browsers: ['last 2 versions']}), postcssFlexbugFixes]))
       // we don't serve the source files
       // so include scss content inside the sourcemaps
       .pipe(sourcemaps.write({
