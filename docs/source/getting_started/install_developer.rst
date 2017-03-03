@@ -263,12 +263,15 @@ prompt.
 Step 11: Install project requirements
 =================================================
 
-To install the project requirements, type the following commands in terminal:
+To install the project requirements, type the following commands in terminal from the project root folder (contains a file called
+``requirements.txt``):
 
 .. code-block:: none
 
-    sudo apt-get install libffi-dev
+    sudo apt-get install libffi-dev nodejs
     pip3 install -r requirements.txt
+    cd csunplugged
+    npm install
 
 .. warning::
 
@@ -320,8 +323,15 @@ in more detail on the next page):
     python manage.py loaddata
     python manage.py runserver
 
-Now open your preferred web browser to ``localhost:8000/`` and you should
-see the CS Unplugged homepage.
+Leave this terminal running and open a new terminal in the same
+folder and type the following command:
+
+.. code-block:: none
+
+    gulp
+
+The final command should open your preferred web browser to
+``localhost:3000/`` and you should see the CS Unplugged homepage.
 
 Congratulations if you made it this far and everything is working,
 you're all set to contribute to the CS Unplugged project.
