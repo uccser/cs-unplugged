@@ -5,14 +5,14 @@ from topics.models import CurriculumLink
 class FollowUpActivitiesLoader(BaseLoader):
     """Loader for follow up activites"""
 
-    def __init__(self, follow_up_activities_structure_file, topic):
+    def __init__(self, load_log, follow_up_activities_structure_file, topic):
         """Initiates the loader for follow up activites
 
         Args:
             follow_up_activities_structure_file: file path (string)
             topic: Topic model object
         """
-        super().__init__()
+        super().__init__(load_log)
         self.follow_up_activities_structure_file = follow_up_activities_structure_file
         self.topic = topic
 
@@ -38,4 +38,3 @@ class FollowUpActivitiesLoader(BaseLoader):
                     activity.curriculum_links.add(object)
 
                 self.load_log.append(('Added Activity: {}'.format(activity.name), 1))
-

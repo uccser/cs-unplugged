@@ -6,7 +6,7 @@ from topics.models import CurriculumLink
 class LessonsLoader(BaseLoader):
     """Loader for lessons"""
 
-    def __init__(self, lessons_structure, topic, unit_plan):
+    def __init__(self, load_log, lessons_structure, topic, unit_plan):
         """Inititiates the loader for lessons
 
         Args:
@@ -14,7 +14,7 @@ class LessonsLoader(BaseLoader):
             topic: Topic model object
             unit_plan: UnitPlan model object
         """
-        super().__init__()
+        super().__init__(load_log)
         self.lessons_structure = lessons_structure
         self.topic = topic
         self.unit_plan = unit_plan
@@ -22,4 +22,4 @@ class LessonsLoader(BaseLoader):
     def load(self):
         """Call (single) LessonLoader for each lesson to load into db"""
         for lesson_structure in self.lessons_structure:
-            LessonLoader(lesson_structure, self.topic, self.unit_plan).load()
+            LessonLoader(self.load_log, lesson_structure, self.topic, self.unit_plan).load()

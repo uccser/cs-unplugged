@@ -22,4 +22,3 @@ class Command(BaseCommand):
         LearningOutcomesLoader(learning_outcomes_file).load()
         ProgrammingExercisesDifficultiesLoader(difficulty_file).load()
         TopicsLoader(structure_file).load()
-
