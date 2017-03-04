@@ -268,7 +268,7 @@ To install the project requirements, type the following commands in terminal:
 .. code-block:: none
 
     sudo apt-get install libffi-dev
-    pip3 install -r requirements.txt
+    pip install -r requirements/local.txt
 
 .. warning::
 
