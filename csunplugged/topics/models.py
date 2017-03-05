@@ -28,7 +28,7 @@ class ClassroomResource(models.Model):
 
 
 class Age(models.Model):
-#  Auto-incrementing 'id' field is automatically set by Django
+    #  Auto-incrementing 'id' field is automatically set by Django
     age = models.PositiveSmallIntegerField()
 
     def __str__(self):
