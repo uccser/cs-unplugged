@@ -68,34 +68,40 @@ The project currently contains the following applications:
     contain randomly generated components and translations.
     This application stores, generates, and displays these resources.
 
-Introduction to be added.
+The following folders are also required by the Django system:
 
 - ``static``
 
-  - Description to be added.
+  - This folder contains non-user-generated media assets (for example: images, JavaScript, CSS/SCSS, etc).
 
 - ``templates``
 
-  - Description to be added.
-
-Introduction to be added.
+  - This folder contains all the HTML templates for the Django system.
 
 - ``locale``
 
-  - Description to be added.
+  - This folder contains translations required for the Django system.
+    Translations for ``topics`` are stored within the ``topics/content``.
 
-Introduction to be added.
+The following folders are used when the server is running (for example:
+a script compiles the SCSS to CSS and saves it to the ``build`` folder for
+serving on a webpage).
+You should never save anything in these folders, as the contents are often
+overwritten and cleared.
 
 - ``build``
 
-  - Description to be added.
+  - Contains the generated output of the front-end script (for example:
+    compiled and minified CSS and JavaScript, compressed images, etc).
 
 - ``temp``
 
-  - Description to be added.
+  - Contains temporary files used in creating generated files for
+    ``build`` folder.
 
-Introduction to be added.
+The ``csunplugged`` folder also contains the following files:
 
 - ``manage.py``
 
-  - Description to be added.
+  - A file created by Django used to manage the Django web system.
+    Don't modify this files contents.
