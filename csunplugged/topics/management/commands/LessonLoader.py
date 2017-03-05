@@ -71,4 +71,4 @@ class LessonLoader(BaseLoader):
                 )
                 relationship.save()
 
-        self.load_log.append(('Added Lesson: {}'.format(lesson.__str__()), 2))
+        self.log('Added Lesson: {}'.format(lesson.__str__()), 2)

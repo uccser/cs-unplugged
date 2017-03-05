@@ -34,6 +34,10 @@ class BaseLoader():
         custom_processors.add('remove-title')
         self.converter.update_processors(custom_processors)
 
+    def log(self, log_message, indent_amount=0):
+        """Adds the log message to the load log with the specified indent"""
+        self.load_log.append((log_message, indent_amount))
+
     def print_load_log(self):
         """Output log messages from loader to console"""
         for (log, indent) in self.load_log:

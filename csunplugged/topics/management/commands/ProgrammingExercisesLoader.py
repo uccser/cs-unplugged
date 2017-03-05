@@ -45,4 +45,4 @@ class ProgrammingExercisesLoader(BaseLoader):
                     )
                     programming_exercise.learning_outcomes.add(learning_outcome)
 
-                self.load_log.append(('Added Programming Exercise: {}'.format(programming_exercise.name), 1))
+                self.log('Added Programming Exercise: {}'.format(programming_exercise.name), 1)

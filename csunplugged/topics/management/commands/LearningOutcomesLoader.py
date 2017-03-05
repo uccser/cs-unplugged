@@ -25,7 +25,7 @@ class LearningOutcomesLoader(BaseLoader):
                 text=outcome_text
             )
             outcome.save()
-            self.load_log.append(('Added Learning Outcome: {}'.format(outcome.__str__()), 0))
+            self.log('Added Learning Outcome: {}'.format(outcome.__str__()))
 
         # Print log output
         self.print_load_log()

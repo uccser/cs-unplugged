@@ -27,7 +27,7 @@ class UnitPlanLoader(BaseLoader):
         )
         unit_plan.save()
 
-        self.load_log.append(('Added Unit Plan: {}'.format(unit_plan.name), 1))
+        self.log('Added Unit Plan: {}'.format(unit_plan.name), 1)
 
         lessons_structure = unit_plan_structure['lessons']
         LessonsLoader(self.load_log, lessons_structure, self.topic, unit_plan).load()

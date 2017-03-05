@@ -41,7 +41,7 @@ class TopicsLoader(BaseLoader):
                 icon=topic_structure['icon']
             )
             topic.save()
-            self.load_log.append(('\nAdded Topic: {}'.format(topic.name), 0))
+            self.log('\nAdded Topic: {}'.format(topic.name))
 
             # Load unit plans
             for unit_plan_structure_file in topic_structure['unit-plans']:

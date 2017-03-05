@@ -37,4 +37,4 @@ class FollowUpActivitiesLoader(BaseLoader):
                     )
                     activity.curriculum_links.add(object)
 
-                self.load_log.append(('Added Activity: {}'.format(activity.name), 1))
+                self.log('Added Activity: {}'.format(activity.name), 1)
