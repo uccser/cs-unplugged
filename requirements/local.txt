@@ -4,3 +4,6 @@
 # Documentation
 sphinx==1.5.2
 sphinx_rtd_theme==0.1.9
+
+# Debugging Tools
+django-debug-toolbar==1.6
