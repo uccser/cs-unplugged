@@ -92,3 +92,9 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# vim files
+*.swp
+
+# custom git configs
+.gitconfig
