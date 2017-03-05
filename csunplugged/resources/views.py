@@ -6,6 +6,7 @@ from resources.models import Resource
 from resources.generate_resource_pdf import generate_resource_pdf
 import importlib
 
+
 class IndexView(generic.ListView):
     template_name = 'resources/index.html'
     context_object_name = 'all_resources'
@@ -13,6 +14,7 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         """Return all topics"""
         return Resource.objects.order_by('name')
+
 
 def resource(request, resource_slug):
     resource = get_object_or_404(Resource, slug=resource_slug)
@@ -23,6 +25,7 @@ def resource(request, resource_slug):
     if resource.thumbnail_static_path:
         context['thumbnail'] = resource.thumbnail_static_path
     return render(request, template_string, context)
+
 
 def generate_resource(request, resource_slug):
     """Try to import and call resource image generator, 404 if not found."""

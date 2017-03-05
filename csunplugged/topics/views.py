@@ -4,6 +4,7 @@ from django.db.models import Max, Min
 
 from .models import Topic, FollowUpActivity, UnitPlan, Lesson, ProgrammingExercise, ConnectedGeneratedResource, ProgrammingExerciseDifficulty
 
+
 class IndexView(generic.ListView):
     template_name = 'topics/index.html'
     context_object_name = 'all_topics'

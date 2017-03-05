@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 
+
 class GeneralIndexView(TemplateView):
     template_name = 'general/index.html'
 
@@ -11,6 +12,7 @@ class GeneralIndexView(TemplateView):
         context = super(GeneralIndexView, self).get_context_data(**kwargs)
         context['total_topics'] = Topic.objects.count()
         return context
+
 
 class GeneralAboutView(TemplateView):
     template_name = 'general/about.html'
