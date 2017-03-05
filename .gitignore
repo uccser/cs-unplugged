@@ -93,8 +93,12 @@ ENV/
 # Rope project settings
 .ropeproject
 
+# Installed node modules
+node_modules/
+
 # vim files
 *.swp
+*.swo
 
-# custom git configs
+# Custom git settings
 .gitconfig
