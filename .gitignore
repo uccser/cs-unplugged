@@ -95,3 +95,10 @@ ENV/
 
 # Installed node modules
 node_modules/
+
+# vim files
+*.swp
+*.swo
+
+# Custom git settings
+.gitconfig
