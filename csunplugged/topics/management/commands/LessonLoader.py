@@ -5,7 +5,7 @@ from topics.models import Age, LearningOutcome, CurriculumLink, ClassroomResourc
 class LessonLoader(BaseLoader):
     """Loader for a single lesson"""
 
-    def __init__(self, lesson_structure, topic, unit_plan):
+    def __init__(self, load_log, lesson_structure, topic, unit_plan):
         """Initiates the loader for a single lesson
 
         Args:
@@ -13,7 +13,7 @@ class LessonLoader(BaseLoader):
             topic: Topic model object
             unit_plan: UnitPlan model object
         """
-        super().__init__()
+        super().__init__(load_log)
         self.lesson_structure = lesson_structure
         self.topic = topic
         self.unit_plan = unit_plan
@@ -72,4 +72,3 @@ class LessonLoader(BaseLoader):
                 relationship.save()
 
         self.load_log.append(('Added Lesson: {}'.format(lesson.__str__()), 2))
-

@@ -8,9 +8,12 @@ from kordac import Kordac
 
 class BaseLoader():
     """Base loader class for individual loaders"""
-    load_log = []
 
-    def __init__(self):
+    def __init__(self, load_log=[]):
+        if load_log:
+            self.load_log = load_log
+        else:
+            self.load_log = list(load_log)
         self.BASE_PATH = 'topics/content/en/' # TODO: Hardcoded for prototype
         self.language_structure = self.load_yaml_file('structure.yaml')
         self.setup_md_to_html_converter()
@@ -35,6 +38,7 @@ class BaseLoader():
         """Output log messages from loader to console"""
         for (log, indent) in self.load_log:
             sys.stdout.write('{indent}{text}\n'.format(indent='  '*indent, text=log))
+        sys.stdout.write('\n')
         self.load_log = []
 
     def convert_md_file(self, file_path):
@@ -64,5 +68,3 @@ class BaseLoader():
     @abc.abstractmethod
     def load(self):
         raise NotImplementedError('subclass does not implement this method')
-
-

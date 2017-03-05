@@ -4,14 +4,14 @@ from topics.management.commands.LessonsLoader import LessonsLoader
 class UnitPlanLoader(BaseLoader):
     """Loader for unit plans"""
 
-    def __init__(self, unit_plan_structure_file, topic):
+    def __init__(self, load_log, unit_plan_structure_file, topic):
         """Initiates the loader for unit plans
 
         Args:
             unit_plan_structure_file: file path (string)
             topic: Topic model object
         """
-        super().__init__()
+        super().__init__(load_log)
         self.unit_plan_structure_file = unit_plan_structure_file
         self.topic = topic
 
@@ -30,4 +30,4 @@ class UnitPlanLoader(BaseLoader):
         self.load_log.append(('Added Unit Plan: {}'.format(unit_plan.name), 1))
 
         lessons_structure = unit_plan_structure['lessons']
-        LessonsLoader(lessons_structure, self.topic, unit_plan).load()
+        LessonsLoader(self.load_log, lessons_structure, self.topic, unit_plan).load()

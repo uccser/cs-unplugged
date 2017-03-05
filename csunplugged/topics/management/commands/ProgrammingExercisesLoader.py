@@ -5,14 +5,14 @@ from topics.models import LearningOutcome, ProgrammingExerciseDifficulty
 class ProgrammingExercisesLoader(BaseLoader):
     """Loader for programming exercises"""
 
-    def __init__(self, programming_exercises_structure_file, topic):
+    def __init__(self, load_log, programming_exercises_structure_file, topic):
         """Initiates the loader for programming exercises
 
         Args:
             programming_exercises_structure_file: file path (string)
             topic: Topic model object
         """
-        super().__init__()
+        super().__init__(load_log)
         self.programming_exercises_structure_file = programming_exercises_structure_file
         self.topic = topic
 
@@ -46,4 +46,3 @@ class ProgrammingExercisesLoader(BaseLoader):
                     programming_exercise.learning_outcomes.add(learning_outcome)
 
                 self.load_log.append(('Added Programming Exercise: {}'.format(programming_exercise.name), 1))
-
