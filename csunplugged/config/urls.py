@@ -26,3 +26,9 @@ urlpatterns = i18n_patterns(
     url(r'^admin/', include(admin.site.urls)),
 )
 # ] + static(settings.STATIC_URL, documnet_root=settings.STATIC_ROOT)
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns += [
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    ]
