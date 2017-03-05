@@ -1,4 +1,4 @@
-Django==1.10.5
+Django==1.10.6
 psycopg2>=2.5
 PyYAML>=3.12
 python-markdown-math>=0.2
@@ -7,3 +7,4 @@ sphinx_rtd_theme>=0.1.9
 WeasyPrint>=0.34
 html5lib==1.0b8
 Pillow>=4.0.0
+django-debug-toolbar==1.6
