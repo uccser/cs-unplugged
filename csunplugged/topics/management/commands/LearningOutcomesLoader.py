@@ -1,6 +1,7 @@
 from django.db import transaction
-from topics.management.commands.BaseLoader import BaseLoader
-from topics.models import CurriculumLink, LearningOutcome
+from .BaseLoader import BaseLoader
+from topics.models import LearningOutcome
+
 
 class LearningOutcomesLoader(BaseLoader):
     """Loader for learning outcomes content"""
@@ -25,7 +26,7 @@ class LearningOutcomesLoader(BaseLoader):
                 text=outcome_text
             )
             outcome.save()
-            self.load_log.append(('Added Learning Outcome: {}'.format(outcome.__str__()), 0))
+            self.log('Added Learning Outcome: {}'.format(outcome.__str__()))
 
         # Print log output
         self.print_load_log()

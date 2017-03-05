@@ -1,24 +1,26 @@
-from topics.management.commands.BaseLoader import BaseLoader
-from topics.management.commands.LessonsLoader import LessonsLoader
+from .BaseLoader import BaseLoader
+from .LessonsLoader import LessonsLoader
+
 
 class UnitPlanLoader(BaseLoader):
     """Loader for unit plans"""
 
-    def __init__(self, load_log, unit_plan_structure_file, topic):
+    def __init__(self, load_log, structure_file, topic):
         """Initiates the loader for unit plans
 
         Args:
-            unit_plan_structure_file: file path (string)
+            structure_file: file path (string)
             topic: Topic model object
         """
         super().__init__(load_log)
-        self.unit_plan_structure_file = unit_plan_structure_file
+        self.structure_file = structure_file
         self.topic = topic
 
     def load(self):
         """load the content for unit plans"""
-        unit_plan_structure = self.load_yaml_file(self.unit_plan_structure_file)
-        unit_plan_content = self.convert_md_file(unit_plan_structure['md-file'])
+        unit_plan_structure = self.load_yaml_file(self.structure_file)
+        md_file = unit_plan_structure['md-file']
+        unit_plan_content = self.convert_md_file(md_file)
 
         unit_plan = self.topic.topic_unit_plans.create(
             slug=unit_plan_structure['slug'],
@@ -27,7 +29,8 @@ class UnitPlanLoader(BaseLoader):
         )
         unit_plan.save()
 
-        self.load_log.append(('Added Unit Plan: {}'.format(unit_plan.name), 1))
+        self.log('Added Unit Plan: {}'.format(unit_plan.name), 1)
 
         lessons_structure = unit_plan_structure['lessons']
-        LessonsLoader(self.load_log, lessons_structure, self.topic, unit_plan).load()
+        LessonsLoader(self.load_log, lessons_structure, self.topic,
+                      unit_plan).load()

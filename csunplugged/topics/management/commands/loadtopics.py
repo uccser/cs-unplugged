@@ -1,8 +1,9 @@
 from django.core.management.base import BaseCommand
-from topics.management.commands.BaseLoader import BaseLoader
-from topics.management.commands.LearningOutcomesLoader import LearningOutcomesLoader
-from topics.management.commands.TopicsLoader import TopicsLoader
-from topics.management.commands.ProgrammingExercisesDifficultiesLoader import ProgrammingExercisesDifficultiesLoader
+from .BaseLoader import BaseLoader
+from .LearningOutcomesLoader import LearningOutcomesLoader
+from .TopicsLoader import TopicsLoader
+from .ProgrammingExercisesDifficultiesLoader import ProgrammingExercisesDifficultiesLoader  # noqa: E501
+
 
 class Command(BaseCommand):
     help = 'Converts Markdown files listed in structure file and stores'

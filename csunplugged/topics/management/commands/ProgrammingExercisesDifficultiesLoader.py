@@ -1,6 +1,7 @@
 from django.db import transaction
-from topics.management.commands.BaseLoader import BaseLoader
+from .BaseLoader import BaseLoader
 from topics.models import ProgrammingExerciseDifficulty
+
 
 class ProgrammingExercisesDifficultiesLoader(BaseLoader):
     """Loader for programming exercises difficulties"""
@@ -25,7 +26,7 @@ class ProgrammingExercisesDifficultiesLoader(BaseLoader):
                 name=difficulty_data['name']
             )
             difficulty.save()
-            self.load_log.append(('Added Difficulty Level: {}'.format(difficulty.__str__()), 0))
+            self.log('Added Difficulty Level: {}'.format(difficulty.__str__()))
 
         # Print log output
         self.print_load_log()

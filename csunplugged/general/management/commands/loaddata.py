@@ -1,5 +1,6 @@
 from django.core import management
 
+
 class Command(management.base.BaseCommand):
     help = 'Flush and load data for all applications'
 

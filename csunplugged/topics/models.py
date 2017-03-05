@@ -1,6 +1,7 @@
 from django.db import models
 from resources.models import Resource
 
+
 class LearningOutcome(models.Model):
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(unique=True)
@@ -27,7 +28,7 @@ class ClassroomResource(models.Model):
 
 
 class Age(models.Model):
-#  Auto-incrementing 'id' field is automatically set by Django
+    #  Auto-incrementing 'id' field is automatically set by Django
     age = models.PositiveSmallIntegerField()
 
     def __str__(self):

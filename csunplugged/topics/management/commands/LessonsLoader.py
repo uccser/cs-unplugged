@@ -1,7 +1,6 @@
-from django.db import transaction
-from topics.management.commands.BaseLoader import BaseLoader
-from topics.management.commands.LessonLoader import LessonLoader
-from topics.models import CurriculumLink
+from .BaseLoader import BaseLoader
+from .LessonLoader import LessonLoader
+
 
 class LessonsLoader(BaseLoader):
     """Loader for lessons"""
@@ -21,5 +20,7 @@ class LessonsLoader(BaseLoader):
 
     def load(self):
         """Call (single) LessonLoader for each lesson to load into db"""
-        for lesson_structure in self.lessons_structure:
-            LessonLoader(self.load_log, lesson_structure, self.topic, self.unit_plan).load()
+        for structure in self.lessons_structure:
+            loader = LessonLoader(self.load_log, structure,
+                                  self.topic, self.unit_plan)
+            loader.load()
