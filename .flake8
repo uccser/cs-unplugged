@@ -20,3 +20,4 @@ exclude =
 show-source = True
 statistics = True
 count = True
+max-line-length=119
