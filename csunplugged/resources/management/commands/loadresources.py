@@ -6,6 +6,7 @@ import os
 import os.path
 import sys
 
+
 class Command(BaseCommand):
     help = 'Reads resource data and adds to database'
 

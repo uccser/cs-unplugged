@@ -4,6 +4,7 @@ from .LearningOutcomesLoader import LearningOutcomesLoader
 from .TopicsLoader import TopicsLoader
 from .ProgrammingExercisesDifficultiesLoader import ProgrammingExercisesDifficultiesLoader  # noqa: E501
 
+
 class Command(BaseCommand):
     help = 'Converts Markdown files listed in structure file and stores'
 

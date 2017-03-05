@@ -1,6 +1,6 @@
-from django.db import transaction
 from .BaseLoader import BaseLoader
 from topics.models import CurriculumLink
+
 
 class FollowUpActivitiesLoader(BaseLoader):
     """Loader for follow up activites"""

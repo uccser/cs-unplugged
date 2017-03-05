@@ -1,8 +1,16 @@
-from django.shortcuts import get_object_or_404, get_list_or_404
+from django.shortcuts import get_object_or_404
 from django.views import generic
 from django.db.models import Max, Min
 
-from .models import Topic, FollowUpActivity, UnitPlan, Lesson, ProgrammingExercise, ConnectedGeneratedResource, ProgrammingExerciseDifficulty
+from .models import (
+    Topic,
+    FollowUpActivity,
+    UnitPlan,
+    Lesson,
+    ProgrammingExercise,
+    ConnectedGeneratedResource,
+    ProgrammingExerciseDifficulty,
+)
 
 
 class IndexView(generic.ListView):
@@ -25,7 +33,8 @@ class TopicView(generic.DetailView):
         # Add in a QuerySet of all the connected unit plans
         context['unit_plans'] = UnitPlan.objects.filter(topic=self.object).order_by('name')
         # Add in a QuerySet of all the connected programming exercises
-        context['programming_exercises'] = ProgrammingExercise.objects.filter(topic=self.object).order_by('exercise_number')
+        programming_exercises = ProgrammingExercise.objects.filter(topic=self.object)
+        context['programming_exercises'] = programming_exercises.order_by('exercise_number')
         # Add in a QuerySet of all the connected follow up activities
         context['follow_up_activities'] = FollowUpActivity.objects.filter(topic=self.object).order_by('name')
         return context
@@ -101,9 +110,9 @@ class ProgrammingExerciseList(generic.ListView):
 
     def get_queryset(self, **kwargs):
         """Return all activities for topic"""
-        # TODO: Is this the best way to raise 404 if invalid topic?
-        topic = get_object_or_404(Topic, slug=self.kwargs.get('topic_slug', None))
-        return ProgrammingExercise.objects.filter(topic__slug=self.kwargs.get('topic_slug', None)).order_by('exercise_number')
+        topic_slug = self.kwargs.get('topic_slug', None)
+        exercises = ProgrammingExercise.objects.filter(topic__slug=topic_slug)
+        return exercises.order_by('exercise_number')
 
     def get_context_data(self, **kwargs):
         context = super(ProgrammingExerciseList, self).get_context_data(**kwargs)
@@ -139,8 +148,6 @@ class ActivityList(generic.ListView):
 
     def get_queryset(self, **kwargs):
         """Return all activities for topic"""
-        # TODO: Is this the best way to raise 404 if invalid topic?
-        topic = get_object_or_404(Topic, slug=self.kwargs.get('topic_slug', None))
         return FollowUpActivity.objects.filter(topic__slug=self.kwargs.get('topic_slug', None)).order_by('name')
 
     def get_context_data(self, **kwargs):

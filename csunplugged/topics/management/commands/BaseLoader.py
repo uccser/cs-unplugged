@@ -14,7 +14,7 @@ class BaseLoader():
             self.load_log = load_log
         else:
             self.load_log = list(load_log)
-        self.BASE_PATH = 'topics/content/en/' #  TODO: Hardcoded for prototype
+        self.BASE_PATH = 'topics/content/en/'  # TODO: Hardcoded for prototype
         self.language_structure = self.load_yaml_file('structure.yaml')
         self.setup_md_to_html_converter()
 

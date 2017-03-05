@@ -46,18 +46,21 @@ class TopicsLoader(BaseLoader):
 
             # Load unit plans
             for unit_plan_structure_file in topic_structure['unit-plans']:
-                UnitPlanLoader(self.load_log,
-                    unit_plan_structure_file, topic).load()
+                UnitPlanLoader(
+                    self.load_log, unit_plan_structure_file,
+                    topic).load()
 
             # Load programming exercises (if there are any)
             if topic_structure['programming-exercises']:
-                ProgrammingExercisesLoader(self.load_log,
-                    topic_structure['programming-exercises'], topic).load()
+                ProgrammingExercisesLoader(
+                    self.load_log, topic_structure['programming-exercises'],
+                    topic).load()
 
             # Load follow up activities (if there are any)
             if topic_structure['follow-up-activities']:
-                FollowUpActivitiesLoader(self.load_log,
-                    topic_structure['follow-up-activities'], topic).load()
+                FollowUpActivitiesLoader(
+                    self.load_log, topic_structure['follow-up-activities'],
+                    topic).load()
 
         # Print log output
         self.print_load_log()

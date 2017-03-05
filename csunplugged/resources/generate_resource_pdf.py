@@ -11,6 +11,7 @@ import base64
 RESPONSE_CONTENT_DISPOSITION = 'attachment; filename="{filename}.pdf"'
 MM_TO_PIXEL_RATIO = 3.78
 
+
 def generate_resource_pdf(request, resource, module_path):
     """Returns a response containing a randomly generated PDF resource.
 
@@ -23,7 +24,12 @@ def generate_resource_pdf(request, resource, module_path):
     context['resource'] = resource
 
     num_copies = range(0, int(get_request['copies']))
-    image_generator = partial(generate_resource_image, get_request, resource, module_path)
+    image_generator = partial(
+        generate_resource_image,
+        get_request,
+        resource,
+        module_path
+    )
     with Pool() as pool:
         context['resource_images'] = pool.map(image_generator, num_copies)
     pool.close()
@@ -31,7 +37,7 @@ def generate_resource_pdf(request, resource, module_path):
     pdf_html = render_to_string('resources/base-resource-pdf.html', context)
     html = HTML(string=pdf_html, base_url=request.build_absolute_uri())
     base_css = CSS(string=open('static/css/print-resource-pdf.css', encoding='UTF-8').read())
-    pdf_file = html.write_pdf(stylesheets=[base_css]);
+    pdf_file = html.write_pdf(stylesheets=[base_css])
 
     response = HttpResponse(pdf_file, content_type='application/pdf')
     response['Content-Disposition'] = RESPONSE_CONTENT_DISPOSITION.format(filename=resource.name)

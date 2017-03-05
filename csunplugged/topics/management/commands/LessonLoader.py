@@ -8,6 +8,7 @@ from topics.models import (
     ConnectedGeneratedResource,
 )
 
+
 class LessonLoader(BaseLoader):
     """Loader for a single lesson"""
 

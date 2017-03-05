@@ -1,6 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont
 from random import sample
-from django.utils.translation import ugettext as _
+
 
 def resource_image(get_request, resource):
     """Creates a image for Sorting Network resource.

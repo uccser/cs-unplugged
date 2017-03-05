@@ -2,6 +2,7 @@ from django.db import transaction
 from .BaseLoader import BaseLoader
 from topics.models import ProgrammingExerciseDifficulty
 
+
 class ProgrammingExercisesDifficultiesLoader(BaseLoader):
     """Loader for programming exercises difficulties"""
 

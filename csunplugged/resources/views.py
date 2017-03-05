@@ -1,5 +1,4 @@
 from django.views import generic
-from django.utils.translation import ugettext
 from django.shortcuts import get_object_or_404, render
 from django.http import Http404
 from resources.models import Resource
