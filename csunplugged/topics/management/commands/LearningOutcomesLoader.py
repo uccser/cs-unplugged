@@ -1,6 +1,7 @@
 from django.db import transaction
-from topics.management.commands.BaseLoader import BaseLoader
-from topics.models import CurriculumLink, LearningOutcome
+from .BaseLoader import BaseLoader
+from topics.models import LearningOutcome
+
 
 class LearningOutcomesLoader(BaseLoader):
     """Loader for learning outcomes content"""

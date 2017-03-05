@@ -14,7 +14,7 @@ class BaseLoader():
             self.load_log = load_log
         else:
             self.load_log = list(load_log)
-        self.BASE_PATH = 'topics/content/en/' # TODO: Hardcoded for prototype
+        self.BASE_PATH = 'topics/content/en/' #  TODO: Hardcoded for prototype
         self.language_structure = self.load_yaml_file('structure.yaml')
         self.setup_md_to_html_converter()
 
@@ -40,8 +40,9 @@ class BaseLoader():
 
     def print_load_log(self):
         """Output log messages from loader to console"""
-        for (log, indent) in self.load_log:
-            sys.stdout.write('{indent}{text}\n'.format(indent='  '*indent, text=log))
+        for (log, indent_amount) in self.load_log:
+            indent = '  ' * indent_amount
+            sys.stdout.write('{indent}{text}\n'.format(indent=indent, text=log))
         sys.stdout.write('\n')
         self.load_log = []
 
@@ -54,7 +55,8 @@ class BaseLoader():
         Returns:
             Kordac result object
         """
-        content = open(os.path.join(self.BASE_PATH, file_path), encoding='UTF-8').read()
+        md_file_path = os.path.join(self.BASE_PATH, file_path)
+        content = open(md_file_path, encoding='UTF-8').read()
         return self.converter.convert(content)
 
     def load_yaml_file(self, file_path):
@@ -66,8 +68,9 @@ class BaseLoader():
         Returns:
              Either list or string, depending on structure of given yaml file
         """
-        return yaml.load(open(os.path.join(self.BASE_PATH, file_path), encoding='UTF-8').read())
-
+        yaml_file_path = os.path.join(self.BASE_PATH, file_path)
+        yaml_file = open(yaml_file_path, encoding='UTF-8').read()
+        return yaml.load(yaml_file)
 
     @abc.abstractmethod
     def load(self):

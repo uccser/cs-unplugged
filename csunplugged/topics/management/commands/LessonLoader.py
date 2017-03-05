@@ -1,6 +1,12 @@
-from django.db import transaction
-from topics.management.commands.BaseLoader import BaseLoader
-from topics.models import Age, LearningOutcome, CurriculumLink, ClassroomResource, Resource, ConnectedGeneratedResource
+from .BaseLoader import BaseLoader
+from topics.models import (
+    Age,
+    LearningOutcome,
+    CurriculumLink,
+    ClassroomResource,
+    Resource,
+    ConnectedGeneratedResource,
+)
 
 class LessonLoader(BaseLoader):
     """Loader for a single lesson"""
@@ -39,7 +45,8 @@ class LessonLoader(BaseLoader):
             lesson.ages.add(object)
 
         # Add learning outcomes
-        for learning_outcome_slug in self.lesson_structure['learning-outcomes']:
+        learning_outcome_slugs = self.lesson_structure['learning-outcomes']
+        for learning_outcome_slug in learning_outcome_slugs:
             learning_outcome = LearningOutcome.objects.get(
                 slug=learning_outcome_slug
             )
@@ -63,7 +70,8 @@ class LessonLoader(BaseLoader):
         # Add generated resources
         if 'resources-generated' in self.lesson_structure:
             for resource_data in self.lesson_structure['resources-generated']:
-                resource = Resource.objects.get(slug=resource_data['resource-slug'])
+                slug = resource_data['resource-slug']
+                resource = Resource.objects.get(slug=slug)
                 relationship = ConnectedGeneratedResource(
                     resource=resource,
                     lesson=lesson,

@@ -1,5 +1,5 @@
 from django.db import transaction
-from topics.management.commands.BaseLoader import BaseLoader
+from .BaseLoader import BaseLoader
 from topics.models import ProgrammingExerciseDifficulty
 
 class ProgrammingExercisesDifficultiesLoader(BaseLoader):
