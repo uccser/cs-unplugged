@@ -68,19 +68,20 @@ machines.
 Step 2: Install Python 3 and pip
 =================================================
 
-Install Python 3 with the following command in terminal:
+Install Python 3 with the following command in terminal (you don't need
+to enter the ``$`` character, this shows the start of your terminal prompt):
 
-.. code-block:: none
+.. code-block:: bash
 
-    sudo apt install python3
+    $ sudo apt install python3
 
 Then install Python 3 pip (pip is a package management system used to
 install and manage software packages written in Python) with the following
 command in terminal:
 
-.. code-block:: none
+.. code-block:: bash
 
-    sudo apt install python3-pip
+    $ sudo apt install python3-pip
 
 Step 3: Install Python virtualenv
 =================================================
@@ -90,9 +91,9 @@ This helps to prevent conflicts with dependencies.
 
 Install virtualenv with the following command in terminal:
 
-.. code-block:: none
+.. code-block:: bash
 
-    sudo pip3 install virtualenv
+    $ sudo pip3 install virtualenv
 
 .. note::
 
@@ -104,9 +105,9 @@ Step 4: Install Git
 
 Install Git (version control software) with the following command in terminal:
 
-.. code-block:: none
+.. code-block:: bash
 
-    sudo apt install git
+    $ sudo apt install git
 
 Step 5: Create GitHub account
 =================================================
@@ -124,17 +125,17 @@ address within the Git system installed on the machine.
 
 Set the name and email Git values following command in terminal:
 
-.. code-block:: none
+.. code-block:: bash
 
-    git config --global user.name “<your name>”
-    git config --global user.email “<your GitHub email>”
+    $ git config --global user.name “<your name>”
+    $ git config --global user.email “<your GitHub email>”
 
 For example:
 
-.. code-block:: none
+.. code-block:: bash
 
-    git config --global user.name “John Doe”
-    git config --global user.email johndoe@gmail.com”
+    $ git config --global user.name “John Doe”
+    $ git config --global user.email johndoe@gmail.com”
 
 .. note::
 
@@ -148,11 +149,11 @@ Postgres is an open source database system we use to store project
 data. Install Postgres and required connection packages with the following
 commands in terminal:
 
-.. code-block:: none
+.. code-block:: bash
 
-    sudo apt-get install postgresql
-    sudo apt-get install python-psycopg2
-    sudo apt-get install libpq-dev
+    $ sudo apt-get install postgresql
+    $ sudo apt-get install python-psycopg2
+    $ sudo apt-get install libpq-dev
 
 Step 8: Create user and database in Postgres
 =================================================
@@ -160,9 +161,9 @@ Step 8: Create user and database in Postgres
 Firstly type the following command in terminal to login to the Postgres
 server with the default ``postgres`` account:
 
-.. code-block:: none
+.. code-block:: bash
 
-    sudo -i -u postgres
+    $ sudo -i -u postgres
 
 The terminal prompt should have now changed and begins with ``postgres@``.
 Now enter the following commands to create a user (called a 'role'):
@@ -172,7 +173,7 @@ Now enter the following commands to create a user (called a 'role'):
     Remember the user name and password you use, as you
     will need these in Step 13.
 
-.. code-block:: none
+.. code-block:: bash
 
     createuser --interactive --pwprompt
     Enter name of role to add: <your name>
@@ -214,26 +215,26 @@ terminal to this folder.
 To clone (the Git term for download) the project folder, type the
 following command in terminal:
 
-.. code-block:: none
+.. code-block:: bash
 
-    git clone https://github.com/uccser/cs-unplugged.git
+    $ git clone https://github.com/uccser/cs-unplugged.git
 
 .. note::
 
     If you connect to GitHub through SSH, then type:
 
-    .. code-block:: none
+    .. code-block:: bash
 
-        git clone git@github.com:uccser/cs-unplugged.git
+        $ git clone git@github.com:uccser/cs-unplugged.git
 
 Once Git has cloned the folder, type the following commands in terminal to
 change the working directory to inside the project repository and checkout
 to the development branch:
 
-.. code-block:: none
+.. code-block:: bash
 
-    cd cs-unplugged
-    git checkout develop
+    $ cd cs-unplugged
+    $ git checkout develop
 
 Step 10: Create virtual environment
 =================================================
@@ -243,19 +244,19 @@ environment. Type the following commands in terminal to create and activate
 a virtualenv named ``venv`` with the default Python set to Python 3.
 You can change the virtual environment name to whatever you wish.
 
-.. code-block:: none
+.. code-block:: bash
 
-    python -m virtualenv --python=python3.5 venv
-    . venv/bin/activate
+    $ python -m virtualenv --python=python3.5 venv
+    $ . venv/bin/activate
 
 .. note::
 
     If you installed ``virtualenvwrapper``, then type to create a virtual
     environment called ``csunplugged``:
 
-    .. code-block:: none
+    .. code-block:: bash
 
-        mkvirtualenv --python=/usr/bin/python3.5 csunplugged
+        $ mkvirtualenv --python=/usr/bin/python3.5 csunplugged
 
 You should now have the name of your virtual environment before the terminal
 prompt.
@@ -263,12 +264,18 @@ prompt.
 Step 11: Install project requirements
 =================================================
 
-To install the project requirements, type the following commands in terminal:
+To install the project requirements, type the following commands in terminal from the project root folder (contains a file called
+``requirements.txt``):
 
-.. code-block:: none
+.. code-block:: bash
 
-    sudo apt-get install libffi-dev
-    pip3 install -r requirements.txt
+    $ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+    $ sudo apt-get install -y nodejs
+    $ sudo apt-get install libffi-dev
+    $ pip install -r requirements/local.txt
+    $ cd csunplugged
+    $ npm install
+    $ sudo npm install gulp-cli --global
 
 .. warning::
 
@@ -314,14 +321,21 @@ To check the project works, change your working directory to the
 Type the following commands in terminal (we will cover these commands
 in more detail on the next page):
 
-.. code-block:: none
+.. code-block:: bash
 
-    python manage.py migrate
-    python manage.py loaddata
-    python manage.py runserver
+    $ python manage.py migrate
+    $ python manage.py loaddata
+    $ python manage.py runserver
 
-Now open your preferred web browser to ``localhost:8000/`` and you should
-see the CS Unplugged homepage.
+Leave this terminal running and open a new terminal in the same
+folder and type the following command:
+
+.. code-block:: bash
+
+    $ gulp
+
+The final command should open your preferred web browser to
+``localhost:3000/`` and you should see the CS Unplugged homepage.
 
 Congratulations if you made it this far and everything is working,
 you're all set to contribute to the CS Unplugged project.
