@@ -143,10 +143,6 @@ class ProgrammingExercise(models.Model):
     name = models.CharField(max_length=200)
     exercise_number = models.IntegerField()
     content = models.TextField()
-    scratch_hints = models.TextField()
-    scratch_solution = models.TextField()
-    python_hints = models.TextField()
-    python_solution = models.TextField()
     learning_outcomes = models.ManyToManyField(
         LearningOutcome,
         related_name='programming_exercise_learning_outcomes'
@@ -156,6 +152,36 @@ class ProgrammingExercise(models.Model):
         on_delete=models.CASCADE,
         related_name='difficulty_programming_exercises'
     )
+
+    def __str__(self):
+        return self.name
+
+
+class ProgrammingExerciseLanguage(models.Model):
+    #  Auto-incrementing 'id' field is automatically set by Django
+    slug = models.SlugField()
+    name = models.CharField(max_length=200)
+    icon = models.CharField(max_length=100, null=True)
+
+    def __str__(self):
+        return self.name
+
+
+class ProgrammingExerciseLanguageSolution(models.Model):
+    #  Auto-incrementing 'id' field is automatically set by Django
+    slug = models.SlugField()
+    language = models.ForeignKey(
+        ProgrammingExerciseLanguage,
+        on_delete=models.CASCADE,
+        related_name='solutions'
+    )
+    exercise = models.ForeignKey(
+        ProgrammingExercise,
+        on_delete=models.CASCADE,
+        related_name='solutions'
+    )
+    hints = models.TextField()
+    solution = models.TextField()
 
     def __str__(self):
         return self.name
