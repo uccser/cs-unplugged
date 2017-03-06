@@ -3,3 +3,8 @@ sorting-network:
   webpage_template: resources/sorting-network.html
   generation_view: sorting_network.py
   thumbnail_static_path: img/resource-sorting-network-thumbnail-example.png
+treasure-hunt:
+  name: Treasure Hunt
+  webpage_template: resources/treasure-hunt.html
+  generation_view: treasure_hunt.py
+  thumbnail_static_path: img/resource-treasure-hunt-thumbnail-example.png
