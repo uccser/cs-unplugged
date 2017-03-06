@@ -2,7 +2,7 @@ from django.views import generic
 from django.shortcuts import get_object_or_404, render
 from django.http import Http404
 from resources.models import Resource
-from resources.generate_resource_pdf import generate_resource_pdf
+from .generate_resource_pdf import generate_resource_pdf
 import importlib
 
 
@@ -17,7 +17,7 @@ class IndexView(generic.ListView):
 
 def resource(request, resource_slug):
     resource = get_object_or_404(Resource, slug=resource_slug)
-    template_string = '{}/index.html'.format(resource.folder)
+    template_string = 'resources/{}.html'.format(resource.folder)
     context = dict()
     context['resource'] = resource
     context['lessons'] = resource.lesson_generated_resources.all()
@@ -29,7 +29,7 @@ def resource(request, resource_slug):
 def generate_resource(request, resource_slug):
     """Try to import and call resource image generator, 404 if not found."""
     resource = get_object_or_404(Resource, slug=resource_slug)
-    module_path = 'resources.content.{}.image_generator'.format(resource.folder)
+    module_path = 'resources.views.{}'.format(resource.folder)
     try:
         importlib.import_module(module_path)
     except ImportError:

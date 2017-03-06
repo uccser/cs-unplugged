@@ -8,7 +8,7 @@ def resource_image(get_request, resource):
     Returns:
         A Pillow image object.
     """
-    image_path = 'resources/content/{}/sorting-network-colour.png'.format(resource.folder)
+    image_path = 'static/img/resource-sorting-network-colour.png'
     image = Image.open(image_path)
     draw = ImageDraw.Draw(image)
 
@@ -26,7 +26,7 @@ def resource_image(get_request, resource):
         range_max = 1000
         font_size = 90
 
-    font_path = 'resources/content/fonts/PatrickHand-Regular.ttf'
+    font_path = 'static/fonts/PatrickHand-Regular.ttf'
 
     # Add numbers to text if needed
     if prefilled_values != 'blank':

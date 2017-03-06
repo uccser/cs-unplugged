@@ -1,4 +1,5 @@
 sorting-network:
   name: Sorting Network
-  folder: sorting_network
+  webpage_template: resources/sorting-network.html
+  generation_view: sorting_network.py
   thumbnail_static_path: img/resource-sorting-network-thumbnail-example.png
