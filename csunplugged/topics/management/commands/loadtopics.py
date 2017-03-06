@@ -16,7 +16,7 @@ class Command(BaseCommand):
         # Get structure and content files
         base_loader = BaseLoader()
         structure_file = base_loader.language_structure
-        difficulty_file = structure_file['programming-exercises-info']#['difficulties']
+        difficulty_file = structure_file['programming-exercises-info']
         learning_outcomes_file = structure_file['learning-outcomes']
 
         # Load content into db

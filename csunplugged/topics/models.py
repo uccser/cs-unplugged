@@ -156,6 +156,7 @@ class ProgrammingExercise(models.Model):
     def __str__(self):
         return self.name
 
+
 class ProgrammingExerciseLanguage(models.Model):
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField()
@@ -181,7 +182,7 @@ class ProgrammingExerciseLanguageSolution(models.Model):
     )
     hints = models.TextField()
     solution = models.TextField()
-    
+
     def __str__(self):
         return self.name
 

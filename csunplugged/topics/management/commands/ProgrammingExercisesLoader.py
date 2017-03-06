@@ -1,5 +1,10 @@
 from .BaseLoader import BaseLoader
-from topics.models import LearningOutcome, ProgrammingExerciseDifficulty, ProgrammingExerciseLanguage, ProgrammingExerciseLanguageSolution
+from topics.models import (
+    LearningOutcome,
+    ProgrammingExerciseDifficulty,
+    ProgrammingExerciseLanguage,
+    ProgrammingExerciseLanguageSolution,
+)
 
 
 class ProgrammingExercisesLoader(BaseLoader):
