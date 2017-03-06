@@ -13,20 +13,10 @@ def resource_image(get_request, resource):
     image = Image.open(image_path)
     draw = ImageDraw.Draw(image)
 
-    prefilled_values = get_request['prefilled_values']
-    range_min = 0
-    if prefilled_values == 'easy':
-        range_max = 100
-        font_size = 97
-    elif prefilled_values == 'medium':
-        range_max = 1000
-        font_size = 80
-    elif prefilled_values == 'hard':
-        range_max = 10000
-        font_size = 70
+    (range_min, range_max, font_size) = number_range(get_request)
 
     # Add numbers to image if required
-    if prefilled_values != 'blank':
+    if get_request['prefilled_values'] != 'blank':
         font = ImageFont.truetype(font_path, font_size)
 
         total_numbers = 26
@@ -55,8 +45,7 @@ def resource_image(get_request, resource):
             )
 
         # Add number order and range text
-        number_order_text = get_request['number_order'].title()
-        text = "{} - {} to {}".format(number_order_text, range_min, range_max - 1)
+        text = subtitle(get_request, resource)
         font = ImageFont.truetype(font_path, 110)
         text_width, text_height = draw.textsize(text, font=font)
         coord_x = 1472 - (text_width / 2)
@@ -69,3 +58,34 @@ def resource_image(get_request, resource):
         )
 
     return image
+
+
+def subtitle(get_request, resource):
+    """Returns the subtitle string of the resource.
+
+    Used after the resource name in the filename, and
+    also on the resource image.
+    """
+    TEMPLATE = '{} - {} to {}'
+    number_order_text = get_request['number_order'].title()
+    range_min, range_max, font_size = number_range(get_request)
+    text = TEMPLATE.format(number_order_text, range_min, range_max - 1)
+    return text
+
+
+def number_range(get_request):
+    """Returns a tuple of (range_min, range_max, font_size)
+    for the requested resource.
+    """
+    prefilled_values = get_request['prefilled_values']
+    range_min = 0
+    if prefilled_values == 'easy':
+        range_max = 100
+        font_size = 97
+    elif prefilled_values == 'medium':
+        range_max = 1000
+        font_size = 80
+    elif prefilled_values == 'hard':
+        range_max = 10000
+        font_size = 70
+    return (range_min, range_max, font_size)

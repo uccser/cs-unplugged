@@ -23,7 +23,10 @@ def generate_resource_pdf(request, resource, module_path):
     get_request = request.GET
     context['paper_size'] = get_request['paper_size']
     context['resource'] = resource
-    context['filename'] = resource.name
+
+    resource_image_generator = importlib.import_module(module_path)
+    filename = '{} ({})'.format(resource.name, resource_image_generator.subtitle(get_request, resource))
+    context['filename'] = filename
 
     num_copies = range(0, int(get_request['copies']))
     image_generator = partial(
@@ -44,7 +47,7 @@ def generate_resource_pdf(request, resource, module_path):
     pdf_file = html.write_pdf(stylesheets=[base_css])
 
     response = HttpResponse(pdf_file, content_type='application/pdf')
-    response['Content-Disposition'] = RESPONSE_CONTENT_DISPOSITION.format(filename=resource.name)
+    response['Content-Disposition'] = RESPONSE_CONTENT_DISPOSITION.format(filename=filename)
     return response
 
 
