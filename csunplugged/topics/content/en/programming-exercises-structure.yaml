@@ -1,10 +1,10 @@
 languages:
     scratch:
         name: Scratch
-        icon: images/scratch-cat.png
+        icon: img/scratch-cat.png
     python:
         name: Python
-        icon: images/python-logo.png
+        icon: img/python-logo.png
 
 difficulties:
     - level: 1
