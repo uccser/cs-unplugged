@@ -54,4 +54,18 @@ def resource_image(get_request, resource):
                 fill='#000'
             )
 
+        # Add number order and range text
+        number_order_text = get_request['number_order'].title()
+        text = "{} - {} to {}".format(number_order_text, range_min, range_max - 1)
+        font = ImageFont.truetype(font_path, 110)
+        text_width, text_height = draw.textsize(text, font=font)
+        coord_x = 1472 - (text_width / 2)
+        coord_y = 35 - (text_height / 2)
+        draw.text(
+            (coord_x, coord_y),
+            text,
+            font=font,
+            fill='#000'
+        )
+
     return image
