@@ -40,7 +40,8 @@ class Command(BaseCommand):
             resource = Resource(
                 slug=resource_slug,
                 name=resource_data['name'],
-                folder=resource_data['folder'],
+                webpage_template=resource_data['webpage_template'],
+                generation_view=resource_data['generation_view'],
                 thumbnail_static_path=resource_data['thumbnail_static_path'],
             )
             resource.save()

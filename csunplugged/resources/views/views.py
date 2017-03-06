@@ -17,22 +17,24 @@ class IndexView(generic.ListView):
 
 def resource(request, resource_slug):
     resource = get_object_or_404(Resource, slug=resource_slug)
-    template_string = 'resources/{}.html'.format(resource.folder)
     context = dict()
     context['resource'] = resource
     context['lessons'] = resource.lesson_generated_resources.all()
     if resource.thumbnail_static_path:
         context['thumbnail'] = resource.thumbnail_static_path
-    return render(request, template_string, context)
+    return render(request, resource.webpage_template, context)
 
 
 def generate_resource(request, resource_slug):
     """Try to import and call resource image generator, 404 if not found."""
     resource = get_object_or_404(Resource, slug=resource_slug)
-    module_path = 'resources.views.{}'.format(resource.folder)
-    try:
-        importlib.import_module(module_path)
-    except ImportError:
+    resource_view = resource.generation_view
+    # Remove .py extension if given
+    if resource_view.endswith('.py'):
+        resource_view = resource_view[:-3]
+    module_path = 'resources.views.{}'.format(resource_view)
+    spec = importlib.util.find_spec(module_path)
+    if spec is None:
         raise Http404("PDF generation does not exist for resource: {}".format(resource_slug))
     else:
         # TODO: Add creation of PDF as job to job queue
