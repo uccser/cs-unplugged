@@ -53,7 +53,8 @@ class ProgrammingExercisesLoader(BaseLoader):
                         hints=hint_content,
                         solution=solution_content,
                         language=language_object,
-                        exercise=programming_exercise
+                        exercise=programming_exercise,
+                        topic=self.topic
                     )
                     solution.save()
 

@@ -46,6 +46,12 @@ urlpatterns = [
         views.ProgrammingExerciseView.as_view(),
         name='programming_exercise'
     ),
+    # eg: /topics/binary-numbers/plugged-in/exercise-1/python-solution
+    url(
+        r'^(?P<topic_slug>[-\w]+)/plugged-in/(?P<programming_exercise_slug>[-\w]+)/(?P<programming_language_slug>[-\w]+)-solution$',
+        views.ProgrammingExerciseLanguageSolutionView.as_view(),
+        name='programming_exercise_language_solution'
+    ),
     # eg: /topics/binary-numbers/unit-plan
     url(
         r'^(?P<topic_slug>[-\w]+)/(?P<unit_plan_slug>[-\w]+)/$',

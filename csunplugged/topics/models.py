@@ -169,16 +169,20 @@ class ProgrammingExerciseLanguage(models.Model):
 
 class ProgrammingExerciseLanguageSolution(models.Model):
     #  Auto-incrementing 'id' field is automatically set by Django
-    slug = models.SlugField()
+    topic = models.ForeignKey(
+        Topic,
+        on_delete=models.CASCADE,
+        related_name='solution'
+    ) 
     language = models.ForeignKey(
         ProgrammingExerciseLanguage,
         on_delete=models.CASCADE,
-        related_name='solutions'
+        related_name='solution'
     )
     exercise = models.ForeignKey(
         ProgrammingExercise,
         on_delete=models.CASCADE,
-        related_name='solutions'
+        related_name='solution'
     )
     hints = models.TextField()
     solution = models.TextField()

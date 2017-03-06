@@ -8,6 +8,7 @@ from .models import (
     UnitPlan,
     Lesson,
     ProgrammingExercise,
+    ProgrammingExerciseLanguageSolution,
     ConnectedGeneratedResource,
     ProgrammingExerciseDifficulty,
 )
@@ -138,6 +139,26 @@ class ProgrammingExerciseView(generic.DetailView):
         # Add all the connected learning outcomes
         context['programming_exercise_learning_outcomes'] = self.object.learning_outcomes.all()
         context['difficulty'] = self.object.difficulty.name
+        context['language_implementations'] = self.object.solution.all()
+        return context
+
+
+class ProgrammingExerciseLanguageSolutionView(generic.DetailView):
+    model = ProgrammingExerciseLanguageSolution
+    template_name = 'topics/programming_exercise_language_solution.html'
+    context_object_name = 'programming_exercise_language_solution'
+    
+    def get_object(self, **kwargs):
+        return get_object_or_404(
+            self.model,
+            topic__slug=self.kwargs.get('topic_slug', None),
+            exercise__slug=self.kwargs.get('programming_exercise_slug', None),
+            language__slug=self.kwargs.get('programming_language_slug', None)
+        )
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(ProgrammingExerciseLanguageSolutionView, self).get_context_data(**kwargs)
         return context
 
 
