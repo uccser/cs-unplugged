@@ -167,22 +167,22 @@ class ProgrammingExerciseLanguage(models.Model):
         return self.name
 
 
-class ProgrammingExerciseLanguageSolution(models.Model):
+class ProgrammingExerciseLanguageImplementation(models.Model):
     #  Auto-incrementing 'id' field is automatically set by Django
     topic = models.ForeignKey(
         Topic,
         on_delete=models.CASCADE,
-        related_name='solution'
-    ) 
+        related_name='implementations'
+    )
     language = models.ForeignKey(
         ProgrammingExerciseLanguage,
         on_delete=models.CASCADE,
-        related_name='solution'
+        related_name='implementations'
     )
     exercise = models.ForeignKey(
         ProgrammingExercise,
         on_delete=models.CASCADE,
-        related_name='solution'
+        related_name='implementations'
     )
     hints = models.TextField()
     solution = models.TextField()

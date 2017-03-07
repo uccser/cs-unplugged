@@ -3,7 +3,7 @@ from topics.models import (
     LearningOutcome,
     ProgrammingExerciseDifficulty,
     ProgrammingExerciseLanguage,
-    ProgrammingExerciseLanguageSolution,
+    ProgrammingExerciseLanguageImplementation,
 )
 
 
@@ -49,7 +49,7 @@ class ProgrammingExercisesLoader(BaseLoader):
                     )
                     hint_content = self.convert_md_file(language_solutions[language]['hints']).html_string
                     solution_content = self.convert_md_file(language_solutions[language]['solution']).html_string
-                    solution = ProgrammingExerciseLanguageSolution.objects.create(
+                    solution = ProgrammingExerciseLanguageImplementation.objects.create(
                         hints=hint_content,
                         solution=solution_content,
                         language=language_object,
