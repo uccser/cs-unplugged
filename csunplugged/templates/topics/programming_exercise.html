@@ -4,7 +4,7 @@
 <h1><span class="subtitle">Plugged In:</span> {{ programming_exercise.name }}</h1>
 
 <h2>
-  Difficulty: {{ difficulty }}
+  Difficulty: {{ programming_exercise.difficulty.name }}
 </h2>
 
 {% autoescape off %}
@@ -22,40 +22,20 @@
   <p>No learning outcomes listed for {{ programming_exercise.name }}.</p>
 {% endif %}
 
-{% if programming_exercise.scratch_hints or programming_exercise.scratch_solution %}
-  <h2>Scratch</h2>
+<h2>Languages</h2>
+  {% load static %}
+  {% for implementation in implementations %}
+    <h3>
+      <img src="{% get_static_prefix %}{{ implementation.language.icon }}" class="plugged-in-language-icon" />
+      {{ implementation.language.name }}
+    </h3>
 
-  {% if programming_exercise.scratch_hints %}
-    <h3>Hints</h3>
     {% autoescape off %}
-      {{ programming_exercise.scratch_hints }}
+    {{ implementation.hints }}
     {% endautoescape %}
-  {% endif %}
 
-  {% if programming_exercise.scratch_solution %}
-    <h3>Solution</h3>
-    {% autoescape off %}
-      {{ programming_exercise.scratch_solution }}
-    {% endautoescape %}
-  {% endif %}
-{% endif %}
-
-{% if programming_exercise.python_hints or programming_exercise.python_solution %}
-  <h2>Python</h2>
-
-  {% if programming_exercise.python_hints %}
-    <h3>Hints</h3>
-    {% autoescape off %}
-      {{ programming_exercise.python_hints }}
-    {% endautoescape %}
-  {% endif %}
-
-  {% if programming_exercise.python_solution %}
-    <h3>Solution</h3>
-    {% autoescape off %}
-      {{ programming_exercise.python_solution }}
-    {% endautoescape %}
-  {% endif %}
-{% endif %}
-
+    <a href="{% url 'topics:programming_exercise_language_solution' programming_exercise.topic.slug programming_exercise.slug implementation.language.slug %}" class="btn btn-outline-danger">
+      {{ implementation.language.name }} Solution
+    </a>
+  {% endfor %}
 {% endblock content %}

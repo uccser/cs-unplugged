@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1><span class="subtitle">Plugged In:</span> {{ implementation.exercise.name }}</h1>
+<h2>{{ implementation.language.name }} Solution</h2>
+
+<p>This is just one of many possible solutions.</p>
+
+{% autoescape off %}
+{{ implementation.solution }}
+{% endautoescape %}
+
+<p>
+  <a href="{% url 'topics:programming_exercise' implementation.topic.slug implementation.exercise.slug %}" class="btn btn-outline-danger">
+    Back to Plugged In activity
+  </a>
+</p>
+{% endblock content %}
