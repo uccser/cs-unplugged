@@ -23,6 +23,7 @@ class BaseLoader():
         and extensions.
         """
         templates = dict()
+        templates['scratch'] = '<div><img src="{% autoescape false -%}{{ "{% get_static_prefix %}" }}img/scratch-blocks-{{ hash }}.svg{%- endautoescape %}"/></div>'
         extensions = [
             # 'markdown.extensions.fenced_code',
             'markdown.extensions.codehilite',
@@ -46,7 +47,6 @@ class BaseLoader():
         md_file_path = os.path.join(self.BASE_PATH, file_path)
         content = open(md_file_path, encoding='UTF-8').read()
         result = self.converter.convert(content)
-
         # Write Scratch data for image rendering by Gulp script
         if 'scratch_images' in result.required_files:
             FILEPATH_TEMPLATE = 'temp/scratch-blocks-{hash}.txt'

@@ -75,6 +75,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries': {
+                'render_html_field': 'general.templatetags.render_html_field',
+            },
         },
     },
 ]

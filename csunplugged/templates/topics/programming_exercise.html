@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% load static %}
+{% load render_html_field %}
 
 {% block content %}
 <h1><span class="subtitle">Plugged In:</span> {{ programming_exercise.name }}</h1>
@@ -23,16 +25,13 @@
 {% endif %}
 
 <h2>Languages</h2>
-  {% load static %}
   {% for implementation in implementations %}
     <h3>
       <img src="{% get_static_prefix %}{{ implementation.language.icon }}" class="plugged-in-language-icon" />
       {{ implementation.language.name }}
     </h3>
 
-    {% autoescape off %}
-    {{ implementation.hints }}
-    {% endautoescape %}
+    {% render_html_field implementation.hints %}
 
     <a href="{% url 'topics:programming_exercise_language_solution' programming_exercise.topic.slug programming_exercise.slug implementation.language.slug %}" class="btn btn-outline-danger">
       {{ implementation.language.name }} Solution
