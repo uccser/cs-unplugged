@@ -102,7 +102,7 @@ var tasks = {
   // Copy static images
   // --------------------------
   images: function() {
-    return gulp.src('./static/img/**/*')
+    return gulp.src('static/img/**/*')
       .pipe(gulp.dest('build/img'));
   },
   // --------------------------
@@ -135,7 +135,7 @@ var tasks = {
   // SASS (libsass)
   // --------------------------
   sass: function() {
-    return gulp.src('./static/scss/*.scss')
+    return gulp.src('static/scss/*.scss')
       // sourcemaps + sass + error handling
       .pipe(gulpif(!production, sourcemaps.init()))
       .pipe(sass({
@@ -169,8 +169,8 @@ var tasks = {
   lintjs: function() {
     return gulp.src([
         'gulpfile.js',
-        './static/js/index.js',
-        './static/js/**/*.js'
+        'static/js/index.js',
+        'static/js/**/*.js'
       ]).pipe(jshint())
       .pipe(jshint.reporter(stylish))
       .on('error', function() {
@@ -221,39 +221,38 @@ gulp.task('test', tasks.test);
 // --------------------------
 // DEV/WATCH TASK
 // --------------------------
-gulp.task('watch', ['images', 'css', 'js', 'sass', 'browser-sync', 'scratch'], function() {
+gulp.task('watch', ['scratch', 'images', 'css', 'js', 'sass', 'browser-sync'], function() {
+  // --------------------------
+  // watch:scratch
+  // --------------------------
+  gulp.watch('temp/scratch-blocks-*.txt', ['reload-scratch']);
 
   // --------------------------
   // watch:sass
   // --------------------------
-  gulp.watch('./static/scss/**/*.scss', ['reload-sass']);
+  gulp.watch('static/scss/**/*.scss', ['reload-sass']);
 
   // --------------------------
   // watch:js
   // --------------------------
-  gulp.watch('./static/js/**/*.js', ['lint:js', 'reload-js']);
+  gulp.watch('static/js/**/*.js', ['lint:js', 'reload-js']);
 
   // --------------------------
   // watch:css
   // --------------------------
-  gulp.watch('./static/css/**/*.css', ['reload-css']);
+  gulp.watch('static/css/**/*.css', ['reload-css']);
 
   // --------------------------
   // watch:templates
   // --------------------------
-  gulp.watch('./templates/**/*.html', ['reload-templates']);
-
-  // --------------------------
-  // watch:scratch
-  // --------------------------
-  gulp.watch('./temp/**/*.txt', ['reload-scratch']);
+  gulp.watch('templates/**/*.html', ['reload-templates']);
 
   gutil.log(gutil.colors.bgGreen('Watching for changes...'));
 });
 
 // build task
 gulp.task('build', [
-  'clean',
+  // 'clean',
   'images',
   'css',
   'js',
