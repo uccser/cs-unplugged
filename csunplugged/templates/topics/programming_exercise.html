@@ -4,7 +4,7 @@
 <h1><span class="subtitle">Plugged In:</span> {{ programming_exercise.name }}</h1>
 
 <h2>
-  Difficulty: {{ difficulty }}
+  Difficulty: {{ programming_exercise.difficulty.name }}
 </h2>
 
 {% autoescape off %}
@@ -23,12 +23,19 @@
 {% endif %}
 
 <h2>Languages</h2>
-  {% for implementation in language_implementations %}
-    <h3>{{ implementation.language.name }}</h3>
+  {% load static %}
+  {% for implementation in implementations %}
+    <h3>
+      <img src="{% get_static_prefix %}{{ implementation.language.icon }}" class="plugged-in-language-icon" />
+      {{ implementation.language.name }}
+    </h3>
+
+    {% autoescape off %}
     {{ implementation.hints }}
+    {% endautoescape %}
 
-    <a href="{% url 'topics:programming_exercise_language_solution' programming_exercise.topic.slug programming_exercise.slug implementation.language.slug %}" class="btn btn-outline-danger">{{ implementation.language.name }} Solution</a>
-
+    <a href="{% url 'topics:programming_exercise_language_solution' programming_exercise.topic.slug programming_exercise.slug implementation.language.slug %}" class="btn btn-outline-danger">
+      {{ implementation.language.name }} Solution
+    </a>
   {% endfor %}
-
 {% endblock content %}

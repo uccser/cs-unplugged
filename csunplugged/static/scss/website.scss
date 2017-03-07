@@ -12,6 +12,9 @@ img {
     height: 200px;
     object-fit: contain;
   }
+  &.plugged-in-language-icon {
+    height: 1.5em;
+  }
 }
 h1, h2, h3 {
   color: #e33333;
