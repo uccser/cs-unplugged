@@ -2,7 +2,7 @@ from django.core.management.base import BaseCommand
 from .BaseLoader import BaseLoader
 from .LearningOutcomesLoader import LearningOutcomesLoader
 from .TopicsLoader import TopicsLoader
-from .ProgrammingExercisesStructureLoader import ProgrammingExercisesStructureLoader  # noqa: E501
+from .ProgrammingExercisesStructureLoader import ProgrammingExercisesStructureLoader
 
 
 class Command(BaseCommand):
