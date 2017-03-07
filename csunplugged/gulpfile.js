@@ -1,6 +1,7 @@
 'use strict';
 var gulp = require('gulp');
 var gutil = require('gulp-util');
+var fs = require('fs');
 var del = require('del');
 var uglify = require('gulp-uglify');
 var gulpif = require('gulp-if');
@@ -26,7 +27,11 @@ var source = require('vinyl-source-stream');
 // linting
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
-
+// Scratch image rendering
+var scratchblocks = require('scratchblocks');
+var rename = require("gulp-rename");
+var through = require('through2');
+var PluginError = require('gulp-util').PluginError;
 
 // gulp build --production
 var production = !!argv.production;
@@ -62,6 +67,27 @@ var handleError = function(task) {
     gutil.log(gutil.colors.bgRed(task + ' error:'), gutil.colors.red(err));
   };
 };
+var scratchSVG = function() {
+  var PLUGIN_NAME = 'scratchSVG';
+  return through.obj(function(file, encoding, callback) {
+    if (file.isNull()) {
+        // nothing to do
+        return callback(null, file);
+    }
+
+    if (file.isStream()) {
+        // file.contents is a Stream - https://nodejs.org/api/stream.html
+        this.emit('error', new PluginError(PLUGIN_NAME, 'Streams not supported!'));
+    } else if (file.isBuffer()) {
+        // file.contents is a Buffer - https://nodejs.org/api/buffer.html
+        var doc = scratchblocks.parse(file.contents.toString())
+        doc.render(svg => {
+          file.contents = new Buffer(doc.exportSVGString());
+        })
+        return callback(null, file);
+    }
+  });
+};
 // --------------------------
 // CUSTOM TASK METHODS
 // --------------------------
@@ -92,6 +118,18 @@ var tasks = {
   js: function() {
     gulp.src('static/js/**/*.js')
       .pipe(gulp.dest('build/js'));
+  },
+  // --------------------------
+  // Scratch
+  // --------------------------
+  scratch: function() {
+    return gulp.src('temp/scratch-blocks-*.txt')
+      .pipe(scratchSVG())
+      .pipe(rename(function (path) {
+        path.extname = ".svg"
+      }))
+      // give it a file and save
+      .pipe(gulp.dest('build/img'));
   },
   // --------------------------
   // SASS (libsass)
@@ -151,6 +189,9 @@ gulp.task('browser-sync', function() {
 gulp.task('reload-sass', ['sass'], function(){
   browserSync.reload();
 });
+gulp.task('reload-scratch', ['scratch'], function(){
+  browserSync.reload();
+});
 gulp.task('reload-js', ['js'], function(){
   browserSync.reload();
 });
@@ -172,6 +213,7 @@ gulp.task('images', req, tasks.images);
 gulp.task('js', req, tasks.js);
 gulp.task('css', req, tasks.css);
 gulp.task('sass', req, tasks.sass);
+gulp.task('scratch', req, tasks.scratch);
 gulp.task('lint:js', tasks.lintjs);
 gulp.task('optimize', tasks.optimize);
 gulp.task('test', tasks.test);
@@ -179,7 +221,7 @@ gulp.task('test', tasks.test);
 // --------------------------
 // DEV/WATCH TASK
 // --------------------------
-gulp.task('watch', ['images', 'css', 'js', 'sass', 'browser-sync'], function() {
+gulp.task('watch', ['images', 'css', 'js', 'sass', 'browser-sync', 'scratch'], function() {
 
   // --------------------------
   // watch:sass
@@ -201,6 +243,11 @@ gulp.task('watch', ['images', 'css', 'js', 'sass', 'browser-sync'], function() {
   // --------------------------
   gulp.watch('./templates/**/*.html', ['reload-templates']);
 
+  // --------------------------
+  // watch:scratch
+  // --------------------------
+  gulp.watch('./temp/**/*.txt', ['reload-scratch']);
+
   gutil.log(gutil.colors.bgGreen('Watching for changes...'));
 });
 
@@ -210,7 +257,8 @@ gulp.task('build', [
   'images',
   'css',
   'js',
-  'sass'
+  'sass',
+  'scratch',
 ]);
 
 gulp.task('default', ['watch']);
