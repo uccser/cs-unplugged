@@ -6,10 +6,8 @@ var del = require('del');
 var uglify = require('gulp-uglify');
 var gulpif = require('gulp-if');
 var exec = require('child_process').exec;
-
-
+var runSequence = require('run-sequence')
 var notify = require('gulp-notify');
-
 var buffer = require('vinyl-buffer');
 var argv = require('yargs').argv;
 // sass
@@ -95,8 +93,8 @@ var tasks = {
   // --------------------------
   // Delete build folder
   // --------------------------
-  clean: function(cb) {
-    del(['build/'], cb);
+  clean: function() {
+    return del(['build/']);
   },
   // --------------------------
   // Copy static images
@@ -109,14 +107,14 @@ var tasks = {
   // CSS
   // --------------------------
   css: function() {
-    gulp.src('static/css/**/*.css')
+    return gulp.src('static/css/**/*.css')
       .pipe(gulp.dest('build/css'));
   },
   // --------------------------
   // JS
   // --------------------------
   js: function() {
-    gulp.src('static/js/**/*.js')
+    return gulp.src('static/js/**/*.js')
       .pipe(gulp.dest('build/js'));
   },
   // --------------------------
@@ -251,14 +249,9 @@ gulp.task('watch', ['scratch', 'images', 'css', 'js', 'sass', 'browser-sync'], f
 });
 
 // build task
-gulp.task('build', [
-  // 'clean',
-  'images',
-  'css',
-  'js',
-  'sass',
-  'scratch',
-]);
+gulp.task('build', function(callback) {
+  runSequence('clean', ['images', 'css', 'js', 'sass', 'scratch'], callback);
+});
 
 gulp.task('default', ['watch']);
 
