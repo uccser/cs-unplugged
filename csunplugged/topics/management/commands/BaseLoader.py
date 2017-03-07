@@ -24,7 +24,7 @@ class BaseLoader():
         """
         templates = dict()
         extensions = [
-            'markdown.extensions.fenced_code',
+            # 'markdown.extensions.fenced_code',
             'markdown.extensions.codehilite',
             'markdown.extensions.sane_lists',
             mdx_math.MathExtension(enable_dollar_delimiter=True)
@@ -33,18 +33,6 @@ class BaseLoader():
         custom_processors = self.converter.processor_defaults()
         custom_processors.add('remove-title')
         self.converter.update_processors(custom_processors)
-
-    def log(self, log_message, indent_amount=0):
-        """Adds the log message to the load log with the specified indent"""
-        self.load_log.append((log_message, indent_amount))
-
-    def print_load_log(self):
-        """Output log messages from loader to console"""
-        for (log, indent_amount) in self.load_log:
-            indent = '  ' * indent_amount
-            sys.stdout.write('{indent}{text}\n'.format(indent=indent, text=log))
-        sys.stdout.write('\n')
-        self.load_log = []
 
     def convert_md_file(self, file_path):
         """Returns the Kordac object for a given Markdown file
@@ -57,7 +45,31 @@ class BaseLoader():
         """
         md_file_path = os.path.join(self.BASE_PATH, file_path)
         content = open(md_file_path, encoding='UTF-8').read()
-        return self.converter.convert(content)
+        result = self.converter.convert(content)
+
+        # Write Scratch data for image rendering by Gulp script
+        if 'scratch_images' in result.required_files:
+            FILEPATH_TEMPLATE = 'temp/scratch-blocks-{hash}.txt'
+            if not os.path.exists('temp'):
+                os.makedirs('temp')
+            for scratch_image in result.required_files['scratch_images']:
+                filepath = FILEPATH_TEMPLATE.format(hash=scratch_image.hash)
+                if not os.path.isfile(filepath):
+                    with open(filepath, 'w') as scratch_temp_file:
+                        scratch_temp_file.write(scratch_image.text)
+        return result
+
+    def log(self, log_message, indent_amount=0):
+        """Adds the log message to the load log with the specified indent"""
+        self.load_log.append((log_message, indent_amount))
+
+    def print_load_log(self):
+        """Output log messages from loader to console"""
+        for (log, indent_amount) in self.load_log:
+            indent = '  ' * indent_amount
+            sys.stdout.write('{indent}{text}\n'.format(indent=indent, text=log))
+        sys.stdout.write('\n')
+        self.load_log = []
 
     def load_yaml_file(self, file_path):
         """Loads and reads yaml file
