@@ -8,7 +8,7 @@ from .models import (
     UnitPlan,
     Lesson,
     ProgrammingExercise,
-    ProgrammingExerciseLanguageSolution,
+    ProgrammingExerciseLanguageImplementation,
     ConnectedGeneratedResource,
     ProgrammingExerciseDifficulty,
 )
@@ -128,7 +128,7 @@ class ProgrammingExerciseView(generic.DetailView):
 
     def get_object(self, **kwargs):
         return get_object_or_404(
-            self.model,
+            self.model.objects.select_related(),
             topic__slug=self.kwargs.get('topic_slug', None),
             slug=self.kwargs.get('programming_exercise_slug', None)
         )
@@ -138,19 +138,18 @@ class ProgrammingExerciseView(generic.DetailView):
         context = super(ProgrammingExerciseView, self).get_context_data(**kwargs)
         # Add all the connected learning outcomes
         context['programming_exercise_learning_outcomes'] = self.object.learning_outcomes.all()
-        context['difficulty'] = self.object.difficulty.name
-        context['language_implementations'] = self.object.solution.all()
+        context['implementations'] = self.object.implementations.all().select_related()
         return context
 
 
 class ProgrammingExerciseLanguageSolutionView(generic.DetailView):
-    model = ProgrammingExerciseLanguageSolution
+    model = ProgrammingExerciseLanguageImplementation
     template_name = 'topics/programming_exercise_language_solution.html'
-    context_object_name = 'programming_exercise_language_solution'
-    
+    context_object_name = 'implementation'
+
     def get_object(self, **kwargs):
         return get_object_or_404(
-            self.model,
+            self.model.objects.select_related(),
             topic__slug=self.kwargs.get('topic_slug', None),
             exercise__slug=self.kwargs.get('programming_exercise_slug', None),
             language__slug=self.kwargs.get('programming_language_slug', None)
