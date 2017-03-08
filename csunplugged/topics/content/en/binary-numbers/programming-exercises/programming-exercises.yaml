@@ -1,16 +1,17 @@
-- slug: count-to-10
+- slug: count-to-16
   exercise-number: 1
   difficulty-level: 1
-  md-file: binary-numbers/programming-exercises/exercise-1/index.md
+  md-file: binary-numbers/programming-exercises/exercise-1.1/index.md
   learning-outcomes:
-    - programming-basic-logic
+    - programming-sequence
+    - programming-one-input-output
   programming-languages:
       scratch:
-        hints: binary-numbers/programming-exercises/exercise-1/scratch-hints.md
-        solution: binary-numbers/programming-exercises/exercise-1/scratch-solution.md
+        hints: binary-numbers/programming-exercises/exercise-1.1/scratch-hints.md
+        solution: binary-numbers/programming-exercises/exercise-1.1/scratch-solution.md
       python:
-        hints: binary-numbers/programming-exercises/exercise-1/python-hints.md
-        solution: binary-numbers/programming-exercises/exercise-1/python-solution.md
+        hints: binary-numbers/programming-exercises/exercise-1.1/python-hints.md
+        solution: binary-numbers/programming-exercises/exercise-1.1/python-solution.md
 - slug: count-to-a-million
   exercise-number: 2
   difficulty-level: 3
