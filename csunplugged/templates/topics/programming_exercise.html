@@ -3,38 +3,41 @@
 {% load render_html_field %}
 
 {% block content %}
-<h1><span class="subtitle">Plugged In:</span> {{ programming_exercise.name }}</h1>
+  <h1><span class="subtitle">Plugged In:</span> {{ programming_exercise.name }}</h1>
 
-<h2>
-  Difficulty: {{ programming_exercise.difficulty.name }}
-</h2>
+  <p>
+    <strong>Difficulty:</strong> {{ programming_exercise.difficulty.name }}
+  </p>
 
-{% autoescape off %}
-{{ programming_exercise.content }}
-{% endautoescape %}
+  {% autoescape off %}
+  {{ programming_exercise.content }}
+  {% endautoescape %}
 
-<h2>Learning Outcomes</h2>
-{% if programming_exercise_learning_outcomes %}
-  <ul>
-  {% for learning_outcome in programming_exercise_learning_outcomes %}
-    <li>{{ learning_outcome.text }}</li>
-  {% endfor %}
-</ul>
-{% else %}
-  <p>No learning outcomes listed for {{ programming_exercise.name }}.</p>
-{% endif %}
-
-<h2>Languages</h2>
+  <h2>Languages</h2>
   {% for implementation in implementations %}
-    <h3>
-      <img src="{% get_static_prefix %}{{ implementation.language.icon }}" class="plugged-in-language-icon" />
-      {{ implementation.language.name }}
-    </h3>
+    <div class="plugged-in-language-implementation">
+      <h3>
+        <img src="{% get_static_prefix %}{{ implementation.language.icon }}" class="plugged-in-language-icon" />
+        {{ implementation.language.name }}
+      </h3>
 
-    {% render_html_field implementation.hints %}
+      {% render_html_field implementation.hints %}
 
-    <a href="{% url 'topics:programming_exercise_language_solution' programming_exercise.topic.slug programming_exercise.slug implementation.language.slug %}" class="btn btn-outline-danger">
-      {{ implementation.language.name }} Solution
-    </a>
+      <a href="{% url 'topics:programming_exercise_language_solution' programming_exercise.topic.slug programming_exercise.slug implementation.language.slug %}" class="btn btn-outline-danger">
+        {{ implementation.language.name }} Solution
+      </a>
+    </div>
   {% endfor %}
+
+
+  <h2>Learning Outcomes</h2>
+  {% if programming_exercise_learning_outcomes %}
+    <ul>
+    {% for learning_outcome in programming_exercise_learning_outcomes %}
+      <li>{{ learning_outcome.text }}</li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>No learning outcomes listed for {{ programming_exercise.name }}.</p>
+  {% endif %}
 {% endblock content %}
