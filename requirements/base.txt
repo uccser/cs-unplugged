@@ -12,6 +12,7 @@ Pillow==4.0.0
 
 # Markdown
 python-markdown-math==0.2
+git+git://github.com/uccser/kordac.git
 
 # Models
 django-model-utils==2.6.1

@@ -277,12 +277,6 @@ To install the project requirements, type the following commands in terminal fro
     $ npm install
     $ sudo npm install gulp-cli --global
 
-.. warning::
-
-    One of the requirements ``Kordac`` is not yet available on PyPI,
-    see the `Kordac documentation`_ on how to install Kordac.
-    You will need to do this before using the system.
-
 Step 12: Install text editor/IDE (optional)
 =================================================
 
