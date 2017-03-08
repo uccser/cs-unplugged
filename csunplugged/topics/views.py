@@ -48,7 +48,7 @@ class UnitPlanView(generic.DetailView):
 
     def get_object(self, **kwargs):
         return get_object_or_404(
-            self.model,
+            self.model.objects.select_related(),
             topic__slug=self.kwargs.get('topic_slug', None),
             slug=self.kwargs.get('unit_plan_slug', None)
         )
@@ -56,8 +56,8 @@ class UnitPlanView(generic.DetailView):
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         context = super(UnitPlanView, self).get_context_data(**kwargs)
-        # Add connected topic
-        context['topic'] = get_object_or_404(Topic, slug=self.kwargs.get('topic_slug', None))
+        # Loading object under consistent context names for breadcrumbs
+        context['topic'] = self.object.topic
         # Add all the connected lessons
         context['lessons'] = self.object.unit_plan_lessons.annotate(
             min_age=Min('ages__age'),
@@ -73,7 +73,7 @@ class LessonView(generic.DetailView):
 
     def get_object(self, **kwargs):
         return get_object_or_404(
-            self.model,
+            self.model.objects.select_related(),
             topic__slug=self.kwargs.get('topic_slug', None),
             unit_plan__slug=self.kwargs.get('unit_plan_slug', None),
             slug=self.kwargs.get('lesson_slug', None),
@@ -82,13 +82,16 @@ class LessonView(generic.DetailView):
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         context = super(LessonView, self).get_context_data(**kwargs)
+        # Loading objects under consistent context names for breadcrumbs
+        context['topic'] = self.object.topic
+        context['unit_plan'] = self.object.unit_plan
         # Add all the connected curriculum links
         context['lesson_curriculum_links'] = self.object.curriculum_links.all()
         # Add all the connected learning outcomes
         context['lesson_learning_outcomes'] = self.object.learning_outcomes.all()
         # Add all the connected classroom resources
         context['lesson_classroom_resources'] = self.object.classroom_resources.all()
-        # Add all the connected classroom resources
+        # Add all the connected generated resources
         related_resources = self.object.generated_resources.all()
         generated_resources = []
         for related_resource in related_resources:
@@ -117,6 +120,7 @@ class ProgrammingExerciseList(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super(ProgrammingExerciseList, self).get_context_data(**kwargs)
+        # Loading objects under consistent context names for breadcrumbs
         context['topic'] = get_object_or_404(Topic, slug=self.kwargs.get('topic_slug', None))
         return context
 
@@ -136,6 +140,8 @@ class ProgrammingExerciseView(generic.DetailView):
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         context = super(ProgrammingExerciseView, self).get_context_data(**kwargs)
+        # Loading object under consistent context names for breadcrumbs
+        context['topic'] = self.object.topic
         # Add all the connected learning outcomes
         context['programming_exercise_learning_outcomes'] = self.object.learning_outcomes.all()
         context['implementations'] = self.object.implementations.all().select_related()
@@ -158,6 +164,9 @@ class ProgrammingExerciseLanguageSolutionView(generic.DetailView):
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         context = super(ProgrammingExerciseLanguageSolutionView, self).get_context_data(**kwargs)
+        # Loading object under consistent context names for breadcrumbs
+        context['topic'] = self.object.topic
+        context['programming_exercise'] = self.object.exercise
         return context
 
 
@@ -168,10 +177,11 @@ class ActivityList(generic.ListView):
 
     def get_queryset(self, **kwargs):
         """Return all activities for topic"""
-        return FollowUpActivity.objects.filter(topic__slug=self.kwargs.get('topic_slug', None)).order_by('name')
+        return FollowUpActivity.objects.filter(topic__slug=self.kwargs.get('topic_slug', None)).select_related().order_by('name')
 
     def get_context_data(self, **kwargs):
         context = super(ActivityList, self).get_context_data(**kwargs)
+        # Loading objects under consistent context names for breadcrumbs
         context['topic'] = get_object_or_404(Topic, slug=self.kwargs.get('topic_slug', None))
         return context
 
@@ -184,7 +194,7 @@ class ActivityView(generic.DetailView):
 
     def get_object(self, **kwargs):
         return get_object_or_404(
-            self.model,
+            self.model.objects.select_related(),
             topic__slug=self.kwargs.get('topic_slug', None),
             slug=self.kwargs.get('activity_slug', None)
         )
@@ -192,6 +202,8 @@ class ActivityView(generic.DetailView):
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         context = super(ActivityView, self).get_context_data(**kwargs)
+        # Loading objects under consistent context names for breadcrumbs
+        context['topic'] = self.object.topic
         # Add in a QuerySet of all the connected curriculum links
         context['activity_curriculum_links'] = self.object.curriculum_links.all()
         return context

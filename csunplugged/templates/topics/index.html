@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load static %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block breadcrumbs %}
+  {{ block.super }}
+  {% breadcrumb "Topics" "topics:index" %}
+{% endblock breadcrumbs %}
 
 {% block content %}
   <h1>{% trans "Topics" %}</h1>
