@@ -1,4 +1,4 @@
-from .BaseLoader import BaseLoader
+from utils.BaseLoader import BaseLoader
 from .LessonLoader import LessonLoader
 
 

@@ -1,4 +1,4 @@
-from .BaseLoader import BaseLoader
+from utils.BaseLoader import BaseLoader
 from .LessonsLoader import LessonsLoader
 
 
@@ -18,9 +18,9 @@ class UnitPlanLoader(BaseLoader):
 
     def load(self):
         """load the content for unit plans"""
-        unit_plan_structure = self.load_yaml_file(self.structure_file)
+        unit_plan_structure = self.load_yaml_file(self.BASE_PATH.format(self.structure_file))
         md_file = unit_plan_structure['md-file']
-        unit_plan_content = self.convert_md_file(md_file)
+        unit_plan_content = self.convert_md_file(self.BASE_PATH.format(md_file))
 
         unit_plan = self.topic.topic_unit_plans.create(
             slug=unit_plan_structure['slug'],

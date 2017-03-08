@@ -14,8 +14,7 @@ class BaseLoader():
             self.load_log = load_log
         else:
             self.load_log = list(load_log)
-        self.BASE_PATH = 'topics/content/en/'  # TODO: Hardcoded for prototype
-        self.language_structure = self.load_yaml_file('structure.yaml')
+        self.BASE_PATH = 'topics/content/en/{}'  # TODO: Hardcoded for prototype
         self.setup_md_to_html_converter()
 
     def setup_md_to_html_converter(self):
@@ -46,7 +45,7 @@ class BaseLoader():
         sys.stdout.write('\n')
         self.load_log = []
 
-    def convert_md_file(self, file_path):
+    def convert_md_file(self, md_file_path):
         """Returns the Kordac object for a given Markdown file
 
         Args:
@@ -55,11 +54,10 @@ class BaseLoader():
         Returns:
             Kordac result object
         """
-        md_file_path = os.path.join(self.BASE_PATH, file_path)
         content = open(md_file_path, encoding='UTF-8').read()
         return self.converter.convert(content)
 
-    def load_yaml_file(self, file_path):
+    def load_yaml_file(self, yaml_file_path):
         """Loads and reads yaml file
 
         Args:
@@ -68,7 +66,6 @@ class BaseLoader():
         Returns:
              Either list or string, depending on structure of given yaml file
         """
-        yaml_file_path = os.path.join(self.BASE_PATH, file_path)
         yaml_file = open(yaml_file_path, encoding='UTF-8').read()
         return yaml.load(yaml_file)
 

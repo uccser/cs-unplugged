@@ -1,5 +1,5 @@
 from django.db import transaction
-from .BaseLoader import BaseLoader
+from utils.BaseLoader import BaseLoader
 from .FollowUpActivitiesLoader import FollowUpActivitiesLoader
 from .ProgrammingExercisesLoader import ProgrammingExercisesLoader
 from .UnitPlanLoader import UnitPlanLoader
@@ -23,12 +23,12 @@ class TopicsLoader(BaseLoader):
     def load(self):
         """load the content for topics"""
         for topic_structure in self.structure['topics']:
-            topic_data = self.convert_md_file(topic_structure['md-file'])
+            topic_data = self.convert_md_file(self.BASE_PATH.format(topic_structure['md-file']))
 
             # If other resources are given, convert to html
             other_resources_file = topic_structure['other-resources-md-file']
             if other_resources_file:
-                md_data = self.convert_md_file(other_resources_file)
+                md_data = self.convert_md_file(self.BASE_PATH.format(other_resources_file))
                 other_resources_html = md_data.html_string
             else:
                 other_resources_html = ''

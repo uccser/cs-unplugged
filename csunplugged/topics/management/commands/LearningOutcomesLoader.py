@@ -1,5 +1,5 @@
 from django.db import transaction
-from .BaseLoader import BaseLoader
+from utils.BaseLoader import BaseLoader
 from topics.models import LearningOutcome
 
 
@@ -18,7 +18,7 @@ class LearningOutcomesLoader(BaseLoader):
     @transaction.atomic
     def load(self):
         """load the content for learning outcomes"""
-        learning_outcomes = self.load_yaml_file(self.learning_outcomes_file)
+        learning_outcomes = self.load_yaml_file(self.BASE_PATH.format(self.learning_outcomes_file))
         for (outcome_slug, outcome_text) in learning_outcomes.items():
             # Create outcome objects and save to db
             outcome = LearningOutcome(

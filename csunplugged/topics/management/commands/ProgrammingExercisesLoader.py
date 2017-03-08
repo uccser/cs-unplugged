@@ -1,4 +1,4 @@
-from .BaseLoader import BaseLoader
+from utils.BaseLoader import BaseLoader
 from topics.models import (
     LearningOutcome,
     ProgrammingExerciseDifficulty,
@@ -24,11 +24,11 @@ class ProgrammingExercisesLoader(BaseLoader):
     def load(self):
         """load the content for programming exercises"""
         if self.structure_file:
-            structure = self.load_yaml_file(self.structure_file)
+            structure = self.load_yaml_file(self.BASE_PATH.format(self.structure_file))
 
             # For each programming exercise
             for exercise in structure:
-                content = self.convert_md_file(exercise['md-file'])
+                content = self.convert_md_file(self.BASE_PATH.format(exercise['md-file']))
 
                 programming_exercise = self.topic.topic_programming_exercises.create(
                     slug=exercise['slug'],
@@ -47,8 +47,8 @@ class ProgrammingExercisesLoader(BaseLoader):
                     language_object = ProgrammingExerciseLanguage.objects.get(
                         slug=language
                     )
-                    hint_content = self.convert_md_file(language_solutions[language]['hints']).html_string
-                    solution_content = self.convert_md_file(language_solutions[language]['solution']).html_string
+                    hint_content = self.convert_md_file(self.BASE_PATH.format(language_solutions[language]['hints'])).html_string
+                    solution_content = self.convert_md_file(self.BASE_PATH.format(language_solutions[language]['solution'])).html_string
                     solution = ProgrammingExerciseLanguageImplementation.objects.create(
                         hints=hint_content,
                         solution=solution_content,

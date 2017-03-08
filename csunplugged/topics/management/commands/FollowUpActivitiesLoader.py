@@ -1,4 +1,4 @@
-from .BaseLoader import BaseLoader
+from utils.BaseLoader import BaseLoader
 from topics.models import CurriculumLink
 
 
@@ -19,11 +19,11 @@ class FollowUpActivitiesLoader(BaseLoader):
     def load(self):
         """Load the content for follow up activities"""
         if self.structure_file:
-            structure = self.load_yaml_file(self.structure_file)
+            structure = self.load_yaml_file(self.BASE_PATH.format(self.structure_file))
 
             for activity_data in structure:
                 md_file = activity_data['md-file']
-                activity_content = self.convert_md_file(md_file)
+                activity_content = self.convert_md_file(self.BASE_PATH.format(md_file))
 
                 activity = self.topic.topic_follow_up_activities.create(
                     slug=activity_data['slug'],
