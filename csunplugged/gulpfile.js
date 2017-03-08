@@ -80,7 +80,13 @@ var scratchSVG = function() {
         // file.contents is a Buffer - https://nodejs.org/api/buffer.html
         var doc = scratchblocks.parse(file.contents.toString())
         doc.render(svg => {
-          file.contents = new Buffer(doc.exportSVGString());
+          var string = doc.exportSVGString();
+          // Remove invalid xmlns attribute due to issue https://github.com/scratchblocks/scratchblocks/issues/219
+          string = string.replace(
+            '<use xmlns="http://www.w3.org/1999/xlink" href="#greenFlag"',
+            '<use href="#greenFlag"'
+          );
+          file.contents = new Buffer(string);
         })
         return callback(null, file);
     }
