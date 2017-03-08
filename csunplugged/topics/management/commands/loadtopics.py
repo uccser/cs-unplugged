@@ -15,7 +15,7 @@ class Command(BaseCommand):
         """
         # Get structure and content files
         base_loader = BaseLoader()
-        
+
         structure_file = base_loader.load_yaml_file(base_loader.BASE_PATH.format('structure.yaml'))
         difficulty_file = structure_file['programming-exercises-structure']
         learning_outcomes_file = structure_file['learning-outcomes']

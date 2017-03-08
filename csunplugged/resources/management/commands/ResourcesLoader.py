@@ -1,5 +1,5 @@
 from django.db import transaction
-from utils.BaseLoader import BaseLoader    
+from utils.BaseLoader import BaseLoader
 from resources.models import Resource
 
 
@@ -29,5 +29,5 @@ class ResourcesLoader(BaseLoader):
             )
             resource.save()
             self.log('Added Resource: {}'.format(resource.name))
-        
+
         self.print_load_log()

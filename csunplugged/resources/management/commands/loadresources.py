@@ -7,7 +7,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         """The function called when the loadresources command is given"""
-        
+
         self.BASE_PATH = 'resources/content/{}'  # TODO: Hardcoded for prototype
         resource_structure_file = self.BASE_PATH.format('resources.yaml')
         ResourcesLoader(resource_structure_file).load()

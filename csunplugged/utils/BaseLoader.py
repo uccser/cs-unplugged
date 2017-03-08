@@ -1,5 +1,4 @@
 import yaml
-import os.path
 import mdx_math
 import abc
 import sys
