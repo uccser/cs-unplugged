@@ -18,6 +18,7 @@
     "gulp-sourcemaps": "^2.4.1",
     "gulp-uglify": "^2.0.1",
     "gulp-util": "^3.0.8",
+    "gulp-watch": "4.3.11",
     "jshint": "^2.9.4",
     "jshint-stylish": "^2.2.1",
     "postcss-flexbugs-fixes": "^2.1.0",

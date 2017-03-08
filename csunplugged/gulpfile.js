@@ -9,6 +9,7 @@ var exec = require('child_process').exec;
 var runSequence = require('run-sequence')
 var notify = require('gulp-notify');
 var buffer = require('vinyl-buffer');
+var gulpwatch = require('gulp-watch');
 var argv = require('yargs').argv;
 // sass
 var sass = require('gulp-sass');
@@ -229,8 +230,9 @@ gulp.task('watch', ['scratch', 'images', 'css', 'js', 'sass', 'browser-sync'], f
   // --------------------------
   // watch:scratch
   // --------------------------
-  gulp.watch('temp/scratch-blocks-*.txt', ['reload-scratch']);
-
+  gulpwatch('temp/scratch-blocks-*.txt', function() {
+      gulp.start('reload-scratch');
+  });
   // --------------------------
   // watch:sass
   // --------------------------
