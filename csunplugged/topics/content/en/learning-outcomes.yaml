@@ -9,3 +9,5 @@ parity-justify-usage: Justify why parity should be used.
 
 # Related to programming
 programming-basic-logic: Demonstrate the use of a basic logic statement
+programming-sequence: Explain why programming has to have exact sequencing of code.
+programming-one-input-output: Demonstrate one type of input and why this outputs the way it does.
