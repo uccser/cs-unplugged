@@ -23,9 +23,11 @@ class BaseLoader():
         and extensions.
         """
         templates = dict()
-        templates['scratch'] = '<div><img src="{% autoescape false -%}{{ "{% get_static_prefix %}" }}img/scratch-blocks-{{ hash }}.svg{%- endautoescape %}"/></div>'
+        templates['scratch'] = '<div><object data="{% autoescape false -%}{{ "{% get_static_prefix %}" }}img/scratch-blocks-{{ hash }}.svg{%- endautoescape %}" type="image/svg+xml" /></div>'
+        templates['iframe'] = '<iframe allowtransparency="true" width="485" height="402" src="{{ link }}" frameborder="0" allowfullscreen="true"></iframe>'
+        templates['heading'] = '<{{ heading_type }} id="{{ title_slug }}">{{ title }}</{{ heading_type }}>'
         extensions = [
-            # 'markdown.extensions.fenced_code',
+            'markdown.extensions.fenced_code',
             'markdown.extensions.codehilite',
             'markdown.extensions.sane_lists',
             mdx_math.MathExtension(enable_dollar_delimiter=True)
