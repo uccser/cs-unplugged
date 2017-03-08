@@ -5,14 +5,14 @@ from topics.models import CurriculumLink
 class FollowUpActivitiesLoader(BaseLoader):
     """Loader for follow up activites"""
 
-    def __init__(self, load_log, structure_file, topic):
+    def __init__(self, load_log, structure_file, topic, BASE_PATH):
         """Initiates the loader for follow up activites
 
         Args:
             structure_file: file path (string)
             topic: Topic model object
         """
-        super().__init__(load_log)
+        super().__init__(BASE_PATH, load_log)
         self.structure_file = structure_file
         self.topic = topic
 

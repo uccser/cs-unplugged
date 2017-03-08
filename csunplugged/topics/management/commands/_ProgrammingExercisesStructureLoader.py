@@ -6,13 +6,13 @@ from topics.models import ProgrammingExerciseLanguage, ProgrammingExerciseDiffic
 class ProgrammingExercisesStructureLoader(BaseLoader):
     """Loader for programming exercises difficulties"""
 
-    def __init__(self, structure_file):
+    def __init__(self, structure_file, BASE_PATH):
         """Initiates the loader for programming exercises difficulties
 
         Args:
             structure_file: file path (string)
         """
-        super().__init__()
+        super().__init__(BASE_PATH)
         self.structure_file = structure_file
 
     @transaction.atomic

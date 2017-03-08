@@ -8,12 +8,12 @@ from kordac import Kordac
 class BaseLoader():
     """Base loader class for individual loaders"""
 
-    def __init__(self, load_log=[]):
+    def __init__(self, BASE_PATH='', load_log=[]):
         if load_log:
             self.load_log = load_log
         else:
             self.load_log = list(load_log)
-        self.BASE_PATH = 'topics/content/en/{}'  # TODO: Hardcoded for prototype
+        self.BASE_PATH = BASE_PATH
         self.setup_md_to_html_converter()
 
     def setup_md_to_html_converter(self):

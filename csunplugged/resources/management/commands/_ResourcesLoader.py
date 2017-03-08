@@ -6,19 +6,19 @@ from resources.models import Resource
 class ResourcesLoader(BaseLoader):
     """Loader for resources"""
 
-    def __init__(self, structure_file):
+    def __init__(self, structure_file, BASE_PATH):
         """Initiates the loader for resources
 
         Args:
             structure_file: file path (string)
         """
-        super().__init__()
+        super().__init__(BASE_PATH)
         self.structure_file = structure_file
 
     @transaction.atomic
     def load(self):
         """load the content for resources"""
-        resources = self.load_yaml_file(self.structure_file)
+        resources = self.load_yaml_file(self.BASE_PATH.format(self.structure_file))
         for (resource_slug, resource_data) in resources.items():
             resource = Resource(
                 slug=resource_slug,

@@ -6,13 +6,13 @@ from topics.models import LearningOutcome
 class LearningOutcomesLoader(BaseLoader):
     """Loader for learning outcomes content"""
 
-    def __init__(self, learning_outcomes_file):
+    def __init__(self, learning_outcomes_file, BASE_PATH):
         """Initiates the learning outcomes loader
 
         Args:
             learning_outcomes_file: file path (string)
         """
-        super().__init__()
+        super().__init__(BASE_PATH)
         self.learning_outcomes_file = learning_outcomes_file
 
     @transaction.atomic
