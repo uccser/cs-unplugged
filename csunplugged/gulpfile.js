@@ -1,15 +1,15 @@
 'use strict';
 var gulp = require('gulp');
 var gutil = require('gulp-util');
+var fs = require('fs');
 var del = require('del');
 var uglify = require('gulp-uglify');
 var gulpif = require('gulp-if');
 var exec = require('child_process').exec;
-
-
+var runSequence = require('run-sequence')
 var notify = require('gulp-notify');
-
 var buffer = require('vinyl-buffer');
+var gulpwatch = require('gulp-watch');
 var argv = require('yargs').argv;
 // sass
 var sass = require('gulp-sass');
@@ -26,7 +26,11 @@ var source = require('vinyl-source-stream');
 // linting
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
-
+// Scratch image rendering
+var scratchblocks = require('scratchblocks');
+var rename = require("gulp-rename");
+var through = require('through2');
+var PluginError = require('gulp-util').PluginError;
 
 // gulp build --production
 var production = !!argv.production;
@@ -62,6 +66,33 @@ var handleError = function(task) {
     gutil.log(gutil.colors.bgRed(task + ' error:'), gutil.colors.red(err));
   };
 };
+var scratchSVG = function() {
+  var PLUGIN_NAME = 'scratchSVG';
+  return through.obj(function(file, encoding, callback) {
+    if (file.isNull()) {
+        // nothing to do
+        return callback(null, file);
+    }
+
+    if (file.isStream()) {
+        // file.contents is a Stream - https://nodejs.org/api/stream.html
+        this.emit('error', new PluginError(PLUGIN_NAME, 'Streams not supported!'));
+    } else if (file.isBuffer()) {
+        // file.contents is a Buffer - https://nodejs.org/api/buffer.html
+        var doc = scratchblocks.parse(file.contents.toString())
+        doc.render(svg => {
+          var string = doc.exportSVGString();
+          // Remove invalid xmlns attribute due to issue https://github.com/scratchblocks/scratchblocks/issues/219
+          string = string.replace(
+            '<use xmlns="http://www.w3.org/1999/xlink" href="#greenFlag"',
+            '<use href="#greenFlag"'
+          );
+          file.contents = new Buffer(string);
+        })
+        return callback(null, file);
+    }
+  });
+};
 // --------------------------
 // CUSTOM TASK METHODS
 // --------------------------
@@ -69,35 +100,47 @@ var tasks = {
   // --------------------------
   // Delete build folder
   // --------------------------
-  clean: function(cb) {
-    del(['build/'], cb);
+  clean: function() {
+    return del(['build/']);
   },
   // --------------------------
   // Copy static images
   // --------------------------
   images: function() {
-    return gulp.src('./static/img/**/*')
+    return gulp.src('static/img/**/*')
       .pipe(gulp.dest('build/img'));
   },
   // --------------------------
   // CSS
   // --------------------------
   css: function() {
-    gulp.src('static/css/**/*.css')
+    return gulp.src('static/css/**/*.css')
       .pipe(gulp.dest('build/css'));
   },
   // --------------------------
   // JS
   // --------------------------
   js: function() {
-    gulp.src('static/js/**/*.js')
+    return gulp.src('static/js/**/*.js')
       .pipe(gulp.dest('build/js'));
+  },
+  // --------------------------
+  // Scratch
+  // --------------------------
+  scratch: function() {
+    return gulp.src('temp/scratch-blocks-*.txt')
+      .pipe(scratchSVG())
+      .pipe(rename(function (path) {
+        path.extname = ".svg"
+      }))
+      // give it a file and save
+      .pipe(gulp.dest('build/img'));
   },
   // --------------------------
   // SASS (libsass)
   // --------------------------
   sass: function() {
-    return gulp.src('./static/scss/*.scss')
+    return gulp.src('static/scss/*.scss')
       // sourcemaps + sass + error handling
       .pipe(gulpif(!production, sourcemaps.init()))
       .pipe(sass({
@@ -131,8 +174,8 @@ var tasks = {
   lintjs: function() {
     return gulp.src([
         'gulpfile.js',
-        './static/js/index.js',
-        './static/js/**/*.js'
+        'static/js/index.js',
+        'static/js/**/*.js'
       ]).pipe(jshint())
       .pipe(jshint.reporter(stylish))
       .on('error', function() {
@@ -149,6 +192,9 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('reload-sass', ['sass'], function(){
+  browserSync.reload();
+});
+gulp.task('reload-scratch', ['scratch'], function(){
   browserSync.reload();
 });
 gulp.task('reload-js', ['js'], function(){
@@ -172,6 +218,7 @@ gulp.task('images', req, tasks.images);
 gulp.task('js', req, tasks.js);
 gulp.task('css', req, tasks.css);
 gulp.task('sass', req, tasks.sass);
+gulp.task('scratch', req, tasks.scratch);
 gulp.task('lint:js', tasks.lintjs);
 gulp.task('optimize', tasks.optimize);
 gulp.task('test', tasks.test);
@@ -179,39 +226,40 @@ gulp.task('test', tasks.test);
 // --------------------------
 // DEV/WATCH TASK
 // --------------------------
-gulp.task('watch', ['images', 'css', 'js', 'sass', 'browser-sync'], function() {
-
+gulp.task('watch', ['scratch', 'images', 'css', 'js', 'sass', 'browser-sync'], function() {
+  // --------------------------
+  // watch:scratch
+  // --------------------------
+  gulpwatch('temp/scratch-blocks-*.txt', function() {
+      gulp.start('reload-scratch');
+  });
   // --------------------------
   // watch:sass
   // --------------------------
-  gulp.watch('./static/scss/**/*.scss', ['reload-sass']);
+  gulp.watch('static/scss/**/*.scss', ['reload-sass']);
 
   // --------------------------
   // watch:js
   // --------------------------
-  gulp.watch('./static/js/**/*.js', ['lint:js', 'reload-js']);
+  gulp.watch('static/js/**/*.js', ['lint:js', 'reload-js']);
 
   // --------------------------
   // watch:css
   // --------------------------
-  gulp.watch('./static/css/**/*.css', ['reload-css']);
+  gulp.watch('static/css/**/*.css', ['reload-css']);
 
   // --------------------------
   // watch:templates
   // --------------------------
-  gulp.watch('./templates/**/*.html', ['reload-templates']);
+  gulp.watch('templates/**/*.html', ['reload-templates']);
 
   gutil.log(gutil.colors.bgGreen('Watching for changes...'));
 });
 
 // build task
-gulp.task('build', [
-  'clean',
-  'images',
-  'css',
-  'js',
-  'sass'
-]);
+gulp.task('build', function(callback) {
+  runSequence('clean', ['images', 'css', 'js', 'sass', 'scratch'], callback);
+});
 
 gulp.task('default', ['watch']);
 

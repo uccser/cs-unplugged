@@ -1,20 +1,20 @@
 {% extends "topics/programming_exercise.html" %}
 
+{% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block breadcrumbs %}
   {{ block.super }}
   {% breadcrumb "Solution" "" %}
 {% endblock breadcrumbs %}
+
 {% block content %}
 <h1><span class="subtitle">Plugged In:</span> {{ implementation.exercise.name }}</h1>
 <h2>{{ implementation.language.name }} Solution</h2>
 
 <p>This is just one of many possible solutions.</p>
 
-{% autoescape off %}
-{{ implementation.solution }}
-{% endautoescape %}
+{% render_html_field implementation.solution %}
 
 <p>
   <a href="{% url 'topics:programming_exercise' implementation.topic.slug implementation.exercise.slug %}" class="btn btn-outline-danger">
