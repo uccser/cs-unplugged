@@ -177,7 +177,9 @@ class ActivityList(generic.ListView):
 
     def get_queryset(self, **kwargs):
         """Return all activities for topic"""
-        return FollowUpActivity.objects.filter(topic__slug=self.kwargs.get('topic_slug', None)).select_related().order_by('name')
+        return FollowUpActivity.objects.filter(
+            topic__slug=self.kwargs.get('topic_slug', None)
+        ).select_related().order_by('name')
 
     def get_context_data(self, **kwargs):
         context = super(ActivityList, self).get_context_data(**kwargs)
