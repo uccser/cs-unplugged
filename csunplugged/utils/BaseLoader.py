@@ -2,8 +2,8 @@ import yaml
 import mdx_math
 import abc
 import sys
-import os.path
 from kordac import Kordac
+from .check_converter_required_files import check_required_files
 
 
 class BaseLoader():
@@ -47,16 +47,7 @@ class BaseLoader():
         """
         content = open(md_file_path, encoding='UTF-8').read()
         result = self.converter.convert(content)
-        # Write Scratch data for image rendering by Gulp script
-        if 'scratch_images' in result.required_files:
-            FILEPATH_TEMPLATE = 'temp/scratch-blocks-{hash}.txt'
-            if not os.path.exists('temp'):
-                os.makedirs('temp')
-            for scratch_image in result.required_files['scratch_images']:
-                filepath = FILEPATH_TEMPLATE.format(hash=scratch_image.hash)
-                if not os.path.isfile(filepath):
-                    with open(filepath, 'w') as scratch_temp_file:
-                        scratch_temp_file.write(scratch_image.text)
+        check_required_files(result.required_files)
         return result
 
     def log(self, log_message, indent_amount=0):
