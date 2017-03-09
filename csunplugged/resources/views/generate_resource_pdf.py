@@ -23,6 +23,7 @@ def generate_resource_pdf(request, resource, module_path):
     get_request = request.GET
     context['paper_size'] = get_request['paper_size']
     context['resource'] = resource
+    context['header_text'] = get_request['header_text']
 
     resource_image_generator = importlib.import_module(module_path)
     filename = '{} ({})'.format(resource.name, resource_image_generator.subtitle(get_request, resource))
