@@ -1,6 +1,5 @@
 from django.shortcuts import get_object_or_404
 from django.views import generic
-from django.db.models import Max, Min
 
 from .models import (
     Topic,
@@ -59,10 +58,7 @@ class UnitPlanView(generic.DetailView):
         # Loading object under consistent context names for breadcrumbs
         context['topic'] = self.object.topic
         # Add all the connected lessons
-        context['lessons'] = self.object.unit_plan_lessons.annotate(
-            min_age=Min('ages__age'),
-            max_age=Max('ages__age')
-        ).order_by('min_age', 'max_age', 'number')
+        context['lessons'] = self.object.unit_plan_lessons.order_by('min_age', 'max_age', 'number')
         return context
 
 
