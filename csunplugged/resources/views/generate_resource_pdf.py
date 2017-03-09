@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.template.loader import render_to_string
+from django.contrib.staticfiles import finders
 from multiprocessing import Pool
 from functools import partial
 from weasyprint import HTML, CSS
@@ -22,6 +23,11 @@ def generate_resource_pdf(request, resource, module_path):
     get_request = request.GET
     context['paper_size'] = get_request['paper_size']
     context['resource'] = resource
+    context['header_text'] = get_request['header_text']
+
+    resource_image_generator = importlib.import_module(module_path)
+    filename = '{} ({})'.format(resource.name, resource_image_generator.subtitle(get_request, resource))
+    context['filename'] = filename
 
     num_copies = range(0, int(get_request['copies']))
     image_generator = partial(
@@ -36,11 +42,13 @@ def generate_resource_pdf(request, resource, module_path):
 
     pdf_html = render_to_string('resources/base-resource-pdf.html', context)
     html = HTML(string=pdf_html, base_url=request.build_absolute_uri())
-    base_css = CSS(string=open('static/css/print-resource-pdf.css', encoding='UTF-8').read())
+    css_file = finders.find('css/print-resource-pdf.css')
+    css_string = open(css_file, encoding='UTF-8').read()
+    base_css = CSS(string=css_string)
     pdf_file = html.write_pdf(stylesheets=[base_css])
 
     response = HttpResponse(pdf_file, content_type='application/pdf')
-    response['Content-Disposition'] = RESPONSE_CONTENT_DISPOSITION.format(filename=resource.name)
+    response['Content-Disposition'] = RESPONSE_CONTENT_DISPOSITION.format(filename=filename)
     return response
 
 

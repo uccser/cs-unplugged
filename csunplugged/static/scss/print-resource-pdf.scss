@@ -1,8 +1,8 @@
-div#base-image-container {
+div.base-image-container {
   text-align: center;
   page-break-after: always;
 }
-img#base-image {
+img.base-image {
   max-width: 100%;
   margin: 8mm;
 }
@@ -14,17 +14,21 @@ img#base-image {
   font-family: 'Open Sans', sans-serif;
   font-size: 0.8em;
   color: #888;
-}
-.fixed-running-element img {
-  max-height: 1.5em;
-  vertical-align: text-bottom;
-}
-.fixed-running-element .logo-text {
-  color: #cc0423;
+  img {
+    max-height: 1.5em;
+    vertical-align: text-bottom;
+  }
 }
 footer {
   bottom: 0;
 }
 header {
-  top: 0;
+  text-align: center;
+  width: 100%;
+  position: relative;;
+  height: 8mm;
+  margin-bottom: -8mm;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8em;
+  color: #888;
 }
