@@ -66,10 +66,10 @@ def subtitle(get_request, resource):
     Used after the resource name in the filename, and
     also on the resource image.
     """
-    TEMPLATE = '{} - {} to {}'
+    SUBTITLE_TEMPLATE = '{} - {} to {}'
     number_order_text = get_request['number_order'].title()
     range_min, range_max, font_size = number_range(get_request)
-    text = TEMPLATE.format(number_order_text, range_min, range_max - 1)
+    text = SUBTITLE_TEMPLATE.format(number_order_text, range_min, range_max - 1)
     return text
 
 
