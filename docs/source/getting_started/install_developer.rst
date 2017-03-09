@@ -271,7 +271,7 @@ To install the project requirements, type the following commands in terminal fro
 
     $ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
     $ sudo apt-get install -y nodejs
-    $ sudo apt-get install libffi-dev
+    $ sudo apt-get install libffi-dev libcairo2-dev libjpeg-dev libgif-dev
     $ pip install -r requirements/local.txt
     $ cd csunplugged
     $ npm install
