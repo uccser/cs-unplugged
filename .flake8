@@ -1,7 +1,8 @@
 [flake8]
 exclude =
-    # No need to traverse our git directory
+    # No need to traverse our git or venv directories
     .git,
+    venv,
 
     # There's no value in checking cache directories
     __pycache__,

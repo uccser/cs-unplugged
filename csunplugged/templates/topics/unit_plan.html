@@ -1,21 +1,26 @@
-{% extends "base.html" %}
+{% extends "topics/topic.html" %}
+
+{% load django_bootstrap_breadcrumbs %}
+
+{% block breadcrumbs %}
+  {{ block.super }}
+  {% breadcrumb unit_plan.name "topics:unit_plan" topic.slug unit_plan.slug %}
+{% endblock breadcrumbs %}
 
 {% block content %}
+  <h1>{{ unit_plan.name }}</h1>
 
-<h1>{{ unit_plan.name }}</h1>
+  {% autoescape off %}
+  {{ unit_plan.content }}
+  {% endautoescape %}
 
-{% autoescape off %}
-{{ unit_plan.content }}
-{% endautoescape %}
-
-<h2>Lessons</h2>
-{% for lesson in lessons %}
-  {% ifchanged lesson.min_age lesson.max_age %}
-    <h3>Ages {{ lesson.min_age }} to {{ lesson.max_age }}</h3>
-  {% endifchanged %}
-  <p>
-    <a href="{% url 'topics:lesson' topic.slug unit_plan.slug lesson.slug %}" class="btn btn-outline-danger">{{ lesson.name }}</a>
-  </p>
-{% endfor %}
-
+  <h2>Lessons</h2>
+  {% for lesson in lessons %}
+    {% ifchanged lesson.min_age lesson.max_age %}
+      <h3>Ages {{ lesson.min_age }} to {{ lesson.max_age }}</h3>
+    {% endifchanged %}
+    <p>
+      <a href="{% url 'topics:lesson' topic.slug unit_plan.slug lesson.slug %}" class="btn btn-outline-danger">{{ lesson.name }}</a>
+    </p>
+  {% endfor %}
 {% endblock content %}

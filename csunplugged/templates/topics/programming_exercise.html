@@ -1,6 +1,13 @@
-{% extends "base.html" %}
+{% extends "topics/programming_exercise_list.html" %}
+
 {% load static %}
 {% load render_html_field %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block breadcrumbs %}
+  {{ block.super }}
+  {% breadcrumb programming_exercise.name "topics:programming_exercise" topic.slug programming_exercise.slug %}
+{% endblock breadcrumbs %}
 
 {% block content %}
   <h1><span class="subtitle">Plugged In:</span> {{ programming_exercise.name }}</h1>

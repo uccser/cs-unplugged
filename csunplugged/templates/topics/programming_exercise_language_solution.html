@@ -1,5 +1,12 @@
-{% extends "base.html" %}
+{% extends "topics/programming_exercise.html" %}
+
 {% load render_html_field %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block breadcrumbs %}
+  {{ block.super }}
+  {% breadcrumb "Solution" "" %}
+{% endblock breadcrumbs %}
 
 {% block content %}
 <h1><span class="subtitle">Plugged In:</span> {{ implementation.exercise.name }}</h1>

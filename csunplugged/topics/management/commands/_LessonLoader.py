@@ -1,6 +1,5 @@
-from .BaseLoader import BaseLoader
+from utils.BaseLoader import BaseLoader
 from topics.models import (
-    Age,
     LearningOutcome,
     CurriculumLink,
     ClassroomResource,
@@ -12,7 +11,7 @@ from topics.models import (
 class LessonLoader(BaseLoader):
     """Loader for a single lesson"""
 
-    def __init__(self, load_log, lesson_structure, topic, unit_plan):
+    def __init__(self, load_log, lesson_structure, topic, unit_plan, BASE_PATH):
         """Initiates the loader for a single lesson
 
         Args:
@@ -20,30 +19,24 @@ class LessonLoader(BaseLoader):
             topic: Topic model object
             unit_plan: UnitPlan model object
         """
-        super().__init__(load_log)
+        super().__init__(BASE_PATH, load_log)
         self.lesson_structure = lesson_structure
         self.topic = topic
         self.unit_plan = unit_plan
 
     def load(self):
         """load the content for a single lesson"""
-        lesson_content = self.convert_md_file(self.lesson_structure['md-file'])
+        lesson_content = self.convert_md_file(self.BASE_PATH.format(self.lesson_structure['md-file']))
         lesson = self.topic.topic_lessons.create(
             unit_plan=self.unit_plan,
             slug=self.lesson_structure['slug'],
             name=lesson_content.title,
             number=self.lesson_structure['lesson-number'],
             content=lesson_content.html_string,
+            min_age=self.lesson_structure['min-age'],
+            max_age=self.lesson_structure['max-age']
         )
         lesson.save()
-
-        # Add ages
-        ages = self.lesson_structure['ages'].split(',')
-        for age in ages:
-            (object, created) = Age.objects.get_or_create(
-                age=age
-            )
-            lesson.ages.add(object)
 
         # Add learning outcomes
         learning_outcome_slugs = self.lesson_structure['learning-outcomes']
