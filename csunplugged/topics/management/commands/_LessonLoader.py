@@ -1,6 +1,5 @@
 from utils.BaseLoader import BaseLoader
 from topics.models import (
-    Age,
     LearningOutcome,
     CurriculumLink,
     ClassroomResource,
@@ -34,16 +33,10 @@ class LessonLoader(BaseLoader):
             name=lesson_content.title,
             number=self.lesson_structure['lesson-number'],
             content=lesson_content.html_string,
+            min_age=self.lesson_structure['min-age'],
+            max_age=self.lesson_structure['max-age']
         )
         lesson.save()
-
-        # Add ages
-        ages = self.lesson_structure['ages'].split(',')
-        for age in ages:
-            (object, created) = Age.objects.get_or_create(
-                age=age
-            )
-            lesson.ages.add(object)
 
         # Add learning outcomes
         learning_outcome_slugs = self.lesson_structure['learning-outcomes']
