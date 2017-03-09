@@ -16,6 +16,21 @@
         {% block generation_form %}
 
         {% endblock generation_form %}
+
+        <fieldset>
+          <legend>Paper Size</legend>
+          <input type="radio" name="paper_size" id="size_a4" value="a4" checked="checked">
+          <label for="size_a4">A4</label>
+          <br>
+          <input type="radio" name="paper_size" id="size_letter" value="letter">
+          <label for="size_letter">US Letter</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Number of Copies</legend>
+          <input type="number" name="copies" value=1 min=1 max=50>
+        </fieldset>
+
         <input type="submit" value="Generate Resource" />
       </form>
     </div>
