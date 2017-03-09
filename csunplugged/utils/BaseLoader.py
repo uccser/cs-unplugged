@@ -1,21 +1,20 @@
 import yaml
-import os.path
 import mdx_math
 import abc
 import sys
 from kordac import Kordac
+from .check_converter_required_files import check_required_files
 
 
 class BaseLoader():
     """Base loader class for individual loaders"""
 
-    def __init__(self, load_log=[]):
+    def __init__(self, BASE_PATH='', load_log=[]):
         if load_log:
             self.load_log = load_log
         else:
             self.load_log = list(load_log)
-        self.BASE_PATH = 'topics/content/en/'  # TODO: Hardcoded for prototype
-        self.language_structure = self.load_yaml_file('structure.yaml')
+        self.BASE_PATH = BASE_PATH
         self.setup_md_to_html_converter()
 
     def setup_md_to_html_converter(self):
@@ -23,6 +22,9 @@ class BaseLoader():
         and extensions.
         """
         templates = dict()
+        templates['scratch'] = '<div><object data="{% autoescape false -%}{{ "{% get_static_prefix %}" }}img/scratch-blocks-{{ hash }}.svg{%- endautoescape %}" type="image/svg+xml" /></div>'  # noqa: E501 Fixed in #77
+        templates['iframe'] = '<iframe allowtransparency="true" width="485" height="402" src="{{ link }}" frameborder="0" allowfullscreen="true"></iframe>'  # noqa: E501 Fixed in #77
+        templates['heading'] = '<{{ heading_type }} id="{{ title_slug }}">{{ title }}</{{ heading_type }}>'  # noqa: E501 Fixed in #77
         extensions = [
             'markdown.extensions.fenced_code',
             'markdown.extensions.codehilite',
@@ -33,6 +35,20 @@ class BaseLoader():
         custom_processors = self.converter.processor_defaults()
         custom_processors.add('remove-title')
         self.converter.update_processors(custom_processors)
+
+    def convert_md_file(self, md_file_path):
+        """Returns the Kordac object for a given Markdown file
+
+        Args:
+            file_path: location of md file to convert
+
+        Returns:
+            Kordac result object
+        """
+        content = open(md_file_path, encoding='UTF-8').read()
+        result = self.converter.convert(content)
+        check_required_files(result.required_files)
+        return result
 
     def log(self, log_message, indent_amount=0):
         """Adds the log message to the load log with the specified indent"""
@@ -46,20 +62,7 @@ class BaseLoader():
         sys.stdout.write('\n')
         self.load_log = []
 
-    def convert_md_file(self, file_path):
-        """Returns the Kordac object for a given Markdown file
-
-        Args:
-            file_path: location of md file to convert
-
-        Returns:
-            Kordac result object
-        """
-        md_file_path = os.path.join(self.BASE_PATH, file_path)
-        content = open(md_file_path, encoding='UTF-8').read()
-        return self.converter.convert(content)
-
-    def load_yaml_file(self, file_path):
+    def load_yaml_file(self, yaml_file_path):
         """Loads and reads yaml file
 
         Args:
@@ -68,7 +71,6 @@ class BaseLoader():
         Returns:
              Either list or string, depending on structure of given yaml file
         """
-        yaml_file_path = os.path.join(self.BASE_PATH, file_path)
         yaml_file = open(yaml_file_path, encoding='UTF-8').read()
         return yaml.load(yaml_file)
 

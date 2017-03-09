@@ -5,7 +5,8 @@ slug: unit-plan
 lessons:
   - lesson-number: 1
     slug: lesson-1
-    ages: 5, 6, 7
+    min-age: 5
+    max-age: 7
     md-file: binary-numbers/unit-plan/lessons/5-7/lesson-1.md
     handout: binary-numbers/unit-plan/lessons/5-7/lesson-1-handout.md
     glossary: binary-numbers/unit-plan/lessons/5-7/lesson-1-glossary.md
@@ -29,7 +30,8 @@ lessons:
 
   - lesson-number: 2
     slug: lesson-2
-    ages: 5, 6, 7
+    min-age: 5
+    max-age: 7
     md-file: binary-numbers/unit-plan/lessons/5-7/lesson-2.md
     handout: binary-numbers/unit-plan/lessons/5-7/lesson-2-handout.md
     glossary: binary-numbers/unit-plan/lessons/5-7/lesson-2-glossary.md
@@ -44,7 +46,8 @@ lessons:
 
   - lesson-number: 3
     slug: lesson-3
-    ages: 5, 6, 7
+    min-age: 5
+    max-age: 7
     md-file: binary-numbers/unit-plan/lessons/5-7/lesson-3.md
     handout: binary-numbers/unit-plan/lessons/5-7/lesson-3-handout.md
     glossary: binary-numbers/unit-plan/lessons/5-7/lesson-3-glossary.md
@@ -57,7 +60,8 @@ lessons:
 
   - lesson-number: 4
     slug: lesson-4
-    ages: 8, 9, 10
+    min-age: 8
+    max-age: 10
     md-file: binary-numbers/unit-plan/lessons/8-10/lesson-1.md
     handout: binary-numbers/unit-plan/lessons/8-10/lesson-1-handout.md
     glossary: binary-numbers/unit-plan/lessons/8-10/lesson-1-glossary.md
@@ -69,7 +73,8 @@ lessons:
 
   - lesson-number: 5
     slug: lesson-5
-    ages: 8, 9, 10
+    min-age: 8
+    max-age: 10
     md-file: binary-numbers/unit-plan/lessons/8-10/lesson-2.md
     handout: binary-numbers/unit-plan/lessons/8-10/lesson-2-handout.md
     glossary: binary-numbers/unit-plan/lessons/8-10/lesson-2-glossary.md
@@ -81,7 +86,8 @@ lessons:
 
   - lesson-number: 6
     slug: lesson-6
-    ages: 11, 12, 13, 14
+    min-age: 11
+    max-age: 14
     md-file: binary-numbers/unit-plan/lessons/11-14/lesson-1.md
     handout: binary-numbers/unit-plan/lessons/11-14/lesson-1-handout.md
     glossary: binary-numbers/unit-plan/lessons/11-14/lesson-1-glossary.md

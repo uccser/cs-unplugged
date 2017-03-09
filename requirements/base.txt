@@ -12,6 +12,7 @@ Pillow==4.0.0
 
 # Markdown
 python-markdown-math==0.2
+git+git://github.com/uccser/kordac.git
 
 # Models
 django-model-utils==2.6.1
@@ -22,6 +23,9 @@ html5lib==1.0b8
 
 # Python-PostgreSQL Database Adapter
 psycopg2==2.7
+
+# Templates
+django-bootstrap-breadcrumbs==0.8.2
 
 # YAML Loading
 PyYAML==3.12

@@ -32,6 +32,15 @@
   <span class="float-right" style="width: 20rem;color: red;">Prototype - Internal Use Only</span>
   </nav>
 
+  {% load django_bootstrap_breadcrumbs %}
+
+  {% block breadcrumbs %}
+    {% clear_breadcrumbs %}
+    {% breadcrumb "Home" "/" %}
+  {% endblock %}
+
+  {% render_breadcrumbs "django_bootstrap_breadcrumbs/bootstrap4.html" %}
+
   {% block body %}
   <div class="container">
     <div class="row">

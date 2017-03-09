@@ -1,4 +1,5 @@
 @import "bootstrap/bootstrap";
+@import "pygments-monokai";
 
 img {
   &#navbar-brand-logo {
@@ -12,6 +13,9 @@ img {
     height: 200px;
     object-fit: contain;
   }
+  &.plugged-in-language-icon {
+    height: 1.5em;
+  }
 }
 h1, h2, h3 {
   color: #e33333;
@@ -22,4 +26,10 @@ h1, h2, h3 {
 }
 input[type="text"].long-text-field {
   width: 20em;
+}
+div.plugged-in-language-implementation {
+  padding: 0 1em 1em 1em;
+  border: 1px #e33333 solid;
+  border-radius: 0.5em;
+  margin: 1em 0;
 }

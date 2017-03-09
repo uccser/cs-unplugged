@@ -1,8 +1,8 @@
 from django.core.management.base import BaseCommand
-from .BaseLoader import BaseLoader
-from .LearningOutcomesLoader import LearningOutcomesLoader
-from .TopicsLoader import TopicsLoader
-from .ProgrammingExercisesDifficultiesLoader import ProgrammingExercisesDifficultiesLoader  # noqa: E501
+from utils.BaseLoader import BaseLoader
+from ._LearningOutcomesLoader import LearningOutcomesLoader
+from ._TopicsLoader import TopicsLoader
+from ._ProgrammingExercisesStructureLoader import ProgrammingExercisesStructureLoader
 
 
 class Command(BaseCommand):
@@ -15,11 +15,24 @@ class Command(BaseCommand):
         """
         # Get structure and content files
         base_loader = BaseLoader()
-        structure_file = base_loader.language_structure
-        difficulty_file = structure_file['programming-exercises-difficulty']
+        BASE_PATH = 'topics/content/en/{}'
+
+        structure_file = base_loader.load_yaml_file(BASE_PATH.format('structure.yaml'))
+        difficulty_file = structure_file['programming-exercises-structure']
         learning_outcomes_file = structure_file['learning-outcomes']
 
         # Load content into db
-        LearningOutcomesLoader(learning_outcomes_file).load()
-        ProgrammingExercisesDifficultiesLoader(difficulty_file).load()
-        TopicsLoader(structure_file).load()
+        LearningOutcomesLoader(
+            learning_outcomes_file,
+            BASE_PATH
+        ).load()
+
+        ProgrammingExercisesStructureLoader(
+            difficulty_file,
+            BASE_PATH
+        ).load()
+
+        TopicsLoader(
+            structure_file,
+            BASE_PATH
+        ).load()

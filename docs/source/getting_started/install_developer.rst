@@ -271,17 +271,11 @@ To install the project requirements, type the following commands in terminal fro
 
     $ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
     $ sudo apt-get install -y nodejs
-    $ sudo apt-get install libffi-dev
+    $ sudo apt-get install libffi-dev libcairo2-dev libjpeg-dev libgif-dev
     $ pip install -r requirements/local.txt
     $ cd csunplugged
     $ npm install
     $ sudo npm install gulp-cli --global
-
-.. warning::
-
-    One of the requirements ``Kordac`` is not yet available on PyPI,
-    see the `Kordac documentation`_ on how to install Kordac.
-    You will need to do this before using the system.
 
 Step 12: Install text editor/IDE (optional)
 =================================================
