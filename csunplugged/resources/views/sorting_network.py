@@ -56,10 +56,12 @@ def number_range(get_request):
     for the requested resource.
     """
     prefilled_values = get_request['prefilled_values']
+    range_min = 0
+    range_max = 0
+    font_size = 150
     if prefilled_values == 'easy':
         range_min = 1
         range_max = 10
-        font_size = 150
     elif prefilled_values == 'medium':
         range_min = 10
         range_max = 100

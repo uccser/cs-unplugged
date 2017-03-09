@@ -8,6 +8,7 @@
 {% endblock description %}
 
 {% block generation_form %}
+
   <fieldset>
     <legend>Prefill with Numbers</legend>
     <input type="radio" name="prefilled_values" id="easy" value="easy" checked="checked">
@@ -32,17 +33,4 @@
     <label for="numbers_sorted">Sorted Numbers</label>
   </fieldset>
 
-  <fieldset>
-    <legend>Paper Size</legend>
-    <input type="radio" name="paper_size" id="size_a4" value="a4" checked="checked">
-    <label for="size_a4">A4</label>
-    <br>
-    <input type="radio" name="paper_size" id="size_letter" value="letter">
-    <label for="size_letter">US Letter</label>
-  </fieldset>
-
-  <fieldset>
-    <legend>Number of Copies</legend>
-    <input type="number" name="copies" value=1 min=1 max=50>
-  </fieldset>
 {% endblock generation_form %}
