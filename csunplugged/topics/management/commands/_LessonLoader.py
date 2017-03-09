@@ -1,4 +1,4 @@
-from .BaseLoader import BaseLoader
+from utils.BaseLoader import BaseLoader
 from topics.models import (
     Age,
     LearningOutcome,
@@ -12,7 +12,7 @@ from topics.models import (
 class LessonLoader(BaseLoader):
     """Loader for a single lesson"""
 
-    def __init__(self, load_log, lesson_structure, topic, unit_plan):
+    def __init__(self, load_log, lesson_structure, topic, unit_plan, BASE_PATH):
         """Initiates the loader for a single lesson
 
         Args:
@@ -20,14 +20,14 @@ class LessonLoader(BaseLoader):
             topic: Topic model object
             unit_plan: UnitPlan model object
         """
-        super().__init__(load_log)
+        super().__init__(BASE_PATH, load_log)
         self.lesson_structure = lesson_structure
         self.topic = topic
         self.unit_plan = unit_plan
 
     def load(self):
         """load the content for a single lesson"""
-        lesson_content = self.convert_md_file(self.lesson_structure['md-file'])
+        lesson_content = self.convert_md_file(self.BASE_PATH.format(self.lesson_structure['md-file']))
         lesson = self.topic.topic_lessons.create(
             unit_plan=self.unit_plan,
             slug=self.lesson_structure['slug'],

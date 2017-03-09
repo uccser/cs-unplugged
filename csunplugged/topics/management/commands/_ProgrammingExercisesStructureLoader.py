@@ -1,24 +1,24 @@
 from django.db import transaction
-from .BaseLoader import BaseLoader
+from utils.BaseLoader import BaseLoader
 from topics.models import ProgrammingExerciseLanguage, ProgrammingExerciseDifficulty
 
 
 class ProgrammingExercisesStructureLoader(BaseLoader):
     """Loader for programming exercises difficulties"""
 
-    def __init__(self, structure_file):
+    def __init__(self, structure_file, BASE_PATH):
         """Initiates the loader for programming exercises difficulties
 
         Args:
             structure_file: file path (string)
         """
-        super().__init__()
+        super().__init__(BASE_PATH)
         self.structure_file = structure_file
 
     @transaction.atomic
     def load(self):
         """load the content for programming exerises difficulties"""
-        info = self.load_yaml_file(self.structure_file)
+        info = self.load_yaml_file(self.BASE_PATH.format(self.structure_file))
 
         languages = info['languages']
         for language_data in languages:
