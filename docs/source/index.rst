@@ -71,3 +71,4 @@ following (or similar):
     getting_started/index
     author/index
     developer/index
+    troubleshooting
