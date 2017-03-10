@@ -27,8 +27,8 @@ This documentation is used for getting the project installed on your system.
 :doc:`Getting Started Documentation <getting_started/index>`
 ==============================================================================
 
-This documentation will help you understand how the project is setup, and
-basic steps on how to use it.
+This documentation will help you understand how the project is setup,
+basic steps on how to use it, and our expectations of your contributions.
 
 ------------------------------------------------------------------------------
 
@@ -69,6 +69,7 @@ following (or similar):
 
     installation
     getting_started/index
+    code_of_conduct
     author/index
     developer/index
     troubleshooting
