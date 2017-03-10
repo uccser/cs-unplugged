@@ -61,7 +61,7 @@ following (or similar):
 ------------------------------------------------------------------------------
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 4
     :caption: Table of Contents
 
     getting_started/index
