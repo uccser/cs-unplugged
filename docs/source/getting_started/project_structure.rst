@@ -68,11 +68,15 @@ The project currently contains the following applications:
     contain randomly generated components and translations.
     This application stores, generates, and displays these resources.
 
+Details on how to modify an application can be found within their relavent
+author and developer documentation pages.
+
 The following folders are also required by the Django system:
 
 - ``static``
 
-  - This folder contains non-user-generated media assets (for example: images, JavaScript, CSS/SCSS, etc).
+  - This folder contains non-user-generated media assets (for example:
+    images, JavaScript, CSS/SCSS, etc).
 
 - ``templates``
 
@@ -104,4 +108,4 @@ The ``csunplugged`` folder also contains the following files:
 - ``manage.py``
 
   - A file created by Django used to manage the Django web system.
-    Don't modify this files contents.
+    Don't modify the contents of this file.
