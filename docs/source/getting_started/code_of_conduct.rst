@@ -1,9 +1,6 @@
 Code of conduct
 ##############################################################################
 
-This project adheres to the `Contributor Covenant`_ code of conduct.
-By participating, you are expected to uphold this code.
-
 Our Pledge
 ==============================================================================
 

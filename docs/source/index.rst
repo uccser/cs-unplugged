@@ -17,18 +17,15 @@ The documentation is split into the following sections:
 
 ------------------------------------------------------------------------------
 
-:doc:`Installation Documentation <installation>`
-==============================================================================
-
-This documentation is used for getting the project installed on your system.
-
-------------------------------------------------------------------------------
-
 :doc:`Getting Started Documentation <getting_started/index>`
 ==============================================================================
 
-This documentation will help you understand how the project is setup,
-basic steps on how to use it, and our expectations of your contributions.
+This documentation contains:
+
+- Our expectations of your contributions to the project
+- Steps to install the project on your system
+- Explainations on how the project is setup
+- Details on basic commands to use the system
 
 ------------------------------------------------------------------------------
 
@@ -67,9 +64,7 @@ following (or similar):
     :maxdepth: 3
     :caption: Table of Contents
 
-    installation
     getting_started/index
-    code_of_conduct
     author/index
     developer/index
     troubleshooting

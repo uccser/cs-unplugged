@@ -1,14 +1,6 @@
 Contributing guide
 ##############################################################################
 
-Welcome to the CS Unplugged (CSU) community!
-We would love for you to get involved into making this project as great as
-possible!
-
-Firstly, this project adheres to the Contributor Covenant code of conduct.
-By participating, you are expected to uphold this code.
-Read our :doc:`Code of Conduct <../code_of_conduct>` before continuing.
-
 This page lists a set of guidelines for contributing to the project.
 These are just guidelines, not rules, use your best judgment and feel
 free to propose changes to this document in a pull request.
