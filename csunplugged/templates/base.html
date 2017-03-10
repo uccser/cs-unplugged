@@ -10,8 +10,7 @@
   <meta name="author" content="">
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
   {% load static %}
-  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{% static 'css/website.css' %}">
+    <link rel="stylesheet" href="{% static 'css/website.css' %}">
   <!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
 </head>
 <body>
@@ -32,6 +31,15 @@
   </div>
   <span class="float-right" style="width: 20rem;color: red;">Prototype - Internal Use Only</span>
   </nav>
+
+  {% load django_bootstrap_breadcrumbs %}
+
+  {% block breadcrumbs %}
+    {% clear_breadcrumbs %}
+    {% breadcrumb "Home" "/" %}
+  {% endblock %}
+
+  {% render_breadcrumbs "django_bootstrap_breadcrumbs/bootstrap4.html" %}
 
   {% block body %}
   <div class="container">

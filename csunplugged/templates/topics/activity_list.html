@@ -1,4 +1,11 @@
-{% extends "base.html" %}
+{% extends "topics/topic.html" %}
+
+{% load django_bootstrap_breadcrumbs %}
+
+{% block breadcrumbs %}
+  {{ block.super }}
+  {% breadcrumb "Follow Up Activities" "topics:activity_list" topic.slug %}
+{% endblock breadcrumbs %}
 
 {% block content %}
   <h1>{{ topic.name }} Follow Up Activities</h1>

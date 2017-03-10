@@ -44,9 +44,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_bootstrap_breadcrumbs',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
@@ -63,8 +66,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(SETTINGS_PATH, 'templates'),
-            os.path.join(SETTINGS_PATH, 'resources/content/')
+            os.path.join(SETTINGS_PATH, 'templates')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -74,6 +76,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries': {
+                'render_html_field': 'general.templatetags.render_html_field',
+            },
         },
     },
 ]
@@ -126,5 +131,9 @@ LOCALE_PATHS = ['locale']
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, 'static'),
+        os.path.join(BASE_DIR, 'build'),
         )
+
+# Internal IPs for Django Debug Toolbar
+# https://docs.djangoproject.com/en/1.10/ref/settings/#internal-ips
+INTERNAL_IPS = ['127.0.0.1']

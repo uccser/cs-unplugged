@@ -1,6 +1,7 @@
 from django.db import models
 from resources.models import Resource
 
+
 class LearningOutcome(models.Model):
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(unique=True)
@@ -24,14 +25,6 @@ class ClassroomResource(models.Model):
 
     def __str__(self):
         return self.text
-
-
-class Age(models.Model):
-#  Auto-incrementing 'id' field is automatically set by Django
-    age = models.PositiveSmallIntegerField()
-
-    def __str__(self):
-        return self.age
 
 
 class Topic(models.Model):
@@ -77,10 +70,8 @@ class Lesson(models.Model):
     name = models.CharField(max_length=100)
     number = models.IntegerField()
     content = models.TextField()
-    ages = models.ManyToManyField(
-        Age,
-        related_name='lesson_ages'
-    )
+    min_age = models.PositiveSmallIntegerField()
+    max_age = models.PositiveSmallIntegerField()
     learning_outcomes = models.ManyToManyField(
         LearningOutcome,
         related_name='lesson_learning_outcomes'
@@ -142,10 +133,6 @@ class ProgrammingExercise(models.Model):
     name = models.CharField(max_length=200)
     exercise_number = models.IntegerField()
     content = models.TextField()
-    scratch_hints = models.TextField()
-    scratch_solution = models.TextField()
-    python_hints = models.TextField()
-    python_solution = models.TextField()
     learning_outcomes = models.ManyToManyField(
         LearningOutcome,
         related_name='programming_exercise_learning_outcomes'
@@ -155,6 +142,40 @@ class ProgrammingExercise(models.Model):
         on_delete=models.CASCADE,
         related_name='difficulty_programming_exercises'
     )
+
+    def __str__(self):
+        return self.name
+
+
+class ProgrammingExerciseLanguage(models.Model):
+    #  Auto-incrementing 'id' field is automatically set by Django
+    slug = models.SlugField()
+    name = models.CharField(max_length=200)
+    icon = models.CharField(max_length=100, null=True)
+
+    def __str__(self):
+        return self.name
+
+
+class ProgrammingExerciseLanguageImplementation(models.Model):
+    #  Auto-incrementing 'id' field is automatically set by Django
+    topic = models.ForeignKey(
+        Topic,
+        on_delete=models.CASCADE,
+        related_name='implementations'
+    )
+    language = models.ForeignKey(
+        ProgrammingExerciseLanguage,
+        on_delete=models.CASCADE,
+        related_name='implementations'
+    )
+    exercise = models.ForeignKey(
+        ProgrammingExercise,
+        on_delete=models.CASCADE,
+        related_name='implementations'
+    )
+    hints = models.TextField()
+    solution = models.TextField()
 
     def __str__(self):
         return self.name
