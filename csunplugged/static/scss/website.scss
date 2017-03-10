@@ -6,33 +6,43 @@ img {
     height: 30px;
     margin-right: 1rem;
   }
+
   &.resource-thumbnail {
     max-height: 15rem;
   }
+
   &.topic-img-logo {
     height: 200px;
     object-fit: contain;
   }
+
   &.plugged-in-language-icon {
     height: 1.5em;
   }
 }
-h1, h2, h3 {
+
+h1,
+h2,
+h3 {
   color: #e33333;
   margin-top: 1.5rem;
+
   span.subtitle {
     color: #888;
   }
 }
+
 input[type="text"].long-text-field {
   width: 20em;
 }
+
 div.plugged-in-language-implementation {
-  padding: 0 1em 1em 1em;
   border: 1px #e33333 solid;
   border-radius: 0.5em;
   margin: 1em 0;
+  padding: 0 1em 1em 1em;
 }
+
 .disable-selection {
   user-select: none;
 }
