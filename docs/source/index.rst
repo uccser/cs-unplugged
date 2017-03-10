@@ -37,8 +37,13 @@ basic steps on how to use it.
 
 This documentation is for those who want to help write content for the CS
 Unplugged project, specifically text content.
-This is the place to start if you plan to add or modify topic content (for
-example: clear up instructions on a lesson), or add translations.
+This is the documentation to read if you want to do any of the
+following (or similar):
+
+- Add a new topic
+- Clear up instructions on a lesson
+- Add a language implementation for a programming exercise
+- Add a translation
 
 ------------------------------------------------------------------------------
 
@@ -47,9 +52,14 @@ example: clear up instructions on a lesson), or add translations.
 
 This documentation is for those who want to contribute to developing the
 Django system for delivering the CS Unplugged content.
-This includes everything from HTML templates used to render webpages,
-Python scripts to generate custom PDF resources, test suites for checking
-database models, and URL routing of views.
+This is the documentation to read if you want to do any of the
+following (or similar):
+
+- Edit HTML templates used to render webpages
+- Edit CSS used for styling the website
+- Add a generatable PDF resource
+- Contribute to test suite for checking database models
+- Alter URL routing for views
 
 ------------------------------------------------------------------------------
 
