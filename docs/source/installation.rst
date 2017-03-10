@@ -308,6 +308,8 @@ it's not uploaded to the public server for everyone to see.
     The process of storing secret setting values will be changed in
     the near future.
 
+.. _installation-check-project-setup-works:
+
 Step 14: Check project setup works
 =================================================
 

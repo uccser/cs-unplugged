@@ -1,9 +1,12 @@
 Getting started
-#######################################
+##############################################################################
 
-The following pages take you step by step with getting started with the CS Unplugged project. Start here if you’re new to the project.
+This documentation will help you understand how the project is setup, and
+basic steps on how to use it.
 
 .. toctree::
     :maxdepth: 1
+    :caption: Contents
 
     project_structure
+    basic_usage
