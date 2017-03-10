@@ -14,7 +14,9 @@
 
 <p>This is just one of many possible solutions.</p>
 
-{% render_html_field implementation.solution %}
+<div class="disable-selection">
+  {% render_html_field implementation.solution %}
+</div>
 
 <p>
   <a href="{% url 'topics:programming_exercise' implementation.topic.slug implementation.exercise.slug %}" class="btn btn-outline-danger">
