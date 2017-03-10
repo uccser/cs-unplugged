@@ -8,5 +8,6 @@ basic steps on how to use it.
     :maxdepth: 1
     :caption: Contents
 
+    code_of_conduct
     project_structure
     basic_usage
