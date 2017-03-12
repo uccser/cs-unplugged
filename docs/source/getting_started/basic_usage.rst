@@ -22,6 +22,8 @@ to preview the work you have done.
   installation guide, we have set ``python`` to refer to Python 3 already.
   Otherwise you will need to use ``python3`` instead of ``python``.
 
+.. _command-manage-migrate:
+
 ``python manage.py migrate``
 ==============================================================================
 
@@ -52,6 +54,8 @@ applied, and applys any migration updates if needed.
 Official documentation on the `migrate command`_ can be found on the Django
 website.
 
+.. _command-manage-loaddata:
+
 ``python manage.py loaddata``
 ==============================================================================
 
@@ -61,6 +65,8 @@ will need to run this command to update the database with the new content.
 
 The author and developer documentation sections go into more detail about
 what data is loaded into the database.
+
+.. _command-manage-runserver:
 
 ``python manage.py runserver``
 ==============================================================================
@@ -72,6 +78,8 @@ required for the website, and view the website in a special development mode.
 
 Official documentation on the `runserver command`_ can be found on the Django
 website.
+
+.. _command-gulp:
 
 ``gulp``
 ==============================================================================

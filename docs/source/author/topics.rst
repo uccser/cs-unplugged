@@ -518,9 +518,34 @@ the following:
   art:
     name: Art
 
+.. _adding-topics-content:
+
 Adding topics content
 ==============================================================================
 
-To be written.
+This section will run through an example of adding a new topic to the topics
+application.
+For this example, let's add a new topic "Algorithms" for the English language.
+Let's run through the steps required:
 
-This section will demostrate how to add a new topic to the application.
+1. Create a new folder within the ``contents\en\`` folder called ``algorithms``.
+2. Create a :ref:`topic-file` for algorithms within ``contents\en\algorithms``.
+3. List the algorithms topic structure file within the
+   :ref:`application-structure-file`.
+4. Any new learning outcomes for this topic should be added to the
+   :ref:`learning-outcomes-file` within the language folder.
+5. Any new curriculum links for this topic should be added to the
+   :ref:`curriculum-links-file` within the language folder.
+6. If we want to add a unit plan, created a :ref:`unit-plan-file` for each unit
+   plan, and list these in the :ref:`topic-file`.
+7. If we want to add follow up activities, create a
+   :ref:`follow-up-activities-file` for the activities.
+   Add the path to this file in the :ref:`topic-file`.
+8. If we want to add programming exercises, create a
+   :ref:`programming-exercises-file` for the exercises.
+   Add the path to this file in the :ref:`topic-file`.
+9. Run the :ref:`command-manage-loaddata` command to check the algorithms topic
+   loads correctly.
+10. Run the :ref:`command-manage-runserver` command to view the topic on the
+    website.
+    This is a good point to check everything displays as you expect.
