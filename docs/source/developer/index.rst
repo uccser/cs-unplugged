@@ -7,7 +7,6 @@ The following pages are for those wanting to develop the CS Unplugged system.
     :maxdepth: 1
     :caption: Contents
 
-    contributing_guide
     django_setup
     general
     topics
