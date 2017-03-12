@@ -1,7 +1,7 @@
 from django.core.management.base import BaseCommand
 from utils.BaseLoader import BaseLoader
 from ._LearningOutcomesLoader import LearningOutcomesLoader
-from ._TopicsLoader import TopicsLoader
+from ._TopicLoader import TopicLoader
 from ._ProgrammingExercisesStructureLoader import ProgrammingExercisesStructureLoader
 
 
@@ -32,7 +32,8 @@ class Command(BaseCommand):
             BASE_PATH
         ).load()
 
-        TopicsLoader(
-            structure_file,
-            BASE_PATH
-        ).load()
+        for topic_structure_file in structure_file['topic-structure-files']:
+            TopicLoader(
+                topic_structure_file,
+                BASE_PATH
+            ).load()
