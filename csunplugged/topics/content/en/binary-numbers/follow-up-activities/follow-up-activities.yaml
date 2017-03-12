@@ -1,9 +1,10 @@
-- slug: binary-number-bracelets
+binary-number-bracelets:
   md-file: binary-numbers/follow-up-activities/bracelets.md
   curriculum-links:
     - arts
     - design
-- slug: binary-number-bracelets-2
+
+binary-number-bracelets-2:
   md-file: binary-numbers/follow-up-activities/bracelets-2.md
   curriculum-links:
     - arts

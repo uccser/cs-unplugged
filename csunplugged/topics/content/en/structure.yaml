@@ -1,6 +1,9 @@
 # Learning outcomes for all topics
 learning-outcomes: learning-outcomes.yaml
 
+# Curriculum links for all topics
+curriculum-links: curriculum-links.yaml
+
 # Defines languages and difficulty levels for all programming exercises
 programming-exercises-structure: programming-exercises-structure.yaml
 
