@@ -20,10 +20,11 @@ class LessonsLoader(BaseLoader):
 
     def load(self):
         """Call (single) LessonLoader for each lesson to load into db"""
-        for structure in self.lessons_structure:
+        for lesson_slug, lesson_structure in self.lessons_structure.items():
             LessonLoader(
                 self.load_log,
-                structure,
+                lesson_slug,
+                lesson_structure,
                 self.topic,
                 self.unit_plan,
                 self.BASE_PATH
