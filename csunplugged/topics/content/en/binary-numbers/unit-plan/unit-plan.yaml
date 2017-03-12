@@ -53,8 +53,6 @@ lessons:
     resources-generated:
       - slug: sorting-network
         description: One copy per student
-      - slug: sorting-network
-        description: One copy per student
 
   lesson-2:
     minimum-age: 5

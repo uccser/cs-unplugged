@@ -209,7 +209,7 @@ indentation as ``minimum-age``, ``maximum-age``, ``number``, etc):
   resources-generated:
     - slug: sorting-network
       description: One copy per student
-    - slug: sorting-network
+    - slug: treasure-hunt
       description: One copy per student
 
 .. note::
