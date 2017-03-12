@@ -1,11 +1,13 @@
 Topics application
 ##############################################################################
 
-This page covers the topics application, including:
+The topics application is the main focus of the CS Unplugged website, as it
+contains the majority of educational material for the project.
+This page covers the topics application for authors, including:
 
-- A structure overview of the topics application
-- Configuaration files for topics content
-- Examples on how to add new topics content
+- An overview of the topics application
+- Configuaration files for adding and modifying topics content
+- Examples on how to add new content
 
 .. contents:: Contents
   :local:
@@ -13,12 +15,37 @@ This page covers the topics application, including:
 Topic Structure Overview
 ==============================================================================
 
-To be written.
+A general overview of the topics application can be described in the following
+diagram.
 
-A programming exercise can have language implementations, which contain
+.. The following image can copied for be edits here: https://goo.gl/ZkQsLW
+.. image:: ../_static/img/topics_overview_diagram.svg
+  :alt: A diagram providing an overview of topics application content
+
+The application is made up of **topics** (for example: binary numbers), which
+in most cases contains a **unit plan** with **lessons**.
+A topic can actually contain several **unit plans** if required, each with
+their own lessons.
+Each lesson can have connected **learning outcomes**, **curriculum links**, and
+**generated resources**.
+
+Topics can also contain **follow up activities**, which can also contain
+**curriculum links**.
+
+Topics can also contain **programming exercises**.
+A programming exercise can have **language implementations**, which contain
 language specific expected values, hints, and possible solutions.
 For example: an exercise may have implementations available in Scratch and
 Python.
+
+**Learning outcomes** and **curriculum links** are defined at a language level,
+so can be used by all topic content.
+Also defined at the language level is **languages** and **difficulties** for
+programming exercises.
+
+This is just a broad overview of the topics application.
+More details about each of the items above is provided below in the
+configuration files section.
 
 Configuration Files
 ==============================================================================
