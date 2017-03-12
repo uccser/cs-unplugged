@@ -32,10 +32,12 @@ class FollowUpActivitiesLoader(BaseLoader):
                 )
                 activity.save()
 
-                for link in activity_data['curriculum-links']:
-                    (object, created) = CurriculumLink.objects.get_or_create(
-                        name=link
+                # Add curriculum links
+                curriculum_link_slugs = activity_data['curriculum-links']
+                for curriculum_link_slug in curriculum_link_slugs:
+                    curriculum_link = CurriculumLink.objects.get(
+                        slug=curriculum_link_slug
                     )
-                    activity.curriculum_links.add(object)
+                    activity.curriculum_links.add(curriculum_link)
 
                 self.log('Added Activity: {}'.format(activity.name), 1)

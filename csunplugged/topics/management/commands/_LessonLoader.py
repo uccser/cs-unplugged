@@ -49,11 +49,12 @@ class LessonLoader(BaseLoader):
             lesson.learning_outcomes.add(learning_outcome)
 
         # Add curriculum links
-        for link in self.lesson_structure['curriculum-links']:
-            (object, created) = CurriculumLink.objects.get_or_create(
-                name=link
+        curriculum_link_slugs = self.lesson_structure['curriculum-links']
+        for curriculum_link_slug in curriculum_link_slugs:
+            curriculum_link = CurriculumLink.objects.get(
+                slug=curriculum_link_slug
             )
-            lesson.curriculum_links.add(object)
+            lesson.curriculum_links.add(curriculum_link)
 
         # Add classroom resources
         if 'resources-classroom' in self.lesson_structure:

@@ -1,6 +1,7 @@
 from django.core.management.base import BaseCommand
 from utils.BaseLoader import BaseLoader
 from ._LearningOutcomesLoader import LearningOutcomesLoader
+from ._CurriculumLinksLoader import CurriculumLinksLoader
 from ._TopicLoader import TopicLoader
 from ._ProgrammingExercisesStructureLoader import ProgrammingExercisesStructureLoader
 
@@ -20,10 +21,16 @@ class Command(BaseCommand):
         structure_file = base_loader.load_yaml_file(BASE_PATH.format('structure.yaml'))
         difficulty_file = structure_file['programming-exercises-structure']
         learning_outcomes_file = structure_file['learning-outcomes']
+        curriculum_links_file = structure_file['curriculum-links']
 
         # Load content into db
         LearningOutcomesLoader(
             learning_outcomes_file,
+            BASE_PATH
+        ).load()
+
+        CurriculumLinksLoader(
+            curriculum_links_file,
             BASE_PATH
         ).load()
 
