@@ -1,13 +1,30 @@
 Writing guide
 ##############################################################################
 
-This page covers:
-
-- Markdown syntax and links to Kordac processor docs
-
 The majority of our text content is written in Markdown, and we also developed
 a program called Kordac to allow you to include HTML elements like images and
 videos with simple text tags.
+
+For example, the following text:
+
+.. code-block:: none
+
+  Try using the following blocks:
+
+  ```scratch
+  when flag clicked
+
+  say [Hello] for [2] secs
+  ```
+
+  **Tips**
+
+  - Make sure all your blocks are “snapped” together in a line like a jigsaw puzzle.
+
+will display as the following on the website:
+
+.. image:: ../_static/img/markdown_example_rendered.png
+  :alt: An image showing the above Markdown syntax rendered as HTML
 
 If you already know Markdown syntax, please remember the following project
 preferences (for consistency and readability):
