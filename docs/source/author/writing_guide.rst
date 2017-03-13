@@ -26,13 +26,15 @@ will display as the following on the website:
 .. image:: ../_static/img/markdown_example_rendered.png
   :alt: An image showing the above Markdown syntax rendered as HTML
 
-If you already know Markdown syntax, please remember the following project
-preferences (for consistency and readability):
+.. note::
 
-- Use asterisks (``*``) for emphasis, instead or underscores.
-- Use minuses (``-``) for unordered lists.
-- No HTML within text files, we use Kordac text tags to add iframes,
-  images, videos, etc.
+  If you already know Markdown syntax, please remember the following project
+  preferences (for consistency and readability):
+
+  - Use asterisks (``*``) for emphasis, instead or underscores.
+  - Use minuses (``-``) for unordered lists.
+  - No HTML within text files, we use Kordac text tags to add iframes,
+    images, videos, etc.
 
 Below is a basic guide to syntax for Markdown and Kordac text tags.
 When viewing Kordac documentation for a tag, the top of the page will detail
