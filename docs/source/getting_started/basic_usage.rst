@@ -21,17 +21,13 @@ to preview the work you have done.
 
 .. note::
 
-  The following commands must be run with Python 3. If you followed our
-  installation guide, we have set ``python`` to refer to Python 3 already.
-  Otherwise you will need to use ``python3`` instead of ``python``.
-
-  Also the ``$`` denotes the start of your terminal prompt.
+  The ``$`` denotes the start of your terminal prompt.
 
 .. code-block:: bash
 
-  $ python manage.py migrate
-  $ python manage.py loaddata
-  $ python manage.py runserver
+  $ python3 manage.py migrate
+  $ python3 manage.py loaddata
+  $ python3 manage.py runserver
 
 Open another terminal within the same ``csunplugged`` folder:
 
@@ -43,7 +39,7 @@ For explanation of the commands above, read the sections below.
 
 .. _command-manage-migrate:
 
-``python manage.py migrate``
+``$ python3 manage.py migrate``
 ==============================================================================
 
 The Django system powering this project uses model definitions to specify
@@ -65,7 +61,7 @@ applied, and applys any migration updates if needed.
 
   .. code-block:: bash
 
-    python manage.py flush
+    $ python3 manage.py flush
 
   Answer 'yes' to the prompt. If this completes successully, you should be
   able to now run the ``migrate`` command.
@@ -75,7 +71,7 @@ website.
 
 .. _command-manage-loaddata:
 
-``python manage.py loaddata``
+``$ python3 manage.py loaddata``
 ==============================================================================
 
 This command runs loads data from the ``content`` folders found within the
@@ -87,7 +83,7 @@ what data is loaded into the database.
 
 .. _command-manage-runserver:
 
-``python manage.py runserver``
+``$ python3 manage.py runserver``
 ==============================================================================
 
 The command starts a lightweight development web server on your machine. It's
@@ -100,7 +96,7 @@ website.
 
 .. _command-gulp:
 
-``gulp``
+``$ gulp``
 ==============================================================================
 
 We have a `Gulp`_ script to automate a bunch of tasks like copying and
@@ -119,10 +115,10 @@ When you pull the project initally or whenever you pull updates from other
 contributors, you should enter all four commands in order.
 
 Once you have entered these commands, and are making changes to content, you
-can leave two terminal windows running, one with ``python manage.py runserver``
-running and one with ``gulp`` running.
+can leave two terminal windows running, one with ``$ python3 manage.py runserver``
+running and one with ``$ gulp`` running.
 Each time you wish to preview your changes, open a third terminal and run the
-``python manage.py loaddata`` and refresh the web browser.
+``$ python3 manage.py loaddata`` and refresh the web browser.
 
 You are now ready to tackle the documentation for the area you wish to
 contribute on.

@@ -43,19 +43,19 @@ running.
 If you are editing SCSS files, check the Gulp script isn't reporting SCSS
 compilation errors.
 
-The website isn't displaying when I open ``localhost:8000`` or ``127.0.0.1:8000``
----------------------------------------------------------------------------------
+The website isn't displaying when I open ``localhost:8000`` or ``127.0.0.1:8000`` in a browser
+----------------------------------------------------------------------------------------------
 
-Check you have a terminal running the ``python manage.py runserver`` command,
+Check you have a terminal running the ``$ python3 manage.py runserver`` command,
 and that it hasn't reported any errors.
 
-The website isn't displaying when I open ``localhost:3000`` or ``127.0.0.1:3000``
----------------------------------------------------------------------------------
+The website isn't displaying when I open ``localhost:3000`` or ``127.0.0.1:3000`` in a browser
+----------------------------------------------------------------------------------------------
 
-Firsty check you have a terminal running the ``gulp`` command, and that it
+Firsty check you have a terminal running the ``$ gulp`` command, and that it
 hasn't reported any errors.
 
-Then check you have a terminal running the ``python manage.py runserver``
+Then check you have a terminal running the ``$ python3 manage.py runserver``
 command, and that it hasn't reported any errors.
 
 .. _issue tracker: https://github.com/uccser/cs-unplugged/issues

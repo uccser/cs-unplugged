@@ -240,12 +240,14 @@ Step 10: Create virtual environment
 
 If you installed ``virtualenv`` in Step 3, then it's time to create a virtual
 environment. Type the following commands in terminal to create and activate
-a virtualenv named ``venv`` with the default Python set to Python 3.
+a virtualenv named ``venv``.
 You can change the virtual environment name to whatever you wish.
+You will need to replace the ``x`` with the version number of Python you
+have (for example: ``python3.5``):
 
 .. code-block:: bash
 
-    $ python -m virtualenv --python=python3.5 venv
+    $ python -m virtualenv --python=python3.x venv
     $ . venv/bin/activate
 
 .. note::
@@ -253,12 +255,10 @@ You can change the virtual environment name to whatever you wish.
     If you installed ``virtualenvwrapper``, then type the following command to
     to create a virtual environment called ``csunplugged``, with Python within
     the virtual environment already set to Python 3.
-    You will need to replace the ``x`` with the version number of Python you
-    have (for example: ``python3.5``):
 
     .. code-block:: bash
 
-        $ mkvirtualenv --python=/usr/bin/python3.5 csunplugged
+        $ mkvirtualenv --python=/usr/bin/python3.x csunplugged
 
 You should now have the name of your virtual environment before the terminal
 prompt.
@@ -321,9 +321,9 @@ in more detail on the next page):
 
 .. code-block:: bash
 
-    $ python manage.py migrate
-    $ python manage.py loaddata
-    $ python manage.py runserver
+    $ python3 manage.py migrate
+    $ python3 manage.py loaddata
+    $ python3 manage.py runserver
 
 Leave this terminal running and open a new terminal in the same
 folder and type the following command:
