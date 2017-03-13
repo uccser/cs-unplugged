@@ -5,29 +5,32 @@ This page lists a set of guidelines for contributing to the project.
 These are just guidelines, not rules, use your best judgment and feel
 free to propose changes to this document in a pull request.
 
-Reporting issues
+Reporting issues and making suggestions
 ==============================================================================
 
-This section guides you through submitting an issue for the CS Unplugged
-project.
+This section guides you through submitting an issue or making a suggestion
+for the CS Unplugged project.
 Following these guidelines helps maintainers and the community understand
 your findings.
 
 Before submitting an issue
 ------------------------------------------------------------------------------
 
-- `Search the issue tracker`_ to see if the issue has already been
-  reported.
+- `Search the issue tracker for the issue/suggestion`_ to see if it has
+  already been logged.
   If it has, add a comment to the existing issue (even if the issue is closed)
   instead of opening a new one.
 
-How do I submit a (good) issue?
+How do I submit a (good) issue or suggestion?
 ------------------------------------------------------------------------------
 
 Issues are tracked in the GitHub issue tracker (if you've never used
 GitHub issues before, read this `10 minute guide to become a master`_).
 When creating an issue, explain the problem and include additional details to
 help maintainers understand or reproduce the problem:
+
+For reporting an issue
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - **Use a clear and descriptive title** for the issue to identify the problem.
 - **Clearly and concisely describe the issue** and provide screenshots if
@@ -52,29 +55,8 @@ If the issues is a code related issue, also include the following:
 - **If the problem is related to performance**, please provide
   specifications of your computer.
 
-Making suggestions
-==============================================================================
-
-This section guides you through submitting an suggestion for the CS Unplugged
-project, including completely new topics of text to minor improvements of
-existing resources.
-Following these guidelines helps maintainers and the community understand your
-suggestion and find related suggestions.
-
-Before submitting an suggestion
-------------------------------------------------------------------------------
-
-- `Search suggestions in the issue tracker`_ to see if the suggestion has
-  already been suggested.
-  If it has, add a comment to the existing suggestion (even if the
-  suggestion is closed) instead of opening a new one.
-
-How do I submit a (good) suggestion?
-------------------------------------------------------------------------------
-
-Issues are tracked in the GitHub issue tracker (if you've never used
-GitHub issues before, read this `10 minute guide to become a master`_).
-When creating an issue, provide the following information.
+For making a suggestion
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Explain the suggestion and include additional details to help maintainers
 understand the changes:
@@ -176,9 +158,8 @@ We aim to abide by the following style guides:
 - **CSS** - We follow the `open source CSS style guide`_ by @mdo.
 - **JavaScript** - We follow the `Google JavaScript style guide`_.
 
-.. _Search the issue tracker: https://github.com/uccser/cs-unplugged/issues?utf8=%E2%9C%93&q=is%3Aissue
+.. _Search the issue tracker for the issue/suggestion: https://github.com/uccser/cs-unplugged/issues?utf8=%E2%9C%93&q=is%3Aissue
 .. _10 minute guide to become a master: https://guides.github.com/features/issues/
-.. _Search suggestions in the issue tracker: https://github.com/uccser/cs-unplugged/issues?utf8=%E2%9C%93&q=label%3Asuggestion%20
 .. _issue tracker: https://github.com/uccser/cs-unplugged/issues
 .. _PEP8: https://www.python.org/dev/peps/pep-0008/
 .. _Django recommends allowing 119 characters: https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/coding-style/
