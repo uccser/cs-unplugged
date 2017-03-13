@@ -156,6 +156,7 @@ We aim to abide by the following style guides:
 - **Python** - We follow `PEP8`_ except for one change of line length.
   `Django recommends allowing 119 characters`_, so we use this as our line
   length limit.
+  This style is enforced by the `flake8`_ style checker.
 - **HTML** - We follow the `open source HTML style guide`_ by @mdo.
 - **CSS** - We follow the `open source CSS style guide`_ by @mdo.
 - **JavaScript** - We follow the `Google JavaScript style guide`_.
@@ -168,3 +169,4 @@ We aim to abide by the following style guides:
 .. _open source HTML style guide: http://codeguide.co/#html
 .. _open source CSS style guide: http://codeguide.co/#css
 .. _Google JavaScript style guide: https://google.github.io/styleguide/javascriptguide.xml
+.. _flake8: http://flake8.pycqa.org/en/latest/
