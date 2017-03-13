@@ -9,9 +9,6 @@ The majority of our text content is written in Markdown, and we also developed
 a program called Kordac to allow you to include HTML elements like images and
 videos with simple text tags.
 
-We chose Markdown as it has a great balance between simplicity of writing for
-authors, and clear structure when converting to HTML.
-
 If you already know Markdown syntax, please remember the following project
 preferences (for consistency and readability):
 

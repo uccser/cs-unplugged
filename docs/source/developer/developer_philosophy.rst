@@ -24,3 +24,10 @@ We have split configuration data across multiple configuration files to avoid
 this issue.
 
 .. _YAML: http://www.yaml.org/spec/1.2/spec.html
+
+Writing content
+==============================================================================
+
+We chose Markdown as the language for text content as it has a great balance
+between simplicity of writing for authors, and clear structure when converting
+to HTML.
