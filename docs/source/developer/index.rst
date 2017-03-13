@@ -8,6 +8,7 @@ The following pages are for those wanting to develop the CS Unplugged system.
     :caption: Contents
 
     django_setup
+    website_design
     general
     topics
     resources
