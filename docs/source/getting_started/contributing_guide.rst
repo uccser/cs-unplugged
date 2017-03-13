@@ -108,8 +108,10 @@ Git
   Other developers (and even future you) will thank you for your forethought
   and verbosity for well documented commits.
   Generally:
+
   - Limit the first line to 72 characters or less
   - Reference issues and pull requests liberally
+
 - We use `Vincent Driessen's Git Branching Model <http://nvie.com/posts/a-successful-git-branching-model/>`_
   for managing development.
   Please read this document to understand our branching methods.
