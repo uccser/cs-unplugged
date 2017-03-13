@@ -1,11 +1,8 @@
 Getting started
 ##############################################################################
 
-Welcome to the CS Unplugged community!
-We would love for you to get involved into making this project as great as
-possible!
 This documentation will help you understand how the project is setup,
-basic steps on how to use it, and our expectations of your contributions.
+basic steps on how to use it, and our guidelines for your contributions.
 
 .. note::
 
