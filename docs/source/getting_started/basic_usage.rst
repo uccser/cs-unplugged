@@ -42,14 +42,10 @@ For explanation of the commands above, read the sections below.
 ``$ python3 manage.py migrate``
 ==============================================================================
 
-The Django system powering this project uses model definitions to specify
-the structure of the database (for example: a lesson has a name, number,
-connected unit plan, etc).
-When a developer makes changes to models, Django creates migration files
-which are instructions to alter the database to work with the updated models.
-
-This command checks the database on your machine has all the migration files
-applied, and applys any migration updates if needed.
+The structure of the database will change from time to time as we update the
+backend of the website.
+Running this command will make sure that the structure of the database you
+have on your machine stays up to date with these changes.
 
 .. note::
 
