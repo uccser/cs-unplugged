@@ -7,10 +7,6 @@ that bring everything together.
 Understanding how to read and write these configuration files is important
 for working on this project.
 
-We currently use `YAML`_ for storing configuration data of content.
-It has improved human readability over JSON and XML, especially for authors
-who have no or little experience with configuration files.
-
 This page aims to give a brief tutorial on YAML files, so you can modify
 configuration files within this project.
 
@@ -64,5 +60,3 @@ this issue.
 
 If you want to learn more about YAML, there are plenty of great tutorials
 available on the internet.
-
-.. _YAML: http://www.yaml.org/spec/1.2/spec.html

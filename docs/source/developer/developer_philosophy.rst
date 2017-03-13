@@ -1,0 +1,26 @@
+Developer philosophy
+##############################################################################
+
+We follow the following philosophy for developing the CS Unplugged project:
+
+  We aim to create software that enables authors to easily create, modify,
+  and share education material for the CS Unplugged project.
+
+In short: *Think of the author*.
+
+This page explains design decisions we made throughout developing the CS
+Unplugged system.
+
+Configuration files
+==============================================================================
+
+We use `YAML`_ for storing configuration data of content.
+It has improved human readability over JSON and XML, especially for authors
+who have no or little experience with configuration files.
+
+We try to avoid deep nesting (indentation) within configuration files as it's
+harder for authors to read nested data.
+We have split configuration data across multiple configuration files to avoid
+this issue.
+
+.. _YAML: http://www.yaml.org/spec/1.2/spec.html

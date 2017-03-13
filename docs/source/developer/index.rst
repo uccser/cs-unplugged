@@ -7,6 +7,7 @@ The following pages are for those wanting to develop the CS Unplugged system.
     :maxdepth: 1
     :caption: Contents
 
+    developer_philosophy
     django_setup
     website_design
     general
