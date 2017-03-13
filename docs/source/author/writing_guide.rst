@@ -6,8 +6,8 @@ This page covers:
 - Markdown syntax and links to Kordac processor docs
 
 The majority of our text content is written in Markdown, and we also developed
-a program called Kordac to allow authors to include complex HTML elements with
-simple text tags.
+a program called Kordac to allow you to include HTML elements like images and
+videos with simple text tags.
 
 We chose Markdown as it has a great balance between simplicity of writing for
 authors, and clear structure when converting to HTML.
