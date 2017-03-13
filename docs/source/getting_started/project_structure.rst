@@ -1,7 +1,10 @@
-Understanding the project structure
+Project structure
 ###########################################
 
 This page covers the structure of the CS Unplugged project.
+The following diagram will be helpful when reading the following sections:
+
+.. include:: ../_static/html_snippets/folder_tree.rst
 
 Repository folder
 =================================================
