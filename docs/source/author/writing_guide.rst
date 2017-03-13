@@ -25,8 +25,6 @@ When viewing Kordac documentation for a tag, the top of the page will detail
 how to use the tag in a basic example.
 Some text tags also have required and/or optional tag parameters for further
 configuration.
-We link to Kordac documentation when listing their tags to prevent our
-documentation becoming out of date with Kordac updates.
 
 .. contents:: Text Syntax
   :local:
