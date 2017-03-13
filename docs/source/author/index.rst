@@ -8,6 +8,7 @@ The following pages are for those wanting to write or edit CS Unplugged content.
     :caption: Contents
 
     writing_guide
+    writing_philosophy
     understanding_configuration_files
     topics
     translations
