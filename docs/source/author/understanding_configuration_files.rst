@@ -26,12 +26,12 @@ YAML files are mostly made up of key/value pairs, often called a dictionary
 within programming languages.
 This configuration file contains the follow three key/value pairs:
 
-- The key ``learning-outcomes`` points to the text string value
+- The key ``learning-outcomes`` points to the file
   ``learning-outcomes.yaml``
-- The key ``programming-exercises-structure`` points to the text string value
+- The key ``programming-exercises-structure`` points to the file
   ``programming-exercises-structure.yaml``
-- The key ``topic-structure-files`` points to the ordered list of text strings
-  values ``binary-numbers/structure.yaml`` and
+- The key ``topic-structure-files`` points to the ordered list of files
+  ``binary-numbers/structure.yaml`` and
   ``error-detection-and-correction/structure.yaml``
 
 The majority of configuration files within this project only use dictionaries
