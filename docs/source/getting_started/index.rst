@@ -9,7 +9,7 @@ basic steps on how to use it, and our guidelines for your contributions.
   This project adheres to the Contributor Covenant code of conduct.
   By participating, you are expected to uphold this code.
   Please read our :doc:`Code of Conduct <code_of_conduct>` before continuing.
-  You can report unacceptable behavior to
+  You can report unacceptable behaviour to
   `csse-education-research@canterbury.ac.nz <mailto:csse-education-research@canterbury.ac.nz>`_
 
 .. toctree::
