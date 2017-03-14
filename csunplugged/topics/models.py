@@ -103,6 +103,7 @@ class FollowUpActivity(models.Model):
         related_name='topic_follow_up_activities'
     )
     slug = models.SlugField()
+    number = models.PositiveSmallIntegerField()
     name = models.CharField(max_length=200)
     content = models.TextField()
     curriculum_links = models.ManyToManyField(

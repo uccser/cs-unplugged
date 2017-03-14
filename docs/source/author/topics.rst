@@ -448,6 +448,9 @@ The file should have the following key/value pair structure:
 
   # The URL slug for the follow up activity
   painting-parity:
+    # This number is used for ordering follow up activities
+    number: 1
+
     # The Markdown file containing the description of the activity
     # This is essentially the text for the webpage for the activity
     md-file: error-detection-correction/follow-up-activities/painting-parity.md
@@ -462,12 +465,14 @@ may look like the following:
 .. code-block:: yaml
 
   binary-number-bracelets:
+    number: 1
     md-file: binary-numbers/follow-up-activities/bracelets.md
     curriculum-links:
       - arts
       - design
 
   hidden-binary-signals:
+    number: 2
     md-file: binary-numbers/follow-up-activities/hidden-binary-signals.md
     curriculum-links:
       - science

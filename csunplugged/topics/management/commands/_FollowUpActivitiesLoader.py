@@ -27,6 +27,7 @@ class FollowUpActivitiesLoader(BaseLoader):
 
                 activity = self.topic.topic_follow_up_activities.create(
                     slug=activity_slug,
+                    number=activity_data['number'],
                     name=activity_content.title,
                     content=activity_content.html_string,
                 )
