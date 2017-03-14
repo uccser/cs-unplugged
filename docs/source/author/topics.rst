@@ -44,7 +44,7 @@ diagram.
 
 This is just a broad overview of the topics application.
 
-.. _topics-folder-structure:
+.. _topics-directory-structure:
 
 Topics content directory
 ==============================================================================
@@ -56,7 +56,7 @@ the project's topic application, where:
 - Red is YAML configuration files.
 - Green is Markdown text files.
 
-.. include:: ../_static/html_snippets/topics_content_folder_tree.rst
+.. include:: ../_static/html_snippets/topics_content_directory_tree.rst
 
 .. _adding-topics-content:
 
@@ -201,7 +201,7 @@ The diagram below shows an example of YAML file locations for the
 - Blue is directories.
 - Red is YAML configuration files.
 
-.. include:: ../_static/html_snippets/topics_content_folder_tree_only_yaml.rst
+.. include:: ../_static/html_snippets/topics_content_directory_tree_only_yaml.rst
 
 .. _application-structure-file:
 

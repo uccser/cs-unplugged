@@ -213,8 +213,8 @@ Internal links
 These are links to pages within the CS Unplugged website.
 These links will not work when viewed in a Markdown renderer, however these
 will function properly when converted to HTML and viewed on the website.
-Links to pages are referenced from the language folder within the ``content``
-folder (see examples below).
+Links to pages are referenced from the language directory within the
+``content/`` directory (see examples below).
 
 Link to page within website (relative link - Kordac feature)
 ------------------------------------------------------------------------------

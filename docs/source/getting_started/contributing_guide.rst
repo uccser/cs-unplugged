@@ -119,9 +119,10 @@ Git
 Project structure
 ------------------------------------------------------------------------------
 
-- Folders should be all lowercase with dashes for spaces.
-- Folders and files should use full words when named, however JavaScript, CSS,
-  and image folders can be named ``js``, ``css``, and ``img`` respectively.
+- Directories should be all lowercase with dashes for spaces.
+- Directories and files should use full words when named, however JavaScript,
+  CSS, and image directories can be named ``js/``, ``css/``, and ``img/``
+  respectively.
 
 Text (Markdown)
 ------------------------------------------------------------------------------

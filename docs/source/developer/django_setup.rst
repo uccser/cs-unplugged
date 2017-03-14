@@ -13,16 +13,16 @@ not limited to the following):
 
 - Locking versions of dependencies.
 - Django secret settings are loaded from environment variables.
-- All templates are located in the ``templates`` folder.
-- The base Django folder, containing ``settings.py`` and base ``urls.py`` is
-  called ``config``.
+- All templates are located in the ``templates/`` directory.
+- The base Django directory, containing ``settings.py`` and base ``urls.py`` is
+  called ``config/``.
 
 The Django system currently contains the following applications:
 
-- ``general`` - For general website pages (for example: home, about, etc).
-- ``topics`` - For topics content (for example: lessons, follow up activities,
+- ``general/`` - For general website pages (for example: home, about, etc).
+- ``topics/`` - For topics content (for example: lessons, follow up activities,
   programming exercises, etc).
-- ``resources`` - For translatable PDF resources with random elements.
+- ``resources/`` - For translatable PDF resources with random elements.
 
 Database structure
 ==============================================================================

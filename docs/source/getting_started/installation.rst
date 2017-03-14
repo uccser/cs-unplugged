@@ -206,12 +206,12 @@ To quit the Postgres prompt and return to the normal terminal, type the followin
 Step 9: Download the CS Unplugged project
 =================================================
 
-Firstly create the folder you wish to hold the CS Unplugged project folder
-in if you wish to store the data in a specific location.
+Firstly create the directory you wish to hold the CS Unplugged project
+directory in if you wish to store the data in a specific location.
 Once you have decided upon the location, change the working directory of the
-terminal to this folder.
+terminal to this directory.
 
-To clone (the Git term for download) the project folder, type the
+To clone (the Git term for download) the project directory, type the
 following command in terminal:
 
 .. code-block:: bash
@@ -226,7 +226,7 @@ following command in terminal:
 
         $ git clone git@github.com:uccser/cs-unplugged.git
 
-Once Git has cloned the folder, type the following commands in terminal to
+Once Git has cloned the directory, type the following commands in terminal to
 change the working directory to inside the project repository and checkout
 to the development branch:
 
@@ -266,8 +266,8 @@ prompt.
 Step 11: Install project requirements
 =================================================
 
-To install the project requirements, type the following commands in terminal from the project root folder (contains a file called
-``requirements.txt``):
+To install the project requirements, type the following commands in terminal
+from the project root directory (contains a file called ``requirements.txt``):
 
 .. code-block:: bash
 
@@ -292,7 +292,7 @@ Some free options we love:
 Step 13: Complete project settings file
 =================================================
 
-Open the ``csunplugged/config`` folder, and make a copy of
+Open the ``csunplugged/config/`` directory, and make a copy of
 ``settings_secret_template.py`` called ``settings_secret.py``.
 
 Using the values you used in Step 8:
@@ -314,7 +314,8 @@ Step 14: Check project setup works
 =================================================
 
 To check the project works, change your working directory to the
-``csunplugged/csunplugged`` folder (should contain a file called ``manage.py``).
+``csunplugged/csunplugged/`` directory (should contain a file called
+``manage.py``).
 
 Type the following commands in terminal (we will cover these commands
 in more detail on the next page):
@@ -326,14 +327,14 @@ in more detail on the next page):
     $ python3 manage.py runserver
 
 Leave this terminal running and open a new terminal in the same
-folder and type the following command:
+directory and type the following command:
 
 .. code-block:: bash
 
     $ gulp
 
 The final command should open your preferred web browser to
-``localhost:3000/`` and you should see the CS Unplugged homepage.
+``localhost:3000`` and you should see the CS Unplugged homepage.
 
 Congratulations if you made it this far and everything is working,
 you're all set to contribute to the CS Unplugged project.

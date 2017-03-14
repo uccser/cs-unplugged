@@ -4,26 +4,26 @@ Project structure
 This page covers the structure of the CS Unplugged project.
 The following diagram will be helpful when reading the following sections:
 
-.. include:: ../_static/html_snippets/folder_tree.rst
+.. include:: ../_static/html_snippets/project_directory_tree.rst
 
-Repository folder
+Repository directory
 =================================================
 
-The repository folder (or root folder) contains the following:
+The repository directory (or root directory) contains the following:
 
-- ``csunplugged/`` folder
+- ``csunplugged/`` directory
 
-  - This folder contains the Django web system for the CS Unplugged website.
+  - This directory contains the Django web system for the CS Unplugged website.
     This includes all raw text content, images, resources, etc.
 
-- ``docs/`` folder
+- ``docs/`` directory
 
-  - This folder contains the documentation for the repository (which includes
+  - This directory contains the documentation for the repository (which includes
     the file you are reading now).
 
-- ``subtitles/`` folder
+- ``subtitles/`` directory
 
-  - This folder contains subtitle files for CS Unplugged videos.
+  - This directory contains subtitle files for CS Unplugged videos.
 
 - ``README.md``
 
@@ -36,16 +36,16 @@ The repository folder (or root folder) contains the following:
 
 - Plus other files used for installation and repository configuration.
 
-csunplugged folder
+csunplugged directory
 =================================================
 
-The ``csunplugged/`` folder holds the Django web system and is split across
-the following folders:
+The ``csunplugged/`` directory holds the Django web system and is split across
+the following directories:
 
 - ``config/``
 
-  - This folder holds the settings used by the Django system.
-    It's unlikely you'll edit the contents of this folder unless you are
+  - This directory holds the settings used by the Django system.
+    It's unlikely you'll edit the contents of this directory unless you are
     changing the Django configuration (for example: adding a new application).
 
 Django contains 'applications' which are Python packages that provide
@@ -74,26 +74,26 @@ The project currently contains the following applications:
 Details on how to modify an application can be found within their relavent
 author and developer documentation pages.
 
-The following folders are also required by the Django system:
+The following directories are also required by the Django system:
 
 - ``static/``
 
-  - This folder contains non-user-generated media assets (for example:
+  - This directory contains non-user-generated media assets (for example:
     images, JavaScript, CSS/SCSS, etc).
 
 - ``templates/``
 
-  - This folder contains all the HTML templates for the Django system.
+  - This directory contains all the HTML templates for the Django system.
 
 - ``locale/``
 
-  - This folder contains translations required for the Django system.
+  - This directory contains translations required for the Django system.
     Translations for ``topics/`` are stored within the ``topics/content/``.
 
-The following folders are used when the server is running (for example:
-a script compiles the SCSS to CSS and saves it to the ``build/`` folder for
+The following directories are used when the server is running (for example:
+a script compiles the SCSS to CSS and saves it to the ``build/`` directory for
 serving on a webpage).
-You should never save anything in these folders, as the contents are often
+You should never save anything in these directories, as the contents are often
 overwritten and cleared.
 
 - ``build/``
@@ -104,9 +104,9 @@ overwritten and cleared.
 - ``temp/``
 
   - Contains temporary files used in creating generated files for
-    ``build`` folder.
+    ``build`` directory.
 
-The ``csunplugged/`` folder also contains the following files:
+The ``csunplugged/`` directory also contains the following files:
 
 - ``manage.py``
 
