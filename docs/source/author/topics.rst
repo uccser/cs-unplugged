@@ -53,7 +53,7 @@ The diagram below is an example of the ``content/en/`` language directory for
 the project's topic application, where:
 
 - Blue is directories.
-- Red is YAML configuration files.
+- Red is YAML configuration files (see :doc:`understanding_configuration_files`).
 - Green is Markdown text files.
 
 .. include:: ../_static/html_snippets/topics_content_directory_tree.rst
@@ -194,6 +194,8 @@ This section details configuration files within the ``content`` directory for a
 specific language.
 These files define the topics content on the website and their respective
 attributes (for example: the difficulty of a programming exercise).
+If you haven't used the YAML configuration files before, see
+:doc:`understanding_configuration_files`.
 
 The diagram below shows an example of YAML file locations for the
 ``content/en/`` language directory, where:
