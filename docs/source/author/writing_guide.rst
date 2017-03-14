@@ -31,8 +31,8 @@ will display as the following on the website:
   If you already know Markdown syntax, please remember the following project
   preferences (for consistency and readability):
 
-  - Use asterisks (``*``) for emphasis, instead or underscores.
-  - Use minuses (``-``) for unordered lists.
+  - Use asterisks (``*``) for emphasis, instead of underscores.
+  - Use hyphens (``-``) for unordered lists.
   - No HTML within text files, we use Kordac text tags to add iframes,
     images, videos, etc.
 
