@@ -98,8 +98,9 @@ website.
 We have a `Gulp`_ script to automate a bunch of tasks like copying and
 compressing images, compiling and compressing CSS, SCSS, and JavaScript,
 rendering Scratch block images, and displaying the website in an browser which
-automatically updates on template/CSS changes (note: the browser will not for
-content changes as this requires the ``loaddata`` command to be run).
+automatically updates on template/CSS changes (note: the browser will not
+update for content changes as this requires the ``loaddata`` command to be
+run).
 
 Running ``gulp`` from the command line will start this script, and open your
 preferred web browser to the homepage.
