@@ -18,7 +18,7 @@ Here is an example YAML file:
   learning-outcomes: learning-outcomes.yaml
   programming-exercises-structure: programming-exercises-structure.yaml
 
-  topic_structure_files:
+  topic-structure-files:
     - binary-numbers/structure.yaml
     - error-detection-and-correction/structure.yaml
 
@@ -30,7 +30,7 @@ This configuration file contains the follow three key/value pairs:
   ``learning-outcomes.yaml``
 - The key ``programming-exercises-structure`` points to the text string value
   ``programming-exercises-structure.yaml``
-- The key ``topic_structure_files`` points to the ordered list of text strings
+- The key ``topic-structure-files`` points to the ordered list of text strings
   values ``binary-numbers/structure.yaml`` and
   ``error-detection-and-correction/structure.yaml``
 
