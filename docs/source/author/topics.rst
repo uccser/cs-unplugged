@@ -253,7 +253,8 @@ This file must contain the following key/value pairs:
 
   # The Markdown file containing the description of the topic
   # This is essentially the text for the webpage for the topic
-  md-file: binary-numbers/index.md
+  # The file path is relative to this YAML file
+  md-file: index.md
 
   # An image icon used for the topic within the static directory
   # The path is from the top of the static directory
@@ -270,17 +271,21 @@ The file may also contain any of the following optional key/value pairs:
 
   # A list of unit plan configuaration files for this topic
   # The order here defines their order on the website
+  # The file paths are relative to this YAML file
   unit-plans:
-    - binary-numbers/unit-plan/unit-plan.yaml
+    - unit-plan/unit-plan.yaml
 
   # A configuaration file defining programming exercises for the topic
-  programming-exercises: binary-numbers/programming-exercises/programming-exercises.yaml
+  # The file path is relative to this YAML file
+  programming-exercises: programming-exercises/programming-exercises.yaml
 
   # A configuaration file defining follow up activities for the topic
-  follow-up-activities: binary-numbers/follow-up-activities/follow-up-activities.yaml
+  # The file path is relative to this YAML file
+  follow-up-activities: follow-up-activities/follow-up-activities.yaml
 
   # A Markdown file describing other resources
-  other-resources-md-file: binary-numbers/other-resources.md
+  # The file path is relative to this YAML file
+  other-resources-md-file: other-resources.md
 
 .. _unit-plan-file:
 
@@ -303,7 +308,8 @@ This file must contain the following key/value pairs:
 
   # The Markdown file containing the description of the unit plan
   # This is essentially the text for the webpage for the unit plan
-  md-file: binary-numbers/unit-plan/unit-plan.md
+  # The file path is relative to this YAML file
+  md-file: unit-plan.md
 
   # Key containing all lesson data
   lessons:
@@ -323,7 +329,8 @@ This file must contain the following key/value pairs:
 
       # The Markdown file containing the description of the lesson
       # This is essentially the text for the webpage for the lesson
-      md-file: binary-numbers/unit-plan/lessons/5-7/lesson-1.md
+      # The file path is relative to this YAML file
+      md-file: lessons/5-7/lesson-1.md
 
 Lessons may also contain any of the following key/value pairs (same
 indentation as ``minimum-age``, ``maximum-age``, ``number``, etc):
@@ -331,8 +338,9 @@ indentation as ``minimum-age``, ``maximum-age``, ``number``, etc):
 .. code-block:: yaml
 
   # The Markdown file containing the content for the handout of the lesson
-  # This is essentially the text for the webpage for the lesson
-  handout: binary-numbers/unit-plan/lessons/5-7/lesson-1-handout.md
+  # This is essentially the text for the webpage for the handout
+  # The file path is relative to this YAML file
+  handout: lessons/5-7/lesson-1-handout.md
 
   # The slugs for the learning outcomes for this lesson
   learning-outcomes:
@@ -374,14 +382,14 @@ the following:
 .. code-block:: yaml
 
   slug: unit-plan
-  md-file: binary-numbers/unit-plan/unit-plan.md
+  md-file: unit-plan.md
   lessons:
     lesson-1:
       minimum-age: 5
       maximum-age: 7
       number: 1
-      md-file: binary-numbers/unit-plan/lessons/5-7/lesson-1.md
-      handout: binary-numbers/unit-plan/lessons/5-7/lesson-1-handout.md
+      md-file: lessons/5-7/lesson-1.md
+      handout: lessons/5-7/lesson-1-handout.md
       learning-outcomes:
         - binary-data-representation
         - binary-count
@@ -402,8 +410,8 @@ the following:
       minimum-age: 5
       maximum-age: 7
       number: 2
-      md-file: binary-numbers/unit-plan/lessons/5-7/lesson-2.md
-      handout: binary-numbers/unit-plan/lessons/5-7/lesson-2-handout.md
+      md-file: lessons/5-7/lesson-2.md
+      handout: lessons/5-7/lesson-2-handout.md
       learning-outcomes:
         - binary-data-representation
         - binary-count
@@ -417,8 +425,8 @@ the following:
       minimum-age: 5
       maximum-age: 7
       number: 3
-      md-file: binary-numbers/unit-plan/lessons/5-7/lesson-3.md
-      handout: binary-numbers/unit-plan/lessons/5-7/lesson-3-handout.md
+      md-file: lessons/5-7/lesson-3.md
+      handout: lessons/5-7/lesson-3-handout.md
       learning-outcomes:
         - binary-convert-decimal
         - binary-justify-representation
@@ -453,7 +461,8 @@ The file should have the following key/value pair structure:
 
     # The Markdown file containing the description of the activity
     # This is essentially the text for the webpage for the activity
-    md-file: error-detection-correction/follow-up-activities/painting-parity.md
+    # The file path is relative to this YAML file
+    md-file: painting-parity.md
 
     # The slugs for the curriculum links for this activity
     curriculum-links:
@@ -466,14 +475,14 @@ may look like the following:
 
   binary-number-bracelets:
     number: 1
-    md-file: binary-numbers/follow-up-activities/bracelets.md
+    md-file: bracelets.md
     curriculum-links:
       - arts
       - design
 
   hidden-binary-signals:
     number: 2
-    md-file: binary-numbers/follow-up-activities/hidden-binary-signals.md
+    md-file: hidden-binary-signals.md
     curriculum-links:
       - science
 
@@ -553,6 +562,7 @@ The file should have the following key/value pair structure:
 
     # The Markdown file containing the description of the exercise
     # This is essentially the text for the webpage for the exercise
+    # The file path is relative to this YAML file
     md-file: exercise-1.1/index.md
 
     # The slugs for the learning outcomes for this lesson
@@ -566,9 +576,11 @@ The file should have the following key/value pair structure:
       scratch:
         # The Markdown file containing the hints for this programming language
         # implementation of this exercise
+        # The file path is relative to this YAML file
         hints: exercise-1.1/scratch-hints.md
         # The Markdown file containing the solution for this programming
         # language implementation of this exercise
+        # The file path is relative to this YAML file
         solution: exercise-1.1/scratch-solution.md
 
 .. note::
@@ -581,31 +593,31 @@ The file should have the following key/value pair structure:
   count-to-16:
     number: 1
     difficulty-level: 1
-    md-file: binary-numbers/programming-exercises/exercise-1.1/index.md
+    md-file: exercise-1.1/index.md
     learning-outcomes:
       - programming-sequence
       - programming-one-input-output
     programming-languages:
       scratch:
-        hints: binary-numbers/programming-exercises/exercise-1.1/scratch-hints.md
-        solution: binary-numbers/programming-exercises/exercise-1.1/scratch-solution.md
+        hints: exercise-1.1/scratch-hints.md
+        solution: exercise-1.1/scratch-solution.md
       python:
-        hints: binary-numbers/programming-exercises/exercise-1.1/python-hints.md
-        solution: binary-numbers/programming-exercises/exercise-1.1/python-solution.md
+        hints: exercise-1.1/python-hints.md
+        solution: exercise-1.1/python-solution.md
 
   count-to-a-million:
     number: 2
     difficulty-level: 3
-    md-file: binary-numbers/programming-exercises/exercise-2/index.md
+    md-file: exercise-2/index.md
     learning-outcomes:
       - programming-basic-logic
     programming-languages:
       scratch:
-        hints: binary-numbers/programming-exercises/exercise-2/scratch-hints.md
-        solution: binary-numbers/programming-exercises/exercise-2/scratch-solution.md
+        hints: exercise-2/scratch-hints.md
+        solution: exercise-2/scratch-solution.md
       python:
-        hints: binary-numbers/programming-exercises/exercise-2/python-hints.md
-        solution: binary-numbers/programming-exercises/exercise-2/python-solution.md
+        hints: exercise-2/python-hints.md
+        solution: exercise-2/python-solution.md
 
 .. _learning-outcomes-file:
 

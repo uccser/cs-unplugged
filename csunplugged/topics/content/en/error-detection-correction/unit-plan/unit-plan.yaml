@@ -1,4 +1,4 @@
-md-file: error-detection-correction/unit-plan/unit-plan.md
+md-file: unit-plan.md
 slug: unit-plan
 
 lessons:
@@ -6,7 +6,7 @@ lessons:
     minimum-age: 8
     maximum-age: 10
     number: 1
-    md-file: error-detection-correction/unit-plan/lessons/8-10/lesson-1.md
+    md-file: lessons/8-10/lesson-1.md
     learning-outcomes:
       - parity-justify-usage
     curriculum-links:

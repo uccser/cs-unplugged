@@ -1,3 +1,4 @@
+import os.path
 from utils.BaseLoader import BaseLoader
 from ._LessonsLoader import LessonsLoader
 
@@ -13,14 +14,15 @@ class UnitPlanLoader(BaseLoader):
             topic: Topic model object
         """
         super().__init__(BASE_PATH, load_log)
-        self.structure_file = structure_file
+        self.structure_file = os.path.join(self.BASE_PATH, structure_file)
+        self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(structure_file)[0])
         self.topic = topic
 
     def load(self):
         """load the content for unit plans"""
-        unit_plan_structure = self.load_yaml_file(self.BASE_PATH.format(self.structure_file))
+        unit_plan_structure = self.load_yaml_file(self.structure_file)
         md_file = unit_plan_structure['md-file']
-        unit_plan_content = self.convert_md_file(self.BASE_PATH.format(md_file))
+        unit_plan_content = self.convert_md_file(os.path.join(self.BASE_PATH, md_file))
 
         unit_plan = self.topic.topic_unit_plans.create(
             slug=unit_plan_structure['slug'],

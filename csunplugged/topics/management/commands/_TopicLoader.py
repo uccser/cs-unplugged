@@ -1,3 +1,4 @@
+import os.path
 from django.db import transaction
 from utils.BaseLoader import BaseLoader
 from ._FollowUpActivitiesLoader import FollowUpActivitiesLoader
@@ -17,18 +18,19 @@ class TopicLoader(BaseLoader):
             a dictionary of attributes.
         """
         super().__init__(BASE_PATH)
-        self.structure_file = structure_file
+        self.structure_file = os.path.join(self.BASE_PATH, structure_file)
+        self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(structure_file)[0])
 
     @transaction.atomic
     def load(self):
         """load the content for a topic"""
-        topic_structure = self.load_yaml_file(self.BASE_PATH.format(self.structure_file))
-        topic_data = self.convert_md_file(self.BASE_PATH.format(topic_structure['md-file']))
+        topic_structure = self.load_yaml_file(self.structure_file)
+        topic_data = self.convert_md_file(os.path.join(self.BASE_PATH, topic_structure['md-file']))
 
         # If other resources are given, convert to html
         other_resources_file = topic_structure['other-resources-md-file']
         if other_resources_file:
-            md_data = self.convert_md_file(self.BASE_PATH.format(other_resources_file))
+            md_data = self.convert_md_file(os.path.join(self.BASE_PATH, other_resources_file))
             other_resources_html = md_data.html_string
         else:
             other_resources_html = ''

@@ -1,28 +1,28 @@
 count-to-16:
   number: 1
   difficulty-level: 1
-  md-file: binary-numbers/programming-exercises/exercise-1.1/index.md
+  md-file: exercise-1.1/index.md
   learning-outcomes:
     - programming-sequence
     - programming-one-input-output
   programming-languages:
     scratch:
-      hints: binary-numbers/programming-exercises/exercise-1.1/scratch-hints.md
-      solution: binary-numbers/programming-exercises/exercise-1.1/scratch-solution.md
+      hints: exercise-1.1/scratch-hints.md
+      solution: exercise-1.1/scratch-solution.md
     python:
-      hints: binary-numbers/programming-exercises/exercise-1.1/python-hints.md
-      solution: binary-numbers/programming-exercises/exercise-1.1/python-solution.md
+      hints: exercise-1.1/python-hints.md
+      solution: exercise-1.1/python-solution.md
 
 count-to-a-million:
   number: 2
   difficulty-level: 3
-  md-file: binary-numbers/programming-exercises/exercise-2/index.md
+  md-file: exercise-2/index.md
   learning-outcomes:
     - programming-basic-logic
   programming-languages:
     scratch:
-      hints: binary-numbers/programming-exercises/exercise-2/scratch-hints.md
-      solution: binary-numbers/programming-exercises/exercise-2/scratch-solution.md
+      hints: exercise-2/scratch-hints.md
+      solution: exercise-2/scratch-solution.md
     python:
-      hints: binary-numbers/programming-exercises/exercise-2/python-hints.md
-      solution: binary-numbers/programming-exercises/exercise-2/python-solution.md
+      hints: exercise-2/python-hints.md
+      solution: exercise-2/python-solution.md

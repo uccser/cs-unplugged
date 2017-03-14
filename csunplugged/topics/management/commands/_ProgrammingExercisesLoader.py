@@ -1,3 +1,4 @@
+import os.path
 from utils.BaseLoader import BaseLoader
 from ._ProgrammingExerciseLoader import ProgrammingExerciseLoader
 
@@ -13,14 +14,15 @@ class ProgrammingExercisesLoader(BaseLoader):
             topic: Topic model object
         """
         super().__init__(BASE_PATH, load_log)
-        self.structure_file = structure_file
+        self.structure_file = os.path.join(self.BASE_PATH, structure_file)
+        self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(structure_file)[0])
         self.topic = topic
 
     def load(self):
         """Call (single) ProgrammingExerciseLoader for each exercise
         to load into the database
         """
-        programming_exercises_structure = self.load_yaml_file(self.BASE_PATH.format(self.structure_file))
+        programming_exercises_structure = self.load_yaml_file(self.structure_file)
 
         for exercise_slug, exercise_structure in programming_exercises_structure.items():
             ProgrammingExerciseLoader(

@@ -4,7 +4,7 @@ slug: unit-plan
 
 # The Markdown file containing the description of the unit plan
 # This is essentially the text for the webpage for the unit plan
-md-file: binary-numbers/unit-plan/unit-plan.md
+md-file: unit-plan.md
 
 # Key containing all lesson data
 lessons:
@@ -24,11 +24,11 @@ lessons:
 
     # The Markdown file containing the description of the lesson
     # This is essentially the text for the webpage for the lesson
-    md-file: binary-numbers/unit-plan/lessons/5-7/lesson-1.md
+    md-file: lessons/5-7/lesson-1.md
 
     # The Markdown file containing the content for the handout of the lesson
     # This is essentially the text for the webpage for the lesson
-    handout: binary-numbers/unit-plan/lessons/5-7/lesson-1-handout.md
+    handout: lessons/5-7/lesson-1-handout.md
 
     # The slugs for the learning outcomes for this lesson
     learning-outcomes:
@@ -58,8 +58,8 @@ lessons:
     minimum-age: 5
     maximum-age: 7
     number: 2
-    md-file: binary-numbers/unit-plan/lessons/5-7/lesson-2.md
-    handout: binary-numbers/unit-plan/lessons/5-7/lesson-2-handout.md
+    md-file: lessons/5-7/lesson-2.md
+    handout: lessons/5-7/lesson-2-handout.md
     learning-outcomes:
       - binary-data-representation
       - binary-count
@@ -73,8 +73,8 @@ lessons:
     minimum-age: 5
     maximum-age: 7
     number: 3
-    md-file: binary-numbers/unit-plan/lessons/5-7/lesson-3.md
-    handout: binary-numbers/unit-plan/lessons/5-7/lesson-3-handout.md
+    md-file: lessons/5-7/lesson-3.md
+    handout: lessons/5-7/lesson-3-handout.md
     learning-outcomes:
       - binary-convert-decimal
       - binary-justify-representation
@@ -86,8 +86,8 @@ lessons:
     minimum-age: 8
     maximum-age: 10
     number: 4
-    md-file: binary-numbers/unit-plan/lessons/8-10/lesson-1.md
-    handout: binary-numbers/unit-plan/lessons/8-10/lesson-1-handout.md
+    md-file: lessons/8-10/lesson-1.md
+    handout: lessons/8-10/lesson-1-handout.md
     learning-outcomes:
       - binary-convert-decimal
       - binary-justify-representation
@@ -98,8 +98,8 @@ lessons:
     minimum-age: 8
     maximum-age: 10
     number: 5
-    md-file: binary-numbers/unit-plan/lessons/8-10/lesson-2.md
-    handout: binary-numbers/unit-plan/lessons/8-10/lesson-2-handout.md
+    md-file: lessons/8-10/lesson-2.md
+    handout: lessons/8-10/lesson-2-handout.md
     learning-outcomes:
       - binary-convert-decimal
     curriculum-links:
@@ -110,8 +110,8 @@ lessons:
     minimum-age: 11
     maximum-age: 14
     number: 6
-    md-file: binary-numbers/unit-plan/lessons/11-14/lesson-1.md
-    handout: binary-numbers/unit-plan/lessons/11-14/lesson-1-handout.md
+    md-file: lessons/11-14/lesson-1.md
+    handout: lessons/11-14/lesson-1-handout.md
     learning-outcomes:
       - binary-convert-decimal
     curriculum-links:

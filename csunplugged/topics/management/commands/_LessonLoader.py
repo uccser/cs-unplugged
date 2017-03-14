@@ -1,3 +1,4 @@
+import os.path
 from utils.BaseLoader import BaseLoader
 from topics.models import (
     LearningOutcome,
@@ -28,7 +29,7 @@ class LessonLoader(BaseLoader):
 
     def load(self):
         """load the content for a single lesson"""
-        lesson_content = self.convert_md_file(self.BASE_PATH.format(self.lesson_structure['md-file']))
+        lesson_content = self.convert_md_file(os.path.join(self.BASE_PATH, self.lesson_structure['md-file']))
         lesson = self.topic.topic_lessons.create(
             unit_plan=self.unit_plan,
             slug=self.lesson_slug,

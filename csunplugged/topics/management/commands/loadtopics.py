@@ -1,3 +1,4 @@
+import os.path
 from django.core.management.base import BaseCommand
 from utils.BaseLoader import BaseLoader
 from ._LearningOutcomesLoader import LearningOutcomesLoader
@@ -16,9 +17,9 @@ class Command(BaseCommand):
         """
         # Get structure and content files
         base_loader = BaseLoader()
-        BASE_PATH = 'topics/content/en/{}'
+        BASE_PATH = 'topics/content/en/'
 
-        structure_file = base_loader.load_yaml_file(BASE_PATH.format('structure.yaml'))
+        structure_file = base_loader.load_yaml_file(os.path.join(BASE_PATH, 'structure.yaml'))
         difficulty_file = structure_file['programming-exercises-structure']
         learning_outcomes_file = structure_file['learning-outcomes']
         curriculum_links_file = structure_file['curriculum-links']

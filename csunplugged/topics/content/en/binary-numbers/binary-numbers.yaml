@@ -1,8 +1,8 @@
 slug: binary-numbers
-md-file: binary-numbers/index.md
+md-file: index.md
 icon: img/binary-numbers-0-1.png
 unit-plans:
-  - binary-numbers/unit-plan/unit-plan.yaml
-programming-exercises: binary-numbers/programming-exercises/programming-exercises.yaml
-follow-up-activities: binary-numbers/follow-up-activities/follow-up-activities.yaml
-other-resources-md-file: binary-numbers/other-resources.md
+  - unit-plan/unit-plan.yaml
+programming-exercises: programming-exercises/programming-exercises.yaml
+follow-up-activities: follow-up-activities/follow-up-activities.yaml
+other-resources-md-file: other-resources.md

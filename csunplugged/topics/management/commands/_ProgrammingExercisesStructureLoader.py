@@ -1,3 +1,4 @@
+import os.path
 from django.db import transaction
 from utils.BaseLoader import BaseLoader
 from topics.models import ProgrammingExerciseLanguage, ProgrammingExerciseDifficulty
@@ -14,11 +15,12 @@ class ProgrammingExercisesStructureLoader(BaseLoader):
         """
         super().__init__(BASE_PATH)
         self.structure_file = structure_file
+        self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(structure_file)[0])
 
     @transaction.atomic
     def load(self):
         """load the content for programming exerises difficulties"""
-        info = self.load_yaml_file(self.BASE_PATH.format(self.structure_file))
+        info = self.load_yaml_file(os.path.join(self.BASE_PATH, self.structure_file))
 
         languages = info['languages']
         for language_data in languages:
