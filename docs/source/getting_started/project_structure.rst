@@ -11,17 +11,17 @@ Repository folder
 
 The repository folder (or root folder) contains the following:
 
-- ``csunplugged`` folder
+- ``csunplugged/`` folder
 
   - This folder contains the Django web system for the CS Unplugged website.
     This includes all raw text content, images, resources, etc.
 
-- ``docs`` folder
+- ``docs/`` folder
 
   - This folder contains the documentation for the repository (which includes
     the file you are reading now).
 
-- ``subtitles`` folder
+- ``subtitles/`` folder
 
   - This folder contains subtitle files for CS Unplugged videos.
 
@@ -39,10 +39,10 @@ The repository folder (or root folder) contains the following:
 csunplugged folder
 =================================================
 
-The ``csunplugged`` folder holds the Django web system and is split across
+The ``csunplugged/`` folder holds the Django web system and is split across
 the following folders:
 
-- ``config``
+- ``config/``
 
   - This folder holds the settings used by the Django system.
     It's unlikely you'll edit the contents of this folder unless you are
@@ -53,19 +53,19 @@ some set of features.
 Each large part/chunk of the CS Unplugged is a separate application.
 The project currently contains the following applications:
 
-- ``general``
+- ``general/``
 
   - This applicate displays webpages for generic pages on the website.
     For example: homepage, about page, contact page, etc.
 
-- ``topics``
+- ``topics/``
 
   - The core CS Unplugged content is split across topics, with each topic
     containing any combination of unit plans, lessons, follow up activities,
     programming exercises (plugged in activities), and much more.
     This application stores and displays the topics content.
 
-- ``resources``
+- ``resources/``
 
   - The CS Unplugged project contains custom printable resources that can
     contain randomly generated components and translations.
@@ -76,37 +76,37 @@ author and developer documentation pages.
 
 The following folders are also required by the Django system:
 
-- ``static``
+- ``static/``
 
   - This folder contains non-user-generated media assets (for example:
     images, JavaScript, CSS/SCSS, etc).
 
-- ``templates``
+- ``templates/``
 
   - This folder contains all the HTML templates for the Django system.
 
-- ``locale``
+- ``locale/``
 
   - This folder contains translations required for the Django system.
-    Translations for ``topics`` are stored within the ``topics/content``.
+    Translations for ``topics/`` are stored within the ``topics/content/``.
 
 The following folders are used when the server is running (for example:
-a script compiles the SCSS to CSS and saves it to the ``build`` folder for
+a script compiles the SCSS to CSS and saves it to the ``build/`` folder for
 serving on a webpage).
 You should never save anything in these folders, as the contents are often
 overwritten and cleared.
 
-- ``build``
+- ``build/``
 
   - Contains the generated output of the front-end script (for example:
     compiled and minified CSS and JavaScript, compressed images, etc).
 
-- ``temp``
+- ``temp/``
 
   - Contains temporary files used in creating generated files for
     ``build`` folder.
 
-The ``csunplugged`` folder also contains the following files:
+The ``csunplugged/`` folder also contains the following files:
 
 - ``manage.py``
 
