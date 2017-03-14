@@ -9,7 +9,11 @@ For example, the following text:
 
 .. code-block:: none
 
-  Try using the following blocks:
+  # Scratch Programming Exercise
+
+  Try using the following blocks to create a program to display numbers 1, 2,
+  4, 8 and 16 on the screen, one at a time for 1 second each.
+
 
   ```scratch
   when flag clicked
@@ -17,9 +21,18 @@ For example, the following text:
   say [Hello] for [2] secs
   ```
 
-  **Tips**
+  Your program should look like the following:
 
-  - Make sure all your blocks are “snapped” together in a line like a jigsaw puzzle.
+  {iframe link="http://scratch.mit.edu/projects/embed/148423714/?autostart=false"}
+
+  {panel type="note" title="Tips"}
+
+  - Make sure all your blocks are “snapped” together in a line like a
+    jigsaw puzzle.
+
+  {panel end}
+
+  {button-link link="exercise/scratch-solution.html" text="Scratch Solution"}
 
 will display as the following on the website:
 
