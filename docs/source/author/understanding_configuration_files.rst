@@ -5,7 +5,8 @@ There is a lot of content within the CS Unplugged project.
 We split this content across many files and configuration files are the things
 that bring everything together.
 Understanding how to read and write these configuration files is important
-for working on this project.
+for working on this project, because these files are used for configuring the
+content data when stored in the system database.
 
 This page aims to give a brief tutorial on YAML files, so you can modify
 configuration files within this project.
