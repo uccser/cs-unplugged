@@ -54,10 +54,11 @@ Here are some other useful tips:
     - level: 3
       name: Ready to Expand
 
-We try to avoid deep nesting (indentation) within configuration files as it's
-hard to read nested data.
-We have split configuration data across multiple configuration files to avoid
-this issue.
+You may find that there is more than one configuration file that you need to
+modify/create.
+This is because it is difficult to read files using deep nesting
+(indentation), so we have split configuration data across multiple files to
+avoid this issue.
 
 If you want to learn more about YAML, there are plenty of great tutorials
 available on the internet.
