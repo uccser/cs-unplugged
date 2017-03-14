@@ -64,7 +64,10 @@ Adding content
 ==============================================================================
 
 The following flow charts will take you step by step through the process of
-adding new content to the topics application.
+adding new content to the topics application, and you can click the 'Read more'
+items on flowcharts to be taken to the relevant section in the documentation.
+Below this section is full details on how to structure and write the
+configuration files for the topics application.
 
 .. _adding-topics-content-topic:
 
