@@ -82,9 +82,9 @@ what data is loaded into the database.
 ``$ python3 manage.py runserver``
 ==============================================================================
 
-The command starts a lightweight development web server on your machine. It's
-possible to view the server on ``127.0.0.1:8000`` (which is also
-``localhost:8000``), but we will run another command first to setup files
+The command starts a web server on your machine.
+It's possible to view the server in your browser with the URL
+``localhost:8000``, but we will run another command first to setup files
 required for the website, and view the website in a special development mode.
 
 Official documentation on the `runserver command`_ can be found on the Django
