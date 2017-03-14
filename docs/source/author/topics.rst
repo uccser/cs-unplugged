@@ -3,16 +3,11 @@ Topics application
 
 The topics application is the main focus of the CS Unplugged website, as it
 contains the majority of educational material for the project.
-This page covers the topics application for authors, including:
-
-- An overview of the topics application
-- Configuaration files for adding and modifying topics content
-- Examples on how to add new content
 
 .. contents:: Contents
   :local:
 
-Topic Structure Overview
+Topics overview
 ==============================================================================
 
 A general overview of the topics application can be described in the following
@@ -48,16 +43,165 @@ diagram.
   programming exercises.
 
 This is just a broad overview of the topics application.
-More details about each of the items above is provided below in the
-configuration files section.
+
+.. _topics-folder-structure:
+
+Topics content directory
+==============================================================================
+
+The diagram below is an example of the ``content/en/`` language directory for
+the project's topic application, where:
+
+- Blue is directories.
+- Red is YAML configuration files.
+- Green is Markdown text files.
+
+.. include:: ../_static/html_snippets/topics_content_folder_tree.rst
+
+.. _adding-topics-content:
+
+Adding content
+==============================================================================
+
+The following flow charts will take you step by step through the process of
+adding new content to the topics application.
+
+.. _adding-topics-content-topic:
+
+Adding a topic
+------------------------------------------------------------------------------
+
+You can add a new topic by following this flowchart.
+
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="topics-map">
+    <area shape="rect" coords="215,90,317,127" href="#topics-content-directory">
+    <area shape="rect" coords="215,200,317,234" href="#topic-file">
+    <area shape="rect" coords="215,307,317,343" href="#application-structure-file">
+    <area shape="rect" coords="215,425,317,460" href="../getting_started/basic_usage.html#command-manage-loaddata">
+    <area shape="rect" coords="215,541,317,576" href="../getting_started/basic_usage.html#command-manage-runserver">
+    <area shape="rect" coords="215,658,317,694" href="../getting_started/basic_usage.html#command-gulp">
+  </map>
+  <img src="../_static/img/topics_adding_topic_flowchart.png" usemap="#topics-map">
+
+After you have added a topic, you can then add unit plans, lessons, follow
+up activities, and programming exercises using the flow charts below.
+
+.. _adding-topics-content-unit-plan:
+
+Adding a unit plan and/or lesson
+------------------------------------------------------------------------------
+
+You can add a new unit plan and/or lesson by following this flowchart.
+If a lesson requires new learning outcomes or curriculum links, see
+:ref:`adding-topics-content-learning-outcomes-curriculum-links`.
+
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="unit-plan-map">
+    <area shape="rect" coords="215,90,317,127" href="#topics-content-directory">
+    <area shape="rect" coords="284,330,387,364" href="#topics-content-directory">
+    <area shape="rect" coords="284,570,387,605" href="#unit-plan-file">
+    <area shape="rect" coords="284,684,387,719" href="#topic-file">
+    <area shape="rect" coords="284,930,387,965" href="#topics-content-directory">
+    <area shape="rect" coords="284,1172,387,1206" href="#unit-plan-file">
+    <area shape="rect" coords="284,1294,387,1329" href="#unit-plan-file">
+    <area shape="rect" coords="229,1471,333,1504" href="../getting_started/basic_usage.html#command-manage-loaddata">
+    <area shape="rect" coords="229,1589,333,1622" href="../getting_started/basic_usage.html#command-manage-runserver">
+    <area shape="rect" coords="229,1704,333,1738" href="../getting_started/basic_usage.html#command-gulp">
+  </map>
+  <img src="../_static/img/topics_adding_unit_plan_flowchart.png" usemap="#unit-plan-map">
+
+.. _adding-topics-content-follow-up-activity:
+
+Adding a follow up activity
+------------------------------------------------------------------------------
+
+You can add a new follow up activity by following this flowchart.
+If a follow up activity requires new curriculum links, see
+:ref:`adding-topics-content-learning-outcomes-curriculum-links`.
+
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="follow-up-activities-map">
+  <area shape="rect" coords="217,90,319,127" href="#topics-content-directory">
+  <area shape="rect" coords="283,459,387,494" href="#topics-content-directory">
+  <area shape="rect" coords="283,571,387,607" href="#follow-up-activities-file">
+  <area shape="rect" coords="283,688,387,723" href="#topic-file">
+  <area shape="rect" coords="283,939,387,973" href="#follow-up-activities-file">
+  <area shape="rect" coords="216,1088,319,1124" href="../getting_started/basic_usage.html#command-manage-loaddata">
+  <area shape="rect" coords="216,1206,319,1240" href="../getting_started/basic_usage.html#command-manage-runserver">
+  <area shape="rect" coords="216,1325,319,1358" href="../getting_started/basic_usage.html#command-gulp">
+  </map>
+  <img src="../_static/img/topics_adding_follow_up_activities_flowchart.png" usemap="#follow-up-activities-map">
+
+.. _adding-topics-content-programming-exercise:
+
+Adding a programming exercise
+------------------------------------------------------------------------------
+
+You can add a new programming exercise by following this flowchart.
+If a programming exercise requires new learning outcomes, see
+:ref:`adding-topics-content-learning-outcomes-curriculum-links`.
+
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="programming-exercise-map">
+    <area shape="rect" coords="215,90,320,126" href="#topics-content-directory">
+    <area shape="rect" coords="284,460,387,494" href="#topics-content-directory">
+    <area shape="rect" coords="284,571,387,607" href="#programming-exercises-file">
+    <area shape="rect" coords="284,684,387,719" href="#topic-file">
+    <area shape="rect" coords="284,805,387,841" href="#topics-content-directory">
+    <area shape="rect" coords="284,1074,387,1110" href="#programming-exercises-file">
+    <area shape="rect" coords="349,1542,452,1578" href="#programming-exercises-file">
+    <area shape="rect" coords="216,1709,319,1744" href="../getting_started/basic_usage.html#command-manage-loaddata">
+    <area shape="rect" coords="216,1826,319,1860" href="../getting_started/basic_usage.html#command-manage-runserver">
+    <area shape="rect" coords="216,1943,319,1977" href="../getting_started/basic_usage.html#command-gulp">
+  </map>
+  <img src="../_static/img/topics_adding_programming_exercises_flowchart.png" usemap="#programming-exercise-map">
+
+.. _adding-topics-content-learning-outcomes-curriculum-links:
+
+Adding learning outcomes and/or curriculum links
+------------------------------------------------------------------------------
+
+You can add a new programming exercise by following this flowchart.
+
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="learning-outcomes-curriculum-links-map">
+    <area shape="rect" coords="215,90,320,126" href="#topics-content-directory">
+    <area shape="rect" coords="281,342,387,377" href="#learning-outcomes-file">
+    <area shape="rect" coords="281,616,387,652" href="#curriculum-links-file">
+  </map>
+  <img src="../_static/img/topics_adding_learning_outcomes_curriculum_links_flowchart.png" usemap="#learning-outcomes-curriculum-links-map">
 
 Configuration Files
 ==============================================================================
 
-This section details configuration files within the ``content`` folder for a
+This section details configuration files within the ``content`` directory for a
 specific language.
 These files define the topics content on the website and their respective
 attributes (for example: the difficulty of a programming exercise).
+
+The diagram below shows an example of YAML file locations for the
+``content/en/`` language directory, where:
+
+- Blue is directories.
+- Red is YAML configuration files.
+
+.. include:: ../_static/html_snippets/topics_content_folder_tree_only_yaml.rst
 
 .. _application-structure-file:
 
@@ -97,7 +241,7 @@ Topic File
 This file defines the attributes of a specific topic, including connected
 unit plan, programming exercise, and follow up activity configuration files.
 
-The location of this file is within a topic folder.
+The location of this file is within a topic directory.
 This file is listed in the :ref:`application-structure-file`.
 
 This file must contain the following key/value pairs:
@@ -111,8 +255,8 @@ This file must contain the following key/value pairs:
   # This is essentially the text for the webpage for the topic
   md-file: binary-numbers/index.md
 
-  # An image icon used for the topic within the static folder
-  # The path is from the top of the static folder
+  # An image icon used for the topic within the static directory
+  # The path is from the top of the static directory
   icon: img/binary-numbers-0-1.png
 
 .. note::
@@ -146,7 +290,7 @@ Unit Plan File
 This file defines the attributes of a unit plan, including all lessons (and
 their respective attributes) for the unit plan.
 
-The location of this file is within a unit plan folder.
+The location of this file is within a unit plan directory.
 These files are listed in a :ref:`topic-file`.
 
 This file must contain the following key/value pairs:
@@ -290,7 +434,7 @@ Follow Up Activities File
 This file defines the follow up activities for a topic (and their respective
 attributes).
 
-The location of this file is within a topic folder.
+The location of this file is within a topic directory.
 This configuaration file is listed in a :ref:`topic-file`.
 It is also valid to have no configuaration file if there are no follow up
 activities for a topic.
@@ -342,7 +486,7 @@ This file defines the structure of programming exercises for all topics.
 The two components it defines is available language for exercise
 implementations, and difficulties of exercises.
 
-The location of this file is within the language folder.
+The location of this file is within the language directory.
 This configuaration file is listed in a :ref:`application-structure-file`.
 This file can contain as many languages and difficulties as you like.
 
@@ -356,8 +500,8 @@ The file should have the following key/value pair structure:
     scratch:
       # The name of the language implementation
       name: Scratch
-      # An image icon used for the topic within the static folder
-      # The path is from the top of the static folder
+      # An image icon used for the topic within the static directory
+      # The path is from the top of the static directory
       icon: img/scratch-cat.png
     python:
       name: Python
@@ -384,9 +528,10 @@ The file should have the following key/value pair structure:
 Programming Exercises File
 ------------------------------------------------------------------------------
 
-This file defines the programming exercises for a particular topic, including their respective attributes.
+This file defines the programming exercises for a particular topic, including
+their respective attributes.
 
-The location of this file is within a programming exercises folder.
+The location of this file is within a programming exercises directory.
 This file is listed in a :ref:`topic-file`.
 
 The file should have the following key/value pair structure:
@@ -403,7 +548,7 @@ The file should have the following key/value pair structure:
 
     # The Markdown file containing the description of the exercise
     # This is essentially the text for the webpage for the exercise
-    md-file: binary-numbers/programming-exercises/exercise-1.1/index.md
+    md-file: exercise-1.1/index.md
 
     # The slugs for the learning outcomes for this lesson
     learning-outcomes:
@@ -416,10 +561,10 @@ The file should have the following key/value pair structure:
       scratch:
         # The Markdown file containing the hints for this programming language
         # implementation of this exercise
-        hints: binary-numbers/programming-exercises/exercise-1.1/scratch-hints.md
+        hints: exercise-1.1/scratch-hints.md
         # The Markdown file containing the solution for this programming
         # language implementation of this exercise
-        solution: binary-numbers/programming-exercises/exercise-1.1/scratch-solution.md
+        solution: exercise-1.1/scratch-solution.md
 
 .. note::
 
@@ -464,7 +609,7 @@ Learning Outcomes File
 
 This file defines the learning outcomes avilable for all topics.
 
-The location of this file is within the language folder.
+The location of this file is within the language directory.
 This file is listed in a :ref:`application-structure-file`.
 This file can contain as many learning outcomes as you like.
 
@@ -490,7 +635,7 @@ Curriculum Links File
 
 This file defines the curriculum links avilable for all topics.
 
-The location of this file is within the language folder.
+The location of this file is within the language directory.
 This file is listed in a :ref:`application-structure-file`.
 This file can contain as many curriculum links as you like.
 
@@ -521,35 +666,3 @@ the following:
 
   art:
     name: Art
-
-.. _adding-topics-content:
-
-Adding topics content
-==============================================================================
-
-This section will run through an example of adding a new topic to the topics
-application.
-For this example, let's add a new topic "Algorithms" for the English language.
-Let's run through the steps required:
-
-1. Create a new folder within the ``contents\en\`` folder called ``algorithms``.
-2. Create a :ref:`topic-file` for algorithms within ``contents\en\algorithms``.
-3. List the algorithms topic structure file within the
-   :ref:`application-structure-file`.
-4. Any new learning outcomes for this topic should be added to the
-   :ref:`learning-outcomes-file` within the language folder.
-5. Any new curriculum links for this topic should be added to the
-   :ref:`curriculum-links-file` within the language folder.
-6. If we want to add a unit plan, created a :ref:`unit-plan-file` for each unit
-   plan, and list these in the :ref:`topic-file`.
-7. If we want to add follow up activities, create a
-   :ref:`follow-up-activities-file` for the activities.
-   Add the path to this file in the :ref:`topic-file`.
-8. If we want to add programming exercises, create a
-   :ref:`programming-exercises-file` for the exercises.
-   Add the path to this file in the :ref:`topic-file`.
-9. Run the :ref:`command-manage-loaddata` command to check the algorithms topic
-   loads correctly.
-10. Run the :ref:`command-manage-runserver` command to view the topic on the
-    website.
-    This is a good point to check everything displays as you expect.

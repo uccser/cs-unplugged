@@ -1,0 +1,22 @@
+.. raw:: html
+
+	<div id="tree-diagram">
+		├── <span class="folder">binary-numbers</span><br>
+		│&nbsp;&nbsp;&nbsp;├── <span class="file">binary-numbers.yaml</span><br>
+		│&nbsp;&nbsp;&nbsp;├── <span class="folder">follow-up-activities</span><br>
+		│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── <span class="file">follow-up-activities.yaml</span><br>
+		│&nbsp;&nbsp;&nbsp;├── <span class="folder">programming-exercises</span><br>
+		│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── <span class="file">programming-exercises.yaml</span><br>
+		│&nbsp;&nbsp;&nbsp;└── <span class="folder">unit-plan</span><br>
+		│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── <span class="file">unit-plan.yaml</span><br>
+		├── <span class="file">curriculum-links.yaml</span><br>
+		├── <span class="folder">error-detection-correction</span><br>
+		│&nbsp;&nbsp;&nbsp;├── <span class="file">error-detection-correction.yaml</span><br>
+		│&nbsp;&nbsp;&nbsp;├── <span class="folder">follow-up-activities</span><br>
+		│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── <span class="file">follow-up-activities.yaml</span><br>
+		│&nbsp;&nbsp;&nbsp;└── <span class="folder">unit-plan</span><br>
+		│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── <span class="file">unit-plan.yaml</span><br>
+		├── <span class="file">learning-outcomes.yaml</span><br>
+		├── <span class="file">programming-exercises-structure.yaml</span><br>
+		└── <span class="file">structure.yaml</span><br>
+	</div>
