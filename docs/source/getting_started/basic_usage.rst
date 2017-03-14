@@ -15,7 +15,7 @@ Quick start
 ==============================================================================
 
 Run the following commands in a terminal from within the
-``cs-unplugged/csunplugged/`` folder.
+``cs-unplugged/csunplugged/`` directory.
 When working on the project, you should type the following commands in order
 to preview the work you have done.
 
@@ -29,7 +29,7 @@ to preview the work you have done.
   $ python3 manage.py loaddata
   $ python3 manage.py runserver
 
-Open another terminal within the same ``csunplugged`` folder:
+Open another terminal within the same ``cs-unplugged/csunplugged/`` directory:
 
 .. code-block:: bash
 
@@ -70,7 +70,7 @@ website.
 ``$ python3 manage.py loaddata``
 ==============================================================================
 
-This command runs loads data from the ``content`` folders found within the
+This command runs loads data from the ``content`` directories found within the
 project into the database. For example, if you modify lesson content, you
 will need to run this command to update the database with the new content.
 
