@@ -48,6 +48,8 @@ the following directories:
     It's unlikely you'll edit the contents of this directory unless you are
     changing the Django configuration (for example: adding a new application).
 
+.. _django-applications:
+
 Django contains 'applications' which are Python packages that provide
 some set of features.
 Each large part/chunk of the CS Unplugged is a separate application.

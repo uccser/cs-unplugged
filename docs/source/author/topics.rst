@@ -1,7 +1,7 @@
 Topics application
 ##############################################################################
 
-The topics application is the main focus of the CS Unplugged website, as it
+The topics application (see :ref:`what-is-an-application`) is the main focus of the CS Unplugged website, as it
 contains the majority of educational material for the project.
 
 .. contents:: Contents
@@ -820,7 +820,7 @@ The file should have the following key/value pair structure:
     - ``difficulty-level`` - The difficulty level number for this programming
       exercise.
       The difficulty numbers are defined in
-      :ref:`rogramming-exercises-structure-file`.
+      :ref:`programming-exercises-structure-file`.
 
       - For example:
 

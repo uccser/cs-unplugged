@@ -36,4 +36,15 @@ See also:
 
 - `Definition of URL slug on Wikipedia`_
 
+.. _what-is-an-application:
+
+What is an application?
+==============================================================================
+
+Django contains 'applications' which are Python packages that provide
+some set of features.
+Each large part/chunk of the CS Unplugged is a separate application.
+Read :ref:`this section in our project structure guide <django-applications>`
+for details of the applications used in the CS Unplugged system.
+
 .. _Definition of URL slug on Wikipedia: https://en.wikipedia.org/wiki/Semantic_URL#Slug
