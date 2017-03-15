@@ -81,7 +81,7 @@ Pull Requests
 
 - **Include a detailed explaination** of the proposed change, including
   screenshots and animated GIFs in your pull request whenever possible.
-- **Read and applied the style guides** listed below.
+- **Read and apply the style guides** listed below.
 - Your pull request should be on a new branch from our ``develop`` branch,
   **that is being requested to merge back into** ``develop``.
   The naming conventions of branches should be descriptive of the new
@@ -93,7 +93,7 @@ Pull Requests
   - ``issue/234``
 
 - Link to any relevant existing issues/suggestions.
-- Added necessary documentation (if appropriate).
+- Add necessary documentation (if appropriate).
 
 We aim to keep the CS Unplugged project as robust as possible, so please do
 your best to ensure your changes won't break anything!
