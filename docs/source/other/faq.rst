@@ -1,4 +1,4 @@
-Frequently asked questions
+Frequently Asked Questions
 ##############################################################################
 
 The topics application is the main focus of the CS Unplugged website, as it
@@ -9,7 +9,7 @@ contains the majority of educational material for the project.
 
 .. _what-is-a-slug:
 
-What is a URL slug?
+What is a URL Slug?
 ==============================================================================
 
 A URL slug is a short label for something, containing only letters, numbers,
@@ -38,7 +38,7 @@ See also:
 
 .. _what-is-an-application:
 
-What is an application?
+What is an Application?
 ==============================================================================
 
 Django contains 'applications' which are Python packages that provide

@@ -1,4 +1,4 @@
-Developer philosophy
+Developer Philosophy
 ##############################################################################
 
 We follow the following philosophy for developing the CS Unplugged project:
@@ -11,7 +11,7 @@ In short: *Think of the author*.
 This page explains design decisions we made throughout developing the CS
 Unplugged system.
 
-Configuration files
+Configuration Files
 ==============================================================================
 
 We use `YAML`_ for storing configuration data of content.
@@ -25,7 +25,7 @@ this issue.
 
 .. _YAML: http://www.yaml.org/spec/1.2/spec.html
 
-Writing content
+Writing Content
 ==============================================================================
 
 We chose Markdown as the language for text content as it has a great balance

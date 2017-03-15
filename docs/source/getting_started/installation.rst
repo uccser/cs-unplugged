@@ -1,4 +1,4 @@
-Installation guide
+Installation Guide
 #################################################
 
 This page will set your machine up for working on the CS Unplugged project.
@@ -20,7 +20,7 @@ reading a tutorial first on how to use them:
   system. You may need to adapt the instructions if you are working on
   Windows, OS X, etc.
 
-Step 1: Setup virtual machine (optional)
+Step 1: Setup Virtual Machine (optional)
 =================================================
 
 For those working on a computer in a restricted environment (for example:
@@ -77,14 +77,14 @@ Install Git (version control software) with the following command in terminal:
 
     $ sudo apt install git
 
-Step 5: Create GitHub account
+Step 5: Create GitHub Account
 =================================================
 
 If you don't already have an account on GitHub, create an account on
 the `GitHub website`_.
 This account will be tied to any changes you submit to the project.
 
-Step 6: Set Git account values
+Step 6: Set Git Account Values
 =================================================
 
 When you make a commit in Git (the term for changes to the project), the
@@ -123,7 +123,7 @@ commands in terminal:
     $ sudo apt-get install python-psycopg2
     $ sudo apt-get install libpq-dev
 
-Step 8: Create user and database in Postgres
+Step 8: Create User and Database in Postgres
 =================================================
 
 Firstly type the following command in terminal to login to the Postgres
@@ -171,7 +171,7 @@ To quit the Postgres prompt and return to the normal terminal, type the followin
 
     logout
 
-Step 9: Download the CS Unplugged project
+Step 9: Download the CS Unplugged Project
 =================================================
 
 Firstly create the directory you wish to hold the CS Unplugged project
@@ -203,7 +203,7 @@ to the development branch:
     $ cd cs-unplugged
     $ git checkout develop
 
-Step 10: Create virtual environment
+Step 10: Create Virtual Environment
 =================================================
 
 If you installed ``virtualenv`` in Step 3, then it's time to create a virtual
@@ -231,7 +231,7 @@ have (for example: ``python3.5``):
 You should now have the name of your virtual environment before the terminal
 prompt.
 
-Step 11: Install project requirements
+Step 11: Install Project Requirements
 =================================================
 
 To install the project requirements, type the following commands in terminal
@@ -247,7 +247,7 @@ from the project root directory (contains a file called ``requirements.txt``):
     $ npm install
     $ sudo npm install gulp-cli --global
 
-Step 12: Install text editor/IDE (optional)
+Step 12: Install Text Editor/IDE (optional)
 =================================================
 
 This is a good time to install your preferred IDE or text editor.
@@ -257,7 +257,7 @@ Some free options we love:
 - `Sublime Text`_
 - `Vim`_
 
-Step 13: Complete project settings file
+Step 13: Complete Project Settings File
 =================================================
 
 Open the ``csunplugged/config/`` directory, and make a copy of
@@ -278,7 +278,7 @@ it's not uploaded to the public server for everyone to see.
 
 .. _installation-check-project-setup-works:
 
-Step 14: Check project setup works
+Step 14: Check Project Setup Works
 =================================================
 
 To check the project works, change your working directory to the

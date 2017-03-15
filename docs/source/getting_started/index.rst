@@ -1,4 +1,4 @@
-Getting started
+Getting Started
 ##############################################################################
 
 This documentation will help you understand how the project is setup,

@@ -1,4 +1,4 @@
-Understanding configuration files
+Understanding Configuration Files
 ##############################################################################
 
 There is a lot of content within the CS Unplugged project.

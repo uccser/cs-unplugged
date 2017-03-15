@@ -1,4 +1,4 @@
-Setting up a virtual machine
+Setting up a Virtual Machine
 =================================================
 
 The following steps are just one way to set up an Linux virtual machine

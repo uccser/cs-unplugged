@@ -1,4 +1,4 @@
-Topic content
+Topic Content
 ##############################################################################
 
 The topics application (see :ref:`what-is-an-application`) is the main focus of the CS Unplugged website, as it
@@ -7,7 +7,7 @@ contains the majority of educational material for the project.
 .. contents:: Contents
   :local:
 
-Topics overview
+Topics Overview
 ==============================================================================
 
 A general overview of the topics application can be described in the following
@@ -46,7 +46,7 @@ This is just a broad overview of the topics application.
 
 .. _topics-directory-structure:
 
-Topics content directory
+Topics Content Directory
 ==============================================================================
 
 The diagram below is an example of the ``content/en/`` language directory for
@@ -60,7 +60,7 @@ the project's topic application, where:
 
 .. _adding-topics-content:
 
-Adding content
+Adding Content
 ==============================================================================
 
 The following flow charts will take you step by step through the process of
@@ -71,7 +71,7 @@ configuration files for the topics application.
 
 .. _adding-topics-content-topic:
 
-Adding a topic
+Adding a Topic
 ------------------------------------------------------------------------------
 
 You can add a new topic by following this flowchart.
@@ -95,7 +95,7 @@ up activities, and programming exercises using the flow charts below.
 
 .. _adding-topics-content-unit-plan:
 
-Adding a unit plan and/or lesson
+Adding a Unit Plan and/or Lesson
 ------------------------------------------------------------------------------
 
 You can add a new unit plan and/or lesson by following this flowchart.
@@ -122,7 +122,7 @@ If a lesson requires new learning outcomes or curriculum links, see
 
 .. _adding-topics-content-follow-up-activity:
 
-Adding a follow up activity
+Adding a Follow Up Activity
 ------------------------------------------------------------------------------
 
 You can add a new follow up activity by following this flowchart.
@@ -147,7 +147,7 @@ If a follow up activity requires new curriculum links, see
 
 .. _adding-topics-content-programming-exercise:
 
-Adding a programming exercise
+Adding a Programming Exercise
 ------------------------------------------------------------------------------
 
 You can add a new programming exercise by following this flowchart.
@@ -174,7 +174,7 @@ If a programming exercise requires new learning outcomes, see
 
 .. _adding-topics-content-learning-outcomes-curriculum-links:
 
-Adding learning outcomes and/or curriculum links
+Adding Learning Outcomes and/or Curriculum Links
 ------------------------------------------------------------------------------
 
 You can add a new programming exercise by following this flowchart.

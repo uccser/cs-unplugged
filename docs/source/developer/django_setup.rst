@@ -1,9 +1,9 @@
-Django setup
+Django Setup
 ##############################################################################
 
 This page covers the configuration of Django for this project.
 
-Django overview
+Django Overview
 ==============================================================================
 
 We aim to create and clear Django system for ease of development.
@@ -24,7 +24,7 @@ The Django system currently contains the following applications:
   programming exercises, etc).
 - ``resources/`` - For translatable PDF resources with random elements.
 
-Database structure
+Database Structure
 ==============================================================================
 
 The following image shows the relationships between models across all

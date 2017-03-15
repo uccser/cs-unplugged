@@ -1,4 +1,4 @@
-Basic project commands
+Basic Project Commands
 ##############################################################################
 
 This page covers basic Django and system commands that both authors and
@@ -11,7 +11,7 @@ developers will use when using the CS Unplugged system.
   and also have a basic understanding of the
   :doc:`project structure <project_structure>`.
 
-Quick start
+Quick Start
 ==============================================================================
 
 Run the following commands in a terminal from within the

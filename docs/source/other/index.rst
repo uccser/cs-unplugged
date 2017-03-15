@@ -1,4 +1,4 @@
-Other documentation
+Other Documentation
 ##############################################################################
 
 .. toctree::

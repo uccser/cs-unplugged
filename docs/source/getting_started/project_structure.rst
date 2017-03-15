@@ -1,4 +1,4 @@
-Project structure
+Project Structure
 ###########################################
 
 This page covers the structure of the CS Unplugged project.
@@ -6,7 +6,7 @@ The following diagram will be helpful when reading the following sections:
 
 .. include:: ../_static/html_snippets/project_directory_tree.rst
 
-Repository directory
+Repository Directory
 =================================================
 
 The repository directory (or root directory) contains the following:
@@ -36,7 +36,7 @@ The repository directory (or root directory) contains the following:
 
 - Plus other files used for installation and repository configuration.
 
-csunplugged directory
+csunplugged Directory
 =================================================
 
 The ``csunplugged/`` directory holds the Django web system and is split across

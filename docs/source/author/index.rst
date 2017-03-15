@@ -1,4 +1,4 @@
-Author documentation
+Author Documentation
 ##############################################################################
 
 The following pages are for those wanting to write or edit CS Unplugged content.

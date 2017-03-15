@@ -1,4 +1,4 @@
-Resources application
+Resources Application
 ##############################################################################
 
 This page covers the resources application, including:

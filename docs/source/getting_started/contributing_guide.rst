@@ -1,11 +1,11 @@
-Contributing guide
+Contributing Guide
 ##############################################################################
 
 This page lists a set of guidelines for contributing to the project.
 These are just guidelines, not rules, use your best judgment and feel
 free to propose changes to this document in a pull request.
 
-Reporting issues and making suggestions
+Reporting Issues and Making Suggestions
 ==============================================================================
 
 This section guides you through submitting an issue or making a suggestion
@@ -13,7 +13,7 @@ for the CS Unplugged project.
 Following these guidelines helps maintainers and the community understand
 your findings.
 
-Before submitting an issue
+Before Submitting an Issue
 ------------------------------------------------------------------------------
 
 - `Search the issue tracker for the issue/suggestion`_ to see if it has
@@ -21,7 +21,7 @@ Before submitting an issue
   If it has, add a comment to the existing issue (even if the issue is closed)
   instead of opening a new one.
 
-How do I submit a (good) issue or suggestion?
+How do I Submit a Good Issue or Suggestion?
 ------------------------------------------------------------------------------
 
 Issues are tracked in the GitHub issue tracker (if you've never used
@@ -29,7 +29,7 @@ GitHub issues before, read this `10 minute guide to become a master`_).
 When creating an issue, explain the problem and include additional details to
 help maintainers understand or reproduce the problem:
 
-For reporting an issue
+For Reporting an Issue
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - **Use a clear and descriptive title** for the issue to identify the problem.
@@ -55,7 +55,7 @@ If the issues is a code related issue, also include the following:
 - **If the problem is related to performance**, please provide
   specifications of your computer.
 
-For making a suggestion
+For Making a Suggestion
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Explain the suggestion and include additional details to help maintainers
@@ -70,13 +70,13 @@ understand the changes:
   the project.
 - **Link any related existing suggestions**.
 
-Your first code contribution (pull request)
+Your First Code Contribution (pull request)
 ==============================================================================
 
 Unsure where to begin contributing to CS Unplugged?
 You can start by looking through the `issue tracker`_.
 
-Pull requests
+Pull Requests
 ------------------------------------------------------------------------------
 
 - **Include a detailed explaination** of the proposed change, including
@@ -98,7 +98,7 @@ Pull requests
 We aim to keep the CS Unplugged project as robust as possible, so please do
 your best to ensure your changes won't break anything!
 
-Style guides
+Style Guides
 ==============================================================================
 
 Git
@@ -116,7 +116,7 @@ Git
   for managing development.
   Please read this document to understand our branching methods.
 
-Project structure
+Project Structure
 ------------------------------------------------------------------------------
 
 - Directories should be all lowercase with dashes for spaces.

@@ -1,4 +1,4 @@
-Topics application
+Topics Application
 ##############################################################################
 
 This page covers the topics application, including:

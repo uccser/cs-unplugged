@@ -1,4 +1,4 @@
-Writing guide
+Writing Guide
 ##############################################################################
 
 The majority of our text content is written in Markdown, and we also developed
@@ -229,7 +229,7 @@ will function properly when converted to HTML and viewed on the website.
 Links to pages are referenced from the language directory within the
 ``content/`` directory (see examples below).
 
-Link to page within website (relative link - Kordac feature)
+Link to Page Within Website (relative link - Kordac feature)
 ------------------------------------------------------------------------------
 
 You can refer to a page by writing the page name with ``.html`` at the end.
@@ -244,7 +244,7 @@ See the examples below:
 
 `Click here to read the documentation on how to create a relative link`_.
 
-Link to heading on page within website
+Link to Heading on Page Within Website
 ------------------------------------------------------------------------------
 
 You can refer to a subsection on a page by following the same syntax as above
@@ -260,7 +260,7 @@ on the end of the anchor link.
 
   Check out the [objectives of the binary numbers unit plan](topics/binary-numbers/unit-plan.html#objectives).
 
-Link to a page outside of website (external link)
+Link to a Page Outside of Website (external link)
 ------------------------------------------------------------------------------
 
 These are links to websites that are not a part of the CS Unplugged project.
@@ -270,13 +270,13 @@ The URL should include the ``https://`` or ``http://`` as required.
 
   Check out [Google's website](https://www.google.com).
 
-Create a link on an image (Kordac feature)
+Create a Link on an Image (Kordac feature)
 ------------------------------------------------------------------------------
 
 Images should now be linked using the ``caption-link`` and ``source`` tag
 parameters for including an image.
 
-Create a link on a button (Kordac feature)
+Create a Link on a Button (Kordac feature)
 ------------------------------------------------------------------------------
 
 `Click here to read the documentation on how to add a button link`_.
