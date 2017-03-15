@@ -221,19 +221,55 @@ The location of this file is within a language file, and it must be named:
 
 This file must contain the following key/value pairs:
 
+- ``learning-outcomes`` - The path to the configuration file for learning outcomes.
+  This file lists learning outcomes for all topics.
+
+  - For example:
+
+    .. code-block:: yaml
+
+      learning-outcomes: learning-outcomes.yaml
+
+- ``curriculum-links`` - The path to the configuration file for curriculum
+  links.
+  This file lists curriculum links for all topics.
+
+  - For example:
+
+    .. code-block:: yaml
+
+      curriculum-links: curriculum-links.yaml
+
+- ``programming-exercises-structure`` - The path to the configuration file for
+  programming exercises structure.
+  This file defines languages and difficulty levels for all programming
+  exercises.
+
+  - For example:
+
+    .. code-block:: yaml
+
+      programming-exercises-structure: programming-exercises-structure.yaml
+
+- ``topic-structure-files`` - A list of paths to the configuration file for
+  each topic to be included.
+  The order of topics here defines their order on the website.
+
+  - For example:
+
+    .. code-block:: yaml
+
+      topic-structure-files:
+        - binary-numbers/binary-numbers.yaml
+        - error-detection-correction/error-detection-correction.yaml
+
+A complete application structure file may look like the following:
+
 .. code-block:: yaml
 
-  # Learning outcomes for all topics
   learning-outcomes: learning-outcomes.yaml
-
-  # Curriculum links for all topics
   curriculum-links: curriculum-links.yaml
-
-  # Defines languages and difficulty levels for all programming exercises
   programming-exercises-structure: programming-exercises-structure.yaml
-
-  # Lists all topics to include in CS Unplugged project
-  # The order of topics here defines their order on the website
   topic-structure-files:
     - binary-numbers/binary-numbers.yaml
     - error-detection-correction/error-detection-correction.yaml
@@ -251,45 +287,87 @@ This file is listed in the :ref:`application-structure-file`.
 
 This file must contain the following key/value pairs:
 
-.. code-block:: yaml
+- ``slug`` - The URL slug for this topic (see :ref:`what-is-a-slug`).
 
-  # The URL slug for the topic
-  slug: binary-numbers
+  - For example:
 
-  # The Markdown file containing the description of the topic
-  # This is essentially the text for the webpage for the topic
-  # The file path is relative to this YAML file
-  md-file: index.md
+    .. code-block:: yaml
 
-  # An image icon used for the topic within the static directory
-  # The path is from the top of the static directory
-  icon: img/binary-numbers-0-1.png
+      slug: binary-numbers
 
-.. note::
+- ``md-file`` - The Markdown file containing the description of the topic.
+  This is essentially the text for the webpage for the topic.
+  The name of the topic is retrieved from the first header in this file.
+  The file path is relative to the YAML file.
 
-  The name of the topic is retrieved from the first header in the
-  ``md-file``.
+  - For example:
+
+    .. code-block:: yaml
+
+      md-file: index.md
+
+- ``icon`` - The image icon used for the topic within the static directory.
+  The path is from the top of the static directory.
+
+  - For example:
+
+    .. code-block:: yaml
+
+      icon: img/binary-numbers-0-1.png
 
 The file may also contain any of the following optional key/value pairs:
 
+- ``unit-plans`` - A list of unit plan configuaration files for this topic.
+  The order here defines their order on the website.
+  The file path is relative to the YAML file.
+
+  - For example:
+
+    .. code-block:: yaml
+
+      unit-plans:
+        - unit-plan/unit-plan.yaml
+
+- ``programming-exercises`` - A configuaration file defining programming
+  exercises for the topic.
+  The file path is relative to the YAML file.
+
+  - For example:
+
+    .. code-block:: yaml
+
+      programming-exercises: programming-exercises/programming-exercises.yaml
+
+- ``follow-up-activities`` - A configuaration file defining follow up
+  activities for the topic.
+  The file path is relative to the YAML file.
+
+  - For example:
+
+    .. code-block:: yaml
+
+      follow-up-activities: follow-up-activities/follow-up-activities.yaml
+
+- ``other-resources-md-file`` - A Markdown file describing other resources.
+  The file path is relative to the YAML file.
+
+  - For example:
+
+    .. code-block:: yaml
+
+      other-resources-md-file: other-resources.md
+
+A complete topic file may look like the following:
+
 .. code-block:: yaml
 
-  # A list of unit plan configuaration files for this topic
-  # The order here defines their order on the website
-  # The file paths are relative to this YAML file
+  slug: binary-numbers
+  md-file: index.md
+  icon: img/binary-numbers-0-1.png
   unit-plans:
     - unit-plan/unit-plan.yaml
-
-  # A configuaration file defining programming exercises for the topic
-  # The file path is relative to this YAML file
   programming-exercises: programming-exercises/programming-exercises.yaml
-
-  # A configuaration file defining follow up activities for the topic
-  # The file path is relative to this YAML file
   follow-up-activities: follow-up-activities/follow-up-activities.yaml
-
-  # A Markdown file describing other resources
-  # The file path is relative to this YAML file
   other-resources-md-file: other-resources.md
 
 .. _unit-plan-file:
@@ -305,81 +383,150 @@ These files are listed in a :ref:`topic-file`.
 
 This file must contain the following key/value pairs:
 
-.. code-block:: yaml
+- ``slug`` - The URL slug for this unit plan (see :ref:`what-is-a-slug`).
+  We recommend using 'unit-plan' for the first unit-plan for each topic
 
-  # The URL slug for the unit plan
-  # We recommend using 'unit-plan' for the first unit-plan for each topic
-  slug: unit-plan
+  - For example:
 
-  # The Markdown file containing the description of the unit plan
-  # This is essentially the text for the webpage for the unit plan
-  # The file path is relative to this YAML file
-  md-file: unit-plan.md
+    .. code-block:: yaml
 
-  # Key containing all lesson data
-  lessons:
-    # The URL slug of the lesson
-    # We don't recommend using numbered slugs as ordering may change but
-    # slug should be consistent.
-    lesson-1:
-      # The minimum age this lesson is suitable for
-      minimum-age: 5
-      # The maximum age this lesson is suitable for
-      maximum-age: 7
-      # The number order for this lesson
-      # Lessons are sorted by minimum age, maximum age, then number
-      # so lessons in different age ranges can use the same number
-      # without conflict.
-      number: 1
+      slug: unit-plan
 
-      # The Markdown file containing the description of the lesson
-      # This is essentially the text for the webpage for the lesson
-      # The file path is relative to this YAML file
-      md-file: lessons/5-7/lesson-1.md
+- ``md-file`` - The Markdown file containing the description of the topic.
+  This is essentially the text for the webpage for the topic.
+  The name of the unit plan is retrieved from the first header in this file.
+  The file path is relative to the YAML file.
 
-Lessons may also contain any of the following key/value pairs (same
-indentation as ``minimum-age``, ``maximum-age``, ``number``, etc):
+  - For example:
 
-.. code-block:: yaml
+    .. code-block:: yaml
 
-  # The Markdown file containing the content for the handout of the lesson
-  # This is essentially the text for the webpage for the handout
-  # The file path is relative to this YAML file
-  handout: lessons/5-7/lesson-1-handout.md
+      md-file: index.md
 
-  # The slugs for the learning outcomes for this lesson
-  learning-outcomes:
-    - binary-data-representation
-    - binary-count
-    - binary-convert-decimal
-    - binary-justify-representation
+- ``lessons`` - A key containing all lesson slugs (see :ref:`what-is-a-slug`),
+  and these lesson slugs contain the lesson data.
+  We don't recommend using numbered slugs (for example: ``lesson-1``) as
+  ordering may change but a slug should never change.
 
-  # The slugs for the curriculum links for this lesson
-  curriculum-links:
-    - maths
+  - For example:
 
-  # A list of Markdown text of classroom resources required for this lesson
-  resources-classroom:
-    - Pens
-    - String
+    .. code-block:: yaml
 
-  # A list of resources generated by CS Unplugged system
-  # Each resource listed requires the following two keys:
-  #   slug: The slug of the resource in the resources app
-  #   description: Markdown text describing the use of the resource
-  resources-generated:
-    - slug: sorting-network
-      description: One copy per student
-    - slug: treasure-hunt
-      description: One copy per student
+      lessons:
+        introduction-to-bits:
+          ...lesson data here...
+        counting-bits:
+          ...lesson data here...
 
-.. note::
+  - Each lesson slug must contain the following values:
 
-  The name of the unit plan is retrieved from the first header in the
-  ``md-file``.
+    - ``md-file`` - The Markdown file containing the description of the lesson.
+      This is essentially the text for the webpage for the lesson.
+      The name of the lesson is retrieved from the first header in this file.
+      The file path is relative to the YAML file.
 
-  The name of lessons are retrieved from the first header in their
-  ``md-file``.
+      - For example:
+
+        .. code-block:: yaml
+
+          md-file: introduction-to-bits/index.md
+
+    - ``minimum-age`` - The minimum age this lesson is suitable for.
+
+      - For example:
+
+        .. code-block:: yaml
+
+          minimum-age: 5
+
+    - ``maximum-age`` - The maximum age this lesson is suitable for.
+
+      - For example:
+
+        .. code-block:: yaml
+
+          minimum-age: 7
+
+    - ``number`` - The number order for this lesson.
+      Lessons are sorted by minimum age, maximum age, then number
+      so lessons in different age ranges can use the same number
+      without conflict.
+
+      - For example:
+
+        .. code-block:: yaml
+
+          number: 1
+
+  - Each lesson may also contain any of the following key/value pairs
+    (same indentation as ``minimum-age``, ``maximum-age``, etc):
+
+    - ``handout`` - The Markdown file containing the content for the handout
+      of the lesson.
+      This is essentially the text for the webpage/printout for the handout.
+      The file path is relative to the YAML file.
+
+      - For example:
+
+        .. code-block:: yaml
+
+          handout: introduction-to-bits/handout.md
+
+    - ``learning-outcomes`` - A list of slugs for the learning outcomes for
+      this lesson.
+      The slugs are defined in the :ref:`learning-outcomes-file`.
+
+      - For example:
+
+        .. code-block:: yaml
+
+          learning-outcomes:
+            - binary-data-representation
+            - binary-count
+            - binary-convert-decimal
+            - binary-justify-representation
+
+    - ``curriculum-links`` - A list of slugs for the curriculum links for
+      this lesson.
+      The slugs are defined in the :ref:`curriculum-links-file`.
+
+      - For example:
+
+        .. code-block:: yaml
+
+          curriculum-links:
+            - maths
+
+    - ``resources-classroom`` - A list of Markdown text of classroom resources
+      required for this lesson resources-classroom.
+
+      - For example:
+
+        .. code-block:: yaml
+
+          resources-classroom:
+            - Pens
+            - String
+
+    - ``resources-generated`` - A list of resources generated by CS Unplugged
+      system.
+
+      - Each resource listed requires the following two keys:
+
+        - ``slug`` - The slug of the resource in the resources app
+          (see :ref:`what-is-a-slug`).
+
+        - ``description`` - Markdown text describing the use of the resource.
+
+      - For example:
+
+        .. code-block:: yaml
+
+          resources-generated:
+            - slug: sorting-network
+              description: One copy per student
+            - slug: treasure-hunt
+              description: One copy per student
 
 An example unit plan configuaration file with multiple lessons may look like
 the following:
@@ -389,12 +536,12 @@ the following:
   slug: unit-plan
   md-file: unit-plan.md
   lessons:
-    lesson-1:
+    introduction-to-bits:
       minimum-age: 5
       maximum-age: 7
       number: 1
-      md-file: lessons/5-7/lesson-1.md
-      handout: lessons/5-7/lesson-1-handout.md
+      md-file: introduction-to-bits/index.md
+      handout: introduction-to-bits/handout.md
       learning-outcomes:
         - binary-data-representation
         - binary-count
@@ -408,15 +555,13 @@ the following:
       resources-generated:
         - slug: sorting-network
           description: One copy per student
-        - slug: sorting-network
-          description: One copy per student
 
-    lesson-2:
+    counting-bits:
       minimum-age: 5
       maximum-age: 7
       number: 2
-      md-file: lessons/5-7/lesson-2.md
-      handout: lessons/5-7/lesson-2-handout.md
+      md-file: counting-bits/index.md
+      handout: counting-bits/handout.md
       learning-outcomes:
         - binary-data-representation
         - binary-count
@@ -426,12 +571,12 @@ the following:
       resources-classroom:
         - Pens
 
-    lesson-3:
-      minimum-age: 5
-      maximum-age: 7
-      number: 3
-      md-file: lessons/5-7/lesson-3.md
-      handout: lessons/5-7/lesson-3-handout.md
+    a-byteful-of-data:
+      minimum-age: 8
+      maximum-age: 10
+      number: 1
+      md-file: a-byteful-of-data/index.md
+      handout: a-byteful-of-data/handout.md
       learning-outcomes:
         - binary-convert-decimal
         - binary-justify-representation
@@ -457,21 +602,54 @@ each activity has a unique slug URL within the topic.
 
 The file should have the following key/value pair structure:
 
-.. code-block:: yaml
+- **Activity slugs** - A slug listed for each follow up activity
+  (see :ref:`what-is-a-slug`).
+  We don't recommend using numbered slugs (for example: ``activity-1``) as
+  ordering may change but a slug should never change.
 
-  # The URL slug for the follow up activity
-  painting-parity:
-    # This number is used for ordering follow up activities
-    number: 1
+  - For example:
 
-    # The Markdown file containing the description of the activity
-    # This is essentially the text for the webpage for the activity
-    # The file path is relative to this YAML file
-    md-file: painting-parity.md
+    .. code-block:: yaml
 
-    # The slugs for the curriculum links for this activity
-    curriculum-links:
-      - arts
+      binary-number-bracelets:
+        ...activity data here...
+      hidden-binary-signals:
+        ...activity data here...
+
+  - Each follow up activity slug must contain the following values:
+
+    - ``md-file`` - The Markdown file containing the description of the follow
+      up activity.
+      This is essentially the text for the webpage for the activity.
+      The name of the activity is retrieved from the first header in this file.
+      The file path is relative to the YAML file.
+
+      - For example:
+
+        .. code-block:: yaml
+
+          md-file: binary-number-bracelets/index.md
+
+    - ``number`` - The number order for this follow up activity.
+      Activities are sorted this number.
+
+      - For example:
+
+        .. code-block:: yaml
+
+          number: 1
+
+
+    - ``curriculum-links`` - A list of slugs for the curriculum links for
+      this follow up activity.
+      The slugs are defined in the :ref:`curriculum-links-file`.
+
+      - For example:
+
+        .. code-block:: yaml
+
+          curriculum-links:
+            - maths
 
 An example follow up activities configuaration file with multiple activities
 may look like the following:
@@ -491,11 +669,6 @@ may look like the following:
     curriculum-links:
       - science
 
-.. note::
-
-  The name of follow up activites are retrieved from the first header in the
-  ``md-file`` for each activity.
-
 .. _programming-exercises-structure-file:
 
 Programming Exercises Structure File
@@ -511,16 +684,72 @@ This file can contain as many languages and difficulties as you like.
 
 The file should have the following key/value pair structure:
 
+- ``languages`` - A key containing all language slugs
+  (see :ref:`what-is-a-slug`) for available languages for implementations of
+  programming execises.
+  These slugs contain the language data.
+
+  - For example:
+
+    .. code-block:: yaml
+
+      lessons:
+        python:
+          ...language data here...
+        scratch:
+          ...language data here...
+
+  - Each language slug must contain the following values:
+
+    - ``name`` - The name of the language implementation.
+
+      - For example:
+
+        .. code-block:: yaml
+
+          name: Scratch
+
+    - ``icon`` - The image icon used for the language within the static
+      directory.
+      The path is from the top of the static directory.
+
+      - For example:
+
+        .. code-block:: yaml
+
+          icon: img/scratch-cat.png
+
+
+- ``difficulties`` - A list of available difficulties for programming execises.
+  The difficulties are stored in a list for easier reading but will
+  be displayed by sorting the level attribute from smallest to largest.
+
+  - Each difficulty list item must contain the following values:
+
+    - ``level`` - A number to represent the difficulty level level attribute
+      as a number (smaller = easier).
+
+      - For example:
+
+        .. code-block:: yaml
+
+          level: 1
+
+    - ``name`` - The name for the difficulty level to display to the user.
+
+      - For example:
+
+        .. code-block:: yaml
+
+          name: Beginner
+
+An complete programming exercise structure file may look like the following:
+
 .. code-block:: yaml
 
-  # Available languages for implementations of programming execises
   languages:
-    # The slug of the language implementation
     scratch:
-      # The name of the language implementation
       name: Scratch
-      # An image icon used for the topic within the static directory
-      # The path is from the top of the static directory
       icon: img/scratch-cat.png
     python:
       name: Python
@@ -529,13 +758,8 @@ The file should have the following key/value pair structure:
       name: C++
       icon: img/cplusplus-logo.png
 
-  # Available difficulties for programming execises
-  # The difficulties are stored in a list for easier reading but will
-  # be displayed by sorting the level attribute from smallest to largest.
   difficulties:
-      # A difficulty has a level attribute as a number (smaller = easier)
     - level: 1
-      # A difficult level has a name for displaying the level
       name: Beginner
     - level: 2
       name: Growing Experience
@@ -555,74 +779,143 @@ This file is listed in a :ref:`topic-file`.
 
 The file should have the following key/value pair structure:
 
+- **Programming exercise slugs** - A slug listed for each programming exercise
+  (see :ref:`what-is-a-slug`).
+  We don't recommend using numbered slugs (for example: ``exercise-1``) as
+  ordering may change but a slug should never change.
+
+  - For example:
+
+    .. code-block:: yaml
+
+      count-to-16:
+        ...exercise data here...
+      count-to-a-million:
+        ...exercise data here...
+
+  - Each programming exercise slug must contain the following values:
+
+    - ``md-file`` - The Markdown file containing the description of the
+      programming exercise.
+      This is essentially the text for the webpage for the exercise.
+      The name of the programming exercise is retrieved from the first header
+      in this file.
+      The file path is relative to the YAML file.
+
+      - For example:
+
+        .. code-block:: yaml
+
+          md-file: count-to-16/index.md
+
+    - ``number`` - The number order for this programming exercise.
+      Exercises are sorted this number.
+
+      - For example:
+
+        .. code-block:: yaml
+
+          number: 1
+
+    - ``difficulty-level`` - The difficulty level number for this programming
+      exercise.
+      The difficulty numbers are defined in
+      :ref:`rogramming-exercises-structure-file`.
+
+      - For example:
+
+        .. code-block:: yaml
+
+          difficulty-level: 1
+
+    - ``learning-outcomes`` - A list of slugs for the learning outcomes for
+      this lesson.
+      The slugs are defined in the :ref:`learning-outcomes-file`.
+
+      - For example:
+
+        .. code-block:: yaml
+
+          learning-outcomes:
+            - programming-sequence
+            - programming-one-input-output
+
+    - ``programming-languages`` - A key containing all programming language
+      slugs (see :ref:`what-is-a-slug`), and these language slugs contain the
+      language implementation data.
+      The slugs are defined in the :ref:`programming-exercises-structure-file`.
+
+      - For example:
+
+        .. code-block:: yaml
+
+          programming-languages:
+            python:
+              ...Python data here...
+            scratch:
+              ...Scratch data here...
+
+      - Each language slug must contain the following values:
+
+        - ``hints`` - The Markdown file containing the hints for the language
+          implementation of the exercise.
+          This is essentially the text for the hints section for this language
+          on the website for this exercise.
+          The file path is relative to the YAML file.
+
+          - For example:
+
+            .. code-block:: yaml
+
+              hints: count-to-16/scratch-hints.md
+
+
+      - Each language slug must contain the following values:
+
+        - ``solution`` - The Markdown file containing the solution for the
+          language implementation of the exercise.
+          This is essentially the text for the solution section for this
+          language on the website for this exercise.
+          The file path is relative to the YAML file.
+
+          - For example:
+
+            .. code-block:: yaml
+
+              solution: count-to-16/scratch-solution.md
+
+A complete programming exercise file may look like the following:
+
 .. code-block:: yaml
 
-  # The URL slug for the unit plan
   count-to-16:
-    # The number of the exercise
     number: 1
-    # The number for difficulty level for this exercise
     difficulty-level: 1
-    # Activities are usually displayed in difficuly, then number order
-
-    # The Markdown file containing the description of the exercise
-    # This is essentially the text for the webpage for the exercise
-    # The file path is relative to this YAML file
-    md-file: exercise-1.1/index.md
-
-    # The slugs for the learning outcomes for this lesson
+    md-file: count-to-16/index.md
     learning-outcomes:
       - programming-sequence
       - programming-one-input-output
-
-    # The programming implementations for this exercise
-    programming-languages:
-      # The slug for the programming language
-      scratch:
-        # The Markdown file containing the hints for this programming language
-        # implementation of this exercise
-        # The file path is relative to this YAML file
-        hints: exercise-1.1/scratch-hints.md
-        # The Markdown file containing the solution for this programming
-        # language implementation of this exercise
-        # The file path is relative to this YAML file
-        solution: exercise-1.1/scratch-solution.md
-
-.. note::
-
-  The name of programming exercises are retrieved from the first header in the
-  ``md-file`` for each exercise.
-
-.. code-block:: yaml
-
-  count-to-16:
-    number: 1
-    difficulty-level: 1
-    md-file: exercise-1.1/index.md
-    learning-outcomes:
-      - programming-sequence
-      - programming-one-input-output
     programming-languages:
       scratch:
-        hints: exercise-1.1/scratch-hints.md
-        solution: exercise-1.1/scratch-solution.md
+        hints: count-to-16/scratch-hints.md
+        solution: count-to-16/scratch-solution.md
       python:
-        hints: exercise-1.1/python-hints.md
-        solution: exercise-1.1/python-solution.md
+        hints: count-to-16/python-hints.md
+        solution: count-to-16/python-solution.md
 
   count-to-a-million:
     number: 2
     difficulty-level: 3
-    md-file: exercise-2/index.md
+    md-file: count-to-a-million/index.md
     learning-outcomes:
       - programming-basic-logic
     programming-languages:
       scratch:
-        hints: exercise-2/scratch-hints.md
-        solution: exercise-2/scratch-solution.md
+        hints: count-to-a-million/scratch-hints.md
+        solution: count-to-a-million/scratch-solution.md
       python:
-        hints: exercise-2/python-hints.md
-        solution: exercise-2/python-solution.md
+        hints: count-to-a-million/python-hints.md
+        solution: count-to-a-million/python-solution.md
 
 .. _learning-outcomes-file:
 
@@ -635,7 +928,9 @@ The location of this file is within the language directory.
 This file is listed in a :ref:`application-structure-file`.
 This file can contain as many learning outcomes as you like.
 
-The file should only contain pairs of outcome slug to outcome text pairs.
+The file should only contain pairs of outcome slug (see :ref:`what-is-a-slug`)
+to outcome text pairs.
+
 For example:
 
 .. code-block:: yaml
@@ -660,20 +955,26 @@ This file defines the curriculum links avilable for all topics.
 The location of this file is within the language directory.
 This file is listed in a :ref:`application-structure-file`.
 This file can contain as many curriculum links as you like.
+Lessons and follow up activities link to curriculums by listing their
+slug.
 
 The file should have the following key/value pairs:
 
-.. code-block:: yaml
+- **Curriculum link slugs** - A slug listed for each curriculum link
+  (see :ref:`what-is-a-slug`).
 
-  # The URL slug for the curriculum link
-  maths:
-    # The display name for the curriculum
-    name: maths
+  - For example:
 
-.. note::
+    .. code-block:: yaml
 
-  Lessons and follow up activities link to curriculums by listing their
-  slug.
+      maths:
+        ...math data here...
+      science:
+        ...science data here...
+
+  - Each curriculum link slug must contain the following values:
+
+    - ``name`` - The text for the curriculum link for displaying to the user.
 
 An example curriculum links file with multiple curriculums may look like
 the following:
