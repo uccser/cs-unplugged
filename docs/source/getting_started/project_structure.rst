@@ -11,17 +11,17 @@ Repository Directory
 
 The repository directory (or root directory) contains the following:
 
-- ``csunplugged/`` directory
+- ``csunplugged/``
 
   - This directory contains the Django web system for the CS Unplugged website.
     This includes all raw text content, images, resources, etc.
 
-- ``docs/`` directory
+- ``docs/``
 
   - This directory contains the documentation for the repository (which includes
     the file you are reading now).
 
-- ``subtitles/`` directory
+- ``subtitles/``
 
   - This directory contains subtitle files for CS Unplugged videos.
 
