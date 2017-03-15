@@ -1,4 +1,4 @@
-Topics application
+Topic content
 ##############################################################################
 
 The topics application (see :ref:`what-is-an-application`) is the main focus of the CS Unplugged website, as it
