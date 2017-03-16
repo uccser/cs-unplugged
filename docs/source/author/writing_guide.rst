@@ -87,6 +87,10 @@ Code
 You are able to include code snippets, either in a line of text or as a new
 block.
 
+To include inline code, add a backtick to either side of the code.
+For example: \`print("Hi")\` will display as ``print("Hi")``.
+You cannot set the language syntax highlighting for inline code.
+
 To create a code block, use a line of three backticks before and after the
 code. You also can add syntax highlighting by specifying the language after
 the first set of backticks (`list of language codes`_).
@@ -118,10 +122,6 @@ the first set of backticks (`list of language codes`_).
               if score > highest_so_far:
                   highest_so_far = score
           return highest_so_far
-
-To include inline code, add a backtick to either side of the code.
-For example: \`print("Hi")\` will display as ``print("Hi")``.
-You cannot set the language syntax highlighting for inline code.
 
 ------------------------------------------------------------------------------
 
