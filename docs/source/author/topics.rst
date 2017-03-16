@@ -84,7 +84,7 @@ You can add a new topic by following this flowchart.
     <area shape="rect" coords="215,90,317,127" href="#topics-content-directory">
     <area shape="rect" coords="215,200,317,234" href="#topic-file">
     <area shape="rect" coords="215,307,317,343" href="#application-structure-file">
-    <area shape="rect" coords="215,425,317,460" href="../getting_started/basic_usage.html#command-manage-loaddata">
+    <area shape="rect" coords="215,425,317,460" href="../getting_started/basic_usage.html#command-manage-updatedata">
     <area shape="rect" coords="215,541,317,576" href="../getting_started/basic_usage.html#command-manage-runserver">
     <area shape="rect" coords="215,658,317,694" href="../getting_started/basic_usage.html#command-gulp">
   </map>
@@ -114,7 +114,7 @@ If a lesson requires new learning outcomes or curriculum links, see
     <area shape="rect" coords="284,930,387,965" href="#topics-content-directory">
     <area shape="rect" coords="284,1172,387,1206" href="#unit-plan-file">
     <area shape="rect" coords="284,1294,387,1329" href="#unit-plan-file">
-    <area shape="rect" coords="229,1471,333,1504" href="../getting_started/basic_usage.html#command-manage-loaddata">
+    <area shape="rect" coords="229,1471,333,1504" href="../getting_started/basic_usage.html#command-manage-updatedata">
     <area shape="rect" coords="229,1589,333,1622" href="../getting_started/basic_usage.html#command-manage-runserver">
     <area shape="rect" coords="229,1704,333,1738" href="../getting_started/basic_usage.html#command-gulp">
   </map>
@@ -139,7 +139,7 @@ If a follow up activity requires new curriculum links, see
   <area shape="rect" coords="283,571,387,607" href="#follow-up-activities-file">
   <area shape="rect" coords="283,688,387,723" href="#topic-file">
   <area shape="rect" coords="283,939,387,973" href="#follow-up-activities-file">
-  <area shape="rect" coords="216,1088,319,1124" href="../getting_started/basic_usage.html#command-manage-loaddata">
+  <area shape="rect" coords="216,1088,319,1124" href="../getting_started/basic_usage.html#command-manage-updatedata">
   <area shape="rect" coords="216,1206,319,1240" href="../getting_started/basic_usage.html#command-manage-runserver">
   <area shape="rect" coords="216,1325,319,1358" href="../getting_started/basic_usage.html#command-gulp">
   </map>
@@ -166,7 +166,7 @@ If a programming exercise requires new learning outcomes, see
     <area shape="rect" coords="284,805,387,841" href="#topics-content-directory">
     <area shape="rect" coords="284,1074,387,1110" href="#programming-exercises-file">
     <area shape="rect" coords="349,1542,452,1578" href="#programming-exercises-file">
-    <area shape="rect" coords="216,1709,319,1744" href="../getting_started/basic_usage.html#command-manage-loaddata">
+    <area shape="rect" coords="216,1709,319,1744" href="../getting_started/basic_usage.html#command-manage-updatedata">
     <area shape="rect" coords="216,1826,319,1860" href="../getting_started/basic_usage.html#command-manage-runserver">
     <area shape="rect" coords="216,1943,319,1977" href="../getting_started/basic_usage.html#command-gulp">
   </map>
@@ -857,6 +857,18 @@ The file should have the following key/value pair structure:
 
       - Each language slug must contain the following values:
 
+        - ``expected-result`` - The Markdown file containing the expected
+          result for the language implementation of the exercise.
+          This is essentially the text for the expected result section for
+          this language on the website for this exercise.
+          The file path is relative to the YAML file.
+
+          - For example:
+
+            .. code-block:: yaml
+
+              expected-result: count-to-16/scratch-expected.md
+
         - ``hints`` - The Markdown file containing the hints for the language
           implementation of the exercise.
           This is essentially the text for the hints section for this language
@@ -868,9 +880,6 @@ The file should have the following key/value pair structure:
             .. code-block:: yaml
 
               hints: count-to-16/scratch-hints.md
-
-
-      - Each language slug must contain the following values:
 
         - ``solution`` - The Markdown file containing the solution for the
           language implementation of the exercise.
@@ -897,9 +906,11 @@ A complete programming exercise file may look like the following:
       - programming-one-input-output
     programming-languages:
       scratch:
+        expected-result: count-to-16/scratch-expected.md
         hints: count-to-16/scratch-hints.md
         solution: count-to-16/scratch-solution.md
       python:
+        expected-result: count-to-16/python-expected.md
         hints: count-to-16/python-hints.md
         solution: count-to-16/python-solution.md
 
@@ -911,9 +922,11 @@ A complete programming exercise file may look like the following:
       - programming-basic-logic
     programming-languages:
       scratch:
+        expected-result: count-to-a-million/scratch-expected.md
         hints: count-to-a-million/scratch-hints.md
         solution: count-to-a-million/scratch-solution.md
       python:
+        expected-result: count-to-a-million/python-expected.md
         hints: count-to-a-million/python-hints.md
         solution: count-to-a-million/python-solution.md
 

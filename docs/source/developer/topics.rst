@@ -23,5 +23,5 @@ Storing the content within the Git repository gives us greater control on
 reviewing and accepted proposed changes to content.
 
 The management command for updating the applications data is ``loadtopics``
-(which is automatically called when running ``loaddata``), and can be found at
+(which is automatically called when running ``updatedata``), and can be found at
 ``management/commands/loadtopics.py``.

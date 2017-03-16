@@ -26,7 +26,7 @@ to preview the work you have done.
 .. code-block:: bash
 
   $ python3 manage.py migrate
-  $ python3 manage.py loaddata
+  $ python3 manage.py updatedata
   $ python3 manage.py runserver
 
 Open another terminal within the same ``cs-unplugged/csunplugged/`` directory:
@@ -65,9 +65,9 @@ have on your machine stays up to date with these changes.
 Official documentation on the `migrate command`_ can be found on the Django
 website.
 
-.. _command-manage-loaddata:
+.. _command-manage-updatedata:
 
-``$ python3 manage.py loaddata``
+``$ python3 manage.py updatedata``
 ==============================================================================
 
 This command runs loads data from the ``content`` directories found within the
@@ -99,7 +99,7 @@ We have a `Gulp`_ script to automate a bunch of tasks like copying and
 compressing images, compiling and compressing CSS, SCSS, and JavaScript,
 rendering Scratch block images, and displaying the website in an browser which
 automatically updates on template/CSS changes (note: the browser will not
-update for content changes as this requires the ``loaddata`` command to be
+update for content changes as this requires the ``updatedata`` command to be
 run).
 
 Running ``gulp`` from the command line will start this script, and open your
@@ -115,7 +115,7 @@ Once you have entered these commands, and are making changes to content, you
 can leave two terminal windows running, one with ``$ python3 manage.py runserver``
 running and one with ``$ gulp`` running.
 Each time you wish to preview your changes, open a third terminal and run the
-``$ python3 manage.py loaddata`` and refresh the web browser.
+``$ python3 manage.py updatedata`` and refresh the web browser.
 
 You are now ready to tackle the documentation for the area you wish to
 contribute on.

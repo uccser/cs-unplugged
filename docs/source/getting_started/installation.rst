@@ -291,7 +291,7 @@ in more detail on the next page):
 .. code-block:: bash
 
     $ python3 manage.py migrate
-    $ python3 manage.py loaddata
+    $ python3 manage.py updatedata
     $ python3 manage.py runserver
 
 Leave this terminal running and open a new terminal in the same

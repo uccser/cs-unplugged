@@ -31,7 +31,8 @@ class ProgrammingExerciseLoader(BaseLoader):
         programming_exercise = self.topic.topic_programming_exercises.create(
             slug=self.exercise_slug,
             name=content.title,
-            exercise_number=self.exercise_structure['number'],
+            exercise_set_number=self.exercise_structure['exercise-set-number'],
+            exercise_number=self.exercise_structure['exercise-number'],
             content=content.html_string,
             difficulty=ProgrammingExerciseDifficulty.objects.get(
                 level=self.exercise_structure['difficulty-level']
@@ -45,6 +46,10 @@ class ProgrammingExerciseLoader(BaseLoader):
             language_object = ProgrammingExerciseLanguage.objects.get(
                 slug=language
             )
+
+            expected_result_path = os.path.join(self.BASE_PATH, language_solutions[language]['expected-result'])
+            expected_result_content = self.convert_md_file(expected_result_path).html_string
+
             hint_path = os.path.join(self.BASE_PATH, language_solutions[language]['hints'])
             hint_content = self.convert_md_file(hint_path).html_string
 
@@ -52,6 +57,7 @@ class ProgrammingExerciseLoader(BaseLoader):
             solution_content = self.convert_md_file(solution_path).html_string
 
             implementation = ProgrammingExerciseLanguageImplementation.objects.create(
+                expected_result=expected_result_content,
                 hints=hint_content,
                 solution=solution_content,
                 language=language_object,
