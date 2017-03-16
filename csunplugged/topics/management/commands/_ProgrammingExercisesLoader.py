@@ -48,6 +48,9 @@ class ProgrammingExercisesLoader(BaseLoader):
                     language_object = ProgrammingExerciseLanguage.objects.get(
                         slug=language
                     )
+                    expected_result_path = self.BASE_PATH.format(language_solutions[language]['expected_result'])
+                    expected_result_content = self.convert_md_file(expected_result_path).html_string
+
                     hint_path = self.BASE_PATH.format(language_solutions[language]['hints'])
                     hint_content = self.convert_md_file(hint_path).html_string
 
@@ -55,6 +58,7 @@ class ProgrammingExercisesLoader(BaseLoader):
                     solution_content = self.convert_md_file(solution_path).html_string
 
                     solution = ProgrammingExerciseLanguageImplementation.objects.create(
+                        expected_result=expected_result_content,
                         hints=hint_content,
                         solution=solution_content,
                         language=language_object,

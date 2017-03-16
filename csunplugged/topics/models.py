@@ -175,6 +175,7 @@ class ProgrammingExerciseLanguageImplementation(models.Model):
         on_delete=models.CASCADE,
         related_name='implementations'
     )
+    expected_result = models.TextField()
     hints = models.TextField()
     solution = models.TextField()
 

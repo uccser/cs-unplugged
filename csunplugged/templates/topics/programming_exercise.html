@@ -31,6 +31,10 @@
         {{ implementation.language.name }}
       </h3>
 
+      <h4>Expected Result</h4>
+      {% render_html_field implementation.expected_result %}
+
+      <h4>Hints</h4>
       {% render_html_field implementation.hints %}
 
       <a href="{% url 'topics:programming_exercise_language_solution' programming_exercise.topic.slug programming_exercise.slug implementation.language.slug %}" class="btn btn-outline-danger">
