@@ -745,7 +745,7 @@ The file should have the following key/value pair structure:
 
           name: Beginner
 
-An complete programming exercise structure file may look like the following:
+A complete programming exercise structure file may look like the following:
 
 .. code-block:: yaml
 
