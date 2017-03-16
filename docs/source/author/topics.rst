@@ -56,7 +56,8 @@ the project's topic application, where:
 - Red is YAML configuration files (see :doc:`understanding_configuration_files`).
 - Green is Markdown text files.
 
-.. include:: ../_static/html_snippets/topics_content_directory_tree.rst
+.. raw:: html
+  :file: ../_static/html_snippets/topics_content_directory_tree.html
 
 .. _adding-topics-content:
 
@@ -206,7 +207,8 @@ The diagram below shows an example of YAML file locations for the
 - Blue is directories.
 - Red is YAML configuration files.
 
-.. include:: ../_static/html_snippets/topics_content_directory_tree_only_yaml.rst
+.. raw:: html
+  :file: ../_static/html_snippets/topics_content_directory_tree_only_yaml.html
 
 .. _application-structure-file:
 
