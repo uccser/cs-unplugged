@@ -33,6 +33,7 @@ class ProgrammingExercisesLoader(BaseLoader):
                 programming_exercise = self.topic.topic_programming_exercises.create(
                     slug=exercise['slug'],
                     name=content.title,
+                    exercise_set_number=exercise['exercise-set-number'],
                     exercise_number=exercise['exercise-number'],
                     content=content.html_string,
                     difficulty=ProgrammingExerciseDifficulty.objects.get(

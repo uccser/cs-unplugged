@@ -1,4 +1,5 @@
 - slug: count-to-16
+  exercise-set-number: 1
   exercise-number: 1
   difficulty-level: 1
   md-file: binary-numbers/programming-exercises/exercise-1.1/index.md
@@ -13,6 +14,7 @@
         hints: binary-numbers/programming-exercises/exercise-1.1/python-hints.md
         solution: binary-numbers/programming-exercises/exercise-1.1/python-solution.md
 - slug: count-to-a-million
+  exercise-set-number: 1
   exercise-number: 2
   difficulty-level: 3
   md-file: binary-numbers/programming-exercises/exercise-2/index.md

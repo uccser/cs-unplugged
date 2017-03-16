@@ -131,7 +131,8 @@ class ProgrammingExercise(models.Model):
     )
     slug = models.SlugField()
     name = models.CharField(max_length=200)
-    exercise_number = models.IntegerField()
+    exercise_set_number = models.PositiveSmallIntegerField()
+    exercise_number = models.PositiveSmallIntegerField()
     content = models.TextField()
     learning_outcomes = models.ManyToManyField(
         LearningOutcome,
