@@ -394,6 +394,8 @@ Table of Contents (Kordac feature)
 Tables
 ==============================================================================
 
+Tables can be created using the following syntax:
+
 .. code-block:: none
 
   Colons can be used to align columns.
@@ -404,8 +406,13 @@ Tables
   | col 2 is      | centered      |   $12 |
   | zebra stripes | are neat      |    $1 |
 
+.. raw:: html
+  :file: ../_static/html_snippets/markdown_example_table.html
+
 The outer pipes (|) are optional, and you don't need to make the raw Markdown
-line up prettily. You can also use inline Markdown.
+line up prettily, but there must be at least 3 dashes separating each header
+cell.
+You can also use inline Markdown.
 
 .. code-block:: none
 
@@ -414,20 +421,8 @@ line up prettily. You can also use inline Markdown.
   *Still* | `renders` | **nicely**
   1 | 2 | 3
 
-Colons can be used to align columns.
-
-.. code-block:: none
-
-  | Tables        | Are           | Cool |
-  | ------------- |:-------------:| -----:|
-  | col 3 is      | right-aligned | $1600 |
-  | col 2 is      | centered      |   $12 |
-  | zebra stripes | are neat      |    $1 |
-
-  Markdown | Less | Pretty
-  --- | --- | ---
-  *Still* | `renders` | **nicely**
-  1 | 2 | 3
+.. raw:: html
+  :file: ../_static/html_snippets/markdown_example_table_2.html
 
 ------------------------------------------------------------------------------
 

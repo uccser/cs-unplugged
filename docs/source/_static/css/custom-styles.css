@@ -8,12 +8,32 @@ div#tree-diagram {
   margin: 1em 0;
   font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;
 }
+
 div#tree-diagram span.directory {
   color: #2980B9;
 }
+
 div#tree-diagram span.file {
   color: #E74C3C;
 }
+
 div#tree-diagram span.text-file {
   color: #3FB322;
+}
+
+table.markdown-example {
+  margin-bottom: 1em;
+}
+
+table.markdown-example thead {
+  background-color: #DEE0E2;
+}
+
+table.markdown-example th,
+table.markdown-example td {
+    padding: 6px 13px;
+    border: 1px solid #CFD1D4;
+}
+table.markdown-example tr:nth-child(2n) {
+    background-color: #F1F1F1;
 }
