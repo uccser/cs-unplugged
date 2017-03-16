@@ -22,7 +22,7 @@ div#tree-diagram span.text-file {
 }
 
 table.markdown-example {
-  margin-bottom: 1em;
+  margin: 1em 0;
 }
 
 table.markdown-example thead {
