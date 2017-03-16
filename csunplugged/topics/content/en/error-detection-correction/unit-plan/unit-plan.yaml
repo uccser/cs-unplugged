@@ -1,14 +1,12 @@
-# Title for unit plan is extracted from md-file
-md-file: error-detection-correction/unit-plan/unit-plan.md
+md-file: unit-plan.md
 slug: unit-plan
 
 lessons:
-  - lesson-number: 1
-    slug: lesson-intro
-    min-age: 8
-    max-age: 10
-    md-file: error-detection-correction/unit-plan/lessons/8-10/lesson-1.md
-    # Title for lesson is extracted from md-file
+  lesson-intro:
+    minimum-age: 8
+    maximum-age: 10
+    number: 1
+    md-file: lessons/8-10/lesson-1.md
     learning-outcomes:
       - parity-justify-usage
     curriculum-links:

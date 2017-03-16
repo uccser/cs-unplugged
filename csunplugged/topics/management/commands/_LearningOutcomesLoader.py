@@ -1,3 +1,4 @@
+import os.path
 from django.db import transaction
 from utils.BaseLoader import BaseLoader
 from topics.models import LearningOutcome
@@ -14,11 +15,12 @@ class LearningOutcomesLoader(BaseLoader):
         """
         super().__init__(BASE_PATH)
         self.learning_outcomes_file = learning_outcomes_file
+        self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(learning_outcomes_file)[0])
 
     @transaction.atomic
     def load(self):
         """load the content for learning outcomes"""
-        learning_outcomes = self.load_yaml_file(self.BASE_PATH.format(self.learning_outcomes_file))
+        learning_outcomes = self.load_yaml_file(os.path.join(self.BASE_PATH, self.learning_outcomes_file))
         for (outcome_slug, outcome_text) in learning_outcomes.items():
             # Create outcome objects and save to db
             outcome = LearningOutcome(

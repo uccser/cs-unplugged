@@ -36,7 +36,7 @@ class TopicView(generic.DetailView):
         programming_exercises = ProgrammingExercise.objects.filter(topic=self.object)
         context['programming_exercises'] = programming_exercises.order_by('exercise_set_number', 'exercise_number')
         # Add in a QuerySet of all the connected follow up activities
-        context['follow_up_activities'] = FollowUpActivity.objects.filter(topic=self.object).order_by('name')
+        context['follow_up_activities'] = FollowUpActivity.objects.filter(topic=self.object).order_by('number')
         return context
 
 
@@ -175,7 +175,7 @@ class ActivityList(generic.ListView):
         """Return all activities for topic"""
         return FollowUpActivity.objects.filter(
             topic__slug=self.kwargs.get('topic_slug', None)
-        ).select_related().order_by('name')
+        ).select_related().order_by('number')
 
     def get_context_data(self, **kwargs):
         context = super(ActivityList, self).get_context_data(**kwargs)
