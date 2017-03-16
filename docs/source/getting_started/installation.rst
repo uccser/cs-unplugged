@@ -1,9 +1,9 @@
-Setting up for developement
+Installation Guide
 #################################################
 
 This page will set your machine up for working on the CS Unplugged project.
-You should only need to do these steps once (unless the required steps for
-setup change).
+You should only need to do these installation steps once (unless the required
+steps for setup change).
 
 Recommended Reading
 =================================================
@@ -20,7 +20,7 @@ reading a tutorial first on how to use them:
   system. You may need to adapt the instructions if you are working on
   Windows, OS X, etc.
 
-Step 1: Setup virtual machine (optional)
+Step 1: Setup Virtual Machine (optional)
 =================================================
 
 For those working on a computer in a restricted environment (for example:
@@ -28,42 +28,10 @@ a computer managed by an education insitution) or wish to be able to follow
 the following instructions exactly, then working in a **virtual machine** is
 recommended.
 
-The following steps are just one way to set up an Linux virtual machine
-for development, and are intended for those new to setting up virtual
-machines.
+If you wish to setup a virtual machine for development, we have a guide here:
+:doc:`../other/setup_virtual_machine`.
 
-1. Download and install `Oracle VirtualBox`_.
-2. Download installation of preferred Linux operating system.
-   A common choice is `Ubuntu 16.04.2 LTS`_.
-3. Open VirtualBox and click ``New``.
-4. Enter a name for your virtual machine, for example "CS Unplugged".
-   Also select the type and version of your operating system.
-   If you downloaded the Ubuntu linked above, the type is "Linux",
-   and version is "Ubuntu (64-bit)". Click "Next".
-5. Choose the memory you wish to allocate (2048 MB to 4096 MB is recommended).
-   Click "Next".
-6. Select "Create a virtual hard disk now". Click "Create".
-7. Keep the default selection of "VDI (VirtualBox Disk Image)".
-   Click "Next".
-8. Keep the default selection of "Dynamically allocated".
-   Click "Next".
-9. Change the name and location of the hard drive for the virtual
-   machine if required (default is usually fine).
-10. Select the maximum size that the hard drive can grow to (be aware of
-    how much space you have available on your machine).
-    We recommend 20 GB to 40 GB. Click "Create".
-11. Right click on your newly created virtual machine and click settings.
-    Within these settings you can also setup a shared clipboard between the
-    host and virtual machines, plus increase the number of processors the
-    virtual machine can use. There are plenty of guides available online for
-    how to enable them.
-12. Click the "Storage" category. Under "Controller: IDE" click "Empty".
-    On the right of the window click the disk icon and select "Choose
-    Virtual Optical Disk File" and select the operating system installation
-    file that you downloaded earlier. Close the Settings window.
-13. Start the virtual machine, and the operating system installation screen
-    should appear upon starting. Install the operating system, and once that
-    has completed, move onto Step 2.
+.. _step-2-install-python-3-and-pip:
 
 Step 2: Install Python 3 and pip
 =================================================
@@ -109,14 +77,14 @@ Install Git (version control software) with the following command in terminal:
 
     $ sudo apt install git
 
-Step 5: Create GitHub account
+Step 5: Create GitHub Account
 =================================================
 
 If you don't already have an account on GitHub, create an account on
 the `GitHub website`_.
 This account will be tied to any changes you submit to the project.
 
-Step 6: Set Git account values
+Step 6: Set Git Account Values
 =================================================
 
 When you make a commit in Git (the term for changes to the project), the
@@ -155,7 +123,7 @@ commands in terminal:
     $ sudo apt-get install python-psycopg2
     $ sudo apt-get install libpq-dev
 
-Step 8: Create user and database in Postgres
+Step 8: Create User and Database in Postgres
 =================================================
 
 Firstly type the following command in terminal to login to the Postgres
@@ -203,16 +171,15 @@ To quit the Postgres prompt and return to the normal terminal, type the followin
 
     logout
 
-Step 9: Download the CS Unplugged project
+Step 9: Download the CS Unplugged Project
 =================================================
 
-Firstly create the folder you wish to hold the CS Unplugged project folder
-( called ``cs-unplugged``) in if you wish to store the data in a specific
-location.
+Firstly create the directory you wish to hold the CS Unplugged project
+directory in if you wish to store the data in a specific location.
 Once you have decided upon the location, change the working directory of the
-terminal to this folder.
+terminal to this directory.
 
-To clone (the Git term for download) the project folder, type the
+To clone (the Git term for download) the project directory, type the
 following command in terminal:
 
 .. code-block:: bash
@@ -227,7 +194,7 @@ following command in terminal:
 
         $ git clone git@github.com:uccser/cs-unplugged.git
 
-Once Git has cloned the folder, type the following commands in terminal to
+Once Git has cloned the directory, type the following commands in terminal to
 change the working directory to inside the project repository and checkout
 to the development branch:
 
@@ -236,36 +203,39 @@ to the development branch:
     $ cd cs-unplugged
     $ git checkout develop
 
-Step 10: Create virtual environment
+Step 10: Create Virtual Environment
 =================================================
 
 If you installed ``virtualenv`` in Step 3, then it's time to create a virtual
 environment. Type the following commands in terminal to create and activate
-a virtualenv named ``venv`` with the default Python set to Python 3.
+a virtualenv named ``venv``.
 You can change the virtual environment name to whatever you wish.
+You will need to replace the ``x`` with the version number of Python you
+have (for example: ``python3.5``):
 
 .. code-block:: bash
 
-    $ python -m virtualenv --python=python3.5 venv
+    $ python -m virtualenv --python=python3.x venv
     $ . venv/bin/activate
 
 .. note::
 
-    If you installed ``virtualenvwrapper``, then type to create a virtual
-    environment called ``csunplugged``:
+    If you installed ``virtualenvwrapper``, then type the following command to
+    to create a virtual environment called ``csunplugged``, with Python within
+    the virtual environment already set to Python 3.
 
     .. code-block:: bash
 
-        $ mkvirtualenv --python=/usr/bin/python3.5 csunplugged
+        $ mkvirtualenv --python=/usr/bin/python3.x csunplugged
 
 You should now have the name of your virtual environment before the terminal
 prompt.
 
-Step 11: Install project requirements
+Step 11: Install Project Requirements
 =================================================
 
-To install the project requirements, type the following commands in terminal from the project root folder (contains a file called
-``requirements.txt``):
+To install the project requirements, type the following commands in terminal
+from the project root directory (contains a file called ``requirements.txt``):
 
 .. code-block:: bash
 
@@ -279,7 +249,7 @@ To install the project requirements, type the following commands in terminal fro
     $ npm install
     $ sudo npm install gulp-cli --global
 
-Step 12: Install text editor/IDE (optional)
+Step 12: Install Text Editor/IDE (optional)
 =================================================
 
 This is a good time to install your preferred IDE or text editor.
@@ -289,10 +259,10 @@ Some free options we love:
 - `Sublime Text`_
 - `Vim`_
 
-Step 13: Complete project settings file
+Step 13: Complete Project Settings File
 =================================================
 
-Open the ``csunplugged/config`` folder, and make a copy of
+Open the ``csunplugged/config/`` directory, and make a copy of
 ``settings_secret_template.py`` called ``settings_secret.py``.
 
 Using the values you used in Step 8:
@@ -308,37 +278,38 @@ it's not uploaded to the public server for everyone to see.
     The process of storing secret setting values will be changed in
     the near future.
 
-Step 14: Check project setup works
+.. _installation-check-project-setup-works:
+
+Step 14: Check Project Setup Works
 =================================================
 
 To check the project works, change your working directory to the
-``csunplugged/csunplugged`` folder (should contain a file called ``manage.py``).
+``csunplugged/csunplugged/`` directory (should contain a file called
+``manage.py``).
 
 Type the following commands in terminal (we will cover these commands
 in more detail on the next page):
 
 .. code-block:: bash
 
-    $ python manage.py migrate
-    $ python manage.py updatedata
-    $ python manage.py runserver
+    $ python3 manage.py migrate
+    $ python3 manage.py updatedata
+    $ python3 manage.py runserver
 
 Leave this terminal running and open a new terminal in the same
-folder and type the following command:
+directory and type the following command:
 
 .. code-block:: bash
 
     $ gulp
 
 The final command should open your preferred web browser to
-``localhost:3000/`` and you should see the CS Unplugged homepage.
+``localhost:3000`` and you should see the CS Unplugged homepage.
 
 Congratulations if you made it this far and everything is working,
 you're all set to contribute to the CS Unplugged project.
 
 .. _Git: https://git-scm.com/
-.. _Oracle VirtualBox: https://www.virtualbox.org/
-.. _Ubuntu 16.04.2 LTS: https://www.ubuntu.com/download/desktop
 .. _virtualenvwrapper: https://virtualenvwrapper.readthedocs.io/en/latest/
 .. _GitHub website: https://github.com/
 .. _SSH keys: https://help.github.com/articles/connecting-to-github-with-ssh/

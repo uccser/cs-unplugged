@@ -1,26 +1,14 @@
-# The following is a list of topics to list on the CS Unplugged website.
-# Notes:
-#   - The order of documents dictates the order on the website
-#   - Each entry should link the to structure YAML file for each topic
-
-topics:
-  - slug: binary-numbers
-    md-file: binary-numbers/index.md
-    icon: img/binary-numbers-0-1.png
-    unit-plans:
-      - binary-numbers/unit-plan/unit-plan.yaml
-    programming-exercises: binary-numbers/programming-exercises/programming-exercises.yaml
-    follow-up-activities: binary-numbers/follow-up-activities/follow-up-activities.yaml
-    other-resources-md-file: binary-numbers/other-resources.md
-
-  - slug: error-detection-and-correction
-    md-file: error-detection-correction/index.md
-    icon: img/error-detection-correction-parity-example.png
-    unit-plans:
-      - error-detection-correction/unit-plan/unit-plan.yaml
-    programming-exercises:
-    follow-up-activities: error-detection-correction/follow-up-activities/follow-up-activities.yaml
-    other-resources-md-file:
-
+# Learning outcomes for all topics
 learning-outcomes: learning-outcomes.yaml
+
+# Curriculum links for all topics
+curriculum-links: curriculum-links.yaml
+
+# Defines languages and difficulty levels for all programming exercises
 programming-exercises-structure: programming-exercises-structure.yaml
+
+# Lists all topics to include in CS Unplugged project
+# The order of topics here defines their order on the website
+topic-structure-files:
+  - binary-numbers/binary-numbers.yaml
+  - error-detection-correction/error-detection-correction.yaml

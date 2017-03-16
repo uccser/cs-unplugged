@@ -13,6 +13,7 @@ class LearningOutcome(models.Model):
 
 class CurriculumLink(models.Model):
     #  Auto-incrementing 'id' field is automatically set by Django
+    slug = models.SlugField(unique=True)
     name = models.CharField(max_length=100, unique=True)
 
     def __str__(self):
@@ -102,6 +103,7 @@ class FollowUpActivity(models.Model):
         related_name='topic_follow_up_activities'
     )
     slug = models.SlugField()
+    number = models.PositiveSmallIntegerField()
     name = models.CharField(max_length=200)
     content = models.TextField()
     curriculum_links = models.ManyToManyField(

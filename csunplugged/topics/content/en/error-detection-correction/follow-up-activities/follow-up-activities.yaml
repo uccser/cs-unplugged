@@ -1,4 +1,5 @@
-- slug: painting-parity
-  md-file: error-detection-correction/follow-up-activities/painting-parity.md
+painting-parity:
+  number: 1
+  md-file: painting-parity.md
   curriculum-links:
-    - arts
+    - art
