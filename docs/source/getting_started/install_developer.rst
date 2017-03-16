@@ -273,6 +273,8 @@ To install the project requirements, type the following commands in terminal fro
     $ sudo apt-get install -y nodejs
     $ sudo apt-get install libffi-dev libcairo2-dev libjpeg-dev libgif-dev
     $ pip install -r requirements/local.txt
+    $ pip install -r requirements/kordac.txt
+    $ pip install git+git://github.com/uccser/kordac.git
     $ cd csunplugged
     $ npm install
     $ sudo npm install gulp-cli --global
