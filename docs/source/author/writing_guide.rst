@@ -262,7 +262,7 @@ on the end of the anchor link.
 
 .. code-block:: none
 
-  Check out the [objectives of the binary numbers unit plan](topics/binary-numbers/unit-plan.html#objectives).
+  Please [contact us](about/index.html#contact).
 
 Link to a Page Outside of Website (external link)
 ------------------------------------------------------------------------------
