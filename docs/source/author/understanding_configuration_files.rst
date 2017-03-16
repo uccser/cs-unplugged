@@ -4,23 +4,30 @@ Understanding Configuration Files
 There is a lot of content within the CS Unplugged project.
 We split this content across many files and configuration files are the things
 that bring everything together.
-Understanding how to read and write these configuration files is important
-for working on this project, because these files are used for configuring the
-content data when stored in the system database.
+These files are used for configuring the content data when stored in the
+system database, so it's important to understand how to read and write these
+configuration files for working on this project.
 
-This page aims to give a brief tutorial on YAML files, so you can modify
-configuration files within this project.
-
-Here is an example YAML file:
+Here is an example configuration file used to define follow up activities
+in the CS Unplugged project:
 
 .. code-block:: yaml
 
-  learning-outcomes: learning-outcomes.yaml
-  programming-exercises-structure: programming-exercises-structure.yaml
+  binary-number-bracelets:
+    number: 1
+    md-file: bracelets.md
+    curriculum-links:
+      - arts
+      - design
 
-  topic-structure-files:
-    - binary-numbers/structure.yaml
-    - error-detection-and-correction/structure.yaml
+  hidden-binary-signals:
+    number: 2
+    md-file: hidden-binary-signals.md
+    curriculum-links:
+      - science
+
+This page aims to give a brief tutorial on YAML files, so you can modify
+configuration files within this project.
 
 YAML files are mostly made up of key/value pairs, often called a dictionary
 within programming languages.
