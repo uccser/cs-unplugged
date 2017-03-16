@@ -318,7 +318,7 @@ in more detail on the next page):
 .. code-block:: bash
 
     $ python manage.py migrate
-    $ python manage.py loaddata
+    $ python manage.py updatedata
     $ python manage.py runserver
 
 Leave this terminal running and open a new terminal in the same
