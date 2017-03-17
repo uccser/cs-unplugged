@@ -24,10 +24,10 @@ diagram.
     their own lessons.
 
     - Each lesson can have connected **learning outcomes**,
-      **curriculum links**, and **generated resources**.
+      **curriculum areas**, and **generated resources**.
 
   - Topics can also contain **follow up activities**, which can also contain
-    **curriculum links**.
+    **curriculum areas**.
 
   - Topics can also contain **programming exercises**.
 
@@ -36,7 +36,7 @@ diagram.
       For example: an exercise may have implementations available in Scratch and
       Python.
 
-- **Learning outcomes** and **curriculum links** are defined at a language
+- **Learning outcomes** and **curriculum areas** are defined at a language
   level, so can be used by all topic content.
 
 - Also defined at the language level is **languages** and **difficulties** for
@@ -100,8 +100,8 @@ Adding a Unit Plan and/or Lesson
 ------------------------------------------------------------------------------
 
 You can add a new unit plan and/or lesson by following this flowchart.
-If a lesson requires new learning outcomes or curriculum links, see
-:ref:`adding-topics-content-learning-outcomes-curriculum-links`.
+If a lesson requires new learning outcomes or curriculum areas, see
+:ref:`adding-topics-content-learning-outcomes-curriculum-areas`.
 
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. The image is included as raw HTML because it has clickable nodes.
@@ -127,8 +127,8 @@ Adding a Follow Up Activity
 ------------------------------------------------------------------------------
 
 You can add a new follow up activity by following this flowchart.
-If a follow up activity requires new curriculum links, see
-:ref:`adding-topics-content-learning-outcomes-curriculum-links`.
+If a follow up activity requires new curriculum areas, see
+:ref:`adding-topics-content-learning-outcomes-curriculum-areas`.
 
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. The image is included as raw HTML because it has clickable nodes.
@@ -153,7 +153,7 @@ Adding a Programming Exercise
 
 You can add a new programming exercise by following this flowchart.
 If a programming exercise requires new learning outcomes, see
-:ref:`adding-topics-content-learning-outcomes-curriculum-links`.
+:ref:`adding-topics-content-learning-outcomes-curriculum-areas`.
 
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. The image is included as raw HTML because it has clickable nodes.
@@ -173,9 +173,9 @@ If a programming exercise requires new learning outcomes, see
   </map>
   <img src="../_static/img/topics_adding_programming_exercises_flowchart.png" usemap="#programming-exercise-map">
 
-.. _adding-topics-content-learning-outcomes-curriculum-links:
+.. _adding-topics-content-learning-outcomes-curriculum-areas:
 
-Adding Learning Outcomes and/or Curriculum Links
+Adding Learning Outcomes and/or Curriculum Areas
 ------------------------------------------------------------------------------
 
 You can add a new programming exercise by following this flowchart.
@@ -184,12 +184,12 @@ You can add a new programming exercise by following this flowchart.
 .. The image is included as raw HTML because it has clickable nodes.
 .. raw:: html
 
-  <map name="learning-outcomes-curriculum-links-map">
+  <map name="learning-outcomes-curriculum-areas-map">
     <area shape="rect" coords="215,90,320,126" href="#topics-content-directory">
     <area shape="rect" coords="281,342,387,377" href="#learning-outcomes-file">
-    <area shape="rect" coords="281,616,387,652" href="#curriculum-links-file">
+    <area shape="rect" coords="281,616,387,652" href="#curriculum-areas-file">
   </map>
-  <img src="../_static/img/topics_adding_learning_outcomes_curriculum_links_flowchart.png" usemap="#learning-outcomes-curriculum-links-map">
+  <img src="../_static/img/topics_adding_learning_outcomes_curriculum_areas_flowchart.png" usemap="#learning-outcomes-curriculum-areas-map">
 
 Configuration Files
 ==============================================================================
@@ -232,15 +232,15 @@ This file must contain the following key/value pairs:
 
       learning-outcomes: learning-outcomes.yaml
 
-- ``curriculum-links`` - The path to the configuration file for curriculum
-  links.
-  This file lists curriculum links for all topics.
+- ``curriculum-areas`` - The path to the configuration file for curriculum
+  areas.
+  This file lists curriculum areas for all topics.
 
   - For example:
 
     .. code-block:: yaml
 
-      curriculum-links: curriculum-links.yaml
+      curriculum-areas: curriculum-areas.yaml
 
 - ``programming-exercises-structure`` - The path to the configuration file for
   programming exercises structure.
@@ -270,7 +270,7 @@ A complete application structure file may look like the following:
 .. code-block:: yaml
 
   learning-outcomes: learning-outcomes.yaml
-  curriculum-links: curriculum-links.yaml
+  curriculum-areas: curriculum-areas.yaml
   programming-exercises-structure: programming-exercises-structure.yaml
   topic-structure-files:
     - binary-numbers/binary-numbers.yaml
@@ -488,15 +488,15 @@ This file must contain the following key/value pairs:
             - binary-convert-decimal
             - binary-justify-representation
 
-    - ``curriculum-links`` - A list of slugs for the curriculum links for
+    - ``curriculum-areas`` - A list of slugs for the curriculum areas for
       this lesson.
-      The slugs are defined in the :ref:`curriculum-links-file`.
+      The slugs are defined in the :ref:`curriculum-areas-file`.
 
       - For example:
 
         .. code-block:: yaml
 
-          curriculum-links:
+          curriculum-areas:
             - maths
 
     - ``resources-classroom`` - A list of Markdown text of classroom resources
@@ -549,7 +549,7 @@ the following:
         - binary-count
         - binary-convert-decimal
         - binary-justify-representation
-      curriculum-links:
+      curriculum-areas:
         - maths
       resources-classroom:
         - Pens
@@ -567,7 +567,7 @@ the following:
       learning-outcomes:
         - binary-data-representation
         - binary-count
-      curriculum-links:
+      curriculum-areas:
         - maths
         - science
       resources-classroom:
@@ -582,7 +582,7 @@ the following:
       learning-outcomes:
         - binary-convert-decimal
         - binary-justify-representation
-      curriculum-links:
+      curriculum-areas:
         - maths
         - art
 
@@ -642,15 +642,15 @@ The file should have the following key/value pair structure:
           number: 1
 
 
-    - ``curriculum-links`` - A list of slugs for the curriculum links for
+    - ``curriculum-areas`` - A list of slugs for the curriculum areas for
       this follow up activity.
-      The slugs are defined in the :ref:`curriculum-links-file`.
+      The slugs are defined in the :ref:`curriculum-areas-file`.
 
       - For example:
 
         .. code-block:: yaml
 
-          curriculum-links:
+          curriculum-areas:
             - maths
 
 An example follow up activities configuaration file with multiple activities
@@ -661,14 +661,14 @@ may look like the following:
   binary-number-bracelets:
     number: 1
     md-file: bracelets.md
-    curriculum-links:
+    curriculum-areas:
       - arts
       - design
 
   hidden-binary-signals:
     number: 2
     md-file: hidden-binary-signals.md
-    curriculum-links:
+    curriculum-areas:
       - science
 
 .. _programming-exercises-structure-file:
@@ -957,25 +957,25 @@ For example:
 
 .. note::
 
-  Lessons and programming exercises link to learning outcomes by listing
+  Lessons and programming exercises area to learning outcomes by listing
   their slug.
 
-.. _curriculum-links-file:
+.. _curriculum-areas-file:
 
-Curriculum Links File
+Curriculum Areas File
 ------------------------------------------------------------------------------
 
-This file defines the curriculum links avilable for all topics.
+This file defines the curriculum areas avilable for all topics.
 
 The location of this file is within the language directory.
 This file is listed in a :ref:`application-structure-file`.
-This file can contain as many curriculum links as you like.
-Lessons and follow up activities link to curriculums by listing their
+This file can contain as many curriculum areas as you like.
+Lessons and follow up activities area to curriculums by listing their
 slug.
 
 The file should have the following key/value pairs:
 
-- **Curriculum link slugs** - A slug listed for each curriculum link
+- **Curriculum area slugs** - A slug listed for each curriculum area
   (see :ref:`what-is-a-slug`).
 
   - For example:
@@ -987,11 +987,11 @@ The file should have the following key/value pairs:
       science:
         ...science data here...
 
-  - Each curriculum link slug must contain the following values:
+  - Each curriculum area slug must contain the following values:
 
-    - ``name`` - The text for the curriculum link for displaying to the user.
+    - ``name`` - The text for the curriculum area for displaying to the user.
 
-An example curriculum links file with multiple curriculums may look like
+An example curriculum areas file with multiple curriculums may look like
 the following:
 
 .. code-block:: yaml

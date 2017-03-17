@@ -37,8 +37,8 @@ lessons:
       - binary-convert-decimal
       - binary-justify-representation
 
-    # The slugs for the curriculum links for this lesson
-    curriculum-links:
+    # The slugs for the curriculum areas for this lesson
+    curriculum-areas:
       - maths
 
     # A list of Markdown strings of classroom resources required for this lesson
@@ -63,7 +63,7 @@ lessons:
     learning-outcomes:
       - binary-data-representation
       - binary-count
-    curriculum-links:
+    curriculum-areas:
       - maths
       - science
     resources-classroom:
@@ -78,7 +78,7 @@ lessons:
     learning-outcomes:
       - binary-convert-decimal
       - binary-justify-representation
-    curriculum-links:
+    curriculum-areas:
       - maths
       - art
 
@@ -91,7 +91,7 @@ lessons:
     learning-outcomes:
       - binary-convert-decimal
       - binary-justify-representation
-    curriculum-links:
+    curriculum-areas:
       - maths
 
   lesson-5:
@@ -102,7 +102,7 @@ lessons:
     handout: lessons/8-10/lesson-2-handout.md
     learning-outcomes:
       - binary-convert-decimal
-    curriculum-links:
+    curriculum-areas:
       - maths
       - science
 
@@ -114,6 +114,6 @@ lessons:
     handout: lessons/11-14/lesson-1-handout.md
     learning-outcomes:
       - binary-convert-decimal
-    curriculum-links:
+    curriculum-areas:
       - maths
       - science

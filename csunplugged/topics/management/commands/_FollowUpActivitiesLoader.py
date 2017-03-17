@@ -1,6 +1,6 @@
 import os.path
 from utils.BaseLoader import BaseLoader
-from topics.models import CurriculumLink
+from topics.models import CurriculumArea
 
 
 class FollowUpActivitiesLoader(BaseLoader):
@@ -35,12 +35,12 @@ class FollowUpActivitiesLoader(BaseLoader):
                 )
                 activity.save()
 
-                # Add curriculum links
-                curriculum_link_slugs = activity_data['curriculum-links']
-                for curriculum_link_slug in curriculum_link_slugs:
-                    curriculum_link = CurriculumLink.objects.get(
-                        slug=curriculum_link_slug
+                # Add curriculum areas
+                curriculum_area_slugs = activity_data['curriculum-areas']
+                for curriculum_area_slug in curriculum_area_slugs:
+                    curriculum_area = CurriculumArea.objects.get(
+                        slug=curriculum_area_slug
                     )
-                    activity.curriculum_links.add(curriculum_link)
+                    activity.curriculum_areas.add(curriculum_area)
 
                 self.log('Added Activity: {}'.format(activity.name), 1)

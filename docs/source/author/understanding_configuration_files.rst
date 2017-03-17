@@ -16,14 +16,14 @@ in the CS Unplugged project:
   binary-number-bracelets:
     number: 1
     md-file: bracelets.md
-    curriculum-links:
+    curriculum-areas:
       - arts
       - design
 
   hidden-binary-signals:
     number: 2
     md-file: hidden-binary-signals.md
-    curriculum-links:
+    curriculum-areas:
       - science
 
 This page aims to give a brief tutorial on YAML files, so you can modify
