@@ -1,12 +1,12 @@
 binary-number-bracelets:
   number: 1
   md-file: bracelets.md
-  curriculum-links:
+  curriculum-areas:
     - art
     - design
 
 binary-number-bracelets-2:
   number: 2
   md-file: bracelets-2.md
-  curriculum-links:
+  curriculum-areas:
     - art
