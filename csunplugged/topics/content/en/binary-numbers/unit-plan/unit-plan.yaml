@@ -26,10 +26,6 @@ lessons:
     # This is essentially the text for the webpage for the lesson
     md-file: lessons/5-7/lesson-1.md
 
-    # The Markdown file containing the content for the handout of the lesson
-    # This is essentially the text for the webpage for the lesson
-    handout: lessons/5-7/lesson-1-handout.md
-
     # The slugs for the learning outcomes for this lesson
     learning-outcomes:
       - binary-data-representation
@@ -37,8 +33,8 @@ lessons:
       - binary-convert-decimal
       - binary-justify-representation
 
-    # The slugs for the curriculum links for this lesson
-    curriculum-links:
+    # The slugs for the curriculum areas for this lesson
+    curriculum-areas:
       - maths
 
     # A list of Markdown strings of classroom resources required for this lesson
@@ -59,11 +55,10 @@ lessons:
     maximum-age: 7
     number: 2
     md-file: lessons/5-7/lesson-2.md
-    handout: lessons/5-7/lesson-2-handout.md
     learning-outcomes:
       - binary-data-representation
       - binary-count
-    curriculum-links:
+    curriculum-areas:
       - maths
       - science
     resources-classroom:
@@ -74,11 +69,10 @@ lessons:
     maximum-age: 7
     number: 3
     md-file: lessons/5-7/lesson-3.md
-    handout: lessons/5-7/lesson-3-handout.md
     learning-outcomes:
       - binary-convert-decimal
       - binary-justify-representation
-    curriculum-links:
+    curriculum-areas:
       - maths
       - art
 
@@ -87,11 +81,10 @@ lessons:
     maximum-age: 10
     number: 4
     md-file: lessons/8-10/lesson-1.md
-    handout: lessons/8-10/lesson-1-handout.md
     learning-outcomes:
       - binary-convert-decimal
       - binary-justify-representation
-    curriculum-links:
+    curriculum-areas:
       - maths
 
   lesson-5:
@@ -99,10 +92,9 @@ lessons:
     maximum-age: 10
     number: 5
     md-file: lessons/8-10/lesson-2.md
-    handout: lessons/8-10/lesson-2-handout.md
     learning-outcomes:
       - binary-convert-decimal
-    curriculum-links:
+    curriculum-areas:
       - maths
       - science
 
@@ -111,9 +103,8 @@ lessons:
     maximum-age: 14
     number: 6
     md-file: lessons/11-14/lesson-1.md
-    handout: lessons/11-14/lesson-1-handout.md
     learning-outcomes:
       - binary-convert-decimal
-    curriculum-links:
+    curriculum-areas:
       - maths
       - science

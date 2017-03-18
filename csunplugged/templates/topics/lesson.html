@@ -54,15 +54,15 @@
   <p>No learning outcomes listed for {{ lesson.name }}.</p>
 {% endif %}
 
-<h2>Curriculum Links</h2>
-{% if lesson_curriculum_links %}
+<h2>Curriculum Areas</h2>
+{% if lesson_curriculum_areas %}
   <ul>
-  {% for curriculum_link in lesson_curriculum_links %}
-    <li>{{ curriculum_link.name }}</li>
+  {% for curriculum_area in lesson_curriculum_areas %}
+    <li>{{ curriculum_area.name }}</li>
   {% endfor %}
 </ul>
 {% else %}
-  <p>No curriculum links listed for {{ lesson.name }}.</p>
+  <p>No curriculum areas listed for {{ lesson.name }}.</p>
 {% endif %}
 
 {% endblock content %}

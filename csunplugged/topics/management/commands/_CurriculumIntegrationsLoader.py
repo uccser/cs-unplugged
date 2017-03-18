@@ -1,6 +1,6 @@
 import os.path
 from utils.BaseLoader import BaseLoader
-from topics.models import CurriculumLink
+from topics.models import CurriculumArea
 
 
 class CurriculumIntegrationsLoader(BaseLoader):
@@ -35,12 +35,12 @@ class CurriculumIntegrationsLoader(BaseLoader):
                 )
                 integration.save()
 
-                # Add curriculum links
-                curriculum_link_slugs = integration_data['curriculum-links']
-                for curriculum_link_slug in curriculum_link_slugs:
-                    curriculum_link = CurriculumLink.objects.get(
-                        slug=curriculum_link_slug
+                # Add curriculum areas
+                curriculum_area_slugs = integration_data['curriculum-areas']
+                for curriculum_area_slug in curriculum_area_slugs:
+                    curriculum_area = CurriculumArea.objects.get(
+                        slug=curriculum_area_slug
                     )
-                    integration.curriculum_links.add(curriculum_link)
+                    integration.curriculum_areas.add(curriculum_area)
 
                 self.log('Added Curriculum Integration: {}'.format(integration.name), 1)

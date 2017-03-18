@@ -81,8 +81,8 @@ class LessonView(generic.DetailView):
         # Loading objects under consistent context names for breadcrumbs
         context['topic'] = self.object.topic
         context['unit_plan'] = self.object.unit_plan
-        # Add all the connected curriculum links
-        context['lesson_curriculum_links'] = self.object.curriculum_links.all()
+        # Add all the connected curriculum areas
+        context['lesson_curriculum_areas'] = self.object.curriculum_areas.all()
         # Add all the connected learning outcomes
         context['lesson_learning_outcomes'] = self.object.learning_outcomes.all()
         # Add all the connected classroom resources
@@ -202,8 +202,8 @@ class CurriculumIntegrationView(generic.DetailView):
         context = super(CurriculumIntegrationView, self).get_context_data(**kwargs)
         # Loading objects under consistent context names for breadcrumbs
         context['topic'] = self.object.topic
-        # Add in a QuerySet of all the connected curriculum links
-        context['integration_curriculum_links'] = self.object.curriculum_links.all()
+        # Add in a QuerySet of all the connected curriculum areas
+        context['integration_curriculum_areas'] = self.object.curriculum_areas.all()
         return context
 
 

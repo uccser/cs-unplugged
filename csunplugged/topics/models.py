@@ -11,7 +11,7 @@ class LearningOutcome(models.Model):
         return self.text
 
 
-class CurriculumLink(models.Model):
+class CurriculumArea(models.Model):
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(unique=True)
     name = models.CharField(max_length=100, unique=True)
@@ -77,9 +77,9 @@ class Lesson(models.Model):
         LearningOutcome,
         related_name='lesson_learning_outcomes'
     )
-    curriculum_links = models.ManyToManyField(
-        CurriculumLink,
-        related_name='lesson_curriculum_links'
+    curriculum_areas = models.ManyToManyField(
+        CurriculumArea,
+        related_name='lesson_curriculum_areas'
     )
     classroom_resources = models.ManyToManyField(
         ClassroomResource,
@@ -106,9 +106,9 @@ class CurriculumIntegration(models.Model):
     number = models.PositiveSmallIntegerField()
     name = models.CharField(max_length=200)
     content = models.TextField()
-    curriculum_links = models.ManyToManyField(
-        CurriculumLink,
-        related_name='follow_up_activity_curriculum_links'
+    curriculum_areas = models.ManyToManyField(
+        CurriculumArea,
+        related_name='curriculum_integrations'
     )
 
     def __str__(self):
