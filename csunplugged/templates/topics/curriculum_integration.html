@@ -16,10 +16,10 @@
   {{ integration.content }}
   {% endautoescape %}
 
-  {% if integration.curriculum_areas %}
+  {% if integration_curriculum_areas %}
     <h2>Curriculum Areas</h2>
     <p>
-    {% for area in integration_curriculum_links %}
+    {% for area in integration_curriculum_areas %}
       <span class="badge badge-default">{{ area.name }}</span>
     {% endfor %}
     </p>

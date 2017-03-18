@@ -41,15 +41,15 @@
   <p>No programming exercises for {{ topic }}.</p>
 {% endif %}
 
-{% if follow_up_activities %}
-  <h2>Follow Up Activities</h2>
+{% if curriculum_integrations %}
+  <h2>Curriculum Integrations</h2>
   {% for integration in curriculum_integrations %}
     <p>
       <a href="{% url 'topics:integration' topic.slug integration.slug %}" class="btn btn-outline-danger">{{ integration.name }}</a>
     </p>
   {% endfor %}
 {% else %}
-  <p>No follow up activities for {{ topic }}.</p>
+  <p>No curriculum integrations for {{ topic }}.</p>
 {% endif %}
 
 {% if topic.other_resources %}
