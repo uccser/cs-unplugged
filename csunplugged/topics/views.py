@@ -3,7 +3,7 @@ from django.views import generic
 
 from .models import (
     Topic,
-    FollowUpActivity,
+    CurriculumIntegration,
     UnitPlan,
     Lesson,
     ProgrammingExercise,
@@ -35,8 +35,8 @@ class TopicView(generic.DetailView):
         # Add in a QuerySet of all the connected programming exercises
         programming_exercises = ProgrammingExercise.objects.filter(topic=self.object)
         context['programming_exercises'] = programming_exercises.order_by('exercise_set_number', 'exercise_number')
-        # Add in a QuerySet of all the connected follow up activities
-        context['follow_up_activities'] = FollowUpActivity.objects.filter(topic=self.object).order_by('number')
+        # Add in a QuerySet of all the connected curriculum integrations
+        context['curriculum_integrations'] = CurriculumIntegration.objects.filter(topic=self.object).order_by('number')
         return context
 
 
@@ -166,44 +166,44 @@ class ProgrammingExerciseLanguageSolutionView(generic.DetailView):
         return context
 
 
-class ActivityList(generic.ListView):
-    model = FollowUpActivity
-    template_name = 'topics/activity_list.html'
-    context_object_name = 'all_follow_up_activities'
+class CurriculumIntegrationList(generic.ListView):
+    model = CurriculumIntegration
+    template_name = 'topics/curriculum_integration_list.html'
+    context_object_name = 'all_curriculum_integrations'
 
     def get_queryset(self, **kwargs):
-        """Return all activities for topic"""
-        return FollowUpActivity.objects.filter(
+        """Return all integrations for topic"""
+        return CurriculumIntegration.objects.filter(
             topic__slug=self.kwargs.get('topic_slug', None)
         ).select_related().order_by('number')
 
     def get_context_data(self, **kwargs):
-        context = super(ActivityList, self).get_context_data(**kwargs)
+        context = super(CurriculumIntegrationList, self).get_context_data(**kwargs)
         # Loading objects under consistent context names for breadcrumbs
         context['topic'] = get_object_or_404(Topic, slug=self.kwargs.get('topic_slug', None))
         return context
 
 
-class ActivityView(generic.DetailView):
-    model = FollowUpActivity
-    queryset = FollowUpActivity.objects.all()
-    template_name = 'topics/activity.html'
-    context_object_name = 'activity'
+class CurriculumIntegrationView(generic.DetailView):
+    model = CurriculumIntegration
+    queryset = CurriculumIntegration.objects.all()
+    template_name = 'topics/curriculum_integration.html'
+    context_object_name = 'integration'
 
     def get_object(self, **kwargs):
         return get_object_or_404(
             self.model.objects.select_related(),
             topic__slug=self.kwargs.get('topic_slug', None),
-            slug=self.kwargs.get('activity_slug', None)
+            slug=self.kwargs.get('integration_slug', None)
         )
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
-        context = super(ActivityView, self).get_context_data(**kwargs)
+        context = super(CurriculumIntegrationView, self).get_context_data(**kwargs)
         # Loading objects under consistent context names for breadcrumbs
         context['topic'] = self.object.topic
         # Add in a QuerySet of all the connected curriculum links
-        context['activity_curriculum_links'] = self.object.curriculum_links.all()
+        context['integration_curriculum_links'] = self.object.curriculum_links.all()
         return context
 
 

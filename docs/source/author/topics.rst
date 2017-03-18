@@ -121,20 +121,20 @@ If a lesson requires new learning outcomes or curriculum links, see
   </map>
   <img src="../_static/img/topics_adding_unit_plan_flowchart.png" usemap="#unit-plan-map">
 
-.. _adding-topics-content-follow-up-activity:
+.. _adding-topics-content-curriculum-integrations:
 
-Adding a Follow Up Activity
+Adding a Curriculum Integration
 ------------------------------------------------------------------------------
 
-You can add a new follow up activity by following this flowchart.
-If a follow up activity requires new curriculum links, see
+You can add a new curriculum integration by following this flowchart.
+If a curriculum integration requires new curriculum links, see
 :ref:`adding-topics-content-learning-outcomes-curriculum-links`.
 
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. The image is included as raw HTML because it has clickable nodes.
 .. raw:: html
 
-  <map name="follow-up-activities-map">
+  <map name="curriculum-integrations-map">
   <area shape="rect" coords="217,90,319,127" href="#topics-content-directory">
   <area shape="rect" coords="283,459,387,494" href="#topics-content-directory">
   <area shape="rect" coords="283,571,387,607" href="#follow-up-activities-file">
@@ -144,7 +144,7 @@ If a follow up activity requires new curriculum links, see
   <area shape="rect" coords="216,1206,319,1240" href="../getting_started/basic_usage.html#command-manage-runserver">
   <area shape="rect" coords="216,1325,319,1358" href="../getting_started/basic_usage.html#command-gulp">
   </map>
-  <img src="../_static/img/topics_adding_follow_up_activities_flowchart.png" usemap="#follow-up-activities-map">
+  <img src="../_static/img/topics_adding_curriculum_integrations_flowchart.png" usemap="#curriculum-integrations-map">
 
 .. _adding-topics-content-programming-exercise:
 
@@ -282,7 +282,8 @@ Topic File
 ------------------------------------------------------------------------------
 
 This file defines the attributes of a specific topic, including connected
-unit plan, programming exercise, and follow up activity configuration files.
+unit plan, programming exercise, and curriculum integration configuration
+files.
 
 The location of this file is within a topic directory.
 This file is listed in the :ref:`application-structure-file`.
@@ -586,27 +587,27 @@ the following:
         - maths
         - art
 
-.. _follow-up-activities-file:
+.. _curriculum-integrations-file:
 
-Follow Up Activities File
+Curriculum Integrations File
 ------------------------------------------------------------------------------
 
-This file defines the follow up activities for a topic (and their respective
+This file defines the curriculum integrations for a topic (and their respective
 attributes).
 
 The location of this file is within a topic directory.
 This configuaration file is listed in a :ref:`topic-file`.
-It is also valid to have no configuaration file if there are no follow up
-activities for a topic.
+It is also valid to have no configuaration file if there are no curriculum
+integrations for a topic.
 
-This file can contain as many follow up activities as you like, as long as
-each activity has a unique slug URL within the topic.
+This file can contain as many curriculum integrations as you like, as long as
+each curriculum integration has a unique slug URL within the topic.
 
 The file should have the following key/value pair structure:
 
-- **Activity slugs** - A slug listed for each follow up activity
-  (see :ref:`what-is-a-slug`).
-  We don't recommend using numbered slugs (for example: ``activity-1``) as
+- **Curriculum integration slugs** - A slug listed for each curriculum
+  integration (see :ref:`what-is-a-slug`).
+  We don't recommend using numbered slugs (for example: ``integration-1``) as
   ordering may change but a slug should never change.
 
   - For example:
@@ -614,16 +615,17 @@ The file should have the following key/value pair structure:
     .. code-block:: yaml
 
       binary-number-bracelets:
-        ...activity data here...
+        ...integration data here...
       hidden-binary-signals:
-        ...activity data here...
+        ...integration data here...
 
-  - Each follow up activity slug must contain the following values:
+  - Each curriculum integration slug must contain the following values:
 
-    - ``md-file`` - The Markdown file containing the description of the follow
-      up activity.
-      This is essentially the text for the webpage for the activity.
-      The name of the activity is retrieved from the first header in this file.
+    - ``md-file`` - The Markdown file containing the description of the
+      curriculum integration.
+      This is essentially the text for the webpage for the integration.
+      The name of the curriculum integration is retrieved from the first
+      heading in this file.
       The file path is relative to the YAML file.
 
       - For example:
@@ -632,8 +634,8 @@ The file should have the following key/value pair structure:
 
           md-file: binary-number-bracelets/index.md
 
-    - ``number`` - The number order for this follow up activity.
-      Activities are sorted this number.
+    - ``number`` - The number order for this curriculum integration.
+      Integrations are sorted this number.
 
       - For example:
 
@@ -643,7 +645,7 @@ The file should have the following key/value pair structure:
 
 
     - ``curriculum-links`` - A list of slugs for the curriculum links for
-      this follow up activity.
+      this curriculum integration.
       The slugs are defined in the :ref:`curriculum-links-file`.
 
       - For example:
@@ -653,7 +655,7 @@ The file should have the following key/value pair structure:
           curriculum-links:
             - maths
 
-An example follow up activities configuaration file with multiple activities
+An example curriculum integrations configuaration file with multiple activities
 may look like the following:
 
 .. code-block:: yaml

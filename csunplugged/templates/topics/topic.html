@@ -43,9 +43,9 @@
 
 {% if follow_up_activities %}
   <h2>Follow Up Activities</h2>
-  {% for activity in follow_up_activities %}
+  {% for integration in curriculum_integrations %}
     <p>
-      <a href="{% url 'topics:activity' topic.slug activity.slug %}" class="btn btn-outline-danger">{{ activity.name }}</a>
+      <a href="{% url 'topics:integration' topic.slug integration.slug %}" class="btn btn-outline-danger">{{ integration.name }}</a>
     </p>
   {% endfor %}
 {% else %}

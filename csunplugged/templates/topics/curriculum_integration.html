@@ -1,24 +1,24 @@
-{% extends "topics/activity_list.html" %}
+{% extends "topics/curriculum_integration_list.html" %}
 
 {% load django_bootstrap_breadcrumbs %}
 
 {% block breadcrumbs %}
   {{ block.super }}
-  {% breadcrumb activity.name "topics:activity" topic.slug activity.slug %}
+  {% breadcrumb integration.name "topics:integration" topic.slug integration.slug %}
 {% endblock breadcrumbs %}
 
 
 {% block content %}
-<h1>{{ activity.name }}</h1>
+<h1>{{ integration.name }}</h1>
 
 {% autoescape off %}
-{{ activity.content }}
+{{ integration.content }}
 {% endautoescape %}
 
-{% if activity.curriculum_links %}
+{% if integration.curriculum_links %}
 <h2>Curriculum Links</h2>
 <p>
-{% for link in activity_curriculum_links %}
+{% for link in integration_curriculum_links %}
   <span class="badge badge-default">{{ link.name }}</span>
 {% endfor %}
 </p>

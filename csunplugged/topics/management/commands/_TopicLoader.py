@@ -1,7 +1,7 @@
 import os.path
 from django.db import transaction
 from utils.BaseLoader import BaseLoader
-from ._FollowUpActivitiesLoader import FollowUpActivitiesLoader
+from ._CurriculumIntegrationsLoader import CurriculumIntegrationsLoader
 from ._ProgrammingExercisesLoader import ProgrammingExercisesLoader
 from ._UnitPlanLoader import UnitPlanLoader
 from topics.models import Topic
@@ -64,11 +64,11 @@ class TopicLoader(BaseLoader):
                 self.BASE_PATH
             ).load()
 
-        # Load follow up activities (if there are any)
-        if topic_structure['follow-up-activities']:
-            FollowUpActivitiesLoader(
+        # Load curriculum integrations (if there are any)
+        if topic_structure['curriculum-integrations']:
+            CurriculumIntegrationsLoader(
                 self.load_log,
-                topic_structure['follow-up-activities'],
+                topic_structure['curriculum-integrations'],
                 topic,
                 self.BASE_PATH
             ).load()
