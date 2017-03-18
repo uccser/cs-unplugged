@@ -30,8 +30,8 @@ Database Structure
 The following image shows the relationships between models across all
 applications within the database.
 
-.. The following image can copied for be edits here: https://goo.gl/kcycns
-.. image:: ../_static/img/database_overview_diagram.svg
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. image:: ../_static/img/database_overview_diagram.png
   :alt: A diagram detailing the general structure of the database
 
 .. note::

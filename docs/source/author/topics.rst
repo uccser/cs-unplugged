@@ -13,8 +13,8 @@ Topics Overview
 A general overview of the topics application can be described in the following
 diagram.
 
-.. The following image can copied for be edits here: https://goo.gl/ZkQsLW
-.. image:: ../_static/img/topics_overview_diagram.svg
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. image:: ../_static/img/topics_overview_diagram.png
   :alt: A diagram providing an overview of topics application content
 
 - The application is made up of **topics** (for example: binary numbers)
