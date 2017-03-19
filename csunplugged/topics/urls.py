@@ -16,17 +16,17 @@ urlpatterns = [
         views.TopicView.as_view(),
         name='topic'
     ),
-    # eg: /topics/binary-numbers/activities
+    # eg: /topics/binary-numbers/integrations
     url(
-        r'^(?P<topic_slug>[-\w]+)/activities/$',
-        views.ActivityList.as_view(),
-        name='activity_list'
+        r'^(?P<topic_slug>[-\w]+)/integrations/$',
+        views.CurriculumIntegrationList.as_view(),
+        name='integration_list'
     ),
-    # eg: /topics/binary-numbers/activities/binary-bracelets
+    # eg: /topics/binary-numbers/integrations/binary-bracelets
     url(
-        r'^(?P<topic_slug>[-\w]+)/activities/(?P<activity_slug>[-\w]+)/$',
-        views.ActivityView.as_view(),
-        name='activity'
+        r'^(?P<topic_slug>[-\w]+)/integrations/(?P<integration_slug>[-\w]+)/$',
+        views.CurriculumIntegrationView.as_view(),
+        name='integration'
     ),
     # eg: /topics/binary-numbers/other-resources
     url(

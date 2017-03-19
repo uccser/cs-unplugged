@@ -95,12 +95,12 @@ class Lesson(models.Model):
         return self.name
 
 
-class FollowUpActivity(models.Model):
+class CurriculumIntegration(models.Model):
     #  Auto-incrementing 'id' field is automatically set by Django
     topic = models.ForeignKey(
         Topic,
         on_delete=models.CASCADE,
-        related_name='topic_follow_up_activities'
+        related_name='curriculum_integrations'
     )
     slug = models.SlugField()
     number = models.PositiveSmallIntegerField()
@@ -108,7 +108,7 @@ class FollowUpActivity(models.Model):
     content = models.TextField()
     curriculum_areas = models.ManyToManyField(
         CurriculumArea,
-        related_name='follow_up_activity_curriculum_areas'
+        related_name='curriculum_integrations'
     )
 
     def __str__(self):
