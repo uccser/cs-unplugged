@@ -126,37 +126,41 @@ commands in terminal:
 Step 8: Create User and Database in Postgres
 =================================================
 
-Firstly type the following command in terminal to login to the Postgres
-server with the default ``postgres`` account:
+We will now create a user (called a 'role') for accessing the database.
+By default, the CS Unplugged project connects with a role as the same name
+as the user logged into the operating system.
+If you can't remember your username, it's the text before the ``@`` symbol in
+the terminal prompt.
+For example, if the terminal prompt is:
+
+.. code-block:: bash
+
+    taylor@taylor-VirtualBox:~/Projects/cs-unplugged$
+
+Your username is ``taylor``.
+
+Firstly type the following command in terminal to switch to the ``postgres``
+user (that has admin permissions for the database):
 
 .. code-block:: bash
 
     $ sudo -i -u postgres
 
 The terminal prompt should have now changed and begins with ``postgres@``.
-Now enter the following commands to create a user (called a 'role'):
-
-.. note::
-
-    Remember the user name and password you use, as you
-    will need these in Step 13.
+Now enter the following commands to create the role:
 
 .. code-block:: bash
 
-    createuser --interactive --pwprompt
+    createuser --interactive
     Enter name of role to add: <your name>
-    Enter password for new role: <your password>
-    Enter it again: <your password>
     Shall the new role be a superuser? (y/n): y
 
 For example:
 
 .. code-block:: none
 
-    createuser --interactive --pwprompt
-    Enter name of role to add: johndoe
-    Enter password for new role: s3cr3t_p@ssw0rd
-    Enter it again: s3cr3t_p@ssw0rd
+    createuser --interactive
+    Enter name of role to add: taylor
     Shall the new role be a superuser? (y/n): y
 
 To create the database, type the following command in terminal:
@@ -165,11 +169,17 @@ To create the database, type the following command in terminal:
 
     createdb csunplugged -e
 
-To quit the Postgres prompt and return to the normal terminal, type the following command in terminal:
+To logout of the ``postgress`` user and return to your normal terminal, enter
+the following command in terminal:
 
 .. code-block:: none
 
     logout
+
+.. note::
+
+    If you wish to use a different role, database name, database post, or use a
+    password, then you can define these in the ``.env`` file.
 
 Step 9: Download the CS Unplugged Project
 =================================================
