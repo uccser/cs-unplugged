@@ -55,46 +55,6 @@ class UnitPlan(models.Model):
         return self.name
 
 
-class Lesson(models.Model):
-    #  Auto-incrementing 'id' field is automatically set by Django
-    topic = models.ForeignKey(
-        Topic,
-        on_delete=models.CASCADE,
-        related_name='topic_lessons'
-    )
-    unit_plan = models.ForeignKey(
-        UnitPlan,
-        on_delete=models.CASCADE,
-        related_name='unit_plan_lessons'
-    )
-    slug = models.SlugField()
-    name = models.CharField(max_length=100)
-    number = models.IntegerField()
-    content = models.TextField()
-    min_age = models.PositiveSmallIntegerField()
-    max_age = models.PositiveSmallIntegerField()
-    learning_outcomes = models.ManyToManyField(
-        LearningOutcome,
-        related_name='lesson_learning_outcomes'
-    )
-    curriculum_areas = models.ManyToManyField(
-        CurriculumArea,
-        related_name='lesson_curriculum_areas'
-    )
-    classroom_resources = models.ManyToManyField(
-        ClassroomResource,
-        related_name='lesson_classroom_resources'
-    )
-    generated_resources = models.ManyToManyField(
-        Resource,
-        through='ConnectedGeneratedResource',
-        related_name='lesson_generated_resources'
-    )
-
-    def __str__(self):
-        return self.name
-
-
 class FollowUpActivity(models.Model):
     #  Auto-incrementing 'id' field is automatically set by Django
     topic = models.ForeignKey(
@@ -180,6 +140,50 @@ class ProgrammingExerciseLanguageImplementation(models.Model):
     expected_result = models.TextField()
     hints = models.TextField()
     solution = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+
+class Lesson(models.Model):
+    #  Auto-incrementing 'id' field is automatically set by Django
+    topic = models.ForeignKey(
+        Topic,
+        on_delete=models.CASCADE,
+        related_name='topic_lessons'
+    )
+    unit_plan = models.ForeignKey(
+        UnitPlan,
+        on_delete=models.CASCADE,
+        related_name='unit_plan_lessons'
+    )
+    slug = models.SlugField()
+    name = models.CharField(max_length=100)
+    number = models.IntegerField()
+    content = models.TextField()
+    min_age = models.PositiveSmallIntegerField()
+    max_age = models.PositiveSmallIntegerField()
+    programming_exercises = models.ManyToManyField(
+        ProgrammingExercise,
+        related_name='lessons'
+    )
+    learning_outcomes = models.ManyToManyField(
+        LearningOutcome,
+        related_name='lesson_learning_outcomes'
+    )
+    curriculum_areas = models.ManyToManyField(
+        CurriculumArea,
+        related_name='lesson_curriculum_areas'
+    )
+    classroom_resources = models.ManyToManyField(
+        ClassroomResource,
+        related_name='lesson_classroom_resources'
+    )
+    generated_resources = models.ManyToManyField(
+        Resource,
+        through='ConnectedGeneratedResource',
+        related_name='lesson_generated_resources'
+    )
 
     def __str__(self):
         return self.name

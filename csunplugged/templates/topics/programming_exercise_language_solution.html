@@ -19,7 +19,7 @@
 </div>
 
 <p>
-  <a href="{% url 'topics:programming_exercise' implementation.topic.slug implementation.exercise.slug %}" class="btn btn-outline-danger">
+  <a href="{% url 'topics:programming_exercise' topic.slug unit_plan.slug lesson.slug programming_exercise.slug %}" class="btn btn-outline-danger">
     Back to Plugged In activity
   </a>
 </p>

@@ -26,6 +26,9 @@ lessons:
     # This is essentially the text for the webpage for the lesson
     md-file: lessons/5-7/lesson-1.md
 
+    programming-exercises:
+      - count-to-16
+
     # The slugs for the learning outcomes for this lesson
     learning-outcomes:
       - binary-data-representation
@@ -55,6 +58,9 @@ lessons:
     maximum-age: 7
     number: 2
     md-file: lessons/5-7/lesson-2.md
+    programming-exercises:
+      - count-to-16
+      - count-to-a-million
     learning-outcomes:
       - binary-data-representation
       - binary-count
@@ -69,6 +75,8 @@ lessons:
     maximum-age: 7
     number: 3
     md-file: lessons/5-7/lesson-3.md
+    programming-exercises:
+      - count-to-a-million
     learning-outcomes:
       - binary-convert-decimal
       - binary-justify-representation

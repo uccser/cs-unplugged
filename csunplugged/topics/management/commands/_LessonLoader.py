@@ -1,6 +1,7 @@
 import os.path
 from utils.BaseLoader import BaseLoader
 from topics.models import (
+    ProgrammingExercise,
     LearningOutcome,
     CurriculumArea,
     ClassroomResource,
@@ -40,6 +41,15 @@ class LessonLoader(BaseLoader):
             max_age=self.lesson_structure['maximum-age']
         )
         lesson.save()
+
+        # Add programming exercises
+        if 'programming-exercises' in self.lesson_structure:
+            programming_exercise_slugs = self.lesson_structure['programming-exercises']
+            for programming_exercise_slug in programming_exercise_slugs:
+                programming_exercise = ProgrammingExercise.objects.get(
+                    slug=programming_exercise_slug
+                )
+                lesson.programming_exercises.add(programming_exercise)
 
         # Add learning outcomes
         learning_outcome_slugs = self.lesson_structure['learning-outcomes']
