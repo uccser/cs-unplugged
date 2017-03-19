@@ -4,16 +4,16 @@
 
 {% block breadcrumbs %}
   {{ block.super }}
-  {% breadcrumb "Plugged In" "topics:programming_exercises_list" topic.slug %}
+  {% breadcrumb "Plugged In" "topics:programming_exercises_list" topic.slug unit_plan.slug lesson.slug %}
 {% endblock breadcrumbs %}
 
 {% block content %}
-  <h1>{{ topic.name }} Programming Exercises</h1>
+  <h1>{{ lesson.name }} Programming Exercises</h1>
 
   {% if all_programming_exercises %}
     {% for programming_exercise in all_programming_exercises %}
       <p>
-        <a href="{% url 'topics:programming_exercise' topic.slug programming_exercise.slug %}" class="btn btn-outline-danger">
+        <a href="{% url 'topics:programming_exercise' topic.slug unit_plan.slug lesson.slug programming_exercise.slug %}" class="btn btn-outline-danger">
           {{ programming_exercise.exercise_set_number }}.{{ programming_exercise.exercise_number }}
           {{ programming_exercise.name }}
         </a>

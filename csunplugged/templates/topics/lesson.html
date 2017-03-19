@@ -43,6 +43,17 @@
 {{ lesson.content }}
 {% endautoescape %}
 
+<h2>Plugged In <span class="subtitle">(programming exercises)</span></h2>
+{% if programming_exercises %}
+  <p>
+    <a href="{% url 'topics:programming_exercises_list' topic.slug unit_plan.slug lesson.slug %}" class="btn btn-outline-danger">
+      Programming exercises for {{ lesson.name }}
+    </a>
+  </p>
+{% else %}
+  <p>No programming exercises for {{ lesson.name }}.</p>
+{% endif %}
+
 <h2>Learning Outcomes</h2>
 {% if lesson_learning_outcomes %}
   <ul>

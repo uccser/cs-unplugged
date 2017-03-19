@@ -81,6 +81,8 @@ class LessonView(generic.DetailView):
         # Loading objects under consistent context names for breadcrumbs
         context['topic'] = self.object.topic
         context['unit_plan'] = self.object.unit_plan
+        # Add all the connected programming exercises
+        context['programming_exercises'] = self.object.programming_exercises.all()
         # Add all the connected curriculum areas
         context['lesson_curriculum_areas'] = self.object.curriculum_areas.all()
         # Add all the connected learning outcomes
@@ -110,14 +112,21 @@ class ProgrammingExerciseList(generic.ListView):
 
     def get_queryset(self, **kwargs):
         """Return all activities for topic"""
-        topic_slug = self.kwargs.get('topic_slug', None)
-        exercises = ProgrammingExercise.objects.filter(topic__slug=topic_slug)
+        lesson_slug = self.kwargs.get('lesson_slug', None)
+        exercises = ProgrammingExercise.objects.filter(lessons__slug=lesson_slug)
         return exercises.order_by('exercise_set_number', 'exercise_number')
 
     def get_context_data(self, **kwargs):
         context = super(ProgrammingExerciseList, self).get_context_data(**kwargs)
-        # Loading objects under consistent context names for breadcrumbs
-        context['topic'] = get_object_or_404(Topic, slug=self.kwargs.get('topic_slug', None))
+        lesson = get_object_or_404(
+            Lesson.objects.select_related(),
+            topic__slug=self.kwargs.get('topic_slug', None),
+            unit_plan__slug=self.kwargs.get('unit_plan_slug', None),
+            slug=self.kwargs.get('lesson_slug', None),
+        )
+        context['lesson'] = lesson
+        context['unit_plan'] = lesson.unit_plan
+        context['topic'] = lesson.topic
         return context
 
 
@@ -136,8 +145,15 @@ class ProgrammingExerciseView(generic.DetailView):
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         context = super(ProgrammingExerciseView, self).get_context_data(**kwargs)
-        # Loading object under consistent context names for breadcrumbs
-        context['topic'] = self.object.topic
+        lesson = get_object_or_404(
+            Lesson.objects.select_related(),
+            topic__slug=self.kwargs.get('topic_slug', None),
+            unit_plan__slug=self.kwargs.get('unit_plan_slug', None),
+            slug=self.kwargs.get('lesson_slug', None),
+        )
+        context['lesson'] = lesson
+        context['unit_plan'] = lesson.unit_plan
+        context['topic'] = lesson.topic
         # Add all the connected learning outcomes
         context['programming_exercise_learning_outcomes'] = self.object.learning_outcomes.all()
         context['implementations'] = self.object.implementations.all().select_related()
@@ -161,7 +177,15 @@ class ProgrammingExerciseLanguageSolutionView(generic.DetailView):
         # Call the base implementation first to get a context
         context = super(ProgrammingExerciseLanguageSolutionView, self).get_context_data(**kwargs)
         # Loading object under consistent context names for breadcrumbs
-        context['topic'] = self.object.topic
+        lesson = get_object_or_404(
+            Lesson.objects.select_related(),
+            topic__slug=self.kwargs.get('topic_slug', None),
+            unit_plan__slug=self.kwargs.get('unit_plan_slug', None),
+            slug=self.kwargs.get('lesson_slug', None),
+        )
+        context['lesson'] = lesson
+        context['unit_plan'] = lesson.unit_plan
+        context['topic'] = lesson.topic
         context['programming_exercise'] = self.object.exercise
         return context
 

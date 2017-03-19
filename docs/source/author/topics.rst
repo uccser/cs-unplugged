@@ -13,8 +13,8 @@ Topics Overview
 A general overview of the topics application can be described in the following
 diagram.
 
-.. The following image can copied for be edits here: https://goo.gl/ZkQsLW
-.. image:: ../_static/img/topics_overview_diagram.svg
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. image:: ../_static/img/topics_overview_diagram.png
   :alt: A diagram providing an overview of topics application content
 
 - The application is made up of **topics** (for example: binary numbers)
@@ -464,6 +464,24 @@ This file must contain the following key/value pairs:
   - Each lesson may also contain any of the following key/value pairs
     (same indentation as ``minimum-age``, ``maximum-age``, etc):
 
+    - ``programming-exercises`` - A list of slugs for the programming
+      exercises for this lesson.
+      The slugs are defined in the :ref:`programming-exercises-file` for
+      the same topic as the lessons.
+      You can include any number (including zero) of programming exercises,
+      and you can list the same programming exercise for different lessons.
+      The programming exercises listed should be relevant to the content of
+      the lesson, and not the age range of the lesson.
+      This is because programming exercises are written for all ages.
+
+      - For example:
+
+        .. code-block:: yaml
+
+          programming-exercises:
+            - count-to-16
+            - count-to-a-million
+
     - ``learning-outcomes`` - A list of slugs for the learning outcomes for
       this lesson.
       The slugs are defined in the :ref:`learning-outcomes-file`.
@@ -533,6 +551,8 @@ the following:
       maximum-age: 7
       number: 1
       md-file: introduction-to-bits/index.md
+      programming-exercises:
+        - count-to-16
       learning-outcomes:
         - binary-data-representation
         - binary-count
@@ -552,6 +572,9 @@ the following:
       maximum-age: 7
       number: 2
       md-file: counting-bits/index.md
+      programming-exercises:
+        - count-to-16
+        - count-to-a-million
       learning-outcomes:
         - binary-data-representation
         - binary-count
