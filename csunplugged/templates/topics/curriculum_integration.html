@@ -1,0 +1,27 @@
+{% extends "topics/curriculum_integration_list.html" %}
+
+{% load django_bootstrap_breadcrumbs %}
+
+
+{% block breadcrumbs %}
+  {{ block.super }}
+  {% breadcrumb integration.name "topics:integration" topic.slug integration.slug %}
+{% endblock breadcrumbs %}
+
+
+{% block content %}
+  <h1>{{ integration.name }}</h1>
+
+  {% autoescape off %}
+  {{ integration.content }}
+  {% endautoescape %}
+
+  {% if integration_curriculum_areas %}
+    <h2>Curriculum Areas</h2>
+    <p>
+    {% for area in integration_curriculum_areas %}
+      <span class="badge badge-default">{{ area.name }}</span>
+    {% endfor %}
+    </p>
+  {% endif %}
+{% endblock content %}

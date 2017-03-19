@@ -4,5 +4,5 @@ icon: img/error-detection-correction-parity-example.png
 unit-plans:
   - unit-plan/unit-plan.yaml
 programming-exercises:
-follow-up-activities: follow-up-activities/follow-up-activities.yaml
+curriculum-integrations: curriculum-integrations/curriculum-integrations.yaml
 other-resources-md-file:
