@@ -269,28 +269,9 @@ Some free options we love:
 - `Sublime Text`_
 - `Vim`_
 
-Step 13: Complete Project Settings File
-=================================================
-
-Open the ``csunplugged/config/`` directory, and make a copy of
-``settings_secret_template.py`` called ``settings_secret.py``.
-
-Using the values you used in Step 8:
-
-- Change the value of ``USER`` to the user name you set.
-- Change the value of ``PASSWORD`` to the password you set.
-
-The ``settings_secret.py`` file is ignored by the version control, so
-it's not uploaded to the public server for everyone to see.
-
-.. note::
-
-    The process of storing secret setting values will be changed in
-    the near future.
-
 .. _installation-check-project-setup-works:
 
-Step 14: Check Project Setup Works
+Step 13: Check Project Setup Works
 =================================================
 
 To check the project works, change your working directory to the
