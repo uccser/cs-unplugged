@@ -1,16 +1,37 @@
 {% extends "base.html" %}
+
 {% load i18n %}
+{% load static %}
 
 {% block body_container %}
-  <div class="jumbotron">
-    <div class="container">
-      <h1 class="display-3 text-center">
-        {% trans 'Computer Science' %}<br>
-        {% trans 'without a computer' %}
-      </h1>
+  <div class="row">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-3 text-center">
+          {% trans 'Computer Science' %}<br>
+          {% trans 'without a computer' %}
+        </h1>
+      </div>
     </div>
-  </div>
 
-<h1>{% trans 'Welcome' %}</h1>
-<p>We currently cover {{ total_topics }} activities.</p>
+    <div class="card-deck">
+    <a class="card card-outline-danger text-center" href="{% url 'general:about' %}">
+      <img class="img-fluid card-img-top topic-img-logo" src="{% static "img/detective.png" %}">
+      <div class="card-block">
+        <h4 class="card-title">Learn about CS Unplugged</h4>
+      </div>
+    </a>
+    <a class="card card-outline-danger text-center" href="{% url 'general:about' %}">
+      <img class="img-fluid card-img-top topic-img-logo" src="{% static "img/binary-cards-5.png" %}">
+      <div class="card-block">
+        <h4 class="card-title">Teaching with CSUnplugged</h4>
+      </div>
+    </a>
+    <a class="card card-outline-danger text-center" href="{% url 'topics:index' %}">
+      <img class="img-fluid card-img-top topic-img-logo" src="{% static "img/ct-icons.png" %}">
+      <div class="card-block">
+        <h4 class="card-title">Topics covered by CS Unplugged</h4>
+      </div>
+    </a>
+  </div>
 {% endblock body_container %}
