@@ -3,11 +3,6 @@
 @import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
 
 img {
-  &#navbar-brand-logo {
-    height: 30px;
-    margin-right: 1rem;
-  }
-
   &.resource-thumbnail {
     max-height: 15rem;
   }
@@ -56,6 +51,7 @@ $rounded-corner-radius: 0.5rem;
   border: $card-border-width solid darken($red, 10%);
   border-radius: $rounded-corner-radius;
   margin: 1rem 0;
+  width: 100%;
 
   h1 {
     font-family: 'Patrick Hand', cursive;
@@ -121,13 +117,18 @@ body {
 .navbar {
   background-color: $white;
   border-bottom: 2px $red solid;
-}
 
-.navbar-nav .nav-link {
-  font-weight: 500;
-  border: 1px $white solid;
-  border-radius: 0.3rem;
-  &:hover {
-    border-color: $red;
+  #navbar-brand-logo {
+    height: 2.5em;
+    margin-right: 1rem;
+  }
+
+  .navbar-nav .nav-link {
+    font-weight: 500;
+    border: 1px $white solid;
+    border-radius: 0.3rem;
+    &:hover {
+      border-color: $red;
+    }
   }
 }

@@ -15,17 +15,19 @@
 </head>
 <body>
   <nav class="navbar fixed-top navbar-toggleable-sm navbar-light">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="float-left" href="{% url 'general:home' %}">
-      <img src="{% static 'img/logo-without-subtitle.png' %}" id="navbar-brand-logo" alt="">
-    </a>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <div class="navbar-nav ml-auto">
-        <a class="nav-item nav-link" href="{% url 'topics:index' %}">Topics</a>
-        <a class="nav-item nav-link" href="{% url 'resources:index' %}">Resources</a>
-        <a class="nav-item nav-link" href="{% url 'general:about' %}">About</a>
+    <div class="container px-0">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a href="{% url 'general:home' %}">
+        <img src="{% static 'img/logo-small.png' %}" id="navbar-brand-logo" alt="">
+      </a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link" href="{% url 'topics:index' %}">Topics</a>
+          <a class="nav-item nav-link" href="{% url 'resources:index' %}">Resources</a>
+          <a class="nav-item nav-link" href="{% url 'general:about' %}">About</a>
+        </div>
       </div>
     </div>
   </nav>
