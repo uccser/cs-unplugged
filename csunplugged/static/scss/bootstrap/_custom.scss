@@ -21,6 +21,8 @@ $teal:                      #0d84c7;
 $pink:                      #ff4464;
 $purple:                    #6e3896;
 
+$transparent:               rgba(0,0,0,0);
+
 // Create grayscale
 $gray-dark:                 #292b2c;
 $gray:                      #464a4c;
@@ -71,3 +73,23 @@ $card-deck-margin:          ($grid-gutter-width-base / 4);
 
 $font-family-serif: 'Patrick Hand', cursive;
 $headings-font-family: $font-family-serif;
+
+
+// Links
+//
+// Style anchor elements.
+
+$link-color:            $blue;
+$link-decoration:       none;
+$link-hover-color:      darken($blue, 15%);
+$link-hover-decoration: underline;
+
+
+// Navbar
+
+$navbar-light-color:                $red;
+$navbar-light-hover-color:          $red;
+$navbar-light-active-color:         darken($red, 15%);
+$navbar-light-disabled-color:       rgba($red, .5);
+$navbar-light-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"), "#", "%23");
+$navbar-light-toggler-border:       rgba($red,.4);

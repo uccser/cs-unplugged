@@ -113,3 +113,21 @@ $rounded-corner-radius: 0.5rem;
 .card-purple {
   @include card-link-variant($purple);
 }
+
+body {
+  padding-top: 4.5rem;
+}
+
+.navbar {
+  background-color: $white;
+  border-bottom: 2px $red solid;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  border: 1px $white solid;
+  border-radius: 0.3rem;
+  &:hover {
+    border-color: $red;
+  }
+}
