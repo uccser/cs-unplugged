@@ -48,14 +48,65 @@ div.plugged-in-language-implementation {
   user-select: none;
 }
 
+$rounded-corner-radius: 0.5rem;
+
 .jumbotron {
-  background: linear-gradient( rgba(35, 106, 195, 0.7), rgba(35, 106, 195, 0.7) ), url("../img/sorting-network-photo.jpg");
+  background: linear-gradient( rgba($blue,.7), rgba($blue,.7) ), url("../img/sorting-network-photo.jpg");
   background-size: cover;
-  border-radius: 1rem;
+  border: $card-border-width solid darken($blue, 10%);
+  border-radius: $rounded-corner-radius;
   margin: 1rem 0;
 
   h1 {
     font-family: 'Patrick Hand', cursive;
     color: $white;
   }
+}
+
+.card {
+  padding: 0.3rem;
+  .card-img {
+    height: 150px;
+    object-fit: contain;
+  }
+}
+
+@mixin card-link-variant($color) {
+  border-color: darken($color, 10%);
+  background-color: $color;
+  .card-title {
+    color: $white;
+  }
+  &:hover {
+    background-color: lighten($color, 30%);
+    .card-title {
+      color: darken($color, 10%);
+    }
+    text-decoration: none;
+  }
+}
+
+.card-red {
+  @include card-link-variant($red);
+}
+.card-orange {
+  @include card-link-variant($orange);
+}
+.card-yellow {
+  @include card-link-variant($yellow);
+}
+.card-green {
+  @include card-link-variant($green);
+}
+.card-blue {
+  @include card-link-variant($blue);
+}
+.card-teal {
+  @include card-link-variant($teal);
+}
+.card-pink {
+  @include card-link-variant($pink);
+}
+.card-purple {
+  @include card-link-variant($purple);
 }

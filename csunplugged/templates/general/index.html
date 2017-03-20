@@ -14,23 +14,27 @@
       </div>
     </div>
 
+    <p class="lead text-center">
+      CS Unplugged is a collection of free learning activities that teach Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around.
+    </p>
+
     <div class="card-deck">
-    <a class="card card-outline-danger text-center" href="{% url 'general:about' %}">
-      <img class="img-fluid card-img-top topic-img-logo" src="{% static "img/detective.png" %}">
+    <a class="card card-purple card-inverse text-center" href="{% url 'general:about' %}">
+      <img class="img-fluid card-img-top card-img" src="{% static "img/detective.png" %}">
       <div class="card-block">
-        <h4 class="card-title">Learn about CS Unplugged</h4>
+        <h2 class="card-title">Learn about<br>CS Unplugged</h4>
       </div>
     </a>
-    <a class="card card-outline-danger text-center" href="{% url 'general:about' %}">
-      <img class="img-fluid card-img-top topic-img-logo" src="{% static "img/binary-cards-5.png" %}">
+    <a class="card card-orange card-inverse text-center" href="{% url 'general:about' %}">
+      <img class="img-fluid card-img-top card-img" src="{% static "img/binary-cards-5.png" %}">
       <div class="card-block">
-        <h4 class="card-title">Teaching with CSUnplugged</h4>
+        <h2 class="card-title">Teaching with<br>CS Unplugged</h4>
       </div>
     </a>
-    <a class="card card-outline-danger text-center" href="{% url 'topics:index' %}">
-      <img class="img-fluid card-img-top topic-img-logo" src="{% static "img/ct-icons.png" %}">
+    <a class="card card-green card-inverse text-center" href="{% url 'topics:index' %}">
+      <img class="img-fluid card-img-top card-img" src="{% static "img/ct-icons.png" %}">
       <div class="card-block">
-        <h4 class="card-title">Topics covered by CS Unplugged</h4>
+        <h2 class="card-title">Topics covered by CS Unplugged</h4>
       </div>
     </a>
   </div>

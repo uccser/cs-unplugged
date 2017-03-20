@@ -22,14 +22,12 @@
       <img src="{% static 'img/logo-without-subtitle.png' %}" id="navbar-brand-logo" alt="">
     </a>
     <div class="collapse navbar-collapse" id="navbarNav">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" href="{% url 'general:home' %}">Home</a>
-      <a class="nav-item nav-link" href="{% url 'topics:index' %}">Topics</a>
-      <a class="nav-item nav-link" href="{% url 'resources:index' %}">Resources</a>
-      <a class="nav-item nav-link" href="{% url 'general:about' %}">About</a>
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="{% url 'topics:index' %}">Topics</a>
+        <a class="nav-item nav-link" href="{% url 'resources:index' %}">Resources</a>
+        <a class="nav-item nav-link" href="{% url 'general:about' %}">About</a>
+      </div>
     </div>
-  </div>
-  <span class="float-right" style="width: 20rem;color: red;">Prototype - Internal Use Only</span>
   </nav>
 
   {% load django_bootstrap_breadcrumbs %}
