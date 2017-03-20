@@ -1,5 +1,6 @@
 @import "bootstrap/bootstrap";
 @import "pygments-monokai";
+@import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
 
 img {
   &#navbar-brand-logo {
@@ -45,4 +46,16 @@ div.plugged-in-language-implementation {
 
 .disable-selection {
   user-select: none;
+}
+
+.jumbotron {
+  background: linear-gradient( rgba(35, 106, 195, 0.7), rgba(35, 106, 195, 0.7) ), url("../img/sorting-network-photo.jpg");
+  background-size: cover;
+  border-radius: 1rem;
+  margin: 1rem 0;
+
+  h1 {
+    font-family: 'Patrick Hand', cursive;
+    color: $white;
+  }
 }
