@@ -1,7 +1,13 @@
-{% extends "base.html" %}
+{% extends "general/base.html" %}
 {% load i18n %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block breadcrumbs %}
+  {{ block.super }}
+  {% breadcrumb "About" "general:about" %}
+{% endblock breadcrumbs %}
 
 {% block content %}
-<h1>{% trans 'About' %}</h1>
-<p>This website is a prototype for the new CS Unplugged content.</p>
+  <h1>{% trans 'About' %}</h1>
+  <p>This website is a prototype for the new CS Unplugged content.</p>
 {% endblock %}

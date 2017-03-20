@@ -39,18 +39,14 @@
     {% breadcrumb "Home" "/" %}
   {% endblock %}
 
-  {% render_breadcrumbs "django_bootstrap_breadcrumbs/bootstrap4.html" %}
+  {% block render_breadcrumbs %}
+  {% endblock render_breadcrumbs %}
 
-  {% block body %}
   <div class="container">
-    <div class="row">
-      <div class="col-9">
-        {% block content %}
-        {% endblock content %}
-      </div>
-    </div>
+    {% block body_container %}
+
+    {% endblock body_container %}
   </div>
-  {% endblock body %}
 
   <!-- jQuery first, then Tether, then Bootstrap JS. -->
   <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>

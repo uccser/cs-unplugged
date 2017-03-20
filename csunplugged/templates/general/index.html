@@ -1,7 +1,16 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block content %}
+{% block body_container %}
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4 text-center">
+        {% trans 'Computer Science' %}<br>
+        {% trans 'without a computer' %}
+      </h1>
+    </div>
+  </div>
+
 <h1>{% trans 'Welcome' %}</h1>
 <p>We currently cover {{ total_topics }} activities.</p>
-{% endblock %}
+{% endblock body_container %}
