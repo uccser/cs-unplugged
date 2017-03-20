@@ -12,7 +12,7 @@ If you aren't familiar with the following systems, we recommend
 reading a tutorial first on how to use them:
 
 - Basic terminal commands
-- `Git`_
+- Git (here are two Git tutorials: `one`_ `two`_)
 
 .. warning::
 
@@ -54,7 +54,8 @@ command in terminal:
 Step 3: Install Python virtualenv
 =================================================
 
-We recommend (though it's not required) to work within a virtual environment.
+We recommend (though it's not required) to work within a virtual environment
+(see :ref:`what-is-a-virtual-environment`).
 This helps to prevent conflicts with dependencies.
 
 Install virtualenv with the following command in terminal:
@@ -151,30 +152,30 @@ Now enter the following commands to create the role:
 
 .. code-block:: bash
 
-    createuser --interactive
-    Enter name of role to add: <your name>
-    Shall the new role be a superuser? (y/n): y
+    $ createuser --interactive
+    $ Enter name of role to add: <your name>
+    $ Shall the new role be a superuser? (y/n): y
 
 For example:
 
-.. code-block:: none
+.. code-block:: bash
 
-    createuser --interactive
-    Enter name of role to add: taylor
-    Shall the new role be a superuser? (y/n): y
+    $ createuser --interactive
+    $ Enter name of role to add: taylor
+    $ Shall the new role be a superuser? (y/n): y
 
 To create the database, type the following command in terminal:
 
-.. code-block:: none
+.. code-block:: bash
 
-    createdb csunplugged -e
+    $ createdb csunplugged -e
 
 To logout of the ``postgress`` user and return to your normal terminal, enter
 the following command in terminal:
 
-.. code-block:: none
+.. code-block:: bash
 
-    logout
+    $ logout
 
 .. note::
 
@@ -249,6 +250,7 @@ from the project root directory (contains a file called ``requirements.txt``):
 
 .. code-block:: bash
 
+    $ sudo apt-get install curl
     $ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
     $ sudo apt-get install -y nodejs
     $ sudo apt-get install libffi-dev libcairo2-dev libjpeg-dev libgif-dev
@@ -267,7 +269,6 @@ Some free options we love:
 
 - `Atom`_
 - `Sublime Text`_
-- `Vim`_
 
 .. _installation-check-project-setup-works:
 
@@ -300,11 +301,12 @@ The final command should open your preferred web browser to
 Congratulations if you made it this far and everything is working,
 you're all set to contribute to the CS Unplugged project.
 
-.. _Git: https://git-scm.com/
+.. _one: https://git-scm.com/docs/gittutorial
+.. _two: https://try.github.io/levels/1/challenges/1
+.. _virtual environment:
 .. _virtualenvwrapper: https://virtualenvwrapper.readthedocs.io/en/latest/
 .. _GitHub website: https://github.com/
 .. _SSH keys: https://help.github.com/articles/connecting-to-github-with-ssh/
 .. _Kordac documentation: http://kordac.readthedocs.io/en/latest/install.html
 .. _Atom: https://atom.io/
 .. _Sublime Text: https://www.sublimetext.com/
-.. _Vim: http://www.vim.org/
