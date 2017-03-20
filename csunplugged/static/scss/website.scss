@@ -98,6 +98,9 @@ $rounded-corner-radius: 0.5rem;
 .card-green {
   @include card-link-variant($green);
 }
+.card-light-blue {
+  @include card-link-variant($light-blue);
+}
 .card-blue {
   @include card-link-variant($blue);
 }
