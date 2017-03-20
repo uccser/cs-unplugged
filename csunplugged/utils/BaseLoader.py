@@ -5,6 +5,8 @@ import sys
 from kordac import Kordac
 from .check_converter_required_files import check_required_files
 
+from django.template.loader import get_template, render_to_string
+
 
 class BaseLoader():
     """Base loader class for individual loaders"""
@@ -22,7 +24,11 @@ class BaseLoader():
         and extensions.
         """
         templates = dict()
-        templates['scratch'] = '<div><object data="{% autoescape false -%}{{ "{% get_static_prefix %}" }}img/scratch-blocks-{{ hash }}.svg{%- endautoescape %}" type="image/svg+xml" /></div>'  # noqa: E501 Fixed in #77
+        templates['scratch'] = get_template('base.html')
+        # print(dir(templates['scratch']))
+        # print(template(templates['scratch']))
+        print(render_to_string('markdown_templates/scratch.html', {}))
+        #templates['scratch'] = '<div><object data="{% autoescape false -%}{{ "{% get_static_prefix %}" }}img/scratch-blocks-{{ hash }}.svg{%- endautoescape %}" type="image/svg+xml" /></div>'  # noqa: E501 Fixed in #77
         templates['iframe'] = '<iframe allowtransparency="true" width="485" height="402" src="{{ link }}" frameborder="0" allowfullscreen="true"></iframe>'  # noqa: E501 Fixed in #77
         templates['heading'] = '<{{ heading_type }} id="{{ title_slug }}">{{ title }}</{{ heading_type }}>'  # noqa: E501 Fixed in #77
         extensions = [
