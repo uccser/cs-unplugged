@@ -132,3 +132,15 @@ body {
     }
   }
 }
+
+.white-footer {
+  border-top: 2px $red solid;
+}
+
+footer {
+  background-color: $red;
+  color: rgba($white, 0.8);
+  a {
+    color: $white;
+  }
+}

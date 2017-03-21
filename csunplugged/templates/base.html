@@ -48,6 +48,93 @@
     {% endblock body_container %}
   </div>
 
+  <div class="container white-footer mt-5 py-5 text-center">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-4 col-lg-3">
+        <a href="http://www.cosc.canterbury.ac.nz/research/RG/CSE/">
+          <img class="img-fluid" src="{% static 'img/uc-computer-science-education-logo.png' %}">
+        </a>
+      </div>
+      <div class="col-4 col-lg-3">
+        <a href="https://www.google.com">
+          <img class="img-fluid" src="{% static 'img/google-logo-colour.png' %}">
+        </a>
+      </div>
+      <div class="col-4 col-lg-3">
+        <a href="https://www.microsoft.com/about/philanthropies/">
+          <img class="img-fluid" src="{% static 'img/microsoft-philanthropies-logo' %}.png">
+        </a>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mt-5">
+      <div class="col-3">
+        <p class="mb-1 font-weight-bold">Useful Links</p>
+        <ul class="list-unstyled">
+          <li>
+            <a href="{% url 'general:about' %}">
+              About
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'topics:index' %}">
+              Topics
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'resources:index' %}">
+              Resources
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-3">
+        <p class="mb-1 font-weight-bold">Community</p>
+        <ul class="list-unstyled">
+          <li>
+            <a href="https://twitter.com/UCCSEd">
+              Twitter
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/user/csunplugged">
+              YouTube
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/uccser/cs-unplugged">
+              GitHub
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-3">
+        <p class="mb-1 font-weight-bold">Help</p>
+        <ul class="list-unstyled">
+          <li>
+            <a href="#">
+              FAQ
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="container py-3">
+      <p class="mb-0">
+        The CS Unplugged material is open source and shared under a Creative Commons BY-NC-SA 4.0 licence, and is available on <a href="https://github.com/uccser/cs-unplugged">GitHub</a>.
+      </p>
+    </div>
+  </footer>
+
   <!-- jQuery first, then Tether, then Bootstrap JS. -->
   <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
   <script src="{% static 'js/tether.min.js' %}"></script>
