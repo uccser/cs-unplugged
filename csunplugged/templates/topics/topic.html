@@ -1,5 +1,7 @@
 {% extends "topics/index.html" %}
 
+{% load render_html_field %}
+
 {% load django_bootstrap_breadcrumbs %}
 
 {% block breadcrumbs %}
@@ -10,9 +12,7 @@
 {% block content %}
 <h1>{{ topic.name }}</h1>
 
-{% autoescape off %}
-{{ topic.content }}
-{% endautoescape %}
+{% render_html_field topic.content %}
 
 {% if unit_plans %}
   <h2>Unit Plans</h2>
