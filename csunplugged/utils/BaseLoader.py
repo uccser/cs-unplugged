@@ -76,6 +76,11 @@ class BaseLoader():
         return yaml.load(yaml_file)
 
     def load_template_files(self):
+        """Loads custom HTMl templates for converter
+
+        Returns:
+           templates: dictionary of html templates
+        """
         templates = dict()
         template_path = os.path.join(
             os.path.dirname(__file__),
