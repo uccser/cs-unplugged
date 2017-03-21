@@ -11,11 +11,13 @@
 
 {% block content %}
   <h1>{% trans "Topics" %}</h1>
+  <p>Open a topic to see all related unit plans, lessons, curriculum integrations, and programming exercises.</p>
+
   {% if all_topics %}
     <div class="card-deck">
       {% for topic in all_topics %}
         <a class="card text-center" href="{% url 'topics:topic' topic.slug %}">
-          <img class="img-fluid card-img-top topic-img-logo" src="{% if topic.icon %}{% static topic.icon %}{% else %}http://placehold.it/238x200{% endif %}">
+          <img class="img-fluid card-img" src="{% if topic.icon %}{% static topic.icon %}{% else %}http://placehold.it/238x200{% endif %}">
           <div class="card-block">
             <h4 class="card-title">{{ topic.name }}</h4>
           </div>

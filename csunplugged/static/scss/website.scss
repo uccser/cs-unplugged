@@ -7,11 +7,6 @@ img {
     max-height: 15rem;
   }
 
-  &.topic-img-logo {
-    height: 200px;
-    object-fit: contain;
-  }
-
   &.plugged-in-language-icon {
     height: 1.5em;
   }
@@ -58,11 +53,18 @@ $rounded-corner-radius: 0.5rem;
     color: $white;
   }
 }
+.card-deck {
+  width: 100%;
+}
 
 .card {
   padding: 0.3rem;
+  margin-bottom: 15px !important;
+  .card-title {
+    margin: 0.2rem;
+  }
   .card-img {
-    height: 150px;
+    height: 100px;
     object-fit: contain;
   }
 }
