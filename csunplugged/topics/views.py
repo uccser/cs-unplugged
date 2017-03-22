@@ -158,7 +158,7 @@ class ProgrammingExerciseView(generic.DetailView):
         context['topic'] = lesson.topic
         # Add all the connected learning outcomes
         context['programming_exercise_learning_outcomes'] = self.object.learning_outcomes.all()
-        context['implementations'] = self.object.implementations.all().select_related()
+        context['implementations'] = self.object.implementations.all().order_by('-language__name').select_related()
         return context
 
 
