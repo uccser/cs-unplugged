@@ -51,6 +51,17 @@ class UnitPlan(models.Model):
     name = models.CharField(max_length=100)
     content = models.TextField()
 
+    def lessons_by_age_group(self):
+        grouped_lessons = dict()
+        lessons = self.unit_plan_lessons.order_by('min_age', 'max_age', 'number')
+        for lesson in lessons:
+            if (lesson.min_age, lesson.max_age) in grouped_lessons:
+                grouped_lessons[(lesson.min_age, lesson.max_age)].append(lesson)
+            else:
+                grouped_lessons[(lesson.min_age, lesson.max_age)] = [lesson]
+        print(grouped_lessons)
+        return grouped_lessons
+
     def __str__(self):
         return self.name
 
@@ -184,6 +195,9 @@ class Lesson(models.Model):
         through='ConnectedGeneratedResource',
         related_name='lesson_generated_resources'
     )
+
+    def has_programming_exercises(self):
+        return bool(self.programming_exercises.all())
 
     def __str__(self):
         return self.name

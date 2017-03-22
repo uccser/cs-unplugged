@@ -1,5 +1,6 @@
 {% extends "topics/index.html" %}
 
+{% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block breadcrumbs %}
@@ -8,75 +9,72 @@
 {% endblock breadcrumbs %}
 
 {% block content %}
-<h1>{{ topic.name }}</h1>
+  <h1>{{ topic.name }}</h1>
 
-{% autoescape off %}
-{{ topic.content }}
-{% endautoescape %}
+  {% render_html_field topic.content %}
 
-{% for unit_plan in unit_plans %}
-  <h2>{{ unit_plan.name }} Unit Plan</h2>
-  <p>
-    <a href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">
-      Read Unit Plan for {{ unit_plan.name }}
-    </a>
-  </p>
-  {% if unit_plan.unit_plan_lessons %}
-    <ul>
-      {% for lesson in unit_plan.lessons %}
-        {% ifchanged lesson.min_age lesson.max_age %}
-          </ul>
-          <h3>
-            Lessons for Ages {{ lesson.min_age }} to {{ lesson.max_age }}
-          </h3>
-          <ul>
-        {% endifchanged %}
-        <li>
-          <a href="{% url 'topics:lesson' topic.slug unit_plan.slug lesson.slug %}">
-            <strong>Lesson {{ lesson.number }}</strong> - {{ lesson.name }}
-          </a>
-          {% if lesson.has_programming_exercises %}
-            <ul>
-              <li>
-                <a href="{% url 'topics:programming_exercises_list' topic.slug unit_plan.slug lesson.slug %}">
-                  View Lesson Programming Exercises
-                </a>
-              </li>
-            </ul>
-          {% endif %}
-        </li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-{% endfor %}
+  {% for unit_plan in unit_plans %}
+    <h2>
+      Unit Plan:
+      <a href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">
+        {{ unit_plan.name }}
+      </a>
+    </h2>
 
-{% if curriculum_integrations %}
-  <h2>Curriculum Integrations</h2>
-  {% for integration in curriculum_integrations %}
-    <ul class="list-unstyled">
-      <li>
-        <p>
-          <a href="{% url 'topics:integration' topic.slug integration.slug %}">
-            <strong>{{ integration.name }}</strong>
-          </a>
-          {% for area in integration.curriculum_areas.all %}
-            <span class="badge badge-default">{{ area.name }}</span>
+    {% if unit_plan.unit_plan_lessons %}
+      {% for age_range, lessons in unit_plan.lessons.items %}
+        <h3>
+          Lessons for Ages {{ age_range.0 }} to {{ age_range.1 }}
+        </h3>
+
+        <ul>
+          {% for lesson in lessons %}
+            <li>
+              <a href="{% url 'topics:lesson' topic.slug unit_plan.slug lesson.slug %}">
+                <strong>Lesson {{ lesson.number }}:</strong> {{ lesson.name }}
+              </a>
+              {% if lesson.has_programming_exercises %}
+                <ul>
+                  <li>
+                    <a href="{% url 'topics:programming_exercises_list' topic.slug unit_plan.slug lesson.slug %}">
+                      View Lesson Programming Exercises
+                    </a>
+                  </li>
+                </ul>
+              {% endif %}
+            </li>
           {% endfor %}
-        </p>
-      </li>
-    </ul>
+        </ul>
+      {% endfor %}
+    {% endif %}
   {% endfor %}
-{% else %}
-  <p>No curriculum integrations for {{ topic }}.</p>
-{% endif %}
 
-{% if topic.other_resources %}
-  <h2>Looking for more?</h2>
-  <p>
-    <a href="{% url 'topics:other_resources' topic.slug %}">
-      Click here for other resources
-    </a>
-  </p>
-{% endif %}
+  {% if curriculum_integrations %}
+    <h2>Curriculum Integrations</h2>
+    {% for integration in curriculum_integrations %}
+      <ul class="list-unstyled">
+        <li>
+          <p>
+            <a href="{% url 'topics:integration' topic.slug integration.slug %}">
+              <strong>{{ integration.name }}</strong>
+            </a>
+            {% for area in integration.curriculum_areas.all %}
+              <span class="badge badge-default">{{ area.name }}</span>
+            {% endfor %}
+          </p>
+        </li>
+      </ul>
+    {% endfor %}
+  {% else %}
+    <p>No curriculum integrations for {{ topic }}.</p>
+  {% endif %}
 
+  {% if topic.other_resources %}
+    <h2>Looking for more?</h2>
+    <p>
+      <a href="{% url 'topics:other_resources' topic.slug %}">
+        Click here for other resources
+      </a>
+    </p>
+  {% endif %}
 {% endblock %}
