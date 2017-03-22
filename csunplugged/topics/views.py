@@ -31,10 +31,12 @@ class TopicView(generic.DetailView):
         # Call the base implementation first to get a context
         context = super(TopicView, self).get_context_data(**kwargs)
         # Add in a QuerySet of all the connected unit plans
-        context['unit_plans'] = UnitPlan.objects.filter(topic=self.object).order_by('name')
-        # Add in a QuerySet of all the connected programming exercises
-        programming_exercises = ProgrammingExercise.objects.filter(topic=self.object)
-        context['programming_exercises'] = programming_exercises.order_by('exercise_set_number', 'exercise_number')
+        unit_plans = UnitPlan.objects.filter(topic=self.object).order_by('name').select_related()
+        for unit_plan in unit_plans:
+            unit_plan.lessons = unit_plan.unit_plan_lessons.order_by('min_age', 'max_age', 'number')
+            for lesson in unit_plan.lessons:
+                lesson.has_programming_exercises = bool(lesson.programming_exercises.all())
+        context['unit_plans'] = unit_plans
         # Add in a QuerySet of all the connected curriculum integrations
         context['curriculum_integrations'] = CurriculumIntegration.objects.filter(topic=self.object).order_by('number')
         return context
