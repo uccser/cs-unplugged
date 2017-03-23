@@ -197,6 +197,9 @@ gulp.task('reload-sass', ['sass'], function(){
 gulp.task('reload-scratch', ['scratch'], function(){
   browserSync.reload();
 });
+gulp.task('reload-images', ['images'], function(){
+  browserSync.reload();
+});
 gulp.task('reload-js', ['js'], function(){
   browserSync.reload();
 });
@@ -232,6 +235,12 @@ gulp.task('watch', ['scratch', 'images', 'css', 'js', 'sass', 'browser-sync'], f
   // --------------------------
   gulpwatch('temp/scratch-blocks-*.txt', function() {
       gulp.start('reload-scratch');
+  });
+  // --------------------------
+  // watch:images
+  // --------------------------
+  gulpwatch('static/img/**/*', function() {
+      gulp.start('reload-images');
   });
   // --------------------------
   // watch:sass

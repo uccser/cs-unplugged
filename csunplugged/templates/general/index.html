@@ -1,7 +1,60 @@
 {% extends "base.html" %}
-{% load i18n %}
 
-{% block content %}
-<h1>{% trans 'Welcome' %}</h1>
-<p>We currently cover {{ total_topics }} activities.</p>
-{% endblock %}
+{% load i18n %}
+{% load static %}
+
+{% block body_container %}
+  <div class="row">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-3 text-center">
+          {% trans 'Computer Science' %}<br>
+          {% trans 'without a computer' %}
+        </h1>
+      </div>
+    </div>
+
+    <p class="lead text-center">
+      CS Unplugged is a collection of free learning activities that teach Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around.
+    </p>
+
+    <div class="card-deck">
+      <a class="card card-blue card-inverse text-center" href="{% url 'general:about' %}">
+        <img class="img-fluid card-img-top card-img" src="{% static "img/computer-searching.png" %}">
+        <div class="card-block">
+          <h2 class="card-title">Learn about<br>CS Unplugged</h4>
+        </div>
+      </a>
+      <a class="card card-orange card-inverse text-center" href="{% url 'general:about' %}">
+        <img class="img-fluid card-img-top card-img" src="{% static "img/binary-cards-5.png" %}">
+        <div class="card-block">
+          <h2 class="card-title">Teaching with<br>CS Unplugged</h4>
+        </div>
+      </a>
+      <a class="card card-green card-inverse text-center" href="{% url 'topics:index' %}">
+        <img class="img-fluid card-img-top card-img" src="{% static "img/detective.png" %}">
+        <div class="card-block">
+          <h2 class="card-title">Topics covered by CS Unplugged</h4>
+        </div>
+      </a>
+    </div>
+
+    <div class="card-deck">
+      <a class="card card-purple card-inverse text-center" href="{% url 'topics:all_curriculum_integrations' %}">
+        <div class="card-block">
+          <h2 class="card-title">Curriculum Integrations</h4>
+        </div>
+      </a>
+      <a class="card card-light-blue card-inverse text-center" href="{% url 'resources:index' %}">
+        <div class="card-block">
+          <h2 class="card-title">Resources</h4>
+        </div>
+      </a>
+      <a class="card card-red card-inverse text-center" href="http://csunplugged.org/">
+        <div class="card-block">
+          <h2 class="card-title">Classic CS Unplugged</h4>
+        </div>
+      </a>
+    </div>
+  </div>
+{% endblock body_container %}

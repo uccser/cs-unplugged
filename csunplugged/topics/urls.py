@@ -10,6 +10,12 @@ urlpatterns = [
         views.IndexView.as_view(),
         name='index'
     ),
+    # eg: /topics/curriculum-integrations/
+    url(
+        r'^curriculum-integrations/$',
+        views.AllCurriculumIntegrationList.as_view(),
+        name='all_curriculum_integrations'
+    ),
     # eg: /topics/binary-numbers/
     url(
         r'^(?P<topic_slug>[-\w]+)/$',
