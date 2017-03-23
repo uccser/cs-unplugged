@@ -29,20 +29,26 @@
     <div class="card">
       <div class="card-header" role="tab" id="heading{{ implementation.language.slug }}">
         <h5 class="mb-0">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ implementation.language.slug }}" aria-expanded="true" aria-controls="collapse{{ implementation.language.slug }}">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse-{{ implementation.language.slug }}" aria-expanded="true" aria-controls="collapse-{{ implementation.language.slug }}">
             <img src="{% get_static_prefix %}{{ implementation.language.icon }}" class="plugged-in-language-icon" />
             {{ implementation.language.name }}
           </a>
         </h5>
       </div>
 
-      <div id="collapse{{ implementation.language.slug }}" class="collapse" role="tabpanel" aria-labelledby="heading{{ implementation.language.slug }}">
+      <div id="collapse-{{ implementation.language.slug }}" class="collapse" role="tabpanel" aria-labelledby="heading{{ implementation.language.slug }}">
         <div class="card-block">
           <h4>Expected Result</h4>
           {% render_html_field implementation.expected_result %}
 
-          <h4>Hints</h4>
-          {% render_html_field implementation.hints %}
+          <p>
+            <a class="btn btn-outline-danger" data-toggle="collapse" href="#collapse-{{ implementation.language.slug }}-hints" aria-expanded="false" aria-controls="collapse-{{ implementation.language.slug }}-hints">
+              Show {{ implementation.language.name }} Hints
+            </a>
+          </p>
+          <div class="collapse" id="collapse-{{ implementation.language.slug }}-hints">
+            {% render_html_field implementation.hints %}
+          </div>
 
           <a href="{% url 'topics:programming_exercise_language_solution' topic.slug unit_plan.slug lesson.slug programming_exercise.slug implementation.language.slug %}" class="btn btn-outline-danger">
             {{ implementation.language.name }} Solution
