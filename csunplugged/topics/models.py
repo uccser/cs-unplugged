@@ -77,37 +77,6 @@ class UnitPlan(models.Model):
         return self.name
 
 
-class CurriculumIntegration(models.Model):
-    #  Auto-incrementing 'id' field is automatically set by Django
-    topic = models.ForeignKey(
-        Topic,
-        on_delete=models.CASCADE,
-        related_name='curriculum_integrations'
-    )
-    slug = models.SlugField()
-    number = models.PositiveSmallIntegerField()
-    name = models.CharField(max_length=200)
-    content = models.TextField()
-    curriculum_areas = models.ManyToManyField(
-        CurriculumArea,
-        related_name='curriculum_integrations'
-    )
-
-    def has_prerequisite_lessons(self):
-        """Returns True if the curriculum integration has at
-        least one prerequisite lesson, otherwise False.
-
-        Returns:
-            True if the curriculum integration has at
-            least one prerequisite lesson, otherwise False.
-        """
-        # TODO: This method cannot be implemented until #123 is implemented
-        return False
-
-    def __str__(self):
-        return self.name
-
-
 class ProgrammingExerciseDifficulty(models.Model):
     #  Auto-incrementing 'id' field is automatically set by Django
     level = models.PositiveSmallIntegerField(unique=True)
@@ -227,6 +196,40 @@ class Lesson(models.Model):
             Otherwise False.
         """
         return bool(self.programming_exercises.all())
+
+    def __str__(self):
+        return self.name
+
+
+class CurriculumIntegration(models.Model):
+    #  Auto-incrementing 'id' field is automatically set by Django
+    topic = models.ForeignKey(
+        Topic,
+        on_delete=models.CASCADE,
+        related_name='curriculum_integrations'
+    )
+    slug = models.SlugField()
+    number = models.PositiveSmallIntegerField()
+    name = models.CharField(max_length=200)
+    content = models.TextField()
+    curriculum_areas = models.ManyToManyField(
+        CurriculumArea,
+        related_name='curriculum_integrations'
+    )
+    prerequisite_lessons = models.ManyToManyField(
+        Lesson,
+        related_name='curriculum_integrations'
+    )
+
+    def has_prerequisite_lessons(self):
+        """Returns True if the curriculum integration has at
+        least one prerequisite lesson, otherwise False.
+
+        Returns:
+        True if the curriculum integration has at
+        least one prerequisite lesson, otherwise False.
+        """
+        return bool(self.prerequisite_lessons.all())
 
     def __str__(self):
         return self.name

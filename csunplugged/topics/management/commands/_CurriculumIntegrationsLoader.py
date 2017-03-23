@@ -1,6 +1,6 @@
 import os.path
 from utils.BaseLoader import BaseLoader
-from topics.models import CurriculumArea
+from topics.models import CurriculumArea, Lesson
 
 
 class CurriculumIntegrationsLoader(BaseLoader):
@@ -42,5 +42,18 @@ class CurriculumIntegrationsLoader(BaseLoader):
                         slug=curriculum_area_slug
                     )
                     integration.curriculum_areas.add(curriculum_area)
+
+                # Add prerequisite lessons
+                if 'prerequisite-lessons' in integration_data:
+                    prerequisite_lessons_slugs = integration_data['prerequisite-lessons']
+                    for prerequisite_lessons_slug in prerequisite_lessons_slugs:
+                        (unit_plan_slug, lesson_slug) = prerequisite_lessons_slug.split('/')
+                        print(unit_plan_slug, lesson_slug)
+                        lesson = Lesson.objects.get(
+                            slug=lesson_slug,
+                            unit_plan__slug=unit_plan_slug,
+                            topic__slug=self.topic.slug
+                        )
+                        integration.prerequisite_lessons.add(lesson)
 
                 self.log('Added Curriculum Integration: {}'.format(integration.name), 1)
