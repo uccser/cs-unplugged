@@ -229,8 +229,7 @@ class CurriculumIntegration(models.Model):
         True if the curriculum integration has at
         least one prerequisite lesson, otherwise False.
         """
-        # TODO: This method cannot be implemented until #123 is implemented
-        return False
+        return bool(self.prerequisite_lessons.all())
 
     def __str__(self):
         return self.name
