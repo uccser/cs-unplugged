@@ -1,4 +1,4 @@
-# Binary Numbers Unit plan
+# Binary Numbers
 
 ## What’s It All About?
 

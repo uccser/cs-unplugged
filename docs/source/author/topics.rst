@@ -298,6 +298,10 @@ This file must contain the following key/value pairs:
 
       slug: binary-numbers
 
+  - The following slugs are not allowed for topics:
+
+    - ``curriculum-integrations``
+
 - ``md-file`` - The Markdown file containing the description of the topic.
   This is essentially the text for the webpage for the topic.
   The name of the topic is retrieved from the first header in this file.

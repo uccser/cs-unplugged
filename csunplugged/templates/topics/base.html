@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block body_container %}
+  {% render_breadcrumbs "django_bootstrap_breadcrumbs/bootstrap4.html" %}
+  <div class="row">
+    <div class="col-12">
+      {% block content %}
+      {% endblock content %}
+    </div>
+  </div>
+{% endblock body_container %}

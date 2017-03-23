@@ -31,10 +31,10 @@ class TopicView(generic.DetailView):
         # Call the base implementation first to get a context
         context = super(TopicView, self).get_context_data(**kwargs)
         # Add in a QuerySet of all the connected unit plans
-        context['unit_plans'] = UnitPlan.objects.filter(topic=self.object).order_by('name')
-        # Add in a QuerySet of all the connected programming exercises
-        programming_exercises = ProgrammingExercise.objects.filter(topic=self.object)
-        context['programming_exercises'] = programming_exercises.order_by('exercise_set_number', 'exercise_number')
+        unit_plans = UnitPlan.objects.filter(topic=self.object).order_by('name').select_related()
+        for unit_plan in unit_plans:
+            unit_plan.lessons = unit_plan.lessons_by_age_group()
+        context['unit_plans'] = unit_plans
         # Add in a QuerySet of all the connected curriculum integrations
         context['curriculum_integrations'] = CurriculumIntegration.objects.filter(topic=self.object).order_by('number')
         return context
@@ -156,7 +156,7 @@ class ProgrammingExerciseView(generic.DetailView):
         context['topic'] = lesson.topic
         # Add all the connected learning outcomes
         context['programming_exercise_learning_outcomes'] = self.object.learning_outcomes.all()
-        context['implementations'] = self.object.implementations.all().select_related()
+        context['implementations'] = self.object.implementations.all().order_by('-language__name').select_related()
         return context
 
 
@@ -206,6 +206,16 @@ class CurriculumIntegrationList(generic.ListView):
         # Loading objects under consistent context names for breadcrumbs
         context['topic'] = get_object_or_404(Topic, slug=self.kwargs.get('topic_slug', None))
         return context
+
+
+class AllCurriculumIntegrationList(generic.ListView):
+    model = CurriculumIntegration
+    template_name = 'topics/all_curriculum_integration_list.html'
+    context_object_name = 'curriculum_integrations'
+
+    def get_queryset(self, **kwargs):
+        """Return all integrations for topic"""
+        return CurriculumIntegration.objects.select_related().order_by('topic__name', 'number')
 
 
 class CurriculumIntegrationView(generic.DetailView):

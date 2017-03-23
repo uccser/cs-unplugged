@@ -1,19 +1,10 @@
 @import "bootstrap/bootstrap";
 @import "pygments-monokai";
+@import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
 
 img {
-  &#navbar-brand-logo {
-    height: 30px;
-    margin-right: 1rem;
-  }
-
   &.resource-thumbnail {
     max-height: 15rem;
-  }
-
-  &.topic-img-logo {
-    height: 200px;
-    object-fit: contain;
   }
 
   &.plugged-in-language-icon {
@@ -45,4 +36,114 @@ div.plugged-in-language-implementation {
 
 .disable-selection {
   user-select: none;
+}
+
+$rounded-corner-radius: 0.5rem;
+
+.jumbotron {
+  background: linear-gradient( rgba($red,.7), rgba($red,.7) ), url("../img/sorting-network-photo.jpg");
+  background-size: cover;
+  border: $card-border-width solid darken($red, 10%);
+  border-radius: $rounded-corner-radius;
+  margin: 1rem 0;
+  width: 100%;
+
+  h1 {
+    font-family: 'Patrick Hand', cursive;
+    color: $white;
+  }
+}
+.card-deck {
+  width: 100%;
+}
+
+.card {
+  padding: 0.3rem;
+  border-color: #ababab;
+  margin-bottom: 15px !important;
+  .card-title {
+    margin: 0.2rem;
+  }
+  .card-img {
+    height: 100px;
+    object-fit: contain;
+  }
+}
+
+@mixin card-link-variant($color) {
+  border-color: darken($color, 10%);
+  background-color: $color;
+  .card-title {
+    color: $white;
+  }
+  &:hover {
+    background-color: lighten($color, 30%);
+    .card-title {
+      color: darken($color, 10%);
+    }
+    text-decoration: none;
+  }
+}
+
+.card-red {
+  @include card-link-variant($red);
+}
+.card-orange {
+  @include card-link-variant($orange);
+}
+.card-yellow {
+  @include card-link-variant($yellow);
+}
+.card-green {
+  @include card-link-variant($green);
+}
+.card-light-blue {
+  @include card-link-variant($light-blue);
+}
+.card-blue {
+  @include card-link-variant($blue);
+}
+.card-teal {
+  @include card-link-variant($teal);
+}
+.card-pink {
+  @include card-link-variant($pink);
+}
+.card-purple {
+  @include card-link-variant($purple);
+}
+
+body {
+  padding-top: 4.5rem;
+}
+
+.navbar {
+  background-color: $white;
+  border-bottom: 2px $red solid;
+
+  #navbar-brand-logo {
+    height: 2.5em;
+    margin-right: 1rem;
+  }
+
+  .navbar-nav .nav-link {
+    font-weight: 500;
+    border: 1px $white solid;
+    border-radius: 0.3rem;
+    &:hover {
+      border-color: $red;
+    }
+  }
+}
+
+.white-footer {
+  border-top: 2px $red solid;
+}
+
+footer {
+  background-color: $red;
+  color: rgba($white, 0.8);
+  a {
+    color: $white;
+  }
 }

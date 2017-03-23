@@ -1,7 +1,13 @@
-{% extends "base.html" %}
+{% extends "resources/index.html" %}
 
-{% block body %}
-<div class="container">
+{% load django_bootstrap_breadcrumbs %}
+
+{% block breadcrumbs %}
+  {{ block.super }}
+  {% breadcrumb resource.name "resources:resource" resource.slug %}
+{% endblock breadcrumbs %}
+
+{% block body_container %}
   <div class="row">
     <div class="col-12">
       <h1>{% block name %}{% endblock name %}</h1>
@@ -57,5 +63,4 @@
     </div>
     {% endif %}
   </div>
-</div>
-{% endblock body %}
+{% endblock body_container %}
