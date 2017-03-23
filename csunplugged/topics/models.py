@@ -1,3 +1,5 @@
+from collections import OrderedDict
+
 from django.db import models
 from resources.models import Resource
 
@@ -52,14 +54,23 @@ class UnitPlan(models.Model):
     content = models.TextField()
 
     def lessons_by_age_group(self):
-        grouped_lessons = dict()
+        """Returns groups of lessons grouped by the lesson minimum age
+        and maximum ages, and then order by number.
+
+        Returns:
+            A ordered dictionary of grouped lessons.
+            The key is a tuple of the minimum age and maximum ages for
+            the lessons.
+            The value for a key is a sorted list of lessons.
+            The dictionary is ordered by minimum age, then maximum age.
+        """
+        grouped_lessons = OrderedDict()
         lessons = self.unit_plan_lessons.order_by('min_age', 'max_age', 'number')
         for lesson in lessons:
             if (lesson.min_age, lesson.max_age) in grouped_lessons:
                 grouped_lessons[(lesson.min_age, lesson.max_age)].append(lesson)
             else:
                 grouped_lessons[(lesson.min_age, lesson.max_age)] = [lesson]
-        print(grouped_lessons)
         return grouped_lessons
 
     def __str__(self):
