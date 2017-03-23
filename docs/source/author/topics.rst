@@ -663,6 +663,28 @@ The file should have the following key/value pair structure:
           curriculum-areas:
             - maths
 
+  - Each curriculum integration slug may also contain the following
+    (same indentation as ``md-file``, ``number``, etc):
+
+    - ``prerequisite-lessons`` - A list of lesson slugs for any lessons that
+      are expected to be completed before the attempting this curriculum
+      integration.
+      If any lessons are listed, a warning is provided to the user that they
+      must know the content covered in the listed lessons.
+      Since curriculum integrations are stored at a topic level, both the unit
+      plan slug and lesson slug must be provided.
+      The slugs should be separated by the ``/`` character, see example
+      below.
+      The slugs are defined in the :ref:`unit-plan-file`.
+
+      - For example:
+
+        .. code-block:: yaml
+
+          prerequisite-lessons:
+            - unit-plan/introduction-to-bits
+            - unit-plan/counting-bits
+
 An example curriculum integrations configuaration file with multiple activities
 may look like the following:
 
@@ -674,6 +696,9 @@ may look like the following:
     curriculum-areas:
       - arts
       - design
+    prerequisite-lessons:
+      - unit-plan/introduction-to-bits
+      - unit-plan/counting-bits
 
   hidden-binary-signals:
     number: 2
