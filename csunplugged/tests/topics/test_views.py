@@ -1,7 +1,6 @@
-from tests import BaseTest
+from tests.BaseTest import BaseTest
 from django.urls import reverse
 from topics.models import Topic
-from django.utils.translation import activate
 
 
 class IndexViewTest(BaseTest):
@@ -11,7 +10,7 @@ class IndexViewTest(BaseTest):
 
     def test_index_with_no_topics(self):
         url = reverse('topics:index')
-        response = BaseTest.client.get(url)
+        response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
     def test_index_with_one_topic(self):
@@ -24,7 +23,7 @@ class IndexViewTest(BaseTest):
         )
         new_topic.save()
         url = reverse('topics:index')
-        response = BaseTest.client.get(url)
+        response = self.client.get(url)
         self.assertEqual(200, response.status_code)
         self.assertQuerysetEqual(
             response.context['all_topics'],

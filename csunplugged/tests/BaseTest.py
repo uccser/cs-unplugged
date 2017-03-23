@@ -1,6 +1,7 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
 from django.test.client import Client
+from django.utils.translation import activate
 
 
 class BaseTest(TestCase):
