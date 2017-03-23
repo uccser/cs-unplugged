@@ -219,6 +219,13 @@ class Lesson(models.Model):
     )
 
     def has_programming_exercises(self):
+        """Returns a boolean to state whether the lesson has any
+        programming exercises.
+
+        Returns:
+            True if the lesson has connected programming exercises.
+            Otherwise False.
+        """
         return bool(self.programming_exercises.all())
 
     def __str__(self):
