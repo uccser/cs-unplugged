@@ -5,7 +5,7 @@ binary-number-bracelets:
     - art
     - design
   prerequisite-lessons:
-    - unit-plan/introduction-to-bits
+    - unit-plan/introduction-to-bits-5-7
 
 binary-number-bracelets-2:
   number: 2

@@ -11,7 +11,7 @@ lessons:
   # The URL slug of the lesson
   # We don't recommend using numbered slugs as ordering may change but
   # slug should be consistent.
-  lesson-1:
+  introduction-to-bits-5-7:
     # The minimum age this lesson is suitable for
     minimum-age: 5
     # The maximum age this lesson is suitable for
@@ -84,7 +84,7 @@ lessons:
       - maths
       - art
 
-  lesson-4:
+  introduction-to-bits:
     minimum-age: 8
     maximum-age: 10
     number: 4
@@ -95,7 +95,7 @@ lessons:
     curriculum-areas:
       - maths
 
-  lesson-5:
+  counting-bits:
     minimum-age: 8
     maximum-age: 10
     number: 5
