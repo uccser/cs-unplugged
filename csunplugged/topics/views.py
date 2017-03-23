@@ -229,7 +229,9 @@ class CurriculumIntegrationView(generic.DetailView):
         # Add in a QuerySet of all the connected curriculum areas
         context['integration_curriculum_areas'] = self.object.curriculum_areas.all()
         # Add in a QuerySet of all the prerequisite lessons
-        context['prerequisite_lessons'] = self.object.prerequisite_lessons.select_related().order_by('unit_plan__name', 'number')
+        context['prerequisite_lessons'] = self.object.prerequisite_lessons.select_related().order_by(
+            'unit_plan__name', 'number'
+        )
         return context
 
 
