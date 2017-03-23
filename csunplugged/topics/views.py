@@ -208,6 +208,16 @@ class CurriculumIntegrationList(generic.ListView):
         return context
 
 
+class AllCurriculumIntegrationList(generic.ListView):
+    model = CurriculumIntegration
+    template_name = 'topics/all_curriculum_integration_list.html'
+    context_object_name = 'curriculum_integrations'
+
+    def get_queryset(self, **kwargs):
+        """Return all integrations for topic"""
+        return CurriculumIntegration.objects.select_related().order_by('topic__name', 'number')
+
+
 class CurriculumIntegrationView(generic.DetailView):
     model = CurriculumIntegration
     queryset = CurriculumIntegration.objects.all()
