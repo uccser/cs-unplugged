@@ -2,6 +2,9 @@ import yaml
 import mdx_math
 import abc
 import sys
+import re
+import os.path
+from os import listdir
 from kordac import Kordac
 from .check_converter_required_files import check_required_files
 
@@ -21,10 +24,7 @@ class BaseLoader():
         """Create Kordac converter with custom processors, html templates,
         and extensions.
         """
-        templates = dict()
-        templates['scratch'] = '<div><object data="{% autoescape false -%}{{ "{% get_static_prefix %}" }}img/scratch-blocks-{{ hash }}.svg{%- endautoescape %}" type="image/svg+xml" /></div>'  # noqa: E501 Fixed in #77
-        templates['iframe'] = '<iframe allowtransparency="true" width="485" height="402" src="{{ link }}" frameborder="0" allowfullscreen="true"></iframe>'  # noqa: E501 Fixed in #77
-        templates['heading'] = '<{{ heading_type }} id="{{ title_slug }}">{{ title }}</{{ heading_type }}>'  # noqa: E501 Fixed in #77
+        templates = self.load_template_files()
         extensions = [
             'markdown.extensions.fenced_code',
             'markdown.extensions.codehilite',
@@ -74,6 +74,24 @@ class BaseLoader():
         """
         yaml_file = open(yaml_file_path, encoding='UTF-8').read()
         return yaml.load(yaml_file)
+
+    def load_template_files(self):
+        """Loads custom HTMl templates for converter
+
+        Returns:
+           templates: dictionary of html templates
+        """
+        templates = dict()
+        template_path = os.path.join(
+            os.path.dirname(__file__),
+            'custom_converter_templates/'
+        )
+        for file in listdir(template_path):
+            template_file = re.search(r'(.*?).html$', file)
+            if template_file:
+                template_name = template_file.groups()[0]
+                templates[template_name] = open(template_path + file).read()
+        return templates
 
     @abc.abstractmethod
     def load(self):

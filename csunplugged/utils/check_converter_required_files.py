@@ -1,5 +1,7 @@
 import os
 import os.path
+from django.contrib.staticfiles import finders
+from .MissingImageError import MissingImageError
 
 
 def check_required_files(required_files):
@@ -10,6 +12,7 @@ def check_required_files(required_files):
         required_files (dict): Dictionary of required files data.
     """
     render_scratch_images(required_files['scratch_images'])
+    find_image_files(required_files['images'])
 
 
 def render_scratch_images(scratch_images):
@@ -27,3 +30,17 @@ def render_scratch_images(scratch_images):
         if not os.path.isfile(filepath):
             with open(filepath, 'w') as scratch_temp_file:
                 scratch_temp_file.write(scratch_image.text)
+
+
+def find_image_files(images):
+    """Confirm each image is in static folder
+
+    Args:
+        images (set): image file names
+
+    Raises:
+        MissingImageError: when image file cannot be found
+    """
+    for image in images:
+        if not finders.find(image):
+            raise MissingImageError(image, 'Image cannot be found: {}'.format(image))

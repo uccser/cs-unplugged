@@ -26,4 +26,15 @@ In summary:
   - For complete examples of the breadcrumb package being used, look at the
     templates for the ``topics`` application.
 
+Setting Custom Converter Templates
+==============================================================================
+We use Kordac to convert Markdown files to HTML. To override a default Kordac
+template, add a new HTML file to ``utils/custom_converter_templates/<processor-name>.html``.
+
+The template file name must correspond to the name of a processor in Kordac
+(for example: ``image.html``, or the name of a supporting template specified in
+Kordac documentation (for example: ``relative-image-link.html``).
+A list of the available processors is available in the `Kordac Documentation`_.
+
 .. _django-bootstrap-breadcrumbs: http://django-bootstrap-breadcrumbs.readthedocs.io/en/latest/
+.. _Kordac Documentation: http://kordac.readthedocs.io/en/master/processors/index.html#available-processos
