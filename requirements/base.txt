@@ -21,7 +21,7 @@ django-model-utils==2.6.1
 
 # PDF Generation
 WeasyPrint==0.36
-html5lib==1.0b8
+html5lib==1.0b10
 
 # Python-PostgreSQL Database Adapter
 psycopg2==2.7
