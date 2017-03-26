@@ -66,6 +66,9 @@ class ProgrammingExerciseLoader(BaseLoader):
             )
             implementation.save()
 
+            LOG_TEMPLATE = 'Added Programming Exercise Language Implementation: {}'
+            self.log(LOG_TEMPLATE.format(implementation.language), 2)
+
         for learning_outcome_slug in self.exercise_structure['learning-outcomes']:
             learning_outcome = LearningOutcome.objects.get(
                 slug=learning_outcome_slug
