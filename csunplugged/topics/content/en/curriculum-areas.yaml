@@ -1,5 +1,10 @@
 maths:
   name: Maths
+  children:
+    maths-geometry:
+      name: Maths - Geometry
+    maths-algebra:
+      name: Maths - Algebra
 
 science:
   name: Science
