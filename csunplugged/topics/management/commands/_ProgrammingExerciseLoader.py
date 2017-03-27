@@ -40,6 +40,9 @@ class ProgrammingExerciseLoader(BaseLoader):
         )
         programming_exercise.save()
 
+        LOG_TEMPLATE = 'Added Programming Exercise: {}'
+        self.log(LOG_TEMPLATE.format(programming_exercise.name), 1)
+
         language_solutions = self.exercise_structure['programming-languages']
         for language in language_solutions:
             # This gets the language for the solution, if not found it should throw an error!
@@ -66,7 +69,7 @@ class ProgrammingExerciseLoader(BaseLoader):
             )
             implementation.save()
 
-            LOG_TEMPLATE = 'Added Programming Exercise Language Implementation: {}'
+            LOG_TEMPLATE = 'Added Language Implementation: {}'
             self.log(LOG_TEMPLATE.format(implementation.language), 2)
 
         for learning_outcome_slug in self.exercise_structure['learning-outcomes']:
@@ -75,5 +78,4 @@ class ProgrammingExerciseLoader(BaseLoader):
             )
             programming_exercise.learning_outcomes.add(learning_outcome)
 
-        LOG_TEMPLATE = 'Added Programming Exercise: {}'
-        self.log(LOG_TEMPLATE.format(programming_exercise.name), 1)
+        
