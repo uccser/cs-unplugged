@@ -77,5 +77,3 @@ class ProgrammingExerciseLoader(BaseLoader):
                 slug=learning_outcome_slug
             )
             programming_exercise.learning_outcomes.add(learning_outcome)
-
-        
