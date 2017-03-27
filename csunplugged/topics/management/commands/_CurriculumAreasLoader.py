@@ -21,24 +21,22 @@ class CurriculumAreasLoader(BaseLoader):
     def load(self):
         """load the content for curriculum areas"""
         curriculum_areas_structure = self.load_yaml_file(os.path.join(self.BASE_PATH, self.curriculum_areas_file))
-        print(curriculum_areas_structure.items())
+
         for (curriculum_area_slug, curriculum_area_data) in curriculum_areas_structure.items():
             # Create area objects and save to database
-            area = CurriculumArea(
+            area = CurriculumArea.objects.create(
                 slug=curriculum_area_slug,
                 name=curriculum_area_data['name'],
             )
-            area.save()
 
-            # Add children
+            # Create children curriculum areas with reference to parent
             if 'children' in curriculum_area_data:
                 for child in curriculum_area_data['children']:
-                    new_area = CurriculumArea(
+                    CurriculumArea.objects.create(
                         slug=child,
-                        name=curriculum_area_data['children'][child]['name']
+                        name=curriculum_area_data['children'][child]['name'],
+                        parent=area
                     )
-                    new_area.save()
-                    area.children.add(new_area)
 
             self.log('Added Curriculum Area: {}'.format(area.__str__()))
 
