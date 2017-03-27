@@ -5,17 +5,27 @@
 
 
 {% block content %}
+
   <h1>Topics</h1>
 
   {% if all_topics %}
-    <div class="card-deck">
-      <ul>
-        {% for topic in all_topics %}
-          <li>{{ topic.name }}</li>
-        {% endfor %}
-      </ul>
-    </div>
+    <ul>
+      {% for topic in topics %}
+        <li>Topic: {{ topic.name }}</li>
+        <ul>
+          {% with topicname=topic.name %}
+            {% for unit_plan,value in unit_plans.items %}
+              {% if unit_plan == topicname %}
+                <li>Unit plan: {{ value.name }}</li>
+              {% endif %}
+            {% endfor %}
+          {% endwith %}
+        </ul>
+      {% endfor %}
+    </ul>
+
   {% else %}
     <p>No topics are available.</p>
   {% endif %}
+
 {% endblock %}
