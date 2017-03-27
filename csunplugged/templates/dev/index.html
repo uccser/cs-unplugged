@@ -1,0 +1,21 @@
+{% extends "topics/base.html" %}
+
+{% load i18n %}
+{% load static %}
+
+
+{% block content %}
+  <h1>Topics</h1>
+
+  {% if all_topics %}
+    <div class="card-deck">
+      <ul>
+        {% for topic in all_topics %}
+          <li>{{ topic.name }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% else %}
+    <p>No topics are available.</p>
+  {% endif %}
+{% endblock %}

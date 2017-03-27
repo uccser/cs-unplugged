@@ -48,7 +48,6 @@ class CurriculumIntegrationsLoader(BaseLoader):
                     prerequisite_lessons_slugs = integration_data['prerequisite-lessons']
                     for prerequisite_lessons_slug in prerequisite_lessons_slugs:
                         (unit_plan_slug, lesson_slug) = prerequisite_lessons_slug.split('/')
-                        print(unit_plan_slug, lesson_slug)
                         lesson = Lesson.objects.get(
                             slug=lesson_slug,
                             unit_plan__slug=unit_plan_slug,

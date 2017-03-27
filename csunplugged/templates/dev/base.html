@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block body_container %}
+  <div class="row">
+    <div class="col-12">
+      {% block content %}
+      {% endblock content %}
+    </div>
+  </div>
+{% endblock body_container %}
