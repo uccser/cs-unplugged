@@ -7,10 +7,7 @@
 {% block content %}
 
   <h1>Topics</h1>
-
-  {% if all_topics %}
     <ul>
-
       {% for topic in topics %}
         <li>Topic: {{ topic.name }}</li>
         <ul>
@@ -38,11 +35,20 @@
           {% endfor %}
         </ul>
       {% endfor %}
-
     </ul>
 
-  {% else %}
-    <p>No topics are available.</p>
-  {% endif %}
+  <h1>Curriculum Areas</h1>
+  <ul>
+    {% for area in curriculum_areas %}
+      <li>{{ area.name }}</li>
+    {% endfor %}
+  </ul>
+
+  <h1>Curriculum Integrations</h1>
+  <ul>
+    {% for activity in cur_int_activites %}
+      <li>{{ activity.name }}</li>
+    {% endfor %}
+  </ul>
 
 {% endblock %}
