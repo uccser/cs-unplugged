@@ -26,8 +26,13 @@ class IndexView(generic.ListView):
         context['topics'] = Topic.objects.order_by('name')
 
         context['unit_plans'] = {}
+        context['lessons'] = {}
+
+        # build dictionaries for each unit plan and lesson
         for topic in context['topics']:
+            # TODO watch this fall apart as multiple unit plans are added to same topic
             unit_plan = UnitPlan.objects.get(topic=topic)
             context['unit_plans'][topic.name] = unit_plan
+            context['lessons'][unit_plan.name] = unit_plan.lessons_by_age_group()
 
         return context

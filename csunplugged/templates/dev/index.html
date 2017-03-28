@@ -10,18 +10,35 @@
 
   {% if all_topics %}
     <ul>
+
       {% for topic in topics %}
         <li>Topic: {{ topic.name }}</li>
         <ul>
-          {% with topicname=topic.name %}
-            {% for unit_plan,value in unit_plans.items %}
-              {% if unit_plan == topicname %}
-                <li>Unit plan: {{ value.name }}</li>
-              {% endif %}
-            {% endfor %}
-          {% endwith %}
+          {% for unit_plan_topic,unit_plan in unit_plans.items %}
+            {% if unit_plan_topic == topic.name %}
+              <li>Unit plan: {{ unit_plan.name }}</li>
+
+                {% for lesson_unit_plan,age_groups in lessons.items %}
+                  {% if lesson_unit_plan == unit_plan.name %}
+                    <ul>
+                      {% for age_group in age_groups.items %}
+                        <li>Lessons (ages {{ age_group.0.0 }}-{{ age_group.0.1 }}):</li>
+                        <ul>
+                          {% for lesson_list in age_group|slice:"1:2" %}
+                            {% for lesson in lesson_list %}
+                              <li>{{ lesson }}</li>
+                            {% endfor %}
+                          {% endfor %}
+                        </ul>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                {% endfor %}
+            {% endif %}
+          {% endfor %}
         </ul>
       {% endfor %}
+
     </ul>
 
   {% else %}
