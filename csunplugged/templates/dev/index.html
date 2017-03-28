@@ -11,27 +11,18 @@
       {% for topic in topics %}
         <li>Topic: {{ topic.name }}</li>
         <ul>
-          {% for unit_plan_topic,unit_plan in unit_plans.items %}
-            {% if unit_plan_topic == topic.name %}
-              <li>Unit plan: {{ unit_plan.name }}</li>
-
-                {% for lesson_unit_plan,age_groups in lessons.items %}
-                  {% if lesson_unit_plan == unit_plan.name %}
-                    <ul>
-                      {% for age_group in age_groups.items %}
-                        <li>Lessons (ages {{ age_group.0.0 }}-{{ age_group.0.1 }}):</li>
-                        <ul>
-                          {% for lesson_list in age_group|slice:"1:2" %}
-                            {% for lesson in lesson_list %}
-                              <li>{{ lesson }}</li>
-                            {% endfor %}
-                          {% endfor %}
-                        </ul>
-                      {% endfor %}
-                    </ul>
-                  {% endif %}
-                {% endfor %}
-            {% endif %}
+          {% for unit_plan in topic.unit_plans %}
+            <li>Unit plan: {{ unit_plan.name }}</li>
+            <ul>
+              {% for age_group,lessons in unit_plan.lessons.items %}
+                <li>Lessons ({{ age_group.0 }}-{{ age_group.1}}):</li>
+                <ul>
+                  {% for lesson in lessons %}
+                    <li>{{ lesson }}</li>
+                  {% endfor %}
+                </ul>
+              {% endfor %}
+            </ul>
           {% endfor %}
         </ul>
       {% endfor %}
@@ -48,6 +39,13 @@
   <ul>
     {% for activity in cur_int_activites %}
       <li>{{ activity.name }}</li>
+    {% endfor %}
+  </ul>
+
+  <h1>Programming Exercises</h1>
+  <ul>
+    {% for exercise in programming_exercises %}
+      <li>{{ exercise.exercise_set_number }}.{{ exercise.exercise_number }} {{ exercise.name }}</li>
     {% endfor %}
   </ul>
 
