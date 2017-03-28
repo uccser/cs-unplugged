@@ -1045,7 +1045,7 @@ the following:
     name: Art
 
 
-Curriculum areas can be broken down into more specific areas (for example, Geometry is a specific area of Maths). This may look like the following: 
+Curriculum areas can be broken down into more specific areas (for example, Geometry is a specific area of Maths). This may look like the following:
 
 .. code-block:: yaml
 
@@ -1062,6 +1062,8 @@ Curriculum areas can be broken down into more specific areas (for example, Geome
 
   art:
     name: Art
+
+The maximum depth for children is one, that is, children curriculum areas cannot have children.
 
 .. note::
 

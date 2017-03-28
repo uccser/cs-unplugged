@@ -40,7 +40,5 @@ class CurriculumAreasLoader(BaseLoader):
 
             self.log('Added Curriculum Area: {}'.format(area.__str__()))
 
-        print(CurriculumArea.objects.filter(name='Maths'))
-
         # Print log output
         self.print_load_log()
