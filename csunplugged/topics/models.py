@@ -144,7 +144,12 @@ class ProgrammingExerciseLanguageImplementation(models.Model):
     solution = models.TextField()
 
     def __str__(self):
-        return self.name
+        return '{} for exercise {}.{}, {}'.format(
+            self.language.name,
+            self.exercise.exercise_set_number,
+            self.exercise.exercise_number,
+            self.exercise.name
+        )
 
 
 class Lesson(models.Model):
