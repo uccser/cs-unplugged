@@ -1043,3 +1043,28 @@ the following:
 
   art:
     name: Art
+
+
+Curriculum areas can be broken down into more specific areas (for example, Geometry is a specific area of Maths). This may look like the following:
+
+.. code-block:: yaml
+
+  maths:
+    name: Maths
+    children:
+      maths-geometry:
+        name: Maths - Geometry
+      maths-algebra:
+        name: Maths - Algebra
+
+  science:
+    name: Science
+
+  art:
+    name: Art
+
+The maximum depth for children is one, that is, children curriculum areas cannot have children.
+
+.. note::
+
+  When including a curriculum area in another configuration file, adding a child curriculum area will automatically add the parent curriculum area, you do not need to specify this manually. For example, adding "maths-geometry" means that "maths" is automatically included.
