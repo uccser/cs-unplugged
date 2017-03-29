@@ -10,4 +10,9 @@ urlpatterns = [
         views.IndexView.as_view(),
         name='index'
     ),
+    url(
+        r'^(?P<programming_exercise_slug>[-\w]+)/$',
+        views.ProgrammingExerciseView.as_view(),
+        name='programming_exercise'
+    ),
 ]

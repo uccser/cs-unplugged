@@ -1,3 +1,4 @@
+from django.shortcuts import get_object_or_404
 from django.views import generic
 
 from topics.models import (
@@ -6,6 +7,7 @@ from topics.models import (
     CurriculumIntegration,
     UnitPlan,
     ProgrammingExercise,
+    Lesson
 )
 
 
@@ -43,4 +45,32 @@ class IndexView(generic.ListView):
             'exercise_set_number', 'exercise_number'
         )
 
+        return context
+
+class ProgrammingExerciseView(generic.DetailView):
+    model = ProgrammingExercise
+    template_name = 'dev/programming_exercise.html'
+    context_object_name = 'programming_exercise'
+
+    def get_object(self, **kwargs):
+        return get_object_or_404(
+            self.model.objects.select_related(),
+            slug=self.kwargs.get('programming_exercise_slug', None)
+        )
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(ProgrammingExerciseView, self).get_context_data(**kwargs)
+        lesson = get_object_or_404(
+            Lesson.objects.select_related(),
+            topic__slug=self.kwargs.get('topic_slug', None),
+            unit_plan__slug=self.kwargs.get('unit_plan_slug', None),
+            slug=self.kwargs.get('lesson_slug', None),
+        )
+        context['lesson'] = lesson
+        context['unit_plan'] = lesson.unit_plan
+        context['topic'] = lesson.topic
+        # Add all the connected learning outcomes
+        context['programming_exercise_learning_outcomes'] = self.object.learning_outcomes.all()
+        context['implementations'] = self.object.implementations.all().order_by('-language__name').select_related()
         return context
