@@ -10,6 +10,10 @@ class BaseTest(TestCase):
         TestCase.__init__(self, *args, **kwargs)
 
     def setUp(self):
+        """
+        Called before each test.
+        Sets the language to English, creates a new user and logs into the database
+        """
         activate('en')
 
         self.client = Client()
