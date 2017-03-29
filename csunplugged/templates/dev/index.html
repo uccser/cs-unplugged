@@ -33,8 +33,13 @@
 
   <h1>Curriculum Areas</h1>
   <ul>
-    {% for area in curriculum_areas %}
-      <li>{{ area.name }}</li>
+    {% for parent,children in curriculum_areas.items %}
+      <li>{{ parent.name }}</li>
+      <ul>
+      {% for child in children %}
+        <li>{{ child.name }}</li>
+      {% endfor %}
+      </ul>
     {% endfor %}
   </ul>
 

@@ -34,7 +34,11 @@ class IndexView(generic.ListView):
             context['unit_plans'] += topic.unit_plans
 
         # Get curriculum area clist
-        context['curriculum_areas'] = CurriculumArea.objects.all()
+        context['curriculum_areas'] = {}
+        areas = CurriculumArea.objects.all()
+        for parent in CurriculumArea.objects.filter(parent=None):
+            context['curriculum_areas'][parent] = [child for child in CurriculumArea.objects.filter(parent=parent)]
+        print(context['curriculum_areas']) 
 
         # Get curriculum integration list
         context['integrations'] = CurriculumIntegration.objects.all()
