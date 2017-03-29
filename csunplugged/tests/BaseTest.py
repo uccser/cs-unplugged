@@ -11,11 +11,11 @@ class BaseTest(TestCase):
 
     def setUp(self):
         activate('en')
-        
+
         self.client = Client()
         self.username = 'test'
         self.email = 'test@test.com'
-        self.password = 'test'        
+        self.password = 'test'
         self.test_user = User.objects.create_user(self.username, self.email, self.password)
         login = self.client.login(username=self.username, password=self.password)
         self.assertEqual(login, True)

@@ -1,5 +1,4 @@
 from tests.BaseTest import BaseTest
-from topics import urls
 from django.urls import reverse
 
 

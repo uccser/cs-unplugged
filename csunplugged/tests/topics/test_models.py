@@ -9,10 +9,10 @@ class ModelTest(BaseTest):
 
     def test_topic_str(self):
         new_topic = Topic(
-            slug = 'binary-numbers',
+            slug='binary-numbers',
             name='Binary Numbers',
-            content = 'content',
-            other_resources = 'content',
-            icon = 'icon'
+            content='content',
+            other_resources='content',
+            icon='icon'
         )
         self.assertEqual(new_topic.__str__(), 'Binary Numbers')
