@@ -1,0 +1,20 @@
+{% extends "topics/programming_exercise.html" %}
+
+{% load render_html_field %}
+
+{% block content %}
+<h1><span class="subtitle">Plugged In:</span> {{ implementation.exercise.name }}</h1>
+<h2>{{ implementation.language.name }} Solution</h2>
+
+<p>This is just one of many possible solutions.</p>
+
+<div class="disable-selection">
+  {% render_html_field implementation.solution %}
+</div>
+
+<p>
+  <a href="{% url 'topics:programming_exercise' topic.slug unit_plan.slug lesson.slug programming_exercise.slug %}" class="btn btn-outline-danger">
+    Back to Plugged In activity
+  </a>
+</p>
+{% endblock content %}

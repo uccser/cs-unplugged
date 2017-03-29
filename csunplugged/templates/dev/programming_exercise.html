@@ -1,4 +1,4 @@
-{% extends "topics/programming_exercise_list.html" %}
+{% extends "dev/base.html" %}
 
 {% load static %}
 {% load render_html_field %}
@@ -44,7 +44,7 @@
             {% render_html_field implementation.hints %}
           </div>
 
-          <a href="{% url 'topics:programming_exercise_language_solution' topic.slug unit_plan.slug lesson.slug programming_exercise.slug implementation.language.slug %}" class="btn btn-outline-danger">
+          <a href="{% url 'dev:programming_exercise_language_solution' programming_exercise.slug implementation.language.slug %}" class="btn btn-outline-danger">
             {{ implementation.language.name }} Solution
           </a>
         </div>
