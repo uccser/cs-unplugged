@@ -40,8 +40,8 @@
 
   <h1>Curriculum Integrations</h1>
   <ul>
-    {% for activity in cur_int_activites %}
-      <li>{{ activity.name }}</li>
+    {% for integration in integrations %}
+      <li><a href="{% url 'dev:integration' integration.slug %}">{{ integration.name }}</a></li>
     {% endfor %}
   </ul>
 

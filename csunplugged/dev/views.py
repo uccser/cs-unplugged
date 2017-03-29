@@ -8,7 +8,6 @@ from topics.models import (
     UnitPlan,
     ProgrammingExercise,
     ProgrammingExerciseLanguageImplementation,
-    Lesson
 )
 
 
@@ -38,7 +37,7 @@ class IndexView(generic.ListView):
         context['curriculum_areas'] = CurriculumArea.objects.all()
 
         # Get curriculum integration list
-        context['cur_int_activites'] = CurriculumIntegration.objects.all()
+        context['integrations'] = CurriculumIntegration.objects.all()
 
         # Get programming exercise list
         context['programming_exercises'] = ProgrammingExercise.objects.all().order_by(
@@ -46,6 +45,7 @@ class IndexView(generic.ListView):
         )
 
         return context
+
 
 class ProgrammingExerciseView(generic.DetailView):
     model = ProgrammingExercise
@@ -64,8 +64,8 @@ class ProgrammingExerciseView(generic.DetailView):
         # Add all the connected learning outcomes
         context['programming_exercise_learning_outcomes'] = self.object.learning_outcomes.all()
         context['implementations'] = self.object.implementations.all().order_by('-language__name').select_related()
-        print('context', context)
         return context
+
 
 class ProgrammingExerciseLanguageSolutionView(generic.DetailView):
     model = ProgrammingExerciseLanguageImplementation
@@ -83,4 +83,28 @@ class ProgrammingExerciseLanguageSolutionView(generic.DetailView):
         # Call the base implementation first to get a context
         context = super(ProgrammingExerciseLanguageSolutionView, self).get_context_data(**kwargs)
         context['programming_exercise'] = self.object.exercise
+        return context
+
+
+class CurriculumIntegrationView(generic.DetailView):
+    model = CurriculumIntegration
+    queryset = CurriculumIntegration.objects.all()
+    template_name = 'dev/curriculum_integration.html'
+    context_object_name = 'integration'
+
+    def get_object(self, **kwargs):
+        return get_object_or_404(
+            self.model.objects.select_related(),
+            slug=self.kwargs.get('integration_slug', None)
+        )
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(CurriculumIntegrationView, self).get_context_data(**kwargs)
+        # Add in a QuerySet of all the connected curriculum areas
+        context['integration_curriculum_areas'] = self.object.curriculum_areas.all()
+        # Add in a QuerySet of all the prerequisite lessons
+        context['prerequisite_lessons'] = self.object.prerequisite_lessons.select_related().order_by(
+            'unit_plan__name', 'number'
+        )
         return context

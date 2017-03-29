@@ -20,4 +20,9 @@ urlpatterns = [
         views.ProgrammingExerciseLanguageSolutionView.as_view(),
         name='programming_exercise_language_solution'
     ),
+    url(
+        r'^integrations/(?P<integration_slug>[-\w]+)/$',
+        views.CurriculumIntegrationView.as_view(),
+        name='integration'
+    ),
 ]
