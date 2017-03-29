@@ -75,7 +75,6 @@ class ProgrammingExerciseLanguageSolutionView(generic.DetailView):
     def get_object(self, **kwargs):
         return get_object_or_404(
             self.model.objects.select_related(),
-            topic__slug=self.kwargs.get('topic_slug', None),
             exercise__slug=self.kwargs.get('programming_exercise_slug', None),
             language__slug=self.kwargs.get('programming_language_slug', None)
         )
@@ -83,15 +82,5 @@ class ProgrammingExerciseLanguageSolutionView(generic.DetailView):
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         context = super(ProgrammingExerciseLanguageSolutionView, self).get_context_data(**kwargs)
-        # Loading object under consistent context names for breadcrumbs
-        lesson = get_object_or_404(
-            Lesson.objects.select_related(),
-            topic__slug=self.kwargs.get('topic_slug', None),
-            unit_plan__slug=self.kwargs.get('unit_plan_slug', None),
-            slug=self.kwargs.get('lesson_slug', None),
-        )
-        context['lesson'] = lesson
-        context['unit_plan'] = lesson.unit_plan
-        context['topic'] = lesson.topic
         context['programming_exercise'] = self.object.exercise
         return context
