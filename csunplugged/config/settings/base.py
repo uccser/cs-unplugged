@@ -55,7 +55,6 @@ LOCAL_APPS = [
     'general.apps.GeneralConfig',
     'topics.apps.TopicsConfig',
     'resources.apps.ResourcesConfig',
-    'dev.apps.DevConfig'
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

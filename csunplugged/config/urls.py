@@ -22,7 +22,6 @@ urlpatterns = i18n_patterns(
     url(r'', include('general.urls', namespace='general')),
     url(r'^topics/', include('topics.urls', namespace='topics')),
     url(r'^resources/', include('resources.urls', namespace='resources')),
-    url(r'^__dev__/', include('dev.urls', namespace='dev')),
     url(r'^admin/', include(admin.site.urls)),
 )
 
@@ -30,4 +29,5 @@ if settings.DEBUG:
     import debug_toolbar
     urlpatterns += [
         url(r'^__debug__/', include(debug_toolbar.urls)),
+    url(r'^__dev__/', include('dev.urls', namespace='dev')),
     ]

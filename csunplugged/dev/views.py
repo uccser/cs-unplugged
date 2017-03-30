@@ -31,15 +31,14 @@ class IndexView(generic.ListView):
             topic.unit_plans = UnitPlan.objects.filter(topic=topic)
             for unit_plan in topic.unit_plans:
                 unit_plan.lessons = unit_plan.lessons_by_age_group()
+            topic.integrations = CurriculumIntegration.objects.filter(topic=topic)
+            topic.programming_exercises = ProgrammingExercise.objects.filter(topic=topic)
             context['unit_plans'] += topic.unit_plans
 
-        # Get curriculum area clist
+        # Get curriculum area list
         context['curriculum_areas'] = {}
         for parent in CurriculumArea.objects.filter(parent=None):
             context['curriculum_areas'][parent] = [child for child in CurriculumArea.objects.filter(parent=parent)]
-
-        # Get curriculum integration list
-        context['integrations'] = CurriculumIntegration.objects.all()
 
         # Get programming exercise list
         context['programming_exercises'] = ProgrammingExercise.objects.all().order_by(

@@ -72,3 +72,4 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 # Your local stuff: Below this line define 3rd party library settings
 # ----------------------------------------------------------------------------
+LOCAL_APPS + ['dev.apps.DevConfig']
