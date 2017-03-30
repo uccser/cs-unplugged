@@ -44,6 +44,22 @@ diagram.
 
 This is just a broad overview of the topics application.
 
+
+.. _viewing-the-current-state:
+
+Viewing the Current State
+------------------------------------------------------------------------------
+
+When developing locally, to get a quick overview of the current state of what content is
+loaded and how it connects together, you can go to the following url:
+
+.. code-block:: none
+
+  localhost:3000/__dev__/
+
+This page gives a high level overview of what is currently loaded into the database.
+For more information about what this page displays, see :doc:`../developer/dev`.
+
 .. _topics-directory-structure:
 
 Topics Content Directory
