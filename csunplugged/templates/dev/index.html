@@ -7,70 +7,95 @@
 {% block content %}
 
   <h1>Topics</h1>
-  <ul>
-    {% for topic in topics %}
-      <li>Topic: <a href="{% url 'topics:topic' topic.slug %}">{{ topic }}</a></li>
-      <ul>
-        {% for unit_plan in topic.unit_plans %}
-        <li>Unit Plan: <a href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">{{ unit_plan.name }}</a></li>
+
+  {% if topics.all %}
+    <ul>
+      {% for topic in topics %}
+        <li>Topic: <a href="{% url 'topics:topic' topic.slug %}">{{ topic }}</a></li>
+
+        {% if topic.unit_plans.all %}
           <ul>
-            {% for age_group,lessons in unit_plan.lessons.items %}
-              <li>Lessons ({{ age_group.0 }}-{{ age_group.1}}):</li>
-              <ul>
-                {% for lesson in lessons %}
-                  <li><a href="{% url 'topics:lesson' topic.slug unit_plan.slug lesson.slug %}">{{ lesson }}</a></li>
-                {% endfor %}
-              </ul>
+            {% for unit_plan in topic.unit_plans %}
+              <li>Unit Plan: <a href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">{{ unit_plan.name }}</a></li>
+
+              {% if unit_plan.lessons.items %}
+                <ul>
+                  {% for age_group,lessons in unit_plan.lessons.items %}
+                    <li>Lessons ({{ age_group.0 }}-{{ age_group.1}}):</li>
+                    <ul>
+                      {% for lesson in lessons %}
+                        <li><a href="{% url 'topics:lesson' topic.slug unit_plan.slug lesson.slug %}">{{ lesson }}</a></li>
+                      {% endfor %}
+                    </ul>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+
             {% endfor %}
-          </ul>
-        {% endfor %}
-        <li>Curriculum integrations:</li>
-        <ul>
-          {% for integration in topic.integrations %}
-            <li><a href="{% url 'topics:integration' topic.slug integration.slug %}">{{ integration }}</a></li>
-          {% endfor %}
+          {% endif %}
+
+          {% if topic.integrations.all %}
+            <li>Curriculum integrations:</li>
+            <ul>
+              {% for integration in topic.integrations %}
+                <li><a href="{% url 'topics:integration' topic.slug integration.slug %}">{{ integration }}</a></li>
+              {% endfor %}
+            </ul>
+          {% endif  %}
+
+          {% if topic.programming_exercises.all %}
+            <li>Programming Exercises:</li>
+            <ul>
+              {% for exercise in topic.programming_exercises %}
+                <li><a href="{% url 'dev:programming_exercise' exercise.slug %}">{{ exercise.exercise_set_number }}.{{ exercise.exercise_number }} {{ exercise.name }}</a></li>
+              {% endfor %}
+            </ul></li>
+          {% endif %}
+
         </ul>
-        <li>Programming Exercises:</li>
-        <ul>
-          {% for exercise in topic.programming_exercises %}
-            <li><a href="{% url 'dev:programming_exercise' exercise.slug %}">{{ exercise.exercise_set_number }}.{{ exercise.exercise_number }} {{ exercise.name }}</a></li>
-          {% endfor %}
-        </ul></li>
-      </ul>
-    {% endfor %}
-  </ul>
-
-  <h1>Curriculum Areas</h1>
-  <ul>
-    {% for parent,children in curriculum_areas.items %}
-      <li>{{ parent.name }}</li>
-      <ul>
-      {% for child in children %}
-        <li>{{ child.name }}</li>
       {% endfor %}
-      </ul>
-    {% endfor %}
-  </ul>
+    </ul>
+  {% endif %}
 
-  <h1>Learning Outcomes</h1>
-  <ul>
-    {% for learning_outcome in learning_outcomes.all %}
-      <li>{{ learning_outcome }}</li>
-    {% endfor %}
-  </ul>
+  {% if curriculum_areas %}
+    <h1>Curriculum Areas</h1>
+    <ul>
+      {% for parent,children in curriculum_areas.items %}
+        <li>{{ parent.name }}</li>
+        <ul>
+        {% for child in children %}
+          <li>{{ child.name }}</li>
+        {% endfor %}
+        </ul>
+      {% endfor %}
+    </ul>
+  {% endif %}
 
-  <h1>Programming Exercise Languages</h1>
-  <ul>
-    {% for language in programming_exercise_languages.all %}
-      <li>{{ language }}</li>
-    {% endfor %}
-  </ul>
+  {% if learning_outcomes.all %}
+    <h1>Learning Outcomes</h1>
+    <ul>
+      {% for learning_outcome in learning_outcomes.all %}
+        <li>{{ learning_outcome }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 
-  <h1>Programming Exercise Difficulties</h1>
-  <ul>
-    {% for difficulty in programming_exercise_difficulties.all %}
-      <li>{{ difficulty.level }}: {{ difficulty.name }}</li>
-    {% endfor %}
-  </ul>
+  {% if programming_exercise_languages.all %}
+    <h1>Programming Exercise Languages</h1>
+    <ul>
+      {% for language in programming_exercise_languages.all %}
+        <li>{{ language }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if programming_exercise_difficulties.all %}
+    <h1>Programming Exercise Difficulties</h1>
+    <ul>
+      {% for difficulty in programming_exercise_difficulties.all %}
+        <li>{{ difficulty.level }}: {{ difficulty.name }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 
 {% endblock %}
