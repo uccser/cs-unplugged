@@ -7,7 +7,10 @@ from topics.models import (
     CurriculumIntegration,
     UnitPlan,
     ProgrammingExercise,
+    ProgrammingExerciseDifficulty,
+    ProgrammingExerciseLanguage,
     ProgrammingExerciseLanguageImplementation,
+    LearningOutcome,
 )
 
 
@@ -40,10 +43,15 @@ class IndexView(generic.ListView):
         for parent in CurriculumArea.objects.filter(parent=None):
             context['curriculum_areas'][parent] = [child for child in CurriculumArea.objects.filter(parent=parent)]
 
-        # Get programming exercise list
-        context['programming_exercises'] = ProgrammingExercise.objects.all().order_by(
-            'exercise_set_number', 'exercise_number'
-        )
+        # Get learning outcome list
+        context['learning_outcomes'] = LearningOutcome.objects.all()
+
+        # Get learning outcome list
+        context['programming_exercise_languages'] = ProgrammingExerciseLanguage.objects.all()
+
+        # Get learning outcome list
+        context['programming_exercise_difficulties'] = ProgrammingExerciseDifficulty.objects.all()
+        print(context['programming_exercise_difficulties'])
 
         return context
 

@@ -52,4 +52,25 @@
     {% endfor %}
   </ul>
 
+  <h1>Learning Outcomes</h1>
+  <ul>
+    {% for learning_outcome in learning_outcomes.all %}
+      <li>{{ learning_outcome }}</li>
+    {% endfor %}
+  </ul>
+
+  <h1>Programming Exercise Languages</h1>
+  <ul>
+    {% for language in programming_exercise_languages.all %}
+      <li>{{ language }}</li>
+    {% endfor %}
+  </ul>
+
+  <h1>Programming Exercise Difficulties</h1>
+  <ul>
+    {% for difficulty in programming_exercise_difficulties.all %}
+      <li>{{ difficulty.level }}: {{ difficulty.name }}</li>
+    {% endfor %}
+  </ul>
+
 {% endblock %}
