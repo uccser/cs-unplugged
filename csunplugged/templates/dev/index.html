@@ -21,7 +21,7 @@
               {% if unit_plan.lessons.items %}
                 <ul>
                   {% for age_group,lessons in unit_plan.lessons.items %}
-                    <li>Lessons ({{ age_group.0 }}-{{ age_group.1}}):</li>
+                    <li>Lessons ({{ age_group.0 }} to {{ age_group.1}}):</li>
                     <ul>
                       {% for lesson in lessons %}
                         <li><a href="{% url 'topics:lesson' topic.slug unit_plan.slug lesson.slug %}">{{ lesson }}</a></li>
@@ -75,7 +75,7 @@
     <h1>Learning Outcomes</h1>
     <ul>
       {% for learning_outcome in learning_outcomes.all %}
-        <li>{{ learning_outcome }}</li>
+        <li>{{ learning_outcome.slug }}: {{ learning_outcome.text}}</li>
       {% endfor %}
     </ul>
   {% endif %}

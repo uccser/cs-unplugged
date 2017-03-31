@@ -35,7 +35,7 @@ The dev application currently contains the following:
       not** link to the template from the topic application. This is because a curriculum
       integration only has to be linked to a topic (at the very least) in order for it to
       be loaded into the database, i.e. it is possible for a curriculum integration to be
-      loaded into the database without it being assigned to alesson.
+      loaded into the database without it being assigned to a lesson.
 
     - Programming Exercises - a list of programming exercises. This **does not** link to
       the template from the topic application. This is because a programming exercise
@@ -48,7 +48,7 @@ The dev application currently contains the following:
 - Learning Outcomes - a list of learning outcomes.
 
 - Programming Exercise Languages - a list of programming languages that programming
-  exercise solutions can be given in .
+  exercise solutions can be given in.
 
 - Programming Exercise Difficulties - a list of difficulty levels and their corresponding
   title.

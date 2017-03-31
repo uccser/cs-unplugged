@@ -29,5 +29,7 @@ if settings.DEBUG:
     import debug_toolbar
     urlpatterns += [
         url(r'^__debug__/', include(debug_toolbar.urls)),
-        url(r'^__dev__/', include('dev.urls', namespace='dev')),
     ]
+    urlpatterns += i18n_patterns(
+        url(r'^__dev__/', include('dev.urls', namespace='dev')),
+    )

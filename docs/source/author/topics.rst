@@ -50,8 +50,10 @@ This is just a broad overview of the topics application.
 Viewing the Current State
 ------------------------------------------------------------------------------
 
-When developing locally, to get a quick overview of the current state of what content is
-loaded and how it connects together, you can go to the following url:
+When developing locally, once you have a server and ``gulp`` runing (see
+:doc:`../getting_started/basic_usage`) you can go to the url below to get a
+quick overview of what content is loaded and how it
+connects together:
 
 .. code-block:: none
 

@@ -34,8 +34,10 @@ class IndexView(generic.ListView):
             topic.unit_plans = UnitPlan.objects.filter(topic=topic)
             for unit_plan in topic.unit_plans:
                 unit_plan.lessons = unit_plan.lessons_by_age_group()
-            topic.integrations = CurriculumIntegration.objects.filter(topic=topic)
-            topic.programming_exercises = ProgrammingExercise.objects.filter(topic=topic)
+            topic.integrations = CurriculumIntegration.objects.filter(topic=topic).order_by('number')
+            topic.programming_exercises = ProgrammingExercise.objects.filter(topic=topic).order_by(
+                'exercise_set_number', 'exercise_number'
+            )
             context['unit_plans'] += topic.unit_plans
 
         # Get curriculum area list
@@ -44,14 +46,13 @@ class IndexView(generic.ListView):
             context['curriculum_areas'][parent] = [child for child in CurriculumArea.objects.filter(parent=parent)]
 
         # Get learning outcome list
-        context['learning_outcomes'] = LearningOutcome.objects.all()
+        context['learning_outcomes'] = LearningOutcome.objects.all().order_by('slug')
 
         # Get learning outcome list
         context['programming_exercise_languages'] = ProgrammingExerciseLanguage.objects.all()
 
         # Get learning outcome list
         context['programming_exercise_difficulties'] = ProgrammingExerciseDifficulty.objects.all()
-        print(context['programming_exercise_difficulties'])
 
         return context
 
