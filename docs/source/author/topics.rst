@@ -44,6 +44,22 @@ diagram.
 
 This is just a broad overview of the topics application.
 
+
+.. _viewing-the-current-state:
+
+Viewing the Current State
+------------------------------------------------------------------------------
+
+When developing locally, once you have a server and ``gulp`` running (see
+:doc:`../getting_started/basic_usage`) you can go to the url below to get a
+quick overview of what content is loaded:
+
+.. code-block:: none
+
+  localhost:3000/__dev__/
+
+For more information about what this page displays, see :doc:`../developer/dev`.
+
 .. _topics-directory-structure:
 
 Topics Content Directory
