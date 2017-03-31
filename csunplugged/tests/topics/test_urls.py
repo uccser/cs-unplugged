@@ -1,51 +1,34 @@
-from tests.BaseTest import BaseTest
-from django.urls import reverse
+import unittest
+
+from tests.topics.urls.index import IndexURLTest
+from tests.topics.urls.all_curriculum_integrations import AllCurriculumIntegrationsURLTest
+from tests.topics.urls.topic import TopicURLTest
+from tests.topics.urls.integration_list import IntegrationListURLTest
+from tests.topics.urls.integration import IntegrationURLTest
+from tests.topics.urls.other_resources import OtherResourcesURLTest
+from tests.topics.urls.unit_plan import UnitPlanURLTest
+from tests.topics.urls.lesson import LessonURLTest
+from tests.topics.urls.programming_exercises_list import ProgrammingExercisesListURLTest
+from tests.topics.urls.programming_exercise import ProgrammingExerciseURLTest
+from tests.topics.urls.programming_exercise_language_solution import ProgrammingExerciseLanguageSolutionURLTest
+from tests.topics.urls.programming_exercise_difficulty import ProgrammingExerciseDifficultyURLTest
 
 
-class UrlsTest(BaseTest):
+if __name__=='__main__':
+    suite = unittest.TestSuite((
+        unittest.makeSuite(IndexURLTest),
+        unittest.makeSuite(AllCurriculumIntegrationsURLTest),
+        unittest.makeSuite(TopicURLTest),
+        unittest.makeSuite(IntegrationListURLTest),
+        unittest.makeSuite(IntegrationURLTest),
+        unittest.makeSuite(OtherResourcesURLTest),
+        unittest.makeSuite(UnitPlanURLTest),
+        unittest.makeSuite(LessonURLTest),
+        unittest.makeSuite(ProgrammingExercisesListURLTest),
+        unittest.makeSuite(ProgrammingExerciseURLTest),
+        unittest.makeSuite(ProgrammingExerciseLanguageSolutionURLTest),
+        unittest.makeSuite(ProgrammingExerciseDifficultyURLTest),
+    ))
 
-    def __init__(self, *args, **kwargs):
-        BaseTest.__init__(self, *args, **kwargs)
-
-    def test_topics_index(self):
-        url = reverse('topics:index')
-        self.assertEqual(url, '/en/topics/')
-        response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
-
-    def test_topic(self):
-        url = reverse('topics:topic', args=['binary-numbers'])
-        self.assertEqual(url, '/en/topics/binary-numbers/')
-
-        # response = self.client.get(url)
-        # self.assertEqual(200, response.status_code)
-
-    def test_missing_topic(self):
-        pass
-        # url = reverse('topics:topic')
-        # response = self.client.get(url)
-        # self.assertEqual(404, response.status_code)
-
-    def test_activity(self):
-        pass
-
-    def test_other_resources(self):
-        pass
-
-    def test_plugged_in(self):
-        pass
-
-    def test_prog_ex(self):
-        pass
-
-    def test_prog_ex_solution(self):
-        pass
-
-    def test_unit_plan(self):
-        pass
-
-    def test_lesson(self):
-        pass
-
-    def test_difficulty(self):
-        pass
+    runner = unittest.TextTestRunner()
+    runner.run(suite)
