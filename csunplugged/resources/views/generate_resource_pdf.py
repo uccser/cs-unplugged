@@ -3,7 +3,7 @@ from django.template.loader import render_to_string
 from django.contrib.staticfiles import finders
 from multiprocessing import Pool
 from functools import partial
-from weasyprint import HTML, CSS
+# from weasyprint import HTML, CSS
 from PIL import Image
 from io import BytesIO
 import importlib

@@ -1,0 +1,15 @@
+version: '3'
+services:
+  db:
+    restart: always
+    image: postgres
+
+  web:
+    build: .
+    command: bash -c "python3 ./manage.py migrate && python3 ./manage.py updatedata && python3 ./manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./csunplugged:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db

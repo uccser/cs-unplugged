@@ -20,8 +20,6 @@ RUN apt-get update && apt-get install -y \
       libjpeg-dev \
       libpq-dev \
       nginx \
-      # TODO: Only install if not production
-      postgresql \
       python-psycopg2 \
       python3 \
       python3-dev \
@@ -41,3 +39,7 @@ RUN pip3 install git+git://github.com/uccser/kordac.git
 RUN apt-get update && apt-get install -y curl
 RUN mkdir /nodejs && curl https://nodejs.org/dist/v6.10.1/node-v6.10.1-linux-x64.tar.gz | tar xvzf - -C /nodejs --strip-components=1
 ENV PATH $PATH:/nodejs/bin
+
+RUN mkdir /code
+WORKDIR /code
+ADD ./csunplugged /code/
