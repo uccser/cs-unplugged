@@ -22,7 +22,7 @@ services:
   nginx:
     build: ./compose/nginx
     volumes:
-      - ./csunplugged:/code
+      - ./csunplugged/build:/usr/src/app/static
     depends_on:
       - django
     ports:
