@@ -28,7 +28,7 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get clean && rm /var/lib/apt/lists/*_*
 
 # Copy and install Python dependencies
-ADD requirements /requirements
+COPY requirements /requirements
 # TODO: Figure out how to install different requirements based of env value
 RUN pip3 install -r /requirements/local.txt
 RUN pip3 install -r /requirements/kordac.txt

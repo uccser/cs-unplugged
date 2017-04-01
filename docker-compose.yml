@@ -1,15 +1,29 @@
 version: '3'
 services:
-  db:
+  postgres:
     restart: always
     image: postgres
 
-  web:
+  django:
     build: .
     command: /bin/bash -c "chmod +x docker-compose-entrypoint.sh && ./docker-compose-entrypoint.sh"
     volumes:
       - ./csunplugged:/code
-    ports:
-      - "8000:8000"
+    environment:
+      - PORT=8080
+      - USE_DOCKER=yes
+      - POSTGRES_USER=postgres
+      - DJANGO_SETTINGS_MODULE=config.settings.local
+    expose:
+      - "8080"
     depends_on:
-      - db
+      - postgres
+
+  nginx:
+    build: ./compose/nginx
+    volumes:
+      - ./csunplugged:/code
+    depends_on:
+      - django
+    ports:
+      - "80:80"

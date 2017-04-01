@@ -31,3 +31,7 @@ django-bootstrap-breadcrumbs==0.8.2
 
 # YAML Loading
 PyYAML==3.12
+
+# Web serving
+gevent==1.2.1
+gunicorn==19.7.1
