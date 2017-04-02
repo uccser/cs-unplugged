@@ -14,7 +14,8 @@ from tests.topics.models.curriculum_integration import CurriculumIntegrationMode
 from tests.topics.models.connected_generated_resource import ConnectedGeneratedResourceModelTest
 
 
-if __name__=='__main__':
+# NTS think django might be bypassing this and just executing all 'test_' methods...
+if __name__ == '__main__':
     suite = unittest.TestSuite((
         unittest.makeSuite(LearningOutcomeModelTest),
         unittest.makeSuite(CurriculumAreaModelTest),
@@ -26,6 +27,7 @@ if __name__=='__main__':
         unittest.makeSuite(ProgrammingExerciseLanguageModelTest),
         unittest.makeSuite(ProgrammingExerciseLanguageImplementationModelTest),
         unittest.makeSuite(LessonModelTest),
+        unittest.makeSuite(CurriculumIntegrationModelTest),
         unittest.makeSuite(CurriculumAreaModelTest),
         unittest.makeSuite(ConnectedGeneratedResourceModelTest),
     ))

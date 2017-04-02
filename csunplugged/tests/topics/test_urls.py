@@ -14,7 +14,7 @@ from tests.topics.urls.programming_exercise_language_solution import Programming
 from tests.topics.urls.programming_exercise_difficulty import ProgrammingExerciseDifficultyURLTest
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
     suite = unittest.TestSuite((
         unittest.makeSuite(IndexURLTest),
         unittest.makeSuite(AllCurriculumIntegrationsURLTest),
