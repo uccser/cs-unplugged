@@ -12,7 +12,7 @@ services:
     environment:
       - PORT=8080
       - USE_DOCKER=yes
-      - POSTGRES_USER=postgres
+      - DATABASE_URL=postgres://postgres@postgres:5432/postgres
       - DJANGO_SETTINGS_MODULE=config.settings.local
     expose:
       - "8080"
