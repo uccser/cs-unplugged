@@ -34,6 +34,7 @@ class BaseLoader():
         ]
         self.converter = Kordac(html_templates=templates, extensions=extensions)
         custom_processors = self.converter.processor_defaults()
+        custom_processors.add('video')
         custom_processors.add('remove-title')
         self.converter.update_processors(custom_processors)
 

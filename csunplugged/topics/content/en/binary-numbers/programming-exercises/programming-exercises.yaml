@@ -4,31 +4,13 @@ count-to-16:
   difficulty-level: 1
   md-file: exercise-1.1/index.md
   learning-outcomes:
-    - programming-sequence
-    - programming-one-input-output
+    - place-holder
   programming-languages:
     scratch:
       expected-result: exercise-1.1/scratch-expected.md
       hints: exercise-1.1/scratch-hints.md
       solution: exercise-1.1/scratch-solution.md
-    python:
-      expected-result: exercise-1.1/python-expected.md
-      hints: exercise-1.1/python-hints.md
-      solution: exercise-1.1/python-solution.md
-
-count-to-a-million:
-  exercise-set-number: 1
-  exercise-number: 2
-  difficulty-level: 3
-  md-file: exercise-2/index.md
-  learning-outcomes:
-    - programming-basic-logic
-  programming-languages:
-    scratch:
-      expected-result: exercise-2/scratch-expected.md
-      hints: exercise-2/scratch-hints.md
-      solution: exercise-2/scratch-solution.md
-    python:
-      expected-result: exercise-2/python-expected.md
-      hints: exercise-2/python-hints.md
-      solution: exercise-2/python-solution.md
+    # python:
+    #   expected-result: exercise-1.1/python-expected.md
+    #   hints: count-to-16/python-hints.md
+    #   solution: count-to-16/python-solution.md

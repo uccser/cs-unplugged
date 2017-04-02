@@ -11,4 +11,3 @@ programming-exercises-structure: programming-exercises-structure.yaml
 # The order of topics here defines their order on the website
 topic-structure-files:
   - binary-numbers/binary-numbers.yaml
-  - error-detection-correction/error-detection-correction.yaml

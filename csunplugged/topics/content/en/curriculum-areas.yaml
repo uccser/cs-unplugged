@@ -1,16 +1,28 @@
-maths:
-  name: Maths
+literacy:
+  name: Literacy
   children:
-    maths-geometry:
-      name: Maths - Geometry
-    maths-algebra:
-      name: Maths - Algebra
+    reading:
+      name: reading
+    writing:
+      name: writing
 
-science:
-  name: Science
+mathematics:
+  name: mathematics
+  children:
+    geometry:
+      name: geometry
+    measurement:
+      name: measurement
+    numeracy:
+      name: numeracy
+    algebra:
+      name: algebra
+
+music:
+  name: music
 
 art:
-  name: Art
+  name: art
 
-design:
-  name: Design
+science:
+  name: science
