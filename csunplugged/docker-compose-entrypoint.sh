@@ -29,4 +29,4 @@ python3 manage.py updatedata
 
 # Start gunicorn service
 echo "Starting gunicorn"
-gunicorn -c gunicorn.conf.py -b :$PORT config.wsgi
+gunicorn -c gunicorn.conf.py -b :$PORT config.wsgi --reload
