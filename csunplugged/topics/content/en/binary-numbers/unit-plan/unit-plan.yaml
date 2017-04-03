@@ -8,8 +8,6 @@ lessons:
     md-file: lessons/8-10/how-binary-digits-work.md
     programming-exercises:
       - count-to-16
-    curriculum-areas:
-      - mathematics
     resources-classroom:
       - Pens
       - String

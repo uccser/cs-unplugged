@@ -1,6 +1,8 @@
 import os.path
 from utils.BaseLoader import BaseLoader
 from utils.errors.MissingLearningObjective import MissingLearningObjective
+from utils.errors.MissingProgrammingDifficulty import MissingProgrammingDifficulty
+from utils.errors.MissingLanguageImplementation import MissingLanguageImplementation
 from topics.models import (
     LearningOutcome,
     ProgrammingExerciseDifficulty,
@@ -21,6 +23,8 @@ class ProgrammingExerciseLoader(BaseLoader):
             topic: Topic model object
 
         Raises:
+            MissingProgrammingDifficulty: raised when no difficulty level matches a given
+                key
             MissingLearningObjective: raised when no learning objective matches a given
                 key
         """
@@ -38,10 +42,7 @@ class ProgrammingExerciseLoader(BaseLoader):
             name=content.title,
             exercise_set_number=self.exercise_structure['exercise-set-number'],
             exercise_number=self.exercise_structure['exercise-number'],
-            content=content.html_string,
-            difficulty=ProgrammingExerciseDifficulty.objects.get(
-                level=self.exercise_structure['difficulty-level']
-            )
+            content=content.html_string
         )
         programming_exercise.save()
 
@@ -50,10 +51,15 @@ class ProgrammingExerciseLoader(BaseLoader):
 
         language_solutions = self.exercise_structure['programming-languages']
         for language in language_solutions:
-            # This gets the language for the solution, if not found it should throw an error!
-            language_object = ProgrammingExerciseLanguage.objects.get(
-                slug=language
-            )
+            try:
+                language_object = ProgrammingExerciseLanguage.objects.get(
+                    slug=language
+                )
+            except:
+                raise MissingLanguageImplementation(
+                    'Programming Exercise Loader',
+                    language
+                )
 
             expected_result_path = os.path.join(self.BASE_PATH, language_solutions[language]['expected-result'])
             expected_result_content = self.convert_md_file(expected_result_path).html_string
@@ -90,3 +96,17 @@ class ProgrammingExerciseLoader(BaseLoader):
                     )
 
                 programming_exercise.learning_outcomes.add(learning_outcome)
+
+        if 'difficulty-level' in self.exercise_structure:
+            level = self.exercise_structure['difficulty-level']
+            try:
+                difficulty_level = ProgrammingExerciseDifficulty.objects.get(
+                    level=level
+                )
+            except:
+                raise MissingProgrammingDifficulty(
+                    'Programming Exercise Loader',
+                    level
+                )
+
+        programming_exercise.difficulty.add(difficulty_level)
