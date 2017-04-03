@@ -185,7 +185,7 @@ class Lesson(models.Model):
     )
     curriculum_areas = models.ManyToManyField(
         CurriculumArea,
-        related_name='lesson_curriculum_areas'
+        related_name='lesson_curriculum_areas',
     )
     classroom_resources = models.ManyToManyField(
         ClassroomResource,
@@ -224,7 +224,7 @@ class CurriculumIntegration(models.Model):
     content = models.TextField()
     curriculum_areas = models.ManyToManyField(
         CurriculumArea,
-        related_name='curriculum_integrations'
+        related_name='curriculum_integrations',
     )
     prerequisite_lessons = models.ManyToManyField(
         Lesson,

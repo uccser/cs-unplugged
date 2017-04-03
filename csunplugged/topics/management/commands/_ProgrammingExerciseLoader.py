@@ -1,5 +1,6 @@
 import os.path
 from utils.BaseLoader import BaseLoader
+from utils.errors.MissingLearningObjective import MissingLearningObjective
 from topics.models import (
     LearningOutcome,
     ProgrammingExerciseDifficulty,
@@ -18,6 +19,10 @@ class ProgrammingExerciseLoader(BaseLoader):
             exercise_slug (string): slug for exercise
             exercise_structure (dict): attributes for exercise
             topic: Topic model object
+
+        Raises:
+            MissingLearningObjective: raised when no learning objective matches a given
+                key
         """
         super().__init__(BASE_PATH, load_log)
         self.exercise_slug = exercise_slug
@@ -72,8 +77,16 @@ class ProgrammingExerciseLoader(BaseLoader):
             LOG_TEMPLATE = 'Added Language Implementation: {}'
             self.log(LOG_TEMPLATE.format(implementation.language), 2)
 
-        for learning_outcome_slug in self.exercise_structure['learning-outcomes']:
-            learning_outcome = LearningOutcome.objects.get(
-                slug=learning_outcome_slug
-            )
-            programming_exercise.learning_outcomes.add(learning_outcome)
+        if 'learning-outcomes' in self.exercise_structure:
+            for learning_outcome_slug in self.exercise_structure['learning-outcomes']:
+                try:
+                    learning_outcome = LearningOutcome.objects.get(
+                        slug=learning_outcome_slug
+                    )
+                except:
+                    raise MissingLearningObjective(
+                        'Programming Exercise Loader',
+                        learning_outcome_slug
+                    )
+
+                programming_exercise.learning_outcomes.add(learning_outcome)

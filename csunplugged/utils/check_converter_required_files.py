@@ -1,7 +1,7 @@
 import os
 import os.path
 from django.contrib.staticfiles import finders
-from .MissingImageError import MissingImageError
+from .errors.MissingImageError import MissingImageError
 
 
 def check_required_files(required_files):

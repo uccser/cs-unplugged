@@ -36,12 +36,13 @@ class CurriculumIntegrationsLoader(BaseLoader):
                 integration.save()
 
                 # Add curriculum areas
-                curriculum_area_slugs = integration_data['curriculum-areas']
-                for curriculum_area_slug in curriculum_area_slugs:
-                    curriculum_area = CurriculumArea.objects.get(
-                        slug=curriculum_area_slug
-                    )
-                    integration.curriculum_areas.add(curriculum_area)
+                if 'curriculum-areas' in structure:
+                    curriculum_area_slugs = integration_data['curriculum-areas']
+                    for curriculum_area_slug in curriculum_area_slugs:
+                        curriculum_area = CurriculumArea.objects.get(
+                            slug=curriculum_area_slug
+                        )
+                        integration.curriculum_areas.add(curriculum_area)
 
                 # Add prerequisite lessons
                 if 'prerequisite-lessons' in integration_data:

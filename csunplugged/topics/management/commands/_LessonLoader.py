@@ -1,5 +1,7 @@
 import os.path
 from utils.BaseLoader import BaseLoader
+from utils.errors.MissingLearningObjective import MissingLearningObjective
+from utils.errors.MissingCurriculumArea import MissingCurriculumArea
 from topics.models import (
     ProgrammingExercise,
     LearningOutcome,
@@ -21,6 +23,11 @@ class LessonLoader(BaseLoader):
             lesson_structure: dictionary containing attributes for a lesson
             topic: Topic model object
             unit_plan: UnitPlan model object
+
+        Raises:
+            MissingLearningObjective: raised when no learning objective matches a given
+                key
+            MissingCurriculumArea: raised when on curriculum area matches a given name
         """
         super().__init__(BASE_PATH, load_log)
         self.lesson_slug = lesson_slug
@@ -52,20 +59,28 @@ class LessonLoader(BaseLoader):
                 lesson.programming_exercises.add(programming_exercise)
 
         # Add learning outcomes
-        learning_outcome_slugs = self.lesson_structure['learning-outcomes']
-        for learning_outcome_slug in learning_outcome_slugs:
-            learning_outcome = LearningOutcome.objects.get(
-                slug=learning_outcome_slug
-            )
-            lesson.learning_outcomes.add(learning_outcome)
+        if 'learning-outcomes' in self.lesson_structure:
+            learning_outcome_slugs = self.lesson_structure['learning-outcomes']
+            try:
+                for learning_outcome_slug in learning_outcome_slugs:
+                    learning_outcome = LearningOutcome.objects.get(
+                        slug=learning_outcome_slug
+                    )
+                    lesson.learning_outcomes.add(learning_outcome)
+            except:
+                raise MissingLearningObjective('Lesson Loader', learning_outcome_slug)
 
         # Add curriculum areas
-        curriculum_area_slugs = self.lesson_structure['curriculum-areas']
-        for curriculum_area_slug in curriculum_area_slugs:
-            curriculum_area = CurriculumArea.objects.get(
-                slug=curriculum_area_slug
-            )
-            lesson.curriculum_areas.add(curriculum_area)
+        if 'curriculum-areas' in self.lesson_structure:
+            curriculum_area_names = self.lesson_structure['curriculum-areas']
+            for curriculum_area_name in curriculum_area_names:
+                try:
+                    curriculum_area = CurriculumArea.objects.get(
+                        slug=curriculum_area_name
+                    )
+                    lesson.curriculum_areas.add(curriculum_area)
+                except:
+                    raise MissingCurriculumArea('Lesson Loader', curriculum_area_name)
 
         # Add classroom resources
         if 'resources-classroom' in self.lesson_structure:

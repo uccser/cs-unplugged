@@ -3,8 +3,6 @@ count-to-16:
   exercise-number: 1
   difficulty-level: 1
   md-file: exercise-1.1/index.md
-  learning-outcomes:
-    - place-holder
   programming-languages:
     scratch:
       expected-result: exercise-1.1/scratch-expected.md

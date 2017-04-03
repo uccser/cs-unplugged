@@ -1,8 +1,8 @@
 # Learning outcomes for all topics
-learning-outcomes: learning-outcomes.yaml
+# learning-outcomes: learning-outcomes.yaml
 
 # Curriculum areas for all topics
-curriculum-areas: curriculum-areas.yaml
+# curriculum-areas: curriculum-areas.yaml
 
 # Defines languages and difficulty levels for all programming exercises
 programming-exercises-structure: programming-exercises-structure.yaml
