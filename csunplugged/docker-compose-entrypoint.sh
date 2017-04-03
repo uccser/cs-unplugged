@@ -19,14 +19,6 @@ done
 
 >&2 echo "Postgres is up - continuing..."
 
-# Apply database migrations
-echo "Apply database migrations"
-python3 manage.py migrate
-
-# Load topics content
-echo "Load topics content"
-python3 manage.py updatedata
-
 # Start gunicorn service
 echo "Starting gunicorn"
 gunicorn -c gunicorn.conf.py -b :$PORT config.wsgi --reload

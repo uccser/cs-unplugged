@@ -20,9 +20,12 @@ services:
       - postgres
 
   nginx:
-    build: ./compose/nginx
+    build:
+      context: .
+      dockerfile: ./compose/nginx/Dockerfile
     volumes:
-      - ./csunplugged/build:/usr/src/app/static
+      - ./csunplugged/:/app/
+      - /app/node_modules
     depends_on:
       - django
     ports:
