@@ -1,0 +1,149 @@
+#!/bin/bash
+# Helper script for commands related to the CS Unplugged repository.
+#
+# Notes:
+#  - Changes to template only require user to refresh browser.
+#  - Changes to static files require the 'static' command to be run.
+#  - Changes to Python code are detected by gunicorn and should take effect
+#    on the server after a few seconds.
+# Future plans:
+#  - Start systems when a command is given (for example: 'static') when the
+#    development system has not yet been started.
+#  - When 'start' is run open website in default browser without creating
+#    new terminal prompt.
+
+# Constants
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+
+# Print out help information
+function helpmenu {
+  printf "Usage: helper [COMMAND]...\n"
+  printf "Script for performing tasks related to the CS Unplugged repository.\n\n"
+  printf "Available commands:\n"
+  printf "   clean        Deletes dangling Docker images\n"
+  printf "   end          Stop development environment\n"
+  printf "   help         View help menu\n"
+  printf "   logs         View logs\n"
+  printf "   shell        Open shell to Django folder\n"
+  printf "   start        Start development environment (this also runs the\n"
+  printf "                update command)\n"
+  printf "   static       Build static files\n"
+  printf "   update       Run Django migrate and updatedata commands\n"
+  printf "   wipe         Deletes all Docker containers and images\n"
+}
+
+# Start development environment
+function start {
+  echo "Creating systems..."
+  docker-compose up -d
+  # Wait until website is ready (therefore Postgres is also ready)
+  echo "Waiting until all systems are ready... (takes roughly 10 to 20 seconds)"
+  until $(curl --output /dev/null --silent --head --fail http://localhost); do
+    sleep 0.25
+  done
+  # Run helper functions
+  update
+  static
+  # Alert user that system is ready
+  printf "${GREEN}Systems are ready!${NC}\n"
+  echo "Open your preferred web browser to the URL 'localhost'"
+}
+
+# Stop development environment
+function end {
+  echo "Stopping systems... (takes roughly 10 to 20 seconds)"
+  docker-compose down
+}
+
+# Run Django migrate and updatedata commands
+function update {
+  echo "Apply database migrations..."
+  docker-compose run django python3 manage.py migrate
+
+  echo "Loading topics content..."
+  docker-compose run django python3 manage.py updatedata
+}
+
+# Build static files
+function static {
+  echo "Building static files..."
+  docker-compose run nginx gulp build
+}
+
+# Run shell
+function shell {
+  docker-compose run django bash
+}
+
+# Delete all untagged dangling Docker images
+function clean {
+  docker rmi $(docker images -f "dangling=true" -q)
+}
+
+# Delete all Docker containers and images
+function wipe {
+  docker rm $(docker ps -a -q)
+  docker rmi $(docker images -q)
+}
+
+# View logs
+function logs {
+  docker-compose logs
+}
+
+# If no command given
+if [ $# -eq 0 ]
+then
+  printf "${RED}Helper script requires a command!${NC}\n"
+  helpmenu
+  exit 1
+fi
+# If command given
+while [ ! $# -eq 0 ]
+do
+  case "$1" in
+    clean | -c)
+      clean
+      exit
+      ;;
+    end | -e)
+      end
+      exit
+      ;;
+    help | -h)
+      helpmenu
+      exit
+      ;;
+    logs | -l)
+      logs
+      exit
+      ;;
+    shell)
+      shell
+      exit
+      ;;
+    start | -s)
+      start
+      exit
+      ;;
+    static)
+      static
+      exit
+      ;;
+    update | -u)
+      update
+      exit
+      ;;
+    wipe)
+      wipe
+      exit
+      ;;
+  esac
+  shift
+done
+# If no command triggered
+printf "${RED}Unknown command!${NC}\n"
+printf "Type 'helper help' for available commands.\n"
+exit 1
