@@ -20,7 +20,8 @@ NC='\033[0m' # No Color
 
 # Print out help information
 function helpmenu {
-  printf "Usage: helper [COMMAND]...\n"
+  printf "Usage: helper [COMMAND]\n"
+  printf "Replace [COMMAND] with a word from the list below.\n\n"
   printf "Script for performing tasks related to the CS Unplugged repository.\n\n"
   printf "Available commands:\n"
   printf "   build        Build or rebuild Docker images\n"
