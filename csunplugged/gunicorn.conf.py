@@ -1,3 +1,6 @@
+import multiprocessing
+workers = multiprocessing.cpu_count()
+
 # Details from https://cloud.google.com/appengine/docs/flexible/python/runtime
 worker_class = 'gevent'
 forwarded_allow_ips = '*'

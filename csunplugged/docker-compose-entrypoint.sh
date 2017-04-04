@@ -21,4 +21,4 @@ done
 
 # Start gunicorn service
 echo "Starting gunicorn"
-gunicorn -c gunicorn.conf.py -b :$PORT config.wsgi --reload
+gunicorn -c gunicorn.conf.py -b :$PORT config.wsgi --reload --log-file=-
