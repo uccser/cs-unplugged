@@ -1,6 +1,5 @@
 from django.http import HttpResponse
 from django.template.loader import render_to_string
-from django.contrib.staticfiles import finders
 from django.urls import reverse
 import pdfkit
 from PIL import Image
