@@ -6,6 +6,7 @@
 #  - Changes to static files require the 'static' command to be run.
 #  - Changes to Python code are detected by gunicorn and should take effect
 #    on the server after a few seconds.
+#
 # Future plans:
 #  - Start systems when a command is given (for example: 'static') when the
 #    development system has not yet been started.
@@ -22,6 +23,7 @@ function helpmenu {
   printf "Usage: helper [COMMAND]...\n"
   printf "Script for performing tasks related to the CS Unplugged repository.\n\n"
   printf "Available commands:\n"
+  printf "   build        Build or rebuild Docker images\n"
   printf "   clean        Deletes dangling Docker images\n"
   printf "   end          Stop development environment\n"
   printf "   help         View help menu\n"
@@ -66,6 +68,12 @@ function update {
   docker-compose run django python3 manage.py updatedata
 }
 
+# Build Docker images
+function build {
+  echo "Building Docker images..."
+  docker-compose build
+}
+
 # Build static files
 function static {
   echo "Building static files..."
@@ -104,6 +112,10 @@ fi
 while [ ! $# -eq 0 ]
 do
   case "$1" in
+    build | -b)
+      build
+      exit
+      ;;
     clean | -c)
       clean
       exit
