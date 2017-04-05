@@ -23,6 +23,7 @@ class ProgrammingExerciseLoader(BaseLoader):
             topic: Topic model object
 
         Raises:
+            MissingLanguageImplementation: raised when no language matches a given key
             MissingProgrammingDifficulty: raised when no difficulty level matches a given
                 key
             MissingLearningObjective: raised when no learning objective matches a given

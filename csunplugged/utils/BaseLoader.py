@@ -5,7 +5,7 @@ import sys
 import re
 import os.path
 from os import listdir
-from kordac import Kordac
+from verto import Verto
 from .check_converter_required_files import check_required_files
 
 
@@ -32,7 +32,7 @@ class BaseLoader():
             'markdown.extensions.tables',
             mdx_math.MathExtension(enable_dollar_delimiter=True)
         ]
-        self.converter = Kordac(html_templates=templates, extensions=extensions)
+        self.converter = Verto(html_templates=templates, extensions=extensions)
         custom_processors = self.converter.processor_defaults()
         custom_processors.add('video')
         custom_processors.add('remove-title')
