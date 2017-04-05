@@ -20,15 +20,33 @@ RUN apt-get update && apt-get install -y \
       python-psycopg2 \
       python3 \
       python3-dev \
-      python3-pip
+      python3-pip \
+      libcairo2-dev \
+      python-dev \
+      python-pip \
+      python-lxml \
+      python-cffi \
+      libpango1.0-0 \
+      libgdk-pixbuf2.0-0 \
+      shared-mime-info
 RUN apt-get clean && rm /var/lib/apt/lists/*_*
+RUN pip install -U pip setuptools
+RUN python -m virtualenv --python=python3.4 venv
+RUN . venv/bin/activate
+RUN pip3 install -U pip setuptools
+RUN pip3 install packaging
+RUN pip3 install appdirs
+RUN pip3 install html5lib==1.0b9
+RUN pip3 install six
+RUN pip3 install weasyprint
+RUN weasyprint http://weasyprint.org weasyprint-website.pdf
 
 # Copy and install Python dependencies
 COPY requirements /requirements
 # TODO: Figure out how to install different requirements based of env value
 RUN pip3 install -r /requirements/local.txt
 RUN pip3 install -r /requirements/kordac.txt
-RUN pip3 install git+git://github.com/uccser/kordac.git
+RUN pip3 install git+git://github.com/uccser/verto.git
 
 RUN mkdir /code
 WORKDIR /code

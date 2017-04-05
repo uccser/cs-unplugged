@@ -1,9 +1,10 @@
 from django.http import HttpResponse
 from django.template.loader import render_to_string
 from django.contrib.staticfiles import finders
+from django.conf import settings
 from multiprocessing import Pool
 from functools import partial
-# from weasyprint import HTML, CSS
+from weasyprint import HTML, CSS
 from PIL import Image
 from io import BytesIO
 import importlib
@@ -36,12 +37,14 @@ def generate_resource_pdf(request, resource, module_path):
         resource,
         module_path
     )
-    with Pool() as pool:
-        context['resource_images'] = pool.map(image_generator, num_copies)
-    pool.close()
+    context['resource_images'] = []
+    for copy in num_copies:
+        context['resource_images'].append(
+            generate_resource_image(get_request, resource, module_path)
+        )
 
     pdf_html = render_to_string('resources/base-resource-pdf.html', context)
-    html = HTML(string=pdf_html, base_url=request.build_absolute_uri())
+    html = HTML(string=pdf_html, base_url=settings.STATIC_ROOT)
     css_file = finders.find('css/print-resource-pdf.css')
     css_string = open(css_file, encoding='UTF-8').read()
     base_css = CSS(string=css_string)
@@ -52,7 +55,7 @@ def generate_resource_pdf(request, resource, module_path):
     return response
 
 
-def generate_resource_image(get_request, resource, module_path, copy_num):
+def generate_resource_image(get_request, resource, module_path):
     """Calls the resource's image generator and returns the generated
     image. This function also resizes the generated image for the paper
     size requested.
