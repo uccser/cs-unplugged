@@ -19,9 +19,7 @@
     <strong>Difficulty:</strong> {{ programming_exercise.difficulty.name }}
   </p>
 
-  {% autoescape off %}
-  {{ programming_exercise.content }}
-  {% endautoescape %}
+  {% render_html_field programming_exercise.content %}
 
   <h2>Languages</h2>
   <div id="accordion" role="tablist" aria-multiselectable="true">
