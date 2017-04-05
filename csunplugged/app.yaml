@@ -1,0 +1,7 @@
+runtime: custom
+env: flex
+
+entrypoint: gunicorn -b :$PORT config:wsgi
+
+health_check:
+  enable_health_check: False
