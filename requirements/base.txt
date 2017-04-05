@@ -20,7 +20,8 @@ python-markdown-math==0.2
 django-model-utils==2.6.1
 
 # PDF Generation
-pdfkit==0.6.1
+WeasyPrint==0.36
+html5lib==1.0b8
 
 # Python-PostgreSQL Database Adapter
 psycopg2==2.7

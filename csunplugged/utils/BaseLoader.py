@@ -5,7 +5,7 @@ import sys
 import re
 import os.path
 from os import listdir
-from verto import Verto
+from kordac import Kordac
 from .check_converter_required_files import check_required_files
 
 
@@ -21,7 +21,7 @@ class BaseLoader():
         self.setup_md_to_html_converter()
 
     def setup_md_to_html_converter(self):
-        """Create Verto converter with custom processors, html templates,
+        """Create Kordac converter with custom processors, html templates,
         and extensions.
         """
         templates = self.load_template_files()
@@ -32,19 +32,19 @@ class BaseLoader():
             'markdown.extensions.tables',
             mdx_math.MathExtension(enable_dollar_delimiter=True)
         ]
-        self.converter = Verto(html_templates=templates, extensions=extensions)
+        self.converter = Kordac(html_templates=templates, extensions=extensions)
         custom_processors = self.converter.processor_defaults()
         custom_processors.add('remove-title')
         self.converter.update_processors(custom_processors)
 
     def convert_md_file(self, md_file_path):
-        """Returns the Verto object for a given Markdown file
+        """Returns the Kordac object for a given Markdown file
 
         Args:
             file_path: location of md file to convert
 
         Returns:
-            Verto result object
+            Kordac result object
         """
         content = open(md_file_path, encoding='UTF-8').read()
         result = self.converter.convert(content)
