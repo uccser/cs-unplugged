@@ -105,3 +105,6 @@ node_modules/
 
 # Temporary folder
 temp/
+
+# Collected static files folder
+staticfiles/
