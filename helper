@@ -79,6 +79,7 @@ function build {
 function static {
   echo "Building static files..."
   docker-compose run nginx gulp build
+  docker-compose run django python3 manage.py collectstatic --no-input
 }
 
 # Run shell
