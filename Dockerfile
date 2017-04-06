@@ -39,7 +39,6 @@ RUN pip3 install appdirs
 RUN pip3 install html5lib==1.0b9
 RUN pip3 install six
 RUN pip3 install weasyprint
-RUN weasyprint http://weasyprint.org weasyprint-website.pdf
 
 # Copy and install Python dependencies
 COPY requirements /requirements
