@@ -1,5 +1,6 @@
 {% extends "topics/unit_plan.html" %}
 
+{% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block breadcrumbs %}
@@ -39,9 +40,7 @@
   <p>No classroom resources required.</p>
 {% endif %}
 
-{% autoescape off %}
-{{ lesson.content }}
-{% endautoescape %}
+{% render_html_field lesson.content %}
 
 <h2>Plugged In <span class="subtitle">(programming exercises)</span></h2>
 {% if programming_exercises %}

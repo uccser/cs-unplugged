@@ -14,6 +14,7 @@ We’ve noticed that once students understand how the binary number system works
 Students will be able to:
 
 **Computational Thinking:**  
+
   - Explain how a binary digit is represented using two contrasting values.
   - Demonstrate how to represent any number between 0 and 63 using just two digits. (For younger students, this might be limited to 0 to 31).
   - Perform a demonstration of how the binary number system works by converting any decimal number into a binary number.
@@ -27,6 +28,7 @@ Students will be able to:
   - Explain why we only need one more bit to represent twice as many numbers.
 
 **Curriculum Integration:**  
+
 - Identify that mistakes lead to new learning.
 - Mathematics: adding numbers up to 63 (or 31), comparing numbers, odd/even numbers, sequence, doubling, digits, place value
 - English: Giving instructions
@@ -49,6 +51,7 @@ There is also an online interactive version of the binary cards [here](http://ww
 - Why do we have different number systems? (They are convenient for different things e.g. tally marks are easy if you are counting; Roman numerals can be useful for making a number look more mysterious or harder to read)
 
 # Lesson Starter
+
 1. Hold the first 5 cards (1, 2, 4, 8 and 16 dots), but don't let students see the dots. Ask for 5 students to volunteer to be “bits”, and have them stand in a line in front of the class.
 2. Hand out the 1-dot card to the person on the right. Explain that they are one "bit" (binary digit), and can be on or off, black or white, 0 or 1 dots. The only rule is that their card is either completely visible, or not visible (i.e. flipped over). Hand out the second card to the second person from the right. Point out that this card has either 2 dots (visible), or none (upside down). 
 
@@ -56,95 +59,95 @@ There is also an online interactive version of the binary cards [here](http://ww
 
 3. Ask the class what the number of dots on the next card will be. Get them to explain why they think that.
 
-{panel type="teacher-observation" title="Teaching Observations"}
+  {panel type="teacher-observation" title="Teaching Observations"}
 
-Students will usually suggest it should be three. If they suggest 4, they have probably done the activity before (or have seen the cards you are holding!) If they suggest the wrong number, don't correct them, but continue without comment, so that they can construct the rule for themselves.
+  Students will usually suggest it should be three. If they suggest 4, they have probably done the activity before (or have seen the cards you are holding!) If they suggest the wrong number, don't correct them, but continue without comment, so that they can construct the rule for themselves.
 
-{panel end}
+  {panel end}
 
 4. Silently give out the four-dot card, and let them try to see the pattern.
 
-{image file-path="img/topics/col_binary_3cards.png"}
+   {image file-path="img/topics/col_binary_3cards.png"}
 
-{panel type="teacher-observation" title="Teaching Observations"}
+   {panel type="teacher-observation" title="Teaching Observations"}
 
-Usually some students will complain that you've missed out the three, but simply indicate that you haven't made a mistake. This gives them the opportunity to try to construct the pattern for themselves.
+   Usually some students will complain that you've missed out the three, but simply indicate that you haven't made a mistake. This gives them the opportunity to try to construct the pattern for themselves.
 
-{panel end}
+   {panel end}
 
 5. Ask what the next card is, and why.
 
-{panel type="teacher-observation" title="Teaching Observations"}
+   {panel type="teacher-observation" title="Teaching Observations"}
 
-At this point it is common for students to guess that it is 6 (since it follow the numbers 2 and 4). However, if you let them think about it a little more, some will usually come up with 8, and those students should be able to convince the others that they are correct (there are several ways a student could explain this e.g. that each card is double the previous one, or that if you take two of a card, you get the next one)
+   At this point it is common for students to guess that it is 6 (since it follow the numbers 2 and 4). However, if you let them think about it a little more, some will usually come up with 8, and those students should be able to convince the others that they are correct (there are several ways a student could explain this e.g. that each card is double the previous one, or that if you take two of a card, you get the next one)
 
-{panel end}
+   {panel end}
 
 6. Students should be able to work out the fifth card (16 dots) without help: 
 
-{image file-path="img/topics/col_binary_5cards.png"}
+   {image file-path="img/topics/col_binary_5cards.png"}
 
 7. How many dots would the next card have if we carried on to the left? (32) The next...? (There's no need to have students hold these cards, as they won't be used in the next part of the activity, but you can show them to confirm that they are correct).
 
 8. Continue with 64 and 128 dots.
 
-{panel type="teacher-observation" title="Teaching Observations"}
+   {panel type="teacher-observation" title="Teaching Observations"}
 
-At 128 dots there would be 8 cards. This is 8 bits, which is commonly referred to as a byte. It may be distracting to bring this up at this point, but some students may already be familiar with the idea that 8 bits is a byte, and make that observation. However, in the meantime, we'll work with a 5-bit representation, which isn't as useful as a whole byte, but a good size for teaching. (A byte is a convenient grouping of bits, and usually computer storage is based around bytes rather than individual bits; it's just the same as eggs being sold as a dozen; they could be sold individually, but groups of a dozen are usually more convenient for everyone concerned.)
+   At 128 dots there would be 8 cards. This is 8 bits, which is commonly referred to as a byte. It may be distracting to bring this up at this point, but some students may already be familiar with the idea that 8 bits is a byte, and make that observation. However, in the meantime, we'll work with a 5-bit representation, which isn't as useful as a whole byte, but a good size for teaching. (A byte is a convenient grouping of bits, and usually computer storage is based around bytes rather than individual bits; it's just the same as eggs being sold as a dozen; they could be sold individually, but groups of a dozen are usually more convenient for everyone concerned.)
 
-A common mistake is to hand out the cards from left to right, but it's convention in number representation that the least significant value is on the right, and this is an important idea for students to take away from this activity.
+   A common mistake is to hand out the cards from left to right, but it's convention in number representation that the least significant value is on the right, and this is an important idea for students to take away from this activity.
 
-{panel end}
+   {panel end}
 
 
 ## Lesson Activities
 
 1. Remind the students that the rule is that a card either has the dots fully visible, or none of them are visible. If we can turn cards on and off by showing the front and back of the card, how would we show exactly 9 dots? Begin by asking if they want the 16 card (they should observe that it has too many dots), then the 8 card (they will likely reason that without it there aren't enough dots left without it), then 4, 2 and 1. Without being given any rules other than each card being visible or not, students will usually come up with the following representation.
 
-**MISSING IMAGE OH NO WHAT DO**
+   {image file-path="http://placehold.it/300x300"}
 
-{panel type="something" title="Mathematical Links"}
+   {panel type="something" title="Mathematical Links"}
 
-Base 10 (our counting system) has 10 digits, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9. 
-When we count in base 10, we count from 0 to 9 and then run out of digits. So we need to add another column; we put a 1 in that column and start counting again from 0. This makes the number 10, we then repeat that process until the tens column is 9 and the ones column is 9 (making 99); from there we then add another column. Hence we have the familiar place value system that can be shown something like this: 
+   Base 10 (our counting system) has 10 digits, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9. 
+    When we count in base 10, we count from 0 to 9 and then run out of digits. So we need to add another column; we put a 1 in that column and start counting again from 0. This makes the number 10, we then repeat that process until the tens column is 9 and the ones column is 9 (making 99); from there we then add another column. Hence we have the familiar place value system that can be shown something like this: 
 
-100,000s | 10,000s | 1,000s | 100s |10s | 1
+   100,000s | 10,000s | 1,000s | 100s |10s | 1
 
-*Note: Use the appropriate place value example based on what you have already taught in your class; this is an extended example.*
+   *Note: Use the appropriate place value example based on what you have already taught in your class; this is an extended example.*
 
-Base 2 (binary) follows the same logic, except it moves a lot quicker to the “next” place value, because there are only two digits, 0 and 1. The binary place values look like this:
+   Base 2 (binary) follows the same logic, except it moves a lot quicker to the “next” place value, because there are only two digits, 0 and 1. The binary place values look like this:
 
-32 | 16 | 8 | 4 | 2 | 1 |
+   32 | 16 | 8 | 4 | 2 | 1 |
 
-Sometimes students confuse the order of digits in a binary representation. To support students to understand the correct ordering of binary digits, ask the question: If I was going to give you $435.00 which number are you most interested in? Is it the 4 or the 5? Why is that? It’s the same for binary code, the lowest value (least significant digit) is on the far right, whereas the most significant digit is on the far left.
+   Sometimes students confuse the order of digits in a binary representation. To support students to understand the correct ordering of binary digits, ask the question: If I was going to give you $435.00 which number are you most interested in? Is it the 4 or the 5? Why is that? It’s the same for binary code, the lowest value (least significant digit) is on the far right, whereas the most significant digit is on the far left.
 
-{panel end}
+   {panel end}
 
 2. Now ask "How would you make the number 21?" (Again, start by asking if they want the 16 card, then the 8 card, and so on from left to right).
 
 3. This is an algorithm for converting numbers to a binary representation. Let’s think through the steps to do this together.
 
-  a. Start with all the numbers switched to on (dots showing).
+   a. Start with all the numbers switched to on (dots showing).
 
-  **MISSING IMAGE OH NO WHAT DO**
+       {image file-path="http://placehold.it/300x300"}
 
-  b. Consider representing the number 10
+   b. Consider representing the number 10
 
-  c. Does 16 fit into 10? No - so turn it off
+   c. Does 16 fit into 10? No - so turn it off
 
-  **MISSING IMAGE OH NO WHAT DO**
+       {image file-path="http://placehold.it/300x300"}
 
-  d. Does 8 fit into 10? Yes - so keep it on. How many are left over? (2)
+   d. Does 8 fit into 10? Yes - so keep it on. How many are left over? (2)
 
-  e. Does 4 fit into 2? No - so turn it off
+   e. Does 4 fit into 2? No - so turn it off
 
-  **MISSING IMAGE OH NO WHAT DO**
+       {image file-path="http://placehold.it/300x300"}
 
-  f. Does 2 fit into 2? Yes - so keep it on. How many are left over? (None)
+   f. Does 2 fit into 2? Yes - so keep it on. How many are left over? (None)
   
-  g. So turn off 1. 
+   g. So turn off 1. 
 
-  **MISSING IMAGE OH NO WHAT DO**
+       {image file-path="http://placehold.it/300x300"}
 
 
 ## Applying What We Have Just Learnt
@@ -157,7 +160,7 @@ Sometimes students confuse the order of digits in a binary representation. To su
 
 2. Now let’s count from the smallest number we can make up to the highest number - 
 
-  a. What is the smallest number? (they may suggest 1, then realise that it’s 0). 
+    a. What is the smallest number? (they may suggest 1, then realise that it’s 0). 
 
 3. Get the number zero displayed on the cards (i.e. no dots showing)
 
@@ -165,29 +168,29 @@ Sometimes students confuse the order of digits in a binary representation. To su
 
 5. Once they start to get into a routine, ask: how often are we seeing the 1-dot card? (every second time, which is every odd number) 
   
-  a. What other patterns are we seeing? (some may observe that the 2-dot card flips on every second count, the 4-dot on every 4th and so on; so the 16 dot card doesn't do much!)
+    a. What other patterns are we seeing? (some may observe that the 2-dot card flips on every second count, the 4-dot on every 4th and so on; so the 16 dot card doesn't do much!)
 
 6. Continue until all the cards are switched to “on” and have counted to 31. What happens next? (We have to add a new card.) How many dots on it? (32) What do we have to do to the other 5 cards when we get to 32? (we have to turn them all off) 
 
 7. Let’s explore this further …. 
 
-  a. So when I have two bits I can make a maximum of? (3)
+    a. So when I have two bits I can make a maximum of? (3)
 
-  b. I add another bit and that has how many dots on it? (4) 
+    b. I add another bit and that has how many dots on it? (4)
 
-  c. I turn off the first two bits to make 4 right? 
+    c. I turn off the first two bits to make 4 right? 
 
-  d. Now let’s turn on all three bits, so now we have how many? (7)
+    d. Now let’s turn on all three bits, so now we have how many? (7)
 
-  e. I add another bit and that has how many dots on it? (8)
+    e. I add another bit and that has how many dots on it? (8)
 
-  f. Repeat until a pattern is recognised that the number on the next card to the left is one more than the total number of dots on all the cards to the right (e.g. there are 15 dots on the 8, 4, 2 and 1 cards, so the next card to the left is 16). This makes it easy to work out the number if all the bits are switched on - double the left-hand card, and subtract 1. 
+    f. Repeat until a pattern is recognised that the number on the next card to the left is one more than the total number of dots on all the cards to the right (e.g. there are 15 dots on the 8, 4, 2 and 1 cards, so the next card to the left is 16). This makes it easy to work out the number if all the bits are switched on - double the left-hand card, and subtract 1. 
 
-  g. How many different numbers can I make with two bits? (4; often students will say 3 because they haven’t counted 0)
+    g. How many different numbers can I make with two bits? (4; often students will say 3 because they haven’t counted 0)
 
-  h. Let’s add the next bit; how many different numbers can we make now? (8, again 7 will often be given as an answer first)
+    h. Let’s add the next bit; how many different numbers can we make now? (8, again 7 will often be given as an answer first)
 
-  i. Repeat until a pattern is recognised that each time we add another bit we can now represent twice as many numbers.
+    i. Repeat until a pattern is recognised that each time we add another bit we can now represent twice as many numbers.
 
 {panel type="teaching-observations" title="Teaching Observations"}
 
@@ -208,6 +211,7 @@ A concept that students may struggle with here is that the number of values is o
 ## Computational Thinking Connections
 
 ### Algorithmic Thinking
+
 We used an algorithm in this lesson  to convert a decimal number to a binary one. This is an algorithm because it is a step-by-step process that will always give the right solution for any input you give it as long as the process is followed exactly.
 
 Here’s an algorithm for working out which dot cards should be showing, written in text:
@@ -277,12 +281,12 @@ The amount of numbers you can represent with a certain number of bits is the sam
 Working with these patterns is valuable for working out the relationship between the number of bits being used and the power of what they can represent.
 
 Explain one or more of the following patterns:
-- That with a certain number of cards you can make the same amount of different numbers as the number of dots that would be on the next card to be added on the left (remember that 0 is a number).
-- When you are counting upwards: the first card (1 dot) turns over every time, the second card (2 dots) turns every two times, the third (4 dots), every four times, and the fourth (8 dots), every eight times...
-- That when all the cards you have are visible it will add up to the next binary card number minus 1. 
+
+  - That with a certain number of cards you can make the same amount of different numbers as the number of dots that would be on the next card to be added on the left (remember that 0 is a number).
+  - When you are counting upwards: the first card (1 dot) turns over every time, the second card (2 dots) turns every two times, the third (4 dots), every four times, and the fourth (8 dots), every eight times...
+  - That when all the cards you have are visible it will add up to the next binary card number minus 1. 
 
 **What to look for:**
-
 Which students recognised quickly that each card was doubling the number of dots? Can students see the similarities between this and multiplying place values by 10 when they are using the decimal system?
 
 Which students easily understand the patterns of cards flipping when counting with binary numbers?
@@ -307,9 +311,9 @@ An example of evaluation is working out how many different values can be represe
 
 Can a student work out the range possible with 4 bits? (16)
 
- 6 bits? (64)
+6 bits? (64)
 
- 8 bits? (256)
+8 bits? (256)
 
 If we add one more bit to a representation, how much does that increase the range? (it doubles it)
 
