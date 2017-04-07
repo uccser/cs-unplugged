@@ -19,26 +19,40 @@ class Command(BaseCommand):
         base_loader = BaseLoader()
         BASE_PATH = 'topics/content/en/'
 
-        structure_file = base_loader.load_yaml_file(os.path.join(BASE_PATH, 'structure.yaml'))
-        difficulty_file = structure_file['programming-exercises-structure']
-        learning_outcomes_file = structure_file['learning-outcomes']
-        curriculum_areas_file = structure_file['curriculum-areas']
+        structure_file = base_loader.load_yaml_file(
+            os.path.join(
+                BASE_PATH,
+                'structure.yaml'
+            )
+        )
 
         # Load content into db
-        LearningOutcomesLoader(
-            learning_outcomes_file,
-            BASE_PATH
-        ).load()
+        try:
+            learning_outcomes_file = structure_file['learning-outcomes']
+            LearningOutcomesLoader(
+                learning_outcomes_file,
+                BASE_PATH
+            ).load()
+        except:
+            pass
 
-        CurriculumAreasLoader(
-            curriculum_areas_file,
-            BASE_PATH
-        ).load()
+        try:  
+            curriculum_areas_file = structure_file['curriculum-areas']
+            CurriculumAreasLoader(
+                curriculum_areas_file,
+                BASE_PATH
+            ).load()
+        except:
+            pass
 
-        ProgrammingExercisesStructureLoader(
-            difficulty_file,
-            BASE_PATH
-        ).load()
+        try:
+            difficulty_file = structure_file['programming-exercises-structure']
+            ProgrammingExercisesStructureLoader(
+                difficulty_file,
+                BASE_PATH
+            ).load()
+        except:
+            pass
 
         for topic_structure_file in structure_file['topic-structure-files']:
             TopicLoader(
