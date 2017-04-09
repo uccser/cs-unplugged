@@ -1,7 +1,7 @@
 from .Error import Error
 
 class EmptyMarkdownFileError(Exception):
-    """Raised when configuration file specifies a key that does not exist.
+    """Raised when there is no content (excluding title) in a Markdown File
     """
     
     def __init__(self):

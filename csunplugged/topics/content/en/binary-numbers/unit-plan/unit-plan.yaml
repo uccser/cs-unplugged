@@ -1,0 +1,5 @@
+lessons:
+  count-to-16:
+    min: 8
+    max: 10
+    num: 1
