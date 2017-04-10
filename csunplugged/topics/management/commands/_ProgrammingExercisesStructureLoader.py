@@ -1,6 +1,10 @@
 import os.path
 from django.db import transaction
+
 from utils.BaseLoader import BaseLoader
+
+from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
+
 from topics.models import ProgrammingExerciseLanguage, ProgrammingExerciseDifficulty
 
 
@@ -19,26 +23,63 @@ class ProgrammingExercisesStructureLoader(BaseLoader):
 
     @transaction.atomic
     def load(self):
-        '''load the content for programming exerises difficulties'''
-        info = self.load_yaml_file(os.path.join(self.BASE_PATH, self.structure_file))
+        '''Load the content for programming exerises difficulties
 
-        languages = info['languages']
-        for language_data in languages:
-            language = ProgrammingExerciseLanguage(
-                slug=language_data,
-                name=languages[language_data]['name'],
-                icon=languages[language_data]['icon']
+        Raises:
+            MissingRequiredFieldError:
+        '''
+        structure = self.load_yaml_file(
+            os.path.join(
+                self.BASE_PATH,
+                self.structure_file
             )
-            language.save()
-            self.log('Added Langauge: {}'.format(language.__str__()))
+        )
 
-        for difficulty_data in info['difficulties']:
-            difficulty = ProgrammingExerciseDifficulty(
-                level=difficulty_data['level'],
-                name=difficulty_data['name']
+        try:
+            languages = structure['languages']
+            difficulty_levels = structure['difficulties']
+        except:
+            raise MissingRequiredFieldError()
+
+        for language in languages:
+            language_data = languages[language]
+
+            # Check for required fields
+            try:
+                language_name = language_data['name']
+            except:
+                raise MissingRequiredFieldError()
+
+            # Check if icon is given
+            if 'icon' in language_data:
+                language_icon = language_data['icon']
+            else:
+                language_icon = None
+
+            new_language = ProgrammingExerciseLanguage(
+                slug=language,
+                name=language_name,
+                icon=language_icon
             )
-            difficulty.save()
-            self.log('Added Difficulty Level: {}'.format(difficulty.__str__()))
+
+            new_language.save()
+
+            self.log('Added Langauge: {}'.format(new_language.__str__()))
+
+        for difficulty in difficulty_levels:
+            try:
+                difficulty_level = difficulty['level']
+                difficulty_name = difficulty['name']
+            except:
+                raise MissingRequiredFieldError()
+
+            new_difficulty = ProgrammingExerciseDifficulty(
+                level=difficulty_level,
+                name=difficulty_name
+            )
+            new_difficulty.save()
+
+            self.log('Added Difficulty Level: {}'.format(new_difficulty.__str__()))
 
         # Print log output
         self.print_load_log()
