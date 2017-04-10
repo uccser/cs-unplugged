@@ -67,7 +67,7 @@ class UnitPlanLoader(BaseLoader):
         # Load the lessons for the unit plan
 
         # If there is nothing in the structure dictionary there
-        # are obvsiously no lessons! Error!
+        # are obviously no lessons! Error!
         if unit_plan_structure is None:
             raise UnitPlanHasNoLessonsError()
         if 'lessons' in unit_plan_structure:

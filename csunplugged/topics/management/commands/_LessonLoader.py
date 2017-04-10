@@ -5,6 +5,7 @@ from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileE
 from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
 from utils.errors.MarkdownFileMissingTitleError import MarkdownFileMissingTitleError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
+from utils.errors.KeyNotFoundError import KeyNotFoundError
 
 from topics.models import (
     ProgrammingExercise,
@@ -42,8 +43,9 @@ class LessonLoader(BaseLoader):
             EmptyMarkdownFileError:
             MarkdownFileMissingTitleError:
             MissingRequiredFieldError:
+            KeyNotFoundError:
         """
-        # Build the file path to the lesson's md file
+        # Retrieve required variables from md file
         try:
             lesson_min_age = self.lesson_structure['min']
             lesson_max_age = self.lesson_structure['max']
@@ -51,6 +53,7 @@ class LessonLoader(BaseLoader):
         except:
             raise MissingRequiredFieldError()
 
+        # Build the file path to the lesson's md file
         file_path = os.path.join(
             self.BASE_PATH,
             'lessons',
@@ -77,8 +80,8 @@ class LessonLoader(BaseLoader):
             name=lesson_content.title,
             number=lesson_number,
             content=lesson_content.html_string,
-            min_age=self.lesson_min_age,
-            max_age=self.lesson_max_age
+            min_age=lesson_min_age,
+            max_age=lesson_max_age
         )
         lesson.save()
 
@@ -93,7 +96,6 @@ class LessonLoader(BaseLoader):
                     lesson.programming_exercises.add(programming_exercise)
                 except:
                     raise KeyNotFoundError()
-                
 
         # Add learning outcomes
         if 'learning-outcomes' in self.lesson_structure:
@@ -132,8 +134,10 @@ class LessonLoader(BaseLoader):
         # Add generated resources
         if 'resources-generated' in self.lesson_structure:
             for resource_data in self.lesson_structure['resources-generated']:
-                slug = resource_data['slug']
-                resource = Resource.objects.get(slug=slug)
+                resouce_slug = resource_data['slug']
+                resource = Resource.objects.get(
+                    slug=resource_slug
+                )
                 relationship = ConnectedGeneratedResource(
                     resource=resource,
                     lesson=lesson,

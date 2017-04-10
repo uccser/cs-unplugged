@@ -6,6 +6,7 @@ from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileE
 from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
 from utils.errors.MarkdownFileMissingTitleError import MarkdownFileMissingTitleError
 from utils.errors.TopicHasNoUnitPlansError import TopicHasNoUnitPlansError
+from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 
 from ._CurriculumIntegrationsLoader import CurriculumIntegrationsLoader
 from ._ProgrammingExercisesLoader import ProgrammingExercisesLoader
@@ -34,6 +35,7 @@ class TopicLoader(BaseLoader):
         """Load the content for a topic
 
         Raises:
+            CouldNotFindMarkdownFileError:
             MarkdownFileMissingTitleError:
             EmptyMarkdownFileError:
             TopicHasNoUnitPlansError:
@@ -58,6 +60,10 @@ class TopicLoader(BaseLoader):
             raise EmptyMarkdownFileError()
 
         topic_structure = self.load_yaml_file(self.structure_file)
+
+        # topic structure has at least one field that is required
+        if topic_structure is None:
+            raise MissingRequiredFieldError()
 
         # If other resources are given, convert to HTML
         if 'other_resources' in topic_structure:
@@ -92,17 +98,18 @@ class TopicLoader(BaseLoader):
         self.log('Added Topic: {}'.format(topic.name))
 
         # Load unit plans
-        # fix this to match unit plan loading lessons
-        if len(topic_structure['unit-plans']) == 0 or 'unit-plans' not in topic_structure:
+        if 'unit-plans' in topic_structure:
+            if len(topic_structure['unit-plans']) == 0:
+                raise TopicHasNoUnitPlansError()
+            for unit_plan_structure_file in topic_structure['unit-plans']:
+                UnitPlanLoader(
+                    self.load_log,
+                    unit_plan_structure_file,
+                    topic,
+                    self.BASE_PATH
+                ).load()
+        else:
             raise TopicHasNoUnitPlansError()
-
-        for unit_plan_structure_file in topic_structure['unit-plans']:
-            UnitPlanLoader(
-                self.load_log,
-                unit_plan_structure_file,
-                topic,
-                self.BASE_PATH
-            ).load()
 
         # Load programming exercises (if there are any)
         if 'programming-exercises' in topic_structure:
