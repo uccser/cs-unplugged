@@ -1,2 +1,4 @@
 unit-plans:
   - unit-plan/unit-plan.yaml
+
+programming-exercises: programming-exercises/programming-exercises.yaml

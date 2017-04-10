@@ -11,10 +11,10 @@ class Command(BaseCommand):
     help = 'Converts Markdown files listed in structure file and stores'
 
     def handle(self, *args, **options):
-        """The function called when the loadtopics command is given
+        '''The function called when the loadtopics command is given
 
         Loads content into database.
-        """
+        '''
         # Get structure and content files
         base_loader = BaseLoader()
         BASE_PATH = 'topics/content/en/'

@@ -4,4 +4,4 @@ lessons:
     max: 10
     number: 1
     programming-exercises:
-      elephants-are-great
+      - elephants-are-great

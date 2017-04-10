@@ -18,17 +18,17 @@ from topics.models import (
 
 
 class LessonLoader(BaseLoader):
-    """Loader for a single lesson"""
+    '''Loader for a single lesson'''
 
     def __init__(self, load_log, lesson_slug, lesson_structure, topic, unit_plan, BASE_PATH):
-        """Initiates the loader for a single lesson
+        '''Initiates the loader for a single lesson
 
         Args:
             lesson_slug: string of the URL slug for a lesson
             lesson_structure: dictionary containing attributes for a lesson
             topic: Topic model object
             unit_plan: UnitPlan model object
-        """
+        '''
         super().__init__(BASE_PATH, load_log)
         self.lesson_slug = lesson_slug
         self.lesson_structure = lesson_structure
@@ -36,7 +36,7 @@ class LessonLoader(BaseLoader):
         self.unit_plan = unit_plan
 
     def load(self):
-        """Load the content for a single lesson
+        '''Load the content for a single lesson
 
         Raises:
             CouldNotFindMarkdownFileError:
@@ -44,8 +44,8 @@ class LessonLoader(BaseLoader):
             MarkdownFileMissingTitleError:
             MissingRequiredFieldError:
             KeyNotFoundError:
-        """
-        # Retrieve required variables from md file
+        '''
+        # Retrieve required variables from structure dictionary
         try:
             lesson_min_age = self.lesson_structure['min']
             lesson_max_age = self.lesson_structure['max']

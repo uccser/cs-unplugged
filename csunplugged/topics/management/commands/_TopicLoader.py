@@ -16,15 +16,15 @@ from topics.models import Topic
 
 
 class TopicLoader(BaseLoader):
-    """Loader for the topics content"""
+    '''Loader for the topics content'''
 
     def __init__(self, structure_file, BASE_PATH):
-        """Initiates the topic loader
+        '''Initiates the topic loader
 
         Args:
             structure_file: file path (string)
             a dictionary of attributes.
-        """
+        '''
         super().__init__(BASE_PATH)
         self.topic_slug = os.path.split(structure_file)[0]
         self.structure_file = os.path.join(self.BASE_PATH, structure_file)
@@ -32,14 +32,14 @@ class TopicLoader(BaseLoader):
 
     @transaction.atomic
     def load(self):
-        """Load the content for a topic
+        '''Load the content for a topic
 
         Raises:
             CouldNotFindMarkdownFileError:
             MarkdownFileMissingTitleError:
             EmptyMarkdownFileError:
             TopicHasNoUnitPlansError:
-        """
+        '''
 
         # Convert the content to HTML
         try:
@@ -97,6 +97,15 @@ class TopicLoader(BaseLoader):
 
         self.log('Added Topic: {}'.format(topic.name))
 
+        # Load programming exercises (if there are any)
+        if 'programming-exercises' in topic_structure:
+            ProgrammingExercisesLoader(
+                self.load_log,
+                topic_structure['programming-exercises'],
+                topic,
+                self.BASE_PATH
+            ).load()
+
         # Load unit plans
         if 'unit-plans' in topic_structure:
             if len(topic_structure['unit-plans']) == 0:
@@ -110,15 +119,6 @@ class TopicLoader(BaseLoader):
                 ).load()
         else:
             raise TopicHasNoUnitPlansError()
-
-        # Load programming exercises (if there are any)
-        if 'programming-exercises' in topic_structure:
-            ProgrammingExercisesLoader(
-                self.load_log,
-                topic_structure['programming-exercises'],
-                topic,
-                self.BASE_PATH
-            ).load()
 
         # Load curriculum integrations (if there are any)
         if 'curriculum-integrations' in topic_structure:

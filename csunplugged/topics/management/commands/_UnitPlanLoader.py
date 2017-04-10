@@ -10,15 +10,15 @@ from ._LessonsLoader import LessonsLoader
 
 
 class UnitPlanLoader(BaseLoader):
-    """Loader for unit plans"""
+    '''Loader for unit plans'''
 
     def __init__(self, load_log, structure_file, topic, BASE_PATH):
-        """Initiates the loader for unit plans
+        '''Initiates the loader for unit plans
 
         Args:
             structure_file: file path (string)
             topic: Topic model object
-        """
+        '''
         super().__init__(BASE_PATH, load_log)
         self.unit_plan_slug = os.path.split(structure_file)[0]
         self.structure_file = os.path.join(self.BASE_PATH, structure_file)
@@ -26,14 +26,14 @@ class UnitPlanLoader(BaseLoader):
         self.topic = topic
 
     def load(self):
-        """Load the content for unit plans
+        '''Load the content for unit plans
 
         Raises:
             CouldNotFindMarkdownFileError:
             MarkdownFileMissingTitleError:
             EmptyMarkdownFileError:
             UnitPlanHasNoLessonsError:
-        """
+        '''
 
         # Convert the content to HTML
         try:
