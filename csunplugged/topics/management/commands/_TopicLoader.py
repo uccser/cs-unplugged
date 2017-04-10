@@ -2,6 +2,7 @@ import os.path
 from django.db import transaction
 from utils.BaseLoader import BaseLoader
 
+from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
 from utils.errors.MarkdownFileMissingTitleError import MarkdownFileMissingTitleError
 from utils.errors.TopicHasNoUnitPlansError import TopicHasNoUnitPlansError
@@ -24,9 +25,9 @@ class TopicLoader(BaseLoader):
             a dictionary of attributes.
         """
         super().__init__(BASE_PATH)
-        self.topic_name = os.path.split(structure_file)[0]
+        self.topic_slug = os.path.split(structure_file)[0]
         self.structure_file = os.path.join(self.BASE_PATH, structure_file)
-        self.BASE_PATH = os.path.join(self.BASE_PATH, self.topic_name)
+        self.BASE_PATH = os.path.join(self.BASE_PATH, self.topic_slug)
 
     @transaction.atomic
     def load(self):
@@ -39,12 +40,15 @@ class TopicLoader(BaseLoader):
         """
 
         # Convert the content to HTML
-        topic_content = self.convert_md_file(
-            os.path.join(
-                self.BASE_PATH,
-                '{}.md'.format(self.topic_name)
+        try:
+            topic_content = self.convert_md_file(
+                os.path.join(
+                    self.BASE_PATH,
+                    '{}.md'.format(self.topic_slug)
+                )
             )
-        )
+        except:
+            raise CouldNotFindMarkdownFileError()
 
         # Check that content is not empty and that a title was extracted
         if topic_content.title is None:
@@ -77,7 +81,7 @@ class TopicLoader(BaseLoader):
 
         # Create topic objects and save to the db
         topic = Topic(
-            slug=self.topic_name,
+            slug=self.topic_slug,
             name=topic_content.title,
             content=topic_content.html_string,
             other_resources=topic_other_resources_html,
@@ -88,6 +92,7 @@ class TopicLoader(BaseLoader):
         self.log('Added Topic: {}'.format(topic.name))
 
         # Load unit plans
+        # fix this to match unit plan loading lessons
         if len(topic_structure['unit-plans']) == 0 or 'unit-plans' not in topic_structure:
             raise TopicHasNoUnitPlansError()
 

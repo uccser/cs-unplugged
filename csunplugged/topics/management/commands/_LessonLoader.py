@@ -1,5 +1,11 @@
 import os.path
 from utils.BaseLoader import BaseLoader
+
+from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
+from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
+from utils.errors.MarkdownFileMissingTitleError import MarkdownFileMissingTitleError
+from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
+
 from topics.models import (
     ProgrammingExercise,
     LearningOutcome,
@@ -29,16 +35,50 @@ class LessonLoader(BaseLoader):
         self.unit_plan = unit_plan
 
     def load(self):
-        """load the content for a single lesson"""
-        lesson_content = self.convert_md_file(os.path.join(self.BASE_PATH, self.lesson_structure['md-file']))
+        """Load the content for a single lesson
+
+        Raises:
+            CouldNotFindMarkdownFileError:
+            EmptyMarkdownFileError:
+            MarkdownFileMissingTitleError:
+            MissingRequiredFieldError:
+        """
+        # Build the file path to the lesson's md file
+        try:
+            lesson_min_age = self.lesson_structure['min']
+            lesson_max_age = self.lesson_structure['max']
+            lesson_number = self.lesson_structure['number']
+        except:
+            raise MissingRequiredFieldError()
+
+        file_path = os.path.join(
+            self.BASE_PATH,
+            'lessons',
+            '{}-{}'.format(lesson_min_age, lesson_max_age),
+            '{}.md'.format(self.lesson_slug)
+        )
+
+        # Throw and error if the md file cannot be found
+        try:
+            lesson_content = self.convert_md_file(file_path)
+        except:
+            raise CouldNotFindMarkdownFileError()
+
+        # Check that content is not empty and that a title was extracted
+        if lesson_content.title is None:
+            raise MarkdownFileMissingTitleError()
+        
+        if len(lesson_content.html_string) == 0:
+            raise EmptyMarkdownFileError()
+
         lesson = self.topic.topic_lessons.create(
             unit_plan=self.unit_plan,
             slug=self.lesson_slug,
             name=lesson_content.title,
-            number=self.lesson_structure['number'],
+            number=lesson_number,
             content=lesson_content.html_string,
-            min_age=self.lesson_structure['minimum-age'],
-            max_age=self.lesson_structure['maximum-age']
+            min_age=self.lesson_min_age,
+            max_age=self.lesson_max_age
         )
         lesson.save()
 
@@ -46,26 +86,40 @@ class LessonLoader(BaseLoader):
         if 'programming-exercises' in self.lesson_structure:
             programming_exercise_slugs = self.lesson_structure['programming-exercises']
             for programming_exercise_slug in programming_exercise_slugs:
-                programming_exercise = ProgrammingExercise.objects.get(
-                    slug=programming_exercise_slug
-                )
-                lesson.programming_exercises.add(programming_exercise)
+                try:
+                    programming_exercise = ProgrammingExercise.objects.get(
+                        slug=programming_exercise_slug
+                    )
+                    lesson.programming_exercises.add(programming_exercise)
+                except:
+                    raise KeyNotFoundError()
+                
 
         # Add learning outcomes
-        learning_outcome_slugs = self.lesson_structure['learning-outcomes']
-        for learning_outcome_slug in learning_outcome_slugs:
-            learning_outcome = LearningOutcome.objects.get(
-                slug=learning_outcome_slug
-            )
-            lesson.learning_outcomes.add(learning_outcome)
+        if 'learning-outcomes' in self.lesson_structure:
+            learning_outcome_slugs = self.lesson_structure['learning-outcomes']
+            for learning_outcome_slug in learning_outcome_slugs:
+                try:
+                    learning_outcome = LearningOutcome.objects.get(
+                        slug=learning_outcome_slug
+                    )
+                    lesson.learning_outcomes.add(learning_outcome)
+                except:
+                    raise KeyNotFoundError()
 
         # Add curriculum areas
-        curriculum_area_slugs = self.lesson_structure['curriculum-areas']
-        for curriculum_area_slug in curriculum_area_slugs:
-            curriculum_area = CurriculumArea.objects.get(
-                slug=curriculum_area_slug
-            )
-            lesson.curriculum_areas.add(curriculum_area)
+        if 'curriculum-areas' in self.lesson_structure:
+            curriculum_area_slugs = self.lesson_structure['curriculum-areas']
+            for curriculum_area_slug in curriculum_area_slugs:
+                try:
+                    curriculum_area = CurriculumArea.objects.get(
+                        slug=curriculum_area_slug
+                    )
+                    lesson.curriculum_areas.add(curriculum_area)
+                except:
+                    raise KeyNotFoundError()
+
+        # TODO figure out how to error handle class resources and generated resources
 
         # Add classroom resources
         if 'resources-classroom' in self.lesson_structure:

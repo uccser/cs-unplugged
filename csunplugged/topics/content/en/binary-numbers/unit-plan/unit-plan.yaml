@@ -1,5 +1,5 @@
 lessons:
-  count-to-16:
+  lesson-1:
     min: 8
     max: 10
     num: 1

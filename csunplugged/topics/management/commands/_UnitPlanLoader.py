@@ -20,9 +20,9 @@ class UnitPlanLoader(BaseLoader):
             topic: Topic model object
         """
         super().__init__(BASE_PATH, load_log)
-        self.unit_plan_name = os.path.split(structure_file)[0]
+        self.unit_plan_slug = os.path.split(structure_file)[0]
         self.structure_file = os.path.join(self.BASE_PATH, structure_file)
-        self.BASE_PATH = os.path.join(self.BASE_PATH, self.unit_plan_name)
+        self.BASE_PATH = os.path.join(self.BASE_PATH, self.unit_plan_slug)
         self.topic = topic
 
     def load(self):
@@ -40,7 +40,7 @@ class UnitPlanLoader(BaseLoader):
             unit_plan_content = self.convert_md_file(
                 os.path.join(
                     self.BASE_PATH,
-                    '{}.md'.format(self.unit_plan_name)
+                    '{}.md'.format(self.unit_plan_slug)
                 )
             )
         except:
@@ -56,7 +56,7 @@ class UnitPlanLoader(BaseLoader):
         unit_plan_structure = self.load_yaml_file(self.structure_file)
 
         unit_plan = self.topic.topic_unit_plans.create(
-            slug=self.unit_plan_name,
+            slug=self.unit_plan_slug,
             name=unit_plan_content.title,
             content=unit_plan_content.html_string,
         )
@@ -70,7 +70,6 @@ class UnitPlanLoader(BaseLoader):
         # are obvsiously no lessons! Error!
         if unit_plan_structure is None:
             raise UnitPlanHasNoLessonsError()
-
         if 'lessons' in unit_plan_structure:
             # Check there is at least one lesson
             if len(unit_plan_structure['lessons'].keys()) == 0:
