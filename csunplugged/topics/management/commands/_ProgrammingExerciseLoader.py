@@ -26,7 +26,13 @@ class ProgrammingExerciseLoader(BaseLoader):
 
     def load(self):
         """load the content for a programming exercise"""
-        content = self.convert_md_file(os.path.join(self.BASE_PATH, self.exercise_structure['md-file']))
+        print(self.exercise_structure)
+        exercise_content = self.convert_md_file(
+            os.path.join(
+                self.BASE_PATH,
+                self.exercise_structure['md-file']
+            )
+        )
 
         programming_exercise = self.topic.topic_programming_exercises.create(
             slug=self.exercise_slug,

@@ -22,6 +22,7 @@ class ProgrammingExercisesLoader(BaseLoader):
         """Call (single) ProgrammingExerciseLoader for each exercise
         to load into the database
         """
+        
         programming_exercises_structure = self.load_yaml_file(self.structure_file)
 
         for exercise_slug, exercise_structure in programming_exercises_structure.items():

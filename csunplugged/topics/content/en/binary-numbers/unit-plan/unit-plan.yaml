@@ -3,3 +3,5 @@ lessons:
     min: 8
     max: 10
     number: 1
+    programming-exercises:
+      elephants-are-great
