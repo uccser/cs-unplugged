@@ -2,3 +2,5 @@ topic-structure-files:
   - binary-numbers/binary-numbers.yaml
 
 programming-exercises-structure: programming-exercises-structure.yaml
+
+curriculum-areas: curriculum-areas.yaml

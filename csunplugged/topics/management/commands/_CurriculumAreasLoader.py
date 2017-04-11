@@ -1,6 +1,10 @@
 import os.path
+
 from django.db import transaction
+
 from utils.BaseLoader import BaseLoader
+from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
+
 from topics.models import CurriculumArea
 
 
@@ -20,21 +24,41 @@ class CurriculumAreasLoader(BaseLoader):
     @transaction.atomic
     def load(self):
         '''load the content for curriculum areas'''
-        curriculum_areas_structure = self.load_yaml_file(os.path.join(self.BASE_PATH, self.curriculum_areas_file))
+        curriculum_areas_structure = self.load_yaml_file(
+            os.path.join(
+                self.BASE_PATH,
+                self.curriculum_areas_file
+            )
+        )
 
+        print(curriculum_areas_structure)
         for (curriculum_area_slug, curriculum_area_data) in curriculum_areas_structure.items():
+
+            print(curriculum_area_slug, curriculum_area_data)
+            try:
+                curriculum_area_name = curriculum_area_data['name']
+                print(curriculum_area_name)
+            except:
+                raise MissingRequiredFieldError()
+
             # Create area objects and save to database
             area = CurriculumArea.objects.create(
                 slug=curriculum_area_slug,
-                name=curriculum_area_data['name'],
+                name=curriculum_area_name,
             )
 
             # Create children curriculum areas with reference to parent
             if 'children' in curriculum_area_data:
                 for child in curriculum_area_data['children']:
+                    child_data = curriculum_area_data['children'][child]
+                    try:
+                        curriculum_area_name = child_data['name']
+                    except:
+                        raise MissingRequiredFieldError()
+
                     CurriculumArea.objects.create(
                         slug=child,
-                        name=curriculum_area_data['children'][child]['name'],
+                        name=curriculum_area_name,
                         parent=area
                     )
 
