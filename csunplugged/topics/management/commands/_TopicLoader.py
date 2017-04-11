@@ -97,34 +97,40 @@ class TopicLoader(BaseLoader):
 
         self.log('Added Topic: {}'.format(topic.name))
 
-        # Load programming exercises (if there are any)
-        if 'programming-exercises' in topic_structure:
+        FILE_PATH_TEMPLATE = '{0}/{0}.yaml'
+        
+        if 'misc-structure-files' in topic_structure:
+            misc_structure_files = topic_structure['misc-structure-files']
+         
+        # Load programming exercises   
+        if 'programming-exercises' in misc_structure_files:
             ProgrammingExercisesLoader(
                 self.load_log,
-                topic_structure['programming-exercises'],
+                FILE_PATH_TEMPLATE.format('programming-exercises'),
                 topic,
                 self.BASE_PATH
             ).load()
+
 
         # Load unit plans
         if 'unit-plans' in topic_structure:
             if len(topic_structure['unit-plans']) == 0:
                 raise TopicHasNoUnitPlansError()
-            for unit_plan_structure_file in topic_structure['unit-plans']:
+            for unit_plan in topic_structure['unit-plans']:
                 UnitPlanLoader(
                     self.load_log,
-                    unit_plan_structure_file,
+                    FILE_PATH_TEMPLATE.format(unit_plan),
                     topic,
                     self.BASE_PATH
                 ).load()
         else:
             raise TopicHasNoUnitPlansError()
 
-        # Load curriculum integrations (if there are any)
-        if 'curriculum-integrations' in topic_structure:
+        # Load curriculum integrations
+        if 'curriculum-integrations' in misc_structure_files:
             CurriculumIntegrationsLoader(
                 self.load_log,
-                topic_structure['curriculum-integrations'],
+                FILE_PATH_TEMPLATE.format('curriculum-integrations'),
                 topic,
                 self.BASE_PATH
             ).load()

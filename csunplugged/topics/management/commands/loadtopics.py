@@ -26,29 +26,32 @@ class Command(BaseCommand):
             )
         )
 
-        # Load content into db
-        if 'learning-outcomes' in structure_file:
-            learning_outcomes_file = structure_file['learning-outcomes']
-            LearningOutcomesLoader(
-                learning_outcomes_file,
-                BASE_PATH
-            ).load()
+        # Load content from misc structure files into db
+        if 'misc-structure-files' in structure_file:
+            misc_structure_files = structure_file['misc-structure-files']
+            for item in misc_structure_files:
+                file = '{}.yaml'.format(item)
 
-        if 'curriculum-areas' in structure_file:
-            curriculum_areas_file = structure_file['curriculum-areas']
-            CurriculumAreasLoader(
-                curriculum_areas_file,
-                BASE_PATH
-            ).load()
-    
-        if 'programming-exercises-structure' in structure_file:
-            difficulty_file = structure_file['programming-exercises-structure']
-            ProgrammingExercisesStructureLoader(
-                difficulty_file,
-                BASE_PATH
-            ).load()
-    
-        for topic_structure_file in structure_file['topic-structure-files']:
+                if item == 'learning-outcomes':
+                    LearningOutcomesLoader(
+                        file,
+                        BASE_PATH
+                    ).load()
+
+                if item == 'curriculum-areas':
+                    CurriculumAreasLoader(
+                        file,
+                        BASE_PATH
+                    ).load()
+        
+                if item == 'programming-exercises-structure':
+                    ProgrammingExercisesStructureLoader(
+                        file,
+                        BASE_PATH
+                    ).load()
+        
+        for topic in structure_file['topics']:
+            topic_structure_file = '{0}/{0}.yaml'.format(topic)
             TopicLoader(
                 topic_structure_file,
                 BASE_PATH

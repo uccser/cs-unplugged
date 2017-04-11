@@ -1,8 +1,7 @@
-topic-structure-files:
-  - binary-numbers/binary-numbers.yaml
+topics:
+  - binary-numbers
 
-programming-exercises-structure: programming-exercises-structure.yaml
-
-curriculum-areas: curriculum-areas.yaml
-
-learning-outcomes: learning-outcomes.yaml
+misc-structure-files:
+  - programming-exercises-structure
+  - curriculum-areas
+  - learning-outcomes
