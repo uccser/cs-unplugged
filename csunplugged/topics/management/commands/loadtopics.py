@@ -27,33 +27,27 @@ class Command(BaseCommand):
         )
 
         # Load content into db
-        try:
+        if 'learning-outcomes' in structure_file:
             learning_outcomes_file = structure_file['learning-outcomes']
             LearningOutcomesLoader(
                 learning_outcomes_file,
                 BASE_PATH
             ).load()
-        except:
-            pass
 
-        try:  
+        if 'curriculum-areas' in structure_file:
             curriculum_areas_file = structure_file['curriculum-areas']
             CurriculumAreasLoader(
                 curriculum_areas_file,
                 BASE_PATH
             ).load()
-        except:
-            pass
-
-        try:
+    
+        if 'programming-exercises-structure' in structure_file:
             difficulty_file = structure_file['programming-exercises-structure']
             ProgrammingExercisesStructureLoader(
                 difficulty_file,
                 BASE_PATH
             ).load()
-        except:
-            pass
-
+    
         for topic_structure_file in structure_file['topic-structure-files']:
             TopicLoader(
                 topic_structure_file,

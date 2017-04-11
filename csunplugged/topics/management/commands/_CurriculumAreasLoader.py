@@ -23,7 +23,11 @@ class CurriculumAreasLoader(BaseLoader):
 
     @transaction.atomic
     def load(self):
-        '''load the content for curriculum areas'''
+        '''Load the content for curriculum areas
+        
+        Raises:
+            MissingRequiredFieldError:
+        '''
         curriculum_areas_structure = self.load_yaml_file(
             os.path.join(
                 self.BASE_PATH,
@@ -31,38 +35,46 @@ class CurriculumAreasLoader(BaseLoader):
             )
         )
 
-        print(curriculum_areas_structure)
         for (curriculum_area_slug, curriculum_area_data) in curriculum_areas_structure.items():
 
-            print(curriculum_area_slug, curriculum_area_data)
             try:
                 curriculum_area_name = curriculum_area_data['name']
-                print(curriculum_area_name)
             except:
                 raise MissingRequiredFieldError()
 
+            if curriculum_area_name is None:
+                raise MissingRequiredFieldError()
+
             # Create area objects and save to database
-            area = CurriculumArea.objects.create(
+            new_area = CurriculumArea(
                 slug=curriculum_area_slug,
                 name=curriculum_area_name,
             )
+            new_area.save()
+
+            self.log('Added Curriculum Area: {}'.format(new_area.__str__()))
 
             # Create children curriculum areas with reference to parent
             if 'children' in curriculum_area_data:
-                for child in curriculum_area_data['children']:
-                    child_data = curriculum_area_data['children'][child]
+                for (child_slug, child_data) in curriculum_area_data['children'].items():
                     try:
-                        curriculum_area_name = child_data['name']
+                        child_name = child_data['name']
                     except:
                         raise MissingRequiredFieldError()
 
-                    CurriculumArea.objects.create(
-                        slug=child,
-                        name=curriculum_area_name,
-                        parent=area
-                    )
+                    if child_name is None:
+                        raise MissingRequiredFieldError()
 
-            self.log('Added Curriculum Area: {}'.format(area.__str__()))
+                    new_child = CurriculumArea(
+                        slug=child_slug,
+                        name=child_name,
+                        parent=new_area
+                    )
+                    new_child.save()
+
+                    self.log('Added Child Curriculum Area: {}'.format(new_child.__str__()), 1)
+
+            
 
         # Print log output
         self.print_load_log()
