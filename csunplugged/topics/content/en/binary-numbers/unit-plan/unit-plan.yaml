@@ -5,3 +5,9 @@ lessons:
     number: 1
     programming-exercises:
       - elephants-are-great
+    learning-outcomes:
+      - parity-justify-usage
+      - binary-count
+    curriculum-areas:
+      - art
+      - maths-geometry
