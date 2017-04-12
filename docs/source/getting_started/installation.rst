@@ -255,8 +255,8 @@ from the project root directory (contains a file called ``requirements.txt``):
     $ sudo apt-get install -y nodejs
     $ sudo apt-get install libffi-dev libcairo2-dev libjpeg-dev libgif-dev
     $ pip install -r requirements/local.txt
-    $ pip install -r requirements/kordac.txt
-    $ pip install git+git://github.com/uccser/kordac.git
+    $ pip install -r requirements/verto.txt
+    $ pip install git+git://github.com/uccser/verto.git
     $ cd csunplugged
     $ npm install
     $ sudo npm install gulp-cli --global
@@ -307,6 +307,6 @@ you're all set to contribute to the CS Unplugged project.
 .. _virtualenvwrapper: https://virtualenvwrapper.readthedocs.io/en/latest/
 .. _GitHub website: https://github.com/
 .. _SSH keys: https://help.github.com/articles/connecting-to-github-with-ssh/
-.. _Kordac documentation: http://kordac.readthedocs.io/en/latest/install.html
+.. _Verto documentation: http://verto.readthedocs.io/en/latest/install.html
 .. _Atom: https://atom.io/
 .. _Sublime Text: https://www.sublimetext.com/
