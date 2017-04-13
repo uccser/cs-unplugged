@@ -14,6 +14,7 @@ django-environ==0.4.1
 Pillow==4.0.0
 
 # Markdown
+verto==0.4.1
 python-markdown-math==0.2
 
 # Models

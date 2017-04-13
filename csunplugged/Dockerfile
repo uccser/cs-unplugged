@@ -44,8 +44,6 @@ RUN pip3 install weasyprint
 COPY requirements /requirements
 # TODO: Figure out how to install different requirements based of env value
 RUN pip3 install -r /requirements/local.txt
-RUN pip3 install -r /requirements/kordac.txt
-RUN pip3 install git+git://github.com/uccser/verto.git
 
 RUN mkdir /code
 WORKDIR /code
