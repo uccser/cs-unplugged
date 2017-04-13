@@ -5,7 +5,9 @@ services:
     image: postgres
 
   django:
-    build: .
+    build:
+      context: .
+      dockerfile: ./csunplugged/Dockerfile
     command: /bin/bash -c "chmod +x docker-compose-entrypoint.sh && ./docker-compose-entrypoint.sh"
     volumes:
       - ./csunplugged:/code
