@@ -20,7 +20,8 @@ NC='\033[0m' # No Color
 
 # Print out help information
 function helpmenu {
-  printf "Usage: helper [COMMAND]...\n"
+  printf "Usage: csu [COMMAND]\n"
+  printf "Replace [COMMAND] with a word from the list below.\n\n"
   printf "Script for performing tasks related to the CS Unplugged repository.\n\n"
   printf "Available commands:\n"
   printf "   build        Build or rebuild Docker images\n"
@@ -78,6 +79,7 @@ function build {
 function static {
   echo "Building static files..."
   docker-compose run nginx gulp build
+  docker-compose run django python3 manage.py collectstatic --no-input
 }
 
 # Run shell
@@ -104,7 +106,7 @@ function logs {
 # If no command given
 if [ $# -eq 0 ]
 then
-  printf "${RED}Helper script requires a command!${NC}\n"
+  printf "${RED}This script requires a command!${NC}\n"
   helpmenu
   exit 1
 fi
@@ -157,5 +159,5 @@ do
 done
 # If no command triggered
 printf "${RED}Unknown command!${NC}\n"
-printf "Type 'helper help' for available commands.\n"
+printf "Type 'csu help' for available commands.\n"
 exit 1
