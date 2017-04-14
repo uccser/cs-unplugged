@@ -154,9 +154,9 @@ If a curriculum integration requires new curriculum areas, see
   <map name="curriculum-integrations-map">
   <area shape="rect" coords="217,90,319,127" href="#topics-content-directory">
   <area shape="rect" coords="283,459,387,494" href="#topics-content-directory">
-  <area shape="rect" coords="283,571,387,607" href="#follow-up-activities-file">
+  <area shape="rect" coords="283,571,387,607" href="#curriculum-integrations-file">
   <area shape="rect" coords="283,688,387,723" href="#topic-file">
-  <area shape="rect" coords="283,939,387,973" href="#follow-up-activities-file">
+  <area shape="rect" coords="283,939,387,973" href="#curriculum-integrations-file">
   <area shape="rect" coords="216,1088,319,1124" href="../getting_started/basic_usage.html#command-manage-updatedata">
   <area shape="rect" coords="216,1206,319,1240" href="../getting_started/basic_usage.html#command-manage-runserver">
   <area shape="rect" coords="216,1325,319,1358" href="../getting_started/basic_usage.html#command-gulp">
@@ -211,11 +211,9 @@ You can add a new programming exercise by following this flowchart.
 Configuration Files
 ==============================================================================
 
-This section details configuration files within the ``content`` directory for a
-specific language.
-These files define the topics content on the website and their respective
-attributes (for example: the difficulty of a programming exercise).
-If you haven't used the YAML configuration files before, see
+This section details configuration files within the ``content`` directory for a specific
+language.
+These files are in YAML format. If you are not familiar with YAML, see
 :doc:`understanding_configuration_files`.
 
 The diagram below shows an example of YAML file locations for the
@@ -231,10 +229,32 @@ The diagram below shows an overview of what is in each config file:
 
 .. image:: ../_static/img/topics_config_file_overview.png
 
+In the following sections, each configuration file is exaplained in more detail.
+
+.. note::
+  
+  - We use the term "key" to specify a field name. Keys map to particular values (which
+    range from learning outcome text, to the structure and attributes of a lesson).
+    There are two things to remember with keys:
+
+    - They must be written in lowercase and use hyphens instead of spaces.
+
+    - They must be exact matches to work, for example, if you name a lesson
+      ``bits-and-bytes``, referencing it in another configuration file as
+      ``bytes-and-bits`` will raise an error.
+    
+
+
+.. note::
+
+  - Some of the keys have angle brackets around them, ``<like so>``. This means that they
+    are variables and you can call them whatever you like in your configuration file
+    (without the angle brackets).
+
 
 .. _application-structure-file:
 
-Application Structure File
+Application Structure Configuration File
 ------------------------------------------------------------------------------
 
 - **File Name:** ``structure.yaml``
@@ -246,13 +266,13 @@ Application Structure File
 
 - **Required Fields:**
 
-  - ``topics``: A list of topic names.
+  - ``topics``: A list of keys, where each key is a topic name.
 
 - **Optional Fields:**
 
-  - ``misc-structure-files``: A list of configuration files to include in the
-    topics application. The files that can be included are listed below (each
-    file has its own description in this page). Each of these are optional.
+  - ``misc-structure-files:`` A list of keys corresponding to configuration files to
+    include. Each key corresponds to the name of another configuration file (and has its
+    own description further down this page). The complete list of keys is given below:
 
     - ``learning-outcomes``
     - ``curriculum-areas``
@@ -274,7 +294,7 @@ A complete application structure file may look like the following:
 
 .. _topic-file:
 
-Topic File
+Topic Configuration File
 ------------------------------------------------------------------------------
 
 - **File Name:** ``<topic-name>.yaml``
@@ -283,29 +303,28 @@ Topic File
 
 - **Referenced In:** ``topic/content/<launguage>/structure.yaml``
 
-- **Purpose:** This file defines the attributes of a specific topic, including
-  connected unit plan, programming exercise, and curriculum integration
-  configuration files.
+- **Purpose:** This file defines the attributes of a specific topic, including connected
+  unit plan, programming exercise, and curriculum integration configuration files.
 
 - **Required Fields:**
 
-  - ``unit-plans``: A list of unit plans for this topic.
+  - ``unit-plans:`` A list of keys, where each key is a unit plan.
 
 - **Optional Fields:**
 
-  - ``icon``: An icon for the topic (to be used on a page showing all available
-    topics)
+  - ``icon:`` An image file to be used as the icon for the topic.
 
-  - ``other-resources``: The name of a Markdown file containing information
-    about other related (external) resources.
+  - ``other-resources:`` A Markdown file containing information about other related
+    (external) resources.
 
-  - ``misc-structure-files``: A list of configuration files to include for this
-    particular topic. The files that can be included are listed below (each
-    file has its own description in this page). Each of these are optional.
+  - ``misc-structure-files:`` A list of keys corresponding to configuration files to
+    include for this particular topic. Each key corresponds to the name of another
+    configuration file (and has its own description further down this page). The complete
+    list of keys is given below:
 
-      - ``programming-exercises``
+    - ``programming-exercises``
   
-      - ``curriculum-integrations``
+    - ``curriculum-integrations``
 
 
 A complete topic structure file may look like the following:
@@ -327,85 +346,77 @@ A complete topic structure file may look like the following:
 
 .. _unit-plan-file:
 
-Unit Plan File
+Unit Plan Configuration File
 ------------------------------------------------------------------------------
 
 - **File Name:** ``<unit-plan-name>.yaml``
 
-- **Location:** ``topic/content/<language>/<topic-name>/<unit-plan-name>``
+- **Location:** ``topic/content/<language>/<topic-name>/<unit-plan-name>/``
 
 - **Referenced In:** ``topic/content/<language>/<topic-name>/<topic-name>.yaml``
 
 - **Purpose:** This file defines all the lessons (and their respective)
   attributes for the unit plan.
 
-- **Required Fields:**
+  - **Required Fields:**
 
-  - ``lessons``: This contains a list of lessons their attributes. A lesson
-    has its own list of required and optional fields:
+    - ``<lesson-name>:`` This is the key for the lesson. Each lesson has its own list of
+      required and optional fields:
 
       - **Required Fields:**
 
-        - ``<lesson-name>``
+        - ``minimum-age:`` The suggested minimum age group to teach this lesson to.
 
-        - ``minimum-age``: The suggested minimum age group to teach this lesson
-          to.
+        - ``maximum-age:`` The suggested maximum age group to teach this lesson to.
 
-        - ``maximum-age``: The suggested maximum age group to teach this lesson
-          to.
-
-        - ``number``: The number order for this lesson.
-          Lessons are sorted by minimum age, maximum age, then number so
-          lessons in different age ranges can use the same number without
-          conflict.
+        - ``number:`` The number order for this lesson.
+          Lessons are sorted by minimum age, maximum age, then number so lessons in
+          different age ranges can use the same number without conflict.
 
       - **Optional Fields:**
 
-        - ``programming-exercises``: A list of programming execises that are
-          relevant to this lesson.
+        - ``programming-exercises:`` A list of keys corresponding to programming
+          exercises.
 
-        - ``learning-outcomes``: A list of learning outcomes relevant to this
-          lessons.
+        - ``learning-outcomes:`` A list of keys corresponding to learning outcomes.
 
-        - ``curriculum-areas``: The other areas of a school curriculum that
-          this lesson could be taught in.
+        - ``curriculum-areas:`` A list of keys corresponding to other curriculum areas
+          that this lesson could be taught in.
 
-        - ``resources-classroom``:
+        - ``resources-classroom:``
 
-        - ``resources-generated``:
+        - ``resources-generated:``
 
 
 A complete unit plan structure file with multiple lessons may look like the
 following:
 
 .. code-block:: yaml
-  
-  lessons:
     
-    introduction-to-bits:
-      minimum-age: 7
-      maximum-age: 11
-      number: 1
-      programming-exercises:
-        - count-to-16
-        - count-to-1-million
-      learning-outcomes:
-        - binary-data-representation
-      curriculum-areas*:
-        - maths
+  introduction-to-bits:
+    minimum-age: 7
+    maximum-age: 11
+    number: 1
+    programming-exercises:
+      - count-to-16
+      - count-to-1-million
+    learning-outcomes:
+      - binary-data-representation
+    curriculum-areas*:
+      - maths
 
-    how-binary-digits-work:
-      minimum-age: 7
-      maximum-age: 11
-      number: 2
-      learning-outcomes:
-        - binary-data-representation
-        - binary-justify-representation
+  how-binary-digits-work:
+    minimum-age: 7
+    maximum-age: 11
+    number: 2
+    learning-outcomes:
+      - binary-data-representation
+      - binary-justify-representation
 
 
 .. _curriculum-integrations-file:
 
-Curriculum Integrations File
+Curriculum Integrations Configuration File
 ------------------------------------------------------------------------------
 
 - **File Name:** ``curriculum-intergrations.yaml``
@@ -419,18 +430,21 @@ Curriculum Integrations File
 
 - **Required Fields:**
 
-  - ``<activity-name>``:This is the name of the integration. Each integration
-    has its own list of required and optional fields:
+  - ``<activity-name>:`` This is the key for the curriculum integration activity. Each
+    activity has its own list of required and optional fields:
 
     - **Required Fields:**
 
-      - ``number``:
+      - ``number:`` The number order for this activity. Curriculum integration activities
+        are sorted by this number.
 
     - **Optional Fields:**
 
-      - ``curriculum-areas``:
+      - ``curriculum-areas:`` A list of keys corresponding to other curriculum areas
+        that this activity could be used in.
 
-      - ``prerequisite-lessons``:
+      - ``prerequisite-lessons:`` A list of keys corresponding to lessons that are
+        expected to be completed before attemping this activity.
 
 
 
@@ -458,10 +472,10 @@ look like the following:
 
 .. _programming-exercises-structure-file:
 
-Programming Exercises Structure File
+Programming Exercises Structure Configuration File
 ------------------------------------------------------------------------------
 
-- **File Name:** ``programming-exercises-structure``
+- **File Name:** ``programming-exercises-structure.yaml``
 
 - **Location:** ``topics/content/<language>/``
 
@@ -472,28 +486,33 @@ Programming Exercises Structure File
 
 - **Required Fields:**
 
-  - ``language``:
+  - ``languages:`` A list of languages that programming exercises can be given in.
 
     - **Required Fields:**
 
-      - ``<language-name>``:
+      - ``<language-name>:`` This is the key for the language. Each language has its own
+        list of required and optional fields:
 
         - **Required Fields:**
 
-          - ``name``:
+          - ``name:`` The name of the programming language (this is what will be
+            displayed to the user).
 
         - **Optional Fields:**
 
-          - ``icon``:
+          - ``icon:`` An image file to be used as the icon for the language.
 
 
-  - ``difficulties``:
+  - ``difficulties:``
 
-    - **Required Fields**:
+    - **Required Fields:**
 
-      - ``level``:
+      - ``<level>:`` An integer value.
 
-      - ``name``:
+        - **Required Fields:**
+
+        - ``name:`` The name of the difficulty level (this is what will be displayed to
+          the user).
 
 
 A complete programming exercise structure file may look like the following:
@@ -508,27 +527,27 @@ A complete programming exercise structure file may look like the following:
       name: Ruby
 
   difficulties:
-    - level: 1
+    1:
       name: Beginner
-    - level: 2
+    2:
       name: Intermediate
-    - level: 3
+    3:
       name: Advanced
 
 
 .. _programming-exercises-file:
 
-Programming Exercises File
+Programming Exercises Configuration File
 ------------------------------------------------------------------------------
 
 - **File Name:** ``programming-exercises.yaml``
 
-- **Location:** ``topics/content/<language>/<topic-name>/programming-exercises``
+- **Location:** ``topics/content/<language>/<topic-name>/programming-exercises/``
 
 - **Referenced In:** ``topics/content/<language>/<topic-name>/<topic-name>.yaml``
 
-- **Purpose:** This file defines the programming exercises for a particular
-  topic, including their respective attributes.
+- **Purpose:** This file defines the programming exercises (their respective attributes)
+  for a particular topic.
 
 - **Required Fields:**
 
@@ -536,19 +555,20 @@ Programming Exercises File
 
     - **Required Fields:**
 
-      - ``exercise-set-number``:
+      - ``exercise-set-number:`` The group of related programming exercises this
+        exercise belongs to.
 
-      - ``exercise-number``: The number order for this programming exercise.
+      - ``exercise-number:`` The number order for this programming exercise.
         Exercises are sorted this number.
 
+      - ``difficulty-level:`` A key corresponding to a difficulty level.
 
-      - ``difficulty-level``:
-
-      - ``programming-exercises``:
+      - ``programming-languages:`` A list of keys corresponding to programming languages
+        that this exercise is given in.
 
     - **Optional Fields:**
 
-      - ``learning-outcomes``: 
+      - ``learning-outcomes:`` A list of keys corresponding to learning outcomes.
 
 
 A complete programming exercises structure file may look like the following:
@@ -577,20 +597,22 @@ A complete programming exercises structure file may look like the following:
 
 .. _learning-outcomes-file:
 
-Learning Outcomes File
+Learning Outcomes Configuration File
 ------------------------------------------------------------------------------
 
 - **File Name:** ``learning-outcomes.yaml``
 
-- **Location:** ``topics/content/en/``
+- **Location:** ``topics/content/<language>/``
 
-- **Referenced In:** ``topics/content/en/structure.yaml``
+- **Referenced In:** ``topics/content/<language>/structure.yaml``
 
 - **Purpose:** Defines the learning outcomes avilable for all topics.
 
 - **Required Fields:**
 
-  - ``<key>``:
+  - ``<key> : <value>`` Key value pairs. The key will be used in other configuration
+    files to reference this particluar learning objective. The value is the learning
+    objective text that will be displayed to the user).
 
 
 A complete learning outcome structure file may look like the following:
@@ -610,23 +632,26 @@ Curriculum Areas File
 
 - **File Name:** ``curriculum-areas.yaml``
 
-- **Location:** ``topics/content/en/``
+- **Location:** ``topics/content/<language>/``
 
-- **Referenced In:** ``topics/content/en/structure.yaml``
+- **Referenced In:** ``topics/content/<language>/structure.yaml``
 
 - **Purpose:** Defines the curriculum areas available for all topics.
 
 - **Required Fields:**
 
-  - ``<curriculum area name>``
+  - ``<curriculum area name>:`` This is the key for the curriculum area. Each curriculum
+    area has its own list of required and optional fields:
 
     - **Required Fields:**
 
-      - ``name``:
+      - ``name:`` The name of the curriculum area (this is what will be displayed to the
+        user).
 
-  - **Optional Fields:**
+    - **Optional Fields:**
 
-    - ``children``:
+      - ``children:`` A list of sub-curriculm areas (see example file below). Each child
+        requires a name field.
 
 
 An example curriculum areas file with multiple curriculums may look like
@@ -655,4 +680,8 @@ the following:
 
 .. note::
 
-  When including a curriculum area in another configuration file, adding a child curriculum area will automatically add the parent curriculum area, you do not need to specify this manually. For example, adding "maths-geometry" means that "maths" is automatically included.
+  When including a curriculum area in another configuration file, adding a child
+  curriculum area will automatically add the parent curriculum area, you do not need to
+  specify this manually. For example, adding "geometry" means that "maths" is
+  automatically included.
+
