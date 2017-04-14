@@ -74,11 +74,17 @@ class LessonLoader(BaseLoader):
         if len(lesson_content.html_string) == 0:
             raise EmptyMarkdownFileError()
 
+        if 'duration' in self.lesson_structure:
+            lesson_duration = self.lesson_structure['duration']
+        else:
+            lesson_duration = None
+
         lesson = self.topic.topic_lessons.create(
             unit_plan=self.unit_plan,
             slug=self.lesson_slug,
             name=lesson_content.title,
             number=lesson_number,
+            duration=lesson_duration,
             content=lesson_content.html_string,
             min_age=lesson_min_age,
             max_age=lesson_max_age

@@ -172,6 +172,7 @@ class Lesson(models.Model):
     slug = models.SlugField()
     name = models.CharField(max_length=100)
     number = models.IntegerField()
+    duration = models.PositiveSmallIntegerField(null=True)
     content = models.TextField()
     min_age = models.PositiveSmallIntegerField()
     max_age = models.PositiveSmallIntegerField()

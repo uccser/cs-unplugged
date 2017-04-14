@@ -370,6 +370,8 @@ Unit Plan Configuration File
 
       - **Optional Fields:**
 
+        - ``duration``: The estimated time to complete the lesson (in minutes).
+
         - ``programming-exercises:`` A list of keys corresponding to programming
           exercises.
 
