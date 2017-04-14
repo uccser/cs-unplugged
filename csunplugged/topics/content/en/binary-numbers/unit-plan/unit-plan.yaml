@@ -1,13 +1,12 @@
-lessons:
-  lesson-1:
-    min: 8
-    max: 10
-    number: 1
-    programming-exercises:
-      - elephants-are-great
-    learning-outcomes:
-      - parity-justify-usage
-      - binary-count
-    curriculum-areas:
-      - art
-      - maths-geometry
+lesson-1:
+  min: 8
+  max: 10
+  number: 1
+  programming-exercises:
+    - elephants-are-great
+  learning-outcomes:
+    - parity-justify-usage
+    - binary-count
+  curriculum-areas:
+    - art
+    - maths-geometry

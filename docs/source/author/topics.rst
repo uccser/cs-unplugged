@@ -18,30 +18,25 @@ diagram.
 .. image:: ../_static/img/topics_overview_diagram.png
   :alt: A diagram providing an overview of topics application content
 
-- The application is made up of **topics** (for example: binary numbers)
+- The application is made up of **topics**.
 
-  - This can contain a **unit plan** with **lessons**.
-    A topic can actually contain several **unit plans** if required, each with
-    their own lessons.
+  - A **topic** must contain at least one **unit plan**.
 
-    - Each lesson can have connected **learning outcomes**,
-      **curriculum areas**, and **generated resources**.
+    - A **unit plan** must contain at least one **lesson**.
 
-  - Topics can also contain **follow up activities**, which can also contain
+      - A lesson can contain **learning outcomes**, **curriculum areas** and **generated
+        resources**.
+
+  - A **topic** can also contain **curriculum integrations**, which can also contain
     **curriculum areas**.
 
-  - Topics can also contain **programming exercises**.
+  - A **topic** can also contain **programming exercises**.
 
-    - A programming exercise can have **language implementations**, which contain
-      language specific expected values, hints, and possible solutions.
-      For example: an exercise may have implementations available in Scratch and
-      Python.
+    - A **programming exercise** can use different **programming languages** and be set at
+      different **difficulties**.
 
-- **Learning outcomes** and **curriculum areas** are defined at a language
-  level, so can be used by all topic content.
-
-- Also defined at the language level is **languages** and **difficulties** for
-  programming exercises.
+- **Learning outcomes**, **curriculum areas**, **programming languages** and
+  **difficulties** are defined at a language level, so can be used by all topic content.
 
 This is just a broad overview of the topics application.
 
@@ -503,7 +498,7 @@ Programming Exercises Structure Configuration File
           - ``icon:`` An image file to be used as the icon for the language.
 
 
-  - ``difficulties:``
+  - ``difficulties:`` A list of difficulties programming exercises can be labelled as.
 
     - **Required Fields:**
 
