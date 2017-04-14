@@ -47,8 +47,8 @@ class LessonLoader(BaseLoader):
         '''
         # Retrieve required variables from structure dictionary
         try:
-            lesson_min_age = self.lesson_structure['min']
-            lesson_max_age = self.lesson_structure['max']
+            lesson_min_age = self.lesson_structure['min-age']
+            lesson_max_age = self.lesson_structure['max-age']
             lesson_number = self.lesson_structure['number']
         except:
             raise MissingRequiredFieldError()
@@ -70,7 +70,7 @@ class LessonLoader(BaseLoader):
         # Check that content is not empty and that a title was extracted
         if lesson_content.title is None:
             raise MarkdownFileMissingTitleError()
-        
+
         if len(lesson_content.html_string) == 0:
             raise EmptyMarkdownFileError()
 
@@ -134,7 +134,7 @@ class LessonLoader(BaseLoader):
         # Add generated resources
         if 'resources-generated' in self.lesson_structure:
             for resource_data in self.lesson_structure['resources-generated']:
-                resouce_slug = resource_data['slug']
+                resource_slug = resource_data['slug']
                 resource = Resource.objects.get(
                     slug=resource_slug
                 )

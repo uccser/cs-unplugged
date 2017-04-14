@@ -1,6 +1,6 @@
 lesson-1:
-  min: 8
-  max: 10
+  min-age: 8
+  max-age: 10
   number: 1
   programming-exercises:
     - elephants-are-great

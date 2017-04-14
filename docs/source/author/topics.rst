@@ -360,9 +360,9 @@ Unit Plan Configuration File
 
       - **Required Fields:**
 
-        - ``minimum-age:`` The suggested minimum age group to teach this lesson to.
+        - ``min-age:`` The suggested minimum age group to teach this lesson to.
 
-        - ``maximum-age:`` The suggested maximum age group to teach this lesson to.
+        - ``max-age:`` The suggested maximum age group to teach this lesson to.
 
         - ``number:`` The number order for this lesson.
           Lessons are sorted by minimum age, maximum age, then number so lessons in
@@ -389,8 +389,8 @@ following:
 .. code-block:: yaml
     
   introduction-to-bits:
-    minimum-age: 7
-    maximum-age: 11
+    min-age: 7
+    max-age: 11
     number: 1
     programming-exercises:
       - count-to-16
@@ -401,8 +401,8 @@ following:
       - maths
 
   how-binary-digits-work:
-    minimum-age: 7
-    maximum-age: 11
+    min-age: 7
+    max-age: 11
     number: 2
     learning-outcomes:
       - binary-data-representation
