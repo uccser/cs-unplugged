@@ -127,16 +127,25 @@ class LessonLoader(BaseLoader):
                     raise KeyNotFoundError()
 
         # Add generated resources
-        if 'resources-generated' in self.lesson_structure:
-            for resource_data in self.lesson_structure['resources-generated']:
-                resource_slug = resource_data['slug']
-                resource = Resource.objects.get(
-                    slug=resource_slug
-                )
+        if 'generated-resources' in self.lesson_structure:
+            resources = self.lesson_structure['generated-resources']
+            for (resource_slug, resource_data) in resources.items():
+                try:
+                    resource = Resource.objects.get(
+                        slug=resource_slug
+                    )
+                except:
+                    raise KeyNotFoundError()
+
+                try:
+                    resource_description = resource_data['description']
+                except:
+                    raise MissingRequiredFieldError()
+
                 relationship = ConnectedGeneratedResource(
                     resource=resource,
                     lesson=lesson,
-                    description=resource_data['description']
+                    description=resource_description
                 )
                 relationship.save()
 

@@ -380,9 +380,17 @@ Unit Plan Configuration File
         - ``curriculum-areas:`` A list of keys corresponding to other curriculum areas
           that this lesson could be taught in.
 
-        - ``resources-classroom:``
+        - ``generated-resources:`` A list of generated CSU resources connected to this
+          lesson.
 
-        - ``resources-generated:``
+          - **Required Fields:**:
+
+            - ``<resource>``: The key corresponding to the resource.
+
+              - **Required Fields:**:
+
+                - ``description:`` A description of how the resource should be used.
+
 
 
 A complete unit plan structure file with multiple lessons may look like the
@@ -401,6 +409,9 @@ following:
       - binary-data-representation
     curriculum-areas*:
       - maths
+    generated-resources:
+      sorting-network:
+        description: One per student.
 
   how-binary-digits-work:
     min-age: 7
@@ -637,7 +648,7 @@ Curriculum Areas File
 
 - **Required Fields:**
 
-  - ``<curriculum area name>:`` This is the key for the curriculum area. Each curriculum
+  - ``<curriculum-area-name>:`` This is the key for the curriculum area. Each curriculum
     area has its own list of required and optional fields:
 
     - **Required Fields:**

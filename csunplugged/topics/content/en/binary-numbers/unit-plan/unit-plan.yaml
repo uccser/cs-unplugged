@@ -11,3 +11,6 @@ lesson-1:
   curriculum-areas:
     - art
     - maths-geometry
+  generated-resources:
+    sorting-network:
+      description: One copy per student
