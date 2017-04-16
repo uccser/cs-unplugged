@@ -11,7 +11,6 @@ from topics.models import (
     ProgrammingExercise,
     LearningOutcome,
     CurriculumArea,
-    ClassroomResource,
     Resource,
     ConnectedGeneratedResource,
 )
@@ -126,16 +125,6 @@ class LessonLoader(BaseLoader):
                     lesson.curriculum_areas.add(curriculum_area)
                 except:
                     raise KeyNotFoundError()
-
-        # TODO figure out how to error handle class resources and generated resources
-
-        # Add classroom resources
-        if 'resources-classroom' in self.lesson_structure:
-            for resource in self.lesson_structure['resources-classroom']:
-                (object, created) = ClassroomResource.objects.get_or_create(
-                    text=resource
-                )
-                lesson.classroom_resources.add(object)
 
         # Add generated resources
         if 'resources-generated' in self.lesson_structure:

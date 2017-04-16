@@ -27,14 +27,6 @@ class CurriculumArea(models.Model):
         return self.name
 
 
-class ClassroomResource(models.Model):
-    #  Auto-incrementing 'id' field is automatically set by Django
-    text = models.CharField(max_length=300, unique=True)
-
-    def __str__(self):
-        return self.text
-
-
 class Topic(models.Model):
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(unique=True)
@@ -187,10 +179,6 @@ class Lesson(models.Model):
     curriculum_areas = models.ManyToManyField(
         CurriculumArea,
         related_name='lesson_curriculum_areas'
-    )
-    classroom_resources = models.ManyToManyField(
-        ClassroomResource,
-        related_name='lesson_classroom_resources'
     )
     generated_resources = models.ManyToManyField(
         Resource,
