@@ -446,13 +446,22 @@ Curriculum Integrations Configuration File
       - ``number:`` The number order for this activity. Curriculum integration activities
         are sorted by this number.
 
-    - **Optional Fields:**
-
       - ``curriculum-areas:`` A list of keys corresponding to other curriculum areas
         that this activity could be used in.
 
-      - ``prerequisite-lessons:`` A list of keys corresponding to lessons that are
+    - **Optional Fields:**
+
+      - ``prerequisite-lessons:`` A list of unit plan keys containing lessons that are
         expected to be completed before attemping this activity.
+
+        - **Required Fields:**
+
+          - ``<unit-plan-name>:`` A key corresponding to a unit plan.
+
+            - **Required Fields:**
+
+              - ``<lesson-name>`` A key corresponding to a lesson in the given unit
+                plan.
 
 
 
@@ -467,8 +476,10 @@ look like the following:
       - math
       - art
     prerequisite-lessons:
-      - introduction-to-binary-digits
-      - counting-in-binary
+      unit-plan:
+        - introduction-to-binary-digits
+      unit-plan-2:
+        - counting-in-binary
 
   binary-leap-frog:
     number: 2
@@ -476,7 +487,8 @@ look like the following:
       - math
       - pe
     prerequisite-lessons:
-      - counting-in-binary
+      unit-plan-2:
+        - counting-in-binary
 
 .. _programming-exercises-structure-file:
 
