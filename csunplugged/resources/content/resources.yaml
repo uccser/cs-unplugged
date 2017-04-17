@@ -2,9 +2,9 @@ sorting-network:
   name: Sorting Network
   webpage-template: resources/sorting-network.html
   generation-view: sorting_network.py
-  thumbnail-static-path: img/resource-sorting-network-thumbnail-example.png
+  thumbnail-static-path: img/resources/resource-sorting-network-thumbnail-example.png
 treasure-hunt:
   name: Treasure Hunt
   webpage-template: resources/treasure-hunt.html
   generation-view: treasure_hunt.py
-  thumbnail-static-path: img/resource-treasure-hunt-thumbnail-example.png
+  thumbnail-static-path: img/resources/resource-treasure-hunt-thumbnail-example.png

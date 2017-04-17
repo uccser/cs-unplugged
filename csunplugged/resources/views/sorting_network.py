@@ -8,7 +8,7 @@ def resource_image(get_request, resource):
     Returns:
         A Pillow image object.
     """
-    image_path = 'static/img/resource-sorting-network-colour.png'
+    image_path = 'static/img/resources/resource-sorting-network-colour.png'
     image = Image.open(image_path)
     draw = ImageDraw.Draw(image)
 

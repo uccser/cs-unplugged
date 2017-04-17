@@ -1,6 +1,8 @@
 import os.path
 from django.db import transaction
+
 from utils.BaseLoader import BaseLoader
+from utils.check_required_files import find_image_files
 
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
@@ -66,22 +68,22 @@ class TopicLoader(BaseLoader):
             raise MissingRequiredFieldError()
 
         # If other resources are given, convert to HTML
-        if 'other_resources' in topic_structure:
+        if 'other-resources' in topic_structure:
             topic_other_resources_file = topic_structure['other-resources']
-            if topic_other_resources_file:
-                other_resources_content = self.convert_md_file(
-                    os.path.join(
-                        self.BASE_PATH,
-                        topic_other_resources_file
-                    )
+            other_resources_content = self.convert_md_file(
+                os.path.join(
+                    self.BASE_PATH,
+                    topic_other_resources_file
                 )
-                topic_other_resources_html = other_resources_content.html_string
+            )
+            topic_other_resources_html = other_resources_content.html_string
         else:
             topic_other_resources_html = None
 
         # Check if icon is given
         if 'icon' in topic_structure:
             topic_icon = topic_structure['icon']
+            find_image_files([topic_icon])
         else:
             topic_icon = None
 

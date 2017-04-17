@@ -6,7 +6,7 @@ import re
 import os.path
 from os import listdir
 from verto import Verto
-from .check_converter_required_files import check_required_files
+from .check_required_files import check_converter_required_files
 
 
 class BaseLoader():
@@ -41,14 +41,14 @@ class BaseLoader():
         '''Returns the Kordac object for a given Markdown file
 
         Args:
-            file_path: location of md file to convert
+            md_file_path: location of md file to convert
 
         Returns:
             Kordac result object
         '''
         content = open(md_file_path, encoding='UTF-8').read()
         result = self.converter.convert(content)
-        check_required_files(result.required_files)
+        check_converter_required_files(result.required_files)
         return result
 
     def log(self, log_message, indent_amount=0):
