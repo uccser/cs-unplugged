@@ -137,7 +137,7 @@ class ProgrammingExerciseLanguageImplementation(models.Model):
         related_name='implementations'
     )
     expected_result = models.TextField()
-    hints = models.TextField()
+    hints = models.TextField(null=True)
     solution = models.TextField()
 
     def __str__(self):

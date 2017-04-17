@@ -99,6 +99,7 @@ class ProgrammingExerciseLoader(BaseLoader):
             except:
                 raise KeyNotFoundError()
 
+            # Load expected output
             try:
                 expected_result_content = self.convert_md_file(
                     file_path.format(
@@ -111,18 +112,7 @@ class ProgrammingExerciseLoader(BaseLoader):
             if len(expected_result_content.html_string) == 0:
                 raise EmptyMarkdownFileError()
 
-            try:
-                hint_content = self.convert_md_file(
-                    file_path.format(
-                        '{}-hints'.format(language)
-                    )
-                )
-            except:
-                raise CouldNotFindMarkdownFileError()
-
-            if len(hint_content.html_string) == 0:
-                raise EmptyMarkdownFileError()  
-
+            # Load example solution
             try:
                 solution_content = self.convert_md_file(
                     file_path.format(
@@ -134,10 +124,24 @@ class ProgrammingExerciseLoader(BaseLoader):
             
             if len(solution_content.html_string) == 0:
                 raise EmptyMarkdownFileError()
+
+            # Load hint if given
+            try:
+                hint_content = self.convert_md_file(
+                    file_path.format(
+                        '{}-hints'.format(language)
+                    )
+                )
+            except Exception:
+                hint_content = None
+
+            if hint_content:
+                if len(hint_content.html_string) == 0:
+                    raise EmptyMarkdownFileError() 
         
             implementation = ProgrammingExerciseLanguageImplementation.objects.create(
                 expected_result=expected_result_content.html_string,
-                hints=hint_content.html_string,
+                hints=None if hint_content is None else hint_content.html_string,
                 solution=solution_content.html_string,
                 language=language_object,
                 exercise=programming_exercise,
