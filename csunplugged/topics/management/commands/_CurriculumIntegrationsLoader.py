@@ -59,6 +59,7 @@ class CurriculumIntegrationsLoader(BaseLoader):
 
                 try:
                     integration_number = integration_data['number']
+                    integration_curriculum_areas = integration_data['curriculum-areas']
                 except:
                     raise MissingRequiredFieldError()
 
@@ -71,28 +72,28 @@ class CurriculumIntegrationsLoader(BaseLoader):
                 integration.save()
 
                 # Add curriculum areas
-                if 'curriculum-areas' in integration_data:
-                    curriculum_area_slugs = integration_data['curriculum-areas']
-                    for curriculum_area_slug in curriculum_area_slugs:
-                        try:
-                            curriculum_area = CurriculumArea.objects.get(
-                                slug=curriculum_area_slug
-                            )
-                            integration.curriculum_areas.add(curriculum_area)
-                        except:
-                            raise KeyNotFoundError()
+                for curriculum_area_slug in integration_curriculum_areas:
+                    try:
+                        curriculum_area = CurriculumArea.objects.get(
+                            slug=curriculum_area_slug
+                        )
+                        integration.curriculum_areas.add(curriculum_area)
+                    except:
+                        raise KeyNotFoundError()
 
                 # Add prerequisite lessons
                 if 'prerequisite-lessons' in integration_data:
-                    prerequisite_lessons_slugs = integration_data['prerequisite-lessons']
-                    for lesson_slug in prerequisite_lessons_slugs:
-                        try:
-                            lesson = Lesson.objects.get(
-                                slug=lesson_slug,
-                                topic__slug=self.topic.slug
-                            )
-                            integration.prerequisite_lessons.add(lesson)
-                        except:
-                            raise KeyNotFoundError()
+                    prerequisite_lessons = integration_data['prerequisite-lessons']
+                    for (unit_plan_slug, lessons) in prerequisite_lessons.items():
+                        for lesson_slug in lessons:
+                            try:
+                                lesson = Lesson.objects.get(
+                                    slug=lesson_slug,
+                                    unit_plan__slug=unit_plan_slug,
+                                    topic__slug=self.topic.slug
+                                )
+                                integration.prerequisite_lessons.add(lesson)
+                            except:
+                                raise KeyNotFoundError()
 
                 self.log('Added Curriculum Integration: {}'.format(integration.name), 1)

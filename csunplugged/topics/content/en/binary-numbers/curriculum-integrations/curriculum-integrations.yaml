@@ -3,4 +3,7 @@ binary-number-bracelets:
   curriculum-areas:
     - art
   prerequisite-lessons:
-    - lesson-1
+    unit-plan:
+      - lesson-1
+    unit-plan-2:
+      - lesson-1
