@@ -29,17 +29,6 @@
   <p>No CS Unplugged resources required.</p>
 {% endif %}
 
-<h2>Classroom Resources</h2>
-{% if lesson_classroom_resources %}
-  <ul>
-    {% for classroom_resource in lesson_classroom_resources %}
-      <li>{{ classroom_resource.text }}</li>
-    {% endfor %}
-  </ul>
-{% else %}
-  <p>No classroom resources required.</p>
-{% endif %}
-
 {% autoescape off %}
 {{ lesson.content }}
 {% endautoescape %}
