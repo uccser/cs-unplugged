@@ -36,22 +36,12 @@ class UnitPlanLoader(BaseLoader):
         '''
 
         # Convert the content to HTML
-        try:
-            unit_plan_content = self.convert_md_file(
-                os.path.join(
-                    self.BASE_PATH,
-                    '{}.md'.format(self.unit_plan_slug)
-                )
+        unit_plan_content = self.convert_md_file(
+            os.path.join(
+                self.BASE_PATH,
+                '{}.md'.format(self.unit_plan_slug)
             )
-        except:
-            raise CouldNotFindMarkdownFileError()
-
-        # Check that content is not empty and that a title was extracted
-        if unit_plan_content.title is None:
-            raise MarkdownFileMissingTitleError()
-
-        if len(unit_plan_content.html_string) == 0:
-            raise EmptyMarkdownFileError()
+        )
 
         unit_plan_structure = self.load_yaml_file(self.structure_file)
 

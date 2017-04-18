@@ -58,20 +58,9 @@ class ProgrammingExercisesLoader(BaseLoader):
                 '{}.md'
             )
 
-            # Throw and error if the md file cannot be found
-            try:
-                exercise_content = self.convert_md_file(
-                    file_path.format('index')
-                )
-            except:
-                raise CouldNotFindMarkdownFileError()
-
-            # Check that content is not empty and that a title was extracted
-            if exercise_content.title is None:
-                raise MarkdownFileMissingTitleError()
-            
-            if len(exercise_content.html_string) == 0:
-                raise EmptyMarkdownFileError()
+            exercise_content = self.convert_md_file(
+                file_path.format('index')
+            )
 
             try:
                 difficulty_level = ProgrammingExerciseDifficulty.objects.get(
@@ -101,31 +90,18 @@ class ProgrammingExercisesLoader(BaseLoader):
                 except:
                     raise KeyNotFoundError()
 
-                # Load expected output
-                try:
-                    expected_result_content = self.convert_md_file(
-                        file_path.format(
-                            '{}-expected'.format(language)
-                        )
+                expected_result_content = self.convert_md_file(
+                    file_path.format(
+                        '{}-expected'.format(language)
                     )
-                except:
-                    raise CouldNotFindMarkdownFileError()
-
-                if len(expected_result_content.html_string) == 0:
-                    raise EmptyMarkdownFileError()
+                )
 
                 # Load example solution
-                try:
-                    solution_content = self.convert_md_file(
-                        file_path.format(
-                            '{}-solution'.format(language)
-                        )
+                solution_content = self.convert_md_file(
+                    file_path.format(
+                        '{}-solution'.format(language)
                     )
-                except:
-                    raise CouldNotFindMarkdownFileError()
-                
-                if len(solution_content.html_string) == 0:
-                    raise EmptyMarkdownFileError()
+                )
 
                 # Load hint if given
                 try:
@@ -134,12 +110,8 @@ class ProgrammingExercisesLoader(BaseLoader):
                             '{}-hints'.format(language)
                         )
                     )
-                except Exception:
+                except CouldNotFindMarkdownFileError:
                     hint_content = None
-
-                if hint_content:
-                    if len(hint_content.html_string) == 0:
-                        raise EmptyMarkdownFileError() 
             
                 implementation = ProgrammingExerciseLanguageImplementation(
                     expected_result=expected_result_content.html_string,

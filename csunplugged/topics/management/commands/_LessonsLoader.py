@@ -61,18 +61,7 @@ class LessonsLoader(BaseLoader):
                 '{}.md'.format(lesson_slug)
             )
 
-            # Throw and error if the md file cannot be found
-            try:
-                lesson_content = self.convert_md_file(file_path)
-            except:
-                raise CouldNotFindMarkdownFileError()
-
-            # Check that content is not empty and that a title was extracted
-            if lesson_content.title is None:
-                raise MarkdownFileMissingTitleError()
-
-            if len(lesson_content.html_string) == 0:
-                raise EmptyMarkdownFileError()
+            lesson_content = self.convert_md_file(file_path)
 
             if 'duration' in lesson_structure:
                 lesson_duration = lesson_structure['duration']

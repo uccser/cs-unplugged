@@ -39,22 +39,13 @@ class CurriculumIntegrationsLoader(BaseLoader):
         structure = self.load_yaml_file(self.structure_file)
 
         for (integration_slug, integration_data) in structure.items():
-            try:
-                integration_content = self.convert_md_file(
-                    os.path.join(
-                        self.BASE_PATH,
-                        '{}.md'.format(integration_slug)
-                    )
-                )
-            except:
-                raise CouldNotFindMarkdownFileError()
 
-            # Check that content is not empty and that a title was extracted
-            if integration_content.title is None:
-                raise MarkdownFileMissingTitleError()
-            
-            if len(integration_content.html_string) == 0:
-                raise EmptyMarkdownFileError()
+            integration_content = self.convert_md_file(
+                os.path.join(
+                    self.BASE_PATH,
+                    '{}.md'.format(integration_slug)
+                )
+            )
 
             try:
                 integration_number = integration_data['number']

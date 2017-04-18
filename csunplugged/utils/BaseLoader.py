@@ -8,6 +8,11 @@ from os import listdir
 from verto import Verto
 from .check_required_files import check_converter_required_files
 
+from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
+from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
+from utils.errors.MarkdownFileMissingTitleError import MarkdownFileMissingTitleError
+from utils.errors.MissingConfigFileError import MissingConfigFileError
+
 
 class BaseLoader():
     '''Base loader class for individual loaders'''
@@ -46,8 +51,21 @@ class BaseLoader():
         Returns:
             Kordac result object
         '''
-        content = open(md_file_path, encoding='UTF-8').read()
+        try:
+            # check file exists
+            content = open(md_file_path, encoding='UTF-8').read()
+        except:
+            raise CouldNotFindMarkdownFileError()
+        
         result = self.converter.convert(content)
+
+        if result.title is None:
+            raise MarkdownFileMissingTitleError()
+
+        if len(result.html_string) == 0:
+            raise EmptyMarkdownFileError()
+        # check not empty
+
         check_converter_required_files(result.required_files)
         return result
 
@@ -72,7 +90,10 @@ class BaseLoader():
         Returns:
              Either list or string, depending on structure of given yaml file
         '''
-        yaml_file = open(yaml_file_path, encoding='UTF-8').read()
+        try:
+            yaml_file = open(yaml_file_path, encoding='UTF-8').read()
+        except:
+            raise MissingConfigFileError()
         return yaml.load(yaml_file)
 
     def load_template_files(self):

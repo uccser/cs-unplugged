@@ -44,28 +44,14 @@ class TopicLoader(BaseLoader):
         '''
 
         # Convert the content to HTML
-        try:
-            topic_content = self.convert_md_file(
-                os.path.join(
-                    self.BASE_PATH,
-                    '{}.md'.format(self.topic_slug)
-                )
+        topic_content = self.convert_md_file(
+            os.path.join(
+                self.BASE_PATH,
+                '{}.md'.format(self.topic_slug)
             )
-        except:
-            raise CouldNotFindMarkdownFileError()
-
-        # Check that content is not empty and that a title was extracted
-        if topic_content.title is None:
-            raise MarkdownFileMissingTitleError()
-        
-        if len(topic_content.html_string) == 0:
-            raise EmptyMarkdownFileError()
+        )
 
         topic_structure = self.load_yaml_file(self.structure_file)
-
-        # topic structure has at least one field that is required
-        if topic_structure is None:
-            raise MissingRequiredFieldError()
 
         # If other resources are given, convert to HTML
         if 'other-resources' in topic_structure:
