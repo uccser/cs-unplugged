@@ -237,8 +237,6 @@ In the following sections, each configuration file is exaplained in more detail.
     - They must be exact matches to work, for example, if you name a lesson
       ``bits-and-bytes``, referencing it in another configuration file as
       ``bytes-and-bits`` will raise an error.
-    
-
 
 .. note::
 
@@ -272,7 +270,6 @@ Application Structure Configuration File
     - ``learning-outcomes``
     - ``curriculum-areas``
     - ``programming-exercises-structure``
-
 
 A complete application structure file may look like the following:
 
@@ -320,7 +317,6 @@ Topic Configuration File
     - ``programming-exercises``
   
     - ``curriculum-integrations``
-
 
 A complete topic structure file may look like the following:
 
@@ -391,8 +387,6 @@ Unit Plan Configuration File
 
                 - ``description:`` A description of how the resource should be used.
 
-
-
 A complete unit plan structure file with multiple lessons may look like the
 following:
 
@@ -422,73 +416,94 @@ following:
       - binary-justify-representation
 
 
-.. _curriculum-integrations-file:
+.. _learning-outcomes-file:
 
-Curriculum Integrations Configuration File
+Learning Outcomes Configuration File
 ------------------------------------------------------------------------------
 
-- **File Name:** ``curriculum-intergrations.yaml``
+- **File Name:** ``learning-outcomes.yaml``
 
-- **Location:** ``topics/content/<language>/<topic-name>/``
+- **Location:** ``topics/content/<language>/``
 
-- **Referenced In:** ``topics/content/<language>/<topic-name>.yaml``
+- **Referenced In:** ``topics/content/<language>/structure.yaml``
 
-- **Purpose:** Contains a list of activities that can be used to integrate the
-  topic with another area in the curriculum.
+- **Purpose:** Defines the learning outcomes avilable for all topics.
 
 - **Required Fields:**
 
-  - ``<activity-name>:`` This is the key for the curriculum integration activity. Each
-    activity has its own list of required and optional fields:
+  - ``<key> : <value>`` Key value pairs. The key will be used in other configuration
+    files to reference this particluar learning objective. The value is the learning
+    objective text that will be displayed to the user).
 
-    - **Required Fields:**
-
-      - ``number:`` The number order for this activity. Curriculum integration activities
-        are sorted by this number.
-
-      - ``curriculum-areas:`` A list of keys corresponding to other curriculum areas
-        that this activity could be used in.
-
-    - **Optional Fields:**
-
-      - ``prerequisite-lessons:`` A list of unit plan keys containing lessons that are
-        expected to be completed before attemping this activity.
-
-        - **Required Fields:**
-
-          - ``<unit-plan-name>:`` A key corresponding to a unit plan.
-
-            - **Required Fields:**
-
-              - ``<lesson-name>`` A key corresponding to a lesson in the given unit
-                plan.
-
-
-
-A complete curriculum integration structure file with multiple activities may
-look like the following:
+A complete learning outcome structure file may look like the following:
 
 .. code-block:: yaml
 
-  binary-number-bracelets:
-    number: 1
-    curriculum-areas:
-      - math
-      - art
-    prerequisite-lessons:
-      unit-plan:
-        - introduction-to-binary-digits
-      unit-plan-2:
-        - counting-in-binary
+  binary-data-representation: Explain how a binary digit is represented using two contrasting values.
+  binary-count: Demonstrate how to represent any number between 0 and 31 using binary.
+  binary-convert-decimal: Perform a demonstration of how the binary number system works by converting any decimal number into a binary number.
+  binary-justify-representation: Argue that 0’s and 1’s are still a correct way to represent what is stored in the computer.
 
-  binary-leap-frog:
-    number: 2
-    curriculum-areas:
-      - math
-      - pe
-    prerequisite-lessons:
-      unit-plan-2:
-        - counting-in-binary
+
+.. _curriculum-areas-file:
+
+Curriculum Areas Configuration File
+------------------------------------------------------------------------------
+
+- **File Name:** ``curriculum-areas.yaml``
+
+- **Location:** ``topics/content/<language>/``
+
+- **Referenced In:** ``topics/content/<language>/structure.yaml``
+
+- **Purpose:** Defines the curriculum areas available for all topics.
+
+- **Required Fields:**
+
+  - ``<curriculum-area-name>:`` This is the key for the curriculum area. Each curriculum
+    area has its own list of required and optional fields:
+
+    - **Required Fields:**
+
+      - ``name:`` The name of the curriculum area (this is what will be displayed to the
+        user).
+
+    - **Optional Fields:**
+
+      - ``children:`` A list of sub-curriculm areas (see example file below). Each child
+        requires a name field.
+
+An example curriculum areas file with multiple curriculums may look like
+the following:
+
+.. code-block:: yaml
+
+  maths:
+    name: Maths
+    children:
+      geometry:
+        name: Geometry
+      algebra:
+        name: Algebra
+
+  science:
+    name: Science
+
+  art:
+    name: Art
+
+.. note::
+
+  The maximum depth for children is one, that is, children curriculum areas
+  cannot have children.
+
+.. note::
+
+  When including a curriculum area in another configuration file, adding a child
+  curriculum area will automatically add the parent curriculum area, you do not need to
+  specify this manually. For example, adding "geometry" means that "maths" is
+  automatically included.
+
 
 .. _programming-exercises-structure-file:
 
@@ -522,7 +537,6 @@ Programming Exercises Structure Configuration File
 
           - ``icon:`` An image file to be used as the icon for the language.
 
-
   - ``difficulties:`` A list of difficulties programming exercises can be labelled as.
 
     - **Required Fields:**
@@ -533,7 +547,6 @@ Programming Exercises Structure Configuration File
 
         - ``name:`` The name of the difficulty level (this is what will be displayed to
           the user).
-
 
 A complete programming exercise structure file may look like the following:
 
@@ -590,7 +603,6 @@ Programming Exercises Configuration File
 
       - ``learning-outcomes:`` A list of keys corresponding to learning outcomes.
 
-
 A complete programming exercises structure file may look like the following:
 
 .. code-block:: yaml
@@ -615,93 +627,69 @@ A complete programming exercises structure file may look like the following:
       - programming-basic-logic
     
 
-.. _learning-outcomes-file:
+.. _curriculum-integrations-file:
 
-Learning Outcomes Configuration File
+Curriculum Integrations Configuration File
 ------------------------------------------------------------------------------
 
-- **File Name:** ``learning-outcomes.yaml``
+- **File Name:** ``curriculum-intergrations.yaml``
 
-- **Location:** ``topics/content/<language>/``
+- **Location:** ``topics/content/<language>/<topic-name>/``
 
-- **Referenced In:** ``topics/content/<language>/structure.yaml``
+- **Referenced In:** ``topics/content/<language>/<topic-name>.yaml``
 
-- **Purpose:** Defines the learning outcomes avilable for all topics.
+- **Purpose:** Contains a list of activities that can be used to integrate the
+  topic with another area in the curriculum.
 
 - **Required Fields:**
 
-  - ``<key> : <value>`` Key value pairs. The key will be used in other configuration
-    files to reference this particluar learning objective. The value is the learning
-    objective text that will be displayed to the user).
-
-
-A complete learning outcome structure file may look like the following:
-
-.. code-block:: yaml
-
-  binary-data-representation: Explain how a binary digit is represented using two contrasting values.
-  binary-count: Demonstrate how to represent any number between 0 and 31 using binary.
-  binary-convert-decimal: Perform a demonstration of how the binary number system works by converting any decimal number into a binary number.
-  binary-justify-representation: Argue that 0’s and 1’s are still a correct way to represent what is stored in the computer.
-
-
-.. _curriculum-areas-file:
-
-Curriculum Areas File
-------------------------------------------------------------------------------
-
-- **File Name:** ``curriculum-areas.yaml``
-
-- **Location:** ``topics/content/<language>/``
-
-- **Referenced In:** ``topics/content/<language>/structure.yaml``
-
-- **Purpose:** Defines the curriculum areas available for all topics.
-
-- **Required Fields:**
-
-  - ``<curriculum-area-name>:`` This is the key for the curriculum area. Each curriculum
-    area has its own list of required and optional fields:
+  - ``<activity-name>:`` This is the key for the curriculum integration activity. Each
+    activity has its own list of required and optional fields:
 
     - **Required Fields:**
 
-      - ``name:`` The name of the curriculum area (this is what will be displayed to the
-        user).
+      - ``number:`` The number order for this activity. Curriculum integration activities
+        are sorted by this number.
+
+      - ``curriculum-areas:`` A list of keys corresponding to other curriculum areas
+        that this activity could be used in.
 
     - **Optional Fields:**
 
-      - ``children:`` A list of sub-curriculm areas (see example file below). Each child
-        requires a name field.
+      - ``prerequisite-lessons:`` A list of unit plan keys containing lessons that are
+        expected to be completed before attemping this activity.
 
+        - **Required Fields:**
 
-An example curriculum areas file with multiple curriculums may look like
-the following:
+          - ``<unit-plan-name>:`` A key corresponding to a unit plan.
+
+            - **Required Fields:**
+
+              - ``<lesson-name>`` A key corresponding to a lesson in the given unit
+                plan.
+
+A complete curriculum integration structure file with multiple activities may
+look like the following:
 
 .. code-block:: yaml
 
-  maths:
-    name: Maths
-    children:
-      geometry:
-        name: Geometry
-      algebra:
-        name: Algebra
+  binary-number-bracelets:
+    number: 1
+    curriculum-areas:
+      - math
+      - art
+    prerequisite-lessons:
+      unit-plan:
+        - introduction-to-binary-digits
+      unit-plan-2:
+        - counting-in-binary
 
-  science:
-    name: Science
-
-  art:
-    name: Art
-
-.. note::
-
-  The maximum depth for children is one, that is, children curriculum areas
-  cannot have children.
-
-.. note::
-
-  When including a curriculum area in another configuration file, adding a child
-  curriculum area will automatically add the parent curriculum area, you do not need to
-  specify this manually. For example, adding "geometry" means that "maths" is
-  automatically included.
+  binary-leap-frog:
+    number: 2
+    curriculum-areas:
+      - math
+      - pe
+    prerequisite-lessons:
+      unit-plan-2:
+        - counting-in-binary
 
