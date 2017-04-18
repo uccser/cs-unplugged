@@ -36,64 +36,63 @@ class CurriculumIntegrationsLoader(BaseLoader):
             KeyNotFoundError:
             MissingRequiredFieldError:
         '''
-        if self.structure_file:
-            structure = self.load_yaml_file(self.structure_file)
+        structure = self.load_yaml_file(self.structure_file)
 
-            for integration_slug, integration_data in structure.items():
-                try:
-                    integration_content = self.convert_md_file(
-                        os.path.join(
-                            self.BASE_PATH,
-                            '{}.md'.format(integration_slug)
-                        )
+        for (integration_slug, integration_data) in structure.items():
+            try:
+                integration_content = self.convert_md_file(
+                    os.path.join(
+                        self.BASE_PATH,
+                        '{}.md'.format(integration_slug)
                     )
-                except:
-                    raise CouldNotFindMarkdownFileError()
-
-                # Check that content is not empty and that a title was extracted
-                if integration_content.title is None:
-                    raise MarkdownFileMissingTitleError()
-                
-                if len(integration_content.html_string) == 0:
-                    raise EmptyMarkdownFileError()
-
-                try:
-                    integration_number = integration_data['number']
-                    integration_curriculum_areas = integration_data['curriculum-areas']
-                except:
-                    raise MissingRequiredFieldError()
-
-                integration = self.topic.curriculum_integrations.create(
-                    slug=integration_slug,
-                    number=integration_data['number'],
-                    name=integration_content.title,
-                    content=integration_content.html_string,
                 )
-                integration.save()
+            except:
+                raise CouldNotFindMarkdownFileError()
 
-                # Add curriculum areas
-                for curriculum_area_slug in integration_curriculum_areas:
-                    try:
-                        curriculum_area = CurriculumArea.objects.get(
-                            slug=curriculum_area_slug
-                        )
-                        integration.curriculum_areas.add(curriculum_area)
-                    except:
-                        raise KeyNotFoundError()
+            # Check that content is not empty and that a title was extracted
+            if integration_content.title is None:
+                raise MarkdownFileMissingTitleError()
+            
+            if len(integration_content.html_string) == 0:
+                raise EmptyMarkdownFileError()
 
-                # Add prerequisite lessons
-                if 'prerequisite-lessons' in integration_data:
-                    prerequisite_lessons = integration_data['prerequisite-lessons']
-                    for (unit_plan_slug, lessons) in prerequisite_lessons.items():
-                        for lesson_slug in lessons:
-                            try:
-                                lesson = Lesson.objects.get(
-                                    slug=lesson_slug,
-                                    unit_plan__slug=unit_plan_slug,
-                                    topic__slug=self.topic.slug
-                                )
-                                integration.prerequisite_lessons.add(lesson)
-                            except:
-                                raise KeyNotFoundError()
+            try:
+                integration_number = integration_data['number']
+                integration_curriculum_areas = integration_data['curriculum-areas']
+            except:
+                raise MissingRequiredFieldError()
 
-                self.log('Added Curriculum Integration: {}'.format(integration.name), 1)
+            integration = self.topic.curriculum_integrations.create(
+                slug=integration_slug,
+                number=integration_data['number'],
+                name=integration_content.title,
+                content=integration_content.html_string,
+            )
+            integration.save()
+
+            # Add curriculum areas
+            for curriculum_area_slug in integration_curriculum_areas:
+                try:
+                    curriculum_area = CurriculumArea.objects.get(
+                        slug=curriculum_area_slug
+                    )
+                    integration.curriculum_areas.add(curriculum_area)
+                except:
+                    raise KeyNotFoundError()
+
+            # Add prerequisite lessons
+            if 'prerequisite-lessons' in integration_data:
+                prerequisite_lessons = integration_data['prerequisite-lessons']
+                for (unit_plan_slug, lessons) in prerequisite_lessons.items():
+                    for lesson_slug in lessons:
+                        try:
+                            lesson = Lesson.objects.get(
+                                slug=lesson_slug,
+                                unit_plan__slug=unit_plan_slug,
+                                topic__slug=self.topic.slug
+                            )
+                            integration.prerequisite_lessons.add(lesson)
+                        except:
+                            raise KeyNotFoundError()
+
+            self.log('Added Curriculum Integration: {}'.format(integration.name), 1)

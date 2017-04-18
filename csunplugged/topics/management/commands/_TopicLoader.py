@@ -89,7 +89,7 @@ class TopicLoader(BaseLoader):
 
         # Create topic objects and save to the db
         topic = Topic(
-            slug=self.topic_slug,
+            # slug=self.topic_slug,
             name=topic_content.title,
             content=topic_content.html_string,
             other_resources=topic_other_resources_html,
@@ -112,7 +112,6 @@ class TopicLoader(BaseLoader):
                 topic,
                 self.BASE_PATH
             ).load()
-
 
         # Load unit plans
         if 'unit-plans' in topic_structure:

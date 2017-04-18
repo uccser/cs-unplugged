@@ -41,8 +41,7 @@ class ProgrammingExercisesStructureLoader(BaseLoader):
         except:
             raise MissingRequiredFieldError()
 
-        for language in languages:
-            language_data = languages[language]
+        for (language, language_data) in languages.items():
 
             # Check for required fields
             try:
@@ -66,15 +65,14 @@ class ProgrammingExercisesStructureLoader(BaseLoader):
 
             self.log('Added Langauge: {}'.format(new_language.__str__()))
 
-        for difficulty in difficulty_levels:
+        for (difficulty, difficulty_data) in difficulty_levels.items():
             try:
-                difficulty_level = difficulty['level']
-                difficulty_name = difficulty['name']
+                difficulty_name = difficulty_data['name']
             except:
                 raise MissingRequiredFieldError()
 
             new_difficulty = ProgrammingExerciseDifficulty(
-                level=difficulty_level,
+                level=difficulty,
                 name=difficulty_name
             )
             new_difficulty.save()
