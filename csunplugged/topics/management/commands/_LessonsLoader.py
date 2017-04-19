@@ -2,9 +2,6 @@ import os.path
 
 from utils.BaseLoader import BaseLoader
 
-from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
-from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
-from utils.errors.MarkdownFileMissingTitleError import MarkdownFileMissingTitleError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 
@@ -47,12 +44,15 @@ class LessonsLoader(BaseLoader):
         for (lesson_slug, lesson_structure) in self.lessons_structure.items():
             
             # Retrieve required variables from structure dictionary
-            try:
-                lesson_min_age = lesson_structure['min-age']
-                lesson_max_age = lesson_structure['max-age']
-                lesson_number = lesson_structure['number']
-            except:
-                raise MissingRequiredFieldError()
+            lesson_min_age = lesson_structure.get('min-age', None)
+            lesson_max_age = lesson_structure.get('max-age', None)
+            lesson_number = lesson_structure.get('number', None)
+            if None in [lesson_min_age, lesson_max_age, lesson_number]:
+                raise MissingRequiredFieldError(
+                    self.unit_plan_structure_file_path,
+                    ['min-age', 'max-age', 'number'],
+                    'Lesson'
+                )
 
             # Build the file path to the lesson's md file
             file_path = os.path.join(
@@ -94,7 +94,11 @@ class LessonsLoader(BaseLoader):
                         )
                         lesson.programming_exercises.add(programming_exercise)
                     except:
-                        raise KeyNotFoundError()
+                        raise KeyNotFoundError(
+                            self.unit_plan_structure_file_path,
+                            programming_exercise_slug,
+                            'Programming Exercises'
+                        )
 
             # Add learning outcomes
             if 'learning-outcomes' in lesson_structure:
@@ -106,7 +110,11 @@ class LessonsLoader(BaseLoader):
                         )
                         lesson.learning_outcomes.add(learning_outcome)
                     except:
-                        raise KeyNotFoundError()
+                        raise KeyNotFoundError(
+                            self.unit_plan_structure_file_path,
+                            learning_outcome_slug,
+                            'Learning Outcomes'
+                        )
 
             # Add curriculum areas
             if 'curriculum-areas' in lesson_structure:
@@ -118,7 +126,11 @@ class LessonsLoader(BaseLoader):
                         )
                         lesson.curriculum_areas.add(curriculum_area)
                     except:
-                        raise KeyNotFoundError()
+                        raise KeyNotFoundError(
+                            self.unit_plan_structure_file_path,
+                            curriculum_area_slug,
+                            'Curriculum Areas'
+                        )
 
             # Add generated resources
             if 'generated-resources' in lesson_structure:
@@ -129,12 +141,19 @@ class LessonsLoader(BaseLoader):
                             slug=resource_slug
                         )
                     except:
-                        raise KeyNotFoundError()
+                        raise KeyNotFoundError(
+                            self.unit_plan_structure_file_path,
+                            resource_slug,
+                            'Resources'
+                        )
 
-                    try:
-                        resource_description = resource_data['description']
-                    except:
-                        raise MissingRequiredFieldError()
+                    resource_description = resource_data.get('description', None)
+                    if resource_description is None:
+                        raise MissingRequiredFieldError(
+                            self.unit_plan_structure_file_path,
+                            ['description'],
+                            'Generated Resource'
+                        )
 
                     relationship = ConnectedGeneratedResource(
                         resource=resource,

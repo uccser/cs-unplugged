@@ -35,19 +35,25 @@ class ProgrammingExercisesStructureLoader(BaseLoader):
             )
         )
 
-        try:
-            languages = structure['languages']
-            difficulty_levels = structure['difficulties']
-        except:
-            raise MissingRequiredFieldError()
+        languages = structure.get('languages', None)
+        difficulty_levels = structure.get('difficulties', None)
+        if None in [languages, difficulty_levels]:
+            raise MissingRequiredFieldError(
+                self.structure_file_path,
+                ['lanugages', 'difficulties'],
+                'Programming Exercise Structure'
+            )
 
         for (language, language_data) in languages.items():
 
             # Check for required fields
-            try:
-                language_name = language_data['name']
-            except:
-                raise MissingRequiredFieldError()
+            language_name = language_data.get('name', None)
+            if language_name is None:
+                raise MissingRequiredFieldError(
+                    self.structure_file_path,
+                    ['name'],
+                    'Programming Exercise Language'
+                )
 
             # Check if icon is given
             if 'icon' in language_data:
@@ -66,10 +72,13 @@ class ProgrammingExercisesStructureLoader(BaseLoader):
             self.log('Added Langauge: {}'.format(new_language.__str__()))
 
         for (difficulty, difficulty_data) in difficulty_levels.items():
-            try:
-                difficulty_name = difficulty_data['name']
-            except:
-                raise MissingRequiredFieldError()
+            difficulty_name = difficulty_data.get('name', None)
+            if difficulty_name is None:
+                raise MissingRequiredFieldError(
+                    self.structure_file_path,
+                    ['name'],
+                    'Programming Exercise Difficulty'
+                )
 
             new_difficulty = ProgrammingExerciseDifficulty(
                 level=difficulty,

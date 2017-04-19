@@ -1,9 +1,8 @@
 import os.path
 from utils.BaseLoader import BaseLoader
 
-from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
-from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
+from utils.errors.NoHeadingFoundInMarkdownFileError import NoHeadingFoundInMarkdownFileError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 
 from topics.models import (
@@ -43,13 +42,17 @@ class ProgrammingExercisesLoader(BaseLoader):
 
         for (exercise_slug, exercise_structure) in programming_exercises_structure.items():
             # Retrieve required variables from md file
-            try:
-                exercise_set_number = exercise_structure['exercise-set-number']
-                exercise_number = exercise_structure['exercise-number']
-                exercise_languages = exercise_structure['programming-languages']
-                exercise_difficulty = exercise_structure['difficulty-level']
-            except:
-                raise MissingRequiredFieldError()
+            exercise_set_number = exercise_structure.get('exercise-set-number', None)
+            exercise_number = exercise_structure.get('exercise-number', None)
+            exercise_languages = exercise_structure.get('programming-languages', None)
+            exercise_difficulty = exercise_structure.get('difficulty-level', None)
+            if None in [exercise_set_number, exercise_number, exercise_languages, exercise_difficulty]:
+                raise MissingRequiredFieldError(
+                    self.programming_exercises_structure,
+                    ['exercise-set-number', 'exercise-number',
+                        'programming-languages', 'difficulty-level'],
+                    'Programming Exercise'
+                )
 
             # Build the path to the programming exercise's folder
             file_path = os.path.join(
@@ -95,7 +98,8 @@ class ProgrammingExercisesLoader(BaseLoader):
                     file_path.format(
                         '{}-expected'.format(language)
                     ),
-                    self.structure_file_path
+                    self.structure_file_path,
+                    heading_required=False
                 )
 
                 # Load example solution
@@ -103,7 +107,8 @@ class ProgrammingExercisesLoader(BaseLoader):
                     file_path.format(
                         '{}-solution'.format(language)
                     ),
-                    self.structure_file_path
+                    self.structure_file_path,
+                    heading_required=False
                 )
 
                 # Load hint if given
@@ -112,7 +117,8 @@ class ProgrammingExercisesLoader(BaseLoader):
                         file_path.format(
                             '{}-hints'.format(language)
                         ),
-                        self.structure_file_path
+                        self.structure_file_path,
+                        heading_required=False
                     )
                 except CouldNotFindMarkdownFileError:
                     hint_content = None

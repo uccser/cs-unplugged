@@ -1,10 +1,7 @@
 import os.path
 from utils.BaseLoader import BaseLoader
 
-from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
-from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
-from utils.errors.MarkdownFileMissingTitleError import MarkdownFileMissingTitleError
-from utils.errors.UnitPlanHasNoLessonsError import UnitPlanHasNoLessonsError
+from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 
 from ._LessonsLoader import LessonsLoader
 
@@ -29,11 +26,9 @@ class UnitPlanLoader(BaseLoader):
         '''Load the content for unit plans
 
         Raises:
-            CouldNotFindMarkdownFileError:
-            MarkdownFileMissingTitleError:
-            EmptyMarkdownFileError:
-            UnitPlanHasNoLessonsError:
+            MissingRequiredFieldError:
         '''
+        unit_plan_structure = self.load_yaml_file(self.structure_file_path)
 
         # Convert the content to HTML
         unit_plan_content = self.convert_md_file(
@@ -43,8 +38,6 @@ class UnitPlanLoader(BaseLoader):
             ),
             self.structure_file_path
         )
-
-        unit_plan_structure = self.load_yaml_file(self.structure_file_path)
 
         unit_plan = self.topic.topic_unit_plans.create(
             slug=self.unit_plan_slug,
@@ -59,8 +52,12 @@ class UnitPlanLoader(BaseLoader):
 
         # If there is nothing in the structure dictionary there
         # are obviously no lessons! Error!
-        if len(unit_plan_structure) == 0:
-            raise UnitPlanHasNoLessonsError()
+        if unit_plan_structure is None:
+            raise MissingRequiredFieldError(
+                self.structure_file_path,
+                ['(At least one lesson)'],
+                'Unit Plan'
+            )
         # Call the loader to save the lessons into the db
         lessons_structure = unit_plan_structure
         LessonsLoader(

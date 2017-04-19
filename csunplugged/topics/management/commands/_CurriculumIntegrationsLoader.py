@@ -2,9 +2,6 @@ import os.path
 
 from utils.BaseLoader import BaseLoader
 
-from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
-from utils.errors.MarkdownFileMissingTitleError import MarkdownFileMissingTitleError
-from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 
@@ -18,7 +15,7 @@ class CurriculumIntegrationsLoader(BaseLoader):
         '''Initiates the loader for curriculum integrations
 
         Args:
-            structure_file_path_path: file path (string)
+            structure_file_path: file path (string)
             topic: Topic model object
         '''
         super().__init__(BASE_PATH, load_log)
@@ -48,11 +45,14 @@ class CurriculumIntegrationsLoader(BaseLoader):
                 self.structure_file_path
             )
 
-            try:
-                integration_number = integration_data['number']
-                integration_curriculum_areas = integration_data['curriculum-areas']
-            except:
-                raise MissingRequiredFieldError()
+            integration_number = integration_data.get('number', None)
+            integration_curriculum_areas = integration_data.get('curriculum-areas', None)
+            if None in [integration_number, integration_curriculum_areas]:
+                raise MissingRequiredFieldError(
+                    self.structure_file_path,
+                    ['number', 'curriculum-areas'],
+                    'Curriculum Integration'
+                )
 
             integration = self.topic.curriculum_integrations.create(
                 slug=integration_slug,
@@ -70,7 +70,11 @@ class CurriculumIntegrationsLoader(BaseLoader):
                     )
                     integration.curriculum_areas.add(curriculum_area)
                 except:
-                    raise KeyNotFoundError()
+                    raise KeyNotFoundError(
+                        self.structure_file_path,
+                        curriculum_area_slug,
+                        'Curriculum Areas'
+                    )
 
             # Add prerequisite lessons
             if 'prerequisite-lessons' in integration_data:
@@ -85,6 +89,13 @@ class CurriculumIntegrationsLoader(BaseLoader):
                             )
                             integration.prerequisite_lessons.add(lesson)
                         except:
-                            raise KeyNotFoundError()
+                            raise KeyNotFoundError(
+                                self.structure_file_path,
+                                '{} and/or {}'.format(
+                                    lesson_slug,
+                                    unit_plan_slug,
+                                ),
+                                'Lessons'
+                            )
 
             self.log('Added Curriculum Integration: {}'.format(integration.name), 1)

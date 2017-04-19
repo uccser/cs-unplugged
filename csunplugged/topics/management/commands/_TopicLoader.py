@@ -4,10 +4,6 @@ from django.db import transaction
 from utils.BaseLoader import BaseLoader
 from utils.check_required_files import find_image_files
 
-from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
-from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
-from utils.errors.MarkdownFileMissingTitleError import MarkdownFileMissingTitleError
-from utils.errors.TopicHasNoUnitPlansError import TopicHasNoUnitPlansError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 
 from ._CurriculumIntegrationsLoader import CurriculumIntegrationsLoader
@@ -37,11 +33,18 @@ class TopicLoader(BaseLoader):
         '''Load the content for a topic
 
         Raises:
-            CouldNotFindMarkdownFileError:
-            MarkdownFileMissingTitleError:
-            EmptyMarkdownFileError:
             TopicHasNoUnitPlansError:
         '''
+        
+        topic_structure = self.load_yaml_file(self.structure_file_path)
+        
+        unit_plans = topic_structure.get('unit-plans', None)
+        if unit_plans is None:
+            raise MissingRequiredFieldError(
+                self.structure_file_path,
+                ['unit-plans'],
+                'Topic'
+            )
 
         # Convert the content to HTML
         topic_content = self.convert_md_file(
@@ -51,8 +54,6 @@ class TopicLoader(BaseLoader):
             ),
             self.structure_file_path
         )
-
-        topic_structure = self.load_yaml_file(self.structure_file_path)
 
         # If other resources are given, convert to HTML
         if 'other-resources' in topic_structure:
@@ -71,7 +72,7 @@ class TopicLoader(BaseLoader):
         # Check if icon is given
         if 'icon' in topic_structure:
             topic_icon = topic_structure['icon']
-            find_image_files([topic_icon])
+            find_image_files([topic_icon], self.structure_file_path)
         else:
             topic_icon = None
 
@@ -102,18 +103,13 @@ class TopicLoader(BaseLoader):
             ).load()
 
         # Load unit plans
-        if 'unit-plans' in topic_structure:
-            if len(topic_structure['unit-plans']) == 0:
-                raise TopicHasNoUnitPlansError()
-            for unit_plan in topic_structure['unit-plans']:
-                UnitPlanLoader(
-                    self.load_log,
-                    FILE_PATH_TEMPLATE.format(unit_plan),
-                    topic,
-                    self.BASE_PATH
-                ).load()
-        else:
-            raise TopicHasNoUnitPlansError()
+        for unit_plan in unit_plans:
+            UnitPlanLoader(
+                self.load_log,
+                FILE_PATH_TEMPLATE.format(unit_plan),
+                topic,
+                self.BASE_PATH
+            ).load()
 
         # Load curriculum integrations
         if 'curriculum-integrations' in misc_structure_file_paths:

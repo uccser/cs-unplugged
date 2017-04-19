@@ -4,7 +4,7 @@ from django.contrib.staticfiles import finders
 from utils.errors.CouldNotFindImageError import CouldNotFindImageError
 
 
-def check_converter_required_files(required_files):
+def check_converter_required_files(required_files, md_file_path):
     '''Processes data within required files found by Markdown
     converter.
 
@@ -12,7 +12,7 @@ def check_converter_required_files(required_files):
         required_files (dict): Dictionary of required files data.
     '''
     render_scratch_images(required_files['scratch_images'])
-    find_image_files(required_files['images'])
+    find_image_files(required_files['images'], md_file_path)
 
 
 def render_scratch_images(scratch_images):
@@ -32,7 +32,7 @@ def render_scratch_images(scratch_images):
                 scratch_temp_file.write(scratch_image.text)
 
 
-def find_image_files(images):
+def find_image_files(images, md_file_path):
     '''Confirm each image is in static folder
 
     Args:
@@ -43,4 +43,4 @@ def find_image_files(images):
     '''
     for image in images:
         if not finders.find(image):
-            raise CouldNotFindImageError(image, 'Image cannot be found: {}'.format(image))
+            raise CouldNotFindImageError(image, md_file_path)

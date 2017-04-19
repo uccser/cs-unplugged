@@ -37,13 +37,13 @@ class CurriculumAreasLoader(BaseLoader):
 
         for (curriculum_area_slug, curriculum_area_data) in curriculum_areas_structure.items():
 
-            try:
-                curriculum_area_name = curriculum_area_data['name']
-            except:
-                raise MissingRequiredFieldError()
-
+            curriculum_area_name = curriculum_area_data.get('name', None)
             if curriculum_area_name is None:
-                raise MissingRequiredFieldError()
+                raise MissingRequiredFieldError(
+                    self.structure_file_path,
+                    ['name'],
+                    'Curriculum Area'
+                )
 
             # Create area objects and save to database
             new_area = CurriculumArea(
@@ -57,13 +57,13 @@ class CurriculumAreasLoader(BaseLoader):
             # Create children curriculum areas with reference to parent
             if 'children' in curriculum_area_data:
                 for (child_slug, child_data) in curriculum_area_data['children'].items():
-                    try:
-                        child_name = child_data['name']
-                    except:
-                        raise MissingRequiredFieldError()
-
+                    child_name = child_data.get('name', None)
                     if child_name is None:
-                        raise MissingRequiredFieldError()
+                        raise MissingRequiredFieldError(
+                            self.structure_file_path,
+                            ['name'],
+                            'Child Curriculum Area'
+                        )
 
                     new_child = CurriculumArea(
                         slug=child_slug,

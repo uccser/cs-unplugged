@@ -10,7 +10,7 @@ from .check_required_files import check_converter_required_files
 
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
-from utils.errors.MarkdownFileMissingTitleError import MarkdownFileMissingTitleError
+from utils.errors.NoHeadingFoundInMarkdownFileError import NoHeadingFoundInMarkdownFileError
 from utils.errors.CouldNotFindConfigFileError import CouldNotFindConfigFileError
 
 
@@ -26,7 +26,7 @@ class BaseLoader():
         self.setup_md_to_html_converter()
 
     def setup_md_to_html_converter(self):
-        '''Create Kordac converter with custom processors, html templates,
+        '''Create Verto converter with custom processors, html templates,
         and extensions.
         '''
         templates = self.load_template_files()
@@ -42,14 +42,14 @@ class BaseLoader():
         custom_processors.add('remove-title')
         self.converter.update_processors(custom_processors)
 
-    def convert_md_file(self, md_file_path, config_file_path):
-        '''Returns the Kordac object for a given Markdown file
+    def convert_md_file(self, md_file_path, config_file_path, heading_required=True):
+        '''Returns the Verto object for a given Markdown file
 
         Args:
             md_file_path: location of md file to convert
 
         Returns:
-            Kordac result object
+            VertoResult object
         '''
         try:
             # check file exists
@@ -59,14 +59,15 @@ class BaseLoader():
         
         result = self.converter.convert(content)
 
-        if result.title is None:
-            raise MarkdownFileMissingTitleError()
+        if heading_required:
+            if result.title is None:
+                raise NoHeadingFoundInMarkdownFileError(md_file_path)
 
         if len(result.html_string) == 0:
-            raise EmptyMarkdownFileError()
+            raise EmptyMarkdownFileError(md_file_path)
         # check not empty
 
-        check_converter_required_files(result.required_files)
+        check_converter_required_files(result.required_files, md_file_path)
         return result
 
     def log(self, log_message, indent_amount=0):
@@ -93,7 +94,7 @@ class BaseLoader():
         try:
             yaml_file = open(yaml_file_path, encoding='UTF-8').read()
         except:
-            raise CouldNotFindConfigFileError()
+            raise CouldNotFindConfigFileError(yaml_file_path)
         return yaml.load(yaml_file)
 
     def load_template_files(self):
