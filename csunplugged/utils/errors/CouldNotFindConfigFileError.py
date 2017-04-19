@@ -1,6 +1,6 @@
 from .Error import Error
 
-class MissingConfigFileError(Error):
+class CouldNotFindConfigFileError(Error):
     '''Raised when a yaml file cannot be found
     '''
     

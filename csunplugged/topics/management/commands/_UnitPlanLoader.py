@@ -12,16 +12,16 @@ from ._LessonsLoader import LessonsLoader
 class UnitPlanLoader(BaseLoader):
     '''Loader for unit plans'''
 
-    def __init__(self, load_log, structure_file, topic, BASE_PATH):
+    def __init__(self, load_log, structure_file_path, topic, BASE_PATH):
         '''Initiates the loader for unit plans
 
         Args:
-            structure_file: file path (string)
+            structure_file_path: file path (string)
             topic: Topic model object
         '''
         super().__init__(BASE_PATH, load_log)
-        self.unit_plan_slug = os.path.split(structure_file)[0]
-        self.structure_file = os.path.join(self.BASE_PATH, structure_file)
+        self.unit_plan_slug = os.path.split(structure_file_path)[0]
+        self.structure_file_path = os.path.join(self.BASE_PATH, structure_file_path)
         self.BASE_PATH = os.path.join(self.BASE_PATH, self.unit_plan_slug)
         self.topic = topic
 
@@ -40,10 +40,11 @@ class UnitPlanLoader(BaseLoader):
             os.path.join(
                 self.BASE_PATH,
                 '{}.md'.format(self.unit_plan_slug)
-            )
+            ),
+            self.structure_file_path
         )
 
-        unit_plan_structure = self.load_yaml_file(self.structure_file)
+        unit_plan_structure = self.load_yaml_file(self.structure_file_path)
 
         unit_plan = self.topic.topic_unit_plans.create(
             slug=self.unit_plan_slug,
@@ -63,6 +64,7 @@ class UnitPlanLoader(BaseLoader):
         # Call the loader to save the lessons into the db
         lessons_structure = unit_plan_structure
         LessonsLoader(
+            self.structure_file_path,
             self.load_log,
             lessons_structure,
             self.topic,

@@ -11,7 +11,7 @@ from .check_required_files import check_converter_required_files
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
 from utils.errors.MarkdownFileMissingTitleError import MarkdownFileMissingTitleError
-from utils.errors.MissingConfigFileError import MissingConfigFileError
+from utils.errors.CouldNotFindConfigFileError import CouldNotFindConfigFileError
 
 
 class BaseLoader():
@@ -42,7 +42,7 @@ class BaseLoader():
         custom_processors.add('remove-title')
         self.converter.update_processors(custom_processors)
 
-    def convert_md_file(self, md_file_path):
+    def convert_md_file(self, md_file_path, config_file_path):
         '''Returns the Kordac object for a given Markdown file
 
         Args:
@@ -55,7 +55,7 @@ class BaseLoader():
             # check file exists
             content = open(md_file_path, encoding='UTF-8').read()
         except:
-            raise CouldNotFindMarkdownFileError()
+            raise CouldNotFindMarkdownFileError(md_file_path, config_file_path)
         
         result = self.converter.convert(content)
 
@@ -93,7 +93,7 @@ class BaseLoader():
         try:
             yaml_file = open(yaml_file_path, encoding='UTF-8').read()
         except:
-            raise MissingConfigFileError()
+            raise CouldNotFindConfigFileError()
         return yaml.load(yaml_file)
 
     def load_template_files(self):

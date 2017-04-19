@@ -11,15 +11,15 @@ from topics.models import CurriculumArea
 class CurriculumAreasLoader(BaseLoader):
     '''Loader for curriculum area content'''
 
-    def __init__(self, curriculum_areas_file, BASE_PATH):
+    def __init__(self, structure_file_path, BASE_PATH):
         '''Initiates the curriculum area loader
 
         Args:
-            curriculum_areas_file: file path (string)
+            structure_file_path: file path (string)
         '''
         super().__init__(BASE_PATH)
-        self.curriculum_areas_file = curriculum_areas_file
-        self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(curriculum_areas_file)[0])
+        self.structure_file_path = structure_file_path
+        self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(structure_file_path)[0])
 
     @transaction.atomic
     def load(self):
@@ -31,7 +31,7 @@ class CurriculumAreasLoader(BaseLoader):
         curriculum_areas_structure = self.load_yaml_file(
             os.path.join(
                 self.BASE_PATH,
-                self.curriculum_areas_file
+                self.structure_file_path
             )
         )
 

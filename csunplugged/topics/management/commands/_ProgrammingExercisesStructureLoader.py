@@ -11,15 +11,15 @@ from topics.models import ProgrammingExerciseLanguage, ProgrammingExerciseDiffic
 class ProgrammingExercisesStructureLoader(BaseLoader):
     '''Loader for programming exercises difficulties'''
 
-    def __init__(self, structure_file, BASE_PATH):
+    def __init__(self, structure_file_path, BASE_PATH):
         '''Initiates the loader for programming exercises difficulties
 
         Args:
-            structure_file: file path (string)
+            structure_file_path: file path (string)
         '''
         super().__init__(BASE_PATH)
-        self.structure_file = structure_file
-        self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(structure_file)[0])
+        self.structure_file_path = structure_file_path
+        self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(structure_file_path)[0])
 
     @transaction.atomic
     def load(self):
@@ -31,7 +31,7 @@ class ProgrammingExercisesStructureLoader(BaseLoader):
         structure = self.load_yaml_file(
             os.path.join(
                 self.BASE_PATH,
-                self.structure_file
+                self.structure_file_path
             )
         )
 

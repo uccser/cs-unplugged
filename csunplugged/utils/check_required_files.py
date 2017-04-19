@@ -1,7 +1,7 @@
 import os
 import os.path
 from django.contrib.staticfiles import finders
-from utils.errors.MissingImageError import MissingImageError
+from utils.errors.CouldNotFindImageError import CouldNotFindImageError
 
 
 def check_converter_required_files(required_files):
@@ -43,4 +43,4 @@ def find_image_files(images):
     '''
     for image in images:
         if not finders.find(image):
-            raise MissingImageError(image, 'Image cannot be found: {}'.format(image))
+            raise CouldNotFindImageError(image, 'Image cannot be found: {}'.format(image))

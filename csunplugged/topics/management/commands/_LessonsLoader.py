@@ -20,7 +20,7 @@ from topics.models import (
 class LessonsLoader(BaseLoader):
     '''Loader for lessons'''
 
-    def __init__(self, load_log, lessons_structure, topic, unit_plan, BASE_PATH):
+    def __init__(self, unit_plan_structure_file_path, load_log, lessons_structure, topic, unit_plan, BASE_PATH):
         '''Inititiates the loader for lessons
 
         Args:
@@ -29,6 +29,7 @@ class LessonsLoader(BaseLoader):
             unit_plan: UnitPlan model object
         '''
         super().__init__(BASE_PATH, load_log)
+        self.unit_plan_structure_file_path = unit_plan_structure_file_path
         self.lessons_structure = lessons_structure
         self.topic = topic
         self.unit_plan = unit_plan
@@ -61,7 +62,10 @@ class LessonsLoader(BaseLoader):
                 '{}.md'.format(lesson_slug)
             )
 
-            lesson_content = self.convert_md_file(file_path)
+            lesson_content = self.convert_md_file(
+                file_path,
+                self.unit_plan_structure_file_path
+            )
 
             if 'duration' in lesson_structure:
                 lesson_duration = lesson_structure['duration']

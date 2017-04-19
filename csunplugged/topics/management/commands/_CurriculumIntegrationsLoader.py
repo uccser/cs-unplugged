@@ -14,16 +14,16 @@ from topics.models import CurriculumArea, Lesson
 class CurriculumIntegrationsLoader(BaseLoader):
     '''Loader for curriculum integrations'''
 
-    def __init__(self, load_log, structure_file, topic, BASE_PATH):
+    def __init__(self, load_log, structure_file_path, topic, BASE_PATH):
         '''Initiates the loader for curriculum integrations
 
         Args:
-            structure_file: file path (string)
+            structure_file_path_path: file path (string)
             topic: Topic model object
         '''
         super().__init__(BASE_PATH, load_log)
-        self.structure_file = os.path.join(self.BASE_PATH, structure_file)
-        self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(structure_file)[0])
+        self.structure_file_path = os.path.join(self.BASE_PATH, structure_file_path)
+        self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(structure_file_path)[0])
         self.topic = topic
 
     def load(self):
@@ -36,7 +36,7 @@ class CurriculumIntegrationsLoader(BaseLoader):
             KeyNotFoundError:
             MissingRequiredFieldError:
         '''
-        structure = self.load_yaml_file(self.structure_file)
+        structure = self.load_yaml_file(self.structure_file_path)
 
         for (integration_slug, integration_data) in structure.items():
 
@@ -44,7 +44,8 @@ class CurriculumIntegrationsLoader(BaseLoader):
                 os.path.join(
                     self.BASE_PATH,
                     '{}.md'.format(integration_slug)
-                )
+                ),
+                self.structure_file_path
             )
 
             try:

@@ -20,16 +20,16 @@ from topics.models import Topic
 class TopicLoader(BaseLoader):
     '''Loader for the topics content'''
 
-    def __init__(self, structure_file, BASE_PATH):
+    def __init__(self, structure_file_path, BASE_PATH):
         '''Initiates the topic loader
 
         Args:
-            structure_file: file path (string)
+            structure_file_path: file path (string)
             a dictionary of attributes.
         '''
         super().__init__(BASE_PATH)
-        self.topic_slug = os.path.split(structure_file)[0]
-        self.structure_file = os.path.join(self.BASE_PATH, structure_file)
+        self.topic_slug = os.path.split(structure_file_path)[0]
+        self.structure_file_path = os.path.join(self.BASE_PATH, structure_file_path)
         self.BASE_PATH = os.path.join(self.BASE_PATH, self.topic_slug)
 
     @transaction.atomic
@@ -48,10 +48,11 @@ class TopicLoader(BaseLoader):
             os.path.join(
                 self.BASE_PATH,
                 '{}.md'.format(self.topic_slug)
-            )
+            ),
+            self.structure_file_path
         )
 
-        topic_structure = self.load_yaml_file(self.structure_file)
+        topic_structure = self.load_yaml_file(self.structure_file_path)
 
         # If other resources are given, convert to HTML
         if 'other-resources' in topic_structure:
@@ -60,7 +61,8 @@ class TopicLoader(BaseLoader):
                 os.path.join(
                     self.BASE_PATH,
                     topic_other_resources_file
-                )
+                ),
+                self.structure_file_path
             )
             topic_other_resources_html = other_resources_content.html_string
         else:
@@ -88,10 +90,10 @@ class TopicLoader(BaseLoader):
         FILE_PATH_TEMPLATE = '{0}/{0}.yaml'
         
         if 'misc-structure-files' in topic_structure:
-            misc_structure_files = topic_structure['misc-structure-files']
+            misc_structure_file_paths = topic_structure['misc-structure-files']
          
         # Load programming exercises   
-        if 'programming-exercises' in misc_structure_files:
+        if 'programming-exercises' in misc_structure_file_paths:
             ProgrammingExercisesLoader(
                 self.load_log,
                 FILE_PATH_TEMPLATE.format('programming-exercises'),
@@ -114,7 +116,7 @@ class TopicLoader(BaseLoader):
             raise TopicHasNoUnitPlansError()
 
         # Load curriculum integrations
-        if 'curriculum-integrations' in misc_structure_files:
+        if 'curriculum-integrations' in misc_structure_file_paths:
             CurriculumIntegrationsLoader(
                 self.load_log,
                 FILE_PATH_TEMPLATE.format('curriculum-integrations'),

@@ -17,16 +17,16 @@ from topics.models import (
 class ProgrammingExercisesLoader(BaseLoader):
     '''Loader for programming exercises'''
 
-    def __init__(self, load_log, structure_file, topic, BASE_PATH):
+    def __init__(self, load_log, structure_file_path, topic, BASE_PATH):
         '''Initiates the loader for programming exercises
 
         Args:
-            structure_file: file path (string)
+            structure_file_path: file path (string)
             topic: Topic model object
         '''
         super().__init__(BASE_PATH, load_log)
-        self.structure_file = os.path.join(self.BASE_PATH, structure_file)
-        self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(structure_file)[0])
+        self.structure_file_path = os.path.join(self.BASE_PATH, structure_file_path)
+        self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(structure_file_path)[0])
         self.topic = topic
 
     def load(self):
@@ -38,8 +38,8 @@ class ProgrammingExercisesLoader(BaseLoader):
             EmptyMarkdownFileError:
             KeyNotFoundError:
         '''
-
-        programming_exercises_structure = self.load_yaml_file(self.structure_file)
+        
+        programming_exercises_structure = self.load_yaml_file(self.structure_file_path)
 
         for (exercise_slug, exercise_structure) in programming_exercises_structure.items():
             # Retrieve required variables from md file
@@ -59,7 +59,8 @@ class ProgrammingExercisesLoader(BaseLoader):
             )
 
             exercise_content = self.convert_md_file(
-                file_path.format('index')
+                file_path.format('index'),
+                self.structure_file_path
             )
 
             try:
@@ -93,14 +94,16 @@ class ProgrammingExercisesLoader(BaseLoader):
                 expected_result_content = self.convert_md_file(
                     file_path.format(
                         '{}-expected'.format(language)
-                    )
+                    ),
+                    self.structure_file_path
                 )
 
                 # Load example solution
                 solution_content = self.convert_md_file(
                     file_path.format(
                         '{}-solution'.format(language)
-                    )
+                    ),
+                    self.structure_file_path
                 )
 
                 # Load hint if given
@@ -108,7 +111,8 @@ class ProgrammingExercisesLoader(BaseLoader):
                     hint_content = self.convert_md_file(
                         file_path.format(
                             '{}-hints'.format(language)
-                        )
+                        ),
+                        self.structure_file_path
                     )
                 except CouldNotFindMarkdownFileError:
                     hint_content = None
