@@ -1,11 +1,11 @@
-from tests.BaseTest import BaseTest
+from tests.BaseTestWithDB import BaseTestWithDB
 from topics.models import Topic
 
 
-class TopicModelTest(BaseTest):
+class TopicModelTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
-        BaseTest.__init__(self, *args, **kwargs)
+        super().__init__(*args, **kwargs)
 
     def test_topic(self):
         new_topic = Topic.objects.create(

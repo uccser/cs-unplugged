@@ -1,7 +1,7 @@
-from tests.BaseTest import BaseTest
+from tests.BaseTestWithDB import BaseTestWithDB
 
 
-class ProgrammingExerciseLanguageModelTest(BaseTest):
+class ProgrammingExerciseLanguageModelTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
-        BaseTest.__init__(self, *args, **kwargs)
+        super().__init__(*args, **kwargs)

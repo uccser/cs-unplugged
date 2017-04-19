@@ -1,11 +1,11 @@
-from tests.BaseTest import BaseTest
+from tests.BaseTestWithDB import BaseTestWithDB
 from django.urls import reverse
 
 
-class AllCurriculumIntegrationsURLTest(BaseTest):
+class AllCurriculumIntegrationsURLTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
-        BaseTest.__init__(self, *args, **kwargs)
+        super().__init__(*args, **kwargs)
 
     def test_valid_curriculum_integration(self):
         url = reverse('topics:all_curriculum_integrations')

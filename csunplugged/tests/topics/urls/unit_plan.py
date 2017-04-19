@@ -1,11 +1,11 @@
-from tests.BaseTest import BaseTest
+from tests.BaseTestWithDB import BaseTestWithDB
 from django.urls import reverse
 
 
-class UnitPlanURLTest(BaseTest):
+class UnitPlanURLTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
-        BaseTest.__init__(self, *args, **kwargs)
+        super().__init__(*args, **kwargs)
 
     def test_valid_unit_plan(self):
         url = reverse('topics:unit_plan', args=['binary-numbers', 'unit-plan'])

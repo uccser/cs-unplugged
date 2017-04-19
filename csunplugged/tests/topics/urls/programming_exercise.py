@@ -1,11 +1,11 @@
-from tests.BaseTest import BaseTest
+from tests.BaseTestWithDB import BaseTestWithDB
 from django.urls import reverse
 
 
-class ProgrammingExerciseURLTest(BaseTest):
+class ProgrammingExerciseURLTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
-        BaseTest.__init__(self, *args, **kwargs)
+        super().__init__(*args, **kwargs)
 
     def test_valid_programming_exercise(self):
         url = reverse('topics:programming_exercise', args=['binary-numbers', 'unit-plan', 'lesson-1', 'exercise-1'])

@@ -1,11 +1,11 @@
-from tests.BaseTest import BaseTest
+from tests.BaseTestWithDB import BaseTestWithDB
 from django.urls import reverse
 
 
-class OtherResourcesURLTest(BaseTest):
+class OtherResourcesURLTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
-        BaseTest.__init__(self, *args, **kwargs)
+        super().__init__(*args, **kwargs)
 
     def test_valid_other_resources(self):
         url = reverse('topics:other_resources', args=['binary-numbers'])

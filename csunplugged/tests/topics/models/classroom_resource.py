@@ -1,11 +1,11 @@
-from tests.BaseTest import BaseTest
+from tests.BaseTestWithDB import BaseTestWithDB
 from topics.models import ClassroomResource
 
 
-class ClassroomResourceModelTest(BaseTest):
+class ClassroomResourceModelTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
-        BaseTest.__init__(self, *args, **kwargs)
+        super().__init__(*args, **kwargs)
 
     def test_classroom_resource(self):
         new_resource = ClassroomResource.objects.create(

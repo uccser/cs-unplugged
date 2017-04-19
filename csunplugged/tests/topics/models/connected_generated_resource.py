@@ -1,14 +1,14 @@
 from model_mommy import mommy
-from tests.BaseTest import BaseTest
+from tests.BaseTestWithDB import BaseTestWithDB
 from topics.models import ConnectedGeneratedResource
 from topics.models import Lesson
 from resources.models import Resource
 
 
-class ConnectedGeneratedResourceModelTest(BaseTest):
+class ConnectedGeneratedResourceModelTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
-        BaseTest.__init__(self, *args, **kwargs)
+        super().__init__(*args, **kwargs)
 
     def test_connected_generated_resource(self):
         resource = mommy.make(Resource)
