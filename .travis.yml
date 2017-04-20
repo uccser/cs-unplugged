@@ -21,9 +21,10 @@ script:
   - flake8 --config=../.flake8
   - coverage run --rcfile=../.coveragerc manage.py test --pattern "test_*.py" -v 3
   - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then manage.py test --pattern "test_*.py" --reverse -v 0; fi'
+  - coverage report --rcfile=../.coveragerc
 
 after_script:
-  coverage report --rcfile=../.coveragerc
+  True
   #coveralls
 
 # Stop email notifications but post to organisation Slack channel
