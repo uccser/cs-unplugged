@@ -23,7 +23,7 @@ class BaseTest(SimpleTestCase):
 
     def setUp(self):
         '''Called before each test.
-        Sets the language to English, and creates a new client.
+        Sets the language if specified and creates a new client.
         '''
         if self.language is not None:
             activate(self.language)
@@ -31,6 +31,5 @@ class BaseTest(SimpleTestCase):
 
     def tearDown(self):
         '''Called after each test.
-        Deletes the user.
         '''
         pass

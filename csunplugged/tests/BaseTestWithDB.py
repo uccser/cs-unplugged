@@ -12,7 +12,7 @@ class BaseTestWithDB(TestCase):
 
     @classmethod
     def setUpTestData(self):
-        '''Setup data for the whole TestCase.
+        '''Setup data for the whole class.
         '''
         pass
 
@@ -34,7 +34,7 @@ class BaseTestWithDB(TestCase):
 
     def setUp(self):
         '''Called before each test.
-        Sets the language to English, creates a new user and logs into the database
+        Sets the language if specified, creates a new user and logs into the database
         '''
         if self.language is not None:
             activate(self.language)
