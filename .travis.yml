@@ -11,6 +11,7 @@ python:
 install:
   - pip install flake8 coverage coveralls
   - pip install -r requirements/base.txt
+  - pip install -r requirements/local.txt
 
 before_script:
   cd csunplugged/
