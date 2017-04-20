@@ -35,6 +35,6 @@ class CurriculumIntegrationModelTest(BaseTestWithDB):
         )
         new_curriculum_integration.curriculum_areas.add(curriculum_area)
         new_curriculum_integration.prerequisite_lessons.add(prerequisite_lesson)
-        
+
         query_result = CurriculumIntegration.objects.get(slug='slug')
         self.assertEqual(query_result, new_curriculum_integration)
