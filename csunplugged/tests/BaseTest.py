@@ -31,4 +31,4 @@ class BaseTest(SimpleTestCase):
         '''Called after each test.
         Deletes the user.
         '''
-        self.test_user.delete()
+        pass
