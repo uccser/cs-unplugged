@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 
 import environ
 
-# cs-unplugged/csunplugged/config/settings/base.py - 4 = csunplugged/
+# cs-unplugged/csunplugged/config/settings/base.py - 3 = csunplugged/
 ROOT_DIR = environ.Path(__file__) - 3
 
 # Load operating system environment variables and then prepare to use them
@@ -106,6 +106,7 @@ FIXTURE_DIRS = (
 DATABASES = {
     'default': env.db('DATABASE_URL'),
 }
+
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 # GENERAL CONFIGURATION

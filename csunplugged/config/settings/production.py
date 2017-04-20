@@ -22,10 +22,13 @@ ALLOWED_HOSTS = ['*']
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'polls',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'csunplugged',
         'USER': env('GOOGLE_CLOUD_SQL_USERNAME'),
         'PASSWORD': env('GOOGLE_CLOUD_SQL_PASSWORD'),
         'HOST': '/cloudsql/' + env('GOOGLE_CLOUD_SQL_CONNECTION_NAME'),
     }
 }
+
+# Static files
+STATIC_URL = 'https://storage.googleapis.com/cs-unplugged-develop/static/'

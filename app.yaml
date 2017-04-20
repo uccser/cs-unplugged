@@ -5,3 +5,6 @@ entrypoint: gunicorn -c gunicorn.conf.py -b :8080 config.wsgi
 
 health_check:
   enable_health_check: False
+
+env_variables:
+  READ_DOT_ENV_FILE: True
