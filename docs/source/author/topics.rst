@@ -24,7 +24,7 @@ diagram.
 
     - A **unit plan** must contain at least one **lesson**.
 
-      - A lesson can contain **learning outcomes**, **curriculum areas** and **generated
+      - A **lesson** can contain **learning outcomes**, **curriculum areas** and **generated
         resources**.
 
   - A **topic** can also contain **curriculum integrations**, which can also contain
@@ -82,126 +82,68 @@ items on flowcharts to be taken to the relevant section in the documentation.
 Below this section is full details on how to structure and write the
 configuration files for the topics application.
 
-.. _adding-topics-content-topic:
+.. _adding-topics-content-topics:
 
 Adding a Topic
 ------------------------------------------------------------------------------
 
-You can add a new topic by following this flowchart.
+.. The following image can copied for be edits here:
+.. image:: ../_static/img/topics_adding_topic_flowchart.png
 
-.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
-.. The image is included as raw HTML because it has clickable nodes.
-.. raw:: html
 
-  <map name="topics-map">
-    <area shape="rect" coords="215,90,317,127" href="#topics-content-directory">
-    <area shape="rect" coords="215,200,317,234" href="#topic-file">
-    <area shape="rect" coords="215,307,317,343" href="#application-structure-file">
-    <area shape="rect" coords="215,425,317,460" href="../getting_started/basic_usage.html#command-manage-updatedata">
-    <area shape="rect" coords="215,541,317,576" href="../getting_started/basic_usage.html#command-manage-runserver">
-    <area shape="rect" coords="215,658,317,694" href="../getting_started/basic_usage.html#command-gulp">
-  </map>
-  <img src="../_static/img/topics_adding_topic_flowchart.png" usemap="#topics-map">
+.. _adding-topics-content-unit-plans:
 
-After you have added a topic, you can then add unit plans, lessons, follow
-up activities, and programming exercises using the flow charts below.
-
-.. _adding-topics-content-unit-plan:
-
-Adding a Unit Plan and/or Lesson
+Adding a Unit Plan
 ------------------------------------------------------------------------------
 
-You can add a new unit plan and/or lesson by following this flowchart.
-If a lesson requires new learning outcomes or curriculum areas, see
-:ref:`adding-topics-content-learning-outcomes-curriculum-areas`.
+.. The following image can copied for be edits here:
+.. image:: ../_static/img/topics_adding_unit_plan_flowchart.png
 
-.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
-.. The image is included as raw HTML because it has clickable nodes.
-.. raw:: html
 
-  <map name="unit-plan-map">
-    <area shape="rect" coords="215,90,317,127" href="#topics-content-directory">
-    <area shape="rect" coords="284,330,387,364" href="#topics-content-directory">
-    <area shape="rect" coords="284,570,387,605" href="#unit-plan-file">
-    <area shape="rect" coords="284,684,387,719" href="#topic-file">
-    <area shape="rect" coords="284,930,387,965" href="#topics-content-directory">
-    <area shape="rect" coords="284,1172,387,1206" href="#unit-plan-file">
-    <area shape="rect" coords="284,1294,387,1329" href="#unit-plan-file">
-    <area shape="rect" coords="229,1471,333,1504" href="../getting_started/basic_usage.html#command-manage-updatedata">
-    <area shape="rect" coords="229,1589,333,1622" href="../getting_started/basic_usage.html#command-manage-runserver">
-    <area shape="rect" coords="229,1704,333,1738" href="../getting_started/basic_usage.html#command-gulp">
-  </map>
-  <img src="../_static/img/topics_adding_unit_plan_flowchart.png" usemap="#unit-plan-map">
+.. _adding-topics-content-lessons:
+
+Adding a Lesson
+------------------------------------------------------------------------------
+
+.. The following image can copied for be edits here:
+.. image:: ../_static/img/topics_adding_unit_plan_flowchart.png
+
+
+.. _adding-topics-content-learning-outcomes:
+
+Adding Learning Outcomes
+------------------------------------------------------------------------------
+
+.. The following image can copied for be edits here:
+.. image:: ../_static/img/topics_adding_learning_outcomes_flowchart.png
+
+
+.. _adding-topics-content-curriculum-areas:
+
+Adding Curriculum Areas
+------------------------------------------------------------------------------
+
+.. The following image can copied for be edits here:
+.. image:: ../_static/img/topics_adding_curriculum_areas_flowchart.png
+
+
+.. _adding-topics-content-programming-exercises:
+
+Adding a Programming Exercise
+------------------------------------------------------------------------------
+
+.. The following image can copied for be edits here:
+.. image:: ../_static/img/topics_adding_programming_exercises_flowchart.png
+
 
 .. _adding-topics-content-curriculum-integrations:
 
 Adding a Curriculum Integration
 ------------------------------------------------------------------------------
 
-You can add a new curriculum integration by following this flowchart.
-If a curriculum integration requires new curriculum areas, see
-:ref:`adding-topics-content-learning-outcomes-curriculum-areas`.
+.. The following image can copied for be edits here:
+.. image:: ../_static/img/topics_adding_curriculum_integrations_flowchart.png
 
-.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
-.. The image is included as raw HTML because it has clickable nodes.
-.. raw:: html
-
-  <map name="curriculum-integrations-map">
-  <area shape="rect" coords="217,90,319,127" href="#topics-content-directory">
-  <area shape="rect" coords="283,459,387,494" href="#topics-content-directory">
-  <area shape="rect" coords="283,571,387,607" href="#curriculum-integrations-file">
-  <area shape="rect" coords="283,688,387,723" href="#topic-file">
-  <area shape="rect" coords="283,939,387,973" href="#curriculum-integrations-file">
-  <area shape="rect" coords="216,1088,319,1124" href="../getting_started/basic_usage.html#command-manage-updatedata">
-  <area shape="rect" coords="216,1206,319,1240" href="../getting_started/basic_usage.html#command-manage-runserver">
-  <area shape="rect" coords="216,1325,319,1358" href="../getting_started/basic_usage.html#command-gulp">
-  </map>
-  <img src="../_static/img/topics_adding_curriculum_integrations_flowchart.png" usemap="#curriculum-integrations-map">
-
-.. _adding-topics-content-programming-exercise:
-
-Adding a Programming Exercise
-------------------------------------------------------------------------------
-
-You can add a new programming exercise by following this flowchart.
-If a programming exercise requires new learning outcomes, see
-:ref:`adding-topics-content-learning-outcomes-curriculum-areas`.
-
-.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
-.. The image is included as raw HTML because it has clickable nodes.
-.. raw:: html
-
-  <map name="programming-exercise-map">
-    <area shape="rect" coords="215,90,320,126" href="#topics-content-directory">
-    <area shape="rect" coords="284,460,387,494" href="#topics-content-directory">
-    <area shape="rect" coords="284,571,387,607" href="#programming-exercises-file">
-    <area shape="rect" coords="284,684,387,719" href="#topic-file">
-    <area shape="rect" coords="284,805,387,841" href="#topics-content-directory">
-    <area shape="rect" coords="284,1074,387,1110" href="#programming-exercises-file">
-    <area shape="rect" coords="349,1542,452,1578" href="#programming-exercises-file">
-    <area shape="rect" coords="216,1709,319,1744" href="../getting_started/basic_usage.html#command-manage-updatedata">
-    <area shape="rect" coords="216,1826,319,1860" href="../getting_started/basic_usage.html#command-manage-runserver">
-    <area shape="rect" coords="216,1943,319,1977" href="../getting_started/basic_usage.html#command-gulp">
-  </map>
-  <img src="../_static/img/topics_adding_programming_exercises_flowchart.png" usemap="#programming-exercise-map">
-
-.. _adding-topics-content-learning-outcomes-curriculum-areas:
-
-Adding Learning Outcomes and/or Curriculum Areas
-------------------------------------------------------------------------------
-
-You can add a new programming exercise by following this flowchart.
-
-.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
-.. The image is included as raw HTML because it has clickable nodes.
-.. raw:: html
-
-  <map name="learning-outcomes-curriculum-areas-map">
-    <area shape="rect" coords="215,90,320,126" href="#topics-content-directory">
-    <area shape="rect" coords="281,342,387,377" href="#learning-outcomes-file">
-    <area shape="rect" coords="281,616,387,652" href="#curriculum-areas-file">
-  </map>
-  <img src="../_static/img/topics_adding_learning_outcomes_curriculum_areas_flowchart.png" usemap="#learning-outcomes-curriculum-areas-map">
 
 Configuration Files
 ==============================================================================
@@ -222,7 +164,7 @@ The diagram below shows an example of YAML file locations for the
 
 The diagram below shows an overview of what is in each config file:
 
-.. image:: ../_static/img/topics_config_file_overview.png
+.. image:: ../_static/img/topics_config_file_overview_diagram.png
 
 In the following sections, each configuration file is exaplained in more detail.
 
