@@ -1,7 +1,7 @@
 runtime: custom
 env: flex
 
-entrypoint: gunicorn -c gunicorn.conf.py -b :$PORT config.wsgi
+entrypoint: gunicorn -c gunicorn.conf.py -b :8080 config.wsgi
 
 health_check:
   enable_health_check: False

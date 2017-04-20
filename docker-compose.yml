@@ -7,8 +7,8 @@ services:
   django:
     build:
       context: .
-      dockerfile: ./csunplugged/Dockerfile
-    command: /bin/bash -c "chmod +x docker-compose-entrypoint.sh && ./docker-compose-entrypoint.sh"
+      dockerfile: ./Dockerfile-local
+    command: /bin/bash -c "chmod +x docker-development-entrypoint.sh && ./docker-development-entrypoint.sh"
     volumes:
       - ./csunplugged:/code
     environment:
@@ -16,8 +16,6 @@ services:
       - USE_DOCKER=yes
       - DATABASE_URL=postgres://postgres@postgres:5432/postgres
       - DJANGO_SETTINGS_MODULE=config.settings.local
-    expose:
-      - "8080"
     depends_on:
       - postgres
 
