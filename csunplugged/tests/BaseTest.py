@@ -10,16 +10,16 @@ class BaseTest(SimpleTestCase):
         self.language = None
 
     @classmethod
-    def setUpClass(self):
+    def setUpClass(cls):
         '''Called before tests in class.
         '''
-        super(BaseTest, self).setUpClass()
+        super(BaseTest, cls).setUpClass()
 
     @classmethod
-    def tearDownClass(self):
+    def tearDownClass(cls):
         '''Called after tests in class.
         '''
-        super(BaseTest, self).setUpClass()
+        super(BaseTest, cls).tearDownClass()
 
     def setUp(self):
         '''Called before each test.
