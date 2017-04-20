@@ -8,6 +8,7 @@ class BaseTestWithDB(TestCase):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.language = None
 
     @classmethod
     def setUpTestData(self):
@@ -35,7 +36,8 @@ class BaseTestWithDB(TestCase):
         '''Called before each test.
         Sets the language to English, creates a new user and logs into the database
         '''
-        activate('en') # TODO
+        if self.language is not None:
+            activate(self.language)
         self.test_user = User.objects.create_user(self.username, self.email, self.password)
         login = self.client.login(username=self.username, password=self.password)
         self.assertEqual(login, True)

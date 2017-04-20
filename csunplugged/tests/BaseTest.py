@@ -7,6 +7,7 @@ class BaseTest(SimpleTestCase):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.language = None
 
     @classmethod
     def setUpClass(self):
@@ -24,7 +25,8 @@ class BaseTest(SimpleTestCase):
         '''Called before each test.
         Sets the language to English, and creates a new client.
         '''
-        activate('en')
+        if self.language is not None:
+            activate(self.language)
         self.client = Client()
 
     def tearDown(self):
