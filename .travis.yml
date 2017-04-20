@@ -10,7 +10,7 @@ python:
 # Install dependencies
 install:
   - pip install flake8 coverage coveralls
-  - pip install requirements/base.txt
+  - pip install -r requirements/base.txt
 
 before_script:
   cd csunplugged &
