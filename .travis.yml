@@ -23,8 +23,7 @@ script:
   - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then manage.py test --pattern "test_*.py" --reverse -v 0; fi'
   - coverage report --rcfile=../.coveragerc
 
-after_script:
-  True
+#after_script:
   #coveralls
 
 # Stop email notifications but post to organisation Slack channel
