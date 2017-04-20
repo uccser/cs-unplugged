@@ -76,11 +76,9 @@ the project's topic application, where:
 Adding Content
 ==============================================================================
 
-The following flow charts will take you step by step through the process of
-adding new content to the topics application, and you can click the 'Read more'
-items on flowcharts to be taken to the relevant section in the documentation.
-Below this section is full details on how to structure and write the
-configuration files for the topics application.
+The following flow charts will take you step by step through the process of adding new
+content to the topics application. Below this section is full details on how to structure
+and write the configuration files for the topics application.
 
 .. _adding-topics-content-topics:
 
@@ -90,6 +88,9 @@ Adding a Topic
 .. The following image can copied for be edits here:
 .. image:: ../_static/img/topics_adding_topic_flowchart.png
 
+At this stage, the application is in a "broken" state. This is because every topic needs
+at least one unit plan, so the system will not allow a topic to be loaded until a unit
+plan is connected to it.
 
 .. _adding-topics-content-unit-plans:
 
@@ -99,6 +100,10 @@ Adding a Unit Plan
 .. The following image can copied for be edits here:
 .. image:: ../_static/img/topics_adding_unit_plan_flowchart.png
 
+At this stage, the application is in a "broken" state. This is because every unit plan
+needs at least one lesson, so the system will not allow a topic to be unit plan until a
+lesson is connected to it.
+
 
 .. _adding-topics-content-lessons:
 
@@ -106,7 +111,7 @@ Adding a Lesson
 ------------------------------------------------------------------------------
 
 .. The following image can copied for be edits here:
-.. image:: ../_static/img/topics_adding_unit_plan_flowchart.png
+.. image:: ../_static/img/topics_adding_lesson_flowchart.png
 
 
 .. _adding-topics-content-learning-outcomes:
