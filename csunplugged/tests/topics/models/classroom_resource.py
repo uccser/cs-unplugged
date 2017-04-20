@@ -11,5 +11,5 @@ class ClassroomResourceModelTest(BaseTestWithDB):
         new_resource = ClassroomResource.objects.create(
             text='this is a resource'
         )
-        query_result = ClassroomResource.objects.get(pk=1)
+        query_result = ClassroomResource.objects.get(text='this is a resource')
         self.assertEqual(query_result, new_resource)

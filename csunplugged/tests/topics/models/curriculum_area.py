@@ -12,5 +12,6 @@ class CurriculumAreaModelTest(BaseTestWithDB):
             slug='slug',
             name='name',
         )
-        query_result = CurriculumArea.objects.get(pk=1)
+        print(CurriculumArea.objects.count())
+        query_result = CurriculumArea.objects.get(slug='slug')
         self.assertEqual(query_result, new_curriculum_area)

@@ -18,8 +18,8 @@ before_script:
 # Runs test suite
 script:
   - flake8 --config=../.flake8
-  - coverage run --rcfile=../.coveragerc manage.py test -v 3
-  - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then bash manage.py test --reverse -v 0; fi'
+  - coverage run --rcfile=../.coveragerc manage.py test --pattern "test_*.py" -v 3
+  - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then manage.py test --pattern "test_*.py" --reverse -v 0; fi'
 
 after_script:
   coverage report --rcfile=../.coveragerc
