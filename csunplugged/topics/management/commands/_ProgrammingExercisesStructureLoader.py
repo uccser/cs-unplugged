@@ -46,6 +46,13 @@ class ProgrammingExercisesStructureLoader(BaseLoader):
 
         for (language, language_data) in languages.items():
 
+            if language_data is None:
+                raise MissingRequiredFieldError(
+                    self.structure_file_path,
+                    ['name'],
+                    'Programming Exercise Language'
+                )
+
             # Check for required fields
             language_name = language_data.get('name', None)
             if language_name is None:
@@ -72,6 +79,14 @@ class ProgrammingExercisesStructureLoader(BaseLoader):
             self.log('Added Langauge: {}'.format(new_language.__str__()))
 
         for (difficulty, difficulty_data) in difficulty_levels.items():
+
+            if difficulty_data is None:
+                raise MissingRequiredFieldError(
+                    self.structure_file_path,
+                    ['name'],
+                    'Programming Exercise Difficulty'
+                )
+
             difficulty_name = difficulty_data.get('name', None)
             if difficulty_name is None:
                 raise MissingRequiredFieldError(

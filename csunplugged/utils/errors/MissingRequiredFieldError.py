@@ -14,7 +14,6 @@ class MissingRequiredFieldError(Error):
     	fields = ''
     	for field in self.required_fields:
     		fields += '\n  - {}'.format(str(field))
-    	print(fields)
     	missing_field_message = '' + \
     	    '\nA {} requires the following fields:'.format(self.model) + \
     	    fields + \

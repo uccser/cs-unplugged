@@ -31,13 +31,13 @@ class TopicLoader(BaseLoader):
     @transaction.atomic
     def load(self):
         '''Load the content for a topic
-
+        
         Raises:
-            TopicHasNoUnitPlansError:
+            MissingRequiredFieldError
         '''
         
         topic_structure = self.load_yaml_file(self.structure_file_path)
-        
+
         unit_plans = topic_structure.get('unit-plans', None)
         if unit_plans is None:
             raise MissingRequiredFieldError(
@@ -58,21 +58,27 @@ class TopicLoader(BaseLoader):
         # If other resources are given, convert to HTML
         if 'other-resources' in topic_structure:
             topic_other_resources_file = topic_structure['other-resources']
-            other_resources_content = self.convert_md_file(
-                os.path.join(
-                    self.BASE_PATH,
-                    topic_other_resources_file
-                ),
-                self.structure_file_path
-            )
-            topic_other_resources_html = other_resources_content.html_string
+            if topic_other_resources_file is not None:
+                other_resources_content = self.convert_md_file(
+                    os.path.join(
+                        self.BASE_PATH,
+                        topic_other_resources_file
+                    ),
+                    self.structure_file_path
+                )
+                topic_other_resources_html = other_resources_content.html_string
+            else:
+                topic_other_resources_html = None
         else:
             topic_other_resources_html = None
 
         # Check if icon is given
         if 'icon' in topic_structure:
             topic_icon = topic_structure['icon']
-            find_image_files([topic_icon], self.structure_file_path)
+            if topic_icon is not None:
+                find_image_files([topic_icon], self.structure_file_path)
+            else:
+                topic_icon = None
         else:
             topic_icon = None
 
@@ -92,15 +98,16 @@ class TopicLoader(BaseLoader):
         
         if 'misc-structure-files' in topic_structure:
             misc_structure_file_paths = topic_structure['misc-structure-files']
-         
-        # Load programming exercises   
-        if 'programming-exercises' in misc_structure_file_paths:
-            ProgrammingExercisesLoader(
-                self.load_log,
-                FILE_PATH_TEMPLATE.format('programming-exercises'),
-                topic,
-                self.BASE_PATH
-            ).load()
+
+        if misc_structure_file_paths is not None:         
+            # Load programming exercises   
+            if 'programming-exercises' in misc_structure_file_paths:
+                ProgrammingExercisesLoader(
+                    self.load_log,
+                    FILE_PATH_TEMPLATE.format('programming-exercises'),
+                    topic,
+                    self.BASE_PATH
+                ).load()
 
         # Load unit plans
         for unit_plan in unit_plans:
@@ -111,14 +118,15 @@ class TopicLoader(BaseLoader):
                 self.BASE_PATH
             ).load()
 
-        # Load curriculum integrations
-        if 'curriculum-integrations' in misc_structure_file_paths:
-            CurriculumIntegrationsLoader(
-                self.load_log,
-                FILE_PATH_TEMPLATE.format('curriculum-integrations'),
-                topic,
-                self.BASE_PATH
-            ).load()
+        if misc_structure_file_paths is not None:
+            # Load curriculum integrations
+            if 'curriculum-integrations' in misc_structure_file_paths:
+                CurriculumIntegrationsLoader(
+                    self.load_log,
+                    FILE_PATH_TEMPLATE.format('curriculum-integrations'),
+                    topic,
+                    self.BASE_PATH
+                ).load()
 
         # Print log output
         self.print_load_log()

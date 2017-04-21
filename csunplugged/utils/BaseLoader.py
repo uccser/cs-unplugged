@@ -10,6 +10,8 @@ from .check_required_files import check_converter_required_files
 
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
+from utils.errors.EmptyConfigFileError import EmptyConfigFileError
+from utils.errors.InvalidConfigFileError import InvalidConfigFileError
 from utils.errors.NoHeadingFoundInMarkdownFileError import NoHeadingFoundInMarkdownFileError
 from utils.errors.CouldNotFindConfigFileError import CouldNotFindConfigFileError
 
@@ -89,13 +91,30 @@ class BaseLoader():
             file_path: location of yaml file to read
 
         Returns:
-             Either list or string, depending on structure of given yaml file
+            Either list or string, depending on structure of given yaml file
+
+        Raises:
+            CouldNotFindConfigFileError
+            InvalidConfigFileError
+            EmptyConfigFileError
         '''
         try:
             yaml_file = open(yaml_file_path, encoding='UTF-8').read()
         except:
             raise CouldNotFindConfigFileError(yaml_file_path)
-        return yaml.load(yaml_file)
+        
+        try:
+            yaml_contents = yaml.load(yaml_file)
+        except:
+            raise InvalidConfigFileError(yaml_file_path)
+
+        if yaml_contents is None:
+            raise EmptyConfigFileError(yaml_file_path)
+
+        if isinstance(yaml_contents, dict) is False:
+            raise InvalidConfigFileError(yaml_file_path)
+        
+        return yaml_contents
 
     def load_template_files(self):
         '''Loads custom HTMl templates for converter

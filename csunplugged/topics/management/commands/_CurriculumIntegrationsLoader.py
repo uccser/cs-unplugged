@@ -37,13 +37,12 @@ class CurriculumIntegrationsLoader(BaseLoader):
 
         for (integration_slug, integration_data) in structure.items():
 
-            integration_content = self.convert_md_file(
-                os.path.join(
-                    self.BASE_PATH,
-                    '{}.md'.format(integration_slug)
-                ),
-                self.structure_file_path
-            )
+            if integration_data is None:
+                raise MissingRequiredFieldError(
+                    self.structure_file_path,
+                    ['number', 'curriculum-areas'],
+                    'Curriculum Integration'
+                )
 
             integration_number = integration_data.get('number', None)
             integration_curriculum_areas = integration_data.get('curriculum-areas', None)
@@ -53,6 +52,14 @@ class CurriculumIntegrationsLoader(BaseLoader):
                     ['number', 'curriculum-areas'],
                     'Curriculum Integration'
                 )
+
+            integration_content = self.convert_md_file(
+                os.path.join(
+                    self.BASE_PATH,
+                    '{}.md'.format(integration_slug)
+                ),
+                self.structure_file_path
+            )
 
             integration = self.topic.curriculum_integrations.create(
                 slug=integration_slug,
@@ -79,23 +86,30 @@ class CurriculumIntegrationsLoader(BaseLoader):
             # Add prerequisite lessons
             if 'prerequisite-lessons' in integration_data:
                 prerequisite_lessons = integration_data['prerequisite-lessons']
-                for (unit_plan_slug, lessons) in prerequisite_lessons.items():
-                    for lesson_slug in lessons:
-                        try:
-                            lesson = Lesson.objects.get(
-                                slug=lesson_slug,
-                                unit_plan__slug=unit_plan_slug,
-                                topic__slug=self.topic.slug
-                            )
-                            integration.prerequisite_lessons.add(lesson)
-                        except:
-                            raise KeyNotFoundError(
+                if prerequisite_lessons is not None:
+                    for (unit_plan_slug, lessons) in prerequisite_lessons.items():
+                        if lessons is None:
+                            raise MissingRequiredFieldError(
                                 self.structure_file_path,
-                                '{} and/or {}'.format(
-                                    lesson_slug,
-                                    unit_plan_slug,
-                                ),
-                                'Lessons'
+                                ['unit-plan'],
+                                'Prerequisite Lesson'
                             )
+                        for lesson_slug in lessons:
+                            try:
+                                lesson = Lesson.objects.get(
+                                    slug=lesson_slug,
+                                    unit_plan__slug=unit_plan_slug,
+                                    topic__slug=self.topic.slug
+                                )
+                                integration.prerequisite_lessons.add(lesson)
+                            except:
+                                raise KeyNotFoundError(
+                                    self.structure_file_path,
+                                    '{} and/or {}'.format(
+                                        lesson_slug,
+                                        unit_plan_slug,
+                                    ),
+                                    'Lessons'
+                                )
 
             self.log('Added Curriculum Integration: {}'.format(integration.name), 1)

@@ -37,6 +37,13 @@ class CurriculumAreasLoader(BaseLoader):
 
         for (curriculum_area_slug, curriculum_area_data) in curriculum_areas_structure.items():
 
+            if curriculum_area_data is None:
+                raise MissingRequiredFieldError(
+                    self.structure_file_path,
+                    ['name'],
+                    'Curriculum Area'
+                )
+
             curriculum_area_name = curriculum_area_data.get('name', None)
             if curriculum_area_name is None:
                 raise MissingRequiredFieldError(
@@ -56,7 +63,20 @@ class CurriculumAreasLoader(BaseLoader):
 
             # Create children curriculum areas with reference to parent
             if 'children' in curriculum_area_data:
-                for (child_slug, child_data) in curriculum_area_data['children'].items():
+                children_curriculum_areas = curriculum_area_data['children']
+                if children_curriculum_areas is None:
+                    raise MissingRequiredFieldError(
+                            self.structure_file_path,
+                            ['name'],
+                            'Child Curriculum Area'
+                        )
+                for (child_slug, child_data) in children_curriculum_areas.items():
+                    if child_data is None:
+                        raise MissingRequiredFieldError(
+                            self.structure_file_path,
+                            ['name'],
+                            'Child Curriculum Area'
+                        )
                     child_name = child_data.get('name', None)
                     if child_name is None:
                         raise MissingRequiredFieldError(
