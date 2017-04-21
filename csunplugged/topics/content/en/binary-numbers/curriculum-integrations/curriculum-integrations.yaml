@@ -1,7 +1,9 @@
 binary-candles-or-normal-candles-on-your-cake:
   number: 1
-  md-file: binary-candles-or-normal-candles-on-your-cake.md
   curriculum-areas:
-    - writing
+    - art
   prerequisite-lessons:
-    - unit-plan/how-binary-digits-work
+    unit-plan:
+      - lesson-1
+    unit-plan-2:
+      - lesson-1

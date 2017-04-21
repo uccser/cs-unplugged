@@ -39,14 +39,16 @@
           <h4>Expected Result</h4>
           {% render_html_field implementation.expected_result %}
 
-          <p>
-            <a class="btn btn-outline-danger" data-toggle="collapse" href="#collapse-{{ implementation.language.slug }}-hints" aria-expanded="false" aria-controls="collapse-{{ implementation.language.slug }}-hints">
-              Show {{ implementation.language.name }} Hints
-            </a>
-          </p>
-          <div class="collapse" id="collapse-{{ implementation.language.slug }}-hints">
-            {% render_html_field implementation.hints %}
-          </div>
+          {% if implementation.hints %}
+            <p>
+              <a class="btn btn-outline-danger" data-toggle="collapse" href="#collapse-{{ implementation.language.slug }}-hints" aria-expanded="false" aria-controls="collapse-{{ implementation.language.slug }}-hints">
+                Show {{ implementation.language.name }} Hints
+              </a>
+            </p>
+            <div class="collapse" id="collapse-{{ implementation.language.slug }}-hints">
+              {% render_html_field implementation.hints %}
+            </div>
+          {% endif %}
 
           <a href="{% url 'topics:programming_exercise_language_solution' topic.slug unit_plan.slug lesson.slug programming_exercise.slug implementation.language.slug %}" class="btn btn-outline-danger">
             {{ implementation.language.name }} Solution

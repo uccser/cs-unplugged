@@ -1,13 +1,8 @@
-# Learning outcomes for all topics
-# learning-outcomes: learning-outcomes.yaml
+topics:
+  - binary-numbers
+  - algorithms
 
-# Curriculum areas for all topics
-# curriculum-areas: curriculum-areas.yaml
-
-# Defines languages and difficulty levels for all programming exercises
-programming-exercises-structure: programming-exercises-structure.yaml
-
-# Lists all topics to include in CS Unplugged project
-# The order of topics here defines their order on the website
-topic-structure-files:
-  - binary-numbers/binary-numbers.yaml
+misc-structure-files:
+  - programming-exercises-structure
+  - curriculum-areas
+  - learning-outcomes

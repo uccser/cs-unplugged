@@ -6,11 +6,16 @@ import re
 import os.path
 from os import listdir
 from verto import Verto
-from .check_converter_required_files import check_required_files
+from .check_required_files import check_converter_required_files
+
+from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
+from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
+from utils.errors.NoHeadingFoundInMarkdownFileError import NoHeadingFoundInMarkdownFileError
+from utils.errors.CouldNotFindConfigFileError import CouldNotFindConfigFileError
 
 
 class BaseLoader():
-    """Base loader class for individual loaders"""
+    '''Base loader class for individual loaders'''
 
     def __init__(self, BASE_PATH='', load_log=[]):
         if load_log:
@@ -21,9 +26,9 @@ class BaseLoader():
         self.setup_md_to_html_converter()
 
     def setup_md_to_html_converter(self):
-        """Create Kordac converter with custom processors, html templates,
+        '''Create Verto converter with custom processors, html templates,
         and extensions.
-        """
+        '''
         templates = self.load_template_files()
         extensions = [
             'markdown.extensions.fenced_code',
@@ -38,26 +43,40 @@ class BaseLoader():
         custom_processors.add('remove-title')
         self.converter.update_processors(custom_processors)
 
-    def convert_md_file(self, md_file_path):
-        """Returns the Kordac object for a given Markdown file
+    def convert_md_file(self, md_file_path, config_file_path, heading_required=True):
+        '''Returns the Verto object for a given Markdown file
 
         Args:
-            file_path: location of md file to convert
+            md_file_path: location of md file to convert
 
         Returns:
-            Kordac result object
-        """
-        content = open(md_file_path, encoding='UTF-8').read()
+            VertoResult object
+        '''
+        try:
+            # check file exists
+            content = open(md_file_path, encoding='UTF-8').read()
+        except:
+            raise CouldNotFindMarkdownFileError(md_file_path, config_file_path)
+        
         result = self.converter.convert(content)
-        check_required_files(result.required_files)
+
+        if heading_required:
+            if result.title is None:
+                raise NoHeadingFoundInMarkdownFileError(md_file_path)
+
+        if len(result.html_string) == 0:
+            raise EmptyMarkdownFileError(md_file_path)
+        # check not empty
+
+        check_converter_required_files(result.required_files, md_file_path)
         return result
 
     def log(self, log_message, indent_amount=0):
-        """Adds the log message to the load log with the specified indent"""
+        '''Adds the log message to the load log with the specified indent'''
         self.load_log.append((log_message, indent_amount))
 
     def print_load_log(self):
-        """Output log messages from loader to console"""
+        '''Output log messages from loader to console'''
         for (log, indent_amount) in self.load_log:
             indent = '  ' * indent_amount
             sys.stdout.write('{indent}{text}\n'.format(indent=indent, text=log))
@@ -65,23 +84,26 @@ class BaseLoader():
         self.load_log = []
 
     def load_yaml_file(self, yaml_file_path):
-        """Loads and reads yaml file
+        '''Loads and reads yaml file
 
         Args:
             file_path: location of yaml file to read
 
         Returns:
              Either list or string, depending on structure of given yaml file
-        """
-        yaml_file = open(yaml_file_path, encoding='UTF-8').read()
+        '''
+        try:
+            yaml_file = open(yaml_file_path, encoding='UTF-8').read()
+        except:
+            raise CouldNotFindConfigFileError(yaml_file_path)
         return yaml.load(yaml_file)
 
     def load_template_files(self):
-        """Loads custom HTMl templates for converter
+        '''Loads custom HTMl templates for converter
 
         Returns:
            templates: dictionary of html templates
-        """
+        '''
         templates = dict()
         template_path = os.path.join(
             os.path.dirname(__file__),
