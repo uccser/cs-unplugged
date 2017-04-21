@@ -88,9 +88,10 @@ Adding a Topic
 .. The following image can copied for be edits here:
 .. image:: ../_static/img/topics_adding_topic_flowchart.png
 
-At this stage, the application is in a "broken" state. This is because every topic needs
-at least one unit plan, so the system will not allow a topic to be loaded until a unit
-plan is connected to it.
+.. warning::
+  
+  Every topic needs at least one unit plan, therefore the system will not allow
+  a topic to be loaded until a unit plan is connected to it.
 
 .. _adding-topics-content-unit-plans:
 
@@ -100,9 +101,10 @@ Adding a Unit Plan
 .. The following image can copied for be edits here:
 .. image:: ../_static/img/topics_adding_unit_plan_flowchart.png
 
-At this stage, the application is in a "broken" state. This is because every unit plan
-needs at least one lesson, so the system will not allow a topic to be unit plan until a
-lesson is connected to it.
+.. warning::
+  
+  Every unit plan needs at least one lesson, so the system will not allow a
+  unit plan to be loaded until a lesson is connected to it.
 
 
 .. _adding-topics-content-lessons:
@@ -113,6 +115,12 @@ Adding a Lesson
 .. The following image can copied for be edits here:
 .. image:: ../_static/img/topics_adding_lesson_flowchart.png
 
+.. note::
+  
+  If the lesson includes programming exercises, curriculum areas and/or
+  learning outcomes, then the corresponding configuration and content files
+  will also need to be added.
+
 
 .. _adding-topics-content-learning-outcomes:
 
@@ -121,6 +129,10 @@ Adding Learning Outcomes
 
 .. The following image can copied for be edits here:
 .. image:: ../_static/img/topics_adding_learning_outcomes_flowchart.png
+
+You will now be able to add learning outcomes to lessons and programming
+exercises by referencing the keys you specified in the learning outcomes config
+file.
 
 
 .. _adding-topics-content-curriculum-areas:
@@ -131,6 +143,10 @@ Adding Curriculum Areas
 .. The following image can copied for be edits here:
 .. image:: ../_static/img/topics_adding_curriculum_areas_flowchart.png
 
+You will now be able to add curriculum areas to lessons and curriculum
+integrations by referencing the keys you specified in the curriculum areas
+config file.
+
 
 .. _adding-topics-content-programming-exercises:
 
@@ -140,6 +156,52 @@ Adding a Programming Exercise
 .. The following image can copied for be edits here:
 .. image:: ../_static/img/topics_adding_programming_exercises_flowchart.png
 
+You will now be able to add programming exercises to lessons by referencing the
+keys you specified in the programming exercises config file.
+
+.. note::
+
+  If the exercise includes learning outcomes, then the corresponding config
+  file will also need to be added.
+
+.. note::
+
+  A programming exercise is split into four parts, these are:
+
+    1. The exercise description
+    2. The expected output
+    3. Hints (optional)
+    4. An example solution
+
+  Additonally, 2-4 from the list above, can be given in multiple programming
+  languages. Therefore, the languages you have chosen must be specified in the
+  ``programming-exercises.yaml`` config file, as well as the
+  ``programming-exercises-structure.yaml`` config file.
+
+.. note::
+
+  The system will use the key for the programming exercise to search for the
+  relevant Markdown files, so it is important to name them according to the
+  following rules:
+
+  - Both the directory and file name for the exercise must match the key you chose
+    for the exercise in ``programming-exercises.yaml``
+  
+  - The expected, hints and solution files must be prefixed with the key for
+    the programming language they are written in.
+
+  For example, a programming exercise with key ``count-to-16`` implemented in
+  Python only will have the following directory structure:
+
+  .. code-block:: none
+
+    └── programming-exercises/
+        └── count-to-16/
+            ├── count-to-16.md
+            ├── python-expected.md
+            ├── python-hints.md
+            └── python-solution.md
+
 
 .. _adding-topics-content-curriculum-integrations:
 
@@ -148,6 +210,11 @@ Adding a Curriculum Integration
 
 .. The following image can copied for be edits here:
 .. image:: ../_static/img/topics_adding_curriculum_integrations_flowchart.png
+
+.. note ::
+
+  If the integration includes curriculum areas and/or prerequisite lessons,
+  then the corresponding config and content files will also need to be added.
 
 
 Configuration Files
