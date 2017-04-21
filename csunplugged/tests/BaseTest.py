@@ -1,28 +1,35 @@
-from django.test import TestCase
-from django.contrib.auth.models import User
+from django.test import SimpleTestCase
 from django.test.client import Client
 from django.utils.translation import activate
 
 
-class BaseTest(TestCase):
+class BaseTest(SimpleTestCase):
 
     def __init__(self, *args, **kwargs):
-        TestCase.__init__(self, *args, **kwargs)
+        super().__init__(*args, **kwargs)
+        self.language = None
+
+    @classmethod
+    def setUpClass(cls):
+        '''Called before tests in class.
+        '''
+        super(BaseTest, cls).setUpClass()
+
+    @classmethod
+    def tearDownClass(cls):
+        '''Called after tests in class.
+        '''
+        super(BaseTest, cls).tearDownClass()
 
     def setUp(self):
-        """
-        Called before each test.
-        Sets the language to English, creates a new user and logs into the database
-        """
-        activate('en')
-
+        '''Called before each test.
+        Sets the language if specified and creates a new client.
+        '''
+        if self.language is not None:
+            activate(self.language)
         self.client = Client()
-        self.username = 'test'
-        self.email = 'test@test.com'
-        self.password = 'test'
-        self.test_user = User.objects.create_user(self.username, self.email, self.password)
-        login = self.client.login(username=self.username, password=self.password)
-        self.assertEqual(login, True)
 
     def tearDown(self):
-        self.test_user.delete()
+        '''Called after each test.
+        '''
+        pass

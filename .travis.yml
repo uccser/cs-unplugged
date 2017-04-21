@@ -8,10 +8,22 @@ python:
   - "3.6-dev" # 3.6 development branch
 
 # Install dependencies
-install: pip install flake8
+install:
+  - pip install -r requirements/base.txt
+  - pip install -r requirements/test.txt
+
+before_script:
+  - cd csunplugged/
+  - chmod +x manage.py
 
 # Runs test suite
-script: flake8
+script:
+  - flake8 --config=../.flake8
+  - coverage run --rcfile=../.coveragerc manage.py test --pattern "test_*.py" -v 3
+  - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then ./manage.py test --pattern "test_*.py" --reverse -v 0; fi'
+
+after_script:
+  coveralls
 
 # Stop email notifications but post to organisation Slack channel
 notifications:
