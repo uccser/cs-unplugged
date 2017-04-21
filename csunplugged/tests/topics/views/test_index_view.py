@@ -15,13 +15,14 @@ class IndexViewTest(BaseTestWithDB):
         self.assertEqual(response.status_code, 200)
 
     def test_index_with_one_topic(self):
-        new_topic = Topic.objects.create(
+        new_topic = Topic(
             slug='binary-numbers',
             name='Binary Numbers',
             content='content',
             other_resources='content',
             icon='icon'
         )
+        new_topic.save()
 
         url = reverse('topics:index')
         response = self.client.get(url)
