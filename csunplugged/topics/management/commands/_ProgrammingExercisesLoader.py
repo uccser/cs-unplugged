@@ -4,6 +4,7 @@ from utils.BaseLoader import BaseLoader
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 from utils.errors.NoHeadingFoundInMarkdownFileError import NoHeadingFoundInMarkdownFileError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
+from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 
 from topics.models import (
     LearningOutcome,
@@ -41,6 +42,15 @@ class ProgrammingExercisesLoader(BaseLoader):
         programming_exercises_structure = self.load_yaml_file(self.structure_file_path)
 
         for (exercise_slug, exercise_structure) in programming_exercises_structure.items():
+
+            if exercise_structure is None:
+                raise MissingRequiredFieldError(
+                    self.structure_file_path,
+                    ['exercise-set-number', 'exercise-number',
+                        'programming-languages', 'difficulty-level'],
+                    'Programming Exercise'
+                )
+
             # Retrieve required variables from md file
             exercise_set_number = exercise_structure.get('exercise-set-number', None)
             exercise_number = exercise_structure.get('exercise-number', None)
@@ -48,7 +58,7 @@ class ProgrammingExercisesLoader(BaseLoader):
             exercise_difficulty = exercise_structure.get('difficulty-level', None)
             if None in [exercise_set_number, exercise_number, exercise_languages, exercise_difficulty]:
                 raise MissingRequiredFieldError(
-                    self.programming_exercises_structure,
+                    self.structure_file_path,
                     ['exercise-set-number', 'exercise-number',
                         'programming-languages', 'difficulty-level'],
                     'Programming Exercise'
@@ -71,7 +81,11 @@ class ProgrammingExercisesLoader(BaseLoader):
                     level=exercise_difficulty
                 )
             except:
-                raise KeyNotFoundError()
+                raise KeyNotFoundError(
+                    self.structure_file_path,
+                    exercise_difficulty,
+                    'Programming Exercise Difficulty'
+                    )
 
             programming_exercise = self.topic.topic_programming_exercises.create(
                 slug=exercise_slug,
@@ -87,12 +101,23 @@ class ProgrammingExercisesLoader(BaseLoader):
             self.log(LOG_TEMPLATE.format(programming_exercise.name), 1)
 
             for language in exercise_languages:
+                if language is None:
+                    raise MissingRequiredFieldError(
+                        self.structure_file_path,
+                        ['exercise-set-number', 'exercise-number',
+                            'programming-languages', 'difficulty-level'],
+                        'Programming Exercise'
+                    )
                 try:
                     language_object = ProgrammingExerciseLanguage.objects.get(
                         slug=language
                     )
                 except:
-                    raise KeyNotFoundError()
+                    raise KeyNotFoundError(
+                        self.structure_file_path,
+                        language,
+                        'Programming Exercise Language'
+                        )
 
                 expected_result_content = self.convert_md_file(
                     file_path.format(
@@ -137,11 +162,16 @@ class ProgrammingExercisesLoader(BaseLoader):
                 self.log(LOG_TEMPLATE.format(implementation.language), 2)
 
             if 'learning-outcomes' in exercise_structure:
-                for learning_outcome_slug in exercise_structure['learning-outcomes']:
-                    try:
-                        learning_outcome = LearningOutcome.objects.get(
-                            slug=learning_outcome_slug
-                        )
-                        programming_exercise.learning_outcomes.add(learning_outcome)
-                    except:
-                        raise KeyNotFoundError()
+                learning_outcomes = exercise_structure['learning-outcomes']
+                if learning_outcomes is not None:
+                    for learning_outcome_slug in learning_outcomes:
+                        try:
+                            learning_outcome = LearningOutcome.objects.get(
+                                slug=learning_outcome_slug
+                            )
+                            programming_exercise.learning_outcomes.add(learning_outcome)
+                        except:
+                            raise KeyNotFoundError(
+                                self.structure_file_path,
+                                learning_outcome_slug,
+                                'Learning Outcome')

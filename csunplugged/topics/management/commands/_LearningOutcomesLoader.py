@@ -1,6 +1,10 @@
 import os.path
 from django.db import transaction
+
 from utils.BaseLoader import BaseLoader
+
+from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
+
 from topics.models import LearningOutcome
 
 
@@ -28,6 +32,14 @@ class LearningOutcomesLoader(BaseLoader):
         )
         
         for (outcome_slug, outcome_text) in learning_outcomes.items():
+
+            if outcome_text is None:
+                raise MissingRequiredFieldError(
+                    self.structure_file_path,
+                    ['key:value pair'],
+                    'Learning Outcome'
+                )
+
             # Create outcome objects and save to db
             outcome = LearningOutcome(
                 slug=outcome_slug,
