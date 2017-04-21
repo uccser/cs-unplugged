@@ -90,7 +90,8 @@ class LessonsLoader(BaseLoader):
                 for programming_exercise_slug in programming_exercise_slugs:
                     try:
                         programming_exercise = ProgrammingExercise.objects.get(
-                            slug=programming_exercise_slug
+                            slug=programming_exercise_slug,
+                            topic=self.topic
                         )
                         lesson.programming_exercises.add(programming_exercise)
                     except:

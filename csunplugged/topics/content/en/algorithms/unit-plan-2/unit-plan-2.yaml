@@ -1,0 +1,16 @@
+lesson-1:
+  min-age: 8
+  max-age: 10
+  number: 1
+  duration: 45
+  programming-exercises:
+    - elephants-are-great
+  learning-outcomes:
+    - parity-justify-usage
+    - binary-count
+  curriculum-areas:
+    - art
+    - maths-geometry
+  generated-resources:
+    sorting-network:
+      description: One copy per student
