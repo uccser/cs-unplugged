@@ -10,7 +10,6 @@ class BaseTestWithDB(TestCase):
         super().__init__(*args, **kwargs)
         self.language = None
 
-
     @classmethod
     def setUpTestData(cls):
         '''Setup data for the whole class.
