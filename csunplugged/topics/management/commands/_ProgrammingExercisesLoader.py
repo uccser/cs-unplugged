@@ -62,7 +62,7 @@ class ProgrammingExercisesLoader(BaseLoader):
             )
 
             exercise_content = self.convert_md_file(
-                file_path.format('index'),
+                file_path.format(exercise_slug),
                 self.structure_file_path
             )
 
