@@ -35,3 +35,6 @@ if settings.DEBUG:
     urlpatterns += [
         url(r'^__debug__/', include(debug_toolbar.urls)),
     ]
+    urlpatterns += i18n_patterns(
+        url(r'^__dev__/', include('dev.urls', namespace='dev')),
+    )
