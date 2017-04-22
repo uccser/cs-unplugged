@@ -11,3 +11,4 @@ django-extensions==1.7.7
 
 # Check Python style
 flake8==3.3.0
+pydocstyle==2.0.0
