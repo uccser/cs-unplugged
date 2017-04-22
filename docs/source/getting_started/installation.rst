@@ -111,6 +111,12 @@ character, this shows the start of your terminal prompt).
     $ docker-compose version
     $ docker run hello-world
 
+.. note::
+
+    Depending on your operating system, if the above commands don't work you
+    may need to set Docker to be able to run without ``sudo``.
+    You will need to do this in order to use the ``csu`` helper script.
+
 Step 7: Install Text Editor/IDE (optional)
 =================================================
 
