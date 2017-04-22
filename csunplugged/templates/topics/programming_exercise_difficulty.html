@@ -4,9 +4,9 @@
 
 <h1>{{ difficulty.name }}</h1>
 
-<p><strong>Difficulty level:</strong> {{ difficulty.level }}</p>
+<p><strong>Challenge level:</strong> {{ difficulty.level }}</p>
 
-<h2>Programming Exercises</h2>
+<h2>Programming Challenges</h2>
 {% if programming_exercises %}
   <ul>
   {% for programming_exercise in programming_exercises %}
@@ -16,7 +16,7 @@
   {% endfor %}
 </ul>
 {% else %}
-  <p>No programming exercises for difficulty {{ difficulty.name }}.</p>
+  <p>No programming challenges for challenge {{ difficulty.name }}.</p>
 {% endif %}
 
 {% endblock content %}
