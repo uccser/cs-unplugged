@@ -14,6 +14,14 @@ import socket
 import os
 from .base import *  # noqa: F403
 
+# DATABASE CONFIGURATION
+# ----------------------------------------------------------------------------
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
+DATABASES = {
+    'default': env.db('DATABASE_URL'),
+}
+DATABASES['default']['ATOMIC_REQUESTS'] = True
+
 # DEBUG
 # ----------------------------------------------------------------------------
 DEBUG = env.bool('DJANGO_DEBUG', default=True)  # noqa: F405

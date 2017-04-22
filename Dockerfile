@@ -9,7 +9,6 @@ LABEL maintainer="csse-education-research@canterbury.ac.nz"
 ARG DEBIAN_FRONTEND=noninteractive
 
 ENV DJANGO_PRODUCTION=True
-ENV DJANGO_READ_DOT_ENV_FILE=True
 
 # Install packages, running of Python 3.4.2
 RUN apt-get update && apt-get install -y \
@@ -33,3 +32,4 @@ COPY requirements /requirements
 RUN pip3 install -r /requirements/production.txt
 
 ADD ./csunplugged /code/
+CMD gunicorn -c gunicorn.conf.py -b :8080 config.wsgi

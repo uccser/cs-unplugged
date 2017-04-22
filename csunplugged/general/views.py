@@ -1,4 +1,5 @@
 from django.views.generic import TemplateView
+from django.http import HttpResponse
 
 
 class GeneralIndexView(TemplateView):
@@ -15,3 +16,10 @@ class GeneralIndexView(TemplateView):
 
 class GeneralAboutView(TemplateView):
     template_name = 'general/about.html'
+
+
+def health_check(request):
+    """Returns a 200 HTTP response for Google App Engine to detect the system
+    is running.
+    """
+    return HttpResponse(status=200)
