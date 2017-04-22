@@ -1,5 +1,6 @@
-# Ignore secret settings file (passwords, secret keys, etc)
-csunplugged/config/settings_secret.py
+# Ignore app.yaml file that contains passwords, secret keys, etc
+app*.yaml
+!app-sample.yaml
 
 # Byte-compiled / optimized / DLL files
 *__pycache__/

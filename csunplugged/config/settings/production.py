@@ -17,3 +17,20 @@ SECRET_KEY = env('DJANGO_SECRET_KEY')  # noqa: F405
 # app not on App Engine, make sure to set an appropriate host here.
 # See https://docs.djangoproject.com/en/1.10/ref/settings/
 ALLOWED_HOSTS = ['*']
+
+# DATABASE CONFIGURATION
+# ----------------------------------------------------------------------------
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'csunplugged',
+        'USER': env('GOOGLE_CLOUD_SQL_DATABASE_USERNAME'),
+        'PASSWORD': env('GOOGLE_CLOUD_SQL_DATABASE_PASSWORD'),
+        'HOST': '/cloudsql/' + env('GOOGLE_CLOUD_SQL_CONNECTION_NAME'),
+    }
+}
+DATABASES['default']['ATOMIC_REQUESTS'] = True
+
+# Static files
+STATIC_URL = 'https://storage.googleapis.com/' + env('GOOGLE_CLOUD_STORAGE_BUCKET_NAME') + '/static/'

@@ -11,23 +11,11 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 
 import environ
 
-# cs-unplugged/csunplugged/config/settings/base.py - 4 = csunplugged/
+# cs-unplugged/csunplugged/config/settings/base.py - 3 = csunplugged/
 ROOT_DIR = environ.Path(__file__) - 3
 
 # Load operating system environment variables and then prepare to use them
 env = environ.Env()
-
-# .env file, should load only in development environment
-READ_DOT_ENV_FILE = env.bool('DJANGO_READ_DOT_ENV_FILE', default=False)
-
-if READ_DOT_ENV_FILE:
-    # Operating System Environment variables have precedence over variables
-    # defined in the .env file, that is to say variables from the .env files
-    # will only be used if not defined as environment variables.
-    env_file = str(ROOT_DIR.path('.env'))
-    print('Loading : {}'.format(env_file))
-    env.read_env(env_file)
-    print('The .env file has been loaded. See base.py for more information')
 
 # APP CONFIGURATION
 # ----------------------------------------------------------------------------
@@ -86,27 +74,19 @@ FIXTURE_DIRS = (
 
 # EMAIL CONFIGURATION
 # -----------------------------------------------------------------------------
-EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND',
-                    default='django.core.mail.backends.smtp.EmailBackend')
+# EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND',
+#                     default='django.core.mail.backends.smtp.EmailBackend')
 
 # MANAGER CONFIGURATION
 # ----------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
-ADMINS = [
-    ('University of Canterbury Computer Science Research Group',
-     'csse-education@canterbury.ac.nz'),
-]
+# ADMINS = [
+#     ('University of Canterbury Computer Science Research Group',
+#      'csse-education@canterbury.ac.nz'),
+# ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
-MANAGERS = ADMINS
-
-# DATABASE CONFIGURATION
-# ----------------------------------------------------------------------------
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
-DATABASES = {
-    'default': env.db('DATABASE_URL'),
-}
-DATABASES['default']['ATOMIC_REQUESTS'] = True
+# MANAGERS = ADMINS
 
 # GENERAL CONFIGURATION
 # ----------------------------------------------------------------------------

@@ -2,7 +2,6 @@ from django.http import HttpResponse
 from django.template.loader import render_to_string
 from django.contrib.staticfiles import finders
 from django.conf import settings
-from weasyprint import HTML, CSS
 from PIL import Image
 from io import BytesIO
 import importlib
@@ -18,33 +17,42 @@ def generate_resource_pdf(request, resource, module_path):
     Returns:
         HTTP Response containing generated resource PDF
     """
-    context = dict()
-    get_request = request.GET
-    context['paper_size'] = get_request['paper_size']
-    context['resource'] = resource
-    context['header_text'] = get_request['header_text']
+    # TODO: Weasyprint handling in production
+    import environ
+    env = environ.Env(
+        DJANGO_PRODUCTION=(bool),
+    )
+    if env('DJANGO_PRODUCTION') == True:
+        return HttpResponse('<html><body>PDF generation is currently not supported in production.</body></html>')
+    else:
+        from weasyprint import HTML, CSS
+        context = dict()
+        get_request = request.GET
+        context['paper_size'] = get_request['paper_size']
+        context['resource'] = resource
+        context['header_text'] = get_request['header_text']
 
-    resource_image_generator = importlib.import_module(module_path)
-    filename = '{} ({})'.format(resource.name, resource_image_generator.subtitle(get_request, resource))
-    context['filename'] = filename
+        resource_image_generator = importlib.import_module(module_path)
+        filename = '{} ({})'.format(resource.name, resource_image_generator.subtitle(get_request, resource))
+        context['filename'] = filename
 
-    num_copies = range(0, int(get_request['copies']))
-    context['resource_images'] = []
-    for copy in num_copies:
-        context['resource_images'].append(
-            generate_resource_image(get_request, resource, module_path)
-        )
+        num_copies = range(0, int(get_request['copies']))
+        context['resource_images'] = []
+        for copy in num_copies:
+            context['resource_images'].append(
+                generate_resource_image(get_request, resource, module_path)
+            )
 
-    pdf_html = render_to_string('resources/base-resource-pdf.html', context)
-    html = HTML(string=pdf_html, base_url=settings.STATIC_ROOT)
-    css_file = finders.find('css/print-resource-pdf.css')
-    css_string = open(css_file, encoding='UTF-8').read()
-    base_css = CSS(string=css_string)
-    pdf_file = html.write_pdf(stylesheets=[base_css])
+        pdf_html = render_to_string('resources/base-resource-pdf.html', context)
+        html = HTML(string=pdf_html, base_url=settings.STATIC_ROOT)
+        css_file = finders.find('css/print-resource-pdf.css')
+        css_string = open(css_file, encoding='UTF-8').read()
+        base_css = CSS(string=css_string)
+        pdf_file = html.write_pdf(stylesheets=[base_css])
 
-    response = HttpResponse(pdf_file, content_type='application/pdf')
-    response['Content-Disposition'] = RESPONSE_CONTENT_DISPOSITION.format(filename=filename)
-    return response
+        response = HttpResponse(pdf_file, content_type='application/pdf')
+        response['Content-Disposition'] = RESPONSE_CONTENT_DISPOSITION.format(filename=filename)
+        return response
 
 
 def generate_resource_image(get_request, resource, module_path):
