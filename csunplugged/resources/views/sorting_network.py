@@ -45,9 +45,12 @@ def subtitle(get_request, resource):
     Used after the resource name in the filename, and
     also on the resource image.
     """
-    SUBTITLE_TEMPLATE = '{} to {}'
-    range_min, range_max, font_size = number_range(get_request)
-    text = SUBTITLE_TEMPLATE.format(range_min, range_max - 1)
+    if get_request['prefilled_values'] == 'blank':
+        text = 'blank'
+    else:
+        SUBTITLE_TEMPLATE = '{} to {}'
+        range_min, range_max, font_size = number_range(get_request)
+        text = SUBTITLE_TEMPLATE.format(range_min, range_max - 1)
     return text
 
 

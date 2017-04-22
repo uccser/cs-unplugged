@@ -13,10 +13,9 @@ def resource_image(get_request, resource):
     image = Image.open(image_path)
     draw = ImageDraw.Draw(image)
 
-    (range_min, range_max, font_size) = number_range(get_request)
-
     # Add numbers to image if required
     if get_request['prefilled_values'] != 'blank':
+        (range_min, range_max, font_size) = number_range(get_request)
         font = ImageFont.truetype(font_path, font_size)
 
         total_numbers = 26
@@ -66,10 +65,13 @@ def subtitle(get_request, resource):
     Used after the resource name in the filename, and
     also on the resource image.
     """
-    SUBTITLE_TEMPLATE = '{} - {} to {}'
-    number_order_text = get_request['number_order'].title()
-    range_min, range_max, font_size = number_range(get_request)
-    text = SUBTITLE_TEMPLATE.format(number_order_text, range_min, range_max - 1)
+    if get_request['prefilled_values'] == 'blank':
+        text = 'blank'
+    else:
+        SUBTITLE_TEMPLATE = '{} - {} to {}'
+        number_order_text = get_request['number_order'].title()
+        range_min, range_max, font_size = number_range(get_request)
+        text = SUBTITLE_TEMPLATE.format(number_order_text, range_min, range_max - 1)
     return text
 
 
