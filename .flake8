@@ -3,6 +3,7 @@ exclude =
     # No need to traverse our git or venv directories
     .git,
     venv,
+    docker_venv,
 
     # There's no value in checking cache directories
     __pycache__,
