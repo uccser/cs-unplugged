@@ -18,7 +18,7 @@ from .base import *  # noqa: F403
 # ----------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
-    'default': env.db('DATABASE_URL'),
+    'default': env.db('DATABASE_URL'),  # noqa: F405
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 

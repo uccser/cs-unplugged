@@ -22,7 +22,7 @@ def generate_resource_pdf(request, resource, module_path):
     env = environ.Env(
         DJANGO_PRODUCTION=(bool),
     )
-    if env('DJANGO_PRODUCTION') == True:
+    if env('DJANGO_PRODUCTION'):
         return HttpResponse('<html><body>PDF generation is currently not supported in production.</body></html>')
     else:
         from weasyprint import HTML, CSS

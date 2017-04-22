@@ -25,12 +25,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'csunplugged',
-        'USER': env('GOOGLE_CLOUD_SQL_DATABASE_USERNAME'),
-        'PASSWORD': env('GOOGLE_CLOUD_SQL_DATABASE_PASSWORD'),
-        'HOST': '/cloudsql/' + env('GOOGLE_CLOUD_SQL_CONNECTION_NAME'),
+        'USER': env('GOOGLE_CLOUD_SQL_DATABASE_USERNAME'),  # noqa: F405
+        'PASSWORD': env('GOOGLE_CLOUD_SQL_DATABASE_PASSWORD'),  # noqa: F405
+        'HOST': '/cloudsql/' + env('GOOGLE_CLOUD_SQL_CONNECTION_NAME'),  # noqa: F405
     }
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 # Static files
-STATIC_URL = 'https://storage.googleapis.com/' + env('GOOGLE_CLOUD_STORAGE_BUCKET_NAME') + '/static/'
+STATIC_URL = 'https://storage.googleapis.com/' + env('GOOGLE_CLOUD_STORAGE_BUCKET_NAME') + '/static/'  # noqa: F405
