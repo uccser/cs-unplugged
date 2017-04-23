@@ -1,3 +1,8 @@
+sudo: required
+
+services:
+  - docker
+
 language: python
 
 python:
@@ -7,8 +12,13 @@ python:
   - "3.6"
   - "3.6-dev" # 3.6 development branch
 
-# Install dependencies
-install: pip install flake8
+before_install:
+  - docker --version
+  - docker-compose --version
+  - ./csu start
+
+install:
+  - pip3 install -r requirements/test.txt
 
 # Runs test suite
 script: flake8
