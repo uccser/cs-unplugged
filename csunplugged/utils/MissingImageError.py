@@ -1,5 +1,6 @@
 """Exception raised when an image cannot be found in static folder."""
 
+
 class MissingImageError(Exception):
     """Exception raised when an image cannot be found in static folder."""
 

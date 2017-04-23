@@ -6,7 +6,7 @@ from ._ResourcesLoader import ResourcesLoader
 
 class Command(BaseCommand):
     """Required command class for the custom Django loadresources command."""
-    
+
     help = 'Reads resource data and adds to database'
 
     def handle(self, *args, **options):
