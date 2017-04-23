@@ -1,3 +1,5 @@
+"""Custom loader for loading a topic."""
+
 import os.path
 from django.db import transaction
 from utils.BaseLoader import BaseLoader
@@ -8,14 +10,14 @@ from topics.models import Topic
 
 
 class TopicLoader(BaseLoader):
-    """Loader for the topics content"""
+    """Custom loader for loading a topic."""
 
     def __init__(self, structure_file, BASE_PATH):
-        """Initiates the topic loader
+        """Create the loader for loading a topic.
 
         Args:
-            structure_file: file path (string)
-            a dictionary of attributes.
+            structure_file: File path for structure YAML file (string).
+            BASE_PATH: Base file path (string).
         """
         super().__init__(BASE_PATH)
         self.structure_file = os.path.join(self.BASE_PATH, structure_file)
@@ -23,7 +25,7 @@ class TopicLoader(BaseLoader):
 
     @transaction.atomic
     def load(self):
-        """load the content for a topic"""
+        """Load the content for a topic."""
         topic_structure = self.load_yaml_file(self.structure_file)
         topic_data = self.convert_md_file(os.path.join(self.BASE_PATH, topic_structure['md-file']))
 

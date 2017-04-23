@@ -1,3 +1,5 @@
+"""Views for the dev application."""
+
 from django.shortcuts import get_object_or_404
 from django.views import generic
 
@@ -14,15 +16,18 @@ from topics.models import (
 )
 
 
-class IndexView(generic.ListView):
+class IndexView(generic.TemplateView):
+    """View for the dev application homepage."""
+
     template_name = 'dev/index.html'
     context_object_name = 'all_topics'
 
-    def get_queryset(self):
-        """Return all topics"""
-        return Topic.objects.order_by('name')
-
     def get_context_data(self, **kwargs):
+        """Return context for dev homepage.
+
+        Returns:
+            A dictionary of context data.
+        """
         context = super(IndexView, self).get_context_data(**kwargs)
 
         # Get topic, unit plan and lesson lists
@@ -58,17 +63,29 @@ class IndexView(generic.ListView):
 
 
 class ProgrammingExerciseView(generic.DetailView):
+    """View for the dev programming exercise page."""
+
     model = ProgrammingExercise
     template_name = 'dev/programming_exercise.html'
     context_object_name = 'programming_exercise'
 
     def get_object(self, **kwargs):
+        """Return a programming exercise object.
+
+        Returns:
+            A ProgrammingExercise object.
+        """
         return get_object_or_404(
             self.model.objects.select_related(),
             slug=self.kwargs.get('programming_exercise_slug', None)
         )
 
     def get_context_data(self, **kwargs):
+        """Return context for dev programming exercise view.
+
+        Returns:
+            A dictionary of context data.
+        """
         # Call the base implementation first to get a context
         context = super(ProgrammingExerciseView, self).get_context_data(**kwargs)
         # Add all the connected learning outcomes
@@ -78,11 +95,18 @@ class ProgrammingExerciseView(generic.DetailView):
 
 
 class ProgrammingExerciseLanguageSolutionView(generic.DetailView):
+    """View for the dev programming exercise languagte implementation page."""
+
     model = ProgrammingExerciseLanguageImplementation
     template_name = 'dev/programming_exercise_language_solution.html'
     context_object_name = 'implementation'
 
     def get_object(self, **kwargs):
+        """Return a programming exercise language implementation object.
+
+        Returns:
+            A ProgrammingExerciseLanguageImplementation object.
+        """
         return get_object_or_404(
             self.model.objects.select_related(),
             exercise__slug=self.kwargs.get('programming_exercise_slug', None),
@@ -90,6 +114,11 @@ class ProgrammingExerciseLanguageSolutionView(generic.DetailView):
         )
 
     def get_context_data(self, **kwargs):
+        """Return context for dev programming exercise language solution view.
+
+        Returns:
+            A dictionary of context data.
+        """
         # Call the base implementation first to get a context
         context = super(ProgrammingExerciseLanguageSolutionView, self).get_context_data(**kwargs)
         context['programming_exercise'] = self.object.exercise
@@ -97,18 +126,30 @@ class ProgrammingExerciseLanguageSolutionView(generic.DetailView):
 
 
 class CurriculumIntegrationView(generic.DetailView):
+    """View for the dev curriculum integration page."""
+
     model = CurriculumIntegration
     queryset = CurriculumIntegration.objects.all()
     template_name = 'dev/curriculum_integration.html'
     context_object_name = 'integration'
 
     def get_object(self, **kwargs):
+        """Return a curriculum integration object.
+
+        Returns:
+            A CurriculumIntegration object.
+        """
         return get_object_or_404(
             self.model.objects.select_related(),
             slug=self.kwargs.get('integration_slug', None)
         )
 
     def get_context_data(self, **kwargs):
+        """Return context for dev curriculum integration view.
+
+        Returns:
+            A dictionary of context data.
+        """
         # Call the base implementation first to get a context
         context = super(CurriculumIntegrationView, self).get_context_data(**kwargs)
         # Add in a QuerySet of all the connected curriculum areas

@@ -1,3 +1,5 @@
+"""Module for checking required files found within Markdown conversions."""
+
 import os
 import os.path
 from django.contrib.staticfiles import finders
@@ -5,8 +7,7 @@ from .MissingImageError import MissingImageError
 
 
 def check_required_files(required_files):
-    """Processes data within required files found by Markdown
-    converter.
+    """Process data within required files found by Markdown converter.
 
     Args:
         required_files (dict): Dictionary of required files data.
@@ -16,7 +17,7 @@ def check_required_files(required_files):
 
 
 def render_scratch_images(scratch_images):
-    """Write Scratch data for image rendering by Gulp script
+    """Write Scratch data for image rendering by Gulp script.
 
     Args:
         scratch_images (list): List of named tuples containing
@@ -33,7 +34,7 @@ def render_scratch_images(scratch_images):
 
 
 def find_image_files(images):
-    """Confirm each image is in static folder
+    """Confirm each image is in static folder.
 
     Args:
         images (set): image file names

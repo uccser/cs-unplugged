@@ -1,3 +1,5 @@
+"""Custom loader for loading a programming exercise."""
+
 import os.path
 from utils.BaseLoader import BaseLoader
 from topics.models import (
@@ -9,15 +11,17 @@ from topics.models import (
 
 
 class ProgrammingExerciseLoader(BaseLoader):
-    """Loader for a programming exercise"""
+    """Custom loader for loading a programming exercise."""
 
     def __init__(self, load_log, exercise_slug, exercise_structure, topic, BASE_PATH):
-        """Initiates the loader for a programming exercise
+        """Create the loader for loading a programming exercise.
 
         Args:
-            exercise_slug (string): slug for exercise
-            exercise_structure (dict): attributes for exercise
-            topic: Topic model object
+            load_log: List of log messages (list).
+            exercise_slug: Slug for programming exercise (string).
+            exercise_structure: Data for programming exercise (dict).
+            topic: Object of related topic model.
+            BASE_PATH: Base file path (string).
         """
         super().__init__(BASE_PATH, load_log)
         self.exercise_slug = exercise_slug
@@ -25,7 +29,7 @@ class ProgrammingExerciseLoader(BaseLoader):
         self.topic = topic
 
     def load(self):
-        """load the content for a programming exercise"""
+        """Load the content for a programming exercise."""
         content = self.convert_md_file(os.path.join(self.BASE_PATH, self.exercise_structure['md-file']))
 
         programming_exercise = self.topic.topic_programming_exercises.create(

@@ -1,3 +1,5 @@
+"""Custom loader for loading learning outcomes."""
+
 import os.path
 from django.db import transaction
 from utils.BaseLoader import BaseLoader
@@ -5,13 +7,14 @@ from topics.models import LearningOutcome
 
 
 class LearningOutcomesLoader(BaseLoader):
-    """Loader for learning outcomes content"""
+    """Custom loader for loading learning outcomes."""
 
     def __init__(self, learning_outcomes_file, BASE_PATH):
-        """Initiates the learning outcomes loader
+        """Create the loader for loading programming exercises.
 
         Args:
-            learning_outcomes_file: file path (string)
+            learning_outcomes_file: File path to YAML file (string)
+            BASE_PATH: Base file path (string).
         """
         super().__init__(BASE_PATH)
         self.learning_outcomes_file = learning_outcomes_file
@@ -19,7 +22,7 @@ class LearningOutcomesLoader(BaseLoader):
 
     @transaction.atomic
     def load(self):
-        """load the content for learning outcomes"""
+        """Load the content for learning outcomes."""
         learning_outcomes = self.load_yaml_file(os.path.join(self.BASE_PATH, self.learning_outcomes_file))
         for (outcome_slug, outcome_text) in learning_outcomes.items():
             # Create outcome objects and save to db

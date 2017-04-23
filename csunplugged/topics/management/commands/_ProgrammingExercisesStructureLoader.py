@@ -1,3 +1,5 @@
+"""Custom loader for loading structure of programming exercises."""
+
 import os.path
 from django.db import transaction
 from utils.BaseLoader import BaseLoader
@@ -5,13 +7,14 @@ from topics.models import ProgrammingExerciseLanguage, ProgrammingExerciseDiffic
 
 
 class ProgrammingExercisesStructureLoader(BaseLoader):
-    """Loader for programming exercises difficulties"""
+    """Custom loader for loading structure of programming exercises."""
 
     def __init__(self, structure_file, BASE_PATH):
-        """Initiates the loader for programming exercises difficulties
+        """Create the loader for loading structure of programming exercises.
 
         Args:
-            structure_file: file path (string)
+            structure_file: File path for structure YAML file (string).
+            BASE_PATH: Base file path (string).
         """
         super().__init__(BASE_PATH)
         self.structure_file = structure_file
@@ -19,7 +22,7 @@ class ProgrammingExercisesStructureLoader(BaseLoader):
 
     @transaction.atomic
     def load(self):
-        """load the content for programming exerises difficulties"""
+        """Load the content for structure of programming exercises."""
         info = self.load_yaml_file(os.path.join(self.BASE_PATH, self.structure_file))
 
         languages = info['languages']

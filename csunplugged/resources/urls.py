@@ -1,3 +1,5 @@
+"""URL routing for the resources application."""
+
 from django.conf.urls import url
 
 from .views import views

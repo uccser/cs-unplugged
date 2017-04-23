@@ -1,17 +1,21 @@
+"""Custom loader for loading programming exercises."""
+
 import os.path
 from utils.BaseLoader import BaseLoader
 from ._ProgrammingExerciseLoader import ProgrammingExerciseLoader
 
 
 class ProgrammingExercisesLoader(BaseLoader):
-    """Loader for programming exercises"""
+    """Custom loader for loading programming exercises."""
 
     def __init__(self, load_log, structure_file, topic, BASE_PATH):
-        """Initiates the loader for programming exercises
+        """Create the loader for loading programming exercises.
 
         Args:
-            structure_file: file path (string)
-            topic: Topic model object
+            load_log: List of log messages (list).
+            structure_file: File path for structure YAML file (string).
+            topic: Object of related topic model.
+            BASE_PATH: Base file path (string).
         """
         super().__init__(BASE_PATH, load_log)
         self.structure_file = os.path.join(self.BASE_PATH, structure_file)
@@ -19,9 +23,7 @@ class ProgrammingExercisesLoader(BaseLoader):
         self.topic = topic
 
     def load(self):
-        """Call (single) ProgrammingExerciseLoader for each exercise
-        to load into the database
-        """
+        """Load the content for programming exercises."""
         programming_exercises_structure = self.load_yaml_file(self.structure_file)
 
         for exercise_slug, exercise_structure in programming_exercises_structure.items():
