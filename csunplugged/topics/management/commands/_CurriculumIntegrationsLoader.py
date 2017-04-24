@@ -63,7 +63,7 @@ class CurriculumIntegrationsLoader(BaseLoader):
 
             integration = self.topic.curriculum_integrations.create(
                 slug=integration_slug,
-                number=integration_data['number'],
+                number=integration_number,
                 name=integration_content.title,
                 content=integration_content.html_string,
             )
