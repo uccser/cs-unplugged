@@ -16,6 +16,12 @@ class GeneralAboutView(TemplateView):
     template_name = 'general/about.html'
 
 
+class GeneralContactView(TemplateView):
+    """View for the contact page that renders from a template."""
+
+    template_name = 'general/contact.html'
+
+
 class GeneralPrinciplesView(TemplateView):
     """View for the princples page that renders from a template."""
 
