@@ -18,15 +18,15 @@ before_install:
   - docker-compose --version
   - sudo rm /usr/local/bin/docker-compose
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
-  - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
+  - docker --version
   - docker-compose --version
   - docker-compose up -d
   - sleep 15
-  - docker-compose run django python3 manage.py migrate
-  - docker-compose run django python3 manage.py updatedata
+  - docker-compose run django /docker_venv/bin/python3 manage.py migrate
+  - docker-compose run django /docker_venv/bin/python3 manage.py updatedata
   - docker-compose run nginx gulp build
-  - docker-compose run django python3 manage.py collectstatic --no-input
+  - docker-compose run django /docker_venv/bin/python3 manage.py collectstatic --no-input
 
 install:
   - pip3 install -r requirements/test.txt
