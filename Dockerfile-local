@@ -30,21 +30,19 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get clean && rm /var/lib/apt/lists/*_*
 
 EXPOSE 8080
-RUN mkdir /code
-WORKDIR /code
 
 # Copy and install Python dependencies
-RUN python -m virtualenv --python=python3.4 docker_venv
-RUN . docker_venv/bin/activate
 COPY requirements /requirements
-RUN pip3 install -r /requirements/local.txt
+RUN python -m virtualenv --python=python3.4 /docker_venv \
+    && . /docker_venv/bin/activate \
+    && pip3 install -r /requirements/local.txt \
+    # Install Weasyprint dependencies
+    && pip3 install -U pip setuptools \
+    && pip3 install packaging==16.8 \
+    && pip3 install appdirs==1.4.3 \
+    && pip3 install html5lib==1.0b9 \
+    && pip3 install six==1.10.0 \
+    && pip3 install weasyprint==0.36
 
-# Install Weasyprint dependencies
-RUN pip3 install -U pip setuptools
-RUN pip3 install packaging==16.8
-RUN pip3 install appdirs==1.4.3
-RUN pip3 install html5lib==1.0b9
-RUN pip3 install six==1.10.0
-RUN pip3 install weasyprint==0.36
-
-ADD ./csunplugged /code/
+RUN mkdir /code
+WORKDIR /code
