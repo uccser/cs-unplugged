@@ -4,3 +4,6 @@ unit-plans:
 icon: 'img/topics/binary-numbers-0-1.png'
 
 other-resources: other-resources.md
+
+misc-structure-files:
+  - programming-exercises

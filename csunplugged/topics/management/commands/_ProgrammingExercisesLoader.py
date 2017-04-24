@@ -85,16 +85,16 @@ class ProgrammingExercisesLoader(BaseLoader):
                     self.structure_file_path,
                     exercise_difficulty,
                     'Programming Exercise Difficulty'
-                    )
+                )
 
             programming_exercise = self.topic.topic_programming_exercises.create(
                 slug=exercise_slug,
                 name=exercise_content.title,
                 exercise_set_number=exercise_set_number,
                 exercise_number=exercise_number,
-                content=exercise_content.html_string,
-                difficulty=difficulty_level
+                content=exercise_content.html_string
             )
+            programming_exercise.difficulty.add(difficulty_level)
             programming_exercise.save()
 
             LOG_TEMPLATE = 'Added Programming Exercise: {}'
@@ -147,7 +147,7 @@ class ProgrammingExercisesLoader(BaseLoader):
                     )
                 except CouldNotFindMarkdownFileError:
                     hint_content = None
-            
+
                 implementation = ProgrammingExerciseLanguageImplementation(
                     expected_result=expected_result_content.html_string,
                     hints=None if hint_content is None else hint_content.html_string,

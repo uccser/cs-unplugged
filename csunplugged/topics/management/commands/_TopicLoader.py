@@ -101,7 +101,7 @@ class TopicLoader(BaseLoader):
         else:
             misc_structure_file_paths = None
 
-        if misc_structure_file_paths is not None:         
+        if misc_structure_file_paths is not None:
             # Load programming exercises   
             if 'programming-exercises' in misc_structure_file_paths:
                 ProgrammingExercisesLoader(
