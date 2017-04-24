@@ -2,6 +2,7 @@
   "name": "cs-unplugged-assets",
   "version": "0.0.2",
   "main": "gulpfile.js",
+  "private": true,
   "dependencies": {
     "autoprefixer": "6.7.6",
     "child_process": "1.0.2",
