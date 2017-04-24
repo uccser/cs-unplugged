@@ -1,3 +1,0 @@
-# Puppies
-
-Puppy.

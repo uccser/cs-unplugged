@@ -1,9 +1,0 @@
-binary-number-bracelets:
-  number: 1
-  curriculum-areas:
-    - art
-  prerequisite-lessons:
-    unit-plan:
-      - lesson-1
-    unit-plan-2:
-      - lesson-1

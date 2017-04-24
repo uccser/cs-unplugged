@@ -98,6 +98,8 @@ class TopicLoader(BaseLoader):
         
         if 'misc-structure-files' in topic_structure:
             misc_structure_file_paths = topic_structure['misc-structure-files']
+        else:
+            misc_structure_file_paths = None
 
         if misc_structure_file_paths is not None:         
             # Load programming exercises   

@@ -1,5 +1,6 @@
 {% extends "topics/unit_plan.html" %}
 
+{% load static %}
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
@@ -30,9 +31,7 @@
   <p>No CS Unplugged resources required.</p>
 {% endif %}
 
-{% autoescape off %}
-{{ lesson.content }}
-{% endautoescape %}
+{% render_html_field lesson.content %}
 
 <h2>Plugged In <span class="subtitle">(programming exercises)</span></h2>
 {% if programming_exercises %}
