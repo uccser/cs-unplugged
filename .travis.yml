@@ -21,7 +21,12 @@ before_install:
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
   - docker-compose --version
-  - ./csu start
+  - docker-compose up -d
+  - sleep 15
+  - docker-compose run django python3 manage.py migrate
+  - docker-compose run django python3 manage.py updatedata
+  - docker-compose run nginx gulp build
+  - docker-compose run django python3 manage.py collectstatic --no-input
 
 install:
   - pip3 install -r requirements/test.txt
