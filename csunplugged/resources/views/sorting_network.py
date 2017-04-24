@@ -58,9 +58,12 @@ def subtitle(get_request, resource):
     Returns:
         text for subtitle (string)
     """
-    SUBTITLE_TEMPLATE = '{} to {}'
-    range_min, range_max, font_size = number_range(get_request)
-    text = SUBTITLE_TEMPLATE.format(range_min, range_max - 1)
+    if get_request['prefilled_values'] == 'blank':
+        text = 'blank'
+    else:
+        SUBTITLE_TEMPLATE = '{} to {}'
+        range_min, range_max, font_size = number_range(get_request)
+        text = SUBTITLE_TEMPLATE.format(range_min, range_max - 1)
     return text
 
 
