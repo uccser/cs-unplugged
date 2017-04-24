@@ -1,17 +1,21 @@
+"""Custom loader for loading curriculum integrations."""
+
 import os.path
 from utils.BaseLoader import BaseLoader
 from topics.models import CurriculumArea, Lesson
 
 
 class CurriculumIntegrationsLoader(BaseLoader):
-    """Loader for curriculum integrations"""
+    """Custom loader for loading curriculum integrations."""
 
     def __init__(self, load_log, structure_file, topic, BASE_PATH):
-        """Initiates the loader for curriculum integrations
+        """Create the loader for loading curriculum integrations.
 
         Args:
-            structure_file: file path (string)
-            topic: Topic model object
+            load_log: List of log messages (list).
+            structure_file: File path for structure YAML file (string).
+            topic: Object of related topic model.
+            BASE_PATH: Base file path (string).
         """
         super().__init__(BASE_PATH, load_log)
         self.structure_file = os.path.join(self.BASE_PATH, structure_file)
@@ -19,7 +23,7 @@ class CurriculumIntegrationsLoader(BaseLoader):
         self.topic = topic
 
     def load(self):
-        """Load the content for curriculum integrations"""
+        """Load the content for curriculum integrations."""
         if self.structure_file:
             structure = self.load_yaml_file(self.structure_file)
 

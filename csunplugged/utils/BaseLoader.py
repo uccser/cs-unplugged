@@ -1,3 +1,5 @@
+"""Base loader used to create custom loaders for content."""
+
 import yaml
 import mdx_math
 import abc
@@ -10,9 +12,15 @@ from .check_converter_required_files import check_required_files
 
 
 class BaseLoader():
-    """Base loader class for individual loaders"""
+    """Base loader class for individual loaders."""
 
     def __init__(self, BASE_PATH='', load_log=[]):
+        """Create a BaseLoader object.
+
+        Args:
+            BASE_PATH: string of base path.
+            load_log: list of log messages.
+        """
         if load_log:
             self.load_log = load_log
         else:
@@ -21,7 +29,9 @@ class BaseLoader():
         self.setup_md_to_html_converter()
 
     def setup_md_to_html_converter(self):
-        """Create Verto converter with custom processors, html templates,
+        """Create Markdown converter.
+
+        The converter is created with custom processors, html templates,
         and extensions.
         """
         templates = self.load_template_files()
@@ -38,10 +48,10 @@ class BaseLoader():
         self.converter.update_processors(custom_processors)
 
     def convert_md_file(self, md_file_path):
-        """Returns the Verto object for a given Markdown file
+        """Convert the given Markdown file to HTML.
 
         Args:
-            file_path: location of md file to convert
+            md_file_path: location of the markdown file to convert
 
         Returns:
             Verto result object
@@ -52,11 +62,11 @@ class BaseLoader():
         return result
 
     def log(self, log_message, indent_amount=0):
-        """Adds the log message to the load log with the specified indent"""
+        """Add the log message to the load log with the specified indent."""
         self.load_log.append((log_message, indent_amount))
 
     def print_load_log(self):
-        """Output log messages from loader to console"""
+        """Output log messages from loader to console."""
         for (log, indent_amount) in self.load_log:
             indent = '  ' * indent_amount
             sys.stdout.write('{indent}{text}\n'.format(indent=indent, text=log))
@@ -64,7 +74,7 @@ class BaseLoader():
         self.load_log = []
 
     def load_yaml_file(self, yaml_file_path):
-        """Loads and reads yaml file
+        """Load and read given YAML file.
 
         Args:
             file_path: location of yaml file to read
@@ -76,7 +86,7 @@ class BaseLoader():
         return yaml.load(yaml_file)
 
     def load_template_files(self):
-        """Loads custom HTMl templates for converter
+        """Load custom HTML templates for converter.
 
         Returns:
            templates: dictionary of html templates
@@ -95,4 +105,5 @@ class BaseLoader():
 
     @abc.abstractmethod
     def load(self):
-        raise NotImplementedError('subclass does not implement this method')
+        """Abstract method to be implemented by subclasses."""
+        raise NotImplementedError('Subclass does not implement this method')

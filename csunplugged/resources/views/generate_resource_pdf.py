@@ -1,3 +1,5 @@
+"""Module for generating custom resource PDFs."""
+
 from django.http import HttpResponse
 from django.template.loader import render_to_string
 from django.contrib.staticfiles import finders
@@ -12,10 +14,15 @@ MM_TO_PIXEL_RATIO = 3.78
 
 
 def generate_resource_pdf(request, resource, module_path):
-    """Returns a response containing a randomly generated PDF resource.
+    """Return a response containing a generated PDF resource.
+
+    Args:
+        request: HTTP request object
+        resource: Object of resource data.
+        module_path: Path to module for generating resource.
 
     Returns:
-        HTTP Response containing generated resource PDF
+        HTTP response containing generated resource PDF.
     """
     # TODO: Weasyprint handling in production
     import environ
@@ -56,12 +63,15 @@ def generate_resource_pdf(request, resource, module_path):
 
 
 def generate_resource_image(get_request, resource, module_path):
-    """Calls the resource's image generator and returns the generated
-    image. This function also resizes the generated image for the paper
-    size requested.
+    """Retrieve image from resource generator and resize to size.
+
+    Args:
+        get_request: HTTP request object
+        resource: Object of resource data.
+        module_path: Path to module for generating resource.
 
     Returns:
-        Base 64 string of a generated resource image.
+        Base64 string of a generated resource image.
     """
     # Get image from resource image creator
     resource_image_generator = importlib.import_module(module_path)

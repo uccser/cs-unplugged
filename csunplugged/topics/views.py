@@ -1,3 +1,5 @@
+"""Views for the topics application."""
+
 from django.shortcuts import get_object_or_404
 from django.views import generic
 
@@ -14,20 +16,33 @@ from .models import (
 
 
 class IndexView(generic.ListView):
+    """View for the topics application homepage."""
+
     template_name = 'topics/index.html'
     context_object_name = 'all_topics'
 
     def get_queryset(self):
-        """Return all topics"""
+        """Get queryset of all topics.
+
+        Returns:
+            Queryset of Topic objects ordered by name.
+        """
         return Topic.objects.order_by('name')
 
 
 class TopicView(generic.DetailView):
+    """View for a specific topic."""
+
     model = Topic
     template_name = 'topics/topic.html'
     slug_url_kwarg = 'topic_slug'
 
     def get_context_data(self, **kwargs):
+        """Provide the context data for the topic view.
+
+        Returns:
+            Dictionary of context data.
+        """
         # Call the base implementation first to get a context
         context = super(TopicView, self).get_context_data(**kwargs)
         # Add in a QuerySet of all the connected unit plans
@@ -41,11 +56,18 @@ class TopicView(generic.DetailView):
 
 
 class UnitPlanView(generic.DetailView):
+    """View for a specific unit plan."""
+
     model = UnitPlan
     template_name = 'topics/unit_plan.html'
     context_object_name = 'unit_plan'
 
     def get_object(self, **kwargs):
+        """Retrieve object for the unit plan view.
+
+        Returns:
+            UnitPlan object, or raises 404 error if not found.
+        """
         return get_object_or_404(
             self.model.objects.select_related(),
             topic__slug=self.kwargs.get('topic_slug', None),
@@ -53,6 +75,11 @@ class UnitPlanView(generic.DetailView):
         )
 
     def get_context_data(self, **kwargs):
+        """Provide the context data for the unit plan view.
+
+        Returns:
+            Dictionary of context data.
+        """
         # Call the base implementation first to get a context
         context = super(UnitPlanView, self).get_context_data(**kwargs)
         # Loading object under consistent context names for breadcrumbs
@@ -63,11 +90,18 @@ class UnitPlanView(generic.DetailView):
 
 
 class LessonView(generic.DetailView):
+    """View for a specific lesson."""
+
     model = Lesson
     template_name = 'topics/lesson.html'
     context_object_name = 'lesson'
 
     def get_object(self, **kwargs):
+        """Retrieve object for the lesson view.
+
+        Returns:
+            Lesson object, or raises 404 error if not found.
+        """
         return get_object_or_404(
             self.model.objects.select_related(),
             topic__slug=self.kwargs.get('topic_slug', None),
@@ -76,6 +110,11 @@ class LessonView(generic.DetailView):
         )
 
     def get_context_data(self, **kwargs):
+        """Provide the context data for the lesson view.
+
+        Returns:
+            Dictionary of context data.
+        """
         # Call the base implementation first to get a context
         context = super(LessonView, self).get_context_data(**kwargs)
         # Loading objects under consistent context names for breadcrumbs
@@ -106,17 +145,28 @@ class LessonView(generic.DetailView):
 
 
 class ProgrammingExerciseList(generic.ListView):
+    """View for listing all programming exercises."""
+
     model = ProgrammingExercise
     template_name = 'topics/programming_exercise_list.html'
     context_object_name = 'all_programming_exercises'
 
     def get_queryset(self, **kwargs):
-        """Return all activities for topic"""
+        """Retrieve all programming exercises for a topic.
+
+        Returns:
+            Queryset of ProgrammingExercise objects.
+        """
         lesson_slug = self.kwargs.get('lesson_slug', None)
         exercises = ProgrammingExercise.objects.filter(lessons__slug=lesson_slug)
         return exercises.order_by('exercise_set_number', 'exercise_number')
 
     def get_context_data(self, **kwargs):
+        """Provide the context data for the programming exercise list view.
+
+        Returns:
+            Dictionary of context data.
+        """
         context = super(ProgrammingExerciseList, self).get_context_data(**kwargs)
         lesson = get_object_or_404(
             Lesson.objects.select_related(),
@@ -131,11 +181,18 @@ class ProgrammingExerciseList(generic.ListView):
 
 
 class ProgrammingExerciseView(generic.DetailView):
+    """View for a specific programming exercise."""
+
     model = ProgrammingExercise
     template_name = 'topics/programming_exercise.html'
     context_object_name = 'programming_exercise'
 
     def get_object(self, **kwargs):
+        """Retrieve object for the programming exercise view.
+
+        Returns:
+            ProgrammingExercise object, or raises 404 error if not found.
+        """
         return get_object_or_404(
             self.model.objects.select_related(),
             topic__slug=self.kwargs.get('topic_slug', None),
@@ -143,6 +200,11 @@ class ProgrammingExerciseView(generic.DetailView):
         )
 
     def get_context_data(self, **kwargs):
+        """Provide the context data for the programming exercise view.
+
+        Returns:
+            Dictionary of context data.
+        """
         # Call the base implementation first to get a context
         context = super(ProgrammingExerciseView, self).get_context_data(**kwargs)
         lesson = get_object_or_404(
@@ -161,11 +223,19 @@ class ProgrammingExerciseView(generic.DetailView):
 
 
 class ProgrammingExerciseLanguageSolutionView(generic.DetailView):
+    """View for a language implementation for a programming exercise."""
+
     model = ProgrammingExerciseLanguageImplementation
     template_name = 'topics/programming_exercise_language_solution.html'
     context_object_name = 'implementation'
 
     def get_object(self, **kwargs):
+        """Retrieve object for the language implementation view.
+
+        Returns:
+            ProgrammingExerciseLanguageImplementation object, or raises 404
+            error if not found.
+        """
         return get_object_or_404(
             self.model.objects.select_related(),
             topic__slug=self.kwargs.get('topic_slug', None),
@@ -174,6 +244,11 @@ class ProgrammingExerciseLanguageSolutionView(generic.DetailView):
         )
 
     def get_context_data(self, **kwargs):
+        """Provide the context data for the language implementation view.
+
+        Returns:
+            Dictionary of context data.
+        """
         # Call the base implementation first to get a context
         context = super(ProgrammingExerciseLanguageSolutionView, self).get_context_data(**kwargs)
         # Loading object under consistent context names for breadcrumbs
@@ -191,17 +266,28 @@ class ProgrammingExerciseLanguageSolutionView(generic.DetailView):
 
 
 class CurriculumIntegrationList(generic.ListView):
+    """View for list all curriculum inegrations for a topic."""
+
     model = CurriculumIntegration
     template_name = 'topics/curriculum_integration_list.html'
     context_object_name = 'all_curriculum_integrations'
 
     def get_queryset(self, **kwargs):
-        """Return all integrations for topic"""
+        """Retrieve all curriculum integrations for a topic.
+
+        Returns:
+            Queryset of CurriculumIntegration objects.
+        """
         return CurriculumIntegration.objects.filter(
             topic__slug=self.kwargs.get('topic_slug', None)
         ).select_related().order_by('number')
 
     def get_context_data(self, **kwargs):
+        """Provide the context data for the curriculum integration list view.
+
+        Returns:
+            Dictionary of context data.
+        """
         context = super(CurriculumIntegrationList, self).get_context_data(**kwargs)
         # Loading objects under consistent context names for breadcrumbs
         context['topic'] = get_object_or_404(Topic, slug=self.kwargs.get('topic_slug', None))
@@ -209,22 +295,35 @@ class CurriculumIntegrationList(generic.ListView):
 
 
 class AllCurriculumIntegrationList(generic.ListView):
+    """View for listing all curriculum integrations."""
+
     model = CurriculumIntegration
     template_name = 'topics/all_curriculum_integration_list.html'
     context_object_name = 'curriculum_integrations'
 
     def get_queryset(self, **kwargs):
-        """Return all integrations for topic"""
+        """Retrieve all curriculum integrations.
+
+        Returns:
+            Queryset of CurriculumIntegration objects.
+        """
         return CurriculumIntegration.objects.select_related().order_by('topic__name', 'number')
 
 
 class CurriculumIntegrationView(generic.DetailView):
+    """View for a specific curriculum integration."""
+
     model = CurriculumIntegration
     queryset = CurriculumIntegration.objects.all()
     template_name = 'topics/curriculum_integration.html'
     context_object_name = 'integration'
 
     def get_object(self, **kwargs):
+        """Retrieve object for the curriculum integration view.
+
+        Returns:
+            CurriculumIntegration object, or raises 404 error if not found.
+        """
         return get_object_or_404(
             self.model.objects.select_related(),
             topic__slug=self.kwargs.get('topic_slug', None),
@@ -232,6 +331,11 @@ class CurriculumIntegrationView(generic.DetailView):
         )
 
     def get_context_data(self, **kwargs):
+        """Provide the context data for the curriculum integration view.
+
+        Returns:
+            Dictionary of context data.
+        """
         # Call the base implementation first to get a context
         context = super(CurriculumIntegrationView, self).get_context_data(**kwargs)
         # Loading objects under consistent context names for breadcrumbs
@@ -246,23 +350,38 @@ class CurriculumIntegrationView(generic.DetailView):
 
 
 class OtherResourcesView(generic.DetailView):
+    """View for detailing other resources for a specific topic."""
+
     model = Topic
     template_name = 'topics/topic-other-resources.html'
     slug_url_kwarg = 'topic_slug'
 
 
 class ProgrammingExerciseDifficultyView(generic.DetailView):
+    """View for a specific programming exercise difficulty."""
+
     model = ProgrammingExerciseDifficulty
     template_name = 'topics/programming_exercise_difficulty.html'
     context_object_name = 'difficulty'
 
     def get_object(self, **kwargs):
+        """Retrieve object for the programming exercise difficulty view.
+
+        Returns:
+            ProgrammingExerciseDifficulty object, or raises 404 error if
+            not found.
+        """
         return get_object_or_404(
             self.model,
             level=self.kwargs.get('programming_exercise_difficulty_level', None)
         )
 
     def get_context_data(self, **kwargs):
+        """Provide the context for the programming exercise difficulty view.
+
+        Returns:
+            Dictionary of context data.
+        """
         # Call the base implementation first to get a context
         context = super(ProgrammingExerciseDifficultyView, self).get_context_data(**kwargs)
         # Add in a QuerySet of all the connected programming exercises

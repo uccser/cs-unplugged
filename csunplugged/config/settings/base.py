@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Django settings for CS Unplugged project.
+Base Django settings for CS Unplugged project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/dev/topics/settings/

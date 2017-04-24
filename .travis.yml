@@ -27,7 +27,9 @@ install:
   - pip3 install -r requirements/test.txt
 
 # Runs test suite
-script: flake8
+script:
+  - flake8
+  - pydocstyle --verbose --count --explain
 
 # Stop email notifications but post to organisation Slack channel
 notifications:

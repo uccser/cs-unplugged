@@ -1,3 +1,4 @@
 # Test dependencies
 
 flake8==3.3.0
+pydocstyle==2.0.0
