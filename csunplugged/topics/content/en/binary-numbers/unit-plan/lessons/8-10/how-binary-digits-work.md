@@ -57,16 +57,16 @@ There is also an online interactive version of the binary cards [here](http://ww
   Hand out the second card to the second person from the right.
   Point out that this card has either 2 dots (visible), or none (upside down). 
 
-  {image file-path="img/topics/col_binary_2cards.png"}
+   {image file-path="img/topics/col_binary_2cards.png"}
 
 3. Ask the class what the number of dots on the next card will be. Get them to explain why they think that.
 
-  {panel type="general" title="Teaching Observations"}
+   {panel type="general" title="Teaching Observations"}
 
-  Students will usually suggest it should be three. If they suggest 4, they have probably done the activity before (or have seen the cards you are holding!)
-  If they suggest the wrong number, don't correct them, but continue without comment, so that they can construct the rule for themselves.
+   Students will usually suggest it should be three. If they suggest 4, they have probably done the activity before (or have seen the cards you are holding!)
+   If they suggest the wrong number, don't correct them, but continue without comment, so that they can construct the rule for themselves.
 
-  {panel end}
+   {panel end}
 
 4. Silently give out the four-dot card, and let them try to see the pattern.
 

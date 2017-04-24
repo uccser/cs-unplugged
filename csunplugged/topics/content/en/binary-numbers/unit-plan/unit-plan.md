@@ -44,6 +44,9 @@ The binary number system is base 2, so there are only two digits before you need
 
 Humans normally use the decimal number system, which is base 10, so there are ten digits before you move to the next place value: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.
 
+{image file-path="img/topics/col_binary_CSU_boy_hands.png"}
+
+{image file-path="img/topics/col_binary_csu_girl_hands.png"}
 
 {panel end}
 
