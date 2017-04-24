@@ -4,8 +4,6 @@
   "main": "gulpfile.js",
   "dependencies": {
     "autoprefixer": "^6.7.6",
-    "browser-sync": "^2.18.8",
-    "browserify": "^14.1.0",
     "child_process": "^1.0.2",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
@@ -16,9 +14,7 @@
     "gulp-rename": "1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.4.1",
-    "gulp-uglify": "^2.0.1",
     "gulp-util": "^3.0.8",
-    "gulp-watch": "4.3.11",
     "jshint": "^2.9.4",
     "jshint-stylish": "^2.2.1",
     "postcss-flexbugs-fixes": "^2.1.0",
@@ -26,11 +22,6 @@
     "scratchblocks": "3.1.2",
     "through2": "2.0.3",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.9.0",
     "yargs": "^6.6.0"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.1"
   }
 }
