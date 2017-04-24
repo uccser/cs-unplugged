@@ -63,10 +63,10 @@ function end {
 # Run Django migrate and updatedata commands
 function update {
   echo "Apply database migrations..."
-  docker-compose run django python3 manage.py migrate
+  docker-compose run django /docker_venv/bin/python3 manage.py migrate
 
   echo "Loading topics content..."
-  docker-compose run django python3 manage.py updatedata
+  docker-compose run django /docker_venv/bin/python3 manage.py updatedata
 }
 
 # Build Docker images
@@ -79,7 +79,7 @@ function build {
 function static {
   echo "Building static files..."
   docker-compose run nginx gulp build
-  docker-compose run django python3 manage.py collectstatic --no-input
+  docker-compose run django /docker_venv/bin/python3 manage.py collectstatic --no-input
 }
 
 # Run shell

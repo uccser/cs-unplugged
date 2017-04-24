@@ -1,4 +1,5 @@
 # Local development dependencies go here
+-r base.txt
 -r test.txt
 
 # Documentation
