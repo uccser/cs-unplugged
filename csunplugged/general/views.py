@@ -17,7 +17,9 @@ class GeneralAboutView(TemplateView):
 
 
 def health_check(request):
-    """Returns a 200 HTTP response for Google App Engine to detect the system
+    """Return heath check response for Google App Engine.
+
+    Returns a 200 HTTP response for Google App Engine to detect the system
     is running.
     """
     return HttpResponse(status=200)

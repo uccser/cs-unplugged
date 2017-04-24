@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Production settings
+Django settings for production environment.
+
+- Load secret values from environment variables.
+- Set static URL to Google Cloud Storage Bucket.
 """
 
 from .base import *  # noqa: F403
