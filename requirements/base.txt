@@ -14,11 +14,8 @@ django-environ==0.4.3
 Pillow==4.1.0
 
 # Markdown
+verto==0.4.0
 python-markdown-math==0.3
-
-# PDF Generation
-WeasyPrint==0.36
-html5lib==1.0b8 # pyup: ignore
 
 # Python-PostgreSQL Database Adapter
 psycopg2==2.7.1
@@ -28,3 +25,7 @@ django-bootstrap-breadcrumbs==0.8.2
 
 # YAML Loading
 PyYAML==3.12
+
+# Web serving
+gevent==1.2.1
+gunicorn==19.7.1

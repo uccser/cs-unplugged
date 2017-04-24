@@ -1,8 +1,5 @@
-Basic Project Commands
+System Commands for Developing
 ##############################################################################
-
-This page covers basic Django and system commands that both authors and
-developers will use when using the CS Unplugged system.
 
 .. note::
 
@@ -11,117 +8,154 @@ developers will use when using the CS Unplugged system.
   and also have a basic understanding of the
   :doc:`project structure <project_structure>`.
 
-Quick Start
-==============================================================================
+The CS Unplugged project uses many systems (Django, Docker, Gulp, etc) to run,
+so we have written a script for running groups of commands for running the
+system while developing.
 
-Run the following commands in a terminal from within the
-``cs-unplugged/csunplugged/`` directory.
-When working on the project, you should type the following commands in order
-to preview the work you have done.
+A quick
 
-.. note::
-
-  The ``$`` denotes the start of your terminal prompt.
-
-.. code-block:: bash
-
-  $ python3 manage.py migrate
-  $ python3 manage.py updatedata
-  $ python3 manage.py runserver
-
-Open another terminal within the same ``cs-unplugged/csunplugged/`` directory:
+The script is called ``csu`` and can be found in the ``cs-unplugged`` folder
+of the repository.
+To run this script, open a terminal window in the directory and enter the
+following command (you don't need to enter the ``$`` character, this shows
+the start of your terminal prompt):
 
 .. code-block:: bash
 
-  $ gulp
+    $ ./csu [COMMAND]
 
-For explanation of the commands above, read the sections below.
+Where ``[COMMAND]`` is a word from the list below:
 
-.. _command-manage-migrate:
+- :ref:`help`
+- :ref:`start`
+- :ref:`end`
+- :ref:`build`
+- :ref:`static`
+- :ref:`update`
+- :ref:`logs`
+- :ref:`shell`
+- :ref:`clean`
+- :ref:`wipe`
 
-``$ python3 manage.py migrate``
+.. _help:
+
+``help``
 ==============================================================================
 
-The structure of the database will change from time to time as we update the
-backend of the website.
-Running this command will make sure that the structure of the database you
-have on your machine stays up to date with these changes.
+Running ``csu help`` displays brief help text for the script.
+More details for each command can be found on this page.
 
-.. note::
+.. _start:
 
-  If you encounter an issue when running the ``migrate`` command, it's most
-  likely because the database wants to make changes that would cause conflicts
-  with data that already exists.
-
-  You can clear data from the database, using the following command:
-
-  .. code-block:: bash
-
-    $ python3 manage.py flush
-
-  Answer 'yes' to the prompt. If this completes successully, you should be
-  able to now run the ``migrate`` command.
-
-Official documentation on the `migrate command`_ can be found on the Django
-website.
-
-.. _command-manage-updatedata:
-
-``$ python3 manage.py updatedata``
+``start``
 ==============================================================================
 
-This command runs loads data from the ``content`` directories found within the
-project into the database. For example, if you modify lesson content, you
-will need to run this command to update the database with the new content.
+Running ``csu start`` starts the development environment.
+When you run this command for the first time on a computer it will also run
+``csu build`` to build the system Docker images.
+This can take some time, roughly 15 to 30 minutes, depending on your computer
+and internet speed.
+Images are only required to be built once, unless the image specifications
+change (you can rebuild the images with ``csu build``).
+Once the images are built, the script will run these images in containers.
 
-The author and developer documentation sections go into more detail about
-what data is loaded into the database.
+Once the development environment is operational, the script will perform the
+following tasks:
 
-.. _command-manage-runserver:
+- Start the Django website system
+- Start the Nginx server to display the website and static files
+- Start the database server
+- Update the database with the required structure (known as the schema)
+- Load the CS Unplugged content into the database
+- Create the required static files
 
-``$ python3 manage.py runserver``
+Once the script has performed all these tasks, the script will let you know
+the website is ready.
+Open your preferred web browser to the URL ``localhost`` to view the website.
+
+.. _end:
+
+``end``
 ==============================================================================
 
-The command starts a web server on your machine.
-It's possible to view the server in your browser with the URL
-``localhost:8000``, but we will run another command first to setup files
-required for the website, and view the website in a special development mode.
+Running ``csu end`` will stop any containers which are currently running,
+this usually takes 10 to 20 seconds.
 
-Official documentation on the `runserver command`_ can be found on the Django
-website.
+.. _build:
 
-.. _command-gulp:
-
-``$ gulp``
+``build``
 ==============================================================================
 
-We have a `Gulp`_ script to automate a bunch of tasks like copying and
-compressing images, compiling and compressing CSS, SCSS, and JavaScript,
-rendering Scratch block images, and displaying the website in an browser which
-automatically updates on template/CSS changes (note: the browser will not
-update for content changes as this requires the ``updatedata`` command to be
-run).
+Running ``csu build`` will build or rebuild the Docker images that are
+required for the CS Unplugged system.
 
-Running ``gulp`` from the command line will start this script, and open your
-preferred web browser to the homepage.
+.. _static:
+
+``static``
+==============================================================================
+
+Running ``csu static`` runs the commands for generating the static files for
+the website.
+
+If changes are made to the static files (for example, a new image is added)
+when the system is running, this command needs to be entered to view the
+new files on the website.
+
+.. _update:
+
+``update``
+==============================================================================
+
+Running ``csu update`` runs the Django migrate command for updating the
+database schema, and then runs the custom ``updatedata`` command to load
+the topics content into the database.
+
+If changes are made to the topics content when the system is running, this
+command needs to be run to view the new changes on the website.
+
+.. _logs:
+
+``logs``
+==============================================================================
+
+Running ``csu logs`` will display the logs for the running systems.
+The output is for all logs until the time the command was run, therefore
+successive calls may display new logs.
+
+To follow logs as they output, enter ``docker-compose logs --follow``.
+
+.. _shell:
+
+``shell``
+==============================================================================
+
+Running ``csu shell`` opens a bash terminal within the Django container (this
+requires the CS Unplugged system to be running).
+
+This is the equivalent to entering ``docker-compose run django bash``.
+
+.. _clean:
+
+``clean``
+==============================================================================
+
+Running ``csu clean`` deletes 'dangling' Docker images left over from builds,
+which will free up hard drive space.
+
+.. _wipe:
+
+``wipe``
+==============================================================================
+
+Running ``csu wipe`` delete all Docker containers and images on your computer.
+Once this command has be run, a full download and rebuild of images is
+required to run the system (can be triggered by the ``build`` or ``start``
+commands).
 
 -----------------------------------------------------------------------------
 
 You now know the basic commands for using the CS Unplugged system.
-When you pull the project initally or whenever you pull updates from other
-contributors, you should enter all four commands in order.
-
-Once you have entered these commands, and are making changes to content, you
-can leave two terminal windows running, one with ``$ python3 manage.py runserver``
-running and one with ``$ gulp`` running.
-Each time you wish to preview your changes, open a third terminal and run the
-``$ python3 manage.py updatedata`` and refresh the web browser.
-
 You are now ready to tackle the documentation for the area you wish to
 contribute on.
 Head back to the :doc:`documentation homepage <../index>` and choose the documentation related
 to the task you wish to contribute to.
-
-.. _migrate command: https://docs.djangoproject.com/en/dev/ref/django-admin/#migrate:
-.. _runserver command: https://docs.djangoproject.com/en/dev/ref/django-admin/#runserver
-.. _Gulp: http://gulpjs.com/

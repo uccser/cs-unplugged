@@ -14,3 +14,4 @@ The following pages are for those wanting to develop the CS Unplugged system.
     topics
     resources
     dev
+    deployment

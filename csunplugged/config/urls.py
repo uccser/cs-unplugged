@@ -8,6 +8,7 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
+from general import views
 
 urlpatterns = i18n_patterns(
     url(r'', include('general.urls', namespace='general')),
@@ -15,6 +16,10 @@ urlpatterns = i18n_patterns(
     url(r'^resources/', include('resources.urls', namespace='resources')),
     url(r'^admin/', include(admin.site.urls)),
 )
+
+urlpatterns += [
+    url(r'^_ah/health', views.health_check),
+]
 
 if settings.DEBUG:
     import debug_toolbar
