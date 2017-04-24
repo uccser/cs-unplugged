@@ -1,23 +1,26 @@
+"""Custom loader for loading resources."""
+
 from django.db import transaction
 from utils.BaseLoader import BaseLoader
 from resources.models import Resource
 
 
 class ResourcesLoader(BaseLoader):
-    """Loader for resources"""
+    """Custom loader for loading resources."""
 
     def __init__(self, structure_file, BASE_PATH):
-        """Initiates the loader for resources
+        """Create the loader for loading resources.
 
         Args:
-            structure_file: file path (string)
+            structure_file: file path for structure YAML file (string)
+            BASE_PATH: base file path (string)
         """
         super().__init__(BASE_PATH)
         self.structure_file = structure_file
 
     @transaction.atomic
     def load(self):
-        """load the content for resources"""
+        """Load the content for resources."""
         resources = self.load_yaml_file(self.BASE_PATH.format(self.structure_file))
         for (resource_slug, resource_data) in resources.items():
             resource = Resource(

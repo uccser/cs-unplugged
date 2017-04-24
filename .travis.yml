@@ -8,10 +8,12 @@ python:
   - "3.6-dev" # 3.6 development branch
 
 # Install dependencies
-install: pip install flake8
+install: pip install -r requirements/test.txt
 
 # Runs test suite
-script: flake8
+script:
+  - flake8
+  - pydocstyle --verbose --count --explain
 
 # Stop email notifications but post to organisation Slack channel
 notifications:

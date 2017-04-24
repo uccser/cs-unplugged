@@ -1,3 +1,5 @@
+"""Custom loader for loading curriculum areas."""
+
 import os.path
 from django.db import transaction
 from utils.BaseLoader import BaseLoader
@@ -5,13 +7,14 @@ from topics.models import CurriculumArea
 
 
 class CurriculumAreasLoader(BaseLoader):
-    """Loader for curriculum area content"""
+    """Loader for curriculum area content."""
 
     def __init__(self, curriculum_areas_file, BASE_PATH):
-        """Initiates the curriculum area loader
+        """Create the loader for loading curriculum areas.
 
         Args:
-            curriculum_areas_file: file path (string)
+            curriculum_areas_file: File path to YAML file (string)
+            BASE_PATH: Base file path (string).
         """
         super().__init__(BASE_PATH)
         self.curriculum_areas_file = curriculum_areas_file
@@ -19,7 +22,7 @@ class CurriculumAreasLoader(BaseLoader):
 
     @transaction.atomic
     def load(self):
-        """load the content for curriculum areas"""
+        """Load the content for curriculum areas."""
         curriculum_areas_structure = self.load_yaml_file(os.path.join(self.BASE_PATH, self.curriculum_areas_file))
 
         for (curriculum_area_slug, curriculum_area_data) in curriculum_areas_structure.items():

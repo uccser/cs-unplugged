@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-Local settings
+Django settings for local development environment.
 
 - Run in Debug mode
-
-- Use console backend for emails
-
+- Add custom dev application
 - Add Django Debug Toolbar
-- Add django-extensions as app
+- Add django-extensions
+- Use console backend for emails
 """
 
 import socket

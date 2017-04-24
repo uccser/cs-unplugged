@@ -1,3 +1,5 @@
+"""URL routing for the general application."""
+
 from django.conf.urls import url
 
 from . import views
