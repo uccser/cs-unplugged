@@ -8,7 +8,7 @@
 {% endblock breadcrumbs %}
 
 {% block content %}
-  <h1>{{ lesson.name }} Programming Exercises</h1>
+  <h1>{{ lesson.name }} Programming Challenges</h1>
 
   {% if all_programming_exercises %}
     {% for programming_exercise in all_programming_exercises %}
@@ -20,7 +20,7 @@
       </p>
     {% endfor %}
   {% else %}
-    <p>No programming exercises for {{ topic }}.</p>
+    <p>No programming challenges for {{ topic }}.</p>
   {% endif %}
 
 {% endblock content %}
