@@ -15,10 +15,11 @@ class MissingCurriculumArea(Error):
     """Exception raised when no learning objective matches a given key.
     """
 
-    def __init__(self, loader, curriculum_area_name):
+    def __init__(self, filename, curriculum_area_name):
         super().__init__()
-        self.loader = loader
+        self.filename = filename
         self.curriculum_area_name = curriculum_area_name
 
     def __str__(self):
-        return self.base_message + ERROR_MESSAGE_TEMPLATE.format(area=self.curriculum_area_name)
+        base_message = self.base_message.format(filename=self.filename)
+        return base_message + ERROR_MESSAGE_TEMPLATE.format(area=self.curriculum_area_name)

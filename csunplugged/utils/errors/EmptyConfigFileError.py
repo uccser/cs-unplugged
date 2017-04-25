@@ -1,6 +1,6 @@
 from .Error import Error
 
-ERROR_MESSAGE = "A config file cannot be empty.\n"
+ERROR_MESSAGE = "\nA config file cannot be empty.\n"
 
 
 class EmptyConfigFileError(Error):

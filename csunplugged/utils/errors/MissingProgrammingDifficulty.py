@@ -15,10 +15,11 @@ class MissingProgrammingDifficulty(Error):
     """Exception raised when no learning objective matches a given key.
     """
 
-    def __init__(self, loader, programming_difficulty):
+    def __init__(self, filename, programming_difficulty):
         super().__init__()
-        self.loader = loader
+        self.filename = filename
         self.programming_difficulty = programming_difficulty
 
     def __str__(self):
-        return self.base_message + ERROR_MESSAGE_TEMPLATE.format(difficulty=self.programming_difficulty)
+        base_message = self.base_message.format(filename=self.filename)
+        return base_message + ERROR_MESSAGE_TEMPLATE.format(difficulty=self.programming_difficulty)

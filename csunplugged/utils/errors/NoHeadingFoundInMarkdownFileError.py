@@ -1,6 +1,6 @@
 from .Error import Error
 
-ERROR_MESSAGE = "The file does not contain a heading.\n"
+ERROR_MESSAGE = "\nThe file does not contain a heading.\n"
 
 
 class NoHeadingFoundInMarkdownFileError(Error):

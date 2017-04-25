@@ -3,7 +3,6 @@ from .Error import Error
 ERROR_MESSAGE_TEMPLATE = """
 A {model} requires the following fields:
 {fields}
-
 One or more of these fields are missing.
   - Are all the field names spelt correctly?
   - Do all fields have values?

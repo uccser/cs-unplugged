@@ -15,10 +15,11 @@ class MissingLanguageImplementation(Error):
     """Exception raised when no learning objective matches a given key.
     """
 
-    def __init__(self, loader, language):
+    def __init__(self, filename, language):
         super().__init__()
-        self.loader = loader
+        self.filename = filename
         self.language = language
 
     def __str__(self):
-        return self.base_message + ERROR_MESSAGE_TEMPLATE.format(language=self.language)
+        base_message = self.base_message.format(filename=self.filename)
+        return base_message + ERROR_MESSAGE_TEMPLATE.format(language=self.language)
