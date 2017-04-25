@@ -160,6 +160,8 @@ do
       ;;
     static)
       static
+      static_scratch
+      collect_static
       exit
       ;;
     update | -u)
