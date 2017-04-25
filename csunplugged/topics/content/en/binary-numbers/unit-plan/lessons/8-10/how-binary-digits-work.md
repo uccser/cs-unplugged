@@ -148,25 +148,25 @@ There is also an online interactive version of the binary cards [here](http://ww
 
     a. Start with all the numbers switched to on (dots showing).
 
-      {image file-path="http://placehold.it/300x300"}
+      {image file-path="img/topics/lightbulb_series_1.png"}
 
     b. Consider representing the number 10
 
     c. Does 16 fit into 10? No - so turn it off
 
-      {image file-path="http://placehold.it/300x300"}
+      {image file-path="img/topics/lightbulb_series_2.png"}
 
     d. Does 8 fit into 10? Yes - so keep it on. How many are left over? (2)
 
     e. Does 4 fit into 2? No - so turn it off
 
-      {image file-path="http://placehold.it/300x300"}
+      {image file-path="img/topics/lightbulb_series_3.png"}
 
     f. Does 2 fit into 2? Yes - so keep it on. How many are left over? (None)
-  
-    g. So turn off 1. 
 
-      {image file-path="http://placehold.it/300x300"}
+    g. So turn off 1.
+
+      {image file-path="img/topics/lightbulb_series_4.png"}
 
 
 ## Applying What We Have Just Learnt
@@ -175,11 +175,11 @@ There is also an online interactive version of the binary cards [here](http://ww
 - Give each pair a set of the smaller binary cards (either 5 or 6 cards, depending on the range of numbers they are comfortable with)
 - Starting with just 5 cards, have them practise the algorithm (deciding about each card from left to right) for numbers such as 20, 15, and 8.
 
-1. Explain to students that we're working with just two digits, so they are called binary digits. 
+1. Explain to students that we're working with just two digits, so they are called binary digits.
   They are so common that we have a short name for them: write "binary digit" on a piece of paper, then rip off the "bi" at the start, and the "t" at the end, put it together and ask what the combined word ("bit") spells.
   This is the short name for a binary digit, so the 5 cards that they have are actually 5 bits.
 
-2. Now let’s count from the smallest number we can make up to the highest number - 
+2. Now let’s count from the smallest number we can make up to the highest number -
 
     a. What is the smallest number? (they may suggest 1, then realise that it’s 0). 
 
