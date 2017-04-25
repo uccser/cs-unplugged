@@ -16,6 +16,24 @@ class GeneralAboutView(TemplateView):
     template_name = 'general/about.html'
 
 
+class GeneralContactView(TemplateView):
+    """View for the contact page that renders from a template."""
+
+    template_name = 'general/contact.html'
+
+
+class GeneralPeopleView(TemplateView):
+    """View for the people page that renders from a template."""
+
+    template_name = 'general/people.html'
+
+
+class GeneralPrinciplesView(TemplateView):
+    """View for the princples page that renders from a template."""
+
+    template_name = 'general/principles.html'
+
+
 def health_check(request):
     """Return heath check response for Google App Engine.
 
