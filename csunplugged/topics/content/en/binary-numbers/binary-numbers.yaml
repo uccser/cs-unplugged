@@ -1,10 +1,9 @@
 unit-plans:
-  - unit-plan
+  - unit-plan/unit-plan.yaml
 
 icon: 'img/topics/binary-numbers-0-1.png'
 
 other-resources: other-resources.md
 
-misc-structure-files:
-  - programming-exercises
-  - curriculum-integrations
+programming-exercises: programming-exercises/programming-exercises.yaml
+curriculum-integrations: curriculum-integrations/curriculum-integrations.yaml

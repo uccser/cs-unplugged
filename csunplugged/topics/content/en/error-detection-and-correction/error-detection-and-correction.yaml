@@ -1,4 +1,4 @@
 unit-plans:
-  - unit-plan
+    - unit-plan/unit-plan.yaml
 
 other-resources: other-resources.md

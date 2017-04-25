@@ -96,38 +96,32 @@ class TopicLoader(BaseLoader):
 
         self.log("Added Topic: {}".format(topic.name))
 
-        FILE_PATH_TEMPLATE = "{0}/{0}.yaml"
-
-        if "misc-structure-files" in topic_structure:
-            misc_structure_file_paths = topic_structure["misc-structure-files"]
-        else:
-            misc_structure_file_paths = None
-
-        if misc_structure_file_paths is not None:
-            # Load programming exercises
-            if "programming-exercises" in misc_structure_file_paths:
+        # Load programming exercises
+        if "programming-exercises" in topic_structure:
+            programming_exercises_structure_file_path = topic_structure['programming-exercises']
+            if programming_exercises_structure_file_path is not None:
                 ProgrammingExercisesLoader(
                     self.load_log,
-                    FILE_PATH_TEMPLATE.format("programming-exercises"),
+                    programming_exercises_structure_file_path,
                     topic,
                     self.BASE_PATH
                 ).load()
 
         # Load unit plans
-        for unit_plan in unit_plans:
+        for unit_plan_file_path in unit_plans:
             UnitPlanLoader(
                 self.load_log,
-                FILE_PATH_TEMPLATE.format(unit_plan),
+                unit_plan_file_path,
                 topic,
                 self.BASE_PATH
             ).load()
 
-        if misc_structure_file_paths is not None:
-            # Load curriculum integrations
-            if "curriculum-integrations" in misc_structure_file_paths:
+        if "curriculum-integrations" in topic_structure:
+            curriculum_integrations_structure_file_path = topic_structure["curriculum-integrations"]
+            if curriculum_integrations_structure_file_path is not None:
                 CurriculumIntegrationsLoader(
                     self.load_log,
-                    FILE_PATH_TEMPLATE.format("curriculum-integrations"),
+                    curriculum_integrations_structure_file_path,
                     topic,
                     self.BASE_PATH
                 ).load()

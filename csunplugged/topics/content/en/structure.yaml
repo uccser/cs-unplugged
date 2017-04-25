@@ -2,6 +2,5 @@ topics:
   - binary-numbers
   - error-detection-and-correction
 
-misc-structure-files:
-  - programming-exercises-structure
-  - curriculum-areas
+programming-exercises-structure: programming-exercises-structure.yaml
+curriculum-areas: curriculum-areas.yaml

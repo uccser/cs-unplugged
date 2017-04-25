@@ -16,60 +16,59 @@ from ._ProgrammingExercisesStructureLoader import ProgrammingExercisesStructureL
 class Command(BaseCommand):
     """Required command class for the custom Django loadtopics command."""
 
-    help = 'Converts Markdown files listed in structure file and stores'
+    help = "Converts Markdown files listed in structure file and stores"
 
     def handle(self, *args, **options):
         """Automatically called when the loadresources command is given.
-        
+
         Raise:
             MissingRequiredFieldError: when no object can be found with the matching
                 attribute.
         """
         # Get structure and content files
         base_loader = BaseLoader()
-        BASE_PATH = 'topics/content/en/'
+        BASE_PATH = "topics/content/en/"
 
         structure_file_path = os.path.join(
             BASE_PATH,
-            'structure.yaml'
+            "structure.yaml"
         )
 
         structure_file = base_loader.load_yaml_file(structure_file_path)
 
-        # Load content from misc structure files into db
-        if 'misc-structure-files' in structure_file:
-            misc_structure_file_paths = structure_file['misc-structure-files']
-            if misc_structure_file_paths is not None:
-                for item in misc_structure_file_paths:
-                    file = '{}.yaml'.format(item)
+        if "learning-outcomes" in structure_file:
+            learning_outcomes_structure_file_path = structure_file["learning-outcomes"]
+            if learning_outcomes_structure_file_path is not None:
+                LearningOutcomesLoader(
+                    learning_outcomes_structure_file_path,
+                    BASE_PATH
+                ).load()
 
-                    if item == 'learning-outcomes':
-                        LearningOutcomesLoader(
-                            file,
-                            BASE_PATH
-                        ).load()
+        if "curriculum-areas" in structure_file:
+            curriculum_areas_structure_file_path = structure_file["curriculum-areas"]
+            if curriculum_areas_structure_file_path is not None:
+                CurriculumAreasLoader(
+                    curriculum_areas_structure_file_path,
+                    BASE_PATH
+                ).load()
 
-                    if item == 'curriculum-areas':
-                        CurriculumAreasLoader(
-                            file,
-                            BASE_PATH
-                        ).load()
+        if "programming-exercises-structure" in structure_file:
+            programming_exercises_structure_file_path = structure_file["programming-exercises-structure"]
+            if programming_exercises_structure_file_path is not None:
+                ProgrammingExercisesStructureLoader(
+                    programming_exercises_structure_file_path,
+                    BASE_PATH
+                ).load()
 
-                    if item == 'programming-exercises-structure':
-                        ProgrammingExercisesStructureLoader(
-                            file,
-                            BASE_PATH
-                        ).load()
-
-        if structure_file['topics'] is None:
+        if structure_file["topics"] is None:
             raise MissingRequiredFieldError(
                 structure_file_path,
-                ['topics'],
-                'Application Structure'
+                ["topics"],
+                "Application Structure"
             )
 
-        for topic in structure_file['topics']:
-            topic_structure_file = '{0}/{0}.yaml'.format(topic)
+        for topic in structure_file["topics"]:
+            topic_structure_file = "{0}/{0}.yaml".format(topic)
             TopicLoader(
                 topic_structure_file,
                 BASE_PATH
