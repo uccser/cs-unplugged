@@ -22,6 +22,12 @@ class GeneralContactView(TemplateView):
     template_name = 'general/contact.html'
 
 
+class GeneralPeopleView(TemplateView):
+    """View for the people page that renders from a template."""
+
+    template_name = 'general/people.html'
+
+
 class GeneralPrinciplesView(TemplateView):
     """View for the princples page that renders from a template."""
 
