@@ -1,5 +1,16 @@
 from .Error import Error
 
+ERROR_MESSAGE_TEMPLATE = """
+Could not find Curriculum Area: {area}
+
+Options:
+  - Check the curriculum-areas.yaml file for the list of available
+    Curriculum Areas
+  - Check you have included the curriculum_areas.yaml file in
+    structure.yaml
+"""
+
+
 class MissingCurriculumArea(Error):
     """Exception raised when no learning objective matches a given key.
     """
@@ -8,12 +19,6 @@ class MissingCurriculumArea(Error):
         super().__init__()
         self.loader = loader
         self.curriculum_area_name = curriculum_area_name
-        
+
     def __str__(self):
-        return '\n***************ERROR***************\n' + \
-        'Could not find Curriculum Area: {}\n'.format(self.curriculum_area_name) + \
-        'Options:\n' + \
-            '- Check the curriculum_areas.yaml file for the list of available ' + \
-            'Curriculum Areas\n' + \
-            '- Check you have included the curriculum_areas.yaml file in ' + \
-            'structure.yaml'
+        return self.base_message + ERROR_MESSAGE_TEMPLATE.format(area=self.curriculum_area_name)

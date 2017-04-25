@@ -1,5 +1,16 @@
 from .Error import Error
 
+ERROR_MESSAGE_TEMPLATE = """
+Could not find Programming Difficulty: {difficulty}
+
+Options:
+  - Check the programming-exercises-structure.yaml file for the list of
+    available difficulty levels
+  - Check you have included the programming-exercises-structure.yaml
+    file in structure.yaml
+"""
+
+
 class MissingProgrammingDifficulty(Error):
     """Exception raised when no learning objective matches a given key.
     """
@@ -10,11 +21,4 @@ class MissingProgrammingDifficulty(Error):
         self.programming_difficulty = programming_difficulty
 
     def __str__(self):
-        return '\n***************ERROR***************\n' + \
-        'Could not find Programming Difficulty: {}\n'.format(
-            self.programming_difficulty) + \
-        'Options:\n' + \
-            '- Check the programming-exercises-structure.yaml file for the list of ' + \
-            'available difficulty levels\n' + \
-            '- Check you have included the programming-exercises-structure.yaml ' + \
-            'file in structure.yaml'
+        return self.base_message + ERROR_MESSAGE_TEMPLATE.format(difficulty=self.programming_difficulty)
