@@ -132,7 +132,7 @@ Adding Learning Outcomes
 .. image:: ../_static/img/topics_adding_learning_outcomes_flowchart.png
 
 You will now be able to add learning outcomes to lessons and programming
-exercises by referencing the keys you specified in the learning outcomes config
+exercises by referencing the keys you specified in the learning outcomes configuration
 file.
 
 

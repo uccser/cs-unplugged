@@ -19,10 +19,9 @@ class EmptyMarkdownFileError(Error):
         self.md_file_path = md_file_path
 
     def __str__(self):
-        """
-        Override default error string.
+        """Override default error string.
 
-        Return:
-          Error message for empty markdown file.
+        Returns:
+            Error message for empty markdown file.
         """
         return self.base_message.format(filename=self.md_file_path) + ERROR_MESSAGE
