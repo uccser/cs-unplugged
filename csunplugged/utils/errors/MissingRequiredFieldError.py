@@ -22,11 +22,10 @@ class MissingRequiredFieldError(Error):
         self.model = model
 
     def __str__(self):
-        """
-        Override default error string.
+        """Override default error string.
 
-        Return:
-          Error message for missing required field.
+        Returns:
+            Error message for missing required field.
         """
         fields = ""
         for field in self.required_fields:

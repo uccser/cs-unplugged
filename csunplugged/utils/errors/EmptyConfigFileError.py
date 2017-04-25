@@ -14,10 +14,9 @@ class EmptyConfigFileError(Error):
         self.yaml_file_path = yaml_file_path
 
     def __str__(self):
-        """
-        Override default error string.
+        """Override default error string.
 
-        Return:
-          Error message for empty config file.
+        Returns:
+            Error message for empty config file.
         """
         return self.base_message.format(filename=self.yaml_file_path) + ERROR_MESSAGE

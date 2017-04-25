@@ -18,8 +18,8 @@ class CouldNotFindMarkdownFileError(Error):
         """
         Override default error string.
 
-        Return:
-          Error message for missing markdown file.
+        Returns:
+            Error message for missing markdown file.
         """
         base_message = self.base_message.format(filename=self.md_file_path)
         reference = self.reference_message.format(reference=self.config_file_path)

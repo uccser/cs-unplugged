@@ -1,6 +1,6 @@
 # Codes for Letters Using Binary Representation
 
-# Learning Outcomes
+## Learning Outcomes
 
 Students will be able to: 
 

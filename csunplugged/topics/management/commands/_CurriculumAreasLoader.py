@@ -17,7 +17,7 @@ class CurriculumAreasLoader(BaseLoader):
         """Create the loader for loading curriculum areas.
 
         Args:
-            curriculum_areas_file: File path to YAML file (string)
+            structure_file_path: File path to YAML file (string)
             BASE_PATH: Base file path (string).
         """
         super().__init__(BASE_PATH)

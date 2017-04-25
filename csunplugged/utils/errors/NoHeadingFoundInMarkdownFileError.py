@@ -14,10 +14,9 @@ class NoHeadingFoundInMarkdownFileError(Error):
         self.md_file_path = md_file_path
 
     def __str__(self):
-        """
-        Override default error string.
+        """Override default error string.
 
-        Return:
-          Error message for missing heading.
+        Returns:
+            Error message for missing heading.
         """
         return self.base_message.format(filename=self.md_file_path) + ERROR_MESSAGE

@@ -18,8 +18,8 @@ class CouldNotFindImageError(Error):
         """
         Override default error string.
 
-        Return:
-          Error message for missing image file.
+        Returns:
+            Error message for missing image file.
         """
         base_message = self.base_message.format(filename=self.image_path)
         reference = self.reference_message.format(reference=self.reference_file_path)

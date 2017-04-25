@@ -17,8 +17,8 @@ class CouldNotFindConfigFileError(Error):
         """
         Override default error string.
 
-        Return:
-          Error message for missing config file.
+        Returns:
+            Error message for missing config file.
         """
         base_message = self.base_message.format(filename=self.config_file_path)
         return base_message + ERROR_MESSAGE + self.missing_file_suggestions

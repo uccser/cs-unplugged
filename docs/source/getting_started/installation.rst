@@ -252,6 +252,11 @@ you're all set to contribute to the CS Unplugged project.
 .. _SourceTree: https://www.sourcetreeapp.com/
 .. _GitHub website: https://github.com/
 .. _SSH keys: https://help.github.com/articles/connecting-to-github-with-ssh/
+.. _Setting your username in Git: https://help.github.com/articles/setting-your-username-in-git/
+.. _Setting your email in Git: https://help.github.com/articles/setting-your-email-in-git/
+.. _keep your email address private on GitHub: https://help.github.com/articles/keeping-your-email-address-private/
+.. _Docker: https://www.docker.com/
+.. _Docker Store: https://store.docker.com/search?type=edition&offering=community
 .. _Verto documentation: http://verto.readthedocs.io/en/latest/install.html
 .. _Atom: https://atom.io/
 .. _Sublime Text: https://www.sublimetext.com/

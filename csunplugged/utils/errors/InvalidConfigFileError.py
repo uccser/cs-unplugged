@@ -24,7 +24,7 @@ class InvalidConfigFileError(Error):
         """
         Override default error string.
 
-        Return:
-          Error message for invalid config file.
+        Returns:
+            Error message for invalid config file.
         """
         return self.base_message.format(filename=self.yaml_file_path) + ERROR_MESSAGE

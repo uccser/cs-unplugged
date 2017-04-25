@@ -52,17 +52,16 @@ class BaseLoader():
         ]
         self.converter = Verto(html_templates=templates, extensions=extensions)
         custom_processors = self.converter.processor_defaults()
-        custom_processors.add("video")
         custom_processors.add("remove-title")
         self.converter.update_processors(custom_processors)
 
     def convert_md_file(self, md_file_path, config_file_path, heading_required=True):
-        """Return sthe Verto object for a given Markdown file.
+        """Return the Verto object for a given Markdown file.
 
         Args:
-            md_file_path: location of md file to convert
+            md_file_path: location of Markdown file to convert
 
-        Return:
+        Returns:
             VertoResult object
 
         Raises:
@@ -108,7 +107,7 @@ class BaseLoader():
         Args:
             file_path: location of yaml file to read
 
-        Return:
+        Returns:
             Either list or string, depending on structure of given yaml file
 
         Raises:
@@ -137,8 +136,8 @@ class BaseLoader():
     def load_template_files(self):
         """Load custom HTML templates for converter.
 
-        Return:
-           templates: dictionary of html templates
+        Returns:
+            templates: dictionary of html templates
         """
         templates = dict()
         template_path = os.path.join(

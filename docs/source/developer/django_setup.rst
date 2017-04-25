@@ -49,15 +49,13 @@ To populate the database with content we have written a series of custom loaders
 The loaders for an application are found in the ``management/commands/`` directory, and
 there is approximately one loader for each configuration file.
 
-Besides just populate fields in the database, a loader is also responsible for checking
-that it's corresponding config file contains all the required fields, markdown files are
+Besides populating fields in the database, a loader is also responsible for checking
+that its corresponding config file contains all the required fields, Markdown files are
 not empty, and icons can be found. If any of these conditions are not met, then an error
 is thrown.
 
 Errors are defined in ``utils/errors/`` and should aim to be as descriptive and useful
-as possible as they will most often be read by an author and not necessarily a python
+as possible as they will most often be read by an author and not necessarily a Python
 developer.
 
 .. _Two Scoops of Django - Best Practices for Django 1.8: https://www.twoscoopspress.com/products/two-scoops-of-django-1-8
-
-
