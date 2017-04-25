@@ -13,7 +13,7 @@ from topics.models import LearningOutcome
 class LearningOutcomesLoader(BaseLoader):
     """Custom loader for loading learning outcomes."""
 
-    def __init__(self, learning_outcomes_file, BASE_PATH):
+    def __init__(self, structure_file_path, BASE_PATH):
         """Create the loader for loading programming exercises.
 
         Args:
