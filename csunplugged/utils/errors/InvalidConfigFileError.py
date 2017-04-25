@@ -21,8 +21,7 @@ class InvalidConfigFileError(Error):
         self.yaml_file_path = yaml_file_path
 
     def __str__(self):
-        """
-        Override default error string.
+        """Override default error string.
 
         Returns:
             Error message for invalid config file.

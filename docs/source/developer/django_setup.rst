@@ -50,7 +50,7 @@ The loaders for an application are found in the ``management/commands/`` directo
 there is approximately one loader for each configuration file.
 
 Besides populating fields in the database, a loader is also responsible for checking
-that its corresponding config file contains all the required fields, Markdown files are
+that its corresponding configuration file contains all the required fields, Markdown files are
 not empty, and icons can be found. If any of these conditions are not met, then an error
 is thrown.
 
