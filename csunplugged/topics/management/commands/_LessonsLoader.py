@@ -36,7 +36,7 @@ class LessonsLoader(BaseLoader):
         self.unit_plan = unit_plan
 
     def load(self):
-        """Load the content for a single lesson
+        """Load the content for a single lesson.
 
         Raises:
             MissingRequiredFieldError:

@@ -1,3 +1,5 @@
+"""Custom error for empty markdown file."""
+
 from .Error import Error
 
 ERROR_MESSAGE = """
@@ -9,14 +11,18 @@ also considered to be empty.
 
 
 class EmptyMarkdownFileError(Error):
-    '''Raised when there is no content (excluding title) in a Markdown File
-    '''
+    """Custom error for empty markdown file."""
 
     def __init__(self, md_file_path):
-        '''
-        '''
+        """Create the error for empty markdown file."""
         super().__init__()
         self.md_file_path = md_file_path
 
     def __str__(self):
+        """
+        Override default error string.
+
+        Return:
+          Error message for empty markdown file.
+        """
         return self.base_message.format(filename=self.md_file_path) + ERROR_MESSAGE

@@ -33,7 +33,7 @@ class ProgrammingExercisesLoader(BaseLoader):
         self.topic = topic
 
     def load(self):
-        """Load the content for programming exercises
+        """Load the content for programming exercises.
 
         Raises:
             MissingRequiredFieldError:

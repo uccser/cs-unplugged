@@ -28,7 +28,7 @@ class CurriculumIntegrationsLoader(BaseLoader):
         self.topic = topic
 
     def load(self):
-        """Load the content for curriculum integrations
+        """Load the content for curriculum integrations.
 
         Raises:
             KeyNotFoundError:

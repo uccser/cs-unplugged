@@ -1,3 +1,5 @@
+"""Custom error for unknown key."""
+
 from .Error import Error
 
 ERROR_MESSAGE_TEMPLATE = """
@@ -11,16 +13,22 @@ Options:
 
 
 class KeyNotFoundError(Error):
-    '''Raised when configuration file specifies a key that does not exist.
-    '''
+    """Custom error for unknown key."""
 
     def __init__(self, config_file_path, key, field):
+        """Create the error for unknown key."""
         super().__init__()
         self.config_file_path = config_file_path
         self.key = key
         self.field = field
 
     def __str__(self):
+        """
+        Override default error string.
+
+        Return:
+          Error message for unknown key.
+        """
         base_message = self.base_message.format(filename=self.config_file_path)
         error_message = ERROR_MESSAGE_TEMPLATE.format(key=self.key, field=self.field)
         return base_message + error_message

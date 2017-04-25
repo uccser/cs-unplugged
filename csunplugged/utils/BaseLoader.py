@@ -57,12 +57,12 @@ class BaseLoader():
         self.converter.update_processors(custom_processors)
 
     def convert_md_file(self, md_file_path, config_file_path, heading_required=True):
-        """Returns the Verto object for a given Markdown file
+        """Return sthe Verto object for a given Markdown file.
 
         Args:
             md_file_path: location of md file to convert
 
-        Returns:
+        Return:
             VertoResult object
 
         Raises:
@@ -106,7 +106,7 @@ class BaseLoader():
         Args:
             file_path: location of yaml file to read
 
-        Returns:
+        Return:
             Either list or string, depending on structure of given yaml file
 
         Raises:
@@ -135,7 +135,7 @@ class BaseLoader():
     def load_template_files(self):
         """Load custom HTML templates for converter.
 
-        Returns:
+        Return:
            templates: dictionary of html templates
         """
         templates = dict()

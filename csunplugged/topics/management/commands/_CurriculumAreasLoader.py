@@ -26,7 +26,7 @@ class CurriculumAreasLoader(BaseLoader):
 
     @transaction.atomic
     def load(self):
-        """Load the content for curriculum areas
+        """Load the content for curriculum areas.
 
         Raises:
             MissingRequiredFieldError:
@@ -69,10 +69,10 @@ class CurriculumAreasLoader(BaseLoader):
                 children_curriculum_areas = curriculum_area_data["children"]
                 if children_curriculum_areas is None:
                     raise MissingRequiredFieldError(
-                            self.structure_file_path,
-                            ["name"],
-                            "Child Curriculum Area"
-                        )
+                        self.structure_file_path,
+                        ["name"],
+                        "Child Curriculum Area"
+                    )
                 for (child_slug, child_data) in children_curriculum_areas.items():
                     if child_data is None:
                         raise MissingRequiredFieldError(
