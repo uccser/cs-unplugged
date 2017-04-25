@@ -34,8 +34,9 @@ class TopicLoader(BaseLoader):
     def load(self):
         """Load the content for a topic.
 
-        Raises:
-            MissingRequiredFieldError
+        Raise:
+            MissingRequiredFieldError: when no object can be found with the matching
+                attribute.
         """
         topic_structure = self.load_yaml_file(self.structure_file_path)
 

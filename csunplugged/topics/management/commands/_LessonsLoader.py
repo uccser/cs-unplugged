@@ -39,8 +39,9 @@ class LessonsLoader(BaseLoader):
         """Load the content for a single lesson.
 
         Raises:
-            MissingRequiredFieldError:
-            KeyNotFoundError:
+            KeyNotFoundError: when no object can be found with the matching attribute.
+            MissingRequiredFieldError: when a value for a required model field cannot be
+                found in the config file.
         """
         for (lesson_slug, lesson_structure) in self.lessons_structure.items():
 

@@ -18,16 +18,18 @@ class ResourcesLoader(BaseLoader):
         Args:
             structure_file: file path for structure YAML file (string)
             BASE_PATH: base file path (string)
-
-        Raises:
-            MissingRequiredFieldError:
         """
         super().__init__(BASE_PATH)
         self.structure_file = structure_file
 
     @transaction.atomic
     def load(self):
-        """Load the content for resources."""
+        """Load the content for resources.
+
+        Raise:
+            MissingRequiredFieldError: when no object can be found with the matching
+                attribute.
+        """
         resources_structure = self.load_yaml_file(
             self.BASE_PATH.format(
                 self.structure_file

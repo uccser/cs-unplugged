@@ -26,7 +26,12 @@ class LearningOutcomesLoader(BaseLoader):
 
     @transaction.atomic
     def load(self):
-        """Load the content for learning outcomes."""
+        """Load the content for learning outcomes.
+
+        Raise:
+            MissingRequiredFieldError: when no object can be found with the matching
+                attribute.
+        """
         learning_outcomes = self.load_yaml_file(
             os.path.join(
                 self.BASE_PATH,

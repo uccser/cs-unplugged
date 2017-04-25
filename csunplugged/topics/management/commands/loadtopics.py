@@ -19,7 +19,12 @@ class Command(BaseCommand):
     help = 'Converts Markdown files listed in structure file and stores'
 
     def handle(self, *args, **options):
-        """Automatically called when the loadresources command is given."""
+        """Automatically called when the loadresources command is given.
+        
+        Raise:
+            MissingRequiredFieldError: when no object can be found with the matching
+                attribute.
+        """
         # Get structure and content files
         base_loader = BaseLoader()
         BASE_PATH = 'topics/content/en/'

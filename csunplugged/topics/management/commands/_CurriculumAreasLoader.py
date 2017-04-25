@@ -28,8 +28,9 @@ class CurriculumAreasLoader(BaseLoader):
     def load(self):
         """Load the content for curriculum areas.
 
-        Raises:
-            MissingRequiredFieldError:
+        Raise:
+            MissingRequiredFieldError: when no object can be found with the matching
+                attribute.
         """
         curriculum_areas_structure = self.load_yaml_file(
             os.path.join(

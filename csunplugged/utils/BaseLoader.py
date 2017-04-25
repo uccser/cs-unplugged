@@ -66,9 +66,11 @@ class BaseLoader():
             VertoResult object
 
         Raises:
-            CouldNotFindMarkdownFileError:
-            NoHeadingFoundInMarkdownFileError:
-            EmptyMarkdownFileError:
+            CouldNotFindMarkdownFileError: when a given Markdown file cannot be found.
+            NoHeadingFoundInMarkdownFileError: when no heading can be found in a given
+                Markdown file.
+            EmptyMarkdownFileError: when no content can be found in a given Markdown
+                file.
         """
         try:
             # check file exists
@@ -110,9 +112,9 @@ class BaseLoader():
             Either list or string, depending on structure of given yaml file
 
         Raises:
-            CouldNotFindConfigFileError
-            InvalidConfigFileError
-            EmptyConfigFileError
+            CouldNotFindConfigFileError: when a given config file cannot be found.
+            InvalidConfigFileError: when a given config file is incorrectly formatted.
+            EmptyConfigFileError: when a give config file is empty.
         """
         try:
             yaml_file = open(yaml_file_path, encoding="UTF-8").read()
@@ -154,7 +156,8 @@ class BaseLoader():
     def load(self):
         """Abstract method to be implemented by subclasses.
 
-        Raises:
-            NotImplementedError:
+        Raise:
+            NotImplementedError: when a user attempts to run the load() method of the 
+                BaseLoader class.
         """
         raise NotImplementedError("Subclass does not implement this method")

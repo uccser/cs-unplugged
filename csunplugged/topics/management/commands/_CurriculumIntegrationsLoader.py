@@ -30,9 +30,10 @@ class CurriculumIntegrationsLoader(BaseLoader):
     def load(self):
         """Load the content for curriculum integrations.
 
-        Raises:
-            KeyNotFoundError:
-            MissingRequiredFieldError:
+        Raise:
+            KeyNotFoundError: when no object can be found with the matching attribute.
+            MissingRequiredFieldError: when a value for a required model field cannot be
+                found in the config file.
         """
         structure = self.load_yaml_file(self.structure_file_path)
 

@@ -35,10 +35,10 @@ class ProgrammingExercisesLoader(BaseLoader):
     def load(self):
         """Load the content for programming exercises.
 
-        Raises:
-            MissingRequiredFieldError:
-            CouldNotFindMarkdownFileError:
-            KeyNotFoundError:
+        Raise:
+            KeyNotFoundError: when no object can be found with the matching attribute.
+            MissingRequiredFieldError: when no object can be found with the matching
+                attribute.
         """
         programming_exercises_structure = self.load_yaml_file(self.structure_file_path)
 

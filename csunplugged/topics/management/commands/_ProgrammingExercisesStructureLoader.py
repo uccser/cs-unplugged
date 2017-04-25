@@ -29,7 +29,8 @@ class ProgrammingExercisesStructureLoader(BaseLoader):
         """Load the content for structure of programming exercises.
 
         Raises:
-            MissingRequiredFieldError:
+            MissingRequiredFieldError: when no object can be found with the matching
+                attribute.
         """
         structure = self.load_yaml_file(
             os.path.join(

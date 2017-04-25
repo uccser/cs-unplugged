@@ -29,8 +29,9 @@ class UnitPlanLoader(BaseLoader):
     def load(self):
         """Load the content for unit plans.
 
-        Raises:
-            MissingRequiredFieldError:
+        Raise:
+            MissingRequiredFieldError: when no object can be found with the matching
+                attribute.
         """
         unit_plan_structure = self.load_yaml_file(self.structure_file_path)
 

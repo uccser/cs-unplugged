@@ -40,7 +40,7 @@ def find_image_files(images, md_file_path):
         images (set): image file names
 
     Raises:
-        CouldNotFindImageError: when image file cannot be found
+        CouldNotFindImageError: when image file cannot be found.
     """
     for image in images:
         if not finders.find(image):
