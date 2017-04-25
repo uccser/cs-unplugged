@@ -24,7 +24,7 @@ diagram.
 
     - A **unit plan** must contain at least one **lesson**.
 
-      - A **lesson** can contain **learning outcomes**, **curriculum areas** and **generated
+      - A **lesson** can contain **learning outcomes**, **curriculum areas**, and **generated
         resources**.
 
   - A **topic** can also contain **curriculum integrations**, which can also contain
@@ -32,10 +32,10 @@ diagram.
 
   - A **topic** can also contain **programming exercises**.
 
-    - A **programming exercise** can use different **programming languages** and be set at
+    - A **programming exercise** can use different **programming languages**, and be set at
       a specific **difficulty**.
 
-- **Learning outcomes**, **curriculum areas**, **programming languages** and
+- **Learning outcomes**, **curriculum areas**, **programming languages**, and
   **difficulties** are defined at a language level, so can be used by all topic content
   of that language.
 
@@ -118,7 +118,7 @@ Adding a Lesson
 
 .. note::
   
-  If the lesson includes programming exercises, curriculum areas and/or
+  If the lesson includes programming exercises, curriculum areas, and/or
   learning outcomes, then the corresponding configuration and content files
   will also need to be added.
 
@@ -162,7 +162,7 @@ keys you specified in the programming exercises configuration file.
 
 .. note::
 
-  If the exercise includes learning outcomes, then the corresponding config
+  If the exercise includes learning outcomes, then the corresponding configuration
   file will also need to be added or updated to include new learning outcomes.
 
 .. note::
@@ -188,7 +188,7 @@ keys you specified in the programming exercises configuration file.
   - Both the directory and file name for the exercise must match the key you chose
     for the exercise in ``programming-exercises.yaml``
   
-  - The expected, hints and solution files must be prefixed with the key for
+  - The expected, hints, and solution files must be prefixed with the key for
     the programming language they are written in.
 
   For example, a programming exercise with key ``count-to-16`` implemented in
