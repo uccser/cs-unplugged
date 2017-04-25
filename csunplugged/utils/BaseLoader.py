@@ -156,7 +156,7 @@ class BaseLoader():
         """Abstract method to be implemented by subclasses.
 
         Raise:
-            NotImplementedError: when a user attempts to run the load() method of the 
+            NotImplementedError: when a user attempts to run the load() method of the
                 BaseLoader class.
         """
         raise NotImplementedError("Subclass does not implement this method")
