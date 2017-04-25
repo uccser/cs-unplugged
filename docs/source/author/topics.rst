@@ -33,10 +33,11 @@ diagram.
   - A **topic** can also contain **programming exercises**.
 
     - A **programming exercise** can use different **programming languages** and be set at
-      different **difficulties**.
+      a specific **difficulty**.
 
 - **Learning outcomes**, **curriculum areas**, **programming languages** and
-  **difficulties** are defined at a language level, so can be used by all topic content.
+  **difficulties** are defined at a language level, so can be used by all topic content
+  of that language.
 
 This is just a broad overview of the topics application.
 
@@ -145,7 +146,7 @@ Adding Curriculum Areas
 
 You will now be able to add curriculum areas to lessons and curriculum
 integrations by referencing the keys you specified in the curriculum areas
-config file.
+configuration file.
 
 
 .. _adding-topics-content-programming-exercises:
@@ -157,12 +158,12 @@ Adding a Programming Exercise
 .. image:: ../_static/img/topics_adding_programming_exercises_flowchart.png
 
 You will now be able to add programming exercises to lessons by referencing the
-keys you specified in the programming exercises config file.
+keys you specified in the programming exercises configuration file.
 
 .. note::
 
   If the exercise includes learning outcomes, then the corresponding config
-  file will also need to be added.
+  file will also need to be added or updated to include new learning outcomes.
 
 .. note::
 
@@ -171,12 +172,12 @@ keys you specified in the programming exercises config file.
     1. The exercise description
     2. The expected output
     3. Hints (optional)
-    4. An example solution
+    4. Example solution(s)
 
   Additonally, 2-4 from the list above, can be given in multiple programming
   languages. Therefore, the languages you have chosen must be specified in the
-  ``programming-exercises.yaml`` config file, as well as the
-  ``programming-exercises-structure.yaml`` config file.
+  ``programming-exercises.yaml`` configuration file, as well as the
+  ``programming-exercises-structure.yaml`` configuration file.
 
 .. note::
 
@@ -214,7 +215,7 @@ Adding a Curriculum Integration
 .. note ::
 
   If the integration includes curriculum areas and/or prerequisite lessons,
-  then the corresponding config and content files will also need to be added.
+  then the corresponding configuration and content files will also need to be added.
 
 
 Configuration Files
@@ -362,8 +363,9 @@ Unit Plan Configuration File
         - ``max-age:`` The suggested maximum age group to teach this lesson to.
 
         - ``number:`` The number order for this lesson.
-          Lessons are sorted by minimum age, maximum age, then number so lessons in
-          different age ranges can use the same number without conflict.
+          Lessons are grouped by their minimum age and maximum age, then ordered by
+          number so lessons in different age groups can use the same number without
+          conflict.
 
       - **Optional Fields:**
 
@@ -433,8 +435,8 @@ Learning Outcomes Configuration File
 - **Required Fields:**
 
   - ``<key> : <value>`` Key value pairs. The key will be used in other configuration
-    files to reference this particluar learning objective. The value is the learning
-    objective text that will be displayed to the user).
+    files to reference this particluar learning outcome. The value is the learning
+    outcome text that will be displayed to the user).
 
 A complete learning outcome structure file may look like the following:
 
@@ -471,7 +473,7 @@ Curriculum Areas Configuration File
 
     - **Optional Fields:**
 
-      - ``children:`` A list of sub-curriculm areas (see example file below). Each child
+      - ``children:`` A list of sub-curriculum areas (see example file below). Each child
         requires a name field.
 
 An example curriculum areas file with multiple curriculums may look like
@@ -502,7 +504,7 @@ the following:
 
   When including a curriculum area in another configuration file, adding a child
   curriculum area will automatically add the parent curriculum area, you do not need to
-  specify this manually. For example, adding "geometry" means that "maths" is
+  specify this manually. For example, adding ``geometry`` means that ``maths`` is
   automatically included.
 
 
@@ -580,7 +582,7 @@ Programming Exercises Configuration File
 
 - **Referenced In:** ``topics/content/<language>/<topic-name>/<topic-name>.yaml``
 
-- **Purpose:** This file defines the programming exercises (their respective attributes)
+- **Purpose:** This file defines the programming exercises (and their respective attributes)
   for a particular topic.
 
 - **Required Fields:**
@@ -658,7 +660,7 @@ Curriculum Integrations Configuration File
     - **Optional Fields:**
 
       - ``prerequisite-lessons:`` A list of unit plan keys containing lessons that are
-        expected to be completed before attemping this activity.
+        expected to be completed before attempting this activity.
 
         - **Required Fields:**
 
