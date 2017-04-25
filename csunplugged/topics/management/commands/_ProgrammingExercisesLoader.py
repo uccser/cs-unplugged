@@ -4,7 +4,6 @@ import os.path
 from utils.BaseLoader import BaseLoader
 
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
-from utils.errors.NoHeadingFoundInMarkdownFileError import NoHeadingFoundInMarkdownFileError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 
@@ -69,14 +68,6 @@ class ProgrammingExercisesLoader(BaseLoader):
             # Build the path to the programming exercise"s folder
             file_path = os.path.join(
                 self.BASE_PATH,
-=======
-        """Load the content for programming exercises."""
-        programming_exercises_structure = self.load_yaml_file(self.structure_file)
-
-        for exercise_slug, exercise_structure in programming_exercises_structure.items():
-            ProgrammingExerciseLoader(
-                self.load_log,
->>>>>>> develop
                 exercise_slug,
                 "{}.md"
             )
@@ -127,7 +118,7 @@ class ProgrammingExercisesLoader(BaseLoader):
                         self.structure_file_path,
                         language,
                         "Programming Exercise Language"
-                        )
+                    )
 
                 expected_result_content = self.convert_md_file(
                     file_path.format(
