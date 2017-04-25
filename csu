@@ -34,6 +34,7 @@ function helpmenu {
   printf "                update command)\n"
   printf "   static       Build static files\n"
   printf "   update       Run Django migrate and updatedata commands\n"
+  printf "                and build static files\n"
   printf "   wipe         Deletes all Docker containers and images\n"
 }
 
@@ -48,10 +49,8 @@ function start {
   done
   # Run helper functions
   update
-  static
   # Alert user that system is ready
   printf "${GREEN}Systems are ready!${NC}\n"
-  echo "Open your preferred web browser to the URL 'localhost'"
 }
 
 # Stop development environment
@@ -62,11 +61,16 @@ function end {
 
 # Run Django migrate and updatedata commands
 function update {
+  static
+
   echo "Apply database migrations..."
   docker-compose run django /docker_venv/bin/python3 manage.py migrate
 
   echo "Loading topics content..."
   docker-compose run django /docker_venv/bin/python3 manage.py updatedata
+
+  static_scratch
+  collect_static
 }
 
 # Build Docker images
@@ -79,6 +83,17 @@ function build {
 function static {
   echo "Building static files..."
   docker-compose run nginx gulp build
+}
+
+# Build scratch static files
+function static_scratch {
+  echo "Building scratch images..."
+  docker-compose run nginx gulp scratch
+}
+
+# Collecting static files
+function collect_static {
+  echo "Collecting static files..."
   docker-compose run django /docker_venv/bin/python3 manage.py collectstatic --no-input
 }
 
@@ -140,10 +155,13 @@ do
       ;;
     start | -s)
       start
+      echo "Open your preferred web browser to the URL 'localhost'"
       exit
       ;;
     static)
       static
+      static_scratch
+      collect_static
       exit
       ;;
     update | -u)
