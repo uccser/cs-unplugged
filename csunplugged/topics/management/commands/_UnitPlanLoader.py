@@ -1,3 +1,5 @@
+"""Custom loader for loading unit plans."""
+
 import os.path
 from utils.BaseLoader import BaseLoader
 
@@ -7,15 +9,17 @@ from ._LessonsLoader import LessonsLoader
 
 
 class UnitPlanLoader(BaseLoader):
-    '''Loader for unit plans'''
+    """Custom loader for loading unit plans."""
 
     def __init__(self, load_log, structure_file_path, topic, BASE_PATH):
-        '''Initiates the loader for unit plans
+        """Create the loader for loading unit plans.
 
         Args:
-            structure_file_path: file path (string)
-            topic: Topic model object
-        '''
+            load_log: List of log messages (list).
+            structure_file_path: File path for structure YAML file (string).
+            topic: Object of related topic model.
+            BASE_PATH: Base file path (string).
+        """
         super().__init__(BASE_PATH, load_log)
         self.unit_plan_slug = os.path.split(structure_file_path)[0]
         self.structure_file_path = os.path.join(self.BASE_PATH, structure_file_path)
@@ -23,11 +27,11 @@ class UnitPlanLoader(BaseLoader):
         self.topic = topic
 
     def load(self):
-        '''Load the content for unit plans
+        """Load the content for unit plans.
 
         Raises:
             MissingRequiredFieldError:
-        '''
+        """
         unit_plan_structure = self.load_yaml_file(self.structure_file_path)
 
         # Convert the content to HTML
@@ -44,7 +48,7 @@ class UnitPlanLoader(BaseLoader):
             name=unit_plan_content.title,
             content=unit_plan_content.html_string,
         )
-        unit_plan.save()  # TODO shouldn't have to save? create does this?
+        unit_plan.save()
 
         self.log('Added Unit Plan: {}'.format(unit_plan.name), 1)
 

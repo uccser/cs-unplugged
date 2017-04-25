@@ -1,3 +1,5 @@
+"""Custom loader for loading curriculum integrations."""
+
 import os.path
 
 from utils.BaseLoader import BaseLoader
@@ -9,30 +11,29 @@ from topics.models import CurriculumArea, Lesson
 
 
 class CurriculumIntegrationsLoader(BaseLoader):
-    '''Loader for curriculum integrations'''
+    """Custom loader for loading curriculum integrations."""
 
     def __init__(self, load_log, structure_file_path, topic, BASE_PATH):
-        '''Initiates the loader for curriculum integrations
+        """Create the loader for loading curriculum integrations.
 
         Args:
-            structure_file_path: file path (string)
-            topic: Topic model object
-        '''
+            load_log: List of log messages (list).
+            structure_file_path: File path for structure YAML file (string).
+            topic: Object of related topic model.
+            BASE_PATH: Base file path (string).
+        """
         super().__init__(BASE_PATH, load_log)
         self.structure_file_path = os.path.join(self.BASE_PATH, structure_file_path)
         self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(structure_file_path)[0])
         self.topic = topic
 
     def load(self):
-        '''Load the content for curriculum integrations
+        """Load the content for curriculum integrations
 
         Raises:
-            CouldNotFindMarkdownFileError:
-            MarkdownFileMissingTitleError:
-            EmptyMarkdownFileError:
             KeyNotFoundError:
             MissingRequiredFieldError:
-        '''
+        """
         structure = self.load_yaml_file(self.structure_file_path)
 
         for (integration_slug, integration_data) in structure.items():
@@ -40,23 +41,23 @@ class CurriculumIntegrationsLoader(BaseLoader):
             if integration_data is None:
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
-                    ['number', 'curriculum-areas'],
-                    'Curriculum Integration'
+                    ["number", "curriculum-areas"],
+                    "Curriculum Integration"
                 )
 
-            integration_number = integration_data.get('number', None)
-            integration_curriculum_areas = integration_data.get('curriculum-areas', None)
+            integration_number = integration_data.get("number", None)
+            integration_curriculum_areas = integration_data.get("curriculum-areas", None)
             if None in [integration_number, integration_curriculum_areas]:
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
-                    ['number', 'curriculum-areas'],
-                    'Curriculum Integration'
+                    ["number", "curriculum-areas"],
+                    "Curriculum Integration"
                 )
 
             integration_content = self.convert_md_file(
                 os.path.join(
                     self.BASE_PATH,
-                    '{}.md'.format(integration_slug)
+                    "{}.md".format(integration_slug)
                 ),
                 self.structure_file_path
             )
@@ -80,19 +81,19 @@ class CurriculumIntegrationsLoader(BaseLoader):
                     raise KeyNotFoundError(
                         self.structure_file_path,
                         curriculum_area_slug,
-                        'Curriculum Areas'
+                        "Curriculum Areas"
                     )
 
             # Add prerequisite lessons
-            if 'prerequisite-lessons' in integration_data:
-                prerequisite_lessons = integration_data['prerequisite-lessons']
+            if "prerequisite-lessons" in integration_data:
+                prerequisite_lessons = integration_data["prerequisite-lessons"]
                 if prerequisite_lessons is not None:
                     for (unit_plan_slug, lessons) in prerequisite_lessons.items():
                         if lessons is None:
                             raise MissingRequiredFieldError(
                                 self.structure_file_path,
-                                ['unit-plan'],
-                                'Prerequisite Lesson'
+                                ["unit-plan"],
+                                "Prerequisite Lesson"
                             )
                         for lesson_slug in lessons:
                             try:
@@ -105,11 +106,11 @@ class CurriculumIntegrationsLoader(BaseLoader):
                             except:
                                 raise KeyNotFoundError(
                                     self.structure_file_path,
-                                    '{} and/or {}'.format(
+                                    "{} and/or {}".format(
                                         lesson_slug,
                                         unit_plan_slug,
                                     ),
-                                    'Lessons'
+                                    "Lessons"
                                 )
 
-            self.log('Added Curriculum Integration: {}'.format(integration.name), 1)
+            self.log("Added Curriculum Integration: {}".format(integration.name), 1)

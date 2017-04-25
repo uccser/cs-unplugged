@@ -2,7 +2,7 @@ Writing Guide
 ##############################################################################
 
 The majority of our text content is written in Markdown, and we also developed
-a program called Verto to allow you to include HTML elements like images and
+a program called `Verto`_ to allow you to include HTML elements like images and
 videos with simple text tags.
 
 For example, the following text:
@@ -433,6 +433,7 @@ Video (Verto feature)
 
 ------------------------------------------------------------------------------
 
+.. _Verto: http://verto.readthedocs.io/en/latest/
 .. _submit a bug report: https://github.com/uccser/cs-unplugged/issues/new
 .. _Click here to read the documentation on how to box text: http://verto.readthedocs.io/en/latest/processors/boxed-text.html
 .. _list of language codes: https://haisum.github.io/2014/11/07/jekyll-pygments-supported-highlighters/

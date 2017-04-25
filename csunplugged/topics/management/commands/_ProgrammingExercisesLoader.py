@@ -1,3 +1,5 @@
+"""Custom loader for loading programming exercises."""
+
 import os.path
 from utils.BaseLoader import BaseLoader
 
@@ -15,30 +17,30 @@ from topics.models import (
 
 
 class ProgrammingExercisesLoader(BaseLoader):
-    '''Loader for programming exercises'''
+    """Custom loader for loading programming exercises."""
 
     def __init__(self, load_log, structure_file_path, topic, BASE_PATH):
-        '''Initiates the loader for programming exercises
+        """Create the loader for loading programming exercises.
 
         Args:
-            structure_file_path: file path (string)
-            topic: Topic model object
-        '''
+            load_log: List of log messages (list).
+            structure_file_path: File path for structure YAML file (string).
+            topic: Object of related topic model.
+            BASE_PATH: Base file path (string).
+        """
         super().__init__(BASE_PATH, load_log)
         self.structure_file_path = os.path.join(self.BASE_PATH, structure_file_path)
         self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(structure_file_path)[0])
         self.topic = topic
 
     def load(self):
-        '''Load the content for programming exercises
+        """Load the content for programming exercises
 
         Raises:
             MissingRequiredFieldError:
             CouldNotFindMarkdownFileError:
-            EmptyMarkdownFileError:
             KeyNotFoundError:
-        '''
-        
+        """
         programming_exercises_structure = self.load_yaml_file(self.structure_file_path)
 
         for (exercise_slug, exercise_structure) in programming_exercises_structure.items():
@@ -46,29 +48,37 @@ class ProgrammingExercisesLoader(BaseLoader):
             if exercise_structure is None:
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
-                    ['exercise-set-number', 'exercise-number',
-                        'programming-languages', 'difficulty-level'],
-                    'Programming Exercise'
+                    ["exercise-set-number", "exercise-number",
+                        "programming-languages", "difficulty-level"],
+                    "Programming Exercise"
                 )
 
             # Retrieve required variables from md file
-            exercise_set_number = exercise_structure.get('exercise-set-number', None)
-            exercise_number = exercise_structure.get('exercise-number', None)
-            exercise_languages = exercise_structure.get('programming-languages', None)
-            exercise_difficulty = exercise_structure.get('difficulty-level', None)
+            exercise_set_number = exercise_structure.get("exercise-set-number", None)
+            exercise_number = exercise_structure.get("exercise-number", None)
+            exercise_languages = exercise_structure.get("programming-languages", None)
+            exercise_difficulty = exercise_structure.get("difficulty-level", None)
             if None in [exercise_set_number, exercise_number, exercise_languages, exercise_difficulty]:
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
-                    ['exercise-set-number', 'exercise-number',
-                        'programming-languages', 'difficulty-level'],
-                    'Programming Exercise'
+                    ["exercise-set-number", "exercise-number",
+                        "programming-languages", "difficulty-level"],
+                    "Programming Exercise"
                 )
 
-            # Build the path to the programming exercise's folder
+            # Build the path to the programming exercise"s folder
             file_path = os.path.join(
                 self.BASE_PATH,
+=======
+        """Load the content for programming exercises."""
+        programming_exercises_structure = self.load_yaml_file(self.structure_file)
+
+        for exercise_slug, exercise_structure in programming_exercises_structure.items():
+            ProgrammingExerciseLoader(
+                self.load_log,
+>>>>>>> develop
                 exercise_slug,
-                '{}.md'
+                "{}.md"
             )
 
             exercise_content = self.convert_md_file(
@@ -84,7 +94,7 @@ class ProgrammingExercisesLoader(BaseLoader):
                 raise KeyNotFoundError(
                     self.structure_file_path,
                     exercise_difficulty,
-                    'Programming Exercise Difficulty'
+                    "Programming Exercise Difficulty"
                 )
 
             programming_exercise = self.topic.topic_programming_exercises.create(
@@ -97,16 +107,16 @@ class ProgrammingExercisesLoader(BaseLoader):
             programming_exercise.difficulty.add(difficulty_level)
             programming_exercise.save()
 
-            LOG_TEMPLATE = 'Added Programming Exercise: {}'
+            LOG_TEMPLATE = "Added Programming Exercise: {}"
             self.log(LOG_TEMPLATE.format(programming_exercise.name), 1)
 
             for language in exercise_languages:
                 if language is None:
                     raise MissingRequiredFieldError(
                         self.structure_file_path,
-                        ['exercise-set-number', 'exercise-number',
-                            'programming-languages', 'difficulty-level'],
-                        'Programming Exercise'
+                        ["exercise-set-number", "exercise-number",
+                            "programming-languages", "difficulty-level"],
+                        "Programming Exercise"
                     )
                 try:
                     language_object = ProgrammingExerciseLanguage.objects.get(
@@ -116,12 +126,12 @@ class ProgrammingExercisesLoader(BaseLoader):
                     raise KeyNotFoundError(
                         self.structure_file_path,
                         language,
-                        'Programming Exercise Language'
+                        "Programming Exercise Language"
                         )
 
                 expected_result_content = self.convert_md_file(
                     file_path.format(
-                        '{}-expected'.format(language)
+                        "{}-expected".format(language)
                     ),
                     self.structure_file_path,
                     heading_required=False
@@ -130,7 +140,7 @@ class ProgrammingExercisesLoader(BaseLoader):
                 # Load example solution
                 solution_content = self.convert_md_file(
                     file_path.format(
-                        '{}-solution'.format(language)
+                        "{}-solution".format(language)
                     ),
                     self.structure_file_path,
                     heading_required=False
@@ -140,7 +150,7 @@ class ProgrammingExercisesLoader(BaseLoader):
                 try:
                     hint_content = self.convert_md_file(
                         file_path.format(
-                            '{}-hints'.format(language)
+                            "{}-hints".format(language)
                         ),
                         self.structure_file_path,
                         heading_required=False
@@ -158,11 +168,11 @@ class ProgrammingExercisesLoader(BaseLoader):
                 )
                 implementation.save()
 
-                LOG_TEMPLATE = 'Added Language Implementation: {}'
+                LOG_TEMPLATE = "Added Language Implementation: {}"
                 self.log(LOG_TEMPLATE.format(implementation.language), 2)
 
-            if 'learning-outcomes' in exercise_structure:
-                learning_outcomes = exercise_structure['learning-outcomes']
+            if "learning-outcomes" in exercise_structure:
+                learning_outcomes = exercise_structure["learning-outcomes"]
                 if learning_outcomes is not None:
                     for learning_outcome_slug in learning_outcomes:
                         try:
@@ -174,4 +184,4 @@ class ProgrammingExercisesLoader(BaseLoader):
                             raise KeyNotFoundError(
                                 self.structure_file_path,
                                 learning_outcome_slug,
-                                'Learning Outcome')
+                                "Learning Outcome")

@@ -1,18 +1,25 @@
 # -*- coding: utf-8 -*-
 """
-Local settings
+Django settings for local development environment.
 
 - Run in Debug mode
-
-- Use console backend for emails
-
+- Add custom dev application
 - Add Django Debug Toolbar
-- Add django-extensions as app
+- Add django-extensions
+- Use console backend for emails
 """
 
 import socket
 import os
 from .base import *  # noqa: F403
+
+# DATABASE CONFIGURATION
+# ----------------------------------------------------------------------------
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
+DATABASES = {
+    'default': env.db('DATABASE_URL'),  # noqa: F405
+}
+DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 # DEBUG
 # ----------------------------------------------------------------------------

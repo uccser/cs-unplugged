@@ -1,17 +1,39 @@
+sudo: required
+
+services:
+  - docker
+
+env:
+  DOCKER_COMPOSE_VERSION: 1.11.2
+
 language: python
 
 python:
   - "3.4"
-  - "3.5"
-  - "3.5-dev" # 3.5 development branch
-  - "3.6"
-  - "3.6-dev" # 3.6 development branch
 
-# Install dependencies
-install: pip install flake8
+before_install:
+  - sudo apt-get update
+  - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-engine
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+  - sudo docker --version
+  - sudo docker-compose --version
+  - sudo docker-compose up -d
+  - sleep 15
+  - sudo docker-compose run django /docker_venv/bin/python3 manage.py migrate
+  - sudo docker-compose run django /docker_venv/bin/python3 manage.py updatedata
+  - sudo docker-compose run nginx gulp build
+  - sudo docker-compose run django /docker_venv/bin/python3 manage.py collectstatic --no-input
+
+install:
+  - pip3 install -r requirements/test.txt
 
 # Runs test suite
-script: flake8
+script:
+  - flake8
+  - pydocstyle --verbose --count --explain
 
 # Stop email notifications but post to organisation Slack channel
 notifications:

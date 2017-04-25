@@ -1,3 +1,5 @@
+"""Base loader used to create custom loaders for content."""
+
 import yaml
 import mdx_math
 import abc
@@ -6,6 +8,7 @@ import re
 import os.path
 from os import listdir
 from verto import Verto
+
 from .check_required_files import check_converter_required_files
 
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
@@ -17,9 +20,15 @@ from utils.errors.CouldNotFindConfigFileError import CouldNotFindConfigFileError
 
 
 class BaseLoader():
-    '''Base loader class for individual loaders'''
+    """Base loader class for individual loaders."""
 
-    def __init__(self, BASE_PATH='', load_log=[]):
+    def __init__(self, BASE_PATH="", load_log=[]):
+        """Create a BaseLoader object.
+
+        Args:
+            BASE_PATH: string of base path.
+            load_log: list of log messages.
+        """
         if load_log:
             self.load_log = load_log
         else:
@@ -28,38 +37,45 @@ class BaseLoader():
         self.setup_md_to_html_converter()
 
     def setup_md_to_html_converter(self):
-        '''Create Verto converter with custom processors, html templates,
+        """Create Markdown converter.
+
+        The converter is created with custom processors, html templates,
         and extensions.
-        '''
+        """
         templates = self.load_template_files()
         extensions = [
-            'markdown.extensions.fenced_code',
-            'markdown.extensions.codehilite',
-            'markdown.extensions.sane_lists',
-            'markdown.extensions.tables',
+            "markdown.extensions.fenced_code",
+            "markdown.extensions.codehilite",
+            "markdown.extensions.sane_lists",
+            "markdown.extensions.tables",
             mdx_math.MathExtension(enable_dollar_delimiter=True)
         ]
         self.converter = Verto(html_templates=templates, extensions=extensions)
         custom_processors = self.converter.processor_defaults()
-        custom_processors.add('video')
-        custom_processors.add('remove-title')
+        custom_processors.add("video")
+        custom_processors.add("remove-title")
         self.converter.update_processors(custom_processors)
 
     def convert_md_file(self, md_file_path, config_file_path, heading_required=True):
-        '''Returns the Verto object for a given Markdown file
+        """Returns the Verto object for a given Markdown file
 
         Args:
             md_file_path: location of md file to convert
 
         Returns:
             VertoResult object
-        '''
+
+        Raises:
+            CouldNotFindMarkdownFileError:
+            NoHeadingFoundInMarkdownFileError:
+            EmptyMarkdownFileError:
+        """
         try:
             # check file exists
-            content = open(md_file_path, encoding='UTF-8').read()
+            content = open(md_file_path, encoding="UTF-8").read()
         except:
             raise CouldNotFindMarkdownFileError(md_file_path, config_file_path)
-        
+
         result = self.converter.convert(content)
 
         if heading_required:
@@ -68,25 +84,24 @@ class BaseLoader():
 
         if len(result.html_string) == 0:
             raise EmptyMarkdownFileError(md_file_path)
-        # check not empty
 
         check_converter_required_files(result.required_files, md_file_path)
         return result
 
     def log(self, log_message, indent_amount=0):
-        '''Adds the log message to the load log with the specified indent'''
+        """Add the log message to the load log with the specified indent."""
         self.load_log.append((log_message, indent_amount))
 
     def print_load_log(self):
-        '''Output log messages from loader to console'''
+        """Output log messages from loader to console."""
         for (log, indent_amount) in self.load_log:
-            indent = '  ' * indent_amount
-            sys.stdout.write('{indent}{text}\n'.format(indent=indent, text=log))
-        sys.stdout.write('\n')
+            indent = "  " * indent_amount
+            sys.stdout.write("{indent}{text}\n".format(indent=indent, text=log))
+        sys.stdout.write("\n")
         self.load_log = []
 
     def load_yaml_file(self, yaml_file_path):
-        '''Loads and reads yaml file
+        """Load and read given YAML file.
 
         Args:
             file_path: location of yaml file to read
@@ -98,12 +113,12 @@ class BaseLoader():
             CouldNotFindConfigFileError
             InvalidConfigFileError
             EmptyConfigFileError
-        '''
+        """
         try:
-            yaml_file = open(yaml_file_path, encoding='UTF-8').read()
+            yaml_file = open(yaml_file_path, encoding="UTF-8").read()
         except:
             raise CouldNotFindConfigFileError(yaml_file_path)
-        
+
         try:
             yaml_contents = yaml.load(yaml_file)
         except:
@@ -114,22 +129,22 @@ class BaseLoader():
 
         if isinstance(yaml_contents, dict) is False:
             raise InvalidConfigFileError(yaml_file_path)
-        
+
         return yaml_contents
 
     def load_template_files(self):
-        '''Loads custom HTMl templates for converter
+        """Load custom HTML templates for converter.
 
         Returns:
            templates: dictionary of html templates
-        '''
+        """
         templates = dict()
         template_path = os.path.join(
             os.path.dirname(__file__),
-            'custom_converter_templates/'
+            "custom_converter_templates/"
         )
         for file in listdir(template_path):
-            template_file = re.search(r'(.*?).html$', file)
+            template_file = re.search(r"(.*?).html$", file)
             if template_file:
                 template_name = template_file.groups()[0]
                 templates[template_name] = open(template_path + file).read()
@@ -137,4 +152,9 @@ class BaseLoader():
 
     @abc.abstractmethod
     def load(self):
-        raise NotImplementedError('subclass does not implement this method')
+        """Abstract method to be implemented by subclasses.
+
+        Raises:
+            NotImplementedError:
+        """
+        raise NotImplementedError("Subclass does not implement this method")

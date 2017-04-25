@@ -1,0 +1,4 @@
+csunplugged/build/*
+csunplugged/temp/*
+csunplugged/static/*
+csunplugged/node_modules/*

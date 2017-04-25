@@ -1,3 +1,5 @@
+"""Module for the custom Django loadtopics command."""
+
 import os.path
 from django.core.management.base import BaseCommand
 
@@ -12,13 +14,12 @@ from ._ProgrammingExercisesStructureLoader import ProgrammingExercisesStructureL
 
 
 class Command(BaseCommand):
+    """Required command class for the custom Django loadtopics command."""
+
     help = 'Converts Markdown files listed in structure file and stores'
 
     def handle(self, *args, **options):
-        '''The function called when the loadtopics command is given
-
-        Loads content into database.
-        '''
+        """Automatically called when the loadresources command is given."""
         # Get structure and content files
         base_loader = BaseLoader()
         BASE_PATH = 'topics/content/en/'
@@ -48,19 +49,20 @@ class Command(BaseCommand):
                             file,
                             BASE_PATH
                         ).load()
-            
+
                     if item == 'programming-exercises-structure':
                         ProgrammingExercisesStructureLoader(
                             file,
                             BASE_PATH
                         ).load()
-        
+
         if structure_file['topics'] is None:
             raise MissingRequiredFieldError(
                 structure_file_path,
                 ['topics'],
                 'Application Structure'
-                )
+            )
+
         for topic in structure_file['topics']:
             topic_structure_file = '{0}/{0}.yaml'.format(topic)
             TopicLoader(

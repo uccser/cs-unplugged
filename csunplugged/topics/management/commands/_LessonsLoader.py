@@ -1,5 +1,6 @@
-import os.path
+"""Custom loader for loading lessons."""
 
+import os.path
 from utils.BaseLoader import BaseLoader
 
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
@@ -15,16 +16,19 @@ from topics.models import (
 
 
 class LessonsLoader(BaseLoader):
-    '''Loader for lessons'''
+    """Custom loader for loading lessons."""
 
     def __init__(self, unit_plan_structure_file_path, load_log, lessons_structure, topic, unit_plan, BASE_PATH):
-        '''Inititiates the loader for lessons
+        """Create the loader for loading lessons.
 
         Args:
-            lessons_structure: list of dictionaries for each lesson
-            topic: Topic model object
-            unit_plan: UnitPlan model object
-        '''
+            unit_plan_structure_file_path: file path to unit plan yaml file (string).
+            load_log: List of log messages (list).
+            lessons_structure: List of dictionaries for each lesson (list).
+            topic: Object of Topic model.
+            unit_plan: Object of UnitPlan model.
+            BASE_PATH: Base file path (string).
+        """
         super().__init__(BASE_PATH, load_log)
         self.unit_plan_structure_file_path = unit_plan_structure_file_path
         self.lessons_structure = lessons_structure
@@ -32,41 +36,38 @@ class LessonsLoader(BaseLoader):
         self.unit_plan = unit_plan
 
     def load(self):
-        '''Load the content for a single lesson
+        """Load the content for a single lesson
 
         Raises:
-            CouldNotFindMarkdownFileError:
-            EmptyMarkdownFileError:
-            MarkdownFileMissingTitleError:
             MissingRequiredFieldError:
             KeyNotFoundError:
-        '''
+        """
         for (lesson_slug, lesson_structure) in self.lessons_structure.items():
-            
+
             if lesson_structure is None:
                 raise MissingRequiredFieldError(
                     self.unit_plan_structure_file_path,
-                    ['min-age', 'max-age', 'number'],
-                    'Lesson'
+                    ["min-age", "max-age", "number"],
+                    "Lesson"
                 )
 
             # Retrieve required variables from structure dictionary
-            lesson_min_age = lesson_structure.get('min-age', None)
-            lesson_max_age = lesson_structure.get('max-age', None)
-            lesson_number = lesson_structure.get('number', None)
+            lesson_min_age = lesson_structure.get("min-age", None)
+            lesson_max_age = lesson_structure.get("max-age", None)
+            lesson_number = lesson_structure.get("number", None)
             if None in [lesson_min_age, lesson_max_age, lesson_number]:
                 raise MissingRequiredFieldError(
                     self.unit_plan_structure_file_path,
-                    ['min-age', 'max-age', 'number'],
-                    'Lesson'
+                    ["min-age", "max-age", "number"],
+                    "Lesson"
                 )
 
-            # Build the file path to the lesson's md file
+            # Build the file path to the lesson"s md file
             file_path = os.path.join(
                 self.BASE_PATH,
-                'lessons',
-                '{}-{}'.format(lesson_min_age, lesson_max_age),
-                '{}.md'.format(lesson_slug)
+                "lessons",
+                "{}-{}".format(lesson_min_age, lesson_max_age),
+                "{}.md".format(lesson_slug)
             )
 
             lesson_content = self.convert_md_file(
@@ -74,8 +75,8 @@ class LessonsLoader(BaseLoader):
                 self.unit_plan_structure_file_path
             )
 
-            if 'duration' in lesson_structure:
-                lesson_duration = lesson_structure['duration']
+            if "duration" in lesson_structure:
+                lesson_duration = lesson_structure["duration"]
             else:
                 lesson_duration = None
 
@@ -92,8 +93,8 @@ class LessonsLoader(BaseLoader):
             lesson.save()
 
             # Add programming exercises
-            if 'programming-exercises' in lesson_structure:
-                programming_exercise_slugs = lesson_structure['programming-exercises']
+            if "programming-exercises" in lesson_structure:
+                programming_exercise_slugs = lesson_structure["programming-exercises"]
                 if programming_exercise_slugs is not None:
                     for programming_exercise_slug in programming_exercise_slugs:
                         try:
@@ -106,12 +107,12 @@ class LessonsLoader(BaseLoader):
                             raise KeyNotFoundError(
                                 self.unit_plan_structure_file_path,
                                 programming_exercise_slug,
-                                'Programming Exercises'
+                                "Programming Exercises"
                             )
 
             # Add learning outcomes
-            if 'learning-outcomes' in lesson_structure:
-                learning_outcome_slugs = lesson_structure['learning-outcomes']
+            if "learning-outcomes" in lesson_structure:
+                learning_outcome_slugs = lesson_structure["learning-outcomes"]
                 if learning_outcome_slugs is not None:
                     for learning_outcome_slug in learning_outcome_slugs:
                         try:
@@ -123,12 +124,12 @@ class LessonsLoader(BaseLoader):
                             raise KeyNotFoundError(
                                 self.unit_plan_structure_file_path,
                                 learning_outcome_slug,
-                                'Learning Outcomes'
+                                "Learning Outcomes"
                             )
 
             # Add curriculum areas
-            if 'curriculum-areas' in lesson_structure:
-                curriculum_area_slugs = lesson_structure['curriculum-areas']
+            if "curriculum-areas" in lesson_structure:
+                curriculum_area_slugs = lesson_structure["curriculum-areas"]
                 if curriculum_area_slugs is not None:
                     for curriculum_area_slug in curriculum_area_slugs:
                         try:
@@ -140,19 +141,19 @@ class LessonsLoader(BaseLoader):
                             raise KeyNotFoundError(
                                 self.unit_plan_structure_file_path,
                                 curriculum_area_slug,
-                                'Curriculum Areas'
+                                "Curriculum Areas"
                             )
 
             # Add generated resources
-            if 'generated-resources' in lesson_structure:
-                resources = lesson_structure['generated-resources']
+            if "generated-resources" in lesson_structure:
+                resources = lesson_structure["generated-resources"]
                 if resources is not None:
                     for (resource_slug, resource_data) in resources.items():
                         if resource_data is None:
                             raise MissingRequiredFieldError(
                                 self.unit_plan_structure_file_path,
-                                ['description'],
-                                'Generated Resource'
+                                ["description"],
+                                "Generated Resource"
                             )
                         try:
                             resource = Resource.objects.get(
@@ -162,14 +163,14 @@ class LessonsLoader(BaseLoader):
                             raise KeyNotFoundError(
                                 self.unit_plan_structure_file_path,
                                 resource_slug,
-                                'Resources'
+                                "Resources"
                             )
-                    resource_description = resource_data.get('description', None)
+                    resource_description = resource_data.get("description", None)
                     if resource_description is None:
                         raise MissingRequiredFieldError(
                             self.unit_plan_structure_file_path,
-                            ['description'],
-                            'Generated Resource'
+                            ["description"],
+                            "Generated Resource"
                         )
 
                     relationship = ConnectedGeneratedResource(
@@ -179,5 +180,4 @@ class LessonsLoader(BaseLoader):
                     )
                     relationship.save()
 
-            self.log('Added Lesson: {}'.format(lesson.__str__()), 2)
-
+            self.log("Added Lesson: {}".format(lesson.__str__()), 2)

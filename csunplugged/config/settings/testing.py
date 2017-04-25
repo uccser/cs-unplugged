@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Test settings
-
-- Used to run tests fast on the continuous integration server and locally
-"""
+"""Settings for running on continuous integration server."""
 
 from .base import *  # noqa: F403
 

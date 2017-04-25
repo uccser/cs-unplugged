@@ -1,5 +1,4 @@
-# Test dependencies go here.
--r base.txt
+# Test dependencies
 
-# Check Python style
 flake8==3.3.0
+pydocstyle==2.0.0
