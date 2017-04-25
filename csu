@@ -51,7 +51,6 @@ function start {
   update
   # Alert user that system is ready
   printf "${GREEN}Systems are ready!${NC}\n"
-  echo "Open your preferred web browser to the URL 'localhost'"
 }
 
 # Stop development environment
@@ -156,6 +155,7 @@ do
       ;;
     start | -s)
       start
+      echo "Open your preferred web browser to the URL 'localhost'"
       exit
       ;;
     static)
