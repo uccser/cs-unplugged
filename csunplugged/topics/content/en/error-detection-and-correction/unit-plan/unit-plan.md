@@ -7,8 +7,9 @@ A demonstration of lesson one ("Parity magic") being taught is available [here](
 ## What’s It All About?
 
 The world is a complicated and imperfect place, and errors can occur whenever information is stored or transmitted.
-Data stored on disks and flash memory can be changed if there is a tiny fault in the device (and these occurs regularly!)
+Data stored on hard disks, DVDs and flash memory can be changed if there is a tiny fault in the device (and these occurs regularly!)
 Information received over networks can be corrupted if there's interference on the line or a faulty component in the system.
+Even scanning information from barcodes and QR codes is a form of information transmission, and small errors such as dirt or scratches on the code can change the information.
 Yet we rely on data so much that there could be serious implications from even a single digit error in a student's grade, or a small change to a payment, or an incorrect reading in a medical scan.
 Error detection techniques add extra information to data to determine when errors have occurred.
 The extra information might be an extra "check digit" such as the last digit of a credit card number or barcode number on a product, or extra binary digits (bits) in data stored on a computer.
