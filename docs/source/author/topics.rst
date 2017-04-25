@@ -234,10 +234,6 @@ The diagram below shows an example of YAML file locations for the
 .. raw:: html
   :file: ../_static/html_snippets/topics_content_directory_tree_only_yaml.html
 
-The diagram below shows an overview of what is in each config file:
-
-.. image:: ../_static/img/topics_config_file_overview_diagram.png
-
 In the following sections, each configuration file is exaplained in more detail.
 
 .. note::
@@ -273,17 +269,14 @@ Application Structure Configuration File
 
 - **Required Fields:**
 
-  - ``topics``: A list of keys, where each key is a topic name.
+  - ``topics``: A list of file paths to topic configuration files.
 
 - **Optional Fields:**
 
-  - ``misc-structure-files:`` A list of keys corresponding to configuration files to
-    include. Each key corresponds to the name of another configuration file (and has its
-    own description further down this page). The complete list of keys is given below:
-
-    - ``learning-outcomes``
-    - ``curriculum-areas``
-    - ``programming-exercises-structure``
+    - ``learning-outcomes:`` The path to the learning outcomes configuration file.
+    - ``curriculum-areas:`` The path to the curriculum areas configuration file.
+    - ``programming-exercises-structure:`` The path to the programming exercies structure
+      configuration file.
 
 A complete application structure file may look like the following:
 
@@ -293,10 +286,9 @@ A complete application structure file may look like the following:
     - binary-numbers
     - error-detection-correction
 
-  misc-structure-files:
-    - learning-outcomes
-    - curriculum-areas
-    - programming-exercises-structure
+  learning-outcomes: learning-outcomes.yaml
+  curriculum-areas: curriculum-areas.yaml
+  programming-exercises-structure: programming-exercises-structure.yaml
 
 .. _topic-file:
 
@@ -323,14 +315,10 @@ Topic Configuration File
   - ``other-resources:`` A Markdown file containing information about other related
     (external) resources.
 
-  - ``misc-structure-files:`` A list of keys corresponding to configuration files to
-    include for this particular topic. Each key corresponds to the name of another
-    configuration file (and has its own description further down this page). The complete
-    list of keys is given below:
+  - ``programming-exercises:`` The path to the programming exercises configuration file.
 
-    - ``programming-exercises``
-  
-    - ``curriculum-integrations``
+  - ``curriculum-integrations:`` The path to the curriculum integrations configuration
+    file.
 
 A complete topic structure file may look like the following:
 
@@ -344,9 +332,8 @@ A complete topic structure file may look like the following:
 
   other-resources: other-resources.md
 
-  misc-structure-files:
-    - programming-exercises
-    - curriculum-integrations
+  programming-exercises: programming-exercises/programming-exercises.yaml
+  curriculum-integrations: curriculum-integrations/curriculum-integrations.yaml
 
 
 .. _unit-plan-file:
