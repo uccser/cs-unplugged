@@ -267,7 +267,7 @@ gulp.task('watch', ['scratch', 'images', 'css', 'js', 'sass', 'browser-sync'], f
 
 // build task
 gulp.task('build', function(callback) {
-  runSequence('clean', ['images', 'css', 'js', 'sass', 'scratch'], callback);
+  runSequence('clean', ['images', 'css', 'js', 'sass'], callback);
 });
 
 gulp.task('default', ['watch']);
