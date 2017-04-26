@@ -1,1 +1,1 @@
-"""Module for testing topics application."""
+"""Module for tests of the topics application."""

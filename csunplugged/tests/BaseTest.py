@@ -1,7 +1,6 @@
 """Base test class with methods implemented for Django testing."""
 
-from django.test import TestCase
-from django.contrib.auth.models import User
+from django.test import SimpleTestCase
 from django.test.client import Client
 from django.utils.translation import activate
 
