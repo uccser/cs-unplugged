@@ -42,11 +42,6 @@ function helpmenu {
 function start {
   echo "Creating systems..."
   docker-compose up -d
-  # Wait until website is ready (therefore Postgres is also ready)
-  echo "Waiting until all systems are ready... (takes roughly 10 to 20 seconds)"
-  until $(curl --output /dev/null --silent --head --fail http://localhost); do
-    sleep 0.25
-  done
   # Run helper functions
   update
   # Alert user that system is ready
