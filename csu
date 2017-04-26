@@ -63,6 +63,9 @@ function end {
 function update {
   static
 
+  echo "Make databse migrations"
+  docker-compose run django /docker_venv/bin/python3 manage.py makemigrations
+
   echo "Apply database migrations..."
   docker-compose run django /docker_venv/bin/python3 manage.py migrate
 

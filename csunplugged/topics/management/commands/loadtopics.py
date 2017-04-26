@@ -44,32 +44,32 @@ class Command(BaseCommand):
                     BASE_PATH
                 ).load()
 
-        if "curriculum-areas" in structure_file:
-            curriculum_areas_structure_file_path = structure_file["curriculum-areas"]
-            if curriculum_areas_structure_file_path is not None:
-                CurriculumAreasLoader(
-                    curriculum_areas_structure_file_path,
-                    BASE_PATH
-                ).load()
+        # if "curriculum-areas" in structure_file:
+        #     curriculum_areas_structure_file_path = structure_file["curriculum-areas"]
+        #     if curriculum_areas_structure_file_path is not None:
+        #         CurriculumAreasLoader(
+        #             curriculum_areas_structure_file_path,
+        #             BASE_PATH
+        #         ).load()
 
-        if "programming-exercises-structure" in structure_file:
-            programming_exercises_structure_file_path = structure_file["programming-exercises-structure"]
-            if programming_exercises_structure_file_path is not None:
-                ProgrammingExercisesStructureLoader(
-                    programming_exercises_structure_file_path,
-                    BASE_PATH
-                ).load()
+        # if "programming-exercises-structure" in structure_file:
+        #     programming_exercises_structure_file_path = structure_file["programming-exercises-structure"]
+        #     if programming_exercises_structure_file_path is not None:
+        #         ProgrammingExercisesStructureLoader(
+        #             programming_exercises_structure_file_path,
+        #             BASE_PATH
+        #         ).load()
 
-        if structure_file["topics"] is None:
-            raise MissingRequiredFieldError(
-                structure_file_path,
-                ["topics"],
-                "Application Structure"
-            )
+        # if structure_file["topics"] is None:
+        #     raise MissingRequiredFieldError(
+        #         structure_file_path,
+        #         ["topics"],
+        #         "Application Structure"
+        #     )
 
-        for topic in structure_file["topics"]:
-            topic_structure_file = "{0}/{0}.yaml".format(topic)
-            TopicLoader(
-                topic_structure_file,
-                BASE_PATH
-            ).load()
+        # for topic in structure_file["topics"]:
+        #     topic_structure_file = "{0}/{0}.yaml".format(topic)
+        #     TopicLoader(
+        #         topic_structure_file,
+        #         BASE_PATH
+        #     ).load()

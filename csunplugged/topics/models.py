@@ -9,7 +9,8 @@ from resources.models import Resource
 class LearningOutcome(models.Model):
     """Model for learning outcome in database."""
 
-    #  Auto-incrementing 'id' field is automatically set by Django
+    #  Auto-incrementing "id" field is automatically set by Django
+    last_modified = models.DateTimeField(auto_now=True)
     slug = models.SlugField(unique=True)
     text = models.CharField(max_length=200, unique=True)
 
@@ -25,13 +26,13 @@ class LearningOutcome(models.Model):
 class CurriculumArea(models.Model):
     """Model for curriculum area in database."""
 
-    #  Auto-incrementing 'id' field is automatically set by Django
+    #  Auto-incrementing "id" field is automatically set by Django
     slug = models.SlugField(unique=True)
     name = models.CharField(max_length=100, unique=True)
     parent = models.ForeignKey(
-        'self',
+        "self",
         null=True,
-        related_name='parent_curriculum_area'
+        related_name="parent_curriculum_area"
     )
 
     def __str__(self):
@@ -46,7 +47,7 @@ class CurriculumArea(models.Model):
 class Topic(models.Model):
     """Model for topic in database."""
 
-    #  Auto-incrementing 'id' field is automatically set by Django
+    #  Auto-incrementing "id" field is automatically set by Django
     slug = models.SlugField(unique=True)
     name = models.CharField(max_length=100)
     content = models.TextField()
@@ -65,11 +66,11 @@ class Topic(models.Model):
 class UnitPlan(models.Model):
     """Model for unit plan in database."""
 
-    #  Auto-incrementing 'id' field is automatically set by Django
+    #  Auto-incrementing "id" field is automatically set by Django
     topic = models.ForeignKey(
         Topic,
         on_delete=models.CASCADE,
-        related_name='topic_unit_plans'
+        related_name="topic_unit_plans"
     )
     slug = models.SlugField()
     name = models.CharField(max_length=100)
@@ -89,7 +90,7 @@ class UnitPlan(models.Model):
             The dictionary is ordered by minimum age, then maximum age.
         """
         grouped_lessons = OrderedDict()
-        lessons = self.unit_plan_lessons.order_by('min_age', 'max_age', 'number')
+        lessons = self.unit_plan_lessons.order_by("min_age", "max_age", "number")
         for lesson in lessons:
             if (lesson.min_age, lesson.max_age) in grouped_lessons:
                 grouped_lessons[(lesson.min_age, lesson.max_age)].append(lesson)
@@ -109,7 +110,7 @@ class UnitPlan(models.Model):
 class ProgrammingExerciseDifficulty(models.Model):
     """Model for programming exercise difficulty in database."""
 
-    #  Auto-incrementing 'id' field is automatically set by Django
+    #  Auto-incrementing "id" field is automatically set by Django
     level = models.PositiveSmallIntegerField(unique=True)
     name = models.CharField(max_length=100, unique=True)
 
@@ -125,11 +126,11 @@ class ProgrammingExerciseDifficulty(models.Model):
 class ProgrammingExercise(models.Model):
     """Model for programming exercise in database."""
 
-    #  Auto-incrementing 'id' field is automatically set by Django
+    #  Auto-incrementing "id" field is automatically set by Django
     topic = models.ForeignKey(
         Topic,
         on_delete=models.CASCADE,
-        related_name='topic_programming_exercises'
+        related_name="topic_programming_exercises"
     )
     slug = models.SlugField()
     name = models.CharField(max_length=200)
@@ -138,11 +139,11 @@ class ProgrammingExercise(models.Model):
     content = models.TextField()
     learning_outcomes = models.ManyToManyField(
         LearningOutcome,
-        related_name='programming_exercise_learning_outcomes'
+        related_name="programming_exercise_learning_outcomes"
     )
     difficulty = models.ManyToManyField(
         ProgrammingExerciseDifficulty,
-        related_name='difficulty_programming_exercises'
+        related_name="difficulty_programming_exercises"
     )
 
     def __str__(self):
@@ -157,7 +158,7 @@ class ProgrammingExercise(models.Model):
 class ProgrammingExerciseLanguage(models.Model):
     """Model for programming language in database."""
 
-    #  Auto-incrementing 'id' field is automatically set by Django
+    #  Auto-incrementing "id" field is automatically set by Django
     slug = models.SlugField()
     name = models.CharField(max_length=200)
     icon = models.CharField(max_length=100, null=True)
@@ -174,21 +175,21 @@ class ProgrammingExerciseLanguage(models.Model):
 class ProgrammingExerciseLanguageImplementation(models.Model):
     """Model for programming exercise language implementation in database."""
 
-    #  Auto-incrementing 'id' field is automatically set by Django
+    #  Auto-incrementing "id" field is automatically set by Django
     topic = models.ForeignKey(
         Topic,
         on_delete=models.CASCADE,
-        related_name='implementations'
+        related_name="implementations"
     )
     language = models.ForeignKey(
         ProgrammingExerciseLanguage,
         on_delete=models.CASCADE,
-        related_name='implementations'
+        related_name="implementations"
     )
     exercise = models.ForeignKey(
         ProgrammingExercise,
         on_delete=models.CASCADE,
-        related_name='implementations'
+        related_name="implementations"
     )
     expected_result = models.TextField()
     hints = models.TextField(null=True)
@@ -200,7 +201,7 @@ class ProgrammingExerciseLanguageImplementation(models.Model):
         Returns:
             Description of implementation and related exercise (string).
         """
-        return '{} for exercise {}.{}, {}'.format(
+        return "{} for exercise {}.{}, {}".format(
             self.language.name,
             self.exercise.exercise_set_number,
             self.exercise.exercise_number,
@@ -211,16 +212,16 @@ class ProgrammingExerciseLanguageImplementation(models.Model):
 class Lesson(models.Model):
     """Model for lesson in database."""
 
-    #  Auto-incrementing 'id' field is automatically set by Django
+    #  Auto-incrementing "id" field is automatically set by Django
     topic = models.ForeignKey(
         Topic,
         on_delete=models.CASCADE,
-        related_name='topic_lessons'
+        related_name="topic_lessons"
     )
     unit_plan = models.ForeignKey(
         UnitPlan,
         on_delete=models.CASCADE,
-        related_name='unit_plan_lessons'
+        related_name="unit_plan_lessons"
     )
     slug = models.SlugField()
     name = models.CharField(max_length=100)
@@ -231,20 +232,20 @@ class Lesson(models.Model):
     max_age = models.PositiveSmallIntegerField()
     programming_exercises = models.ManyToManyField(
         ProgrammingExercise,
-        related_name='lessons'
+        related_name="lessons"
     )
     learning_outcomes = models.ManyToManyField(
         LearningOutcome,
-        related_name='lesson_learning_outcomes'
+        related_name="lesson_learning_outcomes"
     )
     curriculum_areas = models.ManyToManyField(
         CurriculumArea,
-        related_name='lesson_curriculum_areas',
+        related_name="lesson_curriculum_areas",
     )
     generated_resources = models.ManyToManyField(
         Resource,
-        through='ConnectedGeneratedResource',
-        related_name='lesson_generated_resources'
+        through="ConnectedGeneratedResource",
+        related_name="lesson_generated_resources"
     )
 
     def has_programming_exercises(self):
@@ -268,11 +269,11 @@ class Lesson(models.Model):
 class CurriculumIntegration(models.Model):
     """Model for curriculum integration in database."""
 
-    #  Auto-incrementing 'id' field is automatically set by Django
+    #  Auto-incrementing "id" field is automatically set by Django
     topic = models.ForeignKey(
         Topic,
         on_delete=models.CASCADE,
-        related_name='curriculum_integrations'
+        related_name="curriculum_integrations"
     )
     slug = models.SlugField()
     number = models.PositiveSmallIntegerField()
@@ -280,11 +281,11 @@ class CurriculumIntegration(models.Model):
     content = models.TextField()
     curriculum_areas = models.ManyToManyField(
         CurriculumArea,
-        related_name='curriculum_integrations',
+        related_name="curriculum_integrations",
     )
     prerequisite_lessons = models.ManyToManyField(
         Lesson,
-        related_name='curriculum_integrations'
+        related_name="curriculum_integrations"
     )
 
     def has_prerequisite_lessons(self):
@@ -308,7 +309,7 @@ class CurriculumIntegration(models.Model):
 class ConnectedGeneratedResource(models.Model):
     """Model for relationship between resource and lesson in database."""
 
-    #  Auto-incrementing 'id' field is automatically set by Django
+    #  Auto-incrementing "id" field is automatically set by Django
     resource = models.ForeignKey(Resource, on_delete=models.CASCADE)
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
     description = models.CharField(max_length=300)
