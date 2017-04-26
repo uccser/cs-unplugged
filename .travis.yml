@@ -30,7 +30,7 @@ script:
   - ./csu style
 
 after_script:
-  - /docker_venv/bin/coveralls
+  - docker-compose run django /docker_venv/bin/coveralls
 
 # Stop email notifications but post to organisation Slack channel
 notifications:
