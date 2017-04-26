@@ -26,7 +26,7 @@ before_script:
 
 script:
   - ./csu test
-  - docker-compose run django 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then /docker_venv/bin/python3 ./manage.py test --pattern "test_*.py" --reverse -v 0; fi'
+  - ./csu test_backwards
   - ./csu style
 
 after_script:

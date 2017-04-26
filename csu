@@ -112,11 +112,20 @@ function style {
   docker-compose run django /docker_venv/bin/pydocstyle --count --explain
 }
 
-# Run shell
+# Run test suite with coverage checking
 function test_suite {
   echo "Running test suite..."
   docker-compose run django /docker_venv/bin/coverage run --rcfile=.coveragerc ./manage.py test --pattern "test_*.py" -v 3
   docker-compose run django /docker_venv/bin/coverage report
+}
+
+# Run test suite backwards for CI testing
+function test_suite_backwards {
+  echo "Running test suite backwards..."
+  if [ "$TRAVIS_PULL_REQUEST" != "false" ]
+  then
+    docker-compose run django /docker_venv/bin/python3 ./manage.py test --pattern "test_*.py" --reverse -v 0
+  fi
 }
 
 # Delete all untagged dangling Docker images
@@ -191,6 +200,10 @@ do
       ;;
     test)
       test_suite
+      exit
+      ;;
+    test_backwards)
+      test_suite_backwards
       exit
       ;;
     wipe)
