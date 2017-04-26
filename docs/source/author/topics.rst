@@ -641,26 +641,26 @@ Curriculum Integrations Configuration File
 
 - **Referenced In:** ``topics/content/<language>/<topic-name>.yaml``
 
-- **Purpose:** Contains a list of activities that can be used to integrate the
-  topic with another area in the curriculum.
+- **Purpose:** Contains a list of curriculum integrations that can be used to integrate
+  the topic with another area in the curriculum.
 
 - **Required Fields:**
 
-  - ``<activity-name>:`` This is the key for the curriculum integration activity. Each
-    activity has its own list of required and optional fields:
+  - ``<curriculum-integration>:`` This is the key for the curriculum integration. Each
+    curriculum integration has its own list of required and optional fields:
 
     - **Required Fields:**
 
-      - ``number:`` The number order for this activity. Curriculum integration activities
-        are sorted by this number.
+      - ``number:`` The number order for this curriculum integration. Curriculum
+        integrations are sorted by this number.
 
       - ``curriculum-areas:`` A list of keys corresponding to other curriculum areas
-        that this activity could be used in.
+        that this curriculum integration could be used in.
 
     - **Optional Fields:**
 
       - ``prerequisite-lessons:`` A list of unit plan keys containing lessons that are
-        expected to be completed before attempting this activity.
+        expected to be completed before attempting this curriculum integration.
 
         - **Required Fields:**
 
@@ -671,8 +671,8 @@ Curriculum Integrations Configuration File
               - ``<lesson-name>`` A key corresponding to a lesson in the given unit
                 plan.
 
-A complete curriculum integration structure file with multiple activities may
-look like the following:
+A complete curriculum integration structure file with multiple curriculum integrations
+may look like the following:
 
 .. code-block:: yaml
 
