@@ -2,7 +2,7 @@ Writing Guide
 ##############################################################################
 
 The majority of our text content is written in Markdown, and we also developed
-a program called Kordac to allow you to include HTML elements like images and
+a program called `Verto`_ to allow you to include HTML elements like images and
 videos with simple text tags.
 
 For example, the following text:
@@ -46,11 +46,11 @@ will display as the following on the website:
 
   - Use asterisks (``*``) for emphasis, instead of underscores.
   - Use hyphens (``-``) for unordered lists.
-  - No HTML within text files, we use Kordac text tags to add iframes,
+  - No HTML within text files, we use Verto text tags to add iframes,
     images, videos, etc.
 
-Below is a basic guide to syntax for Markdown and Kordac text tags.
-When viewing Kordac documentation for a tag, the top of the page will detail
+Below is a basic guide to syntax for Markdown and Verto text tags.
+When viewing Verto documentation for a tag, the top of the page will detail
 how to use the tag in a basic example.
 Some text tags also have required and/or optional tag parameters for further
 configuration.
@@ -74,7 +74,7 @@ Blockquotes
 
 ------------------------------------------------------------------------------
 
-Boxed Text (Kordac feature)
+Boxed Text (Verto feature)
 ==============================================================================
 
 `Click here to read the documentation on how to box text`_.
@@ -125,21 +125,21 @@ the first set of backticks (`list of language codes`_).
 
 ------------------------------------------------------------------------------
 
-Comment (Kordac feature)
+Comment (Verto feature)
 ==============================================================================
 
 `Click here to read the documentation on how to add a comment`_.
 
 ------------------------------------------------------------------------------
 
-Conditional (Kordac feature)
+Conditional (Verto feature)
 ==============================================================================
 
 `Click here to read the documentation on how to define a conditional`_.
 
 ------------------------------------------------------------------------------
 
-Embed iframe (Kordac feature)
+Embed iframe (Verto feature)
 ==============================================================================
 
 `Click here to read the documentation on how to embed with an iframe`_.
@@ -166,28 +166,28 @@ Strong emphasis, aka bold, with **asterisks**.
 
 ------------------------------------------------------------------------------
 
-Glossary Link (Kordac feature)
+Glossary Link (Verto feature)
 ==============================================================================
 
 `Click here to read the documentation on how to define a glossary link`_.
 
 ------------------------------------------------------------------------------
 
-Heading (Kordac feature)
+Heading (Verto feature)
 ==============================================================================
 
 `Click here to read the documentation on how to create a heading`_.
 
 ------------------------------------------------------------------------------
 
-Image (Kordac feature)
+Image (Verto feature)
 ==============================================================================
 
 `Click here to read the documentation on how to include an image`_.
 
 ------------------------------------------------------------------------------
 
-Interactive (Kordac feature)
+Interactive (Verto feature)
 ==============================================================================
 
 `Click here to read the documentation on how to include an interactive`_.
@@ -233,7 +233,7 @@ will function properly when converted to HTML and viewed on the website.
 Links to pages are referenced from the language directory within the
 ``content/`` directory (see examples below).
 
-Link to Page Within Website (relative link - Kordac feature)
+Link to Page Within Website (relative link - Verto feature)
 ------------------------------------------------------------------------------
 
 You can refer to a page by writing the page name with ``.html`` at the end.
@@ -274,13 +274,13 @@ The URL should include the ``https://`` or ``http://`` as required.
 
   Check out [Google's website](https://www.google.com).
 
-Create a Link on an Image (Kordac feature)
+Create a Link on an Image (Verto feature)
 ------------------------------------------------------------------------------
 
 Images should now be linked using the ``caption-link`` and ``source`` tag
 parameters for including an image.
 
-Create a Link on a Button (Kordac feature)
+Create a Link on a Button (Verto feature)
 ------------------------------------------------------------------------------
 
 `Click here to read the documentation on how to add a button link`_.
@@ -370,21 +370,21 @@ Math equations are rendered in MathJax using the LaTeX syntax.
 
 ------------------------------------------------------------------------------
 
-Panel (Kordac feature)
+Panel (Verto feature)
 ==============================================================================
 
 `Click here to read the documentation on how to create a panel`_.
 
 ------------------------------------------------------------------------------
 
-Scratch (Kordac feature)
+Scratch (Verto feature)
 ==============================================================================
 
 `Click here to read the documentation on how to include an image of Scratch block`_.
 
 ------------------------------------------------------------------------------
 
-Table of Contents (Kordac feature)
+Table of Contents (Verto feature)
 ==============================================================================
 
 `Click here to read the documentation on how to include a table of contents`_.
@@ -426,26 +426,27 @@ You can also use inline Markdown.
 
 ------------------------------------------------------------------------------
 
-Video (Kordac feature)
+Video (Verto feature)
 ==============================================================================
 
 `Click here to read the documentation on how to include a video`_.
 
 ------------------------------------------------------------------------------
 
+.. _Verto: http://verto.readthedocs.io/en/latest/
 .. _submit a bug report: https://github.com/uccser/cs-unplugged/issues/new
-.. _Click here to read the documentation on how to box text: http://kordac.readthedocs.io/en/latest/processors/boxed-text.html
+.. _Click here to read the documentation on how to box text: http://verto.readthedocs.io/en/latest/processors/boxed-text.html
 .. _list of language codes: https://haisum.github.io/2014/11/07/jekyll-pygments-supported-highlighters/
-.. _Click here to read the documentation on how to add a comment: http://kordac.readthedocs.io/en/latest/processors/comment.html
-.. _Click here to read the documentation on how to define a conditional: http://kordac.readthedocs.io/en/latest/processors/conditional.html
-.. _Click here to read the documentation on how to embed with an iframe: http://kordac.readthedocs.io/en/latest/processors/iframe.html
-.. _Click here to read the documentation on how to define a glossary link: http://kordac.readthedocs.io/en/latest/processors/glossary-link.html
-.. _Click here to read the documentation on how to create a heading: http://kordac.readthedocs.io/en/latest/processors/heading.html
-.. _Click here to read the documentation on how to include an image: http://kordac.readthedocs.io/en/latest/processors/image.html
-.. _Click here to read the documentation on how to include an interactive: http://kordac.readthedocs.io/en/latest/processors/interactive.html
-.. _Click here to read the documentation on how to create a relative link: http://kordac.readthedocs.io/en/latest/processors/relative-link.html
-.. _Click here to read the documentation on how to add a button link: http://kordac.readthedocs.io/en/latest/processors/button-link.html
-.. _Click here to read the documentation on how to create a panel: http://kordac.readthedocs.io/en/latest/processors/panel.html
-.. _Click here to read the documentation on how to include an image of Scratch block: http://kordac.readthedocs.io/en/latest/processors/scratch.html
-.. _Click here to read the documentation on how to include a table of contents: http://kordac.readthedocs.io/en/latest/processors/table-of-contents.html
-.. _Click here to read the documentation on how to include a video: http://kordac.readthedocs.io/en/latest/processors/video.html
+.. _Click here to read the documentation on how to add a comment: http://verto.readthedocs.io/en/latest/processors/comment.html
+.. _Click here to read the documentation on how to define a conditional: http://verto.readthedocs.io/en/latest/processors/conditional.html
+.. _Click here to read the documentation on how to embed with an iframe: http://verto.readthedocs.io/en/latest/processors/iframe.html
+.. _Click here to read the documentation on how to define a glossary link: http://verto.readthedocs.io/en/latest/processors/glossary-link.html
+.. _Click here to read the documentation on how to create a heading: http://verto.readthedocs.io/en/latest/processors/heading.html
+.. _Click here to read the documentation on how to include an image: http://verto.readthedocs.io/en/latest/processors/image.html
+.. _Click here to read the documentation on how to include an interactive: http://verto.readthedocs.io/en/latest/processors/interactive.html
+.. _Click here to read the documentation on how to create a relative link: http://verto.readthedocs.io/en/latest/processors/relative-link.html
+.. _Click here to read the documentation on how to add a button link: http://verto.readthedocs.io/en/latest/processors/button-link.html
+.. _Click here to read the documentation on how to create a panel: http://verto.readthedocs.io/en/latest/processors/panel.html
+.. _Click here to read the documentation on how to include an image of Scratch block: http://verto.readthedocs.io/en/latest/processors/scratch.html
+.. _Click here to read the documentation on how to include a table of contents: http://verto.readthedocs.io/en/latest/processors/table-of-contents.html
+.. _Click here to read the documentation on how to include a video: http://verto.readthedocs.io/en/latest/processors/video.html

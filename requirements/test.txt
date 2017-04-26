@@ -1,12 +1,8 @@
-# Test dependencies go here.
--r base.txt
-
-# Debugging Tools
-django-debug-toolbar==1.6
-django-extensions==1.7.7
+# Test dependencies
 
 # Check Python style
 flake8==3.3.0
+pydocstyle==2.0.0
 
 #Coverage Tools
 coverage==4.0.3

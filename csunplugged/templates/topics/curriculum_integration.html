@@ -1,5 +1,7 @@
 {% extends "topics/curriculum_integration_list.html" %}
 
+{% load static %}
+{% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
 
@@ -28,9 +30,7 @@
     </div>
   {% endif %}
 
-  {% autoescape off %}
-  {{ integration.content }}
-  {% endautoescape %}
+  {% render_html_field integration.content %}
 
   {% if integration_curriculum_areas %}
     <h2>Curriculum Areas</h2>

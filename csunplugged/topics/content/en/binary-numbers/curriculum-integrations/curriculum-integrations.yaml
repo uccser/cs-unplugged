@@ -1,23 +1,50 @@
-binary-number-bracelets:
+binary-or-normal-candles:
   number: 1
-  md-file: bracelets.md
   curriculum-areas:
-    - art
-    - design
+    - writing
   prerequisite-lessons:
-    - unit-plan/introduction-to-bits-5-7
+    unit-plan:
+      - how-binary-digits-work
 
-binary-number-bracelets-2:
+whose-cake-is-it:
   number: 2
-  md-file: bracelets-2.md
+  curriculum-areas:
+    - writing
+  prerequisite-lessons:
+    unit-plan:
+      - how-binary-digits-work
+
+binary-name-necklaces:
+  number: 3
   curriculum-areas:
     - art
   prerequisite-lessons:
-    - unit-plan/introduction-to-bits
-    - unit-plan/counting-bits
+    unit-plan:
+      - codes-for-letters-using-binary-representation
 
-hidden-binary-signals:
-  number: 3
-  md-file: hidden-binary-signals.md
+binary-patterns:
+  number: 4
   curriculum-areas:
-    - science
+    - art
+  prerequisite-lessons:
+    unit-plan:
+      - how-binary-digits-work
+
+binary-tunes:
+  number: 5
+  curriculum-areas:
+    - music
+  prerequisite-lessons:
+    unit-plan:
+      - how-binary-digits-work
+
+biographies-and-binary-number-system-history:
+  number: 6
+  curriculum-areas:
+    - reading
+    - writing
+
+binary-art:
+  number: 7
+  curriculum-areas:
+    - art

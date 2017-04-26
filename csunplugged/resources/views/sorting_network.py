@@ -1,14 +1,20 @@
+"""Module for generating Sorting Network resource."""
+
 from PIL import Image, ImageDraw, ImageFont
 from random import sample
 
 
 def resource_image(get_request, resource):
-    """Creates a image for Sorting Network resource.
+    """Create a image for Sorting Network resource.
+
+    Args:
+        get_request: HTTP request object
+        resource: Object of resource data.
 
     Returns:
         A Pillow image object.
     """
-    image_path = 'static/img/resource-sorting-network-colour.png'
+    image_path = 'static/img/resources/resource-sorting-network-colour.png'
     image = Image.open(image_path)
     draw = ImageDraw.Draw(image)
 
@@ -40,20 +46,35 @@ def resource_image(get_request, resource):
 
 
 def subtitle(get_request, resource):
-    """Returns the subtitle string of the resource.
+    """Return the subtitle string of the resource.
 
     Used after the resource name in the filename, and
     also on the resource image.
+
+    Args:
+        get_request: HTTP request object
+        resource: Object of resource data.
+
+    Returns:
+        text for subtitle (string)
     """
-    SUBTITLE_TEMPLATE = '{} to {}'
-    range_min, range_max, font_size = number_range(get_request)
-    text = SUBTITLE_TEMPLATE.format(range_min, range_max - 1)
+    if get_request['prefilled_values'] == 'blank':
+        text = 'blank'
+    else:
+        SUBTITLE_TEMPLATE = '{} to {}'
+        range_min, range_max, font_size = number_range(get_request)
+        text = SUBTITLE_TEMPLATE.format(range_min, range_max - 1)
     return text
 
 
 def number_range(get_request):
-    """Returns a tuple of (range_min, range_max, font_size)
-    for the requested resource.
+    """Return number range tuple for resource.
+
+    Args:
+        get_request: HTTP request object
+
+    Returns:
+        Tuple of (range_min, range_max, font_size)
     """
     prefilled_values = get_request['prefilled_values']
     range_min = 0

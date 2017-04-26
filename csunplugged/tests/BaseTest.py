@@ -1,35 +1,42 @@
-from django.test import SimpleTestCase
+"""Base test class with methods implemented for Django testing."""
+
+from django.test import TestCase
+from django.contrib.auth.models import User
 from django.test.client import Client
 from django.utils.translation import activate
 
 
+<<<<<<< HEAD
 class BaseTest(SimpleTestCase):
+    """Base test class with methods implemented for Django testing."""
 
     def __init__(self, *args, **kwargs):
+        """Create the BaseTest object by calling the parent's constructor."""
         super().__init__(*args, **kwargs)
         self.language = None
 
     @classmethod
     def setUpClass(cls):
-        '''Called before tests in class.
-        '''
+        """Automatically called before tests in class."""
         super(BaseTest, cls).setUpClass()
 
     @classmethod
     def tearDownClass(cls):
-        '''Called after tests in class.
-        '''
+        """Automatically called after each test."""
         super(BaseTest, cls).tearDownClass()
 
     def setUp(self):
-        '''Called before each test.
+        """Automatically called before each test.
+
         Sets the language if specified and creates a new client.
-        '''
+        """
         if self.language is not None:
             activate(self.language)
         self.client = Client()
 
     def tearDown(self):
-        '''Called after each test.
-        '''
+        """Automatically called after each test.
+
+        Deletes test user.
+        """
         pass

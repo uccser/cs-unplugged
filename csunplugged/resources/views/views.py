@@ -1,3 +1,5 @@
+"""Views for the resource application."""
+
 from django.views import generic
 from django.shortcuts import get_object_or_404, render
 from django.http import Http404
@@ -7,15 +9,26 @@ import importlib
 
 
 class IndexView(generic.ListView):
+    """View for the resource application homepage."""
+
     template_name = 'resources/index.html'
     context_object_name = 'all_resources'
 
     def get_queryset(self):
-        """Return all topics"""
+        """Get queryset of all resources.
+
+        Returns:
+            Queryset of all resources ordered by name.
+        """
         return Resource.objects.order_by('name')
 
 
 def resource(request, resource_slug):
+    """View for a specific resource in the resources application.
+
+    Returns:
+        HTML response of webpage, 404 if not found.
+    """
     resource = get_object_or_404(Resource, slug=resource_slug)
     context = dict()
     context['resource'] = resource
@@ -26,7 +39,11 @@ def resource(request, resource_slug):
 
 
 def generate_resource(request, resource_slug):
-    """Try to import and call resource image generator, 404 if not found."""
+    """View for generated PDF of a specific resource.
+
+    Returns:
+        HTML response containing PDF of resource, 404 if not found.
+    """
     resource = get_object_or_404(Resource, slug=resource_slug)
     resource_view = resource.generation_view
     # Remove .py extension if given

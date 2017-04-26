@@ -1,6 +1,23 @@
 Troubleshooting
 ##############################################################################
 
+``csu`` helper script
+==============================================================================
+
+I have an error when running ``csu start``
+------------------------------------------------------------------------------
+
+If you are having issues running the ``start`` command, try rebuilding the
+system images with ``csu build``.
+Changes may be have been made to the system images since you initally created
+them.
+
+If this still doesn't solve your problem, you could also try deleting any
+existing images with ``csu wipe``, and then build and start the system with
+``csu start``.
+
+If issue still persists, log a bug on our `issue tracker`_.
+
 Viewing website
 ==============================================================================
 
