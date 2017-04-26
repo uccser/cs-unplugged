@@ -7,6 +7,7 @@ RUN apt-get update && \
     apt-get -y install python build-essential nodejs
 WORKDIR /app
 RUN npm install --global gulp-cli
+RUN npm install --global node-gyp
 RUN apt-get update && apt-get install -y \
       libcairo2-dev \
       libjpeg-dev \
