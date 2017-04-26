@@ -43,21 +43,6 @@ class CurriculumArea(models.Model):
         return self.name
 
 
-class ClassroomResource(models.Model):
-    """Model for classroom resource in database."""
-
-    #  Auto-incrementing 'id' field is automatically set by Django
-    text = models.CharField(max_length=300, unique=True)
-
-    def __str__(self):
-        """Text representation of ClassroomResource object.
-
-        Returns:
-            Text of classroom resource (string).
-        """
-        return self.text
-
-
 class Topic(models.Model):
     """Model for topic in database."""
 
@@ -65,7 +50,7 @@ class Topic(models.Model):
     slug = models.SlugField(unique=True)
     name = models.CharField(max_length=100)
     content = models.TextField()
-    other_resources = models.TextField()
+    other_resources = models.TextField(null=True)
     icon = models.CharField(max_length=100, null=True)
 
     def __str__(self):
@@ -155,9 +140,8 @@ class ProgrammingExercise(models.Model):
         LearningOutcome,
         related_name='programming_exercise_learning_outcomes'
     )
-    difficulty = models.ForeignKey(
+    difficulty = models.ManyToManyField(
         ProgrammingExerciseDifficulty,
-        on_delete=models.CASCADE,
         related_name='difficulty_programming_exercises'
     )
 
@@ -207,7 +191,7 @@ class ProgrammingExerciseLanguageImplementation(models.Model):
         related_name='implementations'
     )
     expected_result = models.TextField()
-    hints = models.TextField()
+    hints = models.TextField(null=True)
     solution = models.TextField()
 
     def __str__(self):
@@ -241,6 +225,7 @@ class Lesson(models.Model):
     slug = models.SlugField()
     name = models.CharField(max_length=100)
     number = models.IntegerField()
+    duration = models.PositiveSmallIntegerField(null=True)
     content = models.TextField()
     min_age = models.PositiveSmallIntegerField()
     max_age = models.PositiveSmallIntegerField()
@@ -254,11 +239,7 @@ class Lesson(models.Model):
     )
     curriculum_areas = models.ManyToManyField(
         CurriculumArea,
-        related_name='lesson_curriculum_areas'
-    )
-    classroom_resources = models.ManyToManyField(
-        ClassroomResource,
-        related_name='lesson_classroom_resources'
+        related_name='lesson_curriculum_areas',
     )
     generated_resources = models.ManyToManyField(
         Resource,
@@ -299,7 +280,7 @@ class CurriculumIntegration(models.Model):
     content = models.TextField()
     curriculum_areas = models.ManyToManyField(
         CurriculumArea,
-        related_name='curriculum_integrations'
+        related_name='curriculum_integrations',
     )
     prerequisite_lessons = models.ManyToManyField(
         Lesson,

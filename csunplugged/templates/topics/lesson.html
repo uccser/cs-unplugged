@@ -1,5 +1,7 @@
 {% extends "topics/unit_plan.html" %}
 
+{% load static %}
+{% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block breadcrumbs %}
@@ -9,6 +11,7 @@
 
 {% block content %}
 <h1>{{ lesson.name }}</h1>
+<strong>Duration: </strong>{{ lesson.duration }} minutes
 
 <h2>CS Unplugged Resources</h2>
 {% if lesson_generated_resources %}
@@ -28,20 +31,7 @@
   <p>No CS Unplugged resources required.</p>
 {% endif %}
 
-<h2>Classroom Resources</h2>
-{% if lesson_classroom_resources %}
-  <ul>
-    {% for classroom_resource in lesson_classroom_resources %}
-      <li>{{ classroom_resource.text }}</li>
-    {% endfor %}
-  </ul>
-{% else %}
-  <p>No classroom resources required.</p>
-{% endif %}
-
-{% autoescape off %}
-{{ lesson.content }}
-{% endautoescape %}
+{% render_html_field lesson.content %}
 
 <h2>Plugged In <span class="subtitle">(programming challenges)</span></h2>
 {% if programming_exercises %}

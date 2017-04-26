@@ -20,12 +20,7 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
   - sudo docker --version
   - sudo docker-compose --version
-  - sudo docker-compose up -d
-  - sleep 15
-  - sudo docker-compose run django /docker_venv/bin/python3 manage.py migrate
-  - sudo docker-compose run django /docker_venv/bin/python3 manage.py updatedata
-  - sudo docker-compose run nginx gulp build
-  - sudo docker-compose run django /docker_venv/bin/python3 manage.py collectstatic --no-input
+  - ./csu start
 
 install:
   - pip3 install -r requirements/test.txt

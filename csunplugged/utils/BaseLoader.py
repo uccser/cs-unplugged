@@ -8,13 +8,21 @@ import re
 import os.path
 from os import listdir
 from verto import Verto
-from .check_converter_required_files import check_required_files
+
+from .check_required_files import check_converter_required_files
+
+from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
+from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
+from utils.errors.EmptyConfigFileError import EmptyConfigFileError
+from utils.errors.InvalidConfigFileError import InvalidConfigFileError
+from utils.errors.NoHeadingFoundInMarkdownFileError import NoHeadingFoundInMarkdownFileError
+from utils.errors.CouldNotFindConfigFileError import CouldNotFindConfigFileError
 
 
 class BaseLoader():
     """Base loader class for individual loaders."""
 
-    def __init__(self, BASE_PATH='', load_log=[]):
+    def __init__(self, BASE_PATH="", load_log=[]):
         """Create a BaseLoader object.
 
         Args:
@@ -36,29 +44,49 @@ class BaseLoader():
         """
         templates = self.load_template_files()
         extensions = [
-            'markdown.extensions.fenced_code',
-            'markdown.extensions.codehilite',
-            'markdown.extensions.sane_lists',
-            'markdown.extensions.tables',
+            "markdown.extensions.fenced_code",
+            "markdown.extensions.codehilite",
+            "markdown.extensions.sane_lists",
+            "markdown.extensions.tables",
             mdx_math.MathExtension(enable_dollar_delimiter=True)
         ]
         self.converter = Verto(html_templates=templates, extensions=extensions)
         custom_processors = self.converter.processor_defaults()
-        custom_processors.add('remove-title')
+        custom_processors.add("remove-title")
         self.converter.update_processors(custom_processors)
 
-    def convert_md_file(self, md_file_path):
-        """Convert the given Markdown file to HTML.
+    def convert_md_file(self, md_file_path, config_file_path, heading_required=True):
+        """Return the Verto object for a given Markdown file.
 
         Args:
-            md_file_path: location of the markdown file to convert
+            md_file_path: location of Markdown file to convert
 
         Returns:
-            Verto result object
+            VertoResult object
+
+        Raises:
+            CouldNotFindMarkdownFileError: when a given Markdown file cannot be found.
+            NoHeadingFoundInMarkdownFileError: when no heading can be found in a given
+                Markdown file.
+            EmptyMarkdownFileError: when no content can be found in a given Markdown
+                file.
         """
-        content = open(md_file_path, encoding='UTF-8').read()
+        try:
+            # check file exists
+            content = open(md_file_path, encoding="UTF-8").read()
+        except:
+            raise CouldNotFindMarkdownFileError(md_file_path, config_file_path)
+
         result = self.converter.convert(content)
-        check_required_files(result.required_files)
+
+        if heading_required:
+            if result.title is None:
+                raise NoHeadingFoundInMarkdownFileError(md_file_path)
+
+        if len(result.html_string) == 0:
+            raise EmptyMarkdownFileError(md_file_path)
+
+        check_converter_required_files(result.required_files, md_file_path)
         return result
 
     def log(self, log_message, indent_amount=0):
@@ -68,9 +96,9 @@ class BaseLoader():
     def print_load_log(self):
         """Output log messages from loader to console."""
         for (log, indent_amount) in self.load_log:
-            indent = '  ' * indent_amount
-            sys.stdout.write('{indent}{text}\n'.format(indent=indent, text=log))
-        sys.stdout.write('\n')
+            indent = "  " * indent_amount
+            sys.stdout.write("{indent}{text}\n".format(indent=indent, text=log))
+        sys.stdout.write("\n")
         self.load_log = []
 
     def load_yaml_file(self, yaml_file_path):
@@ -80,24 +108,44 @@ class BaseLoader():
             file_path: location of yaml file to read
 
         Returns:
-             Either list or string, depending on structure of given yaml file
+            Either list or string, depending on structure of given yaml file
+
+        Raises:
+            CouldNotFindConfigFileError: when a given config file cannot be found.
+            InvalidConfigFileError: when a given config file is incorrectly formatted.
+            EmptyConfigFileError: when a give config file is empty.
         """
-        yaml_file = open(yaml_file_path, encoding='UTF-8').read()
-        return yaml.load(yaml_file)
+        try:
+            yaml_file = open(yaml_file_path, encoding="UTF-8").read()
+        except:
+            raise CouldNotFindConfigFileError(yaml_file_path)
+
+        try:
+            yaml_contents = yaml.load(yaml_file)
+        except:
+            raise InvalidConfigFileError(yaml_file_path)
+
+        if yaml_contents is None:
+            raise EmptyConfigFileError(yaml_file_path)
+
+        if isinstance(yaml_contents, dict) is False:
+            raise InvalidConfigFileError(yaml_file_path)
+
+        return yaml_contents
 
     def load_template_files(self):
         """Load custom HTML templates for converter.
 
         Returns:
-           templates: dictionary of html templates
+            templates: dictionary of html templates
         """
         templates = dict()
         template_path = os.path.join(
             os.path.dirname(__file__),
-            'custom_converter_templates/'
+            "custom_converter_templates/"
         )
         for file in listdir(template_path):
-            template_file = re.search(r'(.*?).html$', file)
+            template_file = re.search(r"(.*?).html$", file)
             if template_file:
                 template_name = template_file.groups()[0]
                 templates[template_name] = open(template_path + file).read()
@@ -105,5 +153,10 @@ class BaseLoader():
 
     @abc.abstractmethod
     def load(self):
-        """Abstract method to be implemented by subclasses."""
-        raise NotImplementedError('Subclass does not implement this method')
+        """Abstract method to be implemented by subclasses.
+
+        Raise:
+            NotImplementedError: when a user attempts to run the load() method of the
+                BaseLoader class.
+        """
+        raise NotImplementedError("Subclass does not implement this method")

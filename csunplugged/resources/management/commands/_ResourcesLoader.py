@@ -1,7 +1,11 @@
 """Custom loader for loading resources."""
 
 from django.db import transaction
+
 from utils.BaseLoader import BaseLoader
+
+from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
+
 from resources.models import Resource
 
 
@@ -20,17 +24,36 @@ class ResourcesLoader(BaseLoader):
 
     @transaction.atomic
     def load(self):
-        """Load the content for resources."""
-        resources = self.load_yaml_file(self.BASE_PATH.format(self.structure_file))
-        for (resource_slug, resource_data) in resources.items():
+        """Load the content for resources.
+
+        Raise:
+            MissingRequiredFieldError: when no object can be found with the matching
+                attribute.
+        """
+        resources_structure = self.load_yaml_file(
+            self.BASE_PATH.format(
+                self.structure_file
+            )
+        )
+
+        for (resource_slug, resource_structure) in resources_structure.items():
+            try:
+                resource_name = resource_structure["name"]
+                resource_template = resource_structure["webpage-template"]
+                resource_view = resource_structure["generation-view"]
+                resource_thumbnail = resource_structure["thumbnail-static-path"]
+            except:
+                raise MissingRequiredFieldError()
+
             resource = Resource(
                 slug=resource_slug,
-                name=resource_data['name'],
-                webpage_template=resource_data['webpage_template'],
-                generation_view=resource_data['generation_view'],
-                thumbnail_static_path=resource_data['thumbnail_static_path'],
+                name=resource_name,
+                webpage_template=resource_template,
+                generation_view=resource_view,
+                thumbnail_static_path=resource_thumbnail
             )
             resource.save()
-            self.log('Added Resource: {}'.format(resource.name))
+
+            self.log("Added Resource: {}".format(resource.name))
 
         self.print_load_log()

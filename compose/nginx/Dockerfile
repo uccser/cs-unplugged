@@ -2,7 +2,7 @@ FROM nginx:latest
 
 # Install Node.js and other dependencies
 RUN apt-get update && \
-    apt-get -y install curl && \
+    apt-get -y install curl gnupg2 && \
     curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
     apt-get -y install python build-essential nodejs
 WORKDIR /app

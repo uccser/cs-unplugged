@@ -126,8 +126,6 @@ class LessonView(generic.DetailView):
         context['lesson_curriculum_areas'] = self.object.curriculum_areas.all()
         # Add all the connected learning outcomes
         context['lesson_learning_outcomes'] = self.object.learning_outcomes.all()
-        # Add all the connected classroom resources
-        context['lesson_classroom_resources'] = self.object.classroom_resources.all()
         # Add all the connected generated resources
         related_resources = self.object.generated_resources.all()
         generated_resources = []

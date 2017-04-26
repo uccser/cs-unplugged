@@ -1,5 +1,6 @@
 {% extends "topics/topic.html" %}
 
+{% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block breadcrumbs %}
@@ -10,9 +11,7 @@
 {% block content %}
   <h1>{{ unit_plan.name }}</h1>
 
-  {% autoescape off %}
-  {{ unit_plan.content }}
-  {% endautoescape %}
+  {% render_html_field unit_plan.content %}
 
   <h2>Lessons</h2>
   {% for lesson in lessons %}

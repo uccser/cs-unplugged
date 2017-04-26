@@ -14,7 +14,7 @@ def resource_image(get_request, resource):
     Returns:
         A Pillow image object.
     """
-    image_path = 'static/img/resource-treasure-hunt.png'
+    image_path = 'static/img/resources/resource-treasure-hunt.png'
     font_path = 'static/fonts/PatrickHand-Regular.ttf'
     image = Image.open(image_path)
     draw = ImageDraw.Draw(image)

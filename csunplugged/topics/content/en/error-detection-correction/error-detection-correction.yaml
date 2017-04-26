@@ -1,8 +1,0 @@
-slug: error-detection-and-correction
-md-file: index.md
-icon: img/error-detection-correction-parity-example.png
-unit-plans:
-  - unit-plan/unit-plan.yaml
-programming-exercises:
-curriculum-integrations: curriculum-integrations/curriculum-integrations.yaml
-other-resources-md-file:
