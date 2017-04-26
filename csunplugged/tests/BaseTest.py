@@ -6,7 +6,6 @@ from django.test.client import Client
 from django.utils.translation import activate
 
 
-<<<<<<< HEAD
 class BaseTest(SimpleTestCase):
     """Base test class with methods implemented for Django testing."""
 
