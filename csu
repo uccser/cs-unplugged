@@ -106,8 +106,9 @@ function shell {
 
 # Run style checks
 function style {
-  echo "Running style checks..."
+  echo "Running PEP8 style checker..."
   docker-compose run django /docker_venv/bin/flake8
+  echo "Running Python docstring checker..."
   docker-compose run django /docker_venv/bin/pydocstyle --count --explain
 }
 
