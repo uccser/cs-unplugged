@@ -114,11 +114,8 @@ Logical thinking means using rules you already know and using logic to deduce mo
 ## Reflection Questions
 
 - What was most surprising about the learning that happened from the teaching of this unit? 
-
 - Who were the students who were very systematic in their activities? 
-
 - Who were the students who were very detailed in their activities? 
-
 - What would I change in my delivery of this unit? 
 
 

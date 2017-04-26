@@ -43,7 +43,7 @@ We are going to learn about some ways in which computers make sure that informat
 
 A **check digit** is an extra digit added to the end of an important number such as a credit card number, product code (bar code), identity number, tax number, or a passport number, that can be used to check if the number has been typed in correctly. In some situations more than one digit is used, in which case it is referred to as a checksum.
 
-{panel type="general" title="Mathematicals"}
+{panel type="general" title="Mathematical Links"}
 
 - Even and odd numbers
 - That even and odd numbers alternate (adding or subtracting one from a number changes it from even to odd, or from odd to even).
