@@ -26,10 +26,9 @@ install:
   - pip3 install -r requirements/test.txt
 
 script:
-  - flake8
-  - pydocstyle --verbose --count --explain
-  - docker-compose run django coverage run --rcfile=.coveragerc ./csunplugged/manage.py test --pattern "test_*.py" -v 3
+  - ./csu test
   - docker-compose run django 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then ./csunplugged/manage.py test --pattern "test_*.py" --reverse -v 0; fi'
+  - ./csu style
 
 after_script:
   - coveralls

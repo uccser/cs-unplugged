@@ -33,6 +33,8 @@ function helpmenu {
   printf "   start        Start development environment (this also runs the\n"
   printf "                update command)\n"
   printf "   static       Build static files\n"
+  printf "   style        Run style checks\n"
+  printf "   test         Run test suite\n"
   printf "   update       Run Django migrate and updatedata commands\n"
   printf "                and build static files\n"
   printf "   wipe         Deletes all Docker containers and images\n"
@@ -102,6 +104,20 @@ function shell {
   docker-compose run django bash
 }
 
+# Run style checks
+function style {
+  echo "Running style checks..."
+  docker-compose run django /docker_venv/bin/flake8
+  docker-compose run django /docker_venv/bin/pydocstyle --count --explain
+}
+
+# Run shell
+function test_suite {
+  echo "Running test suite..."
+  docker-compose run django /docker_venv/bin/coverage run --rcfile=.coveragerc ./manage.py test --pattern "test_*.py" -v 3
+  docker-compose run django /docker_venv/bin/coverage report
+}
+
 # Delete all untagged dangling Docker images
 function clean {
   docker rmi $(docker images -f "dangling=true" -q)
@@ -166,6 +182,14 @@ do
       ;;
     update | -u)
       update
+      exit
+      ;;
+    style)
+      style
+      exit
+      ;;
+    test)
+      test_suite
       exit
       ;;
     wipe)
