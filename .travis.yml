@@ -4,14 +4,14 @@ services:
   - docker
 
 env:
-  DOCKER_COMPOSE_VERSION: 1.11.2
+  - DOCKER_COMPOSE_VERSION=1.11.2
 
 language: python
 
 python:
   - "3.4"
 
-before_install:
+install:
   - sudo apt-get update
   - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-engine
   - sudo rm /usr/local/bin/docker-compose
@@ -20,10 +20,9 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
   - sudo docker --version
   - sudo docker-compose --version
-  - ./csu start
 
-install:
-  - pip3 install -r requirements/test.txt
+before_script:
+  - ./csu start
 
 script:
   - ./csu test
