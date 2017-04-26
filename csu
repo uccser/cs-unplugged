@@ -67,10 +67,10 @@ function update {
   static
 
   echo "Apply database migrations..."
-  docker-compose run django /docker_venv/bin/python3 manage.py migrate
+  docker-compose run django /docker_venv/bin/python3 ./manage.py migrate
 
   echo "Loading topics content..."
-  docker-compose run django /docker_venv/bin/python3 manage.py updatedata
+  docker-compose run django /docker_venv/bin/python3 ./manage.py updatedata
 
   static_scratch
   collect_static
@@ -97,7 +97,7 @@ function static_scratch {
 # Collecting static files
 function collect_static {
   echo "Collecting static files..."
-  docker-compose run django /docker_venv/bin/python3 manage.py collectstatic --no-input
+  docker-compose run django /docker_venv/bin/python3 ./manage.py collectstatic --no-input
 }
 
 # Run shell
@@ -108,15 +108,15 @@ function shell {
 # Run style checks
 function style {
   echo "Running PEP8 style checker..."
-  docker-compose run django /docker_venv/bin/flake8
+  docker-compose run -w /cs-unplugged/ django /docker_venv/bin/flake8
   echo "Running Python docstring checker..."
-  docker-compose run django /docker_venv/bin/pydocstyle --count --explain
+  docker-compose run -w /cs-unplugged/ django /docker_venv/bin/pydocstyle --count --explain
 }
 
 # Run test suite with coverage checking
 function test_suite {
   echo "Running test suite..."
-  docker-compose run django /docker_venv/bin/coverage run --rcfile=.coveragerc ./manage.py test --pattern "test_*.py" -v 3
+  docker-compose run django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --pattern "test_*.py" -v 3
   docker-compose run django /docker_venv/bin/coverage report
 }
 

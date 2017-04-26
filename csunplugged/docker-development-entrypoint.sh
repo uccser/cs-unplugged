@@ -21,5 +21,4 @@ done
 
 # Start gunicorn service
 echo "Starting gunicorn"
-. /docker_venv/bin/activate
-gunicorn -c gunicorn.conf.py -b :$PORT config.wsgi --reload
+/docker_venv/bin/gunicorn -c ./gunicorn.conf.py -b :$PORT config.wsgi --reload

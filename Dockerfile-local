@@ -46,5 +46,6 @@ RUN /docker_venv/bin/pip3 install weasyprint==0.36
 # Install dependencies
 RUN /docker_venv/bin/pip3 install -r /requirements/local.txt
 
-RUN mkdir /code
-WORKDIR /code
+RUN mkdir /cs-unplugged/
+RUN mkdir /cs-unplugged/csunplugged/
+WORKDIR /cs-unplugged/csunplugged/
