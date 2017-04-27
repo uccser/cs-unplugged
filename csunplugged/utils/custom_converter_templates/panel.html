@@ -1,0 +1,9 @@
+<details{% if expanded == 'true'%} open{% endif %}>
+  <summary>
+    <strong>{{ title }}{% if subtitle %}:</strong> {{ subtitle }}{% else %}</strong>{% endif %}
+  </summary>
+
+  {% autoescape false -%}
+  {{ content }}
+  {%- endautoescape %}
+</details>
