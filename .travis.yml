@@ -28,6 +28,7 @@ script:
   - ./csu test
   - ./csu test_backwards
   - ./csu style
+  - ./csu docs
 
 # Stop email notifications but post to organisation Slack channel
 notifications:
