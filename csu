@@ -26,6 +26,7 @@ function helpmenu {
   printf "Available commands:\n"
   printf "   build             Build or rebuild Docker images\n"
   printf "   clean             Deletes dangling Docker images\n"
+  printf "   docs              Generates the documentation\n"
   printf "   end               Stop development environment\n"
   printf "   help              View help menu\n"
   printf "   logs              View logs\n"
@@ -124,6 +125,15 @@ function test_suite_backwards {
   fi
 }
 
+# Generates the documentation (with warnings as errors)
+function documentation {
+  echo "Removing any existing documentation..."
+  docker-compose run django rm -rf /cs-unplugged/docs/build/
+  docker-compose run django mkdir /cs-unplugged/docs/build/
+  echo "Creating documentation..."
+  docker-compose run django /docker_venv/bin/sphinx-build -W /cs-unplugged/docs/source/ /cs-unplugged/docs/build/
+}
+
 # Delete all untagged dangling Docker images
 function clean {
   docker rmi $(docker images -f "dangling=true" -q)
@@ -157,6 +167,10 @@ do
       ;;
     clean | -c)
       clean
+      exit
+      ;;
+    docs | -d)
+      documentation
       exit
       ;;
     end | -e)
