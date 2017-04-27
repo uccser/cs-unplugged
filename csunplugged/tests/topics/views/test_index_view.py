@@ -1,12 +1,13 @@
-from tests.BaseTest import BaseTest
+from tests.BaseTestWithDB import BaseTestWithDB
 from django.urls import reverse
 from topics.models import Topic
 
 
-class IndexViewTest(BaseTest):
+class IndexViewTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
-        BaseTest.__init__(self, *args, **kwargs)
+        super().__init__(*args, **kwargs)
+        self.language = 'en'
 
     def test_index_with_no_topics(self):
         url = reverse('topics:index')
@@ -22,6 +23,7 @@ class IndexViewTest(BaseTest):
             icon='icon'
         )
         new_topic.save()
+
         url = reverse('topics:index')
         response = self.client.get(url)
         self.assertEqual(200, response.status_code)

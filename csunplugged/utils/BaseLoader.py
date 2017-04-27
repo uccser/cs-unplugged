@@ -10,7 +10,6 @@ from os import listdir
 from verto import Verto
 
 from .check_required_files import check_converter_required_files
-
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
 from utils.errors.EmptyConfigFileError import EmptyConfigFileError

@@ -8,9 +8,9 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile-local
-    command: ./docker-development-entrypoint.sh
+    command: /cs-unplugged/csunplugged/docker-development-entrypoint.sh
     volumes:
-      - ./csunplugged:/code
+      - .:/cs-unplugged
     environment:
       - PORT=8080
       - USE_DOCKER=yes

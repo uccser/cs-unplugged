@@ -32,6 +32,9 @@ Where ``[COMMAND]`` is a word from the list below:
 - :ref:`build`
 - :ref:`static`
 - :ref:`update`
+- :ref:`test`
+- :ref:`test_backwards`
+- :ref:`style`
 - :ref:`logs`
 - :ref:`shell`
 - :ref:`clean`
@@ -113,6 +116,32 @@ It also runs the ``static`` command to generate static files.
 
 If changes are made to the topics content when the system is running, this
 command needs to be run to view the new changes on the website.
+
+.. _test:
+
+``test``
+==============================================================================
+
+Running ``csu test`` will run the test suite, and also display a basic
+table detailing test code coverage.
+
+.. _test_backwards:
+
+``test_backwards``
+==============================================================================
+
+Running ``csu test_backwards`` will run the test suite in reverse.
+This is useful to check if any tests are influencing the result of each other.
+If this command if run on Travis CI, it will only run for a pull request.
+
+.. _style:
+
+``style``
+==============================================================================
+
+Running ``csu style`` will run the ``flake8`` and ``pydocstyle`` commands
+to check the style of the project.
+If the output is ``0`` for a check, then there are zero errors.
 
 .. _logs:
 

@@ -1,31 +1,28 @@
+// gulp build : for a one off development build
+// gulp build --production : for a minified production build
+
 'use strict';
 var gulp = require('gulp');
 var gutil = require('gulp-util');
-var fs = require('fs');
 var del = require('del');
-var uglify = require('gulp-uglify');
 var gulpif = require('gulp-if');
 var exec = require('child_process').exec;
 var runSequence = require('run-sequence')
 var notify = require('gulp-notify');
 var buffer = require('vinyl-buffer');
-var gulpwatch = require('gulp-watch');
 var argv = require('yargs').argv;
+
 // sass
 var sass = require('gulp-sass');
 var postcss = require('gulp-postcss');
 var postcssFlexbugFixes = require('postcss-flexbugs-fixes');
 var autoprefixer = require('autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
-// BrowserSync
-var browserSync = require('browser-sync');
-// js
-var watchify = require('watchify');
-var browserify = require('browserify');
-var source = require('vinyl-source-stream');
+
 // linting
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
+
 // Scratch image rendering
 var scratchblocks = require('scratchblocks');
 var rename = require("gulp-rename");
@@ -36,8 +33,7 @@ var PluginError = require('gulp-util').PluginError;
 var production = !!argv.production;
 // determine if we're doing a build
 // and if so, bypass the livereload
-var build = argv._.length ? argv._[0] === 'build' : false;
-var watch = argv._.length ? argv._[0] === 'watch' : true;
+var build = argv._.length ? argv._[0] === 'build' : true;
 
 // ----------------------------
 // Error notification methods
@@ -66,6 +62,7 @@ var handleError = function(task) {
     gutil.log(gutil.colors.bgRed(task + ' error:'), gutil.colors.red(err));
   };
 };
+
 var scratchSVG = function() {
   var PLUGIN_NAME = 'scratchSVG';
   return through.obj(function(file, encoding, callback) {
@@ -184,32 +181,6 @@ var tasks = {
   },
 };
 
-gulp.task('browser-sync', function() {
-    browserSync.init({
-        proxy: "localhost:8000",
-        port: process.env.PORT || 3000
-    });
-});
-
-gulp.task('reload-sass', ['sass'], function(){
-  browserSync.reload();
-});
-gulp.task('reload-scratch', ['scratch'], function(){
-  browserSync.reload();
-});
-gulp.task('reload-images', ['images'], function(){
-  browserSync.reload();
-});
-gulp.task('reload-js', ['js'], function(){
-  browserSync.reload();
-});
-gulp.task('reload-css', ['css'], function(){
-  browserSync.reload();
-});
-gulp.task('reload-templates', [], function(){
-  browserSync.reload();
-});
-
 // // --------------------------
 // // CUSTOMS TASKS
 // // --------------------------
@@ -223,55 +194,8 @@ gulp.task('css', req, tasks.css);
 gulp.task('sass', req, tasks.sass);
 gulp.task('scratch', req, tasks.scratch);
 gulp.task('lint:js', tasks.lintjs);
-gulp.task('optimize', tasks.optimize);
-gulp.task('test', tasks.test);
 
-// --------------------------
-// DEV/WATCH TASK
-// --------------------------
-gulp.task('watch', ['scratch', 'images', 'css', 'js', 'sass', 'browser-sync'], function() {
-  // --------------------------
-  // watch:scratch
-  // --------------------------
-  gulpwatch('temp/scratch-blocks-*.txt', function() {
-      gulp.start('reload-scratch');
-  });
-  // --------------------------
-  // watch:images
-  // --------------------------
-  gulpwatch('static/img/**/*', function() {
-      gulp.start('reload-images');
-  });
-  // --------------------------
-  // watch:sass
-  // --------------------------
-  gulp.watch('static/scss/**/*.scss', ['reload-sass']);
-
-  // --------------------------
-  // watch:js
-  // --------------------------
-  gulp.watch('static/js/**/*.js', ['lint:js', 'reload-js']);
-
-  // --------------------------
-  // watch:css
-  // --------------------------
-  gulp.watch('static/css/**/*.css', ['reload-css']);
-
-  // --------------------------
-  // watch:templates
-  // --------------------------
-  gulp.watch('templates/**/*.html', ['reload-templates']);
-
-  gutil.log(gutil.colors.bgGreen('Watching for changes...'));
-});
-
-// build task
+// // build task
 gulp.task('build', function(callback) {
   runSequence('clean', ['images', 'css', 'js', 'sass'], callback);
 });
-
-gulp.task('default', ['watch']);
-
-// gulp (watch) : for development and livereload
-// gulp build : for a one off development build
-// gulp build --production : for a minified production build
