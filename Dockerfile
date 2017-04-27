@@ -26,9 +26,9 @@ RUN mkdir /csunplugged
 WORKDIR /csunplugged
 
 # Copy and install Python dependencies
-RUN python -m virtualenv --python=python3.4 docker_venv
+RUN python -m virtualenv --python=python3.4 /docker_venv
 COPY requirements /requirements
-RUN pip3 install -r /requirements/production.txt
+RUN /docker_venv/bin/pip3 install -r /requirements/production.txt
 
 ADD ./csunplugged /csunplugged/
-CMD docker_venv/bin/gunicorn -c gunicorn.conf.py -b :8080 config.wsgi
+CMD /docker_venv/bin/gunicorn -c gunicorn.conf.py -b :8080 config.wsgi
