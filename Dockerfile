@@ -22,14 +22,13 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get clean && rm /var/lib/apt/lists/*_*
 
 EXPOSE 8080
-RUN mkdir /code
-WORKDIR /code
+RUN mkdir /csunplugged
+WORKDIR /csunplugged
 
 # Copy and install Python dependencies
 RUN python -m virtualenv --python=python3.4 docker_venv
-RUN . docker_venv/bin/activate
 COPY requirements /requirements
 RUN pip3 install -r /requirements/production.txt
 
-ADD ./csunplugged /code/
-CMD gunicorn -c gunicorn.conf.py -b :8080 config.wsgi
+ADD ./csunplugged /csunplugged/
+CMD docker_venv/bin/gunicorn -c gunicorn.conf.py -b :8080 config.wsgi

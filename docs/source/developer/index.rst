@@ -15,3 +15,4 @@ The following pages are for those wanting to develop the CS Unplugged system.
     resources
     dev
     deployment
+    test_suite

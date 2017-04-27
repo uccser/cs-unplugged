@@ -4,14 +4,14 @@ services:
   - docker
 
 env:
-  DOCKER_COMPOSE_VERSION: 1.11.2
+  - DOCKER_COMPOSE_VERSION=1.11.2
 
 language: python
 
 python:
   - "3.4"
 
-before_install:
+install:
   - sudo apt-get update
   - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-engine
   - sudo rm /usr/local/bin/docker-compose
@@ -20,15 +20,14 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
   - sudo docker --version
   - sudo docker-compose --version
+
+before_script:
   - ./csu start
 
-install:
-  - pip3 install -r requirements/test.txt
-
-# Runs test suite
 script:
-  - flake8
-  - pydocstyle --verbose --count --explain
+  - ./csu test
+  - ./csu test_backwards
+  - ./csu style
 
 # Stop email notifications but post to organisation Slack channel
 notifications:

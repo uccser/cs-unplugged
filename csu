@@ -24,18 +24,21 @@ function helpmenu {
   printf "Replace [COMMAND] with a word from the list below.\n\n"
   printf "Script for performing tasks related to the CS Unplugged repository.\n\n"
   printf "Available commands:\n"
-  printf "   build        Build or rebuild Docker images\n"
-  printf "   clean        Deletes dangling Docker images\n"
-  printf "   end          Stop development environment\n"
-  printf "   help         View help menu\n"
-  printf "   logs         View logs\n"
-  printf "   shell        Open shell to Django folder\n"
-  printf "   start        Start development environment (this also runs the\n"
-  printf "                update command)\n"
-  printf "   static       Build static files\n"
-  printf "   update       Run Django migrate and updatedata commands\n"
-  printf "                and build static files\n"
-  printf "   wipe         Deletes all Docker containers and images\n"
+  printf "   build             Build or rebuild Docker images\n"
+  printf "   clean             Deletes dangling Docker images\n"
+  printf "   end               Stop development environment\n"
+  printf "   help              View help menu\n"
+  printf "   logs              View logs\n"
+  printf "   shell             Open shell to Django folder\n"
+  printf "   start             Start development environment (this also runs\n"
+  printf "                     the update command)\n"
+  printf "   static            Build static files\n"
+  printf "   style             Run style checks\n"
+  printf "   test              Run test suite with code coverage report\n"
+  printf "   test_backwards    Run test suite backwards\n"
+  printf "   update            Run Django migrate and updatedata commands\n"
+  printf "                     and build static files\n"
+  printf "   wipe              Deletes all Docker containers and images\n"
 }
 
 # Start development environment
@@ -59,10 +62,10 @@ function update {
   static
 
   echo "Apply database migrations..."
-  docker-compose run django /docker_venv/bin/python3 manage.py migrate
+  docker-compose run django /docker_venv/bin/python3 ./manage.py migrate
 
   echo "Loading topics content..."
-  docker-compose run django /docker_venv/bin/python3 manage.py updatedata
+  docker-compose run django /docker_venv/bin/python3 ./manage.py updatedata
 
   static_scratch
   collect_static
@@ -89,12 +92,36 @@ function static_scratch {
 # Collecting static files
 function collect_static {
   echo "Collecting static files..."
-  docker-compose run django /docker_venv/bin/python3 manage.py collectstatic --no-input
+  docker-compose run django /docker_venv/bin/python3 ./manage.py collectstatic --no-input
 }
 
 # Run shell
 function shell {
   docker-compose run django bash
+}
+
+# Run style checks
+function style {
+  echo "Running PEP8 style checker..."
+  docker-compose run -w /cs-unplugged/ django /docker_venv/bin/flake8
+  echo "Running Python docstring checker..."
+  docker-compose run -w /cs-unplugged/ django /docker_venv/bin/pydocstyle --count --explain
+}
+
+# Run test suite with coverage checking
+function test_suite {
+  echo "Running test suite..."
+  docker-compose run django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --pattern "test_*.py" -v 3
+  docker-compose run django /docker_venv/bin/coverage report
+}
+
+# Run test suite backwards for CI testing
+function test_suite_backwards {
+  echo "Running test suite backwards..."
+  if [ "$TRAVIS_PULL_REQUEST" != "false" ]
+  then
+    docker-compose run django /docker_venv/bin/python3 ./manage.py test --pattern "test_*.py" --reverse -v 0
+  fi
 }
 
 # Delete all untagged dangling Docker images
@@ -161,6 +188,18 @@ do
       ;;
     update | -u)
       update
+      exit
+      ;;
+    style)
+      style
+      exit
+      ;;
+    test)
+      test_suite
+      exit
+      ;;
+    test_backwards)
+      test_suite_backwards
       exit
       ;;
     wipe)
