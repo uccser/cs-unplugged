@@ -1,6 +1,7 @@
 """Custom loader for loading learning outcomes."""
 
 import os.path
+from django.utils import timezone
 from django.db import transaction
 
 from utils.BaseLoader import BaseLoader
@@ -48,13 +49,25 @@ class LearningOutcomesLoader(BaseLoader):
                     "Learning Outcome"
                 )
 
-            # Create outcome objects and save to db
-            outcome = LearningOutcome(
-                slug=outcome_slug,
-                text=outcome_text
-            )
-            outcome.save()
-            self.log("Added Learning Outcome: {}".format(outcome.__str__()))
+            try:
+                # Update exisiting learning outcome object
+                outcome = LearningOutcome.objects.get(slug=outcome_slug)
+                outcome.text = outcome_text
+                outcome.save()
+                self.log("Updated Learning Outcome: {}".format(outcome.__str__()))
+            except LearningOutcome.DoesNotExist:
+                # Create a new learning outcome object and save to db
+                outcome = LearningOutcome(
+                    slug=outcome_slug,
+                    text=outcome_text
+                )
+                outcome.save()
+                self.log("Added Learning Outcome: {}".format(outcome.__str__()))
+
+        last_update_time = timezone.now()-timezone.timedelta(seconds=1)
+        LearningOutcome.objects.filter(last_modified__lte=last_update_time).delete()
+        for lo in LearningOutcome.objects.all():
+            print(lo)
 
         # Print log output
         self.print_load_log()
