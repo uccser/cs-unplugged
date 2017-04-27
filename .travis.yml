@@ -29,6 +29,9 @@ script:
   - ./csu test_backwards
   - ./csu style
 
+after_script:
+  - docker-compose run django /docker_venv/bin/codecov
+
 # Stop email notifications but post to organisation Slack channel
 notifications:
   email: false
