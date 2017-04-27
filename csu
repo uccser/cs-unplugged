@@ -44,17 +44,18 @@ function helpmenu {
 
 # Start development environment
 function start {
-  echo "Creating systems..."
+  printf "Creating systems...\n"
   docker-compose up -d
+  printf "\n"
   # Run helper functions
   update
   # Alert user that system is ready
-  printf "${GREEN}Systems are ready!${NC}\n"
+  printf "\n${GREEN}Systems are ready!${NC}\n"
 }
 
 # Stop development environment
 function end {
-  echo "Stopping systems... (takes roughly 10 to 20 seconds)"
+  printf "Stopping systems... (takes roughly 10 to 20 seconds)\n"
   docker-compose down
 }
 
@@ -62,10 +63,10 @@ function end {
 function update {
   static
 
-  echo "Apply database migrations..."
+  printf "\nApply database migrations...\n"
   docker-compose run django /docker_venv/bin/python3 ./manage.py migrate
 
-  echo "Loading topics content..."
+  printf "\nLoading topics content...\n"
   docker-compose run django /docker_venv/bin/python3 ./manage.py updatedata
 
   static_scratch
@@ -74,25 +75,25 @@ function update {
 
 # Build Docker images
 function build {
-  echo "Building Docker images..."
+  printf "Building Docker images...\n"
   docker-compose build
 }
 
 # Build static files
 function static {
-  echo "Building static files..."
+  printf "Building static files...\n"
   docker-compose run nginx gulp build
 }
 
 # Build scratch static files
 function static_scratch {
-  echo "Building scratch images..."
+  printf "Building scratch images...\n"
   docker-compose run nginx gulp scratch
 }
 
 # Collecting static files
 function collect_static {
-  echo "Collecting static files..."
+  printf "\nCollecting static files..."
   docker-compose run django /docker_venv/bin/python3 ./manage.py collectstatic --no-input
 }
 
@@ -103,22 +104,22 @@ function shell {
 
 # Run style checks
 function style {
-  echo "Running PEP8 style checker..."
+  printf "Running PEP8 style checker...\n"
   docker-compose run -w /cs-unplugged/ django /docker_venv/bin/flake8
-  echo "Running Python docstring checker..."
+  printf "\nRunning Python docstring checker...\n"
   docker-compose run -w /cs-unplugged/ django /docker_venv/bin/pydocstyle --count --explain
 }
 
 # Run test suite with coverage checking
 function test_suite {
-  echo "Running test suite..."
+  printf "Running test suite...\n"
   docker-compose run django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --pattern "test_*.py" -v 3
   docker-compose run django /docker_venv/bin/coverage report
 }
 
 # Run test suite backwards for CI testing
 function test_suite_backwards {
-  echo "Running test suite backwards..."
+  printf "Running test suite backwards...\n"
   if [ "$TRAVIS_PULL_REQUEST" != "false" ]
   then
     docker-compose run django /docker_venv/bin/python3 ./manage.py test --pattern "test_*.py" --reverse -v 0
@@ -127,10 +128,10 @@ function test_suite_backwards {
 
 # Generates the documentation (with warnings as errors)
 function documentation {
-  echo "Removing any existing documentation..."
+  printf "Removing any existing documentation...\n"
   docker-compose run django rm -rf /cs-unplugged/docs/build/
   docker-compose run django mkdir /cs-unplugged/docs/build/
-  echo "Creating documentation..."
+  printf "\nCreating documentation...\n"
   docker-compose run django /docker_venv/bin/sphinx-build -W /cs-unplugged/docs/source/ /cs-unplugged/docs/build/
 }
 
@@ -191,7 +192,7 @@ do
       ;;
     start | -s)
       start
-      echo "Open your preferred web browser to the URL 'localhost'"
+      printf "Open your preferred web browser to the URL 'localhost'\n"
       exit
       ;;
     static)
