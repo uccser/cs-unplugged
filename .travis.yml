@@ -30,7 +30,7 @@ script:
   - ./csu style
 
 after_script:
-  - docker-compose run django bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash)
 
 # Stop email notifications but post to organisation Slack channel
 notifications:
