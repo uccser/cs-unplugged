@@ -11,7 +11,6 @@ from .models import (
     ProgrammingExercise,
     ProgrammingExerciseLanguageImplementation,
     ConnectedGeneratedResource,
-    ProgrammingExerciseDifficulty,
 )
 
 
