@@ -1,0 +1,51 @@
+# This Dockerfile is based off the Google App Engine Python runtime image
+# https://github.com/GoogleCloudPlatform/python-runtime
+FROM gcr.io/google-appengine/python
+
+# Add metadata to Docker image
+LABEL maintainer="csse-education-research@canterbury.ac.nz"
+
+# Set terminal to be noninteractive
+ARG DEBIAN_FRONTEND=noninteractive
+
+ENV DJANGO_PRODUCTION=False
+
+# Install packages (including Weasyprint dependencies), running of Python 3.4.2
+RUN apt-get update && apt-get install -y \
+      libffi-dev \
+      libpq-dev \
+      nginx \
+      python-psycopg2 \
+      python3 \
+      python3-dev \
+      python3-pip \
+      libcairo2-dev \
+      python-dev \
+      python-pip \
+      python-lxml \
+      python-cffi \
+      libpango1.0-0 \
+      libgdk-pixbuf2.0-0 \
+      shared-mime-info
+RUN apt-get clean && rm /var/lib/apt/lists/*_*
+
+EXPOSE 8080
+
+# Copy and create virtual environment
+COPY requirements /requirements
+RUN python -m virtualenv --python=python3.4 /docker_venv
+
+# Install Weasyprint dependencies
+RUN /docker_venv/bin/pip3 install -U pip setuptools
+RUN /docker_venv/bin/pip3 install packaging==16.8
+RUN /docker_venv/bin/pip3 install appdirs==1.4.3
+RUN /docker_venv/bin/pip3 install html5lib==1.0b9
+RUN /docker_venv/bin/pip3 install six==1.10.0
+RUN /docker_venv/bin/pip3 install weasyprint==0.36
+
+# Install dependencies
+RUN /docker_venv/bin/pip3 install -r /requirements/local.txt
+
+RUN mkdir /cs-unplugged/
+RUN mkdir /cs-unplugged/csunplugged/
+WORKDIR /cs-unplugged/csunplugged/

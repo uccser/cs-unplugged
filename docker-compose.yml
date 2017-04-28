@@ -30,3 +30,8 @@ services:
       - django
     ports:
       - "80:80"
+
+  render:
+    build:
+      context: ./render
+      dockerfile: ./render/Dockerfile
