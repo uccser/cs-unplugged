@@ -1,6 +1,6 @@
 """Base error used to create custom errors for loaders."""
 
-ERROR_TITLE_TEMPLATE = "****************************ERROR****************************\n"
+ERROR_TITLE_TEMPLATE = "\n****************************ERROR****************************\n"
 ERROR_FILENAME_TEMPLATE = "File: {filename}\n"
 ERROR_REFERENCE_TEMPLATE = "Referenced in: {reference}\n"
 ERROR_SUGGESTIONS_TEMPLATE = """

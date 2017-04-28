@@ -23,7 +23,7 @@ class LearningOutcomesLoader(BaseLoader):
         """
         super().__init__(BASE_PATH)
         self.structure_file_path = structure_file_path
-        self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(structure_file_path)[0])
+        # self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(structure_file_path)[0])
 
     @transaction.atomic
     def load(self):
@@ -66,8 +66,6 @@ class LearningOutcomesLoader(BaseLoader):
 
         last_update_time = timezone.now()-timezone.timedelta(seconds=1)
         LearningOutcome.objects.filter(last_modified__lte=last_update_time).delete()
-        for lo in LearningOutcome.objects.all():
-            print(lo)
 
         # Print log output
         self.print_load_log()
