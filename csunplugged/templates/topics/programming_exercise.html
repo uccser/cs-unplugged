@@ -1,4 +1,4 @@
-{% extends "topics/programming_exercise_list.html" %}
+{% extends "topics/topic.html" %}
 
 {% load static %}
 {% load render_html_field %}
@@ -6,7 +6,7 @@
 
 {% block breadcrumbs %}
   {{ block.super }}
-  {% breadcrumb programming_exercise.name "topics:programming_exercise" topic.slug unit_plan.slug lesson.slug programming_exercise.slug %}
+  {% breadcrumb programming_exercise.name "topics:programming_exercise" topic.slug programming_exercise.slug %}
 {% endblock breadcrumbs %}
 
 {% block content %}
@@ -18,6 +18,22 @@
   <p>
     <strong>Challenge Level:</strong> {{ programming_exercise.difficulty.name }}
   </p>
+
+  {% if lessons %}
+    <div class="alert alert-info" role="alert">
+      <p>This programming challenge is related to the following lessons:</p>
+
+      <ul>
+        {% for lesson in lessons %}
+          <li>
+            <a href="{% url 'topics:lesson' topic.slug lesson.unit_plan.slug lesson.slug %}">
+              {{ lesson.name }} ({{ lesson.min_age }} to {{ lesson.max_age }})
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
 
   {% render_html_field programming_exercise.content %}
 
@@ -50,7 +66,7 @@
             </div>
           {% endif %}
 
-          <a href="{% url 'topics:programming_exercise_language_solution' topic.slug unit_plan.slug lesson.slug programming_exercise.slug implementation.language.slug %}" class="btn btn-outline-danger">
+          <a href="{% url 'topics:programming_exercise_language_solution' topic.slug programming_exercise.slug implementation.language.slug %}" class="btn btn-outline-danger">
             {{ implementation.language.name }} Solution
           </a>
         </div>
