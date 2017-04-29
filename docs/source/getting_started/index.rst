@@ -24,4 +24,4 @@ basic steps on how to use it, and our guidelines for your contributions.
     contributing_guide
     installation
     project_structure
-    basic_usage
+    helper_commands

@@ -1,4 +1,4 @@
-System Commands for Developing
+Helper Commands for Developing
 ##############################################################################
 
 .. note::
@@ -11,8 +11,6 @@ System Commands for Developing
 The CS Unplugged project uses many systems (Django, Docker, Gulp, etc) to run,
 so we have written a script for running groups of commands for running the
 system while developing.
-
-A quick
 
 The script is called ``csu`` and can be found in the ``cs-unplugged`` folder
 of the repository.
@@ -39,6 +37,21 @@ Where ``[COMMAND]`` is a word from the list below:
 - :ref:`shell`
 - :ref:`clean`
 - :ref:`wipe`
+
+All users of the project (content and technical developers) should become
+familiar with the following commands:
+
+- :ref:`start`
+- :ref:`end`
+- :ref:`build`
+- :ref:`update`
+
+Technical developers should also understand the following:
+
+- :ref:`static`
+- :ref:`test`
+- :ref:`style`
+- :ref:`logs`
 
 .. _help:
 
