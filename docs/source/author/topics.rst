@@ -86,11 +86,20 @@ and write the configuration files for the topics application.
 Adding a Topic
 ------------------------------------------------------------------------------
 
-.. The following image can copied for be edits here:
-.. image:: ../_static/img/topics_adding_topic_flowchart.png
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="topics-map">
+    <area shape="rect" coords="240,308,317,343" href="#topic-file">
+    <area shape="rect" coords="240,410,317,445" href="#application-structure-file">
+    <area shape="rect" coords="240,513,317,550" href="#adding-topics-content-unit-plans">
+    <area shape="rect" coords="240,615,317,650" href="../getting_started/helper_commands.html#update">
+  </map>
+  <img src="../_static/img/topics_adding_topic_flowchart.png" usemap="#topics-map">
 
 .. warning::
-  
+
   Every topic needs at least one unit plan, therefore the system will not allow
   a topic to be loaded until a unit plan is connected to it.
 
@@ -103,7 +112,7 @@ Adding a Unit Plan
 .. image:: ../_static/img/topics_adding_unit_plan_flowchart.png
 
 .. warning::
-  
+
   Every unit plan needs at least one lesson, so the system will not allow a
   unit plan to be loaded until a lesson is connected to it.
 
@@ -117,7 +126,7 @@ Adding a Lesson
 .. image:: ../_static/img/topics_adding_lesson_flowchart.png
 
 .. note::
-  
+
   If the lesson includes programming exercises, curriculum areas, and/or
   learning outcomes, then the corresponding configuration and content files
   will also need to be added.
@@ -187,7 +196,7 @@ keys you specified in the programming exercises configuration file.
 
   - Both the directory and file name for the exercise must match the key you chose
     for the exercise in ``programming-exercises.yaml``
-  
+
   - The expected, hints, and solution files must be prefixed with the key for
     the programming language they are written in.
 
@@ -238,7 +247,7 @@ The diagram below shows an example of YAML file locations for the
 In the following sections, each configuration file is exaplained in more detail.
 
 .. note::
-  
+
   - We use the term "key" to specify a field name. Keys map to particular values (which
     range from learning outcome text, to the structure and attributes of a lesson).
     There are two things to remember with keys:
@@ -394,7 +403,7 @@ A complete unit plan structure file with multiple lessons may look like the
 following:
 
 .. code-block:: yaml
-    
+
   introduction-to-bits:
     min-age: 7
     max-age: 11
@@ -628,7 +637,7 @@ A complete programming exercises structure file may look like the following:
       - python
     learning-outcomes:
       - programming-basic-logic
-    
+
 
 .. _curriculum-integrations-file:
 
@@ -695,4 +704,3 @@ may look like the following:
     prerequisite-lessons:
       unit-plan-2:
         - counting-in-binary
-
