@@ -83,8 +83,17 @@ and write the configuration files for the topics application.
 Adding a Topic
 ------------------------------------------------------------------------------
 
-.. The following image can copied for be edits here:
-.. image:: ../_static/img/topics_adding_topic_flowchart.png
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="topics-map">
+    <area shape="rect" coords="240,308,317,343" href="#topic-file">
+    <area shape="rect" coords="240,410,317,445" href="#application-structure-file">
+    <area shape="rect" coords="240,513,317,550" href="#adding-topics-content-unit-plans">
+    <area shape="rect" coords="240,615,317,650" href="../getting_started/helper_commands.html#update">
+  </map>
+  <img src="../_static/img/topics_adding_topic_flowchart.png" usemap="#topics-map">
 
 .. warning::
 
