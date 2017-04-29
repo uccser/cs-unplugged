@@ -112,7 +112,8 @@ function style {
 function test_suite {
   echo "Running test suite..."
   docker-compose run django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --pattern "test_*.py" -v 3
-  docker-compose run django /docker_venv/bin/coverage report
+  docker-compose run django /docker_venv/bin/coverage xml -i
+  docker-compose run django /docker_venv/bin/coverage report -m --skip-covered
 }
 
 # Run test suite backwards for CI testing
