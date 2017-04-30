@@ -6,7 +6,7 @@ Computer Science Unplugged is a collection of free learning activities that
 teach Computer Science through engaging games and puzzles that use cards,
 string, crayons and lots of running around.
 The activities introduce students to Computational Thinking through concepts
-such as binary numbers, algorithms and data compression, separated from the
+such as binary numbers, algorithms, and data compression, separated from the
 distractions and technical details of having to use computers.
 
 The latest release (``master`` branch) can be viewed at `csunplugged.org`_.
@@ -29,12 +29,6 @@ License
 
 CS Unplugged is licensed under a Creative Commons Attribution-ShareAlike 4.0
 International (CC BY-SA 4.0) license, see the `license file`_ for more details.
-
-Contact
-==============================================================================
-
-If you need to contact us private, you may do so at
-`csse-education-research@canterbury.ac.nz <mailto:csse-education-research@canterbury.ac.nz>`_.
 
 .. _csunplugged.org: http://csunplugged.org/>
 .. _cs-unplugged-develop.appspot.com: http://cs-unplugged-develop.appspot.com/en-gb/
