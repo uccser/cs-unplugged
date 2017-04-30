@@ -30,6 +30,9 @@ script:
   - ./csu style
   - ./csu docs
 
+after_script:
+  - bash <(curl -s https://codecov.io/bash)
+
 # Stop email notifications but post to organisation Slack channel
 notifications:
   email: false
