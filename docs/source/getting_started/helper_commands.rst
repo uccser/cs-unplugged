@@ -46,7 +46,7 @@ familiar with the following commands:
 - :ref:`build`
 - :ref:`update`
 
-Technical developers should also understand the following:
+Technical developers should also understand at least the following:
 
 - :ref:`static`
 - :ref:`test`
