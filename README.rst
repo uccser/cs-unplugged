@@ -1,5 +1,4 @@
-.. image:: https://storage.googleapis.com/cs-unplugged-develop/static/img/logo.png
-   :height: 100px
+.. image:: https://cloud.githubusercontent.com/assets/8001048/25562071/9c90501a-2dcf-11e7-959a-bf15dfee8362.png
    :alt: Computer Science Unplugged
    :align: center
 
