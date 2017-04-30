@@ -10,4 +10,4 @@ class LessonURLTest(BaseTestWithDB):
 
     def test_valid_lesson(self):
         url = reverse('topics:lesson', args=['binary-numbers', 'unit-plan', 'lesson-1'])
-        self.assertEqual(url, '/en/topics/binary-numbers/unit-plan/lesson/lesson-1/')
+        self.assertEqual(url, '/en/topics/binary-numbers/unit-plan/lesson-1/')
