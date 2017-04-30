@@ -25,8 +25,8 @@ function helpmenu {
   printf "Script for performing tasks related to the CS Unplugged repository.\n\n"
   printf "Available commands:\n"
   printf "   build             Build or rebuild Docker images\n"
-  printf "   clean             Deletes dangling Docker images\n"
-  printf "   docs              Generates the documentation\n"
+  printf "   clean             Delete dangling Docker images\n"
+  printf "   docs              Generate the documentation\n"
   printf "   end               Stop development environment\n"
   printf "   help              View help menu\n"
   printf "   logs              View logs\n"
@@ -39,7 +39,7 @@ function helpmenu {
   printf "   test_backwards    Run test suite backwards\n"
   printf "   update            Run Django migrate and updatedata commands\n"
   printf "                     and build static files\n"
-  printf "   wipe              Deletes all Docker containers and images\n"
+  printf "   wipe              Delete all Docker containers and images\n"
 }
 
 # Start development environment
