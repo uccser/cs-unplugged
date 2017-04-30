@@ -44,7 +44,7 @@ This is just a broad overview of the topics application.
 Viewing All Topics Content
 ------------------------------------------------------------------------------
 
-When developing locally, once you have run ``csu start`` (see
+When developing locally, once you have run ``./csu start`` (see
 :doc:`../getting_started/helper_commands`) you can go to the url below to get a
 quick overview of what content is loaded:
 

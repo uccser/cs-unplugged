@@ -20,7 +20,7 @@ NC='\033[0m' # No Color
 
 # Print out help information
 function helpmenu {
-  printf "Usage: csu [COMMAND]\n"
+  printf "Usage: ./csu [COMMAND]\n"
   printf "Replace [COMMAND] with a word from the list below.\n\n"
   printf "Script for performing tasks related to the CS Unplugged repository.\n\n"
   printf "Available commands:\n"
@@ -226,5 +226,5 @@ do
 done
 # If no command triggered
 printf "${RED}Unknown command!${NC}\n"
-printf "Type 'csu help' for available commands.\n"
+printf "Type './csu help' for available commands.\n"
 exit 1

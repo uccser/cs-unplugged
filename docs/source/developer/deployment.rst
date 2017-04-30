@@ -55,9 +55,9 @@ Deployment
     - ``csunplugged/staticfiles/``
     - ``csunplugged/temp/``
 
-  2. Run the ``csu start`` command.
+  2. Run the ``./csu start`` command.
      When the system is started, the static files are generated.
-     Once the system has started successfully, run the ``csu end`` command.
+     Once the system has started successfully, run the ``./csu end`` command.
 
   3. From the root directory, run the following command:
 
