@@ -30,7 +30,7 @@ License
 CS Unplugged is licensed under a Creative Commons Attribution-ShareAlike 4.0
 International (CC BY-SA 4.0) license, see the `license file`_ for more details.
 
-.. _csunplugged.org: http://csunplugged.org/>
+.. _csunplugged.org: http://csunplugged.org/
 .. _cs-unplugged-develop.appspot.com: http://cs-unplugged-develop.appspot.com/en-gb/
 .. _contribution guide: http://cs-unplugged.readthedocs.io/en/latest/getting_started/contributing_guide.html
 .. _license file: LICENSE
