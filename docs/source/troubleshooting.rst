@@ -39,6 +39,8 @@ located within the ``static`` directory.
 
 If the image is located within the ``static/`` directory, check the
 filepath is correct.
+When running ``./csu update``, the script will report an error if an image
+cannot be found.
 
 **Scratch block images**
 
