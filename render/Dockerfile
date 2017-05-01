@@ -50,5 +50,5 @@ RUN mkdir /render
 ADD . /render
 WORKDIR /render
 
-EXPOSE 8080
+EXPOSE ${PORT}
 CMD ["/docker_venv/bin/python", "app.py"]
