@@ -32,3 +32,10 @@ binary-numbers-one-line:
   difficulty-level: 2
   programming-languages:
     - scratch
+
+number-cards-display:
+  exercise-set-number: 2
+  exercise-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
