@@ -3,6 +3,12 @@
 from django import template
 from django.template import Template, Variable, TemplateSyntaxError
 
+INVALID_ATTRIBUTE_MESSAGE = "The 'render_html_field' tag was given an " \
+                            "attribute that could not be converted to a string."
+
+MISSING_ATTRIBUTE_MESSAGE = "The 'render_html_field' tag was given an " \
+                            "attribute that does not exist."
+
 
 class RenderHTMLFieldNode(template.Node):
     """Class used for the custom render_html_field template tag."""
@@ -21,8 +27,10 @@ class RenderHTMLFieldNode(template.Node):
         try:
             actual_item = '{% load static %}\n' + self.item_to_be_rendered.resolve(context)
             return Template(actual_item).render(context)
+        except TypeError:
+            raise TemplateSyntaxError(INVALID_ATTRIBUTE_MESSAGE)
         except template.VariableDoesNotExist:
-            return ''
+            raise TemplateSyntaxError(MISSING_ATTRIBUTE_MESSAGE)
 
 
 def render_html_field(parser, token):
