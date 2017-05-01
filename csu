@@ -110,8 +110,11 @@ function shell {
 function style {
   printf "Running PEP8 style checker...\n"
   docker-compose run --rm -w /cs-unplugged/ django /docker_venv/bin/flake8
+  pep8_status=$?
   printf "\nRunning Python docstring checker...\n"
   docker-compose run --rm -w /cs-unplugged/ django /docker_venv/bin/pydocstyle --count --explain
+  pydocstyle_status=$?
+  ! (( $pep8_status || $pydocstyle_status ))
 }
 
 # Run test suite with coverage checking
