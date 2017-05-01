@@ -30,6 +30,8 @@ function helpmenu {
   printf "   end               Stop development environment\n"
   printf "   help              View help menu\n"
   printf "   logs              View logs\n"
+  printf "   makemigrations    Run the Django makemigrations command\n"
+  printf "   migrate           Run the Django migrate command\n"
   printf "   shell             Open shell to Django folder\n"
   printf "   start             Start development environment (this also runs\n"
   printf "                     the update command)\n"
@@ -37,8 +39,8 @@ function helpmenu {
   printf "   style             Run style checks\n"
   printf "   test              Run test suite with code coverage report\n"
   printf "   test_backwards    Run test suite backwards\n"
-  printf "   update            Run Django migrate and updatedata commands\n"
-  printf "                     and build static files\n"
+  printf "   update            Run commands to update content\n"
+  printf "   updatedata        Run updatedata command\n"
   printf "   wipe              Delete all Docker containers and images\n"
 }
 
@@ -61,19 +63,33 @@ function end {
   docker volume ls -qf dangling=true | xargs -r docker volume rm
 }
 
-# Run Django migrate and updatedata commands
+# Run commands to update content
 function update {
   static
-
-  printf "\nApply database migrations...\n"
-  docker-compose run --rm django /docker_venv/bin/python3 ./manage.py migrate
-
-  printf "\nLoading topics content...\n"
-  docker-compose run --rm django /docker_venv/bin/python3 ./manage.py updatedata
-
+  migrate
+  updatedata
   static_scratch
   collect_static
 }
+
+# Run Django makemigrations command
+function makemigrations {
+  echo "Make databse migrations"
+  docker-compose run django /docker_venv/bin/python3 manage.py makemigrations
+}
+
+# Run Django migrate command
+function migrate {
+  echo "Apply database migrations..."
+  docker-compose run django /docker_venv/bin/python3 ./manage.py migrate
+}
+
+# Run updatedata command
+function updatedata {
+  echo "Loading topics content..."
+  docker-compose run django /docker_venv/bin/python3 ./manage.py updatedata
+}
+
 
 # Build Docker images
 function build {
@@ -199,6 +215,14 @@ do
       logs
       exit
       ;;
+    makemigrations | -u)
+      makemigrations
+      exit
+      ;;
+    migrate | -u)
+      migrate
+      exit
+      ;;
     shell)
       shell
       exit
@@ -216,6 +240,10 @@ do
       ;;
     update | -u)
       update
+      exit
+      ;;
+    updatedata | -u)
+      updatedata
       exit
       ;;
     style)
