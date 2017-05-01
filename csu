@@ -57,6 +57,8 @@ function start {
 function end {
   printf "Stopping systems... (takes roughly 10 to 20 seconds)\n"
   docker-compose down
+  printf "\nDeleting system volumes...\n"
+  docker volume ls -qf dangling=true | xargs -r docker volume rm
 }
 
 # Run Django migrate and updatedata commands
@@ -64,10 +66,10 @@ function update {
   static
 
   printf "\nApply database migrations...\n"
-  docker-compose run django /docker_venv/bin/python3 ./manage.py migrate
+  docker-compose run --rm django /docker_venv/bin/python3 ./manage.py migrate
 
   printf "\nLoading topics content...\n"
-  docker-compose run django /docker_venv/bin/python3 ./manage.py updatedata
+  docker-compose run --rm django /docker_venv/bin/python3 ./manage.py updatedata
 
   static_scratch
   collect_static
@@ -77,45 +79,47 @@ function update {
 function build {
   printf "Building Docker images...\n"
   docker-compose build
+  printf "\nDeleting untagged images...\n"
+  docker images --no-trunc | grep '<none>' | awk '{ print $3 }' | xargs -r docker rmi
 }
 
 # Build static files
 function static {
   printf "Building static files...\n"
-  docker-compose run nginx gulp build
+  docker-compose run --rm nginx gulp build
 }
 
 # Build scratch static files
 function static_scratch {
   printf "Building scratch images...\n"
-  docker-compose run nginx gulp scratch
+  docker-compose run --rm nginx gulp scratch
 }
 
 # Collecting static files
 function collect_static {
   printf "\nCollecting static files..."
-  docker-compose run django /docker_venv/bin/python3 ./manage.py collectstatic --no-input
+  docker-compose run --rm django /docker_venv/bin/python3 ./manage.py collectstatic --no-input
 }
 
 # Run shell
 function shell {
-  docker-compose run django bash
+  docker-compose run --rm django bash
 }
 
 # Run style checks
 function style {
   printf "Running PEP8 style checker...\n"
-  docker-compose run -w /cs-unplugged/ django /docker_venv/bin/flake8
+  docker-compose run --rm -w /cs-unplugged/ django /docker_venv/bin/flake8
   printf "\nRunning Python docstring checker...\n"
-  docker-compose run -w /cs-unplugged/ django /docker_venv/bin/pydocstyle --count --explain
+  docker-compose run --rm -w /cs-unplugged/ django /docker_venv/bin/pydocstyle --count --explain
 }
 
 # Run test suite with coverage checking
 function test_suite {
   printf "Running test suite...\n"
-  docker-compose run django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --pattern "test_*.py" -v 3
-  docker-compose run django /docker_venv/bin/coverage xml -i
-  docker-compose run django /docker_venv/bin/coverage report -m --skip-covered
+  docker-compose run --rm django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --pattern "test_*.py" -v 3
+  docker-compose run --rm django /docker_venv/bin/coverage xml -i
+  docker-compose run --rm django /docker_venv/bin/coverage report -m --skip-covered
 }
 
 # Run test suite backwards for CI testing
@@ -123,21 +127,29 @@ function test_suite_backwards {
   printf "Running test suite backwards...\n"
   if [ "$TRAVIS_PULL_REQUEST" != "false" ]
   then
-    docker-compose run django /docker_venv/bin/python3 ./manage.py test --pattern "test_*.py" --reverse -v 0
+    docker-compose run --rm django /docker_venv/bin/python3 ./manage.py test --pattern "test_*.py" --reverse -v 0
   fi
 }
 
 # Generates the documentation (with warnings as errors)
 function documentation {
   printf "Removing any existing documentation...\n"
-  docker-compose run django rm -rf /cs-unplugged/docs/build/
-  docker-compose run django mkdir /cs-unplugged/docs/build/
+  docker-compose run --rm django rm -rf /cs-unplugged/docs/build/
+  docker-compose run --rm django mkdir /cs-unplugged/docs/build/
   printf "\nCreating documentation...\n"
-  docker-compose run django /docker_venv/bin/sphinx-build -W /cs-unplugged/docs/source/ /cs-unplugged/docs/build/
+  docker-compose run --rm django /docker_venv/bin/sphinx-build -W /cs-unplugged/docs/source/ /cs-unplugged/docs/build/
 }
 
 # Delete all untagged dangling Docker images
 function clean {
+  printf "If the following commands return an argument not found error,\n"
+  printf "this is because there is nothing to delete for clean up.\n"
+
+  printf "\nDeleting unused volumes...\n"
+  docker volume ls -qf dangling=true | xargs -r docker volume rm
+  printf "\nDeleting exited containers...\n"
+  docker ps --filter status=dead --filter status=exited -aq | xargs docker rm -v
+  printf "\nDeleting dangling images...\n"
   docker rmi $(docker images -f "dangling=true" -q)
 }
 
