@@ -1,5 +1,4 @@
 from tests.BaseTestWithDB import BaseTestWithDB
-from django.urls import reverse
 
 
 class HealthCheckURLTest(BaseTestWithDB):
