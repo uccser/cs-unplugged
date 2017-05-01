@@ -3,8 +3,6 @@ how-binary-digits-work:
   max-age: 10
   number: 1
   duration: 45
-  programming-exercises:
-    - binary-numbers-no-calculations
 
 reinforcing-sequencing-in-binary-number-systems:
   min-age: 8

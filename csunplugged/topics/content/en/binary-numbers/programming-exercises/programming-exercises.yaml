@@ -4,3 +4,31 @@ binary-numbers-no-calculations:
   difficulty-level: 1
   programming-languages:
     - scratch
+
+binary-numbers-using-variable:
+  exercise-set-number: 1
+  exercise-number: 2
+  difficulty-level: 1
+  programming-languages:
+    - scratch
+
+binary-numbers-using-variables-as-operator:
+  exercise-set-number: 1
+  exercise-number: 3
+  difficulty-level: 1
+  programming-languages:
+    - scratch
+
+binary-numbers-using-variable-operator-repeat:
+  exercise-set-number: 1
+  exercise-number: 4
+  difficulty-level: 1
+  programming-languages:
+    - scratch
+
+binary-numbers-one-line:
+  exercise-set-number: 1
+  exercise-number: 5
+  difficulty-level: 2
+  programming-languages:
+    - scratch

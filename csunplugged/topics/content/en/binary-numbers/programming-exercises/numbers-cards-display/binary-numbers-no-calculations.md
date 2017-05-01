@@ -15,5 +15,5 @@ Create a program to display numbers 1, 2, 4, 8 and 16 on the screen, one at a ti
 None
 
 ## Extra challenge:
-
 Display the numbers from largest to smallest (display numbers 16, 8, 4, 2 and 1).
+
