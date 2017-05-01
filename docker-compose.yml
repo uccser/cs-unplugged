@@ -34,4 +34,10 @@ services:
   render:
     build:
       context: ./render
-      dockerfile: ./render/Dockerfile
+      args:
+        PROCESS_PORT: 5000
+        FLASK_PRODUCTION: 0
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./render:/render
