@@ -7,8 +7,8 @@ PORT = int(os.environ['PORT'])
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
-    return 'Flask Dockerized'
+def index():
+    return 'CS-Unplugged Render Engine'
 
 @app.route('/_ah/health')
 def health_check():
