@@ -198,8 +198,9 @@ Adding a Programming Exercise
   <map name="programming-exercises-map">
     <area shape="rect" coords="554,470,633,505" href="#programming-exercises-configuration-file">
     <area shape="rect" coords="240,572,317,605" href="#programming-exercises-configuration-file">
-    <area shape="rect" coords="240,690,317,725" href="#programming-exercises-structure-configuration-file">
-    <area shape="rect" coords="240,807,317,841" href="../getting_started/helper_commands.html#update">
+    <area shape="rect" coords="240,694,317,727" href="#topic-configuration-file">
+    <area shape="rect" coords="240,833,317,867" href="#programming-exercises-structure-configuration-file">
+    <area shape="rect" coords="240,995,317,1030" href="../getting_started/helper_commands.html#update">
   </map>
   <img src="../_static/img/topics_adding_programming_exercises_flowchart.png" usemap="#programming-exercises-map">
 
