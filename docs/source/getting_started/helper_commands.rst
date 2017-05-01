@@ -1,4 +1,4 @@
-System Commands for Developing
+Helper Commands for Developing
 ##############################################################################
 
 .. note::
@@ -11,8 +11,6 @@ System Commands for Developing
 The CS Unplugged project uses many systems (Django, Docker, Gulp, etc) to run,
 so we have written a script for running groups of commands for running the
 system while developing.
-
-A quick
 
 The script is called ``csu`` and can be found in the ``cs-unplugged`` folder
 of the repository.
@@ -40,12 +38,27 @@ Where ``[COMMAND]`` is a word from the list below:
 - :ref:`clean`
 - :ref:`wipe`
 
+All users of the project (content and technical developers) should become
+familiar with the following commands:
+
+- :ref:`start`
+- :ref:`end`
+- :ref:`build`
+- :ref:`update`
+
+Technical developers should also understand at least the following:
+
+- :ref:`static`
+- :ref:`test`
+- :ref:`style`
+- :ref:`logs`
+
 .. _help:
 
 ``help``
 ==============================================================================
 
-Running ``csu help`` displays brief help text for the script.
+Running ``./csu help`` displays brief help text for the script.
 More details for each command can be found on this page.
 
 .. _start:
@@ -53,13 +66,13 @@ More details for each command can be found on this page.
 ``start``
 ==============================================================================
 
-Running ``csu start`` starts the development environment.
+Running ``./csu start`` starts the development environment.
 When you run this command for the first time on a computer it will also run
-``csu build`` to build the system Docker images.
+``./csu build`` to build the system Docker images.
 This can take some time, roughly 15 to 30 minutes, depending on your computer
 and internet speed.
 Images are only required to be built once, unless the image specifications
-change (you can rebuild the images with ``csu build``).
+change (you can rebuild the images with ``./csu build``).
 Once the images are built, the script will run these images in containers.
 
 Once the development environment is operational, the script will perform the
@@ -81,7 +94,7 @@ Open your preferred web browser to the URL ``localhost`` to view the website.
 ``end``
 ==============================================================================
 
-Running ``csu end`` will stop any containers which are currently running,
+Running ``./csu end`` will stop any containers which are currently running,
 this usually takes 10 to 20 seconds.
 
 .. _build:
@@ -89,7 +102,7 @@ this usually takes 10 to 20 seconds.
 ``build``
 ==============================================================================
 
-Running ``csu build`` will build or rebuild the Docker images that are
+Running ``./csu build`` will build or rebuild the Docker images that are
 required for the CS Unplugged system.
 
 .. _static:
@@ -97,7 +110,7 @@ required for the CS Unplugged system.
 ``static``
 ==============================================================================
 
-Running ``csu static`` runs the commands for generating the static files for
+Running ``./csu static`` runs the commands for generating the static files for
 the website.
 
 If changes are made to the static files (for example, a new image is added)
@@ -109,7 +122,7 @@ new files on the website.
 ``update``
 ==============================================================================
 
-Running ``csu update`` runs the Django migrate command for updating the
+Running ``./csu update`` runs the Django migrate command for updating the
 database schema, and then runs the custom ``updatedata`` command to load
 the topics content into the database.
 It also runs the ``static`` command to generate static files.
@@ -122,7 +135,7 @@ command needs to be run to view the new changes on the website.
 ``test``
 ==============================================================================
 
-Running ``csu test`` will run the test suite, and also display a basic
+Running ``./csu test`` will run the test suite, and also display a basic
 table detailing test code coverage.
 
 .. _test_backwards:
@@ -130,7 +143,7 @@ table detailing test code coverage.
 ``test_backwards``
 ==============================================================================
 
-Running ``csu test_backwards`` will run the test suite in reverse.
+Running ``./csu test_backwards`` will run the test suite in reverse.
 This is useful to check if any tests are influencing the result of each other.
 If this command if run on Travis CI, it will only run for a pull request.
 
@@ -139,7 +152,7 @@ If this command if run on Travis CI, it will only run for a pull request.
 ``style``
 ==============================================================================
 
-Running ``csu style`` will run the ``flake8`` and ``pydocstyle`` commands
+Running ``./csu style`` will run the ``flake8`` and ``pydocstyle`` commands
 to check the style of the project.
 If the output is ``0`` for a check, then there are zero errors.
 
@@ -148,7 +161,7 @@ If the output is ``0`` for a check, then there are zero errors.
 ``logs``
 ==============================================================================
 
-Running ``csu logs`` will display the logs for the running systems.
+Running ``./csu logs`` will display the logs for the running systems.
 The output is for all logs until the time the command was run, therefore
 successive calls may display new logs.
 
@@ -159,7 +172,7 @@ To follow logs as they output, enter ``docker-compose logs --follow``.
 ``shell``
 ==============================================================================
 
-Running ``csu shell`` opens a bash terminal within the Django container (this
+Running ``./csu shell`` opens a bash terminal within the Django container (this
 requires the CS Unplugged system to be running).
 
 This is the equivalent to entering ``docker-compose run django bash``.
@@ -169,7 +182,7 @@ This is the equivalent to entering ``docker-compose run django bash``.
 ``clean``
 ==============================================================================
 
-Running ``csu clean`` deletes 'dangling' Docker images left over from builds,
+Running ``./csu clean`` deletes 'dangling' Docker images left over from builds,
 which will free up hard drive space.
 
 .. _wipe:
@@ -177,7 +190,7 @@ which will free up hard drive space.
 ``wipe``
 ==============================================================================
 
-Running ``csu wipe`` delete all Docker containers and images on your computer.
+Running ``./csu wipe`` delete all Docker containers and images on your computer.
 Once this command has be run, a full download and rebuild of images is
 required to run the system (can be triggered by the ``build`` or ``start``
 commands).

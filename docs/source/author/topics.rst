@@ -41,19 +41,16 @@ diagram.
 
 This is just a broad overview of the topics application.
 
-
-.. _viewing-the-current-state:
-
-Viewing the Current State
+Viewing All Topics Content
 ------------------------------------------------------------------------------
 
-When developing locally, once you have a server and ``gulp`` running (see
-:doc:`../getting_started/basic_usage`) you can go to the url below to get a
+When developing locally, once you have run ``./csu start`` (see
+:doc:`../getting_started/helper_commands`) you can go to the url below to get a
 quick overview of what content is loaded:
 
 .. code-block:: none
 
-  localhost:3000/__dev__/
+  localhost/__dev__/
 
 For more information about what this page displays, see :doc:`../developer/dev`.
 
@@ -81,81 +78,131 @@ The following flow charts will take you step by step through the process of addi
 content to the topics application. Below this section is full details on how to structure
 and write the configuration files for the topics application.
 
-.. _adding-topics-content-topics:
+.. _adding-a-topic:
 
 Adding a Topic
 ------------------------------------------------------------------------------
 
-.. The following image can copied for be edits here:
-.. image:: ../_static/img/topics_adding_topic_flowchart.png
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="topics-map">
+    <area shape="rect" coords="240,308,317,343" href="#topic-configuration-file">
+    <area shape="rect" coords="240,410,317,445" href="#application-structure-configuration-file">
+    <area shape="rect" coords="240,513,317,550" href="#adding-a-unit-plan">
+    <area shape="rect" coords="240,615,317,650" href="../getting_started/helper_commands.html#update">
+  </map>
+  <img src="../_static/img/topics_adding_topic_flowchart.png" usemap="#topics-map">
 
 .. warning::
-  
+
   Every topic needs at least one unit plan, therefore the system will not allow
   a topic to be loaded until a unit plan is connected to it.
 
-.. _adding-topics-content-unit-plans:
+.. _adding-a-unit-plan:
 
 Adding a Unit Plan
 ------------------------------------------------------------------------------
 
-.. The following image can copied for be edits here:
-.. image:: ../_static/img/topics_adding_unit_plan_flowchart.png
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="unit-plan-map">
+    <area shape="rect" coords="240,430,317,465" href="#unit-plan-configuration-file">
+    <area shape="rect" coords="240,540,317,575" href="#topic-configuration-file">
+    <area shape="rect" coords="240,640,317,675" href="#adding-a-lesson">
+    <area shape="rect" coords="240,745,317,780" href="../getting_started/helper_commands.html#update">
+  </map>
+  <img src="../_static/img/topics_adding_unit_plan_flowchart.png" usemap="#unit-plan-map">
 
 .. warning::
-  
+
   Every unit plan needs at least one lesson, so the system will not allow a
   unit plan to be loaded until a lesson is connected to it.
 
-
-.. _adding-topics-content-lessons:
+.. _adding-a-lesson:
 
 Adding a Lesson
 ------------------------------------------------------------------------------
 
-.. The following image can copied for be edits here:
-.. image:: ../_static/img/topics_adding_lesson_flowchart.png
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="lesson-map">
+    <area shape="rect" coords="237,420,317,456" href="#unit-plan-configuration-file">
+    <area shape="rect" coords="237,525,317,560" href="../getting_started/helper_commands.html#update">
+  </map>
+  <img src="../_static/img/topics_adding_lesson_flowchart.png" usemap="#lesson-map">
 
 .. note::
-  
+
   If the lesson includes programming exercises, curriculum areas, and/or
   learning outcomes, then the corresponding configuration and content files
   will also need to be added.
 
 
-.. _adding-topics-content-learning-outcomes:
+.. _adding-learning-outcomes:
 
 Adding Learning Outcomes
 ------------------------------------------------------------------------------
 
-.. The following image can copied for be edits here:
-.. image:: ../_static/img/topics_adding_learning_outcomes_flowchart.png
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="learning-outcomes-map">
+    <area shape="rect" coords="240,100,317,135" href="#learning-outcomes-configuration-file">
+    <area shape="rect" coords="240,210,317,245" href="#application-structure-configuration-file">
+    <area shape="rect" coords="555,200,633,235" href="#learning-outcomes-configuration-file">
+    <area shape="rect" coords="240,330,317,362" href="../getting_started/helper_commands.html#update">
+  </map>
+  <img src="../_static/img/topics_adding_learning_outcomes_flowchart.png" usemap="#learning-outcomes-map">
 
 You will now be able to add learning outcomes to lessons and programming
 exercises by referencing the keys you specified in the learning outcomes configuration
 file.
 
-
-.. _adding-topics-content-curriculum-areas:
+.. _adding-curriculum-areas:
 
 Adding Curriculum Areas
 ------------------------------------------------------------------------------
 
-.. The following image can copied for be edits here:
-.. image:: ../_static/img/topics_adding_curriculum_areas_flowchart.png
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="curriculum-areas-map">
+    <area shape="rect" coords="240,100,317,135" href="#curriculum-areas-configuration-file">
+    <area shape="rect" coords="240,210,317,245" href="#application-structure-configuration-file">
+    <area shape="rect" coords="560,200,642,232" href="#curriculum-areas-configuration-file">
+    <area shape="rect" coords="240,330,317,362" href="../getting_started/helper_commands.html#update">
+  </map>
+  <img src="../_static/img/topics_adding_curriculum_areas_flowchart.png" usemap="#curriculum-areas-map">
 
 You will now be able to add curriculum areas to lessons and curriculum
 integrations by referencing the keys you specified in the curriculum areas
 configuration file.
 
-
-.. _adding-topics-content-programming-exercises:
+.. _adding-a-programming-exercise:
 
 Adding a Programming Exercise
 ------------------------------------------------------------------------------
 
-.. The following image can copied for be edits here:
-.. image:: ../_static/img/topics_adding_programming_exercises_flowchart.png
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="programming-exercises-map">
+    <area shape="rect" coords="554,470,633,505" href="#programming-exercises-configuration-file">
+    <area shape="rect" coords="240,572,317,605" href="#programming-exercises-configuration-file">
+    <area shape="rect" coords="240,694,317,727" href="#topic-configuration-file">
+    <area shape="rect" coords="240,833,317,867" href="#programming-exercises-structure-configuration-file">
+    <area shape="rect" coords="240,995,317,1030" href="../getting_started/helper_commands.html#update">
+  </map>
+  <img src="../_static/img/topics_adding_programming_exercises_flowchart.png" usemap="#programming-exercises-map">
 
 You will now be able to add programming exercises to lessons by referencing the
 keys you specified in the programming exercises configuration file.
@@ -187,7 +234,7 @@ keys you specified in the programming exercises configuration file.
 
   - Both the directory and file name for the exercise must match the key you chose
     for the exercise in ``programming-exercises.yaml``
-  
+
   - The expected, hints, and solution files must be prefixed with the key for
     the programming language they are written in.
 
@@ -203,20 +250,27 @@ keys you specified in the programming exercises configuration file.
             ├── python-hints.md
             └── python-solution.md
 
-
-.. _adding-topics-content-curriculum-integrations:
+.. _adding-a-curriculum-integration:
 
 Adding a Curriculum Integration
 ------------------------------------------------------------------------------
 
-.. The following image can copied for be edits here:
-.. image:: ../_static/img/topics_adding_curriculum_integrations_flowchart.png
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="curriculum-integrations-map">
+    <area shape="rect" coords="568,350,645,385" href="#curriculum-integrations-configuration-file">
+    <area shape="rect" coords="240,450,317,485" href="#curriculum-integrations-configuration-file">
+    <area shape="rect" coords="240,565,317,600" href="#topic-configuration-file">
+    <area shape="rect" coords="240,675,317,710" href="../getting_started/helper_commands.html#update">
+  </map>
+  <img src="../_static/img/topics_adding_curriculum_integrations_flowchart.png" usemap="#curriculum-integrations-map">
 
 .. note ::
 
   If the integration includes curriculum areas and/or prerequisite lessons,
   then the corresponding configuration and content files will also need to be added.
-
 
 Configuration Files
 ==============================================================================
@@ -238,7 +292,7 @@ The diagram below shows an example of YAML file locations for the
 In the following sections, each configuration file is exaplained in more detail.
 
 .. note::
-  
+
   - We use the term "key" to specify a field name. Keys map to particular values (which
     range from learning outcome text, to the structure and attributes of a lesson).
     There are two things to remember with keys:
@@ -254,7 +308,6 @@ In the following sections, each configuration file is exaplained in more detail.
   - Some of the keys have angle brackets around them, ``<like so>``. This means that they
     are variables and you can call them whatever you like in your configuration file
     (without the angle brackets).
-
 
 .. _application-structure-file:
 
@@ -336,7 +389,6 @@ A complete topic structure file may look like the following:
   programming-exercises: programming-exercises/programming-exercises.yaml
   curriculum-integrations: curriculum-integrations/curriculum-integrations.yaml
 
-
 .. _unit-plan-file:
 
 Unit Plan Configuration File
@@ -394,7 +446,7 @@ A complete unit plan structure file with multiple lessons may look like the
 following:
 
 .. code-block:: yaml
-    
+
   introduction-to-bits:
     min-age: 7
     max-age: 11
@@ -417,7 +469,6 @@ following:
     learning-outcomes:
       - binary-data-representation
       - binary-justify-representation
-
 
 .. _learning-outcomes-file:
 
@@ -446,7 +497,6 @@ A complete learning outcome structure file may look like the following:
   binary-count: Demonstrate how to represent any number between 0 and 31 using binary.
   binary-convert-decimal: Perform a demonstration of how the binary number system works by converting any decimal number into a binary number.
   binary-justify-representation: Argue that 0’s and 1’s are still a correct way to represent what is stored in the computer.
-
 
 .. _curriculum-areas-file:
 
@@ -506,7 +556,6 @@ the following:
   curriculum area will automatically add the parent curriculum area, you do not need to
   specify this manually. For example, adding ``geometry`` means that ``maths`` is
   automatically included.
-
 
 .. _programming-exercises-structure-file:
 
@@ -570,7 +619,6 @@ A complete programming exercise structure file may look like the following:
     3:
       name: Advanced
 
-
 .. _programming-exercises-file:
 
 Programming Exercises Configuration File
@@ -628,7 +676,6 @@ A complete programming exercises structure file may look like the following:
       - python
     learning-outcomes:
       - programming-basic-logic
-    
 
 .. _curriculum-integrations-file:
 
@@ -695,4 +742,3 @@ may look like the following:
     prerequisite-lessons:
       unit-plan-2:
         - counting-in-binary
-
