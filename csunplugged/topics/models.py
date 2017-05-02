@@ -6,8 +6,8 @@ from django.db import models
 from resources.models import Resource
 
 
-class GlossaryDefinition(models.Model):
-    """Model for glossary definition in database."""
+class GlossaryTerm(models.Model):
+    """Model for glossary term in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(unique=True)
@@ -15,10 +15,10 @@ class GlossaryDefinition(models.Model):
     definition = models.TextField()
 
     def __str__(self):
-        """Text representation of GlossaryDefinition object.
+        """Text representation of GlossaryTerm object.
 
         Returns:
-            Term of glossary definition (string).
+            Term attribute of GlossaryTerm (string).
         """
         return self.term
 
