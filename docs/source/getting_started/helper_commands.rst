@@ -74,6 +74,8 @@ The ``./csu dev [DEV_COMMAND]`` command runs developer tasks, where
 ``[DEV_COMMAND]`` is a word from the list below:
 
 - :ref:`logs`
+- :ref:`makemigrations`
+- :ref:`migrate`
 - :ref:`shell`
 - :ref:`static`
 - :ref:`style`
@@ -91,6 +93,22 @@ The output is for all logs until the time the command was run, therefore
 successive calls may display new logs.
 
 To follow logs as they output, enter ``docker-compose logs --follow``.
+
+.. _makemigrations:
+
+``makemigrations``
+-----------------------------------------------------------------------------
+
+Running ``./csu dev makemigrations`` runs the Django ``makemigrations`` command
+to create migration files.
+
+.. _migrate:
+
+``migrate``
+-----------------------------------------------------------------------------
+
+Running ``./csu dev migrate`` runs the Django ``migrate`` command
+to apply migration files.
 
 .. _shell:
 

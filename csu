@@ -35,6 +35,8 @@ function helpmenu {
   printf "\nDEV_COMMAND list:\n"
   documentation_help
   logs_help
+  makemigrations_help
+  migrate_help
   shell_help
   static_help
   style_help
@@ -73,11 +75,11 @@ function end_help {
 function update {
   static
 
-  printf "\nCreating database migrations...\n"
-  docker-compose run --rm django /docker_venv/bin/python3 ./manage.py makemigrations
+  printf "\n"
+  makemigrations
 
-  printf "\nApplying database migrations...\n"
-  docker-compose run --rm django /docker_venv/bin/python3 ./manage.py migrate
+  printf "\n"
+  migrate
 
   printf "\n"
   updatedata
@@ -88,6 +90,24 @@ function update {
 function update_help {
   printf "   update            Run Django makemigrations, migrate, and\n"
   printf "                     updatedata commands and build static files.\n"
+}
+
+# Run Django makemigrations command
+function makemigrations {
+  printf "Creating database migrations...\n"
+  docker-compose run --rm django /docker_venv/bin/python3 ./manage.py makemigrations
+}
+function makemigrations_help {
+  printf "   makemigrations    Run Django makemigrations command.\n"
+}
+
+# Run Django migrate command
+function migrate {
+  printf "Applying database migrations...\n"
+  docker-compose run --rm django /docker_venv/bin/python3 ./manage.py migrate
+}
+function migrate_help {
+  printf "   migrate           Run Django migrate command.\n"
 }
 
 # Run Django updatedata command
@@ -233,8 +253,16 @@ function process_dev_command() {
         documentation
         exit
         ;;
-      logs | -l)
+      logs)
         logs
+        exit
+        ;;
+      makemigrations)
+        makemigrations
+        exit
+        ;;
+      migrate)
+        migrate
         exit
         ;;
       shell)
