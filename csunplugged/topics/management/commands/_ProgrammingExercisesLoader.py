@@ -93,12 +93,10 @@ class ProgrammingExercisesLoader(BaseLoader):
                 name=exercise_content.title,
                 exercise_set_number=exercise_set_number,
                 exercise_number=exercise_number,
-                content=exercise_content.html_string
+                content=exercise_content.html_string,
+                difficulty=difficulty_level
             )
             programming_exercise.save()
-            programming_exercise.difficulty.add(difficulty_level)
-            programming_exercise.save()
-            print(programming_exercise.difficulty)
 
             LOG_TEMPLATE = "Added Programming Exercise: {}"
             self.log(LOG_TEMPLATE.format(programming_exercise.name), 1)
