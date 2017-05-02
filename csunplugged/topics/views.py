@@ -2,6 +2,7 @@
 
 from django.shortcuts import get_object_or_404
 from django.views import generic
+from django.http import JsonResponse
 
 from .models import (
     Topic,
@@ -11,6 +12,7 @@ from .models import (
     ProgrammingExercise,
     ProgrammingExerciseLanguageImplementation,
     ConnectedGeneratedResource,
+    GlossaryTerm,
 )
 
 
@@ -337,3 +339,22 @@ class OtherResourcesView(generic.DetailView):
     model = Topic
     template_name = 'topics/topic-other-resources.html'
     slug_url_kwarg = 'topic_slug'
+
+
+def glossary_term(request, **kwargs):
+    """Provide the glossary data for a term as JSON.
+
+    Returns:
+        JSON response of glossary term data.
+    """
+    glossary_slug = kwargs.get('glossary_slug', None)
+    glossary_item = get_object_or_404(
+        GlossaryTerm,
+        slug=glossary_slug
+    )
+    data = {
+        'slug': glossary_slug,
+        'term': glossary_item.term,
+        'definition': glossary_item.definition
+    }
+    return JsonResponse(data)

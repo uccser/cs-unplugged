@@ -12,6 +12,12 @@ urlpatterns = [
         views.IndexView.as_view(),
         name='index'
     ),
+    # eg: /topics/glossary/pixel
+    url(
+        r'^glossary/(?P<glossary_slug>[-\w]+)/$',
+        views.glossary_term,
+        name='glossary_term'
+    ),
     # eg: /topics/curriculum-integrations/
     url(
         r'^curriculum-integrations/$',
