@@ -14,7 +14,7 @@ urlpatterns = [
     ),
     # eg: /topics/glossary/pixel
     url(
-        r'^glossary/(?P<glossary_slug>[-\w]+)/$',
+        r'^glossary/(?P<glossary_slug>[-\w]+)$',
         views.glossary_term,
         name='glossary_term'
     ),
