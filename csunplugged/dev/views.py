@@ -13,6 +13,7 @@ from topics.models import (
     ProgrammingExerciseLanguage,
     ProgrammingExerciseLanguageImplementation,
     LearningOutcome,
+    GlossaryTerm,
 )
 
 
@@ -58,6 +59,9 @@ class IndexView(generic.TemplateView):
 
         # Get learning outcome list
         context['programming_exercise_difficulties'] = ProgrammingExerciseDifficulty.objects.all()
+
+        # Get glossary term list
+        context['glossary_terms'] = GlossaryTerm.objects.all().order_by('term')
 
         return context
 

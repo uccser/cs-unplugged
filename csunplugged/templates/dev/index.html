@@ -2,6 +2,7 @@
 
 {% load i18n %}
 {% load static %}
+{% load render_html_field %}
 
 
 {% block content %}
@@ -76,6 +77,19 @@
     <ul>
       {% for learning_outcome in learning_outcomes.all %}
         <li>{{ learning_outcome.slug }}: {{ learning_outcome.text}}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if glossary_terms %}
+    <h1>Glossary Terms</h1>
+    <ul>
+      {% for glossary_term in glossary_terms %}
+        <li>
+          <h3>{{ glossary_term.term }}</h3>
+          <p>Key: <code>{{ glossary_term.slug }}</code></p>
+          {% render_html_field glossary_term.definition %}
+        </li>
       {% endfor %}
     </ul>
   {% endif %}
