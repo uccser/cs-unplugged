@@ -1,6 +1,6 @@
 """Views for the topics application."""
 
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, get_list_or_404, render
 from django.views import generic
 from django.http import JsonResponse
 
@@ -341,20 +341,35 @@ class OtherResourcesView(generic.DetailView):
     slug_url_kwarg = 'topic_slug'
 
 
-def glossary_term(request, **kwargs):
-    """Provide the JSON data for a glossary term.
+def glossary(request, **kwargs):
+    """Provide glossary view.
+
+    If the request includes the query parameter 'term', then
+    a JSON response is sent containing data for the requested term.
+    Otherwise the glossary page of all terms is rendered and sent.
 
     Returns:
-        JSON response of glossary term data.
+        If 'term' parameter: JSON response of glossary term data.
+        Otherwise HTTP response of glossary page of all terms.
     """
-    glossary_slug = kwargs.get("glossary_slug", None)
-    glossary_item = get_object_or_404(
-        GlossaryTerm,
-        slug=glossary_slug
-    )
-    data = {
-        "slug": glossary_slug,
-        "term": glossary_item.term,
-        "definition": glossary_item.definition
-    }
-    return JsonResponse(data)
+    # If term parameter, then return JSON
+    if "term" in request.GET:
+        glossary_slug = request.GET["term"]
+        glossary_item = get_object_or_404(
+            GlossaryTerm,
+            slug=glossary_slug
+        )
+        data = {
+            "slug": glossary_slug,
+            "term": glossary_item.term,
+            "definition": glossary_item.definition
+        }
+        return JsonResponse(data)
+    # Otherwise return glossary webpage with all terms
+    else:
+        template = "topics/glossary.html"
+        context = dict()
+        glossary_terms = get_list_or_404(GlossaryTerm.objects.order_by("term"))
+        context["glossary_terms"] = glossary_terms
+        print(glossary_terms)
+        return render(request, template, context)

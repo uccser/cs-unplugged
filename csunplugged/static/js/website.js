@@ -15,10 +15,12 @@ function open_glossary_definition() {
   }
   // Otherwise download HTML of modal and add to DOM
   else {
-    var url = "/topics/glossary/" + slug;
+    // TODO: Allow URL to work for different languages
+    var url = "/topics/glossary/";
     $.ajax({
       type: "GET",
       url: url,
+      data: "term=" + slug,
       async: true,
       cache: true,
       dataType: "json",
