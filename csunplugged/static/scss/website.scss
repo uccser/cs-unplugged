@@ -154,3 +154,8 @@ footer {
     color: $white;
   }
 }
+
+.glossary-term {
+  border-bottom: 1px black dotted;
+  cursor: pointer;
+}
