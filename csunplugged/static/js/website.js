@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $(".glossary-term").click(function(){
+  $("#content-container").on("click", ".glossary-term", function() {
     // Get glossary slug
     var slug = $(this).data("glossary-term")
     var glossary_term_container = $("#glossary-terms")

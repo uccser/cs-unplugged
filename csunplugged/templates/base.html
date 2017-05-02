@@ -39,10 +39,11 @@
     {% breadcrumb "Home" "/" %}
   {% endblock %}
 
-  <div class="container">
+  <div id="content-container" class="container">
     {% block body_container %}
 
     {% endblock body_container %}
+    <div id="glossary-terms"></div>
   </div>
 
   <div class="container white-footer mt-5 py-5 text-center">
@@ -131,8 +132,6 @@
       </p>
     </div>
   </footer>
-
-  <div id="glossary-terms"></div>
 
   <!-- jQuery first, then Tether, then Bootstrap JS. -->
   <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
