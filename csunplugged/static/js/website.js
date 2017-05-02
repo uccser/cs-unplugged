@@ -15,7 +15,7 @@ function open_glossary_definition() {
   }
   // Otherwise download HTML of modal and add to DOM
   else {
-    var url = "/topics/glossary/" + slug
+    var url = "/topics/glossary/" + slug;
     $.ajax({
       type: "GET",
       url: url,
@@ -30,9 +30,9 @@ function open_glossary_definition() {
 // Update the glossary modal with definition data
 function update_glossary_modal(data) {
   var glossary_modal = $("#glossary-modal");
-  glossary_modal.attr("data-glossary-term", data["slug"]);
-  $("#glossary-modal-term").text(data["term"]);
-  $("#glossary-modal-definition").html(data["definition"]);
+  glossary_modal.attr("data-glossary-term", data.slug);
+  $("#glossary-modal-term").text(data.term);
+  $("#glossary-modal-definition").html(data.definition);
   if (!glossary_modal.hasClass('show')) {
     glossary_modal.modal('show');
   }
