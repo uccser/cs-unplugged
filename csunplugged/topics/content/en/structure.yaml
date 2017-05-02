@@ -7,4 +7,5 @@ curriculum-areas: curriculum-areas.yaml
 
 glossary-folder: glossary
 glossary-terms:
+  - algorithm
   - pixel
