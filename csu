@@ -20,26 +20,27 @@ NC='\033[0m' # No Color
 
 # Print out help information
 function helpmenu {
-  printf "Usage: ./csu [COMMAND]\n"
-  printf "Replace [COMMAND] with a word from the list below.\n\n"
   printf "Script for performing tasks related to the CS Unplugged repository.\n\n"
-  printf "Available commands:\n"
-  printf "   build             Build or rebuild Docker images\n"
-  printf "   clean             Delete dangling Docker images\n"
-  printf "   docs              Generate the documentation\n"
-  printf "   end               Stop development environment\n"
-  printf "   help              View help menu\n"
-  printf "   logs              View logs\n"
-  printf "   shell             Open shell to Django folder\n"
-  printf "   start             Start development environment (this also runs\n"
-  printf "                     the update command)\n"
-  printf "   static            Build static files\n"
-  printf "   style             Run style checks\n"
-  printf "   test              Run test suite with code coverage report\n"
-  printf "   test_backwards    Run test suite backwards\n"
-  printf "   update            Run Django makemigrations, migrate, and\n"
-  printf "                     updatedata commands and build static files\n"
-  printf "   wipe              Delete all Docker containers and images\n"
+  printf "Usage: ./csu [COMMAND]\n"
+  printf "Replace [COMMAND] with a word from the COMMAND below.\n\n"
+  printf "COMMAND list:\n"
+  build_help
+  clean_help
+  printf "   dev [DEV_COMMAND] Run a developer command.\n"
+  end_help
+  printf "   help              View all help\n"
+  start_help
+  update_help
+  wipe_help
+  printf "\nDEV_COMMAND list:\n"
+  documentation_help
+  logs_help
+  shell_help
+  static_help
+  style_help
+  test_suite_help
+  test_suite_backwards_help
+  updatedata_help
 }
 
 # Start development environment
@@ -52,6 +53,10 @@ function start {
   # Alert user that system is ready
   printf "\n${GREEN}Systems are ready!${NC}\n"
 }
+function start_help {
+  printf "   start             Start development environment (this also runs\n"
+  printf "                     the update command)\n"
+}
 
 # Stop development environment
 function end {
@@ -59,6 +64,9 @@ function end {
   docker-compose down
   printf "\nDeleting system volumes...\n"
   docker volume ls -qf dangling=true | xargs -r docker volume rm
+}
+function end_help {
+  printf "   end               Stop development environment\n"
 }
 
 # Run Django migrate and updatedata commands
@@ -71,11 +79,24 @@ function update {
   printf "\nApply database migrations...\n"
   docker-compose run --rm django /docker_venv/bin/python3 ./manage.py migrate
 
-  printf "\nLoading topics content...\n"
-  docker-compose run --rm django /docker_venv/bin/python3 ./manage.py updatedata
+  printf "\n"
+  updatedata
 
   static_scratch
   collect_static
+}
+function update_help {
+  printf "   update            Run Django makemigrations, migrate, and\n"
+  printf "                     updatedata commands and build static files\n"
+}
+
+# Run Django updatedata command
+function updatedata {
+  printf "Loading topics content...\n"
+  docker-compose run --rm django /docker_venv/bin/python3 ./manage.py updatedata
+}
+function updatedata_help {
+  printf "   updatedata        Run updatedata command\n"
 }
 
 # Build Docker images
@@ -85,11 +106,17 @@ function build {
   printf "\nDeleting untagged images...\n"
   docker images --no-trunc | grep '<none>' | awk '{ print $3 }' | xargs -r docker rmi
 }
+function build_help {
+  printf "   build             Build or rebuild Docker images\n"
+}
 
 # Build static files
 function static {
   printf "Building static files...\n"
   docker-compose run --rm nginx gulp build
+}
+function static_help {
+  printf "   static            Build static files\n"
 }
 
 # Build scratch static files
@@ -108,6 +135,9 @@ function collect_static {
 function shell {
   docker-compose run --rm django bash
 }
+function shell_help {
+  printf "   shell             Open shell to Django folder\n"
+}
 
 # Run style checks
 function style {
@@ -119,6 +149,9 @@ function style {
   pydocstyle_status=$?
   ! (( $pep8_status || $pydocstyle_status ))
 }
+function style_help {
+  printf "   style             Run style checks\n"
+}
 
 # Run test suite with coverage checking
 function test_suite {
@@ -126,6 +159,9 @@ function test_suite {
   docker-compose run --rm django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --pattern "test_*.py" -v 3
   docker-compose run --rm django /docker_venv/bin/coverage xml -i
   docker-compose run --rm django /docker_venv/bin/coverage report -m --skip-covered
+}
+function test_suite_help {
+  printf "   test              Run test suite with code coverage report\n"
 }
 
 # Run test suite backwards for CI testing
@@ -136,6 +172,9 @@ function test_suite_backwards {
     docker-compose run --rm django /docker_venv/bin/python3 ./manage.py test --pattern "test_*.py" --reverse -v 0
   fi
 }
+function test_suite_backwards_help {
+  printf "   test_backwards    Run test suite backwards\n"
+}
 
 # Generates the documentation (with warnings as errors)
 function documentation {
@@ -144,6 +183,9 @@ function documentation {
   docker-compose run --rm django mkdir /cs-unplugged/docs/build/
   printf "\nCreating documentation...\n"
   docker-compose run --rm django /docker_venv/bin/sphinx-build -W /cs-unplugged/docs/source/ /cs-unplugged/docs/build/
+}
+function documentation_help {
+  printf "   docs              Generate the documentation\n"
 }
 
 # Delete all untagged dangling Docker images
@@ -158,92 +200,117 @@ function clean {
   printf "\nDeleting dangling images...\n"
   docker rmi $(docker images -f "dangling=true" -q)
 }
+function clean_help {
+  printf "   clean             Delete dangling Docker images\n"
+}
 
 # Delete all Docker containers and images
 function wipe {
   docker rm $(docker ps -a -q)
   docker rmi $(docker images -q)
 }
+function wipe_help {
+  printf "   wipe              Delete all Docker containers and images\n"
+}
 
 # View logs
 function logs {
   docker-compose logs
 }
+function logs_help {
+  printf "   logs              View logs\n"
+}
+
+function process_dev_command() {
+  if [ $# -ne 1 ]
+  then
+    printf "${RED}ERROR: dev command requires one parameter!${NC}\n"
+    helpmenu
+    exit 1
+  else
+    case "$1" in
+      docs)
+        documentation
+        exit
+        ;;
+      logs | -l)
+        logs
+        exit
+        ;;
+      shell)
+        shell
+        exit
+        ;;
+      static)
+        static
+        static_scratch
+        collect_static
+        exit
+        ;;
+      style)
+        style
+        exit
+        ;;
+      test)
+        test_suite
+        exit
+        ;;
+      test_backwards)
+        test_suite_backwards
+        exit
+        ;;
+      updatedata)
+        updatedata
+        exit
+        ;;
+    esac
+  fi
+}
+
 
 # If no command given
 if [ $# -eq 0 ]
 then
-  printf "${RED}This script requires a command!${NC}\n"
+  printf "${RED}ERROR: This script requires a command!${NC}\n"
   helpmenu
   exit 1
 fi
-# If command given
-while [ ! $# -eq 0 ]
-do
-  case "$1" in
-    build | -b)
-      build
-      exit
-      ;;
-    clean | -c)
-      clean
-      exit
-      ;;
-    docs | -d)
-      documentation
-      exit
-      ;;
-    end | -e)
-      end
-      exit
-      ;;
-    help | -h)
-      helpmenu
-      exit
-      ;;
-    logs | -l)
-      logs
-      exit
-      ;;
-    shell)
-      shell
-      exit
-      ;;
-    start | -s)
-      start
-      printf "Open your preferred web browser to the URL 'localhost'\n"
-      exit
-      ;;
-    static)
-      static
-      static_scratch
-      collect_static
-      exit
-      ;;
-    update | -u)
-      update
-      exit
-      ;;
-    style)
-      style
-      exit
-      ;;
-    test)
-      test_suite
-      exit
-      ;;
-    test_backwards)
-      test_suite_backwards
-      exit
-      ;;
-    wipe)
-      wipe
-      exit
-      ;;
-  esac
-  shift
-done
+case "$1" in
+  build)
+    build
+    exit
+    ;;
+  clean)
+    clean
+    exit
+    ;;
+  dev)
+    process_dev_command $2
+    ;;
+  end)
+    end
+    exit
+    ;;
+  help)
+    helpmenu
+    exit
+    ;;
+  start)
+    start
+    printf "Open your preferred web browser to the URL 'localhost'\n"
+    exit
+    ;;
+  update)
+    update
+    exit
+    ;;
+  wipe)
+    wipe
+    exit
+    ;;
+esac
+
 # If no command triggered
-printf "${RED}Unknown command!${NC}\n"
+printf "${RED}ERROR: Unknown command!${NC}\n"
 printf "Type './csu help' for available commands.\n"
 exit 1
