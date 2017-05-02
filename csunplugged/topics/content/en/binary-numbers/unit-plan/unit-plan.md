@@ -1,6 +1,7 @@
 # Binary Numbers Unit Plan
 
 ## See Teaching the Binary Number System in Action!
+
 Binary (Computer Science Unplugged Part 1) - these are place-holder videos, new videos are planned to be developed to represent each lesson plan.
 
 {video url="https://www.youtube.com/watch?v=Wy6-FXtLMV8&feature=youtu.be"}
@@ -20,16 +21,16 @@ Anything that can have two different values can represent a bit!
 
 The binary number system plays a central role in how information of all kinds is stored on computers.
 Understanding binary representation can lift a lot of the mystery from computers, because at a fundamental level they’re really just machines for flipping binary digits on and off.
-Computers are simple machines, and they need very exact instructions to make them do complex tasks. 
+Computers are simple machines, and they need very exact instructions to make them do complex tasks.
 
-
-Teaching binary numbers as an introduction to computational thinking introduces students to algorithms and decomposition, as they learn to break down the problems of calculating binary numbers and converting between binary and decimal numbers, into step by step processes that they can follow to solve these problems; it also introduces abstraction, as students learn that two different things can be used to represent any and all information.
+Teaching binary numbers as an introduction to computational thinking introduces students to {glossary-link term="algorithm"}algorithms{glossary-link end} and decomposition, as they learn to break down the problems of calculating binary numbers and converting between binary and decimal numbers, into step by step processes that they can follow to solve these problems; it also introduces abstraction, as students learn that two different things can be used to represent any and all information.
 It shows them that a computer isn’t actually that complex, and we use simple concepts in a clever way to make computers do extraordinary things!
 
 ##  Vocabulary Explained
 
 ### Binary Digits
-Each zero or one is called a bit. Bit is an abbreviation for Binary Digit. 
+
+Each zero or one is called a bit. Bit is an abbreviation for Binary Digit.
 
 ### Bytes
 
@@ -73,9 +74,9 @@ Humans normally use the decimal number system, which is base 10, so there are te
 
 ##  Seeing the Computational Thinking Connections
 
-####How to see the computational thinking in what you are teaching: 
+####How to see the computational thinking in what you are teaching:
 
-Throughout the lessons attached to this unit there are links to computational thinking. 
+Throughout the lessons attached to this unit there are links to computational thinking.
 
 Teaching computational thinking through CSUnplugged activities supports students to learn how to describe a problem, identify what is important, break it down into small steps, so they can then create a process which solves the problem.
 These skills are transferable to any other curriculum area, but are particularly relevant to developing digital systems.
@@ -87,7 +88,7 @@ Details of this can be found in the lesson plans, for more background informatio
 ### Algorithmic thinking
 
 There are several important algorithms for students to learn and follow in this unit.
-These algorithms are solutions to the problems “How do we convert between decimal and binary numbers?”, “How do we represent letters using binary numbers?”, and “How do we convert a message written in a binary code back to letters?”. 
+These algorithms are solutions to the problems “How do we convert between decimal and binary numbers?”, “How do we represent letters using binary numbers?”, and “How do we convert a message written in a binary code back to letters?”.
 Students will be tasked with following these algorithms accurately, articulating them, and explaining them.
 
 ### Decomposition
@@ -97,11 +98,11 @@ An example of decomposition is breaking the conversion of the number to binary i
 
 ### Abstraction
 
-Binary number representation is an abstraction that hides the complexity of the electronics and hardware inside a computer that store data. Abstraction helps us simplify things because we can ignore the details we don’t currently need to know. 
+Binary number representation is an abstraction that hides the complexity of the electronics and hardware inside a computer that store data. Abstraction helps us simplify things because we can ignore the details we don’t currently need to know.
 
 ### Generalising and Patterns
 
-Recognising patterns in the way the binary number system works helps give us a deeper understanding of the concepts involved, and assists us in generalising these concepts and patterns so that we can apply them to other problems. 
+Recognising patterns in the way the binary number system works helps give us a deeper understanding of the concepts involved, and assists us in generalising these concepts and patterns so that we can apply them to other problems.
 
 ### Evaluation
 
@@ -113,9 +114,7 @@ Logical thinking means using rules you already know and using logic to deduce mo
 
 ## Reflection Questions
 
-- What was most surprising about the learning that happened from the teaching of this unit? 
-- Who were the students who were very systematic in their activities? 
-- Who were the students who were very detailed in their activities? 
-- What would I change in my delivery of this unit? 
-
-
+- What was most surprising about the learning that happened from the teaching of this unit?
+- Who were the students who were very systematic in their activities?
+- Who were the students who were very detailed in their activities?
+- What would I change in my delivery of this unit?
