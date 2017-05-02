@@ -11,6 +11,7 @@ from ._LearningOutcomesLoader import LearningOutcomesLoader
 from ._CurriculumAreasLoader import CurriculumAreasLoader
 from ._TopicLoader import TopicLoader
 from ._ProgrammingExercisesStructureLoader import ProgrammingExercisesStructureLoader
+from ._GlossaryTermsLoader import GlossaryTermsLoader
 
 
 class Command(BaseCommand):
@@ -57,6 +58,23 @@ class Command(BaseCommand):
             if programming_exercises_structure_file_path is not None:
                 ProgrammingExercisesStructureLoader(
                     programming_exercises_structure_file_path,
+                    BASE_PATH
+                ).load()
+
+        if "glossary-terms" in structure_file:
+            if "glossary-folder" in structure_file:
+                glossary_folder_path = structure_file["glossary-folder"]
+            else:
+                raise MissingRequiredFieldError(
+                    structure_file_path,
+                    ["glossary-folder"],
+                    "Application Structure"
+                )
+            if glossary_folder_path is not None:
+                GlossaryTermsLoader(
+                    glossary_folder_path,
+                    structure_file["glossary-terms"],
+                    structure_file_path,
                     BASE_PATH
                 ).load()
 

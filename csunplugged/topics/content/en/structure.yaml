@@ -4,3 +4,7 @@ topics:
 
 programming-exercises-structure: programming-exercises-structure.yaml
 curriculum-areas: curriculum-areas.yaml
+
+glossary-folder: glossary
+glossary-terms:
+  - pixel
