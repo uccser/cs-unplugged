@@ -1,0 +1,27 @@
+runtime: python
+env: flex
+service: render
+
+runtime_config:
+  python_version: 3
+
+resources:
+  cpu: 4
+  memory_gb: 3.2
+
+health_check:
+  enable_health_check: True
+  check_interval_sec: 10
+  timeout_sec: 4
+  unhealthy_threshold: 2
+  healthy_threshold: 2
+
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instances: 20
+  cool_down_period_sec: 300
+  cpu_utilization:
+    target_utilization: 0.8
+
+env_variables:
+  TEMP: 'value'

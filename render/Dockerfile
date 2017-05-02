@@ -39,11 +39,11 @@ RUN python -m virtualenv --python=python3.5 /docker_venv
 # Install dependencies
 RUN mkdir /requirements
 COPY requirements.txt /requirements
-COPY pip_install /requirements
+COPY pip_install.sh /requirements
 
-RUN chmod +x /requirements/pip_install
+RUN chmod +x /requirements/pip_install.sh
 RUN /docker_venv/bin/pip3 install -U pip setuptools
-RUN /requirements/pip_install /docker_venv/bin/pip3 /requirements/requirements.txt
+RUN /requirements/pip_install.sh /docker_venv/bin/pip3 /requirements/requirements.txt
 
 # Setup Working Directory
 RUN mkdir /render
@@ -51,4 +51,5 @@ ADD . /render
 WORKDIR /render
 
 EXPOSE ${PORT}
-CMD ["/docker_venv/bin/python", "app.py"]
+
+CMD /docker_venv/bin/gunicorn -c gunicorn.conf.py -b :${PORT} app:app

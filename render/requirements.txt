@@ -1,8 +1,10 @@
-setuptools
-google-api-python-client==1.6.2
 packaging==16.8
 appdirs==1.4.3
 html5lib==1.0b9
 six==1.10.0
 weasyprint==0.36
 flask==0.12.1
+gevent==1.2.1
+gunicorn==19.7.1
+google-cloud==0.24.0
+google-api-python-client==1.6.2
