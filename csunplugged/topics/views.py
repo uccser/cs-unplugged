@@ -1,7 +1,8 @@
 """Views for the topics application."""
 
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404
 from django.views import generic
+from django.http import JsonResponse
 
 from .models import (
     Topic,
@@ -341,15 +342,19 @@ class OtherResourcesView(generic.DetailView):
 
 
 def glossary_term(request, **kwargs):
-    """Provide the HTML modal for a glossary term.
+    """Provide the JSON data for a glossary term.
 
     Returns:
-        HTML modal response of a glossary term.
+        JSON response of glossary term data.
     """
     glossary_slug = kwargs.get("glossary_slug", None)
     glossary_item = get_object_or_404(
         GlossaryTerm,
         slug=glossary_slug
     )
-    context = {"glossary_term": glossary_item}
-    return render(request, "topics/glossary_modal.html", context=context)
+    data = {
+        "slug": glossary_slug,
+        "term": glossary_item.term,
+        "definition": glossary_item.definition
+    }
+    return JsonResponse(data)
