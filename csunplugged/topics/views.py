@@ -2,7 +2,6 @@
 
 from django.shortcuts import get_object_or_404, render
 from django.views import generic
-from django.http import JsonResponse
 
 from .models import (
     Topic,
@@ -342,10 +341,10 @@ class OtherResourcesView(generic.DetailView):
 
 
 def glossary_term(request, **kwargs):
-    """Provide the glossary data for a term as JSON.
+    """Provide the HTML modal for a glossary term.
 
     Returns:
-        JSON response of glossary term data.
+        HTML modal response of a glossary term.
     """
     glossary_slug = kwargs.get("glossary_slug", None)
     glossary_item = get_object_or_404(
