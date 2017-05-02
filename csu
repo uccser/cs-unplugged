@@ -37,8 +37,8 @@ function helpmenu {
   printf "   style             Run style checks\n"
   printf "   test              Run test suite with code coverage report\n"
   printf "   test_backwards    Run test suite backwards\n"
-  printf "   update            Run Django migrate and updatedata commands\n"
-  printf "                     and build static files\n"
+  printf "   update            Run Django makemigrations, migrate, and\n"
+  printf "                     updatedata commands and build static files\n"
   printf "   wipe              Delete all Docker containers and images\n"
 }
 
@@ -64,6 +64,9 @@ function end {
 # Run Django migrate and updatedata commands
 function update {
   static
+
+  printf "\nCreating database migrations...\n"
+  docker-compose run --rm django /docker_venv/bin/python3 ./manage.py makemigrations
 
   printf "\nApply database migrations...\n"
   docker-compose run --rm django /docker_venv/bin/python3 ./manage.py migrate

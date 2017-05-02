@@ -122,9 +122,9 @@ new files on the website.
 ``update``
 ==============================================================================
 
-Running ``./csu update`` runs the Django migrate command for updating the
-database schema, and then runs the custom ``updatedata`` command to load
-the topics content into the database.
+Running ``./csu update`` runs the Django ``makemigratations`` and ``migrate``
+commands for updating the database schema, and then runs the custom
+``updatedata`` command to load the topics content into the database.
 It also runs the ``static`` command to generate static files.
 
 If changes are made to the topics content when the system is running, this
