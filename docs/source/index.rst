@@ -10,7 +10,7 @@ Welcome to CS Unplugged
 
   This repository (including this documentation) is currently in development!
   Therefore features may not be implemented yet, may change, be buggy, or
-  completely broken.
+  completely broken. ¯\\_(ツ)_/¯
 
 Welcome to the documentation for the CS Unplugged project.
 The documentation is split into the following sections:
