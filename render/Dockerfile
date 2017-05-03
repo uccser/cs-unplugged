@@ -18,7 +18,6 @@ RUN apt-get update && apt-get install -y \
       build-essential \
       libffi-dev \
       libpq-dev \
-      nginx \
       python-psycopg2 \
       python3 \
       python3-dev \

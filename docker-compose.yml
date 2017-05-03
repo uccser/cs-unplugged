@@ -31,6 +31,13 @@ services:
     ports:
       - "80:80"
 
+  redis:
+    build:
+      context: .
+      dockerfile: ./compose/redis/Dockerfile
+    ports:
+      - "6379:6379"
+
   render:
     build:
       context: ./render
@@ -42,3 +49,16 @@ services:
       - "5000:5000"
     volumes:
       - ./render:/render
+
+  queue:
+    build:
+      context: ./compose/queue
+      dockerfile: ./Dockerfile
+      args:
+        PROCESS_PORT: 5001
+    environment:
+      - REDIS_HOST=localhost
+      - REDIS_PORT=6379
+    depends_on:
+      - nginx
+      - redis

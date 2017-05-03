@@ -1,15 +1,21 @@
+import os, logging
 from flask import Flask, make_response
 from QueueHandler import QueueHandler
-import os
 
-DEBUG = not int(os.environ['FLASK_PRODUCTION'])
-PORT = int(os.environ['PORT'])
+DEBUG = not int(os.getenv('FLASK_PRODUCTION', 1))
+PORT = int(os.getenv('PORT', 8080))
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return 'CS-Unplugged Render Engine'
+    return 'CS-Unplugged - Render Engine'
+
+@app.route('/add')
+def add():
+    # TODO: Event
+    return 'Added'
+
 
 @app.errorhandler(500)
 def server_error(e):
