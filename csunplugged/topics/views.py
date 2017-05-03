@@ -371,5 +371,4 @@ def glossary(request, **kwargs):
         context = dict()
         glossary_terms = get_list_or_404(GlossaryTerm.objects.order_by("term"))
         context["glossary_terms"] = glossary_terms
-        print(glossary_terms)
         return render(request, template, context)
