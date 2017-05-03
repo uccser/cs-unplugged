@@ -157,8 +157,9 @@ class ProgrammingExercise(models.Model):
         LearningOutcome,
         related_name='programming_exercise_learning_outcomes'
     )
-    difficulty = models.ManyToManyField(
+    difficulty = models.ForeignKey(
         ProgrammingExerciseDifficulty,
+        on_delete=models.CASCADE,
         related_name='difficulty_programming_exercises'
     )
 
