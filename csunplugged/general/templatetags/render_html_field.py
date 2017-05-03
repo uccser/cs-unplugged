@@ -45,6 +45,7 @@ def render_html_field(parser, token):
                                   " (a variable representing a template to render)" % bits[0])
     return RenderHTMLFieldNode(bits[1])
 
+
 def render_html_with_static(html, context=dict()):
     """Render the HTML with the static template tag.
 
