@@ -95,6 +95,21 @@ Adding a Topic
   </map>
   <img src="../_static/img/topics_adding_topic_flowchart.png" usemap="#topics-map">
 
+The markdown file containing the description of the file:
+
+- **Is in:** its topic folder, e.g. the description file for 
+  Binary Numbers will be in ``topics/content/en/binary-numbers/``.
+- **Is called:** ``<topic-name>.md`` where ``<topic-name>`` is the name of the
+  topic and the name of the folder it is in, e.g. ``binary-numbers.md`` or
+  ``kidbots.md``.
+- **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
+  for the description.
+
+.. note ::
+
+  The heading written in this file witll be used exactly as it is given
+  throughout the rest of topic's pages on the website.
+
 .. warning::
 
   Every topic needs at least one unit plan, therefore the system will not allow
