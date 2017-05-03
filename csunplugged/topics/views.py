@@ -3,6 +3,7 @@
 from django.shortcuts import get_object_or_404, get_list_or_404, render
 from django.views import generic
 from django.http import JsonResponse
+from general.templatetags.render_html_field import render_html_with_static
 
 from .models import (
     Topic,
@@ -362,7 +363,7 @@ def glossary(request, **kwargs):
         data = {
             "slug": glossary_slug,
             "term": glossary_item.term,
-            "definition": glossary_item.definition
+            "definition": render_html_with_static(glossary_item.definition)
         }
         return JsonResponse(data)
     # Otherwise return glossary webpage with all terms
