@@ -81,8 +81,8 @@ var scratchSVG = function() {
           var string = doc.exportSVGString();
           // Remove invalid xmlns attribute due to issue https://github.com/scratchblocks/scratchblocks/issues/219
           string = string.replace(
-            '<use xmlns="http://www.w3.org/1999/xlink" href="#greenFlag"',
-            '<use href="#greenFlag"'
+            /<use xmlns="http:\/\/www\.w3\.org\/1999\/xlink"/g,
+            '<use'
           );
           file.contents = new Buffer(string);
         })
