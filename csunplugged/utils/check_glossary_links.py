@@ -3,6 +3,7 @@
 from utils.errors.CouldNotFindGlossaryTerm import CouldNotFindGlossaryTerm
 from topics.models import GlossaryTerm
 
+
 def check_converter_glossary_links(glossary_links, md_file_path):
     """Process glossary links found by Markdown converter.
 
