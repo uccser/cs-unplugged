@@ -12,7 +12,7 @@ urlpatterns = [
         views.IndexView.as_view(),
         name='index'
     ),
-    # eg: /topics/glossary/pixel
+    # eg: /topics/glossary/
     url(
         r'^glossary/$',
         views.glossary,
