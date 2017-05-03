@@ -10,6 +10,7 @@ r = redis.Redis(connection_pool=redis_pool)
 
 # FLASK SETUP
 
+PORT = int(os.getenv('PORT', 5000))
 app = Flask(__name__)
 
 @app.route('/')
@@ -26,7 +27,7 @@ def server_error(e):
 
 @app.route('/<project>/taskqueues/<taskqueue>/tasks',
            methods=['GET', 'POST'])
-def task(project=None, taskqueue=None):
+def tasks_api(project=None, taskqueue=None):
     if project is None:
         return "You must specify a project.", 400
     elif taskqueue is None:
@@ -50,7 +51,7 @@ def task(project=None, taskqueue=None):
 
 @app.route('/<project>/taskqueues/<taskqueue>/tasks/lease',
            methods=['POST'])
-def task(project=None, taskqueue=None):
+def lease_api(project=None, taskqueue=None):
     if project is None:
         return "You must specify a project.", 400
     elif taskqueue is None:
@@ -66,7 +67,7 @@ def task(project=None, taskqueue=None):
 
 @app.route('/<project>/taskqueues/<taskqueue>/tasks/<task>',
            methods=['GET', 'POST', 'PATCH', 'DELETE'])
-def task(project=None, taskqueue=None, task=None):
+def task_api(project=None, taskqueue=None, task=None):
     if project is None:
         return "You must specify a project.", 400
     elif taskqueue is None:
@@ -95,4 +96,4 @@ def task(project=None, taskqueue=None, task=None):
         pass
 
 if __name__ == '__main__':
-    app.run(debug=DEBUG, host='0.0.0.0', port=PORT)
+    app.run(debug=True, host='0.0.0.0', port=PORT)

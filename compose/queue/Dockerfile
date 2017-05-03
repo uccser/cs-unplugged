@@ -2,9 +2,9 @@ FROM debian:jessie
 LABEL maintainer="csse-education-research@canterbury.ac.nz"
 
 # Arguments and Environment Variables
-ARG PROCESS_PORT=5001
+ARG DEBIAN_FRONTEND=noninteractive
+ARG PROCESS_PORT=5000
 ENV PORT ${PROCESS_PORT}
-ENV DEBIAN_FRONTEND=noninteractive
 
 # Install packages
 RUN apt-get update && apt-get install -y \
@@ -29,5 +29,4 @@ WORKDIR /queue
 
 EXPOSE ${PORT}
 
-ENTRYPOINT ["/docker_venv/bin/gunicorn", "-c ./gunicorn.conf.py", "-b :${PORT}"]
-CMD ["app:app"]
+CMD /docker_venv/bin/gunicorn -c ./gunicorn.conf.py -b :${PORT} app:app

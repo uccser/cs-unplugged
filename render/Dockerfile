@@ -51,4 +51,4 @@ WORKDIR /render
 
 EXPOSE ${PORT}
 
-CMD /docker_venv/bin/gunicorn -c gunicorn.conf.py -b :${PORT} app:app
+CMD /docker_venv/bin/gunicorn -c ./gunicorn.conf.py -b :${PORT} app:app

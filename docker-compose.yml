@@ -55,7 +55,9 @@ services:
       context: ./compose/queue
       dockerfile: ./Dockerfile
       args:
-        PROCESS_PORT: 5001
+        PROCESS_PORT: 5050
+    ports:
+      - "5050:5050"
     environment:
       - REDIS_HOST=localhost
       - REDIS_PORT=6379
