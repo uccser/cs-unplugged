@@ -12,7 +12,8 @@ class GlossaryViewTest(BaseTestWithDB):
     def test_glossary_with_no_definitions(self):
         url = reverse("topics:glossary")
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(200, response.status_code)
+        self.assertEqual(len(response.context["glossary_terms"]), 0)
 
     def test_glossary_with_one_definition(self):
         term = GlossaryTerm(
@@ -95,7 +96,7 @@ class GlossaryViewTest(BaseTestWithDB):
         )
         term.save()
 
-        url = reverse("topics:glossary")
+        url = reverse("topics:glossary_json")
         response = self.client.get(url, {"term": "algorithm"})
         self.assertEqual(200, response.status_code)
         self.assertJSONEqual(
@@ -121,7 +122,7 @@ class GlossaryViewTest(BaseTestWithDB):
         )
         term2.save()
 
-        url = reverse("topics:glossary")
+        url = reverse("topics:glossary_json")
         response = self.client.get(url, {"term": "pixel"})
         self.assertEqual(200, response.status_code)
         self.assertJSONEqual(
@@ -141,29 +142,18 @@ class GlossaryViewTest(BaseTestWithDB):
         )
         term.save()
 
-        url = reverse("topics:glossary")
+        url = reverse("topics:glossary_json")
         response = self.client.get(url, {"term": "pixel"})
         self.assertEqual(404, response.status_code)
 
     def test_glossary_json_with_invalid_key(self):
-        term1 = GlossaryTerm(
+        term = GlossaryTerm(
             slug="algorithm",
             term="Algorithms",
             definition="<p>Algorithms definition.</p>"
         )
-        term1.save()
-        term2 = GlossaryTerm(
-            slug="pixel",
-            term="Pixel",
-            definition="<p>Pixel definition.</p>"
-        )
-        term2.save()
+        term.save()
 
-        url = reverse("topics:glossary")
-        response = self.client.get(url, {"word": "algorithm"})
-        self.assertEqual(200, response.status_code)
-        self.assertEqual(len(response.context["glossary_terms"]), 2)
-        self.assertQuerysetEqual(
-            response.context["glossary_terms"],
-            ["<GlossaryTerm: Algorithms>", "<GlossaryTerm: Pixel>"]
-        )
+        url = reverse("topics:glossary_json")
+        response = self.client.get(url, {"word": "pixel"})
+        self.assertEqual(404, response.status_code)

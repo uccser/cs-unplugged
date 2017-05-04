@@ -14,7 +14,7 @@ function open_glossary_definition() {
     glossary_modal.modal('show');
   } else {
     // TODO: Allow URL to work for different languages
-    var url = "/topics/glossary/";
+    var url = "/topics/glossary/json/";
     $.ajax({
       type: "GET",
       url: url,

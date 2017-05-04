@@ -2,7 +2,7 @@
 
 from django.shortcuts import get_object_or_404, get_list_or_404, render
 from django.views import generic
-from django.http import JsonResponse
+from django.http import JsonResponse, Http404
 from general.templatetags.render_html_field import render_html_with_static
 
 from .models import (
@@ -342,20 +342,32 @@ class OtherResourcesView(generic.DetailView):
     slug_url_kwarg = 'topic_slug'
 
 
-def glossary(request, **kwargs):
-    """Provide glossary view.
+class GlossaryList(generic.ListView):
+    """Provide glossary view of all terms."""
+    template_name = "topics/glossary.html"
+    context_object_name = "glossary_terms"
 
-    If the request includes the query parameter 'term', then
-    a JSON response is sent containing data for the requested term.
-    Otherwise the glossary page of all terms is rendered and sent.
+    def get_queryset(self):
+        """Get queryset of all glossary terms.
+
+        Returns:
+            Queryset of GlossaryTerm objects ordered by term.
+        """
+        return GlossaryTerm.objects.order_by("term")
+
+
+def glossary_json(request, **kwargs):
+    """Provide JSON data for glossary term.
+
+    Args:
+        request: The HTTP request.
 
     Returns:
-        If 'term' parameter: JSON response of glossary term data.
-        Otherwise HTTP response of glossary page of all terms.
+        JSON response is sent containing data for the requested term.
     """
     # If term parameter, then return JSON
     if "term" in request.GET:
-        glossary_slug = request.GET["term"]
+        glossary_slug = request.GET.get("term")
         glossary_item = get_object_or_404(
             GlossaryTerm,
             slug=glossary_slug
@@ -366,10 +378,5 @@ def glossary(request, **kwargs):
             "definition": render_html_with_static(glossary_item.definition)
         }
         return JsonResponse(data)
-    # Otherwise return glossary webpage with all terms
     else:
-        template = "topics/glossary.html"
-        context = dict()
-        glossary_terms = get_list_or_404(GlossaryTerm.objects.order_by("term"))
-        context["glossary_terms"] = glossary_terms
-        return render(request, template, context)
+        raise Http404("Term parameter not specified.")
