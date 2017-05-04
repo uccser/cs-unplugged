@@ -31,7 +31,10 @@ class GlossaryTermsLoader(BaseLoader):
             glossary_file_name = re.search(r"(.*?).md$", filename)
             if glossary_file_name:
                 glossary_slug = glossary_file_name.groups()[0]
-                glossary_file_path = os.path.join(self.BASE_PATH, filename)
+                glossary_file_path = os.path.join(
+                    self.BASE_PATH,
+                    filename
+                )
 
                 glossary_term_content = self.convert_md_file(
                     glossary_file_path,
