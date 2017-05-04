@@ -83,15 +83,9 @@
 
   {% if glossary_terms %}
     <h1>Glossary Terms</h1>
-    <ul>
-      {% for glossary_term in glossary_terms %}
-        <li>
-          <h3>{{ glossary_term.term }}</h3>
-          <p>Key: <code>{{ glossary_term.slug }}</code></p>
-          {% render_html_field glossary_term.definition %}
-        </li>
-      {% endfor %}
-    </ul>
+    <p>
+      <a href="{% url 'topics:glossary' %}">View glossary</a>
+    </p>
   {% endif %}
 
   {% if programming_exercise_languages.all %}
