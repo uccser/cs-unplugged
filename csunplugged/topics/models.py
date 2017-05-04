@@ -1,7 +1,7 @@
 """Models for the topics application."""
 
 from collections import OrderedDict
-
+from django.urls import reverse
 from django.db import models
 from resources.models import Resource
 
@@ -70,6 +70,18 @@ class Topic(models.Model):
     other_resources = models.TextField(null=True)
     icon = models.CharField(max_length=100, null=True)
 
+    def get_absolute_url(self):
+        """Return the canonical URL for a programming exercise.
+
+        Returns:
+            URL as string.
+        """
+        kwargs = {
+            "topic_slug": self.slug
+        }
+        return reverse("topics:topic", kwargs=kwargs)
+
+
     def __str__(self):
         """Text representation of Topic object.
 
@@ -113,6 +125,19 @@ class UnitPlan(models.Model):
             else:
                 grouped_lessons[(lesson.min_age, lesson.max_age)] = [lesson]
         return grouped_lessons
+
+    def get_absolute_url(self):
+        """Return the canonical URL for a unit plan.
+
+        Returns:
+            URL as string.
+        """
+        kwargs = {
+            "topic_slug": self.topic.slug,
+            "unit_plan_slug": self.slug
+        }
+        return reverse("topics:unit_plan", kwargs=kwargs)
+
 
     def __str__(self):
         """Text representation of UnitPlan object.
@@ -162,6 +187,18 @@ class ProgrammingExercise(models.Model):
         on_delete=models.CASCADE,
         related_name='difficulty_programming_exercises'
     )
+
+    def get_absolute_url(self):
+        """Return the canonical URL for a programming exercise.
+
+        Returns:
+            URL as string.
+        """
+        kwargs = {
+            "topic_slug": self.topic.slug,
+            "programming_exercise_slug": self.slug
+        }
+        return reverse("topics:programming_exercise", kwargs=kwargs)
 
     def __str__(self):
         """Text representation of ProgrammingExercise object.
@@ -274,6 +311,19 @@ class Lesson(models.Model):
         """
         return bool(self.programming_exercises.all())
 
+    def get_absolute_url(self):
+        """Return the canonical URL for a lesson.
+
+        Returns:
+            URL as string.
+        """
+        kwargs = {
+            "topic_slug": self.topic.slug,
+            "unit_plan_slug": self.unit_plan.slug,
+            "lesson_slug": self.slug
+        }
+        return reverse("topics:lesson", kwargs=kwargs)
+
     def __str__(self):
         """Text representation of Lesson object.
 
@@ -313,6 +363,18 @@ class CurriculumIntegration(models.Model):
             least one prerequisite lesson, otherwise False.
         """
         return bool(self.prerequisite_lessons.all())
+
+    def get_absolute_url(self):
+        """Return the canonical URL for a curriculum integration.
+
+        Returns:
+            URL as string.
+        """
+        kwargs = {
+            "topic_slug": self.topic.slug,
+            "integration_slug": self.slug
+        }
+        return reverse("topics:integration", kwargs=kwargs)
 
     def __str__(self):
         """Text representation of CurriculumIntegration object.
