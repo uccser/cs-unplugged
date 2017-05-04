@@ -1,6 +1,6 @@
 """Views for the topics application."""
 
-from django.shortcuts import get_object_or_404, get_list_or_404, render
+from django.shortcuts import get_object_or_404
 from django.views import generic
 from django.http import JsonResponse, Http404
 from general.templatetags.render_html_field import render_html_with_static
@@ -344,6 +344,7 @@ class OtherResourcesView(generic.DetailView):
 
 class GlossaryList(generic.ListView):
     """Provide glossary view of all terms."""
+
     template_name = "topics/glossary.html"
     context_object_name = "glossary_terms"
 
