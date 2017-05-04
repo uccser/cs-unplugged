@@ -21,9 +21,9 @@ class BaseTestWithDB(TestCase):
         Creates a new user.
         """
         super(BaseTestWithDB, cls).setUpTestData()
-        cls.username = 'test'
-        cls.email = 'test@test.com'
-        cls.password = 'test'
+        cls.username = "test"
+        cls.email = "test@test.com"
+        cls.password = "test"
         cls.test_user = User.objects.create_user(cls.username, cls.email, cls.password)
 
     @classmethod

@@ -6,11 +6,11 @@ class IndexURLTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.language = 'en'
+        self.language = "en"
 
     def test_valid_index(self):
-        url = reverse('topics:index')
-        self.assertEqual(url, '/en/topics/')
+        url = reverse("topics:index")
+        self.assertEqual(url, "/en/topics/")
 
         response = self.client.get(url)
         self.assertEqual(200, response.status_code)
