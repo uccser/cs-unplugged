@@ -284,25 +284,34 @@ Adding Glossary Definitions
 .. raw:: html
 
   <map name="glossary-definitions-map">
-    <area shape="rect" coords="240,110,317,136" href="#application-structure-configuration-file">
-    <area shape="rect" coords="240,227,317,262" href="#application-structure-configuration-file">
-    <area shape="rect" coords="553,200,634,234" href="#application-structure-configuration-file">
-    <area shape="rect" coords="237,347,317,381" href="#glossary-definitions-markdown-file">
-    <area shape="rect" coords="553,308,633,343" href="#glossary-definitions-markdown-file">
-    <area shape="rect" coords="239,467,319,500" href="../getting_started/helper_commands.html#update">
+    <area shape="rect" coords="240,110,317,145" href="#application-structure-configuration-file">
+    <area shape="rect" coords="240,320,320,350" href="#glossary-definitions-markdown-file">
+    <area shape="rect" coords="240,430,319,462" href="../getting_started/helper_commands.html#update">
   </map>
   <img src="../_static/img/topics_adding_glossary_definitions_flowchart.png" usemap="#glossary-definitions-map">
 
 .. _glossary-definitions-markdown-file:
 
-Each glossary definition key requires a Markdown file within the glossary
-folder, with the same name as the key.
-For example, if the key ``pixel`` is listed, then a file ``pixel.md`` is
+Each glossary definition requires a Markdown file within the glossary
+folder, with the filename as the glossary key.
+When linking text to a glossary definition, the key is used as the identifier.
+For example, with the key ``pixel``, then a file ``pixel.md`` is
 expected.
 
 Each Markdown file should start with a heading containing the glossary term
 (this should be capitalized and include any required punctuation), followed
 by the term's definition.
+
+Continuing the ``pixel.md`` example from above, this could be the possible
+contents of that file.
+
+.. code-block:: none
+
+    # Pixel
+
+    This term is an abbreviation of picture element, the name given to the
+    tiny squares that make up a grid that is used to represent images on a
+    computer.
 
 Configuration Files
 ==============================================================================
@@ -365,7 +374,6 @@ Application Structure Configuration File
       configuration file.
     - ``glossary-folder:`` The folder name that contains the Markdown files for
       glossary definitions.
-    - ``glossary-terms:`` A list of keys of defined glossary terms.
 
 A complete application structure file may look like the following:
 
@@ -380,9 +388,6 @@ A complete application structure file may look like the following:
   programming-exercises-structure: programming-exercises-structure.yaml
 
   glossary-folder: glossary
-  glossary-terms:
-    - algorithm
-    - pixel
 
 .. _topic-file:
 
