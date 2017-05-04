@@ -1,20 +1,18 @@
+/** JavaScript to load on each page of website */
 $(document).ready(function() {
   $("#content-container, #glossary-modal").on("click", ".glossary-term", open_glossary_definition);
 });
 
-// Retrieve glossary definition
 function open_glossary_definition() {
-  // Save glossary slug
+  /**
+   * Retrieve glossary definition.
+   */
   var slug = $(this).data("glossary-term");
-  // Find glossary modal
   var glossary_modal = $("#glossary-modal");
 
-  // If glossary modal already has content for term
   if (glossary_modal.attr("data-glossary-term") == slug) {
     glossary_modal.modal('show');
-  }
-  // Otherwise download HTML of modal and add to DOM
-  else {
+  } else {
     // TODO: Allow URL to work for different languages
     var url = "/topics/glossary/";
     $.ajax({
@@ -29,8 +27,11 @@ function open_glossary_definition() {
   }
 }
 
-// Update the glossary modal with definition data
 function update_glossary_modal(data) {
+  /**
+   * Update the glossary modal with definition data.
+   * @param {dict} data - The JSON data for the definition.
+   */
   var glossary_modal = $("#glossary-modal");
   glossary_modal.attr("data-glossary-term", data.slug);
   $("#glossary-modal-term").text(data.term);
