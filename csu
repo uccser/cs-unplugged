@@ -22,7 +22,7 @@ NC='\033[0m' # No Color
 function helpmenu {
   printf "Script for performing tasks related to the CS Unplugged repository.\n\n"
   printf "Usage: ./csu [COMMAND]\n"
-  printf "Replace [COMMAND] with a word from the COMMAND below.\n\n"
+  printf "Replace [COMMAND] with a word from the list below.\n\n"
   printf "COMMAND list:\n"
   build_help
   clean_help
