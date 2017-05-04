@@ -11,7 +11,7 @@ class GlossaryTermsLoader(BaseLoader):
     """Custom loader for loading glossary terms."""
 
     def __init__(self, glossary_folder_path, glossary_terms, structure_file_path, BASE_PATH):
-        """Create the loader for loading programming exercises.
+        """Create the loader for loading glossary terms.
 
         Args:
             glossary_folder_path: Folder path to definition files (string).
