@@ -99,16 +99,16 @@ The Markdown file containing the description of the topic:
 
 - **Is in:** the topic directory, e.g. the description file for 
   Binary Numbers will be in ``topics/content/en/binary-numbers/``.
-- **Is called:** ``<topic-name>.md`` where ``<topic-name>`` is the name of the
+- **Is called:** ``<topic-key>.md`` where ``<topic-key>`` is the key of the
   topic and the name of the directory it is in, e.g. ``binary-numbers.md`` or
   ``kidbots.md``.
 - **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
-  for the description.
+  of the description.
 
 .. note ::
 
-  The heading written in this file witll be used exactly as it is given
-  throughout the website.
+  The heading written in this file will be used exactly as it is given
+  throughout the website as the name of the topic.
 
 .. warning::
 
@@ -132,19 +132,19 @@ Adding a Unit Plan
   </map>
   <img src="../_static/img/topics_adding_unit_plan_flowchart.png" usemap="#unit-plan-map">
 
-The Markdown file containing the content for the unit plan:
+The Markdown file containing the content og the unit plan:
 
 - **Is in:** the unit plan directory, e.g. the unit plan file for Binary Numbers
   Unit Plan 2 will be in ``topics/content/en/binary-numbers/unit-plan-2/``.
-- **Is called:** ``<unit-plan-name>.md`` where ``<unit-plan-name>`` is the name
+- **Is called:** ``<unit-plan-key>.md`` where ``<unit-plan-key>`` is the key
   of the unit plan and the name of the directory it is in, e.g. ``unit-plan-2.md``.
 - **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
-  for the unit plan.
+  of the unit plan.
 
 .. note::
 
-  The heading written in this file witll be used exactly as it is given
-  throughout the website.
+  The heading written in this file will be used exactly as it is given
+  throughout the website as the name of the unit plan.
 
 .. warning::
 
@@ -171,15 +171,15 @@ The Markdown file containing the content for the lesson:
 - **Is in:** the age group subdirectory in the lessons directory, e.g. a lesson
   for age group 5-9 will be in
   ``topics/content/en/binary-numbers/unit-plan/lessons/5-9/``.
-- **Is called:** ``<lesson-name>.md`` where ``<lesson-name>`` is the name
+- **Is called:** ``<lesson-key>.md`` where ``<lesson-key>`` is the name
   of the lesson, e.g. ``introduction-to-bits.md``.
 - **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
   for the lesson.
 
 .. note::
 
-  The heading written in this file witll be used exactly as it is given
-  throughout the website.
+  The heading written in this file will be used exactly as it is given
+  throughout the website as the name of the lesson.
 
 .. note::
 
@@ -251,42 +251,43 @@ Adding a Programming Exercise
 You will now be able to add programming exercises to lessons by referencing the
 keys you specified in the programming exercises configuration file.
 
-A programming exercise is split into four markdown files, all of which are in
-``topics/content/en/binary-numbers/programming-exercises/<exercise-name>/``
-where ``<exercise-name>`` refers to the name of the exercise, e.g.
+A programming exercise is split into several different sections, each of which
+is an its own Markdown file, all of which are in
+``topics/content/en/binary-numbers/programming-exercises/<exercise-key>/``
+where ``<exercise-key>`` refers to the key of the exercise, e.g.
 ``count-to-16``.
 
     1. The exercise description:
 
-      - **Is called:** ``<exercise-name>.md`` where ``<exercise-name>`` is the name
+      - **Is called:** ``<exercise-key>.md`` where ``<exercise-key>`` is the key
         of the exercise, e.g. ``count-to-16.md``.
       - **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
-        for the lesson.
+        of the exercise.
 
       .. note::
 
-        The heading written in this file witll be used exactly as it is given
-        throughout the website.
+        The heading written in this file will be used exactly as it is given
+        throughout the website as the name of the programming exercise.
 
     2. The expected output
 
-      - **Is called:** ``<language>-expected.md`` where ``<language>`` is the name
+      - **Is called:** ``<language>-expected.md`` where ``<language>`` is the key
         of the programming language, e.g. ``python-expected.md``.
       - **Contains:** The expected output for the programming exercise, e.g. an
         embedded Scratch program or Python output.
 
     3. Hints (optional)
 
-      - **Is called:** ``<language>-hints.md`` where ``<language>`` is the name
+      - **Is called:** ``<language>-hints.md`` where ``<language>`` is the key
         of the programming language, e.g. ``scratch-hints.md``.
       - **Contains:** Hints for how to complete the exercise, e.g. suggested
-        scratch blocks.
+        Scratch blocks.
 
     4. Example solution(s)
 
-      - **Is called:** ``<language>-solution.md`` where ``<language>`` is the name
+      - **Is called:** ``<language>-solution.md`` where ``<language>`` is the key
         of the programming language, e.g. ``ruby-hints.md``.
-      - **Contains:** Example solutions to the exercise, e.g. scratch program.
+      - **Contains:** Example solutions to the exercise, e.g. Scratch program.
 
 2-4 from the list above can be given in multiple programming languages.
 Therefore, the languages you have chosen must be specified in the
@@ -315,15 +316,15 @@ Adding a Curriculum Integration
   </map>
   <img src="../_static/img/topics_adding_curriculum_integrations_flowchart.png" usemap="#curriculum-integrations-map">
 
-The Markdown file containing the content for the curriculum integration:
+The Markdown file containing the content of the curriculum integration:
 
 - **Is in:** the curriculum integration directrory, e.g. curriculum integrations
   in Binary Numbers will be in 
   ``topics/content/en/binary-numbers/curriculum-integrations/``.
-- **Is called:** ``<integration-name>.md`` where ``<integration-name>`` is the name
+- **Is called:** ``<integration-key>.md`` where ``<integration-key>`` is the key
   of the curriculum integration, e.g. ``whose-cake-is-it.md``.
 - **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
-  for the integration.
+  of the integration.
 
 .. note ::
 
@@ -407,9 +408,9 @@ A complete application structure file may look like the following:
 Topic Configuration File
 ------------------------------------------------------------------------------
 
-- **File Name:** ``<topic-name>.yaml``
+- **File Name:** ``<topic-key>.yaml``
 
-- **Location:** ``topic/content/<language>/<topic-name>/``
+- **Location:** ``topic/content/<language>/<topic-key>/``
 
 - **Referenced In:** ``topic/content/<launguage>/structure.yaml``
 
@@ -452,18 +453,18 @@ A complete topic structure file may look like the following:
 Unit Plan Configuration File
 ------------------------------------------------------------------------------
 
-- **File Name:** ``<unit-plan-name>.yaml``
+- **File Name:** ``<unit-plan-key>.yaml``
 
-- **Location:** ``topic/content/<language>/<topic-name>/<unit-plan-name>/``
+- **Location:** ``topic/content/<language>/<topic-key>/<unit-plan-key>/``
 
-- **Referenced In:** ``topic/content/<language>/<topic-name>/<topic-name>.yaml``
+- **Referenced In:** ``topic/content/<language>/<topic-key>/<topic-key>.yaml``
 
 - **Purpose:** This file defines all the lessons (and their respective)
   attributes for the unit plan.
 
   - **Required Fields:**
 
-    - ``<lesson-name>:`` This is the key for the lesson. Each lesson has its own list of
+    - ``<lesson-key>:`` This is the key for the lesson. Each lesson has its own list of
       required and optional fields:
 
       - **Required Fields:**
@@ -684,9 +685,9 @@ Programming Exercises Configuration File
 
 - **File Name:** ``programming-exercises.yaml``
 
-- **Location:** ``topics/content/<language>/<topic-name>/programming-exercises/``
+- **Location:** ``topics/content/<language>/<topic-key>/programming-exercises/``
 
-- **Referenced In:** ``topics/content/<language>/<topic-name>/<topic-name>.yaml``
+- **Referenced In:** ``topics/content/<language>/<topic-key>/<topic-key>.yaml``
 
 - **Purpose:** This file defines the programming exercises (and their respective attributes)
   for a particular topic.
@@ -742,9 +743,9 @@ Curriculum Integrations Configuration File
 
 - **File Name:** ``curriculum-intergrations.yaml``
 
-- **Location:** ``topics/content/<language>/<topic-name>/``
+- **Location:** ``topics/content/<language>/<topic-key>/``
 
-- **Referenced In:** ``topics/content/<language>/<topic-name>.yaml``
+- **Referenced In:** ``topics/content/<language>/<topic-key>.yaml``
 
 - **Purpose:** Contains a list of curriculum integrations that can be used to integrate
   the topic with another area in the curriculum.
@@ -769,11 +770,11 @@ Curriculum Integrations Configuration File
 
         - **Required Fields:**
 
-          - ``<unit-plan-name>:`` A key corresponding to a unit plan.
+          - ``<unit-plan-key>:`` A key corresponding to a unit plan.
 
             - **Required Fields:**
 
-              - ``<lesson-name>`` A key corresponding to a lesson in the given unit
+              - ``<lesson-key>`` A key corresponding to a lesson in the given unit
                 plan.
 
 A complete curriculum integration structure file with multiple curriculum integrations
