@@ -59,7 +59,7 @@ services:
     ports:
       - "5050:5050"
     environment:
-      - REDIS_HOST=localhost
+      - REDIS_HOST=redis
       - REDIS_PORT=6379
     depends_on:
       - nginx

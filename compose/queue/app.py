@@ -5,9 +5,9 @@ from flask import Flask, make_response, request
 
 redis_host = os.getenv('REDIS_HOST', 'localhost')
 redis_port = int(os.getenv('REDIS_PORT', 6379))
+print(redis_host, redis_port)
 redis_pool = redis.ConnectionPool(host=redis_host, port=redis_port, db=0)
 r = redis.Redis(connection_pool=redis_pool)
-
 # FLASK SETUP
 
 PORT = int(os.getenv('PORT', 5000))
@@ -16,6 +16,20 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return 'CS-Unplugged - Fake Google TaskQueue'
+
+@app.route('/add/<value>')
+def add_test(value=None):
+    if value is None:
+        return "You must specify a value.", 400
+    r.lpush('test', value)
+    return "Added: {}".format(value), 200
+
+@app.route('/get')
+def get_test():
+    value = r.lpop('test')
+    if value is None:
+        return "No values to get.", 200
+    return "Got: {}".format(value.decode()), 200
 
 @app.errorhandler(500)
 def server_error(e):
