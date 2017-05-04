@@ -35,6 +35,7 @@ DJANGO_APPS = [
 ]
 THIRD_PARTY_APPS = [
     'django_bootstrap_breadcrumbs',
+    'haystack',
 ]
 
 # Apps specific for this project go here.
@@ -205,3 +206,13 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+# SEARCH CONFIGURATION
+# ------------------------------------------------------------------------------
+# See: http://django-haystack.readthedocs.io/en/v2.6.0/settings.html
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': str(ROOT_DIR.path('whoosh_index')),
+    },
+}

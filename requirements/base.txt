@@ -20,6 +20,10 @@ python-markdown-math==0.3
 # Python-PostgreSQL Database Adapter
 psycopg2==2.7.1
 
+# Search
+django-haystack==2.6.0
+Whoosh==2.7.4
+
 # Templates
 django-bootstrap-breadcrumbs==0.8.2
 
