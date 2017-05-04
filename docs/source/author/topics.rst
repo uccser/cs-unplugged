@@ -95,12 +95,12 @@ Adding a Topic
   </map>
   <img src="../_static/img/topics_adding_topic_flowchart.png" usemap="#topics-map">
 
-The markdown file containing the description of the file:
+The Markdown file containing the description of the topic:
 
-- **Is in:** its topic folder, e.g. the description file for 
+- **Is in:** the topic directory, e.g. the description file for 
   Binary Numbers will be in ``topics/content/en/binary-numbers/``.
 - **Is called:** ``<topic-name>.md`` where ``<topic-name>`` is the name of the
-  topic and the name of the folder it is in, e.g. ``binary-numbers.md`` or
+  topic and the name of the directory it is in, e.g. ``binary-numbers.md`` or
   ``kidbots.md``.
 - **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
   for the description.
@@ -108,7 +108,7 @@ The markdown file containing the description of the file:
 .. note ::
 
   The heading written in this file witll be used exactly as it is given
-  throughout the rest of topic's pages on the website.
+  throughout the website.
 
 .. warning::
 
@@ -132,6 +132,20 @@ Adding a Unit Plan
   </map>
   <img src="../_static/img/topics_adding_unit_plan_flowchart.png" usemap="#unit-plan-map">
 
+The Markdown file containing the content for the unit plan:
+
+- **Is in:** the unit plan directory, e.g. the unit plan file for Binary Numbers
+  Unit Plan 2 will be in ``topics/content/en/binary-numbers/unit-plan-2/``.
+- **Is called:** ``<unit-plan-name>.md`` where ``<unit-plan-name>`` is the name
+  of the unit plan and the name of the directory it is in, e.g. ``unit-plan-2.md``.
+- **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
+  for the unit plan.
+
+.. note::
+
+  The heading written in this file witll be used exactly as it is given
+  throughout the website.
+
 .. warning::
 
   Every unit plan needs at least one lesson, so the system will not allow a
@@ -151,6 +165,21 @@ Adding a Lesson
     <area shape="rect" coords="237,525,317,560" href="../getting_started/helper_commands.html#update">
   </map>
   <img src="../_static/img/topics_adding_lesson_flowchart.png" usemap="#lesson-map">
+
+The Markdown file containing the content for the lesson:
+
+- **Is in:** the age group subdirectory in the lessons directory, e.g. a lesson
+  for age group 5-9 will be in
+  ``topics/content/en/binary-numbers/unit-plan/lessons/5-9/``.
+- **Is called:** ``<lesson-name>.md`` where ``<lesson-name>`` is the name
+  of the lesson, e.g. ``introduction-to-bits.md``.
+- **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
+  for the lesson.
+
+.. note::
+
+  The heading written in this file witll be used exactly as it is given
+  throughout the website.
 
 .. note::
 
@@ -222,48 +251,52 @@ Adding a Programming Exercise
 You will now be able to add programming exercises to lessons by referencing the
 keys you specified in the programming exercises configuration file.
 
+A programming exercise is split into four markdown files, all of which are in
+``topics/content/en/binary-numbers/programming-exercises/<exercise-name>/``
+where ``<exercise-name>`` refers to the name of the exercise, e.g.
+``count-to-16``.
+
+    1. The exercise description:
+
+      - **Is called:** ``<exercise-name>.md`` where ``<exercise-name>`` is the name
+        of the exercise, e.g. ``count-to-16.md``.
+      - **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
+        for the lesson.
+
+      .. note::
+
+        The heading written in this file witll be used exactly as it is given
+        throughout the website.
+
+    2. The expected output
+
+      - **Is called:** ``<language>-expected.md`` where ``<language>`` is the name
+        of the programming language, e.g. ``python-expected.md``.
+      - **Contains:** The expected output for the programming exercise, e.g. an
+        embedded Scratch program or Python output.
+
+    3. Hints (optional)
+
+      - **Is called:** ``<language>-hints.md`` where ``<language>`` is the name
+        of the programming language, e.g. ``scratch-hints.md``.
+      - **Contains:** Hints for how to complete the exercise, e.g. suggested
+        scratch blocks.
+
+    4. Example solution(s)
+
+      - **Is called:** ``<language>-solution.md`` where ``<language>`` is the name
+        of the programming language, e.g. ``ruby-hints.md``.
+      - **Contains:** Example solutions to the exercise, e.g. scratch program.
+
+2-4 from the list above can be given in multiple programming languages.
+Therefore, the languages you have chosen must be specified in the
+``programming-exercises.yaml`` configuration file, as well as the
+``programming-exercises-structure.yaml`` configuration file.
+
 .. note::
 
   If the exercise includes learning outcomes, then the corresponding configuration
-  file will also need to be added or updated to include new learning outcomes.
-
-.. note::
-
-  A programming exercise is split into four parts, these are:
-
-    1. The exercise description
-    2. The expected output
-    3. Hints (optional)
-    4. Example solution(s)
-
-  Additonally, 2-4 from the list above, can be given in multiple programming
-  languages. Therefore, the languages you have chosen must be specified in the
-  ``programming-exercises.yaml`` configuration file, as well as the
-  ``programming-exercises-structure.yaml`` configuration file.
-
-.. note::
-
-  The system will use the key for the programming exercise to search for the
-  relevant Markdown files, so it is important to name them according to the
-  following rules:
-
-  - Both the directory and file name for the exercise must match the key you chose
-    for the exercise in ``programming-exercises.yaml``
-
-  - The expected, hints, and solution files must be prefixed with the key for
-    the programming language they are written in.
-
-  For example, a programming exercise with key ``count-to-16`` implemented in
-  Python only will have the following directory structure:
-
-  .. code-block:: none
-
-    └── programming-exercises/
-        └── count-to-16/
-            ├── count-to-16.md
-            ├── python-expected.md
-            ├── python-hints.md
-            └── python-solution.md
+  file will also need to be added or updated to include new learning outcomes. 
 
 .. _adding-a-curriculum-integration:
 
@@ -281,6 +314,16 @@ Adding a Curriculum Integration
     <area shape="rect" coords="240,675,317,710" href="../getting_started/helper_commands.html#update">
   </map>
   <img src="../_static/img/topics_adding_curriculum_integrations_flowchart.png" usemap="#curriculum-integrations-map">
+
+The Markdown file containing the content for the curriculum integration:
+
+- **Is in:** the curriculum integration directrory, e.g. curriculum integrations
+  in Binary Numbers will be in 
+  ``topics/content/en/binary-numbers/curriculum-integrations/``.
+- **Is called:** ``<integration-name>.md`` where ``<integration-name>`` is the name
+  of the curriculum integration, e.g. ``whose-cake-is-it.md``.
+- **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
+  for the integration.
 
 .. note ::
 
