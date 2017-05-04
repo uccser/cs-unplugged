@@ -26,8 +26,8 @@ class BaseLoader():
         """Create a BaseLoader object.
 
         Args:
-            BASE_PATH: string of base path.
-            load_log: list of log messages.
+            BASE_PATH: string of base path (str).
+            load_log: list of log messages (list).
         """
         if load_log:
             self.load_log = load_log
@@ -59,8 +59,8 @@ class BaseLoader():
         """Return the Verto object for a given Markdown file.
 
         Args:
-            md_file_path: Location of Markdown file to convert
-            config_file_path: Path to related the config file, used for errors.
+            md_file_path: Location of Markdown file to convert (str).
+            config_file_path: Path to related the config file (str).
 
         Returns:
             VertoResult object
@@ -106,7 +106,7 @@ class BaseLoader():
         """Load and read given YAML file.
 
         Args:
-            file_path: location of yaml file to read
+            file_path: location of yaml file to read (str).
 
         Returns:
             Either list or string, depending on structure of given yaml file
