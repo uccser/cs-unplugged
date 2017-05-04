@@ -37,6 +37,7 @@ function helpmenu {
   logs_help
   makemigrations_help
   migrate_help
+  rebuild_index_help
   shell_help
   static_help
   style_help
@@ -83,6 +84,8 @@ function update {
 
   printf "\n"
   updatedata
+
+  rebuild_index
 
   static_scratch
   collect_static
@@ -141,7 +144,7 @@ function static_help {
 
 # Build scratch static files
 function static_scratch {
-  printf "Building scratch images...\n"
+  printf "\nBuilding scratch images...\n"
   docker-compose run --rm nginx gulp scratch
 }
 
@@ -149,6 +152,15 @@ function static_scratch {
 function collect_static {
   printf "\nCollecting static files..."
   docker-compose run --rm django /docker_venv/bin/python3 ./manage.py collectstatic --no-input
+}
+
+# Run Django command rebuild_index
+function rebuild_index {
+  printf "Rebuilding search index..."
+  docker-compose run --rm django /docker_venv/bin/python3 ./manage.py rebuild_index --noinput
+}
+function rebuild_index_help {
+  printf "   rebuild_index     Run Django rebuild_index command.\n"
 }
 
 # Run shell
@@ -267,6 +279,10 @@ function process_dev_command() {
         ;;
       shell)
         shell
+        exit
+        ;;
+      rebuild_index)
+        rebuild_index
         exit
         ;;
       static)
