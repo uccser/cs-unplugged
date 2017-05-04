@@ -12,6 +12,18 @@ urlpatterns = [
         views.IndexView.as_view(),
         name='index'
     ),
+    # eg: /topics/glossary/
+    url(
+        r'^glossary/$',
+        views.GlossaryList.as_view(),
+        name='glossary'
+    ),
+    # eg: /topics/glossary/json/
+    url(
+        r'^glossary/json/$',
+        views.glossary_json,
+        name='glossary_json'
+    ),
     # eg: /topics/curriculum-integrations/
     url(
         r'^curriculum-integrations/$',

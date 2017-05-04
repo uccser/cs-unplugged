@@ -171,6 +171,9 @@ Glossary Link (Verto feature)
 
 `Click here to read the documentation on how to define a glossary link`_.
 
+The list of defined glossary terms available for linking to can be found in the
+:ref:`application-structure-file`.
+
 ------------------------------------------------------------------------------
 
 Heading (Verto feature)

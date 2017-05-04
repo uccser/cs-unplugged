@@ -35,8 +35,9 @@ diagram.
     - A **programming exercise** can use different **programming languages**, and be set at
       a specific **difficulty**.
 
-- **Learning outcomes**, **curriculum areas**, **programming languages**, and
-  **difficulties** are defined at a language level, so can be used by all topic content
+- **Learning outcomes**, **curriculum areas**, **glossary definitions**,
+  **programming languages**, and **programming challenge difficulties** are
+  defined at a language level, so can be used by all topic content
   of that language.
 
 This is just a broad overview of the topics application.
@@ -272,6 +273,46 @@ Adding a Curriculum Integration
   If the integration includes curriculum areas and/or prerequisite lessons,
   then the corresponding configuration and content files will also need to be added.
 
+
+.. _adding-glossary-definitions:
+
+Adding Glossary Definitions
+------------------------------------------------------------------------------
+
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="glossary-definitions-map">
+    <area shape="rect" coords="240,110,317,145" href="#application-structure-configuration-file">
+    <area shape="rect" coords="240,320,320,350" href="#glossary-definitions-markdown-file">
+    <area shape="rect" coords="240,430,319,462" href="../getting_started/helper_commands.html#update">
+  </map>
+  <img src="../_static/img/topics_adding_glossary_definitions_flowchart.png" usemap="#glossary-definitions-map">
+
+.. _glossary-definitions-markdown-file:
+
+Each glossary definition requires a Markdown file within the glossary
+folder, with the filename as the glossary key.
+When linking text to a glossary definition, the key is used as the identifier.
+For example, with the key ``pixel``, then a file ``pixel.md`` is
+expected.
+
+Each Markdown file should start with a heading containing the glossary term
+(this should be capitalized and include any required punctuation), followed
+by the term's definition.
+
+Continuing the ``pixel.md`` example from above, this could be the possible
+contents of that file.
+
+.. code-block:: none
+
+    # Pixel
+
+    This term is an abbreviation of picture element, the name given to the
+    tiny squares that make up a grid that is used to represent images on a
+    computer.
+
 Configuration Files
 ==============================================================================
 
@@ -323,7 +364,7 @@ Application Structure Configuration File
 
 - **Required Fields:**
 
-  - ``topics``: A list of file paths to topic configuration files.
+  - ``topics:`` A list of file paths to topic configuration files.
 
 - **Optional Fields:**
 
@@ -331,6 +372,8 @@ Application Structure Configuration File
     - ``curriculum-areas:`` The path to the curriculum areas configuration file.
     - ``programming-exercises-structure:`` The path to the programming exercies structure
       configuration file.
+    - ``glossary-folder:`` The folder name that contains the Markdown files for
+      glossary definitions.
 
 A complete application structure file may look like the following:
 
@@ -343,6 +386,8 @@ A complete application structure file may look like the following:
   learning-outcomes: learning-outcomes.yaml
   curriculum-areas: curriculum-areas.yaml
   programming-exercises-structure: programming-exercises-structure.yaml
+
+  glossary-folder: glossary
 
 .. _topic-file:
 

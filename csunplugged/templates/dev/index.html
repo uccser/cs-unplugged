@@ -2,6 +2,7 @@
 
 {% load i18n %}
 {% load static %}
+{% load render_html_field %}
 
 
 {% block content %}
@@ -79,6 +80,11 @@
       {% endfor %}
     </ul>
   {% endif %}
+
+  <h1>Glossary Terms</h1>
+  <p>
+    <a href="{% url 'topics:glossary' %}">View glossary</a>
+  </p>
 
   {% if programming_exercise_languages.all %}
     <h1>Programming Exercise Languages</h1>

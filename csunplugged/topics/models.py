@@ -6,6 +6,23 @@ from django.db import models
 from resources.models import Resource
 
 
+class GlossaryTerm(models.Model):
+    """Model for glossary term in database."""
+
+    #  Auto-incrementing 'id' field is automatically set by Django
+    slug = models.SlugField(unique=True)
+    term = models.CharField(max_length=200, unique=True)
+    definition = models.TextField()
+
+    def __str__(self):
+        """Text representation of GlossaryTerm object.
+
+        Returns:
+            Term attribute of GlossaryTerm (string).
+        """
+        return self.term
+
+
 class LearningOutcome(models.Model):
     """Model for learning outcome in database."""
 

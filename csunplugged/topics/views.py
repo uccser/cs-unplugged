@@ -2,6 +2,8 @@
 
 from django.shortcuts import get_object_or_404
 from django.views import generic
+from django.http import JsonResponse, Http404
+from general.templatetags.render_html_field import render_html_with_static
 
 from .models import (
     Topic,
@@ -11,6 +13,7 @@ from .models import (
     ProgrammingExercise,
     ProgrammingExerciseLanguageImplementation,
     ConnectedGeneratedResource,
+    GlossaryTerm,
 )
 
 
@@ -337,3 +340,44 @@ class OtherResourcesView(generic.DetailView):
     model = Topic
     template_name = 'topics/topic-other-resources.html'
     slug_url_kwarg = 'topic_slug'
+
+
+class GlossaryList(generic.ListView):
+    """Provide glossary view of all terms."""
+
+    template_name = "topics/glossary.html"
+    context_object_name = "glossary_terms"
+
+    def get_queryset(self):
+        """Get queryset of all glossary terms.
+
+        Returns:
+            Queryset of GlossaryTerm objects ordered by term.
+        """
+        return GlossaryTerm.objects.order_by("term")
+
+
+def glossary_json(request, **kwargs):
+    """Provide JSON data for glossary term.
+
+    Args:
+        request: The HTTP request.
+
+    Returns:
+        JSON response is sent containing data for the requested term.
+    """
+    # If term parameter, then return JSON
+    if "term" in request.GET:
+        glossary_slug = request.GET.get("term")
+        glossary_item = get_object_or_404(
+            GlossaryTerm,
+            slug=glossary_slug
+        )
+        data = {
+            "slug": glossary_slug,
+            "term": glossary_item.term,
+            "definition": render_html_with_static(glossary_item.definition)
+        }
+        return JsonResponse(data)
+    else:
+        raise Http404("Term parameter not specified.")

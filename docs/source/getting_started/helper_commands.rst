@@ -24,18 +24,13 @@ the start of your terminal prompt):
 
 Where ``[COMMAND]`` is a word from the list below:
 
+- :ref:`build`
+- :ref:`clean`
+- :ref:`dev`
+- :ref:`end`
 - :ref:`help`
 - :ref:`start`
-- :ref:`end`
-- :ref:`build`
-- :ref:`static`
 - :ref:`update`
-- :ref:`test`
-- :ref:`test_backwards`
-- :ref:`style`
-- :ref:`logs`
-- :ref:`shell`
-- :ref:`clean`
 - :ref:`wipe`
 
 All users of the project (content and technical developers) should become
@@ -46,12 +41,142 @@ familiar with the following commands:
 - :ref:`build`
 - :ref:`update`
 
-Technical developers should also understand at least the following:
+Technical developers should also understand the ``dev`` command.
 
-- :ref:`static`
-- :ref:`test`
-- :ref:`style`
+-----------------------------------------------------------------------------
+
+.. _build:
+
+``build``
+==============================================================================
+
+Running ``./csu build`` will build or rebuild the Docker images that are
+required for the CS Unplugged system.
+
+-----------------------------------------------------------------------------
+
+.. _clean:
+
+``clean``
+==============================================================================
+
+Running ``./csu clean`` deletes 'dangling' Docker images left over from builds,
+which will free up hard drive space.
+
+-----------------------------------------------------------------------------
+
+.. _dev:
+
+``dev``
+==============================================================================
+
+The ``./csu dev [DEV_COMMAND]`` command runs developer tasks, where
+``[DEV_COMMAND]`` is a word from the list below:
+
 - :ref:`logs`
+- :ref:`makemigrations`
+- :ref:`migrate`
+- :ref:`shell`
+- :ref:`static`
+- :ref:`style`
+- :ref:`test`
+- :ref:`test_backwards`
+- :ref:`updatedata`
+
+.. _logs:
+
+``logs``
+-----------------------------------------------------------------------------
+
+Running ``./csu dev logs`` will display the logs for the running systems.
+The output is for all logs until the time the command was run, therefore
+successive calls may display new logs.
+
+To follow logs as they output, enter ``docker-compose logs --follow``.
+
+.. _makemigrations:
+
+``makemigrations``
+-----------------------------------------------------------------------------
+
+Running ``./csu dev makemigrations`` runs the Django ``makemigrations`` command
+to create migration files.
+
+.. _migrate:
+
+``migrate``
+-----------------------------------------------------------------------------
+
+Running ``./csu dev migrate`` runs the Django ``migrate`` command
+to apply migration files.
+
+.. _shell:
+
+``shell``
+-----------------------------------------------------------------------------
+
+Running ``./csu dev shell`` opens a bash terminal within the Django container
+(this requires the CS Unplugged system to be running).
+
+This is the equivalent to entering ``docker-compose run django bash``.
+
+.. _static:
+
+``static``
+-----------------------------------------------------------------------------
+
+Running ``./csu dev static`` runs the commands for generating the static files
+for the website.
+
+If changes are made to the static files (for example, a new image is added)
+when the system is running, this command needs to be entered to view the
+new files on the website.
+
+.. _style:
+
+``style``
+-----------------------------------------------------------------------------
+
+Running ``./csu dev style`` will run the ``flake8`` and ``pydocstyle`` commands
+to check the style of the project.
+If the output is ``0`` for a check, then there are zero errors.
+
+.. _test:
+
+``test``
+-----------------------------------------------------------------------------
+
+Running ``./csu dev test`` will run the test suite, and also display a basic
+table detailing test code coverage.
+
+.. _test_backwards:
+
+``test_backwards``
+-----------------------------------------------------------------------------
+
+Running ``./csu dev test_backwards`` will run the test suite in reverse.
+This is useful to check if any tests are influencing the result of each other.
+If this command if run on Travis CI, it will only run for a pull request.
+
+.. _updatedata:
+
+``updatedata``
+-----------------------------------------------------------------------------
+
+Running ``./csu dev updatedata`` runs the custom ``updatedata`` command to
+load the topics content into the database.
+
+-----------------------------------------------------------------------------
+
+.. _end:
+
+``end``
+==============================================================================
+
+Running ``./csu end`` will stop any containers which are currently running,
+this usually takes 10 to 20 seconds.
+
+-----------------------------------------------------------------------------
 
 .. _help:
 
@@ -60,6 +185,8 @@ Technical developers should also understand at least the following:
 
 Running ``./csu help`` displays brief help text for the script.
 More details for each command can be found on this page.
+
+-----------------------------------------------------------------------------
 
 .. _start:
 
@@ -89,101 +216,22 @@ Once the script has performed all these tasks, the script will let you know
 the website is ready.
 Open your preferred web browser to the URL ``localhost`` to view the website.
 
-.. _end:
-
-``end``
-==============================================================================
-
-Running ``./csu end`` will stop any containers which are currently running,
-this usually takes 10 to 20 seconds.
-
-.. _build:
-
-``build``
-==============================================================================
-
-Running ``./csu build`` will build or rebuild the Docker images that are
-required for the CS Unplugged system.
-
-.. _static:
-
-``static``
-==============================================================================
-
-Running ``./csu static`` runs the commands for generating the static files for
-the website.
-
-If changes are made to the static files (for example, a new image is added)
-when the system is running, this command needs to be entered to view the
-new files on the website.
+-----------------------------------------------------------------------------
 
 .. _update:
 
 ``update``
 ==============================================================================
 
-Running ``./csu update`` runs the Django migrate command for updating the
-database schema, and then runs the custom ``updatedata`` command to load
-the topics content into the database.
+Running ``./csu update`` runs the Django ``makemigratations`` and ``migrate``
+commands for updating the database schema, and then runs the custom
+``updatedata`` command to load the topics content into the database.
 It also runs the ``static`` command to generate static files.
 
 If changes are made to the topics content when the system is running, this
 command needs to be run to view the new changes on the website.
 
-.. _test:
-
-``test``
-==============================================================================
-
-Running ``./csu test`` will run the test suite, and also display a basic
-table detailing test code coverage.
-
-.. _test_backwards:
-
-``test_backwards``
-==============================================================================
-
-Running ``./csu test_backwards`` will run the test suite in reverse.
-This is useful to check if any tests are influencing the result of each other.
-If this command if run on Travis CI, it will only run for a pull request.
-
-.. _style:
-
-``style``
-==============================================================================
-
-Running ``./csu style`` will run the ``flake8`` and ``pydocstyle`` commands
-to check the style of the project.
-If the output is ``0`` for a check, then there are zero errors.
-
-.. _logs:
-
-``logs``
-==============================================================================
-
-Running ``./csu logs`` will display the logs for the running systems.
-The output is for all logs until the time the command was run, therefore
-successive calls may display new logs.
-
-To follow logs as they output, enter ``docker-compose logs --follow``.
-
-.. _shell:
-
-``shell``
-==============================================================================
-
-Running ``./csu shell`` opens a bash terminal within the Django container (this
-requires the CS Unplugged system to be running).
-
-This is the equivalent to entering ``docker-compose run django bash``.
-
-.. _clean:
-
-``clean``
-==============================================================================
-
-Running ``./csu clean`` deletes 'dangling' Docker images left over from builds,
-which will free up hard drive space.
+-----------------------------------------------------------------------------
 
 .. _wipe:
 
