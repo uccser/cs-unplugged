@@ -45,22 +45,12 @@ class CurriculumArea(models.Model):
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(unique=True)
     name = models.CharField(max_length=100, unique=True)
+    colour = models.CharField(max_length=15, null=True)
     parent = models.ForeignKey(
         'self',
         null=True,
         related_name='parent_curriculum_area'
     )
-
-    def group_slug(self):
-        """Slug for the curriculum area group.
-
-        Returns:
-            Slug of parent if parent exists, otherwise own slug (str).
-        """
-        if self.parent:
-            return self.parent.slug
-        else:
-            return self.slug
 
     def __str__(self):
         """Text representation of CurriculumArea object.
