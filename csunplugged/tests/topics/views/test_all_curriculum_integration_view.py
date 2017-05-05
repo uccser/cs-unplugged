@@ -4,9 +4,8 @@ from tests.BaseTestWithDB import BaseTestWithDB
 from topics.models import (
     CurriculumIntegration,
     Topic,
-    CurriculumArea,
-    Lesson,
 )
+
 
 class AllCurriculumIntegrationViewTest(BaseTestWithDB):
 
