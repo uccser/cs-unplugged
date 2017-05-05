@@ -24,12 +24,6 @@ urlpatterns = [
         views.glossary_json,
         name='glossary_json'
     ),
-    # eg: /topics/curriculum-integrations/
-    url(
-        r'^curriculum-integrations/$',
-        views.AllCurriculumIntegrationList.as_view(),
-        name='all_curriculum_integrations'
-    ),
     # eg: /topics/binary-numbers/
     url(
         r'^(?P<topic_slug>[-\w]+)/$',
