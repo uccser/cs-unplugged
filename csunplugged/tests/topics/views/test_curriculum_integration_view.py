@@ -3,7 +3,6 @@ from model_mommy import mommy
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics import create_topics_test_data
 from topics.models import (
-    CurriculumIntegration,
     Topic,
     UnitPlan,
 )
