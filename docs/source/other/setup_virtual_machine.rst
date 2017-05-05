@@ -44,7 +44,7 @@ virtual machines.
 14. Install the operating system using the default settings.
 15. Once the operating system has completed installation, you are ready to use
     it for developing the CS Unplugged project.
-    You're now ready for :ref:`step-2-install-python-3-and-pip` in the
+    You're now ready for :ref:`step-2-install-git` in the
     installation guide.
 
 .. _Oracle VirtualBox: https://www.virtualbox.org/

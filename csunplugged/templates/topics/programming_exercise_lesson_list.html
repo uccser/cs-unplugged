@@ -1,0 +1,28 @@
+{% extends "topics/lesson.html" %}
+
+{% load django_bootstrap_breadcrumbs %}
+
+{% block breadcrumbs %}
+  {{ block.super }}
+  {% breadcrumb "Plugged In" "topics:programming_exercises_list" topic.slug unit_plan.slug lesson.slug %}
+{% endblock breadcrumbs %}
+
+{% block content %}
+  <h1>{{ lesson.name }} Programming Challenges</h1>
+
+  {% if all_programming_exercises %}
+    <ul>
+      {% for programming_exercise in all_programming_exercises %}
+        <li>
+          <a href="{% url 'topics:programming_exercise' topic.slug programming_exercise.slug %}">
+            {{ programming_exercise.exercise_set_number }}.{{ programming_exercise.exercise_number }}
+            {{ programming_exercise.name }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No programming challenges for {{ topic }}.</p>
+  {% endif %}
+
+{% endblock content %}

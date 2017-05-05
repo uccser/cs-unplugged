@@ -1,48 +1,87 @@
+"""Models for the topics application."""
+
 from collections import OrderedDict
 
 from django.db import models
 from resources.models import Resource
 
 
+class GlossaryTerm(models.Model):
+    """Model for glossary term in database."""
+
+    #  Auto-incrementing 'id' field is automatically set by Django
+    slug = models.SlugField(unique=True)
+    term = models.CharField(max_length=200, unique=True)
+    definition = models.TextField()
+
+    def __str__(self):
+        """Text representation of GlossaryTerm object.
+
+        Returns:
+            Term attribute of GlossaryTerm (string).
+        """
+        return self.term
+
+
 class LearningOutcome(models.Model):
+    """Model for learning outcome in database."""
+
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(unique=True)
     text = models.CharField(max_length=200, unique=True)
 
     def __str__(self):
+        """Text representation of LearningOutcome object.
+
+        Returns:
+            Text of learning outcome (string).
+        """
         return self.text
 
 
 class CurriculumArea(models.Model):
+    """Model for curriculum area in database."""
+
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(unique=True)
     name = models.CharField(max_length=100, unique=True)
+    parent = models.ForeignKey(
+        'self',
+        null=True,
+        related_name='parent_curriculum_area'
+    )
 
     def __str__(self):
+        """Text representation of CurriculumArea object.
+
+        Returns:
+            Name of curriculum area (string).
+        """
         return self.name
 
 
-class ClassroomResource(models.Model):
-    #  Auto-incrementing 'id' field is automatically set by Django
-    text = models.CharField(max_length=300, unique=True)
-
-    def __str__(self):
-        return self.text
-
-
 class Topic(models.Model):
+    """Model for topic in database."""
+
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(unique=True)
     name = models.CharField(max_length=100)
     content = models.TextField()
-    other_resources = models.TextField()
+    other_resources = models.TextField(null=True)
     icon = models.CharField(max_length=100, null=True)
 
     def __str__(self):
+        """Text representation of Topic object.
+
+        Returns:
+            Name of topic (string).
+        """
         return self.name
 
 
 class UnitPlan(models.Model):
+    """Model for unit plan in database."""
+
     #  Auto-incrementing 'id' field is automatically set by Django
     topic = models.ForeignKey(
         Topic,
@@ -54,8 +93,10 @@ class UnitPlan(models.Model):
     content = models.TextField()
 
     def lessons_by_age_group(self):
-        """Returns groups of lessons grouped by the lesson minimum age
-        and maximum ages, and then order by number.
+        """Return ordered groups of lessons.
+
+        Lessons are grouped by the lesson minimum age and maximum ages,
+        and then order by number.
 
         Returns:
             A ordered dictionary of grouped lessons.
@@ -74,19 +115,33 @@ class UnitPlan(models.Model):
         return grouped_lessons
 
     def __str__(self):
+        """Text representation of UnitPlan object.
+
+        Returns:
+            Name of unit plan (string).
+        """
         return self.name
 
 
 class ProgrammingExerciseDifficulty(models.Model):
+    """Model for programming exercise difficulty in database."""
+
     #  Auto-incrementing 'id' field is automatically set by Django
     level = models.PositiveSmallIntegerField(unique=True)
     name = models.CharField(max_length=100, unique=True)
 
     def __str__(self):
+        """Text representation of ProgrammingExerciseDifficulty object.
+
+        Returns:
+            Name of difficulty level (string).
+        """
         return self.name
 
 
 class ProgrammingExercise(models.Model):
+    """Model for programming exercise in database."""
+
     #  Auto-incrementing 'id' field is automatically set by Django
     topic = models.ForeignKey(
         Topic,
@@ -109,20 +164,34 @@ class ProgrammingExercise(models.Model):
     )
 
     def __str__(self):
+        """Text representation of ProgrammingExercise object.
+
+        Returns:
+            Name of programming exercise (string).
+        """
         return self.name
 
 
 class ProgrammingExerciseLanguage(models.Model):
+    """Model for programming language in database."""
+
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField()
     name = models.CharField(max_length=200)
     icon = models.CharField(max_length=100, null=True)
 
     def __str__(self):
+        """Text representation of ProgrammingExerciseLanguage object.
+
+        Returns:
+            Name of programming language (string).
+        """
         return self.name
 
 
 class ProgrammingExerciseLanguageImplementation(models.Model):
+    """Model for programming exercise language implementation in database."""
+
     #  Auto-incrementing 'id' field is automatically set by Django
     topic = models.ForeignKey(
         Topic,
@@ -140,14 +209,26 @@ class ProgrammingExerciseLanguageImplementation(models.Model):
         related_name='implementations'
     )
     expected_result = models.TextField()
-    hints = models.TextField()
+    hints = models.TextField(null=True)
     solution = models.TextField()
 
     def __str__(self):
-        return self.name
+        """Text representation of ProgrammingExerciseLanguageImplementation.
+
+        Returns:
+            Description of implementation and related exercise (string).
+        """
+        return '{} for exercise {}.{}, {}'.format(
+            self.language.name,
+            self.exercise.exercise_set_number,
+            self.exercise.exercise_number,
+            self.exercise.name
+        )
 
 
 class Lesson(models.Model):
+    """Model for lesson in database."""
+
     #  Auto-incrementing 'id' field is automatically set by Django
     topic = models.ForeignKey(
         Topic,
@@ -162,6 +243,7 @@ class Lesson(models.Model):
     slug = models.SlugField()
     name = models.CharField(max_length=100)
     number = models.IntegerField()
+    duration = models.PositiveSmallIntegerField(null=True)
     content = models.TextField()
     min_age = models.PositiveSmallIntegerField()
     max_age = models.PositiveSmallIntegerField()
@@ -175,11 +257,7 @@ class Lesson(models.Model):
     )
     curriculum_areas = models.ManyToManyField(
         CurriculumArea,
-        related_name='lesson_curriculum_areas'
-    )
-    classroom_resources = models.ManyToManyField(
-        ClassroomResource,
-        related_name='lesson_classroom_resources'
+        related_name='lesson_curriculum_areas',
     )
     generated_resources = models.ManyToManyField(
         Resource,
@@ -188,8 +266,7 @@ class Lesson(models.Model):
     )
 
     def has_programming_exercises(self):
-        """Returns a boolean to state whether the lesson has any
-        programming exercises.
+        """Return boolean of lesson having any programming exercises.
 
         Returns:
             True if the lesson has connected programming exercises.
@@ -198,10 +275,17 @@ class Lesson(models.Model):
         return bool(self.programming_exercises.all())
 
     def __str__(self):
+        """Text representation of Lesson object.
+
+        Returns:
+            Name of lesson (string).
+        """
         return self.name
 
 
 class CurriculumIntegration(models.Model):
+    """Model for curriculum integration in database."""
+
     #  Auto-incrementing 'id' field is automatically set by Django
     topic = models.ForeignKey(
         Topic,
@@ -214,7 +298,7 @@ class CurriculumIntegration(models.Model):
     content = models.TextField()
     curriculum_areas = models.ManyToManyField(
         CurriculumArea,
-        related_name='curriculum_integrations'
+        related_name='curriculum_integrations',
     )
     prerequisite_lessons = models.ManyToManyField(
         Lesson,
@@ -222,20 +306,26 @@ class CurriculumIntegration(models.Model):
     )
 
     def has_prerequisite_lessons(self):
-        """Returns True if the curriculum integration has at
-        least one prerequisite lesson, otherwise False.
+        """Return boolean of integration having any prerequisite lessons.
 
         Returns:
-        True if the curriculum integration has at
-        least one prerequisite lesson, otherwise False.
+            True if the curriculum integration has at
+            least one prerequisite lesson, otherwise False.
         """
         return bool(self.prerequisite_lessons.all())
 
     def __str__(self):
+        """Text representation of CurriculumIntegration object.
+
+        Returns:
+            Name of curriculum integration (string).
+        """
         return self.name
 
 
 class ConnectedGeneratedResource(models.Model):
+    """Model for relationship between resource and lesson in database."""
+
     #  Auto-incrementing 'id' field is automatically set by Django
     resource = models.ForeignKey(Resource, on_delete=models.CASCADE)
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)

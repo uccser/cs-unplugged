@@ -1,2 +1,0 @@
-- You will need to use the `print()` function.
-- Try using a variable and a for loop.

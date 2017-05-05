@@ -1,11 +1,72 @@
-maths:
-  name: Maths
+literacy:
+  name: Literacy
+  children:
+    reading:
+      name: Reading
+    writing:
+      name: Writing
 
-science:
-  name: Science
+mathematics:
+  name: Mathematics
+  children:
+    geometry:
+      name: Geometry
+    measurement:
+      name: Measurement
+    numeracy:
+      name: Numeracy
+    algebra:
+      name: Algebra
+
+music:
+  name: Music
 
 art:
   name: Art
 
-design:
-  name: Design
+science:
+  name: Science
+  children:
+    biology:
+      name: Biology
+    physics:
+      name: Physics
+    astronomy:
+      name: Astronomy
+    chemistry:
+      name: Chemistry
+
+dance:
+  name: Dance
+
+drama:
+  name: Drama
+
+social-science:
+  name: Social Science
+
+digitial-technologies:
+  name: Digital Technologies
+  children:
+    data-representation:
+      name: Data Representation
+    algorithms:
+      name: Algorithms
+    programming:
+      name: Programming
+
+computational-thinking:
+  name: Computation Thinking
+  children:
+    algorithmic-thinking:
+      name: Algorithmic Thinking
+    decomposition:
+      name: Decomposition
+    abstraction:
+      name: Abstraction
+    generalising-and-patterns:
+      name: Generalising and Patterns
+    logic:
+      name: Logic
+    evaluation:
+      name: Evaluation

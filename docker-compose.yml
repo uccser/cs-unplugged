@@ -1,0 +1,32 @@
+version: '3'
+services:
+  postgres:
+    restart: always
+    image: postgres
+
+  django:
+    build:
+      context: .
+      dockerfile: ./Dockerfile-local
+    command: /cs-unplugged/csunplugged/docker-development-entrypoint.sh
+    volumes:
+      - .:/cs-unplugged
+    environment:
+      - PORT=8080
+      - USE_DOCKER=yes
+      - DATABASE_URL=postgres://postgres@postgres:5432/postgres
+      - DJANGO_SETTINGS_MODULE=config.settings.local
+    depends_on:
+      - postgres
+
+  nginx:
+    build:
+      context: .
+      dockerfile: ./compose/nginx/Dockerfile
+    volumes:
+      - ./csunplugged/:/app/
+      - /app/node_modules
+    depends_on:
+      - django
+    ports:
+      - "80:80"

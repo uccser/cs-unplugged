@@ -5,29 +5,27 @@
 wheel==0.29.0
 
 # Django
-django==1.10.6
+django==1.11
 
 # Configuration
-django-environ==0.4.1
+django-environ==0.4.3
 
 # Images
-Pillow==4.0.0
+Pillow==4.1.1
 
 # Markdown
-python-markdown-math==0.2
-
-# Models
-django-model-utils==2.6.1
-
-# PDF Generation
-WeasyPrint==0.36
-html5lib==1.0b8
+verto==0.5.2
+python-markdown-math==0.3
 
 # Python-PostgreSQL Database Adapter
-psycopg2==2.7
+psycopg2==2.7.1
 
 # Templates
 django-bootstrap-breadcrumbs==0.8.2
 
 # YAML Loading
 PyYAML==3.12
+
+# Web serving
+gevent==1.2.1
+gunicorn==19.7.1

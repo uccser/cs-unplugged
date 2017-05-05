@@ -1,3 +1,6 @@
+{% load static %}
+{% load render_html_field %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +12,6 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-  {% load static %}
     <link rel="stylesheet" href="{% static 'css/website.css' %}">
   <!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
 </head>
@@ -39,7 +41,7 @@
     {% breadcrumb "Home" "/" %}
   {% endblock %}
 
-  <div class="container">
+  <div id="content-container" class="container">
     {% block body_container %}
 
     {% endblock body_container %}
@@ -114,7 +116,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{% url 'general:contact' %}">
               Contact
             </a>
           </li>
@@ -122,7 +124,6 @@
       </div>
     </div>
   </div>
-
 
   <footer>
     <div class="container py-3">
@@ -132,9 +133,27 @@
     </div>
   </footer>
 
+  <div class="modal fade" id="glossary-modal" tabindex="-1" role="dialog" aria-labelledby="glossary-modal-term" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="glossary-modal-term"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="glossary-modal-definition"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- jQuery first, then Tether, then Bootstrap JS. -->
   <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
   <script src="{% static 'js/tether.min.js' %}"></script>
   <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/website.js' %}"></script>
 </body>
 </html>

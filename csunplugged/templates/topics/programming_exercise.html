@@ -1,4 +1,4 @@
-{% extends "topics/programming_exercise_list.html" %}
+{% extends "topics/topic.html" %}
 
 {% load static %}
 {% load render_html_field %}
@@ -6,7 +6,7 @@
 
 {% block breadcrumbs %}
   {{ block.super }}
-  {% breadcrumb programming_exercise.name "topics:programming_exercise" topic.slug unit_plan.slug lesson.slug programming_exercise.slug %}
+  {% breadcrumb programming_exercise.name "topics:programming_exercise" topic.slug programming_exercise.slug %}
 {% endblock breadcrumbs %}
 
 {% block content %}
@@ -16,12 +16,26 @@
   </h1>
 
   <p>
-    <strong>Difficulty:</strong> {{ programming_exercise.difficulty.name }}
+    <strong>Challenge Level:</strong> {{ programming_exercise.difficulty.name }}
   </p>
 
-  {% autoescape off %}
-  {{ programming_exercise.content }}
-  {% endautoescape %}
+  {% if lessons %}
+    <div class="alert alert-info" role="alert">
+      <p>This programming challenge is related to the following lessons:</p>
+
+      <ul>
+        {% for lesson in lessons %}
+          <li>
+            <a href="{% url 'topics:lesson' topic.slug lesson.unit_plan.slug lesson.slug %}">
+              {{ lesson.name }} ({{ lesson.min_age }} to {{ lesson.max_age }})
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+  {% render_html_field programming_exercise.content %}
 
   <h2>Languages</h2>
   <div id="accordion" role="tablist" aria-multiselectable="true">
@@ -41,16 +55,18 @@
           <h4>Expected Result</h4>
           {% render_html_field implementation.expected_result %}
 
-          <p>
-            <a class="btn btn-outline-danger" data-toggle="collapse" href="#collapse-{{ implementation.language.slug }}-hints" aria-expanded="false" aria-controls="collapse-{{ implementation.language.slug }}-hints">
-              Show {{ implementation.language.name }} Hints
-            </a>
-          </p>
-          <div class="collapse" id="collapse-{{ implementation.language.slug }}-hints">
-            {% render_html_field implementation.hints %}
-          </div>
+          {% if implementation.hints %}
+            <p>
+              <a class="btn btn-outline-danger" data-toggle="collapse" href="#collapse-{{ implementation.language.slug }}-hints" aria-expanded="false" aria-controls="collapse-{{ implementation.language.slug }}-hints">
+                Show {{ implementation.language.name }} Hints
+              </a>
+            </p>
+            <div class="collapse" id="collapse-{{ implementation.language.slug }}-hints">
+              {% render_html_field implementation.hints %}
+            </div>
+          {% endif %}
 
-          <a href="{% url 'topics:programming_exercise_language_solution' topic.slug unit_plan.slug lesson.slug programming_exercise.slug implementation.language.slug %}" class="btn btn-outline-danger">
+          <a href="{% url 'topics:programming_exercise_language_solution' topic.slug programming_exercise.slug implementation.language.slug %}" class="btn btn-outline-danger">
             {{ implementation.language.name }} Solution
           </a>
         </div>

@@ -10,6 +10,13 @@ img {
   &.plugged-in-language-icon {
     height: 1.5em;
   }
+
+  &.image-content {
+    height: auto;
+    max-height: 16em;
+    max-width: 80%;
+    padding: 1em 0;
+  }
 }
 
 h1,
@@ -146,4 +153,9 @@ footer {
   a {
     color: $white;
   }
+}
+
+.glossary-term {
+  border-bottom: 1px black dotted;
+  cursor: pointer;
 }

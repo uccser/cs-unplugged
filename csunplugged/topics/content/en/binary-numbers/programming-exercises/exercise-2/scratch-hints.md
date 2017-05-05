@@ -1,2 +1,0 @@
-- You will need to use the 'Say' block.
-- Try using a variable block.
