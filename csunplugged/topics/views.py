@@ -250,33 +250,20 @@ class ProgrammingExerciseLanguageSolutionView(generic.DetailView):
         return context
 
 
-class CurriculumIntegrationList(generic.ListView):
-    """View for list all curriculum inegrations for a topic."""
+class AllCurriculumIntegrationList(generic.ListView):
+    """View for listing all curriculum integrations."""
 
     model = CurriculumIntegration
-    template_name = 'topics/curriculum_integration_list.html'
-    context_object_name = 'all_curriculum_integrations'
+    template_name = 'topics/all_curriculum_integration_list.html'
+    context_object_name = 'curriculum_integrations'
 
     def get_queryset(self, **kwargs):
-        """Retrieve all curriculum integrations for a topic.
+        """Retrieve all curriculum integrations.
 
         Returns:
             Queryset of CurriculumIntegration objects.
         """
-        return CurriculumIntegration.objects.filter(
-            topic__slug=self.kwargs.get('topic_slug', None)
-        ).select_related().order_by('number')
-
-    def get_context_data(self, **kwargs):
-        """Provide the context data for the curriculum integration list view.
-
-        Returns:
-            Dictionary of context data.
-        """
-        context = super(CurriculumIntegrationList, self).get_context_data(**kwargs)
-        # Loading objects under consistent context names for breadcrumbs
-        context['topic'] = get_object_or_404(Topic, slug=self.kwargs.get('topic_slug', None))
-        return context
+        return CurriculumIntegration.objects.select_related().order_by('topic__name', 'number')
 
 
 class CurriculumIntegrationView(generic.DetailView):
