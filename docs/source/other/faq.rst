@@ -12,10 +12,12 @@ contains the majority of educational material for the project.
 What is a Key?
 ==============================================================================
 
+We use the term "key" to specify a field name.
+Keys map to particular values (which range from learning outcome text, to the
+structure and attributes of a lesson).
+
 A key is a short label for something, containing only letters, numbers,
 or hyphens.
-A lot of the keys in the configuration files are actually used in URLs (so it's
-actually more correct to call them "slugs").
 In our system, a key must be no longer than 50 characters, and use hyphens
 instead of underscores.
 
@@ -32,6 +34,10 @@ These are *invalid* examples of keys:
 - ``Binary_Numbers``
 - ``binary_numbers``
 - ``exercise 2``
+
+Keys must be exact matches to work, for example, if you name a lesson
+``bits-and-bytes``, referencing it in another configuration file as
+``bytes-and-bits`` will raise an error.
 
 See also:
 

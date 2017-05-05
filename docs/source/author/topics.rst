@@ -99,9 +99,9 @@ The Markdown file containing the description of the topic:
 
 - **Is in:** the topic directory, e.g. the description file for 
   Binary Numbers will be in ``topics/content/en/binary-numbers/``.
-- **Is called:** ``<topic-key>.md`` where ``<topic-key>`` is the key of the
-  topic and the name of the directory it is in, e.g. ``binary-numbers.md`` or
-  ``kidbots.md``.
+- **Is called:** ``<topic-key>.md`` where ``<topic-key>`` is the key
+  (:ref:`what-is-a-key`) of the topic and the name of the directory it is in,
+  e.g. ``binary-numbers.md`` or ``kidbots.md``.
 - **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
   of the description.
 
@@ -137,7 +137,8 @@ The Markdown file containing the content og the unit plan:
 - **Is in:** the unit plan directory, e.g. the unit plan file for Binary Numbers
   Unit Plan 2 will be in ``topics/content/en/binary-numbers/unit-plan-2/``.
 - **Is called:** ``<unit-plan-key>.md`` where ``<unit-plan-key>`` is the key
-  of the unit plan and the name of the directory it is in, e.g. ``unit-plan-2.md``.
+  (:ref:`what-is-a-key`) of the unit plan and the name of the directory it is
+  in, e.g. ``unit-plan-2.md``.
 - **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
   of the unit plan.
 
@@ -171,8 +172,8 @@ The Markdown file containing the content for the lesson:
 - **Is in:** the age group subdirectory in the lessons directory, e.g. a lesson
   for age group 5-9 will be in
   ``topics/content/en/binary-numbers/unit-plan/lessons/5-9/``.
-- **Is called:** ``<lesson-key>.md`` where ``<lesson-key>`` is the name
-  of the lesson, e.g. ``introduction-to-bits.md``.
+- **Is called:** ``<lesson-key>.md`` where ``<lesson-key>`` is the key
+  (:ref:`what-is-a-key`) of the lesson, e.g. ``introduction-to-bits.md``.
 - **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
   for the lesson.
 
@@ -254,8 +255,8 @@ keys you specified in the programming exercises configuration file.
 A programming exercise is split into several different sections, each of which
 is an its own Markdown file, all of which are in
 ``topics/content/en/binary-numbers/programming-exercises/<exercise-key>/``
-where ``<exercise-key>`` refers to the key of the exercise, e.g.
-``count-to-16``.
+where ``<exercise-key>`` refers to the key (:ref:`what-is-a-key`) of the
+exercise, e.g. ``count-to-16``.
 
     1. The exercise description:
 
@@ -322,7 +323,7 @@ The Markdown file containing the content of the curriculum integration:
   in Binary Numbers will be in 
   ``topics/content/en/binary-numbers/curriculum-integrations/``.
 - **Is called:** ``<integration-key>.md`` where ``<integration-key>`` is the key
-  of the curriculum integration, e.g. ``whose-cake-is-it.md``.
+  (:ref:`what-is-a-key`) of the curriculum integration, e.g. ``whose-cake-is-it.md``.
 - **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
   of the integration.
 
@@ -352,21 +353,9 @@ In the following sections, each configuration file is exaplained in more detail.
 
 .. note::
 
-  - We use the term "key" to specify a field name. Keys map to particular values (which
-    range from learning outcome text, to the structure and attributes of a lesson).
-    There are two things to remember with keys:
-
-    - They must be written in lowercase and use hyphens instead of spaces.
-
-    - They must be exact matches to work, for example, if you name a lesson
-      ``bits-and-bytes``, referencing it in another configuration file as
-      ``bytes-and-bits`` will raise an error.
-
-.. note::
-
-  - Some of the keys have angle brackets around them, ``<like so>``. This means that they
-    are variables and you can call them whatever you like in your configuration file
-    (without the angle brackets).
+  - Some of the keys (:ref:`what-is-a-key`) have angle brackets around them,
+    ``<like so>``. This means that they are variables and you can call them
+    whatever you like in your configuration file (without the angle brackets).
 
 .. _application-structure-file:
 
