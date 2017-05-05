@@ -81,6 +81,13 @@ class Topic(models.Model):
         }
         return reverse("topics:topic", kwargs=kwargs)
 
+    def model_type(self):
+        """Text name of model type.
+
+        Returns:
+            Name of the model (str).
+        """
+        return "Topic"
 
     def __str__(self):
         """Text representation of Topic object.
@@ -138,6 +145,13 @@ class UnitPlan(models.Model):
         }
         return reverse("topics:unit_plan", kwargs=kwargs)
 
+    def model_type(self):
+        """Text name of model type.
+
+        Returns:
+            Name of the model (str).
+        """
+        return "Unit Plan"
 
     def __str__(self):
         """Text representation of UnitPlan object.
@@ -199,6 +213,14 @@ class ProgrammingExercise(models.Model):
             "programming_exercise_slug": self.slug
         }
         return reverse("topics:programming_exercise", kwargs=kwargs)
+
+    def model_type(self):
+        """Text name of model type.
+
+        Returns:
+            Name of the model (str).
+        """
+        return "Programming Challenge"
 
     def __str__(self):
         """Text representation of ProgrammingExercise object.
@@ -324,6 +346,14 @@ class Lesson(models.Model):
         }
         return reverse("topics:lesson", kwargs=kwargs)
 
+    def model_type(self):
+        """Text name of model type.
+
+        Returns:
+            Name of the model (str).
+        """
+        return "Lesson"
+
     def __str__(self):
         """Text representation of Lesson object.
 
@@ -376,11 +406,19 @@ class CurriculumIntegration(models.Model):
         }
         return reverse("topics:integration", kwargs=kwargs)
 
+    def model_type(self):
+        """Text name of model type.
+
+        Returns:
+            Name of the model (str).
+        """
+        return "Curriculum Integration"
+
     def __str__(self):
         """Text representation of CurriculumIntegration object.
 
         Returns:
-            Name of curriculum integration (string).
+            Name of curriculum integration (str).
         """
         return self.name
 
