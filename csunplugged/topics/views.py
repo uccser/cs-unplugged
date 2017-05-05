@@ -297,10 +297,13 @@ class CurriculumIntegrationView(generic.DetailView):
         # Loading objects under consistent context names for breadcrumbs
         context['topic'] = self.object.topic
         # Add in a QuerySet of all the connected curriculum areas
-        context['integration_curriculum_areas'] = self.object.curriculum_areas.all()
+        context['integration_curriculum_areas'] = self.object.curriculum_areas.order_by("name")
         # Add in a QuerySet of all the prerequisite lessons
         context['prerequisite_lessons'] = self.object.prerequisite_lessons.select_related().order_by(
-            'unit_plan__name', 'number'
+            'unit_plan__name',
+            'min_age',
+            'max_age',
+            'number'
         )
         return context
 
