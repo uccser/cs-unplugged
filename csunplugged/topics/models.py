@@ -51,6 +51,17 @@ class CurriculumArea(models.Model):
         related_name='parent_curriculum_area'
     )
 
+    def group_slug(self):
+        """Slug for the curriculum area group.
+
+        Returns:
+            Slug of parent if parent exists, otherwise own slug (str).
+        """
+        if self.parent:
+            return self.parent.slug
+        else:
+            return self.slug
+
     def __str__(self):
         """Text representation of CurriculumArea object.
 

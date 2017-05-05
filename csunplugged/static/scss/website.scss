@@ -159,3 +159,36 @@ footer {
   border-bottom: 1px black dotted;
   cursor: pointer;
 }
+
+.badge- {
+  &literacy {
+    background-color: $pink;
+  }
+  &mathematics {
+    background-color: $green;
+  }
+  &music {
+    background-color: $orange;
+  }
+  &art {
+    background-color: $teal;
+  }
+  &science {
+    background-color: $blue;
+  }
+  &dance {
+    background-color: $light-purple;
+  }
+  &drama {
+    background-color: $purple;
+  }
+  &social-science {
+    background-color: $yellow;
+  }
+  &digitial-technologies {
+    background-color: $red;
+  }
+  &computational-thinking {
+    background-color: $red;
+  }
+}
