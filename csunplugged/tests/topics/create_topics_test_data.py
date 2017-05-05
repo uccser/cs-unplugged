@@ -1,4 +1,5 @@
-from model_mommy import mommy
+"""Create test data for topic tests."""
+
 from topics.models import (
     Topic,
     Lesson,
@@ -8,6 +9,17 @@ from topics.models import (
 
 
 def create_test_integration(topic, number, lessons=None, curriculum_areas=None):
+    """Create curriculum integration object.
+
+    Args:
+        topic: The related Topic object.
+        number: Integer representing the topic.
+        lessons: List of prerequisite lessons.
+        curriculum_areas: List of curriculum areas.
+
+    Returns:
+        CurriculumIntegration object.
+    """
     integration = CurriculumIntegration(
         topic=topic,
         slug="integration_{}".format(number),
@@ -26,6 +38,15 @@ def create_test_integration(topic, number, lessons=None, curriculum_areas=None):
 
 
 def create_test_curriculum_area(number, parent=None):
+    """Create curriculum area object.
+
+    Args:
+        number: Integer representing the area.
+        parent: Parent of the curriculum area.
+
+    Returns:
+        CurriculumArea object.
+    """
     area = CurriculumArea(
         slug="area_{}".format(number),
         name="Area {}".format(number),
@@ -36,6 +57,14 @@ def create_test_curriculum_area(number, parent=None):
 
 
 def create_test_topic(number):
+    """Create topic object.
+
+    Args:
+        number: Integer representing the topic.
+
+    Returns:
+        Topic object.
+    """
     topic = Topic(
         slug="topic_{}".format(number),
         name="Topic {}".format(number),
@@ -46,6 +75,18 @@ def create_test_topic(number):
 
 
 def create_test_lesson(topic, unit_plan, number, min_age, max_age):
+    """Create lesson object.
+
+    Args:
+        topic: The related Topic object.
+        unit_plan: The related UnitPlan object.
+        number: Integer representing the topic.
+        min_age: Integer of the minimum age of the lesson.
+        max_age: Integer of the maximum age of the lesson.
+
+    Returns:
+        Lesson object.
+    """
     lesson = Lesson(
         topic=topic,
         unit_plan=unit_plan,
