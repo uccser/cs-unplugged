@@ -18,7 +18,7 @@ class GlossaryTerm(models.Model):
         """Text representation of GlossaryTerm object.
 
         Returns:
-            Term attribute of GlossaryTerm (string).
+            Term attribute of GlossaryTerm (str).
         """
         return self.term
 
@@ -34,7 +34,7 @@ class LearningOutcome(models.Model):
         """Text representation of LearningOutcome object.
 
         Returns:
-            Text of learning outcome (string).
+            Text of learning outcome (str).
         """
         return self.text
 
@@ -55,9 +55,12 @@ class CurriculumArea(models.Model):
         """Text representation of CurriculumArea object.
 
         Returns:
-            Name of curriculum area (string).
+            Name of curriculum area (str).
         """
-        return self.name
+        if self.parent:
+            return "{}: {}".format(self.parent.name, self.name)
+        else:
+            return self.name
 
 
 class Topic(models.Model):
@@ -74,7 +77,7 @@ class Topic(models.Model):
         """Text representation of Topic object.
 
         Returns:
-            Name of topic (string).
+            Name of topic (str).
         """
         return self.name
 
@@ -118,7 +121,7 @@ class UnitPlan(models.Model):
         """Text representation of UnitPlan object.
 
         Returns:
-            Name of unit plan (string).
+            Name of unit plan (str).
         """
         return self.name
 
@@ -134,7 +137,7 @@ class ProgrammingExerciseDifficulty(models.Model):
         """Text representation of ProgrammingExerciseDifficulty object.
 
         Returns:
-            Name of difficulty level (string).
+            Name of difficulty level (str).
         """
         return self.name
 
@@ -167,7 +170,7 @@ class ProgrammingExercise(models.Model):
         """Text representation of ProgrammingExercise object.
 
         Returns:
-            Name of programming exercise (string).
+            Name of programming exercise (str).
         """
         return self.name
 
@@ -184,7 +187,7 @@ class ProgrammingExerciseLanguage(models.Model):
         """Text representation of ProgrammingExerciseLanguage object.
 
         Returns:
-            Name of programming language (string).
+            Name of programming language (str).
         """
         return self.name
 
@@ -216,7 +219,7 @@ class ProgrammingExerciseLanguageImplementation(models.Model):
         """Text representation of ProgrammingExerciseLanguageImplementation.
 
         Returns:
-            Description of implementation and related exercise (string).
+            Description of implementation and related exercise (str).
         """
         return '{} for exercise {}.{}, {}'.format(
             self.language.name,
@@ -278,7 +281,7 @@ class Lesson(models.Model):
         """Text representation of Lesson object.
 
         Returns:
-            Name of lesson (string).
+            Name of lesson (str).
         """
         return self.name
 
@@ -318,7 +321,7 @@ class CurriculumIntegration(models.Model):
         """Text representation of CurriculumIntegration object.
 
         Returns:
-            Name of curriculum integration (string).
+            Name of curriculum integration (str).
         """
         return self.name
 
