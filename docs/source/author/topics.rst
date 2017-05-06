@@ -98,7 +98,7 @@ Adding a Topic
 
 The Markdown file containing the description of the topic:
 
-- **Is in:** the topic directory, e.g. the description file for 
+- **Is in:** the topic directory, e.g. the description file for
   Binary Numbers will be in ``topics/content/en/binary-numbers/``.
 - **Is called:** ``<topic-key>.md`` where ``<topic-key>`` is the key
   (:ref:`what-is-a-key`) of the topic and the name of the directory it is in,
@@ -299,7 +299,7 @@ Therefore, the languages you have chosen must be specified in the
 .. note::
 
   If the exercise includes learning outcomes, then the corresponding configuration
-  file will also need to be added or updated to include new learning outcomes. 
+  file will also need to be added or updated to include new learning outcomes.
 
 .. _adding-a-curriculum-integration:
 
@@ -321,7 +321,7 @@ Adding a Curriculum Integration
 The Markdown file containing the content of the curriculum integration:
 
 - **Is in:** the curriculum integration directrory, e.g. curriculum integrations
-  in Binary Numbers will be in 
+  in Binary Numbers will be in
   ``topics/content/en/binary-numbers/curriculum-integrations/``.
 - **Is called:** ``<integration-key>.md`` where ``<integration-key>`` is the key
   (:ref:`what-is-a-key`) of the curriculum integration, e.g. ``whose-cake-is-it.md``.
@@ -747,6 +747,11 @@ Programming Exercises Configuration File
 
       - ``learning-outcomes:`` A list of keys corresponding to learning outcomes.
 
+      - ``extra-challenge:`` A Markdown filename containing the content for an
+        extra challenge.
+        The Markdown file should be within the programming exercise folder, and
+        must not include a heading (should only contain text).
+
 A complete programming exercises structure file may look like the following:
 
 .. code-block:: yaml
@@ -769,6 +774,7 @@ A complete programming exercises structure file may look like the following:
       - python
     learning-outcomes:
       - programming-basic-logic
+    extra-challenge: extra-challenge.md
 
 .. _curriculum-integrations-file:
 
