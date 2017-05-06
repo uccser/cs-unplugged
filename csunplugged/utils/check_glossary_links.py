@@ -11,5 +11,5 @@ def check_converter_glossary_links(glossary_links, md_file_path):
         glossary_links: Dictionary of glossary links (dict).
     """
     for term in glossary_links.keys():
-        if GlossaryTerm.objects.get(slug=term).exists():
+        if not GlossaryTerm.objects.filter(slug=term).exists():
             raise CouldNotFindGlossaryTerm(term, md_file_path)
