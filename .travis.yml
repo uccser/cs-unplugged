@@ -27,6 +27,7 @@ before_script:
 script:
   - ./csu dev test
   - ./csu dev test_backwards
+  - ./csu dev test_coverage
   - ./csu dev style
   - ./csu dev docs
 
