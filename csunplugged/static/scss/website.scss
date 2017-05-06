@@ -159,3 +159,18 @@ footer {
   border-bottom: 1px black dotted;
   cursor: pointer;
 }
+
+details {
+  border: 1px solid $gray;
+  border-radius: 0.3em;
+  overflow: hidden;
+
+  summary {
+    background-color: $gray-lightest;
+    cursor: pointer;
+    font-size: 1.1em;
+  }
+  summary:hover {
+    background-color: $gray-lighter;
+  }
+}

@@ -9,7 +9,7 @@
   {% breadcrumb programming_exercise.name "topics:programming_exercise" topic.slug programming_exercise.slug %}
 {% endblock breadcrumbs %}
 
-{% block content %}
+{% block page_heading %}
   <h1>
     {{ programming_exercise.exercise_set_number }}.{{ programming_exercise.exercise_number }}
     {{ programming_exercise.name }}
@@ -18,7 +18,9 @@
   <p>
     <strong>Challenge Level:</strong> {{ programming_exercise.difficulty.name }}
   </p>
+{% endblock page_heading %}
 
+{% block content %}
   {% if lessons %}
     <div class="alert alert-info" role="alert">
       <p>This programming challenge is related to the following lessons:</p>
@@ -36,44 +38,41 @@
   {% endif %}
 
   {% render_html_field programming_exercise.content %}
+{% endblock content %}
 
+{% block sidebar %}
   <h2>Languages</h2>
-  <div id="accordion" role="tablist" aria-multiselectable="true">
+
   {% for implementation in implementations %}
-    <div class="card">
-      <div class="card-header" role="tab" id="heading{{ implementation.language.slug }}">
-        <h5 class="mb-0">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse-{{ implementation.language.slug }}" aria-expanded="true" aria-controls="collapse-{{ implementation.language.slug }}">
-            <img src="{% get_static_prefix %}{{ implementation.language.icon }}" class="plugged-in-language-icon" />
-            {{ implementation.language.name }}
-          </a>
-        </h5>
+    <details class="mb-3">
+      <summary class="p-1">
+        <img src="{% get_static_prefix %}{{ implementation.language.icon }}" class="plugged-in-language-icon" />
+        <strong>
+          {{ implementation.language.name }}
+        </strong>
+      </summary>
+
+      <div class="detail-content m-2">
+        <h4>Expected Result</h4>
+        {% render_html_field implementation.expected_result %}
+
+        {% if implementation.hints %}
+          <p>
+            <a class="btn btn-outline-danger" data-toggle="collapse" href="#collapse-{{ implementation.language.slug }}-hints" aria-expanded="false" aria-controls="collapse-{{ implementation.language.slug }}-hints">
+              Show {{ implementation.language.name }} Hints
+            </a>
+          </p>
+          <div class="collapse" id="collapse-{{ implementation.language.slug }}-hints">
+            {% render_html_field implementation.hints %}
+          </div>
+        {% endif %}
+
+        <a href="{% url 'topics:programming_exercise_language_solution' topic.slug programming_exercise.slug implementation.language.slug %}" class="btn btn-outline-danger">
+          {{ implementation.language.name }} Solution
+        </a>
       </div>
-
-      <div id="collapse-{{ implementation.language.slug }}" class="collapse" role="tabpanel" aria-labelledby="heading{{ implementation.language.slug }}">
-        <div class="card-block">
-          <h4>Expected Result</h4>
-          {% render_html_field implementation.expected_result %}
-
-          {% if implementation.hints %}
-            <p>
-              <a class="btn btn-outline-danger" data-toggle="collapse" href="#collapse-{{ implementation.language.slug }}-hints" aria-expanded="false" aria-controls="collapse-{{ implementation.language.slug }}-hints">
-                Show {{ implementation.language.name }} Hints
-              </a>
-            </p>
-            <div class="collapse" id="collapse-{{ implementation.language.slug }}-hints">
-              {% render_html_field implementation.hints %}
-            </div>
-          {% endif %}
-
-          <a href="{% url 'topics:programming_exercise_language_solution' topic.slug programming_exercise.slug implementation.language.slug %}" class="btn btn-outline-danger">
-            {{ implementation.language.name }} Solution
-          </a>
-        </div>
-      </div>
-    </div>
-    {% endfor %}
-  </div>
+    </details>
+  {% endfor %}
 
   <h2>Learning Outcomes</h2>
   {% if programming_exercise_learning_outcomes %}
@@ -85,4 +84,4 @@
   {% else %}
     <p>No learning outcomes listed for {{ programming_exercise.name }}.</p>
   {% endif %}
-{% endblock content %}
+{% endblock sidebar %}
