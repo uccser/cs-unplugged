@@ -207,7 +207,11 @@ class ProgrammingExerciseView(generic.DetailView):
         """
         # Call the base implementation first to get a context
         context = super(ProgrammingExerciseView, self).get_context_data(**kwargs)
-        context['lessons'] = self.object.lessons.all()
+        context['lessons'] = self.object.lessons.order_by(
+            'min_age',
+            'max_age',
+            'number'
+        )
         context['topic'] = self.object.topic
         # Add all the connected learning outcomes
         context['programming_exercise_learning_outcomes'] = self.object.learning_outcomes.all()

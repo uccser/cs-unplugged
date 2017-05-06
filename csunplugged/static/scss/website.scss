@@ -8,7 +8,7 @@ img {
   }
 
   &.plugged-in-language-icon {
-    height: 1.5em;
+    height: 3em;
   }
 
   &.image-content {
@@ -157,12 +157,12 @@ footer {
 
 .glossary-term {
   border-bottom: 1px black dotted;
-  cursor: pointer;
+  cursor: help;
 }
 
 details {
   border: 1px solid $gray;
-  border-radius: 0.3em;
+  border-radius: $border-radius;
   overflow: hidden;
 
   summary {
@@ -172,5 +172,20 @@ details {
   }
   summary:hover {
     background-color: $gray-lighter;
+  }
+}
+
+.difficulty-level {
+  color: white;
+}
+.difficulty-level-{
+  &1 {
+    background-color: $blue;
+  }
+  &2 {
+    background-color: $green;
+  }
+  &3 {
+    background-color: $red;
   }
 }
