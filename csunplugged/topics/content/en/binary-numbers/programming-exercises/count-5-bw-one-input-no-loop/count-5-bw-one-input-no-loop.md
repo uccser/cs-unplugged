@@ -1,6 +1,7 @@
 # Counting 5 black and white cards as one input (without a loop)
 
-## Objective`
+## Objective
+
 - Explain what you need to consider if you are asking for input from the end user.
 - Describe how variables store values and how they are used in this program.
 - Identify when to use an if statement to check a set of conditions.
