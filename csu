@@ -42,6 +42,7 @@ function helpmenu {
   style_help
   test_suite_help
   test_suite_backwards_help
+  test_coverage_help
   updatedata_help
 }
 
@@ -76,9 +77,6 @@ function update {
   static
 
   printf "\n"
-  makemigrations
-
-  printf "\n"
   migrate
 
   printf "\n"
@@ -88,8 +86,8 @@ function update {
   collect_static
 }
 function update_help {
-  printf "   update            Run Django makemigrations, migrate, and\n"
-  printf "                     updatedata commands and build static files.\n"
+  printf "   update            Run Django migrate and updatedata commands\n"
+  printf "                     and build static files.\n"
 }
 
 # Run Django makemigrations command
@@ -173,15 +171,23 @@ function style_help {
   printf "   style             Run style checks.\n"
 }
 
-# Run test suite with coverage checking
+# Run test suite
 function test_suite {
   printf "Running test suite...\n"
   docker-compose run --rm django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --pattern "test_*.py" -v 3
+}
+function test_suite_help {
+  printf "   test              Run test suite with code coverage.\n"
+}
+
+# Display test coverage table
+function test_coverage {
+  printf "Displaying test suite coverage...\n"
   docker-compose run --rm django /docker_venv/bin/coverage xml -i
   docker-compose run --rm django /docker_venv/bin/coverage report -m --skip-covered
 }
-function test_suite_help {
-  printf "   test              Run test suite with code coverage report.\n"
+function test_coverage_help {
+  printf "   test_coverage     Display code coverage report.\n"
 }
 
 # Run test suite backwards for CI testing
@@ -285,6 +291,10 @@ function process_dev_command() {
         ;;
       test_backwards)
         test_suite_backwards
+        exit
+        ;;
+      test_coverage)
+        test_coverage
         exit
         ;;
       updatedata)
