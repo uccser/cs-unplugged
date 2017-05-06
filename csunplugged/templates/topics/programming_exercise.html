@@ -90,3 +90,10 @@
     </details>
   {% endfor %}
 {% endblock sidebar %}
+
+{% block end_content %}
+  {% if programming_exercise.extra_challenge %}
+    <h2>Extra Challenge</h2>
+    {% render_html_field programming_exercise.extra_challenge %}
+  {% endif %}
+{% endblock end_content %}
