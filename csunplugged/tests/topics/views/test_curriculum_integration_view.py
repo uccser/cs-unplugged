@@ -2,10 +2,7 @@ from django.urls import reverse
 from model_mommy import mommy
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics import create_topics_test_data
-from topics.models import (
-    Topic,
-    UnitPlan,
-)
+from topics.models import UnitPlan
 
 
 class CurriculumIntegrationViewTest(BaseTestWithDB):
@@ -15,7 +12,7 @@ class CurriculumIntegrationViewTest(BaseTestWithDB):
         self.language = "en"
 
     def test_curriculum_integration_view_with_valid_slugs(self):
-        topic = mommy.make(Topic, slug="topic_slug")
+        topic = create_topics_test_data.create_test_topic(1)
         create_topics_test_data.create_test_integration(topic, 1)
         kwargs = {
             "topic_slug": topic.slug,
@@ -26,7 +23,7 @@ class CurriculumIntegrationViewTest(BaseTestWithDB):
         self.assertEqual(200, response.status_code)
 
     def test_curriculum_integration_view_with_invalid_topic_slug(self):
-        topic = mommy.make(Topic, slug="topic_slug")
+        topic = create_topics_test_data.create_test_topic(1)
         create_topics_test_data.create_test_integration(topic, 1)
         kwargs = {
             "topic_slug": "no_slug",
@@ -37,7 +34,7 @@ class CurriculumIntegrationViewTest(BaseTestWithDB):
         self.assertEqual(404, response.status_code)
 
     def test_curriculum_integration_view_with_invalid_integration_slug(self):
-        topic = mommy.make(Topic, slug="topic_slug")
+        topic = create_topics_test_data.create_test_topic(1)
         create_topics_test_data.create_test_integration(topic, 1)
         kwargs = {
             "topic_slug": topic.slug,

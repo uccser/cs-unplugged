@@ -1,8 +1,6 @@
 from django.urls import reverse
-from model_mommy import mommy
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics import create_topics_test_data
-from topics.models import Topic
 
 
 class AllCurriculumIntegrationViewTest(BaseTestWithDB):
@@ -18,7 +16,7 @@ class AllCurriculumIntegrationViewTest(BaseTestWithDB):
         self.assertEqual(len(response.context["curriculum_integrations"]), 0)
 
     def test_all_curriculum_integration_view_with_one_integration(self):
-        topic = mommy.make(Topic)
+        topic = create_topics_test_data.create_test_topic(1)
         create_topics_test_data.create_test_integration(topic, 1)
 
         url = reverse("topics:all_curriculum_integrations")
@@ -31,7 +29,7 @@ class AllCurriculumIntegrationViewTest(BaseTestWithDB):
         )
 
     def test_all_curriculum_integration_view_with_multiple_integration(self):
-        topic = mommy.make(Topic)
+        topic = create_topics_test_data.create_test_topic(1)
         create_topics_test_data.create_test_integration(topic, 1)
         create_topics_test_data.create_test_integration(topic, 2)
         create_topics_test_data.create_test_integration(topic, 3)
@@ -50,8 +48,8 @@ class AllCurriculumIntegrationViewTest(BaseTestWithDB):
         )
 
     def test_all_curriculum_integration_view_order(self):
-        topic_1 = mommy.make(Topic, name="1")
-        topic_2 = mommy.make(Topic, name="2")
+        topic_1 = create_topics_test_data.create_test_topic(1)
+        topic_2 = create_topics_test_data.create_test_topic(2)
         create_topics_test_data.create_test_integration(topic_2, 3)
         create_topics_test_data.create_test_integration(topic_2, 2)
         create_topics_test_data.create_test_integration(topic_2, 1)
