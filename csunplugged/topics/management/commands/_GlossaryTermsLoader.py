@@ -41,7 +41,7 @@ class GlossaryTermsLoader(BaseLoader):
                 glossary_term = GlossaryTerm.objects.get(slug=glossary_slug)
                 glossary_file_path = os.path.join(
                     self.BASE_PATH,
-                    glossary_slug + self.FILE_EXTENSION
+                    "{}{}".format(glossary_slug, self.FILE_EXTENSION)
                 )
                 glossary_term_content = self.convert_md_file(
                     glossary_file_path,
