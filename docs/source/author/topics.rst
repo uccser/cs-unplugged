@@ -96,6 +96,21 @@ Adding a Topic
   </map>
   <img src="../_static/img/topics_adding_topic_flowchart.png" usemap="#topics-map">
 
+The Markdown file containing the description of the topic:
+
+- **Is in:** the topic directory, e.g. the description file for 
+  Binary Numbers will be in ``topics/content/en/binary-numbers/``.
+- **Is called:** ``<topic-key>.md`` where ``<topic-key>`` is the key
+  (:ref:`what-is-a-key`) of the topic and the name of the directory it is in,
+  e.g. ``binary-numbers.md`` or ``kidbots.md``.
+- **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
+  of the description.
+
+.. note ::
+
+  The heading written in this file will be used exactly as it is given
+  throughout the website as the name of the topic.
+
 .. warning::
 
   Every topic needs at least one unit plan, therefore the system will not allow
@@ -118,6 +133,21 @@ Adding a Unit Plan
   </map>
   <img src="../_static/img/topics_adding_unit_plan_flowchart.png" usemap="#unit-plan-map">
 
+The Markdown file containing the content og the unit plan:
+
+- **Is in:** the unit plan directory, e.g. the unit plan file for Binary Numbers
+  Unit Plan 2 will be in ``topics/content/en/binary-numbers/unit-plan-2/``.
+- **Is called:** ``<unit-plan-key>.md`` where ``<unit-plan-key>`` is the key
+  (:ref:`what-is-a-key`) of the unit plan and the name of the directory it is
+  in, e.g. ``unit-plan-2.md``.
+- **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
+  of the unit plan.
+
+.. note::
+
+  The heading written in this file will be used exactly as it is given
+  throughout the website as the name of the unit plan.
+
 .. warning::
 
   Every unit plan needs at least one lesson, so the system will not allow a
@@ -137,6 +167,21 @@ Adding a Lesson
     <area shape="rect" coords="237,525,317,560" href="../getting_started/helper_commands.html#update">
   </map>
   <img src="../_static/img/topics_adding_lesson_flowchart.png" usemap="#lesson-map">
+
+The Markdown file containing the content for the lesson:
+
+- **Is in:** the age group subdirectory in the lessons directory, e.g. a lesson
+  for age group 5-9 will be in
+  ``topics/content/en/binary-numbers/unit-plan/lessons/5-9/``.
+- **Is called:** ``<lesson-key>.md`` where ``<lesson-key>`` is the key
+  (:ref:`what-is-a-key`) of the lesson, e.g. ``introduction-to-bits.md``.
+- **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
+  for the lesson.
+
+.. note::
+
+  The heading written in this file will be used exactly as it is given
+  throughout the website as the name of the lesson.
 
 .. note::
 
@@ -208,48 +253,53 @@ Adding a Programming Exercise
 You will now be able to add programming exercises to lessons by referencing the
 keys you specified in the programming exercises configuration file.
 
+A programming exercise is split into several different sections, each of which
+is an its own Markdown file, all of which are in
+``topics/content/en/binary-numbers/programming-exercises/<exercise-key>/``
+where ``<exercise-key>`` refers to the key (:ref:`what-is-a-key`) of the
+exercise, e.g. ``count-to-16``.
+
+    1. The exercise description:
+
+      - **Is called:** ``<exercise-key>.md`` where ``<exercise-key>`` is the key
+        of the exercise, e.g. ``count-to-16.md``.
+      - **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
+        of the exercise.
+
+      .. note::
+
+        The heading written in this file will be used exactly as it is given
+        throughout the website as the name of the programming exercise.
+
+    2. The expected output
+
+      - **Is called:** ``<language>-expected.md`` where ``<language>`` is the key
+        of the programming language, e.g. ``python-expected.md``.
+      - **Contains:** The expected output for the programming exercise, e.g. an
+        embedded Scratch program or Python output.
+
+    3. Hints (optional)
+
+      - **Is called:** ``<language>-hints.md`` where ``<language>`` is the key
+        of the programming language, e.g. ``scratch-hints.md``.
+      - **Contains:** Hints for how to complete the exercise, e.g. suggested
+        Scratch blocks.
+
+    4. Example solution(s)
+
+      - **Is called:** ``<language>-solution.md`` where ``<language>`` is the key
+        of the programming language, e.g. ``ruby-hints.md``.
+      - **Contains:** Example solutions to the exercise, e.g. Scratch program.
+
+2-4 from the list above can be given in multiple programming languages.
+Therefore, the languages you have chosen must be specified in the
+``programming-exercises.yaml`` configuration file, as well as the
+``programming-exercises-structure.yaml`` configuration file.
+
 .. note::
 
   If the exercise includes learning outcomes, then the corresponding configuration
-  file will also need to be added or updated to include new learning outcomes.
-
-.. note::
-
-  A programming exercise is split into four parts, these are:
-
-    1. The exercise description
-    2. The expected output
-    3. Hints (optional)
-    4. Example solution(s)
-
-  Additonally, 2-4 from the list above, can be given in multiple programming
-  languages. Therefore, the languages you have chosen must be specified in the
-  ``programming-exercises.yaml`` configuration file, as well as the
-  ``programming-exercises-structure.yaml`` configuration file.
-
-.. note::
-
-  The system will use the key for the programming exercise to search for the
-  relevant Markdown files, so it is important to name them according to the
-  following rules:
-
-  - Both the directory and file name for the exercise must match the key you chose
-    for the exercise in ``programming-exercises.yaml``
-
-  - The expected, hints, and solution files must be prefixed with the key for
-    the programming language they are written in.
-
-  For example, a programming exercise with key ``count-to-16`` implemented in
-  Python only will have the following directory structure:
-
-  .. code-block:: none
-
-    └── programming-exercises/
-        └── count-to-16/
-            ├── count-to-16.md
-            ├── python-expected.md
-            ├── python-hints.md
-            └── python-solution.md
+  file will also need to be added or updated to include new learning outcomes. 
 
 .. _adding-a-curriculum-integration:
 
@@ -267,6 +317,16 @@ Adding a Curriculum Integration
     <area shape="rect" coords="240,675,317,710" href="../getting_started/helper_commands.html#update">
   </map>
   <img src="../_static/img/topics_adding_curriculum_integrations_flowchart.png" usemap="#curriculum-integrations-map">
+
+The Markdown file containing the content of the curriculum integration:
+
+- **Is in:** the curriculum integration directrory, e.g. curriculum integrations
+  in Binary Numbers will be in 
+  ``topics/content/en/binary-numbers/curriculum-integrations/``.
+- **Is called:** ``<integration-key>.md`` where ``<integration-key>`` is the key
+  (:ref:`what-is-a-key`) of the curriculum integration, e.g. ``whose-cake-is-it.md``.
+- **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
+  of the integration.
 
 .. note ::
 
@@ -334,21 +394,9 @@ In the following sections, each configuration file is exaplained in more detail.
 
 .. note::
 
-  - We use the term "key" to specify a field name. Keys map to particular values (which
-    range from learning outcome text, to the structure and attributes of a lesson).
-    There are two things to remember with keys:
-
-    - They must be written in lowercase and use hyphens instead of spaces.
-
-    - They must be exact matches to work, for example, if you name a lesson
-      ``bits-and-bytes``, referencing it in another configuration file as
-      ``bytes-and-bits`` will raise an error.
-
-.. note::
-
-  - Some of the keys have angle brackets around them, ``<like so>``. This means that they
-    are variables and you can call them whatever you like in your configuration file
-    (without the angle brackets).
+  - Some of the keys (:ref:`what-is-a-key`) have angle brackets around them,
+    ``<like so>``. This means that they are variables and you can call them
+    whatever you like in your configuration file (without the angle brackets).
 
 .. _application-structure-file:
 
@@ -394,9 +442,9 @@ A complete application structure file may look like the following:
 Topic Configuration File
 ------------------------------------------------------------------------------
 
-- **File Name:** ``<topic-name>.yaml``
+- **File Name:** ``<topic-key>.yaml``
 
-- **Location:** ``topic/content/<language>/<topic-name>/``
+- **Location:** ``topic/content/<language>/<topic-key>/``
 
 - **Referenced In:** ``topic/content/<launguage>/structure.yaml``
 
@@ -439,18 +487,18 @@ A complete topic structure file may look like the following:
 Unit Plan Configuration File
 ------------------------------------------------------------------------------
 
-- **File Name:** ``<unit-plan-name>.yaml``
+- **File Name:** ``<unit-plan-key>.yaml``
 
-- **Location:** ``topic/content/<language>/<topic-name>/<unit-plan-name>/``
+- **Location:** ``topic/content/<language>/<topic-key>/<unit-plan-key>/``
 
-- **Referenced In:** ``topic/content/<language>/<topic-name>/<topic-name>.yaml``
+- **Referenced In:** ``topic/content/<language>/<topic-key>/<topic-key>.yaml``
 
 - **Purpose:** This file defines all the lessons (and their respective)
   attributes for the unit plan.
 
   - **Required Fields:**
 
-    - ``<lesson-name>:`` This is the key for the lesson. Each lesson has its own list of
+    - ``<lesson-key>:`` This is the key for the lesson. Each lesson has its own list of
       required and optional fields:
 
       - **Required Fields:**
@@ -671,9 +719,9 @@ Programming Exercises Configuration File
 
 - **File Name:** ``programming-exercises.yaml``
 
-- **Location:** ``topics/content/<language>/<topic-name>/programming-exercises/``
+- **Location:** ``topics/content/<language>/<topic-key>/programming-exercises/``
 
-- **Referenced In:** ``topics/content/<language>/<topic-name>/<topic-name>.yaml``
+- **Referenced In:** ``topics/content/<language>/<topic-key>/<topic-key>.yaml``
 
 - **Purpose:** This file defines the programming exercises (and their respective attributes)
   for a particular topic.
@@ -729,9 +777,9 @@ Curriculum Integrations Configuration File
 
 - **File Name:** ``curriculum-intergrations.yaml``
 
-- **Location:** ``topics/content/<language>/<topic-name>/``
+- **Location:** ``topics/content/<language>/<topic-key>/``
 
-- **Referenced In:** ``topics/content/<language>/<topic-name>.yaml``
+- **Referenced In:** ``topics/content/<language>/<topic-key>.yaml``
 
 - **Purpose:** Contains a list of curriculum integrations that can be used to integrate
   the topic with another area in the curriculum.
@@ -756,11 +804,11 @@ Curriculum Integrations Configuration File
 
         - **Required Fields:**
 
-          - ``<unit-plan-name>:`` A key corresponding to a unit plan.
+          - ``<unit-plan-key>:`` A key corresponding to a unit plan.
 
             - **Required Fields:**
 
-              - ``<lesson-name>`` A key corresponding to a lesson in the given unit
+              - ``<lesson-key>`` A key corresponding to a lesson in the given unit
                 plan.
 
 A complete curriculum integration structure file with multiple curriculum integrations
