@@ -128,23 +128,6 @@ class LessonsLoader(BaseLoader):
                                 "Learning Outcomes"
                             )
 
-            # Add curriculum areas
-            if "curriculum-areas" in lesson_structure:
-                curriculum_area_slugs = lesson_structure["curriculum-areas"]
-                if curriculum_area_slugs is not None:
-                    for curriculum_area_slug in curriculum_area_slugs:
-                        try:
-                            curriculum_area = CurriculumArea.objects.get(
-                                slug=curriculum_area_slug
-                            )
-                            lesson.curriculum_areas.add(curriculum_area)
-                        except:
-                            raise KeyNotFoundError(
-                                self.unit_plan_structure_file_path,
-                                curriculum_area_slug,
-                                "Curriculum Areas"
-                            )
-
             # Add generated resources
             if "generated-resources" in lesson_structure:
                 resources = lesson_structure["generated-resources"]

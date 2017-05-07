@@ -7,7 +7,10 @@ from utils.BaseLoader import BaseLoader
 
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 
-from topics.models import LearningOutcome
+from topics.models import (
+    LearningOutcome,
+    CurriculumArea,
+)
 
 
 class LearningOutcomesLoader(BaseLoader):
@@ -39,12 +42,12 @@ class LearningOutcomesLoader(BaseLoader):
             )
         )
 
-        for (outcome_slug, outcome_text) in learning_outcomes.items():
+        for (outcome_slug, outcome_data) in learning_outcomes.items():
 
-            if outcome_text is None:
+            if (not "text" in outcome_data) or (outcome_data["text"] is None):
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
-                    ["key:value pair"],
+                    ["text"],
                     "Learning Outcome"
                 )
 
@@ -54,6 +57,23 @@ class LearningOutcomesLoader(BaseLoader):
                 text=outcome_text
             )
             outcome.save()
+
+            # Add curriculum areas
+            if "curriculum-areas" in lesson_structure:
+                curriculum_area_slugs = outcome_data.get("curriculum-areas", [])
+                for curriculum_area_slug in curriculum_area_slugs:
+                    try:
+                        curriculum_area = CurriculumArea.objects.get(
+                            outcome=curriculum_area_slug
+                        )
+                        outcome.curriculum_areas.add(curriculum_area)
+                    except:
+                        raise KeyNotFoundError(
+                            self.unit_plan_structure_file_path,
+                            curriculum_area_slug,
+                            "Curriculum Areas"
+                        )
+
             self.log("Added Learning Outcome: {}".format(outcome.__str__()))
 
         # Print log output

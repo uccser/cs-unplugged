@@ -23,22 +23,6 @@ class GlossaryTerm(models.Model):
         return self.term
 
 
-class LearningOutcome(models.Model):
-    """Model for learning outcome in database."""
-
-    #  Auto-incrementing 'id' field is automatically set by Django
-    slug = models.SlugField(unique=True)
-    text = models.CharField(max_length=200, unique=True)
-
-    def __str__(self):
-        """Text representation of LearningOutcome object.
-
-        Returns:
-            Text of learning outcome (string).
-        """
-        return self.text
-
-
 class CurriculumArea(models.Model):
     """Model for curriculum area in database."""
 
@@ -58,6 +42,26 @@ class CurriculumArea(models.Model):
             Name of curriculum area (string).
         """
         return self.name
+
+
+class LearningOutcome(models.Model):
+    """Model for learning outcome in database."""
+
+    #  Auto-incrementing 'id' field is automatically set by Django
+    slug = models.SlugField(unique=True)
+    text = models.CharField(max_length=200, unique=True)
+    curriculum_areas = models.ManyToManyField(
+        CurriculumArea,
+        related_name='learning_outcomes',
+    )
+
+    def __str__(self):
+        """Text representation of LearningOutcome object.
+
+        Returns:
+            Text of learning outcome (string).
+        """
+        return self.text
 
 
 class Topic(models.Model):
@@ -254,10 +258,6 @@ class Lesson(models.Model):
     learning_outcomes = models.ManyToManyField(
         LearningOutcome,
         related_name='lesson_learning_outcomes'
-    )
-    curriculum_areas = models.ManyToManyField(
-        CurriculumArea,
-        related_name='lesson_curriculum_areas',
     )
     generated_resources = models.ManyToManyField(
         Resource,
