@@ -617,6 +617,20 @@ Curriculum Areas Configuration File
         area badge on the website.
         This colour is also applied to all children of curriculum area.
 
+        Available colours include:
+
+        - ``blue``
+        - ``green``
+        - ``light-purple``
+        - ``orange``
+        - ``pink``
+        - ``purple``
+        - ``red``
+        - ``teal``
+        - ``yellow``
+
+        These colours are defined in: ``csunplugged/static/scss/website.scss``.
+
     - **Optional Fields:**
 
       - ``children:`` A list of sub-curriculum areas (see example file below). Each child
