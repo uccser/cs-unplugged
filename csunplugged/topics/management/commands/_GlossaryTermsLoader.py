@@ -1,6 +1,5 @@
 """Custom loader for loading glossary terms."""
 
-import re
 import os.path
 from os import listdir
 from django.db import transaction
