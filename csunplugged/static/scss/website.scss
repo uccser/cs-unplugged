@@ -160,15 +160,29 @@ footer {
   cursor: help;
 }
 
-details {
+.boxed-text {
   border: 1px solid $gray;
   border-radius: $border-radius;
+  margin-bottom: $spacer-y;
+
+  .boxed-text-content {
+    margin: ($spacer-y * .5) ($spacer-x * .5);
+  }
+}
+
+.boxed-text-indented {
+  margin-left: 1em;
+}
+
+details {
+  @extend .boxed-text;
   overflow: hidden;
 
   summary {
     background-color: $gray-lightest;
     cursor: pointer;
     font-size: 1.1em;
+    padding: ($spacer-y * .25) ($spacer-x * .25);
   }
   summary:hover {
     background-color: $gray-lighter;

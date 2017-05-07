@@ -55,27 +55,27 @@
   <h2 class="mt-0">Languages</h2>
 
   {% for implementation in implementations %}
-    <details class="mb-3">
-      <summary class="p-1">
+    <details>
+      <summary>
         <img src="{% get_static_prefix %}{{ implementation.language.icon }}" class="plugged-in-language-icon" />
         <strong>
           {{ implementation.language.name }}
         </strong>
       </summary>
 
-      <div class="detail-content m-2">
+      <div class="boxed-text-content">
         <h4>What it should look like</h4>
         {% render_html_field implementation.expected_result %}
 
         {% if implementation.hints %}
-          <details class="mb-3">
-            <summary class="p-1">
+          <details>
+            <summary>
               <strong>
                 Hints
               </strong>
             </summary>
 
-            <div class="detail-content m-2">
+            <div class="boxed-text-content">
               {% render_html_field implementation.hints %}
             </div>
           </details>
