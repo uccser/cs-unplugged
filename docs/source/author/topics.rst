@@ -288,7 +288,7 @@ exercise, e.g. ``count-to-16``.
     4. Example solution(s)
 
       - **Is called:** ``<language>-solution.md`` where ``<language>`` is the key
-        of the programming language, e.g. ``ruby-hints.md``.
+        of the programming language, e.g. ``ruby-solution.md``.
       - **Contains:** Example solutions to the exercise, e.g. Scratch program.
 
     5. Extra challenge(s) (optional)
