@@ -250,35 +250,6 @@ class ProgrammingExerciseLanguageSolutionView(generic.DetailView):
         return context
 
 
-class CurriculumIntegrationList(generic.ListView):
-    """View for list all curriculum inegrations for a topic."""
-
-    model = CurriculumIntegration
-    template_name = 'topics/curriculum_integration_list.html'
-    context_object_name = 'all_curriculum_integrations'
-
-    def get_queryset(self, **kwargs):
-        """Retrieve all curriculum integrations for a topic.
-
-        Returns:
-            Queryset of CurriculumIntegration objects.
-        """
-        return CurriculumIntegration.objects.filter(
-            topic__slug=self.kwargs.get('topic_slug', None)
-        ).select_related().order_by('number')
-
-    def get_context_data(self, **kwargs):
-        """Provide the context data for the curriculum integration list view.
-
-        Returns:
-            Dictionary of context data.
-        """
-        context = super(CurriculumIntegrationList, self).get_context_data(**kwargs)
-        # Loading objects under consistent context names for breadcrumbs
-        context['topic'] = get_object_or_404(Topic, slug=self.kwargs.get('topic_slug', None))
-        return context
-
-
 class AllCurriculumIntegrationList(generic.ListView):
     """View for listing all curriculum integrations."""
 
@@ -326,10 +297,13 @@ class CurriculumIntegrationView(generic.DetailView):
         # Loading objects under consistent context names for breadcrumbs
         context['topic'] = self.object.topic
         # Add in a QuerySet of all the connected curriculum areas
-        context['integration_curriculum_areas'] = self.object.curriculum_areas.all()
+        context['integration_curriculum_areas'] = self.object.curriculum_areas.order_by("name")
         # Add in a QuerySet of all the prerequisite lessons
         context['prerequisite_lessons'] = self.object.prerequisite_lessons.select_related().order_by(
-            'unit_plan__name', 'number'
+            'unit_plan__name',
+            'min_age',
+            'max_age',
+            'number'
         )
         return context
 
