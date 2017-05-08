@@ -46,6 +46,7 @@ RUN /requirements/pip_install.sh /docker_venv/bin/pip3 /requirements/requirement
 
 # Setup Working Directory
 RUN mkdir /render
+RUN mkdir /secure
 ADD . /render
 WORKDIR /render
 

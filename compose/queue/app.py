@@ -17,19 +17,13 @@ app = Flask(__name__)
 def index():
     return 'CS-Unplugged - Fake Google TaskQueue'
 
-@app.route('/add/<value>')
-def add_test(value=None):
-    if value is None:
-        return "You must specify a value.", 400
-    r.lpush('test', value)
-    return "Added: {}".format(value), 200
-
-@app.route('/get')
-def get_test():
-    value = r.lpop('test')
-    if value is None:
-        return "No values to get.", 200
-    return "Got: {}".format(value.decode()), 200
+@app.route('/api')
+def api():
+    print("HERE")
+    content = None
+    with open('taskqueue.api', 'r') as f:
+        content = f.read()
+    return content
 
 @app.errorhandler(500)
 def server_error(e):
@@ -56,7 +50,7 @@ def tasks_api(project=None, taskqueue=None):
 
     # Insert a task into an existing queue.
     elif request.method == 'POST':
-        key = generate_key()  # TODO: Generate key
+        key = "generate_key()"  # TODO: Generate key
         task = request.get_data()  # TODO: Validate task
         r.lpush(queue_key, task)
         r.set(key, task)
