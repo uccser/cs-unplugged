@@ -159,3 +159,33 @@ footer {
   border-bottom: 1px black dotted;
   cursor: pointer;
 }
+
+.badge- {
+  &pink {
+    background-color: $pink;
+  }
+  &green {
+    background-color: $green;
+  }
+  &orange {
+    background-color: $orange;
+  }
+  &teal {
+    background-color: $teal;
+  }
+  &blue {
+    background-color: $blue;
+  }
+  &light-purple {
+    background-color: $light-purple;
+  }
+  &purple {
+    background-color: $purple;
+  }
+  &yellow {
+    background-color: $yellow;
+  }
+  &red {
+    background-color: $red;
+  }
+}

@@ -3,11 +3,11 @@
 from .Error import Error
 
 ERROR_MESSAGE_TEMPLATE = """
-A {model} requires the following fields:
+A {model} requires the following field{plural}:
 {fields}
-One or more of these fields are missing.
-  - Are all the field names spelt correctly?
-  - Do all fields have values?
+For the missing field{plural}:
+  - Is the field name spelt correctly?
+  - Does the field have the correct value?
 """
 
 
@@ -30,8 +30,13 @@ class MissingRequiredFieldError(Error):
         fields = ""
         for field in self.required_fields:
             fields += "  - {field}\n".format(field=str(field))
+        if len(self.required_fields) > 1:
+            plural = "s"
+        else:
+            plural = ""
         missing_field_message = ERROR_MESSAGE_TEMPLATE.format(
             model=self.model,
-            fields=fields
+            fields=fields,
+            plural=plural,
         )
         return self.base_message.format(filename=self.config_file_path) + missing_field_message

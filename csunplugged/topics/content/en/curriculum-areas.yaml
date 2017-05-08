@@ -1,5 +1,6 @@
 literacy:
   name: Literacy
+  colour: pink
   children:
     reading:
       name: Reading
@@ -8,6 +9,7 @@ literacy:
 
 mathematics:
   name: Mathematics
+  colour: green
   children:
     geometry:
       name: Geometry
@@ -20,12 +22,15 @@ mathematics:
 
 music:
   name: Music
+  colour: orange
 
 art:
   name: Art
+  colour: teal
 
 science:
   name: Science
+  colour: blue
   children:
     biology:
       name: Biology
@@ -38,15 +43,19 @@ science:
 
 dance:
   name: Dance
+  colour: light-purple
 
 drama:
   name: Drama
+  colour: purple
 
 social-science:
   name: Social Science
+  colour: yellow
 
 digitial-technologies:
   name: Digital Technologies
+  colour: red
   children:
     data-representation:
       name: Data Representation
@@ -57,6 +66,7 @@ digitial-technologies:
 
 computational-thinking:
   name: Computation Thinking
+  colour: red
   children:
     algorithmic-thinking:
       name: Algorithmic Thinking
