@@ -288,8 +288,15 @@ exercise, e.g. ``count-to-16``.
     4. Example solution(s)
 
       - **Is called:** ``<language>-solution.md`` where ``<language>`` is the key
-        of the programming language, e.g. ``ruby-hints.md``.
+        of the programming language, e.g. ``ruby-solution.md``.
       - **Contains:** Example solutions to the exercise, e.g. Scratch program.
+
+    5. Extra challenge(s) (optional)
+
+      - **Is called:** the value defined in the programming exercises
+        configuration file.
+        A common filename is ``extra-challenge.md``.
+      - **Contains:** Content for an extra challenge.
 
 2-4 from the list above can be given in multiple programming languages.
 Therefore, the languages you have chosen must be specified in the
@@ -767,6 +774,9 @@ Programming Exercises Configuration File
 
       - ``learning-outcomes:`` A list of keys corresponding to learning outcomes.
 
+      - ``extra-challenge:`` A Markdown filename containing the content for an
+        extra challenge.
+
 A complete programming exercises structure file may look like the following:
 
 .. code-block:: yaml
@@ -789,6 +799,7 @@ A complete programming exercises structure file may look like the following:
       - python
     learning-outcomes:
       - programming-basic-logic
+    extra-challenge: extra-challenge.md
 
 .. _curriculum-integrations-file:
 

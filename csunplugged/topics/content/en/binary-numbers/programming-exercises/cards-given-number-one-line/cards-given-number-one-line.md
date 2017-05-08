@@ -30,14 +30,8 @@ else
 	Ask the end user to enter a number less than or equal to “31”
 
 ## Input
- 15 
+ 15
 
 ## Output
 
 When the check mark button is clicked or Enter key is pressed you should see the following output:
-
-## Extra challenge
-
-Now try removing the last ‘,’ from the end of your output.
-
-## Output
