@@ -59,13 +59,10 @@ INTERNAL_IPS = ['127.0.0.1', '10.0.2.2', ]
 def show_django_debug_toolbar(request):
     """Show Django Debug Toolbar in every request when running locally.
 
-    The toolbar is not shown when run from 127.0.0.1 as this breaks
-    test cases.
-
     Args:
         request: The request object.
     """
-    return DEBUG and request.META["REMOTE_ADDR"] != "127.0.0.1"
+    return True
 
 
 DEBUG_TOOLBAR_CONFIG = {
