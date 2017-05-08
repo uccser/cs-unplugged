@@ -36,7 +36,7 @@ class LearningOutcome(models.Model):
         Returns:
             Text of learning outcome (string).
         """
-        return self.text
+        return self.slug
 
 
 class CurriculumArea(models.Model):
