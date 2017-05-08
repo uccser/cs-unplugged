@@ -1,6 +1,5 @@
 """Custom loader for loading glossary terms."""
 
-import re
 import os.path
 from os import listdir
 from django.db import transaction
@@ -23,29 +22,33 @@ class GlossaryTermsLoader(BaseLoader):
         super().__init__(BASE_PATH)
         self.structure_file_path = structure_file_path
         self.BASE_PATH = os.path.join(self.BASE_PATH, glossary_folder_path)
+        self.FILE_EXTENSION = ".md"
 
     @transaction.atomic
     def load(self):
         """Load the glossary content into the database."""
+        glossary_slugs = set()
         for filename in listdir(self.BASE_PATH):
-            glossary_file_name = re.search(r"(.*?).md$", filename)
-            if glossary_file_name:
-                glossary_slug = glossary_file_name.groups()[0]
+            if filename.endswith(self.FILE_EXTENSION):
+                glossary_slug = filename[:-len(self.FILE_EXTENSION)]
+                glossary_slugs.add(glossary_slug)
+                glossary_term = GlossaryTerm(
+                    slug=glossary_slug,
+                )
+                glossary_term.save()
+
+        for glossary_slug in glossary_slugs:
+                glossary_term = GlossaryTerm.objects.get(slug=glossary_slug)
                 glossary_file_path = os.path.join(
                     self.BASE_PATH,
-                    filename
+                    "{}{}".format(glossary_slug, self.FILE_EXTENSION)
                 )
-
                 glossary_term_content = self.convert_md_file(
                     glossary_file_path,
                     self.structure_file_path
                 )
-
-                glossary_term = GlossaryTerm(
-                    slug=glossary_slug,
-                    term=glossary_term_content.title,
-                    definition=glossary_term_content.html_string
-                )
+                glossary_term.term = glossary_term_content.title
+                glossary_term.definition = glossary_term_content.html_string
                 glossary_term.save()
                 self.log("Added Glossary Term: {}".format(glossary_term.__str__()))
 
