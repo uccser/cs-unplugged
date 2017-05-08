@@ -47,9 +47,9 @@ class CurriculumArea(models.Model):
     name = models.CharField(max_length=100, unique=True)
     colour = models.CharField(max_length=15, null=True)
     parent = models.ForeignKey(
-        'self',
+        "self",
         null=True,
-        related_name='parent_curriculum_area'
+        related_name="parent_curriculum_area"
     )
 
     def __str__(self):
@@ -90,7 +90,7 @@ class UnitPlan(models.Model):
     topic = models.ForeignKey(
         Topic,
         on_delete=models.CASCADE,
-        related_name='topic_unit_plans'
+        related_name="topic_unit_plans"
     )
     slug = models.SlugField()
     name = models.CharField(max_length=100)
@@ -110,7 +110,7 @@ class UnitPlan(models.Model):
             The dictionary is ordered by minimum age, then maximum age.
         """
         grouped_lessons = OrderedDict()
-        lessons = self.unit_plan_lessons.order_by('min_age', 'max_age', 'number')
+        lessons = self.unit_plan_lessons.order_by("min_age", "max_age", "number")
         for lesson in lessons:
             if (lesson.min_age, lesson.max_age) in grouped_lessons:
                 grouped_lessons[(lesson.min_age, lesson.max_age)].append(lesson)
@@ -150,7 +150,7 @@ class ProgrammingExercise(models.Model):
     topic = models.ForeignKey(
         Topic,
         on_delete=models.CASCADE,
-        related_name='topic_programming_exercises'
+        related_name="topic_programming_exercises"
     )
     slug = models.SlugField()
     name = models.CharField(max_length=200)
@@ -159,12 +159,12 @@ class ProgrammingExercise(models.Model):
     content = models.TextField()
     learning_outcomes = models.ManyToManyField(
         LearningOutcome,
-        related_name='programming_exercise_learning_outcomes'
+        related_name="programming_exercise_learning_outcomes"
     )
     difficulty = models.ForeignKey(
         ProgrammingExerciseDifficulty,
         on_delete=models.CASCADE,
-        related_name='difficulty_programming_exercises'
+        related_name="difficulty_programming_exercises"
     )
 
     def __str__(self):
@@ -200,17 +200,17 @@ class ProgrammingExerciseLanguageImplementation(models.Model):
     topic = models.ForeignKey(
         Topic,
         on_delete=models.CASCADE,
-        related_name='implementations'
+        related_name="implementations"
     )
     language = models.ForeignKey(
         ProgrammingExerciseLanguage,
         on_delete=models.CASCADE,
-        related_name='implementations'
+        related_name="implementations"
     )
     exercise = models.ForeignKey(
         ProgrammingExercise,
         on_delete=models.CASCADE,
-        related_name='implementations'
+        related_name="implementations"
     )
     expected_result = models.TextField()
     hints = models.TextField(null=True)
@@ -222,7 +222,7 @@ class ProgrammingExerciseLanguageImplementation(models.Model):
         Returns:
             Description of implementation and related exercise (str).
         """
-        return '{} for exercise {}.{}, {}'.format(
+        return "{} for exercise {}.{}, {}".format(
             self.language.name,
             self.exercise.exercise_set_number,
             self.exercise.exercise_number,
@@ -237,12 +237,12 @@ class Lesson(models.Model):
     topic = models.ForeignKey(
         Topic,
         on_delete=models.CASCADE,
-        related_name='topic_lessons'
+        related_name="topic_lessons"
     )
     unit_plan = models.ForeignKey(
         UnitPlan,
         on_delete=models.CASCADE,
-        related_name='unit_plan_lessons'
+        related_name="unit_plan_lessons"
     )
     slug = models.SlugField()
     name = models.CharField(max_length=100)
@@ -253,20 +253,20 @@ class Lesson(models.Model):
     max_age = models.PositiveSmallIntegerField()
     programming_exercises = models.ManyToManyField(
         ProgrammingExercise,
-        related_name='lessons'
+        related_name="lessons"
     )
     learning_outcomes = models.ManyToManyField(
         LearningOutcome,
-        related_name='lesson_learning_outcomes'
+        related_name="lesson_learning_outcomes"
     )
     curriculum_areas = models.ManyToManyField(
         CurriculumArea,
-        related_name='lesson_curriculum_areas',
+        related_name="lesson_curriculum_areas",
     )
     generated_resources = models.ManyToManyField(
         Resource,
-        through='ConnectedGeneratedResource',
-        related_name='lesson_generated_resources'
+        through="ConnectedGeneratedResource",
+        related_name="lesson_generated_resources"
     )
 
     def has_programming_exercises(self):
@@ -294,7 +294,7 @@ class CurriculumIntegration(models.Model):
     topic = models.ForeignKey(
         Topic,
         on_delete=models.CASCADE,
-        related_name='curriculum_integrations'
+        related_name="curriculum_integrations"
     )
     slug = models.SlugField()
     number = models.PositiveSmallIntegerField()
@@ -302,11 +302,11 @@ class CurriculumIntegration(models.Model):
     content = models.TextField()
     curriculum_areas = models.ManyToManyField(
         CurriculumArea,
-        related_name='curriculum_integrations',
+        related_name="curriculum_integrations",
     )
     prerequisite_lessons = models.ManyToManyField(
         Lesson,
-        related_name='curriculum_integrations'
+        related_name="curriculum_integrations"
     )
 
     def has_prerequisite_lessons(self):
