@@ -56,16 +56,17 @@ MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware', ]  # noqa: F40
 INSTALLED_APPS += ['debug_toolbar', ]  # noqa: F405
 
 INTERNAL_IPS = ['127.0.0.1', '10.0.2.2', ]
-# tricks to have debug toolbar when developing with docker
-if os.environ.get('USE_DOCKER') == 'yes':
-    ip = socket.gethostbyname(socket.gethostname())
-    INTERNAL_IPS += [ip[:-1] + '1']
+
+def show_django_debug_toolbar(request):
+    """Show Django Debug Toolbar in every request when running locally."""
+    return True
 
 DEBUG_TOOLBAR_CONFIG = {
     'DISABLE_PANELS': [
         'debug_toolbar.panels.redirects.RedirectsPanel',
     ],
     'SHOW_TEMPLATE_CONTEXT': True,
+    "SHOW_TOOLBAR_CALLBACK" : show_django_debug_toolbar,
 }
 
 # django-extensions
