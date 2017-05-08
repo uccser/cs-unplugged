@@ -56,10 +56,19 @@ class CurriculumAreasLoader(BaseLoader):
                     "Curriculum Area"
                 )
 
+            curriculum_area_colour = curriculum_area_data.get("colour", None)
+            if curriculum_area_colour is None:
+                raise MissingRequiredFieldError(
+                    self.structure_file_path,
+                    ["colour"],
+                    "Curriculum Area"
+                )
+
             # Create area objects and save to database
             new_area = CurriculumArea(
                 slug=curriculum_area_slug,
                 name=curriculum_area_name,
+                colour=curriculum_area_colour,
             )
             new_area.save()
 
@@ -92,7 +101,8 @@ class CurriculumAreasLoader(BaseLoader):
                     new_child = CurriculumArea(
                         slug=child_slug,
                         name=child_name,
-                        parent=new_area
+                        colour=curriculum_area_colour,
+                        parent=new_area,
                     )
                     new_child.save()
 

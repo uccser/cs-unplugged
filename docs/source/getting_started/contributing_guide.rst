@@ -70,6 +70,17 @@ understand the changes:
   the project.
 - **Link any related existing suggestions**.
 
+.. note::
+
+    **Internal Staff Only:** Assigning Issues
+
+    Our policy is to only assign a person to an issue when they are actively
+    working on the issue.
+    Please don't assign yourself when you *plan* to do the task (for example:
+    in the next few days), assign yourself when you begin work.
+    This allows other team members to clearly see which tasks are available
+    to be worked on.
+
 Your First Code Contribution (pull request)
 ==============================================================================
 
@@ -114,7 +125,18 @@ Git
 
 - We use `Vincent Driessen's Git Branching Model <http://nvie.com/posts/a-successful-git-branching-model/>`_
   for managing development.
-  Please read this document to understand our branching methods.
+  Please read this document to understand our branching methods, and how
+  to perform clear branches and merges.
+
+  Specifically for our respository:
+
+    - We create a new branch for each task of work, no matter how small it is.
+    - We create the branch off the ``develop`` branch.
+    - In general, the new branch should begin with ``issue/`` followed by
+      the issue number.
+    - When a branch is completed, a pull request is created on GitHub for
+      review.
+    - Branches are merged back into ``develop``.
 
 Project Structure
 ------------------------------------------------------------------------------
@@ -161,6 +183,16 @@ We aim to abide by the following style guides:
 - **HTML** - We follow the `open source HTML style guide`_ by @mdo.
 - **CSS** - We follow the `open source CSS style guide`_ by @mdo.
 - **JavaScript** - We follow the `Google JavaScript style guide`_.
+
+Final Comments
+==============================================================================
+
+After reading the sections above, you should be able to answer the following
+questions:
+
+- When do I create a issue and how do I describe it?
+- When and how do I create a new Git branch to work on?
+- *Internal staff only:* When do I assign myself to an issue?
 
 .. _Search the issue tracker for the issue/suggestion: https://github.com/uccser/cs-unplugged/issues?utf8=%E2%9C%93&q=is%3Aissue
 .. _10 minute guide to become a master: https://guides.github.com/features/issues/

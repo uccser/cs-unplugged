@@ -2,6 +2,8 @@
 
 from django.shortcuts import get_object_or_404
 from django.views import generic
+from django.http import JsonResponse, Http404
+from general.templatetags.render_html_field import render_html_with_static
 
 from .models import (
     Topic,
@@ -11,7 +13,7 @@ from .models import (
     ProgrammingExercise,
     ProgrammingExerciseLanguageImplementation,
     ConnectedGeneratedResource,
-    ProgrammingExerciseDifficulty,
+    GlossaryTerm,
 )
 
 
@@ -143,10 +145,10 @@ class LessonView(generic.DetailView):
 
 
 class ProgrammingExerciseList(generic.ListView):
-    """View for listing all programming exercises."""
+    """View for listing all programming exercises for a lesson."""
 
     model = ProgrammingExercise
-    template_name = 'topics/programming_exercise_list.html'
+    template_name = 'topics/programming_exercise_lesson_list.html'
     context_object_name = 'all_programming_exercises'
 
     def get_queryset(self, **kwargs):
@@ -205,15 +207,12 @@ class ProgrammingExerciseView(generic.DetailView):
         """
         # Call the base implementation first to get a context
         context = super(ProgrammingExerciseView, self).get_context_data(**kwargs)
-        lesson = get_object_or_404(
-            Lesson.objects.select_related(),
-            topic__slug=self.kwargs.get('topic_slug', None),
-            unit_plan__slug=self.kwargs.get('unit_plan_slug', None),
-            slug=self.kwargs.get('lesson_slug', None),
+        context['lessons'] = self.object.lessons.order_by(
+            'min_age',
+            'max_age',
+            'number'
         )
-        context['lesson'] = lesson
-        context['unit_plan'] = lesson.unit_plan
-        context['topic'] = lesson.topic
+        context['topic'] = self.object.topic
         # Add all the connected learning outcomes
         context['programming_exercise_learning_outcomes'] = self.object.learning_outcomes.all()
         context['implementations'] = self.object.implementations.all().order_by('-language__name').select_related()
@@ -250,45 +249,8 @@ class ProgrammingExerciseLanguageSolutionView(generic.DetailView):
         # Call the base implementation first to get a context
         context = super(ProgrammingExerciseLanguageSolutionView, self).get_context_data(**kwargs)
         # Loading object under consistent context names for breadcrumbs
-        lesson = get_object_or_404(
-            Lesson.objects.select_related(),
-            topic__slug=self.kwargs.get('topic_slug', None),
-            unit_plan__slug=self.kwargs.get('unit_plan_slug', None),
-            slug=self.kwargs.get('lesson_slug', None),
-        )
-        context['lesson'] = lesson
-        context['unit_plan'] = lesson.unit_plan
-        context['topic'] = lesson.topic
+        context['topic'] = self.object.topic
         context['programming_exercise'] = self.object.exercise
-        return context
-
-
-class CurriculumIntegrationList(generic.ListView):
-    """View for list all curriculum inegrations for a topic."""
-
-    model = CurriculumIntegration
-    template_name = 'topics/curriculum_integration_list.html'
-    context_object_name = 'all_curriculum_integrations'
-
-    def get_queryset(self, **kwargs):
-        """Retrieve all curriculum integrations for a topic.
-
-        Returns:
-            Queryset of CurriculumIntegration objects.
-        """
-        return CurriculumIntegration.objects.filter(
-            topic__slug=self.kwargs.get('topic_slug', None)
-        ).select_related().order_by('number')
-
-    def get_context_data(self, **kwargs):
-        """Provide the context data for the curriculum integration list view.
-
-        Returns:
-            Dictionary of context data.
-        """
-        context = super(CurriculumIntegrationList, self).get_context_data(**kwargs)
-        # Loading objects under consistent context names for breadcrumbs
-        context['topic'] = get_object_or_404(Topic, slug=self.kwargs.get('topic_slug', None))
         return context
 
 
@@ -339,10 +301,13 @@ class CurriculumIntegrationView(generic.DetailView):
         # Loading objects under consistent context names for breadcrumbs
         context['topic'] = self.object.topic
         # Add in a QuerySet of all the connected curriculum areas
-        context['integration_curriculum_areas'] = self.object.curriculum_areas.all()
+        context['integration_curriculum_areas'] = self.object.curriculum_areas.order_by("name")
         # Add in a QuerySet of all the prerequisite lessons
         context['prerequisite_lessons'] = self.object.prerequisite_lessons.select_related().order_by(
-            'unit_plan__name', 'number'
+            'unit_plan__name',
+            'min_age',
+            'max_age',
+            'number'
         )
         return context
 
@@ -355,33 +320,42 @@ class OtherResourcesView(generic.DetailView):
     slug_url_kwarg = 'topic_slug'
 
 
-class ProgrammingExerciseDifficultyView(generic.DetailView):
-    """View for a specific programming exercise difficulty."""
+class GlossaryList(generic.ListView):
+    """Provide glossary view of all terms."""
 
-    model = ProgrammingExerciseDifficulty
-    template_name = 'topics/programming_exercise_difficulty.html'
-    context_object_name = 'difficulty'
+    template_name = "topics/glossary.html"
+    context_object_name = "glossary_terms"
 
-    def get_object(self, **kwargs):
-        """Retrieve object for the programming exercise difficulty view.
+    def get_queryset(self):
+        """Get queryset of all glossary terms.
 
         Returns:
-            ProgrammingExerciseDifficulty object, or raises 404 error if
-            not found.
+            Queryset of GlossaryTerm objects ordered by term.
         """
-        return get_object_or_404(
-            self.model,
-            level=self.kwargs.get('programming_exercise_difficulty_level', None)
+        return GlossaryTerm.objects.order_by("term")
+
+
+def glossary_json(request, **kwargs):
+    """Provide JSON data for glossary term.
+
+    Args:
+        request: The HTTP request.
+
+    Returns:
+        JSON response is sent containing data for the requested term.
+    """
+    # If term parameter, then return JSON
+    if "term" in request.GET:
+        glossary_slug = request.GET.get("term")
+        glossary_item = get_object_or_404(
+            GlossaryTerm,
+            slug=glossary_slug
         )
-
-    def get_context_data(self, **kwargs):
-        """Provide the context for the programming exercise difficulty view.
-
-        Returns:
-            Dictionary of context data.
-        """
-        # Call the base implementation first to get a context
-        context = super(ProgrammingExerciseDifficultyView, self).get_context_data(**kwargs)
-        # Add in a QuerySet of all the connected programming exercises
-        context['programming_exercises'] = self.object.difficulty_programming_exercises.all()
-        return context
+        data = {
+            "slug": glossary_slug,
+            "term": glossary_item.term,
+            "definition": render_html_with_static(glossary_item.definition)
+        }
+        return JsonResponse(data)
+    else:
+        raise Http404("Term parameter not specified.")

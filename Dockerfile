@@ -12,10 +12,6 @@ ENV DJANGO_PRODUCTION=True
 
 # Install packages, running of Python 3.4.2
 RUN apt-get update && apt-get install -y \
-      libffi-dev \
-      libpq-dev \
-      nginx \
-      python-psycopg2 \
       python3 \
       python3-dev \
       python3-pip

@@ -10,6 +10,7 @@ from os import listdir
 from verto import Verto
 
 from .check_required_files import check_converter_required_files
+from .check_glossary_links import check_converter_glossary_links
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
 from utils.errors.EmptyConfigFileError import EmptyConfigFileError
@@ -25,8 +26,8 @@ class BaseLoader():
         """Create a BaseLoader object.
 
         Args:
-            BASE_PATH: string of base path.
-            load_log: list of log messages.
+            BASE_PATH: string of base path (str).
+            load_log: list of log messages (list).
         """
         if load_log:
             self.load_log = load_log
@@ -58,7 +59,8 @@ class BaseLoader():
         """Return the Verto object for a given Markdown file.
 
         Args:
-            md_file_path: location of Markdown file to convert
+            md_file_path: Location of Markdown file to convert (str).
+            config_file_path: Path to related the config file (str).
 
         Returns:
             VertoResult object
@@ -84,8 +86,8 @@ class BaseLoader():
 
         if len(result.html_string) == 0:
             raise EmptyMarkdownFileError(md_file_path)
-
         check_converter_required_files(result.required_files, md_file_path)
+        check_converter_glossary_links(result.required_glossary_terms, md_file_path)
         return result
 
     def log(self, log_message, indent_amount=0):
@@ -104,7 +106,7 @@ class BaseLoader():
         """Load and read given YAML file.
 
         Args:
-            file_path: location of yaml file to read
+            file_path: location of yaml file to read (str).
 
         Returns:
             Either list or string, depending on structure of given yaml file

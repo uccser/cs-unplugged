@@ -35,25 +35,23 @@ diagram.
     - A **programming exercise** can use different **programming languages**, and be set at
       a specific **difficulty**.
 
-- **Learning outcomes**, **curriculum areas**, **programming languages**, and
-  **difficulties** are defined at a language level, so can be used by all topic content
+- **Learning outcomes**, **curriculum areas**, **glossary definitions**,
+  **programming languages**, and **programming challenge difficulties** are
+  defined at a language level, so can be used by all topic content
   of that language.
 
 This is just a broad overview of the topics application.
 
-
-.. _viewing-the-current-state:
-
-Viewing the Current State
+Viewing All Topics Content
 ------------------------------------------------------------------------------
 
-When developing locally, once you have a server and ``gulp`` running (see
-:doc:`../getting_started/basic_usage`) you can go to the url below to get a
+When developing locally, once you have run ``./csu start`` (see
+:doc:`../getting_started/helper_commands`) you can go to the url below to get a
 quick overview of what content is loaded:
 
 .. code-block:: none
 
-  localhost:3000/__dev__/
+  localhost/__dev__/
 
 For more information about what this page displays, see :doc:`../developer/dev`.
 
@@ -81,142 +79,306 @@ The following flow charts will take you step by step through the process of addi
 content to the topics application. Below this section is full details on how to structure
 and write the configuration files for the topics application.
 
-.. _adding-topics-content-topics:
+.. _adding-a-topic:
 
 Adding a Topic
 ------------------------------------------------------------------------------
 
-.. The following image can copied for be edits here:
-.. image:: ../_static/img/topics_adding_topic_flowchart.png
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="topics-map">
+    <area shape="rect" coords="240,308,317,343" href="#topic-configuration-file">
+    <area shape="rect" coords="240,410,317,445" href="#application-structure-configuration-file">
+    <area shape="rect" coords="240,513,317,550" href="#adding-a-unit-plan">
+    <area shape="rect" coords="240,615,317,650" href="../getting_started/helper_commands.html#update">
+  </map>
+  <img src="../_static/img/topics_adding_topic_flowchart.png" usemap="#topics-map">
+
+The Markdown file containing the description of the topic:
+
+- **Is in:** the topic directory, e.g. the description file for
+  Binary Numbers will be in ``topics/content/en/binary-numbers/``.
+- **Is called:** ``<topic-key>.md`` where ``<topic-key>`` is the key
+  (:ref:`what-is-a-key`) of the topic and the name of the directory it is in,
+  e.g. ``binary-numbers.md`` or ``kidbots.md``.
+- **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
+  of the description.
+
+.. note ::
+
+  The heading written in this file will be used exactly as it is given
+  throughout the website as the name of the topic.
 
 .. warning::
-  
+
   Every topic needs at least one unit plan, therefore the system will not allow
   a topic to be loaded until a unit plan is connected to it.
 
-.. _adding-topics-content-unit-plans:
+.. _adding-a-unit-plan:
 
 Adding a Unit Plan
 ------------------------------------------------------------------------------
 
-.. The following image can copied for be edits here:
-.. image:: ../_static/img/topics_adding_unit_plan_flowchart.png
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="unit-plan-map">
+    <area shape="rect" coords="240,430,317,465" href="#unit-plan-configuration-file">
+    <area shape="rect" coords="240,540,317,575" href="#topic-configuration-file">
+    <area shape="rect" coords="240,640,317,675" href="#adding-a-lesson">
+    <area shape="rect" coords="240,745,317,780" href="../getting_started/helper_commands.html#update">
+  </map>
+  <img src="../_static/img/topics_adding_unit_plan_flowchart.png" usemap="#unit-plan-map">
+
+The Markdown file containing the content og the unit plan:
+
+- **Is in:** the unit plan directory, e.g. the unit plan file for Binary Numbers
+  Unit Plan 2 will be in ``topics/content/en/binary-numbers/unit-plan-2/``.
+- **Is called:** ``<unit-plan-key>.md`` where ``<unit-plan-key>`` is the key
+  (:ref:`what-is-a-key`) of the unit plan and the name of the directory it is
+  in, e.g. ``unit-plan-2.md``.
+- **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
+  of the unit plan.
+
+.. note::
+
+  The heading written in this file will be used exactly as it is given
+  throughout the website as the name of the unit plan.
 
 .. warning::
-  
+
   Every unit plan needs at least one lesson, so the system will not allow a
   unit plan to be loaded until a lesson is connected to it.
 
-
-.. _adding-topics-content-lessons:
+.. _adding-a-lesson:
 
 Adding a Lesson
 ------------------------------------------------------------------------------
 
-.. The following image can copied for be edits here:
-.. image:: ../_static/img/topics_adding_lesson_flowchart.png
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="lesson-map">
+    <area shape="rect" coords="237,420,317,456" href="#unit-plan-configuration-file">
+    <area shape="rect" coords="237,525,317,560" href="../getting_started/helper_commands.html#update">
+  </map>
+  <img src="../_static/img/topics_adding_lesson_flowchart.png" usemap="#lesson-map">
+
+The Markdown file containing the content for the lesson:
+
+- **Is in:** the age group subdirectory in the lessons directory, e.g. a lesson
+  for age group 5-9 will be in
+  ``topics/content/en/binary-numbers/unit-plan/lessons/5-9/``.
+- **Is called:** ``<lesson-key>.md`` where ``<lesson-key>`` is the key
+  (:ref:`what-is-a-key`) of the lesson, e.g. ``introduction-to-bits.md``.
+- **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
+  for the lesson.
 
 .. note::
-  
+
+  The heading written in this file will be used exactly as it is given
+  throughout the website as the name of the lesson.
+
+.. note::
+
   If the lesson includes programming exercises, curriculum areas, and/or
   learning outcomes, then the corresponding configuration and content files
   will also need to be added.
 
 
-.. _adding-topics-content-learning-outcomes:
+.. _adding-learning-outcomes:
 
 Adding Learning Outcomes
 ------------------------------------------------------------------------------
 
-.. The following image can copied for be edits here:
-.. image:: ../_static/img/topics_adding_learning_outcomes_flowchart.png
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="learning-outcomes-map">
+    <area shape="rect" coords="240,100,317,135" href="#learning-outcomes-configuration-file">
+    <area shape="rect" coords="240,210,317,245" href="#application-structure-configuration-file">
+    <area shape="rect" coords="555,200,633,235" href="#learning-outcomes-configuration-file">
+    <area shape="rect" coords="240,330,317,362" href="../getting_started/helper_commands.html#update">
+  </map>
+  <img src="../_static/img/topics_adding_learning_outcomes_flowchart.png" usemap="#learning-outcomes-map">
 
 You will now be able to add learning outcomes to lessons and programming
 exercises by referencing the keys you specified in the learning outcomes configuration
 file.
 
-
-.. _adding-topics-content-curriculum-areas:
+.. _adding-curriculum-areas:
 
 Adding Curriculum Areas
 ------------------------------------------------------------------------------
 
-.. The following image can copied for be edits here:
-.. image:: ../_static/img/topics_adding_curriculum_areas_flowchart.png
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="curriculum-areas-map">
+    <area shape="rect" coords="240,100,317,135" href="#curriculum-areas-configuration-file">
+    <area shape="rect" coords="240,210,317,245" href="#application-structure-configuration-file">
+    <area shape="rect" coords="560,200,642,232" href="#curriculum-areas-configuration-file">
+    <area shape="rect" coords="240,330,317,362" href="../getting_started/helper_commands.html#update">
+  </map>
+  <img src="../_static/img/topics_adding_curriculum_areas_flowchart.png" usemap="#curriculum-areas-map">
 
 You will now be able to add curriculum areas to lessons and curriculum
 integrations by referencing the keys you specified in the curriculum areas
 configuration file.
 
-
-.. _adding-topics-content-programming-exercises:
+.. _adding-a-programming-exercise:
 
 Adding a Programming Exercise
 ------------------------------------------------------------------------------
 
-.. The following image can copied for be edits here:
-.. image:: ../_static/img/topics_adding_programming_exercises_flowchart.png
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="programming-exercises-map">
+    <area shape="rect" coords="554,470,633,505" href="#programming-exercises-configuration-file">
+    <area shape="rect" coords="240,572,317,605" href="#programming-exercises-configuration-file">
+    <area shape="rect" coords="240,694,317,727" href="#topic-configuration-file">
+    <area shape="rect" coords="240,833,317,867" href="#programming-exercises-structure-configuration-file">
+    <area shape="rect" coords="240,995,317,1030" href="../getting_started/helper_commands.html#update">
+  </map>
+  <img src="../_static/img/topics_adding_programming_exercises_flowchart.png" usemap="#programming-exercises-map">
 
 You will now be able to add programming exercises to lessons by referencing the
 keys you specified in the programming exercises configuration file.
+
+A programming exercise is split into several different sections, each of which
+is an its own Markdown file, all of which are in
+``topics/content/en/binary-numbers/programming-exercises/<exercise-key>/``
+where ``<exercise-key>`` refers to the key (:ref:`what-is-a-key`) of the
+exercise, e.g. ``count-to-16``.
+
+    1. The exercise description:
+
+      - **Is called:** ``<exercise-key>.md`` where ``<exercise-key>`` is the key
+        of the exercise, e.g. ``count-to-16.md``.
+      - **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
+        of the exercise.
+
+      .. note::
+
+        The heading written in this file will be used exactly as it is given
+        throughout the website as the name of the programming exercise.
+
+    2. The expected output
+
+      - **Is called:** ``<language>-expected.md`` where ``<language>`` is the key
+        of the programming language, e.g. ``python-expected.md``.
+      - **Contains:** The expected output for the programming exercise, e.g. an
+        embedded Scratch program or Python output.
+
+    3. Hints (optional)
+
+      - **Is called:** ``<language>-hints.md`` where ``<language>`` is the key
+        of the programming language, e.g. ``scratch-hints.md``.
+      - **Contains:** Hints for how to complete the exercise, e.g. suggested
+        Scratch blocks.
+
+    4. Example solution(s)
+
+      - **Is called:** ``<language>-solution.md`` where ``<language>`` is the key
+        of the programming language, e.g. ``ruby-solution.md``.
+      - **Contains:** Example solutions to the exercise, e.g. Scratch program.
+
+    5. Extra challenge(s) (optional)
+
+      - **Is called:** the value defined in the programming exercises
+        configuration file.
+        A common filename is ``extra-challenge.md``.
+      - **Contains:** Content for an extra challenge.
+
+2-4 from the list above can be given in multiple programming languages.
+Therefore, the languages you have chosen must be specified in the
+``programming-exercises.yaml`` configuration file, as well as the
+``programming-exercises-structure.yaml`` configuration file.
 
 .. note::
 
   If the exercise includes learning outcomes, then the corresponding configuration
   file will also need to be added or updated to include new learning outcomes.
 
-.. note::
-
-  A programming exercise is split into four parts, these are:
-
-    1. The exercise description
-    2. The expected output
-    3. Hints (optional)
-    4. Example solution(s)
-
-  Additonally, 2-4 from the list above, can be given in multiple programming
-  languages. Therefore, the languages you have chosen must be specified in the
-  ``programming-exercises.yaml`` configuration file, as well as the
-  ``programming-exercises-structure.yaml`` configuration file.
-
-.. note::
-
-  The system will use the key for the programming exercise to search for the
-  relevant Markdown files, so it is important to name them according to the
-  following rules:
-
-  - Both the directory and file name for the exercise must match the key you chose
-    for the exercise in ``programming-exercises.yaml``
-  
-  - The expected, hints, and solution files must be prefixed with the key for
-    the programming language they are written in.
-
-  For example, a programming exercise with key ``count-to-16`` implemented in
-  Python only will have the following directory structure:
-
-  .. code-block:: none
-
-    └── programming-exercises/
-        └── count-to-16/
-            ├── count-to-16.md
-            ├── python-expected.md
-            ├── python-hints.md
-            └── python-solution.md
-
-
-.. _adding-topics-content-curriculum-integrations:
+.. _adding-a-curriculum-integration:
 
 Adding a Curriculum Integration
 ------------------------------------------------------------------------------
 
-.. The following image can copied for be edits here:
-.. image:: ../_static/img/topics_adding_curriculum_integrations_flowchart.png
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="curriculum-integrations-map">
+    <area shape="rect" coords="568,350,645,385" href="#curriculum-integrations-configuration-file">
+    <area shape="rect" coords="240,450,317,485" href="#curriculum-integrations-configuration-file">
+    <area shape="rect" coords="240,565,317,600" href="#topic-configuration-file">
+    <area shape="rect" coords="240,675,317,710" href="../getting_started/helper_commands.html#update">
+  </map>
+  <img src="../_static/img/topics_adding_curriculum_integrations_flowchart.png" usemap="#curriculum-integrations-map">
+
+The Markdown file containing the content of the curriculum integration:
+
+- **Is in:** the curriculum integration directrory, e.g. curriculum integrations
+  in Binary Numbers will be in
+  ``topics/content/en/binary-numbers/curriculum-integrations/``.
+- **Is called:** ``<integration-key>.md`` where ``<integration-key>`` is the key
+  (:ref:`what-is-a-key`) of the curriculum integration, e.g. ``whose-cake-is-it.md``.
+- **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
+  of the integration.
 
 .. note ::
 
   If the integration includes curriculum areas and/or prerequisite lessons,
   then the corresponding configuration and content files will also need to be added.
 
+
+.. _adding-glossary-definitions:
+
+Adding Glossary Definitions
+------------------------------------------------------------------------------
+
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="glossary-definitions-map">
+    <area shape="rect" coords="240,110,317,145" href="#application-structure-configuration-file">
+    <area shape="rect" coords="240,320,320,350" href="#glossary-definitions-markdown-file">
+    <area shape="rect" coords="240,430,319,462" href="../getting_started/helper_commands.html#update">
+  </map>
+  <img src="../_static/img/topics_adding_glossary_definitions_flowchart.png" usemap="#glossary-definitions-map">
+
+.. _glossary-definitions-markdown-file:
+
+Each glossary definition requires a Markdown file within the glossary
+folder, with the filename as the glossary key.
+When linking text to a glossary definition, the key is used as the identifier.
+For example, with the key ``pixel``, then a file ``pixel.md`` is
+expected.
+
+Each Markdown file should start with a heading containing the glossary term
+(this should be capitalized and include any required punctuation), followed
+by the term's definition.
+
+Continuing the ``pixel.md`` example from above, this could be the possible
+contents of that file.
+
+.. code-block:: none
+
+    # Pixel
+
+    This term is an abbreviation of picture element, the name given to the
+    tiny squares that make up a grid that is used to represent images on a
+    computer.
 
 Configuration Files
 ==============================================================================
@@ -238,23 +400,10 @@ The diagram below shows an example of YAML file locations for the
 In the following sections, each configuration file is exaplained in more detail.
 
 .. note::
-  
-  - We use the term "key" to specify a field name. Keys map to particular values (which
-    range from learning outcome text, to the structure and attributes of a lesson).
-    There are two things to remember with keys:
 
-    - They must be written in lowercase and use hyphens instead of spaces.
-
-    - They must be exact matches to work, for example, if you name a lesson
-      ``bits-and-bytes``, referencing it in another configuration file as
-      ``bytes-and-bits`` will raise an error.
-
-.. note::
-
-  - Some of the keys have angle brackets around them, ``<like so>``. This means that they
-    are variables and you can call them whatever you like in your configuration file
-    (without the angle brackets).
-
+  - Some of the keys (:ref:`what-is-a-key`) have angle brackets around them,
+    ``<like so>``. This means that they are variables and you can call them
+    whatever you like in your configuration file (without the angle brackets).
 
 .. _application-structure-file:
 
@@ -270,7 +419,7 @@ Application Structure Configuration File
 
 - **Required Fields:**
 
-  - ``topics``: A list of file paths to topic configuration files.
+  - ``topics:`` A list of file paths to topic configuration files.
 
 - **Optional Fields:**
 
@@ -278,6 +427,8 @@ Application Structure Configuration File
     - ``curriculum-areas:`` The path to the curriculum areas configuration file.
     - ``programming-exercises-structure:`` The path to the programming exercies structure
       configuration file.
+    - ``glossary-folder:`` The folder name that contains the Markdown files for
+      glossary definitions.
 
 A complete application structure file may look like the following:
 
@@ -291,14 +442,16 @@ A complete application structure file may look like the following:
   curriculum-areas: curriculum-areas.yaml
   programming-exercises-structure: programming-exercises-structure.yaml
 
+  glossary-folder: glossary
+
 .. _topic-file:
 
 Topic Configuration File
 ------------------------------------------------------------------------------
 
-- **File Name:** ``<topic-name>.yaml``
+- **File Name:** ``<topic-key>.yaml``
 
-- **Location:** ``topic/content/<language>/<topic-name>/``
+- **Location:** ``topic/content/<language>/<topic-key>/``
 
 - **Referenced In:** ``topic/content/<launguage>/structure.yaml``
 
@@ -336,24 +489,23 @@ A complete topic structure file may look like the following:
   programming-exercises: programming-exercises/programming-exercises.yaml
   curriculum-integrations: curriculum-integrations/curriculum-integrations.yaml
 
-
 .. _unit-plan-file:
 
 Unit Plan Configuration File
 ------------------------------------------------------------------------------
 
-- **File Name:** ``<unit-plan-name>.yaml``
+- **File Name:** ``<unit-plan-key>.yaml``
 
-- **Location:** ``topic/content/<language>/<topic-name>/<unit-plan-name>/``
+- **Location:** ``topic/content/<language>/<topic-key>/<unit-plan-key>/``
 
-- **Referenced In:** ``topic/content/<language>/<topic-name>/<topic-name>.yaml``
+- **Referenced In:** ``topic/content/<language>/<topic-key>/<topic-key>.yaml``
 
 - **Purpose:** This file defines all the lessons (and their respective)
   attributes for the unit plan.
 
   - **Required Fields:**
 
-    - ``<lesson-name>:`` This is the key for the lesson. Each lesson has its own list of
+    - ``<lesson-key>:`` This is the key for the lesson. Each lesson has its own list of
       required and optional fields:
 
       - **Required Fields:**
@@ -394,7 +546,7 @@ A complete unit plan structure file with multiple lessons may look like the
 following:
 
 .. code-block:: yaml
-    
+
   introduction-to-bits:
     min-age: 7
     max-age: 11
@@ -417,7 +569,6 @@ following:
     learning-outcomes:
       - binary-data-representation
       - binary-justify-representation
-
 
 .. _learning-outcomes-file:
 
@@ -447,7 +598,6 @@ A complete learning outcome structure file may look like the following:
   binary-convert-decimal: Perform a demonstration of how the binary number system works by converting any decimal number into a binary number.
   binary-justify-representation: Argue that 0’s and 1’s are still a correct way to represent what is stored in the computer.
 
-
 .. _curriculum-areas-file:
 
 Curriculum Areas Configuration File
@@ -470,11 +620,28 @@ Curriculum Areas Configuration File
 
       - ``name:`` The name of the curriculum area (this is what will be displayed to the
         user).
+      - ``colour:`` The CSS colour class to use for colouring the curriculum
+        area badge on the website.
+        This colour is also applied to all children of curriculum area.
+
+        Available colours include:
+
+        - ``blue``
+        - ``green``
+        - ``light-purple``
+        - ``orange``
+        - ``pink``
+        - ``purple``
+        - ``red``
+        - ``teal``
+        - ``yellow``
+
+        These colours are defined in: ``csunplugged/static/scss/website.scss``.
 
     - **Optional Fields:**
 
       - ``children:`` A list of sub-curriculum areas (see example file below). Each child
-        requires a name field.
+        requires a ``name`` field.
 
 An example curriculum areas file with multiple curriculums may look like
 the following:
@@ -483,6 +650,7 @@ the following:
 
   maths:
     name: Maths
+    colour: green
     children:
       geometry:
         name: Geometry
@@ -491,9 +659,11 @@ the following:
 
   science:
     name: Science
+    colour: blue
 
   art:
     name: Art
+    colour: teal
 
 .. note::
 
@@ -506,7 +676,6 @@ the following:
   curriculum area will automatically add the parent curriculum area, you do not need to
   specify this manually. For example, adding ``geometry`` means that ``maths`` is
   automatically included.
-
 
 .. _programming-exercises-structure-file:
 
@@ -570,7 +739,6 @@ A complete programming exercise structure file may look like the following:
     3:
       name: Advanced
 
-
 .. _programming-exercises-file:
 
 Programming Exercises Configuration File
@@ -578,9 +746,9 @@ Programming Exercises Configuration File
 
 - **File Name:** ``programming-exercises.yaml``
 
-- **Location:** ``topics/content/<language>/<topic-name>/programming-exercises/``
+- **Location:** ``topics/content/<language>/<topic-key>/programming-exercises/``
 
-- **Referenced In:** ``topics/content/<language>/<topic-name>/<topic-name>.yaml``
+- **Referenced In:** ``topics/content/<language>/<topic-key>/<topic-key>.yaml``
 
 - **Purpose:** This file defines the programming exercises (and their respective attributes)
   for a particular topic.
@@ -606,6 +774,9 @@ Programming Exercises Configuration File
 
       - ``learning-outcomes:`` A list of keys corresponding to learning outcomes.
 
+      - ``extra-challenge:`` A Markdown filename containing the content for an
+        extra challenge.
+
 A complete programming exercises structure file may look like the following:
 
 .. code-block:: yaml
@@ -628,7 +799,7 @@ A complete programming exercises structure file may look like the following:
       - python
     learning-outcomes:
       - programming-basic-logic
-    
+    extra-challenge: extra-challenge.md
 
 .. _curriculum-integrations-file:
 
@@ -637,9 +808,9 @@ Curriculum Integrations Configuration File
 
 - **File Name:** ``curriculum-intergrations.yaml``
 
-- **Location:** ``topics/content/<language>/<topic-name>/``
+- **Location:** ``topics/content/<language>/<topic-key>/``
 
-- **Referenced In:** ``topics/content/<language>/<topic-name>.yaml``
+- **Referenced In:** ``topics/content/<language>/<topic-key>.yaml``
 
 - **Purpose:** Contains a list of curriculum integrations that can be used to integrate
   the topic with another area in the curriculum.
@@ -664,11 +835,11 @@ Curriculum Integrations Configuration File
 
         - **Required Fields:**
 
-          - ``<unit-plan-name>:`` A key corresponding to a unit plan.
+          - ``<unit-plan-key>:`` A key corresponding to a unit plan.
 
             - **Required Fields:**
 
-              - ``<lesson-name>`` A key corresponding to a lesson in the given unit
+              - ``<lesson-key>`` A key corresponding to a lesson in the given unit
                 plan.
 
 A complete curriculum integration structure file with multiple curriculum integrations
@@ -695,4 +866,3 @@ may look like the following:
     prerequisite-lessons:
       unit-plan-2:
         - counting-in-binary
-
