@@ -1,8 +1,7 @@
 from tests.BaseTestWithDB import BaseTestWithDB
 from django import template
 from topics.models import CurriculumIntegration
-from topics.models import Topic
-from model_mommy import mommy
+from tests.topics import create_topics_test_data
 
 
 class RenderHTMLFieldTest(BaseTestWithDB):
@@ -16,7 +15,7 @@ class RenderHTMLFieldTest(BaseTestWithDB):
         return template.Template(string).render(context)
 
     def test_render_html_field_without_static(self):
-        topic = mommy.make(Topic)
+        topic = create_topics_test_data.create_test_topic(1)
         curriculum_integration_without_static = CurriculumIntegration.objects.create(
             topic=topic,
             slug="slug_1",
@@ -32,7 +31,7 @@ class RenderHTMLFieldTest(BaseTestWithDB):
         self.assertHTMLEqual(rendered, "<p>Example text.</p>")
 
     def test_render_html_field_with_static(self):
-        topic = mommy.make(Topic)
+        topic = create_topics_test_data.create_test_topic(1)
         curriculum_integration_with_static = CurriculumIntegration.objects.create(
             topic=topic,
             slug="slug_2",
@@ -48,7 +47,7 @@ class RenderHTMLFieldTest(BaseTestWithDB):
         self.assertHTMLEqual(rendered, "<img src='/staticfiles/img/logo-small.png'>")
 
     def test_render_html_field_empty(self):
-        topic = mommy.make(Topic)
+        topic = create_topics_test_data.create_test_topic(1)
         curriculum_integration_empty = CurriculumIntegration.objects.create(
             topic=topic,
             slug="slug_3",
@@ -78,7 +77,7 @@ class RenderHTMLFieldTest(BaseTestWithDB):
         )
 
     def test_render_html_field_invalid_parameter(self):
-        topic = mommy.make(Topic)
+        topic = create_topics_test_data.create_test_topic(1)
         curriculum_integration_with_static = CurriculumIntegration.objects.create(
             topic=topic,
             slug="slug_2",
@@ -95,7 +94,7 @@ class RenderHTMLFieldTest(BaseTestWithDB):
         )
 
     def test_render_html_field_missing_parameter(self):
-        topic = mommy.make(Topic)
+        topic = create_topics_test_data.create_test_topic(1)
         curriculum_integration_with_static = CurriculumIntegration.objects.create(
             topic=topic,
             slug="slug_2",
