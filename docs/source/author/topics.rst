@@ -298,11 +298,6 @@ exercise, e.g. ``count-to-16``.
         A common filename is ``extra-challenge.md``.
       - **Contains:** Content for an extra challenge.
 
-      .. note::
-
-        The extra challenge file must not include a heading (should only
-        contain text).
-
 2-4 from the list above can be given in multiple programming languages.
 Therefore, the languages you have chosen must be specified in the
 ``programming-exercises.yaml`` configuration file, as well as the
