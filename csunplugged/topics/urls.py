@@ -36,12 +36,6 @@ urlpatterns = [
         views.TopicView.as_view(),
         name='topic'
     ),
-    # eg: /topics/binary-numbers/integrations
-    url(
-        r'^(?P<topic_slug>[-\w]+)/integrations/$',
-        views.CurriculumIntegrationList.as_view(),
-        name='integration_list'
-    ),
     # eg: /topics/binary-numbers/integrations/binary-bracelets
     url(
         r'^(?P<topic_slug>[-\w]+)/integrations/(?P<integration_slug>[-\w]+)/$',
