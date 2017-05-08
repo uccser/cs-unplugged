@@ -291,6 +291,18 @@ exercise, e.g. ``count-to-16``.
         of the programming language, e.g. ``ruby-hints.md``.
       - **Contains:** Example solutions to the exercise, e.g. Scratch program.
 
+    5. Extra challenge(s) (optional)
+
+      - **Is called:** the value defined in the programming exercises
+        configuration file.
+        A common filename is ``extra-challenge.md``.
+      - **Contains:** Content for an extra challenge.
+
+      .. note::
+
+        The extra challenge file must not include a heading (should only
+        contain text).
+
 2-4 from the list above can be given in multiple programming languages.
 Therefore, the languages you have chosen must be specified in the
 ``programming-exercises.yaml`` configuration file, as well as the
@@ -769,8 +781,6 @@ Programming Exercises Configuration File
 
       - ``extra-challenge:`` A Markdown filename containing the content for an
         extra challenge.
-        The Markdown file should be within the programming exercise folder, and
-        must not include a heading (should only contain text).
 
 A complete programming exercises structure file may look like the following:
 
