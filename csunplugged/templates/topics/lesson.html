@@ -13,6 +13,17 @@
 <h1>{{ lesson.name }}</h1>
 <strong>Duration: </strong>{{ lesson.duration }} minutes
 
+<h2>Headings</h2>
+<ul>
+{% for heading_node in lesson.heading_tree %}
+    <li>
+      <a href="#{{ heading_node.slug }}">
+        {{ heading_node.text }}
+      </a>
+    </li>
+{% endfor %}
+</ul>
+
 <h2>CS Unplugged Resources</h2>
 {% if lesson_generated_resources %}
   <ul>
