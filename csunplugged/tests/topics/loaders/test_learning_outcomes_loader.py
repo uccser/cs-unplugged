@@ -10,11 +10,11 @@ class LearningOutcomesLoaderTest(BaseTestWithDB):
         super().__init__(*args, **kwargs)
         self.BASE_PATH = "tests/topics/loaders/assets/learning_outcomes/"
 
-    def test_new_learning_outcome(self):
-        config_file = "one_learning_outcome.yaml"
+    def test_basic_config(self):
+        config_file = "basic_config.yaml"
 
-        new_loader = LearningOutcomesLoader(config_file, self.BASE_PATH)
-        new_loader.load()
+        lo_loader = LearningOutcomesLoader(config_file, self.BASE_PATH)
+        lo_loader.load()
 
         lo_objects = LearningOutcome.objects.all()
 
