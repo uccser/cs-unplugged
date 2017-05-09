@@ -6,9 +6,9 @@ class IndexViewTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.language = 'en'
+        self.language = "en"
 
     def test_index_view(self):
-        response = self.client.get(reverse('general:home'))
+        response = self.client.get(reverse("general:home"))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Computer Science")

@@ -17,24 +17,24 @@ class CurriculumIntegrationModelTest(BaseTestWithDB):
         curriculum_area = mommy.make(
             CurriculumArea,
             make_m2m=True,
-            name='cats'
+            name="cats"
         )
         prerequisite_lesson = mommy.make(
             Lesson,
             make_m2m=True,
-            name='dogs'
+            name="dogs"
         )
 
         # Test
         new_curriculum_integration = CurriculumIntegration.objects.create(
             topic=topic,
-            slug='slug',
+            slug="slug",
             number=1,
-            name='name',
-            content='content'
+            name="name",
+            content="content"
         )
         new_curriculum_integration.curriculum_areas.add(curriculum_area)
         new_curriculum_integration.prerequisite_lessons.add(prerequisite_lesson)
 
-        query_result = CurriculumIntegration.objects.get(slug='slug')
+        query_result = CurriculumIntegration.objects.get(slug="slug")
         self.assertEqual(query_result, new_curriculum_integration)

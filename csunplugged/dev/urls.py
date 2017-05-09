@@ -4,12 +4,12 @@ from django.conf.urls import url
 
 from . import views
 
-app_name = 'dev'
+app_name = "dev"
 urlpatterns = [
-    # eg: /topics/
+    # eg: /dev/
     url(
-        r'^$',
+        r"^$",
         views.IndexView.as_view(),
-        name='index'
+        name="index"
     ),
 ]
