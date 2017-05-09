@@ -19,15 +19,32 @@ img {
   }
 }
 
+h1 {
+  color: $red;
+}
+h2 {
+  color: $purple;
+}
+h3 {
+  color: $green;
+}
+h4,
+h5,
+h6 {
+  color: $gray;
+}
+
 h1,
 h2,
-h3 {
-  color: #e33333;
-  margin-top: 1.5rem;
+h3,
+h4,
+h5,
+h6 {
+  border-bottom: 2px solid $gray-lighter;
+}
 
-  span.subtitle {
-    color: #888;
-  }
+.subtitle {
+  color: $gray-light;
 }
 
 input[type="text"].long-text-field {
