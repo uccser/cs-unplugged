@@ -22,6 +22,9 @@ how-binary-digits-work:
     - number-bits-representing-number
     - binary-cards-representing-number
     - decimal-to-binary
+  learning-outcomes:
+    - binary-correct-representation
+    - no-physical-zeros-ones
 
 reinforcing-sequencing-in-binary-number-systems:
   min-age: 8
