@@ -234,15 +234,15 @@ details {
   }
 }
 
-$body-space-from-stop: 72px;
+$body-space-from-top: 72px;
 
 body {
-  padding-top: $body-space-from-stop;
+  padding-top: $body-space-from-top;
   position: relative;
 }
 
 #sticky-sidebar {
-  top: $body-space-from-stop;
+  top: $body-space-from-top;
 }
 .sticky-top {
   z-index: 1020;
