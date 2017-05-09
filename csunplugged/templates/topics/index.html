@@ -5,13 +5,15 @@
 {% load django_bootstrap_breadcrumbs %}
 
 {% block breadcrumbs %}
-  {{ block.super }}
+  {% breadcrumb "Home" "/" %}
   {% breadcrumb "Topics" "topics:index" %}
 {% endblock breadcrumbs %}
 
-{% block content %}
+{% block page_heading %}
   <h1>{% trans "Topics" %}</h1>
+{% endblock page_heading %}
 
+{% block content %}
   {% if all_topics %}
     <p>Open a topic to see all related unit plans, lessons, curriculum integrations, and programming exercises.</p>
     <div class="card-deck">
@@ -27,4 +29,4 @@
   {% else %}
     <p>No topics are available.</p>
   {% endif %}
-{% endblock %}
+{% endblock content %}
