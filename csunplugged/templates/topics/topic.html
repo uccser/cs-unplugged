@@ -1,16 +1,19 @@
-{% extends "topics/index.html" %}
+{% extends "base_columns.html" %}
 
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block breadcrumbs %}
-  {{ block.super }}
+  {% breadcrumb "Home" "/" %}
+  {% breadcrumb "Topics" "topics:index" %}
   {% breadcrumb topic.name "topics:topic" topic.slug %}
 {% endblock breadcrumbs %}
 
-{% block content %}
+{% block page_heading %}
   <h1>{{ topic.name }}</h1>
+{% endblock page_heading %}
 
+{% block left_column_content %}
   {% render_html_field topic.content %}
 
   {% for unit_plan in unit_plans %}
@@ -77,4 +80,4 @@
       </a>
     </p>
   {% endif %}
-{% endblock %}
+{% endblock left_column_content %}
