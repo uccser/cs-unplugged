@@ -1,6 +1,8 @@
 /** JavaScript to load on each page of website */
 $(document).ready(function() {
   $("#content-container, #glossary-modal").on("click", ".glossary-term", open_glossary_definition);
+  $("body").scrollspy({ target: "#scrollspy-table-of-contents" });
+  $("#sticky-sidebar").fixedsticky();
 });
 
 function open_glossary_definition() {

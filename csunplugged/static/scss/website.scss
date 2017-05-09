@@ -120,10 +120,6 @@ $rounded-corner-radius: 0.5rem;
   @include card-link-variant($purple);
 }
 
-body {
-  padding-top: 4.5rem;
-}
-
 .navbar {
   background-color: $white;
   border-bottom: 2px $red solid;
@@ -236,4 +232,18 @@ details {
   &red {
     background-color: $red;
   }
+}
+
+$body-space-from-stop: 72px;
+
+body {
+  padding-top: $body-space-from-stop;
+  position: relative;
+}
+
+#sticky-sidebar {
+  top: $body-space-from-stop;
+}
+.sticky-top {
+  z-index: 1020;
 }
