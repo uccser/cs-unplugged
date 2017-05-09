@@ -2,7 +2,7 @@
 
 import os.path
 from utils.BaseLoader import BaseLoader
-
+from utils.convert_heading_tree_to_dict import convert_heading_tree_to_dict
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 
@@ -81,6 +81,8 @@ class LessonsLoader(BaseLoader):
             else:
                 lesson_duration = None
 
+            heading_tree = convert_heading_tree_to_dict(lesson_content.heading_tree)
+
             lesson = self.topic.topic_lessons.create(
                 unit_plan=self.unit_plan,
                 slug=lesson_slug,
@@ -89,7 +91,8 @@ class LessonsLoader(BaseLoader):
                 duration=lesson_duration,
                 content=lesson_content.html_string,
                 min_age=lesson_min_age,
-                max_age=lesson_max_age
+                max_age=lesson_max_age,
+                heading_tree=heading_tree,
             )
             lesson.save()
 
