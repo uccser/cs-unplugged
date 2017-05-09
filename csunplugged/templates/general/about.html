@@ -1,9 +1,10 @@
 {% extends "general/base.html" %}
+
 {% load i18n %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block breadcrumbs %}
-  {{ block.super }}
+  {% breadcrumb "Home" "/" %}
   {% breadcrumb "About" "general:about" %}
 {% endblock breadcrumbs %}
 
@@ -11,7 +12,7 @@
   <h1>{% trans 'About' %}</h1>
 {% endblock page_heading %}
 
-{% block content %}
+{% block left_column_content %}
   <p>
     CS Unplugged is a collection of free learning activities that teach Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around.
     We originally developed this so that young students could dive head-first into computer science, experiencing the kinds of questions and challenges that computer scientists experience, but without having to learn programming first.
@@ -38,15 +39,4 @@
   <p>
     For more information about the principles behind CS Unplugged, see our <a href="{% url 'general:principles' %}">principles page</a>.
   </p>
-{% endblock content %}
-
-{% block sidebar %}
-<h4>About pages</h4>
-
-<nav class="nav flex-column">
-  <a class="nav-link" href="{% url 'general:about' %}">About</a>
-  <a class="nav-link" href="{% url 'general:people' %}">People</a>
-  <a class="nav-link" href="{% url 'general:contact' %}">Contact Us</a>
-  <a class="nav-link" href="{% url 'general:principles' %}">Principles</a>
-</nav>
-{% endblock sidebar %}
+{% endblock left_column_content %}
