@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+
 {% load i18n %}
 {% load static %}
 {% load django_bootstrap_breadcrumbs %}
@@ -10,14 +11,12 @@
       {% block page_heading %}
       {% endblock page_heading %}
     </div>
-    <div class="col-12 col-md-7">
-      {% block content %}
-      {% endblock content %}
-    </div>
-    <div class="col-12 col-md-5">
-      {% block sidebar %}
-      {% endblock sidebar %}
-    </div>
+    {% block content_container %}
+      <div class="col-12">
+        {% block content %}
+        {% endblock content %}
+      </div>
+    {% endblock content_container %}
     <div class="col-12">
       {% block end_content %}
       {% endblock end_content %}
