@@ -3,7 +3,7 @@
 from collections import OrderedDict
 
 from django.db import models
-from django.contrib.postgres.fields import HStoreField
+from django.contrib.postgres.fields import JSONField
 from resources.models import Resource
 
 
@@ -253,7 +253,7 @@ class Lesson(models.Model):
     content = models.TextField()
     min_age = models.PositiveSmallIntegerField()
     max_age = models.PositiveSmallIntegerField()
-    heading_tree = HStoreField(null=True)
+    heading_tree = JSONField(null=True)
     programming_exercises = models.ManyToManyField(
         ProgrammingExercise,
         related_name="lessons"
