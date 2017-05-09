@@ -1,16 +1,20 @@
-{% extends "topics/topic.html" %}
+{% extends "base_columns.html" %}
 
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block breadcrumbs %}
-  {{ block.super }}
+  {% breadcrumb "Home" "/" %}
+  {% breadcrumb "Topics" "topics:index" %}
+  {% breadcrumb topic.name "topics:topic" topic.slug %}
   {% breadcrumb unit_plan.name "topics:unit_plan" topic.slug unit_plan.slug %}
 {% endblock breadcrumbs %}
 
-{% block content %}
+{% block page_heading %}
   <h1>{{ unit_plan.name }}</h1>
+{% endblock page_heading %}
 
+{% block left_column_content %}
   {% render_html_field unit_plan.content %}
 
   <h2>Lessons</h2>
@@ -22,4 +26,4 @@
       <a href="{% url 'topics:lesson' topic.slug unit_plan.slug lesson.slug %}" class="btn btn-outline-danger">{{ lesson.name }}</a>
     </p>
   {% endfor %}
-{% endblock content %}
+{% endblock left_column_content %}
