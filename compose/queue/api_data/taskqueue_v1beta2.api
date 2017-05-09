@@ -67,9 +67,7 @@
   }
  },
  "auth": {
-  "oauth2": {
-   }
-  }
+  "oauth2": {}
  },
  "schemas": {
   "Task": {

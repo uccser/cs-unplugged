@@ -7,6 +7,7 @@ from base64 import b64encode
 
 DEBUG = not int(os.getenv("FLASK_PRODUCTION", 1))
 PORT = int(os.getenv("PORT", 8080))
+DISCOVERY_URL = os.getenv("API_DISCOVERY_URL", None)
 
 app = Flask(__name__)
 
@@ -17,10 +18,12 @@ def index():
 @app.route("/add/<item>")
 def add(item=None):
     # TODO: Event
-    try:
-        print("Hello")
-        task_api = build("taskqueue", "v1beta2")
-        print(task_api._baseUrl)
+    # try:
+        task_api = None
+        if DISCOVERY_URL is not None:
+            task_api = build("taskqueue", "v1beta2", discoveryServiceUrl=DISCOVERY_URL)
+        else:
+            task_api = build("taskqueue", "v1beta2")
         encoded_string = b64encode(item.encode("ascii")).decode()
         task = {
           "kind": "taskqueues#task",
@@ -34,8 +37,8 @@ def add(item=None):
         )
         result = insert_request.execute()
         return "Added", 200
-    except HttpError as http_error:
-        return "Error", 500
+    # except HttpError as http_error:
+    #     return "Error", 500
 
 @app.errorhandler(500)
 def server_error(e):
