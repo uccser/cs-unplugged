@@ -1,20 +1,23 @@
-{% extends "topics/base.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
 {% load static %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block breadcrumbs %}
-  {{ block.super }}
+  {% breadcrumb "Home" "/" %}
+  {% breadcrumb "Topics" "topics:index" %}
   {% breadcrumb "Curriculum Integrations" "topics:all_curriculum_integrations" %}
 {% endblock breadcrumbs %}
 
-{% block content %}
+{% block page_heading %}
   <h1>{% trans "Curriculum Integrations" %}</h1>
   <p>
     The following table lists curriculum integrations for all topics in the CS Unplugged content.
   </p>
+{% endblock page_heading %}
 
+{% block content %}
   <table class="table table-responsive">
     <thead class="thead-default">
       <tr>
