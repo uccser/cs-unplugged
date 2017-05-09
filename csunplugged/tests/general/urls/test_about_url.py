@@ -6,11 +6,11 @@ class AboutURLTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.language = 'en'
+        self.language = "en"
 
     def test_valid_about_url(self):
-        url = reverse('general:about')
-        self.assertEqual(url, '/en/about/')
+        url = reverse("general:about")
+        self.assertEqual(url, "/en/about/")
 
         response = self.client.get(url)
         self.assertEqual(200, response.status_code)

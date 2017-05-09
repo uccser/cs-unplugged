@@ -1,9 +1,9 @@
-<details{% if expanded == 'true'%} open{% endif %}>
+<details{% if expanded == 'true'%} open{% endif %} class="panel-{{ type }}">
   <summary>
     <strong>{{ title }}{% if subtitle %}:</strong> {{ subtitle }}{% else %}</strong>{% endif %}
   </summary>
 
-  {% autoescape false -%}
-  {{ content }}
-  {%- endautoescape %}
+  <div class="boxed-text-content">
+    {% autoescape false %}{{ content }}{% endautoescape %}
+  </div>
 </details>

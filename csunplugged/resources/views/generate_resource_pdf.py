@@ -29,36 +29,36 @@ def generate_resource_pdf(request, resource, module_path):
     env = environ.Env(
         DJANGO_PRODUCTION=(bool),
     )
-    if env('DJANGO_PRODUCTION'):
-        return HttpResponse('<html><body>PDF generation is currently not supported in production.</body></html>')
+    if env("DJANGO_PRODUCTION"):
+        return HttpResponse("<html><body>PDF generation is currently not supported in production.</body></html>")
     else:
         from weasyprint import HTML, CSS
         context = dict()
         get_request = request.GET
-        context['paper_size'] = get_request['paper_size']
-        context['resource'] = resource
-        context['header_text'] = get_request['header_text']
+        context["paper_size"] = get_request["paper_size"]
+        context["resource"] = resource
+        context["header_text"] = get_request["header_text"]
 
         resource_image_generator = importlib.import_module(module_path)
-        filename = '{} ({})'.format(resource.name, resource_image_generator.subtitle(get_request, resource))
-        context['filename'] = filename
+        filename = "{} ({})".format(resource.name, resource_image_generator.subtitle(get_request, resource))
+        context["filename"] = filename
 
-        num_copies = range(0, int(get_request['copies']))
-        context['resource_images'] = []
+        num_copies = range(0, int(get_request["copies"]))
+        context["resource_images"] = []
         for copy in num_copies:
-            context['resource_images'].append(
+            context["resource_images"].append(
                 generate_resource_image(get_request, resource, module_path)
             )
 
-        pdf_html = render_to_string('resources/base-resource-pdf.html', context)
+        pdf_html = render_to_string("resources/base-resource-pdf.html", context)
         html = HTML(string=pdf_html, base_url=settings.STATIC_ROOT)
-        css_file = finders.find('css/print-resource-pdf.css')
-        css_string = open(css_file, encoding='UTF-8').read()
+        css_file = finders.find("css/print-resource-pdf.css")
+        css_string = open(css_file, encoding="UTF-8").read()
         base_css = CSS(string=css_string)
         pdf_file = html.write_pdf(stylesheets=[base_css])
 
-        response = HttpResponse(pdf_file, content_type='application/pdf')
-        response['Content-Disposition'] = RESPONSE_CONTENT_DISPOSITION.format(filename=filename)
+        response = HttpResponse(pdf_file, content_type="application/pdf")
+        response["Content-Disposition"] = RESPONSE_CONTENT_DISPOSITION.format(filename=filename)
         return response
 
 
@@ -78,9 +78,9 @@ def generate_resource_image(get_request, resource, module_path):
     image = resource_image_generator.resource_image(get_request, resource)
 
     # Resize image to reduce file size
-    if get_request['paper_size'] == "a4":
+    if get_request["paper_size"] == "a4":
         max_pixel_height = 267 * MM_TO_PIXEL_RATIO
-    elif get_request['paper_size'] == "letter":
+    elif get_request["paper_size"] == "letter":
         max_pixel_height = 249 * MM_TO_PIXEL_RATIO
     (width, height) = image.size
     if height > max_pixel_height:
@@ -91,7 +91,7 @@ def generate_resource_image(get_request, resource, module_path):
 
     # Save image to buffer
     image_buffer = BytesIO()
-    image.save(image_buffer, format='PNG')
+    image.save(image_buffer, format="PNG")
 
     # Return base64 of image
     return base64.b64encode(image_buffer.getvalue())
