@@ -39,7 +39,7 @@ class UnitPlanLoader(BaseLoader):
         unit_plan_content = self.convert_md_file(
             os.path.join(
                 self.BASE_PATH,
-                '{}.md'.format(self.unit_plan_slug)
+                "{}.md".format(self.unit_plan_slug)
             ),
             self.structure_file_path
         )
@@ -51,7 +51,7 @@ class UnitPlanLoader(BaseLoader):
         )
         unit_plan.save()
 
-        self.log('Added Unit Plan: {}'.format(unit_plan.name), 1)
+        self.log("Added Unit Plan: {}".format(unit_plan.name), 1)
 
         # Load the lessons for the unit plan
 
@@ -60,8 +60,8 @@ class UnitPlanLoader(BaseLoader):
         if unit_plan_structure is None:
             raise MissingRequiredFieldError(
                 self.structure_file_path,
-                ['(At least one lesson)'],
-                'Unit Plan'
+                ["(At least one lesson)"],
+                "Unit Plan"
             )
         # Call the loader to save the lessons into the db
         lessons_structure = unit_plan_structure

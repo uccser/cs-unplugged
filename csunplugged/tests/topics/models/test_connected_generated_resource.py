@@ -16,7 +16,7 @@ class ConnectedGeneratedResourceModelTest(BaseTestWithDB):
         new_resource = ConnectedGeneratedResource.objects.create(
             resource=resource,
             lesson=lesson,
-            description='this is a description'
+            description="this is a description"
         )
         query_result = ConnectedGeneratedResource.objects.get(resource=resource, lesson=lesson)
         self.assertEqual(query_result, new_resource)
