@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load static %}
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
@@ -36,13 +37,27 @@
     </nav>
 
     {% block breadcrumbs %}
-      {% clear_breadcrumbs %}
-      {% breadcrumb "Home" "/" %}
-    {% endblock %}
+    {% endblock breadcrumbs %}
 
     <div id="content-container" class="container">
       {% block body_container %}
-
+        {% render_breadcrumbs "django_bootstrap_breadcrumbs/bootstrap4.html" %}
+        <div class="row">
+          <div class="col-12">
+            {% block page_heading %}
+            {% endblock page_heading %}
+          </div>
+          {% block content_container %}
+            <div class="col-12">
+              {% block content %}
+              {% endblock content %}
+            </div>
+          {% endblock content_container %}
+          <div class="col-12">
+            {% block end_content %}
+            {% endblock end_content %}
+          </div>
+        </div>
       {% endblock body_container %}
     </div>
 
