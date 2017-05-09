@@ -157,6 +157,7 @@ class ProgrammingExercise(models.Model):
     exercise_set_number = models.PositiveSmallIntegerField()
     exercise_number = models.PositiveSmallIntegerField()
     content = models.TextField()
+    extra_challenge = models.TextField(null=True)
     learning_outcomes = models.ManyToManyField(
         LearningOutcome,
         related_name="programming_exercise_learning_outcomes"

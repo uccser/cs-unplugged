@@ -4,6 +4,14 @@
 from .base import *  # noqa: F403
 
 
+# DATABASE CONFIGURATION
+# ----------------------------------------------------------------------------
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
+DATABASES = {
+    'default': env.db('DATABASE_URL'),  # noqa: F405
+}
+DATABASES['default']['ATOMIC_REQUESTS'] = True
+
 # DEBUG
 # ----------------------------------------------------------------------------
 # Turn debug off so tests run faster
@@ -14,7 +22,7 @@ TEMPLATES[0]["OPTIONS"]["debug"] = False  # noqa: F405
 # ----------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Note: This key only used for development and testing.
-SECRET_KEY = env("DJANGO_SECRET_KEY", default="CHANGEME!!!")  # noqa: F405
+SECRET_KEY = env("DJANGO_SECRET_KEY", default="l@@)w&&%&u37+sjz^lsx^+29y_333oid3ygxzucar^8o(axo*f")  # noqa: F405
 
 # Mail settings
 # ----------------------------------------------------------------------------
@@ -56,3 +64,7 @@ TEMPLATES[0]["OPTIONS"]["loaders"] = [  # noqa: F405
         "django.template.loaders.app_directories.Loader",
     ], ],
 ]
+
+# Your local stuff: Below this line define 3rd party library settings
+# ----------------------------------------------------------------------------
+INSTALLED_APPS += ["dev.apps.DevConfig"]  # noqa: F405
