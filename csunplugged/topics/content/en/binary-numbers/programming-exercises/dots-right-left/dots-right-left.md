@@ -8,7 +8,7 @@
 
 ## Requirement
 
-Write a program to display numbers 1, 2, 4, 8,... (all in one line) for a given number of cards as the input. 
+Write a program to display numbers 1, 2, 4, 8,... (all in one line) for a given number of cards as the input.
 
 Make variables:
 
@@ -23,7 +23,3 @@ Make variables:
 ## Output
 
 When the check mark button is clicked or Enter key is pressed you should see the following output.
-
-## Extra challenge
-
-Now try removing the last `,` from the end of your output.

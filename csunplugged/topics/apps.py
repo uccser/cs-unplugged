@@ -6,4 +6,4 @@ from django.apps import AppConfig
 class TopicsConfig(AppConfig):
     """Configuration object for the topics application."""
 
-    name = 'topics'
+    name = "topics"

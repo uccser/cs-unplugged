@@ -6,11 +6,11 @@ class PrinciplesURLTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.language = 'en'
+        self.language = "en"
 
     def test_valid_principles_url(self):
-        url = reverse('general:principles')
-        self.assertEqual(url, '/en/principles/')
+        url = reverse("general:principles")
+        self.assertEqual(url, "/en/principles/")
 
         response = self.client.get(url)
         self.assertEqual(200, response.status_code)

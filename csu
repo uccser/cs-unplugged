@@ -174,7 +174,7 @@ function style_help {
 # Run test suite
 function test_suite {
   printf "Running test suite...\n"
-  docker-compose run --rm django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --pattern "test_*.py" -v 3
+  docker-compose run --rm django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3
 }
 function test_suite_help {
   printf "   test              Run test suite with code coverage.\n"
@@ -195,7 +195,7 @@ function test_suite_backwards {
   printf "Running test suite backwards...\n"
   if [ "$TRAVIS_PULL_REQUEST" != "false" ]
   then
-    docker-compose run --rm django /docker_venv/bin/python3 ./manage.py test --pattern "test_*.py" --reverse -v 0
+    docker-compose run --rm django /docker_venv/bin/python3 ./manage.py test --settings=config.settings.testing --pattern "test_*.py" --reverse -v 0
   fi
 }
 function test_suite_backwards_help {

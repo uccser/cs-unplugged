@@ -14,16 +14,16 @@ def resource_image(get_request, resource):
     Returns:
         A Pillow image object.
     """
-    image_path = 'static/img/resources/resource-sorting-network-colour.png'
+    image_path = "static/img/resources/resource-sorting-network-colour.png"
     image = Image.open(image_path)
     draw = ImageDraw.Draw(image)
 
     (range_min, range_max, font_size) = number_range(get_request)
 
-    font_path = 'static/fonts/PatrickHand-Regular.ttf'
+    font_path = "static/fonts/PatrickHand-Regular.ttf"
 
     # Add numbers to text if needed
-    if get_request['prefilled_values'] != 'blank':
+    if get_request["prefilled_values"] != "blank":
         font = ImageFont.truetype(font_path, font_size)
         numbers = sample(range(range_min, range_max), 6)
         base_coord_x = 70
@@ -38,7 +38,7 @@ def resource_image(get_request, resource):
                 (coord_x, coord_y),
                 text,
                 font=font,
-                fill='#000'
+                fill="#000"
             )
             base_coord_x += coord_x_increment
 
@@ -58,10 +58,10 @@ def subtitle(get_request, resource):
     Returns:
         text for subtitle (string)
     """
-    if get_request['prefilled_values'] == 'blank':
-        text = 'blank'
+    if get_request["prefilled_values"] == "blank":
+        text = "blank"
     else:
-        SUBTITLE_TEMPLATE = '{} to {}'
+        SUBTITLE_TEMPLATE = "{} to {}"
         range_min, range_max, font_size = number_range(get_request)
         text = SUBTITLE_TEMPLATE.format(range_min, range_max - 1)
     return text
@@ -76,18 +76,18 @@ def number_range(get_request):
     Returns:
         Tuple of (range_min, range_max, font_size)
     """
-    prefilled_values = get_request['prefilled_values']
+    prefilled_values = get_request["prefilled_values"]
     range_min = 0
     range_max = 0
     font_size = 150
-    if prefilled_values == 'easy':
+    if prefilled_values == "easy":
         range_min = 1
         range_max = 10
-    elif prefilled_values == 'medium':
+    elif prefilled_values == "medium":
         range_min = 10
         range_max = 100
         font_size = 120
-    elif prefilled_values == 'hard':
+    elif prefilled_values == "hard":
         range_min = 100
         range_max = 1000
         font_size = 90

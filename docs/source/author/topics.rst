@@ -98,7 +98,7 @@ Adding a Topic
 
 The Markdown file containing the description of the topic:
 
-- **Is in:** the topic directory, e.g. the description file for 
+- **Is in:** the topic directory, e.g. the description file for
   Binary Numbers will be in ``topics/content/en/binary-numbers/``.
 - **Is called:** ``<topic-key>.md`` where ``<topic-key>`` is the key
   (:ref:`what-is-a-key`) of the topic and the name of the directory it is in,
@@ -288,8 +288,15 @@ exercise, e.g. ``count-to-16``.
     4. Example solution(s)
 
       - **Is called:** ``<language>-solution.md`` where ``<language>`` is the key
-        of the programming language, e.g. ``ruby-hints.md``.
+        of the programming language, e.g. ``ruby-solution.md``.
       - **Contains:** Example solutions to the exercise, e.g. Scratch program.
+
+    5. Extra challenge(s) (optional)
+
+      - **Is called:** the value defined in the programming exercises
+        configuration file.
+        A common filename is ``extra-challenge.md``.
+      - **Contains:** Content for an extra challenge.
 
 2-4 from the list above can be given in multiple programming languages.
 Therefore, the languages you have chosen must be specified in the
@@ -299,7 +306,7 @@ Therefore, the languages you have chosen must be specified in the
 .. note::
 
   If the exercise includes learning outcomes, then the corresponding configuration
-  file will also need to be added or updated to include new learning outcomes. 
+  file will also need to be added or updated to include new learning outcomes.
 
 .. _adding-a-curriculum-integration:
 
@@ -321,7 +328,7 @@ Adding a Curriculum Integration
 The Markdown file containing the content of the curriculum integration:
 
 - **Is in:** the curriculum integration directrory, e.g. curriculum integrations
-  in Binary Numbers will be in 
+  in Binary Numbers will be in
   ``topics/content/en/binary-numbers/curriculum-integrations/``.
 - **Is called:** ``<integration-key>.md`` where ``<integration-key>`` is the key
   (:ref:`what-is-a-key`) of the curriculum integration, e.g. ``whose-cake-is-it.md``.
@@ -613,11 +620,28 @@ Curriculum Areas Configuration File
 
       - ``name:`` The name of the curriculum area (this is what will be displayed to the
         user).
+      - ``colour:`` The CSS colour class to use for colouring the curriculum
+        area badge on the website.
+        This colour is also applied to all children of curriculum area.
+
+        Available colours include:
+
+        - ``blue``
+        - ``green``
+        - ``light-purple``
+        - ``orange``
+        - ``pink``
+        - ``purple``
+        - ``red``
+        - ``teal``
+        - ``yellow``
+
+        These colours are defined in: ``csunplugged/static/scss/website.scss``.
 
     - **Optional Fields:**
 
       - ``children:`` A list of sub-curriculum areas (see example file below). Each child
-        requires a name field.
+        requires a ``name`` field.
 
 An example curriculum areas file with multiple curriculums may look like
 the following:
@@ -626,6 +650,7 @@ the following:
 
   maths:
     name: Maths
+    colour: green
     children:
       geometry:
         name: Geometry
@@ -634,9 +659,11 @@ the following:
 
   science:
     name: Science
+    colour: blue
 
   art:
     name: Art
+    colour: teal
 
 .. note::
 
@@ -747,6 +774,9 @@ Programming Exercises Configuration File
 
       - ``learning-outcomes:`` A list of keys corresponding to learning outcomes.
 
+      - ``extra-challenge:`` A Markdown filename containing the content for an
+        extra challenge.
+
 A complete programming exercises structure file may look like the following:
 
 .. code-block:: yaml
@@ -769,6 +799,7 @@ A complete programming exercises structure file may look like the following:
       - python
     learning-outcomes:
       - programming-basic-logic
+    extra-challenge: extra-challenge.md
 
 .. _curriculum-integrations-file:
 

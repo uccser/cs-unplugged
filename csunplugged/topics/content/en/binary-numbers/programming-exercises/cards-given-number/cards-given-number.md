@@ -1,4 +1,4 @@
-# Cards to display for a given number 
+# Cards to display for a given number
 
 ## Objective
 
@@ -8,7 +8,7 @@
 
 ## Requirement
 
-Write a program which asks the user to enter a number of dots less than or equal to 31 as the input and displays which of the 5 cards should be showing as the output (one at a time for 1 second each). 
+Write a program which asks the user to enter a number of dots less than or equal to 31 as the input and displays which of the 5 cards should be showing as the output (one at a time for 1 second each).
 
 Make a variable called “number of dots” and set its value to the input entered by the end user.
 Below is the algorithm to help you program this;
@@ -31,11 +31,7 @@ Example:
 
 ## Input
 
-11 
-
-## Output
-
-When the check mark button is clicked or Enter key is pressed you should see the following output:
+11
 
 ## Output
 

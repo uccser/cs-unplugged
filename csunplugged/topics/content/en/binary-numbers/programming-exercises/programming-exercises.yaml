@@ -4,6 +4,7 @@ binary-numbers-no-calculations:
   difficulty-level: 1
   programming-languages:
     - scratch
+  extra-challenge: extra-challenge.md
 
 binary-numbers-using-variable:
   exercise-set-number: 1
@@ -11,6 +12,7 @@ binary-numbers-using-variable:
   difficulty-level: 1
   programming-languages:
     - scratch
+  extra-challenge: extra-challenge.md
 
 binary-numbers-using-variables-as-operator:
   exercise-set-number: 1
@@ -18,6 +20,7 @@ binary-numbers-using-variables-as-operator:
   difficulty-level: 1
   programming-languages:
     - scratch
+  extra-challenge: extra-challenge.md
 
 binary-numbers-using-variable-operator-repeat:
   exercise-set-number: 1
@@ -25,6 +28,7 @@ binary-numbers-using-variable-operator-repeat:
   difficulty-level: 1
   programming-languages:
     - scratch
+  extra-challenge: extra-challenge.md
 
 binary-numbers-one-line:
   exercise-set-number: 1
@@ -32,6 +36,7 @@ binary-numbers-one-line:
   difficulty-level: 2
   programming-languages:
     - scratch
+  extra-challenge: extra-challenge.md
 
 number-cards-display:
   exercise-set-number: 2
@@ -39,6 +44,7 @@ number-cards-display:
   difficulty-level: 2
   programming-languages:
     - scratch
+  extra-challenge: extra-challenge.md
 
 dots-right-left:
   exercise-set-number: 2
@@ -46,6 +52,7 @@ dots-right-left:
   difficulty-level: 2
   programming-languages:
     - scratch
+  extra-challenge: extra-challenge.md
 
 dots-largest-to-1:
   exercise-set-number: 3
@@ -53,6 +60,14 @@ dots-largest-to-1:
   difficulty-level: 2
   programming-languages:
     - scratch
+
+left-right-given-largest:
+  exercise-set-number: 3
+  exercise-number: 2
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  extra-challenge: extra-challenge.md
 
 count-5-bw-no-loop:
   exercise-set-number: 4
@@ -102,6 +117,7 @@ cards-given-number-one-line:
   difficulty-level: 2
   programming-languages:
     - scratch
+  extra-challenge: extra-challenge.md
 
 number-bits-representing-number:
   exercise-set-number: 6
@@ -123,3 +139,4 @@ decimal-to-binary:
   difficulty-level: 3
   programming-languages:
     - scratch
+  extra-challenge: extra-challenge.md
