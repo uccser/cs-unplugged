@@ -9,7 +9,6 @@ from utils.errors.KeyNotFoundError import KeyNotFoundError
 from topics.models import (
     ProgrammingExercise,
     LearningOutcome,
-    CurriculumArea,
     Resource,
     ConnectedGeneratedResource,
 )
