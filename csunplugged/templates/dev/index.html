@@ -45,7 +45,7 @@
             <li>Programming Exercises:</li>
             <ul>
               {% for exercise in topic.programming_exercises %}
-                <li><a href="{% url 'dev:programming_exercise' exercise.slug %}">{{ exercise.exercise_set_number }}.{{ exercise.exercise_number }} {{ exercise.name }}</a></li>
+                <li><a href="{% url 'topics:programming_exercise' topic.slug exercise.slug %}">{{ exercise.exercise_set_number }}.{{ exercise.exercise_number }} {{ exercise.name }}</a></li>
               {% endfor %}
             </ul></li>
           {% endif %}
