@@ -1,69 +1,73 @@
-{% extends "topics/unit_plan.html" %}
+{% extends "base_columns.html" %}
 
 {% load static %}
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block breadcrumbs %}
-  {{ block.super }}
+  {% breadcrumb "Home" "/" %}
+  {% breadcrumb "Topics" "topics:index" %}
+  {% breadcrumb topic.name "topics:topic" topic.slug %}
+  {% breadcrumb unit_plan.name "topics:unit_plan" topic.slug unit_plan.slug %}
   {% breadcrumb lesson.name "topics:lesson" topic.slug unit_plan.slug lesson.slug %}
 {% endblock breadcrumbs %}
 
-{% block content %}
-<h1>{{ lesson.name }}</h1>
-<strong>Duration: </strong>{{ lesson.duration }} minutes
+{% block page_heading %}
+  <h1>{{ lesson.name }}</h1>
+  <p><strong>Duration: </strong>{{ lesson.duration }} minutes</p>
+{% endblock page_heading %}
 
-<h2>CS Unplugged Resources</h2>
-{% if lesson_generated_resources %}
-  <ul>
-    {% for generated_resource in lesson_generated_resources %}
-      <li>
-        <a href="{% url 'resources:resource' generated_resource.slug %}">
-          {% load static %}
-          <img class="img-thumbnail resource-thumbnail" src="{% static generated_resource.thumbnail %}">
-          <p><strong>{{ generated_resource.name }}</strong></p>
-        </a>
-        <p>{{ generated_resource.description }}</p>
-      </li>
+{% block left_column_content %}
+  <h2>CS Unplugged Resources</h2>
+  {% if lesson_generated_resources %}
+    <ul>
+      {% for generated_resource in lesson_generated_resources %}
+        <li>
+          <a href="{% url 'resources:resource' generated_resource.slug %}">
+            {% load static %}
+            <img class="img-thumbnail resource-thumbnail" src="{% static generated_resource.thumbnail %}">
+            <p><strong>{{ generated_resource.name }}</strong></p>
+          </a>
+          <p>{{ generated_resource.description }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No CS Unplugged resources required.</p>
+  {% endif %}
+
+  {% render_html_field lesson.content %}
+
+  <h2>Plugged In <span class="subtitle">(programming challenges)</span></h2>
+  {% if programming_exercises %}
+    <p>
+      <a href="{% url 'topics:programming_exercises_list' topic.slug unit_plan.slug lesson.slug %}" class="btn btn-outline-danger">
+        Programming challenges for {{ lesson.name }}
+      </a>
+    </p>
+  {% else %}
+    <p>No programming challenges for {{ lesson.name }}.</p>
+  {% endif %}
+
+  <h2>Learning Outcomes</h2>
+  {% if lesson_learning_outcomes %}
+    <ul>
+    {% for learning_outcome in lesson_learning_outcomes %}
+      <li>{{ learning_outcome.text }}</li>
     {% endfor %}
   </ul>
-{% else %}
-  <p>No CS Unplugged resources required.</p>
-{% endif %}
+  {% else %}
+    <p>No learning outcomes listed for {{ lesson.name }}.</p>
+  {% endif %}
 
-{% render_html_field lesson.content %}
-
-<h2>Plugged In <span class="subtitle">(programming challenges)</span></h2>
-{% if programming_exercises %}
-  <p>
-    <a href="{% url 'topics:programming_exercises_list' topic.slug unit_plan.slug lesson.slug %}" class="btn btn-outline-danger">
-      Programming challenges for {{ lesson.name }}
-    </a>
-  </p>
-{% else %}
-  <p>No programming challenges for {{ lesson.name }}.</p>
-{% endif %}
-
-<h2>Learning Outcomes</h2>
-{% if lesson_learning_outcomes %}
-  <ul>
-  {% for learning_outcome in lesson_learning_outcomes %}
-    <li>{{ learning_outcome.text }}</li>
-  {% endfor %}
-</ul>
-{% else %}
-  <p>No learning outcomes listed for {{ lesson.name }}.</p>
-{% endif %}
-
-<h2>Curriculum Areas</h2>
-{% if lesson_curriculum_areas %}
-  <ul>
-  {% for curriculum_area in lesson_curriculum_areas %}
-    <li>{{ curriculum_area.name }}</li>
-  {% endfor %}
-</ul>
-{% else %}
-  <p>No curriculum areas listed for {{ lesson.name }}.</p>
-{% endif %}
-
-{% endblock content %}
+  <h2>Curriculum Areas</h2>
+  {% if lesson_curriculum_areas %}
+    <ul>
+    {% for curriculum_area in lesson_curriculum_areas %}
+      <li>{{ curriculum_area.name }}</li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>No curriculum areas listed for {{ lesson.name }}.</p>
+  {% endif %}
+{% endblock left_column_content %}
