@@ -9,8 +9,6 @@ Django settings for local development environment.
 - Use console backend for emails
 """
 
-import socket
-import os
 from .base import *  # noqa: F403
 
 # DATABASE CONFIGURATION
@@ -56,16 +54,23 @@ MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware', ]  # noqa: F40
 INSTALLED_APPS += ['debug_toolbar', ]  # noqa: F405
 
 INTERNAL_IPS = ['127.0.0.1', '10.0.2.2', ]
-# tricks to have debug toolbar when developing with docker
-if os.environ.get('USE_DOCKER') == 'yes':
-    ip = socket.gethostbyname(socket.gethostname())
-    INTERNAL_IPS += [ip[:-1] + '1']
+
+
+def show_django_debug_toolbar(request):
+    """Show Django Debug Toolbar in every request when running locally.
+
+    Args:
+        request: The request object.
+    """
+    return True
+
 
 DEBUG_TOOLBAR_CONFIG = {
     'DISABLE_PANELS': [
         'debug_toolbar.panels.redirects.RedirectsPanel',
     ],
     'SHOW_TEMPLATE_CONTEXT': True,
+    "SHOW_TOOLBAR_CALLBACK": show_django_debug_toolbar,
 }
 
 # django-extensions
@@ -79,4 +84,4 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 # Your local stuff: Below this line define 3rd party library settings
 # ----------------------------------------------------------------------------
-LOCAL_APPS + ['dev.apps.DevConfig']  # noqa: F405
+INSTALLED_APPS += ['dev.apps.DevConfig']  # noqa: F405
