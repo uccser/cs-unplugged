@@ -1,10 +1,11 @@
 from tests.BaseTestWithDB import BaseTestWithDB
+from tests.topics import create_topics_test_data as test_data
 
 from topics.models import CurriculumIntegration
 from topics.management.commands._CurriculumIntegrationsLoader import CurriculumIntegrationsLoader
 
 
-class CurriculumIntegrationsLoader(BaseTestWithDB):
+class CurriculumIntegrationsLoaderTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -13,12 +14,15 @@ class CurriculumIntegrationsLoader(BaseTestWithDB):
     def test_basic_config(self):
         config_file = "basic_config.yaml"
 
-        ci_loader = CurriculumIntegrationLoader(config_file, self.BASE_PATH)
+        test_data.create_test_curriculum_area('1')
+        topic = test_data.create_test_topic('1')
+
+        ci_loader = CurriculumIntegrationsLoader(config_file, topic, self.BASE_PATH)
         ci_loader.load()
 
         ci_objects = CurriculumIntegration.objects.all()
 
         self.assertQuerysetEqual(
-            lo_objects,
-            ['<CurriculumIntegration: cats>']
+            ci_objects,
+            ['<CurriculumIntegration: Area 51>']
         )
