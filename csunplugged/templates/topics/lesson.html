@@ -13,7 +13,7 @@
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-  <h1 class="heading-underline"><span class="subtitle">{{ lesson.number }}.</span> {{ lesson.name }}</h1>
+  <h1 id="{{ lesson.slug }}" class="heading-underline"><span class="subtitle">{{ lesson.number }}.</span> {{ lesson.name }}</h1>
   <p><strong>Duration: </strong>{{ lesson.duration }} minutes</p>
 {% endblock page_heading %}
 
@@ -71,7 +71,7 @@
     <h2 class="heading-underline mt-2">Table of contents</h2>
     <ul class="nav nav-pills flex-column" id="scrollspy-table-of-contents">
       <li class="nav-item">
-        <a class="nav-link" href="#content-container">{{ lesson.name }}</a>
+        <a class="nav-link" href="#{{ lesson.slug }}">{{ lesson.name }}</a>
       </li>
       {% for heading_node in lesson.heading_tree %}
         <li class="nav-item">
