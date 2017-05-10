@@ -15,16 +15,10 @@ def convert_heading_tree_to_dict(heading_tree_tuples):
     Returns:
         Dictionary of heading tree, or None if None provided as tree.
     """
-    if heading_tree_tuples is None:
-        return None
-    else:
-        root_nodes = []
-        for heading_node in heading_tree_tuples:
-            root_nodes.append(convert_heading_node(heading_node))
-        return root_nodes
+    return [convert_heading_node_to_dict(heading_node) for heading_node in heading_tree_tuples]
 
 
-def convert_heading_node(heading_node):
+def convert_heading_node_to_dict(heading_node):
     """Convert a heading node to a dictionary.
 
     Args:
@@ -35,7 +29,7 @@ def convert_heading_node(heading_node):
     """
     children = []
     for child in heading_node.children:
-        children.append(convert_heading_node(child))
+        children.append(convert_heading_node_to_dict(child))
     heading_node_data = {
         "text": heading_node.title,
         "slug": heading_node.title_slug,
