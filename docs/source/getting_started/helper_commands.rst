@@ -78,6 +78,7 @@ The ``./csu dev [DEV_COMMAND]`` command runs developer tasks, where
 - :ref:`migrate`
 - :ref:`shell`
 - :ref:`static`
+- :ref:`static_prod`
 - :ref:`style`
 - :ref:`test`
 - :ref:`test_backwards`
@@ -132,6 +133,15 @@ for the website.
 If changes are made to the static files (for example, a new image is added)
 when the system is running, this command needs to be entered to view the
 new files on the website.
+
+.. _static_prod:
+
+``static_prod``
+-----------------------------------------------------------------------------
+
+Running ``./csu dev static_prod`` runs the commands for generating production
+static files for the website.
+This produces compressed SASS files without sourcemaps.
 
 .. _style:
 

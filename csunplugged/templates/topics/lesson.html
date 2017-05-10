@@ -61,3 +61,19 @@
 {% endif %}
 
 {% endblock content %}
+
+{% block sidebar %}
+  <div id="sticky-sidebar" class="sticky">
+    <h2>Table of Contents</h2>
+    <ul class="nav nav-pills flex-column" id="scrollspy-table-of-contents">
+      <li class="nav-item">
+        <a class="nav-link" href="#content-container">{{ lesson.name }}</a>
+      </li>
+      {% for heading_node in lesson.heading_tree %}
+        <li class="nav-item">
+          <a class="nav-link" href="#{{ heading_node.slug }}">{{ heading_node.text }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock sidebar %}

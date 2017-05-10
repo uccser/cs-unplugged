@@ -1,5 +1,6 @@
 @import "bootstrap/bootstrap";
 @import "pygments-monokai";
+@import "sticky-state";
 @import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
 
 img {
@@ -120,10 +121,6 @@ $rounded-corner-radius: 0.5rem;
   @include card-link-variant($purple);
 }
 
-body {
-  padding-top: 4.5rem;
-}
-
 .navbar {
   background-color: $white;
   border-bottom: 2px $red solid;
@@ -236,4 +233,18 @@ details {
   &red {
     background-color: $red;
   }
+}
+
+$body-space-from-top: 72px;
+
+body {
+  padding-top: $body-space-from-top;
+  position: relative;
+}
+
+#sticky-sidebar {
+  top: $body-space-from-top;
+}
+.sticky-top {
+  z-index: 1020;
 }
