@@ -162,12 +162,12 @@ footer {
 }
 
 .glossary-term {
-  border-bottom: 1px black dotted;
+  border-bottom: 1px $gray dotted;
   cursor: help;
 }
 
 .boxed-text {
-  border: 1px solid $gray;
+  border: 2px dashed $gray-light;
   border-radius: $border-radius;
   margin-bottom: $spacer-y;
 
@@ -185,13 +185,15 @@ details {
   overflow: hidden;
 
   summary {
-    background-color: $gray-lightest;
+    padding-left: 1em;
+    background-color: $gray-lighter;
+    color: $gray-dark;
     cursor: pointer;
     font-size: 1.1em;
     padding: ($spacer-y * .25) ($spacer-x * .25);
   }
   summary:hover {
-    background-color: $gray-lighter;
+    background-color: darken($gray-lighter, 10%);
   }
 }
 
