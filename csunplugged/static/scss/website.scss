@@ -185,12 +185,11 @@ details {
   overflow: hidden;
 
   summary {
-    padding-left: 1em;
     background-color: $gray-lighter;
     color: $gray-dark;
     cursor: pointer;
     font-size: 1.1em;
-    padding: ($spacer-y * .25) ($spacer-x * .25);
+    padding: ($spacer-y * .25) ($spacer-x * .25) ($spacer-y * .25) $spacer-x;
   }
   summary:hover {
     background-color: darken($gray-lighter, 10%);
