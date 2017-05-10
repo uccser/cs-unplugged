@@ -54,6 +54,7 @@ class TopicView(generic.DetailView):
         context["unit_plans"] = unit_plans
         # Add in a QuerySet of all the connected curriculum integrations
         context["curriculum_integrations"] = CurriculumIntegration.objects.filter(topic=self.object).order_by("number")
+        context["programming_exercises"] = ProgrammingExercise.objects.filter(topic=self.object).order_by("exercise_set_number", "exercise_number")
         return context
 
 
