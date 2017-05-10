@@ -34,11 +34,41 @@
 
           {% if topic.integrations.all %}
             <li>Curriculum integrations:</li>
-            <ul>
-              {% for integration in topic.integrations %}
-                <li><a href="{% url 'topics:integration' topic.slug integration.slug %}">{{ integration }}</a></li>
-              {% endfor %}
-            </ul>
+            <table class="table table-responsive table-center-vertical">
+              <thead class="thead-default">
+                <tr>
+                  <th>Activity</th>
+                  <th>Curriculum Areas</th>
+                  <th>Prerequisite Lessons?</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for curriculum_integration in topic.integrations %}
+                <tr class="align-middle">
+                  <td>
+                    <a href="{% url 'topics:integration' curriculum_integration.topic.slug curriculum_integration.slug %}">
+                      <strong>
+                        {{ curriculum_integration.name }}
+                      </strong>
+                    </a>
+                  </td>
+                  <td>
+                    {% for area in curriculum_integration.curriculum_areas.all %}
+                      {% include "topics/curriculum_area_badge.html" %}
+                    {% endfor %}
+                  </td>
+                  {% if curriculum_integration.has_prerequisite_lessons %}
+                    <td class="text-center table-success-cell">
+                      Yes
+                  {% else %}
+                    <td class="text-center">
+                      No
+                  {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
           {% endif  %}
 
           {% if topic.programming_exercises.all %}
