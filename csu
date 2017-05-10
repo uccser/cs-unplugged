@@ -39,6 +39,7 @@ function helpmenu {
   migrate_help
   shell_help
   static_help
+  static_prod_help
   style_help
   test_suite_help
   test_suite_backwards_help
@@ -135,6 +136,15 @@ function static {
 }
 function static_help {
   printf "   static            Build static files.\n"
+}
+
+# Build production static files
+function static_prod {
+  printf "Building production static files...\n"
+  docker-compose run --rm nginx gulp build --production
+}
+function static_prod_help {
+  printf "   static_prod       Build production static files.\n"
 }
 
 # Build scratch static files
@@ -277,6 +287,12 @@ function process_dev_command() {
         ;;
       static)
         static
+        static_scratch
+        collect_static
+        exit
+        ;;
+      static_prod)
+        static_prod
         static_scratch
         collect_static
         exit
