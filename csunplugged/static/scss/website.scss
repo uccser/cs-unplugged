@@ -253,3 +253,8 @@ body {
 .sticky-top {
   z-index: 1020;
 }
+
+.table.table-center-vertical th,
+.table.table-center-vertical td {
+    vertical-align: middle;
+}
