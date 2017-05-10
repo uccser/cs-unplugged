@@ -1,18 +1,20 @@
 {% extends "general/about.html" %}
+
 {% load i18n %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block breadcrumbs %}
-  {{ block.super }}
+  {% breadcrumb "Home" "/" %}
+  {% breadcrumb "About" "general:about" %}
   {% breadcrumb "Principles" "general:principles" %}
 {% endblock breadcrumbs %}
 
 
 {% block page_heading %}
-  <h1>{% trans 'Principles' %}</h1>
+  <h1>{% trans "Principles" %}</h1>
 {% endblock page_heading %}
 
-{% block content %}
+{% block left_column_content %}
   <p>
     The primary goal of the Unplugged project is to promote Computer Science (and computing in general) to young people as an interesting, engaging, and intellectually stimulating discipline.
     We want to capture people’s imagination and address common misconceptions about what it means to be a computer scientist.
@@ -122,5 +124,4 @@
     The activities are resilient to errors made by students; they should not depend on getting many difficult steps exactly right, and minor mistakes should not prevent participants from understanding the principles.
     The instructions are usually just one or two rules and a goal that can be expressed in a single sentence (e.g. “Each card is either fully visible or not; how can you display exactly 11 dots?”, or “We need to get from any house to any other house; what is the smallest number of paving stones that make this possible”).
   </p>
-
-{% endblock %}
+{% endblock left_column_content %}
