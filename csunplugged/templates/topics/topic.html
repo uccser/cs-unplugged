@@ -57,20 +57,41 @@
 
   <h2 class="heading-underline">Curriculum Integrations</h2>
   {% if curriculum_integrations %}
-    {% for integration in curriculum_integrations %}
-      <ul class="list-unstyled">
-        <li>
-          <p>
-            <a href="{% url 'topics:integration' topic.slug integration.slug %}">
-              <strong>{{ integration.name }}</strong>
+    <table class="table table-responsive table-center-vertical">
+      <thead class="thead-default">
+        <tr>
+          <th>Activity</th>
+          <th>Curriculum Areas</th>
+          <th>Prerequisite Lessons?</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for curriculum_integration in curriculum_integrations %}
+        <tr class="align-middle">
+          <td>
+            <a href="{% url 'topics:integration' curriculum_integration.topic.slug curriculum_integration.slug %}">
+              <strong>
+                {{ curriculum_integration.name }}
+              </strong>
             </a>
-            {% for area in integration.curriculum_areas.all %}
+          </td>
+          <td>
+            {% for area in curriculum_integration.curriculum_areas.all %}
               {% include "topics/curriculum_area_badge.html" %}
             {% endfor %}
-          </p>
-        </li>
-      </ul>
-    {% endfor %}
+          </td>
+          {% if curriculum_integration.has_prerequisite_lessons %}
+            <td class="text-center table-success-cell">
+              Yes
+          {% else %}
+            <td class="text-center">
+              No
+          {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   {% else %}
     <p>No curriculum integrations for {{ topic }}.</p>
   {% endif %}
