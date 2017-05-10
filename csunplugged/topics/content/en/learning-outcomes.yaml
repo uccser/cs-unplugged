@@ -1,0 +1,14 @@
+no-physical-zeros-ones:
+  text: Justify why there aren’t actual 0’s and 1’s zooming around inside a computer.
+  curriculum-areas:
+    - computational-thinking
+
+binary-correct-representation:
+  text: Argue that 0’s and 1’s are still a correct way to represent what is stored in the computer.
+  curriculum-areas:
+    - computational-thinking
+
+maths-comparing-numbers:
+  text: Compare numbers
+  curriculum-areas:
+    - numeracy

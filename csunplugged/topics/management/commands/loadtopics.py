@@ -37,19 +37,19 @@ class Command(BaseCommand):
 
         structure_file = base_loader.load_yaml_file(structure_file_path)
 
-        if "learning-outcomes" in structure_file:
-            learning_outcomes_structure_file_path = structure_file["learning-outcomes"]
-            if learning_outcomes_structure_file_path is not None:
-                LearningOutcomesLoader(
-                    learning_outcomes_structure_file_path,
-                    BASE_PATH
-                ).load()
-
         if "curriculum-areas" in structure_file:
             curriculum_areas_structure_file_path = structure_file["curriculum-areas"]
             if curriculum_areas_structure_file_path is not None:
                 CurriculumAreasLoader(
                     curriculum_areas_structure_file_path,
+                    BASE_PATH
+                ).load()
+
+        if "learning-outcomes" in structure_file:
+            learning_outcomes_structure_file_path = structure_file["learning-outcomes"]
+            if learning_outcomes_structure_file_path is not None:
+                LearningOutcomesLoader(
+                    learning_outcomes_structure_file_path,
                     BASE_PATH
                 ).load()
 
