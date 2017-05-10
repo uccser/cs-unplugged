@@ -36,21 +36,10 @@
   {% endif %}
 
   {% render_html_field lesson.content %}
-
-  <h2 class="heading-underline">Plugged In <span class="subtitle">(programming challenges)</span></h2>
-  {% if programming_exercises %}
-    <p>
-      <a href="{% url 'topics:programming_exercises_list' topic.slug unit_plan.slug lesson.slug %}" class="btn btn-outline-danger">
-        Programming challenges for {{ lesson.name }}
-      </a>
-    </p>
-  {% else %}
-    <p>No programming challenges for {{ lesson.name }}.</p>
-  {% endif %}
 {% endblock left_column_content %}
 
 {% block right_column_content %}
-  <h2 class="heading-underline">CS Unplugged Resources</h2>
+  <h2 class="heading-underline">CS Unplugged resources</h2>
   {% if lesson_generated_resources %}
     <div class="list-group">
       {% for generated_resource in lesson_generated_resources %}
@@ -67,8 +56,19 @@
     <p>No CS Unplugged resources required.</p>
   {% endif %}
 
+  <h2 class="heading-underline">Programming challenges</h2>
+  {% if programming_exercises %}
+    <p>
+      <a href="{% url 'topics:programming_exercises_list' topic.slug unit_plan.slug lesson.slug %}">
+        View related programming challenges.
+      </a>
+    </p>
+  {% else %}
+    <p>No programming challenges for {{ lesson.name }}.</p>
+  {% endif %}
+
   <div id="sticky-sidebar" class="sticky">
-    <h2 class="heading-underline mt-2">Table of Contents</h2>
+    <h2 class="heading-underline mt-2">Table of contents</h2>
     <ul class="nav nav-pills flex-column" id="scrollspy-table-of-contents">
       <li class="nav-item">
         <a class="nav-link" href="#content-container">{{ lesson.name }}</a>
