@@ -258,3 +258,6 @@ body {
 .table.table-center-vertical td {
     vertical-align: middle;
 }
+.table-success-cell {
+  background-color: lighten($green, 40%);
+}
