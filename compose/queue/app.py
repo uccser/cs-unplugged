@@ -1,6 +1,7 @@
-import os, logging, json
-from flask import Flask, make_response, request
-
+import os
+import logging
+import json
+from flask import Flask
 from api_data.taskqueue_v1beta2 import taskqueue_v1beta2_api
 
 
@@ -11,14 +12,16 @@ PORT = int(os.getenv("PORT", 5000))
 app = Flask(__name__)
 app.register_blueprint(taskqueue_v1beta2_api, url_prefix="/taskqueue/v1beta2/projects")
 
+
 @app.route("/")
 def index():
     return "CS-Unplugged - Fake Google TaskQueue"
 
+
 @app.route("/api/<api>/<version>")
 def api(api=None, version=None):
     content = None
-    filepath = os.path.join("api_data","{0}_{1}.api".format(api, version))
+    filepath = os.path.join("api_data", "{0}_{1}.api".format(api, version))
     if not os.path.exists(filepath):
         message = "API does not exist for {} version {}.".format(api, version)
         logging.exception(message)
@@ -36,6 +39,7 @@ def api(api=None, version=None):
         content = json.dumps(api_json)
     return content
 
+
 @app.errorhandler(500)
 def server_error(e):
     logging.exception("An error occurred during a request.")
@@ -43,6 +47,7 @@ def server_error(e):
     An internal error occurred: <pre>{}</pre>
     See logs for full stacktrace.
     """.format(e), 500
+
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=PORT)
