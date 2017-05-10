@@ -7,6 +7,19 @@ Deployment
   Computer Science Education Research Group, as deployment requires access
   to secret passwords and values.
 
+Requirements
+==============================================================================
+
+The project is designed to run on the following systems:
+
+- Google App Engine: Flexible Enviroment.
+- Google Cloud SQL: Postgres Database.
+
+  - Several Django models require Postgres specific data types, so the
+    system will not function on a different database type (for example: MySQL).
+
+- Static files server.
+
 .. warning::
 
   The deployment steps for this project are still in development.
