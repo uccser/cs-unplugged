@@ -88,11 +88,11 @@
   {% if curriculum_areas %}
     <h1>Curriculum Areas</h1>
     <ul>
-      {% for parent,children in curriculum_areas.items %}
-        <li>{{ parent.name }}</li>
+      {% for area,children in curriculum_areas.items %}
+        <li>{% include "topics/curriculum_area_badge.html" %}</li>
         <ul>
-        {% for child in children %}
-          <li>{{ child.name }}</li>
+        {% for area in children %}
+          <li>{% include "topics/curriculum_area_badge.html" %}</li>
         {% endfor %}
         </ul>
       {% endfor %}
