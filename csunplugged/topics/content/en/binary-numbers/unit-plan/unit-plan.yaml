@@ -25,6 +25,9 @@ how-binary-digits-work:
   learning-outcomes:
     - binary-correct-representation
     - no-physical-zeros-ones
+  generated-resources:
+    sorting-network:
+      description: One per student.
 
 reinforcing-sequencing-in-binary-number-systems:
   min-age: 8
