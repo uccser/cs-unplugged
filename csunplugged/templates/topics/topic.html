@@ -10,7 +10,7 @@
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-  <h1>{{ topic.name }}</h1>
+  <h1 class="heading-underline">{{ topic.name }}</h1>
 {% endblock page_heading %}
 
 {% block left_column_content %}
@@ -55,7 +55,7 @@
     </div>
   {% endfor %}
 
-  <h2>Curriculum Integrations</h2>
+  <h2 class="heading-underline">Curriculum Integrations</h2>
   {% if curriculum_integrations %}
     {% for integration in curriculum_integrations %}
       <ul class="list-unstyled">
@@ -75,7 +75,7 @@
     <p>No curriculum integrations for {{ topic }}.</p>
   {% endif %}
 
-  <h2>Programming Challenges</h2>
+  <h2 class="heading-underline">Programming Challenges</h2>
   {% if programming_exercises %}
     <ul>
       {% for programming_exercise in programming_exercises %}
@@ -93,7 +93,7 @@
   {% endif %}
 
   {% if topic.other_resources %}
-    <h2>Looking for more?</h2>
+    <h2 class="heading-underline">Looking for more?</h2>
     <p>
       <a href="{% url 'topics:other_resources' topic.slug %}">
         Click here for other resources

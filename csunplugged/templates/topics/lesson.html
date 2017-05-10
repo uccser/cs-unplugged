@@ -13,12 +13,12 @@
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-  <h1><span class="subtitle">{{ lesson.number }}.</span> {{ lesson.name }}</h1>
+  <h1 class="heading-underline"><span class="subtitle">{{ lesson.number }}.</span> {{ lesson.name }}</h1>
   <p><strong>Duration: </strong>{{ lesson.duration }} minutes</p>
 {% endblock page_heading %}
 
 {% block left_column_content %}
-  <h2>Learning Outcomes</h2>
+  <h2 class="heading-underline">Learning Outcomes</h2>
   {% if lesson_learning_outcomes %}
     <p>Students will be able to:</p>
     <ul>
@@ -37,7 +37,7 @@
 
   {% render_html_field lesson.content %}
 
-  <h2>Plugged In <span class="subtitle">(programming challenges)</span></h2>
+  <h2 class="heading-underline">Plugged In <span class="subtitle">(programming challenges)</span></h2>
   {% if programming_exercises %}
     <p>
       <a href="{% url 'topics:programming_exercises_list' topic.slug unit_plan.slug lesson.slug %}" class="btn btn-outline-danger">
@@ -50,7 +50,7 @@
 {% endblock left_column_content %}
 
 {% block right_column_content %}
-  <h2>CS Unplugged Resources</h2>
+  <h2 class="heading-underline">CS Unplugged Resources</h2>
   {% if lesson_generated_resources %}
     <div class="list-group">
       {% for generated_resource in lesson_generated_resources %}
@@ -68,7 +68,7 @@
   {% endif %}
 
   <div id="sticky-sidebar" class="sticky">
-    <h2>Table of Contents</h2>
+    <h2 class="heading-underline">Table of Contents</h2>
     <ul class="nav nav-pills flex-column" id="scrollspy-table-of-contents">
       <li class="nav-item">
         <a class="nav-link" href="#content-container">{{ lesson.name }}</a>
