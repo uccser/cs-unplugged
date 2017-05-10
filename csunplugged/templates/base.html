@@ -170,6 +170,7 @@
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/website.js' %}"></script>
     <script src="{% static 'js/details-element-polyfill.js' %}"></script>
-    <script src="{% static 'js/sticky-state.min.js' %}"></script>
+    {% block scripts %}
+    {% endblock scripts %}
   </body>
 </html>
