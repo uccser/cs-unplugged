@@ -13,27 +13,26 @@
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-  <h1>{{ lesson.name }}</h1>
+  <h1><span class="subtitle">{{ lesson.number }}.</span> {{ lesson.name }}</h1>
   <p><strong>Duration: </strong>{{ lesson.duration }} minutes</p>
 {% endblock page_heading %}
 
 {% block left_column_content %}
-  <h2>CS Unplugged Resources</h2>
-  {% if lesson_generated_resources %}
+  <h2>Learning Outcomes</h2>
+  {% if lesson_learning_outcomes %}
+    <p>Students will be able to:</p>
     <ul>
-      {% for generated_resource in lesson_generated_resources %}
+      {% for learning_outcome in lesson_learning_outcomes %}
         <li>
-          <a href="{% url 'resources:resource' generated_resource.slug %}">
-            {% load static %}
-            <img class="img-thumbnail resource-thumbnail" src="{% static generated_resource.thumbnail %}">
-            <p><strong>{{ generated_resource.name }}</strong></p>
-          </a>
-          <p>{{ generated_resource.description }}</p>
+          {{ learning_outcome.text }}
+        {% for area in learning_outcome.curriculum_areas.all %}
+          {% include "topics/curriculum_area_badge.html" %}
+        {% endfor %}
         </li>
       {% endfor %}
     </ul>
   {% else %}
-    <p>No CS Unplugged resources required.</p>
+    <p>No learning outcomes listed for {{ lesson.name }}.</p>
   {% endif %}
 
   {% render_html_field lesson.content %}
@@ -48,25 +47,26 @@
   {% else %}
     <p>No programming challenges for {{ lesson.name }}.</p>
   {% endif %}
-
-  <h2>Learning Outcomes</h2>
-  {% if lesson_learning_outcomes %}
-    <ul>
-      {% for learning_outcome in lesson_learning_outcomes %}
-        <li>
-          {{ learning_outcome.text }}
-        {% for area in learning_outcome.curriculum_areas.all %}
-          {% include "topics/curriculum_area_badge.html" %}
-        {% endfor %}
-        </li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p>No learning outcomes listed for {{ lesson.name }}.</p>
-  {% endif %}
 {% endblock left_column_content %}
 
 {% block right_column_content %}
+  <h2>CS Unplugged Resources</h2>
+  {% if lesson_generated_resources %}
+    <div class="list-group">
+      {% for generated_resource in lesson_generated_resources %}
+        <a href="{% url 'resources:resource' generated_resource.slug %}" class="list-group-item list-group-item-action d-flex flex-row flex-nowrap py-1">
+          <img class="d-flex mr-3" src="{% static generated_resource.thumbnail %}" alt="Generic placeholder image" style="max-width: 5rem;">
+          <div>
+            <strong>{{ generated_resource.name }}</strong>
+            <p>{{ generated_resource.description }}</p>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No CS Unplugged resources required.</p>
+  {% endif %}
+
   <div id="sticky-sidebar" class="sticky">
     <h2>Table of Contents</h2>
     <ul class="nav nav-pills flex-column" id="scrollspy-table-of-contents">
