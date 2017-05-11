@@ -13,7 +13,7 @@ gcloud auth activate-service-account --key-file continuous-deployment-develop-cr
 
 # Install requirements for updating database (minimises downtime later)
 wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64
-cloud_sql_proxy.linux.amd64 cloud_sql_proxy
+mv cloud_sql_proxy.linux.amd64 cloud_sql_proxy
 chmod +x cloud_sql_proxy
 ./cloud_sql_proxy -instances="$GOOGLE_CLOUD_SQL_CONNECTION_NAME"=tcp:5432 -credential_file="./../continuous-deployment-develop-credentials.json" &
 exit
