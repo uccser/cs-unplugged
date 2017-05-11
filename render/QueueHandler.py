@@ -11,7 +11,7 @@ def authorize_session():
     Returns:
         Something in future!
     """
-    pass # TODO
+    pass  # TODO
 
 
 def encode_dictionary(dictionary):

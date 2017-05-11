@@ -126,6 +126,7 @@ class Stats(object):
 
     The methods for creation from json with error check and automatic
     property building on creation.
+
     TODO: We currently do not update our stats objects.
     """
 
@@ -251,9 +252,10 @@ class TaskQueue(object):
 
     With methods for creation from json with error check and automatic
     property building on creation.
+
+    TODO: Current implementation does not make use of stats and maxLeases etc.
     """
 
-    #TODO: Current implementation does not make use of stats and maxLeases etc.
     def __init__(self, id=None, kind="taskqueues#taskqueue", maxLeases=None, stats=None, acl=None):
         """Create a new TaskQueue object.
 

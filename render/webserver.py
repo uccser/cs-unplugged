@@ -112,7 +112,7 @@ def server_error(e):
 @application.route("/_ah/health")
 def health_check():
     """Perform a health check.
-    
+
     This method is to ensure the api and associated processes are
     working correctly.
     """
