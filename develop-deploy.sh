@@ -28,7 +28,7 @@ sudo /venv/bin/pip3 install -r /requirements/production.txt
 gsutil rsync -R ./csunplugged/staticfiles/ gs://cs-unplugged-develop/static/
 
 # Publish app engine
-gcloud app deploy ./app-develop.yaml --quiet
+gcloud app deploy ./app-develop.yaml --quiet --project=cs-unplugged-develop --verbosity=debug --log-http
 
 # Update database
 cd csunplugged
