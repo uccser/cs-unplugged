@@ -1,7 +1,7 @@
 import os
 import logging
-from flask import Flask, make_response
-from QueueHandler import QueueHandler
+import json
+from flask import Flask
 
 from apiclient.discovery import build, HttpError
 from base64 import b64encode
@@ -10,29 +10,44 @@ DEBUG = not int(os.getenv("FLASK_PRODUCTION", 1))
 PORT = int(os.getenv("PORT", 8080))
 DISCOVERY_URL = os.getenv("API_DISCOVERY_URL", None)
 
-app = Flask(__name__)
-
+application = Flask(__name__)
 task_api = None
-if DISCOVERY_URL is not None:
-    task_api = build("taskqueue", "v1beta2", discoveryServiceUrl=DISCOVERY_URL)
-else:
-    task_api = build("taskqueue", "v1beta2")
 
 
-@app.route('/')
+def load_api():
+    """TEST METHOD, NOT INVITED TO FUTURE ENDEAVOURS.
+    """
+    global task_api
+    if task_api is None:
+        if DISCOVERY_URL is not None:
+            task_api = build("taskqueue", "v1beta2", discoveryServiceUrl=DISCOVERY_URL)
+        else:
+            task_api = build("taskqueue", "v1beta2")
+    return task_api
+
+
+@application.route("/")
 def index():
     return "CS-Unplugged - Render Engine"
 
 
-@app.route("/add/<item>")
-def add(item=None):
-    """Test method for validating communcation.
+@application.route("/get/<file>")
+def get(file=None):
+    """Retrieves a file after generation.
 
     Args:
-        item: A string to add to the queue to retrieve later.
+        file: An identier associated with the file.
     Returns:
-        The string "Added" if the creation was a success.
+        The file with 200 status or a 204 if not found.
     """
+    pass  # TODO
+
+
+@application.route("/add/<item>")
+def add(item=None):
+    """TEST METHOD, NOT INVITED TO FUTURE ENDEAVOURS.
+    """
+    task_api = load_api()
     try:
         encoded_string = b64encode(item.encode("ascii")).decode()
         task = {
@@ -46,36 +61,46 @@ def add(item=None):
           body=task
         )
         result = insert_request.execute()
-        return "Added", 200
+        return json.dumps(result), 200
     except HttpError as http_error:
         return "Error", 500
 
-@app.route("/list")
+
+@application.route("/list")
 def list():
+    """TEST METHOD, NOT INVITED TO FUTURE ENDEAVOURS.
+    """
+    task_api = load_api()
     try:
-        lease_request = task_api.tasks().list(
+        list_request = task_api.tasks().list(
           project="b~cs-unplugged-develop",
           taskqueue="render-queue"
         )
-        result = insert_request.execute()
-        return result, 200
+        result = list_request.execute()
+        return json.dumps(result), 200
     except HttpError as http_error:
         return "Error", 500
 
-@app.route("/lease")
+
+@application.route("/lease")
 def lease():
+    """TEST METHOD, NOT INVITED TO FUTURE ENDEAVOURS.
+    """
+    task_api = load_api()
     try:
         lease_request = task_api.tasks().lease(
           project="b~cs-unplugged-develop",
           taskqueue="render-queue",
-
+          numTasks=1,
+          leaseSecs=3600
         )
-        result = insert_request.execute()
-        return result, 200
+        result = lease_request.execute()
+        return json.dumps(result), 200
     except HttpError as http_error:
         return "Error", 500
 
-@app.errorhandler(500)
+
+@application.errorhandler(500)
 def server_error(e):
     """Logs and reports back information about internal errors.
     """
@@ -86,7 +111,7 @@ def server_error(e):
     """.format(e), 500
 
 
-@app.route("/_ah/health")
+@application.route("/_ah/health")
 def health_check():
     """Performs a health check to ensure the api and associated
     processes are working correctly."""
@@ -94,4 +119,4 @@ def health_check():
 
 
 if __name__ == "__main__":
-    app.run(debug=DEBUG, host="0.0.0.0", port=PORT)
+    application.run(debug=DEBUG, host="0.0.0.0", port=PORT)

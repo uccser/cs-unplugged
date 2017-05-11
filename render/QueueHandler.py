@@ -1,19 +1,24 @@
+import json
+import logging
 from apiclient.discovery import build, HttpError
 from base64 import b64encode, b64decode
-import json
+
 
 def authorize_session():
     pass
+
 
 def encode_dictionary(dictionary):
     string = json.dumps(dictionary)
     encoded_string = b64encode(string.encode('ascii')).decode()
     return encoded_string
 
+
 def decode_dictionary(encoded_string):
-    string = b64decode(task[encoded_string]).decode()
+    string = b64decode(encoded_string).decode()
     dictionary = json.loads(string)
     return dictionary
+
 
 class QueueHandler(object):
 
@@ -40,7 +45,7 @@ class QueueHandler(object):
             result = insert_request.execute()
             return result['id']
         except HttpError as http_error:
-            #logger.error('Error during insert request: {}'.format(http_error))
+            logging.error('Error during insert request: {}'.format(http_error))
             return None
 
     def lease_tasks(self, tasks_to_fetch, lease_secs):
@@ -62,13 +67,13 @@ class QueueHandler(object):
                 tasks.append(task)
             return tasks
         except HttpError as http_error:
-            #logger.error('Error during lease request: {}'.format(http_error))
+            logging.error('Error during lease request: {}'.format(http_error))
             return None
 
     def delete_tasks(self, task_ids):
         for task_id in task_ids:
             try:
-                delete_request = task_api.tasks().delete(
+                delete_request = self.task_api.tasks().delete(
                     project=self.project_name,
                     taskqueue=self.taskqueue,
                     task=task_id
@@ -76,5 +81,5 @@ class QueueHandler(object):
                 result = delete_request.execute()
                 return result.body == ''
             except HttpError as http_error:
-                #logger.error('Error during delete request: {}'.format(http_error))
+                logging.error('Error during delete request: {}'.format(http_error))
                 return False

@@ -441,7 +441,11 @@ def lease_api(project=None, taskqueue=None):
                     continue
 
                 task.leaseTimestamp = now_milliseconds + int(leaseSecs) * 10**6
-                tasks.append(task.to_json())
+                task_json = task.to_json()
+                tasks.append(task_json)
+
+                task_string = json.dumps(task_json)
+                r.set(name=key, value=task_string)
 
             start = end + 1
 

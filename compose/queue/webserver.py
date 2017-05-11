@@ -9,18 +9,18 @@ from api_data.taskqueue_v1beta2 import taskqueue_v1beta2_api
 
 ADDRESS = os.getenv("ADDRESS", "queue")
 PORT = int(os.getenv("PORT", 5000))
-app = Flask(__name__)
-app.register_blueprint(taskqueue_v1beta2_api, url_prefix="/taskqueue/v1beta2/projects")
+application = Flask(__name__)
+application.register_blueprint(taskqueue_v1beta2_api, url_prefix="/taskqueue/v1beta2/projects")
 
 
-@app.route("/")
+@application.route("/")
 def index():
     """ Returns an index page describing the service.
     """
     return "CS-Unplugged - Fake Google TaskQueue"
 
 
-@app.route("/api/<api>/<version>")
+@application.route("/api/<api>/<version>")
 def api(api=None, version=None):
     """ Returns an API description that is stored in data. This will
     be a modified copy (usually to remove authorization requirements)
@@ -46,7 +46,7 @@ def api(api=None, version=None):
     return content
 
 
-@app.errorhandler(500)
+@application.errorhandler(500)
 def server_error(e):
     """Logs and reports back information about internal errors.
     """
@@ -58,4 +58,4 @@ def server_error(e):
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=PORT)
+    application.run(debug=True, host="0.0.0.0", port=PORT)
