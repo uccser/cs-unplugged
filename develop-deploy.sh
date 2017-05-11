@@ -12,6 +12,7 @@ tar -xzf credentials.tar.gz
 gcloud auth activate-service-account --key-file continuous-deployment-develop-credentials.json
 sudo gcloud components update
 gcloud version
+ssh-keygen -q -N "" -f ~/.ssh/google_compute_engine
 
 # Install requirements for updating database (minimises downtime later)
 wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64
