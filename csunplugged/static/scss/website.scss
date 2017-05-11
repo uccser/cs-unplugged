@@ -3,6 +3,8 @@
 @import "sticky-state";
 @import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
 
+$body-space-from-top: 72px;
+
 img {
   &.plugged-in-language-icon {
     height: 3em;
@@ -239,8 +241,6 @@ details {
     background-color: $red;
   }
 }
-
-$body-space-from-top: 72px;
 
 body {
   padding-top: $body-space-from-top;

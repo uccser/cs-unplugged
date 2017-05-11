@@ -60,11 +60,11 @@
   {% if programming_exercises %}
     <p>
       <a href="{% url 'topics:programming_exercises_list' topic.slug unit_plan.slug lesson.slug %}">
-        View related programming challenges.
+        View related programming challenges
       </a>
     </p>
   {% else %}
-    <p>No programming challenges for {{ lesson.name }}.</p>
+    <p>No programming challenges for {{ lesson.name }}</p>
   {% endif %}
 
   <div id="sticky-sidebar" class="sticky">

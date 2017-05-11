@@ -2,6 +2,7 @@
 $(document).ready(function() {
   $("#content-container, #glossary-modal").on("click", ".glossary-term", open_glossary_definition);
   $("body").scrollspy({ target: "#scrollspy-table-of-contents", offset: 100});
+  window.addEventListener("hashchange", function() { scrollBy(0, -72) })
 });
 
 function open_glossary_definition() {
