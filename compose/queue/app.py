@@ -15,11 +15,17 @@ app.register_blueprint(taskqueue_v1beta2_api, url_prefix="/taskqueue/v1beta2/pro
 
 @app.route("/")
 def index():
+    """ Returns an index page describing the service.
+    """
     return "CS-Unplugged - Fake Google TaskQueue"
 
 
 @app.route("/api/<api>/<version>")
 def api(api=None, version=None):
+    """ Returns an API description that is stored in data. This will
+    be a modified copy (usually to remove authorization requirements)
+    of the original from the mimicked source.
+    """
     content = None
     filepath = os.path.join("api_data", "{0}_{1}.api".format(api, version))
     if not os.path.exists(filepath):
@@ -42,6 +48,8 @@ def api(api=None, version=None):
 
 @app.errorhandler(500)
 def server_error(e):
+    """Logs and reports back information about internal errors.
+    """
     logging.exception("An error occurred during a request.")
     return """
     An internal error occurred: <pre>{}</pre>

@@ -12,6 +12,12 @@ DISCOVERY_URL = os.getenv("API_DISCOVERY_URL", None)
 
 app = Flask(__name__)
 
+task_api = None
+if DISCOVERY_URL is not None:
+    task_api = build("taskqueue", "v1beta2", discoveryServiceUrl=DISCOVERY_URL)
+else:
+    task_api = build("taskqueue", "v1beta2")
+
 
 @app.route('/')
 def index():
@@ -20,13 +26,14 @@ def index():
 
 @app.route("/add/<item>")
 def add(item=None):
-    # TODO: Event
+    """Test method for validating communcation.
+
+    Args:
+        item: A string to add to the queue to retrieve later.
+    Returns:
+        The string "Added" if the creation was a success.
+    """
     try:
-        task_api = None
-        if DISCOVERY_URL is not None:
-            task_api = build("taskqueue", "v1beta2", discoveryServiceUrl=DISCOVERY_URL)
-        else:
-            task_api = build("taskqueue", "v1beta2")
         encoded_string = b64encode(item.encode("ascii")).decode()
         task = {
           "kind": "taskqueues#task",
@@ -43,10 +50,36 @@ def add(item=None):
     except HttpError as http_error:
         return "Error", 500
 
+@app.route("/list")
+def list():
+    try:
+        lease_request = task_api.tasks().list(
+          project="b~cs-unplugged-develop",
+          taskqueue="render-queue"
+        )
+        result = insert_request.execute()
+        return result, 200
+    except HttpError as http_error:
+        return "Error", 500
+
+@app.route("/lease")
+def lease():
+    try:
+        lease_request = task_api.tasks().lease(
+          project="b~cs-unplugged-develop",
+          taskqueue="render-queue",
+
+        )
+        result = insert_request.execute()
+        return result, 200
+    except HttpError as http_error:
+        return "Error", 500
 
 @app.errorhandler(500)
 def server_error(e):
-    logging.exception('An error occurred during a request.')
+    """Logs and reports back information about internal errors.
+    """
+    logging.exception("An error occurred during a request.")
     return """
     An internal error occurred: <pre>{}</pre>
     See logs for full stacktrace.
@@ -55,9 +88,9 @@ def server_error(e):
 
 @app.route("/_ah/health")
 def health_check():
-    content = ''
-    response = make_response(content, 200)
-    return response
+    """Performs a health check to ensure the api and associated
+    processes are working correctly."""
+    return "", 200
 
 
 if __name__ == "__main__":
