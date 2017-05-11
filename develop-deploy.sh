@@ -11,6 +11,7 @@ tar -xzf credentials.tar.gz
 # Here we use the decrypted service account credentials to authenticate the command line tool
 gcloud auth activate-service-account --key-file continuous-deployment-develop-credentials.json
 sudo gcloud components update
+gcloud version
 
 # Install requirements for updating database (minimises downtime later)
 wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64
