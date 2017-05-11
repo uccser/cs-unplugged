@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function postgres_ready(){
-python << END
+/docker_venv/bin/python << END
 import sys
 import psycopg2
 try:

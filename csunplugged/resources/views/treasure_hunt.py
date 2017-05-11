@@ -14,19 +14,19 @@ def resource_image(get_request, resource):
     Returns:
         A Pillow image object.
     """
-    image_path = 'static/img/resources/resource-treasure-hunt.png'
-    font_path = 'static/fonts/PatrickHand-Regular.ttf'
+    image_path = "static/img/resources/resource-treasure-hunt.png"
+    font_path = "static/fonts/PatrickHand-Regular.ttf"
     image = Image.open(image_path)
     draw = ImageDraw.Draw(image)
 
     # Add numbers to image if required
-    if get_request['prefilled_values'] != 'blank':
+    if get_request["prefilled_values"] != "blank":
         (range_min, range_max, font_size) = number_range(get_request)
         font = ImageFont.truetype(font_path, font_size)
 
         total_numbers = 26
         numbers = sample(range(range_min, range_max), total_numbers)
-        if get_request['number_order'] == 'sorted':
+        if get_request["number_order"] == "sorted":
             numbers.sort()
 
         starting_coord_y = 494
@@ -46,7 +46,7 @@ def resource_image(get_request, resource):
                 (coord_x, coord_y),
                 text,
                 font=font,
-                fill='#000'
+                fill="#000"
             )
 
         # Add number order and range text
@@ -59,7 +59,7 @@ def resource_image(get_request, resource):
             (coord_x, coord_y),
             text,
             font=font,
-            fill='#000'
+            fill="#000"
         )
 
     return image
@@ -78,11 +78,11 @@ def subtitle(get_request, resource):
     Returns:
         text for subtitle (string)
     """
-    if get_request['prefilled_values'] == 'blank':
-        text = 'blank'
+    if get_request["prefilled_values"] == "blank":
+        text = "blank"
     else:
-        SUBTITLE_TEMPLATE = '{} - {} to {}'
-        number_order_text = get_request['number_order'].title()
+        SUBTITLE_TEMPLATE = "{} - {} to {}"
+        number_order_text = get_request["number_order"].title()
         range_min, range_max, font_size = number_range(get_request)
         text = SUBTITLE_TEMPLATE.format(number_order_text, range_min, range_max - 1)
     return text
@@ -97,15 +97,15 @@ def number_range(get_request):
     Returns:
         Tuple of (range_min, range_max, font_size)
     """
-    prefilled_values = get_request['prefilled_values']
+    prefilled_values = get_request["prefilled_values"]
     range_min = 0
-    if prefilled_values == 'easy':
+    if prefilled_values == "easy":
         range_max = 100
         font_size = 97
-    elif prefilled_values == 'medium':
+    elif prefilled_values == "medium":
         range_max = 1000
         font_size = 80
-    elif prefilled_values == 'hard':
+    elif prefilled_values == "hard":
         range_max = 10000
         font_size = 70
     return (range_min, range_max, font_size)

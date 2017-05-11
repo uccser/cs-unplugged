@@ -25,10 +25,14 @@ before_script:
   - ./csu start
 
 script:
-  - ./csu test
-  - ./csu test_backwards
-  - ./csu style
-  - ./csu docs
+  - ./csu dev test
+  - ./csu dev test_backwards
+  - ./csu dev test_coverage
+  - ./csu dev style
+  - ./csu dev docs
+
+after_script:
+  - bash <(curl -s https://codecov.io/bash)
 
 # Stop email notifications but post to organisation Slack channel
 notifications:

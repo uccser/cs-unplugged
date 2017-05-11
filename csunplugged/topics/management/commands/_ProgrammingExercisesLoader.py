@@ -77,6 +77,17 @@ class ProgrammingExercisesLoader(BaseLoader):
                 self.structure_file_path
             )
 
+            exercise_extra_challenge_file = exercise_structure.get("extra-challenge", None)
+            if exercise_extra_challenge_file:
+                exercise_extra_challenge_content = self.convert_md_file(
+                    file_path.format(exercise_extra_challenge_file[:-3]),
+                    self.structure_file_path,
+                    heading_required=False,
+                )
+                exercise_extra_challenge = exercise_extra_challenge_content.html_string
+            else:
+                exercise_extra_challenge = None
+
             try:
                 difficulty_level = ProgrammingExerciseDifficulty.objects.get(
                     level=exercise_difficulty
@@ -93,9 +104,10 @@ class ProgrammingExercisesLoader(BaseLoader):
                 name=exercise_content.title,
                 exercise_set_number=exercise_set_number,
                 exercise_number=exercise_number,
-                content=exercise_content.html_string
+                content=exercise_content.html_string,
+                extra_challenge=exercise_extra_challenge,
+                difficulty=difficulty_level
             )
-            programming_exercise.difficulty.add(difficulty_level)
             programming_exercise.save()
 
             LOG_TEMPLATE = "Added Programming Exercise: {}"

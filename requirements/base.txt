@@ -5,16 +5,16 @@
 wheel==0.29.0
 
 # Django
-django==1.11
+django==1.11.1
 
 # Configuration
 django-environ==0.4.3
 
 # Images
-Pillow==4.1.0
+Pillow==4.1.1
 
 # Markdown
-verto==0.5.1
+verto==0.5.3
 python-markdown-math==0.3
 
 # Python-PostgreSQL Database Adapter

@@ -11,6 +11,7 @@ from ._LearningOutcomesLoader import LearningOutcomesLoader
 from ._CurriculumAreasLoader import CurriculumAreasLoader
 from ._TopicLoader import TopicLoader
 from ._ProgrammingExercisesStructureLoader import ProgrammingExercisesStructureLoader
+from ._GlossaryTermsLoader import GlossaryTermsLoader
 
 
 class Command(BaseCommand):
@@ -36,14 +37,6 @@ class Command(BaseCommand):
 
         structure_file = base_loader.load_yaml_file(structure_file_path)
 
-        if "learning-outcomes" in structure_file:
-            learning_outcomes_structure_file_path = structure_file["learning-outcomes"]
-            if learning_outcomes_structure_file_path is not None:
-                LearningOutcomesLoader(
-                    learning_outcomes_structure_file_path,
-                    BASE_PATH
-                ).load()
-
         if "curriculum-areas" in structure_file:
             curriculum_areas_structure_file_path = structure_file["curriculum-areas"]
             if curriculum_areas_structure_file_path is not None:
@@ -52,11 +45,28 @@ class Command(BaseCommand):
                     BASE_PATH
                 ).load()
 
+        if "learning-outcomes" in structure_file:
+            learning_outcomes_structure_file_path = structure_file["learning-outcomes"]
+            if learning_outcomes_structure_file_path is not None:
+                LearningOutcomesLoader(
+                    learning_outcomes_structure_file_path,
+                    BASE_PATH
+                ).load()
+
         if "programming-exercises-structure" in structure_file:
             programming_exercises_structure_file_path = structure_file["programming-exercises-structure"]
             if programming_exercises_structure_file_path is not None:
                 ProgrammingExercisesStructureLoader(
                     programming_exercises_structure_file_path,
+                    BASE_PATH
+                ).load()
+
+        if "glossary-folder" in structure_file:
+            glossary_folder_path = structure_file["glossary-folder"]
+            if glossary_folder_path is not None:
+                GlossaryTermsLoader(
+                    glossary_folder_path,
+                    structure_file_path,
                     BASE_PATH
                 ).load()
 

@@ -7,30 +7,37 @@ contains the majority of educational material for the project.
 .. contents:: Contents
   :local:
 
-.. _what-is-a-slug:
+.. _what-is-a-key:
 
-What is a URL Slug?
+What is a Key?
 ==============================================================================
 
-A URL slug is a short label for something, containing only letters, numbers,
+We use the term "key" to specify a field name.
+Keys map to particular values (which range from learning outcome text, to the
+structure and attributes of a lesson).
+
+A key is a short label for something, containing only letters, numbers,
 or hyphens.
-They’re generally used in URLs.
-In our system, a slug must be no longer than 50 characters, and use hyphens
+In our system, a key must be no longer than 50 characters, and use hyphens
 instead of underscores.
 
-These are *valid* example slugs:
+These are *valid* examples of keys:
 
 - ``algorithms``
 - ``binary-numbers``
 - ``exercise-2``
 
-These are *invalid* example slugs:
+These are *invalid* examples of keys:
 
 - ``Algorithms``
 - ``Binary Numbers``
 - ``Binary_Numbers``
 - ``binary_numbers``
 - ``exercise 2``
+
+Keys must be exact matches to work, for example, if you name a lesson
+``bits-and-bytes``, referencing it in another configuration file as
+``bytes-and-bits`` will raise an error.
 
 See also:
 

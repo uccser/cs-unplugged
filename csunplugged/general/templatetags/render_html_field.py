@@ -1,7 +1,13 @@
 """Module for the custom render_html_field template tag."""
 
 from django import template
-from django.template import Template, Variable, TemplateSyntaxError
+from django.template import Template, Variable, Context, TemplateSyntaxError
+
+INVALID_ATTRIBUTE_MESSAGE = "The 'render_html_field' tag was given an " \
+                            "attribute that could not be converted to a string."
+
+MISSING_ATTRIBUTE_MESSAGE = "The 'render_html_field' tag was given an " \
+                            "attribute that does not exist."
 
 
 class RenderHTMLFieldNode(template.Node):
@@ -15,14 +21,15 @@ class RenderHTMLFieldNode(template.Node):
         """Render the text with the static template tag.
 
         Returns:
-            Rendered string of text, or an empty string if the render
-            fails to convert.
+            Rendered string of text, or raise an exception.
         """
         try:
-            actual_item = '{% load static %}\n' + self.item_to_be_rendered.resolve(context)
-            return Template(actual_item).render(context)
+            html = self.item_to_be_rendered.resolve(context)
+            return render_html_with_static(html, context)
+        except TypeError:
+            raise TemplateSyntaxError(INVALID_ATTRIBUTE_MESSAGE)
         except template.VariableDoesNotExist:
-            return ''
+            raise TemplateSyntaxError(MISSING_ATTRIBUTE_MESSAGE)
 
 
 def render_html_field(parser, token):
@@ -37,6 +44,15 @@ def render_html_field(parser, token):
         raise TemplateSyntaxError("'%s' takes only one argument"
                                   " (a variable representing a template to render)" % bits[0])
     return RenderHTMLFieldNode(bits[1])
+
+
+def render_html_with_static(html, context=dict()):
+    """Render the HTML with the static template tag.
+
+    Returns:
+        Rendered string of HTML.
+    """
+    return Template("{% load static %}" + html).render(Context(context))
 
 
 register = template.Library()

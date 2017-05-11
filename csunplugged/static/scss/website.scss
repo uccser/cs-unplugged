@@ -1,5 +1,6 @@
 @import "bootstrap/bootstrap";
 @import "pygments-monokai";
+@import "sticky-state";
 @import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
 
 img {
@@ -8,7 +9,7 @@ img {
   }
 
   &.plugged-in-language-icon {
-    height: 1.5em;
+    height: 3em;
   }
 
   &.image-content {
@@ -120,10 +121,6 @@ $rounded-corner-radius: 0.5rem;
   @include card-link-variant($purple);
 }
 
-body {
-  padding-top: 4.5rem;
-}
-
 .navbar {
   background-color: $white;
   border-bottom: 2px $red solid;
@@ -153,4 +150,101 @@ footer {
   a {
     color: $white;
   }
+}
+
+.glossary-term {
+  border-bottom: 1px black dotted;
+  cursor: help;
+}
+
+.boxed-text {
+  border: 1px solid $gray;
+  border-radius: $border-radius;
+  margin-bottom: $spacer-y;
+
+  .boxed-text-content {
+    margin: ($spacer-y * .5) ($spacer-x * .5);
+  }
+}
+
+.boxed-text-indented {
+  margin-left: 1em;
+}
+
+details {
+  @extend .boxed-text;
+  overflow: hidden;
+
+  summary {
+    background-color: $gray-lightest;
+    cursor: pointer;
+    font-size: 1.1em;
+    padding: ($spacer-y * .25) ($spacer-x * .25);
+  }
+  summary:hover {
+    background-color: $gray-lighter;
+  }
+}
+
+.difficulty-level {
+  color: white;
+}
+.difficulty-level-{
+  &1 {
+    background-color: $blue;
+  }
+  &2 {
+    background-color: $green;
+  }
+  &3 {
+    background-color: $red;
+  }
+}
+
+.embed-responsive {
+   margin: $spacer-y 0;
+}
+
+.badge- {
+  &pink {
+    background-color: $pink;
+  }
+  &green {
+    background-color: $green;
+  }
+  &orange {
+    background-color: $orange;
+  }
+  &teal {
+    background-color: $teal;
+  }
+  &blue {
+    background-color: $blue;
+  }
+  &light-purple {
+    background-color: $light-purple;
+  }
+  &purple {
+    background-color: $purple;
+  }
+  &yellow {
+    background-color: $yellow;
+  }
+  &red {
+    background-color: $red;
+  }
+}
+
+$body-space-from-top: 72px;
+
+body {
+  padding-top: $body-space-from-top;
+  position: relative;
+}
+
+#sticky-sidebar {
+  top: $body-space-from-top;
+}
+.sticky-top {
+  z-index: 1020;
 }
