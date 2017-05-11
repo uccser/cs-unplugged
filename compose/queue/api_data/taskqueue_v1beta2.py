@@ -181,11 +181,30 @@ def tasks_api(project=None, taskqueue=None):
     # Lists all non-deleted Tasks in a TaskQueue, whether or not
     # they are currently leased, up to a maximum of 100.
     if request.method == "GET":
-        keys = r.zrange(name=queue_key, start=0, end=99)  # Upto and including
-        items = [json.loads(r.get(name=key).decode()) for key in keys]
+        start = 0
+        tasks = []
+        numTasks = 100
+        while len(tasks) < numTasks:
+            tasks_needed = numTasks - len(tasks)
+            end = start + tasks_needed
+            keys = r.zrange(name=queue_key, start=start, end=end)
+            if len(keys) == 0:
+                break
+
+            for key in keys:  # Could become parallelizable
+                task_string = r.get(name=key)
+                if task_string is None:
+                    continue
+
+                task_string = task_string.decode()
+                task_json = json.loads(task_string)
+                tasks.append(task_json)
+
+            start = end + 1
+
         return json.dumps({
             "kind": "taskqueues#tasks",
-            "items": list(items)
+            "items": tasks
         })
 
     # Insert a task into an existing queue.
@@ -197,7 +216,7 @@ def tasks_api(project=None, taskqueue=None):
         task_id = task.id
 
         if r.exists(name=task_id):
-            return "Task name is invalid", 400
+            return "Task name is invalid.", 400
 
         p = r.pipeline()
         p.zadd(queue_key, task.enqueueTimestamp, task_id)
@@ -231,24 +250,32 @@ def lease_api(project=None, taskqueue=None):
         groupByTag = request.args.get("groupByTag", False)
         tag = request.args.get("tag", "")
         if not groupByTag and tag != "":
-            return "In query tag specified without groupByTag", 400
+            return "In query tag specified without groupByTag.", 400
 
         start = 0
         tasks = []
         now_milliseconds = now()
+        numTasks = min(int(numTasks), 1000)
         while len(tasks) < numTasks:
-            end = start + numTasks
+            tasks_needed = numTasks - len(tasks)
+            end = start + tasks_needed
             keys = r.zrange(name=queue_key, start=start, end=end)
+            if len(keys) == 0:
+                break
 
             for key in keys:  # Could become parallelizable
-                if not r.exists(name=key):
+                task_string = r.get(name=key)
+                if task_string is None:
                     continue
 
-                task_string = r.get(name=key).decode()
+                task_string = task_string.decode()
                 task_json = json.loads(task_string)
                 task = Task.from_json(task_json)
 
                 if groupByTag and task.tag != tag:
+                    continue
+
+                if task.leaseTimestamp > now_milliseconds:
                     continue
 
                 task.leaseTimestamp = now_milliseconds + int(leaseSecs) * 10**6
@@ -259,7 +286,7 @@ def lease_api(project=None, taskqueue=None):
         return json.dumps({
             "kind": "taskqueues#tasks",
             "items": tasks
-        }), 200
+        })
 
 
 @taskqueue_v1beta2_api.route(
@@ -278,27 +305,30 @@ def task_api(project=None, taskqueue=None, task_id=None):
 
     # Gets the named task in a TaskQueue.
     if request.method == "GET":
-        task_string = r.get(name=task_id).decode()
-        return task_string
+        task_string = r.get(name=task_id)
+        if task_string is None:
+            return "Task name does not exist.", 400
+        return task_string.decode()
 
     # Update the duration of a task lease.
     #     Required query parameters: newLeaseSeconds
     elif request.method == "POST":
-        if not r.exists(name=task_id):
-            return "Task name is invalid", 400
+        task_string = r.get(name=task_id)
+        if task_string is None:
+            return "Task name is invalid.", 400
 
-        task_string = r.get(name=task_id).decode()
+        task_string = task_string.decode()
         task_json = json.loads(task_string)
         task = Task.from_json(task_json)
         if now() > task.leaseTimestamp:
-            return "The task lease has expired", 400
+            return "The task lease has expired.", 400
 
         input_json = json.loads(request.get_data().decode())
         input_task = Task.from_json(input_json)
         if input_task.queueName != taskqueue:
-            return "Cannot change task in a different queue", 400
+            return "Cannot change task in a different queue.", 400
         if input_task.id != task.id:
-            return "Task IDs must match", 400
+            return "Task IDs must match.", 400
 
         newLeaseTimestamp = now() + request.args.get("newLeaseSeconds") * 10**6
         task.leaseTimestamp = newLeaseTimestamp
@@ -310,19 +340,20 @@ def task_api(project=None, taskqueue=None, task_id=None):
     # Update tasks that are leased out of a TaskQueue.
     #     Required query parameters: newLeaseSeconds
     elif request.method == "PATCH":
-        if not r.exists(name=task_id):
-            return "Task name is invalid", 400
+        task_string = r.get(name=task_id)
+        if task_string is None:
+            return "Task name is invalid.", 400
 
-        task_string = r.get(name=task_id).decode()
+        task_string = task_string.decode()
         task_json = json.loads(task_string)
         task = Task.from_json(task_json)
         if now() > task.leaseTimestamp:
-            return "The task lease has expired", 400
+            return "The task lease has expired.", 400
 
         # minimal only needs queue-name
         input_json = json.loads(request.get_data().decode())
         if input_json["queueName"] != taskqueue:
-            return "Cannot change task in a different queue", 400
+            return "Cannot change task in a different queue.", 400
 
         newLeaseTimestamp = now() + request.args.get("newLeaseSeconds") * 10**6
         task.leaseTimestamp = newLeaseTimestamp

@@ -39,9 +39,7 @@ def add(item=None):
           body=task
         )
         result = insert_request.execute()
-        if result.status == 200:
-            return "Added", 200
-        return "Error", 400
+        return "Added", 200
     except HttpError as http_error:
         return "Error", 500
 
