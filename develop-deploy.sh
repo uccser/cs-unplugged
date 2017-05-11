@@ -17,7 +17,7 @@ mv cloud_sql_proxy.linux.amd64 cloud_sql_proxy
 chmod +x cloud_sql_proxy
 ./cloud_sql_proxy -instances="$GOOGLE_CLOUD_SQL_CONNECTION_NAME"=tcp:5433 -credential_file="./continuous-deployment-develop-credentials.json" &>/dev/null &
 sudo apt-get install -y python3 python3-dev python3-pip
-python -m virtualenv --python=python3.4 /venv
+sudo python3 -m virtualenv /venv
 /venv/bin/pip3 install -r /requirements/production.txt
 
 # Publish static files
