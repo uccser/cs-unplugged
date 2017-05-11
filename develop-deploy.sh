@@ -20,7 +20,7 @@ chmod +x cloud_sql_proxy
 ./cloud_sql_proxy -instances="$GOOGLE_CLOUD_SQL_CONNECTION_NAME"=tcp:5433 -credential_file="./continuous-deployment-develop-credentials.json" &>/dev/null &
 sudo apt-get install -y python3 python3-dev python3-pip
 sudo pip3 install virtualenv
-sudo virtualenv /venv/ --no-site-packages
+sudo python3 -m virtualenv --python=python3.5 --no-site-packages /venv/
 sudo /venv/bin/pip3 install -r /requirements/production.txt
 
 # Publish static files
