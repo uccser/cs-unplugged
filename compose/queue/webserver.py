@@ -1,3 +1,4 @@
+"""Webserver for the queue service."""
 import os
 import logging
 import json
@@ -15,16 +16,22 @@ application.register_blueprint(taskqueue_v1beta2_api, url_prefix="/taskqueue/v1b
 
 @application.route("/")
 def index():
-    """ Returns an index page describing the service.
-    """
+    """Give index page describing the service."""
     return "CS-Unplugged - Fake Google TaskQueue"
 
 
 @application.route("/api/<api>/<version>")
 def api(api=None, version=None):
-    """ Returns an API description that is stored in data. This will
-    be a modified copy (usually to remove authorization requirements)
-    of the original from the mimicked source.
+    """Get an API description that is stored in data.
+
+    The API will be a modified copy (usually to remove authorization
+    requirements) of the original from the mimicked source.
+
+    Args:
+        api: The string of the api to load.
+        version: The string of the version of the api to load.
+    Returns:
+        A JSON object describing the API.
     """
     content = None
     filepath = os.path.join("api_data", "{0}_{1}.api".format(api, version))
@@ -48,7 +55,13 @@ def api(api=None, version=None):
 
 @application.errorhandler(500)
 def server_error(e):
-    """Logs and reports back information about internal errors.
+    """Log and reports back information about internal errors.
+
+    Args:
+        e: The exception which was raised.
+    Returns:
+        A string which describes the exception and the internal server
+        error status code.
     """
     logging.exception("An error occurred during a request.")
     return """

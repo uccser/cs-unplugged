@@ -1,3 +1,5 @@
+"""Webserver for the render service."""
+
 import os
 import logging
 import json
@@ -15,8 +17,7 @@ task_api = None
 
 
 def load_api():
-    """TEST METHOD, NOT INVITED TO FUTURE ENDEAVOURS.
-    """
+    """TEST METHOD, NOT INVITED TO FUTURE ENDEAVOURS."""
     global task_api
     if task_api is None:
         if DISCOVERY_URL is not None:
@@ -28,12 +29,13 @@ def load_api():
 
 @application.route("/")
 def index():
+    """Get an index page describing the service."""
     return "CS-Unplugged - Render Engine"
 
 
 @application.route("/get/<file>")
 def get(file=None):
-    """Retrieves a file after generation.
+    """Retrieve a file after generation.
 
     Args:
         file: An identier associated with the file.
@@ -45,8 +47,7 @@ def get(file=None):
 
 @application.route("/add/<item>")
 def add(item=None):
-    """TEST METHOD, NOT INVITED TO FUTURE ENDEAVOURS.
-    """
+    """TEST METHOD, NOT INVITED TO FUTURE ENDEAVOURS."""
     task_api = load_api()
     try:
         encoded_string = b64encode(item.encode("ascii")).decode()
@@ -68,8 +69,7 @@ def add(item=None):
 
 @application.route("/list")
 def list():
-    """TEST METHOD, NOT INVITED TO FUTURE ENDEAVOURS.
-    """
+    """TEST METHOD, NOT INVITED TO FUTURE ENDEAVOURS."""
     task_api = load_api()
     try:
         list_request = task_api.tasks().list(
@@ -84,8 +84,7 @@ def list():
 
 @application.route("/lease")
 def lease():
-    """TEST METHOD, NOT INVITED TO FUTURE ENDEAVOURS.
-    """
+    """TEST METHOD, NOT INVITED TO FUTURE ENDEAVOURS."""
     task_api = load_api()
     try:
         lease_request = task_api.tasks().lease(
@@ -102,8 +101,7 @@ def lease():
 
 @application.errorhandler(500)
 def server_error(e):
-    """Logs and reports back information about internal errors.
-    """
+    """Log and reports back information about internal errors."""
     logging.exception("An error occurred during a request.")
     return """
     An internal error occurred: <pre>{}</pre>
@@ -113,8 +111,11 @@ def server_error(e):
 
 @application.route("/_ah/health")
 def health_check():
-    """Performs a health check to ensure the api and associated
-    processes are working correctly."""
+    """Perform a health check.
+    
+    This method is to ensure the api and associated processes are
+    working correctly.
+    """
     return "", 200
 
 

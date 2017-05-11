@@ -1,3 +1,4 @@
+"""Mimicked API for the Google Taskqueue API v1beta2."""
 import os
 import time
 import json
@@ -14,7 +15,8 @@ r = redis.StrictRedis(connection_pool=redis_pool)
 
 # Models
 def generate_id():
-    """
+    """Get a unique identifier.
+
     Returns:
         A string of an uuid that does not exist in the redis server.
     """
@@ -25,7 +27,8 @@ def generate_id():
 
 
 def now():
-    """
+    """Get the current time since the epoch.
+
     Returns:
         An integer of the current time since the epoch in microseconds.
     """
@@ -33,15 +36,32 @@ def now():
 
 
 class Task(object):
-    """Describes a Google Task with methods for creation from
-    json with error check and automatic property building on
-    creation.
+    """Describes a Google Task.
+
+    With methods for creation from json with error check and automatic
+    property building on creation.
     """
 
     def __init__(self, queueName, payloadBase64, id=None, kind="taskqueues#task",
                  enqueueTimestamp=None, leaseTimestamp=None, retry_count=0, tag=""):
-        """Creates a new Task object where only the queueName and
-        payloadBase64 are required to make a new object.
+        """Create a new Task object.
+
+        Where only the queueName and payloadBase64 are required to
+        make a new object.
+
+        Args:
+            queueName: A string of the name of the associated queue.
+            payloadBase64: A string of the user-defined payload as a
+                string in base64.
+            id: A string of the task id, if None is automatically
+                generated.
+            kind: A string of the kind of object.
+            enqueueTimestamp: A long integer of the timesince the epoch the
+                task was enqueued.
+            leaseTimestamp: A long integer of the time the task becomes
+                avaliable for leasing.
+            retry_count: The number of times a task was leased.
+            tag: The tag associated with the tag.
         """
         self.queueName = queueName
         self.payloadBase64 = payloadBase64
@@ -54,7 +74,7 @@ class Task(object):
         self.tag = tag
 
     def _asdict(self):
-        """Converts the current object into a dictionary.
+        """Convert the current object into a dictionary.
 
         Returns:
             A dictionary of properties mapped to keys.
@@ -71,8 +91,7 @@ class Task(object):
         }
 
     def to_json(self):
-        """Converts the current object into a dictionary for use by
-        the json library.
+        """Convert the current object into a json dictionary.
 
         Returns:
             A dictionary where the keys match the properties of the
@@ -82,8 +101,10 @@ class Task(object):
 
     @staticmethod
     def from_json(json):
-        """Creates a new Task object from a json dictionary with error
-        checking that all the required properties are present.
+        """Create a new Task object from a json dictionary.
+
+        Includes error checking that all the required properties
+        are present.
 
         Args:
             json: A dictionary where keys map to Task object
@@ -101,14 +122,21 @@ class Task(object):
 
 
 class Stats(object):
-    """Describes a Stats object used in the Google TaskQueue
-    with methods for creation from json with error check and
-    automatic property building on creation.
+    """Describes a Stats object used in the Google TaskQueue.
+
+    The methods for creation from json with error check and automatic
+    property building on creation.
     TODO: We currently do not update our stats objects.
     """
 
     def __init__(self, leasedLastHour=0, leasedLastMinute=0, oldestTask=0, totalTasks=0):
-        """Creates a new Stats object.
+        """Create a new Stats object.
+
+        Args:
+            leasedLastHour: The number of tasks leased in the last hour.
+            leasedLastMinute: The number of tasks leased in the last minute.
+            oldestTask: The age of the oldest task.
+            totalTasks: The number of the tasks in the queue.
         """
         self.leasedLastHour = leasedLastHour
         self.leasedLastMinute = leasedLastMinute
@@ -116,7 +144,7 @@ class Stats(object):
         self.totalTasks = totalTasks
 
     def _asdict(self):
-        """Converts the current object into a dictionary.
+        """Convert the current object into a dictionary.
 
         Returns:
             A dictionary of properties mapped to keys.
@@ -129,8 +157,7 @@ class Stats(object):
         }
 
     def to_json(self):
-        """Converts the current object into a dictionary for use by
-        the json library.
+        """Convert the current object into a json dictionary.
 
         Returns:
             A dictionary where the keys match the properties of the
@@ -140,8 +167,10 @@ class Stats(object):
 
     @staticmethod
     def from_json(json):
-        """Creates a new Stats object from a json dictionary with error
-        checking that all the required properties are present.
+        """Create a new Stats object from a json dictionary.
+
+        Includes error checking that all the required properties
+        are present.
 
         Args:
             json: A dictionary where keys map to Task object
@@ -159,18 +188,24 @@ class Stats(object):
 
 class Acl(object):
     """Describes the user writes over the associated object.
+
     TODO: We currently do not explicitly use the Acl object.
     """
 
     def __init__(self, adminEmails=None, consumerEmails=None, producerEmails=None):
-        """Creates a new Acl object.
+        """Create a new Acl object.
+
+        Args:
+            adminEmails: A list of administrator emails.
+            consumerEmails: A list of emails with access to read/delete.
+            producerEmails: A list of emails with access to write.
         """
         self.adminEmails = adminEmails if adminEmails is not None else []
         self.consumerEmails = consumerEmails if consumerEmails is not None else []
         self.producerEmails = producerEmails if producerEmails is not None else []
 
     def _asdict(self):
-        """Converts the current object into a dictionary.
+        """Convert the current object into a dictionary.
 
         Returns:
             A dictionary of properties mapped to keys.
@@ -182,8 +217,7 @@ class Acl(object):
         }
 
     def to_json(self):
-        """Converts the current object into a dictionary for use by
-        the json library.
+        """Convert the current object into a json dictionary.
 
         Returns:
             A dictionary where the keys match the properties of the
@@ -193,8 +227,10 @@ class Acl(object):
 
     @staticmethod
     def from_json(json):
-        """Creates a new Acl object from a json dictionary with error
-        checking that all the required properties are present.
+        """Create a new Acl object from a json dictionary.
+
+        Includes error checking that all the required properties
+        are present.
 
         Args:
             json: A dictionary where keys map to Task object
@@ -211,13 +247,24 @@ class Acl(object):
 
 
 class TaskQueue(object):
-    """Describes a Google TaskQueue with methods for creation from
-    json with error check and automatic property building on
-    creation.
+    """Describes a Google TaskQueue.
+
+    With methods for creation from json with error check and automatic
+    property building on creation.
     """
 
+    #TODO: Current implementation does not make use of stats and maxLeases etc.
     def __init__(self, id=None, kind="taskqueues#taskqueue", maxLeases=None, stats=None, acl=None):
-        """Creates a new TaskQueue object.
+        """Create a new TaskQueue object.
+
+        Args:
+            id: The identifier of the taskqueue, if None is given a
+                identifier is generated.
+            kind: The kind of the taskqueue.
+            maxLeases: The max number of leases an item can take before
+                it is removed from the queue.
+            stats: An Stats object recording information on the queue.
+            acl: An Acl object of Authorised users of the queue.
         """
         self.id = id if id is not None else generate_id()
         self.kind = kind
@@ -226,7 +273,7 @@ class TaskQueue(object):
         self.acl = acl if acl is not None else Acl()
 
     def _asdict(self):
-        """Converts the current object into a dictionary.
+        """Convert the current object into a dictionary.
 
         Returns:
             A dictionary of properties mapped to keys.
@@ -240,8 +287,7 @@ class TaskQueue(object):
         }
 
     def to_json(self):
-        """Converts the current object into a dictionary for use by
-        the json library.
+        """Convert the current object into a json dictionary.
 
         Returns:
             A dictionary where the keys match the properties of the
@@ -254,8 +300,10 @@ class TaskQueue(object):
 
     @staticmethod
     def from_json(json):
-        """Creates a new TaskQueue object from a json dictionary with
-        error checking that all the required properties are present.
+        """Create a new TaskQueue object from a json dictionary.
+
+        Includes error checking that all the required properties
+        are present.
 
         Args:
             json: A dictionary where keys map to Task object
@@ -283,7 +331,7 @@ taskqueue_v1beta2_api = Blueprint("taskqueue.v1beta2", __name__)
     "/<project>/taskqueues/<taskqueue>/tasks",
     methods=["GET", "POST"])
 def tasks_api(project=None, taskqueue=None):
-    """Allows for access to functionality on the taskqueue.
+    """List items or Insert into a given queue.
 
     Args:
         project: A string of the project to work on.
@@ -303,11 +351,9 @@ def tasks_api(project=None, taskqueue=None):
         Body:
             Must be a JSON Task object, where only the queueName
             and payloadBase64 need to be specified.
-
         Returns:
             A json object of the created Task.
     """
-
     if project is None:
         return "You must specify a project.", 400
     elif taskqueue is None:
@@ -368,7 +414,7 @@ def tasks_api(project=None, taskqueue=None):
     "/<project>/taskqueues/<taskqueue>/tasks/lease",
     methods=["POST"])
 def lease_api(project=None, taskqueue=None):
-    """Allows for tasks to be leased and used.
+    """Lease items from the taskqueue.
 
     Args:
         project: A string of the project to work on.
@@ -386,12 +432,10 @@ def lease_api(project=None, taskqueue=None):
                 to get tasks by tag.
             tag: (Optional) A string specifing which tag leased tasks
                 must have.
-
         Returns:
             A json object containing a kind and items attribute.
             Where items is a list of tasks.
     """
-
     if project is None:
         return "You must specify a project.", 400
     elif taskqueue is None:
@@ -444,6 +488,7 @@ def lease_api(project=None, taskqueue=None):
                 task_json = task.to_json()
                 tasks.append(task_json)
 
+                task.retry_count += 1
                 task_string = json.dumps(task_json)
                 r.set(name=key, value=task_string)
 
@@ -459,7 +504,7 @@ def lease_api(project=None, taskqueue=None):
     "/<project>/taskqueues/<taskqueue>/tasks/<task_id>",
     methods=["GET", "POST", "PATCH", "DELETE"])
 def task_api(project=None, taskqueue=None, task_id=None):
-    """Allows for individual tasks to be modified and accessed.
+    """Get, Update, or Delete a task.
 
     Args:
         project: A string of the project to work on.
@@ -478,10 +523,8 @@ def task_api(project=None, taskqueue=None, task_id=None):
         Query:
             newLeaseSeconds: The number of seconds to complete the
                 task from now.
-
         Body:
             The json object of the task to update.
-
         Returns:
             The updated json object of the task.
 
@@ -491,11 +534,9 @@ def task_api(project=None, taskqueue=None, task_id=None):
         Query:
             newLeaseSeconds: The number of seconds to complete the
                 task from now.
-
         Body:
             The json object of the task to update where the required
             attributes are minimal and only needs queue-name.
-
         Returns:
             The updated json object of the task.
 
@@ -505,7 +546,6 @@ def task_api(project=None, taskqueue=None, task_id=None):
         Returns:
             A empty success status i.e 204.
     """
-
     if project is None:
         return "You must specify a project.", 400
     elif taskqueue is None:
