@@ -11,7 +11,7 @@
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-  <h1 class="heading-underline">{{ unit_plan.name }}</h1>
+  <h1 id="{{ unit_plan.slug }}" class="heading-underline">{{ unit_plan.name }}</h1>
 {% endblock page_heading %}
 
 {% block left_column_content %}
@@ -27,3 +27,23 @@
     </p>
   {% endfor %}
 {% endblock left_column_content %}
+
+{% block right_column_content %}
+  <div id="sticky-sidebar" class="sticky">
+    <h2 class="heading-underline">Table of contents</h2>
+    <ul class="nav nav-pills flex-column" id="scrollspy-table-of-contents">
+      <li class="nav-item">
+        <a class="nav-link" href="#{{ unit_plan.slug }}">{{ unit_plan.name }}</a>
+      </li>
+      {% for heading_node in unit_plan.heading_tree %}
+        <li class="nav-item">
+          <a class="nav-link" href="#{{ heading_node.slug }}">{{ heading_node.text }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock right_column_content %}
+
+{% block scripts %}
+  {% include "generic/import_stick_state_js.html" %}
+{% endblock scripts %}

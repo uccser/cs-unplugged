@@ -100,6 +100,7 @@ class UnitPlan(models.Model):
     slug = models.SlugField()
     name = models.CharField(max_length=100)
     content = models.TextField()
+    heading_tree = JSONField(null=True)
 
     def lessons_by_age_group(self):
         """Return ordered groups of lessons.
