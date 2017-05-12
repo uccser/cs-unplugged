@@ -10,7 +10,7 @@
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-  <h1 class="heading-underline">{{ topic.name }}</h1>
+  <h1 id="{{ topic.slug }}" class="heading-underline">{{ topic.name }}</h1>
 {% endblock page_heading %}
 
 {% block left_column_content %}
@@ -19,7 +19,7 @@
   {% for unit_plan in unit_plans %}
     <div class="boxed-text">
       <div class="boxed-text-content">
-        <h2>
+        <h2 id="{{ unit_plan.slug }}">
           <a href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">
             {{ unit_plan.name }}
           </a>
@@ -55,7 +55,7 @@
     </div>
   {% endfor %}
 
-  <h2 class="heading-underline">Curriculum Integrations</h2>
+  <h2 id="integrations" class="heading-underline">Curriculum Integrations</h2>
   {% if curriculum_integrations %}
     <table class="table table-responsive table-center-vertical">
       <thead class="thead-default">
@@ -96,7 +96,7 @@
     <p>No curriculum integrations for {{ topic }}.</p>
   {% endif %}
 
-  <h2 class="heading-underline">Programming Challenges</h2>
+  <h2 id="programming" class="heading-underline">Programming Challenges</h2>
   {% if programming_exercises %}
     <ul>
       {% for programming_exercise in programming_exercises %}
@@ -114,7 +114,7 @@
   {% endif %}
 
   {% if topic.other_resources %}
-    <h2 class="heading-underline">Looking for more?</h2>
+    <h2 id="other-resources" class="heading-underline">Looking for more?</h2>
     <p>
       <a href="{% url 'topics:other_resources' topic.slug %}">
         Click here for other resources
@@ -122,3 +122,34 @@
     </p>
   {% endif %}
 {% endblock left_column_content %}
+
+{% block right_column_content %}
+  <div id="sticky-sidebar" class="sticky">
+    <h2 class="heading-underline">Table of contents</h2>
+    <ul class="nav nav-pills flex-column" id="scrollspy-table-of-contents">
+      <li class="nav-item">
+        <a class="nav-link" href="#{{ topic.slug }}">{{ topic.name }}</a>
+      </li>
+      {% for unit_plan in unit_plans %}
+        <li class="nav-item">
+          <a class="nav-link" href="#{{ unit_plan.slug }}">{{ unit_plan.name }}</a>
+        </li>
+      {% endfor %}
+      <li class="nav-item">
+        <a class="nav-link" href="#integrations">Curriculum integrations</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#programming">Programming challenges</a>
+      </li>
+      {% if topic.other_resources %}
+        <li class="nav-item">
+          <a class="nav-link" href="#other-resources">Other resources</a>
+        </li>
+      {% endif %}
+    </ul>
+  </div>
+{% endblock right_column_content %}
+
+{% block scripts %}
+  {% include "generic/import_stick_state_js.html" %}
+{% endblock scripts %}
