@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+{% load static %}
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
@@ -17,6 +18,7 @@
     {{ programming_exercise.name }}
   </h1>
   <h2>
+    <img src="{% get_static_prefix %}{{ implementation.language.icon }}" class="programming-challenge-language-icon" />
     {{ implementation.language.name }} Solution
   </h2>
 {% endblock page_heading %}
