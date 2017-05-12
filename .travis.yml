@@ -6,6 +6,10 @@ env:
 language: python
 python:
 - '3.4'
+before_install:
+- pyenv versions
+- python --version
+- virtualenv --no-site-packages /venv/
 install:
 - sudo apt-get update
 - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-engine
