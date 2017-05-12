@@ -34,6 +34,7 @@ openssl aes-256-cbc -K $encrypted_bea729da01c0_key -iv $encrypted_bea729da01c0_i
 
 # Unzip the decrypted secret archive into the current folder.
 tar -xf develop-deploy-secrets.tar
+ls
 ls -ll
 # Authenticate with gcloud tool using the decrypted service account credentials.
 # See: https://cloud.google.com/sdk/gcloud/reference/auth/activate-service-account
@@ -56,7 +57,7 @@ ssh-keygen -q -N "" -f ~/.ssh/google_compute_engine
 
 # Load environment variables.
 # Used when running local Django for updating development database.
-. ./load_develop_deploy_envs.sh
+. ./load-develop-deploy-envs.sh
 
 # Download the Google Cloud SQL proxy for updating development database.
 #
