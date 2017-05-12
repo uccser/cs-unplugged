@@ -63,7 +63,7 @@ source ./load_develop_deploy_envs.sh
 # This is done before any deployment to minimise downtime between the app
 # deployment and the database update.
 # See: https://cloud.google.com/python/django/flexible-environment#install_the_sql_proxy
-wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.
+wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64
 # Rename the proxy to standard filename.
 mv cloud_sql_proxy.linux.amd64 cloud_sql_proxy
 # Allow the proxy to be executable.
