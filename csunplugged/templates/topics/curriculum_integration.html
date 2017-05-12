@@ -15,6 +15,20 @@
 {% block page_heading %}
   <h1>{{ integration.name }}</h1>
 
+  {% if integration_curriculum_areas %}
+    <p>
+    {% for area in integration_curriculum_areas %}
+      {% include "topics/curriculum_area_badge.html" %}
+    {% endfor %}
+    </p>
+  {% endif %}
+{% endblock page_heading %}
+
+{% block left_column_content %}
+  {% render_html_field integration.content %}
+{% endblock left_column_content %}
+
+{% block right_column_content %}
   {% if prerequisite_lessons %}
     <div class="alert alert-warning" role="alert">
       <p class="h5 mb-1">Heads up!</p>
@@ -29,20 +43,5 @@
           {% endfor %}
       </ul>
     </div>
-  {% endif %}
-{% endblock page_heading %}
-
-{% block left_column_content %}
-  {% render_html_field integration.content %}
-{% endblock left_column_content %}
-
-{% block right_column_content %}
-  {% if integration_curriculum_areas %}
-    <h2>Curriculum Areas</h2>
-    <p>
-    {% for area in integration_curriculum_areas %}
-      <span class="badge badge-default">{{ area.name }}</span>
-    {% endfor %}
-    </p>
   {% endif %}
 {% endblock right_column_content %}
