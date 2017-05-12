@@ -22,11 +22,18 @@
 {% endblock page_heading %}
 
 {% block content %}
-  <p>This is just one of many possible solutions.</p>
+  <p>Open 'View solution' below if you are ready to view the completed solution.</p>
 
-  <div class="disable-selection">
-    {% render_html_field implementation.solution %}
-  </div>
+  <details>
+    <summary>
+      <strong>View solution</strong>
+    </summary>
+
+    <div class="boxed-text-content disable-selection">
+      <p>This is just one of many possible solutions:</p>
+      {% render_html_field implementation.solution %}
+    </div>
+  </details>
 
   <p>
     <a href="{% url 'topics:programming_exercise' topic.slug programming_exercise.slug %}">
