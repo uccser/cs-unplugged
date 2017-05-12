@@ -28,6 +28,9 @@ how-binary-digits-work:
   generated-resources:
     sorting-network:
       description: One per student.
+  classroom-resources:
+    - Pens and paper, or
+    - Whiteboard and pens
 
 reinforcing-sequencing-in-binary-number-systems:
   min-age: 8

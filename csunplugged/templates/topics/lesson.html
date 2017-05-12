@@ -56,7 +56,18 @@
     <p>No CS Unplugged resources required.</p>
   {% endif %}
 
-  <h2 class="heading-underline">Programming challenges</h2>
+  <h2 class="heading-underline mt-2">Classroom resources</h2>
+  {% if lesson.classroom_resources %}
+    <ul>
+      {% for classroom_resource in lesson.classroom_resources %}
+        <li>{{ classroom_resource }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No classroom resources required.</p>
+  {% endif %}
+
+  <h2 class="heading-underline mt-2">Programming challenges</h2>
   {% if programming_exercises %}
     <p>
       <a href="{% url 'topics:programming_exercises_list' topic.slug unit_plan.slug lesson.slug %}">

@@ -82,6 +82,9 @@ class LessonsLoader(BaseLoader):
 
             heading_tree = convert_heading_tree_to_dict(lesson_content.heading_tree)
 
+            classroom_resources = lesson_structure.get("classroom-resources", None)
+            # Add check that result is list of strings
+
             lesson = self.topic.topic_lessons.create(
                 unit_plan=self.unit_plan,
                 slug=lesson_slug,
@@ -92,6 +95,7 @@ class LessonsLoader(BaseLoader):
                 min_age=lesson_min_age,
                 max_age=lesson_max_age,
                 heading_tree=heading_tree,
+                classroom_resources=classroom_resources,
             )
             lesson.save()
 
