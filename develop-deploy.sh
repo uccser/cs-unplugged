@@ -19,6 +19,7 @@ if [ ! -d ${HOME}/google-cloud-sdk ]; then
 fi
 
 # Decrypt secret files archive that contain credentials.
+#
 # This includes:
 #   - continuous-deployment-develop-credentials.json
 #     Google Cloud Platform Service Account for using with gcloud.
@@ -49,6 +50,7 @@ gcloud version
 ssh-keygen -q -N "" -f ~/.ssh/google_compute_engine
 
 # Download the Google Cloud SQL proxy for updating development database.
+#
 # This is done before any deployment to minimise downtime between the app
 # deployment and the database update.
 # See: https://cloud.google.com/python/django/flexible-environment#install_the_sql_proxy
@@ -59,6 +61,7 @@ mv cloud_sql_proxy.linux.amd64 cloud_sql_proxy
 chmod +x cloud_sql_proxy
 
 # Start the Google Cloud SQL Proxy.
+#
 # This connects to the database instance using the connection name set in an
 # environment variable. It is authenticated using the service account credentials.
 # The proxy command is appended with '&>/dev/null &' to run in the background
@@ -67,12 +70,14 @@ chmod +x cloud_sql_proxy
 ./cloud_sql_proxy -instances="$GOOGLE_CLOUD_SQL_CONNECTION_NAME"=tcp:5433 -credential_file="./continuous-deployment-develop-credentials.json" &>/dev/null &
 
 # Publish static files.
+#
 # This copies the generated static files from tests to the Google Storage
 # Bucket.
 # See: https://cloud.google.com/python/django/flexible-environment#deploy_the_app_to_the_app_engine_flexible_environment
 gsutil rsync -R ./csunplugged/staticfiles/ gs://cs-unplugged-develop/static/
 
 # Publish Django system to Google App Engine.
+#
 # This deploys using the 'app-develop.yaml' decrypted earlier that contains
 # secret environment variables to use within the application.
 # Project is specified to ensure correct project deployment.
@@ -82,8 +87,8 @@ gsutil rsync -R ./csunplugged/staticfiles/ gs://cs-unplugged-develop/static/
 # See: https://cloud.google.com/sdk/gcloud/reference/app/deploy
 gcloud app deploy ./app-develop.yaml --quiet --project=cs-unplugged-develop
 
-
 # Update development database.
+#
 # The approach used for updating the database is to run the Django system
 # locally and connect to the development database using the Google Cloud SQL
 # proxy.
