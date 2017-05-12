@@ -33,7 +33,7 @@ fi
 openssl aes-256-cbc -K $encrypted_bea729da01c0_key -iv $encrypted_bea729da01c0_iv -in ./infrastructure/develop-deploy/develop-deploy-secrets.tar.enc -out develop-deploy-secrets.tar -d
 
 # Unzip the decrypted secret archive into the current folder.
-tar -xzf develop-deploy-secrets.tar.gz
+tar -xzf develop-deploy-secrets.tar
 
 # Authenticate with gcloud tool using the decrypted service account credentials.
 # See: https://cloud.google.com/sdk/gcloud/reference/auth/activate-service-account
