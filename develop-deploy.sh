@@ -1,4 +1,5 @@
 # Install Google Cloud SDK
+pip install -r ./requirements/production.txt
 export CLOUDSDK_CORE_DISABLE_PROMPTS=1;
 if [ ! -d ${HOME}/google-cloud-sdk ]; then
      curl https://sdk.cloud.google.com | bash;
@@ -19,7 +20,6 @@ wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64
 mv cloud_sql_proxy.linux.amd64 cloud_sql_proxy
 chmod +x cloud_sql_proxy
 ./cloud_sql_proxy -instances="$GOOGLE_CLOUD_SQL_CONNECTION_NAME"=tcp:5433 -credential_file="./continuous-deployment-develop-credentials.json" &>/dev/null &
-pip install -r /requirements/production.txt
 
 # Publish static files
 gsutil rsync -R ./csunplugged/staticfiles/ gs://cs-unplugged-develop/static/
