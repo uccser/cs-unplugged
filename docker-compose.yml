@@ -22,7 +22,7 @@ services:
   nginx:
     build:
       context: .
-      dockerfile: ./compose/nginx/Dockerfile
+      dockerfile: ./infrastructure/nginx/Dockerfile
     volumes:
       - ./csunplugged/:/app/
       - /app/node_modules

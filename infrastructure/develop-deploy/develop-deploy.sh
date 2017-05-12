@@ -1,3 +1,6 @@
+#!/bin/bash
+# Deploy the system to the development website.
+
 # Install Python requirements for running Django locally when using Google
 # Cloud SQL proxy. Ideally this would be run inside the Docker image, to
 # prevent having to reinstall the requirements again.
@@ -25,10 +28,12 @@ fi
 #     Google Cloud Platform Service Account for using with gcloud.
 #   - app-develop.yaml
 #     Google App Engine YAML file for deployment, contains sensitive data.
-openssl aes-256-cbc -K $encrypted_323d8adec5b7_key -iv $encrypted_323d8adec5b7_iv -in credentials.tar.gz.enc -out credentials.tar.gz -d
+#   - load-develop-deploy-envs.sh
+#     Loads environment variables used when running local Django.
+openssl aes-256-cbc -K $encrypted_bea729da01c0_key -iv $encrypted_bea729da01c0_iv -in ./infrastructure/develop-deploy/develop-deploy-secrets.tar.enc -out develop-deploy-secrets.tar -d
 
 # Unzip the decrypted secret archive into the current folder.
-tar -xzf credentials.tar.gz
+tar -xzf develop-deploy-secrets.tar.gz
 
 # Authenticate with gcloud tool using the decrypted service account credentials.
 # See: https://cloud.google.com/sdk/gcloud/reference/auth/activate-service-account
@@ -48,6 +53,10 @@ gcloud version
 # Only required for deploying to Google App Engine flexible environment.
 # See: https://cloud.google.com/solutions/continuous-delivery-with-travis-ci#continuous_deployment_on_app_engine_flexible_environment_instances
 ssh-keygen -q -N "" -f ~/.ssh/google_compute_engine
+
+# Load environment variables.
+# Used when running local Django for updating development database.
+source ./load_develop_deploy_envs.sh
 
 # Download the Google Cloud SQL proxy for updating development database.
 #

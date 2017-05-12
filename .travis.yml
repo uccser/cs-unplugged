@@ -29,7 +29,7 @@ cache:
     - ${HOME}/google-cloud-sdk
 deploy:
   provider: script
-  script: sh ./develop-deploy.sh
+  script: sh ./infrastructure/develop-deploy/develop-deploy.sh
   skip_cleanup: true
   on:
     branch: issue/310
