@@ -25,7 +25,7 @@ chmod +x cloud_sql_proxy
 gsutil rsync -R ./csunplugged/staticfiles/ gs://cs-unplugged-develop/static/
 
 # Publish app engine
-gcloud app deploy ./app-develop.yaml --quiet --project=cs-unplugged-develop --verbosity=debug --log-http
+gcloud app deploy ./app-develop.yaml --quiet --project=cs-unplugged-develop
 
 # Update database
 cd csunplugged
