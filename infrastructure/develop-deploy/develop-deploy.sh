@@ -56,7 +56,7 @@ ssh-keygen -q -N "" -f ~/.ssh/google_compute_engine
 
 # Load environment variables.
 # Used when running local Django for updating development database.
-source ./load_develop_deploy_envs.sh
+. ./load_develop_deploy_envs.sh
 
 # Download the Google Cloud SQL proxy for updating development database.
 #
