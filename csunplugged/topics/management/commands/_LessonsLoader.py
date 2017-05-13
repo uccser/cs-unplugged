@@ -5,6 +5,7 @@ from utils.BaseLoader import BaseLoader
 from utils.convert_heading_tree_to_dict import convert_heading_tree_to_dict
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
+from utils.errors.InvalidConfigValueError import InvalidConfigValueError
 
 from topics.models import (
     ProgrammingExercise,
@@ -83,7 +84,20 @@ class LessonsLoader(BaseLoader):
             heading_tree = convert_heading_tree_to_dict(lesson_content.heading_tree)
 
             classroom_resources = lesson_structure.get("classroom-resources", None)
-            # Add check that result is list of strings
+            if isinstance(classroom_resources, list):
+                for classroom_resource in classroom_resources:
+                    if not isinstance(classroom_resource, str):
+                        raise InvalidConfigValueError(
+                            self.unit_plan_structure_file_path,
+                            "classroom-resources list item",
+                            "A string describing the classroom resource."
+                        )
+            elif classroom_resources is not None:
+                raise InvalidConfigValueError(
+                    self.unit_plan_structure_file_path,
+                    "classroom-resources",
+                    "List of strings."
+                )
 
             lesson = self.topic.topic_lessons.create(
                 unit_plan=self.unit_plan,
