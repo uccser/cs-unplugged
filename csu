@@ -41,6 +41,7 @@ function helpmenu {
   static_help
   static_prod_help
   style_help
+  superuser_help
   test_suite_help
   test_suite_backwards_help
   test_coverage_help
@@ -181,6 +182,15 @@ function style_help {
   printf "   style             Run style checks.\n"
 }
 
+# Run create superuser
+function superuser {
+  printf "Creating superuser...\n"
+  docker-compose run --rm django /docker_venv/bin/python3 ./manage.py createsuperuser
+}
+function superuser_help {
+  printf "   superuser        Create superuser account.\n"
+}
+
 # Run test suite
 function test_suite {
   printf "Running test suite...\n"
@@ -299,6 +309,10 @@ function process_dev_command() {
         ;;
       style)
         style
+        exit
+        ;;
+      superuser)
+        superuser
         exit
         ;;
       test)

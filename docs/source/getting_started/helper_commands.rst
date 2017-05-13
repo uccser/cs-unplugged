@@ -80,6 +80,7 @@ The ``./csu dev [DEV_COMMAND]`` command runs developer tasks, where
 - :ref:`static`
 - :ref:`static_prod`
 - :ref:`style`
+- :ref:`superuser`
 - :ref:`test`
 - :ref:`test_backwards`
 - :ref:`test_coverage`
@@ -151,6 +152,14 @@ This produces compressed SASS files without sourcemaps.
 Running ``./csu dev style`` will run the ``flake8`` and ``pydocstyle`` commands
 to check the style of the project.
 If the output is ``0`` for a check, then there are zero errors.
+
+.. _superuser:
+
+``superuser``
+-----------------------------------------------------------------------------
+
+Running ``./csu dev superuser`` will run the Django ``createsuperuser``
+command.
 
 .. _test:
 
