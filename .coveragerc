@@ -1,6 +1,0 @@
-[run]
-source = config,dev,general,locale,resources,static,templates,topics,utils
-omit=*/migrations/*
-
-[report]
-fail_under=20
