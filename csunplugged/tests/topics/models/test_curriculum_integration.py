@@ -1,19 +1,24 @@
 from model_mommy import mommy
+
 from tests.BaseTestWithDB import BaseTestWithDB
-from topics.models import CurriculumIntegration
-from topics.models import CurriculumArea
-from topics.models import Lesson
-from tests.topics import create_topics_test_data
+from tests.topics.TestDataGenerator import TestDataGenerator
+
+from topics.models import (
+    CurriculumIntegration,
+    CurriculumArea,
+    Lesson
+)
 
 
 class CurriculumIntegrationModelTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.test_data = TestDataGenerator()
 
     def test_curriculum_integration(self):
         # Setup Auxliary Data
-        topic = create_topics_test_data.create_test_topic(1)
+        topic = self.test_data.create_topics_test_data.create_test_topic(1)
         curriculum_area = mommy.make(
             CurriculumArea,
             make_m2m=True,

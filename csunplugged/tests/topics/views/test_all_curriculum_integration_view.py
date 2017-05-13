@@ -1,6 +1,7 @@
 from django.urls import reverse
+
 from tests.BaseTestWithDB import BaseTestWithDB
-from tests.topics import create_topics_test_data
+from tests.topics.TestDataGenerator import TestDataGenerator
 
 
 class AllCurriculumIntegrationViewTest(BaseTestWithDB):
@@ -8,6 +9,7 @@ class AllCurriculumIntegrationViewTest(BaseTestWithDB):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.language = "en"
+        self.test_data = TestDataGenerator()
 
     def test_all_curriculum_integration_view_with_no_integrations(self):
         url = reverse("topics:all_curriculum_integrations")
@@ -16,8 +18,8 @@ class AllCurriculumIntegrationViewTest(BaseTestWithDB):
         self.assertEqual(len(response.context["curriculum_integrations"]), 0)
 
     def test_all_curriculum_integration_view_with_one_integration(self):
-        topic = create_topics_test_data.create_test_topic(1)
-        create_topics_test_data.create_test_integration(topic, 1)
+        topic = self.test_data.create_topics_test_data.create_test_topic(1)
+        self.test_data.create_topics_test_data.create_test_integration(topic, 1)
 
         url = reverse("topics:all_curriculum_integrations")
         response = self.client.get(url)
@@ -29,10 +31,10 @@ class AllCurriculumIntegrationViewTest(BaseTestWithDB):
         )
 
     def test_all_curriculum_integration_view_with_multiple_integration(self):
-        topic = create_topics_test_data.create_test_topic(1)
-        create_topics_test_data.create_test_integration(topic, 1)
-        create_topics_test_data.create_test_integration(topic, 2)
-        create_topics_test_data.create_test_integration(topic, 3)
+        topic = self.test_data.create_topics_test_data.create_test_topic(1)
+        self.test_data.create_topics_test_data.create_test_integration(topic, 1)
+        self.test_data.create_topics_test_data.create_test_integration(topic, 2)
+        self.test_data.create_topics_test_data.create_test_integration(topic, 3)
 
         url = reverse("topics:all_curriculum_integrations")
         response = self.client.get(url)
@@ -48,14 +50,14 @@ class AllCurriculumIntegrationViewTest(BaseTestWithDB):
         )
 
     def test_all_curriculum_integration_view_order(self):
-        topic_1 = create_topics_test_data.create_test_topic(1)
-        topic_2 = create_topics_test_data.create_test_topic(2)
-        create_topics_test_data.create_test_integration(topic_2, 3)
-        create_topics_test_data.create_test_integration(topic_2, 2)
-        create_topics_test_data.create_test_integration(topic_2, 1)
-        create_topics_test_data.create_test_integration(topic_1, 4)
-        create_topics_test_data.create_test_integration(topic_1, 5)
-        create_topics_test_data.create_test_integration(topic_1, 6)
+        topic_1 = self.test_data.create_topics_test_data.create_test_topic(1)
+        topic_2 = self.test_data.create_topics_test_data.create_test_topic(2)
+        self.test_data.create_topics_test_data.create_test_integration(topic_2, 3)
+        self.test_data.create_topics_test_data.create_test_integration(topic_2, 2)
+        self.test_data.create_topics_test_data.create_test_integration(topic_2, 1)
+        self.test_data.create_topics_test_data.create_test_integration(topic_1, 4)
+        self.test_data.create_topics_test_data.create_test_integration(topic_1, 5)
+        self.test_data.create_topics_test_data.create_test_integration(topic_1, 6)
 
         url = reverse("topics:all_curriculum_integrations")
         response = self.client.get(url)
