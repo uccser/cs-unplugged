@@ -32,7 +32,7 @@ deploy:
   script: sh ./infrastructure/develop-deploy/develop-deploy.sh
   skip_cleanup: true
   on:
-    branch: issue/310
+    branch: develop
 after_script:
 - bash <(curl -s https://codecov.io/bash)
 notifications:
