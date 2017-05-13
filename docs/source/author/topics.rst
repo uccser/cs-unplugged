@@ -531,6 +531,13 @@ Unit Plan Configuration File
 
         - ``learning-outcomes:`` A list of keys corresponding to learning outcomes.
 
+        - ``classroom-resources:`` A list of strings describing the required
+          classroom resources.
+          The list items should be short, as this list is displayed on the
+          lesson sidebar.
+          If a longer description is required, this should be within the lesson
+          text within a panel.
+
         - ``generated-resources:`` A list of generated CSU resources connected to this
           lesson.
 
@@ -559,6 +566,9 @@ following:
     generated-resources:
       sorting-network:
         description: One per student.
+    classroom-resources:
+      - Pens and paper
+      - Dice
 
   how-binary-digits-work:
     min-age: 7
