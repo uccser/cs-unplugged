@@ -76,7 +76,7 @@ chmod +x cloud_sql_proxy
 # The proxy command is appended with '&>/dev/null &' to run in the background
 # and to not send output to console.
 # See: https://cloud.google.com/python/django/flexible-environment#initialize_your_cloud_sql_instance
-./cloud_sql_proxy -instances="$GOOGLE_CLOUD_SQL_CONNECTION_NAME"=tcp:5433 -credential_file="./continuous-deployment-develop-credentials.json" &>/dev/null &
+./cloud_sql_proxy -instances="$GOOGLE_CLOUD_SQL_CONNECTION_NAME"=tcp:5433 -credential_file="./continuous-deployment-develop-credentials.json" >/dev/null 2>/dev/null &
 
 # Publish static files.
 #
