@@ -92,6 +92,12 @@ class LessonsLoader(BaseLoader):
                             "classroom-resources list item",
                             "A string describing the classroom resource."
                         )
+                    elif len(classroom_resource) > 100:
+                        raise InvalidConfigValueError(
+                            self.unit_plan_structure_file_path,
+                            "classroom-resources list item",
+                            "Item description must be less than 100 characters."
+                        )
             elif classroom_resources is not None:
                 raise InvalidConfigValueError(
                     self.unit_plan_structure_file_path,

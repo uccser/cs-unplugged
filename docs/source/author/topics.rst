@@ -533,8 +533,8 @@ Unit Plan Configuration File
 
         - ``classroom-resources:`` A list of strings describing the required
           classroom resources.
-          The list items should be short, as this list is displayed on the
-          lesson sidebar.
+          The list items must be short (less than 100 characters),
+          as this list is displayed on the lesson sidebar.
           If a longer description is required, this should be within the lesson
           text within a panel.
 
