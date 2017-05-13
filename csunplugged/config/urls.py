@@ -19,6 +19,7 @@ urlpatterns = i18n_patterns(
 
 urlpatterns += [
     url(r"^_ah/health", views.health_check),
+    url(r'^tellme/', include("tellme.urls")),
 ]
 
 if settings.DEBUG:

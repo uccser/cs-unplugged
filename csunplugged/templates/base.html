@@ -130,6 +130,11 @@
       <p class="mb-0">
         The CS Unplugged material is open source and shared under a Creative Commons BY-NC-SA 4.0 licence, and is available on <a href="https://github.com/uccser/cs-unplugged">GitHub</a>.
       </p>
+      <p>
+        <button type="button" id="feedback-btn" class="btn btn-info">
+          Feedback <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+        </button>
+      </p>
     </div>
   </footer>
 
@@ -157,5 +162,7 @@
   <script src="{% static 'js/website.js' %}"></script>
   <script src="{% static 'js/details-element-polyfill.js' %}"></script>
   <script src="{% static 'js/sticky-state.min.js' %}"></script>
+  <link href="{% static 'tellme/feedback.min.css' %}" rel="stylesheet">
+  {% include 'tellme/js_inc.html' %}
 </body>
 </html>
