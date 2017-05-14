@@ -52,7 +52,7 @@ def render_html_with_static(html, context=dict()):
     Returns:
         Rendered string of HTML.
     """
-    return Template('{% load static %}' + html).render(Context(context))
+    return Template("{% load static %}" + html).render(Context(context))
 
 
 register = template.Library()

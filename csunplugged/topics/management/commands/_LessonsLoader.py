@@ -2,14 +2,13 @@
 
 import os.path
 from utils.BaseLoader import BaseLoader
-
+from utils.convert_heading_tree_to_dict import convert_heading_tree_to_dict
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 
 from topics.models import (
     ProgrammingExercise,
     LearningOutcome,
-    CurriculumArea,
     Resource,
     ConnectedGeneratedResource,
 )
@@ -81,6 +80,8 @@ class LessonsLoader(BaseLoader):
             else:
                 lesson_duration = None
 
+            heading_tree = convert_heading_tree_to_dict(lesson_content.heading_tree)
+
             lesson = self.topic.topic_lessons.create(
                 unit_plan=self.unit_plan,
                 slug=lesson_slug,
@@ -89,7 +90,8 @@ class LessonsLoader(BaseLoader):
                 duration=lesson_duration,
                 content=lesson_content.html_string,
                 min_age=lesson_min_age,
-                max_age=lesson_max_age
+                max_age=lesson_max_age,
+                heading_tree=heading_tree,
             )
             lesson.save()
 
@@ -126,23 +128,6 @@ class LessonsLoader(BaseLoader):
                                 self.unit_plan_structure_file_path,
                                 learning_outcome_slug,
                                 "Learning Outcomes"
-                            )
-
-            # Add curriculum areas
-            if "curriculum-areas" in lesson_structure:
-                curriculum_area_slugs = lesson_structure["curriculum-areas"]
-                if curriculum_area_slugs is not None:
-                    for curriculum_area_slug in curriculum_area_slugs:
-                        try:
-                            curriculum_area = CurriculumArea.objects.get(
-                                slug=curriculum_area_slug
-                            )
-                            lesson.curriculum_areas.add(curriculum_area)
-                        except:
-                            raise KeyNotFoundError(
-                                self.unit_plan_structure_file_path,
-                                curriculum_area_slug,
-                                "Curriculum Areas"
                             )
 
             # Add generated resources

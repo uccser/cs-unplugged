@@ -24,8 +24,8 @@ diagram.
 
     - A **unit plan** must contain at least one **lesson**.
 
-      - A **lesson** can contain **learning outcomes**, **curriculum areas**, and **generated
-        resources**.
+      - A **lesson** can contain **learning outcomes**, and
+        **generated resources**.
 
   - A **topic** can also contain **curriculum integrations**, which can also contain
     **curriculum areas**.
@@ -98,7 +98,7 @@ Adding a Topic
 
 The Markdown file containing the description of the topic:
 
-- **Is in:** the topic directory, e.g. the description file for 
+- **Is in:** the topic directory, e.g. the description file for
   Binary Numbers will be in ``topics/content/en/binary-numbers/``.
 - **Is called:** ``<topic-key>.md`` where ``<topic-key>`` is the key
   (:ref:`what-is-a-key`) of the topic and the name of the directory it is in,
@@ -185,10 +185,9 @@ The Markdown file containing the content for the lesson:
 
 .. note::
 
-  If the lesson includes programming exercises, curriculum areas, and/or
-  learning outcomes, then the corresponding configuration and content files
-  will also need to be added.
-
+  If a lesson includes programming exercises, and/or learning outcomes, then
+  the corresponding configuration and content files may also need to be added
+  or updated.
 
 .. _adding-learning-outcomes:
 
@@ -211,6 +210,11 @@ You will now be able to add learning outcomes to lessons and programming
 exercises by referencing the keys you specified in the learning outcomes configuration
 file.
 
+.. note::
+
+  If a learning outcome contains curriculum areas, then the curriculum areas
+  configuration file may also need to be added or updated.
+
 .. _adding-curriculum-areas:
 
 Adding Curriculum Areas
@@ -228,7 +232,7 @@ Adding Curriculum Areas
   </map>
   <img src="../_static/img/topics_adding_curriculum_areas_flowchart.png" usemap="#curriculum-areas-map">
 
-You will now be able to add curriculum areas to lessons and curriculum
+You will now be able to add curriculum areas to learning outcomes and curriculum
 integrations by referencing the keys you specified in the curriculum areas
 configuration file.
 
@@ -288,8 +292,15 @@ exercise, e.g. ``count-to-16``.
     4. Example solution(s)
 
       - **Is called:** ``<language>-solution.md`` where ``<language>`` is the key
-        of the programming language, e.g. ``ruby-hints.md``.
+        of the programming language, e.g. ``ruby-solution.md``.
       - **Contains:** Example solutions to the exercise, e.g. Scratch program.
+
+    5. Extra challenge(s) (optional)
+
+      - **Is called:** the value defined in the programming exercises
+        configuration file.
+        A common filename is ``extra-challenge.md``.
+      - **Contains:** Content for an extra challenge.
 
 2-4 from the list above can be given in multiple programming languages.
 Therefore, the languages you have chosen must be specified in the
@@ -299,7 +310,7 @@ Therefore, the languages you have chosen must be specified in the
 .. note::
 
   If the exercise includes learning outcomes, then the corresponding configuration
-  file will also need to be added or updated to include new learning outcomes. 
+  file will also need to be added or updated to include new learning outcomes.
 
 .. _adding-a-curriculum-integration:
 
@@ -321,7 +332,7 @@ Adding a Curriculum Integration
 The Markdown file containing the content of the curriculum integration:
 
 - **Is in:** the curriculum integration directrory, e.g. curriculum integrations
-  in Binary Numbers will be in 
+  in Binary Numbers will be in
   ``topics/content/en/binary-numbers/curriculum-integrations/``.
 - **Is called:** ``<integration-key>.md`` where ``<integration-key>`` is the key
   (:ref:`what-is-a-key`) of the curriculum integration, e.g. ``whose-cake-is-it.md``.
@@ -332,7 +343,6 @@ The Markdown file containing the content of the curriculum integration:
 
   If the integration includes curriculum areas and/or prerequisite lessons,
   then the corresponding configuration and content files will also need to be added.
-
 
 .. _adding-glossary-definitions:
 
@@ -521,9 +531,6 @@ Unit Plan Configuration File
 
         - ``learning-outcomes:`` A list of keys corresponding to learning outcomes.
 
-        - ``curriculum-areas:`` A list of keys corresponding to other curriculum areas
-          that this lesson could be taught in.
-
         - ``generated-resources:`` A list of generated CSU resources connected to this
           lesson.
 
@@ -549,8 +556,6 @@ following:
       - count-to-1-million
     learning-outcomes:
       - binary-data-representation
-    curriculum-areas*:
-      - maths
     generated-resources:
       sorting-network:
         description: One per student.
@@ -578,18 +583,37 @@ Learning Outcomes Configuration File
 
 - **Required Fields:**
 
-  - ``<key> : <value>`` Key value pairs. The key will be used in other configuration
-    files to reference this particluar learning outcome. The value is the learning
-    outcome text that will be displayed to the user).
+  - ``<learning-outcome-key>:`` This is the key for the learning outcome.
+    Each learning outcome has its own list of required and optional fields:
+
+    - **Required Fields:**
+
+      - ``text:`` The text of the learning outcome (this is what will
+        be displayed to the user).
+
+    - **Optional Fields:**
+
+      - ``curriculum-areas:`` A list of curriculum area key (see example file below).
 
 A complete learning outcome structure file may look like the following:
 
 .. code-block:: yaml
 
-  binary-data-representation: Explain how a binary digit is represented using two contrasting values.
-  binary-count: Demonstrate how to represent any number between 0 and 31 using binary.
-  binary-convert-decimal: Perform a demonstration of how the binary number system works by converting any decimal number into a binary number.
-  binary-justify-representation: Argue that 0’s and 1’s are still a correct way to represent what is stored in the computer.
+  no-physical-zeros-ones:
+    text: Justify why there aren’t actual 0’s and 1’s zooming around inside a computer.
+    curriculum-areas:
+      - computational-thinking
+
+  binary-correct-representation:
+    text: Argue that 0’s and 1’s are still a correct way to represent what is stored in the computer.
+    curriculum-areas:
+      - computational-thinking
+      - data-representation
+
+  maths-comparing-numbers:
+    text: Compare numbers
+    curriculum-areas:
+      - numeracy
 
 .. _curriculum-areas-file:
 
@@ -613,11 +637,28 @@ Curriculum Areas Configuration File
 
       - ``name:`` The name of the curriculum area (this is what will be displayed to the
         user).
+      - ``colour:`` The CSS colour class to use for colouring the curriculum
+        area badge on the website.
+        This colour is also applied to all children of curriculum area.
+
+        Available colours include:
+
+        - ``blue``
+        - ``green``
+        - ``light-purple``
+        - ``orange``
+        - ``pink``
+        - ``purple``
+        - ``red``
+        - ``teal``
+        - ``yellow``
+
+        These colours are defined in: ``csunplugged/static/scss/website.scss``.
 
     - **Optional Fields:**
 
       - ``children:`` A list of sub-curriculum areas (see example file below). Each child
-        requires a name field.
+        requires a ``name`` field.
 
 An example curriculum areas file with multiple curriculums may look like
 the following:
@@ -626,6 +667,7 @@ the following:
 
   maths:
     name: Maths
+    colour: green
     children:
       geometry:
         name: Geometry
@@ -634,9 +676,11 @@ the following:
 
   science:
     name: Science
+    colour: blue
 
   art:
     name: Art
+    colour: teal
 
 .. note::
 
@@ -747,6 +791,9 @@ Programming Exercises Configuration File
 
       - ``learning-outcomes:`` A list of keys corresponding to learning outcomes.
 
+      - ``extra-challenge:`` A Markdown filename containing the content for an
+        extra challenge.
+
 A complete programming exercises structure file may look like the following:
 
 .. code-block:: yaml
@@ -769,6 +816,7 @@ A complete programming exercises structure file may look like the following:
       - python
     learning-outcomes:
       - programming-basic-logic
+    extra-challenge: extra-challenge.md
 
 .. _curriculum-integrations-file:
 

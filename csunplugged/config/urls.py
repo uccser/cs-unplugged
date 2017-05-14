@@ -11,22 +11,22 @@ from django.contrib import admin
 from general import views
 
 urlpatterns = i18n_patterns(
-    url(r'', include('general.urls', namespace='general')),
-    url(r'^topics/', include('topics.urls', namespace='topics')),
-    url(r'^resources/', include('resources.urls', namespace='resources')),
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^search/', include('haystack.urls', namespace='search')),
+    url(r"", include("general.urls", namespace="general")),
+    url(r"^topics/", include("topics.urls", namespace="topics")),
+    url(r"^resources/", include("resources.urls", namespace="resources")),
+    url(r"^admin/", include(admin.site.urls)),
+    url(r"^search/", include("haystack.urls", namespace="search")),
 )
 
 urlpatterns += [
-    url(r'^_ah/health', views.health_check),
+    url(r"^_ah/health", views.health_check),
 ]
 
 if settings.DEBUG:
     import debug_toolbar
     urlpatterns += [
-        url(r'^__debug__/', include(debug_toolbar.urls)),
+        url(r"^__debug__/", include(debug_toolbar.urls)),
     ]
     urlpatterns += i18n_patterns(
-        url(r'^__dev__/', include('dev.urls', namespace='dev')),
+        url(r"^__dev__/", include("dev.urls", namespace="dev")),
     )

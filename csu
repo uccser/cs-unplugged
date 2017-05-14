@@ -40,6 +40,7 @@ function helpmenu {
   rebuild_index_help
   shell_help
   static_help
+  static_prod_help
   style_help
   test_suite_help
   test_suite_backwards_help
@@ -140,6 +141,15 @@ function static_help {
   printf "   static            Build static files.\n"
 }
 
+# Build production static files
+function static_prod {
+  printf "Building production static files...\n"
+  docker-compose run --rm nginx gulp build --production
+}
+function static_prod_help {
+  printf "   static_prod       Build production static files.\n"
+}
+
 # Build scratch static files
 function static_scratch {
   printf "\nBuilding scratch images...\n"
@@ -186,7 +196,7 @@ function style_help {
 # Run test suite
 function test_suite {
   printf "Running test suite...\n"
-  docker-compose run --rm django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --pattern "test_*.py" -v 3
+  docker-compose run --rm django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3
 }
 function test_suite_help {
   printf "   test              Run test suite with code coverage.\n"
@@ -207,7 +217,7 @@ function test_suite_backwards {
   printf "Running test suite backwards...\n"
   if [ "$TRAVIS_PULL_REQUEST" != "false" ]
   then
-    docker-compose run --rm django /docker_venv/bin/python3 ./manage.py test --pattern "test_*.py" --reverse -v 0
+    docker-compose run --rm django /docker_venv/bin/python3 ./manage.py test --settings=config.settings.testing --pattern "test_*.py" --reverse -v 0
   fi
 }
 function test_suite_backwards_help {
@@ -293,6 +303,12 @@ function process_dev_command() {
         ;;
       static)
         static
+        static_scratch
+        collect_static
+        exit
+        ;;
+      static_prod)
+        static_prod
         static_scratch
         collect_static
         exit

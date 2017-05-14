@@ -27,7 +27,3 @@ BWWBW
 13
 
 When the last check mark button is clicked or Enter key is pressed you should see the following output:
-
-## Extra challenge: 
-
-Now try your questions to look like this:
