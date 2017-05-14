@@ -53,11 +53,11 @@ class Command(BaseCommand):
                     BASE_PATH
                 ).load()
 
-        if "programming-exercises-structure" in structure_file:
-            programming_exercises_structure_file_path = structure_file["programming-exercises-structure"]
-            if programming_exercises_structure_file_path is not None:
+        if "programming-challenges-structure" in structure_file:
+            programming_challenges_structure_file_path = structure_file["programming-challenges-structure"]
+            if programming_challenges_structure_file_path is not None:
                 ProgrammingExercisesStructureLoader(
-                    programming_exercises_structure_file_path,
+                    programming_challenges_structure_file_path,
                     BASE_PATH
                 ).load()
 

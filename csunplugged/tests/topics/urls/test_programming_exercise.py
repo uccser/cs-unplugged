@@ -10,4 +10,4 @@ class ProgrammingExerciseURLTest(BaseTestWithDB):
 
     def test_valid_programming_exercise(self):
         url = reverse("topics:programming_exercise", args=["binary-numbers", "exercise-1"])
-        self.assertEqual(url, "/en/topics/binary-numbers/plugged-in/exercise-1")
+        self.assertEqual(url, "/en/topics/binary-numbers/programming/exercise-1")

@@ -2,6 +2,7 @@
 
 from topics.models import (
     Topic,
+    UnitPlan,
     Lesson,
     CurriculumIntegration,
     CurriculumArea,
@@ -72,6 +73,26 @@ def create_test_topic(number):
     )
     topic.save()
     return topic
+
+
+def create_test_unit_plan(number, topic):
+    """Create unit plan object.
+
+    Args:
+        number: Integer representing the topic.
+        topic: The related Topic object.
+
+    Returns:
+        UnitPlan object.
+    """
+    unit_plan = UnitPlan(
+        topic=topic,
+        slug="unit-plan-{}".format(number),
+        name="Unit Plan {}".format(number),
+        content="Content for unit plan {}.".format(number),
+    )
+    unit_plan.save()
+    return unit_plan
 
 
 def create_test_lesson(topic, unit_plan, number, min_age, max_age):

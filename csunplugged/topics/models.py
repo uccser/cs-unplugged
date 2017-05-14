@@ -3,7 +3,7 @@
 from collections import OrderedDict
 
 from django.db import models
-from django.contrib.postgres.fields import JSONField
+from django.contrib.postgres.fields import ArrayField, JSONField
 from resources.models import Resource
 
 
@@ -100,6 +100,7 @@ class UnitPlan(models.Model):
     slug = models.SlugField()
     name = models.CharField(max_length=100)
     content = models.TextField()
+    heading_tree = JSONField(null=True)
 
     def lessons_by_age_group(self):
         """Return ordered groups of lessons.
@@ -270,6 +271,10 @@ class Lesson(models.Model):
         Resource,
         through="ConnectedGeneratedResource",
         related_name="lesson_generated_resources"
+    )
+    classroom_resources = ArrayField(
+        models.CharField(max_length=100),
+        null=True
     )
 
     def has_programming_exercises(self):
