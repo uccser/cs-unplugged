@@ -16,10 +16,7 @@ pip install -r ./requirements/production.txt
 export CLOUDSDK_CORE_DISABLE_PROMPTS=1;
 
 # Install base Google Cloud SDK to use gcloud command tool.
-# This is cached by Travis, as set in '.travis.yml'.
-if [ ! -d ${HOME}/google-cloud-sdk ]; then
-     curl https://sdk.cloud.google.com | bash;
-fi
+curl https://sdk.cloud.google.com | bash;
 
 # Decrypt secret files archive that contain credentials.
 #
@@ -39,7 +36,7 @@ tar -xf develop-deploy-secrets.tar
 # See: https://cloud.google.com/sdk/gcloud/reference/auth/activate-service-account
 gcloud auth activate-service-account --key-file continuous-deployment-develop-credentials.json
 
-# Peform an update of gcloud to latest version (in case cache is out of date).
+# Peform an update of gcloud to latest version.
 # This installs the 'app' tool, for deploying to Google App Engine.
 # See: https://cloud.google.com/sdk/gcloud/reference/components/update
 sudo gcloud components update

@@ -23,9 +23,6 @@ script:
 - "./csu dev test_coverage"
 - "./csu dev style"
 - "./csu dev docs"
-cache:
-  directories:
-    - ${HOME}/google-cloud-sdk
 deploy:
   provider: script
   script: sh ./infrastructure/develop-deploy/develop-deploy.sh
