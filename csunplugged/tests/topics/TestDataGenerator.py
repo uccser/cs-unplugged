@@ -15,7 +15,7 @@ class TestDataGenerator:
         self.BASE_PATH = "tests/topics/"
         self.LOADER_ASSET_PATH = os.path.join(self.BASE_PATH, "loaders/assets/")
 
-    def create_test_integration(topic, number, lessons=None, curriculum_areas=None):
+    def create_test_integration(self, topic, number, lessons=None, curriculum_areas=None):
         """Create curriculum integration object.
 
         Args:

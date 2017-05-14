@@ -16,7 +16,6 @@ class CurriculumIntegrationViewTest(BaseTestWithDB):
 
     def test_curriculum_integration_view_with_valid_slugs(self):
         topic = self.test_data.create_test_topic(1)
-        print(self.test_data.create_test_integration(topic, 1))
         self.test_data.create_test_integration(topic, 1)
         kwargs = {
             "topic_slug": topic.slug,
@@ -52,7 +51,7 @@ class CurriculumIntegrationViewTest(BaseTestWithDB):
         topic = self.test_data.create_test_topic(1)
         self.test_data.create_test_integration(topic, 1)
         kwargs = {
-            "topic_slug": "topic_1",
+            "topic_slug": "topic-1",
             "integration_slug": "integration-1",
         }
         url = reverse("topics:integration", kwargs=kwargs)
@@ -72,7 +71,7 @@ class CurriculumIntegrationViewTest(BaseTestWithDB):
             curriculum_areas=[area_1, area_2]
         )
         kwargs = {
-            "topic_slug": "topic_1",
+            "topic_slug": "topic-1",
             "integration_slug": "integration-1",
         }
         url = reverse("topics:integration", kwargs=kwargs)
@@ -112,7 +111,7 @@ class CurriculumIntegrationViewTest(BaseTestWithDB):
             lessons=[lesson_1, lesson_2]
         )
         kwargs = {
-            "topic_slug": "topic_1",
+            "topic_slug": "topic-1",
             "integration_slug": "integration-1",
         }
         url = reverse("topics:integration", kwargs=kwargs)
@@ -159,7 +158,7 @@ class CurriculumIntegrationViewTest(BaseTestWithDB):
             lessons=[lesson_3, lesson_2, lesson_1]
         )
         kwargs = {
-            "topic_slug": "topic_1",
+            "topic_slug": "topic-1",
             "integration_slug": "integration-1",
         }
         url = reverse("topics:integration", kwargs=kwargs)
