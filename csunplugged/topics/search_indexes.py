@@ -7,6 +7,7 @@ from topics.models import (
     Lesson,
     ProgrammingExercise,
     CurriculumIntegration,
+    CurriculumArea,
 )
 
 
@@ -83,3 +84,17 @@ class CurriculumIntegrationIndex(indexes.SearchIndex, indexes.Indexable):
             CurriculumIntegration object.
         """
         return CurriculumIntegration
+
+
+class CurriculumAreaIndex(indexes.SearchIndex, indexes.Indexable):
+    """Search index for CurriculumArea model."""
+
+    text = indexes.CharField(document=True, use_template=True)
+
+    def get_model(self):
+        """Return the CurriculumArea model.
+
+        Returns:
+            CurriculumArea object.
+        """
+        return CurriculumArea

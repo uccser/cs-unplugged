@@ -37,6 +37,14 @@ class CurriculumArea(models.Model):
         related_name="parent_curriculum_area"
     )
 
+    def model_type(self):
+        """Text name of model type.
+
+        Returns:
+            Name of the model (str).
+        """
+        return "Curriculum area"
+
     def __str__(self):
         """Text representation of CurriculumArea object.
 
