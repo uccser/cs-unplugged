@@ -30,9 +30,9 @@ diagram.
   - A **topic** can also contain **curriculum integrations**, which can also contain
     **curriculum areas**.
 
-  - A **topic** can also contain **programming exercises**.
+  - A **topic** can also contain **programming challenges**.
 
-    - A **programming exercise** can use different **programming languages**, and be set at
+    - A **programming challenge** can use different **programming languages**, and be set at
       a specific **difficulty**.
 
 - **Learning outcomes**, **curriculum areas**, **glossary definitions**,
@@ -185,7 +185,7 @@ The Markdown file containing the content for the lesson:
 
 .. note::
 
-  If a lesson includes programming exercises, and/or learning outcomes, then
+  If a lesson includes programming challenges, and/or learning outcomes, then
   the corresponding configuration and content files may also need to be added
   or updated.
 
@@ -207,7 +207,7 @@ Adding Learning Outcomes
   <img src="../_static/img/topics_adding_learning_outcomes_flowchart.png" usemap="#learning-outcomes-map">
 
 You will now be able to add learning outcomes to lessons and programming
-exercises by referencing the keys you specified in the learning outcomes configuration
+challenges by referencing the keys you specified in the learning outcomes configuration
 file.
 
 .. note::
@@ -236,80 +236,80 @@ You will now be able to add curriculum areas to learning outcomes and curriculum
 integrations by referencing the keys you specified in the curriculum areas
 configuration file.
 
-.. _adding-a-programming-exercise:
+.. _adding-a-programming-challenge:
 
-Adding a Programming Exercise
+Adding a Programming Challenge
 ------------------------------------------------------------------------------
 
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. The image is included as raw HTML because it has clickable nodes.
 .. raw:: html
 
-  <map name="programming-exercises-map">
-    <area shape="rect" coords="554,470,633,505" href="#programming-exercises-configuration-file">
-    <area shape="rect" coords="240,572,317,605" href="#programming-exercises-configuration-file">
+  <map name="programming-challenges-map">
+    <area shape="rect" coords="554,470,633,505" href="#programming-challenges-configuration-file">
+    <area shape="rect" coords="240,572,317,605" href="#programming-challenges-configuration-file">
     <area shape="rect" coords="240,694,317,727" href="#topic-configuration-file">
-    <area shape="rect" coords="240,833,317,867" href="#programming-exercises-structure-configuration-file">
+    <area shape="rect" coords="240,833,317,867" href="#programming-challenges-structure-configuration-file">
     <area shape="rect" coords="240,995,317,1030" href="../getting_started/helper_commands.html#update">
   </map>
-  <img src="../_static/img/topics_adding_programming_exercises_flowchart.png" usemap="#programming-exercises-map">
+  <img src="../_static/img/topics_adding_programming_challenges_flowchart.png" usemap="#programming-challenges-map">
 
-You will now be able to add programming exercises to lessons by referencing the
-keys you specified in the programming exercises configuration file.
+You will now be able to add programming challenges to lessons by referencing the
+keys you specified in the programming challenges configuration file.
 
-A programming exercise is split into several different sections, each of which
+A programming challenge is split into several different sections, each of which
 is an its own Markdown file, all of which are in
-``topics/content/en/binary-numbers/programming-exercises/<exercise-key>/``
-where ``<exercise-key>`` refers to the key (:ref:`what-is-a-key`) of the
-exercise, e.g. ``count-to-16``.
+``topics/content/en/binary-numbers/programming-challenges/<challenge-key>/``
+where ``<challenge-key>`` refers to the key (:ref:`what-is-a-key`) of the
+challenge, e.g. ``count-to-16``.
 
-    1. The exercise description:
+    1. The challenge description:
 
-      - **Is called:** ``<exercise-key>.md`` where ``<exercise-key>`` is the key
-        of the exercise, e.g. ``count-to-16.md``.
+      - **Is called:** ``<challenge-key>.md`` where ``<challenge-key>`` is the key
+        of the challenge, e.g. ``count-to-16.md``.
       - **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
-        of the exercise.
+        of the challenge.
 
       .. note::
 
         The heading written in this file will be used exactly as it is given
-        throughout the website as the name of the programming exercise.
+        throughout the website as the name of the programming challenge.
 
     2. The expected output
 
       - **Is called:** ``<language>-expected.md`` where ``<language>`` is the key
         of the programming language, e.g. ``python-expected.md``.
-      - **Contains:** The expected output for the programming exercise, e.g. an
+      - **Contains:** The expected output for the programming challenge, e.g. an
         embedded Scratch program or Python output.
 
     3. Hints (optional)
 
       - **Is called:** ``<language>-hints.md`` where ``<language>`` is the key
         of the programming language, e.g. ``scratch-hints.md``.
-      - **Contains:** Hints for how to complete the exercise, e.g. suggested
+      - **Contains:** Hints for how to complete the challenge, e.g. suggested
         Scratch blocks.
 
     4. Example solution(s)
 
       - **Is called:** ``<language>-solution.md`` where ``<language>`` is the key
         of the programming language, e.g. ``ruby-solution.md``.
-      - **Contains:** Example solutions to the exercise, e.g. Scratch program.
+      - **Contains:** Example solutions to the challenge, e.g. Scratch program.
 
     5. Extra challenge(s) (optional)
 
-      - **Is called:** the value defined in the programming exercises
+      - **Is called:** the value defined in the programming challenges
         configuration file.
         A common filename is ``extra-challenge.md``.
       - **Contains:** Content for an extra challenge.
 
 2-4 from the list above can be given in multiple programming languages.
 Therefore, the languages you have chosen must be specified in the
-``programming-exercises.yaml`` configuration file, as well as the
-``programming-exercises-structure.yaml`` configuration file.
+``programming-challenges.yaml`` configuration file, as well as the
+``programming-challenges-structure.yaml`` configuration file.
 
 .. note::
 
-  If the exercise includes learning outcomes, then the corresponding configuration
+  If the challenge includes learning outcomes, then the corresponding configuration
   file will also need to be added or updated to include new learning outcomes.
 
 .. _adding-a-curriculum-integration:
@@ -428,7 +428,7 @@ Application Structure Configuration File
 
     - ``learning-outcomes:`` The path to the learning outcomes configuration file.
     - ``curriculum-areas:`` The path to the curriculum areas configuration file.
-    - ``programming-exercises-structure:`` The path to the programming exercies structure
+    - ``programming-challenges-structure:`` The path to the programming exercies structure
       configuration file.
     - ``glossary-folder:`` The folder name that contains the Markdown files for
       glossary definitions.
@@ -443,7 +443,7 @@ A complete application structure file may look like the following:
 
   learning-outcomes: learning-outcomes.yaml
   curriculum-areas: curriculum-areas.yaml
-  programming-exercises-structure: programming-exercises-structure.yaml
+  programming-challenges-structure: programming-challenges-structure.yaml
 
   glossary-folder: glossary
 
@@ -459,7 +459,7 @@ Topic Configuration File
 - **Referenced In:** ``topic/content/<launguage>/structure.yaml``
 
 - **Purpose:** This file defines the attributes of a specific topic, including connected
-  unit plan, programming exercise, and curriculum integration configuration files.
+  unit plan, programming challenge, and curriculum integration configuration files.
 
 - **Required Fields:**
 
@@ -472,7 +472,7 @@ Topic Configuration File
   - ``other-resources:`` A Markdown file containing information about other related
     (external) resources.
 
-  - ``programming-exercises:`` The path to the programming exercises configuration file.
+  - ``programming-challenges:`` The path to the programming challenges configuration file.
 
   - ``curriculum-integrations:`` The path to the curriculum integrations configuration
     file.
@@ -489,7 +489,7 @@ A complete topic structure file may look like the following:
 
   other-resources: other-resources.md
 
-  programming-exercises: programming-exercises/programming-exercises.yaml
+  programming-challenges: programming-challenges/programming-challenges.yaml
   curriculum-integrations: curriculum-integrations/curriculum-integrations.yaml
 
 .. _unit-plan-file:
@@ -526,8 +526,8 @@ Unit Plan Configuration File
 
         - ``duration``: The estimated time to complete the lesson (in minutes).
 
-        - ``programming-exercises:`` A list of keys corresponding to programming
-          exercises.
+        - ``programming-challenges:`` A list of keys corresponding to programming
+          challenges.
 
         - ``learning-outcomes:`` A list of keys corresponding to learning outcomes.
 
@@ -558,7 +558,7 @@ following:
     min-age: 7
     max-age: 11
     number: 1
-    programming-exercises:
+    programming-challenges:
       - count-to-16
       - count-to-1-million
     learning-outcomes:
@@ -704,23 +704,23 @@ the following:
   specify this manually. For example, adding ``geometry`` means that ``maths`` is
   automatically included.
 
-.. _programming-exercises-structure-file:
+.. _programming-challenges-structure-file:
 
-Programming Exercises Structure Configuration File
+Programming Challenges Structure Configuration File
 ------------------------------------------------------------------------------
 
-- **File Name:** ``programming-exercises-structure.yaml``
+- **File Name:** ``programming-challenges-structure.yaml``
 
 - **Location:** ``topics/content/<language>/``
 
 - **Referenced In:** ``topics/content/<language>/structure.yaml``
 
-- **Purpose:** This file defines the structure of programming exercises for all
+- **Purpose:** This file defines the structure of programming challenges for all
   topics.
 
 - **Required Fields:**
 
-  - ``languages:`` A list of languages that programming exercises can be given in.
+  - ``languages:`` A list of languages that programming challenges can be given in.
 
     - **Required Fields:**
 
@@ -736,7 +736,7 @@ Programming Exercises Structure Configuration File
 
           - ``icon:`` An image file to be used as the icon for the language.
 
-  - ``difficulties:`` A list of difficulties programming exercises can be labelled as.
+  - ``difficulties:`` A list of difficulties programming challenges can be labelled as.
 
     - **Required Fields:**
 
@@ -747,7 +747,7 @@ Programming Exercises Structure Configuration File
         - ``name:`` The name of the difficulty level (this is what will be displayed to
           the user).
 
-A complete programming exercise structure file may look like the following:
+A complete programming challenge structure file may look like the following:
 
 .. code-block:: yaml
 
@@ -766,36 +766,36 @@ A complete programming exercise structure file may look like the following:
     3:
       name: Advanced
 
-.. _programming-exercises-file:
+.. _programming-challenges-file:
 
-Programming Exercises Configuration File
+Programming Challenges Configuration File
 ------------------------------------------------------------------------------
 
-- **File Name:** ``programming-exercises.yaml``
+- **File Name:** ``programming-challenges.yaml``
 
-- **Location:** ``topics/content/<language>/<topic-key>/programming-exercises/``
+- **Location:** ``topics/content/<language>/<topic-key>/programming-challenges/``
 
 - **Referenced In:** ``topics/content/<language>/<topic-key>/<topic-key>.yaml``
 
-- **Purpose:** This file defines the programming exercises (and their respective attributes)
+- **Purpose:** This file defines the programming challenges (and their respective attributes)
   for a particular topic.
 
 - **Required Fields:**
 
-  - ``<programming-exercise-name>``
+  - ``<programming-challenge-name>``
 
     - **Required Fields:**
 
-      - ``exercise-set-number:`` The group of related programming exercises this
-        exercise belongs to.
+      - ``challenge-set-number:`` The group of related programming challenges this
+        challenge belongs to.
 
-      - ``exercise-number:`` The number order for this programming exercise.
-        Exercises are sorted this number.
+      - ``challenge-number:`` The number order for this programming challenge.
+        Challenges are sorted this number.
 
       - ``difficulty-level:`` A key corresponding to a difficulty level.
 
       - ``programming-languages:`` A list of keys corresponding to programming languages
-        that this exercise is given in.
+        that this challenge is given in.
 
     - **Optional Fields:**
 
@@ -804,13 +804,13 @@ Programming Exercises Configuration File
       - ``extra-challenge:`` A Markdown filename containing the content for an
         extra challenge.
 
-A complete programming exercises structure file may look like the following:
+A complete programming challenges structure file may look like the following:
 
 .. code-block:: yaml
 
   count-to-16:
-    exercise-set-number: 1
-    exercise-number: 1
+    challenge-set-number: 1
+    challenge-number: 1
     difficulty-level: 1
     programming-languages:
       - ruby
@@ -819,8 +819,8 @@ A complete programming exercises structure file may look like the following:
       - programming-sequence
 
   count-to-a-million:
-    exercise-set-number: 1
-    exercise-number: 2
+    challenge-set-number: 1
+    challenge-number: 2
     difficulty-level: 3
     programming-languages:
       - python

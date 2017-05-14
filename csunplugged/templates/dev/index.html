@@ -72,7 +72,7 @@
           {% endif  %}
 
           {% if topic.programming_exercises.all %}
-            <li>Programming Exercises:</li>
+            <li>Programming Challenges:</li>
             <ul>
               {% for exercise in topic.programming_exercises %}
                 <li><a href="{% url 'topics:programming_exercise' topic.slug exercise.slug %}">{{ exercise.exercise_set_number }}.{{ exercise.exercise_number }} {{ exercise.name }}</a></li>
@@ -114,7 +114,7 @@
   </p>
 
   {% if programming_exercise_languages.all %}
-    <h1>Programming Exercise Languages</h1>
+    <h1>Programming Challenge Languages</h1>
     <ul>
       {% for language in programming_exercise_languages.all %}
         <li>{{ language }}</li>
@@ -123,7 +123,7 @@
   {% endif %}
 
   {% if programming_exercise_difficulties.all %}
-    <h1>Programming Exercise Difficulties</h1>
+    <h1>Programming Challenge Difficulties</h1>
     <ul>
       {% for difficulty in programming_exercise_difficulties.all %}
         <li>{{ difficulty.level }}: {{ difficulty.name }}</li>

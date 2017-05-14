@@ -96,13 +96,13 @@ class TopicLoader(BaseLoader):
 
         self.log("Added Topic: {}".format(topic.name))
 
-        # Load programming exercises
-        if "programming-exercises" in topic_structure:
-            programming_exercises_structure_file_path = topic_structure["programming-exercises"]
-            if programming_exercises_structure_file_path is not None:
+        # Load programming challenges
+        if "programming-challenges" in topic_structure:
+            programming_challenges_structure_file_path = topic_structure["programming-challenges"]
+            if programming_challenges_structure_file_path is not None:
                 ProgrammingExercisesLoader(
                     self.load_log,
-                    programming_exercises_structure_file_path,
+                    programming_challenges_structure_file_path,
                     topic,
                     self.BASE_PATH
                 ).load()

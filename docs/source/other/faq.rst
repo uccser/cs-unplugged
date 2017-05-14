@@ -25,7 +25,7 @@ These are *valid* examples of keys:
 
 - ``algorithms``
 - ``binary-numbers``
-- ``exercise-2``
+- ``challenge-2``
 
 These are *invalid* examples of keys:
 
@@ -33,7 +33,7 @@ These are *invalid* examples of keys:
 - ``Binary Numbers``
 - ``Binary_Numbers``
 - ``binary_numbers``
-- ``exercise 2``
+- ``challenge 2``
 
 Keys must be exact matches to work, for example, if you name a lesson
 ``bits-and-bytes``, referencing it in another configuration file as
