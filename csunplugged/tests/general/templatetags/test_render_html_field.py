@@ -1,7 +1,7 @@
 from django import template
 
 from tests.BaseTestWithDB import BaseTestWithDB
-from tests.topics.TestDataGenerator import TestDataGenerator
+from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 
 from topics.models import CurriculumIntegration
 
@@ -10,7 +10,7 @@ class RenderHTMLFieldTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.test_data = TestDataGenerator()
+        self.test_data = TopicsTestDataGenerator()
 
     def render_template(self, string, context=None):
         context = context or {}

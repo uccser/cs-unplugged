@@ -2,7 +2,7 @@ from django.urls import reverse
 from model_mommy import mommy
 
 from tests.BaseTestWithDB import BaseTestWithDB
-from tests.topics.TestDataGenerator import TestDataGenerator
+from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 
 from topics.models import UnitPlan
 
@@ -12,7 +12,7 @@ class CurriculumIntegrationViewTest(BaseTestWithDB):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.language = "en"
-        self.test_data = TestDataGenerator()
+        self.test_data = TopicsTestDataGenerator()
 
     def test_curriculum_integration_view_with_valid_slugs(self):
         topic = self.test_data.create_test_topic(1)

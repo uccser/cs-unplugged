@@ -2,7 +2,7 @@ import os.path
 from unittest.mock import Mock
 
 from tests.BaseTestWithDB import BaseTestWithDB
-from tests.topics.TestDataGenerator import TestDataGenerator
+from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 
 from topics.models import UnitPlan
 from topics.management.commands._UnitPlanLoader import UnitPlanLoader
@@ -13,7 +13,7 @@ class UnitPlanLoaderTest(BaseTestWithDB):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.load_log = Mock()
-        self.test_data = TestDataGenerator()
+        self.test_data = TopicsTestDataGenerator()
         self.loader_name = "unit_plan"
         self.BASE_PATH = os.path.join(self.test_data.LOADER_ASSET_PATH, self.loader_name)
 

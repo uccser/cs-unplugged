@@ -1,7 +1,7 @@
 import os.path
 
 from tests.BaseTestWithDB import BaseTestWithDB
-from tests.topics.TestDataGenerator import TestDataGenerator
+from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 
 from topics.models import CurriculumArea
 from topics.management.commands._CurriculumAreasLoader import CurriculumAreasLoader
@@ -11,7 +11,7 @@ class CurriculumAreasLoaderTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.test_data = TestDataGenerator()
+        self.test_data = TopicsTestDataGenerator()
         self.loader_name = "curriculum_areas"
         self.BASE_PATH = os.path.join(self.test_data.LOADER_ASSET_PATH, self.loader_name)
 

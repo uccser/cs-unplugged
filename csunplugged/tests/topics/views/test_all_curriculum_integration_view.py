@@ -1,7 +1,7 @@
 from django.urls import reverse
 
 from tests.BaseTestWithDB import BaseTestWithDB
-from tests.topics.TestDataGenerator import TestDataGenerator
+from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 
 
 class AllCurriculumIntegrationViewTest(BaseTestWithDB):
@@ -9,7 +9,7 @@ class AllCurriculumIntegrationViewTest(BaseTestWithDB):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.language = "en"
-        self.test_data = TestDataGenerator()
+        self.test_data = TopicsTestDataGenerator()
 
     def test_all_curriculum_integration_view_with_no_integrations(self):
         url = reverse("topics:all_curriculum_integrations")
