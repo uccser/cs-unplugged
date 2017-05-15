@@ -1,21 +1,24 @@
-{% extends "topics/base.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
 {% load static %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block breadcrumbs %}
-  {{ block.super }}
+  {% breadcrumb "Home" "/" %}
+  {% breadcrumb "Topics" "topics:index" %}
   {% breadcrumb "Curriculum Integrations" "topics:all_curriculum_integrations" %}
 {% endblock breadcrumbs %}
 
-{% block content %}
+{% block page_heading %}
   <h1>{% trans "Curriculum Integrations" %}</h1>
   <p>
     The following table lists curriculum integrations for all topics in the CS Unplugged content.
   </p>
+{% endblock page_heading %}
 
-  <table class="table table-responsive">
+{% block content %}
+  <table class="table table-responsive table-center-vertical">
     <thead class="thead-default">
       <tr>
         <th>Topic</th>
@@ -26,7 +29,7 @@
     </thead>
     <tbody>
       {% for curriculum_integration in curriculum_integrations %}
-      <tr>
+      <tr class="align-middle">
         <td>
           {{ curriculum_integration.topic.name }}
         </td>
@@ -43,10 +46,10 @@
           {% endfor %}
         </td>
         {% if curriculum_integration.has_prerequisite_lessons %}
-          <td class="bg-success">
+          <td class="text-center table-success-cell">
             Yes
         {% else %}
-          <td>
+          <td class="text-center">
             No
         {% endif %}
           </td>

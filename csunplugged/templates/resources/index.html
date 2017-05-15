@@ -1,16 +1,19 @@
-{% extends "resources/base.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
 {% load static %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block breadcrumbs %}
-  {{ block.super }}
+  {% breadcrumb "Home" "/" %}
   {% breadcrumb "Resources" "resources:index" %}
 {% endblock breadcrumbs %}
 
-{% block content %}
+{% block page_heading %}
   <h1>{% trans "Resources" %}</h1>
+{% endblock page_heading %}
+
+{% block content %}
   {% if all_resources %}
     {% for resource in all_resources %}
       <p>
@@ -20,4 +23,4 @@
   {% else %}
     <p>No resources are available.</p>
   {% endif %}
-{% endblock %}
+{% endblock content %}

@@ -16,7 +16,7 @@ class LearningOutcomesLoader(BaseLoader):
     """Custom loader for loading learning outcomes."""
 
     def __init__(self, structure_file_path, BASE_PATH):
-        """Create the loader for loading programming exercises.
+        """Create the loader for loading learning outcomes.
 
         Args:
             structure_file_path: File path to YAML file (string)
