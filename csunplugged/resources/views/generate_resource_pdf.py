@@ -63,7 +63,9 @@ def generate_resource_pdf(request, resource, module_path):
 
 
 def generate_resource_image(get_request, resource, module_path):
-    """Retrieve image from resource generator and resize to size.
+    """Retrieve image(s) for one copy of resource from resource generator.
+
+    Images are resized to size.
 
     Args:
         get_request: HTTP request object
@@ -71,27 +73,33 @@ def generate_resource_image(get_request, resource, module_path):
         module_path: Path to module for generating resource.
 
     Returns:
-        Base64 string of a generated resource image.
+        List of Base64 strings of a generated resource images for one copy.
     """
-    # Get image from resource image creator
+    # Get images from resource image creator
     resource_image_generator = importlib.import_module(module_path)
-    image = resource_image_generator.resource_image(get_request, resource)
+    raw_images = resource_image_generator.resource_image(get_request, resource)
+    if not isinstance(raw_images, list):
+        raw_images = [raw_images]
 
-    # Resize image to reduce file size
+    # Resize images to reduce file size
     if get_request["paper_size"] == "a4":
         max_pixel_height = 267 * MM_TO_PIXEL_RATIO
     elif get_request["paper_size"] == "letter":
         max_pixel_height = 249 * MM_TO_PIXEL_RATIO
-    (width, height) = image.size
-    if height > max_pixel_height:
-        ratio = max_pixel_height / height
-        width *= ratio
-        height *= ratio
-        image = image.resize((int(width), int(height)), Image.ANTIALIAS)
 
-    # Save image to buffer
-    image_buffer = BytesIO()
-    image.save(image_buffer, format="PNG")
+    images = []
+    for image in raw_images:
+        (width, height) = image.size
+        if height > max_pixel_height:
+            ratio = max_pixel_height / height
+            width *= ratio
+            height *= ratio
+            image = image.resize((int(width), int(height)), Image.ANTIALIAS)
 
-    # Return base64 of image
-    return base64.b64encode(image_buffer.getvalue())
+        # Save image to buffer
+        image_buffer = BytesIO()
+        image.save(image_buffer, format="PNG")
+        # Add base64 of image to list of images
+        images.append(base64.b64encode(image_buffer.getvalue()))
+
+    return images
