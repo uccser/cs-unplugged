@@ -181,11 +181,6 @@ function style_help {
   printf "   style             Run style checks.\n"
 }
 
-# CATCH ME IN THE PR! DELETE ME!
-function test_loaders {
-  printf "Testing loaders...\n"
-  docker-compose run --rm django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test tests/topics/loaders/ --settings=config.settings.testing --pattern "test_*.py" -v 3
-}
 # Run test suite
 function test_suite {
   printf "Running test suite...\n"
