@@ -51,6 +51,17 @@ gcloud version
 # See: https://cloud.google.com/solutions/continuous-delivery-with-travis-ci#continuous_deployment_on_app_engine_flexible_environment_instances
 ssh-keygen -q -N "" -f ~/.ssh/google_compute_engine
 
+# Delete all previous stopped versions of application on Google App Engine.
+# This command deletes all stopped applications of the 'default' service,
+# and when the new application is deployed, the previous application version
+# will remain until the next deployment.
+# We delete old versions due avoid hitting the App Engine version limit.
+declare -a versions_to_delete
+versions_to_delete=($(gcloud app versions list --filter="SERVING_STATUS=STOPPED" --service=default --format="[no-heading]" | awk '{print $2}' | tr '\n' ' '))
+for version in "${versions_to_delete[@]}"; do
+  gcloud app versions delete --service=default ${version}
+done
+
 # Load environment variables.
 # Used when running local Django for updating development database.
 . ./load-develop-deploy-envs.sh
