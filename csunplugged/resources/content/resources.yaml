@@ -12,4 +12,4 @@ binary-cards:
   name: Binary Cards
   webpage-template: resources/binary-cards.html
   generation-view: binary_cards.py
-  thumbnail-static-path: img/resources/resource-binary-cards-thumbnail-example.png
+  thumbnail-static-path: img/resources/binary-cards/resource-binary-cards-thumbnail.png
