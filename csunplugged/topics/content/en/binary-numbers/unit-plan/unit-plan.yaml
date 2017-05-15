@@ -56,6 +56,9 @@ reinforcing-sequencing-in-binary-number-systems:
     - number-bits-representing-number
     - binary-cards-representing-number
     - decimal-to-binary
+  generated-resources:
+    binary-cards:
+      description: One set.
 
 codes-for-letters-using-binary-representation:
   min-age: 8
@@ -81,3 +84,6 @@ codes-for-letters-using-binary-representation:
     - number-bits-representing-number
     - binary-cards-representing-number
     - decimal-to-binary
+  generated-resources:
+    binary-cards:
+      description: One set.
