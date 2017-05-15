@@ -15,6 +15,8 @@ def resource_image(get_request, resource):
         A list of Pillow image objects.
     """
     BASE_IMAGE_PATH = "static/img/resources/binary-cards/"
+    IMAGE_SIZE_X = 2480
+    IMAGE_SIZE_Y = 3508
     IMAGE_DATA = [
         ("binary-cards-1-dot.png", 1),
         ("binary-cards-2-dots.png", 2),
@@ -29,15 +31,18 @@ def resource_image(get_request, resource):
     if get_request["display_numbers"] == "yes":
         font_path = "static/fonts/PatrickHand-Regular.ttf"
         font = ImageFont.truetype(font_path, 600)
-        BASE_COORD_X = 1240
-        BASE_COORD_Y = 3100
+        BASE_COORD_X = IMAGE_SIZE_X / 2
+        BASE_COORD_Y = IMAGE_SIZE_Y - 100
+        IMAGE_SIZE_Y = IMAGE_SIZE_Y + 300
 
     images = []
 
     for (image_path, number) in IMAGE_DATA:
         image = Image.open(os.path.join(BASE_IMAGE_PATH, image_path))
         if get_request["display_numbers"] == "yes":
-            draw = ImageDraw.Draw(image)
+            background = Image.new("RGB", (IMAGE_SIZE_X, IMAGE_SIZE_Y), "#FFF")
+            background.paste(image, mask=image)
+            draw = ImageDraw.Draw(background)
             text = str(number)
             text_width, text_height = draw.textsize(text, font=font)
             coord_x = BASE_COORD_X - (text_width / 2)
@@ -48,6 +53,7 @@ def resource_image(get_request, resource):
                 font=font,
                 fill="#000"
             )
+            image = background
         images.append(image)
 
     return images
