@@ -4,6 +4,9 @@ from unittest.mock import Mock
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TestDataGenerator import TestDataGenerator
 
+from topics.models import UnitPlan
+from topics.management.commands._UnitPlanLoader import UnitPlanLoader
+
 
 class UnitPlanLoaderTest(BaseTestWithDB):
 
@@ -12,6 +15,19 @@ class UnitPlanLoaderTest(BaseTestWithDB):
         self.load_log = Mock()
         self.test_data = TestDataGenerator()
         self.loader_name = "unit_plan"
+        self.BASE_PATH = os.path.join(self.test_data.LOADER_ASSET_PATH, self.loader_name)
 
     def test_basic_config(self):
-        pass
+        config_file = "unit-plan-1/unit-plan-1.yaml"
+        factory = Mock()
+        topic = self.test_data.create_test_topic('1')
+
+        up_loader = UnitPlanLoader(factory, self.load_log, config_file, topic, self.BASE_PATH)
+        up_loader.load()
+
+        up_objects = UnitPlan.objects.all()
+
+        self.assertQuerysetEqual(
+            up_objects,
+            ["<UnitPlan: Unit Plan 1>"]
+        )

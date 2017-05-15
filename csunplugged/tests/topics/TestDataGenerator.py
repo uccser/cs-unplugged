@@ -6,6 +6,8 @@ from topics.models import (
     Lesson,
     CurriculumIntegration,
     CurriculumArea,
+    ProgrammingExerciseDifficulty,
+    ProgrammingExerciseLanguage,
 )
 
 
@@ -104,3 +106,23 @@ class TestDataGenerator:
         )
         lesson.save()
         return lesson
+
+    def create_test_difficulty_level(self, number):
+        """
+        """
+        difficulty = ProgrammingExerciseDifficulty(
+            level="1",
+            name="Difficulty-{}".format(number)
+        )
+        difficulty.save()
+        return difficulty
+
+    def create_test_programming_language(self, number):
+        """
+        """
+        language = ProgrammingExerciseLanguage(
+            slug="language-{}".format(number),
+            name="Language {}".format(number),
+        )
+        language.save()
+        return language
