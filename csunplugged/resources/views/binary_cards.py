@@ -56,6 +56,10 @@ def resource_image(get_request, resource):
             image = background
         images.append(image)
 
+        if get_request["black_back"] == "yes":
+            black_back = Image.new("1", (IMAGE_SIZE_X, IMAGE_SIZE_Y))
+            images.append(black_back)
+
     return images
 
 
