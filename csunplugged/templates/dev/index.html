@@ -4,11 +4,8 @@
 {% load static %}
 {% load render_html_field %}
 
-
 {% block content %}
-
   <h1>Topics</h1>
-
   {% if topics.all %}
     <ul>
       {% for topic in topics %}
@@ -37,18 +34,48 @@
 
           {% if topic.integrations.all %}
             <li>Curriculum integrations:</li>
-            <ul>
-              {% for integration in topic.integrations %}
-                <li><a href="{% url 'topics:integration' topic.slug integration.slug %}">{{ integration }}</a></li>
-              {% endfor %}
-            </ul>
+            <table class="table table-responsive table-center-vertical">
+              <thead class="thead-default">
+                <tr>
+                  <th>Activity</th>
+                  <th>Curriculum Areas</th>
+                  <th>Prerequisite Lessons?</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for curriculum_integration in topic.integrations %}
+                <tr class="align-middle">
+                  <td>
+                    <a href="{% url 'topics:integration' curriculum_integration.topic.slug curriculum_integration.slug %}">
+                      <strong>
+                        {{ curriculum_integration.name }}
+                      </strong>
+                    </a>
+                  </td>
+                  <td>
+                    {% for area in curriculum_integration.curriculum_areas.all %}
+                      {% include "topics/curriculum_area_badge.html" %}
+                    {% endfor %}
+                  </td>
+                  {% if curriculum_integration.has_prerequisite_lessons %}
+                    <td class="text-center table-success-cell">
+                      Yes
+                  {% else %}
+                    <td class="text-center">
+                      No
+                  {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
           {% endif  %}
 
           {% if topic.programming_exercises.all %}
-            <li>Programming Exercises:</li>
+            <li>Programming Challenges:</li>
             <ul>
               {% for exercise in topic.programming_exercises %}
-                <li><a href="{% url 'dev:programming_exercise' exercise.slug %}">{{ exercise.exercise_set_number }}.{{ exercise.exercise_number }} {{ exercise.name }}</a></li>
+                <li><a href="{% url 'topics:programming_exercise' topic.slug exercise.slug %}">{{ exercise.exercise_set_number }}.{{ exercise.exercise_number }} {{ exercise.name }}</a></li>
               {% endfor %}
             </ul></li>
           {% endif %}
@@ -61,11 +88,11 @@
   {% if curriculum_areas %}
     <h1>Curriculum Areas</h1>
     <ul>
-      {% for parent,children in curriculum_areas.items %}
-        <li>{{ parent.name }}</li>
+      {% for area,children in curriculum_areas.items %}
+        <li>{% include "topics/curriculum_area_badge.html" %}</li>
         <ul>
-        {% for child in children %}
-          <li>{{ child.name }}</li>
+        {% for area in children %}
+          <li>{% include "topics/curriculum_area_badge.html" %}</li>
         {% endfor %}
         </ul>
       {% endfor %}
@@ -87,7 +114,7 @@
   </p>
 
   {% if programming_exercise_languages.all %}
-    <h1>Programming Exercise Languages</h1>
+    <h1>Programming Challenge Languages</h1>
     <ul>
       {% for language in programming_exercise_languages.all %}
         <li>{{ language }}</li>
@@ -96,12 +123,11 @@
   {% endif %}
 
   {% if programming_exercise_difficulties.all %}
-    <h1>Programming Exercise Difficulties</h1>
+    <h1>Programming Challenge Difficulties</h1>
     <ul>
       {% for difficulty in programming_exercise_difficulties.all %}
         <li>{{ difficulty.level }}: {{ difficulty.name }}</li>
       {% endfor %}
     </ul>
   {% endif %}
-
-{% endblock %}
+{% endblock content %}

@@ -1,11 +1,13 @@
-{% extends "topics/topic.html" %}
+{% extends "base_columns_same_order_on_mobile.html" %}
 
 {% load static %}
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block breadcrumbs %}
-  {{ block.super }}
+  {% breadcrumb "Home" "/" %}
+  {% breadcrumb "Topics" "topics:index" %}
+  {% breadcrumb topic.name "topics:topic" topic.slug %}
   {% breadcrumb programming_exercise.name "topics:programming_exercise" topic.slug programming_exercise.slug %}
 {% endblock breadcrumbs %}
 
@@ -20,7 +22,7 @@
   </p>
 {% endblock page_heading %}
 
-{% block content %}
+{% block left_column_content %}
   {% if lessons %}
     <div class="alert alert-info" role="alert">
       <p>This programming challenge is related to the following lessons:</p>
@@ -49,15 +51,15 @@
   {% endif %}
 
   {% render_html_field programming_exercise.content %}
-{% endblock content %}
+{% endblock left_column_content %}
 
-{% block sidebar %}
+{% block right_column_content %}
   <h2 class="mt-0">Languages</h2>
 
   {% for implementation in implementations %}
     <details>
       <summary>
-        <img src="{% get_static_prefix %}{{ implementation.language.icon }}" class="plugged-in-language-icon" />
+        <img src="{% get_static_prefix %}{{ implementation.language.icon }}" class="programming-challenge-language-icon" />
         <strong>
           {{ implementation.language.name }}
         </strong>
@@ -89,7 +91,7 @@
       </div>
     </details>
   {% endfor %}
-{% endblock sidebar %}
+{% endblock right_column_content %}
 
 {% block end_content %}
   {% if programming_exercise.extra_challenge %}

@@ -9,7 +9,7 @@ class ProgrammingExerciseLanguageSolutionURLTest(BaseTestWithDB):
         self.language = "en"
 
     def test_valid_programming_exercise_language_solution(self):
-        args = ["binary-numbers", "exercise-1", "python"]
+        args = ["binary-numbers", "challenge-1", "python"]
         url = reverse("topics:programming_exercise_language_solution", args=args)
-        expected_url = "/en/topics/binary-numbers/plugged-in/exercise-1/python-solution"
+        expected_url = "/en/topics/binary-numbers/programming/challenge-1/python-solution"
         self.assertEqual(url, expected_url)
