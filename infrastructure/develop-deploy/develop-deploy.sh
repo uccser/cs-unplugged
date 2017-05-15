@@ -27,7 +27,7 @@ curl https://sdk.cloud.google.com | bash;
 #     Google App Engine YAML file for deployment, contains sensitive data.
 #   - load-develop-deploy-envs.sh
 #     Loads environment variables used when running local Django.
-openssl aes-256-cbc -K $encrypted_bea729da01c0_key -iv $encrypted_bea729da01c0_iv -in ./infrastructure/develop-deploy/develop-deploy-secrets.tar.enc -out develop-deploy-secrets.tar -d
+openssl aes-256-cbc -K "${encrypted_bea729da01c0_key}" -iv "${encrypted_bea729da01c0_iv}" -in ./infrastructure/develop-deploy/develop-deploy-secrets.tar.enc -out develop-deploy-secrets.tar -d
 
 # Unzip the decrypted secret archive into the current folder.
 tar -xf develop-deploy-secrets.tar
@@ -84,7 +84,7 @@ chmod +x cloud_sql_proxy
 # The proxy command is appended with '&>/dev/null &' to run in the background
 # and to not send output to console.
 # See: https://cloud.google.com/python/django/flexible-environment#initialize_your_cloud_sql_instance
-./cloud_sql_proxy -instances="$GOOGLE_CLOUD_SQL_CONNECTION_NAME"=tcp:5433 -credential_file="./continuous-deployment-develop-credentials.json" >/dev/null 2>/dev/null &
+./cloud_sql_proxy -instances="${GOOGLE_CLOUD_SQL_CONNECTION_NAME}"=tcp:5433 -credential_file="./continuous-deployment-develop-credentials.json" >/dev/null 2>/dev/null &
 
 # Publish static files.
 #
