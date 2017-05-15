@@ -8,3 +8,8 @@ treasure-hunt:
   webpage-template: resources/treasure-hunt.html
   generation-view: treasure_hunt.py
   thumbnail-static-path: img/resources/resource-treasure-hunt-thumbnail-example.png
+binary-numbers:
+  name: Binary Numbers
+  webpage-template: resources/binary-numbers.html
+  generation-view: binary_numbers.py
+  thumbnail-static-path: img/resources/resource-binary-numbers-thumbnail-example.png
