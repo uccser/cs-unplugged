@@ -43,7 +43,7 @@ def generate_resource_pdf(request, resource, module_path):
         filename = "{} ({})".format(resource.name, resource_image_generator.subtitle(get_request, resource))
         context["filename"] = filename
 
-        num_copies = range(0, int(get_request["copies"]))
+        num_copies = range(0, int(get_request.get("copies", 1)))
         context["resource_images"] = []
         for copy in num_copies:
             context["resource_images"].append(
