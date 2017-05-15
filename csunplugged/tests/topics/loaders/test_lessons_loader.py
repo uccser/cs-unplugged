@@ -24,7 +24,14 @@ class LessonsLoaderTest(BaseTestWithDB):
         topic = self.test_data.create_test_topic("1")
         unit_plan = self.test_data.create_test_unit_plan(topic, "1")
 
-        lesson_loader = LessonsLoader(config_file, self.load_log, lessons_structure, topic, unit_plan, self.test_data.LOADER_ASSET_PATH)
+        lesson_loader = LessonsLoader(
+            config_file,
+            self.load_log,
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
         lesson_loader.load()
 
         lesson_objects = Lesson.objects.all()

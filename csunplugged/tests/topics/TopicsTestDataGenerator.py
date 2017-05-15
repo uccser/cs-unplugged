@@ -15,7 +15,7 @@ from topics.models import (
 
 
 class TopicsTestDataGenerator:
-    """Class for generating test data for topics"""
+    """Class for generating test data for topics."""
 
     def __init__(self):
         """Create TopicsTestDataGenerator object."""
