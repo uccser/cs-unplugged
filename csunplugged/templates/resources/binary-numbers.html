@@ -1,0 +1,19 @@
+{% extends "resources/resource.html" %}
+
+<!-- Name of resource -->
+{% block name %}{{ resource.name }}{% endblock name %}
+
+<!-- Description of resource -->
+{% block description %}
+  <p>
+    This resource contains printouts for binary numbers activities.
+  </p>
+{% endblock description %}
+
+{% block generation_form %}
+  <fieldset>
+    <legend>Resource Options</legend>
+    <input type="checkbox" name="display_numbers" id="display_numbers" checked="true">
+    <label for="display_numbers">Display numbers</label>
+  </fieldset>
+{% endblock generation_form %}
