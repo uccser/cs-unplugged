@@ -26,8 +26,8 @@ how-binary-digits-work:
     - binary-correct-representation
     - no-physical-zeros-ones
   generated-resources:
-    sorting-network:
-      description: One per student.
+    binary-cards:
+      description: One set.
   classroom-resources:
     - Pens and paper, or
     - Whiteboard and pens
