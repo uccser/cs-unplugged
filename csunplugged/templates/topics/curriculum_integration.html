@@ -1,19 +1,34 @@
-{% extends "topics/topic.html" %}
+{% extends "base_columns.html" %}
 
 {% load static %}
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
-
 {% block breadcrumbs %}
-  {{ block.super }}
+  {% breadcrumb "Home" "/" %}
+  {% breadcrumb "Topics" "topics:index" %}
+  {% breadcrumb topic.name "topics:topic" topic.slug %}
   {% breadcrumb integration.name "topics:integration" topic.slug integration.slug %}
 {% endblock breadcrumbs %}
 
 
-{% block content %}
+{% block page_heading %}
   <h1>{{ integration.name }}</h1>
 
+  {% if integration_curriculum_areas %}
+    <p>
+    {% for area in integration_curriculum_areas %}
+      {% include "topics/curriculum_area_badge.html" %}
+    {% endfor %}
+    </p>
+  {% endif %}
+{% endblock page_heading %}
+
+{% block left_column_content %}
+  {% render_html_field integration.content %}
+{% endblock left_column_content %}
+
+{% block right_column_content %}
   {% if prerequisite_lessons %}
     <div class="alert alert-warning" role="alert">
       <p class="h5 mb-1">Heads up!</p>
@@ -29,15 +44,4 @@
       </ul>
     </div>
   {% endif %}
-
-  {% render_html_field integration.content %}
-
-  {% if integration_curriculum_areas %}
-    <h2>Curriculum Areas</h2>
-    <p>
-    {% for area in integration_curriculum_areas %}
-      <span class="badge badge-default">{{ area.name }}</span>
-    {% endfor %}
-    </p>
-  {% endif %}
-{% endblock content %}
+{% endblock right_column_content %}

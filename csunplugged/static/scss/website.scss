@@ -1,33 +1,40 @@
 @import "bootstrap/bootstrap";
 @import "pygments-monokai";
+@import "sticky-state";
 @import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
 
+$body-space-from-top: 72px;
+
 img {
-  &.resource-thumbnail {
-    max-height: 15rem;
+  &.programming-challenge-language-icon {
+    height: 3rem;
   }
-
-  &.plugged-in-language-icon {
-    height: 3em;
-  }
-
-  &.image-content {
-    height: auto;
-    max-height: 16em;
-    max-width: 80%;
-    padding: 1em 0;
+  &.content-image {
+    max-height: 10em;
   }
 }
 
-h1,
-h2,
+h1 {
+  color: $red;
+}
+h2 {
+  color: $purple;
+}
 h3 {
-  color: #e33333;
-  margin-top: 1.5rem;
+  color: $green;
+}
+h4,
+h5,
+h6 {
+  color: $gray;
+}
 
-  span.subtitle {
-    color: #888;
-  }
+.heading-underline {
+  border-bottom: 2px solid $gray-lighter;
+}
+
+.subtitle {
+  color: $gray-light;
 }
 
 input[type="text"].long-text-field {
@@ -120,10 +127,6 @@ $rounded-corner-radius: 0.5rem;
   @include card-link-variant($purple);
 }
 
-body {
-  padding-top: 4.5rem;
-}
-
 .navbar {
   background-color: $white;
   border-bottom: 2px $red solid;
@@ -156,12 +159,12 @@ footer {
 }
 
 .glossary-term {
-  border-bottom: 1px black dotted;
+  border-bottom: 1px $gray dotted;
   cursor: help;
 }
 
 .boxed-text {
-  border: 1px solid $gray;
+  border: 2px dashed $gray-light;
   border-radius: $border-radius;
   margin-bottom: $spacer-y;
 
@@ -179,13 +182,14 @@ details {
   overflow: hidden;
 
   summary {
-    background-color: $gray-lightest;
+    background-color: $gray-lighter;
+    color: $gray-dark;
     cursor: pointer;
     font-size: 1.1em;
-    padding: ($spacer-y * .25) ($spacer-x * .25);
+    padding: ($spacer-y * .25) ($spacer-x * .25) ($spacer-y * .25) $spacer-x;
   }
   summary:hover {
-    background-color: $gray-lighter;
+    background-color: darken($gray-lighter, 10%);
   }
 }
 
@@ -236,4 +240,29 @@ details {
   &red {
     background-color: $red;
   }
+}
+
+body {
+  padding-top: $body-space-from-top;
+  position: relative;
+}
+
+#sticky-sidebar {
+  top: $body-space-from-top;
+}
+.sticky-top {
+  z-index: 1020;
+}
+
+.table.table-center-vertical th,
+.table.table-center-vertical td {
+    vertical-align: middle;
+}
+.table-success-cell {
+  background-color: lighten($green, 40%);
+}
+
+#scrollspy-table-of-contents .nav-link {
+  font-size: 0.9rem;
+  padding: ($spacer-y * .25) $spacer-x;
 }

@@ -17,4 +17,4 @@ RUN apt-get update && apt-get install -y \
 ADD csunplugged/package.json /app/
 RUN npm install
 ADD ./csunplugged/ /app/
-ADD compose/nginx/nginx.conf /etc/nginx/nginx.conf
+ADD infrastructure/nginx/nginx.conf /etc/nginx/nginx.conf

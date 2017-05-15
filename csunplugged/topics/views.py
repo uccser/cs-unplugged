@@ -54,6 +54,10 @@ class TopicView(generic.DetailView):
         context["unit_plans"] = unit_plans
         # Add in a QuerySet of all the connected curriculum integrations
         context["curriculum_integrations"] = CurriculumIntegration.objects.filter(topic=self.object).order_by("number")
+        context["programming_exercises"] = ProgrammingExercise.objects.filter(topic=self.object).order_by(
+            "exercise_set_number",
+            "exercise_number"
+        )
         return context
 
 
@@ -124,10 +128,10 @@ class LessonView(generic.DetailView):
         context["unit_plan"] = self.object.unit_plan
         # Add all the connected programming exercises
         context["programming_exercises"] = self.object.programming_exercises.all()
-        # Add all the connected curriculum areas
-        context["lesson_curriculum_areas"] = self.object.curriculum_areas.all()
         # Add all the connected learning outcomes
-        context["lesson_learning_outcomes"] = self.object.learning_outcomes.all()
+        context["lesson_learning_outcomes"] = self.object.learning_outcomes.all().select_related().order_by(
+            "curriculum_areas__name"
+        )
         # Add all the connected generated resources
         related_resources = self.object.generated_resources.all()
         generated_resources = []

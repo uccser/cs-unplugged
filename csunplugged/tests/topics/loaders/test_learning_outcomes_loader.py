@@ -25,5 +25,5 @@ class LearningOutcomesLoaderTest(BaseTestWithDB):
 
         self.assertQuerysetEqual(
             lo_objects,
-            ["<LearningOutcome: cats>"]
+            ["<LearningOutcome: Justify why there aren’t actual 0’s and 1’s zooming around inside a computer.>"]
         )

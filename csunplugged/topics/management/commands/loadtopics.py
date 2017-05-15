@@ -32,14 +32,6 @@ class Command(BaseCommand):
 
         structure_file = base_loader.load_yaml_file(structure_file_path)
 
-        if "learning-outcomes" in structure_file:
-            learning_outcomes_structure_file_path = structure_file["learning-outcomes"]
-            if learning_outcomes_structure_file_path is not None:
-                factory.create_learning_outcomes_loader(
-                    learning_outcomes_structure_file_path,
-                    BASE_PATH
-                ).load()
-
         if "curriculum-areas" in structure_file:
             curriculum_areas_structure_file_path = structure_file["curriculum-areas"]
             if curriculum_areas_structure_file_path is not None:
@@ -48,11 +40,19 @@ class Command(BaseCommand):
                     BASE_PATH
                 ).load()
 
-        if "programming-exercises-structure" in structure_file:
-            programming_exercises_structure_file_path = structure_file["programming-exercises-structure"]
-            if programming_exercises_structure_file_path is not None:
+        if "learning-outcomes" in structure_file:
+            learning_outcomes_structure_file_path = structure_file["learning-outcomes"]
+            if learning_outcomes_structure_file_path is not None:
+                factory.create_learning_outcomes_loader(
+                    learning_outcomes_structure_file_path,
+                    BASE_PATH
+                ).load()
+
+        if "programming-challenges-structure" in structure_file:
+            programming_challenges_structure_file_path = structure_file["programming-challenges-structure"]
+            if programming_challenges_structure_file_path is not None:
                 factory.create_programming_exercises_structure_loader(
-                    programming_exercises_structure_file_path,
+                    programming_challenges_structure_file_path,
                     BASE_PATH
                 ).load()
 

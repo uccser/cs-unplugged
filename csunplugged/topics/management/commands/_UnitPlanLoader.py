@@ -2,7 +2,7 @@
 
 import os.path
 from utils.BaseLoader import BaseLoader
-
+from utils.convert_heading_tree_to_dict import convert_heading_tree_to_dict
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 
 
@@ -44,10 +44,15 @@ class UnitPlanLoader(BaseLoader):
             self.structure_file_path
         )
 
+        heading_tree = None
+        if unit_plan_content.heading_tree:
+            heading_tree = convert_heading_tree_to_dict(unit_plan_content.heading_tree)
+
         unit_plan = self.topic.topic_unit_plans.create(
             slug=self.unit_plan_slug,
             name=unit_plan_content.title,
             content=unit_plan_content.html_string,
+            heading_tree=heading_tree,
         )
         unit_plan.save()
 

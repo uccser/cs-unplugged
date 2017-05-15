@@ -1,4 +1,4 @@
-The Test Suite
+Test Suite
 ##############################################################################
 
 .. contents:: Contents
@@ -33,4 +33,3 @@ Structure
       │   ├── test_urls.py
       │   └── test_views.py
       └── BaseTest.py
-

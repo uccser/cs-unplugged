@@ -3,6 +3,7 @@
 from collections import OrderedDict
 
 from django.db import models
+from django.contrib.postgres.fields import ArrayField, JSONField
 from resources.models import Resource
 
 
@@ -23,22 +24,6 @@ class GlossaryTerm(models.Model):
         return self.term
 
 
-class LearningOutcome(models.Model):
-    """Model for learning outcome in database."""
-
-    #  Auto-incrementing 'id' field is automatically set by Django
-    slug = models.SlugField(unique=True)
-    text = models.CharField(max_length=200, unique=True)
-
-    def __str__(self):
-        """Text representation of LearningOutcome object.
-
-        Returns:
-            Text of learning outcome (str).
-        """
-        return self.slug
-
-
 class CurriculumArea(models.Model):
     """Model for curriculum area in database."""
 
@@ -54,7 +39,6 @@ class CurriculumArea(models.Model):
 
     def __str__(self):
         """Text representation of CurriculumArea object.
-
         Returns:
             Name of curriculum area (str).
         """
@@ -62,6 +46,25 @@ class CurriculumArea(models.Model):
             return "{}: {}".format(self.parent.name, self.name)
         else:
             return self.name
+
+
+class LearningOutcome(models.Model):
+    """Model for learning outcome in database."""
+
+    #  Auto-incrementing 'id' field is automatically set by Django
+    slug = models.SlugField(unique=True)
+    text = models.CharField(max_length=200, unique=True)
+    curriculum_areas = models.ManyToManyField(
+        CurriculumArea,
+        related_name='learning_outcomes',
+    )
+
+    def __str__(self):
+        """Text representation of LearningOutcome object.
+        Returns:
+            Text of learning outcome (string).
+        """
+        return self.text
 
 
 class Topic(models.Model):
@@ -95,6 +98,7 @@ class UnitPlan(models.Model):
     slug = models.SlugField()
     name = models.CharField(max_length=100)
     content = models.TextField()
+    heading_tree = JSONField(null=True)
 
     def lessons_by_age_group(self):
         """Return ordered groups of lessons.
@@ -252,6 +256,7 @@ class Lesson(models.Model):
     content = models.TextField()
     min_age = models.PositiveSmallIntegerField()
     max_age = models.PositiveSmallIntegerField()
+    heading_tree = JSONField(null=True)
     programming_exercises = models.ManyToManyField(
         ProgrammingExercise,
         related_name="lessons"
@@ -260,14 +265,14 @@ class Lesson(models.Model):
         LearningOutcome,
         related_name="lesson_learning_outcomes"
     )
-    curriculum_areas = models.ManyToManyField(
-        CurriculumArea,
-        related_name="lesson_curriculum_areas",
-    )
     generated_resources = models.ManyToManyField(
         Resource,
         through="ConnectedGeneratedResource",
         related_name="lesson_generated_resources"
+    )
+    classroom_resources = ArrayField(
+        models.CharField(max_length=100),
+        null=True
     )
 
     def has_programming_exercises(self):

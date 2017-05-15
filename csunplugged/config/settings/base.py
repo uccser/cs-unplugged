@@ -26,8 +26,9 @@ DJANGO_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.postgres",
 
-    # Useful template tags:
+    # Useful template tags
     "django.contrib.humanize",
 
     # Admin
