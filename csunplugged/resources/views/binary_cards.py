@@ -1,6 +1,7 @@
 """Module for generating Binary Cards resource."""
 
-from PIL import Image
+import os.path
+from PIL import Image, ImageDraw, ImageFont
 
 
 def resource_image(get_request, resource):
@@ -11,23 +12,42 @@ def resource_image(get_request, resource):
         resource: Object of resource data.
 
     Returns:
-        A Pillow image object.
+        A list of Pillow image objects.
     """
-    IMAGE_PATHS = [
-        "static/img/resources/binary-cards/binary-cards-1-dot.png",
-        "static/img/resources/binary-cards/binary-cards-2-dots.png",
-        "static/img/resources/binary-cards/binary-cards-4-dots.png",
-        "static/img/resources/binary-cards/binary-cards-8-dots.png",
-        "static/img/resources/binary-cards/binary-cards-16-dots.png",
-        "static/img/resources/binary-cards/binary-cards-32-dots.png",
-        "static/img/resources/binary-cards/binary-cards-64-dots.png",
-        "static/img/resources/binary-cards/binary-cards-128-dots.png",
+    BASE_IMAGE_PATH = "static/img/resources/binary-cards/"
+    IMAGE_DATA = [
+        ("binary-cards-1-dot.png", 1),
+        ("binary-cards-2-dots.png", 2),
+        ("binary-cards-4-dots.png", 4),
+        ("binary-cards-8-dots.png", 8),
+        ("binary-cards-16-dots.png", 16),
+        ("binary-cards-32-dots.png", 32),
+        ("binary-cards-64-dots.png", 64),
+        ("binary-cards-128-dots.png", 128),
     ]
+
+    if get_request["display_numbers"] == "yes":
+        font_path = "static/fonts/PatrickHand-Regular.ttf"
+        font = ImageFont.truetype(font_path, 600)
+        BASE_COORD_X = 1240
+        BASE_COORD_Y = 3100
 
     images = []
 
-    for image_path in IMAGE_PATHS:
-        image = Image.open(image_path)
+    for (image_path, number) in IMAGE_DATA:
+        image = Image.open(os.path.join(BASE_IMAGE_PATH, image_path))
+        if get_request["display_numbers"] == "yes":
+            draw = ImageDraw.Draw(image)
+            text = str(number)
+            text_width, text_height = draw.textsize(text, font=font)
+            coord_x = BASE_COORD_X - (text_width / 2)
+            coord_y = BASE_COORD_Y - (text_height / 2)
+            draw.text(
+                (coord_x, coord_y),
+                text,
+                font=font,
+                fill="#000"
+            )
         images.append(image)
 
     return images
@@ -46,4 +66,8 @@ def subtitle(get_request, resource):
     Returns:
         text for subtitle (string)
     """
-    return resource.name
+    if get_request["display_numbers"] == "yes":
+        text = "with numbers"
+    else:
+        text = "without numbers"
+    return text

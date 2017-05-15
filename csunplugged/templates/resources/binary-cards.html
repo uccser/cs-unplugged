@@ -12,8 +12,11 @@
 
 {% block generation_form %}
   <fieldset>
-    <legend>Resource Options</legend>
-    <input type="checkbox" name="display_numbers" id="display_numbers" checked="true">
-    <label for="display_numbers">Display numbers</label>
+    <legend>Display Numbers</legend>
+    <input type="radio" name="display_numbers" id="display_numbers_yes" value="yes" checked="checked">
+    <label for="display_numbers_yes">Yes</label>
+    <br>
+    <input type="radio" name="display_numbers" id="display_numbers_no" value="no">
+    <label for="display_numbers_no">No</label>
   </fieldset>
 {% endblock generation_form %}
