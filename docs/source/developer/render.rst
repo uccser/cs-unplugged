@@ -2,18 +2,18 @@ Render Service
 ##############################################################################
 
 Production Infrastructure
-******************************************************************************
+==============================================================================
 
 Render Service
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------------------------------------------------
 
 Local Infrastructure
-******************************************************************************
+==============================================================================
 
-When running locally using the *docker-compose* environment the Google Task Queue component is replaced with 2 other components a Redis instance and a Queue service.
+When running locally using the *docker-compose* environment the Google Task Queue component is replaced with 2 other components, a Redis instance and a Queue service.
 
 Queue Service
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------------------------------------------------
 
 The Queue Sevice mimics the `Google Task Queue REST API <https://cloud.google.com/appengine/docs/standard/python/taskqueue/rest/>`_ allowing for a local task queue to be created using the Redis instance.
 
@@ -52,7 +52,7 @@ When using the Queue service it is important to note:
   - Complex requests should be `tested here <https://cloud.google.com/appengine/docs/standard/python/taskqueue/rest/tasks/insert#try-it>`_.
 
 Redis Instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------------------------------------------------
 
 The REDIS service is currently only used by the Queue service as a datastore for tasks and handling the queuing of tasks. For those who with no knowledge of REDIS should consider it a 'high performance, in-memory database that is a glorified dictionary' for simplicity.
 
