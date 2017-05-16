@@ -13,3 +13,8 @@ binary-cards:
   webpage-template: resources/binary-cards.html
   generation-view: binary_cards.py
   thumbnail-static-path: img/resources/binary-cards/resource-binary-cards-thumbnail.png
+binary-windows:
+  name: Binary Windows
+  webpage-template: resources/binary-windows.html
+  generation-view: binary_windows.py
+  thumbnail-static-path: img/resources/binary-windows/resource-binary-windows-thumbnail.png
