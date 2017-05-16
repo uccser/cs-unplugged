@@ -8,3 +8,8 @@ treasure-hunt:
   webpage-template: resources/treasure-hunt.html
   generation-view: treasure_hunt.py
   thumbnail-static-path: img/resources/resource-treasure-hunt-thumbnail-example.png
+binary-cards:
+  name: Binary Cards
+  webpage-template: resources/binary-cards.html
+  generation-view: binary_cards.py
+  thumbnail-static-path: img/resources/binary-cards/resource-binary-cards-thumbnail.png

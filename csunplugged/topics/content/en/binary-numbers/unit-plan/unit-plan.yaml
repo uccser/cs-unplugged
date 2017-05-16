@@ -26,8 +26,8 @@ how-binary-digits-work:
     - binary-correct-representation
     - no-physical-zeros-ones
   generated-resources:
-    sorting-network:
-      description: One per student.
+    binary-cards:
+      description: One set.
   classroom-resources:
     - Pens and paper, or
     - Whiteboard and pens
@@ -37,9 +37,15 @@ reinforcing-sequencing-in-binary-number-systems:
   max-age: 10
   number: 2
   duration: 60
+  generated-resources:
+    binary-cards:
+      description: One set.
 
 codes-for-letters-using-binary-representation:
   min-age: 8
   max-age: 10
   number: 3
   duration: 45
+  generated-resources:
+    binary-cards:
+      description: One set.
