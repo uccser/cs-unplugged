@@ -10,10 +10,10 @@ class ResourcesTestDataGenerator:
         """Create resource object.
 
         Args:
-            slug: String of resource slug.
-            name: String of resource name.
-            webpage_template: String describing path to HTML form template.
-            generation_view: String of Python view module filename.
+            slug: Resource slug (str).
+            name: Resource name (str).
+            webpage_template: Path to HTML form template (str).
+            generation_view: Python view module filename (str).
 
         Returns:
             Resource object.
