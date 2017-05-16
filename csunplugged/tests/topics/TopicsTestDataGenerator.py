@@ -34,7 +34,7 @@ class TopicsTestDataGenerator:
         yaml_file = open(yaml_file_path, encoding="UTF-8").read()
         return yaml.load(yaml_file)
 
-    def create_test_integration(self, topic, number, lessons=None, curriculum_areas=None):
+    def create_integration(self, topic, number, lessons=None, curriculum_areas=None):
         """Create curriculum integration object.
 
         Args:
@@ -51,7 +51,7 @@ class TopicsTestDataGenerator:
             slug="integration-{}".format(number),
             name="Integration {}".format(number),
             number=number,
-            content="Content for integration {}.".format(number),
+            content="<p>Content for integration {}.</p>".format(number),
         )
         integration.save()
         if lessons:
@@ -62,7 +62,7 @@ class TopicsTestDataGenerator:
                 integration.curriculum_areas.add(curriculum_area)
         return integration
 
-    def create_test_curriculum_area(self, number, parent=None):
+    def create_curriculum_area(self, number, parent=None):
         """Create curriculum area object.
 
         Args:
@@ -80,7 +80,7 @@ class TopicsTestDataGenerator:
         area.save()
         return area
 
-    def create_test_topic(self, number):
+    def create_topic(self, number):
         """Create topic object.
 
         Args:
@@ -92,12 +92,12 @@ class TopicsTestDataGenerator:
         topic = Topic(
             slug="topic-{}".format(number),
             name="Topic {}".format(number),
-            content="Content for topic {}.".format(number),
+            content="<p>Content for topic {}.</p>".format(number),
         )
         topic.save()
         return topic
 
-    def create_test_unit_plan(self, topic, number):
+    def create_unit_plan(self, topic, number):
         """Create unit plan object.
 
         Args:
@@ -105,18 +105,18 @@ class TopicsTestDataGenerator:
             number: Integer representing the unit plan.
 
         Returns:
-            Unit plan object.
+            UnitPlan object.
         """
         unit_plan = UnitPlan(
             topic=topic,
             slug="unit-plan-{}".format(number),
             name="Unit Plan {}".format(number),
-            content="Content for unit plan {}.".format(number),
+            content="<p>Content for unit plan {}.</p>".format(number),
         )
         unit_plan.save()
         return unit_plan
 
-    def create_test_lesson(self, topic, unit_plan, number, min_age, max_age):
+    def create_lesson(self, topic, unit_plan, number, min_age, max_age):
         """Create lesson object.
 
         Args:
@@ -136,19 +136,22 @@ class TopicsTestDataGenerator:
             name="Lesson {} ({} to {})".format(number, min_age, max_age),
             number=number,
             duration=number,
-            content="Content for lesson {}.".format(number),
+            content="<p>Content for lesson {}.</p>".format(number),
             min_age=min_age,
             max_age=max_age,
         )
         lesson.save()
         return lesson
 
-    def create_test_difficulty_level(self, number):
+    def create_difficulty_level(self, number):
         """
         Create difficuly level object.
 
         Args:
-          number: Integer representing the level.
+            number: Integer representing the level.
+
+        Returns:
+            ProgrammingExerciseDifficulty object.
         """
         difficulty = ProgrammingExerciseDifficulty(
             level="1",
@@ -157,12 +160,15 @@ class TopicsTestDataGenerator:
         difficulty.save()
         return difficulty
 
-    def create_test_programming_language(self, number):
+    def create_programming_language(self, number):
         """
         Create programming language object.
 
         Args:
-          number: Integer representing the language.
+            number: Integer representing the language.
+
+        Returns:
+            ProgrammingExerciseLanguage object.
         """
         language = ProgrammingExerciseLanguage(
             slug="language-{}".format(number),

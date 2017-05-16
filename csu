@@ -173,7 +173,7 @@ function style {
   docker-compose run --rm -w /cs-unplugged/ django /docker_venv/bin/flake8
   pep8_status=$?
   printf "\nRunning Python docstring checker...\n"
-  docker-compose run --rm -w /cs-unplugged/ django /docker_venv/bin/pydocstyle --count --explain --match-dir='[^\.].*(?<!node_modules)'
+  docker-compose run --rm -w /cs-unplugged/ django /docker_venv/bin/pydocstyle --count --explain
   pydocstyle_status=$?
   ! (( $pep8_status || $pydocstyle_status ))
 }
@@ -311,10 +311,6 @@ function process_dev_command() {
         ;;
       test_coverage)
         test_coverage
-        exit
-        ;;
-      test_loaders)
-        test_loaders
         exit
         ;;
       updatedata)

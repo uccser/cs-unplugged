@@ -18,7 +18,7 @@ class CurriculumIntegrationModelTest(BaseTestWithDB):
 
     def test_curriculum_integration(self):
         # Setup Auxliary Data
-        topic = self.test_data.create_test_topic(1)
+        topic = self.test_data.create_topic(1)
         curriculum_area = mommy.make(
             CurriculumArea,
             make_m2m=True,

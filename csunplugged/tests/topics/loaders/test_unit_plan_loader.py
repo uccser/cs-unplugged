@@ -20,7 +20,7 @@ class UnitPlanLoaderTest(BaseTestWithDB):
     def test_basic_config(self):
         config_file = "unit-plan-1/unit-plan-1.yaml"
         factory = Mock()
-        topic = self.test_data.create_test_topic('1')
+        topic = self.test_data.create_topic('1')
 
         up_loader = UnitPlanLoader(factory, self.load_log, config_file, topic, self.BASE_PATH)
         up_loader.load()

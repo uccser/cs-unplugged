@@ -19,9 +19,9 @@ class ProgrammingExercisesLoaderTest(BaseTestWithDB):
     def test_basic_config(self):
         config_file = os.path.join(self.loader_name, "basic-config.yaml")
 
-        self.test_data.create_test_difficulty_level("1")
-        self.test_data.create_test_programming_language("1")
-        topic = self.test_data.create_test_topic("1")
+        self.test_data.create_difficulty_level("1")
+        self.test_data.create_programming_language("1")
+        topic = self.test_data.create_topic("1")
 
         pe_loader = ProgrammingExercisesLoader(self.load_log, config_file, topic, self.test_data.LOADER_ASSET_PATH)
         pe_loader.load()

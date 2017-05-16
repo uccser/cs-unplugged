@@ -19,8 +19,8 @@ class CurriculumIntegrationsLoaderTest(BaseTestWithDB):
     def test_basic_config(self):
         config_file = os.path.join(self.loader_name, "basic-config.yaml")
 
-        self.test_data.create_test_curriculum_area("1")
-        topic = self.test_data.create_test_topic("1")
+        self.test_data.create_curriculum_area("1")
+        topic = self.test_data.create_topic("1")
 
         ci_loader = CurriculumIntegrationsLoader(self.load_log, config_file, topic, self.test_data.LOADER_ASSET_PATH)
         ci_loader.load()

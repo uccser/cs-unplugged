@@ -21,8 +21,8 @@ class LessonsLoaderTest(BaseTestWithDB):
         complete_config_file_path = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
         lessons_structure = self.test_data.load_yaml_file(complete_config_file_path)
 
-        topic = self.test_data.create_test_topic("1")
-        unit_plan = self.test_data.create_test_unit_plan(topic, "1")
+        topic = self.test_data.create_topic("1")
+        unit_plan = self.test_data.create_unit_plan(topic, "1")
 
         lesson_loader = LessonsLoader(
             config_file,

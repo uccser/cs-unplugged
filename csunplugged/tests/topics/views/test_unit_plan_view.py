@@ -12,8 +12,8 @@ class UnitPlanViewTest(BaseTestWithDB):
         self.test_data = TopicsTestDataGenerator()
 
     def test_unit_plan_view_with_valid_slugs(self):
-        topic = self.test_data.create_test_topic(1)
-        unit_plan = self.test_data.create_test_unit_plan(topic, 1)
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
         kwargs = {
             "topic_slug": topic.slug,
             "unit_plan_slug": unit_plan.slug,
@@ -23,8 +23,8 @@ class UnitPlanViewTest(BaseTestWithDB):
         self.assertEqual(200, response.status_code)
 
     def test_unit_plan_view_with_invalid_topic_slug(self):
-        topic = self.test_data.create_test_topic(1)
-        unit_plan = self.test_data.create_test_unit_plan(topic, 1)
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
         kwargs = {
             "topic_slug": "wrong_slug",
             "unit_plan_slug": unit_plan.slug,
@@ -34,8 +34,8 @@ class UnitPlanViewTest(BaseTestWithDB):
         self.assertEqual(404, response.status_code)
 
     def test_unit_plan_view_with_invalid_unit_plan_slug(self):
-        topic = self.test_data.create_test_topic(1)
-        self.test_data.create_test_unit_plan(topic, 1)
+        topic = self.test_data.create_topic(1)
+        self.test_data.create_unit_plan(topic, 1)
         kwargs = {
             "topic_slug": topic.slug,
             "unit_plan_slug": "wrong_slug",
@@ -45,8 +45,8 @@ class UnitPlanViewTest(BaseTestWithDB):
         self.assertEqual(404, response.status_code)
 
     def test_unit_plan_view_topic_context(self):
-        topic = self.test_data.create_test_topic(1)
-        unit_plan = self.test_data.create_test_unit_plan(topic, 1)
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
         kwargs = {
             "topic_slug": topic.slug,
             "unit_plan_slug": unit_plan.slug,
@@ -59,16 +59,16 @@ class UnitPlanViewTest(BaseTestWithDB):
         )
 
     def test_unit_plan_view_lessons_context(self):
-        topic = self.test_data.create_test_topic(1)
-        unit_plan = self.test_data.create_test_unit_plan(topic, 1)
-        self.test_data.create_test_lesson(
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        self.test_data.create_lesson(
             topic,
             unit_plan,
             1,
             5,
             7
         )
-        self.test_data.create_test_lesson(
+        self.test_data.create_lesson(
             topic,
             unit_plan,
             2,
@@ -94,23 +94,23 @@ class UnitPlanViewTest(BaseTestWithDB):
         )
 
     def test_curriculum_integration_view_prerequisite_lessons_context_order(self):
-        topic = self.test_data.create_test_topic(1)
-        unit_plan = self.test_data.create_test_unit_plan(topic, 1)
-        self.test_data.create_test_lesson(
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        self.test_data.create_lesson(
             topic,
             unit_plan,
             1,
             8,
             10
         )
-        self.test_data.create_test_lesson(
+        self.test_data.create_lesson(
             topic,
             unit_plan,
             2,
             5,
             7
         )
-        self.test_data.create_test_lesson(
+        self.test_data.create_lesson(
             topic,
             unit_plan,
             1,
@@ -137,8 +137,8 @@ class UnitPlanViewTest(BaseTestWithDB):
         )
 
     def test_unit_plan_view_templates(self):
-        topic = self.test_data.create_test_topic(1)
-        unit_plan = self.test_data.create_test_unit_plan(topic, 1)
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
         kwargs = {
             "topic_slug": topic.slug,
             "unit_plan_slug": unit_plan.slug,

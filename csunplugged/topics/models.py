@@ -39,6 +39,7 @@ class CurriculumArea(models.Model):
 
     def __str__(self):
         """Text representation of CurriculumArea object.
+
         Returns:
             Name of curriculum area (str).
         """
@@ -61,6 +62,7 @@ class LearningOutcome(models.Model):
 
     def __str__(self):
         """Text representation of LearningOutcome object.
+
         Returns:
             Text of learning outcome (string).
         """
