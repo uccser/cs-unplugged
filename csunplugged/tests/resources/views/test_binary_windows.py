@@ -45,7 +45,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
             "header_text": ["", "Example header"],
         }
         valid_option_keys = sorted(valid_options)
-        combinations = [dict(zip(valid_option_keys, product)) for product in itertools.product(*(valid_options[valid_option_key] for valid_option_key in valid_option_keys))]
+        combinations = [dict(zip(valid_option_keys, product)) for product in itertools.product(*(valid_options[valid_option_key] for valid_option_key in valid_option_keys))]  # noqa: E501
         print()
         for combination in combinations:
             print("   - Testing combination: {} ... ".format(combination), end="")
@@ -158,8 +158,6 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
         url += self.get_query_string(get_parameters)
         response = self.client.get(url)
         self.assertEqual(404, response.status_code)
-
-
 
     def test_binary_windows_resource_generation_missing_header_text_parameter(self):
         resource = self.test_data.create_test_resource(
