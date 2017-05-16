@@ -2,6 +2,7 @@
 
 import os.path
 from PIL import Image, ImageDraw, ImageFont
+from django.http import Http404
 
 
 def resource_image(get_request, resource):
@@ -28,7 +29,15 @@ def resource_image(get_request, resource):
         ("binary-cards-128-dots.png", 128),
     ]
 
-    if get_request["display_numbers"] == "yes":
+    # Retrieve parameters
+    display_numbers = get_request.get("display_numbers", None)
+    if display_numbers is None:
+        raise Http404("Display numbers parameter not specified.")
+    black_back = get_request.get("black_back", None)
+    if black_back is None:
+        raise Http404("Black card back parameter not specified.")
+
+    if display_numbers == "yes":
         font_path = "static/fonts/PatrickHand-Regular.ttf"
         font = ImageFont.truetype(font_path, 600)
         BASE_COORD_X = IMAGE_SIZE_X / 2
@@ -39,7 +48,7 @@ def resource_image(get_request, resource):
 
     for (image_path, number) in IMAGE_DATA:
         image = Image.open(os.path.join(BASE_IMAGE_PATH, image_path))
-        if get_request["display_numbers"] == "yes":
+        if display_numbers == "yes":
             background = Image.new("RGB", (IMAGE_SIZE_X, IMAGE_SIZE_Y), "#FFF")
             background.paste(image, mask=image)
             draw = ImageDraw.Draw(background)
@@ -56,9 +65,9 @@ def resource_image(get_request, resource):
             image = background
         images.append(image)
 
-        if get_request["black_back"] == "yes":
-            black_back = Image.new("1", (IMAGE_SIZE_X, IMAGE_SIZE_Y))
-            images.append(black_back)
+        if black_back == "yes":
+            black_card = Image.new("1", (IMAGE_SIZE_X, IMAGE_SIZE_Y))
+            images.append(black_card)
 
     return images
 
