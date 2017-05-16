@@ -8,6 +8,12 @@
   <p>
     This resource contains printouts for binary numbers activities.
   </p>
+
+  <div class="alert alert-info" role="alert">
+    <p class="mb-1">
+      <strong>Note:</strong> This resource should be printed double sided on short edge.
+    </p>
+  </div>
 {% endblock description %}
 
 {% block generation_form %}
@@ -18,5 +24,23 @@
     <br>
     <input type="radio" name="number_bits" id="number_bits_8" value="8">
     <label for="number_bits_128">Eight (1 to 128)</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Display Dot Counts</legend>
+    <input type="radio" name="dot_counts" id="dot_counts_yes" value="yes" checked="checked">
+    <label for="dot_counts_yes">Yes</label>
+    <br>
+    <input type="radio" name="dot_counts" id="dot_counts_no" value="no">
+    <label for="dot_counts_no">No</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Value Representation</legend>
+    <input type="radio" name="value_type" id="value_type_binary" value="binary" checked="checked">
+    <label for="value_type_binary">Binary (0 or 1)</label>
+    <br>
+    <input type="radio" name="value_type" id="value_type_lightbulb" value="lightbulb">
+    <label for="value_type_lightbulb">Lightbulb (off or on)</label>
   </fieldset>
 {% endblock generation_form %}
