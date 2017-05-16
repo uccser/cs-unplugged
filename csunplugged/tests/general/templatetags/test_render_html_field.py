@@ -19,19 +19,16 @@ class RenderHTMLFieldTest(BaseTestWithDB):
 
     def test_render_html_field_without_static(self):
         topic = self.test_data.create_topic(1)
-        curriculum_integration_without_static = CurriculumIntegration.objects.create(
+        curriculum_integration_without_static = self.test_data.create_integration(
             topic=topic,
-            slug="slug-1",
             number=1,
-            name="1",
-            content="<p>Example text.</p>"
         )
         context = {"integration": curriculum_integration_without_static}
         rendered = self.render_template(
             "{% load render_html_field %}\n{% render_html_field integration.content %}",
             context
         )
-        self.assertHTMLEqual(rendered, "<p>Example text.</p>")
+        self.assertHTMLEqual(rendered, "<p>Content for integration 1.</p>")
 
     def test_render_html_field_with_static(self):
         topic = self.test_data.create_topic(1)
