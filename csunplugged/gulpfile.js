@@ -122,6 +122,13 @@ var tasks = {
       .pipe(gulp.dest('build/js'));
   },
   // --------------------------
+  // JS
+  // --------------------------
+  video: function() {
+    return gulp.src('static/video/**/*.*')
+      .pipe(gulp.dest('build/video'));
+  },
+  // --------------------------
   // Scratch
   // --------------------------
   scratch: function() {
@@ -190,6 +197,7 @@ var req = [];
 // // individual tasks
 gulp.task('images', req, tasks.images);
 gulp.task('js', req, tasks.js);
+gulp.task('video', req, tasks.video);
 gulp.task('css', req, tasks.css);
 gulp.task('sass', req, tasks.sass);
 gulp.task('scratch', req, tasks.scratch);
@@ -197,5 +205,5 @@ gulp.task('lint:js', tasks.lintjs);
 
 // // build task
 gulp.task('build', function(callback) {
-  runSequence('clean', ['images', 'css', 'js', 'sass'], callback);
+  runSequence('clean', ['images', 'css', 'js', 'video', 'sass'], callback);
 });

@@ -5,7 +5,12 @@
 
 {% block body_container %}
   <div class="row">
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid p-0">
+      <div class="jumbotron-video-container">
+        <video loop muted autoplay poster="{% static 'img/general/jumbotron-video-first-frame.png' %}" class="jumbotron-video">
+          <source src="{% static 'video/jumbotron-video.mp4' %}" type="video/mp4">
+        </video>
+      </div>
       <div class="container">
         <h1 class="display-3 text-center">
           {% trans 'Computer Science' %}<br>
@@ -20,15 +25,15 @@
 
     <div class="link-box-container justify-content-between">
       <a class="link-box link-box-blue" href="{% url 'general:about' %}">
-        <img class="img-fluid" src="{% static "img/general/computer-searching.png" %}">
+        <img class="img-fluid" src="{% static 'img/general/computer-searching.png' %}">
           <h2 class="link-box-title">Learn about<br>CS Unplugged</h4>
       </a>
       <a class="link-box link-box-orange" href="{% url 'general:about' %}">
-        <img class="img-fluid" src="{% static "img/general/binary-cards-5.png" %}">
+        <img class="img-fluid" src="{% static 'img/general/binary-cards-5.png' %}">
         <h2 class="link-box-title">Teaching with<br>CS Unplugged</h4>
       </a>
       <a class="link-box link-box-green" href="{% url 'topics:index' %}">
-        <img class="img-fluid" src="{% static "img/general/detective.png" %}">
+        <img class="img-fluid" src="{% static 'img/general/detective.png' %}">
         <h2 class="link-box-title">Topics covered by CS Unplugged</h4>
       </a>
       <a class="link-box link-box-purple" href="{% url 'topics:all_curriculum_integrations' %}">

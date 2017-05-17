@@ -55,16 +55,27 @@ div.plugged-in-language-implementation {
 $rounded-corner-radius: 0.5rem;
 
 .jumbotron {
-  background: linear-gradient( rgba($red,.7), rgba($red,.7) ), url("../img/sorting-network-photo.jpg");
-  background-size: cover;
   border: $card-border-width solid darken($red, 10%);
   border-radius: $rounded-corner-radius;
   margin: 1rem 0;
+  overflow: hidden;
   width: 100%;
+
+  .jumbotron-video-container {
+    position: relative;
+    width: 100%;
+  }
+
+  .jumbotron-video {
+    position: absolute;
+    width: 100%;
+    transform: translateY(-20%);
+  }
 
   h1 {
     font-family: 'Patrick Hand', cursive;
     color: $white;
+    padding: 4rem;
   }
 }
 
