@@ -13,6 +13,7 @@ The following pages are for those wanting to develop the CS Unplugged system.
     general
     topics
     resources
+    render
     dev
     deployment
     test_suite

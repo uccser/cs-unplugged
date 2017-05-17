@@ -30,3 +30,39 @@ services:
       - django
     ports:
       - "80:80"
+
+  redis:
+    build:
+      context: .
+      dockerfile: ./compose/redis/Dockerfile
+    ports:
+      - "6379:6379"
+
+  render:
+    build:
+      context: ./render
+      dockerfile: ./Dockerfile
+      args:
+        PROCESS_PORT: 5000
+        FLASK_PRODUCTION: 0
+    environment:
+      - API_DISCOVERY_URL=http://queue:5050/api/{api}/{apiVersion}
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./render:/render
+
+  queue:
+    build:
+      context: ./compose/queue
+      dockerfile: ./Dockerfile
+      args:
+        PROCESS_PORT: 5050
+    ports:
+      - "5050:5050"
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - nginx
+      - redis

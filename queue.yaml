@@ -1,0 +1,9 @@
+total_storage_limit: 512M
+queue:
+- name: render-queue
+  mode: pull
+  acl:
+    - user_email: csse-education-research@canterbury.ac.nz
+    - writer_email: csse-education-research@canterbury.ac.nz
+    - user_email: cs-unplugged-develop@appspot.gserviceaccount.com
+    - writer_email: cs-unplugged-develop@appspot.gserviceaccount.com
