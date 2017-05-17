@@ -8,6 +8,7 @@ from topics.models import Lesson
 from topics.management.commands._LessonsLoader import LessonsLoader
 
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
+from utils.errors.EmptyConfigFileError import EmptyConfigFileError
 
 
 class LessonsLoaderTest(BaseTestWithDB):
@@ -193,6 +194,28 @@ class LessonsLoaderTest(BaseTestWithDB):
         self.assertEquals(
             Lesson.objects.get(slug="lesson-1").name,
             "Lesson 1",
+        )
+
+    def test_content(self):
+        config_file = os.path.join(self.loader_name, "basic-config.yaml")
+        complete_config_file_path = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+        lessons_structure = self.test_data.load_yaml_file(complete_config_file_path)
+
+        topic = self.test_data.create_topic("1")
+        unit_plan = self.test_data.create_unit_plan(topic, "1")
+
+        lesson_loader = LessonsLoader(
+            config_file,
+            self.load_log,
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        lesson_loader.load()
+        self.assertEquals(
+            Lesson.objects.get(slug="lesson-1").content,
+            "<p>Etiam in massa. Nam ut metus. In rhoncus venenatis tellus.</p>",
         )
 
     def test_duration(self):
