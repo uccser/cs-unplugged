@@ -1,6 +1,6 @@
 """Module for generating custom resource PDFs."""
 
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.template.loader import render_to_string
 from django.contrib.staticfiles import finders
 from django.conf import settings
@@ -35,20 +35,23 @@ def generate_resource_pdf(request, resource, module_path):
         from weasyprint import HTML, CSS
         context = dict()
         get_request = request.GET
-        context["paper_size"] = get_request["paper_size"]
         context["resource"] = resource
-        context["header_text"] = get_request["header_text"]
+        context["header_text"] = get_request.get("header_text", "")
+        context["paper_size"] = get_request.get("paper_size", None)
+
+        if context["paper_size"] is None:
+            raise Http404("Paper size parameter not specified.")
 
         resource_image_generator = importlib.import_module(module_path)
-        filename = "{} ({})".format(resource.name, resource_image_generator.subtitle(get_request, resource))
-        context["filename"] = filename
-
-        num_copies = range(0, int(get_request["copies"]))
+        num_copies = range(0, int(get_request.get("copies", 1)))
         context["resource_images"] = []
         for copy in num_copies:
             context["resource_images"].append(
                 generate_resource_image(get_request, resource, module_path)
             )
+
+        filename = "{} ({})".format(resource.name, resource_image_generator.subtitle(get_request, resource))
+        context["filename"] = filename
 
         pdf_html = render_to_string("resources/base-resource-pdf.html", context)
         html = HTML(string=pdf_html, base_url=settings.STATIC_ROOT)

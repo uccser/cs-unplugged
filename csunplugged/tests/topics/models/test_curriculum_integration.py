@@ -21,16 +21,12 @@ class CurriculumIntegrationModelTest(BaseTestWithDB):
         topic = self.test_data.create_topic(1)
         curriculum_area = mommy.make(
             CurriculumArea,
-            make_m2m=True,
             name="cats"
         )
         prerequisite_lesson = mommy.make(
             Lesson,
-            make_m2m=True,
             name="dogs"
         )
-
-        # Test
         new_curriculum_integration = CurriculumIntegration.objects.create(
             topic=topic,
             slug="slug",
