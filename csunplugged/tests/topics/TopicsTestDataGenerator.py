@@ -9,8 +9,10 @@ from topics.models import (
     Lesson,
     CurriculumIntegration,
     CurriculumArea,
+    ProgrammingExercise,
     ProgrammingExerciseDifficulty,
     ProgrammingExerciseLanguage,
+    LearningOutcome,
 )
 
 
@@ -176,3 +178,55 @@ class TopicsTestDataGenerator:
         )
         language.save()
         return language
+
+    def create_programming_exercise(self, topic, number,
+                                    difficulty,
+                                    exercise_set_number=1,
+                                    exercise_number=1,
+                                    content="<p>Example content.</p>",
+                                    extra_challenge="<p>Example challenge.</p>",
+                                    ):
+        """
+        Create programming exercise object.
+
+        Args:
+            topic: Topic related to the exercise.
+            number: Integer representing the exercise (int).
+            difficulty: Difficulty related to the exercise.
+            exercise_set_number: Integer of exercise set number (int).
+            exercise_number: Integer of exercise number (int).
+            content: Text of exercise (str).
+            extra_challenge: Text of extra challenge (str).
+
+        Returns:
+            ProgrammingExercise object.
+        """
+        exercise = ProgrammingExercise(
+            topic=topic,
+            slug="exercise-{}".format(number),
+            name="Exercise {}".format(number),
+            exercise_set_number=exercise_set_number,
+            exercise_number=exercise_number,
+            content=content,
+            extra_challenge=extra_challenge,
+            difficulty=difficulty,
+        )
+        exercise.save()
+        return exercise
+
+    def create_learning_outcome(self, number):
+        """
+        Create learning outcome object.
+
+        Args:
+            number: Integer representing the exercise (int).
+
+        Returns:
+            LearningOutcome object.
+        """
+        outcome = LearningOutcome(
+            slug="outcome-{}".format(number),
+            text="Outcome {}".format(number),
+        )
+        outcome.save()
+        return outcome

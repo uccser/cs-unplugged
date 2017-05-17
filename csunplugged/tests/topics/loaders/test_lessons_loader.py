@@ -8,7 +8,6 @@ from topics.models import Lesson
 from topics.management.commands._LessonsLoader import LessonsLoader
 
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
-from utils.errors.EmptyConfigFileError import EmptyConfigFileError
 
 
 class LessonsLoaderTest(BaseTestWithDB):
@@ -348,4 +347,111 @@ class LessonsLoaderTest(BaseTestWithDB):
         self.assertRaises(
             MissingRequiredFieldError,
             lesson_loader.load,
+        )
+
+    def test_programming_exercises(self):
+        config_file = os.path.join(self.loader_name, "programming-exercises.yaml")
+        complete_config_file_path = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+        lessons_structure = self.test_data.load_yaml_file(complete_config_file_path)
+
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        difficulty = self.test_data.create_difficulty_level(1)
+        self.test_data.create_programming_exercise(topic, 1, difficulty)
+        self.test_data.create_programming_exercise(topic, 2, difficulty)
+
+        lesson_loader = LessonsLoader(
+            config_file,
+            self.load_log,
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        lesson_loader.load()
+        self.assertQuerysetEqual(
+            Lesson.objects.get(slug="lesson-1").programming_exercises.all(),
+            [
+                "<ProgrammingExercise: Exercise 1>",
+                "<ProgrammingExercise: Exercise 2>",
+            ],
+            ordered=False,
+        )
+
+    def test_learning_outcomes(self):
+        config_file = os.path.join(self.loader_name, "learning-outcomes.yaml")
+        complete_config_file_path = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+        lessons_structure = self.test_data.load_yaml_file(complete_config_file_path)
+
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        self.test_data.create_learning_outcome(1)
+        self.test_data.create_learning_outcome(2)
+
+        lesson_loader = LessonsLoader(
+            config_file,
+            self.load_log,
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        lesson_loader.load()
+        self.assertQuerysetEqual(
+            Lesson.objects.get(slug="lesson-1").learning_outcomes.all(),
+            [
+                "<LearningOutcome: Outcome 1>",
+                "<LearningOutcome: Outcome 2>",
+            ],
+            ordered=False,
+        )
+
+    def test_classroom_resources(self):
+        config_file = os.path.join(self.loader_name, "classroom-resources.yaml")
+        complete_config_file_path = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+        lessons_structure = self.test_data.load_yaml_file(complete_config_file_path)
+
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+
+        lesson_loader = LessonsLoader(
+            config_file,
+            self.load_log,
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        lesson_loader.load()
+        self.assertEqual(
+            Lesson.objects.get(slug="lesson-1").classroom_resources,
+            ["Pens", "Paper"],
+        )
+
+    def test_multiple_lessons(self):
+        config_file = os.path.join(self.loader_name, "multiple-lessons.yaml")
+        complete_config_file_path = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+        lessons_structure = self.test_data.load_yaml_file(complete_config_file_path)
+
+        topic = self.test_data.create_topic("1")
+        unit_plan = self.test_data.create_unit_plan(topic, "1")
+
+        lesson_loader = LessonsLoader(
+            config_file,
+            self.load_log,
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        lesson_loader.load()
+        print(Lesson.objects.all())
+        self.assertQuerysetEqual(
+            Lesson.objects.all(),
+            [
+                "<Lesson: Lesson 1>",
+                "<Lesson: Lesson 2>",
+                "<Lesson: Lesson 3>",
+            ],
+            ordered=False,
         )
