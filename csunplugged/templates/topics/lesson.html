@@ -41,14 +41,12 @@
 {% block right_column_content %}
   <h2 class="heading-underline">CS Unplugged resources</h2>
   {% if lesson_generated_resources %}
-    <div class="list-group">
+    <div class="link-box-container">
       {% for generated_resource in lesson_generated_resources %}
-        <a href="{% url 'resources:resource' generated_resource.slug %}" class="list-group-item list-group-item-action d-flex flex-row flex-nowrap py-1">
-          <img class="d-flex mr-3" src="{% static generated_resource.thumbnail %}" alt="Generic placeholder image" style="max-width: 5rem;">
-          <div>
-            <strong>{{ generated_resource.name }}</strong>
-            <p>{{ generated_resource.description }}</p>
-          </div>
+        <a href="{% url 'resources:resource' generated_resource.slug %}" class="link-box link-box-w-100">
+          <img class="border-thin" src="{% static generated_resource.thumbnail %}" alt="Generic placeholder image" style="max-width: 5rem;">
+          <strong>{{ generated_resource.name }}</strong>
+          <p class="mb-0">{{ generated_resource.description }}</p>
         </a>
       {% endfor %}
     </div>
