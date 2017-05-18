@@ -1,5 +1,6 @@
 """Views for the resource application."""
 
+from django.conf import settings
 from django.views import generic
 from django.shortcuts import get_object_or_404, render, redirect
 from django.http import Http404, HttpResponse
@@ -34,6 +35,7 @@ def resource(request, resource_slug):
     resource = get_object_or_404(Resource, slug=resource_slug)
     context = dict()
     context["resource"] = resource
+    context["debug"] = settings.DEBUG
     context["lessons"] = resource.lesson_generated_resources.all()
     if resource.thumbnail_static_path:
         context["thumbnail"] = resource.thumbnail_static_path
@@ -84,7 +86,6 @@ def resource_pdf_cache(request, resource, module_path):
         Returns:
             HTTP redirect.
         """
-        from django.conf import settings
         resource_image_generator = importlib.import_module(module_path)
         subtitle = resource_image_generator.subtitle(request.GET, resource)
         filename = "{} ({})".format(resource.name, subtitle)
