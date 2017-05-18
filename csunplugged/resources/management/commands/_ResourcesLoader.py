@@ -42,6 +42,7 @@ class ResourcesLoader(BaseLoader):
                 resource_template = resource_structure["webpage-template"]
                 resource_view = resource_structure["generation-view"]
                 resource_thumbnail = resource_structure["thumbnail-static-path"]
+                resource_copies = resource_structure["copies"]
             except:
                 raise MissingRequiredFieldError()
 
@@ -50,7 +51,8 @@ class ResourcesLoader(BaseLoader):
                 name=resource_name,
                 webpage_template=resource_template,
                 generation_view=resource_view,
-                thumbnail_static_path=resource_thumbnail
+                thumbnail_static_path=resource_thumbnail,
+                copies=resource_copies,
             )
             resource.save()
 
