@@ -23,7 +23,6 @@ script:
 - "./csu dev test_coverage"
 - "./csu dev style"
 - "./csu dev docs"
-- "./csu dev makeresources"
 deploy:
   provider: script
   script: bash ./infrastructure/develop-deploy/develop-deploy.sh
