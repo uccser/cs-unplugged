@@ -74,7 +74,9 @@ The ``./csu dev [DEV_COMMAND]`` command runs developer tasks, where
 ``[DEV_COMMAND]`` is a word from the list below:
 
 - :ref:`logs`
+- :ref:`flush`
 - :ref:`makemigrations`
+- :ref:`makeresources`
 - :ref:`migrate`
 - :ref:`shell`
 - :ref:`static`
@@ -96,6 +98,14 @@ successive calls may display new logs.
 
 To follow logs as they output, enter ``docker-compose logs --follow``.
 
+.. _flush:
+
+``flush``
+-----------------------------------------------------------------------------
+
+Running ``./csu dev flush`` runs the Django ``flush`` command to flush
+the database.
+
 .. _makemigrations:
 
 ``makemigrations``
@@ -103,6 +113,14 @@ To follow logs as they output, enter ``docker-compose logs --follow``.
 
 Running ``./csu dev makemigrations`` runs the Django ``makemigrations`` command
 to create migration files.
+
+.. _makeresources:
+
+``makeresources``
+-----------------------------------------------------------------------------
+
+Running ``./csu dev makeresources`` runs the custom Django ``makeresources``
+command to create static resource PDF files.
 
 .. _migrate:
 

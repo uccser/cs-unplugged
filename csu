@@ -34,6 +34,7 @@ function helpmenu {
   wipe_help
   printf "\nDEV_COMMAND list:\n"
   documentation_help
+  flush_help
   logs_help
   makemigrations_help
   makeresources_help
@@ -90,6 +91,14 @@ function update {
 function update_help {
   printf "   update            Run Django migrate and updatedata commands\n"
   printf "                     and build static files.\n"
+}
+
+# Run Django flush command
+function flush {
+  docker-compose run --rm django /docker_venv/bin/python3 ./manage.py flush
+}
+function flush_help {
+  printf "   flush             Run Django flush command.\n"
 }
 
 # Run Django makemigrations command
@@ -277,6 +286,10 @@ function process_dev_command() {
     case "$1" in
       docs)
         documentation
+        exit
+        ;;
+      flush)
+        flush
         exit
         ;;
       logs)
