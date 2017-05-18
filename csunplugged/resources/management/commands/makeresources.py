@@ -35,6 +35,8 @@ class Command(BaseCommand):
             # Create PDF for all possible combinations
             for combination in combinations:
                 request = HttpRequest()
+                if resource.copies:
+                    combination["copies"] = 30
                 request.GET = combination
                 (pdf_file, filename) = generate_resource_pdf(request, resource, module_path)
                 filename = "{}.pdf".format(filename)
