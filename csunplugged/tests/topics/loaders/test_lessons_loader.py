@@ -314,7 +314,6 @@ class LessonsLoaderTest(BaseTestWithDB):
             "<p>Etiam in massa. Nam ut metus. In rhoncus venenatis tellus.</p>",
         )
 
-
     def test_lesson_loader_missing_content_text(self):
         config_file = os.path.join(self.loader_name, "missing-content.yaml")
         complete_config_file_path = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
