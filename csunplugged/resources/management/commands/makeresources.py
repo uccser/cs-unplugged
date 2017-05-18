@@ -17,7 +17,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         """Automatically called when the makestaticresources command is given."""
-        BASE_PATH = "static/resources/"
+        BASE_PATH = "staticfiles/resources/"
         if not os.path.exists(BASE_PATH):
             os.makedirs(BASE_PATH)
 

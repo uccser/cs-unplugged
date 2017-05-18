@@ -84,9 +84,9 @@ def resource_pdf_cache(request, resource, module_path):
         Returns:
             HTTP redirect.
         """
-        from config.settings.production import STATIC_URL
+        from django.conf import settings
         resource_image_generator = importlib.import_module(module_path)
         subtitle = resource_image_generator.subtitle(request.GET, resource)
         filename = "{} ({})".format(resource.name, subtitle)
-        redirect_url = "{}resources/{}".format(STATIC_URL, filename)
+        redirect_url = "{}resources/{}.pdf".format(settings.STATIC_URL, filename)
         return redirect(redirect_url)
