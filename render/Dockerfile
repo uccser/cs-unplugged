@@ -9,9 +9,15 @@ LABEL maintainer="csse-education-research@canterbury.ac.nz"
 ARG DEBIAN_FRONTEND=noninteractive
 ARG PROCESS_PORT=8080
 ARG FLASK_PRODUCTION=1
+ARG PROJECT_NAME=cs-unplugged
+ARG QUEUE_NAME=render-queue
+ARG API_DISCOVERY_URL
 
 ENV PORT ${PROCESS_PORT}
-ENV FLASK_PRODUCTION=${FLASK_PRODUCTION}
+ENV FLASK_PRODUCTION ${FLASK_PRODUCTION}
+ENV PROJECT_NAME ${PROJECT_NAME}
+ENV QUEUE_NAME ${QUEUE_NAME}
+ENV API_DISCOVERY_URL ${API_DISCOVERY_URL}
 
 # Install packages (including Weasyprint dependencies), running of Python 3.4.2
 RUN apt-get update && apt-get install -y \
@@ -52,4 +58,5 @@ WORKDIR /render
 
 EXPOSE ${PORT}
 
-CMD /docker_venv/bin/gunicorn -c ./gunicorn.conf.py -b :${PORT} wsgi
+RUN chmod +x /render/docker-entrypoint.sh
+ENTRYPOINT ["/render/docker-entrypoint.sh"]

@@ -5,9 +5,6 @@ from apiclient.discovery import build, HttpError
 from base64 import b64encode, b64decode
 
 
-DISCOVERY_URL = os.getenv("API_DISCOVERY_URL", None)
-
-
 def authorize_session():
     """Authorize for taskqueue transactions.
 
@@ -46,7 +43,7 @@ def decode_dictionary(encoded_string):
 class QueueHandler(object):
     """Handles transactions with the taskqueue api."""
 
-    def __init__(self, project_name, taskqueue_name):
+    def __init__(self, project_name, taskqueue_name, discovery_url=None):
         """Create a new QueueHandler.
 
         Args:
@@ -56,8 +53,8 @@ class QueueHandler(object):
         self.project_name = project_name
         self.taskqueue_name = taskqueue_name
 
-        if DISCOVERY_URL is not None:
-            self.task_api = build("taskqueue", "v1beta2", discoveryServiceUrl=DISCOVERY_URL)
+        if discovery_url is not None:
+            self.task_api = build("taskqueue", "v1beta2", discoveryServiceUrl=discovery_url)
         else:
             self.task_api = build("taskqueue", "v1beta2")
 
@@ -86,7 +83,7 @@ class QueueHandler(object):
             task = {
                 "kind": "taskqueues#task",
                 "queueName": self.taskqueue_name,
-                "payloadBase64": encode_dictionary(task)
+                "payloadBase64": encode_dictionary(task_payload)
             }
             if tag is not None:
                 task["tag"] = tag
