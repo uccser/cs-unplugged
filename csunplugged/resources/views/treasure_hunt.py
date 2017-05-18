@@ -85,7 +85,7 @@ def subtitle(get_request, resource):
         number_order_text = get_request["number_order"].title()
         range_min, range_max, font_size = number_range(get_request)
         text = SUBTITLE_TEMPLATE.format(number_order_text, range_min, range_max - 1)
-    return text
+    return "{} - {}".format(text, get_request["paper_size"])
 
 
 def number_range(get_request):
@@ -109,3 +109,19 @@ def number_range(get_request):
         range_max = 10000
         font_size = 70
     return (range_min, range_max, font_size)
+
+
+def valid_options():
+    """Provide dictionary of all valid parameters.
+
+    This excludes the header text parameter.
+
+    Returns:
+        All valid options (dict).
+    """
+    valid_options = {
+        "prefilled_values": ["blank", "easy", "medium", "hard"],
+        "number_order": ["sorted", "unsorted"],
+        "paper_size": ["a4", "letter"],
+    }
+    return valid_options

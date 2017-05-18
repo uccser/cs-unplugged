@@ -1,11 +1,13 @@
 """Views for the resource application."""
 
 from django.views import generic
-from django.shortcuts import get_object_or_404, render
-from django.http import Http404
+from django.shortcuts import get_object_or_404, render, redirect
+from django.http import Http404, HttpResponse
 from resources.models import Resource
 from .generate_resource_pdf import generate_resource_pdf
 import importlib
+
+RESPONSE_CONTENT_DISPOSITION = 'attachment; filename="{filename}.pdf"'
 
 
 class IndexView(generic.ListView):
@@ -47,6 +49,7 @@ def generate_resource(request, resource_slug):
     resource = get_object_or_404(Resource, slug=resource_slug)
     resource_view = resource.generation_view
     # Remove .py extension if given
+    # TODO: Move logic to loaders
     if resource_view.endswith(".py"):
         resource_view = resource_view[:-3]
     module_path = "resources.views.{}".format(resource_view)
@@ -54,5 +57,36 @@ def generate_resource(request, resource_slug):
     if spec is None:
         raise Http404("PDF generation does not exist for resource: {}".format(resource_slug))
     else:
+        # TODO: Weasyprint handling in production
         # TODO: Add creation of PDF as job to job queue
-        return generate_resource_pdf(request, resource, module_path)
+        import environ
+        env = environ.Env(
+            DJANGO_PRODUCTION=(bool),
+        )
+        if env("DJANGO_PRODUCTION"):
+            # Return cached static PDF file of resource
+            return resource_pdf_cache(request, resource, module_path)
+        else:
+            (pdf_file, filename) = generate_resource_pdf(request, resource, module_path)
+            response = HttpResponse(pdf_file, content_type="application/pdf")
+            response["Content-Disposition"] = RESPONSE_CONTENT_DISPOSITION.format(filename=filename)
+            return response
+
+
+def resource_pdf_cache(request, resource, module_path):
+        """Provide redirect to static resource file.
+
+        Args:
+            request: HttpRequest object.
+            resource: Resource model object.
+            module_path: Path to resource module (str).
+
+        Returns:
+            HTTP redirect.
+        """
+        from config.settings.production import STATIC_URL
+        resource_image_generator = importlib.import_module(module_path)
+        subtitle = resource_image_generator.subtitle(request.GET, resource)
+        filename = "{} ({})".format(resource.name, subtitle)
+        redirect_url = "{}resources/{}".format(STATIC_URL, filename)
+        return redirect(redirect_url)
