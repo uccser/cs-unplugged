@@ -108,5 +108,8 @@ node_modules/
 # Temporary folder
 temp/
 
+# Generated resources folder
+static/resources/
+
 # Collected static files folder
 staticfiles/
