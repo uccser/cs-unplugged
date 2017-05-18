@@ -109,7 +109,7 @@ node_modules/
 temp/
 
 # Generated resources folder
-static/resources/
+csunplugged/static/resources/
 
 # Collected static files folder
 staticfiles/
