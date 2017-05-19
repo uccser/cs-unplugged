@@ -4,6 +4,8 @@ import logging
 from apiclient.discovery import build, HttpError
 from base64 import b64encode, b64decode
 
+logger = logging.getLogger(__name__)
+
 
 def authorize_session():
     """Authorize for taskqueue transactions.
@@ -97,7 +99,7 @@ class QueueHandler(object):
             result = insert_request.execute()
             return result["id"]
         except HttpError as http_error:
-            logging.error("Error during insert request: {}".format(http_error))
+            logger.error("Error during insert request: {}".format(http_error))
             return None
 
     def lease_tasks(self, tasks_to_fetch, lease_secs):
@@ -128,7 +130,7 @@ class QueueHandler(object):
                 tasks.append(task)
             return tasks
         except HttpError as http_error:
-            logging.error("Error during lease request: {}".format(http_error))
+            logger.error("Error during lease request: {}".format(http_error))
             return None
 
     def update_task(self, task_id, new_lease_secs):
@@ -156,7 +158,7 @@ class QueueHandler(object):
             result = patch_request.execute()
             return result
         except HttpError as http_error:
-            logging.error("Error during lease request: {}".format(http_error))
+            logger.error("Error during lease request: {}".format(http_error))
             return None
 
     def delete_task(self, task_id):
@@ -176,5 +178,5 @@ class QueueHandler(object):
             delete_request.execute()
             return True
         except HttpError as http_error:
-            logging.error("Error during delete request: {}".format(http_error))
+            logger.error("Error during delete request: {}".format(http_error))
         return False

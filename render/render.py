@@ -3,6 +3,7 @@ import os
 import sys
 import logging
 import optparse
+from logging.handlers import RotatingFileHandler
 from RenderDaemon import RenderDaemon
 
 PID_DIRECTORY = os.getenv("PID_DIRECTORY", os.path.join(os.getcwd(), "pidstore"))
@@ -25,6 +26,33 @@ def parse_args():
                     default=None)
     options, arguments = opts.parse_args()
     return options, arguments
+
+
+def setup_logging(options):
+    """Initialise the logging configuration.
+
+    Args:
+        options: The program options.
+    """
+    max_log_size = 5 * 1024 * 1024
+    logs_directory = LOG_DIRECTORY
+    os.makedirs(logs_directory, exist_ok=True)
+
+    logfile = os.path.join(logs_directory, "render_{}.log".format(options.daemon))
+    log_formatter = logging.Formatter("%(asctime)-20s %(levelname)s:%(name)-30s Message: %(message)s")
+
+    log_handler = RotatingFileHandler(logfile,
+                                      mode='a',
+                                      maxBytes=max_log_size,
+                                      backupCount=5,
+                                      encoding=None,
+                                      delay=False)
+    log_handler.setFormatter(log_formatter)
+    log_handler.setLevel(logging.INFO)
+
+    render_log = logging.getLogger()
+    render_log.setLevel(logging.INFO)
+    render_log.addHandler(log_handler)
 
 
 def get_daemon_pids():
@@ -65,18 +93,14 @@ def check_pid(pid):
 
 if __name__ == "__main__":
     options, arguments = parse_args()
+    setup_logging(options)
     action = arguments[0]
 
     # Set-up directories
     pid_directory = PID_DIRECTORY
     os.makedirs(pid_directory, exist_ok=True)
-    logs_directory = LOG_DIRECTORY
-    os.makedirs(logs_directory, exist_ok=True)
-
-    logfile = os.path.join(logs_directory, "render_{}.log".format(options.daemon))
     pidfile = os.path.join(pid_directory, "render_{}.pid".format(options.daemon))
 
-    logging.basicConfig(filename=logfile)
     d = RenderDaemon(pidfile=pidfile)
 
     if action == "start":

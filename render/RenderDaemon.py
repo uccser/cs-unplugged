@@ -15,6 +15,10 @@ TASK_SECONDS = float(os.getenv("TASK_SECONDS", 15))
 TASK_TIME_MULT = float(os.getenv("TASK_TIME_MULT", 1.33))
 TASK_RETRY_LIMIT = int(os.getenv("TASK_RETRY_LIMIT", 5))
 
+RENDER_SLEEP_TIME = float(os.getenv("RENDER_SLEEP_TIME", 10))
+
+logger = logging.getLogger(__name__)
+
 
 def handle_timelimit_exceeded():
     """Raise the timeout exception when SIGALRM signal is caught."""
@@ -37,7 +41,7 @@ class RenderDaemon(RunDaemon):
     def run(self):
         """Consumes jobs and produces rendered documents."""
         queue = QueueHandler(project_name=PROJECT_NAME, taskqueue_name=QUEUE_NAME, discovery_url=DISCOVERY_URL)
-        logging.log("Daemon with pid {} running.".format(self.pid))
+        logger.info("Daemon with pid {} running.".format(self.pid))
         while True:
             lease_secs = TASK_COUNT * TASK_SECONDS
             tasks = queue.lease_tasks(tasks_to_fetch=TASK_COUNT, lease_secs=lease_secs)
@@ -55,9 +59,9 @@ class RenderDaemon(RunDaemon):
                     self.process_task(queue, task_descriptor)
                 except Exception as e:
                     queue.update_task(task_id=task_id, new_lease_secs=1)
-                    logging.exception("Task {} raise exception with error: {}", task_descriptor["id"], e)
+                    logger.exception("Task {} raise exception with error: {}", task_descriptor["id"], e)
 
-            time.sleep(5)
+            time.sleep(RENDER_SLEEP_TIME)
 
     def process_task(self, queue, task_descriptor):
         """Process the given task, then delete it.

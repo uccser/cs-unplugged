@@ -41,22 +41,22 @@ RUN apt-get clean && rm /var/lib/apt/lists/*_*
 # Copy and create virtual environment
 RUN python -m virtualenv --python=python3.5 /docker_venv
 
-# Install dependencies
-RUN mkdir /requirements
-COPY requirements.txt /requirements
-COPY pip_install.sh /requirements
+# Set-up file system
+RUN mkdir /render
+RUN mkdir /render/scripts
+COPY requirements.txt /render
+COPY scripts/pip_install.sh /render/scripts
 
-RUN chmod +x /requirements/pip_install.sh
+# Install dependencies
+RUN chmod +x /render/scripts/pip_install.sh
 RUN /docker_venv/bin/pip3 install -U pip setuptools
-RUN /requirements/pip_install.sh /docker_venv/bin/pip3 /requirements/requirements.txt
+RUN /render/scripts/pip_install.sh /docker_venv/bin/pip3 /render/requirements.txt
 
 # Setup Working Directory
-RUN mkdir /render
-RUN mkdir /secure
 ADD . /render
 WORKDIR /render
 
 EXPOSE ${PORT}
 
-RUN chmod +x /render/docker-entrypoint.sh
-ENTRYPOINT ["/render/docker-entrypoint.sh"]
+RUN chmod +x /render/scripts/docker-entrypoint.sh
+ENTRYPOINT ["/render/scripts/docker-entrypoint.sh"]
