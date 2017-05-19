@@ -176,3 +176,20 @@ def subtitle(request, resource):
         counts=count_text
     )
     return text
+
+
+def valid_options():
+    """Provide dictionary of all valid parameters.
+
+    This excludes the header text parameter.
+
+    Returns:
+        All valid options (dict).
+    """
+    valid_options = {
+        "number_bits": ["4", "8"],
+        "value_type": ["binary", "lightbulb"],
+        "dot_counts": ["yes", "no"],
+        "paper_size": ["a4", "letter"],
+    }
+    return valid_options
