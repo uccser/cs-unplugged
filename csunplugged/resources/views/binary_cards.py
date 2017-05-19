@@ -89,7 +89,12 @@ def subtitle(request, resource):
         black_back_text = "with black back"
     else:
         black_back_text = "without black back"
-    return "{} - {} - {}".format(display_numbers_text, black_back_text, get_request["paper_size"])
+    text = "{} - {} - {}".format(
+        display_numbers_text,
+        black_back_text,
+        retrieve_query_parameter(request, "paper_size")
+    )
+    return text
 
 
 def valid_options():
