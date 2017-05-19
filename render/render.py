@@ -6,6 +6,10 @@ import optparse
 import multiprocessing
 from RenderDaemon import RenderDaemon
 
+PID_DIRECTORY = os.getenv("PID_DIRECTORY", os.path.join(os.getcwd(), "pidstore"))
+LOG_DIRECTORY = os.getenv("DAEMON_LOG_DIRECTORY", os.path.join(os.getcwd(), "logs"))
+
+
 def parse_args():
     """Command-line option parser for program control.
 
@@ -22,14 +26,25 @@ def parse_args():
     options, arguments = opts.parse_args()
     return options, arguments
 
+
 def get_daemon_pids():
     """Get the pids of all render daemons.
 
     Returns:
         An array of file names correlating to pidfiles.
     """
-    pass
+    if not os.path.exists(PID_DIRECTORY):
+        return []
 
+    pids = []
+    for filename in os.listdir(PID_DIRECTORY):
+        _, file_extension = os.path.splitext(filename)
+        if file_extension == ".pid":
+            with open(filename, 'r') as f:
+                pid = int(f.read())
+                pids.append(pid)
+
+    return pids
 
 def check_pid(pid):
     """Check that process is still active.
@@ -52,13 +67,12 @@ if __name__ == "__main__":
     action = arguments[0]
 
     # Set-up directories
-    pid_directory = os.path.join(os.getcwd(), "pidstore")
-    if not os.path.exists(pid_directory):
-        os.makedirs(pid_directory, exist_ok=True)
-    logs_directory = os.path.join(os.getcwd(), "logs")
+    pid_directory = PID_DIRECTORY
+    os.makedirs(pid_directory, exist_ok=True)
+    logs_directory = LOG_DIRECTORY
     os.makedirs(logs_directory, exist_ok=True)
 
-    logfile = os.path.join(logs_directory, "render.log")
+    logfile = os.path.join(logs_directory, "render_{}.log".format(options.daemon))
     pidfile = os.path.join(pid_directory, "render_{}.pid".format(options.daemon))
 
     logging.basicConfig(filename=logfile)
