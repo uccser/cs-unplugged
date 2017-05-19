@@ -52,7 +52,7 @@ class RenderDaemon(RunDaemon):
                 timeout_seconds = TASK_SECONDS + TASK_SECONDS * TASK_TIME_MULT * retries
 
                 if retries > TASK_RETRY_LIMIT:
-                    pass  # TODO
+                    pass  # TODO: delete task tell django
 
                 signal.alarm(timeout_seconds)
                 try:
@@ -79,10 +79,10 @@ class RenderDaemon(RunDaemon):
 
         if task_kind == "task#render":
             try:
-                # save then delete
+                # TODO: save then delete
                 queue.delete_task(task_id)
             except TimeoutError as e:
-                # ensure saved and deleted
+                # TODO: ensure saved and deleted
                 queue.delete_task(task_id)
         else:
             raise Exception("Unrecognized task: {}.".format(task_kind))

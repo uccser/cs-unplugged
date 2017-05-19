@@ -4,6 +4,7 @@ import os
 import logging
 from flask import Flask
 
+RENDER_DAEMONS = int(os.getenv("RENDER_DAEMONS", 1))
 DEBUG = not int(os.getenv("FLASK_PRODUCTION", 1))
 PORT = int(os.getenv("PORT", 8080))
 
