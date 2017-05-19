@@ -2,11 +2,7 @@
 
 import os
 import logging
-import json
 from flask import Flask
-
-from apiclient.discovery import build, HttpError
-from base64 import b64encode
 
 DEBUG = not int(os.getenv("FLASK_PRODUCTION", 1))
 PORT = int(os.getenv("PORT", 8080))

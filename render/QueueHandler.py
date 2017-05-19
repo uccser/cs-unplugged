@@ -59,7 +59,8 @@ class QueueHandler(object):
             self.task_api = build("taskqueue", "v1beta2")
 
     def _get_project_name(self, is_write):
-        """ Get the project name based for write command.
+        """Get the project name based for write command.
+
         Args:
             is_write: A boolean determining if the name will be used
                 for a write operation.
@@ -172,7 +173,7 @@ class QueueHandler(object):
                 taskqueue=self.taskqueue,
                 task=task_id
             )
-            result = delete_request.execute()
+            delete_request.execute()
             return True
         except HttpError as http_error:
             logging.error("Error during delete request: {}".format(http_error))

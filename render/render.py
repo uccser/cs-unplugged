@@ -3,7 +3,6 @@ import os
 import sys
 import logging
 import optparse
-import multiprocessing
 from RenderDaemon import RenderDaemon
 
 PID_DIRECTORY = os.getenv("PID_DIRECTORY", os.path.join(os.getcwd(), "pidstore"))
@@ -16,7 +15,8 @@ def parse_args():
     For usage & options, type: "render.py -h".
     """
     opts = optparse.OptionParser(
-        usage="{0} [options] input-data-set(s)".format(sys.argv[0]), description="Create, modify and kill render daemons.")
+        usage="{0} [options] input-data-set(s)".format(sys.argv[0]),
+        description="Create, modify and kill render daemons.")
     opts.add_option("--daemon",
                     "-d",
                     action="store",
@@ -45,6 +45,7 @@ def get_daemon_pids():
                 pids.append(pid)
 
     return pids
+
 
 def check_pid(pid):
     """Check that process is still active.
