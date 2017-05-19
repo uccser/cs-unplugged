@@ -4,6 +4,9 @@ binary-numbers-no-calculations:
   difficulty-level: 1
   programming-languages:
     - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-explain-output
   extra-challenge: extra-challenge.md
 
 binary-numbers-using-variable:
@@ -140,3 +143,15 @@ decimal-to-binary:
   programming-languages:
     - scratch
   extra-challenge: extra-challenge.md
+
+binary-cards-as-dots:
+  challenge-set-number: 9
+  challenge-number: 1
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-identify-if-statement
+    - programming-identify-loop
