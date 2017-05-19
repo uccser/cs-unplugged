@@ -59,12 +59,12 @@ def subtitle(get_request, resource):
         text for subtitle (string)
     """
     if get_request["prefilled_values"] == "blank":
-        text = "blank"
+        range_text = "blank"
     else:
         SUBTITLE_TEMPLATE = "{} to {}"
         range_min, range_max, font_size = number_range(get_request)
-        text = SUBTITLE_TEMPLATE.format(range_min, range_max - 1)
-    return text
+        range_text = SUBTITLE_TEMPLATE.format(range_min, range_max - 1)
+    return "{} - {}".format(range_text, get_request["paper_size"])
 
 
 def number_range(get_request):
@@ -92,3 +92,18 @@ def number_range(get_request):
         range_max = 1000
         font_size = 90
     return (range_min, range_max, font_size)
+
+
+def valid_options():
+    """Provide dictionary of all valid parameters.
+
+    This excludes the header text parameter.
+
+    Returns:
+        All valid options (dict).
+    """
+    valid_options = {
+        "prefilled_values": ["blank", "easy", "medium", "hard"],
+        "paper_size": ["a4", "letter"],
+    }
+    return valid_options

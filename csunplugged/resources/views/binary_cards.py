@@ -82,7 +82,27 @@ def subtitle(request, resource):
         text for subtitle (string)
     """
     if retrieve_query_parameter(request, "display_numbers") == "yes":
-        text = "with numbers"
+        display_numbers_text = "with numbers"
     else:
-        text = "without numbers"
-    return text
+        display_numbers_text = "without numbers"
+    if retrieve_query_parameter(request, "black_back") == "yes":
+        black_back_text = "with black back"
+    else:
+        black_back_text = "without black back"
+    return "{} - {} - {}".format(display_numbers_text, black_back_text, get_request["paper_size"])
+
+
+def valid_options():
+    """Provide dictionary of all valid parameters.
+
+    This excludes the header text parameter.
+
+    Returns:
+        All valid options (dict).
+    """
+    valid_options = {
+        "display_numbers": ["yes", "no"],
+        "black_back": ["yes", "no"],
+        "paper_size": ["a4", "letter"],
+    }
+    return valid_options

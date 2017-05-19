@@ -1,6 +1,9 @@
 #!/bin/bash
 # Deploy the system to the development website.
 
+# Generate static PDF resources for deployment.
+./csu dev makeresources
+
 # Install Python requirements for running Django locally when using Google
 # Cloud SQL proxy. Ideally this would be run inside the Docker image, to
 # prevent having to reinstall the requirements again.
