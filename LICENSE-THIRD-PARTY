@@ -40,12 +40,30 @@ https://github.com/prymitive/bootstrap-breadcrumbs/blob/master/LICENSE
 ==============================================================================
 
 ==============================================================================
+django-debug-toolbar
+------------------------------------------------------------------------------
+https://django-debug-toolbar.readthedocs.io/en/stable/
+Copyright (c) Rob Hudson and individual contributors.
+Licensed under BSD 3-clause "New" or "Revised" License License.
+https://github.com/jazzband/django-debug-toolbar/blob/master/LICENSE
+==============================================================================
+
+==============================================================================
 django-environ
 ------------------------------------------------------------------------------
 http://django-environ.readthedocs.org/
 Copyright (c) 2013-2017, Daniele Faraglia.
 Licensed under MIT License.
 https://github.com/joke2k/django-environ/blob/develop/LICENSE.txt
+==============================================================================
+
+==============================================================================
+django-extensions
+------------------------------------------------------------------------------
+https://django-extensions.readthedocs.io/
+Copyright (c) 2007 Michael Trier.
+Licensed under MIT License.
+https://github.com/django-extensions/django-extensions/blob/master/LICENSE
 ==============================================================================
 
 ==============================================================================
@@ -104,6 +122,24 @@ http://pyyaml.org/
 Copyright (c) 2006 Kirill Simonov.
 Licensed under MIT License.
 https://github.com/yaml/pyyaml/blob/master/LICENSE
+==============================================================================
+
+==============================================================================
+Sphinx
+------------------------------------------------------------------------------
+http://www.sphinx-doc.org/en/stable/
+Copyright (c) 2007-2017 by the Sphinx team.
+Licensed under BSD License.
+https://github.com/sphinx-doc/sphinx/blob/master/LICENSE
+==============================================================================
+
+==============================================================================
+sphinx_rtd_theme
+------------------------------------------------------------------------------
+https://github.com/rtfd/sphinx_rtd_theme
+Copyright (c) 2013 Dave Snider
+Licensed under MIT License.
+https://github.com/rtfd/sphinx_rtd_theme/blob/master/LICENSE
 ==============================================================================
 
 ==============================================================================
