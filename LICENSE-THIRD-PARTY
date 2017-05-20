@@ -22,6 +22,16 @@ third-party-licenses/bootstrap.txt
 ==============================================================================
 
 ==============================================================================
+coverage
+------------------------------------------------------------------------------
+https://www.djangoproject.com/
+Copyright 2001 Gareth Rees. All rights reserved.
+Copyright 2004-2017 Ned Batchelder. All rights reserved.
+Licensed under Apache License Version 2.0 License.
+third-party-licenses/coverage.txt
+==============================================================================
+
+==============================================================================
 Django
 ------------------------------------------------------------------------------
 https://www.djangoproject.com/
@@ -36,7 +46,7 @@ django-bootstrap-breadcrumbs
 https://github.com/prymitive/bootstrap-breadcrumbs
 Copyright (c) 2014 Łukasz Mierzwa.
 Licensed under MIT License.
-https://github.com/prymitive/bootstrap-breadcrumbs/blob/master/LICENSE
+third-party-licenses/django-bootstrap-breadcrumbs.txt
 ==============================================================================
 
 ==============================================================================
@@ -45,7 +55,7 @@ django-debug-toolbar
 https://django-debug-toolbar.readthedocs.io/en/stable/
 Copyright (c) Rob Hudson and individual contributors.
 Licensed under BSD 3-clause "New" or "Revised" License License.
-https://github.com/jazzband/django-debug-toolbar/blob/master/LICENSE
+third-party-licenses/django-debug-toolbar.txt
 ==============================================================================
 
 ==============================================================================
@@ -54,7 +64,7 @@ django-environ
 http://django-environ.readthedocs.org/
 Copyright (c) 2013-2017, Daniele Faraglia.
 Licensed under MIT License.
-https://github.com/joke2k/django-environ/blob/develop/LICENSE.txt
+third-party-licenses/django-environ.txt
 ==============================================================================
 
 ==============================================================================
@@ -63,7 +73,17 @@ django-extensions
 https://django-extensions.readthedocs.io/
 Copyright (c) 2007 Michael Trier.
 Licensed under MIT License.
-https://github.com/django-extensions/django-extensions/blob/master/LICENSE
+third-party-licenses/django-extensions.txt
+==============================================================================
+
+==============================================================================
+flake8
+------------------------------------------------------------------------------
+http://flake8.pycqa.org/en/latest/
+Copyright (C) 2011-2013 Tarek Ziade <tarek@ziade.org>
+Copyright (C) 2012-2016 Ian Cordasco <graffatcolmingov@gmail.com>
+Licensed under MIT License.
+third-party-licenses/flake8.txt
 ==============================================================================
 
 ==============================================================================
@@ -72,7 +92,7 @@ gevent
 https://github.com/gevent/gevent
 Copyright Denis Bilenko and the contributors, http://www.gevent.org.
 Licensed under MIT License.
-https://github.com/gevent/gevent/blob/master/LICENSE
+third-party-licenses/gevent.txt
 ==============================================================================
 
 ==============================================================================
@@ -82,7 +102,16 @@ http://gunicorn.org/
 2009-2017 (c) Benoît Chesneau <benoitc@e-engura.org>
 2009-2015 (c) Paul J. Davis <paul.joseph.davis@gmail.com>
 Licensed under MIT License.
-https://github.com/benoitc/gunicorn/blob/master/LICENSE
+third-party-licenses/gunicorn.txt
+==============================================================================
+
+==============================================================================
+model_mommy
+------------------------------------------------------------------------------
+https://github.com/vandersonmota/model_mommy
+Copyright 2011 Vanderson Mota
+Licensed under Apache License Version 2.0 License.
+third-party-licenses/model-mommy.txt
 ==============================================================================
 
 ==============================================================================
@@ -95,7 +124,7 @@ The Python Imaging Library (PIL) is:
 Pillow is the friendly PIL fork. It is:
 - Copyright © 2010-2017 by Alex Clark and contributors
 Like PIL, Pillow is licensed under the open source PIL Software License.
-https://github.com/python-pillow/Pillow/blob/master/LICENSE
+third-party-licenses/pillow.txt
 ==============================================================================
 
 ==============================================================================
@@ -103,7 +132,17 @@ psycopg2
 ------------------------------------------------------------------------------
 http://initd.org/psycopg/
 Licensed under GNU Lesser General Public License.
-http://initd.org/psycopg/license/
+third-party-licenses/psycopg2.txt
+==============================================================================
+
+==============================================================================
+pydocstyle
+------------------------------------------------------------------------------
+https://github.com/PyCQA/pydocstyle/
+Copyright (c) 2012 GreenSteam, <http://greensteam.dk/>
+Copyright (c) 2014-2017 Amir Rachum, <http://amir.rachum.com/>
+Licensed under MIT License.
+third-party-licenses/pydocstyle.txt
 ==============================================================================
 
 ==============================================================================
@@ -112,7 +151,7 @@ python-markdown-math
 https://github.com/mitya57/python-markdown-math
 Copyright 2015-2017 Dmitry Shachnev <mitya57@gmail.com>.
 Licensed under BSD 3-clause "New" or "Revised" License.
-https://github.com/mitya57/python-markdown-math/blob/master/LICENSE
+third-party-licenses/python-markdown-math.txt
 ==============================================================================
 
 ==============================================================================
@@ -121,7 +160,7 @@ PyYAML
 http://pyyaml.org/
 Copyright (c) 2006 Kirill Simonov.
 Licensed under MIT License.
-https://github.com/yaml/pyyaml/blob/master/LICENSE
+third-party-licenses/pyyaml.txt
 ==============================================================================
 
 ==============================================================================
@@ -130,7 +169,7 @@ Sphinx
 http://www.sphinx-doc.org/en/stable/
 Copyright (c) 2007-2017 by the Sphinx team.
 Licensed under BSD License.
-https://github.com/sphinx-doc/sphinx/blob/master/LICENSE
+third-party-licenses/sphinx.txt
 ==============================================================================
 
 ==============================================================================
@@ -139,7 +178,7 @@ sphinx_rtd_theme
 https://github.com/rtfd/sphinx_rtd_theme
 Copyright (c) 2013 Dave Snider
 Licensed under MIT License.
-https://github.com/rtfd/sphinx_rtd_theme/blob/master/LICENSE
+third-party-licenses/sphinx-rtd-theme.txt
 ==============================================================================
 
 ==============================================================================
@@ -148,7 +187,7 @@ verto
 https://github.com/uccser/verto
 Copyright (c) 2016-2017 University of Canterbury Computer Science Education Research and contributors.
 Licensed under MIT License.
-https://github.com/uccser/verto/blob/master/LICENSE.md
+third-party-licenses/verto.txt
 ==============================================================================
 
 ==============================================================================
@@ -157,5 +196,5 @@ wheel
 https://bitbucket.org/pypa/wheel/
 Copyright (c) 2012-2014 Daniel Holth <dholth@fastmail.fm> and contributors.
 Licensed under MIT License.
-https://bitbucket.org/pypa/wheel/src/
+third-party-licenses/wheel.txt
 ==============================================================================
