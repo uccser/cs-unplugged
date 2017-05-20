@@ -32,6 +32,15 @@ third-party-licenses/coverage.txt
 ==============================================================================
 
 ==============================================================================
+details-element-polyfill
+------------------------------------------------------------------------------
+https://github.com/javan/details-element-polyfill
+Copyright (c) 2017 Javan Makhmali
+Licensed under MIT License.
+third-party-licenses/details-element-polyfill.txt
+==============================================================================
+
+==============================================================================
 Django
 ------------------------------------------------------------------------------
 https://www.djangoproject.com/
@@ -106,12 +115,31 @@ third-party-licenses/gunicorn.txt
 ==============================================================================
 
 ==============================================================================
+jquery
+------------------------------------------------------------------------------
+https://jquery.com/
+Copyright JS Foundation and other contributors, https://js.foundation/
+Licensed under MIT License.
+third-party-licenses/jquery.txt
+==============================================================================
+
+==============================================================================
 model_mommy
 ------------------------------------------------------------------------------
 https://github.com/vandersonmota/model_mommy
 Copyright 2011 Vanderson Mota
 Licensed under Apache License Version 2.0 License.
 third-party-licenses/model-mommy.txt
+==============================================================================
+
+==============================================================================
+Patrick Hand
+------------------------------------------------------------------------------
+https://fonts.google.com/specimen/Patrick+Hand
+http://www.patrickwagesreiter.at
+Copyright (c) 2012 Patrick Wagesreiter
+Licensed under SIL Open Font License, Version 1.1.
+third-party-licenses/patrick-hand.txt
 ==============================================================================
 
 ==============================================================================
@@ -179,6 +207,15 @@ https://github.com/rtfd/sphinx_rtd_theme
 Copyright (c) 2013 Dave Snider
 Licensed under MIT License.
 third-party-licenses/sphinx-rtd-theme.txt
+==============================================================================
+
+==============================================================================
+StickyState
+------------------------------------------------------------------------------
+https://github.com/soenkekluth/sticky-state
+Copyright Sönke Kluth <soenke.kluth@gmail.com> (http://soenkekluth.com/).
+Licensed under MIT License.
+third-party-licenses/sticky-state.txt
 ==============================================================================
 
 ==============================================================================
