@@ -32,10 +32,18 @@ to get started.
 
 The content of this project itself is licensed under the
 [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license](https://creativecommons.org/licenses/by-sa/4.0/)
-(`LICENSE-CONTENT` file),
-the underlying source code used to manage and display this content is licensed
-under the [MIT license](https://opensource.org/licenses/MIT)
-(`LICENSE` file),
-and other third-party libraries used in this project have their license's
+(`LICENSE-CONTENT` file).
+This license applies to the following contents of this project:
+
+- Markdown files located within the `csunplugged/topics/content/` directory.
+- Images located within the `csunplugged/static/img/` directory.
+
+Third-party libraries used in this project have their license's
 listed within the `LICENSE-THIRD-PARTY` file, with a full copy of the license
 available within the `third-party-licenses` directory.
+If a source file of a third-party library or system is stored within this
+repository, then a copyright notice should be present at the top of the file.
+
+The rest of the project, which is the underlying source code used to manage
+and display this content, is licensed under the
+[MIT license](https://opensource.org/licenses/MIT) (`LICENSE` file).
