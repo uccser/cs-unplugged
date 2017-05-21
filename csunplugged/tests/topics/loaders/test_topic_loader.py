@@ -10,6 +10,7 @@ from topics.management.commands._TopicLoader import TopicLoader
 from utils.errors.CouldNotFindConfigFileError import CouldNotFindConfigFileError
 from utils.errors.NoHeadingFoundInMarkdownFileError import NoHeadingFoundInMarkdownFileError
 from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
+from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 
 
 class TopicLoaderTest(BaseTestWithDB):
@@ -34,7 +35,7 @@ class TopicLoaderTest(BaseTestWithDB):
             ["<Topic: Topic 1>"]
         )
 
-    def test_topic_loader_slug_set_correctly(self):
+    def test_topic_loader_slug(self):
         config_file = "topic-1/topic-1.yaml"
         factory = Mock()
         topic_loader = TopicLoader(
@@ -61,7 +62,7 @@ class TopicLoaderTest(BaseTestWithDB):
             topic_loader.load,
         )
 
-    def test_topic_loader_name_set_correctly(self):
+    def test_topic_loader_valid_name_text(self):
         config_file = "topic-1/topic-1.yaml"
         factory = Mock()
         topic_loader = TopicLoader(
@@ -88,7 +89,7 @@ class TopicLoaderTest(BaseTestWithDB):
             topic_loader.load,
         )
 
-    def test_topic_loader_content_set_correctly(self):
+    def test_topic_loader_valid_content_text(self):
         config_file = "topic-1/topic-1.yaml"
         factory = Mock()
         topic_loader = TopicLoader(
@@ -112,5 +113,18 @@ class TopicLoaderTest(BaseTestWithDB):
         )
         self.assertRaises(
             EmptyMarkdownFileError,
+            topic_loader.load,
+        )
+
+    def test_topic_loader_missing_unit_plans(self):
+        config_file = "topic-missing-unit-plans/topic-missing-unit-plans.yaml"
+        factory = Mock()
+        topic_loader = TopicLoader(
+            factory,
+            config_file,
+            self.BASE_PATH
+        )
+        self.assertRaises(
+            MissingRequiredFieldError,
             topic_loader.load,
         )
