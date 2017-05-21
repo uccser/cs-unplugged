@@ -128,3 +128,28 @@ class TopicLoaderTest(BaseTestWithDB):
             MissingRequiredFieldError,
             topic_loader.load,
         )
+
+    def test_topic_loader_valid_icon(self):
+        config_file = "topic-valid-icon/topic-valid-icon.yaml"
+        factory = Mock()
+        topic_loader = TopicLoader(
+            factory,
+            config_file,
+            self.BASE_PATH
+        )
+        topic_loader.load()
+        self.assertEquals(
+            Topic.objects.get(slug="topic-valid-icon").icon,
+            "img/logo.png",
+        )
+
+    def test_topic_loader_missing_icon(self):
+        config_file = "topic-1/topic-1.yaml"
+        factory = Mock()
+        topic_loader = TopicLoader(
+            factory,
+            config_file,
+            self.BASE_PATH
+        )
+        # Passes if loader throws no exception
+        topic_loader.load()
