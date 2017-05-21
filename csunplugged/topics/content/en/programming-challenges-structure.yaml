@@ -1,9 +1,11 @@
 languages:
     scratch:
         name: Scratch
+        order: 1
         icon: img/scratch-cat.png
     python:
         name: Python
+        order: 2
         icon: img/python-logo.png
 
 difficulties:
