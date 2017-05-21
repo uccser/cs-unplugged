@@ -46,7 +46,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         self.assertEqual(200, response.status_code)
         self.assertEqual(
             response.get("Content-Disposition"),
-            'attachment; filename="Resource Binary Cards (with numbers).pdf"'
+            'attachment; filename="Resource Binary Cards (with numbers - without black back - a4).pdf"'
         )
 
     def test_binary_cards_resource_generation_no_numbers(self):
@@ -71,7 +71,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         self.assertEqual(200, response.status_code)
         self.assertEqual(
             response.get("Content-Disposition"),
-            'attachment; filename="Resource Binary Cards (without numbers).pdf"'
+            'attachment; filename="Resource Binary Cards (without numbers - without black back - a4).pdf"'
         )
 
     def test_binary_cards_resource_generation_black_back(self):
@@ -96,7 +96,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         self.assertEqual(200, response.status_code)
         self.assertEqual(
             response.get("Content-Disposition"),
-            'attachment; filename="Resource Binary Cards (with numbers).pdf"'
+            'attachment; filename="Resource Binary Cards (with numbers - with black back - a4).pdf"'
         )
 
     def test_binary_cards_resource_generation_no_numbers_black_back(self):
@@ -121,7 +121,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         self.assertEqual(200, response.status_code)
         self.assertEqual(
             response.get("Content-Disposition"),
-            'attachment; filename="Resource Binary Cards (without numbers).pdf"'
+            'attachment; filename="Resource Binary Cards (without numbers - with black back - a4).pdf"'
         )
 
     def test_binary_cards_resource_generation_us_letter(self):
@@ -146,7 +146,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         self.assertEqual(200, response.status_code)
         self.assertEqual(
             response.get("Content-Disposition"),
-            'attachment; filename="Resource Binary Cards (with numbers).pdf"'
+            'attachment; filename="Resource Binary Cards (with numbers - without black back - letter).pdf"'
         )
 
     def test_binary_cards_resource_generation_header_text(self):
@@ -171,7 +171,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         self.assertEqual(200, response.status_code)
         self.assertEqual(
             response.get("Content-Disposition"),
-            'attachment; filename="Resource Binary Cards (with numbers).pdf"'
+            'attachment; filename="Resource Binary Cards (with numbers - without black back - a4).pdf"'
         )
 
     def test_binary_cards_resource_generation_missing_numbers_parameter(self):
@@ -255,5 +255,5 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         self.assertEqual(200, response.status_code)
         self.assertEqual(
             response.get("Content-Disposition"),
-            'attachment; filename="Resource Binary Cards (with numbers).pdf"'
+            'attachment; filename="Resource Binary Cards (with numbers - without black back - a4).pdf"'
         )
