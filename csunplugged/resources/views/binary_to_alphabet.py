@@ -1,11 +1,10 @@
 """Module for generating Binary to Alphabet resource."""
 
 from PIL import Image, ImageDraw, ImageFont
-from random import sample
 
 
 def resource_image(get_request, resource):
-    """Create a image for Sorting Network resource.
+    """Create a image for Binary to Alphabet resource.
 
     Args:
         get_request: HTTP request object
@@ -14,29 +13,32 @@ def resource_image(get_request, resource):
     Returns:
         A Pillow image object.
     """
-    image_path = "static/img/resources/binary-to-alphabet/table-teacher.png"
+    if get_request["worksheet_version"] == "student":
+        image_path = "static/img/resources/binary-to-alphabet/table.png"
+    else:
+        image_path = "static/img/resources/binary-to-alphabet/table-teacher.png"
     image = Image.open(image_path)
     draw = ImageDraw.Draw(image)
 
-    column_headings = ["Base 10", "Binary", "Letter",
-        "Base 10", "Binary", "Letter",
-        "Base 10", "Binary", "Letter"
-    ]
-    column_number_range = [(0, 8), (9, 17), (18, 26)]
-
-    font_size = 50
+    font_size = 30
     font_path = "static/fonts/PatrickHand-Regular.ttf"
     font = ImageFont.truetype(font_path, font_size)
 
-    base_coord_x = 90
-
-    heading_coord_x = 25
+    # Draw headings
+    column_headings = ["Base 10", "Binary", "Letter"]
+    heading_coord_x = 18
     heading_coord_y = 6
 
-    for i,heading in enumerate(column_headings):
+    i = 0
+    while i < 9:  # 9 = number of columns
 
-        base_coord_y = 110
-        text = str(column_headings[i])
+        if i % 3 == 0:
+            text = str(column_headings[0])
+        elif i % 3 == 1:
+            text = str(column_headings[1])
+        else:
+            text = str(column_headings[2])
+
         draw.text(
             (heading_coord_x, heading_coord_y),
             text,
@@ -44,43 +46,33 @@ def resource_image(get_request, resource):
             fill="#000"
         )
 
-        coord_y_increment = 75
-        coord_x_increment = 515
+        heading_coord_x += 113
 
-        heading_coord_x += 172
+        i += 1
 
-        if i%3 == 0:
-            numbers = range(
-                column_number_range[0][0],
-                column_number_range[0][1] + 1
-            )
-        elif i%3 == 1:
-            numbers = range(
-                column_number_range[1][0],
-                column_number_range[1][1] + 1
-            )
-        else:
-            numbers = range(
-                column_number_range[2][0],
-                column_number_range[2][1] + 1
-            )
-    
-        for number in numbers:
+    # Draw numbers
+    # Column data: (min number, max number), x coord
+    columns_data = [((0, 9), 58), ((9, 18), 397), ((18, 27), 736)]
+
+    for column_set in columns_data:
+        start, end = column_set[0]
+        base_coord_x = column_set[1]
+        base_coord_y = 75
+
+        for number in range(start, end):
             text = str(number)
             text_width, text_height = draw.textsize(text, font=font)
             coord_x = base_coord_x - (text_width / 2)
             coord_y = base_coord_y - (text_height / 2)
-            
+
             draw.text(
                 (coord_x, coord_y),
                 text,
                 font=font,
                 fill="#000"
             )
-    
-            base_coord_y += coord_y_increment
-    
-        base_coord_x += coord_x_increment
+
+            base_coord_y += 54
 
     return image
 
@@ -98,4 +90,5 @@ def subtitle(get_request, resource):
     Returns:
         text for subtitle (string)
     """
-    return "blank"
+    text = get_request["worksheet_version"]
+    return text
