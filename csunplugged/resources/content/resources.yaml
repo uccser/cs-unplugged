@@ -14,5 +14,17 @@ binary-cards:
   name: Binary Cards
   webpage-template: resources/binary-cards.html
   generation-view: binary_cards.py
-  thumbnail-static-path: img/resources/binary-cards/resource-binary-cards-thumbnail.png
+  thumbnail-static-path: img/resources/binary-cards/thumbnail.png
+  copies: false
+binary-cards-small:
+  name: Binary Cards (Small)
+  webpage-template: resources/binary-cards-small.html
+  generation-view: binary_cards_small.py
+  thumbnail-static-path: img/resources/binary-cards-small/thumbnail.png
+  copies: false
+binary-windows:
+  name: Binary Windows
+  webpage-template: resources/binary-windows.html
+  generation-view: binary_windows.py
+  thumbnail-static-path: img/resources/binary-windows/thumbnail.png
   copies: false

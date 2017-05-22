@@ -1,6 +1,7 @@
 from django.urls import reverse
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
+from utils.create_query_string import query_string
 
 
 class BinaryCardsResourceViewTest(BaseTestWithDB):
@@ -35,13 +36,13 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
             "resource_slug": resource.slug,
         }
         url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = [
-            ("display_numbers", "yes"),
-            ("black_back", "no"),
-            ("paper_size", "a4"),
-            ("header_text", ""),
-        ]
-        url += self.get_query_string(get_parameters)
+        get_parameters = {
+            "display_numbers": "yes",
+            "black_back": "no",
+            "paper_size": "a4",
+            "header_text": "",
+        }
+        url += query_string(get_parameters)
         response = self.client.get(url)
         self.assertEqual(200, response.status_code)
         self.assertEqual(
@@ -60,13 +61,13 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
             "resource_slug": resource.slug,
         }
         url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = [
-            ("display_numbers", "no"),
-            ("black_back", "no"),
-            ("paper_size", "a4"),
-            ("header_text", ""),
-        ]
-        url += self.get_query_string(get_parameters)
+        get_parameters = {
+            "display_numbers": "no",
+            "black_back": "no",
+            "paper_size": "a4",
+            "header_text": "",
+        }
+        url += query_string(get_parameters)
         response = self.client.get(url)
         self.assertEqual(200, response.status_code)
         self.assertEqual(
@@ -85,13 +86,13 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
             "resource_slug": resource.slug,
         }
         url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = [
-            ("display_numbers", "yes"),
-            ("black_back", "yes"),
-            ("paper_size", "a4"),
-            ("header_text", ""),
-        ]
-        url += self.get_query_string(get_parameters)
+        get_parameters = {
+            "display_numbers": "yes",
+            "black_back": "yes",
+            "paper_size": "a4",
+            "header_text": "",
+        }
+        url += query_string(get_parameters)
         response = self.client.get(url)
         self.assertEqual(200, response.status_code)
         self.assertEqual(
@@ -110,13 +111,13 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
             "resource_slug": resource.slug,
         }
         url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = [
-            ("display_numbers", "no"),
-            ("black_back", "yes"),
-            ("paper_size", "a4"),
-            ("header_text", ""),
-        ]
-        url += self.get_query_string(get_parameters)
+        get_parameters = {
+            "display_numbers": "no",
+            "black_back": "yes",
+            "paper_size": "a4",
+            "header_text": "",
+        }
+        url += query_string(get_parameters)
         response = self.client.get(url)
         self.assertEqual(200, response.status_code)
         self.assertEqual(
@@ -135,13 +136,13 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
             "resource_slug": resource.slug,
         }
         url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = [
-            ("display_numbers", "yes"),
-            ("black_back", "no"),
-            ("paper_size", "letter"),
-            ("header_text", ""),
-        ]
-        url += self.get_query_string(get_parameters)
+        get_parameters = {
+            "display_numbers": "yes",
+            "black_back": "no",
+            "paper_size": "letter",
+            "header_text": "",
+        }
+        url += query_string(get_parameters)
         response = self.client.get(url)
         self.assertEqual(200, response.status_code)
         self.assertEqual(
@@ -160,13 +161,13 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
             "resource_slug": resource.slug,
         }
         url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = [
-            ("display_numbers", "yes"),
-            ("black_back", "no"),
-            ("paper_size", "a4"),
-            ("header_text", "Example header text"),
-        ]
-        url += self.get_query_string(get_parameters)
+        get_parameters = {
+            "display_numbers": "yes",
+            "black_back": "no",
+            "paper_size": "a4",
+            "header_text": "Example header text",
+        }
+        url += query_string(get_parameters)
         response = self.client.get(url)
         self.assertEqual(200, response.status_code)
         self.assertEqual(
@@ -185,12 +186,12 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
             "resource_slug": resource.slug,
         }
         url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = [
-            ("black_back", "no"),
-            ("paper_size", "a4"),
-            ("header_text", "Example header text"),
-        ]
-        url += self.get_query_string(get_parameters)
+        get_parameters = {
+            "black_back": "no",
+            "paper_size": "a4",
+            "header_text": "Example header text",
+        }
+        url += query_string(get_parameters)
         response = self.client.get(url)
         self.assertEqual(404, response.status_code)
 
@@ -205,12 +206,12 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
             "resource_slug": resource.slug,
         }
         url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = [
-            ("display_numbers", "yes"),
-            ("paper_size", "a4"),
-            ("header_text", "Example header text"),
-        ]
-        url += self.get_query_string(get_parameters)
+        get_parameters = {
+            "display_numbers": "yes",
+            "paper_size": "a4",
+            "header_text": "Example header text",
+        }
+        url += query_string(get_parameters)
         response = self.client.get(url)
         self.assertEqual(404, response.status_code)
 
@@ -225,12 +226,12 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
             "resource_slug": resource.slug,
         }
         url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = [
-            ("display_numbers", "yes"),
-            ("black_back", "no"),
-            ("header_text", "Example header text"),
-        ]
-        url += self.get_query_string(get_parameters)
+        get_parameters = {
+            "display_numbers": "yes",
+            "black_back": "no",
+            "header_text": "Example header text",
+        }
+        url += query_string(get_parameters)
         response = self.client.get(url)
         self.assertEqual(404, response.status_code)
 
@@ -245,12 +246,12 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
             "resource_slug": resource.slug,
         }
         url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = [
-            ("display_numbers", "yes"),
-            ("black_back", "no"),
-            ("paper_size", "a4"),
-        ]
-        url += self.get_query_string(get_parameters)
+        get_parameters = {
+            "display_numbers": "yes",
+            "black_back": "no",
+            "paper_size": "a4",
+        }
+        url += query_string(get_parameters)
         response = self.client.get(url)
         self.assertEqual(200, response.status_code)
         self.assertEqual(

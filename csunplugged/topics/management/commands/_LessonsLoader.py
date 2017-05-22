@@ -177,19 +177,19 @@ class LessonsLoader(BaseLoader):
                                 resource_slug,
                                 "Resources"
                             )
-                    resource_description = resource_data.get("description", None)
-                    if resource_description is None:
-                        raise MissingRequiredFieldError(
-                            self.unit_plan_structure_file_path,
-                            ["description"],
-                            "Generated Resource"
-                        )
+                        resource_description = resource_data.get("description", None)
+                        if resource_description is None:
+                            raise MissingRequiredFieldError(
+                                self.unit_plan_structure_file_path,
+                                ["description"],
+                                "Generated Resource"
+                            )
 
-                    relationship = ConnectedGeneratedResource(
-                        resource=resource,
-                        lesson=lesson,
-                        description=resource_description
-                    )
-                    relationship.save()
+                        relationship = ConnectedGeneratedResource(
+                            resource=resource,
+                            lesson=lesson,
+                            description=resource_description
+                        )
+                        relationship.save()
 
             self.log("Added Lesson: {}".format(lesson.__str__()), 2)
