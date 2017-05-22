@@ -1,4 +1,4 @@
-{% extends "base_columns.html" %}
+{% extends "columns.html" %}
 
 {% load static %}
 {% load render_html_field %}
@@ -10,7 +10,6 @@
   {% breadcrumb topic.name "topics:topic" topic.slug %}
   {% breadcrumb integration.name "topics:integration" topic.slug integration.slug %}
 {% endblock breadcrumbs %}
-
 
 {% block page_heading %}
   <h1>{{ integration.name }}</h1>
