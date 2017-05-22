@@ -23,7 +23,7 @@ def resource_image(request, resource):
     # Add numbers to image if required
     parameter_options = valid_options()
     prefilled_values = retrieve_query_parameter(request, "prefilled_values", parameter_options["prefilled_values"])
-    number_order = retrieve_query_parameter(retrieve_query_parameter, "number_order", parameter_options["number_order"])
+    number_order = retrieve_query_parameter(request, "number_order", parameter_options["number_order"])
 
     if prefilled_values != "blank":
         (range_min, range_max, font_size) = number_range(request)
@@ -88,7 +88,7 @@ def subtitle(request, resource):
         text = "blank"
     else:
         SUBTITLE_TEMPLATE = "{} - {} to {}"
-        number_order_text = retrieve_query_parameter(request, ["number_order"]).title()
+        number_order_text = retrieve_query_parameter(request, "number_order").title()
         range_min, range_max, font_size = number_range(request)
         text = SUBTITLE_TEMPLATE.format(number_order_text, range_min, range_max - 1)
     return "{} - {}".format(text, retrieve_query_parameter(request, "paper_size"))
