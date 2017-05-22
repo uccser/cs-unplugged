@@ -28,9 +28,9 @@ binary-windows:
   generation-view: binary_windows.py
   thumbnail-static-path: img/resources/binary-windows/thumbnail.png
   copies: false
-binary-to-alphabet:
-  name: Binary to Alphabet
-  webpage-template: resources/binary-to-alphabet.html
-  generation-view: binary_to_alphabet.py
-  thumbnail-static-path: img/resources/binary-to-alphabet/resource-binary-to-alphabet-thumbnail.png
-  copies: false
+# binary-to-alphabet:
+#   name: Binary to Alphabet
+#   webpage-template: resources/binary-to-alphabet.html
+#   generation-view: binary_to_alphabet.py
+#   thumbnail-static-path: img/resources/binary-to-alphabet/resource-binary-to-alphabet-thumbnail.png
+#   copies: false

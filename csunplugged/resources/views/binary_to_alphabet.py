@@ -1,19 +1,21 @@
 """Module for generating Binary to Alphabet resource."""
 
 from PIL import Image, ImageDraw, ImageFont
+from utils.retrieve_query_parameter import retrieve_query_parameter
 
-
-def resource_image(get_request, resource):
+def resource_image(request, resource):
     """Create a image for Binary to Alphabet resource.
 
     Args:
-        get_request: HTTP request object
+        request: HTTP request object
         resource: Object of resource data.
 
     Returns:
         A Pillow image object.
     """
-    if get_request["worksheet_version"] == "student":
+    # Retrieve relevant image
+    worksheet_version = retrieve_query_parameter(request, "worksheet_version", ["student", "teacher"])
+    if worksheet_version == "student":
         image_path = "static/img/resources/binary-to-alphabet/table.png"
     else:
         image_path = "static/img/resources/binary-to-alphabet/table-teacher.png"
@@ -77,14 +79,14 @@ def resource_image(get_request, resource):
     return image
 
 
-def subtitle(get_request, resource):
+def subtitle(request, resource):
     """Return the subtitle string of the resource.
 
     Used after the resource name in the filename, and
     also on the resource image.
 
     Args:
-        get_request: HTTP request object
+        request: HTTP request object
         resource: Object of resource data.
 
     Returns:
@@ -92,3 +94,6 @@ def subtitle(get_request, resource):
     """
     text = get_request["worksheet_version"]
     return text
+
+def valid_options():
+    return {"worksheet_verion": "student", "teacher"}

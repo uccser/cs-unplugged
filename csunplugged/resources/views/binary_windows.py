@@ -21,9 +21,10 @@ def resource_image(request, resource):
     SMALL_FONT = ImageFont.truetype(FONT_PATH, 180)
 
     # Retrieve parameters
-    number_of_bits = retrieve_query_parameter(request, "number_bits", ["4", "8"])
-    value_type = retrieve_query_parameter(request, "value_type", ["binary", "lightbulb"])
-    dot_counts = retrieve_query_parameter(request, "dot_counts", ["yes", "no"])
+    parameter_options = valid_options()
+    number_of_bits = retrieve_query_parameter(request, "number_bits", parameter_options["number_bits"])
+    value_type = retrieve_query_parameter(request, "value_type", parameter_options["value_type"])
+    dot_counts = retrieve_query_parameter(request, "dot_counts", parameter_options["dot_counts"])
 
     images = []
     page_sets = [("binary-windows-1-to-8.png", 8)]
@@ -186,10 +187,9 @@ def valid_options():
     Returns:
         All valid options (dict).
     """
-    valid_options = {
+    return {
         "number_bits": ["4", "8"],
         "value_type": ["binary", "lightbulb"],
         "dot_counts": ["yes", "no"],
         "paper_size": ["a4", "letter"],
     }
-    return valid_options
