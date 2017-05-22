@@ -50,19 +50,3 @@ class BaseTestWithDB(TestCase):
     def tearDown(self):
         """Automatically called after each test. Deletes the user."""
         pass
-
-    def get_query_string(self, values):
-        """Create a GET query to append to a URL from the given values.
-
-        Args:
-            values: A list of tuples (key, value) of get parameters.
-
-        Returns:
-            String of GET query.
-        """
-        string = "?"
-        for index, (key, value) in enumerate(values):
-            string += "{key}={value}".format(key=key, value=value)
-            if index < len(values):
-                string += "&"
-        return string

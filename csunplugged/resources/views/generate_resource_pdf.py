@@ -1,6 +1,6 @@
 """Module for generating custom resource PDFs."""
 
-from django.http import HttpResponse, Http404
+from django.http import Http404
 from django.template.loader import render_to_string
 from django.contrib.staticfiles import finders
 from django.conf import settings
@@ -9,7 +9,6 @@ from io import BytesIO
 import importlib
 import base64
 
-RESPONSE_CONTENT_DISPOSITION = 'attachment; filename="{filename}.pdf"'
 MM_TO_PIXEL_RATIO = 3.78
 
 
@@ -22,47 +21,35 @@ def generate_resource_pdf(request, resource, module_path):
         module_path: Path to module for generating resource.
 
     Returns:
-        HTTP response containing generated resource PDF.
+        Tuple of PDF file of generated resource and filename.
     """
-    # TODO: Weasyprint handling in production
-    import environ
-    env = environ.Env(
-        DJANGO_PRODUCTION=(bool),
-    )
-    if env("DJANGO_PRODUCTION"):
-        return HttpResponse("<html><body>PDF generation is currently not supported in production.</body></html>")
-    else:
-        from weasyprint import HTML, CSS
-        context = dict()
-        get_request = request.GET
-        context["resource"] = resource
-        context["header_text"] = get_request.get("header_text", "")
-        context["paper_size"] = get_request.get("paper_size", None)
+    from weasyprint import HTML, CSS
+    context = dict()
+    get_request = request.GET
+    context["resource"] = resource
+    context["header_text"] = get_request.get("header_text", "")
+    context["paper_size"] = get_request.get("paper_size", None)
 
-        if context["paper_size"] is None:
-            raise Http404("Paper size parameter not specified.")
+    if context["paper_size"] is None:
+        raise Http404("Paper size parameter not specified.")
 
-        resource_image_generator = importlib.import_module(module_path)
-        num_copies = range(0, int(get_request.get("copies", 1)))
-        context["resource_images"] = []
-        for copy in num_copies:
-            context["resource_images"].append(
-                generate_resource_image(get_request, resource, module_path)
-            )
+    resource_image_generator = importlib.import_module(module_path)
+    num_copies = range(0, int(get_request.get("copies", 1)))
+    context["resource_images"] = []
+    for copy in num_copies:
+        context["resource_images"].append(
+            generate_resource_image(get_request, resource, module_path)
+        )
 
-        filename = "{} ({})".format(resource.name, resource_image_generator.subtitle(get_request, resource))
-        context["filename"] = filename
+    filename = "{} ({})".format(resource.name, resource_image_generator.subtitle(get_request, resource))
+    context["filename"] = filename
 
-        pdf_html = render_to_string("resources/base-resource-pdf.html", context)
-        html = HTML(string=pdf_html, base_url=settings.STATIC_ROOT)
-        css_file = finders.find("css/print-resource-pdf.css")
-        css_string = open(css_file, encoding="UTF-8").read()
-        base_css = CSS(string=css_string)
-        pdf_file = html.write_pdf(stylesheets=[base_css])
-
-        response = HttpResponse(pdf_file, content_type="application/pdf")
-        response["Content-Disposition"] = RESPONSE_CONTENT_DISPOSITION.format(filename=filename)
-        return response
+    pdf_html = render_to_string("resources/base-resource-pdf.html", context)
+    html = HTML(string=pdf_html, base_url=settings.STATIC_ROOT)
+    css_file = finders.find("css/print-resource-pdf.css")
+    css_string = open(css_file, encoding="UTF-8").read()
+    base_css = CSS(string=css_string)
+    return (html.write_pdf(stylesheets=[base_css]), filename)
 
 
 def generate_resource_image(get_request, resource, module_path):

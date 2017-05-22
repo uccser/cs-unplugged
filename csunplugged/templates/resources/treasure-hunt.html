@@ -1,8 +1,5 @@
 {% extends "resources/resource.html" %}
 
-<!-- Name of resource -->
-{% block name %}{{ resource.name }}{% endblock name %}
-
 <!-- Description of resource -->
 {% block description %}
 {% endblock description %}
@@ -31,6 +28,4 @@
     <input type="radio" name="number_order" id="numbers_sorted" value="sorted">
     <label for="numbers_sorted">Sorted Numbers</label>
   </fieldset>
-
-  {% include "resources/resource-form-copies.html" %}
 {% endblock generation_form %}

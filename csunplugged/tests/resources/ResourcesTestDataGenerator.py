@@ -23,7 +23,8 @@ class ResourcesTestDataGenerator:
             name="Resource {}".format(name),
             webpage_template=webpage_template,
             generation_view=generation_view,
-            thumbnail_static_path="static/images/thumbnail-{}".format(slug)
+            thumbnail_static_path="static/images/thumbnail-{}".format(slug),
+            copies=False,
         )
         resource.save()
         return resource
