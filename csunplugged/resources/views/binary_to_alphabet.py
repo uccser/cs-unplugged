@@ -3,6 +3,7 @@
 from PIL import Image, ImageDraw, ImageFont
 from utils.retrieve_query_parameter import retrieve_query_parameter
 
+
 def resource_image(request, resource):
     """Create a image for Binary to Alphabet resource.
 
@@ -14,7 +15,8 @@ def resource_image(request, resource):
         A Pillow image object.
     """
     # Retrieve relevant image
-    worksheet_version = retrieve_query_parameter(request, "worksheet_version", ["student", "teacher"])
+    parameter_options = valid_options()
+    worksheet_version = retrieve_query_parameter(request, "worksheet_version", parameter_options["worksheet_version"])
     if worksheet_version == "student":
         image_path = "static/img/resources/binary-to-alphabet/table.png"
     else:
@@ -92,8 +94,23 @@ def subtitle(request, resource):
     Returns:
         text for subtitle (string)
     """
-    text = get_request["worksheet_version"]
+
+    text = "{} - {}".format(
+        retrieve_query_parameter(request, "worksheet_version"),
+        retrieve_query_parameter(request, "paper_size")
+    )
     return text
 
+
 def valid_options():
-    return {"worksheet_verion": "student", "teacher"}
+    """Provide dictionary of all valid parameters.
+
+    This excludes the header text parameter.
+
+    Returns:
+        All valid options (dict).
+    """
+    return {
+        "worksheet_version": ["student", "teacher"],
+        "paper_size": ["a4", "letter"]
+    }
