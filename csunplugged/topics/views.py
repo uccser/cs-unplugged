@@ -50,7 +50,7 @@ class TopicView(generic.DetailView):
         # Add in a QuerySet of all the connected unit plans
         unit_plans = UnitPlan.objects.filter(topic=self.object).order_by("name").select_related()
         for unit_plan in unit_plans:
-            unit_plan.lessons = unit_plan.lessons_by_age_group()
+            unit_plan.grouped_lessons = unit_plan.lessons_by_age_group()
         context["unit_plans"] = unit_plans
         # Add in a QuerySet of all the connected curriculum integrations
         context["curriculum_integrations"] = CurriculumIntegration.objects.filter(topic=self.object).order_by("number")
@@ -91,7 +91,7 @@ class UnitPlanView(generic.DetailView):
         # Loading object under consistent context names for breadcrumbs
         context["topic"] = self.object.topic
         # Add all the connected lessons
-        context["lessons"] = self.object.unit_plan_lessons.order_by("min_age", "max_age", "number")
+        context["grouped_lessons"] = self.object.lessons_by_age_group()
         return context
 
 
@@ -153,7 +153,7 @@ class ProgrammingExerciseList(generic.ListView):
 
     model = ProgrammingExercise
     template_name = "topics/programming-exercise-lesson-list.html"
-    context_object_name = "all_programming_exercises"
+    context_object_name = "programming_exercises"
 
     def get_queryset(self, **kwargs):
         """Retrieve all programming exercises for a topic.
