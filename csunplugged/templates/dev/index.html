@@ -54,7 +54,7 @@
                   </td>
                   <td>
                     {% for area in curriculum_integration.curriculum_areas.all %}
-                      {% include "topics/curriculum_area_badge.html" %}
+                      {% include "topics/curriculum-area-badge.html" %}
                     {% endfor %}
                   </td>
                   {% if curriculum_integration.has_prerequisite_lessons %}
@@ -89,10 +89,10 @@
     <h1>Curriculum Areas</h1>
     <ul>
       {% for area,children in curriculum_areas.items %}
-        <li>{% include "topics/curriculum_area_badge.html" %}</li>
+        <li>{% include "topics/curriculum-area-badge.html" %}</li>
         <ul>
         {% for area in children %}
-          <li>{% include "topics/curriculum_area_badge.html" %}</li>
+          <li>{% include "topics/curriculum-area-badge.html" %}</li>
         {% endfor %}
         </ul>
       {% endfor %}
