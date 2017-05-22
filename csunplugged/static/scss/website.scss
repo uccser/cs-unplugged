@@ -303,7 +303,8 @@ body {
 }
 
 .border-thin {
-  border: 1px solid $gray-light;
+  border: 1px solid #ddd;
+  border-radius: 3px;
 }
 
 .background-csfg {
