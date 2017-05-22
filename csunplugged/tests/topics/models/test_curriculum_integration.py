@@ -1,13 +1,7 @@
-from model_mommy import mommy
-
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 
-from topics.models import (
-    CurriculumIntegration,
-    CurriculumArea,
-    Lesson
-)
+from topics.models import CurriculumIntegration
 
 
 class CurriculumIntegrationModelTest(BaseTestWithDB):
@@ -19,13 +13,14 @@ class CurriculumIntegrationModelTest(BaseTestWithDB):
     def test_curriculum_integration(self):
         # Setup Auxliary Data
         topic = self.test_data.create_topic(1)
-        curriculum_area = mommy.make(
-            CurriculumArea,
-            name="cats"
-        )
-        prerequisite_lesson = mommy.make(
-            Lesson,
-            name="dogs"
+        curriculum_area = self.test_data.create_curriculum_area(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        prerequisite_lesson = self.test_data.create_lesson(
+            topic,
+            unit_plan,
+            1,
+            1,
+            99
         )
         new_curriculum_integration = CurriculumIntegration.objects.create(
             topic=topic,

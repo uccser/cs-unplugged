@@ -11,7 +11,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         self.language = "en"
 
     def test_binary_cards_resource_form_view(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-cards",
             "Binary Cards",
             "resources/binary-cards.html",
@@ -25,7 +25,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         self.assertEqual(200, response.status_code)
 
     def test_binary_cards_resource_generation(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-cards",
             "Binary Cards",
             "resources/binary-cards.html",
@@ -50,7 +50,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         )
 
     def test_binary_cards_resource_generation_no_numbers(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-cards",
             "Binary Cards",
             "resources/binary-cards.html",
@@ -75,7 +75,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         )
 
     def test_binary_cards_resource_generation_black_back(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-cards",
             "Binary Cards",
             "resources/binary-cards.html",
@@ -100,7 +100,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         )
 
     def test_binary_cards_resource_generation_no_numbers_black_back(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-cards",
             "Binary Cards",
             "resources/binary-cards.html",
@@ -125,7 +125,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         )
 
     def test_binary_cards_resource_generation_us_letter(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-cards",
             "Binary Cards",
             "resources/binary-cards.html",
@@ -150,7 +150,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         )
 
     def test_binary_cards_resource_generation_header_text(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-cards",
             "Binary Cards",
             "resources/binary-cards.html",
@@ -175,7 +175,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         )
 
     def test_binary_cards_resource_generation_missing_numbers_parameter(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-cards",
             "Binary Cards",
             "resources/binary-cards.html",
@@ -195,7 +195,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         self.assertEqual(404, response.status_code)
 
     def test_binary_cards_resource_generation_missing_back_parameter(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-cards",
             "Binary Cards",
             "resources/binary-cards.html",
@@ -215,7 +215,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         self.assertEqual(404, response.status_code)
 
     def test_binary_cards_resource_generation_missing_paper_size_parameter(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-cards",
             "Binary Cards",
             "resources/binary-cards.html",
@@ -235,7 +235,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         self.assertEqual(404, response.status_code)
 
     def test_binary_cards_resource_generation_missing_header_text_parameter(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-cards",
             "Binary Cards",
             "resources/binary-cards.html",

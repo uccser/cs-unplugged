@@ -1,10 +1,7 @@
 from django.urls import reverse
-from model_mommy import mommy
 
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
-
-from topics.models import UnitPlan
 
 
 class CurriculumIntegrationViewTest(BaseTestWithDB):
@@ -90,7 +87,7 @@ class CurriculumIntegrationViewTest(BaseTestWithDB):
 
     def test_curriculum_integration_view_prerequisite_lessons_context(self):
         topic = self.test_data.create_topic(1)
-        unit_plan = mommy.make(UnitPlan)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
         lesson_1 = self.test_data.create_lesson(
             topic,
             unit_plan,
@@ -130,7 +127,7 @@ class CurriculumIntegrationViewTest(BaseTestWithDB):
 
     def test_curriculum_integration_view_prerequisite_lessons_context_order(self):
         topic = self.test_data.create_topic(1)
-        unit_plan = mommy.make(UnitPlan)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
         lesson_3 = self.test_data.create_lesson(
             topic,
             unit_plan,
