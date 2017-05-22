@@ -96,7 +96,7 @@ function update_help {
 
 # Run Django flush command
 function flush {
-  docker-compose run --rm django /docker_venv/bin/python3 ./manage.py flush
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py flush
 }
 function flush_help {
   printf "   flush             Run Django flush command.\n"
@@ -105,7 +105,7 @@ function flush_help {
 # Run Django makemigrations command
 function makemigrations {
   printf "Creating database migrations...\n"
-  docker-compose run --rm django /docker_venv/bin/python3 ./manage.py makemigrations
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py makemigrations
 }
 function makemigrations_help {
   printf "   makemigrations    Run Django makemigrations command.\n"
@@ -114,7 +114,7 @@ function makemigrations_help {
 # Run Django makeresources command
 function makeresources {
   printf "Creating static resource PDFs...\n"
-  docker-compose run --rm django /docker_venv/bin/python3 ./manage.py makeresources
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources
 }
 function makeresources_help {
   printf "   makeresources     Run Django makeresources command.\n"
@@ -123,7 +123,7 @@ function makeresources_help {
 # Run Django migrate command
 function migrate {
   printf "Applying database migrations...\n"
-  docker-compose run --rm django /docker_venv/bin/python3 ./manage.py migrate
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py migrate
 }
 function migrate_help {
   printf "   migrate           Run Django migrate command.\n"
@@ -132,7 +132,7 @@ function migrate_help {
 # Run Django updatedata command
 function updatedata {
   printf "Loading topics content...\n"
-  docker-compose run --rm django /docker_venv/bin/python3 ./manage.py updatedata
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py updatedata
 }
 function updatedata_help {
   printf "   updatedata        Run updatedata command.\n"
@@ -152,7 +152,7 @@ function build_help {
 # Build static files
 function static {
   printf "Building static files...\n"
-  docker-compose run --rm nginx gulp build
+  docker-compose exec nginx gulp build
 }
 function static_help {
   printf "   static            Build static files.\n"
@@ -161,7 +161,7 @@ function static_help {
 # Build production static files
 function static_prod {
   printf "Building production static files...\n"
-  docker-compose run --rm nginx gulp build --production
+  docker-compose exec nginx gulp build --production
 }
 function static_prod_help {
   printf "   static_prod       Build production static files.\n"
@@ -170,18 +170,18 @@ function static_prod_help {
 # Build scratch static files
 function static_scratch {
   printf "Building scratch images...\n"
-  docker-compose run --rm nginx gulp scratch
+  docker-compose exec nginx gulp scratch
 }
 
 # Collecting static files
 function collect_static {
   printf "\nCollecting static files..."
-  docker-compose run --rm django /docker_venv/bin/python3 ./manage.py collectstatic --no-input --clear
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py collectstatic --no-input --clear
 }
 
 # Run shell
 function shell {
-  docker-compose run --rm django bash
+  docker-compose exec django bash
 }
 function shell_help {
   printf "   shell             Open shell to Django folder.\n"
@@ -190,10 +190,10 @@ function shell_help {
 # Run style checks
 function style {
   printf "Running PEP8 style checker...\n"
-  docker-compose run --rm -w /cs-unplugged/ django /docker_venv/bin/flake8
+  docker-compose exec django /docker_venv/bin/flake8
   pep8_status=$?
   printf "\nRunning Python docstring checker...\n"
-  docker-compose run --rm -w /cs-unplugged/ django /docker_venv/bin/pydocstyle --count --explain
+  docker-compose exec django /docker_venv/bin/pydocstyle --count --explain
   pydocstyle_status=$?
   ! (( $pep8_status || $pydocstyle_status ))
 }
@@ -204,7 +204,7 @@ function style_help {
 # Run test suite
 function test_suite {
   printf "Running test suite...\n"
-  docker-compose run --rm django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3
+  docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3
 }
 function test_suite_help {
   printf "   test              Run test suite with code coverage.\n"
@@ -213,7 +213,7 @@ function test_suite_help {
 # Run specific test suite
 function test_specific {
   printf "Running specific test suite...\n"
-  docker-compose run --rm django /docker_venv/bin/python3 ./manage.py test --settings=config.settings.testing "${1}" -v 3
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py test --settings=config.settings.testing "${1}" -v 3
 }
 function test_specific_help {
   printf "   test_specific     Run specific test suite. Pass in parameter\n"
@@ -223,8 +223,8 @@ function test_specific_help {
 # Display test coverage table
 function test_coverage {
   printf "Displaying test suite coverage...\n"
-  docker-compose run --rm django /docker_venv/bin/coverage xml -i
-  docker-compose run --rm django /docker_venv/bin/coverage report -m --skip-covered
+  docker-compose exec django /docker_venv/bin/coverage xml -i
+  docker-compose exec django /docker_venv/bin/coverage report -m --skip-covered
 }
 function test_coverage_help {
   printf "   test_coverage     Display code coverage report.\n"
@@ -235,7 +235,7 @@ function test_suite_backwards {
   printf "Running test suite backwards...\n"
   if [ "$TRAVIS_PULL_REQUEST" != "false" ]
   then
-    docker-compose run --rm django /docker_venv/bin/python3 ./manage.py test --settings=config.settings.testing --pattern "test_*.py" --reverse -v 0
+    docker-compose exec django /docker_venv/bin/python3 ./manage.py test --settings=config.settings.testing --pattern "test_*.py" --reverse -v 0
   fi
 }
 function test_suite_backwards_help {
@@ -245,10 +245,10 @@ function test_suite_backwards_help {
 # Generates the documentation (with warnings as errors)
 function documentation {
   printf "Removing any existing documentation...\n"
-  docker-compose run --rm django rm -rf /cs-unplugged/docs/build/
-  docker-compose run --rm django mkdir /cs-unplugged/docs/build/
+  docker-compose exec django rm -rf /cs-unplugged/docs/build/
+  docker-compose exec django mkdir /cs-unplugged/docs/build/
   printf "\nCreating documentation...\n"
-  docker-compose run --rm django /docker_venv/bin/sphinx-build -W /cs-unplugged/docs/source/ /cs-unplugged/docs/build/
+  docker-compose exec django /docker_venv/bin/sphinx-build -W /cs-unplugged/docs/source/ /cs-unplugged/docs/build/
 }
 function documentation_help {
   printf "   docs              Generate documentation.\n"
