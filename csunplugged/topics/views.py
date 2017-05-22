@@ -65,7 +65,7 @@ class UnitPlanView(generic.DetailView):
     """View for a specific unit plan."""
 
     model = UnitPlan
-    template_name = "topics/unit_plan.html"
+    template_name = "topics/unit-plan.html"
     context_object_name = "unit_plan"
 
     def get_object(self, **kwargs):
@@ -152,7 +152,7 @@ class ProgrammingExerciseList(generic.ListView):
     """View for listing all programming exercises for a lesson."""
 
     model = ProgrammingExercise
-    template_name = "topics/programming_exercise_lesson_list.html"
+    template_name = "topics/programming-exercise-lesson-list.html"
     context_object_name = "all_programming_exercises"
 
     def get_queryset(self, **kwargs):
@@ -188,7 +188,7 @@ class ProgrammingExerciseView(generic.DetailView):
     """View for a specific programming exercise."""
 
     model = ProgrammingExercise
-    template_name = "topics/programming_exercise.html"
+    template_name = "topics/programming-exercise.html"
     context_object_name = "programming_exercise"
 
     def get_object(self, **kwargs):
@@ -227,7 +227,7 @@ class ProgrammingExerciseLanguageSolutionView(generic.DetailView):
     """View for a language implementation for a programming exercise."""
 
     model = ProgrammingExerciseLanguageImplementation
-    template_name = "topics/programming_exercise_language_solution.html"
+    template_name = "topics/programming-exercise-language-solution.html"
     context_object_name = "implementation"
 
     def get_object(self, **kwargs):
@@ -262,7 +262,7 @@ class AllCurriculumIntegrationList(generic.ListView):
     """View for listing all curriculum integrations."""
 
     model = CurriculumIntegration
-    template_name = "topics/all_curriculum_integration_list.html"
+    template_name = "topics/all-curriculum-integration-list.html"
     context_object_name = "curriculum_integrations"
 
     def get_queryset(self, **kwargs):
@@ -279,7 +279,7 @@ class CurriculumIntegrationView(generic.DetailView):
 
     model = CurriculumIntegration
     queryset = CurriculumIntegration.objects.all()
-    template_name = "topics/curriculum_integration.html"
+    template_name = "topics/curriculum-integration.html"
     context_object_name = "integration"
 
     def get_object(self, **kwargs):

@@ -145,6 +145,6 @@ class UnitPlanViewTest(BaseTestWithDB):
         response = self.client.get(url)
         template_found = False
         for template in response.templates:
-            if template.name == "topics/unit_plan.html":
+            if template.name == "topics/unit-plan.html":
                 template_found = True
         self.assertTrue(template_found)
