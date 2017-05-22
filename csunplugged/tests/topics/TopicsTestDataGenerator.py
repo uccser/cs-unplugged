@@ -40,10 +40,10 @@ class TopicsTestDataGenerator:
         """Create curriculum integration object.
 
         Args:
-            topic: The related Topic object.
-            number: Integer representing the topic.
-            lessons: List of prerequisite lessons.
-            curriculum_areas: List of curriculum areas.
+            topic: The related Topic object (Topic).
+            number: Identifier of the topic (int).
+            lessons: List of prerequisite lessons (list).
+            curriculum_areas: List of curriculum areas (list).
 
         Returns:
             CurriculumIntegration object.
@@ -68,8 +68,8 @@ class TopicsTestDataGenerator:
         """Create curriculum area object.
 
         Args:
-            number: Integer representing the area.
-            parent: Parent of the curriculum area.
+            number: Identifier of the area (int).
+            parent: Parent of the curriculum area (CurriculumArea).
 
         Returns:
             CurriculumArea object.
@@ -86,7 +86,7 @@ class TopicsTestDataGenerator:
         """Create topic object.
 
         Args:
-            number: Integer representing the topic.
+            number: Identifier of the topic (int).
 
         Returns:
             Topic object.
@@ -103,8 +103,8 @@ class TopicsTestDataGenerator:
         """Create unit plan object.
 
         Args:
-            topic: The related Topic object.
-            number: Integer representing the unit plan.
+            topic: The related Topic object (Topic).
+            number: Identifier of the unit plan (int).
 
         Returns:
             UnitPlan object.
@@ -122,11 +122,11 @@ class TopicsTestDataGenerator:
         """Create lesson object.
 
         Args:
-            topic: The related Topic object.
-            unit_plan: The related UnitPlan object.
-            number: Integer representing the topic.
-            min_age: Integer of the minimum age of the lesson.
-            max_age: Integer of the maximum age of the lesson.
+            topic: The related Topic object (Topic).
+            unit_plan: The related UnitPlan object (UnitPlan).
+            number: Identifier of the topic (int).
+            min_age: Minimum age of the lesson (int).
+            max_age: Maximum age of the lesson (int).
 
         Returns:
             Lesson object.
@@ -150,7 +150,7 @@ class TopicsTestDataGenerator:
         Create difficuly level object.
 
         Args:
-            number: Integer representing the level.
+            number: Identifier of the level (int).
 
         Returns:
             ProgrammingExerciseDifficulty object.
@@ -167,7 +167,7 @@ class TopicsTestDataGenerator:
         Create programming language object.
 
         Args:
-            number: Integer representing the language.
+            number: Identifier of the language (int).
 
         Returns:
             ProgrammingExerciseLanguage object.
@@ -191,8 +191,9 @@ class TopicsTestDataGenerator:
 
         Args:
             topic: Topic related to the exercise.
-            number: Integer representing the exercise (int).
-            difficulty: Difficulty related to the exercise.
+            number: Identifier of the exercise (int).
+            difficulty: Difficulty related to the exercise
+                        (ProgrammingExerciseDifficulty).
             exercise_set_number: Integer of exercise set number (int).
             exercise_number: Integer of exercise number (int).
             content: Text of exercise (str).
@@ -219,7 +220,7 @@ class TopicsTestDataGenerator:
         Create learning outcome object.
 
         Args:
-            number: Integer representing the exercise (int).
+            number: Identifier of the exercise (int).
 
         Returns:
             LearningOutcome object.
