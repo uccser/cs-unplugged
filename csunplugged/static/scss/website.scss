@@ -187,6 +187,9 @@ footer {
   color: rgba($white, 0.8);
   a {
     color: $white;
+    @include hover-focus {
+      color: $white;
+    }
   }
 }
 
@@ -301,4 +304,14 @@ body {
 
 .border-thin {
   border: 1px solid $gray-light;
+}
+
+.background-csfg {
+  background-color: #2b387c;
+}
+
+@include media-breakpoint-down("sm") {
+  .navbar-toggleable-sm > .container {
+    width: 100%;
+  }
 }
