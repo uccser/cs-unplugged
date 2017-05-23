@@ -189,6 +189,7 @@ class ProgrammingExerciseLanguage(models.Model):
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField()
     name = models.CharField(max_length=200)
+    number = models.PositiveSmallIntegerField()
     icon = models.CharField(max_length=100, null=True)
 
     def __str__(self):
