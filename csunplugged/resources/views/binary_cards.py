@@ -2,14 +2,14 @@
 
 import os.path
 from PIL import Image, ImageDraw, ImageFont
-from django.http import Http404
+from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
-def resource_image(get_request, resource):
+def resource_image(request, resource):
     """Create a image for Binary Cards resource.
 
     Args:
-        get_request: HTTP request object
+        request: HTTP request object.
         resource: Object of resource data.
 
     Returns:
@@ -30,12 +30,8 @@ def resource_image(get_request, resource):
     ]
 
     # Retrieve parameters
-    display_numbers = get_request.get("display_numbers", None)
-    if display_numbers is None:
-        raise Http404("Display numbers parameter not specified.")
-    black_back = get_request.get("black_back", None)
-    if black_back is None:
-        raise Http404("Black card back parameter not specified.")
+    display_numbers = retrieve_query_parameter(request, "display_numbers", ["yes", "no"])
+    black_back = retrieve_query_parameter(request, "black_back", ["yes", "no"])
 
     if display_numbers == "yes":
         font_path = "static/fonts/PatrickHand-Regular.ttf"
@@ -72,21 +68,46 @@ def resource_image(get_request, resource):
     return images
 
 
-def subtitle(get_request, resource):
+def subtitle(request, resource):
     """Return the subtitle string of the resource.
 
     Used after the resource name in the filename, and
     also on the resource image.
 
     Args:
-        get_request: HTTP request object
+        request: HTTP request object
         resource: Object of resource data.
 
     Returns:
         text for subtitle (string)
     """
-    if get_request["display_numbers"] == "yes":
-        text = "with numbers"
+    if retrieve_query_parameter(request, "display_numbers") == "yes":
+        display_numbers_text = "with numbers"
     else:
-        text = "without numbers"
+        display_numbers_text = "without numbers"
+    if retrieve_query_parameter(request, "black_back") == "yes":
+        black_back_text = "with black back"
+    else:
+        black_back_text = "without black back"
+    text = "{} - {} - {}".format(
+        display_numbers_text,
+        black_back_text,
+        retrieve_query_parameter(request, "paper_size")
+    )
     return text
+
+
+def valid_options():
+    """Provide dictionary of all valid parameters.
+
+    This excludes the header text parameter.
+
+    Returns:
+        All valid options (dict).
+    """
+    valid_options = {
+        "display_numbers": ["yes", "no"],
+        "black_back": ["yes", "no"],
+        "paper_size": ["a4", "letter"],
+    }
+    return valid_options

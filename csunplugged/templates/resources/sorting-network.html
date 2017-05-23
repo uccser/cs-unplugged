@@ -1,8 +1,5 @@
 {% extends "resources/resource.html" %}
 
-<!-- Name of resource -->
-{% block name %}{{ resource.name }}{% endblock name %}
-
 <!-- Description of resource -->
 {% block description %}
   <p>
@@ -26,6 +23,4 @@
     <input type="radio" name="prefilled_values" id="hard" value="hard">
     <label for="hard">Hard Numbers (3 digits)</label>
   </fieldset>
-
-  {% include "resources/resource-form-copies.html" %}
 {% endblock generation_form %}

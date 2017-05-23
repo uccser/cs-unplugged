@@ -9,7 +9,7 @@
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-  <h1>{% block name %}{% endblock name %}</h1>
+  <h1>{{ resource.name }}</h1>
 
   {% block description %}
   {% endblock description %}
@@ -31,18 +31,39 @@
       <label for="size_letter">US Letter</label>
     </fieldset>
 
-    <fieldset>
-      <legend>Header Text</legend>
-      <input type="text" name="header_text" placeholder="Example School: Room Four" class="long-text-field">
-    </fieldset>
+    {% if debug %}
+      <hr>
+      <h3>Local Generation Only</h3>
 
-    <input type="submit" value="Generate Resource" />
+      <fieldset>
+        <legend>Header Text</legend>
+        <input type="text" name="header_text" placeholder="Example School: Room Four" class="long-text-field">
+      </fieldset>
+
+      {% if resource.copies %}
+        <fieldset>
+          <legend>Number of Copies</legend>
+          <input type="number" name="copies" value=1 min=1 max=50>
+        </fieldset>
+      {% endif %}
+
+      <hr>
+      <input type="submit" value="Generate Resource" />
+    {% else %}
+      {% if resource.copies %}
+      <div class="alert alert-info" role="alert">
+        The download of this resource includes 30 unique copies.
+      </div>
+      {% endif %}
+
+      <input type="submit" value="Download Resource" />
+    {% endif %}
   </form>
 {% endblock left_column_content %}
 
 {% block right_column_content %}
   {% if thumbnail %}
-    <h2>Preview</h2>
+    <h2>Example</h2>
     {% load static %}
     <img class="img-thumbnail" src="{% static thumbnail %}">
   {% endif %}
