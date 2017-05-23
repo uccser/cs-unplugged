@@ -94,7 +94,6 @@ def subtitle(request, resource):
     Returns:
         text for subtitle (string)
     """
-
     text = "{} - {}".format(
         retrieve_query_parameter(request, "worksheet_version"),
         retrieve_query_parameter(request, "paper_size")
