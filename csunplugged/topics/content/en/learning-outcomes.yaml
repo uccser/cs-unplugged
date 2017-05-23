@@ -14,17 +14,12 @@ maths-comparing-numbers:
     - numeracy
 
 programming-explain-sequencing:
-  text: Explain why programming has to have exact sequencing of code.
+  text: Explain how sequence works in programming
   curriculum-areas:
     - programming
 
 programming-explain-output:
   text: Explain why a program gives the output that it does.
-  curriculum-areas:
-    - programming
-
-programming-demonstrate-input-output:
-  text: Demonstrate one type of input and why this outputs the way it does.
   curriculum-areas:
     - programming
 
@@ -48,11 +43,6 @@ programming-identify-loop:
   curriculum-areas:
     - programming
 
-programming-explain-concatenate:
-  text: Explain how to concatenate (link) data together.
-  curriculum-areas:
-    - programming
-
 programming-explain-join-concatenate:
   text: Explain how to concatenate (join) strings of characters together.
   curriculum-areas:
@@ -69,6 +59,6 @@ programming-identify-if-statement:
     - programming
 
 programming-prove-indexing:
-  text: Prove how indexing to access a letter at the specified position in a string works.
+  text: Demonstrate how indexing to access a letter at the specified position in a string works.
   curriculum-areas:
     - programming
