@@ -18,7 +18,7 @@
                 Unit Plan: <a href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">{{ unit_plan.name }}</a>
 
                 {% if unit_plan.lessons.items %}
-                  {% with grouped_lessons=unit_plan.lessons_by_age_group %}
+                  {% with grouped_lessons=unit_plan.lessons %}
                     {% include "topics/lessons-table.html" %}
                   {% endwith %}
                 {% endif %}

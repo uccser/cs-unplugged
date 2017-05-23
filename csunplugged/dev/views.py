@@ -1,7 +1,7 @@
 """Views for the dev application."""
 
 from django.views import generic
-
+from utils.group_lessons_by_age import group_lessons_by_age
 from topics.models import (
     Topic,
     CurriculumArea,
@@ -37,7 +37,7 @@ class IndexView(generic.TemplateView):
         for topic in context["topics"]:
             topic.unit_plans = UnitPlan.objects.filter(topic=topic)
             for unit_plan in topic.unit_plans:
-                unit_plan.lessons = unit_plan.lessons_by_age_group()
+                unit_plan.lessons = group_lessons_by_age(unit_plan.unit_plan_lessons)
             topic.integrations = CurriculumIntegration.objects.filter(topic=topic).order_by("number")
             topic.programming_exercises = ProgrammingExercise.objects.filter(topic=topic).order_by(
                 "exercise_set_number", "exercise_number"

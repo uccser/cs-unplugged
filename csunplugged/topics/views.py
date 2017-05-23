@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404
 from django.views import generic
 from django.http import JsonResponse, Http404
 from general.templatetags.render_html_field import render_html_with_static
-
+from utils.group_lessons_by_age import group_lessons_by_age
 from .models import (
     Topic,
     CurriculumIntegration,
@@ -50,7 +50,7 @@ class TopicView(generic.DetailView):
         # Add in a QuerySet of all the connected unit plans
         unit_plans = UnitPlan.objects.filter(topic=self.object).order_by("name").select_related()
         for unit_plan in unit_plans:
-            unit_plan.grouped_lessons = unit_plan.lessons_by_age_group()
+            unit_plan.grouped_lessons = group_lessons_by_age(unit_plan.unit_plan_lessons)
         context["unit_plans"] = unit_plans
         # Add in a QuerySet of all the connected curriculum integrations
         context["curriculum_integrations"] = CurriculumIntegration.objects.filter(topic=self.object).order_by("number")
@@ -91,7 +91,7 @@ class UnitPlanView(generic.DetailView):
         # Loading object under consistent context names for breadcrumbs
         context["topic"] = self.object.topic
         # Add all the connected lessons
-        context["grouped_lessons"] = self.object.lessons_by_age_group()
+        context["grouped_lessons"] = group_lessons_by_age(self.object.unit_plan_lessons)
         return context
 
 
