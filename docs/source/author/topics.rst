@@ -732,6 +732,9 @@ Programming Challenges Structure Configuration File
           - ``name:`` The name of the programming language (this is what will be
             displayed to the user).
 
+          - ``number:`` A number used for ordering programming languages.
+            Languages are sorted in ascending numbers (smallest to largest).
+
         - **Optional Fields:**
 
           - ``icon:`` An image file to be used as the icon for the language.
@@ -754,9 +757,11 @@ A complete programming challenge structure file may look like the following:
   language:
     scratch:
       name: Scratch
+      number: 1
       icon: img/scratch-cat.png
     ruby:
       name: Ruby
+      number: 2
 
   difficulties:
     1:
