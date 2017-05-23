@@ -14,7 +14,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
         self.language = "en"
 
     def test_binary_cards_small_resource_form_view(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-cards",
             "Binary Cards (small)",
             "resources/binary-cards-small.html",
@@ -28,7 +28,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
         self.assertEqual(200, response.status_code)
 
     def test_binary_cards_small_resource_generation_valid_configurations(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-cards",
             "Binary Cards (small)",
             "resources/binary-cards-small.html",
@@ -70,7 +70,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
             print("ok")
 
     def test_binary_cards_small_resource_generation_missing_dot_count_parameter(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-cards",
             "Binary Cards (small)",
             "resources/binary-cards-small.html",
@@ -91,7 +91,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
         self.assertEqual(404, response.status_code)
 
     def test_binary_cards_small_resource_generation_missing_number_bits_parameter(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-cards",
             "Binary Cards (small)",
             "resources/binary-cards-small.html",
@@ -112,7 +112,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
         self.assertEqual(404, response.status_code)
 
     def test_binary_cards_small_resource_generation_missing_black_back_parameter(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-cards",
             "Binary Cards (small)",
             "resources/binary-cards-small.html",
@@ -133,7 +133,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
         self.assertEqual(404, response.status_code)
 
     def test_binary_cards_small_resource_generation_missing_paper_size_parameter(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-cards",
             "Binary Cards (small)",
             "resources/binary-cards-small.html",
@@ -154,7 +154,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
         self.assertEqual(404, response.status_code)
 
     def test_binary_cards_small_resource_generation_missing_header_text_parameter(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-cards",
             "Binary Cards (small)",
             "resources/binary-cards-small.html",
