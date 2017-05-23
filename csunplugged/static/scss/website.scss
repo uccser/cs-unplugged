@@ -82,7 +82,7 @@ $rounded-corner-radius: 0.5rem;
 }
 
 .link-box {
-  border: 0.2em solid $gray-lighter;
+  border: 0.2em solid $blue;
   border-radius: $border-radius;
   overflow: hidden;
   padding: ($spacer-y * .5) ($spacer-x * .5);
@@ -106,7 +106,7 @@ $rounded-corner-radius: 0.5rem;
     color: $gray;
   }
   &:hover {
-    background-color: darken($white, 5%);
+    background-color: rgba($blue, 0.1);
   }
   &:hover,
   &:active,
