@@ -15,6 +15,9 @@ binary-numbers-using-variable:
   difficulty-level: 1
   programming-languages:
     - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-describe-variables
   extra-challenge: extra-challenge.md
 
 binary-numbers-using-variables-as-operator:
