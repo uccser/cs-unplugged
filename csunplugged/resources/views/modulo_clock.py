@@ -1,6 +1,6 @@
 """Module for generating Binary Cards resource."""
 
-import os.path
+from math import pi, sin, cos
 from PIL import Image, ImageDraw, ImageFont
 from utils.retrieve_query_parameter import retrieve_query_parameter
 
@@ -16,15 +16,46 @@ def resource_image(request, resource):
         A list of Pillow image objects.
     """
     parameter_options = valid_options()
-    modulo_number = retrieve_query_parameter(request, "modulo_number", parameter_options["modulo_number"])
-    if modulo_number == "2":
-        image_path = "static/img/resources/modulo_clock/modulo-clock-2.png"
-    elif modulo_number == "10":
-        image_path = "static/img/resources/modulo_clock/modulo-clock-10.png"
-
-    font_path = "static/fonts/PatrickHand-Regular.ttf"
+    modulo_number = int(retrieve_query_parameter(request, "modulo_number", parameter_options["modulo_number"]))
+    if modulo_number == 2:
+        image_path = "static/img/resources/modulo-clock/modulo-clock-2.png"
+    elif modulo_number == 10:
+        image_path = "static/img/resources/modulo-clock/modulo-clock-10.png"
     image = Image.open(image_path)
     draw = ImageDraw.Draw(image)
+
+    font_size = 200
+    font_path = "static/fonts/PatrickHand-Regular.ttf"
+    font = ImageFont.truetype(font_path, font_size)
+
+    x_offset = 75
+    y_offset = 275
+    radius = 900
+    x_center = (image.width - x_offset)/2
+    y_center = (image.height - y_offset)/2
+    start_angle = (2 * pi) / modulo_number
+
+    draw.text(
+        (x_center, y_center),
+        text="cats",
+        font=font,
+        fill="#000"
+    )
+
+    for num in range(0, modulo_number):
+
+        text = str(num)
+
+        angle = start_angle * (num - 2.5)
+        x_coord = radius * cos(angle) + x_center
+        y_coord = radius * sin(angle) + y_center
+
+        draw.text(
+            (x_coord, y_coord),
+            text,
+            font=font,
+            fill="#000"
+        )
 
     return image
 
@@ -42,7 +73,11 @@ def subtitle(request, resource):
     Returns:
         text for subtitle (string)
     """
-    pass
+    text = "{} - {}".format(
+        retrieve_query_parameter(request, "modulo_number"),
+        retrieve_query_parameter(request, "paper_size")
+    )
+    return text
 
 
 def valid_options():

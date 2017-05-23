@@ -28,3 +28,9 @@ binary-windows:
   generation-view: binary_windows.py
   thumbnail-static-path: img/resources/binary-windows/thumbnail.png
   copies: false
+modulo-clock:
+  name: Modulo Clock
+  webpage-template: resources/modulo-clock.html
+  generation-view: modulo_clock.py
+  thumbnail-static-path: img/resources/modulo-clock/thumbnail.png
+  copies: false
