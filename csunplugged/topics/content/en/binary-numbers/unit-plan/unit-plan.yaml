@@ -27,7 +27,9 @@ how-binary-digits-work:
     - no-physical-zeros-ones
   generated-resources:
     binary-cards:
-      description: One set.
+      description: One set for class demonstration.
+    binary-cards-small:
+      description: One set of cards per student.
   classroom-resources:
     - Pens and paper, or
     - Whiteboard and pens
@@ -39,7 +41,9 @@ reinforcing-sequencing-in-binary-number-systems:
   duration: 60
   generated-resources:
     binary-cards:
-      description: One set.
+      description: One set for class demonstration.
+    binary-cards-small:
+      description: One set of cards per student.
 
 codes-for-letters-using-binary-representation:
   min-age: 8
@@ -48,4 +52,6 @@ codes-for-letters-using-binary-representation:
   duration: 45
   generated-resources:
     binary-cards:
-      description: One set.
+      description: One set for class demonstration.
+    binary-cards-small:
+      description: One set of cards per student.
