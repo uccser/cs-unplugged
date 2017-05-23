@@ -26,6 +26,9 @@ binary-numbers-using-variables-as-operator:
   difficulty-level: 1
   programming-languages:
     - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-outline-variable-updates
   extra-challenge: extra-challenge.md
 
 binary-numbers-using-variable-operator-repeat:
