@@ -175,6 +175,7 @@ class TopicsTestDataGenerator:
         language = ProgrammingExerciseLanguage(
             slug="language-{}".format(number),
             name="Language {}".format(number),
+            number=number,
         )
         language.save()
         return language
