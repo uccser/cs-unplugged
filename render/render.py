@@ -1,8 +1,10 @@
 """Control script for creating RenderDaemons."""
+import re
 import os
 import sys
 import logging
 import optparse
+from collections import namedtuple
 from logging.handlers import RotatingFileHandler
 from RenderDaemon import RenderDaemon
 
@@ -34,7 +36,7 @@ def setup_logging(options):
     Args:
         options: The program options.
     """
-    max_log_size = 5 * 1024 * 1024
+    max_log_size = 100 * 1024 * 1024
     logs_directory = LOG_DIRECTORY
     os.makedirs(logs_directory, exist_ok=True)
 
@@ -42,7 +44,7 @@ def setup_logging(options):
     log_formatter = logging.Formatter("%(asctime)-20s %(levelname)s:%(name)-30s Message: %(message)s")
 
     log_handler = RotatingFileHandler(logfile,
-                                      mode='a',
+                                      mode="a",
                                       maxBytes=max_log_size,
                                       backupCount=5,
                                       encoding=None,
@@ -55,7 +57,7 @@ def setup_logging(options):
     render_log.addHandler(log_handler)
 
 
-def get_daemon_pids():
+def get_active_daemon_details(daemon):
     """Get the pids of all render daemons.
 
     Returns:
@@ -64,15 +66,19 @@ def get_daemon_pids():
     if not os.path.exists(PID_DIRECTORY):
         return []
 
-    pids = []
-    for filename in os.listdir(PID_DIRECTORY):
-        _, file_extension = os.path.splitext(filename)
-        if file_extension == ".pid":
-            with open(filename, 'r') as f:
-                pid = int(f.read())
-                pids.append(pid)
+    DaemonMetaData = namedtuple("DaemonMetaData", "number, pid")
+    regex = re.compile(r"^{}_(?P<number>\d*).pid$".format(daemon))
 
-    return pids
+    details = []
+    for filename in os.listdir(PID_DIRECTORY):
+        m = regex.match(filename)
+        if m is not None:
+            filepath = os.path.join(PID_DIRECTORY, filename)
+            with open(filepath, 'r') as f:
+                pid = int(f.read())
+                number = int(m.group('number'))
+                details.append(DaemonMetaData(number, pid))
+    return details
 
 
 def check_pid(pid):
@@ -91,15 +97,21 @@ def check_pid(pid):
         return True
 
 
-if __name__ == "__main__":
-    options, arguments = parse_args()
-    setup_logging(options)
-    action = arguments[0]
+def render_daemon_control(daemon, action):
+    """Load and request a daemon to perform an action.
 
+    Do not trust code or the process to be running after this method
+    as certain actions such as 'start' cause the main thread to be
+    killed.
+
+    Args:
+        daemon: An integer representing the daemon number.
+        action: A string which is either 'start', 'stop', 'restart'
+    """
     # Set-up directories
     pid_directory = PID_DIRECTORY
     os.makedirs(pid_directory, exist_ok=True)
-    pidfile = os.path.join(pid_directory, "render_{}.pid".format(options.daemon))
+    pidfile = os.path.join(pid_directory, "render_{}.pid".format(daemon))
 
     d = RenderDaemon(pidfile=pidfile)
 
@@ -109,3 +121,11 @@ if __name__ == "__main__":
         d.stop()
     elif action == "restart":
         d.restart()
+
+
+if __name__ == "__main__":
+    options, arguments = parse_args()
+    setup_logging(options)
+    action = arguments[0]
+
+    render_daemon_control(options.daemon, action)
