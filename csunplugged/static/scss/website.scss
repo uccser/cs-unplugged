@@ -12,6 +12,9 @@ img {
   &.content-image {
     max-height: 10em;
   }
+  &.inline-image {
+    max-height: 5rem;
+  }
 }
 
 h1 {
@@ -265,4 +268,27 @@ body {
 #scrollspy-table-of-contents .nav-link {
   font-size: 0.9rem;
   padding: ($spacer-y * .25) $spacer-x;
+}
+
+#content-container table {
+  display: block;
+  margin-bottom: 1rem;
+  max-width: 100%;
+  overflow-x: auto;
+  width: 100%;
+  text-align: center;
+  tr, th {
+    padding: ($spacer-x * .75);
+  }
+  th {
+    color: #464a4c;
+    background-color: #eceeef;
+    border-bottom: 2px solid #eceeef;
+    text-align: center;
+    vertical-align: middle;
+  }
+  tr {
+    border-top: 1px solid #eceeef;
+    vertical-align: middle;
+  }
 }

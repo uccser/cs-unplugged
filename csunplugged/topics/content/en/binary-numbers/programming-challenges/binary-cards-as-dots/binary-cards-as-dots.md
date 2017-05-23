@@ -8,7 +8,7 @@ Write a program that asks the user to enter a decimal number between 0 and 31 as
 
 Your program should display the outputs shown in this table for the given inputs provided;
 
-| Input | Output                                                                                          |
-| ----- | ----------------------------------------------------------------------------------------------- |
-| 31    | TODO: image-inline file-path="img/topics/programming-exercises/binary-challenge-9-example1.png" |
-| 11    | TODO: image-inline file-path="img/topics/programming-exercises/binary-challenge-9-example2.png" |
+| Input | Output                                                                                      |
+| ----- | ------------------------------------------------------------------------------------------- |
+| 31    | {image-inline file-path="img/topics/programming-exercises/binary-challenge-9-example1.png"} |
+| 11    | {image-inline file-path="img/topics/programming-exercises/binary-challenge-9-example2.png"} |
