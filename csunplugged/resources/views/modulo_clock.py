@@ -15,7 +15,18 @@ def resource_image(request, resource):
     Returns:
         A list of Pillow image objects.
     """
-    pass
+    parameter_options = valid_options()
+    modulo_number = retrieve_query_parameter(request, "modulo_number", parameter_options["modulo_number"])
+    if modulo_number == "2":
+        image_path = "static/img/resources/modulo_clock/modulo-clock-2.png"
+    elif modulo_number == "10":
+        image_path = "static/img/resources/modulo_clock/modulo-clock-10.png"
+
+    font_path = "static/fonts/PatrickHand-Regular.ttf"
+    image = Image.open(image_path)
+    draw = ImageDraw.Draw(image)
+
+    return image
 
 
 def subtitle(request, resource):
@@ -42,4 +53,7 @@ def valid_options():
     Returns:
         All valid options (dict).
     """
-    pass
+    return {
+        "modulo_number": ["2", "10"],
+        "paper_size": ["a4", "letter"]
+    }
