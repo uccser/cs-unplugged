@@ -37,6 +37,10 @@ binary-numbers-using-variable-operator-repeat:
   difficulty-level: 1
   programming-languages:
     - scratch
+  learning-outcomes:
+    - programming-outline-variable-updates
+    - programming-describe-variable-output
+    - programming-identify-loop
   extra-challenge: extra-challenge.md
 
 binary-numbers-one-line:
