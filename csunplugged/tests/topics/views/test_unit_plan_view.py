@@ -1,4 +1,3 @@
-from collections import OrderedDict
 from django.urls import reverse
 
 from tests.BaseTestWithDB import BaseTestWithDB
