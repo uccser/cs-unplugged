@@ -18,4 +18,3 @@ inputs provided:
 |-------|-------------------------------------------------------|
 | 31    | The binary representation for the number 31 is 11111  |
 | 32    | The binary representation for the number 32 is 100000 |
-| 1     | The binary representation for the number 1 is 1       |

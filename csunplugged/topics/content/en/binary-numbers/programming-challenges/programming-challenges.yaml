@@ -243,6 +243,18 @@ decimal-to-binary-alternative:
     - programming-identify-if-statement
     - programming-identify-loop
 
+binary-notes-representing-number:
+  challenge-set-number: 8
+  challenge-number: 1
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-identify-if-statement
+    - programming-identify-loop
+
 binary-cards-as-dots:
   challenge-set-number: 9
   challenge-number: 1
