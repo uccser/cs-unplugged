@@ -13,3 +13,7 @@ Remix this program and change its name to: Binary challenge 9 (version 2).
 This solution displays 5 cards (with dots showing for all the cards) on the
 screen and asks the user to enter a number between 0 and 31.
 It then clones a black card sprite over the cards which need to be hidden (dots not showing).
+
+The fourth variation should work like this:
+
+{iframe link="https://scratch.mit.edu/projects/embed/159501752/?autostart=false"}
