@@ -201,6 +201,11 @@ binary-cards-representing-number:
   difficulty-level: 3
   programming-languages:
     - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-identify-if-statement
+    - programming-identify-loop
 
 decimal-to-binary:
   challenge-set-number: 7
