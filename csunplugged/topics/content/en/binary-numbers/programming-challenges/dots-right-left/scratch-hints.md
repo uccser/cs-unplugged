@@ -1,5 +1,17 @@
-- You can ask a question by using the `ASK` block. Replace the text `What’s your name?` with your own question. The user input will be stored in a predefined variable called `answer` after the check mark button is clicked or Enter key is pressed. You can view the value of “answer” by clicking the checkbox next to the answer block.
-- You can find “make a new variable” under “data” script to create a new variable. Make sure your variable name is as descriptive as possible.
-- Use the`SET` block to set the value of your new variable. Use the multiply operation under `Operators` script to double the value of your variable. Use the `JOIN` block under `Operators` script to combine two strings. You can use multiple join blocks inside each other if you need to combine more than two strings.
-- Display the value of your variable on the screen by replacing `Hello` in your `SAY` block with your new variable. 
-- Use the `REPEAT` block to run the blocks inside a specified number of times. In this challenge you need to repeat the blocks as many times as user’s input.
+-   Make variables:
+
+
+    -   “number of cards” to store the number of cards to display entered by
+        the end user as the input (e.g. 4).
+    -   “number of dots” to store the number of dots.
+    -   “binary cards” which is a variable type string and stores what is
+        going to be displayed on the screen as the output (e.g. “1, 2, 4, 8,”).
+
+-   Use the `scratch: (join [hello] [world])` block under “Operators” to combine
+    two strings.
+    You can use multiple join blocks inside each other if you need to combine
+    more than two strings.
+-   In Scratch, to concatenate data together you use the
+    `scratch: (join [hello] [world])` blocks.
+    This can be used to join text, variables and calculations.
+    Remember to check if the spaces are correct between the items being joined!

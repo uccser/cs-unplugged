@@ -71,6 +71,9 @@ dots-right-left:
   difficulty-level: 2
   programming-languages:
     - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
   extra-challenge: extra-challenge.md
 
 dots-largest-to-1:
