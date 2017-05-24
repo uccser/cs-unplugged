@@ -60,7 +60,10 @@ number-cards-display:
   difficulty-level: 2
   programming-languages:
     - scratch
-  extra-challenge: extra-challenge.md
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-identify-loop
 
 dots-right-left:
   challenge-set-number: 2
