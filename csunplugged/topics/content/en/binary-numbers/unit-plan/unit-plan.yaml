@@ -21,6 +21,7 @@ how-binary-digits-work:
     - cards-given-number-one-line
     - number-bits-representing-number
     - binary-cards-representing-number
+    - binary-cards-representing-any-positive-number
     - decimal-to-binary
   learning-outcomes:
     - binary-correct-representation
