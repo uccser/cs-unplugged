@@ -255,6 +255,19 @@ binary-notes-representing-number:
     - programming-identify-if-statement
     - programming-identify-loop
 
+binary-notes-representing-any-positive-number:
+  challenge-set-number: 8
+  challenge-number: 2
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-identify-if-statement
+    - programming-identify-loop
+  extra-challenge: extra-challenge.md
+
 binary-cards-as-dots:
   challenge-set-number: 9
   challenge-number: 1

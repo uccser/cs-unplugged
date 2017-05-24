@@ -25,6 +25,7 @@ how-binary-digits-work:
     - decimal-to-binary
     - decimal-to-binary-alternative
     - binary-notes-representing-number
+    - binary-notes-representing-any-positive-number
   learning-outcomes:
     - binary-correct-representation
     - no-physical-zeros-ones
