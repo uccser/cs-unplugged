@@ -23,6 +23,7 @@ how-binary-digits-work:
     - binary-cards-representing-number
     - binary-cards-representing-any-positive-number
     - decimal-to-binary
+    - decimal-to-binary-alternative
   learning-outcomes:
     - binary-correct-representation
     - no-physical-zeros-ones

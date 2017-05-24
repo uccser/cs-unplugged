@@ -231,6 +231,18 @@ decimal-to-binary:
     - programming-identify-if-statement
     - programming-identify-loop
 
+decimal-to-binary-alternative:
+  challenge-set-number: 7
+  challenge-number: 4
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-identify-if-statement
+    - programming-identify-loop
+
 binary-cards-as-dots:
   challenge-set-number: 9
   challenge-number: 1
