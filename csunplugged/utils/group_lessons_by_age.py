@@ -9,6 +9,9 @@ def group_lessons_by_age(lessons):
     Lessons are grouped by the lesson minimum age and maximum ages,
     and then order by number.
 
+    Args:
+        lessons: QuerySet of Lesson objects (QuerySet).
+
     Returns:
         A ordered dictionary of grouped lessons.
         The key is a tuple of the minimum age and maximum ages for
