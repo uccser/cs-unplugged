@@ -24,23 +24,16 @@ def resource_image(request, resource):
     image = Image.open(image_path)
     draw = ImageDraw.Draw(image)
 
-    font_size = 200
+    font_size = 150
     font_path = "static/fonts/PatrickHand-Regular.ttf"
     font = ImageFont.truetype(font_path, font_size)
 
     x_offset = 75
-    y_offset = 275
-    radius = 900
+    y_offset = 225
+    radius = 750
     x_center = (image.width - x_offset)/2
     y_center = (image.height - y_offset)/2
     start_angle = (2 * pi) / modulo_number
-
-    draw.text(
-        (x_center, y_center),
-        text="cats",
-        font=font,
-        fill="#000"
-    )
 
     for num in range(0, modulo_number):
 
