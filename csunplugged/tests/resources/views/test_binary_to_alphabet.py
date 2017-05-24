@@ -25,7 +25,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
         response = self.client.get(url)
         self.assertEqual(200, response.status_code)
 
-    def test_binary_to_alphabet_resource_generation_student_a4(self):
+    def test_binary_to_alphabet_resource_generation_student_a4_no_header_text(self):
         resource = self.test_data.create_test_resource(
             "binary-to-alphabet",
             "Binary To Alphabet",
@@ -49,7 +49,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
             'attachment; filename="Resource Binary To Alphabet (student - a4).pdf"'
         )
 
-    def test_binary_to_alphabet_resource_generation_student_letter(self):
+    def test_binary_to_alphabet_resource_generation_student_letter_no_header_text(self):
         resource = self.test_data.create_test_resource(
             "binary-to-alphabet",
             "Binary To Alphabet",
@@ -73,7 +73,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
             'attachment; filename="Resource Binary To Alphabet (student - letter).pdf"'
         )
 
-    def test_binary_to_alphabet_resource_generation_teacher_a4(self):
+    def test_binary_to_alphabet_resource_generation_teacher_a4_no_header_text(self):
         resource = self.test_data.create_test_resource(
             "binary-to-alphabet",
             "Binary To Alphabet",
@@ -97,7 +97,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
             'attachment; filename="Resource Binary To Alphabet (teacher - a4).pdf"'
         )
 
-    def test_binary_to_alphabet_resource_generation_teacher_letter(self):
+    def test_binary_to_alphabet_resource_generation_teacher_letter_no_header_text(self):
         resource = self.test_data.create_test_resource(
             "binary-to-alphabet",
             "Binary To Alphabet",
@@ -112,6 +112,102 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
             "worksheet_version": "teacher",
             "paper_size": "letter",
             "header_text": ""
+        }
+        url += query_string(get_parameters)
+        response = self.client.get(url)
+        self.assertEqual(200, response.status_code)
+        self.assertEqual(
+            response.get("Content-Disposition"),
+            'attachment; filename="Resource Binary To Alphabet (teacher - letter).pdf"'
+        )
+
+    def test_binary_to_alphabet_resource_generation_student_a4_header_text(self):
+        resource = self.test_data.create_test_resource(
+            "binary-to-alphabet",
+            "Binary To Alphabet",
+            "resources/binary-to-alphabet.html",
+            "binary_to_alphabet.py"
+        )
+        kwargs = {
+            "resource_slug": resource.slug,
+        }
+        url = reverse("resources:generate", kwargs=kwargs)
+        get_parameters = {
+            "worksheet_version": "student",
+            "paper_size": "a4",
+            "header_text": "Binary To Alphabet"
+        }
+        url += query_string(get_parameters)
+        response = self.client.get(url)
+        self.assertEqual(200, response.status_code)
+        self.assertEqual(
+            response.get("Content-Disposition"),
+            'attachment; filename="Resource Binary To Alphabet (student - a4).pdf"'
+        )
+
+    def test_binary_to_alphabet_resource_generation_student_letter_header_text(self):
+        resource = self.test_data.create_test_resource(
+            "binary-to-alphabet",
+            "Binary To Alphabet",
+            "resources/binary-to-alphabet.html",
+            "binary_to_alphabet.py"
+        )
+        kwargs = {
+            "resource_slug": resource.slug,
+        }
+        url = reverse("resources:generate", kwargs=kwargs)
+        get_parameters = {
+            "worksheet_version": "student",
+            "paper_size": "letter",
+            "header_text": "Binary To Alphabet"
+        }
+        url += query_string(get_parameters)
+        response = self.client.get(url)
+        self.assertEqual(200, response.status_code)
+        self.assertEqual(
+            response.get("Content-Disposition"),
+            'attachment; filename="Resource Binary To Alphabet (student - letter).pdf"'
+        )
+
+    def test_binary_to_alphabet_resource_generation_teacher_a4_header_text(self):
+        resource = self.test_data.create_test_resource(
+            "binary-to-alphabet",
+            "Binary To Alphabet",
+            "resources/binary-to-alphabet.html",
+            "binary_to_alphabet.py"
+        )
+        kwargs = {
+            "resource_slug": resource.slug,
+        }
+        url = reverse("resources:generate", kwargs=kwargs)
+        get_parameters = {
+            "worksheet_version": "teacher",
+            "paper_size": "a4",
+            "header_text": "Binary To Alphabet"
+        }
+        url += query_string(get_parameters)
+        response = self.client.get(url)
+        self.assertEqual(200, response.status_code)
+        self.assertEqual(
+            response.get("Content-Disposition"),
+            'attachment; filename="Resource Binary To Alphabet (teacher - a4).pdf"'
+        )
+
+    def test_binary_to_alphabet_resource_generation_teacher_letter_header_text(self):
+        resource = self.test_data.create_test_resource(
+            "binary-to-alphabet",
+            "Binary To Alphabet",
+            "resources/binary-to-alphabet.html",
+            "binary_to_alphabet.py"
+        )
+        kwargs = {
+            "resource_slug": resource.slug,
+        }
+        url = reverse("resources:generate", kwargs=kwargs)
+        get_parameters = {
+            "worksheet_version": "teacher",
+            "paper_size": "letter",
+            "header_text": "Binary To Alphabet"
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
