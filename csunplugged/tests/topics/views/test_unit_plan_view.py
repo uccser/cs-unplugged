@@ -61,14 +61,14 @@ class UnitPlanViewTest(BaseTestWithDB):
     def test_unit_plan_view_lessons_context(self):
         topic = self.test_data.create_topic(1)
         unit_plan = self.test_data.create_unit_plan(topic, 1)
-        self.test_data.create_lesson(
+        lesson1 = self.test_data.create_lesson(
             topic,
             unit_plan,
             1,
             5,
             7
         )
-        self.test_data.create_lesson(
+        lesson2 = self.test_data.create_lesson(
             topic,
             unit_plan,
             2,
@@ -82,35 +82,35 @@ class UnitPlanViewTest(BaseTestWithDB):
         url = reverse("topics:unit_plan", kwargs=kwargs)
         response = self.client.get(url)
         self.assertEqual(
-            len(response.context["lessons"]),
-            2
+            len(response.context["grouped_lessons"]),
+            1
         )
-        self.assertQuerysetEqual(
-            response.context["lessons"],
-            [
-                "<Lesson: Lesson 1 (5 to 7)>",
-                "<Lesson: Lesson 2 (5 to 7)>",
-            ]
-        )
+        grouped_lessons = response.context["grouped_lessons"]
+        for (age_range, lessons) in grouped_lessons.items():
+            self.assertEqual(age_range, (5, 7))
+            self.assertEqual(
+                lessons,
+                [lesson1, lesson2]
+            )
 
     def test_curriculum_integration_view_prerequisite_lessons_context_order(self):
         topic = self.test_data.create_topic(1)
         unit_plan = self.test_data.create_unit_plan(topic, 1)
-        self.test_data.create_lesson(
+        lesson1 = self.test_data.create_lesson(
             topic,
             unit_plan,
             1,
             8,
             10
         )
-        self.test_data.create_lesson(
+        lesson2 = self.test_data.create_lesson(
             topic,
             unit_plan,
             2,
             5,
             7
         )
-        self.test_data.create_lesson(
+        lesson3 = self.test_data.create_lesson(
             topic,
             unit_plan,
             1,
@@ -124,17 +124,23 @@ class UnitPlanViewTest(BaseTestWithDB):
         url = reverse("topics:unit_plan", kwargs=kwargs)
         response = self.client.get(url)
         self.assertEqual(
-            len(response.context["lessons"]),
-            3
+            len(response.context["grouped_lessons"]),
+            2
         )
-        self.assertQuerysetEqual(
-            response.context["lessons"],
-            [
-                "<Lesson: Lesson 1 (5 to 7)>",
-                "<Lesson: Lesson 2 (5 to 7)>",
-                "<Lesson: Lesson 1 (8 to 10)>",
-            ]
-        )
+
+        expected_grouped_lessons = [
+            ((5, 7), [lesson3, lesson2]),
+            ((8, 10), [lesson1]),
+        ]
+        grouped_lessons = response.context["grouped_lessons"]
+        i = 0
+        for (age_range, lessons) in grouped_lessons.items():
+            self.assertEqual(age_range, expected_grouped_lessons[i][0])
+            self.assertEqual(
+                lessons,
+                expected_grouped_lessons[i][1]
+            )
+            i += 1
 
     def test_unit_plan_view_templates(self):
         topic = self.test_data.create_topic(1)
@@ -147,6 +153,6 @@ class UnitPlanViewTest(BaseTestWithDB):
         response = self.client.get(url)
         template_found = False
         for template in response.templates:
-            if template.name == "topics/unit_plan.html":
+            if template.name == "topics/unit-plan.html":
                 template_found = True
         self.assertTrue(template_found)
