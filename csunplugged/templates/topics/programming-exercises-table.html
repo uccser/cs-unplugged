@@ -1,0 +1,28 @@
+<table class="table table-responsive table-center-vertical">
+  <thead class="thead-default">
+    <tr>
+      <th class="text-center">Number</th>
+      <th>Name</th>
+      <th class="text-center">Challenge Level</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for programming_exercise in programming_exercises %}
+    <tr class="align-middle">
+      <td class="text-center">
+        {{ programming_exercise.exercise_set_number }}.{{ programming_exercise.exercise_number }}
+      </td>
+      <td>
+        <a href="{% url 'topics:programming_exercise' topic.slug programming_exercise.slug %}">
+          <strong>
+            {{ programming_exercise.name }}
+          </strong>
+        </a>
+      </td>
+      <td class="text-center">
+        {% include "topics/programming-difficulty-badge.html" %}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

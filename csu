@@ -176,7 +176,7 @@ function static_scratch {
 # Collecting static files
 function collect_static {
   printf "\nCollecting static files..."
-  docker-compose exec django /docker_venv/bin/python3 ./manage.py collectstatic --no-input
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py collectstatic --no-input --clear
 }
 
 # Run shell

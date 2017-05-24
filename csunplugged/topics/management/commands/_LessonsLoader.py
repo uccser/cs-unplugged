@@ -81,7 +81,9 @@ class LessonsLoader(BaseLoader):
             else:
                 lesson_duration = None
 
-            heading_tree = convert_heading_tree_to_dict(lesson_content.heading_tree)
+            heading_tree = None
+            if lesson_content.heading_tree:
+                heading_tree = convert_heading_tree_to_dict(lesson_content.heading_tree)
 
             classroom_resources = lesson_structure.get("classroom-resources", None)
             if isinstance(classroom_resources, list):
