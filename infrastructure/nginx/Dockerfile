@@ -14,7 +14,6 @@ RUN apt-get update \
        gnupg2 \
        python \
        build-essential \
-    && curl -sL https://deb.nodesource.com/setup_6.x \
     && curl -sL https://deb.nodesource.com/setup_6.x | bash - \
     && apt-get install --no-install-suggests -y \
        nodejs \
