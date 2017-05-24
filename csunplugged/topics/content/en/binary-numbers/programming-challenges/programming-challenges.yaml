@@ -49,6 +49,9 @@ binary-numbers-one-line:
   difficulty-level: 2
   programming-languages:
     - scratch
+  learning-outcomes:
+    - programming-describe-variables
+    - programming-identify-loop
   extra-challenge: extra-challenge.md
 
 number-cards-display:

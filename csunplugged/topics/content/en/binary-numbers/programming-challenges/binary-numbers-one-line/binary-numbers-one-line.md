@@ -1,20 +1,14 @@
-# Display Binary Numbers In One Line
-
-## Objective:
-
-- Describe how variables store values and how they are used in this program.
-- Identify when to use a loop to repeat a set of instructions.
-- Explain why a join block is required to combine strings.
+# Display binary numbers (in one line of output)
 
 ## Requirement:
 
-Write a program to display numbers 1, 2, 4, 8 and 16 on the screen, all in one line.
+Write a program to display numbers 1, 2, 4, 8 and 16 on the screen, all in
+one line of output.
+You need to use two variables, one for storing the number of dots
+(i.e. 1, 2, 4, 8 and 16) and one to store a the line of output
+(i.e. “1, 2, 4, 8, 16”).
 
-Make variables called:
+## Testing examples:
 
-- `number of dots` to store the number of dots 1, 2, 4, 8, 16 where each number is calculated by multiplying the previous number by 2.
-- `binary cards` to store a set of strings “1, 2, 4, 8, 16,” and displays it as the output.
-
-## Input:
-
-None
+The output will always show the numbers 1, 2, 4, 8 and 16 in one line (there
+is no input).
