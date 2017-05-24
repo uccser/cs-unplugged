@@ -167,6 +167,10 @@ cards-given-number:
   difficulty-level: 2
   programming-languages:
     - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-identify-if-statement
 
 cards-given-number-one-line:
   challenge-set-number: 5
