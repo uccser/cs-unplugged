@@ -1,6 +1,9 @@
 #!/bin/bash
 # Deploy the system to the development website.
 
+# Generate production static files
+./csu dev static_prod
+
 # Generate static PDF resources for deployment.
 ./csu dev makeresources
 

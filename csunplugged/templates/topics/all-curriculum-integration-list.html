@@ -42,7 +42,7 @@
         </td>
         <td>
           {% for area in curriculum_integration.curriculum_areas.all %}
-            {% include "topics/curriculum_area_badge.html" %}
+            {% include "topics/curriculum-area-badge.html" %}
           {% endfor %}
         </td>
         {% if curriculum_integration.has_prerequisite_lessons %}
