@@ -141,6 +141,12 @@ count-5-bw-one-input-using-loop:
   difficulty-level: 2
   programming-languages:
     - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-identify-if-statement
+    - programming-identify-loop
+    - programming-prove-indexing
 
 count-bw-one-input-using-loop:
   challenge-set-number: 4
