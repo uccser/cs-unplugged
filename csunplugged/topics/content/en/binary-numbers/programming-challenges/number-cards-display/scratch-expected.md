@@ -7,7 +7,7 @@ Click on the green flag, enter the inputs provided in the “testing examples”
 ```scratch:split:random
 set [number of dots v] to [1]
 
-set [number of dots v] to ()
+set [number of dots v] to ((number of dots) * (2))
 
 set [number of cards v] to (answer)
 ```
@@ -21,8 +21,6 @@ repeat (number of cards)
 end
 
 say (number of dots) for (1) secs
-
-(number of dots) * (2)
 ```
 
 {panel end}

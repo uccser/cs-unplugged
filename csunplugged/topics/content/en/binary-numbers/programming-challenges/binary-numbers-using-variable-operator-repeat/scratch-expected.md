@@ -14,9 +14,7 @@ end
 
 say (number of dots) for (1) secs
 
-set [number of dots v] to ()
-
-(number of dots) * (2)
+set [number of dots v] to ((number of dots) * (2))
 ```
 
 {panel end}

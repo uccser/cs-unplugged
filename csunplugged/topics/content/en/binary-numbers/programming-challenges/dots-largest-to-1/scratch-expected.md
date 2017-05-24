@@ -9,8 +9,6 @@ when green flag clicked
 
 ask [Enter the largest number of dots on a card:] and wait
 
-(number of dots) / (2)
-
 repeat until <(number of dots) = [1]>
 end
 ```
@@ -18,7 +16,7 @@ end
 ```scratch:split:random
 set [number of dots v] to (answer)
 
-set [number of dots v] to ()
+set [number of dots v] to ((number of dots) / (2))
 ```
 
 ```scratch:split

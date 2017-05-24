@@ -9,17 +9,13 @@ set [number of dots v] to [1]
 
 set [binary cards v] to []
 
-set [binary cards v] to ()
+set [binary cards v] to ((join (binary cards) (join (number of dots) [, ])))
 
-set [number of dots v] to ()
+set [number of dots v] to ((number of dots) * (2))
 ```
 
 ```scratch:split:random
 when green flag clicked
-
-(join (binary cards) (join (number of dots) [, ]))
-
-((number of dots) * (2))
 
 say (binary cards)
 
