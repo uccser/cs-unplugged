@@ -117,6 +117,11 @@ count-5-bw-using-loop:
   difficulty-level: 2
   programming-languages:
     - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-identify-if-statement
+    - programming-identify-loop
 
 count-5-bw-one-input-no-loop:
   challenge-set-number: 4
