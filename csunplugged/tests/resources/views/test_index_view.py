@@ -17,7 +17,7 @@ class IndexViewTest(BaseTestWithDB):
         self.assertFalse(response.context["all_resources"].exists())
 
     def test_resources_index_with_one_resource(self):
-        self.test_data.create_test_resource(
+        self.test_data.create_resource(
             "binary-cards",
             "Binary Cards",
             "resources/binary-cards.html",
@@ -32,13 +32,13 @@ class IndexViewTest(BaseTestWithDB):
         )
 
     def test_resources_index_with_multiple_resources(self):
-        self.test_data.create_test_resource(
+        self.test_data.create_resource(
             "binary-cards",
             "Binary Cards",
             "resources/binary-cards.html",
             "binary_cards.py",
         )
-        self.test_data.create_test_resource(
+        self.test_data.create_resource(
             "sorting-network",
             "Sorting Network",
             "resources/sorting-network.html",

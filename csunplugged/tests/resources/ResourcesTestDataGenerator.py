@@ -6,7 +6,7 @@ from resources.models import Resource
 class ResourcesTestDataGenerator:
     """Class for generating test data for resource tests."""
 
-    def create_test_resource(self, slug, name, webpage_template, generation_view):
+    def create_resource(self, slug, name, webpage_template, generation_view):
         """Create resource object.
 
         Args:
