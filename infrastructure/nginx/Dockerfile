@@ -1,19 +1,37 @@
 FROM nginx:latest
 
+# Populate sources with closest neighbours
+# Resolves issues with failing builds, should be removed in future
+RUN apt-get update \
+    && apt-get install -y netselect-apt --no-install-suggests \
+    && netselect-apt stretch \
+    && mv sources.list /etc/apt/sources.list
+
 # Install Node.js and other dependencies
-RUN apt-get update && \
-    apt-get -y install curl gnupg2 && \
-    curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
-    apt-get -y install python build-essential nodejs
+RUN apt-get update \
+    && apt-get install --no-install-suggests -y \
+       curl \
+       gnupg2 \
+       python \
+       build-essential \
+    && curl -sL https://deb.nodesource.com/setup_6.x \
+    && curl -sL https://deb.nodesource.com/setup_6.x | bash - \
+    && apt-get install --no-install-suggests -y \
+       nodejs \
+    && apt-get remove --purge -y gnupg2 && apt-get -y --purge autoremove \
+    && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /app
-RUN npm install --global gulp-cli
-RUN npm install --global node-gyp
-RUN apt-get update && apt-get install -y \
-      libcairo2-dev \
-      libjpeg-dev \
-      libpango1.0-dev \
-      libgif-dev \
-      g++
+RUN npm install --global gulp-cli node-gyp
+RUN apt-get update \
+    && apt-get install --no-install-suggests -y \
+       libcairo2-dev \
+       libjpeg-dev \
+       libpango1.0-dev \
+       libgif-dev \
+       g++ \
+    && rm -rf /var/lib/apt/lists/*
+
 ADD csunplugged/package.json /app/
 RUN npm install
 ADD ./csunplugged/ /app/
