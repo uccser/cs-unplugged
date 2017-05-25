@@ -29,9 +29,9 @@ class Command(BaseCommand):
             module_path = "resources.views.{}".format(resource_view)
             # Save resource module
             resource_module = importlib.import_module(module_path)
-            valid_options = resource_module.valid_options()
-            valid_option_keys = sorted(valid_options)
-            combinations = [dict(zip(valid_option_keys, product)) for product in itertools.product(*(valid_options[valid_option_key] for valid_option_key in valid_option_keys))]  # noqa: E501
+            parameter_options = resource_module.valid_options()
+            parameter_option_keys = sorted(parameter_options)
+            combinations = [dict(zip(parameter_option_keys, product)) for product in itertools.product(*(parameter_options[parameter_option_key] for parameter_option_key in parameter_option_keys))]  # noqa: E501
             # Create PDF for all possible combinations
             for combination in combinations:
                 request = HttpRequest()

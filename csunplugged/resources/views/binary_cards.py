@@ -30,8 +30,9 @@ def resource_image(request, resource):
     ]
 
     # Retrieve parameters
-    display_numbers = retrieve_query_parameter(request, "display_numbers", ["yes", "no"])
-    black_back = retrieve_query_parameter(request, "black_back", ["yes", "no"])
+    parameter_options = valid_options()
+    display_numbers = retrieve_query_parameter(request, "display_numbers", parameter_options["display_numbers"])
+    black_back = retrieve_query_parameter(request, "black_back", parameter_options["black_back"])
 
     if display_numbers == "yes":
         font_path = "static/fonts/PatrickHand-Regular.ttf"
@@ -105,9 +106,8 @@ def valid_options():
     Returns:
         All valid options (dict).
     """
-    valid_options = {
+    return {
         "display_numbers": ["yes", "no"],
         "black_back": ["yes", "no"],
         "paper_size": ["a4", "letter"],
     }
-    return valid_options
