@@ -7,6 +7,7 @@ from django.http import Http404, HttpResponse
 from resources.models import Resource
 from .generate_resource_pdf import generate_resource_pdf
 import importlib
+from utils.group_lessons_by_age import group_lessons_by_age
 
 RESPONSE_CONTENT_DISPOSITION = 'attachment; filename="{filename}.pdf"'
 
@@ -36,7 +37,7 @@ def resource(request, resource_slug):
     context = dict()
     context["resource"] = resource
     context["debug"] = settings.DEBUG
-    context["lessons"] = resource.lesson_generated_resources.all()
+    context["grouped_lessons"] = group_lessons_by_age(resource.lesson_generated_resources.all())
     if resource.thumbnail_static_path:
         context["thumbnail"] = resource.thumbnail_static_path
     return render(request, resource.webpage_template, context)

@@ -53,16 +53,17 @@ class ProgrammingExercisesStructureLoader(BaseLoader):
             if language_data is None:
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
-                    ["name"],
+                    ["name", "number"],
                     "Programming Challenge Language"
                 )
 
             # Check for required fields
             language_name = language_data.get("name", None)
-            if language_name is None:
+            language_number = language_data.get("number", None)
+            if language_name is None or language_number is None:
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
-                    ["name"],
+                    ["name", "number"],
                     "Programming Challenge Language"
                 )
 
@@ -75,6 +76,7 @@ class ProgrammingExercisesStructureLoader(BaseLoader):
             new_language = ProgrammingExerciseLanguage(
                 slug=language,
                 name=language_name,
+                number=language_number,
                 icon=language_icon
             )
 

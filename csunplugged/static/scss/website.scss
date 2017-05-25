@@ -67,64 +67,96 @@ $rounded-corner-radius: 0.5rem;
     color: $white;
   }
 }
-.card-deck {
+
+.link-box-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+    }
+    align-content: stretch;
+    align-items: stretch;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.link-box {
+  border: 0.2em solid $blue;
+  border-radius: $border-radius;
+  overflow: hidden;
+  padding: ($spacer-y * .5) ($spacer-x * .5);
+  margin-bottom: $spacer-y;
   width: 100%;
-}
-
-.card {
-  padding: 0.3rem;
-  border-color: #ababab;
-  margin-bottom: 15px !important;
-  .card-title {
-    margin: 0.2rem;
+  transition: 0.1s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  @include media-breakpoint-up(md) {
+    width: 32%;
   }
-  .card-img {
-    height: 100px;
-    object-fit: contain;
+  img {
+    max-height: 8rem;
   }
-}
-
-@mixin card-link-variant($color) {
-  border-color: darken($color, 10%);
-  background-color: $color;
-  .card-title {
-    color: $white;
+  h2,
+  h3 {
+    margin-bottom: 0;
+    text-align: center;
+    color: $gray;
   }
   &:hover {
-    background-color: lighten($color, 30%);
-    .card-title {
-      color: darken($color, 10%);
-    }
+    background-color: rgba($blue, 0.1);
+  }
+  &:hover,
+  &:active,
+  &:visited,
+  &:focus {
     text-decoration: none;
   }
 }
 
-.card-red {
-  @include card-link-variant($red);
+.link-box-w-100 {
+  width: 100% !important;
 }
-.card-orange {
-  @include card-link-variant($orange);
+
+@mixin link-box-colour-variant($color) {
+  background-color: $color !important;
+  border: 0.2em solid darken($color, 10%) !important;
+  .link-box-title {
+    color: $white !important;
+  }
+  &:hover {
+    background-color: darken($color, 3%) !important;
+  }
 }
-.card-yellow {
-  @include card-link-variant($yellow);
+
+.link-box-red {
+  @include link-box-colour-variant($red);
 }
-.card-green {
-  @include card-link-variant($green);
+.link-box-orange {
+  @include link-box-colour-variant($orange);
 }
-.card-light-blue {
-  @include card-link-variant($light-blue);
+.link-box-yellow {
+  @include link-box-colour-variant($yellow);
 }
-.card-blue {
-  @include card-link-variant($blue);
+.link-box-green {
+  @include link-box-colour-variant($green);
 }
-.card-teal {
-  @include card-link-variant($teal);
+.link-box-light-blue {
+  @include link-box-colour-variant($light-blue);
 }
-.card-pink {
-  @include card-link-variant($pink);
+.link-box-blue {
+  @include link-box-colour-variant($blue);
 }
-.card-purple {
-  @include card-link-variant($purple);
+.link-box-teal {
+  @include link-box-colour-variant($teal);
+}
+.link-box-pink {
+  @include link-box-colour-variant($pink);
+}
+.link-box-purple {
+  @include link-box-colour-variant($purple);
 }
 
 .navbar {
@@ -155,6 +187,9 @@ footer {
   color: rgba($white, 0.8);
   a {
     color: $white;
+    @include hover-focus {
+      color: $white;
+    }
   }
 }
 
@@ -265,4 +300,24 @@ body {
 #scrollspy-table-of-contents .nav-link {
   font-size: 0.9rem;
   padding: ($spacer-y * .25) $spacer-x;
+}
+
+.border-thin {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.background-csfg {
+  background-color: #2b387c;
+}
+
+@include media-breakpoint-down("sm") {
+  .navbar-toggleable-sm > .container {
+    width: 100%;
+  }
+}
+
+.table-text-emphasis {
+  font-weight: bold;
+  font-size: 1.4rem;
 }

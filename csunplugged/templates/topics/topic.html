@@ -1,4 +1,4 @@
-{% extends "base_columns.html" %}
+{% extends "columns.html" %}
 
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
@@ -16,99 +16,31 @@
 {% block left_column_content %}
   {% render_html_field topic.content %}
 
+  <h2 id="units" class="heading-underline">Unit Plans</h2>
   {% for unit_plan in unit_plans %}
-    <div class="boxed-text">
-      <div class="boxed-text-content">
-        <h2 id="{{ unit_plan.slug }}">
-          <a href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">
-            {{ unit_plan.name }}
-          </a>
-        </h2>
+    <h1 id="{{ unit_plan.slug }}" class="text-center mb-3">
+      <a href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">
+        {{ unit_plan.name }}
+      </a>
+    </h1>
 
-        {% if unit_plan.unit_plan_lessons %}
-          {% for age_range, lessons in unit_plan.lessons.items %}
-            <h3>
-              Lessons for Ages {{ age_range.0 }} to {{ age_range.1 }}
-            </h3>
-
-            <ul>
-              {% for lesson in lessons %}
-                <li>
-                  <a href="{% url 'topics:lesson' topic.slug unit_plan.slug lesson.slug %}">
-                    <strong>Lesson {{ lesson.number }}:</strong> {{ lesson.name }}
-                  </a>
-                  {% if lesson.has_programming_exercises %}
-                    <ul>
-                      <li>
-                        <a href="{% url 'topics:programming_exercises_list' topic.slug unit_plan.slug lesson.slug %}">
-                          View Lesson Programming Challenges
-                        </a>
-                      </li>
-                    </ul>
-                  {% endif %}
-                </li>
-              {% endfor %}
-            </ul>
-          {% endfor %}
-        {% endif %}
-      </div>
-    </div>
+    {% if unit_plan.grouped_lessons %}
+      {% with grouped_lessons=unit_plan.grouped_lessons %}
+        {% include "topics/lessons-table.html" %}
+      {% endwith %}
+    {% endif %}
   {% endfor %}
 
   <h2 id="integrations" class="heading-underline">Curriculum Integrations</h2>
   {% if curriculum_integrations %}
-    <table class="table table-responsive table-center-vertical">
-      <thead class="thead-default">
-        <tr>
-          <th>Activity</th>
-          <th>Curriculum Areas</th>
-          <th>Prerequisite Lessons?</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for curriculum_integration in curriculum_integrations %}
-        <tr class="align-middle">
-          <td>
-            <a href="{% url 'topics:integration' curriculum_integration.topic.slug curriculum_integration.slug %}">
-              <strong>
-                {{ curriculum_integration.name }}
-              </strong>
-            </a>
-          </td>
-          <td>
-            {% for area in curriculum_integration.curriculum_areas.all %}
-              {% include "topics/curriculum_area_badge.html" %}
-            {% endfor %}
-          </td>
-          {% if curriculum_integration.has_prerequisite_lessons %}
-            <td class="text-center table-success-cell">
-              Yes
-          {% else %}
-            <td class="text-center">
-              No
-          {% endif %}
-            </td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+    {% include "topics/curriculum-integrations-table.html" %}
   {% else %}
     <p>No curriculum integrations for {{ topic }}.</p>
   {% endif %}
 
   <h2 id="programming" class="heading-underline">Programming Challenges</h2>
   {% if programming_exercises %}
-    <ul>
-      {% for programming_exercise in programming_exercises %}
-        <li>
-          <a href="{% url 'topics:programming_exercise' topic.slug programming_exercise.slug %}">
-            {{ programming_exercise.exercise_set_number }}.{{ programming_exercise.exercise_number }}
-            {{ programming_exercise.name }}
-          </a>
-          {% include "topics/programming_difficulty_badge.html" %}
-        </li>
-      {% endfor %}
-    </ul>
+    {% include "topics/programming-exercises-table.html" %}
   {% else %}
     <p>No programming challenges for {{ topic }}.</p>
   {% endif %}
@@ -130,11 +62,9 @@
       <li class="nav-item">
         <a class="nav-link" href="#{{ topic.slug }}">{{ topic.name }}</a>
       </li>
-      {% for unit_plan in unit_plans %}
-        <li class="nav-item">
-          <a class="nav-link" href="#{{ unit_plan.slug }}">{{ unit_plan.name }}</a>
-        </li>
-      {% endfor %}
+      <li class="nav-item">
+        <a class="nav-link" href="#unit-plans">Unit plans</a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="#integrations">Curriculum integrations</a>
       </li>
@@ -151,5 +81,5 @@
 {% endblock right_column_content %}
 
 {% block scripts %}
-  {% include "generic/import_stick_state_js.html" %}
+  {% include "generic/import-stick-state-js.html" %}
 {% endblock scripts %}

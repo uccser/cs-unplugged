@@ -14,17 +14,8 @@
 {% endblock page_heading %}
 
 {% block content %}
-  {% if all_programming_exercises %}
-    <ul>
-      {% for programming_exercise in all_programming_exercises %}
-        <li>
-          <a href="{% url 'topics:programming_exercise' topic.slug programming_exercise.slug %}">
-            {{ programming_exercise.exercise_set_number }}.{{ programming_exercise.exercise_number }}
-            {{ programming_exercise.name }}
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
+  {% if programming_exercises %}
+    {% include "topics/programming-exercises-table.html" %}
   {% else %}
     <p>No programming challenges for {{ topic }}.</p>
   {% endif %}

@@ -1,4 +1,4 @@
-{% extends "base_columns.html" %}
+{% extends "columns.html" %}
 
 {% load static %}
 {% load render_html_field %}
@@ -11,14 +11,13 @@
   {% breadcrumb integration.name "topics:integration" topic.slug integration.slug %}
 {% endblock breadcrumbs %}
 
-
 {% block page_heading %}
   <h1>{{ integration.name }}</h1>
 
   {% if integration_curriculum_areas %}
     <p>
     {% for area in integration_curriculum_areas %}
-      {% include "topics/curriculum_area_badge.html" %}
+      {% include "topics/curriculum-area-badge.html" %}
     {% endfor %}
     </p>
   {% endif %}

@@ -5,7 +5,7 @@ from .Error import Error
 ERROR_MESSAGE = """
 The file contains no content.
 
-Note: A file containting a title and no other content is
+Note: A file containing a title and no other content is
 also considered to be empty.
 """
 

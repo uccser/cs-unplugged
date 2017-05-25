@@ -13,7 +13,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
         self.language = "en"
 
     def test_binary_windows_resource_form_view(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-windows",
             "Binary Windows",
             "resources/binary-windows.html",
@@ -27,7 +27,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
         self.assertEqual(200, response.status_code)
 
     def test_binary_windows_resource_generation_valid_configurations(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-windows",
             "Binary Windows",
             "resources/binary-windows.html",
@@ -70,7 +70,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
             print("ok")
 
     def test_binary_windows_resource_generation_missing_dot_count_parameter(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-windows",
             "Binary Windows",
             "resources/binary-windows.html",
@@ -91,7 +91,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
         self.assertEqual(404, response.status_code)
 
     def test_binary_windows_resource_generation_missing_number_bits_parameter(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-windows",
             "Binary Windows",
             "resources/binary-windows.html",
@@ -112,7 +112,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
         self.assertEqual(404, response.status_code)
 
     def test_binary_windows_resource_generation_missing_value_type_parameter(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-windows",
             "Binary Windows",
             "resources/binary-windows.html",
@@ -133,7 +133,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
         self.assertEqual(404, response.status_code)
 
     def test_binary_windows_resource_generation_missing_paper_size_parameter(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-windows",
             "Binary Windows",
             "resources/binary-windows.html",
@@ -154,7 +154,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
         self.assertEqual(404, response.status_code)
 
     def test_binary_windows_resource_generation_missing_header_text_parameter(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-windows",
             "Binary Windows",
             "resources/binary-windows.html",
