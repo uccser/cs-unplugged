@@ -9,8 +9,8 @@ def resource_image(request, resource):
     """Create a image for Binary Cards resource.
 
     Args:
-        request: HTTP request object.
-        resource: Object of resource data.
+        request: HTTP request object (QueryDict).
+        resource: Object of resource data (Resource).
 
     Returns:
         A list of Pillow image objects.
@@ -31,8 +31,8 @@ def resource_image(request, resource):
     x_offset = 75
     y_offset = 225
     radius = 750
-    x_center = (image.width - x_offset)/2
-    y_center = (image.height - y_offset)/2
+    x_center = (image.width - x_offset) / 2
+    y_center = (image.height - y_offset) / 2
     start_angle = (2 * pi) / modulo_number
 
     for num in range(0, modulo_number):
@@ -60,17 +60,16 @@ def subtitle(request, resource):
     also on the resource image.
 
     Args:
-        request: HTTP request object
-        resource: Object of resource data.
+        request: HTTP request object (QueryDict).
+        resource: Object of resource data (Resource).
 
     Returns:
-        text for subtitle (string)
+        Text for subtitle (str).
     """
-    text = "{} - {}".format(
+    return "{} - {}".format(
         retrieve_query_parameter(request, "modulo_number"),
         retrieve_query_parameter(request, "paper_size")
     )
-    return text
 
 
 def valid_options():

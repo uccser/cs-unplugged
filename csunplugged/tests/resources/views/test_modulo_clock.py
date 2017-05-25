@@ -14,7 +14,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
         self.language = "en"
 
     def test_modulo_clock_resource_form_view(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
@@ -28,7 +28,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
         self.assertEqual(200, response.status_code)
 
     def test_modulo_clock_resource_generation_2_a4_no_header_text(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
@@ -53,7 +53,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
         )
 
     def test_modulo_clock_resource_generation_2_letter_no_header_text(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
@@ -78,7 +78,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
         )
 
     def test_modulo_clock_resource_generation_10_a4_no_header_text(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
@@ -103,7 +103,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
         )
 
     def test_modulo_clock_resource_generation_10_letter_no_header_text(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
@@ -128,7 +128,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
         )
 
     def test_modulo_clock_resource_generation_2_a4_header_text(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
@@ -153,7 +153,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
         )
 
     def test_modulo_clock_resource_generation_2_letter_header_text(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
@@ -178,7 +178,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
         )
 
     def test_modulo_clock_resource_generation_10_a4_header_text(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
@@ -203,7 +203,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
         )
 
     def test_modulo_clock_resource_generation_10_letter_header_text(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
@@ -228,7 +228,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
         )
 
     def test_modulo_clock_resource_generation_missing_modulo_number_parameter(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
@@ -247,7 +247,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
         self.assertEqual(404, response.status_code)
 
     def test_modulo_clock_resource_generation_missing_paper_size_parameter(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
@@ -266,7 +266,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
         self.assertEqual(404, response.status_code)
 
     def test_modulo_clock_resource_generation_missing_header_text_parameter(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
