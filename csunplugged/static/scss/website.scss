@@ -6,14 +6,11 @@
 $body-space-from-top: 72px;
 
 img {
-  &.programming-challenge-language-icon {
-    height: 3rem;
-  }
   &.content-image {
     max-height: 10em;
   }
   &.inline-image {
-    max-height: 5rem;
+    max-height: 3rem;
   }
 }
 
@@ -215,6 +212,16 @@ footer {
   margin-left: 1em;
 }
 
+@mixin detail-colour-variant($color) {
+  > summary {
+    background-color: hsl(hue($color), saturation($color), 90%) !important;
+    color: $color !important;
+    .inline-image {
+      margin: 0.2rem 0.2rem 0.2rem auto;
+    }
+  }
+}
+
 details {
   @extend .boxed-text;
   overflow: hidden;
@@ -225,9 +232,29 @@ details {
     cursor: pointer;
     font-size: 1.1em;
     padding: ($spacer-y * .25) ($spacer-x * .25) ($spacer-y * .25) $spacer-x;
+    display: flex;
+    align-items: center;
   }
   summary:hover {
     background-color: darken($gray-lighter, 10%);
+  }
+  &.panel-ct-abstraction {
+    @include detail-colour-variant(#E30613);
+  }
+  &.panel-ct-algorithm {
+    @include detail-colour-variant(#0B983A);
+  }
+  &.panel-ct-decomposition {
+    @include detail-colour-variant(darken(#FFDD0E, 10%));
+  }
+  &.panel-ct-evaluation {
+    @include detail-colour-variant(#0F70B7);
+  }
+  &.panel-ct-logic {
+    @include detail-colour-variant(#EA5B0C);
+  }
+  &.panel-ct-pattern {
+    @include detail-colour-variant(#82358C);
   }
 }
 

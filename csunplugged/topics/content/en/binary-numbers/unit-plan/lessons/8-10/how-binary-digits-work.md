@@ -239,7 +239,7 @@ This is sometimes called the fencepost problem (the number of fence posts is one
 
 ## Computational Thinking Connections
 
-{panel type="ct-algorithmic-thinking" title="Algorithmic thinking" expanded="true"}
+{panel type="ct-algorithm" title="Algorithmic thinking" expanded="true"}
 
 We used an algorithm in this lesson  to convert a decimal number to a binary one.
 This is an algorithm because it is a step-by-step process that will always give the right solution for any input you give it as long as the process is followed exactly.
@@ -298,7 +298,7 @@ Which students recognise that it is important to start with the leftmost card an
 
 {panel end}
 
-{panel type="ct-generalising" title="Generalising and patterns" expanded="true"}
+{panel type="ct-pattern" title="Generalising and patterns" expanded="true"}
 
 Recognising patterns in the way the binary number system works helps give us a deeper understanding of the concepts involved, and assists us in generalising these concepts and patterns so that we can apply them to other problems.
 
