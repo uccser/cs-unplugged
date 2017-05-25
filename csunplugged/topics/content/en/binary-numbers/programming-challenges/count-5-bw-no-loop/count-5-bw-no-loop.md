@@ -1,25 +1,18 @@
-# Counting 5 black and white cards (without a loop)
+# Count dots on 5 black and white cards (without a loop)
 
-## Objective
+## Requirement:
 
-- Explain what you need to consider if you are asking for input from the end user.
-- Describe how variables store values and how they are used in this program.
-- Identify when to use an if statement to check a set of conditions.
+Write a program that asks the user to enter 5 black and white cards
+representing bits ('B' for black and 'W' for white which are entered one at a
+time) and displays the total number of dots as the output.
 
-## Requirement
+## Testing examples:
 
-Write a program that asks the user to enter 5 black and white cards representing bits ('B' for black and 'W' for white which are entered one at a time) and displays the total number of dots as the output.
+Your program should display the outputs shown in this table for the given
+inputs provided:
 
-Make a variable called `total number of dots` and set it to 0.
-Add the corresponding number of dots (16 for the first input, 8 for the second input and so on) to the `total number of dots` every time the end user enters ‘W’ as the input.
-You would need to use 5 IF blocks for this challenge.
-
-## Input
-
-BWBBW
-
-## Output
-
-9
-
-When the check mark button is clicked or Enter key is pressed you should see the following output:
+| Input                 | Output |
+|-----------------------|--------|
+| B<br>W<br>B<br>B<br>W | 9      |
+| B<br>B<br>B<br>B<br>B | 0      |
+| W<br>W<br>W<br>W<br>W | 31     |
