@@ -1,14 +1,30 @@
-- Use the `SET` block to set the value of your new variable and use the `CHANGE` block to change your variable by a specified amount.
-  Use the add or subtract operations under `Operators` script to add or subtract from the value of your variable.
-  Use the multiplication operation to multiply the value of your variable by 2.
-- You can access a letter at the specified position in a string by using the `LETTER OF` block under `Operators` script.
-  For example:
-  or .
-  In this challenge you need to access all the letters in user’s input and check to see if each of them is equal to B (black) or W (white).
-- You can find how many letters a string has by using the `LENGTH OF` block unders `Operators` script.
-  For example:
- 
-- Use the `REPEAT` block to run the blocks inside a specified number of times.
-  In this challenge you need to repeat the blocks as many times as the number of letters in user’s input.
-- The `IF` block checks if the condition is true and then runs the blocks inside of the `IF` block.
-  In this challenge you need to check if each letter of the input is equal to ‘W’ or “B’.
+-   Make variables called:
+
+    -   “total number of dots” and set its value to 0.
+    -   “number of dots” and set its value to 1.
+    -   “cards” and set its value to the string entered as the input.
+        Check each letter of the input string “cards” (use a loop to iterate
+        the number of letters in the input) starting from the last letter.
+        If it’s ‘W’ add the corresponding number of dots (1 for the last
+        letter, 2 for the second to last letter and so on) to the “total
+        number of dots”.
+        Display the “total number of dots” as the output.
+    -   “index” and set its value to the number of letters in the input.
+        Use this variable to access a letter at the “index” position in the
+        string.
+
+-   You can access a letter at the specified position in a string by using
+    the `scratch:letter (1) of [world]` block under “Operators”. For example:
+
+{image file-path="img/programming/scratch-letter-in-world-example.gif"}
+
+-   In this challenge you need to access all the letters in user’s input and
+    check to see if each of them is equal to B (black) or W (white).
+
+-   You can find how many letters a string has by using the
+    `scratch:length of [world]` block unders “Operators”.
+
+-   The `scratch: if <> then` block checks if the condition is true and then
+    runs the blocks inside of the IF block.
+    In this challenge you need to check if each letter of the input is equal
+    to ‘W’ or “B’.

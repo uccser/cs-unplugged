@@ -1,16 +1,14 @@
 # Display Binary Numbers (using variables as an operator)
 
-## Objective:
-
-- Explain why programming has to have exact sequencing of code.
-- Outline how storing values in a variable is updated because of what you coded.
-
 ## Requirement:
 
-Write a program to display numbers 1, 2, 4, 8 and 16 on the screen one at a time for 1 second each.
+Write a program to display numbers 1, 2, 4, 8 and 16 on the screen one at a
+time for 1 second each.
+This is similar to the previous challenge, but instead of storing a number
+directly into the variable, you should double the value in the variable each
+time.
+You need to use an operator (for multiplying 2 numbers) for this challenge.
 
-Make a variable called `number of dots` and change its value by using an operator (multiplying it by 2 before displaying it on the screen each time). Notice in this program as you are multiplying the variable `number of dots` by 2 this variable has been assigned to a number.
+## Testing examples:
 
-## Input:
-
-None
+The output will always show the numbers 1, 2, 4, 8 and 16 (there is no input).
