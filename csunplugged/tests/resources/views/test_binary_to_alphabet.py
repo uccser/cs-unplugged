@@ -12,7 +12,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
         self.language = "en"
 
     def test_binary_to_alphabet_resource_form_view(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-to-alphabet",
             "Binary To Alphabet",
             "resources/binary-to-alphabet.html",
@@ -26,7 +26,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
         self.assertEqual(200, response.status_code)
 
     def test_binary_to_alphabet_resource_generation_student_a4_no_header_text(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-to-alphabet",
             "Binary To Alphabet",
             "resources/binary-to-alphabet.html",
@@ -50,7 +50,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
         )
 
     def test_binary_to_alphabet_resource_generation_student_letter_no_header_text(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-to-alphabet",
             "Binary To Alphabet",
             "resources/binary-to-alphabet.html",
@@ -74,7 +74,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
         )
 
     def test_binary_to_alphabet_resource_generation_teacher_a4_no_header_text(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-to-alphabet",
             "Binary To Alphabet",
             "resources/binary-to-alphabet.html",
@@ -98,7 +98,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
         )
 
     def test_binary_to_alphabet_resource_generation_teacher_letter_no_header_text(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-to-alphabet",
             "Binary To Alphabet",
             "resources/binary-to-alphabet.html",
@@ -122,7 +122,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
         )
 
     def test_binary_to_alphabet_resource_generation_student_a4_header_text(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-to-alphabet",
             "Binary To Alphabet",
             "resources/binary-to-alphabet.html",
@@ -146,7 +146,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
         )
 
     def test_binary_to_alphabet_resource_generation_student_letter_header_text(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-to-alphabet",
             "Binary To Alphabet",
             "resources/binary-to-alphabet.html",
@@ -170,7 +170,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
         )
 
     def test_binary_to_alphabet_resource_generation_teacher_a4_header_text(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-to-alphabet",
             "Binary To Alphabet",
             "resources/binary-to-alphabet.html",
@@ -194,7 +194,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
         )
 
     def test_binary_to_alphabet_resource_generation_teacher_letter_header_text(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-to-alphabet",
             "Binary To Alphabet",
             "resources/binary-to-alphabet.html",
@@ -218,7 +218,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
         )
 
     def test_binary_to_alphabet_resource_generation_missing_header_text_parameter(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-to-alphabet",
             "Binary To Alphabet",
             "resources/binary-to-alphabet.html",
@@ -241,7 +241,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
         )
 
     def test_binary_to_alphabet_resource_generation_missing_worksheet_version_parameter(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-to-alphabet",
             "Binary To Alphabet",
             "resources/binary-to-alphabet.html",
@@ -260,7 +260,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
         self.assertEqual(404, response.status_code)
 
     def test_binary_to_alphabet_resource_generation_missing_paper_size_parameter(self):
-        resource = self.test_data.create_test_resource(
+        resource = self.test_data.create_resource(
             "binary-to-alphabet",
             "Binary To Alphabet",
             "resources/binary-to-alphabet.html",
