@@ -5,6 +5,7 @@ from utils.BaseLoader import BaseLoader
 from utils.convert_heading_tree_to_dict import convert_heading_tree_to_dict
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
+from utils.errors.InvalidConfigValueError import InvalidConfigValueError
 
 from topics.models import (
     ProgrammingExercise,
@@ -80,7 +81,31 @@ class LessonsLoader(BaseLoader):
             else:
                 lesson_duration = None
 
-            heading_tree = convert_heading_tree_to_dict(lesson_content.heading_tree)
+            heading_tree = None
+            if lesson_content.heading_tree:
+                heading_tree = convert_heading_tree_to_dict(lesson_content.heading_tree)
+
+            classroom_resources = lesson_structure.get("classroom-resources", None)
+            if isinstance(classroom_resources, list):
+                for classroom_resource in classroom_resources:
+                    if not isinstance(classroom_resource, str):
+                        raise InvalidConfigValueError(
+                            self.unit_plan_structure_file_path,
+                            "classroom-resources list item",
+                            "A string describing the classroom resource."
+                        )
+                    elif len(classroom_resource) > 100:
+                        raise InvalidConfigValueError(
+                            self.unit_plan_structure_file_path,
+                            "classroom-resources list item",
+                            "Item description must be less than 100 characters."
+                        )
+            elif classroom_resources is not None:
+                raise InvalidConfigValueError(
+                    self.unit_plan_structure_file_path,
+                    "classroom-resources",
+                    "List of strings."
+                )
 
             lesson = self.topic.topic_lessons.create(
                 unit_plan=self.unit_plan,
@@ -92,12 +117,13 @@ class LessonsLoader(BaseLoader):
                 min_age=lesson_min_age,
                 max_age=lesson_max_age,
                 heading_tree=heading_tree,
+                classroom_resources=classroom_resources,
             )
             lesson.save()
 
             # Add programming exercises
-            if "programming-exercises" in lesson_structure:
-                programming_exercise_slugs = lesson_structure["programming-exercises"]
+            if "programming-challenges" in lesson_structure:
+                programming_exercise_slugs = lesson_structure["programming-challenges"]
                 if programming_exercise_slugs is not None:
                     for programming_exercise_slug in programming_exercise_slugs:
                         try:
@@ -110,7 +136,7 @@ class LessonsLoader(BaseLoader):
                             raise KeyNotFoundError(
                                 self.unit_plan_structure_file_path,
                                 programming_exercise_slug,
-                                "Programming Exercises"
+                                "Programming Challenges"
                             )
 
             # Add learning outcomes
@@ -151,19 +177,19 @@ class LessonsLoader(BaseLoader):
                                 resource_slug,
                                 "Resources"
                             )
-                    resource_description = resource_data.get("description", None)
-                    if resource_description is None:
-                        raise MissingRequiredFieldError(
-                            self.unit_plan_structure_file_path,
-                            ["description"],
-                            "Generated Resource"
-                        )
+                        resource_description = resource_data.get("description", None)
+                        if resource_description is None:
+                            raise MissingRequiredFieldError(
+                                self.unit_plan_structure_file_path,
+                                ["description"],
+                                "Generated Resource"
+                            )
 
-                    relationship = ConnectedGeneratedResource(
-                        resource=resource,
-                        lesson=lesson,
-                        description=resource_description
-                    )
-                    relationship.save()
+                        relationship = ConnectedGeneratedResource(
+                            resource=resource,
+                            lesson=lesson,
+                            description=resource_description
+                        )
+                        relationship.save()
 
             self.log("Added Lesson: {}".format(lesson.__str__()), 2)

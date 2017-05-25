@@ -1,66 +1,113 @@
-{% extends "resources/index.html" %}
+{% extends "columns.html" %}
 
 {% load django_bootstrap_breadcrumbs %}
 
 {% block breadcrumbs %}
-  {{ block.super }}
+  {% breadcrumb "Home" "/" %}
+  {% breadcrumb "Resources" "resources:index" %}
   {% breadcrumb resource.name "resources:resource" resource.slug %}
 {% endblock breadcrumbs %}
 
-{% block body_container %}
-  <div class="row">
-    <div class="col-12">
-      <h1>{% block name %}{% endblock name %}</h1>
-      {% block description %}
+{% block page_heading %}
+  <h1>{{ resource.name }}</h1>
 
-      {% endblock description %}
-    </div>
-    <div class="col-12 col-sm-8">
-      <h2>Create Resource</h2>
+  {% block description %}
+  {% endblock description %}
+{% endblock page_heading %}
 
-      <form action="{% url 'resources:generate' resource.slug %}" method="get">
-        {% block generation_form %}
+{% block left_column_content %}
+  <h2>Create Resource</h2>
 
-        {% endblock generation_form %}
+  <form action="{% url 'resources:generate' resource.slug %}" method="get">
+    {% block generation_form %}
+    {% endblock generation_form %}
 
-        <fieldset>
-          <legend>Paper Size</legend>
-          <input type="radio" name="paper_size" id="size_a4" value="a4" checked="checked">
-          <label for="size_a4">A4</label>
-          <br>
-          <input type="radio" name="paper_size" id="size_letter" value="letter">
-          <label for="size_letter">US Letter</label>
-        </fieldset>
+    <fieldset>
+      <legend>Paper Size</legend>
+      <input type="radio" name="paper_size" id="size_a4" value="a4" checked="checked">
+      <label for="size_a4">A4</label>
+      <br>
+      <input type="radio" name="paper_size" id="size_letter" value="letter">
+      <label for="size_letter">US Letter</label>
+    </fieldset>
 
+    {% if debug %}
+      <hr>
+      <h3>Local Generation Only</h3>
+
+      <fieldset>
+        <legend>Header Text</legend>
+        <input type="text" name="header_text" placeholder="Example School: Room Four" class="long-text-field">
+      </fieldset>
+
+      {% if resource.copies %}
         <fieldset>
           <legend>Number of Copies</legend>
           <input type="number" name="copies" value=1 min=1 max=50>
         </fieldset>
-
-        <fieldset>
-          <legend>Header Text</legend>
-          <input type="text" name="header_text" placeholder="Example School: Room Four" class="long-text-field">
-        </fieldset>
-
-        <input type="submit" value="Generate Resource" />
-      </form>
-    </div>
-    <div class="col-12 col-sm-4">
-      {% if thumbnail %}
-        <h2>Preview</h2>
-        {% load static %}
-        <img class="img-thumbnail" src="{% static thumbnail %}">
       {% endif %}
-    </div>
-    {% if lessons %}
-    <div class="col-12">
-        <h2>Related Lessons</h2>
-        {% for lesson in lessons %}
-          <p>
-            <a href="{% url 'topics:lesson' lesson.topic.slug lesson.unit_plan.slug lesson.slug %}" class="btn btn-outline-danger">{{ lesson.topic.name }}: {{ lesson.name }}</a>
-          </p>
-        {% endfor %}
-    </div>
+
+      <hr>
+      <input type="submit" value="Generate Resource" class="mb-3" />
+    {% else %}
+      {% if resource.copies %}
+      <div class="alert alert-info" role="alert">
+        The download of this resource includes 30 unique copies.
+      </div>
+      {% endif %}
+
+      <input type="submit" value="Download Resource" class="mb-3"/>
     {% endif %}
-  </div>
-{% endblock body_container %}
+  </form>
+{% endblock left_column_content %}
+
+{% block right_column_content %}
+  {% if thumbnail %}
+    <h2>Example</h2>
+    {% load static %}
+    <img class="img-thumbnail" src="{% static thumbnail %}">
+  {% endif %}
+{% endblock right_column_content %}
+
+{% block end_content %}
+  {% if grouped_lessons %}
+    <h2>Related Lessons</h2>
+    {% for age_range, lessons in grouped_lessons.items %}
+      <table class="table table-responsive table-center-vertical">
+        <thead class="thead-default">
+          <tr>
+            <th>Topic</th>
+            <th class="text-center">Ages</th>
+            <th class="text-center">Number</th>
+            <th>Lesson</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for lesson in lessons %}
+            <tr class="align-middle">
+              {% if forloop.first %}
+                <td rowspan="{{ lessons|length }}" class="text-center px-0">
+                  {{ lesson.topic.name }}
+                </td>
+                <td rowspan="{{ lessons|length }}" class="text-center px-0">
+                  <span class="table-text-emphasis">{{ age_range.0 }}</span><br>
+                  to<br>
+                  <span class="table-text-emphasis">{{ age_range.1 }}</span>
+                </td>
+              {% endif %}
+              <td class="text-center">
+                {{ lesson.number }}
+              </td>
+              <td>
+                <a href="{% url 'topics:lesson' lesson.topic.slug lesson.unit_plan.slug lesson.slug %}">
+                  <strong>{{ lesson.name }}</strong>
+                </a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endfor %}
+
+  {% endif %}
+{% endblock end_content %}

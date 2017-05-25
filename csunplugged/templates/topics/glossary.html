@@ -1,18 +1,21 @@
-{% extends "topics/index.html" %}
+{% extends "columns.html" %}
 
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block breadcrumbs %}
-  {{ block.super }}
+  {% breadcrumb "Home" "/" %}
+  {% breadcrumb "Topics" "topics:index" %}
   {% breadcrumb "Glossary" "topics:glossary" %}
 {% endblock breadcrumbs %}
 
-{% block content %}
+{% block page_heading %}
   <h1>Glossary</h1>
+{% endblock page_heading %}
 
+{% block left_column_content %}
   {% for glossary_term in glossary_terms %}
     <h2>{{ glossary_term.term }}</h2>
     {% render_html_field glossary_term.definition %}
   {% endfor %}
-{% endblock %}
+{% endblock left_column_content %}

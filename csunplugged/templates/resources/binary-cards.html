@@ -1,0 +1,28 @@
+{% extends "resources/resource.html" %}
+
+<!-- Description of resource -->
+{% block description %}
+  <p>
+    This resource contains printouts for binary numbers activities.
+  </p>
+{% endblock description %}
+
+{% block generation_form %}
+  <fieldset>
+    <legend>Display Numbers</legend>
+    <input type="radio" name="display_numbers" id="display_numbers_yes" value="yes" checked="checked">
+    <label for="display_numbers_yes">Yes</label>
+    <br>
+    <input type="radio" name="display_numbers" id="display_numbers_no" value="no">
+    <label for="display_numbers_no">No</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Black on Card Back</legend>
+    <input type="radio" name="black_back" id="black_back_yes" value="yes">
+    <label for="black_back_yes">Yes - <em>Uses a lot of black ink, but conveys clearer card state. Print double sided.</em></label>
+    <br>
+    <input type="radio" name="black_back" id="black_back_no" value="no" checked="checked">
+    <label for="black_back_no">No - <em>Print single sided.</em></label>
+  </fieldset>
+{% endblock generation_form %}

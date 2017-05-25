@@ -1,10 +1,8 @@
 /** JavaScript to load on each page of website */
 $(document).ready(function() {
   $("#content-container, #glossary-modal").on("click", ".glossary-term", open_glossary_definition);
-  $("body").scrollspy({ target: "#scrollspy-table-of-contents", offset: 100});
-  // $("#sticky-sidebar").fixedsticky();
-  // var StickyState = require('sticky-state');
-  new StickyState(document.querySelectorAll('.sticky'));
+  $("body").scrollspy({ target: "#scrollspy-table-of-contents", offset: 140});
+  window.addEventListener("hashchange", function() { scrollBy(0, -72) })
 });
 
 function open_glossary_definition() {

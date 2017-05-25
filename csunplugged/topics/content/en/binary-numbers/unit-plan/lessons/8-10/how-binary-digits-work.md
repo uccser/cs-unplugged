@@ -14,10 +14,10 @@ Students will be able to:
 - Perform a demonstration of how the binary number system works by converting any decimal number into a binary number.
 - Justify why there aren’t actual 0’s and 1’s zooming around inside a computer.
 - Argue that 0’s and 1’s are still a correct way to represent what is stored in the computer.
-- Generalise by recognising that we can use any two different states or things to represent binary; it doesn’t have to just be 0’s and 1’s 
-- Explain the logic of why the right-hand bit needs to represent a one. 
+- Generalise by recognising that we can use any two different states or things to represent binary; it doesn’t have to just be 0’s and 1’s
+- Explain the logic of why the right-hand bit needs to represent a one.
 - Understand that we only need two different digits to represent any number and using more isn’t needed.
-- Explain why a particular card (bit) must be visible or not for a given number 
+- Explain why a particular card (bit) must be visible or not for a given number
 - Use logical reasoning to predict what value the next card (bit) in the left-to-right sequence will have (e.g. the last one is 32, what is the next one? 64. The next one? 128. Next? 256…)
 - Explain why we only need one more bit to represent twice as many numbers.
 
@@ -51,11 +51,11 @@ There is also an online interactive version of the binary cards [here](http://ww
 1. Hold the first 5 cards (1, 2, 4, 8 and 16 dots), but don't let students see the dots.
   Ask for 5 students to volunteer to be “bits”, and have them stand in a line in front of the class.
 
-2. Hand out the 1-dot card to the person on the right. 
+2. Hand out the 1-dot card to the person on the right.
   Explain that they are one "bit" (binary digit), and can be on or off, black or white, 0 or 1 dots.
   The only rule is that their card is either completely visible, or not visible (i.e. flipped over).
   Hand out the second card to the second person from the right.
-  Point out that this card has either 2 dots (visible), or none (upside down). 
+  Point out that this card has either 2 dots (visible), or none (upside down).
 
    {image file-path="img/topics/col_binary_2cards.png"}
 
@@ -73,7 +73,7 @@ There is also an online interactive version of the binary cards [here](http://ww
   {image file-path="img/topics/col_binary_3cards.png"}
 
   {panel type="general" title="Teaching Observations"}
-    
+
   Usually some students will complain that you've missed out the three, but simply indicate that you haven't made a mistake.
   This gives them the opportunity to try to construct the pattern for themselves.
 
@@ -82,13 +82,13 @@ There is also an online interactive version of the binary cards [here](http://ww
 5. Ask what the next card is, and why.
 
   {panel type="general" title="Teaching Observations"}
-	
+
   At this point it is common for students to guess that it is 6 (since it follow the numbers 2 and 4).
   However, if you let them think about it a little more, some will usually come up with 8, and those students should be able to convince the others that they are correct (there are several ways a student could explain this e.g. that each card is double the previous one, or that if you take two of a card, you get the next one)
 
   {panel end}
 
-6. Students should be able to work out the fifth card (16 dots) without help: 
+6. Students should be able to work out the fifth card (16 dots) without help:
 
   {image file-path="img/topics/col_binary_5cards.png"}
 
@@ -121,11 +121,11 @@ There is also an online interactive version of the binary cards [here](http://ww
 
   {panel type="something" title="Mathematical Links"}
 
-  Base 10 (our counting system) has 10 digits, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9. 
+  Base 10 (our counting system) has 10 digits, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.
   When we count in base 10, we count from 0 to 9 and then run out of digits.
   So we need to add another column; we put a 1 in that column and start counting again from 0.
   This makes the number 10, we then repeat that process until the tens column is 9 and the ones column is 9 (making 99); from there we then add another column.
-  Hence we have the familiar place value system that can be shown something like this: 
+  Hence we have the familiar place value system that can be shown something like this:
 
   100,000s | 10,000s | 1,000s | 100s |10s | 1
 
@@ -181,17 +181,17 @@ There is also an online interactive version of the binary cards [here](http://ww
 
 2. Now let’s count from the smallest number we can make up to the highest number -
 
-    a. What is the smallest number? (they may suggest 1, then realise that it’s 0). 
+    a. What is the smallest number? (they may suggest 1, then realise that it’s 0).
 
 3. Get the number zero displayed on the cards (i.e. no dots showing)
 
-4. Now count up 1, 2, 3, 4 …. (each pair should work out these numbers between them) 
+4. Now count up 1, 2, 3, 4 …. (each pair should work out these numbers between them)
 
-5. Once they start to get into a routine, ask: how often are we seeing the 1-dot card? (every second time, which is every odd number) 
-  
+5. Once they start to get into a routine, ask: how often are we seeing the 1-dot card? (every second time, which is every odd number)
+
     a. What other patterns are we seeing? (some may observe that the 2-dot card flips on every second count, the 4-dot on every 4th and so on; so the 16 dot card doesn't do much!)
 
-6. Continue until all the cards are switched to “on” and have counted to 31. What happens next? (We have to add a new card.) How many dots on it? (32) What do we have to do to the other 5 cards when we get to 32? (we have to turn them all off) 
+6. Continue until all the cards are switched to “on” and have counted to 31. What happens next? (We have to add a new card.) How many dots on it? (32) What do we have to do to the other 5 cards when we get to 32? (we have to turn them all off)
 
 7. Let’s explore this further ...
 
@@ -199,14 +199,14 @@ There is also an online interactive version of the binary cards [here](http://ww
 
     b. I add another bit and that has how many dots on it? (4)
 
-    c. I turn off the first two bits to make 4 right? 
+    c. I turn off the first two bits to make 4 right?
 
     d. Now let’s turn on all three bits, so now we have how many? (7)
 
     e. I add another bit and that has how many dots on it? (8)
 
     f. Repeat until a pattern is recognised that the number on the next card to the left is one more than the total number of dots on all the cards to the right (e.g. there are 15 dots on the 8, 4, 2 and 1 cards, so the next card to the left is 16).
-      This makes it easy to work out the number if all the bits are switched on - double the left-hand card, and subtract 1. 
+      This makes it easy to work out the number if all the bits are switched on - double the left-hand card, and subtract 1.
 
     g. How many different numbers can I make with two bits? (4; often students will say 3 because they haven’t counted 0)
 
@@ -217,7 +217,7 @@ There is also an online interactive version of the binary cards [here](http://ww
 {panel type="teaching-observations" title="Teaching Observations"}
 
 A concept that students may struggle with here is that the number of values is one more than the maximum value (e.g. from 0 to 7, there are 8 different numbers).
-The same observation occurs with the number of digits in conventional decimal numbers; the largest digit is 9, but there are 10 possible digits (counting 0). 
+The same observation occurs with the number of digits in conventional decimal numbers; the largest digit is 9, but there are 10 possible digits (counting 0).
 This is sometimes called the fencepost problem (the number of fence posts is one more than the number of gaps between them), and it comes up a lot in computing.
 
 {panel end}
@@ -225,9 +225,9 @@ This is sometimes called the fencepost problem (the number of fence posts is one
 ## Lesson Reflection
 
 - Would this activity work if we used white and cream cards? Why? Why not?
-  (In principle you could use these, but it wouldn’t be a good idea. We are looking for the answer that they are not contrasting colours, therefore it would be difficult to see if it is actually on or off. This hints and why computers use easily distinguished physical representations.) 
+  (In principle you could use these, but it wouldn’t be a good idea. We are looking for the answer that they are not contrasting colours, therefore it would be difficult to see if it is actually on or off. This hints and why computers use easily distinguished physical representations.)
 - What are some contrasting symbols or ways that we can show on and off in binary?  
-    - (Ideas could include holding the cards up high, or down low; simply holding up a hand; sitting down or standing up; or using a different representation such as lights that are on or off.) 
+    - (Ideas could include holding the cards up high, or down low; simply holding up a hand; sitting down or standing up; or using a different representation such as lights that are on or off.)
 - Computers are cheaper and easier to build if they represent data with just two contrasting values, which we represent as the numbers 0 and 1.
   What else could we use to represent two opposites in writing?
   (Perhaps a cross or tick; happy or sad face; or any other pair of symbols.)
@@ -239,17 +239,17 @@ This is sometimes called the fencepost problem (the number of fence posts is one
 
 ## Computational Thinking Connections
 
-### Algorithmic Thinking
+{panel type="ct-algorithm" title="Algorithmic thinking" expanded="true"}
 
 We used an algorithm in this lesson  to convert a decimal number to a binary one.
 This is an algorithm because it is a step-by-step process that will always give the right solution for any input you give it as long as the process is followed exactly.
 
 Here’s an algorithm for working out which dot cards should be showing, written in text:
- 
+
  - Find out the number of dots that is to be displayed. (We'll refer to this as the "number of dots remaining", which initially is the total number to be displayed.)
  - For each card, from the left to the right (i.e. 16, 8, 4, 2 then 1):
     - If the number of dots on the card is more than the number of dots remaining:
-        - Hide the card 
+        - Hide the card
     - Otherwise:
         - Show the card
         - Subtract the number of dots on the card from the number of dots remaining
@@ -261,11 +261,13 @@ Note that this algorithm (working from right to left) works very well with the c
 Which students are methodical when they convert between decimal and binary?
 Which ones start with the leftmost card and move one card at a time to the right, rather than choosing cards at random and flipping them on and off until they get the right number?
 
-### Abstraction
+{panel end}
 
-Binary number representation (just using 0 and 1) is an abstraction that hides the complexity of the electronics and hardware inside a computer that store data. Abstraction helps us simplify things because we can ignore the details we don’t currently need to know. 
+{panel type="ct-abstraction" title="Abstraction" expanded="true"}
 
-In this case the details we can ignore include: Computers use physical devices like electric circuits and voltages in circuits to store and move data, and there are many complex physics and mathematical theories that make this work. 
+Binary number representation (just using 0 and 1) is an abstraction that hides the complexity of the electronics and hardware inside a computer that store data. Abstraction helps us simplify things because we can ignore the details we don’t currently need to know.
+
+In this case the details we can ignore include: Computers use physical devices like electric circuits and voltages in circuits to store and move data, and there are many complex physics and mathematical theories that make this work.
 
 We don’t need to understand how these circuits work to use data and represent things using binary.
 Using binary is an Abstraction of these circuits and allows us to represent numbers as being made out of bits (0s and 1s), to understand data and work out problems without having to think about what is happening ‘underneath the hood’ of the computer.
@@ -284,7 +286,9 @@ For example, a familiar form of abstraction is that the month "October" could be
 Who are the students that demonstrate converting and representing binary numbers using things other than “1’s and 0’s”, “black and white”, and “off and on” (for example using :) and :(, or using people standing up or sitting down).
 If you are able to interchange terms like "black" and "white" with 0 and 1 without students being concerned about the difference, they are exercising abstraction.
 
-### Decomposition
+{panel end}
+
+{panel type="ct-decomposition" title="Decomposition" expanded="true"}
 
 An example of decomposition is breaking the conversion of the number to binary into one bit at a time. The questions "Should this be 1 or 0" for each of the dot cards is decomposing the problem to a series of questions.
 
@@ -292,15 +296,16 @@ An example of decomposition is breaking the conversion of the number to binary i
 
 Which students recognise that it is important to start with the leftmost card and only consider one bit at a time? Which students focus on each individual bit at a time, rather than being overwhelmed by trying to work them all out in one go?
 
-### Generalising and Patterns
+{panel end}
 
-Recognising patterns in the way the binary number system works helps give us a deeper understanding of the concepts involved, and assists us in generalising these concepts and patterns so that we can apply them to other problems. 
+{panel type="ct-pattern" title="Generalising and patterns" expanded="true"}
+
+Recognising patterns in the way the binary number system works helps give us a deeper understanding of the concepts involved, and assists us in generalising these concepts and patterns so that we can apply them to other problems.
 
 At a simple level, we started with the numbers 1, 2, and 4, and students generalised that to doubling values. The exercise used 5-bit numbers, but students should be able to generalise that to 8-bit numbers, or larger.
 
-The algorithm for converting a decimal number to a binary one follows a pattern that can be generalised to solve the problem of giving change when someone pays by cash. For binary numbers you start with the largest bit always turn a bit on if you need it, just like when you’re giving change you start with the largest denomination and then always take a coin (or note) whenever you need it. 
+The algorithm for converting a decimal number to a binary one follows a pattern that can be generalised to solve the problem of giving change when someone pays by cash. For binary numbers you start with the largest bit always turn a bit on if you need it, just like when you’re giving change you start with the largest denomination and then always take a coin (or note) whenever you need it.
 Jargon note: This is called a greedy algorithm - it takes as much as it can each time!
-
 
 {panel type="general" title="Mathematical Links"}
 
@@ -325,14 +330,17 @@ Explain one or more of the following patterns:
 
 - That with a certain number of cards you can make the same amount of different numbers as the number of dots that would be on the next card to be added on the left (remember that 0 is a number).
 - When you are counting upwards: the first card (1 dot) turns over every time, the second card (2 dots) turns every two times, the third (4 dots), every four times, and the fourth (8 dots), every eight times...
-- That when all the cards you have are visible it will add up to the next binary card number minus 1. 
+- That when all the cards you have are visible it will add up to the next binary card number minus 1.
 
 #### What to look for:
+
 Which students recognised quickly that each card was doubling the number of dots? Can students see the similarities between this and multiplying place values by 10 when they are using the decimal system?
 
 Which students easily understand the patterns of cards flipping when counting with binary numbers?
 
-### Logic
+{panel end}
+
+{panel type="ct-logic" title="Logic" expanded="true"}
 
 Logical thinking means using rules you already know and using logic to deduce more rules and information from these.
 Once we know what number each of the binary cards represents then we can use this knowledge to figure out how to represent other numbers with the cards.
@@ -348,7 +356,9 @@ Do students explicitly explain that the right-most bit needs to be a one because
 
 Are students able to explain that each card "has to" be up the way it is for a given number e.g. the 16-dot card is needed for the number 19 because without it you only have 15 dots remaining to its right (not enough); but the 16 card isn't needed for the number 9 because it would give too many dots?
 
-### Evaluation
+{panel end}
+
+{panel type="ct-evaluation" title="Evaluation" expanded="true"}
 
 An example of evaluation is working out how many different values can be represented by a given number of bits (e.g. 5 bits can represent 32 different values), and vice versa (to represent 1000 different values, you need at least 10 bits).
 
@@ -365,3 +375,5 @@ If we add one more bit to a representation, how much does that increase the rang
 If we add two more bits to a representation, how much does that increase the range? (it is four times as much)
 
 How many bits do we need to represent 1000 different values? (10 is sufficient)
+
+{panel end}

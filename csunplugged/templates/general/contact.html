@@ -1,17 +1,19 @@
-{% extends "general/about.html" %}
+{% extends "general/base.html" %}
+
 {% load i18n %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block breadcrumbs %}
-  {{ block.super }}
+  {% breadcrumb "Home" "/" %}
+  {% breadcrumb "About" "general:about" %}
   {% breadcrumb "Contact" "general:contact" %}
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-  <h1>{% trans 'Contact Us' %}</h1>
+  <h1>{% trans "Contact Us" %}</h1>
 {% endblock page_heading %}
 
-{% block content %}
+{% block left_column_content %}
   <p>
     <strong>Email:</strong> CS Unplugged is directed by Tim Bell.
     You can <a href="mailto:tim.bell@canterbury.ac.nz">email him here</a>.
@@ -24,5 +26,4 @@
   <p>
     <strong>Community Google Group:</strong> We have a <a href="https://groups.google.com/forum/#!forum/cs-unplugged-sharing">Google Group</a> you can join and talk about CS Unplugged.
   </p>
-
-{% endblock %}
+{% endblock left_column_content %}

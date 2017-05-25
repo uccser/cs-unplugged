@@ -1,7 +1,0 @@
-- You can find `make a new variable` under `data` script to create a new variable. Make sure your variable name is as descriptive as possible.
-- Use the `SET` block to set the value of your new variable. Use the multiply operation under `Operators` script to double the value of your variable. 
-- Display the value of your variable on the screen by replacing `Hello` in your `SAY` block with your new variable. 
-- The number of seconds tells the output how long to show. The script waits that long before continuing. 
-- Use the `REPEAT` block to run the blocks inside a specified number of times. In this challenge you need to repeat the blocks 5 times.
-- Make sure all your blocks are “snapped” together in a line like a jigsaw puzzle.
-- Whenever you click the green flag, your script will start. To stop, click the stop button.

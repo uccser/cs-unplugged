@@ -3,7 +3,7 @@ how-binary-digits-work:
   max-age: 10
   number: 1
   duration: 45
-  programming-exercises:
+  programming-challenges:
     - binary-numbers-no-calculations
     - binary-numbers-using-variable
     - binary-numbers-using-variables-as-operator
@@ -21,57 +21,41 @@ how-binary-digits-work:
     - cards-given-number-one-line
     - number-bits-representing-number
     - binary-cards-representing-number
+    - binary-cards-representing-any-positive-number
     - decimal-to-binary
+    - decimal-to-binary-alternative
+    - binary-notes-representing-number
+    - binary-notes-representing-any-positive-number
   learning-outcomes:
     - binary-correct-representation
     - no-physical-zeros-ones
+  generated-resources:
+    binary-cards:
+      description: One set for class demonstration.
+    binary-cards-small:
+      description: One set of cards per student.
+  classroom-resources:
+    - Pens and paper, or
+    - Whiteboard and pens
 
 reinforcing-sequencing-in-binary-number-systems:
   min-age: 8
   max-age: 10
   number: 2
   duration: 60
-  programming-exercises:
-    - binary-numbers-no-calculations
-    - binary-numbers-using-variable
-    - binary-numbers-using-variables-as-operator
-    - binary-numbers-using-variable-operator-repeat
-    - binary-numbers-one-line
-    - number-cards-display
-    - dots-right-left
-    - dots-largest-to-1
-    - count-5-bw-no-loop
-    - count-5-bw-using-loop
-    - count-5-bw-one-input-no-loop
-    - count-5-bw-one-input-using-loop
-    - count-bw-one-input-using-loop
-    - cards-given-number
-    - cards-given-number-one-line
-    - number-bits-representing-number
-    - binary-cards-representing-number
-    - decimal-to-binary
+  generated-resources:
+    binary-cards:
+      description: One set for class demonstration.
+    binary-cards-small:
+      description: One set of cards per student.
 
 codes-for-letters-using-binary-representation:
   min-age: 8
   max-age: 10
   number: 3
   duration: 45
-  programming-exercises:
-    - binary-numbers-no-calculations
-    - binary-numbers-using-variable
-    - binary-numbers-using-variables-as-operator
-    - binary-numbers-using-variable-operator-repeat
-    - binary-numbers-one-line
-    - number-cards-display
-    - dots-right-left
-    - dots-largest-to-1
-    - count-5-bw-no-loop
-    - count-5-bw-using-loop
-    - count-5-bw-one-input-no-loop
-    - count-5-bw-one-input-using-loop
-    - count-bw-one-input-using-loop
-    - cards-given-number
-    - cards-given-number-one-line
-    - number-bits-representing-number
-    - binary-cards-representing-number
-    - decimal-to-binary
+  generated-resources:
+    binary-cards:
+      description: One set for class demonstration.
+    binary-cards-small:
+      description: One set of cards per student.

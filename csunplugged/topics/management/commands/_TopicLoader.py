@@ -8,24 +8,22 @@ from utils.check_required_files import find_image_files
 
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 
-from ._CurriculumIntegrationsLoader import CurriculumIntegrationsLoader
-from ._ProgrammingExercisesLoader import ProgrammingExercisesLoader
-from ._UnitPlanLoader import UnitPlanLoader
-
 from topics.models import Topic
 
 
 class TopicLoader(BaseLoader):
     """Custom loader for loading a topic."""
 
-    def __init__(self, structure_file_path, BASE_PATH):
+    def __init__(self, factory, structure_file_path, BASE_PATH):
         """Create the loader for loading a topic.
 
         Args:
+            factory: LoaderFactory object for creating loaders (LoaderFactory).
             structure_file_path: File path for structure YAML file (string).
             BASE_PATH: Base file path (string).
         """
         super().__init__(BASE_PATH)
+        self.factory = factory
         self.topic_slug = os.path.split(structure_file_path)[0]
         self.structure_file_path = os.path.join(self.BASE_PATH, structure_file_path)
         self.BASE_PATH = os.path.join(self.BASE_PATH, self.topic_slug)
@@ -96,20 +94,20 @@ class TopicLoader(BaseLoader):
 
         self.log("Added Topic: {}".format(topic.name))
 
-        # Load programming exercises
-        if "programming-exercises" in topic_structure:
-            programming_exercises_structure_file_path = topic_structure["programming-exercises"]
-            if programming_exercises_structure_file_path is not None:
-                ProgrammingExercisesLoader(
+        # Load programming challenges
+        if "programming-challenges" in topic_structure:
+            programming_challenges_structure_file_path = topic_structure["programming-challenges"]
+            if programming_challenges_structure_file_path is not None:
+                self.factory.create_programming_exercises_loader(
                     self.load_log,
-                    programming_exercises_structure_file_path,
+                    programming_challenges_structure_file_path,
                     topic,
                     self.BASE_PATH
                 ).load()
 
         # Load unit plans
         for unit_plan_file_path in unit_plans:
-            UnitPlanLoader(
+            self.factory.create_unit_plan_loader(
                 self.load_log,
                 unit_plan_file_path,
                 topic,
@@ -119,7 +117,7 @@ class TopicLoader(BaseLoader):
         if "curriculum-integrations" in topic_structure:
             curriculum_integrations_structure_file_path = topic_structure["curriculum-integrations"]
             if curriculum_integrations_structure_file_path is not None:
-                CurriculumIntegrationsLoader(
+                self.factory.create_curriculum_integrations_loader(
                     self.load_log,
                     curriculum_integrations_structure_file_path,
                     topic,
