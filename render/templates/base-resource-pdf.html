@@ -31,8 +31,7 @@
     {% endfor %}
   {% endfor %}
   <footer class="fixed-running-element">
-    {% load static %}
-    <img src="./img/logo-small.png"> - {{ resource.name }} - csunplugged.org{% url 'resources:resource' resource.slug %}
+    <img src="./img/logo-small.png"> - {{ resource_name }} - {{ url }}
   </footer>
 </body>
 </html>
