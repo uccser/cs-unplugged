@@ -52,6 +52,7 @@ binary-numbers-one-line:
   learning-outcomes:
     - programming-describe-variables
     - programming-identify-loop
+    - programming-explain-join-concatenate
   extra-challenge: extra-challenge.md
 
 number-cards-display:
@@ -74,6 +75,7 @@ dots-right-left:
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
+    - programming-explain-join-concatenate
   extra-challenge: extra-challenge.md
 
 dots-largest-to-1:
@@ -133,7 +135,7 @@ count-5-bw-one-input-no-loop:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
     - programming-identify-if-statement
-    - programming-prove-indexing
+    - programming-demonstrate-indexing
 
 count-5-bw-one-input-using-loop:
   challenge-set-number: 4
@@ -146,7 +148,7 @@ count-5-bw-one-input-using-loop:
     - programming-describe-variables
     - programming-identify-if-statement
     - programming-identify-loop
-    - programming-prove-indexing
+    - programming-demonstrate-indexing
 
 count-bw-one-input-using-loop:
   challenge-set-number: 4
@@ -159,7 +161,7 @@ count-bw-one-input-using-loop:
     - programming-describe-variables
     - programming-identify-if-statement
     - programming-identify-loop
-    - programming-prove-indexing
+    - programming-demonstrate-indexing
 
 cards-given-number:
   challenge-set-number: 5
@@ -207,7 +209,7 @@ binary-cards-representing-number:
     - programming-identify-if-statement
     - programming-identify-loop
 
-binary-cards-representing-any-positive-number:
+binary-cards-representing-any-number:
   challenge-set-number: 7
   challenge-number: 2
   difficulty-level: 3
@@ -255,7 +257,7 @@ binary-notes-representing-number:
     - programming-identify-if-statement
     - programming-identify-loop
 
-binary-notes-representing-any-positive-number:
+binary-notes-representing-any-number:
   challenge-set-number: 8
   challenge-number: 2
   difficulty-level: 3

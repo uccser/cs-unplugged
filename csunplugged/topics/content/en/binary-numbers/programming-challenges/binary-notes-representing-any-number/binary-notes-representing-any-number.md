@@ -1,4 +1,4 @@
-# Binary representation of any positive decimal number by playing musical notes
+# Binary representation of any decimal number by playing musical notes
 
 ## Requirement:
 

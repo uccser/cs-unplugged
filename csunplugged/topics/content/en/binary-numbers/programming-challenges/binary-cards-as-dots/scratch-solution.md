@@ -1,6 +1,6 @@
 {panel type="general" title="Solution 1" subtitle="(check digits of the binary number)"}
 
-**Blocks for cat sprite**
+**Blocks for cat sprite (labelled binary number)**
 
 ```scratch
 when green flag clicked
@@ -84,7 +84,7 @@ end
 
 {panel type="general" title="Solution 2" subtitle="(broadcast the bit value)"}
 
-**Blocks for cat sprite**
+**Blocks for cat sprite (labelled binary number)**
 
 ```scratch
 when green flag clicked
@@ -154,7 +154,7 @@ switch costume to [white v]
 
 {panel type="general" title="Solution 3" subtitle="(using a variable to broadcast the bit value)"}
 
-**Blocks for cat sprite**
+**Blocks for cat sprite (labelled binary number)**
 
 ```scratch
 when green flag clicked
