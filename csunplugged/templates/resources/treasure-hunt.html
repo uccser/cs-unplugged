@@ -1,10 +1,14 @@
 {% extends "resources/resource.html" %}
 
+<!-- Name of resource -->
+{% block name %}{{ resource.name }}{% endblock name %}
+
 <!-- Description of resource -->
 {% block description %}
 {% endblock description %}
 
 {% block generation_form %}
+
   <fieldset>
     <legend>Prefill with Numbers</legend>
     <input type="radio" name="prefilled_values" id="easy" value="easy" checked="checked">
@@ -28,4 +32,5 @@
     <input type="radio" name="number_order" id="numbers_sorted" value="sorted">
     <label for="numbers_sorted">Sorted Numbers</label>
   </fieldset>
+
 {% endblock generation_form %}

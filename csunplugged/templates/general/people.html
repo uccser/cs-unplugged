@@ -1,19 +1,18 @@
-{% extends "general/base.html" %}
-
+{% extends "general/about.html" %}
 {% load i18n %}
+{% load static %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block breadcrumbs %}
-  {% breadcrumb "Home" "/" %}
-  {% breadcrumb "About" "general:about" %}
+  {{ block.super }}
   {% breadcrumb "People" "general:people" %}
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-  <h1>{% trans "People" %}</h1>
+  <h1>{% trans 'People' %}</h1>
 {% endblock page_heading %}
 
-{% block left_column_content %}
+{% block content %}
   <h2>Founders</h2>
 
   <ul>
@@ -127,4 +126,4 @@
   <ul>
     <li>Arnold - Would like a cracker</li>
   </ul>
-{% endblock left_column_content %}
+{% endblock %}

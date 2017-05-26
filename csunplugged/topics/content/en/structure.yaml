@@ -2,7 +2,7 @@ topics:
   - binary-numbers
   - error-detection-and-correction
 
-programming-challenges-structure: programming-challenges-structure.yaml
+programming-exercises-structure: programming-exercises-structure.yaml
 curriculum-areas: curriculum-areas.yaml
 learning-outcomes: learning-outcomes.yaml
 

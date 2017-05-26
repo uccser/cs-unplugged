@@ -1,7 +1,9 @@
 """Models for the topics application."""
 
+from collections import OrderedDict
+
 from django.db import models
-from django.contrib.postgres.fields import ArrayField, JSONField
+from django.contrib.postgres.fields import JSONField
 from resources.models import Resource
 
 
@@ -98,7 +100,28 @@ class UnitPlan(models.Model):
     slug = models.SlugField()
     name = models.CharField(max_length=100)
     content = models.TextField()
-    heading_tree = JSONField(null=True)
+
+    def lessons_by_age_group(self):
+        """Return ordered groups of lessons.
+
+        Lessons are grouped by the lesson minimum age and maximum ages,
+        and then order by number.
+
+        Returns:
+            A ordered dictionary of grouped lessons.
+            The key is a tuple of the minimum age and maximum ages for
+            the lessons.
+            The value for a key is a sorted list of lessons.
+            The dictionary is ordered by minimum age, then maximum age.
+        """
+        grouped_lessons = OrderedDict()
+        lessons = self.unit_plan_lessons.order_by("min_age", "max_age", "number")
+        for lesson in lessons:
+            if (lesson.min_age, lesson.max_age) in grouped_lessons:
+                grouped_lessons[(lesson.min_age, lesson.max_age)].append(lesson)
+            else:
+                grouped_lessons[(lesson.min_age, lesson.max_age)] = [lesson]
+        return grouped_lessons
 
     def __str__(self):
         """Text representation of UnitPlan object.
@@ -165,7 +188,6 @@ class ProgrammingExerciseLanguage(models.Model):
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField()
     name = models.CharField(max_length=200)
-    number = models.PositiveSmallIntegerField()
     icon = models.CharField(max_length=100, null=True)
 
     def __str__(self):
@@ -248,10 +270,6 @@ class Lesson(models.Model):
         Resource,
         through="ConnectedGeneratedResource",
         related_name="lesson_generated_resources"
-    )
-    classroom_resources = ArrayField(
-        models.CharField(max_length=100),
-        null=True
     )
 
     def has_programming_exercises(self):

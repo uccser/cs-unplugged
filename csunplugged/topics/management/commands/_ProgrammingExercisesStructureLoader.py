@@ -1,4 +1,4 @@
-"""Custom loader for loading structure of programming challenges."""
+"""Custom loader for loading structure of programming exercises."""
 
 import os.path
 from django.db import transaction
@@ -11,10 +11,10 @@ from topics.models import ProgrammingExerciseLanguage, ProgrammingExerciseDiffic
 
 
 class ProgrammingExercisesStructureLoader(BaseLoader):
-    """Custom loader for loading structure of programming challenges."""
+    """Custom loader for loading structure of programming exercises."""
 
     def __init__(self, structure_file_path, BASE_PATH):
-        """Create the loader for loading structure of programming challenges.
+        """Create the loader for loading structure of programming exercises.
 
         Args:
             structure_file_path: File path for structure YAML file (string).
@@ -26,7 +26,7 @@ class ProgrammingExercisesStructureLoader(BaseLoader):
 
     @transaction.atomic
     def load(self):
-        """Load the content for structure of programming challenges.
+        """Load the content for structure of programming exercises.
 
         Raises:
             MissingRequiredFieldError: when no object can be found with the matching
@@ -45,7 +45,7 @@ class ProgrammingExercisesStructureLoader(BaseLoader):
             raise MissingRequiredFieldError(
                 self.structure_file_path,
                 ["lanugages", "difficulties"],
-                "Programming Challenge Structure"
+                "Programming Exercise Structure"
             )
 
         for (language, language_data) in languages.items():
@@ -53,18 +53,17 @@ class ProgrammingExercisesStructureLoader(BaseLoader):
             if language_data is None:
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
-                    ["name", "number"],
-                    "Programming Challenge Language"
+                    ["name"],
+                    "Programming Exercise Language"
                 )
 
             # Check for required fields
             language_name = language_data.get("name", None)
-            language_number = language_data.get("number", None)
-            if language_name is None or language_number is None:
+            if language_name is None:
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
-                    ["name", "number"],
-                    "Programming Challenge Language"
+                    ["name"],
+                    "Programming Exercise Language"
                 )
 
             # Check if icon is given
@@ -76,7 +75,6 @@ class ProgrammingExercisesStructureLoader(BaseLoader):
             new_language = ProgrammingExerciseLanguage(
                 slug=language,
                 name=language_name,
-                number=language_number,
                 icon=language_icon
             )
 
@@ -90,7 +88,7 @@ class ProgrammingExercisesStructureLoader(BaseLoader):
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
                     ["name"],
-                    "Programming Challenge Difficulty"
+                    "Programming Exercise Difficulty"
                 )
 
             difficulty_name = difficulty_data.get("name", None)
@@ -98,7 +96,7 @@ class ProgrammingExercisesStructureLoader(BaseLoader):
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
                     ["name"],
-                    "Programming Challenge Difficulty"
+                    "Programming Exercise Difficulty"
                 )
 
             new_difficulty = ProgrammingExerciseDifficulty(

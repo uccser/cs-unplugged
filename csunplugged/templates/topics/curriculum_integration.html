@@ -1,0 +1,43 @@
+{% extends "topics/topic.html" %}
+
+{% load static %}
+{% load render_html_field %}
+{% load django_bootstrap_breadcrumbs %}
+
+
+{% block breadcrumbs %}
+  {{ block.super }}
+  {% breadcrumb integration.name "topics:integration" topic.slug integration.slug %}
+{% endblock breadcrumbs %}
+
+
+{% block content %}
+  <h1>{{ integration.name }}</h1>
+
+  {% if prerequisite_lessons %}
+    <div class="alert alert-warning" role="alert">
+      <p class="h5 mb-1">Heads up!</p>
+      <p class="mb-1">To do this activity it's expected you understand the content covered in the following:</p>
+      <ul class="mb-1">
+        {% for prerequisite_lesson in prerequisite_lessons %}
+          <li>
+            <a href="{% url 'topics:lesson' prerequisite_lesson.topic.slug prerequisite_lesson.unit_plan.slug prerequisite_lesson.slug %}">
+              <strong>{{ prerequisite_lesson.unit_plan.name }}:</strong> {{ prerequisite_lesson.name }}
+            </a>
+          </li>
+          {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+  {% render_html_field integration.content %}
+
+  {% if integration_curriculum_areas %}
+    <h2>Curriculum Areas</h2>
+    <p>
+    {% for area in integration_curriculum_areas %}
+      <span class="badge badge-default">{{ area.name }}</span>
+    {% endfor %}
+    </p>
+  {% endif %}
+{% endblock content %}

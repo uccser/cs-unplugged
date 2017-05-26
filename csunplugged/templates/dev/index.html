@@ -4,8 +4,11 @@
 {% load static %}
 {% load render_html_field %}
 
+
 {% block content %}
+
   <h1>Topics</h1>
+
   {% if topics.all %}
     <ul>
       {% for topic in topics %}
@@ -14,33 +17,42 @@
         {% if topic.unit_plans.all %}
           <ul>
             {% for unit_plan in topic.unit_plans %}
-              <li>
-                Unit Plan: <a href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">{{ unit_plan.name }}</a>
+              <li>Unit Plan: <a href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">{{ unit_plan.name }}</a></li>
 
-                {% if unit_plan.lessons.items %}
-                  {% with grouped_lessons=unit_plan.lessons %}
-                    {% include "topics/lessons-table.html" %}
-                  {% endwith %}
-                {% endif %}
-              </li>
+              {% if unit_plan.lessons.items %}
+                <ul>
+                  {% for age_group,lessons in unit_plan.lessons.items %}
+                    <li>Lessons ({{ age_group.0 }} to {{ age_group.1}}):</li>
+                    <ul>
+                      {% for lesson in lessons %}
+                        <li><a href="{% url 'topics:lesson' topic.slug unit_plan.slug lesson.slug %}">{{ lesson }}</a></li>
+                      {% endfor %}
+                    </ul>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+
             {% endfor %}
           {% endif %}
 
           {% if topic.integrations.all %}
-            <li>Curriculum integrations:
-              {% with curriculum_integrations=topic.integrations.all %}
-                {% include "topics/curriculum-integrations-table.html" %}
-              {% endwith %}
-            </li>
+            <li>Curriculum integrations:</li>
+            <ul>
+              {% for integration in topic.integrations %}
+                <li><a href="{% url 'topics:integration' topic.slug integration.slug %}">{{ integration }}</a></li>
+              {% endfor %}
+            </ul>
           {% endif  %}
 
           {% if topic.programming_exercises.all %}
-            <li>Programming challenges:
-              {% with programming_exercises=topic.programming_exercises.all %}
-                {% include "topics/programming-exercises-table.html" %}
-              {% endwith %}
-            </li>
+            <li>Programming Exercises:</li>
+            <ul>
+              {% for exercise in topic.programming_exercises %}
+                <li><a href="{% url 'dev:programming_exercise' exercise.slug %}">{{ exercise.exercise_set_number }}.{{ exercise.exercise_number }} {{ exercise.name }}</a></li>
+              {% endfor %}
+            </ul></li>
           {% endif %}
+
         </ul>
       {% endfor %}
     </ul>
@@ -49,11 +61,11 @@
   {% if curriculum_areas %}
     <h1>Curriculum Areas</h1>
     <ul>
-      {% for area,children in curriculum_areas.items %}
-        <li>{% include "topics/curriculum-area-badge.html" %}</li>
+      {% for parent,children in curriculum_areas.items %}
+        <li>{{ parent.name }}</li>
         <ul>
-        {% for area in children %}
-          <li>{% include "topics/curriculum-area-badge.html" %}</li>
+        {% for child in children %}
+          <li>{{ child.name }}</li>
         {% endfor %}
         </ul>
       {% endfor %}
@@ -75,7 +87,7 @@
   </p>
 
   {% if programming_exercise_languages.all %}
-    <h1>Programming Challenge Languages</h1>
+    <h1>Programming Exercise Languages</h1>
     <ul>
       {% for language in programming_exercise_languages.all %}
         <li>{{ language }}</li>
@@ -84,11 +96,12 @@
   {% endif %}
 
   {% if programming_exercise_difficulties.all %}
-    <h1>Programming Challenge Difficulties</h1>
+    <h1>Programming Exercise Difficulties</h1>
     <ul>
       {% for difficulty in programming_exercise_difficulties.all %}
         <li>{{ difficulty.level }}: {{ difficulty.name }}</li>
       {% endfor %}
     </ul>
   {% endif %}
-{% endblock content %}
+
+{% endblock %}

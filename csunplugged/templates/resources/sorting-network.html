@@ -1,14 +1,16 @@
 {% extends "resources/resource.html" %}
 
+<!-- Name of resource -->
+{% block name %}{{ resource.name }}{% endblock name %}
+
 <!-- Description of resource -->
 {% block description %}
-  <p>
-    This resource will show you how computers sort random numbers into
-    order using a thing called a sorting network.
-  </p>
+<p>This resource will show you how computers sort random numbers into order using
+a thing called a sorting network.</p>
 {% endblock description %}
 
 {% block generation_form %}
+
   <fieldset>
     <legend>Prefill with Numbers</legend>
     <input type="radio" name="prefilled_values" id="blank" value="blank" checked="checked">
@@ -23,4 +25,5 @@
     <input type="radio" name="prefilled_values" id="hard" value="hard">
     <label for="hard">Hard Numbers (3 digits)</label>
   </fieldset>
+
 {% endblock generation_form %}

@@ -1,30 +1,23 @@
-{% extends "base.html" %}
+{% extends "resources/base.html" %}
 
 {% load i18n %}
 {% load static %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block breadcrumbs %}
-  {% breadcrumb "Home" "/" %}
+  {{ block.super }}
   {% breadcrumb "Resources" "resources:index" %}
 {% endblock breadcrumbs %}
 
-{% block page_heading %}
-  <h1>{% trans "Resources" %}</h1>
-{% endblock page_heading %}
-
 {% block content %}
+  <h1>{% trans "Resources" %}</h1>
   {% if all_resources %}
-    <div class="link-box-container">
-      {% for resource in all_resources %}
-        <a href="{% url 'resources:resource' resource.slug %}" class="link-box">
-          <img class="border-thin" src="{% static resource.thumbnail_static_path %}" alt="Generic placeholder image">
-          <strong>{{ resource.name }}</strong>
-          <p class="mb-0">{{ resource.description }}</p>
-        </a>
-      {% endfor %}
-    </div>
+    {% for resource in all_resources %}
+      <p>
+        <a href="{% url 'resources:resource' resource.slug %}">{{ resource.name }}</a>
+      </p>
+    {% endfor %}
   {% else %}
     <p>No resources are available.</p>
   {% endif %}
-{% endblock content %}
+{% endblock %}

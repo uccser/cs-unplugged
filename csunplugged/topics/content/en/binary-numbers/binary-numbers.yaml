@@ -5,5 +5,5 @@ icon: 'img/topics/binary-numbers-0-1.png'
 
 other-resources: other-resources.md
 
-programming-challenges: programming-challenges/programming-challenges.yaml
+programming-exercises: programming-exercises/programming-exercises.yaml
 curriculum-integrations: curriculum-integrations/curriculum-integrations.yaml

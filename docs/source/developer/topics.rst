@@ -25,16 +25,3 @@ reviewing and accepted proposed changes to content.
 The management command for updating the applications data is ``loadtopics``
 (which is automatically called when running ``updatedata``), and can be found at
 ``management/commands/loadtopics.py``.
-
-Model Notes
-==============================================================================
-
-Programming exercises are displayed to the user as 'programming challenges'.
-Therefore:
-
-- ``ProgrammingExercise`` describes a programming challenge.
-- ``ProgrammingExerciseDifficulty`` describes a programming challenge's
-  difficulty.
-- ``ProgrammingExerciseLanguage`` describes a programming language.
-- ``ProgrammingExerciseLanguageImplementation`` describes a programming
-  challenge's language implementation.

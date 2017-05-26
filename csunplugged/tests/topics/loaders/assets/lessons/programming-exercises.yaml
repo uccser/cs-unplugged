@@ -1,7 +1,0 @@
-lesson-1:
-  min-age: 1
-  max-age: 99
-  number: 1
-  programming-challenges:
-      - exercise-1
-      - exercise-2

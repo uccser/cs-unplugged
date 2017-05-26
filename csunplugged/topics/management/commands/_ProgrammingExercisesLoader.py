@@ -16,10 +16,10 @@ from topics.models import (
 
 
 class ProgrammingExercisesLoader(BaseLoader):
-    """Custom loader for loading programming challenges."""
+    """Custom loader for loading programming exercises."""
 
     def __init__(self, load_log, structure_file_path, topic, BASE_PATH):
-        """Create the loader for loading programming challenges.
+        """Create the loader for loading programming exercises.
 
         Args:
             load_log: List of log messages (list).
@@ -33,93 +33,93 @@ class ProgrammingExercisesLoader(BaseLoader):
         self.topic = topic
 
     def load(self):
-        """Load the content for programming challenges.
+        """Load the content for programming exercises.
 
         Raise:
             KeyNotFoundError: when no object can be found with the matching attribute.
             MissingRequiredFieldError: when no object can be found with the matching
                 attribute.
         """
-        programming_challenges_structure = self.load_yaml_file(self.structure_file_path)
+        programming_exercises_structure = self.load_yaml_file(self.structure_file_path)
 
-        for (challenge_slug, challenge_structure) in programming_challenges_structure.items():
+        for (exercise_slug, exercise_structure) in programming_exercises_structure.items():
 
-            if challenge_structure is None:
+            if exercise_structure is None:
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
-                    ["challenge-set-number", "challenge-number",
+                    ["exercise-set-number", "exercise-number",
                         "programming-languages", "difficulty-level"],
-                    "Programming Challenge"
+                    "Programming Exercise"
                 )
 
             # Retrieve required variables from md file
-            challenge_set_number = challenge_structure.get("challenge-set-number", None)
-            challenge_number = challenge_structure.get("challenge-number", None)
-            challenge_languages = challenge_structure.get("programming-languages", None)
-            challenge_difficulty = challenge_structure.get("difficulty-level", None)
-            if None in [challenge_set_number, challenge_number, challenge_languages, challenge_difficulty]:
+            exercise_set_number = exercise_structure.get("exercise-set-number", None)
+            exercise_number = exercise_structure.get("exercise-number", None)
+            exercise_languages = exercise_structure.get("programming-languages", None)
+            exercise_difficulty = exercise_structure.get("difficulty-level", None)
+            if None in [exercise_set_number, exercise_number, exercise_languages, exercise_difficulty]:
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
-                    ["challenge-set-number", "challenge-number",
+                    ["exercise-set-number", "exercise-number",
                         "programming-languages", "difficulty-level"],
-                    "Programming Challenge"
+                    "Programming Exercise"
                 )
 
-            # Build the path to the programming challenge's folder
+            # Build the path to the programming exercise"s folder
             file_path = os.path.join(
                 self.BASE_PATH,
-                challenge_slug,
+                exercise_slug,
                 "{}.md"
             )
 
-            challenge_content = self.convert_md_file(
-                file_path.format(challenge_slug),
+            exercise_content = self.convert_md_file(
+                file_path.format(exercise_slug),
                 self.structure_file_path
             )
 
-            challenge_extra_challenge_file = challenge_structure.get("extra-challenge", None)
-            if challenge_extra_challenge_file:
-                challenge_extra_challenge_content = self.convert_md_file(
-                    file_path.format(challenge_extra_challenge_file[:-3]),
+            exercise_extra_challenge_file = exercise_structure.get("extra-challenge", None)
+            if exercise_extra_challenge_file:
+                exercise_extra_challenge_content = self.convert_md_file(
+                    file_path.format(exercise_extra_challenge_file[:-3]),
                     self.structure_file_path,
                     heading_required=False,
                 )
-                challenge_extra_challenge = challenge_extra_challenge_content.html_string
+                exercise_extra_challenge = exercise_extra_challenge_content.html_string
             else:
-                challenge_extra_challenge = None
+                exercise_extra_challenge = None
 
             try:
                 difficulty_level = ProgrammingExerciseDifficulty.objects.get(
-                    level=challenge_difficulty
+                    level=exercise_difficulty
                 )
             except:
                 raise KeyNotFoundError(
                     self.structure_file_path,
-                    challenge_difficulty,
-                    "Programming Challenge Difficulty"
+                    exercise_difficulty,
+                    "Programming Exercise Difficulty"
                 )
 
-            programming_challenge = self.topic.topic_programming_exercises.create(
-                slug=challenge_slug,
-                name=challenge_content.title,
-                exercise_set_number=challenge_set_number,
-                exercise_number=challenge_number,
-                content=challenge_content.html_string,
-                extra_challenge=challenge_extra_challenge,
+            programming_exercise = self.topic.topic_programming_exercises.create(
+                slug=exercise_slug,
+                name=exercise_content.title,
+                exercise_set_number=exercise_set_number,
+                exercise_number=exercise_number,
+                content=exercise_content.html_string,
+                extra_challenge=exercise_extra_challenge,
                 difficulty=difficulty_level
             )
-            programming_challenge.save()
+            programming_exercise.save()
 
-            LOG_TEMPLATE = "Added Programming Challenge: {}"
-            self.log(LOG_TEMPLATE.format(programming_challenge.name), 1)
+            LOG_TEMPLATE = "Added Programming Exercise: {}"
+            self.log(LOG_TEMPLATE.format(programming_exercise.name), 1)
 
-            for language in challenge_languages:
+            for language in exercise_languages:
                 if language is None:
                     raise MissingRequiredFieldError(
                         self.structure_file_path,
-                        ["challenge-set-number", "challenge-number",
+                        ["exercise-set-number", "exercise-number",
                             "programming-languages", "difficulty-level"],
-                        "Programming Challenge"
+                        "Programming Exercise"
                     )
                 try:
                     language_object = ProgrammingExerciseLanguage.objects.get(
@@ -129,7 +129,7 @@ class ProgrammingExercisesLoader(BaseLoader):
                     raise KeyNotFoundError(
                         self.structure_file_path,
                         language,
-                        "Programming Challenge Language"
+                        "Programming Exercise Language"
                     )
 
                 expected_result_content = self.convert_md_file(
@@ -166,7 +166,7 @@ class ProgrammingExercisesLoader(BaseLoader):
                     hints=None if hint_content is None else hint_content.html_string,
                     solution=solution_content.html_string,
                     language=language_object,
-                    exercise=programming_challenge,
+                    exercise=programming_exercise,
                     topic=self.topic
                 )
                 implementation.save()
@@ -174,15 +174,15 @@ class ProgrammingExercisesLoader(BaseLoader):
                 LOG_TEMPLATE = "Added Language Implementation: {}"
                 self.log(LOG_TEMPLATE.format(implementation.language), 2)
 
-            if "learning-outcomes" in challenge_structure:
-                learning_outcomes = challenge_structure["learning-outcomes"]
+            if "learning-outcomes" in exercise_structure:
+                learning_outcomes = exercise_structure["learning-outcomes"]
                 if learning_outcomes is not None:
                     for learning_outcome_slug in learning_outcomes:
                         try:
                             learning_outcome = LearningOutcome.objects.get(
                                 slug=learning_outcome_slug
                             )
-                            programming_challenge.learning_outcomes.add(learning_outcome)
+                            programming_exercise.learning_outcomes.add(learning_outcome)
                         except:
                             raise KeyNotFoundError(
                                 self.structure_file_path,

@@ -21,7 +21,7 @@ The Django system currently contains the following applications:
 
 - ``general/`` - For general website pages (for example: home, about, etc).
 - ``topics/`` - For topics content (for example: lessons, follow up activities,
-  programming challenges, etc).
+  programming exercises, etc).
 - ``resources/`` - For translatable PDF resources with random elements.
 
 Database Structure
@@ -36,7 +36,7 @@ applications within the database.
 
 .. note::
 
-  **Lesson** and **Programming Challenge Language Implementation** models have
+  **Lesson** and **Programming Exercise Language Implementation** models have
   the parent's **Topic** saved directly within their model.
 
 The rest of the :doc:`index` will inform you of how to develop the

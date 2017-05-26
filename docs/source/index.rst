@@ -39,7 +39,7 @@ following (or similar):
 
 - Add a new topic
 - Clear up instructions on a lesson
-- Add a language implementation for a programming challenge
+- Add a language implementation for a programming exercise
 - Add a translation
 
 ------------------------------------------------------------------------------

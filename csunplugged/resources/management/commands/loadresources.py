@@ -2,7 +2,7 @@
 
 from django.core.management.base import BaseCommand
 
-from utils.LoaderFactory import LoaderFactory
+from ._ResourcesLoader import ResourcesLoader
 
 
 class Command(BaseCommand):
@@ -14,9 +14,7 @@ class Command(BaseCommand):
         """Automatically called when the loadresources command is given."""
         BASE_PATH = "resources/content/{}"
         resource_structure_file = "resources.yaml"
-        factory = LoaderFactory()
-
-        factory.create_resources_loader(
+        ResourcesLoader(
             resource_structure_file,
             BASE_PATH
         ).load()

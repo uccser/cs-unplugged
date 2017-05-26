@@ -37,18 +37,18 @@ The dev application currently contains the following:
       be loaded into the database, i.e. it is possible for a curriculum integration to be
       loaded into the database without it being assigned to a lesson.
 
-    - Programming Challenges - a list of programming challenges. This **does not** link to
-      the template from the topic application. This is because a programming challenge
+    - Programming Exercises - a list of programming exercises. This **does not** link to
+      the template from the topic application. This is because a programming exercise
       only has to be linked to a topic (at the very least) in order for it to be loaded
-      into the database, i.e. it is possible for a programming challenge to be loaded
+      into the database, i.e. it is possible for a programming exercise to be loaded
       into the database without it being assigned to a lesson.
 
 - Curriculum Areas - a list of curriculum areas and their subdomains.
 
 - Learning Outcomes - a list of learning outcomes.
 
-- Programming Challenge Languages - a list of programming languages that programming
-  challenge solutions can be given in.
+- Programming Exercise Languages - a list of programming languages that programming
+  exercise solutions can be given in.
 
-- Programming Challenge Difficulties - a list of difficulty levels and their corresponding
+- Programming Exercise Difficulties - a list of difficulty levels and their corresponding
   title.

@@ -60,21 +60,21 @@ urlpatterns = [
         views.LessonView.as_view(),
         name="lesson"
     ),
-    # eg: /topics/binary-numbers/unit-plan/lesson-1/programming/
+    # eg: /topics/binary-numbers/unit-plan/lesson-1/plugged-in/
     url(
-        r"^(?P<topic_slug>[-\w]+)/(?P<unit_plan_slug>[-\w]+)/(?P<lesson_slug>[-\w]+)/programming/$",
+        r"^(?P<topic_slug>[-\w]+)/(?P<unit_plan_slug>[-\w]+)/(?P<lesson_slug>[-\w]+)/plugged-in/$",
         views.ProgrammingExerciseList.as_view(),
         name="programming_exercises_list"
     ),
-    # eg: /topics/binary-numbers/programming/exercise-1
+    # eg: /topics/binary-numbers/plugged-in/exercise-1
     url(
-        r"^(?P<topic_slug>[-\w]+)/programming/(?P<programming_exercise_slug>[-\w]+)$",  # noqa: E501
+        r"^(?P<topic_slug>[-\w]+)/plugged-in/(?P<programming_exercise_slug>[-\w]+)$",  # noqa: E501
         views.ProgrammingExerciseView.as_view(),
         name="programming_exercise"
     ),
-    # eg: /topics/binary-numbers/programming/exercise-1/python-solution
+    # eg: /topics/binary-numbers/plugged-in/exercise-1/python-solution
     url(
-        r"^(?P<topic_slug>[-\w]+)/programming/(?P<programming_exercise_slug>[-\w]+)/(?P<programming_language_slug>[-\w]+)-solution$",  # noqa: E501
+        r"^(?P<topic_slug>[-\w]+)/plugged-in/(?P<programming_exercise_slug>[-\w]+)/(?P<programming_language_slug>[-\w]+)-solution$",  # noqa: E501
         views.ProgrammingExerciseLanguageSolutionView.as_view(),
         name="programming_exercise_language_solution"
     ),

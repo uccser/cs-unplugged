@@ -1,85 +1,80 @@
-{% extends "columns.html" %}
+{% extends "topics/index.html" %}
 
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block breadcrumbs %}
-  {% breadcrumb "Home" "/" %}
-  {% breadcrumb "Topics" "topics:index" %}
+  {{ block.super }}
   {% breadcrumb topic.name "topics:topic" topic.slug %}
 {% endblock breadcrumbs %}
 
-{% block page_heading %}
-  <h1 id="{{ topic.slug }}" class="heading-underline">{{ topic.name }}</h1>
-{% endblock page_heading %}
+{% block content %}
+  <h1>{{ topic.name }}</h1>
 
-{% block left_column_content %}
   {% render_html_field topic.content %}
 
-  <h2 id="units" class="heading-underline">Unit Plans</h2>
   {% for unit_plan in unit_plans %}
-    <h1 id="{{ unit_plan.slug }}" class="text-center mb-3">
+    <h2>
+      Unit Plan:
       <a href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">
         {{ unit_plan.name }}
       </a>
-    </h1>
+    </h2>
 
-    {% if unit_plan.grouped_lessons %}
-      {% with grouped_lessons=unit_plan.grouped_lessons %}
-        {% include "topics/lessons-table.html" %}
-      {% endwith %}
+    {% if unit_plan.unit_plan_lessons %}
+      {% for age_range, lessons in unit_plan.lessons.items %}
+        <h3>
+          Lessons for Ages {{ age_range.0 }} to {{ age_range.1 }}
+        </h3>
+
+        <ul>
+          {% for lesson in lessons %}
+            <li>
+              <a href="{% url 'topics:lesson' topic.slug unit_plan.slug lesson.slug %}">
+                <strong>Lesson {{ lesson.number }}:</strong> {{ lesson.name }}
+              </a>
+              {% if lesson.has_programming_exercises %}
+                <ul>
+                  <li>
+                    <a href="{% url 'topics:programming_exercises_list' topic.slug unit_plan.slug lesson.slug %}">
+                      View Lesson Programming Challenges
+                    </a>
+                  </li>
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
     {% endif %}
   {% endfor %}
 
-  <h2 id="integrations" class="heading-underline">Curriculum Integrations</h2>
   {% if curriculum_integrations %}
-    {% include "topics/curriculum-integrations-table.html" %}
+    <h2>Curriculum Integrations</h2>
+    {% for integration in curriculum_integrations %}
+      <ul class="list-unstyled">
+        <li>
+          <p>
+            <a href="{% url 'topics:integration' topic.slug integration.slug %}">
+              <strong>{{ integration.name }}</strong>
+            </a>
+            {% for area in integration.curriculum_areas.all %}
+              {% include "topics/curriculum_area_badge.html" %}
+            {% endfor %}
+          </p>
+        </li>
+      </ul>
+    {% endfor %}
   {% else %}
     <p>No curriculum integrations for {{ topic }}.</p>
   {% endif %}
 
-  <h2 id="programming" class="heading-underline">Programming Challenges</h2>
-  {% if programming_exercises %}
-    {% include "topics/programming-exercises-table.html" %}
-  {% else %}
-    <p>No programming challenges for {{ topic }}.</p>
-  {% endif %}
-
   {% if topic.other_resources %}
-    <h2 id="other-resources" class="heading-underline">Looking for more?</h2>
+    <h2>Looking for more?</h2>
     <p>
       <a href="{% url 'topics:other_resources' topic.slug %}">
         Click here for other resources
       </a>
     </p>
   {% endif %}
-{% endblock left_column_content %}
-
-{% block right_column_content %}
-  <div id="sticky-sidebar" class="sticky">
-    <h2 class="heading-underline">Table of contents</h2>
-    <ul class="nav nav-pills flex-column" id="scrollspy-table-of-contents">
-      <li class="nav-item">
-        <a class="nav-link" href="#{{ topic.slug }}">{{ topic.name }}</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#unit-plans">Unit plans</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#integrations">Curriculum integrations</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#programming">Programming challenges</a>
-      </li>
-      {% if topic.other_resources %}
-        <li class="nav-item">
-          <a class="nav-link" href="#other-resources">Other resources</a>
-        </li>
-      {% endif %}
-    </ul>
-  </div>
-{% endblock right_column_content %}
-
-{% block scripts %}
-  {% include "generic/import-stick-state-js.html" %}
-{% endblock scripts %}
+{% endblock %}

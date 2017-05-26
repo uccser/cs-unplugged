@@ -1,16 +1,13 @@
-from django import template
-
 from tests.BaseTestWithDB import BaseTestWithDB
-from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
-
+from django import template
 from topics.models import CurriculumIntegration
+from tests.topics import create_topics_test_data
 
 
 class RenderHTMLFieldTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.test_data = TopicsTestDataGenerator()
 
     def render_template(self, string, context=None):
         context = context or {}
@@ -18,23 +15,26 @@ class RenderHTMLFieldTest(BaseTestWithDB):
         return template.Template(string).render(context)
 
     def test_render_html_field_without_static(self):
-        topic = self.test_data.create_topic(1)
-        curriculum_integration_without_static = self.test_data.create_integration(
+        topic = create_topics_test_data.create_test_topic(1)
+        curriculum_integration_without_static = CurriculumIntegration.objects.create(
             topic=topic,
+            slug="slug_1",
             number=1,
+            name="1",
+            content="<p>Example text.</p>"
         )
         context = {"integration": curriculum_integration_without_static}
         rendered = self.render_template(
             "{% load render_html_field %}\n{% render_html_field integration.content %}",
             context
         )
-        self.assertHTMLEqual(rendered, "<p>Content for integration 1.</p>")
+        self.assertHTMLEqual(rendered, "<p>Example text.</p>")
 
     def test_render_html_field_with_static(self):
-        topic = self.test_data.create_topic(1)
+        topic = create_topics_test_data.create_test_topic(1)
         curriculum_integration_with_static = CurriculumIntegration.objects.create(
             topic=topic,
-            slug="slug-2",
+            slug="slug_2",
             number=2,
             name="2",
             content="<img src='{% static 'img/logo-small.png' %}'>"
@@ -47,10 +47,10 @@ class RenderHTMLFieldTest(BaseTestWithDB):
         self.assertHTMLEqual(rendered, "<img src='/staticfiles/img/logo-small.png'>")
 
     def test_render_html_field_empty(self):
-        topic = self.test_data.create_topic(1)
+        topic = create_topics_test_data.create_test_topic(1)
         curriculum_integration_empty = CurriculumIntegration.objects.create(
             topic=topic,
-            slug="slug-3",
+            slug="slug_3",
             number=3,
             name="3",
             content=""
@@ -77,10 +77,10 @@ class RenderHTMLFieldTest(BaseTestWithDB):
         )
 
     def test_render_html_field_invalid_parameter(self):
-        topic = self.test_data.create_topic(1)
+        topic = create_topics_test_data.create_test_topic(1)
         curriculum_integration_with_static = CurriculumIntegration.objects.create(
             topic=topic,
-            slug="slug-2",
+            slug="slug_2",
             number=2,
             name="2",
             content="<img src='{% static 'img/logo-small.png' %}'>"
@@ -94,10 +94,10 @@ class RenderHTMLFieldTest(BaseTestWithDB):
         )
 
     def test_render_html_field_missing_parameter(self):
-        topic = self.test_data.create_topic(1)
+        topic = create_topics_test_data.create_test_topic(1)
         curriculum_integration_with_static = CurriculumIntegration.objects.create(
             topic=topic,
-            slug="slug-2",
+            slug="slug_2",
             number=2,
             name="2",
             content="<img src='{% static 'img/logo-small.png' %}'>"

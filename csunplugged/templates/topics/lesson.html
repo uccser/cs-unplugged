@@ -1,86 +1,73 @@
-{% extends "columns.html" %}
+{% extends "topics/unit_plan.html" %}
 
 {% load static %}
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block breadcrumbs %}
-  {% breadcrumb "Home" "/" %}
-  {% breadcrumb "Topics" "topics:index" %}
-  {% breadcrumb topic.name "topics:topic" topic.slug %}
-  {% breadcrumb unit_plan.name "topics:unit_plan" topic.slug unit_plan.slug %}
+  {{ block.super }}
   {% breadcrumb lesson.name "topics:lesson" topic.slug unit_plan.slug lesson.slug %}
 {% endblock breadcrumbs %}
 
-{% block page_heading %}
-  <h1 id="{{ lesson.slug }}" class="heading-underline"><span class="subtitle">{{ lesson.number }}.</span> {{ lesson.name }}</h1>
-  <p><strong>Duration: </strong>{{ lesson.duration }} minutes</p>
-{% endblock page_heading %}
+{% block content %}
+<h1>{{ lesson.name }}</h1>
+<strong>Duration: </strong>{{ lesson.duration }} minutes
 
-{% block left_column_content %}
-  <h2 class="heading-underline">Learning Outcomes</h2>
-  {% if lesson_learning_outcomes %}
-    <p>Students will be able to:</p>
-    <ul>
-      {% for learning_outcome in lesson_learning_outcomes %}
-        <li>
-          {{ learning_outcome.text }}
-        {% for area in learning_outcome.curriculum_areas.all %}
-          {% include "topics/curriculum-area-badge.html" %}
-        {% endfor %}
-        </li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p>No learning outcomes listed for {{ lesson.name }}.</p>
-  {% endif %}
-
-  {% render_html_field lesson.content %}
-{% endblock left_column_content %}
-
-{% block right_column_content %}
-  <h2 class="heading-underline">CS Unplugged resources</h2>
-  {% if lesson_generated_resources %}
-    <div class="link-box-container">
-      {% for generated_resource in lesson_generated_resources %}
-        <a href="{% url 'resources:resource' generated_resource.slug %}" class="link-box link-box-w-100">
-          <img class="border-thin" src="{% static generated_resource.thumbnail %}" alt="Generic placeholder image" style="max-width: 5rem;">
-          <strong>{{ generated_resource.name }}</strong>
-          <p class="mb-0">{{ generated_resource.description }}</p>
+<h2>CS Unplugged Resources</h2>
+{% if lesson_generated_resources %}
+  <ul>
+    {% for generated_resource in lesson_generated_resources %}
+      <li>
+        <a href="{% url 'resources:resource' generated_resource.slug %}">
+          {% load static %}
+          <img class="img-thumbnail resource-thumbnail" src="{% static generated_resource.thumbnail %}">
+          <p><strong>{{ generated_resource.name }}</strong></p>
         </a>
-      {% endfor %}
-    </div>
-  {% else %}
-    <p>No CS Unplugged resources required.</p>
-  {% endif %}
+        <p>{{ generated_resource.description }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No CS Unplugged resources required.</p>
+{% endif %}
 
-  <h2 class="heading-underline mt-2">Classroom resources</h2>
-  {% if lesson.classroom_resources %}
-    <ul>
-      {% for classroom_resource in lesson.classroom_resources %}
-        <li>{{ classroom_resource }}</li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p>No classroom resources required.</p>
-  {% endif %}
+{% render_html_field lesson.content %}
 
-  <h2 class="heading-underline mt-2">Programming challenges</h2>
-  {% if programming_exercises %}
-    <p>
-      <a href="{% url 'topics:programming_exercises_list' topic.slug unit_plan.slug lesson.slug %}">
-        View related programming challenges
-      </a>
-    </p>
-  {% else %}
-    <p>No programming challenges for {{ lesson.name }}</p>
-  {% endif %}
+<h2>Plugged In <span class="subtitle">(programming challenges)</span></h2>
+{% if programming_exercises %}
+  <p>
+    <a href="{% url 'topics:programming_exercises_list' topic.slug unit_plan.slug lesson.slug %}" class="btn btn-outline-danger">
+      Programming challenges for {{ lesson.name }}
+    </a>
+  </p>
+{% else %}
+  <p>No programming challenges for {{ lesson.name }}.</p>
+{% endif %}
 
+<h2>Learning Outcomes</h2>
+{% if lesson_learning_outcomes %}
+  <ul>
+  {% for learning_outcome in lesson_learning_outcomes %}
+    <li>
+      {{ learning_outcome.text }}
+    {% for area in learning_outcome.curriculum_areas.all %}
+      {% include "topics/curriculum_area_badge.html" %}
+    {% endfor %}
+    </li>
+  {% endfor %}
+</ul>
+{% else %}
+  <p>No learning outcomes listed for {{ lesson.name }}.</p>
+{% endif %}
+
+{% endblock content %}
+
+{% block sidebar %}
   <div id="sticky-sidebar" class="sticky">
-    <h2 class="heading-underline mt-2">Table of contents</h2>
+    <h2>Table of Contents</h2>
     <ul class="nav nav-pills flex-column" id="scrollspy-table-of-contents">
       <li class="nav-item">
-        <a class="nav-link" href="#{{ lesson.slug }}">{{ lesson.name }}</a>
+        <a class="nav-link" href="#content-container">{{ lesson.name }}</a>
       </li>
       {% for heading_node in lesson.heading_tree %}
         <li class="nav-item">
@@ -89,8 +76,4 @@
       {% endfor %}
     </ul>
   </div>
-{% endblock right_column_content %}
-
-{% block scripts %}
-  {% include "generic/import-stick-state-js.html" %}
-{% endblock scripts %}
+{% endblock sidebar %}

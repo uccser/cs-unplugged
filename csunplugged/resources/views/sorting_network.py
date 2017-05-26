@@ -2,14 +2,13 @@
 
 from PIL import Image, ImageDraw, ImageFont
 from random import sample
-from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
-def resource_image(request, resource):
+def resource_image(get_request, resource):
     """Create a image for Sorting Network resource.
 
     Args:
-        request: HTTP request object
+        get_request: HTTP request object
         resource: Object of resource data.
 
     Returns:
@@ -19,14 +18,12 @@ def resource_image(request, resource):
     image = Image.open(image_path)
     draw = ImageDraw.Draw(image)
 
-    (range_min, range_max, font_size) = number_range(request)
+    (range_min, range_max, font_size) = number_range(get_request)
 
     font_path = "static/fonts/PatrickHand-Regular.ttf"
 
     # Add numbers to text if needed
-    parameter_options = valid_options()
-    prefilled_values = retrieve_query_parameter(request, "prefilled_values", parameter_options["prefilled_values"])
-    if prefilled_values != "blank":
+    if get_request["prefilled_values"] != "blank":
         font = ImageFont.truetype(font_path, font_size)
         numbers = sample(range(range_min, range_max), 6)
         base_coord_x = 70
@@ -48,40 +45,38 @@ def resource_image(request, resource):
     return image
 
 
-def subtitle(request, resource):
+def subtitle(get_request, resource):
     """Return the subtitle string of the resource.
 
     Used after the resource name in the filename, and
     also on the resource image.
 
     Args:
-        request: HTTP request object
+        get_request: HTTP request object
         resource: Object of resource data.
 
     Returns:
         text for subtitle (string)
     """
-    prefilled_values = retrieve_query_parameter(request, "prefilled_values")
-    if prefilled_values != "blank":
-        range_text = "blank"
+    if get_request["prefilled_values"] == "blank":
+        text = "blank"
     else:
         SUBTITLE_TEMPLATE = "{} to {}"
-        range_min, range_max, font_size = number_range(request)
-        range_text = SUBTITLE_TEMPLATE.format(range_min, range_max - 1)
-    return "{} - {}".format(range_text, retrieve_query_parameter(request, "paper_size"))
+        range_min, range_max, font_size = number_range(get_request)
+        text = SUBTITLE_TEMPLATE.format(range_min, range_max - 1)
+    return text
 
 
-def number_range(request):
+def number_range(get_request):
     """Return number range tuple for resource.
 
     Args:
-        request: HTTP request object
+        get_request: HTTP request object
 
     Returns:
         Tuple of (range_min, range_max, font_size)
     """
-    parameter_options = valid_options()
-    prefilled_values = retrieve_query_parameter(request, "prefilled_values", parameter_options["prefilled_values"])
+    prefilled_values = get_request["prefilled_values"]
     range_min = 0
     range_max = 0
     font_size = 150
@@ -97,17 +92,3 @@ def number_range(request):
         range_max = 1000
         font_size = 90
     return (range_min, range_max, font_size)
-
-
-def valid_options():
-    """Provide dictionary of all valid parameters.
-
-    This excludes the header text parameter.
-
-    Returns:
-        All valid options (dict).
-    """
-    return {
-        "prefilled_values": ["blank", "easy", "medium", "hard"],
-        "paper_size": ["a4", "letter"],
-    }

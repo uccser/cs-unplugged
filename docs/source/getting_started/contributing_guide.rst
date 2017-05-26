@@ -184,13 +184,6 @@ We aim to abide by the following style guides:
 - **CSS** - We follow the `open source CSS style guide`_ by @mdo.
 - **JavaScript** - We follow the `Google JavaScript style guide`_.
 
-Licensing
-------------------------------------------------------------------------------
-
-Any third-party libraries or packages used within this project should have
-their listed within the ``LICENSE-THIRD-PARTY`` file, with a full copy of the
-license available within the ``third-party-licenses`` directory.
-
 Final Comments
 ==============================================================================
 

@@ -1,12 +1,25 @@
-{% extends "columns.html" %}
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% load django_bootstrap_breadcrumbs %}
 
-{% block right_column_content %}
-  <h4>About pages</h4>
+{% block render_breadcrumbs %}
+  {% render_breadcrumbs "django_bootstrap_breadcrumbs/bootstrap4.html" %}
+{% endblock render_breadcrumbs %}
 
-  <nav class="nav flex-column">
-    <a class="nav-link" href="{% url 'general:about' %}">About</a>
-    <a class="nav-link" href="{% url 'general:people' %}">People</a>
-    <a class="nav-link" href="{% url 'general:contact' %}">Contact Us</a>
-    <a class="nav-link" href="{% url 'general:principles' %}">Principles</a>
-  </nav>
-{% endblock right_column_content %}
+{% block body_container %}
+  <div class="row">
+    <div class="col-12">
+      {% block page_heading %}
+      {% endblock page_heading %}
+    </div>
+    <div class="col-12 col-md-7">
+      {% block content %}
+      {% endblock content %}
+    </div>
+    <div class="col-12 col-md-5">
+      {% block sidebar %}
+      {% endblock sidebar %}
+    </div>
+  </div>
+{% endblock body_container %}

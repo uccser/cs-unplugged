@@ -1,22 +1,14 @@
-<figure class="figure{% if alignment == 'left' %} float-md-left{% elif alignment =='right' %} float-md-right{% else %} d-block text-center{% endif %}">
-<img src="{{ file_path }}"
-class="content-image figure-img img-fluid"
-{% if alt %} alt="{{ alt }}"{% endif %}
-{% if hover_text %} title="{{ hover_text }}"{% endif %}>
-{% if caption %}
-<figcaption class="figure-caption text-center">
-{% if caption_link %}
-<a href="{{ caption_link }}">
-{% endif %}
-{{ caption }}
-{% if caption_link %}
-</a>
-{% endif %}
-</figcaption>
-{% endif %}
-{% if source_link %}
-<figcaption class="figure-caption text-center">
-<a href="{{ source_link }}">Source</a>
-</figcaption>
-{% endif %}
-</figure>
+<div>
+  <img src="{{ file_path }}"
+    {% if alt %} alt="{{ alt }}" {% endif -%}
+    {%- if hover_text %} title="{{ hover_text }}" {% endif -%}
+    class="image-content {% if alignment == 'left' %} left-align{% elif alignment =='center' %} center-align{% elif alignment =='right' %} right-align{% endif %}">
+  {%- if caption and caption_link -%}
+  <p><a href="{{ caption_link }}">{{ caption }}</a></p>
+  {%- elif caption -%}
+  <p>{{ caption }}</p>
+  {%- endif -%}
+  {%- if source_link -%}
+  <p><a href="{{ source_link }}">Source</a></p>
+  {%- endif -%}
+</div>
