@@ -58,7 +58,7 @@ programming-identify-if-statement:
   curriculum-areas:
     - programming
 
-programming-prove-indexing:
+programming-demonstrate-indexing:
   text: Demonstrate how indexing to access a letter at the specified position in a string works.
   curriculum-areas:
     - programming
