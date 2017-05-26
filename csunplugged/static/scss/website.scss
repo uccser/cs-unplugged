@@ -12,6 +12,9 @@ img {
   &.inline-image {
     max-height: 3rem;
   }
+  &.inline-image-small {
+    max-height: 1.4rem;
+  }
 }
 
 h1 {
