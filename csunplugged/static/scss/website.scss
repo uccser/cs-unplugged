@@ -245,7 +245,7 @@ details {
     @include detail-colour-variant(#0B983A);
   }
   &.panel-ct-decomposition {
-    @include detail-colour-variant(darken(#FFDD0E, 10%));
+    @include detail-colour-variant(darken(#fdc426, 10%));
   }
   &.panel-ct-evaluation {
     @include detail-colour-variant(#0F70B7);
