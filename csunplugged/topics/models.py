@@ -150,6 +150,14 @@ class ProgrammingExercise(models.Model):
         related_name="difficulty_programming_exercises"
     )
 
+    def ordered_implementations(self):
+        """Return an ordered QuerySet of implementations.
+
+        Returns:
+            Ordered QuerySet.
+        """
+        return self.implementations.all().order_by("language__number").select_related()
+
     def __str__(self):
         """Text representation of ProgrammingExercise object.
 
