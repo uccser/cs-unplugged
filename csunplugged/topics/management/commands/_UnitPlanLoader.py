@@ -2,25 +2,25 @@
 
 import os.path
 from utils.BaseLoader import BaseLoader
-
+from utils.convert_heading_tree_to_dict import convert_heading_tree_to_dict
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
-
-from ._LessonsLoader import LessonsLoader
 
 
 class UnitPlanLoader(BaseLoader):
     """Custom loader for loading unit plans."""
 
-    def __init__(self, load_log, structure_file_path, topic, BASE_PATH):
+    def __init__(self, factory, load_log, structure_file_path, topic, BASE_PATH):
         """Create the loader for loading unit plans.
 
         Args:
+            factory: LoaderFactory object for creating loaders (LoaderFactory).
             load_log: List of log messages (list).
             structure_file_path: File path for structure YAML file (string).
             topic: Object of related topic model.
             BASE_PATH: Base file path (string).
         """
         super().__init__(BASE_PATH, load_log)
+        self.factory = factory
         self.unit_plan_slug = os.path.split(structure_file_path)[0]
         self.structure_file_path = os.path.join(self.BASE_PATH, structure_file_path)
         self.BASE_PATH = os.path.join(self.BASE_PATH, self.unit_plan_slug)
@@ -44,10 +44,15 @@ class UnitPlanLoader(BaseLoader):
             self.structure_file_path
         )
 
+        heading_tree = None
+        if unit_plan_content.heading_tree:
+            heading_tree = convert_heading_tree_to_dict(unit_plan_content.heading_tree)
+
         unit_plan = self.topic.topic_unit_plans.create(
             slug=self.unit_plan_slug,
             name=unit_plan_content.title,
             content=unit_plan_content.html_string,
+            heading_tree=heading_tree,
         )
         unit_plan.save()
 
@@ -65,7 +70,7 @@ class UnitPlanLoader(BaseLoader):
             )
         # Call the loader to save the lessons into the db
         lessons_structure = unit_plan_structure
-        LessonsLoader(
+        self.factory.create_lessons_loader(
             self.structure_file_path,
             self.load_log,
             lessons_structure,

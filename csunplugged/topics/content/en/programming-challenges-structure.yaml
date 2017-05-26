@@ -1,0 +1,17 @@
+languages:
+    scratch:
+        name: Scratch
+        number: 1
+        icon: img/scratch-cat.png
+    python:
+        name: Python
+        number: 2
+        icon: img/python-logo.png
+
+difficulties:
+  1:
+    name: Beginner
+  2:
+    name: Growing Experience
+  3:
+    name: Ready to Expand

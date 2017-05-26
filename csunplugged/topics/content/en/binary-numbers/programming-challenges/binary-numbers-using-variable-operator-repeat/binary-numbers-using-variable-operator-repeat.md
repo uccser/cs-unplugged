@@ -1,0 +1,12 @@
+# Display Binary Numbers (using a variable, operator and a repeat loop)
+
+## Requirement:
+
+Write a program to display numbers 1, 2, 4, 8 and 16 on the screen one at a
+time for 1 second each.
+This challenge builds on the previous one, but the program should use a loop,
+so it could easily be updated to display more numbers.
+
+## Testing examples:
+
+The output will always show the numbers 1, 2, 4, 8 and 16 (there is no input).

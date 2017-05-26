@@ -65,7 +65,7 @@ The project currently contains the following applications:
 
   - The core CS Unplugged content is split across topics, with each topic
     containing any combination of unit plans, lessons, follow up activities,
-    programming exercises (plugged in activities), and much more.
+    programming challenges (plugged in activities), and much more.
     This application stores and displays the topics content.
 
 - ``resources/``

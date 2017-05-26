@@ -1,3 +1,0 @@
-- You can find `make a new variable` under `data` script to create a new variable. Make sure your variable name is as descriptive as possible.
-- Use the `SET` block to set the value of your new variable. Use the multiply operation under `Operators` script to double the value of your variable. Use the JOIN block under `Operators` script to combine two strings. You can use multiple join blocks inside each other if you need to combine more than two strings.
-- Use the `REPEAT` block to run the blocks inside a specified number of times. In this challenge you need to repeat the blocks 5 times (4 times for the extra challenge).

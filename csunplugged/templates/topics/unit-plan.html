@@ -1,0 +1,44 @@
+{% extends "columns.html" %}
+
+{% load render_html_field %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block breadcrumbs %}
+  {% breadcrumb "Home" "/" %}
+  {% breadcrumb "Topics" "topics:index" %}
+  {% breadcrumb topic.name "topics:topic" topic.slug %}
+  {% breadcrumb unit_plan.name "topics:unit_plan" topic.slug unit_plan.slug %}
+{% endblock breadcrumbs %}
+
+{% block page_heading %}
+  <h1 id="{{ unit_plan.slug }}" class="heading-underline">{{ unit_plan.name }}</h1>
+{% endblock page_heading %}
+
+{% block left_column_content %}
+  {% render_html_field unit_plan.content %}
+
+  {% if grouped_lessons %}
+    <h2 class="heading-underline">Lessons</h2>
+    {% include "topics/lessons-table.html" %}
+  {% endif %}
+{% endblock left_column_content %}
+
+{% block right_column_content %}
+  <div id="sticky-sidebar" class="sticky">
+    <h2 class="heading-underline">Table of contents</h2>
+    <ul class="nav nav-pills flex-column" id="scrollspy-table-of-contents">
+      <li class="nav-item">
+        <a class="nav-link" href="#{{ unit_plan.slug }}">{{ unit_plan.name }}</a>
+      </li>
+      {% for heading_node in unit_plan.heading_tree %}
+        <li class="nav-item">
+          <a class="nav-link" href="#{{ heading_node.slug }}">{{ heading_node.text }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock right_column_content %}
+
+{% block scripts %}
+  {% include "generic/import-stick-state-js.html" %}
+{% endblock scripts %}
