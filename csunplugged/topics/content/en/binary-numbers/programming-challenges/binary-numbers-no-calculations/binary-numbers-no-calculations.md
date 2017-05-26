@@ -7,4 +7,4 @@ time for 1 second each.
 
 ## Testing examples:
 
-There are no testing examples for this challenge.
+The output will always show the numbers 1, 2, 4, 8 and 16 (there is no input).

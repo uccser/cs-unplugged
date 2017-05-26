@@ -1,4 +1,4 @@
-# Display the binary cards needed to represent any positive decimal number
+# Display the binary cards needed to represent any decimal number
 
 ## Requirement:
 
