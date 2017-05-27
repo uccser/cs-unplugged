@@ -17,7 +17,7 @@
   {% if all_resources %}
     <div class="link-box-container">
       {% for resource in all_resources %}
-        <a href="{% url 'resources:resource' resource.slug %}" class="link-box">
+        <a href="{% url 'resources:resource' resource.slug %}" class="link-box link-box-md-3 link-box-lg-4">
           <img class="border-thin" src="{% static resource.thumbnail_static_path %}" alt="Generic placeholder image">
           <strong>{{ resource.name }}</strong>
           <p class="mb-0">{{ resource.description }}</p>

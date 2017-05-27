@@ -43,7 +43,7 @@
   {% if lesson_generated_resources %}
     <div class="link-box-container">
       {% for generated_resource in lesson_generated_resources %}
-        <a href="{% url 'resources:resource' generated_resource.slug %}" class="link-box link-box-w-100">
+        <a href="{% url 'resources:resource' generated_resource.slug %}" class="link-box">
           <img class="border-thin" src="{% static generated_resource.thumbnail %}" alt="Generic placeholder image" style="max-width: 5rem;">
           <strong>{{ generated_resource.name }}</strong>
           <p class="mb-0">{{ generated_resource.description }}</p>
