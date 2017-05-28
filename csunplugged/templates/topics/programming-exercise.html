@@ -44,7 +44,12 @@
     {% if programming_exercise_learning_outcomes %}
       <ul>
       {% for learning_outcome in programming_exercise_learning_outcomes %}
-        <li>{{ learning_outcome.text }}</li>
+        <li>
+          {{ learning_outcome.text }}
+          {% for area in learning_outcome.curriculum_areas.all %}
+            {% include "topics/curriculum-area-badge.html" %}
+          {% endfor %}
+        </li>
       {% endfor %}
     </ul>
     {% else %}

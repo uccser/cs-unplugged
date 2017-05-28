@@ -25,9 +25,9 @@
       {% for learning_outcome in lesson_learning_outcomes %}
         <li>
           {{ learning_outcome.text }}
-        {% for area in learning_outcome.curriculum_areas.all %}
-          {% include "topics/curriculum-area-badge.html" %}
-        {% endfor %}
+          {% for area in learning_outcome.curriculum_areas.all %}
+            {% include "topics/curriculum-area-badge.html" %}
+          {% endfor %}
         </li>
       {% endfor %}
     </ul>
