@@ -239,7 +239,7 @@ This is sometimes called the fencepost problem (the number of fence posts is one
 
 ## Computational Thinking Connections
 
-{panel type="ct-algorithm" title="Algorithmic thinking" expanded="true"}
+{panel type="ct-algorithm" title="Algorithmic thinking"}
 
 We used an algorithm in this lesson  to convert a decimal number to a binary one.
 This is an algorithm because it is a step-by-step process that will always give the right solution for any input you give it as long as the process is followed exactly.
@@ -263,7 +263,7 @@ Which ones start with the leftmost card and move one card at a time to the right
 
 {panel end}
 
-{panel type="ct-abstraction" title="Abstraction" expanded="true"}
+{panel type="ct-abstraction" title="Abstraction"}
 
 Binary number representation (just using 0 and 1) is an abstraction that hides the complexity of the electronics and hardware inside a computer that store data. Abstraction helps us simplify things because we can ignore the details we don’t currently need to know.
 
@@ -288,7 +288,7 @@ If you are able to interchange terms like "black" and "white" with 0 and 1 witho
 
 {panel end}
 
-{panel type="ct-decomposition" title="Decomposition" expanded="true"}
+{panel type="ct-decomposition" title="Decomposition"}
 
 An example of decomposition is breaking the conversion of the number to binary into one bit at a time. The questions "Should this be 1 or 0" for each of the dot cards is decomposing the problem to a series of questions.
 
@@ -298,7 +298,7 @@ Which students recognise that it is important to start with the leftmost card an
 
 {panel end}
 
-{panel type="ct-pattern" title="Generalising and patterns" expanded="true"}
+{panel type="ct-pattern" title="Generalising and patterns"}
 
 Recognising patterns in the way the binary number system works helps give us a deeper understanding of the concepts involved, and assists us in generalising these concepts and patterns so that we can apply them to other problems.
 
@@ -340,7 +340,7 @@ Which students easily understand the patterns of cards flipping when counting wi
 
 {panel end}
 
-{panel type="ct-logic" title="Logic" expanded="true"}
+{panel type="ct-logic" title="Logic"}
 
 Logical thinking means using rules you already know and using logic to deduce more rules and information from these.
 Once we know what number each of the binary cards represents then we can use this knowledge to figure out how to represent other numbers with the cards.
@@ -358,7 +358,7 @@ Are students able to explain that each card "has to" be up the way it is for a g
 
 {panel end}
 
-{panel type="ct-evaluation" title="Evaluation" expanded="true"}
+{panel type="ct-evaluation" title="Evaluation"}
 
 An example of evaluation is working out how many different values can be represented by a given number of bits (e.g. 5 bits can represent 32 different values), and vice versa (to represent 1000 different values, you need at least 10 bits).
 
