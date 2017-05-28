@@ -2,6 +2,10 @@
 
 {% load django_bootstrap_breadcrumbs %}
 
+{% block title %}
+  {{ lesson.name }} programming challenges
+{% endblock title %}
+
 {% block breadcrumbs %}
   {% breadcrumb "Home" "/" %}
   {% breadcrumb "Topics" "topics:index" %}
@@ -10,7 +14,7 @@
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-  <h1>{{ lesson.name }} Programming Challenges</h1>
+  <h1>{{ lesson.name }} programming challenges</h1>
 {% endblock page_heading %}
 
 {% block content %}

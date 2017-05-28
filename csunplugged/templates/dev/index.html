@@ -4,6 +4,10 @@
 {% load static %}
 {% load render_html_field %}
 
+{% block title %}
+  Dev Overview
+{% endblock title %}
+
 {% block content %}
   <h1>Topics</h1>
   {% if topics.all %}

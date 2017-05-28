@@ -8,6 +8,10 @@
   {% breadcrumb resource.name "resources:resource" resource.slug %}
 {% endblock breadcrumbs %}
 
+{% block title %}
+  {{ resource.name }}
+{% endblock title %}
+
 {% block page_heading %}
   <h1>{{ resource.name }}</h1>
 

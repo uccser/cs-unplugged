@@ -4,6 +4,10 @@
 {% load static %}
 {% load django_bootstrap_breadcrumbs %}
 
+{% block title %}
+  {% trans "Resources" %}
+{% endblock title %}
+
 {% block breadcrumbs %}
   {% breadcrumb "Home" "/" %}
   {% breadcrumb "Resources" "resources:index" %}

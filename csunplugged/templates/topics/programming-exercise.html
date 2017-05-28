@@ -4,6 +4,11 @@
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
+{% block title %}
+  {{ programming_exercise.exercise_set_number }}.{{ programming_exercise.exercise_number }}
+  {{ programming_exercise.name }}
+{% endblock title %}
+
 {% block breadcrumbs %}
   {% breadcrumb "Home" "/" %}
   {% breadcrumb "Topics" "topics:index" %}
