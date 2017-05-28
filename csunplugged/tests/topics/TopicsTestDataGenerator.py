@@ -77,6 +77,7 @@ class TopicsTestDataGenerator:
         area = CurriculumArea(
             slug="area-{}".format(number),
             name="Area {}".format(number),
+            number=number,
             parent=parent,
         )
         area.save()
