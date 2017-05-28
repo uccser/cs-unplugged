@@ -344,20 +344,16 @@ body {
   max-width: 100%;
   overflow-x: auto;
   width: 100%;
-  text-align: center;
-  tr, th {
+  td, th {
     padding: ($spacer-x * .75);
   }
   th {
     color: #464a4c;
     background-color: #eceeef;
     border-bottom: 2px solid #eceeef;
-    text-align: center;
-    vertical-align: middle;
   }
   tr {
     border-top: 1px solid #eceeef;
-    vertical-align: middle;
   }
 }
 
