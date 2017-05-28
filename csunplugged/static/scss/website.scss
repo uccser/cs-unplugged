@@ -211,6 +211,7 @@ footer {
 
   .boxed-text-content {
     margin: ($spacer-y * .5) ($spacer-x * .5);
+    overflow: auto;
   }
 }
 
