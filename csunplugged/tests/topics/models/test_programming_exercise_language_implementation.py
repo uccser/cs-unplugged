@@ -1,9 +1,6 @@
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
-from topics.models import (
-    ProgrammingExercise,
-    ProgrammingExerciseLanguageImplementation,
-)
+from topics.models import ProgrammingExercise
 
 
 class ProgrammingExerciseLanguageImplementationModelTest(BaseTestWithDB):
@@ -22,8 +19,10 @@ class ProgrammingExerciseLanguageImplementationModelTest(BaseTestWithDB):
             language=language,
             exercise=exercise
         )
-        query_result = ProgrammingExercise.objects.get(slug="exercise-1").implementations.get(language__slug="language-1")
-        self.assertEqual(query_result, implementation)
+        self.assertEqual(
+            ProgrammingExercise.objects.get(slug="exercise-1").implementations.get(language__slug="language-1"),
+            implementation
+        )
 
     def test_implementation_str(self):
         topic = self.test_data.create_topic(1)
@@ -48,22 +47,22 @@ class ProgrammingExerciseLanguageImplementationModelTest(BaseTestWithDB):
         language_3 = self.test_data.create_programming_language(3)
         language_4 = self.test_data.create_programming_language(4)
         exercise = self.test_data.create_programming_exercise(topic, 1, difficulty)
-        implementation_4 = self.test_data.create_programming_exercise_implementation(
+        self.test_data.create_programming_exercise_implementation(
             topic=topic,
             language=language_4,
             exercise=exercise,
         )
-        implementation_1 = self.test_data.create_programming_exercise_implementation(
+        self.test_data.create_programming_exercise_implementation(
             topic=topic,
             language=language_1,
             exercise=exercise,
         )
-        implementation_3 = self.test_data.create_programming_exercise_implementation(
+        self.test_data.create_programming_exercise_implementation(
             topic=topic,
             language=language_3,
             exercise=exercise,
         )
-        implementation_2 = self.test_data.create_programming_exercise_implementation(
+        self.test_data.create_programming_exercise_implementation(
             topic=topic,
             language=language_2,
             exercise=exercise,

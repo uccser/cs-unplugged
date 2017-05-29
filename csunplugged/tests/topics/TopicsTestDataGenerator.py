@@ -219,12 +219,12 @@ class TopicsTestDataGenerator:
         return exercise
 
     def create_programming_exercise_implementation(self, topic,
-                                    language,
-                                    exercise,
-                                    expected_result="<p>Example result.</p>",
-                                    hints="<p>Example hints.</p>",
-                                    solution="<p>Example solution.</p>",
-                                    ):
+                                                   language,
+                                                   exercise,
+                                                   expected_result="<p>Example result.</p>",
+                                                   hints="<p>Example hints.</p>",
+                                                   solution="<p>Example solution.</p>",
+                                                   ):
         """
         Create programming exercise implementation object.
 
