@@ -108,7 +108,7 @@ For example, the ASCII code for "A" is 65 and "B" is 66 etc.; if you work out th
 - What did you find challenging during this lesson?
 - How did you overcome these challenges?
 
-## Computational Thinking Links
+## Computational Thinking links
 
 {panel type="ct-algorithm" title="Algorithmic thinking" expanded="true"}
 
