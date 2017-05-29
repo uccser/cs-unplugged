@@ -47,7 +47,7 @@ def resource_image(request, resource):
     else:
         back_colour_hex = "#cc0423"
 
-    back_page = Image.new("RGB", (IMAGE_SIZE_X, IMAGE_SIZE_Y), back_colour)
+    back_page = Image.new("RGB", (IMAGE_SIZE_X, IMAGE_SIZE_Y), back_colour_hex)
 
     return [front_page, back_page]
 
