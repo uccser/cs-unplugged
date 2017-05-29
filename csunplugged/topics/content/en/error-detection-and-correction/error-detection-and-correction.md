@@ -1,4 +1,4 @@
-# Error detection and correction unit plan
+# Error detection and correction
 
 The world is a complicated and imperfect place, and errors can occur when
 digital information is stored or transmitted.
