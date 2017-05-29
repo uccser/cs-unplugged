@@ -127,7 +127,6 @@ class CurriculumAreasLoaderTest(BaseTestWithDB):
             ordered=False,
         )
 
-
     def test_curriculum_areas_loader_missing_children_value(self):
         config_file = "basic-config.yaml"
         area_loader = CurriculumAreasLoader(config_file, self.BASE_PATH)
