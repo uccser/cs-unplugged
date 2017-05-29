@@ -89,7 +89,7 @@ class CurriculumAreasLoader(BaseLoader):
                 if children_curriculum_areas is None:
                     raise MissingRequiredFieldError(
                         self.structure_file_path,
-                        ["name"],
+                        ["slug"],
                         "Child Curriculum Area"
                     )
                 for (child_slug, child_data) in children_curriculum_areas.items():
