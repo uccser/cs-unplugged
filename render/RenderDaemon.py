@@ -17,6 +17,7 @@ from ResourceManager import ResourceManager
 PROJECT_NAME = os.getenv("PROJECT_NAME", None)
 QUEUE_NAME = os.getenv("QUEUE_NAME", None)
 DISCOVERY_URL = os.getenv("API_DISCOVERY_URL", None)
+STORAGE_BUCKET = os.getenv("STORAGE_BUCKET", None)
 
 TASK_COUNT = int(os.getenv("TASK_COUNT", 20))
 TASK_SECONDS = float(os.getenv("TASK_SECONDS", 15))
@@ -49,8 +50,7 @@ class RenderDaemon(RunDaemon):
         """
         super(RenderDaemon, self).__init__(*args, **kwargs)
         self.handle(signal.SIGALRM, handle_timelimit_exceeded)
-        self.resource_manager = ResourceManager(".")
-        self.cache_manager = ResourceManager("./cache")
+        self.resource_manager = ResourceManager(STORAGE_BUCKET)
         self.template_environment = Environment(
             loader=FileSystemLoader('/render/templates'),
             autoescape=False
@@ -149,7 +149,7 @@ class RenderDaemon(RunDaemon):
         context["filename"] = filename
 
         template_filename = task.get("template", "base-resource-pdf.html")
-        css_filename = task.get("css", "css/print-resource-pdf.css")
+        css_filename = task.get("css", "static/css/print-resource-pdf.css")
 
         template = self.template_environment.get_template(template_filename)
         pdf_html = template.render(context)  # TODO: Future consider async
