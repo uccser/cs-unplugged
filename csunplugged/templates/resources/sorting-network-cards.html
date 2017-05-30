@@ -1,0 +1,39 @@
+{% extends "resources/resource.html" %}
+
+<!-- Description of resource -->
+{% block description %}
+  <p>
+    These cards are to be used with the
+    <a href="{% url 'resources:resource' 'sorting-network' %}">Sorting Network resource</a>.
+  </p>
+{% endblock description %}
+
+{% block generation_form %}
+  <fieldset class="form-group">
+    <legend>Card Type</legend>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="type" value="small_numbers" checked="checked">
+        Small numbers (1 to 6)
+      </label>
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="type" value="large_numbers">
+        Large numbers (7 digit numbers)
+      </label>
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="type" value="fractions">
+        Fractions
+      </label>
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="type" value="maori_numbers">
+        Māori numbers
+      </label>
+    </div>
+  </fieldset>
+{% endblock generation_form %}
