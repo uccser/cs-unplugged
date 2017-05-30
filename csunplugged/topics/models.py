@@ -280,8 +280,6 @@ class AgeRange(models.Model):
         Lesson,
         related_name="lesson_age_range"
     )
-    # min_age = models.PositiveSmallIntegerField()
-    # max_age = models.PositiveSmallIntegerField()
 
     def __str__(self):
         """Text representation of AgeRange object.
