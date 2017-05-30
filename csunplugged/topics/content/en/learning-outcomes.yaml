@@ -13,6 +13,109 @@ maths-comparing-numbers:
   curriculum-areas:
     - numeracy
 
+# ERROR DETECTION AND CORRRECTION LEARNING OUTCOMES
+
+error-describe-steps-to-find-card:
+  text: Describe the steps it takes to work out how to find the card that is turned over.
+  curriculum-areas:
+    - decomposition
+
+error-explain-each-card-bit:
+  text: Explain that each card is a bit and that the cards can represent data.
+  curriculum-areas:
+    - algorithmic-thinking
+
+error-explain-chose-parity-card:
+  text: Explain why they chose each extra card when setting up the parity column/row.
+  curriculum-areas:
+    - generalising-and-patterns
+
+error-explain-checksum-algorithm:
+  text: Explain why the checksum algorithm is so reliable.
+  curriculum-areas:
+    - logic
+
+# NUMERACY LEARNING OUTCOMES
+
+numeracy-adding-given-number:
+  text: Add numbers to a given amount.
+  curriculum-areas:
+    - numeracy
+
+numeracy-identify-even-odd:
+  text: Identify even and odd numbers by explaining why the most right number is different to the others.
+  curriculum-areas:
+    - numeracy
+
+numeracy-discuss-count-zeros-ones:
+  text: Discuss why you can count up to any number by only using 0s and 1s.
+  curriculum-areas:
+    - numeracy
+
+numeracy-explain-squaring:
+  text: Explain how understanding how binary numbers increase supports your knowledge of place value.
+  curriculum-areas:
+    - numeracy
+
+numeracy-compare-base10-base2:
+  text: Compare the base value systems of base 10 (our number system)  and base 2 (binary).
+  curriculum-areas:
+    - numeracy
+
+numeracy-identify-larger-number:
+  text: Identify which number is larger, when comparing two numbers.
+  curriculum-areas:
+    - numeracy
+
+numeracy-count-by-pointing:
+  text: Count accurately by pointing at each item.
+  curriculum-areas:
+    - numeracy
+
+numeracy-recognise-patterns:
+  text: Recognise patterns for numbers 1 through to 8.
+  curriculum-areas:
+    - numeracy
+
+numeracy-recognise-number-alphabet-order:
+  text: Recognise that the alphabet is in an order and so are numbers.
+  curriculum-areas:
+    - numeracy
+
+numeracy-explain-even-odd-parity-problem:
+  text: Explain how knowing what odd and evens numbers are means you can solve the parity problem.
+  curriculum-areas:
+    - numeracy
+
+numeracy-describe-rows-columns:
+  text: Describe what are rows and what are columns.
+  curriculum-areas:
+    - numeracy
+
+numeracy-discuss-changing-one-card-state:
+  text: Discuss why changing one card will change the state of the row and column which it is in.
+  curriculum-areas:
+    - numeracy
+
+numeracy-explain-modulo:
+  text: Explain how the modulo operator works.
+  curriculum-areas:
+    - numeracy
+
+numeracy-identify-modulo-everyday-life:
+  text: Identify where modulo occurs in everyday life.
+  curriculum-areas:
+    - measurement
+    - music
+    - numeracy
+
+numeracy-discuss-modulo-understanding-remainders:
+  text: Discuss how knowing how modulo works, supports your understanding of remainders.
+  curriculum-areas:
+    - numeracy
+
+# PROGRAMMING LEARNING OUTCOMES
+
 programming-explain-sequencing:
   text: Explain how sequence works in programming
   curriculum-areas:

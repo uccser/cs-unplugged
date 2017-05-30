@@ -3,6 +3,13 @@ parity-magic:
   max-age: 10
   number: 1
   duration: 30
+  learning-outcomes:
+    - numeracy-explain-even-odd-parity-problem
+    - numeracy-describe-rows-columns
+    - numeracy-discuss-changing-one-card-state
+    - error-describe-steps-to-find-card
+    - error-explain-each-card-bit
+    - error-explain-chose-parity-card
 
 product-code-check-digits:
   min-age: 8
