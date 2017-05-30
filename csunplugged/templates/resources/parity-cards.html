@@ -1,0 +1,54 @@
+{% extends "resources/resource.html" %}
+
+<!-- Description of resource -->
+{% block description %}
+  <p>
+    This resource contains printouts for parity card activities.
+    To use this resource:
+  </p>
+
+  <ul>
+    <li>
+      Printed the PDF double sided.
+    </li>
+    <li>
+      Printing on 120 gsm card also can be useful.
+    </li>
+  </ul>
+
+  <p>
+    Each page contains 20 parity cards, so we recommend printing at least 3
+    pages of cards as 60 cards is a useful number for most activities.
+  </p>
+{% endblock description %}
+
+{% block generation_form %}
+  <fieldset>
+    <legend>Card back colour</legend>
+    <label class="form-check-label">
+      <input type="radio" name="back_colour" class="form-check-input" value="black" checked="checked">
+      Black
+    </label>
+    <br>
+    <label class="form-check-label">
+      <input type="radio" name="back_colour" class="form-check-input" value="blue">
+      Blue
+    </label>
+    <br>
+    <label class="form-check-label">
+      <input type="radio" name="back_colour" class="form-check-input" value="green">
+      Green
+    </label>
+    <br>
+    <label class="form-check-label">
+      <input type="radio" name="back_colour" class="form-check-input" value="purple">
+      Purple
+    </label>
+    <br>
+    <label class="form-check-label">
+      <input type="radio" name="back_colour" class="form-check-input" value="red">
+      Red
+    </label>
+  </fieldset>
+
+{% endblock generation_form %}
