@@ -237,7 +237,7 @@ files have arrived reliably.
 
 {panel end}
 
-{panel type="ct-evaluation" title="Evaluation" expanded="true"}
+{panel type="ct-evaluation" title="Evaluation"}
 
 We can evaluate our solutions by testing them with a range of different inputs.
 Does our solution detect when data has an error in it or not?
