@@ -307,7 +307,7 @@ At a simple level, we started with the numbers 1, 2, and 4, and students general
 The algorithm for converting a decimal number to a binary one follows a pattern that can be generalised to solve the problem of giving change when someone pays by cash. For binary numbers you start with the largest bit always turn a bit on if you need it, just like when you’re giving change you start with the largest denomination and then always take a coin (or note) whenever you need it.
 Jargon note: This is called a greedy algorithm - it takes as much as it can each time!
 
-{panel type="general" title="Mathematical Links"}
+{panel type="math" title="Mathematical links"}
 
 Ask students what is special about the decimal to binary conversion, in contrast with the general change giving algorithm, and have them observe that in the general case you may need to give more than one coin of the same denomination, whereas in the binary conversion there is always one (or none) of each.
 

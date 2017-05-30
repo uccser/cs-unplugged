@@ -43,7 +43,7 @@ We are going to learn about some ways in which computers make sure that informat
 
 A **check digit** is an extra digit added to the end of an important number such as a credit card number, product code (bar code), identity number, tax number, or a passport number, that can be used to check if the number has been typed in correctly. In some situations more than one digit is used, in which case it is referred to as a checksum.
 
-{panel type="general" title="Mathematical Links"}
+{panel type="math" title="Mathematical links"}
 
 - Even and odd numbers
 - That even and odd numbers alternate (adding or subtracting one from a number changes it from even to odd, or from odd to even).
@@ -65,17 +65,17 @@ Everything stored by computers and sent between them is represented as bits (bin
 It is easy for these to be changed accidentally because of errors in the devices that are storing or transmitting them. A CD might get a scratch or a piece of dust on it that changes a zero into a one or vice versa.
 A hard disk might have the magnetism accidentally fade where a bit (binary digit) is stored.
 On the Internet, interference and bad connections can cause bits to be altered.
-When scanning printed information such as barcodes and QR codes there might be ice or dirt on the product that causes the wrong value to be scanned. 
+When scanning printed information such as barcodes and QR codes there might be ice or dirt on the product that causes the wrong value to be scanned.
 So how come we don’t have to worry about this?
 
 And even worse, what if we detect that there's been an error in the data, but can't get a new copy?
 For example, if data is received from a deep space probe, it would be very tedious to wait for retransmission if an error has occurred and we can’t fix it!
 (It takes just over half an hour to get a radio signal from Jupiter when it is at its closest to Earth!)
 And when you read data from a computer's file system, if an error is detected you can't go back in time and save a new copy (well, making a backup is like anticipating that you'll need to go back in time one day, but it's not always convenient or easy to remember to use a backup).
-We need to be able to recognize when the data has been corrupted (error detection) and ideally we also need to be able to reconstruct the original data (error correction). 
+We need to be able to recognize when the data has been corrupted (error detection) and ideally we also need to be able to reconstruct the original data (error correction).
 
-This was a serious problem on early computers, so scientists soon invented methods to allow computers to detect errors in data and correct those errors. 
-We will learn about one way to do this using a method that is called parity. 
+This was a serious problem on early computers, so scientists soon invented methods to allow computers to detect errors in data and correct those errors.
+We will learn about one way to do this using a method that is called parity.
 But instead of using zero and one bits inside a computer system, we’ll use cards with two sides, and do it as a magic trick. More sophisticated versions of this are widely used on modern storage and transmission devices to make sure that typical minor hardware problems are unlikely to result in a major loss of data.
 The more complex error control systems used on modern digital devices are able to detect and correct multiple errors.
 The hard disk in a computer has a large amount of its space allocated to correcting errors so that it will work reliably even if parts of the disk surface fail.
@@ -83,9 +83,9 @@ The activities here will show how adding extra information (without going to the
 
 ## Seeing the Computational Thinking Connections
 
-#### How to see the computational thinking in what you are teaching: 
+#### How to see the computational thinking in what you are teaching:
 
-Throughout the lessons attached to this unit there are links to computational thinking. 
+Throughout the lessons attached to this unit there are links to computational thinking.
 
 Teaching computational thinking through CSUnplugged activities supports students to learn how to describe a problem, identify what are the important details they need to solve this problem, and break it down into small, logical steps so that they can then create a process which solves the problem, and then evaluate this process.
 These skills are transferable to any other curriculum area, but are particularly relevant to developing digital systems and solving problems using the capabilities of computers.
@@ -100,7 +100,7 @@ How to detect and correct errors in data is a very important problem in Computer
 
 ### Abstraction
 
-When we perform error control there are only some details we need to focus on to perform this task, and many others can be ignored by using abstraction when we look at the problem. 
+When we perform error control there are only some details we need to focus on to perform this task, and many others can be ignored by using abstraction when we look at the problem.
 With error control, we only care about what the bits or numbers we are looking at are, and we don’t need to know what those bits and numbers actually represent or mean - we don’t need to know if they are the numbers and check digit on the barcode for a loaf of bread, or if the bits we are checking for even parity represent a video stored on a laptop. This information can be discarded because it is irrelevant to the task of error control.
 Similarly, if we have performed error control on our piece of data and now we are using it for something, we no longer need to think about how that error detection and correction worked; it is usually hidden from the user, so all they see is data that seems to be stored and transmitted accurately. The designer of such a system needs to know error control is enabling the data to get through accurately, but once that is happening, they can put all the information about how it is happening to one side and focus on working with the data.
 
@@ -115,7 +115,7 @@ Detecting and correcting errors is a very common problem in Computer Science, an
 ### Evaluation
 
 We can evaluate our solutions by testing them with a range of different inputs. Does our solution detect when data has an error in it or not? What happens if there is more than one error in our data? Students can test the algorithms with many different inputs to evaluate how good (or not good!) they are.
-We can also evaluate our algorithms like the ones in this unit, and show that they will always work by constructing a mathematical proof, or through logical reasoning, which ties in with the next Computational Thinking skill: logic. 
+We can also evaluate our algorithms like the ones in this unit, and show that they will always work by constructing a mathematical proof, or through logical reasoning, which ties in with the next Computational Thinking skill: logic.
 
 ### Logic
 
@@ -124,8 +124,7 @@ If we know that the data in our parity trick grid should have even parity, how d
 
 ## Reflection questions
 
-- What was most surprising about the learning that happened from the teaching of this unit? 
-- Who were the students who were very systematic in their activities? 
-- Who were the students who were very detailed in their activities? 
-- What would I change in my delivery of this unit? 
-
+- What was most surprising about the learning that happened from the teaching of this unit?
+- Who were the students who were very systematic in their activities?
+- Who were the students who were very detailed in their activities?
+- What would I change in my delivery of this unit?
