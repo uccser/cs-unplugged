@@ -5,6 +5,8 @@ from utils.BaseLoader import BaseLoader
 from utils.convert_heading_tree_to_dict import convert_heading_tree_to_dict
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 
+from topics.models import Lesson
+
 
 class UnitPlanLoader(BaseLoader):
     """Custom loader for loading unit plans."""
@@ -68,13 +70,28 @@ class UnitPlanLoader(BaseLoader):
                 ["(At least one lesson)"],
                 "Unit Plan"
             )
+        # Get path to lesson yaml
+        lessons_yaml = unit_plan_structure["lessons"]
+        lessons_structure_file_path = os.path.join(self.BASE_PATH, lessons_yaml)
         # Call the loader to save the lessons into the db
-        lessons_structure = unit_plan_structure
         self.factory.create_lessons_loader(
-            self.structure_file_path,
             self.load_log,
-            lessons_structure,
+            lessons_structure_file_path,
             self.topic,
-            unit_plan,
             self.BASE_PATH
         ).load()
+
+        for group in unit_plan_structure:
+            if group == "lessons":
+                continue
+            min_age, max_age = group.split('-')
+            new_age_range = unit_plan.unit_plan_age_range.create(
+                slug=group,
+                age_range=(int(min_age), int(max_age))
+            )
+            new_age_range.save()
+            for lesson_slug in unit_plan_structure[group]:
+                lesson = Lesson.objects.get(
+                    slug=lesson_slug
+                )
+                new_age_range.lessons.add(lesson)

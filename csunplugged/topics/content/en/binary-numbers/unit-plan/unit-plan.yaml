@@ -1,3 +1,5 @@
+lessons: lessons/lessons.yaml
+
 8-10:
   - how-binary-digits-work
   - reinforcing-sequencing-in-binary-number-systems
