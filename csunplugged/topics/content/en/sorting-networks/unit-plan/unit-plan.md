@@ -26,7 +26,7 @@ explores.
 Unfortunately it's not always that simple to just split the work among separate
 processors!
 
-ADD IMAGES
+{image file-path="img/topics/sorting-network-many-computers-vs-one.png" alt="An image showing a group of people working on their computers working, compared to one person at their computer."}
 
 Sorting Networks are used to sort values into ascending order by comparing pairs
 of values; unlike a conventional sorting algorithm, a Sorting Network can have
@@ -125,7 +125,7 @@ numbers (greater than, less than).
 
 ## Real world implications
 
-ADD IMAGE HERE
+{image file-path="img/topics/sorting-network-tortoises-vs-rabbit.png" alt="A group of turtles build a wall quicker than one rabbit."}
 
 Often it's cheaper, and faster, to have a number of slow processors work on a
 computational problem, rather than one very fast one.
