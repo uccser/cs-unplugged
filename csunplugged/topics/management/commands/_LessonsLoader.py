@@ -18,18 +18,20 @@ from topics.models import (
 class LessonsLoader(BaseLoader):
     """Custom loader for loading lessons."""
 
-    def __init__(self, load_log, lessons_structure_file_path, topic, BASE_PATH):
+    def __init__(self, load_log, lessons_structure_file_path, topic, unit_plan, BASE_PATH):
         """Create the loader for loading lessons.
 
         Args:
             load_log: List of log messages (list).
             lessons_structure: List of dictionaries for each lesson (list).
             topic: Object of Topic model.
+            unit_plan: Object of UnitPlan model.
             BASE_PATH: Base file path (string).
         """
         super().__init__(BASE_PATH, load_log)
         self.lessons_structure_file_path = lessons_structure_file_path
         self.topic = topic
+        self.unit_plan = unit_plan
 
     def load(self):
         """Load the content for a single lesson.
@@ -39,7 +41,6 @@ class LessonsLoader(BaseLoader):
             MissingRequiredFieldError: when a value for a required model field cannot be
                 found in the config file.
         """
-
         lessons_structure = self.load_yaml_file(self.lessons_structure_file_path)
 
         for (lesson_slug, lesson_structure) in lessons_structure.items():
@@ -63,13 +64,13 @@ class LessonsLoader(BaseLoader):
             # Build the file path to the lesson"s md file
             file_path = os.path.join(
                 self.BASE_PATH,
-                "lessons",  # TODO "lessons" should be pulled from structure file path, not hard coded
+                "lessons",
                 "{}.md".format(lesson_slug)
             )
 
             lesson_content = self.convert_md_file(
                 file_path,
-                self.lessons_structure_file_path
+                self.lessons_structure_file_path,
             )
 
             if "duration" in lesson_structure:
@@ -104,6 +105,7 @@ class LessonsLoader(BaseLoader):
                 )
 
             lesson = self.topic.topic_lessons.create(
+                unit_plan=self.unit_plan,
                 slug=lesson_slug,
                 name=lesson_content.title,
                 number=lesson_number,

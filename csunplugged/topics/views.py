@@ -50,7 +50,7 @@ class TopicView(generic.DetailView):
         # Add in a QuerySet of all the connected unit plans
         unit_plans = UnitPlan.objects.filter(topic=self.object).order_by("name").select_related()
         for unit_plan in unit_plans:
-            unit_plan.grouped_lessons = group_lessons_by_age(unit_plan.unit_plan_age_range)
+            unit_plan.grouped_lessons = group_lessons_by_age(unit_plan.unit_plan_lessons)
         context["unit_plans"] = unit_plans
         # Add in a QuerySet of all the connected curriculum integrations
         context["curriculum_integrations"] = CurriculumIntegration.objects.filter(topic=self.object).order_by("number")
@@ -125,8 +125,7 @@ class LessonView(generic.DetailView):
         context = super(LessonView, self).get_context_data(**kwargs)
         # Loading objects under consistent context names for breadcrumbs
         context["topic"] = self.object.topic
-        context["unit_plan"] = self.object.lesson_age_range.unit_plan_age_range
-        # context["unit_plan"] = self.object.lesson_age_range.unit_plan_age_range
+        context["unit_plan"] = self.object.unit_plan
         # Add all the connected programming exercises
         context["programming_exercises"] = self.object.programming_exercises.all()
         # Add all the connected learning outcomes
@@ -213,8 +212,7 @@ class ProgrammingExerciseView(generic.DetailView):
         # Call the base implementation first to get a context
         context = super(ProgrammingExerciseView, self).get_context_data(**kwargs)
         context["lessons"] = self.object.lessons.order_by(
-            "min_age",
-            "max_age",
+            "age_range",
             "number"
         )
         context["topic"] = self.object.topic
@@ -310,8 +308,7 @@ class CurriculumIntegrationView(generic.DetailView):
         # Add in a QuerySet of all the prerequisite lessons
         context["prerequisite_lessons"] = self.object.prerequisite_lessons.select_related().order_by(
             "unit_plan__name",
-            "min_age",
-            "max_age",
+            "age_range",
             "number"
         )
         return context

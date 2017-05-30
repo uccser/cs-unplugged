@@ -3,14 +3,14 @@
 from collections import OrderedDict
 
 
-def group_lessons_by_age(age_ranges):
+def group_lessons_by_age(lessons):
     """Return ordered groups of lessons.
 
     Lessons are grouped by the lesson minimum age and maximum ages,
     and then order by number.
 
     Args:
-        lessons: QuerySet of AgeRange objects (QuerySet).
+        lessons: QuerySet of Lesson objects (QuerySet).
 
     Returns:
         A ordered dictionary of grouped lessons.
@@ -19,8 +19,12 @@ def group_lessons_by_age(age_ranges):
         The value for a key is a sorted list of lessons (ordered by number).
     """
     grouped_lessons = OrderedDict()
-    age_ranges = age_ranges.order_by("age_range")
-    for age_range in age_ranges:
-        bounds = (age_range.age_range.lower, age_range.age_range.upper)
-        grouped_lessons[bounds] = [lesson for lesson in age_range.lessons.order_by("number").all()]
+    lessons = lessons.order_by("number")
+    for lesson in lessons:
+        for age_range in lesson.age_range.all():
+            ages = (age_range.age_range.lower, age_range.age_range.upper)
+            if ages in grouped_lessons.keys():
+                grouped_lessons[ages].append(lesson)
+            else:
+                grouped_lessons[ages] = [lesson]
     return grouped_lessons

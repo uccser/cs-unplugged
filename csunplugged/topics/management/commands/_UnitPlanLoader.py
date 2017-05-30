@@ -5,7 +5,10 @@ from utils.BaseLoader import BaseLoader
 from utils.convert_heading_tree_to_dict import convert_heading_tree_to_dict
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 
-from topics.models import Lesson
+from topics.models import (
+    Lesson,
+    AgeRange
+)
 
 
 class UnitPlanLoader(BaseLoader):
@@ -78,6 +81,7 @@ class UnitPlanLoader(BaseLoader):
             self.load_log,
             lessons_structure_file_path,
             self.topic,
+            unit_plan,
             self.BASE_PATH
         ).load()
 
@@ -85,8 +89,7 @@ class UnitPlanLoader(BaseLoader):
             if group == "lessons":
                 continue
             min_age, max_age = group.split('-')
-            new_age_range = unit_plan.unit_plan_age_range.create(
-                slug=group,
+            new_age_range = AgeRange(
                 age_range=(int(min_age), int(max_age))
             )
             new_age_range.save()
@@ -94,4 +97,4 @@ class UnitPlanLoader(BaseLoader):
                 lesson = Lesson.objects.get(
                     slug=lesson_slug
                 )
-                new_age_range.lessons.add(lesson)
+                lesson.age_range.add(new_age_range)

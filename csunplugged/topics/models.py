@@ -214,6 +214,21 @@ class ProgrammingExerciseLanguageImplementation(models.Model):
         )
 
 
+class AgeRange(models.Model):
+    """Model for age range in database."""
+
+    #  Auto-incrementing 'id' field is automatically set by Django
+    age_range = IntegerRangeField()
+
+    def __str__(self):
+        """Text representation of AgeRange object.
+
+        Returns:
+            Integer range (str).
+        """
+        return repr(self.age_range)
+
+
 class Lesson(models.Model):
     """Model for lesson in database."""
 
@@ -223,12 +238,21 @@ class Lesson(models.Model):
         on_delete=models.CASCADE,
         related_name="topic_lessons"
     )
+    unit_plan = models.ForeignKey(
+        UnitPlan,
+        on_delete=models.CASCADE,
+        related_name="unit_plan_lessons"
+    )
     slug = models.SlugField()
     name = models.CharField(max_length=100)
     number = models.IntegerField()
     duration = models.PositiveSmallIntegerField(null=True)
     content = models.TextField()
     heading_tree = JSONField(null=True)
+    age_range = models.ManyToManyField(
+        AgeRange,
+        related_name="lesson_age_range"
+    )
     programming_exercises = models.ManyToManyField(
         ProgrammingExercise,
         related_name="lessons"
@@ -263,31 +287,6 @@ class Lesson(models.Model):
             Name of lesson (str).
         """
         return self.name
-
-
-class AgeRange(models.Model):
-    """Model for age range in database."""
-
-    #  Auto-incrementing 'id' field is automatically set by Django
-    unit_plan = models.ForeignKey(
-        UnitPlan,
-        on_delete=models.CASCADE,
-        related_name="unit_plan_age_range"
-    )
-    slug = models.SlugField()
-    age_range = IntegerRangeField()
-    lessons = models.ManyToManyField(
-        Lesson,
-        related_name="lesson_age_range"
-    )
-
-    def __str__(self):
-        """Text representation of AgeRange object.
-
-        Returns:
-            Integer range (str).
-        """
-        return repr(self.age_range)
 
 
 class CurriculumIntegration(models.Model):
