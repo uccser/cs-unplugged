@@ -109,7 +109,7 @@ Pull Requests
 We aim to keep the CS Unplugged project as robust as possible, so please do
 your best to ensure your changes won't break anything!
 
-Style Guides
+Style and Etiquette Guides
 ==============================================================================
 
 Git
@@ -137,6 +137,26 @@ Git
     - When a branch is completed, a pull request is created on GitHub for
       review.
     - Branches are merged back into ``develop``.
+
+GitHub
+------------------------------------------------------------------------------
+
+.. note::
+
+    Internal Staff Only
+
+- Mention a user (using the ``@`` symbol) when an issue is relevant to them.
+- Only assign yourself to an issue, when you are actively working on an issue.
+- When we will tag you to review specific pull requests, you can either
+  approve, request changes, or just leave comments.
+- A pull request requires one review approval to be merged.
+- If multiple people are tagged as reviewers, we only need one review (unless
+  otherwise specified).
+  We tag all those suitable for review.
+- The creator of the pull request is the only person who should merge the pull
+  request.
+  If you approve a pull request and it shows the big green button, please
+  resist clicking it!
 
 Project Structure
 ------------------------------------------------------------------------------
