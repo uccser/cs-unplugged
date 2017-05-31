@@ -2,6 +2,10 @@
 
 {% load django_bootstrap_breadcrumbs %}
 
+{% block title %}
+  {{ topic.name }} other resources
+{% endblock title %}
+
 {% block breadcrumbs %}
   {{ block.super }}
   {% breadcrumb "Other Resources" "topics:other_resources" topic.slug %}

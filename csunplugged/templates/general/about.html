@@ -2,6 +2,10 @@
 {% load i18n %}
 {% load django_bootstrap_breadcrumbs %}
 
+{% block title %}
+  About
+{% endblock title %}
+
 {% block breadcrumbs %}
   {{ block.super }}
   {% breadcrumb "About" "general:about" %}

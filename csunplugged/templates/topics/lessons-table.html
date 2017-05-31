@@ -1,0 +1,34 @@
+{% for age_range, lessons in grouped_lessons.items %}
+  <table class="table table-responsive table-center-vertical">
+    <thead class="thead-default">
+      <tr>
+        <th colspan="2">Ages {{ age_range.0 }} to {{ age_range.1 }}</th>
+        <th class="text-center">Programming challenges</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for lesson in lessons %}
+        <tr class="align-middle">
+          <td class="text-center">
+            {{ lesson.number }}
+          </td>
+          <td>
+            <a href="{% url 'topics:lesson' topic.slug unit_plan.slug lesson.slug %}">
+              <strong>{{ lesson.name }}</strong>
+            </a>
+          </td>
+          {% if lesson.has_programming_exercises %}
+            <td class="text-center table-success-cell">
+              <a href="{% url 'topics:programming_exercises_list' topic.slug unit_plan.slug lesson.slug %}">
+                Yes
+              </a>
+          {% else %}
+            <td class="text-center">
+              No
+          {% endif %}
+            </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endfor %}

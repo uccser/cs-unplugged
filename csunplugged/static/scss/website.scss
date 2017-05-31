@@ -1,34 +1,43 @@
 @import "bootstrap/bootstrap";
-@import "pygments-monokai";
+@import "pygments-colorful";
 @import "sticky-state";
 @import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
 
+$body-space-from-top: 72px;
+
 img {
-  &.resource-thumbnail {
-    max-height: 15rem;
+  &.content-image {
+    max-height: 10em;
   }
-
-  &.plugged-in-language-icon {
-    height: 3em;
+  &.inline-image {
+    max-height: 3rem;
   }
-
-  &.image-content {
-    height: auto;
-    max-height: 16em;
-    max-width: 80%;
-    padding: 1em 0;
+  &.inline-image-small {
+    max-height: 1.4rem;
   }
 }
 
-h1,
-h2,
+h1 {
+  color: $red;
+}
+h2 {
+  color: $purple;
+}
 h3 {
-  color: #e33333;
-  margin-top: 1.5rem;
+  color: $green;
+}
+h4,
+h5,
+h6 {
+  color: $gray;
+}
 
-  span.subtitle {
-    color: #888;
-  }
+.heading-underline {
+  border-bottom: 2px solid $gray-lighter;
+}
+
+.subtitle {
+  color: $gray-light;
 }
 
 input[type="text"].long-text-field {
@@ -61,64 +70,99 @@ $rounded-corner-radius: 0.5rem;
     color: $white;
   }
 }
-.card-deck {
+
+.link-box-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+    }
+    align-content: stretch;
+    align-items: stretch;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.link-box {
+  border: 0.2em solid $blue;
+  border-radius: $border-radius;
+  overflow: hidden;
+  padding: ($spacer-y * .5) ($spacer-x * .5);
+  margin-bottom: $spacer-y;
   width: 100%;
-}
-
-.card {
-  padding: 0.3rem;
-  border-color: #ababab;
-  margin-bottom: 15px !important;
-  .card-title {
-    margin: 0.2rem;
+  transition: 0.1s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  &.link-box-md-3 {
+    @include media-breakpoint-up(md) {
+      width: 32%;
+    }
   }
-  .card-img {
-    height: 100px;
-    object-fit: contain;
+  &.link-box-lg-4 {
+    @include media-breakpoint-up(lg) {
+      width: 24%;
+    }
   }
-}
-
-@mixin card-link-variant($color) {
-  border-color: darken($color, 10%);
-  background-color: $color;
-  .card-title {
-    color: $white;
+  img {
+    max-height: 8rem;
+  }
+  h2,
+  h3 {
+    margin-bottom: 0;
+    text-align: center;
+    color: $gray;
   }
   &:hover {
-    background-color: lighten($color, 30%);
-    .card-title {
-      color: darken($color, 10%);
-    }
+    background-color: rgba($blue, 0.1);
+  }
+  &:hover,
+  &:active,
+  &:visited,
+  &:focus {
     text-decoration: none;
   }
 }
 
-.card-red {
-  @include card-link-variant($red);
+@mixin link-box-colour-variant($color) {
+  background-color: $color !important;
+  border: 0.2em solid darken($color, 10%) !important;
+  .link-box-title {
+    color: $white !important;
+  }
+  &:hover {
+    background-color: darken($color, 6%) !important;
+  }
 }
-.card-orange {
-  @include card-link-variant($orange);
+
+.link-box-red {
+  @include link-box-colour-variant($red);
 }
-.card-yellow {
-  @include card-link-variant($yellow);
+.link-box-orange {
+  @include link-box-colour-variant($orange);
 }
-.card-green {
-  @include card-link-variant($green);
+.link-box-yellow {
+  @include link-box-colour-variant($yellow);
 }
-.card-light-blue {
-  @include card-link-variant($light-blue);
+.link-box-green {
+  @include link-box-colour-variant($green);
 }
-.card-blue {
-  @include card-link-variant($blue);
+.link-box-light-blue {
+  @include link-box-colour-variant($light-blue);
 }
-.card-teal {
-  @include card-link-variant($teal);
+.link-box-blue {
+  @include link-box-colour-variant($blue);
 }
-.card-pink {
-  @include card-link-variant($pink);
+.link-box-teal {
+  @include link-box-colour-variant($teal);
 }
-.card-purple {
-  @include card-link-variant($purple);
+.link-box-pink {
+  @include link-box-colour-variant($pink);
+}
+.link-box-purple {
+  @include link-box-colour-variant($purple);
 }
 
 .navbar {
@@ -149,21 +193,25 @@ footer {
   color: rgba($white, 0.8);
   a {
     color: $white;
+    @include hover-focus {
+      color: $white;
+    }
   }
 }
 
 .glossary-term {
-  border-bottom: 1px black dotted;
+  border-bottom: 1px $gray dotted;
   cursor: help;
 }
 
 .boxed-text {
-  border: 1px solid $gray;
+  border: 2px dashed $gray-light;
   border-radius: $border-radius;
   margin-bottom: $spacer-y;
 
   .boxed-text-content {
     margin: ($spacer-y * .5) ($spacer-x * .5);
+    overflow: auto;
   }
 }
 
@@ -171,18 +219,49 @@ footer {
   margin-left: 1em;
 }
 
+@mixin detail-colour-variant($color) {
+  > summary {
+    background-color: hsl(hue($color), saturation($color), 90%) !important;
+    color: $color !important;
+    .inline-image {
+      margin: 0.2rem 0.2rem 0.2rem auto;
+    }
+  }
+}
+
 details {
   @extend .boxed-text;
   overflow: hidden;
 
   summary {
-    background-color: $gray-lightest;
+    background-color: $gray-lighter;
+    color: $gray-dark;
     cursor: pointer;
     font-size: 1.1em;
-    padding: ($spacer-y * .25) ($spacer-x * .25);
+    padding: ($spacer-y * .25) ($spacer-x * .25) ($spacer-y * .25) $spacer-x;
+    display: flex;
+    align-items: center;
   }
   summary:hover {
-    background-color: $gray-lighter;
+    background-color: darken($gray-lighter, 10%);
+  }
+  &.panel-ct-abstraction {
+    @include detail-colour-variant(#E30613);
+  }
+  &.panel-ct-algorithm {
+    @include detail-colour-variant(#0B983A);
+  }
+  &.panel-ct-decomposition {
+    @include detail-colour-variant(darken(#FFDD0E, 10%));
+  }
+  &.panel-ct-evaluation {
+    @include detail-colour-variant(#0F70B7);
+  }
+  &.panel-ct-logic {
+    @include detail-colour-variant(#EA5B0C);
+  }
+  &.panel-ct-pattern {
+    @include detail-colour-variant(#82358C);
   }
 }
 
@@ -235,8 +314,6 @@ details {
   }
 }
 
-$body-space-from-top: 72px;
-
 body {
   padding-top: $body-space-from-top;
   position: relative;
@@ -247,4 +324,64 @@ body {
 }
 .sticky-top {
   z-index: 1020;
+}
+
+.table.table-center-vertical th,
+.table.table-center-vertical td {
+    vertical-align: middle;
+}
+.table-success-cell {
+  background-color: lighten($green, 40%);
+}
+
+#scrollspy-table-of-contents .nav-link {
+  font-size: 0.9rem;
+  padding: ($spacer-y * .25) $spacer-x;
+}
+
+#content-container table:not(.table) {
+  display: block;
+  margin-bottom: 1rem;
+  max-width: 100%;
+  overflow-x: auto;
+  width: 100%;
+  td, th {
+    padding: ($spacer-x * .75);
+  }
+  th {
+    color: #464a4c;
+    background-color: #eceeef;
+    border-bottom: 2px solid #eceeef;
+  }
+  tr {
+    border-top: 1px solid #eceeef;
+  }
+}
+
+.inline-scratch {
+  display: inline;
+  vertical-align: middle;
+}
+
+.border-thin {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.background-csfg {
+  background-color: #2b387c;
+}
+
+@include media-breakpoint-down("sm") {
+  .navbar-toggleable-sm > .container {
+    width: 100%;
+  }
+}
+
+.table-text-large {
+  font-size: 1.2rem;
+}
+
+.btn {
+  cursor: pointer;
 }

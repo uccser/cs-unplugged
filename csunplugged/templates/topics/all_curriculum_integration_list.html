@@ -4,6 +4,10 @@
 {% load static %}
 {% load django_bootstrap_breadcrumbs %}
 
+{% block title %}
+  {% trans "Curriculum Integrations" %}
+{% endblock title %}
+
 {% block breadcrumbs %}
   {{ block.super }}
   {% breadcrumb "Curriculum Integrations" "topics:all_curriculum_integrations" %}

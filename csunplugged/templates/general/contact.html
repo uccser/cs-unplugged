@@ -2,6 +2,10 @@
 {% load i18n %}
 {% load django_bootstrap_breadcrumbs %}
 
+{% block title %}
+  Contact
+{% endblock title %}
+
 {% block breadcrumbs %}
   {{ block.super }}
   {% breadcrumb "Contact" "general:contact" %}

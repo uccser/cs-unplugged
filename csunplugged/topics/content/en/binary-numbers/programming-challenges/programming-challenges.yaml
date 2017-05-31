@@ -1,0 +1,286 @@
+binary-numbers-no-calculations:
+  challenge-set-number: 1
+  challenge-number: 1
+  difficulty-level: 1
+  programming-languages:
+    - python
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-explain-output
+  extra-challenge: extra-challenge.md
+
+binary-numbers-using-variable:
+  challenge-set-number: 1
+  challenge-number: 2
+  difficulty-level: 1
+  programming-languages:
+    - python
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-describe-variables
+  extra-challenge: extra-challenge.md
+
+binary-numbers-using-variables-as-operator:
+  challenge-set-number: 1
+  challenge-number: 3
+  difficulty-level: 1
+  programming-languages:
+    - python
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-outline-variable-updates
+  extra-challenge: extra-challenge.md
+
+binary-numbers-using-variable-operator-repeat:
+  challenge-set-number: 1
+  challenge-number: 4
+  difficulty-level: 1
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-outline-variable-updates
+    - programming-describe-variable-output
+    - programming-identify-loop
+  extra-challenge: extra-challenge.md
+
+binary-numbers-one-line:
+  challenge-set-number: 1
+  challenge-number: 5
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-describe-variables
+    - programming-identify-loop
+    - programming-explain-join-concatenate
+  extra-challenge: extra-challenge.md
+
+number-cards-display:
+  challenge-set-number: 2
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-identify-loop
+
+dots-right-left:
+  challenge-set-number: 2
+  challenge-number: 2
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-explain-join-concatenate
+  extra-challenge: extra-challenge.md
+
+dots-largest-to-1:
+  challenge-set-number: 3
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-identify-loop
+
+left-right-given-largest:
+  challenge-set-number: 3
+  challenge-number: 2
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-identify-loop
+    - programming-explain-join-concatenate
+  extra-challenge: extra-challenge.md
+
+count-5-bw-no-loop:
+  challenge-set-number: 4
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-identify-if-statement
+
+count-5-bw-using-loop:
+  challenge-set-number: 4
+  challenge-number: 2
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-identify-if-statement
+    - programming-identify-loop
+
+count-5-bw-one-input-no-loop:
+  challenge-set-number: 4
+  challenge-number: 3
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-identify-if-statement
+    - programming-demonstrate-indexing
+
+count-5-bw-one-input-using-loop:
+  challenge-set-number: 4
+  challenge-number: 4
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-identify-if-statement
+    - programming-identify-loop
+    - programming-demonstrate-indexing
+
+count-bw-one-input-using-loop:
+  challenge-set-number: 4
+  challenge-number: 5
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-identify-if-statement
+    - programming-identify-loop
+    - programming-demonstrate-indexing
+
+cards-given-number:
+  challenge-set-number: 5
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-identify-if-statement
+
+cards-given-number-one-line:
+  challenge-set-number: 5
+  challenge-number: 2
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-identify-if-statement
+  extra-challenge: extra-challenge.md
+
+number-bits-representing-number:
+  challenge-set-number: 6
+  challenge-number: 1
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-identify-loop
+
+binary-cards-representing-number:
+  challenge-set-number: 7
+  challenge-number: 1
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-identify-if-statement
+    - programming-identify-loop
+
+binary-cards-representing-any-number:
+  challenge-set-number: 7
+  challenge-number: 2
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-identify-if-statement
+    - programming-identify-loop
+
+decimal-to-binary:
+  challenge-set-number: 7
+  challenge-number: 3
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-identify-if-statement
+    - programming-identify-loop
+
+decimal-to-binary-alternative:
+  challenge-set-number: 7
+  challenge-number: 4
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-identify-if-statement
+    - programming-identify-loop
+
+binary-notes-representing-number:
+  challenge-set-number: 8
+  challenge-number: 1
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-identify-if-statement
+    - programming-identify-loop
+
+binary-notes-representing-any-number:
+  challenge-set-number: 8
+  challenge-number: 2
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-identify-if-statement
+    - programming-identify-loop
+  extra-challenge: extra-challenge.md
+
+binary-cards-as-dots:
+  challenge-set-number: 9
+  challenge-number: 1
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-identify-if-statement
+    - programming-identify-loop

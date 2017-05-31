@@ -3,6 +3,10 @@
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
+{% block title %}
+  Glossary
+{% endblock title %}
+
 {% block breadcrumbs %}
   {{ block.super }}
   {% breadcrumb "Glossary" "topics:glossary" %}

@@ -30,6 +30,7 @@ class CurriculumArea(models.Model):
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(unique=True)
     name = models.CharField(max_length=100, unique=True)
+    number = models.PositiveSmallIntegerField()
     colour = models.CharField(max_length=15, null=True)
     parent = models.ForeignKey(
         "self",
@@ -47,6 +48,11 @@ class CurriculumArea(models.Model):
             return "{}: {}".format(self.parent.name, self.name)
         else:
             return self.name
+
+    class Meta:
+        """Set consistent ordering of curriculum areas."""
+
+        ordering = ["number", "name"]
 
 
 class LearningOutcome(models.Model):
@@ -67,6 +73,11 @@ class LearningOutcome(models.Model):
             Text of learning outcome (string).
         """
         return self.text
+
+    class Meta:
+        """Set consistent ordering of learning outcomes."""
+
+        ordering = ["curriculum_areas__number", "curriculum_areas__name", "text"]
 
 
 class Topic(models.Model):
@@ -172,6 +183,14 @@ class ProgrammingExercise(models.Model):
         on_delete=models.CASCADE,
         related_name="difficulty_programming_exercises"
     )
+
+    def ordered_implementations(self):
+        """Return an ordered QuerySet of implementations.
+
+        Returns:
+            Ordered QuerySet.
+        """
+        return self.implementations.all().order_by("language__number").select_related()
 
     def __str__(self):
         """Text representation of ProgrammingExercise object.
