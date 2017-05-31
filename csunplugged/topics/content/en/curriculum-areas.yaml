@@ -1,101 +1,7 @@
-literacy:
-  name: Literacy
-  colour: red
-  children:
-    reading:
-      name: Reading
-    writing:
-      name: Writing
-    listening:
-      name: Listening
-    speaking:
-      name: Speaking
-    library:
-      name: Library
-
-mathematics:
-  name: Mathematics
-  colour: blue
-  children:
-    geometry:
-      name: Geometry
-    measurement:
-      name: Measurement
-    numeracy:
-      name: Numeracy
-    algebra:
-      name: Algebra
-    statistics:
-      name: Statistics
-
-performing-arts:
-  name: Performing Arts
-  colour: orange
-  children:
-    music:
-      name: Music
-    dance:
-      name: Dance
-    drama:
-      name: Drama
-
-art:
-  name: Art
-  colour: orange
-
-science:
-  name: Science
-  colour: green
-  children:
-    biology:
-      name: Biology
-    physics:
-      name: Physics
-    astronomy:
-      name: Astronomy
-    chemistry:
-      name: Chemistry
-    geology:
-      name: Geology
-
-physical-education:
-  name: Physical Education
-  colour: orange
-  children:
-    fitness:
-      name: Fitness
-    sport:
-      name: Sport
-    health:
-      name: Health
-
-language:
-  name: Language Learning
-  colour: pink
-
-social-studies:
-  name: Social Studies
-  colour: teal
-  children:
-    history:
-      name: History
-    geograph:
-      name: Geography
-
-computer-science:
-  name: Computer Science
-  colour: purple
-  children:
-    data-representation:
-      name: Data Representation
-    algorithms:
-      name: Algorithms
-    programming:
-      name: Programming
-
 computational-thinking:
   name: Computation Thinking
   colour: light-purple
+  number: 1
   children:
     algorithmic-thinking:
       name: Algorithmic Thinking
@@ -109,3 +15,107 @@ computational-thinking:
       name: Logic
     evaluation:
       name: Evaluation
+
+computer-science:
+  name: Computer Science
+  colour: purple
+  number: 2
+  children:
+    data-representation:
+      name: Data Representation
+    algorithms:
+      name: Algorithms
+    programming:
+      name: Programming
+
+mathematics:
+  name: Mathematics
+  colour: blue
+  number: 3
+  children:
+    geometry:
+      name: Geometry
+    measurement:
+      name: Measurement
+    numeracy:
+      name: Numeracy
+    algebra:
+      name: Algebra
+    statistics:
+      name: Statistics
+
+literacy:
+  name: Literacy
+  colour: red
+  number: 4
+  children:
+    reading:
+      name: Reading
+    writing:
+      name: Writing
+    listening:
+      name: Listening
+    speaking:
+      name: Speaking
+    library:
+      name: Library
+
+art:
+  name: Art
+  colour: orange
+  number: 5
+
+language:
+  name: Language Learning
+  colour: pink
+  number: 6
+
+performing-arts:
+  name: Performing Arts
+  colour: orange
+  number: 7
+  children:
+    music:
+      name: Music
+    dance:
+      name: Dance
+    drama:
+      name: Drama
+
+physical-education:
+  name: Physical Education
+  colour: orange
+  number: 8
+  children:
+    fitness:
+      name: Fitness
+    sport:
+      name: Sport
+    health:
+      name: Health
+
+science:
+  name: Science
+  colour: green
+  number: 9
+  children:
+    biology:
+      name: Biology
+    physics:
+      name: Physics
+    astronomy:
+      name: Astronomy
+    chemistry:
+      name: Chemistry
+    geology:
+      name: Geology
+
+social-studies:
+  name: Social Studies
+  colour: teal
+  number: 10
+  children:
+    history:
+      name: History
+    geograph:
+      name: Geography

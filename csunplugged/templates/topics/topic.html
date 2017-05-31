@@ -3,6 +3,10 @@
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
+{% block title %}
+  {{ topic.name }}
+{% endblock title %}
+
 {% block breadcrumbs %}
   {% breadcrumb "Home" "/" %}
   {% breadcrumb "Topics" "topics:index" %}
@@ -16,14 +20,11 @@
 {% block left_column_content %}
   {% render_html_field topic.content %}
 
-  <h2 id="units" class="heading-underline">Unit Plans</h2>
   {% for unit_plan in unit_plans %}
-    <h1 id="{{ unit_plan.slug }}" class="text-center mb-3">
-      <a href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">
-        {{ unit_plan.name }}
-      </a>
-    </h1>
-
+    <h2 id="{{ unit_plan.slug }}" class="heading-underline">{{ unit_plan.name }}</h2>
+    <p>
+      <a href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}" id="{{ unit_plan.slug }}">View unit plan</a>{% if unit_plan.grouped_lessons %}, or jump straight to a lesson:{% endif %}
+    </p>
     {% if unit_plan.grouped_lessons %}
       {% with grouped_lessons=unit_plan.grouped_lessons %}
         {% include "topics/lessons-table.html" %}
@@ -62,9 +63,11 @@
       <li class="nav-item">
         <a class="nav-link" href="#{{ topic.slug }}">{{ topic.name }}</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#unit-plans">Unit plans</a>
-      </li>
+      {% for unit_plan in unit_plans %}
+        <li class="nav-item">
+          <a class="nav-link" href="#{{ unit_plan.slug }}">{{ unit_plan.name }}</a>
+        </li>
+      {% endfor %}
       <li class="nav-item">
         <a class="nav-link" href="#integrations">Curriculum integrations</a>
       </li>

@@ -110,7 +110,7 @@ For example, the ASCII code for "A" is 65 and "B" is 66 etc.; if you work out th
 
 ## Computational Thinking Links
 
-{panel type="ct-algorithm" title="Algorithmic thinking" expanded="true"}
+{panel type="ct-algorithm" title="Algorithmic thinking"}
 
 We used two algorithms in this lesson: one to convert a letter into a decimal number and then into a binary number, and vice versa.
 These are algorithms because they are a step-by-step process that will always give the right solution for any input you give it as long as the process is followed exactly.
@@ -149,7 +149,7 @@ Can they explain what they are doing at each step and why?
 
 {panel end}
 
-{panel type="ct-abstraction" title="Abstraction" expanded="true"}
+{panel type="ct-abstraction" title="Abstraction"}
 
 This activity is particularly relevant to abstraction, since we are representing written text with a simple number, and the number can be represented using binary digits, which, as we know from lesson 1, are an abstraction of the physical electronics and circuits inside a computer.
 We could also expand our abstraction because we could use any two symbols other than 0s and 1s to represent our message (although while students are first learning this we recommend sticking with 1s and 0s).
@@ -169,7 +169,7 @@ Look for students who then decide to create their own representations of binary 
 
 {panel end}
 
-{panel type="ct-decomposition" title="Decomposition" expanded="true"}
+{panel type="ct-decomposition" title="Decomposition"}
 
 The core example of decomposition in this activity is understanding that in computing we have to break down all information into tiny chunks so that computers can store and send this data as bits and bytes. Everything we store inside a computer and see appear on the screen has to have been, in some way, broken down into binary digits.
 
@@ -181,7 +181,7 @@ Can students explain why it is important that we can use binary to represent let
 
 {panel end}
 
-{panel type="ct-pattern" title="Generalising and patterns" expanded="true"}
+{panel type="ct-pattern" title="Generalising and patterns"}
 
 Recognising patterns in the way the binary number system works helps give us a deeper understanding of the concepts involved, and assists us in generalising these concepts and patterns so that we can apply them to other problems.
 
@@ -193,7 +193,7 @@ If we can represent 32 different characters in binary when we use 5 bits for eac
 
 {panel end}
 
-{panel type="ct-logic" title="Logic" expanded="true"}
+{panel type="ct-logic" title="Logic"}
 
 Logical thinking involves making decisions based on knowledge you have, and these decisions should be sensible and well thought out. If you memorise that the letter H is represented as binary 01010 it's not as useful as learning how to represent any character using the process described in this activity. If you can understand the logical steps we take as we convert a letter into a binary number, and how we can convert it back, then you will be able to represent any character as binary, and more importantly, you understand the process, since you're more likely to get a computer to do it for you rather than always do it manually. This is especially relevant if we want to represent a large number of characters. What if we wanted to represent every Chinese character? There are over 50,000 of them so trying to memorise them all would take a long time!
 When we choose the decimal numbers to use for each of the letters we didn’t have to choose 1 to 26, we could have decided to start at 17 instead and go from 17 to 42, or we could have chosen completely random numbers! What if we decide that A = 82, B = 5, C = 42… Would this be a logical decision to make? 1 to 26 makes much more sense because it is much easier to describe and remember.
@@ -205,7 +205,7 @@ Ask students why we are using the numbers 1 to 26 to represent our letters, or i
 
 {panel end}
 
-{panel type="ct-evaluation" title="Evaluation" expanded="true"}
+{panel type="ct-evaluation" title="Evaluation"}
 
 An example of evaluation is working out how many different characters can be represented by a given number of bits e.g. 5 bits can represent 26 characters comfortably, but 16 bits are needed for a language with 50,000 characters. When thinking about how many bits to use to represent something Computer Scientists also have to think about are how much space this is going to take up on a computer (16-bit characters take up twice the space of 8-bit characters), and if we should have some extra bits in case we want to add more characters in the future. Evaluating the benefits and costs of using a certain number of bits is also an idea students can explore.
 

@@ -647,6 +647,8 @@ Curriculum Areas Configuration File
 
       - ``name:`` The name of the curriculum area (this is what will be displayed to the
         user).
+      - ``number:`` A number used for ordering curriculum areas.
+        Areas are sorted in ascending numbers (smallest to largest).
       - ``colour:`` The CSS colour class to use for colouring the curriculum
         area badge on the website.
         This colour is also applied to all children of curriculum area.
@@ -669,6 +671,7 @@ Curriculum Areas Configuration File
 
       - ``children:`` A list of sub-curriculum areas (see example file below). Each child
         requires a ``name`` field.
+        Children inherit the same colour and number as their parent.
 
 An example curriculum areas file with multiple curriculums may look like
 the following:

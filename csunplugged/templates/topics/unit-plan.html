@@ -3,6 +3,10 @@
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
+{% block title %}
+  {{ unit_plan.name }}
+{% endblock title %}
+
 {% block breadcrumbs %}
   {% breadcrumb "Home" "/" %}
   {% breadcrumb "Topics" "topics:index" %}
@@ -18,7 +22,7 @@
   {% render_html_field unit_plan.content %}
 
   {% if grouped_lessons %}
-    <h2 class="heading-underline">Lessons</h2>
+    <h2 class="heading-underline" id="lessons">Lessons</h2>
     {% include "topics/lessons-table.html" %}
   {% endif %}
 {% endblock left_column_content %}
@@ -35,6 +39,9 @@
           <a class="nav-link" href="#{{ heading_node.slug }}">{{ heading_node.text }}</a>
         </li>
       {% endfor %}
+      <li class="nav-item">
+        <a class="nav-link" href="#lessons">Lessons</a>
+      </li>
     </ul>
   </div>
 {% endblock right_column_content %}
