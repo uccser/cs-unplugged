@@ -48,6 +48,8 @@ services:
         PROJECT_NAME: cs-unplugged-develop
         QUEUE_NAME: render-queue
         API_DISCOVERY_URL: http://queue:5050/api/{api}/{apiVersion}
+    volumes:
+      - ./csunplugged/static:/resources/
     ports:
       - "5000:5000"
 
