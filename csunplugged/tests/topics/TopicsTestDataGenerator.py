@@ -12,6 +12,7 @@ from topics.models import (
     ProgrammingExercise,
     ProgrammingExerciseDifficulty,
     ProgrammingExerciseLanguage,
+    ProgrammingExerciseLanguageImplementation,
     LearningOutcome,
 )
 
@@ -77,6 +78,7 @@ class TopicsTestDataGenerator:
         area = CurriculumArea(
             slug="area-{}".format(number),
             name="Area {}".format(number),
+            number=number,
             parent=parent,
         )
         area.save()
@@ -215,6 +217,40 @@ class TopicsTestDataGenerator:
         )
         exercise.save()
         return exercise
+
+    def create_programming_exercise_implementation(self, topic,
+                                                   language,
+                                                   exercise,
+                                                   expected_result="<p>Example result.</p>",
+                                                   hints="<p>Example hints.</p>",
+                                                   solution="<p>Example solution.</p>",
+                                                   ):
+        """
+        Create programming exercise implementation object.
+
+        Args:
+            topic: Topic related to the implementation.
+            language: Language related to the implementation
+                        (ProgrammingExerciseLanguage).
+            exercise: Difficulty related to the implementation
+                        (ProgrammingExercise).
+            expected_result: Text of expected_result (str).
+            hints: Text of hints (str).
+            solution: Text of solution (str).
+
+        Returns:
+            ProgrammingExerciseLanguageImplementation object.
+        """
+        implementation = ProgrammingExerciseLanguageImplementation(
+            topic=topic,
+            language=language,
+            exercise=exercise,
+            expected_result=expected_result,
+            hints=hints,
+            solution=solution,
+        )
+        implementation.save()
+        return implementation
 
     def create_learning_outcome(self, number):
         """

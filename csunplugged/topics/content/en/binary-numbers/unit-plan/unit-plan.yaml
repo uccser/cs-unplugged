@@ -21,11 +21,12 @@ how-binary-digits-work:
     - cards-given-number-one-line
     - number-bits-representing-number
     - binary-cards-representing-number
-    - binary-cards-representing-any-positive-number
+    - binary-cards-representing-any-number
     - decimal-to-binary
     - decimal-to-binary-alternative
     - binary-notes-representing-number
-    - binary-notes-representing-any-positive-number
+    - binary-notes-representing-any-number
+    - binary-cards-as-dots
   learning-outcomes:
     - binary-correct-representation
     - no-physical-zeros-ones
