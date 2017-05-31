@@ -27,9 +27,16 @@ else
     `scratch:<> or <>` block under “Operators”).
     If it is, display card “16” and subtract 16 from your number and do the
     same with the rest of the cards.
--   You can also use the `scratch:if <> then\nelse` block if you need to run
+-   You can also use the IF THEN ELSE block (see image below) if you need to run
     a set of blocks if the condition is not true.
-    In the extra challenge you need to ask the user to enter a number less
+
+```scratch
+if <> then
+else
+end
+```
+
+-   In the extra challenge you need to ask the user to enter a number less
     than or equal to 31 if the input which was entered was greater than 31.
 -   Test your program with some values on the boundaries (i.e. 32, 31, 16, 8,
     4, 2, 1)

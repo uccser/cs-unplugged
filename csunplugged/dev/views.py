@@ -45,12 +45,13 @@ class IndexView(generic.TemplateView):
             context["unit_plans"] += topic.unit_plans
 
         # Get curriculum area list
-        context["curriculum_areas"] = {}
+        context["curriculum_areas"] = []
         for parent in CurriculumArea.objects.filter(parent=None):
-            context["curriculum_areas"][parent] = [child for child in CurriculumArea.objects.filter(parent=parent)]
+            children = [child for child in CurriculumArea.objects.filter(parent=parent)]
+            context["curriculum_areas"].append((parent, children))
 
         # Get learning outcome list
-        context["learning_outcomes"] = LearningOutcome.objects.all().order_by("slug")
+        context["learning_outcomes"] = LearningOutcome.objects.all()
 
         # Get learning outcome list
         context["programming_exercise_languages"] = ProgrammingExerciseLanguage.objects.all()

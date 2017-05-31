@@ -12,7 +12,7 @@ For example, the following text:
   # Scratch Programming Exercise
 
   Try using the following blocks to create a program to display numbers 1, 2,
-  4, 8 and 16 on the screen, one at a time for 1 second each.
+  4, 8 and 16 on the screen, one at a time.
 
 
   ```scratch

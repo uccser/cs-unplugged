@@ -2,22 +2,13 @@
   <table class="table table-responsive table-center-vertical">
     <thead class="thead-default">
       <tr>
-        <th class="text-center">Ages</th>
-        <th class="text-center">Number</th>
-        <th>Lesson</th>
-        <th class="text-center">Programming Challenges</th>
+        <th colspan="2">Ages {{ age_range.0 }} to {{ age_range.1 }}</th>
+        <th class="text-center">Programming challenges</th>
       </tr>
     </thead>
     <tbody>
       {% for lesson in lessons %}
         <tr class="align-middle">
-          {% if forloop.first %}
-            <td rowspan="{{ lessons|length }}" class="text-center px-0">
-              <span class="table-text-emphasis">{{ age_range.0 }}</span><br>
-              to<br>
-              <span class="table-text-emphasis">{{ age_range.1 }}</span>
-            </td>
-          {% endif %}
           <td class="text-center">
             {{ lesson.number }}
           </td>

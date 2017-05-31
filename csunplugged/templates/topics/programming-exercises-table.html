@@ -1,9 +1,12 @@
+{% load static %}
+
 <table class="table table-responsive table-center-vertical">
   <thead class="thead-default">
     <tr>
       <th class="text-center">Number</th>
       <th>Name</th>
       <th class="text-center">Challenge Level</th>
+      <th class="text-center">Languages</th>
     </tr>
   </thead>
   <tbody>
@@ -21,6 +24,11 @@
       </td>
       <td class="text-center">
         {% include "topics/programming-difficulty-badge.html" %}
+      </td>
+      <td class="text-center">
+        {% for implementation in programming_exercise.ordered_implementations %}
+          <img src="{% get_static_prefix %}{{ implementation.language.icon }}" class="inline-image-small" />
+        {% endfor %}
       </td>
     </tr>
     {% endfor %}
