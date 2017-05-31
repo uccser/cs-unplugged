@@ -1,16 +1,16 @@
 """Module for generating Binary Cards resource."""
 
 import os.path
+from BytesIO import BytesIO
 from PIL import Image, ImageDraw, ImageFont
-from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
-def resource_image(request, resource):
+def resource_image(task, resource_manager):
     """Create a image for Binary Cards resource.
 
     Args:
-        request: HTTP request object.
-        resource: Object of resource data.
+        task: Dicitionary of requested document options.
+        resource_manager: File loader for external resources.
 
     Returns:
         A list of Pillow image objects.
@@ -30,13 +30,13 @@ def resource_image(request, resource):
     ]
 
     # Retrieve parameters
-    parameter_options = valid_options()
-    display_numbers = retrieve_query_parameter(request, "display_numbers", parameter_options["display_numbers"])
-    black_back = retrieve_query_parameter(request, "black_back", parameter_options["black_back"])
+    display_numbers = task["display_numbers"]
+    black_back = task["black_back"]
 
     if display_numbers == "yes":
         font_path = "static/fonts/PatrickHand-Regular.ttf"
-        font = ImageFont.truetype(font_path, 600)
+        local_font_path = resource_manager.load_to_file(font_path, "PatrickHand-Regular.ttf")
+        font = ImageFont.truetype(local_font_path, 600)
         BASE_COORD_X = IMAGE_SIZE_X / 2
         BASE_COORD_Y = IMAGE_SIZE_Y - 100
         IMAGE_SIZE_Y = IMAGE_SIZE_Y + 300
@@ -44,7 +44,8 @@ def resource_image(request, resource):
     images = []
 
     for (image_path, number) in IMAGE_DATA:
-        image = Image.open(os.path.join(BASE_IMAGE_PATH, image_path))
+        data = resource_manager.load(os.path.join(BASE_IMAGE_PATH, image_path))
+        image = Image.open(BytesIO(data))
         if display_numbers == "yes":
             background = Image.new("RGB", (IMAGE_SIZE_X, IMAGE_SIZE_Y), "#FFF")
             background.paste(image, mask=image)
@@ -69,31 +70,30 @@ def resource_image(request, resource):
     return images
 
 
-def subtitle(request, resource):
+def subtitle(task):
     """Return the subtitle string of the resource.
 
     Used after the resource name in the filename, and
     also on the resource image.
 
     Args:
-        request: HTTP request object
-        resource: Object of resource data.
+        task: Dicitionary of requested document.
 
     Returns:
         text for subtitle (string)
     """
-    if retrieve_query_parameter(request, "display_numbers") == "yes":
+    if task["display_numbers"] == "yes":
         display_numbers_text = "with numbers"
     else:
         display_numbers_text = "without numbers"
-    if retrieve_query_parameter(request, "black_back") == "yes":
+    if task["black_back"] == "yes":
         black_back_text = "with black back"
     else:
         black_back_text = "without black back"
     text = "{} - {} - {}".format(
         display_numbers_text,
         black_back_text,
-        retrieve_query_parameter(request, "paper_size")
+        task["paper_size"]
     )
     return text
 

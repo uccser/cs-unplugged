@@ -1,32 +1,33 @@
 """Module for generating Binary to Alphabet resource."""
 
+from BytesIO import BytesIO
 from PIL import Image, ImageDraw, ImageFont
-from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
-def resource_image(request, resource):
+def resource_image(task, resource_manager):
     """Create a image for Binary to Alphabet resource.
 
     Args:
-        request: HTTP request object
-        resource: Object of resource data.
+        task: Dicitionary of requested document options.
+        resource_manager: File loader for external resources.
 
     Returns:
         A Pillow image object.
     """
     # Retrieve relevant image
-    parameter_options = valid_options()
-    worksheet_version = retrieve_query_parameter(request, "worksheet_version", parameter_options["worksheet_version"])
+    worksheet_version = task["worksheet_version"]
     if worksheet_version == "student":
         image_path = "static/img/resources/binary-to-alphabet/table.png"
     else:
         image_path = "static/img/resources/binary-to-alphabet/table-teacher.png"
-    image = Image.open(image_path)
+    data = resource_manager.load(image_path)
+    image = Image.open(BytesIO(data))
     draw = ImageDraw.Draw(image)
 
     font_size = 30
     font_path = "static/fonts/PatrickHand-Regular.ttf"
-    font = ImageFont.truetype(font_path, font_size)
+    local_font_path = resource_manager.load_to_file(font_path, "PatrickHand-Regular.ttf")
+    font = ImageFont.truetype(local_font_path, font_size)
 
     # Draw headings
     column_headings = ["Base 10", "Binary", "Letter"]
@@ -81,22 +82,21 @@ def resource_image(request, resource):
     return image
 
 
-def subtitle(request, resource):
+def subtitle(task):
     """Return the subtitle string of the resource.
 
     Used after the resource name in the filename, and
     also on the resource image.
 
     Args:
-        request: HTTP request object
-        resource: Object of resource data.
+        task: Dicitionary of requested document.
 
     Returns:
         text for subtitle (string)
     """
     text = "{} - {}".format(
-        retrieve_query_parameter(request, "worksheet_version"),
-        retrieve_query_parameter(request, "paper_size")
+        task["worksheet_version"],
+        task["paper_size"]
     )
     return text
 

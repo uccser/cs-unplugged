@@ -1,33 +1,34 @@
 """Module for generating Sorting Network resource."""
 
+from BytesIO import BytesIO
 from PIL import Image, ImageDraw, ImageFont
 from random import sample
-from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
-def resource_image(request, resource):
+def resource_image(task, resource_manager):
     """Create a image for Sorting Network resource.
 
     Args:
-        request: HTTP request object
-        resource: Object of resource data.
+        task: Dicitionary of requested document options.
+        resource_manager: File loader for external resources.
 
     Returns:
         A Pillow image object.
     """
     image_path = "static/img/resources/resource-sorting-network-colour.png"
-    image = Image.open(image_path)
+    data = resource_manager.load(image_path)
+    image = Image.open(BytesIO(data))
     draw = ImageDraw.Draw(image)
 
-    (range_min, range_max, font_size) = number_range(request)
-
     font_path = "static/fonts/PatrickHand-Regular.ttf"
+    local_font_path = resource_manager.load_to_file(font_path, "PatrickHand-Regular.ttf")
+
+    (range_min, range_max, font_size) = number_range(task)
 
     # Add numbers to text if needed
-    parameter_options = valid_options()
-    prefilled_values = retrieve_query_parameter(request, "prefilled_values", parameter_options["prefilled_values"])
+    prefilled_values = task["prefilled_values"]
     if prefilled_values != "blank":
-        font = ImageFont.truetype(font_path, font_size)
+        font = ImageFont.truetype(local_font_path, font_size)
         numbers = sample(range(range_min, range_max), 6)
         base_coord_x = 70
         base_coord_y = 2560
@@ -48,40 +49,38 @@ def resource_image(request, resource):
     return image
 
 
-def subtitle(request, resource):
+def subtitle(task):
     """Return the subtitle string of the resource.
 
     Used after the resource name in the filename, and
     also on the resource image.
 
     Args:
-        request: HTTP request object
-        resource: Object of resource data.
+        task: Dicitionary of requested document.
 
     Returns:
         text for subtitle (string)
     """
-    prefilled_values = retrieve_query_parameter(request, "prefilled_values")
+    prefilled_values = task["prefilled_values"]
     if prefilled_values != "blank":
         range_text = "blank"
     else:
         SUBTITLE_TEMPLATE = "{} to {}"
-        range_min, range_max, font_size = number_range(request)
+        range_min, range_max, font_size = number_range(task)
         range_text = SUBTITLE_TEMPLATE.format(range_min, range_max - 1)
-    return "{} - {}".format(range_text, retrieve_query_parameter(request, "paper_size"))
+    return "{} - {}".format(range_text, task["paper_size"])
 
 
-def number_range(request):
+def number_range(task):
     """Return number range tuple for resource.
 
     Args:
-        request: HTTP request object
+        task: Dicitionary of requested document.
 
     Returns:
         Tuple of (range_min, range_max, font_size)
     """
-    parameter_options = valid_options()
-    prefilled_values = retrieve_query_parameter(request, "prefilled_values", parameter_options["prefilled_values"])
+    prefilled_values = task["prefilled_values"]
     range_min = 0
     range_max = 0
     font_size = 150

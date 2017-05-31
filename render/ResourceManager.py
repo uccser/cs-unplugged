@@ -4,7 +4,7 @@ from google.cloud import storage, Blob
 from cachetools import LRUCache, cachedmethod
 
 CACHE_SIZE = int(os.getenv("DAEMON_CACHE_SIZE", 300 * 1024 * 1024))
-DEBUG = not int(os.getenv("FLASK_PRODUCTION", 1))
+RESOURCE_FILEPATH = os.getenv("RESOURCE_FILEPATH", "/resource_files")
 
 
 def __getsizeof(value):
@@ -45,31 +45,56 @@ class ResourceManager(object):
         self.bucket = self.client.get_bucket(bucket_id)
 
     @cachedmethod(lambda cls: type(cls).__cache)  # Equivilent to ResourceManager.__cache
-    def load(self, filename):
+    def load(self, filepath):
         """Load a file from the cloud bucket.
 
         Args:
-            filename: The name of the file including full path to the
+            filepath: The name of the file including full path to the
                 file within the storage bucket.
         Returns:
-            A string of the file contents.
+            Bytes of the file contents.
         """
-        blob = self.bucket.get_blob(filename)
+        blob = self.bucket.get_blob(filepath)
         if blob is None:
             raise Exception()  # TODO
         return blob.download_as_string()
 
-    def save(self, filename, content, content_type='text/plain', is_public=False):
+    def load_to_file(self, filepath, filename):
+        """Load a file from the cloud bucket and save to file.
+
+        If the file already exists then the file will not be loaded.
+        Should be used sparingly, daemon will likely have more memory
+        than disk.
+
+        Args:
+            filepath: The name of the file including full path to the
+                file within the storage bucket.
+            filename: The name of the file to save too.
+        Returns:
+            A string of the filepath where the file was saved.
+        """
+        if not os.path.exists(RESOURCE_FILEPATH):
+            os.makedirs(RESOURCE_FILEPATH, exist_ok=True)
+
+        out_filepath = os.path.join(RESOURCE_FILEPATH, filename)
+        if not os.path.exists(out_filepath):
+            content = self.load(filepath)
+            with open(out_filepath, 'rb') as f:
+                f.write(content)
+
+        return out_filepath
+
+    def save(self, filepath, content, content_type='text/plain', is_public=False):
         """Save a file to the cloud bucket.
 
         Args:
-            filename: The name of the file including full path to the
+            filepath: The name of the file including full path to the
                 file within the storage bucket.
-            content: The content to be saved to the file.
+            content: Bytes of the content to be saved to the file.
             content_type: HTTP ‘Content-Type’ header for this object.
             is_public: Determines if all users have read access to this content.
         """
-        blob = Blob(filename, self.bucket)
+        blob = Blob(filepath, self.bucket)
         blob.upload_from_string(content, content_type)
         if is_public:
             blob.make_public()

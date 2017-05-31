@@ -134,6 +134,10 @@ class RenderDaemon(RunDaemon):
         module_path = "resources.{}".format(task["resource_view"])
         resource_image_generator = importlib.import_module(module_path)
 
+        for option, values in resource_image_generator.valid_options():
+            if task[option] not in values:
+                raise Exception()  # TODO
+
         context = dict()
         context["resource_name"] = task["resource_name"]
         context["header_text"] = task["header_text"]
@@ -145,7 +149,7 @@ class RenderDaemon(RunDaemon):
                 self.generate_resource_image(context, resource_image_generator)
             )
 
-        filename = "{} ({})".format(task["resource_name"], resource_image_generator.subtitle(context))
+        filename = "{} ({})".format(task["resource_name"], resource_image_generator.subtitle(task))
         context["filename"] = filename
 
         template_filename = task.get("template", "base-resource-pdf.html")

@@ -1,30 +1,31 @@
 """Module for generating Binary Windows resource."""
 
 import os.path
+from BytesIO import BytesIO
 from PIL import Image, ImageDraw, ImageFont
-from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
-def resource_image(request, resource):
+def resource_image(task, resource_manager):
     """Create a image for Binary Windows resource.
 
     Args:
-        request: HTTP request object (Request).
-        resource: Object of resource data (Resource).
+        task: Dicitionary of requested document options.
+        resource_manager: File loader for external resources.
 
     Returns:
         A list of Pillow image objects (list of Image objects).
     """
     BASE_IMAGE_PATH = "static/img/resources/binary-windows/"
+
     FONT_PATH = "static/fonts/PatrickHand-Regular.ttf"
-    FONT = ImageFont.truetype(FONT_PATH, 300)
-    SMALL_FONT = ImageFont.truetype(FONT_PATH, 180)
+    local_font_path = resource_manager.load_to_file(FONT_PATH, "PatrickHand-Regular.ttf")
+    FONT = ImageFont.truetype(local_font_path, 300)
+    SMALL_FONT = ImageFont.truetype(local_font_path, 180)
 
     # Retrieve parameters
-    parameter_options = valid_options()
-    number_of_bits = retrieve_query_parameter(request, "number_bits", parameter_options["number_bits"])
-    value_type = retrieve_query_parameter(request, "value_type", parameter_options["value_type"])
-    dot_counts = retrieve_query_parameter(request, "dot_counts", parameter_options["dot_counts"])
+    number_of_bits = task["number_bits"]
+    value_type = task["value_type"]
+    dot_counts = task["dot_counts"]
 
     images = []
     page_sets = [("binary-windows-1-to-8.png", 8)]
@@ -32,18 +33,19 @@ def resource_image(request, resource):
         page_sets.append(("binary-windows-16-to-128.png", 128))
 
     for (filename, dot_count_start) in page_sets:
-        image = Image.open(os.path.join(BASE_IMAGE_PATH, filename))
+        data = resource_manager.load(os.path.join(BASE_IMAGE_PATH, filename))
+        image = Image.open(BytesIO(data))
         image = add_digit_values(image, value_type, True, 660, 724, 1700, FONT)
         if dot_counts == "yes":
             image = add_dot_counts(image, dot_count_start, SMALL_FONT)
         image = image.rotate(90, expand=True)
         images.append(image)
-        images.append(back_page(BASE_IMAGE_PATH, FONT, value_type))
+        images.append(back_page(BASE_IMAGE_PATH, FONT, resource_manager, value_type))
 
     return images
 
 
-def back_page(BASE_IMAGE_PATH, FONT, value_type):
+def back_page(BASE_IMAGE_PATH, FONT, resource_manager, value_type):
     """Return a Pillow object of back page of Binary Windows.
 
     Args:
@@ -54,7 +56,8 @@ def back_page(BASE_IMAGE_PATH, FONT, value_type):
     Returns:
         Pillow Image of back page (Image).
     """
-    image = Image.open(os.path.join(BASE_IMAGE_PATH, "binary-windows-blank.png"))
+    data = resource_manager.load(os.path.join(BASE_IMAGE_PATH, "binary-windows-blank.png"))
+    image = Image.open(BytesIO(data))
     image = add_digit_values(image, value_type, False, 660, 724, 650, FONT)
     image = image.rotate(90, expand=True)
     return image
@@ -150,22 +153,21 @@ def add_digit_values(image, value_type, on, x_coord_start, x_coord_increment, ba
     return image
 
 
-def subtitle(request, resource):
+def subtitle(task):
     """Return the subtitle string of the resource.
 
     Used after the resource name in the filename, and
     also on the resource image.
 
     Args:
-        request: HTTP request object (Request).
-        resource: Object of resource data (Resource).
+        task: Dicitionary of requested document.
 
     Returns:
         text for subtitle (str)
     """
-    number_of_bits = retrieve_query_parameter(request, "number_bits")
-    value_type = retrieve_query_parameter(request, "value_type")
-    dot_counts = retrieve_query_parameter(request, "dot_counts")
+    number_of_bits = task["number_bits"]
+    value_type = task["value_type"]
+    dot_counts = task["dot_counts"]
     if dot_counts == "yes":
         count_text = "with dot counts"
     else:

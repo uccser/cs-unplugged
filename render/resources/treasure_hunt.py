@@ -1,33 +1,35 @@
 """Module for generating Treasure Hunt resource."""
 
+from BytesIO import BytesIO
 from PIL import Image, ImageDraw, ImageFont
 from random import sample
-from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
-def resource_image(request, resource):
+def resource_image(task, resource_manager):
     """Create a image for Treasure Hunt resource.
 
     Args:
-        request: HTTP request object
-        resource: Object of resource data.
+        task: Dicitionary of requested document options.
+        resource_manager: File loader for external resources.
 
     Returns:
         A Pillow image object.
     """
     image_path = "static/img/resources/resource-treasure-hunt.png"
-    font_path = "static/fonts/PatrickHand-Regular.ttf"
-    image = Image.open(image_path)
+    data = resource_manager.load(image_path)
+    image = Image.open(BytesIO(data))
     draw = ImageDraw.Draw(image)
 
+    font_path = "static/fonts/PatrickHand-Regular.ttf"
+    local_font_path = resource_manager.load_to_file(font_path, "PatrickHand-Regular.ttf")
+
     # Add numbers to image if required
-    parameter_options = valid_options()
-    prefilled_values = retrieve_query_parameter(request, "prefilled_values", parameter_options["prefilled_values"])
-    number_order = retrieve_query_parameter(request, "number_order", parameter_options["number_order"])
+    prefilled_values = task["prefilled_values"]
+    number_order = task["number_order"]
 
     if prefilled_values != "blank":
-        (range_min, range_max, font_size) = number_range(request)
-        font = ImageFont.truetype(font_path, font_size)
+        (range_min, range_max, font_size) = number_range(task)
+        font = ImageFont.truetype(local_font_path, font_size)
 
         total_numbers = 26
         numbers = sample(range(range_min, range_max), total_numbers)
@@ -55,7 +57,7 @@ def resource_image(request, resource):
             )
 
         # Add number order and range text
-        text = subtitle(request, resource)
+        text = subtitle(task)
         font = ImageFont.truetype(font_path, 110)
         text_width, text_height = draw.textsize(text, font=font)
         coord_x = 1472 - (text_width / 2)
@@ -70,41 +72,39 @@ def resource_image(request, resource):
     return image
 
 
-def subtitle(request, resource):
+def subtitle(task):
     """Return the subtitle string of the resource.
 
     Used after the resource name in the filename, and
     also on the resource image.
 
     Args:
-        request: HTTP request object
-        resource: Object of resource data.
+        task: Dicitionary of requested document.
 
     Returns:
         text for subtitle (string)
     """
-    prefilled_values = retrieve_query_parameter(request, "prefilled_values")
+    prefilled_values = task["prefilled_values"]
     if prefilled_values == "blank":
         text = "blank"
     else:
         SUBTITLE_TEMPLATE = "{} - {} to {}"
-        number_order_text = retrieve_query_parameter(request, "number_order").title()
-        range_min, range_max, font_size = number_range(request)
+        number_order_text = task["number_order"].title()
+        range_min, range_max, font_size = number_range(task)
         text = SUBTITLE_TEMPLATE.format(number_order_text, range_min, range_max - 1)
-    return "{} - {}".format(text, retrieve_query_parameter(request, "paper_size"))
+    return "{} - {}".format(text, task["paper_size"])
 
 
-def number_range(request):
+def number_range(task):
     """Return number range tuple for resource.
 
     Args:
-        request: HTTP request object
+        task: Dicitionary of requested document.
 
     Returns:
         Tuple of (range_min, range_max, font_size)
     """
-    parameter_options = valid_options()
-    prefilled_values = retrieve_query_parameter(request, "prefilled_values", parameter_options["prefilled_values"])
+    prefilled_values = task["prefilled_values"]
     range_min = 0
     if prefilled_values == "easy":
         range_max = 100

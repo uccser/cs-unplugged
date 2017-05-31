@@ -1,16 +1,16 @@
 """Module for generating Binary Cards (Small) resource."""
 
 import os.path
+from BytesIO import BytesIO
 from PIL import Image, ImageDraw, ImageFont
-from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
-def resource_image(request, resource):
+def resource_image(task, resource_manager):
     """Create a image for Binary Cards (Small) resource.
 
     Args:
-        request: HTTP request object.
-        resource: Object of resource data.
+        task: Dicitionary of requested document options.
+        resource_manager: File loader for external resources.
 
     Returns:
         A list of Pillow image objects.
@@ -25,14 +25,14 @@ def resource_image(request, resource):
     ]
 
     # Retrieve parameters
-    parameter_options = valid_options()
-    requested_bits = retrieve_query_parameter(request, "number_bits", parameter_options["number_bits"])
-    dot_counts = retrieve_query_parameter(request, "dot_counts", parameter_options["dot_counts"])
-    black_back = retrieve_query_parameter(request, "black_back", parameter_options["black_back"])
+    requested_bits = task["number_bits"]
+    dot_counts = task["dot_counts"]
+    black_back = task["black_back"]
 
     if dot_counts == "yes":
         font_path = "static/fonts/PatrickHand-Regular.ttf"
-        font = ImageFont.truetype(font_path, 200)
+        local_font_path = resource_manager.load_to_file(font_path, "PatrickHand-Regular.ttf")
+        font = ImageFont.truetype(local_font_path, 200)
         TEXT_COORDS = [
             (525, 1341),
             (1589, 1341),
@@ -41,11 +41,11 @@ def resource_image(request, resource):
         ]
 
     images = []
-
     for (image_path, image_bits) in IMAGE_DATA:
         requested_bits = int(requested_bits)
         if image_bits <= requested_bits:
-            image = Image.open(os.path.join(BASE_IMAGE_PATH, image_path))
+            data = resource_manager.load(os.path.join(BASE_IMAGE_PATH, image_path))
+            image = Image.open(BytesIO(data))
             if dot_counts == "yes":
                 draw = ImageDraw.Draw(image)
                 for number in range(image_bits - 4, image_bits):
@@ -68,32 +68,31 @@ def resource_image(request, resource):
     return images
 
 
-def subtitle(request, resource):
+def subtitle(task):
     """Return the subtitle string of the resource.
 
     Used after the resource name in the filename, and
     also on the resource image.
 
     Args:
-        request: HTTP request object
-        resource: Object of resource data.
+        task: Dicitionary of requested document.
 
     Returns:
         text for subtitle (string)
     """
-    if retrieve_query_parameter(request, "dot_counts") == "yes":
+    if task["dot_counts"] == "yes":
         display_numbers_text = "with dot counts"
     else:
         display_numbers_text = "without dot counts"
-    if retrieve_query_parameter(request, "black_back") == "yes":
+    if task["black_back"] == "yes":
         black_back_text = "with black back"
     else:
         black_back_text = "without black back"
     text = "{} bits - {} - {} - {}".format(
-        retrieve_query_parameter(request, "number_bits"),
+        task["number_bits"],
         display_numbers_text,
         black_back_text,
-        retrieve_query_parameter(request, "paper_size")
+        task["paper_size"]
     )
     return text
 
