@@ -163,6 +163,7 @@ Adding a Lesson
 .. raw:: html
 
   <map name="lesson-map">
+    <area shape="rect" coords="237,310,317,352" href="#lesson-configuration-file">
     <area shape="rect" coords="237,420,317,456" href="#unit-plan-configuration-file">
     <area shape="rect" coords="237,525,317,560" href="../getting_started/helper_commands.html#update">
   </map>
@@ -503,6 +504,43 @@ Unit Plan Configuration File
 
 - **Referenced In:** ``topic/content/<language>/<topic-key>/<topic-key>.yaml``
 
+- **Purpose:** This file defines which lessons to use in each age group
+
+  - **Required Fields:**
+
+    - ``lessons:`` The path to the lessons configuration file.
+
+    - ``<age-range>:`` Given as two integers separated by a hyphen (e.g. ``8-10``)
+
+      - **Required Fields:**
+
+        - ``<lesson-key>`` The key for a lesson.
+
+
+A complete unit plan structure file with multiple lessons may look like the
+following:
+
+.. code-block:: yaml
+  
+  lessons: lessons/lessons.yaml
+
+  7-11:
+    - introduction-to-bits
+    - how-binary-digits-work
+    - bits-and-bytes
+
+  12-99:
+    - bits-and-bytes
+
+Lesson Configuration File
+------------------------------------------------------------------------------
+
+- **File Name:** ``<lessons>.yaml``
+
+- **Location:** ``topic/content/<language>/<topic-key>/<unit-plan-key>/lessons/``
+
+- **Referenced In:** ``topic/content/<language>/<topic-key>/<unit-plan-key>/<unit-plan-key>.yaml``
+
 - **Purpose:** This file defines all the lessons (and their respective)
   attributes for the unit plan.
 
@@ -512,10 +550,6 @@ Unit Plan Configuration File
       required and optional fields:
 
       - **Required Fields:**
-
-        - ``min-age:`` The suggested minimum age group to teach this lesson to.
-
-        - ``max-age:`` The suggested maximum age group to teach this lesson to.
 
         - ``number:`` The number order for this lesson.
           Lessons are grouped by their minimum age and maximum age, then ordered by
@@ -549,14 +583,12 @@ Unit Plan Configuration File
 
                 - ``description:`` A description of how the resource should be used.
 
-A complete unit plan structure file with multiple lessons may look like the
+A complete lesson structure file with multiple lessons may look like the
 following:
 
 .. code-block:: yaml
 
   introduction-to-bits:
-    min-age: 7
-    max-age: 11
     number: 1
     programming-challenges:
       - count-to-16
@@ -571,8 +603,6 @@ following:
       - Dice
 
   how-binary-digits-work:
-    min-age: 7
-    max-age: 11
     number: 2
     learning-outcomes:
       - binary-data-representation
