@@ -10,7 +10,13 @@ parity-magic:
     - error-describe-steps-to-find-card
     - error-explain-each-card-bit
     - error-explain-chose-parity-card
-
+  generated-resources:
+    parity-cards:
+      description: Two pages of parity cards per pair of students.
+  classroom-resources:
+    - A set of 36 parity cards.
+    - A metal board (ideally a whiteboard) if magnetic parity cards are being
+      used.
 product-code-check-digits:
   min-age: 8
   max-age: 10
