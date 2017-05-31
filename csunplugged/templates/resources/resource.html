@@ -8,6 +8,10 @@
   {% breadcrumb resource.name "resources:resource" resource.slug %}
 {% endblock breadcrumbs %}
 
+{% block title %}
+  {{ resource.name }}
+{% endblock title %}
+
 {% block page_heading %}
   <h1>{{ resource.name }}</h1>
 
@@ -48,7 +52,7 @@
       {% endif %}
 
       <hr>
-      <input type="submit" value="Generate Resource" class="mb-3" />
+      <input type="submit" value="Generate Resource" class="btn btn-outline-primary mb-3" />
     {% else %}
       {% if resource.copies %}
       <div class="alert alert-info" role="alert">
@@ -56,7 +60,7 @@
       </div>
       {% endif %}
 
-      <input type="submit" value="Download Resource" class="mb-3"/>
+      <input type="submit" value="Download Resource" class="btn btn-outline-primary mb-3"/>
     {% endif %}
   </form>
 {% endblock left_column_content %}
@@ -85,16 +89,14 @@
         <tbody>
           {% for lesson in lessons %}
             <tr class="align-middle">
-              {% if forloop.first %}
-                <td rowspan="{{ lessons|length }}" class="text-center px-0">
+              <td class="text-center">
+                <a href="{% url 'topics:topic' lesson.topic.slug %}">
                   {{ lesson.topic.name }}
-                </td>
-                <td rowspan="{{ lessons|length }}" class="text-center px-0">
-                  <span class="table-text-emphasis">{{ age_range.0 }}</span><br>
-                  to<br>
-                  <span class="table-text-emphasis">{{ age_range.1 }}</span>
-                </td>
-              {% endif %}
+                </a>
+              </td>
+              <td class="text-center">
+                {{ age_range.0 }} to {{ age_range.1 }}
+              </td>
               <td class="text-center">
                 {{ lesson.number }}
               </td>
