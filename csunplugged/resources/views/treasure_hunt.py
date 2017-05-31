@@ -2,13 +2,14 @@
 
 from PIL import Image, ImageDraw, ImageFont
 from random import sample
+from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
-def resource_image(get_request, resource):
+def resource_image(request, resource):
     """Create a image for Treasure Hunt resource.
 
     Args:
-        get_request: HTTP request object
+        request: HTTP request object
         resource: Object of resource data.
 
     Returns:
@@ -20,13 +21,17 @@ def resource_image(get_request, resource):
     draw = ImageDraw.Draw(image)
 
     # Add numbers to image if required
-    if get_request["prefilled_values"] != "blank":
-        (range_min, range_max, font_size) = number_range(get_request)
+    parameter_options = valid_options()
+    prefilled_values = retrieve_query_parameter(request, "prefilled_values", parameter_options["prefilled_values"])
+    number_order = retrieve_query_parameter(request, "number_order", parameter_options["number_order"])
+
+    if prefilled_values != "blank":
+        (range_min, range_max, font_size) = number_range(request)
         font = ImageFont.truetype(font_path, font_size)
 
         total_numbers = 26
         numbers = sample(range(range_min, range_max), total_numbers)
-        if get_request["number_order"] == "sorted":
+        if number_order == "sorted":
             numbers.sort()
 
         starting_coord_y = 494
@@ -50,7 +55,7 @@ def resource_image(get_request, resource):
             )
 
         # Add number order and range text
-        text = subtitle(get_request, resource)
+        text = subtitle(request, resource)
         font = ImageFont.truetype(font_path, 110)
         text_width, text_height = draw.textsize(text, font=font)
         coord_x = 1472 - (text_width / 2)
@@ -65,39 +70,41 @@ def resource_image(get_request, resource):
     return image
 
 
-def subtitle(get_request, resource):
+def subtitle(request, resource):
     """Return the subtitle string of the resource.
 
     Used after the resource name in the filename, and
     also on the resource image.
 
     Args:
-        get_request: HTTP request object
+        request: HTTP request object
         resource: Object of resource data.
 
     Returns:
         text for subtitle (string)
     """
-    if get_request["prefilled_values"] == "blank":
+    prefilled_values = retrieve_query_parameter(request, "prefilled_values")
+    if prefilled_values == "blank":
         text = "blank"
     else:
         SUBTITLE_TEMPLATE = "{} - {} to {}"
-        number_order_text = get_request["number_order"].title()
-        range_min, range_max, font_size = number_range(get_request)
+        number_order_text = retrieve_query_parameter(request, "number_order").title()
+        range_min, range_max, font_size = number_range(request)
         text = SUBTITLE_TEMPLATE.format(number_order_text, range_min, range_max - 1)
-    return text
+    return "{} - {}".format(text, retrieve_query_parameter(request, "paper_size"))
 
 
-def number_range(get_request):
+def number_range(request):
     """Return number range tuple for resource.
 
     Args:
-        get_request: HTTP request object
+        request: HTTP request object
 
     Returns:
         Tuple of (range_min, range_max, font_size)
     """
-    prefilled_values = get_request["prefilled_values"]
+    parameter_options = valid_options()
+    prefilled_values = retrieve_query_parameter(request, "prefilled_values", parameter_options["prefilled_values"])
     range_min = 0
     if prefilled_values == "easy":
         range_max = 100
@@ -109,3 +116,18 @@ def number_range(get_request):
         range_max = 10000
         font_size = 70
     return (range_min, range_max, font_size)
+
+
+def valid_options():
+    """Provide dictionary of all valid parameters.
+
+    This excludes the header text parameter.
+
+    Returns:
+        All valid options (dict).
+    """
+    return {
+        "prefilled_values": ["blank", "easy", "medium", "hard"],
+        "number_order": ["sorted", "unsorted"],
+        "paper_size": ["a4", "letter"],
+    }
