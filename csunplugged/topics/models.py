@@ -1,9 +1,7 @@
 """Models for the topics application."""
 
-from collections import OrderedDict
-
 from django.db import models
-from django.contrib.postgres.fields import JSONField
+from django.contrib.postgres.fields import ArrayField, JSONField
 from resources.models import Resource
 
 
@@ -30,6 +28,7 @@ class CurriculumArea(models.Model):
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(unique=True)
     name = models.CharField(max_length=100, unique=True)
+    number = models.PositiveSmallIntegerField()
     colour = models.CharField(max_length=15, null=True)
     parent = models.ForeignKey(
         "self",
@@ -47,6 +46,11 @@ class CurriculumArea(models.Model):
             return "{}: {}".format(self.parent.name, self.name)
         else:
             return self.name
+
+    class Meta:
+        """Set consistent ordering of curriculum areas."""
+
+        ordering = ["number", "name"]
 
 
 class LearningOutcome(models.Model):
@@ -67,6 +71,11 @@ class LearningOutcome(models.Model):
             Text of learning outcome (string).
         """
         return self.text
+
+    class Meta:
+        """Set consistent ordering of learning outcomes."""
+
+        ordering = ["curriculum_areas__number", "curriculum_areas__name", "text"]
 
 
 class Topic(models.Model):
@@ -100,28 +109,7 @@ class UnitPlan(models.Model):
     slug = models.SlugField()
     name = models.CharField(max_length=100)
     content = models.TextField()
-
-    def lessons_by_age_group(self):
-        """Return ordered groups of lessons.
-
-        Lessons are grouped by the lesson minimum age and maximum ages,
-        and then order by number.
-
-        Returns:
-            A ordered dictionary of grouped lessons.
-            The key is a tuple of the minimum age and maximum ages for
-            the lessons.
-            The value for a key is a sorted list of lessons.
-            The dictionary is ordered by minimum age, then maximum age.
-        """
-        grouped_lessons = OrderedDict()
-        lessons = self.unit_plan_lessons.order_by("min_age", "max_age", "number")
-        for lesson in lessons:
-            if (lesson.min_age, lesson.max_age) in grouped_lessons:
-                grouped_lessons[(lesson.min_age, lesson.max_age)].append(lesson)
-            else:
-                grouped_lessons[(lesson.min_age, lesson.max_age)] = [lesson]
-        return grouped_lessons
+    heading_tree = JSONField(null=True)
 
     def __str__(self):
         """Text representation of UnitPlan object.
@@ -173,6 +161,14 @@ class ProgrammingExercise(models.Model):
         related_name="difficulty_programming_exercises"
     )
 
+    def ordered_implementations(self):
+        """Return an ordered QuerySet of implementations.
+
+        Returns:
+            Ordered QuerySet.
+        """
+        return self.implementations.all().order_by("language__number").select_related()
+
     def __str__(self):
         """Text representation of ProgrammingExercise object.
 
@@ -188,6 +184,7 @@ class ProgrammingExerciseLanguage(models.Model):
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField()
     name = models.CharField(max_length=200)
+    number = models.PositiveSmallIntegerField()
     icon = models.CharField(max_length=100, null=True)
 
     def __str__(self):
@@ -270,6 +267,10 @@ class Lesson(models.Model):
         Resource,
         through="ConnectedGeneratedResource",
         related_name="lesson_generated_resources"
+    )
+    classroom_resources = ArrayField(
+        models.CharField(max_length=100),
+        null=True
     )
 
     def has_programming_exercises(self):
