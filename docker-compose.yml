@@ -34,7 +34,7 @@ services:
   redis:
     build:
       context: .
-      dockerfile: ./compose/redis/Dockerfile
+      dockerfile: ./infrastructure/redis/Dockerfile
     ports:
       - "6379:6379"
 
@@ -53,7 +53,7 @@ services:
 
   queue:
     build:
-      context: ./compose/queue
+      context: ./infrastructure/queue
       dockerfile: ./Dockerfile
       args:
         PROCESS_PORT: 5050

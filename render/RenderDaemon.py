@@ -108,8 +108,6 @@ class RenderDaemon(RunDaemon):
         else:
             raise Exception("Unrecognized task: {}.".format(task_kind))
 
-    # Task needs:
-
     def generate_resource_pdf(self, task):
         """Return a response containing a generated PDF resource.
 
