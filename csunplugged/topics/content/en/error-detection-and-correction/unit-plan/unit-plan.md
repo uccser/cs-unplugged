@@ -10,7 +10,7 @@ A demonstration of lesson one ("Parity magic") being taught is available here:
 
 ## What’s it all about?
 
-{image file-path="img/topics/parity-trick-example.png"}
+{image file-path="img/topics/parity-trick-example.png" alt="A student is surprised another student can detect the changed card in the Parity Trick."}
 
 The world is a complicated and imperfect place, and errors can occur whenever
 information is stored or transmitted.
