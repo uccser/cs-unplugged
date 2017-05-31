@@ -22,3 +22,7 @@ product-code-check-digits:
   max-age: 10
   number: 2
   duration: 30
+  classroom-resources:
+    - A number of items with a 12 or 13 digit barcode on it (technique is
+      almost identical for both).
+    - A whiteboard and/or paper to write the calculations on.
