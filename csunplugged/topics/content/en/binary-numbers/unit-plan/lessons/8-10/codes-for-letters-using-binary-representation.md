@@ -82,7 +82,7 @@ It may be a surprise that only 16 bits is needed for tens of thousands of charac
 
 {panel end}
 
-{panel type="general" title="Mathematical Links"}
+{panel type="math" title="Mathematical links"}
 
 The rapid increase in the number of different values that can be represented as bits are added is exponential growth i.e. it doubles with each extra bit.
 After doubling 16 times we can represent 65,536 different values, and 20 bits can represent over a million different values.

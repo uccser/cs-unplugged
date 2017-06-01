@@ -167,7 +167,7 @@ Students have now worked out for themselves how this works. The key idea is that
 
 {panel end}
 
-{panel type="general" title="Mathematical Links"}
+{panel type="math" title="Mathematical links"}
 
 This lesson would be useful for students learning about what even and odd numbers are. 
 It also exercises the idea of grids (you can use phrases like "5 by 5") and the language of columns and rows. 
