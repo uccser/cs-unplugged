@@ -165,3 +165,13 @@ programming-demonstrate-indexing:
   text: Demonstrate how indexing to access a letter at the specified position in a string works.
   curriculum-areas:
     - programming
+
+programming-explain-set-and-change-statement:
+  text: Explain the difference between the set statement and the change statement when used to update the value of a variable.
+  curriculum-areas:
+    - programming
+
+programming-describe-variable-initial-value:
+  text: Describe why a variable should be set to the correct type of initial value.
+  curriculum-areas:
+    - programming

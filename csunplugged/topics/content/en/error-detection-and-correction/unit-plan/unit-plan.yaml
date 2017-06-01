@@ -17,6 +17,9 @@ parity-magic:
     - A set of 36 parity cards.
     - A metal board (ideally a whiteboard) if magnetic parity cards are being
       used.
+  programming-challenges:
+    - count-black-squares-one-colour-input
+    - count-black-squares-one-line-input
 product-code-check-digits:
   min-age: 8
   max-age: 10
