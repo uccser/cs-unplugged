@@ -4,7 +4,7 @@
 
 Binary (Computer Science Unplugged Part 1) - these are place-holder videos, new videos are planned to be developed to represent each lesson plan.
 
-{video url="https://www.youtube.com/watch?v=Wy6-FXtLMV8&feature=youtu.be"}
+{video url="https://www.youtube.com/embed/Wy6-FXtLMV8"}
 
 ## What’s It All About?
 

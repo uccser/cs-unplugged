@@ -29,6 +29,7 @@ function helpmenu {
   printf "   dev [DEV_COMMAND] Run a developer command.\n"
   end_help
   printf "   help              View all help.\n"
+  restart_help
   start_help
   update_help
   wipe_help
@@ -59,6 +60,7 @@ function start {
   update
   # Alert user that system is ready
   printf "\n${GREEN}Systems are ready!${NC}\n"
+  printf "Open your preferred web browser to the URL 'localhost'\n"
 }
 function start_help {
   printf "   start             Start development environment (this also runs\n"
@@ -74,6 +76,11 @@ function end {
 }
 function end_help {
   printf "   end               Stop development environment.\n"
+}
+
+# Stop and then restart development environment
+function restart_help {
+  printf "   restart           Stop and then restart development environment.\n"
 }
 
 # Run Django migrate and updatedata commands
@@ -391,9 +398,13 @@ case "$1" in
     helpmenu
     exit
     ;;
+  restart)
+    end
+    start
+    exit
+    ;;
   start)
     start
-    printf "Open your preferred web browser to the URL 'localhost'\n"
     exit
     ;;
   update)
