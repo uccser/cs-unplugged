@@ -32,7 +32,8 @@
           {% for lesson in lessons %}
             <li>
               <a href="{% url 'topics:lesson' topic.slug lesson.unit_plan.slug lesson.slug %}">
-                {{ lesson.name }} ({{ lesson.min_age }} to {{ lesson.max_age }})
+                {{ lesson.name }}
+                ({% for ages in lesson.age_range.all %}{{ ages.age_range.lower }} to {{ ages.age_range.upper }}{% if not forloop.last %} and {% endif %}{% endfor %})
               </a>
             </li>
           {% endfor %}
