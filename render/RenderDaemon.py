@@ -65,10 +65,10 @@ class RenderDaemon(RunDaemon):
         while True:
             lease_secs = TASK_COUNT * TASK_SECONDS
             tasks = queue.lease_tasks(tasks_to_fetch=TASK_COUNT, lease_secs=lease_secs)
-            self.process_tasks(tasks)
+            self.process_tasks(tasks, queue)
             time.sleep(RENDER_SLEEP_TIME)
 
-    def process_tasks(self, tasks):
+    def process_tasks(self, tasks, queue):
         """Run main loop for determining individual task logic.
 
         Tasks will be run to recieve a result, saved if necessary
@@ -80,6 +80,7 @@ class RenderDaemon(RunDaemon):
 
         Args:
             tasks: A list of json task objects.
+            queue: QueueHandler to update and delete tasks from.
         """
         for task_descriptor in tasks:
             task_id = task_descriptor["id"]
