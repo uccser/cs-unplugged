@@ -1,6 +1,5 @@
 """Module for generating Sorting Network resource."""
 
-from BytesIO import BytesIO
 from PIL import Image, ImageDraw, ImageFont
 from random import sample
 
@@ -15,13 +14,13 @@ def resource_image(task, resource_manager):
     Returns:
         A Pillow image object.
     """
-    image_path = "static/img/resources/resource-sorting-network-colour.png"
+    image_path = "img/resources/resource-sorting-network-colour.png"
     data = resource_manager.load(image_path)
-    image = Image.open(BytesIO(data))
+    image = Image.open(data)
     draw = ImageDraw.Draw(image)
 
-    font_path = "static/fonts/PatrickHand-Regular.ttf"
-    local_font_path = resource_manager.load_to_file(font_path, "PatrickHand-Regular.ttf")
+    font_path = "fonts/PatrickHand-Regular.ttf"
+    local_font_path = resource_manager.get_path(font_path)
 
     (range_min, range_max, font_size) = number_range(task)
 

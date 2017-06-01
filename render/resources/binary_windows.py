@@ -1,7 +1,6 @@
 """Module for generating Binary Windows resource."""
 
 import os.path
-from BytesIO import BytesIO
 from PIL import Image, ImageDraw, ImageFont
 
 
@@ -15,12 +14,12 @@ def resource_image(task, resource_manager):
     Returns:
         A list of Pillow image objects (list of Image objects).
     """
-    BASE_IMAGE_PATH = "static/img/resources/binary-windows/"
+    BASE_IMAGE_PATH = "img/resources/binary-windows/"
+    FONT_PATH = "fonts/PatrickHand-Regular.ttf"
 
-    FONT_PATH = "static/fonts/PatrickHand-Regular.ttf"
-    local_font_path = resource_manager.load_to_file(FONT_PATH, "PatrickHand-Regular.ttf")
-    FONT = ImageFont.truetype(local_font_path, 300)
-    SMALL_FONT = ImageFont.truetype(local_font_path, 180)
+    local_font_path = resource_manager.get_path(FONT_PATH)
+    font = ImageFont.truetype(local_font_path, 300)
+    small_font = ImageFont.truetype(local_font_path, 180)
 
     # Retrieve parameters
     number_of_bits = task["number_bits"]
@@ -34,31 +33,31 @@ def resource_image(task, resource_manager):
 
     for (filename, dot_count_start) in page_sets:
         data = resource_manager.load(os.path.join(BASE_IMAGE_PATH, filename))
-        image = Image.open(BytesIO(data))
-        image = add_digit_values(image, value_type, True, 660, 724, 1700, FONT)
+        image = Image.open(data)
+        image = add_digit_values(image, value_type, True, 660, 724, 1700, font)
         if dot_counts == "yes":
-            image = add_dot_counts(image, dot_count_start, SMALL_FONT)
+            image = add_dot_counts(image, dot_count_start, small_font)
         image = image.rotate(90, expand=True)
         images.append(image)
-        images.append(back_page(BASE_IMAGE_PATH, FONT, resource_manager, value_type))
+        images.append(back_page(BASE_IMAGE_PATH, font, resource_manager, value_type))
 
     return images
 
 
-def back_page(BASE_IMAGE_PATH, FONT, resource_manager, value_type):
+def back_page(base_image_path, font, resource_manager, value_type):
     """Return a Pillow object of back page of Binary Windows.
 
     Args:
-        BASE_IMAGE_PATH: Base image path for finding images (str).
-        FONT: Pillow ImageFont for writing text (ImageFont).
+        base_image_path: Base image path for finding images (str).
+        font: Pillow ImageFont for writing text (ImageFont).
         value_type: Type of value representation used (str).
 
     Returns:
         Pillow Image of back page (Image).
     """
-    data = resource_manager.load(os.path.join(BASE_IMAGE_PATH, "binary-windows-blank.png"))
-    image = Image.open(BytesIO(data))
-    image = add_digit_values(image, value_type, False, 660, 724, 650, FONT)
+    data = resource_manager.load(os.path.join(base_image_path, "binary-windows-blank.png"))
+    image = Image.open(data)
+    image = add_digit_values(image, value_type, False, 660, 724, 650, font)
     image = image.rotate(90, expand=True)
     return image
 

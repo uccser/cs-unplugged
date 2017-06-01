@@ -1,7 +1,6 @@
 """Module for generating Binary Cards resource."""
 
 import os.path
-from BytesIO import BytesIO
 from PIL import Image, ImageDraw, ImageFont
 
 
@@ -15,7 +14,7 @@ def resource_image(task, resource_manager):
     Returns:
         A list of Pillow image objects.
     """
-    BASE_IMAGE_PATH = "static/img/resources/binary-cards/"
+    BASE_IMAGE_PATH = "img/resources/binary-cards/"
     IMAGE_SIZE_X = 2480
     IMAGE_SIZE_Y = 3508
     IMAGE_DATA = [
@@ -34,8 +33,8 @@ def resource_image(task, resource_manager):
     black_back = task["black_back"]
 
     if display_numbers == "yes":
-        font_path = "static/fonts/PatrickHand-Regular.ttf"
-        local_font_path = resource_manager.load_to_file(font_path, "PatrickHand-Regular.ttf")
+        font_path = "fonts/PatrickHand-Regular.ttf"
+        local_font_path = resource_manager.get_path(font_path)
         font = ImageFont.truetype(local_font_path, 600)
         BASE_COORD_X = IMAGE_SIZE_X / 2
         BASE_COORD_Y = IMAGE_SIZE_Y - 100
@@ -45,7 +44,7 @@ def resource_image(task, resource_manager):
 
     for (image_path, number) in IMAGE_DATA:
         data = resource_manager.load(os.path.join(BASE_IMAGE_PATH, image_path))
-        image = Image.open(BytesIO(data))
+        image = Image.open(data)
         if display_numbers == "yes":
             background = Image.new("RGB", (IMAGE_SIZE_X, IMAGE_SIZE_Y), "#FFF")
             background.paste(image, mask=image)

@@ -1,6 +1,5 @@
 """Module for generating Binary to Alphabet resource."""
 
-from BytesIO import BytesIO
 from PIL import Image, ImageDraw, ImageFont
 
 
@@ -17,16 +16,16 @@ def resource_image(task, resource_manager):
     # Retrieve relevant image
     worksheet_version = task["worksheet_version"]
     if worksheet_version == "student":
-        image_path = "static/img/resources/binary-to-alphabet/table.png"
+        image_path = "img/resources/binary-to-alphabet/table.png"
     else:
-        image_path = "static/img/resources/binary-to-alphabet/table-teacher.png"
+        image_path = "img/resources/binary-to-alphabet/table-teacher.png"
     data = resource_manager.load(image_path)
-    image = Image.open(BytesIO(data))
+    image = Image.open(data)
     draw = ImageDraw.Draw(image)
 
     font_size = 30
-    font_path = "static/fonts/PatrickHand-Regular.ttf"
-    local_font_path = resource_manager.load_to_file(font_path, "PatrickHand-Regular.ttf")
+    font_path = "fonts/PatrickHand-Regular.ttf"
+    local_font_path = resource_manager.get_path(font_path)
     font = ImageFont.truetype(local_font_path, font_size)
 
     # Draw headings

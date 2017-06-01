@@ -1,6 +1,5 @@
 """Module for generating Module Clock resource."""
 
-from BytesIO import BytesIO
 from math import pi, sin, cos
 from PIL import Image, ImageDraw, ImageFont
 
@@ -17,16 +16,16 @@ def resource_image(task, resource_manager):
     """
     modulo_number = int(task["modulo_number"])
     if modulo_number == 2:
-        image_path = "static/img/resources/modulo-clock/modulo-clock-2.png"
+        image_path = "img/resources/modulo-clock/modulo-clock-2.png"
     elif modulo_number == 10:
-        image_path = "static/img/resources/modulo-clock/modulo-clock-10.png"
+        image_path = "img/resources/modulo-clock/modulo-clock-10.png"
     data = resource_manager.load(image_path)
-    image = Image.open(BytesIO(data))
+    image = Image.open(data)
     draw = ImageDraw.Draw(image)
 
     font_size = 150
-    font_path = "static/fonts/PatrickHand-Regular.ttf"
-    local_font_path = resource_manager.load_to_file(font_path, "PatrickHand-Regular.ttf")
+    font_path = "fonts/PatrickHand-Regular.ttf"
+    local_font_path = resource_manager.get_path(font_path)
     font = ImageFont.truetype(local_font_path, font_size)
 
     x_offset = 75
