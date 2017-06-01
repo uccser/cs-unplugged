@@ -6,25 +6,14 @@ from io import BytesIO
 CACHE_SIZE = int(os.getenv("DAEMON_CACHE_SIZE", 300 * 1024 * 1024))
 
 
-def __getsizeof(value):
-    """Approximate the size of a python string in memory.
-
-    Args:
-        value: A python BytesIO object to measure.
-    Returns:
-        An integer of the approximate memory requirement of the
-        given object.
-    """
-    return value.__sizeof__()
-
-
 class ResourceManager(object):
     """Handles access to the filesystem for loading and reading files.
 
     Caching is important to this class as it speeds up slow reads when
     the directory is a mounted bucket.
     """
-    __cache = LRUCache(maxsize=CACHE_SIZE, getsizeof=__getsizeof)
+
+    __cache = LRUCache(maxsize=CACHE_SIZE, getsizeof=lambda value: value.__sizeof__())
 
     def __init__(self, directory):
         """Create a resource manager.
@@ -68,4 +57,6 @@ class ResourceManager(object):
                 file within the storage bucket.
             content: Bytes of the content to be saved to the file.
         """
-        pass  # TODO
+        path = self.get_path(filepath)
+        with open(path, 'wb') as f:
+            f.write(content)

@@ -50,7 +50,7 @@ COPY ./render/requirements.txt /render
 COPY ./render/scripts/pip-install.sh /render/scripts
 
 # Install dependencies
-RUN chmod +x /render/scripts/pip_install.sh
+RUN chmod +x /render/scripts/pip-install.sh
 RUN /docker_venv/bin/pip3 install -U pip setuptools
 RUN /render/scripts/pip-install.sh /docker_venv/bin/pip3 /render/requirements.txt
 
@@ -58,7 +58,16 @@ RUN /render/scripts/pip-install.sh /docker_venv/bin/pip3 /render/requirements.tx
 ADD ./render/ /render
 WORKDIR /render
 
+# Setup User
+RUN useradd -c "RenderService user" -m -d /home/render -s /bin/bash render \
+    && chown -R render.render /render \
+    && mkdir ${STATIC_DIRECTORY} \
+    && chown -R render.render ${STATIC_DIRECTORY}
+USER render
+ENV HOME /home/render
+
 EXPOSE ${PORT}
 
+# Run System
 RUN chmod +x /render/scripts/docker-entrypoint.sh
 ENTRYPOINT ["/render/scripts/docker-entrypoint.sh"]

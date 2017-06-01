@@ -7,3 +7,6 @@ if [ ! -d "${DIRECTORY}" ]; then
 fi
 
 gcsfuse ${BUCKET_NAME} ${DIRECTORY}
+
+# TODO:
+# - Ensure authorised

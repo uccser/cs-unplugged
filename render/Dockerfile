@@ -43,36 +43,43 @@ RUN apt-get update && apt-get install -y \
 
 # Install GCSFUSE
 RUN export GCSFUSE_REPO=gcsfuse-`lsb_release -c -s` \
-    & echo "deb http://packages.cloud.google.com/apt $GCSFUSE_REPO main" | tee /etc/apt/sources.list.d/gcsfuse.list \
-    & curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - \
-    & apt-get update \
-    & apt-get install -y \
-      gcsfuse
-
-RUN apt-get clean && rm /var/lib/apt/lists/*_*
+    && echo "deb http://packages.cloud.google.com/apt $GCSFUSE_REPO main" | tee /etc/apt/sources.list.d/gcsfuse.list \
+    && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - \
+    && apt-get update \
+    && apt-get install -y \
+      gcsfuse \
+    && apt-get clean && rm /var/lib/apt/lists/*_*
 
 # Copy and create virtual environment
 RUN python -m virtualenv --python=python3.5 /docker_venv
 
 # Set-up file system
-RUN mkdir /render
-RUN mkdir /render/scripts
+RUN mkdir /render \
+    && mkdir /render/scripts
 COPY ./render/requirements.txt /render
-COPY ./render/scripts/pip_install.sh /render/scripts
+COPY ./render/scripts/pip-install.sh /render/scripts
 
 # Install dependencies
-RUN chmod +x /render/scripts/pip_install.sh
-RUN /docker_venv/bin/pip3 install -U pip setuptools
-RUN /render/scripts/pip_install.sh /docker_venv/bin/pip3 /render/requirements.txt
+RUN chmod +x /render/scripts/pip-install.sh \
+    && /docker_venv/bin/pip3 install -U pip setuptools \
+    && /render/scripts/pip-install.sh /docker_venv/bin/pip3 /render/requirements.txt
 
 # Setup Working Directory
 ADD ./render /render
 WORKDIR /render
 
+# Setup User
+RUN useradd -c "RenderService user" -m -d /home/render -s /bin/bash render \
+    && chown -R render.render /render
+USER render
+ENV HOME /home/render
+
 EXPOSE ${PORT}
 
+# Mount Bucket
 RUN chmod +x /render/scripts/mount-bucket.sh
 RUN /render/scripts/mount-bucket.sh ${BUCKET_NAME} ${STATIC_DIRECTORY}
 
+# Run System
 RUN chmod +x /render/scripts/docker-entrypoint.sh
 ENTRYPOINT ["/render/scripts/docker-entrypoint.sh"]

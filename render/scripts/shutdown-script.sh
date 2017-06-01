@@ -30,6 +30,10 @@ su "${MY_USER}" -c "gsutil $GSUTIL_OPTS cp $CHECKPOINT gs://${BUCKET_NAME}/"
 
 echo "Done uploading, shutting down."
 
+# TODO:
+# - Signal to clear lease on tasks
+# - Unmount storage
+
 # To Deploy
 # gcloud compute instances create example-instance \
 #    --metadata-from-file shutdown-script=examples/scripts/install.sh
