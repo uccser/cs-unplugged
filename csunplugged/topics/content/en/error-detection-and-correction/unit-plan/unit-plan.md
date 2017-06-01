@@ -173,7 +173,7 @@ The activities here will show how adding extra information (without going to the
 trouble of making a whole backup, which would use twice the space) provides a
 good level of resilience against errors.
 
-## Computational Thinking links
+## Seeing the Computational Thinking connections
 
 {panel type="ct-algorithm" title="Algorithmic thinking"}
 

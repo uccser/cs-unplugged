@@ -4,6 +4,12 @@ sorting-network:
   generation-view: sorting_network.py
   thumbnail-static-path: img/resources/resource-sorting-network-thumbnail-example.png
   copies: true
+sorting-network-cards:
+  name: Sorting Network Cards
+  webpage-template: resources/sorting-network-cards.html
+  generation-view: sorting_network_cards.py
+  thumbnail-static-path: img/resources/sorting-network-cards/thumbnail.png
+  copies: false
 treasure-hunt:
   name: Treasure Hunt
   webpage-template: resources/treasure-hunt.html
