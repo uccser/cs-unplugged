@@ -42,12 +42,25 @@ class ResourceManager(object):
     def get_path(self, filepath):
         """Get the full filepath for a given resource.
 
-        filepath: The name of the file including full path to the
-            file within the storage bucket.
+        Args:
+            filepath: The name of the file including full path to the
+                file within the storage bucket.
         Returns:
             A string of the filepath.
         """
         return os.path.join(self.directory, filepath)
+
+    def file_exists(self, filepath):
+        """Check to see if a file exists.
+
+        Args:
+            filepath: The name of the file including full path to the
+                file within the storage bucket.
+        Returns:
+            True if the filepath exists and is file, False otherwise.
+        """
+        path = self.get_path(filepath)
+        return os.path.exists(path) and os.path.isfile(path)
 
     def save(self, filepath, content):
         """Save a file to the cloud bucket.

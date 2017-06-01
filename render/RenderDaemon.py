@@ -1,6 +1,7 @@
 """Render Daemon for collecting and consuming render jobs."""
 import os
 import time
+import pickle
 import signal
 import logging
 import importlib
@@ -64,49 +65,100 @@ class RenderDaemon(RunDaemon):
         while True:
             lease_secs = TASK_COUNT * TASK_SECONDS
             tasks = queue.lease_tasks(tasks_to_fetch=TASK_COUNT, lease_secs=lease_secs)
-
-            for task_descriptor in tasks:
-                task_id = task_descriptor["id"]
-                retries = task_descriptor["retry_count"]
-                timeout_seconds = TASK_SECONDS + TASK_SECONDS * TASK_TIME_MULT * retries
-
-                if retries > TASK_RETRY_LIMIT:
-                    pass  # TODO: delete task tell django
-
-                signal.alarm(timeout_seconds)
-                try:
-                    self.process_task(queue, task_descriptor)
-                except Exception as e:
-                    queue.update_task(task_id=task_id, new_lease_secs=1)
-                    logger.exception("Task {} raise exception with error: {}", task_descriptor["id"], e)
-
+            self.process_tasks(tasks)
             time.sleep(RENDER_SLEEP_TIME)
 
-    def process_task(self, queue, task_descriptor):
-        """Process the given task, then delete it.
+    def process_tasks(self, tasks):
+        """Run main loop for determining individual task logic.
+
+        Tasks will be run to recieve a result, saved if necessary
+        then deleted. Tasks that return a none result or are
+        interupted by an exception will not be deleted and have
+        their lease reduced for another daemon. Tasks that have
+        surpassed their retry limit will have a failure result
+        saved if necessary otherwise they will be deleted.
+
+        Args:
+            tasks: A list of json task objects.
+        """
+        for task_descriptor in tasks:
+            task_id = task_descriptor["id"]
+            retries = task_descriptor["retry_count"]
+            timeout_seconds = TASK_SECONDS + TASK_SECONDS * TASK_TIME_MULT * retries
+
+            result = None
+            if retries < TASK_RETRY_LIMIT:
+                internal_filename = "{}.pickle".format(task_id)
+                signal.alarm(timeout_seconds)
+                try:
+                    result = self.process_task(task_descriptor)
+                except Exception as e:
+                    logger.exception("Task {} raise exception with error: {}", task_descriptor["id"], e)
+            else:
+                result = self.handle_retry_limit(task_descriptor)
+
+            # Task was successful or had too many failures
+            if result is not None:
+                queue.delete_task(task_id)
+            # Task failed and should be retried
+            else:
+                queue.update_task(task_id=task_id, new_lease_secs=1)
+
+            # Save out documents
+            if result is not None and result["kind"] == "result#document":
+                data = pickle.dumps(result)
+                self.resource_manager.save(internal_filename, data)
+
+    def process_task(self, task_descriptor):
+        """Process the given task and get result.
 
         Render tasks produce and save out documents.
 
         Args:
-            queue: The taskqueue to delete from.
             task_descriptor: The queue task with the user
                 definied task as the payload.
+        Returns:
+            A dictionary of the result.
         """
-        task_id = task_descriptor["id"]
         task = task_descriptor["payload"]
         task_kind = task["kind"]
-
-        filename, document = self.generate_resource_pdf(task)
+        result = None
 
         if task_kind == "task#render":
-            try:
-                # TODO: save then delete
-                queue.delete_task(task_id)
-            except TimeoutError as e:
-                # TODO: ensure saved and deleted
-                queue.delete_task(task_id)
+            filename, document = self.generate_resource_pdf(task)
+            result = {
+                "kind": "result#document",
+                "success": True,
+                "filename": filename,
+                "document": b64encode(document)
+            }
         else:
             raise Exception("Unrecognized task: {}.".format(task_kind))
+        return result
+
+    def handle_retry_limit(self, task_descriptor):
+        """Process the given task and get result.
+
+        Render tasks produce and save out documents.
+
+        Args:
+            task_descriptor: The queue task with the user
+                definied task as the payload.
+        Returns:
+            A dictionary of the result.
+        """
+        task = task_descriptor["payload"]
+        task_kind = task["kind"]
+        result = dict()  # result should never be None
+
+        if task_kind == "task#render":
+            result = {
+                "kind": "result#document",
+                "success": False,
+                "filename": None,
+                "document": None
+            }
+        return result
 
     def generate_resource_pdf(self, task):
         """Return a response containing a generated PDF resource.
