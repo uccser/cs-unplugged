@@ -91,7 +91,7 @@ class UnitPlanView(generic.DetailView):
         # Loading object under consistent context names for breadcrumbs
         context["topic"] = self.object.topic
         # Add all the connected lessons
-        context["grouped_lessons"] = group_lessons_by_age(self.object.unit_plan_age_range)
+        context["grouped_lessons"] = group_lessons_by_age(self.object.unit_plan_lessons)
         return context
 
 
@@ -211,10 +211,7 @@ class ProgrammingExerciseView(generic.DetailView):
         """
         # Call the base implementation first to get a context
         context = super(ProgrammingExerciseView, self).get_context_data(**kwargs)
-        context["lessons"] = self.object.lessons.order_by(
-            "age_range",
-            "number"
-        )
+        context["lessons"] = self.object.lessons.all()
         context["topic"] = self.object.topic
         # Add all the connected learning outcomes
         context["programming_exercise_learning_outcomes"] = self.object.learning_outcomes.all()
@@ -308,7 +305,6 @@ class CurriculumIntegrationView(generic.DetailView):
         # Add in a QuerySet of all the prerequisite lessons
         context["prerequisite_lessons"] = self.object.prerequisite_lessons.select_related().order_by(
             "unit_plan__name",
-            "age_range",
             "number"
         )
         return context
