@@ -72,7 +72,6 @@ class LearningOutcomesLoader(BaseLoader):
                         "Curriculum Areas"
                     )
 
-            self.log("Added Learning Outcome: {}".format(outcome.__str__()))
+            self.log("Added learning outcome: {}".format(outcome.__str__()))
 
-        # Print log output
-        self.print_load_log()
+        self.log("All learning outcomes loaded!\n")

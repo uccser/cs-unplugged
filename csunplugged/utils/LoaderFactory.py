@@ -19,9 +19,9 @@ class LoaderFactory:
         """Create curriculum area loader."""
         return CurriculumAreasLoader(structure_file_path, BASE_PATH)
 
-    def create_curriculum_integrations_loader(self, load_log, structure_file_path, topic, BASE_PATH):
+    def create_curriculum_integrations_loader(self, structure_file_path, topic, BASE_PATH):
         """Create curriculum integrations loader."""
-        return CurriculumIntegrationsLoader(load_log, structure_file_path, topic, BASE_PATH)
+        return CurriculumIntegrationsLoader(structure_file_path, topic, BASE_PATH)
 
     def create_glossary_terms_loader(self, glossary_folder_path, structure_file_path, BASE_PATH):
         """Create glossary terms loader."""
@@ -31,13 +31,13 @@ class LoaderFactory:
         """Create learning outcomes loader."""
         return LearningOutcomesLoader(structure_file_path, BASE_PATH)
 
-    def create_lessons_loader(self, structure_file_path, load_log, lessons_structure, topic, unit_plan, BASE_PATH):
+    def create_lessons_loader(self, structure_file_path, lessons_structure, topic, unit_plan, BASE_PATH):
         """Create lessons loader."""
-        return LessonsLoader(structure_file_path, load_log, lessons_structure, topic, unit_plan, BASE_PATH)
+        return LessonsLoader(structure_file_path, lessons_structure, topic, unit_plan, BASE_PATH)
 
-    def create_programming_exercises_loader(self, load_log, structure_file, topic, BASE_PATH):
+    def create_programming_exercises_loader(self, structure_file, topic, BASE_PATH):
         """Create programming exercises loader."""
-        return ProgrammingExercisesLoader(load_log, structure_file, topic, BASE_PATH)
+        return ProgrammingExercisesLoader(structure_file, topic, BASE_PATH)
 
     def create_programming_exercises_structure_loader(self, structure_file_path, BASE_PATH):
         """Create programming exercises structure loader."""
@@ -47,9 +47,9 @@ class LoaderFactory:
         """Create topic loader."""
         return TopicLoader(self, structure_file_path, BASE_PATH)
 
-    def create_unit_plan_loader(self, load_log, structure_file_path, topic, BASE_PATH):
+    def create_unit_plan_loader(self, structure_file_path, topic, BASE_PATH):
         """Create unit plan loader."""
-        return UnitPlanLoader(self, load_log, structure_file_path, topic, BASE_PATH)
+        return UnitPlanLoader(self, structure_file_path, topic, BASE_PATH)
 
     def create_resources_loader(self, structure_file, BASE_PATH):
         """Create resources loader."""
