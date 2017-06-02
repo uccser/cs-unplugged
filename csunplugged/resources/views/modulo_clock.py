@@ -65,8 +65,8 @@ def subtitle(request, resource):
         Text for subtitle (str).
     """
     modulo_number = retrieve_query_parameter(request, "modulo_number")
-    if modulo_number == 1:
-        modulo_text = "empty"
+    if modulo_number == "1":
+        modulo_text = "blank"
     else:
         modulo_text = modulo_number
     return "{} - {}".format(
