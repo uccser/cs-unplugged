@@ -80,7 +80,7 @@ class UnitPlanLoader(BaseLoader):
         if lessons_yaml is None:
             raise MissingRequiredFieldError(
                 self.structure_file_path,
-                ["(At least one lesson)"],
+                ["lessons", "age-groups"],
                 "Unit Plan"
             )
         lessons_structure_file_path = os.path.join(self.BASE_PATH, lessons_yaml)
@@ -95,15 +95,25 @@ class UnitPlanLoader(BaseLoader):
         ).load()
 
         # Create AgeRange and assign to lessons
-        for group in unit_plan_structure:
-            if group == "lessons":
-                continue
-            min_age, max_age = group.split('-')
+        age_groups = unit_plan_structure.get("age-groups", None)
+        if age_groups is None:
+            raise MissingRequiredFieldError(
+                self.structure_file_path,
+                ["lessons", "age-groups"],
+                "Unit Plan"
+            )
+
+        for age_group in age_groups:
+
+            for age_range in age_group:  # single entry in the dictionary, so first (and only) key is age group
+                min_age, max_age = age_range.split('-')
+
             new_age_range = AgeRange(
                 age_range=(int(min_age), int(max_age))
             )
             new_age_range.save()
-            for lesson_slug in unit_plan_structure[group]:
+
+            for lesson_slug in age_group[age_range]:
                 try:
                     lesson = Lesson.objects.get(
                         slug=lesson_slug

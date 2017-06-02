@@ -1,9 +1,7 @@
 lessons: lessons/lessons.yaml
 
-8-10:
-  - how-binary-digits-work
-  - reinforcing-sequencing-in-binary-number-systems
-  - codes-for-letters-using-binary-representation
-
-11-14:
-  - how-binary-digits-work
+age-groups:
+  - 8-10:
+    - how-binary-digits-work
+    - reinforcing-sequencing-in-binary-number-systems
+    - codes-for-letters-using-binary-representation

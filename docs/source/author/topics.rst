@@ -510,27 +510,31 @@ Unit Plan Configuration File
 
     - ``lessons:`` The path to the lessons configuration file.
 
-    - ``<age-range>:`` Given as two integers separated by a hyphen (e.g. ``8-10``)
+    - ``age-groups:`` List of age groups and their corresponding lessons
 
       - **Required Fields:**
 
-        - ``<lesson-key>`` The key for a lesson.
+        - ``<age-range>:`` Given as two integers separated by a hyphen (e.g. ``8-10``)
+
+          - **Required Fields:**
+
+            - ``<lesson-key>`` The key for a lesson.
 
 
 A complete unit plan structure file with multiple lessons may look like the
 following:
 
 .. code-block:: yaml
-  
+
   lessons: lessons/lessons.yaml
 
-  7-11:
-    - introduction-to-bits
-    - how-binary-digits-work
-    - bits-and-bytes
-
-  12-99:
-    - bits-and-bytes
+  age-groups:
+    - 7-11:
+      - introduction-to-bits
+      - how-binary-digits-work
+      - bits-and-bytes
+    - 12-99:
+      - bits-and-bytes
 
 Lesson Configuration File
 ------------------------------------------------------------------------------
