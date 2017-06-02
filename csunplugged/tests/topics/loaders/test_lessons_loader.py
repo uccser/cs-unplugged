@@ -16,7 +16,6 @@ class LessonsLoaderTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.load_log = Mock()
         self.test_data = TopicsTestDataGenerator()
         self.loader_name = "lessons"
 
@@ -30,7 +29,6 @@ class LessonsLoaderTest(BaseTestWithDB):
 
         lesson_loader = LessonsLoader(
             config_file,
-            self.load_log,
             lessons_structure,
             topic,
             unit_plan,
@@ -53,7 +51,6 @@ class LessonsLoaderTest(BaseTestWithDB):
 
         lesson_loader = LessonsLoader(
             config_file,
-            self.load_log,
             lessons_structure,
             topic,
             unit_plan,
@@ -75,7 +72,6 @@ class LessonsLoaderTest(BaseTestWithDB):
 
         lesson_loader = LessonsLoader(
             config_file,
-            self.load_log,
             lessons_structure,
             topic,
             unit_plan,
@@ -96,7 +92,6 @@ class LessonsLoaderTest(BaseTestWithDB):
 
         lesson_loader = LessonsLoader(
             config_file,
-            self.load_log,
             lessons_structure,
             topic,
             unit_plan,
@@ -118,7 +113,6 @@ class LessonsLoaderTest(BaseTestWithDB):
 
         lesson_loader = LessonsLoader(
             config_file,
-            self.load_log,
             lessons_structure,
             topic,
             unit_plan,
@@ -139,7 +133,6 @@ class LessonsLoaderTest(BaseTestWithDB):
 
         lesson_loader = LessonsLoader(
             config_file,
-            self.load_log,
             lessons_structure,
             topic,
             unit_plan,
@@ -161,7 +154,6 @@ class LessonsLoaderTest(BaseTestWithDB):
 
         lesson_loader = LessonsLoader(
             config_file,
-            self.load_log,
             lessons_structure,
             topic,
             unit_plan,
@@ -182,7 +174,6 @@ class LessonsLoaderTest(BaseTestWithDB):
 
         lesson_loader = LessonsLoader(
             config_file,
-            self.load_log,
             lessons_structure,
             topic,
             unit_plan,
@@ -208,7 +199,6 @@ class LessonsLoaderTest(BaseTestWithDB):
 
         lesson_loader = LessonsLoader(
             config_file,
-            self.load_log,
             lessons_structure,
             topic,
             unit_plan,
@@ -234,7 +224,6 @@ class LessonsLoaderTest(BaseTestWithDB):
 
         lesson_loader = LessonsLoader(
             config_file,
-            self.load_log,
             lessons_structure,
             topic,
             unit_plan,
@@ -259,7 +248,6 @@ class LessonsLoaderTest(BaseTestWithDB):
 
         lesson_loader = LessonsLoader(
             config_file,
-            self.load_log,
             lessons_structure,
             topic,
             unit_plan,
@@ -281,7 +269,6 @@ class LessonsLoaderTest(BaseTestWithDB):
 
         lesson_loader = LessonsLoader(
             config_file,
-            self.load_log,
             lessons_structure,
             topic,
             unit_plan,
@@ -302,7 +289,6 @@ class LessonsLoaderTest(BaseTestWithDB):
 
         lesson_loader = LessonsLoader(
             config_file,
-            self.load_log,
             lessons_structure,
             topic,
             unit_plan,
@@ -324,7 +310,6 @@ class LessonsLoaderTest(BaseTestWithDB):
 
         lesson_loader = LessonsLoader(
             config_file,
-            self.load_log,
             lessons_structure,
             topic,
             unit_plan,
@@ -345,7 +330,6 @@ class LessonsLoaderTest(BaseTestWithDB):
 
         lesson_loader = LessonsLoader(
             config_file,
-            self.load_log,
             lessons_structure,
             topic,
             unit_plan,
@@ -372,7 +356,6 @@ class LessonsLoaderTest(BaseTestWithDB):
 
         lesson_loader = LessonsLoader(
             config_file,
-            self.load_log,
             lessons_structure,
             topic,
             unit_plan,
@@ -414,7 +397,6 @@ class LessonsLoaderTest(BaseTestWithDB):
 
         lesson_loader = LessonsLoader(
             config_file,
-            self.load_log,
             lessons_structure,
             topic,
             unit_plan,
@@ -436,7 +418,6 @@ class LessonsLoaderTest(BaseTestWithDB):
 
         lesson_loader = LessonsLoader(
             config_file,
-            self.load_log,
             lessons_structure,
             topic,
             unit_plan,
@@ -465,7 +446,6 @@ class LessonsLoaderTest(BaseTestWithDB):
 
         lesson_loader = LessonsLoader(
             config_file,
-            self.load_log,
             lessons_structure,
             topic,
             unit_plan,
@@ -489,7 +469,6 @@ class LessonsLoaderTest(BaseTestWithDB):
 
         lesson_loader = LessonsLoader(
             config_file,
-            self.load_log,
             lessons_structure,
             topic,
             unit_plan,
@@ -517,7 +496,6 @@ class LessonsLoaderTest(BaseTestWithDB):
 
         lesson_loader = LessonsLoader(
             config_file,
-            self.load_log,
             lessons_structure,
             topic,
             unit_plan,
@@ -539,7 +517,6 @@ class LessonsLoaderTest(BaseTestWithDB):
 
         lesson_loader = LessonsLoader(
             config_file,
-            self.load_log,
             lessons_structure,
             topic,
             unit_plan,
@@ -561,7 +538,6 @@ class LessonsLoaderTest(BaseTestWithDB):
 
         lesson_loader = LessonsLoader(
             config_file,
-            self.load_log,
             lessons_structure,
             topic,
             unit_plan,

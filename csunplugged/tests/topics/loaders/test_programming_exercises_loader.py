@@ -12,7 +12,6 @@ class ProgrammingExercisesLoaderTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.load_log = Mock()
         self.test_data = TopicsTestDataGenerator()
         self.loader_name = "programming_exercises"
 
@@ -23,7 +22,7 @@ class ProgrammingExercisesLoaderTest(BaseTestWithDB):
         self.test_data.create_programming_language("1")
         topic = self.test_data.create_topic("1")
 
-        pe_loader = ProgrammingExercisesLoader(self.load_log, config_file, topic, self.test_data.LOADER_ASSET_PATH)
+        pe_loader = ProgrammingExercisesLoader(config_file, topic, self.test_data.LOADER_ASSET_PATH)
         pe_loader.load()
 
         pe_objects = ProgrammingExercise.objects.all()
