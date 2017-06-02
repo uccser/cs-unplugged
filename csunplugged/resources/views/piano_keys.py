@@ -1,6 +1,5 @@
 """Module for generating Piano Keys resource."""
 
-import os.path
 from PIL import Image, ImageDraw
 from utils.retrieve_query_parameter import retrieve_query_parameter
 
@@ -72,7 +71,6 @@ def resource_image(request, resource):
     image_path = "static/img/resources/piano-keys/keyboard.png"
     image = Image.open(image_path)
     page = Image.new("RGB", image.size, "#FFF")
-    draw = ImageDraw.Draw(page)
 
     if highlight != "no":
         highlight_key_areas(page, KEY_DATA.get(highlight))
