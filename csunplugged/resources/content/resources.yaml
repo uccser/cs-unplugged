@@ -52,3 +52,9 @@ parity-cards:
   generation-view: parity_cards.py
   thumbnail-static-path: img/resources/parity-cards/thumbnail.png
   copies: false
+piano-keys:
+  name: Piano Keys
+  webpage-template: resources/piano-keys.html
+  generation-view: piano_keys.py
+  thumbnail-static-path: img/resources/piano-keys/thumbnail.png
+  copies: false
