@@ -61,19 +61,18 @@ class UnitPlanViewTest(BaseTestWithDB):
     def test_unit_plan_view_lessons_context(self):
         topic = self.test_data.create_topic(1)
         unit_plan = self.test_data.create_unit_plan(topic, 1)
+        age_range_1 = self.test_data.create_age_range(5, 7)
         lesson1 = self.test_data.create_lesson(
             topic,
             unit_plan,
-            1,
-            5,
-            7
+            age_range_1,
+            1
         )
         lesson2 = self.test_data.create_lesson(
             topic,
             unit_plan,
-            2,
-            5,
-            7
+            age_range_1,
+            2
         )
         kwargs = {
             "topic_slug": topic.slug,
@@ -96,26 +95,25 @@ class UnitPlanViewTest(BaseTestWithDB):
     def test_curriculum_integration_view_prerequisite_lessons_context_order(self):
         topic = self.test_data.create_topic(1)
         unit_plan = self.test_data.create_unit_plan(topic, 1)
+        age_range_1 = self.test_data.create_age_range(5, 7)
+        age_range_2 = self.test_data.create_age_range(8, 10)
         lesson1 = self.test_data.create_lesson(
             topic,
             unit_plan,
-            1,
-            8,
-            10
+            age_range_2,
+            1
         )
         lesson2 = self.test_data.create_lesson(
             topic,
             unit_plan,
-            2,
-            5,
-            7
+            age_range_1,
+            2
         )
         lesson3 = self.test_data.create_lesson(
             topic,
             unit_plan,
-            1,
-            5,
-            7
+            age_range_1,
+            1
         )
         kwargs = {
             "topic_slug": topic.slug,

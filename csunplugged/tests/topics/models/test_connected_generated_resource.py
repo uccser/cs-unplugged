@@ -20,7 +20,8 @@ class ConnectedGeneratedResourceModelTest(BaseTestWithDB):
         )
         topic = self.test_topics_data.create_topic(1)
         unit_plan = self.test_topics_data.create_unit_plan(topic, 1)
-        lesson = self.test_topics_data.create_lesson(topic, unit_plan, 1, 1, 99)
+        age_range = self.test_topics_data.create_age_range(1, 99)
+        lesson = self.test_topics_data.create_lesson(topic, unit_plan, age_range, 1)
         new_resource = ConnectedGeneratedResource.objects.create(
             resource=resource,
             lesson=lesson,
