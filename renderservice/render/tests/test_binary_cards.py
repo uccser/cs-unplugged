@@ -3,7 +3,7 @@ from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerato
 from utils.create_query_string import query_string
 
 
-class BinaryCardsResourceViewTest(BaseTest):
+class BinaryCardsResourceTest(BaseTest):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

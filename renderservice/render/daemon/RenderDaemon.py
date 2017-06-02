@@ -178,7 +178,7 @@ class RenderDaemon(RunDaemon):
                   - url
 
         Returns:
-            Tuple of PDF file of generated resource and filename.
+            Tuple of filename and PDF file of generated resource.
         """
         if task["paper_size"] is None:
             raise Exception()  # TODO
