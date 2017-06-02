@@ -1,0 +1,19 @@
+{% extends "resources/resource.html" %}
+
+{% block generation_form %}
+  <fieldset class="form-group">
+    <legend>Train track shape</legend>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="tracks" value="circular" checked="checked">
+        Circular
+      </label>
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="tracks" value="twisted">
+        Twisted
+      </label>
+    </div>
+  </fieldset>
+{% endblock generation_form %}

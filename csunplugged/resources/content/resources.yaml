@@ -58,3 +58,9 @@ piano-keys:
   generation-view: piano_keys.py
   thumbnail-static-path: img/resources/piano-keys/thumbnail.png
   copies: false
+train-stations:
+  name: Train Stations
+  webpage-template: resources/train-stations.html
+  generation-view: train_stations.py
+  thumbnail-static-path: img/resources/train-stations/thumbnail.png
+  copies: false
