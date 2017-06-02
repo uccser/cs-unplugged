@@ -13,7 +13,7 @@ ARG PROJECT_NAME=cs-unplugged
 ARG QUEUE_NAME=render-queue
 ARG API_DISCOVERY_URL
 ARG BUCKET_NAME=cs-unplugged-develop
-ARG STATIC_DIRECTORY=/render/static
+ARG STATIC_DIRECTORY=/renderservice/static
 
 ENV PORT ${PROCESS_PORT}
 ENV FLASK_PRODUCTION ${FLASK_PRODUCTION}
@@ -54,19 +54,19 @@ RUN export GCSFUSE_REPO=gcsfuse-`lsb_release -c -s` \
 RUN python -m virtualenv --python=python3.5 /docker_venv
 
 # Set-up file system
-RUN mkdir /render \
-    && mkdir /render/scripts
-COPY ./render/requirements.txt /render
-COPY ./render/scripts/pip-install.sh /render/scripts
+RUN mkdir /renderservice \
+    && mkdir /renderservice/scripts
+COPY ./renderservice/requirements.txt /renderservice
+COPY ./renderservice/scripts/pip-install.sh /renderservice/scripts
 
 # Install dependencies
-RUN chmod +x /render/scripts/pip-install.sh \
+RUN chmod +x /renderservice/scripts/pip-install.sh \
     && /docker_venv/bin/pip3 install -U pip setuptools \
-    && /render/scripts/pip-install.sh /docker_venv/bin/pip3 /render/requirements.txt
+    && /renderservice/scripts/pip-install.sh /docker_venv/bin/pip3 /renderservice/requirements.txt
 
 # Setup Working Directory
-ADD ./render /render
-WORKDIR /render
+ADD ./renderservice /renderservice
+WORKDIR /renderservice
 
 # Setup User
 RUN useradd -c "RenderService user" -m -d /home/render -s /bin/bash render \
@@ -77,9 +77,9 @@ ENV HOME /home/render
 EXPOSE ${PORT}
 
 # Mount Bucket
-RUN chmod +x /render/scripts/mount-bucket.sh
-RUN /render/scripts/mount-bucket.sh ${BUCKET_NAME} ${STATIC_DIRECTORY}
+RUN chmod +x /renderservice/scripts/mount-bucket.sh
+RUN /renderservice/scripts/mount-bucket.sh ${BUCKET_NAME} ${STATIC_DIRECTORY}
 
 # Run System
-RUN chmod +x /render/scripts/docker-entrypoint.sh
-ENTRYPOINT ["/render/scripts/docker-entrypoint.sh"]
+RUN chmod +x /renderservice/scripts/docker-entrypoint.sh
+ENTRYPOINT ["/renderservice/scripts/docker-entrypoint.sh"]

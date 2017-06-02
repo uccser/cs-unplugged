@@ -11,14 +11,15 @@ from base64 import b64encode
 from jinja2 import Environment, FileSystemLoader
 from weasyprint import HTML, CSS
 from daemons.prefab.run import RunDaemon
-from QueueHandler import QueueHandler
-from ResourceManager import ResourceManager
+from render.daemon.QueueHandler import QueueHandler
+from render.daemon.ResourceManager import ResourceManager
 
 # Daemon Setup and Task Management Constants
 PROJECT_NAME = os.getenv("PROJECT_NAME", None)
 QUEUE_NAME = os.getenv("QUEUE_NAME", None)
 DISCOVERY_URL = os.getenv("API_DISCOVERY_URL", None)
-STATIC_DIRECTORY = os.getenv("STATIC_DIRECTORY", None)
+STATIC_DIRECTORY = os.getenv("STATIC_DIRECTORY", "/render/static")
+TEMPLATE_DIRECTORY = os.getenv("TEMPLATE_DIRECTORY", "/render/templates")
 
 TASK_COUNT = int(os.getenv("TASK_COUNT", 20))
 TASK_SECONDS = float(os.getenv("TASK_SECONDS", 15))
@@ -53,7 +54,7 @@ class RenderDaemon(RunDaemon):
         self.handle(signal.SIGALRM, handle_timelimit_exceeded)
         self.resource_manager = ResourceManager(STATIC_DIRECTORY)
         self.template_environment = Environment(
-            loader=FileSystemLoader('/render/templates'),
+            loader=FileSystemLoader(TEMPLATE_DIRECTORY),
             autoescape=False
         )
         # Handle SIGUSR1 for closing up for pre-emption.

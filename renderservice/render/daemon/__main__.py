@@ -1,14 +1,12 @@
-"""Control script for creating RenderDaemons."""
-import re
+"""Module containing daemon logic for consuming and rendering tasks."""
 import os
 import sys
 import logging
 import optparse
-from collections import namedtuple
 from logging.handlers import RotatingFileHandler
-from RenderDaemon import RenderDaemon
+from render.daemon import PID_DIRECTORY
+from render.daemon.RenderDaemon import RenderDaemon
 
-PID_DIRECTORY = os.getenv("PID_DIRECTORY", os.path.join(os.getcwd(), "pidstore"))
 LOG_DIRECTORY = os.getenv("DAEMON_LOG_DIRECTORY", os.path.join(os.getcwd(), "logs"))
 
 
@@ -55,46 +53,6 @@ def setup_logging(options):
     render_log = logging.getLogger()
     render_log.setLevel(logging.INFO)
     render_log.addHandler(log_handler)
-
-
-def get_active_daemon_details(daemon):
-    """Get the pids of all render daemons.
-
-    Returns:
-        An array of file names correlating to pidfiles.
-    """
-    if not os.path.exists(PID_DIRECTORY):
-        return []
-
-    DaemonMetaData = namedtuple("DaemonMetaData", "number, pid")
-    regex = re.compile(r"^{}_(?P<number>\d*).pid$".format(daemon))
-
-    details = []
-    for filename in os.listdir(PID_DIRECTORY):
-        m = regex.match(filename)
-        if m is not None:
-            filepath = os.path.join(PID_DIRECTORY, filename)
-            with open(filepath, 'r') as f:
-                pid = int(f.read())
-                number = int(m.group('number'))
-                details.append(DaemonMetaData(number, pid))
-    return details
-
-
-def check_pid(pid):
-    """Check that process is still active.
-
-    Args:
-        pid: The process id of the process.
-    Returns:
-        True if the process exists and is active, False otherwise.
-    """
-    try:
-        os.kill(pid, 0)  # kill actually means send UNIX signal.
-    except OSError:
-        return False
-    else:
-        return True
 
 
 def render_daemon_control(daemon, action):

@@ -1,11 +1,10 @@
-"""Webserver for the render service."""
-
+"""Module containing webserver logic for managing health checks and daemons."""
 import os
 import logging
 import subprocess
 from flask import Flask
-from render import check_pid
-from render import get_active_daemon_details
+from render.daemon import check_pid
+from render.daemon import get_active_daemon_details
 
 RENDER_DAEMONS = int(os.getenv("RENDER_DAEMONS", 1))
 DEBUG = not int(os.getenv("FLASK_PRODUCTION", 1))
@@ -95,7 +94,3 @@ def health_check():
             logger.info("Restarted render daemon {}.".format(daemon_number))
 
     return "", 200 if not errored else 500
-
-
-if __name__ == "__main__":
-    application.run(debug=DEBUG, host="0.0.0.0", port=PORT)

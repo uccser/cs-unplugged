@@ -18,13 +18,13 @@ RUN apt-get clean && rm /var/lib/apt/lists/*_*
 RUN python3 -m venv /docker_venv
 
 # Install dependencies
-COPY requirements.txt /
+COPY infrastructure/queue/requirements.txt /
 RUN /docker_venv/bin/pip3 install -U pip setuptools
 RUN /docker_venv/bin/pip3 install -r /requirements.txt
 
 # Setup Working Directory
 RUN mkdir /queue
-ADD . /queue
+ADD ./infrastructure/queue /queue
 WORKDIR /queue
 
 EXPOSE ${PORT}
