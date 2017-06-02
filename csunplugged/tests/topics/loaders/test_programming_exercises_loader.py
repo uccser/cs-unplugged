@@ -1,5 +1,4 @@
 import os.path
-from unittest.mock import Mock
 
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
