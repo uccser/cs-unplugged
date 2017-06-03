@@ -229,7 +229,7 @@ class ProgrammingExerciseLanguageImplementation(models.Model):
             self.language.name,
             self.exercise.exercise_set_number,
             self.exercise.exercise_number,
-            # self.exercise.name
+            self.exercise.name
         )
 
 
