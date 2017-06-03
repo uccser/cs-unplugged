@@ -1,0 +1,5 @@
+lessons: lessons/lessons.yaml
+
+age-groups:
+  - 8-10:
+    - lesson-1
