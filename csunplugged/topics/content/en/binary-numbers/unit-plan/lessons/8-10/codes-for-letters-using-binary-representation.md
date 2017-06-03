@@ -1,24 +1,5 @@
 # Codes for Letters Using Binary Representation
 
-## Learning Outcomes
-
-Students will be able to:
-
-#### DT/CT
-
-- Recognise how computers represent alphabet characters as bits using a simplified method.
-- Create their own message using binary code.
-- Interpret a message using binary code.
-- Explain how codes for larger alphabets could be created.
-- Explain how they would adapt the representation to include more characters, such as diacritics, capital letters or different symbols.
-
-#### Curriculum Integration
-
-- Identify that mistakes lead to new learning.
-- English: alphabet, special characters such as diacritics and capitals
-- Maths: doubling, range of values
-
-
 ## CSUnplugged Provided Resources
 
 - [1 set of large binary cards from 1 to 128 dots (8 cards)](https://drive.google.com/file/d/0B-SN1PgPBbCYV0ZQc3VmaEs4ZXM/view?usp=sharing)

@@ -1,28 +1,5 @@
 # Reinforcing Sequencing In Binary Number Systems
 
-##  Learning Outcomes
-
-#### Computational Thinking:
-
-- Explain how a binary digit is represented using two contrasting values.
-- Demonstrate how to represent any number between 0 and 63 using just two digits. (For younger students, this might be limited to 0 to 31).
-- Perform a demonstration of how the binary number system works by converting any decimal number into a binary number.
-- Justify why there aren’t actual 0’s and 1’s zooming around inside a computer.
-- Argue that 0’s and 1’s are still a correct way to represent what is stored in the computer.
-- Generalise by recognising that we can use any two different states or things to represent binary; it doesn’t have to just be 0’s and 1’s
-- Explain the logic of why the right-hand bit needs to represent a one.
-- Understand that we only need two different digits to represent any number and using more isn’t needed.
-- Explain why a particular card (bit) must be visible or not for a given number
-- Use logical reasoning to predict what value the next card (bit) in the left-to-right sequence will have (e.g. the last one is 32, what is the next one? 64. The next one? 128. Next? 256…)
-- Explain why we only need one more bit to represent twice as many numbers.
-
-#### Curriculum Integration:
-
-- Mathematics: adding numbers up to 63 (or 31), comparing numbers, odd/even numbers, sequence, doubling, digits, place value
-- English: Giving instructions, explaining an idea through a presentation
-- Media: video planning, production and editing
-
-
 ## CSUnplugged Provided Resources
 
 - [1 set of large binary cards from 1 to 128 dots (8 cards)](https://drive.google.com/file/d/0B-SN1PgPBbCYV0ZQc3VmaEs4ZXM/view?usp=sharing)
