@@ -2,6 +2,7 @@ topics:
   - binary-numbers
   - error-detection-and-correction
   - sorting-networks
+  - unplugged-programming
 
 programming-challenges-structure: programming-challenges-structure.yaml
 curriculum-areas: curriculum-areas.yaml
