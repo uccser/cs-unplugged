@@ -3,7 +3,7 @@ from unittest.mock import Mock
 
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
-from utils.errors.noheadingfoundinmarkdownfileerror import NoHeadingFoundInMarkdownFileError
+from utils.errors.NoHeadingFoundInMarkdownFileError import NoHeadingFoundInMarkdownFileError
 
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator

@@ -95,7 +95,6 @@ class UnitPlanLoader(BaseLoader):
         ).load()
 
         # Create AgeRange and assign to lessons
-        print(unit_plan_structure)
         age_groups = unit_plan_structure.get("age-groups", None)
         if age_groups is None:
             raise MissingRequiredFieldError(
