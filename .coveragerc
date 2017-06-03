@@ -2,7 +2,6 @@
 branch = True
 source =
     config
-    dev
     general
     locale
     resources

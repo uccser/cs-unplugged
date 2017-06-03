@@ -129,9 +129,7 @@ class LessonView(generic.DetailView):
         # Add all the connected programming exercises
         context["programming_exercises"] = self.object.programming_exercises.all()
         # Add all the connected learning outcomes
-        context["lesson_learning_outcomes"] = self.object.learning_outcomes.all().select_related().order_by(
-            "curriculum_areas__name"
-        )
+        context["lesson_learning_outcomes"] = self.object.learning_outcomes.all().select_related()
         # Add all the connected generated resources
         related_resources = self.object.generated_resources.all()
         generated_resources = []
@@ -215,7 +213,7 @@ class ProgrammingExerciseView(generic.DetailView):
         context["topic"] = self.object.topic
         # Add all the connected learning outcomes
         context["programming_exercise_learning_outcomes"] = self.object.learning_outcomes.all()
-        context["implementations"] = self.object.implementations.all().order_by("language__number").select_related()
+        context["implementations"] = self.object.ordered_implementations()
         return context
 
 

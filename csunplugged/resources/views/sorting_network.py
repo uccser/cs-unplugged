@@ -62,7 +62,7 @@ def subtitle(request, resource):
         text for subtitle (string)
     """
     prefilled_values = retrieve_query_parameter(request, "prefilled_values")
-    if prefilled_values != "blank":
+    if prefilled_values == "blank":
         range_text = "blank"
     else:
         SUBTITLE_TEMPLATE = "{} to {}"

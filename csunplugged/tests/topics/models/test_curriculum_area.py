@@ -12,6 +12,7 @@ class CurriculumAreaModelTest(BaseTestWithDB):
             slug="slug",
             name="name",
             colour="red",
+            number=1,
         )
         query_result = CurriculumArea.objects.get(slug="slug")
         self.assertEqual(query_result, new_curriculum_area)
@@ -21,6 +22,7 @@ class CurriculumAreaModelTest(BaseTestWithDB):
             slug="slug",
             name="name",
             colour="red",
+            number=1,
         )
         self.assertEqual(new_curriculum_area.__str__(), "name")
 
@@ -29,11 +31,13 @@ class CurriculumAreaModelTest(BaseTestWithDB):
             slug="parent-slug",
             name="parent name",
             colour="red",
+            number=1,
         )
         child_curriculum_area = CurriculumArea.objects.create(
             slug="child-slug",
             name="child name",
             colour="red",
+            number=parent_curriculum_area.number,
             parent=parent_curriculum_area,
         )
         self.assertEqual(child_curriculum_area.__str__(), "parent name: child name")

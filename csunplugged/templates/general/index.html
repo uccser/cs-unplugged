@@ -3,6 +3,10 @@
 {% load i18n %}
 {% load static %}
 
+{% block custom_title %}
+  CS Unplugged
+{% endblock custom_title %}
+
 {% block body_container %}
   <div class="row">
     <div class="jumbotron jumbotron-fluid">
@@ -19,25 +23,25 @@
     </p>
 
     <div class="link-box-container justify-content-between">
-      <a class="link-box link-box-blue" href="{% url 'general:about' %}">
+      <a class="link-box link-box-md-3 link-box-blue" href="{% url 'general:about' %}">
         <img class="img-fluid" src="{% static "img/general/computer-searching.png" %}">
           <h2 class="link-box-title">Learn about<br>CS Unplugged</h2>
       </a>
-      <a class="link-box link-box-orange" href="{% url 'general:about' %}">
+      <a class="link-box link-box-md-3 link-box-orange" href="{% url 'general:about' %}">
         <img class="img-fluid" src="{% static "img/general/binary-cards-5.png" %}">
         <h2 class="link-box-title">Teaching with<br>CS Unplugged</h2>
       </a>
-      <a class="link-box link-box-green" href="{% url 'topics:index' %}">
+      <a class="link-box link-box-md-3 link-box-green" href="{% url 'topics:index' %}">
         <img class="img-fluid" src="{% static "img/general/detective.png" %}">
         <h2 class="link-box-title">Topics covered by CS Unplugged</h2>
       </a>
-      <a class="link-box link-box-purple" href="{% url 'topics:all_curriculum_integrations' %}">
+      <a class="link-box link-box-md-3 link-box-purple" href="{% url 'topics:all_curriculum_integrations' %}">
         <h2 class="link-box-title">Curriculum Integrations</h2>
       </a>
-      <a class="link-box link-box-light-blue" href="{% url 'resources:index' %}">
+      <a class="link-box link-box-md-3 link-box-light-blue" href="{% url 'resources:index' %}">
         <h2 class="link-box-title">Resources</h2>
       </a>
-      <a class="link-box link-box-red" href="http://csunplugged.org/">
+      <a class="link-box link-box-md-3 link-box-red" href="http://csunplugged.org/">
         <h2 class="link-box-title">Classic CS Unplugged</h2>
       </a>
     </div>

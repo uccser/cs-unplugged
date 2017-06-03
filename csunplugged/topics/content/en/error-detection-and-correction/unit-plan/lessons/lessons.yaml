@@ -1,7 +1,24 @@
 parity-magic:
   number: 1
   duration: 30
-
+  learning-outcomes:
+    - numeracy-explain-even-odd-parity-problem
+    - numeracy-describe-rows-columns
+    - numeracy-discuss-changing-one-card-state
+    - error-describe-steps-to-find-card
+    - error-explain-each-card-bit
+    - error-explain-chose-parity-card
+  generated-resources:
+    parity-cards:
+      description: Two pages of parity cards per pair of students.
+  classroom-resources:
+    - A set of 36 parity cards.
+    - A metal board (ideally a whiteboard) if magnetic parity cards are being
+      used.
 product-code-check-digits:
   number: 2
   duration: 30
+  classroom-resources:
+    - A number of items with a 12 or 13 digit barcode on it (technique is
+      almost identical for both).
+    - A whiteboard and/or paper to write the calculations on.

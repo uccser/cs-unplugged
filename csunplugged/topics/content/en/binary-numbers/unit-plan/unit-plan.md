@@ -4,7 +4,7 @@
 
 Binary (Computer Science Unplugged Part 1) - these are place-holder videos, new videos are planned to be developed to represent each lesson plan.
 
-{video url="https://www.youtube.com/watch?v=Wy6-FXtLMV8&feature=youtu.be"}
+{video url="https://www.youtube.com/embed/Wy6-FXtLMV8"}
 
 ## What’s It All About?
 
@@ -39,7 +39,7 @@ A byte is a convenient number of bits as it can store things like simple charact
 
 {image file-path="img/topics/col_binary_bite_vs_byte.png"}
 
-{panel type="general" title="Mathematical Links"}
+{panel type="math" title="Mathematical links"}
 
 The binary number system is base 2, so there are only two digits before you need to move to the next place value: 0, 1.
 
