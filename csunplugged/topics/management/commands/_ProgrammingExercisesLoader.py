@@ -18,16 +18,15 @@ from topics.models import (
 class ProgrammingExercisesLoader(BaseLoader):
     """Custom loader for loading programming challenges."""
 
-    def __init__(self, load_log, structure_file_path, topic, BASE_PATH):
+    def __init__(self, structure_file_path, topic, BASE_PATH):
         """Create the loader for loading programming challenges.
 
         Args:
-            load_log: List of log messages (list).
             structure_file_path: File path for structure YAML file (string).
             topic: Object of related topic model.
             BASE_PATH: Base file path (string).
         """
-        super().__init__(BASE_PATH, load_log)
+        super().__init__(BASE_PATH)
         self.structure_file_path = os.path.join(self.BASE_PATH, structure_file_path)
         self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(structure_file_path)[0])
         self.topic = topic
@@ -110,7 +109,7 @@ class ProgrammingExercisesLoader(BaseLoader):
             )
             programming_challenge.save()
 
-            LOG_TEMPLATE = "Added Programming Challenge: {}"
+            LOG_TEMPLATE = "Added programming challenge: {}"
             self.log(LOG_TEMPLATE.format(programming_challenge.name), 1)
 
             for language in challenge_languages:
@@ -171,7 +170,7 @@ class ProgrammingExercisesLoader(BaseLoader):
                 )
                 implementation.save()
 
-                LOG_TEMPLATE = "Added Language Implementation: {}"
+                LOG_TEMPLATE = "Added language implementation: {}"
                 self.log(LOG_TEMPLATE.format(implementation.language), 2)
 
             if "learning-outcomes" in challenge_structure:

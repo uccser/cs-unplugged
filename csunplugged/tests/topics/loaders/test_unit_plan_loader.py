@@ -16,7 +16,6 @@ class UnitPlanLoaderTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.load_log = Mock()
         self.test_data = TopicsTestDataGenerator()
         self.loader_name = "unit_plan"
         self.BASE_PATH = os.path.join(self.test_data.LOADER_ASSET_PATH, self.loader_name)
@@ -30,7 +29,7 @@ class UnitPlanLoaderTest(BaseTestWithDB):
         unit_plan = self.test_data.create_unit_plan(topic, "test")
         self.test_data.create_lesson(topic, unit_plan, "1")
 
-        up_loader = UnitPlanLoader(factory, self.load_log, config_file, topic, self.BASE_PATH)
+        up_loader = UnitPlanLoader(factory, config_file, topic, self.BASE_PATH)
         up_loader.load()
 
         up_objects = UnitPlan.objects.all()
