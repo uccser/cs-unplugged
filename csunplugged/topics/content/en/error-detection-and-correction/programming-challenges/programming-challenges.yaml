@@ -8,6 +8,7 @@ count-black-squares-one-colour-input:
     - programming-explain-asking-input-end-user
     - programming-identify-if-statement
     - programming-explain-set-and-change-statement
+
 count-black-squares-one-line-input:
   challenge-set-number: 1
   challenge-number: 2
@@ -17,4 +18,24 @@ count-black-squares-one-line-input:
   learning-outcomes:
     - programming-explain-set-and-change-statement
     - programming-describe-variable-initial-value
+    - programming-identify-if-statement
+
+check-odd-even-using-mod:
+  challenge-set-number: 2
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-identify-if-statement
+
+check-odd-even-using-subtraction:
+  challenge-set-number: 2
+  challenge-number: 2
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-describe-variables
     - programming-identify-if-statement

@@ -20,6 +20,8 @@ parity-magic:
   programming-challenges:
     - count-black-squares-one-colour-input
     - count-black-squares-one-line-input
+    - check-odd-even-using-mod
+    - check-odd-even-using-subtraction
 product-code-check-digits:
   min-age: 8
   max-age: 10
