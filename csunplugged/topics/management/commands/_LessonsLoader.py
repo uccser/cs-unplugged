@@ -18,18 +18,17 @@ from topics.models import (
 class LessonsLoader(BaseLoader):
     """Custom loader for loading lessons."""
 
-    def __init__(self, unit_plan_structure_file_path, load_log, lessons_structure, topic, unit_plan, BASE_PATH):
+    def __init__(self, unit_plan_structure_file_path, lessons_structure, topic, unit_plan, BASE_PATH):
         """Create the loader for loading lessons.
 
         Args:
             unit_plan_structure_file_path: file path to unit plan yaml file (string).
-            load_log: List of log messages (list).
             lessons_structure: List of dictionaries for each lesson (list).
             topic: Object of Topic model.
             unit_plan: Object of UnitPlan model.
             BASE_PATH: Base file path (string).
         """
-        super().__init__(BASE_PATH, load_log)
+        super().__init__(BASE_PATH)
         self.unit_plan_structure_file_path = unit_plan_structure_file_path
         self.lessons_structure = lessons_structure
         self.topic = topic
@@ -192,4 +191,4 @@ class LessonsLoader(BaseLoader):
                         )
                         relationship.save()
 
-            self.log("Added Lesson: {}".format(lesson.__str__()), 2)
+            self.log("Added lesson: {}".format(lesson.__str__()), 2)
