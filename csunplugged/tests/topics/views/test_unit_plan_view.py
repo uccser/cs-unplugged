@@ -65,14 +65,14 @@ class UnitPlanViewTest(BaseTestWithDB):
         lesson1 = self.test_data.create_lesson(
             topic,
             unit_plan,
-            age_range_1,
-            1
+            1,
+            age_range_1
         )
         lesson2 = self.test_data.create_lesson(
             topic,
             unit_plan,
-            age_range_1,
-            2
+            2,
+            age_range_1
         )
         kwargs = {
             "topic_slug": topic.slug,
@@ -100,20 +100,20 @@ class UnitPlanViewTest(BaseTestWithDB):
         lesson1 = self.test_data.create_lesson(
             topic,
             unit_plan,
-            age_range_2,
-            1
+            1,
+            age_range_2
         )
         lesson2 = self.test_data.create_lesson(
             topic,
             unit_plan,
-            age_range_1,
-            2
+            2,
+            age_range_1
         )
         lesson3 = self.test_data.create_lesson(
             topic,
             unit_plan,
-            age_range_1,
-            1
+            1,
+            age_range_1
         )
         kwargs = {
             "topic_slug": topic.slug,

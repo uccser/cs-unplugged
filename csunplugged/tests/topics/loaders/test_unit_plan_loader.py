@@ -19,9 +19,13 @@ class UnitPlanLoaderTest(BaseTestWithDB):
 
     def test_basic_config(self):
         config_file = "unit-plan-1/unit-plan-1.yaml"
-        factory = Mock()
-        topic = self.test_data.create_topic('1')
 
+        # create test objects so that lesson exist for age range
+        topic = self.test_data.create_topic("1")
+        unit_plan = self.test_data.create_unit_plan(topic, "test")
+        self.test_data.create_lesson(topic, unit_plan, "1")
+
+        factory = Mock()
         up_loader = UnitPlanLoader(factory, self.load_log, config_file, topic, self.BASE_PATH)
         up_loader.load()
 
@@ -29,5 +33,9 @@ class UnitPlanLoaderTest(BaseTestWithDB):
 
         self.assertQuerysetEqual(
             up_objects,
-            ["<UnitPlan: Unit Plan 1>"]
+            [
+                "<UnitPlan: Unit Plan test>",
+                "<UnitPlan: Unit Plan 1>"
+            ],
+            ordered=False
         )

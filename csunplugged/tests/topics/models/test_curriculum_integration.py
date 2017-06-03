@@ -19,8 +19,8 @@ class CurriculumIntegrationModelTest(BaseTestWithDB):
         prerequisite_lesson = self.test_data.create_lesson(
             topic,
             unit_plan,
-            age_range_1,
-            1
+            1,
+            age_range_1
         )
         new_curriculum_integration = CurriculumIntegration.objects.create(
             topic=topic,

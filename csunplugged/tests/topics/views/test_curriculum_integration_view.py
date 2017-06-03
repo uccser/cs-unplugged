@@ -92,14 +92,14 @@ class CurriculumIntegrationViewTest(BaseTestWithDB):
         lesson_1 = self.test_data.create_lesson(
             topic,
             unit_plan,
-            age_range_1,
-            1
+            1,
+            age_range_1
         )
         lesson_2 = self.test_data.create_lesson(
             topic,
             unit_plan,
-            age_range_1,
-            2
+            2,
+            age_range_1
         )
         self.test_data.create_integration(
             topic,
@@ -132,20 +132,20 @@ class CurriculumIntegrationViewTest(BaseTestWithDB):
         lesson_3 = self.test_data.create_lesson(
             topic,
             unit_plan,
+            1,
             age_range_2,
-            1
         )
         lesson_2 = self.test_data.create_lesson(
             topic,
             unit_plan,
+            2,
             age_range_1,
-            2
         )
         lesson_1 = self.test_data.create_lesson(
             topic,
             unit_plan,
+            1,
             age_range_1,
-            1
         )
         self.test_data.create_integration(
             topic,

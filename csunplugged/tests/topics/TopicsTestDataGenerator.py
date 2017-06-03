@@ -119,7 +119,7 @@ class TopicsTestDataGenerator:
         unit_plan.save()
         return unit_plan
 
-    def create_lesson(self, topic, unit_plan, age_range, number):
+    def create_lesson(self, topic, unit_plan, number, age_range=None):
         """Create lesson object.
 
         Args:
@@ -136,16 +136,17 @@ class TopicsTestDataGenerator:
             slug="lesson-{}".format(number),
             name="Lesson {} ({} to {})".format(
                 number,
-                age_range.age_range[0],
-                age_range.age_range[1]
+                age_range.age_range[0] if age_range else "none",
+                age_range.age_range[1] if age_range else "none"
             ),
             number=number,
             duration=number,
             content="<p>Content for lesson {}.</p>".format(number),
         )
         lesson.save()
-        lesson.age_range.add(age_range)
-        lesson.save()
+        if age_range:
+            lesson.age_range.add(age_range)
+            lesson.save()
         return lesson
 
     def create_age_range(self, min_age, max_age):
