@@ -126,6 +126,11 @@ programming-explain-output:
   curriculum-areas:
     - programming
 
+programming-explain-variable-name:
+  text: Explain why choosing a good name for a variable is important.
+  curriculum-areas:
+    - programming
+
 programming-describe-variables:
   text: Describe how variables store values and how they are used in your program.
   curriculum-areas:

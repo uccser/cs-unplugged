@@ -39,3 +39,12 @@ check-odd-even-using-subtraction:
   learning-outcomes:
     - programming-describe-variables
     - programming-identify-if-statement
+
+detect-parity-error-in-row:
+  challenge-set-number: 3
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-variable-name
