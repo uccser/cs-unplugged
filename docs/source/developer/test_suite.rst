@@ -8,28 +8,28 @@ Structure
 ==============================================================================
 
 .. code-block:: none
-
+      
   └── tests/
       ├── general/
-      │   ├── templatetags/
-      │   ├── urls/
-      │   ├── views/
-      │   ├── test_models.py
-      │   ├── test_urls.py
-      │   └── test_views.py
+      │   ├── management/
+      │   ├── templatetags/
+      │   ├── urls/
+      │   └── views/
       ├── resources/
-      │   ├── models/
-      │   ├── resource/
-      │   ├── urls/
-      │   ├── views/
-      │   ├── test_models.py
-      │   ├── test_urls.py
-      │   └── test_views.py
+      │   ├── loaders/
+      │   ├── models/
+      │   ├── resource/
+      │   ├── urls/
+      │   ├── views/
+      │   └── ResourcesTestDataGenerator.py
       ├── topics/
-      │   ├── models/
-      │   ├── urls/
-      │   ├── views/
-      │   ├── test_models.py
-      │   ├── test_urls.py
-      │   └── test_views.py
-      └── BaseTest.py
+      │   ├── loaders/
+      │   │   └── assets/
+      │   ├── models/
+      │   ├── urls/
+      │   ├── views/
+      │   └── TopicsTestDataGenerator.py
+      ├── utils
+      │   └── errors/
+      ├── BaseTest.py
+      └── BaseTestWithDB.py
