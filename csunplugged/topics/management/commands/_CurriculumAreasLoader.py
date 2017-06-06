@@ -81,7 +81,7 @@ class CurriculumAreasLoader(BaseLoader):
             )
             new_area.save()
 
-            self.log("Added Curriculum Area: {}".format(new_area.__str__()))
+            self.log("Added curriculum area: {}".format(new_area.__str__()))
 
             # Create children curriculum areas with reference to parent
             if "children" in curriculum_area_data:
@@ -116,7 +116,6 @@ class CurriculumAreasLoader(BaseLoader):
                     )
                     new_child.save()
 
-                    self.log("Added Child Curriculum Area: {}".format(new_child.__str__()), 1)
+                    self.log("Added child curriculum area: {}".format(new_child.__str__()), 1)
 
-        # Print log output
-        self.print_load_log()
+        self.log("All curriculum areas loaded!\n")
