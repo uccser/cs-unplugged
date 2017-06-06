@@ -38,7 +38,6 @@ class LessonsLoaderTest(BaseTestWithDB):
             ["<Lesson: Lesson 1>"]
         )
 
-
     def test_lesson_loader_number_set_correctly(self):
         config_file = os.path.join(self.loader_name, "basic-config.yaml")
         lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
