@@ -22,6 +22,8 @@ parity-magic:
     - count-black-squares-one-line-input
     - check-odd-even-using-mod
     - check-odd-even-using-subtraction
+    - detect-parity-error-in-row
+    - detect-parity-error-in-six-rows
 product-code-check-digits:
   min-age: 8
   max-age: 10

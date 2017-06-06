@@ -48,3 +48,13 @@ detect-parity-error-in-row:
     - scratch
   learning-outcomes:
     - programming-explain-variable-name
+
+detect-parity-error-in-six-rows:
+  challenge-set-number: 4
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-variable-name
+    - programming-explain-join-concatenate
