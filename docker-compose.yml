@@ -48,11 +48,13 @@ services:
         PROJECT_NAME: cs-unplugged-develop
         QUEUE_NAME: render-queue
         API_DISCOVERY_URL: http://queue:5050/api/{api}/{apiVersion}
-        STATIC_DIRECTORY: /renderservice/static
+        STATIC_DIRECTORY: /renderservice/static_mnt
     volumes:
-      - ./csunplugged/static:/render/static
+      - ./csunplugged/staticfiles:/renderservice/static_mnt
     ports:
       - "5000:5000"
+    depends_on:
+      - nginx
 
   queue:
     build:

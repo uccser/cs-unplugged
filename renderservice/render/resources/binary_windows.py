@@ -34,17 +34,17 @@ def resource_image(task, resource_manager):
     for (filename, dot_count_start) in page_sets:
         data = resource_manager.load(os.path.join(BASE_IMAGE_PATH, filename))
         image = Image.open(data)
-        image = add_digit_values(image, value_type, True, 660, 724, 1700, font)
+        image = add_digit_values(image, resource_manager, value_type, True, 660, 724, 1700, font)
         if dot_counts == "yes":
             image = add_dot_counts(image, dot_count_start, small_font)
         image = image.rotate(90, expand=True)
         images.append(image)
-        images.append(back_page(BASE_IMAGE_PATH, font, resource_manager, value_type))
+        images.append(back_page(BASE_IMAGE_PATH, resource_manager, font, value_type))
 
     return images
 
 
-def back_page(base_image_path, font, resource_manager, value_type):
+def back_page(base_image_path, resource_manager, font, value_type):
     """Return a Pillow object of back page of Binary Windows.
 
     Args:
@@ -57,7 +57,7 @@ def back_page(base_image_path, font, resource_manager, value_type):
     """
     data = resource_manager.load(os.path.join(base_image_path, "binary-windows-blank.png"))
     image = Image.open(data)
-    image = add_digit_values(image, value_type, False, 660, 724, 650, font)
+    image = add_digit_values(image, resource_manager, value_type, False, 660, 724, 650, font)
     image = image.rotate(90, expand=True)
     return image
 
@@ -94,7 +94,7 @@ def add_dot_counts(image, starting_value, font):
     return image
 
 
-def add_digit_values(image, value_type, on, x_coord_start, x_coord_increment, base_y_coord, font):
+def add_digit_values(image, resource_manager, value_type, on, x_coord_start, x_coord_increment, base_y_coord, font):
     """Add binary values onto image.
 
     Args:
@@ -119,10 +119,11 @@ def add_digit_values(image, value_type, on, x_coord_start, x_coord_increment, ba
             text = "0"
     elif value_type == "lightbulb":
         if on:
-            image_file = "col_binary_lightbulb.png"
+            image_file = "img/topics/col_binary_lightbulb.png"
         else:
-            image_file = "col_binary_lightbulb_off.png"
-        lightbulb = Image.open(os.path.join("static/img/topics/", image_file))
+            image_file = "img/topics/col_binary_lightbulb_off.png"
+        data = resource_manager.load(image_file)
+        lightbulb = Image.open(data)
         (width, height) = lightbulb.size
         SCALE_FACTOR = 0.6
         lightbulb = lightbulb.resize((int(width * SCALE_FACTOR), int(height * SCALE_FACTOR)))

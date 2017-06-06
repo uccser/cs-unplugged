@@ -2,18 +2,18 @@ import itertools
 from render.tests.BaseResourceTest import BaseResourceTest
 
 
-class BinaryWindowsResourceTest(BaseResourceTest):
+class SortingNetworkResourceTest(BaseResourceTest):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.module = "binary_windows"
+        self.module = "sorting_network"
 
-    def test_binary_windows_resource_generation_valid_configurations(self):
-        BASE_URL = "resources/binary-windows.html"
+    def test_sorting_network_resource_generation_valid_configurations(self):
+        BASE_URL = "resources/modulo-clock.html"
         TASK_TEMPLATE = {
-            "resource_slug": "binary-windows",
-            "resource_name": "Binary Windows",
-            "resource_view": "binary_windows",
+            "resource_slug": "sorting-network",
+            "resource_name": "Sorting Network",
+            "resource_view": "sorting_network",
             "url": None
         }
 
@@ -30,7 +30,7 @@ class BinaryWindowsResourceTest(BaseResourceTest):
         ]
 
         print()
-        print("Testing Binary Windows:")
+        print("Testing Sorting Network:")
         for combination in combinations:
             print("   - Testing combination: {} ... ".format(combination), end="")
             url = BASE_URL + self.query_string(combination)

@@ -1,5 +1,7 @@
 """The BaseTest case for tests to inheirit from for render tests."""
+import importlib
 from render.tests.BaseTest import BaseTest
+from render.daemon.ResourceGenerator import ResourceGenerator
 
 
 class BaseResourceTest(BaseTest):
@@ -13,6 +15,21 @@ class BaseResourceTest(BaseTest):
         test failures.
         """
         super(BaseResourceTest, self).__init__(*args, **kwargs)
+        self.module = None
+
+    @classmethod
+    def setUpClass(cls):
+        """Set up before class initialization."""
+        cls.generator = ResourceGenerator()
+
+    def load_module(self):
+        """Load resource module.
+
+        Returns:
+            Module object to make calls from.
+        """
+        module_path = "render.resources.{}".format(self.module)
+        return importlib.import_module(module_path)
 
     def query_string(self, values):
         """Create a GET query to append to a URL from the given values.

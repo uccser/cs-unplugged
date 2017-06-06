@@ -1,259 +1,42 @@
-from render.tests.BaseTest import BaseTest
-from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
-from utils.create_query_string import query_string
+import itertools
+from render.tests.BaseResourceTest import BaseResourceTest
 
 
-class BinaryCardsResourceTest(BaseTest):
+class BinaryCardsResourceTest(BaseResourceTest):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.test_data = ResourcesTestDataGenerator()
-        self.language = "en"
+        self.module = "binary_cards"
 
-    def test_binary_cards_resource_form_view(self):
-        resource = self.test_data.create_resource(
-            "binary-cards",
-            "Binary Cards",
-            "resources/binary-cards.html",
-            "binary_cards.py",
-        )
-        kwargs = {
-            "resource_slug": resource.slug,
+    def test_binary_cards_resource_generation_valid_configurations(self):
+        BASE_URL = "resources/binary-cards.html"
+        TASK_TEMPLATE = {
+            "resource_slug": "binary-cards",
+            "resource_name": "Binary Cards",
+            "resource_view": "binary_cards",
+            "url": None
         }
-        url = reverse("resources:resource", kwargs=kwargs)
-        response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
 
-    def test_binary_cards_resource_generation(self):
-        resource = self.test_data.create_resource(
-            "binary-cards",
-            "Binary Cards",
-            "resources/binary-cards.html",
-            "binary_cards.py",
-        )
-        kwargs = {
-            "resource_slug": resource.slug,
-        }
-        url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = {
-            "display_numbers": "yes",
-            "black_back": "no",
-            "paper_size": "a4",
-            "header_text": "",
-        }
-        url += query_string(get_parameters)
-        response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
-        self.assertEqual(
-            response.get("Content-Disposition"),
-            'attachment; filename="Resource Binary Cards (with numbers - without black back - a4).pdf"'
-        )
+        resource_module = self.load_module()
+        valid_options = resource_module.valid_options()
+        valid_options["header_text"] = ["", "Example header"]
+        valid_options["copies"] = [1, 2, 5]
+        valid_option_keys = sorted(valid_options)
 
-    def test_binary_cards_resource_generation_no_numbers(self):
-        resource = self.test_data.create_resource(
-            "binary-cards",
-            "Binary Cards",
-            "resources/binary-cards.html",
-            "binary_cards.py",
-        )
-        kwargs = {
-            "resource_slug": resource.slug,
-        }
-        url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = {
-            "display_numbers": "no",
-            "black_back": "no",
-            "paper_size": "a4",
-            "header_text": "",
-        }
-        url += query_string(get_parameters)
-        response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
-        self.assertEqual(
-            response.get("Content-Disposition"),
-            'attachment; filename="Resource Binary Cards (without numbers - without black back - a4).pdf"'
-        )
+        combinations = [
+            dict(zip(valid_option_keys, product))
+            for product in itertools.product(
+                *(valid_options[valid_option_key] for valid_option_key in valid_option_keys))
+        ]
 
-    def test_binary_cards_resource_generation_black_back(self):
-        resource = self.test_data.create_resource(
-            "binary-cards",
-            "Binary Cards",
-            "resources/binary-cards.html",
-            "binary_cards.py",
-        )
-        kwargs = {
-            "resource_slug": resource.slug,
-        }
-        url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = {
-            "display_numbers": "yes",
-            "black_back": "yes",
-            "paper_size": "a4",
-            "header_text": "",
-        }
-        url += query_string(get_parameters)
-        response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
-        self.assertEqual(
-            response.get("Content-Disposition"),
-            'attachment; filename="Resource Binary Cards (with numbers - with black back - a4).pdf"'
-        )
+        print()
+        print("Testing Binary Cards:")
+        for combination in combinations:
+            print("   - Testing combination: {} ... ".format(combination), end="")
+            url = BASE_URL + self.query_string(combination)
+            task = TASK_TEMPLATE.copy()
+            task.update(combination)
+            task["url"] = url
 
-    def test_binary_cards_resource_generation_no_numbers_black_back(self):
-        resource = self.test_data.create_resource(
-            "binary-cards",
-            "Binary Cards",
-            "resources/binary-cards.html",
-            "binary_cards.py",
-        )
-        kwargs = {
-            "resource_slug": resource.slug,
-        }
-        url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = {
-            "display_numbers": "no",
-            "black_back": "yes",
-            "paper_size": "a4",
-            "header_text": "",
-        }
-        url += query_string(get_parameters)
-        response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
-        self.assertEqual(
-            response.get("Content-Disposition"),
-            'attachment; filename="Resource Binary Cards (without numbers - with black back - a4).pdf"'
-        )
-
-    def test_binary_cards_resource_generation_us_letter(self):
-        resource = self.test_data.create_resource(
-            "binary-cards",
-            "Binary Cards",
-            "resources/binary-cards.html",
-            "binary_cards.py",
-        )
-        kwargs = {
-            "resource_slug": resource.slug,
-        }
-        url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = {
-            "display_numbers": "yes",
-            "black_back": "no",
-            "paper_size": "letter",
-            "header_text": "",
-        }
-        url += query_string(get_parameters)
-        response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
-        self.assertEqual(
-            response.get("Content-Disposition"),
-            'attachment; filename="Resource Binary Cards (with numbers - without black back - letter).pdf"'
-        )
-
-    def test_binary_cards_resource_generation_header_text(self):
-        resource = self.test_data.create_resource(
-            "binary-cards",
-            "Binary Cards",
-            "resources/binary-cards.html",
-            "binary_cards.py",
-        )
-        kwargs = {
-            "resource_slug": resource.slug,
-        }
-        url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = {
-            "display_numbers": "yes",
-            "black_back": "no",
-            "paper_size": "a4",
-            "header_text": "Example header text",
-        }
-        url += query_string(get_parameters)
-        response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
-        self.assertEqual(
-            response.get("Content-Disposition"),
-            'attachment; filename="Resource Binary Cards (with numbers - without black back - a4).pdf"'
-        )
-
-    def test_binary_cards_resource_generation_missing_numbers_parameter(self):
-        resource = self.test_data.create_resource(
-            "binary-cards",
-            "Binary Cards",
-            "resources/binary-cards.html",
-            "binary_cards.py",
-        )
-        kwargs = {
-            "resource_slug": resource.slug,
-        }
-        url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = {
-            "black_back": "no",
-            "paper_size": "a4",
-            "header_text": "Example header text",
-        }
-        url += query_string(get_parameters)
-        response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
-
-    def test_binary_cards_resource_generation_missing_back_parameter(self):
-        resource = self.test_data.create_resource(
-            "binary-cards",
-            "Binary Cards",
-            "resources/binary-cards.html",
-            "binary_cards.py",
-        )
-        kwargs = {
-            "resource_slug": resource.slug,
-        }
-        url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = {
-            "display_numbers": "yes",
-            "paper_size": "a4",
-            "header_text": "Example header text",
-        }
-        url += query_string(get_parameters)
-        response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
-
-    def test_binary_cards_resource_generation_missing_paper_size_parameter(self):
-        resource = self.test_data.create_resource(
-            "binary-cards",
-            "Binary Cards",
-            "resources/binary-cards.html",
-            "binary_cards.py",
-        )
-        kwargs = {
-            "resource_slug": resource.slug,
-        }
-        url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = {
-            "display_numbers": "yes",
-            "black_back": "no",
-            "header_text": "Example header text",
-        }
-        url += query_string(get_parameters)
-        response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
-
-    def test_binary_cards_resource_generation_missing_header_text_parameter(self):
-        resource = self.test_data.create_resource(
-            "binary-cards",
-            "Binary Cards",
-            "resources/binary-cards.html",
-            "binary_cards.py",
-        )
-        kwargs = {
-            "resource_slug": resource.slug,
-        }
-        url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = {
-            "display_numbers": "yes",
-            "black_back": "no",
-            "paper_size": "a4",
-        }
-        url += query_string(get_parameters)
-        response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
-        self.assertEqual(
-            response.get("Content-Disposition"),
-            'attachment; filename="Resource Binary Cards (with numbers - without black back - a4).pdf"'
-        )
+            filename, pdf = self.generator.generate_resource_pdf(task)
+            print("ok")

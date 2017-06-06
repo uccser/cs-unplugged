@@ -57,7 +57,7 @@ def resource_image(task, resource_manager):
 
         # Add number order and range text
         text = subtitle(task)
-        font = ImageFont.truetype(font_path, 110)
+        font = ImageFont.truetype(local_font_path, 110)
         text_width, text_height = draw.textsize(text, font=font)
         coord_x = 1472 - (text_width / 2)
         coord_y = 35 - (text_height / 2)

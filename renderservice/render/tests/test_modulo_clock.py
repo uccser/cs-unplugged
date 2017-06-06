@@ -1,287 +1,42 @@
-from render.tests.BaseTest import BaseTest
-from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
-from utils.create_query_string import query_string
+import itertools
+from render.tests.BaseResourceTest import BaseResourceTest
 
 
-class ModuloClockResourceTest(BaseTest):
+class ModuloClockResourceTest(BaseResourceTest):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.test_data = ResourcesTestDataGenerator()
-        self.language = "en"
+        self.module = "modulo_clock"
 
-    def test_modulo_clock_resource_form_view(self):
-        resource = self.test_data.create_resource(
-            "modulo-clock",
-            "Modulo Clock",
-            "resources/modulo-clock.html",
-            "modulo_clock.py",
-        )
-        kwargs = {
-            "resource_slug": resource.slug,
+    def test_modulo_clock_resource_generation_valid_configurations(self):
+        BASE_URL = "resources/modulo-clock.html"
+        TASK_TEMPLATE = {
+            "resource_slug": "modulo-clock",
+            "resource_name": "Modulo Clock",
+            "resource_view": "modulo_clock",
+            "url": None
         }
-        url = reverse("resources:resource", kwargs=kwargs)
-        response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
 
-    def test_modulo_clock_resource_generation_2_a4_no_header_text(self):
-        resource = self.test_data.create_resource(
-            "modulo-clock",
-            "Modulo Clock",
-            "resources/modulo-clock.html",
-            "modulo_clock.py",
-        )
-        kwargs = {
-            "resource_slug": resource.slug,
-        }
-        url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = {
-            "modulo_number": "2",
-            "paper_size": "a4",
-            "header_text": ""
-        }
-        url += query_string(get_parameters)
-        response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
-        filename = "Resource Modulo Clock (2 - a4).pdf"
-        self.assertEqual(
-            response.get("Content-Disposition"),
-            'attachment; filename="{}"'.format(filename)
-        )
+        resource_module = self.load_module()
+        valid_options = resource_module.valid_options()
+        valid_options["header_text"] = ["", "Example header"]
+        valid_options["copies"] = [1, 2, 5]
+        valid_option_keys = sorted(valid_options)
 
-    def test_modulo_clock_resource_generation_2_letter_no_header_text(self):
-        resource = self.test_data.create_resource(
-            "modulo-clock",
-            "Modulo Clock",
-            "resources/modulo-clock.html",
-            "modulo_clock.py",
-        )
-        kwargs = {
-            "resource_slug": resource.slug,
-        }
-        url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = {
-            "modulo_number": "2",
-            "paper_size": "letter",
-            "header_text": ""
-        }
-        url += query_string(get_parameters)
-        response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
-        filename = "Resource Modulo Clock (2 - letter).pdf"
-        self.assertEqual(
-            response.get("Content-Disposition"),
-            'attachment; filename="{}"'.format(filename)
-        )
+        combinations = [
+            dict(zip(valid_option_keys, product))
+            for product in itertools.product(
+                *(valid_options[valid_option_key] for valid_option_key in valid_option_keys))
+        ]
 
-    def test_modulo_clock_resource_generation_10_a4_no_header_text(self):
-        resource = self.test_data.create_resource(
-            "modulo-clock",
-            "Modulo Clock",
-            "resources/modulo-clock.html",
-            "modulo_clock.py",
-        )
-        kwargs = {
-            "resource_slug": resource.slug,
-        }
-        url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = {
-            "modulo_number": "10",
-            "paper_size": "a4",
-            "header_text": ""
-        }
-        url += query_string(get_parameters)
-        response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
-        filename = "Resource Modulo Clock (10 - a4).pdf"
-        self.assertEqual(
-            response.get("Content-Disposition"),
-            'attachment; filename="{}"'.format(filename)
-        )
+        print()
+        print("Testing Modulo Clock:")
+        for combination in combinations:
+            print("   - Testing combination: {} ... ".format(combination), end="")
+            url = BASE_URL + self.query_string(combination)
+            task = TASK_TEMPLATE.copy()
+            task.update(combination)
+            task["url"] = url
 
-    def test_modulo_clock_resource_generation_10_letter_no_header_text(self):
-        resource = self.test_data.create_resource(
-            "modulo-clock",
-            "Modulo Clock",
-            "resources/modulo-clock.html",
-            "modulo_clock.py",
-        )
-        kwargs = {
-            "resource_slug": resource.slug,
-        }
-        url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = {
-            "modulo_number": "10",
-            "paper_size": "letter",
-            "header_text": ""
-        }
-        url += query_string(get_parameters)
-        response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
-        filename = "Resource Modulo Clock (10 - letter).pdf"
-        self.assertEqual(
-            response.get("Content-Disposition"),
-            'attachment; filename="{}"'.format(filename)
-        )
-
-    def test_modulo_clock_resource_generation_2_a4_header_text(self):
-        resource = self.test_data.create_resource(
-            "modulo-clock",
-            "Modulo Clock",
-            "resources/modulo-clock.html",
-            "modulo_clock.py",
-        )
-        kwargs = {
-            "resource_slug": resource.slug,
-        }
-        url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = {
-            "modulo_number": "2",
-            "paper_size": "a4",
-            "header_text": "Modulo Clock"
-        }
-        url += query_string(get_parameters)
-        response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
-        filename = "Resource Modulo Clock (2 - a4).pdf"
-        self.assertEqual(
-            response.get("Content-Disposition"),
-            'attachment; filename="{}"'.format(filename)
-        )
-
-    def test_modulo_clock_resource_generation_2_letter_header_text(self):
-        resource = self.test_data.create_resource(
-            "modulo-clock",
-            "Modulo Clock",
-            "resources/modulo-clock.html",
-            "modulo_clock.py",
-        )
-        kwargs = {
-            "resource_slug": resource.slug,
-        }
-        url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = {
-            "modulo_number": "2",
-            "paper_size": "letter",
-            "header_text": ""
-        }
-        url += query_string(get_parameters)
-        response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
-        filename = "Resource Modulo Clock (2 - letter).pdf"
-        self.assertEqual(
-            response.get("Content-Disposition"),
-            'attachment; filename="{}"'.format(filename)
-        )
-
-    def test_modulo_clock_resource_generation_10_a4_header_text(self):
-        resource = self.test_data.create_resource(
-            "modulo-clock",
-            "Modulo Clock",
-            "resources/modulo-clock.html",
-            "modulo_clock.py",
-        )
-        kwargs = {
-            "resource_slug": resource.slug,
-        }
-        url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = {
-            "modulo_number": "10",
-            "paper_size": "a4",
-            "header_text": "Modulo Clock"
-        }
-        url += query_string(get_parameters)
-        response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
-        filename = "Resource Modulo Clock (10 - a4).pdf"
-        self.assertEqual(
-            response.get("Content-Disposition"),
-            'attachment; filename="{}"'.format(filename)
-        )
-
-    def test_modulo_clock_resource_generation_10_letter_header_text(self):
-        resource = self.test_data.create_resource(
-            "modulo-clock",
-            "Modulo Clock",
-            "resources/modulo-clock.html",
-            "modulo_clock.py",
-        )
-        kwargs = {
-            "resource_slug": resource.slug,
-        }
-        url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = {
-            "modulo_number": "10",
-            "paper_size": "letter",
-            "header_text": "Modulo Clock"
-        }
-        url += query_string(get_parameters)
-        response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
-        filename = "Resource Modulo Clock (10 - letter).pdf"
-        self.assertEqual(
-            response.get("Content-Disposition"),
-            'attachment; filename="{}"'.format(filename)
-        )
-
-    def test_modulo_clock_resource_generation_missing_modulo_number_parameter(self):
-        resource = self.test_data.create_resource(
-            "modulo-clock",
-            "Modulo Clock",
-            "resources/modulo-clock.html",
-            "modulo_clock.py",
-        )
-        kwargs = {
-            "resource_slug": resource.slug,
-        }
-        url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = {
-            "paper_size": "a4",
-            "header_text": "",
-        }
-        url += query_string(get_parameters)
-        response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
-
-    def test_modulo_clock_resource_generation_missing_paper_size_parameter(self):
-        resource = self.test_data.create_resource(
-            "modulo-clock",
-            "Modulo Clock",
-            "resources/modulo-clock.html",
-            "modulo_clock.py",
-        )
-        kwargs = {
-            "resource_slug": resource.slug,
-        }
-        url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = {
-            "modulo_number": "2",
-            "header_text": "",
-        }
-        url += query_string(get_parameters)
-        response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
-
-    def test_modulo_clock_resource_generation_missing_header_text_parameter(self):
-        resource = self.test_data.create_resource(
-            "modulo-clock",
-            "Modulo Clock",
-            "resources/modulo-clock.html",
-            "modulo_clock.py",
-        )
-        kwargs = {
-            "resource_slug": resource.slug,
-        }
-        url = reverse("resources:generate", kwargs=kwargs)
-        get_parameters = {
-            "modulo_number": "2",
-            "paper_size": "a4",
-        }
-        url += query_string(get_parameters)
-        response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
-        filename = "Resource Modulo Clock (2 - a4).pdf"
-        self.assertEqual(
-            response.get("Content-Disposition"),
-            'attachment; filename="{}"'.format(filename)
-        )
+            filename, pdf = self.generator.generate_resource_pdf(task)
+            print("ok")

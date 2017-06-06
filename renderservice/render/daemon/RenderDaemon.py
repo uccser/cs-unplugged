@@ -4,22 +4,15 @@ import time
 import pickle
 import signal
 import logging
-import importlib
-from io import BytesIO
-from PIL import Image
 from base64 import b64encode
-from jinja2 import Environment, FileSystemLoader
-from weasyprint import HTML, CSS
 from daemons.prefab.run import RunDaemon
 from render.daemon.QueueHandler import QueueHandler
-from render.daemon.ResourceManager import ResourceManager
+from render.daemon.ResourceGenerator import ResourceGenerator
 
 # Daemon Setup and Task Management Constants
 PROJECT_NAME = os.getenv("PROJECT_NAME", None)
 QUEUE_NAME = os.getenv("QUEUE_NAME", None)
 DISCOVERY_URL = os.getenv("API_DISCOVERY_URL", None)
-STATIC_DIRECTORY = os.getenv("STATIC_DIRECTORY", "/render/static")
-TEMPLATE_DIRECTORY = os.getenv("TEMPLATE_DIRECTORY", "/render/templates")
 
 TASK_COUNT = int(os.getenv("TASK_COUNT", 20))
 TASK_SECONDS = float(os.getenv("TASK_SECONDS", 15))
@@ -30,18 +23,13 @@ RENDER_SLEEP_TIME = float(os.getenv("RENDER_SLEEP_TIME", 10))
 
 logger = logging.getLogger(__name__)
 
-# File Generation and Processing Constants
-MM_TO_PIXEL_RATIO = 3.78
-A4_MM_SCALE = 267
-LETTER_MM_SCALE = 249
-
 
 def handle_timelimit_exceeded():
     """Raise the timeout exception when SIGALRM signal is caught."""
     raise TimeoutError("Timelimit exceeded.")
 
 
-class RenderDaemon(RunDaemon):
+class RenderDaemon(RunDaemon, ResourceGenerator):
     """A daemon that processes tasks related to the rendering pipeline."""
 
     def __init__(self, *args, **kwargs):
@@ -52,11 +40,6 @@ class RenderDaemon(RunDaemon):
         """
         super(RenderDaemon, self).__init__(*args, **kwargs)
         self.handle(signal.SIGALRM, handle_timelimit_exceeded)
-        self.resource_manager = ResourceManager(STATIC_DIRECTORY)
-        self.template_environment = Environment(
-            loader=FileSystemLoader(TEMPLATE_DIRECTORY),
-            autoescape=False
-        )
         # Handle SIGUSR1 for closing up for pre-emption.
 
     def run(self):
@@ -161,99 +144,3 @@ class RenderDaemon(RunDaemon):
                 "document": None
             }
         return result
-
-    def generate_resource_pdf(self, task):
-        """Return a response containing a generated PDF resource.
-
-        Args:
-            task: A dicitionary of values specifying the task.
-                Must have:
-                  - filename
-                  - header_text
-                  - paper_size
-                  - copies
-                  - resource_slug
-                  - resource_name
-                  - resource_view
-                  - url
-
-        Returns:
-            Tuple of filename and PDF file of generated resource.
-        """
-        if task["paper_size"] is None:
-            raise Exception()  # TODO
-
-        module_path = "resources.{}".format(task["resource_view"])
-        resource_image_generator = importlib.import_module(module_path)
-
-        for option, values in resource_image_generator.valid_options():
-            if task[option] not in values:
-                raise Exception()  # TODO
-
-        context = dict()
-        context["resource_name"] = task["resource_name"]
-        context["header_text"] = task["header_text"]
-        context["url"] = task["url"]
-
-        context["resource_images"] = []
-        for copy in range(0, context["copies"]):
-            context["resource_images"].append(
-                self.generate_resource_image(context, resource_image_generator)
-            )
-
-        filename = "{} ({})".format(task["resource_name"], resource_image_generator.subtitle(task))
-        context["filename"] = filename
-
-        template_filename = task.get("template", "base-resource-pdf.html")
-        css_filename = task.get("css", "css/print-resource-pdf.css")
-
-        template = self.template_environment.get_template(template_filename)
-        pdf_html = template.render(context)  # TODO: Future consider async
-        html = HTML(string=pdf_html, base_url=task["base_url"])
-        css_string = self.resource_manager.load(css_filename, encoding="UTF-8")
-        base_css = CSS(string=css_string)
-        return filename, html.write_pdf(stylesheets=[base_css])
-
-    def generate_resource_image(self, task, resource_image_generator):
-        """Retrieve image(s) for one copy of resource from resource generator.
-
-        Images are resized to size.
-
-        Args:
-            task: The specification of file to generate as a dictionary.
-            resource_image_generator: The file generation module.
-
-        Returns:
-            List of Base64 strings of a generated resource images for one copy.
-        """
-        # Get images from resource image creator
-        raw_images = resource_image_generator.resource_image(task, self.resource_manager)
-        if not isinstance(raw_images, list):
-            raw_images = [raw_images]
-
-        # Resize images to reduce file size
-        max_pixel_height = 0
-        if task["paper_size"].lower() == "a4":
-            max_pixel_height = A4_MM_SCALE * MM_TO_PIXEL_RATIO
-        elif task["paper_size"].lower() == "letter":
-            max_pixel_height = LETTER_MM_SCALE * MM_TO_PIXEL_RATIO
-        else:
-            raise Exception()  # TODO
-
-        images = []
-        for image in raw_images:
-            width, height = image.size
-            if height > max_pixel_height:
-                ratio = max_pixel_height / height
-                width *= ratio
-                height *= ratio
-                image = image.resize((int(width), int(height)), Image.ANTIALIAS)
-
-            # Save image to buffer
-            image_buffer = BytesIO()
-            image.save(image_buffer, format="PNG")
-
-            # Add base64 of image to list of images
-            images.append(b64encode(image_buffer.getvalue()))
-
-        return images
