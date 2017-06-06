@@ -31,9 +31,9 @@ class LoaderFactory:
         """Create learning outcomes loader."""
         return LearningOutcomesLoader(structure_file_path, BASE_PATH)
 
-    def create_lessons_loader(self, structure_file_path, lessons_structure, topic, unit_plan, BASE_PATH):
+    def create_lessons_loader(self, structure_file_path, topic, unit_plan, BASE_PATH):
         """Create lessons loader."""
-        return LessonsLoader(structure_file_path, lessons_structure, topic, unit_plan, BASE_PATH)
+        return LessonsLoader(structure_file_path, topic, unit_plan, BASE_PATH)
 
     def create_programming_exercises_loader(self, structure_file, topic, BASE_PATH):
         """Create programming exercises loader."""

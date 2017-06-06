@@ -41,6 +41,7 @@
           <li>
             <a href="{% url 'topics:lesson' prerequisite_lesson.topic.slug prerequisite_lesson.unit_plan.slug prerequisite_lesson.slug %}">
               <strong>{{ prerequisite_lesson.unit_plan.name }}:</strong> {{ prerequisite_lesson.name }}
+              ({% for ages in prerequisite_lesson.age_range.all %}{{ ages.age_range.lower }} to {{ ages.age_range.upper }}{% if not forloop.last %} and {% endif %}{% endfor %})
             </a>
           </li>
           {% endfor %}

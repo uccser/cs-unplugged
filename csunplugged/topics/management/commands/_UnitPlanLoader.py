@@ -4,6 +4,12 @@ import os.path
 from utils.BaseLoader import BaseLoader
 from utils.convert_heading_tree_to_dict import convert_heading_tree_to_dict
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
+from utils.errors.KeyNotFoundError import KeyNotFoundError
+
+from topics.models import (
+    Lesson,
+    AgeRange
+)
 
 
 class UnitPlanLoader(BaseLoader):
@@ -29,8 +35,9 @@ class UnitPlanLoader(BaseLoader):
         """Load the content for unit plans.
 
         Raise:
-            MissingRequiredFieldError: when no object can be found with the matching
-                attribute.
+            KeyNotFoundError: when no object can be found with the matching attribute.
+            MissingRequiredFieldError: when a value for a required model field cannot
+                be found in the config file.
         """
         unit_plan_structure = self.load_yaml_file(self.structure_file_path)
 
@@ -67,12 +74,52 @@ class UnitPlanLoader(BaseLoader):
                 ["(At least one lesson)"],
                 "Unit Plan"
             )
+        # Get path to lesson yaml
+        lessons_yaml = unit_plan_structure.get("lessons", None)
+        if lessons_yaml is None:
+            raise MissingRequiredFieldError(
+                self.structure_file_path,
+                ["lessons", "age-groups"],
+                "Unit Plan"
+            )
+        lessons_structure_file_path = os.path.join(self.BASE_PATH, lessons_yaml)
+
         # Call the loader to save the lessons into the db
-        lessons_structure = unit_plan_structure
         self.factory.create_lessons_loader(
-            self.structure_file_path,
-            lessons_structure,
+            lessons_structure_file_path,
             self.topic,
             unit_plan,
             self.BASE_PATH
         ).load()
+
+        # Create AgeRange and assign to lessons
+        age_groups = unit_plan_structure.get("age-groups", None)
+        if age_groups is None:
+            raise MissingRequiredFieldError(
+                self.structure_file_path,
+                ["lessons", "age-groups"],
+                "Unit Plan"
+            )
+
+        for age_group in age_groups:
+
+            for age_range in age_group:  # single entry in the dictionary, so first (and only) key is age group
+                min_age, max_age = age_range.split('-')
+
+            new_age_range = AgeRange(
+                age_range=(int(min_age), int(max_age))
+            )
+            new_age_range.save()
+
+            for lesson_slug in age_group[age_range]:
+                try:
+                    lesson = Lesson.objects.get(
+                        slug=lesson_slug
+                    )
+                except:
+                    raise KeyNotFoundError(
+                        self.structure_file_path,
+                        lesson_slug,
+                        "Lesson"
+                    )
+                lesson.age_range.add(new_age_range)

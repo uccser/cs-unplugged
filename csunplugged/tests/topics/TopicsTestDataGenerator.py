@@ -7,6 +7,7 @@ from topics.models import (
     Topic,
     UnitPlan,
     Lesson,
+    AgeRange,
     CurriculumIntegration,
     CurriculumArea,
     ProgrammingExercise,
@@ -120,15 +121,13 @@ class TopicsTestDataGenerator:
         unit_plan.save()
         return unit_plan
 
-    def create_lesson(self, topic, unit_plan, number, min_age, max_age):
+    def create_lesson(self, topic, unit_plan, number, age_range=None):
         """Create lesson object.
 
         Args:
             topic: The related Topic object (Topic).
             unit_plan: The related UnitPlan object (UnitPlan).
             number: Identifier of the topic (int).
-            min_age: Minimum age of the lesson (int).
-            max_age: Maximum age of the lesson (int).
 
         Returns:
             Lesson object.
@@ -137,15 +136,35 @@ class TopicsTestDataGenerator:
             topic=topic,
             unit_plan=unit_plan,
             slug="lesson-{}".format(number),
-            name="Lesson {} ({} to {})".format(number, min_age, max_age),
+            name="Lesson {} ({} to {})".format(
+                number,
+                age_range.age_range[0] if age_range else "none",
+                age_range.age_range[1] if age_range else "none"
+            ),
             number=number,
             duration=number,
             content="<p>Content for lesson {}.</p>".format(number),
-            min_age=min_age,
-            max_age=max_age,
         )
         lesson.save()
+        if age_range:
+            lesson.age_range.add(age_range)
         return lesson
+
+    def create_age_range(self, min_age, max_age):
+        """Create AgeRange object.
+
+        Args:
+            min_age: the minumum age for the range (int).
+            max_age: the maximum age for the range (int).
+
+        Returns:
+            AgeRange object.
+        """
+        age_range = AgeRange(
+            age_range=(min_age, max_age)
+        )
+        age_range.save()
+        return age_range
 
     def create_difficulty_level(self, number):
         """
