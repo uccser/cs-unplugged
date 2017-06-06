@@ -24,6 +24,7 @@ parity-magic:
     - check-odd-even-using-subtraction
     - detect-parity-error-in-row
     - detect-parity-error-in-six-rows
+    - detect-parity-error-in-any-rows-after-input
 product-code-check-digits:
   min-age: 8
   max-age: 10
