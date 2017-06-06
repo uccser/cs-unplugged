@@ -145,3 +145,14 @@ product-code-12-last-digit-one-at-a-time:
     - programming-explain-join-concatenate
     - programming-explain-set-and-change-statement
     - programming-demonstrate-indexing
+
+product-code-12-last-digit-one-line:
+  challenge-set-number: 10
+  challenge-number: 6
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-join-concatenate
+    - programming-explain-set-and-change-statement
+    - programming-demonstrate-indexing
