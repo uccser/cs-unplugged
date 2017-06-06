@@ -39,3 +39,4 @@ product-code-check-digits:
   programming-challenges:
     - product-code-12-weighted-sum-one-at-a-time
     - product-code-12-multiple-10-one-at-a-time
+    - product-code-12-multiple-10-one-line

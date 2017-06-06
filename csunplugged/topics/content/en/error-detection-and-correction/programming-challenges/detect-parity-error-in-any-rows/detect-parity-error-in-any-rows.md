@@ -10,21 +10,8 @@ there is a parity error in any of the rows after entering each row.
 Your program should display the outputs shown in these panels for the given
 inputs provided:
 
-{panel type="general" title="Example"}
-
--   How many rows would you like to enter?
-    **Input:** 3
-
--   Please enter 3 cards for row 1:
-    **Input:** WWW
-    **Output:** Row 1 is ok
-
--   Please enter 3 cards for row 2:
-    **Input:** WBW
-    **Output:** There is a parity error in row 2
-
--   Please enter 3 cards for row 3:
-    **Input:** WBB
-    **Output:** Row 3 is ok
-
-{panel end}
+| Input | Output                            |
+| ----- | --------------------------------- |
+| WWW   | Row 1 is ok!                      |
+| WBW   | There is a parity error in row 2! |
+| WBB   | Row 3 is ok!                      |
