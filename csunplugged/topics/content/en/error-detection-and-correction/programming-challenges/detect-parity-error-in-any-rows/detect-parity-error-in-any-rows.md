@@ -10,7 +10,7 @@ there is a parity error in any of the rows after entering each row.
 Your program should display the outputs shown in these panels for the given
 inputs provided:
 
-{panel type="general" title="Example 1"}
+{panel type="general" title="Example"}
 
 -   How many rows would you like to enter?
     **Input:** 3

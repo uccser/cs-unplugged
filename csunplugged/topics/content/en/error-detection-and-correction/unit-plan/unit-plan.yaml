@@ -36,3 +36,6 @@ product-code-check-digits:
     - A number of items with a 12 or 13 digit barcode on it (technique is
       almost identical for both).
     - A whiteboard and/or paper to write the calculations on.
+  programming-challenges:
+    - product-code-12-weighted-sum-one-at-a-time
+    - product-code-12-multiple-10-one-at-a-time
