@@ -4,6 +4,7 @@ Content Style Guide
 .. note::
 
   This page is currently intended for internal staff only.
+  A version for all contributors will be added once the project is ready for external contributions.
 
 
 .. contents:: Contents
@@ -16,9 +17,9 @@ Writing Style
 When using pronouns in reference to a hypothetical person, gender neutral pronouns (they/their/them) should be used. 
  
 All documents (other than those for internal use only) must be written clearly and simply so that a non-expert is able to understand them.
-Preferably documents should be readable for students. 
+Preferably documents should be readable by students. 
  
-Any jargon used needs to be clearly explained. 
+Any jargon used needs to be clearly explained and should be considered as a glossary definition. 
 
 
 Capitalisation Rules
@@ -26,12 +27,12 @@ Capitalisation Rules
 
 In the majority of cases capitalisation should not be used for keywords and titles, with the following exceptions, where the phrase refers to a commonly used term that is often capitilised in the literature:
 
-- Computer Science
-- Computational Thinking
-- Digital Technologies (note that this is the correct form to refer to the subject area in NZ, with caps and plural; if it's referring to something other than the subject then use lower case e.g. "smartphones and other digital technologies", or even better, avoid the phrase e.g. "smartphones and other digital devices")
-- Sorting Network
-- Numeracy
-- Literacy
+- Computer Science.
+- Computational Thinking.
+- Digital Technologies (note that this is the correct form to refer to the subject area in NZ, with caps and plural; if it's referring to something other than the subject then use lower case e.g. "smartphones and other digital technologies", or even better, avoid the phrase e.g. "smartphones and other digital devices").
+- Sorting Network.
+- Numeracy.
+- Literacy.
  
 The following wouldn't be capitalised:
 binary number(s), digits, binary digits
@@ -44,7 +45,7 @@ Google Drive Folder Structure
 Including Images
 ------------------------------------------------------------------------------
 
-All images included in a document have a comment which links to the original image file in a specified Google Drive Folder.
+All images included in a document have a comment which links to the original image file.
 
 
 Completed Documents
@@ -59,7 +60,7 @@ Once a document is completed:
     *A later version is under development, and will be released later in 2017.
     No further updates will be made to this document.*
 
-3. Mark the document as ``Finished in Google Docs/Ready for GitHub`` on the Scorecard.
+3. Mark the document as ``Finished in Google Docs/Ready for GitHub`` by changing the cell background to green on the Scorecard.
 
 3. Do not edit the document any further!
 
@@ -98,17 +99,18 @@ Note:
 
 Glossary
 ------------------------------------------------------------------------------
+
 The following are added to the glossary and linked to where the words are used:
 
-- All Computer Science, programming, and Computational thinking jargon
-- All Education jargon
-- All curriculum language that is not broadly used internationally
+- All Computer Science, programming, and Computational thinking jargon.
+- All Education jargon.
+- All curriculum language that is not broadly used internationally.
 
 
 Topic description
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------------------------------------------------
 
-Contains the description of the topic!
+Contains the description of the topic.
 This description applies to all the units within the topic.
 It is one introductory paragraph, less than 150 words, which gives a big picture overview of why this topic is being taught/is relevant, and what it will cover.
 
@@ -166,7 +168,7 @@ If the same, identical, lesson is used for multiple age groups the file is copie
 Learning Outcomes
 ------------------------------------------------------------------------------
 
-Each learning outcome has a unique text value, unique key, and belongs to a topic area.
+Each learning outcome has a unique text value, unique key, and can be used throughout every topic.
 The list of learning outcomes can be found in the Scorecard and are named according to the rules described in the sections below.
 
 
@@ -183,14 +185,14 @@ Key
 
 Learning outcome keys need to follow these rules:
 
-- Words in keys are written in lowercase and are separated with a hyphen e.g. ``explain-different-states``.
+- Words in keys are written in lowercase and are separated with a hyphen e.g. ``programming-outline-variable-updates``.
 
 - The order of words in the key are:
   
-  1. The topic area of the outcome
-  2. If the topic area is cross-curricula, the curriculum area of the outcome
-  3. The verb used at the beginning of the text value
-  4. Keywords describing the content of the outcome
+  1. The topic area of the outcome.
+  2. If the topic area is cross-curricula, the curriculum area of the outcome.
+  3. The verb used at the beginning of the text value.
+  4. Keywords describing the content of the outcome.
  
 There is no limit on the length of keys as it is important they are as descriptive as possible.
 
@@ -207,22 +209,22 @@ When transferrring a programming challenge from Google Docs to GitHub, these are
  
 2. The order of the blocks should always be randomised. If there are more than six blocks the blocks should be split into groups by colour, and then randomise the order of the blocks in these groups. This is the order the colour groups should be displayed in:
 
-.. image:: ../_static/img/scratch_example_1.png
+.. image:: ../_static/img/scratch_block_types.png
   :alt: A image showing the order to display colour groups in.
  
 2. Where a variable is inserted into another block, those blocks stay together, example below:
  
-.. image:: ../_static/img/scratch_example_2.png
+.. image:: ../_static/img/scratch_say_block.png
   :alt: A screenshot of a say block containing a variable.
  
 3. All join blocks are displayed as one and all the variables/text are included, example below:
   
-.. image:: ../_static/img/scratch_example_3.png
+.. image:: ../_static/img/scratch_multiple_join_blocks.png
   :alt: A screenshot of several join blocks together.
  
 4. For blocks containing join blocks keep the join block within the parent block, example below.
 
-.. image:: ../_static/img/scratch_example_4.png
+.. image:: ../_static/img/scratch_set_block.png
   :alt: A screenshot of a set block containing a join block.
 
 5. Loops should keep the condition blocks, but the blocks within the loop should be extracted.
