@@ -125,7 +125,7 @@ product-code-12-multiple-10-one-line:
     - programming-explain-variable-name
     - programming-explain-set-and-change-statement
 
-product-code-12-check-valid-any-length:
+product-code-check-valid-any-length:
   challenge-set-number: 10
   challenge-number: 4
   difficulty-level: 3
