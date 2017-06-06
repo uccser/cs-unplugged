@@ -166,8 +166,8 @@ class CurriculumIntegrationViewTest(BaseTestWithDB):
         self.assertQuerysetEqual(
             response.context["prerequisite_lessons"],
             [
-                "<Lesson: Lesson 1 (8 to 10)>",
                 "<Lesson: Lesson 1 (5 to 7)>",
+                "<Lesson: Lesson 1 (8 to 10)>",
                 "<Lesson: Lesson 2 (5 to 7)>",
             ]
         )
