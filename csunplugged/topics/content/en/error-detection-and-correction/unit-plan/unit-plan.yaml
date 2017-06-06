@@ -41,3 +41,4 @@ product-code-check-digits:
     - product-code-12-multiple-10-one-at-a-time
     - product-code-12-multiple-10-one-line
     - product-code-check-valid-any-length
+    - product-code-12-last-digit-one-at-a-time

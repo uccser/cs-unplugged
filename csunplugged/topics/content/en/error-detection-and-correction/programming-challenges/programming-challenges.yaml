@@ -134,3 +134,14 @@ product-code-check-valid-any-length:
   learning-outcomes:
     - programming-explain-variable-name
     - programming-explain-set-and-change-statement
+
+product-code-12-last-digit-one-at-a-time:
+  challenge-set-number: 10
+  challenge-number: 5
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-join-concatenate
+    - programming-explain-set-and-change-statement
+    - programming-demonstrate-indexing
