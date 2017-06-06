@@ -119,6 +119,7 @@ Curriculum integration
 ------------------------------------------------------------------------------
 
 Contains idea and instruction cards for incorporating the unit content into lessons with other subjects (e.g. writing, art, mathematics, etc).
+They are written with the intent that a teacher could print them out and laminate them.
 Cards are short and preferably half a page - two pages in length (including any pictures).
 
 
