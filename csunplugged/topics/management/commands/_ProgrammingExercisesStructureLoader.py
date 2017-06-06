@@ -82,7 +82,7 @@ class ProgrammingExercisesStructureLoader(BaseLoader):
 
             new_language.save()
 
-            self.log("Added Langauge: {}".format(new_language.__str__()))
+            self.log("Added programming langauge: {}".format(new_language.__str__()))
 
         for (difficulty, difficulty_data) in difficulty_levels.items():
 
@@ -107,7 +107,6 @@ class ProgrammingExercisesStructureLoader(BaseLoader):
             )
             new_difficulty.save()
 
-            self.log("Added Difficulty Level: {}".format(new_difficulty.__str__()))
+            self.log("Added programming difficulty level: {}".format(new_difficulty.__str__()))
 
-        # Print log output
-        self.print_load_log()
+        self.log("")

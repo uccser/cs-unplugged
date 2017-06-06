@@ -9,17 +9,16 @@ from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 class UnitPlanLoader(BaseLoader):
     """Custom loader for loading unit plans."""
 
-    def __init__(self, factory, load_log, structure_file_path, topic, BASE_PATH):
+    def __init__(self, factory, structure_file_path, topic, BASE_PATH):
         """Create the loader for loading unit plans.
 
         Args:
             factory: LoaderFactory object for creating loaders (LoaderFactory).
-            load_log: List of log messages (list).
             structure_file_path: File path for structure YAML file (string).
             topic: Object of related topic model.
             BASE_PATH: Base file path (string).
         """
-        super().__init__(BASE_PATH, load_log)
+        super().__init__(BASE_PATH)
         self.factory = factory
         self.unit_plan_slug = os.path.split(structure_file_path)[0]
         self.structure_file_path = os.path.join(self.BASE_PATH, structure_file_path)
@@ -56,7 +55,7 @@ class UnitPlanLoader(BaseLoader):
         )
         unit_plan.save()
 
-        self.log("Added Unit Plan: {}".format(unit_plan.name), 1)
+        self.log("Added unit plan: {}".format(unit_plan.name), 1)
 
         # Load the lessons for the unit plan
 
@@ -72,7 +71,6 @@ class UnitPlanLoader(BaseLoader):
         lessons_structure = unit_plan_structure
         self.factory.create_lessons_loader(
             self.structure_file_path,
-            self.load_log,
             lessons_structure,
             self.topic,
             unit_plan,

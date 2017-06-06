@@ -5,7 +5,7 @@
 wheel==0.29.0
 
 # Django
-django==1.11.1
+django==1.11.2
 
 # Configuration
 django-environ==0.4.3
@@ -27,5 +27,5 @@ django-bootstrap-breadcrumbs==0.8.2
 PyYAML==3.12
 
 # Web serving
-gevent==1.2.1
+gevent==1.2.2
 gunicorn==19.7.1
