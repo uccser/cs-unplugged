@@ -22,7 +22,7 @@ class LessonsLoader(BaseLoader):
         """Create the loader for loading lessons.
 
         Args:
-            lessons_structure: List of dictionaries for each lesson (list).
+            lessons_structure_file_path: file path to lessons yaml file (str).
             topic: Object of Topic model.
             unit_plan: Object of UnitPlan model.
             BASE_PATH: Base file path (string).

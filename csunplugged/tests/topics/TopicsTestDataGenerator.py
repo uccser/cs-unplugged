@@ -148,7 +148,6 @@ class TopicsTestDataGenerator:
         lesson.save()
         if age_range:
             lesson.age_range.add(age_range)
-            lesson.save()
         return lesson
 
     def create_age_range(self, min_age, max_age):
