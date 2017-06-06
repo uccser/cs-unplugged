@@ -8,14 +8,13 @@ Test Suite
 Running the Test Suite
 ==============================================================================
 
-``./csu dev test`` will run the entire test suite. For a full list of test commands available, see :doc:`../getting_started/helper_commands`.
+``./csu dev test`` will run the entire test suite. For running a specific tests, viewing code coverage, and more testing commands, see :doc:`../getting_started/helper_commands`.
 
 
 Structure
 ==============================================================================
 
-The ``tests/`` directory is in the ``csunplugged/`` directory (at the same
-level as the apps) and is structured as follows:
+All tests are in the ``tests/`` directory, which in the ``csunplugged/`` directory (at the same level as the apps). It is structured as follows:
 
 .. code-block:: none
       
@@ -77,7 +76,7 @@ as the test suite will only execute methods with this prefix.
 .. note::
 
   We use `Codecov`_ to check the coverage of our tests. Every Pull Request should
-  increase the overall coverage, Travis will fail if this is not the case.
+  cover 100% of the difference (therefore increasing coverage), Travis will fail if this is not the case.
 
 
-.. _Codecov: https://codecov.io/gh
+.. _Codecov: https://codecov.io/
