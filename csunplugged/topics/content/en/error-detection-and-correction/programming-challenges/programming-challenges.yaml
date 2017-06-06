@@ -58,3 +58,13 @@ detect-parity-error-in-six-rows:
   learning-outcomes:
     - programming-explain-variable-name
     - programming-explain-join-concatenate
+
+detect-parity-error-in-any-rows:
+  challenge-set-number: 4
+  challenge-number: 2
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-join-concatenate
+    - programming-describe-variables
