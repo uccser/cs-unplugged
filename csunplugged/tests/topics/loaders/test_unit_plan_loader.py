@@ -49,7 +49,7 @@ class UnitPlanLoaderTest(BaseTestWithDB):
         factory = Mock()
         topic = self.test_data.create_topic("1")
 
-        up_loader = UnitPlanLoader(factory, self.load_log, config_file, topic, self.BASE_PATH)
+        up_loader = UnitPlanLoader(factory, config_file, topic, self.BASE_PATH)
 
         self.assertRaises(
             MissingRequiredFieldError,
@@ -62,7 +62,7 @@ class UnitPlanLoaderTest(BaseTestWithDB):
         factory = Mock()
         topic = self.test_data.create_topic("1")
 
-        up_loader = UnitPlanLoader(factory, self.load_log, config_file, topic, self.BASE_PATH)
+        up_loader = UnitPlanLoader(factory, config_file, topic, self.BASE_PATH)
 
         self.assertRaises(
             EmptyMarkdownFileError,
@@ -75,7 +75,7 @@ class UnitPlanLoaderTest(BaseTestWithDB):
         factory = Mock()
         topic = self.test_data.create_topic("1")
 
-        up_loader = UnitPlanLoader(factory, self.load_log, config_file, topic, self.BASE_PATH)
+        up_loader = UnitPlanLoader(factory, config_file, topic, self.BASE_PATH)
 
         self.assertRaises(
             NoHeadingFoundInMarkdownFileError,
@@ -88,7 +88,7 @@ class UnitPlanLoaderTest(BaseTestWithDB):
         factory = Mock()
         topic = self.test_data.create_topic("1")
 
-        up_loader = UnitPlanLoader(factory, self.load_log, config_file, topic, self.BASE_PATH)
+        up_loader = UnitPlanLoader(factory, config_file, topic, self.BASE_PATH)
 
         self.assertRaises(
             MissingRequiredFieldError,
