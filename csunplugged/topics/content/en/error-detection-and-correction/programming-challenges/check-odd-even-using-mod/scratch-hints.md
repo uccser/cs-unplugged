@@ -2,5 +2,4 @@
     (under "Operators") to find the remainder after dividing that number by
     two.
     If the remainder is zero the number is even.
-    
-{image file-path="img/programming/scratch-mod-example.png" alt="An example of the Scratch mod block."}
+    For example: `scratch:(37) mod (10) //7`

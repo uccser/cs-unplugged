@@ -1,7 +1,6 @@
 -   You can access a letter at the specified position in a string by using
-    the `scratch:letter (1) of [world]` block under “Operators”. For example:
-
-{image file-path="img/programming/scratch-letter-in-world-example.gif"}
+    the `scratch:letter (1) of [world]` block under “Operators”.
+    For example: `scratch:letter (1) of [world] //w`
 
 -   In this challenge you need to access all the letters in user’s input and
     check to see how many of them are equal to B (black).
@@ -15,5 +14,4 @@
     (under "Operators") to find the remainder after dividing that number by
     two.
     If the remainder is zero the number is even.
-
-{image file-path="img/programming/scratch-mod-example.png" alt="An example of the Scratch mod block."}
+    For example: `scratch:(37) mod (10) //7`
