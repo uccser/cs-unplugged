@@ -15,7 +15,6 @@ install:
 - sudo mv docker-compose /usr/local/bin
 - sudo docker --version
 - sudo docker-compose --version
-- pip install -r requirements/test.txt
 before_script:
 - "./csu start"
 script:
@@ -31,7 +30,7 @@ deploy:
   on:
     branch: develop
 after_script:
-- bash <(curl -s https://codecov.io/bash) -f ./.coverage
+- bash <(curl -s https://codecov.io/bash) -f ./coverage.*.xml
 notifications:
   email: false
   slack:
