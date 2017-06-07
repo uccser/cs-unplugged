@@ -21,6 +21,10 @@ A4_MM_SCALE = 267
 LETTER_MM_SCALE = 249
 
 
+class TaskError(Exception):
+    pass
+
+
 class ResourceGenerator(object):
     """Turns a task into a pdf or image."""
 
@@ -46,7 +50,7 @@ class ResourceGenerator(object):
                   - resource_slug
                   - resource_name
                   - resource_view
-                  - header_text
+                  - header_text (optional)
                   - paper_size
                   - copies
                   - url
@@ -54,21 +58,31 @@ class ResourceGenerator(object):
         Returns:
             Tuple of filename and PDF file of generated resource.
         """
-        if task["paper_size"] is None:
-            raise Exception()  # TODO
+        if task.get("resource_slug", None) is None:
+            raise TaskError("Task must specify the resource slug.")
+        if task.get("resource_name", None) is None:
+            raise TaskError("Task must specify the resource name.")
+        if task.get("resource_view", None) is None:
+            raise TaskError("Task must specify the resource view.")
+        if task.get("paper_size", None) is None:
+            raise TaskError("Task must specify paper size.")
+        if task.get("copies", None) is None:
+            raise TaskError("Task must specify number of copies.")
+        if task.get("url", None) is None:
+            raise TaskError("Task must specify the url.")
 
         module_path = "render.resources.{}".format(task["resource_view"])
         resource_image_generator = importlib.import_module(module_path)
 
         for option, values in resource_image_generator.valid_options().items():
             if option not in task.keys():
-                raise Exception()  # TODO
+                raise TaskError("Task is missing value for {}.".format(option))
             if task[option] not in values:
-                raise Exception()  # TODO
+                raise TaskError("Value ({}) for option {} is not in: {}.".format(task[option], option, values))
 
         context = dict()
         context["resource_name"] = task["resource_name"]
-        context["header_text"] = task["header_text"]
+        context["header_text"] = task.get("header_text", "")
         context["url"] = task["url"]
 
         context["resource_images"] = []
@@ -115,7 +129,7 @@ class ResourceGenerator(object):
         elif task["paper_size"].lower() == "letter":
             max_pixel_height = LETTER_MM_SCALE * MM_TO_PIXEL_RATIO
         else:
-            raise Exception()  # TODO
+            raise TaskError("Unsupported paper size: {}.".format(task["paper_size"]))
 
         images = []
         for image in raw_images:
