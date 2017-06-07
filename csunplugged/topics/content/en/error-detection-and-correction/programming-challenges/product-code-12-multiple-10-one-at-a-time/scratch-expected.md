@@ -1,7 +1,7 @@
 Click on the green flag, enter the inputs provided in the “testing examples” to
 see the expected output of your program.
 
-{iframe link="https://scratch.mit.edu/projects/embed/148476857/?autostart=false"}
+{iframe link="https://scratch.mit.edu/projects/embed/148476891/?autostart=false"}
 
 {panel type="help" title="Recommended blocks"}
 

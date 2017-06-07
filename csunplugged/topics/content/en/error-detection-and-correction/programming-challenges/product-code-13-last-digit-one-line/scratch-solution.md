@@ -6,7 +6,7 @@ set [total 1 v] to [0]
 set [total 2 v] to [0]
 set [last digit v] to [0]
 ask [Enter first 12 digits of the barcode:] and wait
-change [first 12 digits v] by (answer)
+set [first 12 digits v] to (answer)
 if <(length of (first 12 digits)) = [12]> then
   repeat (6)
     set [total 1 v] to ((total 1) + (letter (index) of (first 12 digits)))

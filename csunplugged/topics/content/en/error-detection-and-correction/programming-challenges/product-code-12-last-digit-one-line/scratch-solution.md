@@ -6,7 +6,7 @@ set [total 1 v] to [0]
 set [total 2 v] to [0]
 set [last digit v] to [0]
 ask [Enter first 11 digits of the product code:] and wait
-change [first 11 digits v] by (answer)
+set [first 11 digits v] to (answer)
 if <(length of (first 11 digits)) = [11]> then
   repeat (5)
     set [total 1 v] to ((total 1) + (letter (index) of (first 11 digits)))

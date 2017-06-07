@@ -3,6 +3,7 @@ when green flag clicked
 set [odd total v] to [0]
 set [even total v] to [0]
 set [index v] to [1]
+set [last digit v] to [0]
 repeat (6)
   ask (join (join [Enter digit ] (index)) [ of the product code:]) and wait
   change [index v] by (1)

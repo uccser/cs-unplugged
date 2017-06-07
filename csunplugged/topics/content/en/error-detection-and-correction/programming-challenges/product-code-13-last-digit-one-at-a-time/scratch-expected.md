@@ -27,6 +27,8 @@ set [even total v] to [0]
 
 set [index v] to [1]
 
+set [last digit v] to [0]
+
 change [index v] by (1)
 
 change [odd total v] by (answer)

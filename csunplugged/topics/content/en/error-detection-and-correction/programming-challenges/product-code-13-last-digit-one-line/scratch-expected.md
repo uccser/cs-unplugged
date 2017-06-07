@@ -39,7 +39,7 @@ set [last digit v] to [0]
 
 set [last digit v] to (((0) - ((total 1) + ((total 2) * (3)))) mod (10))
 
-change [first 12 digits v] by (answer)
+set [first 12 digits v] to (answer)
 
 set [total 1 v] to ((total 1) + (letter (index) of (first 12 digits)))
 

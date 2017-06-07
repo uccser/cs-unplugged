@@ -22,7 +22,7 @@ repeat (5)
 end
 
 if <(length of (first 11 digits)) = [11]> then
-else 
+else
 end
 ```
 
@@ -51,7 +51,7 @@ set [total 2 v] to ((total 2) + (letter (index) of (first 11 digits)))
 
 change [index v] by (1)
 
-change [first 11 digits v] by (answer)
+set [first 11 digits v] to (answer)
 ```
 
 {panel end}

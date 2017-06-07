@@ -30,6 +30,8 @@ set [total 2 v] to [0]
 
 set [index v] to [1]
 
+set [last digit v] to [0]
+
 change [index v] by (1)
 
 change [total 1 v] by (answer)
