@@ -56,7 +56,7 @@ Enter digit 12 of the product code:
 **Output**
 
 ```
-The sum is a multiple of 10.
+The sum is a multiple of 10
 ```
 
 {panel end}
