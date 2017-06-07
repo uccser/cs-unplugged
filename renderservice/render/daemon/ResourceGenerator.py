@@ -22,7 +22,11 @@ LETTER_MM_SCALE = 249
 
 
 class TaskError(Exception):
-    pass
+    """An error associated with a malformed task object."""
+
+    def __init__(self, *args, **kwargs):
+        """Create a TaskError."""
+        super(TaskError, self).__init__(*args, **kwargs)
 
 
 class ResourceGenerator(object):

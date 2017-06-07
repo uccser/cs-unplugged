@@ -3,7 +3,6 @@ from render.daemon.ResourceGenerator import TaskError
 from render.tests.BaseResourceTest import BaseResourceTest
 
 
-
 class BinaryCardsSmallResourceTest(BaseResourceTest):
 
     def __init__(self, *args, **kwargs):

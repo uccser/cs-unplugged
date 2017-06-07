@@ -1,7 +1,6 @@
 from django.urls import reverse
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
-from utils.create_query_string import query_string
 
 
 class BinaryCardsResourceViewTest(BaseTestWithDB):

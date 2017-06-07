@@ -72,7 +72,7 @@ class BinaryToAlphabetResourceTest(BaseResourceTest):
             filename, pdf = self.generator.generate_resource_pdf(task)
 
     def test_binary_to_alphabet_resource_generation_missing_header_text_parameter(self):
-        expected_filename="Binary To Alphabet (teacher - letter).pdf"
+        expected_filename = "Binary To Alphabet (teacher - letter).pdf"
         combination = {
             "worksheet_version": "teacher",
             "paper_size": "letter",

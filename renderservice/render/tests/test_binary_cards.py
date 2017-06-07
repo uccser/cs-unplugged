@@ -90,7 +90,7 @@ class BinaryCardsResourceTest(BaseResourceTest):
             filename, pdf = self.generator.generate_resource_pdf(task)
 
     def test_binary_cards_resource_generation_missing_header_text_parameter(self):
-        expected_filename="Binary Cards (with numbers - without black back - a4).pdf"
+        expected_filename = "Binary Cards (with numbers - without black back - a4).pdf"
         combination = {
             "display_numbers": "yes",
             "black_back": "no",
