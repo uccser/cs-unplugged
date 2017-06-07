@@ -38,8 +38,13 @@ product-code-check-digits:
     - A whiteboard and/or paper to write the calculations on.
   programming-challenges:
     - product-code-12-weighted-sum-one-at-a-time
+    - product-code-13-weighted-sum-one-at-a-time
     - product-code-12-multiple-10-one-at-a-time
+    - product-code-13-multiple-10-one-at-a-time
     - product-code-12-multiple-10-one-line
+    - product-code-13-multiple-10-one-line
     - product-code-check-valid-any-length
     - product-code-12-last-digit-one-at-a-time
+    - product-code-13-last-digit-one-at-a-time
     - product-code-12-last-digit-one-line
+    - product-code-13-last-digit-one-line
