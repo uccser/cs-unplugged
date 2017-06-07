@@ -37,7 +37,6 @@ function helpmenu {
   flush_help
   logs_help
   makemigrations_help
-  makeresources_help
   migrate_help
   shell_help
   static_help
@@ -109,15 +108,6 @@ function makemigrations {
 }
 function makemigrations_help {
   printf "   makemigrations    Run Django makemigrations command.\n"
-}
-
-# Run Django makeresources command
-function makeresources {
-  printf "Creating static resource PDFs...\n"
-  docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources
-}
-function makeresources_help {
-  printf "   makeresources     Run Django makeresources command.\n"
 }
 
 # Run Django migrate command
@@ -305,10 +295,6 @@ function process_dev_command() {
         ;;
       logs)
         logs
-        exit
-        ;;
-      makeresources)
-        makeresources
         exit
         ;;
       makemigrations)

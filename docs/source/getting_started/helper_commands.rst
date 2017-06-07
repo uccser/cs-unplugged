@@ -76,7 +76,6 @@ The ``./csu dev [DEV_COMMAND]`` command runs developer tasks, where
 - :ref:`logs`
 - :ref:`flush`
 - :ref:`makemigrations`
-- :ref:`makeresources`
 - :ref:`migrate`
 - :ref:`shell`
 - :ref:`static`
@@ -114,14 +113,6 @@ the database.
 
 Running ``./csu dev makemigrations`` runs the Django ``makemigrations`` command
 to create migration files.
-
-.. _makeresources:
-
-``makeresources``
------------------------------------------------------------------------------
-
-Running ``./csu dev makeresources`` runs the custom Django ``makeresources``
-command to create static resource PDF files.
 
 .. _migrate:
 
