@@ -15,6 +15,7 @@ install:
 - sudo mv docker-compose /usr/local/bin
 - sudo docker --version
 - sudo docker-compose --version
+- pip install -r requirements/test.txt
 before_script:
 - "./csu start"
 script:
