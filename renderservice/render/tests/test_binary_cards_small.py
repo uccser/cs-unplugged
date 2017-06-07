@@ -20,7 +20,7 @@ class BinaryCardsSmallResourceTest(BaseResourceTest):
         resource_module = self.load_module()
         valid_options = resource_module.valid_options()
         valid_options["header_text"] = ["", "Example header"]
-        valid_options["copies"] = [1, 2, 5]
+        valid_options["copies"] = [1, 2]
         valid_option_keys = sorted(valid_options)
 
         combinations = [

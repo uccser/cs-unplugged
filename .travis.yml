@@ -30,7 +30,7 @@ deploy:
   on:
     branch: develop
 after_script:
-- bash <(curl -s https://codecov.io/bash)
+- bash <(curl -s https://codecov.io/bash) -f ./.coverage
 notifications:
   email: false
   slack:

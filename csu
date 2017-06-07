@@ -195,6 +195,13 @@ function style_help {
 function test_suite {
   printf "Running test suite...\n"
   docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3
+
+  docker-compose exec render echo "Still alive!"
+  render_status=$?
+  if [ $render_status == "0" ]
+  then
+    docker-compose exec render /docker_venv/bin/coverage run --rcfile=/renderservice/.coveragerc -m render.tests.start_tests -v
+  fi
 }
 function test_suite_help {
   printf "   test              Run test suite with code coverage.\n"
@@ -213,8 +220,17 @@ function test_specific_help {
 # Display test coverage table
 function test_coverage {
   printf "Displaying test suite coverage...\n"
-  docker-compose exec django /docker_venv/bin/coverage xml -i
+  docker cp "$(docker-compose ps -q django)":/cs-unplugged/csunplugged/.coverage ./.coverage.django
   docker-compose exec django /docker_venv/bin/coverage report -m --skip-covered
+
+  docker-compose exec render echo "Still alive!"
+  render_status=$?
+  if [ $render_status == "0" ]
+  then
+    docker cp "$(docker-compose ps -q render)":/renderservice/.coverage ./.coverage.render
+    docker-compose exec render /docker_venv/bin/coverage report -m --skip-covered
+  fi
+  coverage combine
 }
 function test_coverage_help {
   printf "   test_coverage     Display code coverage report.\n"
