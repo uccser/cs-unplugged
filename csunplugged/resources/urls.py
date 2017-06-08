@@ -17,5 +17,11 @@ urlpatterns = [
         r"^(?P<resource_slug>[-\w]+)/$",
         views.resource,
         name="resource"
-    )
+    ),
+    # eg: /resource/example-resource/generate/
+    url(
+        r"^(?P<resource_slug>[-\w]+)/generate$",
+        views.generate_resource,
+        name="generate"
+    ),
 ]

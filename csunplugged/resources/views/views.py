@@ -3,6 +3,7 @@
 from django.conf import settings
 from django.views import generic
 from django.shortcuts import get_object_or_404, render, redirect
+from django.http import Http404, HttpResponse
 from resources.models import Resource
 import importlib
 from utils.group_lessons_by_age import group_lessons_by_age
@@ -39,6 +40,32 @@ def resource(request, resource_slug):
     if resource.thumbnail_static_path:
         context["thumbnail"] = resource.thumbnail_static_path
     return render(request, resource.webpage_template, context)
+
+
+def generate_resource(request, resource_slug):
+    """View for generated PDF of a specific resource.
+
+    Returns:
+        HTML response containing PDF of resource, 404 if not found.
+    """
+    resource = get_object_or_404(Resource, slug=resource_slug)
+    resource_view = resource.generation_view
+    if resource_view.endswith(".py"):
+        resource_view = resource_view[:-3]
+    module_path = "resources.views.{}".format(resource_view)
+    spec = importlib.util.find_spec(module_path)
+    if spec is None:
+        raise Http404("PDF generation does not exist for resource: {}".format(resource_slug))
+    else:
+        import environ
+        env = environ.Env(
+            DJANGO_PRODUCTION=(bool),
+        )
+        if env("DJANGO_PRODUCTION"):
+            # Return cached static PDF file of resource
+            return resource_pdf_cache(request, resource, module_path)
+        else:
+            return HttpResponse("Not Implemented", status=501)
 
 
 def resource_pdf_cache(request, resource, module_path):
