@@ -48,6 +48,8 @@ detect-parity-error-in-row:
     - scratch
   learning-outcomes:
     - programming-explain-variable-name
+    - programming-explain-mod
+    - programming-explain-differences-if-else-if-statements
 
 detect-parity-error-in-six-rows:
   challenge-set-number: 4
@@ -58,6 +60,8 @@ detect-parity-error-in-six-rows:
   learning-outcomes:
     - programming-explain-variable-name
     - programming-explain-join-concatenate
+    - programming-explain-mod
+    - programming-explain-differences-if-else-if-statements
 
 detect-parity-error-in-any-rows:
   challenge-set-number: 4
@@ -68,6 +72,8 @@ detect-parity-error-in-any-rows:
   learning-outcomes:
     - programming-explain-join-concatenate
     - programming-describe-variables
+    - programming-explain-mod
+    - programming-explain-differences-if-else-if-statements
 
 detect-parity-error-in-any-rows-after-input:
   challenge-set-number: 5
@@ -79,6 +85,7 @@ detect-parity-error-in-any-rows-after-input:
     - programming-describe-variables
     - programming-identify-if-statement
     - programming-explain-join-concatenate
+    - programming-identify-list-store-data
 
 detect-parity-error-in-any-rows-or-columns:
   challenge-set-number: 6
@@ -90,6 +97,7 @@ detect-parity-error-in-any-rows-or-columns:
     - programming-explain-join-concatenate
     - programming-identify-if-statement
     - programming-describe-variables
+    - programming-identify-list-store-data
   extra-challenge: extra-challenge.md
 
 product-code-12-weighted-sum-one-at-a-time:
@@ -125,6 +133,7 @@ product-code-12-multiple-10-one-at-a-time:
     - programming-identify-if-statement
     - programming-explain-join-concatenate
     - programming-explain-asking-input-end-user
+    - programming-explain-mod
 
 product-code-13-multiple-10-one-at-a-time:
   challenge-set-number: 10
@@ -137,6 +146,7 @@ product-code-13-multiple-10-one-at-a-time:
     - programming-identify-if-statement
     - programming-explain-join-concatenate
     - programming-explain-asking-input-end-user
+    - programming-explain-mod
 
 product-code-12-multiple-10-one-line:
   challenge-set-number: 10
@@ -147,6 +157,7 @@ product-code-12-multiple-10-one-line:
   learning-outcomes:
     - programming-explain-variable-name
     - programming-explain-set-and-change-statement
+    - programming-describe-nested-statement
 
 product-code-13-multiple-10-one-line:
   challenge-set-number: 10
@@ -157,6 +168,7 @@ product-code-13-multiple-10-one-line:
   learning-outcomes:
     - programming-explain-variable-name
     - programming-explain-set-and-change-statement
+    - programming-describe-nested-statement
 
 product-code-check-valid-any-length:
   challenge-set-number: 10
@@ -167,6 +179,7 @@ product-code-check-valid-any-length:
   learning-outcomes:
     - programming-explain-variable-name
     - programming-explain-set-and-change-statement
+    - programming-describe-nested-statement
 
 product-code-12-last-digit-one-at-a-time:
   challenge-set-number: 10
@@ -178,6 +191,7 @@ product-code-12-last-digit-one-at-a-time:
     - programming-explain-join-concatenate
     - programming-explain-set-and-change-statement
     - programming-demonstrate-indexing
+    - programming-identify-loop
 
 product-code-13-last-digit-one-at-a-time:
   challenge-set-number: 10
@@ -189,6 +203,7 @@ product-code-13-last-digit-one-at-a-time:
     - programming-explain-join-concatenate
     - programming-explain-set-and-change-statement
     - programming-demonstrate-indexing
+    - programming-identify-loop
 
 product-code-12-last-digit-one-line:
   challenge-set-number: 10

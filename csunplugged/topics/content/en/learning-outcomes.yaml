@@ -180,3 +180,23 @@ programming-describe-variable-initial-value:
   text: Describe why a variable should be set to the correct type of initial value.
   curriculum-areas:
     - programming
+
+programming-explain-mod:
+  text: Explain what the modulo operator does in your program.
+  curriculum-areas:
+    - programming
+
+programming-explain-differences-if-else-if-statements:
+  text: Explain the difference between an if-else statement and an if statement and how you have used them in your program.
+  curriculum-areas:
+    - programming
+
+programming-describe-nested-statement:
+  text: Describe how a nested statement works in relation to your program.
+  curriculum-areas:
+    - programming
+
+programming-identify-list-store-data:
+  text: Identify when to use a list to store a set of data.
+  curriculum-areas:
+    - programming
