@@ -13,7 +13,3 @@ class ModuloClockResourceURLTest(BaseTestWithDB):
     def test_valid_modulo_clock_resource_url(self):
         url = reverse("resources:resource", kwargs=self.RESOURCE_URL_KWARGS)
         self.assertEqual(url, "/en/resources/modulo-clock/")
-
-    def test_valid_modulo_clock_resource_generate_url(self):
-        url = reverse("resources:generate", kwargs=self.RESOURCE_URL_KWARGS)
-        self.assertEqual(url, "/en/resources/modulo-clock/generate")

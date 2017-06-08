@@ -181,11 +181,15 @@ function shell_help {
 function style {
   printf "Running PEP8 style checker...\n"
   docker-compose exec django /docker_venv/bin/flake8
-  pep8_status=$?
+  django_pep8_status=$?
+  docker-compose exec render /docker_venv/bin/flake8
+  render_pep8_status=$?
   printf "\nRunning Python docstring checker...\n"
   docker-compose exec django /docker_venv/bin/pydocstyle --count --explain
-  pydocstyle_status=$?
-  ! (( $pep8_status || $pydocstyle_status ))
+  django_pydocstyle_status=$?
+  docker-compose exec render /docker_venv/bin/pydocstyle --count --explain
+  render_pydocstyle_status=$?
+  ! (( $django_pep8_status || $django_pydocstyle_status || $render_pep8_status || $render_pydocstyle_status))
 }
 function style_help {
   printf "   style             Run style checks.\n"
@@ -195,13 +199,19 @@ function style_help {
 function test_suite {
   printf "Running test suite...\n"
   docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3
+  django_test_status=$?
 
   docker-compose exec render echo "Render service still alive!"
   render_status=$?
+  render_test_status="0"
   if [ $render_status == "0" ]
   then
     docker-compose exec render /docker_venv/bin/coverage run --rcfile=/renderservice/.coveragerc -m render.tests.start_tests -v
+    render_test_status=$?
   fi
+
+  # Exit with error status if either test suite failed
+  ! (( $django_test_status || $render_test_status ))
 }
 function test_suite_help {
   printf "   test              Run test suite with code coverage.\n"
@@ -222,19 +232,24 @@ function test_coverage {
   printf "Displaying test suite coverage...\n"
 
   docker-compose exec django /docker_venv/bin/coverage report -m --skip-covered
+  django_coverage_status=$?
   docker-compose exec django /docker_venv/bin/coverage xml -i
   docker cp "$(docker-compose ps -q django)":/cs-unplugged/csunplugged/coverage.xml ./coverage.django.xml
   docker-compose exec django rm /cs-unplugged/csunplugged/coverage.xml
 
   docker-compose exec render echo "Render service still alive!"
   render_status=$?
+  render_coverage_status="0"
   if [ $render_status == "0" ]
   then
     docker-compose exec render /docker_venv/bin/coverage report -m --skip-covered
+    render_coverage_status=$?
     docker-compose exec render /docker_venv/bin/coverage xml -i
     docker cp "$(docker-compose ps -q render)":/renderservice/coverage.xml ./coverage.render.xml
     docker-compose exec render rm /renderservice/coverage.xml
   fi
+
+  ! (( $django_coverage_status || $render_coverage_status ))
 }
 function test_coverage_help {
   printf "   test_coverage     Display code coverage report.\n"
@@ -387,7 +402,7 @@ case "$1" in
     exit
     ;;
   dev)
-    process_dev_command $2 $3
+    process_dev_command ${@:2}
     ;;
   end)
     end

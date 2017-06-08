@@ -46,6 +46,12 @@ class ResourceGenerator(object):
         )
 
     def import_resource_module(self, resource_view):
+        """Get the resource specification.
+
+        Args:
+            resource_view:
+        Returns:
+        """
         if resource_view.endswith(".py"):
             resource_view = resource_view[:-3]
         module_path = "render.resources.{}".format(resource_view)
