@@ -224,6 +224,7 @@ function test_coverage {
   docker-compose exec django /docker_venv/bin/coverage report -m --skip-covered
   docker-compose exec django /docker_venv/bin/coverage xml -i
   docker cp "$(docker-compose ps -q django)":/cs-unplugged/csunplugged/coverage.xml ./coverage.django.xml
+  docker-compose exec django rm /cs-unplugged/csunplugged/coverage.xml
 
   docker-compose exec render echo "Render service still alive!"
   render_status=$?
@@ -232,6 +233,7 @@ function test_coverage {
     docker-compose exec render /docker_venv/bin/coverage report -m --skip-covered
     docker-compose exec render /docker_venv/bin/coverage xml -i
     docker cp "$(docker-compose ps -q render)":/renderservice/coverage.xml ./coverage.render.xml
+    docker-compose exec render rm /renderservice/coverage.xml
   fi
 }
 function test_coverage_help {

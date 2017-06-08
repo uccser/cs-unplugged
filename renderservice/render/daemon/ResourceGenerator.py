@@ -45,6 +45,12 @@ class ResourceGenerator(object):
             autoescape=False
         )
 
+    def import_resource_module(self, resource_view):
+        if resource_view.endswith(".py"):
+            resource_view = resource_view[:-3]
+        module_path = "render.resources.{}".format(resource_view)
+        return importlib.import_module(module_path)
+
     def generate_resource_pdf(self, task):
         """Return a response containing a generated PDF resource.
 
@@ -75,8 +81,7 @@ class ResourceGenerator(object):
         if task.get("url", None) is None:
             raise TaskError("Task must specify the url.")
 
-        module_path = "render.resources.{}".format(task["resource_view"])
-        resource_image_generator = importlib.import_module(module_path)
+        resource_image_generator = self.import_resource_module(task["resource_view"])
 
         for option, values in resource_image_generator.valid_options().items():
             if option not in task.keys():

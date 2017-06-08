@@ -43,39 +43,6 @@ def resource(request, resource_slug):
     return render(request, resource.webpage_template, context)
 
 
-def generate_resource(request, resource_slug):
-    """View for generated PDF of a specific resource.
-
-    Returns:
-        HTML response containing PDF of resource, 404 if not found.
-    """
-    resource = get_object_or_404(Resource, slug=resource_slug)
-    resource_view = resource.generation_view
-    # Remove .py extension if given
-    # TODO: Move logic to loaders
-    if resource_view.endswith(".py"):
-        resource_view = resource_view[:-3]
-    module_path = "resources.views.{}".format(resource_view)
-    spec = importlib.util.find_spec(module_path)
-    if spec is None:
-        raise Http404("PDF generation does not exist for resource: {}".format(resource_slug))
-    else:
-        # TODO: Weasyprint handling in production
-        # TODO: Add creation of PDF as job to job queue
-        import environ
-        env = environ.Env(
-            DJANGO_PRODUCTION=(bool),
-        )
-        if env("DJANGO_PRODUCTION"):
-            # Return cached static PDF file of resource
-            return resource_pdf_cache(request, resource, module_path)
-        else:
-            (pdf_file, filename) = generate_resource_pdf(request, resource, module_path)
-            response = HttpResponse(pdf_file, content_type="application/pdf")
-            response["Content-Disposition"] = RESPONSE_CONTENT_DISPOSITION.format(filename=filename)
-            return response
-
-
 def resource_pdf_cache(request, resource, module_path):
         """Provide redirect to static resource file.
 
