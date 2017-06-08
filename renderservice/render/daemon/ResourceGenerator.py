@@ -49,8 +49,9 @@ class ResourceGenerator(object):
         """Get the resource specification.
 
         Args:
-            resource_view:
+            resource_view: A string of the python filename.
         Returns:
+            A python module.
         """
         if resource_view.endswith(".py"):
             resource_view = resource_view[:-3]
