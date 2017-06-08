@@ -3,9 +3,7 @@
 from django.conf import settings
 from django.views import generic
 from django.shortcuts import get_object_or_404, render, redirect
-from django.http import Http404, HttpResponse
 from resources.models import Resource
-from .generate_resource_pdf import generate_resource_pdf
 import importlib
 from utils.group_lessons_by_age import group_lessons_by_age
 
