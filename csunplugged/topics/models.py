@@ -57,7 +57,7 @@ class LearningOutcome(models.Model):
     """Model for learning outcome in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(max_length=80, unique=True)
     text = models.CharField(max_length=200, unique=True)
     curriculum_areas = models.ManyToManyField(
         CurriculumArea,
