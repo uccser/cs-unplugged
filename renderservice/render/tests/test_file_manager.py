@@ -32,13 +32,13 @@ class FileManagerTest(BaseTest):
     def test_load_file(self):
         file_manager = FileManager(self.folderpath_one)
         data = file_manager.load(self.testfile_name)
-        string = data.decode("ascii")
+        string = data.read().decode("ascii")
         self.assertEquals(string, self.testfile_contents)
 
     def test_load_file_multiple_directories(self):
         file_manager = FileManager(self.folderpath_two, self.folderpath_one)
         data = file_manager.load(self.testfile_name)
-        string = data.decode("ascii")
+        string = data.read().decode("ascii")
         self.assertEquals(string, self.testfile_contents)
 
     def test_save_file(self):
@@ -49,5 +49,5 @@ class FileManagerTest(BaseTest):
         file_manager.save(filename, file_content)
 
         data = file_manager.load(filename)
-        string = data.decode("ascii")
+        string = data.read().decode("ascii")
         self.assertEquals(string, file_content)

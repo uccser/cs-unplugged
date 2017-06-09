@@ -354,15 +354,16 @@ def taskqueue_api(project=None, taskqueue=None):
     queue_key = ".".join([project, taskqueue])
 
     if request.method == "GET":
-        getStats = request.args.get("getStats")
-
         if not r.exists(queue_key):
             return "", 400
 
+        taskqueue_id = "projects/b~{}/taskqueues/{}".format(project, taskqueue)
         response = {
             "kind": "taskqueues#taskqueue",
             "id": taskqueue_id,
         }
+
+        getStats = request.args.get("getStats")
         if getStats:
             totalTasks = r.zcard(queue_key)
 
@@ -370,7 +371,7 @@ def taskqueue_api(project=None, taskqueue=None):
             oldestTask = 0
             if len(keys) != 0:
                 key = keys[0]
-                oldestTask = r.zscore(name=queue_key, key)
+                oldestTask = r.zscore(queue_key, key)
 
             response["stats"] = {
                 "totalTasks": totalTasks,
@@ -378,9 +379,7 @@ def taskqueue_api(project=None, taskqueue=None):
                 "leasedLastMinute": 0,
                 "leasedLastHour": 0
             }
-
         return json.dumps(response)
-
     return "", 404
 
 
