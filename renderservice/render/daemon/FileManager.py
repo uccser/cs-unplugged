@@ -31,7 +31,7 @@ class FileManager(object):
         self.save_directory = kwargs.get("save_directory", None)
 
     @cachedmethod(lambda cls: type(cls).__cache)
-    def load(self, filepath, encoding=None):
+    def load(self, filepath):
         """Load a file from the directory/mounted cloud bucket.
 
         Args:

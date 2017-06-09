@@ -4,7 +4,7 @@ import sys
 import logging
 import optparse
 from logging.handlers import RotatingFileHandler
-from render.daemon import PID_DIRECTORY
+from render.daemon.utils import PID_DIRECTORY
 from render.daemon.RenderDaemon import RenderDaemon
 
 LOG_DIRECTORY = os.getenv("DAEMON_LOG_DIRECTORY", os.path.join(os.getcwd(), "logs"))

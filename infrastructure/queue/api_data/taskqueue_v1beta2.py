@@ -330,6 +330,61 @@ taskqueue_v1beta2_api = Blueprint("taskqueue.v1beta2", __name__)
 
 
 @taskqueue_v1beta2_api.route(
+    "/<project>/taskqueues/<taskqueue>",
+    methods=["GET", "POST"])
+def taskqueue_api(project=None, taskqueue=None):
+    """List details on the given taskqueue.
+
+    Currently stats such as leasedLastMinute, leasedLastHour
+    are not tracked as they are not useful.
+
+    Args:
+        project: A string of the project to work on.
+        taskqueue: A string of the affected taskqueue.
+
+    GET:
+        List the details describing the task queue.
+    """
+    if project is None:
+        return "You must specify a project.", 400
+    elif taskqueue is None:
+        return "You must specify a taskqueue.", 400
+
+    project = project.replace("b~", "")
+    queue_key = ".".join([project, taskqueue])
+
+    if request.method == "GET":
+        getStats = request.args.get("getStats")
+
+        if not r.exists(queue_key):
+            return "", 400
+
+        response = {
+            "kind": "taskqueues#taskqueue",
+            "id": taskqueue_id,
+        }
+        if getStats:
+            totalTasks = r.zcard(queue_key)
+
+            keys = r.zrange(name=queue_key, start=0, end=1)
+            oldestTask = 0
+            if len(keys) != 0:
+                key = keys[0]
+                oldestTask = r.zscore(name=queue_key, key)
+
+            response["stats"] = {
+                "totalTasks": totalTasks,
+                "oldestTask": oldestTask,
+                "leasedLastMinute": 0,
+                "leasedLastHour": 0
+            }
+
+        return json.dumps(response)
+
+    return "", 404
+
+
+@taskqueue_v1beta2_api.route(
     "/<project>/taskqueues/<taskqueue>/tasks",
     methods=["GET", "POST"])
 def tasks_api(project=None, taskqueue=None):

@@ -6,7 +6,7 @@ from render.tests.BaseResourceTest import BaseResourceTest
 class BinaryCardsSmallResourceTest(BaseResourceTest):
 
     def __init__(self, *args, **kwargs):
-        super(BinaryCardsSmallResourceTest, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.module = "binary_cards_small"
         self.BASE_URL = "resources/binary-cards-small.html"
         self.TASK_TEMPLATE = {
@@ -109,3 +109,20 @@ class BinaryCardsSmallResourceTest(BaseResourceTest):
 
         filename, pdf = self.generator.generate_resource_pdf(task)
         self.assertEqual(filename, expected_filename)
+
+    def test_binary_cards_small_resource_generation_invalid_black_back_parameter(self):
+        combination = {
+            "number_bits": "4",
+            "dot_counts": "yes",
+            "black_back": "maybe",
+            "header_text": "",
+            "copies": 1
+        }
+
+        url = self.BASE_URL + self.query_string(combination)
+        task = self.TASK_TEMPLATE.copy()
+        task.update(combination)
+        task["url"] = url
+
+        with self.assertRaises(TaskError):
+            filename, pdf = self.generator.generate_resource_pdf(task)

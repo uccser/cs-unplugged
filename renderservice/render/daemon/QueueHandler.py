@@ -60,6 +60,16 @@ class QueueHandler(object):
         else:
             self.task_api = build("taskqueue", "v1beta2")
 
+    def __len__(self):
+        """Count the number of tasks within the queue."""
+        get_request = self.task_api.taskqueues().get(
+            project=self._get_project_name(True),
+            taskqueue=self.taskqueue_name,
+            getStats=True
+        )
+        result = get_request.execute()
+        return result["stats"]["totalTasks"]
+
     def _get_project_name(self, is_write):
         """Get the project name based for write command.
 
@@ -102,12 +112,13 @@ class QueueHandler(object):
             logger.error("Error during insert request: {}".format(http_error))
             return None
 
-    def lease_tasks(self, tasks_to_fetch, lease_secs):
+    def lease_tasks(self, tasks_to_fetch, lease_secs, tag=None):
         """Lease tasks from the taskqueue.
 
         Args:
             tasks_to_fetch: The number of tasks to fetch.
             lease_secs: The number of seconds to lease for.
+            tag: A tag attached to
         Returns:
             A Google Task as a dictionary with the user defined
             task (dictionary) under that 'payload' key.
@@ -118,7 +129,8 @@ class QueueHandler(object):
                 project=self._get_project_name(True),
                 taskqueue=self.taskqueue_name,
                 leaseSecs=lease_secs,
-                numTasks=tasks_to_fetch
+                numTasks=tasks_to_fetch,
+                tag=tag
             )
             result = lease_request.execute()
             if result["kind"] == "taskqueue#tasks":
