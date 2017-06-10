@@ -2,5 +2,5 @@ unit-plans:
     - unit-plan/unit-plan.yaml
 
 icon: img/topics/computer-error.png
-
+programming-challenges: programming-challenges/programming-challenges.yaml
 other-resources: other-resources.md
