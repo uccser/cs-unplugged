@@ -147,7 +147,7 @@ programming-describe-variable-output:
     - programming
 
 programming-identify-loop:
-  text: Identify when to use a loop to repeat a set of instructions.
+  text: Identify how and when to use a loop to repeat a set of instructions.
   curriculum-areas:
     - programming
 
