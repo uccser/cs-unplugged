@@ -5,25 +5,25 @@
 {% load django_bootstrap_breadcrumbs %}
 
 {% block title %}
-  {{ programming_exercise.exercise_set_number }}.{{ programming_exercise.exercise_number }}
-  {{ programming_exercise.name }}
+  {{ programming_challenge.challenge_set_number }}.{{ programming_challenge.challenge_number }}
+  {{ programming_challenge.name }}
 {% endblock title %}
 
 {% block breadcrumbs %}
   {% breadcrumb "Home" "/" %}
   {% breadcrumb "Topics" "topics:index" %}
   {% breadcrumb topic.name "topics:topic" topic.slug %}
-  {% breadcrumb programming_exercise.name "topics:programming_exercise" topic.slug programming_exercise.slug %}
+  {% breadcrumb programming_challenge.name "topics:programming_challenge" topic.slug programming_challenge.slug %}
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
   <h1>
-    {{ programming_exercise.exercise_set_number }}.{{ programming_exercise.exercise_number }}
-    {{ programming_exercise.name }}
+    {{ programming_challenge.challenge_set_number }}.{{ programming_challenge.challenge_number }}
+    {{ programming_challenge.name }}
   </h1>
 
-  <p class="w-100 text-white rounded p-2 mt-3 difficulty-level-{{ programming_exercise.difficulty.level }}">
-    <strong>Challenge Level:</strong> {{ programming_exercise.difficulty.name }}
+  <p class="w-100 text-white rounded p-2 mt-3 difficulty-level-{{ programming_challenge.difficulty.level }}">
+    <strong>Challenge Level:</strong> {{ programming_challenge.difficulty.name }}
   </p>
 {% endblock page_heading %}
 
@@ -38,7 +38,7 @@
             <li>
               <a href="{% url 'topics:lesson' topic.slug lesson.unit_plan.slug lesson.slug %}">
                 {{ lesson.name }}
-                ({% for ages in lesson.age_range.all %}{{ ages.age_range.lower }} to {{ ages.age_range.upper }}{% if not forloop.last %} and {% endif %}{% endfor %})
+                ({% for age_range in lesson.age_range.all %}{{ age_range.ages.lower }} to {{ age_range.ages.upper }}{% if not forloop.last %} and {% endif %}{% endfor %})
               </a>
             </li>
           {% endfor %}
@@ -47,9 +47,9 @@
     {% endif %}
 
     <h2>Learning outcomes</h2>
-    {% if programming_exercise_learning_outcomes %}
+    {% if learning_outcomes %}
       <ul>
-      {% for learning_outcome in programming_exercise_learning_outcomes %}
+      {% for learning_outcome in learning_outcomes %}
         <li>
           {{ learning_outcome.text }}
           {% for area in learning_outcome.curriculum_areas.all %}
@@ -59,10 +59,10 @@
       {% endfor %}
     </ul>
     {% else %}
-      <p>No learning outcomes listed for {{ programming_exercise.name }}.</p>
+      <p>No learning outcomes listed for {{ programming_challenge.name }}.</p>
     {% endif %}
 
-    {% render_html_field programming_exercise.content %}
+    {% render_html_field programming_challenge.content %}
   </div>
   <div class="col-12 col-md-6">
     <h2 class="mt-0">Languages</h2>
@@ -95,7 +95,7 @@
           {% endif %}
 
           <p class="text-center">
-            <a href="{% url 'topics:programming_exercise_language_solution' topic.slug programming_exercise.slug implementation.language.slug %}">
+            <a href="{% url 'topics:programming_challenge_language_solution' topic.slug programming_challenge.slug implementation.language.slug %}">
               Show {{ implementation.language.name }} solution
             </a>
           </p>
@@ -106,8 +106,8 @@
 {% endblock content_container %}
 
 {% block end_content %}
-  {% if programming_exercise.extra_challenge %}
+  {% if programming_challenge.extra_challenge %}
     <h2>Extra Challenge</h2>
-    {% render_html_field programming_exercise.extra_challenge %}
+    {% render_html_field programming_challenge.extra_challenge %}
   {% endif %}
 {% endblock end_content %}

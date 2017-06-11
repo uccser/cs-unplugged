@@ -35,8 +35,8 @@ This configuration file contains the follow three key/value pairs:
 
 - The key ``learning-outcomes`` points to the file
   ``learning-outcomes.yaml``
-- The key ``programming-exercises-structure`` points to the file
-  ``programming-exercises-structure.yaml``
+- The key ``programming-challenges-structure`` points to the file
+  ``programming-challenges-structure.yaml``
 - The key ``topic-structure-files`` points to the ordered list of files
   ``binary-numbers/structure.yaml`` and
   ``error-detection-and-correction/structure.yaml``

@@ -104,7 +104,7 @@ class UnitPlan(models.Model):
     topic = models.ForeignKey(
         Topic,
         on_delete=models.CASCADE,
-        related_name="topic_unit_plans"
+        related_name="unit_plans"
     )
     slug = models.SlugField()
     name = models.CharField(max_length=100)
@@ -120,15 +120,15 @@ class UnitPlan(models.Model):
         return self.name
 
 
-class ProgrammingExerciseDifficulty(models.Model):
-    """Model for programming exercise difficulty in database."""
+class ProgrammingChallengeDifficulty(models.Model):
+    """Model for programming challenge difficulty in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
     level = models.PositiveSmallIntegerField(unique=True)
     name = models.CharField(max_length=100, unique=True)
 
     def __str__(self):
-        """Text representation of ProgrammingExerciseDifficulty object.
+        """Text representation of ProgrammingChallengeDifficulty object.
 
         Returns:
             Name of difficulty level (str).
@@ -136,29 +136,29 @@ class ProgrammingExerciseDifficulty(models.Model):
         return self.name
 
 
-class ProgrammingExercise(models.Model):
-    """Model for programming exercise in database."""
+class ProgrammingChallenge(models.Model):
+    """Model for programming challenge in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
     topic = models.ForeignKey(
         Topic,
         on_delete=models.CASCADE,
-        related_name="topic_programming_exercises"
+        related_name="programming_challenges"
     )
     slug = models.SlugField()
     name = models.CharField(max_length=200)
-    exercise_set_number = models.PositiveSmallIntegerField()
-    exercise_number = models.PositiveSmallIntegerField()
+    challenge_set_number = models.PositiveSmallIntegerField()
+    challenge_number = models.PositiveSmallIntegerField()
     content = models.TextField()
     extra_challenge = models.TextField(null=True)
     learning_outcomes = models.ManyToManyField(
         LearningOutcome,
-        related_name="programming_exercise_learning_outcomes"
+        related_name="programming_challenges"
     )
     difficulty = models.ForeignKey(
-        ProgrammingExerciseDifficulty,
+        ProgrammingChallengeDifficulty,
         on_delete=models.CASCADE,
-        related_name="difficulty_programming_exercises"
+        related_name="programming_challenges"
     )
 
     def ordered_implementations(self):
@@ -170,15 +170,15 @@ class ProgrammingExercise(models.Model):
         return self.implementations.all().order_by("language__number").select_related()
 
     def __str__(self):
-        """Text representation of ProgrammingExercise object.
+        """Text representation of ProgrammingChallenge object.
 
         Returns:
-            Name of programming exercise (str).
+            Name of programming challenge (str).
         """
         return self.name
 
 
-class ProgrammingExerciseLanguage(models.Model):
+class ProgrammingChallengeLanguage(models.Model):
     """Model for programming language in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
@@ -188,7 +188,7 @@ class ProgrammingExerciseLanguage(models.Model):
     icon = models.CharField(max_length=100, null=True)
 
     def __str__(self):
-        """Text representation of ProgrammingExerciseLanguage object.
+        """Text representation of ProgrammingChallengeLanguage object.
 
         Returns:
             Name of programming language (str).
@@ -196,8 +196,8 @@ class ProgrammingExerciseLanguage(models.Model):
         return self.name
 
 
-class ProgrammingExerciseLanguageImplementation(models.Model):
-    """Model for programming exercise language implementation in database."""
+class ProgrammingChallengeImplementation(models.Model):
+    """Model for programming challenge language implementation in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
     topic = models.ForeignKey(
@@ -206,12 +206,12 @@ class ProgrammingExerciseLanguageImplementation(models.Model):
         related_name="implementations"
     )
     language = models.ForeignKey(
-        ProgrammingExerciseLanguage,
+        ProgrammingChallengeLanguage,
         on_delete=models.CASCADE,
         related_name="implementations"
     )
-    exercise = models.ForeignKey(
-        ProgrammingExercise,
+    challenge = models.ForeignKey(
+        ProgrammingChallenge,
         on_delete=models.CASCADE,
         related_name="implementations"
     )
@@ -220,16 +220,16 @@ class ProgrammingExerciseLanguageImplementation(models.Model):
     solution = models.TextField()
 
     def __str__(self):
-        """Text representation of ProgrammingExerciseLanguageImplementation.
+        """Text representation of ProgrammingChallengeImplementation.
 
         Returns:
-            Description of implementation and related exercise (str).
+            Description of implementation and related challenge (str).
         """
-        return "{} for exercise {}.{}, {}".format(
+        return "{} for challenge {}.{}, {}".format(
             self.language.name,
-            self.exercise.exercise_set_number,
-            self.exercise.exercise_number,
-            self.exercise.name
+            self.challenge.challenge_set_number,
+            self.challenge.challenge_number,
+            self.challenge.name
         )
 
 
@@ -237,7 +237,7 @@ class AgeRange(models.Model):
     """Model for age range in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
-    age_range = IntegerRangeField()
+    ages = IntegerRangeField()
 
     def __str__(self):
         """Text representation of AgeRange object.
@@ -245,7 +245,7 @@ class AgeRange(models.Model):
         Returns:
             Integer range (str).
         """
-        return repr(self.age_range)
+        return repr(self.ages)
 
 
 class Lesson(models.Model):
@@ -255,12 +255,12 @@ class Lesson(models.Model):
     topic = models.ForeignKey(
         Topic,
         on_delete=models.CASCADE,
-        related_name="topic_lessons"
+        related_name="lessons"
     )
     unit_plan = models.ForeignKey(
         UnitPlan,
         on_delete=models.CASCADE,
-        related_name="unit_plan_lessons"
+        related_name="lessons"
     )
     slug = models.SlugField()
     name = models.CharField(max_length=100)
@@ -270,34 +270,34 @@ class Lesson(models.Model):
     heading_tree = JSONField(null=True)
     age_range = models.ManyToManyField(
         AgeRange,
-        related_name="lesson_age_range"
+        related_name="lessons"
     )
-    programming_exercises = models.ManyToManyField(
-        ProgrammingExercise,
+    programming_challenges = models.ManyToManyField(
+        ProgrammingChallenge,
         related_name="lessons"
     )
     learning_outcomes = models.ManyToManyField(
         LearningOutcome,
-        related_name="lesson_learning_outcomes"
+        related_name="lessons"
     )
     generated_resources = models.ManyToManyField(
         Resource,
-        through="ConnectedGeneratedResource",
-        related_name="lesson_generated_resources"
+        through="ResourceDescription",
+        related_name="lessons"
     )
     classroom_resources = ArrayField(
         models.CharField(max_length=100),
         null=True
     )
 
-    def has_programming_exercises(self):
-        """Return boolean of lesson having any programming exercises.
+    def has_programming_challenges(self):
+        """Return boolean of lesson having any programming challenges.
 
         Returns:
-            True if the lesson has connected programming exercises.
+            True if the lesson has connected programming challenges.
             Otherwise False.
         """
-        return bool(self.programming_exercises.all())
+        return bool(self.programming_challenges.all())
 
     def __str__(self):
         """Text representation of Lesson object.
@@ -348,7 +348,7 @@ class CurriculumIntegration(models.Model):
         return self.name
 
 
-class ConnectedGeneratedResource(models.Model):
+class ResourceDescription(models.Model):
     """Model for relationship between resource and lesson in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django

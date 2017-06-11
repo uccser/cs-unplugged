@@ -296,15 +296,15 @@ class LessonsLoaderTest(BaseTestWithDB):
         lesson_loader.load()
         self.assertIsNone(Lesson.objects.get(slug="lesson-1").heading_tree)
 
-    def test_lesson_loader_optional_programming_exercises_set_correctly(self):
-        config_file = os.path.join(self.loader_name, "programming-exercises.yaml")
+    def test_lesson_loader_optional_programming_challenges_set_correctly(self):
+        config_file = os.path.join(self.loader_name, "programming-challenges.yaml")
         lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
 
         topic = self.test_data.create_topic(1)
         unit_plan = self.test_data.create_unit_plan(topic, 1)
         difficulty = self.test_data.create_difficulty_level(1)
-        self.test_data.create_programming_exercise(topic, 1, difficulty)
-        self.test_data.create_programming_exercise(topic, 2, difficulty)
+        self.test_data.create_programming_challenge(topic, 1, difficulty)
+        self.test_data.create_programming_challenge(topic, 2, difficulty)
 
         lesson_loader = LessonsLoader(
             lessons_structure,
@@ -314,23 +314,23 @@ class LessonsLoaderTest(BaseTestWithDB):
         )
         lesson_loader.load()
         self.assertQuerysetEqual(
-            Lesson.objects.get(slug="lesson-1").programming_exercises.all(),
+            Lesson.objects.get(slug="lesson-1").programming_challenges.all(),
             [
-                "<ProgrammingExercise: Exercise 1>",
-                "<ProgrammingExercise: Exercise 2>",
+                "<ProgrammingChallenge: Challenge 1>",
+                "<ProgrammingChallenge: Challenge 2>",
             ],
             ordered=False,
         )
 
-    def test_lesson_loader_optional_programming_exercises_set_correctly_when_omitted(self):
+    def test_lesson_loader_optional_programming_challenges_set_correctly_when_omitted(self):
         config_file = os.path.join(self.loader_name, "basic-config.yaml")
         lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
 
         topic = self.test_data.create_topic(1)
         unit_plan = self.test_data.create_unit_plan(topic, 1)
         difficulty = self.test_data.create_difficulty_level(1)
-        self.test_data.create_programming_exercise(topic, 1, difficulty)
-        self.test_data.create_programming_exercise(topic, 2, difficulty)
+        self.test_data.create_programming_challenge(topic, 1, difficulty)
+        self.test_data.create_programming_challenge(topic, 2, difficulty)
 
         lesson_loader = LessonsLoader(
             lessons_structure,
@@ -340,7 +340,7 @@ class LessonsLoaderTest(BaseTestWithDB):
         )
         lesson_loader.load()
         self.assertQuerysetEqual(
-            Lesson.objects.get(slug="lesson-1").programming_exercises.all(),
+            Lesson.objects.get(slug="lesson-1").programming_challenges.all(),
             [],
         )
 

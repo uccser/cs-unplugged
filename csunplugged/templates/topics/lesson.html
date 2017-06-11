@@ -23,10 +23,10 @@
 
 {% block left_column_content %}
   <h2 class="heading-underline">Learning Outcomes</h2>
-  {% if lesson_learning_outcomes %}
+  {% if learning_outcomes %}
     <p>Students will be able to:</p>
     <ul>
-      {% for learning_outcome in lesson_learning_outcomes %}
+      {% for learning_outcome in learning_outcomes %}
         <li>
           {{ learning_outcome.text }}
           {% for area in learning_outcome.curriculum_areas.all %}
@@ -44,9 +44,9 @@
 
 {% block right_column_content %}
   <h2 class="heading-underline">CS Unplugged resources</h2>
-  {% if lesson_generated_resources %}
+  {% if generated_resources %}
     <div class="link-box-container">
-      {% for generated_resource in lesson_generated_resources %}
+      {% for generated_resource in generated_resources %}
         <a href="{% url 'resources:resource' generated_resource.slug %}" class="link-box">
           <img class="border-thin" src="{% static generated_resource.thumbnail %}" alt="Generic placeholder image" style="max-width: 5rem;">
           <strong>{{ generated_resource.name }}</strong>
@@ -70,9 +70,9 @@
   {% endif %}
 
   <h2 class="heading-underline mt-2">Programming challenges</h2>
-  {% if programming_exercises %}
+  {% if programming_challenges %}
     <p>
-      <a href="{% url 'topics:programming_exercises_list' topic.slug unit_plan.slug lesson.slug %}">
+      <a href="{% url 'topics:programming_challenges_list' topic.slug unit_plan.slug lesson.slug %}">
         View related programming challenges
       </a>
     </p>

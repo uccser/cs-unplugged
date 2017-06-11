@@ -1,4 +1,4 @@
-"""Custom loader for loading programming exercises."""
+"""Custom loader for loading programming challenges."""
 
 import os.path
 from utils.BaseLoader import BaseLoader
@@ -9,13 +9,13 @@ from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 
 from topics.models import (
     LearningOutcome,
-    ProgrammingExerciseDifficulty,
-    ProgrammingExerciseLanguage,
-    ProgrammingExerciseLanguageImplementation,
+    ProgrammingChallengeDifficulty,
+    ProgrammingChallengeLanguage,
+    ProgrammingChallengeImplementation,
 )
 
 
-class ProgrammingExercisesLoader(BaseLoader):
+class ProgrammingChallengesLoader(BaseLoader):
     """Custom loader for loading programming challenges."""
 
     def __init__(self, structure_file_path, topic, BASE_PATH):
@@ -88,7 +88,7 @@ class ProgrammingExercisesLoader(BaseLoader):
                 challenge_extra_challenge = None
 
             try:
-                difficulty_level = ProgrammingExerciseDifficulty.objects.get(
+                difficulty_level = ProgrammingChallengeDifficulty.objects.get(
                     level=challenge_difficulty
                 )
             except:
@@ -98,11 +98,11 @@ class ProgrammingExercisesLoader(BaseLoader):
                     "Programming Challenge Difficulty"
                 )
 
-            programming_challenge = self.topic.topic_programming_exercises.create(
+            programming_challenge = self.topic.programming_challenges.create(
                 slug=challenge_slug,
                 name=challenge_content.title,
-                exercise_set_number=challenge_set_number,
-                exercise_number=challenge_number,
+                challenge_set_number=challenge_set_number,
+                challenge_number=challenge_number,
                 content=challenge_content.html_string,
                 extra_challenge=challenge_extra_challenge,
                 difficulty=difficulty_level
@@ -121,7 +121,7 @@ class ProgrammingExercisesLoader(BaseLoader):
                         "Programming Challenge"
                     )
                 try:
-                    language_object = ProgrammingExerciseLanguage.objects.get(
+                    language_object = ProgrammingChallengeLanguage.objects.get(
                         slug=language
                     )
                 except:
@@ -160,12 +160,12 @@ class ProgrammingExercisesLoader(BaseLoader):
                 except CouldNotFindMarkdownFileError:
                     hint_content = None
 
-                implementation = ProgrammingExerciseLanguageImplementation(
+                implementation = ProgrammingChallengeImplementation(
                     expected_result=expected_result_content.html_string,
                     hints=None if hint_content is None else hint_content.html_string,
                     solution=solution_content.html_string,
                     language=language_object,
-                    exercise=programming_challenge,
+                    challenge=programming_challenge,
                     topic=self.topic
                 )
                 implementation.save()

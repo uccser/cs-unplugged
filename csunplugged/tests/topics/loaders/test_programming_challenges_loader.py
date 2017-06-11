@@ -3,16 +3,16 @@ import os.path
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 
-from topics.models import ProgrammingExercise
-from topics.management.commands._ProgrammingExercisesLoader import ProgrammingExercisesLoader
+from topics.models import ProgrammingChallenge
+from topics.management.commands._ProgrammingChallengesLoader import ProgrammingChallengesLoader
 
 
-class ProgrammingExercisesLoaderTest(BaseTestWithDB):
+class ProgrammingChallengesLoaderTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.test_data = TopicsTestDataGenerator()
-        self.loader_name = "programming_exercises"
+        self.loader_name = "programming_challenges"
 
     def test_basic_config(self):
         config_file = os.path.join(self.loader_name, "basic-config.yaml")
@@ -21,12 +21,12 @@ class ProgrammingExercisesLoaderTest(BaseTestWithDB):
         self.test_data.create_programming_language("1")
         topic = self.test_data.create_topic("1")
 
-        pe_loader = ProgrammingExercisesLoader(config_file, topic, self.test_data.LOADER_ASSET_PATH)
+        pe_loader = ProgrammingChallengesLoader(config_file, topic, self.test_data.LOADER_ASSET_PATH)
         pe_loader.load()
 
-        pe_objects = ProgrammingExercise.objects.all()
+        pe_objects = ProgrammingChallenge.objects.all()
 
         self.assertQuerysetEqual(
             pe_objects,
-            ["<ProgrammingExercise: Programming Challenge 1>"]
+            ["<ProgrammingChallenge: Programming Challenge 1>"]
         )

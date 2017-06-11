@@ -5,8 +5,8 @@ from topics.management.commands._CurriculumIntegrationsLoader import CurriculumI
 from topics.management.commands._GlossaryTermsLoader import GlossaryTermsLoader
 from topics.management.commands._LearningOutcomesLoader import LearningOutcomesLoader
 from topics.management.commands._LessonsLoader import LessonsLoader
-from topics.management.commands._ProgrammingExercisesLoader import ProgrammingExercisesLoader
-from topics.management.commands._ProgrammingExercisesStructureLoader import ProgrammingExercisesStructureLoader
+from topics.management.commands._ProgrammingChallengesLoader import ProgrammingChallengesLoader
+from topics.management.commands._ProgrammingChallengesStructureLoader import ProgrammingChallengesStructureLoader
 from topics.management.commands._TopicLoader import TopicLoader
 from topics.management.commands._UnitPlanLoader import UnitPlanLoader
 from resources.management.commands._ResourcesLoader import ResourcesLoader
@@ -35,13 +35,13 @@ class LoaderFactory:
         """Create lessons loader."""
         return LessonsLoader(structure_file_path, topic, unit_plan, BASE_PATH)
 
-    def create_programming_exercises_loader(self, structure_file, topic, BASE_PATH):
-        """Create programming exercises loader."""
-        return ProgrammingExercisesLoader(structure_file, topic, BASE_PATH)
+    def create_programming_challenges_loader(self, structure_file, topic, BASE_PATH):
+        """Create programming challenges loader."""
+        return ProgrammingChallengesLoader(structure_file, topic, BASE_PATH)
 
-    def create_programming_exercises_structure_loader(self, structure_file_path, BASE_PATH):
-        """Create programming exercises structure loader."""
-        return ProgrammingExercisesStructureLoader(structure_file_path, BASE_PATH)
+    def create_programming_challenges_structure_loader(self, structure_file_path, BASE_PATH):
+        """Create programming challenges structure loader."""
+        return ProgrammingChallengesStructureLoader(structure_file_path, BASE_PATH)
 
     def create_topic_loader(self, structure_file_path, BASE_PATH):
         """Create topic loader."""

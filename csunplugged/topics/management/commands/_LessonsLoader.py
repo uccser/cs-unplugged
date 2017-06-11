@@ -8,10 +8,10 @@ from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.InvalidConfigValueError import InvalidConfigValueError
 
 from topics.models import (
-    ProgrammingExercise,
+    ProgrammingChallenge,
     LearningOutcome,
     Resource,
-    ConnectedGeneratedResource,
+    ResourceDescription,
 )
 
 
@@ -103,7 +103,7 @@ class LessonsLoader(BaseLoader):
                     "List of strings."
                 )
 
-            lesson = self.topic.topic_lessons.create(
+            lesson = self.topic.lessons.create(
                 unit_plan=self.unit_plan,
                 slug=lesson_slug,
                 name=lesson_content.title,
@@ -115,21 +115,21 @@ class LessonsLoader(BaseLoader):
             )
             lesson.save()
 
-            # Add programming exercises
+            # Add programming challenges
             if "programming-challenges" in lesson_structure:
-                programming_exercise_slugs = lesson_structure["programming-challenges"]
-                if programming_exercise_slugs is not None:
-                    for programming_exercise_slug in programming_exercise_slugs:
+                programming_challenge_slugs = lesson_structure["programming-challenges"]
+                if programming_challenge_slugs is not None:
+                    for programming_challenge_slug in programming_challenge_slugs:
                         try:
-                            programming_exercise = ProgrammingExercise.objects.get(
-                                slug=programming_exercise_slug,
+                            programming_challenge = ProgrammingChallenge.objects.get(
+                                slug=programming_challenge_slug,
                                 topic=self.topic
                             )
-                            lesson.programming_exercises.add(programming_exercise)
+                            lesson.programming_challenges.add(programming_challenge)
                         except:
                             raise KeyNotFoundError(
                                 self.lessons_structure_file_path,
-                                programming_exercise_slug,
+                                programming_challenge_slug,
                                 "Programming Challenges"
                             )
 
@@ -179,7 +179,7 @@ class LessonsLoader(BaseLoader):
                                 "Generated Resource"
                             )
 
-                        relationship = ConnectedGeneratedResource(
+                        relationship = ResourceDescription(
                             resource=resource,
                             lesson=lesson,
                             description=resource_description

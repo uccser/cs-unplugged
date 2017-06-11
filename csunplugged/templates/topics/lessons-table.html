@@ -17,9 +17,9 @@
               <strong>{{ lesson.name }}</strong>
             </a>
           </td>
-          {% if lesson.has_programming_exercises %}
+          {% if lesson.has_programming_challenges %}
             <td class="text-center table-success-cell">
-              <a href="{% url 'topics:programming_exercises_list' topic.slug unit_plan.slug lesson.slug %}">
+              <a href="{% url 'topics:programming_challenges_list' topic.slug unit_plan.slug lesson.slug %}">
                 Yes
               </a>
           {% else %}

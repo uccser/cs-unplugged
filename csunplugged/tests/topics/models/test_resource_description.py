@@ -1,10 +1,10 @@
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
-from topics.models import ConnectedGeneratedResource
+from topics.models import ResourceDescription
 
 
-class ConnectedGeneratedResourceModelTest(BaseTestWithDB):
+class ResourceDescriptionModelTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -22,10 +22,10 @@ class ConnectedGeneratedResourceModelTest(BaseTestWithDB):
         unit_plan = self.test_topics_data.create_unit_plan(topic, 1)
         age_range = self.test_topics_data.create_age_range(1, 99)
         lesson = self.test_topics_data.create_lesson(topic, unit_plan, 1, age_range)
-        new_resource = ConnectedGeneratedResource.objects.create(
+        new_resource = ResourceDescription.objects.create(
             resource=resource,
             lesson=lesson,
             description="this is a description"
         )
-        query_result = ConnectedGeneratedResource.objects.get(resource=resource, lesson=lesson)
+        query_result = ResourceDescription.objects.get(resource=resource, lesson=lesson)
         self.assertEqual(query_result, new_resource)

@@ -1,9 +1,9 @@
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
-from topics.models import ProgrammingExercise
+from topics.models import ProgrammingChallenge
 
 
-class ProgrammingExerciseLanguageImplementationModelTest(BaseTestWithDB):
+class ProgrammingChallengeImplementationModelTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -13,14 +13,14 @@ class ProgrammingExerciseLanguageImplementationModelTest(BaseTestWithDB):
         topic = self.test_data.create_topic(1)
         difficulty = self.test_data.create_difficulty_level(1)
         language = self.test_data.create_programming_language(1)
-        exercise = self.test_data.create_programming_exercise(topic, 1, difficulty)
-        implementation = self.test_data.create_programming_exercise_implementation(
+        challenge = self.test_data.create_programming_challenge(topic, 1, difficulty)
+        implementation = self.test_data.create_programming_challenge_implementation(
             topic=topic,
             language=language,
-            exercise=exercise
+            challenge=challenge
         )
         self.assertEqual(
-            ProgrammingExercise.objects.get(slug="exercise-1").implementations.get(language__slug="language-1"),
+            ProgrammingChallenge.objects.get(slug="challenge-1").implementations.get(language__slug="language-1"),
             implementation
         )
 
@@ -28,15 +28,15 @@ class ProgrammingExerciseLanguageImplementationModelTest(BaseTestWithDB):
         topic = self.test_data.create_topic(1)
         difficulty = self.test_data.create_difficulty_level(1)
         language = self.test_data.create_programming_language(1)
-        exercise = self.test_data.create_programming_exercise(topic, 1, difficulty)
-        implementation = self.test_data.create_programming_exercise_implementation(
+        challenge = self.test_data.create_programming_challenge(topic, 1, difficulty)
+        implementation = self.test_data.create_programming_challenge_implementation(
             topic=topic,
             language=language,
-            exercise=exercise,
+            challenge=challenge,
         )
         self.assertEqual(
             implementation.__str__(),
-            "Language 1 for exercise 1.1, Exercise 1"
+            "Language 1 for challenge 1.1, Challenge 1"
         )
 
     def test_implementation_order(self):
@@ -46,33 +46,33 @@ class ProgrammingExerciseLanguageImplementationModelTest(BaseTestWithDB):
         language_2 = self.test_data.create_programming_language(2)
         language_3 = self.test_data.create_programming_language(3)
         language_4 = self.test_data.create_programming_language(4)
-        exercise = self.test_data.create_programming_exercise(topic, 1, difficulty)
-        self.test_data.create_programming_exercise_implementation(
+        challenge = self.test_data.create_programming_challenge(topic, 1, difficulty)
+        self.test_data.create_programming_challenge_implementation(
             topic=topic,
             language=language_4,
-            exercise=exercise,
+            challenge=challenge,
         )
-        self.test_data.create_programming_exercise_implementation(
+        self.test_data.create_programming_challenge_implementation(
             topic=topic,
             language=language_1,
-            exercise=exercise,
+            challenge=challenge,
         )
-        self.test_data.create_programming_exercise_implementation(
+        self.test_data.create_programming_challenge_implementation(
             topic=topic,
             language=language_3,
-            exercise=exercise,
+            challenge=challenge,
         )
-        self.test_data.create_programming_exercise_implementation(
+        self.test_data.create_programming_challenge_implementation(
             topic=topic,
             language=language_2,
-            exercise=exercise,
+            challenge=challenge,
         )
         self.assertQuerysetEqual(
-            ProgrammingExercise.objects.get(slug="exercise-1").ordered_implementations(),
+            ProgrammingChallenge.objects.get(slug="challenge-1").ordered_implementations(),
             [
-                "<ProgrammingExerciseLanguageImplementation: Language 1 for exercise 1.1, Exercise 1>",
-                "<ProgrammingExerciseLanguageImplementation: Language 2 for exercise 1.1, Exercise 1>",
-                "<ProgrammingExerciseLanguageImplementation: Language 3 for exercise 1.1, Exercise 1>",
-                "<ProgrammingExerciseLanguageImplementation: Language 4 for exercise 1.1, Exercise 1>",
+                "<ProgrammingChallengeImplementation: Language 1 for challenge 1.1, Challenge 1>",
+                "<ProgrammingChallengeImplementation: Language 2 for challenge 1.1, Challenge 1>",
+                "<ProgrammingChallengeImplementation: Language 3 for challenge 1.1, Challenge 1>",
+                "<ProgrammingChallengeImplementation: Language 4 for challenge 1.1, Challenge 1>",
             ]
         )

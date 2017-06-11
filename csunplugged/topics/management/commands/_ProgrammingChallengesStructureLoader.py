@@ -7,10 +7,10 @@ from utils.BaseLoader import BaseLoader
 
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 
-from topics.models import ProgrammingExerciseLanguage, ProgrammingExerciseDifficulty
+from topics.models import ProgrammingChallengeLanguage, ProgrammingChallengeDifficulty
 
 
-class ProgrammingExercisesStructureLoader(BaseLoader):
+class ProgrammingChallengesStructureLoader(BaseLoader):
     """Custom loader for loading structure of programming challenges."""
 
     def __init__(self, structure_file_path, BASE_PATH):
@@ -73,7 +73,7 @@ class ProgrammingExercisesStructureLoader(BaseLoader):
             else:
                 language_icon = None
 
-            new_language = ProgrammingExerciseLanguage(
+            new_language = ProgrammingChallengeLanguage(
                 slug=language,
                 name=language_name,
                 number=language_number,
@@ -101,7 +101,7 @@ class ProgrammingExercisesStructureLoader(BaseLoader):
                     "Programming Challenge Difficulty"
                 )
 
-            new_difficulty = ProgrammingExerciseDifficulty(
+            new_difficulty = ProgrammingChallengeDifficulty(
                 level=difficulty,
                 name=difficulty_name
             )

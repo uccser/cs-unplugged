@@ -10,5 +10,5 @@ Your program should display the outputs shown in this table for the given inputs
 
 | Input | Output                                                                                      |
 | ----- | ------------------------------------------------------------------------------------------- |
-| 31    | {image-inline file-path="img/topics/programming-exercises/binary-challenge-9-example1.png"} |
-| 11    | {image-inline file-path="img/topics/programming-exercises/binary-challenge-9-example2.png"} |
+| 31    | {image-inline file-path="img/topics/programming-challenges/binary-challenge-9-example1.png"} |
+| 11    | {image-inline file-path="img/topics/programming-challenges/binary-challenge-9-example2.png"} |

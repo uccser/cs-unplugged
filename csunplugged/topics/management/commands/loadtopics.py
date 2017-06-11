@@ -51,7 +51,7 @@ class Command(BaseCommand):
         if "programming-challenges-structure" in structure_file:
             programming_challenges_structure_file_path = structure_file["programming-challenges-structure"]
             if programming_challenges_structure_file_path is not None:
-                factory.create_programming_exercises_structure_loader(
+                factory.create_programming_challenges_structure_loader(
                     programming_challenges_structure_file_path,
                     BASE_PATH
                 ).load()

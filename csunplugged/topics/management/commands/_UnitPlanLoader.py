@@ -54,7 +54,7 @@ class UnitPlanLoader(BaseLoader):
         if unit_plan_content.heading_tree:
             heading_tree = convert_heading_tree_to_dict(unit_plan_content.heading_tree)
 
-        unit_plan = self.topic.topic_unit_plans.create(
+        unit_plan = self.topic.unit_plans.create(
             slug=self.unit_plan_slug,
             name=unit_plan_content.title,
             content=unit_plan_content.html_string,
@@ -107,7 +107,7 @@ class UnitPlanLoader(BaseLoader):
                 min_age, max_age = age_range.split('-')
 
             new_age_range = AgeRange(
-                age_range=(int(min_age), int(max_age))
+                ages=(int(min_age), int(max_age))
             )
             new_age_range.save()
 

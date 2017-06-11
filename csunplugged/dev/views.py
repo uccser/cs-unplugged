@@ -7,9 +7,9 @@ from topics.models import (
     CurriculumArea,
     CurriculumIntegration,
     UnitPlan,
-    ProgrammingExercise,
-    ProgrammingExerciseDifficulty,
-    ProgrammingExerciseLanguage,
+    ProgrammingChallenge,
+    ProgrammingChallengeDifficulty,
+    ProgrammingChallengeLanguage,
     LearningOutcome,
     GlossaryTerm,
 )
@@ -37,10 +37,10 @@ class IndexView(generic.TemplateView):
         for topic in context["topics"]:
             topic.unit_plans = UnitPlan.objects.filter(topic=topic)
             for unit_plan in topic.unit_plans:
-                unit_plan.lessons = group_lessons_by_age(unit_plan.unit_plan_lessons)
+                unit_plan.lessons = group_lessons_by_age(unit_plan.lessons)
             topic.integrations = CurriculumIntegration.objects.filter(topic=topic).order_by("number")
-            topic.programming_exercises = ProgrammingExercise.objects.filter(topic=topic).order_by(
-                "exercise_set_number", "exercise_number"
+            topic.programming_challenges = ProgrammingChallenge.objects.filter(topic=topic).order_by(
+                "challenge_set_number", "challenge_number"
             )
             context["unit_plans"] += topic.unit_plans
 
@@ -54,10 +54,10 @@ class IndexView(generic.TemplateView):
         context["learning_outcomes"] = LearningOutcome.objects.all()
 
         # Get learning outcome list
-        context["programming_exercise_languages"] = ProgrammingExerciseLanguage.objects.all()
+        context["programming_challenge_languages"] = ProgrammingChallengeLanguage.objects.all()
 
         # Get learning outcome list
-        context["programming_exercise_difficulties"] = ProgrammingExerciseDifficulty.objects.all()
+        context["programming_challenge_difficulties"] = ProgrammingChallengeDifficulty.objects.all()
 
         # Get glossary term list
         context["glossary_terms"] = GlossaryTerm.objects.all().order_by("term")

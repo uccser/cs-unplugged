@@ -10,7 +10,7 @@
   {% breadcrumb "Home" "/" %}
   {% breadcrumb "Topics" "topics:index" %}
   {% breadcrumb topic.name "topics:topic" topic.slug %}
-  {% breadcrumb "Programming Challenges" "topics:programming_exercises_list" topic.slug unit_plan.slug lesson.slug %}
+  {% breadcrumb "Programming Challenges" "topics:programming_challenges_list" topic.slug unit_plan.slug lesson.slug %}
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
@@ -18,8 +18,8 @@
 {% endblock page_heading %}
 
 {% block content %}
-  {% if programming_exercises %}
-    {% include "topics/programming-exercises-table.html" %}
+  {% if programming_challenges %}
+    {% include "topics/programming-challenges-table.html" %}
   {% else %}
     <p>No programming challenges for {{ topic }}.</p>
   {% endif %}

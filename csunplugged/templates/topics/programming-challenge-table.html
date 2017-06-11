@@ -10,15 +10,15 @@
     </tr>
   </thead>
   <tbody>
-    {% for programming_exercise in programming_exercises %}
+    {% for programming_challenge in programming_challenges %}
     <tr class="align-middle">
       <td class="text-center">
-        {{ programming_exercise.exercise_set_number }}.{{ programming_exercise.exercise_number }}
+        {{ programming_challenge.challenge_set_number }}.{{ programming_challenge.challenge_number }}
       </td>
       <td>
-        <a href="{% url 'topics:programming_exercise' topic.slug programming_exercise.slug %}">
+        <a href="{% url 'topics:programming_challenge' topic.slug programming_challenge.slug %}">
           <strong>
-            {{ programming_exercise.name }}
+            {{ programming_challenge.name }}
           </strong>
         </a>
       </td>
@@ -26,7 +26,7 @@
         {% include "topics/programming-difficulty-badge.html" %}
       </td>
       <td class="text-center">
-        {% for implementation in programming_exercise.ordered_implementations %}
+        {% for implementation in programming_challenge.ordered_implementations %}
           <img src="{% get_static_prefix %}{{ implementation.language.icon }}" class="inline-image-small" />
         {% endfor %}
       </td>

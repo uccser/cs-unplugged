@@ -22,7 +22,7 @@ def group_lessons_by_age(lessons):
     lessons = lessons.order_by("number")
     for lesson in lessons:
         for age_range in lesson.age_range.all():
-            ages = (age_range.age_range.lower, age_range.age_range.upper)
+            ages = (age_range.ages.lower, age_range.ages.upper)
             if ages in grouped_lessons.keys():
                 grouped_lessons[ages].append(lesson)
             else:
