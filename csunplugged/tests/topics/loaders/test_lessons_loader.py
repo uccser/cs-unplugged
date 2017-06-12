@@ -379,6 +379,41 @@ class LessonsLoaderTest(BaseTestWithDB):
             [],
         )
 
+    def test_lesson_loader_valid_programming_challenges_description(self):
+        config_file = os.path.join(self.loader_name, "programming-challenges-description.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+
+        topic = self.test_data.create_topic("1")
+        unit_plan = self.test_data.create_unit_plan(topic, "1")
+
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        lesson_loader.load()
+        self.assertEquals(
+            Lesson.objects.get(slug="programming-challenges-description").programming_challenges_description,
+            "<p>Description of lesson programming challenges.</p>",
+        )
+
+    def test_lesson_loader_missing_programming_challenges_description(self):
+        config_file = os.path.join(self.loader_name, "basic-config.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+
+        topic = self.test_data.create_topic("1")
+        unit_plan = self.test_data.create_unit_plan(topic, "1")
+
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        lesson_loader.load()
+        self.assertIsNone(Lesson.objects.get(slug="lesson-1").programming_challenges_description)
+
     def test_lesson_loader_optional_learning_outcomes_set_correctly(self):
         config_file = os.path.join(self.loader_name, "learning-outcomes.yaml")
         lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
