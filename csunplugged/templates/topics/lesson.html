@@ -40,6 +40,11 @@
   {% endif %}
 
   {% render_html_field lesson.content %}
+
+  {% if lesson.computational_thinking_links %}
+    <h2 id="ct-links">Seeing the Computational Thinking connections</h2>
+    {% render_html_field lesson.computational_thinking_links %}
+  {% endif %}
 {% endblock left_column_content %}
 
 {% block right_column_content %}
@@ -91,6 +96,11 @@
           <a class="nav-link" href="#{{ heading_node.slug }}">{{ heading_node.text }}</a>
         </li>
       {% endfor %}
+      {% if lesson.computational_thinking_links %}
+        <li class="nav-item">
+          <a class="nav-link" href="#ct-links">Computational Thinking</a>
+        </li>
+      {% endif %}
     </ul>
   </div>
 {% endblock right_column_content %}

@@ -46,11 +46,8 @@ class BaseLoader():
             mdx_math.MathExtension(enable_dollar_delimiter=True)
         ]
         self.converter = Verto(html_templates=templates, extensions=extensions)
-        custom_processors = self.converter.processor_defaults()
-        custom_processors.add("remove-title")
-        self.converter.update_processors(custom_processors)
 
-    def convert_md_file(self, md_file_path, config_file_path, heading_required=True):
+    def convert_md_file(self, md_file_path, config_file_path, heading_required=True, remove_title=True):
         """Return the Verto object for a given Markdown file.
 
         Args:
@@ -72,6 +69,11 @@ class BaseLoader():
             content = open(md_file_path, encoding="UTF-8").read()
         except:
             raise CouldNotFindMarkdownFileError(md_file_path, config_file_path)
+
+        custom_processors = self.converter.processor_defaults()
+        if remove_title:
+            custom_processors.add("remove-title")
+        self.converter.update_processors(custom_processors)
 
         result = self.converter.convert(content)
 

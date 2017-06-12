@@ -72,6 +72,19 @@ class LessonsLoader(BaseLoader):
                 self.lessons_structure_file_path,
             )
 
+            if "computational-thinking-links" in lesson_structure:
+                file_name = lesson_structure["computational-thinking-links"]
+                file_path = os.path.join(self.BASE_PATH, "lessons", file_name)
+                ct_links_content = self.convert_md_file(
+                    file_path,
+                    self.lessons_structure_file_path,
+                    heading_required=False,
+                    remove_title=False,
+                )
+                ct_links = ct_links_content.html_string
+            else:
+                ct_links = None
+
             if "duration" in lesson_structure:
                 lesson_duration = lesson_structure["duration"]
             else:
@@ -110,6 +123,7 @@ class LessonsLoader(BaseLoader):
                 number=lesson_number,
                 duration=lesson_duration,
                 content=lesson_content.html_string,
+                computational_thinking_links=ct_links,
                 heading_tree=heading_tree,
                 classroom_resources=classroom_resources,
             )

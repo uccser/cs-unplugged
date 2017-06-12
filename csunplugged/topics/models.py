@@ -267,6 +267,7 @@ class Lesson(models.Model):
     number = models.IntegerField()
     duration = models.PositiveSmallIntegerField(null=True)
     content = models.TextField()
+    computational_thinking_links = models.TextField(null=True)
     heading_tree = JSONField(null=True)
     age_range = models.ManyToManyField(
         AgeRange,
