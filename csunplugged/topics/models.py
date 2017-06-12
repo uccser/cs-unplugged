@@ -277,6 +277,7 @@ class Lesson(models.Model):
         ProgrammingChallenge,
         related_name="lessons"
     )
+    programming_challenges_description = models.TextField(null=True)
     learning_outcomes = models.ManyToManyField(
         LearningOutcome,
         related_name="lessons"

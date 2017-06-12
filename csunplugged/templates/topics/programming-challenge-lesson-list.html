@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+{% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block title %}
@@ -18,6 +19,10 @@
 {% endblock page_heading %}
 
 {% block content %}
+  {% if lesson.programming_challenges_description %}
+    {% render_html_field lesson.programming_challenges_description %}
+  {% endif %}
+
   {% if programming_challenges %}
     {% include "topics/programming-challenges-table.html" %}
   {% else %}

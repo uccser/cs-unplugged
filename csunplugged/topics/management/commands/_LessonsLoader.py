@@ -94,6 +94,19 @@ class LessonsLoader(BaseLoader):
             if lesson_content.heading_tree:
                 heading_tree = convert_heading_tree_to_dict(lesson_content.heading_tree)
 
+            if "programming-challenges-description" in lesson_structure:
+                file_name = lesson_structure["programming-challenges-description"]
+                file_path = os.path.join(self.BASE_PATH, "lessons", file_name)
+                programming_description_content = self.convert_md_file(
+                    file_path,
+                    self.lessons_structure_file_path,
+                    heading_required=False,
+                    remove_title=False,
+                )
+                programming_description = programming_description_content.html_string
+            else:
+                programming_description = None
+
             classroom_resources = lesson_structure.get("classroom-resources", None)
             if isinstance(classroom_resources, list):
                 for classroom_resource in classroom_resources:
@@ -125,6 +138,7 @@ class LessonsLoader(BaseLoader):
                 content=lesson_content.html_string,
                 computational_thinking_links=ct_links,
                 heading_tree=heading_tree,
+                programming_challenges_description=programming_description,
                 classroom_resources=classroom_resources,
             )
             lesson.save()
