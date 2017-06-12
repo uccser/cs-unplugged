@@ -215,6 +215,10 @@ class ProgrammingChallengeView(generic.DetailView):
         # Call the base implementation first to get a context
         context = super(ProgrammingChallengeView, self).get_context_data(**kwargs)
         context["lessons"] = self.object.lessons.order_by("number")
+        for lesson in context["lessons"]:
+            challenge_numbers = ProgrammingChallengeNumber.objects.get(lesson=lesson, programming_challenge=self.object)
+            lesson.challenge_set_number = challenge_numbers.challenge_set_number
+            lesson.challenge_number = challenge_numbers.challenge_number
         context["topic"] = self.object.topic
         # Add all the connected learning outcomes
         context["learning_outcomes"] = self.object.learning_outcomes.all()

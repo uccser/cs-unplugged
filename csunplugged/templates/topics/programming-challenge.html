@@ -18,7 +18,6 @@
 
 {% block page_heading %}
   <h1>
-    {{ programming_challenge.challenge_set_number }}.{{ programming_challenge.challenge_number }}
     {{ programming_challenge.name }}
   </h1>
 
@@ -31,13 +30,13 @@
   <div class="col-12 col-md-6">
     {% if lessons %}
       <div class="alert alert-info" role="alert">
-        <p>This programming challenge is related to the following lessons:</p>
+        <p>This programming challenge is linked to the following lessons:</p>
 
         <ul class="mb-0">
           {% for lesson in lessons %}
             <li>
               <a href="{% url 'topics:lesson' topic.slug lesson.unit_plan.slug lesson.slug %}">
-                {{ lesson.name }}
+                Challenge {{ lesson.challenge_set_number }}.{{ lesson.challenge_number }} for {{ lesson.name }}
                 ({% for age_range in lesson.age_range.all %}{{ age_range.ages.lower }} to {{ age_range.ages.upper }}{% if not forloop.last %} and {% endif %}{% endfor %})
               </a>
             </li>
