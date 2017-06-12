@@ -39,13 +39,6 @@
     <p>No curriculum integrations for {{ topic }}.</p>
   {% endif %}
 
-  <h2 id="programming" class="heading-underline">Programming Challenges</h2>
-  {% if programming_challenges %}
-    {% include "topics/programming-challenges-table.html" %}
-  {% else %}
-    <p>No programming challenges for {{ topic }}.</p>
-  {% endif %}
-
   {% if topic.other_resources %}
     <h2 id="other-resources" class="heading-underline">Looking for more?</h2>
     <p>
@@ -70,9 +63,6 @@
       {% endfor %}
       <li class="nav-item">
         <a class="nav-link" href="#integrations">Curriculum integrations</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#programming">Programming challenges</a>
       </li>
       {% if topic.other_resources %}
         <li class="nav-item">

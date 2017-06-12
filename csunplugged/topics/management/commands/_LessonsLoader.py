@@ -9,6 +9,7 @@ from utils.errors.InvalidConfigValueError import InvalidConfigValueError
 
 from topics.models import (
     ProgrammingChallenge,
+    ProgrammingChallengeNumber,
     LearningOutcome,
     Resource,
     ResourceDescription,
@@ -147,19 +148,49 @@ class LessonsLoader(BaseLoader):
             if "programming-challenges" in lesson_structure:
                 programming_challenge_slugs = lesson_structure["programming-challenges"]
                 if programming_challenge_slugs is not None:
+                    # Check all slugs are valid
                     for programming_challenge_slug in programming_challenge_slugs:
                         try:
-                            programming_challenge = ProgrammingChallenge.objects.get(
+                            ProgrammingChallenge.objects.get(
                                 slug=programming_challenge_slug,
                                 topic=self.topic
                             )
-                            lesson.programming_challenges.add(programming_challenge)
+
                         except:
                             raise KeyNotFoundError(
                                 self.lessons_structure_file_path,
                                 programming_challenge_slug,
                                 "Programming Challenges"
                             )
+
+                    programming_challenges = ProgrammingChallenge.objects.filter(
+                        slug__in=programming_challenge_slugs,
+                        topic=self.topic
+                    ).order_by("challenge_set_number", "challenge_number")
+
+                    # Setup variables for counting
+                    display_set_number = 0
+                    last_set_number = -1
+                    display_number = 0
+                    last_number = -1
+
+                    for programming_challenge in programming_challenges:
+                        if programming_challenge.challenge_set_number > last_set_number:
+                            display_set_number += 1
+                            display_number = 0
+                            last_number = -1
+                        if programming_challenge.challenge_number > last_number:
+                            display_number += 1
+                        last_set_number = programming_challenge.challenge_set_number
+                        last_number = programming_challenge.challenge_number
+
+                        relationship = ProgrammingChallengeNumber(
+                            programming_challenge=programming_challenge,
+                            lesson=lesson,
+                            challenge_set_number=display_set_number,
+                            challenge_number=display_number,
+                        )
+                        relationship.save()
 
             # Add learning outcomes
             if "learning-outcomes" in lesson_structure:

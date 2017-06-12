@@ -275,6 +275,7 @@ class Lesson(models.Model):
     )
     programming_challenges = models.ManyToManyField(
         ProgrammingChallenge,
+        through="ProgrammingChallengeNumber",
         related_name="lessons"
     )
     programming_challenges_description = models.TextField(null=True)
@@ -308,6 +309,16 @@ class Lesson(models.Model):
             Name of lesson (str).
         """
         return self.name
+
+
+class ProgrammingChallengeNumber(models.Model):
+    """Model for relationship between programming challenge and lesson in database."""
+
+    #  Auto-incrementing 'id' field is automatically set by Django
+    programming_challenge = models.ForeignKey(ProgrammingChallenge, on_delete=models.CASCADE)
+    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
+    challenge_set_number = models.PositiveSmallIntegerField()
+    challenge_number = models.PositiveSmallIntegerField()
 
 
 class CurriculumIntegration(models.Model):
