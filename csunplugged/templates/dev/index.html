@@ -15,14 +15,13 @@
       {% for topic in topics %}
         <li>Topic: <a href="{% url 'topics:topic' topic.slug %}">{{ topic }}</a></li>
 
-        {% if topic.unit_plans.all %}
-          <ul>
-            {% for unit_plan in topic.unit_plans %}
+        <ul>
+          {% if topic.units %}
+            {% for unit_plan in topic.units %}
               <li>
                 Unit Plan: <a href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">{{ unit_plan.name }}</a>
-
-                {% if unit_plan.lessons.items %}
-                  {% with grouped_lessons=unit_plan.lessons %}
+                {% if unit_plan.lessons %}
+                  {% with grouped_lessons=unit_plan.grouped_lessons %}
                     {% include "topics/lessons-table.html" %}
                   {% endwith %}
                 {% endif %}
@@ -38,7 +37,7 @@
             </li>
           {% endif  %}
 
-          {% if topic.programming_challenges.all %}
+          {% if topic.programming_challenges %}
             <li>Programming challenges:
               {% with programming_challenges=topic.programming_challenges.all %}
                 {% include "topics/programming-challenges-table.html" %}

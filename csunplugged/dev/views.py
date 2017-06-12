@@ -31,18 +31,18 @@ class IndexView(generic.TemplateView):
 
         # Get topic, unit plan and lesson lists
         context["topics"] = Topic.objects.order_by("name")
-        context["unit_plans"] = []
 
         # Build dictionaries for each unit plan and lesson
         for topic in context["topics"]:
-            topic.unit_plans = UnitPlan.objects.filter(topic=topic)
-            for unit_plan in topic.unit_plans:
-                unit_plan.lessons = group_lessons_by_age(unit_plan.lessons)
+            unit_plans = []
+            for unit_plan in topic.unit_plans.all():
+                unit_plan.grouped_lessons = group_lessons_by_age(unit_plan.lessons.all())
+                unit_plans.append(unit_plan)
+            topic.units = unit_plans
             topic.integrations = CurriculumIntegration.objects.filter(topic=topic).order_by("number")
             topic.programming_challenges = ProgrammingChallenge.objects.filter(topic=topic).order_by(
                 "challenge_set_number", "challenge_number"
             )
-            context["unit_plans"] += topic.unit_plans
 
         # Get curriculum area list
         context["curriculum_areas"] = []
