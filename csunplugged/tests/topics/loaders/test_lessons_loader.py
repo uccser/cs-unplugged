@@ -217,6 +217,41 @@ class LessonsLoaderTest(BaseTestWithDB):
             lesson_loader.load,
         )
 
+    def test_lesson_loader_valid_computational_thinking_content(self):
+        config_file = os.path.join(self.loader_name, "ct-links.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+
+        topic = self.test_data.create_topic("1")
+        unit_plan = self.test_data.create_unit_plan(topic, "1")
+
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        lesson_loader.load()
+        self.assertEquals(
+            Lesson.objects.get(slug="ct-links").computational_thinking_links,
+            "<p>Example text for Computational Thinking links.</p>",
+        )
+
+    def test_lesson_loader_missing_computational_thinking_content(self):
+        config_file = os.path.join(self.loader_name, "basic-config.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+
+        topic = self.test_data.create_topic("1")
+        unit_plan = self.test_data.create_unit_plan(topic, "1")
+
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        lesson_loader.load()
+        self.assertIsNone(Lesson.objects.get(slug="lesson-1").computational_thinking_links)
+
     def test_lesson_loader_duration_set_correctly(self):
         config_file = os.path.join(self.loader_name, "duration.yaml")
         lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
