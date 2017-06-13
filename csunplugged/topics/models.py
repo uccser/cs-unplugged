@@ -264,13 +264,14 @@ class Lesson(models.Model):
     )
     slug = models.SlugField()
     name = models.CharField(max_length=100)
-    number = models.IntegerField()
+    sorting_number = models.IntegerField()
     duration = models.PositiveSmallIntegerField(null=True)
     content = models.TextField()
     computational_thinking_links = models.TextField(null=True)
     heading_tree = JSONField(null=True)
     age_range = models.ManyToManyField(
         AgeRange,
+        through="LessonNumber",
         related_name="lessons"
     )
     programming_challenges = models.ManyToManyField(
@@ -309,6 +310,15 @@ class Lesson(models.Model):
             Name of lesson (str).
         """
         return self.name
+
+
+class LessonNumber(models.Model):
+    """Model for relationship between age range and lesson in database."""
+
+    #  Auto-incrementing 'id' field is automatically set by Django
+    age_range = models.ForeignKey(AgeRange, on_delete=models.CASCADE)
+    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
+    number = models.PositiveSmallIntegerField()
 
 
 class ProgrammingChallengeNumber(models.Model):

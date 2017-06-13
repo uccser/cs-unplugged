@@ -134,7 +134,7 @@ class LessonsLoader(BaseLoader):
                 unit_plan=self.unit_plan,
                 slug=lesson_slug,
                 name=lesson_content.title,
-                number=lesson_number,
+                sorting_number=lesson_number,
                 duration=lesson_duration,
                 content=lesson_content.html_string,
                 computational_thinking_links=ct_links,

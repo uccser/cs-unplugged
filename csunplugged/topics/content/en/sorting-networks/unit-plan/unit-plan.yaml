@@ -1,5 +1,6 @@
 lessons: lessons/lessons.yaml
 
 age-groups:
-  - 8-10:
-    - reinforcing-numeracy-through-a-sorting-network
+  8-10:
+    reinforcing-numeracy-through-a-sorting-network:
+      number: 1

@@ -8,7 +8,8 @@ from utils.errors.KeyNotFoundError import KeyNotFoundError
 
 from topics.models import (
     Lesson,
-    AgeRange
+    LessonNumber,
+    AgeRange,
 )
 
 
@@ -101,17 +102,15 @@ class UnitPlanLoader(BaseLoader):
                 "Unit Plan"
             )
 
-        for age_group in age_groups:
+        for (age_range_numbers, age_group_data) in age_groups.items():
 
-            for age_range in age_group:  # single entry in the dictionary, so first (and only) key is age group
-                min_age, max_age = age_range.split('-')
-
-            new_age_range = AgeRange(
+            min_age, max_age = age_range_numbers.split('-')
+            age_range = AgeRange(
                 ages=(int(min_age), int(max_age))
             )
-            new_age_range.save()
+            age_range.save()
 
-            for lesson_slug in age_group[age_range]:
+            for (lesson_slug, lesson_data) in age_group_data.items():
                 try:
                     lesson = Lesson.objects.get(
                         slug=lesson_slug
@@ -122,4 +121,18 @@ class UnitPlanLoader(BaseLoader):
                         lesson_slug,
                         "Lesson"
                     )
-                lesson.age_range.add(new_age_range)
+
+                lesson_number = lesson_data.get("number", None)
+                if lesson_number is None:
+                    raise MissingRequiredFieldError(
+                        self.structure_file_path,
+                        ["number"],
+                        "Unit Plan"
+                    )
+
+                relationship = LessonNumber(
+                    age_range=age_range,
+                    lesson=lesson,
+                    number=lesson_number,
+                )
+                relationship.save()
