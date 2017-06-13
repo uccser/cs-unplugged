@@ -129,7 +129,13 @@ class LessonView(generic.DetailView):
         context["lesson_ages"] = []
         for age_range in self.object.age_range.order_by("ages"):
             number = LessonNumber.objects.get(lesson=self.object, age_range=age_range).number
-            context["lesson_ages"].append({"lower": age_range.ages.lower, "upper": age_range.ages.upper, "number": number})
+            context["lesson_ages"].append(
+                {
+                    "lower": age_range.ages.lower,
+                    "upper": age_range.ages.upper,
+                    "number": number,
+                }
+            )
         context["topic"] = self.object.topic
         context["unit_plan"] = self.object.unit_plan
         # Add all the connected programming challenges
@@ -186,7 +192,10 @@ class ProgrammingChallengeList(generic.ListView):
         context["unit_plan"] = lesson.unit_plan
         context["topic"] = lesson.topic
         for programming_challenge in context["programming_challenges"]:
-            challenge_numbers = ProgrammingChallengeNumber.objects.get(lesson=lesson, programming_challenge=programming_challenge)
+            challenge_numbers = ProgrammingChallengeNumber.objects.get(
+                lesson=lesson,
+                programming_challenge=programming_challenge
+            )
             programming_challenge.challenge_set_number = challenge_numbers.challenge_set_number
             programming_challenge.challenge_number = challenge_numbers.challenge_number
         return context
@@ -221,7 +230,10 @@ class ProgrammingChallengeView(generic.DetailView):
         context = super(ProgrammingChallengeView, self).get_context_data(**kwargs)
         context["lessons"] = self.object.lessons.all()
         for lesson in context["lessons"]:
-            challenge_numbers = ProgrammingChallengeNumber.objects.get(lesson=lesson, programming_challenge=self.object)
+            challenge_numbers = ProgrammingChallengeNumber.objects.get(
+                lesson=lesson,
+                programming_challenge=self.object
+            )
             lesson.challenge_set_number = challenge_numbers.challenge_set_number
             lesson.challenge_number = challenge_numbers.challenge_number
         context["topic"] = self.object.topic

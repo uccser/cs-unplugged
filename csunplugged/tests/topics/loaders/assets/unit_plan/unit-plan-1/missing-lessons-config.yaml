@@ -1,3 +1,4 @@
 age-groups:
-  - 8-10:
-    - lesson-1
+  8-10:
+    lesson-1:
+      number: 1

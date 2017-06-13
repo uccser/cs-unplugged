@@ -6,6 +6,7 @@ from topics.models import (
     LessonNumber,
 )
 
+
 def group_lessons_by_age(lessons):
     """Return ordered groups of lessons.
 

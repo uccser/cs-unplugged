@@ -6,7 +6,6 @@ from topics.models import (
     Topic,
     CurriculumArea,
     CurriculumIntegration,
-    UnitPlan,
     ProgrammingChallenge,
     ProgrammingChallengeDifficulty,
     ProgrammingChallengeLanguage,

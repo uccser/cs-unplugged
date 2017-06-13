@@ -330,6 +330,7 @@ class LessonNumber(models.Model):
 
         ordering = ["number"]
 
+
 class ProgrammingChallengeNumber(models.Model):
     """Model for relationship between programming challenge and lesson in database."""
 
