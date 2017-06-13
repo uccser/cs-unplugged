@@ -10,6 +10,7 @@ from .models import (
     CurriculumIntegration,
     UnitPlan,
     Lesson,
+    LessonNumber,
     ProgrammingChallenge,
     ProgrammingChallengeNumber,
     ProgrammingChallengeImplementation,
@@ -125,6 +126,10 @@ class LessonView(generic.DetailView):
         # Call the base implementation first to get a context
         context = super(LessonView, self).get_context_data(**kwargs)
         # Loading objects under consistent context names for breadcrumbs
+        context["lesson_ages"] = []
+        for age_range in self.object.age_range.order_by("ages"):
+            number = LessonNumber.objects.get(lesson=self.object, age_range=age_range).number
+            context["lesson_ages"].append({"lower": age_range.ages.lower, "upper": age_range.ages.upper, "number": number})
         context["topic"] = self.object.topic
         context["unit_plan"] = self.object.unit_plan
         # Add all the connected programming challenges
@@ -214,7 +219,7 @@ class ProgrammingChallengeView(generic.DetailView):
         """
         # Call the base implementation first to get a context
         context = super(ProgrammingChallengeView, self).get_context_data(**kwargs)
-        context["lessons"] = self.object.lessons.order_by("number")
+        context["lessons"] = self.object.lessons.all()
         for lesson in context["lessons"]:
             challenge_numbers = ProgrammingChallengeNumber.objects.get(lesson=lesson, programming_challenge=self.object)
             lesson.challenge_set_number = challenge_numbers.challenge_set_number

@@ -5,7 +5,7 @@
 {% load django_bootstrap_breadcrumbs %}
 
 {% block title %}
-  {{ lesson.number }}. {{ lesson.name }}
+  {{ lesson.name }}
 {% endblock title %}
 
 {% block breadcrumbs %}
@@ -17,8 +17,13 @@
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-  <h1 id="{{ lesson.slug }}" class="heading-underline"><span class="subtitle">{{ lesson.number }}.</span> {{ lesson.name }}</h1>
-  <p><strong>Duration: </strong>{{ lesson.duration }} minutes</p>
+  <h1 id="{{ lesson.slug }}" class="heading-underline">{{ lesson.name }}</h1>
+  <ul>
+    <li><strong>Duration:</strong> {{ lesson.duration }} minutes</li>
+    {% for lesson_age in lesson_ages %}
+      <li><strong>Ages {{ lesson_age.lower }} to {{ lesson_age.upper }}:</strong> Lesson {{ lesson_age.number }}</li>
+    {% endfor %}
+  </ul>
 {% endblock page_heading %}
 
 {% block left_column_content %}
