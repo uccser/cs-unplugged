@@ -1,6 +1,6 @@
 # Parity magic
 
-{panel type="general" title="See teaching this in action!"}
+{panel type="teaching" title="See teaching this in action!"}
 
 A demonstration of lesson one ("Parity magic") being taught is available here:
 

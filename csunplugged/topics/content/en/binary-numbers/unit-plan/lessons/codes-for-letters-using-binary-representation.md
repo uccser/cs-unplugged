@@ -45,7 +45,7 @@ Work out and write down the binary numbers using 5 bits from 0 to 26 on the work
 
 ## Teacher Answer
 
-{panel type="general" title="Teaching Observations"}
+{panel type="teaching" title="Teaching observations"}
 
 - Check their binary code for three is 00011 as students commonly write 00100 as they anticipate the pattern without necessarily checking it is correct.
 - Check they are writing the binary code in the correct order with the least significant value on the right - for example some will start with one as 10000 instead of 00001.
@@ -76,7 +76,7 @@ How many bits are needed to give a unique number to every character on the keybo
 
 Now have students consider larger alphabets. How many bits are needed if you want a number for each of 50,000 Chinese characters? (16 bits allows for up to 65,536 different representations).
 
-{panel type="general" title="Teaching Observations"}
+{panel type="teaching" title="Teaching observations"}
 
 It may be a surprise that only 16 bits is needed for tens of thousands of characters. This is because each bit doubles the range, so you don't need to add many bits to cover a large alphabet. This is an important property of binary representation that students should become familiar with.
 
@@ -92,7 +92,7 @@ In fact, around 6 or 7 folds is already impossibly thick, even with a large shee
 
 {panel end}
 
-{panel type="general" title="Teaching Observations"}
+{panel type="teaching" title="Teaching observations"}
 
 Using a 5-bit code for an alphabet goes back to at least 1870 (the "Baudot" code); many different number to letter correspondences have been used over the years to represent alphabets, but one that was common for some time is "ASCII", which used 7 bits and therefore could represent over 100 different characters.
 These days "Unicode" is common, which can represent over 100,000 different characters.

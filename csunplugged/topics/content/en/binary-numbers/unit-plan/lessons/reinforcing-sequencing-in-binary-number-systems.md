@@ -65,7 +65,7 @@ Tips to before sending off for the 60 minute challenge:
 2. Make sure that if you are using colours or other representations there is a strong contrast.
 
 
-{panel type="general" title="Teaching Observations"}
+{panel type="teaching" title="Teaching observations"}
 
 1. The number pattern is from highest to lowest, left to right (it's just a convention, but we use the same one in decimal, with the most significant digits on the left):
   16, 8, 4, 2, 1

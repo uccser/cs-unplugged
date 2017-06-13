@@ -61,7 +61,7 @@ There is also an online interactive version of the binary cards [here](http://ww
 
 3. Ask the class what the number of dots on the next card will be. Get them to explain why they think that.
 
-   {panel type="general" title="Teaching Observations"}
+   {panel type="teaching" title="Teaching observations"}
 
    Students will usually suggest it should be three. If they suggest 4, they have probably done the activity before (or have seen the cards you are holding!)
    If they suggest the wrong number, don't correct them, but continue without comment, so that they can construct the rule for themselves.
@@ -72,7 +72,7 @@ There is also an online interactive version of the binary cards [here](http://ww
 
   {image file-path="img/topics/col_binary_3cards.png"}
 
-  {panel type="general" title="Teaching Observations"}
+  {panel type="teaching" title="Teaching observations"}
 
   Usually some students will complain that you've missed out the three, but simply indicate that you haven't made a mistake.
   This gives them the opportunity to try to construct the pattern for themselves.
@@ -81,7 +81,7 @@ There is also an online interactive version of the binary cards [here](http://ww
 
 5. Ask what the next card is, and why.
 
-  {panel type="general" title="Teaching Observations"}
+  {panel type="teaching" title="Teaching observations"}
 
   At this point it is common for students to guess that it is 6 (since it follow the numbers 2 and 4).
   However, if you let them think about it a little more, some will usually come up with 8, and those students should be able to convince the others that they are correct (there are several ways a student could explain this e.g. that each card is double the previous one, or that if you take two of a card, you get the next one)
@@ -98,7 +98,7 @@ There is also an online interactive version of the binary cards [here](http://ww
 
 8. Continue with 64 and 128 dots.
 
-  {panel type="teacher-observation" title="Teaching Observations"}
+  {panel type="teacher-observation" title="Teaching observations"}
 
   At 128 dots there would be 8 cards. This is 8 bits, which is commonly referred to as a byte.
   It may be distracting to bring this up at this point, but some students may already be familiar with the idea that 8 bits is a byte, and make that observation.
@@ -214,7 +214,7 @@ There is also an online interactive version of the binary cards [here](http://ww
 
     i. Repeat until a pattern is recognised that each time we add another bit we can now represent twice as many numbers.
 
-{panel type="teaching-observations" title="Teaching Observations"}
+{panel type="teaching-observations" title="Teaching observations"}
 
 A concept that students may struggle with here is that the number of values is one more than the maximum value (e.g. from 0 to 7, there are 8 different numbers).
 The same observation occurs with the number of digits in conventional decimal numbers; the largest digit is 9, but there are 10 possible digits (counting 0).
