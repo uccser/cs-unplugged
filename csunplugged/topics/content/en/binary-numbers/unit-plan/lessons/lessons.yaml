@@ -26,8 +26,14 @@ how-binary-digits-work:
     - binary-notes-representing-any-number
     - binary-cards-as-dots
   learning-outcomes:
-    - binary-correct-representation
-    - no-physical-zeros-ones
+    - binary-convert-decimal
+    - binary-justify-zeros-and-ones
+    - binary-argue-zeros-and-ones-stored
+    - binary-explain-different-states
+    - binary-explain-logic-one-bit
+    - numeracy-adding-given-number
+    - numeracy-identify-even-odd
+    - numeracy-explain-squaring
   generated-resources:
     binary-cards:
       description: One set for class demonstration.
@@ -70,3 +76,5 @@ codes-for-letters-using-binary-representation:
       description: One set for class demonstration.
     binary-cards-small:
       description: One set of cards per student.
+    binary-to-alphabet:
+      description: Blank sheets for students, plus teacher answer sheet.
