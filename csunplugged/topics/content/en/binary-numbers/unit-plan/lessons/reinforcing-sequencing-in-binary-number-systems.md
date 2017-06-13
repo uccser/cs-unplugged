@@ -1,36 +1,6 @@
 # Reinforcing Sequencing In Binary Number Systems
 
-##  Learning Outcomes
-
-#### Computational Thinking:
-
-- Explain how a binary digit is represented using two contrasting values.
-- Demonstrate how to represent any number between 0 and 63 using just two digits. (For younger students, this might be limited to 0 to 31).
-- Perform a demonstration of how the binary number system works by converting any decimal number into a binary number.
-- Justify why there aren’t actual 0’s and 1’s zooming around inside a computer.
-- Argue that 0’s and 1’s are still a correct way to represent what is stored in the computer.
-- Generalise by recognising that we can use any two different states or things to represent binary; it doesn’t have to just be 0’s and 1’s
-- Explain the logic of why the right-hand bit needs to represent a one.
-- Understand that we only need two different digits to represent any number and using more isn’t needed.
-- Explain why a particular card (bit) must be visible or not for a given number
-- Use logical reasoning to predict what value the next card (bit) in the left-to-right sequence will have (e.g. the last one is 32, what is the next one? 64. The next one? 128. Next? 256…)
-- Explain why we only need one more bit to represent twice as many numbers.
-
-#### Curriculum Integration:
-
-- Mathematics: adding numbers up to 63 (or 31), comparing numbers, odd/even numbers, sequence, doubling, digits, place value
-- English: Giving instructions, explaining an idea through a presentation
-- Media: video planning, production and editing
-
-
-## CSUnplugged Provided Resources
-
-- [1 set of large binary cards from 1 to 128 dots (8 cards)](https://drive.google.com/file/d/0B-SN1PgPBbCYV0ZQc3VmaEs4ZXM/view?usp=sharing)
-- [1 set per pair of students of student binary cards from 1 to 32 dots (6 cards)](https://drive.google.com/file/d/0B-SN1PgPBbCYQW1xcmVkekg2S1k/view?usp=sharing)
-
-There is also an online interactive version of the binary cards [here](http://www.csfieldguide.org.nz/en/interactives/binary-cards/index.html?digits=8), from the [Computer Science Field Guide](http://www.csfieldguide.org.nz/), but it is preferable to work with physical cards.
-
-## Classroom Resources
+{panel type="general" title="Notes on resources"}
 
 The following items are highly motivating, however you can use any resources you have available in your classroom that have two different states or sizes.
 
@@ -38,6 +8,10 @@ The following items are highly motivating, however you can use any resources you
 - Musical instruments
 - Mathematics equipment such as mini teddy bears
 - Glue a stick onto paper plates and have one side on and the other side off
+
+There is also an online interactive version of the binary cards [here](http://www.csfieldguide.org.nz/en/interactives/binary-cards/index.html?digits=8), from the [Computer Science Field Guide](http://www.csfieldguide.org.nz/), but it is preferable to work with physical cards.
+
+{panel end}
 
 ## Key Question
 
@@ -63,7 +37,6 @@ Tips to before sending off for the 60 minute challenge:
 1. The order of place values in a binary number is the same as the conventional (decimal) place value system, so the highest is on the left, smallest value on the right.
 
 2. Make sure that if you are using colours or other representations there is a strong contrast.
-
 
 {panel type="teaching" title="Teaching observations"}
 
