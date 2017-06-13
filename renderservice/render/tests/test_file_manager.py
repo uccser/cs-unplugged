@@ -33,21 +33,21 @@ class FileManagerTest(BaseTest):
         file_manager = FileManager(self.folderpath_one)
         data = file_manager.load(self.testfile_name)
         string = data.read().decode("ascii")
-        self.assertEquals(string, self.testfile_contents)
+        self.assertEqual(string, self.testfile_contents)
 
     def test_load_file_multiple_directories(self):
         file_manager = FileManager(self.folderpath_two, self.folderpath_one)
         data = file_manager.load(self.testfile_name)
         string = data.read().decode("ascii")
-        self.assertEquals(string, self.testfile_contents)
+        self.assertEqual(string, self.testfile_contents)
 
     def test_save_file(self):
         file_manager = FileManager(self.folderpath_one, self.folderpath_two, save_directory=self.folderpath_two)
 
         filename = "hello.world"
         file_content = "Hello world!"
-        file_manager.save(filename, file_content)
+        file_manager.save(filename, file_content.encode("ascii"))
 
         data = file_manager.load(filename)
         string = data.read().decode("ascii")
-        self.assertEquals(string, file_content)
+        self.assertEqual(string, file_content)

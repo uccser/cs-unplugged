@@ -26,7 +26,7 @@ def get_active_daemon_details(daemon):
     """Get the pids of all render daemons.
 
     Returns:
-        An array of file names correlating to pidfiles.
+        An array of namedtuples containing daemon number to pid.
     """
     if not os.path.exists(PID_DIRECTORY):
         return []

@@ -26,6 +26,7 @@ ENV STATIC_DIRECTORY ${STATIC_DIRECTORY}
 RUN apt-get update && apt-get install -y \
       lsb-release \
       build-essential \
+      openssl \
       libffi-dev \
       libpq-dev \
       python-psycopg2 \

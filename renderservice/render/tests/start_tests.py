@@ -17,8 +17,9 @@ from render.tests.test_treasure_hunt import TreasureHuntResourceTest  # noqa: F4
 # General Tests
 #
 
-from render.tests.test_resource_generator import ResourceGeneratorTest  # noqa: F401
 from render.tests.test_file_manager import FileManagerTest  # noqa: F401
+from render.tests.test_resource_generator import ResourceGeneratorTest  # noqa: F401
+from render.tests.test_queue_handler import QueueHandlerTest  # noqa: F401
 
 #
 # Webservice Tests

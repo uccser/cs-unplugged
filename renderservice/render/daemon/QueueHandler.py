@@ -1,6 +1,7 @@
 """Handles transactions with the taskqueue api."""
 import json
 import logging
+import httplib2shim
 from apiclient.discovery import build, HttpError
 from base64 import b64encode, b64decode
 
@@ -55,20 +56,25 @@ class QueueHandler(object):
         self.project_name = project_name
         self.taskqueue_name = taskqueue_name
 
+        http = httplib2shim.Http()
         if discovery_url is not None:
-            self.task_api = build("taskqueue", "v1beta2", discoveryServiceUrl=discovery_url)
+            self.task_api = build("taskqueue", "v1beta2", http=http, discoveryServiceUrl=discovery_url)
         else:
-            self.task_api = build("taskqueue", "v1beta2")
+            self.task_api = build("taskqueue", "v1beta2", http=http)
 
     def __len__(self):
         """Count the number of tasks within the queue."""
-        get_request = self.task_api.taskqueues().get(
-            project=self._get_project_name(True),
-            taskqueue=self.taskqueue_name,
-            getStats=True
-        )
-        result = get_request.execute()
-        return result["stats"]["totalTasks"]
+        try:
+            get_request = self.task_api.taskqueues().get(
+                project=self._get_project_name(False),
+                taskqueue=self.taskqueue_name,
+                getStats=True
+            )
+            result = get_request.execute()
+            return result["stats"]["totalTasks"]
+        except HttpError as http_error:
+            logger.error("Error during get request: {}".format(http_error))
+            return 0
 
     def _get_project_name(self, is_write):
         """Get the project name based for write command.
@@ -82,6 +88,32 @@ class QueueHandler(object):
         if is_write:
             return "b~" + self.project_name
         return self.project_name
+
+    def list_tasks(self):
+        """List some tasks within the taskqueue.
+
+        Returns:
+            A list of Google Tasks as with the user defined
+            task (dictionary) under that 'payload' key.
+        """
+        try:
+            tasks = []
+            list_request = self.task_api.tasks().list(
+                project=self._get_project_name(False),
+                taskqueue=self.taskqueue_name
+            )
+            result = list_request.execute()
+            if result["kind"] == "taskqueue#tasks":
+                for task in result["items"]:
+                    task["payload"] = decode_dictionary(task["payloadBase64"])
+                    tasks.append(task)
+            elif result["kind"] == "taskqueues#task":
+                task["payload"] = decode_dictionary(result["payloadBase64"])
+                tasks.append(task)
+            return tasks
+        except HttpError as http_error:
+            logger.error("Error during lease request: {}".format(http_error))
+            return []
 
     def create_task(self, task_payload, tag=None):
         """Create a new task and places it on the taskqueue.
@@ -118,9 +150,9 @@ class QueueHandler(object):
         Args:
             tasks_to_fetch: The number of tasks to fetch.
             lease_secs: The number of seconds to lease for.
-            tag: A tag attached to
+            tag: the tag to restrict leasing too.
         Returns:
-            A Google Task as a dictionary with the user defined
+            A list of Google Tasks as with the user defined
             task (dictionary) under that 'payload' key.
         """
         try:
@@ -130,20 +162,21 @@ class QueueHandler(object):
                 taskqueue=self.taskqueue_name,
                 leaseSecs=lease_secs,
                 numTasks=tasks_to_fetch,
+                groupByTag=tag!=None,
                 tag=tag
             )
             result = lease_request.execute()
             if result["kind"] == "taskqueue#tasks":
-                for task in result['items']:
-                    task["payload"] = decode_dictionary(result["payloadBase64"])
+                for task in result["items"]:
+                    task["payload"] = decode_dictionary(task["payloadBase64"])
                     tasks.append(task)
-            elif result["kind"] == "taskqueue#task":
+            elif result["kind"] == "taskqueues#task":
                 task["payload"] = decode_dictionary(result["payloadBase64"])
                 tasks.append(task)
             return tasks
         except HttpError as http_error:
             logger.error("Error during lease request: {}".format(http_error))
-            return None
+            return []
 
     def update_task(self, task_id, new_lease_secs):
         """Update a task lease from the taskqueue.
@@ -184,7 +217,7 @@ class QueueHandler(object):
         try:
             delete_request = self.task_api.tasks().delete(
                 project=self._get_project_name(True),
-                taskqueue=self.taskqueue,
+                taskqueue=self.taskqueue_name,
                 task=task_id
             )
             delete_request.execute()

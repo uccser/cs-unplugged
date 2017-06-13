@@ -24,6 +24,7 @@ ENV STATIC_DIRECTORY ${STATIC_DIRECTORY}
 # Install packages (including Weasyprint dependencies), running of Python 3.4.2
 RUN apt-get update && apt-get install -y \
       build-essential \
+      openssl \
       libffi-dev \
       libpq-dev \
       python-psycopg2 \

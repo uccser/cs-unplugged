@@ -354,9 +354,6 @@ def taskqueue_api(project=None, taskqueue=None):
     queue_key = ".".join([project, taskqueue])
 
     if request.method == "GET":
-        if not r.exists(queue_key):
-            return "", 400
-
         taskqueue_id = "projects/b~{}/taskqueues/{}".format(project, taskqueue)
         response = {
             "kind": "taskqueues#taskqueue",
@@ -426,7 +423,7 @@ def tasks_api(project=None, taskqueue=None):
         numTasks = 100
         while len(tasks) < numTasks:
             tasks_needed = numTasks - len(tasks)
-            end = start + tasks_needed
+            end = max(start, start + tasks_needed - 1)
             keys = r.zrange(name=queue_key, start=start, end=end)
             if len(keys) == 0:
                 break
@@ -443,7 +440,7 @@ def tasks_api(project=None, taskqueue=None):
             start = end + 1
 
         return json.dumps({
-            "kind": "taskqueues#tasks",
+            "kind": "taskqueue#tasks",
             "items": tasks
         })
 
@@ -514,13 +511,25 @@ def lease_api(project=None, taskqueue=None):
         if not groupByTag and tag != "":
             return "In query tag specified without groupByTag.", 400
 
+        # load tag of the oldest task
+        if groupByTag and "tag" not in request.args.keys():
+            keys = r.zrange(name=queue_key, start=0, end=0)
+            if len(keys) == 1:
+                key = keys[0]
+                task_string = r.get(name=key)
+                if task_string is not None:
+                    task_string = task_string.decode()
+                    task_json = json.loads(task_string)
+                    task = Task.from_json(task_json)
+                    tag = task.tag
+
         start = 0
         tasks = []
         now_milliseconds = now()
         numTasks = min(int(numTasks), 1000)
         while len(tasks) < numTasks:
             tasks_needed = numTasks - len(tasks)
-            end = start + tasks_needed
+            end = max(start, start + tasks_needed - 1)
             keys = r.zrange(name=queue_key, start=start, end=end)
             if len(keys) == 0:
                 break
@@ -551,7 +560,7 @@ def lease_api(project=None, taskqueue=None):
             start = end + 1
 
         return json.dumps({
-            "kind": "taskqueues#tasks",
+            "kind": "taskqueue#tasks",
             "items": tasks
         })
 
@@ -622,6 +631,13 @@ def task_api(project=None, taskqueue=None, task_id=None):
     # Update the duration of a task lease.
     #     Required query parameters: newLeaseSeconds
     elif request.method == "POST":
+        newLeaseSeconds = request.args.get("newLeaseSeconds", None)
+        if newLeaseSeconds is None:
+            return "newLeaseSeconds is required.", 400
+        if not newLeaseSeconds.isdecimal():
+            return "newLeaseSeconds must be an integer.", 400
+        newLeaseSeconds = int(newLeaseSeconds)
+
         task_string = r.get(name=task_id)
         if task_string is None:
             return "Task name is invalid.", 400
@@ -639,7 +655,7 @@ def task_api(project=None, taskqueue=None, task_id=None):
         if input_task.id != task.id:
             return "Task IDs must match.", 400
 
-        newLeaseTimestamp = now() + request.args.get("newLeaseSeconds") * 10**6
+        newLeaseTimestamp = now() + newLeaseSeconds * 10**6
         task.leaseTimestamp = newLeaseTimestamp
         task_string = json.dumps(task.to_json())
 
@@ -649,6 +665,13 @@ def task_api(project=None, taskqueue=None, task_id=None):
     # Update tasks that are leased out of a TaskQueue.
     #     Required query parameters: newLeaseSeconds
     elif request.method == "PATCH":
+        newLeaseSeconds = request.args.get("newLeaseSeconds", None)
+        if newLeaseSeconds is None:
+            return "newLeaseSeconds is required.", 400
+        if not newLeaseSeconds.isdecimal():
+            return "newLeaseSeconds must be an integer.", 400
+        newLeaseSeconds = int(newLeaseSeconds)
+
         task_string = r.get(name=task_id)
         if task_string is None:
             return "Task name is invalid.", 400
@@ -664,7 +687,7 @@ def task_api(project=None, taskqueue=None, task_id=None):
         if input_json["queueName"] != taskqueue:
             return "Cannot change task in a different queue.", 400
 
-        newLeaseTimestamp = now() + request.args.get("newLeaseSeconds") * 10**6
+        newLeaseTimestamp = now() + newLeaseSeconds * 10**6
         task.leaseTimestamp = newLeaseTimestamp
         task_string = json.dumps(task.to_json())
 
