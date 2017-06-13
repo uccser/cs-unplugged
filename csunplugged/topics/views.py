@@ -65,7 +65,6 @@ class TopicView(generic.DetailView):
             for lesson_resource in lesson_resources:
                 resources.add(lesson_resource)
         context["resources"] = resources
-        print(resources)
         return context
 
 
