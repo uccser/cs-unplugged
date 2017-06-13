@@ -5,7 +5,7 @@ parallel processor (normally this processor would be implemented in hardware,
 but our chalk network is still actually one!
 It’s powered by people instead of electricity).
 
-**Examples of what you could for:**
+#### Examples of what you could look for:
 
 -   Do students understand how each node functions (taking in two values and
     swapping them if they are in the wrong order)?
@@ -25,7 +25,7 @@ software.
 It represents the core functionality of a Sorting Network, whilst hiding all
 the nitty gritty details of how the hardware and circuitry works.
 
-**Examples of what you could for:**
+#### Examples of what you could look for:
 
 -   Can students make the connection between the lines and nodes on this graph
     and the way computers can process information by making comparisons?
@@ -41,7 +41,7 @@ operation: comparing two values.
 This operation alone is very simplistic, but when it is performed many many
 times it can be used to build up a solution to a much larger task.
 
-**Examples of what you could for:**
+#### Examples of what you could look for:
 
 -   Can students see how to design a Sorting Network to sort just 2 values?
     (It would just be a single comparator node).
@@ -65,7 +65,7 @@ Although 12 comparisons need to be made when going through the network, the
 network can be completed in the time it takes to an individual node to make 5
 comparisons.
 
-**Examples of what you could for:**
+#### Examples of what you could look for:
 
 -   Can students identify the longest path that any number would have to go
     through to get to the end?
@@ -82,7 +82,7 @@ every starting point the path that always takes the left branch will lead to
 that node, the smallest value will therefore always end up in the left-most
 position at the end.
 
-**Examples of what you could for:**
+#### Examples of what you could look for:
 
 -   Can students explain where the smallest value will end up regardless of
     what the other values are?

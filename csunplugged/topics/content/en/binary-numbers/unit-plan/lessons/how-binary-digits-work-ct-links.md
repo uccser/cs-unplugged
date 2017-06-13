@@ -15,7 +15,7 @@ Here’s an algorithm for working out which dot cards should be showing, written
 
 Note that this algorithm (working from right to left) works very well with the cards, but if you look up computer programs for doing this, you may encounter a different one that works from right to left. It's usual to have multiple algorithms that achieve the same thing.
 
-#### Examples of what you could for:
+#### Examples of what you could look for:
 
 Which students are methodical when they convert between decimal and binary?
 Which ones start with the leftmost card and move one card at a time to the right, rather than choosing cards at random and flipping them on and off until they get the right number?
@@ -40,7 +40,7 @@ When we represent other forms of data (such as letters, images, and sound) we al
 All forms of data end up being represented as numbers (which in turn are really just combinations of bits) - for text we have a number for each letter, for images we use a number for each colour, and so on. We are using multiple layers of abstraction!
 For example, a familiar form of abstraction is that the month "October" could be represented by the number ten, which in turn is represented by the bits 01010, and if these are stored as voltages in computer memory, it is ultimately "low, high, low, high, low" for the voltages.
 
-#### Examples of what you could for:
+#### Examples of what you could look for:
 
 Who are the students that demonstrate converting and representing binary numbers using things other than “1’s and 0’s”, “black and white”, and “off and on” (for example using :) and :(, or using people standing up or sitting down).
 If you are able to interchange terms like "black" and "white" with 0 and 1 without students being concerned about the difference, they are exercising abstraction.
@@ -51,7 +51,7 @@ If you are able to interchange terms like "black" and "white" with 0 and 1 witho
 
 An example of decomposition is breaking the conversion of the number to binary into one bit at a time. The questions "Should this be 1 or 0" for each of the dot cards is decomposing the problem to a series of questions.
 
-#### Examples of what you could for:
+#### Examples of what you could look for:
 
 Which students recognise that it is important to start with the leftmost card and only consider one bit at a time? Which students focus on each individual bit at a time, rather than being overwhelmed by trying to work them all out in one go?
 
@@ -91,7 +91,7 @@ Explain one or more of the following patterns:
 - When you are counting upwards: the first card (1 dot) turns over every time, the second card (2 dots) turns every two times, the third (4 dots), every four times, and the fourth (8 dots), every eight times...
 - That when all the cards you have are visible it will add up to the next binary card number minus 1.
 
-#### Examples of what you could for:
+#### Examples of what you could look for:
 
 Which students recognised quickly that each card was doubling the number of dots? Can students see the similarities between this and multiplying place values by 10 when they are using the decimal system?
 
@@ -109,7 +109,7 @@ It doesn’t, but you can understand how to do that if you understand the logic 
 A good example of logical thinking in binary numbers is the reasoning for why each bit "has to" have a particular value (e.g. it has to be 1, or it has to be 0) to represent a given number.
 This in turn leads to understanding that there is only one representation for each number.
 
-#### Examples of what you could for:
+#### Examples of what you could look for:
 
 Do students explicitly explain that the right-most bit needs to be a one because it is the only odd number and therefore is needed so that we are able to make any, and all, odd numbers? Without it we could only make even numbers.
 
@@ -121,7 +121,7 @@ Are students able to explain that each card "has to" be up the way it is for a g
 
 An example of evaluation is working out how many different values can be represented by a given number of bits (e.g. 5 bits can represent 32 different values), and vice versa (to represent 1000 different values, you need at least 10 bits).
 
-#### Examples of what you could for:
+#### Examples of what you could look for:
 
 Can a student work out the range possible with 4 bits? (16)
 

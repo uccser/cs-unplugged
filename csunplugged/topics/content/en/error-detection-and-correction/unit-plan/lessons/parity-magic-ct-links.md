@@ -6,7 +6,7 @@ with each column, is an example of an algorithm.
 The full error detection algorithm includes what to to do when the error is
 found as well.
 
-#### Examples of what you could for:
+#### Examples of what you could look for:
 
 Can students reliably find the flipped card in a grid?
 Can they articulate the algorithm to another student to help them complete the
@@ -24,7 +24,7 @@ This means our grid is an abstraction because it is a model that could be used
 to represent any piece of data that can be stored on a digital device, for
 example a sound file, a video, or even a piece of code!
 
-#### Examples of what you could for:
+#### Examples of what you could look for:
 
 Are students able to explain that each card is a bit and that the cards can
 represent data?
@@ -50,7 +50,7 @@ These processes are much simpler to solve that the big problem “Find the
 error”, but if you work through them all then you will have completely solved
 that big problem!
 
-#### Examples of what you could for:
+#### Examples of what you could look for:
 
 Are students able to break the task down into steps and describe these steps,
 without having to have the algorithm described to them first?
@@ -66,7 +66,7 @@ possible given enough time (and cards!).
 They can generalise the problem “find the error in a **6 x 6 grid**” to:
 “find the error in **a grid**”.
 
-#### Examples of what you could for:
+#### Examples of what you could look for:
 
 Can students find the flipped card on larger grids?
 
@@ -87,7 +87,7 @@ sometimes we need to know.
 Computer Scientists evaluate algorithms like these and improve them when they
 find problems with them.
 
-#### Examples of what you could for:
+#### Examples of what you could look for:
 
 Ask students “What kind of errors can be detected and corrected with the
 parity cards?
@@ -107,7 +107,7 @@ what the card is in what the other cards in the row/column are.
 Also, the idea that the corner card is correct for both the new row and column
 is an advanced concept, but a pattern that some students might recognise.
 
-#### Examples of what you could for:
+#### Examples of what you could look for:
 
 Can students explain why a single card flip always changes the number of black
 cards to an odd number?
