@@ -75,7 +75,11 @@ class LessonsLoader(BaseLoader):
 
             if "computational-thinking-links" in lesson_structure:
                 file_name = lesson_structure["computational-thinking-links"]
-                file_path = os.path.join(self.BASE_PATH, "lessons", file_name)
+                file_path = os.path.join(
+                    self.BASE_PATH,
+                    "lessons",
+                    file_name
+                )
                 ct_links_content = self.convert_md_file(
                     file_path,
                     self.lessons_structure_file_path,
@@ -97,7 +101,11 @@ class LessonsLoader(BaseLoader):
 
             if "programming-challenges-description" in lesson_structure:
                 file_name = lesson_structure["programming-challenges-description"]
-                file_path = os.path.join(self.BASE_PATH, "lessons", file_name)
+                file_path = os.path.join(
+                    self.BASE_PATH,
+                    "lessons",
+                    file_name
+                )
                 programming_description_content = self.convert_md_file(
                     file_path,
                     self.lessons_structure_file_path,
@@ -163,17 +171,24 @@ class LessonsLoader(BaseLoader):
                                 "Programming Challenges"
                             )
 
+                    # Store number of challenge in relationship with lesson.
+                    # If three linked challenges have numbers 1.1, 4.2, and 4.5
+                    # They will be stored as 1.1, 2.1, and 2.2 respectively.
+
+                    # Order challenges for numbering.
                     programming_challenges = ProgrammingChallenge.objects.filter(
                         slug__in=programming_challenge_slugs,
                         topic=self.topic
                     ).order_by("challenge_set_number", "challenge_number")
 
-                    # Setup variables for counting
+                    # Setup variables for numbering.
                     display_set_number = 0
                     last_set_number = -1
                     display_number = 0
                     last_number = -1
 
+                    # For each challenge, increment number variables if original
+                    # numbers are different.
                     for programming_challenge in programming_challenges:
                         if programming_challenge.challenge_set_number > last_set_number:
                             display_set_number += 1
@@ -184,6 +199,8 @@ class LessonsLoader(BaseLoader):
                         last_set_number = programming_challenge.challenge_set_number
                         last_number = programming_challenge.challenge_number
 
+                        # Create and save relationship between lesson and
+                        # challenge that contains challenge number.
                         relationship = ProgrammingChallengeNumber(
                             programming_challenge=programming_challenge,
                             lesson=lesson,
