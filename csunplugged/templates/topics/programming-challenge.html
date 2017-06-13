@@ -93,7 +93,7 @@
           {% endif %}
 
           <p class="text-center">
-            <a href="{% url 'topics:programming_challenge_language_solution' topic.slug programming_challenge.slug implementation.language.slug %}">
+            <a href="{% url 'topics:programming_challenge_solution' topic.slug programming_challenge.slug implementation.language.slug %}">
               Show {{ implementation.language.name }} solution
             </a>
           </p>

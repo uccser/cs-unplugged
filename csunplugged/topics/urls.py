@@ -76,6 +76,6 @@ urlpatterns = [
     url(
         r"^(?P<topic_slug>[-\w]+)/programming/(?P<programming_challenge_slug>[-\w]+)/(?P<programming_language_slug>[-\w]+)-solution$",  # noqa: E501
         views.ProgrammingChallengeLanguageSolutionView.as_view(),
-        name="programming_challenge_language_solution"
+        name="programming_challenge_solution"
     ),
 ]
