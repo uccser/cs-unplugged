@@ -54,7 +54,7 @@ class QueueHandlerTest(BaseTest):
         self.assertEqual(len(tasks), num_tasks - 1)
 
         payloads = set()
-        expected_payloads = { tuple({"task": i}.items()) for i in range(1, num_tasks) }
+        expected_payloads = {tuple({"task": i}.items()) for i in range(1, num_tasks)}
         for task in tasks:
             payloads.add(tuple(task["payload"].items()))
             self.assertAlmostEqual(task["leaseTimestamp"], expected_leaseTimestamp, -7)
@@ -85,7 +85,7 @@ class QueueHandlerTest(BaseTest):
         self.assertEqual(len(tasks), num_tagged_tasks)
 
         payloads = set()
-        expected_payloads = { tuple({"tagged_task": i}.items()) for i in range(num_tagged_tasks) }
+        expected_payloads = {tuple({"tagged_task": i}.items()) for i in range(num_tagged_tasks)}
         for task in tasks:
             payloads.add(tuple(task["payload"].items()))
             self.assertAlmostEqual(task["leaseTimestamp"], expected_leaseTimestamp, -7)
@@ -109,8 +109,8 @@ class QueueHandlerTest(BaseTest):
 
         task_id = tasks[0]["id"]
         update_lease_time = 30
-        expected_leaseTimestamp = (time.time() + lease_length) * 10 ** 6
-        task = self.queue.update_task(task_id=task_id, new_lease_secs=lease_length)
+        expected_leaseTimestamp = (time.time() + update_lease_time) * 10 ** 6
+        task = self.queue.update_task(task_id=task_id, new_lease_secs=update_lease_time)
         self.assertAlmostEqual(task["leaseTimestamp"], expected_leaseTimestamp, -7)
 
         self.queue.delete_task(task_id)

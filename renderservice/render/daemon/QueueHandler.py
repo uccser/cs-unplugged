@@ -162,7 +162,7 @@ class QueueHandler(object):
                 taskqueue=self.taskqueue_name,
                 leaseSecs=lease_secs,
                 numTasks=tasks_to_fetch,
-                groupByTag=tag!=None,
+                groupByTag=tag is not None,
                 tag=tag
             )
             result = lease_request.execute()
