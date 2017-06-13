@@ -5,6 +5,12 @@
 We’ve noticed that once students understand how the binary number system works, they have many questions and are excited to explore the concepts outlined in this lesson further.
 We’ve added a lot of information into this lesson, however, it is not our intention that you will teach and cover all the concepts, but that you have at your fingertips the information you need when your students express an interest in learning more.
 
+{panel type="general" title="Notes on resources"}
+
+There is also an online interactive version of the binary cards [here](http://www.csfieldguide.org.nz/en/interactives/binary-cards/index.html?digits=8), from the [Computer Science Field Guide](http://www.csfieldguide.org.nz/), but it is preferable to work with physical cards.
+
+{panel end}
+
 ## Key Questions
 
 - What different number systems do we know about? (Answers might include: Roman Numerals; Tally marks; Number bases like binary, octal and hexadecimal; Language based systems like Chinese or Ancient Egyptian.)
