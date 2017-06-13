@@ -2,7 +2,7 @@ from tests.BaseTestWithDB import BaseTestWithDB
 from django.urls import reverse
 
 
-class ProgrammingChallengeLanguageSolutionURLTest(BaseTestWithDB):
+class ProgrammingChallengeSolutionURLTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
