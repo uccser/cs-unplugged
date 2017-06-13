@@ -1,3 +1,19 @@
+how-binary-digits-work-junior:
+  number: 1
+  duration: 45
+  # learning-outcomes:
+  #   - binary-explain-off-on
+  #   - numeracy-identify-larger-number
+  #   - numeracy-count-by-pointing
+  #   - numeracy-recognise-patterns
+  generated-resources:
+    binary-cards:
+      description: One set for class demonstration.
+    binary-cards-small:
+      description: One set of cards per student.
+  classroom-resources:
+    - Number line from 0 to 20
+
 how-binary-digits-work:
   number: 1
   duration: 45
