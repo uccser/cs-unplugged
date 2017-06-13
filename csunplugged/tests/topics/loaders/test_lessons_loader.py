@@ -53,7 +53,7 @@ class LessonsLoaderTest(BaseTestWithDB):
         )
         lesson_loader.load()
         self.assertEquals(
-            Lesson.objects.get(slug="lesson-1").number,
+            Lesson.objects.get(slug="lesson-1").sorting_number,
             1,
         )
 

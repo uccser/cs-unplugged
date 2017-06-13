@@ -7,6 +7,7 @@ from topics.models import (
     Topic,
     UnitPlan,
     Lesson,
+    LessonNumber,
     AgeRange,
     CurriculumIntegration,
     CurriculumArea,
@@ -141,13 +142,17 @@ class TopicsTestDataGenerator:
                 age_range.ages[0] if age_range else "none",
                 age_range.ages[1] if age_range else "none"
             ),
-            number=number,
+            sorting_number=number,
             duration=number,
             content="<p>Content for lesson {}.</p>".format(number),
         )
         lesson.save()
         if age_range:
-            lesson.age_range.add(age_range)
+            LessonNumber(
+                age_range=age_range,
+                lesson=lesson,
+                number=number,
+            ).save()
         return lesson
 
     def create_age_range(self, min_age, max_age):
