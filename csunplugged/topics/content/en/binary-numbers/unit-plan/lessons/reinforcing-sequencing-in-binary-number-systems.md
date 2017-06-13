@@ -1,5 +1,12 @@
 # Reinforcing Sequencing In Binary Number Systems
 
+## Key Question
+
+-   How can you create a 60 second or less video to teach someone how binary
+    works without using the binary cards?
+
+## Lesson Starter
+
 {panel type="general" title="Notes on resources"}
 
 The following items are highly motivating, however you can use any resources you have available in your classroom that have two different states or sizes.
@@ -12,13 +19,6 @@ The following items are highly motivating, however you can use any resources you
 There is also an online interactive version of the binary cards [here](http://www.csfieldguide.org.nz/en/interactives/binary-cards/index.html?digits=8), from the [Computer Science Field Guide](http://www.csfieldguide.org.nz/), but it is preferable to work with physical cards.
 
 {panel end}
-
-## Key Question
-
--   How can you create a 60 second or less video to teach someone how binary
-    works without using the binary cards?
-
-## Lesson Starter
 
 Teacher says to class: “We are going to create a video that shows binary
 numbers in use.”

@@ -1,11 +1,5 @@
 # Codes for Letters Using Binary Representation
 
-{panel type="general" title="Notes on resources"}
-
-There is also an online interactive version of the binary cards [here](http://www.csfieldguide.org.nz/en/interactives/binary-cards/index.html?digits=8), from the [Computer Science Field Guide](http://www.csfieldguide.org.nz/), but it is preferable to work with physical cards.
-
-{panel end}
-
 ## Key Questions
 
 -   How many different characters can you type on a computer?
@@ -17,6 +11,12 @@ There is also an online interactive version of the binary cards [here](http://ww
     are invented!)
 
 ## Lesson Starter
+
+{panel type="general" title="Notes on resources"}
+
+There is also an online interactive version of the binary cards [here](http://www.csfieldguide.org.nz/en/interactives/binary-cards/index.html?digits=8), from the [Computer Science Field Guide](http://www.csfieldguide.org.nz/), but it is preferable to work with physical cards.
+
+{panel end}
 
 Discuss how you would communicate a letter of the alphabet to someone if all
 you could do is say a number between 0 and 26.
