@@ -51,7 +51,7 @@ class TopicView(generic.DetailView):
         # Add in a QuerySet of all the connected unit plans
         unit_plans = UnitPlan.objects.filter(topic=self.object).order_by("name").select_related()
         for unit_plan in unit_plans:
-            unit_plan.grouped_lessons = group_lessons_by_age(unit_plan.lessons)
+            unit_plan.grouped_lessons = group_lessons_by_age(unit_plan.lessons.all())
         context["unit_plans"] = unit_plans
         # Add in a QuerySet of all the connected curriculum integrations
         context["curriculum_integrations"] = CurriculumIntegration.objects.filter(topic=self.object).order_by("number")
@@ -92,7 +92,7 @@ class UnitPlanView(generic.DetailView):
         # Loading object under consistent context names for breadcrumbs
         context["topic"] = self.object.topic
         # Add all the connected lessons
-        context["grouped_lessons"] = group_lessons_by_age(self.object.lessons)
+        context["grouped_lessons"] = group_lessons_by_age(self.object.lessons.all())
         return context
 
 

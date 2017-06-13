@@ -247,6 +247,11 @@ class AgeRange(models.Model):
         """
         return repr(self.ages)
 
+    class Meta:
+        """Set consistent ordering of age ranges."""
+
+        ordering = ["ages"]
+
 
 class Lesson(models.Model):
     """Model for lesson in database."""
@@ -320,6 +325,10 @@ class LessonNumber(models.Model):
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
     number = models.PositiveSmallIntegerField()
 
+    class Meta:
+        """Set consistent ordering of age ranges."""
+
+        ordering = ["number"]
 
 class ProgrammingChallengeNumber(models.Model):
     """Model for relationship between programming challenge and lesson in database."""

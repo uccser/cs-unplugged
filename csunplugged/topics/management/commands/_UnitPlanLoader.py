@@ -105,10 +105,9 @@ class UnitPlanLoader(BaseLoader):
         for (age_range_numbers, age_group_data) in age_groups.items():
 
             min_age, max_age = age_range_numbers.split('-')
-            age_range = AgeRange(
+            age_range, created = AgeRange.objects.get_or_create(
                 ages=(int(min_age), int(max_age))
             )
-            age_range.save()
 
             for (lesson_slug, lesson_data) in age_group_data.items():
                 try:
