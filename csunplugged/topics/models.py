@@ -1,7 +1,7 @@
 """Models for the topics application."""
 
 from django.db import models
-from django.contrib.postgres.fields import ArrayField, JSONField
+from django.contrib.postgres.fields import ArrayField, JSONField, IntegerRangeField
 from resources.models import Resource
 
 
@@ -57,7 +57,7 @@ class LearningOutcome(models.Model):
     """Model for learning outcome in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(max_length=80, unique=True)
     text = models.CharField(max_length=200, unique=True)
     curriculum_areas = models.ManyToManyField(
         CurriculumArea,
@@ -233,6 +233,21 @@ class ProgrammingExerciseLanguageImplementation(models.Model):
         )
 
 
+class AgeRange(models.Model):
+    """Model for age range in database."""
+
+    #  Auto-incrementing 'id' field is automatically set by Django
+    age_range = IntegerRangeField()
+
+    def __str__(self):
+        """Text representation of AgeRange object.
+
+        Returns:
+            Integer range (str).
+        """
+        return repr(self.age_range)
+
+
 class Lesson(models.Model):
     """Model for lesson in database."""
 
@@ -252,9 +267,11 @@ class Lesson(models.Model):
     number = models.IntegerField()
     duration = models.PositiveSmallIntegerField(null=True)
     content = models.TextField()
-    min_age = models.PositiveSmallIntegerField()
-    max_age = models.PositiveSmallIntegerField()
     heading_tree = JSONField(null=True)
+    age_range = models.ManyToManyField(
+        AgeRange,
+        related_name="lesson_age_range"
+    )
     programming_exercises = models.ManyToManyField(
         ProgrammingExercise,
         related_name="lessons"

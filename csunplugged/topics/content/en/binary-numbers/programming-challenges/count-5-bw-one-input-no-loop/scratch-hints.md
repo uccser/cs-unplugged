@@ -6,6 +6,5 @@
     on) to the “total number of dots”.
     Display the “total number of dots” as the output.
 -   You can access a letter at the specified position in a string by using
-    the `scratch:letter (1) of [world]` block under “Operators”. For example:
-
-{image file-path="img/programming/scratch-letter-in-world-example.gif"}
+    the `scratch:letter (1) of [world]` block under “Operators”.
+    For example: `scratch:letter (1) of [world] //w`

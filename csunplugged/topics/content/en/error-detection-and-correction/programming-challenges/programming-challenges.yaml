@@ -1,0 +1,276 @@
+count-black-squares-one-colour-input:
+  challenge-set-number: 1
+  challenge-number: 1
+  difficulty-level: 1
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-identify-if-statement
+    - programming-explain-set-and-change-statement
+
+count-black-squares-one-line-input:
+  challenge-set-number: 1
+  challenge-number: 2
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-set-and-change-statement
+    - programming-describe-variable-initial-value
+    - programming-identify-if-statement
+
+check-odd-even-using-mod:
+  challenge-set-number: 2
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-identify-if-statement
+
+check-odd-even-using-subtraction:
+  challenge-set-number: 2
+  challenge-number: 2
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-describe-variables
+    - programming-identify-if-statement
+
+detect-parity-error-in-row:
+  challenge-set-number: 3
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-variable-name
+    - programming-explain-mod
+    - programming-explain-differences-if-else-if-statements
+
+detect-parity-error-in-six-rows:
+  challenge-set-number: 4
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-variable-name
+    - programming-explain-join-concatenate
+    - programming-explain-mod
+    - programming-explain-differences-if-else-if-statements
+
+detect-parity-error-in-any-rows:
+  challenge-set-number: 4
+  challenge-number: 2
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-join-concatenate
+    - programming-describe-variables
+    - programming-explain-mod
+    - programming-explain-differences-if-else-if-statements
+
+detect-parity-error-in-any-rows-after-input:
+  challenge-set-number: 5
+  challenge-number: 1
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-describe-variables
+    - programming-identify-if-statement
+    - programming-explain-join-concatenate
+    - programming-identify-list-store-data
+
+detect-parity-error-in-any-rows-or-columns:
+  challenge-set-number: 6
+  challenge-number: 1
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-join-concatenate
+    - programming-identify-if-statement
+    - programming-describe-variables
+    - programming-identify-list-store-data
+  extra-challenge: extra-challenge.md
+
+product-code-12-weighted-sum-one-at-a-time:
+  challenge-set-number: 10
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-explain-join-concatenate
+
+product-code-13-weighted-sum-one-at-a-time:
+  challenge-set-number: 10
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-describe-variables
+    - programming-explain-join-concatenate
+
+product-code-12-multiple-10-one-at-a-time:
+  challenge-set-number: 10
+  challenge-number: 2
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-describe-variables
+    - programming-identify-if-statement
+    - programming-explain-join-concatenate
+    - programming-explain-asking-input-end-user
+    - programming-explain-mod
+
+product-code-13-multiple-10-one-at-a-time:
+  challenge-set-number: 10
+  challenge-number: 2
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-describe-variables
+    - programming-identify-if-statement
+    - programming-explain-join-concatenate
+    - programming-explain-asking-input-end-user
+    - programming-explain-mod
+
+product-code-12-multiple-10-one-line:
+  challenge-set-number: 10
+  challenge-number: 3
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-variable-name
+    - programming-explain-set-and-change-statement
+    - programming-describe-nested-statement
+
+product-code-13-multiple-10-one-line:
+  challenge-set-number: 10
+  challenge-number: 3
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-variable-name
+    - programming-explain-set-and-change-statement
+    - programming-describe-nested-statement
+
+product-code-check-valid-any-length:
+  challenge-set-number: 10
+  challenge-number: 4
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-variable-name
+    - programming-explain-set-and-change-statement
+    - programming-describe-nested-statement
+
+product-code-12-last-digit-one-at-a-time:
+  challenge-set-number: 10
+  challenge-number: 5
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-join-concatenate
+    - programming-explain-set-and-change-statement
+    - programming-demonstrate-indexing
+    - programming-identify-loop
+
+product-code-13-last-digit-one-at-a-time:
+  challenge-set-number: 10
+  challenge-number: 5
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-join-concatenate
+    - programming-explain-set-and-change-statement
+    - programming-demonstrate-indexing
+    - programming-identify-loop
+
+product-code-12-last-digit-one-line:
+  challenge-set-number: 10
+  challenge-number: 6
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-join-concatenate
+    - programming-explain-set-and-change-statement
+    - programming-demonstrate-indexing
+
+product-code-13-last-digit-one-line:
+  challenge-set-number: 10
+  challenge-number: 6
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-join-concatenate
+    - programming-explain-set-and-change-statement
+    - programming-demonstrate-indexing
+
+check-valid-credit-card:
+  challenge-set-number: 20
+  challenge-number: 1
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-describe-variables
+    - programming-outline-variable-updates
+    - programming-identify-if-statement
+    - programming-explain-variable-name
+
+calculate-credit-card-last-digit:
+  challenge-set-number: 20
+  challenge-number: 2
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-describe-variables
+    - programming-outline-variable-updates
+    - programming-identify-if-statement
+    - programming-explain-variable-name
+
+check-valid-isbn-10:
+  challenge-set-number: 21
+  challenge-number: 1
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-describe-variables
+    - programming-outline-variable-updates
+    - programming-identify-if-statement
+    - programming-explain-variable-name
+
+calculate-isbn-10-last-digit:
+  challenge-set-number: 21
+  challenge-number: 2
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-describe-variables
+    - programming-outline-variable-updates
+    - programming-identify-if-statement
+    - programming-explain-variable-name

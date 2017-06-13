@@ -101,6 +101,11 @@ $rounded-corner-radius: 0.5rem;
       width: 32%;
     }
   }
+  &.link-box-md-6 {
+    @include media-breakpoint-up(md) {
+      width: 49%;
+    }
+  }
   &.link-box-lg-4 {
     @include media-breakpoint-up(lg) {
       width: 24%;

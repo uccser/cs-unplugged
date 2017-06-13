@@ -98,18 +98,13 @@ class CurriculumIntegrationsLoader(BaseLoader):
                         for lesson_slug in lessons:
                             try:
                                 lesson = Lesson.objects.get(
-                                    slug=lesson_slug,
-                                    unit_plan__slug=unit_plan_slug,
-                                    topic__slug=self.topic.slug
+                                    slug=lesson_slug
                                 )
                                 integration.prerequisite_lessons.add(lesson)
                             except:
                                 raise KeyNotFoundError(
                                     self.structure_file_path,
-                                    "{} and/or {}".format(
-                                        lesson_slug,
-                                        unit_plan_slug,
-                                    ),
+                                    lesson_slug,
                                     "Lessons"
                                 )
 

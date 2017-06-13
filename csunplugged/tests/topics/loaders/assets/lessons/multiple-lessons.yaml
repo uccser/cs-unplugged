@@ -1,14 +1,8 @@
 lesson-1:
-  min-age: 1
-  max-age: 99
   number: 1
 
 lesson-2:
-  min-age: 1
-  max-age: 99
   number: 2
 
 lesson-3:
-  min-age: 1
-  max-age: 99
   number: 3
