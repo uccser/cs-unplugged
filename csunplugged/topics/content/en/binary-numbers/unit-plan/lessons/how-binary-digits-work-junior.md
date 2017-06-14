@@ -4,14 +4,6 @@
 
 We’ve noticed that when we teach the binary number system to students ages 5 - 7 we are focusing on number knowledge and number identification rather than how the binary number system works. We also support students to learn to count by one to one matching, because they are counting the dots. Students are motivated to learn because they are learning how computers store information. Students may ask you questions and be excited to explore the concepts outlined in this lesson further. We’ve added a lot of information into this lesson, however, it is not our intention that you will teach and cover all the concepts, but that you have at your fingertips the information you need when your students express an interest in learning more.
  
-
-# CS Unplugged provided resources
-
-- 1 set of large binary cards from 1 to 8 dots (4 cards)
-- 1 set per pair of students of student binary cards from 1 to 8 dots (4 cards)
-
-There is also an online interactive version of the binary cards available (4 card version, corresponding to this activity, or 5 card version if students are comfortable with numbers up to 31), from the [Computer Science Field Guide](http://www.csfieldguide.org.nz/en/interactives/binary-cards/index.html?digits=8). However, we strongly recommend using physical cards to start with.
-
 ## Classroom resources
 
 - Number line 0 - 20
@@ -23,6 +15,12 @@ There is also an online interactive version of the binary cards available (4 car
   Accept and record all answers to revisit at the end of the lesson.
  
 ## Lesson starter
+
+{panel type="general" title="Notes on resources"}
+
+There is also an online interactive version of the binary cards available (4 card version, corresponding to this activity, or 5 card version if students are comfortable with numbers up to 31), from the [Computer Science Field Guide](http://www.csfieldguide.org.nz/en/interactives/binary-cards/index.html?digits=8). However, we strongly recommend using physical cards to start with.
+
+{panel end}
 
 Did you know that right in the inside of any computer there are billions (that’s a really really big number) of little tiny things that can be turned on or off, like a light switch, and that when have lots of these things together they can display a number or a letter or a movie or make up your favourite game on your device?
 So let’s look at how they work.
