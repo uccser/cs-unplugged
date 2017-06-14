@@ -1,6 +1,6 @@
 # Sorting networks unit plan
 
-{panel type="general" title="See teaching this in action!"}
+{panel type="teaching" title="See teaching this in action!"}
 
 A demonstration of sorting networks being taught is available here:
 

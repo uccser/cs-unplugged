@@ -1,7 +1,7 @@
 unit-plans:
   - unit-plan/unit-plan.yaml
 
-icon: 'img/topics/binary-numbers-0-1.png'
+icon: img/topics/binary-cards-4-bits-icon.png
 
 other-resources: other-resources.md
 
