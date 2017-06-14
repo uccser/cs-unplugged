@@ -23,7 +23,7 @@ class TopicViewTest(BaseTestWithDB):
         self.assertEqual(200, response.status_code)
 
     def test_topic_view_with_invalid_slug(self):
-        topic = self.test_data.create_topic(1)
+        self.test_data.create_topic(1)
         kwargs = {
             "topic_slug": "wrong_slug",
         }
