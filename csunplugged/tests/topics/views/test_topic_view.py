@@ -3,7 +3,7 @@ from django.urls import reverse
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
-from topics.models import ConnectedGeneratedResource
+from topics.models import ResourceDescription
 
 
 class TopicViewTest(BaseTestWithDB):
@@ -108,13 +108,13 @@ class TopicViewTest(BaseTestWithDB):
             "binary_windows.py",
         )
         # Create relationships
-        relationship1 = ConnectedGeneratedResource(
+        relationship1 = ResourceDescription(
             resource=resource1,
             lesson=lesson1,
             description="Description of Binary Cards (small)"
         )
         relationship1.save()
-        relationship2 = ConnectedGeneratedResource(
+        relationship2 = ResourceDescription(
             resource=resource2,
             lesson=lesson2,
             description="Description of Binary Windows"
