@@ -60,6 +60,16 @@ binary-explain-codes-alphabets:
   curriculum-areas:
     - generalising-and-patterns
 
+binary-make-play-instructions-binary:
+  text: Make a play that gives instructions on how to represent a number in binary
+  curriculum-areas:
+    - drama
+
+binary-identify-opposite-pairs:
+  text: Identify opposite pairs such as happy face and sad face
+  curriculum-areas:
+    - literacy
+
 # DRAMA LEARNING OUTCOMES
 
 drama-create-video-binary:
