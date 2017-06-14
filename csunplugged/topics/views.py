@@ -60,7 +60,7 @@ class TopicView(generic.DetailView):
             "challenge_set_number",
             "challenge_number"
         )
-        lessons = self.object.topic_lessons.all()
+        lessons = self.object.lessons.all()
         resources = set()
         for lesson in lessons:
             lesson_resources = lesson.generated_resources.all()
