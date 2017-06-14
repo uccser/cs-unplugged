@@ -58,6 +58,13 @@ class TopicView(generic.DetailView):
             "exercise_set_number",
             "exercise_number"
         )
+        lessons = self.object.topic_lessons.all()
+        resources = set()
+        for lesson in lessons:
+            lesson_resources = lesson.generated_resources.all()
+            for lesson_resource in lesson_resources:
+                resources.add(lesson_resource)
+        context["resources"] = resources
         return context
 
 

@@ -42,8 +42,14 @@ how-binary-digits-work:
     - binary-notes-representing-any-number
     - binary-cards-as-dots
   learning-outcomes:
-    - binary-correct-representation
-    - no-physical-zeros-ones
+    - binary-convert-decimal
+    - binary-justify-zeros-and-ones
+    - binary-argue-zeros-and-ones-stored
+    - binary-explain-different-states
+    - binary-explain-logic-one-bit
+    - numeracy-adding-given-number
+    - numeracy-identify-even-odd
+    - numeracy-explain-squaring
   generated-resources:
     binary-cards:
       description: One set for class demonstration.
@@ -56,17 +62,35 @@ how-binary-digits-work:
 reinforcing-sequencing-in-binary-number-systems:
   number: 2
   duration: 60
+  learning-outcomes:
+    - binary-explain-off-on
+    - binary-predict-bit-value
+    - binary-explain-doubling
+    - numeracy-discuss-count-zeros-ones
+    - numeracy-compare-base10-base2
+    - drama-create-video-binary
+    - speaking-clear-instructions-binary-cards
   generated-resources:
     binary-cards:
       description: One set for class demonstration.
     binary-cards-small:
       description: One set of cards per student.
+  classroom-resources:
+    - None required, but see note in text.
 
 codes-for-letters-using-binary-representation:
   number: 3
   duration: 45
+  learning-outcomes:
+    - binary-recognise-alphabet-bits
+    - binary-create-message-converting
+    - binary-interpret-message-binary
+    - binary-explain-codes-alphabets
+    - language-discuss-storing-characters
   generated-resources:
     binary-cards:
       description: One set for class demonstration.
     binary-cards-small:
       description: One set of cards per student.
+    binary-to-alphabet:
+      description: Blank sheets for students, plus teacher answer sheet.

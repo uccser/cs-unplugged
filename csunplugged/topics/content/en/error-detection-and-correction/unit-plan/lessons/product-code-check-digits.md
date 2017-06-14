@@ -180,7 +180,7 @@ Of course, at this stage there's a small chance you guessed it, but now
 they can explore the codes themselves, and they'll soon find out that it
 always works if the number is copied correctly.
 
-{panel type="general" title="Teaching Observations"}
+{panel type="teaching" title="Teaching observations"}
 
 Check that students notice to multiply the first line by 3 and take the
 last digit of that number.
