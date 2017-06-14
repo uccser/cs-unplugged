@@ -1,5 +1,6 @@
 {% extends "columns.html" %}
 
+{% load static %}
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
@@ -39,6 +40,24 @@
     <p>No curriculum integrations for {{ topic }}.</p>
   {% endif %}
 
+  <h2 id="resources" class="heading-underline">Resources</h2>
+  {% if resources %}
+    <p>
+      The following resources are used in {{ topic.name }} lessons, and can
+      be accessed here (and also on each lesson page).
+    </p>
+    <div class="link-box-container">
+      {% for resource in resources %}
+        <a href="{% url 'resources:resource' resource.slug %}" class="link-box link-box-md-3">
+          <img class="border-thin" src="{% static resource.thumbnail_static_path %}" alt="Generic placeholder image">
+          <strong>{{ resource.name }}</strong>
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No resources are related to {{ topic }}.</p>
+  {% endif %}
+
   {% if topic.other_resources %}
     <h2 id="other-resources" class="heading-underline">Looking for more?</h2>
     <p>
@@ -63,6 +82,9 @@
       {% endfor %}
       <li class="nav-item">
         <a class="nav-link" href="#integrations">Curriculum integrations</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#resources">Resources</a>
       </li>
       {% if topic.other_resources %}
         <li class="nav-item">
