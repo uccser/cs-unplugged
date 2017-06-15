@@ -6,7 +6,6 @@ from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 from topics.models import Lesson
 from topics.management.commands._LessonsLoader import LessonsLoader
 
-from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.NoHeadingFoundInMarkdownFileError import NoHeadingFoundInMarkdownFileError
 from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
 
@@ -36,43 +35,6 @@ class LessonsLoaderTest(BaseTestWithDB):
         self.assertQuerysetEqual(
             Lesson.objects.all(),
             ["<Lesson: Lesson 1>"]
-        )
-
-    def test_lesson_loader_number_set_correctly(self):
-        config_file = os.path.join(self.loader_name, "basic-config.yaml")
-        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
-
-        topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
-
-        lesson_loader = LessonsLoader(
-            lessons_structure,
-            topic,
-            unit_plan,
-            self.test_data.LOADER_ASSET_PATH
-        )
-        lesson_loader.load()
-        self.assertEquals(
-            Lesson.objects.get(slug="lesson-1").sorting_number,
-            1,
-        )
-
-    def test_lesson_loader_missing_number_value(self):
-        config_file = os.path.join(self.loader_name, "missing-number.yaml")
-        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
-
-        topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
-
-        lesson_loader = LessonsLoader(
-            lessons_structure,
-            topic,
-            unit_plan,
-            self.test_data.LOADER_ASSET_PATH
-        )
-        self.assertRaises(
-            MissingRequiredFieldError,
-            lesson_loader.load,
         )
 
     def test_lesson_loader_topic_set_correctly(self):
@@ -351,8 +313,8 @@ class LessonsLoaderTest(BaseTestWithDB):
         self.assertQuerysetEqual(
             Lesson.objects.get(slug="lesson-1").programming_challenges.all(),
             [
-                "<ProgrammingChallenge: Challenge 1>",
-                "<ProgrammingChallenge: Challenge 2>",
+                "<ProgrammingChallenge: Challenge 1.1: 1>",
+                "<ProgrammingChallenge: Challenge 1.1: 2>",
             ],
             ordered=False,
         )

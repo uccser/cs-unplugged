@@ -179,8 +179,7 @@ class ProgrammingChallengeList(generic.ListView):
             Queryset of ProgrammingChallenge objects.
         """
         lesson_slug = self.kwargs.get("lesson_slug", None)
-        programming_challenges = ProgrammingChallenge.objects.filter(lessons__slug=lesson_slug).select_related()
-        return programming_challenges.order_by("challenge_set_number", "challenge_number", "name")
+        return ProgrammingChallenge.objects.filter(lessons__slug=lesson_slug).select_related()
 
     def get_context_data(self, **kwargs):
         """Provide the context data for the programming challenge list view.
@@ -198,13 +197,19 @@ class ProgrammingChallengeList(generic.ListView):
         context["lesson"] = lesson
         context["unit_plan"] = lesson.unit_plan
         context["topic"] = lesson.topic
-        for programming_challenge in context["programming_challenges"]:
+        programming_challenges = context["programming_challenges"]
+        for programming_challenge in programming_challenges:
             challenge_numbers = ProgrammingChallengeNumber.objects.get(
                 lesson=lesson,
                 programming_challenge=programming_challenge
             )
             programming_challenge.challenge_set_number = challenge_numbers.challenge_set_number
             programming_challenge.challenge_number = challenge_numbers.challenge_number
+        context["programming_challenges"] = programming_challenges.order_by(
+            "challenge_set_number",
+            "challenge_number",
+            "name",
+        )
         return context
 
 
@@ -336,7 +341,6 @@ class CurriculumIntegrationView(generic.DetailView):
         # Add in a QuerySet of all the prerequisite lessons
         context["prerequisite_lessons"] = self.object.prerequisite_lessons.select_related().order_by(
             "unit_plan__name",
-            "sorting_number"
         )
         return context
 

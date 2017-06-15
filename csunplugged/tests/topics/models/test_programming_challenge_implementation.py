@@ -36,7 +36,7 @@ class ProgrammingChallengeImplementationModelTest(BaseTestWithDB):
         )
         self.assertEqual(
             implementation.__str__(),
-            "Language 1 for challenge 1.1, Challenge 1"
+            "Language 1 for challenge 1.1, Challenge 1.1: 1"
         )
 
     def test_implementation_order(self):
@@ -70,9 +70,9 @@ class ProgrammingChallengeImplementationModelTest(BaseTestWithDB):
         self.assertQuerysetEqual(
             ProgrammingChallenge.objects.get(slug="challenge-1").ordered_implementations(),
             [
-                "<ProgrammingChallengeImplementation: Language 1 for challenge 1.1, Challenge 1>",
-                "<ProgrammingChallengeImplementation: Language 2 for challenge 1.1, Challenge 1>",
-                "<ProgrammingChallengeImplementation: Language 3 for challenge 1.1, Challenge 1>",
-                "<ProgrammingChallengeImplementation: Language 4 for challenge 1.1, Challenge 1>",
+                "<ProgrammingChallengeImplementation: Language 1 for challenge 1.1, Challenge 1.1: 1>",
+                "<ProgrammingChallengeImplementation: Language 2 for challenge 1.1, Challenge 1.1: 1>",
+                "<ProgrammingChallengeImplementation: Language 3 for challenge 1.1, Challenge 1.1: 1>",
+                "<ProgrammingChallengeImplementation: Language 4 for challenge 1.1, Challenge 1.1: 1>",
             ]
         )

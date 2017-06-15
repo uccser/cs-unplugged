@@ -1,5 +1,4 @@
 how-binary-digits-work:
-  number: 1
   duration: 45
   computational-thinking-links: how-binary-digits-work-ct-links.md
   programming-challenges:
@@ -45,7 +44,6 @@ how-binary-digits-work:
     - Whiteboard and pens
 
 reinforcing-sequencing-in-binary-number-systems:
-  number: 2
   duration: 60
   computational-thinking-links: reinforcing-sequencing-in-binary-number-systems-ct-links.md
   learning-outcomes:
@@ -65,7 +63,6 @@ reinforcing-sequencing-in-binary-number-systems:
     - None required, but see note in text.
 
 codes-for-letters-using-binary-representation:
-  number: 3
   duration: 45
   computational-thinking-links: codes-for-letters-using-binary-representation-ct-links.md
   learning-outcomes:

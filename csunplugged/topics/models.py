@@ -269,7 +269,6 @@ class Lesson(models.Model):
     )
     slug = models.SlugField()
     name = models.CharField(max_length=100)
-    sorting_number = models.IntegerField()
     duration = models.PositiveSmallIntegerField(null=True)
     content = models.TextField()
     computational_thinking_links = models.TextField(null=True)

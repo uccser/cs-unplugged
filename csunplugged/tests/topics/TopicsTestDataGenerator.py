@@ -143,7 +143,6 @@ class TopicsTestDataGenerator:
                 age_range.ages[0] if age_range else "none",
                 age_range.ages[1] if age_range else "none"
             ),
-            sorting_number=number,
             duration=number,
             content="<p>Content for lesson {}.</p>".format(number),
         )
@@ -230,7 +229,11 @@ class TopicsTestDataGenerator:
         challenge = ProgrammingChallenge(
             topic=topic,
             slug="challenge-{}".format(number),
-            name="Challenge {}".format(number),
+            name="Challenge {}.{}: {}".format(
+                challenge_set_number,
+                challenge_number,
+                number,
+            ),
             challenge_set_number=challenge_set_number,
             challenge_number=challenge_number,
             content=content,

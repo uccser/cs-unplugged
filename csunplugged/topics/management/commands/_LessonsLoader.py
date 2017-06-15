@@ -52,15 +52,6 @@ class LessonsLoader(BaseLoader):
                     "Lesson"
                 )
 
-            # Retrieve required variables from structure dictionary
-            lesson_number = lesson_structure.get("number", None)
-            if None in [lesson_number]:
-                raise MissingRequiredFieldError(
-                    self.lessons_structure_file_path,
-                    ["number"],
-                    "Lesson"
-                )
-
             # Build the file path to the lesson"s md file
             file_path = os.path.join(
                 self.BASE_PATH,
@@ -142,7 +133,6 @@ class LessonsLoader(BaseLoader):
                 unit_plan=self.unit_plan,
                 slug=lesson_slug,
                 name=lesson_content.title,
-                sorting_number=lesson_number,
                 duration=lesson_duration,
                 content=lesson_content.html_string,
                 computational_thinking_links=ct_links,

@@ -171,9 +171,8 @@ Adding a Lesson
 
 The Markdown file containing the content for the lesson:
 
-- **Is in:** the age group subdirectory in the lessons directory, e.g. a lesson
-  for age group 5-9 will be in
-  ``topics/content/en/binary-numbers/unit-plan/lessons/5-9/``.
+- **Is in:** the lesson subdirectory in the unit plan directory, e.g.
+  ``topics/content/en/binary-numbers/unit-plan/lessons/``.
 - **Is called:** ``<lesson-key>.md`` where ``<lesson-key>`` is the key
   (:ref:`what-is-a-key`) of the lesson, e.g. ``introduction-to-bits.md``.
 - **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
@@ -186,9 +185,9 @@ The Markdown file containing the content for the lesson:
 
 .. note::
 
-  If a lesson includes programming challenges, and/or learning outcomes, then
-  the corresponding configuration and content files may also need to be added
-  or updated.
+  If a lesson includes programming challenges, Computational Thinking links,
+  and/or learning outcomes, then the corresponding configuration and content
+  files may also need to be added or updated.
 
 .. _adding-learning-outcomes:
 
@@ -510,7 +509,7 @@ Unit Plan Configuration File
 
     - ``lessons:`` The path to the lessons configuration file.
 
-    - ``age-groups:`` List of age groups and their corresponding lessons
+    - ``age-groups:`` Keys of age groups and their corresponding lessons.
 
       - **Required Fields:**
 
@@ -520,6 +519,13 @@ Unit Plan Configuration File
 
             - ``<lesson-key>`` The key for a lesson.
 
+              - **Required Fields:**
+
+                - ``number`` The number order for this lesson, relative
+                  to this age group.
+                  This value allows a lesson to be used in different age
+                  groups, as different numbered lessons (e.g. lesson 2 for
+                  5 to 7, but lesson 1 for 8 to 10).
 
 A complete unit plan structure file with multiple lessons may look like the
 following:
@@ -529,12 +535,19 @@ following:
   lessons: lessons/lessons.yaml
 
   age-groups:
-    - 7-11:
-      - introduction-to-bits
-      - how-binary-digits-work
-      - bits-and-bytes
-    - 12-99:
-      - bits-and-bytes
+    5-7:
+      what-is-binary-junior:
+        number: 1
+      how-binary-digits-work:
+        number: 2
+    8-10:
+      how-binary-digits-work:
+        number: 1
+      reinforcing-sequencing-in-binary-number-systems:
+        number: 2
+      codes-for-letters-using-binary-representation:
+        number: 3
+
 
 Lesson Configuration File
 ------------------------------------------------------------------------------
@@ -552,13 +565,6 @@ Lesson Configuration File
 
     - ``<lesson-key>:`` This is the key for the lesson. Each lesson has its own list of
       required and optional fields:
-
-      - **Required Fields:**
-
-        - ``number:`` The number order for this lesson.
-          Lessons are grouped by their minimum age and maximum age, then ordered by
-          number so lessons in different age groups can use the same number without
-          conflict.
 
       - **Optional Fields:**
 
@@ -593,7 +599,6 @@ following:
 .. code-block:: yaml
 
   introduction-to-bits:
-    number: 1
     programming-challenges:
       - count-to-16
       - count-to-1-million
@@ -607,7 +612,7 @@ following:
       - Dice
 
   how-binary-digits-work:
-    number: 2
+    computational-thinking-links: how-binary-digits-work-ct-links.md
     learning-outcomes:
       - binary-data-representation
       - binary-justify-representation
@@ -832,7 +837,27 @@ Programming Challenges Configuration File
         challenge belongs to.
 
       - ``challenge-number:`` The number order for this programming challenge.
-        Challenges are sorted this number.
+
+        .. note ::
+
+          Programming challenges are sorted by their ``challenge-set-number``
+          and then their ``challenge-number``.
+          These numbers are not directly displayed, but used to calculate a
+          programming challenge's number for a lesson.
+
+          For example, if a lesson lists the following challenges:
+
+          - Challenge A: 1.1
+          - Challenge B: 1.3
+          - Challenge C: 2.2
+          - Challenge D: 9.3
+
+          The lesson will display these challenges as:
+
+          - Challenge A: 1.1
+          - Challenge B: 1.2
+          - Challenge C: 2.1
+          - Challenge D: 3.1
 
       - ``difficulty-level:`` A key corresponding to a difficulty level.
 

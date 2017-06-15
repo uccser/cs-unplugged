@@ -94,3 +94,31 @@ class UnitPlanLoaderTest(BaseTestWithDB):
             MissingRequiredFieldError,
             up_loader.load,
         )
+
+    def test_unit_plan_missing_lesson_keys(self):
+        config_file = "unit-plan-1/missing-lesson-keys.yaml"
+
+        factory = Mock()
+        topic = self.test_data.create_topic("1")
+
+        up_loader = UnitPlanLoader(factory, config_file, topic, self.BASE_PATH)
+
+        self.assertRaises(
+            MissingRequiredFieldError,
+            up_loader.load,
+        )
+
+    def test_unit_plan_missing_lesson_number(self):
+        config_file = "unit-plan-1/missing-lesson-number.yaml"
+
+        factory = Mock()
+        topic = self.test_data.create_topic("1")
+        unit_plan = self.test_data.create_unit_plan(topic, "test")
+        self.test_data.create_lesson(topic, unit_plan, "1")
+
+        up_loader = UnitPlanLoader(factory, config_file, topic, self.BASE_PATH)
+
+        self.assertRaises(
+            MissingRequiredFieldError,
+            up_loader.load,
+        )

@@ -66,15 +66,6 @@ class UnitPlanLoader(BaseLoader):
         self.log("Added unit plan: {}".format(unit_plan.name), 1)
 
         # Load the lessons for the unit plan
-
-        # If there is nothing in the structure dictionary there
-        # are obviously no lessons! Error!
-        if unit_plan_structure is None:
-            raise MissingRequiredFieldError(
-                self.structure_file_path,
-                ["(At least one lesson)"],
-                "Unit Plan"
-            )
         # Get path to lesson yaml
         lessons_yaml = unit_plan_structure.get("lessons", None)
         if lessons_yaml is None:
@@ -108,6 +99,12 @@ class UnitPlanLoader(BaseLoader):
             age_range, created = AgeRange.objects.get_or_create(
                 ages=(int(min_age), int(max_age))
             )
+            if age_group_data is None:
+                raise MissingRequiredFieldError(
+                    self.structure_file_path,
+                    ["lesson keys"],
+                    "Unit Plan"
+                )
 
             for (lesson_slug, lesson_data) in age_group_data.items():
                 try:
@@ -119,6 +116,13 @@ class UnitPlanLoader(BaseLoader):
                         self.structure_file_path,
                         lesson_slug,
                         "Lesson"
+                    )
+
+                if lesson_data is None:
+                    raise MissingRequiredFieldError(
+                        self.structure_file_path,
+                        ["number"],
+                        "Unit Plan"
                     )
 
                 lesson_number = lesson_data.get("number", None)

@@ -191,7 +191,7 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
         response = self.client.get(url)
         self.assertQuerysetEqual(
             response.context["implementations"],
-            ["<ProgrammingChallengeImplementation: Language 1 for challenge 1.1, Challenge 1>"]
+            ["<ProgrammingChallengeImplementation: Language 1 for challenge 1.1, Challenge 1.1: 1>"]
         )
 
     def test_programming_challenge_view_implementations_context_order(self):
@@ -225,8 +225,8 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
         self.assertQuerysetEqual(
             response.context["implementations"],
             [
-                "<ProgrammingChallengeImplementation: Language 1 for challenge 1.1, Challenge 1>",
-                "<ProgrammingChallengeImplementation: Language 2 for challenge 1.1, Challenge 1>",
-                "<ProgrammingChallengeImplementation: Language 3 for challenge 1.1, Challenge 1>",
+                "<ProgrammingChallengeImplementation: Language 1 for challenge 1.1, Challenge 1.1: 1>",
+                "<ProgrammingChallengeImplementation: Language 2 for challenge 1.1, Challenge 1.1: 1>",
+                "<ProgrammingChallengeImplementation: Language 3 for challenge 1.1, Challenge 1.1: 1>",
             ]
         )
