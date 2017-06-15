@@ -103,7 +103,6 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
             age_range_1
         )
         difficulty = self.test_data.create_difficulty_level(1)
-        language = self.test_data.create_programming_language(1)
         challenge = self.test_data.create_programming_challenge(topic, 1, difficulty)
         self.test_data.add_challenge_lesson_relationship(
             challenge,
@@ -135,7 +134,6 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
     def test_programming_challenge_view_learning_outcomes_context(self):
         topic = self.test_data.create_topic(1)
         difficulty = self.test_data.create_difficulty_level(1)
-        language = self.test_data.create_programming_language(1)
         challenge = self.test_data.create_programming_challenge(topic, 1, difficulty)
         learning_outcome = self.test_data.create_learning_outcome(1)
         challenge.learning_outcomes.add(learning_outcome)
@@ -153,7 +151,6 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
     def test_programming_challenge_view_learning_outcomes_context_order(self):
         topic = self.test_data.create_topic(1)
         difficulty = self.test_data.create_difficulty_level(1)
-        language = self.test_data.create_programming_language(1)
         challenge = self.test_data.create_programming_challenge(topic, 1, difficulty)
         learning_outcome3 = self.test_data.create_learning_outcome(3)
         challenge.learning_outcomes.add(learning_outcome3)
@@ -181,7 +178,7 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
         difficulty = self.test_data.create_difficulty_level(1)
         language = self.test_data.create_programming_language(1)
         challenge = self.test_data.create_programming_challenge(topic, 1, difficulty)
-        implementation = self.test_data.create_programming_challenge_implementation(
+        self.test_data.create_programming_challenge_implementation(
             topic,
             language,
             challenge,
@@ -204,17 +201,17 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
         language2 = self.test_data.create_programming_language(2)
         language3 = self.test_data.create_programming_language(3)
         challenge = self.test_data.create_programming_challenge(topic, 1, difficulty)
-        implementation3 = self.test_data.create_programming_challenge_implementation(
+        self.test_data.create_programming_challenge_implementation(
             topic,
             language3,
             challenge,
         )
-        implementation2 = self.test_data.create_programming_challenge_implementation(
+        self.test_data.create_programming_challenge_implementation(
             topic,
             language2,
             challenge,
         )
-        implementation1 = self.test_data.create_programming_challenge_implementation(
+        self.test_data.create_programming_challenge_implementation(
             topic,
             language1,
             challenge,
