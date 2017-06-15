@@ -15,6 +15,7 @@ from topics.models import (
     ProgrammingChallengeDifficulty,
     ProgrammingChallengeLanguage,
     ProgrammingChallengeImplementation,
+    ProgrammingChallengeNumber,
     LearningOutcome,
 )
 
@@ -172,8 +173,7 @@ class TopicsTestDataGenerator:
         return age_range
 
     def create_difficulty_level(self, number):
-        """
-        Create difficuly level object.
+        """Create difficuly level object.
 
         Args:
             number: Identifier of the level (int).
@@ -189,8 +189,7 @@ class TopicsTestDataGenerator:
         return difficulty
 
     def create_programming_language(self, number):
-        """
-        Create programming language object.
+        """Create programming language object.
 
         Args:
             number: Identifier of the language (int).
@@ -213,8 +212,7 @@ class TopicsTestDataGenerator:
                                      content="<p>Example content.</p>",
                                      extra_challenge="<p>Example challenge.</p>",
                                      ):
-        """
-        Create programming challenge object.
+        """Create programming challenge object.
 
         Args:
             topic: Topic related to the challenge.
@@ -249,14 +247,13 @@ class TopicsTestDataGenerator:
                                                     hints="<p>Example hints.</p>",
                                                     solution="<p>Example solution.</p>",
                                                     ):
-        """
-        Create programming challenge implementation object.
+        """Create programming challenge implementation object.
 
         Args:
             topic: Topic related to the implementation.
             language: Language related to the implementation
                         (ProgrammingChallengeLanguage).
-            challenge: Difficulty related to the implementation
+            challenge: Challenge related to the implementation
                         (ProgrammingChallenge).
             expected_result: Text of expected_result (str).
             hints: Text of hints (str).
@@ -277,8 +274,7 @@ class TopicsTestDataGenerator:
         return implementation
 
     def create_learning_outcome(self, number):
-        """
-        Create learning outcome object.
+        """Create learning outcome object.
 
         Args:
             number: Identifier of the challenge (int).
@@ -292,3 +288,21 @@ class TopicsTestDataGenerator:
         )
         outcome.save()
         return outcome
+
+    def add_challenge_lesson_relationship(self, challenge, lesson, set_number, number):
+        """Add relationship between challenge and lesson objects.
+
+        Args:
+            challenge: Challenge to add relationship beteeen
+                       (ProgrammingChallenge).
+            lesson: Lesson to add relationship between (Lesson).
+            set_number: Number to display as challenge set number (int).
+            number: Number to display as challenge number (int).
+        """
+        relationship = ProgrammingChallengeNumber(
+            programming_challenge=challenge,
+            lesson=lesson,
+            challenge_set_number=set_number,
+            challenge_number=number,
+        )
+        relationship.save()
