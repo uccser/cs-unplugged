@@ -1,6 +1,6 @@
-# Reinforcing Sequencing In Binary Number Systems
+# Reinforcing sequencing in binary number systems
 
-## Key Question
+## Key question
 
 - How can you create a play to teach someone how binary works, without using the binary cards? 
 
@@ -24,8 +24,8 @@ Introduce hats - hat on or hat off - or paper plates - one side on and one side 
 
 Your play must include a demonstration of one of the following: 
 
-- How to count from 0 to 10 or more using binary dots.
-- How you would work out the number 5.
+-   How to count from 0 to 10 or more using binary dots.
+-   How you would work out the number 5.
 
 ## Lesson activities
 
@@ -43,10 +43,10 @@ Have a chance to practise counting in their group from 1 to 8.
 
 Once they have done that they change roles to they experience what it's like being each of the different bits:
 
-- The person with 8 takes on the job of 1
-- 4 becomes 8
-- 2 becomes 4
-- 1 becomes 2
+-   The person with 8 takes on the job of 1
+-   4 becomes 8
+-   2 becomes 4
+-   1 becomes 2
 
 When they are ready ask each group to make the number (choose a random number between 0 and 8).
 
@@ -82,10 +82,10 @@ Reflect after each play is performed to reinforce learning by asking:
 
 ## Lesson reflection
 
-- What did you clarify about the binary number system now that you’ve created your play? 
+-   What did you clarify about the binary number system now that you’ve created your play? 
 
-- What questions do you have after performing your play in relation to the binary number system? (
-  Typically responses are that they want to understand further how binary numbers are used to show letters, images, videos and all things on a computer - these topics are covered in further lesson plans)
+-   What questions do you have after performing your play in relation to the binary number system? (
+    Typically responses are that they want to understand further how binary numbers are used to show letters, images, videos and all things on a computer - these topics are covered in further lesson plans)
 
 ## Computational Thinking Connections
 

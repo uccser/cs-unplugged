@@ -63,11 +63,13 @@ binary-explain-codes-alphabets:
 binary-make-play-instructions-binary:
   text: Make a play that gives instructions on how to represent a number in binary
   curriculum-areas:
+    - decomposition
     - drama
 
 binary-identify-opposite-pairs:
   text: Identify opposite pairs such as happy face and sad face
   curriculum-areas:
+    - abstraction
     - literacy
 
 # DRAMA LEARNING OUTCOMES

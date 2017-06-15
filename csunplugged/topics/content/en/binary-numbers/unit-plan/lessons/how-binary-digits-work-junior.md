@@ -1,14 +1,14 @@
-# How Binary Digits Work
+# How binary digits work
 
 ## Note from the authors
 
 We’ve noticed that when we teach the binary number system to students ages 5 - 7 we are focusing on number knowledge and number identification rather than how the binary number system works. We also support students to learn to count by one to one matching, because they are counting the dots. Students are motivated to learn because they are learning how computers store information. Students may ask you questions and be excited to explore the concepts outlined in this lesson further. We’ve added a lot of information into this lesson, however, it is not our intention that you will teach and cover all the concepts, but that you have at your fingertips the information you need when your students express an interest in learning more.
  
-## Key questions
+## Key question
 
-- How do you think a digital device stores information? 
-  Potential answers could include
-  Accept and record all answers to revisit at the end of the lesson.
+-   How do you think a digital device stores information? 
+    Potential answers could include
+    Accept and record all answers to revisit at the end of the lesson.
  
 ## Lesson starter
 
@@ -48,7 +48,7 @@ The technical word for that is a “bit”.
 
     {panel end}
   
-4.   Silently give out the 4-dot card, and let them try to see the pattern.
+4.  Silently give out the 4-dot card, and let them try to see the pattern.
     This will be dependent on their level of number knowledge.
     Mention that each number is doubling (or that if you had two of a card, that would give you the card beside it), and move onto the next step. 
 
@@ -60,7 +60,7 @@ The technical word for that is a “bit”.
 
     {panel end}
  
-5.   Ask what the next card is, and why.
+5.  Ask what the next card is, and why.
 
     {panel type="teaching" title="Teaching Observations"}
 
@@ -73,7 +73,7 @@ The technical word for that is a “bit”.
  
     {panel end}
  
-6.   Show the 4th card and hand it out: 
+6.  Show the 4th card and hand it out: 
 
     {panel type="teaching" title="Teaching Observations"}
 
@@ -170,13 +170,13 @@ The technical word for that is a “bit”.
 
 ## Applying what we have just learnt
 
-- Group students into pairs
-- Give each pair a set of the smaller binary cards
-- Have them practise the algorithm for numbers below 10.
+-   Group students into pairs
+-   Give each pair a set of the smaller binary cards
+-   Have them practise the algorithm for numbers below 10.
  
 1.  Explain to students that we're working with just two digits, so they are called binary digits. (You could explore the meaning of the "bi" prefix with words like bicycle, biennial, bilingual and bicultural.)
-  Binary digits are so common that we have a short name for them: write "binary digit" on a piece of paper, then rip off the "bi" at the start, and the "t" at the end, put it together and ask what the combined word ("bit") spells.
-  This is the short name for a binary digit, which is why we've been referring to the cards as bits; the 4 cards that they have are actually 4 bits.
+    Binary digits are so common that we have a short name for them: write "binary digit" on a piece of paper, then rip off the "bi" at the start, and the "t" at the end, put it together and ask what the combined word ("bit") spells.
+    This is the short name for a binary digit, which is why we've been referring to the cards as bits; the 4 cards that they have are actually 4 bits.
 
 2.  Now let’s count from the smallest number that we can make, up to the highest number
   
@@ -225,19 +225,19 @@ This is sometimes called the fencepost problem (the number of fence posts is one
 
 ## Lesson reflection
 
-- Would this activity work if we used white and cream cards? Why? Why not?
+-   Would this activity work if we used white and cream cards? Why? Why not?
 
-  - In principle you could use these, but it wouldn’t be a good idea.
-    We are looking for the answer that they are not contrasting colours, therefore it would be difficult to see if it is actually on or off.
-    Computers are easier to build and break less often when we just use two contrasting values. 
+    -   In principle you could use these, but it wouldn’t be a good idea.
+      We are looking for the answer that they are not contrasting colours, therefore it would be difficult to see if it is actually on or off.
+      Computers are easier to build and break less often when we just use two contrasting values. 
 
-- What are some other ways we could physically show that each of the bits are on or off?
+-   What are some other ways we could physically show that each of the bits are on or off?
 
-  - Ideas could include holding the cards up high, or down low; simply holding up a hand; sitting down or standing up; or using a different representation such as lights that are on or off.
+    -  Ideas could include holding the cards up high, or down low; simply holding up a hand; sitting down or standing up; or using a different representation such as lights that are on or off.
 
-- What else could we use to represent two opposites, like on and off, in writing? 
+-   What else could we use to represent two opposites, like on and off, in writing? 
 
-  - Perhaps a cross or tick; happy or sad face; or any other pair of symbols.
+    -   Perhaps a cross or tick; happy or sad face; or any other pair of symbols.
  
 ## Computational Thinking connections
 
@@ -250,20 +250,20 @@ This is an algorithm because it is a step-by-step process that will always give 
 
 Here’s an algorithm for working out which dot cards should be showing, written in text:
 
-- Find out the number of dots that is to be displayed.
+-   Find out the number of dots that is to be displayed.
   (We'll refer to this as the "number of dots remaining", which initially is the total number to be displayed.)
 
-- For each card, from the left to the right (i.e. 8, 4, 2 then 1):
+-   For each card, from the left to the right (i.e. 8, 4, 2 then 1):
 
-  - If the number of dots on the card is more than the number of dots remaining:
+    -   If the number of dots on the card is more than the number of dots remaining:
 
-    - Hide the card 
+      -   Hide the card 
 
-  - Otherwise:
+    -   Otherwise:
 
-	- Show the card
+	  -   Show the card
 
-	- Subtract the number of dots on the card from the number of dots remaining
+	  -   Subtract the number of dots on the card from the number of dots remaining
 
 #### What to look for:
 
@@ -339,6 +339,7 @@ Each time we add the next card we also double the amount of different numbers we
 Working with these patterns is valuable for working out the relationship between the number of bits being used and the power of what they can represent.
 
 #### What to look for:
+
 Which students recognised quickly that each card was doubling the number of dots? 
 Which students easily understand the patterns of cards flipping when counting with binary numbers?
 
