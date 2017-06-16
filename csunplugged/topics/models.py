@@ -233,8 +233,8 @@ class ProgrammingChallengeImplementation(models.Model):
         )
 
 
-class AgeRange(models.Model):
-    """Model for age range in database."""
+class AgeGroup(models.Model):
+    """Model for age group in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField()
@@ -242,15 +242,15 @@ class AgeRange(models.Model):
     description = models.CharField(max_length=500, null=True)
 
     def __str__(self):
-        """Text representation of AgeRange object.
+        """Text representation of AgeGroup object.
 
         Returns:
-            Integer range (str).
+            Integer group (str).
         """
         return repr(self.ages)
 
     class Meta:
-        """Set consistent ordering of age ranges."""
+        """Set consistent ordering of age groups."""
 
         ordering = ["ages"]
 
@@ -275,8 +275,8 @@ class Lesson(models.Model):
     content = models.TextField()
     computational_thinking_links = models.TextField(null=True)
     heading_tree = JSONField(null=True)
-    age_range = models.ManyToManyField(
-        AgeRange,
+    age_group = models.ManyToManyField(
+        AgeGroup,
         through="LessonNumber",
         related_name="lessons"
     )
@@ -339,15 +339,15 @@ class Lesson(models.Model):
 
 
 class LessonNumber(models.Model):
-    """Model for relationship between age range and lesson in database."""
+    """Model for relationship between age group and lesson in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
-    age_range = models.ForeignKey(AgeRange, on_delete=models.CASCADE)
+    age_group = models.ForeignKey(AgeGroup, on_delete=models.CASCADE)
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
     number = models.PositiveSmallIntegerField()
 
     class Meta:
-        """Set consistent ordering of age ranges."""
+        """Set consistent ordering of age groups."""
 
         ordering = ["number"]
 

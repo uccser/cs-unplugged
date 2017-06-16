@@ -8,7 +8,7 @@ from topics.models import (
     UnitPlan,
     Lesson,
     LessonNumber,
-    AgeRange,
+    AgeGroup,
     CurriculumIntegration,
     CurriculumArea,
     ProgrammingChallenge,
@@ -123,7 +123,7 @@ class TopicsTestDataGenerator:
         unit_plan.save()
         return unit_plan
 
-    def create_lesson(self, topic, unit_plan, number, age_range=None):
+    def create_lesson(self, topic, unit_plan, number, age_group=None):
         """Create lesson object.
 
         Args:
@@ -140,37 +140,37 @@ class TopicsTestDataGenerator:
             slug="lesson-{}".format(number),
             name="Lesson {} ({} to {})".format(
                 number,
-                age_range.ages[0] if age_range else "none",
-                age_range.ages[1] if age_range else "none"
+                age_group.ages[0] if age_group else "none",
+                age_group.ages[1] if age_group else "none"
             ),
             duration=number,
             content="<p>Content for lesson {}.</p>".format(number),
         )
         lesson.save()
-        if age_range:
+        if age_group:
             LessonNumber(
-                age_range=age_range,
+                age_group=age_group,
                 lesson=lesson,
                 number=number,
             ).save()
         return lesson
 
-    def create_age_range(self, min_age, max_age):
-        """Create AgeRange object.
+    def create_age_group(self, min_age, max_age):
+        """Create AgeGroup object.
 
         Args:
-            min_age: the minumum age for the range (int).
-            max_age: the maximum age for the range (int).
+            min_age: the minumum age for the group (int).
+            max_age: the maximum age for the group (int).
 
         Returns:
-            AgeRange object.
+            AgeGroup object.
         """
-        age_range = AgeRange(
+        age_group = AgeGroup(
             slug="{}-{}".format(min_age, max_age),
             ages=(min_age, max_age)
         )
-        age_range.save()
-        return age_range
+        age_group.save()
+        return age_group
 
     def create_difficulty_level(self, number):
         """Create difficuly level object.

@@ -1,18 +1,18 @@
-{% for age_range, lessons in grouped_lessons.items %}
+{% for age_group, lessons in grouped_lessons.items %}
   <table class="table table-responsive table-center-vertical">
     <thead class="thead-default">
       <tr>
         <th colspan="2">
-          Ages {{ age_range.ages.lower }} to {{ age_range.ages.upper }}
+          Ages {{ age_group.ages.lower }} to {{ age_group.ages.upper }}
           </th>
         <th class="text-center">Programming challenges</th>
       </tr>
     </thead>
     <tbody>
-      {% if age_range.description %}
+      {% if age_group.description %}
       <tr class="align-middle">
         <td colspan="3" class="small">
-          {{ age_range.description }}
+          {{ age_group.description }}
         </td>
       </tr>
       {% endif %}

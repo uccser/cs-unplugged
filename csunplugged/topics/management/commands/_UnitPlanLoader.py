@@ -9,7 +9,7 @@ from utils.errors.KeyNotFoundError import KeyNotFoundError
 from topics.models import (
     Lesson,
     LessonNumber,
-    AgeRange,
+    AgeGroup,
 )
 
 
@@ -84,7 +84,7 @@ class UnitPlanLoader(BaseLoader):
             self.BASE_PATH
         ).load()
 
-        # Create AgeRange and assign to lessons
+        # Create AgeGroup and assign to lessons
         age_groups = unit_plan_structure.get("age-groups", None)
         if age_groups is None:
             raise MissingRequiredFieldError(
@@ -93,16 +93,16 @@ class UnitPlanLoader(BaseLoader):
                 "Unit Plan"
             )
 
-        for (age_range_slug, age_group_data) in age_groups.items():
+        for (age_group_slug, age_group_data) in age_groups.items():
 
             try:
-                age_range = AgeRange.objects.get(
-                    slug=age_range_slug
+                age_group = AgeGroup.objects.get(
+                    slug=age_group_slug
                 )
             except:
                 raise KeyNotFoundError(
                     self.structure_file_path,
-                    age_range_slug,
+                    age_group_slug,
                     "Age Range"
                 )
 
@@ -135,7 +135,7 @@ class UnitPlanLoader(BaseLoader):
                     lesson_number = lesson_data.get("number", None)
 
                 relationship = LessonNumber(
-                    age_range=age_range,
+                    age_group=age_group,
                     lesson=lesson,
                     number=lesson_number,
                 )

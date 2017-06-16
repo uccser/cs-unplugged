@@ -514,7 +514,7 @@ Unit Plan Configuration File
 
       - **Required Fields:**
 
-        - ``<age-range>:`` Given as two integers separated by a hyphen (e.g. ``8-10``)
+        - ``<age-group>:`` The key for the age group.
 
           - **Required Fields:**
 
@@ -623,6 +623,48 @@ following:
     learning-outcomes:
       - binary-data-representation
       - binary-justify-representation
+
+.. _age-groups-file:
+
+Age Group Configuration File
+------------------------------------------------------------------------------
+
+- **File Name:** ``age-groups.yaml``
+
+- **Location:** ``topics/content/<language>/``
+
+- **Referenced In:** ``topics/content/<language>/structure.yaml``
+
+- **Purpose:** Defines the age groups avilable for all lessons.
+
+- **Required Fields:**
+
+  - ``<age-group-key>:`` This is the key for the age group.
+    Each age group has its own list of required and optional fields:
+
+    - **Required Fields:**
+
+      - ``min_age:`` The minimum age of the age group.
+      - ``max_age:`` The maximum age of the age group.
+
+    - **Optional Fields:**
+
+      - ``description:`` A text description for the age group.
+
+A complete age group structure file may look like the following:
+
+.. code-block:: yaml
+
+  5-7:
+      min_age: 5
+      max_age: 7
+      description: In the teacher observations sections there may also be background notes on the big picture. There is no expectation that 5 to 7 year olds will need to know this, but if you are asked, you have the answer at your fingertips.
+  8-10:
+      min_age: 8
+      max_age: 10
+  11-14:
+      min_age: 11
+      max_age: 14
 
 .. _learning-outcomes-file:
 

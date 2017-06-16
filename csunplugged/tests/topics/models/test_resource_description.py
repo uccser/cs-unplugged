@@ -20,8 +20,8 @@ class ResourceDescriptionModelTest(BaseTestWithDB):
         )
         topic = self.test_topics_data.create_topic(1)
         unit_plan = self.test_topics_data.create_unit_plan(topic, 1)
-        age_range = self.test_topics_data.create_age_range(1, 99)
-        lesson = self.test_topics_data.create_lesson(topic, unit_plan, 1, age_range)
+        age_group = self.test_topics_data.create_age_group(1, 99)
+        lesson = self.test_topics_data.create_lesson(topic, unit_plan, 1, age_group)
         new_resource = ResourceDescription.objects.create(
             resource=resource,
             lesson=lesson,

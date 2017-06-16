@@ -89,18 +89,18 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
     def test_programming_challenge_view_lessons_context(self):
         topic = self.test_data.create_topic(1)
         unit_plan = self.test_data.create_unit_plan(topic, 1)
-        age_range_1 = self.test_data.create_age_range(5, 7)
+        age_group_1 = self.test_data.create_age_group(5, 7)
         lesson1 = self.test_data.create_lesson(
             topic,
             unit_plan,
             1,
-            age_range_1
+            age_group_1
         )
         lesson2 = self.test_data.create_lesson(
             topic,
             unit_plan,
             2,
-            age_range_1
+            age_group_1
         )
         difficulty = self.test_data.create_difficulty_level(1)
         challenge = self.test_data.create_programming_challenge(topic, 1, difficulty)

@@ -134,12 +134,12 @@ class LessonView(generic.DetailView):
         context = super(LessonView, self).get_context_data(**kwargs)
         # Loading objects under consistent context names for breadcrumbs
         context["lesson_ages"] = []
-        for age_range in self.object.age_range.order_by("ages"):
-            number = LessonNumber.objects.get(lesson=self.object, age_range=age_range).number
+        for age_group in self.object.age_group.order_by("ages"):
+            number = LessonNumber.objects.get(lesson=self.object, age_group=age_group).number
             context["lesson_ages"].append(
                 {
-                    "lower": age_range.ages.lower,
-                    "upper": age_range.ages.upper,
+                    "lower": age_group.ages.lower,
+                    "upper": age_group.ages.upper,
                     "number": number,
                 }
             )

@@ -72,10 +72,10 @@ class Command(BaseCommand):
                 "Application Structure"
             )
         else:
-            age_ranges_path = structure_file["age-groups"]
-            if age_ranges_path is not None:
-                factory.create_age_ranges_loader(
-                    age_ranges_path,
+            age_groups_path = structure_file["age-groups"]
+            if age_groups_path is not None:
+                factory.create_age_groups_loader(
+                    age_groups_path,
                     BASE_PATH
                 ).load()
 

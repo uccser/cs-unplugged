@@ -1,6 +1,6 @@
 """Factory for creating loader objects."""
 
-from topics.management.commands._AgeRangesLoader import AgeRangesLoader
+from topics.management.commands._AgeGroupsLoader import AgeGroupsLoader
 from topics.management.commands._CurriculumAreasLoader import CurriculumAreasLoader
 from topics.management.commands._CurriculumIntegrationsLoader import CurriculumIntegrationsLoader
 from topics.management.commands._GlossaryTermsLoader import GlossaryTermsLoader
@@ -16,9 +16,9 @@ from resources.management.commands._ResourcesLoader import ResourcesLoader
 class LoaderFactory:
     """Factory for creating loader objects."""
 
-    def create_age_ranges_loader(self, structure_file_path, BASE_PATH):
-        """Create age range loader."""
-        return AgeRangesLoader(structure_file_path, BASE_PATH)
+    def create_age_groups_loader(self, structure_file_path, BASE_PATH):
+        """Create age group loader."""
+        return AgeGroupsLoader(structure_file_path, BASE_PATH)
 
     def create_curriculum_areas_loader(self, structure_file_path, BASE_PATH):
         """Create curriculum area loader."""
