@@ -92,7 +92,7 @@ class UnitPlanViewTest(BaseTestWithDB):
                 [lesson1, lesson2]
             )
 
-    def test_curriculum_integration_view_prerequisite_lessons_context_order(self):
+    def test_unit_plan_view_lessons_context_order(self):
         topic = self.test_data.create_topic(1)
         unit_plan = self.test_data.create_unit_plan(topic, 1)
         age_range_1 = self.test_data.create_age_range(5, 7)
