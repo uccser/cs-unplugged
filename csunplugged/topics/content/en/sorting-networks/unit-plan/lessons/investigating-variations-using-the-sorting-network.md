@@ -1,5 +1,9 @@
 # Investigating variations using the Sorting Network
 
+## Preparatory knowledge
+
+Students should have completed lesson 1 to introduce Sorting Networks.
+
 ## Key questions
 
 -   In the Sorting Network, what do we think will happen if the smaller card goes right instead of left at each box and vice versa?
