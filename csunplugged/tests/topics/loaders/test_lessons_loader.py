@@ -6,8 +6,12 @@ from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 from topics.models import Lesson
 from topics.management.commands._LessonsLoader import LessonsLoader
 
-from utils.errors.NoHeadingFoundInMarkdownFileError import NoHeadingFoundInMarkdownFileError
+from utils.errors.CouldNotFindConfigFileError import CouldNotFindConfigFileError
+from utils.errors.EmptyConfigFileError import EmptyConfigFileError
 from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
+from utils.errors.KeyNotFoundError import KeyNotFoundError
+from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
+from utils.errors.NoHeadingFoundInMarkdownFileError import NoHeadingFoundInMarkdownFileError
 
 
 class LessonsLoaderTest(BaseTestWithDB):
@@ -319,6 +323,23 @@ class LessonsLoaderTest(BaseTestWithDB):
             ordered=False,
         )
 
+    def test_lesson_loader_optional_programming_challenges_invalid_slug(self):
+        config_file = os.path.join(self.loader_name, "programming-challenges-invalid.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        self.assertRaises(
+            KeyNotFoundError,
+            lesson_loader.load,
+        )
+
     def test_lesson_loader_optional_programming_challenges_set_correctly_when_omitted(self):
         config_file = os.path.join(self.loader_name, "basic-config.yaml")
         lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
@@ -463,4 +484,52 @@ class LessonsLoaderTest(BaseTestWithDB):
                 "<Lesson: Lesson 3>",
             ],
             ordered=False,
+        )
+
+    def test_lessons_loader_missing_configuration_file(self):
+        config_file = os.path.join(self.loader_name, "missing.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+        topic = self.test_data.create_topic("1")
+        unit_plan = self.test_data.create_unit_plan(topic, "1")
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        self.assertRaises(
+            CouldNotFindConfigFileError,
+            lesson_loader.load,
+        )
+
+    def test_lessons_loader_empty_configuration_file(self):
+        config_file = os.path.join(self.loader_name, "empty.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+        topic = self.test_data.create_topic("1")
+        unit_plan = self.test_data.create_unit_plan(topic, "1")
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        self.assertRaises(
+            EmptyConfigFileError,
+            lesson_loader.load,
+        )
+
+    def test_lessons_loader_missing_lesson_data(self):
+        config_file = os.path.join(self.loader_name, "missing-lesson-data.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+        topic = self.test_data.create_topic("1")
+        unit_plan = self.test_data.create_unit_plan(topic, "1")
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        self.assertRaises(
+            MissingRequiredFieldError,
+            lesson_loader.load,
         )
