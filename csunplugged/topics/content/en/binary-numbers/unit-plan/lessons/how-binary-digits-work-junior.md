@@ -7,8 +7,8 @@ We’ve noticed that when we teach the binary number system to students ages 5 -
 ## Key question
 
 -   How do you think a digital device stores information? 
-    Potential answers could include
-    Accept and record all answers to revisit at the end of the lesson.
+
+Accept and record all answers to revisit at the end of the lesson.
  
 ## Lesson starter
 
