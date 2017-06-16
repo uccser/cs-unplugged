@@ -46,13 +46,3 @@ def get_active_daemon_details(daemon):
                 number = int(m.group('number'))
                 details.append(DaemonMetaData(number, pid))
     return details
-
-def start_daemon(daemon_number):
-    args = ["/docker_venv/bin/python", "render.py",
-            "--daemon", str(daemon_number),
-            "start"]
-    p = subprocess.Popen(args,
-                         stdin=subprocess.DEVNULL,
-                         stdout=subprocess.DEVNULL,
-                         stderr=None)
-    return p

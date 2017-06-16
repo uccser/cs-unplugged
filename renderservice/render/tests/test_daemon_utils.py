@@ -1,9 +1,6 @@
 """Test the file manager for reading of and writing to files."""
-import os
-import time
-import subprocess
 import logging
-from daemons.interfaces import exit
+import subprocess
 from render.tests.BaseTest import BaseTest
 from render.daemon.utils import check_pid, get_active_daemon_details
 
@@ -14,7 +11,6 @@ class DaemonUtilsTest(BaseTest):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-
 
     @classmethod
     def setUpClass(cls):
@@ -41,7 +37,6 @@ class DaemonUtilsTest(BaseTest):
 
         if returncode != 0:
             logger.warning("Daemon {} failed to be stopped, please do so manually.")
-
 
     def test_get_active_daemon_details(self):
         self.assertEqual(self.returncode, 0)
