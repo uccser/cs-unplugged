@@ -55,7 +55,6 @@ class QueueHandlerTest(BaseTest):
             self.queue.delete_task(task_id)
         self.assertEqual(len(self.queue), 0)
 
-
     def test_lease_tasks(self):
         num_tasks = 10
         lease_length = 3600

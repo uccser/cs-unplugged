@@ -14,7 +14,7 @@ class DaemonUtilsTest(BaseTest):
 
     @classmethod
     def setUpClass(cls):
-        cls.daemon_number = 9999
+        cls.daemon_number = 9999  # probably not more than 9999 daemons
         args = ["/docker_venv/bin/python", "-m", "render.daemon",
                 "--daemon", str(cls.daemon_number),
                 "start"]
@@ -60,4 +60,4 @@ class DaemonUtilsTest(BaseTest):
         self.assertNotEqual(pid, 0)
 
         self.assertTrue(check_pid(pid))
-        self.assertFalse(check_pid(pid + 8192))
+        self.assertFalse(check_pid(pid + 8192))  # VM should probably not have more that 8000 processes running

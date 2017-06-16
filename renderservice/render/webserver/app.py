@@ -43,7 +43,7 @@ def health_check():
     working correctly.
     """
     errored = False
-    max_waits = 10
+    max_waits = 500
 
     inactive_daemons = {i for i in range(1, RENDER_DAEMONS + 1)}
     daemons = get_active_daemon_details("render")
