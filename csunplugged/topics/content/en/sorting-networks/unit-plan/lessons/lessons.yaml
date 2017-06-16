@@ -8,3 +8,14 @@ reinforcing-numeracy-through-a-sorting-network:
       description: Cards for students to use with the Sorting Network.
   classroom-resources:
     - Stopwatch (e.g. on smartphone) to time races between groups.
+
+investigating-variations-using-the-sorting-network:
+  number: 2
+  duration: 30
+  generated-resources:
+    sorting-network:
+      description: Use blank copy as template for creating Sorting Network.
+  classroom-resources:
+    - A variety of sets of 6 number cards that each include one or more repeated numbers, or
+    - Books with author names, or
+    - Sets of instruments with different pitches
