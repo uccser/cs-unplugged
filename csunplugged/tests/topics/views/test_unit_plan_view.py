@@ -86,7 +86,7 @@ class UnitPlanViewTest(BaseTestWithDB):
         )
         grouped_lessons = response.context["grouped_lessons"]
         for (age_range, lessons) in grouped_lessons.items():
-            self.assertEqual(age_range, (5, 7))
+            self.assertEqual(age_range, "<AgeRange: NumericRange(5, 7, '[)')>")
             self.assertEqual(
                 lessons,
                 [lesson1, lesson2]
@@ -127,8 +127,8 @@ class UnitPlanViewTest(BaseTestWithDB):
         )
 
         expected_grouped_lessons = [
-            ((5, 7), [lesson3, lesson2]),
-            ((8, 10), [lesson1]),
+            ("<AgeRange: NumericRange(5, 7, '[)')>", [lesson3, lesson2]),
+            ("<AgeRange: NumericRange(8, 10, '[)')>", [lesson1]),
         ]
         grouped_lessons = response.context["grouped_lessons"]
         i = 0

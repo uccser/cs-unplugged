@@ -166,6 +166,7 @@ class TopicsTestDataGenerator:
             AgeRange object.
         """
         age_range = AgeRange(
+            slug="{}-{}".format(min_age, max_age),
             ages=(min_age, max_age)
         )
         age_range.save()

@@ -70,7 +70,7 @@ class TopicViewTest(BaseTestWithDB):
         )
         grouped_lessons = response.context["grouped_lessons"]
         for (age_range, lessons) in grouped_lessons.items():
-            self.assertEqual(age_range, (5, 7))
+            self.assertEqual(age_range, "<AgeRange: NumericRange(5, 7, '[)')>")
             self.assertEqual(
                 lessons,
                 [lesson1, lesson2]

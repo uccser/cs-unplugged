@@ -28,6 +28,7 @@ class UnitPlanLoaderTest(BaseTestWithDB):
         topic = self.test_data.create_topic("1")
         unit_plan = self.test_data.create_unit_plan(topic, "test")
         self.test_data.create_lesson(topic, unit_plan, "1")
+        self.test_data.create_age_range(8, 10)
 
         up_loader = UnitPlanLoader(factory, config_file, topic, self.BASE_PATH)
         up_loader.load()
@@ -100,6 +101,7 @@ class UnitPlanLoaderTest(BaseTestWithDB):
 
         factory = Mock()
         topic = self.test_data.create_topic("1")
+        self.test_data.create_age_range(8, 10)
 
         up_loader = UnitPlanLoader(factory, config_file, topic, self.BASE_PATH)
 
@@ -115,6 +117,7 @@ class UnitPlanLoaderTest(BaseTestWithDB):
         topic = self.test_data.create_topic("1")
         unit_plan = self.test_data.create_unit_plan(topic, "test")
         self.test_data.create_lesson(topic, unit_plan, "1")
+        self.test_data.create_age_range(8, 10)
 
         up_loader = UnitPlanLoader(factory, config_file, topic, self.BASE_PATH)
 
