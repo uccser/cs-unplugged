@@ -1,6 +1,6 @@
 # Word study activity
 
-{image file-path="img/topics/par-pair.png"}
+{image file-path="img/topics/par-pair.png" alt="golf bag with golf sticks"}
 
 -  What are the dictionary meanings of the word "parity".
 -  What Latin word does it come from?

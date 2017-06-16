@@ -10,13 +10,13 @@ Can you find the error and correct it?*
 At least 36, or even 100 or more cards that are black on one side and white on the other, about 20mm by 20mm (or any two colours that are easily distinguished)
 A clear space on the floor or a table that the students can stand around
  
-###Preparation: 
+### Preparation: 
 
 Select a ‘magic master’. 
 This is the person who is in control of the game.
 This person will change at the end of each round.
 
-###Instructions:
+### Instructions:
 
 1.  The magic master sets up the cards on the floor, including parity cards in the last row and column, using someone from the group as their assistant.
     The grid can be any size; it should be at least 6 by 6, although it can be increased up to 10 by 10 or more to make the challenge harder.

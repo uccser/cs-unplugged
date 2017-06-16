@@ -1,6 +1,6 @@
 # What if?
 
-{image file-path="img/topics/gobbly-gook-computer.png"}
+{image file-path="img/topics/gobbly-gook-computer.png" alt="computer with strange symbols instead of plain text"}
 
 What if computers had no way of finding out if an error had occurred when reading a file or receiving transmitted data?
 Where do you think we would be with technology? Write a report that explains this. 
