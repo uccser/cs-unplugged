@@ -93,12 +93,19 @@ class UnitPlanLoader(BaseLoader):
                 "Unit Plan"
             )
 
-        for (age_range_numbers, age_group_data) in age_groups.items():
+        for (age_range_slug, age_group_data) in age_groups.items():
 
-            min_age, max_age = age_range_numbers.split('-')
-            age_range, created = AgeRange.objects.get_or_create(
-                ages=(int(min_age), int(max_age))
-            )
+            try:
+                age_range = AgeRange.objects.get(
+                    slug=age_range_slug
+                )
+            except:
+                raise KeyNotFoundError(
+                    self.structure_file_path,
+                    age_range_slug,
+                    "Age Range"
+                )
+
             if age_group_data is None:
                 raise MissingRequiredFieldError(
                     self.structure_file_path,

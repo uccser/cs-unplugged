@@ -2,11 +2,20 @@
   <table class="table table-responsive table-center-vertical">
     <thead class="thead-default">
       <tr>
-        <th colspan="2">Ages {{ age_range.0 }} to {{ age_range.1 }}</th>
+        <th colspan="2">
+          Ages {{ age_range.ages.lower }} to {{ age_range.ages.upper }}
+          </th>
         <th class="text-center">Programming challenges</th>
       </tr>
     </thead>
     <tbody>
+      {% if age_range.description %}
+      <tr class="align-middle">
+        <td colspan="3" class="small">
+          {{ age_range.description }}
+        </td>
+      </tr>
+      {% endif %}
       {% for lesson in lessons %}
         <tr class="align-middle">
           <td class="text-center">

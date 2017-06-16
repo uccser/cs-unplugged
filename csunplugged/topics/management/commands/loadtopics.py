@@ -65,6 +65,20 @@ class Command(BaseCommand):
                     BASE_PATH
                 ).load()
 
+        if structure_file["age-groups"] is None:
+            raise MissingRequiredFieldError(
+                structure_file_path,
+                ["age-groups"],
+                "Application Structure"
+            )
+        else:
+            age_ranges_path = structure_file["age-groups"]
+            if age_ranges_path is not None:
+                factory.create_age_ranges_loader(
+                    age_ranges_path,
+                    BASE_PATH
+                ).load()
+
         if structure_file["topics"] is None:
             raise MissingRequiredFieldError(
                 structure_file_path,

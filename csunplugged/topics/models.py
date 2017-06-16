@@ -237,7 +237,9 @@ class AgeRange(models.Model):
     """Model for age range in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
+    slug = models.SlugField()
     ages = IntegerRangeField()
+    description = models.CharField(max_length=500, null=True)
 
     def __str__(self):
         """Text representation of AgeRange object.
