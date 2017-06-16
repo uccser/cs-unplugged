@@ -20,14 +20,16 @@ class FileManagerTest(BaseTest):
 
         cls.testfile_name = "test.txt"
         cls.testfile_contents = "This is a testing file."
-        filepath = os.path.join(cls.folderpath_one, cls.testfile_name)
-        with open(filepath, "w") as f:
-            f.write(cls.testfile_contents)
 
     @classmethod
     def tearDownClass(cls):
         shutil.rmtree(cls.folderpath_one, ignore_errors=False)
         shutil.rmtree(cls.folderpath_two, ignore_errors=False)
+
+    def setUp(self):
+        filepath = os.path.join(self.folderpath_one, self.testfile_name)
+        with open(filepath, "wb") as f:
+            f.write(self.testfile_contents.encode("ascii"))
 
     def test_load_file(self):
         file_manager = FileManager(self.folderpath_one)
@@ -41,13 +43,34 @@ class FileManagerTest(BaseTest):
         string = data.read().decode("ascii")
         self.assertEqual(string, self.testfile_contents)
 
-    def test_save_file(self):
+    def test_save_file_with_directory(self):
         file_manager = FileManager(self.folderpath_one, self.folderpath_two, save_directory=self.folderpath_two)
 
-        filename = "hello.world"
+        filename = "save_with_directory.txt"
         file_content = "Hello world!"
         file_manager.save(filename, file_content.encode("ascii"))
 
         data = file_manager.load(filename)
+        string = data.read().decode("ascii")
+        self.assertEqual(string, file_content)
+
+    def test_save_file_without_directory(self):
+        file_manager = FileManager(self.folderpath_one, self.folderpath_two)
+
+        filename = "save_without_directory.txt"
+        file_content = "Hello world!"
+        file_manager.save(filename, file_content.encode("ascii"))
+
+        data = file_manager.load(filename)
+        string = data.read().decode("ascii")
+        self.assertEqual(string, file_content)
+
+    def test_save_file_without_directory_overwrite(self):
+        file_manager = FileManager(self.folderpath_two, self.folderpath_one)
+
+        file_content = "Hello world!"
+        file_manager.save(self.testfile_name, file_content.encode("ascii"))
+
+        data = file_manager.load(self.testfile_name)
         string = data.read().decode("ascii")
         self.assertEqual(string, file_content)

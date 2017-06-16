@@ -91,5 +91,5 @@ class FileManager(object):
 
         save_directory, _ = os.path.split(save_path)
         os.makedirs(save_directory, exist_ok=True)
-        with open(save_path, 'wb') as f:
+        with open(save_path, "wb") as f:
             f.write(content)

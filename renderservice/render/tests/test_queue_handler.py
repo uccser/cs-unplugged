@@ -32,6 +32,30 @@ class QueueHandlerTest(BaseTest):
         self.queue.delete_task(task_id)
         self.assertEqual(len(self.queue), 0)
 
+    def test_list_tasks(self):
+        num_tasks = 50
+
+        task_ids = set()
+        for i in range(num_tasks):
+            task_ids.add(self.queue.create_task(task_payload={"task": i}))
+        self.assertEqual(len(self.queue), num_tasks)
+
+        list_task_ids = set()
+        list_task_payloads = set()
+        tasks = self.queue.list_tasks()
+        for task in tasks:
+            list_task_ids.add(task["id"])
+            list_task_payloads.add(tuple(task["payload"].items()))
+
+        expected_payloads = {tuple({"task": i}.items()) for i in range(num_tasks)}
+        self.assertSetEqual(list_task_ids, task_ids)
+        self.assertSetEqual(list_task_payloads, expected_payloads)
+
+        for task_id in task_ids:
+            self.queue.delete_task(task_id)
+        self.assertEqual(len(self.queue), 0)
+
+
     def test_lease_tasks(self):
         num_tasks = 10
         lease_length = 3600

@@ -59,7 +59,7 @@ def health_check():
 
     processes = []
     for daemon_number in inactive_daemons:
-        args = ["/docker_venv/bin/python", "render.py",
+        args = ["/docker_venv/bin/python", "-m", "render.daemon",
                 "--daemon", str(daemon_number),
                 "start"]
         p = subprocess.Popen(args,
