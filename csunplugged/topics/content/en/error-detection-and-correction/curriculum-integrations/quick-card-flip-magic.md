@@ -5,11 +5,6 @@
 *Every item of data that we store and transmit has extra bits added to it to prevent errors.
 Can you find the error and correct it?*
  
-### We are learning to: 
-
-Identify that the error is at the intersection of an odd row/column 
-Say what error detection and error correction mean. 
- 
 ### Equipment: 
 
 At least 36, or even 100 or more cards that are black on one side and white on the other, about 20mm by 20mm (or any two colours that are easily distinguished)
