@@ -307,6 +307,26 @@ class Lesson(models.Model):
         """
         return bool(self.programming_challenges.all())
 
+    def retrieve_related_programming_challenges(self):
+        """Retrieve the lesson's programming challenges and update numbers.
+
+        Returns:
+            QuerySet of programming challenges with updated numbers.
+        """
+        programming_challenges = self.programming_challenges.order_by(
+            "challenge_set_number",
+            "challenge_number",
+            "name",
+        )
+        for programming_challenge in programming_challenges:
+            challenge_numbers = ProgrammingChallengeNumber.objects.get(
+                lesson=self,
+                programming_challenge=programming_challenge
+            )
+            programming_challenge.challenge_set_number = challenge_numbers.challenge_set_number
+            programming_challenge.challenge_number = challenge_numbers.challenge_number
+        return programming_challenges
+
     def __str__(self):
         """Text representation of Lesson object.
 

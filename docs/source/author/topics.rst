@@ -163,9 +163,10 @@ Adding a Lesson
 .. raw:: html
 
   <map name="lesson-map">
-    <area shape="rect" coords="237,310,317,352" href="#lesson-configuration-file">
-    <area shape="rect" coords="237,420,317,456" href="#unit-plan-configuration-file">
-    <area shape="rect" coords="237,525,317,560" href="../getting_started/helper_commands.html#update">
+    <area shape="rect" coords="238,318,315,351" href="#lesson-configuration-file">
+    <area shape="rect" coords="237,431,317,465" href="#lesson-configuration-file">
+    <area shape="rect" coords="237,534,317,569" href="#unit-plan-configuration-file">
+    <area shape="rect" coords="237,638,317,671" href="../getting_started/helper_commands.html#update">
   </map>
   <img src="../_static/img/topics_adding_lesson_flowchart.png" usemap="#lesson-map">
 
@@ -570,8 +571,14 @@ Lesson Configuration File
 
         - ``duration``: The estimated time to complete the lesson (in minutes).
 
+        - ``computational-thinking-links``: The Markdown filename containing
+          Computational Thinking links.
+
         - ``programming-challenges:`` A list of keys corresponding to programming
           challenges.
+
+        - ``programming-challenges-description``: The Markdown filename
+          containing a description for the programming challenges.
 
         - ``learning-outcomes:`` A list of keys corresponding to learning outcomes.
 
@@ -834,30 +841,9 @@ Programming Challenges Configuration File
     - **Required Fields:**
 
       - ``challenge-set-number:`` The group of related programming challenges this
-        challenge belongs to.
+        challenge belongs to (see note below).
 
-      - ``challenge-number:`` The number order for this programming challenge.
-
-        .. note ::
-
-          Programming challenges are sorted by their ``challenge-set-number``
-          and then their ``challenge-number``.
-          These numbers are not directly displayed, but used to calculate a
-          programming challenge's number for a lesson.
-
-          For example, if a lesson lists the following challenges:
-
-          - Challenge A: 1.1
-          - Challenge B: 1.3
-          - Challenge C: 2.2
-          - Challenge D: 9.3
-
-          The lesson will display these challenges as:
-
-          - Challenge A: 1.1
-          - Challenge B: 1.2
-          - Challenge C: 2.1
-          - Challenge D: 3.1
+      - ``challenge-number:`` The number order for this programming challenge (see note below).
 
       - ``difficulty-level:`` A key corresponding to a difficulty level.
 
@@ -870,6 +856,27 @@ Programming Challenges Configuration File
 
       - ``extra-challenge:`` A Markdown filename containing the content for an
         extra challenge.
+
+.. note ::
+
+  Programming challenges are sorted by their ``challenge-set-number``
+  and then their ``challenge-number``.
+  These numbers are not directly displayed, but used to calculate a
+  programming challenge's number for a lesson.
+
+  For example, if a lesson lists the following challenges:
+
+  - Challenge A: 1.1
+  - Challenge B: 1.3
+  - Challenge C: 2.2
+  - Challenge D: 9.3
+
+  The lesson will display these challenges as:
+
+  - Challenge A: 1.1
+  - Challenge B: 1.2
+  - Challenge C: 2.1
+  - Challenge D: 3.1
 
 A complete programming challenges structure file may look like the following:
 

@@ -165,21 +165,10 @@ class LessonView(generic.DetailView):
         return context
 
 
-class ProgrammingChallengeList(generic.ListView):
+class ProgrammingChallengeList(generic.base.TemplateView):
     """View for listing all programming challenges for a lesson."""
 
-    model = ProgrammingChallenge
     template_name = "topics/programming-challenge-lesson-list.html"
-    context_object_name = "programming_challenges"
-
-    def get_queryset(self, **kwargs):
-        """Retrieve all programming challenges for a topic.
-
-        Returns:
-            Queryset of ProgrammingChallenge objects.
-        """
-        lesson_slug = self.kwargs.get("lesson_slug", None)
-        return ProgrammingChallenge.objects.filter(lessons__slug=lesson_slug).select_related()
 
     def get_context_data(self, **kwargs):
         """Provide the context data for the programming challenge list view.
@@ -195,21 +184,9 @@ class ProgrammingChallengeList(generic.ListView):
             slug=self.kwargs.get("lesson_slug", None),
         )
         context["lesson"] = lesson
+        context["programming_challenges"] = lesson.retrieve_related_programming_challenges()
         context["unit_plan"] = lesson.unit_plan
         context["topic"] = lesson.topic
-        programming_challenges = context["programming_challenges"]
-        for programming_challenge in programming_challenges:
-            challenge_numbers = ProgrammingChallengeNumber.objects.get(
-                lesson=lesson,
-                programming_challenge=programming_challenge
-            )
-            programming_challenge.challenge_set_number = challenge_numbers.challenge_set_number
-            programming_challenge.challenge_number = challenge_numbers.challenge_number
-        context["programming_challenges"] = programming_challenges.order_by(
-            "challenge_set_number",
-            "challenge_number",
-            "name",
-        )
         return context
 
 

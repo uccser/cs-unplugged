@@ -296,7 +296,7 @@ class TopicsTestDataGenerator:
         """Add relationship between challenge and lesson objects.
 
         Args:
-            challenge: Challenge to add relationship beteeen
+            challenge: Challenge to add relationship between
                        (ProgrammingChallenge).
             lesson: Lesson to add relationship between (Lesson).
             set_number: Number to display as challenge set number (int).

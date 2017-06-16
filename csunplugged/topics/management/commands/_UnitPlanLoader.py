@@ -118,20 +118,14 @@ class UnitPlanLoader(BaseLoader):
                         "Lesson"
                     )
 
-                if lesson_data is None:
+                if lesson_data is None or lesson_data.get("number", None) is None:
                     raise MissingRequiredFieldError(
                         self.structure_file_path,
                         ["number"],
                         "Unit Plan"
                     )
-
-                lesson_number = lesson_data.get("number", None)
-                if lesson_number is None:
-                    raise MissingRequiredFieldError(
-                        self.structure_file_path,
-                        ["number"],
-                        "Unit Plan"
-                    )
+                else:
+                    lesson_number = lesson_data.get("number", None)
 
                 relationship = LessonNumber(
                     age_range=age_range,
