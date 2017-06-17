@@ -1,0 +1,36 @@
+quick-card-flip-magic:
+  number: 1
+  curriculum-areas:
+    - numeracy
+  prerequisite-lessons:
+    unit-plan:
+      - parity-magic
+
+what-if:
+  number: 2
+  curriculum-areas:
+    - literacy
+  prerequisite-lessons:
+    unit-plan:
+      - parity-magic
+
+biographies-and-error-control-history:
+  number: 3
+  curriculum-areas:
+    - literacy
+
+instructional-writing:
+  number: 4
+  curriculum-areas:
+    - literacy
+  prerequisite-lessons:
+    unit-plan:
+      - parity-magic
+
+word-study-activity:
+  number: 5
+  curriculum-areas:
+    - literacy
+  prerequisite-lessons:
+    unit-plan:
+      - parity-magic
