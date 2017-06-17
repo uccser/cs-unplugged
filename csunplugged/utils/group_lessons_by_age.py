@@ -19,7 +19,7 @@ def group_lessons_by_age(lessons):
         The value for a key is a sorted list of lessons (ordered by number).
     """
     grouped_lessons = OrderedDict()
-    lessons = lessons.order_by("number")
+    lessons = lessons.order_by("age_range", "number")
     for lesson in lessons:
         for age_range in lesson.age_range.all():
             ages = (age_range.age_range.lower, age_range.age_range.upper)
