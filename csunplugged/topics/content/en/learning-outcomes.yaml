@@ -268,3 +268,41 @@ programming-identify-list-store-data:
   text: Identify when to use a list to store a set of data.
   curriculum-areas:
     - programming
+
+# SORTING LEARNING OUTCOMES
+
+sorting-explain-parallel-algorithm:
+  text: Explain how a Sorting Network parallel algorithm works. 
+  curriculum-areas:
+    - algorithmic-thinking
+
+sorting-use-selection-sort:
+  text: Use selection (data comparisons) to sort multiple items.
+  curriculum-areas:
+    - decomposition
+
+sorting-identify-number-range:
+  text: Identify which number comes before or after in any range of numbers
+  curriculum-areas:
+    - numeracy
+
+sorting-organise-objects-size:
+  text: Organise objects from smallest in size to largest in size.
+  curriculum-areas:
+    - numeracy
+
+sorting-recognise-sorting-method:
+  text: Recognise that a sorting method can be applied to any values that can be ordered.
+  curriculum-areas:
+    - generalising-and-patterns
+
+sorting-demonstrate-alphabet-knowledge:
+  text: Demonstrate how your alphabet knowledge supports ordering words or books.
+  curriculum-areas:
+    - literacy
+
+sorting-comparing-musical-pitch:
+  text: Compare musical pitch in musical notation and aurally.
+  curriculum-areas:
+    - music
+
