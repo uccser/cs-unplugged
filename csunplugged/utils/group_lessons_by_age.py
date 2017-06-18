@@ -27,7 +27,7 @@ def group_lessons_by_age(lessons):
         for lesson in age_group.lessons.filter(id__in=lessons).order_by("lessonnumber"):
             lesson.number = LessonNumber.objects.get(lesson=lesson, age_group=age_group).number
             if age_group in grouped_lessons.keys():
-                grouped_lessons[age_group].append(lesson)
+                grouped_lessons[ages].add(lesson)
             else:
-                grouped_lessons[age_group] = [lesson]
+                grouped_lessons[ages] = set([lesson])
     return grouped_lessons
