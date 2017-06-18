@@ -49,9 +49,9 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
             print("   - Testing combination: {} ... ".format(combination), end="")
             url_combination = {}
             for parameter in combination:
-                if combination[parameter] == True:
+                if combination[parameter] is True:
                     url_combination[parameter] = "yes"
-                elif combination[parameter] == False:
+                elif combination[parameter] is False:
                     url_combination[parameter] = "no"
                 else:
                     url_combination[parameter] = combination[parameter]
