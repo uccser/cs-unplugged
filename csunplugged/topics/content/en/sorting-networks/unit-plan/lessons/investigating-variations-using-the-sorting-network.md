@@ -111,7 +111,7 @@ Comparing two words or names is challenging; they will need to know to compare e
 The words being compared could also be used to reinforce spelling or meaning; for example, the words above are the colours in Te Reo Māori, so the student with the word "kowhai" would be reinforcing that it means the colour yellow.
 The use of macrons and other diacritical marks also gives the opportunity to explore the order that is used in the such languages for those letters.
 
-### Variation 5: Music notation
+### Variation 6: Music notation
 
 {image file-path="img/topics/sorting-network-variation-music.png"}
 
@@ -119,7 +119,7 @@ Students can compare the pitch of music notation, with higher notes going to the
 If all the cards have the same clef (such as the treble clef here) then it reinforces that the height on the stave corresponds to the pitch.
 Advanced music students can do the comparisons with different clefs (bass, alto and/or tenor) to exercise note reading.
 
-### Variation 6: Music pitch - aural
+### Variation 7: Music pitch - aural
 
 {image file-path="img/topics/sorting-network-variation-aural.png"}
 
@@ -233,7 +233,7 @@ As described in the unit plan, if the data being sorted have a transitive relati
 
 #### What to look for
 
-Are students able to recognise that each of the sets of items compared in this exercise have a transitive relation? Could they identify the most logical comparison to use (such as alphabetical order and the pitch of notes)? 
+Are students able to recognise that each of the sets of items compared in this exercise have a transitive relation? Could they identify the most logical comparison to use (such as alphabetical order and the pitch of notes)?
 
 Can they think of any types of data that don’t have a transitive relation, and that we can’t sort with the Sorting Network?
 
