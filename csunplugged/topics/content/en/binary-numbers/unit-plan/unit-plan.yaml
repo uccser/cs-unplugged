@@ -1,6 +1,11 @@
 lessons: lessons/lessons.yaml
 
 age-groups:
+  5-7:
+    how-binary-digits-work-junior:
+      number: 1
+    reinforcing-sequencing-in-binary-number-systems-junior:
+      number: 2
   8-10:
     how-binary-digits-work:
       number: 1

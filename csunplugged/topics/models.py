@@ -269,7 +269,7 @@ class Lesson(models.Model):
         on_delete=models.CASCADE,
         related_name="lessons"
     )
-    slug = models.SlugField()
+    slug = models.SlugField(max_length=100)
     name = models.CharField(max_length=100)
     duration = models.PositiveSmallIntegerField(null=True)
     content = models.TextField()
