@@ -115,21 +115,12 @@ third-party-licenses/gunicorn.txt
 ==============================================================================
 
 ==============================================================================
-jquery
+jQuery
 ------------------------------------------------------------------------------
 https://jquery.com/
 Copyright JS Foundation and other contributors, https://js.foundation/
 Licensed under MIT License.
 third-party-licenses/jquery.txt
-==============================================================================
-
-==============================================================================
-model_mommy
-------------------------------------------------------------------------------
-https://github.com/vandersonmota/model_mommy
-Copyright 2011 Vanderson Mota
-Licensed under Apache License Version 2.0 License.
-third-party-licenses/model-mommy.txt
 ==============================================================================
 
 ==============================================================================
