@@ -3,7 +3,7 @@ from django.urls import reverse
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
-from topics.models import ConnectedGeneratedResource
+from topics.models import ResourceDescription
 
 
 class TopicViewTest(BaseTestWithDB):
@@ -46,18 +46,18 @@ class TopicViewTest(BaseTestWithDB):
     def test_topic_view_lessons_context(self):
         topic = self.test_data.create_topic(1)
         unit_plan = self.test_data.create_unit_plan(topic, 1)
-        age_range_1 = self.test_data.create_age_range(5, 7)
+        age_group_1 = self.test_data.create_age_group(5, 7)
         lesson1 = self.test_data.create_lesson(
             topic,
             unit_plan,
             1,
-            age_range_1
+            age_group_1
         )
         lesson2 = self.test_data.create_lesson(
             topic,
             unit_plan,
             2,
-            age_range_1
+            age_group_1
         )
         kwargs = {
             "topic_slug": topic.slug,
@@ -69,8 +69,8 @@ class TopicViewTest(BaseTestWithDB):
             1
         )
         grouped_lessons = response.context["grouped_lessons"]
-        for (age_range, lessons) in grouped_lessons.items():
-            self.assertEqual(age_range, (5, 7))
+        for (age_group, lessons) in grouped_lessons.items():
+            self.assertEqual(repr(age_group), "<AgeGroup: NumericRange(5, 7, '[)')>")
             self.assertEqual(
                 lessons,
                 [lesson1, lesson2]
@@ -81,18 +81,18 @@ class TopicViewTest(BaseTestWithDB):
         # Create topic data
         topic = self.test_data.create_topic(1)
         unit_plan = self.test_data.create_unit_plan(topic, 1)
-        age_range_1 = self.test_data.create_age_range(5, 7)
+        age_group_1 = self.test_data.create_age_group(5, 7)
         lesson1 = self.test_data.create_lesson(
             topic,
             unit_plan,
             1,
-            age_range_1
+            age_group_1
         )
         lesson2 = self.test_data.create_lesson(
             topic,
             unit_plan,
             2,
-            age_range_1
+            age_group_1
         )
         # Create resource data
         resource1 = resource_test_data.create_resource(
@@ -108,13 +108,13 @@ class TopicViewTest(BaseTestWithDB):
             "binary_windows.py",
         )
         # Create relationships
-        relationship1 = ConnectedGeneratedResource(
+        relationship1 = ResourceDescription(
             resource=resource1,
             lesson=lesson1,
             description="Description of Binary Cards (small)"
         )
         relationship1.save()
-        relationship2 = ConnectedGeneratedResource(
+        relationship2 = ResourceDescription(
             resource=resource2,
             lesson=lesson2,
             description="Description of Binary Windows"

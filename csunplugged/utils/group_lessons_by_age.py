@@ -1,6 +1,10 @@
 """Return ordered groups of lessons."""
 
 from collections import OrderedDict
+from topics.models import (
+    AgeGroup,
+    LessonNumber,
+)
 
 
 def group_lessons_by_age(lessons):
@@ -19,12 +23,11 @@ def group_lessons_by_age(lessons):
         The value for a key is a sorted list of lessons (ordered by number).
     """
     grouped_lessons = OrderedDict()
-    lessons = lessons.order_by("age_range", "number")
-    for lesson in lessons:
-        for age_range in lesson.age_range.all():
-            ages = (age_range.age_range.lower, age_range.age_range.upper)
-            if ages in grouped_lessons.keys():
-                grouped_lessons[ages].append(lesson)
+    for age_group in AgeGroup.objects.distinct():
+        for lesson in age_group.lessons.filter(id__in=lessons).order_by("lessonnumber"):
+            lesson.number = LessonNumber.objects.get(lesson=lesson, age_group=age_group).number
+            if age_group in grouped_lessons.keys():
+                grouped_lessons[age_group].append(lesson)
             else:
-                grouped_lessons[ages] = [lesson]
+                grouped_lessons[age_group] = [lesson]
     return grouped_lessons

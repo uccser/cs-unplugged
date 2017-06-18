@@ -1,6 +1,6 @@
 reinforcing-numeracy-through-a-sorting-network:
-  number: 1
   duration: 45
+  computational-thinking-links: reinforcing-numeracy-through-a-sorting-network-ct-links.md
   generated-resources:
     sorting-network:
       description: Use blank copy as template for creating Sorting Network.

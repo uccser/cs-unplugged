@@ -98,7 +98,7 @@ class TopicLoader(BaseLoader):
         if "programming-challenges" in topic_structure:
             programming_challenges_structure_file_path = topic_structure["programming-challenges"]
             if programming_challenges_structure_file_path is not None:
-                self.factory.create_programming_exercises_loader(
+                self.factory.create_programming_challenges_loader(
                     programming_challenges_structure_file_path,
                     topic,
                     self.BASE_PATH

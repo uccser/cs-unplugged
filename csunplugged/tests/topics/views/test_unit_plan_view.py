@@ -61,18 +61,18 @@ class UnitPlanViewTest(BaseTestWithDB):
     def test_unit_plan_view_lessons_context(self):
         topic = self.test_data.create_topic(1)
         unit_plan = self.test_data.create_unit_plan(topic, 1)
-        age_range_1 = self.test_data.create_age_range(5, 7)
+        age_group_1 = self.test_data.create_age_group(5, 7)
         lesson1 = self.test_data.create_lesson(
             topic,
             unit_plan,
             1,
-            age_range_1
+            age_group_1
         )
         lesson2 = self.test_data.create_lesson(
             topic,
             unit_plan,
             2,
-            age_range_1
+            age_group_1
         )
         kwargs = {
             "topic_slug": topic.slug,
@@ -85,8 +85,8 @@ class UnitPlanViewTest(BaseTestWithDB):
             1
         )
         grouped_lessons = response.context["grouped_lessons"]
-        for (age_range, lessons) in grouped_lessons.items():
-            self.assertEqual(age_range, (5, 7))
+        for (age_group, lessons) in grouped_lessons.items():
+            self.assertEqual(repr(age_group), "<AgeGroup: NumericRange(5, 7, '[)')>")
             self.assertEqual(
                 lessons,
                 [lesson1, lesson2]
@@ -95,25 +95,25 @@ class UnitPlanViewTest(BaseTestWithDB):
     def test_unit_plan_view_lessons_context_order(self):
         topic = self.test_data.create_topic(1)
         unit_plan = self.test_data.create_unit_plan(topic, 1)
-        age_range_1 = self.test_data.create_age_range(5, 7)
-        age_range_2 = self.test_data.create_age_range(8, 10)
+        age_group_1 = self.test_data.create_age_group(5, 7)
+        age_group_2 = self.test_data.create_age_group(8, 10)
         lesson1 = self.test_data.create_lesson(
             topic,
             unit_plan,
             1,
-            age_range_2
+            age_group_2
         )
         lesson2 = self.test_data.create_lesson(
             topic,
             unit_plan,
             2,
-            age_range_1
+            age_group_1
         )
         lesson3 = self.test_data.create_lesson(
             topic,
             unit_plan,
             1,
-            age_range_1
+            age_group_1
         )
         kwargs = {
             "topic_slug": topic.slug,
@@ -127,13 +127,13 @@ class UnitPlanViewTest(BaseTestWithDB):
         )
 
         expected_grouped_lessons = [
-            ((5, 7), [lesson3, lesson2]),
-            ((8, 10), [lesson1]),
+            ("<AgeGroup: NumericRange(5, 7, '[)')>", [lesson3, lesson2]),
+            ("<AgeGroup: NumericRange(8, 10, '[)')>", [lesson1]),
         ]
         grouped_lessons = response.context["grouped_lessons"]
         i = 0
-        for (age_range, lessons) in grouped_lessons.items():
-            self.assertEqual(age_range, expected_grouped_lessons[i][0])
+        for (age_group, lessons) in grouped_lessons.items():
+            self.assertEqual(repr(age_group), expected_grouped_lessons[i][0])
             self.assertEqual(
                 lessons,
                 expected_grouped_lessons[i][1]

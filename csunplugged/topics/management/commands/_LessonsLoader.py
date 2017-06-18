@@ -8,10 +8,11 @@ from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.InvalidConfigValueError import InvalidConfigValueError
 
 from topics.models import (
-    ProgrammingExercise,
+    ProgrammingChallenge,
+    ProgrammingChallengeNumber,
     LearningOutcome,
     Resource,
-    ConnectedGeneratedResource,
+    ResourceDescription,
 )
 
 
@@ -51,15 +52,6 @@ class LessonsLoader(BaseLoader):
                     "Lesson"
                 )
 
-            # Retrieve required variables from structure dictionary
-            lesson_number = lesson_structure.get("number", None)
-            if None in [lesson_number]:
-                raise MissingRequiredFieldError(
-                    self.lessons_structure_file_path,
-                    ["number"],
-                    "Lesson"
-                )
-
             # Build the file path to the lesson"s md file
             file_path = os.path.join(
                 self.BASE_PATH,
@@ -72,6 +64,23 @@ class LessonsLoader(BaseLoader):
                 self.lessons_structure_file_path,
             )
 
+            if "computational-thinking-links" in lesson_structure:
+                file_name = lesson_structure["computational-thinking-links"]
+                file_path = os.path.join(
+                    self.BASE_PATH,
+                    "lessons",
+                    file_name
+                )
+                ct_links_content = self.convert_md_file(
+                    file_path,
+                    self.lessons_structure_file_path,
+                    heading_required=False,
+                    remove_title=False,
+                )
+                ct_links = ct_links_content.html_string
+            else:
+                ct_links = None
+
             if "duration" in lesson_structure:
                 lesson_duration = lesson_structure["duration"]
             else:
@@ -80,6 +89,23 @@ class LessonsLoader(BaseLoader):
             heading_tree = None
             if lesson_content.heading_tree:
                 heading_tree = convert_heading_tree_to_dict(lesson_content.heading_tree)
+
+            if "programming-challenges-description" in lesson_structure:
+                file_name = lesson_structure["programming-challenges-description"]
+                file_path = os.path.join(
+                    self.BASE_PATH,
+                    "lessons",
+                    file_name
+                )
+                programming_description_content = self.convert_md_file(
+                    file_path,
+                    self.lessons_structure_file_path,
+                    heading_required=False,
+                    remove_title=False,
+                )
+                programming_description = programming_description_content.html_string
+            else:
+                programming_description = None
 
             classroom_resources = lesson_structure.get("classroom-resources", None)
             if isinstance(classroom_resources, list):
@@ -103,35 +129,75 @@ class LessonsLoader(BaseLoader):
                     "List of strings."
                 )
 
-            lesson = self.topic.topic_lessons.create(
+            lesson = self.topic.lessons.create(
                 unit_plan=self.unit_plan,
                 slug=lesson_slug,
                 name=lesson_content.title,
-                number=lesson_number,
                 duration=lesson_duration,
                 content=lesson_content.html_string,
+                computational_thinking_links=ct_links,
                 heading_tree=heading_tree,
+                programming_challenges_description=programming_description,
                 classroom_resources=classroom_resources,
             )
             lesson.save()
 
-            # Add programming exercises
+            # Add programming challenges
             if "programming-challenges" in lesson_structure:
-                programming_exercise_slugs = lesson_structure["programming-challenges"]
-                if programming_exercise_slugs is not None:
-                    for programming_exercise_slug in programming_exercise_slugs:
+                programming_challenge_slugs = lesson_structure["programming-challenges"]
+                if programming_challenge_slugs is not None:
+                    # Check all slugs are valid
+                    for programming_challenge_slug in programming_challenge_slugs:
                         try:
-                            programming_exercise = ProgrammingExercise.objects.get(
-                                slug=programming_exercise_slug,
+                            ProgrammingChallenge.objects.get(
+                                slug=programming_challenge_slug,
                                 topic=self.topic
                             )
-                            lesson.programming_exercises.add(programming_exercise)
+
                         except:
                             raise KeyNotFoundError(
                                 self.lessons_structure_file_path,
-                                programming_exercise_slug,
+                                programming_challenge_slug,
                                 "Programming Challenges"
                             )
+
+                    # Store number of challenge in relationship with lesson.
+                    # If three linked challenges have numbers 1.1, 4.2, and 4.5
+                    # They will be stored as 1.1, 2.1, and 2.2 respectively.
+
+                    # Order challenges for numbering.
+                    programming_challenges = ProgrammingChallenge.objects.filter(
+                        slug__in=programming_challenge_slugs,
+                        topic=self.topic
+                    ).order_by("challenge_set_number", "challenge_number")
+
+                    # Setup variables for numbering.
+                    display_set_number = 0
+                    last_set_number = -1
+                    display_number = 0
+                    last_number = -1
+
+                    # For each challenge, increment number variables if original
+                    # numbers are different.
+                    for programming_challenge in programming_challenges:
+                        if programming_challenge.challenge_set_number > last_set_number:
+                            display_set_number += 1
+                            display_number = 0
+                            last_number = -1
+                        if programming_challenge.challenge_number > last_number:
+                            display_number += 1
+                        last_set_number = programming_challenge.challenge_set_number
+                        last_number = programming_challenge.challenge_number
+
+                        # Create and save relationship between lesson and
+                        # challenge that contains challenge number.
+                        relationship = ProgrammingChallengeNumber(
+                            programming_challenge=programming_challenge,
+                            lesson=lesson,
+                            challenge_set_number=display_set_number,
+                            challenge_number=display_number,
+                        )
+                        relationship.save()
 
             # Add learning outcomes
             if "learning-outcomes" in lesson_structure:
@@ -179,7 +245,7 @@ class LessonsLoader(BaseLoader):
                                 "Generated Resource"
                             )
 
-                        relationship = ConnectedGeneratedResource(
+                        relationship = ResourceDescription(
                             resource=resource,
                             lesson=lesson,
                             description=resource_description
