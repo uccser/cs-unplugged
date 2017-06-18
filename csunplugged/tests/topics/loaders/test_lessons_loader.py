@@ -6,9 +6,12 @@ from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 from topics.models import Lesson
 from topics.management.commands._LessonsLoader import LessonsLoader
 
+from utils.errors.CouldNotFindConfigFileError import CouldNotFindConfigFileError
+from utils.errors.EmptyConfigFileError import EmptyConfigFileError
+from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
+from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.NoHeadingFoundInMarkdownFileError import NoHeadingFoundInMarkdownFileError
-from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
 
 
 class LessonsLoaderTest(BaseTestWithDB):
@@ -36,43 +39,6 @@ class LessonsLoaderTest(BaseTestWithDB):
         self.assertQuerysetEqual(
             Lesson.objects.all(),
             ["<Lesson: Lesson 1>"]
-        )
-
-    def test_lesson_loader_number_set_correctly(self):
-        config_file = os.path.join(self.loader_name, "basic-config.yaml")
-        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
-
-        topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
-
-        lesson_loader = LessonsLoader(
-            lessons_structure,
-            topic,
-            unit_plan,
-            self.test_data.LOADER_ASSET_PATH
-        )
-        lesson_loader.load()
-        self.assertEquals(
-            Lesson.objects.get(slug="lesson-1").number,
-            1,
-        )
-
-    def test_lesson_loader_missing_number_value(self):
-        config_file = os.path.join(self.loader_name, "missing-number.yaml")
-        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
-
-        topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
-
-        lesson_loader = LessonsLoader(
-            lessons_structure,
-            topic,
-            unit_plan,
-            self.test_data.LOADER_ASSET_PATH
-        )
-        self.assertRaises(
-            MissingRequiredFieldError,
-            lesson_loader.load,
         )
 
     def test_lesson_loader_topic_set_correctly(self):
@@ -217,6 +183,41 @@ class LessonsLoaderTest(BaseTestWithDB):
             lesson_loader.load,
         )
 
+    def test_lesson_loader_valid_computational_thinking_content(self):
+        config_file = os.path.join(self.loader_name, "ct-links.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+
+        topic = self.test_data.create_topic("1")
+        unit_plan = self.test_data.create_unit_plan(topic, "1")
+
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        lesson_loader.load()
+        self.assertEquals(
+            Lesson.objects.get(slug="ct-links").computational_thinking_links,
+            "<p>Example text for Computational Thinking links.</p>",
+        )
+
+    def test_lesson_loader_missing_computational_thinking_content(self):
+        config_file = os.path.join(self.loader_name, "basic-config.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+
+        topic = self.test_data.create_topic("1")
+        unit_plan = self.test_data.create_unit_plan(topic, "1")
+
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        lesson_loader.load()
+        self.assertIsNone(Lesson.objects.get(slug="lesson-1").computational_thinking_links)
+
     def test_lesson_loader_duration_set_correctly(self):
         config_file = os.path.join(self.loader_name, "duration.yaml")
         lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
@@ -296,15 +297,15 @@ class LessonsLoaderTest(BaseTestWithDB):
         lesson_loader.load()
         self.assertIsNone(Lesson.objects.get(slug="lesson-1").heading_tree)
 
-    def test_lesson_loader_optional_programming_exercises_set_correctly(self):
-        config_file = os.path.join(self.loader_name, "programming-exercises.yaml")
+    def test_lesson_loader_optional_programming_challenges_set_correctly(self):
+        config_file = os.path.join(self.loader_name, "programming-challenges.yaml")
         lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
 
         topic = self.test_data.create_topic(1)
         unit_plan = self.test_data.create_unit_plan(topic, 1)
         difficulty = self.test_data.create_difficulty_level(1)
-        self.test_data.create_programming_exercise(topic, 1, difficulty)
-        self.test_data.create_programming_exercise(topic, 2, difficulty)
+        self.test_data.create_programming_challenge(topic, 1, difficulty)
+        self.test_data.create_programming_challenge(topic, 2, difficulty)
 
         lesson_loader = LessonsLoader(
             lessons_structure,
@@ -314,23 +315,40 @@ class LessonsLoaderTest(BaseTestWithDB):
         )
         lesson_loader.load()
         self.assertQuerysetEqual(
-            Lesson.objects.get(slug="lesson-1").programming_exercises.all(),
+            Lesson.objects.get(slug="lesson-1").programming_challenges.all(),
             [
-                "<ProgrammingExercise: Exercise 1>",
-                "<ProgrammingExercise: Exercise 2>",
+                "<ProgrammingChallenge: Challenge 1.1: 1>",
+                "<ProgrammingChallenge: Challenge 1.1: 2>",
             ],
             ordered=False,
         )
 
-    def test_lesson_loader_optional_programming_exercises_set_correctly_when_omitted(self):
+    def test_lesson_loader_optional_programming_challenges_invalid_slug(self):
+        config_file = os.path.join(self.loader_name, "programming-challenges-invalid.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        self.assertRaises(
+            KeyNotFoundError,
+            lesson_loader.load,
+        )
+
+    def test_lesson_loader_optional_programming_challenges_set_correctly_when_omitted(self):
         config_file = os.path.join(self.loader_name, "basic-config.yaml")
         lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
 
         topic = self.test_data.create_topic(1)
         unit_plan = self.test_data.create_unit_plan(topic, 1)
         difficulty = self.test_data.create_difficulty_level(1)
-        self.test_data.create_programming_exercise(topic, 1, difficulty)
-        self.test_data.create_programming_exercise(topic, 2, difficulty)
+        self.test_data.create_programming_challenge(topic, 1, difficulty)
+        self.test_data.create_programming_challenge(topic, 2, difficulty)
 
         lesson_loader = LessonsLoader(
             lessons_structure,
@@ -340,9 +358,44 @@ class LessonsLoaderTest(BaseTestWithDB):
         )
         lesson_loader.load()
         self.assertQuerysetEqual(
-            Lesson.objects.get(slug="lesson-1").programming_exercises.all(),
+            Lesson.objects.get(slug="lesson-1").programming_challenges.all(),
             [],
         )
+
+    def test_lesson_loader_valid_programming_challenges_description(self):
+        config_file = os.path.join(self.loader_name, "programming-challenges-description.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+
+        topic = self.test_data.create_topic("1")
+        unit_plan = self.test_data.create_unit_plan(topic, "1")
+
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        lesson_loader.load()
+        self.assertEquals(
+            Lesson.objects.get(slug="programming-challenges-description").programming_challenges_description,
+            "<p>Description of lesson programming challenges.</p>",
+        )
+
+    def test_lesson_loader_missing_programming_challenges_description(self):
+        config_file = os.path.join(self.loader_name, "basic-config.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+
+        topic = self.test_data.create_topic("1")
+        unit_plan = self.test_data.create_unit_plan(topic, "1")
+
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        lesson_loader.load()
+        self.assertIsNone(Lesson.objects.get(slug="lesson-1").programming_challenges_description)
 
     def test_lesson_loader_optional_learning_outcomes_set_correctly(self):
         config_file = os.path.join(self.loader_name, "learning-outcomes.yaml")
@@ -431,4 +484,52 @@ class LessonsLoaderTest(BaseTestWithDB):
                 "<Lesson: Lesson 3>",
             ],
             ordered=False,
+        )
+
+    def test_lessons_loader_missing_configuration_file(self):
+        config_file = os.path.join(self.loader_name, "missing.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+        topic = self.test_data.create_topic("1")
+        unit_plan = self.test_data.create_unit_plan(topic, "1")
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        self.assertRaises(
+            CouldNotFindConfigFileError,
+            lesson_loader.load,
+        )
+
+    def test_lessons_loader_empty_configuration_file(self):
+        config_file = os.path.join(self.loader_name, "empty.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+        topic = self.test_data.create_topic("1")
+        unit_plan = self.test_data.create_unit_plan(topic, "1")
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        self.assertRaises(
+            EmptyConfigFileError,
+            lesson_loader.load,
+        )
+
+    def test_lessons_loader_missing_lesson_data(self):
+        config_file = os.path.join(self.loader_name, "missing-lesson-data.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+        topic = self.test_data.create_topic("1")
+        unit_plan = self.test_data.create_unit_plan(topic, "1")
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        self.assertRaises(
+            MissingRequiredFieldError,
+            lesson_loader.load,
         )

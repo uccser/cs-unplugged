@@ -9,7 +9,7 @@ For example, the following text:
 
 .. code-block:: none
 
-  # Scratch Programming Exercise
+  # Scratch Programming Challenge
 
   Try using the following blocks to create a program to display numbers 1, 2,
   4, 8 and 16 on the screen, one at a time.
@@ -32,7 +32,7 @@ For example, the following text:
 
   {panel end}
 
-  {button-link link="exercise/scratch-solution.html" text="Scratch Solution"}
+  {button-link link="challenge/scratch-solution.html" text="Scratch Solution"}
 
 will display as the following on the website:
 

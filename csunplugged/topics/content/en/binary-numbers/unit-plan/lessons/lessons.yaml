@@ -32,8 +32,8 @@ reinforcing-sequencing-in-binary-number-systems-junior:
     - Hats on and off
 
 how-binary-digits-work:
-  number: 1
   duration: 45
+  computational-thinking-links: how-binary-digits-work-ct-links.md
   programming-challenges:
     - binary-numbers-no-calculations
     - binary-numbers-using-variable
@@ -77,8 +77,8 @@ how-binary-digits-work:
     - Whiteboard and pens
 
 reinforcing-sequencing-in-binary-number-systems:
-  number: 2
   duration: 60
+  computational-thinking-links: reinforcing-sequencing-in-binary-number-systems-ct-links.md
   learning-outcomes:
     - binary-explain-off-on
     - binary-predict-bit-value
@@ -96,8 +96,8 @@ reinforcing-sequencing-in-binary-number-systems:
     - None required, but see note in text.
 
 codes-for-letters-using-binary-representation:
-  number: 3
   duration: 45
+  computational-thinking-links: codes-for-letters-using-binary-representation-ct-links.md
   learning-outcomes:
     - binary-recognise-alphabet-bits
     - binary-create-message-converting

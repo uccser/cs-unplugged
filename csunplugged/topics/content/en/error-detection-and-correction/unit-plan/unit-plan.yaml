@@ -1,6 +1,8 @@
 lessons: lessons/lessons.yaml
 
 age-groups:
-  - 8-10:
-    - parity-magic
-    - product-code-check-digits
+  8-10:
+    parity-magic:
+      number: 1
+    product-code-check-digits:
+      number: 2

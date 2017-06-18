@@ -1,11 +1,11 @@
 reinforcing-numeracy-through-a-sorting-network:
-  number: 1
   duration: 45
   learning-outcomes:
     - sorting-explain-parallel-algorithm
     - sorting-use-selection-sort
     - sorting-identify-number-range
     - sorting-organise-objects-size
+  computational-thinking-links: reinforcing-numeracy-through-a-sorting-network-ct-links.md
   generated-resources:
     sorting-network:
       description: Use blank copy as template for creating Sorting Network.

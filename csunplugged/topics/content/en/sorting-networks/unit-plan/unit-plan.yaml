@@ -1,9 +1,13 @@
 lessons: lessons/lessons.yaml
 
 age-groups:
-  - 8-10:
-    - reinforcing-numeracy-through-a-sorting-network
-    - investigating-variations-using-the-sorting-network
-  - 11-14:
-    - reinforcing-numeracy-through-a-sorting-network
-    - investigating-variations-using-the-sorting-network
+  8-10:
+    reinforcing-numeracy-through-a-sorting-network:
+      number: 1
+    investigating-variations-using-the-sorting-network:
+      number: 2
+  11-14:
+    reinforcing-numeracy-through-a-sorting-network:
+      number: 1
+    investigating-variations-using-the-sorting-network:
+      number: 2
