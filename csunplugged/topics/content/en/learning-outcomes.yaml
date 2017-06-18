@@ -99,7 +99,7 @@ error-explain-each-card-bit:
     - algorithmic-thinking
 
 error-explain-chose-parity-card:
-  text: Explain why they chose each extra card when setting up the parity column/row.
+  text: Explain why they chose each extra bit (card) when setting up a parity column/row.
   curriculum-areas:
     - generalising-and-patterns
 
