@@ -24,6 +24,7 @@ investigating-variations-using-the-sorting-network:
     - sorting-comparing-musical-pitch
     - sorting-explain-parallel-algorithm
     - sorting-use-selection-sort
+  computational-thinking-links: investigating-variations-using-the-sorting-network-ct-links.md
   generated-resources:
     sorting-network:
       description: Use blank copy as template for creating Sorting Network.
