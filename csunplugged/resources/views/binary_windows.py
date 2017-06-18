@@ -34,7 +34,7 @@ def resource_image(request, resource):
     for (filename, dot_count_start) in page_sets:
         image = Image.open(os.path.join(BASE_IMAGE_PATH, filename))
         image = add_digit_values(image, value_type, True, 660, 724, 1700, FONT)
-        if dot_counts == "yes":
+        if dot_counts is True:
             image = add_dot_counts(image, dot_count_start, SMALL_FONT)
         image = image.rotate(90, expand=True)
         images.append(image)
@@ -166,7 +166,7 @@ def subtitle(request, resource):
     number_of_bits = retrieve_query_parameter(request, "number_bits")
     value_type = retrieve_query_parameter(request, "value_type")
     dot_counts = retrieve_query_parameter(request, "dot_counts")
-    if dot_counts == "yes":
+    if dot_counts is True:
         count_text = "with dot counts"
     else:
         count_text = "without dot counts"
@@ -190,6 +190,6 @@ def valid_options():
     return {
         "number_bits": ["4", "8"],
         "value_type": ["binary", "lightbulb"],
-        "dot_counts": ["yes", "no"],
+        "dot_counts": [True, False],
         "paper_size": ["a4", "letter"],
     }
