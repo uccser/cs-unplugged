@@ -96,7 +96,6 @@ class UnitPlanLoaderTest(BaseTestWithDB):
             up_loader.load,
         )
 
-
     def test_unit_plan_loader_valid_computational_thinking_content(self):
         config_file = "ct-links/ct-links.yaml"
 
