@@ -1,4 +1,4 @@
-# Catch the Mouse
+# Catch the mouse
 
 ## Requirement:
 

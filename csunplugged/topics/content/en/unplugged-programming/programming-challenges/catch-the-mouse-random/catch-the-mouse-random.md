@@ -1,4 +1,4 @@
-# Catch the Mouse (with random backdrops)
+# Catch the mouse (with random backdrops)
 
 ## Requirement:
 
