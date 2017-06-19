@@ -1,2 +1,14 @@
 fitness-unplugged:
-  duration: 30
+  duration: 45
+  computational-thinking-links: fitness-unplugged-ct-links.md
+  learning-outcomes:
+    - unplugged-programming-apply-addition-multiplication
+    - unplugged-programming-design-fitness-achievable
+    - unplugged-programming-construct-fitness-workout
+    - unplugged-programming-design-language
+    - programming-identify-loop
+  classroom-resources:
+    - 1 hula hoop
+    - 6 whiteboards or clipboards with blank paper
+    - 6 cards (cut in squares approximately 15 cm x 15 cm)
+    - Colouring in pencils, crayons or felt tip pens

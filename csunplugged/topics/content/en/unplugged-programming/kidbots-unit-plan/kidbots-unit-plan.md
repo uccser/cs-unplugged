@@ -6,7 +6,7 @@ A version of this can curently be seen at 1:09:56 [here](https://educationonair.
 
 ## What’s it all about?
 
-{image file-path="img/topics/teamwork.png" alt="cartoon kids working together"}
+{image file-path="img/topics/teamwork.png" alt="Cartoon kids working together"}
 
 Writing a computer program involves planning what you're going to do, "coding" the instructions, testing them, tracking down any bugs, and changing the program to that it works correctly.
 In these activities students explore a simple programming language by taking on separate roles to make these elements of programming explicit.
@@ -27,7 +27,7 @@ Common programming languages that are used in the junior classroom include Scrat
 Being a programmer isn't so much about knowing the particular commands in a programming language, but knowing how to put together the building blocks such as loops, if statements, variables, input and output in a way that the computer will do what is intended.
 This involves working out the general process for achieving the goal, representing that process in the particular language, and making sure that it does what is intended.
 
-{image file-path="img/topics/program.png"}
+{image file-path="img/topics/program.png" alt="Cartoon kid showing scratch program to computer"}
 
 {panel type="math" title="Mathematical links"}
 
@@ -38,7 +38,7 @@ Good programmers need to have a good base of mathematical knowledge, since a pro
 
 ## Real world implications
 
-{image file-path="img/topics/careers.png"}
+{image file-path="img/topics/careers.png" alt="Cartoon director, doctor and chef"}
 
 Giving sequential instructions are an important element of all programming languages, and so the Kidbots activity lays the foundation for understanding more conventional languages.
 It also exercises the ability to predict what a program will do, reason about where any bugs are, and understand that there can be multiple correct ways to program a solution.

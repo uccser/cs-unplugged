@@ -280,3 +280,26 @@ programming-identify-list-store-data:
   text: Identify when to use a list to store a set of data.
   curriculum-areas:
     - programming
+
+# UNPLUGGED PROGRAMMING LEARNING OUTCOMES
+
+unplugged-programming-apply-addition-multiplication:
+  text: Apply addition and multiplication to work out the number of actions that an end user will complete.
+  curriculum-areas:
+    - numeracy
+
+unplugged-programming-design-fitness-achievable:
+  text: Design a series of fitness activities that are achievable for your end users.
+  curriculum-areas:
+    - fitness
+
+unplugged-programming-construct-fitness-workout:
+  text: Construct a fitness workout that combines strength and cardio activities.
+  curriculum-areas:
+    - fitness
+    - algorithmic-thinking
+
+unplugged-programming-design-language:
+  text: Design a fitness unplugged programming language that is easily interpreted.
+  curriculum-areas:
+    - programming
