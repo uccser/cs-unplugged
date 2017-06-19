@@ -47,25 +47,24 @@ def resource_image(request, resource):
         font_size = 900
         font_path = "static/fonts/NotoSans-Regular.ttf"
         text = [u"\u00bd", u"\u2153", u"\u2154", u"\u215c", u"\u00be", u"\u215d"]
-    else:
+    elif card_type == "maori_numbers":
         font_size = 300
         text = [
-            "tahi",
-            "rua",
-            "toru",
-            "whā",
-            "rima",
-            "ono",
-            "whitu",
-            "waru",
-            "iwa",
-            "tekau",
-            "tekau mā tahi",
-            "tekau mā waru",
-            "tekau mā toru",
-            "tekau mā whā",
-            "rua tekau",
-            "rua tekau mā ono",
+            "tahi", "rua", "toru", "whā", "rima", "ono", "whitu", "waru",
+            "iwa", "tekau", "tekau mā tahi", "tekau mā waru", "tekau mā toru",
+            "tekau mā whā", "rua tekau", "rua tekau mā ono"
+        ]
+    elif card_type == "words":
+        font_size = 500
+        text = ["crocodile", "crochet", "kiwi", "weka", "kiwi", "kiwano"]
+    elif card_type == "letters":
+        font_size = 800
+        text = ["L", "O", "N", "K", "E", "D", "S", "P", "G", "B", "I", "Y"]
+    else:
+        font_size = 500
+        text = [
+            "whero", "kākāriki", "kiwikiwi", "karaka",
+            "kōwhai", "pango", "māwhero", "mā"
         ]
 
     font = ImageFont.truetype(font_path, font_size)
@@ -129,6 +128,9 @@ def valid_options():
         All valid options (dict).
     """
     return {
-        "type": ["small_numbers", "large_numbers", "fractions", "maori_numbers"],
+        "type": [
+            "small_numbers", "large_numbers", "fractions", "maori_numbers",
+            "words", "letters", "maori_colours"
+        ],
         "paper_size": ["a4", "letter"],
     }
