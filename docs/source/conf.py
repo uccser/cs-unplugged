@@ -51,7 +51,7 @@ master_doc = 'index'
 # General information about the project.
 project = 'CS Unplugged'
 copyright = '2017 University of Canterbury Computer Science Education Research Group'
-author = 'Hayley vas Waas, Jack Morgan, Jordan Griffiths'
+author = 'University of Canterbury Computer Science Education Research Group'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

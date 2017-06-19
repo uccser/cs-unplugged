@@ -27,8 +27,9 @@
 {% endblock page_heading %}
 
 {% block left_column_content %}
-  <h2 class="heading-underline">Learning Outcomes</h2>
+
   {% if learning_outcomes %}
+  <h2 class="heading-underline">Learning Outcomes</h2>
     <p>Students will be able to:</p>
     <ul>
       {% for learning_outcome in learning_outcomes %}
@@ -40,21 +41,19 @@
         </li>
       {% endfor %}
     </ul>
-  {% else %}
-    <p>No learning outcomes listed for {{ lesson.name }}.</p>
   {% endif %}
 
   {% render_html_field lesson.content %}
 
   {% if lesson.computational_thinking_links %}
-    <h2 id="ct-links">Seeing the Computational Thinking connections</h2>
+    <h2 id="ct-links" class="heading-underline">Seeing the Computational Thinking connections</h2>
     {% render_html_field lesson.computational_thinking_links %}
   {% endif %}
 {% endblock left_column_content %}
 
 {% block right_column_content %}
-  <h2 class="heading-underline">CS Unplugged resources</h2>
   {% if generated_resources %}
+  <h2 class="heading-underline">CS Unplugged resources</h2>
     <div class="link-box-container">
       {% for generated_resource in generated_resources %}
         <a href="{% url 'resources:resource' generated_resource.slug %}" class="link-box">
@@ -64,30 +63,24 @@
         </a>
       {% endfor %}
     </div>
-  {% else %}
-    <p>No CS Unplugged resources required.</p>
   {% endif %}
 
-  <h2 class="heading-underline mt-2">Classroom resources</h2>
   {% if lesson.classroom_resources %}
+  <h2 class="heading-underline mt-2">Classroom resources</h2>
     <ul>
       {% for classroom_resource in lesson.classroom_resources %}
         <li>{{ classroom_resource }}</li>
       {% endfor %}
     </ul>
-  {% else %}
-    <p>No classroom resources required.</p>
   {% endif %}
 
-  <h2 class="heading-underline mt-2">Programming challenges</h2>
   {% if programming_challenges %}
+  <h2 class="heading-underline mt-2">Programming challenges</h2>
     <p>
       <a href="{% url 'topics:programming_challenges_list' topic.slug unit_plan.slug lesson.slug %}">
         View related programming challenges
       </a>
     </p>
-  {% else %}
-    <p>No programming challenges for {{ lesson.name }}</p>
   {% endif %}
 
   <div id="sticky-sidebar" class="sticky">

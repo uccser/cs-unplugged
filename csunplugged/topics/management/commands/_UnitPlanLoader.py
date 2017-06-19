@@ -55,11 +55,28 @@ class UnitPlanLoader(BaseLoader):
         if unit_plan_content.heading_tree:
             heading_tree = convert_heading_tree_to_dict(unit_plan_content.heading_tree)
 
+        if "computational-thinking-links" in unit_plan_structure:
+            file_name = unit_plan_structure["computational-thinking-links"]
+            file_path = os.path.join(
+                self.BASE_PATH,
+                file_name
+            )
+            ct_links_content = self.convert_md_file(
+                file_path,
+                self.structure_file_path,
+                heading_required=False,
+                remove_title=False,
+            )
+            ct_links = ct_links_content.html_string
+        else:
+            ct_links = None
+
         unit_plan = self.topic.unit_plans.create(
             slug=self.unit_plan_slug,
             name=unit_plan_content.title,
             content=unit_plan_content.html_string,
             heading_tree=heading_tree,
+            computational_thinking_links=ct_links,
         )
         unit_plan.save()
 
