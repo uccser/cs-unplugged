@@ -46,14 +46,22 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
         print()
         for combination in combinations:
             print("   - Testing combination: {} ... ".format(combination), end="")
-            url = base_url + query_string(combination)
+            url_combination = {}
+            for parameter in combination:
+                if combination[parameter] is True:
+                    url_combination[parameter] = "yes"
+                elif combination[parameter] is False:
+                    url_combination[parameter] = "no"
+                else:
+                    url_combination[parameter] = combination[parameter]
+            url = base_url + query_string(url_combination)
             response = self.client.get(url)
             self.assertEqual(200, response.status_code)
-            if combination["dot_counts"] == "yes":
+            if combination["dot_counts"]:
                 display_numbers_text = "with dot counts"
             else:
                 display_numbers_text = "without dot counts"
-            if combination["black_back"] == "yes":
+            if combination["black_back"]:
                 black_back_text = "with black back"
             else:
                 black_back_text = "without black back"
