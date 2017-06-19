@@ -1,0 +1,268 @@
+draw-a-square-without-loop:
+  challenge-set-number: 1
+  challenge-number: 1
+  difficulty-level: 1
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-explain-output
+
+draw-a-square-with-loop:
+  challenge-set-number: 1
+  challenge-number: 2
+  difficulty-level: 1
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-explain-output
+    - programming-identify-loop
+
+rotation-of-a-square:
+  challenge-set-number: 1
+  challenge-number: 3
+  difficulty-level: 1
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-explain-output
+    - programming-identify-loop
+
+draw-a-triangle-without-loop:
+  challenge-set-number: 2
+  challenge-number: 1
+  difficulty-level: 1
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-explain-output
+
+draw-a-triangle-with-loop:
+  challenge-set-number: 2
+  challenge-number: 2
+  difficulty-level: 1
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-explain-output
+    - programming-identify-loop
+
+rotation-of-a-triangle:
+  challenge-set-number: 2
+  challenge-number: 3
+  difficulty-level: 1
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-explain-output
+    - programming-identify-loop
+
+draw-a-pentagon-without-loop:
+  challenge-set-number: 3
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-explain-output
+
+draw-a-pentagon-with-loop:
+  challenge-set-number: 3
+  challenge-number: 2
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-explain-output
+    - programming-identify-loop
+
+rotation-of-a-pentagon:
+  challenge-set-number: 3
+  challenge-number: 3
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-explain-output
+    - programming-identify-loop
+
+draw-a-360-sided-polygon:
+  challenge-set-number: 4
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-explain-output
+    - programming-identify-loop
+
+draw-a-circle-with-radius-100:
+  challenge-set-number: 4
+  challenge-number: 2
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-describe-mathematical-operations
+    - programming-describe-variables
+    - programming-explain-sequencing
+    - programming-explain-output
+  extra-challenge: extra-challenge.md
+
+rotation-of-a-circle:
+  challenge-set-number: 4
+  challenge-number: 3
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-describe-mathematical-operations
+    - programming-describe-variables
+    - programming-explain-sequencing
+    - programming-explain-output
+  extra-challenge: extra-challenge.md
+
+draw-a-regular-polygon:
+  challenge-set-number: 5
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-explain-sequencing
+    - programming-describe-variables
+    - programming-identify-loop
+  extra-challenge: extra-challenge.md
+
+calculate-inside-angles-of-regular-polygons:
+  challenge-set-number: 5
+  challenge-number: 2
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-explain-sequencing
+    - programming-describe-variables
+    - programming-identify-loop
+
+draw-different-types-of-angles:
+  challenge-set-number: 6
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-identify-if-statement
+    - programming-describe-variables
+    - programming-describe-mathematical-operations
+
+draw-different-types-of-triangles:
+  challenge-set-number: 6
+  challenge-number: 2
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-identify-if-statement
+    - programming-describe-variables
+    - programming-describe-mathematical-operations
+
+draw-a-5-pointed-star:
+  challenge-set-number: 7
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-describe-variables
+    - programming-identify-loop
+
+draw-a-star-with-odd-points:
+  challenge-set-number: 7
+  challenge-number: 2
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-identify-loop
+    - programming-describe-variables
+    - programming-describe-mathematical-operations
+
+draw-a-star-without-crossing-lines:
+  challenge-set-number: 7
+  challenge-number: 3
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-describe-variables
+    - programming-identify-loop
+
+draw-a-star:
+  challenge-set-number: 7
+  challenge-number: 4
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-describe-variables
+    - programming-identify-loop
+
+draw-a-rhombus:
+  challenge-set-number: 8
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-describe-variables
+    - programming-identify-loop
+    - programming-explain-asking-input-end-user
+
+draw-a-cube:
+  challenge-set-number: 8
+  challenge-number: 2
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-describe-variables
+    - programming-identify-loop
+
+translation:
+  challenge-set-number: 8
+  challenge-number: 3
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-describe-variables
+    - programming-identify-loop
+    - programming-describe-mathematical-operations
+
+reflection:
+  challenge-set-number: 9
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-describe-variables
