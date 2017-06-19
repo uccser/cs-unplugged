@@ -27,20 +27,20 @@ curl https://sdk.cloud.google.com | bash;
 # Decrypt secret files archive that contain credentials.
 #
 # This includes:
-#   - continuous-deployment-develop-credentials.json
+#   - continuous-deployment-dev.json
 #     Google Cloud Platform Service Account for using with gcloud.
-#   - app-develop.yaml
+#   - app-dev.yaml
 #     Google App Engine YAML file for deployment, contains sensitive data.
-#   - load-develop-deploy-envs.sh
+#   - load-dev-deploy-envs.sh
 #     Loads environment variables used when running local Django.
-openssl aes-256-cbc -K "${encrypted_bea729da01c0_key}" -iv "${encrypted_bea729da01c0_iv}" -in ./infrastructure/develop-deploy/develop-deploy-secrets.tar.enc -out develop-deploy-secrets.tar -d
+openssl aes-256-cbc -K "${encrypted_323d8adec5b7_key}" -iv "${encrypted_323d8adec5b7_iv}" -in ./infrastructure/dev-deploy/dev-deploy-secrets.tar.enc -out dev-deploy-secrets.tar -d
 
 # Unzip the decrypted secret archive into the current folder.
-tar -xf develop-deploy-secrets.tar
+tar -xf dev-deploy-secrets.tar
 
 # Authenticate with gcloud tool using the decrypted service account credentials.
 # See: https://cloud.google.com/sdk/gcloud/reference/auth/activate-service-account
-gcloud auth activate-service-account --key-file continuous-deployment-develop-credentials.json
+gcloud auth activate-service-account --key-file continuous-deployment-dev.json
 
 # Peform an update of gcloud to latest version.
 # This installs the 'app' tool, for deploying to Google App Engine.
@@ -70,7 +70,7 @@ done
 
 # Load environment variables.
 # Used when running local Django for updating development database.
-. ./load-develop-deploy-envs.sh
+. ./load-dev-deploy-envs.sh
 
 # Download the Google Cloud SQL proxy for updating development database.
 #
@@ -90,14 +90,14 @@ chmod +x cloud_sql_proxy
 # The proxy command is appended with '&>/dev/null &' to run in the background
 # and to not send output to console.
 # See: https://cloud.google.com/python/django/flexible-environment#initialize_your_cloud_sql_instance
-./cloud_sql_proxy -instances="${GOOGLE_CLOUD_SQL_CONNECTION_NAME}"=tcp:5433 -credential_file="./continuous-deployment-develop-credentials.json" >/dev/null 2>/dev/null &
+./cloud_sql_proxy -instances="${GOOGLE_CLOUD_SQL_CONNECTION_NAME}"=tcp:5433 -credential_file="./continuous-deployment-dev.json" >/dev/null 2>/dev/null &
 
 # Publish static files.
 #
 # This copies the generated static files from tests to the Google Storage
 # Bucket.
 # See: https://cloud.google.com/python/django/flexible-environment#deploy_the_app_to_the_app_engine_flexible_environment
-gsutil rsync -R ./csunplugged/staticfiles/ gs://cs-unplugged-develop/static/
+gsutil rsync -R ./csunplugged/staticfiles/ gs://cs-unplugged-dev.appspot.com/static/
 
 # Publish Django system to Google App Engine.
 #
@@ -108,7 +108,7 @@ gsutil rsync -R ./csunplugged/staticfiles/ gs://cs-unplugged-develop/static/
 # If multiple services are deployed at a later stage, these should be checked
 # that the apps deploy to the correct services.
 # See: https://cloud.google.com/sdk/gcloud/reference/app/deploy
-gcloud app deploy ./app-develop.yaml --quiet --project=cs-unplugged-develop
+gcloud app deploy ./app-dev.yaml --quiet --project=cs-unplugged-dev
 
 # Update development database.
 #
