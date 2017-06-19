@@ -21,6 +21,11 @@
 {% block left_column_content %}
   {% render_html_field unit_plan.content %}
 
+  {% if unit_plan.computational_thinking_links %}
+    <h2 id="ct-links">Seeing the Computational Thinking connections</h2>
+    {% render_html_field unit_plan.computational_thinking_links %}
+  {% endif %}
+
   {% if grouped_lessons %}
     <h2 class="heading-underline" id="lessons">Lessons</h2>
     {% include "topics/lessons-table.html" %}
@@ -39,6 +44,11 @@
           <a class="nav-link" href="#{{ heading_node.slug }}">{{ heading_node.text }}</a>
         </li>
       {% endfor %}
+      {% if lesson.computational_thinking_links %}
+        <li class="nav-item">
+          <a class="nav-link" href="#ct-links">Computational Thinking</a>
+        </li>
+      {% endif %}
       <li class="nav-item">
         <a class="nav-link" href="#lessons">Lessons</a>
       </li>
