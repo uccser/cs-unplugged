@@ -4,10 +4,9 @@ from config import __version__
 
 
 def version_number(request):
-    """Returns a string of the version number.
+    """Return a string of the version number.
 
     Returns:
         Dictionary containing version number to add to context.
     """
-
     return {"VERSION_NUMBER": __version__}
