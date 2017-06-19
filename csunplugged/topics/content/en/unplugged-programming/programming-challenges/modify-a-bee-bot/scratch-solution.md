@@ -1,54 +1,63 @@
 **The Button Sprites**
 
 forward:
+
 ```scratch
 when this sprite clicked
 insert [forward] at (last v) of [source code v]
 ```
 
 backward:
+
 ```scratch
 when this sprite clicked
 insert [backward] at (last v) of [source code v]
 ```
 
 left:
+
 ```scratch
 when this sprite clicked
 insert [turn left] at (last v) of [source code v]
 ```
 
 right:
+
 ```scratch
 when this sprite clicked
 insert [turn right] at (last v) of [source code v]
 ```
 
 go:
+
 ```scratch
 when this sprite clicked
 broadcast [go v]
 ```
 
 home:
+
 ```scratch
 when this sprite clicked
 broadcast [home v]
 ```
 
 undo:
+
 ```scratch
 when this sprite clicked
 delete (last v) of [source code v]
 ```
 
 spin:
+
 ```scratch
 when this sprite clicked
 insert [spin] at (last v) of [source code v]
 ```
 
 clear:
+
 ```scratch
 when this sprite clicked
 delete (all v) of [source code v]
@@ -57,6 +66,7 @@ delete (all v) of [source code v]
 **The Sprites**
 
 Mouse:
+
 ```scratch
 when green flag clicked
 set size to (30) %
@@ -64,6 +74,7 @@ go to x: ((pick random (-1) to (4)) * (50)) y: ((pick random (-3) to (3)) * (50)
 ```
 
 Cat:
+
 ```scratch
 when I receive [go v]
 set [statement v] to [0]
