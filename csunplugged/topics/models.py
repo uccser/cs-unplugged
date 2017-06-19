@@ -109,6 +109,7 @@ class UnitPlan(models.Model):
     slug = models.SlugField()
     name = models.CharField(max_length=100)
     content = models.TextField()
+    computational_thinking_links = models.TextField(null=True)
     heading_tree = JSONField(null=True)
 
     def __str__(self):
