@@ -59,12 +59,12 @@ def resource_image(request, resource):
         text = ["crocodile", "crochet", "kiwi", "weka", "kiwi", "kiwano"]
     elif card_type == "letters":
         font_size = 800
-        text = ["Z", "O", "N", "K", "E", "D", "S", "P", "G", "B", "I", "Y"]
+        text = ["L", "O", "N", "K", "E", "D", "S", "P", "G", "B", "I", "Y"]
     else:
         font_size = 500
         text = [
             "whero", "kākāriki", "kiwikiwi", "karaka",
-            "kowhai", "pango", "māwhero", "mā"
+            "kōwhai", "pango", "māwhero", "mā"
         ]
 
     font = ImageFont.truetype(font_path, font_size)
