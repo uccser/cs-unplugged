@@ -22,7 +22,7 @@ The Kidbots activities separates the programming from the testing to avoid the p
 ## Digital Technologies | Programming
 
 Programming or "coding" is when a person (**a programmer**) types in instructions in a programming language so that the computer knows what it needs to do (programmers do lots of other things as well).
-Common programming languages that are used in the junior classroom include Scratch, ScratchJr, Python, Snap!, Blockley, and some older languages like Basic and Logo (which are still popular today). 
+Common programming languages that are used in the junior classroom include Scratch, ScratchJr, Python, Snap!, Blockly, and some older languages like Basic and Logo (which are still popular today). 
  
 Being a programmer isn't so much about knowing the particular commands in a programming language, but knowing how to put together the building blocks such as loops, if statements, variables, input and output in a way that the computer will do what is intended.
 This involves working out the general process for achieving the goal, representing that process in the particular language, and making sure that it does what is intended.
@@ -69,7 +69,7 @@ In lesson 3 students will also be using another level of abstraction, as some in
 
 {panel type="ct-decomposition" title="Decomposition"}
 
-In ever activity in this unit students will be practicing decomposition, as they break down the movements they want the bot to make into basic and specific instructions.
+In every activity in this unit students will be practicing decomposition, as they break down the movements they want the bot to make into basic and specific instructions.
 They will also be encouraged to write their programs incrementally, to write the first few steps, test them, and then add the next steps to the program, instead of trying to solve the whole problem at once.
 
 {panel end}
