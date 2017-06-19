@@ -34,7 +34,7 @@ def resource_image(request, resource):
     display_numbers = retrieve_query_parameter(request, "display_numbers", parameter_options["display_numbers"])
     black_back = retrieve_query_parameter(request, "black_back", parameter_options["black_back"])
 
-    if display_numbers is True:
+    if display_numbers:
         font_path = "static/fonts/PatrickHand-Regular.ttf"
         font = ImageFont.truetype(font_path, 600)
         BASE_COORD_X = IMAGE_SIZE_X / 2
@@ -45,7 +45,7 @@ def resource_image(request, resource):
 
     for (image_path, number) in IMAGE_DATA:
         image = Image.open(os.path.join(BASE_IMAGE_PATH, image_path))
-        if display_numbers is True:
+        if display_numbers:
             background = Image.new("RGB", (IMAGE_SIZE_X, IMAGE_SIZE_Y), "#FFF")
             background.paste(image, mask=image)
             draw = ImageDraw.Draw(background)
@@ -62,7 +62,7 @@ def resource_image(request, resource):
             image = background
         images.append(image)
 
-        if black_back is True:
+        if black_back:
             black_card = Image.new("1", (IMAGE_SIZE_X, IMAGE_SIZE_Y))
             images.append(black_card)
 
@@ -82,11 +82,11 @@ def subtitle(request, resource):
     Returns:
         text for subtitle (string)
     """
-    if retrieve_query_parameter(request, "display_numbers") is True:
+    if retrieve_query_parameter(request, "display_numbers"):
         display_numbers_text = "with numbers"
     else:
         display_numbers_text = "without numbers"
-    if retrieve_query_parameter(request, "black_back") is True:
+    if retrieve_query_parameter(request, "black_back"):
         black_back_text = "with black back"
     else:
         black_back_text = "without black back"

@@ -45,7 +45,6 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
         combinations = [dict(zip(valid_option_keys, product)) for product in itertools.product(*(valid_options[valid_option_key] for valid_option_key in valid_option_keys))]  # noqa: E501
         print()
         for combination in combinations:
-            print(combination)
             print("   - Testing combination: {} ... ".format(combination), end="")
             url_combination = {}
             for parameter in combination:
@@ -58,11 +57,11 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
             url = base_url + query_string(url_combination)
             response = self.client.get(url)
             self.assertEqual(200, response.status_code)
-            if combination["dot_counts"] is True:
+            if combination["dot_counts"]:
                 display_numbers_text = "with dot counts"
             else:
                 display_numbers_text = "without dot counts"
-            if combination["black_back"] is True:
+            if combination["black_back"]:
                 black_back_text = "with black back"
             else:
                 black_back_text = "without black back"

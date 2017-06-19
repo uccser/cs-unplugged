@@ -30,7 +30,7 @@ def resource_image(request, resource):
     dot_counts = retrieve_query_parameter(request, "dot_counts", parameter_options["dot_counts"])
     black_back = retrieve_query_parameter(request, "black_back", parameter_options["black_back"])
 
-    if dot_counts is True:
+    if dot_counts:
         font_path = "static/fonts/PatrickHand-Regular.ttf"
         font = ImageFont.truetype(font_path, 200)
         TEXT_COORDS = [
@@ -46,7 +46,7 @@ def resource_image(request, resource):
         requested_bits = int(requested_bits)
         if image_bits <= requested_bits:
             image = Image.open(os.path.join(BASE_IMAGE_PATH, image_path))
-            if dot_counts is True:
+            if dot_counts:
                 draw = ImageDraw.Draw(image)
                 for number in range(image_bits - 4, image_bits):
                     text = str(pow(2, number))
@@ -61,7 +61,7 @@ def resource_image(request, resource):
                     )
             images.append(image)
 
-            if black_back is True:
+            if black_back:
                 black_card = Image.new("1", (IMAGE_SIZE_X, IMAGE_SIZE_Y))
                 images.append(black_card)
 
@@ -81,11 +81,11 @@ def subtitle(request, resource):
     Returns:
         text for subtitle (string)
     """
-    if retrieve_query_parameter(request, "dot_counts") is True:
+    if retrieve_query_parameter(request, "dot_counts"):
         display_numbers_text = "with dot counts"
     else:
         display_numbers_text = "without dot counts"
-    if retrieve_query_parameter(request, "black_back") is True:
+    if retrieve_query_parameter(request, "black_back"):
         black_back_text = "with black back"
     else:
         black_back_text = "without black back"
