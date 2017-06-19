@@ -25,13 +25,14 @@
     <meta name="theme-color" content="#ffffff">
   </head>
   <body>
-    <nav class="navbar fixed-top navbar-toggleable-sm navbar-light">
+    <nav class="navbar fixed-top navbar-toggleable-sm navbar-light py-1">
       <div class="container px-0">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a href="{% url 'general:home' %}">
-          <img src="{% static 'img/logo-small.png' %}" id="navbar-brand-logo" alt="">
+        <a class="navbar-brand" href="{% url 'general:home' %}">
+          <img src="{% static 'img/logo-small.png' %}" id="navbar-brand-logo" class="d-inline-block align-top" alt="CS Unplugged logo">
+          2.0 sneak peek
         </a>
         <div class="collapse navbar-collapse" id="navbarNav">
           <div class="navbar-nav ml-auto">
