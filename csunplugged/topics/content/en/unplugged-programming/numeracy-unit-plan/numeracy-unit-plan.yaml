@@ -2,5 +2,5 @@ lessons: lessons/lessons.yaml
 
 age-groups:
   5-7:
-    place-holder:
+    place-holder-2:
       number: 1
