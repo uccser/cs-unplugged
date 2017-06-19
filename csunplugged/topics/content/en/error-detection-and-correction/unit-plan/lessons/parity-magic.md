@@ -46,14 +46,14 @@ from the Computer Science Field Guide.
 
 ### Potential answers could include:
 
+Students may come up with situations where computers won't read a disc or scan a code, but they may also confuse this kind of problem with other kinds of failures such as an error in a program or a flat battery.
+
 {image file-path="img/topics/school-test-error.png" alt="A school test shows every question marked correct but the overall score is 0%."}
 
-We use computers for important things like banking, writing school reports, and
-communicating with each other.
-If the information being stored got changed without anyone knowing, you'd get
-the wrong balance in your account (too much or too little), the wrong grade in
-your report, or the wrong message in an email.
-This activity will look at how to correct this automatically.
+Adults use computers for important things like banking, writing school reports, and communicating with each other.
+If the information being stored got changed without anyone knowing, you'd get the wrong balance in your account (too much or too little), the wrong grade in your report, or the wrong message in an email.
+Or worst still the website you are wanting to go to for your learning or the DVD you want to play won’t work!
+This activity will look at how computers correct this automatically.
 
 ## Lesson Starter
 

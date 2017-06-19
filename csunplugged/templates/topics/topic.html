@@ -33,15 +33,13 @@
     {% endif %}
   {% endfor %}
 
-  <h2 id="integrations" class="heading-underline">Curriculum Integrations</h2>
   {% if curriculum_integrations %}
+  <h2 id="integrations" class="heading-underline">Curriculum Integrations</h2>
     {% include "topics/curriculum-integrations-table.html" %}
-  {% else %}
-    <p>No curriculum integrations for {{ topic }}.</p>
   {% endif %}
 
-  <h2 id="resources" class="heading-underline">Resources</h2>
   {% if resources %}
+  <h2 id="resources" class="heading-underline">Resources</h2>
     <p>
       The following resources are used in {{ topic.name }} lessons, and can
       be accessed here (and also on each lesson page).
@@ -54,8 +52,6 @@
         </a>
       {% endfor %}
     </div>
-  {% else %}
-    <p>No resources are related to {{ topic }}.</p>
   {% endif %}
 
   {% if topic.other_resources %}
