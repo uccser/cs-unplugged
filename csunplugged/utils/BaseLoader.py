@@ -43,7 +43,7 @@ class BaseLoader():
             "markdown.extensions.codehilite",
             "markdown.extensions.sane_lists",
             "markdown.extensions.tables",
-            mdx_math.MathExtension(enable_dollar_delimiter=True)
+            mdx_math.MathExtension()
         ]
         self.converter = Verto(html_templates=templates, extensions=extensions)
 
