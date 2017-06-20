@@ -82,7 +82,7 @@ one of these types of networks, it is called a comparator network, because it’
 a network where each node compares two values, rather than linking different
 devices (such as phones and computers) together.
 
-## Digital technologies | Algorithms
+## Digital Technologies | Algorithms
 
 {image file-path="img/topics/sorting-network-too-far-kid.png" alt="A child walks too far in the sorting network activity, failing the activity for everyone."}
 
