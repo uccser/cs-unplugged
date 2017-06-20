@@ -1,6 +1,6 @@
 lessons: lessons/lessons.yaml
 
 age-groups:
-  5-7:
-    place-holder-2:
-      number: 1
+  8-10:
+    modulo:
+      number: 3
