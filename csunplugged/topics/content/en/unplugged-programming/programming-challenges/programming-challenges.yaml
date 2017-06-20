@@ -239,6 +239,7 @@ draw-rhombus:
     - programming-describe-variables
     - programming-identify-loop
     - programming-explain-asking-input-end-user
+  extra-challenge: extra-challenge.md
 
 draw-cube:
   challenge-set-number: 8
@@ -250,6 +251,7 @@ draw-cube:
     - programming-explain-sequencing
     - programming-describe-variables
     - programming-identify-loop
+  extra-challenge: extra-challenge.md
 
 translation:
   challenge-set-number: 8

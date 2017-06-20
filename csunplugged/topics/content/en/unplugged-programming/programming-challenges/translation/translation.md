@@ -1,0 +1,13 @@
+# Draw 3D shapes (cube)
+
+## Requirement:
+
+Write a program that draws a cube with each sides equal to 50 steps.  Translate the cube 6 times across to draw the image shown below.
+
+{image file-path="img/topics/programming-challenges/geometry-translating-cube.png"}
+
+## Testing examples:
+
+There are no testing examples for this challenge.
+
+Click on the green flag to see the expected output of your program.
