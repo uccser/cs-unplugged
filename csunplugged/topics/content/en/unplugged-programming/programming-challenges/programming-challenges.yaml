@@ -182,6 +182,7 @@ draw-different-types-of-triangles:
     - programming-identify-if-statement
     - programming-describe-variables
     - programming-describe-mathematical-operations
+  extra-challenge: extra-challenge.md
 
 draw-5-pointed-star:
   challenge-set-number: 7
