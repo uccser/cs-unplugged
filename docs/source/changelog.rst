@@ -4,25 +4,25 @@ Changelog
 This page lists updates to CS Unplugged.
 All notable changes to this project will be documented in this file.
 
-We base our numbering system from the guidelines at `Semantic Versioning 2.0.0`_,
-however since our project started before it was migrated to GitHub, the first
-major open source release is being labeled as ``2.0.0``.
+.. note ::
 
-Given a version number MAJOR.MINOR.HOTFIX:
+  We base our numbering system from the guidelines at `Semantic Versioning 2.0.0`_,
+  however since our project started before it was migrated to GitHub, the first
+  major open source release is being labeled as ``2.0.0``.
 
-- MAJOR version change when major backend or text modifications are made
-  (for example: new topic).
-- MINOR version change when content or functionality is added or updated (for
-  example: new videos, new activities, large number of text (typo/grammar) fixes).
-- HOTFIX version change when bug hotfixes are made (for example: fixing a typo).
-- A pre-release version is denoted by appending a hyphen and the alpha label
-  followed by the pre-release version.
+  Given a version number MAJOR.MINOR.HOTFIX:
 
-As this project contains text content, the updating of content doesn't perfectly
-fit the Semantic Versioning model. However these version numbers can still
-provide a good indication of the changes in each version.
+  - MAJOR version change when major backend or text modifications are made
+    (for example: new topic).
+  - MINOR version change when content or functionality is added or updated (for
+    example: new videos, new activities, large number of text (typo/grammar) fixes).
+  - HOTFIX version change when bug hotfixes are made (for example: fixing a typo).
+  - A pre-release version is denoted by appending a hyphen and the alpha label
+    followed by the pre-release version.
 
-We have listed major changes for each release below.
+  As this project contains text content, the updating of content doesn't perfectly
+  fit the Semantic Versioning model. However these version numbers can still
+  provide a good indication of the changes in each version.
 
 2.0.0-alpha.1
 ==============================================================================
