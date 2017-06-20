@@ -1,4 +1,4 @@
-Click on the green flag, and used the buttons to see the expected output of your program.
+Click on the green flag, and use the buttons to see the expected output of your program.
 
 {iframe link="https://scratch.mit.edu/projects/embed/158364683/?autostart=false"}
 

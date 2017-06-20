@@ -2,9 +2,9 @@
 
 ## Requirement:
 
-Remix the program provided at https://scratch.mit.edu/projects/161489068/ and change its name to: **KidBots challenge 2.2 Catch the mouse (with random backdrops)**.
+Remix the program provided at [https://scratch.mit.edu/projects/161489068/](https://scratch.mit.edu/projects/161489068/) and change its name to: **KidBots challenge 2.2 Catch the mouse (with random backdrops)**.
 
-Give instructions to the “cat” to catch the “mouse” (avoiding the blue tiles) by altering the blocks under the `scratch:when I recieve [go v]` block inside the “cat” sprite. You may only use the following custom blocks:
+Give instructions to the “cat” to catch the “mouse” (avoiding the blue tiles) by altering the blocks under the `scratch:when I receive [go v]` block inside the “cat” sprite. You may only use the following custom blocks:
 
   -   `scratch:move_forward`
   -   `scratch:move_right`

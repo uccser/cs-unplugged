@@ -2,7 +2,7 @@
 
 ## Requirement:
 
-Remix the program provided at https://scratch.mit.edu/projects/164749053/ and change its name to: **KidBots challenge 2.1 Catch the mouse.**
+Remix the program provided at [https://scratch.mit.edu/projects/164749053/](https://scratch.mit.edu/projects/164749053/) and change its name to: **KidBots challenge 2.1 Catch the mouse.**
 
 Give instructions to the “cat” to catch the “mouse” (avoiding the blue tiles) by altering the blocks under the `scratch:when I receive [go v]` block inside the “cat” sprite. You may only use the following custom blocks:
 

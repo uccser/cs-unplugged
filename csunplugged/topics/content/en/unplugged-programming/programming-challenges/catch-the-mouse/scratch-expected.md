@@ -1,7 +1,7 @@
 {panel type="help" title="Recommended blocks"}
 
 ```scratch:split:random
-when I recieve [go v]
+when I receive [go v]
 
 move_forward()
 

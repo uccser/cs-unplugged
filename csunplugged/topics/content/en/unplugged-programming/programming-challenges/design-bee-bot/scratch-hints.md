@@ -1,4 +1,4 @@
-Remix the program provided at https://scratch.mit.edu/projects/159722851/ and change its name to: **KidBots challenge 1.1 Design a Bee-Bot.**
+Remix the program provided at [https://scratch.mit.edu/projects/159722851/](https://scratch.mit.edu/projects/159722851/) and change its name to: **KidBots challenge 1.1 Design a Bee-Bot.**
 
 When the green flag is clicked your program should do the following:
 
