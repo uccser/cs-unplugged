@@ -132,8 +132,8 @@
           <p class="mb-1 font-weight-bold">Help</p>
           <ul class="list-unstyled">
             <li>
-              <a href="#">
-                FAQ
+              <a href="{% url 'topics:glossary' %}">
+                Glossary
               </a>
             </li>
             <li>
@@ -184,6 +184,9 @@
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/website.js' %}"></script>
     <script src="{% static 'js/details-element-polyfill.js' %}"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
     {% block scripts %}
     {% endblock scripts %}
   </body>

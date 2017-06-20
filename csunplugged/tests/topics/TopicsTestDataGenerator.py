@@ -7,12 +7,15 @@ from topics.models import (
     Topic,
     UnitPlan,
     Lesson,
+    LessonNumber,
+    AgeGroup,
     CurriculumIntegration,
     CurriculumArea,
-    ProgrammingExercise,
-    ProgrammingExerciseDifficulty,
-    ProgrammingExerciseLanguage,
-    ProgrammingExerciseLanguageImplementation,
+    ProgrammingChallenge,
+    ProgrammingChallengeDifficulty,
+    ProgrammingChallengeLanguage,
+    ProgrammingChallengeImplementation,
+    ProgrammingChallengeNumber,
     LearningOutcome,
 )
 
@@ -120,15 +123,13 @@ class TopicsTestDataGenerator:
         unit_plan.save()
         return unit_plan
 
-    def create_lesson(self, topic, unit_plan, number, min_age, max_age):
+    def create_lesson(self, topic, unit_plan, number, age_group=None):
         """Create lesson object.
 
         Args:
             topic: The related Topic object (Topic).
             unit_plan: The related UnitPlan object (UnitPlan).
             number: Identifier of the topic (int).
-            min_age: Minimum age of the lesson (int).
-            max_age: Maximum age of the lesson (int).
 
         Returns:
             Lesson object.
@@ -137,27 +138,50 @@ class TopicsTestDataGenerator:
             topic=topic,
             unit_plan=unit_plan,
             slug="lesson-{}".format(number),
-            name="Lesson {} ({} to {})".format(number, min_age, max_age),
-            number=number,
+            name="Lesson {} ({} to {})".format(
+                number,
+                age_group.ages[0] if age_group else "none",
+                age_group.ages[1] if age_group else "none"
+            ),
             duration=number,
             content="<p>Content for lesson {}.</p>".format(number),
-            min_age=min_age,
-            max_age=max_age,
         )
         lesson.save()
+        if age_group:
+            LessonNumber(
+                age_group=age_group,
+                lesson=lesson,
+                number=number,
+            ).save()
         return lesson
 
-    def create_difficulty_level(self, number):
+    def create_age_group(self, min_age, max_age):
+        """Create AgeGroup object.
+
+        Args:
+            min_age: the minumum age for the group (int).
+            max_age: the maximum age for the group (int).
+
+        Returns:
+            AgeGroup object.
         """
-        Create difficuly level object.
+        age_group = AgeGroup(
+            slug="{}-{}".format(min_age, max_age),
+            ages=(min_age, max_age)
+        )
+        age_group.save()
+        return age_group
+
+    def create_difficulty_level(self, number):
+        """Create difficuly level object.
 
         Args:
             number: Identifier of the level (int).
 
         Returns:
-            ProgrammingExerciseDifficulty object.
+            ProgrammingChallengeDifficulty object.
         """
-        difficulty = ProgrammingExerciseDifficulty(
+        difficulty = ProgrammingChallengeDifficulty(
             level="1",
             name="Difficulty-{}".format(number)
         )
@@ -165,16 +189,15 @@ class TopicsTestDataGenerator:
         return difficulty
 
     def create_programming_language(self, number):
-        """
-        Create programming language object.
+        """Create programming language object.
 
         Args:
             number: Identifier of the language (int).
 
         Returns:
-            ProgrammingExerciseLanguage object.
+            ProgrammingChallengeLanguage object.
         """
-        language = ProgrammingExerciseLanguage(
+        language = ProgrammingChallengeLanguage(
             slug="language-{}".format(number),
             name="Language {}".format(number),
             number=number,
@@ -182,69 +205,71 @@ class TopicsTestDataGenerator:
         language.save()
         return language
 
-    def create_programming_exercise(self, topic, number,
-                                    difficulty,
-                                    exercise_set_number=1,
-                                    exercise_number=1,
-                                    content="<p>Example content.</p>",
-                                    extra_challenge="<p>Example challenge.</p>",
-                                    ):
-        """
-        Create programming exercise object.
+    def create_programming_challenge(self, topic, number,
+                                     difficulty,
+                                     challenge_set_number=1,
+                                     challenge_number=1,
+                                     content="<p>Example content.</p>",
+                                     extra_challenge="<p>Example challenge.</p>",
+                                     ):
+        """Create programming challenge object.
 
         Args:
-            topic: Topic related to the exercise.
-            number: Identifier of the exercise (int).
-            difficulty: Difficulty related to the exercise
-                        (ProgrammingExerciseDifficulty).
-            exercise_set_number: Integer of exercise set number (int).
-            exercise_number: Integer of exercise number (int).
-            content: Text of exercise (str).
+            topic: Topic related to the challenge.
+            number: Identifier of the challenge (int).
+            difficulty: Difficulty related to the challenge
+                        (ProgrammingChallengeDifficulty).
+            challenge_set_number: Integer of challenge set number (int).
+            challenge_number: Integer of challenge number (int).
+            content: Text of challenge (str).
             extra_challenge: Text of extra challenge (str).
 
         Returns:
-            ProgrammingExercise object.
+            ProgrammingChallenge object.
         """
-        exercise = ProgrammingExercise(
+        challenge = ProgrammingChallenge(
             topic=topic,
-            slug="exercise-{}".format(number),
-            name="Exercise {}".format(number),
-            exercise_set_number=exercise_set_number,
-            exercise_number=exercise_number,
+            slug="challenge-{}".format(number),
+            name="Challenge {}.{}: {}".format(
+                challenge_set_number,
+                challenge_number,
+                number,
+            ),
+            challenge_set_number=challenge_set_number,
+            challenge_number=challenge_number,
             content=content,
             extra_challenge=extra_challenge,
             difficulty=difficulty,
         )
-        exercise.save()
-        return exercise
+        challenge.save()
+        return challenge
 
-    def create_programming_exercise_implementation(self, topic,
-                                                   language,
-                                                   exercise,
-                                                   expected_result="<p>Example result.</p>",
-                                                   hints="<p>Example hints.</p>",
-                                                   solution="<p>Example solution.</p>",
-                                                   ):
-        """
-        Create programming exercise implementation object.
+    def create_programming_challenge_implementation(self, topic,
+                                                    language,
+                                                    challenge,
+                                                    expected_result="<p>Example result.</p>",
+                                                    hints="<p>Example hints.</p>",
+                                                    solution="<p>Example solution.</p>",
+                                                    ):
+        """Create programming challenge implementation object.
 
         Args:
             topic: Topic related to the implementation.
             language: Language related to the implementation
-                        (ProgrammingExerciseLanguage).
-            exercise: Difficulty related to the implementation
-                        (ProgrammingExercise).
+                        (ProgrammingChallengeLanguage).
+            challenge: Challenge related to the implementation
+                        (ProgrammingChallenge).
             expected_result: Text of expected_result (str).
             hints: Text of hints (str).
             solution: Text of solution (str).
 
         Returns:
-            ProgrammingExerciseLanguageImplementation object.
+            ProgrammingChallengeImplementation object.
         """
-        implementation = ProgrammingExerciseLanguageImplementation(
+        implementation = ProgrammingChallengeImplementation(
             topic=topic,
             language=language,
-            exercise=exercise,
+            challenge=challenge,
             expected_result=expected_result,
             hints=hints,
             solution=solution,
@@ -253,11 +278,10 @@ class TopicsTestDataGenerator:
         return implementation
 
     def create_learning_outcome(self, number):
-        """
-        Create learning outcome object.
+        """Create learning outcome object.
 
         Args:
-            number: Identifier of the exercise (int).
+            number: Identifier of the challenge (int).
 
         Returns:
             LearningOutcome object.
@@ -268,3 +292,21 @@ class TopicsTestDataGenerator:
         )
         outcome.save()
         return outcome
+
+    def add_challenge_lesson_relationship(self, challenge, lesson, set_number, number):
+        """Add relationship between challenge and lesson objects.
+
+        Args:
+            challenge: Challenge to add relationship between
+                       (ProgrammingChallenge).
+            lesson: Lesson to add relationship between (Lesson).
+            set_number: Number to display as challenge set number (int).
+            number: Number to display as challenge number (int).
+        """
+        relationship = ProgrammingChallengeNumber(
+            programming_challenge=challenge,
+            lesson=lesson,
+            challenge_set_number=set_number,
+            challenge_number=number,
+        )
+        relationship.save()

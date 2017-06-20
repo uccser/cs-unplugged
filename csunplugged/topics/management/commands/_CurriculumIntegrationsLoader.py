@@ -13,16 +13,15 @@ from topics.models import CurriculumArea, Lesson
 class CurriculumIntegrationsLoader(BaseLoader):
     """Custom loader for loading curriculum integrations."""
 
-    def __init__(self, load_log, structure_file_path, topic, BASE_PATH):
+    def __init__(self, structure_file_path, topic, BASE_PATH):
         """Create the loader for loading curriculum integrations.
 
         Args:
-            load_log: List of log messages (list).
             structure_file_path: File path for structure YAML file (string).
             topic: Object of related topic model.
             BASE_PATH: Base file path (string).
         """
-        super().__init__(BASE_PATH, load_log)
+        super().__init__(BASE_PATH)
         self.structure_file_path = os.path.join(self.BASE_PATH, structure_file_path)
         self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(structure_file_path)[0])
         self.topic = topic
@@ -99,19 +98,14 @@ class CurriculumIntegrationsLoader(BaseLoader):
                         for lesson_slug in lessons:
                             try:
                                 lesson = Lesson.objects.get(
-                                    slug=lesson_slug,
-                                    unit_plan__slug=unit_plan_slug,
-                                    topic__slug=self.topic.slug
+                                    slug=lesson_slug
                                 )
                                 integration.prerequisite_lessons.add(lesson)
                             except:
                                 raise KeyNotFoundError(
                                     self.structure_file_path,
-                                    "{} and/or {}".format(
-                                        lesson_slug,
-                                        unit_plan_slug,
-                                    ),
+                                    lesson_slug,
                                     "Lessons"
                                 )
 
-            self.log("Added Curriculum Integration: {}".format(integration.name), 1)
+            self.log("Added curriculum integration: {}".format(integration.name), 1)

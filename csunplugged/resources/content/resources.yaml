@@ -64,3 +64,9 @@ train-stations:
   generation-view: train_stations.py
   thumbnail-static-path: img/resources/train-stations/thumbnail.png
   copies: false
+job-badges:
+  name: Job Badges
+  webpage-template: resources/job-badges.html
+  generation-view: job_badges.py
+  thumbnail-static-path: img/resources/job-badges/job-badges.png
+  copies: false

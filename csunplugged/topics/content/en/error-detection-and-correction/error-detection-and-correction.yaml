@@ -1,6 +1,7 @@
 unit-plans:
     - unit-plan/unit-plan.yaml
 
-icon: img/topics/computer-error.png
-
+icon: img/topics/parity-trick-example-icon.png
+programming-challenges: programming-challenges/programming-challenges.yaml
+curriculum-integrations: curriculum-integrations/curriculum-integrations.yaml
 other-resources: other-resources.md

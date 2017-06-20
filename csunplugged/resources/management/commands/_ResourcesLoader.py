@@ -57,5 +57,4 @@ class ResourcesLoader(BaseLoader):
             resource.save()
 
             self.log("Added Resource: {}".format(resource.name))
-
-        self.print_load_log()
+        self.log("All resources loaded!\n")

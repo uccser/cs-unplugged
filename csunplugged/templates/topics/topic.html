@@ -1,5 +1,6 @@
 {% extends "columns.html" %}
 
+{% load static %}
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
@@ -32,18 +33,25 @@
     {% endif %}
   {% endfor %}
 
-  <h2 id="integrations" class="heading-underline">Curriculum Integrations</h2>
   {% if curriculum_integrations %}
+  <h2 id="integrations" class="heading-underline">Curriculum Integrations</h2>
     {% include "topics/curriculum-integrations-table.html" %}
-  {% else %}
-    <p>No curriculum integrations for {{ topic }}.</p>
   {% endif %}
 
-  <h2 id="programming" class="heading-underline">Programming Challenges</h2>
-  {% if programming_exercises %}
-    {% include "topics/programming-exercises-table.html" %}
-  {% else %}
-    <p>No programming challenges for {{ topic }}.</p>
+  {% if resources %}
+  <h2 id="resources" class="heading-underline">Resources</h2>
+    <p>
+      The following resources are used in {{ topic.name }} lessons, and can
+      be accessed here (and also on each lesson page).
+    </p>
+    <div class="link-box-container">
+      {% for resource in resources %}
+        <a href="{% url 'resources:resource' resource.slug %}" class="link-box link-box-md-3">
+          <img class="border-thin" src="{% static resource.thumbnail_static_path %}" alt="Generic placeholder image">
+          <strong>{{ resource.name }}</strong>
+        </a>
+      {% endfor %}
+    </div>
   {% endif %}
 
   {% if topic.other_resources %}
@@ -72,7 +80,7 @@
         <a class="nav-link" href="#integrations">Curriculum integrations</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#programming">Programming challenges</a>
+        <a class="nav-link" href="#resources">Resources</a>
       </li>
       {% if topic.other_resources %}
         <li class="nav-item">
