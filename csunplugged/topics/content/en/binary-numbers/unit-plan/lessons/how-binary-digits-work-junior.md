@@ -35,12 +35,12 @@ The technical word for that is a “bit”.
     Hand out the second card so that the first card is on the far right.
     Point out that this card has either 2 dots, or none. 
  
-    {image file-path="img/topics/col_binary_4_kids_2_cards.png"}
+    {image file-path="img/topics/col_binary_4_kids_2_cards.png" alt="2 kids holding binary cards"}
  
 3.  Ask the class what the number of dots on the next card will be.
     Get them to explain why they think that.
 
-    {panel type="teaching" title="Teaching Observations"}
+    {panel type="teaching" title="Teaching observations"}
  
     Students will usually suggest it should be three.
     If they suggest 4, they may have done the activity before (or have seen the cards you are holding!), or they may have very good pattern recognition skills!
@@ -52,9 +52,9 @@ The technical word for that is a “bit”.
     This will be dependent on their level of number knowledge.
     Mention that each number is doubling (or that if you had two of a card, that would give you the card beside it), and move onto the next step. 
 
-    {image file-path="img/topics/col_binary_4_kids_3_cards.png"}
+    {image file-path="img/topics/col_binary_4_kids_3_cards.png" alt="3 kids holding binary cards"}
 
-    {panel type="teaching" title="Teaching Observations"}
+    {panel type="teaching" title="Teaching observations"}
 
     Usually some students will point out  that you've missed out the three, but simply indicate that you haven't made a mistake, something is happening to the numbers and we will be able to make three by using the cards. 
 
@@ -62,7 +62,7 @@ The technical word for that is a “bit”.
  
 5.  Ask what the next card is, and why.
 
-    {panel type="teaching" title="Teaching Observations"}
+    {panel type="teaching" title="Teaching observations"}
 
     At this point it is common for students to guess that it is 6 (since it follow the numbers 2 and 4).
     However, if you let them think about it a little more, some will usually come up with 8, and those students should be able to convince the others that they are correct.
@@ -75,7 +75,7 @@ The technical word for that is a “bit”.
  
 6.  Show the 4th card and hand it out: 
 
-    {panel type="teaching" title="Teaching Observations"}
+    {panel type="teaching" title="Teaching observations"}
 
     Background information for those who are curious!
     If we kept handing out cards then once we got to 8 cards we would have 256 dots in total if we added up all the cards.
@@ -111,9 +111,9 @@ The technical word for that is a “bit”.
 
     Without being given any rules other than each card being visible or not, students will usually come up with the following representation.
 
-    {image file-path="img/topics/binary_cards_equals_three.png"}
+    {image file-path="img/topics/binary_cards_equals_three.png" alt="Diagram showing that 2 binary cards make the number 3"}
 
-    {panel type="math" title="Mathematical Links"}
+    {panel type="math" title="Mathematical links"}
  
     At a junior level we are focusing on using this counting system to represent numbers and making the association that with these “bits” you can make any number.
     We’re not going to focus on further knowledge about number base systems.
@@ -152,21 +152,21 @@ The technical word for that is a “bit”.
     a.  Start with all the numbers switched to on (all the dots visible).
         You could start to introduce abstract representations, like varying the description of the cards (visible/hidden; dots/no-dots; white/black if the backing is black; yes/no; or on/off)
 
-    {image file-path="img/topics/lightbulb_series_4_bulbs_4.png"}
+    {image file-path="img/topics/lightbulb_series_4_bulbs_4.png" alt="4 lightbulbs switched on"}
 
     b.  Does 8 fit into 3? No - so turn it off
 
-    {image file-path="img/topics/lightbulb_series_4_bulbs_3.png"}
+    {image file-path="img/topics/lightbulb_series_4_bulbs_3.png" alt="3 lightbulbs switched on"}
 
     c.  Does 4 fit into 3? No - so turn it off
     
-    {image file-path="img/topics/lightbulb_series_4_bulbs_2.png"}
+    {image file-path="img/topics/lightbulb_series_4_bulbs_2.png" alt="2 lightbulbs switched on"}
 
     d.  Does 2 fit into 3? Yes - so keep it on. How many are left over? (1)
 
     e.  Does 1 fit into 1? Yes - so keep it on. How many are left over? (none)
 
-    {image file-path="img/topics/lightbulb_series_4_bulbs_2.png"}
+    {image file-path="img/topics/lightbulb_series_4_bulbs_2.png" alt="2 lightbulbs switched on"}
 
 ## Applying what we have just learnt
 
@@ -319,7 +319,7 @@ The algorithm for converting a decimal number to a binary one follows a pattern 
 For binary numbers you start with the largest bit and turn it on if it is needed or off if it is not, just like when you’re giving change you start with the largest denomination and then always take a coin (or note) whenever you need it.
 Jargon note: This is called a greedy algorithm.
 
-{panel type="math" title="Mathematical Links"}
+{panel type="math" title="Mathematical links"}
 
 Ask students what is special about the decimal to binary conversion, in contrast with the general change giving algorithm, and have them observe that in the general case, you may need to give more than one coin of the same denomination, whereas in the binary conversion there is always one (or none) of each.
 
