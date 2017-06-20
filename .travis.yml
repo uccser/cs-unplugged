@@ -24,11 +24,16 @@ script:
 - "./csu dev style"
 - "./csu dev docs"
 deploy:
-  provider: script
-  script: bash ./infrastructure/dev-deploy/dev-deploy.sh
-  skip_cleanup: true
-  on:
-    branch: develop
+  - provider: script
+    script: bash ./infrastructure/dev-deploy/dev-deploy.sh
+    skip_cleanup: true
+    on:
+      branch: develop
+  - provider: script
+    script: bash ./infrastructure/prod-deploy/prod-deploy.sh
+    skip_cleanup: true
+    on:
+      branch: master
 after_script:
 - bash <(curl -s https://codecov.io/bash)
 notifications:
