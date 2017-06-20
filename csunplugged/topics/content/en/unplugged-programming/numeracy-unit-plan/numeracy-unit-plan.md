@@ -1,8 +1,4 @@
-# Kidbots
-
-## See teaching the Kidbots unit in action!
-
-A version of this can curently be seen at 1:09:56 [here](https://educationonair.withgoogle.com/live/2016-dec/watch/keynote-au/keynote-7).
+# Numeracy programming
 
 ## What’s it all about?
 
@@ -17,7 +13,7 @@ To be sure that the code is working exactly as it needs to for the people it’s
 They are **testers**.
 In a small project usually the testing is done by the person who wrote the program, but for larger applications testing is often separated out, partly to spread the workload, but also because sometimes the programmer might be so familiar with the program that they can't see it from a users' point of view.
 
-The Kidbots activities separates the programming from the testing to avoid the programmer adjusting their program on the fly, and also support students to understand that programming is about working together, thinking through what you want to have happen and collaborating to solve problems.
+The Numeracy programming activities separates the programming from the testing to avoid the programmer adjusting their program on the fly, and also support students to understand that programming is about working together, thinking through what you want to have happen and collaborating to solve problems.
 
 ## Digital Technologies | Programming
 
@@ -40,7 +36,7 @@ Good programmers need to have a good base of mathematical knowledge, since a pro
 
 {image file-path="img/topics/careers.png" alt="Cartoon director, doctor and chef"}
 
-Giving sequential instructions are an important element of all programming languages, and so the Kidbots activity lays the foundation for understanding more conventional languages.
+Giving sequential instructions are an important element of all programming languages, and so the numeracy programming activities lay the foundation for understanding more conventional languages.
 It also exercises the ability to predict what a program will do, reason about where any bugs are, and understand that there can be multiple correct ways to program a solution.
  
 Being able to give exact sequential instructions, work well together and understand how to break a big problem into small pieces and then tackling the small piece one at a time are all life skills that can be transferred from computer programming to other tasks that students need to do. 
@@ -50,7 +46,7 @@ Being able to give exact sequential instructions, work well together and underst
 
 {panel type="ct-algorithm" title="Algorithmic thinking"}
 
-Throughout this unit students will be creating algorithms to ‘program’ the bot to move across grids.
+Throughout this unit students will be creating algorithms to ‘program’ the Bot to move across grids.
 The algorithmic thinking focuses on students learning to sequence a set of instructions to complete a task, to use specific types of instructions in their algorithms, and to find equivalent ways to achieve the same outcome.
 
 {panel end}
