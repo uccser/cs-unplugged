@@ -1,5 +1,4 @@
 how-binary-digits-work-junior:
-  number: 1
   duration: 45
   learning-outcomes:
     - binary-explain-off-on
@@ -15,7 +14,6 @@ how-binary-digits-work-junior:
     - Number line from 0 to 20
 
 reinforcing-sequencing-in-binary-number-systems-junior:
-  number: 2
   duration: 60
   learning-outcomes:
     - binary-make-play-instructions-binary
@@ -30,6 +28,22 @@ reinforcing-sequencing-in-binary-number-systems-junior:
     - Musical instruments
     - Glue a stick onto paper plates and have one side on and the other side off 
     - Hats on and off
+
+codes-for-letters-using-binary-representation-junior:
+  duration: 45
+  learning-outcomes:
+    - binary-match-letters-numbers
+    - binary-count-highest-number
+    - numeracy-recognise-number-alphabet-order
+  generated-resources:
+    binary-cards:
+      description: One set for class demonstration.
+    binary-cards-small:
+      description: One set of cards per student.
+  classroom-resources:
+    - Alphabet cards
+    - Number line from 0 to 20
+
 
 how-binary-digits-work:
   duration: 45
