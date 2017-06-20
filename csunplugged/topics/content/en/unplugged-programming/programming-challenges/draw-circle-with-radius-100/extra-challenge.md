@@ -4,7 +4,7 @@
 
 **Extra challenge #3:** [This requires advanced maths, but is a good challenge for a student who is familiar with Pythagoras' theorem] Draw a Circle Using Pythagoras’ Theorem.
 
-{image file-path="img/topics/programming-challenges/red_circle.png"}
+{image file-path="img/topics/programming-challenges/circle_red.png"}
 
 The diagram above shows a circle (radius 100) drawn using the Pythagoras’ Theorem method. (Note: The red triangle inside the circle is only to show the calculation and does not need to be drawn).
 

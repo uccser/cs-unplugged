@@ -216,6 +216,11 @@ programming-describe-variables:
   curriculum-areas:
     - programming
 
+programming-describe-mathematical-operations:
+  text: Describe how you have used mathematical operations in your program.
+  curriculum-areas:
+    - programming
+
 programming-outline-variable-updates:
   text: Outline how storing values in a variable is updated because of the code you have used.
   curriculum-areas:

@@ -1,6 +1,7 @@
 **Solution #1:**
 
 Sprite:
+
 ```scratch
 when green flag clicked
 clear
@@ -26,6 +27,7 @@ pen up
 ```
 
 Mirror Sprite:
+
 ```scratch
 when green flag clicked
 clear
@@ -53,6 +55,7 @@ pen up
 **Solution #2:**
 
 Sprite:
+
 ```scratch
 when green flag clicked
 set [angle v] to [90]
@@ -86,6 +89,7 @@ pen up
 ```
 
 Mirror Sprite:
+
 ```scratch
 when green flag clicked
 set [mirror angle v] to ((360) - (angle))

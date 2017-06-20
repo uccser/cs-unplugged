@@ -47,7 +47,7 @@ pen up
 
 **Solution #3:**
 
-```scratch:
+```scratch
 when green flag clicked
 clear
 go to x: (0) y: (0)

@@ -1,6 +1,6 @@
 Click on the green flag to see the expected output of your program.
 
-{iframe link="https://scratch.mit.edu/projects/embed/152451264/?autostart=false"}
+{iframe link="https://scratch.mit.edu/projects/embed/152452637/?autostart=false"}
 
 {panel type="help" title="Recommended blocks"}
 
@@ -14,6 +14,8 @@ clear
 pen down
 
 pen up
+
+change pen color by (10)
 ```
 
 ```scratch:split:random
@@ -33,6 +35,8 @@ move (radius) steps
 
 move ((((radius) * (2)) * (pi)) / (360)) steps
 
+turn cw (15) degrees
+
 turn ccw (1) degrees
 ```
 
@@ -40,6 +44,9 @@ turn ccw (1) degrees
 wait (1) secs
 
 repeat (360)
+end
+
+forever
 end
 ```
 
