@@ -1,3 +1,19 @@
+reinforcing-numeracy-through-a-sorting-network-junior:
+  duration: 45
+  learning-outcomes:
+    - sorting-explain-parallel-algorithm
+    - sorting-identify-number-given-range
+    - sorting-organise-objects-size
+  computational-thinking-links: reinforcing-numeracy-through-a-sorting-network-junior-ct-links.md
+  generated-resources:
+    sorting-network:
+      description: Use blank copy as template for creating Sorting Network.
+    sorting-network-cards:
+      description: Cards for students to use with the Sorting Network.
+  classroom-resources:
+    - 6 cards (or other items such as post-it notes) with numbers on them
+    - Stopwatch (e.g. on smartphone) to time races between groups.
+
 reinforcing-numeracy-through-a-sorting-network:
   duration: 45
   learning-outcomes:

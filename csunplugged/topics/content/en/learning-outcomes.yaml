@@ -56,18 +56,18 @@ binary-interpret-message-binary:
     - generalising-and-patterns
 
 binary-explain-codes-alphabets:
-  text: Explain how codes for larger alphabets could be created that also include capital letters, punctuation, symbols and diacritics (e.g. macrons, accents)
+  text: Explain how codes for larger alphabets could be created that also include capital letters, punctuation, symbols and diacritics (e.g. macrons, accents).
   curriculum-areas:
     - generalising-and-patterns
 
 binary-make-play-instructions-binary:
-  text: Make a play that gives instructions on how to represent a number in binary
+  text: Make a play that gives instructions on how to represent a number in binary.
   curriculum-areas:
     - decomposition
     - drama
 
 binary-identify-opposite-pairs:
-  text: Identify opposite pairs such as happy face and sad face
+  text: Identify opposite pairs such as happy face and sad face.
   curriculum-areas:
     - abstraction
     - literacy
@@ -197,7 +197,7 @@ numeracy-discuss-modulo-understanding-remainders:
 # PROGRAMMING LEARNING OUTCOMES
 
 programming-explain-sequencing:
-  text: Explain how sequence works in programming
+  text: Explain how sequence works in programming.
   curriculum-areas:
     - programming
 
@@ -294,7 +294,12 @@ sorting-use-selection-sort:
     - decomposition
 
 sorting-identify-number-range:
-  text: Identify which number comes before or after in any range of numbers
+  text: Identify which number comes before or after in any range of numbers.
+  curriculum-areas:
+    - numeracy
+
+sorting-identify-number-given-range:
+  text: Identify which number comes before or after in a given range of numbers.
   curriculum-areas:
     - numeracy
 
