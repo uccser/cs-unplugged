@@ -81,7 +81,7 @@ There are few common words with this property; other examples include ALMOST and
 Have the students try the Sorting Network with some of these words (note that you will need to read the sorted letters from the direction of the starting position to see the word in the correct order).
 
 There is also a number of words that have the letters in reverse alphabetical order, such as SPONGE and ZONKED (these can be sorted using the "larger to the left" variation, or can be read from the far side of the Sorting Network).
-Some words with this property have double letters in them, such as BELLOW; these will sort correctly, since the order of the double letters is immaterial. 
+Some words with this property have double letters in them, such as BELLOW; these will sort correctly, since the order of the double letters is immaterial.
 
 {image file-path="img/topics/sorting-network-toffees-cellos-sponge.png"}
 
@@ -146,7 +146,7 @@ If they struggle to find an example, you could give the one below, and then chal
 The Sorting Network is designed to work consistently one way, rather than working both ways.
 For example, the first image below shows an input that happens to come out sorted when going through the network backwards, while the second one doesn't.
 If it fails on just one input (the second one) then we can't rely on it, even though it sometimes works.
-In the other direction, it will always sort correctly. 
+In the other direction, it will always sort correctly.
 
 {panel end}
 
@@ -158,11 +158,11 @@ In the other direction, it will always sort correctly.
 
 This kind of algorithm needs to run on special hardware to take advantage of doing multiple comparisons at the same time.
 It is only used for specialist applications at present, for example it is sometimes done on the graphics processor (GPU) of a computer, because these processors are good at doing parallel computation.
-Sorting Networks were invented long before powerful GPUs came along; this is an exciting thing about computer science - some of the our discoveries are ahead of the hardware that is available, so we're ready to make use of the hardware when it does become commonly available!
-Note that this is not a conventional sorting algorithm, as the sorting that is done on a conventional system can make only one comparison at a time; conventional sorting algorithms are explored in another lesson. 
+Sorting Networks were invented long before powerful GPUs came along; this is an exciting thing about Computer Science - some of the our discoveries are ahead of the hardware that is available, so we're ready to make use of the hardware when it does become commonly available!
+Note that this is not a conventional sorting algorithm, as the sorting that is done on a conventional system can make only one comparison at a time; conventional sorting algorithms are explored in another lesson.
 
 ## Lesson reflection
 
-What did you notice happen with each variation of using the Sorting Network? 
+What did you notice happen with each variation of using the Sorting Network?
 
-Was it what you had expected? 
+Was it what you had expected?
