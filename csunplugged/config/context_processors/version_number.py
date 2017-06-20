@@ -4,7 +4,7 @@ from config import __version__
 
 
 def version_number(request):
-    """Return a string of the version number.
+    """Return a dictionary containing system version number.
 
     Returns:
         Dictionary containing version number to add to context.
