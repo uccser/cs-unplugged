@@ -1,6 +1,6 @@
 """Module for generating Binary Cards resource."""
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw
 from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
@@ -16,7 +16,7 @@ def resource_image(request, resource):
     """
     image_path = "static/img/resources/job-badges/job-badges.png"
     image = Image.open(image_path)
-    draw = ImageDraw.Draw(image)
+    ImageDraw.Draw(image)
 
     return image
 
