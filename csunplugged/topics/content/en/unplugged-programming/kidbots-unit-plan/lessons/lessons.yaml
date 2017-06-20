@@ -7,6 +7,9 @@ fitness-unplugged:
     - unplugged-programming-construct-fitness-workout
     - unplugged-programming-design-language
     - programming-identify-loop
+  generated-resources:
+    job-badges:
+      description:  Cut these out and use them as badges for the three students doing the three jobs respectively. You might want to put them in a name holder on a lanyard.
   classroom-resources:
     - 1 hula hoop
     - 6 whiteboards or clipboards with blank paper
