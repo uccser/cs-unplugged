@@ -1,0 +1,6 @@
+lessons: lessons/lessons.yaml
+
+age-groups:
+  5-7:
+    place-holder:
+      number: 1
