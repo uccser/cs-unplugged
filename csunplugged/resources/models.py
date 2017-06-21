@@ -18,6 +18,6 @@ class Resource(models.Model):
         """Text representation of Resource object.
 
         Returns:
-            Name of resource (string).
+            Name of resource (str).
         """
         return self.name

@@ -8,11 +8,11 @@ def resource_image(request, resource):
     """Create a image for Parity Cards resource.
 
     Args:
-        request: HTTP request object.
-        resource: Object of resource data.
+        request: HTTP request object (HttpRequest).
+        resource: Object of resource data (Resource).
 
     Returns:
-        A list of Pillow image objects.
+        A list of Pillow image objects (list).
     """
     CARDS_COLUMNS = 4
     CARDS_ROWS = 5
@@ -58,11 +58,11 @@ def subtitle(request, resource):
     also on the resource image.
 
     Args:
-        request: HTTP request object
-        resource: Object of resource data.
+        request: HTTP request object (HttpRequest).
+        resource: Object of resource data (Resource).
 
     Returns:
-        text for subtitle (string)
+        text for subtitle (str).
     """
     text = "{} back - {}".format(
         retrieve_query_parameter(request, "back_colour"),
