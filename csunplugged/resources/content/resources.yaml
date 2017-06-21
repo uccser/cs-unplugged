@@ -79,6 +79,6 @@ arrows:
 left-right-cards:
   name: Left and Right Cards
   webpage-template: resources/left-right-cards.html
-  generation-view: left-right-cards.py
+  generation-view: left_right_cards.py
   thumbnail-static-path: img/resources/left-right-cards/left-right-cards.png
   copies: false
