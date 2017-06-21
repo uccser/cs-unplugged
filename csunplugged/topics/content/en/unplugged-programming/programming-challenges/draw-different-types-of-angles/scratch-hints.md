@@ -1,6 +1,6 @@
 Description of different angles:
 
--  An acute angle is an angle between 0 and 90 degrees (not including 90).
+-   An acute angle is an angle between 0 and 90 degrees (not including 90).
 -   A right angle is a 90 degrees angle.
 -   Obtuse angle is an angle between 90 and 180 degree (not including 90 and 180).
 -   A straight angle is a 180 degrees angle.
