@@ -11,6 +11,10 @@ finding-2d-shapes:
     - unplugged-programming-actively-listen-feedback
     - unplugged-programming-give-accurate-instructions-pace
   generated-resources:
+    arrows:
+      description: I am placeholder text.
+    left-right-cards:
+      description: Such placeholder. Much text. Wow.
     job-badges:
       description:  Cut these out and use them as badges for the three students doing the three jobs respectively. You might want to put them in a name holder on a lanyard.
   classroom-resources:

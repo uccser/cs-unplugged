@@ -1,11 +1,11 @@
-"""Module for generating Job Badges resource."""
+"""Module for generating Arrows resource."""
 
 from PIL import Image, ImageDraw
 from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
 def resource_image(request, resource):
-    """Create a image for Job Badges resource.
+    """Create a image for Arrows resource.
 
     Args:
         request: HTTP request object (QueryDict).
@@ -14,7 +14,7 @@ def resource_image(request, resource):
     Returns:
         A list of Pillow image objects.
     """
-    image_path = "static/img/resources/job-badges/job-badges.png"
+    image_path = "static/img/resources/arrows/arrows.png"
     image = Image.open(image_path)
     ImageDraw.Draw(image)
 
