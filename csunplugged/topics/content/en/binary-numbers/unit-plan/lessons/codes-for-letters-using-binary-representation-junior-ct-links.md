@@ -18,7 +18,7 @@ For example, to convert the letter E, the algorithm would have you counting A,1;
 
 (A more efficient algorithm would have a table to look up, like the one created at the start of the activity, and most programming languages can convert directly from characters to numbers, with the notable exception of Scratch, which needs to use the above algorithm.)
 
-The next algorithm takes the algorithm from lesson 1  which we use to represent a decimal number as a binary number: 
+The next algorithm takes the algorithm from lesson 1 which we use to represent a decimal number as a binary number: 
 
 -   Find out the number of dots that is to be displayed. (We'll refer to this as the "number of dots remaining", which initially is the total number to be displayed.)
 -   For each card, from the left to the right (i.e. 16, 8, 4, 2, then 1):
@@ -46,7 +46,8 @@ Abstraction helps us simplify things because we can ignore the details we don’
 Binary number representation is an abstraction that hides the complexity of the electronics and hardware inside a computer that stores data.
 Letters are an abstraction that a human can make sense of quickly; talking about the letter H is generally more meaningful than calling it "the 10th letter of the alphabet", and when we are reading or speaking we don’t need to know it is the 10th letter anyway.
  
-#### Examples of what you could look for: 
+#### Examples of what you could look for:
+
 Have students create instructions for, or demonstrate how to represent new language elements, such as a comma.
 
 {panel end}

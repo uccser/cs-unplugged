@@ -58,9 +58,8 @@ In particular, it may be helpful to represent a number higher than 16 to give th
 | 4 | 00100 | D | 13 | 01101 | M | 22 | 10110 | V |
 | 5 | 00101 | E | 14 | 01110 | N | 23 | 10111 | W |
 | 6 | 00110 | F | 15 | 01111 | O | 24 | 11000 | X |
-| 7 | 00111 | G | 16 | 10000 | P | 25 | 11001 | y |
+| 7 | 00111 | G | 16 | 10000 | P | 25 | 11001 | Y |
 | 8 | 01000 | H | 17 | 10001 | Q | 26 | 11010 | Z |
-
 
 {panel type="teaching" title="Teaching observations"}
 
@@ -87,7 +86,7 @@ So how do we make 1 using binary code?
 
 {image file-path="img/topics/binary-1-equals-a.png" alt="Kids holding binary cards"}
 
-OFF	OFF	OFF	OFF	ON
+OFF OFF OFF OFF ON
  
 Hang on!
 Haven’t we already written the binary code for D? We can reuse that!
@@ -132,6 +131,6 @@ In fact, around 6 or 7 folds is already impossibly thick, even with a large shee
 
 ## Lesson reflection
 
--  What are some reasons why we don’t use the binary number system as the representation for our written language? 
--  What did you find challenging during this lesson? 
--  How did you overcome these challenges? 
+-   What are some reasons why we don’t use the binary number system as the representation for our written language? 
+-   What did you find challenging during this lesson? 
+-   How did you overcome these challenges? 
