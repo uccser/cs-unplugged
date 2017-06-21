@@ -303,3 +303,48 @@ unplugged-programming-design-language:
   text: Design a fitness unplugged programming language that is easily interpreted.
   curriculum-areas:
     - programming
+
+unplugged-programming-give-instructions:
+  text: Give a set of instructions that moves an object from a starting point to a desired destination.
+  curriculum-areas:
+    - programming
+    - geometry
+
+unplugged-programming-identify-bug-correct:
+  text: Follow instructions accuratelyIdentify where a bug has occured and be able to correct the code to allow the object to move to the desired destination.
+  curriculum-areas:
+    - programming
+
+unplugged-programming-explain-exact-instructions:
+  text: Explain why it’s important to give very exact instructions.
+  curriculum-areas:
+    - programming
+    - geometry
+
+unplugged-programming-follow-instructions:
+  text: Follow instructions accurately.
+  curriculum-areas:
+    - geometry
+    - literacy
+
+unplugged-programming-identify-2D-shapes:
+  text: Identify and name 2D shapes.
+  curriculum-areas:
+    - geometry
+
+unplugged-programming-communicate-debugging:
+  text: Communicate when the code isn’t correct so that the person knows what needs debugging.
+  curriculum-areas:
+    - programming
+    - literacy
+
+unplugged-programming-actively-listen-feedback:
+  text: Actively listen to the feedback and debug the program.
+  curriculum-areas:
+    - programming
+    - literacy
+
+unplugged-programming-give-accurate-instructions-pace:
+  text: Give accurate instructions at a pace that the person can follow.
+  curriculum-areas:
+    - speaking

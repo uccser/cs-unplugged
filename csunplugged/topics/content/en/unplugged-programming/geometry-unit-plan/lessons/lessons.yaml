@@ -1,2 +1,20 @@
-place-holder:
-  duration: 1
+finding-2d-shapes:
+  duration: 30
+  computational-thinking-links: finding-2d-shapes-ct-links.md
+  learning-outcomes:
+    - unplugged-programming-give-instructions
+    - unplugged-programming-identify-bug-correct
+    - unplugged-programming-explain-exact-instructions
+    - unplugged-programming-follow-instructions
+    - unplugged-programming-identify-2D-shapes
+    - unplugged-programming-communicate-debugging
+    - unplugged-programming-actively-listen-feedback
+    - unplugged-programming-give-accurate-instructions-pace
+  generated-resources:
+    job-badges:
+      description:  Cut these out and use them as badges for the three students doing the three jobs respectively. You might want to put them in a name holder on a lanyard.
+  classroom-resources:
+    - 8 x 8 (approx) squared grid (30cm approx) or more
+    - A variety of 2D shapes (tesselation shapes), they can be the same shapes
+    - Small whiteboard and two whiteboard pens (different colours), or
+    - Paper on a clipboard
