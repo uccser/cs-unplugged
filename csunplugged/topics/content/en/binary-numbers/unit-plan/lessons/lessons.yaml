@@ -1,5 +1,6 @@
 how-binary-digits-work-junior:
   duration: 45
+  computational-thinking-links: how-binary-digits-work-junior-ct-links.md
   learning-outcomes:
     - binary-explain-off-on
     - numeracy-identify-larger-number
@@ -15,6 +16,7 @@ how-binary-digits-work-junior:
 
 reinforcing-sequencing-in-binary-number-systems-junior:
   duration: 60
+  computational-thinking-links: reinforcing-sequencing-in-binary-number-systems-junior-ct-links.md
   learning-outcomes:
     - binary-make-play-instructions-binary
     - numeracy-count-by-pointing
@@ -26,7 +28,7 @@ reinforcing-sequencing-in-binary-number-systems-junior:
       description: One set of cards per student.
   classroom-resources:
     - Musical instruments
-    - Glue a stick onto paper plates and have one side on and the other side off 
+    - Glue a stick onto paper plates and have one side on and the other side off
     - Hats on and off
 
 codes-for-letters-using-binary-representation-junior:

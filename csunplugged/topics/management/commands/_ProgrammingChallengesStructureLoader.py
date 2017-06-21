@@ -17,8 +17,8 @@ class ProgrammingChallengesStructureLoader(BaseLoader):
         """Create the loader for loading structure of programming challenges.
 
         Args:
-            structure_file_path: File path for structure YAML file (string).
-            BASE_PATH: Base file path (string).
+            structure_file_path: File path for structure YAML file (str).
+            BASE_PATH: Base file path (str).
         """
         super().__init__(BASE_PATH)
         self.structure_file_path = structure_file_path

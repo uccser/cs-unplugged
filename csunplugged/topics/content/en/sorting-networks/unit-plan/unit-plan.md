@@ -82,7 +82,7 @@ one of these types of networks, it is called a comparator network, because it’
 a network where each node compares two values, rather than linking different
 devices (such as phones and computers) together.
 
-## Digital technologies | Algorithms
+## Digital Technologies | Algorithms
 
 {image file-path="img/topics/sorting-network-too-far-kid.png" alt="A child walks too far in the sorting network activity, failing the activity for everyone."}
 
@@ -146,7 +146,7 @@ processors are good at doing parallel computation of simple tasks.
 {image file-path="img/topics/sorting-network-ancient-sorting-network-text-en.png" alt="A GPU finds a cave painting of an ancient sorting network."}
 
 Sorting Networks were invented long before powerful GPUs came along; this is an
-exciting thing about computer science - some of the our discoveries are ahead
+exciting thing about Computer Science - some of the our discoveries are ahead
 of the hardware that is available, so we're ready for the hardware if it does
 become commonly available!
 Note that the approach explored in these lessons is **not** a conventional

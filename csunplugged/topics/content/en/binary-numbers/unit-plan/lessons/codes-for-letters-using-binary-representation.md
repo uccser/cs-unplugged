@@ -1,6 +1,6 @@
-# Codes for Letters Using Binary Representation
+# Codes for letters using binary representation
 
-## Key Questions
+## Key questions
 
 -   How many different characters can you type on a computer?
     (Discussion may start at the 26 letters of the English alphabet, and then
@@ -10,7 +10,7 @@
     characters, and the range of characters is also expanding as emoticons
     are invented!)
 
-## Lesson Starter
+## Lesson starter
 
 {panel type="general" title="Notes on resources"}
 
@@ -25,7 +25,7 @@ you could do is say a number between 0 and 26.
 Work out and write down the binary numbers using 5 bits from 0 to 26 on the
 Binary to Alphabet resource, then add the letters of the alphabet.
 
-{image file-path="img/topics/col_binary_robot_boy_convo.png"}
+{image file-path="img/topics/col_binary_robot_boy_convo.png" alt="Cartoon boy talking to robot"}
 
 {panel type="teaching" title="Teaching observations"}
 
@@ -48,7 +48,7 @@ Binary to Alphabet resource, then add the letters of the alphabet.
 
 {panel end}
 
-## Lesson Activities
+## Lesson activities
 
 Using the table that students have created above, give them a message to
 decode, such as your name or the name of a book
@@ -63,7 +63,7 @@ with a sound that is either high pitched or low pitched.
 Or the 5-bit number could be represented by holding up the five fingers on
 one hand, one finger corresponding to each bit.
 
-## Adding More Characters
+## Adding more characters
 
 Some languages have slightly more or fewer characters, which might include
 those with diacritic marks.
@@ -133,7 +133,7 @@ you've got the code that we've been using above.
 
 {panel end}
 
-## Lesson Reflection
+## Lesson reflection
 
 -   What are some reasons why we don’t use the binary number system as the
     language for our written language?

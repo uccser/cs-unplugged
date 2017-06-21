@@ -21,9 +21,9 @@ class UnitPlanLoader(BaseLoader):
 
         Args:
             factory: LoaderFactory object for creating loaders (LoaderFactory).
-            structure_file_path: File path for structure YAML file (string).
-            topic: Object of related topic model.
-            BASE_PATH: Base file path (string).
+            structure_file_path: File path for structure YAML file (str).
+            topic: Object of related topic model (Topic).
+            BASE_PATH: Base file path (str).
         """
         super().__init__(BASE_PATH)
         self.factory = factory
