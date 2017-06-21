@@ -191,8 +191,8 @@ function collect_static {
 
 # Run Django command rebuild_index
 function rebuild_index {
-  printf "Rebuilding search index..."
-  docker-compose run --rm django /docker_venv/bin/python3 ./manage.py rebuild_index --noinput
+  printf "Rebuilding search index...\n"
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py rebuild_index --noinput
 }
 function rebuild_index_help {
   printf "   rebuild_index     Run Django rebuild_index command.\n"

@@ -98,7 +98,7 @@ class Topic(models.Model):
     icon = models.CharField(max_length=100, null=True)
 
     def get_absolute_url(self):
-        """Return the canonical URL for a programming exercise.
+        """Return the canonical URL for a topic.
 
         Returns:
             URL as string.
@@ -211,16 +211,16 @@ class ProgrammingChallenge(models.Model):
     )
 
     def get_absolute_url(self):
-        """Return the canonical URL for a programming exercise.
+        """Return the canonical URL for a programming challenge.
 
         Returns:
             URL as string.
         """
         kwargs = {
             "topic_slug": self.topic.slug,
-            "programming_exercise_slug": self.slug
+            "programming_challenge_slug": self.slug
         }
-        return reverse("topics:programming_exercise", kwargs=kwargs)
+        return reverse("topics:programming_challenge", kwargs=kwargs)
 
     def model_type(self):
         """Text name of model type.

@@ -57,7 +57,7 @@ class LessonIndex(indexes.SearchIndex, indexes.Indexable):
 
 
 class ProgrammingChallengeIndex(indexes.SearchIndex, indexes.Indexable):
-    """Search index for ProgrammingExercise model."""
+    """Search index for ProgrammingChallenge model."""
 
     text = indexes.CharField(document=True, use_template=True)
     topic = indexes.CharField(model_attr='topic')
