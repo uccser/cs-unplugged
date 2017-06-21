@@ -126,10 +126,11 @@ Adding a Unit Plan
 .. raw:: html
 
   <map name="unit-plan-map">
-    <area shape="rect" coords="240,430,317,465" href="#unit-plan-configuration-file">
-    <area shape="rect" coords="240,540,317,575" href="#topic-configuration-file">
-    <area shape="rect" coords="240,640,317,675" href="#adding-a-lesson">
-    <area shape="rect" coords="240,745,317,780" href="../getting_started/helper_commands.html#update">
+    <area shape="rect" coords="240,435,317,468" href="#unit-plan-configuration-file">
+    <area shape="rect" coords="240,547,317,581" href="#unit-plan-configuration-file">
+    <area shape="rect" coords="240,658,317,692" href="#topic-configuration-file">
+    <area shape="rect" coords="240,758,317,792" href="#adding-a-lesson">
+    <area shape="rect" coords="240,864,317,896" href="../getting_started/helper_commands.html#update">
   </map>
   <img src="../_static/img/topics_adding_unit_plan_flowchart.png" usemap="#unit-plan-map">
 
@@ -527,6 +528,11 @@ Unit Plan Configuration File
                   This value allows a lesson to be used in different age
                   groups, as different numbered lessons (e.g. lesson 2 for
                   5 to 7, but lesson 1 for 8 to 10).
+
+  - **Optional Fields:**
+
+    - ``computational-thinking-links``: The Markdown filename containing
+        Computational Thinking links.
 
 A complete unit plan structure file with multiple lessons may look like the
 following:

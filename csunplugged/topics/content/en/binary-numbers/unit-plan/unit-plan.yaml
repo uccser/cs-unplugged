@@ -1,4 +1,5 @@
 lessons: lessons/lessons.yaml
+computational-thinking-links: unit-plan-ct-links.md
 
 age-groups:
   5-7:

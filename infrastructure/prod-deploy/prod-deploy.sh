@@ -1,5 +1,5 @@
 #!/bin/bash
-# Deploy the system to the development website.
+# Deploy the system to the production website.
 
 # Generate production static files
 ./csu dev static_prod
@@ -27,20 +27,20 @@ curl https://sdk.cloud.google.com | bash;
 # Decrypt secret files archive that contain credentials.
 #
 # This includes:
-#   - continuous-deployment-develop-credentials.json
+#   - continuous-deployment-prod.json
 #     Google Cloud Platform Service Account for using with gcloud.
-#   - app-develop.yaml
+#   - app-prod.yaml
 #     Google App Engine YAML file for deployment, contains sensitive data.
-#   - load-develop-deploy-envs.sh
+#   - load-prod-deploy-envs.sh
 #     Loads environment variables used when running local Django.
-openssl aes-256-cbc -K "${encrypted_bea729da01c0_key}" -iv "${encrypted_bea729da01c0_iv}" -in ./infrastructure/develop-deploy/develop-deploy-secrets.tar.enc -out develop-deploy-secrets.tar -d
+openssl aes-256-cbc -K "${encrypted_9cabeeff4658_key}" -iv "${encrypted_9cabeeff4658_iv}" -in ./infrastructure/prod-deploy/prod-deploy-secrets.tar.enc -out prod-deploy-secrets.tar -d
 
 # Unzip the decrypted secret archive into the current folder.
-tar -xf develop-deploy-secrets.tar
+tar -xf prod-deploy-secrets.tar
 
 # Authenticate with gcloud tool using the decrypted service account credentials.
 # See: https://cloud.google.com/sdk/gcloud/reference/auth/activate-service-account
-gcloud auth activate-service-account --key-file continuous-deployment-develop-credentials.json
+gcloud auth activate-service-account --key-file continuous-deployment-prod.json
 
 # Peform an update of gcloud to latest version.
 # This installs the 'app' tool, for deploying to Google App Engine.
@@ -69,10 +69,10 @@ for version in "${versions_to_delete[@]}"; do
 done
 
 # Load environment variables.
-# Used when running local Django for updating development database.
-. ./load-develop-deploy-envs.sh
+# Used when running local Django for updating production database.
+. ./load-prod-deploy-envs.sh
 
-# Download the Google Cloud SQL proxy for updating development database.
+# Download the Google Cloud SQL proxy for updating production database.
 #
 # This is done before any deployment to minimise downtime between the app
 # deployment and the database update.
@@ -90,30 +90,30 @@ chmod +x cloud_sql_proxy
 # The proxy command is appended with '&>/dev/null &' to run in the background
 # and to not send output to console.
 # See: https://cloud.google.com/python/django/flexible-environment#initialize_your_cloud_sql_instance
-./cloud_sql_proxy -instances="${GOOGLE_CLOUD_SQL_CONNECTION_NAME}"=tcp:5433 -credential_file="./continuous-deployment-develop-credentials.json" >/dev/null 2>/dev/null &
+./cloud_sql_proxy -instances="${GOOGLE_CLOUD_SQL_CONNECTION_NAME}"=tcp:5433 -credential_file="./continuous-deployment-prod.json" >/dev/null 2>/dev/null &
 
 # Publish static files.
 #
 # This copies the generated static files from tests to the Google Storage
 # Bucket.
 # See: https://cloud.google.com/python/django/flexible-environment#deploy_the_app_to_the_app_engine_flexible_environment
-gsutil rsync -R ./csunplugged/staticfiles/ gs://cs-unplugged-develop/static/
+gsutil rsync -R ./csunplugged/staticfiles/ gs://cs-unplugged.appspot.com/static/
 
 # Publish Django system to Google App Engine.
 #
-# This deploys using the 'app-develop.yaml' decrypted earlier that contains
+# This deploys using the 'app-prod.yaml' decrypted earlier that contains
 # secret environment variables to use within the application.
 # Project is specified to ensure correct project deployment.
 # Runs with '--quiet' to skip prompt of confirmation.
 # If multiple services are deployed at a later stage, these should be checked
 # that the apps deploy to the correct services.
 # See: https://cloud.google.com/sdk/gcloud/reference/app/deploy
-gcloud app deploy ./app-develop.yaml --quiet --project=cs-unplugged-develop
+gcloud app deploy ./app-prod.yaml --quiet --project=cs-unplugged
 
-# Update development database.
+# Update production database.
 #
 # The approach used for updating the database is to run the Django system
-# locally and connect to the development database using the Google Cloud SQL
+# locally and connect to the production database using the Google Cloud SQL
 # proxy.
 #
 # Change working directory to 'csunplugged' to run 'manage.py' from the

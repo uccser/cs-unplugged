@@ -96,6 +96,45 @@ class UnitPlanLoaderTest(BaseTestWithDB):
             up_loader.load,
         )
 
+    def test_unit_plan_loader_valid_computational_thinking_content(self):
+        config_file = "ct-links/ct-links.yaml"
+
+        factory = Mock()
+        topic = self.test_data.create_topic("1")
+        unit_plan = self.test_data.create_unit_plan(topic, "test")
+        self.test_data.create_lesson(topic, unit_plan, "1")
+        self.test_data.create_age_group(8, 10)
+
+        up_loader = UnitPlanLoader(factory, config_file, topic, self.BASE_PATH)
+        up_loader.load()
+        self.assertEqual(
+            UnitPlan.objects.get(slug="ct-links").computational_thinking_links,
+            "<p>CT link text</p>"
+        )
+
+    def test_unit_plan_loader_missing_computational_thinking_content(self):
+        config_file = "unit-plan-1/unit-plan-1.yaml"
+
+        factory = Mock()
+        topic = self.test_data.create_topic("1")
+        unit_plan = self.test_data.create_unit_plan(topic, "test")
+        self.test_data.create_lesson(topic, unit_plan, "1")
+        self.test_data.create_age_group(8, 10)
+
+        up_loader = UnitPlanLoader(factory, config_file, topic, self.BASE_PATH)
+        up_loader.load()
+
+        up_objects = UnitPlan.objects.all()
+
+        self.assertQuerysetEqual(
+            up_objects,
+            [
+                "<UnitPlan: Unit Plan test>",
+                "<UnitPlan: Unit Plan 1>"
+            ],
+            ordered=False
+        )
+
     def test_unit_plan_missing_lesson_keys(self):
         config_file = "unit-plan-1/missing-lesson-keys.yaml"
 
