@@ -1,0 +1,25 @@
+{% extends "columns.html" %}
+
+{% load render_html_field %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}
+  {{ topic.name }} other resources
+{% endblock title %}
+
+{% block breadcrumbs %}
+  {% breadcrumb "Home" "/" %}
+  {% breadcrumb "Topics" "topics:index" %}
+  {% breadcrumb topic.name "topics:topic" topic.slug %}
+  {% breadcrumb "Other Resources" "topics:other_resources" topic.slug %}
+{% endblock breadcrumbs %}
+
+{% block page_heading %}
+  <h1>{{ topic.name }}</h1>
+{% endblock page_heading %}
+
+{% block left_column_content %}
+  <h2>Other resources</h2>
+
+  {% render_html_field topic.other_resources %}
+{% endblock left_column_content %}

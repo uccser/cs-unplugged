@@ -1,0 +1,5 @@
+<div>
+  {% for hash in images -%}
+    <object data="{{ "{% get_static_prefix %}" }}img/scratch-blocks-{{ hash }}.svg" type="image/svg+xml" />
+  {% endfor -%}
+</div>

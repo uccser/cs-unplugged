@@ -1,0 +1,202 @@
+{% load i18n %}
+{% load static %}
+{% load render_html_field %}
+{% load django_bootstrap_breadcrumbs %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{% block custom_title %}{% block title %}{% endblock title %} - CS Unplugged{% endblock custom_title %}</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/website.css' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'img/manifest.json' %}">
+    <link rel="mask-icon" href="{% static 'img/safari-pinned-tab.svg' %}" color="#ce2326">
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+    <meta name="msapplication-config" content="{% static 'img/browserconfig.xml' %}">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+    <nav class="navbar fixed-top navbar-toggleable-sm navbar-light py-1">
+      <div class="container px-0">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="{% url 'general:home' %}">
+          <img src="{% static 'img/logo-small.png' %}" id="navbar-brand-logo" class="d-inline-block align-top" alt="CS Unplugged logo">
+          2.0 sneak peek
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link" href="{% url 'topics:index' %}">Topics</a>
+            <a class="nav-item nav-link" href="{% url 'resources:index' %}">Resources</a>
+            <a class="nav-item nav-link" href="{% url 'general:about' %}">About</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    {% block breadcrumbs %}
+    {% endblock breadcrumbs %}
+
+    <div id="content-container" class="container">
+      {% block body_container %}
+        {% render_breadcrumbs "django_bootstrap_breadcrumbs/bootstrap4.html" %}
+        <div class="row">
+          <div class="col-12">
+            {% block page_heading %}
+            {% endblock page_heading %}
+          </div>
+          {% block content_container %}
+            <div class="col-12">
+              {% block content %}
+              {% endblock content %}
+            </div>
+          {% endblock content_container %}
+          <div class="col-12">
+            {% block end_content %}
+            {% endblock end_content %}
+          </div>
+        </div>
+      {% endblock body_container %}
+    </div>
+
+    <div class="container white-footer mt-5 py-5 text-center">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-4 col-lg-3">
+          <a href="http://www.cosc.canterbury.ac.nz/research/RG/CSE/">
+            <img class="img-fluid" src="{% static 'img/uc-computer-science-education-logo.png' %}">
+          </a>
+        </div>
+        <div class="col-4 col-lg-3">
+          <a href="https://www.google.com">
+            <img class="img-fluid" src="{% static 'img/google-logo-colour.png' %}">
+          </a>
+        </div>
+        <div class="col-4 col-lg-3">
+          <a href="https://www.microsoft.com/about/philanthropies/">
+            <img class="img-fluid" src="{% static 'img/microsoft-philanthropies-logo' %}.png">
+          </a>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-5">
+        <div class="col-3">
+          <p class="mb-1 font-weight-bold">Useful Links</p>
+          <ul class="list-unstyled">
+            <li>
+              <a href="{% url 'general:about' %}">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'topics:index' %}">
+                Topics
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'resources:index' %}">
+                Resources
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-3">
+          <p class="mb-1 font-weight-bold">Community</p>
+          <ul class="list-unstyled">
+            <li>
+              <a href="https://twitter.com/UCCSEd">
+                Twitter
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/user/csunplugged">
+                YouTube
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/uccser/cs-unplugged">
+                GitHub
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-3">
+          <p class="mb-1 font-weight-bold">Help</p>
+          <ul class="list-unstyled">
+            <li>
+              <a href="{% url 'topics:glossary' %}">
+                Glossary
+              </a>
+            </li>
+            <li>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSccsE8TC-o0iptiT83iQ9R3nbUngkK0ch4G8sljCL8IpF-89Q/viewform">
+                Feedback
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'general:contact' %}">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <footer id="page-footer" class="text-center">
+      <div class="container background-csfg py-3 w-100">
+        <p class="mb-0">
+          Looking for something for high schools?
+          Check out the <a href="http://csfieldguide.org.nz/">Computer Science Field Guide</a>.
+        </p>
+      </div>
+      <div class="container py-3">
+        <p>
+          The CS Unplugged material is open source on <a href="https://github.com/uccser/cs-unplugged">GitHub</a>, and this website's content is shared under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International license</a>.
+          The CS Unplugged is a project by the <a href="http://www.cosc.canterbury.ac.nz/research/RG/CSE/">Computer Science Education Research Group</a> at the <a href="http://www.canterbury.ac.nz/">University of Canterbury</a>, New Zealand.
+        </p>
+        <p class="mb-0">
+          <small><a href="http://cs-unplugged.readthedocs.io/en/latest/changelog.html">{{ VERSION_NUMBER }}</a></small>
+        </p>
+      </div>
+    </footer>
+
+    <div class="modal fade" id="glossary-modal" tabindex="-1" role="dialog" aria-labelledby="glossary-modal-term" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="glossary-modal-term"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="glossary-modal-definition"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+    <script src="{% static 'js/tether.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/website.js' %}"></script>
+    <script src="{% static 'js/details-element-polyfill.js' %}"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    {% block scripts %}
+    {% endblock scripts %}
+  </body>
+</html>

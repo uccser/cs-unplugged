@@ -1,0 +1,54 @@
+sorting-network:
+  name: Sorting Network
+  webpage-template: resources/sorting-network.html
+  generation-view: sorting_network.py
+  thumbnail-static-path: img/resources/resource-sorting-network-thumbnail-example.png
+  copies: true
+sorting-network-cards:
+  name: Sorting Network Cards
+  webpage-template: resources/sorting-network-cards.html
+  generation-view: sorting_network_cards.py
+  thumbnail-static-path: img/resources/sorting-network-cards/thumbnail.png
+  copies: false
+treasure-hunt:
+  name: Treasure Hunt
+  webpage-template: resources/treasure-hunt.html
+  generation-view: treasure_hunt.py
+  thumbnail-static-path: img/resources/resource-treasure-hunt-thumbnail-example.png
+  copies: true
+binary-cards:
+  name: Binary Cards
+  webpage-template: resources/binary-cards.html
+  generation-view: binary_cards.py
+  thumbnail-static-path: img/resources/binary-cards/thumbnail.png
+  copies: false
+binary-cards-small:
+  name: Binary Cards (Small)
+  webpage-template: resources/binary-cards-small.html
+  generation-view: binary_cards_small.py
+  thumbnail-static-path: img/resources/binary-cards-small/thumbnail.png
+  copies: false
+binary-windows:
+  name: Binary Windows
+  webpage-template: resources/binary-windows.html
+  generation-view: binary_windows.py
+  thumbnail-static-path: img/resources/binary-windows/thumbnail.png
+  copies: false
+modulo-clock:
+  name: Modulo Clock
+  webpage-template: resources/modulo-clock.html
+  generation-view: modulo_clock.py
+  thumbnail-static-path: img/resources/modulo-clock/thumbnail.png
+  copies: false
+binary-to-alphabet:
+  name: Binary to Alphabet
+  webpage-template: resources/binary-to-alphabet.html
+  generation-view: binary_to_alphabet.py
+  thumbnail-static-path: img/resources/binary-to-alphabet/thumbnail.png
+  copies: false
+parity-cards:
+  name: Parity Cards
+  webpage-template: resources/parity-cards.html
+  generation-view: parity_cards.py
+  thumbnail-static-path: img/resources/parity-cards/thumbnail.png
+  copies: false

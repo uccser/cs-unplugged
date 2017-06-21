@@ -1,0 +1,30 @@
+{% extends "resources/resource.html" %}
+
+<!-- Description of resource -->
+{% block description %}
+  <p>
+    This resource will show you how computers sort random numbers into
+    order using a thing called a sorting network.
+  </p>
+  <p>
+    Can be used with the
+    <a href="{% url 'resources:resource' 'sorting-network-cards' %}">Sorting Network cards resource</a>.
+  </p>
+{% endblock description %}
+
+{% block generation_form %}
+  <fieldset>
+    <legend>Prefill with Numbers</legend>
+    <input type="radio" name="prefilled_values" id="blank" value="blank" checked="checked">
+    <label for="blank">None (Blank - Useful as template)</label>
+    <br>
+    <input type="radio" name="prefilled_values" id="easy" value="easy">
+    <label for="easy">Easy Numbers (1 digit)</label>
+    <br>
+    <input type="radio" name="prefilled_values" id="medium" value="medium">
+    <label for="medium">Medium Numbers (2 digits)</label>
+    <br>
+    <input type="radio" name="prefilled_values" id="hard" value="hard">
+    <label for="hard">Hard Numbers (3 digits)</label>
+  </fieldset>
+{% endblock generation_form %}

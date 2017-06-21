@@ -1,0 +1,16 @@
+<details{% if expanded == 'true'%} open="open"{% endif %} class="panel-{{ type }}">
+<summary>
+<strong>{{ title }}{% if subtitle %}:</strong> {{ subtitle }}{% else %}</strong>{% endif %}
+{% if (type == 'ct-algorithm') or
+(type == 'ct-abstraction') or
+(type == 'ct-decomposition') or
+(type == 'ct-pattern') or
+(type == 'ct-logic') or
+(type == 'ct-evaluation') %}
+<img class="inline-image float-right" src="{{ "{% static '" }}img/general/{{ type }}.png{{ "' %}" }}">
+{% endif %}
+</summary>
+<div class="boxed-text-content">
+{% autoescape false %}{{ content }}{% endautoescape %}
+</div>
+</details>

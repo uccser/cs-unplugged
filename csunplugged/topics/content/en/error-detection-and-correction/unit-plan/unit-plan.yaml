@@ -1,0 +1,9 @@
+lessons: lessons/lessons.yaml
+computational-thinking-links: unit-plan-ct-links.md
+
+age-groups:
+  8-10:
+    parity-magic:
+      number: 1
+    product-code-check-digits:
+      number: 2

@@ -1,0 +1,32 @@
+{% extends "general/base.html" %}
+
+{% load i18n %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}
+  Contact
+{% endblock title %}
+
+{% block breadcrumbs %}
+  {% breadcrumb "Home" "/" %}
+  {% breadcrumb "About" "general:about" %}
+  {% breadcrumb "Contact" "general:contact" %}
+{% endblock breadcrumbs %}
+
+{% block page_heading %}
+  <h1>{% trans "Contact Us" %}</h1>
+{% endblock page_heading %}
+
+{% block left_column_content %}
+  <p>
+    <strong>Email:</strong> You can <a href="mailto:csse.education.research@gmail.com">email the CS Unplugged team here</a>.
+  </p>
+
+  <p>
+    <strong>Twitter:</strong> <a href="https://twitter.com/UCCSEd">@UCCSEd</a>
+  </p>
+
+  <p>
+    <strong>Community Google Group:</strong> We have a <a href="https://groups.google.com/forum/#!forum/cs-unplugged-sharing">Google Group</a> you can join and talk about CS Unplugged.
+  </p>
+{% endblock left_column_content %}

@@ -1,0 +1,113 @@
+how-binary-digits-work-junior:
+  duration: 45
+  computational-thinking-links: how-binary-digits-work-junior-ct-links.md
+  learning-outcomes:
+    - binary-explain-off-on
+    - numeracy-identify-larger-number
+    - numeracy-count-by-pointing
+    - numeracy-recognise-patterns
+  generated-resources:
+    binary-cards:
+      description: One set for class demonstration.
+    binary-windows:
+      description: One set per student.
+  classroom-resources:
+    - Number line from 0 to 20
+
+reinforcing-sequencing-in-binary-number-systems-junior:
+  duration: 60
+  computational-thinking-links: reinforcing-sequencing-in-binary-number-systems-junior-ct-links.md
+  learning-outcomes:
+    - binary-make-play-instructions-binary
+    - numeracy-count-by-pointing
+    - binary-identify-opposite-pairs
+  generated-resources:
+    binary-cards:
+      description: One set for class demonstration.
+    binary-cards-small:
+      description: One set of cards per student.
+  classroom-resources:
+    - Musical instruments
+    - Glue a stick onto paper plates and have one side on and the other side off
+    - Hats on and off
+
+how-binary-digits-work:
+  duration: 45
+  computational-thinking-links: how-binary-digits-work-ct-links.md
+  programming-challenges:
+    - binary-numbers-no-calculations
+    - binary-numbers-using-variable
+    - binary-numbers-using-variables-as-operator
+    - binary-numbers-using-variable-operator-repeat
+    - binary-numbers-one-line
+    - number-cards-display
+    - dots-right-left
+    - dots-largest-to-1
+    - count-5-bw-no-loop
+    - count-5-bw-using-loop
+    - count-5-bw-one-input-no-loop
+    - count-5-bw-one-input-using-loop
+    - count-bw-one-input-using-loop
+    - cards-given-number
+    - cards-given-number-one-line
+    - number-bits-representing-number
+    - binary-cards-representing-number
+    - binary-cards-representing-any-number
+    - decimal-to-binary
+    - decimal-to-binary-alternative
+    - binary-notes-representing-number
+    - binary-notes-representing-any-number
+    - binary-cards-as-dots
+  learning-outcomes:
+    - binary-convert-decimal
+    - binary-justify-zeros-and-ones
+    - binary-argue-zeros-and-ones-stored
+    - binary-explain-different-states
+    - binary-explain-logic-one-bit
+    - numeracy-adding-given-number
+    - numeracy-identify-even-odd
+    - numeracy-explain-squaring
+  generated-resources:
+    binary-cards:
+      description: One set for class demonstration.
+    binary-cards-small:
+      description: One set of cards per student.
+  classroom-resources:
+    - Pens and paper, or
+    - Whiteboard and pens
+
+reinforcing-sequencing-in-binary-number-systems:
+  duration: 60
+  computational-thinking-links: reinforcing-sequencing-in-binary-number-systems-ct-links.md
+  learning-outcomes:
+    - binary-explain-off-on
+    - binary-predict-bit-value
+    - binary-explain-doubling
+    - numeracy-discuss-count-zeros-ones
+    - numeracy-compare-base10-base2
+    - drama-create-video-binary
+    - speaking-clear-instructions-binary-cards
+  generated-resources:
+    binary-cards:
+      description: One set for class demonstration.
+    binary-cards-small:
+      description: One set of cards per student.
+  classroom-resources:
+    - None required, but see note in text.
+
+codes-for-letters-using-binary-representation:
+  duration: 45
+  computational-thinking-links: codes-for-letters-using-binary-representation-ct-links.md
+  learning-outcomes:
+    - binary-recognise-alphabet-bits
+    - binary-create-message-converting
+    - binary-interpret-message-binary
+    - binary-explain-codes-alphabets
+    - language-discuss-storing-characters
+  generated-resources:
+    binary-cards:
+      description: One set for class demonstration.
+    binary-cards-small:
+      description: One set of cards per student.
+    binary-to-alphabet:
+      description: Blank sheets for students, plus teacher answer sheet.

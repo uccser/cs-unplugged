@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load static %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}
+  {% trans "Curriculum Integrations" %}
+{% endblock title %}
+
+{% block breadcrumbs %}
+  {% breadcrumb "Home" "/" %}
+  {% breadcrumb "Topics" "topics:index" %}
+  {% breadcrumb "Curriculum Integrations" "topics:all_curriculum_integrations" %}
+{% endblock breadcrumbs %}
+
+{% block page_heading %}
+  <h1>{% trans "Curriculum Integrations" %}</h1>
+  <p>
+    The following table lists curriculum integrations for all topics in the CS Unplugged content.
+  </p>
+{% endblock page_heading %}
+
+{% block content %}
+  <table class="table table-responsive table-center-vertical">
+    <thead class="thead-default">
+      <tr>
+        <th>Topic</th>
+        <th>Activity</th>
+        <th>Curriculum Areas</th>
+        <th>Prerequisite Lessons?</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for curriculum_integration in curriculum_integrations %}
+      <tr class="align-middle">
+        <td>
+          {{ curriculum_integration.topic.name }}
+        </td>
+        <td>
+          <a href="{% url 'topics:integration' curriculum_integration.topic.slug curriculum_integration.slug %}">
+            <strong>
+              {{ curriculum_integration.name }}
+            </strong>
+          </a>
+        </td>
+        <td>
+          {% for area in curriculum_integration.curriculum_areas.all %}
+            {% include "topics/curriculum-area-badge.html" %}
+          {% endfor %}
+        </td>
+        {% if curriculum_integration.has_prerequisite_lessons %}
+          <td class="text-center table-success-cell">
+            Yes
+        {% else %}
+          <td class="text-center">
+            No
+        {% endif %}
+          </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

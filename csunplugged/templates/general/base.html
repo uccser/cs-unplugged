@@ -1,0 +1,13 @@
+{% extends "columns.html" %}
+
+{% block right_column_content %}
+  <h4>About pages</h4>
+
+  <nav class="nav flex-column">
+    <a class="nav-link" href="{% url 'general:about' %}">About</a>
+    <a class="nav-link" href="{% url 'general:computational_thinking' %}">Computational Thinking and CS Unplugged</a>
+    <a class="nav-link" href="{% url 'general:people' %}">People</a>
+    <a class="nav-link" href="{% url 'general:contact' %}">Contact Us</a>
+    <a class="nav-link" href="{% url 'general:principles' %}">Principles</a>
+  </nav>
+{% endblock right_column_content %}

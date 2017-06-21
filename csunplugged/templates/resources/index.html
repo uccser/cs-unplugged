@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load static %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}
+  {% trans "Resources" %}
+{% endblock title %}
+
+{% block breadcrumbs %}
+  {% breadcrumb "Home" "/" %}
+  {% breadcrumb "Resources" "resources:index" %}
+{% endblock breadcrumbs %}
+
+{% block page_heading %}
+  <h1>{% trans "Resources" %}</h1>
+
+  <p>
+    This page diplays a complete list of all available resources.
+    If a lesson uses a resource, the lesson will contain a direct link to the
+    resource with a description on how to use it.
+  </p>
+{% endblock page_heading %}
+
+{% block content %}
+  {% if all_resources %}
+    <div class="link-box-container">
+      {% for resource in all_resources %}
+        <a href="{% url 'resources:resource' resource.slug %}" class="link-box link-box-md-3 link-box-lg-4">
+          <img class="border-thin" src="{% static resource.thumbnail_static_path %}" alt="Generic placeholder image">
+          <strong>{{ resource.name }}</strong>
+          <p class="mb-0">{{ resource.description }}</p>
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No resources are available.</p>
+  {% endif %}
+{% endblock content %}
