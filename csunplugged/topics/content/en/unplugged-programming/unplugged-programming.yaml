@@ -4,3 +4,5 @@ unit-plans:
   - numeracy-unit-plan/numeracy-unit-plan.yaml
 
 icon: img/topics/unplugged-programming-icon.png
+
+programming-challenges: programming-challenges/programming-challenges.yaml

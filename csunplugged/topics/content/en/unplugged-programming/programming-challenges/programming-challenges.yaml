@@ -1,0 +1,34 @@
+design-bee-bot:
+  challenge-set-number: 1
+  challenge-number: 1
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+
+program-bee-bot:
+  challenge-set-number: 1
+  challenge-number: 2
+  difficulty-level: 1
+  programming-languages:
+    - scratch
+
+modify-bee-bot:
+  challenge-set-number: 1
+  challenge-number: 3
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+
+catch-the-mouse:
+  challenge-set-number: 2
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+
+catch-the-mouse-random:
+  challenge-set-number: 2
+  challenge-number: 2
+  difficulty-level: 2
+  programming-languages:
+    - scratch
