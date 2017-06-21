@@ -21,10 +21,9 @@
 {% block left_column_content %}
   {% render_html_field unit_plan.content %}
 
-  {% if unit_plan.computational_thinking_links %}
-    <h2 id="ct-links" class="heading-underline">Seeing the Computational Thinking connections</h2>
-    {% render_html_field unit_plan.computational_thinking_links %}
-  {% endif %}
+  {% with computational_thinking_links=unit_plan.computational_thinking_links %}
+    {% include "topics/computational-thinking-links.html" %}
+  {% endwith %}
 
   {% if grouped_lessons %}
     <h2 class="heading-underline" id="lessons">Lessons</h2>

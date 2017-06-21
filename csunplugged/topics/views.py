@@ -353,6 +353,9 @@ def glossary_json(request, **kwargs):
 
     Returns:
         JSON response is sent containing data for the requested term.
+
+    Raises:
+        404 error if term not found.
     """
     # If term parameter, then return JSON
     if "term" in request.GET:

@@ -16,9 +16,9 @@ def generate_resource_pdf(request, resource, module_path):
     """Return a response containing a generated PDF resource.
 
     Args:
-        request: HTTP request object
-        resource: Object of resource data.
-        module_path: Path to module for generating resource.
+        request: HTTP request object (HttpRequest).
+        resource: Object of resource data (Resource).
+        module_path: Path to module for generating resource (str).
 
     Returns:
         Tuple of PDF file of generated resource and filename.
@@ -58,9 +58,9 @@ def generate_resource_image(get_request, resource, module_path):
     Images are resized to size.
 
     Args:
-        get_request: HTTP request object
-        resource: Object of resource data.
-        module_path: Path to module for generating resource.
+        request: HTTP request object (HttpRequest).
+        resource: Object of resource data (Resource).
+        module_path: Path to module for generating resource (str).
 
     Returns:
         List of Base64 strings of a generated resource images for one copy.

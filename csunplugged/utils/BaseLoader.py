@@ -53,6 +53,8 @@ class BaseLoader():
         Args:
             md_file_path: Location of Markdown file to convert (str).
             config_file_path: Path to related the config file (str).
+            heading_required: Boolean if the file requires a heading (bool).
+            remove_title: Boolean if the file's first heading should be removed (bool).
 
         Returns:
             VertoResult object
