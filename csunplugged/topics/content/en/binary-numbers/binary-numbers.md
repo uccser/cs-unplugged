@@ -1,4 +1,4 @@
-# Binary Numbers
+# Binary numbers
 
 Computers today use digits to represent information - that's why they're called digital systems.
 The simplest and most common way to represent digits is the binary number system, with just two digits (usually written as 0 and 1).

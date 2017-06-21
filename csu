@@ -29,13 +29,16 @@ function helpmenu {
   printf "   dev [DEV_COMMAND] Run a developer command.\n"
   end_help
   printf "   help              View all help.\n"
+  restart_help
   start_help
   update_help
   wipe_help
   printf "\nDEV_COMMAND list:\n"
   documentation_help
+  flush_help
   logs_help
   makemigrations_help
+  makeresources_help
   migrate_help
   rebuild_index_help
   shell_help
@@ -45,6 +48,7 @@ function helpmenu {
   test_suite_help
   test_suite_backwards_help
   test_coverage_help
+  test_specific_help
   updatedata_help
 }
 
@@ -57,6 +61,7 @@ function start {
   update
   # Alert user that system is ready
   printf "\n${GREEN}Systems are ready!${NC}\n"
+  printf "Open your preferred web browser to the URL 'localhost'\n"
 }
 function start_help {
   printf "   start             Start development environment (this also runs\n"
@@ -72,6 +77,11 @@ function end {
 }
 function end_help {
   printf "   end               Stop development environment.\n"
+}
+
+# Stop and then restart development environment
+function restart_help {
+  printf "   restart           Stop and then restart development environment.\n"
 }
 
 # Run Django migrate and updatedata commands
@@ -94,19 +104,36 @@ function update_help {
   printf "                     and build static files.\n"
 }
 
+# Run Django flush command
+function flush {
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py flush
+}
+function flush_help {
+  printf "   flush             Run Django flush command.\n"
+}
+
 # Run Django makemigrations command
 function makemigrations {
   printf "Creating database migrations...\n"
-  docker-compose run --rm django /docker_venv/bin/python3 ./manage.py makemigrations
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py makemigrations
 }
 function makemigrations_help {
   printf "   makemigrations    Run Django makemigrations command.\n"
 }
 
+# Run Django makeresources command
+function makeresources {
+  printf "Creating static resource PDFs...\n"
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources
+}
+function makeresources_help {
+  printf "   makeresources     Run Django makeresources command.\n"
+}
+
 # Run Django migrate command
 function migrate {
   printf "Applying database migrations...\n"
-  docker-compose run --rm django /docker_venv/bin/python3 ./manage.py migrate
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py migrate
 }
 function migrate_help {
   printf "   migrate           Run Django migrate command.\n"
@@ -115,7 +142,7 @@ function migrate_help {
 # Run Django updatedata command
 function updatedata {
   printf "Loading topics content...\n"
-  docker-compose run --rm django /docker_venv/bin/python3 ./manage.py updatedata
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py updatedata
 }
 function updatedata_help {
   printf "   updatedata        Run updatedata command.\n"
@@ -135,7 +162,7 @@ function build_help {
 # Build static files
 function static {
   printf "Building static files...\n"
-  docker-compose run --rm nginx gulp build
+  docker-compose exec nginx gulp build
 }
 function static_help {
   printf "   static            Build static files.\n"
@@ -144,7 +171,7 @@ function static_help {
 # Build production static files
 function static_prod {
   printf "Building production static files...\n"
-  docker-compose run --rm nginx gulp build --production
+  docker-compose exec nginx gulp build --production
 }
 function static_prod_help {
   printf "   static_prod       Build production static files.\n"
@@ -152,14 +179,14 @@ function static_prod_help {
 
 # Build scratch static files
 function static_scratch {
-  printf "\nBuilding scratch images...\n"
-  docker-compose run --rm nginx gulp scratch
+  printf "Building scratch images...\n"
+  docker-compose exec nginx gulp scratch
 }
 
 # Collecting static files
 function collect_static {
   printf "\nCollecting static files..."
-  docker-compose run --rm django /docker_venv/bin/python3 ./manage.py collectstatic --no-input
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py collectstatic --no-input --clear
 }
 
 # Run Django command rebuild_index
@@ -173,7 +200,7 @@ function rebuild_index_help {
 
 # Run shell
 function shell {
-  docker-compose run --rm django bash
+  docker-compose exec django bash
 }
 function shell_help {
   printf "   shell             Open shell to Django folder.\n"
@@ -182,10 +209,10 @@ function shell_help {
 # Run style checks
 function style {
   printf "Running PEP8 style checker...\n"
-  docker-compose run --rm -w /cs-unplugged/ django /docker_venv/bin/flake8
+  docker-compose exec django /docker_venv/bin/flake8
   pep8_status=$?
   printf "\nRunning Python docstring checker...\n"
-  docker-compose run --rm -w /cs-unplugged/ django /docker_venv/bin/pydocstyle --count --explain
+  docker-compose exec django /docker_venv/bin/pydocstyle --count --explain
   pydocstyle_status=$?
   ! (( $pep8_status || $pydocstyle_status ))
 }
@@ -196,17 +223,27 @@ function style_help {
 # Run test suite
 function test_suite {
   printf "Running test suite...\n"
-  docker-compose run --rm django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3
+  docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3
 }
 function test_suite_help {
   printf "   test              Run test suite with code coverage.\n"
 }
 
+# Run specific test suite
+function test_specific {
+  printf "Running specific test suite...\n"
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py test --settings=config.settings.testing "${1}" -v 3
+}
+function test_specific_help {
+  printf "   test_specific     Run specific test suite. Pass in parameter\n"
+  printf "                     of Python test module.\n"
+}
+
 # Display test coverage table
 function test_coverage {
   printf "Displaying test suite coverage...\n"
-  docker-compose run --rm django /docker_venv/bin/coverage xml -i
-  docker-compose run --rm django /docker_venv/bin/coverage report -m --skip-covered
+  docker-compose exec django /docker_venv/bin/coverage xml -i
+  docker-compose exec django /docker_venv/bin/coverage report -m --skip-covered
 }
 function test_coverage_help {
   printf "   test_coverage     Display code coverage report.\n"
@@ -217,7 +254,7 @@ function test_suite_backwards {
   printf "Running test suite backwards...\n"
   if [ "$TRAVIS_PULL_REQUEST" != "false" ]
   then
-    docker-compose run --rm django /docker_venv/bin/python3 ./manage.py test --settings=config.settings.testing --pattern "test_*.py" --reverse -v 0
+    docker-compose exec django /docker_venv/bin/python3 ./manage.py test --settings=config.settings.testing --pattern "test_*.py" --reverse -v 0
   fi
 }
 function test_suite_backwards_help {
@@ -227,10 +264,10 @@ function test_suite_backwards_help {
 # Generates the documentation (with warnings as errors)
 function documentation {
   printf "Removing any existing documentation...\n"
-  docker-compose run --rm django rm -rf /cs-unplugged/docs/build/
-  docker-compose run --rm django mkdir /cs-unplugged/docs/build/
+  docker-compose exec django rm -rf /cs-unplugged/docs/build/
+  docker-compose exec django mkdir /cs-unplugged/docs/build/
   printf "\nCreating documentation...\n"
-  docker-compose run --rm django /docker_venv/bin/sphinx-build -W /cs-unplugged/docs/source/ /cs-unplugged/docs/build/
+  docker-compose exec django /docker_venv/bin/sphinx-build -W /cs-unplugged/docs/source/ /cs-unplugged/docs/build/
 }
 function documentation_help {
   printf "   docs              Generate documentation.\n"
@@ -270,7 +307,7 @@ function logs_help {
 }
 
 function process_dev_command() {
-  if [ $# -ne 1 ]
+  if [ $# -lt 1 ]
   then
     printf "${RED}ERROR: dev command requires one parameter!${NC}\n"
     helpmenu
@@ -281,8 +318,16 @@ function process_dev_command() {
         documentation
         exit
         ;;
+      flush)
+        flush
+        exit
+        ;;
       logs)
         logs
+        exit
+        ;;
+      makeresources)
+        makeresources
         exit
         ;;
       makemigrations)
@@ -329,6 +374,10 @@ function process_dev_command() {
         test_coverage
         exit
         ;;
+      test_specific)
+        test_specific $2
+        exit
+        ;;
       updatedata)
         updatedata
         exit
@@ -355,7 +404,7 @@ case "$1" in
     exit
     ;;
   dev)
-    process_dev_command $2
+    process_dev_command $2 $3
     ;;
   end)
     end
@@ -365,9 +414,13 @@ case "$1" in
     helpmenu
     exit
     ;;
+  restart)
+    end
+    start
+    exit
+    ;;
   start)
     start
-    printf "Open your preferred web browser to the URL 'localhost'\n"
     exit
     ;;
   update)

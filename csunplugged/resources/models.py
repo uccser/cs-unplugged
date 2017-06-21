@@ -12,11 +12,12 @@ class Resource(models.Model):
     webpage_template = models.CharField(max_length=200)
     generation_view = models.CharField(max_length=200)
     thumbnail_static_path = models.CharField(max_length=200)
+    copies = models.BooleanField()
 
     def __str__(self):
         """Text representation of Resource object.
 
         Returns:
-            Name of resource (string).
+            Name of resource (str).
         """
         return self.name

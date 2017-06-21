@@ -1,6 +1,19 @@
 [run]
-source = config,dev,general,locale,resources,static,templates,topics,utils
-omit=*/migrations/*
+branch = True
+source =
+    config
+    general
+    locale
+    resources
+    static
+    templates
+    topics
+    utils
+omit =
+    # Omit migration files
+    */migrations/*
+    # Omit database proxy file used with Google Cloud SQL Proxy
+    csunplugged/config/settings/database_proxy.py
 
 [report]
 fail_under=20

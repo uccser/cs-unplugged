@@ -17,8 +17,8 @@ class CurriculumAreasLoader(BaseLoader):
         """Create the loader for loading curriculum areas.
 
         Args:
-            structure_file_path: File path to YAML file (string)
-            BASE_PATH: Base file path (string).
+            structure_file_path: File path to YAML file (str).
+            BASE_PATH: Base file path (str).
         """
         super().__init__(BASE_PATH)
         self.structure_file_path = structure_file_path
@@ -64,15 +64,24 @@ class CurriculumAreasLoader(BaseLoader):
                     "Curriculum Area"
                 )
 
+            curriculum_area_number = curriculum_area_data.get("number", None)
+            if curriculum_area_number is None:
+                raise MissingRequiredFieldError(
+                    self.structure_file_path,
+                    ["number"],
+                    "Curriculum Area"
+                )
+
             # Create area objects and save to database
             new_area = CurriculumArea(
                 slug=curriculum_area_slug,
                 name=curriculum_area_name,
                 colour=curriculum_area_colour,
+                number=curriculum_area_number,
             )
             new_area.save()
 
-            self.log("Added Curriculum Area: {}".format(new_area.__str__()))
+            self.log("Added curriculum area: {}".format(new_area.__str__()))
 
             # Create children curriculum areas with reference to parent
             if "children" in curriculum_area_data:
@@ -80,7 +89,7 @@ class CurriculumAreasLoader(BaseLoader):
                 if children_curriculum_areas is None:
                     raise MissingRequiredFieldError(
                         self.structure_file_path,
-                        ["name"],
+                        ["slug"],
                         "Child Curriculum Area"
                     )
                 for (child_slug, child_data) in children_curriculum_areas.items():
@@ -102,11 +111,11 @@ class CurriculumAreasLoader(BaseLoader):
                         slug=child_slug,
                         name=child_name,
                         colour=curriculum_area_colour,
+                        number=curriculum_area_number,
                         parent=new_area,
                     )
                     new_child.save()
 
-                    self.log("Added Child Curriculum Area: {}".format(new_child.__str__()), 1)
+                    self.log("Added child curriculum area: {}".format(new_child.__str__()), 1)
 
-        # Print log output
-        self.print_load_log()
+        self.log("All curriculum areas loaded!\n")

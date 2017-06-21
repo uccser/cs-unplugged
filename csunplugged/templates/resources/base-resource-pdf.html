@@ -1,3 +1,5 @@
+{% load static %}
+
 <html>
 <head>
   <title>{{ filename }}</title>
@@ -24,13 +26,14 @@
     {{ header_text }}
   </header>
   {% for resource_image_data in resource_images %}
-    <div class="base-image-container">
-      <img class="base-image" src="data:image/png;base64,{{ resource_image_data }}" />
-    </div>
+    {% for resource_image in resource_image_data %}
+      <div class="base-image-container">
+        <img class="base-image" src="data:image/png;base64,{{ resource_image }}" />
+      </div>
+    {% endfor %}
   {% endfor %}
   <footer class="fixed-running-element">
-    {% load static %}
-    <img src="./img/logo-small.png"> - {{ resource.name }} - csunplugged.org{% url 'resources:resource' resource.slug %}
+    <img src="./img/logo-small.png"> - {{ resource.name }} - csunplugged.org
   </footer>
 </body>
 </html>

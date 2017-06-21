@@ -5,7 +5,7 @@ from topics.models import (
     Topic,
     UnitPlan,
     Lesson,
-    ProgrammingExercise,
+    ProgrammingChallenge,
     CurriculumIntegration,
     CurriculumArea,
 )
@@ -56,19 +56,19 @@ class LessonIndex(indexes.SearchIndex, indexes.Indexable):
         return Lesson
 
 
-class ProgrammingExerciseIndex(indexes.SearchIndex, indexes.Indexable):
+class ProgrammingChallengeIndex(indexes.SearchIndex, indexes.Indexable):
     """Search index for ProgrammingExercise model."""
 
     text = indexes.CharField(document=True, use_template=True)
     topic = indexes.CharField(model_attr='topic')
 
     def get_model(self):
-        """Return the ProgrammingExercise model.
+        """Return the ProgrammingChallenge model.
 
         Returns:
-            ProgrammingExercise object.
+            ProgrammingChallenge object.
         """
-        return ProgrammingExercise
+        return ProgrammingChallenge
 
 
 class CurriculumIntegrationIndex(indexes.SearchIndex, indexes.Indexable):

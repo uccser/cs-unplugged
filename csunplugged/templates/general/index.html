@@ -3,9 +3,13 @@
 {% load i18n %}
 {% load static %}
 
+{% block custom_title %}
+  CS Unplugged
+{% endblock custom_title %}
+
 {% block body_container %}
   <div class="row">
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid py-5 mt-0">
       <div class="container">
         <h1 class="display-3 text-center">
           {% trans 'Computer Science' %}<br>
@@ -14,46 +18,44 @@
       </div>
     </div>
 
-    <p class="lead text-center">
-      CS Unplugged is a collection of free learning activities that teach Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around.
-    </p>
-
-    <div class="card-deck">
-      <a class="card card-blue card-inverse text-center" href="{% url 'general:about' %}">
-        <img class="img-fluid card-img-top card-img" src="{% static "img/general/computer-searching.png" %}">
-        <div class="card-block">
-          <h2 class="card-title">Learn about<br>CS Unplugged</h4>
-        </div>
-      </a>
-      <a class="card card-orange card-inverse text-center" href="{% url 'general:about' %}">
-        <img class="img-fluid card-img-top card-img" src="{% static "img/general/binary-cards-5.png" %}">
-        <div class="card-block">
-          <h2 class="card-title">Teaching with<br>CS Unplugged</h4>
-        </div>
-      </a>
-      <a class="card card-green card-inverse text-center" href="{% url 'topics:index' %}">
-        <img class="img-fluid card-img-top card-img" src="{% static "img/general/detective.png" %}">
-        <div class="card-block">
-          <h2 class="card-title">Topics covered by CS Unplugged</h4>
-        </div>
-      </a>
+    <div class="row align-items-center">
+      <div class="col-12 col-md-2 hidden-sm-down">
+        <img class="img-fluid" src="{% static "img/general/computer-searching.png" %}">
+      </div>
+      <div class="col-12 col-md-8">
+        <p class="lead text-center">
+          CS Unplugged is a collection of free teaching material that teaches Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around.
+        </p>
+        <p class="lead text-center">
+          The resources available to teachers include unit plans, lesson plans, teaching videos, curriculum integration activities, and programming exercises to plug in the Computer Science concepts they have just learnt unplugged.
+        </p>
+      </div>
+      <div class="col-12 col-md-2 hidden-sm-down">
+        <img class="img-fluid" src="{% static "img/general/detective.png" %}">
+      </div>
     </div>
 
-    <div class="card-deck">
-      <a class="card card-purple card-inverse text-center" href="{% url 'topics:all_curriculum_integrations' %}">
-        <div class="card-block">
-          <h2 class="card-title">Curriculum Integrations</h4>
-        </div>
+
+
+    <div class="link-box-container justify-content-between">
+      <a class="link-box link-box-md-6 link-box-blue" href="{% url 'general:about' %}">
+        <img class="img-fluid" src="{% static "img/topics/sorting-network-confused-people.png" %}">
+        <h2 class="link-box-title">Learn about CS Unplugged</h2>
       </a>
-      <a class="card card-light-blue card-inverse text-center" href="{% url 'resources:index' %}">
-        <div class="card-block">
-          <h2 class="card-title">Resources</h4>
-        </div>
+      <a class="link-box link-box-md-6 link-box-green" href="{% url 'topics:index' %}">
+        <img class="img-fluid" src="{% static "img/general/binary-cards-5.png" %}">
+        <h2 class="link-box-title">Topics covered by CS Unplugged</h2>
       </a>
-      <a class="card card-red card-inverse text-center" href="http://csunplugged.org/">
-        <div class="card-block">
-          <h2 class="card-title">Classic CS Unplugged</h4>
-        </div>
+    </div>
+    <div class="link-box-container justify-content-between">
+      <a class="link-box link-box-md-3 link-box-purple" href="{% url 'topics:all_curriculum_integrations' %}">
+        <h2 class="link-box-title">Curriculum Integrations</h2>
+      </a>
+      <a class="link-box link-box-md-3 link-box-light-blue" href="{% url 'resources:index' %}">
+        <h2 class="link-box-title">Resources</h2>
+      </a>
+      <a class="link-box link-box-md-3 link-box-red" href="http://csunplugged.org/">
+        <h2 class="link-box-title">Classic CS Unplugged</h2>
       </a>
     </div>
   </div>

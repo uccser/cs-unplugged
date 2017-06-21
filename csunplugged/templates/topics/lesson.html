@@ -1,79 +1,107 @@
-{% extends "topics/unit_plan.html" %}
+{% extends "columns.html" %}
 
 {% load static %}
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
+{% block title %}
+  {{ lesson.name }}
+{% endblock title %}
+
 {% block breadcrumbs %}
-  {{ block.super }}
+  {% breadcrumb "Home" "/" %}
+  {% breadcrumb "Topics" "topics:index" %}
+  {% breadcrumb topic.name "topics:topic" topic.slug %}
+  {% breadcrumb unit_plan.name "topics:unit_plan" topic.slug unit_plan.slug %}
   {% breadcrumb lesson.name "topics:lesson" topic.slug unit_plan.slug lesson.slug %}
 {% endblock breadcrumbs %}
 
-{% block content %}
-<h1>{{ lesson.name }}</h1>
-<strong>Duration: </strong>{{ lesson.duration }} minutes
-
-<h2>CS Unplugged Resources</h2>
-{% if lesson_generated_resources %}
+{% block page_heading %}
+  <h1 id="{{ lesson.slug }}" class="heading-underline">{{ lesson.name }}</h1>
   <ul>
-    {% for generated_resource in lesson_generated_resources %}
-      <li>
-        <a href="{% url 'resources:resource' generated_resource.slug %}">
-          {% load static %}
-          <img class="img-thumbnail resource-thumbnail" src="{% static generated_resource.thumbnail %}">
-          <p><strong>{{ generated_resource.name }}</strong></p>
-        </a>
-        <p>{{ generated_resource.description }}</p>
-      </li>
+    <li><strong>Duration:</strong> {{ lesson.duration }} minutes</li>
+    {% for lesson_age in lesson_ages %}
+      <li><strong>Ages {{ lesson_age.lower }} to {{ lesson_age.upper }}:</strong> Lesson {{ lesson_age.number }}</li>
     {% endfor %}
   </ul>
-{% else %}
-  <p>No CS Unplugged resources required.</p>
-{% endif %}
+{% endblock page_heading %}
 
-{% render_html_field lesson.content %}
+{% block left_column_content %}
 
-<h2>Plugged In <span class="subtitle">(programming challenges)</span></h2>
-{% if programming_exercises %}
-  <p>
-    <a href="{% url 'topics:programming_exercises_list' topic.slug unit_plan.slug lesson.slug %}" class="btn btn-outline-danger">
-      Programming challenges for {{ lesson.name }}
-    </a>
-  </p>
-{% else %}
-  <p>No programming challenges for {{ lesson.name }}.</p>
-{% endif %}
+  {% if learning_outcomes %}
+  <h2 class="heading-underline">Learning outcomes</h2>
+    <p>Students will be able to:</p>
+    <ul>
+      {% for learning_outcome in learning_outcomes %}
+        <li>
+          {{ learning_outcome.text }}
+          {% for area in learning_outcome.curriculum_areas.all %}
+            {% include "topics/curriculum-area-badge.html" %}
+          {% endfor %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 
-<h2>Learning Outcomes</h2>
-{% if lesson_learning_outcomes %}
-  <ul>
-  {% for learning_outcome in lesson_learning_outcomes %}
-    <li>
-      {{ learning_outcome.text }}
-    {% for area in learning_outcome.curriculum_areas.all %}
-      {% include "topics/curriculum_area_badge.html" %}
-    {% endfor %}
-    </li>
-  {% endfor %}
-</ul>
-{% else %}
-  <p>No learning outcomes listed for {{ lesson.name }}.</p>
-{% endif %}
+  {% render_html_field lesson.content %}
 
-{% endblock content %}
+  {% with computational_thinking_links=lesson.computational_thinking_links %}
+    {% include "topics/computational-thinking-links.html" %}
+  {% endwith %}
+{% endblock left_column_content %}
 
-{% block sidebar %}
+{% block right_column_content %}
+  {% if generated_resources %}
+  <h2 class="heading-underline">CS Unplugged resources</h2>
+    <div class="link-box-container">
+      {% for generated_resource in generated_resources %}
+        <a href="{% url 'resources:resource' generated_resource.slug %}" class="link-box">
+          <img class="border-thin" src="{% static generated_resource.thumbnail %}" alt="Generic placeholder image" style="max-width: 5rem;">
+          <strong>{{ generated_resource.name }}</strong>
+          <p class="mb-0">{{ generated_resource.description }}</p>
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if lesson.classroom_resources %}
+  <h2 class="heading-underline mt-2">Classroom resources</h2>
+    <ul>
+      {% for classroom_resource in lesson.classroom_resources %}
+        <li>{{ classroom_resource }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if programming_challenges %}
+  <h2 class="heading-underline mt-2">Programming challenges</h2>
+    <p>
+      <a href="{% url 'topics:programming_challenges_list' topic.slug unit_plan.slug lesson.slug %}">
+        View related programming challenges
+      </a>
+    </p>
+  {% endif %}
+
   <div id="sticky-sidebar" class="sticky">
-    <h2>Table of Contents</h2>
+    <h2 class="heading-underline mt-2">Table of contents</h2>
     <ul class="nav nav-pills flex-column" id="scrollspy-table-of-contents">
       <li class="nav-item">
-        <a class="nav-link" href="#content-container">{{ lesson.name }}</a>
+        <a class="nav-link" href="#{{ lesson.slug }}">{{ lesson.name }}</a>
       </li>
       {% for heading_node in lesson.heading_tree %}
         <li class="nav-item">
           <a class="nav-link" href="#{{ heading_node.slug }}">{{ heading_node.text }}</a>
         </li>
       {% endfor %}
+      {% if lesson.computational_thinking_links %}
+        <li class="nav-item">
+          <a class="nav-link" href="#ct-links">Computational Thinking</a>
+        </li>
+      {% endif %}
     </ul>
   </div>
-{% endblock sidebar %}
+{% endblock right_column_content %}
+
+{% block scripts %}
+  {% include "generic/import-stick-state-js.html" %}
+{% endblock scripts %}

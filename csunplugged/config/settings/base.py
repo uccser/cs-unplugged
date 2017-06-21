@@ -146,10 +146,10 @@ TEMPLATES = [
                 "django.template.context_processors.static",
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
-                # Your stuff: custom template context processors go here
+                "config.context_processors.version_number.version_number",
             ],
             "libraries": {
-                "render_html_field": "general.templatetags.render_html_field",
+                "render_html_field": "config.templatetags.render_html_field",
             },
         },
     },

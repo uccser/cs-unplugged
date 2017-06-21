@@ -9,10 +9,10 @@ For example, the following text:
 
 .. code-block:: none
 
-  # Scratch Programming Exercise
+  # Scratch Programming Challenge
 
   Try using the following blocks to create a program to display numbers 1, 2,
-  4, 8 and 16 on the screen, one at a time for 1 second each.
+  4, 8 and 16 on the screen, one at a time.
 
 
   ```scratch
@@ -32,7 +32,7 @@ For example, the following text:
 
   {panel end}
 
-  {button-link link="exercise/scratch-solution.html" text="Scratch Solution"}
+  {button-link link="challenge/scratch-solution.html" text="Scratch Solution"}
 
 will display as the following on the website:
 
@@ -363,11 +363,11 @@ using LaTeX syntax.
 
 .. code-block:: none
 
-  This is inline math: $ 2 + 2 = 4 $
+  This is inline math: ``\( 2 + 2 = 4 \)``
 
   This is block math:
 
-  $$ \begin{bmatrix} s & 0 \\ 0 & s \\ \end{bmatrix} $$
+  ``\[ \begin{bmatrix} s & 0 \\ 0 & s \\ \end{bmatrix} \]``
 
 Math equations are rendered in MathJax using the LaTeX syntax.
 

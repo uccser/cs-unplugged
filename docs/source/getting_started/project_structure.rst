@@ -31,9 +31,9 @@ The repository directory (or root directory) contains the following:
   - This file contains an introduction and important information for the
     repository.
 
-- ``LICENSE.md``
+- ``LICENCE.md``
 
-  - This file details the licenses the repository uses.
+  - This file details the licences the repository uses.
 
 - Plus other files used for installation and repository configuration.
 
@@ -65,7 +65,7 @@ The project currently contains the following applications:
 
   - The core CS Unplugged content is split across topics, with each topic
     containing any combination of unit plans, lessons, follow up activities,
-    programming exercises (plugged in activities), and much more.
+    programming challenges (plugged in activities), and much more.
     This application stores and displays the topics content.
 
 - ``resources/``
