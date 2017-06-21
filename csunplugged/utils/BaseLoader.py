@@ -8,10 +8,12 @@ import re
 import os.path
 from os import listdir
 from verto import Verto
+from verto.errors.StyleError import StyleError
 
 from .check_required_files import check_converter_required_files
 from .check_glossary_links import check_converter_glossary_links
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
+from utils.errors.MarkdownStyleError import MarkdownStyleError
 from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
 from utils.errors.EmptyConfigFileError import EmptyConfigFileError
 from utils.errors.InvalidConfigFileError import InvalidConfigFileError
@@ -63,6 +65,7 @@ class BaseLoader():
                 Markdown file.
             EmptyMarkdownFileError: when no content can be found in a given Markdown
                 file.
+            MarkdownStyleError: when a verto StyleError is thrown.
         """
         try:
             # check file exists
@@ -75,7 +78,11 @@ class BaseLoader():
             custom_processors.add("remove-title")
         self.converter.update_processors(custom_processors)
 
-        result = self.converter.convert(content)
+        result = None
+        try:
+            result = self.converter.convert(content)
+        except StyleError as e:
+            raise MarkdownStyleError(md_file_path, e) from e
 
         if heading_required:
             if result.title is None:
