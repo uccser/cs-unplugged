@@ -102,6 +102,7 @@ calculate-exponents:
     - programming-describe-variables
     - programming-explain-asking-input-end-user
     - programming-identify-if-statement
+  extra-challenge: extra-challenge.md
 
 check-if-divisor:
   challenge-set-number: 4
