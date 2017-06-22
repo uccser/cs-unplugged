@@ -231,6 +231,11 @@ programming-describe-variable-output:
   curriculum-areas:
     - programming
 
+programming-describe-function:
+  text: Describe the reason why you wrote a function in your program.
+  curriculum-areas:
+    - programming
+
 programming-identify-loop:
   text: Identify how and when to use a loop to repeat a set of instructions.
   curriculum-areas:

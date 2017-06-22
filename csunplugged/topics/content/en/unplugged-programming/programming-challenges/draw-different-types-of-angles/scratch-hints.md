@@ -6,11 +6,14 @@ Description of different angles:
 -   A straight angle is a 180 degrees angle.
 -   A reflex angle is an angle greater than 180 degrees.
 
-There are different ways to program checking the range using the **if()/else** blocks. Below are hints for two different ways you may program this:
+There are different ways to program checking the range using the **if()/else** blocks.
+Below are hints for two different ways you may program this:
 
--   Use a series of **if()** blocks sequentially checking for the ranges in each if() block. If you need to check a range between two values you can use the `scratch:<> and <>` operator in the condition for your if() block (the AND operator reports true if both conditions are true).
+-   Use a series of **if()** blocks sequentially checking for the ranges in each if() block.
+    If you need to check a range between two values you can use the `scratch:<> and <>` operator in the condition for your if() block (the AND operator reports true if both conditions are true).
 
--   Use nested **if()** or **if()/else** blocks, which are **if()/else** blocks inside another set of **if()/else** blocks (i.e. a nested conditional statement is a conditional statement where the **if()** and/or **else** contains another conditional statement). For example:
+-   Use nested **if()** or **if()/else** blocks, which are **if()/else** blocks inside another set of **if()/else** blocks (i.e. a nested conditional statement is a conditional statement where the **if()** and/or **else** contains another conditional statement).
+    For example:
 
     ```scratch:
     if <[angle] < [180]> then

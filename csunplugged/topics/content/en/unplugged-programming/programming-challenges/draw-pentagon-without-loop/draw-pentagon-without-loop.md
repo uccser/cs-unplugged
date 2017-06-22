@@ -8,5 +8,3 @@ Write a program that draws a pentagon (5 sides polygon), starting from point x:0
 ## Testing examples:
 
 There are no testing examples for this challenge.
-
-Click on the green flag to see the expected output of your program.

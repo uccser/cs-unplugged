@@ -7,5 +7,3 @@ Write a program that draws a square, starting from point x:0, y:0, with its side
 ## Testing examples:
 
 There are no testing examples for this challenge.
-
-Click on the green flag to see the expected output of your program.

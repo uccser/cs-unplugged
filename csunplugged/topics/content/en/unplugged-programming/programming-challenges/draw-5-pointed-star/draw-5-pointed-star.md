@@ -9,5 +9,3 @@ Write a program that draws a 5-pointed star (pentagram) with the length of each 
 ## Testing examples:
 
 There are no testing examples for this challenge.
-
-Click on the green flag to see the expected output of your program.
