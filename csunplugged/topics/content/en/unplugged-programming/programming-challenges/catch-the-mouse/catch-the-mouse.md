@@ -20,7 +20,3 @@ which are the custom blocks found under the "More Blocks" script.
 ## Testing examples:
 
 You will need to add the correct set of blocks under the `scratch:when I receive [go v]` block so the cat can catch the mouse.
-
-Click on the green flag and press the “Go” button to see the expected output of your program when the correct set of instructions are provided.
-
-{iframe link="https://scratch.mit.edu/projects/embed/164769349/?autostart=false"}
