@@ -1,11 +1,10 @@
-# Reinforcing Sequencing In Binary Number Systems
+# Reinforcing sequencing in binary number systems
 
-## Key Question
+## Key question
 
--   How can you create a 60 second or less video to teach someone how binary
-    works without using the binary cards?
+-   How can you create a 60 second or less video to teach someone how binary works without using the binary cards?
 
-## Lesson Starter
+## Lesson starter
 
 {panel type="general" title="Notes on resources"}
 
@@ -23,7 +22,7 @@ There is also an online interactive version of the binary cards [here](http://ww
 Teacher says to class: “We are going to create a video that shows binary
 numbers in use.”
 
-## Lesson Activities
+## Lesson activities
 
 In this lesson students will make a video that gives instructions on how to
 represent any given number in binary.
@@ -106,7 +105,7 @@ Samples of work after an hour challenge:
 
 {panel end}
 
-## Applying What We Have Just Learnt
+## Applying what we have just learn
 
 Review each other’s videos
 
@@ -116,7 +115,7 @@ Review each other’s videos
 2.  What made the videos interesting or appealing that another person might
     be able to learn from them?
 
-## Lesson Reflection
+## Lesson reflection
 
 -   How can you use these videos to support others to learn about the
     binary number system?

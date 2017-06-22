@@ -29,7 +29,7 @@
 {% block left_column_content %}
 
   {% if learning_outcomes %}
-  <h2 class="heading-underline">Learning Outcomes</h2>
+  <h2 class="heading-underline">Learning outcomes</h2>
     <p>Students will be able to:</p>
     <ul>
       {% for learning_outcome in learning_outcomes %}
@@ -45,10 +45,9 @@
 
   {% render_html_field lesson.content %}
 
-  {% if lesson.computational_thinking_links %}
-    <h2 id="ct-links">Seeing the Computational Thinking connections</h2>
-    {% render_html_field lesson.computational_thinking_links %}
-  {% endif %}
+  {% with computational_thinking_links=lesson.computational_thinking_links %}
+    {% include "topics/computational-thinking-links.html" %}
+  {% endwith %}
 {% endblock left_column_content %}
 
 {% block right_column_content %}
