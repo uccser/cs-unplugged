@@ -1,2 +1,2 @@
--  The inside angles of a 6-pointed star are each 60 degrees.
--  The outside angles of a 6-pointed star are each 120 degrees.
+-   The inside angles of a 6-pointed star are each 60 degrees.
+-   The outside angles of a 6-pointed star are each 120 degrees.

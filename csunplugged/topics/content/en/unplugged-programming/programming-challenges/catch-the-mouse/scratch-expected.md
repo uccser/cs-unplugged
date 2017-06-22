@@ -3,11 +3,11 @@
 ```scratch:split:random
 when I receive [go v]
 
-move_forward()
+move_forward() :: custom
 
-turn_left
+turn_left :: custom
 
-turn_right
+turn_right :: custom
 ```
 
 {panel end}
