@@ -9,5 +9,3 @@ Write a program that draws a 6-pointed star (without the crossing lines).
 ## Testing examples:
 
 There are no testing examples for this challenge.
-
-Click on the green flag to see the expected output of your program.
