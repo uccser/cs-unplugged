@@ -12,5 +12,3 @@ Your program should display the outputs shown in this table for the given inputs
 | --------- | ------------------------------------------------------------------------------- |
 | 45        | {image-inline file-path="img/topics/programming-challenges/rhombus.png"}        |
 | 90        | {image-inline file-path="img/topics/programming-challenges/rhombus-square.png"} |
-
-Click on the green flag, enter the inputs provided in the “testing examples” to see the expected output of your program.

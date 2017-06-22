@@ -2,6 +2,7 @@
 
 from PIL import Image, ImageDraw
 from utils.retrieve_query_parameter import retrieve_query_parameter
+from utils.bool_to_yes_no import bool_to_yes_no
 
 
 def resource_image(request, resource):
@@ -72,7 +73,7 @@ def resource_image(request, resource):
     image = Image.open(image_path)
     page = Image.new("RGB", image.size, "#FFF")
 
-    if highlight != "no":
+    if highlight:
         highlight_key_areas(page, KEY_DATA.get(highlight))
 
     # Add piano keys overlay
@@ -108,7 +109,7 @@ def subtitle(request, resource):
         text for subtitle (str)
     """
     return "{} highlight - {}".format(
-        retrieve_query_parameter(request, "highlight"),
+        bool_to_yes_no(retrieve_query_parameter(request, "highlight")),
         retrieve_query_parameter(request, "paper_size")
     )
 
@@ -122,6 +123,6 @@ def valid_options():
         All valid options (dict).
     """
     return {
-        "highlight": ["no", "A", "B", "C", "D", "E", "F", "G"],
+        "highlight": [False, "A", "B", "C", "D", "E", "F", "G"],
         "paper_size": ["a4", "letter"],
     }

@@ -12,5 +12,3 @@ Your program should display the outputs shown in this table for the given inputs
 | ---------- | -------------------------------------------------------------------------------- |
 | 13         | {image-inline file-path="img/topics/programming-challenges/13-pointed-star.png"} |
 | 55         | {image-inline file-path="img/topics/programming-challenges/55-pointed-star.png"} |
-
-Click on the green flag, enter the inputs provided in the “testing examples” to see the expected output of your program.

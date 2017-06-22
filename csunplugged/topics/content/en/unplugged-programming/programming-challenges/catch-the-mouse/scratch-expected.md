@@ -1,13 +1,18 @@
+Click on the green flag and press the “Go” button to see the expected output of your program when the correct set of instructions are provided.
+
+{iframe link="https://scratch.mit.edu/projects/embed/164769349/?autostart=false"}
+
+
 {panel type="help" title="Recommended blocks"}
 
 ```scratch:split:random
 when I receive [go v]
 
-move_forward()
+move_forward() :: custom
 
-turn_left
+turn_left :: custom
 
-turn_right
+turn_right :: custom
 ```
 
 {panel end}

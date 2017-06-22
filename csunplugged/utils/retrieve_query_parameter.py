@@ -20,9 +20,9 @@ def retrieve_query_parameter(request, parameter, valid_options=None):
     value = request.get(parameter, None)
     if value is None:
         raise Http404("{} parameter not specified.".format(parameter))
-    if value == "yes":
+    if value == "yes" or value == "True":
         value = True
-    elif value == "no":
+    elif value == "no" or value == "False":
         value = False
     if valid_options and value not in valid_options:
         raise Http404("{} parameter not valid.".format(parameter))
