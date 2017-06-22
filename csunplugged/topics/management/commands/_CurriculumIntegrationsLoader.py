@@ -17,9 +17,9 @@ class CurriculumIntegrationsLoader(BaseLoader):
         """Create the loader for loading curriculum integrations.
 
         Args:
-            structure_file_path: File path for structure YAML file (string).
-            topic: Object of related topic model.
-            BASE_PATH: Base file path (string).
+            structure_file_path: File path for structure YAML file (str).
+            topic: Object of related topic model (Topic).
+            BASE_PATH: Base file path (str).
         """
         super().__init__(BASE_PATH)
         self.structure_file_path = os.path.join(self.BASE_PATH, structure_file_path)

@@ -286,6 +286,7 @@ programming-identify-list-store-data:
   curriculum-areas:
     - programming
 
+<<<<<<< HEAD
 # UNPLUGGED PROGRAMMING LEARNING OUTCOMES
 
 unplugged-programming-apply-addition-multiplication:
@@ -353,6 +354,43 @@ unplugged-programming-give-accurate-instructions-pace:
   text: Give accurate instructions at a pace that the person can follow.
   curriculum-areas:
     - speaking
+
+# SORTING LEARNING OUTCOMES
+
+sorting-explain-parallel-algorithm:
+  text: Explain how a Sorting Network parallel algorithm works.
+  curriculum-areas:
+    - algorithmic-thinking
+
+sorting-use-selection-sort:
+  text: Use selection (data comparisons) to sort multiple items.
+  curriculum-areas:
+    - decomposition
+
+sorting-identify-number-range:
+  text: Identify which number comes before or after in any range of numbers
+  curriculum-areas:
+    - numeracy
+
+sorting-organise-objects-size:
+  text: Organise objects from smallest in size to largest in size.
+  curriculum-areas:
+    - numeracy
+
+sorting-recognise-sorting-method:
+  text: Recognise that a sorting method can be applied to any values that can be ordered.
+  curriculum-areas:
+    - generalising-and-patterns
+
+sorting-demonstrate-alphabet-knowledge:
+  text: Demonstrate how your alphabet knowledge supports ordering words or books.
+  curriculum-areas:
+    - literacy
+
+sorting-comparing-musical-pitch:
+  text: Compare musical pitch in musical notation and aurally.
+  curriculum-areas:
+    - music
 
 ############# WARNING ###########
 ### FOLLOWING LOs DO NOT HAVE CORRECT CURRICULUM AREAS SET

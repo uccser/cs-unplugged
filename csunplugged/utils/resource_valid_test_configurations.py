@@ -15,4 +15,6 @@ def resource_valid_test_configurations(valid_options):
     """
     valid_options["header_text"] = ["", "Example header"]
     valid_option_keys = sorted(valid_options)
-    return [dict(zip(valid_option_keys, product)) for product in itertools.product(*(valid_options[valid_option_key] for valid_option_key in valid_option_keys))]  # noqa: E501
+    return [dict(zip(valid_option_keys, product)) for product in itertools.product(
+        *(valid_options[valid_option_key] for valid_option_key in valid_option_keys)
+    )]

@@ -9,11 +9,11 @@ def resource_image(request, resource):
     """Create a image for Binary Cards resource.
 
     Args:
-        request: HTTP request object (QueryDict).
+        request: HTTP request object (HttpRequest).
         resource: Object of resource data (Resource).
 
     Returns:
-        A list of Pillow image objects.
+        A list of Pillow image objects (list).
     """
     image_path = "static/img/resources/modulo-clock/modulo-clock-{}.png"
 
@@ -58,7 +58,7 @@ def subtitle(request, resource):
     also on the resource image.
 
     Args:
-        request: HTTP request object (QueryDict).
+        request: HTTP request object (HttpRequest).
         resource: Object of resource data (Resource).
 
     Returns:

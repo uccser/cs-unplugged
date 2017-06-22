@@ -22,10 +22,17 @@
   {% render_html_field topic.content %}
 
   {% for unit_plan in unit_plans %}
-    <h2 id="{{ unit_plan.slug }}" class="heading-underline">{{ unit_plan.name }}</h2>
-    <p>
-      <a href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}" id="{{ unit_plan.slug }}">View unit plan</a>{% if unit_plan.grouped_lessons %}, or jump straight to a lesson:{% endif %}
-    </p>
+    <div class="link-box-container">
+      <a class="link-box link-box-md-6" href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">
+        <h3 id="{{ unit_plan.slug }}" class="link-box-title">{{ unit_plan.name }}</h3>
+      </a>
+    </div>
+
+    {% if unit_plan.grouped_lessons %}
+      <p class="text-center">
+        or jump straight to a lesson of the unit:
+      </p>
+    {% endif %}
     {% if unit_plan.grouped_lessons %}
       {% with grouped_lessons=unit_plan.grouped_lessons %}
         {% include "topics/lessons-table.html" %}

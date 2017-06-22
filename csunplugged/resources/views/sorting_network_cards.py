@@ -9,11 +9,11 @@ def resource_image(request, resource):
     """Create a image for Sorting Network Cards resource.
 
     Args:
-        request: HTTP request object.
-        resource: Object of resource data.
+        request: HTTP request object (HttpRequest).
+        resource: Object of resource data (Resource).
 
     Returns:
-        A list of Pillow image objects.
+        A list of Pillow image objects (list).
     """
     IMAGE_SIZE_X = 2000
     IMAGE_SIZE_Y = 3000
@@ -47,25 +47,24 @@ def resource_image(request, resource):
         font_size = 900
         font_path = "static/fonts/NotoSans-Regular.ttf"
         text = [u"\u00bd", u"\u2153", u"\u2154", u"\u215c", u"\u00be", u"\u215d"]
-    else:
+    elif card_type == "maori_numbers":
         font_size = 300
         text = [
-            "tahi",
-            "rua",
-            "toru",
-            "whā",
-            "rima",
-            "ono",
-            "whitu",
-            "waru",
-            "iwa",
-            "tekau",
-            "tekau mā tahi",
-            "tekau mā waru",
-            "tekau mā toru",
-            "tekau mā whā",
-            "rua tekau",
-            "rua tekau mā ono",
+            "tahi", "rua", "toru", "whā", "rima", "ono", "whitu", "waru",
+            "iwa", "tekau", "tekau mā tahi", "tekau mā waru", "tekau mā toru",
+            "tekau mā whā", "rua tekau", "rua tekau mā ono"
+        ]
+    elif card_type == "words":
+        font_size = 500
+        text = ["crocodile", "crochet", "kiwi", "weka", "kiwi", "kiwano"]
+    elif card_type == "letters":
+        font_size = 800
+        text = ["L", "O", "N", "K", "E", "D", "S", "P", "G", "B", "I", "Y"]
+    else:
+        font_size = 500
+        text = [
+            "whero", "kākāriki", "kiwikiwi", "karaka",
+            "kōwhai", "pango", "māwhero", "mā"
         ]
 
     font = ImageFont.truetype(font_path, font_size)
@@ -108,11 +107,11 @@ def subtitle(request, resource):
     also on the resource image.
 
     Args:
-        request: HTTP request object
-        resource: Object of resource data.
+        request: HTTP request object (HttpRequest).
+        resource: Object of resource data (Resource).
 
     Returns:
-        text for subtitle (string)
+        text for subtitle (str).
     """
     return "{} - {}".format(
         retrieve_query_parameter(request, "type").replace("_", " "),
@@ -129,6 +128,9 @@ def valid_options():
         All valid options (dict).
     """
     return {
-        "type": ["small_numbers", "large_numbers", "fractions", "maori_numbers"],
+        "type": [
+            "small_numbers", "large_numbers", "fractions", "maori_numbers",
+            "words", "letters", "maori_colours"
+        ],
         "paper_size": ["a4", "letter"],
     }

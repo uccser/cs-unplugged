@@ -55,7 +55,7 @@ If the information being stored got changed without anyone knowing, you'd get th
 Or worst still the website you are wanting to go to for your learning or the DVD you want to play won’t work!
 This activity will look at how computers correct this automatically.
 
-## Lesson Starter
+## Lesson starter
 
 1.  Teacher to class: "I’ve just learnt a magic trick I want to show you".
 

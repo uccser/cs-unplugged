@@ -1,11 +1,11 @@
-# How Binary Digits Work
+# How binary digits work
 
 ## Note from the authors
 
 We’ve noticed that once students understand how the binary number system works, they have many questions and are excited to explore the concepts outlined in this lesson further.
 We’ve added a lot of information into this lesson, however, it is not our intention that you will teach and cover all the concepts, but that you have at your fingertips the information you need when your students express an interest in learning more.
 
-## Key Questions
+## Key questions
 
 -   What different number systems do we know about? (Answers might include:
     Roman Numerals; Tally marks; Number bases like binary, octal and
@@ -18,7 +18,7 @@ We’ve added a lot of information into this lesson, however, it is not our inte
     numerals can be useful for making a number look more mysterious or harder
     to read.)
 
-## Lesson Starter
+## lesson starter
 
 {panel type="general" title="Notes on resources"}
 
@@ -40,7 +40,7 @@ There is also an online interactive version of the binary cards [here](http://ww
     Point out that this card has either 2 dots (visible), or none
     (upside down).
 
-    {image file-path="img/topics/col_binary_2cards.png"}
+    {image file-path="img/topics/col_binary_2cards.png" alt="2 kids holding binary cards"}
 
 3.  Ask the class what the number of dots on the next card will be.
     Get them to explain why they think that.
@@ -57,7 +57,7 @@ There is also an online interactive version of the binary cards [here](http://ww
 
 4.  Silently give out the four-dot card, and let them try to see the pattern.
 
-    {image file-path="img/topics/col_binary_3cards.png"}
+    {image file-path="img/topics/col_binary_3cards.png" alt="3 kids holding binary cards"}
 
     {panel type="teaching" title="Teaching observations"}
 
@@ -84,7 +84,7 @@ There is also an online interactive version of the binary cards [here](http://ww
 
 6.  Students should be able to work out the fifth card (16 dots) without help:
 
-    {image file-path="img/topics/col_binary_5cards.png"}
+    {image file-path="img/topics/col_binary_5cards.png" alt="5 kids holding binary cards"}
 
 7.  How many dots would the next card have if we carried on to the left? (32)
     The next...?
@@ -94,7 +94,7 @@ There is also an online interactive version of the binary cards [here](http://ww
 
 8.  Continue with 64 and 128 dots.
 
-    {panel type="teacher-observation" title="Teaching observations"}
+    {panel type="teaching" title="Teaching observations"}
 
     At 128 dots there would be 8 cards. This is 8 bits, which is commonly
     referred to as a byte.
@@ -115,7 +115,7 @@ There is also an online interactive version of the binary cards [here](http://ww
 
     {panel end}
 
-## Lesson Activities
+## Lesson activities
 
 1.  Remind the students that the rule is that a card either has the dots fully
     visible, or none of them are visible.
@@ -127,9 +127,9 @@ There is also an online interactive version of the binary cards [here](http://ww
     Without being given any rules other than each card being visible or not,
     students will usually come up with the following representation.
 
-    {image file-path="img/topics/binary-cards-total-9.png"}
+    {image file-path="img/topics/binary-cards-total-9.png" alt="Diagram showing that 2 binary cards make the number 9"}
 
-    {panel type="something" title="Mathematical Links"}
+    {panel type="math" title="Mathematical links"}
 
     Base 10 (our counting system) has 10 digits, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.
     When we count in base 10, we count from 0 to 9 and then run out of digits.
@@ -170,27 +170,27 @@ There is also an online interactive version of the binary cards [here](http://ww
 
     a. Start with all the numbers switched to on (dots showing).
 
-    {image file-path="img/topics/lightbulb_series_1.png"}
+    {image file-path="img/topics/lightbulb_series_1.png" alt="5 lightbulbs switched on"}
 
     b. Consider representing the number 10
 
     c. Does 16 fit into 10? No - so turn it off
 
-    {image file-path="img/topics/lightbulb_series_2.png"}
+    {image file-path="img/topics/lightbulb_series_2.png" alt="4 lightbulbs switched on"}
 
     d. Does 8 fit into 10? Yes - so keep it on. How many are left over? (2)
 
     e. Does 4 fit into 2? No - so turn it off
 
-    {image file-path="img/topics/lightbulb_series_3.png"}
+    {image file-path="img/topics/lightbulb_series_3.png" alt="3 lightbulbs switched on"}
 
     f. Does 2 fit into 2? Yes - so keep it on. How many are left over? (None)
 
     g. So turn off 1.
 
-    {image file-path="img/topics/lightbulb_series_4.png"}
+    {image file-path="img/topics/lightbulb_series_4.png" alt="2 lightbulbs switched on"}
 
-## Applying What We Have Just Learnt
+## Applying what we have just learnt
 
 -   Group students into pairs.
 -   Give each pair a set of the smaller binary cards (either 5 or 6 cards,
@@ -259,7 +259,7 @@ There is also an online interactive version of the binary cards [here](http://ww
     i. Repeat until a pattern is recognised that each time we add another bit
     we can now represent twice as many numbers.
 
-{panel type="teaching-observations" title="Teaching observations"}
+{panel type="teaching" title="Teaching observations"}
 
 A concept that students may struggle with here is that the number of values
 is one more than the maximum value (e.g. from 0 to 7, there are 8 different
