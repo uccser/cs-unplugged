@@ -10,5 +10,3 @@ Use two sprites drawing the blue and the red shapes simultaneously.
 ## Testing examples:
 
 There are no testing examples for this challenge.
-
-Click on the green flag to see the expected output of your program.

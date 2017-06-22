@@ -14,5 +14,3 @@ Your program should display the outputs shown in this table for the given inputs
 | ------------------------------- | ------------------------------------------------ |
 | What is 10 numbers after 46? 56 | Well done!                                       |
 | What is 10 numbers after 72? 92 | 92 is a good try! But 10 numbers after 72 is 82. |
-
-Click on the green flag, enter the inputs provided in the “testing examples” to see the expected output of your program.

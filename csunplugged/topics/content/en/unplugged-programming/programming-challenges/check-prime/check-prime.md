@@ -16,5 +16,3 @@ Your program should display the outputs shown in this table for the given inputs
 | 1         | 1 is not a prime number.       |
 | 0         | 0 is not a prime number.       |
 | -3        | -3 is not a prime number.      |
-
-Click on the green flag, enter the inputs provided in the “testing examples” to see the expected output of your program.

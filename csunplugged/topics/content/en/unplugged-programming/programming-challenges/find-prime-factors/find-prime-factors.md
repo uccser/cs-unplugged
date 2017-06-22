@@ -13,5 +13,3 @@ Your program should display the outputs shown in this table for the given inputs
 | -------- | ---------- |
 | 26       | 2, 13      |
 | 150      | 2, 3, 5    |
-
-Click on the green flag, enter the inputs provided in the “testing examples” to see the expected output of your program.

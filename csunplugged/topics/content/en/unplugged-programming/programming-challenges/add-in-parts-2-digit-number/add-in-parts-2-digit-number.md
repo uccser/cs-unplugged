@@ -28,5 +28,3 @@ Your program should display the outputs shown in this table for the given inputs
     <td>75 + 4 = 79</td>
   </tr>
 </table>
-
-Click on the green flag, enter the inputs provided in the “testing examples” to see the expected output of your program.

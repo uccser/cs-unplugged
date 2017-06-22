@@ -14,5 +14,3 @@ Your program should display the outputs shown in this table for the given inputs
 | 45         | This is an acute triangle.                 |
 | 90         | This is a right triangle.                  |
 | 120        | This is an obtuse triangle.                |
-
-Click on the green flag, enter the inputs provided in the “testing examples” to see the expected output of your program.

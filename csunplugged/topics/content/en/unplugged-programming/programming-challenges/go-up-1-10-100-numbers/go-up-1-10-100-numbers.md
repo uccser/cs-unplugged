@@ -9,5 +9,3 @@ If the answer is correct, it displays a message saying “well done!” and if t
 ## Testing examples:
 
 There are no testing examples for this challenge.
-
-Click on the green flag to see the expected output of your program.

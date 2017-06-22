@@ -9,5 +9,3 @@ It should then take the answer to the addition as the input and displays the cor
 ## Testing examples:
 
 There are no testing examples for this challenge.
-
-Click on the green flag to see the expected output of your program.

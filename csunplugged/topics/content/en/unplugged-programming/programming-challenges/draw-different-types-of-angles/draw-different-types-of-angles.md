@@ -17,5 +17,3 @@ Your program should display the outputs shown in this table for the given inputs
 | 110        | The angle you entered is an obtuse angle.  |
 | 180        | The angle you entered is a straight angle. |
 | 240        | The angle you entered is a reflex angle.   |
-
-Click on the green flag, enter the inputs provided in the “testing examples” to see the expected output of your program.

@@ -27,5 +27,3 @@ Your program may have different outputs from the outputs shown in this table for
     <td>50% heads<br>50% tails</td>
   </tr>
 </table>
-
-Click on the green flag, enter the inputs provided in the “testing examples” to see the expected output of your program.

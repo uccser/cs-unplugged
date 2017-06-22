@@ -10,5 +10,3 @@ Translate the cube 6 times across to draw the image shown below.
 ## Testing examples:
 
 There are no testing examples for this challenge.
-
-Click on the green flag to see the expected output of your program.

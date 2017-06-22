@@ -22,5 +22,3 @@ Your program should display the outputs shown in this table for the given inputs
     <td>6 is not a divisor of the number 20.</td>
   </tr>
 </table>
-
-Click on the green flag, enter the inputs provided in the “testing examples” to see the expected output of your program.

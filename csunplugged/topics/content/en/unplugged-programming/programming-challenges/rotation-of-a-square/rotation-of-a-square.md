@@ -8,5 +8,3 @@ Your program must then draw squares that are each rotated 15 degrees from the pr
 ## Testing examples:
 
 There are no testing examples for this challenge.
-
-Click on the green flag to see the expected output of your program.

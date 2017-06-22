@@ -8,5 +8,3 @@ You can use the same method as the "Draw a 360-sided polygon" challenge, but thi
 ## Testing examples:
 
 There are no testing examples for this challenge.
-
-Click on the green flag to see the expected output of your program.

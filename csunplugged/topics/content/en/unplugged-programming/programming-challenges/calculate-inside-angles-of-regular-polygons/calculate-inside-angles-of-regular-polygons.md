@@ -8,5 +8,3 @@ It then displays the interior angles of the the polygon in degrees.
 ## Testing examples:
 
 There are no testing examples for this challenge.
-
-Click on the green flag to see the expected output of your program.
