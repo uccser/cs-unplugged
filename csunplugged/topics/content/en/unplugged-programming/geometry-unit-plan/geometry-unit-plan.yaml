@@ -4,3 +4,5 @@ age-groups:
   5-7:
     finding-2d-shapes:
       number: 1
+    moving-in-a-shape:
+      number: 2

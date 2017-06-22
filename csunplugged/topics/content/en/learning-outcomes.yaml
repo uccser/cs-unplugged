@@ -353,3 +353,21 @@ unplugged-programming-give-accurate-instructions-pace:
   text: Give accurate instructions at a pace that the person can follow.
   curriculum-areas:
     - speaking
+
+############# WARNING ###########
+### FOLLOWING LOs DO NOT HAVE CORRECT CURRICULUM AREAS SET
+
+unplugged-programming-give-instructions-shape:
+  text: Give a set of instructions that moves an object from a starting point in a desired shape.
+  curriculum-areas:
+    - programming
+
+unplugged-programming-identify-bug-shape:
+  text: Identify where a bug has occurred and be able to correct the code to allow the object to move in a desired shape.
+  curriculum-areas:
+    - programming
+
+unplugged-programming-describe-draw-2D-shape:
+  text: Describe how to draw a given 2D shape like a square or a rectangle.
+  curriculum-areas:
+    - programming
