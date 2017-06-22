@@ -1,5 +1,0 @@
-# Title
-
-## Requirement:
-
-## Testing examples:

@@ -14,16 +14,16 @@ Your program should display the outputs shown in this table for the given inputs
     <th>Output</th>
   </tr>
   <tr>
-    <th>87<br>7</th>
-    <th>(87 + 3) + 4 = 94</th>
+    <td>87<br>7</td>
+    <td>(87 + 3) + 4 = 94</td>
   </tr>
   <tr>
-    <th>54<br>9</th>
-    <th>(54 + 6) + 3 = 63</th>
+    <td>54<br>9</td>
+    <td>(54 + 6) + 3 = 63</td>
   </tr>
   <tr>
-    <th>75<br>4</th>
-    <th>75 + 4 = 79</th>
+    <td>75<br>4</td>
+    <td>75 + 4 = 79</td>
   </tr>
 </table>
 

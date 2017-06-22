@@ -16,12 +16,12 @@ Your program should display the outputs shown in this table for the given inputs
     <th>Output</th>
   </tr>
   <tr>
-    <th>3<br>5</th>
-    <th>3^5 = 243</th>
+    <td>3<br>5</td>
+    <td>3^5 = 243</td>
   </tr>
   <tr>
-    <th>-2<br>4</th>
-    <th>-2^4 = 16</th>
+    <td>-2<br>4</td>
+    <td>-2^4 = 16</td>
   </tr>
 </table>
 

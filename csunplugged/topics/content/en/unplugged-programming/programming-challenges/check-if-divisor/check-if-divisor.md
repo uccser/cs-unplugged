@@ -14,12 +14,12 @@ Your program should display the outputs shown in this table for the given inputs
     <th>Output</th>
   </tr>
   <tr>
-    <th>20<br>4</th>
-    <th>4 is a divisor of the number 20.</th>
+    <td>20<br>4</td>
+    <td>4 is a divisor of the number 20.</td>
   </tr>
   <tr>
-    <th>20<br>6</th>
-    <th>6 is not a divisor of the number 20.</th>
+    <td>20<br>6</td>
+    <td>6 is not a divisor of the number 20.</td>
   </tr>
 </table>
 

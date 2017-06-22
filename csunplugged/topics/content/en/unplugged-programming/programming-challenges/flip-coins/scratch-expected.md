@@ -1,11 +1,40 @@
 Click on the green flag to see the expected output of your program.
 
-{iframe link="https://scratch.mit.edu/projects/embed/?????/?autostart=false"}
+{iframe link="https://scratch.mit.edu/projects/embed/149429925/?autostart=false"}
 
 {panel type="help" title="Recommended blocks"}
 
 ```scratch:split:random
+when green flag clicked
+```
 
+```scratch:split:random
+set [coin v] to [0]
+
+set [number of heads v] to [0]
+
+set [number of tails v] to [0]
+
+set [coin v] to (pick random (1) to (2))
+```
+
+```scratch:split:random
+ask [How many times would you like to flip a coin?] and wait
+```
+
+```scratch:split:random
+say (join (round (((number of heads) * (100)) / (number of flips))) [% heads]) for (3) secs
+
+say (join (round (((number of tails) * (100)) / (number of flips))) [% tail]) for (3) secs
+```
+
+```scratch:split:random
+if <(coin) = [1]> then
+else
+end
+
+repeat (number of flips)
+end
 ```
 
 {panel end}
