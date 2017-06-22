@@ -6,6 +6,8 @@ from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 from topics.models import ProgrammingChallenge
 from topics.management.commands._ProgrammingChallengesLoader import ProgrammingChallengesLoader
 
+from utils.errors.MarkdownStyleError import MarkdownStyleError
+
 
 class ProgrammingChallengesLoaderTest(BaseTestWithDB):
 
@@ -15,7 +17,7 @@ class ProgrammingChallengesLoaderTest(BaseTestWithDB):
         self.loader_name = "programming_challenges"
 
     def test_basic_config(self):
-        config_file = os.path.join(self.loader_name, "basic-config.yaml")
+        config_file = os.path.join(self.loader_name, "basic-config-1.yaml")
 
         self.test_data.create_difficulty_level("1")
         self.test_data.create_programming_language("1")
@@ -30,3 +32,15 @@ class ProgrammingChallengesLoaderTest(BaseTestWithDB):
             pe_objects,
             ["<ProgrammingChallenge: Programming Challenge 1>"]
         )
+
+    def test_markdown_with_style_error(self):
+        config_file = os.path.join(self.loader_name, "basic-config-2.yaml")
+
+        self.test_data.create_difficulty_level("1")
+        self.test_data.create_programming_language("1")
+        topic = self.test_data.create_topic("1")
+
+        pe_loader = ProgrammingChallengesLoader(config_file, topic, self.test_data.LOADER_ASSET_PATH)
+
+        with self.assertRaises(MarkdownStyleError):
+            pe_loader.load()

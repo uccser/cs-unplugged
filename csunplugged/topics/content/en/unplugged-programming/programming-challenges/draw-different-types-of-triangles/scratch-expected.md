@@ -1,0 +1,58 @@
+Click on the green flag to see the expected output of your program.
+
+{iframe link="https://scratch.mit.edu/projects/embed/152883486/?autostart=false"}
+
+{panel type="help" title="Recommended blocks"}
+
+```scratch:split:random
+when green flag clicked
+```
+
+```scratch:split:random
+clear
+
+set pen size to (3)
+
+pen down
+
+pen up
+```
+
+```scratch:split:random
+set [angle v] to (answer)
+```
+
+```scratch:split:random
+go to x: (0) y: (0)
+
+point in direction (90 v)
+
+move (100) steps
+
+turn ccw ((180) - (angle)) degrees
+```
+
+```scratch:split:random
+say [This is an acute triangle.] for (2) secs
+
+say [This is a right triangle.] for (2) secs
+
+say [This is an obtuse triangle.] for (2) secs
+```
+
+```scratch:split:random
+ask [Enter an angle between 0 and 360 (not including 0 and 360):] and wait
+```
+
+```scratch:split:random
+if <(angle) < [90]> then
+end
+
+if <(angle) = [90]> then
+end
+
+if <(angle) > [90]> then
+end
+```
+
+{panel end}

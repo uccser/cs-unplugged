@@ -33,6 +33,283 @@ catch-the-mouse-random:
   programming-languages:
     - scratch
 
+draw-square-without-loop:
+  challenge-set-number: 1
+  challenge-number: 1
+  difficulty-level: 1
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-explain-output
+
+draw-square-with-loop:
+  challenge-set-number: 1
+  challenge-number: 2
+  difficulty-level: 1
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-explain-output
+    - programming-identify-loop
+  extra-challenge: extra-challenge.md
+
+rotation-of-a-square:
+  challenge-set-number: 1
+  challenge-number: 3
+  difficulty-level: 1
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-explain-output
+    - programming-identify-loop
+
+draw-triangle-without-loop:
+  challenge-set-number: 2
+  challenge-number: 1
+  difficulty-level: 1
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-explain-output
+
+draw-triangle-with-loop:
+  challenge-set-number: 2
+  challenge-number: 2
+  difficulty-level: 1
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-explain-output
+    - programming-identify-loop
+  extra-challenge: extra-challenge.md
+
+rotation-of-a-triangle:
+  challenge-set-number: 2
+  challenge-number: 3
+  difficulty-level: 1
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-explain-output
+    - programming-identify-loop
+  extra-challenge: extra-challenge.md
+
+draw-pentagon-without-loop:
+  challenge-set-number: 3
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-explain-output
+
+draw-pentagon-with-loop:
+  challenge-set-number: 3
+  challenge-number: 2
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-explain-output
+    - programming-identify-loop
+  extra-challenge: extra-challenge.md
+
+rotation-of-a-pentagon:
+  challenge-set-number: 3
+  challenge-number: 3
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-explain-output
+    - programming-identify-loop
+  extra-challenge: extra-challenge.md
+
+draw-360-sided-polygon:
+  challenge-set-number: 4
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-explain-output
+    - programming-identify-loop
+
+draw-circle-with-radius-100:
+  challenge-set-number: 4
+  challenge-number: 2
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-describe-mathematical-operations
+    - programming-describe-variables
+    - programming-explain-sequencing
+    - programming-explain-output
+  extra-challenge: extra-challenge.md
+
+rotation-of-a-circle:
+  challenge-set-number: 4
+  challenge-number: 3
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-describe-mathematical-operations
+    - programming-describe-variables
+    - programming-explain-sequencing
+    - programming-explain-output
+  extra-challenge: extra-challenge.md
+
+draw-regular-polygons:
+  challenge-set-number: 5
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-explain-sequencing
+    - programming-describe-variables
+    - programming-identify-loop
+  extra-challenge: extra-challenge.md
+
+calculate-inside-angles-of-regular-polygons:
+  challenge-set-number: 5
+  challenge-number: 2
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-explain-sequencing
+    - programming-describe-variables
+    - programming-identify-loop
+
+draw-different-types-of-angles:
+  challenge-set-number: 6
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-identify-if-statement
+    - programming-describe-variables
+    - programming-describe-mathematical-operations
+
+draw-different-types-of-triangles:
+  challenge-set-number: 6
+  challenge-number: 2
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-identify-if-statement
+    - programming-describe-variables
+    - programming-describe-mathematical-operations
+  extra-challenge: extra-challenge.md
+
+draw-5-pointed-star:
+  challenge-set-number: 7
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-describe-variables
+    - programming-identify-loop
+
+draw-star-with-odd-points:
+  challenge-set-number: 7
+  challenge-number: 2
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-identify-loop
+    - programming-describe-variables
+    - programming-describe-mathematical-operations
+
+draw-star-without-crossing-lines:
+  challenge-set-number: 7
+  challenge-number: 3
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-describe-variables
+    - programming-identify-loop
+
+draw-star:
+  challenge-set-number: 7
+  challenge-number: 4
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-describe-variables
+    - programming-identify-loop
+
+draw-rhombus:
+  challenge-set-number: 8
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-describe-variables
+    - programming-identify-loop
+    - programming-explain-asking-input-end-user
+  extra-challenge: extra-challenge.md
+
+draw-cube:
+  challenge-set-number: 8
+  challenge-number: 2
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-describe-variables
+    - programming-identify-loop
+  extra-challenge: extra-challenge.md
+
+translation:
+  challenge-set-number: 8
+  challenge-number: 3
+  difficulty-level: 3
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-describe-variables
+    - programming-identify-loop
+    - programming-describe-mathematical-operations
+
+reflection:
+  challenge-set-number: 9
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-sequencing
+    - programming-describe-variables
+
 add-in-parts-1-digit-number:
   challenge-set-number: 1
   challenge-number: 1
@@ -187,3 +464,4 @@ flip-coins:
     - programming-describe-variables
     - programming-explain-asking-input-end-user
     - programming-identify-if-statement
+
