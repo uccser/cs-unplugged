@@ -279,6 +279,9 @@ details {
   color: white;
 }
 .difficulty-level-{
+  &0 {
+    background-color: #DABB00;
+  }
   &1 {
     background-color: $blue;
   }
