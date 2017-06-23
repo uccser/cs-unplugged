@@ -9,8 +9,8 @@ def resource_image(request, resource):
     """Create a image for Treasure Hunt resource.
 
     Args:
-        request: HTTP request object
-        resource: Object of resource data.
+        request: HTTP request object (HttpRequest).
+        resource: Object of resource data (Resource).
 
     Returns:
         A Pillow image object.
@@ -77,11 +77,11 @@ def subtitle(request, resource):
     also on the resource image.
 
     Args:
-        request: HTTP request object
-        resource: Object of resource data.
+        request: HTTP request object (HttpRequest).
+        resource: Object of resource data (Resource).
 
     Returns:
-        text for subtitle (string)
+        text for subtitle (str)
     """
     prefilled_values = retrieve_query_parameter(request, "prefilled_values")
     if prefilled_values == "blank":
@@ -98,7 +98,7 @@ def number_range(request):
     """Return number range tuple for resource.
 
     Args:
-        request: HTTP request object
+        request: HTTP request object (HttpRequest).
 
     Returns:
         Tuple of (range_min, range_max, font_size)

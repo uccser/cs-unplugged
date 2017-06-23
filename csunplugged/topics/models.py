@@ -68,7 +68,7 @@ class LearningOutcome(models.Model):
         """Text representation of LearningOutcome object.
 
         Returns:
-            Text of learning outcome (string).
+            Text of learning outcome (str).
         """
         return self.text
 

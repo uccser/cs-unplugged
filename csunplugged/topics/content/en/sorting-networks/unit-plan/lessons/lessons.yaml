@@ -32,7 +32,6 @@ reinforcing-numeracy-through-a-sorting-network:
     - Stopwatch (e.g. on smartphone) to time races between groups.
 
 investigating-variations-using-the-sorting-network:
-  number: 2
   duration: 30
   learning-outcomes:
     - sorting-recognise-sorting-method
