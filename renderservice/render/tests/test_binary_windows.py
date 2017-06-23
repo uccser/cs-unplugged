@@ -60,7 +60,7 @@ class BinaryWindowsResourceTest(BaseResourceTest):
 
     def test_binary_windows_resource_generation_missing_number_bits_parameter(self):
         combination = {
-            "dot_counts": "yes",
+            "dot_counts": True,
             "value_type": "binary",
             "paper_size": "a4",
             "header_text": "Example header text",
@@ -77,7 +77,7 @@ class BinaryWindowsResourceTest(BaseResourceTest):
 
     def test_binary_windows_resource_generation_missing_value_type_parameter(self):
         combination = {
-            "dot_counts": "yes",
+            "dot_counts": True,
             "number_bits": "8",
             "paper_size": "a4",
             "header_text": "Example header text",
@@ -94,7 +94,7 @@ class BinaryWindowsResourceTest(BaseResourceTest):
 
     def test_binary_windows_resource_generation_missing_paper_size_parameter(self):
         combination = {
-            "dot_counts": "yes",
+            "dot_counts": True,
             "number_bits": "8",
             "value_type": "binary",
             "header_text": "Example header text",
@@ -112,7 +112,7 @@ class BinaryWindowsResourceTest(BaseResourceTest):
     def test_binary_windows_resource_generation_missing_header_text_parameter(self):
         expected_filename = "Binary Windows (8 bits - lightbulb - with dot counts).pdf"
         combination = {
-            "dot_counts": "yes",
+            "dot_counts": True,
             "number_bits": "8",
             "value_type": "lightbulb",
             "paper_size": "a4",

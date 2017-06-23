@@ -37,10 +37,11 @@
       <p class="h5 mb-1">Heads up!</p>
       <p class="mb-1">To do this activity it's expected you understand the content covered in the following:</p>
       <ul class="mb-1">
-        {% for prerequisite_lesson in prerequisite_lessons %}
+        {% for lesson in prerequisite_lessons %}
           <li>
-            <a href="{% url 'topics:lesson' prerequisite_lesson.topic.slug prerequisite_lesson.unit_plan.slug prerequisite_lesson.slug %}">
-              <strong>{{ prerequisite_lesson.unit_plan.name }}:</strong> {{ prerequisite_lesson.name }}
+            <a href="{% url 'topics:lesson' lesson.topic.slug lesson.unit_plan.slug lesson.slug %}">
+              <strong>{{ lesson.unit_plan.name }}:</strong> {{ lesson.name }}
+              ({% for age_group in lesson.age_group.all %}{{ age_group.ages.lower }} to {{ age_group.ages.upper }}{% if not forloop.last %} and {% endif %}{% endfor %})
             </a>
           </li>
           {% endfor %}

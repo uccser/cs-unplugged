@@ -28,7 +28,7 @@ def resource_image(task, resource_manager):
     dot_counts = task["dot_counts"]
     black_back = task["black_back"]
 
-    if dot_counts == "yes":
+    if dot_counts:
         font_path = "fonts/PatrickHand-Regular.ttf"
         local_font_path = resource_manager.get_path(font_path)
         font = ImageFont.truetype(local_font_path, 200)
@@ -45,7 +45,7 @@ def resource_image(task, resource_manager):
         if image_bits <= requested_bits:
             data = resource_manager.load(os.path.join(BASE_IMAGE_PATH, image_path))
             image = Image.open(data)
-            if dot_counts == "yes":
+            if dot_counts:
                 draw = ImageDraw.Draw(image)
                 for number in range(image_bits - 4, image_bits):
                     text = str(pow(2, number))
@@ -60,7 +60,7 @@ def resource_image(task, resource_manager):
                     )
             images.append(image)
 
-            if black_back == "yes":
+            if black_back:
                 black_card = Image.new("1", (IMAGE_SIZE_X, IMAGE_SIZE_Y))
                 images.append(black_card)
 
@@ -79,14 +79,16 @@ def subtitle(task):
     Returns:
         text for subtitle (string)
     """
-    if task["dot_counts"] == "yes":
+    if task["dot_counts"]:
         display_numbers_text = "with dot counts"
     else:
         display_numbers_text = "without dot counts"
-    if task["black_back"] == "yes":
+
+    if task["black_back"]:
         black_back_text = "with black back"
     else:
         black_back_text = "without black back"
+
     text = "{} bits - {} - {} - {}".format(
         task["number_bits"],
         display_numbers_text,
@@ -106,7 +108,7 @@ def valid_options():
     """
     return {
         "number_bits": ["4", "8", "12"],
-        "dot_counts": ["yes", "no"],
-        "black_back": ["yes", "no"],
+        "dot_counts": [True, False],
+        "black_back": [True, False],
         "paper_size": ["a4", "letter"],
     }

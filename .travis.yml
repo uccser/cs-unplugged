@@ -25,7 +25,7 @@ script:
 - "./csu dev docs"
 deploy:
   provider: script
-  script: bash ./infrastructure/develop-deploy/develop-deploy.sh
+  script: bash ./infrastructure/dev-deploy/dev-deploy.sh
   skip_cleanup: true
   on:
     branch: develop

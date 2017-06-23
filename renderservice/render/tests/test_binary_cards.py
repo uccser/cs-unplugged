@@ -43,7 +43,7 @@ class BinaryCardsResourceTest(BaseResourceTest):
 
     def test_binary_cards_resource_generation_missing_numbers_parameter(self):
         combination = {
-            "black_back": "no",
+            "black_back": False,
             "paper_size": "a4",
             "header_text": "Example header text",
             "copies": 1
@@ -59,7 +59,7 @@ class BinaryCardsResourceTest(BaseResourceTest):
 
     def test_binary_cards_resource_generation_missing_back_parameter(self):
         combination = {
-            "display_numbers": "yes",
+            "display_numbers": True,
             "paper_size": "a4",
             "header_text": "Example header text",
             "copies": 1
@@ -75,8 +75,8 @@ class BinaryCardsResourceTest(BaseResourceTest):
 
     def test_binary_cards_resource_generation_missing_paper_size_parameter(self):
         combination = {
-            "display_numbers": "yes",
-            "black_back": "no",
+            "display_numbers": True,
+            "black_back": False,
             "header_text": "Example header text",
             "copies": 1
         }
@@ -92,8 +92,8 @@ class BinaryCardsResourceTest(BaseResourceTest):
     def test_binary_cards_resource_generation_missing_header_text_parameter(self):
         expected_filename = "Binary Cards (with numbers - without black back - a4).pdf"
         combination = {
-            "display_numbers": "yes",
-            "black_back": "no",
+            "display_numbers": True,
+            "black_back": False,
             "paper_size": "a4",
             "copies": 1
         }

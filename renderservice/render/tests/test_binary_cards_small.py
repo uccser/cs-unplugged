@@ -44,7 +44,7 @@ class BinaryCardsSmallResourceTest(BaseResourceTest):
     def test_binary_cards_small_resource_generation_missing_dot_count_parameter(self):
         combination = {
             "number_bits": "4",
-            "black_back": "yes",
+            "black_back": True,
             "paper_size": "a4",
             "header_text": "",
             "copies": 1
@@ -61,7 +61,7 @@ class BinaryCardsSmallResourceTest(BaseResourceTest):
     def test_binary_cards_small_resource_generation_missing_black_back_parameter(self):
         combination = {
             "number_bits": "4",
-            "dot_counts": "yes",
+            "dot_counts": True,
             "paper_size": "a4",
             "header_text": "",
             "copies": 1
@@ -78,8 +78,8 @@ class BinaryCardsSmallResourceTest(BaseResourceTest):
     def test_binary_cards_small_resource_generation_missing_paper_size_parameter(self):
         combination = {
             "number_bits": "4",
-            "dot_counts": "yes",
-            "black_back": "yes",
+            "dot_counts": True,
+            "black_back": True,
             "header_text": "",
             "copies": 1
         }
@@ -95,9 +95,9 @@ class BinaryCardsSmallResourceTest(BaseResourceTest):
     def test_binary_cards_small_resource_generation_missing_header_text_parameter(self):
         expected_filename = "Binary Cards (small) (4 bits - with dot counts - with black back - a4).pdf"
         combination = {
-            "dot_counts": "yes",
+            "dot_counts": True,
             "number_bits": "4",
-            "black_back": "yes",
+            "black_back": True,
             "paper_size": "a4",
             "copies": 1
         }
@@ -113,7 +113,7 @@ class BinaryCardsSmallResourceTest(BaseResourceTest):
     def test_binary_cards_small_resource_generation_invalid_black_back_parameter(self):
         combination = {
             "number_bits": "4",
-            "dot_counts": "yes",
+            "dot_counts": True,
             "black_back": "maybe",
             "header_text": "",
             "copies": 1

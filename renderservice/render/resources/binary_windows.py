@@ -35,7 +35,7 @@ def resource_image(task, resource_manager):
         data = resource_manager.load(os.path.join(BASE_IMAGE_PATH, filename))
         image = Image.open(data)
         image = add_digit_values(image, resource_manager, value_type, True, 660, 724, 1700, font)
-        if dot_counts == "yes":
+        if dot_counts:
             image = add_dot_counts(image, dot_count_start, small_font)
         image = image.rotate(90, expand=True)
         images.append(image)
@@ -168,10 +168,11 @@ def subtitle(task):
     number_of_bits = task["number_bits"]
     value_type = task["value_type"]
     dot_counts = task["dot_counts"]
-    if dot_counts == "yes":
+    if dot_counts:
         count_text = "with dot counts"
     else:
         count_text = "without dot counts"
+
     TEMPLATE = "{num_bits} bits - {value} - {counts}"
     text = TEMPLATE.format(
         num_bits=number_of_bits,
@@ -192,6 +193,6 @@ def valid_options():
     return {
         "number_bits": ["4", "8"],
         "value_type": ["binary", "lightbulb"],
-        "dot_counts": ["yes", "no"],
+        "dot_counts": [True, False],
         "paper_size": ["a4", "letter"],
     }

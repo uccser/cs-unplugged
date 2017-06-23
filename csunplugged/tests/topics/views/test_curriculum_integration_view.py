@@ -88,19 +88,18 @@ class CurriculumIntegrationViewTest(BaseTestWithDB):
     def test_curriculum_integration_view_prerequisite_lessons_context(self):
         topic = self.test_data.create_topic(1)
         unit_plan = self.test_data.create_unit_plan(topic, 1)
+        age_group_1 = self.test_data.create_age_group(5, 7)
         lesson_1 = self.test_data.create_lesson(
             topic,
             unit_plan,
             1,
-            5,
-            7
+            age_group_1
         )
         lesson_2 = self.test_data.create_lesson(
             topic,
             unit_plan,
             2,
-            5,
-            7
+            age_group_1
         )
         self.test_data.create_integration(
             topic,
@@ -122,53 +121,5 @@ class CurriculumIntegrationViewTest(BaseTestWithDB):
             [
                 "<Lesson: Lesson 1 (5 to 7)>",
                 "<Lesson: Lesson 2 (5 to 7)>",
-            ]
-        )
-
-    def test_curriculum_integration_view_prerequisite_lessons_context_order(self):
-        topic = self.test_data.create_topic(1)
-        unit_plan = self.test_data.create_unit_plan(topic, 1)
-        lesson_3 = self.test_data.create_lesson(
-            topic,
-            unit_plan,
-            1,
-            8,
-            10
-        )
-        lesson_2 = self.test_data.create_lesson(
-            topic,
-            unit_plan,
-            2,
-            5,
-            7
-        )
-        lesson_1 = self.test_data.create_lesson(
-            topic,
-            unit_plan,
-            1,
-            5,
-            7
-        )
-        self.test_data.create_integration(
-            topic,
-            1,
-            lessons=[lesson_3, lesson_2, lesson_1]
-        )
-        kwargs = {
-            "topic_slug": "topic-1",
-            "integration_slug": "integration-1",
-        }
-        url = reverse("topics:integration", kwargs=kwargs)
-        response = self.client.get(url)
-        self.assertEqual(
-            len(response.context["prerequisite_lessons"]),
-            3
-        )
-        self.assertQuerysetEqual(
-            response.context["prerequisite_lessons"],
-            [
-                "<Lesson: Lesson 1 (5 to 7)>",
-                "<Lesson: Lesson 2 (5 to 7)>",
-                "<Lesson: Lesson 1 (8 to 10)>",
             ]
         )

@@ -32,7 +32,7 @@ def resource_image(task, resource_manager):
     display_numbers = task["display_numbers"]
     black_back = task["black_back"]
 
-    if display_numbers == "yes":
+    if display_numbers:
         font_path = "fonts/PatrickHand-Regular.ttf"
         local_font_path = resource_manager.get_path(font_path)
         font = ImageFont.truetype(local_font_path, 600)
@@ -45,7 +45,7 @@ def resource_image(task, resource_manager):
     for (image_path, number) in IMAGE_DATA:
         data = resource_manager.load(os.path.join(BASE_IMAGE_PATH, image_path))
         image = Image.open(data)
-        if display_numbers == "yes":
+        if display_numbers:
             background = Image.new("RGB", (IMAGE_SIZE_X, IMAGE_SIZE_Y), "#FFF")
             background.paste(image, mask=image)
             draw = ImageDraw.Draw(background)
@@ -62,7 +62,7 @@ def resource_image(task, resource_manager):
             image = background
         images.append(image)
 
-        if black_back == "yes":
+        if black_back:
             black_card = Image.new("1", (IMAGE_SIZE_X, IMAGE_SIZE_Y))
             images.append(black_card)
 
@@ -81,14 +81,16 @@ def subtitle(task):
     Returns:
         text for subtitle (string)
     """
-    if task["display_numbers"] == "yes":
+    if task["display_numbers"]:
         display_numbers_text = "with numbers"
     else:
         display_numbers_text = "without numbers"
-    if task["black_back"] == "yes":
+
+    if task["black_back"]:
         black_back_text = "with black back"
     else:
         black_back_text = "without black back"
+
     text = "{} - {} - {}".format(
         display_numbers_text,
         black_back_text,
@@ -106,7 +108,7 @@ def valid_options():
         All valid options (dict).
     """
     return {
-        "display_numbers": ["yes", "no"],
-        "black_back": ["yes", "no"],
+        "display_numbers": [True, False],
+        "black_back": [True, False],
         "paper_size": ["a4", "letter"],
     }

@@ -40,8 +40,17 @@ class BaseResourceTest(BaseTest):
         Returns:
             String of GET query.
         """
+        url_combination = {}
+        for parameter, value in values.items():
+            if value is True:
+                url_combination[parameter] = "yes"
+            elif value is False:
+                url_combination[parameter] = "no"
+            else:
+                url_combination[parameter] = value
+
         string = "?"
-        for index, (key, value) in enumerate(values.items()):
+        for index, (key, value) in enumerate(url_combination.items()):
             string += "{key}={value}".format(key=key, value=value)
             if index < len(values):
                 string += "&"

@@ -29,6 +29,7 @@ Where ``[COMMAND]`` is a word from the list below:
 - :ref:`dev`
 - :ref:`end`
 - :ref:`help`
+- :ref:`restart`
 - :ref:`start`
 - :ref:`update`
 - :ref:`wipe`
@@ -226,6 +227,20 @@ this usually takes 10 to 20 seconds.
 ==============================================================================
 
 Running ``./csu help`` displays brief help text for the script.
+More details for each command can be found on this page.
+
+-----------------------------------------------------------------------------
+
+.. _restart:
+
+``restart``
+==============================================================================
+
+Running ``./csu restart`` is a shortcut for running:
+
+- ``./csu end``
+- ``./csu start``
+
 More details for each command can be found on this page.
 
 -----------------------------------------------------------------------------

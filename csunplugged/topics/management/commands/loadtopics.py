@@ -51,7 +51,7 @@ class Command(BaseCommand):
         if "programming-challenges-structure" in structure_file:
             programming_challenges_structure_file_path = structure_file["programming-challenges-structure"]
             if programming_challenges_structure_file_path is not None:
-                factory.create_programming_exercises_structure_loader(
+                factory.create_programming_challenges_structure_loader(
                     programming_challenges_structure_file_path,
                     BASE_PATH
                 ).load()
@@ -62,6 +62,20 @@ class Command(BaseCommand):
                 factory.create_glossary_terms_loader(
                     glossary_folder_path,
                     structure_file_path,
+                    BASE_PATH
+                ).load()
+
+        if structure_file["age-groups"] is None:
+            raise MissingRequiredFieldError(
+                structure_file_path,
+                ["age-groups"],
+                "Application Structure"
+            )
+        else:
+            age_groups_path = structure_file["age-groups"]
+            if age_groups_path is not None:
+                factory.create_age_groups_loader(
+                    age_groups_path,
                     BASE_PATH
                 ).load()
 

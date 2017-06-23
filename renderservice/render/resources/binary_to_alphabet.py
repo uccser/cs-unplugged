@@ -78,6 +78,7 @@ def resource_image(task, resource_manager):
 
             base_coord_y += 54
 
+    image = image.rotate(90, expand=True)
     return image
 
 

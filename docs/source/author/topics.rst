@@ -126,10 +126,11 @@ Adding a Unit Plan
 .. raw:: html
 
   <map name="unit-plan-map">
-    <area shape="rect" coords="240,430,317,465" href="#unit-plan-configuration-file">
-    <area shape="rect" coords="240,540,317,575" href="#topic-configuration-file">
-    <area shape="rect" coords="240,640,317,675" href="#adding-a-lesson">
-    <area shape="rect" coords="240,745,317,780" href="../getting_started/helper_commands.html#update">
+    <area shape="rect" coords="240,435,317,468" href="#unit-plan-configuration-file">
+    <area shape="rect" coords="240,547,317,581" href="#unit-plan-configuration-file">
+    <area shape="rect" coords="240,658,317,692" href="#topic-configuration-file">
+    <area shape="rect" coords="240,758,317,792" href="#adding-a-lesson">
+    <area shape="rect" coords="240,864,317,896" href="../getting_started/helper_commands.html#update">
   </map>
   <img src="../_static/img/topics_adding_unit_plan_flowchart.png" usemap="#unit-plan-map">
 
@@ -163,16 +164,17 @@ Adding a Lesson
 .. raw:: html
 
   <map name="lesson-map">
-    <area shape="rect" coords="237,420,317,456" href="#unit-plan-configuration-file">
-    <area shape="rect" coords="237,525,317,560" href="../getting_started/helper_commands.html#update">
+    <area shape="rect" coords="238,318,315,351" href="#lesson-configuration-file">
+    <area shape="rect" coords="237,431,317,465" href="#lesson-configuration-file">
+    <area shape="rect" coords="237,534,317,569" href="#unit-plan-configuration-file">
+    <area shape="rect" coords="237,638,317,671" href="../getting_started/helper_commands.html#update">
   </map>
   <img src="../_static/img/topics_adding_lesson_flowchart.png" usemap="#lesson-map">
 
 The Markdown file containing the content for the lesson:
 
-- **Is in:** the age group subdirectory in the lessons directory, e.g. a lesson
-  for age group 5-9 will be in
-  ``topics/content/en/binary-numbers/unit-plan/lessons/5-9/``.
+- **Is in:** the lesson subdirectory in the unit plan directory, e.g.
+  ``topics/content/en/binary-numbers/unit-plan/lessons/``.
 - **Is called:** ``<lesson-key>.md`` where ``<lesson-key>`` is the key
   (:ref:`what-is-a-key`) of the lesson, e.g. ``introduction-to-bits.md``.
 - **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
@@ -185,9 +187,9 @@ The Markdown file containing the content for the lesson:
 
 .. note::
 
-  If a lesson includes programming challenges, and/or learning outcomes, then
-  the corresponding configuration and content files may also need to be added
-  or updated.
+  If a lesson includes programming challenges, Computational Thinking links,
+  and/or learning outcomes, then the corresponding configuration and content
+  files may also need to be added or updated.
 
 .. _adding-learning-outcomes:
 
@@ -503,6 +505,66 @@ Unit Plan Configuration File
 
 - **Referenced In:** ``topic/content/<language>/<topic-key>/<topic-key>.yaml``
 
+- **Purpose:** This file defines which lessons to use in each age group
+
+  - **Required Fields:**
+
+    - ``lessons:`` The path to the lessons configuration file.
+
+    - ``age-groups:`` Keys of age groups and their corresponding lessons.
+
+      - **Required Fields:**
+
+        - ``<age-group>:`` The key for the age group.
+
+          - **Required Fields:**
+
+            - ``<lesson-key>`` The key for a lesson.
+
+              - **Required Fields:**
+
+                - ``number`` The number order for this lesson, relative
+                  to this age group.
+                  This value allows a lesson to be used in different age
+                  groups, as different numbered lessons (e.g. lesson 2 for
+                  5 to 7, but lesson 1 for 8 to 10).
+
+  - **Optional Fields:**
+
+    - ``computational-thinking-links``: The Markdown filename containing
+        Computational Thinking links.
+
+A complete unit plan structure file with multiple lessons may look like the
+following:
+
+.. code-block:: yaml
+
+  lessons: lessons/lessons.yaml
+
+  age-groups:
+    5-7:
+      what-is-binary-junior:
+        number: 1
+      how-binary-digits-work:
+        number: 2
+    8-10:
+      how-binary-digits-work:
+        number: 1
+      reinforcing-sequencing-in-binary-number-systems:
+        number: 2
+      codes-for-letters-using-binary-representation:
+        number: 3
+
+
+Lesson Configuration File
+------------------------------------------------------------------------------
+
+- **File Name:** ``<lessons>.yaml``
+
+- **Location:** ``topic/content/<language>/<topic-key>/<unit-plan-key>/lessons/``
+
+- **Referenced In:** ``topic/content/<language>/<topic-key>/<unit-plan-key>/<unit-plan-key>.yaml``
+
 - **Purpose:** This file defines all the lessons (and their respective)
   attributes for the unit plan.
 
@@ -511,23 +573,18 @@ Unit Plan Configuration File
     - ``<lesson-key>:`` This is the key for the lesson. Each lesson has its own list of
       required and optional fields:
 
-      - **Required Fields:**
-
-        - ``min-age:`` The suggested minimum age group to teach this lesson to.
-
-        - ``max-age:`` The suggested maximum age group to teach this lesson to.
-
-        - ``number:`` The number order for this lesson.
-          Lessons are grouped by their minimum age and maximum age, then ordered by
-          number so lessons in different age groups can use the same number without
-          conflict.
-
       - **Optional Fields:**
 
         - ``duration``: The estimated time to complete the lesson (in minutes).
 
+        - ``computational-thinking-links``: The Markdown filename containing
+          Computational Thinking links.
+
         - ``programming-challenges:`` A list of keys corresponding to programming
           challenges.
+
+        - ``programming-challenges-description``: The Markdown filename
+          containing a description for the programming challenges.
 
         - ``learning-outcomes:`` A list of keys corresponding to learning outcomes.
 
@@ -549,15 +606,12 @@ Unit Plan Configuration File
 
                 - ``description:`` A description of how the resource should be used.
 
-A complete unit plan structure file with multiple lessons may look like the
+A complete lesson structure file with multiple lessons may look like the
 following:
 
 .. code-block:: yaml
 
   introduction-to-bits:
-    min-age: 7
-    max-age: 11
-    number: 1
     programming-challenges:
       - count-to-16
       - count-to-1-million
@@ -571,12 +625,52 @@ following:
       - Dice
 
   how-binary-digits-work:
-    min-age: 7
-    max-age: 11
-    number: 2
+    computational-thinking-links: how-binary-digits-work-ct-links.md
     learning-outcomes:
       - binary-data-representation
       - binary-justify-representation
+
+.. _age-groups-file:
+
+Age Group Configuration File
+------------------------------------------------------------------------------
+
+- **File Name:** ``age-groups.yaml``
+
+- **Location:** ``topics/content/<language>/``
+
+- **Referenced In:** ``topics/content/<language>/structure.yaml``
+
+- **Purpose:** Defines the age groups avilable for all lessons.
+
+- **Required Fields:**
+
+  - ``<age-group-key>:`` This is the key for the age group.
+    Each age group has its own list of required and optional fields:
+
+    - **Required Fields:**
+
+      - ``min_age:`` The minimum age of the age group.
+      - ``max_age:`` The maximum age of the age group.
+
+    - **Optional Fields:**
+
+      - ``description:`` A text description for the age group.
+
+A complete age group structure file may look like the following:
+
+.. code-block:: yaml
+
+  5-7:
+      min_age: 5
+      max_age: 7
+      description: In the teacher observations sections there may also be background notes on the big picture. There is no expectation that 5 to 7 year olds will need to know this, but if you are asked, you have the answer at your fingertips.
+  8-10:
+      min_age: 8
+      max_age: 10
+  11-14:
+      min_age: 11
+      max_age: 14
 
 .. _learning-outcomes-file:
 
@@ -795,10 +889,9 @@ Programming Challenges Configuration File
     - **Required Fields:**
 
       - ``challenge-set-number:`` The group of related programming challenges this
-        challenge belongs to.
+        challenge belongs to (see note below).
 
-      - ``challenge-number:`` The number order for this programming challenge.
-        Challenges are sorted this number.
+      - ``challenge-number:`` The number order for this programming challenge (see note below).
 
       - ``difficulty-level:`` A key corresponding to a difficulty level.
 
@@ -811,6 +904,27 @@ Programming Challenges Configuration File
 
       - ``extra-challenge:`` A Markdown filename containing the content for an
         extra challenge.
+
+.. note ::
+
+  Programming challenges are sorted by their ``challenge-set-number``
+  and then their ``challenge-number``.
+  These numbers are not directly displayed, but used to calculate a
+  programming challenge's number for a lesson.
+
+  For example, if a lesson lists the following challenges:
+
+  - Challenge A: 1.1
+  - Challenge B: 1.3
+  - Challenge C: 2.2
+  - Challenge D: 9.3
+
+  The lesson will display these challenges as:
+
+  - Challenge A: 1.1
+  - Challenge B: 1.2
+  - Challenge C: 2.1
+  - Challenge D: 3.1
 
 A complete programming challenges structure file may look like the following:
 
