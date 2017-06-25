@@ -9,11 +9,11 @@ def resource_image(request, resource):
     """Create a image for Binary Windows resource.
 
     Args:
-        request: HTTP request object (Request).
+        request: HTTP request object (HttpRequest).
         resource: Object of resource data (Resource).
 
     Returns:
-        A list of Pillow image objects (list of Image objects).
+        A list of Pillow image objects (list).
     """
     BASE_IMAGE_PATH = "static/img/resources/binary-windows/"
     FONT_PATH = "static/fonts/PatrickHand-Regular.ttf"
@@ -69,7 +69,7 @@ def add_dot_counts(image, starting_value, font):
         font: Font used for adding text (Pillow Font).
 
     Returns:
-        Pillow Image with text added.
+        Pillow Image with text added (Pillow Image).
     """
     value = starting_value
     draw = ImageDraw.Draw(image)
@@ -106,7 +106,7 @@ def add_digit_values(image, value_type, on, x_coord_start, x_coord_increment, ba
         font: Font used for adding text (Pillow Font).
 
     Returns:
-        Pillow Image with binary values.
+        Pillow Image with binary values (Pillow Image).
     """
     text_coord_x = x_coord_start
 
@@ -157,11 +157,11 @@ def subtitle(request, resource):
     also on the resource image.
 
     Args:
-        request: HTTP request object (Request).
+        request: HTTP request object (HttpRequest).
         resource: Object of resource data (Resource).
 
     Returns:
-        text for subtitle (str)
+        text for subtitle (str).
     """
     number_of_bits = retrieve_query_parameter(request, "number_bits")
     value_type = retrieve_query_parameter(request, "value_type")

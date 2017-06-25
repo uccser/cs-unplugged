@@ -9,11 +9,11 @@ def resource_image(request, resource):
     """Create a image for Sorting Network Cards resource.
 
     Args:
-        request: HTTP request object.
-        resource: Object of resource data.
+        request: HTTP request object (HttpRequest).
+        resource: Object of resource data (Resource).
 
     Returns:
-        A list of Pillow image objects.
+        A list of Pillow image objects (list).
     """
     IMAGE_SIZE_X = 2000
     IMAGE_SIZE_Y = 3000
@@ -107,11 +107,11 @@ def subtitle(request, resource):
     also on the resource image.
 
     Args:
-        request: HTTP request object
-        resource: Object of resource data.
+        request: HTTP request object (HttpRequest).
+        resource: Object of resource data (Resource).
 
     Returns:
-        text for subtitle (string)
+        text for subtitle (str).
     """
     return "{} - {}".format(
         retrieve_query_parameter(request, "type").replace("_", " "),

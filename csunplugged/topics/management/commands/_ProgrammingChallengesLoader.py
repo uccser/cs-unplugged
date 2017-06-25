@@ -22,9 +22,9 @@ class ProgrammingChallengesLoader(BaseLoader):
         """Create the loader for loading programming challenges.
 
         Args:
-            structure_file_path: File path for structure YAML file (string).
-            topic: Object of related topic model.
-            BASE_PATH: Base file path (string).
+            structure_file_path: File path for structure YAML file (str).
+            topic: Object of related topic model (Topic).
+            BASE_PATH: Base file path (str).
         """
         super().__init__(BASE_PATH)
         self.structure_file_path = os.path.join(self.BASE_PATH, structure_file_path)
@@ -34,7 +34,8 @@ class ProgrammingChallengesLoader(BaseLoader):
     def load(self):
         """Load the content for programming challenges.
 
-        Raise:
+        Raises:
+            CouldNotFindMarkdownFileError: when no file can be found with the provided filename.
             KeyNotFoundError: when no object can be found with the matching attribute.
             MissingRequiredFieldError: when no object can be found with the matching
                 attribute.

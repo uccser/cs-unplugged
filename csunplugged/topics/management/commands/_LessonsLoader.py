@@ -24,9 +24,9 @@ class LessonsLoader(BaseLoader):
 
         Args:
             lessons_structure_file_path: file path to lessons yaml file (str).
-            topic: Object of Topic model.
-            unit_plan: Object of UnitPlan model.
-            BASE_PATH: Base file path (string).
+            topic: Object of Topic model (Topic).
+            unit_plan: Object of UnitPlan model (UnitPlan).
+            BASE_PATH: Base file path (str).
         """
         super().__init__(BASE_PATH)
         self.lessons_structure_file_path = lessons_structure_file_path
@@ -38,6 +38,7 @@ class LessonsLoader(BaseLoader):
 
         Raises:
             KeyNotFoundError: when no object can be found with the matching attribute.
+            InvalidConfigValueError: when provided value is not valid.
             MissingRequiredFieldError: when a value for a required model field cannot be
                 found in the config file.
         """

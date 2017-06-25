@@ -15,9 +15,9 @@ class GlossaryTermsLoader(BaseLoader):
         """Create the loader for loading glossary terms.
 
         Args:
-            glossary_folder_path: Folder path to definition files (string).
-            structure_file_path: Path to the config file, used for errors.
-            BASE_PATH: Base file path (string).
+            glossary_folder_path: Folder path to definition files (str).
+            structure_file_path: Path to the config file, used for errors (str).
+            BASE_PATH: Base file path (str).
         """
         super().__init__(BASE_PATH)
         self.structure_file_path = structure_file_path

@@ -9,11 +9,11 @@ def resource_image(request, resource):
     """Create a image for Binary Cards resource.
 
     Args:
-        request: HTTP request object.
-        resource: Object of resource data.
+        request: HTTP request object (HttpRequest).
+        resource: Object of resource data (Resource).
 
     Returns:
-        A list of Pillow image objects.
+        A list of Pillow image objects (list).
     """
     BASE_IMAGE_PATH = "static/img/resources/binary-cards/"
     IMAGE_SIZE_X = 2480
@@ -76,11 +76,11 @@ def subtitle(request, resource):
     also on the resource image.
 
     Args:
-        request: HTTP request object
-        resource: Object of resource data.
+        request: HTTP request object (HttpRequest).
+        resource: Object of resource data (Resource).
 
     Returns:
-        text for subtitle (string)
+        text for subtitle (str).
     """
     if retrieve_query_parameter(request, "display_numbers"):
         display_numbers_text = "with numbers"
