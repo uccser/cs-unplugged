@@ -8,9 +8,8 @@ RUN apt-get update \
     && mv sources.list /etc/apt/sources.list
 
 # Install Node.js and other dependencies
-RUN apt-get update \
-    && apt-get install -y \
-        apt-transport-https \
+RUN apt-get autoremove
+    && apt-get update \
     && apt-get install --no-install-suggests -y \
         curl \
         gnupg2 \
