@@ -16,7 +16,6 @@ RUN apt-get autoremove \
         python \
         g++ \
         libc6 \
-        libc6-dev \
         build-essential \
     && curl -sL https://deb.nodesource.com/setup_6.x | bash - \
     && apt-get install --no-install-suggests -y \
