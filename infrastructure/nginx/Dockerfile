@@ -9,14 +9,16 @@ RUN apt-get update \
 
 # Install Node.js and other dependencies
 RUN apt-get update \
+    && apt-get install -y \
+        apt-transport-https \
     && apt-get install --no-install-suggests -y \
-       curl \
-       gnupg2 \
-       python \
-       build-essential \
+        curl \
+        gnupg2 \
+        python \
+        build-essential \
     && curl -sL https://deb.nodesource.com/setup_6.x | bash - \
     && apt-get install --no-install-suggests -y \
-       nodejs \
+        nodejs \
     && apt-get remove --purge -y gnupg2 && apt-get -y --purge autoremove \
     && rm -rf /var/lib/apt/lists/*
 
