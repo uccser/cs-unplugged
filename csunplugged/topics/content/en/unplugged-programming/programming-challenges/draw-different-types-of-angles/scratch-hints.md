@@ -18,19 +18,19 @@ Below are hints for two different ways you may program this:
     ```scratch:
     if <[angle] < [180]> then
       if <[angle] < [90]> then
-        acute angle
+        acute angle :: custom
       else
         if <[angle] = [90]> then
-          right angle
+          right angle :: custom
         else
-          obtuse angle
+          obtuse angle :: custom
         end
       end
     else
       if <[angle] = [180]> then
-        straight angle
+        straight angle :: custom
       else
-        reflex angle
+        reflex angle :: custom
       end
     end
     ```

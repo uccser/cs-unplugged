@@ -1,7 +1,7 @@
 There will be a few ways to do this. Below are hints for three different ways you can program this.
 
 -   **Solution 1:**
-    By drawing a hexagon inside a star (see “Geometry challenge 7.2”).
+    By drawing a hexagon inside a star (see [challenge 7.2]('topics:programming_challenge' 'unplugged-programming' 'draw-star-with-odd-points')).
 
     {image file-path="img/topics/programming-challenges/geometry-challenge-7.4-solution-1.png"}
 
@@ -13,7 +13,6 @@ There will be a few ways to do this. Below are hints for three different ways yo
     4.  repeat steps 1-3 6 times).
 
     {image file-path="img/topics/programming-challenges/geometry-challenge-7.4-solution-2.png"}
-
 
 -   **Solution 3:** By drawing 2 triangles.
 

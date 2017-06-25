@@ -6,4 +6,4 @@ Write a program that draws any regular polygon with the number of sides entered 
 
 ## Testing examples:
 
-There are no testing examples for this challenge.
+Test your program with 3, 5 and 10 number of sides as the input.

@@ -8,7 +8,7 @@ design-bee-bot:
 program-bee-bot:
   challenge-set-number: 1
   challenge-number: 2
-  difficulty-level: 1
+  difficulty-level: 0
   programming-languages:
     - scratch
 
@@ -335,7 +335,7 @@ add-in-parts-2-digit-number:
 add-in-parts-quiz:
   challenge-set-number: 1
   challenge-number: 3
-  difficulty-level: 2
+  difficulty-level: 0
   programming-languages:
     - scratch
   learning-outcomes:

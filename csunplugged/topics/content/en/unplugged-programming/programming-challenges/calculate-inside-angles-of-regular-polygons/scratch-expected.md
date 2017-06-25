@@ -1,6 +1,6 @@
 Click on the green flag to see the expected output of your program.
 
-{iframe link="https://scratch.mit.edu/projects/embed/152496450/?autostart=false"}
+{iframe link="https://scratch.mit.edu/projects/embed/152498752/?autostart=false"}
 
 {panel type="help" title="Recommended blocks"}
 

@@ -14,7 +14,7 @@ Pressing the four commands stores them in a list called "source code", and press
 
 The HOME button returns the cat to the starting position; the UNDO button removes the last command from the list; and the CLEAR button empties the list.
 
-A project with the graphics needed is provided, but you will need to write the program to make it work.
+A project with the graphics needed is provided at [scratch.mit.edu/projects/159722851/](https://scratch.mit.edu/projects/159722851/), but you will need to write the program to make it work
 
 ## Testing examples:
 
