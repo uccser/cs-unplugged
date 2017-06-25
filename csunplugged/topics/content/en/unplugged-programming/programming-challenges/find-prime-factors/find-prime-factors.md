@@ -11,5 +11,5 @@ Your program should display the outputs shown in this table for the given inputs
 
 | Input    | Output     |
 | -------- | ---------- |
-| 26       | 2, 13      |
-| 150      | 2, 3, 5    |
+| 26       | 2, 13,     |
+| 150      | 2, 3, 5,   |

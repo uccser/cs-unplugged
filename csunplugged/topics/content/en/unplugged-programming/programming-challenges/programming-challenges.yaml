@@ -1,16 +1,13 @@
-design-bee-bot:
-  challenge-set-number: 1
-  challenge-number: 1
-  difficulty-level: 3
-  programming-languages:
-    - scratch
-
 program-bee-bot:
   challenge-set-number: 1
   challenge-number: 2
-  difficulty-level: 0
+  difficulty-level: 1
   programming-languages:
     - scratch
+  learning-outcomes:
+    - unplugged-programming-give-instructions
+    - unplugged-programming-accurately-count
+    - programming-explain-sequencing
 
 modify-bee-bot:
   challenge-set-number: 1
@@ -18,6 +15,11 @@ modify-bee-bot:
   difficulty-level: 2
   programming-languages:
     - scratch
+  learning-outcomes:
+    - unplugged-programming-give-instructions
+    - unplugged-programming-accurately-count
+    - programming-explain-sequencing
+    - programming-explain-output
 
 catch-the-mouse:
   challenge-set-number: 2
@@ -25,6 +27,11 @@ catch-the-mouse:
   difficulty-level: 2
   programming-languages:
     - scratch
+  learning-outcomes:
+    - unplugged-programming-give-instructions
+    - unplugged-programming-accurately-count
+    - programming-explain-sequencing
+    - programming-explain-output
 
 catch-the-mouse-random:
   challenge-set-number: 2
@@ -32,6 +39,11 @@ catch-the-mouse-random:
   difficulty-level: 2
   programming-languages:
     - scratch
+  learning-outcomes:
+    - unplugged-programming-give-instructions
+    - unplugged-programming-accurately-count
+    - programming-explain-sequencing
+    - programming-explain-output
 
 draw-square-without-loop:
   challenge-set-number: 1
