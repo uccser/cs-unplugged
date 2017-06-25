@@ -5,10 +5,10 @@ It’s powered by people instead of electricity).
 
 #### Examples of what you could look for:
 
--   Do students understand how each node functions (taking in two values and swapping them if they are in the wrong order)?
-    Are they able to explain to other students how to use the network correctly?
+Do students understand how each node functions (taking in two values and swapping them if they are in the wrong order)?
+Are they able to explain to other students how to use the network correctly?
 
--   Do the students see that no matter what numbers or data we put into the network we will always get a solution if we follow the algorithm correctly?
+Do the students see that no matter what numbers or data we put into the network we will always get a solution if we follow the algorithm correctly?
 
 {panel end}
 
@@ -19,8 +19,8 @@ It represents the core functionality of a Sorting Network, whilst hiding all the
 
 #### Examples of what you could look for:
 
--   Can students make the connection between the lines and nodes on this graph and the way computers can process information by making comparisons?
--   Can students understand that this representation can be used to model how a real parallel processing computer would work?
+Can students make the connection between the lines and nodes on this graph and the way computers can process information by making comparisons?
+Can students understand that this representation can be used to model how a real parallel processing computer would work?
 
 {panel end}
 
@@ -31,8 +31,8 @@ This operation alone is very simplistic, but when it is performed many many time
 
 #### Examples of what you could look for:
 
--   Can students see how to design a Sorting Network to sort just 2 values?
-    (It would just be a single comparator node).
+Can students see how to design a Sorting Network to sort just 2 values?
+(It would just be a single comparator node).
 
 {panel end}
 
@@ -50,9 +50,9 @@ Although 12 comparisons need to be made when going through the network, the netw
 
 #### Examples of what you could look for:
 
--   Can students identify the longest path that any number would have to go through to get to the end?
-    (The middle two numbers need to make 5 comparisons).
--   Can students explain that if every comparison were to take, say, 2 seconds, then the sorting would be finished in 5x2 seconds, and not 12x2 seconds?
+Can students identify the longest path that any number would have to go through to get to the end?
+(The middle two numbers need to make 5 comparisons).
+Can students explain that if every comparison were to take, say, 2 seconds, then the sorting would be finished in 5x2 seconds, and not 12x2 seconds?
 
 {panel end}
 
@@ -62,8 +62,8 @@ The smallest value will always take the left path at any comparison, and from ev
 
 #### Examples of what you could look for:
 
--   Can students explain where the smallest value will end up regardless of what the other values are?
--   Do students understand the function of each node?
-    Do they avoid simply going to the final node without doing the comparisons?
+Can students explain where the smallest value will end up regardless of what the other values are?
+Do students understand the function of each node?
+Do they avoid simply going to the final node without doing the comparisons?
 
 {panel end}
