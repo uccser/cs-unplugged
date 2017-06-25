@@ -14,6 +14,8 @@ RUN apt-get autoremove \
         curl \
         gnupg2 \
         python \
+        g++ \
+        libc-dev \
         build-essential \
     && curl -sL https://deb.nodesource.com/setup_6.x | bash - \
     && apt-get install --no-install-suggests -y \
