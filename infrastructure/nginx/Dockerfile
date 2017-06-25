@@ -15,6 +15,7 @@ RUN apt-get autoremove \
         gnupg2 \
         python \
         g++ \
+        libc6 \
         libc6-dev \
         build-essential \
     && curl -sL https://deb.nodesource.com/setup_6.x | bash - \
