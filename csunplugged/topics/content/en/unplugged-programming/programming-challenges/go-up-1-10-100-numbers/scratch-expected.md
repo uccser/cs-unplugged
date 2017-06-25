@@ -25,6 +25,8 @@ ask (join (join (join (join [What's ] (numbers after)) [ numbers after ]) (numbe
 ```
 
 ```scratch:split:random
+say [I'll generate a random number between 1 and a number you enter.] for (5) secs
+
 say [Well done!] for (3) secs
 
 say (join [Nice try! The right answer is: ] ((number) + (numbers after))) for (3) secs
@@ -38,7 +40,7 @@ if <(numbers after) = [1]> then
 else
 end
 
-if <(answer) = ((number) + (numbers after))> then 
+if <(answer) = ((number) + (numbers after))> then
 else
 end
 ```

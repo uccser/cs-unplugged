@@ -40,10 +40,18 @@ say (join [(] (join (join (num1) [+]) (join (join (join (add to tidy num1) [)]) 
 say [Well done!]
 
 say (join [Nice try! The correct answer is ] ((num1) + (num2)))
+
+say [Well done!]
+
+say (join [Nice try! The correct answer is ] ((num1) + (num2)))
 ```
 
 ```scratch:split:random
 if <((num1) + (num2)) > [10]> then
+else
+end
+
+if <(answer) = ((num1) + (num2))> then
 else
 end
 

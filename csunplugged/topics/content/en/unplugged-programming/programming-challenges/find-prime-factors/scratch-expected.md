@@ -37,19 +37,19 @@ say (prime factors)
 ```
 
 ```scratch:split:random
-if <((number) mod (divisor)) = [0]> then 
+if <((number) mod (divisor)) = [0]> then
 end
 
-if <(number) > [1]> then 
+if <(number) > [1]> then
 end
 
-if <((number) mod (index)) = [0]> then 
+if <((number) mod (index)) = [0]> then
 end
 
-if <(is prime) = [true]> then 
+if <(is prime) = [true]> then
 end
 
-repeat until <(divisor) = [0]> 
+repeat until <(divisor) = [0]>
 end
 
 repeat until <<(is prime) = [false]> or <(index) = (number)>>

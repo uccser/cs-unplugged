@@ -11,19 +11,21 @@ when green flag clicked
 ```scratch:split:random
 set [prime numbers v] to [ ]
 
-set [index v] to [2]
-
 set [number v] to [2]
-
-set [upper range v] to (answer)
 
 set [is prime v] to [true]
 
-set [is prime v] to [false]
+set [index v] to [2]
+
+change [index v] by (1)
+
+set [upper range v] to (answer)
 
 set [prime numbers v] to (join (prime numbers) (join (number) [, ]))
 
 change [number v] by (1)
+
+set [is prime v] to [false]
 ```
 
 ```scratch:split:random

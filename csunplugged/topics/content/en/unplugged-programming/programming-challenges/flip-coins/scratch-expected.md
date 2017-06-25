@@ -16,6 +16,12 @@ set [number of heads v] to [0]
 set [number of tails v] to [0]
 
 set [coin v] to (pick random (1) to (2))
+
+change [number of heads v] by (1)
+
+change [number of tails v] by (1)
+
+set [number of flips v] to (answer)
 ```
 
 ```scratch:split:random
