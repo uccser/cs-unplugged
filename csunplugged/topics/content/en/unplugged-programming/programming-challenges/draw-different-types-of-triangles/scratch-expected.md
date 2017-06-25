@@ -20,12 +20,18 @@ pen up
 
 ```scratch:split:random
 set [angle v] to (answer)
+
+ask [Enter an angle between 0 and 180 (not including 0 and 180):] and wait
 ```
 
 ```scratch:split:random
 go to x: (0) y: (0)
 
+go to x: (0) y: (0)
+
 point in direction (90 v)
+
+move (100) steps
 
 move (100) steps
 
@@ -38,10 +44,6 @@ say [This is an acute triangle.] for (2) secs
 say [This is a right triangle.] for (2) secs
 
 say [This is an obtuse triangle.] for (2) secs
-```
-
-```scratch:split:random
-ask [Enter an angle between 0 and 360 (not including 0 and 360):] and wait
 ```
 
 ```scratch:split:random

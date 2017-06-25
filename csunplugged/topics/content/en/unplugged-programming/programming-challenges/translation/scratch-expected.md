@@ -33,7 +33,23 @@ point in direction (180 v)
 
 move (sides) steps
 
+move (sides) steps
+
+move (sides) steps
+
+move (sides) steps
+
+move (sides) steps
+
+move (sides) steps
+
+move (sides) steps
+
+move (sides) steps
+
 move ([sqrt v] of (((sides) * (sides)) + ((sides) * (sides)))) steps
+
+turn cw (45) degrees
 
 turn cw (45) degrees
 

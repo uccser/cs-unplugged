@@ -10,10 +10,11 @@ when green flag clicked
 
 ```scratch:split:random
 set [angle v] to (answer)
-```
 
-```scratch:split:random
 ask [Enter one angle of a rhombus:] and wait
+
+repeat (2)
+end
 ```
 
 ```scratch:split:random
@@ -34,11 +35,6 @@ turn ccw (angle) degrees
 move (100) steps
 
 turn ccw ((180) - (angle)) degrees
-```
-
-```scratch:split:random
-repeat (2)
-end
 ```
 
 {panel end}

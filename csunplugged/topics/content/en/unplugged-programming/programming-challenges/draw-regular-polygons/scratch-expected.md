@@ -37,8 +37,6 @@ ask [Enter the number of sides:] and wait
 ```
 
 ```scratch:split:random
-wait (1) secs
-
 repeat (sides)
 end
 ```

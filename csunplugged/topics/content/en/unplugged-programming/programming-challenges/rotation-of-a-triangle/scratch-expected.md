@@ -29,8 +29,6 @@ turn cw (15) degrees
 ```
 
 ```scratch:split:random
-wait (1) secs
-
 repeat (3)
 end
 

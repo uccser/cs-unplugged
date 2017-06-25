@@ -20,9 +20,21 @@ pen up
 move (100) steps
 
 turn cw (120) degrees
+
+move (100) steps
+
+turn cw (120) degrees
+
+move (100) steps
+
+turn cw (120) degrees
 ```
 
 ```scratch:split:random
+wait (1) secs
+
+wait (1) secs
+
 wait (1) secs
 ```
 

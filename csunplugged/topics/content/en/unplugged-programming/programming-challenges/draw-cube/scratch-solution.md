@@ -56,4 +56,5 @@ repeat (2)
   move (100) steps
   turn ccw ((180) - (90)) degrees
 end
+pen up
 ```

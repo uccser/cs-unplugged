@@ -34,8 +34,6 @@ end
 
 repeat (4)
 end
-
-wait (1) secs
 ```
 
 {panel end}

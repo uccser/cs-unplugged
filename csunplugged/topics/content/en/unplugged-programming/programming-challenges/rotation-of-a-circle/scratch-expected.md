@@ -41,8 +41,6 @@ turn ccw (1) degrees
 ```
 
 ```scratch:split:random
-wait (1) secs
-
 repeat (360)
 end
 

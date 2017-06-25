@@ -22,9 +22,33 @@ go to x: (0) y: (0)
 move (100) steps
 
 turn cw (72) degrees
+
+move (100) steps
+
+turn cw (72) degrees
+
+move (100) steps
+
+turn cw (72) degrees
+
+move (100) steps
+
+turn cw (72) degrees
+
+move (100) steps
+
+turn cw (72) degrees
 ```
 
 ```scratch:split:random
+wait (1) secs
+
+wait (1) secs
+
+wait (1) secs
+
+wait (1) secs
+
 wait (1) secs
 ```
 

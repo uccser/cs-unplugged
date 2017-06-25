@@ -18,9 +18,10 @@ pen up
 
 ```scratch:split:random
 ask [Enter an odd number of points to draw a star:] and wait
-```
 
-```scratch:split:random
+repeat (points)
+end
+
 set [points v] to (answer)
 ```
 
@@ -30,11 +31,6 @@ go to x: (0) y: (0)
 move (200) steps
 
 turn cw ((180) - ((180) / (points))) degrees
-```
-
-```scratch:split:random
-repeat (points)
-end
 ```
 
 {panel end}
