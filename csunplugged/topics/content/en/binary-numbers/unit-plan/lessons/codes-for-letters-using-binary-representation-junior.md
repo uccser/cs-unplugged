@@ -1,8 +1,8 @@
-# Codes for letters using binary representation junior
+# Codes for letters using binary representation for junior students
 
 ## Key questions
 
-How do you think a computer knows which letter to show on the screen? 
+How do you think a computer knows which letter to show on the screen?
 
 {panel type="teaching" title="Teaching observations"}
 
@@ -20,33 +20,33 @@ There is also an online interactive version of the binary cards [here](http://ww
 {panel end}
 
 Can we match letters to numbers so that we can send coded messages to each other?
- 
+
 How many letters are there in the alphabet?
 Let’s count them together on our alphabet cards.
- 
+
 How can we represent the letters using numbers?
 (Guide students to the idea of using 1 for A, 2 for B, and so on.)
- 
+
 We can represent numbers using binary, but in the last lesson with 4 bits, what was the biggest number we could represent? (15)
- 
+
 How can we represent bigger numbers? (Add a card).
 How many dots on the extra card? (16)
- 
+
 Give out the cards, and have the students place them on the table in the correct order (16, 8, 4, 2, 1).
- 
+
 Now give them a number by saying "No, Yes, No, No, No" for the 5 cards. Ask them how many dots this produces.
 (The "Yes" is for the 8 card, so it's the number 8.)
 Which letter is number 8? ("H").
 This can be written on the board.
- 
+
 Now give the next number, "No, Yes, No, No, Yes" (9).
 Which letter is number 9?
 ("I", which can be written after the "H".)
- 
+
 That's the whole message - "HI".
- 
+
 Now try sending a different word to the class.
-The table below shows the binary patterns for the 26-letter alphabet; you can use yes/no for 1/0, but you could also use other ways of saying them, such as "on/off", "up/down", or even "one/zero". 
+The table below shows the binary patterns for the 26-letter alphabet; you can use yes/no for 1/0, but you could also use other ways of saying them, such as "on/off", "up/down", or even "one/zero".
 In particular, it may be helpful to represent a number higher than 16 to give them experience with the 5th bit.
 
 |   |       |   |    |       |   |    |       |   |
@@ -70,10 +70,10 @@ Note that if your local alphabet is slightly different (e.g. has diacritics such
 # Lesson activities
 
 Let’s work this out how to write our own binary code for “dad”.
- 
+
 You sing/say the alphabet slowly and I’ll count how many letters go by until we get to ‘D’ (D is the 4th letter).
- 
-So how do we make 4 using binary code? 
+
+So how do we make 4 using binary code?
 
 {image file-path="img/topics/binary-4-equals-d.png" alt="Kids holding binary cards"}
 
@@ -81,24 +81,24 @@ OFF OFF ON OFF OFF
 
 You sing the alphabet slowly and I’ll count how many letters go by until we get to ‘A’.
 A is the 1st letter .
- 
-So how do we make 1 using binary code? 
+
+So how do we make 1 using binary code?
 
 {image file-path="img/topics/binary-1-equals-a.png" alt="Kids holding binary cards"}
 
 OFF OFF OFF OFF ON
- 
+
 Hang on!
 Haven’t we already written the binary code for D? We can reuse that!
-Computer Scientists always look for ways to reuse any work they have done before. It’s much faster this way. 
- 
+Computer Scientists always look for ways to reuse any work they have done before. It’s much faster this way.
+
 Now let’s try this with someone’s name?
-Whose name should we translate into binary numbers? 
- 
-Choose a student and work through the steps to create their name. 
- 
-To reinforce students' alphabet knowledge, you could translate all student's name into binary numbers onto a piece of card and display it around the room. 
- 
+Whose name should we translate into binary numbers?
+
+Choose a student and work through the steps to create their name.
+
+To reinforce students' alphabet knowledge, you could translate all student's name into binary numbers onto a piece of card and display it around the room.
+
 {panel type="teaching" title="Teaching observations"}
 
 Some languages have more or fewer characters, which might include those with diacritic marks such as macrons and accents.
@@ -131,6 +131,6 @@ In fact, around 6 or 7 folds is already impossibly thick, even with a large shee
 
 ## Lesson reflection
 
--   What are some reasons why we don’t use the binary number system as the representation for our written language? 
--   What did you find challenging during this lesson? 
--   How did you overcome these challenges? 
+-   What are some reasons why we don’t use the binary number system as the representation for our written language?
+-   What did you find challenging during this lesson?
+-   How did you overcome these challenges?
