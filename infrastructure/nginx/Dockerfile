@@ -8,7 +8,7 @@ RUN apt-get update \
     && mv sources.list /etc/apt/sources.list
 
 # Install Node.js and other dependencies
-RUN apt-get autoremove
+RUN apt-get autoremove \
     && apt-get update \
     && apt-get install --no-install-suggests -y \
         curl \
