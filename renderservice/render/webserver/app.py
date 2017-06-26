@@ -69,7 +69,7 @@ def health_check():
         p = subprocess.Popen(args,
                              stdin=subprocess.DEVNULL,
                              stdout=subprocess.DEVNULL,
-                             stderr=None)
+                             stderr=subprocess.DEVNULL)
         processes.append((daemon_number, p, 0))
 
     while len(processes) > 0:
@@ -86,6 +86,7 @@ def health_check():
                 processes.append((daemon_number, p, retries + 1))
             else:
                 p.terminate()
+                p.wait(1)
                 logger.error("Failed to restart render daemon {} too many polls.".format(daemon_number, returncode))
                 errored = True
             continue

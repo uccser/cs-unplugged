@@ -56,8 +56,9 @@ def get_recommended_number_of_daemons():
         An integer of the number of daemons.
     """
     try:
-        m = re.search(r'(?m)^Cpus_allowed:\s*(.*)$',
-                      open('/proc/self/status').read())
+        m = None
+        with open('/proc/self/status') as f:
+            m = re.search(r'(?m)^Cpus_allowed:\s*(.*)$', f.read())
         if m:
             res = bin(int(m.group(1).replace(',', ''), 16)).count('1')
             if res > 0:

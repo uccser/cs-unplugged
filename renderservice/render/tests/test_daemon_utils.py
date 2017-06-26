@@ -21,8 +21,18 @@ class DaemonUtilsTest(BaseTest):
         p = subprocess.Popen(args,
                              stdin=subprocess.DEVNULL,
                              stdout=subprocess.DEVNULL,
-                             stderr=subprocess.STDOUT)
-        cls.returncode = p.wait(10)
+                             stderr=subprocess.DEVNULL)
+
+        cls.returncode = None
+        for _ in range(10):
+            try:
+                cls.returncode = p.wait(1)
+            except subprocess.TimeoutExpired:
+                pass
+
+        if cls.returncode is None:
+            p.terminate()
+            p.wait(1)
 
     @classmethod
     def tearDownClass(cls):
@@ -32,11 +42,21 @@ class DaemonUtilsTest(BaseTest):
         p = subprocess.Popen(args,
                              stdin=subprocess.DEVNULL,
                              stdout=subprocess.DEVNULL,
-                             stderr=subprocess.STDOUT)
-        returncode = p.wait(10)
+                             stderr=subprocess.DEVNULL)
+
+        returncode = None
+        for _ in range(10):
+            try:
+                returncode = p.wait(1)
+            except subprocess.TimeoutExpired:
+                pass
 
         if returncode != 0:
             logger.warning("Daemon {} failed to be stopped, please do so manually.")
+
+        if returncode is None:
+            p.terminate()
+            p.wait(1)
 
     def test_get_active_daemon_details(self):
         self.assertEqual(self.returncode, 0)

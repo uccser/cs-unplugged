@@ -36,8 +36,18 @@ class WebserverAppTest(unittest.TestCase):
             p = subprocess.Popen(args,
                                  stdin=subprocess.DEVNULL,
                                  stdout=subprocess.DEVNULL,
-                                 stderr=subprocess.STDOUT)
-            returncode = p.wait(10)
+                                 stderr=subprocess.DEVNULL)
+            returncode = None
+            for _ in range(10):
+                try:
+                    returncode = p.wait(1)
+                except subprocess.TimeoutExpired:
+                    pass
+
+            if returncode is None:
+                p.terminate()
+                p.wait(1)
+
             self.assertEqual(returncode, 0)
 
         # recover daemons with health check
