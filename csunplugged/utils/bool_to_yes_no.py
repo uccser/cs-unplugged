@@ -18,4 +18,4 @@ def bool_to_yes_no(value):
     elif type(value) == bool:
         return "no"
     else:
-        raise ValueError("Expected 'yes' or 'no'.")
+        raise ValueError("Expected True or False.")
