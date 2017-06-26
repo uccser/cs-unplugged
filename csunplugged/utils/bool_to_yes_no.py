@@ -8,12 +8,14 @@ def bool_to_yes_no(value):
         boolean: Value to check.
 
     Returns:
-        "yes" if boolean is True, "no" if False,
-        or changed otherwise.
+        "yes" if boolean is True, "no" if False.
+
+    Raises:
+        ValueError if value isn't "yes" or "no".
     """
     if type(value) == bool and value:
         return "yes"
     elif type(value) == bool:
         return "no"
     else:
-        return value
+        raise ValueError("Expected 'yes' or 'no'.")

@@ -1,6 +1,7 @@
 """Module for retrieving a GET request query parameter."""
 
 from django.http import Http404
+from utils.str_to_bool import str_to_bool
 
 
 def retrieve_query_parameter(request, parameter, valid_options=None):
@@ -20,10 +21,7 @@ def retrieve_query_parameter(request, parameter, valid_options=None):
     value = request.get(parameter, None)
     if value is None:
         raise Http404("{} parameter not specified.".format(parameter))
-    if value == "yes" or value == "True":
-        value = True
-    elif value == "no" or value == "False":
-        value = False
+    value = str_to_bool(value)
     if valid_options and value not in valid_options:
         raise Http404("{} parameter not valid.".format(parameter))
     return value
