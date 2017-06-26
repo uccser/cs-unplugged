@@ -68,17 +68,17 @@ job-badges:
   name: Job Badges
   webpage-template: resources/job-badges.html
   generation-view: job_badges.py
-  thumbnail-static-path: img/resources/job-badges/job-badges.png
+  thumbnail-static-path: img/resources/job-badges/thumbnail.png
   copies: false
 arrows:
   name: Arrows
   webpage-template: resources/arrows.html
   generation-view: arrows.py
-  thumbnail-static-path: img/resources/arrows/arrows.png
+  thumbnail-static-path: img/resources/arrows/thumbnail.png
   copies: false
 left-right-cards:
   name: Left and Right Cards
   webpage-template: resources/left-right-cards.html
   generation-view: left_right_cards.py
-  thumbnail-static-path: img/resources/left-right-cards/left-right-cards.png
+  thumbnail-static-path: img/resources/left-right-cards/thumbnail.png
   copies: false
