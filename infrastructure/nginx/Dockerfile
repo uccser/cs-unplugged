@@ -8,14 +8,13 @@ RUN apt-get update \
     && mv sources.list /etc/apt/sources.list
 
 # Install Node.js and other dependencies
-RUN apt-get autoremove \
-    && apt-get update \
-    && apt-get install --no-install-suggests -y \
+RUN apt-get update \
+    && apt-get autoclean \
+    && apt-get autoremove \
+    && apt-get install --no-install-suggests -y -f \
         curl \
         gnupg2 \
         python \
-        g++ \
-        libc6 \
         build-essential \
     && curl -sL https://deb.nodesource.com/setup_6.x | bash - \
     && apt-get install --no-install-suggests -y \
