@@ -6,7 +6,6 @@ RUN apt-get update \
     && apt-get install -y netselect-apt --no-install-suggests \
     && netselect-apt stretch \
     && echo deb http://security.debian.org/debian-security stretch/updates main >> sources.list \
-    && cat sources.list \
     && mv sources.list /etc/apt/sources.list
 
 # Install Node.js and other dependencies
