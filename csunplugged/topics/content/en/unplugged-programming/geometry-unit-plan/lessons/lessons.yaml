@@ -12,9 +12,9 @@ finding-2d-shapes:
     - unplugged-programming-give-accurate-instructions-pace
   generated-resources:
     arrows:
-      description: I am placeholder text.
+      description: Cut theses sheets out for students.
     left-right-cards:
-      description: Such placeholder. Much text. Wow.
+      description: Cut these sheets out for students who are still learning their left and right.
     job-badges:
       description:  Cut these out and use them as badges for the three students doing the three jobs respectively. You might want to put them in a name holder on a lanyard.
   classroom-resources:
@@ -34,9 +34,9 @@ moving-in-a-shape:
     - unplugged-programming-describe-draw-2D-shape
   generated-resources:
     arrows:
-      description: I am placeholder text.
+      description: Cut theses sheets out for students.
     left-right-cards:
-      description: Such placeholder. Much text. Wow.
+      description: Cut these sheets out for students who are still learning their left and right.
     job-badges:
       description:  Cut these out and use them as badges for the three students doing the three jobs respectively. You might want to put them in a name holder on a lanyard.
   classroom-resources:

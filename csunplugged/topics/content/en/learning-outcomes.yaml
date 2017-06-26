@@ -413,3 +413,8 @@ unplugged-programming-describe-draw-2D-shape:
   text: Describe how to draw a given 2D shape like a square or a rectangle.
   curriculum-areas:
     - programming
+
+unplugged-programming-accurately-count:
+  text: Accurately count from one space to the next one.
+  curriculum-areas:
+    - numeracy
