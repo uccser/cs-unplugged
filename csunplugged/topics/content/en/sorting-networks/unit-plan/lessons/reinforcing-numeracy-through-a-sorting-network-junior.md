@@ -97,7 +97,7 @@ The diagram that we used above happens to be the shortest one we can design for 
 How do we know this Sorting Network is reliable and works every time?
 
 The outcome we want to achieve is that the numbers come out in the correct order with the smallest number being in the left-most box and the second smallest number finishing next to it, right through to the largest number being in the right-most box.
-If we want to make sure it works for all possible inputs, then we would need to try it for every order that the values might start in - it turns out that there are 720 different orderings that 6 items can start in, so that's a lot of cases to test.
+If we want to make sure it works for all possible inputs, then we would need to try it for every order that the values might start in - it turns out that there are 720 (6x5x4x3x2x1) different orderings that 6 items can start in, so that's a lot of cases to test.
 For sorting more than 6 items, there are way too many different orderings to try out, so we must make a mathematical proof of why it works.
 Here are some elements of such a proof:
 
