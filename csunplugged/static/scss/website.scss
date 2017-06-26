@@ -279,6 +279,9 @@ details {
   color: white;
 }
 .difficulty-level-{
+  &0 {
+    background-color: #DABB00;
+  }
   &1 {
     background-color: $blue;
   }
@@ -394,4 +397,12 @@ body {
 
 .btn {
   cursor: pointer;
+}
+
+ol, ul {
+    margin-bottom: 1rem !important;
+}
+
+.large-text {
+  font-size: 3rem;
 }

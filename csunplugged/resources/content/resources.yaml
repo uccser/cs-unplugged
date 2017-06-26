@@ -52,3 +52,33 @@ parity-cards:
   generation-view: parity_cards.py
   thumbnail-static-path: img/resources/parity-cards/thumbnail.png
   copies: false
+piano-keys:
+  name: Piano Keys
+  webpage-template: resources/piano-keys.html
+  generation-view: piano_keys.py
+  thumbnail-static-path: img/resources/piano-keys/thumbnail.png
+  copies: false
+train-stations:
+  name: Train Stations
+  webpage-template: resources/train-stations.html
+  generation-view: train_stations.py
+  thumbnail-static-path: img/resources/train-stations/thumbnail.png
+  copies: false
+job-badges:
+  name: Job Badges
+  webpage-template: resources/job-badges.html
+  generation-view: job_badges.py
+  thumbnail-static-path: img/resources/job-badges/thumbnail.png
+  copies: false
+arrows:
+  name: Arrows
+  webpage-template: resources/arrows.html
+  generation-view: arrows.py
+  thumbnail-static-path: img/resources/arrows/thumbnail.png
+  copies: false
+left-right-cards:
+  name: Left and Right Cards
+  webpage-template: resources/left-right-cards.html
+  generation-view: left_right_cards.py
+  thumbnail-static-path: img/resources/left-right-cards/thumbnail.png
+  copies: false

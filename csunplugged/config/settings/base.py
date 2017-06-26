@@ -146,6 +146,7 @@ TEMPLATES = [
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
                 "config.context_processors.version_number.version_number",
+                "config.context_processors.production.production",
             ],
             "libraries": {
                 "render_html_field": "config.templatetags.render_html_field",
