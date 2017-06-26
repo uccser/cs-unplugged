@@ -303,6 +303,11 @@ programming-identify-list-store-data:
   curriculum-areas:
     - programming
 
+programming-show-item-specified-position-list:
+  text: Show how to access an the item at a specified position in a list.
+  curriculum-areas:
+    - programming
+
 # UNPLUGGED PROGRAMMING LEARNING OUTCOMES
 
 unplugged-programming-apply-addition-multiplication:
