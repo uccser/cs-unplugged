@@ -1,4 +1,4 @@
-# Unplugged Programming
+# Unplugged programming
 
 Computer programs are all around us, not just in the things we call computers, but in things like fitness devices, smartphones and alarm systems, and in many many more places.
 Sometimes they programs are referred to as "applications", "apps" or "software", and often they are nearly invisible, in devices like TVs and washing machines, where the software "boots up" when you switch it on, and keeps going until you switch it off.
