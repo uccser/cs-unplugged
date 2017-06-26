@@ -1,0 +1,1 @@
+Modify your program so the new time is displayed as 24:00, if the value of the “new time” is equal to 0.
