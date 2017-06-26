@@ -2,7 +2,7 @@
 
 ## Key questions
 
-What are examples of tasks get finished sooner if more people help with them?
+What are examples of tasks that get finished sooner if more people help with them?
 What are examples of tasks that don't get finished sooner if more people help
 with them?
 

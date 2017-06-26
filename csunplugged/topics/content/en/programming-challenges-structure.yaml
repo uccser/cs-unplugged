@@ -9,9 +9,11 @@ languages:
         icon: img/python-logo.png
 
 difficulties:
+  0:
+    name: Try it out
   1:
     name: Beginner
   2:
-    name: Growing Experience
+    name: Growing experience
   3:
-    name: Ready to Expand
+    name: Ready to expand
