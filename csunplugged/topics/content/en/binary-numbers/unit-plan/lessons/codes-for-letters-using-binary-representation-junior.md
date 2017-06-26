@@ -46,20 +46,8 @@ Which letter is number 9?
 That's the whole message - "HI".
 
 Now try sending a different word to the class.
-The table below shows the binary patterns for the 26-letter alphabet; you can use yes/no for 1/0, but you could also use other ways of saying them, such as "on/off", "up/down", or even "one/zero".
+The [Binary to Alphabet resource]('resources:resource' 'binary-to-alphabet') below shows the binary patterns for the 26-letter alphabet; you can use yes/no for 1/0, but you could also use other ways of saying them, such as "on/off", "up/down", or even "one/zero".
 In particular, it may be helpful to represent a number higher than 16 to give them experience with the 5th bit.
-
-|   |       |   |    |       |   |    |       |   |
-|---|-------|---|----|-------|---|----|-------|---|
-| 0 | 00000 |   | 9  | 01001 | I | 18 | 10010 | R |
-| 1 | 00001 | A | 10 | 01010 | J | 19 | 10011 | S |
-| 2 | 00010 | B | 11 | 01011 | K | 20 | 10100 | T |
-| 3 | 00011 | C | 12 | 01100 | L | 21 | 10101 | U |
-| 4 | 00100 | D | 13 | 01101 | M | 22 | 10110 | V |
-| 5 | 00101 | E | 14 | 01110 | N | 23 | 10111 | W |
-| 6 | 00110 | F | 15 | 01111 | O | 24 | 11000 | X |
-| 7 | 00111 | G | 16 | 10000 | P | 25 | 11001 | Y |
-| 8 | 01000 | H | 17 | 10001 | Q | 26 | 11010 | Z |
 
 {panel type="teaching" title="Teaching observations"}
 
