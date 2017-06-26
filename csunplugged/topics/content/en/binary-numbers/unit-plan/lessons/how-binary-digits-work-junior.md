@@ -18,7 +18,7 @@ There is also an online interactive version of the binary cards available (4 car
 
 {panel end}
 
-Did you know that right in the inside of any computer there are billions (that’s a really really big number) of little tiny things that can be turned on or off, like a light switch, and that when have lots of these things together they can display a number or a letter or a movie or make up your favourite game on your device?
+Did you know that right in the inside of any computer there are billions (that’s a really really big number) of little tiny things that can be turned on or off, like a light switch, and that when you have lots of these things together they can display a number or a letter or a movie or make up your favourite game on your device?
 So let’s look at how they work.
 Now we need to pretend that we are so incredibly small that we are now inside a computer and we are making the computer show a number.
 Are you ready?
@@ -238,4 +238,3 @@ This is sometimes called the fencepost problem (the number of fence posts is one
 -   What else could we use to represent two opposites, like on and off, in writing?
 
     -   Perhaps a cross or tick; happy or sad face; or any other pair of symbols.
- 
