@@ -72,6 +72,18 @@ binary-identify-opposite-pairs:
     - abstraction
     - literacy
 
+binary-match-letters-numbers:
+  text: Match letters in the alphabet to the numbers representing them.
+  curriculum-areas:
+    - abstraction
+    - literacy
+
+binary-count-highest-number:
+  text: Count on from the highest number to find the total number of dots on the binary cards.
+  curriculum-areas:
+    - decomposition
+    - numeracy
+
 # DRAMA LEARNING OUTCOMES
 
 drama-create-video-binary:

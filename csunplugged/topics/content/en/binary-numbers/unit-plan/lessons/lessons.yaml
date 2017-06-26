@@ -31,6 +31,24 @@ reinforcing-sequencing-in-binary-number-systems-junior:
     - Glue a stick onto paper plates and have one side on and the other side off
     - Hats on and off
 
+codes-for-letters-using-binary-representation-junior:
+  duration: 45
+  computational-thinking-links: codes-for-letters-using-binary-representation-junior-ct-links.md
+  learning-outcomes:
+    - binary-match-letters-numbers
+    - binary-count-highest-number
+    - numeracy-recognise-number-alphabet-order
+  generated-resources:
+    binary-cards:
+      description: One set for class demonstration.
+    binary-cards-small:
+      description: One set of cards per student.
+    binary-to-alphabet:
+      description: Blank sheets for students, plus teacher answer sheet.
+  classroom-resources:
+    - Alphabet cards
+    - Number line from 0 to 20
+
 how-binary-digits-work:
   duration: 45
   computational-thinking-links: how-binary-digits-work-ct-links.md
