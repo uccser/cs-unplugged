@@ -11,9 +11,9 @@ modulo:
   classroom-resources:
     - Counters to mark positions.
   programming-challenges:
-    check-if-divisor
-    check-if-divisor-series
-    find-factors
-    check-prime
-    generate-primes
-    find-prime-factors
+    - check-if-divisor
+    - check-if-divisor-series
+    - find-factors
+    - check-prime
+    - generate-primes
+    - find-prime-factors
