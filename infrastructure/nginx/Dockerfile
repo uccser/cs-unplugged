@@ -5,13 +5,13 @@ FROM nginx:latest
 RUN apt-get update \
     && apt-get install -y netselect-apt --no-install-suggests \
     && netselect-apt stretch \
+    && echo deb http://security.debian.org/debian-security stretch/updates main >> sources.list \
+    && cat sources.list \
     && mv sources.list /etc/apt/sources.list
 
 # Install Node.js and other dependencies
 RUN apt-get update \
-    && apt-get autoclean \
-    && apt-get autoremove \
-    && apt-get install --no-install-suggests -y -f \
+    && apt-get install --no-install-suggests -y \
         curl \
         gnupg2 \
         python \
