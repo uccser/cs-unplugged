@@ -11,7 +11,8 @@ def str_to_bool(value, error_on_invalid=False):
 
     Returns:
         True if value is "yes" or "True",
-        False if "no" or "False".
+        False if "no" or "False",
+        otherwise the value is returned.
 
     Raises:
         ValueError if value isn't as expected, when error_on_invalid is True.
