@@ -359,6 +359,30 @@ unplugged-programming-give-accurate-instructions-pace:
   curriculum-areas:
     - speaking
 
+unplugged-programming-give-instructions-shape:
+  text: Give a set of instructions that moves an object from a starting point in a desired shape.
+  curriculum-areas:
+    - programming
+    - geometry
+
+unplugged-programming-identify-bug-shape:
+  text: Identify where a bug has occurred and be able to correct the code to allow the object to move in a desired shape.
+  curriculum-areas:
+    - programming
+    - logic
+
+unplugged-programming-describe-draw-2D-shape:
+  text: Describe how to draw a given 2D shape like a square or a rectangle.
+  curriculum-areas:
+    - programming
+    - geometry
+    - decomposition
+
+unplugged-programming-accurately-count:
+  text: Accurately count from one space to the next one.
+  curriculum-areas:
+    - numeracy
+
 # SORTING LEARNING OUTCOMES
 
 sorting-explain-parallel-algorithm:
@@ -395,26 +419,3 @@ sorting-comparing-musical-pitch:
   text: Compare musical pitch in musical notation and aurally.
   curriculum-areas:
     - music
-
-############# WARNING ###########
-### FOLLOWING LOs DO NOT HAVE CORRECT CURRICULUM AREAS SET
-
-unplugged-programming-give-instructions-shape:
-  text: Give a set of instructions that moves an object from a starting point in a desired shape.
-  curriculum-areas:
-    - programming
-
-unplugged-programming-identify-bug-shape:
-  text: Identify where a bug has occurred and be able to correct the code to allow the object to move in a desired shape.
-  curriculum-areas:
-    - programming
-
-unplugged-programming-describe-draw-2D-shape:
-  text: Describe how to draw a given 2D shape like a square or a rectangle.
-  curriculum-areas:
-    - programming
-
-unplugged-programming-accurately-count:
-  text: Accurately count from one space to the next one.
-  curriculum-areas:
-    - numeracy
