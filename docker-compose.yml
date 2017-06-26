@@ -55,6 +55,7 @@ services:
       - "5000:5000"
     depends_on:
       - nginx
+      - queue
 
   queue:
     build:

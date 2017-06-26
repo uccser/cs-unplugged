@@ -1,7 +1,15 @@
 #!/bin/bash
-export RENDER_DAEMONS=$( nproc --all )
-echo "export RENDER_DAEMONS=${RENDER_DAEMONS}" >> ~/.bashrc
-for i in `seq 1 ${RENDER_DAEMONS}`;
+function cpu_count(){
+/docker_venv/bin/python << END
+import sys
+from render.daemon.utils import  get_recommended_number_of_daemons
+sys.exit(get_recommended_number_of_daemons())
+END
+render_daemons=$?
+}
+
+cpu_count
+for i in `seq 1 ${render_daemons}`;
 do
   /docker_venv/bin/python -m render.daemon --daemon ${i} start &
 done

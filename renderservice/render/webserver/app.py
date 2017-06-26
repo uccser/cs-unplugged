@@ -3,9 +3,12 @@ import os
 import logging
 import subprocess
 from flask import Flask
-from render.daemon.utils import check_pid, get_active_daemon_details
+from render.daemon.utils import (
+        check_pid,
+        get_active_daemon_details,
+        get_recommended_number_of_daemons
+    )
 
-RENDER_DAEMONS = int(os.getenv("RENDER_DAEMONS", 1))
 DEBUG = not int(os.getenv("FLASK_PRODUCTION", 1))
 PORT = int(os.getenv("PORT", 8080))
 
@@ -45,7 +48,8 @@ def health_check():
     errored = False
     max_waits = 500
 
-    inactive_daemons = {i for i in range(1, RENDER_DAEMONS + 1)}
+    num_daemons = get_recommended_number_of_daemons()
+    inactive_daemons = {i for i in range(1, num_daemons + 1)}
     daemons = get_active_daemon_details("render")
     for info in daemons:
         if check_pid(info.pid):

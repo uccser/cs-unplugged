@@ -1,6 +1,7 @@
 """Utility helper functions for working with daemons."""
 import os
 import re
+import multiprocessing
 from collections import namedtuple
 
 PID_DIRECTORY = os.getenv("PID_DIRECTORY", os.path.join(os.getcwd(), "pidstore"))
@@ -46,3 +47,27 @@ def get_active_daemon_details(daemon):
                 number = int(m.group('number'))
                 details.append(DaemonMetaData(number, pid))
     return details
+
+
+def get_recommended_number_of_daemons():
+    """Get the recommended number of daemons to run on system.
+
+    Returns:
+        An integer of the number of daemons.
+    """
+    try:
+        m = re.search(r'(?m)^Cpus_allowed:\s*(.*)$',
+                      open('/proc/self/status').read())
+        if m:
+            res = bin(int(m.group(1).replace(',', ''), 16)).count('1')
+            if res > 0:
+                return res
+    except IOError:
+        pass
+
+    try:
+        return multiprocessing.cpu_count()
+    except (ImportError, NotImplementedError):
+        pass
+
+    return 1
