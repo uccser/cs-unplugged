@@ -350,10 +350,6 @@ add-in-parts-quiz:
   difficulty-level: 0
   programming-languages:
     - scratch
-  learning-outcomes:
-    - programming-explain-join-concatenate
-    - programming-describe-variables
-    - programming-explain-asking-input-end-user
 
 go-up-10-numbers:
   challenge-set-number: 2
