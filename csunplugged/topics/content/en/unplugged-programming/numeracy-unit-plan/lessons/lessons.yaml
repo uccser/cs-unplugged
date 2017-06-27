@@ -11,9 +11,13 @@ modulo:
   classroom-resources:
     - Counters to mark positions.
   programming-challenges:
-    - check-if-divisor
-    - check-if-divisor-series
-    - find-factors
-    - check-prime
-    - generate-primes
-    - find-prime-factors
+    - modulo-even-odd-numbers
+    - modulo-check-divisor
+    - modulo-add-hours-12-hour-clock
+    - modulo-add-hours-12-hour-clock-without-mod
+    - modulo-add-hours-24-hour-clock
+    - modulo-display-midi-note
+    - modulo-add-months
+    - modulo-add-video-timings
+    - modulo-check-leap-year
+  programming-challenges-description: modulo-programming.md
