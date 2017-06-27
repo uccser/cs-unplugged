@@ -75,7 +75,7 @@ Ask students what is special about the decimal to binary conversion, in contrast
 When counting upwards in binary, there is a pattern for how often particular cards flip.
 The 1st bit (with 1 dot) turns over every time, the 2nd (with 2 dots) turns for every second number, the 3rd (with 4 dots) turns for every 4th... Is there a pattern like this when we count in decimal numbers?
 
-{image file-path="img/topics/col_binary_counting_pattern.png"}
+{image file-path="img/topics/col_binary_counting_pattern.png" alt="Binary counting pattern"}
 
 If you have 5 of the cards and all are visible, you will have the number 31, which is 1 less that the value of the next card, 32. Is this pattern always true?
 

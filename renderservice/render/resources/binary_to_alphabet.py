@@ -92,7 +92,7 @@ def subtitle(task):
         task: Dicitionary of requested document.
 
     Returns:
-        text for subtitle (string)
+        Text for subtitle (str).
     """
     text = "{} - {}".format(
         task["worksheet_version"],

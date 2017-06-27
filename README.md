@@ -9,10 +9,10 @@ distractions and technical details of having to use computers.
 
 The CS Unplugged project is available at
 [csunplugged.org](http://csunplugged.org/).
-This version (considered as version 2.0) is not currently deployed in a
-production environment.
+This version (considered as version 2.0) can be viewed at
+[csunplugged.org/sneak-peek/](http://csunplugged.org/sneak-peek/).
 A development build (`develop` branch) of this repository can be viewed at
-[cs-unplugged-develop.appspot.com](http://cs-unplugged-develop.appspot.com/).
+[cs-unplugged-dev.appspot.com](http://cs-unplugged-dev.appspot.com/).
 
 ## Documentation
 

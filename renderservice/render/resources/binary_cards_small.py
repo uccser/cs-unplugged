@@ -12,7 +12,7 @@ def resource_image(task, resource_manager):
         resource_manager: File loader for external resources.
 
     Returns:
-        A list of Pillow image objects.
+        A list of Pillow image objects (list).
     """
     BASE_IMAGE_PATH = "img/resources/binary-cards-small/"
     IMAGE_SIZE_X = 2480
@@ -77,7 +77,7 @@ def subtitle(task):
         task: Dicitionary of requested document.
 
     Returns:
-        text for subtitle (string)
+        text for subtitle (str).
     """
     if task["dot_counts"]:
         display_numbers_text = "with dot counts"

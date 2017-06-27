@@ -2,6 +2,9 @@ lessons: lessons/lessons.yaml
 computational-thinking-links: unit-plan-ct-links.md
 
 age-groups:
+  5-7:
+    parity-magic-junior:
+      number: 1
   8-10:
     parity-magic:
       number: 1

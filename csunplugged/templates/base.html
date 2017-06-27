@@ -25,13 +25,14 @@
     <meta name="theme-color" content="#ffffff">
   </head>
   <body>
-    <nav class="navbar fixed-top navbar-toggleable-sm navbar-light">
+    <nav class="navbar fixed-top navbar-toggleable-sm navbar-light py-1">
       <div class="container px-0">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a href="{% url 'general:home' %}">
-          <img src="{% static 'img/logo-small.png' %}" id="navbar-brand-logo" alt="">
+        <a class="navbar-brand" href="{% url 'general:home' %}">
+          <img src="{% static 'img/logo-small.png' %}" id="navbar-brand-logo" class="d-inline-block align-top" alt="CS Unplugged logo">
+          2.0 sneak peek
         </a>
         <div class="collapse navbar-collapse" id="navbarNav">
           <div class="navbar-nav ml-auto">
@@ -137,6 +138,11 @@
               </a>
             </li>
             <li>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSccsE8TC-o0iptiT83iQ9R3nbUngkK0ch4G8sljCL8IpF-89Q/viewform">
+                Feedback
+              </a>
+            </li>
+            <li>
               <a href="{% url 'general:contact' %}">
                 Contact
               </a>
@@ -146,7 +152,7 @@
       </div>
     </div>
 
-    <footer class="text-center">
+    <footer id="page-footer" class="text-center">
       <div class="container background-csfg py-3 w-100">
         <p class="mb-0">
           Looking for something for high schools?
@@ -154,9 +160,12 @@
         </p>
       </div>
       <div class="container py-3">
-        <p class="mb-0">
+        <p>
           The CS Unplugged material is open source on <a href="https://github.com/uccser/cs-unplugged">GitHub</a>, and this website's content is shared under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International license</a>.
           The CS Unplugged is a project by the <a href="http://www.cosc.canterbury.ac.nz/research/RG/CSE/">Computer Science Education Research Group</a> at the <a href="http://www.canterbury.ac.nz/">University of Canterbury</a>, New Zealand.
+        </p>
+        <p class="mb-0">
+          <small><a href="http://cs-unplugged.readthedocs.io/en/latest/changelog.html">{{ VERSION_NUMBER }}</a></small>
         </p>
       </div>
     </footer>
@@ -189,5 +198,16 @@
     </script>
     {% block scripts %}
     {% endblock scripts %}
+
+    {% if PRODUCTION %}
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-101482996-1', 'auto');
+        ga('send', 'pageview');
+      </script>
+    {% endif %}
   </body>
 </html>

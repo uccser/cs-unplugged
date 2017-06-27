@@ -58,7 +58,7 @@ def subtitle(task):
         task: Dicitionary of requested document.
 
     Returns:
-        text for subtitle (string)
+        text for subtitle (str).
     """
     prefilled_values = task["prefilled_values"]
     if prefilled_values == "blank":
@@ -77,7 +77,7 @@ def number_range(task):
         task: Dicitionary of requested document.
 
     Returns:
-        Tuple of (range_min, range_max, font_size)
+        Tuple of (range_min, range_max, font_size).
     """
     prefilled_values = task["prefilled_values"]
     range_min = 0

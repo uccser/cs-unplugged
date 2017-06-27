@@ -13,7 +13,7 @@ def resource_image(task, resource_manager):
         resource_manager: File loader for external resources.
 
     Returns:
-        A list of Pillow image objects.
+        A list of Pillow image objects (list).
     """
     IMAGE_SIZE_X = 2000
     IMAGE_SIZE_Y = 3000
@@ -110,7 +110,7 @@ def subtitle(task):
         task: Dicitionary of requested document.
 
     Returns:
-        text for subtitle (string)
+        text for subtitle (str).
     """
     return "{} - {}".format(
         task["type"].replace("_", " "),

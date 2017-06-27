@@ -3,7 +3,7 @@
 from django.shortcuts import get_object_or_404
 from django.views import generic
 from django.http import JsonResponse, Http404
-from general.templatetags.render_html_field import render_html_with_static
+from config.templatetags.render_html_field import render_html_with_static
 from utils.group_lessons_by_age import group_lessons_by_age
 from .models import (
     Topic,
@@ -353,6 +353,9 @@ def glossary_json(request, **kwargs):
 
     Returns:
         JSON response is sent containing data for the requested term.
+
+    Raises:
+        404 error if term not found.
     """
     # If term parameter, then return JSON
     if "term" in request.GET:

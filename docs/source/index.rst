@@ -58,3 +58,4 @@ following (or similar):
     developer/index
     other/index
     troubleshooting
+    changelog

@@ -12,14 +12,12 @@ def resource_image(task, resource_manager):
         resource_manager: File loader for external resources.
 
     Returns:
-        A list of Pillow image objects.
+        A list of Pillow image objects (list).
     """
+    image_path = "img/resources/modulo-clock/modulo-clock-{}.png"
+
     modulo_number = int(task["modulo_number"])
-    if modulo_number == 2:
-        image_path = "img/resources/modulo-clock/modulo-clock-2.png"
-    elif modulo_number == 10:
-        image_path = "img/resources/modulo-clock/modulo-clock-10.png"
-    data = resource_manager.load(image_path)
+    data = resource_manager.load(image_path.format(modulo_number))
     image = Image.open(data)
     draw = ImageDraw.Draw(image)
 
@@ -28,21 +26,22 @@ def resource_image(task, resource_manager):
     local_font_path = resource_manager.get_path(font_path)
     font = ImageFont.truetype(local_font_path, font_size)
 
-    x_offset = 75
-    y_offset = 225
     radius = 750
-    x_center = (image.width - x_offset) / 2
-    y_center = (image.height - y_offset) / 2
-    start_angle = (2 * pi) / modulo_number
-
-    for num in range(0, modulo_number):
-        text = str(num)
-        angle = start_angle * (num - 2.5)
+    x_center = image.width / 2
+    y_center = image.height / 2
+    # Count from the '12 oclock position'
+    start_angle = pi * 1.5
+    angle_between_numbers = (2 * pi) / modulo_number
+    for number in range(0, modulo_number):
+        text = str(number)
+        angle = start_angle + (angle_between_numbers * number)
         x_coord = radius * cos(angle) + x_center
         y_coord = radius * sin(angle) + y_center
-
+        text_width, text_height = draw.textsize(text, font=font)
+        text_coord_x = x_coord - (text_width / 2)
+        text_coord_y = y_coord - (text_height / 2)
         draw.text(
-            (x_coord, y_coord),
+            (text_coord_x, text_coord_y),
             text,
             font=font,
             fill="#000"
@@ -63,8 +62,13 @@ def subtitle(task):
     Returns:
         Text for subtitle (str).
     """
+    modulo_number = task["modulo_number"]
+    if modulo_number == "1":
+        modulo_text = "blank"
+    else:
+        modulo_text = modulo_number
     return "{} - {}".format(
-        task["modulo_number"],
+        modulo_text,
         task["paper_size"]
     )
 
@@ -78,6 +82,6 @@ def valid_options():
         All valid options (dict).
     """
     return {
-        "modulo_number": ["2", "10"],
+        "modulo_number": ["1", "2", "10"],
         "paper_size": ["a4", "letter"]
     }

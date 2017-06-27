@@ -12,7 +12,7 @@ def resource_image(task, resource_manager):
         resource_manager: File loader for external resources.
 
     Returns:
-        A list of Pillow image objects (list of Image objects).
+        A list of Pillow image objects (list).
     """
     BASE_IMAGE_PATH = "img/resources/binary-windows/"
     FONT_PATH = "fonts/PatrickHand-Regular.ttf"
@@ -71,7 +71,7 @@ def add_dot_counts(image, starting_value, font):
         font: Font used for adding text (Pillow Font).
 
     Returns:
-        Pillow Image with text added.
+        Pillow Image with text added (Pillow Image).
     """
     value = starting_value
     draw = ImageDraw.Draw(image)
@@ -108,7 +108,7 @@ def add_digit_values(image, resource_manager, value_type, on, x_coord_start, x_c
         font: Font used for adding text (Pillow Font).
 
     Returns:
-        Pillow Image with binary values.
+        Pillow Image with binary values (Pillow Image).
     """
     text_coord_x = x_coord_start
 
@@ -163,7 +163,7 @@ def subtitle(task):
         task: Dicitionary of requested document.
 
     Returns:
-        text for subtitle (str)
+        text for subtitle (str).
     """
     number_of_bits = task["number_bits"]
     value_type = task["value_type"]

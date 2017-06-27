@@ -81,7 +81,7 @@ def subtitle(task):
         task: Dicitionary of requested document.
 
     Returns:
-        text for subtitle (string)
+        text for subtitle (str)
     """
     prefilled_values = task["prefilled_values"]
     if prefilled_values == "blank":

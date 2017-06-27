@@ -1,3 +1,21 @@
+parity-magic-junior:
+  duration: 30
+  computational-thinking-links: parity-magic-junior-ct-links.md
+  learning-outcomes:
+    - error-follow-steps-find-card-turned-over
+    - error-explain-chose-parity-card
+    - error-explain-group-numbers
+    - error-recognise-groups-of-5
+    - error-demonstrate-count-to-5
+    - numeracy-describe-rows-columns
+  generated-resources:
+    parity-cards:
+      description: Two pages of parity cards per pair of students.
+  classroom-resources:
+    - A set of 36 parity cards.
+    - A metal board (ideally a whiteboard) if magnetic parity cards are being
+      used.
+
 parity-magic:
   duration: 30
   computational-thinking-links: parity-magic-ct-links.md

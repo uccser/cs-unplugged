@@ -16,8 +16,8 @@ class ResourcesLoader(BaseLoader):
         """Create the loader for loading resources.
 
         Args:
-            structure_file: file path for structure YAML file (string)
-            BASE_PATH: base file path (string)
+            structure_file: file path for structure YAML file (str).
+            BASE_PATH: base file path (str).
         """
         super().__init__(BASE_PATH)
         self.structure_file = structure_file

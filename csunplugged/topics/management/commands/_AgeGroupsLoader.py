@@ -17,8 +17,8 @@ class AgeGroupsLoader(BaseLoader):
         """Create the loader for loading age groups.
 
         Args:
-            structure_file_path: File path to YAML file (string)
-            BASE_PATH: Base file path (string).
+            structure_file_path: File path to YAML file (str).
+            BASE_PATH: Base file path (str).
         """
         super().__init__(BASE_PATH)
         self.structure_file_path = structure_file_path
@@ -30,7 +30,7 @@ class AgeGroupsLoader(BaseLoader):
 
         Raise:
             MissingRequiredFieldError: when no object can be found with the
-                                       matching attribute.
+                matching attribute.
         """
         age_groups_structure = self.load_yaml_file(
             os.path.join(

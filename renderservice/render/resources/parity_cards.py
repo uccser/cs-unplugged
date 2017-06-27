@@ -12,7 +12,7 @@ def resource_image(task, resource_manager):
         resource_manager: File loader for external resources.
 
     Returns:
-        A list of Pillow image objects.
+        A list of Pillow image objects (list).
     """
     CARDS_COLUMNS = 4
     CARDS_ROWS = 5
@@ -60,7 +60,7 @@ def subtitle(task):
         task: Dicitionary of requested document options.
 
     Returns:
-        text for subtitle (string)
+        text for subtitle (str).
     """
     text = "{} back - {}".format(
         task["back_colour"],

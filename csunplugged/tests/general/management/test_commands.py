@@ -10,5 +10,7 @@ class ManagementCommandTest(BaseTestWithDB):
         super().__init__(*args, **kwargs)
         self.language = "en"
 
-    def test_commands(self):
+    def test_updatedata_command(self):
         management.call_command("updatedata")
+
+    def test_makeresources_command(self):

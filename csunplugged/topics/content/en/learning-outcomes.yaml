@@ -56,21 +56,33 @@ binary-interpret-message-binary:
     - generalising-and-patterns
 
 binary-explain-codes-alphabets:
-  text: Explain how codes for larger alphabets could be created that also include capital letters, punctuation, symbols and diacritics (e.g. macrons, accents)
+  text: Explain how codes for larger alphabets could be created that also include capital letters, punctuation, symbols and diacritics (e.g. macrons, accents).
   curriculum-areas:
     - generalising-and-patterns
 
 binary-make-play-instructions-binary:
-  text: Make a play that gives instructions on how to represent a number in binary
+  text: Make a play that gives instructions on how to represent a number in binary.
   curriculum-areas:
     - decomposition
     - drama
 
 binary-identify-opposite-pairs:
-  text: Identify opposite pairs such as happy face and sad face
+  text: Identify opposite pairs such as happy face and sad face.
   curriculum-areas:
     - abstraction
     - literacy
+
+binary-match-letters-numbers:
+  text: Match letters in the alphabet to the numbers representing them.
+  curriculum-areas:
+    - abstraction
+    - literacy
+
+binary-count-highest-number:
+  text: Count on from the highest number to find the total number of dots on the binary cards.
+  curriculum-areas:
+    - decomposition
+    - numeracy
 
 # DRAMA LEARNING OUTCOMES
 
@@ -107,6 +119,26 @@ error-explain-checksum-algorithm:
   text: Explain why the checksum algorithm is so reliable.
   curriculum-areas:
     - logic
+
+error-follow-steps-find-card-turned-over:
+  text: Follow the steps to work out how to find the bit (card) that was turned over in the parity trick.
+  curriculum-areas:
+    - decomposition
+
+error-explain-group-numbers:
+  text: Explain how to group numbers into even or odd numbers.
+  curriculum-areas:
+    - numeracy
+
+error-recognise-groups-of-5:
+  text: Recognise groups of 5 and skip count in fives
+  curriculum-areas:
+    - numeracy
+
+error-demonstrate-count-to-5:
+  text: Demonstrate how to count to 5 by matching their counting to the cards.
+  curriculum-areas:
+    - numeracy
 
 # LANUGAGE LEARNING OUTCOMES
 
@@ -197,7 +229,7 @@ numeracy-discuss-modulo-understanding-remainders:
 # PROGRAMMING LEARNING OUTCOMES
 
 programming-explain-sequencing:
-  text: Explain how sequence works in programming
+  text: Explain how sequence works in programming.
   curriculum-areas:
     - programming
 
@@ -216,6 +248,11 @@ programming-describe-variables:
   curriculum-areas:
     - programming
 
+programming-describe-mathematical-operations:
+  text: Describe how you have used mathematical operations in your program.
+  curriculum-areas:
+    - programming
+
 programming-outline-variable-updates:
   text: Outline how storing values in a variable is updated because of the code you have used.
   curriculum-areas:
@@ -223,6 +260,11 @@ programming-outline-variable-updates:
 
 programming-describe-variable-output:
   text: Describe how a variable can be displayed as an output.
+  curriculum-areas:
+    - programming
+
+programming-describe-function:
+  text: Describe the reason why you wrote a function in your program.
   curriculum-areas:
     - programming
 
@@ -281,10 +323,102 @@ programming-identify-list-store-data:
   curriculum-areas:
     - programming
 
+# UNPLUGGED PROGRAMMING LEARNING OUTCOMES
+
+unplugged-programming-apply-addition-multiplication:
+  text: Apply addition and multiplication to work out the number of actions that an end user will complete.
+  curriculum-areas:
+    - numeracy
+
+unplugged-programming-design-fitness-achievable:
+  text: Design a series of fitness activities that are achievable for your end users.
+  curriculum-areas:
+    - fitness
+
+unplugged-programming-construct-fitness-workout:
+  text: Construct a fitness workout that combines strength and cardio activities.
+  curriculum-areas:
+    - fitness
+    - algorithmic-thinking
+
+unplugged-programming-design-language:
+  text: Design a fitness unplugged programming language that is easily interpreted.
+  curriculum-areas:
+    - programming
+
+unplugged-programming-give-instructions:
+  text: Give a set of instructions that moves an object from a starting point to a desired destination.
+  curriculum-areas:
+    - programming
+    - geometry
+
+unplugged-programming-identify-bug-correct:
+  text: Follow instructions accuratelyIdentify where a bug has occured and be able to correct the code to allow the object to move to the desired destination.
+  curriculum-areas:
+    - programming
+
+unplugged-programming-explain-exact-instructions:
+  text: Explain why it’s important to give very exact instructions.
+  curriculum-areas:
+    - programming
+    - geometry
+
+unplugged-programming-follow-instructions:
+  text: Follow instructions accurately.
+  curriculum-areas:
+    - geometry
+    - literacy
+
+unplugged-programming-identify-2D-shapes:
+  text: Identify and name 2D shapes.
+  curriculum-areas:
+    - geometry
+
+unplugged-programming-communicate-debugging:
+  text: Communicate when the code isn’t correct so that the person knows what needs debugging.
+  curriculum-areas:
+    - programming
+    - literacy
+
+unplugged-programming-actively-listen-feedback:
+  text: Actively listen to the feedback and debug the program.
+  curriculum-areas:
+    - programming
+    - literacy
+
+unplugged-programming-give-accurate-instructions-pace:
+  text: Give accurate instructions at a pace that the person can follow.
+  curriculum-areas:
+    - speaking
+
+unplugged-programming-give-instructions-shape:
+  text: Give a set of instructions that moves an object from a starting point in a desired shape.
+  curriculum-areas:
+    - programming
+    - geometry
+
+unplugged-programming-identify-bug-shape:
+  text: Identify where a bug has occurred and be able to correct the code to allow the object to move in a desired shape.
+  curriculum-areas:
+    - programming
+    - logic
+
+unplugged-programming-describe-draw-2D-shape:
+  text: Describe how to draw a given 2D shape like a square or a rectangle.
+  curriculum-areas:
+    - programming
+    - geometry
+    - decomposition
+
+unplugged-programming-accurately-count:
+  text: Accurately count from one space to the next one.
+  curriculum-areas:
+    - numeracy
+
 # SORTING LEARNING OUTCOMES
 
 sorting-explain-parallel-algorithm:
-  text: Explain how a Sorting Network parallel algorithm works. 
+  text: Explain how a Sorting Network parallel algorithm works.
   curriculum-areas:
     - algorithmic-thinking
 
@@ -294,7 +428,12 @@ sorting-use-selection-sort:
     - decomposition
 
 sorting-identify-number-range:
-  text: Identify which number comes before or after in any range of numbers
+  text: Identify which number comes before or after in any range of numbers.
+  curriculum-areas:
+    - numeracy
+
+sorting-identify-number-given-range:
+  text: Identify which number comes before or after in a given range of numbers.
   curriculum-areas:
     - numeracy
 
@@ -317,4 +456,3 @@ sorting-comparing-musical-pitch:
   text: Compare musical pitch in musical notation and aurally.
   curriculum-areas:
     - music
-
