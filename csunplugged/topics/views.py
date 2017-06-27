@@ -31,7 +31,7 @@ class IndexView(generic.ListView):
         Returns:
             Queryset of Topic objects ordered by name.
         """
-        return Topic.objects.order_by("name")
+        return Topic.objects.order_by("name").prefetch_related("unit_plans")
 
 
 class TopicView(generic.DetailView):

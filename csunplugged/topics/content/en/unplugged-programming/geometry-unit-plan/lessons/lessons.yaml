@@ -25,6 +25,7 @@ finding-2d-shapes:
 
 moving-in-a-shape:
   duration: 30
+  computational-thinking-links: moving-in-a-shape-ct-links.md
   learning-outcomes:
     - unplugged-programming-give-instructions-shape
     - unplugged-programming-identify-bug-shape

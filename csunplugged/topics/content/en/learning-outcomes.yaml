@@ -120,6 +120,26 @@ error-explain-checksum-algorithm:
   curriculum-areas:
     - logic
 
+error-follow-steps-find-card-turned-over:
+  text: Follow the steps to work out how to find the bit (card) that was turned over in the parity trick.
+  curriculum-areas:
+    - decomposition
+
+error-explain-group-numbers:
+  text: Explain how to group numbers into even or odd numbers.
+  curriculum-areas:
+    - numeracy
+
+error-recognise-groups-of-5:
+  text: Recognise groups of 5 and skip count in fives
+  curriculum-areas:
+    - numeracy
+
+error-demonstrate-count-to-5:
+  text: Demonstrate how to count to 5 by matching their counting to the cards.
+  curriculum-areas:
+    - numeracy
+
 # LANUGAGE LEARNING OUTCOMES
 
 language-discuss-storing-characters:
@@ -303,6 +323,11 @@ programming-identify-list-store-data:
   curriculum-areas:
     - programming
 
+programming-show-item-specified-position-list:
+  text: Show how to access an the item at a specified position in a list.
+  curriculum-areas:
+    - programming
+
 # UNPLUGGED PROGRAMMING LEARNING OUTCOMES
 
 unplugged-programming-apply-addition-multiplication:
@@ -394,6 +419,14 @@ unplugged-programming-accurately-count:
   text: Accurately count from one space to the next one.
   curriculum-areas:
     - numeracy
+
+unplugged-programming-give-precise-instructions:
+  text: Give a set of precise instructions that programs an object to move efficiently from one point to another.
+
+unplugged-programming-identify-bug-correct:
+  text: Identify where a bug has occurred and be able to correct the code to allow the object to move to the desired destination.
+  curriculum-areas:
+    - programming
 
 # SORTING LEARNING OUTCOMES
 

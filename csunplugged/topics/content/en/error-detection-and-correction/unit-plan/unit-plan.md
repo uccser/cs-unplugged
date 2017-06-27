@@ -1,4 +1,4 @@
-# Error detection and correction unit plan
+# Error detection and correction
 
 {panel type="teaching" title="See teaching this in action!"}
 

@@ -1,4 +1,4 @@
-# Sorting networks unit plan
+# Sorting networks
 
 {panel type="teaching" title="See teaching this in action!"}
 
