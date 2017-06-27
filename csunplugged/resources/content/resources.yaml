@@ -82,3 +82,9 @@ left-right-cards:
   generation-view: left_right_cards.py
   thumbnail-static-path: img/resources/left-right-cards/thumbnail.png
   copies: false
+grid:
+  name: Grid
+  webpage-template: resources/grid.html
+  generation-view: grid.py
+  thumbnail-static-path: img/resources/grid/thumbnail.png
+  copies: false
