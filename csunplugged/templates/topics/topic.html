@@ -87,12 +87,16 @@
           <a class="nav-link" href="#{{ unit_plan.slug }}">{{ unit_plan.name }}</a>
         </li>
       {% endfor %}
-      <li class="nav-item">
-        <a class="nav-link" href="#integrations">Curriculum integrations</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#resources">Resources</a>
-      </li>
+      {% if curriculum_integrations %}
+        <li class="nav-item">
+          <a class="nav-link" href="#integrations">Curriculum integrations</a>
+        </li>
+      {% endif %}
+      {% if resources %}
+        <li class="nav-item">
+          <a class="nav-link" href="#resources">Resources</a>
+        </li>
+      {% endif %}
       {% if topic.other_resources %}
         <li class="nav-item">
           <a class="nav-link" href="#other-resources">Other resources</a>
