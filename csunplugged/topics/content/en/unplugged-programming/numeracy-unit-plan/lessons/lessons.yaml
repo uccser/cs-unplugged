@@ -20,3 +20,4 @@ modulo:
     - modulo-add-months
     - modulo-add-video-timings
     - modulo-check-leap-year
+  programming-challenges-description: modulo-programming.md
