@@ -4,3 +4,6 @@ age-groups:
   5-7:
     fitness-unplugged:
       number: 3
+  8-10:
+    sending-a-rocket-to-mars:
+      number: 1

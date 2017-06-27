@@ -395,6 +395,14 @@ unplugged-programming-accurately-count:
   curriculum-areas:
     - numeracy
 
+unplugged-programming-give-precise-instructions:
+  text: Give a set of precise instructions that programs an object to move efficiently from one point to another.
+
+unplugged-programming-identify-bug-correct:
+  text: Identify where a bug has occurred and be able to correct the code to allow the object to move to the desired destination.
+  curriculum-areas:
+    - programming
+
 # SORTING LEARNING OUTCOMES
 
 sorting-explain-parallel-algorithm:

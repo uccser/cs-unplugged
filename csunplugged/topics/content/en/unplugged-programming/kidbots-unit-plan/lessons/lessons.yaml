@@ -25,7 +25,7 @@ sending-a-rocket-to-mars:
     - unplugged-programming-explain-exact-instructions
     - unplugged-programming-give-accurate-instructions-pace
     - unplugged-programming-communicate-debugging
-    - unplugged-programming-communicate-debugging
+    - unplugged-programming-actively-listen-feedback
   generated-resources:
     arrows:
       description: Cut theses sheets out for students.
@@ -42,3 +42,8 @@ sending-a-rocket-to-mars:
     - A toy that will be the object moving  (in our example we use a rocket).
     - 1 to 5 blocks or toys to represent barriers such as a comet, space junk and an asteroid.
     - Small whiteboard and two whiteboard pens (different colours); or paper on a clipboard.
+  programming-challenges:
+    - program-bee-bot
+    - modify-bee-bot
+    - catch-the-mouse
+    - catch-the-mouse-random
