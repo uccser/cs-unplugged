@@ -120,6 +120,26 @@ error-explain-checksum-algorithm:
   curriculum-areas:
     - logic
 
+error-follow-steps-find-card-turned-over:
+  text: Follow the steps to work out how to find the bit (card) that was turned over in the parity trick.
+  curriculum-areas:
+    - decomposition
+
+error-explain-group-numbers:
+  text: Explain how to group numbers into even or odd numbers.
+  curriculum-areas:
+    - numeracy
+
+error-recognise-groups-of-5:
+  text: Recognise groups of 5 and skip count in fives
+  curriculum-areas:
+    - numeracy
+
+error-demonstrate-count-to-5:
+  text: Demonstrate how to count to 5 by matching their counting to the cards.
+  curriculum-areas:
+    - numeracy
+
 # LANUGAGE LEARNING OUTCOMES
 
 language-discuss-storing-characters:
