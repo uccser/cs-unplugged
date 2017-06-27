@@ -472,3 +472,102 @@ flip-coins:
     - programming-describe-variables
     - programming-explain-asking-input-end-user
     - programming-identify-if-statement
+
+modulo-even-odd-numbers:
+  challenge-set-number: 1
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-asking-input-end-user
+    - programming-identify-if-statement
+
+modulo-check-divisor:
+  challenge-set-number: 2
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-identify-if-statement
+    - programming-explain-join-concatenate
+    - programming-describe-variables
+
+modulo-add-hours-12-hour-clock:
+  challenge-set-number: 3
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-identify-if-statement
+    - programming-explain-join-concatenate
+    - programming-describe-variables
+
+modulo-add-hours-12-hour-clock-without-mod:
+  challenge-set-number: 3
+  challenge-number: 2
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-describe-mathematical-operations
+    - programming-explain-join-concatenate
+    - programming-describe-variables
+
+modulo-add-hours-24-hour-clock:
+  challenge-set-number: 3
+  challenge-number: 3
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-identify-if-statement
+    - programming-explain-join-concatenate
+    - programming-describe-variables
+  extra-challenge: extra-challenge.md
+
+modulo-display-midi-note:
+  challenge-set-number: 4
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-mod
+    - programming-explain-asking-input-end-user
+    - programming-identify-loop
+
+modulo-add-months:
+  challenge-set-number: 5
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-explain-join-concatenate
+    - programming-describe-variables
+    - programming-show-item-specified-position-list
+
+modulo-add-video-timings:
+  challenge-set-number: 6
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-describe-variables
+    - programming-explain-join-concatenate
+    - programming-describe-mathematical-operations
+
+modulo-check-leap-year:
+  challenge-set-number: 7
+  challenge-number: 1
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-describe-mathematical-operations
+    - programming-explain-mod
+    - programming-identify-if-statement
