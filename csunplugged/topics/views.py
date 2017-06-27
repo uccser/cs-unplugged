@@ -33,6 +33,7 @@ class IndexView(generic.ListView):
         """
         return Topic.objects.order_by("name").prefetch_related("unit_plans")
 
+
 class TopicView(generic.DetailView):
     """View for a specific topic."""
 
