@@ -38,6 +38,10 @@
         {% include "topics/lessons-table.html" %}
       {% endwith %}
     {% endif %}
+
+    {% if not forloop.last %}
+      <hr>
+    {% endif %}
   {% endfor %}
 
   {% if curriculum_integrations %}
