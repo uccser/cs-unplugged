@@ -15,7 +15,6 @@ Were they able to interpret the loop correctly?
 {panel type="ct-abstraction" title="Abstraction"}
 
 The symbols on the cards represented the physical actions students needed to perform; they were an abstract representation.
-Abstraction was also used to simplify things when the hula hoop was used as a 
 
 #### Examples of what you could look for:
 
@@ -25,7 +24,7 @@ Were the students able to work with the symbols?
 
 {panel type="ct-decomposition" title="Decomposition"}
 
-The hula hoop represents a compound action, as the cards inside it were a sub-list of actions that could be thought of as a single action that is composed of the sub-actions. 
+The hula hoop represents a compound action, as the cards inside it were a sub-list of actions that could be thought of as a single action that is composed of the sub-actions.
 
 #### Examples of what you could look for:
 
@@ -62,7 +61,7 @@ When students encounter bugs in their programs they will need to logically step 
 They will need to think about what they expect to happen when each instruction is followed, and if they do not get the result they expected they will need to identify what went wrong, why it went wrong, and how to fix it.
 This requires students to apply their logical thinking skills
 
-#### Examples of what you could look for: 
+#### Examples of what you could look for:
 
 Do students go through their instructions and predict what will happen each time one is executed?
 When they debug their instructions do they use a logical method to do this?
