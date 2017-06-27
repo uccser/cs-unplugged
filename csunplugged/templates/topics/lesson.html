@@ -34,7 +34,7 @@
     <ul>
       {% for learning_outcome in learning_outcomes %}
         <li>
-          {{ learning_outcome.text }}
+          {{ learning_outcome.text }}<br>
           {% for area in learning_outcome.curriculum_areas.all %}
             {% include "topics/curriculum-area-badge.html" %}
           {% endfor %}
