@@ -24,7 +24,7 @@
   {% for unit_plan in unit_plans %}
     <div class="link-box-container">
       <a class="link-box link-box-md-6" href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">
-        <h3 id="{{ unit_plan.slug }}" class="link-box-title">{{ unit_plan.name }}</h3>
+        <h3 id="{{ unit_plan.slug }}" class="link-box-title"><span class="text-muted">Unit plan:</span> {{ unit_plan.name }}</h3>
       </a>
     </div>
 
