@@ -9,11 +9,11 @@ def resource_image(request, resource):
     """Create a image for Binary Windows resource.
 
     Args:
-        request: HTTP request object (Request).
+        request: HTTP request object (HttpRequest).
         resource: Object of resource data (Resource).
 
     Returns:
-        A list of Pillow image objects (list of Image objects).
+        A list of Pillow image objects (list).
     """
     BASE_IMAGE_PATH = "static/img/resources/binary-windows/"
     FONT_PATH = "static/fonts/PatrickHand-Regular.ttf"
@@ -34,7 +34,7 @@ def resource_image(request, resource):
     for (filename, dot_count_start) in page_sets:
         image = Image.open(os.path.join(BASE_IMAGE_PATH, filename))
         image = add_digit_values(image, value_type, True, 660, 724, 1700, FONT)
-        if dot_counts == "yes":
+        if dot_counts:
             image = add_dot_counts(image, dot_count_start, SMALL_FONT)
         image = image.rotate(90, expand=True)
         images.append(image)
@@ -69,7 +69,7 @@ def add_dot_counts(image, starting_value, font):
         font: Font used for adding text (Pillow Font).
 
     Returns:
-        Pillow Image with text added.
+        Pillow Image with text added (Pillow Image).
     """
     value = starting_value
     draw = ImageDraw.Draw(image)
@@ -106,7 +106,7 @@ def add_digit_values(image, value_type, on, x_coord_start, x_coord_increment, ba
         font: Font used for adding text (Pillow Font).
 
     Returns:
-        Pillow Image with binary values.
+        Pillow Image with binary values (Pillow Image).
     """
     text_coord_x = x_coord_start
 
@@ -157,16 +157,16 @@ def subtitle(request, resource):
     also on the resource image.
 
     Args:
-        request: HTTP request object (Request).
+        request: HTTP request object (HttpRequest).
         resource: Object of resource data (Resource).
 
     Returns:
-        text for subtitle (str)
+        text for subtitle (str).
     """
     number_of_bits = retrieve_query_parameter(request, "number_bits")
     value_type = retrieve_query_parameter(request, "value_type")
     dot_counts = retrieve_query_parameter(request, "dot_counts")
-    if dot_counts == "yes":
+    if dot_counts:
         count_text = "with dot counts"
     else:
         count_text = "without dot counts"
@@ -190,6 +190,6 @@ def valid_options():
     return {
         "number_bits": ["4", "8"],
         "value_type": ["binary", "lightbulb"],
-        "dot_counts": ["yes", "no"],
+        "dot_counts": [True, False],
         "paper_size": ["a4", "letter"],
     }

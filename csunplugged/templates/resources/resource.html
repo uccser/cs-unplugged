@@ -76,7 +76,7 @@
 {% block end_content %}
   {% if grouped_lessons %}
     <h2>Related Lessons</h2>
-    {% for age_range, lessons in grouped_lessons.items %}
+    {% for age_group, lessons in grouped_lessons.items %}
       <table class="table table-responsive table-center-vertical">
         <thead class="thead-default">
           <tr>
@@ -95,7 +95,7 @@
                 </a>
               </td>
               <td class="text-center">
-                {{ age_range.0 }} to {{ age_range.1 }}
+                {{ age_group.ages.lower }} to {{ age_group.ages.upper }}
               </td>
               <td class="text-center">
                 {{ lesson.number }}

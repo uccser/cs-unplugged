@@ -4,6 +4,12 @@
 @import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
 
 $body-space-from-top: 72px;
+$ct-abstraction: #E30613;
+$ct-algorithm: #0B983A;
+$ct-decomposition: #DABB00;
+$ct-evaluation: #0F70B7;
+$ct-logic: #EA5B0C;
+$ct-pattern: #82358C;
 
 img {
   &.content-image {
@@ -58,7 +64,7 @@ div.plugged-in-language-implementation {
 $rounded-corner-radius: 0.5rem;
 
 .jumbotron {
-  background: linear-gradient( rgba($red,.7), rgba($red,.7) ), url("../img/sorting-network-photo.jpg");
+  background: linear-gradient( rgba($red,.7), rgba($red,.7) ), url("../img/home-page-banner-photo.jpg");
   background-size: cover;
   border: $card-border-width solid darken($red, 10%);
   border-radius: $rounded-corner-radius;
@@ -99,6 +105,11 @@ $rounded-corner-radius: 0.5rem;
   &.link-box-md-3 {
     @include media-breakpoint-up(md) {
       width: 32%;
+    }
+  }
+  &.link-box-md-6 {
+    @include media-breakpoint-up(md) {
+      width: 49%;
     }
   }
   &.link-box-lg-4 {
@@ -170,8 +181,7 @@ $rounded-corner-radius: 0.5rem;
   border-bottom: 2px $red solid;
 
   #navbar-brand-logo {
-    height: 2.5em;
-    margin-right: 1rem;
+    height: 2.5rem;
   }
 
   .navbar-nav .nav-link {
@@ -188,9 +198,9 @@ $rounded-corner-radius: 0.5rem;
   border-top: 2px $red solid;
 }
 
-footer {
+#page-footer {
   background-color: $red;
-  color: rgba($white, 0.8);
+  color: rgba($white, 0.6);
   a {
     color: $white;
     @include hover-focus {
@@ -246,22 +256,22 @@ details {
     background-color: darken($gray-lighter, 10%);
   }
   &.panel-ct-abstraction {
-    @include detail-colour-variant(#E30613);
+    @include detail-colour-variant($ct-abstraction);
   }
   &.panel-ct-algorithm {
-    @include detail-colour-variant(#0B983A);
+    @include detail-colour-variant($ct-algorithm);
   }
   &.panel-ct-decomposition {
-    @include detail-colour-variant(darken(#FFDD0E, 10%));
+    @include detail-colour-variant($ct-decomposition);
   }
   &.panel-ct-evaluation {
-    @include detail-colour-variant(#0F70B7);
+    @include detail-colour-variant($ct-evaluation);
   }
   &.panel-ct-logic {
-    @include detail-colour-variant(#EA5B0C);
+    @include detail-colour-variant($ct-logic);
   }
   &.panel-ct-pattern {
-    @include detail-colour-variant(#82358C);
+    @include detail-colour-variant($ct-pattern);
   }
 }
 
@@ -269,6 +279,9 @@ details {
   color: white;
 }
 .difficulty-level-{
+  &0 {
+    background-color: #DABB00;
+  }
   &1 {
     background-color: $blue;
   }
@@ -384,4 +397,12 @@ body {
 
 .btn {
   cursor: pointer;
+}
+
+ol, ul {
+    margin-bottom: 1rem !important;
+}
+
+.large-text {
+  font-size: 3rem;
 }

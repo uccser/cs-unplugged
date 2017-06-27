@@ -1,0 +1,6 @@
+lessons: lessons/lessons.yaml
+
+age-groups:
+  5-7:
+    fitness-unplugged:
+      number: 3

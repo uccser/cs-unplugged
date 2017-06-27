@@ -9,11 +9,11 @@ def resource_image(request, resource):
     """Create a image for Binary Cards resource.
 
     Args:
-        request: HTTP request object.
-        resource: Object of resource data.
+        request: HTTP request object (HttpRequest).
+        resource: Object of resource data (Resource).
 
     Returns:
-        A list of Pillow image objects.
+        A list of Pillow image objects (list).
     """
     BASE_IMAGE_PATH = "static/img/resources/binary-cards/"
     IMAGE_SIZE_X = 2480
@@ -34,7 +34,7 @@ def resource_image(request, resource):
     display_numbers = retrieve_query_parameter(request, "display_numbers", parameter_options["display_numbers"])
     black_back = retrieve_query_parameter(request, "black_back", parameter_options["black_back"])
 
-    if display_numbers == "yes":
+    if display_numbers:
         font_path = "static/fonts/PatrickHand-Regular.ttf"
         font = ImageFont.truetype(font_path, 600)
         BASE_COORD_X = IMAGE_SIZE_X / 2
@@ -45,7 +45,7 @@ def resource_image(request, resource):
 
     for (image_path, number) in IMAGE_DATA:
         image = Image.open(os.path.join(BASE_IMAGE_PATH, image_path))
-        if display_numbers == "yes":
+        if display_numbers:
             background = Image.new("RGB", (IMAGE_SIZE_X, IMAGE_SIZE_Y), "#FFF")
             background.paste(image, mask=image)
             draw = ImageDraw.Draw(background)
@@ -62,7 +62,7 @@ def resource_image(request, resource):
             image = background
         images.append(image)
 
-        if black_back == "yes":
+        if black_back:
             black_card = Image.new("1", (IMAGE_SIZE_X, IMAGE_SIZE_Y))
             images.append(black_card)
 
@@ -76,17 +76,17 @@ def subtitle(request, resource):
     also on the resource image.
 
     Args:
-        request: HTTP request object
-        resource: Object of resource data.
+        request: HTTP request object (HttpRequest).
+        resource: Object of resource data (Resource).
 
     Returns:
-        text for subtitle (string)
+        text for subtitle (str).
     """
-    if retrieve_query_parameter(request, "display_numbers") == "yes":
+    if retrieve_query_parameter(request, "display_numbers"):
         display_numbers_text = "with numbers"
     else:
         display_numbers_text = "without numbers"
-    if retrieve_query_parameter(request, "black_back") == "yes":
+    if retrieve_query_parameter(request, "black_back"):
         black_back_text = "with black back"
     else:
         black_back_text = "without black back"
@@ -107,7 +107,7 @@ def valid_options():
         All valid options (dict).
     """
     return {
-        "display_numbers": ["yes", "no"],
-        "black_back": ["yes", "no"],
+        "display_numbers": [True, False],
+        "black_back": [True, False],
         "paper_size": ["a4", "letter"],
     }

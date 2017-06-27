@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load render_html_field %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}
+  {{ lesson.name }} programming challenges
+{% endblock title %}
+
+{% block breadcrumbs %}
+  {% breadcrumb "Home" "/" %}
+  {% breadcrumb "Topics" "topics:index" %}
+  {% breadcrumb topic.name "topics:topic" topic.slug %}
+  {% breadcrumb "Programming Challenges" "topics:programming_challenges_list" topic.slug unit_plan.slug lesson.slug %}
+{% endblock breadcrumbs %}
+
+{% block page_heading %}
+  <h1>{{ lesson.name }} programming challenges</h1>
+{% endblock page_heading %}
+
+{% block content %}
+  {% if lesson.programming_challenges_description %}
+    {% render_html_field lesson.programming_challenges_description %}
+  {% endif %}
+
+  {% if programming_challenges %}
+    {% include "topics/programming-challenges-table.html" %}
+  {% else %}
+    <p>No programming challenges for {{ topic }}.</p>
+  {% endif %}
+{% endblock content %}

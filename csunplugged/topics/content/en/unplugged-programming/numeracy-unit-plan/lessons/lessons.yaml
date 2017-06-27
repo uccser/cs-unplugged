@@ -1,0 +1,19 @@
+modulo:
+  duration: 30
+  computational-thinking-links: modulo-ct-links.md
+  generated-resources:
+    modulo-clock:
+      description: Clock face with blank, 2, and 10 digit combinations.
+    train-stations:
+      description: Train stations with circular or twisted tracks.
+    piano-keys:
+      description: Piano keys with optional highlighted keys.
+  classroom-resources:
+    - Counters to mark positions.
+  programming-challenges:
+    - check-if-divisor
+    - check-if-divisor-series
+    - find-factors
+    - check-prime
+    - generate-primes
+    - find-prime-factors

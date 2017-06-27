@@ -9,7 +9,7 @@
 
 {% block body_container %}
   <div class="row">
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid py-5 mt-0">
       <div class="container">
         <h1 class="display-3 text-center">
           {% trans 'Computer Science' %}<br>
@@ -18,23 +18,36 @@
       </div>
     </div>
 
-    <p class="lead text-center">
-      CS Unplugged is a collection of free learning activities that teach Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around.
-    </p>
+    <div class="row align-items-center">
+      <div class="col-12 col-md-2 hidden-sm-down">
+        <img class="img-fluid" src="{% static "img/general/computer-searching.png" %}">
+      </div>
+      <div class="col-12 col-md-8">
+        <p class="lead text-center">
+          CS Unplugged is a collection of free teaching material that teaches Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around.
+        </p>
+        <p class="lead text-center">
+          The resources available to teachers include unit plans, lesson plans, teaching videos, curriculum integration activities, and programming exercises to plug in the Computer Science concepts they have just learnt unplugged.
+        </p>
+      </div>
+      <div class="col-12 col-md-2 hidden-sm-down">
+        <img class="img-fluid" src="{% static "img/general/detective.png" %}">
+      </div>
+    </div>
+
+
 
     <div class="link-box-container justify-content-between">
-      <a class="link-box link-box-md-3 link-box-blue" href="{% url 'general:about' %}">
-        <img class="img-fluid" src="{% static "img/general/computer-searching.png" %}">
-          <h2 class="link-box-title">Learn about<br>CS Unplugged</h2>
+      <a class="link-box link-box-md-6 link-box-blue" href="{% url 'general:about' %}">
+        <img class="img-fluid" src="{% static "img/topics/sorting-network-confused-people.png" %}">
+        <h2 class="link-box-title">Learn about CS Unplugged</h2>
       </a>
-      <a class="link-box link-box-md-3 link-box-orange" href="{% url 'general:about' %}">
+      <a class="link-box link-box-md-6 link-box-green" href="{% url 'topics:index' %}">
         <img class="img-fluid" src="{% static "img/general/binary-cards-5.png" %}">
-        <h2 class="link-box-title">Teaching with<br>CS Unplugged</h2>
-      </a>
-      <a class="link-box link-box-md-3 link-box-green" href="{% url 'topics:index' %}">
-        <img class="img-fluid" src="{% static "img/general/detective.png" %}">
         <h2 class="link-box-title">Topics covered by CS Unplugged</h2>
       </a>
+    </div>
+    <div class="link-box-container justify-content-between">
       <a class="link-box link-box-md-3 link-box-purple" href="{% url 'topics:all_curriculum_integrations' %}">
         <h2 class="link-box-title">Curriculum Integrations</h2>
       </a>

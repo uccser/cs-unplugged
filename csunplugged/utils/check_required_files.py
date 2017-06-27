@@ -38,7 +38,7 @@ def find_image_files(images, md_file_path):
 
     Args:
         images: image file names (set).
-        md_file_path: path to Markdown file (string).
+        md_file_path: path to Markdown file (str).
 
     Raises:
         CouldNotFindImageError: when image file cannot be found.

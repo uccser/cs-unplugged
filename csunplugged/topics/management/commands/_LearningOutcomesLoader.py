@@ -19,8 +19,8 @@ class LearningOutcomesLoader(BaseLoader):
         """Create the loader for loading learning outcomes.
 
         Args:
-            structure_file_path: File path to YAML file (string)
-            BASE_PATH: Base file path (string).
+            structure_file_path: File path to YAML file (str).
+            BASE_PATH: Base file path (str).
         """
         super().__init__(BASE_PATH)
         self.structure_file_path = structure_file_path
@@ -72,7 +72,6 @@ class LearningOutcomesLoader(BaseLoader):
                         "Curriculum Areas"
                     )
 
-            self.log("Added Learning Outcome: {}".format(outcome.__str__()))
+            self.log("Added learning outcome: {}".format(outcome.__str__()))
 
-        # Print log output
-        self.print_load_log()
+        self.log("All learning outcomes loaded!\n")

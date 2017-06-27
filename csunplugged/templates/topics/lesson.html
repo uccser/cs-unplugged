@@ -5,7 +5,7 @@
 {% load django_bootstrap_breadcrumbs %}
 
 {% block title %}
-  {{ lesson.number }}. {{ lesson.name }}
+  {{ lesson.name }}
 {% endblock title %}
 
 {% block breadcrumbs %}
@@ -17,16 +17,22 @@
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-  <h1 id="{{ lesson.slug }}" class="heading-underline"><span class="subtitle">{{ lesson.number }}.</span> {{ lesson.name }}</h1>
-  <p><strong>Duration: </strong>{{ lesson.duration }} minutes</p>
+  <h1 id="{{ lesson.slug }}" class="heading-underline">{{ lesson.name }}</h1>
+  <ul>
+    <li><strong>Duration:</strong> {{ lesson.duration }} minutes</li>
+    {% for lesson_age in lesson_ages %}
+      <li><strong>Ages {{ lesson_age.lower }} to {{ lesson_age.upper }}:</strong> Lesson {{ lesson_age.number }}</li>
+    {% endfor %}
+  </ul>
 {% endblock page_heading %}
 
 {% block left_column_content %}
-  <h2 class="heading-underline">Learning Outcomes</h2>
-  {% if lesson_learning_outcomes %}
+
+  {% if learning_outcomes %}
+  <h2 class="heading-underline">Learning outcomes</h2>
     <p>Students will be able to:</p>
     <ul>
-      {% for learning_outcome in lesson_learning_outcomes %}
+      {% for learning_outcome in learning_outcomes %}
         <li>
           {{ learning_outcome.text }}
           {% for area in learning_outcome.curriculum_areas.all %}
@@ -35,18 +41,20 @@
         </li>
       {% endfor %}
     </ul>
-  {% else %}
-    <p>No learning outcomes listed for {{ lesson.name }}.</p>
   {% endif %}
 
   {% render_html_field lesson.content %}
+
+  {% with computational_thinking_links=lesson.computational_thinking_links %}
+    {% include "topics/computational-thinking-links.html" %}
+  {% endwith %}
 {% endblock left_column_content %}
 
 {% block right_column_content %}
+  {% if generated_resources %}
   <h2 class="heading-underline">CS Unplugged resources</h2>
-  {% if lesson_generated_resources %}
     <div class="link-box-container">
-      {% for generated_resource in lesson_generated_resources %}
+      {% for generated_resource in generated_resources %}
         <a href="{% url 'resources:resource' generated_resource.slug %}" class="link-box">
           <img class="border-thin" src="{% static generated_resource.thumbnail %}" alt="Generic placeholder image" style="max-width: 5rem;">
           <strong>{{ generated_resource.name }}</strong>
@@ -54,30 +62,24 @@
         </a>
       {% endfor %}
     </div>
-  {% else %}
-    <p>No CS Unplugged resources required.</p>
   {% endif %}
 
-  <h2 class="heading-underline mt-2">Classroom resources</h2>
   {% if lesson.classroom_resources %}
+  <h2 class="heading-underline mt-2">Classroom resources</h2>
     <ul>
       {% for classroom_resource in lesson.classroom_resources %}
         <li>{{ classroom_resource }}</li>
       {% endfor %}
     </ul>
-  {% else %}
-    <p>No classroom resources required.</p>
   {% endif %}
 
+  {% if programming_challenges %}
   <h2 class="heading-underline mt-2">Programming challenges</h2>
-  {% if programming_exercises %}
     <p>
-      <a href="{% url 'topics:programming_exercises_list' topic.slug unit_plan.slug lesson.slug %}">
+      <a href="{% url 'topics:programming_challenges_list' topic.slug unit_plan.slug lesson.slug %}">
         View related programming challenges
       </a>
     </p>
-  {% else %}
-    <p>No programming challenges for {{ lesson.name }}</p>
   {% endif %}
 
   <div id="sticky-sidebar" class="sticky">
@@ -91,6 +93,11 @@
           <a class="nav-link" href="#{{ heading_node.slug }}">{{ heading_node.text }}</a>
         </li>
       {% endfor %}
+      {% if lesson.computational_thinking_links %}
+        <li class="nav-item">
+          <a class="nav-link" href="#ct-links">Computational Thinking</a>
+        </li>
+      {% endif %}
     </ul>
   </div>
 {% endblock right_column_content %}

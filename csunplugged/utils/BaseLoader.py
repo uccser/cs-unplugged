@@ -8,10 +8,12 @@ import re
 import os.path
 from os import listdir
 from verto import Verto
+from verto.errors.StyleError import StyleError
 
 from .check_required_files import check_converter_required_files
 from .check_glossary_links import check_converter_glossary_links
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
+from utils.errors.MarkdownStyleError import MarkdownStyleError
 from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
 from utils.errors.EmptyConfigFileError import EmptyConfigFileError
 from utils.errors.InvalidConfigFileError import InvalidConfigFileError
@@ -22,17 +24,12 @@ from utils.errors.CouldNotFindConfigFileError import CouldNotFindConfigFileError
 class BaseLoader():
     """Base loader class for individual loaders."""
 
-    def __init__(self, BASE_PATH="", load_log=[]):
+    def __init__(self, BASE_PATH=""):
         """Create a BaseLoader object.
 
         Args:
             BASE_PATH: string of base path (str).
-            load_log: list of log messages (list).
         """
-        if load_log:
-            self.load_log = load_log
-        else:
-            self.load_log = list(load_log)
         self.BASE_PATH = BASE_PATH
         self.setup_md_to_html_converter()
 
@@ -48,19 +45,18 @@ class BaseLoader():
             "markdown.extensions.codehilite",
             "markdown.extensions.sane_lists",
             "markdown.extensions.tables",
-            mdx_math.MathExtension(enable_dollar_delimiter=True)
+            mdx_math.MathExtension()
         ]
         self.converter = Verto(html_templates=templates, extensions=extensions)
-        custom_processors = self.converter.processor_defaults()
-        custom_processors.add("remove-title")
-        self.converter.update_processors(custom_processors)
 
-    def convert_md_file(self, md_file_path, config_file_path, heading_required=True):
+    def convert_md_file(self, md_file_path, config_file_path, heading_required=True, remove_title=True):
         """Return the Verto object for a given Markdown file.
 
         Args:
             md_file_path: Location of Markdown file to convert (str).
             config_file_path: Path to related the config file (str).
+            heading_required: Boolean if the file requires a heading (bool).
+            remove_title: Boolean if the file's first heading should be removed (bool).
 
         Returns:
             VertoResult object
@@ -71,6 +67,7 @@ class BaseLoader():
                 Markdown file.
             EmptyMarkdownFileError: when no content can be found in a given Markdown
                 file.
+            MarkdownStyleError: when a verto StyleError is thrown.
         """
         try:
             # check file exists
@@ -78,7 +75,16 @@ class BaseLoader():
         except:
             raise CouldNotFindMarkdownFileError(md_file_path, config_file_path)
 
-        result = self.converter.convert(content)
+        custom_processors = self.converter.processor_defaults()
+        if remove_title:
+            custom_processors.add("remove-title")
+        self.converter.update_processors(custom_processors)
+
+        result = None
+        try:
+            result = self.converter.convert(content)
+        except StyleError as e:
+            raise MarkdownStyleError(md_file_path, e) from e
 
         if heading_required:
             if result.title is None:
@@ -90,17 +96,16 @@ class BaseLoader():
         check_converter_glossary_links(result.required_glossary_terms, md_file_path)
         return result
 
-    def log(self, log_message, indent_amount=0):
-        """Add the log message to the load log with the specified indent."""
-        self.load_log.append((log_message, indent_amount))
+    def log(self, message, indent_amount=0):
+        """Output the log message to the load log.
 
-    def print_load_log(self):
-        """Output log messages from loader to console."""
-        for (log, indent_amount) in self.load_log:
-            indent = "  " * indent_amount
-            sys.stdout.write("{indent}{text}\n".format(indent=indent, text=log))
-        sys.stdout.write("\n")
-        self.load_log = []
+        Args:
+            message: Text to display (str).
+            indent_amount: Amount of indentation required (int).
+        """
+        indent = "  " * indent_amount
+        text = "{indent}{text}\n".format(indent=indent, text=message)
+        sys.stdout.write(text)
 
     def load_yaml_file(self, yaml_file_path):
         """Load and read given YAML file.

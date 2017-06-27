@@ -8,8 +8,8 @@ def resource_image(request, resource):
     """Create a image for Binary to Alphabet resource.
 
     Args:
-        request: HTTP request object
-        resource: Object of resource data.
+        request: HTTP request object (HttpRequest).
+        resource: Object of resource data (Resource).
 
     Returns:
         A Pillow image object.
@@ -78,6 +78,7 @@ def resource_image(request, resource):
 
             base_coord_y += 54
 
+    image = image.rotate(90, expand=True)
     return image
 
 
@@ -88,11 +89,11 @@ def subtitle(request, resource):
     also on the resource image.
 
     Args:
-        request: HTTP request object
-        resource: Object of resource data.
+        request: HTTP request object (HttpRequest).
+        resource: Object of resource data (Resource).
 
     Returns:
-        text for subtitle (string)
+        Text for subtitle (str).
     """
     text = "{} - {}".format(
         retrieve_query_parameter(request, "worksheet_version"),
