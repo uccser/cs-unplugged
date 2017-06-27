@@ -1,6 +1,6 @@
 # Retelling a story
 
-Use these pictures to retell the story of Little Red Riding Hood.
+Use these pictures with the Sorting Network to retell the story of Little Red Riding Hood.
 
 {image file-path="img/topics/little-red-riding-hood-4.png" alt="Little Red Riding Hood seeing the wolf in the bed instead of Grandma."}
 

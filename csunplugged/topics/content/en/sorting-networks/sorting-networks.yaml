@@ -2,3 +2,5 @@ unit-plans:
     - unit-plan/unit-plan.yaml
 
 icon: img/topics/sorting-network-kids.png
+
+curriculum-integrations: curriculum-integrations/curriculum-integrations.yaml
