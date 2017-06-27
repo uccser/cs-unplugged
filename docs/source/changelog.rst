@@ -24,6 +24,75 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+2.0.0-alpha.3
+==============================================================================
+
+- **Release date:** 27th June 2017
+- **Downloads:** `Source downloads are available on GitHub`_
+
+**Notable changes:**
+
+This release adds several lessons, curriculum integrations, and programming challenges.
+It also fixes many visual bugs and inconsistencies.
+
+**Changelog:**
+
+- Add Error correction and detection lesson 1 for ages 5 to 7.
+
+  - `Jack Morgan`_ `#487 <https://github.com/uccser/cs-unplugged/issues/487>`_
+
+- Move Computational Thinking links of Unplugged programming unit plans to separate files.
+
+  - `Jack Morgan`_ `#512 <https://github.com/uccser/cs-unplugged/issues/512>`_
+
+- Add Kidbots lesson 1 for ages 8 to 10.
+
+  - `Jack Morgan`_ `#514 <https://github.com/uccser/cs-unplugged/issues/514>`_
+
+- Increase size of content images.
+
+  - `Jack Morgan`_ `#516 <https://github.com/uccser/cs-unplugged/issues/516>`_
+
+- Fix images with wrong file extension.
+
+  - `Jack Morgan`_ `#517 <https://github.com/uccser/cs-unplugged/issues/517>`_
+
+- Add visual separators between units on topic page.
+
+  - `Jack Morgan`_ `#519 <https://github.com/uccser/cs-unplugged/issues/519>`_
+
+- Consistently name and capitalise unit plans.
+
+  - `Jack Morgan`_ `#520 <https://github.com/uccser/cs-unplugged/issues/520>`_
+
+- Add Sorting networks curriculum integration "Retelling a story".
+
+  - `Jack Morgan`_ `#521 <https://github.com/uccser/cs-unplugged/issues/521>`_
+
+- Add Sorting networks curriculum integration "Growing into a butterfly".
+
+  - `Jack Morgan`_ `#522 <https://github.com/uccser/cs-unplugged/issues/522>`_
+
+- Always display curriculum areas for learning outcomes on a new line.
+
+  - `Jack Morgan`_ `#523 <https://github.com/uccser/cs-unplugged/issues/523>`_
+
+- Center navbar menu text on mobile devices.
+
+  - `Jack Morgan`_ `#524 <https://github.com/uccser/cs-unplugged/issues/524>`_
+
+- Add modulo programming exercises.
+
+  - `Hayden Jackson`_ `#525 <https://github.com/uccser/cs-unplugged/issues/525>`_
+
+- Set lesson tables to always be consistent width.
+
+  - `Jack Morgan`_ `#526 <https://github.com/uccser/cs-unplugged/issues/526>`_
+
+- Don't show curriculum integrations shortcut in topic sidebar if no integrations are available.
+
+  - `Jack Morgan`_ `#533 <https://github.com/uccser/cs-unplugged/issues/533>`_
+
 2.0.0-alpha.2
 ==============================================================================
 
