@@ -1,44 +1,41 @@
 """Module for generating Train Stations resource."""
 
 from PIL import Image
-from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
-def resource_image(request, resource):
+def resource_image(task, resource_manager):
     """Create a image for Train Stations resource.
 
     Args:
-        request: HTTP request object (QueryDict).
-        resource: Object of resource data (Resource).
+        task: Dicitionary of requested document options.
+        resource_manager: File loader for external resources.
 
     Returns:
         A list of Pillow image objects.
     """
-    image_path = "static/img/resources/train-stations/train-stations-tracks-{}.png"
-
-    parameter_options = valid_options()
-    track_type = retrieve_query_parameter(request, "tracks", parameter_options["tracks"])
-    image = Image.open(image_path.format(track_type))
+    image_path = "img/resources/train-stations/train-stations-tracks-{}.png"
+    track_type = task["tracks"]
+    data = resource_manager.load(image_path.format(track_type))
+    image = Image.open(data)
     image = image.rotate(90, expand=True)
     return image
 
 
-def subtitle(request, resource):
+def subtitle(task):
     """Return the subtitle string of the resource.
 
     Used after the resource name in the filename, and
     also on the resource image.
 
     Args:
-        request: HTTP request object (QueryDict).
-        resource: Object of resource data (Resource).
+        task: Dicitionary of requested document.
 
     Returns:
         Text for subtitle (str).
     """
     return "{} tracks - {}".format(
-        retrieve_query_parameter(request, "tracks"),
-        retrieve_query_parameter(request, "paper_size")
+        task["tracks"],
+        task["paper_size"]
     )
 
 

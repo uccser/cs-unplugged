@@ -99,6 +99,7 @@ class ResourceGenerator(object):
         context = dict()
         context["resource_name"] = task["resource_name"]
         context["header_text"] = task.get("header_text", "")
+        context["paper_size"] = task["paper_size"]
         context["url"] = task["url"]
 
         context["resource_images"] = []

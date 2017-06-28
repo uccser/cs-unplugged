@@ -1,40 +1,38 @@
-"""Module for generating Job Badges resource."""
+"""Module for generating Left and Right Cards resource."""
 
 from PIL import Image, ImageDraw
-from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
-def resource_image(request, resource):
-    """Create a image for Job Badges resource.
+def resource_image(task, resource_manager):
+    """Create a image for Left and Right Cards resource.
 
     Args:
-        request: HTTP request object (QueryDict).
-        resource: Object of resource data (Resource).
+        task: Dicitionary of requested document options.
+        resource_manager: File loader for external resources.
 
     Returns:
         A list of Pillow image objects.
     """
-    image_path = "static/img/resources/job-badges/job-badges.png"
+    image_path = "img/resources/left-right-cards/left-right-cards.png"
+    data = resource_manager.load(image_path)
     image = Image.open(image_path)
     ImageDraw.Draw(image)
-
     return image
 
 
-def subtitle(request, resource):
+def subtitle(task):
     """Return the subtitle string of the resource.
 
     Used after the resource name in the filename, and
     also on the resource image.
 
     Args:
-        request: HTTP request object (QueryDict).
-        resource: Object of resource data (Resource).
+        task: Dicitionary of requested document.
 
     Returns:
         Text for subtitle (str).
     """
-    return retrieve_query_parameter(request, "paper_size")
+    return task["paper_size"]
 
 
 def valid_options():

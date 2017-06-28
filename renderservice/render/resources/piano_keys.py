@@ -1,16 +1,15 @@
 """Module for generating Piano Keys resource."""
 
 from PIL import Image, ImageDraw
-from utils.retrieve_query_parameter import retrieve_query_parameter
-from utils.bool_to_yes_no import bool_to_yes_no
+from render.resources.utils import bool_to_yes_no_or_pass_thru
 
 
 def resource_image(request, resource):
     """Create a image for Piano Keys resource.
 
     Args:
-        request: HTTP request object (Request).
-        resource: Object of resource data (Resource).
+        task: Dicitionary of requested document options.
+        resource_manager: File loader for external resources.
 
     Returns:
         A list of Pillow image objects (list of Image objects).
@@ -67,10 +66,10 @@ def resource_image(request, resource):
         },
     }
 
-    parameter_options = valid_options()
-    highlight = retrieve_query_parameter(request, "highlight", parameter_options["highlight"])
-    image_path = "static/img/resources/piano-keys/keyboard.png"
-    image = Image.open(image_path)
+    highlight = task["highlight"]
+    image_path = "img/resources/piano-keys/keyboard.png"
+    data = resource_manager.load(image_path)
+    image = Image.open(data)
     page = Image.new("RGB", image.size, "#FFF")
 
     if highlight:
@@ -95,22 +94,21 @@ def highlight_key_areas(image, key_data):
         draw.polygon(area, fill=key_data["colour"])
 
 
-def subtitle(request, resource):
+def subtitle(task):
     """Return the subtitle string of the resource.
 
     Used after the resource name in the filename, and
     also on the resource image.
 
     Args:
-        request: HTTP request object (Request).
-        resource: Object of resource data (Resource).
+        task: Dicitionary of requested document.
 
     Returns:
         text for subtitle (str)
     """
     return "{} highlight - {}".format(
-        bool_to_yes_no(retrieve_query_parameter(request, "highlight")),
-        retrieve_query_parameter(request, "paper_size")
+        bool_to_yes_no_or_pass_thru(task["highlight"]),
+        task["paper_size"]
     )
 
 
