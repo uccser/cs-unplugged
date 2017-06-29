@@ -12,6 +12,3 @@ class ManagementCommandTest(BaseTestWithDB):
 
     def test_updatedata_command(self):
         management.call_command("updatedata")
-
-    def test_makeresources_command(self):
-        management.call_command("makeresources")

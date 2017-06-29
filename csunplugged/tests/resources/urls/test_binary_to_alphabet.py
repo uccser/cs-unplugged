@@ -14,6 +14,6 @@ class BinaryToAlphabetResourceURLTest(BaseTestWithDB):
         url = reverse("resources:resource", kwargs=self.RESOURCE_URL_KWARGS)
         self.assertEqual(url, "/en/resources/binary-to-alphabet/")
 
-    def test_valid_binary_to_alphabet_resource_generate_url(self):
+    def test_valid_binary_cards_resource_generate_url(self):
         url = reverse("resources:generate", kwargs=self.RESOURCE_URL_KWARGS)
         self.assertEqual(url, "/en/resources/binary-to-alphabet/generate")

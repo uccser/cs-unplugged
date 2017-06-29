@@ -5,7 +5,6 @@ from django.views import generic
 from django.shortcuts import get_object_or_404, render, redirect
 from django.http import Http404, HttpResponse
 from resources.models import Resource
-from .generate_resource_pdf import generate_resource_pdf
 import importlib
 from utils.group_lessons_by_age import group_lessons_by_age
 
@@ -51,8 +50,6 @@ def generate_resource(request, resource_slug):
     """
     resource = get_object_or_404(Resource, slug=resource_slug)
     resource_view = resource.generation_view
-    # Remove .py extension if given
-    # TODO: Move logic to loaders
     if resource_view.endswith(".py"):
         resource_view = resource_view[:-3]
     module_path = "resources.views.{}".format(resource_view)
@@ -60,8 +57,6 @@ def generate_resource(request, resource_slug):
     if spec is None:
         raise Http404("PDF generation does not exist for resource: {}".format(resource_slug))
     else:
-        # TODO: Weasyprint handling in production
-        # TODO: Add creation of PDF as job to job queue
         import environ
         env = environ.Env(
             DJANGO_PRODUCTION=(bool),
@@ -70,10 +65,7 @@ def generate_resource(request, resource_slug):
             # Return cached static PDF file of resource
             return resource_pdf_cache(request, resource, module_path)
         else:
-            (pdf_file, filename) = generate_resource_pdf(request, resource, module_path)
-            response = HttpResponse(pdf_file, content_type="application/pdf")
-            response["Content-Disposition"] = RESPONSE_CONTENT_DISPOSITION.format(filename=filename)
-            return response
+            return HttpResponse("Not Implemented", status=501)
 
 
 def resource_pdf_cache(request, resource, module_path):

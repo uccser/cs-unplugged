@@ -14,6 +14,6 @@ class BinaryWindowsResourceURLTest(BaseTestWithDB):
         url = reverse("resources:resource", kwargs=self.RESOURCE_URL_KWARGS)
         self.assertEqual(url, "/en/resources/binary-windows/")
 
-    def test_valid_binary_windows_resource_generate_url(self):
+    def test_valid_binary_cards_resource_generate_url(self):
         url = reverse("resources:generate", kwargs=self.RESOURCE_URL_KWARGS)
         self.assertEqual(url, "/en/resources/binary-windows/generate")

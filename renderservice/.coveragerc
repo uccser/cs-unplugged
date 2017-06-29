@@ -1,0 +1,8 @@
+[run]
+branch = True
+source =
+    render
+omit =
+
+[report]
+fail_under=50

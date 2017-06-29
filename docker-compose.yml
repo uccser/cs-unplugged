@@ -40,22 +40,27 @@ services:
 
   render:
     build:
-      context: ./render
-      dockerfile: ./Dockerfile
+      context: .
+      dockerfile: ./renderservice/Dockerfile-local
       args:
         PROCESS_PORT: 5000
         FLASK_PRODUCTION: 0
-    environment:
-      - API_DISCOVERY_URL=http://queue:5050/api/{api}/{apiVersion}
+        PROJECT_NAME: cs-unplugged-develop
+        QUEUE_NAME: render-queue
+        API_DISCOVERY_URL: http://queue:5050/api/{api}/{apiVersion}
+        STATIC_DIRECTORY: /renderservice/static_mnt
+    volumes:
+      - ./csunplugged/staticfiles:/renderservice/static_mnt
     ports:
       - "5000:5000"
-    volumes:
-      - ./render:/render
+    depends_on:
+      - nginx
+      - queue
 
   queue:
     build:
-      context: ./infrastructure/queue
-      dockerfile: ./Dockerfile
+      context: .
+      dockerfile: ./infrastructure/queue/Dockerfile
       args:
         PROCESS_PORT: 5050
     ports:
