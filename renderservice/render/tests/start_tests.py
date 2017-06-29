@@ -14,7 +14,7 @@ from render.tests.test_job_badges import JobBadgesResourceTest  # noqa: F401
 from render.tests.test_left_right_cards import LeftRightCardsResourceTest  # noqa: F401
 from render.tests.test_modulo_clock import ModuloClockResourceTest  # noqa: F401
 from render.tests.test_parity_cards import ParityCardsResourceTest  # noqa: F401
-from render.tests.test_piano_cards import PianoCardsResourceTest  # noqa: F401
+from render.tests.test_piano_keys import PianoKeysResourceTest  # noqa: F401
 from render.tests.test_sorting_network import SortingNetworkResourceTest  # noqa: F401
 from render.tests.test_sorting_network_cards import SortingNetworkCardsResourceTest  # noqa: F401
 from render.tests.test_train_stations import TrainStationsResourceTest  # noqa: F401
