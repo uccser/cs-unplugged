@@ -1,6 +1,5 @@
 """Module for generating Sorting Network Cards resource."""
 
-import os.path
 from random import sample
 from PIL import Image, ImageDraw, ImageFont
 
@@ -19,11 +18,10 @@ def resource_image(task, resource_manager):
     IMAGE_SIZE_Y = 3000
     LINE_COLOUR = "#000000"
     LINE_WIDTH = 3
-    FONT_PATH = "fonts/PatrickHand-Regular.ttf"
-    LOCAL_FONT_PATH = resource_manager.get_path(FONT_PATH)
 
     # Retrieve parameters
     card_type = task["type"]
+    font_path = "fonts/PatrickHand-Regular.ttf"
 
     # Create card outlines
     card_outlines = Image.new("RGB", (IMAGE_SIZE_X, IMAGE_SIZE_Y), "#fff")
@@ -45,7 +43,7 @@ def resource_image(task, resource_manager):
             text.append("{:,}".format(number))
     elif card_type == "fractions":
         font_size = 900
-        font_path = "static/fonts/NotoSans-Regular.ttf"
+        font_path = "fonts/NotoSans-Regular.ttf"
         text = [u"\u00bd", u"\u2153", u"\u2154", u"\u215c", u"\u00be", u"\u215d"]
     elif card_type == "maori_numbers":
         font_size = 300
@@ -67,7 +65,8 @@ def resource_image(task, resource_manager):
             "kōwhai", "pango", "māwhero", "mā"
         ]
 
-    font = ImageFont.truetype(LOCAL_FONT_PATH, font_size)
+    local_font_path = resource_manager.get_path(font_path)
+    font = ImageFont.truetype(local_font_path, font_size)
     card_centers = [
         (IMAGE_SIZE_X / 2, IMAGE_SIZE_Y / 4),
         (IMAGE_SIZE_X / 2, (IMAGE_SIZE_Y / 4) * 3),

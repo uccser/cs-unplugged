@@ -1,6 +1,5 @@
 """Module for generating Arrows resource."""
 
-import os.path
 from PIL import Image, ImageDraw
 
 

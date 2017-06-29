@@ -1,10 +1,9 @@
 """Module for generating Job Badges resource."""
 
-import os.path
 from PIL import Image, ImageDraw
 
 
-def resource_image(request, resource):
+def resource_image(task, resource_manager):
     """Create a image for Job Badges resource.
 
     Args:

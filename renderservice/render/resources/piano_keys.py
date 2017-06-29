@@ -4,7 +4,7 @@ from PIL import Image, ImageDraw
 from render.resources.utils import bool_to_yes_no_or_pass_thru
 
 
-def resource_image(request, resource):
+def resource_image(task, resource_manager):
     """Create a image for Piano Keys resource.
 
     Args:

@@ -15,7 +15,7 @@ def resource_image(task, resource_manager):
     """
     image_path = "img/resources/left-right-cards/left-right-cards.png"
     data = resource_manager.load(image_path)
-    image = Image.open(image_path)
+    image = Image.open(data)
     ImageDraw.Draw(image)
     return image
 

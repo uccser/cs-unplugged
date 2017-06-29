@@ -13,11 +13,12 @@ def bool_to_yes_no(boolean):
     Raises:
         ValueError if value isn't "yes" or "no".
     """
-    if type(value) is bool and value:
+    if type(boolean) is bool and boolean:
         return "yes"
-    elif type(value) is bool:
+    elif type(boolean) is bool:
         return "no"
     raise ValueError("Expected True or False.")
+
 
 def bool_to_yes_no_or_pass_thru(value):
     """Convert value if boolean to yes or no.

@@ -1,6 +1,5 @@
 """Module for generating Parity Cards resource."""
 
-import os.path
 from PIL import Image, ImageDraw
 
 
