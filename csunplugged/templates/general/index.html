@@ -35,28 +35,34 @@
       </div>
     </div>
 
-
-
     <div class="link-box-container justify-content-between">
-      <a class="link-box link-box-md-6 link-box-blue" href="{% url 'general:about' %}">
-        <img class="img-fluid" src="{% static "img/topics/sorting-network-confused-people.png" %}">
-        <h2 class="link-box-title">Learn about CS Unplugged</h2>
+      <a class="link-box link-box-md-3 link-box-blue" href="{% url 'general:about' %}">
+        <img class="img-fluid" src="http://via.placeholder.com/200x200?text=Placeholder">
+        <h2 class="link-box-title">What is Computer Science?</h2>
       </a>
-      <a class="link-box link-box-md-6 link-box-green" href="{% url 'topics:index' %}">
-        <img class="img-fluid" src="{% static "img/general/binary-cards-5.png" %}">
-        <h2 class="link-box-title">Topics covered by CS Unplugged</h2>
+      <a class="link-box link-box-md-3 link-box-orange" href="{% url 'topics:index' %}">
+        <img class="img-fluid" src="http://via.placeholder.com/200x200?text=Placeholder">
+        <h2 class="link-box-title">What is CS Unplugged?</h2>
+      </a>
+      <a class="link-box link-box-md-3 link-box-green" href="{% url 'topics:index' %}">
+        <img class="img-fluid" src="http://via.placeholder.com/200x200?text=Placeholder">
+        <h2 class="link-box-title">How do I teach this?</h2>
       </a>
     </div>
-    <div class="link-box-container justify-content-between">
-      <a class="link-box link-box-md-3 link-box-purple" href="{% url 'topics:all_curriculum_integrations' %}">
-        <h2 class="link-box-title">Curriculum Integrations</h2>
-      </a>
-      <a class="link-box link-box-md-3 link-box-light-blue" href="{% url 'resources:index' %}">
-        <h2 class="link-box-title">Resources</h2>
-      </a>
-      <a class="link-box link-box-md-3 link-box-red" href="http://csunplugged.org/">
-        <h2 class="link-box-title">Classic CS Unplugged</h2>
-      </a>
-    </div>
+
+    <ul class="list-inline w-100 text-center mt-5">
+      <li class="list-inline-item h4 mx-5">
+        <a href="{% url 'topics:index' %}">Topics</a>
+      </li>
+      <li class="list-inline-item h4 mx-5">
+        <a href="{% url 'topics:all_curriculum_integrations' %}">Curriculum Integrations</a>
+      </li>
+      <li class="list-inline-item h4 mx-5">
+        <a href="{% url 'resources:index' %}">Resources</a>
+      </li>
+      <li class="list-inline-item h4 mx-5">
+        <a href="http://csunplugged.org/">Classic CS Unplugged</a>
+      </li>
+    </ul>
   </div>
 {% endblock body_container %}
