@@ -35,7 +35,7 @@ Important files:
 
 - ``render/``: The python render service package.
 
-  + ``daemon/``: Contains the python classes pertaining to the daemon for consuming tasks and producing files.
+  + ``daemon/``: Contains python classes pertaining to the daemon for consuming tasks and producing files.
   + ``resources/``: Contains source files with custom logic for generating resources (pdf files).
   + ``tests/``: Tests covering all the logic in the python render service package.
   + ``webserver/``: Contains the webserver logic, including logic for health checks and daemon recovery.
