@@ -5,14 +5,19 @@ import unittest
 # Resource Generation Tests
 #
 
+from render.tests.test_arrows import ArrowsResourceTest  # noqa: F401
 from render.tests.test_binary_cards_small import BinaryCardsSmallResourceTest  # noqa: F401
 from render.tests.test_binary_cards import BinaryCardsResourceTest  # noqa: F401
 from render.tests.test_binary_to_alphabet import BinaryToAlphabetResourceTest  # noqa: F401
 from render.tests.test_binary_windows import BinaryWindowsResourceTest  # noqa: F401
+from render.tests.test_job_badges import JobBadgesResourceTest  # noqa: F401
+from render.tests.test_left_right_cards import LeftRightCardsResourceTest  # noqa: F401
 from render.tests.test_modulo_clock import ModuloClockResourceTest  # noqa: F401
 from render.tests.test_parity_cards import ParityCardsResourceTest  # noqa: F401
+from render.tests.test_piano_cards import PianoCardsResourceTest  # noqa: F401
 from render.tests.test_sorting_network import SortingNetworkResourceTest  # noqa: F401
 from render.tests.test_sorting_network_cards import SortingNetworkCardsResourceTest  # noqa: F401
+from render.tests.test_train_stations import TrainStationsResourceTest  # noqa: F401
 from render.tests.test_treasure_hunt import TreasureHuntResourceTest  # noqa: F401
 
 #
