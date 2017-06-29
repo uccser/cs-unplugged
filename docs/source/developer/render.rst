@@ -56,6 +56,10 @@ Important files:
 - ``requirements.txt``: Specifies required python modules needed to run the webservice.
 - ``setup.cfg``: Configuration file for style services such as flake8 and pydocstyle.
 
+Some important things to note when working with the render service:
+
+- That unlike the django webservice in local development the render service does not have a live volume of the renderservice directory, that mean any changes require a rebuild of the service to see the changes.
+
 Local Infrastructure
 ==============================================================================
 
