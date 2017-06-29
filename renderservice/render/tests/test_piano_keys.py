@@ -58,7 +58,7 @@ class PianoKeysResourceTest(BaseResourceTest):
 
     def test_piano_keys_resource_generation_missing_paper_size_parameter(self):
         combination = {
-            "highlight": "no",
+            "highlight": False,
             "header_text": "",
             "copies": 1
         }
@@ -74,7 +74,7 @@ class PianoKeysResourceTest(BaseResourceTest):
     def test_piano_keys_resource_generation_missing_header_text_parameter(self):
         expected_filename = "Piano Keys (no highlight - a4).pdf"
         combination = {
-            "highlight": "no",
+            "highlight": False,
             "paper_size": "a4",
             "copies": 1
         }
