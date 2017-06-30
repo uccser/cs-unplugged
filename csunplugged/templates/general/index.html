@@ -36,16 +36,16 @@
     </div>
 
     <div class="link-box-container justify-content-between">
-      <a class="link-box link-box-md-3 link-box-blue" href="{% url 'general:about' %}">
-        <img class="img-fluid" src="http://via.placeholder.com/200x200?text=Placeholder">
+      <a class="link-box link-box-md-3 link-box-orange" href="{% url 'general:about' %}">
+        <img class="img-fluid" src="{% static 'img/general/what-is-cs.png' %}">
         <h2 class="link-box-title">What is Computer Science?</h2>
       </a>
-      <a class="link-box link-box-md-3 link-box-orange" href="{% url 'topics:index' %}">
-        <img class="img-fluid" src="http://via.placeholder.com/200x200?text=Placeholder">
+      <a class="link-box link-box-md-3 link-box-blue" href="{% url 'topics:index' %}">
+        <img class="img-fluid" src="{% static 'img/general/what-is-csu.png' %}">
         <h2 class="link-box-title">What is CS Unplugged?</h2>
       </a>
       <a class="link-box link-box-md-3 link-box-green" href="{% url 'topics:index' %}">
-        <img class="img-fluid" src="http://via.placeholder.com/200x200?text=Placeholder">
+        <img class="img-fluid" src="{% static 'img/general/how-do-i-teach-this.png' %}">
         <h2 class="link-box-title">How do I teach this?</h2>
       </a>
     </div>

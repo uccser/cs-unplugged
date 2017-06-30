@@ -147,32 +147,14 @@ $rounded-corner-radius: 0.5rem;
   }
 }
 
-.link-box-red {
-  @include link-box-colour-variant($red);
-}
 .link-box-orange {
   @include link-box-colour-variant($orange);
-}
-.link-box-yellow {
-  @include link-box-colour-variant($yellow);
 }
 .link-box-green {
   @include link-box-colour-variant($green);
 }
-.link-box-light-blue {
-  @include link-box-colour-variant($light-blue);
-}
 .link-box-blue {
   @include link-box-colour-variant($blue);
-}
-.link-box-teal {
-  @include link-box-colour-variant($teal);
-}
-.link-box-pink {
-  @include link-box-colour-variant($pink);
-}
-.link-box-purple {
-  @include link-box-colour-variant($purple);
 }
 
 .navbar {
