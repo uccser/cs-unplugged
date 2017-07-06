@@ -1,0 +1,7 @@
+lessons: lessons/lessons.yaml
+computational-thinking-links: sequential-and-binary-search-unit-plan-ct-links.md
+
+age-groups:
+  8-10:
+    how-many-guesses:
+      number: 1

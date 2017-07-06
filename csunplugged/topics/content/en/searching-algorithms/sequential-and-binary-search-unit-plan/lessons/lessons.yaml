@@ -1,0 +1,11 @@
+how-many-guesses:
+  duration: 30
+  computational-thinking-links: how-many-guesses-ct-links.md
+  learning-outcomes:
+    - search-algorithms-identify-unsorted-lists
+    - search-algorithms-describe-time-size-input
+    - search-algorithms-explore-probability-value-random-set
+    - search-algorithms-explain-range-unsorted-lists
+  classroom-resources:
+    - Payment system such as tokens or marbles
+    - A recording system (e.g. a post-it note for each student)

@@ -328,6 +328,20 @@ programming-show-item-specified-position-list:
   curriculum-areas:
     - programming
 
+# SEARCHING ALGORITHMS LEARNING OUTCOMES
+
+search-algorithms-identify-unsorted-lists:
+    text: Identify search algorithms for unsorted lists (sequential search).
+
+search-algorithms-describe-time-size-input:
+    text: Describe how the time taken grows with the size of the input.
+
+search-algorithms-explore-probability-value-random-set:
+    text: Explore the probability of finding a particular value in a random set.
+
+search-algorithms-explain-range-unsorted-lists:
+    text: Explain the range of the number of guesses for unsorted lists.
+
 # UNPLUGGED PROGRAMMING LEARNING OUTCOMES
 
 unplugged-programming-apply-addition-multiplication:
