@@ -2,6 +2,7 @@
 
 In this lesson we used the same algorithm and algorithmic thinking as we did in lesson 1, but applied it to treasure chests instead of the numbers being guessed.
 Just like in lesson 1, if we check in every treasure chest then we are guaranteed to find the real money at some stage (unless all the money is fake!)
+
 From lesson 1: We used an algorithm in this lesson to find the number we were searching for.
 This is an algorithm because it is a step-by-step process that will always give the right solution for any input you give it as long as the process is followed exactly; if we check every card in the list we are guaranteed to find the right number (as long as it is in the list!)
 
@@ -73,6 +74,7 @@ Since all we can learn from checking a card is whether or not that card is the o
 #### Examples of what you could look for:
 
 Which students can explain why it would be easier to find the money if the chests where in sorted order?
+
 Ask the students if it would be worth sorting these chests into order, and look for the students who can identify why this might not be worth it if you're only doing the search once (we only need to search through the chests once because once we’ve found the money there is no point looking for it again! So sorting them wouldn’t be helpful, it would actually slow things down).
 
 {panel end}

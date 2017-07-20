@@ -13,6 +13,7 @@ Who are the students who not only can explain the exact process to find the real
 {panel type="ct-abstraction" title="Abstraction"}
 
 As in lesson 2 and lesson 3, we can ignore many details about the items we are searching for.
+
 Also, as discussed in lesson 2, we can use the divide and conquer approach for more problems than just searching through an ordered list of numbers. We can use it to search through any set of objects that can be placed in ascending order (such as words in alphabetical order).
 
 #### Examples of what you could look for:

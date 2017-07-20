@@ -71,6 +71,7 @@ Students will generally be able to logically reason and recognise that the best 
 If we check that card and compare it to the number we are searching for what does that tell us about all the cards to the left of that card?
 All the cards to the right of that card?
 Students can deduce which cards they can now eliminate based on the card they have checked.
+
 Asking students to explain how they came to this conclusion is a great way to exercise their thinking skills, by getting them to articulate the logical steps they followed to come to this conclusion, and why it makes sense that doubling the number of cards only needs 1 more check.
 Understanding why divide and conquer will only ever require a specific small number of steps at most (for example it will never take more than 5 checks for 19 cards, or 20 checks for 1,000,000 cards) also requires a high level of logical reasoning.
 
