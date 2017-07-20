@@ -5,13 +5,13 @@
 wheel==0.29.0
 
 # Django
-django==1.11.2
+django==1.11.3
 
 # Configuration
 django-environ==0.4.3
 
 # Images
-Pillow==4.2.0
+Pillow==4.2.1
 
 # Markdown
 verto==0.6.1
