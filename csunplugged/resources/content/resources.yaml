@@ -92,5 +92,5 @@ barcode-checksum-poster:
   name: Barcode Checksum Poster
   webpage-template: resources/barcode-checksum-poster.html
   generation-view: barcode_checksum_poster.py
-  thumbnail-static-path: img/resources/barcode-checksum-poster/thumbnail.png
+  thumbnail-static-path: img/resources/barcode-checksum-poster/thumbnail.gif
   copies: false
