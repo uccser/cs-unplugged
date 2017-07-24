@@ -352,7 +352,7 @@ search-algorithms-describe-time-size-input-different:
   text: Describe how the time taken grows with the size of the input, and most importantly how it grows in different ways for two different algorithms.
 
 search-algorithms-describe-compare-values:
-  text: Describe how to compare  number values for equality and inequality (greater than, less than).
+  text: Describe how to compare number values for equality and inequality (greater than, less than).
 
 search-algorithms-explain-unsorted-lists:
   text: Explain the range of the number of guesses for unsorted lists compared to sorted lists.

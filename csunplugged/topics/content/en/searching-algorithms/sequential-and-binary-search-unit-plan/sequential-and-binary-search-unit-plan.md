@@ -1,8 +1,6 @@
 # Searching algorithms
 
-## See teaching Searching algorithms in action!
-
-These videos are being scheduled and worked on.
+{comment ## See teaching Searching algorithms in action!}
 
 {comment Video 1: Sequential search: Random numbered cards with pictures on them. (using numbers from 0 - 31) - SETTING: As if it’s a maths group in a class setting}
 
