@@ -88,3 +88,9 @@ grid:
   generation-view: grid.py
   thumbnail-static-path: img/resources/grid/thumbnail.png
   copies: false
+searching-cards:
+  name: Searching Cards
+  webpage-template: resources/searching-cards.html
+  generation-view: searching_cards.py
+  thumbnail-static-path: img/resources/searching-cards/thumbnail.png
+  copies: false
