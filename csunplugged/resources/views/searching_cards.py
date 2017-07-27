@@ -7,8 +7,8 @@ from PIL import Image, ImageDraw, ImageFont
 from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
-def resource_image(request, resource):
-    """Create a image for Searching Cards resource.
+def resource(request, resource):
+    """Create a copy for Searching Cards resource.
 
     Args:
         request: HTTP request object (HttpRequest).
@@ -17,7 +17,7 @@ def resource_image(request, resource):
     Returns:
         A list of Pillow image objects (list).
     """
-    images = []
+    data = []
     IMAGE_PATH = "static/img/resources/searching-cards/{}-cards-{}.png"
     X_BASE_COORD = 1803
     X_COORD_DECREMENT = 516
@@ -42,7 +42,7 @@ def resource_image(request, resource):
         range_text = "Add list of numbers below:"
 
     if help_sheet:
-        images.append(create_help_sheet(numbers, range_text))
+        data.append(["html", create_help_sheet(numbers, range_text)])
 
     number_of_pages = range(ceil(number_cards / 4))
     for page in number_of_pages:
@@ -70,9 +70,9 @@ def resource_image(request, resource):
                 coord_x -= X_COORD_DECREMENT
 
         image = image.rotate(90, expand=True)
-        images.append(image)
+        data.append(["image", image])
 
-    return images
+    return data
 
 
 def create_help_sheet(numbers, range_text):
@@ -85,59 +85,65 @@ def create_help_sheet(numbers, range_text):
     Returns:
         Pillow image object (Image).
     """
-    header = "Helper set for binary search activity"
-    paragraph = "Use this sheet to circle the number you are asking your class to look for when you are demonstrating how the binary search works. This allows you to demonstrate the maximum number of searches it would take. When students are playing the treasure hunt game, they can choose any number. Avoid those that are in red as they are key binary search positions (avoiding them is a good thing to do for demonstrations, but in practice students, or computers, won’t intentionally avoid these)."  # noqa: E501
-    paragraph_lines = wrap(paragraph, 90)
-    page = Image.new("RGB", (2000, 3000), "#fff")
-    draw = ImageDraw.Draw(page)
-    FONT_PATH = "static/fonts/NotoSans-Regular.ttf"
-    LINE_HEIGHT = 70
-    y_coord = 0
-    header_font = ImageFont.truetype(FONT_PATH, 80)
-    draw.text(
-        (0, y_coord),
-        header,
-        font=header_font,
-        fill="#000"
-    )
-    text_width, text_height = draw.textsize(header, font=header_font)
-    y_coord += text_height + LINE_HEIGHT
-    paragraph_font = ImageFont.truetype(FONT_PATH, 45)
-    for paragraph_line in paragraph_lines:
-        draw.text(
-            (0, y_coord),
-            paragraph_line,
-            font=paragraph_font,
-            fill="#000"
-        )
-        y_coord += LINE_HEIGHT
-
-    y_coord += LINE_HEIGHT
-
-    draw.text(
-        (0, y_coord),
-        range_text,
-        font=paragraph_font,
-        fill="#000"
-    )
-    y_coord += LINE_HEIGHT * 2
-
-    numbers.sort()
-    red_number_jump = (len(numbers) + 1) // 4
-
-    for (index, number) in enumerate(numbers):
-        if (index + 1) % red_number_jump == 0:
-            fill_text = "#cc0423"
-        else:
-            fill_text = "#000"
-        draw.text(
-            (0, y_coord),
-            str(number),
-            font=paragraph_font,
-            fill=fill_text
-        )
-        y_coord += LINE_HEIGHT
-    return page
+    header = "<h1>Helper set for binary search activity</h1>"
+    paragraph = """<p>
+    Use this sheet to circle the number you are asking your class to look for when you are demonstrating how the binary search works.
+    This allows you to demonstrate the maximum number of searches it would take.
+    When students are playing the treasure hunt game, they can choose any number.
+    Avoid those that are in red as they are key binary search positions (avoiding them is a good thing to do for demonstrations, but in practice students, or computers, won’t intentionally avoid these).
+    </p>"""
+    # paragraph_lines = wrap(paragraph, 90)
+    # page = Image.new("RGB", (2000, 3000), "#fff")
+    # draw = ImageDraw.Draw(page)
+    # FONT_PATH = "static/fonts/NotoSans-Regular.ttf"
+    # LINE_HEIGHT = 70
+    # y_coord = 0
+    # header_font = ImageFont.truetype(FONT_PATH, 80)
+    # draw.text(
+    #     (0, y_coord),
+    #     header,
+    #     font=header_font,
+    #     fill="#000"
+    # )
+    # text_width, text_height = draw.textsize(header, font=header_font)
+    # y_coord += text_height + LINE_HEIGHT
+    # paragraph_font = ImageFont.truetype(FONT_PATH, 45)
+    # for paragraph_line in paragraph_lines:
+    #     draw.text(
+    #         (0, y_coord),
+    #         paragraph_line,
+    #         font=paragraph_font,
+    #         fill="#000"
+    #     )
+    #     y_coord += LINE_HEIGHT
+    #
+    # y_coord += LINE_HEIGHT
+    #
+    # draw.text(
+    #     (0, y_coord),
+    #     range_text,
+    #     font=paragraph_font,
+    #     fill="#000"
+    # )
+    # y_coord += LINE_HEIGHT * 2
+    #
+    # numbers.sort()
+    # red_number_jump = (len(numbers) + 1) // 4
+    #
+    # for (index, number) in enumerate(numbers):
+    #     if (index + 1) % red_number_jump == 0:
+    #         fill_text = "#cc0423"
+    #     else:
+    #         fill_text = "#000"
+    #     draw.text(
+    #         (0, y_coord),
+    #         str(number),
+    #         font=paragraph_font,
+    #         fill=fill_text
+    #     )
+    #     y_coord += LINE_HEIGHT
+    # return page
+    return header + paragraph
 
 
 def subtitle(request, resource):

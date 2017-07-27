@@ -33,29 +33,29 @@ def generate_resource_pdf(request, resource, module_path):
     if context["paper_size"] is None:
         raise Http404("Paper size parameter not specified.")
 
-    resource_image_generator = importlib.import_module(module_path)
+    resource_generator = importlib.import_module(module_path)
     num_copies = range(0, int(get_request.get("copies", 1)))
-    context["resource_images"] = []
+    context["all_data"] = []
     for copy in num_copies:
-        context["resource_images"].append(
-            generate_resource_image(get_request, resource, module_path)
+        context["all_data"].append(
+            generate_resource_data(get_request, resource, module_path)
         )
 
-    filename = "{} ({})".format(resource.name, resource_image_generator.subtitle(get_request, resource))
+    filename = "{} ({})".format(resource.name, resource_generator.subtitle(get_request, resource))
     context["filename"] = filename
 
     pdf_html = render_to_string("resources/base-resource-pdf.html", context)
     html = HTML(string=pdf_html, base_url=settings.STATIC_ROOT)
     css_file = finders.find("css/print-resource-pdf.css")
     css_string = open(css_file, encoding="UTF-8").read()
-    base_css = CSS(string=css_string)
+    base_css = CSS(string=css_string, base_url=settings.STATIC_ROOT)
     return (html.write_pdf(stylesheets=[base_css]), filename)
 
 
-def generate_resource_image(get_request, resource, module_path):
-    """Retrieve image(s) for one copy of resource from resource generator.
+def generate_resource_data(get_request, resource, module_path):
+    """Retrieve data for one copy of resource from resource generator.
 
-    Images are resized to size.
+    Images are resized to paper size.
 
     Args:
         request: HTTP request object (HttpRequest).
@@ -63,33 +63,33 @@ def generate_resource_image(get_request, resource, module_path):
         module_path: Path to module for generating resource (str).
 
     Returns:
-        List of Base64 strings of a generated resource images for one copy.
+        List of lists containing data for one copy.
+        Each inner list contains:
+        - String of type ("image", "html")
+        - Data of type:
+            - String for HTML.
+            - Base64 string of image.
     """
-    # Get images from resource image creator
-    resource_image_generator = importlib.import_module(module_path)
-    raw_images = resource_image_generator.resource_image(get_request, resource)
-    if not isinstance(raw_images, list):
-        raw_images = [raw_images]
+    resource_generator = importlib.import_module(module_path)
+    data = resource_generator.resource(get_request, resource)
 
-    # Resize images to reduce file size
     if get_request["paper_size"] == "a4":
         max_pixel_height = 267 * MM_TO_PIXEL_RATIO
     elif get_request["paper_size"] == "letter":
         max_pixel_height = 249 * MM_TO_PIXEL_RATIO
 
-    images = []
-    for image in raw_images:
-        (width, height) = image.size
-        if height > max_pixel_height:
-            ratio = max_pixel_height / height
-            width *= ratio
-            height *= ratio
-            image = image.resize((int(width), int(height)), Image.ANTIALIAS)
-
-        # Save image to buffer
-        image_buffer = BytesIO()
-        image.save(image_buffer, format="PNG")
-        # Add base64 of image to list of images
-        images.append(base64.b64encode(image_buffer.getvalue()))
-
-    return images
+    # Resize images to reduce file size
+    for index in range(len(data)):
+        if data[index][0] == "image":
+            image = data[index][1]
+            (width, height) = image.size
+            if height > max_pixel_height:
+                ratio = max_pixel_height / height
+                width *= ratio
+                height *= ratio
+                image = image.resize((int(width), int(height)), Image.ANTIALIAS)
+            # Convert from Image object to base64 string
+            image_buffer = BytesIO()
+            image.save(image_buffer, format="PNG")
+            data[index][1] = base64.b64encode(image_buffer.getvalue())
+    return data

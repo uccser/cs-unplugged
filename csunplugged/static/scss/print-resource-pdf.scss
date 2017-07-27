@@ -1,5 +1,31 @@
+// Import Bootstrap 4
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/custom";
+@import "bootstrap/normalize";
+// @import "bootstrap/print";
+@import "bootstrap/reboot";
+@import "bootstrap/type";
+@import "bootstrap/tables";
+
+// Local local fonts
+@font-face {
+  font-family: "Patrick Hand";
+  src: url("fonts/PatrickHand-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Noto Sans";
+  src: url("fonts/NotoSans-Regular.ttf") format("truetype");
+}
+
+h1 {
+  color: red;
+}
+
 div.base-image-container {
   text-align: center;
+}
+div.page-break {
   page-break-after: always;
 }
 img.base-image {
