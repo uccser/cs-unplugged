@@ -40,6 +40,7 @@ RUN apt-get update && apt-get install -y \
       python-pip \
       python-lxml \
       python-cffi \
+      fontconfig \
       shared-mime-info
 RUN apt-get clean && rm /var/lib/apt/lists/*_*
 
@@ -63,3 +64,7 @@ RUN /docker_venv/bin/pip3 install -r /requirements/local.txt
 RUN mkdir /cs-unplugged/
 RUN mkdir /cs-unplugged/csunplugged/
 WORKDIR /cs-unplugged/csunplugged/
+
+# Copy and install fonts
+COPY csunplugged/static/fonts/ /usr/share/fonts/
+RUN fc-cache -fv

@@ -48,7 +48,7 @@ def generate_resource_pdf(request, resource, module_path):
     html = HTML(string=pdf_html, base_url=settings.STATIC_ROOT)
     css_file = finders.find("css/print-resource-pdf.css")
     css_string = open(css_file, encoding="UTF-8").read()
-    base_css = CSS(string=css_string, base_url=settings.STATIC_ROOT)
+    base_css = CSS(string=css_string)
     return (html.write_pdf(stylesheets=[base_css]), filename)
 
 
