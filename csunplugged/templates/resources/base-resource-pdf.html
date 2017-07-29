@@ -27,11 +27,9 @@
   </header>
   {% for copy_data in all_data %}
     {% for type, data in copy_data %}
-      <div class="page-break">
+      <div class="page-break resource-{{ type }}-container">
         {% if type == "image" %}
-          <div class="base-image-container">
-            <img class="base-image" src="data:image/png;base64,{{ data }}" />
-          </div>
+          <img class="resource-image" src="data:image/png;base64,{{ data }}" />
         {% elif type == "html" %}
           {% autoescape off %}
             {{ data }}

@@ -4,6 +4,7 @@ from random import sample, shuffle
 from math import ceil
 from textwrap import wrap
 from PIL import Image, ImageDraw, ImageFont
+from yattag import Doc
 from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
@@ -85,65 +86,32 @@ def create_help_sheet(numbers, range_text):
     Returns:
         Pillow image object (Image).
     """
-    header = "<h1>Helper set for binary search activity</h1>"
-    paragraph = """<p>
-    Use this sheet to circle the number you are asking your class to look for when you are demonstrating how the binary search works.
-    This allows you to demonstrate the maximum number of searches it would take.
-    When students are playing the treasure hunt game, they can choose any number.
-    Avoid those that are in red as they are key binary search positions (avoiding them is a good thing to do for demonstrations, but in practice students, or computers, won’t intentionally avoid these).
-    </p>"""
-    # paragraph_lines = wrap(paragraph, 90)
-    # page = Image.new("RGB", (2000, 3000), "#fff")
-    # draw = ImageDraw.Draw(page)
-    # FONT_PATH = "static/fonts/NotoSans-Regular.ttf"
-    # LINE_HEIGHT = 70
-    # y_coord = 0
-    # header_font = ImageFont.truetype(FONT_PATH, 80)
-    # draw.text(
-    #     (0, y_coord),
-    #     header,
-    #     font=header_font,
-    #     fill="#000"
-    # )
-    # text_width, text_height = draw.textsize(header, font=header_font)
-    # y_coord += text_height + LINE_HEIGHT
-    # paragraph_font = ImageFont.truetype(FONT_PATH, 45)
-    # for paragraph_line in paragraph_lines:
-    #     draw.text(
-    #         (0, y_coord),
-    #         paragraph_line,
-    #         font=paragraph_font,
-    #         fill="#000"
-    #     )
-    #     y_coord += LINE_HEIGHT
-    #
-    # y_coord += LINE_HEIGHT
-    #
-    # draw.text(
-    #     (0, y_coord),
-    #     range_text,
-    #     font=paragraph_font,
-    #     fill="#000"
-    # )
-    # y_coord += LINE_HEIGHT * 2
-    #
-    # numbers.sort()
-    # red_number_jump = (len(numbers) + 1) // 4
-    #
-    # for (index, number) in enumerate(numbers):
-    #     if (index + 1) % red_number_jump == 0:
-    #         fill_text = "#cc0423"
-    #     else:
-    #         fill_text = "#000"
-    #     draw.text(
-    #         (0, y_coord),
-    #         str(number),
-    #         font=paragraph_font,
-    #         fill=fill_text
-    #     )
-    #     y_coord += LINE_HEIGHT
-    # return page
-    return header + paragraph
+    doc, tag, text, line = Doc().ttl()
+    with tag("div"):
+        with tag("h1"):
+            text("Helper page for binary search activity")
+        with tag("p"):
+            text(
+                "Use this sheet to circle the number you are asking your class ",
+                "to look for when you are demonstrating how the binary search ",
+                "works. This allows you to demonstrate the maximum number of ",
+                "searches it would take. When students are playing the treasure ",
+                "hunt game, they can choose any number. Avoid those that are in ",
+                "red as they are key binary search positions (avoiding them is a ",
+                "good thing to do for demonstrations, but in practice students, ",
+                "or computers, won’t intentionally avoid these)."
+            )
+        with tag("h2"):
+            text("Sorted numbers")
+        with tag("ul", klass="list-unstyled"):
+            numbers.sort()
+            red_number_jump = (len(numbers) + 1) // 4
+            for (index, number) in enumerate(numbers):
+                if (index + 1) % red_number_jump == 0:
+                    line("li", number, klass="text-danger")
+                else:
+                    line("li", number)
+    return doc.getvalue()
 
 
 def subtitle(request, resource):
