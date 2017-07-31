@@ -16,7 +16,7 @@ On each sheet are 26 treasure chests with lots of money in them. All money has a
 The only problem is there is only one treasure chest that has the real money in it, the rest are fake.
 You know what the serial number on the real money is, and your challenge is to find the treasure chest with the real money in it, but you should "open" as few treasure chests as possible.
 
-Guide students through how the game will work by following the instructions on the [Treasure Hunt Instructions pdf](http://www.example.com).
+Guide students through how the game will work by following the instructions on the [Treasure Hunt Instructions pdf]('resources:resource' 'treasure-hunt').
 
 {panel type="teaching" title="Teaching observations"}
 
@@ -47,7 +47,7 @@ Number Knowledge: Read and say numbers between 100 and 9999.
 4.  Have them number off i.e. one or two
 5.  Have the “ones” come up and get a Treasure hunt sheet
 6.  Have the “twos” come up and get a different Treasure hunt sheet
-7.  Go through the [[Treasure Hunt instructions](http://www.example.com)] guide sheet and set up their games.
+7.  Go through the [[Treasure Hunt instructions]('resources:resource' 'treasure-hunt')] guide sheet and set up their games.
 8.  Play the game and have students add up how many guesses it took each of them to find the treasure chest with the correct number in it.
 9.  Add this data to either a whiteboard or paper record and graph how often each number of guesses was required, or add it to a spreadsheet that also displays the graph and watch the graph grow as more data becomes available.
 

@@ -30,7 +30,7 @@ The numbers range from 0 to 1000. Can you find the card with the number 302?
 You can adapt the range to suit what your students are working on in their mathematics lessons.
 This lesson focuses on unsorted lists so it doesn’t matter if the numbers are all from a sequential range ie all the numbers in the range from 0 - 31, as long as the cards are placed in a random order.
 When you’re using a sorted list in future exercises though it works better to not have all the numbers from a certain range, otherwise students can just count to figure out where the number is!
-You can generate different sets of cards with various ranges of numbers [here](http://www.example.com).
+You can generate different sets of cards with various ranges of numbers [here]('resources:resource' 'searching-cards').
 
 {panel end}
 

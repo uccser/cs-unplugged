@@ -6,6 +6,9 @@ how-many-guesses:
     - search-algorithms-describe-time-size-input
     - search-algorithms-explore-probability-value-random-set
     - search-algorithms-explain-range-unsorted-lists
+  generated-resources:
+    searching-cards:
+      description: Includes helper sheet for teacher.
   classroom-resources:
     - Payment system such as tokens or marbles
     - A recording system (e.g. a post-it note for each student)
@@ -19,6 +22,9 @@ divide-and-conquer:
     - search-algorithms-describe-time-size-input-different
     - search-algorithms-describe-compare-values
     - search-algorithms-explain-unsorted-lists
+  generated-resources:
+    searching-cards:
+      description: Includes helper sheet for teacher.
   classroom-resources:
     - Payment system such as tokens or marbles.
     - A recording system (e.g. a post-it note for each student)
@@ -26,6 +32,9 @@ divide-and-conquer:
 the-great-treasure-hunt-unsorted:
   duration: 30
   computational-thinking-links: the-great-treasure-hunt-unsorted-ct-links.md
+  generated-resources:
+    treasure-hunt:
+      description: Includes unsorted and sorted variants.
   learning-outcomes:
     - search-algorithms-identify-unsorted-lists
     - search-algorithms-describe-time-size-input
@@ -35,6 +44,9 @@ the-great-treasure-hunt-unsorted:
 the-great-treasure-hunt-sorted:
   duration: 45
   computational-thinking-links: the-great-treasure-hunt-sorted-ct-links.md
+  generated-resources:
+    treasure-hunt:
+      description: Includes unsorted and sorted variants.
   learning-outcomes:
     - search-algorithms-identify-sequential-binary
     - search-algorithms-explain-decomposition-binary
