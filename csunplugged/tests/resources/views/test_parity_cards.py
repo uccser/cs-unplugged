@@ -76,7 +76,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
         response = self.client.get(url)
         self.assertEqual(404, response.status_code)
 
-    def test_binary_cards_small_resource_generation_missing_paper_size_parameter(self):
+    def test_parity_cards_resource_generation_missing_paper_size_parameter(self):
         resource = self.test_data.create_resource(
             "parity-cards",
             "Parity Cards",
@@ -95,7 +95,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
         response = self.client.get(url)
         self.assertEqual(404, response.status_code)
 
-    def test_binary_cards_small_resource_generation_missing_header_text_parameter(self):
+    def test_parity_cards_resource_generation_missing_header_text_parameter(self):
         resource = self.test_data.create_resource(
             "parity-cards",
             "Parity Cards",
