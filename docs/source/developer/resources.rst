@@ -71,7 +71,7 @@ The Python module must contain the following function definitions:
 
   :param request: HTTP request object (HttpRequest)
   :param resource: Object of resource data (Resource)
-  :rtype: A list of dictionaries for each page (list)
+  :rtype: A dictionary or list of dictionaries for each resource page.
 
     Each dictionary must contain the following keys/value pairs:
 

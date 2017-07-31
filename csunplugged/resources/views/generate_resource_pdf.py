@@ -72,6 +72,8 @@ def generate_resource_data(get_request, resource, module_path):
     """
     resource_generator = importlib.import_module(module_path)
     data = resource_generator.resource(get_request, resource)
+    if not isinstance(data, list):
+        data = [data]
 
     if get_request["paper_size"] == "a4":
         max_pixel_height = 267 * MM_TO_PIXEL_RATIO
@@ -80,8 +82,8 @@ def generate_resource_data(get_request, resource, module_path):
 
     # Resize images to reduce file size
     for index in range(len(data)):
-        if data[index][0] == "image":
-            image = data[index][1]
+        if data[index]["type"] == "image":
+            image = data[index]["data"]
             (width, height) = image.size
             if height > max_pixel_height:
                 ratio = max_pixel_height / height
@@ -91,5 +93,5 @@ def generate_resource_data(get_request, resource, module_path):
             # Convert from Image object to base64 string
             image_buffer = BytesIO()
             image.save(image_buffer, format="PNG")
-            data[index][1] = base64.b64encode(image_buffer.getvalue())
+            data[index]["data"] = base64.b64encode(image_buffer.getvalue())
     return data

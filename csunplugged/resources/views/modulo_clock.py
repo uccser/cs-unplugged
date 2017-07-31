@@ -5,7 +5,7 @@ from PIL import Image, ImageDraw, ImageFont
 from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
-def resource_image(request, resource):
+def resource(request, resource):
     """Create a image for Binary Cards resource.
 
     Args:
@@ -13,7 +13,7 @@ def resource_image(request, resource):
         resource: Object of resource data (Resource).
 
     Returns:
-        A list of Pillow image objects (list).
+        A dictionary for the resource page.
     """
     image_path = "static/img/resources/modulo-clock/modulo-clock-{}.png"
 
@@ -48,7 +48,7 @@ def resource_image(request, resource):
             fill="#000"
         )
 
-    return image
+    return {"type": "image", "data": image}
 
 
 def subtitle(request, resource):

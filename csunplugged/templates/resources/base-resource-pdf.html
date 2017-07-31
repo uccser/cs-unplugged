@@ -26,13 +26,13 @@
     {{ header_text }}
   </header>
   {% for copy_data in all_data %}
-    {% for type, data in copy_data %}
-      <div class="page-break resource-{{ type }}-container">
-        {% if type == "image" %}
-          <img class="resource-image" src="data:image/png;base64,{{ data }}" />
-        {% elif type == "html" %}
+    {% for page in copy_data %}
+      <div class="page-break resource-{{ page.type }}-container">
+        {% if page.type == "image" %}
+          <img class="resource-image" src="data:image/png;base64,{{ page.data }}" />
+        {% elif page.type == "html" %}
           {% autoescape off %}
-            {{ data }}
+            {{ page.data }}
           {% endautoescape %}
         {% endif %}
       </div>

@@ -4,7 +4,7 @@ from PIL import Image, ImageDraw, ImageFont
 from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
-def resource_image(request, resource):
+def resource(request, resource):
     """Create a image for Binary to Alphabet resource.
 
     Args:
@@ -12,7 +12,7 @@ def resource_image(request, resource):
         resource: Object of resource data (Resource).
 
     Returns:
-        A Pillow image object.
+        A dictionary for the resource page.
     """
     # Retrieve relevant image
     parameter_options = valid_options()
@@ -79,7 +79,7 @@ def resource_image(request, resource):
             base_coord_y += 54
 
     image = image.rotate(90, expand=True)
-    return image
+    return {"type": "image", "data": image}
 
 
 def subtitle(request, resource):

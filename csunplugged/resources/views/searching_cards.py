@@ -2,23 +2,22 @@
 
 from random import sample, shuffle
 from math import ceil
-from textwrap import wrap
 from PIL import Image, ImageDraw, ImageFont
 from yattag import Doc
 from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
 def resource(request, resource):
-    """Create a copy for Searching Cards resource.
+    """Create a copy of the Searching Cards resource.
 
     Args:
         request: HTTP request object (HttpRequest).
         resource: Object of resource data (Resource).
 
     Returns:
-        A list of Pillow image objects (list).
+        A list of dictionaries for each resource page.
     """
-    data = []
+    pages = []
     IMAGE_PATH = "static/img/resources/searching-cards/{}-cards-{}.png"
     X_BASE_COORD = 1803
     X_COORD_DECREMENT = 516
@@ -43,7 +42,7 @@ def resource(request, resource):
         range_text = "Add list of numbers below:"
 
     if help_sheet:
-        data.append(["html", create_help_sheet(numbers, range_text)])
+        pages.append({"type": "html", "data": create_help_sheet(numbers, range_text)})
 
     number_of_pages = range(ceil(number_cards / 4))
     for page in number_of_pages:
@@ -71,9 +70,8 @@ def resource(request, resource):
                 coord_x -= X_COORD_DECREMENT
 
         image = image.rotate(90, expand=True)
-        data.append(["image", image])
-
-    return data
+        pages.append({"type": "image", "data": image})
+    return pages
 
 
 def create_help_sheet(numbers, range_text):

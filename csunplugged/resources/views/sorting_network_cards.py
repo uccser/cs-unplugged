@@ -5,7 +5,7 @@ from PIL import Image, ImageDraw, ImageFont
 from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
-def resource_image(request, resource):
+def resource(request, resource):
     """Create a image for Sorting Network Cards resource.
 
     Args:
@@ -13,7 +13,7 @@ def resource_image(request, resource):
         resource: Object of resource data (Resource).
 
     Returns:
-        A list of Pillow image objects (list).
+        A list of dictionaries for each resource page.
     """
     IMAGE_SIZE_X = 2000
     IMAGE_SIZE_Y = 3000
@@ -74,7 +74,7 @@ def resource_image(request, resource):
     ]
 
     # Add text to cards
-    images = []
+    pages = []
     for (text_number, text_string) in enumerate(text):
         if text_number % 2 == 0:
             page = card_outlines.copy()
@@ -94,10 +94,9 @@ def resource_image(request, resource):
         )
         # If text on second card but not last page
         if text_number % 2 == 1 and text_number != len(text) - 1:
-            images.append(page)
-    images.append(page)
-
-    return images
+            pages.append({"type": "image", "data": page})
+    pages.append({"type": "image", "data": page})
+    return pages
 
 
 def subtitle(request, resource):
