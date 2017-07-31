@@ -1,0 +1,19 @@
+{% extends "resources/resource.html" %}
+
+<!-- Description of resource -->
+{% block description %}
+  <p>
+    This resource is a poster showing how to calculate the checksum for a 12 or 13 digit barcode.
+  </p>
+{% endblock description %}
+
+{% block generation_form %}
+  <fieldset>
+    <legend>Barcode length</legend>
+    <input type="radio" name="barcode_length" id="barcode_length_12" value="12" checked="checked">
+    <label for="barcode_length_12">12 digits</label>
+    <br>
+    <input type="radio" name="barcode_length" id="barcode_length_13" value="13">
+    <label for="barcode_length_13">13 digits</label>
+  </fieldset>
+{% endblock generation_form %}
