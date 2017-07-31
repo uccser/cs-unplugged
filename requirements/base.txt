@@ -10,8 +10,9 @@ django==1.11.3
 # Configuration
 django-environ==0.4.3
 
-# Images
+# Resources
 Pillow==4.2.1
+yattag==1.8.0
 
 # Markdown
 verto==0.6.1

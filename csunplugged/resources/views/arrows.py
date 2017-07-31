@@ -4,21 +4,21 @@ from PIL import Image, ImageDraw
 from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
-def resource_image(request, resource):
-    """Create a image for Arrows resource.
+def resource(request, resource):
+    """Create a copy of the Arrows resource.
 
     Args:
         request: HTTP request object (QueryDict).
         resource: Object of resource data (Resource).
 
     Returns:
-        A list of Pillow image objects.
+        A dictionary or list of dictionaries for each resource page.
     """
     image_path = "static/img/resources/arrows/arrows.png"
     image = Image.open(image_path)
     ImageDraw.Draw(image)
 
-    return image
+    return {"type": "image", "data": image}
 
 
 def subtitle(request, resource):

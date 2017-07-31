@@ -25,10 +25,16 @@
   <header class="fixed-running-element">
     {{ header_text }}
   </header>
-  {% for resource_image_data in resource_images %}
-    {% for resource_image in resource_image_data %}
-      <div class="base-image-container">
-        <img class="base-image" src="data:image/png;base64,{{ resource_image }}" />
+  {% for copy_data in all_data %}
+    {% for page in copy_data %}
+      <div class="page-break resource-{{ page.type }}-container">
+        {% if page.type == "image" %}
+          <img class="resource-image" src="data:image/png;base64,{{ page.data }}" />
+        {% elif page.type == "html" %}
+          {% autoescape off %}
+            {{ page.data }}
+          {% endautoescape %}
+        {% endif %}
       </div>
     {% endfor %}
   {% endfor %}

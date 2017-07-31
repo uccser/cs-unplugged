@@ -5,7 +5,7 @@ from utils.retrieve_query_parameter import retrieve_query_parameter
 from utils.bool_to_yes_no import bool_to_yes_no
 
 
-def resource_image(request, resource):
+def resource(request, resource):
     """Create a image for Piano Keys resource.
 
     Args:
@@ -13,7 +13,7 @@ def resource_image(request, resource):
         resource: Object of resource data (Resource).
 
     Returns:
-        A list of Pillow image objects (list of Image objects).
+        A dictionary for the resource page.
     """
     KEY_DATA = {
         "A": {
@@ -80,7 +80,7 @@ def resource_image(request, resource):
     page.paste(image, mask=image)
 
     page = page.rotate(90, expand=True)
-    return [page]
+    return {"type": "image", "data": page}
 
 
 def highlight_key_areas(image, key_data):
