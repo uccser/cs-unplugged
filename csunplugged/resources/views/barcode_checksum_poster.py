@@ -4,7 +4,7 @@ from PIL import Image
 from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
-def resource_image(request, resource):
+def resource(request, resource):
     """Create a image for Barcode Checksum Poster resource.
 
     Args:
@@ -12,7 +12,7 @@ def resource_image(request, resource):
         resource: Object of resource data (Resource).
 
     Returns:
-        A list of Pillow image objects.
+        A dictionary for the resource page.
     """
     # Retrieve parameters
     parameter_options = valid_options()
@@ -20,7 +20,7 @@ def resource_image(request, resource):
 
     image_path = "static/img/resources/barcode-checksum-poster/{}-digits.png"
     image = Image.open(image_path.format(barcode_length))
-    return image
+    return {"type": "image", "data": image}
 
 
 def subtitle(request, resource):

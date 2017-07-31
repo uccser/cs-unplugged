@@ -5,7 +5,7 @@ from PIL import Image, ImageDraw, ImageFont
 from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
-def resource_image(request, resource):
+def resource(request, resource):
     """Create a image for Binary Cards (Small) resource.
 
     Args:
@@ -13,7 +13,7 @@ def resource_image(request, resource):
         resource: Object of resource data (Resource).
 
     Returns:
-        A list of Pillow image objects (list).
+        A dictionary or list of dictionaries for each resource page.
     """
     BASE_IMAGE_PATH = "static/img/resources/binary-cards-small/"
     IMAGE_SIZE_X = 2480
@@ -40,7 +40,7 @@ def resource_image(request, resource):
             (1589, 2889),
         ]
 
-    images = []
+    pages = []
 
     for (image_path, image_bits) in IMAGE_DATA:
         requested_bits = int(requested_bits)
@@ -59,13 +59,13 @@ def resource_image(request, resource):
                         font=font,
                         fill="#000"
                     )
-            images.append(image)
+            pages.append({"type": "image", "data": image})
 
             if black_back:
                 black_card = Image.new("1", (IMAGE_SIZE_X, IMAGE_SIZE_Y))
-                images.append(black_card)
+                pages.append({"type": "image", "data": black_card})
 
-    return images
+    return pages
 
 
 def subtitle(request, resource):
