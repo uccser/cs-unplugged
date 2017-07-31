@@ -1,6 +1,6 @@
 """Context processor for displaying version number."""
 
-from config import __version__
+from config import __version__, __version_english__
 
 
 def version_number(request):
@@ -9,4 +9,7 @@ def version_number(request):
     Returns:
         Dictionary containing version number to add to context.
     """
-    return {"VERSION_NUMBER": __version__}
+    return {
+        "VERSION_NUMBER": __version__,
+        "VERSION_NUMBER_ENGLISH": __version_english__,
+    }
