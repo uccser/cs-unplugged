@@ -24,7 +24,7 @@ Can you find number **302**
 You can adapt the range to suit what your students are working on in their mathematics lessons.
 This lesson focuses on sorted lists and we are using a range of numbers from 0 - 999.
 This activity works best if the numbers **aren’t** sequential because, for example, if there are 50 cards in the range 1 to 50 and they are sequential and you ask a student to find the number 10 they will probably just look at the 10th card straight away!
-You can generate different sets of cards with various ranges of numbers [here](http://www.example.com).
+You can generate different sets of cards with various ranges of numbers [here]('resources:resource' 'searching-cards').
 It's best if the numbers aren't spread evenly so that it's very hard to guess where a particular value might be.
 
 {panel end}

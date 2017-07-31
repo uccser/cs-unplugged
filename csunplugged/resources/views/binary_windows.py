@@ -5,7 +5,7 @@ from PIL import Image, ImageDraw, ImageFont
 from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
-def resource_image(request, resource):
+def resource(request, resource):
     """Create a image for Binary Windows resource.
 
     Args:
@@ -13,7 +13,7 @@ def resource_image(request, resource):
         resource: Object of resource data (Resource).
 
     Returns:
-        A list of Pillow image objects (list).
+        A dictionary or list of dictionaries for each resource page.
     """
     BASE_IMAGE_PATH = "static/img/resources/binary-windows/"
     FONT_PATH = "static/fonts/PatrickHand-Regular.ttf"
@@ -26,7 +26,7 @@ def resource_image(request, resource):
     value_type = retrieve_query_parameter(request, "value_type", parameter_options["value_type"])
     dot_counts = retrieve_query_parameter(request, "dot_counts", parameter_options["dot_counts"])
 
-    images = []
+    pages = []
     page_sets = [("binary-windows-1-to-8.png", 8)]
     if number_of_bits == "8":
         page_sets.append(("binary-windows-16-to-128.png", 128))
@@ -37,10 +37,10 @@ def resource_image(request, resource):
         if dot_counts:
             image = add_dot_counts(image, dot_count_start, SMALL_FONT)
         image = image.rotate(90, expand=True)
-        images.append(image)
-        images.append(back_page(BASE_IMAGE_PATH, FONT, value_type))
+        pages.append({"type": "image", "data": image})
+        pages.append(back_page(BASE_IMAGE_PATH, FONT, value_type))
 
-    return images
+    return pages
 
 
 def back_page(BASE_IMAGE_PATH, FONT, value_type):
@@ -52,12 +52,12 @@ def back_page(BASE_IMAGE_PATH, FONT, value_type):
         value_type: Type of value representation used (str).
 
     Returns:
-        Pillow Image of back page (Image).
+        A dictionary for the back page.
     """
     image = Image.open(os.path.join(BASE_IMAGE_PATH, "binary-windows-blank.png"))
     image = add_digit_values(image, value_type, False, 660, 724, 650, FONT)
     image = image.rotate(90, expand=True)
-    return image
+    return {"type": "image", "data": image}
 
 
 def add_dot_counts(image, starting_value, font):

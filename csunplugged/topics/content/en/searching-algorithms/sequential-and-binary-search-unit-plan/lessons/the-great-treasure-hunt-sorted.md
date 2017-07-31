@@ -39,7 +39,7 @@ Number Knowledge: Read and say numbers between 100 and 9999.
 4.  Have them number off i.e. one or two
 5.  Have the “ones” come up and get a Treasure hunt sheet
 6.  Have the “twos” come up and get a different Treasure hunt sheet
-7.  Go through the [[Treasure Hunt instructions](http://www.example.com)] guide sheet and set up their games.
+7.  Go through the [Treasure Hunt instructions]('resources:resource' 'treasure-hunt') guide sheet and set up their games.
 8.  Play the game and have students add up how many guesses it took each of them to find the treasure chest with the correct number in it.
 9.  Add this data to either a class sheet to graph on paper or add it to a spreadsheet that also displays the graph and what the graph grow as more data becomes available.
 
