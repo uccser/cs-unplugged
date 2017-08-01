@@ -14,7 +14,7 @@ treasure-hunt:
   name: Treasure Hunt
   webpage-template: resources/treasure-hunt.html
   generation-view: treasure_hunt.py
-  thumbnail-static-path: img/resources/resource-treasure-hunt-thumbnail-example.png
+  thumbnail-static-path: img/resources/treasure-hunt/thumbnail.png
   copies: true
 binary-cards:
   name: Binary Cards
