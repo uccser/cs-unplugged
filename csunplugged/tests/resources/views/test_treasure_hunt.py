@@ -72,7 +72,12 @@ class TreasureHuntResourceViewTest(BaseTestWithDB):
             else:
                 instructions_text = "without instructions"
 
-            subtitle =  "{} - {} - {} - {}".format(range_text, art_style_text, instructions_text, combination["paper_size"])
+            subtitle = "{} - {} - {} - {}".format(
+                range_text,
+                art_style_text,
+                instructions_text,
+                combination["paper_size"]
+            )
 
             self.assertEqual(
                 response.get("Content-Disposition"),
