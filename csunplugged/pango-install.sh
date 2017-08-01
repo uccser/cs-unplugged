@@ -3,7 +3,7 @@ cd /pango-install/
 
 # Install libpng
 echo 'Obtaining libpng'
-wget http://downloads.sourceforge.net/libpng/libpng-1.6.29.tar.xz
+wget --quiet http://downloads.sourceforge.net/libpng/libpng-1.6.29.tar.xz
 tar -xf libpng-1.6.29.tar.xz
 cd libpng-1.6.29
 
@@ -19,7 +19,7 @@ cd ..
 
 # Install Which
 echo 'Obtaining Which'
-wget ftp://ftp.gnu.org/gnu/which/which-2.21.tar.gz
+wget --quiet ftp://ftp.gnu.org/gnu/which/which-2.21.tar.gz
 tar -xf which-2.21.tar.gz
 cd which-2.21
 
@@ -33,7 +33,7 @@ cd ..
 
 # Install FreeType
 echo 'Obtaining FreeType'
-wget http://downloads.sourceforge.net/freetype/freetype-2.8.tar.bz2
+wget --quiet http://downloads.sourceforge.net/freetype/freetype-2.8.tar.bz2
 tar -xf freetype-2.8.tar.bz2
 cd freetype-2.8
 
@@ -52,7 +52,7 @@ cd ..
 
 # Install HarfBuzz with FreeType2
 echo 'Obtaining HarfBuzz'
-wget http://www.freedesktop.org/software/harfbuzz/release/harfbuzz-1.4.6.tar.bz2
+wget --quiet http://www.freedesktop.org/software/harfbuzz/release/harfbuzz-1.4.6.tar.bz2
 tar -xf harfbuzz-1.4.6.tar.bz2
 cd harfbuzz-1.4.6
 
@@ -76,7 +76,7 @@ cd ..
 
 # Install Fontconfig-2
 echo 'Obtaining Fontconfig'
-wget http://www.freedesktop.org/software/fontconfig/release/fontconfig-2.12.4.tar.bz2
+wget --quiet http://www.freedesktop.org/software/fontconfig/release/fontconfig-2.12.4.tar.bz2
 tar -xf fontconfig-2.12.4.tar.bz2
 cd fontconfig-2.12.4
 
@@ -95,7 +95,7 @@ cd ..
 
 # install Pango-1.40
 echo 'Obtaining Pango'
-wget ftp://ftp.gnome.org/pub/gnome/sources/pango/1.40/pango-1.40.6.tar.xz
+wget --quiet ftp://ftp.gnome.org/pub/gnome/sources/pango/1.40/pango-1.40.6.tar.xz
 tar -xf pango-1.40.6.tar.xz
 cd pango-1.40.6
 
