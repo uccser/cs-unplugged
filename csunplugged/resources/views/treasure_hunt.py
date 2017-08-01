@@ -62,17 +62,16 @@ def resource(request, resource):
                 fill="#000"
             )
 
-        # Add number order and range text
-        text = subtitle(request, resource)
-        font = ImageFont.truetype(font_path, 110)
+        text = "{} - {} to {}".format(number_order.title(), range_min, range_max - 1)
+        font = ImageFont.truetype(font_path, 200)
         text_width, text_height = draw.textsize(text, font=font)
-        coord_x = 1472 - (text_width / 2)
-        coord_y = 35 - (text_height / 2)
+        coord_x = 3775 - (text_width / 2)
+        coord_y = 1575 - (text_height / 2)
         draw.text(
             (coord_x, coord_y),
             text,
             font=font,
-            fill="#000"
+            fill="#000",
         )
     pages.append({"type": "image", "data": image})
 
@@ -93,14 +92,29 @@ def subtitle(request, resource):
         text for subtitle (str)
     """
     prefilled_values = retrieve_query_parameter(request, "prefilled_values")
+    art_style = retrieve_query_parameter(request, "art")
+    instructions = retrieve_query_parameter(request, "instructions")
+    paper_size = retrieve_query_parameter(request, "paper_size")
+
     if prefilled_values == "blank":
-        text = "blank"
+        range_text = "blank"
     else:
         SUBTITLE_TEMPLATE = "{} - {} to {}"
         number_order_text = retrieve_query_parameter(request, "number_order").title()
         range_min, range_max, font_size = number_range(request)
-        text = SUBTITLE_TEMPLATE.format(number_order_text, range_min, range_max - 1)
-    return "{} - {}".format(text, retrieve_query_parameter(request, "paper_size"))
+        range_text = SUBTITLE_TEMPLATE.format(number_order_text, range_min, range_max - 1)
+
+    if art_style == "colour":
+        art_style_text = "full colour"
+    else:
+        art_style_text = "black and white"
+
+    if instructions:
+        instructions_text = "with instructions"
+    else:
+        instructions_text = "without instructions"
+
+    return "{} - {} - {} - {}".format(range_text, art_style_text, instructions_text, paper_size)
 
 
 def number_range(request):
