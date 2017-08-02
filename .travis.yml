@@ -12,10 +12,11 @@ install:
 jobs:
   include:
     - stage: build
-      script: ./csu start
+      script: ./infrastructure/docker-build.sh
 
     - stage: test
-      script: ./csu dev test
+      script: ./csu start
+    - script: ./csu dev test
     - script: ./csu dev test_backwards
     - script: ./csu dev style
     - script: ./csu dev docs

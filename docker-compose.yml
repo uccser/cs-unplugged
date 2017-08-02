@@ -4,10 +4,11 @@ services:
     restart: always
     image: postgres
 
-  django:
+  csu-django:
     build:
       context: .
       dockerfile: ./Dockerfile-local
+    image: uccser/csu-django:local-2.0.0-alpha.4
     command: /cs-unplugged/csunplugged/docker-development-entrypoint.sh
     volumes:
       - .:/cs-unplugged
@@ -19,14 +20,15 @@ services:
     depends_on:
       - postgres
 
-  nginx:
+  csu-nginx:
     build:
       context: .
       dockerfile: ./infrastructure/nginx/Dockerfile
+    image: uccser/csu-nginx:1.0.1
     volumes:
       - ./csunplugged/:/app/
       - /app/node_modules
     depends_on:
-      - django
+      - csu-django
     ports:
       - "80:80"
