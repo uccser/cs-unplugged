@@ -10,6 +10,7 @@ install:
   - sudo docker --version
   - sudo docker-compose --version
 script:
+    - ./csu start
     - ./csu ci test_with_coverage
     - ./csu ci test_backwards
     - ./csu ci style
