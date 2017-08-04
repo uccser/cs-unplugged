@@ -1,3 +1,4 @@
+from django.test import tag
 from django.urls import reverse
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
@@ -7,6 +8,7 @@ from utils.resource_valid_test_configurations import resource_valid_test_configu
 from utils.bool_to_yes_no import bool_to_yes_no
 
 
+@tag('resource_generation')
 class PianoKeysResourceViewTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):

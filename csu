@@ -294,6 +294,17 @@ function logs_help {
   printf "   logs              View logs.\n"
 }
 
+function test_with_coverage() {
+  test_suite
+  # Swap these two lines if testing is too slow
+  #docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --exclude-tag=resource_generation
+  test_status=$?
+  test_coverage
+  coverage_status=$?
+  bash <(curl -s https://codecov.io/bash)
+  ! (( $test_status || $coverage_status ))
+}
+
 function process_ci_command() {
   if [ $# -lt 1 ]
   then
@@ -314,13 +325,13 @@ function process_ci_command() {
         ;;
       test_with_coverage)
         docker-compose up -d
-        test_suite
-        test_coverage
-        bash <(curl -s https://codecov.io/bash)
+        update
+        test_with_coverage
         exit
         ;;
       test_backwards)
         docker-compose up -d
+        update
         test_suite_backwards
         exit
         ;;
