@@ -294,6 +294,40 @@ function logs_help {
   printf "   logs              View logs.\n"
 }
 
+function process_ci_command() {
+  if [ $# -lt 1 ]
+  then
+    printf "${RED}ERROR: ci command requires one parameter!${NC}\n"
+    helpmenu
+    exit 1
+  else
+    case "$1" in
+      docs)
+        docker-compose up -d
+        documentation
+        exit
+        ;;
+      style)
+        docker-compose up -d
+        style
+        exit
+        ;;
+      test_with_coverage)
+        docker-compose up -d
+        test_suite
+        test_coverage
+        bash <(curl -s https://codecov.io/bash)
+        exit
+        ;;
+      test_backwards)
+        docker-compose up -d
+        test_suite_backwards
+        exit
+        ;;
+    esac
+  fi
+}
+
 function process_dev_command() {
   if [ $# -lt 1 ]
   then
@@ -386,6 +420,9 @@ case "$1" in
   clean)
     clean
     exit
+    ;;
+  ci)
+    process_ci_command $2
     ;;
   dev)
     process_dev_command $2 $3

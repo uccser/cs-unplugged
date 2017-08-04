@@ -11,16 +11,11 @@ install:
   - sudo docker-compose --version
 jobs:
   include:
-    - stage: build
-      script: ./infrastructure/docker-build.sh
-
     - stage: test
-      script:
-    - script: ./csu start
-    - script: ./csu dev test
-    - script: ./csu dev test_backwards
-    - script: ./csu dev style
-    - script: ./csu dev docs
+    - script: ./csu ci test_with_coverage
+    - script: ./csu ci test_backwards
+    - script: ./csu ci style
+    - script: ./csu ci docs
 
     - stage: deploy
       script: skip
@@ -35,9 +30,6 @@ jobs:
           skip_cleanup: true
           on:
             branch: master
-after_script:
-  - "./csu dev test_coverage"
-  - bash <(curl -s https://codecov.io/bash)
 notifications:
   email: false
   slack:
