@@ -316,24 +316,18 @@ function process_ci_command() {
   else
     case "$1" in
       docs)
-        docker-compose up -d
         documentation
         exit
         ;;
       style)
-        docker-compose up -d
         style
         exit
         ;;
       test_with_coverage)
-        docker-compose up -d
-        update
         test_with_coverage
         exit
         ;;
       test_backwards)
-        docker-compose up -d
-        update
         test_suite_backwards
         exit
         ;;

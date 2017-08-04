@@ -9,27 +9,24 @@ python:
 install:
   - sudo docker --version
   - sudo docker-compose --version
-jobs:
-  include:
-    - stage: test
-      script: ./csu ci test_with_coverage
-    - script: ./csu ci test_backwards
-    - script: ./csu ci style
-    - script: ./csu ci docs
-
-    - stage: deploy
-      script: skip
-      deploy:
-        - provider: script
-          script: bash ./infrastructure/dev-deploy/dev-deploy.sh
-          skip_cleanup: true
-          on:
-            branch: develop
-        - provider: script
-          script: bash ./infrastructure/prod-deploy/prod-deploy.sh
-          skip_cleanup: true
-          on:
-            branch: master
+script:
+    - ./csu ci test_with_coverage
+    - ./csu ci test_backwards
+    - ./csu ci style
+    - ./csu ci docs
+deploy:
+  script: skip
+  deploy:
+    - provider: script
+      script: bash ./infrastructure/dev-deploy/dev-deploy.sh
+      skip_cleanup: true
+      on:
+        branch: develop
+    - provider: script
+      script: bash ./infrastructure/prod-deploy/prod-deploy.sh
+      skip_cleanup: true
+      on:
+        branch: master
 notifications:
   email: false
   slack:
