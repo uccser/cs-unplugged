@@ -16,11 +16,11 @@ jobs:
 
     - stage: test
       script:
-        - ./csu start
-        - ./csu dev test
-        - ./csu dev test_backwards
-        - ./csu dev style
-        - ./csu dev docs
+    - script: ./csu start
+    - script: ./csu dev test
+    - script: ./csu dev test_backwards
+    - script: ./csu dev style
+    - script: ./csu dev docs
 
     - stage: deploy
       script: skip

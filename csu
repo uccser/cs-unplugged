@@ -54,7 +54,7 @@ function helpmenu {
 # Start development environment
 function start {
   printf "Creating systems...\n"
-  docker-compose pull --ignore-pull-failures && docker-compose up -d
+  docker-compose up -d
   printf "\n"
   # Run helper functions
   update
@@ -183,12 +183,12 @@ function static_scratch {
 # Collecting static files
 function collect_static {
   printf "\nCollecting static files..."
-  docker-compose exec csu-django /docker_venv/bin/python3 ./manage.py collectstatic --no-input --clear
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py collectstatic --no-input --clear
 }
 
 # Run shell
 function shell {
-  docker-compose exec csu-django bash
+  docker-compose exec django bash
 }
 function shell_help {
   printf "   shell             Open shell to Django folder.\n"
@@ -197,10 +197,10 @@ function shell_help {
 # Run style checks
 function style {
   printf "Running PEP8 style checker...\n"
-  docker-compose exec csu-django /docker_venv/bin/flake8
+  docker-compose exec django /docker_venv/bin/flake8
   pep8_status=$?
   printf "\nRunning Python docstring checker...\n"
-  docker-compose exec csu-django /docker_venv/bin/pydocstyle --count --explain
+  docker-compose exec django /docker_venv/bin/pydocstyle --count --explain
   pydocstyle_status=$?
   ! (( $pep8_status || $pydocstyle_status ))
 }
@@ -211,7 +211,7 @@ function style_help {
 # Run test suite
 function test_suite {
   printf "Running test suite...\n"
-  docker-compose exec csu-django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3
+  docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3
 }
 function test_suite_help {
   printf "   test              Run test suite with code coverage.\n"
@@ -220,7 +220,7 @@ function test_suite_help {
 # Run specific test suite
 function test_specific {
   printf "Running specific test suite...\n"
-  docker-compose exec csu-django /docker_venv/bin/python3 ./manage.py test --settings=config.settings.testing "${1}" -v 3
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py test --settings=config.settings.testing "${1}" -v 3
 }
 function test_specific_help {
   printf "   test_specific     Run specific test suite. Pass in parameter\n"
@@ -230,8 +230,8 @@ function test_specific_help {
 # Display test coverage table
 function test_coverage {
   printf "Displaying test suite coverage...\n"
-  docker-compose exec csu-django /docker_venv/bin/coverage xml -i
-  docker-compose exec csu-django /docker_venv/bin/coverage report -m --skip-covered
+  docker-compose exec django /docker_venv/bin/coverage xml -i
+  docker-compose exec django /docker_venv/bin/coverage report -m --skip-covered
 }
 function test_coverage_help {
   printf "   test_coverage     Display code coverage report.\n"
@@ -242,7 +242,7 @@ function test_suite_backwards {
   printf "Running test suite backwards...\n"
   if [ "$TRAVIS_PULL_REQUEST" != "false" ]
   then
-    docker-compose exec csu-django /docker_venv/bin/python3 ./manage.py test --settings=config.settings.testing --pattern "test_*.py" --reverse -v 0
+    docker-compose exec django /docker_venv/bin/python3 ./manage.py test --settings=config.settings.testing --pattern "test_*.py" --reverse -v 0
   fi
 }
 function test_suite_backwards_help {
