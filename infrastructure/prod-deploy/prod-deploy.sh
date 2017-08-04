@@ -1,6 +1,5 @@
 #!/bin/bash
 # Deploy the system to the production website.
-./csu start
 
 # Generate production static files
 ./csu dev static_prod
