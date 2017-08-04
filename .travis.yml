@@ -12,7 +12,7 @@ install:
 jobs:
   include:
     - stage: test
-    - script: ./csu ci test_with_coverage
+      script: ./csu ci test_with_coverage
     - script: ./csu ci test_backwards
     - script: ./csu ci style
     - script: ./csu ci docs
