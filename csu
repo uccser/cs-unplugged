@@ -240,10 +240,12 @@ function test_coverage_help {
 # Run test suite backwards for CI testing
 function test_suite_backwards {
   printf "Running test suite backwards...\n"
-  if [ "$TRAVIS_PULL_REQUEST" != "false" ]
-  then
+  status=0
+  if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
     docker-compose exec django /docker_venv/bin/python3 ./manage.py test --settings=config.settings.testing --pattern "test_*.py" --reverse -v 0
+    status=$?
   fi
+  ! (( ${status} ))
 }
 function test_suite_backwards_help {
   printf "   test_backwards    Run test suite backwards.\n"
