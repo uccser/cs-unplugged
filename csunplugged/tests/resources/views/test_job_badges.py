@@ -1,3 +1,4 @@
+from django.test import tag
 from django.urls import reverse
 
 from tests.BaseTestWithDB import BaseTestWithDB
@@ -6,6 +7,7 @@ from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerato
 from utils.create_query_string import query_string
 
 
+@tag('resource_generation')
 class JobBadgesResourceViewTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):

@@ -240,10 +240,12 @@ function test_coverage_help {
 # Run test suite backwards for CI testing
 function test_suite_backwards {
   printf "Running test suite backwards...\n"
-  if [ "$TRAVIS_PULL_REQUEST" != "false" ]
-  then
+  status=0
+  if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
     docker-compose exec django /docker_venv/bin/python3 ./manage.py test --settings=config.settings.testing --pattern "test_*.py" --reverse -v 0
+    status=$?
   fi
+  ! (( ${status} ))
 }
 function test_suite_backwards_help {
   printf "   test_backwards    Run test suite backwards.\n"
@@ -292,6 +294,45 @@ function logs {
 }
 function logs_help {
   printf "   logs              View logs.\n"
+}
+
+function test_with_coverage() {
+  test_suite
+  # Swap these two lines if testing is too slow
+  #docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --exclude-tag=resource_generation
+  test_status=$?
+  test_coverage
+  coverage_status=$?
+  bash <(curl -s https://codecov.io/bash)
+  ! (( $test_status || $coverage_status ))
+}
+
+function process_ci_command() {
+  if [ $# -lt 1 ]
+  then
+    printf "${RED}ERROR: ci command requires one parameter!${NC}\n"
+    helpmenu
+    exit 1
+  else
+    case "$1" in
+      docs)
+        documentation
+        exit
+        ;;
+      style)
+        style
+        exit
+        ;;
+      test_with_coverage)
+        test_with_coverage
+        exit
+        ;;
+      test_backwards)
+        test_suite_backwards
+        exit
+        ;;
+    esac
+  fi
 }
 
 function process_dev_command() {
@@ -386,6 +427,9 @@ case "$1" in
   clean)
     clean
     exit
+    ;;
+  ci)
+    process_ci_command $2
     ;;
   dev)
     process_dev_command $2 $3

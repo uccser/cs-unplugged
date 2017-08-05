@@ -1,8 +1,10 @@
 from tests.BaseTestWithDB import BaseTestWithDB
+from django.test import tag
 from django.urls import reverse
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
 
 
+@tag('resource_generation')
 class IndexViewTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
