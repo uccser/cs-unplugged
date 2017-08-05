@@ -308,6 +308,7 @@ function test_with_coverage() {
 }
 
 function process_ci_command() {
+  start
   if [ $# -lt 1 ]
   then
     printf "${RED}ERROR: ci command requires one parameter!${NC}\n"
