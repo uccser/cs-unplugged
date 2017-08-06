@@ -1,12 +1,9 @@
 #!/bin/bash
+
+# Updates the database for the development system
+
 # Deploy the system to the development website.
 ./csu start
-
-# Generate production static files
-./csu dev static_prod
-
-# Generate static PDF resources for deployment.
-./csu dev makeresources
 
 # Install Python requirements for running Django locally when using Google
 # Cloud SQL proxy. Ideally this would be run inside the Docker image, to
@@ -18,21 +15,8 @@
 # See: https://docs.travis-ci.com/user/languages/python/#Travis-CI-Uses-Isolated-virtualenvs
 pip install -r ./requirements/production.txt
 
-# Set the environment variable for Google Cloud SDK to disable prompts
-# and choose default settings.
-export CLOUDSDK_CORE_DISABLE_PROMPTS=1;
-
-# Create an environment variable for the correct distribution.
-export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
-
-# Add the Cloud SDK distribution URI as a package source.
-echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-
-# Import the Google Cloud Platform public key.
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-
-# Update the package list and install the Cloud SDK.
-sudo apt-get update && sudo apt-get install google-cloud-sdk
+# Install Google Cloud SDK
+./infrastructure/install_google_cloud_sdk.sh
 
 # Decrypt secret files archive that contain credentials.
 #
@@ -62,17 +46,6 @@ gcloud version
 # See: https://cloud.google.com/solutions/continuous-delivery-with-travis-ci#continuous_deployment_on_app_engine_flexible_environment_instances
 ssh-keygen -q -N "" -f ~/.ssh/google_compute_engine
 
-# Delete all previous stopped versions of application on Google App Engine.
-# This command deletes all stopped applications of the 'default' service,
-# and when the new application is deployed, the previous application version
-# will remain until the next deployment.
-# We delete old versions due avoid hitting the App Engine version limit.
-declare -a versions_to_delete
-versions_to_delete=($(gcloud app versions list --filter="SERVING_STATUS=STOPPED" --service=default --format="[no-heading]" | awk '{print $2}' | tr '\n' ' '))
-for version in "${versions_to_delete[@]}"; do
-  gcloud app versions delete --service=default ${version}
-done
-
 # Load environment variables.
 # Used when running local Django for updating development database.
 . ./load-dev-deploy-envs.sh
@@ -96,24 +69,6 @@ chmod +x cloud_sql_proxy
 # and to not send output to console.
 # See: https://cloud.google.com/python/django/flexible-environment#initialize_your_cloud_sql_instance
 ./cloud_sql_proxy -instances="${GOOGLE_CLOUD_SQL_CONNECTION_NAME}"=tcp:5433 -credential_file="./continuous-deployment-dev.json" >/dev/null 2>/dev/null &
-
-# Publish static files.
-#
-# This copies the generated static files from tests to the Google Storage
-# Bucket.
-# See: https://cloud.google.com/python/django/flexible-environment#deploy_the_app_to_the_app_engine_flexible_environment
-gsutil rsync -R ./csunplugged/staticfiles/ gs://cs-unplugged-dev.appspot.com/static/
-
-# Publish Django system to Google App Engine.
-#
-# This deploys using the 'app-develop.yaml' decrypted earlier that contains
-# secret environment variables to use within the application.
-# Project is specified to ensure correct project deployment.
-# Runs with '--quiet' to skip prompt of confirmation.
-# If multiple services are deployed at a later stage, these should be checked
-# that the apps deploy to the correct services.
-# See: https://cloud.google.com/sdk/gcloud/reference/app/deploy
-gcloud app deploy ./app-dev.yaml --quiet --project=cs-unplugged-dev
 
 # Update development database.
 #
