@@ -1,4 +1,4 @@
-"""Module for the custom Django makestaticresources command."""
+"""Module for the custom Django makeresources command."""
 
 import os
 import os.path
@@ -15,13 +15,27 @@ class Command(BaseCommand):
 
     help = "Creates static PDF files of resource combinations."
 
+    def add_arguments(self, parser):
+        """Add optional parameter to makeresources command."""
+        parser.add_argument(
+            "resource_name",
+            nargs="?",
+            default=None,
+            help="The resource name to generate",
+        )
+
     def handle(self, *args, **options):
         """Automatically called when the makestaticresources command is given."""
         BASE_PATH = "staticfiles/resources/"
         if not os.path.exists(BASE_PATH):
             os.makedirs(BASE_PATH)
 
-        for resource in Resource.objects.all():
+        if options["resource_name"]:
+            resources = [Resource.objects.get(name=options["resource_name"])]
+        else:
+            resources = Resource.objects.order_by("name")
+
+        for resource in resources:
             # Get path to resource module
             resource_view = resource.generation_view
             if resource_view.endswith(".py"):
