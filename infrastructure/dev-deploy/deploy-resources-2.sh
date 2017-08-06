@@ -34,10 +34,6 @@ tar -xf dev-deploy-secrets.tar
 # See: https://cloud.google.com/sdk/gcloud/reference/auth/activate-service-account
 gcloud auth activate-service-account --key-file continuous-deployment-dev.json
 
-# Display the gcloud version, useful for debugging purposes.
-# See: https://cloud.google.com/sdk/gcloud/reference/version
-gcloud version
-
 # Create empty SSH keys with an empty passphrase, for Google Cloud SDK to
 # copy files to a VM for building the Docker image.
 # Only required for deploying to Google App Engine flexible environment.
