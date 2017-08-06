@@ -2,7 +2,7 @@
 
 # Deploy generated resource files to the development static file server.
 
-./csu start_without_static
+./csu dev start_without_static
 
 # Generate static PDF resources for deployment.
 ./csu dev makeresources "Modulo Clock"

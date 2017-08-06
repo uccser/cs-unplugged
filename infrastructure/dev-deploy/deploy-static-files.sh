@@ -2,7 +2,7 @@
 
 # Deploy static files to the development static file server.
 
-./csu start_without_static
+./csu dev start_without_static
 
 # Generate production static files
 ./csu dev static_prod
