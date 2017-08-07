@@ -37,6 +37,7 @@ class Command(BaseCommand):
             resources = Resource.objects.order_by("name")
 
         for resource in resources:
+            resource_start_time = time()
             print("Creating {}...".format(resource.name))
             # Get path to resource module
             resource_view = resource.generation_view
@@ -60,8 +61,7 @@ class Command(BaseCommand):
                 pdf_file_output = open(os.path.join(BASE_PATH, filename), "wb")
                 pdf_file_output.write(pdf_file)
                 pdf_file_output.close()
-                end_time = time()
                 print("Created {}".format(filename))
-                print("{}{:.1f} secs".format(" " * 4, end_time - start_time))
+                print("{}{:.1f} secs".format(" " * 4, time() - start_time))
                 print("{}{:.0f}% of {} generated".format(" " * 4, (number + 1) / len(combinations) * 100, resource.name))
-            print()
+            print("\n{} took {:.1f} secs to generate all combinations\n".format(resource.name, time() - resource_start_time))
