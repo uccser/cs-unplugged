@@ -9,7 +9,7 @@ from io import BytesIO
 import importlib
 import base64
 
-MM_TO_PIXEL_RATIO = 3.78
+MM_TO_PIXEL_RATIO = 6
 
 
 def generate_resource_pdf(request, resource, module_path):

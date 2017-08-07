@@ -4,6 +4,7 @@ import os
 import os.path
 import importlib
 import itertools
+from time import time
 from django.core.management.base import BaseCommand
 from django.http.request import HttpRequest
 from resources.models import Resource
@@ -25,7 +26,7 @@ class Command(BaseCommand):
         )
 
     def handle(self, *args, **options):
-        """Automatically called when the makestaticresources command is given."""
+        """Automatically called when the makeresources command is given."""
         BASE_PATH = "staticfiles/resources/"
         if not os.path.exists(BASE_PATH):
             os.makedirs(BASE_PATH)
@@ -36,6 +37,8 @@ class Command(BaseCommand):
             resources = Resource.objects.order_by("name")
 
         for resource in resources:
+            resource_start_time = time()
+            print("Creating {}...".format(resource.name))
             # Get path to resource module
             resource_view = resource.generation_view
             if resource_view.endswith(".py"):
@@ -47,7 +50,8 @@ class Command(BaseCommand):
             parameter_option_keys = sorted(parameter_options)
             combinations = [dict(zip(parameter_option_keys, product)) for product in itertools.product(*(parameter_options[parameter_option_key] for parameter_option_key in parameter_option_keys))]  # noqa: E501
             # Create PDF for all possible combinations
-            for combination in combinations:
+            for number, combination in enumerate(combinations):
+                start_time = time()
                 request = HttpRequest()
                 if resource.copies:
                     combination["copies"] = 30
@@ -58,3 +62,6 @@ class Command(BaseCommand):
                 pdf_file_output.write(pdf_file)
                 pdf_file_output.close()
                 print("Created {}".format(filename))
+                print("{}{:.1f} secs".format(" " * 4, time() - start_time))
+                print("{}{:.0f}% of {} generated".format(" " * 4, (number + 1) / len(combinations) * 100, resource.name))
+            print("\n{} took {:.1f} secs to generate all combinations\n".format(resource.name, time() - resource_start_time))

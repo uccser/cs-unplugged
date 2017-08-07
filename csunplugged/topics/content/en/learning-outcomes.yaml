@@ -469,6 +469,8 @@ unplugged-programming-accurately-count:
 
 unplugged-programming-give-precise-instructions:
   text: Give a set of precise instructions that programs an object to move efficiently from one point to another.
+  curriculum-areas:
+    - programming
 
 unplugged-programming-identify-bug-correct:
   text: Identify where a bug has occurred and be able to correct the code to allow the object to move to the desired destination.
