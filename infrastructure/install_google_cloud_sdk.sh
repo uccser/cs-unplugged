@@ -19,7 +19,7 @@ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 sudo apt-get update && sudo apt-get install google-cloud-sdk
 
 # Update gcloud components for gsutil update
-gcloud components update
+sudo gcloud components update
 
 # Display the gcloud version, useful for debugging purposes.
 # See: https://cloud.google.com/sdk/gcloud/reference/version
