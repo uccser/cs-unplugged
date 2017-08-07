@@ -5,15 +5,15 @@
 ./csu start
 
 # Generate static PDF resources for deployment.
-./csu dev makeresources "Arrows"
-./csu dev makeresources "Barcode Checksum Poster"
-./csu dev makeresources "Binary Cards"
-./csu dev makeresources "Binary Cards (Small)"
-./csu dev makeresources "Binary to Alphabet"
-./csu dev makeresources "Binary Windows"
-./csu dev makeresources "Grid"
-./csu dev makeresources "Job Badges"
-./csu dev makeresources "Left and Right Cards"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Arrows"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Barcode Checksum Poster"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Binary Cards"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Binary Cards (Small)"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Binary to Alphabet"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Binary Windows"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Grid"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Job Badges"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Left and Right Cards"
 
 # Install Google Cloud SDK
 ./infrastructure/install_google_cloud_sdk.sh

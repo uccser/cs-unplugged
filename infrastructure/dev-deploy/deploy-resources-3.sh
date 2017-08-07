@@ -5,7 +5,7 @@
 ./csu start
 
 # Generate static PDF resources for deployment.
-./csu dev makeresources "Treasure Hunt"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Treasure Hunt"
 
 # Install Google Cloud SDK
 ./infrastructure/install_google_cloud_sdk.sh
