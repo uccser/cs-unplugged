@@ -11,11 +11,11 @@ install:
   - sudo docker-compose --version
 jobs:
   include:
-    - stage: test
-      script: ./csu ci test_with_coverage
-    - script: ./csu ci test_backwards
-    - script: ./csu ci style
-    - script: ./csu ci docs
+    # - stage: test
+    #   script: ./csu ci test_with_coverage
+    # - script: ./csu ci test_backwards
+    # - script: ./csu ci style
+    # - script: ./csu ci docs
     - stage: develop deploy
       script: skip
       deploy:
@@ -23,42 +23,42 @@ jobs:
           script: bash ./infrastructure/dev-deploy/deploy-app.sh
           skip_cleanup: true
           on:
-            branch: develop
+            branch: issue/574
     - script: skip
       deploy:
         - provider: script
           script: bash ./infrastructure/dev-deploy/deploy-resources-1.sh
           skip_cleanup: true
           on:
-            branch: develop
+            branch: issue/574
     - script: skip
       deploy:
         - provider: script
           script: bash ./infrastructure/dev-deploy/deploy-resources-2.sh
           skip_cleanup: true
           on:
-            branch: develop
+            branch: issue/574
     - script: skip
       deploy:
         - provider: script
           script: bash ./infrastructure/dev-deploy/deploy-resources-3.sh
           skip_cleanup: true
           on:
-            branch: develop
+            branch: issue/574
     - script: skip
       deploy:
         - provider: script
           script: bash ./infrastructure/dev-deploy/deploy-static-files.sh
           skip_cleanup: true
           on:
-            branch: develop
+            branch: issue/574
     - script: skip
       deploy:
         - provider: script
           script: bash ./infrastructure/dev-deploy/update-database.sh
           skip_cleanup: true
           on:
-            branch: develop
+            branch: issue/574
     - stage: production deploy
       script: skip
       deploy:
