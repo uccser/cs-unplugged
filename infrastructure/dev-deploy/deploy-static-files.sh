@@ -2,7 +2,7 @@
 
 # Deploy static files to the development static file server.
 
-docker-compose up -d
+./csu start
 
 # Generate production static files
 ./csu dev static_prod

@@ -2,9 +2,7 @@
 
 # Deploy generated resource files to the development static file server.
 
-docker-compose up -d
-docker-compose exec django /docker_venv/bin/python3 ./manage.py migrate
-docker-compose exec django /docker_venv/bin/python3 ./manage.py loadresources
+./csu start
 
 # Generate static PDF resources for deployment.
 ./csu dev makeresources "Arrows"
@@ -49,4 +47,4 @@ ssh-keygen -q -N "" -f ~/.ssh/google_compute_engine
 # This copies the generated static files from tests to the Google Storage
 # Bucket.
 # See: https://cloud.google.com/python/django/flexible-environment#deploy_the_app_to_the_app_engine_flexible_environment
-gsutil rsync -R ./csunplugged/staticfiles/ gs://cs-unplugged-dev.appspot.com/static/
+gsutil rsync -R ./csunplugged/staticfiles/resources/ gs://cs-unplugged-dev.appspot.com/static/resources/
