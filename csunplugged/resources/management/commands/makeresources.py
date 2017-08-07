@@ -63,5 +63,11 @@ class Command(BaseCommand):
                 pdf_file_output.close()
                 print("Created {}".format(filename))
                 print("{}{:.1f} secs".format(" " * 4, time() - start_time))
-                print("{}{:.0f}% of {} generated".format(" " * 4, (number + 1) / len(combinations) * 100, resource.name))
-            print("\n{} took {:.1f} secs to generate all combinations\n".format(resource.name, time() - resource_start_time))
+                print("{}{:.0f}% of {} generated".format(
+                    " " * 4,
+                    (number + 1) / len(combinations) * 100, resource.name
+                ))
+            print("\n{} took {:.1f} secs to generate all combinations\n".format(
+                resource.name,
+                time() - resource_start_time
+            ))
