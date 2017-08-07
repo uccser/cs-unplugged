@@ -43,9 +43,9 @@ def resource(request, resource):
         if number_order == "sorted":
             numbers.sort()
 
-        base_coord_y = 1530
-        coord_y_increment = 597
-        base_coords_x = [1200, 2080]
+        base_coord_y = 506
+        coord_y_increment = 199
+        base_coords_x = [390, 700]
         for i in range(0, total_numbers):
             text = str(numbers[i])
             text_width, text_height = draw.textsize(text, font=font)
@@ -63,10 +63,10 @@ def resource(request, resource):
             )
 
         text = "{} - {} to {}".format(number_order.title(), range_min, range_max - 1)
-        font = ImageFont.truetype(font_path, 200)
+        font = ImageFont.truetype(font_path, 75)
         text_width, text_height = draw.textsize(text, font=font)
-        coord_x = 3775 - (text_width / 2)
-        coord_y = 1575 - (text_height / 2)
+        coord_x = 1220 - (text_width / 2)
+        coord_y = 520 - (text_height / 2)
         draw.text(
             (coord_x, coord_y),
             text,
@@ -131,13 +131,13 @@ def number_range(request):
     range_min = 0
     if prefilled_values == "easy":
         range_max = 100
-        font_size = 170
+        font_size = 55
     elif prefilled_values == "medium":
         range_max = 1000
-        font_size = 140
+        font_size = 50
     elif prefilled_values == "hard":
         range_max = 10000
-        font_size = 125
+        font_size = 45
     return (range_min, range_max, font_size)
 
 
