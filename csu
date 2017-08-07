@@ -41,7 +41,6 @@ function helpmenu {
   makeresources_help
   migrate_help
   shell_help
-  start_without_static_help
   static_help
   static_prod_help
   style_help
@@ -193,17 +192,6 @@ function shell {
 }
 function shell_help {
   printf "   shell             Open shell to Django folder.\n"
-}
-
-# Start development environment without generating static files
-function start_without_static {
-  docker-compose up -d
-  migrate
-  updatedata
-}
-function start_without_static_help {
-  printf "   start             Start development environment (without running\n"
-  printf "                     static command).\n"
 }
 
 # Run style checks
@@ -382,10 +370,6 @@ function process_dev_command() {
         ;;
       shell)
         shell
-        exit
-        ;;
-      start_without_static)
-        start_without_static
         exit
         ;;
       static)

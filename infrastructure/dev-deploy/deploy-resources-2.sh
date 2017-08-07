@@ -2,7 +2,9 @@
 
 # Deploy generated resource files to the development static file server.
 
-./csu dev start_without_static
+docker-compose up -d
+docker-compose exec django /docker_venv/bin/python3 ./manage.py migrate
+docker-compose exec django /docker_venv/bin/python3 ./manage.py loadresources
 
 # Generate static PDF resources for deployment.
 ./csu dev makeresources "Modulo Clock"
