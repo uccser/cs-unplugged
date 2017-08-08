@@ -91,13 +91,13 @@ defhelp restart 'Stop and then restart development environment.'
 
 # Run Django migrate and updatedata commands
 cmd_update() {
-  cmd_static
+  dev_static
 
   echo ""
-  cmd_migrate
+  dev_migrate
 
   echo ""
-  cmd_updatedata
+  dev_updatedata
 
   cmd_static_scratch
   cmd_collect_static
