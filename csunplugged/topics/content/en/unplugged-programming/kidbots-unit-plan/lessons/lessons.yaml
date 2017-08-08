@@ -47,3 +47,32 @@ sending-a-rocket-to-mars:
     - modify-bee-bot
     - catch-the-mouse
     - catch-the-mouse-random
+
+rescue-mission:
+  duration: 30
+  learning-outcomes:
+    - unplugged-programming-give-instructions-move
+    - unplugged-programming-identify-bug-correct
+    - unplugged-programming-explain-exact-instructions
+    - unplugged-programming-follow-instructions
+    - unplugged-programming-give-accurate-instructions-pace
+    - unplugged-programming-accurately-count
+    - unplugged-programming-communicate-debugging
+    - unplugged-programming-actively-listen-feedback
+  generated-resources:
+    arrows:
+      description: Cut theses sheets out for students.
+    left-right-cards:
+      description: Cut these sheets out for students who are still learning their left and right.
+    job-badges:
+      description: Cut these out and use them as badges for the three students doing the three jobs respectively. You might want to put them in a name holder on a lanyard.
+    grid:
+      description: 8 x 8 grid for students to use if no large grid available.
+  classroom-resources:
+    - 8 x 8 (approx) squared grid (30cm squares approx if possible).
+    - Activity can also be done on a small board, such as a chess board.
+    - A toy that needs rescuing could be as simple as a block with some writing on it).
+    - A toy that will be hero (in our example we use Little Red Riding Hood).
+    - A toy that will be the object moving (in our example we use Grandma’s house).
+    - 1 to 5 blocks or toys to represent the big bad wolf and forest animal.
+    - Small whiteboard and two whiteboard pens (different colours); or paper on a clipboard.
