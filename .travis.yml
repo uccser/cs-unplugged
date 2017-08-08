@@ -1,35 +1,75 @@
 sudo: required
 services:
-- docker
+  - docker
 env:
-- DOCKER_COMPOSE_VERSION=1.11.2
+  - DOCKER_COMPOSE_VERSION=1.11.2
 language: python
 python:
-- '3.6'
+  - '3.6'
+before_install:
+  # See https://github.com/travis-ci/travis-ci/issues/7940
+  - sudo rm -f /etc/boto.cfg
 install:
-- sudo docker --version
-- sudo docker-compose --version
-before_script:
-- "./csu start"
-script:
-- "./csu dev test"
-- "./csu dev test_backwards"
-- "./csu dev test_coverage"
-- "./csu dev style"
-- "./csu dev docs"
-deploy:
-  - provider: script
-    script: bash ./infrastructure/dev-deploy/dev-deploy.sh
-    skip_cleanup: true
-    on:
-      branch: develop
-  - provider: script
-    script: bash ./infrastructure/prod-deploy/prod-deploy.sh
-    skip_cleanup: true
-    on:
-      branch: master
-after_script:
-- bash <(curl -s https://codecov.io/bash)
+  - sudo docker --version
+  - sudo docker-compose --version
+jobs:
+  include:
+    - stage: test
+      script: ./csu ci test_with_coverage
+    - script: ./csu ci test_backwards
+    - script: ./csu ci style
+    - script: ./csu ci docs
+    - stage: develop deploy
+      script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/dev-deploy/deploy-app.sh
+          skip_cleanup: true
+          on:
+            branch: develop
+    - script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/dev-deploy/deploy-resources-1.sh
+          skip_cleanup: true
+          on:
+            branch: develop
+    - script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/dev-deploy/deploy-resources-2.sh
+          skip_cleanup: true
+          on:
+            branch: develop
+    - script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/dev-deploy/deploy-resources-3.sh
+          skip_cleanup: true
+          on:
+            branch: develop
+    - script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/dev-deploy/deploy-static-files.sh
+          skip_cleanup: true
+          on:
+            branch: develop
+    - script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/dev-deploy/update-database.sh
+          skip_cleanup: true
+          on:
+            branch: develop
+    - stage: production deploy
+      script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/prod-deploy/prod-deploy.sh
+          skip_cleanup: true
+          on:
+            branch: master
 notifications:
   email: false
   slack:

@@ -5,7 +5,7 @@ from random import sample
 from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
-def resource_image(request, resource):
+def resource(request, resource):
     """Create a image for Sorting Network resource.
 
     Args:
@@ -13,7 +13,7 @@ def resource_image(request, resource):
         resource: Object of resource data (Resource).
 
     Returns:
-        A Pillow image object.
+        A dictionary for the resource page.
     """
     image_path = "static/img/resources/resource-sorting-network-colour.png"
     image = Image.open(image_path)
@@ -44,8 +44,7 @@ def resource_image(request, resource):
                 fill="#000"
             )
             base_coord_x += coord_x_increment
-
-    return image
+    return {"type": "image", "data": image}
 
 
 def subtitle(request, resource):

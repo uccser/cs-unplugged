@@ -193,6 +193,7 @@ dev_style() {
   ! (( pep8_status || pydocstyle_status ))
 }
 defhelp -dev style 'Run style checks.'
+alias ci_style=dev_style
 
 # Run test suite
 dev_test_suite() {
@@ -217,13 +218,18 @@ dev_test_coverage() {
 defhelp -dev test_coverage 'Display code coverage report.'
 
 # Run test suite backwards for CI testing
-dev_test_suite_backwards() {
+dev_test_backwards() {
   echo "Running test suite backwards..."
+  local status
+  status=0
   if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
     docker-compose exec django /docker_venv/bin/python3 ./manage.py test --settings=config.settings.testing --pattern "test_*.py" --reverse -v 0
+    status=$?
   fi
+  return $status
 }
-defhelp -dev test_suite_backwards 'Run test suite backwards.'
+defhelp -dev test_backwards 'Run test suite backwards.'
+alias ci_test_backwards=dev_test_backwards
 
 # Generates the documentation (with warnings as errors)
 dev_docs() {
@@ -235,6 +241,7 @@ dev_docs() {
   docker-compose exec django /docker_venv/bin/sphinx-build -W /cs-unplugged/docs/source/ /cs-unplugged/docs/build/
 }
 defhelp -dev docs 'Generate documentation.'
+alias ci_docs=dev_docs
 
 # Delete all untagged dangling Docker images
 cmd_clean() {
@@ -266,6 +273,36 @@ cmd_logs() {
 }
 defhelp logs 'View logs.'
 
+ci_test_with_coverage() {
+  dev_test_suite
+  # Swap these two lines if testing is too slow
+  #docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --exclude-tag=resource_generation
+  test_status=$?
+  dev_test_coverage
+  coverage_status=$?
+  bash <(curl -s https://codecov.io/bash)
+  ! (( $test_status || $coverage_status ))
+}
+
+cmd_ci() {
+  cmd_start
+  local cmd="$1"
+  shift
+  if [ -z "$cmd" ]; then
+    echo -e "${RED}ERROR: ci command requires one parameter!${NC}"
+    cmd_help
+    exit 1
+  fi
+  if silent type "ci_$cmd"; then
+    "ci_$cmd" "$@"
+    exit $?
+  else
+    echo -e "${RED}ERROR: Unknown command!${NC}"
+    echo "Type './csu help' for available commands."
+    return 1
+  fi
+}
+
 silent() {
   "$@" > /dev/null 2>&1
 }
@@ -296,7 +333,7 @@ if [ $# -eq 0 ]; then
 fi
 cmd="$1"
 shift
-if silent type "cmd_$cmd" 2> /dev/null; then
+if silent type "cmd_$cmd"; then
   "cmd_$cmd" "$@"
   exit $?
 else

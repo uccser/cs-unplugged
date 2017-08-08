@@ -5,20 +5,21 @@
 wheel==0.29.0
 
 # Django
-django==1.11.2
+django==1.11.4
 
 # Configuration
 django-environ==0.4.3
 
-# Images
-Pillow==4.1.1
+# Resources
+Pillow==4.2.1
+yattag==1.8.0
 
 # Markdown
 verto==0.6.1
 python-markdown-math==0.3
 
 # Python-PostgreSQL Database Adapter
-psycopg2==2.7.1
+psycopg2==2.7.3
 
 # Templates
 django-bootstrap-breadcrumbs==0.8.2

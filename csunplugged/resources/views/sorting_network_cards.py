@@ -1,11 +1,12 @@
 """Module for generating Sorting Network Cards resource."""
 
+import os.path
 from random import sample
 from PIL import Image, ImageDraw, ImageFont
 from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
-def resource_image(request, resource):
+def resource(request, resource):
     """Create a image for Sorting Network Cards resource.
 
     Args:
@@ -13,7 +14,7 @@ def resource_image(request, resource):
         resource: Object of resource data (Resource).
 
     Returns:
-        A list of Pillow image objects (list).
+        A list of dictionaries for each resource page.
     """
     IMAGE_SIZE_X = 2000
     IMAGE_SIZE_Y = 3000
@@ -34,6 +35,7 @@ def resource_image(request, resource):
         draw.line([(0, y_coord), (IMAGE_SIZE_X, y_coord)], fill=LINE_COLOUR, width=LINE_WIDTH)
 
     # Prepare text data
+    card_data_type = "text"
     if card_type == "small_numbers":
         font_size = 800
         text = ["1", "2", "3", "4", "5", "6"]
@@ -60,44 +62,91 @@ def resource_image(request, resource):
     elif card_type == "letters":
         font_size = 800
         text = ["L", "O", "N", "K", "E", "D", "S", "P", "G", "B", "I", "Y"]
-    else:
+    elif card_type == "maori_colours":
         font_size = 500
         text = [
             "whero", "kākāriki", "kiwikiwi", "karaka",
             "kōwhai", "pango", "māwhero", "mā"
         ]
+    elif card_type == "riding_hood":
+        card_data_type = "image"
+        images = [
+            "little-red-riding-hood-1.png",
+            "little-red-riding-hood-2.png",
+            "little-red-riding-hood-3.png",
+            "little-red-riding-hood-4.png",
+            "little-red-riding-hood-5.png",
+            "little-red-riding-hood-6.png",
+        ]
+    elif card_type == "butterfly":
+        card_data_type = "image"
+        images = [
+            "butterfly-story-leaf.png",
+            "butterfly-story-baby-caterpillar.png",
+            "butterfly-story-caterpillar.png",
+            "butterfly-story-young-pupa.png",
+            "butterfly-story-mature-pupa.png",
+            "butterfly-story-butterfly.png",
+        ]
 
-    font = ImageFont.truetype(font_path, font_size)
     card_centers = [
         (IMAGE_SIZE_X / 2, IMAGE_SIZE_Y / 4),
         (IMAGE_SIZE_X / 2, (IMAGE_SIZE_Y / 4) * 3),
     ]
 
     # Add text to cards
-    images = []
-    for (text_number, text_string) in enumerate(text):
-        if text_number % 2 == 0:
-            page = card_outlines.copy()
-            draw = ImageDraw.Draw(page)
-            (x, y) = card_centers[0]
-        else:
-            (x, y) = card_centers[1]
+    pages = []
+    if card_data_type == "image":
+        IMAGE_PADDING = 20
+        MAX_IMAGE_X = IMAGE_SIZE_X - IMAGE_PADDING * 2
+        MAX_IMAGE_Y = IMAGE_SIZE_Y / 2 - IMAGE_PADDING * 2
+        BASE_PATH = "static/img/resources/sorting-network-cards/"
+        for (image_number, filename) in enumerate(images):
+            image = Image.open(os.path.join(BASE_PATH, filename))
+            (width, height) = image.size
+            if height > MAX_IMAGE_Y or width > MAX_IMAGE_X:
+                height_ratio = MAX_IMAGE_Y / height
+                width_ratio = MAX_IMAGE_X / width
+                ratio = min(height_ratio, width_ratio)
+                width *= ratio
+                height *= ratio
+                image = image.resize((int(width), int(height)), Image.ANTIALIAS)
+            if image_number % 2 == 0:
+                page = card_outlines.copy()
+                draw = ImageDraw.Draw(page)
+                (x, y) = card_centers[0]
+            else:
+                (x, y) = card_centers[1]
+            coords = (int(x - (width / 2)), int(y - (height / 2)))
+            page.paste(image, box=coords, mask=image)
+            # If image on second card but not last page
+            if image_number % 2 == 1 and image_number != len(images) - 1:
+                pages.append({"type": "image", "data": page})
+    else:
+        font = ImageFont.truetype(font_path, font_size)
+        for (text_number, text_string) in enumerate(text):
+            if text_number % 2 == 0:
+                page = card_outlines.copy()
+                draw = ImageDraw.Draw(page)
+                (x, y) = card_centers[0]
+            else:
+                (x, y) = card_centers[1]
 
-        text_width, text_height = draw.textsize(text_string, font=font)
-        coord_x = x - (text_width / 2)
-        coord_y = y - (text_height / 1.5)
-        draw.text(
-            (coord_x, coord_y),
-            text_string,
-            font=font,
-            fill="#000"
-        )
-        # If text on second card but not last page
-        if text_number % 2 == 1 and text_number != len(text) - 1:
-            images.append(page)
-    images.append(page)
+            text_width, text_height = draw.textsize(text_string, font=font)
+            coord_x = x - (text_width / 2)
+            coord_y = y - (text_height / 1.5)
+            draw.text(
+                (coord_x, coord_y),
+                text_string,
+                font=font,
+                fill="#000"
+            )
+            # If text on second card but not last page
+            if text_number % 2 == 1 and text_number != len(text) - 1:
+                pages.append({"type": "image", "data": page})
 
-    return images
+    pages.append({"type": "image", "data": page})
+    return pages
 
 
 def subtitle(request, resource):
@@ -130,7 +179,7 @@ def valid_options():
     return {
         "type": [
             "small_numbers", "large_numbers", "fractions", "maori_numbers",
-            "words", "letters", "maori_colours"
+            "words", "letters", "maori_colours", "riding_hood", "butterfly"
         ],
         "paper_size": ["a4", "letter"],
     }
