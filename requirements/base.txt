@@ -12,7 +12,7 @@ django-environ==0.4.3
 
 # Resources
 Pillow==4.2.1
-yattag==1.8.0
+yattag==1.9.0
 
 # Markdown
 verto==0.6.1
