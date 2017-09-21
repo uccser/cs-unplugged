@@ -10,20 +10,7 @@
 
 ## What’s it all about?
 
-<table>
-  <tr>
-    <td>
-      <figure class="figure d-block text-center">
-        <img src="{% static 'img/topics/small_haystack.png' %}" class="content-image figure-img img-fluid" alt="A small haystack">
-      </figure>
-    </td>
-    <td>
-      <figure class="figure d-block text-center">
-        <img src="{% static 'img/topics/big_haystack.png' %}" class="content-image figure-img img-fluid" alt="A large haystack">
-      </figure>
-    </td>
-  </tr>
-</table>
+{image file-path="img/topics/different-sized-haystacks.png" alt="A farmer can easily find a needle in a small haystack, but can't find it in a large haystack."}
 
 Searching for a keyword, a value, or a specific piece of data (information) is the basis of many computing applications, whether it’s looking up a bank account balance, using an internet search engine, or searching for a file on your laptop.
 Computers deal with a lot of information so we need efficient algorithms for searching.
