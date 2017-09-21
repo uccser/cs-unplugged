@@ -228,6 +228,11 @@ numeracy-identify-modulo-everyday-life:
     - music
     - numeracy
 
+numeracy-recognise-numbers-represented:
+  text: Recognise that numbers can be represented in different ways.
+  curriculum-areas:
+    - numeracy
+
 numeracy-discuss-modulo-understanding-remainders:
   text: Discuss how knowing how modulo works, supports your understanding of remainders.
   curriculum-areas:
