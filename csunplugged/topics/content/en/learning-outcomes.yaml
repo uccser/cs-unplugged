@@ -91,6 +91,13 @@ drama-create-video-binary:
   curriculum-areas:
     - drama
 
+# LITERACY LEARNING OUTCOMES
+
+literacy-plan-story-props:
+  text: Plan a story using props and a grid.
+  curriculum-areas:
+    - literacy
+
 # ENGLISH LEARNING OUTCOMES
 
 speaking-clear-instructions-binary-cards:
@@ -476,6 +483,16 @@ unplugged-programming-identify-bug-correct:
   text: Identify where a bug has occurred and be able to correct the code to allow the object to move to the desired destination.
   curriculum-areas:
     - programming
+
+unplugged-programming-explain-tell-stories:
+  text: Explain how you can tell stories by combining oral, written, and visual language.
+  curriculum-areas:
+    - literacy
+
+unplugged-programming-recall-direction-words:
+  text: Recall directional words in another language for 'go', 'move forward', 'left', 'right', and numbers.
+  curriculum-areas:
+    - language
 
 # SORTING LEARNING OUTCOMES
 
