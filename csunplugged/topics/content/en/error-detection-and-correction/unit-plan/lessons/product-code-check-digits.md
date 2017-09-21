@@ -7,6 +7,14 @@ Modulo operator before doing this lesson.
 
 {panel end}
 
+{panel type="teaching" title="See teaching this in action!"}
+
+A demonstration of lesson two ("Product Code Check Digits") being taught is available here:
+
+{video url="https://www.youtube.com/embed/WjMPd6sgou0"}
+
+{panel end}
+
 ## Key questions
 
 How many people do you know check their dockets at the supermarket or in a shop to be sure that what they purchased matches the docket?
