@@ -1,6 +1,6 @@
 # Rescue Mission (Sequential programming)
 
-{image file-path="img/topics/unplugged-programming-icon.png" alt="Students standing around a large checkerboard grid." caption="This example is a starter lesson with an object in the middle. The girl on the white square is “The Bot”, the girl at the back is “The Programmer” and the boy in the green and gold is the Tester."}
+{image file-path="img/topics/unplugged-programming-icon.png" alt="Students standing around a large checkerboard grid." caption="This example is a starter lesson with an object in the middle. The girl on the white square is "The Bot", the girl at the back is "The Programmer" and the boy in the green and gold is the Tester."}
 
 ## Key questions
 
@@ -28,14 +28,14 @@ Ask for two volunteers and give yourself and them the roles of:
 
 {image file-path="img/topics/kidbots-little-red-riding-hood-1.png" alt="8 x 8 grid with Grandma's house at position (4,2) and Little Red Riding Hood at position (1,3). Positions are counted from the top left corner, left then down, starting at 1."}
 
-Teacher: “I’m going to be the programmer, but I’m going to need your help.”
-“We are  programming “the Bot”, not just remote controlling it, because ALL the instructions are written before the Bot can follow those instructions.
+Teacher: "I’m going to be the programmer, but I’m going to need your help."
+"We are  programming "the Bot", not just remote controlling it, because ALL the instructions are written before the Bot can follow those instructions.
 
-“Debugging is fun because you get a chance to change your program after it’s finished when you notice it’s not working how you thought it should.”
+"Debugging is fun because you get a chance to change your program after it’s finished when you notice it’s not working how you thought it should."
 
-”It’s my job to write down clear instructions for the Bot, who is going to be (say the person’s name) and “The Tester” (who is...) is going to give the instructions to the Bot and be on the lookout for bugs.”
+"It’s my job to write down clear instructions for the Bot, who is going to be (say the person’s name) and "The Tester" (who is...) is going to give the instructions to the Bot and be on the lookout for bugs."
 
-“First of all I need to decide, what programming language are we are going to use for this? I’ve chosen arrows to represent move forward, turn left and turn right.”
+"First of all I need to decide, what programming language are we are going to use for this? I’ve chosen arrows to represent move forward, turn left and turn right."
 
 {panel type="teaching" title="Teaching observations"}
 
@@ -48,9 +48,9 @@ If students aren't sure about the left and right direction, you can print the "l
 
 Have the Bot act out the individual instructions: forward means step one square forward, and left and right mean a 90 degree turn on the spot in the square (not moving to another square).
 
-Teacher: “We’re going to write our own program that gets the Little Red Riding Hood to rescue her Grandma.
+Teacher: "We’re going to write our own program that gets the Little Red Riding Hood to rescue her Grandma.
 The goal is to get Little Red Riding Hood to the square that Grandma is in.
-Let’s write the first two steps on the board together.”
+Let’s write the first two steps on the board together."
 (Draw two forward arrows.)
 
 {panel type="teaching" title="Teaching observations"}
@@ -61,7 +61,7 @@ If you are putting arrows on the grid, the turning arrows will also need a forwa
 
 {panel end}
 
-“So let’s try that, and see what happens.
+"So let’s try that, and see what happens.
 
 "Tester - could you please take these instructions and pass them onto the the Bot.
 Be ready to underline what doesn’t work when you see the Bot doing something that doesn’t look right, and hand the whiteboard back to me to figure out how to fix the bug. "
@@ -75,11 +75,164 @@ A programmer needs to visualise what would happen when they are writing the inst
 
 {panel end}
 
-Teacher: “Bot - please pick up Little Red Riding Hood ready to receive the instructions for the tester.”
+Teacher: "Bot - please pick up Little Red Riding Hood ready to receive the instructions for the tester."
 (The bot can carry a toy or token representing Little Red Riding Hood; or they can imagine that they are guiding her).
 
-Tester then reads off the board: “move forward, move forward.”
+Tester then reads off the board: "move forward, move forward."
 
 **Little Red Riding Hood program:**
 
 <div class="large-text">🡑 🡑</div>
+
+TODO: Add new image here
+
+{panel type="teaching" title="Teaching observations"}
+
+At this point you could question whether or not a "Stop" instruction is needed.
+Students should be able to come up with the reasoning that the program stops automatically because there are no more instructions.
+
+{panel end}
+
+"Tester,  did the program run as you expected it to?"
+
+*Depending on the Tester's response, if it did then carry on programming, otherwise fix what didn’t work and run that again.
+In this example Little Red Riding Hood should be in the square diagonally below Grandma’s house.*
+
+Now let’s add to it.
+What would we program next?
+Point to where the next piece of code needs to be added and add a move forward and turn left, turn left.
+(This is deliberately incorrect.)
+
+<div class="large-text">🡑 🡑 🡑 ↰ ↰</div>
+
+TODO: Add new image here
+
+I think it’s ready to test now.
+"Tester, please test my program" (the Programmer hands the program on the whiteboard to the Tester and the Bot should return to the starting square ready to rerun the program).
+
+Teacher: "Remember Tester, it’s your job to find any 'bugs' in my program.
+A bug is when my program isn’t doing what was expected.
+Your job is to draw a line under the piece of code where they notice the instructions seem to be going wrong.
+You can stop the Bot at the point that you think there is a bug."
+
+**Tester** then reads the instructions in the program off the board and the Bot executes them as they are read.
+
+- "Move forward"
+- "Move forward"
+- "Move forward"
+- "Turn left"
+- "Turn left"
+
+{panel type="teaching" title="Teaching observations"}
+
+The Tester should underline under the second 'Turn left' because Little Red Riding Hood will have turned around twice on the spot rather than turning once and going forward again (Which is what is needed to get to Grandma's house).
+
+{panel end}
+
+Teacher: "Excellent, you found a bug! I love finding bugs, so I can start solving them.
+Now class, let’s work through this together to find my bug.
+Tester, you’ve done a great job finding it, but it’s the Programmer’s job to find and fix the bug."
+
+{panel type="teaching" title="Teaching observations"}
+
+If the class can’t identify how the program needs debugging then talk through each step and model it with Little Red Riding Hood.
+Did move forward make sense?
+Did move forward a second time make sense?
+Did move forward a third time make sense?
+Did turn left make sense?
+What about turn left again?
+No?
+Okay I think we found our bug.
+Let’s draw a line under that and think about what we would change it to?
+Move forward?
+Let’s test it.
+
+{panel end}
+
+Once the bug has been identified then ask the Tester to test it again; ask the Bot to pick up Little Red Riding Hood and go back to the start position, then the Tester reads them the instructions.
+
+<div class="large-text">🡑 🡑 🡑 ↰ 🡑</div>
+
+TODO: Add new image here
+
+Did we successfully program Little Red Riding Hood to rescue Grandma?
+How do we know?
+
+{panel type="teaching" title="Teaching observations"}
+
+We successfully programmed Little Red Riding Hood to rescue Grandma because Little Red Riding Hood and Grandma are in the same square.
+
+{panel end}
+
+Are there other ways we could have programmed Little Red Riding Hood to get to Grandma's?
+(There will be lots of ways; for example, Left, Forward, Right, Forward, Forward, Forward will work.)
+Discuss the programming options and test each one.
+What if we want Little Red Riding Hood to get to Grandma’s, and then bring them back to safety?
+
+{panel type="teaching" title="Teaching observations"}
+
+In programming, there are numerous ways to program the same thing.
+Some might be more efficient than others, but all are correct if they achieve the desired result.
+For example a student might program Little Red Riding Hood to go around the outside of the grid and then go and get Grandma.
+This is a correct solution, but there’s a lot of extra code that’s not necessary.
+More commonly, two programmers might come up with programs that take a similar amount of time to achieve the same result  (for example, "Forward, Left, Forward, Right" and "Left, Forward, Right, Forward" get the Bot to the same place and orientation; both are good answers).
+An important concept in programming is that there can be multiple good answers; there is rarely a single solution that is the best one, and this means that if a student's work looks different to a model answer that might be available, it isn't necessarily wrong.
+If it achieves the intended outcome, but gets there in a different way it is still correct.
+
+{panel end}
+
+{panel type="teaching" title="Teaching observations"}
+
+Either set up your students to be working around the outside of your large grid, or you can use a smaller grid like a chessboard or the back of a 100s board (or print the one provided with this lesson), in which case the Bot moves a counter on the board instead of walking around the grid.
+
+If you have multiple small grids, students can work independently in groups of three (Programmer, Tester, Bot).
+If you are using a large grid, one group of students can work on their program while another tests theirs.
+Each group gets to try their program once, and then the next group has a turn while the previous one starts working on debugging their program.
+
+{panel end}
+
+Have the students choose their own two toys (one to be rescued, the other to be the hero) have them practise this task, as follows.
+
+1.  Place the toy on a square on the edge of the grid, facing inwards.
+2.  Place the toy that is going to be rescued inside the grid.
+3.  The Programmer writes down the program on a whiteboard.
+4.  The Tester then takes the whiteboard and a different coloured whiteboard pen.
+    The Tester tells the Bot each instruction in the program.
+    The Tester puts a tick next to the code that is correct and underlines when the code is different to what the Bot should be doing.
+    If this happens the Tester says “Stop” and the Bot stops and goes back to the start.
+    The Tester gives the whiteboard to the Programmer, who then debugs the code, and gives the Tester a revised version.
+5.  Repeat step 4 until the program is free of bugs and works as intended.
+6.  Change roles and move the Bot toy and the toy that needs rescuing until everyone has had a turn.
+
+{panel type="teaching" title="Teaching observations"}
+
+If you notice that your students need support to visualise how to write the instructions you could use the arrows (cards) provided on the ground, or for a small desktop grid, use a whiteboard marker or small arrows.
+This supports students to visualise what they want to program.
+
+{panel end}
+
+### The next challenge
+
+Add barriers to the grid so that the path is more complex because it needs to avoid the barriers.
+This could be the Big Bad Wolf and other animals, or you could invent a new scenario for the grid.
+
+{image file-path="img/topics/kidbots-little-red-riding-hood-barriers.png" alt="A grid with various cells containing wolf, well, etc."}
+
+### Other challenges
+
+Have groups program the rescue without using the left hand turn (i.e. the only instructions are forward and right turn).
+Scaffold the students to realise that a left hand turn can be achieved by doing three right turn instructions.
+Then challenge them to program with a left turn but no right turn.
+
+Ask if they can write programs with only the right and left turn instructions (i.e. no forward instruction)?
+(This isn't possible, as you would only be able to turn around on one square.)
+
+{panel type="teaching" title="Teaching observations"}
+
+Eliminating one of the turn instructions highlights that different instruction sets can achieve the same thing, although some may be more convenient than others (for example, there are many different programming languages, but they can all do essentially the same kind of computation; it's just that some are better suited to some purposes than others.)
+
+Implementing fewer instructions simplifies building a computer, and this can make it either faster or cheaper.
+For example, a very simple computer might have an addition instruction, but no multiply instruction; but if you need to do multiplication it can be achieved by doing lots of additions.
+Many common processors these days tend to have a small number of simple instructions (they are called Reduced Instruction Set Computers, or RISC) because it's more efficient than having lots of instructions (Complex Instruction Set Computers, or CISC).
+
+{panel end}
