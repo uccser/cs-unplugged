@@ -340,6 +340,11 @@ programming-show-item-specified-position-list:
   curriculum-areas:
     - programming
 
+programming-demonstrate-data-indexing:
+  text: Demonstrate how indexiing to access data at the specified position in a string works.
+  curriculum-areas:
+    - programming
+
 # SEARCHING ALGORITHMS LEARNING OUTCOMES
 
 search-algorithms-identify-unsorted-lists:

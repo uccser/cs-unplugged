@@ -3,4 +3,5 @@ unit-plans:
 
 icon: img/topics/searching-algorithms-icon.png
 
+programming-challenges: programming-challenges/programming-challenges.yaml
 curriculum-integrations: curriculum-integrations/curriculum-integrations.yaml
