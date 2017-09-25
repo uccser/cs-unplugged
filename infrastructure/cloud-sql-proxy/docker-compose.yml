@@ -1,13 +1,13 @@
 version: '3'
 services:
   postgres:
-    restart: always
-    image: syoya/cloudsql-proxy
+    image: syoya/cloudsql-proxy:1.0.1
     environment:
         # File of JSON key of a Google Cloud Platform service account
       - GOOGLE_AUTH_JSON=${GOOGLE_AUTH_JSON}
         # The instance name of Google Cloud SQL
       - INSTANCE_NAME=${GOOGLE_CLOUD_SQL_CONNECTION_NAME}
+    network_mode: host
 
   django:
     build:
