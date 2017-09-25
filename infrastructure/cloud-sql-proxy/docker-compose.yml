@@ -1,0 +1,39 @@
+version: '3'
+services:
+  postgres:
+    restart: always
+    image: syoya/cloudsql-proxy
+    environment:
+        # File of JSON key of a Google Cloud Platform service account
+      - GOOGLE_AUTH_JSON=${GOOGLE_AUTH_JSON}
+        # The instance name of Google Cloud SQL
+      - INSTANCE_NAME=${GOOGLE_CLOUD_SQL_CONNECTION_NAME}
+
+  django:
+    build:
+      context: .
+      dockerfile: ./Dockerfile-local
+    command: /cs-unplugged/csunplugged/docker-development-entrypoint.sh
+    volumes:
+      - .:/cs-unplugged
+    environment:
+      - PORT=8080
+      - USE_DOCKER=yes
+      - DJANGO_SETTINGS_MODULE=config.settings.database_proxy
+      - GOOGLE_CLOUD_SQL_DATABASE_USERNAME=${GOOGLE_CLOUD_SQL_DATABASE_USERNAME}
+      - GOOGLE_CLOUD_SQL_DATABASE_PASSWORD=${GOOGLE_CLOUD_SQL_DATABASE_PASSWORD}
+      - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}
+    depends_on:
+      - postgres
+
+  nginx:
+    build:
+      context: .
+      dockerfile: ./infrastructure/nginx/Dockerfile
+    volumes:
+      - ./csunplugged/:/app/
+      - /app/node_modules
+    depends_on:
+      - django
+    ports:
+      - "80:80"
