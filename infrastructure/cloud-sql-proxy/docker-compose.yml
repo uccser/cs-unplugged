@@ -25,6 +25,7 @@ services:
       - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}
     depends_on:
       - postgres
+    network_mode: host
 
   nginx:
     build:
