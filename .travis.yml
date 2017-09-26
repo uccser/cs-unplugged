@@ -14,11 +14,6 @@ install:
   - sudo docker-compose --version
 jobs:
   include:
-    - stage: test
-      script: ./csu ci test_with_coverage
-    - script: ./csu ci test_backwards
-    - script: ./csu ci style
-    - script: ./csu ci docs
     - stage: develop deploy
       script: skip
       deploy:
@@ -26,7 +21,7 @@ jobs:
           script: bash ./infrastructure/dev-deploy/deploy-app.sh
           skip_cleanup: true
           on:
-            branch: develop
+            branch: issue/590
     - script: skip
       deploy:
         - provider: script
@@ -54,7 +49,7 @@ jobs:
           script: bash ./infrastructure/dev-deploy/deploy-static-files.sh
           skip_cleanup: true
           on:
-            branch: develop
+            branch: issue/590
     - script: skip
       deploy:
         - provider: script

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Decrypt secret files archive that contain credentials.
 #
 # This includes:
