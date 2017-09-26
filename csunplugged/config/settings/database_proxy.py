@@ -10,8 +10,8 @@ from .base import *  # noqa: F403
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "HOST": "/cloudsql",
-        "PORT": "3306",
+        "HOST": "localhost",
+        "PORT": "5433",
         "NAME": "csunplugged",
         "USER": env("GOOGLE_CLOUD_SQL_DATABASE_USERNAME"),  # noqa: F405
         "PASSWORD": env("GOOGLE_CLOUD_SQL_DATABASE_PASSWORD"),  # noqa: F405
