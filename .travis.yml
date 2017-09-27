@@ -6,12 +6,16 @@ env:
 language: python
 python:
   - '3.6'
+addons:
+  postgresql: "9.6"
 before_install:
   # See https://github.com/travis-ci/travis-ci/issues/7940
   - sudo rm -f /etc/boto.cfg
 install:
   - sudo docker --version
   - sudo docker-compose --version
+  - postgres -V
+  - psql --version
 jobs:
   include:
     - stage: develop deploy
