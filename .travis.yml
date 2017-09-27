@@ -28,21 +28,21 @@ jobs:
           script: bash ./infrastructure/dev-deploy/deploy-resources-1.sh
           skip_cleanup: true
           on:
-            branch: develop
+            branch: issue/590
     - script: skip
       deploy:
         - provider: script
           script: bash ./infrastructure/dev-deploy/deploy-resources-2.sh
           skip_cleanup: true
           on:
-            branch: develop
+            branch: issue/590
     - script: skip
       deploy:
         - provider: script
           script: bash ./infrastructure/dev-deploy/deploy-resources-3.sh
           skip_cleanup: true
           on:
-            branch: develop
+            branch: issue/590
     - script: skip
       deploy:
         - provider: script
