@@ -5,7 +5,7 @@ function postgres_ready(){
 import sys
 import psycopg2
 try:
-    conn = psycopg2.connect(dbname="postgres", user="postgres", host="postgres")
+    conn = psycopg2.connect(dbname="postgres", user="postgres", host="localhost")
 except psycopg2.OperationalError:
     sys.exit(-1)
 sys.exit(0)
