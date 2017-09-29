@@ -67,7 +67,7 @@ By reversing the left/right decision, the final result will be in the reverse or
 
 ### Variation 3: Letters of the alphabet
 
-{image file-path="img/topics/sorting-network-variation-alphabet.jpg"}
+{image file-path="img/topics/sorting-network-variation-alphabet.png"}
 
 Give the students cards with letters on them.
 Ask how we could compare these (students should observe that they could be in alphabetical order).
