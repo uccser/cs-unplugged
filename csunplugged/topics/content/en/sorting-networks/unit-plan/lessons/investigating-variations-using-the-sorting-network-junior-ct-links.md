@@ -4,7 +4,7 @@ Many of the connections are covered in the unit plan and lesson 1. Here are some
 
 When comparing words for alphabetical order, the algorithm involves comparing the two words letter by letter, and basing the decision of the first pair of letters that differ.
 
-#### What to look for:
+#### What to look for
 
 Were students able to systematically compare words?
 Can they articulate the algorithm, particularly when comparing words with a long prefix in common (such as "computer" and "computing")?
