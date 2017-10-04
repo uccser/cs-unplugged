@@ -4,7 +4,7 @@ Many of the connections are covered in the unit plan and lesson 1. Here are some
 
 When comparing words for alphabetical order, the algorithm involves comparing the two words letter by letter, and basing the decision of the first pair of letters that differ.
 
-#### What to look for:
+#### What to look for
 
 Were students able to systematically compare words?
 Can they articulate the algorithm, particularly when comparing words with a long prefix in common (such as "computer" and "computing")?
@@ -23,26 +23,15 @@ Can they come up with new types of data to sort?
 
 {panel end}
 
-{panel type="ct-decomposition" title="Decomposition"}
-
-Instead of simply comparing two values at each node, when students compare words in this activity they must break this down into smaller steps.
-When comparing words to see which comes first, the process involves a letter by letter comparison until they find two letters that differ.
-
-#### What to look for
-
-Were students able to break down the task of comparing words into single letter comparisons?
-
-{panel end}
-
 {panel type="ct-pattern" title="Generalising and patterns"}
 
 In this lesson the comparisons we moved from comparing numbers to the idea of comparing information in general.
-This meant we were able to compare other things like letters, words, and musical notes.
+This meant we were able to compare other things like letters.
 
 #### What to look for
 
-Did students recognise that comparing other types of information, such as words and notes, would sort them into a relevant order?
-For example according to alphabetical order and musical pitch respectively?
+Did students recognise that comparing other types of information, such as letters, would sort them into a relevant order?
+For example according to alphabetical order.
 
 {panel end}
 
@@ -63,7 +52,8 @@ As described in the unit plan, if the data being sorted have a transitive relati
 
 #### What to look for
 
-Are students able to recognise that each of the sets of items compared in this exercise have a transitive relation? Could they identify the most logical comparison to use (such as alphabetical order and the pitch of notes)?
+Are students able to recognise that each of the sets of items compared in this exercise have a transitive relation?
+Could they identify the most logical comparison to use (such as alphabetical order)?
 
 Can they think of any types of data that don’t have a transitive relation, and that we can’t sort with the Sorting Network?
 
