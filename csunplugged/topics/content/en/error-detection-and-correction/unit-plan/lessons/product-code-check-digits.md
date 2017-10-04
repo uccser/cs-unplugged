@@ -165,8 +165,7 @@ multiplied by three.
 
 {image file-path="img/topics/barcode-12-step-5.png"}
 
-Add the multiplied answer to the second sum (in this case, the 9 from the
-29 to the 7 from the 27):
+Add the multiplied answer to the second sum (in this case, the 1 from the 21 to the 7 from the 27):
 
 {image file-path="img/topics/barcode-12-step-6.png"}
 
