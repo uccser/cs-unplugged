@@ -32,7 +32,9 @@ All notable changes to this project will be documented in this file.
 
 **Notable changes:**
 
-
+Adds a new searching algorithms topic including lessons, resources, and
+curriculum integrations.
+New lessons for existing topics have also been added.
 
 **Changelog:**
 
