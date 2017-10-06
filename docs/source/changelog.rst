@@ -24,6 +24,105 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+2.0.0-alpha.4
+==============================================================================
+
+- **Release date:**
+- **Downloads:** `Source downloads are available on GitHub`_
+
+**Notable changes:**
+
+
+
+**Changelog:**
+
+- Add searching algorithms topic.
+
+  - `Hayden Jackson`_ `#548 <https://github.com/uccser/cs-unplugged/issues/548>`_
+
+- Add 12 and 13 digit barcode checksum poster resources.
+
+  - `Jack Morgan`_ `#545 <https://github.com/uccser/cs-unplugged/issues/545>`_
+    `#546 <https://github.com/uccser/cs-unplugged/issues/546>`_
+
+- Add searching card resource.
+
+  - `Jack Morgan`_ `#547 <https://github.com/uccser/cs-unplugged/issues/547>`_
+
+- Update treasure hunt resource to include optional instruction sheet and colour version.
+
+  - `Jack Morgan`_
+
+- Display alpha version number in header.
+
+  - `Jack Morgan`_ `#559 <https://github.com/uccser/cs-unplugged/issues/559>`_
+
+- Force HTTPS connection.
+
+  - `Jack Morgan`_ `#497 <https://github.com/uccser/cs-unplugged/issues/497>`_
+
+- Convert "Butterfly" and "Red Riding Hood" into sorting cards resource variants.
+
+  - `Jack Morgan`_ `#534 <https://github.com/uccser/cs-unplugged/issues/534>`_
+    `#535 <https://github.com/uccser/cs-unplugged/issues/535>`_
+
+- Update resources to new resource module specification.
+
+  - `Jack Morgan`_
+
+- Allow raw HTML as source for resource generation.
+
+  - `Jack Morgan`_
+
+- Use UCCSER Docker images for stability.
+
+  - `Hayden Jackson`_ `#231 <https://github.com/uccser/cs-unplugged/issues/231>`_
+
+- Improve readability and efficiency of CSU helper script.
+
+  - `Will Richardson`_
+
+- Update Kidbots images to animations.
+
+  - `Jack Morgan`_
+
+- Add video for Product Code Check Digits lesson.
+
+  - `Jack Morgan`_
+
+- Add Unplugged Programming: Kidbots lesson 1 for ages 5 - 7.
+
+  - `Jack Morgan`_ `#551 <https://github.com/uccser/cs-unplugged/issues/551>`_
+
+- Add Unplugged Programming: Kidbots lesson 2 for ages 5 - 7.
+
+  - `Jack Morgan`_ `#550 <https://github.com/uccser/cs-unplugged/issues/550>`_
+
+- Add Sorting Network lesson 2 for ages 5 - 7.
+
+  - `Jack Morgan`_ `#595 <https://github.com/uccser/cs-unplugged/issues/595>`_
+
+- Add curriculum integrations for searching algorithms.
+
+  - `Jack Morgan`_ `#589 <https://github.com/uccser/cs-unplugged/issues/589>`_
+
+- Update automated deployment infrastructure.
+
+  - `Jack Morgan`_ `#587 <https://github.com/uccser/cs-unplugged/issues/587>`_
+    `#590 <https://github.com/uccser/cs-unplugged/issues/590>`_
+
+- Add hover state for coloured panels.
+
+  - `Jack Morgan`_ `#591 <https://github.com/uccser/cs-unplugged/issues/591>`_
+
+- Fix bug where sorting network cards render incorrectly.
+
+  - `Jack Morgan`_ `#596 <https://github.com/uccser/cs-unplugged/issues/596>`_
+
+- Fix typo in 12-digit product code instructions (thanks `@eemshi <https://github.com/eemshi>`_).
+
+  - `Jack Morgan`_ `#599 <https://github.com/uccser/cs-unplugged/issues/599>`_
+
 2.0.0-alpha.3
 ==============================================================================
 
@@ -266,3 +365,4 @@ The following topics are available in this version:
 .. _#502: https://github.com/uccser/cs-unplugged/issues/502
 .. _#503: https://github.com/uccser/cs-unplugged/issues/503
 .. _#506: https://github.com/uccser/cs-unplugged/issues/506
+.. _Will Richardson: https://github.com/javanut13
