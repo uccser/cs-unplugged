@@ -80,11 +80,7 @@ Teacher: "Bot - please pick up Little Red Riding Hood ready to receive the instr
 
 Tester then reads off the board: "move forward, move forward."
 
-**Little Red Riding Hood program:**
-
-<div class="large-text">🡑 🡑</div>
-
-TODO: Add new image here
+{image file-path="img/topics/kidbots-little-red-riding-hood-2.gif"}
 
 {panel type="teaching" title="Teaching observations"}
 
@@ -93,7 +89,7 @@ Students should be able to come up with the reasoning that the program stops aut
 
 {panel end}
 
-"Tester,  did the program run as you expected it to?"
+"Tester, did the program run as you expected it to?"
 
 *Depending on the Tester's response, if it did then carry on programming, otherwise fix what didn’t work and run that again.
 In this example Little Red Riding Hood should be in the square diagonally below Grandma’s house.*
@@ -103,9 +99,7 @@ What would we program next?
 Point to where the next piece of code needs to be added and add a move forward and turn left, turn left.
 (This is deliberately incorrect.)
 
-<div class="large-text">🡑 🡑 🡑 ↰ ↰</div>
-
-TODO: Add new image here
+{image file-path="img/topics/kidbots-little-red-riding-hood-3.gif"}
 
 I think it’s ready to test now.
 "Tester, please test my program" (the Programmer hands the program on the whiteboard to the Tester and the Bot should return to the starting square ready to rerun the program).
@@ -151,9 +145,7 @@ Let’s test it.
 
 Once the bug has been identified then ask the Tester to test it again; ask the Bot to pick up Little Red Riding Hood and go back to the start position, then the Tester reads them the instructions.
 
-<div class="large-text">🡑 🡑 🡑 ↰ 🡑</div>
-
-TODO: Add new image here
+{image file-path="img/topics/kidbots-little-red-riding-hood-4.gif"}
 
 Did we successfully program Little Red Riding Hood to rescue Grandma?
 How do we know?
