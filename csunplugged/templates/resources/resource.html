@@ -22,7 +22,7 @@
 {% block left_column_content %}
   <h2>Create Resource</h2>
 
-  <form action="{% url 'resources:generate' resource.slug %}" method="get">
+  <form action="{% url 'resources:generate' resource.slug %}" method="get"{% if not debug %} target="_blank"{% endif %}>
     {% block generation_form %}
     {% endblock generation_form %}
 
