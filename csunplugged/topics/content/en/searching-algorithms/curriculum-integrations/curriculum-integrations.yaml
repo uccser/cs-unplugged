@@ -1,0 +1,21 @@
+where-is-my-hat:
+  number: 1
+  curriculum-areas:
+    - writing
+
+biography:
+  number: 2
+  curriculum-areas:
+    - reading
+    - writing
+    - speaking
+
+drama-video:
+  number: 3
+  curriculum-areas:
+    - performing-arts
+
+music:
+  number: 4
+  curriculum-areas:
+    - music

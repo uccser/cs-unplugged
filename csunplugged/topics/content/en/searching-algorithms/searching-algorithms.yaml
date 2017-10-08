@@ -2,3 +2,5 @@ unit-plans:
   - sequential-and-binary-search-unit-plan/sequential-and-binary-search-unit-plan.yaml
 
 icon: img/topics/searching-algorithms-icon.png
+
+curriculum-integrations: curriculum-integrations/curriculum-integrations.yaml

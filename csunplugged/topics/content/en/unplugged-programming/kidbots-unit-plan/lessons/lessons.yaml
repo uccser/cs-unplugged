@@ -1,3 +1,30 @@
+storytelling:
+  duration: 30
+  computational-thinking-links: storytelling-ct-links.md
+  learning-outcomes:
+    - unplugged-programming-give-instructions
+    - unplugged-programming-identify-bug-correct
+    - unplugged-programming-communicate-debugging
+    - literacy-plan-story-props
+    - unplugged-programming-explain-tell-stories
+    - unplugged-programming-follow-instructions
+    - unplugged-programming-recall-direction-words
+  generated-resources:
+    arrows:
+      description: Cut theses sheets out for students.
+    left-right-cards:
+      description: Cut these sheets out for students who are still learning their left and right.
+    job-badges:
+      description: Cut these out and use them as badges for the three students doing the three jobs respectively. You might want to put them in a name holder on a lanyard.
+    grid:
+      description: 8 x 8 grid for students to use if no large grid available.
+  classroom-resources:
+    - 8 x 8 (approx) squared grid (30cm squares approx if possible).
+    - Activity can also be done on a small board, such as a chess board.
+    - A toy that will be the object moving.
+    - 1 to 5 blocks or toys.
+    - Small whiteboard and two whiteboard pens (different colours); or paper on a clipboard.
+
 fitness-unplugged:
   duration: 45
   computational-thinking-links: fitness-unplugged-ct-links.md

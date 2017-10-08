@@ -67,7 +67,7 @@ By reversing the left/right decision, the final result will be in the reverse or
 
 ### Variation 3: Letters of the alphabet
 
-{image file-path="img/topics/sorting-network-variation-alphabet.jpg"}
+{image file-path="img/topics/sorting-network-variation-alphabet.png"}
 
 Give the students cards with letters on them.
 Ask how we could compare these (students should observe that they could be in alphabetical order).
@@ -140,7 +140,6 @@ This will require considerable reasoning to achieve.
 
 If they struggle to find an example, you could give the one below, and then challenge them to find a different one that doesn't come out sorted.
 
-
 {panel type="teaching" title="Teaching observations"}
 
 The Sorting Network is designed to work consistently one way, rather than working both ways.
@@ -148,18 +147,18 @@ For example, the first image below shows an input that happens to come out sorte
 If it fails on just one input (the second one) then we can't rely on it, even though it sometimes works.
 In the other direction, it will always sort correctly.
 
+{image file-path="img/topics/sorting-network-backwards-1.png"}
+
+{image file-path="img/topics/sorting-network-backwards-2.png"}
+
 {panel end}
-
-{image file-path="img/topics/sorting-network-sorted.png"}
-
-{image file-path="img/topics/sorting-network-sorted.png"}
 
 ## Applying what we have just learnt
 
 This kind of algorithm needs to run on special hardware to take advantage of doing multiple comparisons at the same time.
 It is only used for specialist applications at present, for example it is sometimes done on the graphics processor (GPU) of a computer, because these processors are good at doing parallel computation.
 Sorting Networks were invented long before powerful GPUs came along; this is an exciting thing about Computer Science - some of the our discoveries are ahead of the hardware that is available, so we're ready to make use of the hardware when it does become commonly available!
-Note that this is not a conventional sorting algorithm, as the sorting that is done on a conventional system can make only one comparison at a time; conventional sorting algorithms are explored in another lesson.
+Note that this is *not* a conventional sorting algorithm, as the sorting that is done on a conventional system can make only one comparison at a time; conventional sorting algorithms are explored in another lesson.
 
 ## Lesson reflection
 

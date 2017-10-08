@@ -1,6 +1,6 @@
 # Sending a rocket to Mars (Sequential programming)
 
-{image file-path="img/topics/unplugged-programming-icon.png" alt="Students standing around a large checkerboard grid." caption="This example is a starter lesson with an object in the middle. The girl on the white square is “The Bot”, the girl at the back is “The Programmer” and the boy in the green and gold is the Tester."}
+{image file-path="img/topics/unplugged-programming-icon.png" alt="Students standing around a large checkerboard grid." caption="This example is a starter lesson with an object in the middle. The girl on the white square is 'The Bot', the girl at the back is 'The Programmer' and the boy in the green and gold is 'the Tester'."}
 
 ## Key questions
 
@@ -29,14 +29,14 @@ Ask for two volunteers and give yourself and them the roles of:
 
 {image file-path="img/topics/kidbots-rocket-1.png" alt="8 x 8 grid with a rocket ship at position (1,5) and Mars at position (4,3). Positions are counted from the top left corner."}
 
-Teacher: “I’m going to be the programmer, but I’m going to need your help.”
-“We are  programming “the Bot”, not just remote controlling it, because ALL the instructions are written before the Bot can follow those instructions.
+Teacher: "I’m going to be the programmer, but I’m going to need your help."
+"We are  programming "the Bot", not just remote controlling it, because ALL the instructions are written before the Bot can follow those instructions.
 
-“Debugging is fun because you get a chance to change your program after it’s finished when you notice it’s not working how you thought it should.”
+"Debugging is fun because you get a chance to change your program after it’s finished when you notice it’s not working how you thought it should."
 
-”It’s my job to write down clear instructions for the Bot, who is going to be (say the person’s name) and “The Tester” (who is...) is going to give the instructions to the Bot and be on the lookout for bugs.”
+"It’s my job to write down clear instructions for the Bot, who is going to be (say the person’s name) and "The Tester" (who is...) is going to give the instructions to the Bot and be on the lookout for bugs."
 
-“First of all I need to decide, what programming language are we are going to use for this? I’ve chosen arrows to represent move forward, turn left and turn right.”
+"First of all I need to decide, what programming language are we are going to use for this? I’ve chosen arrows to represent move forward, turn left and turn right."
 
 {panel type="teaching" title="Teaching observations"}
 
@@ -49,9 +49,9 @@ If students aren't sure about the left and right direction, you can print the "l
 
 Have the Bot act out the individual instructions: forward means step one square forward, and left and right mean a 90 degree turn on the spot in the square (not moving to another square).
 
-Teacher: “We’re going to write our own program that gets the rocket to fly to Mars.
+Teacher: "We’re going to write our own program that gets the rocket to fly to Mars.
 The goal is to get the rocket to the square that Mars is in.
-Let’s write the first two steps on the board together.”
+Let’s write the first two steps on the board together."
 (Draw two forward arrows.)
 
 {panel type="teaching" title="Teaching observations"}
@@ -62,7 +62,7 @@ If you are putting arrows on the grid, the turning arrows will also need a forwa
 
 {panel end}
 
-“So let’s try that, and see what happens.
+"So let’s try that, and see what happens.
 
 "Tester - could you please take these instructions and pass them onto the the Bot.
 Be ready to underline what doesn’t work when you see the Bot doing something that doesn’t look right, and hand the whiteboard back to me to figure out how to fix the bug. "
@@ -76,10 +76,10 @@ A programmer needs to visualise what would happen when they are writing the inst
 
 {panel end}
 
-Teacher: “Bot - please pick up the rocket ready to receive the instructions for the tester.”
+Teacher: "Bot - please pick up the rocket ready to receive the instructions for the tester."
 (The bot can carry a toy or token representing the rocket; or they can imagine that they are guiding it).
 
-Tester then reads off the board: “move forward, move forward.”
+Tester then reads off the board: "move forward, move forward."
 
 **Rocket to Mars program:**
 
@@ -89,12 +89,12 @@ Tester then reads off the board: “move forward, move forward.”
 
 {panel type="teaching" title="Teaching observations"}
 
-At this point you could question whether or not a “Stop” instruction is needed.
+At this point you could question whether or not a "Stop" instruction is needed.
 Students should be able to come up with the reasoning that the program stops automatically because there are no more instructions.
 
 {panel end}
 
-“Tester, did the program run as you expected it to?“
+"Tester, did the program run as you expected it to?"
 Depending on the tester's response, if it did then carry on programming, otherwise fix what didn’t work and run that again.
 In this example the rocket should be in the square three to the left of Mars.
 
@@ -113,7 +113,7 @@ Point to where the next piece of code needs to be added and add turn right, turn
 I think it’s ready to test now.
 Tester, please test my program (the programmer hands the program on the whiteboard to the tester and the bot should return to the starting square ready to rerun the program).
 
-Teacher: Remember Tester, it’s your job to find any “bugs” in my program.
+Teacher: Remember Tester, it’s your job to find any "bugs" in my program.
 A bug is when my program isn’t doing what was expected.
 Your job is to draw a line under the piece of code where they notice the instructions seem to be going wrong.
 You can stop the Bot at the point that you think there is a bug.
@@ -132,10 +132,10 @@ The tester should underline under the second turn right because the rocket will 
 
 {panel end}
 
-Teacher: “Excellent, you found a bug!
+Teacher: "Excellent, you found a bug!
 I love finding bugs, so I can start solving them.
 Now class, let’s work through this together to find my bug.
-Tester, you’ve done a great job finding it, but it’s the programmer’s job to find and fix the bug.”
+Tester, you’ve done a great job finding it, but it’s the programmer’s job to find and fix the bug."
 
 {panel type="teaching" title="Teaching observations"}
 
@@ -200,9 +200,9 @@ Have the students choose their own two toys (one to be a space travelling object
 4.  The tester then takes the whiteboard and a different coloured whiteboard pen.
     The tester tells the Bot each instruction in the program.
     The tester puts a tick next to the code that is correct and underlines when the code is different to what the Bot should be doing.
-    If this happens the Tester says “Stop” and the Bot stops and goes back to the start.
+    If this happens the Tester says "Stop" and the Bot stops and goes back to the start.
     The Tester gives the whiteboard to the Developer, who then debugs the code, and gives the Tester a revised version.
-5.  Repeat step 6 until the program is free of bugs and works as intended.
+5.  Repeat step 4 until the program is free of bugs and works as intended.
 6.  Change roles and move the Bot (space travelling object) starting point and the toy that represents the destination until everyone has had a turn.
 
 {panel type="teaching" title="Teaching observations"}
@@ -245,8 +245,8 @@ Like all skills, programming is something you learn through practise, making mis
 The most important skill that programmers need is to be able to communicate with others, especially when they are finding and describing bugs.
 Bugs happen all the time in programming, so being able to identify where the bug occurs and problem solving how to fix it is incredibly important.
 It doesn’t matter how experienced you are at programming, there will always be bugs that need to be found, and fixed.
-That’s why the word “debugging” is so important to programmers.
+That’s why the word "debugging" is so important to programmers.
 
 ## Lesson reflection
 
-Now that you are all programmers, what did you think was the most challenging part of being a programmer? 
+Now that you are all programmers, what did you think was the most challenging part of being a programmer?

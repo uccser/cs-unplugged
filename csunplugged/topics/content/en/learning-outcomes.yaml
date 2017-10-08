@@ -91,6 +91,13 @@ drama-create-video-binary:
   curriculum-areas:
     - drama
 
+# LITERACY LEARNING OUTCOMES
+
+literacy-plan-story-props:
+  text: Plan a story using props and a grid.
+  curriculum-areas:
+    - literacy
+
 # ENGLISH LEARNING OUTCOMES
 
 speaking-clear-instructions-binary-cards:
@@ -219,6 +226,11 @@ numeracy-identify-modulo-everyday-life:
   curriculum-areas:
     - measurement
     - music
+    - numeracy
+
+numeracy-recognise-numbers-represented:
+  text: Recognise that numbers can be represented in different ways.
+  curriculum-areas:
     - numeracy
 
 numeracy-discuss-modulo-understanding-remainders:
@@ -482,6 +494,16 @@ unplugged-programming-give-instructions-move:
   curriculum-areas:
     - algorithmic-thinking
     - geometry
+
+unplugged-programming-explain-tell-stories:
+  text: Explain how you can tell stories by combining oral, written, and visual language.
+  curriculum-areas:
+    - literacy
+
+unplugged-programming-recall-direction-words:
+  text: Recall directional words in another language for 'go', 'move forward', 'left', 'right', and numbers.
+  curriculum-areas:
+    - language
 
 # SORTING LEARNING OUTCOMES
 

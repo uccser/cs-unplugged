@@ -2,31 +2,15 @@
 # like Pillow and psycopg2
 # See http://bitly.com/wheel-building-fails-CPython-35
 # Verified bug on Python 3.5.1
-wheel==0.29.0
-
-# Django
-django==1.11.4
-
-# Configuration
-django-environ==0.4.3
+wheel==0.30.0
 
 # Resources
-Pillow==4.2.1
-yattag==1.8.0
+Pillow==4.3.0
+yattag==1.9.0
 
 # Markdown
 verto==0.6.1
 python-markdown-math==0.3
 
-# Python-PostgreSQL Database Adapter
-psycopg2==2.7.3
-
-# Templates
-django-bootstrap-breadcrumbs==0.8.2
-
 # YAML Loading
 PyYAML==3.12
-
-# Web serving
-gevent==1.2.2
-gunicorn==19.7.1

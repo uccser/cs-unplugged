@@ -33,7 +33,7 @@ Ask for two volunteers and give yourself and them the roles of:
 
 ## Lesson activities
 
-{image file-path="img/topics/geo-grid-parrot-1.png" alt="Grid with parrot in (0,1)"}
+{image file-path="img/topics/kidbots-geometry-plane-1.png" alt="Grid with the plane in (0,1)"}
 
 Teacher: “I’m going to be the programmer, but I’m going to need your help.”
 “We are  programming “the Bot”, not just remote controlling it, because ALL the instructions are written before the Bot can follow those instructions.
@@ -56,14 +56,14 @@ If students aren't sure about the left and right direction, you can print the "l
 
 Have the Bot act out the individual instructions: forward means step one square forward, and left and right mean a 90 degree turn on the spot in the square (not moving to another square).
 
-Teacher: “We’re going to write our own program that gets Arnold to find a triangle.
-The goal is to get Arnold to the square that the triangle  is in.
+Teacher: “We’re going to write our own program that gets the plane to find a triangle.
+The goal is to get the plane to the square that the triangle  is in.
 Let’s write the first two steps on the board together.”
 (Draw two forward arrows.)
 
 {panel type="teaching" title="Teaching observations"}
 
-To work it out students may initially need to see the program in action, so place the arrows within the grid to demonstrate what Arnold will do.
+To work it out students may initially need to see the program in action, so place the arrows within the grid to demonstrate what the plane will do.
 It’s also a great technique to write the first few instructions of the code, test it and then add to it.
 If you are putting arrows on the grid, the turning arrows will also need a forward arrow in the same box, or you can put the forward arrows on the line between boxes, which makes it clearer what it does.
 
@@ -84,15 +84,11 @@ A programmer needs to visualise what would happen when they are writing the inst
 {panel end}
 
 Teacher: “Bot - please get ready to receive the instructions for the tester.”
-(The bot can carry a toy or token representing Arnold; or they can imagine that they are guiding him).
+(The bot can carry a toy or token representing the plane; or they can imagine that they are guiding him).
 
 Tester then reads off the board: “move forward, move forward.”
 
-**2D shapes program:**
-
-<div class="large-text">🡑 🡑 🡑</div>
-
-{image file-path="img/topics/geo-grid-parrot-2.png" alt="Grid with parrot in (0,1) and three right arrows"}
+{image file-path="img/topics/kidbots-geometry-plane-2.gif"}
 
 {panel type="teaching" title="Teaching observations"}
 
@@ -103,17 +99,13 @@ At this point you could question whether or not a “Stop” instruction is need
 “Tester,  did the program run as you expected it to?"
 
 -  *Depending on the tester's response, if it did then carry on programming, otherwise fix what didn’t work and run that again.
-   In this example Arnold should be in the square diagonally below the triangle.*
+   In this example the plane should be in the square diagonally below the triangle.*
 
 Now let’s add to it. What would we program next?
 
 Point to where the next piece of code needs to be added and add a move forward and turn left, turn left.
 
-**Arnold program:**
-
-<div class="large-text">🡑 🡑 🡑 ↰ ↰</div>
-
-{image file-path="img/topics/geo-grid-parrot-3.png" alt="Grid with parrot in (0,1) and arrows"}
+{image file-path="img/topics/kidbots-geometry-plane-3.gif"}
 
 I think it’s ready to test now.
 Tester please test my program (the programmer hands the program on the whiteboard to the tester and the bot should return to the starting square ready to rerun the program).
@@ -136,7 +128,7 @@ Turn left
 
 {panel type="teaching" title="Teaching observations"}
 
-The tester should underline under the second turn left because Arnold will have turned around twice on the spot rather than turning once and going forward again.
+The tester should underline under the second turn left because the plane will have turned around twice on the spot rather than turning once and going forward again.
 (Which is what is needed to get to the triangle.)
 
 {panel end}
@@ -147,7 +139,7 @@ Tester, you’ve done a great job finding it, but it’s the programmer’s job 
 
 {panel type="teaching" title="Teaching observations"}
 
-If the class can’t identify how the program needs debugging then talk through each step and model it with Arnold.
+If the class can’t identify how the program needs debugging then talk through each step and model it with the plane.
 Did move forward make sense?
 Did move forward a second time make sense?
 Did move forward a third time make sense? Did turn left make sense?
@@ -159,28 +151,28 @@ Let’s test it.
 
 {panel end}
 
-Once the bug has been identified then ask the Tester to test it again; ask the Bot to pick up Arnold and go back to the start position, then the Tester reads them the instructions.
+Once the bug has been identified then ask the Tester to test it again; ask the Bot to pick up the plane and go back to the start position, then the Tester reads them the instructions.
 
-{image file-path="img/topics/geo-grid-parrot-4.png" alt="Grid with parrot in (0,1) and arrows"}
+{image file-path="img/topics/kidbots-geometry-plane-4.gif"}
 
-Did we successfully program Arnold to get to the triangle? How do we know?
+Did we successfully program the plane to get to the triangle? How do we know?
 
 {panel type="teaching" title="Teaching observations"}
 
-We successfully programmed Arnold to find the triangle because Arnold and the triangle are in the same square.
+We successfully programmed the plane to find the triangle because the plane and the triangle are in the same square.
 
 {panel end}
 
-Are there other ways we could have programmed Arnold to get to the triangle?
+Are there other ways we could have programmed the plane to get to the triangle?
 (There will be lots of ways; for example, Left, Forward, Right, Forward, Forward, Forward will work.)
 Discuss the programming options and test each one.
-What if we want Arnold to get to the triangle, and then bring them back to safety?
+What if we want the plane to get to the triangle, and then bring them back to safety?
 
 {panel type="teaching" title="Teaching observations"}
 
 In programming, there are numerous ways to program the same thing.
 Some might be more efficient than others, but all are correct if they achieve the desired result.
-For example a student might program Arnold to go around the outside of the grid and then go and get to the triangle.
+For example a student might program the plane to go around the outside of the grid and then go and get to the triangle.
 This is a correct solution, but there’s a lot of extra code that’s not necessary.
 More commonly, two programmers might come up with programs that take a similar amount of time to achieve the same result (for example, "Forward, Left, Forward, Right" and "Left, Forward, Right, Forward" get the Bot to the same place and orientation; both are good answers).
 An important concept in programming is that there can be multiple good answers; there is rarely a single solution that is the best one, and this means that if a student's work looks different to a model answer that might be available, it isn't necessarily wrong.
@@ -230,7 +222,7 @@ This supports students to visualise what they want to program.
 Add barriers to the grid so that the path is more complex because it needs to avoid the barriers.
 This could be blocks blocking the way.
 
-{image file-path="img/topics/geo-grid-parrot-5.png" alt="Grid with parrot in (0,1) and barriers"}
+{image file-path="img/topics/kidbots-geometry-plane-5.png"}
 
 ## Other challenges:
 

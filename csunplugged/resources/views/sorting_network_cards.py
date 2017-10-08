@@ -17,7 +17,7 @@ def resource(request, resource):
         A list of dictionaries for each resource page.
     """
     IMAGE_SIZE_X = 2000
-    IMAGE_SIZE_Y = 3000
+    IMAGE_SIZE_Y = 2800
     LINE_COLOUR = "#000000"
     LINE_WIDTH = 3
     font_path = "static/fonts/PatrickHand-Regular.ttf"
