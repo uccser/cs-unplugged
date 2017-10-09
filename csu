@@ -182,6 +182,13 @@ dev_shell() {
 }
 defhelp -dev shell "Open shell to Django folder."
 
+# Reboot Django Docker container
+dev_reboot_django() {
+  echo "Rebooting Django Docker container..."
+  docker-compose up -d django
+}
+defhelp -dev reboot_django 'Reboot Django Docker container.'
+
 # Run style checks
 dev_style() {
   echo "Running PEP8 style checker..."
