@@ -1,0 +1,3 @@
+files:
+  - source: /csunplugged/topics/content/en/binary-numbers/*.md
+    translation: /csunplugged/topics/content/%locale%/binary-numbers/%original_file_name%
