@@ -94,11 +94,15 @@ New lessons for existing topics have also been added.
 
 - Add Unplugged Programming: Kidbots lesson 1 for ages 5 - 7.
 
-  - `Jack Morgan`_ `#551 <https://github.com/uccser/cs-unplugged/issues/551>`_
+  - `Jack Morgan`_ `#549 <https://github.com/uccser/cs-unplugged/issues/549>`_
 
 - Add Unplugged Programming: Kidbots lesson 2 for ages 5 - 7.
 
   - `Jack Morgan`_ `#550 <https://github.com/uccser/cs-unplugged/issues/550>`_
+
+- Add Unplugged Programming: Numeracy lesson 1 for ages 5 - 7.
+
+  - `Jack Morgan`_ `#551 <https://github.com/uccser/cs-unplugged/issues/551>`_
 
 - Add Sorting Network lesson 2 for ages 5 - 7.
 
@@ -124,6 +128,9 @@ New lessons for existing topics have also been added.
 - Fix typo in 12-digit product code instructions (thanks `@eemshi <https://github.com/eemshi>`_).
 
   - `Jack Morgan`_ `#599 <https://github.com/uccser/cs-unplugged/issues/599>`_
+
+- Open PDF resource download in new tab. `#431 <https://github.com/uccser/cs-unplugged/issues/431>`_
+- Fix bug in Google analytics. `#539 <https://github.com/uccser/cs-unplugged/issues/539>`_
 
 2.0.0-alpha.3
 ==============================================================================
