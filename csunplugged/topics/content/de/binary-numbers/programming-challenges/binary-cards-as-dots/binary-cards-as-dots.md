@@ -1,14 +1,14 @@
-# Display binary cards with dots representing a number between 0 and 31
+# Binärkarten mit Punkten anzeigen, die eine Zahl zwischen 0 und 31 darstellen
 
-## Requirement:
+## Anforderung:
 
-Write a program that asks the user to enter a decimal number between 0 and 31 as the input and displays the binary cards (5 black or white cards) representing the number in binary as the output.
+Schreiben Sie ein Programm, das den Benutzer auffordert, eine Dezimalzahl zwischen 0 und 31 als Eingabe einzugeben, und zeigt die Binärkarten (5 schwarze oder weiße Karten) an, die die Binärzahl als Ausgabe darstellen.
 
-## Testing examples:
+## Testbeispiele:
 
-Your program should display the outputs shown in this table for the given inputs provided;
+Ihr Programm sollte die in dieser Tabelle gezeigten Ausgänge für die angegebenen Eingaben anzeigen.
 
-| Input | Output                                                                                      |
-| ----- | ------------------------------------------------------------------------------------------- |
+| Eingabe | Ausgabe |
+| ----- | -------------------------------------------------- ----------------------------------------- |
 | 31    | {image-inline file-path="img/topics/programming-challenges/binary-challenge-9-example1.png"} |
 | 11    | {image-inline file-path="img/topics/programming-challenges/binary-challenge-9-example2.png"} |

@@ -1,5 +1,4 @@
-# Other Resources
+# Andere Ressourcen
 
-
-The [Computer Science Field Guide](http://csfieldguide.org.nz/) has a chapter on [Data Representation](http://csfieldguide.org.nz/en/chapters/data-representation.html) which covers Binary Numbers and how they can represent different different types of data. 
-It also has an interactive version of the [binary cards](http://csfieldguide.org.nz/en/interactives/binary-cards/index.html?digits=4&start=WWWW), you can find out extra information on how to use these [here](https://github.com/uccser/cs-field-guide/tree/develop/interactives/binary-cards).
+Der [Computer Science Field Guide] (http://csfieldguide.org.nz/) enthält ein Kapitel über [Data Representation] (http://csfieldguide.org.nz/en/chapters/data-representation.html), das Binärzahlen und wie sie verschiedene unterschiedliche Datentypen darstellen können.
+Es gibt auch eine interaktive Version der [Binärkarten] (http://csfieldguide.org.nz/en/interactives/binary-cards/index.html?digits=4&start=WWWW), Sie können zusätzliche Informationen darüber finden, wie um diese [hier] (https://github.com/uccser/cs-field-guide/tree/develop/interactives/binary-cards) zu verwenden.

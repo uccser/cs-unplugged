@@ -1,23 +1,543 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-31 20:44+1300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2017-10-10 11:23+0000\n"
+"PO-Revision-Date: 2017-10-10 07:33-0400\n"
+"Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
+"Language-Team: German\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: cs-unplugged\n"
+"X-Crowdin-Language: de\n"
+"X-Crowdin-File: django.po\n"
 
-#: topics/templates/topics/index.html:3
+#: templates/base.html:39 templates/base.html:102 templates/topics/index.html:8
+#: templates/topics/index.html:17
 msgid "Topics"
+msgstr "Themen"
+
+#: templates/base.html:40 templates/base.html:107
+#: templates/general/index.html:55 templates/resources/index.html:8
+#: templates/resources/index.html:17 templates/topics/topic.html:97
+msgid "Resources"
+msgstr "Ressourcen"
+
+#: templates/base.html:41 templates/base.html:97
+#: templates/general/about.html:16
+msgid "About"
+msgstr "Über"
+
+#: templates/base.html:93
+msgid "Useful Links"
+msgstr "Nützliche Links"
+
+#: templates/base.html:113
+msgid "Community"
+msgstr "Community"
+
+#: templates/base.html:133
+msgid "Help"
+msgstr "Hilfe"
+
+#: templates/base.html:137
+msgid "Glossary"
+msgstr "Glossar"
+
+#: templates/base.html:142
+msgid "Feedback"
+msgstr "Feedback"
+
+#: templates/base.html:147
+msgid "Contact"
+msgstr "Kontakt"
+
+#: templates/base.html:158
+msgid "\n"
+"          Looking for something for high schools?\n"
+"          Check out the <a href=\"http://csfieldguide.org.nz/\">Computer Science Field Guide</a>.\n"
+"          "
+msgstr "\n"
+"Auf der Suche nach etwas für Gymnasien?           Schauen Sie sich die <a href=\"http://csfieldguide.org.nz/\"> Computer Science Field Guide</a>.          "
+
+#: templates/base.html:166
+msgid "\n"
+"          The CS Unplugged material is open source on <a href=\"https://github.com/uccser/cs-unplugged\">GitHub</a>, and this website's content is shared under a <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons Attribution-ShareAlike 4.0 International license</a>.\n"
+"          The CS Unplugged is a project by the <a href=\"http://www.cosc.canterbury.ac.nz/research/RG/CSE/\">Computer Science Education Research Group</a> at the <a href=\"http://www.canterbury.ac.nz/\">University of Canterbury</a>, New Zealand.\n"
+"          "
+msgstr "\n"
+"Das CS Unplugged Material ist open-Source auf <a href=\"https://github.com/uccser/cs-unplugged\"> GitHub</a>, und der Inhalt dieser Website ist unter freigegeben ein <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\"> Creative Commons Attribution-ShareAlike 4.0 International-Lizenz</a>.           Die CS-Unplugged ist ein Projekt der <a href=\"http://www.cosc.canterbury.ac.nz/research/RG/CSE/\"> Computer Science Education Research Group</a> an der <a href=\"http://www.canterbury.ac.nz/\"> University of Canterbury</a>, Neuseeland.          "
+
+#: templates/dev/index.html:22
+msgid "Unit Plan:"
+msgstr "Plan bearbeiten:"
+
+#: templates/general/computational-thinking.html:17
+msgid "Computational Thinking and CS Unplugged"
+msgstr "Rechnerische denken und CS Unplugged"
+
+#: templates/general/contact.html:17
+msgid "Contact Us"
+msgstr "Uns kontaktieren"
+
+#: templates/general/index.html:15 vinaigrette-deleteme.py:10
+msgid "Computer Science"
+msgstr "Informatik"
+
+#: templates/general/index.html:16
+msgid "without a computer"
+msgstr "ohne computer"
+
+#: templates/general/index.html:27
+msgid "CS Unplugged is a collection of free teaching material that teaches Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around."
+msgstr "CS-Unplugged ist eine Sammlung von kostenlosen Lehrmaterialien, die Informatik lehrt durch ansprechende Spiele und Rätsel, die Karten, Zeichenfolge, Buntstifte und viel herumlaufen zu verwenden."
+
+#: templates/general/index.html:30
+msgid "The resources available to teachers include unit plans, lesson plans, teaching videos, curriculum integration activities, and programming exercises to plug in the Computer Science concepts they have just learnt unplugged."
+msgstr "Lehrer zur Verfügung stehenden Ressourcen gehören Einheit Pläne, Unterrichtspläne, Lehre-Videos, Curriculum Integrationsaktivitäten und Programmierübungen, Stecker in die Informatik-Konzepte, die sie gerade gelernt haben, unplugged."
+
+#: templates/general/index.html:43
+msgid "Learn about CS Unplugged"
+msgstr "Erfahren Sie mehr über CS Unplugged"
+
+#: templates/general/index.html:47
+msgid "Topics covered by CS Unplugged"
+msgstr "Themen der CS Unplugged"
+
+#: templates/general/index.html:52
+#: templates/topics/all-curriculum-integration-list.html:8
+#: templates/topics/all-curriculum-integration-list.html:18
+msgid "Curriculum Integrations"
+msgstr "Lehrplan-Integrationen"
+
+#: templates/general/index.html:58
+msgid "Classic CS Unplugged"
+msgstr "Klassische CS Unplugged"
+
+#: templates/general/people.html:17
+msgid "People"
+msgstr "Leute"
+
+#: templates/general/principles.html:18
+msgid "Principles"
+msgstr "Prinzipien"
+
+#: templates/topics/all-curriculum-integration-list.html:20
+msgid "The following table lists curriculum integrations for all topics in the CS Unplugged content."
+msgstr "Die folgende Tabelle listet Lehrplan Integrationen für alle Themen im CS Unplugged Inhalt."
+
+#: templates/topics/all-curriculum-integration-list.html:28
+msgid "Topic"
 msgstr "Thema"
+
+#: templates/topics/all-curriculum-integration-list.html:29
+#: templates/topics/curriculum-integrations-table.html:6
+msgid "Activity"
+msgstr "Aktivität"
+
+#: templates/topics/all-curriculum-integration-list.html:30
+#: templates/topics/curriculum-integrations-table.html:7
+msgid "Curriculum Areas"
+msgstr "Bereichen Lehrplan"
+
+#: templates/topics/all-curriculum-integration-list.html:31
+#: templates/topics/curriculum-integrations-table.html:8
+msgid "Prerequisite Lessons?"
+msgstr "Voraussetzung Unterricht?"
+
+#: templates/topics/all-curriculum-integration-list.html:54
+#: templates/topics/curriculum-integrations-table.html:28
+#: templates/topics/lessons-table.html:36
+msgid "Yes"
+msgstr "Ja"
+
+#: templates/topics/all-curriculum-integration-list.html:57
+#: templates/topics/curriculum-integrations-table.html:31
+#: templates/topics/lessons-table.html:40
+msgid "No"
+msgstr "Nein"
+
+#: templates/topics/computational-thinking-links.html:5
+msgid "Seeing the Computational Thinking connections"
+msgstr "Sehen die Computational Thinking Verbindungen"
+
+#: templates/topics/computational-thinking-links.html:8
+msgid "\n"
+"    Throughout the lessons there are links to computational thinking.\n"
+"    Below we've noted some general links that apply to this content.\n"
+"    "
+msgstr "\n"
+"In den Lektionen gibt es Links zu rechnerischen denken.     Im folgenden haben wir einige allgemeine Links zur Kenntnis genommen, die für diese Inhalte gelten.    "
+
+#: templates/topics/computational-thinking-links.html:15
+msgid "\n"
+"    Teaching computational thinking through CSUnplugged activities supports students to learn how to describe a problem, identify what are the important details they need to solve this problem, and break it down into small, logical steps so that they can then create a process which solves the problem, and then evaluate this process.\n"
+"    These skills are transferable to any other curriculum area, but are particularly relevant to developing digital systems and solving problems using the capabilities of computers.\n"
+"    "
+msgstr "\n"
+"Unterricht rechnerische Denken durch CSUnplugged Aktivitäten unterstützt Schüler lernen, wie man ein Problem beschreiben erkennen, was sind die wichtigen Details, die sie benötigen, um dieses Problem zu lösen, und brechen sie in kleine, logische Schritte, so dass sie dann erstellen einen Prozess, der löst das Problem, und dann bewerten diesen Prozess.     Diese Fähigkeiten sind übertragbar auf einen anderen Bereich des Curriculums, sondern sind insbesondere für digitale Systeme zu entwickeln und lösen von Problemen mit den Möglichkeiten von Computern.    "
+
+#: templates/topics/computational-thinking-links.html:23
+#, python-format
+msgid "\n"
+"    These Computational Thinking concepts are all connected to each other and support each other, but it’s important to note that not all aspects of Computational Thinking happen in every unit or lesson.\n"
+"    We’ve highlighted the important connections for you to observe your students in action.\n"
+"    For more background information on what our definition of Computational Thinking <a href=\"%(ct_url)s\">see our notes about computational thinking</a>.\n"
+"    "
+msgstr "\n"
+"Diese Computational Thinking Konzepte sind alle miteinander verbunden und unterstützen sich gegenseitig, aber es ist wichtig zu beachten, dass nicht alle Aspekte der Computational Thinking in jeder Einheit oder Lehre passieren.     Wir haben hervorgehoben, die wichtigeren Verbindungen für Sie, Ihre Schüler in Aktion zu beobachten.     Weitere Hintergrundinformationen auf welche unsere Definition von Computational denken <a href=\"%(ct_url)s\"> unsere Hinweise über das rechnerische denken sehen</a>.    "
+
+#: templates/topics/curriculum-integration.html:38
+msgid "Heads up!"
+msgstr "Achtung!"
+
+#: templates/topics/curriculum-integration.html:39
+msgid "To do this activity it's expected you understand the content covered in the following:"
+msgstr "Um diese Aktivität zu tun wird erwartet, dass Sie verstehen den Inhalt, die im folgenden behandelt:"
+
+#: templates/topics/index.html:22
+msgid "Open a topic to see all related unit plans, lessons, curriculum integrations, and programming challenges."
+msgstr "Öffnen Sie ein Thema um zu sehen, dass alle damit verbundenen Einheit Pläne, Unterricht, Curriculum Integrationen und Programmierung Herausforderungen."
+
+#: templates/topics/index.html:39
+msgid "No topics are available."
+msgstr "Hilfe nicht verfügbar."
+
+#: templates/topics/lesson.html:34
+#: templates/topics/programming-challenge.html:50
+msgid "Learning outcomes"
+msgstr "Lernergebnisse"
+
+#: templates/topics/lesson.html:35
+msgid "Students will be able to:"
+msgstr "Studenten werden können:"
+
+#: templates/topics/lesson.html:70
+msgid "Classroom resources"
+msgstr "Unterrichtsressourcen"
+
+#: templates/topics/lesson.html:79 templates/topics/lessons-table.html:12
+msgid "Programming challenges"
+msgstr "Programmierung-Herausforderungen"
+
+#: templates/topics/lesson.html:82
+msgid "View related programming challenges"
+msgstr "Damit verbundenen Programmierung Herausforderungen anzeigen"
+
+#: templates/topics/lesson.html:88 templates/topics/topic.html:80
+#: templates/topics/unit-plan.html:37
+msgid "Table of contents"
+msgstr "Inhaltsverzeichnis"
+
+#: templates/topics/lesson.html:100 templates/topics/unit-plan.html:49
+#: vinaigrette-deleteme.py:3
+msgid "Computational Thinking"
+msgstr "Rechnerische denken"
+
+#: templates/topics/lessons-table.html:8
+#, python-format
+msgid "\n"
+"          Ages %(lower)s to %(upper)s\n"
+"          "
+msgstr "\n"
+"Alter %(lower)s, %(upper)s          "
+
+#: templates/topics/programming-challenge-language-solution.html:28
+msgid "solution"
+msgstr "text-Lösung"
+
+#: templates/topics/programming-challenge-language-solution.html:34
+msgid "\n"
+"    <strong>Heads Up!</strong> If you are ready to compare your programming to ours or are wanting to have a look at how we solved it, click 'View solution' below to view at least one way to write this program.\n"
+"    "
+msgstr "\n"
+"<strong>Heads-Up!</strong> Wenn Sie bereit sind, vergleichen Sie Ihre Programmierung zu uns oder wollen, schauen Sie, wie wir es gelöst, klicken Sie auf \"Lösung anzeigen\" unten an mindestens einen Weg, dieses Programm zu schreiben.    "
+
+#: templates/topics/programming-challenge-language-solution.html:41
+msgid "View solution"
+msgstr "Lösung ausblenden"
+
+#: templates/topics/programming-challenge-language-solution.html:45
+msgid "This is just one of many possible solutions:"
+msgstr "Dies ist nur eine von vielen möglichen Lösungen:"
+
+#: templates/topics/programming-challenge-language-solution.html:52
+msgid "Back to programming challenge"
+msgstr "Zurück zur Programmierung Herausforderung"
+
+#: templates/topics/programming-challenge-lesson-list.html:9
+#, python-format
+msgid "%(name)s programming challenges"
+msgstr "%(name)s Programmierung Herausforderungen"
+
+#: templates/topics/programming-challenge-lesson-list.html:20
+#, python-format
+msgid "%(lesson.name)s programming challenges"
+msgstr "%(lesson.name)s Programmierung Herausforderungen"
+
+#: templates/topics/programming-challenge-lesson-list.html:31
+#, python-format
+msgid "No programming challenges for %(topic)s."
+msgstr "Keine Programmierung Herausforderungen für %(topic)s."
+
+#: templates/topics/programming-challenge.html:25
+msgid "Challenge Level:"
+msgstr "Herausforderungswürfel:"
+
+#: templates/topics/programming-challenge.html:39
+#, python-format
+msgid "\n"
+"                Challenge %(set_num)s.%(chal_num)s for %(name)s\n"
+"                "
+msgstr "\n"
+"Herausforderung %(set_num)s.%(chal_num)s für %(name)s                "
+
+#: templates/topics/programming-challenge.html:42
+#, python-format
+msgid "%(lower)s to %(upper)s"
+msgstr "%(lower)s, %(upper)s"
+
+#: templates/topics/programming-challenge.html:42
+msgid "and"
+msgstr "und"
+
+#: templates/topics/programming-challenge.html:63
+#, python-format
+msgid "No learning outcomes listed for %(programming_challenge.name)s."
+msgstr "Keine Lernergebnisse für %(programming_challenge.name)s aufgeführt."
+
+#: templates/topics/programming-challenge.html:81
+msgid "What it should look like"
+msgstr "Wie soll es aussehen"
+
+#: templates/topics/programming-challenge.html:88
+msgid "Hints"
+msgstr "Tipps"
+
+#: templates/topics/programming-challenge.html:100
+#, python-format
+msgid "Show %(implementation.language.name)s solution"
+msgstr "Zeigen %(implementation.language.name)s Lösung"
+
+#: templates/topics/programming-challenge.html:111
+msgid "Extra Challenge"
+msgstr "Sternen Challenge"
+
+#: templates/topics/programming-challenges-table.html:8
+msgid "Number"
+msgstr "Nummer"
+
+#: templates/topics/programming-challenges-table.html:10
+msgid "Challenge Level"
+msgstr "Herausforderungswürfel"
+
+#: templates/topics/programming-challenges-table.html:11
+msgid "Languages"
+msgstr "Sprachen"
+
+#: templates/topics/topic-other-resources.html:9
+msgid "other resources"
+msgstr "andere Ressourcen"
+
+#: templates/topics/topic-other-resources.html:24
+#: templates/topics/topic.html:102
+msgid "Other resources"
+msgstr "Andere Ressourcen"
+
+#: templates/topics/topic.html:28 templates/topics/unit-plan.html:19
+msgid "Unit plan:"
+msgstr "Plan bearbeiten:"
+
+#: templates/topics/topic.html:34
+msgid "or jump straight to a lesson of the unit:"
+msgstr "oder springen Sie direkt zu einer Lektion des Referats:"
+
+#: templates/topics/topic.html:56
+#, python-format
+msgid "The following resources are used in %(name)s lessons, and can be accessed here (and also on each lesson page)."
+msgstr "Die folgenden Ressourcen werden in den Unterrichtsstunden von %(name)s verwendet und können aufhier (und auch auf jeder Unterrichtsseite)."
+
+#: templates/topics/topic.html:69
+msgid "Looking for more?"
+msgstr "Mehr Infos?"
+
+#: templates/topics/topic.html:72
+msgid "Click here for other resources"
+msgstr "Klicken Sie hier für andere Ressourcen"
+
+#: templates/topics/topic.html:92
+msgid "Curriculum integrations"
+msgstr "Lehrplan-Integrationen"
+
+#: templates/topics/unit-plan.html:53
+msgid "Lessons"
+msgstr "Vorträge"
+
+#: vinaigrette-deleteme.py:2
+msgid "In the teacher observations sections there may also be background notes on the big picture. There is no expectation that 5 to 7 year olds will need to know this, but if you are asked, you have the answer at your fingertips."
+msgstr "In der Lehrer-Beobachtungen möglicherweise Abschnitte es auch Hintergrundinformationen auf das Gesamtbild. Gibt es keine Erwartung, die 5 bis 7 jährige dies wissen müssen, aber wenn Sie gefragt werden, haben Sie die Antwort an Ihren Fingerspitzen."
+
+#: vinaigrette-deleteme.py:4
+msgid "Algorithmic Thinking"
+msgstr "Algorithmisches Denken"
+
+#: vinaigrette-deleteme.py:5
+msgid "Decomposition"
+msgstr "Zersetzung"
+
+#: vinaigrette-deleteme.py:6
+msgid "Abstraction"
+msgstr "Abstraktion"
+
+#: vinaigrette-deleteme.py:7
+msgid "Generalising and Patterns"
+msgstr "Generalising und Muster"
+
+#: vinaigrette-deleteme.py:8
+msgid "Logic"
+msgstr "Logik"
+
+#: vinaigrette-deleteme.py:9
+msgid "Evaluation"
+msgstr "Bewertung"
+
+#: vinaigrette-deleteme.py:11
+msgid "Data Representation"
+msgstr "Rechtliche Vertretung"
+
+#: vinaigrette-deleteme.py:12
+msgid "Algorithms"
+msgstr "Algorithmen"
+
+#: vinaigrette-deleteme.py:13
+msgid "Programming"
+msgstr "Programmierung"
+
+#: vinaigrette-deleteme.py:14
+msgid "Mathematics"
+msgstr "Mathematik"
+
+#: vinaigrette-deleteme.py:15
+msgid "Geometry"
+msgstr "Geometrie"
+
+#: vinaigrette-deleteme.py:16
+msgid "Measurement"
+msgstr "Messung"
+
+#: vinaigrette-deleteme.py:17
+msgid "Numeracy"
+msgstr "Rechnen"
+
+#: vinaigrette-deleteme.py:18
+msgid "Algebra"
+msgstr "Algebra"
+
+#: vinaigrette-deleteme.py:19
+msgid "Statistics"
+msgstr "Statistik"
+
+#: vinaigrette-deleteme.py:20
+msgid "Literacy"
+msgstr "Alphabetisierung"
+
+#: vinaigrette-deleteme.py:21
+msgid "Reading"
+msgstr "Gelesen"
+
+#: vinaigrette-deleteme.py:22
+msgid "Writing"
+msgstr "Schreibe"
+
+#: vinaigrette-deleteme.py:23
+msgid "Listening"
+msgstr "Jetzt sprechen"
+
+#: vinaigrette-deleteme.py:24
+msgid "Speaking"
+msgstr "Sprechen"
+
+#: vinaigrette-deleteme.py:25
+msgid "Library"
+msgstr "Bibliothek"
+
+#: vinaigrette-deleteme.py:26
+msgid "Art"
+msgstr "Kunst"
+
+#: vinaigrette-deleteme.py:27
+msgid "Language Learning"
+msgstr "Sprachenlernen"
+
+#: vinaigrette-deleteme.py:28
+msgid "Performing Arts"
+msgstr "Darstellende Kunst"
+
+#: vinaigrette-deleteme.py:29
+msgid "Music"
+msgstr "Musik"
+
+#: vinaigrette-deleteme.py:30
+msgid "Dance"
+msgstr "Tanz"
+
+#: vinaigrette-deleteme.py:31
+msgid "Drama"
+msgstr "Drama"
+
+#: vinaigrette-deleteme.py:32
+msgid "Physical Education"
+msgstr "Sportunterricht"
+
+#: vinaigrette-deleteme.py:33
+msgid "Fitness"
+msgstr "Fitness"
+
+#: vinaigrette-deleteme.py:34
+msgid "Sport"
+msgstr "Sport"
+
+#: vinaigrette-deleteme.py:35
+msgid "Health"
+msgstr "Gesundheit"
+
+#: vinaigrette-deleteme.py:36
+msgid "Science"
+msgstr "Wissenschaft"
+
+#: vinaigrette-deleteme.py:37
+msgid "Biology"
+msgstr "Biologie"
+
+#: vinaigrette-deleteme.py:38
+msgid "Physics"
+msgstr "Physik"
+
+#: vinaigrette-deleteme.py:39
+msgid "Astronomy"
+msgstr "Astronomie"
+
+#: vinaigrette-deleteme.py:40
+msgid "Chemistry"
+msgstr "Chemie"
+
+#: vinaigrette-deleteme.py:41
+msgid "Geology"
+msgstr "Geologie"
+
+#: vinaigrette-deleteme.py:42
+msgid "Social Studies"
+msgstr "Sozialkunde"
+
+#: vinaigrette-deleteme.py:43
+msgid "History"
+msgstr "Verlauf"
+
+#: vinaigrette-deleteme.py:44
+msgid "Geography"
+msgstr "Geographie"
+
