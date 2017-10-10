@@ -1,0 +1,66 @@
+reinforcing-numeracy-through-a-sorting-network-junior:
+  duration: 45
+  learning-outcomes:
+    - sorting-explain-parallel-algorithm
+    - sorting-identify-number-given-range
+    - sorting-organise-objects-size
+  computational-thinking-links: reinforcing-numeracy-through-a-sorting-network-junior-ct-links.md
+  generated-resources:
+    sorting-network:
+      description: Use blank copy as template for creating Sorting Network.
+    sorting-network-cards:
+      description: Cards for students to use with the Sorting Network.
+  classroom-resources:
+    - 6 cards (or other items such as post-it notes) with numbers on them.
+    - Stopwatch (e.g. on smartphone) to time races between groups.
+
+investigating-variations-using-the-sorting-network-junior:
+  duration: 30
+  learning-outcomes:
+    - sorting-recognise-sorting-method
+    - sorting-demonstrate-alphabet-knowledge
+    - sorting-explain-parallel-algorithm
+  computational-thinking-links: investigating-variations-using-the-sorting-network-junior-ct-links.md
+  generated-resources:
+    sorting-network:
+      description: Use blank copy as template for creating Sorting Network.
+    sorting-network-cards:
+      description: Cards for students to use with the Sorting Network.
+  classroom-resources:
+    - "Optional: Any six objects that can be organised in the same order every time."
+
+reinforcing-numeracy-through-a-sorting-network:
+  duration: 45
+  learning-outcomes:
+    - sorting-explain-parallel-algorithm
+    - sorting-use-selection-sort
+    - sorting-identify-number-range
+    - sorting-organise-objects-size
+  computational-thinking-links: reinforcing-numeracy-through-a-sorting-network-ct-links.md
+  generated-resources:
+    sorting-network:
+      description: Use blank copy as template for creating Sorting Network.
+    sorting-network-cards:
+      description: Cards for students to use with the Sorting Network.
+  classroom-resources:
+    - 6 cards (or other items such as post-it notes) with numbers on them.
+    - Stopwatch (e.g. on smartphone) to time races between groups.
+
+investigating-variations-using-the-sorting-network:
+  duration: 30
+  learning-outcomes:
+    - sorting-recognise-sorting-method
+    - sorting-demonstrate-alphabet-knowledge
+    - sorting-comparing-musical-pitch
+    - sorting-explain-parallel-algorithm
+    - sorting-use-selection-sort
+  computational-thinking-links: investigating-variations-using-the-sorting-network-ct-links.md
+  generated-resources:
+    sorting-network:
+      description: Use blank copy as template for creating Sorting Network.
+    sorting-network-cards:
+      description: Cards for students to use with the Sorting Network.
+  classroom-resources:
+    - A variety of sets of 6 number cards that each include one or more repeated numbers, or
+    - Books with author names, or
+    - Sets of instruments with different pitches

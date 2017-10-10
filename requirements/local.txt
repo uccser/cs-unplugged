@@ -9,3 +9,7 @@ sphinx-rtd-theme==0.2.4
 # Debugging Tools
 django-debug-toolbar==1.8
 django-extensions==1.9.1
+
+# Translations
+django-modeltranslation==0.12.1
+django-vinaigrette==1.0.1

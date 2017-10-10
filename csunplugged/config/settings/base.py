@@ -36,6 +36,7 @@ DJANGO_APPS = [
 ]
 THIRD_PARTY_APPS = [
     "django_bootstrap_breadcrumbs",
+    "modeltranslation"
 ]
 
 # Apps specific for this project go here.
@@ -99,6 +100,11 @@ TIME_ZONE = "UTC"
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#language-code
 LANGUAGE_CODE = "en-us"
+
+LANGUAGES = (
+    ("en", "English"),
+    ("de", "German"),
+)
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#site-id
 SITE_ID = 1

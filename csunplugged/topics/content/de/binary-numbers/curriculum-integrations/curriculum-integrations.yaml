@@ -1,0 +1,50 @@
+binary-or-normal-candles:
+  number: 1
+  curriculum-areas:
+    - writing
+  prerequisite-lessons:
+    unit-plan:
+      - how-binary-digits-work
+
+whose-cake-is-it:
+  number: 2
+  curriculum-areas:
+    - writing
+  prerequisite-lessons:
+    unit-plan:
+      - how-binary-digits-work
+
+binary-name-necklaces:
+  number: 3
+  curriculum-areas:
+    - art
+  prerequisite-lessons:
+    unit-plan:
+      - codes-for-letters-using-binary-representation
+
+binary-patterns:
+  number: 4
+  curriculum-areas:
+    - art
+  prerequisite-lessons:
+    unit-plan:
+      - how-binary-digits-work
+
+binary-tunes:
+  number: 5
+  curriculum-areas:
+    - music
+  prerequisite-lessons:
+    unit-plan:
+      - how-binary-digits-work
+
+biographies-and-binary-number-system-history:
+  number: 6
+  curriculum-areas:
+    - reading
+    - writing
+
+binary-art:
+  number: 7
+  curriculum-areas:
+    - art

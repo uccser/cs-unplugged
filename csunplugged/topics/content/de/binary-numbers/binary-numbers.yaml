@@ -1,0 +1,9 @@
+unit-plans:
+  - unit-plan/unit-plan.yaml
+
+icon: img/topics/binary-cards-4-bits-icon.png
+
+other-resources: other-resources.md
+
+programming-challenges: programming-challenges/programming-challenges.yaml
+curriculum-integrations: curriculum-integrations/curriculum-integrations.yaml

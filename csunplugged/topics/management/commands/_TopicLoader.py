@@ -26,7 +26,9 @@ class TopicLoader(BaseLoader):
         self.factory = factory
         self.topic_slug = os.path.split(structure_file_path)[0]
         self.structure_file_path = os.path.join(self.BASE_PATH, structure_file_path)
+        self.CONTENT_PATH = os.path.split(os.path.split(self.BASE_PATH)[0])[0]
         self.BASE_PATH = os.path.join(self.BASE_PATH, self.topic_slug)
+
 
     @transaction.atomic
     def load(self):
@@ -46,14 +48,20 @@ class TopicLoader(BaseLoader):
                 "Topic"
             )
 
+        available_translations = topic_structure.get('available_translations', ["en", "de"])
+        content_translations = {}
         # Convert the content to HTML
-        topic_content = self.convert_md_file(
-            os.path.join(
-                self.BASE_PATH,
-                "{}.md".format(self.topic_slug)
-            ),
-            self.structure_file_path
-        )
+        for language in available_translations:
+            topic_content = self.convert_md_file(
+                os.path.join(
+                    self.CONTENT_PATH,
+                    language,
+                    self.topic_slug,
+                    "{}.md".format(self.topic_slug)
+                ),
+                self.structure_file_path
+            )
+            content_translations[language] = topic_content
 
         # If other resources are given, convert to HTML
         if "other-resources" in topic_structure:
@@ -86,10 +94,12 @@ class TopicLoader(BaseLoader):
         topic = Topic(
             slug=self.topic_slug,
             name=topic_content.title,
-            content=topic_content.html_string,
             other_resources=topic_other_resources_html,
             icon=topic_icon
         )
+        for locale in content_translations:
+            setattr(topic, "content_{}".format(locale), content_translations[locale].html_string)
+            setattr(topic, "name_{}".format(locale), content_translations[locale].title)
         topic.save()
 
         self.log("Added Topic: {}".format(topic.name))
