@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+{% load i18n %}
 {% load static %}
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
@@ -24,29 +25,31 @@
   </h1>
   <h2>
     <img src="{% get_static_prefix %}{{ implementation.language.icon }}" class="inline-image" />
-    {{ implementation.language.name }} solution
+    {{ implementation.language.name }} {% trans "solution" %}
   </h2>
 {% endblock page_heading %}
 
 {% block content %}
   <div class="alert alert-warning" role="alert">
+    {% blocktrans %}
     <strong>Heads Up!</strong> If you are ready to compare your programming to ours or are wanting to have a look at how we solved it, click 'View solution' below to view at least one way to write this program.
+    {% endblocktrans %}
   </div>
 
   <details>
     <summary>
-      <strong>View solution</strong>
+      <strong>{% trans "View solution" %}</strong>
     </summary>
 
     <div class="boxed-text-content disable-selection">
-      <p>This is just one of many possible solutions:</p>
+      <p>{% trans "This is just one of many possible solutions:" %}</p>
       {% render_html_field implementation.solution %}
     </div>
   </details>
 
   <p>
     <a href="{% url 'topics:programming_challenge' topic.slug programming_challenge.slug %}">
-      Back to programming challenge
+      {% trans "Back to programming challenge" %}
     </a>
   </p>
 {% endblock content %}

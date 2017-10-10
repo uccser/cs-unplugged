@@ -1,22 +1,30 @@
 {% load render_html_field %}
+{% load i18n %}
 
 {% if computational_thinking_links %}
-  <h2 id="ct-links" class="heading-underline">Seeing the Computational Thinking connections</h2>
+  <h2 id="ct-links" class="heading-underline">{% trans "Seeing the Computational Thinking connections" %}</h2>
 
   <p>
+    {% blocktrans %}
     Throughout the lessons there are links to computational thinking.
     Below we've noted some general links that apply to this content.
+    {% endblocktrans %}
   </p>
 
   <p>
+    {% blocktrans %}
     Teaching computational thinking through CSUnplugged activities supports students to learn how to describe a problem, identify what are the important details they need to solve this problem, and break it down into small, logical steps so that they can then create a process which solves the problem, and then evaluate this process.
     These skills are transferable to any other curriculum area, but are particularly relevant to developing digital systems and solving problems using the capabilities of computers.
+    {% endblocktrans %}
   </p>
 
   <p>
+    {% url 'general:computational_thinking' as ct_url %}
+    {% blocktrans %}
     These Computational Thinking concepts are all connected to each other and support each other, but it’s important to note that not all aspects of Computational Thinking happen in every unit or lesson.
     We’ve highlighted the important connections for you to observe your students in action.
-    For more background information on what our definition of Computational Thinking <a href="{% url 'general:computational_thinking' %}">see our notes about computational thinking</a>.
+    For more background information on what our definition of Computational Thinking <a href="{{ ct_url }}">see our notes about computational thinking</a>.
+    {% endblocktrans %}
   </p>
 
   {% render_html_field computational_thinking_links %}
