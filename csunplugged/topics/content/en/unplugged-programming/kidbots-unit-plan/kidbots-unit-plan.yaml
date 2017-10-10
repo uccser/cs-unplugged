@@ -3,6 +3,8 @@ computational-thinking-links: kidbots-unit-plan-ct-links.md
 
 age-groups:
   5-7:
+    rescue-mission:
+      number: 1
     storytelling:
       number: 2
     fitness-unplugged:
