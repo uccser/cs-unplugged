@@ -22,7 +22,7 @@ class AgeGroupsLoader(BaseLoader):
         """
         super().__init__(BASE_PATH)
         self.structure_file_path = structure_file_path
-        self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(structure_file_path)[0])
+        # self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(structure_file_path)[0])
 
     @transaction.atomic
     def load(self):
@@ -35,6 +35,7 @@ class AgeGroupsLoader(BaseLoader):
         age_groups_structure = self.load_yaml_file(
             os.path.join(
                 self.BASE_PATH,
+                self.STRUCTURE_DIR,
                 self.structure_file_path
             )
         )

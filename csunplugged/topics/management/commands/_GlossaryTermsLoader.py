@@ -21,7 +21,7 @@ class GlossaryTermsLoader(BaseLoader):
         """
         super().__init__(BASE_PATH)
         self.structure_file_path = structure_file_path
-        self.BASE_PATH = os.path.join(self.BASE_PATH, glossary_folder_path)
+        self.BASE_PATH = os.path.join(self.BASE_PATH, 'en', glossary_folder_path)
         self.FILE_EXTENSION = ".md"
 
     @transaction.atomic

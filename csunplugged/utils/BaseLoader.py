@@ -24,13 +24,14 @@ from utils.errors.CouldNotFindConfigFileError import CouldNotFindConfigFileError
 class BaseLoader():
     """Base loader class for individual loaders."""
 
-    def __init__(self, BASE_PATH=""):
+    def __init__(self, BASE_PATH="", STRUCTURE_DIR='structure'):
         """Create a BaseLoader object.
 
         Args:
             BASE_PATH: string of base path (str).
         """
         self.BASE_PATH = BASE_PATH
+        self.STRUCTURE_DIR = STRUCTURE_DIR
         self.setup_md_to_html_converter()
 
     def setup_md_to_html_converter(self):

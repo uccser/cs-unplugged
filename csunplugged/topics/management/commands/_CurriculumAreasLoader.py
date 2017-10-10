@@ -35,6 +35,7 @@ class CurriculumAreasLoader(BaseLoader):
         curriculum_areas_structure = self.load_yaml_file(
             os.path.join(
                 self.BASE_PATH,
+                self.STRUCTURE_DIR,
                 self.structure_file_path
             )
         )

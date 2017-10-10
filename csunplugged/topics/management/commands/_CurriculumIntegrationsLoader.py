@@ -13,7 +13,7 @@ from topics.models import CurriculumArea, Lesson
 class CurriculumIntegrationsLoader(BaseLoader):
     """Custom loader for loading curriculum integrations."""
 
-    def __init__(self, structure_file_path, topic, BASE_PATH):
+    def __init__(self, structure_file_path, topic, BASE_PATH, INNER_PATH):
         """Create the loader for loading curriculum integrations.
 
         Args:
@@ -22,8 +22,8 @@ class CurriculumIntegrationsLoader(BaseLoader):
             BASE_PATH: Base file path (str).
         """
         super().__init__(BASE_PATH)
-        self.structure_file_path = os.path.join(self.BASE_PATH, structure_file_path)
-        self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(structure_file_path)[0])
+        self.structure_file_path = os.path.join(self.BASE_PATH, self.STRUCTURE_DIR, INNER_PATH, structure_file_path)
+        self.INNER_PATH = os.path.join(INNER_PATH, os.path.split(structure_file_path)[0])
         self.topic = topic
 
     def load(self):
@@ -54,20 +54,29 @@ class CurriculumIntegrationsLoader(BaseLoader):
                     "Curriculum Integration"
                 )
 
-            integration_content = self.convert_md_file(
-                os.path.join(
-                    self.BASE_PATH,
-                    "{}.md".format(integration_slug)
-                ),
-                self.structure_file_path
-            )
+            available_translations = structure.get('available_translations', ["en", "de"])
+            content_translations = {}
+            for language in available_translations:
+                integration_content = self.convert_md_file(
+                    os.path.join(
+                        self.BASE_PATH,
+                        language,
+                        self.INNER_PATH,
+                        "{}.md".format(integration_slug)
+                    ),
+                    self.structure_file_path
+                )
+                content_translations[language] = integration_content
 
             integration = self.topic.curriculum_integrations.create(
                 slug=integration_slug,
                 number=integration_number,
-                name=integration_content.title,
-                content=integration_content.html_string,
+                # name=integration_content.title,
+                # content=integration_content.html_string,
             )
+            for language in content_translations:
+                setattr(integration, "content_{}".format(language), content_translations[language].html_string)
+                setattr(integration, "name_{}".format(language), content_translations[language].title)
             integration.save()
 
             # Add curriculum areas

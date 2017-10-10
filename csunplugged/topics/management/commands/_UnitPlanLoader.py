@@ -16,7 +16,7 @@ from topics.models import (
 class UnitPlanLoader(BaseLoader):
     """Custom loader for loading unit plans."""
 
-    def __init__(self, factory, structure_file_path, topic, BASE_PATH):
+    def __init__(self, factory, structure_file_path, topic, BASE_PATH, INNER_PATH):
         """Create the loader for loading unit plans.
 
         Args:
@@ -28,8 +28,9 @@ class UnitPlanLoader(BaseLoader):
         super().__init__(BASE_PATH)
         self.factory = factory
         self.unit_plan_slug = os.path.split(structure_file_path)[0]
-        self.structure_file_path = os.path.join(self.BASE_PATH, structure_file_path)
-        self.BASE_PATH = os.path.join(self.BASE_PATH, self.unit_plan_slug)
+        self.structure_file_path = os.path.join(self.BASE_PATH, self.STRUCTURE_DIR, INNER_PATH, structure_file_path)
+        self.INNER_PATH = os.path.join(INNER_PATH, self.unit_plan_slug)
+        #self.BASE_PATH = os.path.join(self.BASE_PATH, 'en', self.unit_plan_slug)
         self.topic = topic
 
     def load(self):
@@ -42,42 +43,58 @@ class UnitPlanLoader(BaseLoader):
         """
         unit_plan_structure = self.load_yaml_file(self.structure_file_path)
 
+        available_translations = unit_plan_structure.get('available_translations', ["en", "de"])
+        content_translations = {}
+        ct_links_translations = {}
+        for language in available_translations:
         # Convert the content to HTML
-        unit_plan_content = self.convert_md_file(
-            os.path.join(
-                self.BASE_PATH,
-                "{}.md".format(self.unit_plan_slug)
-            ),
-            self.structure_file_path
-        )
-
-        heading_tree = None
-        if unit_plan_content.heading_tree:
-            heading_tree = convert_heading_tree_to_dict(unit_plan_content.heading_tree)
-
-        if "computational-thinking-links" in unit_plan_structure:
-            file_name = unit_plan_structure["computational-thinking-links"]
-            file_path = os.path.join(
-                self.BASE_PATH,
-                file_name
+            unit_plan_content = self.convert_md_file(
+                os.path.join(
+                    self.BASE_PATH,
+                    language,
+                    self.INNER_PATH,
+                    "{}.md".format(self.unit_plan_slug)
+                ),
+                self.structure_file_path
             )
-            ct_links_content = self.convert_md_file(
-                file_path,
-                self.structure_file_path,
-                heading_required=False,
-                remove_title=False,
-            )
-            ct_links = ct_links_content.html_string
-        else:
-            ct_links = None
+            content_translations[language] = unit_plan_content
+
+        # heading_tree = None
+        # if unit_plan_content.heading_tree:
+        #     heading_tree = convert_heading_tree_to_dict(unit_plan_content.heading_tree)
+
+            if "computational-thinking-links" in unit_plan_structure:
+                file_name = unit_plan_structure["computational-thinking-links"]
+                file_path = os.path.join(
+                    self.BASE_PATH,
+                    language,
+                    self.INNER_PATH,
+                    file_name
+                )
+                ct_links_content = self.convert_md_file(
+                    file_path,
+                    self.structure_file_path,
+                    heading_required=False,
+                    remove_title=False,
+                )
+                ct_links_translations[language] = ct_links_content.html_string
 
         unit_plan = self.topic.unit_plans.create(
             slug=self.unit_plan_slug,
-            name=unit_plan_content.title,
-            content=unit_plan_content.html_string,
-            heading_tree=heading_tree,
-            computational_thinking_links=ct_links,
+            # name=unit_plan_content.title,
+            # content=unit_plan_content.html_string,
+            # heading_tree=heading_tree,
+            # computational_thinking_links=ct_links,
         )
+        for language in content_translations:
+            setattr(unit_plan, "content_{}".format(language), content_translations[language].html_string)
+            setattr(unit_plan, "name_{}".format(language), content_translations[language].title)
+            if unit_plan_content.heading_tree:
+                heading_tree = convert_heading_tree_to_dict(content_translations[language].heading_tree)
+                setattr(unit_plan, "heading_tree_{}".format(language), heading_tree)
+        for language in ct_links_translations:
+            setattr(unit_plan, "computational_thinking_links_{}".format(language), ct_links_translations[language])
+
         unit_plan.save()
 
         self.log("Added unit plan: {}".format(unit_plan.name), 1)
@@ -91,14 +108,15 @@ class UnitPlanLoader(BaseLoader):
                 ["lessons", "age-groups"],
                 "Unit Plan"
             )
-        lessons_structure_file_path = os.path.join(self.BASE_PATH, lessons_yaml)
+        lessons_structure_file_path = os.path.join(self.BASE_PATH, self.STRUCTURE_DIR, self.INNER_PATH, lessons_yaml)
 
         # Call the loader to save the lessons into the db
         self.factory.create_lessons_loader(
             lessons_structure_file_path,
             self.topic,
             unit_plan,
-            self.BASE_PATH
+            self.BASE_PATH,
+            self.INNER_PATH
         ).load()
 
         # Create AgeGroup and assign to lessons

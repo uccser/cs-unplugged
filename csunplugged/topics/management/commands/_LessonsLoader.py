@@ -19,7 +19,7 @@ from topics.models import (
 class LessonsLoader(BaseLoader):
     """Custom loader for loading lessons."""
 
-    def __init__(self, lessons_structure_file_path, topic, unit_plan, BASE_PATH):
+    def __init__(self, lessons_structure_file_path, topic, unit_plan, BASE_PATH, INNER_PATH):
         """Create the loader for loading lessons.
 
         Args:
@@ -29,6 +29,7 @@ class LessonsLoader(BaseLoader):
             BASE_PATH: Base file path (str).
         """
         super().__init__(BASE_PATH)
+        self.INNER_PATH = INNER_PATH
         self.lessons_structure_file_path = lessons_structure_file_path
         self.topic = topic
         self.unit_plan = unit_plan
@@ -53,22 +54,31 @@ class LessonsLoader(BaseLoader):
                     "Lesson"
                 )
 
-            # Build the file path to the lesson"s md file
-            file_path = os.path.join(
-                self.BASE_PATH,
-                "lessons",
-                "{}.md".format(lesson_slug)
-            )
+            available_translations = lesson_structure.get('available_translations', ["en", "de"])
+            content_translations = {}
 
-            lesson_content = self.convert_md_file(
-                file_path,
-                self.lessons_structure_file_path,
-            )
+            for language in available_translations:
+                # Build the file path to the lesson"s md file
+                file_path = os.path.join(
+                    self.BASE_PATH,
+                    language,
+                    self.INNER_PATH,
+                    "lessons",
+                    "{}.md".format(lesson_slug)
+                )
+
+                lesson_content = self.convert_md_file(
+                    file_path,
+                    self.lessons_structure_file_path,
+                )
+                content_translations[language] = lesson_content
 
             if "computational-thinking-links" in lesson_structure:
                 file_name = lesson_structure["computational-thinking-links"]
                 file_path = os.path.join(
                     self.BASE_PATH,
+                    language,
+                    self.INNER_PATH,
                     "lessons",
                     file_name
                 )
@@ -133,14 +143,17 @@ class LessonsLoader(BaseLoader):
             lesson = self.topic.lessons.create(
                 unit_plan=self.unit_plan,
                 slug=lesson_slug,
-                name=lesson_content.title,
+                # name=lesson_content.title,
                 duration=lesson_duration,
-                content=lesson_content.html_string,
+                # content=lesson_content.html_string,
                 computational_thinking_links=ct_links,
                 heading_tree=heading_tree,
                 programming_challenges_description=programming_description,
                 classroom_resources=classroom_resources,
             )
+            for language in content_translations:
+                setattr(lesson, "content_{}".format(language), content_translations[language].html_string)
+                setattr(lesson, "name_{}".format(language), content_translations[language].title)
             lesson.save()
 
             # Add programming challenges

@@ -23,10 +23,11 @@ class Command(BaseCommand):
         factory = LoaderFactory()
         # Get structure and content files
         base_loader = BaseLoader()
-        BASE_PATH = "topics/content/en/"
+        BASE_PATH = "topics/content/"
 
         structure_file_path = os.path.join(
             BASE_PATH,
+            base_loader.STRUCTURE_DIR,
             "structure.yaml"
         )
 
@@ -37,7 +38,7 @@ class Command(BaseCommand):
             if curriculum_areas_structure_file_path is not None:
                 factory.create_curriculum_areas_loader(
                     curriculum_areas_structure_file_path,
-                    BASE_PATH
+                    BASE_PATH,
                 ).load()
 
         if "learning-outcomes" in structure_file:
@@ -45,7 +46,7 @@ class Command(BaseCommand):
             if learning_outcomes_structure_file_path is not None:
                 factory.create_learning_outcomes_loader(
                     learning_outcomes_structure_file_path,
-                    BASE_PATH
+                    BASE_PATH,
                 ).load()
 
         if "programming-challenges-structure" in structure_file:
@@ -53,7 +54,7 @@ class Command(BaseCommand):
             if programming_challenges_structure_file_path is not None:
                 factory.create_programming_challenges_structure_loader(
                     programming_challenges_structure_file_path,
-                    BASE_PATH
+                    BASE_PATH,
                 ).load()
 
         if "glossary-folder" in structure_file:
@@ -62,7 +63,7 @@ class Command(BaseCommand):
                 factory.create_glossary_terms_loader(
                     glossary_folder_path,
                     structure_file_path,
-                    BASE_PATH
+                    BASE_PATH,
                 ).load()
 
         if structure_file["age-groups"] is None:
@@ -76,7 +77,7 @@ class Command(BaseCommand):
             if age_groups_path is not None:
                 factory.create_age_groups_loader(
                     age_groups_path,
-                    BASE_PATH
+                    BASE_PATH,
                 ).load()
 
         if structure_file["topics"] is None:
@@ -90,5 +91,5 @@ class Command(BaseCommand):
             topic_structure_file = "{0}/{0}.yaml".format(topic)
             factory.create_topic_loader(
                 topic_structure_file,
-                BASE_PATH
+                BASE_PATH,
             ).load()
