@@ -3,6 +3,7 @@
 from django.db import models
 from django.contrib.postgres.fields import ArrayField, JSONField, IntegerRangeField
 from resources.models import Resource
+import vinaigrette
 
 
 class GlossaryTerm(models.Model):
@@ -20,7 +21,6 @@ class GlossaryTerm(models.Model):
             Term attribute of GlossaryTerm (str).
         """
         return self.term
-
 
 class CurriculumArea(models.Model):
     """Model for curriculum area in database."""
@@ -52,6 +52,7 @@ class CurriculumArea(models.Model):
 
         ordering = ["number", "name"]
 
+vinaigrette.register(CurriculumArea, ["name"])
 
 class LearningOutcome(models.Model):
     """Model for learning outcome in database."""
@@ -255,6 +256,7 @@ class AgeGroup(models.Model):
 
         ordering = ["ages"]
 
+vinaigrette.register(AgeGroup, ['description'])
 
 class Lesson(models.Model):
     """Model for lesson in database."""

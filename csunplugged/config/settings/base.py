@@ -36,7 +36,8 @@ DJANGO_APPS = [
 ]
 THIRD_PARTY_APPS = [
     "django_bootstrap_breadcrumbs",
-    "modeltranslation"
+    "modeltranslation",
+    "vinaigrette",
 ]
 
 # Apps specific for this project go here.
