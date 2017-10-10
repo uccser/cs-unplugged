@@ -1,0 +1,50 @@
+move-to-a-number:
+  duration: 30
+  computational-thinking-links: move-to-a-number-ct-links.md
+  learning-outcomes:
+    - unplugged-programming-identify-bug-correct
+    - unplugged-programming-explain-exact-instructions
+    - unplugged-programming-follow-instructions
+    - unplugged-programming-give-accurate-instructions-pace
+    - unplugged-programming-accurately-count
+    - numeracy-recognise-numbers-represented
+    - unplugged-programming-communicate-debugging
+    - unplugged-programming-actively-listen-feedback
+  generated-resources:
+    arrows:
+      description: Cut theses sheets out for students.
+    left-right-cards:
+      description: Cut these sheets out for students who are still learning their left and right.
+    job-badges:
+      description: Cut these out and use them as badges for the three students doing the three jobs respectively. You might want to put them in a name holder on a lanyard.
+    grid:
+      description: 8 x 8 grid for students to use if no large grid available.
+  classroom-resources:
+    - 8 x 8 (approx) squared grid (30cm squares approx if possible).
+    - Activity can also be done on a small board, such as a chess board or 100's board.
+    - A variety of ways of presenting numbers from 1 - 10 (numerals, dots, maths equipment).
+    - Small whiteboard and two whiteboard pens (different colours); or paper on a clipboard.
+
+modulo:
+  duration: 30
+  computational-thinking-links: modulo-ct-links.md
+  generated-resources:
+    modulo-clock:
+      description: Clock face with blank, 2, and 10 digit combinations.
+    train-stations:
+      description: Train stations with circular or twisted tracks.
+    piano-keys:
+      description: Piano keys with optional highlighted keys.
+  classroom-resources:
+    - Counters to mark positions.
+  programming-challenges:
+    - modulo-even-odd-numbers
+    - modulo-check-divisor
+    - modulo-add-hours-12-hour-clock
+    - modulo-add-hours-12-hour-clock-without-mod
+    - modulo-add-hours-24-hour-clock
+    - modulo-display-midi-note
+    - modulo-add-months
+    - modulo-add-video-timings
+    - modulo-check-leap-year
+  programming-challenges-description: modulo-programming.md
