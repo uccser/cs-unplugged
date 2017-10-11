@@ -105,6 +105,7 @@ LANGUAGE_CODE = "en-us"
 LANGUAGES = (
     ("en", "English"),
     ("de", "German"),
+    ("fr", "French"),
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#site-id
@@ -157,6 +158,7 @@ TEMPLATES = [
             ],
             "libraries": {
                 "render_html_field": "config.templatetags.render_html_field",
+                "translate_url": "config.templatetags.translate_url",
             },
         },
     },
