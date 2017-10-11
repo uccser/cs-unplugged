@@ -1,5 +1,7 @@
 {% load i18n %}
 
+{% get_current_language as LANGUAGE_CODE %}
+
 {% for age_group, lessons in grouped_lessons.items %}
   <table class="table table-responsive table-center-vertical">
     <thead class="thead-default">
@@ -28,6 +30,9 @@
           <td style="width:60%">
             <a href="{% url 'topics:lesson' topic.slug unit_plan.slug lesson.slug %}">
               <strong>{{ lesson.name }}</strong>
+              {% if not lesson.translation_available %}
+              <br><em>Not yet availabe in {{ LANGUAGE_CODE|language_name }}.</em>
+              {% endif %}
             </a>
           </td>
           {% if lesson.has_programming_challenges %}

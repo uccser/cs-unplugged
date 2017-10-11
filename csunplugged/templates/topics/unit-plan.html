@@ -2,7 +2,10 @@
 
 {% load i18n %}
 {% load render_html_field %}
+{% load translate_url %}
 {% load django_bootstrap_breadcrumbs %}
+
+{% get_current_language as LANGUAGE_CODE %}
 
 {% block title %}
   {{ unit_plan.name }}
@@ -20,6 +23,17 @@
 {% endblock page_heading %}
 
 {% block left_column_content %}
+  {% if not unit_plan.translation_available %}
+    <div class="alert alert-warning" role="alert">
+      We're sorry, we haven't quite finished translating this unit plan into {{ LANGUAGE_CODE|language_name }}!
+      Available translations:
+      <ul class="mb-0">
+        {% for language in unit_plan.languages %}
+        <li><a href={% translate_url language %}>{{ language|language_name }}</a>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
   {% render_html_field unit_plan.content %}
 
   {% with computational_thinking_links=unit_plan.computational_thinking_links %}

@@ -5,6 +5,8 @@
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
+{% get_current_language as LANGUAGE_CODE %}
+
 {% block title %}
   {{ topic.name }}
 {% endblock title %}
@@ -17,6 +19,7 @@
 
 {% block page_heading %}
   <h1 id="{{ topic.slug }}" class="heading-underline">{{ topic.name }}</h1>
+    Available in {{ topic.languages }}
 {% endblock page_heading %}
 
 {% block left_column_content %}
@@ -25,7 +28,10 @@
   {% for unit_plan in unit_plans %}
     <div class="link-box-container">
       <a class="link-box link-box-md-6" href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">
-        <h3 id="{{ unit_plan.slug }}" class="link-box-title"><span class="text-muted">{% trans "Unit plan:" %}"</span> {{ unit_plan.name }}</h3>
+        <h3 id="{{ unit_plan.slug }}" class="link-box-title"><span class="text-muted">{% trans "Unit plan:" %}</span> {{ unit_plan.name }}</h3>
+        {% if not unit_plan.translation_available %}
+            <h4><em>Not yet available in {{ LANGUAGE_CODE|language_name }}.</em></h4>
+        {% endif %}
       </a>
     </div>
 

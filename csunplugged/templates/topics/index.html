@@ -25,6 +25,9 @@
         <a class="link-box link-box-md-3 link-box-lg-4" href="{% url 'topics:topic' topic.slug %}">
           <img class="img-fluid" src="{% static topic.icon %}">
           <h3 class="link-box-title">{{ topic.name }}</h3>
+          {% if not topic.translation_available %}
+          <h4>Not Available In Your Language</h4>
+          {% endif %}
           {% if topic.unit_plans.count > 1 %}
             <h5 class="text-muted">
               {% for unit_plan in topic.unit_plans.all %}

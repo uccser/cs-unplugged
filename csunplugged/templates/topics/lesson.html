@@ -22,8 +22,9 @@
   <ul>
     <li><strong>Duration:</strong> {{ lesson.duration }} minutes</li>
     {% for lesson_age in lesson_ages %}
-      {% blocktrans with lower=lesson_age.lower upper=lesson_age.upper number=lesson_age.number}
+      {% blocktrans with lower=lesson_age.lower upper=lesson_age.upper number=lesson_age.number %}
       <li><strong>Ages {{ lower }} to {{ upper }}:</strong> Lesson {{ number }}</li>
+      {% endblocktrans %}
     {% endfor %}
   </ul>
 {% endblock page_heading %}

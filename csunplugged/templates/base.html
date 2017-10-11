@@ -1,6 +1,7 @@
 {% load i18n %}
 {% load static %}
 {% load render_html_field %}
+{% load translate_url %}
 {% load django_bootstrap_breadcrumbs %}
 
 <!DOCTYPE html>
@@ -25,6 +26,22 @@
     <meta name="theme-color" content="#ffffff">
   </head>
   <body>
+    <!-- {% get_current_language as lang %}{{ lang }}
+
+    <form action={% translate_url lang %} method="get">
+        <input name="next" type="hidden" value="{{ redirect_to }}" />
+        <select name="language">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+            {% for language in languages %}
+                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                    {{ language.name_local }} ({{ language.code }})
+                </option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Go" />
+    </form> -->
     <nav class="navbar fixed-top navbar-toggleable-sm navbar-light py-1">
       <div class="container px-0">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,6 +65,10 @@
     {% endblock breadcrumbs %}
 
     <div id="content-container" class="container">
+      {% get_available_languages as LANGUAGES %}
+      {% for language in languages %}
+          <a href={% translate_url language.code %}>{{ language.name }}</a>
+      {% endfor %}
       {% block body_container %}
         {% render_breadcrumbs "django_bootstrap_breadcrumbs/bootstrap4.html" %}
         <div class="row">
