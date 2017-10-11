@@ -145,6 +145,7 @@ class LessonsLoader(BaseLoader):
                 slug=lesson_slug,
                 # name=lesson_content.title,
                 duration=lesson_duration,
+                languages=available_translations,
                 # content=lesson_content.html_string,
                 computational_thinking_links=ct_links,
                 heading_tree=heading_tree,

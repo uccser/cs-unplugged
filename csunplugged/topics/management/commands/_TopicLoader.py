@@ -95,7 +95,8 @@ class TopicLoader(BaseLoader):
         topic = Topic(
             slug=self.topic_slug,
             name=topic_content.title,
-            icon=topic_icon
+            icon=topic_icon,
+            languages=available_translations,
         )
         for language in content_translations:
             setattr(topic, "content_{}".format(language), content_translations[language].html_string)

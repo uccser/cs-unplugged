@@ -108,6 +108,7 @@ class ProgrammingChallengesLoader(BaseLoader):
 
             programming_challenge = self.topic.programming_challenges.create(
                 slug=challenge_slug,
+                languages=available_translations,
                 # name=challenge_content.title,
                 challenge_set_number=challenge_set_number,
                 challenge_number=challenge_number,
@@ -192,6 +193,7 @@ class ProgrammingChallengesLoader(BaseLoader):
                     # expected_result=expected_result_content.html_string,
                     # hints=None if hint_content is None else hint_content.html_string,
                     # solution=solution_content.html_string,
+                    languages=available_translations,
                     language=language_object,
                     challenge=programming_challenge,
                     topic=self.topic

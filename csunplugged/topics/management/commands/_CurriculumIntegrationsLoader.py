@@ -71,6 +71,7 @@ class CurriculumIntegrationsLoader(BaseLoader):
             integration = self.topic.curriculum_integrations.create(
                 slug=integration_slug,
                 number=integration_number,
+                languages=available_translations,
                 # name=integration_content.title,
                 # content=integration_content.html_string,
             )

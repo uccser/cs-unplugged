@@ -81,6 +81,7 @@ class UnitPlanLoader(BaseLoader):
 
         unit_plan = self.topic.unit_plans.create(
             slug=self.unit_plan_slug,
+            languages=available_translations,
             # name=unit_plan_content.title,
             # content=unit_plan_content.html_string,
             # heading_tree=heading_tree,
