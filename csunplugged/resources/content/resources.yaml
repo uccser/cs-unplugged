@@ -100,3 +100,9 @@ barcode-checksum-poster:
   generation-view: barcode_checksum_poster.py
   thumbnail-static-path: img/resources/barcode-checksum-poster/thumbnail.gif
   copies: false
+pixel-painter:
+  name: Pixel Painter
+  webpage-template: resources/pixel-painter.html
+  generation-view: pixel_painter.py
+  thumbnail-static-path: img/resources/pixel-painter/thumbnail.png
+  copies: false
