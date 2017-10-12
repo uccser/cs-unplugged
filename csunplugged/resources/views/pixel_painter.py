@@ -2,7 +2,8 @@
 
 from PIL import Image, ImageDraw, ImageFont
 from utils.retrieve_query_parameter import retrieve_query_parameter
-
+from math import ceil
+import string
 
 def resource(request, resource):
     """Create a image for Pixel Painter resource.
@@ -17,6 +18,8 @@ def resource(request, resource):
     STATIC_PATH = "static/img/resources/pixel-painter/{}.png"
     FONT_PATH = "static/fonts/PatrickHand-Regular.ttf"
     FONT = ImageFont.truetype(FONT_PATH, 80)
+    FONT_SMALL = ImageFont.truetype(FONT_PATH, 50)
+    TEXT_COLOUR = "#888"
 
     parameter_options = valid_options()
     method = retrieve_query_parameter(request, "method", parameter_options["method"])
@@ -30,18 +33,31 @@ def resource(request, resource):
     BOX_SIZE = 200
     IMAGE_SIZE_X = BOX_SIZE * COLUMNS_PER_PAGE
     IMAGE_SIZE_Y = BOX_SIZE * ROWS_PER_PAGE
-    LINE_COLOUR = "#333"
+    LINE_COLOUR = "#666"
     LINE_WIDTH = 1
 
     pages = []
+    number_column_pages = ceil(image_width / COLUMNS_PER_PAGE)
+    number_row_pages = ceil(image_height / ROWS_PER_PAGE)
+    LETTERS = string.ascii_uppercase
 
     # For each page column
-    for page_start_column in range(0, image_width, COLUMNS_PER_PAGE):
+    for number_column_page in range(0, number_column_pages):
+        page_start_column = (number_column_page) * COLUMNS_PER_PAGE
         # For each page row
-        for page_start_row in range(0, image_height, ROWS_PER_PAGE):
+        for number_row_page in range(0, number_row_pages):
+            page_start_row = (number_row_page) * ROWS_PER_PAGE
             # Create page
             page = Image.new("RGB", (IMAGE_SIZE_X, IMAGE_SIZE_Y), "#fff")
             draw = ImageDraw.Draw(page)
+
+            # Add page grid reference
+            draw.text(
+                (LINE_WIDTH * 4, -4),
+                "{}{}".format(LETTERS[number_row_page], number_column_page + 1),
+                font=FONT_SMALL,
+                fill=TEXT_COLOUR
+            )
 
             page_columns = min(COLUMNS_PER_PAGE, image_width - page_start_column)
             page_rows = min(ROWS_PER_PAGE, image_height - page_start_row)
@@ -86,7 +102,7 @@ def resource(request, resource):
                         (text_coord_x, text_coord_y),
                         text,
                         font=FONT,
-                        fill="#666"
+                        fill=TEXT_COLOUR
                     )
 
             pages.append({"type": "image", "data": page})
