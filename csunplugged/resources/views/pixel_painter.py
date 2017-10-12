@@ -43,17 +43,40 @@ def resource(request, resource):
             page = Image.new("RGB", (IMAGE_SIZE_X, IMAGE_SIZE_Y), "#fff")
             draw = ImageDraw.Draw(page)
 
+            page_columns = min(COLUMNS_PER_PAGE, image_width - page_start_column)
+            page_rows = min(ROWS_PER_PAGE, image_height - page_start_row)
+
             # Draw grid
-            for x_coord in range(0, IMAGE_SIZE_X, BOX_SIZE):
-                draw.line([(x_coord, 0), (x_coord, IMAGE_SIZE_Y)], fill=LINE_COLOUR, width=LINE_WIDTH)
-            draw.line([(IMAGE_SIZE_X - 1, 0), (IMAGE_SIZE_X - 1, IMAGE_SIZE_Y)], fill=LINE_COLOUR, width=LINE_WIDTH)
-            for y_coord in range(0, IMAGE_SIZE_Y, BOX_SIZE):
-                draw.line([(0, y_coord), (IMAGE_SIZE_X, y_coord)], fill=LINE_COLOUR, width=LINE_WIDTH)
-            draw.line([(0, IMAGE_SIZE_Y - 1), (IMAGE_SIZE_X, IMAGE_SIZE_Y - 1)], fill=LINE_COLOUR, width=LINE_WIDTH)
+            grid_width = page_columns * BOX_SIZE
+            grid_height = page_rows * BOX_SIZE
+
+            for x_coord in range(0, page_columns * BOX_SIZE, BOX_SIZE):
+                draw.line(
+                    [(x_coord, 0), (x_coord, grid_height)],
+                    fill=LINE_COLOUR,
+                    width=LINE_WIDTH
+                )
+            draw.line(
+                [(page_columns * BOX_SIZE - 1, 0), (page_columns * BOX_SIZE - 1, grid_height)],
+                fill=LINE_COLOUR,
+                width=LINE_WIDTH
+            )
+
+            for y_coord in range(0, grid_height, BOX_SIZE):
+                draw.line(
+                    [(0, y_coord), (grid_width, y_coord)],
+                    fill=LINE_COLOUR,
+                    width=LINE_WIDTH
+                )
+            draw.line(
+                [(0, grid_height - 1), (grid_width, grid_height - 1)],
+                fill=LINE_COLOUR,
+                width=LINE_WIDTH
+            )
 
             # Draw text
-            for column in range(0, min(COLUMNS_PER_PAGE, image_width - page_start_column)):
-                for row in range(0, min(ROWS_PER_PAGE, image_height - page_start_row)):
+            for column in range(0, page_columns):
+                for row in range(0, page_rows):
                     pixel_value = image.getpixel((page_start_column + column, page_start_row + row))
                     text = str(1 - int(pixel_value / 255))
                     text_width, text_height = draw.textsize(text, font=FONT)
