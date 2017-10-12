@@ -20,8 +20,9 @@ def resource(request, resource):
 
     parameter_options = valid_options()
     method = retrieve_query_parameter(request, "method", parameter_options["method"])
+    image_name = retrieve_query_parameter(request, "image", parameter_options["image"])
 
-    image = Image.open(STATIC_PATH.format("boat-pixel"))
+    image = Image.open(STATIC_PATH.format(image_name + "-pixel"))
     (image_width, image_height) = image.size
 
     COLUMNS_PER_PAGE = 15
@@ -95,5 +96,6 @@ def valid_options():
     """
     return {
         "method": ["junior-binary"],
+        "image": ["boat", "fish"],
         "paper_size": ["a4", "letter"],
     }
