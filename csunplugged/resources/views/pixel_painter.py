@@ -87,8 +87,8 @@ def resource(request, resource):
             )
 
             # Draw text
-            for column in range(0, page_columns):
-                for row in range(0, page_rows):
+            for row in range(0, page_rows):
+                for column in range(0, page_columns):
                     pixel_value = image.getpixel((page_start_column + column, page_start_row + row))
                     text = str(1 - int(pixel_value / 255))
                     text_width, text_height = draw.textsize(text, font=FONT)
