@@ -208,16 +208,18 @@ def grid_reference_page(page_grid_coords, image_name):
 
 def create_run_length_encoding_html(page_grid_coords, pages_encoding):
     doc, tag, text, line = Doc().ttl()
+    line("style", ".avoid-page-break {page-break-inside:avoid;}")
     with tag("h1"):
         text("Run Length Encodings")
-    for row in page_grid_coords:
-        for page_reference in row:
-            with tag("h2"):
-                text("Encoding for page {}".format(page_reference))
-            page_encoding = pages_encoding[page_reference]
-            with tag("ul", klass="list-unstyled"):
-                for line_values in page_encoding:
-                    line("li", ", ".join(str(number) for number in line_values))
+    for index, row_of_page_references in enumerate(page_grid_coords):
+        for page_reference in row_of_page_references:
+            with tag("div", klass="avoid-page-break"):
+                with tag("h2"):
+                    text("Encoding for page {}".format(page_reference))
+                page_encoding = pages_encoding[page_reference]
+                with tag("ul", klass="list-unstyled"):
+                    for line_values in page_encoding:
+                        line("li", ", ".join(str(number) for number in line_values))
     return doc.getvalue()
 
 
