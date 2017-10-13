@@ -19,17 +19,10 @@
 
 <fieldset class="form-group">
   <legend>Image</legend>
-  <div class="form-check">
-    <label class="form-check-label">
-      <input type="radio" class="form-check-input" name="image" value="boat" checked="checked">
-      Boat
-    </label>
-  </div>
-  <div class="form-check">
-    <label class="form-check-label">
-      <input type="radio" class="form-check-input" name="image" value="fish">
-      Fish
-    </label>
-  </div>
+  <select class="form-control" id="image-select" name="image">
+    <option value="boat">Boat</option>
+    <option value="fish">Fish</option>
+    <option value="hot-air-balloon">Hot air balloon</option>
+  </select>
 </fieldset>
 {% endblock generation_form %}
