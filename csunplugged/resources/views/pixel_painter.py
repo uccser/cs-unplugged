@@ -38,6 +38,9 @@ def resource(request, resource):
     LINE_WIDTH = 1
 
     pages = []
+    if method == "run-length-encoding":
+        pages_encoding = dict()
+
     number_column_pages = ceil(image_width / COLUMNS_PER_PAGE)
     number_row_pages = ceil(image_height / ROWS_PER_PAGE)
     page_grid_coords = create_page_grid_coords(number_column_pages, number_row_pages)
@@ -56,7 +59,11 @@ def resource(request, resource):
             draw = ImageDraw.Draw(page)
             page_columns = min(COLUMNS_PER_PAGE, image_width - page_start_column)
             page_rows = min(ROWS_PER_PAGE, image_height - page_start_row)
+            page_reference = page_grid_coords[number_row_page][number_column_page]
             page_reference_added = False
+
+            if method == "run-length-encoding":
+                page_encoding = []
 
             # Draw grid
             grid_width = page_columns * BOX_SIZE
@@ -86,32 +93,58 @@ def resource(request, resource):
                 width=LINE_WIDTH
             )
 
-            # Draw text
             for row in range(0, page_rows):
+                if method == "run-length-encoding":
+                    row_encoding = []
+                    encoding_colour = "0"
+                    encoding_count = 0
+
                 for column in range(0, page_columns):
                     pixel_value = image.getpixel((page_start_column + column, page_start_row + row))
                     text = str(1 - int(pixel_value / 255))
-                    text_width, text_height = draw.textsize(text, font=FONT)
-                    text_coord_x = (column * BOX_SIZE) + (BOX_SIZE / 2) - (text_width / 2)
-                    text_coord_y = (row * BOX_SIZE) + (BOX_SIZE / 2) - (text_height / 2)
-                    draw.text(
-                        (text_coord_x, text_coord_y),
-                        text,
-                        font=FONT,
-                        fill=TEXT_COLOUR
-                    )
+
+                    # Draw text
+                    if method == "binary":
+                        text_width, text_height = draw.textsize(text, font=FONT)
+                        text_coord_x = (column * BOX_SIZE) + (BOX_SIZE / 2) - (text_width / 2)
+                        text_coord_y = (row * BOX_SIZE) + (BOX_SIZE / 2) - (text_height / 2)
+                        draw.text(
+                            (text_coord_x, text_coord_y),
+                            text,
+                            font=FONT,
+                            fill=TEXT_COLOUR
+                        )
+                    else:
+                        if text != encoding_colour:
+                            row_encoding.append(encoding_count)
+                            if text != encoding_colour:
+                                if encoding_colour == "0":
+                                    encoding_colour = "1"
+                                else:
+                                    encoding_colour = "0"
+                                encoding_count = 0
+                        encoding_count += 1
+                        if page_columns - 1 == column:
+                            row_encoding.append(encoding_count)
 
                     # Add page grid reference
                     if not page_reference_added and text == "0":
                         draw.text(
                             ((column * BOX_SIZE) + LINE_WIDTH * 4, (row * BOX_SIZE) + -4),
-                            page_grid_coords[number_row_page][number_column_page],
+                            page_reference,
                             font=FONT_SMALL,
                             fill=TEXT_COLOUR
                         )
                         page_reference_added = True
-
+                if method == "run-length-encoding":
+                    page_encoding.append(row_encoding)
+            if method == "run-length-encoding":
+                pages_encoding[page_reference] = page_encoding
             pages.append({"type": "image", "data": page})
+
+    if method == "run-length-encoding":
+        encoding_html = create_run_length_encoding_html(page_grid_coords, pages_encoding)
+        pages.insert(1, {"type": "html", "data": encoding_html})
     return pages
 
 
@@ -173,6 +206,20 @@ def grid_reference_page(page_grid_coords, image_name):
                         line("td", page_grid_coords[row_num][column_num])
     return doc.getvalue()
 
+def create_run_length_encoding_html(page_grid_coords, pages_encoding):
+    doc, tag, text, line = Doc().ttl()
+    with tag("h1"):
+        text("Run Length Encodings")
+    for row in page_grid_coords:
+        for page_reference in row:
+            with tag("h2"):
+                text("Encoding for page {}".format(page_reference))
+            page_encoding = pages_encoding[page_reference]
+            with tag("ul", klass="list-unstyled"):
+                for line_values in page_encoding:
+                    line("li", ", ".join(str(number) for number in line_values))
+    return doc.getvalue()
+
 
 def subtitle(request, resource):
     """Return the subtitle string of the resource.
@@ -199,7 +246,7 @@ def valid_options():
         All valid options (dict).
     """
     return {
-        "method": ["junior-binary"],
+        "method": ["binary", "run-length-encoding"],
         "image": ["boat", "fish", "hot-air-balloon"],
         "paper_size": ["a4", "letter"],
     }
