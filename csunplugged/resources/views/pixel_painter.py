@@ -54,17 +54,9 @@ def resource(request, resource):
             # Create page
             page = Image.new("RGB", (IMAGE_SIZE_X, IMAGE_SIZE_Y), "#fff")
             draw = ImageDraw.Draw(page)
-
-            # Add page grid reference
-            draw.text(
-                (LINE_WIDTH * 4, -4),
-                page_grid_coords[number_row_page][number_column_page],
-                font=FONT_SMALL,
-                fill=TEXT_COLOUR
-            )
-
             page_columns = min(COLUMNS_PER_PAGE, image_width - page_start_column)
             page_rows = min(ROWS_PER_PAGE, image_height - page_start_row)
+            page_reference_added = False
 
             # Draw grid
             grid_width = page_columns * BOX_SIZE
@@ -108,6 +100,16 @@ def resource(request, resource):
                         font=FONT,
                         fill=TEXT_COLOUR
                     )
+
+                    # Add page grid reference
+                    if not page_reference_added and text == "0":
+                        draw.text(
+                            ((column * BOX_SIZE) + LINE_WIDTH * 4, (row * BOX_SIZE) + -4),
+                            page_grid_coords[number_row_page][number_column_page],
+                            font=FONT_SMALL,
+                            fill=TEXT_COLOUR
+                        )
+                        page_reference_added = True
 
             pages.append({"type": "image", "data": page})
     return pages
