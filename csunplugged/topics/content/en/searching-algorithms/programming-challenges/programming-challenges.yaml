@@ -31,7 +31,7 @@ check-input-is-planet-invalid-check:
     - programming-explain-join-concatenate
     - programming-describe-variables
 
-search-for-item-in-list-if:
+search-for-item-in-list-conditional:
   challenge-set-number: 2
   challenge-number: 1
   difficulty-level: 2
@@ -41,4 +41,17 @@ search-for-item-in-list-if:
     - programming-identify-if-statement
     - programming-explain-join-concatenate
     - programming-describe-variables
-    - programming-demonstrate-data-indexing 
+    - programming-demonstrate-data-indexing
+
+search-for-item-in-list-loop:
+  challenge-set-number: 2
+  challenge-number: 2
+  difficulty-level: 2
+  programming-languages:
+    - scratch
+  learning-outcomes:
+    - programming-show-add-item-list
+    - programming-show-item-specified-position-list
+    - programming-describe-variables
+    - programming-identify-if-statement
+  extra-challenge: extra-challenge.md

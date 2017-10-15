@@ -345,6 +345,11 @@ programming-demonstrate-data-indexing:
   curriculum-areas:
     - programming
 
+programming-show-add-item-list:
+  text: Show how to add an item to a list.
+  curriculum-areas:
+    - programming
+
 # SEARCHING ALGORITHMS LEARNING OUTCOMES
 
 search-algorithms-identify-unsorted-lists:

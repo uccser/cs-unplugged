@@ -1,4 +1,4 @@
-# Search for an item within a list (using 8 "if" blocks)
+# Search for an item within a list (using 8 conditionals)
 
 ## Requirement:
 
