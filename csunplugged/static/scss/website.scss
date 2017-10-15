@@ -230,10 +230,13 @@ $rounded-corner-radius: 0.5rem;
 
 @mixin detail-colour-variant($color) {
   > summary {
-    background-color: hsl(hue($color), saturation($color), 90%) !important;
+    background-color: hsl(hue($color), saturation($color), 90%);
     color: $color !important;
     .inline-image {
       margin: 0.2rem 0.2rem 0.2rem auto;
+    }
+    &:hover {
+      background-color: hsl(hue($color), saturation($color), 85%);
     }
   }
 }

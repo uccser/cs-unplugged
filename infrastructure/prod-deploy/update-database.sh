@@ -6,11 +6,11 @@
 mv ./infrastructure/cloud-sql-proxy/docker-compose.yml ./docker-compose.yml
 
 # Decrypt secret files archive that contain credentials.
-./infrastructure/dev-deploy/decrypt-dev-secrets.sh
+./infrastructure/prod-deploy/decrypt-prod-secrets.sh
 
 # Load environment variables.
-source ./load-dev-deploy-envs.sh
-export GOOGLE_AUTH_JSON=`< ./continuous-deployment-dev.json`
+source ./load-prod-deploy-envs.sh
+export GOOGLE_AUTH_JSON=`< ./continuous-deployment-prod.json`
 
 # Download the Google Cloud SQL proxy for updating development database.
 #
@@ -28,7 +28,7 @@ chmod +x cloud_sql_proxy
 # The proxy command is appended with '&>/dev/null &' to run in the background
 # and to not send output to console.
 # See: https://cloud.google.com/python/django/flexible-environment#initialize_your_cloud_sql_instance
-./cloud_sql_proxy -instances="${GOOGLE_CLOUD_SQL_CONNECTION_NAME}"=tcp:5433 -credential_file="./continuous-deployment-dev.json" >/dev/null 2>/dev/null &
+./cloud_sql_proxy -instances="${GOOGLE_CLOUD_SQL_CONNECTION_NAME}"=tcp:5433 -credential_file="./continuous-deployment-prod.json" >/dev/null 2>/dev/null &
 
 # Start the system which runs the migrate and updatedata system commands.
 ./csu start

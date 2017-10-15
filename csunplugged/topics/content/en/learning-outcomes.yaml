@@ -422,7 +422,7 @@ unplugged-programming-give-instructions:
     - geometry
 
 unplugged-programming-identify-bug-correct:
-  text: Follow instructions accuratelyIdentify where a bug has occured and be able to correct the code to allow the object to move to the desired destination.
+  text: Identify where a bug has occured and be able to correct the code to allow the object to move to the desired destination.
   curriculum-areas:
     - programming
 
@@ -493,6 +493,12 @@ unplugged-programming-identify-bug-correct:
   text: Identify where a bug has occurred and be able to correct the code to allow the object to move to the desired destination.
   curriculum-areas:
     - programming
+
+unplugged-programming-give-instructions-move:
+  text: Give a set of instructions that programs an object to move from one point to another.
+  curriculum-areas:
+    - algorithmic-thinking
+    - geometry
 
 unplugged-programming-explain-tell-stories:
   text: Explain how you can tell stories by combining oral, written, and visual language.

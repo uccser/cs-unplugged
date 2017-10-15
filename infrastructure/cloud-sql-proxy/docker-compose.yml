@@ -1,0 +1,27 @@
+version: '3'
+services:
+  django:
+    build:
+      context: .
+      dockerfile: ./Dockerfile-local
+    command: /docker_venv/bin/gunicorn -c ./gunicorn.conf.py -b :8080 config.wsgi --reload
+    volumes:
+      - .:/cs-unplugged
+    environment:
+      - USE_DOCKER=yes
+      - DJANGO_SETTINGS_MODULE=config.settings.database_proxy
+      - GOOGLE_CLOUD_SQL_DATABASE_USERNAME=${GOOGLE_CLOUD_SQL_DATABASE_USERNAME}
+      - GOOGLE_CLOUD_SQL_DATABASE_PASSWORD=${GOOGLE_CLOUD_SQL_DATABASE_PASSWORD}
+      - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}
+    network_mode: host
+
+  nginx:
+    build:
+      context: .
+      dockerfile: ./infrastructure/nginx/Dockerfile
+    volumes:
+      - ./csunplugged/:/app/
+      - /app/node_modules
+    depends_on:
+      - django
+    network_mode: host

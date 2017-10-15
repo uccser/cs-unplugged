@@ -100,9 +100,17 @@ cmd_update() {
   dev_updatedata
 
   cmd_static_scratch
-  cmd_collect_static
+  dev_collect_static
 }
 defhelp update 'Run Django migrate and updatedata commands and build static files.'
+
+# Collecting static files
+dev_collect_static() {
+  echo
+  echo "Collecting static files..."
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py collectstatic --no-input --clear
+}
+defhelp -dev collect_static "Collecting static files."
 
 # Run Django flush command
 dev_flush() {
@@ -168,18 +176,18 @@ cmd_static_scratch() {
   docker-compose exec nginx gulp scratch
 }
 
-# Collecting static files
-cmd_collect_static() {
-  echo
-  echo "Collecting static files."
-  docker-compose exec django /docker_venv/bin/python3 ./manage.py collectstatic --no-input --clear
-}
-
 # Run shell
 dev_shell() {
   docker-compose exec django bash
 }
-defhelp -dev shell 'Open shell to Django folder.'
+defhelp -dev shell "Open shell to Django folder."
+
+# Reboot Django Docker container
+dev_reboot_django() {
+  echo "Rebooting Django Docker container..."
+  docker-compose up -d django
+}
+defhelp -dev reboot_django 'Reboot Django Docker container.'
 
 # Run style checks
 dev_style() {
