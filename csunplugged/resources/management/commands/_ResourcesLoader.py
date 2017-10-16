@@ -12,14 +12,14 @@ from resources.models import Resource
 class ResourcesLoader(BaseLoader):
     """Custom loader for loading resources."""
 
-    def __init__(self, structure_file, BASE_PATH):
+    def __init__(self, structure_file, base_path):
         """Create the loader for loading resources.
 
         Args:
             structure_file: file path for structure YAML file (str).
-            BASE_PATH: base file path (str).
+            base_path: base file path (str).
         """
-        super().__init__(BASE_PATH)
+        super().__init__(base_path)
         self.structure_file = structure_file
 
     @transaction.atomic
@@ -31,7 +31,7 @@ class ResourcesLoader(BaseLoader):
                 attribute.
         """
         resources_structure = self.load_yaml_file(
-            self.BASE_PATH.format(
+            self.base_path.format(
                 self.structure_file
             )
         )
