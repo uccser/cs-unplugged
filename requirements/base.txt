@@ -14,3 +14,7 @@ python-markdown-math==0.3
 
 # YAML Loading
 PyYAML==3.12
+
+# Translations
+django-modeltranslation==0.12.1
+django-vinaigrette==1.0.1
