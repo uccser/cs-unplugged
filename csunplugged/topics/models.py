@@ -15,7 +15,7 @@ class TranslatableModel(models.Model):
     def translation_available(self):
         return get_language() in self.languages
 
-class GlossaryTerm(models.Model):
+class GlossaryTerm(TranslatableModel):
     """Model for glossary term in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django

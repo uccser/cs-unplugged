@@ -1,5 +1,5 @@
 from modeltranslation.translator import translator, TranslationOptions
-from topics.models import Topic, UnitPlan, ProgrammingChallenge, ProgrammingChallengeImplementation, Lesson, CurriculumIntegration
+from topics.models import Topic, UnitPlan, ProgrammingChallenge, ProgrammingChallengeImplementation, Lesson, CurriculumIntegration, GlossaryTerm
 
 class TopicTranslationOptions(TranslationOptions):
     fields = ('name', 'content', 'other_resources')
@@ -19,6 +19,9 @@ class LessonTranslationOptions(TranslationOptions):
 class CurriculumIntegrationTranslationOptions(TranslationOptions):
     fields = ('name', 'content')
 
+class GlossaryTermTranslationOptions(TranslationOptions):
+    fields = ('term', 'definition')
+
 
 
 translator.register(Topic, TopicTranslationOptions)
@@ -27,3 +30,4 @@ translator.register(ProgrammingChallenge, ProgrammingChallengeTranslationOptions
 translator.register(ProgrammingChallengeImplementation, ProgrammingChallengeImplementationTranslationOptions)
 translator.register(Lesson, LessonTranslationOptions)
 translator.register(CurriculumIntegration, CurriculumIntegrationTranslationOptions)
+translator.register(GlossaryTerm, GlossaryTermTranslationOptions)
