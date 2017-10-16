@@ -23,10 +23,11 @@ class Command(BaseCommand):
         factory = LoaderFactory()
         # Get structure and content files
         base_loader = BaseLoader()
-        BASE_PATH = "topics/content/en/"
+        BASE_PATH = "topics/content/"
 
         structure_file_path = os.path.join(
             BASE_PATH,
+            base_loader.STRUCTURE_DIR,
             "structure.yaml"
         )
 
@@ -35,34 +36,39 @@ class Command(BaseCommand):
         if "curriculum-areas" in structure_file:
             curriculum_areas_structure_file_path = structure_file["curriculum-areas"]
             if curriculum_areas_structure_file_path is not None:
+                curriculum_areas_path, structure_filename = os.path.split(curriculum_areas_structure_file_path)
                 factory.create_curriculum_areas_loader(
-                    curriculum_areas_structure_file_path,
-                    BASE_PATH
+                    BASE_PATH=BASE_PATH,
+                    INNER_PATH=curriculum_areas_path,
+                    STRUCTURE_FILE=structure_filename
                 ).load()
 
         if "learning-outcomes" in structure_file:
             learning_outcomes_structure_file_path = structure_file["learning-outcomes"]
             if learning_outcomes_structure_file_path is not None:
+                learning_outcomes_path, structure_filename = os.path.split(learning_outcomes_structure_file_path)
                 factory.create_learning_outcomes_loader(
-                    learning_outcomes_structure_file_path,
-                    BASE_PATH
+                    BASE_PATH=BASE_PATH,
+                    INNER_PATH=learning_outcomes_path,
+                    STRUCTURE_FILE=structure_filename
                 ).load()
 
         if "programming-challenges-structure" in structure_file:
             programming_challenges_structure_file_path = structure_file["programming-challenges-structure"]
             if programming_challenges_structure_file_path is not None:
+                programming_challenges_path, structure_filename = os.path.split(programming_challenges_structure_file_path)
                 factory.create_programming_challenges_structure_loader(
-                    programming_challenges_structure_file_path,
-                    BASE_PATH
+                    BASE_PATH=BASE_PATH,
+                    INNER_PATH=programming_challenges_path,
+                    STRUCTURE_FILE=structure_filename
                 ).load()
 
         if "glossary-folder" in structure_file:
             glossary_folder_path = structure_file["glossary-folder"]
             if glossary_folder_path is not None:
                 factory.create_glossary_terms_loader(
-                    glossary_folder_path,
-                    structure_file_path,
-                    BASE_PATH
+                    BASE_PATH=BASE_PATH,
+                    INNER_PATH=glossary_folder_path,
                 ).load()
 
         if structure_file["age-groups"] is None:
@@ -72,11 +78,13 @@ class Command(BaseCommand):
                 "Application Structure"
             )
         else:
-            age_groups_path = structure_file["age-groups"]
-            if age_groups_path is not None:
+            age_groups_structure_file_path = structure_file["age-groups"]
+            if age_groups_structure_file_path is not None:
+                age_groups_path, structure_filename = os.path.split(age_groups_structure_file_path)
                 factory.create_age_groups_loader(
-                    age_groups_path,
-                    BASE_PATH
+                    INNER_PATH=age_groups_path,
+                    BASE_PATH=BASE_PATH,
+                    STRUCTURE_FILE=structure_filename
                 ).load()
 
         if structure_file["topics"] is None:
@@ -87,8 +95,10 @@ class Command(BaseCommand):
             )
 
         for topic in structure_file["topics"]:
-            topic_structure_file = "{0}/{0}.yaml".format(topic)
+            topic_path = topic
+            topic_structure_file = "{}.yaml".format(topic)
             factory.create_topic_loader(
-                topic_structure_file,
-                BASE_PATH
+                BASE_PATH=BASE_PATH,
+                INNER_PATH=topic_path,
+                STRUCTURE_FILE=topic_structure_file
             ).load()

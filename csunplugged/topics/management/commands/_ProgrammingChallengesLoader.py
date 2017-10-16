@@ -2,10 +2,12 @@
 
 import os.path
 from utils.BaseLoader import BaseLoader
+from utils.language_utils import get_available_languages, get_default_language
 
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
+
 
 from topics.models import (
     LearningOutcome,
@@ -18,17 +20,16 @@ from topics.models import (
 class ProgrammingChallengesLoader(BaseLoader):
     """Custom loader for loading programming challenges."""
 
-    def __init__(self, structure_file_path, topic, BASE_PATH):
+    def __init__(self, topic, **kwargs):
         """Create the loader for loading programming challenges.
 
         Args:
             structure_file_path: File path for structure YAML file (str).
             topic: Object of related topic model (Topic).
             BASE_PATH: Base file path (str).
+            INNER_PATH: Path to programming challenge directory from locale root (str).
         """
-        super().__init__(BASE_PATH)
-        self.structure_file_path = os.path.join(self.BASE_PATH, structure_file_path)
-        self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(structure_file_path)[0])
+        super().__init__(**kwargs)
         self.topic = topic
 
     def load(self):
@@ -65,28 +66,36 @@ class ProgrammingChallengesLoader(BaseLoader):
                     "Programming Challenge"
                 )
 
-            # Build the path to the programming challenge's folder
-            file_path = os.path.join(
-                self.BASE_PATH,
-                challenge_slug,
-                "{}.md"
-            )
-
-            challenge_content = self.convert_md_file(
-                file_path.format(challenge_slug),
-                self.structure_file_path
-            )
-
-            challenge_extra_challenge_file = challenge_structure.get("extra-challenge", None)
-            if challenge_extra_challenge_file:
-                challenge_extra_challenge_content = self.convert_md_file(
-                    file_path.format(challenge_extra_challenge_file[:-3]),
-                    self.structure_file_path,
-                    heading_required=False,
+            content_translations = {}
+            extra_challenge_translations = {}
+            for language in get_available_languages():
+                # Build the path to the programming challenge's folder
+                file_path = self.get_locale_path(language,
+                    os.path.join(challenge_slug, "{}.md")
                 )
-                challenge_extra_challenge = challenge_extra_challenge_content.html_string
-            else:
-                challenge_extra_challenge = None
+
+                try:
+                    challenge_content = self.convert_md_file(
+                        file_path.format(challenge_slug),
+                        self.structure_file_path
+                    )
+                    content_translations[language] = challenge_content
+                except CouldNotFindMarkdownFileError:
+                    if language == get_default_language():
+                        raise
+
+                challenge_extra_challenge_file = challenge_structure.get("extra-challenge", None)
+                if challenge_extra_challenge_file:
+                    try:
+                        challenge_extra_challenge_content = self.convert_md_file(
+                            file_path.format(challenge_extra_challenge_file[:-3]),
+                            self.structure_file_path,
+                            heading_required=False,
+                        )
+                        extra_challenge_translations[language] = challenge_extra_challenge_content.html_string
+                    except CouldNotFindMarkdownFileError:
+                        if language == get_default_language():
+                            raise
 
             try:
                 difficulty_level = ProgrammingChallengeDifficulty.objects.get(
@@ -101,13 +110,17 @@ class ProgrammingChallengesLoader(BaseLoader):
 
             programming_challenge = self.topic.programming_challenges.create(
                 slug=challenge_slug,
-                name=challenge_content.title,
+                languages=list(content_translations.keys()),
                 challenge_set_number=challenge_set_number,
                 challenge_number=challenge_number,
-                content=challenge_content.html_string,
-                extra_challenge=challenge_extra_challenge,
                 difficulty=difficulty_level
             )
+            for language in content_translations:
+                setattr(programming_challenge, "content_{}".format(language), content_translations[language].html_string)
+                setattr(programming_challenge, "name_{}".format(language), content_translations[language].title)
+            for language in extra_challenge_translations:
+                setattr(programming_challenge, "extra_challenge_{}".format(language), extra_challenge_translations[language])
+
             programming_challenge.save()
 
             LOG_TEMPLATE = "Added programming challenge: {}"
@@ -131,44 +144,68 @@ class ProgrammingChallengesLoader(BaseLoader):
                         language,
                         "Programming Challenge Language"
                     )
+                expected_result_translations = {}
+                solution_translations = {}
+                hint_translations = {}
 
-                expected_result_content = self.convert_md_file(
-                    file_path.format(
-                        "{}-expected".format(language)
-                    ),
-                    self.structure_file_path,
-                    heading_required=False
-                )
-
-                # Load example solution
-                solution_content = self.convert_md_file(
-                    file_path.format(
-                        "{}-solution".format(language)
-                    ),
-                    self.structure_file_path,
-                    heading_required=False
-                )
-
-                # Load hint if given
-                try:
-                    hint_content = self.convert_md_file(
-                        file_path.format(
-                            "{}-hints".format(language)
-                        ),
-                        self.structure_file_path,
-                        heading_required=False
+                for translation_language in get_available_languages():
+                    file_path = self.get_locale_path(
+                        language,
+                        os.path.join(challenge_slug, "{}.md")
                     )
-                except CouldNotFindMarkdownFileError:
-                    hint_content = None
+                    try:
+                        expected_result_content = self.convert_md_file(
+                            file_path.format(
+                                "{}-expected".format(language)
+                            ),
+                            self.structure_file_path,
+                            heading_required=False
+                        )
+                        expected_result_translations[translation_language] = expected_result_content.html_string
+                    except CouldNotFindMarkdownFileError:
+                        if language == get_default_language():
+                            raise
+
+
+                    # Load example solution
+                    try:
+                        solution_content = self.convert_md_file(
+                            file_path.format(
+                                "{}-solution".format(language)
+                            ),
+                            self.structure_file_path,
+                            heading_required=False
+                        )
+                        solution_translations[translation_language] = solution_content.html_string
+                    except CouldNotFindMarkdownFileError:
+                        if language == get_default_language():
+                            raise
+
+                    # Load hint if given
+                    try:
+                        hint_content = self.convert_md_file(
+                            file_path.format(
+                                "{}-hints".format(language)
+                            ),
+                            self.structure_file_path,
+                            heading_required=False
+                        )
+                        hint_translations[translation_language] = hint_content.html_string
+                    except CouldNotFindMarkdownFileError:
+                        pass
 
                 implementation = ProgrammingChallengeImplementation(
-                    expected_result=expected_result_content.html_string,
-                    hints=None if hint_content is None else hint_content.html_string,
-                    solution=solution_content.html_string,
+                    languages=list(solution_translations.keys()),
                     language=language_object,
                     challenge=programming_challenge,
                     topic=self.topic
                 )
+                for translation_language in solution_translations:
+                    setattr(implementation, "solution_{}".format(translation_language), solution_translations[translation_language])
+                for translation_language in hint_translations:
+                    setattr(implementation, "hint_{}".format(translation_language), hint_translations[translation_language])
+                for translation_language in expected_result_translations:
+                    setattr(implementation, "expected_result_{}".format(translation_language), expected_result_translations[translation_language])
                 implementation.save()
 
                 LOG_TEMPLATE = "Added language implementation: {}"

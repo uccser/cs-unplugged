@@ -6,6 +6,8 @@ from django.db import transaction
 from utils.BaseLoader import BaseLoader
 
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
+from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
+
 
 from topics.models import ProgrammingChallengeLanguage, ProgrammingChallengeDifficulty
 
@@ -13,16 +15,14 @@ from topics.models import ProgrammingChallengeLanguage, ProgrammingChallengeDiff
 class ProgrammingChallengesStructureLoader(BaseLoader):
     """Custom loader for loading structure of programming challenges."""
 
-    def __init__(self, structure_file_path, BASE_PATH):
+    def __init__(self, **kwargs):
         """Create the loader for loading structure of programming challenges.
 
         Args:
             structure_file_path: File path for structure YAML file (str).
             BASE_PATH: Base file path (str).
         """
-        super().__init__(BASE_PATH)
-        self.structure_file_path = structure_file_path
-        self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(structure_file_path)[0])
+        super().__init__(**kwargs)
 
     @transaction.atomic
     def load(self):
@@ -32,12 +32,7 @@ class ProgrammingChallengesStructureLoader(BaseLoader):
             MissingRequiredFieldError: when no object can be found with the matching
                 attribute.
         """
-        structure = self.load_yaml_file(
-            os.path.join(
-                self.BASE_PATH,
-                self.structure_file_path
-            )
-        )
+        structure = self.load_yaml_file(self.structure_file_path)
 
         languages = structure.get("languages", None)
         difficulty_levels = structure.get("difficulties", None)

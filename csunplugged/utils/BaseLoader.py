@@ -24,14 +24,35 @@ from utils.errors.CouldNotFindConfigFileError import CouldNotFindConfigFileError
 class BaseLoader():
     """Base loader class for individual loaders."""
 
-    def __init__(self, BASE_PATH=""):
+    def __init__(self, BASE_PATH="", STRUCTURE_DIR='en', INNER_PATH="", STRUCTURE_FILE=""):
         """Create a BaseLoader object.
 
         Args:
-            BASE_PATH: string of base path (str).
+            BASE_PATH: string of base content path, which stores has one directory
+                       per locale, plus a special structure directory (str).
+            STRUCTURE_DIR: directory after BASE_PATH in which
+                           language-independent structure files are stored (str).
+            INNER_PATH: Path from locale/structure direcory to required directory (str).
+            YAML_FILENAME: Path to YAML file
         """
         self.BASE_PATH = BASE_PATH
+        self.STRUCTURE_DIR = STRUCTURE_DIR
+        self.INNER_PATH = INNER_PATH
+        self.STRUCTURE_FILE = STRUCTURE_FILE
         self.setup_md_to_html_converter()
+
+    def get_locale_path(self, locale, filename):
+        return self.get_full_path(locale, filename)
+
+    def get_full_path(self, locale_or_structure_dir, filename):
+        if filename:
+            return os.path.join(self.BASE_PATH, locale_or_structure_dir, self.INNER_PATH, filename)
+        else:
+            return os.path.join(self.BASE_PATH, locale_or_structure_dir, self.INNER_PATH)
+
+    @property
+    def structure_file_path(self):
+        return self.get_full_path(self.STRUCTURE_DIR, self.STRUCTURE_FILE)
 
     def setup_md_to_html_converter(self):
         """Create Markdown converter.

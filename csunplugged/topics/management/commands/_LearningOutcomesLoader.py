@@ -6,6 +6,7 @@ from django.db import transaction
 from utils.BaseLoader import BaseLoader
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
+from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 from topics.models import (
     LearningOutcome,
     CurriculumArea,
@@ -15,16 +16,14 @@ from topics.models import (
 class LearningOutcomesLoader(BaseLoader):
     """Custom loader for loading learning outcomes."""
 
-    def __init__(self, structure_file_path, BASE_PATH):
+    def __init__(self, **kwargs):
         """Create the loader for loading learning outcomes.
 
         Args:
             structure_file_path: File path to YAML file (str).
             BASE_PATH: Base file path (str).
         """
-        super().__init__(BASE_PATH)
-        self.structure_file_path = structure_file_path
-        self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(structure_file_path)[0])
+        super().__init__(**kwargs)
 
     @transaction.atomic
     def load(self):
@@ -35,10 +34,7 @@ class LearningOutcomesLoader(BaseLoader):
                 attribute.
         """
         learning_outcomes = self.load_yaml_file(
-            os.path.join(
-                self.BASE_PATH,
-                self.structure_file_path
-            )
+            self.structure_file_path
         )
 
         for (outcome_slug, outcome_data) in learning_outcomes.items():

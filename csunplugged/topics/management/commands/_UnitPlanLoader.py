@@ -1,10 +1,16 @@
 """Custom loader for loading unit plans."""
 
 import os.path
+
+from django.conf import settings
+
 from utils.BaseLoader import BaseLoader
+from utils.language_utils import get_available_languages, get_default_language
 from utils.convert_heading_tree_to_dict import convert_heading_tree_to_dict
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
+from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
+
 
 from topics.models import (
     Lesson,
@@ -16,7 +22,7 @@ from topics.models import (
 class UnitPlanLoader(BaseLoader):
     """Custom loader for loading unit plans."""
 
-    def __init__(self, factory, structure_file_path, topic, BASE_PATH):
+    def __init__(self, factory, topic, **kwargs):
         """Create the loader for loading unit plans.
 
         Args:
@@ -24,12 +30,11 @@ class UnitPlanLoader(BaseLoader):
             structure_file_path: File path for structure YAML file (str).
             topic: Object of related topic model (Topic).
             BASE_PATH: Base file path (str).
+            INNER_PATH: Path to unit plan directory from locale root (str).
         """
-        super().__init__(BASE_PATH)
+        super().__init__(**kwargs)
         self.factory = factory
-        self.unit_plan_slug = os.path.split(structure_file_path)[0]
-        self.structure_file_path = os.path.join(self.BASE_PATH, structure_file_path)
-        self.BASE_PATH = os.path.join(self.BASE_PATH, self.unit_plan_slug)
+        self.unit_plan_slug = os.path.splitext(self.STRUCTURE_FILE)[0]
         self.topic = topic
 
     def load(self):
@@ -42,42 +47,55 @@ class UnitPlanLoader(BaseLoader):
         """
         unit_plan_structure = self.load_yaml_file(self.structure_file_path)
 
-        # Convert the content to HTML
-        unit_plan_content = self.convert_md_file(
-            os.path.join(
-                self.BASE_PATH,
-                "{}.md".format(self.unit_plan_slug)
-            ),
-            self.structure_file_path
-        )
+        available_translations = unit_plan_structure.get('available_translations', ["en", "de"])
+        content_translations = {}
+        ct_links_translations = {}
 
-        heading_tree = None
-        if unit_plan_content.heading_tree:
-            heading_tree = convert_heading_tree_to_dict(unit_plan_content.heading_tree)
+        for language in get_available_languages():
+            try:
+                # Convert the content to HTML
+                unit_plan_content = self.convert_md_file(
+                    self.get_locale_path(language, "{}.md".format(self.unit_plan_slug)),
+                    self.structure_file_path
+                )
+                content_translations[language] = unit_plan_content
+            except CouldNotFindMarkdownFileError:
+                if language == get_default_language():
+                    raise
+                    
+        # TODO: Implement translation for heading tree
+        # heading_tree = None
+        # if unit_plan_content.heading_tree:
+        #     heading_tree = convert_heading_tree_to_dict(unit_plan_content.heading_tree)
 
-        if "computational-thinking-links" in unit_plan_structure:
-            file_name = unit_plan_structure["computational-thinking-links"]
-            file_path = os.path.join(
-                self.BASE_PATH,
-                file_name
-            )
-            ct_links_content = self.convert_md_file(
-                file_path,
-                self.structure_file_path,
-                heading_required=False,
-                remove_title=False,
-            )
-            ct_links = ct_links_content.html_string
-        else:
-            ct_links = None
+            if "computational-thinking-links" in unit_plan_structure:
+                filename = unit_plan_structure["computational-thinking-links"]
+                file_path = self.get_locale_path(language, filename)
+                try:
+                    ct_links_content = self.convert_md_file(
+                        file_path,
+                        self.structure_file_path,
+                        heading_required=False,
+                        remove_title=False,
+                    )
+                    ct_links_translations[language] = ct_links_content.html_string
+                except CouldNotFindMarkdownFileError:
+                    if language == get_default_language():
+                        raise
 
         unit_plan = self.topic.unit_plans.create(
             slug=self.unit_plan_slug,
-            name=unit_plan_content.title,
-            content=unit_plan_content.html_string,
-            heading_tree=heading_tree,
-            computational_thinking_links=ct_links,
+            languages=available_translations,
         )
+        for language in content_translations:
+            setattr(unit_plan, "content_{}".format(language), content_translations[language].html_string)
+            setattr(unit_plan, "name_{}".format(language), content_translations[language].title)
+            if unit_plan_content.heading_tree:
+                heading_tree = convert_heading_tree_to_dict(content_translations[language].heading_tree)
+                setattr(unit_plan, "heading_tree_{}".format(language), heading_tree)
+        for language in ct_links_translations:
+            setattr(unit_plan, "computational_thinking_links_{}".format(language), ct_links_translations[language])
+
         unit_plan.save()
 
         self.log("Added unit plan: {}".format(unit_plan.name), 1)
@@ -91,14 +109,17 @@ class UnitPlanLoader(BaseLoader):
                 ["lessons", "age-groups"],
                 "Unit Plan"
             )
-        lessons_structure_file_path = os.path.join(self.BASE_PATH, lessons_yaml)
+
+        lesson_path, lesson_structure_file = os.path.split(lessons_yaml)
 
         # Call the loader to save the lessons into the db
         self.factory.create_lessons_loader(
-            lessons_structure_file_path,
             self.topic,
             unit_plan,
-            self.BASE_PATH
+            INNER_PATH=os.path.join(self.INNER_PATH, lesson_path),
+            STRUCTURE_FILE=lesson_structure_file,
+            BASE_PATH=self.BASE_PATH,
+
         ).load()
 
         # Create AgeGroup and assign to lessons
