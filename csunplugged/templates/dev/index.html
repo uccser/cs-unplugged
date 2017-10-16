@@ -19,7 +19,7 @@
           {% if topic.units %}
             {% for unit_plan in topic.units %}
               <li>
-                Unit Plan: <a href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">{{ unit_plan.name }}</a>
+                {% trans "Unit Plan:"%} <a href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">{{ unit_plan.name }}</a>
                 {% if unit_plan.lessons %}
                   {% with grouped_lessons=unit_plan.grouped_lessons %}
                     {% include "topics/lessons-table.html" %}

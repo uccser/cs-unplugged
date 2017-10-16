@@ -1,6 +1,8 @@
 {% extends "columns.html" %}
 
+{% load i18n %}
 {% load render_html_field %}
+{% load translate_url %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block title %}
@@ -15,7 +17,7 @@
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-  <h1 id="{{ unit_plan.slug }}" class="heading-underline"><span class="text-muted">Unit plan:</span> {{ unit_plan.name }}</h1>
+  <h1 id="{{ unit_plan.slug }}" class="heading-underline"><span class="text-muted">{% trans "Unit plan:" %}</span> {{ unit_plan.name }}</h1>
 {% endblock page_heading %}
 
 {% block left_column_content %}
@@ -26,14 +28,14 @@
   {% endwith %}
 
   {% if grouped_lessons %}
-    <h2 class="heading-underline" id="lessons">Lessons</h2>
+    <h2 class="heading-underline" id="lessons">{% trans "Lessons" %}</h2>
     {% include "topics/lessons-table.html" %}
   {% endif %}
 {% endblock left_column_content %}
 
 {% block right_column_content %}
   <div id="sticky-sidebar" class="sticky">
-    <h2 class="heading-underline">Table of contents</h2>
+    <h2 class="heading-underline">{% trans "Table of contents" %}</h2>
     <ul class="nav nav-pills flex-column" id="scrollspy-table-of-contents">
       <li class="nav-item">
         <a class="nav-link" href="#{{ unit_plan.slug }}">{{ unit_plan.name }}</a>
@@ -45,11 +47,11 @@
       {% endfor %}
       {% if unit_plan.computational_thinking_links %}
         <li class="nav-item">
-          <a class="nav-link" href="#ct-links">Computational Thinking</a>
+          <a class="nav-link" href="#ct-links">{% trans "Computational Thinking" %}</a>
         </li>
       {% endif %}
       <li class="nav-item">
-        <a class="nav-link" href="#lessons">Lessons</a>
+        <a class="nav-link" href="#lessons">{% trans "Lessons" %}</a>
       </li>
     </ul>
   </div>
