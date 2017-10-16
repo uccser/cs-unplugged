@@ -1,13 +1,10 @@
 """Custom loader for loading structure of programming challenges."""
 
-import os.path
 from django.db import transaction
 
 from utils.BaseLoader import BaseLoader
 
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
-from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
-
 
 from topics.models import ProgrammingChallengeLanguage, ProgrammingChallengeDifficulty
 
@@ -16,12 +13,7 @@ class ProgrammingChallengesStructureLoader(BaseLoader):
     """Custom loader for loading structure of programming challenges."""
 
     def __init__(self, **kwargs):
-        """Create the loader for loading structure of programming challenges.
-
-        Args:
-            structure_file_path: File path for structure YAML file (str).
-            BASE_PATH: Base file path (str).
-        """
+        """Create the loader for loading structure of programming challenges."""
         super().__init__(**kwargs)
 
     @transaction.atomic

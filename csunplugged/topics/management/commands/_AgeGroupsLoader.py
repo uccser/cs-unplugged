@@ -1,12 +1,9 @@
 """Custom loader for loading age group."""
 
-import os.path
-
 from django.db import transaction
 
 from utils.BaseLoader import BaseLoader
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
-from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 
 from topics.models import AgeGroup
 
@@ -15,14 +12,8 @@ class AgeGroupsLoader(BaseLoader):
     """Loader for age group content."""
 
     def __init__(self, **kwargs):
-        """Create the loader for loading age groups.
-
-        Args:
-            structure_file_path: File path to YAML file (str).
-        """
-        # inner_path, structure_file = os.path.split(structure_file_path)
+        """Create the loader for loading age groups."""
         super().__init__(**kwargs)
-        # self.structure_file_path = structure_file_path
 
     @transaction.atomic
     def load(self):

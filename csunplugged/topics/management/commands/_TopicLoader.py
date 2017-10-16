@@ -2,7 +2,6 @@
 
 import os.path
 from django.db import transaction
-from django.conf import settings
 
 from utils.BaseLoader import BaseLoader
 from utils.language_utils import get_available_languages, get_default_language
@@ -22,14 +21,10 @@ class TopicLoader(BaseLoader):
 
         Args:
             factory: LoaderFactory object for creating loaders (LoaderFactory).
-            structure_file_path: File path for structure YAML file (str).
-            BASE_PATH: Base file path (str).
         """
         super().__init__(**kwargs)
         self.factory = factory
-
-        self.topic_slug = self.INNER_PATH
-
+        self.topic_slug = self.content_path
 
     @transaction.atomic
     def load(self):
@@ -51,11 +46,12 @@ class TopicLoader(BaseLoader):
 
         content_translations = {}
         other_resources_translations = {}
+
         # Convert the content to HTML
         for language in get_available_languages():
             try:
                 topic_content = self.convert_md_file(
-                    self.get_locale_path(language, "{}.md".format(self.topic_slug)),
+                    self.get_localised_file(language, "{}.md".format(self.topic_slug)),
                     self.structure_file_path
                 )
                 content_translations[language] = topic_content
@@ -63,22 +59,19 @@ class TopicLoader(BaseLoader):
                 if language == get_default_language():
                     raise
 
-
             # If other resources are given, convert to HTML
             if "other-resources" in topic_structure:
                 topic_other_resources_file = topic_structure["other-resources"]
                 if topic_other_resources_file is not None:
                     try:
                         other_resources_content = self.convert_md_file(
-                            self.get_locale_path(language, topic_other_resources_file),
+                            self.get_localised_file(language, topic_other_resources_file),
                             self.structure_file_path
                         )
                         other_resources_translations[language] = other_resources_content.html_string
                     except CouldNotFindMarkdownFileError:
                         if language == get_default_language():
                             raise
-
-
 
         # Check if icon is given
         if "icon" in topic_structure:
@@ -110,33 +103,37 @@ class TopicLoader(BaseLoader):
         if "programming-challenges" in topic_structure:
             programming_challenges_structure_file_path = topic_structure["programming-challenges"]
             if programming_challenges_structure_file_path is not None:
-                programming_challenges_path, structure_filename = os.path.split(programming_challenges_structure_file_path)
+                programming_challenges_path, structure_filename = os.path.split(
+                    programming_challenges_structure_file_path
+                )
                 self.factory.create_programming_challenges_loader(
                     topic,
-                    BASE_PATH=self.BASE_PATH,
-                    INNER_PATH=os.path.join(self.INNER_PATH, programming_challenges_path),
-                    STRUCTURE_FILE=structure_filename
+                    base_path=self.base_path,
+                    content_path=os.path.join(self.content_path, programming_challenges_path),
+                    structure_filename=structure_filename
                 ).load()
 
         # Load unit plans
         for unit_plan_file_path in unit_plans:
-            inner_path, structure_filename = os.path.split(unit_plan_file_path)
+            content_path, structure_filename = os.path.split(unit_plan_file_path)
             self.factory.create_unit_plan_loader(
                 topic,
-                BASE_PATH=self.BASE_PATH,
-                INNER_PATH=os.path.join(self.INNER_PATH, inner_path),
-                STRUCTURE_FILE=structure_filename
+                base_path=self.base_path,
+                content_path=os.path.join(self.content_path, content_path),
+                structure_filename=structure_filename
             ).load()
 
         if "curriculum-integrations" in topic_structure:
             curriculum_integrations_structure_file_path = topic_structure["curriculum-integrations"]
             if curriculum_integrations_structure_file_path is not None:
-                curriculum_integrations_path, structure_filename = os.path.split(curriculum_integrations_structure_file_path)
+                curriculum_integrations_path, structure_filename = os.path.split(
+                    curriculum_integrations_structure_file_path
+                )
                 self.factory.create_curriculum_integrations_loader(
                     topic,
-                    BASE_PATH=self.BASE_PATH,
-                    INNER_PATH=os.path.join(self.INNER_PATH, curriculum_integrations_path),
-                    STRUCTURE_FILE=structure_filename
+                    base_path=self.base_path,
+                    content_path=os.path.join(self.content_path, curriculum_integrations_path),
+                    structure_filename=structure_filename
                 ).load()
 
         self.log("")

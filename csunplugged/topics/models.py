@@ -5,15 +5,22 @@ from django.utils.translation import get_language
 from django.contrib.postgres.fields import ArrayField, JSONField, IntegerRangeField
 from resources.models import Resource
 
+
 class TranslatableModel(models.Model):
+    """Abstract base class for models needing to store list of available languages."""
+
     languages = ArrayField(models.CharField(max_length=5), size=100, default=[])
 
     class Meta:
+        """Mark class as abstract."""
+
         abstract = True
 
     @property
     def translation_available(self):
+        """Check if model content is available in current language."""
         return get_language() in self.languages
+
 
 class GlossaryTerm(TranslatableModel):
     """Model for glossary term in database."""
@@ -30,6 +37,7 @@ class GlossaryTerm(TranslatableModel):
             Term attribute of GlossaryTerm (str).
         """
         return self.term
+
 
 class CurriculumArea(models.Model):
     """Model for curriculum area in database."""
@@ -60,6 +68,7 @@ class CurriculumArea(models.Model):
         """Set consistent ordering of curriculum areas."""
 
         ordering = ["number", "name"]
+
 
 class LearningOutcome(models.Model):
     """Model for learning outcome in database."""
@@ -95,7 +104,6 @@ class Topic(TranslatableModel):
     content = models.TextField()
     other_resources = models.TextField(null=True)
     icon = models.CharField(max_length=100, null=True)
-
 
     def __str__(self):
         """Text representation of Topic object.
@@ -263,6 +271,7 @@ class AgeGroup(models.Model):
         """Set consistent ordering of age groups."""
 
         ordering = ["ages"]
+
 
 class Lesson(TranslatableModel):
     """Model for lesson in database."""

@@ -1,12 +1,10 @@
 """Custom loader for loading learning outcomes."""
 
-import os.path
 from django.db import transaction
 
 from utils.BaseLoader import BaseLoader
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
-from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 from topics.models import (
     LearningOutcome,
     CurriculumArea,
@@ -17,12 +15,7 @@ class LearningOutcomesLoader(BaseLoader):
     """Custom loader for loading learning outcomes."""
 
     def __init__(self, **kwargs):
-        """Create the loader for loading learning outcomes.
-
-        Args:
-            structure_file_path: File path to YAML file (str).
-            BASE_PATH: Base file path (str).
-        """
+        """Create the loader for loading learning outcomes."""
         super().__init__(**kwargs)
 
     @transaction.atomic

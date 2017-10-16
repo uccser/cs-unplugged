@@ -1,6 +1,5 @@
 """Custom loader for loading glossary terms."""
 
-import os.path
 from os import listdir
 from django.db import transaction
 
@@ -10,18 +9,11 @@ from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileE
 from topics.models import GlossaryTerm
 
 
-
 class GlossaryTermsLoader(BaseLoader):
     """Custom loader for loading glossary terms."""
 
     def __init__(self, **kwargs):
-        """Create the loader for loading glossary terms.
-
-        Args:
-            glossary_folder_path: Folder path to definition files (str).
-            structure_file_path: Path to the config file, used for errors (str).
-            BASE_PATH: Base file path (str).
-        """
+        """Create the loader for loading glossary terms."""
         super().__init__(**kwargs)
         self.FILE_EXTENSION = ".md"
 
@@ -29,7 +21,7 @@ class GlossaryTermsLoader(BaseLoader):
     def load(self):
         """Load the glossary content into the database."""
         glossary_slugs = set()
-        for filename in listdir(self.get_locale_path("en", None)):
+        for filename in listdir(self.get_localised_dir(get_default_language())):
             if filename.endswith(self.FILE_EXTENSION):
                 glossary_slug = filename[:-len(self.FILE_EXTENSION)]
                 glossary_slugs.add(glossary_slug)
@@ -42,7 +34,7 @@ class GlossaryTermsLoader(BaseLoader):
             content_translations = {}
             for language in get_available_languages():
                 glossary_term = GlossaryTerm.objects.get(slug=glossary_slug)
-                glossary_file_path = self.get_locale_path(
+                glossary_file_path = self.get_localised_file(
                     language,
                     "{}{}".format(glossary_slug, self.FILE_EXTENSION)
                 )
@@ -55,6 +47,7 @@ class GlossaryTermsLoader(BaseLoader):
                 except CouldNotFindMarkdownFileError:
                     if language == get_default_language():
                         raise
+
             for language in content_translations:
                 setattr(glossary_term, "definition_{}".format(language), content_translations[language].html_string)
                 setattr(glossary_term, "term_{}".format(language), content_translations[language].title)

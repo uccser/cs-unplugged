@@ -1,27 +1,60 @@
+"""Translation options for localised models.
+
+Utilised by django-modeltranslation. See http://django-modeltranslation.readthedocs.io
+"""
+
 from modeltranslation.translator import translator, TranslationOptions
-from topics.models import Topic, UnitPlan, ProgrammingChallenge, ProgrammingChallengeImplementation, Lesson, CurriculumIntegration, GlossaryTerm
+from topics.models import (
+    Topic,
+    UnitPlan,
+    ProgrammingChallenge,
+    ProgrammingChallengeImplementation,
+    Lesson,
+    CurriculumIntegration,
+    GlossaryTerm
+)
+
 
 class TopicTranslationOptions(TranslationOptions):
+    """Translation options for Topic model."""
+
     fields = ('name', 'content', 'other_resources')
 
+
 class UnitPlanTranslationOptions(TranslationOptions):
+    """Translation options for UnitPlan model."""
+
     fields = ('name', 'content', 'computational_thinking_links')
 
+
 class ProgrammingChallengeTranslationOptions(TranslationOptions):
+    """Translation options for ProgrammingChallenge model."""
+
     fields = ('name', 'content', 'extra_challenge')
 
+
 class ProgrammingChallengeImplementationTranslationOptions(TranslationOptions):
+    """Translation options for ProgrammingChallengeImplementation model."""
+
     fields = ('expected_result', 'hints', 'solution')
 
+
 class LessonTranslationOptions(TranslationOptions):
+    """Translation options for Lesson model."""
+
     fields = ('name', 'content')
+
 
 class CurriculumIntegrationTranslationOptions(TranslationOptions):
+    """Translation options for CurriculumIntegration model."""
+
     fields = ('name', 'content')
 
-class GlossaryTermTranslationOptions(TranslationOptions):
-    fields = ('term', 'definition')
 
+class GlossaryTermTranslationOptions(TranslationOptions):
+    """Translation options for UnitPlan model."""
+
+    fields = ('term', 'definition')
 
 
 translator.register(Topic, TopicTranslationOptions)

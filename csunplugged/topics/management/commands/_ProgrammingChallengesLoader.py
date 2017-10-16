@@ -24,10 +24,7 @@ class ProgrammingChallengesLoader(BaseLoader):
         """Create the loader for loading programming challenges.
 
         Args:
-            structure_file_path: File path for structure YAML file (str).
             topic: Object of related topic model (Topic).
-            BASE_PATH: Base file path (str).
-            INNER_PATH: Path to programming challenge directory from locale root (str).
         """
         super().__init__(**kwargs)
         self.topic = topic
@@ -70,7 +67,8 @@ class ProgrammingChallengesLoader(BaseLoader):
             extra_challenge_translations = {}
             for language in get_available_languages():
                 # Build the path to the programming challenge's folder
-                file_path = self.get_locale_path(language,
+                file_path = self.get_localised_file(
+                    language,
                     os.path.join(challenge_slug, "{}.md")
                 )
 
@@ -116,10 +114,22 @@ class ProgrammingChallengesLoader(BaseLoader):
                 difficulty=difficulty_level
             )
             for language in content_translations:
-                setattr(programming_challenge, "content_{}".format(language), content_translations[language].html_string)
-                setattr(programming_challenge, "name_{}".format(language), content_translations[language].title)
+                setattr(
+                    programming_challenge,
+                    "content_{}".format(language),
+                    content_translations[language].html_string
+                )
+                setattr(
+                    programming_challenge,
+                    "name_{}".format(language),
+                    content_translations[language].title
+                )
             for language in extra_challenge_translations:
-                setattr(programming_challenge, "extra_challenge_{}".format(language), extra_challenge_translations[language])
+                setattr(
+                    programming_challenge,
+                    "extra_challenge_{}".format(language),
+                    extra_challenge_translations[language]
+                )
 
             programming_challenge.save()
 
@@ -149,7 +159,7 @@ class ProgrammingChallengesLoader(BaseLoader):
                 hint_translations = {}
 
                 for translation_language in get_available_languages():
-                    file_path = self.get_locale_path(
+                    file_path = self.get_localised_file(
                         language,
                         os.path.join(challenge_slug, "{}.md")
                     )
@@ -165,7 +175,6 @@ class ProgrammingChallengesLoader(BaseLoader):
                     except CouldNotFindMarkdownFileError:
                         if language == get_default_language():
                             raise
-
 
                     # Load example solution
                     try:
@@ -201,11 +210,23 @@ class ProgrammingChallengesLoader(BaseLoader):
                     topic=self.topic
                 )
                 for translation_language in solution_translations:
-                    setattr(implementation, "solution_{}".format(translation_language), solution_translations[translation_language])
+                    setattr(
+                        implementation,
+                        "solution_{}".format(translation_language),
+                        solution_translations[translation_language]
+                    )
                 for translation_language in hint_translations:
-                    setattr(implementation, "hint_{}".format(translation_language), hint_translations[translation_language])
+                    setattr(
+                        implementation,
+                        "hint_{}".format(translation_language),
+                        hint_translations[translation_language]
+                    )
                 for translation_language in expected_result_translations:
-                    setattr(implementation, "expected_result_{}".format(translation_language), expected_result_translations[translation_language])
+                    setattr(
+                        implementation,
+                        "expected_result_{}".format(translation_language),
+                        expected_result_translations[translation_language]
+                    )
                 implementation.save()
 
                 LOG_TEMPLATE = "Added language implementation: {}"

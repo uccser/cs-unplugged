@@ -1,6 +1,5 @@
 """Custom loader for loading lessons."""
 
-import os.path
 from utils.BaseLoader import BaseLoader
 from utils.language_utils import get_default_language, get_available_languages
 from utils.convert_heading_tree_to_dict import convert_heading_tree_to_dict
@@ -26,14 +25,9 @@ class LessonsLoader(BaseLoader):
         """Create the loader for loading lessons.
 
         Args:
-            lessons_structure_file_path: file path to lessons yaml file (str).
             topic: Object of Topic model (Topic).
             unit_plan: Object of UnitPlan model (UnitPlan).
-            BASE_PATH: Base file path (str).
-            INNER_PATH: Path to lesson directory from locale root (str).
         """
-        # lesson_path, structure_file = os.path.split(lessons_structure_file_path)
-        # inner_path = os.path.join(unit_path, lesson_path)
         super().__init__(**kwargs)
         self.topic = topic
         self.unit_plan = unit_plan
@@ -58,12 +52,11 @@ class LessonsLoader(BaseLoader):
                     "Lesson"
                 )
 
-            available_translations = lesson_structure.get('available_translations', ["en", "de"])
             content_translations = {}
             ct_links_translations = {}
             for language in get_available_languages():
                 # Build the file path to the lesson"s md file
-                file_path = self.get_locale_path(language, "{}.md".format(lesson_slug))
+                file_path = self.get_localised_file(language, "{}.md".format(lesson_slug))
 
                 try:
                     lesson_content = self.convert_md_file(
@@ -77,7 +70,7 @@ class LessonsLoader(BaseLoader):
 
             if "computational-thinking-links" in lesson_structure:
                 filename = lesson_structure["computational-thinking-links"]
-                file_path = self.get_locale_path(language, filename)
+                file_path = self.get_localised_file(language, filename)
 
                 try:
                     ct_links_content = self.convert_md_file(
@@ -96,12 +89,13 @@ class LessonsLoader(BaseLoader):
             else:
                 lesson_duration = None
 
+            # TODO: Handle l10n of heading tree
             heading_tree = None
             if lesson_content.heading_tree:
                 heading_tree = convert_heading_tree_to_dict(lesson_content.heading_tree)
 
             if "programming-challenges-description" in lesson_structure:
-                file_name = lesson_structure["programming-challenges-description"]
+                filename = lesson_structure["programming-challenges-description"]
                 file_path = self.locale_path(language, filename)
 
                 try:

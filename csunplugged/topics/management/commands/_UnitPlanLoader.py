@@ -2,8 +2,6 @@
 
 import os.path
 
-from django.conf import settings
-
 from utils.BaseLoader import BaseLoader
 from utils.language_utils import get_available_languages, get_default_language
 from utils.convert_heading_tree_to_dict import convert_heading_tree_to_dict
@@ -27,14 +25,11 @@ class UnitPlanLoader(BaseLoader):
 
         Args:
             factory: LoaderFactory object for creating loaders (LoaderFactory).
-            structure_file_path: File path for structure YAML file (str).
             topic: Object of related topic model (Topic).
-            BASE_PATH: Base file path (str).
-            INNER_PATH: Path to unit plan directory from locale root (str).
         """
         super().__init__(**kwargs)
         self.factory = factory
-        self.unit_plan_slug = os.path.splitext(self.STRUCTURE_FILE)[0]
+        self.unit_plan_slug = os.path.splitext(self.structure_filename)[0]
         self.topic = topic
 
     def load(self):
@@ -55,14 +50,14 @@ class UnitPlanLoader(BaseLoader):
             try:
                 # Convert the content to HTML
                 unit_plan_content = self.convert_md_file(
-                    self.get_locale_path(language, "{}.md".format(self.unit_plan_slug)),
+                    self.get_localised_file(language, "{}.md".format(self.unit_plan_slug)),
                     self.structure_file_path
                 )
                 content_translations[language] = unit_plan_content
             except CouldNotFindMarkdownFileError:
                 if language == get_default_language():
                     raise
-                    
+
         # TODO: Implement translation for heading tree
         # heading_tree = None
         # if unit_plan_content.heading_tree:
@@ -70,7 +65,7 @@ class UnitPlanLoader(BaseLoader):
 
             if "computational-thinking-links" in unit_plan_structure:
                 filename = unit_plan_structure["computational-thinking-links"]
-                file_path = self.get_locale_path(language, filename)
+                file_path = self.get_localised_file(language, filename)
                 try:
                     ct_links_content = self.convert_md_file(
                         file_path,
@@ -116,9 +111,9 @@ class UnitPlanLoader(BaseLoader):
         self.factory.create_lessons_loader(
             self.topic,
             unit_plan,
-            INNER_PATH=os.path.join(self.INNER_PATH, lesson_path),
-            STRUCTURE_FILE=lesson_structure_file,
-            BASE_PATH=self.BASE_PATH,
+            content_path=os.path.join(self.content_path, lesson_path),
+            structure_filename=lesson_structure_file,
+            base_path=self.base_path,
 
         ).load()
 

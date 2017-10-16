@@ -1,7 +1,5 @@
 """Custom loader for loading curriculum integrations."""
 
-import os.path
-
 from utils.BaseLoader import BaseLoader
 from utils.language_utils import get_default_language, get_available_languages
 
@@ -20,7 +18,6 @@ class CurriculumIntegrationsLoader(BaseLoader):
         """Create the loader for loading curriculum integrations.
 
         Args:
-            structure_file_path: File path for structure YAML file (str).
             topic: Object of related topic model (Topic).
         """
         super().__init__(**kwargs)
@@ -60,7 +57,7 @@ class CurriculumIntegrationsLoader(BaseLoader):
             for language in get_available_languages():
                 try:
                     integration_content = self.convert_md_file(
-                        self.get_locale_path(language, "{}.md".format(integration_slug)),
+                        self.get_localised_file(language, "{}.md".format(integration_slug)),
                         self.structure_file_path
                     )
                     content_translations[language] = integration_content

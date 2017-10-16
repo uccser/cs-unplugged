@@ -24,35 +24,59 @@ from utils.errors.CouldNotFindConfigFileError import CouldNotFindConfigFileError
 class BaseLoader():
     """Base loader class for individual loaders."""
 
-    def __init__(self, BASE_PATH="", STRUCTURE_DIR='en', INNER_PATH="", STRUCTURE_FILE=""):
+    def __init__(self, base_path="", structure_dir='en', content_path="", structure_filename=""):
         """Create a BaseLoader object.
 
         Args:
-            BASE_PATH: string of base content path, which stores has one directory
-                       per locale, plus a special structure directory (str).
-            STRUCTURE_DIR: directory after BASE_PATH in which
-                           language-independent structure files are stored (str).
-            INNER_PATH: Path from locale/structure direcory to required directory (str).
-            YAML_FILENAME: Path to YAML file
+            base_path: path to content_root, eg. "topics/content/" (str).
+            structure_dir: name of directory under base_path storing structure files (str).
+            content_path: path within locale/structure dir to content directory, eg. "binary-numbers/unit-plan" (str).
+            structure_filename: name of yaml file, eg. "unit-plan.yaml" (str).
         """
-        self.BASE_PATH = BASE_PATH
-        self.STRUCTURE_DIR = STRUCTURE_DIR
-        self.INNER_PATH = INNER_PATH
-        self.STRUCTURE_FILE = STRUCTURE_FILE
+        self.base_path = base_path
+        self.structure_dir = structure_dir
+        self.content_path = content_path
+        self.structure_filename = structure_filename
         self.setup_md_to_html_converter()
 
-    def get_locale_path(self, locale, filename):
-        return self.get_full_path(locale, filename)
+    def get_localised_file(self, language, filename):
+        """Get full path to localised version of given file.
 
-    def get_full_path(self, locale_or_structure_dir, filename):
-        if filename:
-            return os.path.join(self.BASE_PATH, locale_or_structure_dir, self.INNER_PATH, filename)
-        else:
-            return os.path.join(self.BASE_PATH, locale_or_structure_dir, self.INNER_PATH)
+        Args:
+            language: language code, matching a directory in self.base_path (str).
+            filename: path to file from the content directory of the loader (str).
+        """
+        return os.path.join(
+            self.get_localised_dir(language),
+            filename
+        )
+
+    def get_localised_dir(self, language):
+        """Return full path to the localised content directory of the loader.
+
+        Args:
+            language: language code, matching a directory in self.base_path (str).
+        """
+        return os.path.join(
+            self.base_path,
+            language,
+            self.content_path
+        )
 
     @property
     def structure_file_path(self):
-        return self.get_full_path(self.STRUCTURE_DIR, self.STRUCTURE_FILE)
+        """Return full path to structure yaml file of the loader.
+
+        This assumes that the structure file is located in the same directory
+        as self.content_path, but inside the special 'structure' directory
+        instead of a language directory.
+        """
+        return os.path.join(
+            self.base_path,
+            self.structure_dir,
+            self.content_path,
+            self.structure_filename
+        )
 
     def setup_md_to_html_converter(self):
         """Create Markdown converter.

@@ -56,6 +56,6 @@ class LoaderFactory:
         """Create unit plan loader."""
         return UnitPlanLoader(self, topic, **kwargs)
 
-    def create_resources_loader(self, structure_file, BASE_PATH):
+    def create_resources_loader(self, structure_file, base_path):
         """Create resources loader."""
-        return ResourcesLoader(structure_file, BASE_PATH)
+        return ResourcesLoader(structure_file, base_path)
