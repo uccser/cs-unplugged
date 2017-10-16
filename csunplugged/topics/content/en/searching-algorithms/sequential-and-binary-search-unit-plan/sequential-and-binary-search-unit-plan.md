@@ -1,4 +1,4 @@
-# Squential and binary search
+# Sequential and binary search
 
 {comment ## See teaching Searching algorithms in action!}
 
