@@ -4,7 +4,7 @@ from PIL import Image, ImageDraw
 from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
-def resource_image(request, resource):
+def resource(request, resource):
     """Create a image for Grid resource.
 
     Args:
@@ -12,7 +12,7 @@ def resource_image(request, resource):
         resource: Object of resource data (Resource).
 
     Returns:
-        A list of Pillow image objects (list).
+        A dictionary or list of dictionaries for each resource page.
     """
     GRID_COLUMNS = 8
     GRID_ROWS = 8
@@ -31,7 +31,7 @@ def resource_image(request, resource):
         draw.line([(0, y_coord), (IMAGE_SIZE_X, y_coord)], fill=LINE_COLOUR, width=LINE_WIDTH)
     draw.line([(0, IMAGE_SIZE_Y - 1), (IMAGE_SIZE_X, IMAGE_SIZE_Y - 1)], fill=LINE_COLOUR, width=LINE_WIDTH)
 
-    return [page]
+    return {"type": "image", "data": page}
 
 
 def subtitle(request, resource):

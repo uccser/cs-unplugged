@@ -4,7 +4,7 @@ from PIL import Image, ImageDraw
 from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
-def resource_image(request, resource):
+def resource(request, resource):
     """Create a image for Parity Cards resource.
 
     Args:
@@ -12,7 +12,7 @@ def resource_image(request, resource):
         resource: Object of resource data (Resource).
 
     Returns:
-        A list of Pillow image objects (list).
+        A dictionaries for each resource page.
     """
     CARDS_COLUMNS = 4
     CARDS_ROWS = 5
@@ -45,10 +45,17 @@ def resource_image(request, resource):
         back_colour_hex = "#6e3896"
     else:
         back_colour_hex = "#cc0423"
-
-    back_page = Image.new("RGB", (IMAGE_SIZE_X, IMAGE_SIZE_Y), back_colour_hex)
-
-    return [front_page, back_page]
+    pages = [
+        {
+            "type": "image",
+            "data": front_page
+        },
+        {
+            "type": "image",
+            "data": Image.new("RGB", (IMAGE_SIZE_X, IMAGE_SIZE_Y), back_colour_hex)
+        }
+    ]
+    return pages
 
 
 def subtitle(request, resource):

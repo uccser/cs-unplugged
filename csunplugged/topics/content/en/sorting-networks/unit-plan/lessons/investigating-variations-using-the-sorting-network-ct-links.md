@@ -4,7 +4,7 @@ Many of the connections are covered in the unit plan and lesson 1. Here are some
 
 When comparing words for alphabetical order, the algorithm involves comparing the two words letter by letter, and basing the decision of the first pair of letters that differ.
 
-#### What to look for: 
+#### What to look for:
 
 Were students able to systematically compare words?
 Can they articulate the algorithm, particularly when comparing words with a long prefix in common (such as "computer" and "computing")?
@@ -14,11 +14,12 @@ Can they articulate the algorithm, particularly when comparing words with a long
 {panel type="ct-abstraction" title="Abstraction"}
 
 Sorting Networks can work for any type of data that can be compared.
-This means the we do not need to know what the data is, we just need to know how to compare it and order it.
+This means that we do not need to know what the data is, we just need to know how to compare it and order it.
 
 #### What to look for
 
-Did students recognise that different types of data could be compared with the same Sorting Network and same process? Can they come up with new types of data to sort?
+Did students recognise that different types of data could be compared with the same Sorting Network and same process?
+Can they come up with new types of data to sort?
 
 {panel end}
 
