@@ -1,9 +1,19 @@
 """Models for the topics application."""
 
 from django.db import models
+from django.utils.translation import get_language
 from django.contrib.postgres.fields import ArrayField, JSONField, IntegerRangeField
 from resources.models import Resource
 
+class TranslatableModel(models.Model):
+    languages = ArrayField(models.CharField(max_length=5), size=100, default=[])
+
+    class Meta:
+        abstract = True
+
+    @property
+    def translation_available(self):
+        return get_language() in self.languages
 
 class GlossaryTerm(models.Model):
     """Model for glossary term in database."""
@@ -20,7 +30,6 @@ class GlossaryTerm(models.Model):
             Term attribute of GlossaryTerm (str).
         """
         return self.term
-
 
 class CurriculumArea(models.Model):
     """Model for curriculum area in database."""
@@ -52,7 +61,6 @@ class CurriculumArea(models.Model):
 
         ordering = ["number", "name"]
 
-
 class LearningOutcome(models.Model):
     """Model for learning outcome in database."""
 
@@ -78,7 +86,7 @@ class LearningOutcome(models.Model):
         ordering = ["curriculum_areas__number", "curriculum_areas__name", "text"]
 
 
-class Topic(models.Model):
+class Topic(TranslatableModel):
     """Model for topic in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
@@ -87,6 +95,7 @@ class Topic(models.Model):
     content = models.TextField()
     other_resources = models.TextField(null=True)
     icon = models.CharField(max_length=100, null=True)
+
 
     def __str__(self):
         """Text representation of Topic object.
@@ -97,7 +106,7 @@ class Topic(models.Model):
         return self.name
 
 
-class UnitPlan(models.Model):
+class UnitPlan(TranslatableModel):
     """Model for unit plan in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
@@ -137,7 +146,7 @@ class ProgrammingChallengeDifficulty(models.Model):
         return self.name
 
 
-class ProgrammingChallenge(models.Model):
+class ProgrammingChallenge(TranslatableModel):
     """Model for programming challenge in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
@@ -197,7 +206,7 @@ class ProgrammingChallengeLanguage(models.Model):
         return self.name
 
 
-class ProgrammingChallengeImplementation(models.Model):
+class ProgrammingChallengeImplementation(TranslatableModel):
     """Model for programming challenge language implementation in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
@@ -255,8 +264,7 @@ class AgeGroup(models.Model):
 
         ordering = ["ages"]
 
-
-class Lesson(models.Model):
+class Lesson(TranslatableModel):
     """Model for lesson in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
@@ -363,7 +371,7 @@ class ProgrammingChallengeNumber(models.Model):
     challenge_number = models.PositiveSmallIntegerField()
 
 
-class CurriculumIntegration(models.Model):
+class CurriculumIntegration(TranslatableModel):
     """Model for curriculum integration in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
