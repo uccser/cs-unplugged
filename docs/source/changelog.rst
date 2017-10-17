@@ -27,7 +27,7 @@ All notable changes to this project will be documented in this file.
 2.0.0-alpha.4
 ==============================================================================
 
-- **Release date:**
+- **Release date:** 17th October 2017
 - **Downloads:** `Source downloads are available on GitHub`_
 
 **Notable changes:**
