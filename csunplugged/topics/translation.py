@@ -24,7 +24,7 @@ class TopicTranslationOptions(TranslationOptions):
 class UnitPlanTranslationOptions(TranslationOptions):
     """Translation options for UnitPlan model."""
 
-    fields = ('name', 'content', 'computational_thinking_links')
+    fields = ('name', 'content', 'computational_thinking_links', 'heading_tree')
 
 
 class ProgrammingChallengeTranslationOptions(TranslationOptions):
@@ -42,7 +42,7 @@ class ProgrammingChallengeImplementationTranslationOptions(TranslationOptions):
 class LessonTranslationOptions(TranslationOptions):
     """Translation options for Lesson model."""
 
-    fields = ('name', 'content')
+    fields = ('name', 'content', 'heading_tree')
 
 
 class CurriculumIntegrationTranslationOptions(TranslationOptions):

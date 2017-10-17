@@ -45,6 +45,7 @@ class UnitPlanLoader(BaseLoader):
         available_translations = unit_plan_structure.get('available_translations', ["en", "de"])
         content_translations = {}
         ct_links_translations = {}
+        heading_tree_translations = {}
 
         for language in get_available_languages():
             try:
@@ -58,10 +59,9 @@ class UnitPlanLoader(BaseLoader):
                 if language == get_default_language():
                     raise
 
-        # TODO: Implement translation for heading tree
-        # heading_tree = None
-        # if unit_plan_content.heading_tree:
-        #     heading_tree = convert_heading_tree_to_dict(unit_plan_content.heading_tree)
+            if unit_plan_content.heading_tree:
+                heading_tree = convert_heading_tree_to_dict(unit_plan_content.heading_tree)
+                heading_tree_translations[language] = heading_tree
 
             if "computational-thinking-links" in unit_plan_structure:
                 filename = unit_plan_structure["computational-thinking-links"]
@@ -90,6 +90,8 @@ class UnitPlanLoader(BaseLoader):
                 setattr(unit_plan, "heading_tree_{}".format(language), heading_tree)
         for language in ct_links_translations:
             setattr(unit_plan, "computational_thinking_links_{}".format(language), ct_links_translations[language])
+        for language in heading_tree_translations:
+            setattr(unit_plan, "heading_tree_{}".format(language), heading_tree_translations[language])
 
         unit_plan.save()
 

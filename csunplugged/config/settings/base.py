@@ -214,3 +214,5 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
+
+MODELTRANSLATION_CUSTOM_FIELDS = ('JSONField',)

@@ -54,6 +54,9 @@ class LessonsLoader(BaseLoader):
 
             content_translations = {}
             ct_links_translations = {}
+            heading_tree_translations = {}
+            programming_description_translations = {}
+
             for language in get_available_languages():
                 # Build the file path to the lesson"s md file
                 file_path = self.get_localised_file(language, "{}.md".format(lesson_slug))
@@ -68,49 +71,41 @@ class LessonsLoader(BaseLoader):
                     if language == get_default_language():
                         raise
 
-            if "computational-thinking-links" in lesson_structure:
-                filename = lesson_structure["computational-thinking-links"]
-                file_path = self.get_localised_file(language, filename)
+                if "computational-thinking-links" in lesson_structure:
+                    filename = lesson_structure["computational-thinking-links"]
+                    file_path = self.get_localised_file(language, filename)
 
-                try:
-                    ct_links_content = self.convert_md_file(
-                        file_path,
-                        self.structure_file_path,
-                        heading_required=False,
-                        remove_title=False,
-                    )
-                    ct_links_translations[language] = ct_links_content.html_string
-                except CouldNotFindMarkdownFileError:
-                    if language == get_default_language():
-                        raise
+                    try:
+                        ct_links_content = self.convert_md_file(
+                            file_path,
+                            self.structure_file_path,
+                            heading_required=False,
+                            remove_title=False,
+                        )
+                        ct_links_translations[language] = ct_links_content.html_string
+                    except CouldNotFindMarkdownFileError:
+                        if language == get_default_language():
+                            raise
 
-            if "duration" in lesson_structure:
-                lesson_duration = lesson_structure["duration"]
-            else:
-                lesson_duration = None
+                if lesson_content.heading_tree:
+                    heading_tree = convert_heading_tree_to_dict(lesson_content.heading_tree)
+                    heading_tree_translations[language] = heading_tree
 
-            # TODO: Handle l10n of heading tree
-            heading_tree = None
-            if lesson_content.heading_tree:
-                heading_tree = convert_heading_tree_to_dict(lesson_content.heading_tree)
+                if "programming-challenges-description" in lesson_structure:
+                    filename = lesson_structure["programming-challenges-description"]
+                    file_path = self.get_localised_file(language, filename)
 
-            if "programming-challenges-description" in lesson_structure:
-                filename = lesson_structure["programming-challenges-description"]
-                file_path = self.locale_path(language, filename)
-
-                try:
-                    programming_description_content = self.convert_md_file(
-                        file_path,
-                        self.structure_file_path,
-                        heading_required=False,
-                        remove_title=False,
-                    )
-                    programming_description = programming_description_content.html_string
-                except CouldNotFindMarkdownFileError:
-                    if language == get_default_language():
-                        raise
-            else:
-                programming_description = None
+                    try:
+                        programming_description_content = self.convert_md_file(
+                            file_path,
+                            self.structure_file_path,
+                            heading_required=False,
+                            remove_title=False,
+                        )
+                        programming_description_translations[language] = programming_description_content.html_string
+                    except CouldNotFindMarkdownFileError:
+                        if language == get_default_language():
+                            raise
 
             classroom_resources = lesson_structure.get("classroom-resources", None)
             if isinstance(classroom_resources, list):
@@ -134,20 +129,48 @@ class LessonsLoader(BaseLoader):
                     "List of strings."
                 )
 
+            if "duration" in lesson_structure:
+                lesson_duration = lesson_structure["duration"]
+            else:
+                lesson_duration = None
+
             lesson = self.topic.lessons.create(
                 unit_plan=self.unit_plan,
                 slug=lesson_slug,
                 duration=lesson_duration,
                 languages=list(content_translations.keys()),
-                heading_tree=heading_tree,
-                programming_challenges_description=programming_description,
                 classroom_resources=classroom_resources,
             )
+
             for language in content_translations:
-                setattr(lesson, "content_{}".format(language), content_translations[language].html_string)
-                setattr(lesson, "name_{}".format(language), content_translations[language].title)
+                setattr(
+                    lesson,
+                    "content_{}".format(language),
+                    content_translations[language].html_string
+                )
+                setattr(
+                    lesson,
+                    "name_{}".format(language),
+                    content_translations[language].title
+                )
             for language in ct_links_translations:
-                setattr(lesson, "computational_thinking_links_{}".format(language), ct_links_translations[language])
+                setattr(
+                    lesson,
+                    "computational_thinking_links_{}".format(language),
+                    ct_links_translations[language]
+                )
+            for language in programming_description_translations:
+                setattr(
+                    lesson,
+                    "programming_challenges_description_{}".format(language),
+                    programming_description_translations[language]
+                )
+            for language in heading_tree_translations:
+                setattr(
+                    lesson,
+                    "heading_tree_{}".format(language),
+                    heading_tree_translations[language]
+                )
             lesson.save()
 
             # Add programming challenges
