@@ -16,46 +16,46 @@ from resources.management.commands._ResourcesLoader import ResourcesLoader
 class LoaderFactory:
     """Factory for creating loader objects."""
 
-    def create_age_groups_loader(self, structure_file_path, BASE_PATH):
+    def create_age_groups_loader(self, **kwargs):
         """Create age group loader."""
-        return AgeGroupsLoader(structure_file_path, BASE_PATH)
+        return AgeGroupsLoader(**kwargs)
 
-    def create_curriculum_areas_loader(self, structure_file_path, BASE_PATH):
+    def create_curriculum_areas_loader(self, **kwargs):
         """Create curriculum area loader."""
-        return CurriculumAreasLoader(structure_file_path, BASE_PATH)
+        return CurriculumAreasLoader(**kwargs)
 
-    def create_curriculum_integrations_loader(self, structure_file_path, topic, BASE_PATH):
+    def create_curriculum_integrations_loader(self, topic, **kwargs):
         """Create curriculum integrations loader."""
-        return CurriculumIntegrationsLoader(structure_file_path, topic, BASE_PATH)
+        return CurriculumIntegrationsLoader(topic, **kwargs)
 
-    def create_glossary_terms_loader(self, glossary_folder_path, structure_file_path, BASE_PATH):
+    def create_glossary_terms_loader(self, **kwargs):
         """Create glossary terms loader."""
-        return GlossaryTermsLoader(glossary_folder_path, structure_file_path, BASE_PATH)
+        return GlossaryTermsLoader(**kwargs)
 
-    def create_learning_outcomes_loader(self, structure_file_path, BASE_PATH):
+    def create_learning_outcomes_loader(self, **kwargs):
         """Create learning outcomes loader."""
-        return LearningOutcomesLoader(structure_file_path, BASE_PATH)
+        return LearningOutcomesLoader(**kwargs)
 
-    def create_lessons_loader(self, structure_file_path, topic, unit_plan, BASE_PATH):
+    def create_lessons_loader(self, topic, unit_plan, **kwargs):
         """Create lessons loader."""
-        return LessonsLoader(structure_file_path, topic, unit_plan, BASE_PATH)
+        return LessonsLoader(topic, unit_plan, **kwargs)
 
-    def create_programming_challenges_loader(self, structure_file, topic, BASE_PATH):
+    def create_programming_challenges_loader(self, topic, **kwargs):
         """Create programming challenges loader."""
-        return ProgrammingChallengesLoader(structure_file, topic, BASE_PATH)
+        return ProgrammingChallengesLoader(topic, **kwargs)
 
-    def create_programming_challenges_structure_loader(self, structure_file_path, BASE_PATH):
+    def create_programming_challenges_structure_loader(self, **kwargs):
         """Create programming challenges structure loader."""
-        return ProgrammingChallengesStructureLoader(structure_file_path, BASE_PATH)
+        return ProgrammingChallengesStructureLoader(**kwargs)
 
-    def create_topic_loader(self, structure_file_path, BASE_PATH):
+    def create_topic_loader(self, **kwargs):
         """Create topic loader."""
-        return TopicLoader(self, structure_file_path, BASE_PATH)
+        return TopicLoader(self, **kwargs)
 
-    def create_unit_plan_loader(self, structure_file_path, topic, BASE_PATH):
+    def create_unit_plan_loader(self, topic, **kwargs):
         """Create unit plan loader."""
-        return UnitPlanLoader(self, structure_file_path, topic, BASE_PATH)
+        return UnitPlanLoader(self, topic, **kwargs)
 
-    def create_resources_loader(self, structure_file, BASE_PATH):
+    def create_resources_loader(self, structure_file, base_path):
         """Create resources loader."""
-        return ResourcesLoader(structure_file, BASE_PATH)
+        return ResourcesLoader(structure_file, base_path)

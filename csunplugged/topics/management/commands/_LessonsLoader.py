@@ -1,11 +1,13 @@
 """Custom loader for loading lessons."""
 
-import os.path
 from utils.BaseLoader import BaseLoader
+from utils.language_utils import get_default_language, get_available_languages
 from utils.convert_heading_tree_to_dict import convert_heading_tree_to_dict
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.InvalidConfigValueError import InvalidConfigValueError
+from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
+
 
 from topics.models import (
     ProgrammingChallenge,
@@ -19,17 +21,14 @@ from topics.models import (
 class LessonsLoader(BaseLoader):
     """Custom loader for loading lessons."""
 
-    def __init__(self, lessons_structure_file_path, topic, unit_plan, BASE_PATH):
+    def __init__(self, topic, unit_plan, **kwargs):
         """Create the loader for loading lessons.
 
         Args:
-            lessons_structure_file_path: file path to lessons yaml file (str).
             topic: Object of Topic model (Topic).
             unit_plan: Object of UnitPlan model (UnitPlan).
-            BASE_PATH: Base file path (str).
         """
-        super().__init__(BASE_PATH)
-        self.lessons_structure_file_path = lessons_structure_file_path
+        super().__init__(**kwargs)
         self.topic = topic
         self.unit_plan = unit_plan
 
@@ -42,105 +41,136 @@ class LessonsLoader(BaseLoader):
             MissingRequiredFieldError: when a value for a required model field cannot be
                 found in the config file.
         """
-        lessons_structure = self.load_yaml_file(self.lessons_structure_file_path)
+        lessons_structure = self.load_yaml_file(self.structure_file_path)
 
         for (lesson_slug, lesson_structure) in lessons_structure.items():
 
             if lesson_structure is None:
                 raise MissingRequiredFieldError(
-                    self.lessons_structure_file_path,
+                    self.structure_file_path,
                     ["number"],
                     "Lesson"
                 )
 
-            # Build the file path to the lesson"s md file
-            file_path = os.path.join(
-                self.BASE_PATH,
-                "lessons",
-                "{}.md".format(lesson_slug)
-            )
+            content_translations = {}
+            ct_links_translations = {}
+            heading_tree_translations = {}
+            programming_description_translations = {}
 
-            lesson_content = self.convert_md_file(
-                file_path,
-                self.lessons_structure_file_path,
-            )
+            for language in get_available_languages():
+                # Build the file path to the lesson"s md file
+                file_path = self.get_localised_file(language, "{}.md".format(lesson_slug))
 
-            if "computational-thinking-links" in lesson_structure:
-                file_name = lesson_structure["computational-thinking-links"]
-                file_path = os.path.join(
-                    self.BASE_PATH,
-                    "lessons",
-                    file_name
-                )
-                ct_links_content = self.convert_md_file(
-                    file_path,
-                    self.lessons_structure_file_path,
-                    heading_required=False,
-                    remove_title=False,
-                )
-                ct_links = ct_links_content.html_string
-            else:
-                ct_links = None
+                try:
+                    lesson_content = self.convert_md_file(
+                        file_path,
+                        self.structure_file_path,
+                    )
+                    content_translations[language] = lesson_content
+                except CouldNotFindMarkdownFileError:
+                    if language == get_default_language():
+                        raise
 
-            if "duration" in lesson_structure:
-                lesson_duration = lesson_structure["duration"]
-            else:
-                lesson_duration = None
+                if "computational-thinking-links" in lesson_structure:
+                    filename = lesson_structure["computational-thinking-links"]
+                    file_path = self.get_localised_file(language, filename)
 
-            heading_tree = None
-            if lesson_content.heading_tree:
-                heading_tree = convert_heading_tree_to_dict(lesson_content.heading_tree)
+                    try:
+                        ct_links_content = self.convert_md_file(
+                            file_path,
+                            self.structure_file_path,
+                            heading_required=False,
+                            remove_title=False,
+                        )
+                        ct_links_translations[language] = ct_links_content.html_string
+                    except CouldNotFindMarkdownFileError:
+                        if language == get_default_language():
+                            raise
 
-            if "programming-challenges-description" in lesson_structure:
-                file_name = lesson_structure["programming-challenges-description"]
-                file_path = os.path.join(
-                    self.BASE_PATH,
-                    "lessons",
-                    file_name
-                )
-                programming_description_content = self.convert_md_file(
-                    file_path,
-                    self.lessons_structure_file_path,
-                    heading_required=False,
-                    remove_title=False,
-                )
-                programming_description = programming_description_content.html_string
-            else:
-                programming_description = None
+                if lesson_content.heading_tree:
+                    heading_tree = convert_heading_tree_to_dict(lesson_content.heading_tree)
+                    heading_tree_translations[language] = heading_tree
+
+                if "programming-challenges-description" in lesson_structure:
+                    filename = lesson_structure["programming-challenges-description"]
+                    file_path = self.get_localised_file(language, filename)
+
+                    try:
+                        programming_description_content = self.convert_md_file(
+                            file_path,
+                            self.structure_file_path,
+                            heading_required=False,
+                            remove_title=False,
+                        )
+                        programming_description_translations[language] = programming_description_content.html_string
+                    except CouldNotFindMarkdownFileError:
+                        if language == get_default_language():
+                            raise
 
             classroom_resources = lesson_structure.get("classroom-resources", None)
             if isinstance(classroom_resources, list):
                 for classroom_resource in classroom_resources:
                     if not isinstance(classroom_resource, str):
                         raise InvalidConfigValueError(
-                            self.lessons_structure_file_path,
+                            self.structure_file_path,
                             "classroom-resources list item",
                             "A string describing the classroom resource."
                         )
                     elif len(classroom_resource) > 100:
                         raise InvalidConfigValueError(
-                            self.lessons_structure_file_path,
+                            self.structure_file_path,
                             "classroom-resources list item",
                             "Item description must be less than 100 characters."
                         )
             elif classroom_resources is not None:
                 raise InvalidConfigValueError(
-                    self.lessons_structure_file_path,
+                    self.structure_file_path,
                     "classroom-resources",
                     "List of strings."
                 )
 
+            if "duration" in lesson_structure:
+                lesson_duration = lesson_structure["duration"]
+            else:
+                lesson_duration = None
+
             lesson = self.topic.lessons.create(
                 unit_plan=self.unit_plan,
                 slug=lesson_slug,
-                name=lesson_content.title,
                 duration=lesson_duration,
-                content=lesson_content.html_string,
-                computational_thinking_links=ct_links,
-                heading_tree=heading_tree,
-                programming_challenges_description=programming_description,
+                languages=list(content_translations.keys()),
                 classroom_resources=classroom_resources,
             )
+
+            for language in content_translations:
+                setattr(
+                    lesson,
+                    "content_{}".format(language),
+                    content_translations[language].html_string
+                )
+                setattr(
+                    lesson,
+                    "name_{}".format(language),
+                    content_translations[language].title
+                )
+            for language in ct_links_translations:
+                setattr(
+                    lesson,
+                    "computational_thinking_links_{}".format(language),
+                    ct_links_translations[language]
+                )
+            for language in programming_description_translations:
+                setattr(
+                    lesson,
+                    "programming_challenges_description_{}".format(language),
+                    programming_description_translations[language]
+                )
+            for language in heading_tree_translations:
+                setattr(
+                    lesson,
+                    "heading_tree_{}".format(language),
+                    heading_tree_translations[language]
+                )
             lesson.save()
 
             # Add programming challenges
@@ -157,7 +187,7 @@ class LessonsLoader(BaseLoader):
 
                         except:
                             raise KeyNotFoundError(
-                                self.lessons_structure_file_path,
+                                self.structure_file_path,
                                 programming_challenge_slug,
                                 "Programming Challenges"
                             )
@@ -212,7 +242,7 @@ class LessonsLoader(BaseLoader):
                             lesson.learning_outcomes.add(learning_outcome)
                         except:
                             raise KeyNotFoundError(
-                                self.lessons_structure_file_path,
+                                self.structure_file_path,
                                 learning_outcome_slug,
                                 "Learning Outcomes"
                             )
@@ -224,7 +254,7 @@ class LessonsLoader(BaseLoader):
                     for (resource_slug, resource_data) in resources.items():
                         if resource_data is None:
                             raise MissingRequiredFieldError(
-                                self.lessons_structure_file_path,
+                                self.structure_file_path,
                                 ["description"],
                                 "Generated Resource"
                             )
@@ -234,14 +264,14 @@ class LessonsLoader(BaseLoader):
                             )
                         except:
                             raise KeyNotFoundError(
-                                self.lessons_structure_file_path,
+                                self.structure_file_path,
                                 resource_slug,
                                 "Resources"
                             )
                         resource_description = resource_data.get("description", None)
                         if resource_description is None:
                             raise MissingRequiredFieldError(
-                                self.lessons_structure_file_path,
+                                self.structure_file_path,
                                 ["description"],
                                 "Generated Resource"
                             )
