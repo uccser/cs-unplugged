@@ -5,7 +5,6 @@ from django.db import transaction
 from utils.BaseLoader import BaseLoader
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 
-
 from topics.models import CurriculumArea
 
 

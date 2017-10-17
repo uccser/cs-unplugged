@@ -24,7 +24,7 @@ from utils.errors.CouldNotFindConfigFileError import CouldNotFindConfigFileError
 class BaseLoader():
     """Base loader class for individual loaders."""
 
-    def __init__(self, base_path="", structure_dir='en', content_path="", structure_filename=""):
+    def __init__(self, base_path="", structure_dir="en", content_path="", structure_filename=""):
         """Create a BaseLoader object.
 
         Args:
@@ -45,6 +45,9 @@ class BaseLoader():
         Args:
             language: language code, matching a directory in self.base_path (str).
             filename: path to file from the content directory of the loader (str).
+
+        Returns:
+            full path to localised version of given file (str).
         """
         return os.path.join(
             self.get_localised_dir(language),
@@ -56,6 +59,9 @@ class BaseLoader():
 
         Args:
             language: language code, matching a directory in self.base_path (str).
+
+        Returns:
+            full path to the localised content directory (str).
         """
         return os.path.join(
             self.base_path,

@@ -52,7 +52,7 @@ class CurriculumIntegrationTranslationOptions(TranslationOptions):
 
 
 class GlossaryTermTranslationOptions(TranslationOptions):
-    """Translation options for UnitPlan model."""
+    """Translation options for GlossaryTerm model."""
 
     fields = ('term', 'definition')
 
