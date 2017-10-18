@@ -24,7 +24,7 @@ from utils.errors.CouldNotFindConfigFileError import CouldNotFindConfigFileError
 class BaseLoader():
     """Base loader class for individual loaders."""
 
-    def __init__(self, base_path="", structure_dir="en", content_path="", structure_filename=""):
+    def __init__(self, base_path="", structure_dir="structure", content_path="", structure_filename=""):
         """Create a BaseLoader object.
 
         Args:
