@@ -1,5 +1,6 @@
 {% extends "columns.html" %}
 
+{% load i18n %}
 {% load static %}
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
@@ -24,13 +25,17 @@
   {% for unit_plan in unit_plans %}
     <div class="link-box-container">
       <a class="link-box link-box-md-6" href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">
-        <h3 id="{{ unit_plan.slug }}" class="link-box-title"><span class="text-muted">Unit plan:</span> {{ unit_plan.name }}</h3>
+        <h3 id="{{ unit_plan.slug }}" class="link-box-title">
+          {% blocktrans %}
+            <span class="text-muted">Unit plan:</span> {{ unit_plan.name }}
+          {% endblocktrans %}
+        </h3>
       </a>
     </div>
 
     {% if unit_plan.grouped_lessons %}
       <p class="text-center">
-        or jump straight to a lesson of the unit:
+        {% trans "or jump straight to a lesson of the unit:" %}
       </p>
     {% endif %}
     {% if unit_plan.grouped_lessons %}
@@ -45,15 +50,16 @@
   {% endfor %}
 
   {% if curriculum_integrations %}
-  <h2 id="integrations" class="heading-underline">Curriculum Integrations</h2>
+  <h2 id="integrations" class="heading-underline">{% trans "Curriculum Integrations" %}</h2>
     {% include "topics/curriculum-integrations-table.html" %}
   {% endif %}
 
   {% if resources %}
-  <h2 id="resources" class="heading-underline">Resources</h2>
+  <h2 id="resources" class="heading-underline">{% trans "Resources" %}</h2>
     <p>
-      The following resources are used in {{ topic.name }} lessons, and can
-      be accessed here (and also on each lesson page).
+      {% blocktrans with name=topic.name %}
+        The following resources are used in {{ name }} lessons, and can be accessed here (and also on each lesson page).
+      {% endblocktrans %}
     </p>
     <div class="link-box-container">
       {% for resource in resources %}
@@ -66,10 +72,10 @@
   {% endif %}
 
   {% if topic.other_resources %}
-    <h2 id="other-resources" class="heading-underline">Looking for more?</h2>
+    <h2 id="other-resources" class="heading-underline">{% trans "Looking for more?" %}</h2>
     <p>
       <a href="{% url 'topics:other_resources' topic.slug %}">
-        Click here for other resources
+        {% trans "Click here for other resources" %}
       </a>
     </p>
   {% endif %}
@@ -77,7 +83,7 @@
 
 {% block right_column_content %}
   <div id="sticky-sidebar" class="sticky">
-    <h2 class="heading-underline">Table of contents</h2>
+    <h2 class="heading-underline">{% trans "Table of contents" %}</h2>
     <ul class="nav nav-pills flex-column" id="scrollspy-table-of-contents">
       <li class="nav-item">
         <a class="nav-link" href="#{{ topic.slug }}">{{ topic.name }}</a>
@@ -89,17 +95,17 @@
       {% endfor %}
       {% if curriculum_integrations %}
         <li class="nav-item">
-          <a class="nav-link" href="#integrations">Curriculum integrations</a>
+          <a class="nav-link" href="#integrations">{% trans "Curriculum integrations" %}</a>
         </li>
       {% endif %}
       {% if resources %}
         <li class="nav-item">
-          <a class="nav-link" href="#resources">Resources</a>
+          <a class="nav-link" href="#resources">{% trans "Resources" %}</a>
         </li>
       {% endif %}
       {% if topic.other_resources %}
         <li class="nav-item">
-          <a class="nav-link" href="#other-resources">Other resources</a>
+          <a class="nav-link" href="#other-resources">{% trans "Other resources" %}</a>
         </li>
       {% endif %}
     </ul>

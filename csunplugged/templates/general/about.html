@@ -3,8 +3,10 @@
 {% load i18n %}
 {% load django_bootstrap_breadcrumbs %}
 
+{% trans "About" as l10n_about %}
+
 {% block title %}
-  About
+  {{ l10n_about }}
 {% endblock title %}
 
 {% block breadcrumbs %}
@@ -13,34 +15,49 @@
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-  <h1>{% trans "About" %}</h1>
+  <h1>{{ l10n_about }}</h1>
 {% endblock page_heading %}
 
 {% block left_column_content %}
   <p>
+    {% blocktrans %}
     CS Unplugged is a collection of free learning activities that teach Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around.
     We originally developed this so that young students could dive head-first into Computer Science, experiencing the kinds of questions and challenges that computer scientists experience, but without having to learn programming first.
+    {% endblocktrans %}
   </p>
 
   <p>
+    {% blocktrans %}
     The collection was originally intended as a resource for outreach and extension, but with the adoption of computing and computational thinking into many classrooms around the world, it is now widely used for teaching.
     The material has been used in many contexts outside the classroom as well, including science shows, talks for senior citizens, and special events.
+    {% endblocktrans %}
   </p>
 
   <p>
+    {% blocktrans %}
     Thanks to generous sponsorships we have been able to create associated resources such as the videos, which are intended to help teachers see how the activities work (please don’t show them to your classes – let them experience the activities themselves!).
     All of the activities that we provide are “open source” – they are released under a Creative Commons BY-NC-SA licence, so you can copy, share and modify the material.
+    {% endblocktrans %}
   </p>
 
   <p>
-    To view the team of contributors who work on this project, see our <a href="{% url 'general:people' %}">people page</a>.
+    {% url 'general:people' as people_url %}
+    {% blocktrans %}
+    To view the team of contributors who work on this project, see our <a href="{{ people_url }}">people page</a>.
+    {% endblocktrans %}
   </p>
 
   <p>
-    For details on how to contact us, see our <a href="{% url 'general:contact' %}">contact us page</a>.
+    {% url 'general:contact' as contact_url %}
+    {% blocktrans %}
+    For details on how to contact us, see our <a href="{{ contact_url }}">contact us page</a>.
+    {% endblocktrans %}
   </p>
 
   <p>
-    For more information about the principles behind CS Unplugged, see our <a href="{% url 'general:principles' %}">principles page</a>.
+    {% url 'general:principles' as principles_url %}
+    {% blocktrans %}
+    For more information about the principles behind CS Unplugged, see our <a href="{{ principles_url }}">principles page</a>.
+    {% endblocktrans %}
   </p>
 {% endblock left_column_content %}
