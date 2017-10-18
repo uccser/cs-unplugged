@@ -1,7 +1,11 @@
 {% load i18n %}
 {% load static %}
 {% load render_html_field %}
+{% load translate_url %}
 {% load django_bootstrap_breadcrumbs %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +23,7 @@
     <meta name="author" content="">
     <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{% static 'css/website.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flags.css' %}">
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
@@ -40,6 +45,20 @@
         </a>
         <div class="collapse navbar-collapse" id="navbarNav">
           <div class="navbar-nav ml-auto text-center">
+            <div class="dropdown">
+              <button class="nav-item nav-link btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="{% static 'img/blank.gif' %}"  class="flag flag-language-{{ LANGUAGE_CODE }}" alt="{{ LANGUAGE_CODE|language_name }}" />
+                <span>{{ LANGUAGE_CODE|language_name }}
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                {% for language in LANGUAGES %}
+                  <a class="dropdown-item" href="{% translate_url language.0 %}">
+                    <img src="{% static 'img/blank.gif' %}" class="flag flag-language-{{ language.0 }}" alt="{{ language.1 }}" />
+                    {{ language.1 }}
+                  </a>
+                {% endfor %}
+              </div>
+            </div>
             <a class="nav-item nav-link" href="{% url 'topics:index' %}">{% trans "Topics" %}</a>
             <a class="nav-item nav-link" href="{% url 'resources:index' %}">{% trans "Resources" %}</a>
             <a class="nav-item nav-link" href="{% url 'general:about' %}">{% trans "About" %}</a>
