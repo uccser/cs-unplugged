@@ -207,7 +207,7 @@ dev_test_suite() {
   echo "Running test suite..."
   docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3
 }
-defhelp -dev test 'Run test suite with code coverage.'
+defhelp -dev test_suite 'Run test suite with code coverage.'
 
 # Run specific test suite
 dev_test_specific() {
