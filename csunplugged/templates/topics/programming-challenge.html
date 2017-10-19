@@ -36,12 +36,12 @@
           {% for lesson in lessons %}
             <li>
               <a href="{% url 'topics:lesson' topic.slug lesson.unit_plan.slug lesson.slug %}">
-                {% blocktrans with set_num=lesson.challenge_set_number chal_num=lesson.challenge_number name=lesson.name %}
+                {% blocktrans with set_num=lesson.challenge_set_number chal_num=lesson.challenge_number name=lesson.name trimmed %}
                 Challenge {{ set_num }}.{{ chal_num }} for {{ name }}
                 {% endblocktrans %}
                 (
                   {% for age_group in lesson.age_group.all %}
-                    {% blocktrans with lower=age_group.ages.lower upper=age_group.ages.upper %}
+                    {% blocktrans with lower=age_group.ages.lower upper=age_group.ages.upper trimmed %}
                       {{ lower }} to {{ upper }}
                     {% endblocktrans %}
                     {% if not forloop.last %}
@@ -69,7 +69,7 @@
       {% endfor %}
     </ul>
     {% else %}
-      <p>{% blocktrans %}No learning outcomes listed for {{ programming_challenge.name }}.{% endblocktrans %}</p>
+      <p>{% blocktrans trimmed %}No learning outcomes listed for {{ programming_challenge.name }}.{% endblocktrans %}</p>
     {% endif %}
 
     {% render_html_field programming_challenge.content %}
@@ -106,7 +106,7 @@
 
           <p class="text-center">
             <a href="{% url 'topics:programming_challenge_solution' topic.slug programming_challenge.slug implementation.language.slug %}">
-              {% blocktrans %}
+              {% blocktrans trimmed %}
                 Show {{ implementation.language.name }} solution
               {% endblocktrans %}
             </a>

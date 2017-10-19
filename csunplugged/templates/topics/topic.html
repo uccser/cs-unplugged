@@ -26,7 +26,7 @@
     <div class="link-box-container">
       <a class="link-box link-box-md-6" href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">
         <h3 id="{{ unit_plan.slug }}" class="link-box-title">
-          {% blocktrans %}
+          {% blocktrans trimmed %}
             <span class="text-muted">Unit plan:</span> {{ unit_plan.name }}
           {% endblocktrans %}
         </h3>
@@ -57,7 +57,7 @@
   {% if resources %}
   <h2 id="resources" class="heading-underline">{% trans "Resources" %}</h2>
     <p>
-      {% blocktrans with name=topic.name %}
+      {% blocktrans with name=topic.name trimmed %}
         The following resources are used in {{ name }} lessons, and can be accessed here (and also on each lesson page).
       {% endblocktrans %}
     </p>

@@ -20,10 +20,10 @@
 {% block page_heading %}
   <h1 id="{{ lesson.slug }}" class="heading-underline">{{ lesson.name }}</h1>
   <ul>
-    <li>{% blocktrans %}<strong>Duration:</strong> {{ lesson.duration }} minutes{% endblocktrans %}</li>
+    <li>{% blocktrans trimmed %}<strong>Duration:</strong> {{ lesson.duration }} minutes{% endblocktrans %}</li>
     {% for lesson_age in lesson_ages %}
       <li>
-        {% blocktrans with lower=lesson_age.lower upper=lesson_age.upper number=lesson_age.number %}
+        {% blocktrans with lower=lesson_age.lower upper=lesson_age.upper number=lesson_age.number trimmed %}
         <strong>Ages {{ lower }} to {{ upper }}:</strong> Lesson {{ number }}
         {% endblocktrans %}
       </li>
