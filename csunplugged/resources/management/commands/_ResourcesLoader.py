@@ -12,15 +12,9 @@ from resources.models import Resource
 class ResourcesLoader(BaseLoader):
     """Custom loader for loading resources."""
 
-    def __init__(self, structure_file, base_path):
-        """Create the loader for loading resources.
-
-        Args:
-            structure_file: file path for structure YAML file (str).
-            base_path: base file path (str).
-        """
-        super().__init__(base_path)
-        self.structure_file = structure_file
+    def __init__(self, **kwargs):
+        """Create the loader for loading resources."""
+        super().__init__(**kwargs)
 
     @transaction.atomic
     def load(self):
@@ -30,11 +24,7 @@ class ResourcesLoader(BaseLoader):
             MissingRequiredFieldError: when no object can be found with the matching
                 attribute.
         """
-        resources_structure = self.load_yaml_file(
-            self.base_path.format(
-                self.structure_file
-            )
-        )
+        resources_structure = self.load_yaml_file(self.structure_file_path)
 
         for (resource_slug, resource_structure) in resources_structure.items():
             try:
