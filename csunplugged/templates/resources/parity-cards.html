@@ -1,7 +1,10 @@
 {% extends "resources/resource.html" %}
 
+{% load i18n %}
+
 <!-- Description of resource -->
 {% block description %}
+{% blocktrans trimmed %}
   <p>
     This resource contains printouts for parity card activities.
     To use this resource:
@@ -20,34 +23,35 @@
     Each page contains 20 parity cards, so we recommend printing at least 2
     pages of cards as 40 cards is a useful number for most activities.
   </p>
+{% endblocktrans %}
 {% endblock description %}
 
 {% block generation_form %}
   <fieldset>
-    <legend>Card back colour</legend>
+    <legend>{% trans "Card back colour" %}</legend>
     <label class="form-check-label">
       <input type="radio" name="back_colour" class="form-check-input" value="black" checked="checked">
-      Black
+      {% trans "Black" %}
     </label>
     <br>
     <label class="form-check-label">
       <input type="radio" name="back_colour" class="form-check-input" value="blue">
-      Blue
+      {% trans "Blue" %}
     </label>
     <br>
     <label class="form-check-label">
       <input type="radio" name="back_colour" class="form-check-input" value="green">
-      Green
+      {% trans "Green" %}
     </label>
     <br>
     <label class="form-check-label">
       <input type="radio" name="back_colour" class="form-check-input" value="purple">
-      Purple
+      {% trans "Purple" %}
     </label>
     <br>
     <label class="form-check-label">
       <input type="radio" name="back_colour" class="form-check-input" value="red">
-      Red
+      {% trans "Red" %}
     </label>
   </fieldset>
 

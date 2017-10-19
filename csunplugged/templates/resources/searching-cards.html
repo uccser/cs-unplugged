@@ -1,8 +1,10 @@
 {% extends "resources/resource.html" %}
 
+{% load i18n %}
+
 {% block generation_form %}
   <fieldset class="form-group">
-    <legend>Number of cards</legend>
+    <legend>{% trans "Number of cards" %}</legend>
     <div class="form-check">
       <label class="form-check-label">
         <input type="radio" class="form-check-input" name="number_cards" value="15" checked="checked">
@@ -18,45 +20,45 @@
   </fieldset>
 
   <fieldset class="form-group">
-    <legend>Range of numbers</legend>
+    <legend>{% trans "Range of numbers" %}</legend>
     <div class="form-check">
       <label class="form-check-label">
         <input type="radio" class="form-check-input" name="max_number" value="cards" checked="checked">
-        Number of cards (15 or 31)
+        {% trans "Number of cards (15 or 31)" %}
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
         <input type="radio" class="form-check-input" name="max_number" value="99">
-        0 to 99
+        {% trans "0 to 99" %}
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
         <input type="radio" class="form-check-input" name="max_number" value="999">
-        0 to 999
+        {% trans "0 to 999" %}
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
         <input type="radio" class="form-check-input" name="max_number" value="blank">
-        Blank
+        {% trans "Blank" %}
       </label>
     </div>
   </fieldset>
 
   <fieldset class="form-group">
-    <legend>Include teacher helper sheet</legend>
+    <legend>{% trans "Include teacher helper sheet" %}</legend>
     <div class="form-check">
       <label class="form-check-label">
         <input type="radio" class="form-check-input" name="help_sheet" value="yes" checked="checked">
-        Yes
+        {% trans "Yes" %}
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
         <input type="radio" class="form-check-input" name="help_sheet" value="no">
-        No
+        {% trans "No" %}
       </label>
     </div>
   </fieldset>

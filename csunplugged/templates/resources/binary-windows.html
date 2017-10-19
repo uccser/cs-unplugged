@@ -1,43 +1,47 @@
 {% extends "resources/resource.html" %}
 
+{% load i18n %}
+
 <!-- Description of resource -->
 {% block description %}
   <p>
-    This resource contains printouts for binary numbers activities.
+    {% trans "This resource contains printouts for binary numbers activities." %}
   </p>
 
   <div class="alert alert-info" role="alert">
     <p class="mb-1">
+      {% blocktrans trimmed %}
       <strong>Note:</strong> This resource should be printed double sided on short edge.
+      {% endblocktrans %}
     </p>
   </div>
 {% endblock description %}
 
 {% block generation_form %}
   <fieldset>
-    <legend>Number of Bits</legend>
+    <legend>{% trans "Number of Bits" %}</legend>
     <input type="radio" name="number_bits" id="number_bits_4" value="4" checked="checked">
-    <label for="number_bits_8">Four (1 to 8)</label>
+    <label for="number_bits_8">{% trans "Four (1 to 8)" %}</label>
     <br>
     <input type="radio" name="number_bits" id="number_bits_8" value="8">
-    <label for="number_bits_128">Eight (1 to 128)</label>
+    <label for="number_bits_128">{% trans "Eight (1 to 128)" %}</label>
   </fieldset>
 
   <fieldset>
-    <legend>Display Dot Counts</legend>
+    <legend>{% trans "Display Dot Counts" %}</legend>
     <input type="radio" name="dot_counts" id="dot_counts_yes" value="yes" checked="checked">
-    <label for="dot_counts_yes">Yes</label>
+    <label for="dot_counts_yes">{% trans "Yes" %}</label>
     <br>
     <input type="radio" name="dot_counts" id="dot_counts_no" value="no">
-    <label for="dot_counts_no">No</label>
+    <label for="dot_counts_no">{% trans "No" %}</label>
   </fieldset>
 
   <fieldset>
-    <legend>Value Representation</legend>
+    <legend>{% trans "Value Representation" %}</legend>
     <input type="radio" name="value_type" id="value_type_binary" value="binary" checked="checked">
-    <label for="value_type_binary">Binary (0 or 1)</label>
+    <label for="value_type_binary">{% trans "Binary (0 or 1)" %}</label>
     <br>
     <input type="radio" name="value_type" id="value_type_lightbulb" value="lightbulb">
-    <label for="value_type_lightbulb">Lightbulb (off or on)</label>
+    <label for="value_type_lightbulb">{% trans "Lightbulb (off or on)" %}</label>
   </fieldset>
 {% endblock generation_form %}

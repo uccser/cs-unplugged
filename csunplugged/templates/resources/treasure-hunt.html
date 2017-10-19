@@ -1,62 +1,64 @@
 {% extends "resources/resource.html" %}
 
+{% load i18n %}
+
 <!-- Description of resource -->
 {% block description %}
 {% endblock description %}
 
 {% block generation_form %}
   <fieldset class="form-group">
-    <legend>Prefill with Numbers</legend>
+    <legend>{% trans "Prefill with Numbers" %}</legend>
     <input type="radio" name="prefilled_values" id="easy" value="easy" checked="checked">
-    <label for="easy">Easy Numbers (2 digits)</label>
+    <label for="easy">{% trans "Easy Numbers (2 digits)" %}</label>
     <br>
     <input type="radio" name="prefilled_values" id="medium" value="medium">
-    <label for="medium">Medium Numbers (3 digits)</label>
+    <label for="medium">{% trans "Medium Numbers (3 digits)" %}</label>
     <br>
     <input type="radio" name="prefilled_values" id="hard" value="hard">
-    <label for="hard">Hard Numbers (4 digits)</label>
+    <label for="hard">{% trans "Hard Numbers (4 digits)" %}</label>
     <br>
     <input type="radio" name="prefilled_values" id="none" value="blank">
-    <label for="blank">None (Blank)</label>
+    <label for="blank">{% trans "None (Blank)" %}</label>
   </fieldset>
 
   <fieldset class="form-group">
-    <legend>Numbers Unsorted/Sorted</legend>
+    <legend>{% trans "Numbers Unsorted/Sorted" %}</legend>
     <input type="radio" name="number_order" id="numbers_unsorted" value="unsorted" checked="checked">
-    <label for="numbers_unsorted">Unsorted Numbers</label>
+    <label for="numbers_unsorted">{% trans "Unsorted Numbers" %}</label>
     <br>
     <input type="radio" name="number_order" id="numbers_sorted" value="sorted">
-    <label for="numbers_sorted">Sorted Numbers</label>
+    <label for="numbers_sorted">{% trans "Sorted Numbers" %}</label>
   </fieldset>
 
   <fieldset class="form-group">
-    <legend>Include instruction sheet</legend>
+    <legend>{% trans "Include instruction sheet" %}</legend>
     <div class="form-check">
       <label class="form-check-label">
         <input type="radio" class="form-check-input" name="instructions" value="yes" checked="checked">
-        Yes
+        {% trans "Yes" %}
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
         <input type="radio" class="form-check-input" name="instructions" value="no">
-        No
+        {% trans "No" %}
       </label>
     </div>
   </fieldset>
 
   <fieldset class="form-group">
-    <legend>Printing mode</legend>
+    <legend>{% trans "Printing mode" %}</legend>
     <div class="form-check">
       <label class="form-check-label">
         <input type="radio" class="form-check-input" name="art" value="colour">
-        Table and artwork - Uses a lot of colour ink.
+        {% trans "Table and artwork - Uses a lot of colour ink." %}
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
         <input type="radio" class="form-check-input" name="art" value="bw" checked="checked">
-        Table only - Little ink usage.
+        {% trans "Table only - Little ink usage." %}
       </label>
     </div>
   </fieldset>
