@@ -22,7 +22,7 @@ class SortingNetworkResourceGenerator(BaseResourceGenerator):
         image_path = "static/img/resources/resource-sorting-network-colour.png"
         image = Image.open(image_path)
         draw = ImageDraw.Draw(image)
-        (range_min, range_max, font_size) = number_range()
+        (range_min, range_max, font_size) = self.number_range()
 
         if self.requested_options["prefilled_values"] != "blank":
             font = ImageFont.truetype(font_path, font_size)

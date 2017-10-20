@@ -3,17 +3,17 @@
 from PIL import Image, ImageDraw
 from utils.BaseResourceGenerator import BaseResourceGenerator
 
+GRID_COLUMNS = 8
+GRID_ROWS = 8
+BOX_SIZE = 500
+IMAGE_SIZE_X = BOX_SIZE * GRID_COLUMNS
+IMAGE_SIZE_Y = BOX_SIZE * GRID_ROWS
+LINE_COLOUR = "#000000"
+LINE_WIDTH = 3
+
 
 class GridResourceGenerator(BaseResourceGenerator):
     """Class for Grid resource generator."""
-
-    GRID_COLUMNS = 8
-    GRID_ROWS = 8
-    BOX_SIZE = 500
-    IMAGE_SIZE_X = BOX_SIZE * GRID_COLUMNS
-    IMAGE_SIZE_Y = BOX_SIZE * GRID_ROWS
-    LINE_COLOUR = "#000000"
-    LINE_WIDTH = 3
 
     def data(self):
         """Create data for a copy of the Grid resource.

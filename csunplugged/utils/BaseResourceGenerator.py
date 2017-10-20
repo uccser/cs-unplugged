@@ -18,7 +18,7 @@ class BaseResourceGenerator(ABC):
         Args:
             request: HTTP request object (HttpRequest).
         """
-        self.valid_options = default_valid_options
+        self.valid_options = BaseResourceGenerator.default_valid_options
         self.valid_options.update(self.additional_valid_options)
         self.requested_options = requested_options
         self.check_requested_options()
@@ -51,12 +51,9 @@ class BaseResourceGenerator(ABC):
         If an option cannot be found, or an option is given with an invalid
         value, then a 404 error is raised.
         """
-        if requested_options.keys() == self.valid_options.keys():
-            for (option, value) in requested_options.items():
+        for option in self.valid_options.keys():
+            if option not in self.requested_options:
+                raise Http404("{} parameter not specified.".format(option))
+            for value in self.requested_options.getlist(option):
                 if value not in self.valid_options[option]:
-                    raise Http404("{} parameter not valid.".format(parameter))
-        else:
-            # If parameter is missing
-            for option in self.valid_options.keys():
-                if option not in requested_options:
-                    raise Http404("{} parameter not specified.".format(option))
+                    raise Http404("{} for parameter {} is not valid.".format(value, option))
