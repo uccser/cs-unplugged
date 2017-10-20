@@ -66,6 +66,18 @@ class Command(BaseCommand):
                     structure_filename=structure_filename
                 ).load()
 
+        if "classroom-resources" in structure_file:
+            classroom_resources_structure_file_path = structure_file["classroom-resources"]
+            if classroom_resources_structure_file_path is not None:
+                classroom_resources_path, structure_filename = os.path.split(
+                    classroom_resources_structure_file_path
+                )
+                factory.create_classroom_resources_loader(
+                    base_path=base_path,
+                    content_path=classroom_resources_path,
+                    structure_filename=structure_filename
+                ).load()
+
         if "glossary-folder" in structure_file:
             glossary_folder_path = structure_file["glossary-folder"]
             if glossary_folder_path is not None:

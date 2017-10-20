@@ -5,7 +5,6 @@ from utils.language_utils import get_default_language, get_available_languages
 from utils.convert_heading_tree_to_dict import convert_heading_tree_to_dict
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
-from utils.errors.InvalidConfigValueError import InvalidConfigValueError
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 
 
@@ -15,6 +14,7 @@ from topics.models import (
     LearningOutcome,
     Resource,
     ResourceDescription,
+    ClassroomResource
 )
 
 
@@ -107,28 +107,6 @@ class LessonsLoader(BaseLoader):
                         if language == get_default_language():
                             raise
 
-            classroom_resources = lesson_structure.get("classroom-resources", None)
-            if isinstance(classroom_resources, list):
-                for classroom_resource in classroom_resources:
-                    if not isinstance(classroom_resource, str):
-                        raise InvalidConfigValueError(
-                            self.structure_file_path,
-                            "classroom-resources list item",
-                            "A string describing the classroom resource."
-                        )
-                    elif len(classroom_resource) > 100:
-                        raise InvalidConfigValueError(
-                            self.structure_file_path,
-                            "classroom-resources list item",
-                            "Item description must be less than 100 characters."
-                        )
-            elif classroom_resources is not None:
-                raise InvalidConfigValueError(
-                    self.structure_file_path,
-                    "classroom-resources",
-                    "List of strings."
-                )
-
             if "duration" in lesson_structure:
                 lesson_duration = lesson_structure["duration"]
             else:
@@ -139,7 +117,7 @@ class LessonsLoader(BaseLoader):
                 slug=lesson_slug,
                 duration=lesson_duration,
                 languages=list(content_translations.keys()),
-                classroom_resources=classroom_resources,
+                # classroom_resources=classroom_resources,
             )
 
             for language in content_translations:
@@ -245,6 +223,23 @@ class LessonsLoader(BaseLoader):
                                 self.structure_file_path,
                                 learning_outcome_slug,
                                 "Learning Outcomes"
+                            )
+
+            # Add classroom resources
+            if "classroom-resources" in lesson_structure:
+                classroom_resources_slugs = lesson_structure["classroom-resources"]
+                if classroom_resources_slugs is not None:
+                    for classroom_resources_slug in classroom_resources_slugs:
+                        try:
+                            classroom_resource = ClassroomResource.objects.get(
+                                slug=classroom_resources_slug
+                            )
+                            lesson.classroom_resources.add(classroom_resource)
+                        except:
+                            raise KeyNotFoundError(
+                                self.structure_file_path,
+                                classroom_resources_slug,
+                                "Classroom Resources"
                             )
 
             # Add generated resources

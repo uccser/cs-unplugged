@@ -10,6 +10,7 @@ from topics.management.commands._ProgrammingChallengesLoader import ProgrammingC
 from topics.management.commands._ProgrammingChallengesStructureLoader import ProgrammingChallengesStructureLoader
 from topics.management.commands._TopicLoader import TopicLoader
 from topics.management.commands._UnitPlanLoader import UnitPlanLoader
+from topics.management.commands._ClassroomResourcesLoader import ClassroomResourcesLoader
 from resources.management.commands._ResourcesLoader import ResourcesLoader
 
 
@@ -39,6 +40,10 @@ class LoaderFactory:
     def create_lessons_loader(self, topic, unit_plan, **kwargs):
         """Create lessons loader."""
         return LessonsLoader(topic, unit_plan, **kwargs)
+
+    def create_classroom_resources_loader(self, **kwargs):
+        """Create lessons loader."""
+        return ClassroomResourcesLoader(**kwargs)
 
     def create_programming_challenges_loader(self, topic, **kwargs):
         """Create programming challenges loader."""

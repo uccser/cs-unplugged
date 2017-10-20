@@ -12,7 +12,7 @@ how-binary-digits-work-junior:
     binary-windows:
       description: One set per student.
   classroom-resources:
-    - Number line from 0 to 20
+    - number-line-0-20
 
 reinforcing-sequencing-in-binary-number-systems-junior:
   duration: 60
@@ -26,10 +26,6 @@ reinforcing-sequencing-in-binary-number-systems-junior:
       description: One set for class demonstration.
     binary-cards-small:
       description: One set of cards per student.
-  classroom-resources:
-    - Musical instruments
-    - Glue a stick onto paper plates and have one side on and the other side off
-    - Hats on and off
 
 codes-for-letters-using-binary-representation-junior:
   duration: 45
@@ -46,8 +42,8 @@ codes-for-letters-using-binary-representation-junior:
     binary-to-alphabet:
       description: Blank sheets for students, plus teacher answer sheet.
   classroom-resources:
-    - Alphabet cards
-    - Number line from 0 to 20
+    - alphabet-cards
+    - number-line-0-20
 
 how-binary-digits-work:
   duration: 45
@@ -91,8 +87,10 @@ how-binary-digits-work:
     binary-cards-small:
       description: One set of cards per student.
   classroom-resources:
-    - Pens and paper, or
-    - Whiteboard and pens
+    - pens
+    - paper
+    - whiteboard
+    - whiteboard-pens
 
 reinforcing-sequencing-in-binary-number-systems:
   duration: 60
@@ -110,8 +108,7 @@ reinforcing-sequencing-in-binary-number-systems:
       description: One set for class demonstration.
     binary-cards-small:
       description: One set of cards per student.
-  classroom-resources:
-    - None required, but see note in text.
+
 
 codes-for-letters-using-binary-representation:
   duration: 45

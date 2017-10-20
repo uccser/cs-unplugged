@@ -20,10 +20,11 @@ move-to-a-number:
     grid:
       description: 8 x 8 grid for students to use if no large grid available.
   classroom-resources:
-    - 8 x 8 (approx) squared grid (30cm squares approx if possible).
-    - Activity can also be done on a small board, such as a chess board or 100's board.
-    - A variety of ways of presenting numbers from 1 - 10 (numerals, dots, maths equipment).
-    - Small whiteboard and two whiteboard pens (different colours); or paper on a clipboard.
+    - handheld-whiteboards
+    - whiteboard-pens
+    - clipboards
+    - paper
+    - pens
 
 modulo:
   duration: 30
@@ -36,7 +37,7 @@ modulo:
     piano-keys:
       description: Piano keys with optional highlighted keys.
   classroom-resources:
-    - Counters to mark positions.
+    - counters
   programming-challenges:
     - modulo-even-odd-numbers
     - modulo-check-divisor

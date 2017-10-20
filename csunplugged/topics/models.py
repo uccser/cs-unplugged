@@ -96,6 +96,21 @@ class LearningOutcome(models.Model):
         ordering = ["curriculum_areas__number", "curriculum_areas__name", "text"]
 
 
+class ClassroomResource(models.Model):
+    """Model for classroom resource."""
+
+    slug = models.SlugField(max_length=80, unique=True)
+    description = models.CharField(max_length=100)
+
+    def __str__(self):
+        """Text representation of ClassroomResource object.
+
+        Returns:
+            Description of classroom resource (str).
+        """
+        return self.description
+
+
 class Topic(TranslatableModel):
     """Model for topic in database."""
 
@@ -314,9 +329,8 @@ class Lesson(TranslatableModel):
         through="ResourceDescription",
         related_name="lessons"
     )
-    classroom_resources = ArrayField(
-        models.CharField(max_length=100),
-        null=True
+    classroom_resources = models.ManyToManyField(
+        ClassroomResource,
     )
 
     def has_programming_challenges(self):
@@ -436,6 +450,7 @@ vinaigrette.register(ProgrammingChallengeDifficulty, ["name"])
 vinaigrette.register(ProgrammingChallengeLanguage, ["name"])
 vinaigrette.register(AgeGroup, ['description'])
 vinaigrette.register(ResourceDescription, ['description'])
+vinaigrette.register(ClassroomResource, ['description'])
 # TODO: Implement translation of classroom resources
 # (vinaigrette does not support translation of an array of strings)
 # vinaigrette.register(Lesson, ['classroom_resources'])
