@@ -1,57 +1,62 @@
 """Class for generator for a resource."""
 
+from django.http import Http404
 from abc import ABC, abstractmethod
-from utils.retrieve_query_parameter import retrieve_query_parameter
 
 
 class BaseResourceGenerator(ABC):
     """Class for generator for a resource."""
 
-    def __init__(self, resource):
-        self.resource = resource
+    default_valid_options = {
+        "paper_size": ["a4", "letter"]
+    }
+    additional_valid_options = dict()
+
+    def __init__(self, requested_options):
+        """Constructor for BaseResourceGenerator.
+
+        Args:
+            request: HTTP request object (HttpRequest).
+        """
+        self.valid_options = default_valid_options
+        self.valid_options.update(self.additional_valid_options)
+        self.requested_options = requested_options
+        self.check_requested_options()
 
     @abstractmethod
-    def setup(self, request):
+    def data(self):
         """Abstract method to be implemented by subclasses.
 
         Raise:
-            NotImplementedError: When setup() method of the ResourceGenerator
+            NotImplementedError: When data() method of the ResourceGenerator
             class is called.
         """
-        raise NotImplementedError("Subclass does not implement the setup method.")
+        raise NotImplementedError("Subclass does not implement the data method.")
 
-    @abstractmethod
-    def copy(self, request):
-        """Abstract method to be implemented by subclasses.
-
-        Raise:
-            NotImplementedError: When copy() method of the ResourceGenerator
-            class is called.
-        """
-        raise NotImplementedError("Subclass does not implement the copy method.")
-
-    def valid_options(self):
-        """Provide dictionary of all valid resource parameters.
-
-        This excludes the header text parameter.
-
-        Returns:
-            All valid options (dict).
-        """
-        return {
-            "paper_size": ["a4", "letter"]
-        }
-
-    def subtitle(self, request):
+    @property
+    def subtitle(self):
         """Return the subtitle string of the resource.
 
         Used after the resource name in the filename, and
         also on the resource image.
 
-        Args:
-            request: HTTP request object (HttpRequest).
-
         Returns:
             Text for subtitle (str).
         """
-        return retrieve_query_parameter(request, "paper_size")
+        return self.requested_options["paper_size"]
+
+    def check_requested_options(self):
+        """Check all requested options.
+
+        If an option cannot be found, or an option is given with an invalid
+        value, then a 404 error is raised.
+        """
+        if requested_options.keys() == self.valid_options.keys():
+            for (option, value) in requested_options.items():
+                if value not in self.valid_options[option]:
+                    raise Http404("{} parameter not valid.".format(parameter))
+        else:
+            # If parameter is missing
+            for option in self.valid_options.keys():
+                if option not in requested_options:
+                    raise Http404("{} parameter not specified.".format(option))

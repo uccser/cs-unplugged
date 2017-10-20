@@ -38,7 +38,7 @@ def generate_resource_pdf(request, resource, module_path):
     context["all_data"] = []
     for copy in num_copies:
         context["all_data"].append(
-            generate_resource_data(get_request, resource, module_path)
+            generate_resource_copy(get_request, module_path)
         )
 
     filename = "{} ({})".format(resource.name, resource_generator.subtitle(get_request, resource))
@@ -52,7 +52,7 @@ def generate_resource_pdf(request, resource, module_path):
     return (html.write_pdf(stylesheets=[base_css]), filename)
 
 
-def generate_resource_data(get_request, resource, module_path):
+def generate_resource_copy(request, module_path):
     """Retrieve data for one copy of resource from resource generator.
 
     Images are resized to paper size.
@@ -70,8 +70,8 @@ def generate_resource_data(get_request, resource, module_path):
             - String for HTML.
             - Base64 string of image.
     """
-    resource_generator = importlib.import_module(module_path)
-    data = resource_generator.resource(get_request, resource)
+    resource_module = importlib.import_module(module_path)
+    data = resource_generator.data(request.GET.items())
     if not isinstance(data, list):
         data = [data]
 

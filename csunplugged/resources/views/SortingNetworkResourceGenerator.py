@@ -1,40 +1,30 @@
-"""Module for generating Sorting Network resource."""
+"""Class for Sorting Network resource generator."""
 
 from PIL import Image, ImageDraw, ImageFont
 from random import sample
-from utils.retrieve_query_parameter import retrieve_query_parameter
 from utils.BaseResourceGenerator import BaseResourceGenerator
 
-class ResourceGenerator(BaseResourceGenerator):
 
-    def setup(self, request):
-        self.valid_options = {
-            "prefilled_values": ["blank", "easy", "medium", "hard"]
-        }
-        self.prefilled_values = retrieve_query_parameter(request, "prefilled_values", self.valid_options["prefilled_values"])
+class SortingNetworkResourceGenerator(BaseResourceGenerator):
+    """Class for Sorting Network resource generator."""
 
-    def copy(request):
+    additional_valid_options = {
+        "prefilled_values": ["blank", "easy", "medium", "hard"]
+    }
+
+    def data(self):
         """Create a image for Sorting Network resource.
-
-        Args:
-            request: HTTP request object (HttpRequest).
-            resource: Object of resource data (Resource).
 
         Returns:
             A dictionary for the resource page.
         """
+        font_path = "static/fonts/PatrickHand-Regular.ttf"
         image_path = "static/img/resources/resource-sorting-network-colour.png"
         image = Image.open(image_path)
         draw = ImageDraw.Draw(image)
+        (range_min, range_max, font_size) = number_range()
 
-        (range_min, range_max, font_size) = number_range(request)
-
-        font_path = "static/fonts/PatrickHand-Regular.ttf"
-
-        # Add numbers to text if needed
-        parameter_options = valid_options()
-
-        if prefilled_values != "blank":
+        if self.requested_options["prefilled_values"] != "blank":
             font = ImageFont.truetype(font_path, font_size)
             numbers = sample(range(range_min, range_max), 6)
             base_coord_x = 70
@@ -54,41 +44,31 @@ class ResourceGenerator(BaseResourceGenerator):
                 base_coord_x += coord_x_increment
         return {"type": "image", "data": image}
 
-
-    def subtitle(request, resource):
+    @property
+    def subtitle(self):
         """Return the subtitle string of the resource.
 
         Used after the resource name in the filename, and
         also on the resource image.
 
-        Args:
-            request: HTTP request object (HttpRequest).
-            resource: Object of resource data (Resource).
-
         Returns:
             text for subtitle (str).
         """
-        prefilled_values = retrieve_query_parameter(request, "prefilled_values")
-        if prefilled_values == "blank":
+        if self.requested_options["prefilled_values"] == "blank":
             range_text = "blank"
         else:
             SUBTITLE_TEMPLATE = "{} to {}"
-            range_min, range_max, font_size = number_range(request)
+            range_min, range_max, font_size = self.number_range()
             range_text = SUBTITLE_TEMPLATE.format(range_min, range_max - 1)
-        return "{} - {}".format(range_text, retrieve_query_parameter(request, "paper_size"))
+        return "{} - {}".format(range_text, super().subtitle)
 
-
-    def number_range(request):
+    def number_range(self):
         """Return number range tuple for resource.
-
-        Args:
-            request: HTTP request object (HttpRequest).
 
         Returns:
             Tuple of (range_min, range_max, font_size).
         """
-        parameter_options = valid_options()
-        prefilled_values = retrieve_query_parameter(request, "prefilled_values", parameter_options["prefilled_values"])
+        prefilled_values = self.requested_options["prefilled_values"]
         range_min = 0
         range_max = 0
         font_size = 150
@@ -104,14 +84,3 @@ class ResourceGenerator(BaseResourceGenerator):
             range_max = 1000
             font_size = 90
         return (range_min, range_max, font_size)
-
-
-    def valid_options(self):
-        """Provide dictionary of all valid parameters.
-
-        This excludes the header text parameter.
-
-        Returns:
-            All valid options (dict).
-        """
-        return self.valid_options + super(self.__class__, self).valid_options()
