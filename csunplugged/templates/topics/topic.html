@@ -55,7 +55,7 @@
   {% if resources %}
   <h2 id="resources" class="heading-underline">{% trans "Resources" %}</h2>
     <p>
-      {% blocktrans with name=topic.name %}
+      {% blocktrans with name=topic.name trimmed %}
         The following resources are used in {{ name }} lessons, and can be accessed here (and also on each lesson page).
       {% endblocktrans %}
     </p>
