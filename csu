@@ -199,7 +199,7 @@ defhelp -dev shell "Open shell to Django folder."
 # Reboot Django Docker container
 dev_reboot_django() {
   echo "Rebooting Django Docker container..."
-  docker-compose up -d django
+  docker-compose restart django
 }
 defhelp -dev reboot_django 'Reboot Django Docker container.'
 
