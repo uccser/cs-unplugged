@@ -13,10 +13,10 @@ class SortingNetworkResourceGenerator(BaseResourceGenerator):
     }
 
     def data(self):
-        """Create a image for Sorting Network resource.
+        """Create data for a copy of the Sorting Network resource.
 
         Returns:
-            A dictionary for the resource page.
+            A dictionary of the one page for the resource.
         """
         font_path = "static/fonts/PatrickHand-Regular.ttf"
         image_path = "static/img/resources/resource-sorting-network-colour.png"
