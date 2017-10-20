@@ -19,7 +19,7 @@ class GridResourceGenerator(BaseResourceGenerator):
         """Create data for a copy of the Grid resource.
 
         Returns:
-            A dictionary of  the one page for the resource.
+            A dictionary of the one page for the resource.
         """
 
         page = Image.new("RGB", (IMAGE_SIZE_X, IMAGE_SIZE_Y), "#fff")

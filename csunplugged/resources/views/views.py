@@ -63,7 +63,7 @@ def generate_resource(request, resource_slug):
         HTML response containing PDF of resource, 404 if not found.
     """
     resource = get_object_or_404(Resource, slug=resource_slug)
-    generator_class_name = resource.generation_view
+    generator_class_name = resource.generator_module
     module_path = "resources.views.{}".format(generator_class_name)
     module = importlib.import_module(module_path)
     generator_class = getattr(module, generator_class_name)
