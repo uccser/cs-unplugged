@@ -12,7 +12,7 @@ class BaseResourceGenerator(ABC):
     }
     additional_valid_options = dict()
 
-    def __init__(self, requested_options):
+    def __init__(self, requested_options=None):
         """Constructor for BaseResourceGenerator.
 
         Args:
@@ -21,7 +21,8 @@ class BaseResourceGenerator(ABC):
         self.valid_options = BaseResourceGenerator.default_valid_options
         self.valid_options.update(self.additional_valid_options)
         self.requested_options = requested_options
-        self.check_requested_options()
+        if requested_options:
+            self.check_requested_options()
 
     @abstractmethod
     def data(self):
