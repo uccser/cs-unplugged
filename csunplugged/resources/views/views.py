@@ -9,6 +9,7 @@ from django.views import generic
 from resources.models import Resource
 import importlib
 from utils.group_lessons_by_age import group_lessons_by_age
+from utils.import_resource_generator import import_resource_generator
 from PIL import Image
 from io import BytesIO
 import base64
@@ -63,11 +64,7 @@ def generate_resource(request, resource_slug):
         HTML response containing PDF of resource, 404 if not found.
     """
     resource = get_object_or_404(Resource, slug=resource_slug)
-    generator_class_name = resource.generator_module
-    module_path = "resources.views.{}".format(generator_class_name)
-    module = importlib.import_module(module_path)
-    generator_class = getattr(module, generator_class_name)
-    generator = generator_class(request.GET)
+    generator = import_resource_generator(resource.generator_module, request.GET)
 
     # TODO: Weasyprint handling in production
     # TODO: Add creation of PDF as job to job queue
@@ -76,7 +73,9 @@ def generate_resource(request, resource_slug):
         DJANGO_PRODUCTION=(bool),
     )
     if env("DJANGO_PRODUCTION"):
-        # Return cached static PDF file of resource
+        # Return cached static PDF file of resource.
+        # Currently developing system for dynamically rendering
+        # custom PDFs on request (https://github.com/uccser/render).
         return resource_pdf_cache(generator)
     else:
         (pdf_file, filename) = generate_resource_pdf(resource.name, generator)

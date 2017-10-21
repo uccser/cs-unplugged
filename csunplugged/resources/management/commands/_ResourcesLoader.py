@@ -1,8 +1,10 @@
 """Custom loader for loading resources."""
 
 from django.db import transaction
+from django.http.request import QueryDict
 from utils.BaseLoader import BaseLoader
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
+from utils.import_resource_generator import import_resource_generator
 from resources.models import Resource
 import importlib
 
@@ -48,11 +50,8 @@ class ResourcesLoader(BaseLoader):
             if generator_module.endswith(".py"):
                 generator_module = generator_module[:-3]
 
-            # Check module is available with generator class
-            module_path = "resources.views.{}".format(generator_module)
-            spec = importlib.util.find_spec(module_path)
-            if spec is None:
-                raise ModuleNotFoundError("Resource generator does not exist for resource: {}".format(resource_slug))
+            # Check module can be imported
+            import_resource_generator(generator_module, QueryDict())
 
             resource = Resource(
                 slug=resource_slug,
