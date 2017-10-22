@@ -56,13 +56,13 @@ KEY_DATA = {
     },
 }
 
+
 class PianoKeysResourceGenerator(BaseResourceGenerator):
     """Class for Piano Keys resource generator."""
 
     additional_valid_options = {
         "highlight": [False, "A", "B", "C", "D", "E", "F", "G"],
     }
-
 
     def data(self):
         """Create a image for Piano Keys resource.

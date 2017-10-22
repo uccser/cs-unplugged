@@ -6,7 +6,6 @@ from utils.BaseLoader import BaseLoader
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.import_resource_generator import import_resource_generator
 from resources.models import Resource
-import importlib
 
 
 class ResourcesLoader(BaseLoader):

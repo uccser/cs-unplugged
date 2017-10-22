@@ -1,7 +1,6 @@
 """Class for generator for a resource."""
 
 from django.http import Http404
-from django.http.request import QueryDict
 from abc import ABC, abstractmethod
 from utils.str_to_bool import str_to_bool
 

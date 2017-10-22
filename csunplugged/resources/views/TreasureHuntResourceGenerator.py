@@ -129,7 +129,6 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
 
         return "{} - {} - {} - {}".format(range_text, art_style_text, instructions_text, super().subtitle)
 
-
     def set_number_range(self):
         """Return number range tuple for resource.
 

@@ -1,7 +1,8 @@
 """Class for Job Badges resource generator."""
 
-from PIL import Image, ImageDraw
+from PIL import Image
 from utils.BaseResourceGenerator import BaseResourceGenerator
+
 
 class JobBadgesResourceGenerator(BaseResourceGenerator):
     """Class for Job Badges resource generator."""

@@ -1,7 +1,6 @@
 """Class for Binary Cards (small) resource generator."""
 
 from PIL import Image, ImageDraw, ImageFont
-from random import sample
 import os.path
 from utils.BaseResourceGenerator import BaseResourceGenerator
 

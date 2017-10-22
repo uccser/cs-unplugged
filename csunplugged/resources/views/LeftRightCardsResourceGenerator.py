@@ -1,6 +1,6 @@
 """Class for Left and Right Cards resource generator."""
 
-from PIL import Image, ImageDraw
+from PIL import Image
 from utils.BaseResourceGenerator import BaseResourceGenerator
 
 

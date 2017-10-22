@@ -2,8 +2,6 @@
 
 import os
 import os.path
-import importlib
-import itertools
 from urllib.parse import urlencode
 from time import time
 from django.core.management.base import BaseCommand
@@ -12,6 +10,7 @@ from resources.models import Resource
 from resources.views.views import generate_resource_pdf
 from utils.import_resource_generator import import_resource_generator
 from utils.resource_valid_test_configurations import resource_valid_test_configurations
+
 
 class Command(BaseCommand):
     """Required command class for the custom Django makestaticresources command."""

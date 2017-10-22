@@ -2,7 +2,6 @@
 
 import os.path
 from PIL import Image, ImageDraw, ImageFont
-from random import sample
 from utils.BaseResourceGenerator import BaseResourceGenerator
 
 BASE_IMAGE_PATH = "static/img/resources/binary-cards/"

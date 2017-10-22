@@ -47,7 +47,6 @@ class BinaryWindowsResourceGenerator(BaseResourceGenerator):
 
         return pages
 
-
     def back_page(self, value_type):
         """Return a Pillow object of back page of Binary Windows.
 
@@ -61,7 +60,6 @@ class BinaryWindowsResourceGenerator(BaseResourceGenerator):
         image = self.add_digit_values(image, value_type, False, 660, 724, 650, FONT)
         image = image.rotate(90, expand=True)
         return {"type": "image", "data": image}
-
 
     def add_dot_counts(self, image, starting_value, font):
         """Add dot count text onto image.
@@ -93,7 +91,6 @@ class BinaryWindowsResourceGenerator(BaseResourceGenerator):
             coord_x += coord_x_increment
             value = int(value / 2)
         return image
-
 
     def add_digit_values(self, image, value_type, on, x_coord_start, x_coord_increment, base_y_coord, font):
         """Add binary values onto image.

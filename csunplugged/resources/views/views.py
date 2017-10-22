@@ -7,7 +7,6 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.template.loader import render_to_string
 from django.views import generic
 from resources.models import Resource
-import importlib
 from utils.group_lessons_by_age import group_lessons_by_age
 from utils.import_resource_generator import import_resource_generator
 from PIL import Image

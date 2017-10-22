@@ -28,7 +28,6 @@ class SortingNetworkCardsResourceGenerator(BaseResourceGenerator):
         ],
     }
 
-
     def data(self):
         """Create a image for Sorting Network Cards resource.
 

@@ -11,7 +11,6 @@ class BinaryToAlphabetResourceGenerator(BaseResourceGenerator):
         "worksheet_version": ["student", "teacher"],
     }
 
-
     def data(self):
         """Create a image for Binary to Alphabet resource.
 

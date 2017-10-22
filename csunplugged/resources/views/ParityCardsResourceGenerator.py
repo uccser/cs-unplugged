@@ -58,7 +58,6 @@ class ParityCardsResourceGenerator(BaseResourceGenerator):
         ]
         return pages
 
-
     @property
     def subtitle(self):
         """Return the subtitle string of the resource.

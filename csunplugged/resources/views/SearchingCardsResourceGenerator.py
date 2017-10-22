@@ -77,7 +77,6 @@ class SearchingCardsResourceGenerator(BaseResourceGenerator):
             pages.append({"type": "image", "data": image})
         return pages
 
-
     def create_help_sheet(self, numbers, range_text):
         """Create helper sheet for resource.
 

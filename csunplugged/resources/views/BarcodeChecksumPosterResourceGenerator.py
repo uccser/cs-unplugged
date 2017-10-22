@@ -1,6 +1,6 @@
 """Class for Barcode Checksum Poster resource generator."""
 
-from PIL import Image, ImageDraw
+from PIL import Image
 from utils.BaseResourceGenerator import BaseResourceGenerator
 
 
@@ -10,7 +10,6 @@ class BarcodeChecksumPosterResourceGenerator(BaseResourceGenerator):
     additional_valid_options = {
         "barcode_length": ["12", "13"]
     }
-
 
     def data(self):
         """Create data for a copy of the Grid resource.
