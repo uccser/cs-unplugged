@@ -1,7 +1,9 @@
 """Class for generator for a resource."""
 
 from django.http import Http404
+from django.http.request import QueryDict
 from abc import ABC, abstractmethod
+from utils.str_to_bool import str_to_bool
 
 
 class BaseResourceGenerator(ABC):
@@ -16,12 +18,12 @@ class BaseResourceGenerator(ABC):
         """Constructor for BaseResourceGenerator.
 
         Args:
-            request: HTTP request object (HttpRequest).
+            requested_options: QueryDict of requested_options (QueryDict).
         """
         self.valid_options = BaseResourceGenerator.default_valid_options
         self.valid_options.update(self.additional_valid_options)
-        self.requested_options = requested_options
         if requested_options:
+            self.requested_options = self.process_requested_options(requested_options)
             self.check_requested_options()
 
     @abstractmethod
@@ -46,6 +48,15 @@ class BaseResourceGenerator(ABC):
         """
         return self.requested_options["paper_size"]
 
+    def process_requested_options(self, requested_options):
+        requested_options = requested_options.copy()
+        for option in self.valid_options.keys():
+            values = requested_options.getlist(option)
+            for (i, value) in enumerate(values):
+                values[i] = str_to_bool(value)
+            requested_options.setlist(option, values)
+        return requested_options
+
     def check_requested_options(self):
         """Check all requested options.
 
@@ -56,5 +67,5 @@ class BaseResourceGenerator(ABC):
             if option not in self.requested_options:
                 raise Http404("{} parameter not specified.".format(option))
             for value in self.requested_options.getlist(option):
-                if value not in self.valid_options[option]:
+                if str_to_bool(value) not in self.valid_options[option]:
                     raise Http404("{} for parameter {} is not valid.".format(value, option))
