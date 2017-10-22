@@ -4,6 +4,7 @@ from django.db import models
 from django.utils.translation import get_language
 from django.contrib.postgres.fields import ArrayField, JSONField, IntegerRangeField
 from resources.models import Resource
+import vinaigrette
 
 
 class TranslatableModel(models.Model):
@@ -427,3 +428,14 @@ class ResourceDescription(models.Model):
     resource = models.ForeignKey(Resource, on_delete=models.CASCADE)
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
     description = models.CharField(max_length=300)
+
+
+# Register translatable strings populated from yaml files using vinaigrette
+vinaigrette.register(CurriculumArea, ["name"])
+vinaigrette.register(ProgrammingChallengeDifficulty, ["name"])
+vinaigrette.register(ProgrammingChallengeLanguage, ["name"])
+vinaigrette.register(AgeGroup, ['description'])
+vinaigrette.register(ResourceDescription, ['description'])
+# TODO: Implement translation of classroom resources
+# (vinaigrette does not support translation of an array of strings)
+# vinaigrette.register(Lesson, ['classroom_resources'])
