@@ -4,12 +4,14 @@ import os
 import os.path
 import importlib
 import itertools
+from urllib.parse import urlencode
 from time import time
 from django.core.management.base import BaseCommand
-from django.http.request import HttpRequest
+from django.http.request import QueryDict
 from resources.models import Resource
-from resources.views.generate_resource_pdf import generate_resource_pdf
-
+from resources.views.views import generate_resource_pdf
+from utils.import_resource_generator import import_resource_generator
+from utils.resource_valid_test_configurations import resource_valid_test_configurations
 
 class Command(BaseCommand):
     """Required command class for the custom Django makestaticresources command."""
@@ -39,24 +41,23 @@ class Command(BaseCommand):
         for resource in resources:
             resource_start_time = time()
             print("Creating {}...".format(resource.name))
-            # Get path to resource module
-            resource_view = resource.generation_view
-            if resource_view.endswith(".py"):
-                resource_view = resource_view[:-3]
-            module_path = "resources.views.{}".format(resource_view)
-            # Save resource module
-            resource_module = importlib.import_module(module_path)
-            parameter_options = resource_module.valid_options()
-            parameter_option_keys = sorted(parameter_options)
-            combinations = [dict(zip(parameter_option_keys, product)) for product in itertools.product(*(parameter_options[parameter_option_key] for parameter_option_key in parameter_option_keys))]  # noqa: E501
+
+            # TODO: Import repeated in next for loop, check alternatives
+            empty_generator = import_resource_generator(resource.generator_module)
+            combinations = resource_valid_test_configurations(
+                empty_generator.valid_options,
+                header_text=False
+            )
+
             # Create PDF for all possible combinations
             for number, combination in enumerate(combinations):
                 start_time = time()
-                request = HttpRequest()
                 if resource.copies:
                     combination["copies"] = 30
-                request.GET = combination
-                (pdf_file, filename) = generate_resource_pdf(request, resource, module_path)
+                requested_options = QueryDict(urlencode(combination, doseq=True))
+                generator = import_resource_generator(resource.generator_module, requested_options)
+                (pdf_file, filename) = generate_resource_pdf(resource.name, generator)
+
                 filename = "{}.pdf".format(filename)
                 pdf_file_output = open(os.path.join(BASE_PATH, filename), "wb")
                 pdf_file_output.write(pdf_file)
