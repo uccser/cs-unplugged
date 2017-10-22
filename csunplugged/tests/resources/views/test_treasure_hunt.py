@@ -20,7 +20,7 @@ class TreasureHuntResourceViewTest(BaseTestWithDB):
             "treasure-hunt",
             "Treasure Hunt",
             "resources/treasure-hunt.html",
-            "treasure_hunt.py",
+            "TreasureHuntResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -34,7 +34,7 @@ class TreasureHuntResourceViewTest(BaseTestWithDB):
             "treasure-hunt",
             "Treasure Hunt",
             "resources/treasure-hunt.html",
-            "treasure_hunt.py",
+            "TreasureHuntResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -92,7 +92,7 @@ class TreasureHuntResourceViewTest(BaseTestWithDB):
             "treasure-hunt",
             "Treasure Hunt",
             "resources/treasure-hunt.html",
-            "treasure_hunt.py",
+            "TreasureHuntResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -114,7 +114,7 @@ class TreasureHuntResourceViewTest(BaseTestWithDB):
             "treasure-hunt",
             "Treasure Hunt",
             "resources/treasure-hunt.html",
-            "treasure_hunt.py",
+            "TreasureHuntResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -136,7 +136,7 @@ class TreasureHuntResourceViewTest(BaseTestWithDB):
             "treasure-hunt",
             "Treasure Hunt",
             "resources/treasure-hunt.html",
-            "treasure_hunt.py",
+            "TreasureHuntResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -158,7 +158,7 @@ class TreasureHuntResourceViewTest(BaseTestWithDB):
             "treasure-hunt",
             "Treasure Hunt",
             "resources/treasure-hunt.html",
-            "treasure_hunt.py",
+            "TreasureHuntResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -180,7 +180,7 @@ class TreasureHuntResourceViewTest(BaseTestWithDB):
             "treasure-hunt",
             "Treasure Hunt",
             "resources/treasure-hunt.html",
-            "treasure_hunt.py",
+            "TreasureHuntResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -202,7 +202,7 @@ class TreasureHuntResourceViewTest(BaseTestWithDB):
             "treasure-hunt",
             "Treasure Hunt",
             "resources/treasure-hunt.html",
-            "treasure_hunt.py",
+            "TreasureHuntResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,

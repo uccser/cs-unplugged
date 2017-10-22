@@ -20,7 +20,7 @@ class TrainStationsResourceViewTest(BaseTestWithDB):
             "train-stations",
             "Train Stations",
             "resources/train-stations.html",
-            "train_stations.py",
+            "TrainStationsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -34,7 +34,7 @@ class TrainStationsResourceViewTest(BaseTestWithDB):
             "train-stations",
             "Train Stations",
             "resources/train-stations.html",
-            "train_stations.py",
+            "TrainStationsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -64,7 +64,7 @@ class TrainStationsResourceViewTest(BaseTestWithDB):
             "train-stations",
             "Train Stations",
             "resources/train-stations.html",
-            "train_stations.py",
+            "TrainStationsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -83,7 +83,7 @@ class TrainStationsResourceViewTest(BaseTestWithDB):
             "train-stations",
             "Train Stations",
             "resources/train-stations.html",
-            "train_stations.py",
+            "TrainStationsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -102,7 +102,7 @@ class TrainStationsResourceViewTest(BaseTestWithDB):
             "train-stations",
             "Train Stations",
             "resources/train-stations.html",
-            "train_stations.py",
+            "TrainStationsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,

@@ -20,7 +20,7 @@ class SortingNetworkCardsResourceViewTest(BaseTestWithDB):
             "sorting-network-cards",
             "Sorting Network Cards",
             "resources/sorting-network-cards.html",
-            "sorting_network_cards.py",
+            "SortingNetworkCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -34,7 +34,7 @@ class SortingNetworkCardsResourceViewTest(BaseTestWithDB):
             "sorting-network-cards",
             "Sorting Network Cards",
             "resources/sorting-network-cards.html",
-            "sorting_network_cards.py",
+            "SortingNetworkCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -66,7 +66,7 @@ class SortingNetworkCardsResourceViewTest(BaseTestWithDB):
             "sorting-network-cards",
             "Sorting Network Cards",
             "resources/sorting-network-cards.html",
-            "sorting_network_cards.py",
+            "SortingNetworkCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -85,7 +85,7 @@ class SortingNetworkCardsResourceViewTest(BaseTestWithDB):
             "sorting-network-cards",
             "Sorting Network Cards",
             "resources/sorting-network-cards.html",
-            "sorting_network_cards.py",
+            "SortingNetworkCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -104,7 +104,7 @@ class SortingNetworkCardsResourceViewTest(BaseTestWithDB):
             "sorting-network-cards",
             "Sorting Network Cards",
             "resources/sorting-network-cards.html",
-            "sorting_network_cards.py",
+            "SortingNetworkCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,

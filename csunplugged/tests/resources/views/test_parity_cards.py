@@ -20,7 +20,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
             "parity-cards",
             "Parity Cards",
             "resources/parity-cards.html",
-            "parity_cards.py",
+            "ParityCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -34,7 +34,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
             "parity-cards",
             "Parity Cards",
             "resources/parity-cards.html",
-            "parity_cards.py",
+            "ParityCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -64,7 +64,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
             "parity-cards",
             "Parity Cards",
             "resources/parity-cards.html",
-            "parity_cards.py",
+            "ParityCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -83,7 +83,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
             "parity-cards",
             "Parity Cards",
             "resources/parity-cards.html",
-            "parity_cards.py",
+            "ParityCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -102,7 +102,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
             "parity-cards",
             "Parity Cards",
             "resources/parity-cards.html",
-            "parity_cards.py",
+            "ParityCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,

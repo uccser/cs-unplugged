@@ -19,7 +19,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
             "binary-windows",
             "Binary Windows",
             "resources/binary-windows.html",
-            "binary_windows.py",
+            "BinaryWindowsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -33,7 +33,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
             "binary-windows",
             "Binary Windows",
             "resources/binary-windows.html",
-            "binary_windows.py",
+            "BinaryWindowsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -76,7 +76,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
             "binary-windows",
             "Binary Windows",
             "resources/binary-windows.html",
-            "binary_windows.py",
+            "BinaryWindowsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -97,7 +97,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
             "binary-windows",
             "Binary Windows",
             "resources/binary-windows.html",
-            "binary_windows.py",
+            "BinaryWindowsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -118,7 +118,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
             "binary-windows",
             "Binary Windows",
             "resources/binary-windows.html",
-            "binary_windows.py",
+            "BinaryWindowsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -139,7 +139,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
             "binary-windows",
             "Binary Windows",
             "resources/binary-windows.html",
-            "binary_windows.py",
+            "BinaryWindowsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -160,7 +160,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
             "binary-windows",
             "Binary Windows",
             "resources/binary-windows.html",
-            "binary_windows.py",
+            "BinaryWindowsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,

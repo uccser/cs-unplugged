@@ -18,7 +18,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
             "binary-to-alphabet",
             "Binary To Alphabet",
             "resources/binary-to-alphabet.html",
-            "binary_to_alphabet.py"
+            "BinaryToAlphabetResourceGenerator"
         )
         kwargs = {
             "resource_slug": resource.slug
@@ -32,7 +32,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
             "binary-to-alphabet",
             "Binary To Alphabet",
             "resources/binary-to-alphabet.html",
-            "binary_to_alphabet.py"
+            "BinaryToAlphabetResourceGenerator"
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -56,7 +56,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
             "binary-to-alphabet",
             "Binary To Alphabet",
             "resources/binary-to-alphabet.html",
-            "binary_to_alphabet.py"
+            "BinaryToAlphabetResourceGenerator"
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -80,7 +80,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
             "binary-to-alphabet",
             "Binary To Alphabet",
             "resources/binary-to-alphabet.html",
-            "binary_to_alphabet.py"
+            "BinaryToAlphabetResourceGenerator"
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -104,7 +104,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
             "binary-to-alphabet",
             "Binary To Alphabet",
             "resources/binary-to-alphabet.html",
-            "binary_to_alphabet.py"
+            "BinaryToAlphabetResourceGenerator"
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -128,7 +128,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
             "binary-to-alphabet",
             "Binary To Alphabet",
             "resources/binary-to-alphabet.html",
-            "binary_to_alphabet.py"
+            "BinaryToAlphabetResourceGenerator"
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -152,7 +152,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
             "binary-to-alphabet",
             "Binary To Alphabet",
             "resources/binary-to-alphabet.html",
-            "binary_to_alphabet.py"
+            "BinaryToAlphabetResourceGenerator"
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -176,7 +176,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
             "binary-to-alphabet",
             "Binary To Alphabet",
             "resources/binary-to-alphabet.html",
-            "binary_to_alphabet.py"
+            "BinaryToAlphabetResourceGenerator"
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -200,7 +200,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
             "binary-to-alphabet",
             "Binary To Alphabet",
             "resources/binary-to-alphabet.html",
-            "binary_to_alphabet.py"
+            "BinaryToAlphabetResourceGenerator"
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -224,7 +224,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
             "binary-to-alphabet",
             "Binary To Alphabet",
             "resources/binary-to-alphabet.html",
-            "binary_to_alphabet.py"
+            "BinaryToAlphabetResourceGenerator"
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -247,7 +247,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
             "binary-to-alphabet",
             "Binary To Alphabet",
             "resources/binary-to-alphabet.html",
-            "binary_to_alphabet.py"
+            "BinaryToAlphabetResourceGenerator"
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -266,7 +266,7 @@ class BinaryToAlphabetResourceViewTest(BaseTestWithDB):
             "binary-to-alphabet",
             "Binary To Alphabet",
             "resources/binary-to-alphabet.html",
-            "binary_to_alphabet.py"
+            "BinaryToAlphabetResourceGenerator"
         )
         kwargs = {
             "resource_slug": resource.slug,

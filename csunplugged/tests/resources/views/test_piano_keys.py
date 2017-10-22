@@ -21,7 +21,7 @@ class PianoKeysResourceViewTest(BaseTestWithDB):
             "piano-keys",
             "Piano Keys",
             "resources/piano-keys.html",
-            "piano_keys.py",
+            "PianoKeysResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -35,7 +35,7 @@ class PianoKeysResourceViewTest(BaseTestWithDB):
             "piano-keys",
             "Piano Keys",
             "resources/piano-keys.html",
-            "piano_keys.py",
+            "PianoKeysResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -65,7 +65,7 @@ class PianoKeysResourceViewTest(BaseTestWithDB):
             "piano-keys",
             "Piano Keys",
             "resources/piano-keys.html",
-            "piano_keys.py",
+            "PianoKeysResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -84,7 +84,7 @@ class PianoKeysResourceViewTest(BaseTestWithDB):
             "piano-keys",
             "Piano Keys",
             "resources/piano-keys.html",
-            "piano_keys.py",
+            "PianoKeysResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -103,7 +103,7 @@ class PianoKeysResourceViewTest(BaseTestWithDB):
             "piano-keys",
             "Piano Keys",
             "resources/piano-keys.html",
-            "piano_keys.py",
+            "PianoKeysResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,

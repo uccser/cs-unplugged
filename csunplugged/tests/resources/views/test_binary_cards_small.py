@@ -20,7 +20,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards (small)",
             "resources/binary-cards-small.html",
-            "binary_cards_small.py",
+            "BinaryCardsSmallResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -34,7 +34,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards (small)",
             "resources/binary-cards-small.html",
-            "binary_cards_small.py",
+            "BinaryCardsSmallResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -84,7 +84,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards (small)",
             "resources/binary-cards-small.html",
-            "binary_cards_small.py",
+            "BinaryCardsSmallResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -105,7 +105,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards (small)",
             "resources/binary-cards-small.html",
-            "binary_cards_small.py",
+            "BinaryCardsSmallResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -126,7 +126,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards (small)",
             "resources/binary-cards-small.html",
-            "binary_cards_small.py",
+            "BinaryCardsSmallResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -147,7 +147,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards (small)",
             "resources/binary-cards-small.html",
-            "binary_cards_small.py",
+            "BinaryCardsSmallResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -168,7 +168,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards (small)",
             "resources/binary-cards-small.html",
-            "binary_cards_small.py",
+            "BinaryCardsSmallResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,

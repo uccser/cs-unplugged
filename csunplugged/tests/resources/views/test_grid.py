@@ -22,7 +22,7 @@ class GridResourceViewTest(BaseTestWithDB):
             "grid",
             "Grid",
             "resources/grid.html",
-            "grid.py",
+            "GridResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -36,7 +36,7 @@ class GridResourceViewTest(BaseTestWithDB):
             "grid",
             "Grid",
             "resources/grid.html",
-            "grid.py",
+            "GridResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -63,7 +63,7 @@ class GridResourceViewTest(BaseTestWithDB):
             "grid",
             "Grid",
             "resources/grid.html",
-            "grid.py",
+            "GridResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -81,7 +81,7 @@ class GridResourceViewTest(BaseTestWithDB):
             "grid",
             "Grid",
             "resources/grid.html",
-            "grid.py",
+            "GridResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,

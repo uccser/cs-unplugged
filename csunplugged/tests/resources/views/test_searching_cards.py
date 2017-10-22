@@ -20,7 +20,7 @@ class SearchingCardsResourceViewTest(BaseTestWithDB):
             "searching-cards",
             "Searching Cards",
             "resources/searching-cards.html",
-            "searching_cards.py",
+            "SearchingCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -34,7 +34,7 @@ class SearchingCardsResourceViewTest(BaseTestWithDB):
             "searching-cards",
             "Searching Cards",
             "resources/searching-cards.html",
-            "searching_cards.py",
+            "SearchingCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -77,7 +77,7 @@ class SearchingCardsResourceViewTest(BaseTestWithDB):
             "searching-cards",
             "Searching Cards",
             "resources/searching-cards.html",
-            "searching_cards.py",
+            "SearchingCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -98,7 +98,7 @@ class SearchingCardsResourceViewTest(BaseTestWithDB):
             "searching-cards",
             "Searching Cards",
             "resources/searching-cards.html",
-            "searching_cards.py",
+            "SearchingCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -119,7 +119,7 @@ class SearchingCardsResourceViewTest(BaseTestWithDB):
             "searching-cards",
             "Searching Cards",
             "resources/searching-cards.html",
-            "searching_cards.py",
+            "SearchingCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -140,7 +140,7 @@ class SearchingCardsResourceViewTest(BaseTestWithDB):
             "searching-cards",
             "Searching Cards",
             "resources/searching-cards.html",
-            "searching_cards.py",
+            "SearchingCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -161,7 +161,7 @@ class SearchingCardsResourceViewTest(BaseTestWithDB):
             "searching-cards",
             "Searching Cards",
             "resources/searching-cards.html",
-            "searching_cards.py",
+            "SearchingCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,

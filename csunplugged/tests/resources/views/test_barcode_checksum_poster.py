@@ -20,7 +20,7 @@ class BarcodeChecksumPosterResourceViewTest(BaseTestWithDB):
             "barcode-checksum-poster",
             "Barcode Checksum Poster",
             "resources/barcode-checksum-poster.html",
-            "barcode_checksum_poster.py",
+            "BarcodeChecksumPosterResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -34,7 +34,7 @@ class BarcodeChecksumPosterResourceViewTest(BaseTestWithDB):
             "barcode-checksum-poster",
             "Barcode Checksum Poster",
             "resources/barcode-checksum-poster.html",
-            "barcode_checksum_poster.py",
+            "BarcodeChecksumPosterResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -64,7 +64,7 @@ class BarcodeChecksumPosterResourceViewTest(BaseTestWithDB):
             "barcode-checksum-poster",
             "Barcode Checksum Poster",
             "resources/barcode-checksum-poster.html",
-            "barcode_checksum_poster.py",
+            "BarcodeChecksumPosterResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -83,7 +83,7 @@ class BarcodeChecksumPosterResourceViewTest(BaseTestWithDB):
             "barcode-checksum-poster",
             "Barcode Checksum Poster",
             "resources/barcode-checksum-poster.html",
-            "barcode_checksum_poster.py",
+            "BarcodeChecksumPosterResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -102,7 +102,7 @@ class BarcodeChecksumPosterResourceViewTest(BaseTestWithDB):
             "barcode-checksum-poster",
             "Barcode Checksum Poster",
             "resources/barcode-checksum-poster.html",
-            "barcode_checksum_poster.py",
+            "BarcodeChecksumPosterResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,

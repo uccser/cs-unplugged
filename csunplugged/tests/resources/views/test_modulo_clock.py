@@ -20,7 +20,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -34,7 +34,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -59,7 +59,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -84,7 +84,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -109,7 +109,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -134,7 +134,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -159,7 +159,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -184,7 +184,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -209,7 +209,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -234,7 +234,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -259,7 +259,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -284,7 +284,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -309,7 +309,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -334,7 +334,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -353,7 +353,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -372,7 +372,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,

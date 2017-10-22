@@ -20,7 +20,7 @@ class ArrowsResourceViewTest(BaseTestWithDB):
             "arrows",
             "Arrows",
             "resources/arrows.html",
-            "arrows.py",
+            "ArrowsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -34,7 +34,7 @@ class ArrowsResourceViewTest(BaseTestWithDB):
             "arrows",
             "Arrows",
             "resources/arrows.html",
-            "arrows.py",
+            "ArrowsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -58,7 +58,7 @@ class ArrowsResourceViewTest(BaseTestWithDB):
             "arrows",
             "Arrows",
             "resources/arrows.html",
-            "arrows.py",
+            "ArrowsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -82,7 +82,7 @@ class ArrowsResourceViewTest(BaseTestWithDB):
             "arrows",
             "Arrows",
             "resources/arrows.html",
-            "arrows.py",
+            "ArrowsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -106,7 +106,7 @@ class ArrowsResourceViewTest(BaseTestWithDB):
             "arrows",
             "Arrows",
             "resources/arrows.html",
-            "arrows.py",
+            "ArrowsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -130,7 +130,7 @@ class ArrowsResourceViewTest(BaseTestWithDB):
             "arrows",
             "Arrows",
             "resources/arrows.html",
-            "arrows.py",
+            "ArrowsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -148,7 +148,7 @@ class ArrowsResourceViewTest(BaseTestWithDB):
             "arrows",
             "Arrows",
             "resources/arrows.html",
-            "arrows.py",
+            "ArrowsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,

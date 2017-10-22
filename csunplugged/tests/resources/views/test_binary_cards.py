@@ -18,7 +18,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards",
             "resources/binary-cards.html",
-            "binary_cards.py",
+            "BinaryCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -32,7 +32,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards",
             "resources/binary-cards.html",
-            "binary_cards.py",
+            "BinaryCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -57,7 +57,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards",
             "resources/binary-cards.html",
-            "binary_cards.py",
+            "BinaryCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -82,7 +82,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards",
             "resources/binary-cards.html",
-            "binary_cards.py",
+            "BinaryCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -107,7 +107,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards",
             "resources/binary-cards.html",
-            "binary_cards.py",
+            "BinaryCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -132,7 +132,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards",
             "resources/binary-cards.html",
-            "binary_cards.py",
+            "BinaryCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -157,7 +157,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards",
             "resources/binary-cards.html",
-            "binary_cards.py",
+            "BinaryCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -182,7 +182,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards",
             "resources/binary-cards.html",
-            "binary_cards.py",
+            "BinaryCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -202,7 +202,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards",
             "resources/binary-cards.html",
-            "binary_cards.py",
+            "BinaryCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -222,7 +222,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards",
             "resources/binary-cards.html",
-            "binary_cards.py",
+            "BinaryCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -242,7 +242,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards",
             "resources/binary-cards.html",
-            "binary_cards.py",
+            "BinaryCardsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
