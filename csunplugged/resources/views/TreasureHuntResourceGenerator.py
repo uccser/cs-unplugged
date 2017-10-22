@@ -26,10 +26,10 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
         # TODO: Call super __init__
         self.valid_options = BaseResourceGenerator.default_valid_options
         self.valid_options.update(self.additional_valid_options)
-        self.requested_options = requested_options
         if requested_options:
+            self.requested_options = self.process_requested_options(requested_options)
             self.check_requested_options()
-        self.set_number_range()
+            self.set_number_range()
 
     def data(self):
         """Create data for a copy of the Treasure Hunt resource.
@@ -55,7 +55,7 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
 
         # Add numbers to image if required
         if prefilled_values != "blank":
-            font = ImageFont.truetype(font_path, font_size)
+            font = ImageFont.truetype(font_path, self.font_size)
 
             total_numbers = 26
             numbers = sample(range(self.range_min, self.range_max), total_numbers)
@@ -114,7 +114,7 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
             range_text = "blank"
         else:
             SUBTITLE_TEMPLATE = "{} - {} to {}"
-            number_order_text = retrieve_query_parameter(request, "number_order").title()
+            number_order_text = number_order.title()
             range_text = SUBTITLE_TEMPLATE.format(number_order_text, self.range_min, self.range_max - 1)
 
         if art_style == "colour":

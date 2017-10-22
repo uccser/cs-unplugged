@@ -77,7 +77,7 @@ class PianoKeysResourceGenerator(BaseResourceGenerator):
         page = Image.new("RGB", image.size, "#FFF")
 
         if highlight:
-            highlight_key_areas(page, KEY_DATA.get(highlight))
+            self.highlight_key_areas(page, KEY_DATA.get(highlight))
 
         # Add piano keys overlay
         page.paste(image, mask=image)

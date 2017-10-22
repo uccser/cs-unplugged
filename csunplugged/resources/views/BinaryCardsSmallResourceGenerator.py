@@ -2,6 +2,7 @@
 
 from PIL import Image, ImageDraw, ImageFont
 from random import sample
+import os.path
 from utils.BaseResourceGenerator import BaseResourceGenerator
 
 BASE_IMAGE_PATH = "static/img/resources/binary-cards-small/"
@@ -45,7 +46,7 @@ class BinaryCardsSmallResourceGenerator(BaseResourceGenerator):
         for (image_path, image_bits) in IMAGE_DATA:
             if image_bits <= int(self.requested_options["number_bits"]):
                 image = Image.open(os.path.join(BASE_IMAGE_PATH, image_path))
-                if dot_counts:
+                if self.requested_options["dot_counts"]:
                     draw = ImageDraw.Draw(image)
                     for number in range(image_bits - 4, image_bits):
                         text = str(pow(2, number))

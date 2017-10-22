@@ -1,5 +1,6 @@
 """Class for Binary Cards resource generator."""
 
+import os.path
 from PIL import Image, ImageDraw, ImageFont
 from random import sample
 from utils.BaseResourceGenerator import BaseResourceGenerator
@@ -37,20 +38,21 @@ class BinaryCardsResourceGenerator(BaseResourceGenerator):
         # Retrieve parameters
         display_numbers = self.requested_options["display_numbers"]
         black_back = self.requested_options["black_back"]
+        image_size_y = IMAGE_SIZE_Y
 
         if display_numbers:
             font_path = "static/fonts/PatrickHand-Regular.ttf"
             font = ImageFont.truetype(font_path, 600)
             BASE_COORD_X = IMAGE_SIZE_X / 2
-            BASE_COORD_Y = IMAGE_SIZE_Y - 100
-            IMAGE_SIZE_Y = IMAGE_SIZE_Y + 300
+            BASE_COORD_Y = image_size_y - 100
+            image_size_y = image_size_y + 300
 
         pages = []
 
         for (image_path, number) in IMAGE_DATA:
             image = Image.open(os.path.join(BASE_IMAGE_PATH, image_path))
             if display_numbers:
-                background = Image.new("RGB", (IMAGE_SIZE_X, IMAGE_SIZE_Y), "#FFF")
+                background = Image.new("RGB", (IMAGE_SIZE_X, image_size_y), "#FFF")
                 background.paste(image, mask=image)
                 draw = ImageDraw.Draw(background)
                 text = str(number)
@@ -67,7 +69,7 @@ class BinaryCardsResourceGenerator(BaseResourceGenerator):
             pages.append({"type": "image", "data": image})
 
             if black_back:
-                black_card = Image.new("1", (IMAGE_SIZE_X, IMAGE_SIZE_Y))
+                black_card = Image.new("1", (IMAGE_SIZE_X, image_size_y))
                 pages.append({"type": "image", "data": black_card})
 
         return pages
@@ -92,7 +94,7 @@ class BinaryCardsResourceGenerator(BaseResourceGenerator):
         else:
             black_back_text = "without black back"
 
-        text = "with{} numbers - with{} black back - {}".format(
+        text = "{} - {} - {}".format(
             display_numbers_text,
             black_back_text,
             super().subtitle

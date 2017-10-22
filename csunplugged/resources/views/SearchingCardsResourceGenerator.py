@@ -115,22 +115,19 @@ class SearchingCardsResourceGenerator(BaseResourceGenerator):
                         line("li", number)
         return doc.getvalue()
 
-
-    def subtitle(request, resource):
+    @property
+    def subtitle(self):
         """Return the subtitle string of the resource.
 
         Used after the resource name in the filename, and
         also on the resource image.
-
-        Args:
-            request: HTTP request object (HttpRequest).
-            resource: Object of resource data (Resource).
 
         Returns:
             text for subtitle (str).
         """
         max_number = self.requested_options["max_number"]
         help_sheet = self.requested_options["help_sheet"]
+        number_cards = self.requested_options["number_cards"]
 
         if max_number == "blank":
             range_text = "blank"
@@ -145,7 +142,7 @@ class SearchingCardsResourceGenerator(BaseResourceGenerator):
             help_text = "without helper sheet"
 
         text = "{} cards - {} - {} - {}".format(
-            self.requested_options["number_cards"],
+            number_cards,
             range_text,
             help_text,
             super().subtitle

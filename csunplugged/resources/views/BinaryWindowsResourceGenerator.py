@@ -6,6 +6,8 @@ from utils.BaseResourceGenerator import BaseResourceGenerator
 
 BASE_IMAGE_PATH = "static/img/resources/binary-windows/"
 FONT_PATH = "static/fonts/PatrickHand-Regular.ttf"
+FONT = ImageFont.truetype(FONT_PATH, 300)
+SMALL_FONT = ImageFont.truetype(FONT_PATH, 180)
 
 
 class BinaryWindowsResourceGenerator(BaseResourceGenerator):
@@ -24,9 +26,6 @@ class BinaryWindowsResourceGenerator(BaseResourceGenerator):
             A dictionary or list of dictionaries for each resource page.
         """
 
-        FONT = ImageFont.truetype(FONT_PATH, 300)
-        SMALL_FONT = ImageFont.truetype(FONT_PATH, 180)
-
         # Retrieve parameters
         number_of_bits = self.requested_options["number_bits"]
         value_type = self.requested_options["value_type"]
@@ -41,7 +40,7 @@ class BinaryWindowsResourceGenerator(BaseResourceGenerator):
             image = Image.open(os.path.join(BASE_IMAGE_PATH, filename))
             image = self.add_digit_values(image, value_type, True, 660, 724, 1700, FONT)
             if dot_counts:
-                image = add_dot_counts(image, dot_count_start, SMALL_FONT)
+                image = self.add_dot_counts(image, dot_count_start, SMALL_FONT)
             image = image.rotate(90, expand=True)
             pages.append({"type": "image", "data": image})
             pages.append(self.back_page(value_type))
@@ -59,7 +58,7 @@ class BinaryWindowsResourceGenerator(BaseResourceGenerator):
             A dictionary for the back page.
         """
         image = Image.open(os.path.join(BASE_IMAGE_PATH, "binary-windows-blank.png"))
-        image = add_digit_values(image, value_type, False, 660, 724, 650, FONT)
+        image = self.add_digit_values(image, value_type, False, 660, 724, 650, FONT)
         image = image.rotate(90, expand=True)
         return {"type": "image", "data": image}
 

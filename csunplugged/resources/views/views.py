@@ -112,7 +112,7 @@ def generate_resource_pdf(name, generator):
 
     context = dict()
     context["resource"] = name
-    context["header_text"] = generator.requested_options["header_text"]
+    context["header_text"] = generator.requested_options.get("header_text", "")
     context["paper_size"] = generator.requested_options["paper_size"]
 
     num_copies = range(0, int(generator.requested_options.get("copies", 1)))

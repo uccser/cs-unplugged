@@ -23,7 +23,7 @@ class SortingNetworkCardsResourceGenerator(BaseResourceGenerator):
             "fractions",
             "maori_colours",
             "maori_numbers",
-            "butterfly"
+            "butterfly",
             "riding_hood",
         ],
     }
