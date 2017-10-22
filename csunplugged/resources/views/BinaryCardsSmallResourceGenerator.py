@@ -29,7 +29,6 @@ class BinaryCardsSmallResourceGenerator(BaseResourceGenerator):
         Returns:
             A dictionary or list of dictionaries for each resource page.
         """
-
         if self.requested_options["dot_counts"]:
             font_path = "static/fonts/PatrickHand-Regular.ttf"
             font = ImageFont.truetype(font_path, 200)

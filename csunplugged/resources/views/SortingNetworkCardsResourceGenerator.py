@@ -34,7 +34,6 @@ class SortingNetworkCardsResourceGenerator(BaseResourceGenerator):
         Returns:
             A list of dictionaries for each resource page.
         """
-
         font_path = "static/fonts/PatrickHand-Regular.ttf"
         card_type = self.requested_options["type"]
 

@@ -33,7 +33,6 @@ class BinaryCardsResourceGenerator(BaseResourceGenerator):
         Returns:
             A dictionary or list of dictionaries for each resource page.
         """
-
         # Retrieve parameters
         display_numbers = self.requested_options["display_numbers"]
         black_back = self.requested_options["black_back"]

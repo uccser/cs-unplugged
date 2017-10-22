@@ -148,7 +148,6 @@ def generate_resource_copy(generator):
             - String for HTML.
             - Base64 string of image.
     """
-
     data = generator.data()
     if not isinstance(data, list):
         data = [data]

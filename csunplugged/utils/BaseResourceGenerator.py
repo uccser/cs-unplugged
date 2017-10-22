@@ -14,7 +14,7 @@ class BaseResourceGenerator(ABC):
     additional_valid_options = dict()
 
     def __init__(self, requested_options=None):
-        """Constructor for BaseResourceGenerator.
+        """Construct BaseResourceGenerator instance.
 
         Args:
             requested_options: QueryDict of requested_options (QueryDict).
@@ -48,6 +48,13 @@ class BaseResourceGenerator(ABC):
         return self.requested_options["paper_size"]
 
     def process_requested_options(self, requested_options):
+        """Convert requested options to usable types.
+
+        Update all values through str_to_bool utility function.
+
+        Returns:
+            QueryDict of converted requested options (QueryDict).
+        """
         requested_options = requested_options.copy()
         for option in self.valid_options.keys():
             values = requested_options.getlist(option)

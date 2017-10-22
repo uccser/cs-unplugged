@@ -25,7 +25,6 @@ class BinaryWindowsResourceGenerator(BaseResourceGenerator):
         Returns:
             A dictionary or list of dictionaries for each resource page.
         """
-
         # Retrieve parameters
         number_of_bits = self.requested_options["number_bits"]
         value_type = self.requested_options["value_type"]

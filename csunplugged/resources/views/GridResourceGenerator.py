@@ -21,7 +21,6 @@ class GridResourceGenerator(BaseResourceGenerator):
         Returns:
             A dictionary of the one page for the resource.
         """
-
         page = Image.new("RGB", (IMAGE_SIZE_X, IMAGE_SIZE_Y), "#fff")
         draw = ImageDraw.Draw(page)
         for x_coord in range(0, IMAGE_SIZE_X, BOX_SIZE):

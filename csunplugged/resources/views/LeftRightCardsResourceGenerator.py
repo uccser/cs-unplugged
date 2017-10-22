@@ -13,7 +13,6 @@ class LeftRightCardsResourceGenerator(BaseResourceGenerator):
         Returns:
             A dictionary of the one page for the resource.
         """
-
         image_path = "static/img/resources/left-right-cards/left-right-cards.png"
         image = Image.open(image_path)
         return {"type": "image", "data": image}

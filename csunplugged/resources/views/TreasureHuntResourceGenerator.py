@@ -18,7 +18,7 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
     }
 
     def __init__(self, requested_options=None):
-        """Constructor for BaseResourceGenerator.
+        """Construct TreasureHuntResourceGenerator instance.
 
         Args:
             request: HTTP request object (HttpRequest).

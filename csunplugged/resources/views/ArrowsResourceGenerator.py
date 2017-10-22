@@ -13,6 +13,5 @@ class ArrowsResourceGenerator(BaseResourceGenerator):
         Returns:
             A dictionary of the one page for the resource.
         """
-
         image = Image.open("static/img/resources/arrows/arrows.png")
         return {"type": "image", "data": image}

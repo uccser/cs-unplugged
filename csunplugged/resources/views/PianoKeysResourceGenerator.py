@@ -70,7 +70,6 @@ class PianoKeysResourceGenerator(BaseResourceGenerator):
         Returns:
             A list of dictionaries for each resource page.
         """
-
         highlight = self.requested_options["highlight"]
         image_path = "static/img/resources/piano-keys/keyboard.png"
         image = Image.open(image_path)
