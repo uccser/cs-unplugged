@@ -4,7 +4,7 @@ import itertools
 from utils.bool_to_yes_no import bool_to_yes_no
 
 
-def resource_valid_test_configurations(valid_options):
+def resource_valid_test_configurations(valid_options, header_text=True):
     """Return list of all possible valid resource combinations.
 
     Args:
@@ -14,7 +14,8 @@ def resource_valid_test_configurations(valid_options):
     Returns:
         List of lists of valid combinations (list).
     """
-    valid_options["header_text"] = ["", "Example header"]
+    if header_text:
+        valid_options["header_text"] = ["", "Example header"]
     # Change all booleans to text to mimic forms
     for (key, value) in valid_options.items():
         if isinstance(value, bool):
