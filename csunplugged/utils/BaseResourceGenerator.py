@@ -3,6 +3,7 @@
 from django.http import Http404
 from abc import ABC, abstractmethod
 from utils.str_to_bool import str_to_bool
+from copy import deepcopy
 
 
 class BaseResourceGenerator(ABC):
@@ -19,7 +20,9 @@ class BaseResourceGenerator(ABC):
         Args:
             requested_options: QueryDict of requested_options (QueryDict).
         """
-        self.valid_options = BaseResourceGenerator.default_valid_options
+        # Use deepcopy to avoid successive generators from sharing the same
+        # valid_options dictionary.
+        self.valid_options = deepcopy(BaseResourceGenerator.default_valid_options)
         self.valid_options.update(self.additional_valid_options)
         if requested_options:
             self.requested_options = self.process_requested_options(requested_options)
