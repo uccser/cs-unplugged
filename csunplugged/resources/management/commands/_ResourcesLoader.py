@@ -43,7 +43,7 @@ class ResourcesLoader(BaseLoader):
                 resource_view = resource_structure["generation-view"]
                 resource_thumbnail = resource_structure["thumbnail-static-path"]
                 resource_copies = resource_structure["copies"]
-            except:
+            except KeyError:
                 raise MissingRequiredFieldError()
 
             resource = Resource(
