@@ -5,23 +5,15 @@
   <title>{{ filename }}</title>
   <style>
     @page {
-      margin: 10mm 10mm;
       {% if paper_size == "a4" %}
         size: A4;
       {% elif paper_size == "letter" %}
         size: letter;
       {% endif %}
     }
-    img.base-image {
-      {% if paper_size == "a4" %}
-        max-height: 257mm !important;
-      {% elif paper_size == "letter" %}
-        max-height: 239mm !important;
-      {% endif %}
-    }
   </style>
 </head>
-<body>
+<body class="paper-{{ paper_size }}">
   <header class="fixed-running-element">
     {{ header_text }}
   </header>

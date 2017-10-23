@@ -2,8 +2,7 @@
 
 {panel type="general" title="Preparatory knowledge"}
 
-It is helpful, but not essential, for students to have done the lesson on the
-Modulo operator before doing this lesson.
+It is helpful, but not essential, for students to have done the [lesson on the Modulo operator]('topics:lesson' 'unplugged-programming' 'numeracy-unit-plan' 'modulo') before doing this lesson.
 
 {panel end}
 
@@ -86,7 +85,7 @@ multiplied by three.
 {image file-path="img/topics/barcode-13-step-5.png"}
 
 Add the result from the first sum to the multiplied answer (in this case,
-  the 9 from the 29 to the 2 from the 12):
+the 9 from the 29 to the 2 from the 12):
 
 {image file-path="img/topics/barcode-13-step-6.png"}
 

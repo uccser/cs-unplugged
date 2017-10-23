@@ -87,7 +87,7 @@ def create_help_sheet(numbers, range_text):
     doc, tag, text, line = Doc().ttl()
     with tag("div"):
         with tag("h1"):
-            text("Helper page for binary search activity")
+            text("Teacher guide sheet for binary search activity")
         with tag("p"):
             text(
                 "Use this sheet to circle the number you are asking your class ",
