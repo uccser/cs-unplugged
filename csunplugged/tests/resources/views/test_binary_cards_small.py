@@ -1,4 +1,3 @@
-import itertools
 from django.test import tag
 from django.urls import reverse
 from tests.BaseTestWithDB import BaseTestWithDB
