@@ -3,6 +3,7 @@
 from PIL import Image, ImageDraw, ImageFont
 from random import sample
 from utils.BaseResourceGenerator import BaseResourceGenerator
+from copy import deepcopy
 
 IMAGE_PATH = "static/img/resources/treasure-hunt/{}.png"
 
@@ -24,11 +25,10 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
             request: HTTP request object (HttpRequest).
         """
         # TODO: Call super __init__
-        self.valid_options = BaseResourceGenerator.default_valid_options
+        self.valid_options = deepcopy(BaseResourceGenerator.default_valid_options)
         self.valid_options.update(self.additional_valid_options)
         if requested_options:
             self.requested_options = self.process_requested_options(requested_options)
-            self.check_requested_options()
             self.set_number_range()
 
     def data(self):
