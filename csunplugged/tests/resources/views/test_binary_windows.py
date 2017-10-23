@@ -50,7 +50,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
             url = base_url + query_string(combination)
             response = self.client.get(url)
             self.assertEqual(200, response.status_code)
-            if combination["dot_counts"] == "yes":
+            if combination["dot_counts"]:
                 count_text = "with dot counts"
             else:
                 count_text = "without dot counts"
