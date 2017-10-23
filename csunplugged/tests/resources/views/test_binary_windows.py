@@ -1,10 +1,10 @@
-import itertools
 from django.test import tag
 from django.urls import reverse
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
 from utils.import_resource_generator import import_resource_generator
 from utils.create_query_string import query_string
+from utils.resource_valid_test_configurations import resource_valid_test_configurations
 
 
 @tag('resource_generation')
