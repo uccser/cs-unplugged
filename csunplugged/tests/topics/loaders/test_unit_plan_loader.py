@@ -32,7 +32,13 @@ class UnitPlanLoaderTest(BaseTestWithDB):
         self.test_data.create_lesson(topic, unit_plan, "1")
         self.test_data.create_age_group(8, 10)
 
-        up_loader = UnitPlanLoader(factory, topic, structure_filename=structure_filename, base_path=self.base_path, content_path=content_path)
+        up_loader = UnitPlanLoader(
+            factory,
+            topic,
+            structure_filename=structure_filename,
+            base_path=self.base_path,
+            content_path=content_path
+        )
         up_loader.load()
 
         up_objects = UnitPlan.objects.all()
@@ -55,7 +61,13 @@ class UnitPlanLoaderTest(BaseTestWithDB):
         factory = Mock()
         topic = self.test_data.create_topic("1")
 
-        up_loader = UnitPlanLoader(factory, topic, structure_filename=structure_filename, base_path=self.base_path, content_path=content_path)
+        up_loader = UnitPlanLoader(
+            factory,
+            topic,
+            structure_filename=structure_filename,
+            base_path=self.base_path,
+            content_path=content_path
+        )
 
         self.assertRaises(
             MissingRequiredFieldError,
@@ -68,7 +80,13 @@ class UnitPlanLoaderTest(BaseTestWithDB):
         factory = Mock()
         topic = self.test_data.create_topic("1")
 
-        up_loader = UnitPlanLoader(factory, topic, structure_filename=structure_filename, base_path=self.base_path, content_path=content_path)
+        up_loader = UnitPlanLoader(
+            factory,
+            topic,
+            structure_filename=structure_filename,
+            base_path=self.base_path,
+            content_path=content_path
+        )
 
         self.assertRaises(
             EmptyMarkdownFileError,
@@ -81,7 +99,13 @@ class UnitPlanLoaderTest(BaseTestWithDB):
         factory = Mock()
         topic = self.test_data.create_topic("1")
 
-        up_loader = UnitPlanLoader(factory, topic, structure_filename=structure_filename, base_path=self.base_path, content_path=content_path)
+        up_loader = UnitPlanLoader(
+            factory,
+            topic,
+            structure_filename=structure_filename,
+            base_path=self.base_path,
+            content_path=content_path
+        )
 
         self.assertRaises(
             NoHeadingFoundInMarkdownFileError,
@@ -94,7 +118,13 @@ class UnitPlanLoaderTest(BaseTestWithDB):
         factory = Mock()
         topic = self.test_data.create_topic("1")
 
-        up_loader = UnitPlanLoader(factory, topic, structure_filename=structure_filename, base_path=self.base_path, content_path=content_path)
+        up_loader = UnitPlanLoader(
+            factory,
+            topic,
+            structure_filename=structure_filename,
+            base_path=self.base_path,
+            content_path=content_path
+        )
 
         self.assertRaises(
             MissingRequiredFieldError,
@@ -110,8 +140,15 @@ class UnitPlanLoaderTest(BaseTestWithDB):
         self.test_data.create_lesson(topic, unit_plan, "1")
         self.test_data.create_age_group(8, 10)
 
-        up_loader = UnitPlanLoader(factory, topic, structure_filename=structure_filename, base_path=self.base_path, content_path=content_path)
+        up_loader = UnitPlanLoader(
+            factory,
+            topic,
+            structure_filename=structure_filename,
+            base_path=self.base_path,
+            content_path=content_path
+        )
         up_loader.load()
+
         self.assertEqual(
             UnitPlan.objects.get(slug="ct-links").computational_thinking_links,
             "<p>CT link text</p>"
@@ -126,7 +163,13 @@ class UnitPlanLoaderTest(BaseTestWithDB):
         self.test_data.create_lesson(topic, unit_plan, "1")
         self.test_data.create_age_group(8, 10)
 
-        up_loader = UnitPlanLoader(factory, topic, structure_filename=structure_filename, base_path=self.base_path, content_path=content_path)
+        up_loader = UnitPlanLoader(
+            factory,
+            topic,
+            structure_filename=structure_filename,
+            base_path=self.base_path,
+            content_path=content_path
+        )
         up_loader.load()
 
         up_objects = UnitPlan.objects.all()
@@ -147,7 +190,13 @@ class UnitPlanLoaderTest(BaseTestWithDB):
         topic = self.test_data.create_topic("1")
         self.test_data.create_age_group(8, 10)
 
-        up_loader = UnitPlanLoader(factory, topic, structure_filename=structure_filename, base_path=self.base_path, content_path=content_path)
+        up_loader = UnitPlanLoader(
+            factory,
+            topic,
+            structure_filename=structure_filename,
+            base_path=self.base_path,
+            content_path=content_path
+        )
 
         self.assertRaises(
             MissingRequiredFieldError,
@@ -163,7 +212,13 @@ class UnitPlanLoaderTest(BaseTestWithDB):
         self.test_data.create_lesson(topic, unit_plan, "1")
         self.test_data.create_age_group(8, 10)
 
-        up_loader = UnitPlanLoader(factory, topic, structure_filename=structure_filename, base_path=self.base_path, content_path=content_path)
+        up_loader = UnitPlanLoader(
+            factory,
+            topic,
+            structure_filename=structure_filename,
+            base_path=self.base_path,
+            content_path=content_path
+        )
 
         self.assertRaises(
             MissingRequiredFieldError,
@@ -180,7 +235,13 @@ class UnitPlanLoaderTest(BaseTestWithDB):
         self.test_data.create_lesson(topic, unit_plan, "1")
         self.test_data.create_age_group(8, 10)
 
-        up_loader = UnitPlanLoader(factory, topic, structure_filename=structure_filename, base_path=self.base_path, content_path=content_path)
+        up_loader = UnitPlanLoader(
+            factory,
+            topic,
+            structure_filename=structure_filename,
+            base_path=self.base_path,
+            content_path=content_path
+        )
         up_loader.load()
 
         up = UnitPlan.objects.get(slug="translation")
@@ -195,7 +256,6 @@ class UnitPlanLoaderTest(BaseTestWithDB):
             self.assertIn("German unit plan content.", up.content)
             self.assertIn("German CT links content.", up.computational_thinking_links)
 
-
     def test_unit_plan_translation_missing_ct_links(self):
         content_path, structure_filename = "translation", "translation-missing-ct-links.yaml"
 
@@ -206,7 +266,14 @@ class UnitPlanLoaderTest(BaseTestWithDB):
         self.test_data.create_lesson(topic, unit_plan, "1")
         self.test_data.create_age_group(8, 10)
 
-        up_loader = UnitPlanLoader(factory, topic, structure_filename=structure_filename, base_path=self.base_path, content_path=content_path)
+        up_loader = UnitPlanLoader(
+            factory,
+            topic,
+            structure_filename=structure_filename,
+            base_path=self.base_path,
+            content_path=content_path
+        )
+
         up_loader.load()
 
         up = UnitPlan.objects.get(slug="translation-missing-ct-links")

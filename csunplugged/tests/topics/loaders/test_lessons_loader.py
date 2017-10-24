@@ -537,8 +537,6 @@ class LessonsLoaderTest(BaseTestWithDB):
             self.assertEqual(lesson.name, "Basic Translated Lesson German")
             self.assertIn("German lesson content", lesson.content)
 
-
-
     def test_lessons_loader_translation_complex(self):
         config_file = "complex-translation.yaml"
 
@@ -560,16 +558,27 @@ class LessonsLoaderTest(BaseTestWithDB):
         self.assertEqual(lesson.name, "Complex Translated Lesson English")
         self.assertIn("English lesson content", lesson.content)
         self.assertIn("Another English header", str(lesson.heading_tree))
-        self.assertIn("English text for Computational Thinking links.", lesson.computational_thinking_links)
-        self.assertIn("English description of lesson programming challenges.", lesson.programming_challenges_description)
+        self.assertIn(
+            "English text for Computational Thinking links.",
+            lesson.computational_thinking_links
+        )
+        self.assertIn(
+            "English description of lesson programming challenges.",
+            lesson.programming_challenges_description
+        )
 
         with translation.override("de"):
             self.assertEqual(lesson.name, "Complex Translated Lesson German")
             self.assertIn("German lesson content", lesson.content)
             self.assertIn("Another German header", str(lesson.heading_tree))
-            self.assertIn("German text for Computational Thinking links.", lesson.computational_thinking_links)
-            self.assertIn("German description of lesson programming challenges.", lesson.programming_challenges_description)
-
+            self.assertIn(
+                "German text for Computational Thinking links.",
+                lesson.computational_thinking_links
+            )
+            self.assertIn(
+                "German description of lesson programming challenges.",
+                lesson.programming_challenges_description
+            )
 
     def test_lessons_loader_translation_missing_lesson_file(self):
         config_file = "basic-config.yaml"
@@ -589,7 +598,6 @@ class LessonsLoaderTest(BaseTestWithDB):
         # 'de' should not be stored as available language
         self.assertSetEqual(set(["en"]), set(lesson.languages))
 
-
     def test_lessons_loader_translation_missing_ct_links(self):
         config_file = "translation-missing-ct-links.yaml"
 
@@ -605,9 +613,11 @@ class LessonsLoaderTest(BaseTestWithDB):
         lesson_loader.load()
         lesson = Lesson.objects.get(slug="lesson-complex-translation")
 
-
         self.assertEqual(lesson.name, "Complex Translated Lesson English")
-        self.assertIn("English text for Computational Thinking links.", lesson.computational_thinking_links)
+        self.assertIn(
+            "English text for Computational Thinking links.",
+            lesson.computational_thinking_links
+        )
 
         # 'de' should still be an available language as ct_links is optional
         self.assertIn("de", lesson.languages)
@@ -615,7 +625,6 @@ class LessonsLoaderTest(BaseTestWithDB):
             self.assertEqual(lesson.name, "Complex Translated Lesson German")
             # accessing the untranslated field should not default back to english
             self.assertEqual(None, lesson.computational_thinking_links)
-
 
     def test_lessons_loader_translation_missing_programming_challenges(self):
         config_file = "translation-missing-pcd.yaml"
@@ -633,7 +642,10 @@ class LessonsLoaderTest(BaseTestWithDB):
         lesson = Lesson.objects.get(slug="lesson-complex-translation")
 
         self.assertEqual(lesson.name, "Complex Translated Lesson English")
-        self.assertIn("English description of lesson programming challenges.", lesson.programming_challenges_description)
+        self.assertIn(
+            "English description of lesson programming challenges.",
+            lesson.programming_challenges_description
+        )
 
         # 'de' should still be an available language as programming challenge description is optional
         self.assertIn("de", lesson.languages)

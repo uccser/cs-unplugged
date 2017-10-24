@@ -63,7 +63,6 @@ class ProgrammingChallengesLoaderTest(BaseTestWithDB):
         implementation = pc.implementations.all()[0]
         self.assertEquals(implementation.hints, None)
 
-
     def test_missing_solution(self):
         config_file = "missing-solution.yaml"
 
@@ -75,7 +74,6 @@ class ProgrammingChallengesLoaderTest(BaseTestWithDB):
         with self.assertRaises(CouldNotFindMarkdownFileError):
             pc_loader.load()
 
-
     def test_missing_expected_result(self):
         config_file = "missing-expected-result.yaml"
 
@@ -86,7 +84,6 @@ class ProgrammingChallengesLoaderTest(BaseTestWithDB):
         pc_loader = ProgrammingChallengesLoader(topic, structure_filename=config_file, base_path=self.base_path)
         with self.assertRaises(CouldNotFindMarkdownFileError):
             pc_loader.load()
-
 
     def test_full_translation(self):
         config_file = "translation.yaml"
@@ -117,7 +114,6 @@ class ProgrammingChallengesLoaderTest(BaseTestWithDB):
             self.assertIn("German solution content.", implementation.solution)
             self.assertIn("German hints content.", implementation.hints)
 
-
     def test_translation_missing_solution(self):
         config_file = "translation-missing-solution.yaml"
 
@@ -138,7 +134,6 @@ class ProgrammingChallengesLoaderTest(BaseTestWithDB):
         # German solution is missing from the implementation, so the
         # implementation is not available in german.
         self.assertSetEqual(set(["en"]), set(implementation.languages))
-
 
     def test_translation_missing_expected_result(self):
         config_file = "translation-missing-expected-result.yaml"
@@ -161,7 +156,6 @@ class ProgrammingChallengesLoaderTest(BaseTestWithDB):
         # implementation is not available in german.
         self.assertSetEqual(set(["en"]), set(implementation.languages))
 
-
     def test_translation_missing_hints(self):
         config_file = "translation-missing-hints.yaml"
 
@@ -182,7 +176,6 @@ class ProgrammingChallengesLoaderTest(BaseTestWithDB):
         with translation.override("de"):
             # accessing the untranslated field should not default back to english
             self.assertEquals(None, implementation.hints)
-
 
     def test_markdown_with_style_error(self):
         config_file = "basic-config-2.yaml"

@@ -1,9 +1,5 @@
 import os.path
 
-import django.utils.translation
-
-from unittest.mock import Mock
-
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 
@@ -13,7 +9,6 @@ from topics.management.commands._CurriculumAreasLoader import CurriculumAreasLoa
 from utils.errors.CouldNotFindConfigFileError import CouldNotFindConfigFileError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.EmptyConfigFileError import EmptyConfigFileError
-
 
 
 class CurriculumAreasLoaderTest(BaseTestWithDB):

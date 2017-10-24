@@ -23,7 +23,6 @@ class TopicLoaderTest(BaseTestWithDB):
         self.loader_name = "topic"
         self.base_path = os.path.join(self.test_data.LOADER_ASSET_PATH, self.loader_name)
 
-
     def test_basic_topic_loader_configuration(self):
         content_path, structure_filename = "topic-1", "topic-1.yaml"
         factory = Mock()
@@ -206,9 +205,9 @@ class TopicLoaderTest(BaseTestWithDB):
             self.assertIn("German topic content", topic.content)
             self.assertIn("German other resources content.", topic.other_resources)
 
-
     def test_topic_translation_other_resources_missing(self):
-        content_path, structure_filename = "topic-translation-other-resources-missing", "topic-translation-other-resources-missing.yaml"
+        content_path = "topic-translation-other-resources-missing"
+        structure_filename = "topic-translation-other-resources-missing.yaml"
         factory = Mock()
         topic_loader = TopicLoader(
             factory,

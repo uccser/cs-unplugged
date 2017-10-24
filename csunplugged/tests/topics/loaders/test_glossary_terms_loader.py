@@ -1,5 +1,4 @@
 import os.path
-from unittest.mock import Mock
 
 from django.utils import translation
 

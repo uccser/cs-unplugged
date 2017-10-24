@@ -54,7 +54,6 @@ class LessonsLoader(BaseLoader):
 
             content_translations = {}
             ct_links_translations = {}
-            heading_tree_translations = {}
             programming_description_translations = {}
 
             for language in get_available_languages():
@@ -145,7 +144,6 @@ class LessonsLoader(BaseLoader):
                     "programming_challenges_description_{}".format(language),
                     programming_description_translations[language]
                 )
-
 
             lesson.save()
 
