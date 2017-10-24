@@ -45,6 +45,9 @@ parity-magic:
 product-code-check-digits:
   duration: 30
   computational-thinking-links: product-code-check-digits-ct-links.md
+  generated-resources:
+    barcode-checksum-poster:
+      description: A poster showing how to calculate the checksum for a 12 or 13 digit barcodes.
   classroom-resources:
     - product-barcodes
     - whiteboard

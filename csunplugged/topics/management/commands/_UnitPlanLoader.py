@@ -1,7 +1,7 @@
 """Custom loader for loading unit plans."""
 
 import os.path
-
+from django.core.exceptions import ObjectDoesNotExist
 from utils.BaseLoader import BaseLoader
 from utils.language_utils import get_available_languages, get_default_language
 from utils.convert_heading_tree_to_dict import convert_heading_tree_to_dict
@@ -132,7 +132,7 @@ class UnitPlanLoader(BaseLoader):
                 age_group = AgeGroup.objects.get(
                     slug=age_group_slug
                 )
-            except:
+            except ObjectDoesNotExist:
                 raise KeyNotFoundError(
                     self.structure_file_path,
                     age_group_slug,
@@ -151,7 +151,7 @@ class UnitPlanLoader(BaseLoader):
                     lesson = Lesson.objects.get(
                         slug=lesson_slug
                     )
-                except:
+                except ObjectDoesNotExist:
                     raise KeyNotFoundError(
                         self.structure_file_path,
                         lesson_slug,

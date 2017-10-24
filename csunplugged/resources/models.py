@@ -11,7 +11,7 @@ class Resource(models.Model):
     slug = models.SlugField(unique=True)
     name = models.CharField(max_length=200)
     webpage_template = models.CharField(max_length=200)
-    generation_view = models.CharField(max_length=200)
+    generator_module = models.CharField(max_length=200)
     thumbnail_static_path = models.CharField(max_length=200)
     copies = models.BooleanField()
 

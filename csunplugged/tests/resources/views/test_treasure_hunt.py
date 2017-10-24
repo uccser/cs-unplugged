@@ -2,7 +2,7 @@ from django.test import tag
 from django.urls import reverse
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
-from utils.import_resource_module import import_resource_module
+from utils.get_resource_generator import get_resource_generator
 from utils.create_query_string import query_string
 from utils.resource_valid_test_configurations import resource_valid_test_configurations
 
@@ -20,7 +20,7 @@ class TreasureHuntResourceViewTest(BaseTestWithDB):
             "treasure-hunt",
             "Treasure Hunt",
             "resources/treasure-hunt.html",
-            "treasure_hunt.py",
+            "TreasureHuntResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -34,15 +34,16 @@ class TreasureHuntResourceViewTest(BaseTestWithDB):
             "treasure-hunt",
             "Treasure Hunt",
             "resources/treasure-hunt.html",
-            "treasure_hunt.py",
+            "TreasureHuntResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
         }
         base_url = reverse("resources:generate", kwargs=kwargs)
-        resource_module = import_resource_module(resource)
-        valid_options = resource_module.valid_options()
-        combinations = resource_valid_test_configurations(valid_options)
+        empty_generator = get_resource_generator(resource.generator_module)
+        combinations = resource_valid_test_configurations(
+            empty_generator.valid_options
+        )
         print()
         for combination in combinations:
             print("   - Testing combination: {} ... ".format(combination), end="")
@@ -92,7 +93,7 @@ class TreasureHuntResourceViewTest(BaseTestWithDB):
             "treasure-hunt",
             "Treasure Hunt",
             "resources/treasure-hunt.html",
-            "treasure_hunt.py",
+            "TreasureHuntResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -114,7 +115,7 @@ class TreasureHuntResourceViewTest(BaseTestWithDB):
             "treasure-hunt",
             "Treasure Hunt",
             "resources/treasure-hunt.html",
-            "treasure_hunt.py",
+            "TreasureHuntResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -136,7 +137,7 @@ class TreasureHuntResourceViewTest(BaseTestWithDB):
             "treasure-hunt",
             "Treasure Hunt",
             "resources/treasure-hunt.html",
-            "treasure_hunt.py",
+            "TreasureHuntResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -158,7 +159,7 @@ class TreasureHuntResourceViewTest(BaseTestWithDB):
             "treasure-hunt",
             "Treasure Hunt",
             "resources/treasure-hunt.html",
-            "treasure_hunt.py",
+            "TreasureHuntResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -180,7 +181,7 @@ class TreasureHuntResourceViewTest(BaseTestWithDB):
             "treasure-hunt",
             "Treasure Hunt",
             "resources/treasure-hunt.html",
-            "treasure_hunt.py",
+            "TreasureHuntResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -202,7 +203,7 @@ class TreasureHuntResourceViewTest(BaseTestWithDB):
             "treasure-hunt",
             "Treasure Hunt",
             "resources/treasure-hunt.html",
-            "treasure_hunt.py",
+            "TreasureHuntResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,

@@ -8,6 +8,9 @@
 @import "weasyprint_bootstrap/tables";
 
 // General
+@page {
+  margin: 10mm 10mm;
+}
 footer {
   bottom: 0;
 }
@@ -44,4 +47,10 @@ div.resource-image-container {
 }
 img.resource-image {
   max-width: 100%;
+  body.paper-a4 & {
+    max-height: 257mm !important;
+  }
+  body.paper-letter & {
+    max-height: 239mm !important;
+  }
 }

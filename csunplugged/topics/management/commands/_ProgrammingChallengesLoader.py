@@ -1,6 +1,7 @@
 """Custom loader for loading programming challenges."""
 
 import os.path
+from django.core.exceptions import ObjectDoesNotExist
 from utils.BaseLoader import BaseLoader
 from utils.language_utils import get_available_languages, get_default_language
 
@@ -99,7 +100,7 @@ class ProgrammingChallengesLoader(BaseLoader):
                 difficulty_level = ProgrammingChallengeDifficulty.objects.get(
                     level=challenge_difficulty
                 )
-            except:
+            except ObjectDoesNotExist:
                 raise KeyNotFoundError(
                     self.structure_file_path,
                     challenge_difficulty,
@@ -148,7 +149,7 @@ class ProgrammingChallengesLoader(BaseLoader):
                     language_object = ProgrammingChallengeLanguage.objects.get(
                         slug=language
                     )
-                except:
+                except ObjectDoesNotExist:
                     raise KeyNotFoundError(
                         self.structure_file_path,
                         language,
@@ -241,7 +242,7 @@ class ProgrammingChallengesLoader(BaseLoader):
                                 slug=learning_outcome_slug
                             )
                             programming_challenge.learning_outcomes.add(learning_outcome)
-                        except:
+                        except ObjectDoesNotExist:
                             raise KeyNotFoundError(
                                 self.structure_file_path,
                                 learning_outcome_slug,

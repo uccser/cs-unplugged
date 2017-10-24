@@ -1,9 +1,10 @@
-import itertools
 from django.test import tag
 from django.urls import reverse
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
+from utils.get_resource_generator import get_resource_generator
 from utils.create_query_string import query_string
+from utils.resource_valid_test_configurations import resource_valid_test_configurations
 
 
 @tag('resource_generation')
@@ -19,7 +20,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
             "binary-windows",
             "Binary Windows",
             "resources/binary-windows.html",
-            "binary_windows.py",
+            "BinaryWindowsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -33,37 +34,32 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
             "binary-windows",
             "Binary Windows",
             "resources/binary-windows.html",
-            "binary_windows.py",
+            "BinaryWindowsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
         }
         base_url = reverse("resources:generate", kwargs=kwargs)
-
-        valid_options = {
-            "number_bits": ["4", "8"],
-            "value_type": ["binary", "lightbulb"],
-            "dot_counts": ["yes", "no"],
-            "paper_size": ["a4", "letter"],
-            "header_text": ["", "Example header"],
-        }
-        valid_option_keys = sorted(valid_options)
-        combinations = [dict(zip(valid_option_keys, product)) for product in itertools.product(*(valid_options[valid_option_key] for valid_option_key in valid_option_keys))]  # noqa: E501
+        empty_generator = get_resource_generator(resource.generator_module)
+        combinations = resource_valid_test_configurations(
+            empty_generator.valid_options
+        )
         print()
         for combination in combinations:
             print("   - Testing combination: {} ... ".format(combination), end="")
             url = base_url + query_string(combination)
             response = self.client.get(url)
             self.assertEqual(200, response.status_code)
-            if combination["dot_counts"] == "yes":
+            if combination["dot_counts"]:
                 count_text = "with dot counts"
             else:
                 count_text = "without dot counts"
-            TEMPLATE = "{num_bits} bits - {value} - {counts}"
+            TEMPLATE = "{} bits - {} - {} - {}"
             subtitle = TEMPLATE.format(
-                num_bits=combination["number_bits"],
-                value=combination["value_type"],
-                counts=count_text
+                combination["number_bits"],
+                combination["value_type"],
+                count_text,
+                combination["paper_size"],
             )
             self.assertEqual(
                 response.get("Content-Disposition"),
@@ -76,7 +72,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
             "binary-windows",
             "Binary Windows",
             "resources/binary-windows.html",
-            "binary_windows.py",
+            "BinaryWindowsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -97,7 +93,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
             "binary-windows",
             "Binary Windows",
             "resources/binary-windows.html",
-            "binary_windows.py",
+            "BinaryWindowsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -118,7 +114,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
             "binary-windows",
             "Binary Windows",
             "resources/binary-windows.html",
-            "binary_windows.py",
+            "BinaryWindowsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -139,7 +135,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
             "binary-windows",
             "Binary Windows",
             "resources/binary-windows.html",
-            "binary_windows.py",
+            "BinaryWindowsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -160,7 +156,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
             "binary-windows",
             "Binary Windows",
             "resources/binary-windows.html",
-            "binary_windows.py",
+            "BinaryWindowsResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -178,5 +174,5 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
         self.assertEqual(200, response.status_code)
         self.assertEqual(
             response.get("Content-Disposition"),
-            'attachment; filename="Resource Binary Windows (8 bits - lightbulb - with dot counts).pdf"'
+            'attachment; filename="Resource Binary Windows (8 bits - lightbulb - with dot counts - a4).pdf"'
         )

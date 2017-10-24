@@ -16,7 +16,7 @@ class ResourceDescriptionModelTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards",
             "resources/binary-cards.html",
-            "binary_cards.py",
+            "BinaryCardsResourceGenerator",
         )
         topic = self.test_topics_data.create_topic(1)
         unit_plan = self.test_topics_data.create_unit_plan(topic, 1)

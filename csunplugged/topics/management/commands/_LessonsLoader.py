@@ -1,10 +1,13 @@
 """Custom loader for loading lessons."""
 
+import os.path
+from django.core.exceptions import ObjectDoesNotExist
 from utils.BaseLoader import BaseLoader
 from utils.language_utils import get_default_language, get_available_languages
 from utils.convert_heading_tree_to_dict import convert_heading_tree_to_dict
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
+from utils.errors.InvalidConfigValueError import InvalidConfigValueError
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 
 
@@ -159,7 +162,7 @@ class LessonsLoader(BaseLoader):
                                 topic=self.topic
                             )
 
-                        except:
+                        except ObjectDoesNotExist:
                             raise KeyNotFoundError(
                                 self.structure_file_path,
                                 programming_challenge_slug,
@@ -214,7 +217,7 @@ class LessonsLoader(BaseLoader):
                                 slug=learning_outcome_slug
                             )
                             lesson.learning_outcomes.add(learning_outcome)
-                        except:
+                        except ObjectDoesNotExist:
                             raise KeyNotFoundError(
                                 self.structure_file_path,
                                 learning_outcome_slug,
@@ -253,7 +256,7 @@ class LessonsLoader(BaseLoader):
                             resource = Resource.objects.get(
                                 slug=resource_slug
                             )
-                        except:
+                        except ObjectDoesNotExist:
                             raise KeyNotFoundError(
                                 self.structure_file_path,
                                 resource_slug,

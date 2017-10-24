@@ -14,6 +14,10 @@ omit =
     */migrations/*
     # Omit database proxy file used with Google Cloud SQL Proxy
     csunplugged/config/settings/database_proxy.py
+    # Omit settings files for local and production environments
+    # TODO: Add integration tests for local and production environments
+    csunplugged/config/settings/production.py
+    csunplugged/config/settings/local.py
 
 [report]
 fail_under=20
