@@ -2,13 +2,15 @@
 
 from django.conf import settings
 from django.contrib.staticfiles import finders
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.shortcuts import get_object_or_404, render, redirect
 from django.template.loader import render_to_string
 from django.views import generic
 from resources.models import Resource
 from utils.group_lessons_by_age import group_lessons_by_age
-from utils.import_resource_generator import import_resource_generator
+from utils.get_resource_generator import get_resource_generator
+from utils.errors.QueryParameterMissingError import QueryParameterMissingError
+from utils.errors.QueryParameterInvalidError import QueryParameterInvalidError
 from PIL import Image
 from io import BytesIO
 import base64
@@ -63,7 +65,12 @@ def generate_resource(request, resource_slug):
         HTML response containing PDF of resource, 404 if not found.
     """
     resource = get_object_or_404(Resource, slug=resource_slug)
-    generator = import_resource_generator(resource.generator_module, request.GET)
+    try:
+        generator = get_resource_generator(resource.generator_module, request.GET)
+    except QueryParameterMissingError as e:
+        raise Http404(e) from e
+    except QueryParameterInvalidError as e:
+        raise Http404(e) from e
 
     # TODO: Weasyprint handling in production
     # TODO: Add creation of PDF as job to job queue

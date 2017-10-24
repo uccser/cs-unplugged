@@ -10,6 +10,7 @@ def resource_valid_test_configurations(valid_options, header_text=True):
     Args:
         valid_options: A dictionary containing all valid resource generation
                        options (dict).
+        header_text: If true, add in valid options for header text (bool).
 
     Returns:
         List of lists of valid combinations (list).

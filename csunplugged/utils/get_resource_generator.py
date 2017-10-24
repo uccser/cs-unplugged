@@ -3,7 +3,7 @@
 import importlib
 
 
-def import_resource_generator(generator_module, requested_options=None):
+def get_resource_generator(generator_module, requested_options=None):
     """Return view module for resource.
 
     Args:

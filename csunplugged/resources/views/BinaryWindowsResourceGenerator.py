@@ -121,8 +121,8 @@ class BinaryWindowsResourceGenerator(BaseResourceGenerator):
                 image_file = "col_binary_lightbulb_off.png"
             lightbulb = Image.open(os.path.join("static/img/topics/", image_file))
             (width, height) = lightbulb.size
-            SCALE_FACTOR = 0.6
-            lightbulb = lightbulb.resize((int(width * SCALE_FACTOR), int(height * SCALE_FACTOR)))
+            scale_factor = 0.6
+            lightbulb = lightbulb.resize((int(width * scale_factor), int(height * scale_factor)))
             (width, height) = lightbulb.size
             lightbulb_width = int(width / 2)
             lightbulb_height = int(height / 2)

@@ -4,7 +4,7 @@ from django.db import transaction
 from django.http.request import QueryDict
 from utils.BaseLoader import BaseLoader
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
-from utils.import_resource_generator import import_resource_generator
+from utils.get_resource_generator import get_resource_generator
 from resources.models import Resource
 
 
@@ -50,7 +50,7 @@ class ResourcesLoader(BaseLoader):
                 generator_module = generator_module[:-3]
 
             # Check module can be imported
-            import_resource_generator(generator_module, QueryDict())
+            get_resource_generator(generator_module, QueryDict())
 
             resource = Resource(
                 slug=resource_slug,
