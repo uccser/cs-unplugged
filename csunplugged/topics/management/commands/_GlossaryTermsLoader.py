@@ -51,6 +51,7 @@ class GlossaryTermsLoader(BaseLoader):
             for language in content_translations:
                 setattr(glossary_term, "definition_{}".format(language), content_translations[language].html_string)
                 setattr(glossary_term, "term_{}".format(language), content_translations[language].title)
+                glossary_term.languages.append(language)
             glossary_term.save()
             self.log("Added glossary term: {}".format(glossary_term.__str__()))
 

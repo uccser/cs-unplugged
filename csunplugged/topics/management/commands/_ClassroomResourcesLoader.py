@@ -3,7 +3,7 @@
 from django.db import transaction
 
 from utils.BaseLoader import BaseLoader
-from utils.errors import InvalidConfigValueError
+from utils.errors.InvalidConfigValueError import InvalidConfigValueError
 
 from topics.models import ClassroomResource
 

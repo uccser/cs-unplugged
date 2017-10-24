@@ -160,7 +160,7 @@ class ProgrammingChallengesLoader(BaseLoader):
 
                 for translation_language in get_available_languages():
                     file_path = self.get_localised_file(
-                        language,
+                        translation_language,
                         os.path.join(challenge_slug, "{}.md")
                     )
                     try:
@@ -173,7 +173,7 @@ class ProgrammingChallengesLoader(BaseLoader):
                         )
                         expected_result_translations[translation_language] = expected_result_content.html_string
                     except CouldNotFindMarkdownFileError:
-                        if language == get_default_language():
+                        if translation_language == get_default_language():
                             raise
 
                     # Load example solution
@@ -187,7 +187,7 @@ class ProgrammingChallengesLoader(BaseLoader):
                         )
                         solution_translations[translation_language] = solution_content.html_string
                     except CouldNotFindMarkdownFileError:
-                        if language == get_default_language():
+                        if translation_language == get_default_language():
                             raise
 
                     # Load hint if given
@@ -204,7 +204,7 @@ class ProgrammingChallengesLoader(BaseLoader):
                         pass
 
                 implementation = ProgrammingChallengeImplementation(
-                    languages=list(solution_translations.keys()),
+                    languages=list(set(solution_translations.keys()) & set(expected_result_translations.keys())),
                     language=language_object,
                     challenge=programming_challenge,
                     topic=self.topic
@@ -218,7 +218,7 @@ class ProgrammingChallengesLoader(BaseLoader):
                 for translation_language in hint_translations:
                     setattr(
                         implementation,
-                        "hint_{}".format(translation_language),
+                        "hints_{}".format(translation_language),
                         hint_translations[translation_language]
                     )
                 for translation_language in expected_result_translations:

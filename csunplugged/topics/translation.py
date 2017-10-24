@@ -41,7 +41,6 @@ class ProgrammingChallengeImplementationTranslationOptions(TranslationOptions):
 
 class LessonTranslationOptions(TranslationOptions):
     """Translation options for Lesson model."""
-
     fields = ('name', 'content', 'computational_thinking_links', 'programming_challenges_description', 'heading_tree')
 
 
