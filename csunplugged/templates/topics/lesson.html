@@ -72,8 +72,8 @@
   {% if lesson.classroom_resources %}
   <h2 class="heading-underline mt-2">{% trans "Classroom resources" %}</h2>
     <ul>
-      {% for classroom_resource in lesson.classroom_resources %}
-        <li>{{ classroom_resource }}</li>
+      {% for classroom_resource in lesson.classroom_resources.all %}
+        <li>{{ classroom_resource.description }}</li>
       {% endfor %}
     </ul>
   {% endif %}

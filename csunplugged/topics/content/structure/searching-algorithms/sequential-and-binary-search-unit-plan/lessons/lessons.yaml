@@ -10,8 +10,9 @@ how-many-guesses:
     searching-cards:
       description: Includes helper sheet for teacher.
   classroom-resources:
-    - Payment system such as tokens or marbles
-    - A recording system (e.g. a post-it note for each student)
+    - payment-system
+    - pens
+    - paper
 
 divide-and-conquer:
   duration: 30
@@ -26,8 +27,9 @@ divide-and-conquer:
     searching-cards:
       description: Includes helper sheet for teacher.
   classroom-resources:
-    - Payment system such as tokens or marbles.
-    - A recording system (e.g. a post-it note for each student)
+    - payment-system
+    - pens
+    - paper
 
 the-great-treasure-hunt-unsorted:
   duration: 30
@@ -54,4 +56,4 @@ the-great-treasure-hunt-sorted:
     - search-algorithms-describe-compare-values
     - search-algorithms-explain-unsorted-lists
   classroom-resources:
-    - Pencils
+    - pencils

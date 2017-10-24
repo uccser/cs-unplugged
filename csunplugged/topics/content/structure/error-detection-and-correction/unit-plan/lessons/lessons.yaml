@@ -12,9 +12,8 @@ parity-magic-junior:
     parity-cards:
       description: Two pages of parity cards per pair of students.
   classroom-resources:
-    - A set of 36 parity cards.
-    - A metal board (ideally a whiteboard) if magnetic parity cards are being
-      used.
+    - parity-cards-set
+    - whiteboard
 
 parity-magic:
   duration: 30
@@ -30,9 +29,8 @@ parity-magic:
     parity-cards:
       description: Two pages of parity cards per pair of students.
   classroom-resources:
-    - A set of 36 parity cards.
-    - A metal board (ideally a whiteboard) if magnetic parity cards are being
-      used.
+    - parity-cards-set
+    - whiteboard
   programming-challenges:
     - count-black-squares-one-colour-input
     - count-black-squares-one-line-input
@@ -48,9 +46,8 @@ product-code-check-digits:
   duration: 30
   computational-thinking-links: product-code-check-digits-ct-links.md
   classroom-resources:
-    - A number of items with a 12 or 13 digit barcode on it (technique is
-      almost identical for both).
-    - A whiteboard and/or paper to write the calculations on.
+    - product-barcodes
+    - whiteboard
   programming-challenges:
     - product-code-12-weighted-sum-one-at-a-time
     - product-code-13-weighted-sum-one-at-a-time

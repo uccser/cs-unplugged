@@ -18,10 +18,10 @@ finding-2d-shapes:
     job-badges:
       description:  Cut these out and use them as badges for the three students doing the three jobs respectively. You might want to put them in a name holder on a lanyard.
   classroom-resources:
-    - 8 x 8 (approx) squared grid (30cm approx) or more
-    - A variety of 2D shapes (tesselation shapes), they can be the same shapes
-    - Small whiteboard and two whiteboard pens (different colours), or
-    - Paper on a clipboard
+    - handheld-whiteboards
+    - whiteboard-pens
+    - clipboards
+    - paper
 
 moving-in-a-shape:
   duration: 30
@@ -41,7 +41,6 @@ moving-in-a-shape:
     job-badges:
       description:  Cut these out and use them as badges for the three students doing the three jobs respectively. You might want to put them in a name holder on a lanyard.
   classroom-resources:
-    - 8 x 8 (approx) squared grid (30cm approx) or more
-    - A toy
-    - Blocks (between 1 and 5)
-    - Whiteboard and two whiteboard pens (different colours)
+    - blocks
+    - whiteboard
+    - whiteboard-pens

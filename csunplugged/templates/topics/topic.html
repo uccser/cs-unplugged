@@ -26,9 +26,7 @@
     <div class="link-box-container">
       <a class="link-box link-box-md-6" href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">
         <h3 id="{{ unit_plan.slug }}" class="link-box-title">
-          {% blocktrans trimmed %}
-            <span class="text-muted">Unit plan:</span> {{ unit_plan.name }}
-          {% endblocktrans %}
+          <span class="text-muted">{% trans "Unit plan:" %}</span> {{ unit_plan.name }}
         </h3>
       </a>
     </div>
