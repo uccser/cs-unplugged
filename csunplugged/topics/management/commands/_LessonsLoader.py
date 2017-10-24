@@ -117,7 +117,6 @@ class LessonsLoader(BaseLoader):
                 slug=lesson_slug,
                 duration=lesson_duration,
                 languages=list(content_translations.keys()),
-                # classroom_resources=classroom_resources,
             )
 
             for language in content_translations:
