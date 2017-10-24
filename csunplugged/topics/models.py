@@ -451,3 +451,4 @@ vinaigrette.register(ProgrammingChallengeLanguage, ["name"])
 vinaigrette.register(AgeGroup, ['description'])
 vinaigrette.register(ResourceDescription, ['description'])
 vinaigrette.register(ClassroomResource, ['description'])
+

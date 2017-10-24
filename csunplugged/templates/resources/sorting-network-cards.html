@@ -1,68 +1,73 @@
 {% extends "resources/resource.html" %}
 
+{% load i18n %}
+
 <!-- Description of resource -->
 {% block description %}
   <p>
+    {% url 'resources:resource' 'sorting-network' as sorting_network_cards_url %}
+    {% blocktrans trimmed %}
     These cards are to be used with the
-    <a href="{% url 'resources:resource' 'sorting-network' %}">Sorting Network resource</a>.
+    <a href="{{ sorting_network_cards_url }}">Sorting Network resource</a>.
+    {% endblocktrans %}
   </p>
 {% endblock description %}
 
 {% block generation_form %}
   <fieldset class="form-group">
-    <legend>Card Type</legend>
+    <legend>{% trans "Card Type" %}</legend>
     <div class="form-check">
       <label class="form-check-label">
         <input type="radio" class="form-check-input" name="type" value="small_numbers" checked="checked">
-        Small numbers (1 to 6)
+        {% trans "Small numbers (1 to 6)" %}
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
         <input type="radio" class="form-check-input" name="type" value="large_numbers">
-        Large numbers (7 digit numbers)
+        {% trans "Large numbers (7 digit numbers)" %}
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
         <input type="radio" class="form-check-input" name="type" value="fractions">
-        Fractions
+        {% trans "Fractions" %}
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
         <input type="radio" class="form-check-input" name="type" value="maori_numbers">
-        Māori numbers
+        {% trans "Māori numbers" %}
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
         <input type="radio" class="form-check-input" name="type" value="words">
-        Words
+        {% trans "Words" %}
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
         <input type="radio" class="form-check-input" name="type" value="letters">
-        Letters
+        {% trans "Letters" %}
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
         <input type="radio" class="form-check-input" name="type" value="maori_colours">
-        Māori colours
+        {% trans "Māori colours" %}
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
         <input type="radio" class="form-check-input" name="type" value="riding_hood">
-        Little Red Riding Hood
+        {% trans "Little Red Riding Hood" %}
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
         <input type="radio" class="form-check-input" name="type" value="butterfly">
-        Butterfly life cycle
+        {% trans "Butterfly life cycle" %}
       </label>
     </div>
   </fieldset>
