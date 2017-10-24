@@ -451,6 +451,3 @@ vinaigrette.register(ProgrammingChallengeLanguage, ["name"])
 vinaigrette.register(AgeGroup, ['description'])
 vinaigrette.register(ResourceDescription, ['description'])
 vinaigrette.register(ClassroomResource, ['description'])
-# TODO: Implement translation of classroom resources
-# (vinaigrette does not support translation of an array of strings)
-# vinaigrette.register(Lesson, ['classroom_resources'])
