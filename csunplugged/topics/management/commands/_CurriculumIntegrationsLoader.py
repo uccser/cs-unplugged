@@ -1,12 +1,10 @@
 """Custom loader for loading curriculum integrations."""
 
 import os.path
-
+from django.core.exceptions import ObjectDoesNotExist
 from utils.BaseLoader import BaseLoader
-
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
-
 from topics.models import CurriculumArea, Lesson
 
 
@@ -77,7 +75,7 @@ class CurriculumIntegrationsLoader(BaseLoader):
                         slug=curriculum_area_slug
                     )
                     integration.curriculum_areas.add(curriculum_area)
-                except:
+                except ObjectDoesNotExist:
                     raise KeyNotFoundError(
                         self.structure_file_path,
                         curriculum_area_slug,
@@ -101,7 +99,7 @@ class CurriculumIntegrationsLoader(BaseLoader):
                                     slug=lesson_slug
                                 )
                                 integration.prerequisite_lessons.add(lesson)
-                            except:
+                            except ObjectDoesNotExist:
                                 raise KeyNotFoundError(
                                     self.structure_file_path,
                                     lesson_slug,

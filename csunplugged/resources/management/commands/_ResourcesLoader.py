@@ -42,7 +42,7 @@ class ResourcesLoader(BaseLoader):
                 generator_module = resource_structure["generator-module"]
                 resource_thumbnail = resource_structure["thumbnail-static-path"]
                 resource_copies = resource_structure["copies"]
-            except:
+            except KeyError:
                 raise MissingRequiredFieldError()
 
             # Remove .py extension if given
