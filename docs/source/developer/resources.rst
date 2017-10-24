@@ -37,8 +37,8 @@ Each resource requires the following:
   - ``webpage-template``: Template file for the HTML form, relative from
     ``csunplugged/templates/``
     (for example: ``resources/sorting-network.html``).
-  - ``generation-view``: Python module for generating resource, relative from
-    ``csunplugged/resources/views/`` (for example: ``sorting_network.py``).
+  - ``generator-module``: Python module for generating resource, relative from
+    ``csunplugged/resources/views/`` (for example: ``SortingNetworkResourceGenerator``).
   - ``thumbnail-static-path``: Thumbnail image for the resource, relative from
     ``csunplugged/static/`` (for example:
     ``img/resources/sorting-network/thumbnail.png``).
@@ -63,14 +63,16 @@ inputs for the generation form (paper size and custom header are already provide
 Python module
 ------------------------------------------------------------------------------
 
-The Python module must contain the following function definitions:
+The Python module defined in the YAML file must contain a class inheriting from
+``utils.BaseResourceGenerator``.
+The Python class must have the same name as the module.
 
-.. function:: resource(request, resource)
+The generator class must contain the following method definition:
 
-  Create one copy for the resource.
+.. function:: data(self)
 
-  :param request: HTTP request object (HttpRequest)
-  :param resource: Object of resource data (Resource)
+  Create one copy of the resource.
+
   :rtype: A dictionary or list of dictionaries for each resource page.
 
     Each dictionary must contain the following keys/value pairs:
@@ -79,31 +81,58 @@ The Python module must contain the following function definitions:
     - ``data``: If ``type`` is ``html``, then a HTML string is expected.
       If type is ``image``, a Pillow Image object is expected.
 
-.. function:: subtitle(request, resource)
+If required, the generator class can contain the class variable ``additional_valid_options`` containing the dictionary of parameter options for the resource.
+For example, a resource may contain the following:
+
+.. code-block:: python
+
+  additional_valid_options = {
+      "display_numbers": [True, False],
+      "black_back": [True, False],
+  }
+
+If ``additional_valid_options`` are given, the ``subtitle`` property method should be overridden.
+The method should display the additional options and also call the parent's subtitle result:
+
+.. function:: subtitle(self)
 
   Return the subtitle string of the resource.
 
   Used after the resource name in the filename, and
   also on the resource image.
 
-  :param request: HTTP request object (HttpRequest)
-  :param resource: Object of resource data (Resource)
   :rtype: Text for subtitle (str)
 
-.. function:: valid_options()
+For example, the subtitle method for the ``additional_valid_options`` above could be:
 
-  Provide dictionary of all valid parameters.
+.. code-block:: python
 
-  This excludes the header text parameter.
+  @property
+  def subtitle(self):
+      """Return the subtitle string of the resource.
 
-  :rtype: All valid options (dict)
+      Used after the resource name in the filename, and
+      also on the resource image.
 
-.. note::
+      Returns:
+          text for subtitle (str)
+      """
+      if self.requested_options["display_numbers"]:
+          display_numbers_text = "with numbers"
+      else:
+          display_numbers_text = "without numbers"
 
-  The following utility modules may be useful:
+      if self.requested_options["black_back"]:
+          black_back_text = "with black back"
+      else:
+          black_back_text = "without black back"
 
-  - ``utils.retrieve_query_parameter``
-  - ``utils.bool_to_yes_no``
+      text = "{} - {} - {}".format(
+          display_numbers_text,
+          black_back_text,
+          super().subtitle
+      )
+      return text
 
 Thumbnail image
 ------------------------------------------------------------------------------
