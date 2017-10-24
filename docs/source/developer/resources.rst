@@ -94,6 +94,10 @@ For example, a resource may contain the following:
 If ``additional_valid_options`` are given, the ``subtitle`` property method should be overridden.
 The method should display the additional options and also call the parent's subtitle result:
 
+.. note::
+
+  The ``subtitle`` method should be declared as a property with ``@property`` and only have one parameter ``self``.
+
 .. function:: subtitle(self)
 
   Return the subtitle string of the resource.
@@ -101,7 +105,7 @@ The method should display the additional options and also call the parent's subt
   Used after the resource name in the filename, and
   also on the resource image.
 
-  :rtype: Text for subtitle (str)
+  :rtype: Text for subtitle (str).
 
 For example, the subtitle method for the ``additional_valid_options`` above could be:
 
@@ -115,7 +119,7 @@ For example, the subtitle method for the ``additional_valid_options`` above coul
       also on the resource image.
 
       Returns:
-          text for subtitle (str)
+          Text for subtitle (str).
       """
       if self.requested_options["display_numbers"]:
           display_numbers_text = "with numbers"
