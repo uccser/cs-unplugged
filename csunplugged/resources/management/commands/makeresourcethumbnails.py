@@ -51,10 +51,10 @@ class Command(BaseCommand):
 
                 thumbnail = generate_resource_thumbnail(resource.name, generator)
 
-                filename = resource.slug
+                filename = resource.slug + "-"
                 for (key, value) in sorted(combination.items()):
-                    filename += ";{}={}".format(key, bool_to_yes_no(value))
-                filename += ".png"
+                    filename += "{}-{}-".format(key, bool_to_yes_no(value))
+                filename = "{}.png".format(filename[:-1])
                 thumbnail_file = open(os.path.join(base_path, filename), "wb")
                 thumbnail_file.write(thumbnail)
                 thumbnail_file.close()
