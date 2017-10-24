@@ -8,7 +8,7 @@ from django.core.management.base import BaseCommand
 from django.http.request import QueryDict
 from resources.models import Resource
 from resources.views.views import generate_resource_pdf
-from utils.import_resource_generator import import_resource_generator
+from utils.get_resource_generator import get_resource_generator
 from utils.resource_valid_test_configurations import resource_valid_test_configurations
 
 
@@ -42,7 +42,7 @@ class Command(BaseCommand):
             print("Creating {}...".format(resource.name))
 
             # TODO: Import repeated in next for loop, check alternatives
-            empty_generator = import_resource_generator(resource.generator_module)
+            empty_generator = get_resource_generator(resource.generator_module)
             combinations = resource_valid_test_configurations(
                 empty_generator.valid_options,
                 header_text=False
@@ -54,7 +54,7 @@ class Command(BaseCommand):
                 if resource.copies:
                     combination["copies"] = 30
                 requested_options = QueryDict(urlencode(combination, doseq=True))
-                generator = import_resource_generator(resource.generator_module, requested_options)
+                generator = get_resource_generator(resource.generator_module, requested_options)
                 (pdf_file, filename) = generate_resource_pdf(resource.name, generator)
 
                 filename = "{}.pdf".format(filename)

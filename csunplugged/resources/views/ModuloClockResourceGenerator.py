@@ -15,10 +15,6 @@ class ModuloClockResourceGenerator(BaseResourceGenerator):
     def data(self):
         """Create a image for Modulo Clock resource.
 
-        Args:
-            request: HTTP request object (HttpRequest).
-            resource: Object of resource data (Resource).
-
         Returns:
             A dictionary for the resource page.
         """
@@ -62,10 +58,6 @@ class ModuloClockResourceGenerator(BaseResourceGenerator):
 
         Used after the resource name in the filename, and
         also on the resource image.
-
-        Args:
-            request: HTTP request object (HttpRequest).
-            resource: Object of resource data (Resource).
 
         Returns:
             Text for subtitle (str).

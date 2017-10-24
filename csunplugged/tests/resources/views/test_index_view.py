@@ -44,7 +44,7 @@ class IndexViewTest(BaseTestWithDB):
             "sorting-network",
             "Sorting Network",
             "resources/sorting-network.html",
-            "sorting_network.py",
+            "SortingNetworkResourceGenerator.py",
         )
         url = reverse("resources:index")
         response = self.client.get(url)

@@ -1,8 +1,9 @@
 """Class for generator for a resource."""
 
-from django.http import Http404
 from abc import ABC, abstractmethod
 from utils.str_to_bool import str_to_bool
+from utils.errors.QueryParameterMissingError import QueryParameterMissingError
+from utils.errors.QueryParameterInvalidError import QueryParameterInvalidError
 from copy import deepcopy
 
 
@@ -52,6 +53,9 @@ class BaseResourceGenerator(ABC):
     def process_requested_options(self, requested_options):
         """Convert requested options to usable types.
 
+        Args:
+            requested_options: QueryDict of requested_options (QueryDict).
+
         Method does the following:
         - Update all values through str_to_bool utility function.
         - Raises 404 error is requested option cannot be found.
@@ -64,11 +68,11 @@ class BaseResourceGenerator(ABC):
         for option in self.valid_options.keys():
             values = requested_options.getlist(option)
             if not values:
-                raise Http404("{} parameter not specified.".format(option))
+                raise QueryParameterMissingError(option)
             for (i, value) in enumerate(values):
                 update_value = str_to_bool(value)
                 if update_value not in self.valid_options[option]:
-                    raise Http404("{} for parameter {} is not valid.".format(update_value, option))
+                    raise QueryParameterInvalidError(option, value)
                 values[i] = update_value
             requested_options.setlist(option, values)
         return requested_options

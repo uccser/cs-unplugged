@@ -3,7 +3,6 @@
 from PIL import Image, ImageDraw, ImageFont
 from random import sample
 from utils.BaseResourceGenerator import BaseResourceGenerator
-from copy import deepcopy
 
 IMAGE_PATH = "static/img/resources/treasure-hunt/{}.png"
 
@@ -22,13 +21,10 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
         """Construct TreasureHuntResourceGenerator instance.
 
         Args:
-            request: HTTP request object (HttpRequest).
+            requested_options: QueryDict of requested_options (QueryDict).
         """
-        # TODO: Call super __init__
-        self.valid_options = deepcopy(BaseResourceGenerator.default_valid_options)
-        self.valid_options.update(self.additional_valid_options)
+        super().__init__(requested_options)
         if requested_options:
-            self.requested_options = self.process_requested_options(requested_options)
             self.set_number_range()
 
     def data(self):
@@ -113,9 +109,9 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
         if prefilled_values == "blank":
             range_text = "blank"
         else:
-            SUBTITLE_TEMPLATE = "{} - {} to {}"
+            template = "{} - {} to {}"
             number_order_text = number_order.title()
-            range_text = SUBTITLE_TEMPLATE.format(number_order_text, self.range_min, self.range_max - 1)
+            range_text = template.format(number_order_text, self.range_min, self.range_max - 1)
 
         if art_style == "colour":
             art_style_text = "full colour"
@@ -131,9 +127,6 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
 
     def set_number_range(self):
         """Return number range tuple for resource.
-
-        Args:
-            request: HTTP request object (HttpRequest).
 
         Returns:
             Tuple of (range_min, range_max, font_size)
