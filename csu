@@ -65,6 +65,7 @@ cmd_start() {
   docker-compose up -d
   echo ""
   # Run helper functions
+  docker-compose exec nginx gulp clean
   cmd_update
   # Alert user that system is ready
   echo -e "\n${GREEN}Systems are ready!${NC}"
@@ -173,6 +174,7 @@ defhelp -dev static 'Build static files.'
 # Build production static files
 dev_static_prod() {
   echo "Building production static files..."
+  docker-compose exec nginx gulp clean
   docker-compose exec nginx gulp build --production
 }
 defhelp -dev static_prod 'Build production static files.'
