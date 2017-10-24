@@ -11,6 +11,7 @@ from utils.group_lessons_by_age import group_lessons_by_age
 from utils.get_resource_generator import get_resource_generator
 from utils.errors.QueryParameterMissingError import QueryParameterMissingError
 from utils.errors.QueryParameterInvalidError import QueryParameterInvalidError
+from utils.errors.ThumbnailPageNotFound import ThumbnailPageNotFound
 from PIL import Image
 from io import BytesIO
 import base64
@@ -139,13 +140,14 @@ def generate_resource_pdf(name, generator):
     return (html.write_pdf(stylesheets=[base_css]), filename)
 
 
-def generate_resource_copy(generator):
+def generate_resource_copy(generator, thumbnail=False):
     """Retrieve data for one copy of resource from resource generator.
 
     Images are resized to paper size.
 
     Args:
         generator: Instance of specific resource generator class.
+        thumbnail: True if only the thumbnail page should be returned (bool).
 
     Returns:
         List of lists containing data for one copy.
@@ -164,6 +166,12 @@ def generate_resource_copy(generator):
         max_pixel_height = 267 * MM_TO_PIXEL_RATIO
     elif paper_size == "letter":
         max_pixel_height = 249 * MM_TO_PIXEL_RATIO
+
+    if thumbnail and len(data) > 1:
+        try:
+            data = next(page for page in data if page.get("thumbnail", False))
+        except StopIteration:
+            raise ThumbnailPageNotFound(generator)
 
     # Resize images to reduce file size
     for index in range(len(data)):

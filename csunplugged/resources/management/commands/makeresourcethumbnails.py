@@ -86,7 +86,7 @@ def generate_resource_thumbnail(name, generator):
     context = dict()
     context["resource"] = name
     context["paper_size"] = generator.requested_options["paper_size"]
-    context["all_data"] = [generate_resource_copy(generator)]
+    context["all_data"] = [generate_resource_copy(generator, thumbnail=True)]
     pdf_html = render_to_string("resources/base-resource-pdf.html", context)
     html = HTML(string=pdf_html, base_url=settings.STATIC_ROOT)
     css_file = finders.find("css/print-resource-pdf.css")
