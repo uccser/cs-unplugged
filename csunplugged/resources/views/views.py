@@ -169,7 +169,7 @@ def generate_resource_copy(generator, thumbnail=False):
 
     if thumbnail and len(data) > 1:
         try:
-            data = next(page for page in data if page.get("thumbnail", False))
+            data = [next(page for page in data if page.get("thumbnail", False))]
         except StopIteration:
             raise ThumbnailPageNotFound(generator)
 
