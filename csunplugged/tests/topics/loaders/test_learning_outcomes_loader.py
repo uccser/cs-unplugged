@@ -13,12 +13,12 @@ class LearningOutcomesLoaderTest(BaseTestWithDB):
         super().__init__(*args, **kwargs)
         self.test_data = TopicsTestDataGenerator()
         self.loader_name = "learning_outcomes"
-        self.BASE_PATH = os.path.join(self.test_data.LOADER_ASSET_PATH, self.loader_name)
+        self.base_path = os.path.join(self.test_data.LOADER_ASSET_PATH, self.loader_name)
 
     def test_basic_config(self):
         config_file = "basic-config.yaml"
 
-        lo_loader = LearningOutcomesLoader(config_file, self.BASE_PATH)
+        lo_loader = LearningOutcomesLoader(structure_filename=config_file, base_path=self.base_path)
         lo_loader.load()
 
         lo_objects = LearningOutcome.objects.all()

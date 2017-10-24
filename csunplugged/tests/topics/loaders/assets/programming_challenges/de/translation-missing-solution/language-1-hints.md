@@ -1,0 +1,1 @@
+German hints content.

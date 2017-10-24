@@ -41,8 +41,6 @@ class UnitPlanLoader(BaseLoader):
                 be found in the config file.
         """
         unit_plan_structure = self.load_yaml_file(self.structure_file_path)
-
-        available_translations = unit_plan_structure.get('available_translations', ["en", "de"])
         content_translations = {}
         ct_links_translations = {}
         heading_tree_translations = {}
@@ -80,7 +78,7 @@ class UnitPlanLoader(BaseLoader):
 
         unit_plan = self.topic.unit_plans.create(
             slug=self.unit_plan_slug,
-            languages=available_translations,
+            languages=list(content_translations.keys()),
         )
         for language in content_translations:
             setattr(unit_plan, "content_{}".format(language), content_translations[language].html_string)

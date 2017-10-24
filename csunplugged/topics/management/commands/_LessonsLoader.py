@@ -54,7 +54,6 @@ class LessonsLoader(BaseLoader):
 
             content_translations = {}
             ct_links_translations = {}
-            heading_tree_translations = {}
             programming_description_translations = {}
 
             for language in get_available_languages():
@@ -87,10 +86,6 @@ class LessonsLoader(BaseLoader):
                         if language == get_default_language():
                             raise
 
-                if lesson_content.heading_tree:
-                    heading_tree = convert_heading_tree_to_dict(lesson_content.heading_tree)
-                    heading_tree_translations[language] = heading_tree
-
                 if "programming-challenges-description" in lesson_structure:
                     filename = lesson_structure["programming-challenges-description"]
                     file_path = self.get_localised_file(language, filename)
@@ -120,16 +115,23 @@ class LessonsLoader(BaseLoader):
             )
 
             for language in content_translations:
+                translation = content_translations[language]
                 setattr(
                     lesson,
                     "content_{}".format(language),
-                    content_translations[language].html_string
+                    translation.html_string
                 )
                 setattr(
                     lesson,
                     "name_{}".format(language),
-                    content_translations[language].title
+                    translation.title
                 )
+                if translation.heading_tree:
+                    setattr(
+                        lesson,
+                        "heading_tree_{}".format(language),
+                        convert_heading_tree_to_dict(translation.heading_tree)
+                    )
             for language in ct_links_translations:
                 setattr(
                     lesson,
@@ -142,12 +144,7 @@ class LessonsLoader(BaseLoader):
                     "programming_challenges_description_{}".format(language),
                     programming_description_translations[language]
                 )
-            for language in heading_tree_translations:
-                setattr(
-                    lesson,
-                    "heading_tree_{}".format(language),
-                    heading_tree_translations[language]
-                )
+
             lesson.save()
 
             # Add programming challenges
