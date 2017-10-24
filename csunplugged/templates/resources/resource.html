@@ -22,7 +22,7 @@
 {% block left_column_content %}
   <h2>Create Resource</h2>
 
-  <form action="{% url 'resources:generate' resource.slug %}" method="get"{% if not debug %} target="_blank"{% endif %}>
+  <form action="{% url 'resources:generate' resource.slug %}" method="get"{% if not debug %} target="_blank"{% endif %} id="resource-generation-form" data-resource-slug={{ resource.slug }}>
     {% block generation_form %}
     {% endblock generation_form %}
 
@@ -69,7 +69,7 @@
   {% if thumbnail %}
     <h2>Example</h2>
     {% load static %}
-    <img class="img-thumbnail" src="{% static thumbnail %}">
+    <img id="resource-thumbnail" class="img-thumbnail" data-resource-thumbnail-base={{ resource_thumbnail_base }}>
   {% endif %}
 {% endblock right_column_content %}
 
@@ -113,3 +113,7 @@
 
   {% endif %}
 {% endblock end_content %}
+
+{% block scripts %}
+  <script src="{% static 'js/resource-thumbnail-preview.js' %}"></script>
+{% endblock scripts %}

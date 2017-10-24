@@ -49,6 +49,7 @@ def resource(request, resource_slug):
     context = dict()
     context["resource"] = resource
     context["debug"] = settings.DEBUG
+    context["resource_thumbnail_base"] = "{}img/resources/{}/thumbnails/".format(settings.STATIC_URL, resource.slug)
     context["grouped_lessons"] = group_lessons_by_age(resource.lessons.all())
     if resource.thumbnail_static_path:
         context["thumbnail"] = resource.thumbnail_static_path
