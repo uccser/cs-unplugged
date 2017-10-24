@@ -7,6 +7,8 @@ from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 from topics.models import Topic
 from topics.management.commands._TopicLoader import TopicLoader
 
+from django.utils import translation
+
 from utils.errors.CouldNotFindConfigFileError import CouldNotFindConfigFileError
 from utils.errors.NoHeadingFoundInMarkdownFileError import NoHeadingFoundInMarkdownFileError
 from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
@@ -19,29 +21,33 @@ class TopicLoaderTest(BaseTestWithDB):
         super().__init__(*args, **kwargs)
         self.test_data = TopicsTestDataGenerator()
         self.loader_name = "topic"
-        self.BASE_PATH = os.path.join(self.test_data.LOADER_ASSET_PATH, self.loader_name)
+        self.base_path = os.path.join(self.test_data.LOADER_ASSET_PATH, self.loader_name)
+
 
     def test_basic_topic_loader_configuration(self):
-        config_file = "topic-1/topic-1.yaml"
+        content_path, structure_filename = "topic-1", "topic-1.yaml"
         factory = Mock()
         topic_loader = TopicLoader(
             factory,
-            config_file,
-            self.BASE_PATH
+            content_path=content_path,
+            base_path=self.base_path,
+            structure_filename=structure_filename
         )
         topic_loader.load()
         self.assertQuerysetEqual(
             Topic.objects.all(),
             ["<Topic: Topic 1>"]
         )
+        self.assertSetEqual(set(["en"]), set(Topic.objects.get(slug="topic-1").languages))
 
     def test_topic_loader_slug(self):
-        config_file = "topic-1/topic-1.yaml"
+        content_path, structure_filename = "topic-1", "topic-1.yaml"
         factory = Mock()
         topic_loader = TopicLoader(
             factory,
-            config_file,
-            self.BASE_PATH
+            content_path=content_path,
+            base_path=self.base_path,
+            structure_filename=structure_filename
         )
         topic_loader.load()
         self.assertEquals(
@@ -50,12 +56,13 @@ class TopicLoaderTest(BaseTestWithDB):
         )
 
     def test_topic_loader_missing_configuration_file(self):
-        config_file = "topic-1/topic-missing.yaml"
+        content_path, structure_filename = "topic-1", "topic-missing.yaml"
         factory = Mock()
         topic_loader = TopicLoader(
             factory,
-            config_file,
-            self.BASE_PATH
+            content_path=content_path,
+            base_path=self.base_path,
+            structure_filename=structure_filename
         )
         self.assertRaises(
             CouldNotFindConfigFileError,
@@ -63,12 +70,13 @@ class TopicLoaderTest(BaseTestWithDB):
         )
 
     def test_topic_loader_valid_name_text(self):
-        config_file = "topic-1/topic-1.yaml"
+        content_path, structure_filename = "topic-1", "topic-1.yaml"
         factory = Mock()
         topic_loader = TopicLoader(
             factory,
-            config_file,
-            self.BASE_PATH
+            content_path=content_path,
+            base_path=self.base_path,
+            structure_filename=structure_filename
         )
         topic_loader.load()
         self.assertEquals(
@@ -77,12 +85,13 @@ class TopicLoaderTest(BaseTestWithDB):
         )
 
     def test_topic_loader_missing_name_text(self):
-        config_file = "topic-missing-name/topic-missing-name.yaml"
+        content_path, structure_filename = "topic-missing-name", "topic-missing-name.yaml"
         factory = Mock()
         topic_loader = TopicLoader(
             factory,
-            config_file,
-            self.BASE_PATH
+            content_path=content_path,
+            base_path=self.base_path,
+            structure_filename=structure_filename
         )
         self.assertRaises(
             NoHeadingFoundInMarkdownFileError,
@@ -90,12 +99,13 @@ class TopicLoaderTest(BaseTestWithDB):
         )
 
     def test_topic_loader_valid_content_text(self):
-        config_file = "topic-1/topic-1.yaml"
+        content_path, structure_filename = "topic-1", "topic-1.yaml"
         factory = Mock()
         topic_loader = TopicLoader(
             factory,
-            config_file,
-            self.BASE_PATH
+            content_path=content_path,
+            base_path=self.base_path,
+            structure_filename=structure_filename
         )
         topic_loader.load()
         self.assertEquals(
@@ -104,12 +114,13 @@ class TopicLoaderTest(BaseTestWithDB):
         )
 
     def test_topic_loader_missing_content_text(self):
-        config_file = "topic-missing-content/topic-missing-content.yaml"
+        content_path, structure_filename = "topic-missing-content", "topic-missing-content.yaml"
         factory = Mock()
         topic_loader = TopicLoader(
             factory,
-            config_file,
-            self.BASE_PATH
+            content_path=content_path,
+            base_path=self.base_path,
+            structure_filename=structure_filename
         )
         self.assertRaises(
             EmptyMarkdownFileError,
@@ -117,12 +128,13 @@ class TopicLoaderTest(BaseTestWithDB):
         )
 
     def test_topic_loader_missing_unit_plans(self):
-        config_file = "topic-missing-unit-plans/topic-missing-unit-plans.yaml"
+        content_path, structure_filename = "topic-missing-unit-plans", "topic-missing-unit-plans.yaml"
         factory = Mock()
         topic_loader = TopicLoader(
             factory,
-            config_file,
-            self.BASE_PATH
+            content_path=content_path,
+            base_path=self.base_path,
+            structure_filename=structure_filename
         )
         self.assertRaises(
             MissingRequiredFieldError,
@@ -130,12 +142,13 @@ class TopicLoaderTest(BaseTestWithDB):
         )
 
     def test_topic_loader_valid_icon(self):
-        config_file = "topic-valid-icon/topic-valid-icon.yaml"
+        content_path, structure_filename = "topic-valid-icon", "topic-valid-icon.yaml"
         factory = Mock()
         topic_loader = TopicLoader(
             factory,
-            config_file,
-            self.BASE_PATH
+            content_path=content_path,
+            base_path=self.base_path,
+            structure_filename=structure_filename
         )
         topic_loader.load()
         self.assertEquals(
@@ -144,12 +157,72 @@ class TopicLoaderTest(BaseTestWithDB):
         )
 
     def test_topic_loader_missing_icon(self):
-        config_file = "topic-1/topic-1.yaml"
+        content_path, structure_filename = "topic-1", "topic-1.yaml"
         factory = Mock()
         topic_loader = TopicLoader(
             factory,
-            config_file,
-            self.BASE_PATH
+            content_path=content_path,
+            base_path=self.base_path,
+            structure_filename=structure_filename
         )
         # Passes if loader throws no exception
         topic_loader.load()
+
+    def test_topic_loader_with_other_resources(self):
+        content_path, structure_filename = "topic-with-other-resources", "topic-with-other-resources.yaml"
+        factory = Mock()
+        topic_loader = TopicLoader(
+            factory,
+            content_path=content_path,
+            base_path=self.base_path,
+            structure_filename=structure_filename
+        )
+        # Passes if loader throws no exception
+        topic_loader.load()
+        topic = Topic.objects.get(slug="topic-with-other-resources")
+        self.assertIn("Other resources content.", topic.other_resources)
+
+    def test_topic_translation(self):
+        content_path, structure_filename = "topic-translation", "topic-translation.yaml"
+        factory = Mock()
+        topic_loader = TopicLoader(
+            factory,
+            content_path=content_path,
+            base_path=self.base_path,
+            structure_filename=structure_filename
+        )
+        # Passes if loader throws no exception
+        topic_loader.load()
+        topic = Topic.objects.get(slug="topic-translation")
+
+        self.assertSetEqual(set(["en", "de"]), set(topic.languages))
+
+        self.assertEqual("English Heading", topic.name)
+        self.assertIn("English topic content", topic.content)
+        self.assertIn("English other resources content.", topic.other_resources)
+
+        with translation.override("de"):
+            self.assertEqual("German Heading", topic.name)
+            self.assertIn("German topic content", topic.content)
+            self.assertIn("German other resources content.", topic.other_resources)
+
+
+    def test_topic_translation_other_resources_missing(self):
+        content_path, structure_filename = "topic-translation-other-resources-missing", "topic-translation-other-resources-missing.yaml"
+        factory = Mock()
+        topic_loader = TopicLoader(
+            factory,
+            content_path=content_path,
+            base_path=self.base_path,
+            structure_filename=structure_filename
+        )
+        # Passes if loader throws no exception
+        topic_loader.load()
+        topic = Topic.objects.get(slug="topic-translation-other-resources-missing")
+
+        # 'de' should still be an available language as other_resources is optional
+        self.assertSetEqual(set(["en", "de"]), set(topic.languages))
+        self.assertIn("English other resources content.", topic.other_resources)
+        with translation.override("de"):
+            # accessing the untranslated field should not default back to english
+            self.assertEqual(None, topic.other_resources)
