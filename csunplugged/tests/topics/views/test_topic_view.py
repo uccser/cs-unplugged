@@ -99,13 +99,13 @@ class TopicViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards (small)",
             "resources/binary-cards-small.html",
-            "binary_cards_small.py",
+            "BinaryCardsSmallResourceGenerator",
         )
         resource2 = resource_test_data.create_resource(
             "binary-windows",
             "Binary Windows",
             "resources/binary-windows.html",
-            "binary_windows.py",
+            "BinaryWindowsResourceGenerator",
         )
         # Create relationships
         relationship1 = ResourceDescription(

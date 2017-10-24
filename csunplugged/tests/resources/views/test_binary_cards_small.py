@@ -1,10 +1,10 @@
-import itertools
 from django.test import tag
 from django.urls import reverse
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
-from utils.import_resource_module import import_resource_module
+from utils.get_resource_generator import get_resource_generator
 from utils.create_query_string import query_string
+from utils.resource_valid_test_configurations import resource_valid_test_configurations
 
 
 @tag('resource_generation')
@@ -20,7 +20,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards (small)",
             "resources/binary-cards-small.html",
-            "binary_cards_small.py",
+            "BinaryCardsSmallResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -34,17 +34,16 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards (small)",
             "resources/binary-cards-small.html",
-            "binary_cards_small.py",
+            "BinaryCardsSmallResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
         }
         base_url = reverse("resources:generate", kwargs=kwargs)
-        resource_module = import_resource_module(resource)
-        valid_options = resource_module.valid_options()
-        valid_options["header_text"] = ["", "Example header"]
-        valid_option_keys = sorted(valid_options)
-        combinations = [dict(zip(valid_option_keys, product)) for product in itertools.product(*(valid_options[valid_option_key] for valid_option_key in valid_option_keys))]  # noqa: E501
+        empty_generator = get_resource_generator(resource.generator_module)
+        combinations = resource_valid_test_configurations(
+            empty_generator.valid_options
+        )
         print()
         for combination in combinations:
             print("   - Testing combination: {} ... ".format(combination), end="")
@@ -84,7 +83,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards (small)",
             "resources/binary-cards-small.html",
-            "binary_cards_small.py",
+            "BinaryCardsSmallResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -105,7 +104,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards (small)",
             "resources/binary-cards-small.html",
-            "binary_cards_small.py",
+            "BinaryCardsSmallResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -126,7 +125,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards (small)",
             "resources/binary-cards-small.html",
-            "binary_cards_small.py",
+            "BinaryCardsSmallResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -147,7 +146,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards (small)",
             "resources/binary-cards-small.html",
-            "binary_cards_small.py",
+            "BinaryCardsSmallResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -168,7 +167,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards (small)",
             "resources/binary-cards-small.html",
-            "binary_cards_small.py",
+            "BinaryCardsSmallResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,

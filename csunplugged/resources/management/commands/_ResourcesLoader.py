@@ -1,11 +1,10 @@
 """Custom loader for loading resources."""
 
 from django.db import transaction
-
+from django.http.request import QueryDict
 from utils.BaseLoader import BaseLoader
-
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
-
+from utils.get_resource_generator import get_resource_generator
 from resources.models import Resource
 
 
@@ -40,17 +39,24 @@ class ResourcesLoader(BaseLoader):
             try:
                 resource_name = resource_structure["name"]
                 resource_template = resource_structure["webpage-template"]
-                resource_view = resource_structure["generation-view"]
+                generator_module = resource_structure["generator-module"]
                 resource_thumbnail = resource_structure["thumbnail-static-path"]
                 resource_copies = resource_structure["copies"]
             except KeyError:
                 raise MissingRequiredFieldError()
 
+            # Remove .py extension if given
+            if generator_module.endswith(".py"):
+                generator_module = generator_module[:-3]
+
+            # Check module can be imported
+            get_resource_generator(generator_module, QueryDict())
+
             resource = Resource(
                 slug=resource_slug,
                 name=resource_name,
                 webpage_template=resource_template,
-                generation_view=resource_view,
+                generator_module=generator_module,
                 thumbnail_static_path=resource_thumbnail,
                 copies=resource_copies,
             )
