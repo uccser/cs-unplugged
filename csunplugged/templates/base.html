@@ -215,6 +215,9 @@
     </div>
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script>
+      glossary_url = "{% url 'topics:glossary_json' %}"
+    </script>
     <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
     <script src="{% static 'js/tether.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
