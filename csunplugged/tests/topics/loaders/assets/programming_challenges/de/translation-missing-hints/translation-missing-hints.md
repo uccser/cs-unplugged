@@ -1,3 +1,3 @@
-# Translation English
+# Translation German
 
-English programming challenge content
+German programming challenge content

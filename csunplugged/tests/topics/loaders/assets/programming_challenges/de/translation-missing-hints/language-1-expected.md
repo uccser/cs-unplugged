@@ -1,1 +1,1 @@
-English expected result content.
+German expected result content.

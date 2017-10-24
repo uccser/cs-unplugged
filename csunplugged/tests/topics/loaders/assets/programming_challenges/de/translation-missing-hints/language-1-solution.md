@@ -1,1 +1,1 @@
-English solution content.
+German solution content.
