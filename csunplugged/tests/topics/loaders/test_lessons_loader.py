@@ -5,7 +5,6 @@ from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 
 from django.utils import translation
 
-
 from topics.models import Lesson
 from topics.management.commands._LessonsLoader import LessonsLoader
 
