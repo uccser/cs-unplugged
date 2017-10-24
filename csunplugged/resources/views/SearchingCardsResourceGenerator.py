@@ -75,6 +75,7 @@ class SearchingCardsResourceGenerator(BaseResourceGenerator):
 
             image = image.rotate(90, expand=True)
             pages.append({"type": "image", "data": image})
+        pages[0]["thumbnail"] = True
         return pages
 
     def create_help_sheet(self, numbers, range_text):

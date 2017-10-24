@@ -62,7 +62,7 @@ class BinaryCardsSmallResourceGenerator(BaseResourceGenerator):
                 if self.requested_options["black_back"]:
                     black_card = Image.new("1", (IMAGE_SIZE_X, IMAGE_SIZE_Y))
                     pages.append({"type": "image", "data": black_card})
-
+        pages[0]["thumbnail"] = True
         return pages
 
     @property

@@ -156,7 +156,7 @@ class SortingNetworkCardsResourceGenerator(BaseResourceGenerator):
                 if text_number % 2 == 1 and text_number != len(text) - 1:
                     pages.append({"type": "image", "data": page})
 
-        pages.append({"type": "image", "data": page})
+        pages.append({"type": "image", "data": page, "thumbnail": True})
         return pages
 
     @property
