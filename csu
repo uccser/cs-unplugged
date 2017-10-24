@@ -132,6 +132,13 @@ dev_makeresources() {
 }
 defhelp -dev makeresources 'Run Django makeresources command.'
 
+# Run Django makeresourcethumbnails command
+dev_makeresourcethumbnails() {
+  echo "Creating thumbnails for resource PDFs..."
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresourcethumbnails
+}
+defhelp -dev makeresourcethumbnails 'Run Django makeresourcethumbnails command.'
+
 # Run Django migrate command
 dev_migrate() {
   echo "Applying database migrations..."
