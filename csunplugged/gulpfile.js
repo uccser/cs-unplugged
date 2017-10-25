@@ -197,5 +197,5 @@ gulp.task('lint:js', tasks.lintjs);
 
 // // build task
 gulp.task('build', function(callback) {
-  runSequence(['images', 'css', 'js', 'sass'], callback);
+  runSequence('clean', ['images', 'css', 'js', 'sass'], callback);
 });
