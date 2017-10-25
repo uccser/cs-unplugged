@@ -8,7 +8,6 @@ function updateResourceThumbnail() {
    * Update resource thumbnail with currently selected options.
    */
   var form = $("form#resource-generation-form");
-  var thumbnail_filename = form.attr("data-resource-slug") + "-";
   var values = form.serializeArray();
   values.sort(sortValuesAlphabetically);
   var query_string = "";
@@ -18,9 +17,9 @@ function updateResourceThumbnail() {
     }
   });
   query_string = query_string.slice(0, -1);
-  thumbnail_filename += query_string + ".png";
+  var thumbnail_filename = resource_slug + "-" + query_string + ".png";
   var thumbnail = document.getElementById("resource-thumbnail");
-  thumbnail.src = thumbnail.getAttribute("data-resource-thumbnail-base") + thumbnail_filename;
+  thumbnail.src = resource_thumbnail_base + thumbnail_filename;
 }
 
 function sortValuesAlphabetically(a, b){
