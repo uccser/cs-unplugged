@@ -1,13 +1,11 @@
 """Custom loader for loading lessons."""
 
-import os.path
 from django.core.exceptions import ObjectDoesNotExist
 from utils.BaseLoader import BaseLoader
 from utils.language_utils import get_default_language, get_available_languages
 from utils.convert_heading_tree_to_dict import convert_heading_tree_to_dict
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
-from utils.errors.InvalidConfigValueError import InvalidConfigValueError
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 
 

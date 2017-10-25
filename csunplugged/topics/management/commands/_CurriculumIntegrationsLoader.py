@@ -1,7 +1,5 @@
 """Custom loader for loading curriculum integrations."""
 
-import os.path
-
 from django.core.exceptions import ObjectDoesNotExist
 
 from utils.BaseLoader import BaseLoader
