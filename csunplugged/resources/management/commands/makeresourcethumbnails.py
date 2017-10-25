@@ -79,4 +79,4 @@ def generate_resource_thumbnail(name, generator):
     css_file = finders.find("css/print-resource-pdf.css")
     css_string = open(css_file, encoding="UTF-8").read()
     base_css = CSS(string=css_string)
-    return html.write_png(stylesheets=[base_css], resolution=64)
+    return html.write_png(stylesheets=[base_css], resolution=72)
