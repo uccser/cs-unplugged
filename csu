@@ -99,7 +99,7 @@ cmd_update() {
   echo ""
   dev_updatedata
 
-  cmd_static_scratch
+  dev_static_scratch
   dev_collect_static
 }
 defhelp update 'Run Django migrate and updatedata commands and build static files.'
@@ -141,7 +141,7 @@ defhelp -dev migrate 'Run Django migrate command.'
 
 # Run Django updatedata command
 dev_updatedata() {
-  echo "Loading topics content..."
+  echo "Loading content..."
   docker-compose exec django /docker_venv/bin/python3 ./manage.py updatedata
 }
 defhelp -dev updatedata 'Run updatedata command.'
@@ -171,10 +171,11 @@ dev_static_prod() {
 defhelp -dev static_prod 'Build production static files.'
 
 # Build scratch static files
-cmd_static_scratch() {
+dev_static_scratch() {
   echo "Building scratch images..."
   docker-compose exec nginx gulp scratch
 }
+defhelp -dev static_scratch "Build scratch images."
 
 # Run shell
 dev_shell() {
@@ -205,7 +206,11 @@ defhelp -dev style 'Run style checks.'
 # Run test suite
 dev_test_suite() {
   echo "Running test suite..."
-  docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3
+  if [ "$CONTINUOUS_INTEGRATION" == "true" ]; then
+    docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3
+  else
+    docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --nomigrations
+  fi
 }
 defhelp -dev test_suite 'Run test suite with code coverage.'
 

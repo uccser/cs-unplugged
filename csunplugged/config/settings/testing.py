@@ -67,4 +67,7 @@ TEMPLATES[0]["OPTIONS"]["loaders"] = [  # noqa: F405
 
 # Your local stuff: Below this line define 3rd party library settings
 # ----------------------------------------------------------------------------
-INSTALLED_APPS += ["dev.apps.DevConfig"]  # noqa: F405
+INSTALLED_APPS += [
+    "test_without_migrations",
+    "dev.apps.DevConfig",
+]  # noqa: F405
