@@ -45,6 +45,9 @@ class ResourcesLoader(BaseLoader):
             except KeyError:
                 raise MissingRequiredFieldError()
 
+            # Check resource template file exists
+            open(os.path.join("templates/", resource_template, encoding="UTF-8"))
+
             # Remove .py extension if given
             if generator_module.endswith(".py"):
                 generator_module = generator_module[:-3]
