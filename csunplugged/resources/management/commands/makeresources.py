@@ -3,7 +3,7 @@
 import os
 import os.path
 from urllib.parse import urlencode
-from time import time
+from tqdm import tqdm
 from django.core.management.base import BaseCommand
 from django.http.request import QueryDict
 from resources.models import Resource
@@ -38,8 +38,7 @@ class Command(BaseCommand):
             resources = Resource.objects.order_by("name")
 
         for resource in resources:
-            resource_start_time = time()
-            print("Creating {}...".format(resource.name))
+            print("Creating {}".format(resource.name))
 
             # TODO: Import repeated in next for loop, check alternatives
             empty_generator = get_resource_generator(resource.generator_module)
@@ -47,10 +46,9 @@ class Command(BaseCommand):
                 empty_generator.valid_options,
                 header_text=False
             )
-
+            progress_bar = tqdm(combinations, ascii=True)
             # Create PDF for all possible combinations
-            for number, combination in enumerate(combinations):
-                start_time = time()
+            for combination in progress_bar:
                 if resource.copies:
                     combination["copies"] = 30
                 requested_options = QueryDict(urlencode(combination, doseq=True))
@@ -61,13 +59,3 @@ class Command(BaseCommand):
                 pdf_file_output = open(os.path.join(BASE_PATH, filename), "wb")
                 pdf_file_output.write(pdf_file)
                 pdf_file_output.close()
-                print("Created {}".format(filename))
-                print("{}{:.1f} secs".format(" " * 4, time() - start_time))
-                print("{}{:.0f}% of {} generated".format(
-                    " " * 4,
-                    (number + 1) / len(combinations) * 100, resource.name
-                ))
-            print("\n{} took {:.1f} secs to generate all combinations\n".format(
-                resource.name,
-                time() - resource_start_time
-            ))

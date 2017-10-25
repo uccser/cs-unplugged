@@ -3,7 +3,7 @@
 import os
 import os.path
 from urllib.parse import urlencode
-from time import time
+from tqdm import tqdm
 from django.conf import settings
 from django.contrib.staticfiles import finders
 from django.core.management.base import BaseCommand
@@ -28,13 +28,9 @@ class Command(BaseCommand):
         resources = Resource.objects.order_by("name")
 
         for resource in resources:
-            resource_start_time = time()
-
             base_path = BASE_PATH_TEMPLATE.format(resource=resource.slug)
             if not os.path.exists(base_path):
                 os.makedirs(base_path)
-
-            print("Creating thumbnails for {}...".format(resource.name))
 
             # TODO: Import repeated in next for loop, check alternatives
             empty_generator = get_resource_generator(resource.generator_module)
@@ -44,8 +40,10 @@ class Command(BaseCommand):
             )
 
             # Create thumbnail for all possible combinations
-            for number, combination in enumerate(combinations):
-                start_time = time()
+            print("Creating thumbnails for {}".format(resource.name))
+            progress_bar = tqdm(combinations, ascii=True)
+
+            for combination in progress_bar:
                 requested_options = QueryDict(urlencode(combination, doseq=True))
                 generator = get_resource_generator(resource.generator_module, requested_options)
 
@@ -58,17 +56,6 @@ class Command(BaseCommand):
                 thumbnail_file = open(os.path.join(base_path, filename), "wb")
                 thumbnail_file.write(thumbnail)
                 thumbnail_file.close()
-                print("Created {}".format(filename))
-                print("{}{:.1f} secs".format(" " * 4, time() - start_time))
-                print("{}{:.0f}% of {} generated".format(
-                    " " * 4,
-                    (number + 1) / len(combinations) * 100, resource.name
-                ))
-            print("\n{} took {:.1f} secs to generate thumbnails for all {} combinations\n".format(
-                resource.name,
-                time() - resource_start_time,
-                len(combinations)
-            ))
 
 
 def generate_resource_thumbnail(name, generator):
