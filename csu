@@ -149,7 +149,7 @@ defhelp -dev migrate 'Run Django migrate command.'
 
 # Run Django updatedata command
 dev_updatedata() {
-  echo "Loading topics content..."
+  echo "Loading content..."
   docker-compose exec django /docker_venv/bin/python3 ./manage.py updatedata
 }
 defhelp -dev updatedata 'Run updatedata command.'
