@@ -49,7 +49,7 @@ class SearchingCardsResourceGenerator(BaseResourceGenerator):
             pages.append({"type": "html", "data": self.create_help_sheet(numbers, range_text)})
 
         number_of_pages = range(ceil(number_cards / 4))
-        for page in number_of_pages:
+        for (page_number, page) in enumerate(number_of_pages):
             if page == number_of_pages[-1]:
                 image_path = IMAGE_PATH.format(3, 1)
             else:
@@ -74,8 +74,10 @@ class SearchingCardsResourceGenerator(BaseResourceGenerator):
                     coord_x -= X_COORD_DECREMENT
 
             image = image.rotate(90, expand=True)
-            pages.append({"type": "image", "data": image})
-        pages[0]["thumbnail"] = True
+            page_data = {"type": "image", "data": image}
+            if page_number == 0:
+                page_data["thumbnail"] = True
+            pages.append(page_data)
         return pages
 
     def create_help_sheet(self, numbers, range_text):
