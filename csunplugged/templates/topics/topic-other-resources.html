@@ -3,6 +3,7 @@
 {% load i18n %}
 
 {% load render_html_field %}
+{% load disable_translation_fallback %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block title %}
@@ -24,6 +25,20 @@
 
 {% block left_column_content %}
   <h2>{% trans "Other resources" %}</h2>
+  {% disable_translation_fallback %}
+  {% if topic.other_resources %}
+    {% render_html_field topic.other_resources %}
+  {% else %}
+  <div class="alert alert-danger" role="alert">
+    <p>{% trans "Whoops! We couldn't find any information on other resources for this topic." %}</p>
+    <p>
+      <a class="btn btn-outline-danger" role="button" href="{% url "topics:topic" topic.slug %}">
+        {% trans "Return to the topic" %}
+      </a>
+    </p>
+  </div>
+  {% endif %}
 
-  {% render_html_field topic.other_resources %}
+
+  {% end_disable_translation_fallback %}
 {% endblock left_column_content %}

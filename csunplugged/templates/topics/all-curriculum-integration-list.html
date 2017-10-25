@@ -41,6 +41,10 @@
           <a href="{% url 'topics:integration' curriculum_integration.topic.slug curriculum_integration.slug %}">
             <strong>
               {{ curriculum_integration.name }}
+              {% if not curriculum_integration.translation_available %}
+                <br>
+                {% include "topics/not-available-badge.html" %}
+              {% endif %}
             </strong>
           </a>
         </td>

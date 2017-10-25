@@ -26,13 +26,24 @@
     {% endfor %}
     </p>
   {% endif %}
+  {% if not integration.translation_available %}
+    {% url "topics:topic" topic.slug as parent_url %}
+    {% trans "topic" as topic_l10n %}
+    {% trans "curriculum integration" as curriculum_integration_l10n %}
+    {% with model=integration model_type=curriculum_integration_l10n parent=topic parent_type=topic_l10n parent_url=parent_url %}
+      {% include "topics/not-available-warning.html" %}
+    {% endwith %}
+  {% endif %}
 {% endblock page_heading %}
 
 {% block left_column_content %}
-  {% render_html_field integration.content %}
+  {% if integration.translation_available %}
+    {% render_html_field integration.content %}
+  {% endif %}
 {% endblock left_column_content %}
 
 {% block right_column_content %}
+  {% if integration.translation_available %}
   {% if prerequisite_lessons %}
     <div class="alert alert-warning" role="alert">
       <p class="h5 mb-1">{% trans "Heads up!" %}</p>
@@ -48,5 +59,6 @@
           {% endfor %}
       </ul>
     </div>
+  {% endif %}
   {% endif %}
 {% endblock right_column_content %}

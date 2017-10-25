@@ -3,6 +3,9 @@
 {% load i18n %}
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
+{% load translate_url %}
+{% load disable_translation_fallback %}
+
 
 {% block title %}
   {{ unit_plan.name }}
@@ -17,22 +20,35 @@
 
 {% block page_heading %}
   <h1 id="{{ unit_plan.slug }}" class="heading-underline"><span class="text-muted">{% trans "Unit plan:" %}</span> {{ unit_plan.name }}</h1>
+  {% if not topic.translation_available %}
+    {% url "topics:topic" topic.slug as parent_url %}
+    {% trans "unit plan" as unit_plan_l10n %}
+    {% trans "topic" as topic_l10n %}
+    {% with model=unit_plan model_type=unit_plan_l10n parent=topic parent_type=topic_l10n parent_url=parent_url %}
+      {% include 'topics/not-available-warning.html' %}
+    {% endwith %}
+  {% endif %}
 {% endblock page_heading %}
 
 {% block left_column_content %}
+  {% if unit_plan.translation_available %}
   {% render_html_field unit_plan.content %}
 
+  {% disable_translation_fallback %}
   {% with computational_thinking_links=unit_plan.computational_thinking_links %}
     {% include "topics/computational-thinking-links.html" %}
   {% endwith %}
+  {% end_disable_translation_fallback %}
 
   {% if grouped_lessons %}
     <h2 class="heading-underline" id="lessons">{% trans "Lessons" %}</h2>
     {% include "topics/lessons-table.html" %}
   {% endif %}
+  {% endif %}
 {% endblock left_column_content %}
 
 {% block right_column_content %}
+  {% if unit_plan.translation_available %}
   <div id="sticky-sidebar" class="sticky">
     <h2 class="heading-underline">{% trans "Table of contents" %}</h2>
     <ul class="nav nav-pills flex-column" id="scrollspy-table-of-contents">
@@ -44,16 +60,19 @@
           <a class="nav-link" href="#{{ heading_node.slug }}">{{ heading_node.text }}</a>
         </li>
       {% endfor %}
+      {% disable_translation_fallback %}
       {% if unit_plan.computational_thinking_links %}
         <li class="nav-item">
           <a class="nav-link" href="#ct-links">{% trans "Computational Thinking" %}</a>
         </li>
       {% endif %}
+      {% end_disable_translation_fallback %}
       <li class="nav-item">
         <a class="nav-link" href="#lessons">{% trans "Lessons" %}</a>
       </li>
     </ul>
   </div>
+  {% endif %}
 {% endblock right_column_content %}
 
 {% block scripts %}

@@ -23,13 +23,17 @@
       </tr>
       {% endif %}
       {% for lesson in lessons %}
-        <tr class="align-middle">
+        <tr class="align-middle{% if not lesson.translation_available %} table-active unavailable{% endif %}">
           <td class="text-center" style="width:10%">
             {{ lesson.number }}
           </td>
           <td style="width:60%">
             <a href="{% url 'topics:lesson' topic.slug unit_plan.slug lesson.slug %}">
               <strong>{{ lesson.name }}</strong>
+              {% if not lesson.translation_available %}
+                <br>
+                {% include "topics/not-available-badge.html" %}
+              {% endif %}
             </a>
           </td>
           {% if lesson.has_programming_challenges %}

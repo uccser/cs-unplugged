@@ -13,7 +13,7 @@
   </thead>
   <tbody>
     {% for programming_challenge in programming_challenges %}
-    <tr class="align-middle">
+    <tr class="align-middle{% if not programming_challenge.translation_available %} table-active{% endif %}">
       <td class="text-center">
         {{ programming_challenge.challenge_set_number }}.{{ programming_challenge.challenge_number }}
       </td>
@@ -22,6 +22,10 @@
           <strong>
             {{ programming_challenge.name }}
           </strong>
+          {% if not programming_challenge.translation_available %}
+            <br>
+            {% include "topics/not-available-badge.html" %}
+          {% endif %}
         </a>
       </td>
       <td class="text-center">

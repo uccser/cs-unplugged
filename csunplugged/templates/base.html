@@ -206,7 +206,12 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body" id="glossary-modal-definition"></div>
+          <div class="modal-body">
+            <div class="alert alert-danger" role="alert" id="glossary-modal-translation-unavailable">
+              This definition is not available in {{ LANGUAGE_CODE|language_name }}, sorry!
+            </div>
+            <div id="glossary-modal-definition"></div>
+          </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Close" %}</button>
           </div>
