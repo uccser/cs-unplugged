@@ -81,6 +81,10 @@ The generator class must contain the following method definition:
     - ``data``: If ``type`` is ``html``, then a HTML string is expected.
       If type is ``image``, a Pillow Image object is expected.
 
+    If a list of dictionaries is provided (when a resource has more than one
+    page), one of the dictionaries must have the key ``thumbnail`` set to ``True``.
+    This is used to determine which page is used to create the resource thumbnails.
+
 If required, the generator class can contain the class variable ``additional_valid_options`` containing the dictionary of parameter options for the resource.
 For example, a resource may contain the following:
 
