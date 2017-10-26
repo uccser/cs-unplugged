@@ -48,7 +48,6 @@ class LessonsLoader(TranslatableModelLoader):
 
         for (lesson_slug, lesson_structure) in lessons_structure.items():
 
-
             if lesson_structure is None:
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
@@ -56,12 +55,12 @@ class LessonsLoader(TranslatableModelLoader):
                     "Lesson"
                 )
 
-            lesson_translations = {} # Language, then fields, then values
+            lesson_translations = self.get_blank_translation_dictionary() # Language, then fields, then values
 
             content_filename = "{}.md".format(lesson_slug)
             content_translations = self.get_markdown_translations(content_filename)
             for language, content in content_translations.items():
-                lesson_translations[language] = dict()
+                # lesson_translations.setdefault(language, dict())
                 lesson_translations[language]['content'] = content.html_string
                 lesson_translations[language]['name'] = content.title
                 if content.heading_tree:
@@ -76,6 +75,7 @@ class LessonsLoader(TranslatableModelLoader):
                     remove_title=False,
                 )
                 for language, content in ct_links_translations.items():
+                    # lesson_translations.setdefault(language, dict())
                     lesson_translations[language]['computational_thinking_links'] = content.html_string
 
             if "programming-challenges-description" in lesson_structure:
@@ -86,6 +86,7 @@ class LessonsLoader(TranslatableModelLoader):
                     remove_title=False,
                 )
                 for language, content in pcd_translations.items():
+                    # lesson_translations.setdefault(language, dict())
                     lesson_translations[language]['programming_challenges_description'] = content.html_string
 
             if "duration" in lesson_structure:
@@ -98,10 +99,8 @@ class LessonsLoader(TranslatableModelLoader):
                 slug=lesson_slug,
                 duration=lesson_duration,
             )
-            # raise Exception(lesson_translations)
             self.populate_translations(lesson, lesson_translations)
             self.mark_translation_availability(lesson, required_fields=['name', 'content'])
-            # raise Exception(lesson.name)
 
             lesson.save()
 

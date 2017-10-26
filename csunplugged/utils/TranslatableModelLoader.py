@@ -46,7 +46,7 @@ class TranslatableModelLoader(BaseLoader):
                     **kwargs
                 )
             except CouldNotFindMarkdownFileError:
-                if language == get_default_language():
+                if required and language == get_default_language():
                     raise
         return content_translations
 
@@ -70,3 +70,6 @@ class TranslatableModelLoader(BaseLoader):
                     ):
                         available_languages.append(language)
         model.languages = available_languages
+
+    def get_blank_translation_dictionary(self):
+        return { language: dict() for language in get_available_languages() }

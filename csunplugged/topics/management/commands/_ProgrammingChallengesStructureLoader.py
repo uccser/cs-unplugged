@@ -5,11 +5,11 @@ from django.utils import translation
 from utils.BaseLoader import BaseLoader
 from utils.language_utils import get_available_languages, get_default_language
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
-
+from utils.TranslatableModelLoader import TranslatableModelLoader
 from topics.models import ProgrammingChallengeLanguage, ProgrammingChallengeDifficulty
 
 
-class ProgrammingChallengesStructureLoader(BaseLoader):
+class ProgrammingChallengesStructureLoader(TranslatableModelLoader):
     """Custom loader for loading structure of programming challenges."""
 
     def __init__(self, **kwargs):
@@ -25,20 +25,6 @@ class ProgrammingChallengesStructureLoader(BaseLoader):
                 attribute.
         """
         structure = self.load_yaml_file(self.structure_file_path)
-        translation_strings = {}
-        prog_language_translation_strings = {}
-        difficulties_translation_strings = {}
-        for language in get_available_languages():
-            try:
-                strings_dict = self.load_yaml_file(
-                    self.get_localised_file(language, "programming-challenges-structure-strings.yaml")
-                )
-            except:
-                strings_dict = {}
-            translation_strings[language] = strings_dict
-            # prog_language_translation_strings.setdefault()
-            # prog_language_translation_strings[language] = strings_dict.get("languages", dict())
-            # difficulties_translation_strings[language] = strings_dict.get("difficulties", dict())
 
         prog_languages = structure.get("languages", None)
         difficulty_levels = structure.get("difficulties", None)
@@ -48,6 +34,8 @@ class ProgrammingChallengesStructureLoader(BaseLoader):
                 ["lanugages", "difficulties"],
                 "Programming Challenge Structure"
             )
+
+        prog_languages_translations = self.get_yaml_translations("programming-challenges-languages-strings.yaml")
 
         for (prog_language, prog_language_data) in prog_languages.items():
 
@@ -59,12 +47,11 @@ class ProgrammingChallengesStructureLoader(BaseLoader):
                 )
 
             # Check for required fields
-            prog_language_name = prog_language_data.get("name", None)
             prog_language_number = prog_language_data.get("number", None)
-            if prog_language_name is None or prog_language_number is None:
+            if prog_language_number is None:
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
-                    ["name", "number"],
+                    ["number"],
                     "Programming Challenge Language"
                 )
 
@@ -76,47 +63,28 @@ class ProgrammingChallengesStructureLoader(BaseLoader):
 
             new_prog_language = ProgrammingChallengeLanguage(
                 slug=prog_language,
-                # name=prog_language_name,
                 number=prog_language_number,
                 icon=prog_language_icon
             )
-            for language in translation_strings:
-                name = translation_strings[language].get("languages", {}).get(prog_language)
-                if name:
-                    with translation.override(language):
-                        new_prog_language.name = name
-                    new_prog_language.languages.append(language)
+
+            translations = prog_languages_translations.get(prog_language, dict())
+            self.populate_translations(new_prog_language, translations)
+            self.mark_translation_availability(new_prog_language, required_fields=['name'])
             new_prog_language.save()
 
             self.log("Added programming langauge: {}".format(new_prog_language.__str__()))
 
+        difficulties_translations = self.get_yaml_translations("programming-challenges-difficulties-strings.yaml")
+
         for difficulty in difficulty_levels:
-
-            # if difficulty_data is None:
-            #     raise MissingRequiredFieldError(
-            #         self.structure_file_path,
-            #         ["name"],
-            #         "Programming Challenge Difficulty"
-            #     )
-
-            # difficulty_name = difficulty_data.get("name", None)
-            # if difficulty_name is None:
-            #     raise MissingRequiredFieldError(
-            #         self.structure_file_path,
-            #         ["name"],
-            #         "Programming Challenge Difficulty"
-            #     )
 
             new_difficulty = ProgrammingChallengeDifficulty(
                 level=difficulty,
-                # name=difficulty_name
             )
-            for language in translation_strings:
-                name = translation_strings[language].get("difficulties", {}).get(difficulty)
-                if name:
-                    with translation.override(language):
-                        new_difficulty.name = name
-                    new_difficulty.languages.append(language)
+
+            translations = difficulties_translations.get(difficulty, dict())
+            self.populate_translations(new_difficulty, translations)
+            self.mark_translation_availability(new_difficulty, required_fields=['name'])
             new_difficulty.save()
 
             self.log("Added programming difficulty level: {}".format(new_difficulty.__str__()))

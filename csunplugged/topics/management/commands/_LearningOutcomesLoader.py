@@ -31,13 +31,9 @@ class LearningOutcomesLoader(TranslatableModelLoader):
         learning_outcomes = self.load_yaml_file(self.structure_file_path)
         learning_outcomes_translations = self.get_yaml_translations("learning-outcomes-strings.yaml")
         for (outcome_slug, outcome_data) in learning_outcomes.items():
-            # if ("text" not in outcome_data) or (outcome_data["text"] is None):
-            #     raise MissingRequiredFieldError(
-            #         self.structure_file_path,
-            #         ["text"],
-            #         "Learning Outcome"
-            #     )
-            translations = learning_outcomes_translations.get(outcome_slug, dict())
+
+            translations = self.get_blank_translation_dictionary()
+            translations.update(learning_outcomes_translations.get(outcome_slug, dict()))
 
             # Create outcome objects and save to db
             outcome = LearningOutcome(
@@ -50,8 +46,7 @@ class LearningOutcomesLoader(TranslatableModelLoader):
 
             # Add curriculum areas
             curriculum_area_slugs = outcome_data.get("curriculum-areas", [])
-            # if curriculum_area_slugs is None:
-            #     raise Exception(outcome_slug)
+
             for curriculum_area_slug in curriculum_area_slugs:
                 try:
                     curriculum_area = CurriculumArea.objects.get(
