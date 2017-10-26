@@ -217,7 +217,7 @@ defhelp -dev test_suite 'Run test suite with code coverage.'
 # Run specific test suite
 dev_test_specific() {
   echo "Running specific test suite..."
-  docker-compose exec django /docker_venv/bin/python3 ./manage.py test --settings=config.settings.testing "${1}" -v 3
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py test --settings=config.settings.testing "${1}" -v 3 --nomigrations
 }
 defhelp -dev test_specific 'Run specific test suite. Pass in parameter of Python test module.'
 
