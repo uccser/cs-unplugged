@@ -46,7 +46,6 @@ class ResourceViewTest(BaseTestWithDB):
         response = self.client.get(url)
         self.assertEqual(404, response.status_code)
 
-
     def test_resource_view_context(self):
         resource = self.test_data.create_resource(
             "grid",
@@ -72,6 +71,25 @@ class ResourceViewTest(BaseTestWithDB):
         self.assertEqual(
             response.context["thumbnail"],
             "static/images/thumbnail-grid"
+        )
+
+    def test_resource_view_context_without_thumbnail(self):
+        resource = self.test_data.create_resource(
+            "grid",
+            "Grid",
+            "resources/grid.html",
+            "GridResourceGenerator",
+            thumbnail=False
+        )
+        kwargs = {
+            "resource_slug": resource.slug,
+        }
+        url = reverse("resources:resource", kwargs=kwargs)
+        response = self.client.get(url)
+        self.assertRaises(
+            KeyError,
+            response.context.__getitem__,
+            "thumbnail"
         )
 
     def test_resource_view_lesson_context(self):
