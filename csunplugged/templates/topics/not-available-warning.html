@@ -5,8 +5,8 @@
 {% get_available_languages as LANGUAGES %}
 
 <div class="alert alert-danger" role="alert">
-  {% blocktrans trimmed %}
-  <h4>Sorry! This {{ model_type }} is not yet available in {{ LANGUAGE_CODE|language_name }}.</h4>
+  {% blocktrans trimmed with language=LANGUAGE_CODE|language_name %}
+  <h4>Sorry! This {{ model_type }} is not yet available in {{ language }}.</h4>
   <p>If you're totally awesome and can speak multiple languages, then feel free to check it out in...</p>
   {% endblocktrans %}
   <p><div class="btn-group">

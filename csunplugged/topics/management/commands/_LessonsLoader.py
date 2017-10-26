@@ -3,10 +3,13 @@
 from django.core.exceptions import ObjectDoesNotExist
 from utils.BaseLoader import BaseLoader
 from utils.language_utils import get_default_language, get_available_languages
+from utils.model_translation_utils import populate_translations, mark_translation_availability
+from utils.TranslatableModelLoader import TranslatableModelLoader
 from utils.convert_heading_tree_to_dict import convert_heading_tree_to_dict
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
+from django.utils import translation
 
 
 from topics.models import (
@@ -18,8 +21,7 @@ from topics.models import (
     ClassroomResource
 )
 
-
-class LessonsLoader(BaseLoader):
+class LessonsLoader(TranslatableModelLoader):
     """Custom loader for loading lessons."""
 
     def __init__(self, topic, unit_plan, **kwargs):
@@ -46,6 +48,7 @@ class LessonsLoader(BaseLoader):
 
         for (lesson_slug, lesson_structure) in lessons_structure.items():
 
+
             if lesson_structure is None:
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
@@ -53,55 +56,37 @@ class LessonsLoader(BaseLoader):
                     "Lesson"
                 )
 
-            content_translations = {}
-            ct_links_translations = {}
-            programming_description_translations = {}
+            lesson_translations = {} # Language, then fields, then values
 
-            for language in get_available_languages():
-                # Build the file path to the lesson"s md file
-                file_path = self.get_localised_file(language, "{}.md".format(lesson_slug))
+            content_filename = "{}.md".format(lesson_slug)
+            content_translations = self.get_markdown_translations(content_filename)
+            for language, content in content_translations.items():
+                lesson_translations[language] = dict()
+                lesson_translations[language]['content'] = content.html_string
+                lesson_translations[language]['name'] = content.title
+                if content.heading_tree:
+                    heading_tree = convert_heading_tree_to_dict(content.heading_tree)
+                    lesson_translations[language]['heading_tree'] = heading_tree
 
-                try:
-                    lesson_content = self.convert_md_file(
-                        file_path,
-                        self.structure_file_path,
-                    )
-                    content_translations[language] = lesson_content
-                except CouldNotFindMarkdownFileError:
-                    if language == get_default_language():
-                        raise
+            if "computational-thinking-links" in lesson_structure:
+                filename = lesson_structure["computational-thinking-links"]
+                ct_links_translations = self.get_markdown_translations(
+                    filename,
+                    heading_required=False,
+                    remove_title=False,
+                )
+                for language, content in ct_links_translations.items():
+                    lesson_translations[language]['computational_thinking_links'] = content.html_string
 
-                if "computational-thinking-links" in lesson_structure:
-                    filename = lesson_structure["computational-thinking-links"]
-                    file_path = self.get_localised_file(language, filename)
-
-                    try:
-                        ct_links_content = self.convert_md_file(
-                            file_path,
-                            self.structure_file_path,
-                            heading_required=False,
-                            remove_title=False,
-                        )
-                        ct_links_translations[language] = ct_links_content.html_string
-                    except CouldNotFindMarkdownFileError:
-                        if language == get_default_language():
-                            raise
-
-                if "programming-challenges-description" in lesson_structure:
-                    filename = lesson_structure["programming-challenges-description"]
-                    file_path = self.get_localised_file(language, filename)
-
-                    try:
-                        programming_description_content = self.convert_md_file(
-                            file_path,
-                            self.structure_file_path,
-                            heading_required=False,
-                            remove_title=False,
-                        )
-                        programming_description_translations[language] = programming_description_content.html_string
-                    except CouldNotFindMarkdownFileError:
-                        if language == get_default_language():
-                            raise
+            if "programming-challenges-description" in lesson_structure:
+                filename = lesson_structure["programming-challenges-description"]
+                pcd_translations = self.get_markdown_translations(
+                    filename,
+                    heading_required=False,
+                    remove_title=False,
+                )
+                for language, content in pcd_translations.items():
+                    lesson_translations[language]['programming_challenges_description'] = content.html_string
 
             if "duration" in lesson_structure:
                 lesson_duration = lesson_structure["duration"]
@@ -112,39 +97,11 @@ class LessonsLoader(BaseLoader):
                 unit_plan=self.unit_plan,
                 slug=lesson_slug,
                 duration=lesson_duration,
-                languages=list(content_translations.keys()),
             )
-
-            for language in content_translations:
-                translation = content_translations[language]
-                setattr(
-                    lesson,
-                    "content_{}".format(language),
-                    translation.html_string
-                )
-                setattr(
-                    lesson,
-                    "name_{}".format(language),
-                    translation.title
-                )
-                if translation.heading_tree:
-                    setattr(
-                        lesson,
-                        "heading_tree_{}".format(language),
-                        convert_heading_tree_to_dict(translation.heading_tree)
-                    )
-            for language in ct_links_translations:
-                setattr(
-                    lesson,
-                    "computational_thinking_links_{}".format(language),
-                    ct_links_translations[language]
-                )
-            for language in programming_description_translations:
-                setattr(
-                    lesson,
-                    "programming_challenges_description_{}".format(language),
-                    programming_description_translations[language]
-                )
+            # raise Exception(lesson_translations)
+            self.populate_translations(lesson, lesson_translations)
+            self.mark_translation_availability(lesson, required_fields=['name', 'content'])
+            # raise Exception(lesson.name)
 
             lesson.save()
 

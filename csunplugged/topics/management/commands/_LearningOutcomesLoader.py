@@ -3,6 +3,8 @@
 from django.db import transaction
 from django.core.exceptions import ObjectDoesNotExist
 from utils.BaseLoader import BaseLoader
+from utils.TranslatableModelLoader import TranslatableModelLoader
+from utils.model_translation_utils import populate_translations, mark_translation_availability
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 from topics.models import (
@@ -11,7 +13,7 @@ from topics.models import (
 )
 
 
-class LearningOutcomesLoader(BaseLoader):
+class LearningOutcomesLoader(TranslatableModelLoader):
     """Custom loader for loading learning outcomes."""
 
     def __init__(self, **kwargs):
@@ -26,28 +28,30 @@ class LearningOutcomesLoader(BaseLoader):
             MissingRequiredFieldError: when no object can be found with the matching
                 attribute.
         """
-        learning_outcomes = self.load_yaml_file(
-            self.structure_file_path
-        )
-
+        learning_outcomes = self.load_yaml_file(self.structure_file_path)
+        learning_outcomes_translations = self.get_yaml_translations("learning-outcomes-strings.yaml")
         for (outcome_slug, outcome_data) in learning_outcomes.items():
-
-            if ("text" not in outcome_data) or (outcome_data["text"] is None):
-                raise MissingRequiredFieldError(
-                    self.structure_file_path,
-                    ["text"],
-                    "Learning Outcome"
-                )
+            # if ("text" not in outcome_data) or (outcome_data["text"] is None):
+            #     raise MissingRequiredFieldError(
+            #         self.structure_file_path,
+            #         ["text"],
+            #         "Learning Outcome"
+            #     )
+            translations = learning_outcomes_translations.get(outcome_slug, dict())
 
             # Create outcome objects and save to db
             outcome = LearningOutcome(
                 slug=outcome_slug,
-                text=outcome_data["text"]
             )
+            self.populate_translations(outcome, translations)
+            self.mark_translation_availability(outcome, required_fields=['text'])
+
             outcome.save()
 
             # Add curriculum areas
             curriculum_area_slugs = outcome_data.get("curriculum-areas", [])
+            # if curriculum_area_slugs is None:
+            #     raise Exception(outcome_slug)
             for curriculum_area_slug in curriculum_area_slugs:
                 try:
                     curriculum_area = CurriculumArea.objects.get(

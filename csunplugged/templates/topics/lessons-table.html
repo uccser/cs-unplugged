@@ -15,12 +15,12 @@
       </tr>
     </thead>
     <tbody>
-      {% if age_group.description %}
-      <tr class="align-middle">
-        <td colspan="3" class="small">
-          {{ age_group.description }}
-        </td>
-      </tr>
+      {% if age_group.translation_available %}
+        <tr class="align-middle">
+          <td colspan="3" class="small">
+            {{ age_group.description }}
+          </td>
+        </tr>
       {% endif %}
       {% for lesson in lessons %}
         <tr class="align-middle{% if not lesson.translation_available %} table-active unavailable{% endif %}">

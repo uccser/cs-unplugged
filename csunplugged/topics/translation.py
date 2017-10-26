@@ -11,7 +11,9 @@ from topics.models import (
     ProgrammingChallengeImplementation,
     Lesson,
     CurriculumIntegration,
-    GlossaryTerm
+    GlossaryTerm,
+    CurriculumArea,
+    LearningOutcome
 )
 
 
@@ -56,6 +58,16 @@ class GlossaryTermTranslationOptions(TranslationOptions):
 
     fields = ('term', 'definition')
 
+class CurriculumAreaTranslationOptions(TranslationOptions):
+    """Translation options for GlossaryTerm model."""
+
+    fields = ('name',)
+
+class LearningOutcomeTranslationOptions(TranslationOptions):
+    """Translation options for GlossaryTerm model."""
+
+    fields = ('text',)
+
 
 translator.register(Topic, TopicTranslationOptions)
 translator.register(UnitPlan, UnitPlanTranslationOptions)
@@ -64,3 +76,5 @@ translator.register(ProgrammingChallengeImplementation, ProgrammingChallengeImpl
 translator.register(Lesson, LessonTranslationOptions)
 translator.register(CurriculumIntegration, CurriculumIntegrationTranslationOptions)
 translator.register(GlossaryTerm, GlossaryTermTranslationOptions)
+translator.register(CurriculumArea, CurriculumAreaTranslationOptions)
+translator.register(LearningOutcome, LearningOutcomeTranslationOptions)

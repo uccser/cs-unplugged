@@ -1,0 +1,9 @@
+languages:
+    scratch: ScratchGerman
+    python: Python
+
+difficulties:
+    0: Versuch es
+    1: Anfänger
+    2: Wachsende Erfahrung
+    3: Bereit zu erweitern
