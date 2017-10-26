@@ -1,5 +1,4 @@
-import os
-from django.test import tag
+from django.test import tag, override_settings
 from django.urls import reverse
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
@@ -36,8 +35,8 @@ class GenerateResourceTest(BaseTestWithDB):
             'attachment; filename="Resource Grid (a4).pdf"'
         )
 
+    @override_settings(DJANGO_PRODUCTION="TRUE")
     def test_generate_view_valid_slug_production_cache(self):
-        os.environ["DJANGO_PRODUCTION"] = "TRUE"
         resource = self.test_data.create_resource(
             "grid",
             "Grid",

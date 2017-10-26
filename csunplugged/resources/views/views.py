@@ -76,11 +76,7 @@ def generate_resource(request, resource_slug):
 
     # TODO: Weasyprint handling in production
     # TODO: Add creation of PDF as job to job queue
-    import environ
-    env = environ.Env(
-        DJANGO_PRODUCTION=(bool),
-    )
-    if env("DJANGO_PRODUCTION"):
+    if settings.DEBUG:
         # Return cached static PDF file of resource.
         # Currently developing system for dynamically rendering
         # custom PDFs on request (https://github.com/uccser/render).
