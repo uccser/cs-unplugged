@@ -294,7 +294,7 @@ ci_test_general() {
   ! (( $test_status || $coverage_status ))
 }
 
-ci_test_resource() {
+ci_test_resources() {
   docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --tag=resource
   test_status=$?
   dev_test_coverage
