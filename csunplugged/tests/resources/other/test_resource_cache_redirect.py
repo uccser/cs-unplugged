@@ -1,7 +1,6 @@
 from tests.BaseTestWithDB import BaseTestWithDB
 from django.test import tag
 from django.http import QueryDict
-from django.urls import reverse
 from resources.views.views import resource_pdf_cache
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
 from utils.get_resource_generator import get_resource_generator
