@@ -5,7 +5,7 @@ from django.core import management
 from django.test import tag
 
 
-@tag('management')
+@tag("management")
 class ManagementCommandTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
