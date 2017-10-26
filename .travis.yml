@@ -23,91 +23,69 @@ jobs:
     - script: ./csu ci style
     - script: ./csu ci docs
     - stage: develop deploy
+      if: branch = develop
       script: skip
       deploy:
         - provider: script
           script: bash ./infrastructure/dev-deploy/deploy-app.sh
           skip_cleanup: true
-          on:
-            branch: develop
     - script: skip
       deploy:
         - provider: script
           script: bash ./infrastructure/dev-deploy/deploy-resources-1.sh
           skip_cleanup: true
-          on:
-            branch: develop
     - script: skip
       deploy:
         - provider: script
           script: bash ./infrastructure/dev-deploy/deploy-resources-2.sh
           skip_cleanup: true
-          on:
-            branch: develop
     - script: skip
       deploy:
         - provider: script
           script: bash ./infrastructure/dev-deploy/deploy-resources-3.sh
           skip_cleanup: true
-          on:
-            branch: develop
     - script: skip
       deploy:
         - provider: script
           script: bash ./infrastructure/dev-deploy/deploy-static-files.sh
           skip_cleanup: true
-          on:
-            branch: develop
     - script: skip
       deploy:
         - provider: script
           script: bash ./infrastructure/dev-deploy/update-database.sh
           skip_cleanup: true
-          on:
-            branch: develop
     - stage: production deploy
+      if: branch = master
       script: skip
       deploy:
         - provider: script
           script: bash ./infrastructure/prod-deploy/deploy-app.sh
           skip_cleanup: true
-          on:
-            branch: master
     - script: skip
       deploy:
         - provider: script
           script: bash ./infrastructure/prod-deploy/deploy-resources-1.sh
           skip_cleanup: true
-          on:
-            branch: master
     - script: skip
       deploy:
         - provider: script
           script: bash ./infrastructure/prod-deploy/deploy-resources-2.sh
           skip_cleanup: true
-          on:
-            branch: master
     - script: skip
       deploy:
         - provider: script
           script: bash ./infrastructure/prod-deploy/deploy-resources-3.sh
           skip_cleanup: true
-          on:
-            branch: master
     - script: skip
       deploy:
         - provider: script
           script: bash ./infrastructure/prod-deploy/deploy-static-files.sh
           skip_cleanup: true
-          on:
-            branch: master
     - script: skip
       deploy:
         - provider: script
           script: bash ./infrastructure/prod-deploy/update-database.sh
           skip_cleanup: true
-          on:
-            branch: master
 notifications:
   email: false
   slack:
