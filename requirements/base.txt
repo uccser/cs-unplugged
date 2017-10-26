@@ -6,7 +6,7 @@ wheel==0.30.0
 
 # Resources
 Pillow==4.3.0
-yattag==1.9.0
+yattag==1.9.1
 
 # Markdown
 verto==0.6.1
