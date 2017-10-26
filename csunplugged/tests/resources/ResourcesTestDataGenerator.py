@@ -26,6 +26,6 @@ class ResourcesTestDataGenerator:
             copies=False,
         )
         if thumbnail:
-            resource.thumbnail_static_path="static/images/thumbnail-{}".format(slug)
+            resource.thumbnail_static_path = "static/images/thumbnail-{}".format(slug)
         resource.save()
         return resource
