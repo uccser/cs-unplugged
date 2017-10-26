@@ -10,7 +10,7 @@ from topics.models import ResourceDescription
 from collections import OrderedDict
 
 
-@tag('resource_generation')
+@tag("resource")
 class ResourceViewTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):

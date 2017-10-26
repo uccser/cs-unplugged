@@ -7,7 +7,7 @@ from utils.create_query_string import query_string
 from utils.resource_valid_test_configurations import resource_valid_test_configurations
 
 
-@tag('resource_generation')
+@tag("resource")
 class SortingNetworkCardsResourceViewTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):

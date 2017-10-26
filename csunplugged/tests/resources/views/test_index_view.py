@@ -4,7 +4,7 @@ from django.urls import reverse
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
 
 
-@tag('resource_generation')
+@tag("resource")
 class IndexViewTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):

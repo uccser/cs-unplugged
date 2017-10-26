@@ -1,4 +1,4 @@
-"""Module for the testing custom Django commands."""
+"""Module for the testing custom Django resource commands."""
 
 from tests.BaseTestWithDB import BaseTestWithDB
 from django.core import management
@@ -12,5 +12,8 @@ class ManagementCommandTest(BaseTestWithDB):
         super().__init__(*args, **kwargs)
         self.language = "en"
 
-    def test_updatedata_command(self):
-        management.call_command("updatedata")
+    def test_makeresources_command(self):
+        management.call_command("makeresources")
+
+    def test_makeresourcethumbnails_command(self):
+        management.call_command("makeresourcethumbnails")
