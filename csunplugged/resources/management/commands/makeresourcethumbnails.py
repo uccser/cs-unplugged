@@ -75,7 +75,7 @@ def generate_resource_thumbnail(name, generator):
     context["paper_size"] = generator.requested_options["paper_size"]
     context["all_data"] = [generate_resource_copy(generator, thumbnail=True)]
     pdf_html = render_to_string("resources/base-resource-pdf.html", context)
-    html = HTML(string=pdf_html, base_url=settings.STATIC_ROOT)
+    html = HTML(string=pdf_html, base_url=settings.BUILD_ROOT)
     css_file = finders.find("css/print-resource-pdf.css")
     css_string = open(css_file, encoding="UTF-8").read()
     base_css = CSS(string=css_string)
