@@ -65,6 +65,8 @@ def generate_resource(request, resource_slug):
         HTML response containing PDF of resource, 404 if not found.
     """
     resource = get_object_or_404(Resource, slug=resource_slug)
+    if not request.GET:
+        raise Http404("No parameters given for resource generation.")
     try:
         generator = get_resource_generator(resource.generator_module, request.GET)
     except QueryParameterMissingError as e:
