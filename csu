@@ -214,14 +214,18 @@ defhelp -dev style 'Run style checks.'
 # Run test suite
 dev_test_suite() {
   echo "Running test suite..."
-  docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3
+  if [ "$CONTINUOUS_INTEGRATION" == "true" ]; then
+    docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3
+  else
+    docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --nomigrations
+  fi
 }
 defhelp -dev test_suite 'Run test suite with code coverage.'
 
 # Run specific test suite
 dev_test_specific() {
   echo "Running specific test suite..."
-  docker-compose exec django /docker_venv/bin/python3 ./manage.py test --settings=config.settings.testing "${1}" -v 3
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py test --settings=config.settings.testing "${1}" -v 3 --nomigrations
 }
 defhelp -dev test_specific 'Run specific test suite. Pass in parameter of Python test module.'
 
