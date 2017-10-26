@@ -76,7 +76,7 @@ def generate_resource(request, resource_slug):
 
     # TODO: Weasyprint handling in production
     # TODO: Add creation of PDF as job to job queue
-    if settings.DEBUG:
+    if settings.DJANGO_PRODUCTION:
         # Return cached static PDF file of resource.
         # Currently developing system for dynamically rendering
         # custom PDFs on request (https://github.com/uccser/render).
