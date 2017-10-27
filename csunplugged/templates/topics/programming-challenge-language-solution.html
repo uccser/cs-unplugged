@@ -4,7 +4,6 @@
 {% load static %}
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
-{% load disable_translation_fallback %}
 
 {% block title %}
   {{ programming_challenge.challenge_set_number }}.{{ programming_challenge.challenge_number }}
@@ -67,15 +66,13 @@
 
 {% block end_content %}
   {% if implementation.translation_available %}
-  {% disable_translation_fallback %}
-  {% if programming_challenge.extra_challenge %}
-    <div class="boxed-text">
-      <div class="boxed-text-content">
-        <h2>{% trans "Extra Challenge" %}</h2>
-        {% render_html_field programming_challenge.extra_challenge %}
+    {% if programming_challenge.extra_challenge %}
+      <div class="boxed-text">
+        <div class="boxed-text-content">
+          <h2>{% trans "Extra Challenge" %}</h2>
+          {% render_html_field programming_challenge.extra_challenge %}
+        </div>
       </div>
-    </div>
-  {% endif %}
-  {% end_disable_translation_fallback %}
+    {% endif %}
   {% endif %}
 {% endblock end_content %}

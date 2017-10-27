@@ -4,8 +4,6 @@
 {% load static %}
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
-{% load translate_url %}
-{% load disable_translation_fallback %}
 
 {% block title %}
   {{ topic.name }}
@@ -84,7 +82,6 @@
         {% endfor %}
       </div>
     {% endif %}
-    {% disable_translation_fallback %}
     {% if topic.other_resources %}
       <h2 id="other-resources" class="heading-underline">{% trans "Looking for more?" %}</h2>
       <p>
@@ -93,7 +90,6 @@
         </a>
       </p>
     {% endif %}
-    {% end_disable_translation_fallback %}
   {% endif %}
 {% endblock left_column_content %}
 
@@ -125,13 +121,11 @@
             <a class="nav-link" href="#resources">{% trans "Resources" %}</a>
           </li>
         {% endif %}
-        {% disable_translation_fallback %}
         {% if topic.other_resources %}
           <li class="nav-item">
             <a class="nav-link" href="#other-resources">{% trans "Other resources" %}</a>
           </li>
         {% endif %}
-        {% end_disable_translation_fallback %}
       </ul>
     </div>
   {% endif %}

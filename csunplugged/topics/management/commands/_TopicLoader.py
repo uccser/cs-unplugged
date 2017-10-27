@@ -2,7 +2,7 @@
 
 import os.path
 from django.db import transaction
-
+from django.utils import translation
 from utils.BaseLoader import BaseLoader
 from utils.TranslatableModelLoader import TranslatableModelLoader
 from utils.language_utils import get_available_languages, get_default_language
@@ -76,7 +76,6 @@ class TopicLoader(TranslatableModelLoader):
 
         self.populate_translations(topic, topic_translations)
         self.mark_translation_availability(topic, required_fields=['name', 'content'])
-
         topic.save()
 
         self.log("Added Topic: {}".format(topic.name))

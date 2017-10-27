@@ -37,7 +37,6 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     "django_bootstrap_breadcrumbs",
     "modeltranslation",
-    "vinaigrette",
 ]
 
 # Apps specific for this project go here.
@@ -159,7 +158,6 @@ TEMPLATES = [
             "libraries": {
                 "render_html_field": "config.templatetags.render_html_field",
                 "translate_url": "config.templatetags.translate_url",
-                "disable_translation_fallback": "config.templatetags.disable_translation_fallback",
             },
         },
     },

@@ -17,6 +17,7 @@ class UntranslatedModelManager(models.Manager):
             ~Q(languages__contains=[get_language()])
         )
 
+
 class TranslatableModel(models.Model):
     """Abstract base class for models needing to store list of available languages."""
 
@@ -35,3 +36,10 @@ class TranslatableModel(models.Model):
     def translation_available(self):
         """Check if model content is available in current language."""
         return get_language() in self.languages
+
+    # def __getattr__(self, name):
+    #     if name.endswith('_no_fallback'):
+    #         field = name[:-len('_no_fallback')]
+    #         return getattr(self, name)
+    #     else:
+    #         raise AttributeError

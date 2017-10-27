@@ -3,7 +3,6 @@
 {% load i18n %}
 
 {% load render_html_field %}
-{% load disable_translation_fallback %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block title %}
@@ -25,7 +24,6 @@
 
 {% block left_column_content %}
   <h2>{% trans "Other resources" %}</h2>
-  {% disable_translation_fallback %}
   {% if topic.other_resources %}
     {% render_html_field topic.other_resources %}
   {% else %}
@@ -40,5 +38,4 @@
   {% endif %}
 
 
-  {% end_disable_translation_fallback %}
 {% endblock left_column_content %}

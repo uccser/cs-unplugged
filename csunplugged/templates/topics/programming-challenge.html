@@ -4,7 +4,6 @@
 {% load static %}
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
-{% load disable_translation_fallback %}
 
 {% block title %}
   {{ programming_challenge.name }}
@@ -145,11 +144,9 @@
 
 {% block end_content %}
   {% if programming_challenge.translation_available %}
-  {% disable_translation_fallback %}
-  {% if programming_challenge.extra_challenge %}
-    <h2>{% trans "Extra Challenge" %}</h2>
-    {% render_html_field programming_challenge.extra_challenge %}
-  {% endif %}
-  {% end_disable_translation_fallback %}
+    {% if programming_challenge.extra_challenge %}
+      <h2>{% trans "Extra Challenge" %}</h2>
+      {% render_html_field programming_challenge.extra_challenge %}
+    {% endif %}
   {% endif %}
 {% endblock end_content %}

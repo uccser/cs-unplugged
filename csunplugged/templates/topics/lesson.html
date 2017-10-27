@@ -4,7 +4,6 @@
 {% load static %}
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
-{% load disable_translation_fallback %}
 
 {% block title %}
   {{ lesson.name }}
@@ -60,11 +59,9 @@
 
       {% render_html_field lesson.content %}
 
-      {% disable_translation_fallback %}
         {% with computational_thinking_links=lesson.computational_thinking_links %}
           {% include "topics/computational-thinking-links.html" %}
         {% endwith %}
-      {% end_disable_translation_fallback %}
     {% endif %}
   {% endblock left_column_content %}
 
@@ -115,13 +112,11 @@
             </li>
           {% endfor %}
 
-          {% disable_translation_fallback %}
           {% if lesson.computational_thinking_links %}
             <li class="nav-item">
               <a class="nav-link" href="#ct-links">{% trans "Computational Thinking" %}</a>
             </li>
           {% endif %}
-          {% end_disable_translation_fallback %}
         </ul>
       </div>
     {% endif %}

@@ -234,7 +234,7 @@ class ProgrammingChallengeView(generic.DetailView):
             lesson.challenge_number = challenge_numbers.challenge_number
         context["topic"] = self.object.topic
         # Add all the connected learning outcomes
-        context["learning_outcomes"] = self.object.learning_outcomes.all()
+        context["learning_outcomes"] = self.object.learning_outcomes(manager='translated_objects').all()
         context["implementations"] = self.object.ordered_implementations()
         return context
 
@@ -259,13 +259,7 @@ class ProgrammingChallengeLanguageSolutionView(generic.DetailView):
             challenge__slug=self.kwargs.get("programming_challenge_slug", None),
             language__slug=self.kwargs.get("programming_language_slug", None)
         )
-    #
-    # def get(self, *args, **kwargs):
-    #     self.object = self.get_object()
-    #     if get_language() not in self.object.challenge.languages:
-    #         return redirect('topics:programming_challenge', topic_slug=self.object.challenge.topic.slug, programming_challenge_slug=self.object.challenge.slug)
-    #     else:
-    #         return super().get(*args, **kwargs)
+
 
     def get_context_data(self, **kwargs):
         """Provide the context data for the language implementation view.
@@ -296,7 +290,7 @@ class AllCurriculumIntegrationList(generic.ListView):
         """
         return CurriculumIntegration.objects.select_related().order_by("topic__name", "number")
 
-
+        
 class CurriculumIntegrationView(generic.DetailView):
     """View for a specific curriculum integration."""
 

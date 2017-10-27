@@ -33,7 +33,7 @@
     </thead>
     <tbody>
       {% for curriculum_integration in curriculum_integrations %}
-      <tr class="align-middle">
+      <tr class="align-middle{% if not curriculum_integration.translation_available %} table-active{% endif %}">
         <td>
           {{ curriculum_integration.topic.name }}
         </td>

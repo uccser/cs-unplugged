@@ -3,8 +3,6 @@
 {% load i18n %}
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
-{% load translate_url %}
-{% load disable_translation_fallback %}
 
 
 {% block title %}
@@ -34,11 +32,9 @@
   {% if unit_plan.translation_available %}
   {% render_html_field unit_plan.content %}
 
-  {% disable_translation_fallback %}
   {% with computational_thinking_links=unit_plan.computational_thinking_links %}
     {% include "topics/computational-thinking-links.html" %}
   {% endwith %}
-  {% end_disable_translation_fallback %}
 
   {% if grouped_lessons %}
     <h2 class="heading-underline" id="lessons">{% trans "Lessons" %}</h2>
@@ -60,13 +56,11 @@
           <a class="nav-link" href="#{{ heading_node.slug }}">{{ heading_node.text }}</a>
         </li>
       {% endfor %}
-      {% disable_translation_fallback %}
       {% if unit_plan.computational_thinking_links %}
         <li class="nav-item">
           <a class="nav-link" href="#ct-links">{% trans "Computational Thinking" %}</a>
         </li>
       {% endif %}
-      {% end_disable_translation_fallback %}
       <li class="nav-item">
         <a class="nav-link" href="#lessons">{% trans "Lessons" %}</a>
       </li>
