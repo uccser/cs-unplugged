@@ -4,7 +4,7 @@ from django.db import transaction
 from django.http.request import QueryDict
 from utils.BaseLoader import BaseLoader
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
-from utils.get_resource_generator import get_resource_generator
+from resources.utils.get_resource_generator import get_resource_generator
 from resources.models import Resource
 
 

@@ -1,5 +1,5 @@
+from http import HTTPStatus
 from django.urls import reverse
-
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 
@@ -43,7 +43,7 @@ class ProgrammingChallengeListTest(BaseTestWithDB):
         }
         url = reverse("topics:programming_challenges_list", kwargs=kwargs)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
 
     def test_programming_challenge_list_with_invalid_topic_slug(self):
         topic = self.test_data.create_topic(1)
@@ -77,7 +77,7 @@ class ProgrammingChallengeListTest(BaseTestWithDB):
         }
         url = reverse("topics:programming_challenges_list", kwargs=kwargs)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_programming_challenge_list_with_invalid_unit_plan_slug(self):
         topic = self.test_data.create_topic(1)
@@ -111,7 +111,7 @@ class ProgrammingChallengeListTest(BaseTestWithDB):
         }
         url = reverse("topics:programming_challenges_list", kwargs=kwargs)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_programming_challenge_list_with_invalid_lesson_slug(self):
         topic = self.test_data.create_topic(1)
@@ -145,7 +145,7 @@ class ProgrammingChallengeListTest(BaseTestWithDB):
         }
         url = reverse("topics:programming_challenges_list", kwargs=kwargs)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_programming_challenge_list_topic_context(self):
         topic = self.test_data.create_topic(1)

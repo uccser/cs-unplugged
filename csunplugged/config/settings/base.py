@@ -207,3 +207,7 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
+
+# ENVIRONMENT VARIABLES
+# ------------------------------------------------------------------------------
+DJANGO_PRODUCTION = env.bool("DJANGO_PRODUCTION")

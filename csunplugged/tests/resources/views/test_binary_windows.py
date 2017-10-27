@@ -1,10 +1,11 @@
+from http import HTTPStatus
 from django.test import tag
 from django.urls import reverse
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
-from utils.get_resource_generator import get_resource_generator
+from resources.utils.get_resource_generator import get_resource_generator
 from utils.create_query_string import query_string
-from utils.resource_valid_test_configurations import resource_valid_test_configurations
+from resources.utils.resource_valid_test_configurations import resource_valid_test_configurations
 
 
 @tag('resource_generation')
@@ -27,7 +28,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
         }
         url = reverse("resources:resource", kwargs=kwargs)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
 
     def test_binary_windows_resource_generation_valid_configurations(self):
         resource = self.test_data.create_resource(
@@ -49,7 +50,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
             print("   - Testing combination: {} ... ".format(combination), end="")
             url = base_url + query_string(combination)
             response = self.client.get(url)
-            self.assertEqual(200, response.status_code)
+            self.assertEqual(HTTPStatus.OK, response.status_code)
             if combination["dot_counts"]:
                 count_text = "with dot counts"
             else:
@@ -86,7 +87,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_binary_windows_resource_generation_missing_number_bits_parameter(self):
         resource = self.test_data.create_resource(
@@ -107,7 +108,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_binary_windows_resource_generation_missing_value_type_parameter(self):
         resource = self.test_data.create_resource(
@@ -128,7 +129,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_binary_windows_resource_generation_missing_paper_size_parameter(self):
         resource = self.test_data.create_resource(
@@ -149,7 +150,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_binary_windows_resource_generation_missing_header_text_parameter(self):
         resource = self.test_data.create_resource(
@@ -171,7 +172,7 @@ class BinaryWindowsResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertEqual(
             response.get("Content-Disposition"),
             'attachment; filename="Resource Binary Windows (8 bits - lightbulb - with dot counts - a4).pdf"'
