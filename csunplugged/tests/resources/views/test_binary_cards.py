@@ -1,3 +1,4 @@
+from http import HTTPStatus
 from django.test import tag
 from django.urls import reverse
 from tests.BaseTestWithDB import BaseTestWithDB
@@ -25,7 +26,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         }
         url = reverse("resources:resource", kwargs=kwargs)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
 
     def test_binary_cards_resource_generation(self):
         resource = self.test_data.create_resource(
@@ -46,7 +47,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertEqual(
             response.get("Content-Disposition"),
             'attachment; filename="Resource Binary Cards (with numbers - without black back - a4).pdf"'
@@ -71,7 +72,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertEqual(
             response.get("Content-Disposition"),
             'attachment; filename="Resource Binary Cards (without numbers - without black back - a4).pdf"'
@@ -96,7 +97,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertEqual(
             response.get("Content-Disposition"),
             'attachment; filename="Resource Binary Cards (with numbers - with black back - a4).pdf"'
@@ -121,7 +122,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertEqual(
             response.get("Content-Disposition"),
             'attachment; filename="Resource Binary Cards (without numbers - with black back - a4).pdf"'
@@ -146,7 +147,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertEqual(
             response.get("Content-Disposition"),
             'attachment; filename="Resource Binary Cards (with numbers - without black back - letter).pdf"'
@@ -171,7 +172,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertEqual(
             response.get("Content-Disposition"),
             'attachment; filename="Resource Binary Cards (with numbers - without black back - a4).pdf"'
@@ -195,7 +196,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_binary_cards_resource_generation_missing_back_parameter(self):
         resource = self.test_data.create_resource(
@@ -215,7 +216,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_binary_cards_resource_generation_missing_paper_size_parameter(self):
         resource = self.test_data.create_resource(
@@ -235,7 +236,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_binary_cards_resource_generation_missing_header_text_parameter(self):
         resource = self.test_data.create_resource(
@@ -255,7 +256,7 @@ class BinaryCardsResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertEqual(
             response.get("Content-Disposition"),
             'attachment; filename="Resource Binary Cards (with numbers - without black back - a4).pdf"'

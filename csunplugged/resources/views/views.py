@@ -3,12 +3,13 @@
 from django.conf import settings
 from django.contrib.staticfiles import finders
 from django.http import HttpResponse, Http404
-from django.shortcuts import get_object_or_404, render, redirect
+from django.shortcuts import get_object_or_404, render
 from django.template.loader import render_to_string
 from django.views import generic
 from resources.models import Resource
+from resources.utils.resource_pdf_cache import resource_pdf_cache
 from utils.group_lessons_by_age import group_lessons_by_age
-from utils.get_resource_generator import get_resource_generator
+from resources.utils.get_resource_generator import get_resource_generator
 from utils.errors.QueryParameterMissingError import QueryParameterMissingError
 from utils.errors.QueryParameterInvalidError import QueryParameterInvalidError
 from utils.errors.ThumbnailPageNotFound import ThumbnailPageNotFound
@@ -67,6 +68,8 @@ def generate_resource(request, resource_slug):
         HTML response containing PDF of resource, 404 if not found.
     """
     resource = get_object_or_404(Resource, slug=resource_slug)
+    if not request.GET:
+        raise Http404("No parameters given for resource generation.")
     try:
         generator = get_resource_generator(resource.generator_module, request.GET)
     except QueryParameterMissingError as e:
@@ -76,34 +79,16 @@ def generate_resource(request, resource_slug):
 
     # TODO: Weasyprint handling in production
     # TODO: Add creation of PDF as job to job queue
-    import environ
-    env = environ.Env(
-        DJANGO_PRODUCTION=(bool),
-    )
-    if env("DJANGO_PRODUCTION"):
+    if settings.DJANGO_PRODUCTION:
         # Return cached static PDF file of resource.
         # Currently developing system for dynamically rendering
         # custom PDFs on request (https://github.com/uccser/render).
-        return resource_pdf_cache(generator)
+        return resource_pdf_cache(resource.name, generator)
     else:
         (pdf_file, filename) = generate_resource_pdf(resource.name, generator)
         response = HttpResponse(pdf_file, content_type="application/pdf")
         response["Content-Disposition"] = RESPONSE_CONTENT_DISPOSITION.format(filename=filename)
         return response
-
-
-def resource_pdf_cache(generator):
-    """Provide redirect to static resource file.
-
-    Args:
-        generator: Instance of specific resource generator class.
-
-    Returns:
-        HTTP redirect.
-    """
-    filename = "{} ({})".format(resource.name, generator.subtitle)
-    redirect_url = "{}resources/{}.pdf".format(settings.STATIC_URL, filename)
-    return redirect(redirect_url)
 
 
 def generate_resource_pdf(name, generator):
