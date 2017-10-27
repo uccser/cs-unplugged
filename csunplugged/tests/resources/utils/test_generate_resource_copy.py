@@ -28,6 +28,23 @@ class GenerateResourceCopyTest(BaseTestWithDB):
         copy = generate_resource_copy(generator)
         self.assertEqual(len(copy), 1)
 
+    def test_generate_resources_copy_for_thumbnail_valid_single_page(self):
+        generator = MagicMock()
+        generator.data.return_value = [{"type": "html", "data": "Page 1"}]
+        copy = generate_resource_copy(generator, thumbnail=True)
+        self.assertEqual(len(copy), 1)
+        self.assertEqual(copy[0]["data"], "Page 1")
+
+    def test_generate_resources_copy_for_thumbnail_valid_multiple_pages(self):
+        generator = MagicMock()
+        generator.data.return_value = [
+            {"type": "html", "data": "Page 1"},
+            {"type": "html", "data": "Page 2", "thumbnail": True}
+        ]
+        copy = generate_resource_copy(generator, thumbnail=True)
+        self.assertEqual(len(copy), 1)
+        self.assertEqual(copy[0]["data"], "Page 2")
+
     def test_generate_resources_copy_for_thumbnail_none_given(self):
         generator = MagicMock()
         generator.data.return_value = [
