@@ -6,6 +6,7 @@
 
 # Generate production static files
 ./csu dev static_prod
+./csu dev collect_static
 
 # Install Google Cloud SDK
 ./infrastructure/install_google_cloud_sdk.sh

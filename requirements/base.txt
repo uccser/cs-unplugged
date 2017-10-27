@@ -14,3 +14,6 @@ python-markdown-math==0.3
 
 # YAML Loading
 PyYAML==3.12
+
+# System tools
+tqdm==4.19.4

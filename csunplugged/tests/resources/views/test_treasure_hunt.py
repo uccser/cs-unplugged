@@ -8,7 +8,7 @@ from utils.create_query_string import query_string
 from resources.utils.resource_valid_test_configurations import resource_valid_test_configurations
 
 
-@tag('resource_generation')
+@tag("resource")
 class TreasureHuntResourceViewTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):

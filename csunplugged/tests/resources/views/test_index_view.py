@@ -5,7 +5,7 @@ from tests.BaseTestWithDB import BaseTestWithDB
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
 
 
-@tag('resource_generation')
+@tag("resource")
 class IndexViewTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):

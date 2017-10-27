@@ -8,31 +8,6 @@
 // Global resets to common HTML elements and more for easier usage by Bootstrap.
 // Adds additional rules on top of Normalize.css, including several overrides.
 
-
-// Reset the box-sizing
-//
-// Change from `box-sizing: content-box` to `border-box` so that when you add
-// `padding` or `border`s to an element, the overall declared `width` does not
-// change. For example, `width: 100px;` will always be `100px` despite the
-// `border: 10px solid red;` and `padding: 20px;`.
-//
-// Heads up! This reset may cause conflicts with some third-party widgets. For
-// recommendations on resolving such conflicts, see
-// https://getbootstrap.com/getting-started/#third-box-sizing.
-//
-// Credit: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
-
-html {
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-
 //
 // Reset HTML, body, and more
 //

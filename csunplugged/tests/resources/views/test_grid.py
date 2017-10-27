@@ -8,7 +8,7 @@ from resources.utils.resource_valid_test_configurations import resource_valid_te
 from utils.create_query_string import query_string
 
 
-@tag('resource_generation')
+@tag("resource")
 class GridResourceViewTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):

@@ -88,7 +88,7 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
                 font=font,
                 fill="#000",
             )
-        pages.append({"type": "image", "data": image})
+        pages.append({"type": "image", "data": image, "thumbnail": True})
         return pages
 
     @property
