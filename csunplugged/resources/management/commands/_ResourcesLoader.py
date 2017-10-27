@@ -55,7 +55,7 @@ class ResourcesLoader(BaseLoader):
                 )
 
             # Check resource template file exists
-            open(os.path.join("templates/", resource_template), encoding="UTF-8")
+            open(os.path.join("templates", resource_template), encoding="UTF-8")
 
             # Remove .py extension if given
             if generator_module.endswith(".py"):

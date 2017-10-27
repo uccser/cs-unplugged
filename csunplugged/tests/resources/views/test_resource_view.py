@@ -1,3 +1,4 @@
+from http import HTTPStatus
 from django.test import tag
 from django.urls import reverse
 from tests.BaseTestWithDB import BaseTestWithDB
@@ -27,7 +28,7 @@ class ResourceViewTest(BaseTestWithDB):
         }
         url = reverse("resources:resource", kwargs=kwargs)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
 
     def test_resource_view_with_invalid_slug(self):
         self.test_data.create_resource(

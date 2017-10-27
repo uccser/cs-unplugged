@@ -13,6 +13,7 @@ from resources.utils.get_resource_generator import get_resource_generator
 from utils.errors.QueryParameterMissingError import QueryParameterMissingError
 from utils.errors.QueryParameterInvalidError import QueryParameterInvalidError
 from utils.errors.ThumbnailPageNotFound import ThumbnailPageNotFound
+from utils.errors.MoreThanOneThumbnailPageFound import MoreThanOneThumbnailPageFound
 from PIL import Image
 from io import BytesIO
 import base64
@@ -135,6 +136,12 @@ def generate_resource_copy(generator, thumbnail=False):
         generator: Instance of specific resource generator class.
         thumbnail: True if only the thumbnail page should be returned (bool).
 
+    Raises:
+        ThumbnailPageNotFound: If resource with more than one page does not
+                               provide a thumbnail page.
+        MoreThanOneThumbnailPageFound: If resource provides more than one page
+                                       as the thumbnail.
+
     Returns:
         List of lists containing data for one copy.
         Each inner list contains:
@@ -154,10 +161,11 @@ def generate_resource_copy(generator, thumbnail=False):
         max_pixel_height = 249 * MM_TO_PIXEL_RATIO
 
     if thumbnail and len(data) > 1:
-        try:
-            data = [next(page for page in data if page.get("thumbnail", False))]
-        except StopIteration:
+        data = list(filter(lambda data: data.get("thumbnail"), data))
+        if len(data) == 0:
             raise ThumbnailPageNotFound(generator)
+        elif len(data) > 1:
+            raise MoreThanOneThumbnailPageFound(generator)
 
     # Resize images to reduce file size
     for index in range(len(data)):
