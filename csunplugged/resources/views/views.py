@@ -10,16 +10,11 @@ from resources.models import Resource
 from resources.utils.resource_pdf_cache import resource_pdf_cache
 from utils.group_lessons_by_age import group_lessons_by_age
 from resources.utils.get_resource_generator import get_resource_generator
+from resources.utils.generate_resource_copy import generate_resource_copy
 from utils.errors.QueryParameterMissingError import QueryParameterMissingError
 from utils.errors.QueryParameterInvalidError import QueryParameterInvalidError
-from utils.errors.ThumbnailPageNotFound import ThumbnailPageNotFound
-from utils.errors.MoreThanOneThumbnailPageFound import MoreThanOneThumbnailPageFound
-from PIL import Image
-from io import BytesIO
-import base64
 
 RESPONSE_CONTENT_DISPOSITION = 'attachment; filename="{filename}.pdf"'
-MM_TO_PIXEL_RATIO = 6
 
 
 class IndexView(generic.ListView):
@@ -125,60 +120,3 @@ def generate_resource_pdf(name, generator):
     css_string = open(css_file, encoding="UTF-8").read()
     base_css = CSS(string=css_string)
     return (html.write_pdf(stylesheets=[base_css]), filename)
-
-
-def generate_resource_copy(generator, thumbnail=False):
-    """Retrieve data for one copy of resource from resource generator.
-
-    Images are resized to paper size.
-
-    Args:
-        generator: Instance of specific resource generator class.
-        thumbnail: True if only the thumbnail page should be returned (bool).
-
-    Raises:
-        ThumbnailPageNotFound: If resource with more than one page does not
-                               provide a thumbnail page.
-        MoreThanOneThumbnailPageFound: If resource provides more than one page
-                                       as the thumbnail.
-
-    Returns:
-        List of lists containing data for one copy.
-        Each inner list contains:
-        - String of type ("image", "html")
-        - Data of type:
-            - String for HTML.
-            - Base64 string of image.
-    """
-    data = generator.data()
-    if not isinstance(data, list):
-        data = [data]
-
-    paper_size = generator.requested_options["paper_size"]
-    if paper_size == "a4":
-        max_pixel_height = 267 * MM_TO_PIXEL_RATIO
-    elif paper_size == "letter":
-        max_pixel_height = 249 * MM_TO_PIXEL_RATIO
-
-    if thumbnail and len(data) > 1:
-        data = list(filter(lambda data: data.get("thumbnail"), data))
-        if len(data) == 0:
-            raise ThumbnailPageNotFound(generator)
-        elif len(data) > 1:
-            raise MoreThanOneThumbnailPageFound(generator)
-
-    # Resize images to reduce file size
-    for index in range(len(data)):
-        if data[index]["type"] == "image":
-            image = data[index]["data"]
-            (width, height) = image.size
-            if height > max_pixel_height:
-                ratio = max_pixel_height / height
-                width *= ratio
-                height *= ratio
-                image = image.resize((int(width), int(height)), Image.ANTIALIAS)
-            # Convert from Image object to base64 string
-            image_buffer = BytesIO()
-            image.save(image_buffer, format="PNG")
-            data[index]["data"] = base64.b64encode(image_buffer.getvalue())
-    return data
