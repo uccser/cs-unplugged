@@ -3,12 +3,13 @@
 from django.conf import settings
 from django.contrib.staticfiles import finders
 from django.http import HttpResponse, Http404
-from django.shortcuts import get_object_or_404, render, redirect
+from django.shortcuts import get_object_or_404, render
 from django.template.loader import render_to_string
 from django.views import generic
 from resources.models import Resource
+from resources.utils.resource_pdf_cache import resource_pdf_cache
 from utils.group_lessons_by_age import group_lessons_by_age
-from utils.get_resource_generator import get_resource_generator
+from resources.utils.get_resource_generator import get_resource_generator
 from utils.errors.QueryParameterMissingError import QueryParameterMissingError
 from utils.errors.QueryParameterInvalidError import QueryParameterInvalidError
 from PIL import Image
@@ -86,21 +87,6 @@ def generate_resource(request, resource_slug):
         response = HttpResponse(pdf_file, content_type="application/pdf")
         response["Content-Disposition"] = RESPONSE_CONTENT_DISPOSITION.format(filename=filename)
         return response
-
-
-def resource_pdf_cache(name, generator):
-    """Provide redirect to static resource file.
-
-    Args:
-        name: Name of resource to be created (str).
-        generator: Instance of specific resource generator class.
-
-    Returns:
-        HTTP redirect.
-    """
-    filename = "{} ({})".format(name, generator.subtitle)
-    redirect_url = "{}resources/{}.pdf".format(settings.STATIC_URL, filename)
-    return redirect(redirect_url)
 
 
 def generate_resource_pdf(name, generator):

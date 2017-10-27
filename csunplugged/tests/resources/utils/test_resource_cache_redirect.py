@@ -1,9 +1,9 @@
 from tests.BaseTestWithDB import BaseTestWithDB
 from django.test import tag
 from django.http import QueryDict
-from resources.views.views import resource_pdf_cache
+from resources.utils.resource_pdf_cache import resource_pdf_cache
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
-from utils.get_resource_generator import get_resource_generator
+from resources.utils.get_resource_generator import get_resource_generator
 from http import HTTPStatus
 
 

@@ -3,8 +3,8 @@ from django.test import tag
 from django.urls import reverse
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
-from utils.get_resource_generator import get_resource_generator
-from utils.resource_valid_test_configurations import resource_valid_test_configurations
+from resources.utils.get_resource_generator import get_resource_generator
+from resources.utils.resource_valid_test_configurations import resource_valid_test_configurations
 from utils.create_query_string import query_string
 
 
