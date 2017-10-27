@@ -30,6 +30,7 @@ class TopicTranslationOptions(TranslationOptions):
         'other_resources': None
     }
 
+
 class UnitPlanTranslationOptions(TranslationOptions):
     """Translation options for UnitPlan model."""
 
@@ -50,6 +51,7 @@ class ProgrammingChallengeTranslationOptions(TranslationOptions):
         'extra_challenge': None,
     }
 
+
 class ProgrammingChallengeImplementationTranslationOptions(TranslationOptions):
     """Translation options for ProgrammingChallengeImplementation model."""
 
@@ -59,6 +61,7 @@ class ProgrammingChallengeImplementationTranslationOptions(TranslationOptions):
         'hints': None,
         'solution': None
     }
+
 
 class LessonTranslationOptions(TranslationOptions):
     """Translation options for Lesson model."""
@@ -71,6 +74,7 @@ class LessonTranslationOptions(TranslationOptions):
         'heading_tree': None
     }
 
+
 class CurriculumIntegrationTranslationOptions(TranslationOptions):
     """Translation options for CurriculumIntegration model."""
 
@@ -78,6 +82,7 @@ class CurriculumIntegrationTranslationOptions(TranslationOptions):
     fallback_undefined = {
         'content': None,
     }
+
 
 class GlossaryTermTranslationOptions(TranslationOptions):
     """Translation options for GlossaryTerm model."""
@@ -88,48 +93,54 @@ class GlossaryTermTranslationOptions(TranslationOptions):
         'definition': None
     }
 
+
 class CurriculumAreaTranslationOptions(TranslationOptions):
-    """Translation options for GlossaryTerm model."""
+    """Translation options for CurriculumArea model."""
 
     fields = ('name',)
     fallback_undefined = {
         'name': None,
     }
 
+
 class LearningOutcomeTranslationOptions(TranslationOptions):
-    """Translation options for GlossaryTerm model."""
+    """Translation options for LearningOutcome model."""
 
     fields = ('text',)
     fallback_undefined = {
         'text': None,
     }
 
+
 class AgeGroupTranslationOptions(TranslationOptions):
-    """Translation options for GlossaryTerm model."""
+    """Translation options for AgeGroup model."""
 
     fields = ('description',)
     fallback_undefined = {
         'description': None,
     }
+
 
 class ClassroomResourceTranslationOptions(TranslationOptions):
-    """Translation options for GlossaryTerm model."""
+    """Translation options for ClassroomResource model."""
 
     fields = ('description',)
     fallback_undefined = {
         'description': None,
     }
+
 
 class ResourceDescriptionTranslationOptions(TranslationOptions):
-    """Translation options for GlossaryTerm model."""
+    """Translation options for ResourceDescription model."""
 
     fields = ('description',)
     fallback_undefined = {
         'description': None,
     }
 
+
 class ProgrammingChallengeDifficultyTranslationOptions(TranslationOptions):
-    """Translation options for GlossaryTerm model."""
+    """Translation options for ProgrammingChallengeDifficulty model."""
 
     fields = ('name',)
     fallback_undefined = {

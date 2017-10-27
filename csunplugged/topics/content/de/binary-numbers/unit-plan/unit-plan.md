@@ -2,6 +2,8 @@
 
 ## Siehe das Binärzahlensystem in Aktion!
 
+{glossary-link term="pixel"} German link to untranslated 'pixel' glossary {glossary-link end}
+
 Binär (Computer Science Unplugged Part 1) - dies sind Platzhalter Videos, neue Videos sollen entwickelt werden, um jeden Unterrichtsplan zu repräsentieren.
 
 {video url="https://www.youtube.com/embed/Wy6-FXtLMV8"}

@@ -4,8 +4,6 @@
 {% load static %}
 {% load django_bootstrap_breadcrumbs %}
 
-{% get_current_language as LANGUAGE_CODE %}
-
 {% block title %}
   {% trans "Topics" %}
 {% endblock title %}
@@ -26,7 +24,7 @@
       {% for topic in all_topics %}
       {% if not topic.translation_available %}
         <a class="link-box link-box-md-3 link-box-lg-4 unavailable" href="{% url 'topics:topic' topic.slug %}">
-            <span class="badge badge-danger badge-language-unavailable">Not available in {{ LANGUAGE_CODE|language_name }}</span>
+        {% include "topics/not-available-badge.html" %}
       {% else %}
         <a class="link-box link-box-md-3 link-box-lg-4" href="{% url 'topics:topic' topic.slug %}">
       {% endif %}

@@ -60,9 +60,7 @@
                 )
               </a>
               {% if not lesson.translation_available %}
-                {% with model=lesson %}
-                  {% include 'topics/not-available-badge.html' %}
-                {% endwith %}
+                {% include 'topics/not-available-badge.html' %}
               {% endif %}
             </li>
           {% endfor %}

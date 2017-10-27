@@ -2,10 +2,7 @@
 
 from django.db import transaction
 from django.core.exceptions import ObjectDoesNotExist
-from utils.BaseLoader import BaseLoader
 from utils.TranslatableModelLoader import TranslatableModelLoader
-from utils.model_translation_utils import populate_translations, mark_translation_availability
-from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 from topics.models import (
     LearningOutcome,

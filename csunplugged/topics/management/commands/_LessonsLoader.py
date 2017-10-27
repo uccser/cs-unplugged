@@ -1,15 +1,10 @@
 """Custom loader for loading lessons."""
 
 from django.core.exceptions import ObjectDoesNotExist
-from utils.BaseLoader import BaseLoader
-from utils.language_utils import get_default_language, get_available_languages
-from utils.model_translation_utils import populate_translations, mark_translation_availability
 from utils.TranslatableModelLoader import TranslatableModelLoader
 from utils.convert_heading_tree_to_dict import convert_heading_tree_to_dict
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
-from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
-from django.utils import translation
 
 
 from topics.models import (
@@ -20,6 +15,7 @@ from topics.models import (
     ResourceDescription,
     ClassroomResource
 )
+
 
 class LessonsLoader(TranslatableModelLoader):
     """Custom loader for loading lessons."""
@@ -184,7 +180,7 @@ class LessonsLoader(TranslatableModelLoader):
                                 slug=classroom_resources_slug
                             )
                             lesson.classroom_resources.add(classroom_resource)
-                        except:
+                        except ObjectDoesNotExist:
                             raise KeyNotFoundError(
                                 self.structure_file_path,
                                 classroom_resources_slug,
@@ -213,7 +209,6 @@ class LessonsLoader(TranslatableModelLoader):
                                 resource_slug,
                                 "Resources"
                             )
-
 
                         relationship = ResourceDescription(
                             resource=resource,

@@ -1,7 +1,6 @@
 """Views for the topics application."""
 
 from django.db.models import Q
-from django.shortcuts import redirect
 from django.shortcuts import get_object_or_404
 from django.views import generic
 from django.http import JsonResponse, Http404
@@ -151,8 +150,10 @@ class LessonView(generic.DetailView):
         # Add all the connected programming challenges
         context["programming_challenges"] = self.object.programming_challenges.all()
         # Add all the connected learning outcomes
-        context["learning_outcomes"] = self.object.learning_outcomes(manager='translated_objects').all().select_related()
-        context["classroom_resources"] = self.object.classroom_resources(manager='translated_objects').all().select_related()
+        context["learning_outcomes"] = self.object.learning_outcomes(manager='translated_objects') \
+                                           .all().select_related()
+        context["classroom_resources"] = self.object.classroom_resources(manager='translated_objects') \
+                                             .all().select_related()
         # Add all the connected generated resources
         related_resources = self.object.generated_resources.all()
         generated_resources = []
@@ -162,10 +163,7 @@ class LessonView(generic.DetailView):
             generated_resource["name"] = related_resource.name
             generated_resource["thumbnail"] = related_resource.thumbnail_static_path
             relationship = ResourceDescription.objects.get(resource=related_resource, lesson=self.object)
-            if relationship.translation_available:
-                generated_resource["description"] = relationship.description
-            else:
-                generated_resource["description"] = None
+            generated_resource["description"] = relationship.description
             generated_resources.append(generated_resource)
         context["generated_resources"] = generated_resources
 
@@ -260,7 +258,6 @@ class ProgrammingChallengeLanguageSolutionView(generic.DetailView):
             language__slug=self.kwargs.get("programming_language_slug", None)
         )
 
-
     def get_context_data(self, **kwargs):
         """Provide the context data for the language implementation view.
 
@@ -290,7 +287,7 @@ class AllCurriculumIntegrationList(generic.ListView):
         """
         return CurriculumIntegration.objects.select_related().order_by("topic__name", "number")
 
-        
+
 class CurriculumIntegrationView(generic.DetailView):
     """View for a specific curriculum integration."""
 
@@ -354,6 +351,7 @@ class GlossaryList(generic.ListView):
         return GlossaryTerm.objects.order_by("term")
 
     def get_context_data(self):
+        """Get context data for template rendering."""
         return {
             "glossary_terms": GlossaryTerm.objects.filter(
                 Q(languages__contains=[get_language()])
@@ -362,7 +360,6 @@ class GlossaryList(generic.ListView):
                 ~Q(languages__contains=[get_language()])
             ).order_by("term_en")
         }
-
 
 
 def glossary_json(request, **kwargs):
@@ -386,7 +383,7 @@ def glossary_json(request, **kwargs):
         )
         data = {
             "slug": glossary_slug,
-            "translated": get_language() in glossary_item.languages,
+            "translated": glossary_item.translation_available,
             "term": glossary_item.term,
             "definition": render_html_with_static(glossary_item.definition)
         }

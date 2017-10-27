@@ -1,5 +1,5 @@
 <span class="badge badge-default difficulty-level-{{ programming_challenge.difficulty.level }}">
-  {% if programming_challenge.difficulty.translation_available %}
+  {% if programming_challenge.difficulty.name %}
     {{ programming_challenge.difficulty.name }}
   {% else %}
     {{ programming_challenge.difficulty.level }}

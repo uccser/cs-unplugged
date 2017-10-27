@@ -33,9 +33,9 @@
 
     {% for unit_plan in unit_plans %}
       <div class="link-box-container">
-        {% if LANGUAGE_CODE not in unit_plan.languages %}
+        {% if not unit_plan.translation_available %}
           <a class="link-box link-box-md-6 unavailable" href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">
-              <span class="badge badge-danger badge-language-unavailable">Not available in {{ LANGUAGE_CODE|language_name }}</span>
+            {% include "topics/not-available-badge.html" %}
         {% else %}
           <a class="link-box link-box-md-6" href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">
         {% endif %}
@@ -106,7 +106,7 @@
             <a class="nav-link {% if not unit_plan.translation_available %}disabled{% endif %}" href="#{{ unit_plan.slug }}">
               {{ unit_plan.name }}
               {% if not unit_plan.translation_available %}
-                <span class="badge badge-danger badge-language-unavailable">Not available in {{ LANGUAGE_CODE|language_name }}</span>
+                {% include 'topics/not-available-badge.html'}
               {% endif %}
             </a>
           </li>

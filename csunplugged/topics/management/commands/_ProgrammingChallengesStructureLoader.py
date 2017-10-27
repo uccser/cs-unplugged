@@ -1,9 +1,6 @@
 """Custom loader for loading structure of programming challenges."""
 
 from django.db import transaction
-from django.utils import translation
-from utils.BaseLoader import BaseLoader
-from utils.language_utils import get_available_languages, get_default_language
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.TranslatableModelLoader import TranslatableModelLoader
 from topics.models import ProgrammingChallengeLanguage, ProgrammingChallengeDifficulty

@@ -3,12 +3,9 @@
 from os import listdir
 from django.db import transaction
 
-from utils.BaseLoader import BaseLoader
-from utils.language_utils import get_available_languages, get_default_language
-from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
+from utils.language_utils import get_default_language
 from topics.models import GlossaryTerm
 from utils.TranslatableModelLoader import TranslatableModelLoader
-
 
 
 class GlossaryTermsLoader(TranslatableModelLoader):

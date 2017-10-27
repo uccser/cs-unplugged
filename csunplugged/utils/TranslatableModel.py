@@ -1,18 +1,26 @@
+"""Module for TranslatableModel abstract base class."""
+
 from django.db import models
 from django.utils.translation import get_language
-from django.contrib.postgres.fields import ArrayField, JSONField, IntegerRangeField
-from django.utils.translation import get_language
+from django.contrib.postgres.fields import ArrayField
 from django.db.models import Q
 
 
 class TranslatedModelManager(models.Manager):
+    """Model manager for requesting all objects that have been translated into the current language."""
+
     def get_queryset(self):
+        """Get query set for translated objects."""
         return super().get_queryset().filter(
             Q(languages__contains=[get_language()])
         )
 
+
 class UntranslatedModelManager(models.Manager):
+    """Model manager for requesting all objects that have not been translated into the current language."""
+
     def get_queryset(self):
+        """Get query set for untranslated objects."""
         return super().get_queryset().filter(
             ~Q(languages__contains=[get_language()])
         )
@@ -36,10 +44,3 @@ class TranslatableModel(models.Model):
     def translation_available(self):
         """Check if model content is available in current language."""
         return get_language() in self.languages
-
-    # def __getattr__(self, name):
-    #     if name.endswith('_no_fallback'):
-    #         field = name[:-len('_no_fallback')]
-    #         return getattr(self, name)
-    #     else:
-    #         raise AttributeError

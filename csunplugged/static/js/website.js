@@ -42,12 +42,10 @@ function update_glossary_modal(data) {
   $("#glossary-modal-term").text(data.term);
   $("#glossary-modal-definition").html(data.definition);
   if (data.translated) {
-    console.log("1");
     $("#glossary-modal-translation-unavailable").css({ "display": "none"});
   } else {
-    console.log("2");
     $("#glossary-modal-translation-unavailable").css({ "display": "block"});
-  }// $("#glossary-modal-definition").html(data.definition);
+  }
 }
 
 function show_glossary_modal_error(jqXHR, text_status, error_thrown) {

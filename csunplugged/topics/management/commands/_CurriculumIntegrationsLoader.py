@@ -2,12 +2,9 @@
 
 from django.core.exceptions import ObjectDoesNotExist
 
-from utils.BaseLoader import BaseLoader
-from utils.language_utils import get_default_language, get_available_languages
 from utils.TranslatableModelLoader import TranslatableModelLoader
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
-from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 
 
 from topics.models import CurriculumArea, Lesson

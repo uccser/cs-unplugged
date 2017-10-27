@@ -2,8 +2,6 @@
 
 from django.db import transaction
 
-from utils.BaseLoader import BaseLoader
-from utils.errors.InvalidConfigValueError import InvalidConfigValueError
 from utils.TranslatableModelLoader import TranslatableModelLoader
 
 from topics.models import ClassroomResource

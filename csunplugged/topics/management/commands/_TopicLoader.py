@@ -2,13 +2,9 @@
 
 import os.path
 from django.db import transaction
-from django.utils import translation
-from utils.BaseLoader import BaseLoader
 from utils.TranslatableModelLoader import TranslatableModelLoader
-from utils.language_utils import get_available_languages, get_default_language
 from utils.check_required_files import find_image_files
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
-from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 
 from topics.models import Topic
 

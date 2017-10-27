@@ -1,27 +1,9 @@
 """Models for the topics application."""
 
 from django.db import models
-from django.utils.translation import get_language
-from django.contrib.postgres.fields import ArrayField, JSONField, IntegerRangeField
+from django.contrib.postgres.fields import JSONField, IntegerRangeField
 from resources.models import Resource
 from utils.TranslatableModel import TranslatableModel
-import vinaigrette
-
-#
-# class TranslatableModel(models.Model):
-#     """Abstract base class for models needing to store list of available languages."""
-#
-#     languages = ArrayField(models.CharField(max_length=5), size=100, default=[])
-#
-#     class Meta:
-#         """Mark class as abstract."""
-#
-#         abstract = True
-#
-#     @property
-#     def translation_available(self):
-#         """Check if model content is available in current language."""
-#         return get_language() in self.languages
 
 
 class GlossaryTerm(TranslatableModel):
@@ -320,7 +302,7 @@ class Lesson(TranslatableModel):
         through="ProgrammingChallengeNumber",
         related_name="lessons"
     )
-    programming_challenges_description = models.TextField()
+    programming_challenges_description = models.TextField(default='')
     learning_outcomes = models.ManyToManyField(
         LearningOutcome,
         related_name="lessons"

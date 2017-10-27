@@ -2,13 +2,10 @@
 
 import os.path
 from django.core.exceptions import ObjectDoesNotExist
-from utils.BaseLoader import BaseLoader
 from utils.TranslatableModelLoader import TranslatableModelLoader
-from utils.language_utils import get_available_languages, get_default_language
 from utils.convert_heading_tree_to_dict import convert_heading_tree_to_dict
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
-from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 
 
 from topics.models import (
@@ -41,8 +38,6 @@ class UnitPlanLoader(TranslatableModelLoader):
             MissingRequiredFieldError: when a value for a required model field cannot
                 be found in the config file.
         """
-
-
         unit_plan_structure = self.load_yaml_file(self.structure_file_path)
 
         unit_plan_translations = self.get_blank_translation_dictionary()

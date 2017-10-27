@@ -2,14 +2,9 @@
 
 import os.path
 from django.core.exceptions import ObjectDoesNotExist
-from utils.BaseLoader import BaseLoader
-from utils.language_utils import get_available_languages, get_default_language
-
-from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.TranslatableModelLoader import TranslatableModelLoader
-
 
 
 from topics.models import (
@@ -53,7 +48,7 @@ class ProgrammingChallengesLoader(TranslatableModelLoader):
                     "Programming Challenge"
                 )
 
-            challenge_translations = self.get_blank_translation_dictionary() # Language, then fields, then values
+            challenge_translations = self.get_blank_translation_dictionary()
 
             # Retrieve required variables from md file
             challenge_set_number = challenge_structure.get("challenge-set-number", None)
