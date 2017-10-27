@@ -11,8 +11,8 @@ from django.template.loader import render_to_string
 from django.http.request import QueryDict
 from resources.models import Resource
 from resources.views.views import generate_resource_copy
-from utils.get_resource_generator import get_resource_generator
-from utils.resource_valid_test_configurations import resource_valid_test_configurations
+from resources.utils.get_resource_generator import get_resource_generator
+from resources.utils.resource_valid_test_configurations import resource_valid_test_configurations
 from utils.bool_to_yes_no import bool_to_yes_no
 
 BASE_PATH_TEMPLATE = "build/img/resources/{resource}/thumbnails/"
