@@ -4,7 +4,7 @@ import itertools
 from utils.bool_to_yes_no import bool_to_yes_no
 
 
-def resource_valid_test_configurations(valid_options, header_text=True):
+def resource_valid_configurations(valid_options, header_text=True):
     """Return list of all possible valid resource combinations.
 
     Args:
