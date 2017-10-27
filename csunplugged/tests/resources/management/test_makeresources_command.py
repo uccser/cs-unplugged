@@ -60,13 +60,13 @@ class MakeResourcesCommandTest(BaseTestWithDB):
 
     def test_makeresources_command_single_resource_with_copies(self):
         self.test_data.create_resource(
-            "sorting-network",
-            "Sorting Network",
-            "resources/sorting-network.html",
-            "SortingNetworkResourceGenerator",
+            "grid",
+            "Grid",
+            "resources/grid.html",
+            "GridResourceGenerator",
             copies=True
         )
         management.call_command("makeresources")
-        filepath = self.RESOURCE_PATH.format("Resource Sorting Network (1 to 9 - a4).pdf")
+        filepath = self.RESOURCE_PATH.format("Resource Grid (a4).pdf")
         pdf = PdfFileReader(open(filepath, "rb"))
         self.assertEqual(pdf.getNumPages(), 30)
