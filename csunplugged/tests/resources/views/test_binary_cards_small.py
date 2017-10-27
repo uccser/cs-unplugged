@@ -1,3 +1,4 @@
+from http import HTTPStatus
 from django.test import tag
 from django.urls import reverse
 from tests.BaseTestWithDB import BaseTestWithDB
@@ -27,7 +28,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
         }
         url = reverse("resources:resource", kwargs=kwargs)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
 
     def test_binary_cards_small_resource_generation_valid_configurations(self):
         resource = self.test_data.create_resource(
@@ -57,7 +58,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
                     url_combination[parameter] = combination[parameter]
             url = base_url + query_string(url_combination)
             response = self.client.get(url)
-            self.assertEqual(200, response.status_code)
+            self.assertEqual(HTTPStatus.OK, response.status_code)
             if combination["dot_counts"]:
                 display_numbers_text = "with dot counts"
             else:
@@ -97,7 +98,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_binary_cards_small_resource_generation_missing_number_bits_parameter(self):
         resource = self.test_data.create_resource(
@@ -118,7 +119,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_binary_cards_small_resource_generation_missing_black_back_parameter(self):
         resource = self.test_data.create_resource(
@@ -139,7 +140,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_binary_cards_small_resource_generation_missing_paper_size_parameter(self):
         resource = self.test_data.create_resource(
@@ -160,7 +161,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_binary_cards_small_resource_generation_missing_header_text_parameter(self):
         resource = self.test_data.create_resource(
@@ -181,7 +182,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         filename = "Resource Binary Cards (small) (4 bits - with dot counts - with black back - a4).pdf"
         self.assertEqual(
             response.get("Content-Disposition"),

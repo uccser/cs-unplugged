@@ -1,3 +1,4 @@
+from http import HTTPStatus
 from django.test import tag
 from django.urls import reverse
 from tests.BaseTestWithDB import BaseTestWithDB
@@ -27,7 +28,7 @@ class TreasureHuntResourceViewTest(BaseTestWithDB):
         }
         url = reverse("resources:resource", kwargs=kwargs)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
 
     def test_treasure_hunt_resource_generation_valid_configurations(self):
         resource = self.test_data.create_resource(
@@ -49,7 +50,7 @@ class TreasureHuntResourceViewTest(BaseTestWithDB):
             print("   - Testing combination: {} ... ".format(combination), end="")
             url = base_url + query_string(combination)
             response = self.client.get(url)
-            self.assertEqual(200, response.status_code)
+            self.assertEqual(HTTPStatus.OK, response.status_code)
 
             if combination["prefilled_values"] == "blank":
                 range_text = "blank"
@@ -108,7 +109,7 @@ class TreasureHuntResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_treasure_hunt_resource_generation_missing_number_order_parameter(self):
         resource = self.test_data.create_resource(
@@ -130,7 +131,7 @@ class TreasureHuntResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_treasure_hunt_resource_generation_missing_instructions_parameter(self):
         resource = self.test_data.create_resource(
@@ -152,7 +153,7 @@ class TreasureHuntResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_treasure_hunt_resource_generation_missing_art_parameter(self):
         resource = self.test_data.create_resource(
@@ -174,7 +175,7 @@ class TreasureHuntResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_treasure_hunt_resource_generation_missing_paper_size_parameter(self):
         resource = self.test_data.create_resource(
@@ -196,7 +197,7 @@ class TreasureHuntResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_treasure_hunt_resource_generation_missing_header_text_parameter(self):
         resource = self.test_data.create_resource(
@@ -219,7 +220,7 @@ class TreasureHuntResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         filename = "Resource Treasure Hunt (Sorted - 0 to 9999 - full colour - with instructions - letter).pdf"
         self.assertEqual(
             response.get("Content-Disposition"),

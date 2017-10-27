@@ -1,3 +1,4 @@
+from http import HTTPStatus
 from django.test import tag
 from django.urls import reverse
 from tests.BaseTestWithDB import BaseTestWithDB
@@ -27,7 +28,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
         }
         url = reverse("resources:resource", kwargs=kwargs)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
 
     def test_parity_cards_resource_generation_valid_configurations(self):
         resource = self.test_data.create_resource(
@@ -49,7 +50,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
             print("   - Testing combination: {} ... ".format(combination), end="")
             url = base_url + query_string(combination)
             response = self.client.get(url)
-            self.assertEqual(200, response.status_code)
+            self.assertEqual(HTTPStatus.OK, response.status_code)
             subtitle = "{} back - {}".format(
                 combination["back_colour"],
                 combination["paper_size"],
@@ -77,7 +78,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_parity_cards_resource_generation_missing_paper_size_parameter(self):
         resource = self.test_data.create_resource(
@@ -96,7 +97,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_parity_cards_resource_generation_missing_header_text_parameter(self):
         resource = self.test_data.create_resource(
@@ -115,7 +116,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         filename = "Resource Parity Cards (black back - a4).pdf"
         self.assertEqual(
             response.get("Content-Disposition"),

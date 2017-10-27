@@ -3,6 +3,7 @@ from django.urls import reverse
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
 from utils.create_query_string import query_string
+from http import HTTPStatus
 
 
 @tag("resource")
@@ -29,7 +30,7 @@ class GenerateResourceTest(BaseTestWithDB):
         url = reverse("resources:generate", kwargs=kwargs)
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertEqual(
             response.get("Content-Disposition"),
             'attachment; filename="Resource Grid (a4).pdf"'
@@ -52,7 +53,7 @@ class GenerateResourceTest(BaseTestWithDB):
         url = reverse("resources:generate", kwargs=kwargs)
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(302, response.status_code)
+        self.assertEqual(HTTPStatus.FOUND, response.status_code)
         self.assertEqual(
             response.url,
             "/staticfiles/resources/Resource%20Grid%20(a4).pdf"
@@ -70,7 +71,7 @@ class GenerateResourceTest(BaseTestWithDB):
         }
         url = reverse("resources:generate", kwargs=kwargs)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_generate_view_valid_slug_invalid_parameter(self):
         resource = self.test_data.create_resource(
@@ -88,4 +89,4 @@ class GenerateResourceTest(BaseTestWithDB):
         url = reverse("resources:generate", kwargs=kwargs)
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)

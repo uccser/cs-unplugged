@@ -4,6 +4,7 @@ from django.http import QueryDict
 from resources.views.views import resource_pdf_cache
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
 from utils.get_resource_generator import get_resource_generator
+from http import HTTPStatus
 
 
 @tag("resource")
@@ -23,7 +24,7 @@ class CacheRedirectTest(BaseTestWithDB):
         query = QueryDict("paper_size=a4")
         generator = get_resource_generator(resource.generator_module, query)
         response = resource_pdf_cache(resource.name, generator)
-        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.status_code, HTTPStatus.FOUND)
         self.assertEqual(
             response.url,
             "/staticfiles/resources/Resource%20Grid%20(a4).pdf"

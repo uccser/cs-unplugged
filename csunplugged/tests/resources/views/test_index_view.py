@@ -1,6 +1,7 @@
-from tests.BaseTestWithDB import BaseTestWithDB
+from http import HTTPStatus
 from django.test import tag
 from django.urls import reverse
+from tests.BaseTestWithDB import BaseTestWithDB
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
 
 
@@ -27,7 +28,7 @@ class IndexViewTest(BaseTestWithDB):
         )
         url = reverse("resources:index")
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertQuerysetEqual(
             response.context["all_resources"],
             ["<Resource: Resource Binary Cards>"]
@@ -48,7 +49,7 @@ class IndexViewTest(BaseTestWithDB):
         )
         url = reverse("resources:index")
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertQuerysetEqual(
             response.context["all_resources"],
             [
