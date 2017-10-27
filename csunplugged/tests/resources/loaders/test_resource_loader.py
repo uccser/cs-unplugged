@@ -175,19 +175,16 @@ class ResourceLoaderTest(BaseTestWithDB):
             InvalidConfigValueError,
             resource_loader.load,
         )
-    #
-    # def test_resource_loader_multiple_configuration(self):
-    #     config_file = "multiple.yaml"
-    #     resource_loader = ResourcesLoader(config_file, self.BASE_PATH)
-    #     resource_loader.load()
-    #     self.assertQuerysetEqual(
-    #         Resource.objects.all(),
-    #         [
-    #             "<Resource: Maths>",
-    #             "<Resource: Maths: Algebra>",
-    #             "<Resource: Maths: Geometry>",
-    #             "<Resource: Science>",
-    #             "<Resource: Art>",
-    #         ],
-    #         ordered=False,
-    #     )
+
+    def test_resource_loader_multiple_configuration(self):
+        config_file = "multiple.yaml"
+        resource_loader = ResourcesLoader(config_file, self.BASE_PATH)
+        resource_loader.load()
+        self.assertQuerysetEqual(
+            Resource.objects.all(),
+            [
+                "<Resource: Grid>",
+                "<Resource: Job Badges>",
+            ],
+            ordered=False,
+        )
