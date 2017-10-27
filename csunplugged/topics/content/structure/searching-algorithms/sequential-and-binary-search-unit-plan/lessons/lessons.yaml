@@ -7,8 +7,7 @@ how-many-guesses:
     - search-algorithms-explore-probability-value-random-set
     - search-algorithms-explain-range-unsorted-lists
   generated-resources:
-    searching-cards:
-      description: Includes helper sheet for teacher.
+    - searching-cards
   classroom-resources:
     - payment-system
     - pens
@@ -24,8 +23,7 @@ divide-and-conquer:
     - search-algorithms-describe-compare-values
     - search-algorithms-explain-unsorted-lists
   generated-resources:
-    searching-cards:
-      description: Includes helper sheet for teacher.
+    - searching-cards
   classroom-resources:
     - payment-system
     - pens
@@ -35,8 +33,7 @@ the-great-treasure-hunt-unsorted:
   duration: 30
   computational-thinking-links: the-great-treasure-hunt-unsorted-ct-links.md
   generated-resources:
-    treasure-hunt:
-      description: Includes unsorted and sorted variants.
+    - treasure-hunt
   learning-outcomes:
     - search-algorithms-identify-unsorted-lists
     - search-algorithms-describe-time-size-input
@@ -47,8 +44,7 @@ the-great-treasure-hunt-sorted:
   duration: 45
   computational-thinking-links: the-great-treasure-hunt-sorted-ct-links.md
   generated-resources:
-    treasure-hunt:
-      description: Includes unsorted and sorted variants.
+    - treasure-hunt
   learning-outcomes:
     - search-algorithms-identify-sequential-binary
     - search-algorithms-explain-decomposition-binary

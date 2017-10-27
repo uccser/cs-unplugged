@@ -8,14 +8,14 @@ from modeltranslation.utils import fallbacks
 
 
 class TranslatableModelLoader(BaseLoader):
-    def get_yaml_translations(self, filename, field_map=None):
+    def get_yaml_translations(self, filename, field_map=None, required=True):
         translations = {}
         for language in get_available_languages():
             translations_filename = self.get_localised_file(language, filename)
             try:
                 yaml = self.load_yaml_file(translations_filename)
             except CouldNotFindConfigFileError:
-                if language == get_default_language():
+                if required and language == get_default_language():
                     raise
                 yaml = {}
             for model_slug, model_fields in yaml.items():

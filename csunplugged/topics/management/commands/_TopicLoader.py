@@ -4,16 +4,16 @@ import os.path
 from django.db import transaction
 
 from utils.BaseLoader import BaseLoader
+from utils.TranslatableModelLoader import TranslatableModelLoader
 from utils.language_utils import get_available_languages, get_default_language
 from utils.check_required_files import find_image_files
-
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 
 from topics.models import Topic
 
 
-class TopicLoader(BaseLoader):
+class TopicLoader(TranslatableModelLoader):
     """Custom loader for loading a topic."""
 
     def __init__(self, factory, **kwargs):
@@ -44,34 +44,19 @@ class TopicLoader(BaseLoader):
                 "Topic"
             )
 
-        content_translations = {}
-        other_resources_translations = {}
+        topic_translations = self.get_blank_translation_dictionary()
 
-        # Convert the content to HTML
-        for language in get_available_languages():
-            try:
-                topic_content = self.convert_md_file(
-                    self.get_localised_file(language, "{}.md".format(self.topic_slug)),
-                    self.structure_file_path
-                )
-                content_translations[language] = topic_content
-            except CouldNotFindMarkdownFileError:
-                if language == get_default_language():
-                    raise
+        content_filename = "{}.md".format(self.topic_slug)
+        content_translations = self.get_markdown_translations(content_filename)
+        for language, content in content_translations.items():
+            topic_translations[language]['content'] = content.html_string
+            topic_translations[language]['name'] = content.title
 
-            # If other resources are given, convert to HTML
-            if "other-resources" in topic_structure:
-                topic_other_resources_file = topic_structure["other-resources"]
-                if topic_other_resources_file is not None:
-                    try:
-                        other_resources_content = self.convert_md_file(
-                            self.get_localised_file(language, topic_other_resources_file),
-                            self.structure_file_path
-                        )
-                        other_resources_translations[language] = other_resources_content.html_string
-                    except CouldNotFindMarkdownFileError:
-                        if language == get_default_language():
-                            raise
+        if "other-resources" in topic_structure:
+            other_resources_filename = topic_structure["other-resources"]
+            other_resources_translations = self.get_markdown_translations(other_resources_filename)
+            for language, content in other_resources_translations.items():
+                topic_translations[language]['other_resources'] = content.html_string
 
         # Check if icon is given
         if "icon" in topic_structure:
@@ -86,15 +71,12 @@ class TopicLoader(BaseLoader):
         # Create topic objects and save to the db
         topic = Topic(
             slug=self.topic_slug,
-            name=topic_content.title,
             icon=topic_icon,
-            languages=list(content_translations.keys()),
         )
-        for language in content_translations:
-            setattr(topic, "content_{}".format(language), content_translations[language].html_string)
-            setattr(topic, "name_{}".format(language), content_translations[language].title)
-        for language in other_resources_translations:
-            setattr(topic, "other_resources_{}".format(language), other_resources_translations[language])
+
+        self.populate_translations(topic, topic_translations)
+        self.mark_translation_availability(topic, required_fields=['name', 'content'])
+
         topic.save()
 
         self.log("Added Topic: {}".format(topic.name))

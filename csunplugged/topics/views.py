@@ -152,6 +152,7 @@ class LessonView(generic.DetailView):
         context["programming_challenges"] = self.object.programming_challenges.all()
         # Add all the connected learning outcomes
         context["learning_outcomes"] = self.object.learning_outcomes(manager='translated_objects').all().select_related()
+        context["classroom_resources"] = self.object.classroom_resources(manager='translated_objects').all().select_related()
         # Add all the connected generated resources
         related_resources = self.object.generated_resources.all()
         generated_resources = []
@@ -161,7 +162,10 @@ class LessonView(generic.DetailView):
             generated_resource["name"] = related_resource.name
             generated_resource["thumbnail"] = related_resource.thumbnail_static_path
             relationship = ResourceDescription.objects.get(resource=related_resource, lesson=self.object)
-            generated_resource["description"] = relationship.description
+            if relationship.translation_available:
+                generated_resource["description"] = relationship.description
+            else:
+                generated_resource["description"] = None
             generated_resources.append(generated_resource)
         context["generated_resources"] = generated_resources
 

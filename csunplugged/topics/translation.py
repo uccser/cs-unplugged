@@ -13,7 +13,10 @@ from topics.models import (
     CurriculumIntegration,
     GlossaryTerm,
     CurriculumArea,
-    LearningOutcome
+    LearningOutcome,
+    AgeGroup,
+    ClassroomResource,
+    ResourceDescription
 )
 
 
@@ -68,6 +71,21 @@ class LearningOutcomeTranslationOptions(TranslationOptions):
 
     fields = ('text',)
 
+class AgeGroupTranslationOptions(TranslationOptions):
+    """Translation options for GlossaryTerm model."""
+
+    fields = ('description',)
+
+class ClassroomResourceTranslationOptions(TranslationOptions):
+    """Translation options for GlossaryTerm model."""
+
+    fields = ('description',)
+
+class ResourceDescriptionTranslationOptions(TranslationOptions):
+    """Translation options for GlossaryTerm model."""
+
+    fields = ('description',)
+
 
 translator.register(Topic, TopicTranslationOptions)
 translator.register(UnitPlan, UnitPlanTranslationOptions)
@@ -78,3 +96,6 @@ translator.register(CurriculumIntegration, CurriculumIntegrationTranslationOptio
 translator.register(GlossaryTerm, GlossaryTermTranslationOptions)
 translator.register(CurriculumArea, CurriculumAreaTranslationOptions)
 translator.register(LearningOutcome, LearningOutcomeTranslationOptions)
+translator.register(AgeGroup, AgeGroupTranslationOptions)
+translator.register(ClassroomResource, ClassroomResourceTranslationOptions)
+translator.register(ResourceDescription, ResourceDescriptionTranslationOptions)

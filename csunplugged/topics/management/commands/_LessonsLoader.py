@@ -101,7 +101,6 @@ class LessonsLoader(TranslatableModelLoader):
             )
             self.populate_translations(lesson, lesson_translations)
             self.mark_translation_availability(lesson, required_fields=['name', 'content'])
-
             lesson.save()
 
             # Add programming challenges
@@ -199,13 +198,14 @@ class LessonsLoader(TranslatableModelLoader):
             if "generated-resources" in lesson_structure:
                 resources = lesson_structure["generated-resources"]
                 if resources is not None:
-                    for (resource_slug, resource_data) in resources.items():
-                        if resource_data is None:
-                            raise MissingRequiredFieldError(
-                                self.structure_file_path,
-                                ["description"],
-                                "Generated Resource"
-                            )
+
+                    relationship_strings_filename = "{}-resource-descriptions.yaml".format(lesson_slug)
+                    relationship_translations = self.get_yaml_translations(
+                        relationship_strings_filename,
+                        required=False
+                    )
+                    for resource_slug in resources:
+                        relationship_translation = relationship_translations.get(resource_slug, dict())
                         try:
                             resource = Resource.objects.get(
                                 slug=resource_slug
@@ -216,19 +216,15 @@ class LessonsLoader(TranslatableModelLoader):
                                 resource_slug,
                                 "Resources"
                             )
-                        resource_description = resource_data.get("description", None)
-                        if resource_description is None:
-                            raise MissingRequiredFieldError(
-                                self.structure_file_path,
-                                ["description"],
-                                "Generated Resource"
-                            )
+
 
                         relationship = ResourceDescription(
                             resource=resource,
                             lesson=lesson,
-                            description=resource_description
                         )
+                        self.populate_translations(relationship, relationship_translation)
+                        self.mark_translation_availability(relationship, required_fields=['description'])
+
                         relationship.save()
 
             self.log("Added lesson: {}".format(lesson.__str__()), 2)

@@ -97,7 +97,7 @@ class LearningOutcome(TranslatableModel):
         ordering = ["curriculum_areas__number", "curriculum_areas__name", "text"]
 
 
-class ClassroomResource(models.Model):
+class ClassroomResource(TranslatableModel):
     """Model for classroom resource."""
 
     slug = models.SlugField(max_length=80, unique=True)
@@ -436,7 +436,7 @@ class CurriculumIntegration(TranslatableModel):
         return self.name
 
 
-class ResourceDescription(models.Model):
+class ResourceDescription(TranslatableModel):
     """Model for relationship between resource and lesson in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
@@ -450,6 +450,6 @@ class ResourceDescription(models.Model):
 # vinaigrette.register(ProgrammingChallengeDifficulty, ["name"])
 # vinaigrette.register(ProgrammingChallengeLanguage, ["name"])
 # vinaigrette.register(AgeGroup, ['description'])
-vinaigrette.register(ResourceDescription, ['description'])
+# vinaigrette.register(ResourceDescription, ['description'])
 # vinaigrette.register(ClassroomResource, ['description'])
 # vinaigrette.register(ProgrammingChallengeLanguage, ['name'])
