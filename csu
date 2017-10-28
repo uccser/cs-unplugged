@@ -79,7 +79,10 @@ cmd_end() {
   docker-compose down
   echo
   echo "Deleting system volumes..."
-  docker volume ls -qf dangling=true | xargs -r docker volume rm
+  volumes=($(docker volume ls -qf dangling=true ))
+  for volume in "${volumes[@]}"; do
+      docker volume rm "${volume}"
+  done
 }
 defhelp end 'Stop development environment.'
 
@@ -161,7 +164,10 @@ dev_build() {
   docker-compose build
   echo
   echo "Deleting untagged images..."
-  docker images --no-trunc | grep '<none>' | awk '{ print $3 }' | xargs -r docker rmi
+  untagged_images=($(docker images --no-trunc | grep '<none>' | awk '{print $3}'))
+  if [[ ${#untagged_images[@]} -gt 0 ]]; then
+      docker rmi "${untagged_images[@]}"
+  fi
 }
 defhelp -dev build 'Build or rebuild Docker images.'
 
@@ -263,13 +269,24 @@ cmd_clean() {
 
   echo
   echo "Deleting unused volumes..."
-  docker volume ls -qf dangling=true | xargs -r docker volume rm
+
+  unused_volumes=($(docker volume ls -qf dangling=true))
+  for vol in "${unused_volumes[@]}"; do
+      docker volume rm "${vol}"
+  done
+
   echo
   echo "Deleting exited containers..."
-  docker ps --filter status=dead --filter status=exited -aq | xargs docker rm -v
+  exited_containers=($(docker ps --filter status=dead --filter status=exited -aq))
+  for container in "${exited_containers[@]}"; do
+      docker rm -v "${container}"
+  done
   echo
   echo "Deleting dangling images..."
-  docker images -f "dangling=true" -q | xargs docker rmi
+  dangling_images=($(docker images -f "dangling=true" -q))
+  if [[ ${#dangling_images[@]} -gt 0 ]]; then
+      docker rmi "${dangling_images[@]}"
+  fi
 }
 defhelp clean 'Delete unused Docker files.'
 
