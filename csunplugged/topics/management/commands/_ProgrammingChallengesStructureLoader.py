@@ -1,5 +1,6 @@
 """Custom loader for loading structure of programming challenges."""
 
+import os
 from django.db import transaction
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.TranslatableModelLoader import TranslatableModelLoader
@@ -32,14 +33,22 @@ class ProgrammingChallengesStructureLoader(TranslatableModelLoader):
                 "Programming Challenge Structure"
             )
 
-        prog_languages_translations = self.get_yaml_translations("programming-challenges-languages-strings.yaml")
+        # Add "-languages" to the structure filename
+        prog_languages_translation_filename = "{}-languages.yaml".format(
+            os.path.splitext(self.structure_filename)[0]
+        )
+        prog_languages_translations = self.get_yaml_translations(
+            prog_languages_translation_filename,
+            required_slugs=prog_languages.keys(),
+            required_fields=["name"]
+        )
 
         for (prog_language, prog_language_data) in prog_languages.items():
 
             if prog_language_data is None:
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
-                    ["name", "number"],
+                    ["number"],
                     "Programming Challenge Language"
                 )
 
@@ -71,7 +80,15 @@ class ProgrammingChallengesStructureLoader(TranslatableModelLoader):
 
             self.log("Added programming langauge: {}".format(new_prog_language.__str__()))
 
-        difficulties_translations = self.get_yaml_translations("programming-challenges-difficulties-strings.yaml")
+        # Add "-languages" to the structure filename
+        difficulties_translation_filename = "{}-difficulties.yaml".format(
+            os.path.splitext(self.structure_filename)[0]
+        )
+        difficulties_translations = self.get_yaml_translations(
+            difficulties_translation_filename,
+            required_slugs=difficulty_levels,
+            required_fields=["name"],
+        )
 
         for difficulty in difficulty_levels:
 

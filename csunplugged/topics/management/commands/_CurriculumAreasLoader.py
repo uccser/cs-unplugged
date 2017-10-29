@@ -23,7 +23,11 @@ class CurriculumAreasLoader(TranslatableModelLoader):
                 attribute.
         """
         curriculum_areas_structure = self.load_yaml_file(self.structure_file_path)
-        curriculum_areas_translations = self.get_yaml_translations("curriculum-areas-strings.yaml")
+        curriculum_areas_translations = self.get_yaml_translations(
+            self.structure_filename,
+            required_fields=['name'],
+            required_slugs=curriculum_areas_structure.keys()
+        )
 
         for (curriculum_area_slug, curriculum_area_data) in curriculum_areas_structure.items():
 

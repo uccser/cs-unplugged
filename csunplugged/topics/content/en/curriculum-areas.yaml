@@ -1,0 +1,93 @@
+computational-thinking:
+  name: Computational Thinking
+algorithmic-thinking:
+  name: Algorithmic Thinking
+decomposition:
+  name: Decomposition
+abstraction:
+  name: Abstraction
+generalising-and-patterns:
+  name: Generalising and Patterns
+logic:
+  name: Logic
+evaluation:
+  name: Evaluation
+
+computer-science:
+  name: Computer Science
+data-representation:
+  name: Data Representation
+algorithms:
+  name: Algorithms
+programming:
+  name: Programming
+
+mathematics:
+  name: Mathematics
+geometry:
+  name: Geometry
+measurement:
+  name: Measurement
+numeracy:
+  name: Numeracy
+algebra:
+  name: Algebra
+statistics:
+  name: Statistics
+
+literacy:
+  name: Literacy
+reading:
+  name: Reading
+writing:
+  name: Writing
+listening:
+  name: Listening
+speaking:
+  name: Speaking
+library:
+  name: Library
+
+art:
+  name: Art
+
+language:
+  name: Language Learning
+
+performing-arts:
+  name: Performing Arts
+music:
+  name: Music
+dance:
+  name: Dance
+drama:
+  name: Drama
+
+physical-education:
+  name: Physical Education
+fitness:
+  name: Fitness
+sport:
+  name: Sport
+health:
+  name: Health
+
+science:
+  name: Science
+biology:
+  name: Biology
+physics:
+  name: Physics
+astronomy:
+  name: Astronomy
+chemistry:
+  name: Chemistry
+geology:
+  name: Geology
+
+social-studies:
+  name: Social Studies
+history:
+  name: History
+geograph:
+  name: Geography

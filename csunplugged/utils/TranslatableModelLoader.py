@@ -5,6 +5,8 @@ from utils.language_utils import get_available_languages, get_default_language
 from utils.errors.CouldNotFindConfigFileError import CouldNotFindConfigFileError
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 from utils.errors.InvalidConfigValueError import InvalidConfigValueError
+from utils.errors.MissingRequiredModelsError import MissingRequiredModelsError
+from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from django.utils import translation
 from modeltranslation.utils import fallbacks
 
@@ -12,7 +14,7 @@ from modeltranslation.utils import fallbacks
 class TranslatableModelLoader(BaseLoader):
     """Abstract base class for loaders of translatable models."""
 
-    def get_yaml_translations(self, filename, field_map=None, required=True):
+    def get_yaml_translations(self, filename, field_map=None, required_slugs=[], required_fields=[]):
         """Get a dictionary of translations for the given filename.
 
         Yaml files must be structured as follows:
@@ -51,15 +53,28 @@ class TranslatableModelLoader(BaseLoader):
             try:
                 yaml = self.load_yaml_file(translations_filename)
             except CouldNotFindConfigFileError:
-                if required and language == get_default_language():
+                if required_slugs and language == get_default_language():
                     raise
                 yaml = {}
+            if language == get_default_language() and not set(required_slugs) <= set(yaml.keys()):
+                raise MissingRequiredModelsError(
+                    translations_filename,
+                    set(required_slugs) - set(yaml.keys()),
+                )
+
             for model_slug, model_fields in yaml.items():
                 values_dict = {}
+                for required_field in required_fields:
+                    if language == get_default_language() and required_field not in model_fields:
+                        raise MissingRequiredFieldError(
+                            translations_filename,
+                            [required_field],
+                            "model ({})".format(model_slug)
+                        )
                 for field, value in model_fields.items():
                     if not isinstance(value, str):
                         raise InvalidConfigValueError(
-                            filename,
+                            translations_filename,
                             '{}->{}'.format(model_slug, field),
                             "String"
                         )

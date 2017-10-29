@@ -48,14 +48,14 @@
           <div class="navbar-nav ml-auto text-center">
             <div class="dropdown">
               <button class="nav-item nav-link btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img src="{% static 'img/blank.gif' %}"  class="flag flag-language-{{ LANGUAGE_CODE }}" alt="{{ LANGUAGE_CODE|language_name }}" />
+                <img src="{% static 'img/blank.gif' %}"  class="flag flag-language-{{ LANGUAGE_CODE }}"/>
                 <span>{{ current_language.name_translated }}
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 {% for language in LANGUAGES %}
                   {% get_language_info for language.0 as lang %}
                   <a class="dropdown-item" href="{% translate_url language.0 %}">
-                    <img src="{% static 'img/blank.gif' %}" class="flag flag-language-{{ lang.code }}" alt="{{ lang.name_translated }}" />
+                    <img src="{% static 'img/blank.gif' %}" class="flag flag-language-{{ lang.code }}" />
                     {{ lang.name_translated }}
                   </a>
                 {% endfor %}

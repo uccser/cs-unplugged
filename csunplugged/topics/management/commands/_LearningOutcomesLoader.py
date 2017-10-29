@@ -26,7 +26,11 @@ class LearningOutcomesLoader(TranslatableModelLoader):
                 attribute.
         """
         learning_outcomes = self.load_yaml_file(self.structure_file_path)
-        learning_outcomes_translations = self.get_yaml_translations("learning-outcomes-strings.yaml")
+        learning_outcomes_translations = self.get_yaml_translations(
+            self.structure_filename,
+            required_fields=["text"],
+            required_slugs=learning_outcomes.keys()
+        )
         for (outcome_slug, outcome_data) in learning_outcomes.items():
 
             translations = self.get_blank_translation_dictionary()

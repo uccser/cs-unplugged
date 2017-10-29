@@ -23,7 +23,9 @@ class AgeGroupsLoader(TranslatableModelLoader):
                 matching attribute.
         """
         age_groups_structure = self.load_yaml_file(self.structure_file_path)
-        age_groups_translations = self.get_yaml_translations("age-groups-strings.yaml")
+
+        # Use same name as structure file for translations
+        age_groups_translations = self.get_yaml_translations(self.structure_filename)
 
         for (age_group_slug, age_group_data) in age_groups_structure.items():
             if age_group_data is None:

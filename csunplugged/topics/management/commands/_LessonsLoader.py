@@ -192,10 +192,9 @@ class LessonsLoader(TranslatableModelLoader):
                 resources = lesson_structure["generated-resources"]
                 if resources is not None:
 
-                    relationship_strings_filename = "{}-resource-descriptions.yaml".format(lesson_slug)
+                    relationship_strings_filename = "{}.yaml".format(lesson_slug)
                     relationship_translations = self.get_yaml_translations(
                         relationship_strings_filename,
-                        required=False
                     )
                     for resource_slug in resources:
                         relationship_translation = relationship_translations.get(resource_slug, dict())
