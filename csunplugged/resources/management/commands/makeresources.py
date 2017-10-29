@@ -6,6 +6,7 @@ from urllib.parse import urlencode
 from tqdm import tqdm
 from django.core.management.base import BaseCommand
 from django.http.request import QueryDict
+from django.conf import settings
 from resources.models import Resource
 from resources.views.views import generate_resource_pdf
 from resources.utils.get_resource_generator import get_resource_generator
@@ -50,7 +51,7 @@ class Command(BaseCommand):
             # Create PDF for all possible combinations
             for combination in progress_bar:
                 if resource.copies:
-                    combination["copies"] = 30
+                    combination["copies"] = settings.RESOURCE_COPY_AMOUNT
                 requested_options = QueryDict(urlencode(combination, doseq=True))
                 generator = get_resource_generator(resource.generator_module, requested_options)
                 (pdf_file, filename) = generate_resource_pdf(resource.name, generator)

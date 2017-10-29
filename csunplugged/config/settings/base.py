@@ -209,6 +209,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# ENVIRONMENT VARIABLES
+# OTHER SETTINGS
 # ------------------------------------------------------------------------------
 DJANGO_PRODUCTION = env.bool("DJANGO_PRODUCTION")
+RESOURCE_COPY_AMOUNT = 20
