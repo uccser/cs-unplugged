@@ -48,6 +48,7 @@ def resource(request, resource_slug):
     context["debug"] = settings.DEBUG
     context["resource_thumbnail_base"] = "{}img/resources/{}/thumbnails/".format(settings.STATIC_URL, resource.slug)
     context["grouped_lessons"] = group_lessons_by_age(resource.lessons.all())
+    context["copies_amount"] = settings.RESOURCE_COPY_AMOUNT
     if resource.thumbnail_static_path:
         context["thumbnail"] = resource.thumbnail_static_path
     return render(request, resource.webpage_template, context)
