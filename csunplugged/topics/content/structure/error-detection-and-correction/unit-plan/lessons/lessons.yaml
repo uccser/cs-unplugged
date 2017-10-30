@@ -9,8 +9,7 @@ parity-magic-junior:
     - error-demonstrate-count-to-5
     - numeracy-describe-rows-columns
   generated-resources:
-    parity-cards:
-      description: Two pages of parity cards per pair of students.
+    - parity-cards
   classroom-resources:
     - parity-cards-set
     - whiteboard
@@ -26,8 +25,7 @@ parity-magic:
     - error-explain-each-card-bit
     - error-explain-chose-parity-card
   generated-resources:
-    parity-cards:
-      description: Two pages of parity cards per pair of students.
+    - parity-cards
   classroom-resources:
     - parity-cards-set
     - whiteboard
@@ -46,8 +44,7 @@ product-code-check-digits:
   duration: 30
   computational-thinking-links: product-code-check-digits-ct-links.md
   generated-resources:
-    barcode-checksum-poster:
-      description: A poster showing how to calculate the checksum for a 12 or 13 digit barcodes.
+    - barcode-checksum-poster
   classroom-resources:
     - product-barcodes
     - whiteboard

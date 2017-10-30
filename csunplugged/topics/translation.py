@@ -11,7 +11,13 @@ from topics.models import (
     ProgrammingChallengeImplementation,
     Lesson,
     CurriculumIntegration,
-    GlossaryTerm
+    GlossaryTerm,
+    CurriculumArea,
+    LearningOutcome,
+    AgeGroup,
+    ClassroomResource,
+    ResourceDescription,
+    ProgrammingChallengeDifficulty
 )
 
 
@@ -19,42 +25,127 @@ class TopicTranslationOptions(TranslationOptions):
     """Translation options for Topic model."""
 
     fields = ('name', 'content', 'other_resources')
+    fallback_undefined = {
+        'content': None,
+        'other_resources': None
+    }
 
 
 class UnitPlanTranslationOptions(TranslationOptions):
     """Translation options for UnitPlan model."""
 
     fields = ('name', 'content', 'computational_thinking_links', 'heading_tree')
+    fallback_undefined = {
+        'content': None,
+        'computational_thinking_links': None,
+        'heading_tree': None
+    }
 
 
 class ProgrammingChallengeTranslationOptions(TranslationOptions):
     """Translation options for ProgrammingChallenge model."""
 
     fields = ('name', 'content', 'extra_challenge')
+    fallback_undefined = {
+        'content': None,
+        'extra_challenge': None,
+    }
 
 
 class ProgrammingChallengeImplementationTranslationOptions(TranslationOptions):
     """Translation options for ProgrammingChallengeImplementation model."""
 
     fields = ('expected_result', 'hints', 'solution')
+    fallback_undefined = {
+        'expected_result': None,
+        'hints': None,
+        'solution': None
+    }
 
 
 class LessonTranslationOptions(TranslationOptions):
     """Translation options for Lesson model."""
 
     fields = ('name', 'content', 'computational_thinking_links', 'programming_challenges_description', 'heading_tree')
+    fallback_undefined = {
+        'content': None,
+        'computational_thinking_links': None,
+        'programming_challenges_description': None,
+        'heading_tree': None
+    }
 
 
 class CurriculumIntegrationTranslationOptions(TranslationOptions):
     """Translation options for CurriculumIntegration model."""
 
     fields = ('name', 'content')
+    fallback_undefined = {
+        'content': None,
+    }
 
 
 class GlossaryTermTranslationOptions(TranslationOptions):
     """Translation options for GlossaryTerm model."""
 
     fields = ('term', 'definition')
+    fallback_undefined = {
+        'term': None,
+        'definition': None
+    }
+
+
+class CurriculumAreaTranslationOptions(TranslationOptions):
+    """Translation options for CurriculumArea model."""
+
+    fields = ('name',)
+    fallback_undefined = {
+        'name': None,
+    }
+
+
+class LearningOutcomeTranslationOptions(TranslationOptions):
+    """Translation options for LearningOutcome model."""
+
+    fields = ('text',)
+    fallback_undefined = {
+        'text': None,
+    }
+
+
+class AgeGroupTranslationOptions(TranslationOptions):
+    """Translation options for AgeGroup model."""
+
+    fields = ('description',)
+    fallback_undefined = {
+        'description': None,
+    }
+
+
+class ClassroomResourceTranslationOptions(TranslationOptions):
+    """Translation options for ClassroomResource model."""
+
+    fields = ('description',)
+    fallback_undefined = {
+        'description': None,
+    }
+
+
+class ResourceDescriptionTranslationOptions(TranslationOptions):
+    """Translation options for ResourceDescription model."""
+
+    fields = ('description',)
+    fallback_undefined = {
+        'description': None,
+    }
+
+
+class ProgrammingChallengeDifficultyTranslationOptions(TranslationOptions):
+    """Translation options for ProgrammingChallengeDifficulty model."""
+
+    fields = ('name',)
+    fallback_undefined = {
+        'name': None,
+    }
 
 
 translator.register(Topic, TopicTranslationOptions)
@@ -64,3 +155,9 @@ translator.register(ProgrammingChallengeImplementation, ProgrammingChallengeImpl
 translator.register(Lesson, LessonTranslationOptions)
 translator.register(CurriculumIntegration, CurriculumIntegrationTranslationOptions)
 translator.register(GlossaryTerm, GlossaryTermTranslationOptions)
+translator.register(CurriculumArea, CurriculumAreaTranslationOptions)
+translator.register(LearningOutcome, LearningOutcomeTranslationOptions)
+translator.register(AgeGroup, AgeGroupTranslationOptions)
+translator.register(ClassroomResource, ClassroomResourceTranslationOptions)
+translator.register(ResourceDescription, ResourceDescriptionTranslationOptions)
+translator.register(ProgrammingChallengeDifficulty, ProgrammingChallengeDifficultyTranslationOptions)

@@ -9,7 +9,7 @@ from topics.management.commands._TopicLoader import TopicLoader
 
 from django.utils import translation
 
-from utils.errors.CouldNotFindConfigFileError import CouldNotFindConfigFileError
+from utils.errors.CouldNotFindYAMLFileError import CouldNotFindYAMLFileError
 from utils.errors.NoHeadingFoundInMarkdownFileError import NoHeadingFoundInMarkdownFileError
 from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
@@ -64,7 +64,7 @@ class TopicLoaderTest(BaseTestWithDB):
             structure_filename=structure_filename
         )
         self.assertRaises(
-            CouldNotFindConfigFileError,
+            CouldNotFindYAMLFileError,
             topic_loader.load,
         )
 
@@ -224,4 +224,4 @@ class TopicLoaderTest(BaseTestWithDB):
         self.assertIn("English other resources content.", topic.other_resources)
         with translation.override("de"):
             # accessing the untranslated field should not default back to english
-            self.assertEqual(None, topic.other_resources)
+            self.assertEqual("", topic.other_resources)

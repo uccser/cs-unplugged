@@ -1,14 +1,13 @@
 """Custom loader for loading curriculum areas."""
 
 from django.db import transaction
-
-from utils.BaseLoader import BaseLoader
+from utils.TranslatableModelLoader import TranslatableModelLoader
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 
 from topics.models import CurriculumArea
 
 
-class CurriculumAreasLoader(BaseLoader):
+class CurriculumAreasLoader(TranslatableModelLoader):
     """Loader for curriculum area content."""
 
     def __init__(self, **kwargs):
@@ -24,6 +23,11 @@ class CurriculumAreasLoader(BaseLoader):
                 attribute.
         """
         curriculum_areas_structure = self.load_yaml_file(self.structure_file_path)
+        curriculum_areas_translations = self.get_yaml_translations(
+            self.structure_filename,
+            required_fields=['name'],
+            required_slugs=curriculum_areas_structure.keys()
+        )
 
         for (curriculum_area_slug, curriculum_area_data) in curriculum_areas_structure.items():
 
@@ -33,14 +37,7 @@ class CurriculumAreasLoader(BaseLoader):
                     ["name"],
                     "Curriculum Area"
                 )
-
-            curriculum_area_name = curriculum_area_data.get("name", None)
-            if curriculum_area_name is None:
-                raise MissingRequiredFieldError(
-                    self.structure_file_path,
-                    ["name"],
-                    "Curriculum Area"
-                )
+            translations = curriculum_areas_translations.get(curriculum_area_slug, dict())
 
             curriculum_area_colour = curriculum_area_data.get("colour", None)
             if curriculum_area_colour is None:
@@ -61,10 +58,12 @@ class CurriculumAreasLoader(BaseLoader):
             # Create area objects and save to database
             new_area = CurriculumArea(
                 slug=curriculum_area_slug,
-                name=curriculum_area_name,
                 colour=curriculum_area_colour,
                 number=curriculum_area_number,
             )
+            self.populate_translations(new_area, translations)
+            self.mark_translation_availability(new_area, required_fields=['name'])
+
             new_area.save()
 
             self.log("Added curriculum area: {}".format(new_area.__str__()))
@@ -78,28 +77,18 @@ class CurriculumAreasLoader(BaseLoader):
                         ["slug"],
                         "Child Curriculum Area"
                     )
-                for (child_slug, child_data) in children_curriculum_areas.items():
-                    if child_data is None:
-                        raise MissingRequiredFieldError(
-                            self.structure_file_path,
-                            ["name"],
-                            "Child Curriculum Area"
-                        )
-                    child_name = child_data.get("name", None)
-                    if child_name is None:
-                        raise MissingRequiredFieldError(
-                            self.structure_file_path,
-                            ["name"],
-                            "Child Curriculum Area"
-                        )
+                for child_slug in children_curriculum_areas:
+                    translations = curriculum_areas_translations.get(child_slug, dict())
 
                     new_child = CurriculumArea(
                         slug=child_slug,
-                        name=child_name,
                         colour=curriculum_area_colour,
                         number=curriculum_area_number,
                         parent=new_area,
                     )
+                    self.populate_translations(new_child, translations)
+                    self.mark_translation_availability(new_child, required_fields=['name'])
+
                     new_child.save()
 
                     self.log("Added child curriculum area: {}".format(new_child.__str__()), 1)

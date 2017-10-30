@@ -1,121 +1,80 @@
 computational-thinking:
-  name: Computational Thinking
   colour: light-purple
   number: 1
   children:
-    algorithmic-thinking:
-      name: Algorithmic Thinking
-    decomposition:
-      name: Decomposition
-    abstraction:
-      name: Abstraction
-    generalising-and-patterns:
-      name: Generalising and Patterns
-    logic:
-      name: Logic
-    evaluation:
-      name: Evaluation
+    - algorithmic-thinking
+    - decomposition
+    - abstraction
+    - generalising-and-patterns
+    - logic
+    - evaluation
 
 computer-science:
-  name: Computer Science
   colour: purple
   number: 2
   children:
-    data-representation:
-      name: Data Representation
-    algorithms:
-      name: Algorithms
-    programming:
-      name: Programming
+    - data-representation
+    - algorithms
+    - programming
 
 mathematics:
-  name: Mathematics
   colour: blue
   number: 3
   children:
-    geometry:
-      name: Geometry
-    measurement:
-      name: Measurement
-    numeracy:
-      name: Numeracy
-    algebra:
-      name: Algebra
-    statistics:
-      name: Statistics
+    - geometry
+    - measurement
+    - numeracy
+    - algebra
+    - statistics
 
 literacy:
-  name: Literacy
   colour: red
   number: 4
   children:
-    reading:
-      name: Reading
-    writing:
-      name: Writing
-    listening:
-      name: Listening
-    speaking:
-      name: Speaking
-    library:
-      name: Library
+    - reading
+    - writing
+    - listening
+    - speaking
+    - library
 
 art:
-  name: Art
   colour: orange
   number: 5
 
 language:
-  name: Language Learning
   colour: pink
   number: 6
 
 performing-arts:
-  name: Performing Arts
   colour: orange
   number: 7
   children:
-    music:
-      name: Music
-    dance:
-      name: Dance
-    drama:
-      name: Drama
+    - music
+    - dance
+    - drama
 
 physical-education:
   name: Physical Education
   colour: orange
   number: 8
   children:
-    fitness:
-      name: Fitness
-    sport:
-      name: Sport
-    health:
-      name: Health
+    - fitness
+    - sport
+    - health
 
 science:
-  name: Science
   colour: green
   number: 9
   children:
-    biology:
-      name: Biology
-    physics:
-      name: Physics
-    astronomy:
-      name: Astronomy
-    chemistry:
-      name: Chemistry
-    geology:
-      name: Geology
+    - biology
+    - physics
+    - astronomy
+    - chemistry
+    - geology
 
 social-studies:
-  name: Social Studies
   colour: teal
   number: 10
   children:
-    history:
-      name: History
-    geograph:
-      name: Geography
+    - history
+    - geograph

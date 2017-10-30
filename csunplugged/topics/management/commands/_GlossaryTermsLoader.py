@@ -3,13 +3,12 @@
 from os import listdir
 from django.db import transaction
 
-from utils.BaseLoader import BaseLoader
-from utils.language_utils import get_available_languages, get_default_language
-from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
+from utils.language_utils import get_default_language
 from topics.models import GlossaryTerm
+from utils.TranslatableModelLoader import TranslatableModelLoader
 
 
-class GlossaryTermsLoader(BaseLoader):
+class GlossaryTermsLoader(TranslatableModelLoader):
     """Custom loader for loading glossary terms."""
 
     def __init__(self, **kwargs):
@@ -21,38 +20,29 @@ class GlossaryTermsLoader(BaseLoader):
     def load(self):
         """Load the glossary content into the database."""
         glossary_slugs = set()
+
         for filename in listdir(self.get_localised_dir(get_default_language())):
             if filename.endswith(self.FILE_EXTENSION):
                 glossary_slug = filename[:-len(self.FILE_EXTENSION)]
                 glossary_slugs.add(glossary_slug)
-                glossary_term = GlossaryTerm(
-                    slug=glossary_slug,
-                )
-                glossary_term.save()
 
         for glossary_slug in glossary_slugs:
-            content_translations = {}
-            for language in get_available_languages():
-                glossary_term = GlossaryTerm.objects.get(slug=glossary_slug)
-                glossary_file_path = self.get_localised_file(
-                    language,
-                    "{}{}".format(glossary_slug, self.FILE_EXTENSION)
-                )
-                try:
-                    glossary_term_content = self.convert_md_file(
-                        glossary_file_path,
-                        self.structure_file_path
-                    )
-                    content_translations[language] = glossary_term_content
-                except CouldNotFindMarkdownFileError:
-                    if language == get_default_language():
-                        raise
+            term_translations = self.get_blank_translation_dictionary()
 
-            for language in content_translations:
-                setattr(glossary_term, "definition_{}".format(language), content_translations[language].html_string)
-                setattr(glossary_term, "term_{}".format(language), content_translations[language].title)
-                glossary_term.languages.append(language)
+            content_filename = "{}.md".format(glossary_slug)
+            content_translations = self.get_markdown_translations(content_filename)
+
+            for language, content in content_translations.items():
+                term_translations[language]['definition'] = content.html_string
+                term_translations[language]['term'] = content.title
+
+            glossary_term = GlossaryTerm(
+                slug=glossary_slug,
+            )
+            self.populate_translations(glossary_term, term_translations)
+            self.mark_translation_availability(glossary_term, required_fields=['term', 'definition'])
             glossary_term.save()
+
             self.log("Added glossary term: {}".format(glossary_term.__str__()))
 
         self.log("All glossary terms loaded!\n")

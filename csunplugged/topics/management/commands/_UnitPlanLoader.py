@@ -2,12 +2,10 @@
 
 import os.path
 from django.core.exceptions import ObjectDoesNotExist
-from utils.BaseLoader import BaseLoader
-from utils.language_utils import get_available_languages, get_default_language
+from utils.TranslatableModelLoader import TranslatableModelLoader
 from utils.convert_heading_tree_to_dict import convert_heading_tree_to_dict
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
-from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 
 
 from topics.models import (
@@ -17,7 +15,7 @@ from topics.models import (
 )
 
 
-class UnitPlanLoader(BaseLoader):
+class UnitPlanLoader(TranslatableModelLoader):
     """Custom loader for loading unit plans."""
 
     def __init__(self, factory, topic, **kwargs):
@@ -41,55 +39,35 @@ class UnitPlanLoader(BaseLoader):
                 be found in the config file.
         """
         unit_plan_structure = self.load_yaml_file(self.structure_file_path)
-        content_translations = {}
-        ct_links_translations = {}
-        heading_tree_translations = {}
 
-        for language in get_available_languages():
-            try:
-                # Convert the content to HTML
-                unit_plan_content = self.convert_md_file(
-                    self.get_localised_file(language, "{}.md".format(self.unit_plan_slug)),
-                    self.structure_file_path
-                )
-                content_translations[language] = unit_plan_content
-            except CouldNotFindMarkdownFileError:
-                if language == get_default_language():
-                    raise
+        unit_plan_translations = self.get_blank_translation_dictionary()
 
-            if unit_plan_content.heading_tree:
-                heading_tree = convert_heading_tree_to_dict(unit_plan_content.heading_tree)
-                heading_tree_translations[language] = heading_tree
+        content_filename = "{}.md".format(self.unit_plan_slug)
+        content_translations = self.get_markdown_translations(content_filename)
+        for language, content in content_translations.items():
+            unit_plan_translations[language]["content"] = content.html_string
+            unit_plan_translations[language]["name"] = content.title
+            if content.heading_tree:
+                heading_tree = convert_heading_tree_to_dict(content.heading_tree)
+                unit_plan_translations[language]["heading_tree"] = heading_tree
 
-            if "computational-thinking-links" in unit_plan_structure:
-                filename = unit_plan_structure["computational-thinking-links"]
-                file_path = self.get_localised_file(language, filename)
-                try:
-                    ct_links_content = self.convert_md_file(
-                        file_path,
-                        self.structure_file_path,
-                        heading_required=False,
-                        remove_title=False,
-                    )
-                    ct_links_translations[language] = ct_links_content.html_string
-                except CouldNotFindMarkdownFileError:
-                    if language == get_default_language():
-                        raise
+        if "computational-thinking-links" in unit_plan_structure:
+            ct_links_filename = unit_plan_structure["computational-thinking-links"]
+            ct_links_translations = self.get_markdown_translations(
+                ct_links_filename,
+                heading_required=False,
+                remove_title=False,
+            )
+            for language, content in ct_links_translations.items():
+                unit_plan_translations[language]["computational_thinking_links"] = content.html_string
 
         unit_plan = self.topic.unit_plans.create(
             slug=self.unit_plan_slug,
             languages=list(content_translations.keys()),
         )
-        for language in content_translations:
-            setattr(unit_plan, "content_{}".format(language), content_translations[language].html_string)
-            setattr(unit_plan, "name_{}".format(language), content_translations[language].title)
-            if unit_plan_content.heading_tree:
-                heading_tree = convert_heading_tree_to_dict(content_translations[language].heading_tree)
-                setattr(unit_plan, "heading_tree_{}".format(language), heading_tree)
-        for language in ct_links_translations:
-            setattr(unit_plan, "computational_thinking_links_{}".format(language), ct_links_translations[language])
-        for language in heading_tree_translations:
-            setattr(unit_plan, "heading_tree_{}".format(language), heading_tree_translations[language])
+
+        self.populate_translations(unit_plan, unit_plan_translations)
+        self.mark_translation_availability(unit_plan, required_fields=["name", "content"])
 
         unit_plan.save()
 

@@ -8,8 +8,8 @@ from django.utils import translation
 from topics.models import Lesson
 from topics.management.commands._LessonsLoader import LessonsLoader
 
-from utils.errors.CouldNotFindConfigFileError import CouldNotFindConfigFileError
-from utils.errors.EmptyConfigFileError import EmptyConfigFileError
+from utils.errors.CouldNotFindYAMLFileError import CouldNotFindYAMLFileError
+from utils.errors.EmptyYAMLFileError import EmptyYAMLFileError
 from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
@@ -209,7 +209,7 @@ class LessonsLoaderTest(BaseTestWithDB):
             base_path=self.base_path
         )
         lesson_loader.load()
-        self.assertIsNone(Lesson.objects.get(slug="lesson-1").computational_thinking_links)
+        self.assertEqual("", Lesson.objects.get(slug="lesson-1").computational_thinking_links)
 
     def test_lesson_loader_duration_set_correctly(self):
         config_file = "duration.yaml"
@@ -285,7 +285,8 @@ class LessonsLoaderTest(BaseTestWithDB):
             base_path=self.base_path
         )
         lesson_loader.load()
-        self.assertIsNone(Lesson.objects.get(slug="lesson-1").heading_tree)
+        # Empty list will evaluate to false
+        self.assertFalse(Lesson.objects.get(slug="lesson-1").heading_tree)
 
     def test_lesson_loader_optional_programming_challenges_set_correctly(self):
         config_file = "programming-challenges.yaml"
@@ -380,7 +381,7 @@ class LessonsLoaderTest(BaseTestWithDB):
             base_path=self.base_path
         )
         lesson_loader.load()
-        self.assertIsNone(Lesson.objects.get(slug="lesson-1").programming_challenges_description)
+        self.assertEqual("", Lesson.objects.get(slug="lesson-1").programming_challenges_description)
 
     def test_lesson_loader_optional_learning_outcomes_set_correctly(self):
         config_file = "learning-outcomes.yaml"
@@ -478,7 +479,7 @@ class LessonsLoaderTest(BaseTestWithDB):
             base_path=self.base_path
         )
         self.assertRaises(
-            CouldNotFindConfigFileError,
+            CouldNotFindYAMLFileError,
             lesson_loader.load,
         )
 
@@ -493,7 +494,7 @@ class LessonsLoaderTest(BaseTestWithDB):
             base_path=self.base_path
         )
         self.assertRaises(
-            EmptyConfigFileError,
+            EmptyYAMLFileError,
             lesson_loader.load,
         )
 
@@ -623,7 +624,7 @@ class LessonsLoaderTest(BaseTestWithDB):
         with translation.override("de"):
             self.assertEqual(lesson.name, "Complex Translated Lesson German")
             # accessing the untranslated field should not default back to english
-            self.assertEqual(None, lesson.computational_thinking_links)
+            self.assertEqual("", lesson.computational_thinking_links)
 
     def test_lessons_loader_translation_missing_programming_challenges(self):
         config_file = "translation-missing-pcd.yaml"
@@ -651,4 +652,4 @@ class LessonsLoaderTest(BaseTestWithDB):
         with translation.override("de"):
             self.assertEqual(lesson.name, "Complex Translated Lesson German")
             # accessing the untranslated field should not default back to english
-            self.assertEqual(None, lesson.programming_challenges_description)
+            self.assertEqual("", lesson.programming_challenges_description)

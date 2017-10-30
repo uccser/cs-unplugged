@@ -2,18 +2,15 @@
 
 from django.core.exceptions import ObjectDoesNotExist
 
-from utils.BaseLoader import BaseLoader
-from utils.language_utils import get_default_language, get_available_languages
-
+from utils.TranslatableModelLoader import TranslatableModelLoader
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
-from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 
 
 from topics.models import CurriculumArea, Lesson
 
 
-class CurriculumIntegrationsLoader(BaseLoader):
+class CurriculumIntegrationsLoader(TranslatableModelLoader):
     """Custom loader for loading curriculum integrations."""
 
     def __init__(self, topic, **kwargs):
@@ -45,6 +42,14 @@ class CurriculumIntegrationsLoader(BaseLoader):
                     "Curriculum Integration"
                 )
 
+            integration_translations = self.get_blank_translation_dictionary()
+
+            content_filename = "{}.md".format(integration_slug)
+            content_translations = self.get_markdown_translations(content_filename)
+            for language, content in content_translations.items():
+                integration_translations[language]['content'] = content.html_string
+                integration_translations[language]['name'] = content.title
+
             integration_number = integration_data.get("number", None)
             integration_curriculum_areas = integration_data.get("curriculum-areas", None)
             if None in [integration_number, integration_curriculum_areas]:
@@ -54,27 +59,12 @@ class CurriculumIntegrationsLoader(BaseLoader):
                     "Curriculum Integration"
                 )
 
-            content_translations = {}
-
-            for language in get_available_languages():
-                try:
-                    integration_content = self.convert_md_file(
-                        self.get_localised_file(language, "{}.md".format(integration_slug)),
-                        self.structure_file_path
-                    )
-                    content_translations[language] = integration_content
-                except CouldNotFindMarkdownFileError:
-                    if language == get_default_language():
-                        raise
-
             integration = self.topic.curriculum_integrations.create(
                 slug=integration_slug,
                 number=integration_number,
-                languages=list(content_translations.keys()),
             )
-            for language in content_translations:
-                setattr(integration, "content_{}".format(language), content_translations[language].html_string)
-                setattr(integration, "name_{}".format(language), content_translations[language].title)
+            self.populate_translations(integration, integration_translations)
+            self.mark_translation_availability(integration, required_fields=['name', 'content'])
             integration.save()
 
             # Add curriculum areas

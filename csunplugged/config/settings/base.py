@@ -37,7 +37,6 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     "django_bootstrap_breadcrumbs",
     "modeltranslation",
-    "vinaigrette",
 ]
 
 # Apps specific for this project go here.
@@ -218,4 +217,3 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 MODELTRANSLATION_CUSTOM_FIELDS = ('JSONField',)
-MODELTRANSLATION_FALLBACK_LANGUAGES = tuple()

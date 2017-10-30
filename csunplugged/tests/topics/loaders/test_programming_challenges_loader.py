@@ -61,7 +61,7 @@ class ProgrammingChallengesLoaderTest(BaseTestWithDB):
         pc_loader.load()  # Should not throw error, as hints are optional
         pc = ProgrammingChallenge.objects.get(slug="missing-hints")
         implementation = pc.implementations.all()[0]
-        self.assertEquals(implementation.hints, None)
+        self.assertEquals("", implementation.hints)
 
     def test_missing_solution(self):
         config_file = "missing-solution.yaml"
@@ -175,7 +175,7 @@ class ProgrammingChallengesLoaderTest(BaseTestWithDB):
         self.assertIn("English hints content.", implementation.hints)
         with translation.override("de"):
             # accessing the untranslated field should not default back to english
-            self.assertEquals(None, implementation.hints)
+            self.assertEquals("", implementation.hints)
 
     def test_markdown_with_style_error(self):
         config_file = "basic-config-2.yaml"

@@ -2,13 +2,12 @@
 
 from django.db import transaction
 
-from utils.BaseLoader import BaseLoader
-from utils.errors.InvalidConfigValueError import InvalidConfigValueError
+from utils.TranslatableModelLoader import TranslatableModelLoader
 
 from topics.models import ClassroomResource
 
 
-class ClassroomResourcesLoader(BaseLoader):
+class ClassroomResourcesLoader(TranslatableModelLoader):
     """Loader for curriculum area content."""
 
     def __init__(self, **kwargs):
@@ -22,20 +21,21 @@ class ClassroomResourcesLoader(BaseLoader):
         Raise:
             InvalidConfigValueError: Description provided is not a string.
         """
-        classroom_resources_structure = self.load_yaml_file(self.structure_file_path)
+        classroom_resources = self.load_yaml_file(self.structure_file_path)['classroom-resources']
+        classroom_resources_translations = self.get_yaml_translations(
+            self.structure_filename,
+            required_slugs=classroom_resources,
+            required_fields=["description"]
 
-        for (classroom_resource_slug, classroom_resource_description) in classroom_resources_structure.items():
+        )
 
-            if not isinstance(classroom_resource_description, str):
-                raise InvalidConfigValueError(
-                    self.structure_file_path,
-                    classroom_resource_slug,
-                    "A string describing the classroom resource."
-                )
+        for classroom_resource_slug in classroom_resources:
+            translations = classroom_resources_translations.get(classroom_resource_slug, dict())
             new_resource = ClassroomResource(
                 slug=classroom_resource_slug,
-                description=classroom_resource_description,
             )
+            self.populate_translations(new_resource, translations)
+            self.mark_translation_availability(new_resource, required_fields=['description'])
             new_resource.save()
 
             self.log("Added classroom resource: {}".format(new_resource.__str__()))

@@ -1,14 +1,13 @@
 """Custom loader for loading age group."""
 
 from django.db import transaction
-
-from utils.BaseLoader import BaseLoader
+from utils.TranslatableModelLoader import TranslatableModelLoader
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 
 from topics.models import AgeGroup
 
 
-class AgeGroupsLoader(BaseLoader):
+class AgeGroupsLoader(TranslatableModelLoader):
     """Loader for age group content."""
 
     def __init__(self, **kwargs):
@@ -25,14 +24,18 @@ class AgeGroupsLoader(BaseLoader):
         """
         age_groups_structure = self.load_yaml_file(self.structure_file_path)
 
-        for (age_group_slug, age_group_data) in age_groups_structure.items():
+        # Use same name as structure file for translations
+        age_groups_translations = self.get_yaml_translations(self.structure_filename)
 
+        for (age_group_slug, age_group_data) in age_groups_structure.items():
             if age_group_data is None:
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
                     ["min_age", "max_age"],
                     "Age Range"
                 )
+
+            translations = age_groups_translations.get(age_group_slug, dict())
 
             group_min_age = age_group_data.get("min_age", None)
             if group_min_age is None:
@@ -50,14 +53,13 @@ class AgeGroupsLoader(BaseLoader):
                     "Age Range"
                 )
 
-            group_description = age_group_data.get("description", None)
-
             # Create area objects and save to database
             age_group = AgeGroup(
                 slug=age_group_slug,
                 ages=(int(group_min_age), int(group_max_age)),
-                description=group_description,
             )
+            self.populate_translations(age_group, translations)
+            self.mark_translation_availability(age_group, required_fields=['description'])
             age_group.save()
 
             self.log("Added age group: {}".format(age_group.__str__()))

@@ -1,9 +1,9 @@
-"""Custom error for invalid config file."""
+"""Custom error for invalid yaml file."""
 
 from .Error import Error
 
 ERROR_MESSAGE = """
-Invalid configuration file.
+Invalid yaml file.
 
 Options:
   - Does the file match the expected layout?
@@ -12,11 +12,11 @@ Options:
 """
 
 
-class InvalidConfigFileError(Error):
-    """custom error for invalid config file."""
+class InvalidYAMLFileError(Error):
+    """custom error for invalid yaml file."""
 
     def __init__(self, yaml_file_path):
-        """Create error for invalid config file."""
+        """Create error for invalid yaml file."""
         super().__init__()
         self.yaml_file_path = yaml_file_path
 
@@ -24,6 +24,6 @@ class InvalidConfigFileError(Error):
         """Override default error string.
 
         Returns:
-            Error message for invalid config file.
+            Error message for invalid yaml file.
         """
         return self.base_message.format(filename=self.yaml_file_path) + ERROR_MESSAGE

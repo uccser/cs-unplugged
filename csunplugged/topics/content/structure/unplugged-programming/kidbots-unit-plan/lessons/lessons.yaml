@@ -10,14 +10,10 @@ storytelling:
     - unplugged-programming-follow-instructions
     - unplugged-programming-recall-direction-words
   generated-resources:
-    arrows:
-      description: Cut theses sheets out for students.
-    left-right-cards:
-      description: Cut these sheets out for students who are still learning their left and right.
-    job-badges:
-      description: Cut these out and use them as badges for the three students doing the three jobs respectively. You might want to put them in a name holder on a lanyard.
-    grid:
-      description: 8 x 8 grid for students to use if no large grid available.
+    - arrows
+    - left-right-cards
+    - job-badges
+    - grid
   classroom-resources:
     - blocks
     - whiteboard
@@ -33,8 +29,7 @@ fitness-unplugged:
     - unplugged-programming-design-language
     - programming-identify-loop
   generated-resources:
-    job-badges:
-      description:  Cut these out and use them as badges for the three students doing the three jobs respectively. You might want to put them in a name holder on a lanyard.
+    - job-badges
   classroom-resources:
     - hula-hoop
     - handheld-whiteboards
@@ -54,14 +49,10 @@ sending-a-rocket-to-mars:
     - unplugged-programming-communicate-debugging
     - unplugged-programming-actively-listen-feedback
   generated-resources:
-    arrows:
-      description: Cut theses sheets out for students.
-    left-right-cards:
-      description: Cut these sheets out for students who are still learning their left and right.
-    job-badges:
-      description: Cut these out and use them as badges for the three students doing the three jobs respectively. You might want to put them in a name holder on a lanyard.
-    grid:
-      description: 8 x 8 grid for students to use if no large grid available.
+    - arrows
+    - left-right-cards
+    - job-badges
+    - grid
   classroom-resources:
     - blocks
     - handheld-whiteboards
@@ -88,14 +79,10 @@ rescue-mission:
     - unplugged-programming-communicate-debugging
     - unplugged-programming-actively-listen-feedback
   generated-resources:
-    arrows:
-      description: Cut theses sheets out for students.
-    left-right-cards:
-      description: Cut these sheets out for students who are still learning their left and right.
-    job-badges:
-      description: Cut these out and use them as badges for the three students doing the three jobs respectively. You might want to put them in a name holder on a lanyard.
-    grid:
-      description: 8 x 8 grid for students to use if no large grid available.
+    - arrows
+    - left-right-cards
+    - job-badges
+    - grid
   classroom-resources:
     - blocks
     - handheld-whiteboards

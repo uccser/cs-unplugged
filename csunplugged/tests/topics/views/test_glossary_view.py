@@ -19,7 +19,8 @@ class GlossaryViewTest(BaseTestWithDB):
         term = GlossaryTerm(
             slug="algorithm",
             term="Algorithms",
-            definition="<p>Algorithms definition.</p>"
+            definition="<p>Algorithms definition.</p>",
+            languages=["en"]
         )
         term.save()
 
@@ -36,13 +37,15 @@ class GlossaryViewTest(BaseTestWithDB):
         term1 = GlossaryTerm(
             slug="algorithm",
             term="Algorithms",
-            definition="<p>Algorithms definition.</p>"
+            definition="<p>Algorithms definition.</p>",
+            languages=["en"]
         )
         term1.save()
         term2 = GlossaryTerm(
             slug="pixel",
             term="Pixel",
-            definition="<p>Pixel definition.</p>"
+            definition="<p>Pixel definition.</p>",
+            languages=["en"]
         )
         term2.save()
 
@@ -59,19 +62,22 @@ class GlossaryViewTest(BaseTestWithDB):
         term_c = GlossaryTerm(
             slug="c",
             term="C",
-            definition=""
+            definition="C",
+            languages=["en"]
         )
         term_c.save()
         term_b = GlossaryTerm(
             slug="b",
             term="B",
-            definition=""
+            definition="B",
+            languages=["en"]
         )
         term_b.save()
         term_a = GlossaryTerm(
             slug="a",
             term="A",
-            definition=""
+            definition="A",
+            languages=["en"]
         )
         term_a.save()
 
@@ -92,7 +98,8 @@ class GlossaryViewTest(BaseTestWithDB):
         term = GlossaryTerm(
             slug="algorithm",
             term="Algorithms",
-            definition="<p>Algorithms definition.</p>"
+            definition="<p>Algorithms definition.</p>",
+            languages=["en"]
         )
         term.save()
 
@@ -104,7 +111,8 @@ class GlossaryViewTest(BaseTestWithDB):
             {
                 "definition": "<p>Algorithms definition.</p>",
                 "slug": "algorithm",
-                "term": "Algorithms"
+                "term": "Algorithms",
+                "translated": True
             }
         )
 
@@ -112,13 +120,15 @@ class GlossaryViewTest(BaseTestWithDB):
         term1 = GlossaryTerm(
             slug="algorithm",
             term="Algorithms",
-            definition="<p>Algorithms definition.</p>"
+            definition="<p>Algorithms definition.</p>",
+            languages=["en"]
         )
         term1.save()
         term2 = GlossaryTerm(
             slug="pixel",
             term="Pixel",
-            definition="<p>Pixel definition.</p>"
+            definition="<p>Pixel definition.</p>",
+            languages=["en"]
         )
         term2.save()
 
@@ -130,7 +140,8 @@ class GlossaryViewTest(BaseTestWithDB):
             {
                 "definition": "<p>Pixel definition.</p>",
                 "slug": "pixel",
-                "term": "Pixel"
+                "term": "Pixel",
+                "translated": True
             }
         )
 

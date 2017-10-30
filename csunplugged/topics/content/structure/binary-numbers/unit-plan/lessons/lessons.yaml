@@ -7,10 +7,8 @@ how-binary-digits-work-junior:
     - numeracy-count-by-pointing
     - numeracy-recognise-patterns
   generated-resources:
-    binary-cards:
-      description: One set for class demonstration.
-    binary-windows:
-      description: One set per student.
+    - binary-cards
+    - binary-windows
   classroom-resources:
     - number-line-0-20
 
@@ -22,10 +20,8 @@ reinforcing-sequencing-in-binary-number-systems-junior:
     - numeracy-count-by-pointing
     - binary-identify-opposite-pairs
   generated-resources:
-    binary-cards:
-      description: One set for class demonstration.
-    binary-cards-small:
-      description: One set of cards per student.
+    - binary-cards
+    - binary-cards-small
 
 codes-for-letters-using-binary-representation-junior:
   duration: 45
@@ -35,12 +31,9 @@ codes-for-letters-using-binary-representation-junior:
     - binary-count-highest-number
     - numeracy-recognise-number-alphabet-order
   generated-resources:
-    binary-cards:
-      description: One set for class demonstration.
-    binary-cards-small:
-      description: One set of cards per student.
-    binary-to-alphabet:
-      description: Blank sheets for students, plus teacher answer sheet.
+    - binary-cards
+    - binary-cards-small
+    - binary-to-alphabet
   classroom-resources:
     - alphabet-cards
     - number-line-0-20
@@ -82,10 +75,8 @@ how-binary-digits-work:
     - numeracy-identify-even-odd
     - numeracy-explain-squaring
   generated-resources:
-    binary-cards:
-      description: One set for class demonstration.
-    binary-cards-small:
-      description: One set of cards per student.
+    - binary-cards
+    - binary-cards-small
   classroom-resources:
     - pens
     - paper
@@ -104,10 +95,8 @@ reinforcing-sequencing-in-binary-number-systems:
     - drama-create-video-binary
     - speaking-clear-instructions-binary-cards
   generated-resources:
-    binary-cards:
-      description: One set for class demonstration.
-    binary-cards-small:
-      description: One set of cards per student.
+    - binary-cards
+    - binary-cards-small
 
 
 codes-for-letters-using-binary-representation:
@@ -120,9 +109,6 @@ codes-for-letters-using-binary-representation:
     - binary-explain-codes-alphabets
     - language-discuss-storing-characters
   generated-resources:
-    binary-cards:
-      description: One set for class demonstration.
-    binary-cards-small:
-      description: One set of cards per student.
-    binary-to-alphabet:
-      description: Blank sheets for students, plus teacher answer sheet.
+    - binary-cards
+    - binary-cards-small
+    - binary-to-alphabet

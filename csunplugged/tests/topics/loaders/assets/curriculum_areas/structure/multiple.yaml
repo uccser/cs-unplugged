@@ -1,19 +1,14 @@
 maths:
-  name: Maths
   colour: green
   number: 1
   children:
-    geometry:
-      name: Geometry
-    algebra:
-      name: Algebra
+    - geometry
+    - algebra
 
 science:
-  name: Science
   colour: blue
   number: 2
 
 art:
-  name: Art
   colour: teal
   number: 3
