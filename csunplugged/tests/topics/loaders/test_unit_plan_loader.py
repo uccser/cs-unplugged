@@ -288,4 +288,4 @@ class UnitPlanLoaderTest(BaseTestWithDB):
             self.assertEqual("German Heading", up.name)
             self.assertIn("German unit plan content.", up.content)
             # accessing the untranslated field should not default back to english
-            self.assertEqual(None, up.computational_thinking_links)
+            self.assertEqual("", up.computational_thinking_links)

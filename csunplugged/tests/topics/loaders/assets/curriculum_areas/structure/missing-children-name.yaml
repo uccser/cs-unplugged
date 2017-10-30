@@ -1,8 +1,6 @@
 maths:
-  name: Maths
   colour: blue
   number: 1
   children:
     geometry:
-      name: Geometry
     algebra:

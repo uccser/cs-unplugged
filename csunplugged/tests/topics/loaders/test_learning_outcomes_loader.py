@@ -16,6 +16,8 @@ class LearningOutcomesLoaderTest(BaseTestWithDB):
         self.base_path = os.path.join(self.test_data.LOADER_ASSET_PATH, self.loader_name)
 
     def test_basic_config(self):
+        self.test_data.create_curriculum_area(1)
+
         config_file = "basic-config.yaml"
 
         lo_loader = LearningOutcomesLoader(structure_filename=config_file, base_path=self.base_path)

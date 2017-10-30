@@ -100,7 +100,7 @@ class AgeGroupsLoaderTest(BaseTestWithDB):
         config_file = "basic-config.yaml"
         group_loader = AgeGroupsLoader(structure_filename=config_file, base_path=self.base_path)
         group_loader.load()
-        self.assertIsNone(AgeGroup.objects.get(slug="8-10").description)
+        self.assertEqual("", AgeGroup.objects.get(slug="8-10").description)
 
     def test_age_groups_loader_multiple_configuration(self):
         config_file = "multiple.yaml"

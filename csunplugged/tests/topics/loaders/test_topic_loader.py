@@ -224,4 +224,4 @@ class TopicLoaderTest(BaseTestWithDB):
         self.assertIn("English other resources content.", topic.other_resources)
         with translation.override("de"):
             # accessing the untranslated field should not default back to english
-            self.assertEqual(None, topic.other_resources)
+            self.assertEqual("", topic.other_resources)
