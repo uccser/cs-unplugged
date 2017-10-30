@@ -59,7 +59,7 @@ class UnitPlanLoader(TranslatableModelLoader):
                 remove_title=False,
             )
             for language, content in ct_links_translations.items():
-                unit_plan_translations[language]["other_resources"] = content.html_string
+                unit_plan_translations[language]["computational_thinking_links"] = content.html_string
 
         unit_plan = self.topic.unit_plans.create(
             slug=self.unit_plan_slug,
