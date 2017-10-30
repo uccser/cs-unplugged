@@ -1,3 +1,4 @@
+from http import HTTPStatus
 from tests.BaseTestWithDB import BaseTestWithDB
 from django.urls import reverse
 from topics.models import Topic
@@ -12,7 +13,7 @@ class IndexViewTest(BaseTestWithDB):
     def test_index_with_no_topics(self):
         url = reverse("topics:index")
         response = self.client.get(url)
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
 
     def test_index_with_one_topic(self):
         new_topic = Topic(
@@ -26,7 +27,7 @@ class IndexViewTest(BaseTestWithDB):
 
         url = reverse("topics:index")
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertQuerysetEqual(
             response.context["all_topics"],
             ["<Topic: Binary Numbers>"]

@@ -1,0 +1,5 @@
+grid:
+  name: Grid
+  generator-module: GridResourceGenerator
+  thumbnail-static-path: img/resources/grid/thumbnail.png
+  copies: false

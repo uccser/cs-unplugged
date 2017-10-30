@@ -1,5 +1,6 @@
 from tests.BaseTestWithDB import BaseTestWithDB
 from django.urls import reverse
+from http import HTTPStatus
 
 
 class AboutViewTest(BaseTestWithDB):
@@ -10,5 +11,5 @@ class AboutViewTest(BaseTestWithDB):
 
     def test_about_view(self):
         response = self.client.get(reverse("general:about"))
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertContains(response, "About")

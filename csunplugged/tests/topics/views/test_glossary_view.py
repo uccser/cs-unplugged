@@ -1,3 +1,4 @@
+from http import HTTPStatus
 from tests.BaseTestWithDB import BaseTestWithDB
 from django.urls import reverse
 from topics.models import GlossaryTerm
@@ -12,7 +13,7 @@ class GlossaryViewTest(BaseTestWithDB):
     def test_glossary_with_no_definitions(self):
         url = reverse("topics:glossary")
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertEqual(len(response.context["glossary_terms"]), 0)
 
     def test_glossary_with_one_definition(self):
@@ -25,7 +26,7 @@ class GlossaryViewTest(BaseTestWithDB):
 
         url = reverse("topics:glossary")
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertEqual(len(response.context["glossary_terms"]), 1)
         self.assertQuerysetEqual(
             response.context["glossary_terms"],
@@ -48,7 +49,7 @@ class GlossaryViewTest(BaseTestWithDB):
 
         url = reverse("topics:glossary")
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertEqual(len(response.context["glossary_terms"]), 2)
         self.assertQuerysetEqual(
             response.context["glossary_terms"],
@@ -77,7 +78,7 @@ class GlossaryViewTest(BaseTestWithDB):
 
         url = reverse("topics:glossary")
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertEqual(len(response.context["glossary_terms"]), 3)
         self.assertQuerysetEqual(
             response.context["glossary_terms"],
@@ -98,7 +99,7 @@ class GlossaryViewTest(BaseTestWithDB):
 
         url = reverse("topics:glossary_json")
         response = self.client.get(url, {"term": "algorithm"})
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertJSONEqual(
             str(response.content, encoding="utf8"),
             {
@@ -124,7 +125,7 @@ class GlossaryViewTest(BaseTestWithDB):
 
         url = reverse("topics:glossary_json")
         response = self.client.get(url, {"term": "pixel"})
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertJSONEqual(
             str(response.content, encoding="utf8"),
             {
@@ -144,7 +145,7 @@ class GlossaryViewTest(BaseTestWithDB):
 
         url = reverse("topics:glossary_json")
         response = self.client.get(url, {"term": "pixel"})
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_glossary_json_with_invalid_key(self):
         term = GlossaryTerm(
@@ -156,4 +157,4 @@ class GlossaryViewTest(BaseTestWithDB):
 
         url = reverse("topics:glossary_json")
         response = self.client.get(url, {"word": "pixel"})
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)

@@ -1,10 +1,11 @@
-from tests.BaseTestWithDB import BaseTestWithDB
+from http import HTTPStatus
 from django.test import tag
 from django.urls import reverse
+from tests.BaseTestWithDB import BaseTestWithDB
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
 
 
-@tag('resource_generation')
+@tag("resource")
 class IndexViewTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
@@ -23,11 +24,11 @@ class IndexViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards",
             "resources/binary-cards.html",
-            "binary_cards.py",
+            "BinaryCardsResourceGenerator",
         )
         url = reverse("resources:index")
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertQuerysetEqual(
             response.context["all_resources"],
             ["<Resource: Resource Binary Cards>"]
@@ -38,17 +39,17 @@ class IndexViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards",
             "resources/binary-cards.html",
-            "binary_cards.py",
+            "BinaryCardsResourceGenerator",
         )
         self.test_data.create_resource(
             "sorting-network",
             "Sorting Network",
             "resources/sorting-network.html",
-            "sorting_network.py",
+            "SortingNetworkResourceGenerator.py",
         )
         url = reverse("resources:index")
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertQuerysetEqual(
             response.context["all_resources"],
             [

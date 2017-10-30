@@ -1,3 +1,4 @@
+from http import HTTPStatus
 from tests.BaseTestWithDB import BaseTestWithDB
 from django.urls import reverse
 
@@ -13,4 +14,4 @@ class IndexURLTest(BaseTestWithDB):
         self.assertEqual(url, "/en/topics/")
 
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)

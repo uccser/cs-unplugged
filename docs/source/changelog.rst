@@ -24,6 +24,24 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+2.0.0-alpha.5
+==============================================================================
+
+- **Release date:** 30th October 2017
+- **Downloads:** `Source downloads are available on GitHub`_
+
+**Notable changes:**
+
+This release improves many backend features, including smarter resource generation,
+dynamic resource previews, improved system testing, and bug fixes.
+
+**Changelog:**
+
+- Alter resources to use class based generators. `#636 <https://github.com/uccser/cs-unplugged/issues/636>`_
+- Add resource thumbnails on generation page. `#642 <https://github.com/uccser/cs-unplugged/issues/642>`_
+- Fix bug where production website is using development static files. `#646 <https://github.com/uccser/cs-unplugged/issues/646>`_
+- Fix bug where production static files are not deployed.
+
 2.0.0-alpha.4
 ==============================================================================
 
