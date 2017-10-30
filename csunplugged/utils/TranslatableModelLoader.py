@@ -28,8 +28,10 @@ class TranslatableModelLoader(BaseLoader):
             filename: (str) path to yaml file from the working directory of the loader
             field_map: (dict) optional mapping of field names in yaml file to
                 field names in the resulting dictionary
-            required: (bool) if true, an exception is raised if the file is not
-                present in the English directory
+            required_slugs: (list) list of slugs required to be present in the
+                english strings file
+            required_fields: (list) list of string fields required to be present
+                for each model in the english strings file
 
         Returns:
             Dictonary of translations, structured as follows:
@@ -43,7 +45,11 @@ class TranslatableModelLoader(BaseLoader):
 
         Raises:
             CouldNotFindConfigFileError: the requested file could not be found in
-                the /en directory, raised only if required=True.
+                the /en directory, raised only if required_slugs is not empty.
+            MissingRequiredModelsError: the file in the /en directory did not
+                contain all slugs in required_slugs
+            MissingRequiredFieldError: in the file in the /en directory, one
+                of the models was missing an entry for a field in required_fields
             InvalidConfigValueError: one of the 'translated strings' in the file
                 was not a string.
         """
