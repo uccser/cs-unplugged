@@ -2,7 +2,7 @@
 
 from utils.BaseLoader import BaseLoader
 from utils.language_utils import get_available_languages, get_default_language
-from utils.errors.CouldNotFindConfigFileError import CouldNotFindConfigFileError
+from utils.errors.CouldNotFindYAMLFileError import CouldNotFindYAMLFileError
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 from utils.errors.InvalidConfigValueError import InvalidConfigValueError
 from utils.errors.MissingRequiredModelsError import MissingRequiredModelsError
@@ -58,7 +58,7 @@ class TranslatableModelLoader(BaseLoader):
             translations_filename = self.get_localised_file(language, filename)
             try:
                 yaml = self.load_yaml_file(translations_filename)
-            except CouldNotFindConfigFileError:
+            except CouldNotFindYAMLFileError:
                 if required_slugs and language == get_default_language():
                     raise
                 yaml = {}

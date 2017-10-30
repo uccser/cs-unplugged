@@ -6,9 +6,9 @@ from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 from topics.models import AgeGroup
 from topics.management.commands._AgeGroupsLoader import AgeGroupsLoader
 
-from utils.errors.CouldNotFindConfigFileError import CouldNotFindConfigFileError
+from utils.errors.CouldNotFindYAMLFileError import CouldNotFindYAMLFileError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
-from utils.errors.EmptyConfigFileError import EmptyConfigFileError
+from utils.errors.EmptyYAMLFileError import EmptyYAMLFileError
 
 
 class AgeGroupsLoaderTest(BaseTestWithDB):
@@ -32,7 +32,7 @@ class AgeGroupsLoaderTest(BaseTestWithDB):
         config_file = "missing.yaml"
         group_loader = AgeGroupsLoader(structure_filename=config_file, base_path=self.base_path)
         self.assertRaises(
-            CouldNotFindConfigFileError,
+            CouldNotFindYAMLFileError,
             group_loader.load,
         )
 
@@ -40,7 +40,7 @@ class AgeGroupsLoaderTest(BaseTestWithDB):
         config_file = "empty.yaml"
         group_loader = AgeGroupsLoader(structure_filename=config_file, base_path=self.base_path)
         self.assertRaises(
-            EmptyConfigFileError,
+            EmptyYAMLFileError,
             group_loader.load,
         )
 

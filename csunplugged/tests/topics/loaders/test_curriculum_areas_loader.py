@@ -6,9 +6,9 @@ from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 from topics.models import CurriculumArea
 from topics.management.commands._CurriculumAreasLoader import CurriculumAreasLoader
 
-from utils.errors.CouldNotFindConfigFileError import CouldNotFindConfigFileError
+from utils.errors.CouldNotFindYAMLFileError import CouldNotFindYAMLFileError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
-from utils.errors.EmptyConfigFileError import EmptyConfigFileError
+from utils.errors.EmptyYAMLFileError import EmptyYAMLFileError
 
 
 class CurriculumAreasLoaderTest(BaseTestWithDB):
@@ -32,7 +32,7 @@ class CurriculumAreasLoaderTest(BaseTestWithDB):
         config_file = "missing.yaml"
         area_loader = CurriculumAreasLoader(structure_filename=config_file, base_path=self.base_path)
         self.assertRaises(
-            CouldNotFindConfigFileError,
+            CouldNotFindYAMLFileError,
             area_loader.load,
         )
 
@@ -40,7 +40,7 @@ class CurriculumAreasLoaderTest(BaseTestWithDB):
         config_file = "empty.yaml"
         area_loader = CurriculumAreasLoader(structure_filename=config_file, base_path=self.base_path)
         self.assertRaises(
-            EmptyConfigFileError,
+            EmptyYAMLFileError,
             area_loader.load,
         )
 

@@ -1,15 +1,15 @@
-"""Custom error for empty config file."""
+"""Custom error for empty yaml file."""
 
 from .Error import Error
 
-ERROR_MESSAGE = "\nA config file cannot be empty.\n"
+ERROR_MESSAGE = "\nA yaml file cannot be empty.\n"
 
 
-class EmptyConfigFileError(Error):
-    """Custom error for empty config file."""
+class EmptyYAMLFileError(Error):
+    """Custom error for empty yaml file."""
 
     def __init__(self, yaml_file_path):
-        """Create the error for empty config file."""
+        """Create the error for empty yaml file."""
         super().__init__()
         self.yaml_file_path = yaml_file_path
 
@@ -17,6 +17,6 @@ class EmptyConfigFileError(Error):
         """Override default error string.
 
         Returns:
-            Error message for empty config file.
+            Error message for empty yaml file.
         """
         return self.base_message.format(filename=self.yaml_file_path) + ERROR_MESSAGE

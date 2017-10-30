@@ -8,8 +8,8 @@ from django.utils import translation
 from topics.models import Lesson
 from topics.management.commands._LessonsLoader import LessonsLoader
 
-from utils.errors.CouldNotFindConfigFileError import CouldNotFindConfigFileError
-from utils.errors.EmptyConfigFileError import EmptyConfigFileError
+from utils.errors.CouldNotFindYAMLFileError import CouldNotFindYAMLFileError
+from utils.errors.EmptyYAMLFileError import EmptyYAMLFileError
 from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
@@ -479,7 +479,7 @@ class LessonsLoaderTest(BaseTestWithDB):
             base_path=self.base_path
         )
         self.assertRaises(
-            CouldNotFindConfigFileError,
+            CouldNotFindYAMLFileError,
             lesson_loader.load,
         )
 
@@ -494,7 +494,7 @@ class LessonsLoaderTest(BaseTestWithDB):
             base_path=self.base_path
         )
         self.assertRaises(
-            EmptyConfigFileError,
+            EmptyYAMLFileError,
             lesson_loader.load,
         )
 

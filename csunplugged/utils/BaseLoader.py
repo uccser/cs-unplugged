@@ -15,10 +15,10 @@ from .check_glossary_links import check_converter_glossary_links
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 from utils.errors.MarkdownStyleError import MarkdownStyleError
 from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
-from utils.errors.EmptyConfigFileError import EmptyConfigFileError
-from utils.errors.InvalidConfigFileError import InvalidConfigFileError
+from utils.errors.EmptyYAMLFileError import EmptyYAMLFileError
+from utils.errors.InvalidYAMLFileError import InvalidYAMLFileError
 from utils.errors.NoHeadingFoundInMarkdownFileError import NoHeadingFoundInMarkdownFileError
-from utils.errors.CouldNotFindConfigFileError import CouldNotFindConfigFileError
+from utils.errors.CouldNotFindYAMLFileError import CouldNotFindYAMLFileError
 
 
 class BaseLoader():
@@ -168,25 +168,25 @@ class BaseLoader():
             Either list or string, depending on structure of given yaml file
 
         Raises:
-            CouldNotFindConfigFileError: when a given config file cannot be found.
-            InvalidConfigFileError: when a given config file is incorrectly formatted.
-            EmptyConfigFileError: when a give config file is empty.
+            CouldNotFindYAMLFileError: when a given config file cannot be found.
+            InvalidYAMLFileError: when a given config file is incorrectly formatted.
+            EmptyYAMLFileError: when a give config file is empty.
         """
         try:
             yaml_file = open(yaml_file_path, encoding="UTF-8").read()
         except FileNotFoundError:
-            raise CouldNotFindConfigFileError(yaml_file_path)
+            raise CouldNotFindYAMLFileError(yaml_file_path)
 
         try:
             yaml_contents = yaml.load(yaml_file)
         except yaml.YAMLError:
-            raise InvalidConfigFileError(yaml_file_path)
+            raise InvalidYAMLFileError(yaml_file_path)
 
         if yaml_contents is None:
-            raise EmptyConfigFileError(yaml_file_path)
+            raise EmptyYAMLFileError(yaml_file_path)
 
         if isinstance(yaml_contents, dict) is False:
-            raise InvalidConfigFileError(yaml_file_path)
+            raise InvalidYAMLFileError(yaml_file_path)
 
         return yaml_contents
 
