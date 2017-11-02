@@ -2,7 +2,7 @@
 
 import os.path
 from django.db import transaction
-
+from django.core.exceptions import ObjectDoesNotExist
 from utils.BaseLoader import BaseLoader
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
@@ -65,7 +65,7 @@ class LearningOutcomesLoader(BaseLoader):
                         slug=curriculum_area_slug
                     )
                     outcome.curriculum_areas.add(curriculum_area)
-                except:
+                except ObjectDoesNotExist:
                     raise KeyNotFoundError(
                         self.structure_file_path,
                         curriculum_area_slug,

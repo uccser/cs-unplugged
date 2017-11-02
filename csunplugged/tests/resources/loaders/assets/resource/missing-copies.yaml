@@ -1,0 +1,5 @@
+grid:
+  name: Grid
+  webpage-template: resources/grid.html
+  generator-module: GridResourceGenerator
+  thumbnail-static-path: img/resources/grid/thumbnail.png

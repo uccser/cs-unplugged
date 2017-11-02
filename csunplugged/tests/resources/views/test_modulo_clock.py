@@ -1,13 +1,12 @@
+from http import HTTPStatus
 from django.test import tag
 from django.urls import reverse
-
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
-
 from utils.create_query_string import query_string
 
 
-@tag('resource_generation')
+@tag("resource")
 class ModuloClockResourceViewTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
@@ -20,21 +19,21 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
         }
         url = reverse("resources:resource", kwargs=kwargs)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
 
     def test_modulo_clock_resource_generation_blank_a4_no_header_text(self):
         resource = self.test_data.create_resource(
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -47,7 +46,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         filename = "Resource Modulo Clock (blank - a4).pdf"
         self.assertEqual(
             response.get("Content-Disposition"),
@@ -59,7 +58,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -72,7 +71,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         filename = "Resource Modulo Clock (blank - letter).pdf"
         self.assertEqual(
             response.get("Content-Disposition"),
@@ -84,7 +83,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -97,7 +96,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         filename = "Resource Modulo Clock (2 - a4).pdf"
         self.assertEqual(
             response.get("Content-Disposition"),
@@ -109,7 +108,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -122,7 +121,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         filename = "Resource Modulo Clock (2 - letter).pdf"
         self.assertEqual(
             response.get("Content-Disposition"),
@@ -134,7 +133,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -147,7 +146,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         filename = "Resource Modulo Clock (10 - a4).pdf"
         self.assertEqual(
             response.get("Content-Disposition"),
@@ -159,7 +158,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -172,7 +171,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         filename = "Resource Modulo Clock (10 - letter).pdf"
         self.assertEqual(
             response.get("Content-Disposition"),
@@ -184,7 +183,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -197,7 +196,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         filename = "Resource Modulo Clock (2 - a4).pdf"
         self.assertEqual(
             response.get("Content-Disposition"),
@@ -209,7 +208,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -222,7 +221,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         filename = "Resource Modulo Clock (2 - letter).pdf"
         self.assertEqual(
             response.get("Content-Disposition"),
@@ -234,7 +233,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -247,7 +246,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         filename = "Resource Modulo Clock (blank - a4).pdf"
         self.assertEqual(
             response.get("Content-Disposition"),
@@ -259,7 +258,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -272,7 +271,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         filename = "Resource Modulo Clock (blank - letter).pdf"
         self.assertEqual(
             response.get("Content-Disposition"),
@@ -284,7 +283,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -297,7 +296,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         filename = "Resource Modulo Clock (10 - a4).pdf"
         self.assertEqual(
             response.get("Content-Disposition"),
@@ -309,7 +308,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -322,7 +321,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         filename = "Resource Modulo Clock (10 - letter).pdf"
         self.assertEqual(
             response.get("Content-Disposition"),
@@ -334,7 +333,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -346,14 +345,14 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_modulo_clock_resource_generation_missing_paper_size_parameter(self):
         resource = self.test_data.create_resource(
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -365,14 +364,14 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_modulo_clock_resource_generation_missing_header_text_parameter(self):
         resource = self.test_data.create_resource(
             "modulo-clock",
             "Modulo Clock",
             "resources/modulo-clock.html",
-            "modulo_clock.py",
+            "ModuloClockResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -384,7 +383,7 @@ class ModuloClockResourceViewTest(BaseTestWithDB):
         }
         url += query_string(get_parameters)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         filename = "Resource Modulo Clock (2 - a4).pdf"
         self.assertEqual(
             response.get("Content-Disposition"),

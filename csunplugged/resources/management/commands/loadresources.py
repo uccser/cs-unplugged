@@ -12,7 +12,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         """Automatically called when the loadresources command is given."""
-        BASE_PATH = "resources/content/{}"
+        BASE_PATH = "resources/content/"
         resource_structure_file = "resources.yaml"
         factory = LoaderFactory()
 

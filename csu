@@ -99,7 +99,9 @@ cmd_update() {
   echo ""
   dev_updatedata
 
-  cmd_static_scratch
+  dev_static_scratch
+  echo ""
+  dev_makeresourcethumbnails
   dev_collect_static
 }
 defhelp update 'Run Django migrate and updatedata commands and build static files.'
@@ -132,6 +134,13 @@ dev_makeresources() {
 }
 defhelp -dev makeresources 'Run Django makeresources command.'
 
+# Run Django makeresourcethumbnails command
+dev_makeresourcethumbnails() {
+  echo "Creating thumbnails for resource PDFs..."
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresourcethumbnails
+}
+defhelp -dev makeresourcethumbnails 'Run Django makeresourcethumbnails command.'
+
 # Run Django migrate command
 dev_migrate() {
   echo "Applying database migrations..."
@@ -141,7 +150,7 @@ defhelp -dev migrate 'Run Django migrate command.'
 
 # Run Django updatedata command
 dev_updatedata() {
-  echo "Loading topics content..."
+  echo "Loading content..."
   docker-compose exec django /docker_venv/bin/python3 ./manage.py updatedata
 }
 defhelp -dev updatedata 'Run updatedata command.'
@@ -171,10 +180,11 @@ dev_static_prod() {
 defhelp -dev static_prod 'Build production static files.'
 
 # Build scratch static files
-cmd_static_scratch() {
+dev_static_scratch() {
   echo "Building scratch images..."
   docker-compose exec nginx gulp scratch
 }
+defhelp -dev static_scratch "Build scratch images."
 
 # Run shell
 dev_shell() {
@@ -205,14 +215,18 @@ defhelp -dev style 'Run style checks.'
 # Run test suite
 dev_test_suite() {
   echo "Running test suite..."
-  docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3
+  if [ "$CONTINUOUS_INTEGRATION" == "true" ]; then
+    docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3
+  else
+    docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --nomigrations
+  fi
 }
-defhelp -dev test 'Run test suite with code coverage.'
+defhelp -dev test_suite 'Run test suite with code coverage.'
 
 # Run specific test suite
 dev_test_specific() {
   echo "Running specific test suite..."
-  docker-compose exec django /docker_venv/bin/python3 ./manage.py test --settings=config.settings.testing "${1}" -v 3
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py test --settings=config.settings.testing "${1}" -v 3 --nomigrations
 }
 defhelp -dev test_specific 'Run specific test suite. Pass in parameter of Python test module.'
 
@@ -227,13 +241,7 @@ defhelp -dev test_coverage 'Display code coverage report.'
 # Run test suite backwards for CI testing
 dev_test_backwards() {
   echo "Running test suite backwards..."
-  local status
-  status=0
-  if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-    docker-compose exec django /docker_venv/bin/python3 ./manage.py test --settings=config.settings.testing --pattern "test_*.py" --reverse -v 0
-    status=$?
-  fi
-  return $status
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py test --settings=config.settings.testing --pattern "test_*.py" --reverse -v 0
 }
 defhelp -dev test_backwards 'Run test suite backwards.'
 
@@ -278,10 +286,26 @@ cmd_logs() {
 }
 defhelp logs 'View logs.'
 
-ci_test_with_coverage() {
-  dev_test_suite
-  # Swap these two lines if testing is too slow
-  #docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --exclude-tag=resource_generation
+ci_test_general() {
+  docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --exclude-tag=resource --exclude-tag=management
+  test_status=$?
+  dev_test_coverage
+  coverage_status=$?
+  bash <(curl -s https://codecov.io/bash)
+  ! (( $test_status || $coverage_status ))
+}
+
+ci_test_resources() {
+  docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --tag=resource
+  test_status=$?
+  dev_test_coverage
+  coverage_status=$?
+  bash <(curl -s https://codecov.io/bash)
+  ! (( $test_status || $coverage_status ))
+}
+
+ci_test_management() {
+  docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --tag=management
   test_status=$?
   dev_test_coverage
   coverage_status=$?

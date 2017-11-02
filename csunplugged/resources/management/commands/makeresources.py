@@ -2,13 +2,15 @@
 
 import os
 import os.path
-import importlib
-import itertools
-from time import time
+from urllib.parse import urlencode
+from tqdm import tqdm
 from django.core.management.base import BaseCommand
-from django.http.request import HttpRequest
+from django.http.request import QueryDict
+from django.conf import settings
 from resources.models import Resource
-from resources.views.generate_resource_pdf import generate_resource_pdf
+from resources.views.views import generate_resource_pdf
+from resources.utils.get_resource_generator import get_resource_generator
+from resources.utils.resource_valid_test_configurations import resource_valid_test_configurations
 
 
 class Command(BaseCommand):
@@ -37,37 +39,24 @@ class Command(BaseCommand):
             resources = Resource.objects.order_by("name")
 
         for resource in resources:
-            resource_start_time = time()
-            print("Creating {}...".format(resource.name))
-            # Get path to resource module
-            resource_view = resource.generation_view
-            if resource_view.endswith(".py"):
-                resource_view = resource_view[:-3]
-            module_path = "resources.views.{}".format(resource_view)
-            # Save resource module
-            resource_module = importlib.import_module(module_path)
-            parameter_options = resource_module.valid_options()
-            parameter_option_keys = sorted(parameter_options)
-            combinations = [dict(zip(parameter_option_keys, product)) for product in itertools.product(*(parameter_options[parameter_option_key] for parameter_option_key in parameter_option_keys))]  # noqa: E501
+            print("Creating {}".format(resource.name))
+
+            # TODO: Import repeated in next for loop, check alternatives
+            empty_generator = get_resource_generator(resource.generator_module)
+            combinations = resource_valid_test_configurations(
+                empty_generator.valid_options,
+                header_text=False
+            )
+            progress_bar = tqdm(combinations, ascii=True)
             # Create PDF for all possible combinations
-            for number, combination in enumerate(combinations):
-                start_time = time()
-                request = HttpRequest()
+            for combination in progress_bar:
                 if resource.copies:
-                    combination["copies"] = 30
-                request.GET = combination
-                (pdf_file, filename) = generate_resource_pdf(request, resource, module_path)
+                    combination["copies"] = settings.RESOURCE_COPY_AMOUNT
+                requested_options = QueryDict(urlencode(combination, doseq=True))
+                generator = get_resource_generator(resource.generator_module, requested_options)
+                (pdf_file, filename) = generate_resource_pdf(resource.name, generator)
+
                 filename = "{}.pdf".format(filename)
                 pdf_file_output = open(os.path.join(BASE_PATH, filename), "wb")
                 pdf_file_output.write(pdf_file)
                 pdf_file_output.close()
-                print("Created {}".format(filename))
-                print("{}{:.1f} secs".format(" " * 4, time() - start_time))
-                print("{}{:.0f}% of {} generated".format(
-                    " " * 4,
-                    (number + 1) / len(combinations) * 100, resource.name
-                ))
-            print("\n{} took {:.1f} secs to generate all combinations\n".format(
-                resource.name,
-                time() - resource_start_time
-            ))

@@ -1,4 +1,5 @@
 from tests.BaseTestWithDB import BaseTestWithDB
+from http import HTTPStatus
 
 
 class HealthCheckURLTest(BaseTestWithDB):
@@ -9,4 +10,4 @@ class HealthCheckURLTest(BaseTestWithDB):
 
     def test_valid_health_check_request(self):
         response = self.client.get("/_ah/health")
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)

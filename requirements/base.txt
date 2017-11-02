@@ -6,7 +6,7 @@ wheel==0.30.0
 
 # Resources
 Pillow==4.3.0
-yattag==1.9.0
+yattag==1.9.2
 
 # Markdown
 verto==0.6.1
@@ -14,3 +14,6 @@ python-markdown-math==0.3
 
 # YAML Loading
 PyYAML==3.12
+
+# System tools
+tqdm==4.19.4

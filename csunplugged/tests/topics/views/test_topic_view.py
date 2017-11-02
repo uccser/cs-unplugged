@@ -1,5 +1,5 @@
+from http import HTTPStatus
 from django.urls import reverse
-
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
@@ -20,7 +20,7 @@ class TopicViewTest(BaseTestWithDB):
         }
         url = reverse("topics:topic", kwargs=kwargs)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
 
     def test_topic_view_with_invalid_slug(self):
         self.test_data.create_topic(1)
@@ -29,7 +29,7 @@ class TopicViewTest(BaseTestWithDB):
         }
         url = reverse("topics:topic", kwargs=kwargs)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_topic_view_topic_context(self):
         topic = self.test_data.create_topic(1)
@@ -99,13 +99,13 @@ class TopicViewTest(BaseTestWithDB):
             "binary-cards",
             "Binary Cards (small)",
             "resources/binary-cards-small.html",
-            "binary_cards_small.py",
+            "BinaryCardsSmallResourceGenerator",
         )
         resource2 = resource_test_data.create_resource(
             "binary-windows",
             "Binary Windows",
             "resources/binary-windows.html",
-            "binary_windows.py",
+            "BinaryWindowsResourceGenerator",
         )
         # Create relationships
         relationship1 = ResourceDescription(
