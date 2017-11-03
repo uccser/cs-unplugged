@@ -103,6 +103,6 @@ barcode-checksum-poster:
 pixel-painter:
   name: Pixel Painter
   webpage-template: resources/pixel-painter.html
-  generation-view: pixel_painter.py
-  thumbnail-static-path: img/resources/pixel-painter/thumbnail.png
+  generator-module: PixelPainterResourceGenerator
+  thumbnail-static-path: img/resources/searching-cards/thumbnail.png
   copies: false
