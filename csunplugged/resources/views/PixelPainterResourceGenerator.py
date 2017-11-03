@@ -13,7 +13,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
     """Class for Pixel Painter resource generator."""
 
     additional_valid_options = {
-        "method": ["binary", "run-length-encoding"],
+        "method": ["binary", "run-length-encoding", "greyscale"],
         "image": ["boat", "fish", "hot-air-balloon"],
     }
 
@@ -35,7 +35,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         Returns:
             A dictionary of the one page for the resource.
             """
-        STATIC_PATH = "static/img/resources/pixel-painter/{}.png"
+        STATIC_PATH = "static/img/resources/pixel-painter/{}"
         FONT_PATH = "static/fonts/PatrickHand-Regular.ttf"
         FONT = ImageFont.truetype(FONT_PATH, 80)
         FONT_SMALL = ImageFont.truetype(FONT_PATH, 50)
@@ -44,7 +44,11 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         method = self.requested_options["method"]
         image_name = self.requested_options["image"]
 
-        image = Image.open(STATIC_PATH.format(image_name))
+        if method == "run-length-encoding":
+            image_filename = "{}-binary.png".format(image_name)
+        else:
+            image_filename = "{}-{}.png".format(image_name, method)
+        image = Image.open(STATIC_PATH.format(image_filename))
         (image_width, image_height) = image.size
 
         COLUMNS_PER_PAGE = 15
@@ -119,10 +123,13 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
 
                     for column in range(0, page_columns):
                         pixel_value = image.getpixel((page_start_column + column, page_start_row + row))
-                        text = str(1 - int(pixel_value / 255))
+                        if method == "binary":
+                            text = str(1 - int(pixel_value / 255))
+                        elif method == "greyscale":
+                            text = str(pixel_value)
 
                         # Draw text
-                        if method == "binary":
+                        if method != "run-length-encoding":
                             text_width, text_height = draw.textsize(text, font=FONT)
                             text_coord_x = (column * BOX_SIZE) + (BOX_SIZE / 2) - (text_width / 2)
                             text_coord_y = (row * BOX_SIZE) + (BOX_SIZE / 2) - (text_height / 2)
