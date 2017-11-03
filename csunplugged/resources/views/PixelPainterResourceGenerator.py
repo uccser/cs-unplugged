@@ -61,7 +61,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
 
         number_column_pages = ceil(image_width / COLUMNS_PER_PAGE)
         number_row_pages = ceil(image_height / ROWS_PER_PAGE)
-        page_grid_coords = self.create_page_grid_coords(number_column_pages, number_row_pages)
+        page_grid_coords = self.create_page_grid_coords(number_column_pages, number_row_pages, image_name)
 
         grid_page = self.grid_reference_page(page_grid_coords, image_name)
         pages.append({"type": "html", "data": grid_page})
@@ -169,7 +169,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         return pages
 
 
-    def create_page_grid_coords(self, columns, rows):
+    def create_page_grid_coords(self, columns, rows, image):
         """Create a grid of page coordinates in a 2D array.
 
         Example:
@@ -182,18 +182,22 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
             grid[0][1] = "A2"
             grid[2][1] = "C2"
 
+            The first value refers to the image used.
+
         Args:
             columns: Number of page columns (int).
             rows: Number of page rows (int).
+            image: Name of the image used (str).
 
         Returns:
             A 2D list containing page grid references as strings (list).
         """
+        image_number = self.additional_valid_options["image"].index(image)
         LETTERS = string.ascii_uppercase
         page_grid_coords = [[""] * columns for i in range(rows)]
         for row in range(0, rows):
             for column in range(0, columns):
-                page_grid_coords[row][column] = "{}{}".format(LETTERS[row], column + 1)
+                page_grid_coords[row][column] = "{}{}{}".format(image_number, LETTERS[row], column + 1)
         return page_grid_coords
 
 
