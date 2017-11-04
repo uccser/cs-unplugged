@@ -1,8 +1,7 @@
 """Module for TextBoxDrawer class."""
 
 from PIL import ImageFont
-import xml.etree.ElementTree as ET
-
+from lxml import etree as ET
 
 class TextBox(object):
     """Class to store position/dimensions of a text box."""
@@ -44,7 +43,7 @@ class TextBoxDrawer(object):
         Returns:
             (width_ratio, height_ratio) tuple.
         """
-        vbx, vby, vbw, vbh = map(int, self.svg.attrib['viewBox'].split())
+        vbx, vby, vbw, vbh = map(float, self.svg.attrib['viewBox'].split())
         width, height = self.image.size
         width_ratio = width / vbw
         height_ratio = height / vbh
@@ -59,12 +58,15 @@ class TextBoxDrawer(object):
         Returns:
             TextBox object
         """
-        element = self.svg.find('{{http://www.w3.org/2000/svg}}rect[@id="{}"]'.format(box_id))
+        text_layer = self.svg.find('{http://www.w3.org/2000/svg}g[@id="text"]')
+        text_elem = text_layer.find('{{http://www.w3.org/2000/svg}}text[@id="{}"]'.format(box_id))
+        box_elem = text_elem.getprevious()
+
         return TextBox(
-            x=float(element.attrib.get('x', 0)) * self.width_ratio,
-            y=float(element.attrib.get('y', 0)) * self.height_ratio,
-            width=float(element.attrib['width']) * self.width_ratio,
-            height=float(element.attrib['height']) * self.height_ratio
+            x=float(box_elem.attrib.get('x', 0)) * self.width_ratio,
+            y=float(box_elem.attrib.get('y', 0)) * self.height_ratio,
+            width=float(box_elem.attrib['width']) * self.width_ratio,
+            height=float(box_elem.attrib['height']) * self.height_ratio
         )
 
     def write_text_box(self, box_id, string, **kwargs):
@@ -100,9 +102,9 @@ class TextBoxDrawer(object):
         """Get ImageFont instance for given font path/size."""
         return ImageFont.truetype(font_path, font_size)
 
-    def write_text_box_object(self, text_box, text, font_path="static/fonts/NotoSans-Regular.ttf",
+    def write_text_box_object(self, text_box, text, font_path="static/fonts/PatrickHand-Regular.ttf",
                               font_size=11, horiz_just='left', vert_just='top',
-                              justify_last_line=False, **kwargs):
+                              justify_last_line=False, line_spacing=4, color=(0, 0, 0)):
         """Write text into text_box by modifying line breaks and font size as required.
 
         Args:
@@ -117,7 +119,6 @@ class TextBoxDrawer(object):
         font_size_is_ok = False
         while not font_size_is_ok:
             font = self.get_font(font_path, font_size)
-            line_height = self.get_font_height(font)
             lines = []
             line = []
             words = text.split()
@@ -132,7 +133,14 @@ class TextBoxDrawer(object):
             if line:
                 lines.append(line)
             lines = [' '.join(line) for line in lines if line]
-            text_height = len(lines) * line_height
+            text_width, text_height = self.draw.multiline_textsize(
+                '\n'.join(lines),
+                font=font,
+                spacing=line_spacing)
+
+            # Reduce text_height by offset at top
+            (_, _), (_, offset_y) = font.font.getsize(text)
+            text_height -= offset_y
 
             if text_height <= text_box.height:
                 font_size_is_ok = True
@@ -140,37 +148,27 @@ class TextBoxDrawer(object):
                 font_size = max(int(0.9 * font_size), 1)
 
         if vert_just == 'top':
-            height = text_box.y
+            y = text_box.y
         elif vert_just == 'center':
-            height = text_box.y + (text_box.height - text_height)/2
+            y = text_box.y + (text_box.height - text_height)/2
         elif vert_just == 'bottom':
-            height = text_box.y + (text_box.height - text_height)
-        for index, line in enumerate(lines):
-            if horiz_just == 'left':
-                self.draw.text((text_box.x, height), line, font=font, **kwargs)
-            elif horiz_just == 'right':
-                total_width = self.get_text_width(font, line)
-                x_left = text_box.x + text_box.width - total_width
-                self.draw.text((x_left, height), line, font=font, **kwargs)
-            elif horiz_just == 'center':
-                total_width = self.get_text_width(font, line)
-                x_left = int(text_box.x + ((text_box.width - total_width) / 2))
-                self.draw.text((x_left, height), line, font=font, **kwargs)
-            elif horiz_just == 'justify':
-                words = line.split()
-                if (index == len(lines) - 1 and not justify_last_line) or \
-                   len(words) == 1:
-                    self.draw.text((text_box.x, height), line, font=font, **kwargs)
-                    continue
-                line_without_spaces = ''.join(words)
-                total_width = self.get_text_width(font, line_without_spaces)
-                space_width = (text_box.width - total_width) / (len(words) - 1.0)
-                start_x = text_box.x
-                for word in words[:-1]:
-                    self.draw.text((start_x, height), word, font=font, **kwargs)
-                    word_width = self.get_text_width(font, word)
-                    start_x += word_width + space_width
-                last_word_width = self.get_text_width(font, words[-1])
-                last_word_x = text_box.x + text_box.width - last_word_width
-                self.draw.text((last_word_x, height), words[-1], font=font, **kwargs)
-            height += line_height
+            y = text_box.y + (text_box.height - text_height)
+
+        if horiz_just == 'left':
+            x = text_box.x
+        elif horiz_just == 'center':
+            x = text_box.x + (text_box.width - text_width)/2
+        elif horiz_just == 'top':
+            x = text_box.x + (text_box.width - text_width)
+
+        # Remove offset from top line, to mimic AI textbox behavior
+        y -= offset_y
+
+        self.draw.multiline_text(
+            (x, y),
+            '\n'.join(lines),
+            fill=color,
+            font=font,
+            align=horiz_just,
+            spacing=line_spacing
+        )
