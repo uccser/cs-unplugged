@@ -1,7 +1,6 @@
 """Class for Pixel Painter resource generator."""
 
 from PIL import Image, ImageDraw, ImageFont
-from utils.retrieve_query_parameter import retrieve_query_parameter
 from math import ceil
 from yattag import Doc
 import string
@@ -41,7 +40,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
 
         Returns:
             A dictionary of the one page for the resource.
-            """
+        """
         STATIC_PATH = "static/img/resources/pixel-painter/{}"
         FONT_PATH = "static/fonts/PatrickHand-Regular.ttf"
         FONT = ImageFont.truetype(FONT_PATH, 80)
@@ -185,7 +184,6 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
             pages.insert(1, {"type": "html", "data": encoding_html})
         return pages
 
-
     def create_page_grid_coords(self, columns, rows, image):
         """Create a grid of page coordinates in a 2D array.
 
@@ -248,6 +246,15 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         return doc.getvalue()
 
     def create_run_length_encoding_html(self, page_grid_coords, pages_encoding):
+        """Create page HTML for run length encoding.
+
+        Args:
+            page_grid_coords: A 2D list containing the page grid as strings (list).
+            pages_encoding: Dictionary of page references to list of run length encodings (dict).
+
+        Returns:
+            HTML string for the run length encoding page.
+        """
         doc, tag, text, line = Doc().ttl()
         line("style", ".avoid-page-break {page-break-inside:avoid;}")
         with tag("h1"):
