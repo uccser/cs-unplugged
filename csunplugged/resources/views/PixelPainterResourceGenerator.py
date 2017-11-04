@@ -20,6 +20,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
     method_strings = {
         "binary": _("Binary"),
         "run-length-encoding": _("Run length encoding"),
+        "greyscale": _("Greyscale"),
     }
 
     image_strings = {
@@ -28,6 +29,12 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         "hot-air-balloon": _("Hot air balloon"),
     }
 
+    greyscale_labels = {
+        255: "00",
+        168: "01",
+        84: "10",
+        0: "11",
+    }
 
     def data(self):
         """Create data for a copy of the Pixel Painter resource.
@@ -123,10 +130,13 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
 
                     for column in range(0, page_columns):
                         pixel_value = image.getpixel((page_start_column + column, page_start_row + row))
-                        if method == "binary":
+                        if method == "greyscale":
+                            try:
+                                text = self.greyscale_labels[pixel_value]
+                            except KeyError:
+                                raise ValueError("{} contains pixel with invalid greyscale value".format(image_name))
+                        else:  # Binary variant
                             text = str(1 - int(pixel_value / 255))
-                        elif method == "greyscale":
-                            text = str(pixel_value)
 
                         # Draw text
                         if method != "run-length-encoding":
@@ -153,12 +163,12 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
                                 row_encoding.append(encoding_count)
 
                         # Add page grid reference
-                        if not page_reference_added and text == "0":
+                        if not page_reference_added and pixel_value > 0:
                             draw.text(
                                 ((column * BOX_SIZE) + LINE_WIDTH * 4, (row * BOX_SIZE) + -4),
                                 page_reference,
                                 font=FONT_SMALL,
-                                fill=TEXT_COLOUR
+                                fill="#000"
                             )
                             page_reference_added = True
                     if method == "run-length-encoding":
@@ -206,7 +216,6 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
             for column in range(0, columns):
                 page_grid_coords[row][column] = "{}{}{}".format(image_number, LETTERS[row], column + 1)
         return page_grid_coords
-
 
     def grid_reference_page(self, page_grid_coords, image_name):
         """Create page grid reference HTML.
