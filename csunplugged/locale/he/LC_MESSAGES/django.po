@@ -20,26 +20,26 @@ msgstr ""
 
 #: topics/templates/topics/index.html:3
 msgid "Topics"
-msgstr "Thema"
+msgstr ""
 
 #: resources/views/BarcodeChecksumPosterResourceGenerator.py:34
 msgid "13 Digit Barcode"
-msgstr "13 Stellige Strichcode"
+msgstr "13 ספרות ברקוד"
 
 #: resources/views/BarcodeChecksumPosterResourceGenerator.py:42
 msgid "Separate!"
-msgstr "Getrennte!"
+msgstr "נפרד!"
 
 #: resources/views/BarcodeChecksumPosterResourceGenerator.py:43
 msgid "Operate!"
-msgstr "Arbeiten!"
+msgstr "לְהַפְעִיל!"
 
 #: resources/views/BarcodeChecksumPosterResourceGenerator.py:44
 msgid "Calculate!"
-msgstr "Berechnen!"
+msgstr "לחשב!"
 
 #: resources/views/BarcodeChecksumPosterResourceGenerator.py:57
 msgid ""
 "Remember that this algorithm uses modulo 10, so we are only interested in "
 "the number in the one's column."
-msgstr "Denken Sie daran, dass dieser Algorithmus Modulo 10 verwendet, so dass wir nur an der Zahl in der Spalte des einen interessiert sind."
+msgstr "זכור כי אלגוריתם זה משתמש מודולו 10, אז אנחנו מעוניינים רק מספר בעמודה של אחד."

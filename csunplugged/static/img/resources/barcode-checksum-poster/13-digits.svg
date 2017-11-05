@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 555.4 841.9" style="enable-background:new 0 0 555.4 841.9;" xml:space="preserve">
+<g id="Layer_1">
+	
+		<image style="overflow:visible;" width="2133" height="2957" xlink:href="../../../../../../../Downloads/13barcode_resource_textless.png"  transform="matrix(0.2604 0 0 0.2604 0 71.89)">
+	</image>
+</g>
+<g id="text">
+	<rect x="100.7" y="9.9" style="fill:none;" width="354" height="49.6"/>
+	
+		<text id="title" transform="matrix(1 0 0 1 116.9529 49.2147)" style="fill:#14B24B; font-family:'PatrickHand-Regular'; font-size:55px;">13 Digit Barcode</text>
+	<rect x="5" y="81.9" style="fill:none;" width="93" height="20"/>
+	<text id="heading1" transform="matrix(1 0 0 1 5 97.62)" style="font-family:'PatrickHand-Regular'; font-size:22px;">Heading 1</text>
+	<rect x="6" y="315.9" style="fill:none;" width="91" height="19"/>
+	
+		<text id="heading2" transform="matrix(1 0 0 1 6 331.62)" style="fill:#CB4C9B; font-family:'PatrickHand-Regular'; font-size:22px;">Heading 2</text>
+	<rect x="5" y="188.4" style="fill:none;" width="97.5" height="89"/>
+	<text id="paragraph" transform="matrix(1 0 0 1 5 197.6849)"><tspan x="0" y="0" style="font-family:'PatrickHand-Regular'; font-size:13px;">This is the descrip</tspan><tspan x="85.2" y="0" style="font-family:'PatrickHand-Regular'; font-size:13px;">-</tspan><tspan x="0" y="15.6" style="font-family:'PatrickHand-Regular'; font-size:13px;">tion of the resource. </tspan><tspan x="0" y="31.2" style="font-family:'PatrickHand-Regular'; font-size:13px;">It is q uite long and </tspan><tspan x="0" y="46.8" style="font-family:'PatrickHand-Regular'; font-size:13px;">goes on and on. Lots </tspan><tspan x="0" y="62.4" style="font-family:'PatrickHand-Regular'; font-size:13px;">of explaining, yes. </tspan><tspan x="0" y="78" style="font-family:'PatrickHand-Regular'; font-size:13px;">On and on and on.g</tspan></text>
+	<rect x="8.2" y="477.4" style="fill:none;" width="91" height="19"/>
+	
+		<text id="heading3" transform="matrix(1 0 0 1 8.25 493.1057)" style="fill:#02B8E9; font-family:'PatrickHand-Regular'; font-size:22px;">Heading 3</text>
+</g>
+</svg>
