@@ -16,23 +16,36 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         "image": ["boat", "fish", "hot-air-balloon"],
     }
 
-    method_strings = {
-        "binary": _("Binary"),
-        "run-length-encoding": _("Run length encoding"),
-        "greyscale": _("Greyscale"),
+    methods = {
+        "binary": {
+            "name": _("Binary"),
+            "labels": {
+                255: "0",
+                0: "1"
+            }
+        },
+        "run-length-encoding": {
+            "name": _("Run length encoding"),
+            "labels": {
+                255: "0",
+                0: "1"
+            }
+        },
+        "greyscale": {
+            "name": _("Greyscale"),
+            "labels": {
+                255: "00",
+                168: "01",
+                84: "10",
+                0: "11"
+            }
+        }
     }
 
     image_strings = {
         "boat": _("Boat"),
         "fish": _("Fish"),
         "hot-air-balloon": _("Hot air balloon"),
-    }
-
-    greyscale_labels = {
-        255: "00",
-        168: "01",
-        84: "10",
-        0: "11",
     }
 
     def data(self):
@@ -129,13 +142,11 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
 
                     for column in range(0, page_columns):
                         pixel_value = image.getpixel((page_start_column + column, page_start_row + row))
-                        if method == "greyscale":
-                            try:
-                                text = self.greyscale_labels[pixel_value]
-                            except KeyError:
-                                raise ValueError("{} contains pixel with invalid greyscale value".format(image_name))
-                        else:  # Binary variant
-                            text = str(1 - int(pixel_value / 255))
+
+                        try:
+                            text = self.methods[method]["labels"][pixel_value]
+                        except KeyError:
+                            raise ValueError("{} contains pixel with invalid {} value".format(image_name, method))
 
                         # Draw text
                         if method != "run-length-encoding":
@@ -282,7 +293,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         """
         text = "{} - {} - {}".format(
             self.image_strings[self.requested_options["image"]],
-            self.method_strings[self.requested_options["method"]],
+            self.methods[self.requested_options["method"]]["name"],
             super().subtitle
         )
         return text
