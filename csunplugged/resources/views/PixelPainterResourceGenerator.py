@@ -12,8 +12,8 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
     """Class for Pixel Painter resource generator."""
 
     additional_valid_options = {
-        "method": ["binary", "run-length-encoding", "greyscale"],
-        "image": ["boat", "fish", "hot-air-balloon"],
+        "method": ["binary", "run-length-encoding", "greyscale", "colour"],
+        "image": ["boat", "fish", "hot-air-balloon", "parrots"],
     }
 
     methods = {
@@ -39,6 +39,19 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
                 84: "10",
                 0: "11"
             }
+        },
+        "colour": {
+            "name": _("Colour"),
+            "labels": {
+                (255, 255, 255, 255): "11111",  # White
+                (0, 0, 0, 255):       "00000",  # Black
+                (255, 0, 0, 255):     "11000",  # Red
+                (255, 143, 0, 255):   "11100",  # Orange
+                (255, 243, 0, 255):   "11110",  # Yellow
+                (76, 219, 5, 255):    "00110",  # Green
+                (0, 162, 255, 255):   "00001",  # Blue
+                (138, 0, 255, 255):   "10001"   # Purple
+            }
         }
     }
 
@@ -46,6 +59,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         "boat": _("Boat"),
         "fish": _("Fish"),
         "hot-air-balloon": _("Hot air balloon"),
+        "parrots": _("Parrots"),
     }
 
     def data(self):
@@ -146,7 +160,10 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
                         try:
                             text = self.methods[method]["labels"][pixel_value]
                         except KeyError:
-                            raise ValueError("{} contains pixel with invalid {} value".format(image_name, method))
+                            message = "Image: {}\n".format(image_name)
+                            message += "Method: {}\n".format(method)
+                            message += "Contains invalid pixel value: {}".format(pixel_value)
+                            raise ValueError(message)
 
                         # Draw text
                         if method != "run-length-encoding":
@@ -173,6 +190,9 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
                                 row_encoding.append(encoding_count)
 
                         # Add page grid reference
+                        if isinstance(pixel_value, tuple):
+                            pixel_value = pixel_value[-1]
+
                         if not page_reference_added and pixel_value > 0:
                             draw.text(
                                 ((column * BOX_SIZE) + LINE_WIDTH * 4, (row * BOX_SIZE) + -4),
