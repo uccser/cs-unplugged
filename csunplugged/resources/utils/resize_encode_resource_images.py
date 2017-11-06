@@ -5,20 +5,19 @@ import base64
 MM_TO_PIXEL_RATIO = 6
 
 
-def resize_encode_resource_images(generator, data):
+def resize_encode_resource_images(paper_size, data):
     """Process image pages in resource.
 
     - Resizes images to required paper size.
     - Encodes images in base64 for PDF rendering.
 
     Args:
-        generator: Instance of specific resource generator class.
+        paper_size: Paper size of requested resource (str).
         data: List of generated resource (list).
 
     Returns:
         List of processed resource pages.
     """
-    paper_size = generator.requested_options["paper_size"]
     if paper_size == "a4":
         max_pixel_height = 267 * MM_TO_PIXEL_RATIO
     elif paper_size == "letter":

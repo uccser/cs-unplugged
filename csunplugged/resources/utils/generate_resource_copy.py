@@ -22,4 +22,4 @@ def generate_resource_copy(generator):
     data = generator.data()
     if not isinstance(data, list):
         data = [data]
-    return resize_encode_resource_images(generator, data)
+    return resize_encode_resource_images(generator.requested_options["paper_size"], data)

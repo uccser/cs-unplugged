@@ -110,7 +110,10 @@ class BaseResourceGenerator(ABC):
             elif len(thumbnail_data) > 1:
                 raise MoreThanOneThumbnailPageFound(self)
 
-        thumbnail_data = resize_encode_resource_images(self, thumbnail_data)
+        thumbnail_data = resize_encode_resource_images(
+            self.requested_options["paper_size"],
+            thumbnail_data
+        )
         context = dict()
         context["resource"] = resource_name
         context["paper_size"] = self.requested_options["paper_size"]
