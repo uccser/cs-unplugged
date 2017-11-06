@@ -259,6 +259,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         """
         doc, tag, text, line = Doc().ttl()
         line("style", "#grid-table td {border:1px solid black;padding:1rem 0.5rem;}")
+        line("style", "#pixel-legend td {border:1px solid black;padding:0.5rem 0.5rem;}")
         with tag("h1"):
             text("Pixel Painter")
         with tag("h2"):
@@ -275,6 +276,18 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
                     with tag("tr"):
                         for column_num in range(0, len(page_grid_coords[row_num])):
                             line("td", page_grid_coords[row_num][column_num])
+        with tag("h2"):
+            text("Pixel legend")
+        with tag("table", id="pixel-legend", style="padding-top:1rem;"):
+            with tag("tbody"):
+                print(self.methods[self.requested_options["method"]]["labels"].items())
+                for (values, label) in self.methods[self.requested_options["method"]]["labels"].items():
+                    with tag("tr"):
+                        if isinstance(values, tuple):
+                            line("td", " ", style="background-color:rgb{};width:3em;".format(values))
+                        else:
+                            line("td", " ", style="background-color:rgb({0},{0},{0});width:3em;".format(values))
+                        line("td", label)
         return doc.getvalue()
 
     def create_run_length_encoding_html(self, page_grid_coords, pages_encoding):
