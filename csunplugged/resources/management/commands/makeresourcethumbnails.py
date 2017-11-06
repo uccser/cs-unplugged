@@ -5,10 +5,7 @@ import os.path
 from urllib.parse import urlencode
 from tqdm import tqdm
 from PIL.PngImagePlugin import PngImageFile
-from django.conf import settings
-from django.contrib.staticfiles import finders
 from django.core.management.base import BaseCommand
-from django.template.loader import render_to_string
 from django.http.request import QueryDict
 from resources.models import Resource
 from resources.utils.generate_resource_copy import generate_resource_copy
@@ -53,22 +50,5 @@ class Command(BaseCommand):
                     filename += "{}-{}-".format(key, bool_to_yes_no(value))
                 filename = "{}.png".format(filename[:-1])
                 thumbnail_file_path = os.path.join(base_path, filename)
-                thumbnail = generator.thumbnail()
 
-                if isinstance(thumbnail, list):
-                    from weasyprint import HTML, CSS
-                    context = dict()
-                    context["resource"] = resource.name
-                    context["paper_size"] = generator.requested_options["paper_size"]
-                    context["all_data"] = []
-                    pdf_html = render_to_string("resources/base-resource-pdf.html", context)
-                    html = HTML(string=pdf_html, base_url=settings.BUILD_ROOT)
-                    css_file = finders.find("css/print-resource-pdf.css")
-                    css_string = open(css_file, encoding="UTF-8").read()
-                    base_css = CSS(string=css_string)
-                    thumbnail = html.write_png(stylesheets=[base_css], resolution=72)
-                    thumbnail_file = open(thumbnail_file_path, "wb")
-                    thumbnail_file.write(thumbnail)
-                    thumbnail_file.close()
-                elif isinstance(thumbnail, PngImageFile):
-                    thumbnail.save(thumbnail_file_path)
+                generator.generate_thumbnail(resource.name, thumbnail_file_path)

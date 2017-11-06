@@ -4,6 +4,7 @@ from PIL import Image, ImageDraw, ImageFont
 from math import ceil
 from yattag import Doc
 import string
+from shutil import copy2
 from utils.BaseResourceGenerator import BaseResourceGenerator
 from django.utils.translation import ugettext as _
 
@@ -280,7 +281,6 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
             text("Pixel legend")
         with tag("table", id="pixel-legend", style="padding-top:1rem;"):
             with tag("tbody"):
-                print(self.methods[self.requested_options["method"]]["labels"].items())
                 for (values, label) in self.methods[self.requested_options["method"]]["labels"].items():
                     with tag("tr"):
                         if isinstance(values, tuple):
@@ -332,17 +332,19 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         )
         return text
 
-    def thumbnail(self):
-        """Return thumbnail for resource request.
+    def generate_thumbnail(self, resource_name, path):
+        """Return custom thumbnails for resource request.
 
-        Returns:
-            Image for resource thumbnail.
+        Args:
+            resource_name: Name of the resource (str).
+            path: The path to write the thumbnail to (str).
+
+        The images are not resized as the images used are small already.
         """
         method = self.requested_options["method"]
         image_name = self.requested_options["image"]
-
         if method == "run-length-encoding":
             image_filename = "{}-black-white.png".format(image_name)
         else:
             image_filename = "{}-{}.png".format(image_name, method)
-        return Image.open(self.STATIC_PATH.format(image_filename))
+        copy2(self.STATIC_PATH.format(image_filename), path)

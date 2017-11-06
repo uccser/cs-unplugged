@@ -8,6 +8,9 @@ from utils.errors.QueryParameterInvalidError import QueryParameterInvalidError
 from utils.errors.ThumbnailPageNotFound import ThumbnailPageNotFound
 from utils.errors.MoreThanOneThumbnailPageFound import MoreThanOneThumbnailPageFound
 from copy import deepcopy
+from django.conf import settings
+from django.template.loader import render_to_string
+from django.contrib.staticfiles import finders
 
 
 class BaseResourceGenerator(ABC):
@@ -80,18 +83,21 @@ class BaseResourceGenerator(ABC):
             requested_options.setlist(option, values)
         return requested_options
 
-    def thumbnail(self):
+    def generate_thumbnail(self, resource_name, path):
         """Return thumbnail for resource request.
+
+        Args:
+            resource_name: Name of the resource (str).
+            path: The path to write the thumbnail to (str).
 
         Raises:
             ThumbnailPageNotFound: If resource with more than one page does
                                    not provide a thumbnail page.
             MoreThanOneThumbnailPageFound: If resource provides more than
                                            one page as the thumbnail.
-
-        Returns:
-            List of one item for resource thumbnail page.
         """
+        from weasyprint import HTML, CSS
+
         thumbnail_data = self.data()
         if not isinstance(thumbnail_data, list):
             thumbnail_data = [thumbnail_data]
@@ -104,4 +110,17 @@ class BaseResourceGenerator(ABC):
             elif len(thumbnail_data) > 1:
                 raise MoreThanOneThumbnailPageFound(self)
 
-        return resize_encode_resource_images(self, thumbnail_data)
+        thumbnail_data = resize_encode_resource_images(self, thumbnail_data)
+        context = dict()
+        context["resource"] = resource_name
+        context["paper_size"] = self.requested_options["paper_size"]
+        context["all_data"] = [thumbnail_data]
+        pdf_html = render_to_string("resources/base-resource-pdf.html", context)
+        html = HTML(string=pdf_html, base_url=settings.BUILD_ROOT)
+        css_file = finders.find("css/print-resource-pdf.css")
+        css_string = open(css_file, encoding="UTF-8").read()
+        base_css = CSS(string=css_string)
+        thumbnail = html.write_png(stylesheets=[base_css], resolution=72)
+        thumbnail_file = open(path, "wb")
+        thumbnail_file.write(thumbnail)
+        thumbnail_file.close()
