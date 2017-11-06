@@ -9,7 +9,7 @@ Are there any other methods you could use?
 
 ### Potential answers
 
-{image file-path="img/topics/linear_search_chests.gif" alt="This animation shows sequential search being used to find the chest that holds the number 38."}
+{image file-path="img/topics/linear_search.gif" alt="This animation shows that the only way to search the unsorted list is to go through every item (whether they choose randomly or look at the first, then second, then third…) because they are still just checking and eliminating one at a time."}
 
 Guide students to discuss the algorithm or process that they would use to find a value in an unsorted list and how that would be harder than in a sorted list.
 Help them to recognise that the only way to search the unsorted list is to go through every item (whether they choose randomly or look at the first, then second, then third…) because they are still just checking and eliminating one at a time.
