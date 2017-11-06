@@ -1,7 +1,7 @@
 """Class for Piano Keys resource generator."""
 
 from PIL import Image, ImageDraw
-from utils.BaseResourceGenerator import BaseResourceGenerator
+from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 from utils.bool_to_yes_no import bool_to_yes_no
 
 KEY_DATA = {

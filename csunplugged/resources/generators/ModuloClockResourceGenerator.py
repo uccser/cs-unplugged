@@ -2,7 +2,7 @@
 
 from PIL import Image, ImageDraw, ImageFont
 from math import pi, sin, cos
-from utils.BaseResourceGenerator import BaseResourceGenerator
+from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 
 
 class ModuloClockResourceGenerator(BaseResourceGenerator):

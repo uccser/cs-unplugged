@@ -1,7 +1,7 @@
 """Class for Left and Right Cards resource generator."""
 
 from PIL import Image
-from utils.BaseResourceGenerator import BaseResourceGenerator
+from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 
 
 class LeftRightCardsResourceGenerator(BaseResourceGenerator):

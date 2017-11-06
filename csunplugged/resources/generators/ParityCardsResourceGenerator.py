@@ -1,7 +1,7 @@
 """Class for Parity Cards resource generator."""
 
 from PIL import Image, ImageDraw
-from utils.BaseResourceGenerator import BaseResourceGenerator
+from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 
 CARDS_COLUMNS = 4
 CARDS_ROWS = 5

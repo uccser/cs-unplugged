@@ -3,7 +3,7 @@
 import os.path
 from random import sample
 from PIL import Image, ImageDraw, ImageFont
-from utils.BaseResourceGenerator import BaseResourceGenerator
+from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 
 IMAGE_SIZE_X = 2000
 IMAGE_SIZE_Y = 2800

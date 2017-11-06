@@ -2,7 +2,7 @@
 
 from PIL import Image, ImageDraw, ImageFont
 from random import sample
-from utils.BaseResourceGenerator import BaseResourceGenerator
+from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 
 IMAGE_PATH = "static/img/resources/treasure-hunt/{}.png"
 

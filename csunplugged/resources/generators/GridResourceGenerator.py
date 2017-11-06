@@ -1,7 +1,7 @@
 """Class for Grid resource generator."""
 
 from PIL import Image, ImageDraw
-from utils.BaseResourceGenerator import BaseResourceGenerator
+from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 
 GRID_COLUMNS = 8
 GRID_ROWS = 8

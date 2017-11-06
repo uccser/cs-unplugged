@@ -1,7 +1,7 @@
 """Class for Barcode Checksum Poster resource generator."""
 
 from PIL import Image
-from utils.BaseResourceGenerator import BaseResourceGenerator
+from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 
 
 class BarcodeChecksumPosterResourceGenerator(BaseResourceGenerator):

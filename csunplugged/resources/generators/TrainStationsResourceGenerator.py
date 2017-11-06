@@ -1,7 +1,7 @@
 """Class for Train Stations resource generator."""
 
 from PIL import Image
-from utils.BaseResourceGenerator import BaseResourceGenerator
+from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 
 
 class TrainStationsResourceGenerator(BaseResourceGenerator):

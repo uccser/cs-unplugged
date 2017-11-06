@@ -13,7 +13,7 @@ import base64
 
 
 @tag("resource")
-class GenerateResourceCopyTest(BaseTestWithDB):
+class BaseResourceGeneratorTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -22,7 +22,7 @@ class GenerateResourceCopyTest(BaseTestWithDB):
         self.A4_HEIGHT = 267
         self.LETTER_HEIGHT = 249
 
-    def test_generate_resources_copy_valid_generator(self):
+    def test_pdf_valid_generator(self):
         resource = self.test_data.create_resource(
             "grid",
             "Grid",
@@ -34,50 +34,7 @@ class GenerateResourceCopyTest(BaseTestWithDB):
         copy = generate_resource_copy(generator)
         self.assertEqual(len(copy), 1)
 
-    def test_generate_resources_copy_for_thumbnail_valid_single_page(self):
-        generator = MagicMock()
-        generator.data.return_value = [{"type": "html", "data": "Page 1"}]
-        copy = generate_resource_copy(generator, thumbnail=True)
-        self.assertEqual(len(copy), 1)
-        self.assertEqual(copy[0]["data"], "Page 1")
-
-    def test_generate_resources_copy_for_thumbnail_valid_multiple_pages(self):
-        generator = MagicMock()
-        generator.data.return_value = [
-            {"type": "html", "data": "Page 1"},
-            {"type": "html", "data": "Page 2", "thumbnail": True}
-        ]
-        copy = generate_resource_copy(generator, thumbnail=True)
-        self.assertEqual(len(copy), 1)
-        self.assertEqual(copy[0]["data"], "Page 2")
-
-    def test_generate_resources_copy_for_thumbnail_none_given(self):
-        generator = MagicMock()
-        generator.data.return_value = [
-            {"type": "html", "data": ""},
-            {"type": "html", "data": ""}
-        ]
-        self.assertRaises(
-            ThumbnailPageNotFound,
-            generate_resource_copy,
-            generator,
-            True
-        )
-
-    def test_generate_resources_copy_for_thumbnail_more_than_one_given(self):
-        generator = MagicMock()
-        generator.data.return_value = [
-            {"type": "html", "data": "", "thumbnail": True},
-            {"type": "html", "data": "", "thumbnail": True}
-        ]
-        self.assertRaises(
-            MoreThanOneThumbnailPageFound,
-            generate_resource_copy,
-            generator,
-            True
-        )
-
-    def test_generate_resources_copy_image_a4_not_resized(self):
+    def test_pdf_image_a4_not_resized(self):
         image = Image.new("1", (100, 100))
         generator = MagicMock()
         generator.data.return_value = [{"type": "image", "data": image}]
@@ -87,7 +44,7 @@ class GenerateResourceCopyTest(BaseTestWithDB):
         copy_image = Image.open(copy_data)
         self.assertEqual(image.size, copy_image.size)
 
-    def test_generate_resources_copy_image_a4_resized(self):
+    def test_pdf_image_a4_resized(self):
         size = 3000
         ratio = (self.A4_HEIGHT * self.MM_TO_PIXEL_RATIO) / size
         expected_size = (int(size * ratio), int(size * ratio))
@@ -100,7 +57,7 @@ class GenerateResourceCopyTest(BaseTestWithDB):
         copy_image = Image.open(copy_data)
         self.assertEqual(expected_size, copy_image.size)
 
-    def test_generate_resources_copy_image_letter_not_resized(self):
+    def test_pdf_image_letter_not_resized(self):
         image = Image.new("1", (100, 100))
         generator = MagicMock()
         generator.data.return_value = [{"type": "image", "data": image}]
@@ -110,7 +67,7 @@ class GenerateResourceCopyTest(BaseTestWithDB):
         copy_image = Image.open(copy_data)
         self.assertEqual(image.size, copy_image.size)
 
-    def test_generate_resources_copy_image_letter_resized(self):
+    def test_pdf_image_letter_resized(self):
         size = 3000
         ratio = (self.LETTER_HEIGHT * self.MM_TO_PIXEL_RATIO) / size
         expected_size = (int(size * ratio), int(size * ratio))
@@ -122,3 +79,46 @@ class GenerateResourceCopyTest(BaseTestWithDB):
         copy_data = BytesIO(base64.b64decode(copy[0]["data"]))
         copy_image = Image.open(copy_data)
         self.assertEqual(expected_size, copy_image.size)
+
+    def test_generate_thumbnail_valid_single_page(self):
+        generator = MagicMock()
+        generator.data.return_value = [{"type": "html", "data": "Page 1"}]
+        copy = generate_resource_copy(generator, thumbnail=True)
+        self.assertEqual(len(copy), 1)
+        self.assertEqual(copy[0]["data"], "Page 1")
+
+    def test_generate_thumbnail_valid_multiple_pages(self):
+        generator = MagicMock()
+        generator.data.return_value = [
+            {"type": "html", "data": "Page 1"},
+            {"type": "html", "data": "Page 2", "thumbnail": True}
+        ]
+        copy = generate_resource_copy(generator, thumbnail=True)
+        self.assertEqual(len(copy), 1)
+        self.assertEqual(copy[0]["data"], "Page 2")
+
+    def test_generate_thumbnail_none_given(self):
+        generator = MagicMock()
+        generator.data.return_value = [
+            {"type": "html", "data": ""},
+            {"type": "html", "data": ""}
+        ]
+        self.assertRaises(
+            ThumbnailPageNotFound,
+            generate_resource_copy,
+            generator,
+            True
+        )
+
+    def test_generate_thumbnail_more_than_one_given(self):
+        generator = MagicMock()
+        generator.data.return_value = [
+            {"type": "html", "data": "", "thumbnail": True},
+            {"type": "html", "data": "", "thumbnail": True}
+        ]
+        self.assertRaises(
+            MoreThanOneThumbnailPageFound,
+            generate_resource_copy,
+            generator,
+            True
+        )

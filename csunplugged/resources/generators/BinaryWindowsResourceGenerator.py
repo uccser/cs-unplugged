@@ -2,7 +2,7 @@
 
 import os.path
 from PIL import Image, ImageDraw, ImageFont
-from utils.BaseResourceGenerator import BaseResourceGenerator
+from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 
 BASE_IMAGE_PATH = "static/img/resources/binary-windows/"
 FONT_PATH = "static/fonts/PatrickHand-Regular.ttf"

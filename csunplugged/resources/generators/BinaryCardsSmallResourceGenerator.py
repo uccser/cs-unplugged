@@ -2,7 +2,7 @@
 
 from PIL import Image, ImageDraw, ImageFont
 import os.path
-from utils.BaseResourceGenerator import BaseResourceGenerator
+from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 
 BASE_IMAGE_PATH = "static/img/resources/binary-cards-small/"
 IMAGE_SIZE_X = 2480

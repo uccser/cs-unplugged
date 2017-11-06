@@ -4,7 +4,7 @@ from random import sample, shuffle
 from math import ceil
 from PIL import Image, ImageDraw, ImageFont
 from yattag import Doc
-from utils.BaseResourceGenerator import BaseResourceGenerator
+from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 
 IMAGE_PATH = "static/img/resources/searching-cards/{}-cards-{}.png"
 X_BASE_COORD = 1803

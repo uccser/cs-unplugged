@@ -5,7 +5,7 @@ from math import ceil
 from yattag import Doc
 import string
 from shutil import copy2
-from utils.BaseResourceGenerator import BaseResourceGenerator
+from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 from django.utils.translation import ugettext as _
 
 

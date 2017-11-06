@@ -1,7 +1,7 @@
 """Class for Binary to Alphabet resource generator."""
 
 from PIL import Image, ImageDraw, ImageFont
-from utils.BaseResourceGenerator import BaseResourceGenerator
+from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 
 
 class BinaryToAlphabetResourceGenerator(BaseResourceGenerator):
