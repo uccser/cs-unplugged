@@ -21,25 +21,3 @@ msgstr ""
 #: topics/templates/topics/index.html:3
 msgid "Topics"
 msgstr "Thema"
-
-#: resources/views/BarcodeChecksumPosterResourceGenerator.py:34
-msgid "13 Digit Barcode"
-msgstr "13 Stellige Strichcode"
-
-#: resources/views/BarcodeChecksumPosterResourceGenerator.py:42
-msgid "Separate!"
-msgstr "Getrennte!"
-
-#: resources/views/BarcodeChecksumPosterResourceGenerator.py:43
-msgid "Operate!"
-msgstr "Arbeiten!"
-
-#: resources/views/BarcodeChecksumPosterResourceGenerator.py:44
-msgid "Calculate!"
-msgstr "Berechnen!"
-
-#: resources/views/BarcodeChecksumPosterResourceGenerator.py:57
-msgid ""
-"Remember that this algorithm uses modulo 10, so we are only interested in "
-"the number in the one's column."
-msgstr "Denken Sie daran, dass dieser Algorithmus Modulo 10 verwendet, so dass wir nur an der Zahl in der Spalte des einen interessiert sind."
