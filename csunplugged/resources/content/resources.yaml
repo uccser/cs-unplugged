@@ -104,5 +104,5 @@ pixel-painter:
   name: Pixel Painter
   webpage-template: resources/pixel-painter.html
   generator-module: PixelPainterResourceGenerator
-  thumbnail-static-path: img/resources/searching-cards/thumbnail.png
+  thumbnail-static-path: img/resources/pixel-painter/thumbnail.png
   copies: false
