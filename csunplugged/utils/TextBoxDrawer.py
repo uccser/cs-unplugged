@@ -83,7 +83,11 @@ class TextBoxDrawer(object):
         """
         text_layer = self.svg.find('{http://www.w3.org/2000/svg}g[@id="text"]')
         text_elem = text_layer.find('{{http://www.w3.org/2000/svg}}text[@id="{}"]'.format(box_id))
-        box_elem = text_elem.getprevious()
+        if text_elem:
+            box_elem = text_elem.getprevious()
+        else:
+            box_elem = text_layer.find('{{http://www.w3.org/2000/svg}}rect[@id="{}"]'.format(box_id))
+            text_elem = box_elem.getnext()
 
         tspan_element = text_elem.find('{http://www.w3.org/2000/svg}tspan')
         if tspan_element is not None:
