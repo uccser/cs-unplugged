@@ -3,6 +3,9 @@ from django.test import tag
 from django.urls import reverse
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
+from resources.utils.get_resource_generator import get_resource_generator
+from utils.create_query_string import query_string
+from resources.utils.resource_valid_test_configurations import resource_valid_test_configurations
 
 
 @tag("resource")
@@ -12,8 +15,20 @@ class PixelPainterResourceViewTest(BaseTestWithDB):
         super().__init__(*args, **kwargs)
         self.test_data = ResourcesTestDataGenerator()
         self.language = "en"
+        self.image_strings = {
+            "boat": "Boat",
+            "fish": "Fish",
+            "hot-air-balloon": "Hot air balloon",
+            "parrots": "Parrots",
+        }
+        self.method_strings = {
+            "black-white": "Black and White",
+            "run-length-encoding": "Run length encoding",
+            "greyscale": "Greyscale",
+            "colour": "Colour",
+        }
 
-    def test_grid_resource_form_view(self):
+    def test_pixel_painter_resource_form_view(self):
         resource = self.test_data.create_resource(
             "pixel-painter",
             "Pixel Painter",
@@ -26,3 +41,36 @@ class PixelPainterResourceViewTest(BaseTestWithDB):
         url = reverse("resources:resource", kwargs=kwargs)
         response = self.client.get(url)
         self.assertEqual(HTTPStatus.OK, response.status_code)
+
+    def test_pixel_painter_resource_generation_valid_configurations(self):
+        resource = self.test_data.create_resource(
+            "pixel-painter",
+            "Pixel Painter",
+            "resources/pixel-painter.html",
+            "PixelPainterResourceGenerator",
+        )
+        kwargs = {
+            "resource_slug": resource.slug,
+        }
+        base_url = reverse("resources:generate", kwargs=kwargs)
+        empty_generator = get_resource_generator(resource.generator_module)
+        combinations = resource_valid_test_configurations(
+            empty_generator.valid_options
+        )
+
+        print()
+        for combination in combinations:
+            print("   - Testing combination: {} ... ".format(combination), end="")
+            url = base_url + query_string(combination)
+            response = self.client.get(url)
+            self.assertEqual(HTTPStatus.OK, response.status_code)
+            subtitle = "{} - {} - {}".format(
+                self.image_strings[combination["image"]],
+                self.method_strings[combination["method"]],
+                combination["paper_size"]
+            )
+            self.assertEqual(
+                response.get("Content-Disposition"),
+                'attachment; filename="Resource Pixel Painter ({subtitle}).pdf"'.format(subtitle=subtitle)
+            )
+            print("ok")
