@@ -1,13 +1,14 @@
 """Module for TextBoxDrawer class."""
 
 from django.utils.translation import get_language, get_language_bidi
-from PIL import ImageFont
+from PIL import ImageFont, Image, ImageDraw
 from lxml import etree as ET
 import tinycss
 import os
 from bidi.algorithm import get_display
 from uniseg.linebreak import line_break_units
 import arabic_reshaper
+import math
 
 DEFAULT_FONT = "static/fonts/NotoSans-Regular.ttf"
 DEFAULT_FONT_OVERRIDES = {
@@ -26,15 +27,26 @@ FONT_MAX_ORD = {
 class TextBox(object):
     """Class to store position/dimensions of a text box."""
 
-    def __init__(self, x, y, width, height, color, font_path, font_size):
-        """Initialise TextBox."""
-        self.x = x
-        self.y = y
+    def __init__(self, vertices, width, height, color, font_path, font_size, angle):
+        """Initialise TextBox.
+
+        Args:
+            vertices: (list of 4 (x,y) tuples) vertex coords - in PNG coordinate
+                space - ordered clockwise from top left
+            width: (float) width of textbox in PNG space
+            height: (float) height of textbox in PNG space
+            color: (RGB 3-tuple or HEX string) text color, if given in SVG
+            font_path: (str) path to font, if given in SVG
+            font_size: (int) font size, if given in SVG
+            angle: (float) rotation angle of textbox, anti-clockwise
+        """
+        self.vertices = vertices
         self.width = width
         self.height = height
         self.color = color
         self.font_path = font_path
         self.font_size = font_size
+        self.angle = angle  # In radians
 
 
 class TextBoxDrawer(object):
@@ -81,7 +93,7 @@ class TextBoxDrawer(object):
         Returns:
             TextBox object
         """
-        text_layer = self.svg.find('{http://www.w3.org/2000/svg}g[@id="text"]')
+        text_layer = self.svg.find('{http://www.w3.org/2000/svg}g[@id="TEXT"]')
         text_elem = text_layer.find('{{http://www.w3.org/2000/svg}}text[@id="{}"]'.format(box_id))
         if text_elem:
             box_elem = text_elem.getprevious()
@@ -102,20 +114,46 @@ class TextBoxDrawer(object):
             style[rule.name] = rule.value[0].value
         color = style.get('fill')
         font = style.get('font-family')
-        size = style.get('font-size')
-        if size:
-            font_size = int(size * self.height_ratio)  # Convert font size into image coord space
+        font_size = style.get('font-size')
+
+        x = float(box_elem.attrib.get('x', 0))
+        y = float(box_elem.attrib.get('y', 0))
+        width = float(box_elem.attrib['width'])
+        height = float(box_elem.attrib['height'])
+
+        # SVG coord space
+        vertices = [
+            (x, y), (x + width, y), (x + width, y + height), (x, y + height)
+        ]
+
+        rect_transform = box_elem.attrib.get('transform')
+        if rect_transform and rect_transform.startswith("matrix"):
+            a, b, c, d, e, f = list(map(float, rect_transform[7:-1].split()))
+            for i, (x, y) in enumerate(vertices):
+                new_x = (a*x) + (c*y) + e
+                new_y = (b*x) + (d*y) + f
+                vertices[i] = (new_x, new_y)
+            # x, y = new_x, new_y
+            # Assume rotation without scaling
+            angle = math.acos(a)
         else:
-            font_size = None
+            angle = 0
+
+        # Convert into PNG Coordinate Space
+        vertices = [(x * self.width_ratio, y * self.height_ratio) for (x, y) in vertices]
+        width *= self.width_ratio
+        height *= self.height_ratio
+        if font_size:
+            font_size = int(font_size * self.height_ratio)
 
         return TextBox(
-            x=float(box_elem.attrib.get('x', 0)) * self.width_ratio,
-            y=float(box_elem.attrib.get('y', 0)) * self.height_ratio,
-            width=float(box_elem.attrib['width']) * self.width_ratio,
-            height=float(box_elem.attrib['height']) * self.height_ratio,
+            vertices=vertices,
+            width=width,
+            height=height,
             color=color,
             font_path="static/fonts/{}.ttf".format(font),
-            font_size=font_size
+            font_size=font_size,
+            angle=angle,
         )
 
     def write_text_box(self, box_id, string, **kwargs):
@@ -238,27 +276,53 @@ class TextBoxDrawer(object):
                 horiz_just = "right"
 
         if vert_just == 'top':
-            y = text_box.y
+            y = 0
         elif vert_just == 'center':
-            y = text_box.y + (text_box.height - text_height)/2
+            y = (text_box.height - text_height)/2
         elif vert_just == 'bottom':
-            y = text_box.y + (text_box.height - text_height)
+            y = (text_box.height - text_height)
 
         if horiz_just == 'left':
-            x = text_box.x
+            x = 0
         elif horiz_just == 'center':
-            x = text_box.x + (text_box.width - text_width)/2
+            x = (text_box.width - text_width)/2
         elif horiz_just == 'right':
-            x = text_box.x + (text_box.width - text_width)
+            x = (text_box.width - text_width)
 
         # Remove offset from top line, to mimic AI textbox behavior
         y -= offset_y
 
-        self.draw.multiline_text(
-            (x, y),
-            text,
-            fill=color,
-            font=font,
-            align=horiz_just,
-            spacing=line_spacing
-        )
+        if text_box.angle != 0:
+            text_img = Image.new("RGBA", (int(text_box.width), int(text_box.height)))
+            draw_text = ImageDraw.Draw(text_img)
+            draw_text.multiline_text(
+                (x, y),
+                text,
+                fill=color,
+                font=font,
+                align=horiz_just,
+                spacing=line_spacing
+            )
+            text_img = text_img.rotate(math.degrees(text_box.angle), expand=1)
+            vertices_xvals, vertices_yvals = zip(*text_box.vertices)
+            px = int(min(vertices_xvals))
+            py = int(min(vertices_yvals))
+            self.image.paste(text_img, (px, py), text_img)
+        else:
+            topleft_x, topleft_y = text_box.vertices[0]
+            x += topleft_x
+            y += topleft_y
+            self.draw.multiline_text(
+                (x, y),
+                text,
+                fill=color,
+                font=font,
+                align=horiz_just,
+                spacing=line_spacing
+            )
+
+    def draw_crosshair(self, point):
+        """Draw a black crosshair at the specified point."""
+        x, y = point
+        self.draw.line([(x - 30, y), (x + 30, y)], fill=(150, 150, 150), width=5)
+        self.draw.line([(x, y - 30), (x, y + 30)], fill=(150, 150, 150), width=5)
