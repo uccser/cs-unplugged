@@ -1,3 +1,5 @@
+"""Process image pages in resource data."""
+
 from PIL import Image
 from io import BytesIO
 import base64

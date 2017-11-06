@@ -4,11 +4,9 @@ import os
 import os.path
 from urllib.parse import urlencode
 from tqdm import tqdm
-from PIL.PngImagePlugin import PngImageFile
 from django.core.management.base import BaseCommand
 from django.http.request import QueryDict
 from resources.models import Resource
-from resources.utils.generate_resource_copy import generate_resource_copy
 from resources.utils.get_resource_generator import get_resource_generator
 from resources.utils.resource_valid_test_configurations import resource_valid_test_configurations
 from utils.bool_to_yes_no import bool_to_yes_no

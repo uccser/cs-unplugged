@@ -83,8 +83,51 @@ class BaseResourceGenerator(ABC):
             requested_options.setlist(option, values)
         return requested_options
 
+    def pdf(self, resource_name):
+        """Return PDF for resource request.
+
+        The PDF is returned (compared to the thumbnail which is directly saved)
+        as the PDF may be either saved to the disk, or returned in a HTTP
+        response.
+
+        Args:
+            resource_name: Name of the resource (str).
+
+        Return:
+            PDF file of resource.
+        """
+        # Only import weasyprint when required as production environment
+        # does not have it installed.
+        from weasyprint import HTML, CSS
+        context = dict()
+        context["resource"] = resource_name
+        context["header_text"] = self.requested_options.get("header_text", "")
+        context["paper_size"] = self.requested_options["paper_size"]
+
+        num_copies = range(0, int(self.requested_options.get("copies", 1)))
+        context["all_data"] = []
+        for copy in num_copies:
+            copy_data = self.data()
+            if not isinstance(copy_data, list):
+                copy_data = [copy_data]
+            copy_data = resize_encode_resource_images(
+                self.requested_options["paper_size"],
+                copy_data
+            )
+            context["all_data"].append(copy_data)
+
+        filename = "{} ({})".format(resource_name, self.subtitle)
+        context["filename"] = filename
+
+        pdf_html = render_to_string("resources/base-resource-pdf.html", context)
+        html = HTML(string=pdf_html, base_url=settings.BUILD_ROOT)
+        css_file = finders.find("css/print-resource-pdf.css")
+        css_string = open(css_file, encoding="UTF-8").read()
+        base_css = CSS(string=css_string)
+        return (html.write_pdf(stylesheets=[base_css]), filename)
+
     def generate_thumbnail(self, resource_name, path):
-        """Return thumbnail for resource request.
+        """Create thumbnail for resource request.
 
         Args:
             resource_name: Name of the resource (str).
@@ -96,6 +139,8 @@ class BaseResourceGenerator(ABC):
             MoreThanOneThumbnailPageFound: If resource provides more than
                                            one page as the thumbnail.
         """
+        # Only import weasyprint when required as production environment
+        # does not have it installed.
         from weasyprint import HTML, CSS
 
         thumbnail_data = self.data()
