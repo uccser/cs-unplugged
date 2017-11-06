@@ -1,4 +1,4 @@
-Media Application
+Media
 ##############################################################################
 
 .. warning::
@@ -15,8 +15,7 @@ Media Application
 Animations
 ==============================================================================
 
-Animations are located in either the ``general``, or ``topics``
-directory at: ``csunplugged/static/img``.
+Animations are located in the ``csunplugged/static/img`` directory.
 
 Animations are currently created by creating the elements using Adobe Illustrator and then animated on Adobe Animate.
 The frame rate used is normally 30fps, but this does not need to be strictly followed.
