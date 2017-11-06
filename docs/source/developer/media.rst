@@ -29,11 +29,3 @@ In this case, the animation must follow the rather convuluted SWF > MP4 > GIF pi
 1. The animation is exported in a .swf format in Adobe Animate.
 2. The animation is converted to a .mp4 file using a conversion tool, such as `Swivel <https://www.newgrounds.com/wiki/creator-resources/flash-resources/swivel>`_.
 3. The animation is converted to a .gif file using a conversion tool, such as `ezgif <https://ezgif.com/video-to-gif>`_.
-
-Adding an animation to a lesson/unit plan
-------------------------------------------------------------------------------
-The animation can then be added to the correct placement in a lesson/unit plan by following this example:
-
-.. code-block:: markdown
-
-  image file-path="img/topics/filename.gif" alt="Description of animation."}
