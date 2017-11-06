@@ -1,9 +1,12 @@
 """Class for generator for a resource."""
 
 from abc import ABC, abstractmethod
+from resources.utils.resize_encode_resource_images import resize_encode_resource_images
 from utils.str_to_bool import str_to_bool
 from utils.errors.QueryParameterMissingError import QueryParameterMissingError
 from utils.errors.QueryParameterInvalidError import QueryParameterInvalidError
+from utils.errors.ThumbnailPageNotFound import ThumbnailPageNotFound
+from utils.errors.MoreThanOneThumbnailPageFound import MoreThanOneThumbnailPageFound
 from copy import deepcopy
 
 
@@ -76,3 +79,29 @@ class BaseResourceGenerator(ABC):
                 values[i] = update_value
             requested_options.setlist(option, values)
         return requested_options
+
+    def thumbnail(self):
+        """Return thumbnail for resource request.
+
+        Raises:
+            ThumbnailPageNotFound: If resource with more than one page does
+                                   not provide a thumbnail page.
+            MoreThanOneThumbnailPageFound: If resource provides more than
+                                           one page as the thumbnail.
+
+        Returns:
+            List of one item for resource thumbnail page.
+        """
+        thumbnail_data = self.data()
+        if not isinstance(thumbnail_data, list):
+            thumbnail_data = [thumbnail_data]
+
+        if len(thumbnail_data) > 1:
+            thumbnail_data = list(filter(lambda thumbnail_data: thumbnail_data.get("thumbnail"), thumbnail_data))
+
+            if len(thumbnail_data) == 0:
+                raise ThumbnailPageNotFound(self)
+            elif len(thumbnail_data) > 1:
+                raise MoreThanOneThumbnailPageFound(self)
+
+        return resize_encode_resource_images(self, thumbnail_data)

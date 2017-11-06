@@ -4,6 +4,7 @@ import os
 import os.path
 from urllib.parse import urlencode
 from tqdm import tqdm
+from PIL.PngImagePlugin import PngImageFile
 from django.conf import settings
 from django.contrib.staticfiles import finders
 from django.core.management.base import BaseCommand
@@ -47,36 +48,27 @@ class Command(BaseCommand):
                 requested_options = QueryDict(urlencode(combination, doseq=True))
                 generator = get_resource_generator(resource.generator_module, requested_options)
 
-                thumbnail = generate_resource_thumbnail(resource.name, generator)
-
                 filename = resource.slug + "-"
                 for (key, value) in sorted(combination.items()):
                     filename += "{}-{}-".format(key, bool_to_yes_no(value))
                 filename = "{}.png".format(filename[:-1])
-                thumbnail_file = open(os.path.join(base_path, filename), "wb")
-                thumbnail_file.write(thumbnail)
-                thumbnail_file.close()
+                thumbnail_file_path = os.path.join(base_path, filename)
+                thumbnail = generator.thumbnail()
 
-
-def generate_resource_thumbnail(name, generator):
-    """Return image of thumbnail for of PDF resource.
-
-    Args:
-        name: Name of resource to be created (str).
-        generator: Instance of specific resource generator class.
-
-    Returns:
-        Thumbnail of generated resource.
-    """
-    from weasyprint import HTML, CSS
-
-    context = dict()
-    context["resource"] = name
-    context["paper_size"] = generator.requested_options["paper_size"]
-    context["all_data"] = [generate_resource_copy(generator, thumbnail=True)]
-    pdf_html = render_to_string("resources/base-resource-pdf.html", context)
-    html = HTML(string=pdf_html, base_url=settings.BUILD_ROOT)
-    css_file = finders.find("css/print-resource-pdf.css")
-    css_string = open(css_file, encoding="UTF-8").read()
-    base_css = CSS(string=css_string)
-    return html.write_png(stylesheets=[base_css], resolution=72)
+                if isinstance(thumbnail, list):
+                    from weasyprint import HTML, CSS
+                    context = dict()
+                    context["resource"] = resource.name
+                    context["paper_size"] = generator.requested_options["paper_size"]
+                    context["all_data"] = []
+                    pdf_html = render_to_string("resources/base-resource-pdf.html", context)
+                    html = HTML(string=pdf_html, base_url=settings.BUILD_ROOT)
+                    css_file = finders.find("css/print-resource-pdf.css")
+                    css_string = open(css_file, encoding="UTF-8").read()
+                    base_css = CSS(string=css_string)
+                    thumbnail = html.write_png(stylesheets=[base_css], resolution=72)
+                    thumbnail_file = open(thumbnail_file_path, "wb")
+                    thumbnail_file.write(thumbnail)
+                    thumbnail_file.close()
+                elif isinstance(thumbnail, PngImageFile):
+                    thumbnail.save(thumbnail_file_path)

@@ -12,13 +12,13 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
     """Class for Pixel Painter resource generator."""
 
     additional_valid_options = {
-        "method": ["binary", "run-length-encoding", "greyscale", "colour"],
+        "method": ["black-white", "run-length-encoding", "greyscale", "colour"],
         "image": ["boat", "fish", "hot-air-balloon", "parrots"],
     }
 
     methods = {
-        "binary": {
-            "name": _("Binary"),
+        "black-white": {
+            "name": _("Black and White"),
             "labels": {
                 255: "0",
                 0: "1"
@@ -43,14 +43,14 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         "colour": {
             "name": _("Colour"),
             "labels": {
-                (255, 255, 255, 255): "11111",  # White
-                (0, 0, 0, 255):       "00000",  # Black
-                (255, 0, 0, 255):     "11000",  # Red
-                (255, 143, 0, 255):   "11100",  # Orange
-                (255, 243, 0, 255):   "11110",  # Yellow
-                (76, 219, 5, 255):    "00110",  # Green
-                (0, 162, 255, 255):   "00001",  # Blue
-                (138, 0, 255, 255):   "10001"   # Purple
+                (255, 255, 255): "11111",  # White
+                (0, 0, 0):       "00000",  # Black
+                (255, 0, 0):     "11000",  # Red
+                (255, 143, 0):   "11100",  # Orange
+                (255, 243, 0):   "11110",  # Yellow
+                (76, 219, 5):    "00110",  # Green
+                (0, 162, 255):   "00001",  # Blue
+                (138, 0, 255):   "10001"   # Purple
             }
         }
     }
@@ -62,13 +62,14 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         "parrots": _("Parrots"),
     }
 
+    STATIC_PATH = "static/img/resources/pixel-painter/{}"
+
     def data(self):
         """Create data for a copy of the Pixel Painter resource.
 
         Returns:
             A dictionary of the one page for the resource.
         """
-        STATIC_PATH = "static/img/resources/pixel-painter/{}"
         FONT_PATH = "static/fonts/PatrickHand-Regular.ttf"
         FONT = ImageFont.truetype(FONT_PATH, 80)
         FONT_SMALL = ImageFont.truetype(FONT_PATH, 50)
@@ -78,10 +79,10 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         image_name = self.requested_options["image"]
 
         if method == "run-length-encoding":
-            image_filename = "{}-binary.png".format(image_name)
+            image_filename = "{}-black-white.png".format(image_name)
         else:
             image_filename = "{}-{}.png".format(image_name, method)
-        image = Image.open(STATIC_PATH.format(image_filename))
+        image = Image.open(self.STATIC_PATH.format(image_filename))
         (image_width, image_height) = image.size
 
         COLUMNS_PER_PAGE = 15
@@ -317,3 +318,18 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
             super().subtitle
         )
         return text
+
+    def thumbnail(self):
+        """Return thumbnail for resource request.
+
+        Returns:
+            Image for resource thumbnail.
+        """
+        method = self.requested_options["method"]
+        image_name = self.requested_options["image"]
+
+        if method == "run-length-encoding":
+            image_filename = "{}-black-white.png".format(image_name)
+        else:
+            image_filename = "{}-{}.png".format(image_name, method)
+        return Image.open(self.STATIC_PATH.format(image_filename))
