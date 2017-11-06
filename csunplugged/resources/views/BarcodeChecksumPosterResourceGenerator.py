@@ -20,7 +20,8 @@ class BarcodeChecksumPosterResourceGenerator(BaseResourceGenerator):
             A dictionary of the one page for the resource.
         """
         path = "static/img/resources/barcode-checksum-poster/{}-digits"
-        path = path.format(self.requested_options["barcode_length"])
+        barcode_length = self.requested_options["barcode_length"]
+        path = path.format(barcode_length)
         image_path = "{}.png".format(path)
         svg_path = "{}.svg".format(path)
         image = Image.open(image_path)
@@ -30,9 +31,8 @@ class BarcodeChecksumPosterResourceGenerator(BaseResourceGenerator):
 
         textbox_drawer.write_text_box(
             "title",
-            _("13 Digit Barcode"),
+            _("{} Digit Barcode".format(barcode_length)),
             horiz_just="center",
-            vert_just="center",
         )
 
         headings = {

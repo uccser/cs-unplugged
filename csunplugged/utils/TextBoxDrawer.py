@@ -95,7 +95,7 @@ class TextBoxDrawer(object):
         """
         text_layer = self.svg.find('{http://www.w3.org/2000/svg}g[@id="TEXT"]')
         text_elem = text_layer.find('{{http://www.w3.org/2000/svg}}text[@id="{}"]'.format(box_id))
-        if text_elem:
+        if text_elem is not None:
             box_elem = text_elem.getprevious()
         else:
             box_elem = text_layer.find('{{http://www.w3.org/2000/svg}}rect[@id="{}"]'.format(box_id))
