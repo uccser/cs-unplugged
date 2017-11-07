@@ -13,6 +13,7 @@ from utils.errors.TextBoxDrawerErrors import (
 
 BASE_PATH = "tests/utils/text_box_drawer"
 
+
 class TextBoxDrawerTest(SimpleTestCase):
 
     def test_initialisation_basic_svg(self):
@@ -27,7 +28,7 @@ class TextBoxDrawerTest(SimpleTestCase):
         svg = os.path.join(BASE_PATH, "missing.svg")
         image = Image.new("RGB", (1000, 1000))
         with self.assertRaises(MissingSVGFile):
-            tbd = TextBoxDrawer(image, None, svg)
+            TextBoxDrawer(image, None, svg)
 
     def test_get_box_core(self):
         svg = os.path.join(BASE_PATH, "basic.svg")
@@ -42,11 +43,11 @@ class TextBoxDrawerTest(SimpleTestCase):
         x, y = box.vertices[0]
         # SVG x=100, *2 to convert into PNG space
         self.assertAlmostEqual(2 * 100, x)
-         # SVG y=200, *4 to convert into PNG space
+        # SVG y=200, *4 to convert into PNG space
         self.assertAlmostEqual(4 * 200, y)
         # SVG width=50, *2 to convert into PNG space
         self.assertAlmostEqual(2 * 50.0, box.width)
-         # SVG height=75, *4 to convert into PNG space
+        # SVG height=75, *4 to convert into PNG space
         self.assertAlmostEqual(4 * 75.0, box.height)
         self.assertEqual("#006838", box.color)
         self.assertEqual("static/fonts/PatrickHand-Regular.ttf", box.font_path)
@@ -59,14 +60,14 @@ class TextBoxDrawerTest(SimpleTestCase):
         svg = os.path.join(BASE_PATH, "basic.svg")
         image = Image.new("RGB", (2000, 4000))
         tbd = TextBoxDrawer(image, None, svg)
-        box = tbd.get_box("onrectangle")
+        tbd.get_box("onrectangle")
 
     def test_get_box_invalid_id(self):
         svg = os.path.join(BASE_PATH, "basic.svg")
         image = Image.new("RGB", (2000, 4000))
         tbd = TextBoxDrawer(image, None, svg)
         with self.assertRaises(TextBoxNotFoundInSVG):
-            box = tbd.get_box("invalid")
+            tbd.get_box("invalid")
 
     def text_get_box_with_tspan(self):
         svg = os.path.join(BASE_PATH, "basic.svg")
@@ -123,12 +124,136 @@ class TextBoxDrawerTest(SimpleTestCase):
         font_path = tbd.fallback_font_if_required(None, "abc")
         self.assertEqual(DEFAULT_FONT, font_path)
 
-    # def test_fit_text_one_line(self):
-    #
-    # def test_fit_text_multiline(self):
-    #
-    # def test_fit_text_decrease_fontsize(self):
-    #
-    # def test_write_text_box_object_basic(self):
-    #
-    # def test_write_text_box_object_rotated(self):
+    def test_fit_text_one_line(self):
+        font_path = "static/fonts/PatrickHand-Regular.ttf"
+        font_size = 50
+        font = ImageFont.truetype(font_path, font_size)
+        text = "This is a string"
+        text_width, text_height = font.getsize(text)
+        new_font_size, lines, new_text_width, new_text_height = TextBoxDrawer.fit_text(
+            text,
+            text_width * 2,
+            text_height * 2,
+            font_path,
+            font_size,
+            4
+        )
+
+        self.assertEqual(1, len(lines))
+        self.assertEqual(text, lines[0])
+        self.assertEqual(font_size, new_font_size)
+        self.assertIsInstance(new_text_width, int)
+        self.assertIsInstance(new_text_height, int)
+
+    def test_fit_text_multiline(self):
+        font_path = "static/fonts/PatrickHand-Regular.ttf"
+        font_size = 50
+        font = ImageFont.truetype(font_path, font_size)
+        text = "This is a string"
+        text_width, text_height = font.getsize(text)
+        new_font_size, lines, new_text_width, new_text_height = TextBoxDrawer.fit_text(
+            text,
+            text_width * 0.8,  # Make box slightly narrower than text, to force 2 lines
+            text_height * 5,
+            font_path,
+            font_size,
+            4
+        )
+        self.assertEqual(2, len(lines))
+        self.assertEqual(text, ''.join(lines))
+        self.assertEqual(font_size, new_font_size)
+        self.assertIsInstance(new_text_width, int)
+        self.assertIsInstance(new_text_height, int)
+
+    def test_fit_text_decrease_fontsize(self):
+        font_path = "static/fonts/PatrickHand-Regular.ttf"
+        font_size = 50
+        font = ImageFont.truetype(font_path, font_size)
+        text = "This is a string"
+        text_width, text_height = font.getsize(text)
+        new_font_size, lines, new_text_width, new_text_height = TextBoxDrawer.fit_text(
+            text,
+            text_width * 0.8,  # Make box slightly narrower than text, to force 2 lines
+            text_height,  # Make box too short to force smaller text
+            font_path,
+            font_size,
+            4
+        )
+        self.assertEqual(text, ''.join(lines))
+        self.assertTrue(new_font_size < font_size)
+        self.assertTrue(new_font_size > 1)
+        self.assertIsInstance(new_text_width, int)
+        self.assertIsInstance(new_text_height, int)
+
+    def test_write_text_box_object_defaults_smoke_test(self):
+        image = Image.new("RGB", (1000, 1000))
+        draw = ImageDraw.Draw(image)
+        vertices = [
+            (0, 0), (200, 0), (200, 100), (0, 100)
+        ]
+        width = 200
+        height = 100
+        box = TextBox(vertices, width, height)
+        TextBoxDrawer.write_text_box_object(
+            image,
+            draw,
+            box,
+            "This is a string",
+        )
+
+    def test_write_text_box_object_justification_smoke_test(self):
+        image = Image.new("RGB", (1000, 1000))
+        draw = ImageDraw.Draw(image)
+        vertices = [
+            (0, 0), (200, 0), (200, 100), (0, 100)
+        ]
+        width = 200
+        height = 100
+        box = TextBox(vertices, width, height)
+        for horiz_just in ["left", "center", "right"]:
+            for vert_just in ["top", "center", "bottom"]:
+                TextBoxDrawer.write_text_box_object(
+                    image,
+                    draw,
+                    box,
+                    "This is a string",
+                    horiz_just=horiz_just,
+                    vert_just=vert_just,
+                )
+
+    def test_write_text_box_object_params_smoke_test(self):
+        image = Image.new("RGB", (1000, 1000))
+        draw = ImageDraw.Draw(image)
+        vertices = [
+            (0, 0), (200, 0), (200, 100), (0, 100)
+        ]
+        width = 200
+        height = 100
+        box = TextBox(vertices, width, height)
+        TextBoxDrawer.write_text_box_object(
+            image,
+            draw,
+            box,
+            "This is a string",
+            font_path="static/fonts/PatrickHand-Regular",
+            font_size=17,
+            line_spacing=10,
+            color="#013291"
+        )
+
+    def test_write_text_box_object_rotated_smoke_test(self):
+        image = Image.new("RGB", (1000, 1000))
+        draw = ImageDraw.Draw(image)
+        vertices = [
+            (0, 200), (0, 0), (100, 0), (100, 200)
+        ]
+        width = 200
+        height = 100
+        rotation = 90
+        box = TextBox(vertices, width, height, rotation)
+        TextBoxDrawer.write_text_box_object(
+            image,
+            draw,
+            box,
+            "This is a string",
+        )
