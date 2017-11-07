@@ -64,7 +64,10 @@ class BinaryCardsResourceGenerator(BaseResourceGenerator):
                     fill="#000"
                 )
                 image = background
-            pages.append({"type": "image", "data": image})
+            page = {"type": "image", "data": image}
+            if number == 8:
+                page["thumbnail"] = True
+            pages.append(page)
 
             if black_back:
                 black_card = Image.new("1", (IMAGE_SIZE_X, image_size_y))

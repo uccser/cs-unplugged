@@ -1,5 +1,6 @@
 from tests.BaseTestWithDB import BaseTestWithDB
 from django.urls import reverse
+from http import HTTPStatus
 
 
 class AboutURLTest(BaseTestWithDB):
@@ -13,4 +14,4 @@ class AboutURLTest(BaseTestWithDB):
         self.assertEqual(url, "/en/about/")
 
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)

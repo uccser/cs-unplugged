@@ -43,7 +43,7 @@ class BinaryWindowsResourceGenerator(BaseResourceGenerator):
             image = image.rotate(90, expand=True)
             pages.append({"type": "image", "data": image})
             pages.append(self.back_page(value_type))
-
+        pages[0]["thumbnail"] = True
         return pages
 
     def back_page(self, value_type):

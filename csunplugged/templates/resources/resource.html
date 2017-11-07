@@ -23,7 +23,7 @@
 {% block left_column_content %}
   <h2>Create Resource</h2>
 
-  <form action="{% url 'resources:generate' resource.slug %}" method="get"{% if not debug %} target="_blank"{% endif %}>
+  <form action="{% url 'resources:generate' resource.slug %}" method="get"{% if not debug %} target="_blank"{% endif %} id="resource-generation-form">
     {% block generation_form %}
     {% endblock generation_form %}
 
@@ -57,7 +57,9 @@
     {% else %}
       {% if resource.copies %}
       <div class="alert alert-info" role="alert">
-        {% trans "The download of this resource includes 30 unique copies." %}
+      {% blocktrans trimmed %}
+        The download of this resource includes {{ copies_amount }} unique copies.
+      {% endblocktrans %}
       </div>
       {% endif %}
 
@@ -68,9 +70,9 @@
 
 {% block right_column_content %}
   {% if thumbnail %}
-    <h2>{% trans "Example" %}</h2>
+    <h2>{% trans "Preview" %}</h2>
     {% load static %}
-    <img class="img-thumbnail" src="{% static thumbnail %}">
+    <img id="resource-thumbnail" class="img-thumbnail">
   {% endif %}
 {% endblock right_column_content %}
 
@@ -114,3 +116,11 @@
 
   {% endif %}
 {% endblock end_content %}
+
+{% block scripts %}
+  <script>
+    var resource_slug = "{{ resource.slug }}";
+    var resource_thumbnail_base = "{{ resource_thumbnail_base }}";
+  </script>
+  <script src="{% static 'js/resource-thumbnail-preview.js' %}"></script>
+{% endblock scripts %}

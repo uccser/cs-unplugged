@@ -15,8 +15,11 @@ install:
 jobs:
   include:
     - stage: test
-      script: ./csu ci test_with_coverage
+      script: ./csu ci test_general
+    - script: ./csu ci test_resources
+    - script: ./csu ci test_management
     - script: ./csu ci test_backwards
+      if: type = pull_request
     - script: ./csu ci style
     - script: ./csu ci docs
     - stage: develop deploy
@@ -111,3 +114,9 @@ notifications:
     rooms: deptfunstuff:abJKvzApk5SKtcEyAgtswXAv
     on_success: change
     on_failure: change
+stages:
+  - name: test
+  - name: develop deploy
+    if: branch = develop
+  - name: production deploy
+    if: branch = master

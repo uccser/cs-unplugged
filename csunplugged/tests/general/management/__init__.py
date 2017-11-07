@@ -1,1 +1,1 @@
-"""Module for tests of the template tags in the general application."""
+"""Module for tests of the management commands in the general application."""

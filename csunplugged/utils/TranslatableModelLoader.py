@@ -44,7 +44,7 @@ class TranslatableModelLoader(BaseLoader):
                 }
 
         Raises:
-            CouldNotFindConfigFileError: the requested file could not be found in
+            CouldNotFindYAMLFileError: the requested file could not be found in
                 the /en directory, raised only if required_slugs is not empty.
             MissingRequiredModelsError: the file in the /en directory did not
                 contain all slugs in required_slugs

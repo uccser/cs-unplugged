@@ -1,11 +1,14 @@
 """Custom loader for loading resources."""
 
+import os.path
 from django.db import transaction
 from django.http.request import QueryDict
 from utils.BaseLoader import BaseLoader
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
-from utils.get_resource_generator import get_resource_generator
+from utils.errors.InvalidConfigValueError import InvalidConfigValueError
+from resources.utils.get_resource_generator import get_resource_generator
 from resources.models import Resource
+from django.contrib.staticfiles import finders
 
 
 class ResourcesLoader(BaseLoader):
@@ -33,7 +36,20 @@ class ResourcesLoader(BaseLoader):
                 resource_thumbnail = resource_structure["thumbnail-static-path"]
                 resource_copies = resource_structure["copies"]
             except KeyError:
-                raise MissingRequiredFieldError()
+                raise MissingRequiredFieldError(
+                    self.structure_file_path,
+                    [
+                        "name",
+                        "webpage-template",
+                        "generator-module",
+                        "thumbnail-static-path",
+                        "copies"
+                    ],
+                    "Resource"
+                )
+
+            # Check resource template file exists
+            open(os.path.join("templates", resource_template), encoding="UTF-8")
 
             # Remove .py extension if given
             if generator_module.endswith(".py"):
@@ -41,6 +57,18 @@ class ResourcesLoader(BaseLoader):
 
             # Check module can be imported
             get_resource_generator(generator_module, QueryDict())
+
+            # Check thumbnail exists
+            if not finders.find(resource_thumbnail):
+                raise FileNotFoundError
+
+            # Check copies value is boolean
+            if not isinstance(resource_copies, bool):
+                raise InvalidConfigValueError(
+                    self.structure_file_path,
+                    "copies",
+                    "'true' or 'false'"
+                )
 
             resource = Resource(
                 slug=resource_slug,

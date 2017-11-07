@@ -65,7 +65,8 @@ class ParityCardsResourceGenerator(BaseResourceGenerator):
         pages = [
             {
                 "type": "image",
-                "data": front_page
+                "data": front_page,
+                "thumbnail": True
             },
             {
                 "type": "image",

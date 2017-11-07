@@ -49,7 +49,7 @@ class SearchingCardsResourceGenerator(BaseResourceGenerator):
             pages.append({"type": "html", "data": self.create_help_sheet(numbers, range_text)})
 
         number_of_pages = range(ceil(number_cards / 4))
-        for page in number_of_pages:
+        for (page_number, page) in enumerate(number_of_pages):
             if page == number_of_pages[-1]:
                 image_path = IMAGE_PATH.format(3, 1)
             else:
@@ -74,7 +74,10 @@ class SearchingCardsResourceGenerator(BaseResourceGenerator):
                     coord_x -= X_COORD_DECREMENT
 
             image = image.rotate(90, expand=True)
-            pages.append({"type": "image", "data": image})
+            page_data = {"type": "image", "data": image}
+            if page_number == 0:
+                page_data["thumbnail"] = True
+            pages.append(page_data)
         return pages
 
     def create_help_sheet(self, numbers, range_text):
@@ -97,21 +100,25 @@ class SearchingCardsResourceGenerator(BaseResourceGenerator):
                     "to look for when you are demonstrating how the binary search ",
                     "works. This allows you to demonstrate the maximum number of ",
                     "searches it would take. When students are playing the treasure ",
-                    "hunt game, they can choose any number. Avoid those that are in ",
-                    "red as they are key binary search positions (avoiding them is a ",
+                    "hunt game, they can choose any number. Avoid those numbers that are ",
+                    "underlined as they are key binary search positions (avoiding them is a ",
                     "good thing to do for demonstrations, but in practice students, ",
                     "or computers, won’t intentionally avoid these)."
                 )
             with tag("h2"):
                 text("Sorted numbers")
-            with tag("ul", klass="list-unstyled"):
+            with tag("p"):
+                # doc.attr(style="columns:2;")
                 numbers.sort()
                 red_number_jump = (len(numbers) + 1) // 4
+                text = ""
                 for (index, number) in enumerate(numbers):
                     if (index + 1) % red_number_jump == 0:
-                        line("li", number, klass="text-danger")
+                        text += "<u>{}</u> - ".format(number)
                     else:
-                        line("li", number)
+                        text += "{} - ".format(number)
+                text = text[:-3]
+                doc.asis(text)
         return doc.getvalue()
 
     @property

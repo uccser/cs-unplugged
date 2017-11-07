@@ -1,0 +1,6 @@
+grid:
+  name: Grid
+  webpage-template: resources/grid.html
+  generator-module: GridResourceGenerator.py
+  thumbnail-static-path: img/resources/grid/thumbnail.png
+  copies: false

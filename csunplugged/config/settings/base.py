@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
 import environ
+import os.path
 
 # cs-unplugged/csunplugged/config/settings/base.py - 3 = csunplugged/
 ROOT_DIR = environ.Path(__file__) - 3
@@ -166,14 +167,15 @@ TEMPLATES = [
 # STATIC FILE CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-root
-STATIC_ROOT = str(ROOT_DIR.path("staticfiles"))
+STATIC_ROOT = os.path.join(str(ROOT_DIR.path("staticfiles")), "")
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
+BUILD_ROOT = os.path.join(str(ROOT_DIR.path("build")), "")
 STATIC_URL = "/staticfiles/"
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = [
-    str(ROOT_DIR.path("build")),
+    BUILD_ROOT,
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
@@ -215,5 +217,8 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
-
+# OTHER SETTINGS
+# ------------------------------------------------------------------------------
+DJANGO_PRODUCTION = env.bool("DJANGO_PRODUCTION")
+RESOURCE_COPY_AMOUNT = 20
 MODELTRANSLATION_CUSTOM_FIELDS = ('JSONField',)
