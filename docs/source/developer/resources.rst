@@ -38,7 +38,7 @@ Each resource requires the following:
     ``csunplugged/templates/``
     (for example: ``resources/sorting-network.html``).
   - ``generator-module``: Python module for generating resource, relative from
-    ``csunplugged/resources/views/`` (for example: ``SortingNetworkResourceGenerator``).
+    ``csunplugged/resources/generators/`` (for example: ``SortingNetworkResourceGenerator``).
   - ``thumbnail-static-path``: Thumbnail image for the resource, relative from
     ``csunplugged/static/`` (for example:
     ``img/resources/sorting-network/thumbnail.png``).
@@ -64,7 +64,7 @@ Python module
 ------------------------------------------------------------------------------
 
 The Python module defined in the YAML file must contain a class inheriting from
-``utils.BaseResourceGenerator``.
+``resources.utils.BaseResourceGenerator``.
 The Python class must have the same name as the module.
 
 The generator class must contain the following method definition:
@@ -142,7 +142,43 @@ For example, the subtitle method for the ``additional_valid_options`` above coul
       )
       return text
 
+If custom thumbnails are to be displayed for each resource combination, the ``save_thumbnail`` method can be overridden.
+
 Thumbnail image
 ------------------------------------------------------------------------------
 
 This image should represent the resource, and be at least 350px high.
+
+Specific Resource Details
+==============================================================================
+
+Pixel Painter
+------------------------------------------------------------------------------
+
+**Adding new images**
+
+Each pixel grid page contains 20 rows and 15 columns of pixels.
+Therefore when adding new images, the width and height should be multiples of
+these numbers for optimal page usage (for example 40 pixels high by 60 pixels wide).
+
+Each image is required to be available in the following variants:
+
+1.  **Black and white**: The image must only contain a grayscale channel, with pixels either being white (255) or black (0).
+2.  **Greyscale**: The image must only contain a grayscale channel, and the pixels must be one of the following values:
+
+    - 0
+    - 84
+    - 168
+    - 255
+
+3.  **Colour**: The image must only contain a red, green, and blue channels (no alpha channel).
+    Pixels must be one of the following RGB values:
+
+    - 255, 255, 255 - White
+    - 0, 0, 0 - Black
+    - 255, 0, 0 - Red
+    - 255, 143, 0 - Orange
+    - 255, 243, 0 - Yellow
+    - 76, 219, 5 - Green
+    - 0, 162, 255 - Blue
+    - 138, 0, 255 - Purple
