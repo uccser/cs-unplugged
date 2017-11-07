@@ -31,7 +31,7 @@ FONT_MAX_ORD = {
 class TextBox(object):
     """Class to store position/dimensions of a text box."""
 
-    def __init__(self, vertices, width, height, color, font_path, font_size, angle):
+    def __init__(self, vertices, width, height, color=None, font_path=None, font_size=None, angle=0):
         """Initialise TextBox.
 
         Args:
@@ -42,7 +42,7 @@ class TextBox(object):
             color: (RGB 3-tuple or HEX string) text color, if given in SVG
             font_path: (str) path to font, if given in SVG
             font_size: (int) font size, if given in SVG
-            angle: (float) rotation angle of textbox, anti-clockwise
+            angle: (float) rotation angle of textbox, anti-clockwise, in radians
         """
         self.vertices = vertices
         self.width = width
@@ -59,21 +59,35 @@ class TextBoxDrawer(object):
     Text_box layout is defined by elements in an exported SVG.
     """
 
-    def __init__(self, image, draw, svg_path):
+    def __init__(self, image, draw, svg_path=None):
         """Initialise TextBoxDrawer.
 
         Args:
             image: PIL Image object
             draw: PIL ImageDraw object
-            svg_path: (str) path to SVG file for text box layout
+            svg_path: (str) path to SVG file for text box layout. If None,
+                an instantiated TextBox objects will have to be provided for
+                each call to write_text_box
         """
         self.image = image
         self.draw = draw
-        self.svg = self.load_svg(svg_path)
-        self.width_ratio, self.height_ratio = self.get_dimension_ratios()
+        if svg_path:
+            self.svg = self.load_svg(svg_path)
+            self.width_ratio, self.height_ratio = self.get_dimension_ratios()
 
-    def load_svg(self, svg_path):
-        """Load SVG element tree."""
+    @staticmethod
+    def load_svg(svg_path):
+        """Load SVG element tree.
+
+        Args:
+            svg_path: (str) path to svg file
+
+        Returns:
+            (ElementTree) root node of SVG
+
+        Raises:
+            MissingSVGFile: SVG file could not be found at given path
+        """
         try:
             return ET.parse(svg_path).getroot()
         except OSError:
@@ -99,6 +113,9 @@ class TextBoxDrawer(object):
                 of a rectangle element in the SVG
         Returns:
             TextBox object
+
+        Raises:
+            TextBoxNotFoundInSVG: No textbox could be found with the given id
         """
         text_layer = self.svg.find('{http://www.w3.org/2000/svg}g[@id="TEXT"]')
 
@@ -106,12 +123,12 @@ class TextBoxDrawer(object):
             text_elem = text_layer.find('{{http://www.w3.org/2000/svg}}text[@id="{}"]'.format(box_id))
             box_elem = text_elem.getprevious()
             assert box_elem is not None
-        except:
+        except Exception:
             try:
                 box_elem = text_layer.find('{{http://www.w3.org/2000/svg}}rect[@id="{}"]'.format(box_id))
                 text_elem = box_elem.getnext()
                 assert text_elem is not None
-            except:
+            except Exception:
                 raise TextBoxNotFoundInSVG(box_id)
 
         tspan_element = text_elem.find('{http://www.w3.org/2000/svg}tspan')
@@ -169,18 +186,23 @@ class TextBoxDrawer(object):
             angle=angle,
         )
 
-    def write_text_box(self, box_id, string, **kwargs):
+    def write_text_box(self, box, string, **kwargs):
         """Write text onto image in the space defined by the given textbox.
 
         Args:
-            box_id: (str) identifier of the textbox, matching the 'id' attribute
-                of a rectangle element in the SVG
+            box: (str or TextBox) either the id of a text element in the SVG,
+                or an instantiated TextBox object defining the area to fill
+                with text. If an svg path was not given to __init__, this must
+                be a TextBox object.
             string: (str) text to write
         """
-        box = self.get_box(box_id)
-        self.write_text_box_object(box, string, **kwargs)
+        if isinstance(box, str):
+            # We've been given a box id- retrieve from SVG
+            box = self.get_box(box)
+        self.write_text_box_object(self.image, self.draw, box, string, **kwargs)
 
-    def get_text_width(self, font, text):
+    @staticmethod
+    def get_text_width(font, text):
         """Get width of given text in given font.
 
         Args:
@@ -189,7 +211,8 @@ class TextBoxDrawer(object):
         """
         return font.getsize(text)[0]
 
-    def get_font_height(self, font):
+    @staticmethod
+    def get_font_height(font):
         """Get height of given font.
 
         Args:
@@ -198,43 +221,80 @@ class TextBoxDrawer(object):
         ascent, descent = font.getmetrics()
         return ascent + descent
 
-    def get_font(self, font_path, font_size):
+    @staticmethod
+    def get_font(font_path, font_size):
         """Get ImageFont instance for given font path/size."""
         return ImageFont.truetype(font_path, font_size)
 
-    def get_default_font(self):
+    @staticmethod
+    def get_default_font():
         """Get default font for the current language."""
         language = get_language()
         if language in DEFAULT_FONT_OVERRIDES:
             return DEFAULT_FONT_OVERRIDES[language]
         return DEFAULT_FONT
 
-    def fallback_font_if_required(self, font_path, text):
+    @classmethod
+    def fallback_font_if_required(cls, font_path, text):
+        """Check if the given text can be rendered in the requested font.
+
+        Returns:
+            (str) <font_path> if all chars can be rendered, otherwise a default.
+        """
         if font_path:
             font_name = os.path.splitext(os.path.basename(font_path))[0]
             max_ord_allowed = FONT_MAX_ORD[font_name]
             max_ord = ord(max(text, key=ord))
             if max_ord > max_ord_allowed:
                 # Text contains codepoints without a glyph in requested font
-                font_path = self.get_default_font()
+                font_path = cls.get_default_font()
         else:
-            font_path = self.get_default_font()
+            font_path = cls.get_default_font()
         return font_path
 
-    def get_font_y_offset(self, font):
+    @staticmethod
+    def get_font_y_offset(font):
+        """Get vertical offset of a given font.
+
+        When rendering a line of text in a given font, there is a vertical
+        offset between the given height, and the top of the character.
+        See https://stackoverflow.com/questions/43060479/ for details.
+
+        Args:
+            font: (ImageFont)
+        """
         (_, _), (_, offset_y) = font.font.getsize("A")
         return offset_y
 
-    def fit_text(self, text, box_width, box_height, font_path, font_size, line_spacing):
+    @classmethod
+    def fit_text(cls, text, box_width, box_height, font_path, font_size, line_spacing):
+        """Fit given text into given dimensons by modifying line breaks and font size.
+
+        Args:
+            text: (str) text to fit
+            box_width: (int) width of available area
+            box_height: (int) height of available area
+            font_path: (str) path to font file
+            font_size: (int) size of font, in pixels
+            line_spacing: (int) number of pixels spacing between lines
+
+        Returns:
+            4-tuple: (
+                modified font size (int),
+                lines of text (list of strings),
+                width of fitted text (int),
+                height of fitted text (int)
+            )
+        """
         font_size_is_ok = False
         while not font_size_is_ok:
-            font = self.get_font(font_path, font_size)
+            font = cls.get_font(font_path, font_size)
             lines = []
             line = ""
             breakable_units = line_break_units(text)
             for unit in breakable_units:
                 potential_line = line + unit
-                size = self.get_text_width(font, potential_line)
+                size = cls.get_text_width(font, potential_line)
                 if size >= box_width:
                     lines.append(line)
                     line = unit
@@ -243,13 +303,17 @@ class TextBoxDrawer(object):
 
             if line:
                 lines.append(line)
-            text_width, text_height = self.draw.multiline_textsize(
+
+            # Dummy image draw because multiline_textsize isn't a @classmethod
+            dummy_img = Image.new("1", (1, 1))
+            dummy_draw = ImageDraw.Draw(dummy_img)
+            text_width, text_height = dummy_draw.multiline_textsize(
                 '\n'.join(lines),
                 font=font,
                 spacing=line_spacing)
 
             # Reduce text_height by offset at top
-            text_height -= self.get_font_y_offset(font)
+            text_height -= cls.get_font_y_offset(font)
 
             if text_height <= box_height:
                 font_size_is_ok = True
@@ -259,14 +323,16 @@ class TextBoxDrawer(object):
 
             return font_size, lines, text_width, text_height
 
-
-    def write_text_box_object(self, text_box, text, font_path=None,
+    @classmethod
+    def write_text_box_object(cls, image, draw, text_box, text, font_path=None,
                               font_size=None, horiz_just='left', vert_just='top',
                               line_spacing=4, color=None):
         """Write text into text_box by modifying line breaks and font size as required.
 
         Args:
-            text_box: TextBox object
+            image: (Image.Image) Base resource image
+            draw: (ImageDraw.Draw) ImageDraw object for the resource image
+            text_box: (TextBox) object containing textbox properties
             text: (str) text to write
             font_path: (str) path to font .ttf file. This parameter is checked
                 first, followed by an attempt to match the font from the SVG,
@@ -284,9 +350,9 @@ class TextBoxDrawer(object):
             text = arabic_reshaper.reshape(text)
 
         font_path = font_path or text_box.font_path
-        font_path = self.fallback_font_if_required(font_path, text)
+        font_path = cls.fallback_font_if_required(font_path, text)
         font_size = font_size or text_box.font_size or DEFAULT_FONT_SIZE
-        font_size, lines, text_width, text_height = self.fit_text(
+        font_size, lines, text_width, text_height = cls.fit_text(
             text,
             text_box.width,
             text_box.height,
@@ -295,7 +361,7 @@ class TextBoxDrawer(object):
             line_spacing
         )
 
-        font = self.get_font(font_path, font_size)
+        font = cls.get_font(font_path, font_size)
         text = '\n'.join(lines)
         color = color or text_box.color or DEFAULT_COLOR
 
@@ -323,7 +389,7 @@ class TextBoxDrawer(object):
             x = (text_box.width - text_width)
 
         # Remove offset from top line, to mimic AI textbox behavior
-        y -= self.get_font_y_offset(font)
+        y -= cls.get_font_y_offset(font)
 
         if text_box.angle != 0:
             text_img = Image.new("RGBA", (int(text_box.width), int(text_box.height)))
@@ -340,12 +406,12 @@ class TextBoxDrawer(object):
             vertices_xvals, vertices_yvals = zip(*text_box.vertices)
             px = int(min(vertices_xvals))
             py = int(min(vertices_yvals))
-            self.image.paste(text_img, (px, py), text_img)
+            image.paste(text_img, (px, py), text_img)
         else:
             topleft_x, topleft_y = text_box.vertices[0]
             x += topleft_x
             y += topleft_y
-            self.draw.multiline_text(
+            draw.multiline_text(
                 (x, y),
                 text,
                 fill=color,
@@ -353,9 +419,3 @@ class TextBoxDrawer(object):
                 align=horiz_just,
                 spacing=line_spacing
             )
-
-    def draw_crosshair(self, point):
-        """Draw a black crosshair at the specified point."""
-        x, y = point
-        self.draw.line([(x - 30, y), (x + 30, y)], fill=(150, 150, 150), width=5)
-        self.draw.line([(x, y - 30), (x, y + 30)], fill=(150, 150, 150), width=5)
