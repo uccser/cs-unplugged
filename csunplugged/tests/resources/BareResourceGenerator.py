@@ -23,5 +23,4 @@ class BareResourceGenerator(BaseResourceGenerator):
         Returns:
             A dictionary of the one page for the resource.
         """
-
         return {"type": "html", "data": "Page 1"}

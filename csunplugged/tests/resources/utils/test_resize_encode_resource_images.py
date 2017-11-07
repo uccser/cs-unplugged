@@ -1,5 +1,6 @@
 from django.test import tag
 from tests.BaseTestWithDB import BaseTestWithDB
+from resources.utils.resize_encode_resource_images import resize_encode_resource_images
 from io import BytesIO
 from PIL import Image
 import base64

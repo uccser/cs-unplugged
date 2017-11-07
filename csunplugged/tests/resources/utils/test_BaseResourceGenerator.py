@@ -3,14 +3,11 @@ from django.http import QueryDict
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
 from tests.resources.BareResourceGenerator import BareResourceGenerator
-from resources.utils.get_resource_generator import get_resource_generator
 from unittest.mock import MagicMock
 from utils.errors.ThumbnailPageNotFound import ThumbnailPageNotFound
 from utils.errors.MoreThanOneThumbnailPageFound import MoreThanOneThumbnailPageFound
 from io import BytesIO
-from PIL import Image
 from PyPDF2 import PdfFileReader
-import base64
 
 
 @tag("resource")
