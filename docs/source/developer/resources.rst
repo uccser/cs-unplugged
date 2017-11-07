@@ -152,8 +152,8 @@ Dynamic Text Overlay
 In many cases, resources comprise of a base PNG image with text dynamically overlayed from within the python view, based on a users request.
 Cases where this is necessary include:
 
-- Randomly generated numbers or data
-- Text, which must be translated into the user's language
+- Randomly generated numbers or data.
+- Text, which must be translated into the user's language.
 
 While the actual text is added dynamically, the layout/colour/font/size of that text on the resource should be determined as part of the design process.
 To achieve this, we have developed a pipeline to allow designers to define these text fields in Adobe Illustrator, and export them in an SVG format.
@@ -165,16 +165,16 @@ The following workflow has been designed for Adobe Illustrator. Currently, other
 
 Setting up the document
 *******************************************************************************
-  1. Create a new layer called ``TEXT`` (Anything on this layer will be ignored during the export to PNG)
+  1. Create a new layer called ``TEXT`` (Anything on this layer will be ignored during the export to PNG).
 
 Creating a new dynamic text field
 *******************************************************************************
-  1.  Create a new transparent rectangular text box in the ``TEXT`` layer
-  2.  Add sample text
-  3.  Set font, font size and colour
-  4.  Position and rotate text box as required
-  5.  Expand text box to define the area in which the text will be allowed
-  6.  Give the text box element a unique identifier
+  1.  Create a new transparent rectangular text box in the ``TEXT`` layer.
+  2.  Add sample text.
+  3.  Set font, font size and colour.
+  4.  Position and rotate text box as required.
+  5.  Expand text box to define the area in which the text will be allowed.
+  6.  Give the text box element a unique identifier.
 
       - This is achieved by expanding the ``TEXT`` layer in the layers panel, and double-clicking on the text box element.
       - The identifier must contain lowercase letters only.
@@ -191,25 +191,25 @@ Export procedure
 *******************************************************************************
 Firstly, check that every element in the ``TEXT`` layer has been given a unique, lowercase identifier as outlined above.
 
-Next, resize the artboard to fit to artwork bounds
+Next, resize the artboard to fit to artwork bounds:
 
-  1. Ensure all layers (including the ``TEXT`` layer) are visible
-  2. Click ``Object -> Artboards -> Fit To Artwork Bounds``
+  1. Ensure all layers (including the ``TEXT`` layer) are visible.
+  2. Click ``Object -> Artboards -> Fit To Artwork Bounds``.
 
-Now export the base PNG image
+Now export the base PNG image:
 
-  1. Ensure the ``TEXT`` layer is hidden
-  2. Export PNG, ensuring that `Use Artboards` is selected
+  1. Ensure the ``TEXT`` layer is hidden.
+  2. Export PNG, ensuring that `Use Artboards` is selected.
 
-Finally, export the SVG file containing the text field information
+Finally, export the SVG file containing the text field information:
 
-  1. Ensure all layers (including the ``TEXT`` layer) are visible
-  2. Click ``File -> Save As``
-  3. Use the same file name (without extension) as was used for the PNG
-  4. Choose ``SVG`` as the format, and select ``Use Artboards``
-  5. Click ``Save``
-  6. In the dropdown for ``CSS Properties``, choose ``Style Attributes``
-  7. Click ``OK``
+  1. Ensure all layers (including the ``TEXT`` layer) are visible.
+  2. Click ``File -> Save As``.
+  3. Use the same file name (without extension) as was used for the PNG.
+  4. Choose ``SVG`` as the format, and select ``Use Artboards``.
+  5. Click ``Save``.
+  6. In the dropdown for ``CSS Properties``, choose ``Style Attributes``.
+  7. Click ``OK``.
 
 
 For Developers
@@ -218,13 +218,13 @@ For Developers
 Rendering text into defined text fields (i.e. defined in an SVG file)
 *******************************************************************************
 
-To dynamically render text onto the resource, use the TextBoxDrawer class
+To dynamically render text onto the resource, use the TextBoxDrawer class.
 
 .. code-block:: python
 
   from utils.TextBoxDrawer import TextBoxDrawer
 
-Load the base PNG image, set it up for editing, and then instantiate a TextBoxDrawer object
+Load the base PNG image, set it up for editing, and then instantiate a TextBoxDrawer object.
 
 .. code-block:: python
 
@@ -252,9 +252,9 @@ Rendering text without defined text fields (i.e. without an SVG file)
 
 It is also possible to use this class for dynamically rendering text *without* an SVG file to define the parameters of the text fields.
 
-  1. Initialise TextBoxDrawer without an SVG path
-  2. Create an instance of the TextBox class to define the parameters of the text field (this is normally created automatically with the information extracted from the SVG)
-  3. Call ``write_text_box`` with the instantiated TextBox object instead of a textbox identifier
+  1. Initialise TextBoxDrawer without an SVG path.
+  2. Create an instance of the TextBox class to define the parameters of the text field (this is normally created automatically with the information extracted from the SVG).
+  3. Call ``write_text_box`` with the instantiated TextBox object instead of a textbox identifier.
 
 A simple example:
 
