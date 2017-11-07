@@ -212,16 +212,6 @@ class TextBoxDrawer(object):
         return font.getsize(text)[0]
 
     @staticmethod
-    def get_font_height(font):
-        """Get height of given font.
-
-        Args:
-            font: PIL.ImageFont object
-        """
-        ascent, descent = font.getmetrics()
-        return ascent + descent
-
-    @staticmethod
     def get_font(font_path, font_size):
         """Get ImageFont instance for given font path/size."""
         return ImageFont.truetype(font_path, font_size)
