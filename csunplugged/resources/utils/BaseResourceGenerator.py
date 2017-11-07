@@ -37,7 +37,7 @@ class BaseResourceGenerator(ABC):
     @abstractmethod
     def data(self):
         """Abstract method to be implemented by subclasses."""
-        pass
+        raise NotImplementedError
 
     @property
     def subtitle(self):
