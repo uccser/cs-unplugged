@@ -102,4 +102,4 @@ class BaseResourceGeneratorTest(BaseTestWithDB):
             pass
 
         with self.assertRaises(TypeError):
-            generator = InvalidGenerator()
+            InvalidGenerator()
