@@ -1,6 +1,6 @@
 """Class for Pixel Painter resource generator."""
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, Imageself.FONT
 from math import ceil
 from yattag import Doc
 import string
@@ -64,6 +64,17 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
     }
 
     STATIC_PATH = "static/img/resources/pixel-painter/{}"
+    FONT_PATH = "static/self.FONTs/PatrickHand-Regular.ttf"
+    FONT = Imageself.FONT.truetype(self.FONT_PATH, 80)
+    FONT_SMALL = Imageself.FONT.truetype(self.FONT_PATH, 50)
+    TEXT_COLOUR = "#888"
+    COLUMNS_PER_PAGE = 15
+    ROWS_PER_PAGE = 20
+    BOX_SIZE = 200
+    IMAGE_SIZE_X = self.BOX_SIZE * self.COLUMNS_PER_PAGE
+    IMAGE_SIZE_Y = self.BOX_SIZE * self.ROWS_PER_PAGE
+    LINE_COLOUR = "#666"
+    LINE_WIDTH = 1
 
     def data(self):
         """Create data for a copy of the Pixel Painter resource.
@@ -71,11 +82,6 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         Returns:
             A dictionary of the one page for the resource.
         """
-        FONT_PATH = "static/fonts/PatrickHand-Regular.ttf"
-        FONT = ImageFont.truetype(FONT_PATH, 80)
-        FONT_SMALL = ImageFont.truetype(FONT_PATH, 50)
-        TEXT_COLOUR = "#888"
-
         method = self.requested_options["method"]
         image_name = self.requested_options["image"]
 
@@ -86,20 +92,12 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         image = Image.open(self.STATIC_PATH.format(image_filename))
         (image_width, image_height) = image.size
 
-        COLUMNS_PER_PAGE = 15
-        ROWS_PER_PAGE = 20
-        BOX_SIZE = 200
-        IMAGE_SIZE_X = BOX_SIZE * COLUMNS_PER_PAGE
-        IMAGE_SIZE_Y = BOX_SIZE * ROWS_PER_PAGE
-        LINE_COLOUR = "#666"
-        LINE_WIDTH = 1
-
         pages = []
         if method == "run-length-encoding":
             pages_encoding = dict()
 
-        number_column_pages = ceil(image_width / COLUMNS_PER_PAGE)
-        number_row_pages = ceil(image_height / ROWS_PER_PAGE)
+        number_column_pages = ceil(image_width / self.COLUMNS_PER_PAGE)
+        number_row_pages = ceil(image_height / self.ROWS_PER_PAGE)
         page_grid_coords = self.create_page_grid_coords(number_column_pages, number_row_pages, image_name)
 
         grid_page = self.grid_reference_page(page_grid_coords, image_name)
@@ -107,48 +105,22 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
 
         # For each page row
         for number_row_page in range(0, number_row_pages):
-            page_start_row = (number_row_page) * ROWS_PER_PAGE
+            page_start_row = (number_row_page) * self.ROWS_PER_PAGE
             # For each page column
             for number_column_page in range(0, number_column_pages):
-                page_start_column = (number_column_page) * COLUMNS_PER_PAGE
+                page_start_column = (number_column_page) * self.COLUMNS_PER_PAGE
                 # Create page
-                page = Image.new("RGB", (IMAGE_SIZE_X, IMAGE_SIZE_Y), "#fff")
+                page = Image.new("RGB", (self.IMAGE_SIZE_X, self.IMAGE_SIZE_Y), "#fff")
                 draw = ImageDraw.Draw(page)
-                page_columns = min(COLUMNS_PER_PAGE, image_width - page_start_column)
-                page_rows = min(ROWS_PER_PAGE, image_height - page_start_row)
+                page_columns = min(self.COLUMNS_PER_PAGE, image_width - page_start_column)
+                page_rows = min(self.ROWS_PER_PAGE, image_height - page_start_row)
                 page_reference = page_grid_coords[number_row_page][number_column_page]
                 page_reference_added = False
 
                 if method == "run-length-encoding":
                     page_encoding = []
 
-                # Draw grid
-                grid_width = page_columns * BOX_SIZE
-                grid_height = page_rows * BOX_SIZE
-
-                for x_coord in range(0, page_columns * BOX_SIZE, BOX_SIZE):
-                    draw.line(
-                        [(x_coord, 0), (x_coord, grid_height)],
-                        fill=LINE_COLOUR,
-                        width=LINE_WIDTH
-                    )
-                draw.line(
-                    [(page_columns * BOX_SIZE - 1, 0), (page_columns * BOX_SIZE - 1, grid_height)],
-                    fill=LINE_COLOUR,
-                    width=LINE_WIDTH
-                )
-
-                for y_coord in range(0, grid_height, BOX_SIZE):
-                    draw.line(
-                        [(0, y_coord), (grid_width, y_coord)],
-                        fill=LINE_COLOUR,
-                        width=LINE_WIDTH
-                    )
-                draw.line(
-                    [(0, grid_height - 1), (grid_width, grid_height - 1)],
-                    fill=LINE_COLOUR,
-                    width=LINE_WIDTH
-                )
+                self.draw_grid(draw, self.BOX_SIZE, self.LINE_COLOUR, self.LINE_WIDTH)
 
                 for row in range(0, page_rows):
                     if method == "run-length-encoding":
@@ -169,14 +141,14 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
 
                         # Draw text
                         if method != "run-length-encoding":
-                            text_width, text_height = draw.textsize(text, font=FONT)
-                            text_coord_x = (column * BOX_SIZE) + (BOX_SIZE / 2) - (text_width / 2)
-                            text_coord_y = (row * BOX_SIZE) + (BOX_SIZE / 2) - (text_height / 2)
+                            text_width, text_height = draw.textsize(text, self.FONT=self.FONT)
+                            text_coord_x = (column * self.BOX_SIZE) + (self.BOX_SIZE / 2) - (text_width / 2)
+                            text_coord_y = (row * self.BOX_SIZE) + (self.BOX_SIZE / 2) - (text_height / 2)
                             draw.text(
                                 (text_coord_x, text_coord_y),
                                 text,
-                                font=FONT,
-                                fill=TEXT_COLOUR
+                                font=self.FONT,
+                                fill=self.TEXT_COLOUR
                             )
                         else:
                             if text != encoding_colour:
@@ -197,9 +169,9 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
 
                         if not page_reference_added and pixel_value > 0:
                             draw.text(
-                                ((column * BOX_SIZE) + LINE_WIDTH * 4, (row * BOX_SIZE) + -4),
+                                ((column * self.BOX_SIZE) + self.LINE_WIDTH * 4, (row * self.BOX_SIZE) + -4),
                                 page_reference,
-                                font=FONT_SMALL,
+                                font=self.FONT_SMALL,
                                 fill="#000"
                             )
                             page_reference_added = True
@@ -209,13 +181,39 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
                     pages_encoding[page_reference] = page_encoding
                 pages.append({"type": "image", "data": page})
 
-        # Set first page of grid as thumbnail
-        pages[1]["thumbnail"] = True
-
         if method == "run-length-encoding":
             encoding_html = self.create_run_length_encoding_html(page_grid_coords, pages_encoding)
             pages.insert(1, {"type": "html", "data": encoding_html})
         return pages
+
+    def draw_grid(self, draw, box_size, line_colour, line_width):
+        """Draw grid onto image."""
+        grid_width = page_columns * box_size
+        grid_height = page_rows * box_size
+
+        for x_coord in range(0, page_columns * box_size, box_size):
+            draw.line(
+                [(x_coord, 0), (x_coord, grid_height)],
+                fill=line_colour,
+                width=line_width
+            )
+        draw.line(
+            [(page_columns * box_size - 1, 0), (page_columns * box_size - 1, grid_height)],
+            fill=line_colour,
+            width=line_width
+        )
+
+        for y_coord in range(0, grid_height, box_size):
+            draw.line(
+                [(0, y_coord), (grid_width, y_coord)],
+                fill=line_colour,
+                width=line_width
+            )
+        draw.line(
+            [(0, grid_height - 1), (grid_width, grid_height - 1)],
+            fill=line_colour,
+            width=line_width
+        )
 
     def create_page_grid_coords(self, columns, rows, image):
         """Create a grid of page coordinates in a 2D array.
