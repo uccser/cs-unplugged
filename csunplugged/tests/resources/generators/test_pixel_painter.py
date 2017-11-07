@@ -4,6 +4,7 @@ from tests.BaseTestWithDB import BaseTestWithDB
 from resources.generators.PixelPainterResourceGenerator import PixelPainterResourceGenerator
 from filecmp import cmp
 from copy import deepcopy
+import os
 
 
 @tag("resource")
@@ -12,6 +13,8 @@ class PixelPainterResourceViewTest(BaseTestWithDB):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.language = "en"
+        self.test_output_path = "tests/output/"
+        os.makedirs(os.path.dirname(self.test_output_path), exist_ok=True)
 
     def test_pixel_painter_resource_generator_invalid_pixel_black_white(self):
         generator = PixelPainterResourceGenerator()
@@ -47,7 +50,7 @@ class PixelPainterResourceViewTest(BaseTestWithDB):
         )
 
     def test_pixel_painter_resource_generator_thumbnail(self):
-        test_output_path = "tests/output/pixel-painter-thumbnail-test-1.png"
+        test_output_path = os.path.join(self.test_output_path, "pixel-painter-thumbnail-test-1.png")
         generator = PixelPainterResourceGenerator()
         generator.STATIC_PATH = "tests/resources/generators/assets/pixel-painter/{}"
         generator.requested_options = QueryDict("image=boat&method=black-white&paper_size=a4")
@@ -60,7 +63,7 @@ class PixelPainterResourceViewTest(BaseTestWithDB):
         self.assertTrue(compare_result)
 
     def test_pixel_painter_resource_generator_thumbnail_run_length(self):
-        test_output_path = "tests/output/pixel-painter-thumbnail-test-2.png"
+        test_output_path = os.path.join(self.test_output_path, "pixel-painter-thumbnail-test-2.png")
         generator = PixelPainterResourceGenerator()
         generator.STATIC_PATH = "tests/resources/generators/assets/pixel-painter/{}"
         generator.requested_options = QueryDict("image=boat&method=run-length-encoding&paper_size=a4")
