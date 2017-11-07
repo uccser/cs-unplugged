@@ -9,6 +9,10 @@ from bidi.algorithm import get_display
 from uniseg.linebreak import line_break_units
 import arabic_reshaper
 import math
+from utils.errors.TextBoxDrawerErrors import (
+    MissingSVGFile,
+    TextBoxNotFoundInSVG
+)
 
 DEFAULT_FONT = "static/fonts/NotoSans-Regular.ttf"
 DEFAULT_FONT_OVERRIDES = {
@@ -70,7 +74,10 @@ class TextBoxDrawer(object):
 
     def load_svg(self, svg_path):
         """Load SVG element tree."""
-        return ET.parse(svg_path).getroot()
+        try:
+            return ET.parse(svg_path).getroot()
+        except OSError:
+            raise MissingSVGFile(svg_path)
 
     def get_dimension_ratios(self):
         """Get ratios between SVG and image coordinate spaces.
@@ -94,12 +101,18 @@ class TextBoxDrawer(object):
             TextBox object
         """
         text_layer = self.svg.find('{http://www.w3.org/2000/svg}g[@id="TEXT"]')
-        text_elem = text_layer.find('{{http://www.w3.org/2000/svg}}text[@id="{}"]'.format(box_id))
-        if text_elem is not None:
+
+        try:
+            text_elem = text_layer.find('{{http://www.w3.org/2000/svg}}text[@id="{}"]'.format(box_id))
             box_elem = text_elem.getprevious()
-        else:
-            box_elem = text_layer.find('{{http://www.w3.org/2000/svg}}rect[@id="{}"]'.format(box_id))
-            text_elem = box_elem.getnext()
+            assert box_elem is not None
+        except:
+            try:
+                box_elem = text_layer.find('{{http://www.w3.org/2000/svg}}rect[@id="{}"]'.format(box_id))
+                text_elem = box_elem.getnext()
+                assert text_elem is not None
+            except:
+                raise TextBoxNotFoundInSVG(box_id)
 
         tspan_element = text_elem.find('{http://www.w3.org/2000/svg}tspan')
         if tspan_element is not None:
@@ -196,6 +209,57 @@ class TextBoxDrawer(object):
             return DEFAULT_FONT_OVERRIDES[language]
         return DEFAULT_FONT
 
+    def fallback_font_if_required(self, font_path, text):
+        if font_path:
+            font_name = os.path.splitext(os.path.basename(font_path))[0]
+            max_ord_allowed = FONT_MAX_ORD[font_name]
+            max_ord = ord(max(text, key=ord))
+            if max_ord > max_ord_allowed:
+                # Text contains codepoints without a glyph in requested font
+                font_path = self.get_default_font()
+        else:
+            font_path = self.get_default_font()
+        return font_path
+
+    def get_font_y_offset(self, font):
+        (_, _), (_, offset_y) = font.font.getsize("A")
+        return offset_y
+
+    def fit_text(self, text, box_width, box_height, font_path, font_size, line_spacing):
+        font_size_is_ok = False
+        while not font_size_is_ok:
+            font = self.get_font(font_path, font_size)
+            lines = []
+            line = ""
+            breakable_units = line_break_units(text)
+            for unit in breakable_units:
+                potential_line = line + unit
+                size = self.get_text_width(font, potential_line)
+                if size >= box_width:
+                    lines.append(line)
+                    line = unit
+                else:
+                    line += unit
+
+            if line:
+                lines.append(line)
+            text_width, text_height = self.draw.multiline_textsize(
+                '\n'.join(lines),
+                font=font,
+                spacing=line_spacing)
+
+            # Reduce text_height by offset at top
+            text_height -= self.get_font_y_offset(font)
+
+            if text_height <= box_height:
+                font_size_is_ok = True
+            else:
+                # Decrease font size exponentially, and try again
+                font_size = max(int(0.9 * font_size), 1)
+
+            return font_size, lines, text_width, text_height
+
+
     def write_text_box_object(self, text_box, text, font_path=None,
                               font_size=None, horiz_just='left', vert_just='top',
                               line_spacing=4, color=None):
@@ -220,52 +284,21 @@ class TextBoxDrawer(object):
             text = arabic_reshaper.reshape(text)
 
         font_path = font_path or text_box.font_path
-        if font_path:
-            font_name = os.path.splitext(os.path.basename(font_path))[0]
-            max_ord_allowed = FONT_MAX_ORD[font_name]
-            max_ord = ord(max(text, key=ord))
-            if max_ord > max_ord_allowed:
-                # Text contains codepoints without a glyph in requested font
-                font_path = self.get_default_font()
-        else:
-            font_path = self.get_default_font()
-
+        font_path = self.fallback_font_if_required(font_path, text)
         font_size = font_size or text_box.font_size or DEFAULT_FONT_SIZE
+        font_size, lines, text_width, text_height = self.fit_text(
+            text,
+            text_box.width,
+            text_box.height,
+            font_path,
+            font_size,
+            line_spacing
+        )
+
+        font = self.get_font(font_path, font_size)
+        text = '\n'.join(lines)
         color = color or text_box.color or DEFAULT_COLOR
 
-        font_size_is_ok = False
-        while not font_size_is_ok:
-            font = self.get_font(font_path, font_size)
-            lines = []
-            line = ""
-            breakable_units = line_break_units(text)
-            for unit in breakable_units:
-                potential_line = line + unit
-                size = self.get_text_width(font, potential_line)
-                if size >= text_box.width:
-                    lines.append(line)
-                    line = unit
-                else:
-                    line += unit
-
-            if line:
-                lines.append(line)
-            text_width, text_height = self.draw.multiline_textsize(
-                '\n'.join(lines),
-                font=font,
-                spacing=line_spacing)
-
-            # Reduce text_height by offset at top
-            (_, _), (_, offset_y) = font.font.getsize(text)
-            text_height -= offset_y
-
-            if text_height <= text_box.height:
-                font_size_is_ok = True
-            else:
-                # Decrease font size exponentially, and try again
-                font_size = max(int(0.9 * font_size), 1)
-
-        text = '\n'.join(lines)
         if get_language_bidi():
             # Get RTL text
             text = get_display(text)
@@ -290,7 +323,7 @@ class TextBoxDrawer(object):
             x = (text_box.width - text_width)
 
         # Remove offset from top line, to mimic AI textbox behavior
-        y -= offset_y
+        y -= self.get_font_y_offset(font)
 
         if text_box.angle != 0:
             text_img = Image.new("RGBA", (int(text_box.width), int(text_box.height)))
