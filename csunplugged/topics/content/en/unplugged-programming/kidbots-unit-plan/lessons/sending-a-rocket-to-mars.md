@@ -83,9 +83,7 @@ Tester then reads off the board: "move forward, move forward."
 
 **Rocket to Mars program:**
 
-<div class="large-text">🡑 🡑</div>
-
-{image file-path="img/topics/kidbots-rocket-2.png" alt="This image builds upon the previous grid image. The cell with the rocket ship contains an up arrow, and the cell above the rocket contains an up arrow."}
+{image file-path="img/topics/kidbots-rocket-2.gif" alt="This animation builds upon the previous grid image. The cell with the rocket ship contains an up arrow, and the cell above the rocket contains an up arrow."}
 
 {panel type="teaching" title="Teaching observations"}
 
@@ -106,9 +104,7 @@ Point to where the next piece of code needs to be added and add turn right, turn
 
 **Rocket to Mars program:**
 
-<div class="large-text">🡑 🡑 ↱ ⬎</div>
-
-{image file-path="img/topics/kidbots-rocket-3.png" alt="This image builds upon the previous grid image. The cell two above the rocket ship contains two turn right arrows."}
+{image file-path="img/topics/kidbots-rocket-3.gif" alt="This animation builds upon the previous grid image. The cell two above the rocket ship contains two turn right arrows."}
 
 I think it’s ready to test now.
 Tester, please test my program (the programmer hands the program on the whiteboard to the tester and the bot should return to the starting square ready to rerun the program).
@@ -155,7 +151,7 @@ Let’s test it.
 Once the bug has been identified then ask the Tester to test again.
 Ask the Bot to pick up the rocket and go back to the start position, then the Tester reads them the instructions.
 
-{image file-path="img/topics/kidbots-rocket-4.png" alt="This image builds upon the previous grid image. The cell two above the rocket ship now contains one turn right arrow and one forward arrow. The cell to the right of this cell contains one forward arrow. The cell to the right of this cell (one left of Mars) contains one forward arrow."}
+{image file-path="img/topics/kidbots-rocket-4.gif" alt="This animation builds upon the previous grid image. The cell two above the rocket ship now contains one turn right arrow and one forward arrow. The cell to the right of this cell contains one forward arrow. The cell to the right of this cell (one left of Mars) contains one forward arrow."}
 
 Did we successfully program the rocket to land on Mars?
 How do we know?
