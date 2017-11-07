@@ -3,6 +3,7 @@ from django.test import tag
 from tests.BaseTestWithDB import BaseTestWithDB
 from resources.generators.PixelPainterResourceGenerator import PixelPainterResourceGenerator
 from filecmp import cmp
+from copy import deepcopy
 
 
 @tag("resource")
@@ -15,6 +16,7 @@ class PixelPainterResourceViewTest(BaseTestWithDB):
     def test_pixel_painter_resource_generator_invalid_pixel_black_white(self):
         generator = PixelPainterResourceGenerator()
         generator.STATIC_PATH = "tests/resources/generators/assets/pixel-painter/{}"
+        generator.additional_valid_options = deepcopy(generator.additional_valid_options)
         generator.additional_valid_options["image"].append("invalid")
         generator.requested_options = QueryDict("image=invalid&method=black-white&paper_size=a4")
         self.assertRaises(
@@ -25,6 +27,7 @@ class PixelPainterResourceViewTest(BaseTestWithDB):
     def test_pixel_painter_resource_generator_invalid_pixel_greyscale(self):
         generator = PixelPainterResourceGenerator()
         generator.STATIC_PATH = "tests/resources/generators/assets/pixel-painter/{}"
+        generator.additional_valid_options = deepcopy(generator.additional_valid_options)
         generator.additional_valid_options["image"].append("invalid")
         generator.requested_options = QueryDict("image=invalid&method=greyscale&paper_size=a4")
         self.assertRaises(
@@ -35,6 +38,7 @@ class PixelPainterResourceViewTest(BaseTestWithDB):
     def test_pixel_painter_resource_generator_invalid_pixel_colour(self):
         generator = PixelPainterResourceGenerator()
         generator.STATIC_PATH = "tests/resources/generators/assets/pixel-painter/{}"
+        generator.additional_valid_options = deepcopy(generator.additional_valid_options)
         generator.additional_valid_options["image"].append("invalid")
         generator.requested_options = QueryDict("image=invalid&method=colour&paper_size=a4")
         self.assertRaises(
