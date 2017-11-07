@@ -160,7 +160,7 @@ class TextBoxDrawerTest(SimpleTestCase):
             4
         )
         self.assertEqual(2, len(lines))
-        self.assertEqual(text, ''.join(lines))
+        self.assertEqual(text, "".join(lines))
         self.assertEqual(font_size, new_font_size)
         self.assertIsInstance(new_text_width, int)
         self.assertIsInstance(new_text_height, int)
@@ -179,7 +179,7 @@ class TextBoxDrawerTest(SimpleTestCase):
             font_size,
             4
         )
-        self.assertEqual(text, ''.join(lines))
+        self.assertEqual(text, "".join(lines))
         self.assertTrue(new_font_size < font_size)
         self.assertTrue(new_font_size > 1)
         self.assertIsInstance(new_text_width, int)

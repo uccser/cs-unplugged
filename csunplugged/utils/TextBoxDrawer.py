@@ -99,7 +99,7 @@ class TextBoxDrawer(object):
         Returns:
             (width_ratio, height_ratio) tuple.
         """
-        vbx, vby, vbw, vbh = map(float, self.svg.attrib['viewBox'].split())
+        vbx, vby, vbw, vbh = map(float, self.svg.attrib["viewBox"].split())
         width, height = self.image.size
         width_ratio = width / vbw
         height_ratio = height / vbh
@@ -109,7 +109,7 @@ class TextBoxDrawer(object):
         """Get TextBox object representing the box with the given ID.
 
         Args:
-            box_id: (str) identifier of the textbox, matching the 'id' attribute
+            box_id: (str) identifier of the textbox, matching the "id" attribute
                 of a rectangle element in the SVG
         Returns:
             TextBox object
@@ -117,46 +117,46 @@ class TextBoxDrawer(object):
         Raises:
             TextBoxNotFoundInSVG: No textbox could be found with the given id
         """
-        text_layer = self.svg.find('{http://www.w3.org/2000/svg}g[@id="TEXT"]')
+        text_layer = self.svg.find("{http://www.w3.org/2000/svg}g[@id=\"TEXT\"]")
 
         try:
-            text_elem = text_layer.find('{{http://www.w3.org/2000/svg}}text[@id="{}"]'.format(box_id))
+            text_elem = text_layer.find("{{http://www.w3.org/2000/svg}}text[@id=\"{}\"]".format(box_id))
             box_elem = text_elem.getprevious()
             assert box_elem is not None
         except Exception:
             try:
-                box_elem = text_layer.find('{{http://www.w3.org/2000/svg}}rect[@id="{}"]'.format(box_id))
+                box_elem = text_layer.find("{{http://www.w3.org/2000/svg}}rect[@id=\"{}\"]".format(box_id))
                 text_elem = box_elem.getnext()
                 assert text_elem is not None
             except Exception:
                 raise TextBoxNotFoundInSVG(box_id)
 
-        tspan_element = text_elem.find('{http://www.w3.org/2000/svg}tspan')
+        tspan_element = text_elem.find("{http://www.w3.org/2000/svg}tspan")
         if tspan_element is not None:
             # Use style of the first line of text
-            style_attrib = tspan_element.attrib['style']
+            style_attrib = tspan_element.attrib["style"]
         else:
             # Use style of the only line of text
-            style_attrib = text_elem.attrib['style']
+            style_attrib = text_elem.attrib["style"]
         rules, _ = tinycss.make_parser().parse_style_attr(style_attrib)
         style = {}
         for rule in rules:
             style[rule.name] = rule.value[0].value
-        color = style.get('fill')
-        font = style.get('font-family')
-        font_size = style.get('font-size')
+        color = style.get("fill")
+        font = style.get("font-family")
+        font_size = style.get("font-size")
 
-        x = float(box_elem.attrib.get('x', 0))
-        y = float(box_elem.attrib.get('y', 0))
-        width = float(box_elem.attrib['width'])
-        height = float(box_elem.attrib['height'])
+        x = float(box_elem.attrib.get("x", 0))
+        y = float(box_elem.attrib.get("y", 0))
+        width = float(box_elem.attrib["width"])
+        height = float(box_elem.attrib["height"])
 
         # SVG coord space
         vertices = [
             (x, y), (x + width, y), (x + width, y + height), (x, y + height)
         ]
 
-        rect_transform = box_elem.attrib.get('transform')
+        rect_transform = box_elem.attrib.get("transform")
         if rect_transform and rect_transform.startswith("matrix"):
             a, b, c, d, e, f = list(map(float, rect_transform[7:-1].split()))
             for i, (x, y) in enumerate(vertices):
@@ -298,7 +298,7 @@ class TextBoxDrawer(object):
             dummy_img = Image.new("1", (1, 1))
             dummy_draw = ImageDraw.Draw(dummy_img)
             text_width, text_height = dummy_draw.multiline_textsize(
-                '\n'.join(lines),
+                "\n".join(lines),
                 font=font,
                 spacing=line_spacing)
 
@@ -315,7 +315,7 @@ class TextBoxDrawer(object):
 
     @classmethod
     def write_text_box_object(cls, image, draw, text_box, text, font_path=None,
-                              font_size=None, horiz_just='left', vert_just='top',
+                              font_size=None, horiz_just="left", vert_just="top",
                               line_spacing=4, color=None):
         """Write text into text_box by modifying line breaks and font size as required.
 
@@ -336,7 +336,7 @@ class TextBoxDrawer(object):
             color: (RGB 3-tuple or HEX string) text color. This parameter is
                 checked first, falling back to the original color from the SVG
         """
-        if get_language() == 'ar':
+        if get_language() == "ar":
             text = arabic_reshaper.reshape(text)
 
         font_path = font_path or text_box.font_path
@@ -352,7 +352,7 @@ class TextBoxDrawer(object):
         )
 
         font = cls.get_font(font_path, font_size)
-        text = '\n'.join(lines)
+        text = "\n".join(lines)
         color = color or text_box.color or DEFAULT_COLOR
 
         if get_language_bidi():
@@ -364,18 +364,18 @@ class TextBoxDrawer(object):
             elif horiz_just == "left":
                 horiz_just = "right"
 
-        if vert_just == 'top':
+        if vert_just == "top":
             y = 0
-        elif vert_just == 'center':
+        elif vert_just == "center":
             y = (text_box.height - text_height)/2
-        elif vert_just == 'bottom':
+        elif vert_just == "bottom":
             y = (text_box.height - text_height)
 
-        if horiz_just == 'left':
+        if horiz_just == "left":
             x = 0
-        elif horiz_just == 'center':
+        elif horiz_just == "center":
             x = (text_box.width - text_width)/2
-        elif horiz_just == 'right':
+        elif horiz_just == "right":
             x = (text_box.width - text_width)
 
         # Remove offset from top line, to mimic AI textbox behavior
