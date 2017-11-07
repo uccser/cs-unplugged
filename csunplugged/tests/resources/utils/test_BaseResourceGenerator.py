@@ -6,6 +6,7 @@ from tests.resources.BareResourceGenerator import BareResourceGenerator
 from unittest.mock import MagicMock
 from utils.errors.ThumbnailPageNotFound import ThumbnailPageNotFound
 from utils.errors.MoreThanOneThumbnailPageFound import MoreThanOneThumbnailPageFound
+from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 from io import BytesIO
 from PyPDF2 import PdfFileReader
 
@@ -94,3 +95,11 @@ class BaseResourceGeneratorTest(BaseTestWithDB):
             MoreThanOneThumbnailPageFound,
             generator.generate_thumbnail,
         )
+
+    def test_data_not_implemented(self):
+        # Create generator without data method defined.
+        class InvalidGenerator(BaseResourceGenerator):
+            pass
+
+        with self.assertRaises(TypeError):
+            generator = InvalidGenerator()

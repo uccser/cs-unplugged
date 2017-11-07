@@ -36,13 +36,8 @@ class BaseResourceGenerator(ABC):
 
     @abstractmethod
     def data(self):
-        """Abstract method to be implemented by subclasses.
-
-        Raise:
-            NotImplementedError: When data() method of the ResourceGenerator
-            class is called.
-        """
-        raise NotImplementedError("Subclass does not implement the data method.")
+        """Abstract method to be implemented by subclasses."""
+        pass
 
     @property
     def subtitle(self):

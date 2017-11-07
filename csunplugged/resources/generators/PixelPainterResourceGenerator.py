@@ -153,12 +153,11 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
                         else:
                             if text != encoding_colour:
                                 row_encoding.append(encoding_count)
-                                if text != encoding_colour:
-                                    if encoding_colour == "0":
-                                        encoding_colour = "1"
-                                    else:
-                                        encoding_colour = "0"
-                                    encoding_count = 0
+                                if encoding_colour == "0":
+                                    encoding_colour = "1"
+                                else:
+                                    encoding_colour = "0"
+                                encoding_count = 0
                             encoding_count += 1
                             if page_columns - 1 == column:
                                 row_encoding.append(encoding_count)

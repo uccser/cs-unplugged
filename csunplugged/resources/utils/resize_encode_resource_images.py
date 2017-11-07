@@ -22,7 +22,7 @@ def resize_encode_resource_images(paper_size, data):
     """
     if paper_size == "a4":
         max_pixel_height = 267 * MM_TO_PIXEL_RATIO
-    elif paper_size == "letter":
+    else:  # Letter paper size
         max_pixel_height = 249 * MM_TO_PIXEL_RATIO
 
     # Resize images to reduce file size
