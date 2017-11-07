@@ -49,4 +49,4 @@ class Command(BaseCommand):
                 filename = "{}.png".format(filename[:-1])
                 thumbnail_file_path = os.path.join(base_path, filename)
 
-                generator.generate_thumbnail(resource.name, thumbnail_file_path)
+                generator.save_thumbnail(resource.name, thumbnail_file_path)
