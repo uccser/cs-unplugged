@@ -1,4 +1,5 @@
 from http import HTTPStatus
+from django.http import QueryDict
 from django.test import tag
 from django.urls import reverse
 from tests.BaseTestWithDB import BaseTestWithDB
@@ -6,6 +7,7 @@ from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerato
 from resources.utils.get_resource_generator import get_resource_generator
 from utils.create_query_string import query_string
 from resources.utils.resource_valid_test_configurations import resource_valid_test_configurations
+from resources.generators.PixelPainterResourceGenerator import PixelPainterResourceGenerator
 
 
 @tag("resource")
@@ -74,6 +76,7 @@ class PixelPainterResourceViewTest(BaseTestWithDB):
                 'attachment; filename="Resource Pixel Painter ({subtitle}).pdf"'.format(subtitle=subtitle)
             )
             print("ok")
+
     def test_pixel_painter_resource_generation_missing_method_parameter(self):
         resource = self.test_data.create_resource(
             "pixel-painter",
@@ -158,4 +161,31 @@ class PixelPainterResourceViewTest(BaseTestWithDB):
         self.assertEqual(
             response.get("Content-Disposition"),
             'attachment; filename="{}"'.format(filename)
+        )
+
+    def test_pixel_painter_resource_generation_invalid_pixel_black_white(self):
+        generator = PixelPainterResourceGenerator()
+        generator.STATIC_PATH = "tests/resources/generators/assets/pixel-painter/{}"
+        generator.requested_options = QueryDict("image=invalid&method=black-white&paper_size=a4")
+        self.assertRaises(
+            ValueError,
+            generator.data,
+        )
+
+    def test_pixel_painter_resource_generation_invalid_pixel_greyscale(self):
+        generator = PixelPainterResourceGenerator()
+        generator.STATIC_PATH = "tests/resources/generators/assets/pixel-painter/{}"
+        generator.requested_options = QueryDict("image=invalid&method=greyscale&paper_size=a4")
+        self.assertRaises(
+            ValueError,
+            generator.data,
+        )
+
+    def test_pixel_painter_resource_generation_invalid_pixel_colour(self):
+        generator = PixelPainterResourceGenerator()
+        generator.STATIC_PATH = "tests/resources/generators/assets/pixel-painter/{}"
+        generator.requested_options = QueryDict("image=invalid&method=colour&paper_size=a4")
+        self.assertRaises(
+            ValueError,
+            generator.data,
         )

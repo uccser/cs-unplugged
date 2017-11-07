@@ -126,23 +126,28 @@ class BaseResourceGenerator(ABC):
         base_css = CSS(string=css_string)
         return (html.write_pdf(stylesheets=[base_css]), filename)
 
-    def generate_thumbnail(self, resource_name, path):
+    def save_thumbnail(self, resource_name, path):
         """Create thumbnail for resource request.
 
         Args:
             resource_name: Name of the resource (str).
             path: The path to write the thumbnail to (str).
+        """
+        thumbnail_data = self.generate_thumbnail()
+        self.write_thumbnail(thumbnail_data, resource_name, path)
+
+    def generate_thumbnail(self):
+        """Create thumbnail for resource request.
 
         Raises:
             ThumbnailPageNotFound: If resource with more than one page does
                                    not provide a thumbnail page.
             MoreThanOneThumbnailPageFound: If resource provides more than
                                            one page as the thumbnail.
-        """
-        # Only import weasyprint when required as production environment
-        # does not have it installed.
-        from weasyprint import HTML, CSS
 
+        Returns:
+            Dictionary of thumbnail data.
+        """
         thumbnail_data = self.data()
         if not isinstance(thumbnail_data, list):
             thumbnail_data = [thumbnail_data]
@@ -159,10 +164,23 @@ class BaseResourceGenerator(ABC):
             self.requested_options["paper_size"],
             thumbnail_data
         )
+        return thumbnail_data[0]
+
+    def write_thumbnail(self, thumbnail_data, resource_name, path):
+        """Save generatered thumbnail.
+
+        Args:
+            thumbnail_data: Data of generated thumbnail.
+            resource_name: Name of the resource (str).
+            path: The path to write the thumbnail to (str).
+        """
+        # Only import weasyprint when required as production environment
+        # does not have it installed.
+        from weasyprint import HTML, CSS
         context = dict()
         context["resource"] = resource_name
         context["paper_size"] = self.requested_options["paper_size"]
-        context["all_data"] = [thumbnail_data]
+        context["all_data"] = [[self.generate_thumbnail]]
         pdf_html = render_to_string("resources/base-resource-pdf.html", context)
         html = HTML(string=pdf_html, base_url=settings.BUILD_ROOT)
         css_file = finders.find("css/print-resource-pdf.css")
