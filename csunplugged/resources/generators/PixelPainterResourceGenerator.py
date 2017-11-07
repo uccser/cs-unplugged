@@ -332,7 +332,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         )
         return text
 
-    def generate_thumbnail(self, resource_name, path):
+    def save_thumbnail(self, resource_name, path):
         """Return custom thumbnails for resource request.
 
         Args:
