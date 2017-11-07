@@ -250,7 +250,7 @@ class TextBoxDrawerTest(SimpleTestCase):
         width = 200
         height = 100
         rotation = 90
-        box = TextBox(vertices, width, height, rotation)
+        box = TextBox(vertices, width, height, angle=rotation)
         TextBoxDrawer.write_text_box_object(
             image,
             draw,
