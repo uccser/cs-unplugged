@@ -52,3 +52,11 @@ class ResizeEncodeResourceTest(BaseTestWithDB):
         copy_data = BytesIO(base64.b64decode(copy[0]["data"]))
         copy_image = Image.open(copy_data)
         self.assertEqual(expected_size, copy_image.size)
+
+    def test_resize_encode_resource_images_invalid_size(self):
+        self.assertRaises(
+            ValueError,
+            resize_encode_resource_images,
+            "invalid size",
+            dict()
+        )
