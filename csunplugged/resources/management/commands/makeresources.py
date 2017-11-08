@@ -28,9 +28,9 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         """Automatically called when the makeresources command is given."""
-        BASE_PATH = settings.RESOURCE_GENERATION_LOCATION
-        if not os.path.exists(BASE_PATH):
-            os.makedirs(BASE_PATH)
+        base_path = settings.RESOURCE_GENERATION_LOCATION
+        if not os.path.exists(base_path):
+            os.makedirs(base_path)
 
         if options["resource_name"]:
             resources = [Resource.objects.get(name=options["resource_name"])]
@@ -56,6 +56,6 @@ class Command(BaseCommand):
                 (pdf_file, filename) = generator.pdf(resource.name)
 
                 filename = "{}.pdf".format(filename)
-                pdf_file_output = open(os.path.join(BASE_PATH, filename), "wb")
+                pdf_file_output = open(os.path.join(base_path, filename), "wb")
                 pdf_file_output.write(pdf_file)
                 pdf_file_output.close()
