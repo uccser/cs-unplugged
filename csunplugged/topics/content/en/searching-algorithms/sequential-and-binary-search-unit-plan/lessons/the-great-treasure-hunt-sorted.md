@@ -45,8 +45,11 @@ Number Knowledge: Read and say numbers between 100 and 9999.
 
 ## Applying what we have just learnt
 
+{image file-path="img/topics/marbles.png" alt="The number of marbles are halved each time."}
+
 The method you have been using is called binary search - if the values are in order then we can eliminate half of the numbers with each guess until we find the one we want.
 This is an incredibly efficient algorithm that we can use for searching a sorted list.
+
 It also shows how sometimes algorithms aren’t strongly affected by how big the problem gets - we can search billions of items (e.g. every web site we can find) using this method; if we had 1,000,000,000,000 treasure chests, you'd only need to open 40 of them to find a particular one; and doubling the number of chests only adds one more question to finding a value.
 This is a pleasant contrast to some other problems where we don't have such efficient algorithms.
 
