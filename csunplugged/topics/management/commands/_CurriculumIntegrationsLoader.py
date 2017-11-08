@@ -5,7 +5,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from utils.BaseLoader import BaseLoader
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
-from topics.models import CurriculumArea, Lesson
+from topics.models import CurriculumArea, UnitPlan, Lesson
 
 
 class CurriculumIntegrationsLoader(BaseLoader):
@@ -93,10 +93,21 @@ class CurriculumIntegrationsLoader(BaseLoader):
                                 ["unit-plan"],
                                 "Prerequisite Lesson"
                             )
+                        try:
+                            UnitPlan.objects.get(
+                                slug=unit_plan_slug
+                            )
+                        except ObjectDoesNotExist:
+                            raise KeyNotFoundError(
+                                self.structure_file_path,
+                                unit_plan_slug,
+                                "Unit Plans"
+                            )
                         for lesson_slug in lessons:
                             try:
                                 lesson = Lesson.objects.get(
-                                    slug=lesson_slug
+                                    slug=lesson_slug,
+                                    unit_plan__slug=unit_plan_slug,
                                 )
                                 integration.prerequisite_lessons.add(lesson)
                             except ObjectDoesNotExist:
@@ -104,6 +115,7 @@ class CurriculumIntegrationsLoader(BaseLoader):
                                     self.structure_file_path,
                                     lesson_slug,
                                     "Lessons"
+
                                 )
 
             self.log("Added curriculum integration: {}".format(integration.name), 1)
