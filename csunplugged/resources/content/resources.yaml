@@ -100,3 +100,9 @@ barcode-checksum-poster:
   generator-module: BarcodeChecksumPosterResourceGenerator
   thumbnail-static-path: img/resources/barcode-checksum-poster/thumbnail.gif
   copies: false
+pixel-painter:
+  name: Pixel Painter
+  webpage-template: resources/pixel-painter.html
+  generator-module: PixelPainterResourceGenerator
+  thumbnail-static-path: img/resources/pixel-painter/thumbnail.png
+  copies: false

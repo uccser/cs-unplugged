@@ -21,6 +21,13 @@ img {
   &.inline-image-small {
     max-height: 1.4rem;
   }
+  &.img-200 {
+    width: 200%;
+  }
+  &.img-pixel {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
 }
 
 h1 {
