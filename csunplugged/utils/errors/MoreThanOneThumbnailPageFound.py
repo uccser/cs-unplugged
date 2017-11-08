@@ -10,5 +10,14 @@ class MoreThanOneThumbnailPageFound(Exception):
         Args:
             generator: Resource generator (Child of BaseResourceGenerator).
         """
-        message = "{} returned more than one page as the designated thumbnail.".format(generator.__class__.__name__)
-        super().__init__(message)
+        super().__init__()
+        self.generator_name = generator.__class__.__name__
+
+    def __str__(self):
+        """Override default error string.
+
+        Returns:
+            Error message for style error.
+        """
+        message = "{} returned more than one page as the designated thumbnail."
+        return message.format(self.generator_name)

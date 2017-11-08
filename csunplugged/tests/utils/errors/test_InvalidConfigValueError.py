@@ -8,11 +8,10 @@ class InvalidConfigValueErrorTest(SimpleTestCase):
     """Test class for InvalidConfigValueError error.
 
     Note: Tests to check if these were raised appropriately
-          are located where this exception is used (for
-          example: topic loaders).
+          are located where this exception is used.
     """
 
-    def test_invalid_config_value_error_attributes(self):
+    def test_attributes(self):
         exception = InvalidConfigValueError(
             "yaml file path",
             "key",
@@ -22,7 +21,7 @@ class InvalidConfigValueErrorTest(SimpleTestCase):
         self.assertEqual(exception.key, "key")
         self.assertEqual(exception.expected, "expected")
 
-    def test_invalid_config_value_error_string(self):
+    def test_string(self):
         exception = InvalidConfigValueError(
             "yaml file path",
             "key",
