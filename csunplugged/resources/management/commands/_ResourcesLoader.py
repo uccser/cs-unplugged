@@ -66,8 +66,8 @@ class ResourcesLoader(BaseLoader):
 
             # Check thumbnail exists
             if not finders.find(resource_thumbnail):
-                error_text = "Thumbnail image for resource {} could not be found."
-                raise FileNotFoundError(error_text.format(resource_name))
+                error_text = "Thumbnail image {} for resource {} could not be found."
+                raise FileNotFoundError(error_text.format(resource_thumbnail, resource_name))
 
             # Check copies value is boolean
             if not isinstance(resource_copies, bool):

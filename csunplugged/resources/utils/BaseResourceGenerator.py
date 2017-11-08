@@ -37,7 +37,7 @@ class BaseResourceGenerator(ABC):
     @abstractmethod
     def data(self):
         """Abstract method to be implemented by subclasses."""
-        raise NotImplementedError
+        raise NotImplementedError  # pragma: no cover
 
     @property
     def subtitle(self):
@@ -175,7 +175,7 @@ class BaseResourceGenerator(ABC):
         context = dict()
         context["resource"] = resource_name
         context["paper_size"] = self.requested_options["paper_size"]
-        context["all_data"] = [[self.generate_thumbnail]]
+        context["all_data"] = [[thumbnail_data]]
         pdf_html = render_to_string("resources/base-resource-pdf.html", context)
         html = HTML(string=pdf_html, base_url=settings.BUILD_ROOT)
         css_file = finders.find("css/print-resource-pdf.css")

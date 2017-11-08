@@ -115,75 +115,177 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
                 page_columns = min(self.COLUMNS_PER_PAGE, image_width - page_start_column)
                 page_rows = min(self.ROWS_PER_PAGE, image_height - page_start_row)
                 page_reference = page_grid_coords[number_row_page][number_column_page]
-                page_reference_added = False
-
-                if method == "run-length-encoding":
-                    page_encoding = []
-
                 self.draw_grid(draw, page_columns, page_rows, self.BOX_SIZE, self.LINE_COLOUR, self.LINE_WIDTH)
 
-                for row in range(0, page_rows):
-                    if method == "run-length-encoding":
-                        row_encoding = []
-                        encoding_colour = "0"
-                        encoding_count = 0
-
-                    for column in range(0, page_columns):
-                        pixel_value = image.getpixel((page_start_column + column, page_start_row + row))
-
-                        try:
-                            text = self.methods[method]["labels"][pixel_value]
-                        except KeyError:
-                            message = "Image: {}\n".format(image_name)
-                            message += "Method: {}\n".format(method)
-                            message += "Contains invalid pixel value: {}".format(pixel_value)
-                            raise ValueError(message)
-
-                        # Draw text
-                        if method != "run-length-encoding":
-                            text_width, text_height = draw.textsize(text, font=self.FONT)
-                            text_coord_x = (column * self.BOX_SIZE) + (self.BOX_SIZE / 2) - (text_width / 2)
-                            text_coord_y = (row * self.BOX_SIZE) + (self.BOX_SIZE / 2) - (text_height / 2)
-                            draw.text(
-                                (text_coord_x, text_coord_y),
-                                text,
-                                font=self.FONT,
-                                fill=self.TEXT_COLOUR
-                            )
-                        else:
-                            if text != encoding_colour:
-                                row_encoding.append(encoding_count)
-                                if encoding_colour == "0":
-                                    encoding_colour = "1"
-                                else:
-                                    encoding_colour = "0"
-                                encoding_count = 0
-                            encoding_count += 1
-                            if page_columns - 1 == column:
-                                row_encoding.append(encoding_count)
-
-                        # Add page grid reference
-                        if isinstance(pixel_value, tuple):
-                            pixel_value = pixel_value[-1]
-
-                        if not page_reference_added and pixel_value > 0:
-                            draw.text(
-                                ((column * self.BOX_SIZE) + self.LINE_WIDTH * 4, (row * self.BOX_SIZE) + -4),
-                                page_reference,
-                                font=self.FONT_SMALL,
-                                fill="#000"
-                            )
-                            page_reference_added = True
-                    if method == "run-length-encoding":
-                        page_encoding.append(row_encoding)
                 if method == "run-length-encoding":
+                    page_encoding = self.get_run_length_encoding(
+                        image,
+                        page_start_column,
+                        page_columns,
+                        page_start_row,
+                        page_rows,
+                        image_name,
+                        method
+                    )
                     pages_encoding[page_reference] = page_encoding
+                else:
+                    self.add_pixel_labels(
+                        image,
+                        draw,
+                        page_start_column,
+                        page_columns,
+                        page_start_row,
+                        page_rows,
+                        image_name,
+                        method
+                    )
+
+                self.add_page_reference(
+                    image,
+                    draw,
+                    page_start_column,
+                    page_columns,
+                    page_start_row,
+                    page_rows,
+                    page_reference
+                )
+
                 pages.append({"type": "image", "data": page})
 
         if method == "run-length-encoding":
             encoding_html = self.create_run_length_encoding_html(page_grid_coords, pages_encoding)
             pages.insert(1, {"type": "html", "data": encoding_html})
         return pages
+
+    def add_pixel_labels(self, image, draw, page_start_column, page_columns,
+                         page_start_row, page_rows, image_name, method):
+        """Draw pixel labels onto grid.
+
+        Args:
+            image (Image): Image to get pixel from.
+            draw (ImageDraw): The draw object to add the text onto.
+            page_start_column (int): Number of column on image this page starts from.
+            page_columns (int): Number of column on this page.
+            page_start_row (int): Number of row on image this page starts from.
+            page_rows (int): Number of row on this page.
+            image_name (str): Name of the image.
+            method (str): Type of image used.
+        """
+        for row in range(0, page_rows):
+            for column in range(0, page_columns):
+                text = self.get_pixel_label(
+                    image,
+                    (page_start_column + column, page_start_row + row),
+                    image_name,
+                    method
+                )
+
+                # Draw text
+                text_width, text_height = draw.textsize(text, font=self.FONT)
+                text_coord_x = (column * self.BOX_SIZE) + (self.BOX_SIZE / 2) - (text_width / 2)
+                text_coord_y = (row * self.BOX_SIZE) + (self.BOX_SIZE / 2) - (text_height / 2)
+                draw.text(
+                    (text_coord_x, text_coord_y),
+                    text,
+                    font=self.FONT,
+                    fill=self.TEXT_COLOUR
+                )
+
+    def get_run_length_encoding(self, image, page_start_column, page_columns,
+                                page_start_row, page_rows, image_name, method):
+        """Return run length encoding values for page.
+
+        Args:
+            image (Image): Image to get pixel from.
+            page_start_column (int): Number of column on image this page starts from.
+            page_columns (int): Number of column on this page.
+            page_start_row (int): Number of row on image this page starts from.
+            page_rows (int): Number of row on this page.
+            image_name (str): Name of the image.
+            method (str): Type of image used.
+        """
+        page_encoding = []
+        for row in range(0, page_rows):
+            row_encoding = []
+            encoding_colour = "0"
+            encoding_count = 0
+
+            for column in range(0, page_columns):
+                text = self.get_pixel_label(
+                    image,
+                    (page_start_column + column, page_start_row + row),
+                    image_name,
+                    method
+                )
+                if text != encoding_colour:
+                    row_encoding.append(encoding_count)
+                    if encoding_colour == "0":
+                        encoding_colour = "1"
+                    else:
+                        encoding_colour = "0"
+                    encoding_count = 0
+                encoding_count += 1
+                if page_columns - 1 == column:
+                    row_encoding.append(encoding_count)
+            page_encoding.append(row_encoding)
+        return page_encoding
+
+    def add_page_reference(self, image, draw, page_start_column, page_columns,
+                           page_start_row, page_rows, page_reference):
+        """Draw page reference onto first pixel that is not black.
+
+        Args:
+            image (Image): Image to get pixel from.
+            draw (ImageDraw): The draw object to add the text onto.
+            page_start_column (int): Number of column on image this page starts from.
+            page_columns (int): Number of column on this page.
+            page_start_row (int): Number of row on image this page starts from.
+            page_rows (int): Number of row on this page.
+            page_reference (str): Label of page reference.
+        """
+        page_reference_added = False
+        row = 0
+        while not page_reference_added and row < page_rows:
+            column = 0
+            while not page_reference_added and row < page_columns:
+                pixel_value = image.getpixel((page_start_column + column, page_start_row + row))
+                if not page_reference_added:
+                    if isinstance(pixel_value, tuple):
+                        is_black = pixel_value == (0, 0, 0)
+                    else:
+                        is_black = pixel_value == 0
+                    if not is_black:
+                        draw.text(
+                            ((column * self.BOX_SIZE) + self.LINE_WIDTH * 4, (row * self.BOX_SIZE) + -4),
+                            page_reference,
+                            font=self.FONT_SMALL,
+                            fill="#000"
+                        )
+                        page_reference_added = True
+                column += 1
+            row += 1
+
+    def get_pixel_label(self, image, coords, image_name, method):
+        """Return label of specific pixel on given image.
+
+        Args:
+            image (Image): Image to get pixel from.
+            coords (tuple): A tuple of x and y coordinate numbers of the pixel.
+            image_name (str): Name of the image.
+            method (str): Type of image used.
+
+        Returns:
+            String of pixel label.
+        """
+        pixel_value = image.getpixel(coords)
+        try:
+            text = self.methods[method]["labels"][pixel_value]
+        except KeyError:
+            message = "Image: {}\n".format(image_name)
+            message += "Method: {}\n".format(method)
+            message += "Contains invalid pixel value: {}".format(pixel_value)
+            raise ValueError(message)
+        return text
 
     def draw_grid(self, draw, page_columns, page_rows, square_size, line_colour, line_width):
         """Draw grid onto image.
@@ -307,12 +409,11 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
             HTML string for the run length encoding page.
         """
         doc, tag, text, line = Doc().ttl()
-        line("style", ".avoid-page-break {page-break-inside:avoid;}")
         with tag("h1"):
             text("Run Length Encodings")
         for index, row_of_page_references in enumerate(page_grid_coords):
             for page_reference in row_of_page_references:
-                with tag("div", klass="avoid-page-break"):
+                with tag("div", klass="page-break"):
                     with tag("h2"):
                         text("Encoding for page {}".format(page_reference))
                     page_encoding = pages_encoding[page_reference]

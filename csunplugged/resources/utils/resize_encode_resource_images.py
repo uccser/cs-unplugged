@@ -22,8 +22,10 @@ def resize_encode_resource_images(paper_size, data):
     """
     if paper_size == "a4":
         max_pixel_height = 267 * MM_TO_PIXEL_RATIO
-    else:  # Letter paper size
+    elif paper_size == "letter":
         max_pixel_height = 249 * MM_TO_PIXEL_RATIO
+    else:
+        raise ValueError("Invalid paper size given.")
 
     # Resize images to reduce file size
     for index in range(len(data)):
