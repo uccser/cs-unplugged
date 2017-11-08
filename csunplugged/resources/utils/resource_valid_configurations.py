@@ -18,9 +18,10 @@ def resource_valid_configurations(valid_options, header_text=True):
     if header_text:
         valid_options["header_text"] = ["", "Example header"]
     # Change all booleans to text to mimic forms
-    for (key, value) in valid_options.items():
-        if isinstance(value, bool):
-            valid_options[key] = bool_to_yes_no(value)
+    for (key, values) in valid_options.items():
+        for i in range(0, len(values)):
+            if isinstance(values[i], bool):
+                values[i] = bool_to_yes_no(values[i])
     valid_option_keys = sorted(valid_options)
     return [dict(zip(valid_option_keys, product)) for product in itertools.product(
         *(valid_options[valid_option_key] for valid_option_key in valid_option_keys)
