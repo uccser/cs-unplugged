@@ -212,4 +212,5 @@ AUTH_PASSWORD_VALIDATORS = [
 # OTHER SETTINGS
 # ------------------------------------------------------------------------------
 DJANGO_PRODUCTION = env.bool("DJANGO_PRODUCTION")
+RESOURCE_GENERATION_LOCATION =  os.path.join(str(ROOT_DIR.path("staticfiles")), "resources")
 RESOURCE_COPY_AMOUNT = 20

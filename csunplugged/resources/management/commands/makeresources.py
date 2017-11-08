@@ -28,7 +28,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         """Automatically called when the makeresources command is given."""
-        BASE_PATH = "staticfiles/resources/"
+        BASE_PATH = settings.RESOURCE_GENERATION_LOCATION
         if not os.path.exists(BASE_PATH):
             os.makedirs(BASE_PATH)
 
