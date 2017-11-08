@@ -1,9 +1,8 @@
 """Test class for find_image_files in check_required_files module."""
 
-from django.test import SimpleTestCase, override_settings
+from django.test import SimpleTestCase
 from utils import check_required_files
 from utils.errors.CouldNotFindImageError import CouldNotFindImageError
-from unittest.mock import Mock
 
 
 class FindImageFilesTest(SimpleTestCase):

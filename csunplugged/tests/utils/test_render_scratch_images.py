@@ -2,7 +2,6 @@
 
 from django.test import SimpleTestCase, override_settings
 from utils import check_required_files
-from utils.errors.CouldNotFindImageError import CouldNotFindImageError
 from unittest.mock import Mock
 import os.path
 import shutil
@@ -83,6 +82,7 @@ class RenderScratchImagesTest(SimpleTestCase):
         os.makedirs(SCRATCH_PATH)
         check_required_files.render_scratch_images([create_scratch_data(1)])
         self.assertTrue(os.path.isdir(SCRATCH_PATH))
+
 
 def create_scratch_data(number):
     data = Mock()
