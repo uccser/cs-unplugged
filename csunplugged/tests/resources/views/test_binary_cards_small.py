@@ -1,19 +1,15 @@
 from http import HTTPStatus
 from django.test import tag
 from django.urls import reverse
-from tests.BaseTestWithDB import BaseTestWithDB
-from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
-from resources.utils.get_resource_generator import get_resource_generator
+from tests.resources.views.ResourceViewBaseTest import ResourceViewBaseTest
 from utils.create_query_string import query_string
-from resources.utils.resource_valid_configurations import resource_valid_configurations
 
 
 @tag("resource")
-class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
+class BinaryCardsSmallResourceViewTest(ResourceViewBaseTest):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.test_data = ResourcesTestDataGenerator()
         self.language = "en"
 
     def test_binary_cards_small_resource_form_view(self):
@@ -41,43 +37,7 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
             "resource_slug": resource.slug,
         }
         base_url = reverse("resources:generate", kwargs=kwargs)
-        empty_generator = get_resource_generator(resource.generator_module)
-        combinations = resource_valid_configurations(
-            empty_generator.valid_options
-        )
-        print()
-        for combination in combinations:
-            print("   - Testing combination: {} ... ".format(combination), end="")
-            url_combination = {}
-            for parameter in combination:
-                if combination[parameter] is True:
-                    url_combination[parameter] = "yes"
-                elif combination[parameter] is False:
-                    url_combination[parameter] = "no"
-                else:
-                    url_combination[parameter] = combination[parameter]
-            url = base_url + query_string(url_combination)
-            response = self.client.get(url)
-            self.assertEqual(HTTPStatus.OK, response.status_code)
-            if combination["dot_counts"]:
-                display_numbers_text = "with dot counts"
-            else:
-                display_numbers_text = "without dot counts"
-            if combination["black_back"]:
-                black_back_text = "with black back"
-            else:
-                black_back_text = "without black back"
-            subtitle = "{} bits - {} - {} - {}".format(
-                combination["number_bits"],
-                display_numbers_text,
-                black_back_text,
-                combination["paper_size"],
-            )
-            self.assertEqual(
-                response.get("Content-Disposition"),
-                'attachment; filename="Resource Binary Cards (small) ({subtitle}).pdf"'.format(subtitle=subtitle)
-            )
-            print("ok")
+        self.run_valid_configuration_tests(resource, base_url)
 
     def test_binary_cards_small_resource_generation_missing_dot_count_parameter(self):
         resource = self.test_data.create_resource(
@@ -188,3 +148,28 @@ class BinaryCardsSmallResourceViewTest(BaseTestWithDB):
             response.get("Content-Disposition"),
             'attachment; filename="{}"'.format(filename)
         )
+
+    def subtitle(self, combination):
+        """Return text of subtitle for given combination.
+
+        Args:
+            combination (dict): Dictionary of a valid combination
+
+        Returns:
+            String of subtitle.
+        """
+        if combination["dot_counts"]:
+            display_numbers_text = "with dot counts"
+        else:
+            display_numbers_text = "without dot counts"
+        if combination["black_back"]:
+            black_back_text = "with black back"
+        else:
+            black_back_text = "without black back"
+        subtitle = "{} bits - {} - {} - {}".format(
+            combination["number_bits"],
+            display_numbers_text,
+            black_back_text,
+            combination["paper_size"],
+        )
+        return subtitle

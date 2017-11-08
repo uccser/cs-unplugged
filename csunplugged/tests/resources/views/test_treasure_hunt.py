@@ -1,19 +1,15 @@
 from http import HTTPStatus
 from django.test import tag
 from django.urls import reverse
-from tests.BaseTestWithDB import BaseTestWithDB
-from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
-from resources.utils.get_resource_generator import get_resource_generator
+from tests.resources.views.ResourceViewBaseTest import ResourceViewBaseTest
 from utils.create_query_string import query_string
-from resources.utils.resource_valid_configurations import resource_valid_configurations
 
 
 @tag("resource")
-class TreasureHuntResourceViewTest(BaseTestWithDB):
+class TreasureHuntResourceViewTest(ResourceViewBaseTest):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.test_data = ResourcesTestDataGenerator()
         self.language = "en"
 
     def test_treasure_hunt_resource_form_view(self):
@@ -41,53 +37,7 @@ class TreasureHuntResourceViewTest(BaseTestWithDB):
             "resource_slug": resource.slug,
         }
         base_url = reverse("resources:generate", kwargs=kwargs)
-        empty_generator = get_resource_generator(resource.generator_module)
-        combinations = resource_valid_configurations(
-            empty_generator.valid_options
-        )
-        print()
-        for combination in combinations:
-            print("   - Testing combination: {} ... ".format(combination), end="")
-            url = base_url + query_string(combination)
-            response = self.client.get(url)
-            self.assertEqual(HTTPStatus.OK, response.status_code)
-
-            if combination["prefilled_values"] == "blank":
-                range_text = "blank"
-            else:
-                range_min = 0
-                if combination["prefilled_values"] == "easy":
-                    range_max = 99
-                elif combination["prefilled_values"] == "medium":
-                    range_max = 999
-                elif combination["prefilled_values"] == "hard":
-                    range_max = 9999
-                SUBTITLE_TEMPLATE = "{} - {} to {}"
-                number_order_text = combination["number_order"].title()
-                range_text = SUBTITLE_TEMPLATE.format(number_order_text, range_min, range_max)
-
-            if combination["art"] == "colour":
-                art_style_text = "full colour"
-            else:
-                art_style_text = "black and white"
-
-            if combination["instructions"]:
-                instructions_text = "with instructions"
-            else:
-                instructions_text = "without instructions"
-
-            subtitle = "{} - {} - {} - {}".format(
-                range_text,
-                art_style_text,
-                instructions_text,
-                combination["paper_size"]
-            )
-
-            self.assertEqual(
-                response.get("Content-Disposition"),
-                'attachment; filename="Resource Treasure Hunt ({subtitle}).pdf"'.format(subtitle=subtitle)
-            )
-            print("ok")
+        self.run_valid_configuration_tests(resource, base_url)
 
     def test_treasure_hunt_resource_generation_missing_prefilled_values_parameter(self):
         resource = self.test_data.create_resource(
@@ -226,3 +176,44 @@ class TreasureHuntResourceViewTest(BaseTestWithDB):
             response.get("Content-Disposition"),
             'attachment; filename="{}"'.format(filename)
         )
+
+    def subtitle(self, combination):
+        """Return text of subtitle for given combination.
+
+        Args:
+            combination (dict): Dictionary of a valid combination
+
+        Returns:
+            String of subtitle.
+        """
+        if combination["prefilled_values"] == "blank":
+            range_text = "blank"
+        else:
+            range_min = 0
+            if combination["prefilled_values"] == "easy":
+                range_max = 99
+            elif combination["prefilled_values"] == "medium":
+                range_max = 999
+            elif combination["prefilled_values"] == "hard":
+                range_max = 9999
+            SUBTITLE_TEMPLATE = "{} - {} to {}"
+            number_order_text = combination["number_order"].title()
+            range_text = SUBTITLE_TEMPLATE.format(number_order_text, range_min, range_max)
+
+        if combination["art"] == "colour":
+            art_style_text = "full colour"
+        else:
+            art_style_text = "black and white"
+
+        if combination["instructions"]:
+            instructions_text = "with instructions"
+        else:
+            instructions_text = "without instructions"
+
+        text = "{} - {} - {} - {}".format(
+            range_text,
+            art_style_text,
+            instructions_text,
+            combination["paper_size"]
+        )
+        return text

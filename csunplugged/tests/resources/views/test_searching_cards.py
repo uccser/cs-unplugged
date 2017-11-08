@@ -1,19 +1,15 @@
 from http import HTTPStatus
 from django.test import tag
 from django.urls import reverse
-from tests.BaseTestWithDB import BaseTestWithDB
-from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
-from resources.utils.get_resource_generator import get_resource_generator
+from tests.resources.views.ResourceViewBaseTest import ResourceViewBaseTest
 from utils.create_query_string import query_string
-from resources.utils.resource_valid_configurations import resource_valid_configurations
 
 
 @tag("resource")
-class SearchingCardsResourceViewTest(BaseTestWithDB):
+class SearchingCardsResourceViewTest(ResourceViewBaseTest):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.test_data = ResourcesTestDataGenerator()
         self.language = "en"
 
     def test_searching_cards_resource_form_view(self):
@@ -41,38 +37,7 @@ class SearchingCardsResourceViewTest(BaseTestWithDB):
             "resource_slug": resource.slug,
         }
         base_url = reverse("resources:generate", kwargs=kwargs)
-        empty_generator = get_resource_generator(resource.generator_module)
-        combinations = resource_valid_configurations(
-            empty_generator.valid_options
-        )
-        print()
-        for combination in combinations:
-            print("   - Testing combination: {} ... ".format(combination), end="")
-            url = base_url + query_string(combination)
-            response = self.client.get(url)
-            self.assertEqual(HTTPStatus.OK, response.status_code)
-            if combination["max_number"] == "blank":
-                range_text = "blank"
-            elif combination["max_number"] == "cards":
-                range_text = "0 to {}".format(combination["number_cards"])
-            else:
-                range_text = "0 to {}".format(combination["max_number"])
-
-            if combination["help_sheet"]:
-                help_text = "with helper sheet"
-            else:
-                help_text = "without helper sheet"
-            subtitle = "{} cards - {} - {} - {}".format(
-                combination["number_cards"],
-                range_text,
-                help_text,
-                combination["paper_size"],
-            )
-            self.assertEqual(
-                response.get("Content-Disposition"),
-                'attachment; filename="Resource Searching Cards ({subtitle}).pdf"'.format(subtitle=subtitle)
-            )
-            print("ok")
+        self.run_valid_configuration_tests(resource, base_url)
 
     def test_searching_cards_resource_generation_missing_number_cards_parameter(self):
         resource = self.test_data.create_resource(
@@ -183,3 +148,32 @@ class SearchingCardsResourceViewTest(BaseTestWithDB):
             response.get("Content-Disposition"),
             'attachment; filename="{}"'.format(filename)
         )
+
+    def subtitle(self, combination):
+        """Return text of subtitle for given combination.
+
+        Args:
+            combination (dict): Dictionary of a valid combination
+
+        Returns:
+            String of subtitle.
+        """
+        if combination["max_number"] == "blank":
+            range_text = "blank"
+        elif combination["max_number"] == "cards":
+            range_text = "0 to {}".format(combination["number_cards"])
+        else:
+            range_text = "0 to {}".format(combination["max_number"])
+
+        if combination["help_sheet"]:
+            help_text = "with helper sheet"
+        else:
+            help_text = "without helper sheet"
+
+        text = "{} cards - {} - {} - {}".format(
+            combination["number_cards"],
+            range_text,
+            help_text,
+            combination["paper_size"],
+        )
+        return text

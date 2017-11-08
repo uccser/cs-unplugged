@@ -13,7 +13,7 @@ def resource_valid_configurations(valid_options, header_text=True):
         header_text: If true, add in valid options for header text (bool).
 
     Returns:
-        List of lists of valid combinations (list).
+        List of dictionaries of valid combinations (list).
     """
     if header_text:
         valid_options["header_text"] = ["", "Example header"]
