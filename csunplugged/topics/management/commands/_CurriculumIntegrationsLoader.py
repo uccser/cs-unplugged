@@ -95,6 +95,7 @@ class CurriculumIntegrationsLoader(BaseLoader):
                             )
                         try:
                             UnitPlan.objects.get(
+                                topic__slug=self.topic.slug,
                                 slug=unit_plan_slug
                             )
                         except ObjectDoesNotExist:
@@ -106,8 +107,9 @@ class CurriculumIntegrationsLoader(BaseLoader):
                         for lesson_slug in lessons:
                             try:
                                 lesson = Lesson.objects.get(
-                                    slug=lesson_slug,
+                                    topic__slug=self.topic.slug,
                                     unit_plan__slug=unit_plan_slug,
+                                    slug=lesson_slug,
                                 )
                                 integration.prerequisite_lessons.add(lesson)
                             except ObjectDoesNotExist:
