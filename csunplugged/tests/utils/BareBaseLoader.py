@@ -7,4 +7,5 @@ class BareBaseLoader(BaseLoader):
     """Class for bare base loader."""
 
     def load(self):
+        """Implement abstract method."""
         pass
