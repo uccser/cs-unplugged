@@ -8,6 +8,7 @@
 docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Modulo Clock"
 docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Parity Cards"
 docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Piano Keys"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Pixel Painter"
 docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Searching Cards"
 docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Sorting Network"
 docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Sorting Network Cards"
