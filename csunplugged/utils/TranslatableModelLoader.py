@@ -122,7 +122,8 @@ class TranslatableModelLoader(BaseLoader):
                     raise
         return content_translations
 
-    def populate_translations(self, model, model_translations_dict):
+    @staticmethod
+    def populate_translations(model, model_translations_dict):
         """Populate the translation fields of the given model.
 
         Args:
@@ -140,7 +141,8 @@ class TranslatableModelLoader(BaseLoader):
                 for field, value in values_dict.items():
                     setattr(model, field, value)
 
-    def mark_translation_availability(self, model, required_fields=[]):
+    @staticmethod
+    def mark_translation_availability(model, required_fields=[]):
         """Populate the available_languages field of a translatable model.
 
         Args:
@@ -158,6 +160,7 @@ class TranslatableModelLoader(BaseLoader):
                         available_languages.append(language)
         model.languages = available_languages
 
-    def get_blank_translation_dictionary(self):
+    @staticmethod
+    def get_blank_translation_dictionary():
         """Return a dictionary of blank dictionaries, keyed by all available language."""
         return {language: dict() for language in get_available_languages()}
