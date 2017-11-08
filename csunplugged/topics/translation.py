@@ -17,7 +17,8 @@ from topics.models import (
     AgeGroup,
     ClassroomResource,
     ResourceDescription,
-    ProgrammingChallengeDifficulty
+    ProgrammingChallengeDifficulty,
+    ProgrammingChallengeLanguage,
 )
 
 
@@ -148,6 +149,15 @@ class ProgrammingChallengeDifficultyTranslationOptions(TranslationOptions):
     }
 
 
+class ProgrammingChallengeLanguageTranslationOptions(TranslationOptions):
+    """Translation options for ProgrammingChallengeLanguage model."""
+
+    fields = ('name',)
+    fallback_undefined = {
+        'name': None,
+    }
+
+
 translator.register(Topic, TopicTranslationOptions)
 translator.register(UnitPlan, UnitPlanTranslationOptions)
 translator.register(ProgrammingChallenge, ProgrammingChallengeTranslationOptions)
@@ -161,3 +171,4 @@ translator.register(AgeGroup, AgeGroupTranslationOptions)
 translator.register(ClassroomResource, ClassroomResourceTranslationOptions)
 translator.register(ResourceDescription, ResourceDescriptionTranslationOptions)
 translator.register(ProgrammingChallengeDifficulty, ProgrammingChallengeDifficultyTranslationOptions)
+translator.register(ProgrammingChallengeLanguage, ProgrammingChallengeLanguageTranslationOptions)

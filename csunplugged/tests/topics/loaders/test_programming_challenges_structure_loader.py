@@ -1,5 +1,7 @@
 import os.path
 
+from django.utils import translation
+
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 
@@ -34,3 +36,41 @@ class ProgrammingChallengesStructureLoaderTest(BaseTestWithDB):
             pel_objects,
             ["<ProgrammingChallengeLanguage: Language 1>"]
         )
+
+    def test_translation(self):
+        config_file = "translation.yaml"
+
+        pes_loader = ProgrammingChallengesStructureLoader(structure_filename=config_file, base_path=self.base_path)
+        pes_loader.load()
+
+        translated_lang = ProgrammingChallengeLanguage.objects.get(slug="translated")
+        self.assertSetEqual(set(["en", "de"]), set(translated_lang.languages))
+        self.assertEqual("English language 1", translated_lang.name)
+        with translation.override("de"):
+            self.assertEqual("German language 1", translated_lang.name)
+
+        translated_difficulty = ProgrammingChallengeDifficulty.objects.get(level=1)
+        self.assertSetEqual(set(["en", "de"]), set(translated_difficulty.languages))
+        self.assertEqual("English difficulty 1", translated_difficulty.name)
+        with translation.override("de"):
+            self.assertEqual("German difficulty 1", translated_difficulty.name)
+
+    def test_translation_missing(self):
+        config_file = "translation.yaml"
+
+        pes_loader = ProgrammingChallengesStructureLoader(structure_filename=config_file, base_path=self.base_path)
+        pes_loader.load()
+
+        untranslated_lang = ProgrammingChallengeLanguage.objects.get(slug="untranslated")
+        self.assertSetEqual(set(["en"]), set(untranslated_lang.languages))
+        self.assertEqual("English language 2", untranslated_lang.name)
+        # Language name SHOULD fall back to english if not given
+        with translation.override("de"):
+            self.assertEqual("English language 2", untranslated_lang.name)
+
+        untranslated_difficulty = ProgrammingChallengeDifficulty.objects.get(level=2)
+        self.assertSetEqual(set(["en"]), set(untranslated_difficulty.languages))
+        self.assertEqual("English difficulty 2", untranslated_difficulty.name)
+        # Check name does not fall back to english for missing translation
+        with translation.override("de"):
+            self.assertEqual("", untranslated_difficulty.name)

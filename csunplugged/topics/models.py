@@ -28,7 +28,7 @@ class CurriculumArea(TranslatableModel):
 
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(unique=True)
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, default="")
     number = models.PositiveSmallIntegerField()
     colour = models.CharField(max_length=15)
     parent = models.ForeignKey(
@@ -83,7 +83,7 @@ class ClassroomResource(TranslatableModel):
     """Model for classroom resource."""
 
     slug = models.SlugField(max_length=80, unique=True)
-    description = models.CharField(max_length=100)
+    description = models.CharField(max_length=100, default="")
 
     def __str__(self):
         """Text representation of ClassroomResource object.
@@ -200,7 +200,7 @@ class ProgrammingChallengeLanguage(TranslatableModel):
 
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField()
-    name = models.CharField(max_length=200, default='')
+    name = models.CharField(max_length=200)
     number = models.PositiveSmallIntegerField()
     icon = models.CharField(max_length=100, null=True)
 

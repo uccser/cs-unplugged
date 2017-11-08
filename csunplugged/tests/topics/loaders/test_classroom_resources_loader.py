@@ -1,5 +1,7 @@
 import os.path
 
+from django.utils import translation
+
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 
@@ -36,3 +38,31 @@ class ClassroomResourcesLoaderTest(BaseTestWithDB):
         config_file = "missing-description.yaml"
         cr_loader = ClassroomResourcesLoader(structure_filename=config_file, base_path=self.base_path)
         self.assertRaises(InvalidConfigValueError, cr_loader.load)
+
+    def test_translation(self):
+        config_file = "translation.yaml"
+
+        cr_loader = ClassroomResourcesLoader(structure_filename=config_file, base_path=self.base_path)
+        cr_loader.load()
+
+        translated = ClassroomResource.objects.get(slug="translated")
+        self.assertSetEqual(set(["en", "de"]), set(translated.languages))
+
+        self.assertEqual("English Description 1", translated.description)
+        with translation.override("de"):
+            self.assertEqual("German Description 1", translated.description)
+
+    def test_missing_translation(self):
+        config_file = "translation.yaml"
+
+        cr_loader = ClassroomResourcesLoader(structure_filename=config_file, base_path=self.base_path)
+        cr_loader.load()
+
+        untranslated = ClassroomResource.objects.get(slug="untranslated")
+        self.assertSetEqual(set(["en"]), set(untranslated.languages))
+
+        self.assertEqual("English Description 2", untranslated.description)
+
+        # Check description does not fall back to english for missing translation
+        with translation.override("de"):
+            self.assertEqual("", untranslated.description)

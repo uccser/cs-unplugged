@@ -1,5 +1,7 @@
 import os.path
 
+from django.utils import translation
+
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 
@@ -114,3 +116,24 @@ class AgeGroupsLoaderTest(BaseTestWithDB):
                 "<AgeGroup: NumericRange(11, 14, '[)')>",
             ]
         )
+
+    def test_age_groups_loader_missing_translation(self):
+        config_file = "description.yaml"
+        group_loader = AgeGroupsLoader(structure_filename=config_file, base_path=self.base_path)
+        group_loader.load()
+        age_group = AgeGroup.objects.get(slug="5-7")
+        self.assertSetEqual(set(["en"]), set(age_group.languages))
+
+        # Check description does not fall back to english for missing translation
+        with translation.override("de"):
+            self.assertEqual("", age_group.description)
+
+    def test_age_groups_loader_translation(self):
+        config_file = "translation.yaml"
+        group_loader = AgeGroupsLoader(structure_filename=config_file, base_path=self.base_path)
+        group_loader.load()
+        age_group = AgeGroup.objects.get(slug="5-7")
+        self.assertSetEqual(set(["en", "de"]), set(age_group.languages))
+        self.assertEqual("English description.", age_group.description)
+        with translation.override("de"):
+            self.assertEqual("German description.", age_group.description)

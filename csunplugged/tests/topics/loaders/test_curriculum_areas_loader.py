@@ -1,5 +1,7 @@
 import os.path
 
+from django.utils import translation
+
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 
@@ -203,3 +205,26 @@ class CurriculumAreasLoaderTest(BaseTestWithDB):
             ],
             ordered=False,
         )
+
+    def test_curriculum_areas_loader_translation(self):
+        config_file = "translation.yaml"
+        area_loader = CurriculumAreasLoader(structure_filename=config_file, base_path=self.base_path)
+        area_loader.load()
+
+        translated = CurriculumArea.objects.get(slug="translated")
+        self.assertSetEqual(set(["en", "de"]), set(translated.languages))
+        self.assertEqual("English Name", translated.name)
+        with translation.override("de"):
+            self.assertEqual("German Name", translated.name)
+
+    def test_curriculum_areas_loader_missing_translation(self):
+        config_file = "translation.yaml"
+        area_loader = CurriculumAreasLoader(structure_filename=config_file, base_path=self.base_path)
+        area_loader.load()
+
+        translated = CurriculumArea.objects.get(slug="untranslated")
+        self.assertSetEqual(set(["en"]), set(translated.languages))
+        self.assertEqual("English Name", translated.name)
+        # Check name does not fall back to english for missing translation
+        with translation.override("de"):
+            self.assertEqual("", translated.name)
