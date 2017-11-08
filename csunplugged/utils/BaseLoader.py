@@ -165,4 +165,4 @@ class BaseLoader():
             NotImplementedError: when a user attempts to run the load() method of the
                 BaseLoader class.
         """
-        raise NotImplementedError("Subclass does not implement this method")
+        raise NotImplementedError("Subclass does not implement this method")  # pragma: no cover
