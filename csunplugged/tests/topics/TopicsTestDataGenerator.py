@@ -17,6 +17,7 @@ from topics.models import (
     ProgrammingChallengeImplementation,
     ProgrammingChallengeNumber,
     LearningOutcome,
+    GlossaryTerm,
 )
 
 
@@ -310,3 +311,20 @@ class TopicsTestDataGenerator:
             challenge_number=number,
         )
         relationship.save()
+
+    def create_glossary_term(self, number):
+        """Create glossary term object.
+
+        Args:
+            number: Identifier of the glossary term (int).
+
+        Returns:
+            GlossaryTerm object.
+        """
+        term = GlossaryTerm(
+            slug="term-{}".format(number),
+            term="Term {}".format(number),
+            definition="Defintion for term {}".format(number),
+        )
+        term.save()
+        return term
