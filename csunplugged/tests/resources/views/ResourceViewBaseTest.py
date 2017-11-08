@@ -3,7 +3,7 @@
 from http import HTTPStatus
 from resources.utils.get_resource_generator import get_resource_generator
 from resources.utils.resource_valid_configurations import resource_valid_configurations
-from utils.create_query_string import query_string
+from tests.create_query_string import query_string
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
 

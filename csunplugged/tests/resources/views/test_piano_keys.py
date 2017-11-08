@@ -2,7 +2,7 @@ from http import HTTPStatus
 from django.test import tag
 from django.urls import reverse
 from tests.resources.views.ResourceViewBaseTest import ResourceViewBaseTest
-from utils.create_query_string import query_string
+from tests.create_query_string import query_string
 from utils.bool_to_yes_no import bool_to_yes_no
 
 
