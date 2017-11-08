@@ -2,6 +2,7 @@
 
 import itertools
 from utils.bool_to_yes_no import bool_to_yes_no
+from copy import deepcopy
 
 
 def resource_valid_configurations(valid_options, header_text=True):
@@ -15,6 +16,7 @@ def resource_valid_configurations(valid_options, header_text=True):
     Returns:
         List of dictionaries of valid combinations (list).
     """
+    valid_options = deepcopy(valid_options)
     if header_text:
         valid_options["header_text"] = ["", "Example header"]
     # Change all booleans to text to mimic forms
