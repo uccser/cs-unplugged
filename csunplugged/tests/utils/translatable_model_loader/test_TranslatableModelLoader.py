@@ -8,17 +8,13 @@ from utils.errors.CouldNotFindYAMLFileError import CouldNotFindYAMLFileError
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 from django.utils import translation
 from unittest import mock
+from modeltranslation import settings
 
 
 class MockTranslatableModel(object):
-    """Mock behaviour of a translatable model registered with django-modeltranslation.
-
-    Important: This does not handle fallback to default values.
-    """
+    """Mock behaviour of a translatable model registered with django-modeltranslation."""
     def __init__(self, translatable_fields=[]):
         self.translatable_fields = translatable_fields
-        for field in self.translatable_fields:
-            setattr(self, "{}_en".format(field), "")
 
     def __setattr__(self, field, value):
         # Set property first to prevent recursiong on self.translatable_fields
@@ -33,12 +29,18 @@ class MockTranslatableModel(object):
     def __getattr__(self, field):
         if field in self.translatable_fields:
             language = translation.get_language()
-            field = "{}_{}".format(field, language)
+            field_template = "{}_{}"
+            trans_field = field_template.format(field, language)
             try:
-                return super().__getattribute__(field)
-            except:
-                return None
-
+                return super().__getattribute__(trans_field)
+            except AttributeError:
+                if language == "en":
+                    return ""
+                elif settings.ENABLE_FALLBACKS:
+                    with translation.override("en"):
+                        return getattr(self, field)
+                else:
+                    return None
 
 
 class TranslatableModelLoaderTest(SimpleTestCase):
@@ -204,7 +206,6 @@ class TranslatableModelLoaderTest(SimpleTestCase):
         with translation.override("de"):
             self.assertEqual(model.field1, "german value 1")
             self.assertEqual(model.field2, "german value 2")
-
 
     def test_mark_translation_availability_all_required_fields_present(self):
         model = MockTranslatableModel(translatable_fields=["title"])
