@@ -215,3 +215,4 @@ DJANGO_PRODUCTION = env.bool("DJANGO_PRODUCTION")
 RESOURCE_GENERATION_LOCATION = os.path.join(str(ROOT_DIR.path("staticfiles")), "resources")
 RESOURCE_COPY_AMOUNT = 20
 SCRATCH_GENERATION_LOCATION = str(ROOT_DIR.path("temp"))
+CUSTOM_VERTO_TEMPLATES = os.path.join(str(ROOT_DIR.path("utils")), "custom_converter_templates", "")

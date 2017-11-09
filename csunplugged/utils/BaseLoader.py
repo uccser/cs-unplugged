@@ -9,7 +9,7 @@ import os.path
 from os import listdir
 from verto import Verto
 from verto.errors.StyleError import StyleError
-
+from django.conf import settings
 from .check_required_files import check_converter_required_files
 from .check_glossary_links import check_converter_glossary_links
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
@@ -146,10 +146,7 @@ class BaseLoader():
             templates: dictionary of html templates
         """
         templates = dict()
-        template_path = os.path.join(
-            os.path.dirname(__file__),
-            "custom_converter_templates/"
-        )
+        template_path = settings.CUSTOM_VERTO_TEMPLATES
         for file in listdir(template_path):
             template_file = re.search(r"(.*?).html$", file)
             if template_file:
