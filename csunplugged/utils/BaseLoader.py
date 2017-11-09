@@ -5,7 +5,6 @@ import mdx_math
 import abc
 import sys
 import re
-import os.path
 from os import listdir
 from verto import Verto
 from verto.errors.StyleError import StyleError

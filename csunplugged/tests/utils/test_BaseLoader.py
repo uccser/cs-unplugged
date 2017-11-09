@@ -1,11 +1,12 @@
 """Test class for BaseLoader class."""
 
-from django.test import SimpleTestCase, override_settings
+from django.test import SimpleTestCase
 from tests.utils.BareBaseLoader import BareBaseLoader
 from utils.errors.InvalidConfigFileError import InvalidConfigFileError
 import os.path
 
 TEST_ASSET_PATH = "tests/utils/assets/"
+
 
 class BaseLoaderTest(SimpleTestCase):
     """Test class for BaseLoader class."""
