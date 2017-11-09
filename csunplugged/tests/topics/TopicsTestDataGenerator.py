@@ -18,6 +18,7 @@ from topics.models import (
     ProgrammingChallengeNumber,
     LearningOutcome,
     GlossaryTerm,
+    ResourceDescription,
 )
 
 
@@ -328,3 +329,18 @@ class TopicsTestDataGenerator:
         )
         term.save()
         return term
+
+    def add_lesson_resource_relationship(self, lesson, resource, number):
+        """Add relationship between challenge and lesson objects.
+
+        Args:
+            lesson (Lesson): Lesson to add relationship between.
+            resource (Resource): Resource to add relationship between.
+            number (int): Number to display in description.
+        """
+        relationship = ResourceDescription(
+            lesson=lesson,
+            resource=resource,
+            description="Description {}".format(number),
+        )
+        relationship.save()
