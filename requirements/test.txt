@@ -6,6 +6,7 @@ pydocstyle==2.1.1
 
 # Coverage Tools
 coverage==4.4.1
+django_coverage_plugin==1.5.1a0
 
 # Skip migration files for local testing
 django-test-without-migrations==0.6

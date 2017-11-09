@@ -16,7 +16,8 @@ DATABASES['default']['ATOMIC_REQUESTS'] = True
 # ----------------------------------------------------------------------------
 # Turn debug off so tests run faster
 DEBUG = False
-TEMPLATES[0]["OPTIONS"]["debug"] = False  # noqa: F405
+# Turn on template debugging for template code coverage
+TEMPLATES[0]["OPTIONS"]["debug"] = True  # noqa: F405
 
 # SECRET CONFIGURATION
 # ----------------------------------------------------------------------------

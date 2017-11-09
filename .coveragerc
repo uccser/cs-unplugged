@@ -18,6 +18,8 @@ omit =
     # TODO: Add integration tests for local and production environments
     csunplugged/config/settings/production.py
     csunplugged/config/settings/local.py
+plugins =
+    django_coverage_plugin
 
 [report]
 fail_under=20
