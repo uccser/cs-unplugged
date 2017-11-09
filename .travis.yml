@@ -22,6 +22,7 @@ jobs:
       if: type = pull_request
     - script: ./csu ci style
     - script: ./csu ci docs
+    - script: ./csu ci validate_templates
     - stage: develop deploy
       script: skip
       deploy:
