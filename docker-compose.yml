@@ -5,6 +5,7 @@ services:
     image: postgres:9.6.5
     # Set port to non-standard value to not use Travis CI Postgres server.
     command: postgres -p 5434
+    network_mode: host
 
   django:
     build:
@@ -16,10 +17,11 @@ services:
     environment:
       - PORT=8080
       - USE_DOCKER=yes
-      - DATABASE_URL=postgres://postgres@postgres:5434/postgres
+      - DATABASE_URL=postgres://postgres@localhost:5434/postgres
       - DJANGO_SETTINGS_MODULE=config.settings.local
     depends_on:
       - postgres
+    network_mode: host
 
   nginx:
     build:
@@ -30,5 +32,4 @@ services:
       - /app/node_modules
     depends_on:
       - django
-    ports:
-      - "80:80"
+    network_mode: host
