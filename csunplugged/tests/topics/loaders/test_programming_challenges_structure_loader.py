@@ -4,7 +4,6 @@ from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 from topics.models import ProgrammingChallengeDifficulty
 from topics.models import ProgrammingChallengeLanguage
 from topics.management.commands._ProgrammingChallengesStructureLoader import ProgrammingChallengesStructureLoader
-from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 
 
