@@ -126,6 +126,7 @@ class CurriculumIntegrationsLoaderTest(BaseTestWithDB):
         config_file = os.path.join(self.loader_name, "prerequisite-lessons-invalid-lesson.yaml")
         self.test_data.create_curriculum_area("1")
         topic = self.test_data.create_topic("1")
+        self.test_data.create_unit_plan(topic, "1")
         ci_loader = CurriculumIntegrationsLoader(config_file, topic, self.test_data.LOADER_ASSET_PATH)
         self.assertRaises(
             KeyNotFoundError,
