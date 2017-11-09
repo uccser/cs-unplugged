@@ -256,6 +256,13 @@ dev_docs() {
 }
 defhelp -dev docs 'Generate documentation.'
 
+# Generates the documentation (with warnings as errors)
+dev_validate_templates() {
+  echo "Checking templates..."
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py validate_templates
+}
+defhelp -dev docs 'Checks templates for syntax or compile errors.'
+
 # Delete all untagged dangling Docker images
 cmd_clean() {
   echo "If the following commands return an argument not found error,"
@@ -323,6 +330,10 @@ ci_test_backwards() {
 
 ci_docs() {
   dev_docs
+}
+
+ci_validate_templates() {
+  dev_validate_templates
 }
 
 cmd_ci() {
