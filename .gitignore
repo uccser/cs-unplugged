@@ -48,6 +48,7 @@ nosetests.xml
 coverage.xml
 *,cover
 .hypothesis/
+csunplugged/tests/output/
 
 # Translations
 *.mo
