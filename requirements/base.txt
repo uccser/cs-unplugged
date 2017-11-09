@@ -20,4 +20,3 @@ tqdm==4.19.4
 
 # Translations
 django-modeltranslation==0.12.1
-django-vinaigrette==1.0.1

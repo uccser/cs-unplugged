@@ -1,7 +1,6 @@
 """Models for the resources application."""
 
 from django.db import models
-import vinaigrette
 
 
 class Resource(models.Model):
@@ -22,7 +21,3 @@ class Resource(models.Model):
             Name of resource (str).
         """
         return self.name
-
-
-# Extract resource names for tranlsation on makemessages command.
-vinaigrette.register(Resource, ["name"])
