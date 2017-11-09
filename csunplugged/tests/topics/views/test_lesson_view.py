@@ -213,7 +213,7 @@ class LessonViewTest(BaseTestWithDB):
         topic = self.test_data.create_topic(1)
         unit_plan = self.test_data.create_unit_plan(topic, 1)
         age_group_1 = self.test_data.create_age_group(5, 7)
-        lesson = self.test_data.create_lesson(
+        self.test_data.create_lesson(
             topic,
             unit_plan,
             1,
@@ -289,7 +289,7 @@ class LessonViewTest(BaseTestWithDB):
         topic = self.test_data.create_topic(1)
         unit_plan = self.test_data.create_unit_plan(topic, 1)
         age_group_1 = self.test_data.create_age_group(5, 7)
-        lesson = self.test_data.create_lesson(
+        self.test_data.create_lesson(
             topic,
             unit_plan,
             1,
@@ -393,7 +393,7 @@ class LessonViewTest(BaseTestWithDB):
         topic = self.test_data.create_topic(1)
         unit_plan = self.test_data.create_unit_plan(topic, 1)
         age_group_1 = self.test_data.create_age_group(5, 7)
-        lesson = self.test_data.create_lesson(
+        self.test_data.create_lesson(
             topic,
             unit_plan,
             1,
