@@ -62,6 +62,14 @@ class AgeGroupsLoaderTest(BaseTestWithDB):
             8,
         )
 
+    def test_age_groups_loader_missing_data(self):
+        config_file = "missing-data.yaml"
+        group_loader = AgeGroupsLoader(config_file, self.BASE_PATH)
+        self.assertRaises(
+            MissingRequiredFieldError,
+            group_loader.load,
+        )
+
     def test_age_groups_loader_missing_min_age_value(self):
         config_file = "missing-min-age.yaml"
         group_loader = AgeGroupsLoader(config_file, self.BASE_PATH)

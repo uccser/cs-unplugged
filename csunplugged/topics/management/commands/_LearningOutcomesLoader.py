@@ -43,7 +43,7 @@ class LearningOutcomesLoader(BaseLoader):
 
         for (outcome_slug, outcome_data) in learning_outcomes.items():
 
-            if ("text" not in outcome_data) or (outcome_data["text"] is None):
+            if not outcome_data or outcome_data.get("text", None) is None:
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
                     ["text"],

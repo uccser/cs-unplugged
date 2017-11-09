@@ -19,12 +19,33 @@ class GlossaryTermsLoaderTest(BaseTestWithDB):
 
     def test_basic_config(self):
         folder = "glossary_folder"
-
         glossary_loader = GlossaryTermsLoader(folder, self.config_file, self.BASE_PATH)
         glossary_loader.load()
-
         glossary_objects = GlossaryTerm.objects.all()
+        self.assertQuerysetEqual(
+            glossary_objects,
+            ["<GlossaryTerm: Glossary Term 1>"]
+        )
 
+    def test_multiple_files(self):
+        folder = "glossary_folder_multiple"
+        glossary_loader = GlossaryTermsLoader(folder, self.config_file, self.BASE_PATH)
+        glossary_loader.load()
+        glossary_objects = GlossaryTerm.objects.order_by("term")
+        self.assertQuerysetEqual(
+            glossary_objects,
+            [
+                "<GlossaryTerm: Glossary Term 1>",
+                "<GlossaryTerm: Glossary Term 2>",
+                "<GlossaryTerm: Glossary Term 3>"
+            ],
+        )
+
+    def test_invalid_files(self):
+        folder = "invalid_files"
+        glossary_loader = GlossaryTermsLoader(folder, self.config_file, self.BASE_PATH)
+        glossary_loader.load()
+        glossary_objects = GlossaryTerm.objects.all()
         self.assertQuerysetEqual(
             glossary_objects,
             ["<GlossaryTerm: Glossary Term 1>"]

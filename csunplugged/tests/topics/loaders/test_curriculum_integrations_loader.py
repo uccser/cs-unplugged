@@ -26,6 +26,15 @@ class CurriculumIntegrationsLoaderTest(BaseTestWithDB):
             ["<CurriculumIntegration: Integration 1>"]
         )
 
+    def test_missing_data(self):
+        config_file = os.path.join(self.loader_name, "missing-data.yaml")
+        topic = self.test_data.create_topic("1")
+        ci_loader = CurriculumIntegrationsLoader(config_file, topic, self.test_data.LOADER_ASSET_PATH)
+        self.assertRaises(
+            MissingRequiredFieldError,
+            ci_loader.load
+        )
+
     def test_missing_number_key(self):
         config_file = os.path.join(self.loader_name, "missing-number.yaml")
         topic = self.test_data.create_topic("1")

@@ -1,13 +1,11 @@
 import os.path
 from unittest.mock import Mock
-
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
 from utils.errors.NoHeadingFoundInMarkdownFileError import NoHeadingFoundInMarkdownFileError
-
+from utils.errors.KeyNotFoundError import KeyNotFoundError
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
-
 from topics.models import UnitPlan
 from topics.management.commands._UnitPlanLoader import UnitPlanLoader
 
@@ -57,6 +55,17 @@ class UnitPlanLoaderTest(BaseTestWithDB):
             up_loader.load,
         )
 
+    def test_unit_plan_invalid_lessons(self):
+        config_file = "unit-plan-1/unit-plan-1.yaml"
+        factory = Mock()
+        topic = self.test_data.create_topic("1")
+        self.test_data.create_age_group(8, 10)
+        up_loader = UnitPlanLoader(factory, config_file, topic, self.BASE_PATH)
+        self.assertRaises(
+            KeyNotFoundError,
+            up_loader.load,
+        )
+
     def test_unit_plan_loader_missing_content_text(self):
         config_file = "missing-content/missing-content.yaml"
 
@@ -93,6 +102,16 @@ class UnitPlanLoaderTest(BaseTestWithDB):
 
         self.assertRaises(
             MissingRequiredFieldError,
+            up_loader.load,
+        )
+
+    def test_unit_plan_invalid_age_groups(self):
+        config_file = "unit-plan-1/unit-plan-1.yaml"
+        factory = Mock()
+        topic = self.test_data.create_topic("1")
+        up_loader = UnitPlanLoader(factory, config_file, topic, self.BASE_PATH)
+        self.assertRaises(
+            KeyNotFoundError,
             up_loader.load,
         )
 

@@ -153,3 +153,49 @@ class TopicLoaderTest(BaseTestWithDB):
         )
         # Passes if loader throws no exception
         topic_loader.load()
+
+    def test_topic_loader_empty_icon(self):
+        config_file = "empty-icon/empty-icon.yaml"
+        factory = Mock()
+        topic_loader = TopicLoader(
+            factory,
+            config_file,
+            self.BASE_PATH
+        )
+        topic_loader.load()
+        topic = Topic.objects.get(slug="empty-icon")
+        self.assertIsNone(topic.icon)
+
+    def test_topic_loader_other_resources_empty(self):
+        config_file = "empty-other-resources/empty-other-resources.yaml"
+        factory = Mock()
+        topic_loader = TopicLoader(
+            factory,
+            config_file,
+            self.BASE_PATH
+        )
+        topic_loader.load()
+        topic = Topic.objects.get(slug="empty-other-resources")
+        self.assertIsNone(topic.other_resources)
+
+    def test_topic_loader_programming_challenges_empty(self):
+        config_file = "empty-programming-challenges/empty-programming-challenges.yaml"
+        factory = Mock()
+        topic_loader = TopicLoader(
+            factory,
+            config_file,
+            self.BASE_PATH
+        )
+        # Passes if loader throws no exception
+        topic_loader.load()
+
+    def test_topic_loader_curriculum_integrations_empty(self):
+        config_file = "empty-curriculum-integrations/empty-curriculum-integrations.yaml"
+        factory = Mock()
+        topic_loader = TopicLoader(
+            factory,
+            config_file,
+            self.BASE_PATH
+        )
+        # Passes if loader throws no exception
+        topic_loader.load()

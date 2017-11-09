@@ -62,6 +62,14 @@ class CurriculumAreasLoaderTest(BaseTestWithDB):
             "Maths",
         )
 
+    def test_curriculum_areas_loader_missing_data(self):
+        config_file = "missing-data.yaml"
+        area_loader = CurriculumAreasLoader(config_file, self.BASE_PATH)
+        self.assertRaises(
+            MissingRequiredFieldError,
+            area_loader.load,
+        )
+
     def test_curriculum_areas_loader_missing_name_value(self):
         config_file = "missing-name.yaml"
         area_loader = CurriculumAreasLoader(config_file, self.BASE_PATH)
@@ -151,6 +159,14 @@ class CurriculumAreasLoaderTest(BaseTestWithDB):
         self.assertEqual(
             CurriculumArea.objects.get(slug="algebra").slug,
             "algebra",
+        )
+
+    def test_curriculum_areas_loader_children_name_empty(self):
+        config_file = "children-name-empty.yaml"
+        area_loader = CurriculumAreasLoader(config_file, self.BASE_PATH)
+        self.assertRaises(
+            MissingRequiredFieldError,
+            area_loader.load,
         )
 
     def test_curriculum_areas_loader_correct_children_name_value(self):

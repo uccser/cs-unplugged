@@ -2,10 +2,9 @@ import os.path
 
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
-
+from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
 from topics.models import Lesson
 from topics.management.commands._LessonsLoader import LessonsLoader
-
 from utils.errors.CouldNotFindConfigFileError import CouldNotFindConfigFileError
 from utils.errors.EmptyConfigFileError import EmptyConfigFileError
 from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
@@ -19,6 +18,7 @@ class LessonsLoaderTest(BaseTestWithDB):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.test_data = TopicsTestDataGenerator()
+        self.resource_test_data = ResourcesTestDataGenerator()
         self.loader_name = "lessons"
 
     def test_basic_lesson_loader_configuration(self):
@@ -323,6 +323,19 @@ class LessonsLoaderTest(BaseTestWithDB):
             ordered=False,
         )
 
+    def test_lesson_loader_optional_programming_challenges_empty(self):
+        config_file = os.path.join(self.loader_name, "programming-challenges-empty.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        lesson_loader.load()
+
     def test_lesson_loader_optional_programming_challenges_invalid_slug(self):
         config_file = os.path.join(self.loader_name, "programming-challenges-invalid.yaml")
         lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
@@ -421,6 +434,40 @@ class LessonsLoaderTest(BaseTestWithDB):
             ],
             ordered=False,
         )
+
+    def test_lesson_loader_optional_learning_outcomes_invalid(self):
+        config_file = os.path.join(self.loader_name, "learning-outcomes.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        self.test_data.create_learning_outcome(1)
+
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        self.assertRaises(
+            KeyNotFoundError,
+            lesson_loader.load
+        )
+
+    def test_lesson_loader_optional_learning_outcomes_empty(self):
+        config_file = os.path.join(self.loader_name, "learning-outcomes-empty.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        lesson_loader.load()
 
     def test_lesson_loader_optional_learning_outcomes_set_correctly_when_omitted(self):
         config_file = os.path.join(self.loader_name, "basic-config.yaml")
@@ -532,4 +579,106 @@ class LessonsLoaderTest(BaseTestWithDB):
         self.assertRaises(
             MissingRequiredFieldError,
             lesson_loader.load,
+        )
+
+    def test_lesson_loader_optional_generated_resources_set_correctly(self):
+        config_file = os.path.join(self.loader_name, "generated-resources.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        self.resource_test_data.create_resource(
+            "grid",
+            "Grid",
+            "resources/grid.html",
+            "GridResourceGenerator",
+        )
+        self.resource_test_data.create_resource(
+            "arrows",
+            "Arrows",
+            "resources/arrows.html",
+            "ArrowsResourceGenerator",
+        )
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        lesson_loader.load()
+        self.assertQuerysetEqual(
+            Lesson.objects.get(slug="lesson-1").generated_resources.order_by("name"),
+            [
+                "<Resource: Resource Arrows>",
+                "<Resource: Resource Grid>",
+            ],
+        )
+
+    def test_lesson_loader_optional_generated_resources_empty(self):
+        config_file = os.path.join(self.loader_name, "generated-resources-empty.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        lesson_loader.load()
+        lesson = Lesson.objects.get(slug="lesson-1")
+        self.assertFalse(lesson.generated_resources.exists())
+
+    def test_lesson_loader_optional_generated_resources_slug_empty(self):
+        config_file = os.path.join(self.loader_name, "generated-resources-slug-empty.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        self.assertRaises(
+            MissingRequiredFieldError,
+            lesson_loader.load
+        )
+
+    def test_lesson_loader_optional_generated_resources_slug_invalid(self):
+        config_file = os.path.join(self.loader_name, "generated-resources.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        self.assertRaises(
+            KeyNotFoundError,
+            lesson_loader.load
+        )
+
+    def test_lesson_loader_optional_generated_resources_slug_description_empty(self):
+        config_file = os.path.join(self.loader_name, "generated-resources-description-empty.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        self.resource_test_data.create_resource(
+            "grid",
+            "Grid",
+            "resources/grid.html",
+            "GridResourceGenerator",
+        )
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        self.assertRaises(
+            MissingRequiredFieldError,
+            lesson_loader.load
         )
