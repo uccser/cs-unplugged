@@ -1,46 +1,45 @@
 """Test class for TranslatableModelLoader."""
 
 from django.test import SimpleTestCase
+from django.db import models
 from utils.TranslatableModelLoader import TranslatableModelLoader
+from utils.TranslatableModel import TranslatableModel
 from utils.errors.MissingRequiredModelsError import MissingRequiredModelsError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.CouldNotFindYAMLFileError import CouldNotFindYAMLFileError
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 from django.utils import translation
 from unittest import mock
-from modeltranslation import settings
+from modeltranslation.translator import translator, TranslationOptions
 
 
-class MockTranslatableModel(object):
-    """Mock behaviour of a translatable model registered with django-modeltranslation."""
-    def __init__(self, translatable_fields=[]):
-        self.translatable_fields = translatable_fields
+class MockTranslatableModel(TranslatableModel):
+    """Mock TranslatableModel for testing TranslatableModelLoader functionality."""
+    # Fields with fallback to english disabled
+    nofallback1 = models.CharField(default="")
+    nofallback2 = models.CharField(default="")
+    nofallback3 = models.CharField(default="")
 
-    def __setattr__(self, field, value):
-        # Set property first to prevent recursiong on self.translatable_fields
-        super().__setattr__(field, value)
-        if field in self.translatable_fields:
-            # Remove property just created
-            delattr(self, field)
-            language = translation.get_language()
-            field = "{}_{}".format(field, language)
-            super().__setattr__(field, value)
+    # Fields with fallback to english enabled
+    fallback1 = models.CharField(default="")
+    fallback2 = models.CharField(default="")
 
-    def __getattr__(self, field):
-        if field in self.translatable_fields:
-            language = translation.get_language()
-            field_template = "{}_{}"
-            trans_field = field_template.format(field, language)
-            try:
-                return super().__getattribute__(trans_field)
-            except AttributeError:
-                if language == "en":
-                    return ""
-                elif settings.ENABLE_FALLBACKS:
-                    with translation.override("en"):
-                        return getattr(self, field)
-                else:
-                    return None
+    class Meta:
+        app_label = "test",
+
+
+class MockTranslatableModelTranslationOptions(TranslationOptions):
+    """Translation options for MockTranslatableModel model."""
+
+    fields = ("nofallback1", 'nofallback2', 'nofallback3', "fallback1", "fallback2")
+    fallback_undefined = {
+        'nofallback1': None,
+        'nofallback2': None,
+        'nofallback3': None,
+    }
+
+
+translator.register(MockTranslatableModel, MockTranslatableModelTranslationOptions)
 
 
 class TranslatableModelLoaderTest(SimpleTestCase):
@@ -189,46 +188,59 @@ class TranslatableModelLoaderTest(SimpleTestCase):
         self.assertIn("German Heading", de.title)
 
     def test_populate_translations(self):
-        model = MockTranslatableModel(translatable_fields=["field1", "field2"])
+        model = MockTranslatableModel()
         translations = {
             "en": {
-                "field1": "english value 1",
-                "field2": "english value 2"
+                "fallback1": "english value 1",
+                "nofallback1": "english value 2"
             },
             "de": {
-                "field1": "german value 1",
-                "field2": "german value 2"
+                "fallback1": "german value 1",
+                "nofallback1": "german value 2"
             }
         }
         TranslatableModelLoader.populate_translations(model, translations)
-        self.assertEqual(model.field1, "english value 1")
-        self.assertEqual(model.field2, "english value 2")
+        self.assertEqual(model.fallback1, "english value 1")
+        self.assertEqual(model.nofallback1, "english value 2")
         with translation.override("de"):
-            self.assertEqual(model.field1, "german value 1")
-            self.assertEqual(model.field2, "german value 2")
+            self.assertEqual(model.fallback1, "german value 1")
+            self.assertEqual(model.nofallback1, "german value 2")
 
     def test_mark_translation_availability_all_required_fields_present(self):
-        model = MockTranslatableModel(translatable_fields=["title"])
-        model.title = "english title"
+        model = MockTranslatableModel()
+        model.fallback1 = "english value 1"
+        model.nofallback1 = "english value 2"
         with translation.override("de"):
-            model.title = "german title"
+            model.fallback1 = "german value 1"
+            model.nofallback1 = "german value 2"
         with mock.patch('utils.language_utils.get_available_languages', return_value=["en", "de", "fr"]):
-            TranslatableModelLoader.mark_translation_availability(model, required_fields=["title"])
+            TranslatableModelLoader.mark_translation_availability(model, required_fields=["fallback1", "nofallback1"])
         self.assertSetEqual(set(["en", "de"]), set(model.languages))
 
-    def test_mark_translation_availability_required_field_missing(self):
-        model = MockTranslatableModel(translatable_fields=["title", "content"])
-        model.title = "english title"
-        model.content = "english content"
+    def test_mark_translation_availability_required_fallback_field_missing(self):
+        model = MockTranslatableModel()
+        model.fallback1 = "english value 1"
+        model.nofallback1 = "english value 2"
         with translation.override("de"):
-            model.title = "german title"
-
+            # Don't populate the field "fallback1" which has fallback enabled
+            model.nofallback1 = "german value 2"
         with mock.patch('utils.language_utils.get_available_languages', return_value=["en", "de", "fr"]):
-            TranslatableModelLoader.mark_translation_availability(model, required_fields=["title", "content"])
+            TranslatableModelLoader.mark_translation_availability(model, required_fields=["fallback1", "nofallback1"])
+        self.assertSetEqual(set(["en"]), set(model.languages))
+
+    def test_mark_translation_availability_required_no_fallback_field_missing(self):
+        model = MockTranslatableModel()
+        model.fallback1 = "english value 1"
+        model.nofallback1 = "english value 2"
+        with translation.override("de"):
+            # Don't populate the field "nofallback1" which does not have fallback enabled
+            model.fallback1 = "german value 1"
+        with mock.patch('utils.language_utils.get_available_languages', return_value=["en", "de", "fr"]):
+            TranslatableModelLoader.mark_translation_availability(model, required_fields=["fallback1", "nofallback1"])
         self.assertSetEqual(set(["en"]), set(model.languages))
 
     def test_mark_translation_availability_required_fields_not_given(self):
-        model = MockTranslatableModel(translatable_fields=["title", "content"])
+        model = MockTranslatableModel()
         with mock.patch('utils.language_utils.get_available_languages', return_value=["en", "de", "fr"]):
             TranslatableModelLoader.mark_translation_availability(model)
         self.assertSetEqual(set(["en", "de", "fr"]), set(model.languages))
