@@ -131,3 +131,19 @@ class MakeResourcesCommandTest(BaseTestWithDB):
         filepath = os.path.join(RESOURCE_PATH, "Resource Grid (a4).pdf")
         pdf = PdfFileReader(open(filepath, "rb"))
         self.assertEqual(pdf.getNumPages(), 20)
+
+    def test_makeresources_command_single_resource_existing_folder(self):
+        os.makedirs(os.path.dirname(RESOURCE_PATH))
+        self.test_data.create_resource(
+            "grid",
+            "Grid",
+            "resources/grid.html",
+            "GridResourceGenerator",
+        )
+        management.call_command("makeresources")
+        filepath = os.path.join(RESOURCE_PATH, "Resource Grid (a4).pdf")
+        pdf = PdfFileReader(open(filepath, "rb"))
+        self.assertEqual(pdf.getNumPages(), 1)
+        filepath = os.path.join(RESOURCE_PATH, "Resource Grid (letter).pdf")
+        pdf = PdfFileReader(open(filepath, "rb"))
+        self.assertEqual(pdf.getNumPages(), 1)
