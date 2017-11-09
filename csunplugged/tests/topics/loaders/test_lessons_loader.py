@@ -11,6 +11,7 @@ from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.NoHeadingFoundInMarkdownFileError import NoHeadingFoundInMarkdownFileError
+from utils.errors.InvalidConfigValueError import InvalidConfigValueError
 
 
 class LessonsLoaderTest(BaseTestWithDB):
@@ -680,5 +681,79 @@ class LessonsLoaderTest(BaseTestWithDB):
         )
         self.assertRaises(
             MissingRequiredFieldError,
+            lesson_loader.load
+        )
+
+    def test_lesson_loader_no_classroom_resources(self):
+        config_file = os.path.join(self.loader_name, "basic-config.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        lesson_loader.load()
+
+    def test_lesson_loader_empty_classroom_resources(self):
+        config_file = os.path.join(self.loader_name, "empty-classroom-resources.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        lesson_loader.load()
+
+    def test_lesson_loader_invalid_classroom_resources(self):
+        config_file = os.path.join(self.loader_name, "invalid-classroom-resources.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        self.assertRaises(
+            InvalidConfigValueError,
+            lesson_loader.load
+        )
+
+    def test_lesson_loader_invalid_classroom_resources_item(self):
+        config_file = os.path.join(self.loader_name, "invalid-classroom-resources-item.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        self.assertRaises(
+            InvalidConfigValueError,
+            lesson_loader.load
+        )
+
+    def test_lesson_loader_invalid_classroom_resources_string_too_long(self):
+        config_file = os.path.join(self.loader_name, "invalid-classroom-resources-string-too-long.yaml")
+        lessons_structure = os.path.join(self.test_data.LOADER_ASSET_PATH, config_file)
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        lesson_loader = LessonsLoader(
+            lessons_structure,
+            topic,
+            unit_plan,
+            self.test_data.LOADER_ASSET_PATH
+        )
+        self.assertRaises(
+            InvalidConfigValueError,
             lesson_loader.load
         )
