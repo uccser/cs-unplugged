@@ -11,7 +11,7 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "HOST": "cloud_sql_proxy",
-        "PORT": "5434",
+        "PORT": "5432",
         "NAME": "csunplugged",
         "USER": env("GOOGLE_CLOUD_SQL_DATABASE_USERNAME"),  # noqa: F405
         "PASSWORD": env("GOOGLE_CLOUD_SQL_DATABASE_PASSWORD"),  # noqa: F405
