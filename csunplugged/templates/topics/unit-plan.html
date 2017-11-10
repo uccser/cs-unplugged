@@ -17,18 +17,9 @@
 
 {% block page_heading %}
   <h1 id="{{ unit_plan.slug }}" class="heading-underline"><span class="text-muted">{% trans "Unit plan:" %}</span> {{ unit_plan.name }}</h1>
-  {% if not topic.translation_available %}
-    {% url "topics:topic" topic.slug as parent_url %}
-    {% trans "unit plan" as unit_plan_l10n %}
-    {% trans "topic" as topic_l10n %}
-    {% with model=unit_plan model_type=unit_plan_l10n parent=topic parent_type=topic_l10n parent_url=parent_url %}
-      {% include 'topics/not-available-warning.html' %}
-    {% endwith %}
-  {% endif %}
 {% endblock page_heading %}
 
 {% block left_column_content %}
-  {% if unit_plan.translation_available %}
   {% render_html_field unit_plan.content %}
 
   {% with computational_thinking_links=unit_plan.computational_thinking_links %}
@@ -39,11 +30,9 @@
     <h2 class="heading-underline" id="lessons">{% trans "Lessons" %}</h2>
     {% include "topics/lessons-table.html" %}
   {% endif %}
-  {% endif %}
 {% endblock left_column_content %}
 
 {% block right_column_content %}
-  {% if unit_plan.translation_available %}
   <div id="sticky-sidebar" class="sticky">
     <h2 class="heading-underline">{% trans "Table of contents" %}</h2>
     <ul class="nav nav-pills flex-column" id="scrollspy-table-of-contents">
@@ -65,7 +54,6 @@
       </li>
     </ul>
   </div>
-  {% endif %}
 {% endblock right_column_content %}
 
 {% block scripts %}

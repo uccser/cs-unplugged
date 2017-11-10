@@ -18,51 +18,40 @@
 {% endblock breadcrumbs %}
 
   {% block page_heading %}
-      <h1 id="{{ lesson.slug }}" class="heading-underline">{{ lesson.name }}</h1>
-      {% if not lesson.translation_available %}
-        {% url "topics:unit_plan" topic.slug unit_plan.slug as parent_url %}
-        {% trans "unit plan" as unit_plan_l10n %}
-        {% trans "lesson" as lesson_l10n %}
-        {% with model=lesson model_type=lesson_l10n parent=unit_plan parent_type=unit_plan_l10n parent_url=parent_url %}
-          {% include "topics/not-available-warning.html" %}
-        {% endwith %}
-      {% else %}
-      <ul>
-        <li>{% blocktrans trimmed %}<strong>Duration:</strong> {{ lesson.duration }} minutes{% endblocktrans %}</li>
-        {% for lesson_age in lesson_ages %}
-        <li>
-          {% blocktrans with lower=lesson_age.lower upper=lesson_age.upper number=lesson_age.number trimmed %}
-          <strong>Ages {{ lower }} to {{ upper }}:</strong> Lesson {{ number }}
-          {% endblocktrans %}
-        </li>
-        {% endfor %}
-      </ul>
-    {% endif %}
+    <h1 id="{{ lesson.slug }}" class="heading-underline">{{ lesson.name }}</h1>
+    <ul>
+      <li>{% blocktrans trimmed %}<strong>Duration:</strong> {{ lesson.duration }} minutes{% endblocktrans %}</li>
+      {% for lesson_age in lesson_ages %}
+      <li>
+        {% blocktrans with lower=lesson_age.lower upper=lesson_age.upper number=lesson_age.number trimmed %}
+        <strong>Ages {{ lower }} to {{ upper }}:</strong> Lesson {{ number }}
+        {% endblocktrans %}
+      </li>
+      {% endfor %}
+    </ul>
   {% endblock page_heading %}
 
   {% block left_column_content %}
-    {% if lesson.translation_available %}
-      {% if learning_outcomes %}
-      <h2 class="heading-underline">{% trans "Learning outcomes" %}</h2>
-        <p>{% trans "Students will be able to:" %}</p>
-        <ul>
-          {% for learning_outcome in learning_outcomes %}
-            <li>
-              {{ learning_outcome.text }}<br>
-              {% for area in learning_outcome.curriculum_areas.all %}
-                {% include "topics/curriculum-area-badge.html" %}
-              {% endfor %}
-            </li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-
-      {% render_html_field lesson.content %}
-
-        {% with computational_thinking_links=lesson.computational_thinking_links %}
-          {% include "topics/computational-thinking-links.html" %}
-        {% endwith %}
+    {% if learning_outcomes %}
+    <h2 class="heading-underline">{% trans "Learning outcomes" %}</h2>
+      <p>{% trans "Students will be able to:" %}</p>
+      <ul>
+        {% for learning_outcome in learning_outcomes %}
+          <li>
+            {{ learning_outcome.text }}<br>
+            {% for area in learning_outcome.curriculum_areas.all %}
+              {% include "topics/curriculum-area-badge.html" %}
+            {% endfor %}
+          </li>
+        {% endfor %}
+      </ul>
     {% endif %}
+
+    {% render_html_field lesson.content %}
+
+    {% with computational_thinking_links=lesson.computational_thinking_links %}
+      {% include "topics/computational-thinking-links.html" %}
+    {% endwith %}
   {% endblock left_column_content %}
 
   {% block right_column_content %}

@@ -137,18 +137,6 @@ $rounded-corner-radius: 0.5rem;
   &.unavailable {
     background-color: rgba($black, 0.2);
   }
-  .badge-language-unavailable {
-    margin-right: auto;
-    margin-bottom: auto;
-    margin-top: 0;
-    margin-left: 0;
-  }
-}
-
-.badge-language-unavailable {
-  margin-right: auto;
-  margin-bottom: auto;
-  margin: 0.5em;
 }
 
 @mixin link-box-colour-variant($color) {

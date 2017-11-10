@@ -41,11 +41,6 @@ function update_glossary_modal(data) {
   glossary_modal.attr("data-glossary-term", data.slug);
   $("#glossary-modal-term").text(data.term);
   $("#glossary-modal-definition").html(data.definition);
-  if (data.translated) {
-    $("#glossary-modal-translation-unavailable").css({ "display": "none"});
-  } else {
-    $("#glossary-modal-translation-unavailable").css({ "display": "block"});
-  }
 }
 
 function show_glossary_modal_error(jqXHR, text_status, error_thrown) {
