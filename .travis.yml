@@ -14,100 +14,100 @@ install:
   - sudo docker-compose --version
 jobs:
   include:
-    # - stage: test
-    #   script: ./csu ci test_general
-    # - script: ./csu ci test_resources
-    # - script: ./csu ci test_management
-    # - script: ./csu ci test_backwards
-    #   if: type = pull_request
-    # - script: ./csu ci style
-    # - script: ./csu ci docs
+    - stage: test
+      script: ./csu ci test_general
+    - script: ./csu ci test_resources
+    - script: ./csu ci test_management
+    - script: ./csu ci test_backwards
+      if: type = pull_request
+    - script: ./csu ci style
+    - script: ./csu ci docs
     - stage: develop deploy
       script: skip
-    #   deploy:
-    #     - provider: script
-    #       script: bash ./infrastructure/dev-deploy/deploy-app.sh
-    #       skip_cleanup: true
-    #       on:
-    #         branch: develop
-    # - script: skip
-    #   deploy:
-    #     - provider: script
-    #       script: bash ./infrastructure/dev-deploy/deploy-resources-1.sh
-    #       skip_cleanup: true
-    #       on:
-    #         branch: develop
-    # - script: skip
-    #   deploy:
-    #     - provider: script
-    #       script: bash ./infrastructure/dev-deploy/deploy-resources-2.sh
-    #       skip_cleanup: true
-    #       on:
-    #         branch: develop
-    # - script: skip
-    #   deploy:
-    #     - provider: script
-    #       script: bash ./infrastructure/dev-deploy/deploy-resources-3.sh
-    #       skip_cleanup: true
-    #       on:
-    #         branch: develop
-    # - script: skip
-    #   deploy:
-    #     - provider: script
-    #       script: bash ./infrastructure/dev-deploy/deploy-static-files.sh
-    #       skip_cleanup: true
-    #       on:
-    #         branch: develop
-    # - script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/dev-deploy/deploy-app.sh
+          skip_cleanup: true
+          on:
+            branch: develop
+    - script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/dev-deploy/deploy-resources-1.sh
+          skip_cleanup: true
+          on:
+            branch: develop
+    - script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/dev-deploy/deploy-resources-2.sh
+          skip_cleanup: true
+          on:
+            branch: develop
+    - script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/dev-deploy/deploy-resources-3.sh
+          skip_cleanup: true
+          on:
+            branch: develop
+    - script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/dev-deploy/deploy-static-files.sh
+          skip_cleanup: true
+          on:
+            branch: develop
+    - script: skip
       deploy:
         - provider: script
           script: bash ./infrastructure/dev-deploy/update-database.sh
           skip_cleanup: true
           on:
-            branch: issue/651-csu-for-osx
-    # - stage: production deploy
-    #   script: skip
-    #   deploy:
-    #     - provider: script
-    #       script: bash ./infrastructure/prod-deploy/deploy-app.sh
-    #       skip_cleanup: true
-    #       on:
-    #         branch: master
-    # - script: skip
-    #   deploy:
-    #     - provider: script
-    #       script: bash ./infrastructure/prod-deploy/deploy-resources-1.sh
-    #       skip_cleanup: true
-    #       on:
-    #         branch: master
-    # - script: skip
-    #   deploy:
-    #     - provider: script
-    #       script: bash ./infrastructure/prod-deploy/deploy-resources-2.sh
-    #       skip_cleanup: true
-    #       on:
-    #         branch: master
-    # - script: skip
-    #   deploy:
-    #     - provider: script
-    #       script: bash ./infrastructure/prod-deploy/deploy-resources-3.sh
-    #       skip_cleanup: true
-    #       on:
-    #         branch: master
-    # - script: skip
-    #   deploy:
-    #     - provider: script
-    #       script: bash ./infrastructure/prod-deploy/deploy-static-files.sh
-    #       skip_cleanup: true
-    #       on:
-    #         branch: master
-    # - script: skip
-    #   deploy:
-    #     - provider: script
-    #       script: bash ./infrastructure/prod-deploy/update-database.sh
-    #       skip_cleanup: true
-    #       on:
-    #         branch: master
+            branch: develop
+    - stage: production deploy
+      script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/prod-deploy/deploy-app.sh
+          skip_cleanup: true
+          on:
+            branch: master
+    - script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/prod-deploy/deploy-resources-1.sh
+          skip_cleanup: true
+          on:
+            branch: master
+    - script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/prod-deploy/deploy-resources-2.sh
+          skip_cleanup: true
+          on:
+            branch: master
+    - script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/prod-deploy/deploy-resources-3.sh
+          skip_cleanup: true
+          on:
+            branch: master
+    - script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/prod-deploy/deploy-static-files.sh
+          skip_cleanup: true
+          on:
+            branch: master
+    - script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/prod-deploy/update-database.sh
+          skip_cleanup: true
+          on:
+            branch: master
 notifications:
   email: false
   slack:
@@ -117,6 +117,6 @@ notifications:
 stages:
   - name: test
   - name: develop deploy
-    if: branch = issue/651-csu-for-osx
+    if: branch = develop
   - name: production deploy
     if: branch = master
