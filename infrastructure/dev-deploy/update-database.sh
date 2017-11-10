@@ -8,7 +8,6 @@ mv ./infrastructure/cloud-sql-proxy/docker-compose.yml ./docker-compose.yml
 
 # Load environment variables.
 source ./load-dev-deploy-envs.sh
-export GOOGLE_AUTH_JSON="$(cat ./continuous-deployment-dev.json)"
 
 # Start the system and run the migrate and updatedata system commands.
 docker-compose up -d
