@@ -1,0 +1,55 @@
+{% extends "resources/resource.html" %}
+
+{% block description %}
+  <p>
+    This resource allows students to create an image by colouring in grids of pixels.
+  </p>
+{% endblock description %}
+
+{% block generation_form %}
+<fieldset class="form-group">
+  <legend>Colouring type</legend>
+  <div class="form-check">
+    <label class="form-check-label">
+      <input type="radio" class="form-check-input" name="method" value="black-white" checked="checked">
+      Black and White (2 possible binary values)
+    </label>
+  </div>
+  <div class="form-check">
+    <label class="form-check-label">
+      <input type="radio" class="form-check-input" name="method" value="run-length-encoding">
+      Black and White (2 possible binary values) in Run Length Encoding
+    </label>
+  </div>
+  <div class="form-check">
+    <label class="form-check-label">
+      <input type="radio" class="form-check-input" name="method" value="greyscale">
+      Greyscale (4 possible binary values)
+    </label>
+  </div>
+  <div class="form-check">
+    <label class="form-check-label">
+      <input type="radio" class="form-check-input" name="method" value="colour">
+      Colour (8 possible binary values)
+    </label>
+  </div>
+</fieldset>
+
+<fieldset class="form-group">
+  <legend>Image</legend>
+  <select class="form-control" id="image-select" name="image">
+    <option value="fish">Fish - 6 pages</option>
+    <option value="hot-air-balloon">Hot air balloon - 8 pages</option>
+    <option value="boat">Boat - 9 pages</option>
+    <option value="parrots">Parrots - 32 pages</option>
+  </select>
+</fieldset>
+{% endblock generation_form %}
+
+{% block right_column_content %}
+  {% if thumbnail %}
+    <h2>Preview</h2>
+    {% load static %}
+    <img id="resource-thumbnail" class="img-thumbnail img-pixel img-200">
+  {% endif %}
+{% endblock right_column_content %}
