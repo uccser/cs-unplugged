@@ -1,5 +1,11 @@
 version: '3'
 services:
+  cloud_sql_proxy:
+    image: gcr.io/cloudsql-docker/gce-proxy:1.11
+    volumes:
+      - .:/cs-unplugged
+    command: /cloud_sql_proxy -instances=${GOOGLE_CLOUD_SQL_CONNECTION_NAME}=tcp:0.0.0.0:5432 -credential_file=/cs-unplugged/continuous-deployment-dev.json
+
   django:
     build:
       context: .
@@ -13,7 +19,8 @@ services:
       - GOOGLE_CLOUD_SQL_DATABASE_USERNAME=${GOOGLE_CLOUD_SQL_DATABASE_USERNAME}
       - GOOGLE_CLOUD_SQL_DATABASE_PASSWORD=${GOOGLE_CLOUD_SQL_DATABASE_PASSWORD}
       - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}
-    network_mode: host
+    depends_on:
+      - cloud_sql_proxy
 
   nginx:
     build:
@@ -24,4 +31,3 @@ services:
       - /app/node_modules
     depends_on:
       - django
-    network_mode: host
