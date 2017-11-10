@@ -64,7 +64,7 @@ jobs:
           script: bash ./infrastructure/dev-deploy/update-database.sh
           skip_cleanup: true
           on:
-            branch: develop
+            branch: issue/651-csu-for-osx
     # - stage: production deploy
     #   script: skip
     #   deploy:
