@@ -55,60 +55,58 @@
   {% endblock left_column_content %}
 
   {% block right_column_content %}
-    {% if lesson.translation_available %}
-      {% if generated_resources %}
+    {% if generated_resources %}
       <h2 class="heading-underline">{% trans "CS Unplugged resources" %}</h2>
-        <div class="link-box-container">
-          {% for generated_resource in generated_resources %}
-            <a href="{% url 'resources:resource' generated_resource.slug %}" class="link-box">
-              <img class="border-thin" src="{% static generated_resource.thumbnail %}" alt="Generic placeholder image" style="max-width: 5rem;">
-              <strong>{{ generated_resource.name }}</strong>
-              {% if generated_resource.description %}
-                <p class="mb-0">{{ generated_resource.description }}</p>
-              {% endif %}
-            </a>
-          {% endfor %}
-        </div>
-      {% endif %}
-
-      {% if classroom_resources %}
-      <h2 class="heading-underline mt-2">{% trans "Classroom resources" %}</h2>
-        <ul>
-          {% for classroom_resource in classroom_resources.all %}
-            <li>{{ classroom_resource.description }}</li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-
-      {% if programming_challenges %}
-      <h2 class="heading-underline mt-2">{% trans "Programming challenges" %}</h2>
-        <p>
-          <a href="{% url 'topics:programming_challenges_list' topic.slug unit_plan.slug lesson.slug %}">
-            {% trans "View related programming challenges" %}
+      <div class="link-box-container">
+        {% for generated_resource in generated_resources %}
+          <a href="{% url 'resources:resource' generated_resource.slug %}" class="link-box">
+            <img class="border-thin" src="{% static generated_resource.thumbnail %}" alt="Generic placeholder image" style="max-width: 5rem;">
+            <strong>{{ generated_resource.name }}</strong>
+            {% if generated_resource.description %}
+              <p class="mb-0">{{ generated_resource.description }}</p>
+            {% endif %}
           </a>
-        </p>
-      {% endif %}
-
-      <div id="sticky-sidebar" class="sticky">
-        <h2 class="heading-underline mt-2">{% trans "Table of contents" %}</h2>
-        <ul class="nav nav-pills flex-column" id="scrollspy-table-of-contents">
-          <li class="nav-item">
-            <a class="nav-link" href="#{{ lesson.slug }}">{{ lesson.name }}</a>
-          </li>
-          {% for heading_node in lesson.heading_tree %}
-            <li class="nav-item">
-              <a class="nav-link" href="#{{ heading_node.slug }}">{{ heading_node.text }}</a>
-            </li>
-          {% endfor %}
-
-          {% if lesson.computational_thinking_links %}
-            <li class="nav-item">
-              <a class="nav-link" href="#ct-links">{% trans "Computational Thinking" %}</a>
-            </li>
-          {% endif %}
-        </ul>
+        {% endfor %}
       </div>
     {% endif %}
+
+    {% if classroom_resources %}
+    <h2 class="heading-underline mt-2">{% trans "Classroom resources" %}</h2>
+      <ul>
+        {% for classroom_resource in classroom_resources.all %}
+          <li>{{ classroom_resource.description }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if programming_challenges %}
+    <h2 class="heading-underline mt-2">{% trans "Programming challenges" %}</h2>
+      <p>
+        <a href="{% url 'topics:programming_challenges_list' topic.slug unit_plan.slug lesson.slug %}">
+          {% trans "View related programming challenges" %}
+        </a>
+      </p>
+    {% endif %}
+
+    <div id="sticky-sidebar" class="sticky">
+      <h2 class="heading-underline mt-2">{% trans "Table of contents" %}</h2>
+      <ul class="nav nav-pills flex-column" id="scrollspy-table-of-contents">
+        <li class="nav-item">
+          <a class="nav-link" href="#{{ lesson.slug }}">{{ lesson.name }}</a>
+        </li>
+        {% for heading_node in lesson.heading_tree %}
+          <li class="nav-item">
+            <a class="nav-link" href="#{{ heading_node.slug }}">{{ heading_node.text }}</a>
+          </li>
+        {% endfor %}
+
+        {% if lesson.computational_thinking_links %}
+          <li class="nav-item">
+            <a class="nav-link" href="#ct-links">{% trans "Computational Thinking" %}</a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
   {% endblock right_column_content %}
 
 {% block scripts %}

@@ -134,9 +134,6 @@ $rounded-corner-radius: 0.5rem;
   &:focus {
     text-decoration: none;
   }
-  &.unavailable {
-    background-color: rgba($black, 0.2);
-  }
 }
 
 @mixin link-box-colour-variant($color) {
