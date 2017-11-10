@@ -69,4 +69,4 @@ class MakeResourcesCommandTest(BaseTestWithDB):
         management.call_command("makeresources")
         filepath = self.RESOURCE_PATH.format("Resource Grid (a4).pdf")
         pdf = PdfFileReader(open(filepath, "rb"))
-        self.assertEqual(pdf.getNumPages(), 30)
+        self.assertEqual(pdf.getNumPages(), 20)
