@@ -13,7 +13,6 @@ services:
       - GOOGLE_CLOUD_SQL_DATABASE_USERNAME=${GOOGLE_CLOUD_SQL_DATABASE_USERNAME}
       - GOOGLE_CLOUD_SQL_DATABASE_PASSWORD=${GOOGLE_CLOUD_SQL_DATABASE_PASSWORD}
       - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}
-    network_mode: host
 
   nginx:
     build:
@@ -24,4 +23,10 @@ services:
       - /app/node_modules
     depends_on:
       - django
-    network_mode: host
+
+  cloud-sql-proxy:
+    restart: always
+    image: syoya/cloudsql-proxy:1.0.1
+    environment:
+      - GOOGLE_AUTH_JSON=${GOOGLE_AUTH_JSON}
+      - INSTANCE_NAME=${GOOGLE_CLOUD_SQL_CONNECTION_NAME}
