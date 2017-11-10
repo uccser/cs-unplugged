@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-30 00:19+0000\n"
+"POT-Creation-Date: 2017-11-10 02:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,67 +21,67 @@ msgstr ""
 msgid "CS Unplugged"
 msgstr ""
 
-#: templates/base.html:64 templates/base.html:127 templates/topics/index.html:8
+#: templates/base.html:48 templates/base.html:111 templates/topics/index.html:8
 #: templates/topics/index.html:17
 msgid "Topics"
 msgstr ""
 
-#: templates/base.html:65 templates/base.html:132
+#: templates/base.html:49 templates/base.html:116
 #: templates/general/index.html:60 templates/resources/index.html:8
-#: templates/resources/index.html:17 templates/topics/topic.html:70
-#: templates/topics/topic.html:121
+#: templates/resources/index.html:17 templates/topics/topic.html:56
+#: templates/topics/topic.html:102
 msgid "Resources"
 msgstr ""
 
-#: templates/base.html:66 templates/base.html:122
+#: templates/base.html:50 templates/base.html:106
 #: templates/general/about.html:6 templates/general/base.html:9
 msgid "About"
 msgstr ""
 
-#: templates/base.html:118
+#: templates/base.html:102
 msgid "Useful Links"
 msgstr ""
 
-#: templates/base.html:138
+#: templates/base.html:122
 msgid "Community"
 msgstr ""
 
-#: templates/base.html:142
+#: templates/base.html:126
 msgid "Twitter"
 msgstr ""
 
-#: templates/base.html:147
+#: templates/base.html:131
 msgid "YouTube"
 msgstr ""
 
-#: templates/base.html:152
+#: templates/base.html:136
 msgid "GitHub"
 msgstr ""
 
-#: templates/base.html:158
+#: templates/base.html:142
 msgid "Help"
 msgstr ""
 
-#: templates/base.html:162 templates/topics/glossary.html:8
+#: templates/base.html:146 templates/topics/glossary.html:8
 #: templates/topics/glossary.html:18
 msgid "Glossary"
 msgstr ""
 
-#: templates/base.html:167
+#: templates/base.html:151
 msgid "Feedback"
 msgstr ""
 
-#: templates/base.html:172 templates/general/contact.html:7
+#: templates/base.html:156 templates/general/contact.html:7
 msgid "Contact"
 msgstr ""
 
-#: templates/base.html:183
+#: templates/base.html:167
 msgid ""
 "Looking for something for high schools? Check out the <a href=\"http://"
 "csfieldguide.org.nz/\">Computer Science Field Guide</a>."
 msgstr ""
 
-#: templates/base.html:191
+#: templates/base.html:175
 msgid ""
 "The CS Unplugged material is open source on <a href=\"https://github.com/"
 "uccser/cs-unplugged\">GitHub</a>, and this website's content is shared under "
@@ -93,7 +93,7 @@ msgid ""
 "Zealand."
 msgstr ""
 
-#: templates/base.html:218
+#: templates/base.html:197
 msgid "Close"
 msgstr ""
 
@@ -565,7 +565,7 @@ msgstr ""
 #: templates/general/index.html:57
 #: templates/topics/all-curriculum-integration-list.html:8
 #: templates/topics/all-curriculum-integration-list.html:18
-#: templates/topics/topic.html:65
+#: templates/topics/topic.html:51
 msgid "Curriculum Integrations"
 msgstr ""
 
@@ -847,9 +847,9 @@ msgstr ""
 #: templates/resources/binary-windows.html:33
 #: templates/resources/searching-cards.html:55
 #: templates/resources/treasure-hunt.html:39
-#: templates/topics/all-curriculum-integration-list.html:58
-#: templates/topics/curriculum-integrations-table.html:32
-#: templates/topics/lessons-table.html:42
+#: templates/topics/all-curriculum-integration-list.html:54
+#: templates/topics/curriculum-integrations-table.html:28
+#: templates/topics/lessons-table.html:36
 msgid "Yes"
 msgstr ""
 
@@ -858,9 +858,9 @@ msgstr ""
 #: templates/resources/binary-windows.html:36
 #: templates/resources/searching-cards.html:61
 #: templates/resources/treasure-hunt.html:45
-#: templates/topics/all-curriculum-integration-list.html:61
-#: templates/topics/curriculum-integrations-table.html:35
-#: templates/topics/lessons-table.html:46
+#: templates/topics/all-curriculum-integration-list.html:57
+#: templates/topics/curriculum-integrations-table.html:31
+#: templates/topics/lessons-table.html:40
 msgid "No"
 msgstr ""
 
@@ -1057,32 +1057,33 @@ msgid "Generate Resource"
 msgstr ""
 
 #: templates/resources/resource.html:60
-msgid "The download of this resource includes 30 unique copies."
+#, python-format
+msgid "The download of this resource includes %(copies_amount)s unique copies."
 msgstr ""
 
-#: templates/resources/resource.html:71
-msgid "Example"
+#: templates/resources/resource.html:73
+msgid "Preview"
 msgstr ""
 
-#: templates/resources/resource.html:79
+#: templates/resources/resource.html:81
 msgid "Related Lessons"
 msgstr ""
 
-#: templates/resources/resource.html:84
+#: templates/resources/resource.html:86
 #: templates/topics/all-curriculum-integration-list.html:28
 msgid "Topic"
 msgstr ""
 
-#: templates/resources/resource.html:85
+#: templates/resources/resource.html:87
 msgid "Ages"
 msgstr ""
 
-#: templates/resources/resource.html:86
+#: templates/resources/resource.html:88
 #: templates/topics/programming-challenges-table.html:8
 msgid "Number"
 msgstr ""
 
-#: templates/resources/resource.html:87
+#: templates/resources/resource.html:89
 msgid "Lesson"
 msgstr ""
 
@@ -1300,31 +1301,14 @@ msgid ""
 "href=\"%(ct_url)s\">see our notes about computational thinking</a>."
 msgstr ""
 
-#: templates/topics/curriculum-integration.html:31
-#: templates/topics/programming-challenge.html:26
-#: templates/topics/topic.html:21 templates/topics/unit-plan.html:23
-msgid "topic"
-msgstr ""
-
-#: templates/topics/curriculum-integration.html:32
-msgid "curriculum integration"
-msgstr ""
-
-#: templates/topics/curriculum-integration.html:49
+#: templates/topics/curriculum-integration.html:38
 msgid "Heads up!"
 msgstr ""
 
-#: templates/topics/curriculum-integration.html:50
+#: templates/topics/curriculum-integration.html:39
 msgid ""
 "To do this activity it's expected you understand the content covered in the "
 "following:"
-msgstr ""
-
-#: templates/topics/glossary.html:30
-#, python-format
-msgid ""
-"The following glossary terms are not yet available in %(language)s. Sorry "
-"about that!"
 msgstr ""
 
 #: templates/topics/index.html:22
@@ -1333,87 +1317,57 @@ msgid ""
 "integrations, and programming challenges."
 msgstr ""
 
-#: templates/topics/index.html:44
+#: templates/topics/index.html:39
 msgid "No topics are available."
 msgstr ""
 
-#: templates/topics/lesson.html:24 templates/topics/unit-plan.html:22
-msgid "unit plan"
-msgstr ""
-
-#: templates/topics/lesson.html:25
-msgid "lesson"
-msgstr ""
-
-#: templates/topics/lesson.html:31
+#: templates/topics/lesson.html:23
 #, python-format
 msgid "<strong>Duration:</strong> %(lesson.duration)s minutes"
 msgstr ""
 
-#: templates/topics/lesson.html:34
+#: templates/topics/lesson.html:26
 #, python-format
 msgid "<strong>Ages %(lower)s to %(upper)s:</strong> Lesson %(number)s"
 msgstr ""
 
-#: templates/topics/lesson.html:46
-#: templates/topics/programming-challenge.html:71
+#: templates/topics/lesson.html:36
+#: templates/topics/programming-challenge.html:59
 msgid "Learning outcomes"
 msgstr ""
 
-#: templates/topics/lesson.html:47
+#: templates/topics/lesson.html:37
 msgid "Students will be able to:"
 msgstr ""
 
-#: templates/topics/lesson.html:71
+#: templates/topics/lesson.html:60
 msgid "CS Unplugged resources"
 msgstr ""
 
-#: templates/topics/lesson.html:86
+#: templates/topics/lesson.html:75
 msgid "Classroom resources"
 msgstr ""
 
-#: templates/topics/lesson.html:95 templates/topics/lessons-table.html:14
+#: templates/topics/lesson.html:84 templates/topics/lessons-table.html:12
 msgid "Programming challenges"
 msgstr ""
 
-#: templates/topics/lesson.html:98
+#: templates/topics/lesson.html:87
 msgid "View related programming challenges"
 msgstr ""
 
-#: templates/topics/lesson.html:104 templates/topics/topic.html:99
-#: templates/topics/unit-plan.html:48
+#: templates/topics/lesson.html:93 templates/topics/topic.html:83
+#: templates/topics/unit-plan.html:37
 msgid "Table of contents"
 msgstr ""
 
-#: templates/topics/lesson.html:117 templates/topics/unit-plan.html:60
+#: templates/topics/lesson.html:106 templates/topics/unit-plan.html:49
 msgid "Computational Thinking"
 msgstr ""
 
-#: templates/topics/lessons-table.html:10
+#: templates/topics/lessons-table.html:8
 #, python-format
 msgid "Ages %(lower)s to %(upper)s"
-msgstr ""
-
-#: templates/topics/not-available-badge.html:5
-#, python-format
-msgid "Not available in %(language)s"
-msgstr ""
-
-#: templates/topics/not-available-warning.html:6
-#, python-format
-msgid ""
-"<h4>Sorry! This %(model_type)s is not yet available in %(language)s.</h4> "
-"<p>If you're totally awesome and can speak multiple languages, then feel "
-"free to check it out in...</p>"
-msgstr ""
-
-#: templates/topics/not-available-warning.html:20
-msgid "or"
-msgstr ""
-
-#: templates/topics/not-available-warning.html:22
-#, python-format
-msgid "Return to the %(parent_type)s"
 msgstr ""
 
 #: templates/topics/programming-challenge-language-solution.html:10
@@ -1422,35 +1376,30 @@ msgid "%(name)s solution"
 msgstr ""
 
 #: templates/topics/programming-challenge-language-solution.html:28
-#: templates/topics/programming-challenge-language-solution.html:32
 msgid "solution"
 msgstr ""
 
-#: templates/topics/programming-challenge-language-solution.html:33
-msgid "challenge"
-msgstr ""
-
-#: templates/topics/programming-challenge-language-solution.html:43
+#: templates/topics/programming-challenge-language-solution.html:34
 msgid ""
 "<strong>Heads Up!</strong> If you are ready to compare your programming to "
 "ours or are wanting to have a look at how we solved it, click 'View "
 "solution' below to view at least one way to write this program."
 msgstr ""
 
-#: templates/topics/programming-challenge-language-solution.html:50
+#: templates/topics/programming-challenge-language-solution.html:41
 msgid "View solution"
 msgstr ""
 
-#: templates/topics/programming-challenge-language-solution.html:54
+#: templates/topics/programming-challenge-language-solution.html:45
 msgid "This is just one of many possible solutions:"
 msgstr ""
 
-#: templates/topics/programming-challenge-language-solution.html:61
+#: templates/topics/programming-challenge-language-solution.html:52
 msgid "Back to programming challenge"
 msgstr ""
 
-#: templates/topics/programming-challenge-language-solution.html:72
-#: templates/topics/programming-challenge.html:146
+#: templates/topics/programming-challenge-language-solution.html:61
+#: templates/topics/programming-challenge.html:123
 msgid "Extra Challenge"
 msgstr ""
 
@@ -1465,51 +1414,47 @@ msgstr ""
 msgid "No programming challenges for %(topic)s."
 msgstr ""
 
-#: templates/topics/programming-challenge.html:24
-msgid "programming challenge"
-msgstr ""
-
-#: templates/topics/programming-challenge.html:32
+#: templates/topics/programming-challenge.html:25
 msgid "Challenge Level:"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:42
+#: templates/topics/programming-challenge.html:33
 msgid "This programming challenge is linked to the following lessons:"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:48
+#: templates/topics/programming-challenge.html:39
 #, python-format
 msgid "Challenge %(set_num)s.%(chal_num)s for %(name)s"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:53
+#: templates/topics/programming-challenge.html:44
 #, python-format
 msgid "%(lower)s to %(upper)s"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:57
+#: templates/topics/programming-challenge.html:48
 msgid "and"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:84
+#: templates/topics/programming-challenge.html:72
 #, python-format
 msgid "No learning outcomes listed for %(programming_challenge.name)s."
 msgstr ""
 
-#: templates/topics/programming-challenge.html:90
+#: templates/topics/programming-challenge.html:78
 #: templates/topics/programming-challenges-table.html:11
 msgid "Languages"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:111
+#: templates/topics/programming-challenge.html:91
 msgid "What it should look like"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:118
+#: templates/topics/programming-challenge.html:98
 msgid "Hints"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:130
+#: templates/topics/programming-challenge.html:110
 #, python-format
 msgid "Show %(implementation.language.name)s solution"
 msgstr ""
@@ -1527,51 +1472,37 @@ msgstr ""
 msgid "%(topic.name)s other resources"
 msgstr ""
 
-#: templates/topics/topic-other-resources.html:26
-#: templates/topics/topic.html:126
-msgid "Other resources"
-msgstr ""
-
-#: templates/topics/topic-other-resources.html:31
-msgid ""
-"Whoops! We couldn't find any information on other resources for this topic."
-msgstr ""
-
-#: templates/topics/topic-other-resources.html:34
-msgid "Return to the topic"
-msgstr ""
-
-#: templates/topics/topic.html:22
-msgid "list of topics"
-msgstr ""
-
-#: templates/topics/topic.html:43 templates/topics/unit-plan.html:19
+#: templates/topics/topic.html:29 templates/topics/unit-plan.html:19
 msgid "Unit plan:"
 msgstr ""
 
-#: templates/topics/topic.html:50
+#: templates/topics/topic.html:36
 msgid "or jump straight to a lesson of the unit:"
 msgstr ""
 
-#: templates/topics/topic.html:72
+#: templates/topics/topic.html:58
 #, python-format
 msgid ""
 "The following resources are used in %(name)s lessons, and can be accessed "
 "here (and also on each lesson page)."
 msgstr ""
 
-#: templates/topics/topic.html:86
+#: templates/topics/topic.html:72
 msgid "Looking for more?"
 msgstr ""
 
-#: templates/topics/topic.html:89
+#: templates/topics/topic.html:75
 msgid "Click here for other resources"
 msgstr ""
 
-#: templates/topics/topic.html:116
+#: templates/topics/topic.html:97
 msgid "Curriculum integrations"
 msgstr ""
 
-#: templates/topics/unit-plan.html:39 templates/topics/unit-plan.html:64
+#: templates/topics/topic.html:107
+msgid "Other resources"
+msgstr ""
+
+#: templates/topics/unit-plan.html:30 templates/topics/unit-plan.html:53
 msgid "Lessons"
 msgstr ""
