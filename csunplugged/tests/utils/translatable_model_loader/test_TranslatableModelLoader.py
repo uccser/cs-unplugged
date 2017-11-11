@@ -1,16 +1,22 @@
 """Test class for TranslatableModelLoader."""
 
-from django.test import SimpleTestCase
+import imp
+from unittest import mock
+
+from modeltranslation import settings as mt_settings
+from modeltranslation.translator import translator, TranslationOptions
+
 from django.db import models
+from django.test import SimpleTestCase
+from django.utils import translation
+
 from utils.TranslatableModelLoader import TranslatableModelLoader
 from utils.TranslatableModel import TranslatableModel
 from utils.errors.MissingRequiredModelsError import MissingRequiredModelsError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.CouldNotFindYAMLFileError import CouldNotFindYAMLFileError
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
-from django.utils import translation
-from unittest import mock
-from modeltranslation.translator import translator, TranslationOptions
+from utils.language_utils import get_available_languages
 
 
 class MockTranslatableModel(TranslatableModel):
@@ -39,9 +45,6 @@ class MockTranslatableModelTranslationOptions(TranslationOptions):
     }
 
 
-translator.register(MockTranslatableModel, MockTranslatableModelTranslationOptions)
-
-
 class TranslatableModelLoaderTest(SimpleTestCase):
     """Test class for TranslatableModelLoader."""
 
@@ -49,7 +52,14 @@ class TranslatableModelLoaderTest(SimpleTestCase):
         super().__init__(*args, **kwargs)
         self.base_path = "tests/utils/translatable_model_loader/assets"
 
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        imp.reload(mt_settings)  # Let modeltranslation pick up any overriden settings
+        translator.register(MockTranslatableModel, MockTranslatableModelTranslationOptions)
+
     def test_get_yaml_translations_english(self):
+
         yaml_file = "basic.yaml"
         loader = TranslatableModelLoader(base_path=self.base_path)
         translations = loader.get_yaml_translations(yaml_file)
@@ -213,8 +223,7 @@ class TranslatableModelLoaderTest(SimpleTestCase):
         with translation.override("de"):
             model.fallback1 = "german value 1"
             model.nofallback1 = "german value 2"
-        with mock.patch('utils.language_utils.get_available_languages', return_value=["en", "de", "fr"]):
-            TranslatableModelLoader.mark_translation_availability(model, required_fields=["fallback1", "nofallback1"])
+        TranslatableModelLoader.mark_translation_availability(model, required_fields=["fallback1", "nofallback1"])
         self.assertSetEqual(set(["en", "de"]), set(model.languages))
 
     def test_mark_translation_availability_required_fallback_field_missing(self):
@@ -224,8 +233,7 @@ class TranslatableModelLoaderTest(SimpleTestCase):
         with translation.override("de"):
             # Don't populate the field "fallback1" which has fallback enabled
             model.nofallback1 = "german value 2"
-        with mock.patch('utils.language_utils.get_available_languages', return_value=["en", "de", "fr"]):
-            TranslatableModelLoader.mark_translation_availability(model, required_fields=["fallback1", "nofallback1"])
+        TranslatableModelLoader.mark_translation_availability(model, required_fields=["fallback1", "nofallback1"])
         self.assertSetEqual(set(["en"]), set(model.languages))
 
     def test_mark_translation_availability_required_no_fallback_field_missing(self):
@@ -235,20 +243,18 @@ class TranslatableModelLoaderTest(SimpleTestCase):
         with translation.override("de"):
             # Don't populate the field "nofallback1" which does not have fallback enabled
             model.fallback1 = "german value 1"
-        with mock.patch('utils.language_utils.get_available_languages', return_value=["en", "de", "fr"]):
-            TranslatableModelLoader.mark_translation_availability(model, required_fields=["fallback1", "nofallback1"])
+        TranslatableModelLoader.mark_translation_availability(model, required_fields=["fallback1", "nofallback1"])
         self.assertSetEqual(set(["en"]), set(model.languages))
 
     def test_mark_translation_availability_required_fields_not_given(self):
         model = MockTranslatableModel()
         with mock.patch('utils.language_utils.get_available_languages', return_value=["en", "de", "fr"]):
             TranslatableModelLoader.mark_translation_availability(model)
-        self.assertSetEqual(set(["en", "de", "fr"]), set(model.languages))
+        self.assertSetEqual(set(get_available_languages()), set(model.languages))
 
     def test_get_blank_translation_dictionary(self):
-        with mock.patch('utils.language_utils.get_available_languages', return_value=["en", "de", "fr"]):
-            translation_dict = TranslatableModelLoader.get_blank_translation_dictionary()
-            self.assertSetEqual(set(["en", "de", "fr"]), set(translation_dict.keys()))
-            self.assertDictEqual(translation_dict["en"], {})
-            # Check to make sure it's not a dictionary of references to the same dictionary
-            self.assertFalse(translation_dict["en"] is translation_dict["de"])
+        translation_dict = TranslatableModelLoader.get_blank_translation_dictionary()
+        self.assertSetEqual(set(get_available_languages()), set(translation_dict.keys()))
+        self.assertDictEqual(translation_dict["en"], {})
+        # Check to make sure it's not a dictionary of references to the same dictionary
+        self.assertFalse(translation_dict["en"] is translation_dict["de"])
