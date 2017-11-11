@@ -219,4 +219,4 @@ AUTH_PASSWORD_VALIDATORS = [
 # ------------------------------------------------------------------------------
 DJANGO_PRODUCTION = env.bool("DJANGO_PRODUCTION")
 RESOURCE_COPY_AMOUNT = 20
-MODELTRANSLATION_CUSTOM_FIELDS = ('JSONField',)
+MODELTRANSLATION_CUSTOM_FIELDS = ("JSONField",)

@@ -59,7 +59,7 @@ class AgeGroupsLoader(TranslatableModelLoader):
                 ages=(int(group_min_age), int(group_max_age)),
             )
             self.populate_translations(age_group, translations)
-            self.mark_translation_availability(age_group, required_fields=['description'])
+            self.mark_translation_availability(age_group, required_fields=["description"])
             age_group.save()
 
             self.log("Added age group: {}".format(age_group.__str__()))

@@ -69,8 +69,8 @@ class ProgrammingChallengesLoader(TranslatableModelLoader):
             )
 
             for language, content in content_translations.items():
-                challenge_translations[language]['content'] = content.html_string
-                challenge_translations[language]['name'] = content.title
+                challenge_translations[language]["content"] = content.html_string
+                challenge_translations[language]["name"] = content.title
 
             challenge_extra_challenge_file = challenge_structure.get("extra-challenge", None)
             if challenge_extra_challenge_file:
@@ -79,7 +79,7 @@ class ProgrammingChallengesLoader(TranslatableModelLoader):
                     heading_required=False,
                 )
                 for language, content in extra_challenge_translations.items():
-                    challenge_translations[language]['extra_challenge'] = content.html_string
+                    challenge_translations[language]["extra_challenge"] = content.html_string
 
             try:
                 difficulty_level = ProgrammingChallengeDifficulty.objects.get(
@@ -99,7 +99,7 @@ class ProgrammingChallengesLoader(TranslatableModelLoader):
                 difficulty=difficulty_level
             )
             self.populate_translations(programming_challenge, challenge_translations)
-            self.mark_translation_availability(programming_challenge, required_fields=['name', 'content'])
+            self.mark_translation_availability(programming_challenge, required_fields=["name", "content"])
 
             programming_challenge.save()
 
@@ -133,26 +133,26 @@ class ProgrammingChallengesLoader(TranslatableModelLoader):
                 )
 
                 expected_result_translations = self.get_markdown_translations(
-                    filename_template.format('expected'),
+                    filename_template.format("expected"),
                     heading_required=False
                 )
                 for language, content in expected_result_translations.items():
-                    implementation_translations[language]['expected_result'] = content.html_string
+                    implementation_translations[language]["expected_result"] = content.html_string
 
                 solution_translations = self.get_markdown_translations(
-                    filename_template.format('solution'),
+                    filename_template.format("solution"),
                     heading_required=False
                 )
                 for language, content in solution_translations.items():
-                    implementation_translations[language]['solution'] = content.html_string
+                    implementation_translations[language]["solution"] = content.html_string
 
                 hints_translations = self.get_markdown_translations(
-                    filename_template.format('hints'),
+                    filename_template.format("hints"),
                     heading_required=False,
                     required=False
                 )
                 for language, content in hints_translations.items():
-                    implementation_translations[language]['hints'] = content.html_string
+                    implementation_translations[language]["hints"] = content.html_string
 
                 implementation = ProgrammingChallengeImplementation(
                     language=prog_language_object,
@@ -161,7 +161,7 @@ class ProgrammingChallengesLoader(TranslatableModelLoader):
                 )
 
                 self.populate_translations(implementation, implementation_translations)
-                self.mark_translation_availability(implementation, required_fields=['solution', 'expected_result'])
+                self.mark_translation_availability(implementation, required_fields=["solution", "expected_result"])
 
                 implementation.save()
 

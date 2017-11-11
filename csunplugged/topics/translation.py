@@ -25,136 +25,136 @@ from topics.models import (
 class TopicTranslationOptions(TranslationOptions):
     """Translation options for Topic model."""
 
-    fields = ('name', 'content', 'other_resources')
+    fields = ("name", "content", "other_resources")
     fallback_undefined = {
-        'content': None,
-        'other_resources': None
+        "content": None,
+        "other_resources": None
     }
 
 
 class UnitPlanTranslationOptions(TranslationOptions):
     """Translation options for UnitPlan model."""
 
-    fields = ('name', 'content', 'computational_thinking_links', 'heading_tree')
+    fields = ("name", "content", "computational_thinking_links", "heading_tree")
     fallback_undefined = {
-        'content': None,
-        'computational_thinking_links': None,
-        'heading_tree': None
+        "content": None,
+        "computational_thinking_links": None,
+        "heading_tree": None
     }
 
 
 class ProgrammingChallengeTranslationOptions(TranslationOptions):
     """Translation options for ProgrammingChallenge model."""
 
-    fields = ('name', 'content', 'extra_challenge')
+    fields = ("name", "content", "extra_challenge")
     fallback_undefined = {
-        'content': None,
-        'extra_challenge': None,
+        "content": None,
+        "extra_challenge": None,
     }
 
 
 class ProgrammingChallengeImplementationTranslationOptions(TranslationOptions):
     """Translation options for ProgrammingChallengeImplementation model."""
 
-    fields = ('expected_result', 'hints', 'solution')
+    fields = ("expected_result", "hints", "solution")
     fallback_undefined = {
-        'expected_result': None,
-        'hints': None,
-        'solution': None
+        "expected_result": None,
+        "hints": None,
+        "solution": None
     }
 
 
 class LessonTranslationOptions(TranslationOptions):
     """Translation options for Lesson model."""
 
-    fields = ('name', 'content', 'computational_thinking_links', 'programming_challenges_description', 'heading_tree')
+    fields = ("name", "content", "computational_thinking_links", "programming_challenges_description", "heading_tree")
     fallback_undefined = {
-        'content': None,
-        'computational_thinking_links': None,
-        'programming_challenges_description': None,
-        'heading_tree': None
+        "content": None,
+        "computational_thinking_links": None,
+        "programming_challenges_description": None,
+        "heading_tree": None
     }
 
 
 class CurriculumIntegrationTranslationOptions(TranslationOptions):
     """Translation options for CurriculumIntegration model."""
 
-    fields = ('name', 'content')
+    fields = ("name", "content")
     fallback_undefined = {
-        'content': None,
+        "content": None,
     }
 
 
 class GlossaryTermTranslationOptions(TranslationOptions):
     """Translation options for GlossaryTerm model."""
 
-    fields = ('term', 'definition')
+    fields = ("term", "definition")
     fallback_undefined = {
-        'term': None,
-        'definition': None
+        "term": None,
+        "definition": None
     }
 
 
 class CurriculumAreaTranslationOptions(TranslationOptions):
     """Translation options for CurriculumArea model."""
 
-    fields = ('name',)
+    fields = ("name",)
     fallback_undefined = {
-        'name': None,
+        "name": None,
     }
 
 
 class LearningOutcomeTranslationOptions(TranslationOptions):
     """Translation options for LearningOutcome model."""
 
-    fields = ('text',)
+    fields = ("text",)
     fallback_undefined = {
-        'text': None,
+        "text": None,
     }
 
 
 class AgeGroupTranslationOptions(TranslationOptions):
     """Translation options for AgeGroup model."""
 
-    fields = ('description',)
+    fields = ("description",)
     fallback_undefined = {
-        'description': None,
+        "description": None,
     }
 
 
 class ClassroomResourceTranslationOptions(TranslationOptions):
     """Translation options for ClassroomResource model."""
 
-    fields = ('description',)
+    fields = ("description",)
     fallback_undefined = {
-        'description': None,
+        "description": None,
     }
 
 
 class ResourceDescriptionTranslationOptions(TranslationOptions):
     """Translation options for ResourceDescription model."""
 
-    fields = ('description',)
+    fields = ("description",)
     fallback_undefined = {
-        'description': None,
+        "description": None,
     }
 
 
 class ProgrammingChallengeDifficultyTranslationOptions(TranslationOptions):
     """Translation options for ProgrammingChallengeDifficulty model."""
 
-    fields = ('name',)
+    fields = ("name",)
     fallback_undefined = {
-        'name': None,
+        "name": None,
     }
 
 
 class ProgrammingChallengeLanguageTranslationOptions(TranslationOptions):
     """Translation options for ProgrammingChallengeLanguage model."""
 
-    fields = ('name',)
+    fields = ("name",)
     fallback_undefined = {
-        'name': None,
+        "name": None,
     }
 
 

@@ -75,7 +75,7 @@ class ProgrammingChallengesStructureLoader(TranslatableModelLoader):
 
             translations = prog_languages_translations.get(prog_language, dict())
             self.populate_translations(new_prog_language, translations)
-            self.mark_translation_availability(new_prog_language, required_fields=['name'])
+            self.mark_translation_availability(new_prog_language, required_fields=["name"])
             new_prog_language.save()
 
             self.log("Added programming langauge: {}".format(new_prog_language.__str__()))
@@ -98,7 +98,7 @@ class ProgrammingChallengesStructureLoader(TranslatableModelLoader):
 
             translations = difficulties_translations.get(difficulty, dict())
             self.populate_translations(new_difficulty, translations)
-            self.mark_translation_availability(new_difficulty, required_fields=['name'])
+            self.mark_translation_availability(new_difficulty, required_fields=["name"])
             new_difficulty.save()
 
             self.log("Added programming difficulty level: {}".format(new_difficulty.__str__()))

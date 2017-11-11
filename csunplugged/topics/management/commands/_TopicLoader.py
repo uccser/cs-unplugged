@@ -45,14 +45,14 @@ class TopicLoader(TranslatableModelLoader):
         content_filename = "{}.md".format(self.topic_slug)
         content_translations = self.get_markdown_translations(content_filename)
         for language, content in content_translations.items():
-            topic_translations[language]['content'] = content.html_string
-            topic_translations[language]['name'] = content.title
+            topic_translations[language]["content"] = content.html_string
+            topic_translations[language]["name"] = content.title
 
         if "other-resources" in topic_structure:
             other_resources_filename = topic_structure["other-resources"]
             other_resources_translations = self.get_markdown_translations(other_resources_filename)
             for language, content in other_resources_translations.items():
-                topic_translations[language]['other_resources'] = content.html_string
+                topic_translations[language]["other_resources"] = content.html_string
 
         # Check if icon is given
         if "icon" in topic_structure:
@@ -71,7 +71,7 @@ class TopicLoader(TranslatableModelLoader):
         )
 
         self.populate_translations(topic, topic_translations)
-        self.mark_translation_availability(topic, required_fields=['name', 'content'])
+        self.mark_translation_availability(topic, required_fields=["name", "content"])
         topic.save()
 
         self.log("Added Topic: {}".format(topic.name))

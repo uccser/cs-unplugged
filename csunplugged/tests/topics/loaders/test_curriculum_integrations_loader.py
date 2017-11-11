@@ -53,6 +53,6 @@ class CurriculumIntegrationsLoaderTest(BaseTestWithDB):
         self.assertEqual("English Heading", ci.name)
         self.assertIn("English curriculum integration content", ci.content)
 
-        with translation.override('de'):
+        with translation.override("de"):
             self.assertEqual("German Heading", ci.name)
             self.assertIn("German curriculum integration content", ci.content)

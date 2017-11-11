@@ -47,6 +47,6 @@ class GlossaryTermsLoaderTest(BaseTestWithDB):
 
         self.assertEqual("Glossary Term 1 English", translated_term.term)
         self.assertIn("English definition.", translated_term.definition)
-        with translation.override('de'):
+        with translation.override("de"):
             self.assertEqual("Glossary Term 1 German", translated_term.term)
             self.assertIn("German definition.", translated_term.definition)

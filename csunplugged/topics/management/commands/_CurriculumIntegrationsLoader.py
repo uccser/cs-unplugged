@@ -47,8 +47,8 @@ class CurriculumIntegrationsLoader(TranslatableModelLoader):
             content_filename = "{}.md".format(integration_slug)
             content_translations = self.get_markdown_translations(content_filename)
             for language, content in content_translations.items():
-                integration_translations[language]['content'] = content.html_string
-                integration_translations[language]['name'] = content.title
+                integration_translations[language]["content"] = content.html_string
+                integration_translations[language]["name"] = content.title
 
             integration_number = integration_data.get("number", None)
             integration_curriculum_areas = integration_data.get("curriculum-areas", None)
@@ -64,7 +64,7 @@ class CurriculumIntegrationsLoader(TranslatableModelLoader):
                 number=integration_number,
             )
             self.populate_translations(integration, integration_translations)
-            self.mark_translation_availability(integration, required_fields=['name', 'content'])
+            self.mark_translation_availability(integration, required_fields=["name", "content"])
             integration.save()
 
             # Add curriculum areas

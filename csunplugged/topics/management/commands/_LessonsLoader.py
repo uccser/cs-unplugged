@@ -56,11 +56,11 @@ class LessonsLoader(TranslatableModelLoader):
             content_filename = "{}.md".format(lesson_slug)
             content_translations = self.get_markdown_translations(content_filename)
             for language, content in content_translations.items():
-                lesson_translations[language]['content'] = content.html_string
-                lesson_translations[language]['name'] = content.title
+                lesson_translations[language]["content"] = content.html_string
+                lesson_translations[language]["name"] = content.title
                 if content.heading_tree:
                     heading_tree = convert_heading_tree_to_dict(content.heading_tree)
-                    lesson_translations[language]['heading_tree'] = heading_tree
+                    lesson_translations[language]["heading_tree"] = heading_tree
 
             if "computational-thinking-links" in lesson_structure:
                 filename = lesson_structure["computational-thinking-links"]
@@ -70,7 +70,7 @@ class LessonsLoader(TranslatableModelLoader):
                     remove_title=False,
                 )
                 for language, content in ct_links_translations.items():
-                    lesson_translations[language]['computational_thinking_links'] = content.html_string
+                    lesson_translations[language]["computational_thinking_links"] = content.html_string
 
             if "programming-challenges-description" in lesson_structure:
                 filename = lesson_structure["programming-challenges-description"]
@@ -80,7 +80,7 @@ class LessonsLoader(TranslatableModelLoader):
                     remove_title=False,
                 )
                 for language, content in pcd_translations.items():
-                    lesson_translations[language]['programming_challenges_description'] = content.html_string
+                    lesson_translations[language]["programming_challenges_description"] = content.html_string
 
             if "duration" in lesson_structure:
                 lesson_duration = lesson_structure["duration"]
@@ -93,7 +93,7 @@ class LessonsLoader(TranslatableModelLoader):
                 duration=lesson_duration,
             )
             self.populate_translations(lesson, lesson_translations)
-            self.mark_translation_availability(lesson, required_fields=['name', 'content'])
+            self.mark_translation_availability(lesson, required_fields=["name", "content"])
             lesson.save()
 
             # Add programming challenges
@@ -214,7 +214,7 @@ class LessonsLoader(TranslatableModelLoader):
                             lesson=lesson,
                         )
                         self.populate_translations(relationship, relationship_translation)
-                        self.mark_translation_availability(relationship, required_fields=['description'])
+                        self.mark_translation_availability(relationship, required_fields=["description"])
 
                         relationship.save()
 

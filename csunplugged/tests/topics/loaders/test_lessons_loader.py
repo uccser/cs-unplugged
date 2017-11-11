@@ -22,7 +22,7 @@ class LessonsLoaderTest(BaseTestWithDB):
         super().__init__(*args, **kwargs)
         self.test_data = TopicsTestDataGenerator()
         self.loader_name = "lessons"
-        self.base_path = os.path.join(self.test_data.LOADER_ASSET_PATH, 'lessons')
+        self.base_path = os.path.join(self.test_data.LOADER_ASSET_PATH, "lessons")
 
     def test_basic_lesson_loader_configuration(self):
         config_file = "basic-config.yaml"
@@ -251,23 +251,23 @@ class LessonsLoaderTest(BaseTestWithDB):
             Lesson.objects.get(slug="lesson-2").heading_tree,
             [
                 {
-                    'level': 2,
-                    'text': 'Heading 2',
-                    'slug': 'heading-2',
-                    'children': [
+                    "level": 2,
+                    "text": "Heading 2",
+                    "slug": "heading-2",
+                    "children": [
                         {
-                            'level': 3,
-                            'text': 'Heading 3',
-                            'slug': 'heading-3',
-                            'children': [],
+                            "level": 3,
+                            "text": "Heading 3",
+                            "slug": "heading-3",
+                            "children": [],
                         }
                     ],
                 },
                 {
-                    'level': 2,
-                    'text': 'Heading 4',
-                    'slug': 'heading-4',
-                    'children': [],
+                    "level": 2,
+                    "text": "Heading 4",
+                    "slug": "heading-4",
+                    "children": [],
                 }
             ],
         )

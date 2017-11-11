@@ -37,11 +37,11 @@ class MockTranslatableModel(TranslatableModel):
 class MockTranslatableModelTranslationOptions(TranslationOptions):
     """Translation options for MockTranslatableModel model."""
 
-    fields = ("nofallback1", 'nofallback2', 'nofallback3', "fallback1", "fallback2")
+    fields = ("nofallback1", "nofallback2", "nofallback3", "fallback1", "fallback2")
     fallback_undefined = {
-        'nofallback1': None,
-        'nofallback2': None,
-        'nofallback3': None,
+        "nofallback1": None,
+        "nofallback2": None,
+        "nofallback3": None,
     }
 
 
@@ -248,7 +248,7 @@ class TranslatableModelLoaderTest(SimpleTestCase):
 
     def test_mark_translation_availability_required_fields_not_given(self):
         model = MockTranslatableModel()
-        with mock.patch('utils.language_utils.get_available_languages', return_value=["en", "de", "fr"]):
+        with mock.patch("utils.language_utils.get_available_languages", return_value=["en", "de", "fr"]):
             TranslatableModelLoader.mark_translation_availability(model)
         self.assertSetEqual(set(get_available_languages()), set(model.languages))
 

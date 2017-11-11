@@ -33,14 +33,14 @@ class GlossaryTermsLoader(TranslatableModelLoader):
             content_translations = self.get_markdown_translations(content_filename)
 
             for language, content in content_translations.items():
-                term_translations[language]['definition'] = content.html_string
-                term_translations[language]['term'] = content.title
+                term_translations[language]["definition"] = content.html_string
+                term_translations[language]["term"] = content.title
 
             glossary_term = GlossaryTerm(
                 slug=glossary_slug,
             )
             self.populate_translations(glossary_term, term_translations)
-            self.mark_translation_availability(glossary_term, required_fields=['term', 'definition'])
+            self.mark_translation_availability(glossary_term, required_fields=["term", "definition"])
             glossary_term.save()
 
             self.log("Added glossary term: {}".format(glossary_term.__str__()))

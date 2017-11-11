@@ -25,7 +25,7 @@ class CurriculumAreasLoader(TranslatableModelLoader):
         curriculum_areas_structure = self.load_yaml_file(self.structure_file_path)
         curriculum_areas_translations = self.get_yaml_translations(
             self.structure_filename,
-            required_fields=['name'],
+            required_fields=["name"],
             required_slugs=curriculum_areas_structure.keys()
         )
 
@@ -62,7 +62,7 @@ class CurriculumAreasLoader(TranslatableModelLoader):
                 number=curriculum_area_number,
             )
             self.populate_translations(new_area, translations)
-            self.mark_translation_availability(new_area, required_fields=['name'])
+            self.mark_translation_availability(new_area, required_fields=["name"])
 
             new_area.save()
 
@@ -87,7 +87,7 @@ class CurriculumAreasLoader(TranslatableModelLoader):
                         parent=new_area,
                     )
                     self.populate_translations(new_child, translations)
-                    self.mark_translation_availability(new_child, required_fields=['name'])
+                    self.mark_translation_availability(new_child, required_fields=["name"])
 
                     new_child.save()
 

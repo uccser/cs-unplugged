@@ -41,7 +41,7 @@ class LearningOutcomesLoader(TranslatableModelLoader):
                 slug=outcome_slug,
             )
             self.populate_translations(outcome, translations)
-            self.mark_translation_availability(outcome, required_fields=['text'])
+            self.mark_translation_availability(outcome, required_fields=["text"])
 
             outcome.save()
 

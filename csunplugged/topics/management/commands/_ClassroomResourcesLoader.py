@@ -21,7 +21,7 @@ class ClassroomResourcesLoader(TranslatableModelLoader):
         Raise:
             InvalidConfigValueError: Description provided is not a string.
         """
-        classroom_resources = self.load_yaml_file(self.structure_file_path)['classroom-resources']
+        classroom_resources = self.load_yaml_file(self.structure_file_path)["classroom-resources"]
         classroom_resources_translations = self.get_yaml_translations(
             self.structure_filename,
             required_slugs=classroom_resources,
@@ -35,7 +35,7 @@ class ClassroomResourcesLoader(TranslatableModelLoader):
                 slug=classroom_resource_slug,
             )
             self.populate_translations(new_resource, translations)
-            self.mark_translation_availability(new_resource, required_fields=['description'])
+            self.mark_translation_availability(new_resource, required_fields=["description"])
             new_resource.save()
 
             self.log("Added classroom resource: {}".format(new_resource.__str__()))

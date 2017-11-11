@@ -81,7 +81,7 @@ class TranslatableModelLoader(BaseLoader):
                     if not isinstance(value, str):
                         raise InvalidConfigValueError(
                             translations_filename,
-                            '{}->{}'.format(model_slug, field),
+                            "{}->{}".format(model_slug, field),
                             "String"
                         )
                     if field_map:

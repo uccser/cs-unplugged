@@ -59,10 +59,10 @@ class LearningOutcome(TranslatableModel):
 
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(max_length=80, unique=True)
-    text = models.CharField(max_length=200, default='')
+    text = models.CharField(max_length=200, default="")
     curriculum_areas = models.ManyToManyField(
         CurriculumArea,
-        related_name='learning_outcomes',
+        related_name="learning_outcomes",
     )
 
     def __str__(self):
@@ -99,9 +99,9 @@ class Topic(TranslatableModel):
 
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(unique=True)
-    name = models.CharField(max_length=100, default='')
-    content = models.TextField(default='')
-    other_resources = models.TextField(default='')
+    name = models.CharField(max_length=100, default="")
+    content = models.TextField(default="")
+    other_resources = models.TextField(default="")
     icon = models.CharField(max_length=100, null=True)
 
     def __str__(self):
@@ -123,9 +123,9 @@ class UnitPlan(TranslatableModel):
         related_name="unit_plans"
     )
     slug = models.SlugField()
-    name = models.CharField(max_length=100, default='')
-    content = models.TextField(default='')
-    computational_thinking_links = models.TextField(default='')
+    name = models.CharField(max_length=100, default="")
+    content = models.TextField(default="")
+    computational_thinking_links = models.TextField(default="")
     heading_tree = JSONField(default=dict)
 
     def __str__(self):
@@ -142,7 +142,7 @@ class ProgrammingChallengeDifficulty(TranslatableModel):
 
     #  Auto-incrementing 'id' field is automatically set by Django
     level = models.PositiveSmallIntegerField(unique=True)
-    name = models.CharField(max_length=100, default='')
+    name = models.CharField(max_length=100, default="")
 
     def __str__(self):
         """Text representation of ProgrammingChallengeDifficulty object.
@@ -163,11 +163,11 @@ class ProgrammingChallenge(TranslatableModel):
         related_name="programming_challenges"
     )
     slug = models.SlugField()
-    name = models.CharField(max_length=200, default='')
+    name = models.CharField(max_length=200, default="")
     challenge_set_number = models.PositiveSmallIntegerField()
     challenge_number = models.PositiveSmallIntegerField()
-    content = models.TextField(default='')
-    extra_challenge = models.TextField(default='')
+    content = models.TextField(default="")
+    extra_challenge = models.TextField(default="")
     learning_outcomes = models.ManyToManyField(
         LearningOutcome,
         related_name="programming_challenges"
@@ -232,9 +232,9 @@ class ProgrammingChallengeImplementation(TranslatableModel):
         on_delete=models.CASCADE,
         related_name="implementations"
     )
-    expected_result = models.TextField(default='')
-    hints = models.TextField(default='')
-    solution = models.TextField(default='')
+    expected_result = models.TextField(default="")
+    hints = models.TextField(default="")
+    solution = models.TextField(default="")
 
     def __str__(self):
         """Text representation of ProgrammingChallengeImplementation.
@@ -256,7 +256,7 @@ class AgeGroup(TranslatableModel):
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField()
     ages = IntegerRangeField()
-    description = models.CharField(max_length=500, default='')
+    description = models.CharField(max_length=500, default="")
 
     def __str__(self):
         """Text representation of AgeGroup object.
@@ -287,10 +287,10 @@ class Lesson(TranslatableModel):
         related_name="lessons"
     )
     slug = models.SlugField(max_length=100)
-    name = models.CharField(max_length=100, default='')
+    name = models.CharField(max_length=100, default="")
     duration = models.PositiveSmallIntegerField(null=True)
-    content = models.TextField(default='')
-    computational_thinking_links = models.TextField(default='')
+    content = models.TextField(default="")
+    computational_thinking_links = models.TextField(default="")
     heading_tree = JSONField(default=list)
     age_group = models.ManyToManyField(
         AgeGroup,
@@ -302,7 +302,7 @@ class Lesson(TranslatableModel):
         through="ProgrammingChallengeNumber",
         related_name="lessons"
     )
-    programming_challenges_description = models.TextField(default='')
+    programming_challenges_description = models.TextField(default="")
     learning_outcomes = models.ManyToManyField(
         LearningOutcome,
         related_name="lessons"
@@ -389,8 +389,8 @@ class CurriculumIntegration(TranslatableModel):
     )
     slug = models.SlugField()
     number = models.PositiveSmallIntegerField()
-    name = models.CharField(max_length=200, default='')
-    content = models.TextField(default='')
+    name = models.CharField(max_length=200, default="")
+    content = models.TextField(default="")
     curriculum_areas = models.ManyToManyField(
         CurriculumArea,
         related_name="curriculum_integrations",
@@ -424,4 +424,4 @@ class ResourceDescription(TranslatableModel):
     #  Auto-incrementing 'id' field is automatically set by Django
     resource = models.ForeignKey(Resource, on_delete=models.CASCADE)
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
-    description = models.CharField(max_length=300, default='')
+    description = models.CharField(max_length=300, default="")

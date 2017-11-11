@@ -13,7 +13,7 @@ def translate_url(context, lang=None, *args, **kwargs):
 
     Usage: {% translate_url 'en' %}
     """
-    url = context['request'].path
+    url = context["request"].path
     url_parts = resolve(url)
 
     cur_language = get_language()
