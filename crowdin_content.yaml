@@ -4,7 +4,6 @@
 "project_identifier": "cs-unplugged"
 "api_key_env": CROWDIN_API_KEY
 "base_path": ""
-#"base_url" : ""
 
 #
 # Choose file structure in crowdin

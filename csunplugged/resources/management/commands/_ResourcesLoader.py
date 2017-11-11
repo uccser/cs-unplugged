@@ -14,10 +14,6 @@ from django.contrib.staticfiles import finders
 class ResourcesLoader(BaseLoader):
     """Custom loader for loading resources."""
 
-    def __init__(self, **kwargs):
-        """Create the loader for loading resources."""
-        super().__init__(**kwargs)
-
     @transaction.atomic
     def load(self):
         """Load the content for resources.

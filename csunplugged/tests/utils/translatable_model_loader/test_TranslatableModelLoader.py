@@ -55,7 +55,7 @@ class TranslatableModelLoaderTest(SimpleTestCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        imp.reload(mt_settings)  # Let modeltranslation pick up any overriden settings
+        imp.reload(mt_settings)  # Let modeltranslation pick up any overridden settings
         translator.register(MockTranslatableModel, MockTranslatableModelTranslationOptions)
 
     def test_get_yaml_translations_english(self):
