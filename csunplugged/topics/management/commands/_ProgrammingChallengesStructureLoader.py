@@ -74,7 +74,7 @@ class ProgrammingChallengesStructureLoader(TranslatableModelLoader):
             self.mark_translation_availability(new_prog_language, required_fields=["name"])
             new_prog_language.save()
 
-            self.log("Added programming langauge: {}".format(new_prog_language.__str__()))
+            self.log("Added programming language: {}".format(new_prog_language.__str__()))
 
         # Add "-languages" to the structure filename
         difficulties_translation_filename = "{}-difficulties.yaml".format(

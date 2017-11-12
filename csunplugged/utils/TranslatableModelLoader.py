@@ -148,7 +148,9 @@ class TranslatableModelLoader(BaseLoader):
         Args:
             model: TranslatableModel instance
             required_fields: (list) list of field names that are required to be
-                populated for the model to be considered available in that language.
+                populated for the model to be marked available in that language.
+                An empty list (the default value) will mark the model as available
+                in every language.
         """
         available_languages = []
         for language in get_available_languages():
