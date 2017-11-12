@@ -20,7 +20,6 @@ class CurriculumIntegrationsLoader(TranslatableModelLoader):
             topic: Object of related topic model (Topic).
         """
         super().__init__(**kwargs)
-
         self.topic = topic
 
     def load(self):

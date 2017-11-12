@@ -10,11 +10,7 @@ from utils.TranslatableModelLoader import TranslatableModelLoader
 
 class GlossaryTermsLoader(TranslatableModelLoader):
     """Custom loader for loading glossary terms."""
-
-    def __init__(self, **kwargs):
-        """Create the loader for loading glossary terms."""
-        super().__init__(**kwargs)
-        self.FILE_EXTENSION = ".md"
+    FILE_EXTENSION = ".md"
 
     @transaction.atomic
     def load(self):

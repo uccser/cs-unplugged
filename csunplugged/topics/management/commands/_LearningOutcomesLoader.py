@@ -13,10 +13,6 @@ from topics.models import (
 class LearningOutcomesLoader(TranslatableModelLoader):
     """Custom loader for loading learning outcomes."""
 
-    def __init__(self, **kwargs):
-        """Create the loader for loading learning outcomes."""
-        super().__init__(**kwargs)
-
     @transaction.atomic
     def load(self):
         """Load the content for learning outcomes.

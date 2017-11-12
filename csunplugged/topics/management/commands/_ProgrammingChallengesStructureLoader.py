@@ -10,10 +10,6 @@ from topics.models import ProgrammingChallengeLanguage, ProgrammingChallengeDiff
 class ProgrammingChallengesStructureLoader(TranslatableModelLoader):
     """Custom loader for loading structure of programming challenges."""
 
-    def __init__(self, **kwargs):
-        """Create the loader for loading structure of programming challenges."""
-        super().__init__(**kwargs)
-
     @transaction.atomic
     def load(self):
         """Load the content for structure of programming challenges.

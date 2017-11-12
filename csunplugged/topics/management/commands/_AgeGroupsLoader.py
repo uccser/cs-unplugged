@@ -10,10 +10,6 @@ from topics.models import AgeGroup
 class AgeGroupsLoader(TranslatableModelLoader):
     """Loader for age group content."""
 
-    def __init__(self, **kwargs):
-        """Create the loader for loading age groups."""
-        super().__init__(**kwargs)
-
     @transaction.atomic
     def load(self):
         """Load the content for age groups.

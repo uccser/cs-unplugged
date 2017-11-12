@@ -10,10 +10,6 @@ from topics.models import CurriculumArea
 class CurriculumAreasLoader(TranslatableModelLoader):
     """Loader for curriculum area content."""
 
-    def __init__(self, **kwargs):
-        """Create the loader for loading curriculum areas."""
-        super().__init__(**kwargs)
-
     @transaction.atomic
     def load(self):
         """Load the content for curriculum areas.
