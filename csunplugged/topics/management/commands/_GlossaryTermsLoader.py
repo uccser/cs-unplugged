@@ -10,6 +10,7 @@ from utils.TranslatableModelLoader import TranslatableModelLoader
 
 class GlossaryTermsLoader(TranslatableModelLoader):
     """Custom loader for loading glossary terms."""
+
     FILE_EXTENSION = ".md"
 
     @transaction.atomic
