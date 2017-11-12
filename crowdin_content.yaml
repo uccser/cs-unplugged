@@ -1,31 +1,19 @@
-#
-# Your crowdin's credentials
-#
-"project_identifier": "cs-unplugged"
-"api_key_env": CROWDIN_API_KEY
-"base_path": ""
+# Project settings
+project_identifier: "cs-unplugged"
+api_key_env: "CROWDIN_API_KEY"
+base_path: ""
 
-#
-# Choose file structure in crowdin
-# e.g. true or false
-#
-"preserve_hierarchy": true
+# Preserve directory tree during upload
+preserve_hierarchy: true
 
-#
-# Files configuration
-#
 files: [
     {
-        "source": "/csunplugged/topics/content/en/**/*.yaml",
-        "translation": "/csunplugged/topics/content/%two_letters_code%/**/%original_file_name%",
+        source: "/csunplugged/topics/content/en/**/*.yaml",
+        translation: "/csunplugged/topics/content/%two_letters_code%/**/%original_file_name%",
 
-        # The parameter "update_option" is optional. If it is not set, translations for changed strings will be lost. Useful for typo fixes and minor changes in source strings.
-        # e.g. "update_as_unapproved" or "update_without_changes"
-        #
-        #"update_option" : "",
     },
     {
-        "source": "/csunplugged/topics/content/en/**/*.md",
-        "translation": "/csunplugged/topics/content/%two_letters_code%/**/%original_file_name%",
+        source: "/csunplugged/topics/content/en/**/*.md",
+        translation: "/csunplugged/topics/content/%two_letters_code%/**/%original_file_name%",
     }
 ]
