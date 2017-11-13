@@ -1,0 +1,446 @@
+# BINARY NUMBERS LEARNING OUTCOMES
+
+binary-convert-decimal:
+  curriculum-areas:
+    - algorithmic-thinking
+
+binary-justify-zeros-and-ones:
+  curriculum-areas:
+    - abstraction
+
+binary-argue-zeros-and-ones-stored:
+  curriculum-areas:
+    - abstraction
+
+binary-explain-different-states:
+  curriculum-areas:
+    - abstraction
+
+binary-explain-logic-one-bit:
+  curriculum-areas:
+    - logic
+
+binary-explain-off-on:
+  curriculum-areas:
+    - logic
+
+binary-predict-bit-value:
+  curriculum-areas:
+    - generalising-and-patterns
+
+binary-explain-doubling:
+  curriculum-areas:
+    - logic
+
+binary-recognise-alphabet-bits:
+  curriculum-areas:
+    - logic
+
+binary-create-message-converting:
+  curriculum-areas:
+    - decomposition
+
+binary-interpret-message-binary:
+  curriculum-areas:
+    - generalising-and-patterns
+
+binary-explain-codes-alphabets:
+  curriculum-areas:
+    - generalising-and-patterns
+
+binary-make-play-instructions-binary:
+  curriculum-areas:
+    - decomposition
+    - drama
+
+binary-identify-opposite-pairs:
+  curriculum-areas:
+    - abstraction
+    - literacy
+
+binary-match-letters-numbers:
+  curriculum-areas:
+    - abstraction
+    - literacy
+
+binary-count-highest-number:
+  curriculum-areas:
+    - decomposition
+    - numeracy
+
+# DRAMA LEARNING OUTCOMES
+
+drama-create-video-binary:
+  curriculum-areas:
+    - drama
+
+# LITERACY LEARNING OUTCOMES
+
+literacy-plan-story-props:
+  curriculum-areas:
+    - literacy
+
+# ENGLISH LEARNING OUTCOMES
+
+speaking-clear-instructions-binary-cards:
+  curriculum-areas:
+    - speaking
+
+# ERROR DETECTION AND CORRRECTION LEARNING OUTCOMES
+
+error-describe-steps-to-find-card:
+  curriculum-areas:
+    - decomposition
+
+error-explain-each-card-bit:
+  curriculum-areas:
+    - algorithmic-thinking
+
+error-explain-chose-parity-card:
+  curriculum-areas:
+    - generalising-and-patterns
+
+error-explain-checksum-algorithm:
+  curriculum-areas:
+    - logic
+
+error-follow-steps-find-card-turned-over:
+  curriculum-areas:
+    - decomposition
+
+error-explain-group-numbers:
+  curriculum-areas:
+    - numeracy
+
+error-recognise-groups-of-5:
+  curriculum-areas:
+    - numeracy
+
+error-demonstrate-count-to-5:
+  curriculum-areas:
+    - numeracy
+
+# LANUGAGE LEARNING OUTCOMES
+
+language-discuss-storing-characters:
+  curriculum-areas:
+    - language
+
+# NUMERACY LEARNING OUTCOMES
+
+numeracy-adding-given-number:
+  curriculum-areas:
+    - numeracy
+
+numeracy-identify-even-odd:
+  curriculum-areas:
+    - numeracy
+
+numeracy-discuss-count-zeros-ones:
+  curriculum-areas:
+    - numeracy
+
+numeracy-explain-squaring:
+  curriculum-areas:
+    - numeracy
+
+numeracy-compare-base10-base2:
+  curriculum-areas:
+    - numeracy
+
+numeracy-identify-larger-number:
+  curriculum-areas:
+    - numeracy
+
+numeracy-count-by-pointing:
+  curriculum-areas:
+    - numeracy
+
+numeracy-recognise-patterns:
+  curriculum-areas:
+    - numeracy
+
+numeracy-recognise-number-alphabet-order:
+  curriculum-areas:
+    - numeracy
+
+numeracy-explain-even-odd-parity-problem:
+  curriculum-areas:
+    - numeracy
+
+numeracy-describe-rows-columns:
+  curriculum-areas:
+    - numeracy
+
+numeracy-discuss-changing-one-card-state:
+  curriculum-areas:
+    - numeracy
+
+numeracy-explain-modulo:
+  curriculum-areas:
+    - numeracy
+
+numeracy-identify-modulo-everyday-life:
+  curriculum-areas:
+    - measurement
+    - music
+    - numeracy
+
+numeracy-recognise-numbers-represented:
+  curriculum-areas:
+    - numeracy
+
+numeracy-discuss-modulo-understanding-remainders:
+  curriculum-areas:
+    - numeracy
+
+# PROGRAMMING LEARNING OUTCOMES
+
+programming-explain-sequencing:
+  curriculum-areas:
+    - programming
+
+programming-explain-output:
+  curriculum-areas:
+    - programming
+
+programming-explain-variable-name:
+  curriculum-areas:
+    - programming
+
+programming-describe-variables:
+  curriculum-areas:
+    - programming
+
+programming-describe-mathematical-operations:
+  curriculum-areas:
+    - programming
+
+programming-outline-variable-updates:
+  curriculum-areas:
+    - programming
+
+programming-describe-variable-output:
+  curriculum-areas:
+    - programming
+
+programming-describe-function:
+  curriculum-areas:
+    - programming
+
+programming-identify-loop:
+  curriculum-areas:
+    - programming
+
+programming-explain-join-concatenate:
+  curriculum-areas:
+    - programming
+
+programming-explain-asking-input-end-user:
+  curriculum-areas:
+    - programming
+
+programming-identify-if-statement:
+  curriculum-areas:
+    - programming
+
+programming-demonstrate-indexing:
+  curriculum-areas:
+    - programming
+
+programming-explain-set-and-change-statement:
+  curriculum-areas:
+    - programming
+
+programming-describe-variable-initial-value:
+  curriculum-areas:
+    - programming
+
+programming-explain-mod:
+  curriculum-areas:
+    - programming
+
+programming-explain-differences-if-else-if-statements:
+  curriculum-areas:
+    - programming
+
+programming-describe-nested-statement:
+  curriculum-areas:
+    - programming
+
+programming-identify-list-store-data:
+  curriculum-areas:
+    - programming
+
+programming-show-item-specified-position-list:
+  curriculum-areas:
+    - programming
+
+# SEARCHING ALGORITHMS LEARNING OUTCOMES
+
+search-algorithms-identify-unsorted-lists:
+  curriculum-areas:
+    - algorithms
+
+search-algorithms-describe-time-size-input:
+  curriculum-areas:
+    - generalising-and-patterns
+
+search-algorithms-explore-probability-value-random-set:
+  curriculum-areas:
+    - statistics
+
+search-algorithms-explain-range-unsorted-lists:
+  curriculum-areas:
+    - statistics
+
+search-algorithms-identify-sequential-binary:
+  curriculum-areas:
+    - algorithms
+
+search-algorithms-explain-decomposition-binary:
+  curriculum-areas:
+    - decomposition
+
+search-algorithms-describe-time-size-input-different:
+  curriculum-areas:
+    - generalising-and-patterns
+
+search-algorithms-describe-compare-values:
+  curriculum-areas:
+    - numeracy
+
+search-algorithms-explain-unsorted-lists:
+  curriculum-areas:
+    - statistics
+
+# UNPLUGGED PROGRAMMING LEARNING OUTCOMES
+
+unplugged-programming-apply-addition-multiplication:
+  curriculum-areas:
+    - numeracy
+
+unplugged-programming-design-fitness-achievable:
+  curriculum-areas:
+    - fitness
+
+unplugged-programming-construct-fitness-workout:
+  curriculum-areas:
+    - fitness
+    - algorithmic-thinking
+
+unplugged-programming-design-language:
+  curriculum-areas:
+    - programming
+
+unplugged-programming-give-instructions:
+  curriculum-areas:
+    - programming
+    - geometry
+
+unplugged-programming-identify-bug-correct:
+  curriculum-areas:
+    - programming
+
+unplugged-programming-explain-exact-instructions:
+  curriculum-areas:
+    - programming
+    - geometry
+
+unplugged-programming-follow-instructions:
+  curriculum-areas:
+    - geometry
+    - literacy
+
+unplugged-programming-identify-2D-shapes:
+  curriculum-areas:
+    - geometry
+
+unplugged-programming-communicate-debugging:
+  curriculum-areas:
+    - programming
+    - literacy
+
+unplugged-programming-actively-listen-feedback:
+  curriculum-areas:
+    - programming
+    - literacy
+
+unplugged-programming-give-accurate-instructions-pace:
+  curriculum-areas:
+    - speaking
+
+unplugged-programming-give-instructions-shape:
+  curriculum-areas:
+    - programming
+    - geometry
+
+unplugged-programming-identify-bug-shape:
+  curriculum-areas:
+    - programming
+    - logic
+
+unplugged-programming-describe-draw-2D-shape:
+  curriculum-areas:
+    - programming
+    - geometry
+    - decomposition
+
+unplugged-programming-accurately-count:
+  curriculum-areas:
+    - numeracy
+
+unplugged-programming-give-precise-instructions:
+  curriculum-areas:
+    - programming
+
+unplugged-programming-identify-bug-correct:
+  curriculum-areas:
+    - programming
+
+unplugged-programming-give-instructions-move:
+  curriculum-areas:
+    - algorithmic-thinking
+    - geometry
+
+unplugged-programming-explain-tell-stories:
+  curriculum-areas:
+    - literacy
+
+unplugged-programming-recall-direction-words:
+  curriculum-areas:
+    - language
+
+# SORTING LEARNING OUTCOMES
+
+sorting-explain-parallel-algorithm:
+  curriculum-areas:
+    - algorithmic-thinking
+
+sorting-use-selection-sort:
+  curriculum-areas:
+    - decomposition
+
+sorting-identify-number-range:
+  curriculum-areas:
+    - numeracy
+
+sorting-identify-number-given-range:
+  curriculum-areas:
+    - numeracy
+
+sorting-organise-objects-size:
+  curriculum-areas:
+    - numeracy
+
+sorting-recognise-sorting-method:
+  curriculum-areas:
+    - generalising-and-patterns
+
+sorting-demonstrate-alphabet-knowledge:
+  curriculum-areas:
+    - literacy
+
+sorting-comparing-musical-pitch:
+  curriculum-areas:
+    - music

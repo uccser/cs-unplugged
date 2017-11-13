@@ -2,10 +2,10 @@
 
 import os.path
 from django.core.exceptions import ObjectDoesNotExist
-from utils.BaseLoader import BaseLoader
-from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
+from utils.TranslatableModelLoader import TranslatableModelLoader
+
 
 from topics.models import (
     LearningOutcome,
@@ -15,20 +15,16 @@ from topics.models import (
 )
 
 
-class ProgrammingChallengesLoader(BaseLoader):
+class ProgrammingChallengesLoader(TranslatableModelLoader):
     """Custom loader for loading programming challenges."""
 
-    def __init__(self, structure_file_path, topic, BASE_PATH):
+    def __init__(self, topic, **kwargs):
         """Create the loader for loading programming challenges.
 
         Args:
-            structure_file_path: File path for structure YAML file (str).
             topic: Object of related topic model (Topic).
-            BASE_PATH: Base file path (str).
         """
-        super().__init__(BASE_PATH)
-        self.structure_file_path = os.path.join(self.BASE_PATH, structure_file_path)
-        self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(structure_file_path)[0])
+        super().__init__(**kwargs)
         self.topic = topic
 
     def load(self):
@@ -52,12 +48,14 @@ class ProgrammingChallengesLoader(BaseLoader):
                     "Programming Challenge"
                 )
 
+            challenge_translations = self.get_blank_translation_dictionary()
+
             # Retrieve required variables from md file
             challenge_set_number = challenge_structure.get("challenge-set-number", None)
             challenge_number = challenge_structure.get("challenge-number", None)
-            challenge_languages = challenge_structure.get("programming-languages", None)
+            challenge_prog_languages = challenge_structure.get("programming-languages", None)
             challenge_difficulty = challenge_structure.get("difficulty-level", None)
-            if None in [challenge_set_number, challenge_number, challenge_languages, challenge_difficulty]:
+            if None in [challenge_set_number, challenge_number, challenge_prog_languages, challenge_difficulty]:
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
                     ["challenge-set-number", "challenge-number",
@@ -65,28 +63,23 @@ class ProgrammingChallengesLoader(BaseLoader):
                     "Programming Challenge"
                 )
 
-            # Build the path to the programming challenge's folder
-            file_path = os.path.join(
-                self.BASE_PATH,
-                challenge_slug,
-                "{}.md"
+            content_filename = "{0}.md".format(challenge_slug)
+            content_translations = self.get_markdown_translations(
+                os.path.join(challenge_slug, content_filename)
             )
 
-            challenge_content = self.convert_md_file(
-                file_path.format(challenge_slug),
-                self.structure_file_path
-            )
+            for language, content in content_translations.items():
+                challenge_translations[language]["content"] = content.html_string
+                challenge_translations[language]["name"] = content.title
 
             challenge_extra_challenge_file = challenge_structure.get("extra-challenge", None)
             if challenge_extra_challenge_file:
-                challenge_extra_challenge_content = self.convert_md_file(
-                    file_path.format(challenge_extra_challenge_file[:-3]),
-                    self.structure_file_path,
+                extra_challenge_translations = self.get_markdown_translations(
+                    os.path.join(challenge_slug, challenge_extra_challenge_file),
                     heading_required=False,
                 )
-                challenge_extra_challenge = challenge_extra_challenge_content.html_string
-            else:
-                challenge_extra_challenge = None
+                for language, content in extra_challenge_translations.items():
+                    challenge_translations[language]["extra_challenge"] = content.html_string
 
             try:
                 difficulty_level = ProgrammingChallengeDifficulty.objects.get(
@@ -101,20 +94,20 @@ class ProgrammingChallengesLoader(BaseLoader):
 
             programming_challenge = self.topic.programming_challenges.create(
                 slug=challenge_slug,
-                name=challenge_content.title,
                 challenge_set_number=challenge_set_number,
                 challenge_number=challenge_number,
-                content=challenge_content.html_string,
-                extra_challenge=challenge_extra_challenge,
                 difficulty=difficulty_level
             )
+            self.populate_translations(programming_challenge, challenge_translations)
+            self.mark_translation_availability(programming_challenge, required_fields=["name", "content"])
+
             programming_challenge.save()
 
             LOG_TEMPLATE = "Added programming challenge: {}"
             self.log(LOG_TEMPLATE.format(programming_challenge.name), 1)
 
-            for language in challenge_languages:
-                if language is None:
+            for prog_language in challenge_prog_languages:
+                if prog_language is None:
                     raise MissingRequiredFieldError(
                         self.structure_file_path,
                         ["challenge-set-number", "challenge-number",
@@ -122,53 +115,54 @@ class ProgrammingChallengesLoader(BaseLoader):
                         "Programming Challenge"
                     )
                 try:
-                    language_object = ProgrammingChallengeLanguage.objects.get(
-                        slug=language
+                    prog_language_object = ProgrammingChallengeLanguage.objects.get(
+                        slug=prog_language
                     )
                 except ObjectDoesNotExist:
                     raise KeyNotFoundError(
                         self.structure_file_path,
-                        language,
+                        prog_language,
                         "Programming Challenge Language"
                     )
 
-                expected_result_content = self.convert_md_file(
-                    file_path.format(
-                        "{}-expected".format(language)
-                    ),
-                    self.structure_file_path,
-                    heading_required=False
+                implementation_translations = self.get_blank_translation_dictionary()
+
+                filename_template = os.path.join(
+                    challenge_slug,
+                    "{}-{{}}.md".format(prog_language)
                 )
 
-                # Load example solution
-                solution_content = self.convert_md_file(
-                    file_path.format(
-                        "{}-solution".format(language)
-                    ),
-                    self.structure_file_path,
+                expected_result_translations = self.get_markdown_translations(
+                    filename_template.format("expected"),
                     heading_required=False
                 )
+                for language, content in expected_result_translations.items():
+                    implementation_translations[language]["expected_result"] = content.html_string
 
-                # Load hint if given
-                try:
-                    hint_content = self.convert_md_file(
-                        file_path.format(
-                            "{}-hints".format(language)
-                        ),
-                        self.structure_file_path,
-                        heading_required=False
-                    )
-                except CouldNotFindMarkdownFileError:
-                    hint_content = None
+                solution_translations = self.get_markdown_translations(
+                    filename_template.format("solution"),
+                    heading_required=False
+                )
+                for language, content in solution_translations.items():
+                    implementation_translations[language]["solution"] = content.html_string
+
+                hints_translations = self.get_markdown_translations(
+                    filename_template.format("hints"),
+                    heading_required=False,
+                    required=False
+                )
+                for language, content in hints_translations.items():
+                    implementation_translations[language]["hints"] = content.html_string
 
                 implementation = ProgrammingChallengeImplementation(
-                    expected_result=expected_result_content.html_string,
-                    hints=None if hint_content is None else hint_content.html_string,
-                    solution=solution_content.html_string,
-                    language=language_object,
+                    language=prog_language_object,
                     challenge=programming_challenge,
                     topic=self.topic
                 )
+
+                self.populate_translations(implementation, implementation_translations)
+                self.mark_translation_availability(implementation, required_fields=["solution", "expected_result"])
+
                 implementation.save()
 
                 LOG_TEMPLATE = "Added language implementation: {}"

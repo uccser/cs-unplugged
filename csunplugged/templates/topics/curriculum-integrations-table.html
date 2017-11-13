@@ -1,9 +1,11 @@
+{% load i18n %}
+
 <table class="table table-responsive table-center-vertical">
   <thead class="thead-default">
     <tr>
-      <th>Activity</th>
-      <th>Curriculum Areas</th>
-      <th>Prerequisite Lessons?</th>
+      <th>{% trans "Activity" %}</th>
+      <th>{% trans "Curriculum Areas" %}</th>
+      <th>{% trans "Prerequisite Lessons?" %}</th>
     </tr>
   </thead>
   <tbody>
@@ -23,10 +25,10 @@
       </td>
       {% if curriculum_integration.has_prerequisite_lessons %}
         <td class="text-center table-success-cell">
-          Yes
+          {% trans "Yes" %}
       {% else %}
         <td class="text-center">
-          No
+          {% trans "No" %}
       {% endif %}
         </td>
     </tr>

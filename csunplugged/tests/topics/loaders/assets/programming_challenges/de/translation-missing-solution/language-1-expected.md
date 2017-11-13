@@ -1,0 +1,1 @@
+German expected result content.

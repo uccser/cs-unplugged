@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 
+{% load i18n %}
+
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block title %}
-  {{ lesson.name }} programming challenges
+  {% blocktrans with name=lesson.name trimmed %}{{ name }} programming challenges{% endblocktrans %}
 {% endblock title %}
 
 {% block breadcrumbs %}
@@ -15,7 +17,7 @@
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-  <h1>{{ lesson.name }} programming challenges</h1>
+  <h1>{% blocktrans with name=lesson.name trimmed %}{{ name }} programming challenges{% endblocktrans %}</h1>
 {% endblock page_heading %}
 
 {% block content %}
@@ -26,6 +28,6 @@
   {% if programming_challenges %}
     {% include "topics/programming-challenges-table.html" %}
   {% else %}
-    <p>No programming challenges for {{ topic }}.</p>
+    <p>{% blocktrans trimmed %}No programming challenges for {{ topic }}.{% endblocktrans %}</p>
   {% endif %}
 {% endblock content %}

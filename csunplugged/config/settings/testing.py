@@ -8,9 +8,9 @@ from .base import *  # noqa: F403
 # ----------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
-    'default': env.db('DATABASE_URL'),  # noqa: F405
+    "default": env.db("DATABASE_URL"),  # noqa: F405
 }
-DATABASES['default']['ATOMIC_REQUESTS'] = True
+DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 # DEBUG
 # ----------------------------------------------------------------------------
@@ -71,3 +71,15 @@ INSTALLED_APPS += [  # noqa: F405
     "test_without_migrations",
     "dev.apps.DevConfig",
 ]
+
+# Save production LANGUAGES setting in case any tests need to refer to it
+PRODUCTION_LANGUAGES = LANGUAGES  # noqa: F405
+
+# Override production value of LANGUAGES - this is what django-modeltranslation
+# will use when adding translated fields to the models on startup, which is
+# necessary to test i18n backend functionality.
+LANGUAGES = (
+    ("en", "English"),
+    ("de", "German"),
+    ("fr", "French"),
+)

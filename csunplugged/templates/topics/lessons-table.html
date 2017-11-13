@@ -1,20 +1,24 @@
+{% load i18n %}
+
 {% for age_group, lessons in grouped_lessons.items %}
   <table class="table table-responsive table-center-vertical">
     <thead class="thead-default">
       <tr>
         <th colspan="2">
-          Ages {{ age_group.ages.lower }} to {{ age_group.ages.upper }}
+          {% blocktrans with lower=age_group.ages.lower upper=age_group.ages.upper trimmed %}
+          Ages {{ lower }} to {{ upper }}
+          {% endblocktrans %}
           </th>
-        <th class="text-center">Programming challenges</th>
+        <th class="text-center">{% trans "Programming challenges" %}</th>
       </tr>
     </thead>
     <tbody>
       {% if age_group.description %}
-      <tr class="align-middle">
-        <td colspan="3" class="small">
-          {{ age_group.description }}
-        </td>
-      </tr>
+        <tr class="align-middle">
+          <td colspan="3" class="small">
+            {{ age_group.description }}
+          </td>
+        </tr>
       {% endif %}
       {% for lesson in lessons %}
         <tr class="align-middle">
@@ -29,11 +33,11 @@
           {% if lesson.has_programming_challenges %}
             <td class="text-center table-success-cell" style="width:20%">
               <a href="{% url 'topics:programming_challenges_list' topic.slug unit_plan.slug lesson.slug %}">
-                Yes
+                {% trans "Yes" %}
               </a>
           {% else %}
             <td class="text-center" style="width:20%">
-              No
+              {% trans "No" %}
           {% endif %}
             </td>
         </tr>

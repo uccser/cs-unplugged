@@ -37,6 +37,7 @@ DJANGO_APPS = [
 ]
 THIRD_PARTY_APPS = [
     "django_bootstrap_breadcrumbs",
+    "modeltranslation",
 ]
 
 # Apps specific for this project go here.
@@ -99,7 +100,11 @@ FIXTURE_DIRS = (
 TIME_ZONE = "UTC"
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#language-code
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "en"
+
+LANGUAGES = (
+    ("en", "English"),
+)
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#site-id
 SITE_ID = 1
@@ -151,6 +156,7 @@ TEMPLATES = [
             ],
             "libraries": {
                 "render_html_field": "config.templatetags.render_html_field",
+                "translate_url": "config.templatetags.translate_url",
             },
         },
     },
@@ -164,6 +170,7 @@ STATIC_ROOT = os.path.join(str(ROOT_DIR.path("staticfiles")), "")
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 BUILD_ROOT = os.path.join(str(ROOT_DIR.path("build")), "")
 STATIC_URL = "/staticfiles/"
+
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = [
     BUILD_ROOT,
@@ -208,8 +215,8 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
-
 # OTHER SETTINGS
 # ------------------------------------------------------------------------------
 DJANGO_PRODUCTION = env.bool("DJANGO_PRODUCTION")
 RESOURCE_COPY_AMOUNT = 20
+MODELTRANSLATION_CUSTOM_FIELDS = ("JSONField",)

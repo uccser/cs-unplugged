@@ -1,10 +1,14 @@
 {% extends "columns.html" %}
 
+{% load i18n %}
+
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block title %}
-  {{ topic.name }} other resources
+  {% blocktrans trimmed %}
+    {{ topic.name }} other resources
+  {% endblocktrans %}
 {% endblock title %}
 
 {% block breadcrumbs %}
@@ -19,7 +23,5 @@
 {% endblock page_heading %}
 
 {% block left_column_content %}
-  <h2>Other resources</h2>
-
   {% render_html_field topic.other_resources %}
 {% endblock left_column_content %}

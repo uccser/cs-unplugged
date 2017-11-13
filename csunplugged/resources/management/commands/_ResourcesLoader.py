@@ -14,16 +14,6 @@ from django.contrib.staticfiles import finders
 class ResourcesLoader(BaseLoader):
     """Custom loader for loading resources."""
 
-    def __init__(self, structure_file, BASE_PATH):
-        """Create the loader for loading resources.
-
-        Args:
-            structure_file: file path for structure YAML file (str).
-            BASE_PATH: base file path (str).
-        """
-        super().__init__(BASE_PATH)
-        self.structure_file_path = os.path.join(self.BASE_PATH, structure_file)
-
     @transaction.atomic
     def load(self):
         """Load the content for resources.

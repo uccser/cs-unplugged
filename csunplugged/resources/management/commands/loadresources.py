@@ -17,6 +17,6 @@ class Command(BaseCommand):
         factory = LoaderFactory()
 
         factory.create_resources_loader(
-            resource_structure_file,
-            BASE_PATH
+            structure_filename=resource_structure_file,
+            base_path=BASE_PATH
         ).load()
