@@ -17,12 +17,17 @@ class TranslatableModelLoader(BaseLoader):
     def get_yaml_translations(self, filename, field_map=None, required_slugs=[], required_fields=[]):
         """Get a dictionary of translations for the given filename.
 
-        Yaml files must be structured as follows:
-            <object-slug>:
-                <field>: <translated value for field 2>
-                <field2>: <translated value for field 2>
+        Yaml files must be structured
+
+            <object-slug-1>:
+                <field-1>: <translated value for field-1>
+                <field-2>: <translated value for field-2>
             <object-slug-2>
                 ...
+
+        where [object-slug-1, object-slug-2, ...] are slugs of objects of
+        the same model (eg. ClassroomResource) and [field-1, field-2, ...]
+        are the names of Char/TextFields defined on that model.
 
         Args:
             filename: (str) path to yaml file from the working directory of the loader
