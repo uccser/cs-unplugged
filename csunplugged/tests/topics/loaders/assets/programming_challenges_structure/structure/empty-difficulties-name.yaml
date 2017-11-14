@@ -1,0 +1,6 @@
+languages:
+  language-1:
+    number: 1
+
+difficulties:
+  - 1

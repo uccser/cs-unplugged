@@ -1,28 +1,38 @@
 {% extends "resources/resource.html" %}
 
+{% load i18n %}
+
 <!-- Description of resource -->
 {% block description %}
   <p>
-    This resource contains printouts for binary numbers activities.
+    {% trans "This resource contains printouts for binary numbers activities." %}
   </p>
 {% endblock description %}
 
 {% block generation_form %}
   <fieldset>
-    <legend>Display Numbers</legend>
+    <legend>{% trans "Display Numbers" %}</legend>
     <input type="radio" name="display_numbers" id="display_numbers_yes" value="yes" checked="checked">
-    <label for="display_numbers_yes">Yes</label>
+    <label for="display_numbers_yes">{% trans "Yes" %}</label>
     <br>
     <input type="radio" name="display_numbers" id="display_numbers_no" value="no">
-    <label for="display_numbers_no">No</label>
+    <label for="display_numbers_no">{% trans "No" %}</label>
   </fieldset>
 
   <fieldset>
-    <legend>Black on Card Back</legend>
+    <legend>{% trans "Black on Card Back" %}</legend>
     <input type="radio" name="black_back" id="black_back_yes" value="yes">
-    <label for="black_back_yes">Yes - <em>Uses a lot of black ink, but conveys clearer card state. Print double sided.</em></label>
+    <label for="black_back_yes">
+      {% blocktrans trimmed %}
+      Yes - <em>Uses a lot of black ink, but conveys clearer card state. Print double sided.</em>
+      {% endblocktrans %}
+    </label>
     <br>
     <input type="radio" name="black_back" id="black_back_no" value="no" checked="checked">
-    <label for="black_back_no">No - <em>Print single sided.</em></label>
+    <label for="black_back_no">
+      {% blocktrans trimmed %}
+      No - <em>Print single sided.</em>
+      {% endblocktrans %}
+    </label>
   </fieldset>
 {% endblock generation_form %}

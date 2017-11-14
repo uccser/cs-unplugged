@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+{% load i18n %}
 {% load static %}
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
@@ -21,7 +22,7 @@
   </h1>
 
   <p class="w-100 text-white rounded p-2 mt-3 difficulty-level-{{ programming_challenge.difficulty.level }}">
-    <strong>Challenge Level:</strong> {{ programming_challenge.difficulty.name }}
+    <strong>{% trans "Challenge Level:" %}</strong> {{ programming_challenge.difficulty.name }}
   </p>
 {% endblock page_heading %}
 
@@ -29,14 +30,25 @@
   <div class="col-12 col-md-6">
     {% if lessons %}
       <div class="alert alert-info" role="alert">
-        <p>This programming challenge is linked to the following lessons:</p>
+        <p>{% trans "This programming challenge is linked to the following lessons:" %}</p>
 
         <ul class="mb-0">
           {% for lesson in lessons %}
             <li>
               <a href="{% url 'topics:lesson' topic.slug lesson.unit_plan.slug lesson.slug %}">
-                Challenge {{ lesson.challenge_set_number }}.{{ lesson.challenge_number }} for {{ lesson.name }}
-                ({% for age_group in lesson.age_group.all %}{{ age_group.ages.lower }} to {{ age_group.ages.upper }}{% if not forloop.last %} and {% endif %}{% endfor %})
+                {% blocktrans with set_num=lesson.challenge_set_number chal_num=lesson.challenge_number name=lesson.name trimmed %}
+                Challenge {{ set_num }}.{{ chal_num }} for {{ name }}
+                {% endblocktrans %}
+                (
+                  {% for age_group in lesson.age_group.all %}
+                    {% blocktrans with lower=age_group.ages.lower upper=age_group.ages.upper trimmed %}
+                      {{ lower }} to {{ upper }}
+                    {% endblocktrans %}
+                    {% if not forloop.last %}
+                      {% trans "and" %}
+                    {% endif %}
+                  {% endfor %}
+                )
               </a>
             </li>
           {% endfor %}
@@ -44,7 +56,7 @@
       </div>
     {% endif %}
 
-    <h2>Learning outcomes</h2>
+    <h2>{% trans "Learning outcomes" %}</h2>
     {% if learning_outcomes %}
       <ul>
       {% for learning_outcome in learning_outcomes %}
@@ -57,13 +69,13 @@
       {% endfor %}
     </ul>
     {% else %}
-      <p>No learning outcomes listed for {{ programming_challenge.name }}.</p>
+      <p>{% blocktrans trimmed %}No learning outcomes listed for {{ programming_challenge.name }}.{% endblocktrans %}</p>
     {% endif %}
 
     {% render_html_field programming_challenge.content %}
   </div>
   <div class="col-12 col-md-6">
-    <h2 class="mt-0">Languages</h2>
+    <h2 class="mt-0">{% trans "Languages" %}</h2>
 
     {% for implementation in implementations %}
       <details>
@@ -74,15 +86,16 @@
           </strong>
         </summary>
 
+
         <div class="boxed-text-content">
-          <h4>What it should look like</h4>
+          <h4>{% trans "What it should look like" %}</h4>
           {% render_html_field implementation.expected_result %}
 
           {% if implementation.hints %}
             <details>
               <summary>
                 <strong>
-                  Hints
+                  {% trans "Hints" %}
                 </strong>
               </summary>
 
@@ -94,7 +107,9 @@
 
           <p class="text-center">
             <a href="{% url 'topics:programming_challenge_solution' topic.slug programming_challenge.slug implementation.language.slug %}">
-              Show {{ implementation.language.name }} solution
+              {% blocktrans trimmed %}
+                Show {{ implementation.language.name }} solution
+              {% endblocktrans %}
             </a>
           </p>
         </div>
@@ -105,7 +120,7 @@
 
 {% block end_content %}
   {% if programming_challenge.extra_challenge %}
-    <h2>Extra Challenge</h2>
+    <h2>{% trans "Extra Challenge" %}</h2>
     {% render_html_field programming_challenge.extra_challenge %}
   {% endif %}
 {% endblock end_content %}

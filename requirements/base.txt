@@ -19,6 +19,9 @@ PyYAML==3.12
 # System tools
 tqdm==4.19.4
 
+# Translations
+django-modeltranslation==0.12.1
+
 # XML Parsing
 lxml==4.1.1
 

@@ -1,0 +1,80 @@
+computational-thinking:
+  colour: light-purple
+  number: 1
+  children:
+    - algorithmic-thinking
+    - decomposition
+    - abstraction
+    - generalising-and-patterns
+    - logic
+    - evaluation
+
+computer-science:
+  colour: purple
+  number: 2
+  children:
+    - data-representation
+    - algorithms
+    - programming
+
+mathematics:
+  colour: blue
+  number: 3
+  children:
+    - geometry
+    - measurement
+    - numeracy
+    - algebra
+    - statistics
+
+literacy:
+  colour: red
+  number: 4
+  children:
+    - reading
+    - writing
+    - listening
+    - speaking
+    - library
+
+art:
+  colour: orange
+  number: 5
+
+language:
+  colour: pink
+  number: 6
+
+performing-arts:
+  colour: orange
+  number: 7
+  children:
+    - music
+    - dance
+    - drama
+
+physical-education:
+  name: Physical Education
+  colour: orange
+  number: 8
+  children:
+    - fitness
+    - sport
+    - health
+
+science:
+  colour: green
+  number: 9
+  children:
+    - biology
+    - physics
+    - astronomy
+    - chemistry
+    - geology
+
+social-studies:
+  colour: teal
+  number: 10
+  children:
+    - history
+    - geograph

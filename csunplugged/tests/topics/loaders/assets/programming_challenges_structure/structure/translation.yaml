@@ -1,0 +1,9 @@
+languages:
+  translated:
+    number: 1
+  untranslated:
+    number: 2
+
+difficulties:
+  - 1
+  - 2

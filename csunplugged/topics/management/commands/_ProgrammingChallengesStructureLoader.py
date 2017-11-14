@@ -1,28 +1,14 @@
 """Custom loader for loading structure of programming challenges."""
 
-import os.path
+import os
 from django.db import transaction
-
-from utils.BaseLoader import BaseLoader
-
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
-
+from utils.TranslatableModelLoader import TranslatableModelLoader
 from topics.models import ProgrammingChallengeLanguage, ProgrammingChallengeDifficulty
 
 
-class ProgrammingChallengesStructureLoader(BaseLoader):
+class ProgrammingChallengesStructureLoader(TranslatableModelLoader):
     """Custom loader for loading structure of programming challenges."""
-
-    def __init__(self, structure_file_path, BASE_PATH):
-        """Create the loader for loading structure of programming challenges.
-
-        Args:
-            structure_file_path: File path for structure YAML file (str).
-            BASE_PATH: Base file path (str).
-        """
-        super().__init__(BASE_PATH)
-        self.structure_file_path = structure_file_path
-        self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(structure_file_path)[0])
 
     @transaction.atomic
     def load(self):
@@ -32,79 +18,83 @@ class ProgrammingChallengesStructureLoader(BaseLoader):
             MissingRequiredFieldError: when no object can be found with the matching
                 attribute.
         """
-        structure = self.load_yaml_file(
-            os.path.join(
-                self.BASE_PATH,
-                self.structure_file_path
-            )
-        )
+        structure = self.load_yaml_file(self.structure_file_path)
 
-        languages = structure.get("languages", None)
+        prog_languages = structure.get("languages", None)
         difficulty_levels = structure.get("difficulties", None)
-        if None in [languages, difficulty_levels]:
+        if None in [prog_languages, difficulty_levels]:
             raise MissingRequiredFieldError(
                 self.structure_file_path,
                 ["lanugages", "difficulties"],
                 "Programming Challenge Structure"
             )
 
-        for (language, language_data) in languages.items():
+        # Add "-languages" to the structure filename
+        prog_languages_translation_filename = "{}-languages.yaml".format(
+            os.path.splitext(self.structure_filename)[0]
+        )
+        prog_languages_translations = self.get_yaml_translations(
+            prog_languages_translation_filename,
+            required_slugs=prog_languages.keys(),
+            required_fields=["name"]
+        )
 
-            if language_data is None:
+        for (prog_language, prog_language_data) in prog_languages.items():
+
+            if prog_language_data is None:
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
-                    ["name", "number"],
+                    ["number"],
                     "Programming Challenge Language"
                 )
 
             # Check for required fields
-            language_name = language_data.get("name", None)
-            language_number = language_data.get("number", None)
-            if language_name is None or language_number is None:
+            prog_language_number = prog_language_data.get("number", None)
+            if prog_language_number is None:
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
-                    ["name", "number"],
+                    ["number"],
                     "Programming Challenge Language"
                 )
 
             # Check if icon is given
-            if "icon" in language_data:
-                language_icon = language_data["icon"]
+            if "icon" in prog_language_data:
+                prog_language_icon = prog_language_data["icon"]
             else:
-                language_icon = None
+                prog_language_icon = None
 
-            new_language = ProgrammingChallengeLanguage(
-                slug=language,
-                name=language_name,
-                number=language_number,
-                icon=language_icon
+            new_prog_language = ProgrammingChallengeLanguage(
+                slug=prog_language,
+                number=prog_language_number,
+                icon=prog_language_icon
             )
 
-            new_language.save()
+            translations = prog_languages_translations.get(prog_language, dict())
+            self.populate_translations(new_prog_language, translations)
+            self.mark_translation_availability(new_prog_language, required_fields=["name"])
+            new_prog_language.save()
 
-            self.log("Added programming langauge: {}".format(new_language.__str__()))
+            self.log("Added programming language: {}".format(new_prog_language.__str__()))
 
-        for (difficulty, difficulty_data) in difficulty_levels.items():
+        # Add "-languages" to the structure filename
+        difficulties_translation_filename = "{}-difficulties.yaml".format(
+            os.path.splitext(self.structure_filename)[0]
+        )
+        difficulties_translations = self.get_yaml_translations(
+            difficulties_translation_filename,
+            required_slugs=difficulty_levels,
+            required_fields=["name"],
+        )
 
-            if difficulty_data is None:
-                raise MissingRequiredFieldError(
-                    self.structure_file_path,
-                    ["name"],
-                    "Programming Challenge Difficulty"
-                )
-
-            difficulty_name = difficulty_data.get("name", None)
-            if difficulty_name is None:
-                raise MissingRequiredFieldError(
-                    self.structure_file_path,
-                    ["name"],
-                    "Programming Challenge Difficulty"
-                )
+        for difficulty in difficulty_levels:
 
             new_difficulty = ProgrammingChallengeDifficulty(
                 level=difficulty,
-                name=difficulty_name
             )
+
+            translations = difficulties_translations.get(difficulty, dict())
+            self.populate_translations(new_difficulty, translations)
+            self.mark_translation_availability(new_difficulty, required_fields=["name"])
             new_difficulty.save()
 
             self.log("Added programming difficulty level: {}".format(new_difficulty.__str__()))

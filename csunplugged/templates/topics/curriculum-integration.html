@@ -1,5 +1,6 @@
 {% extends "columns.html" %}
 
+{% load i18n %}
 {% load static %}
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
@@ -34,8 +35,8 @@
 {% block right_column_content %}
   {% if prerequisite_lessons %}
     <div class="alert alert-warning" role="alert">
-      <p class="h5 mb-1">Heads up!</p>
-      <p class="mb-1">To do this activity it's expected you understand the content covered in the following:</p>
+      <p class="h5 mb-1">{% trans "Heads up!" %}</p>
+      <p class="mb-1">{% trans "To do this activity it's expected you understand the content covered in the following:" %}</p>
       <ul class="mb-1">
         {% for lesson in prerequisite_lessons %}
           <li>

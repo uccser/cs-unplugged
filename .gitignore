@@ -110,3 +110,6 @@ temp/
 
 # Collected static files folder
 staticfiles/
+
+# OSX system files
+.DS_Store

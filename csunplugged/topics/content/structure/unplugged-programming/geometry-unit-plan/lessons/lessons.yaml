@@ -1,0 +1,40 @@
+finding-2d-shapes:
+  duration: 30
+  computational-thinking-links: finding-2d-shapes-ct-links.md
+  learning-outcomes:
+    - unplugged-programming-give-instructions
+    - unplugged-programming-identify-bug-correct
+    - unplugged-programming-explain-exact-instructions
+    - unplugged-programming-follow-instructions
+    - unplugged-programming-identify-2D-shapes
+    - unplugged-programming-communicate-debugging
+    - unplugged-programming-actively-listen-feedback
+    - unplugged-programming-give-accurate-instructions-pace
+  generated-resources:
+    - arrows
+    - left-right-cards
+    - job-badges
+  classroom-resources:
+    - handheld-whiteboards
+    - whiteboard-pens
+    - clipboards
+    - paper
+
+moving-in-a-shape:
+  duration: 30
+  computational-thinking-links: moving-in-a-shape-ct-links.md
+  learning-outcomes:
+    - unplugged-programming-give-instructions-shape
+    - unplugged-programming-identify-bug-shape
+    - unplugged-programming-explain-exact-instructions
+    - unplugged-programming-follow-instructions
+    - unplugged-programming-give-accurate-instructions-pace
+    - unplugged-programming-describe-draw-2D-shape
+  generated-resources:
+    - arrows
+    - left-right-cards
+    - job-badges
+  classroom-resources:
+    - blocks
+    - whiteboard
+    - whiteboard-pens

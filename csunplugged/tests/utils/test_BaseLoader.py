@@ -2,7 +2,7 @@
 
 from django.test import SimpleTestCase
 from tests.utils.BareBaseLoader import BareBaseLoader
-from utils.errors.InvalidConfigFileError import InvalidConfigFileError
+from utils.errors.InvalidYAMLFileError import InvalidYAMLFileError
 import os.path
 
 TEST_ASSET_PATH = "tests/utils/assets/"
@@ -23,7 +23,7 @@ class BaseLoaderTest(SimpleTestCase):
         loader = BareBaseLoader()
         filename = "yaml-invalid.yaml"
         self.assertRaises(
-            InvalidConfigFileError,
+            InvalidYAMLFileError,
             loader.load_yaml_file,
             os.path.join(TEST_ASSET_PATH, filename)
         )
@@ -32,7 +32,7 @@ class BaseLoaderTest(SimpleTestCase):
         loader = BareBaseLoader()
         filename = "yaml-invalid-not-dict.yaml"
         self.assertRaises(
-            InvalidConfigFileError,
+            InvalidYAMLFileError,
             loader.load_yaml_file,
             os.path.join(TEST_ASSET_PATH, filename)
         )

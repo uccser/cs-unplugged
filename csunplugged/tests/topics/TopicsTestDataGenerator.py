@@ -85,6 +85,7 @@ class TopicsTestDataGenerator:
             name="Area {}".format(number),
             number=number,
             parent=parent,
+            languages=["en"],
         )
         area.save()
         return area
@@ -102,6 +103,7 @@ class TopicsTestDataGenerator:
             slug="topic-{}".format(number),
             name="Topic {}".format(number),
             content="<p>Content for topic {}.</p>".format(number),
+            languages=["en"],
         )
         topic.save()
         return topic
@@ -121,6 +123,7 @@ class TopicsTestDataGenerator:
             slug="unit-plan-{}".format(number),
             name="Unit Plan {}".format(number),
             content="<p>Content for unit plan {}.</p>".format(number),
+            languages=["en"],
         )
         unit_plan.save()
         return unit_plan
@@ -147,6 +150,7 @@ class TopicsTestDataGenerator:
             ),
             duration=number,
             content="<p>Content for lesson {}.</p>".format(number),
+            languages=["en"],
         )
         lesson.save()
         if age_group:
@@ -169,7 +173,8 @@ class TopicsTestDataGenerator:
         """
         age_group = AgeGroup(
             slug="{}-{}".format(min_age, max_age),
-            ages=(min_age, max_age)
+            ages=(min_age, max_age),
+            languages=["en"],
         )
         age_group.save()
         return age_group
@@ -185,7 +190,8 @@ class TopicsTestDataGenerator:
         """
         difficulty = ProgrammingChallengeDifficulty(
             level="1",
-            name="Difficulty-{}".format(number)
+            name="Difficulty-{}".format(number),
+            languages=["en"],
         )
         difficulty.save()
         return difficulty
@@ -203,6 +209,7 @@ class TopicsTestDataGenerator:
             slug="language-{}".format(number),
             name="Language {}".format(number),
             number=number,
+            languages=["en"],
         )
         language.save()
         return language
@@ -242,6 +249,7 @@ class TopicsTestDataGenerator:
             content=content,
             extra_challenge=extra_challenge,
             difficulty=difficulty,
+            languages=["en"],
         )
         challenge.save()
         return challenge
@@ -275,6 +283,7 @@ class TopicsTestDataGenerator:
             expected_result=expected_result,
             hints=hints,
             solution=solution,
+            languages=["en"],
         )
         implementation.save()
         return implementation
@@ -291,6 +300,7 @@ class TopicsTestDataGenerator:
         outcome = LearningOutcome(
             slug="outcome-{}".format(number),
             text="Outcome {}".format(number),
+            languages=["en"],
         )
         outcome.save()
         return outcome

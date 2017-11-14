@@ -5,7 +5,7 @@ from django.db import transaction
 from django.http.request import QueryDict
 from utils.BaseLoader import BaseLoader
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
-from utils.errors.InvalidConfigValueError import InvalidConfigValueError
+from utils.errors.InvalidYAMLValueError import InvalidYAMLValueError
 from resources.utils.get_resource_generator import get_resource_generator
 from resources.models import Resource
 from django.contrib.staticfiles import finders
@@ -13,16 +13,6 @@ from django.contrib.staticfiles import finders
 
 class ResourcesLoader(BaseLoader):
     """Custom loader for loading resources."""
-
-    def __init__(self, structure_file, BASE_PATH):
-        """Create the loader for loading resources.
-
-        Args:
-            structure_file: file path for structure YAML file (str).
-            BASE_PATH: base file path (str).
-        """
-        super().__init__(BASE_PATH)
-        self.structure_file_path = os.path.join(self.BASE_PATH, structure_file)
 
     @transaction.atomic
     def load(self):
@@ -71,7 +61,7 @@ class ResourcesLoader(BaseLoader):
 
             # Check copies value is boolean
             if not isinstance(resource_copies, bool):
-                raise InvalidConfigValueError(
+                raise InvalidYAMLValueError(
                     self.structure_file_path,
                     "copies",
                     "'true' or 'false'"

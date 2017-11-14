@@ -1,5 +1,6 @@
 {% extends "columns.html" %}
 
+{% load i18n %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block breadcrumbs %}
@@ -27,36 +28,38 @@
     {% endblock generation_form %}
 
     <fieldset>
-      <legend>Paper Size</legend>
+      <legend>{% trans "Paper Size" %}</legend>
       <input type="radio" name="paper_size" id="size_a4" value="a4" checked="checked">
-      <label for="size_a4">A4</label>
+      <label for="size_a4">{% trans "A4" %}</label>
       <br>
       <input type="radio" name="paper_size" id="size_letter" value="letter">
-      <label for="size_letter">US Letter</label>
+      <label for="size_letter">{% trans "US Letter" %}</label>
     </fieldset>
 
     {% if debug %}
       <hr>
-      <h3>Local Generation Only</h3>
+      <h3>{% trans "Local Generation Only" %}</h3>
 
       <fieldset>
-        <legend>Header Text</legend>
+        <legend>{% trans "Header Text" %}</legend>
         <input type="text" name="header_text" placeholder="Example School: Room Four" class="long-text-field">
       </fieldset>
 
       {% if resource.copies %}
         <fieldset>
-          <legend>Number of Copies</legend>
+          <legend>{% trans "Number of Copies" %}</legend>
           <input type="number" name="copies" value=1 min=1 max=50>
         </fieldset>
       {% endif %}
 
       <hr>
-      <input type="submit" value="Generate Resource" class="btn btn-outline-primary mb-3" />
+      <input type="submit" value="{% trans "Generate Resource" %}" class="btn btn-outline-primary mb-3" />
     {% else %}
       {% if resource.copies %}
       <div class="alert alert-info" role="alert">
+      {% blocktrans trimmed %}
         The download of this resource includes {{ copies_amount }} unique copies.
+      {% endblocktrans %}
       </div>
       {% endif %}
 
@@ -67,7 +70,7 @@
 
 {% block right_column_content %}
   {% if thumbnail %}
-    <h2>Preview</h2>
+    <h2>{% trans "Preview" %}</h2>
     {% load static %}
     <img id="resource-thumbnail" class="img-thumbnail">
   {% endif %}
@@ -75,15 +78,15 @@
 
 {% block end_content %}
   {% if grouped_lessons %}
-    <h2>Related Lessons</h2>
+    <h2>{% trans "Related Lessons" %}</h2>
     {% for age_group, lessons in grouped_lessons.items %}
       <table class="table table-responsive table-center-vertical">
         <thead class="thead-default">
           <tr>
-            <th>Topic</th>
-            <th class="text-center">Ages</th>
-            <th class="text-center">Number</th>
-            <th>Lesson</th>
+            <th>{% trans "Topic" %}</th>
+            <th class="text-center">{% trans "Ages" %}</th>
+            <th class="text-center">{% trans "Number" %}</th>
+            <th>{% trans "Lesson" %}</th>
           </tr>
         </thead>
         <tbody>
