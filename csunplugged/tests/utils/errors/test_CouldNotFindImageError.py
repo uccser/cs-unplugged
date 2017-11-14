@@ -4,7 +4,7 @@ from django.test import SimpleTestCase
 from utils.errors.CouldNotFindImageError import CouldNotFindImageError
 
 
-class CouldNotFindImageErrormTest(SimpleTestCase):
+class CouldNotFindImageErrorTest(SimpleTestCase):
     """Test class for CouldNotFindImageError error.
 
     Note: Tests to check if these were raised appropriately

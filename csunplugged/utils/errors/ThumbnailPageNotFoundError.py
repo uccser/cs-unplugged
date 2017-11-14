@@ -1,7 +1,7 @@
 """Exception for missing thumbnail page in resource."""
 
 
-class ThumbnailPageNotFound(Exception):
+class ThumbnailPageNotFoundError(Exception):
     """Exception for missing thumbnail page in resource."""
 
     def __init__(self, generator):

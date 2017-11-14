@@ -1,23 +1,23 @@
-"""Test class for CouldNotFindGlossaryTerm error."""
+"""Test class for CouldNotFindGlossaryTermError error."""
 
 from django.test import SimpleTestCase
-from utils.errors.CouldNotFindGlossaryTerm import CouldNotFindGlossaryTerm
+from utils.errors.CouldNotFindGlossaryTermError import CouldNotFindGlossaryTermError
 
 
-class CouldNotFindGlossaryTermTest(SimpleTestCase):
-    """Test class for CouldNotFindGlossaryTerm error.
+class CouldNotFindGlossaryTermErrorTest(SimpleTestCase):
+    """Test class for CouldNotFindGlossaryTermError error.
 
     Note: Tests to check if these were raised appropriately
           are located where this exception is used.
     """
 
     def test_attributes(self):
-        exception = CouldNotFindGlossaryTerm("term", "file path")
+        exception = CouldNotFindGlossaryTermError("term", "file path")
         self.assertEqual(exception.term, "term")
         self.assertEqual(exception.reference_file_path, "file path")
 
     def test_string(self):
-        exception = CouldNotFindGlossaryTerm("term", "file path")
+        exception = CouldNotFindGlossaryTermError("term", "file path")
         expected_string = (
             "\n****************************ERROR****************************\n"
             "File: file path\n\n"

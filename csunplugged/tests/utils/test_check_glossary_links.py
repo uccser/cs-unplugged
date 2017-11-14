@@ -3,7 +3,7 @@
 from tests.BaseTestWithDB import BaseTestWithDB
 from utils.check_glossary_links import check_converter_glossary_links
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
-from utils.errors.CouldNotFindGlossaryTerm import CouldNotFindGlossaryTerm
+from utils.errors.CouldNotFindGlossaryTermError import CouldNotFindGlossaryTermError
 
 
 class CheckGlossaryLinksTest(BaseTestWithDB):
@@ -40,7 +40,7 @@ class CheckGlossaryLinksTest(BaseTestWithDB):
             "term-2": [],
         }
         self.assertRaises(
-            CouldNotFindGlossaryTerm,
+            CouldNotFindGlossaryTermError,
             check_converter_glossary_links,
             terms_to_find,
             "md file path"

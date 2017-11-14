@@ -1,7 +1,7 @@
 """Exception for more than one thumbnail page in resource."""
 
 
-class MoreThanOneThumbnailPageFound(Exception):
+class MoreThanOneThumbnailPageFoundError(Exception):
     """Exception for more than one thumbnail page in resource."""
 
     def __init__(self, generator):

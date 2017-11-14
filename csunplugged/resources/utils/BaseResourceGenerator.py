@@ -5,8 +5,8 @@ from resources.utils.resize_encode_resource_images import resize_encode_resource
 from utils.str_to_bool import str_to_bool
 from utils.errors.QueryParameterMissingError import QueryParameterMissingError
 from utils.errors.QueryParameterInvalidError import QueryParameterInvalidError
-from utils.errors.ThumbnailPageNotFound import ThumbnailPageNotFound
-from utils.errors.MoreThanOneThumbnailPageFound import MoreThanOneThumbnailPageFound
+from utils.errors.ThumbnailPageNotFoundError import ThumbnailPageNotFoundError
+from utils.errors.MoreThanOneThumbnailPageFoundError import MoreThanOneThumbnailPageFoundError
 from copy import deepcopy
 from django.conf import settings
 from django.template.loader import render_to_string
@@ -135,9 +135,9 @@ class BaseResourceGenerator(ABC):
         """Create thumbnail for resource request.
 
         Raises:
-            ThumbnailPageNotFound: If resource with more than one page does
+            ThumbnailPageNotFoundError: If resource with more than one page does
                                    not provide a thumbnail page.
-            MoreThanOneThumbnailPageFound: If resource provides more than
+            MoreThanOneThumbnailPageFoundError: If resource provides more than
                                            one page as the thumbnail.
 
         Returns:
@@ -151,9 +151,9 @@ class BaseResourceGenerator(ABC):
             thumbnail_data = list(filter(lambda thumbnail_data: thumbnail_data.get("thumbnail"), thumbnail_data))
 
             if len(thumbnail_data) == 0:
-                raise ThumbnailPageNotFound(self)
+                raise ThumbnailPageNotFoundError(self)
             elif len(thumbnail_data) > 1:
-                raise MoreThanOneThumbnailPageFound(self)
+                raise MoreThanOneThumbnailPageFoundError(self)
 
         thumbnail_data = resize_encode_resource_images(
             self.requested_options["paper_size"],
