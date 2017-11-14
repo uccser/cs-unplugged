@@ -3,7 +3,7 @@
 from .Error import Error
 
 ERROR_MESSAGE = """
-Invalid YAML file (.yaml)
+Invalid YAML file (.yaml).
 
 Options:
   - Does the file match the expected layout?
