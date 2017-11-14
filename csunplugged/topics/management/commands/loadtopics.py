@@ -86,21 +86,20 @@ class Command(BaseCommand):
                     content_path=glossary_folder_path,
                 ).load()
 
-        if structure_file.get("age-groups", None) is None:
+        age_groups_structure_file_path = structure_file.get("age-groups", None)
+        if age_groups_structure_file_path is None:
             raise MissingRequiredFieldError(
                 structure_file_path,
                 ["age-groups"],
                 "Application Structure"
             )
         else:
-            age_groups_structure_file_path = structure_file["age-groups"]
-            if age_groups_structure_file_path is not None:
-                age_groups_path, structure_filename = os.path.split(age_groups_structure_file_path)
-                factory.create_age_groups_loader(
-                    content_path=age_groups_path,
-                    base_path=base_path,
-                    structure_filename=structure_filename
-                ).load()
+            age_groups_path, structure_filename = os.path.split(age_groups_structure_file_path)
+            factory.create_age_groups_loader(
+                content_path=age_groups_path,
+                base_path=base_path,
+                structure_filename=structure_filename
+            ).load()
 
         if structure_file.get("topics", None) is None or not isinstance(structure_file["topics"], list):
             raise MissingRequiredFieldError(
@@ -108,12 +107,12 @@ class Command(BaseCommand):
                 ["topics"],
                 "Application Structure"
             )
-
-        for topic in structure_file["topics"]:
-            topic_path = topic
-            topic_structure_file = "{}.yaml".format(topic)
-            factory.create_topic_loader(
-                base_path=base_path,
-                content_path=topic_path,
-                structure_filename=topic_structure_file
-            ).load()
+        else:
+            for topic in structure_file["topics"]:
+                topic_path = topic
+                topic_structure_file = "{}.yaml".format(topic)
+                factory.create_topic_loader(
+                    base_path=base_path,
+                    content_path=topic_path,
+                    structure_filename=topic_structure_file
+                ).load()
