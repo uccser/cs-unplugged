@@ -2,7 +2,7 @@
 
 import os.path
 from django.core.management.base import BaseCommand
-
+from django.conf import settings
 from utils.BaseLoader import BaseLoader
 from utils.LoaderFactory import LoaderFactory
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
@@ -24,7 +24,7 @@ class Command(BaseCommand):
 
         # Get structure and content files
         base_loader = BaseLoader()
-        base_path = "topics/content/"
+        base_path = settings.TOPICS_CONTENT_BASE_PATH
 
         structure_file_path = os.path.join(
             base_path,
