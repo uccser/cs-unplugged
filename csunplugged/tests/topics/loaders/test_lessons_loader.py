@@ -474,6 +474,65 @@ class LessonsLoaderTest(BaseTestWithDB):
             [],
         )
 
+    def test_lesson_loader_optional_classroom_resources_set_correctly(self):
+        config_file = "classroom-resources.yaml"
+
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        self.test_data.create_classroom_resource(1)
+        self.test_data.create_classroom_resource(2)
+
+        lesson_loader = LessonsLoader(
+            topic,
+            unit_plan,
+            structure_filename=config_file,
+            base_path=self.base_path
+        )
+        lesson_loader.load()
+        self.assertQuerysetEqual(
+            Lesson.objects.get(slug="lesson-1").classroom_resources.all(),
+            [
+                "<ClassroomResource: Resource 1>",
+                "<ClassroomResource: Resource 2>",
+            ],
+            ordered=False,
+        )
+
+    def test_lesson_loader_optional_classroom_resources_invalid(self):
+        config_file = "classroom-resources.yaml"
+
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        self.test_data.create_classroom_resource(1)
+
+        lesson_loader = LessonsLoader(
+            topic,
+            unit_plan,
+            structure_filename=config_file,
+            base_path=self.base_path
+        )
+        self.assertRaises(
+            KeyNotFoundError,
+            lesson_loader.load
+        )
+
+    def test_lesson_loader_optional_classroom_resources_empty(self):
+        config_file = "classroom-resources-empty.yaml"
+
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+
+        lesson_loader = LessonsLoader(
+            topic,
+            unit_plan,
+            structure_filename=config_file,
+            base_path=self.base_path
+        )
+        lesson_loader.load()
+        self.assertFalse(
+            Lesson.objects.get(slug="lesson-1").classroom_resources.exists()
+        )
+
     def test_lesson_loader_optional_classroom_resources_set_correctly_when_omitted(self):
         config_file = "basic-config.yaml"
 

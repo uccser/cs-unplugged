@@ -164,8 +164,7 @@ class LessonsLoader(TranslatableModelLoader):
                         ["learning-outcomes"],
                         "Lesson"
                     )
-
-                if learning_outcome_slugs is not None:
+                else:
                     for learning_outcome_slug in learning_outcome_slugs:
                         try:
                             learning_outcome = LearningOutcome.objects.get(

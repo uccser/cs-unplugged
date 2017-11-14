@@ -19,6 +19,7 @@ from topics.models import (
     LearningOutcome,
     GlossaryTerm,
     ResourceDescription,
+    ClassroomResource,
 )
 
 
@@ -292,7 +293,7 @@ class TopicsTestDataGenerator:
         """Create learning outcome object.
 
         Args:
-            number: Identifier of the challenge (int).
+            number: Identifier of the outcome (int).
 
         Returns:
             LearningOutcome object.
@@ -304,6 +305,23 @@ class TopicsTestDataGenerator:
         )
         outcome.save()
         return outcome
+
+    def create_classroom_resource(self, number):
+        """Create classroom resource object.
+
+        Args:
+            number: Identifier of the resource (int).
+
+        Returns:
+            ClassroomResource object.
+        """
+        resource = ClassroomResource(
+            slug="resource-{}".format(number),
+            description="Resource {}".format(number),
+            languages=["en"],
+        )
+        resource.save()
+        return resource
 
     def add_challenge_lesson_relationship(self, challenge, lesson, set_number, number):
         """Add relationship between challenge and lesson objects.
