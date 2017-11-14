@@ -24,6 +24,7 @@
     <meta name="author" content="">
     <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{% static 'css/website.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flags.css' %}">
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
@@ -45,6 +46,21 @@
         </a>
         <div class="collapse navbar-collapse" id="navbarNav">
           <div class="navbar-nav ml-auto text-center">
+            <div class="dropdown">
+              <button class="nav-item nav-link btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="{% static 'img/blank.gif' %}"  class="flag flag-language-{{ LANGUAGE_CODE }}"/>
+                <span>{{ current_language.name_translated }}
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                {% for language in LANGUAGES %}
+                  {% get_language_info for language.0 as lang %}
+                  <a class="dropdown-item" href="{% translate_url language.0 %}">
+                    <img src="{% static 'img/blank.gif' %}" class="flag flag-language-{{ lang.code }}" />
+                    {{ lang.name_translated }}
+                  </a>
+                {% endfor %}
+              </div>
+            </div>
             <a class="nav-item nav-link" href="{% url 'topics:index' %}">{% trans "Topics" %}</a>
             <a class="nav-item nav-link" href="{% url 'resources:index' %}">{% trans "Resources" %}</a>
             <a class="nav-item nav-link" href="{% url 'general:about' %}">{% trans "About" %}</a>
@@ -192,7 +208,12 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body" id="glossary-modal-definition"></div>
+          <div class="modal-body">
+            <div class="alert alert-danger" role="alert" id="glossary-modal-translation-unavailable">
+              This definition is not available in {{ LANGUAGE_CODE|language_name }}, sorry!
+            </div>
+            <div id="glossary-modal-definition"></div>
+          </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Close" %}</button>
           </div>
@@ -202,7 +223,7 @@
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script>
-      glossary_url = "{% url 'topics:glossary_json' %}";
+      glossary_url = "{% url 'topics:glossary_json' %}"
     </script>
     <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
     <script src="{% static 'js/tether.min.js' %}"></script>

@@ -23,4 +23,19 @@
     <h2>{{ glossary_term.term }}</h2>
     {% render_html_field glossary_term.definition %}
   {% endfor %}
+  {% if untranslated_glossary_terms %}
+    <div class="alert alert-danger" role="alert">
+      {% with language=current_language.name_translated %}
+        <strong>
+          {% blocktrans trimmed %}
+          The following glossary terms are not yet available in {{ language }}. Sorry about that!
+          {% endblocktrans %}
+        </strong>
+      {% endwith %}
+      {% for glossary_term in untranslated_glossary_terms %}
+        <h2>{{ glossary_term.term }}</h2>
+        {% render_html_field glossary_term.definition %}
+      {% endfor %}
+    </div>
+  {% endif %}
 {% endblock left_column_content %}
