@@ -20,6 +20,6 @@ class EmptyYAMLFileErrorTest(SimpleTestCase):
         expected_string = (
             "\n****************************ERROR****************************\n"
             "File: yaml file path\n\n"
-            "A config file cannot be empty.\n"
+            "A YAML file cannot be empty.\n"
         )
         self.assertEqual(exception.__str__(), expected_string)

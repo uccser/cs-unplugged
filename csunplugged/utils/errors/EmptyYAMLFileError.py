@@ -2,7 +2,7 @@
 
 from .Error import Error
 
-ERROR_MESSAGE = "\nA yaml file cannot be empty.\n"
+ERROR_MESSAGE = "\nA YAML file cannot be empty.\n"
 
 
 class EmptyYAMLFileError(Error):

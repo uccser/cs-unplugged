@@ -20,7 +20,7 @@ class InvalidYAMLFileErrorTest(SimpleTestCase):
         expected_string = (
             "\n****************************ERROR****************************\n"
             "File: yaml file path\n\n"
-            "Invalid configuration file.\n\n"
+            "Invalid YAML file (.yaml).\n\n"
             "Options:\n"
             "  - Does the file match the expected layout?\n"
             "  - Does the file contain at least one key:value pair?\n"

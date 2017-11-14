@@ -13,14 +13,14 @@ class CouldNotFindYAMLFileErrorTest(SimpleTestCase):
 
     def test_attributes(self):
         exception = CouldNotFindYAMLFileError("yaml file path")
-        self.assertEqual(exception.config_file_path, "yaml file path")
+        self.assertEqual(exception.yaml_file_path, "yaml file path")
 
     def test_string(self):
         exception = CouldNotFindYAMLFileError("yaml file path")
         expected_string = (
             "\n****************************ERROR****************************\n"
             "File: yaml file path\n\n"
-            "Could not find config file.\n\n"
+            "Could not find YAML file (.yaml).\n\n"
             "  - Did you spell the name of the file correctly?\n"
             "  - Does the file exist?\n"
             "  - Is the file saved in the correct directory?\n"
