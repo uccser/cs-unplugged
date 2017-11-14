@@ -86,7 +86,7 @@ class Command(BaseCommand):
                     content_path=glossary_folder_path,
                 ).load()
 
-        if structure_file["age-groups"] is None:
+        if structure_file.get("age-groups", None) is None:
             raise MissingRequiredFieldError(
                 structure_file_path,
                 ["age-groups"],
@@ -102,7 +102,7 @@ class Command(BaseCommand):
                     structure_filename=structure_filename
                 ).load()
 
-        if structure_file["topics"] is None:
+        if structure_file.get("topics", None) is None or not isinstance(structure_file["topics"], list):
             raise MissingRequiredFieldError(
                 structure_file_path,
                 ["topics"],
