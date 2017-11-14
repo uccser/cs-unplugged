@@ -18,6 +18,8 @@ omit =
     # TODO: Add integration tests for local and production environments
     */config/settings/production.py
     */config/settings/local.py
+    # Omit pregenerated files
+    */config/wsgi.py
 
 [report]
 fail_under=20
