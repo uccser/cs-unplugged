@@ -16,6 +16,7 @@ class RenderScratchImagesTest(SimpleTestCase):
     def tearDown(self):
         """Automatically called after each test."""
         shutil.rmtree(SCRATCH_PATH)
+        super().tearDown()
 
     def test_render_scratch_images_single(self):
         images = [
