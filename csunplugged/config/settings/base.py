@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 import environ
 import os.path
 
+# Add custom languages not provided by Django
+import django.conf.locale
+from django.conf import global_settings
+
 # cs-unplugged/csunplugged/config/settings/base.py - 3 = csunplugged/
 ROOT_DIR = environ.Path(__file__) - 3
 
@@ -102,9 +106,42 @@ TIME_ZONE = "UTC"
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#language-code
 LANGUAGE_CODE = "en"
 
+INCONTEXT_L10N_PSEUDOLANGUAGE = "xx-lr"
+INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI = "xx-rl"
+INCONTEXT_L10N_PSEUDOLANGUAGES = (
+    INCONTEXT_L10N_PSEUDOLANGUAGE,
+    INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI
+)
+
 LANGUAGES = (
     ("en", "English"),
 )
+
+if env.bool("INCLUDE_INCONTEXT_L10N", True):
+    EXTRA_LANGUAGES = [
+        (INCONTEXT_L10N_PSEUDOLANGUAGE, "In-context translations"),
+        (INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI, "In-context translations (Bidi)"),
+    ]
+
+    LANGUAGES += tuple(EXTRA_LANGUAGES)
+
+    EXTRA_LANG_INFO = {
+        INCONTEXT_L10N_PSEUDOLANGUAGE: {
+            'bidi': False,
+            'code': INCONTEXT_L10N_PSEUDOLANGUAGE,
+            'name': "In-context translations",
+            'name_local': "In-context translations",
+        },
+        INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI: {
+            'bidi': True,
+            'code': INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI,
+            'name': "In-context translations (Bidi)",
+            'name_local': "In-context translations (Bidi)",
+        }
+    }
+
+    django.conf.locale.LANG_INFO.update(EXTRA_LANG_INFO)
+    global_settings.LANGUAGES = global_settings.LANGUAGES + EXTRA_LANGUAGES
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#site-id
 SITE_ID = 1
