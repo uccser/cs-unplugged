@@ -100,18 +100,3 @@ class SortingNetworkCardsResourceViewTest(ResourceViewBaseTest):
             response.get("Content-Disposition"),
             'attachment; filename="{}"'.format(filename)
         )
-
-    def subtitle(self, combination):
-        """Return text of subtitle for given combination.
-
-        Args:
-            combination (dict): Dictionary of a valid combination
-
-        Returns:
-            String of subtitle.
-        """
-        text = "{} - {}".format(
-            combination["type"].replace("_", " "),
-            combination["paper_size"],
-        )
-        return text

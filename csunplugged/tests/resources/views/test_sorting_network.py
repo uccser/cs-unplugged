@@ -100,26 +100,3 @@ class SortingNetworkResourceViewTest(ResourceViewBaseTest):
             response.get("Content-Disposition"),
             'attachment; filename="{}"'.format(filename)
         )
-
-    def subtitle(self, combination):
-        """Return text of subtitle for given combination.
-
-        Args:
-            combination (dict): Dictionary of a valid combination
-
-        Returns:
-            String of subtitle.
-        """
-        if combination["prefilled_values"] == "blank":
-            range_text = "blank"
-        elif combination["prefilled_values"] == "easy":
-            range_text = "1 to 9"
-        elif combination["prefilled_values"] == "medium":
-            range_text = "10 to 99"
-        else:
-            range_text = "100 to 999"
-        text = "{} - {}".format(
-            range_text,
-            combination["paper_size"],
-        )
-        return text

@@ -100,18 +100,3 @@ class ParityCardsResourceViewTest(ResourceViewBaseTest):
             response.get("Content-Disposition"),
             'attachment; filename="{}"'.format(filename)
         )
-
-    def subtitle(self, combination):
-        """Return text of subtitle for given combination.
-
-        Args:
-            combination (dict): Dictionary of a valid combination
-
-        Returns:
-            String of subtitle.
-        """
-        text = "{} back - {}".format(
-            combination["back_colour"],
-            combination["paper_size"],
-        )
-        return text

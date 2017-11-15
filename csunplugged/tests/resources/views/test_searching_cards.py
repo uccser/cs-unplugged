@@ -148,32 +148,3 @@ class SearchingCardsResourceViewTest(ResourceViewBaseTest):
             response.get("Content-Disposition"),
             'attachment; filename="{}"'.format(filename)
         )
-
-    def subtitle(self, combination):
-        """Return text of subtitle for given combination.
-
-        Args:
-            combination (dict): Dictionary of a valid combination
-
-        Returns:
-            String of subtitle.
-        """
-        if combination["max_number"] == "blank":
-            range_text = "blank"
-        elif combination["max_number"] == "cards":
-            range_text = "0 to {}".format(combination["number_cards"])
-        else:
-            range_text = "0 to {}".format(combination["max_number"])
-
-        if combination["help_sheet"]:
-            help_text = "with helper sheet"
-        else:
-            help_text = "without helper sheet"
-
-        text = "{} cards - {} - {} - {}".format(
-            combination["number_cards"],
-            range_text,
-            help_text,
-            combination["paper_size"],
-        )
-        return text

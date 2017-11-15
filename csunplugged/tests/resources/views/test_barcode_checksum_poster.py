@@ -100,18 +100,3 @@ class BarcodeChecksumPosterResourceViewTest(ResourceViewBaseTest):
             response.get("Content-Disposition"),
             'attachment; filename="{}"'.format(filename)
         )
-
-    def subtitle(self, combination):
-        """Return text of subtitle for given combination.
-
-        Args:
-            combination (dict): Dictionary of a valid combination
-
-        Returns:
-            String of subtitle.
-        """
-        text = "{} digits - {}".format(
-            combination["barcode_length"],
-            combination["paper_size"],
-        )
-        return text

@@ -3,7 +3,6 @@ from django.test import tag
 from django.urls import reverse
 from tests.resources.views.ResourceViewBaseTest import ResourceViewBaseTest
 from tests.create_query_string import query_string
-from utils.bool_to_yes_no import bool_to_yes_no
 
 
 @tag("resource")
@@ -101,18 +100,3 @@ class PianoKeysResourceViewTest(ResourceViewBaseTest):
             response.get("Content-Disposition"),
             'attachment; filename="{}"'.format(filename)
         )
-
-    def subtitle(self, combination):
-        """Return text of subtitle for given combination.
-
-        Args:
-            combination (dict): Dictionary of a valid combination
-
-        Returns:
-            String of subtitle.
-        """
-        text = "{} highlight - {}".format(
-            bool_to_yes_no(combination["highlight"]),
-            combination["paper_size"],
-        )
-        return text

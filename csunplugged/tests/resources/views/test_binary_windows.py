@@ -148,24 +148,3 @@ class BinaryWindowsResourceViewTest(ResourceViewBaseTest):
             response.get("Content-Disposition"),
             'attachment; filename="Resource Binary Windows (8 bits - lightbulb - with dot counts - a4).pdf"'
         )
-
-    def subtitle(self, combination):
-        """Return text of subtitle for given combination.
-
-        Args:
-            combination (dict): Dictionary of a valid combination
-
-        Returns:
-            String of subtitle.
-        """
-        if combination["dot_counts"]:
-            count_text = "with dot counts"
-        else:
-            count_text = "without dot counts"
-        text = "{} bits - {} - {} - {}".format(
-            combination["number_bits"],
-            combination["value_type"],
-            count_text,
-            combination["paper_size"],
-        )
-        return text

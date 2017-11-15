@@ -148,28 +148,3 @@ class BinaryCardsSmallResourceViewTest(ResourceViewBaseTest):
             response.get("Content-Disposition"),
             'attachment; filename="{}"'.format(filename)
         )
-
-    def subtitle(self, combination):
-        """Return text of subtitle for given combination.
-
-        Args:
-            combination (dict): Dictionary of a valid combination
-
-        Returns:
-            String of subtitle.
-        """
-        if combination["dot_counts"]:
-            display_numbers_text = "with dot counts"
-        else:
-            display_numbers_text = "without dot counts"
-        if combination["black_back"]:
-            black_back_text = "with black back"
-        else:
-            black_back_text = "without black back"
-        subtitle = "{} bits - {} - {} - {}".format(
-            combination["number_bits"],
-            display_numbers_text,
-            black_back_text,
-            combination["paper_size"],
-        )
-        return subtitle
