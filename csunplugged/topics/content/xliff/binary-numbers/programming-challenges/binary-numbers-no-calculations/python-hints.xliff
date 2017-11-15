@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="759" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/binary-numbers-no-calculations/python-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8523" identifier="e88d84e279b3b65b340c0225153e3dc1">
+        <source>The &lt;code&gt;print()&lt;/code&gt; statement allows you to display text or values within the
+parentheses on the screen.
+For example: &lt;code&gt;print(100)&lt;/code&gt; would display &lt;code&gt;100&lt;/code&gt; on the screen.</source>
+        <target>crwdns8523:0crwdne8523:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="8524" identifier="a36288fcae166bc6ce501db2027469de">
+        <source>You will need to use a &lt;code&gt;print()&lt;/code&gt; statement for each number you wish to
+display.</source>
+        <target>crwdns8524:0crwdne8524:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

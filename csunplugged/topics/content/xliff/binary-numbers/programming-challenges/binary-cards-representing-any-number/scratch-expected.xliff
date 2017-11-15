@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="736" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/binary-cards-representing-any-number/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8401" identifier="084593ce34d694032eb79e9acb5080a5">
+        <source>Click on the green flag, enter the inputs provided in the “testing examples” to see the expected output of your program.</source>
+        <target>crwdns8401:0crwdne8401:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8402" identifier="ae91ce5077c71a1db13d3b79f07ec941">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/148424247/?autostart=false&quot;}</source>
+        <target>crwdns8402:0crwdne8402:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="8403" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns8403:0crwdne8403:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="8404" identifier="77cd4bae99f3545125a588c53e506acc">
+        <source>when green flag clicked
+
+ask [Please enter a decimal number:] and wait
+
+say (join (join (join [The binary representation for the number ] (answer)) [ is ]) (cards))</source>
+        <target>crwdns8404:0crwdne8404:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="8405" identifier="4172603d6d88bec9d75c449109fe68d0">
+        <source>repeat until &amp;lt;(number) &amp;lt; (bit value)&amp;gt;
+end
+
+if &amp;lt;&amp;lt;(number) &amp;gt; (bit value)&amp;gt; or &amp;lt;(number) = (bit value)&amp;gt;&amp;gt; then
+else
+end
+
+repeat until &amp;lt;(bit value) = [1]&amp;gt;
+end</source>
+        <target>crwdns8405:0[1]crwdne8405:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="8406" identifier="8aedd8a1af3197ff0d5134b7391849b9">
+        <source>set [number v] to (answer)
+
+set [bit value v] to [1]
+
+set [cards v] to []
+
+set [bit value v] to ((bit value) * (2))
+
+set [bit value v] to ((bit value) / (2))
+
+set [cards v] to (join (cards) [W])
+
+set [number v] to ((number) - (bit value))
+
+set [cards v] to (join (cards) [B])</source>
+        <target>crwdns8406:0[1]crwdnd8406:0[W]crwdnd8406:0[B]crwdne8406:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="8407" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns8407:0{panel end}crwdne8407:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

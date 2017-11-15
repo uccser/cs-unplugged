@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="868" original="/csunplugged/topics/content/en/binary-numbers/unit-plan/unit-plan.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="9094" identifier="4244d6243d6df234626ead2ba62b9cf5">
+        <source>Binary numbers</source>
+        <target>crwdns9094:0crwdne9094:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="9095" identifier="a22d03ddd15bc7c524da48b6626fafa3">
+        <source>See Teaching the Binary Number System in Action!</source>
+        <target>crwdns9095:0crwdne9095:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="9096" identifier="6d21ba4ef45ad17aa53d2173e6b1cace">
+        <source>Binary (Computer Science Unplugged Part 1) - these are place-holder videos, new videos are planned to be developed to represent each lesson plan.</source>
+        <target>crwdns9096:0crwdne9096:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="9097" identifier="0484f0192688a444eac4d7f244e1fc23">
+        <source>{video url=&quot;https://www.youtube.com/embed/Wy6-FXtLMV8&quot;}</source>
+        <target>crwdns9097:0crwdne9097:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="9098" identifier="7f2d651a08f3dc25496acbbdc47ff3e0">
+        <source>What’s It All About?</source>
+        <target>crwdns9098:0crwdne9098:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="9099" identifier="fe4648b9480eb55e764a61a682ca4d09">
+        <source>Computers today use digits to represent information - that's why they're called digital systems.</source>
+        <target>crwdns9099:0crwdne9099:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="9100" identifier="5f3759f53cfff4f5b3fc2d3e599fc605">
+        <source>The simplest and most common way to represent digits is the binary number system, with just two digits (usually written as 0 and 1).</source>
+        <target>crwdns9100:0crwdne9100:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="9101" identifier="7ec265a2412c56bed17f8025e15ae8dc">
+        <source>It is called binary because there are only two different digits used, or two states.</source>
+        <target>crwdns9101:0crwdne9101:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="9102" identifier="07cb58d918666bbed26a33e70fba2646">
+        <source>A bit is usually stored in a memory cell inside a computer, which is an electronic circuit that can be set to a high voltage level (1) or a low voltage level (0); on disks they are represented by magnetism or optical reflection.</source>
+        <target>crwdns9102:0crwdne9102:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="9103" identifier="4968707e6e088b28da87d3e2d689b3ca">
+        <source>There are billions of these bits on a typical computer, and they are used to store text, numbers, images, video, and anything else that we need to store or transmit.</source>
+        <target>crwdns9103:0crwdne9103:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="9104" identifier="420caf5cf1495e507d5d77cdd3478638">
+        <source>On computer networks the bits are communicated by light, voltages or sound.</source>
+        <target>crwdns9104:0crwdne9104:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="9105" identifier="f982f8ae49fb3a92fbe03b89f2d6936c">
+        <source>Anything that can have two different values can represent a bit!</source>
+        <target>crwdns9105:0crwdne9105:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="9106" identifier="44361f929717b400bd859b83edd2937e">
+        <source>Digital Technologies | Data Representation</source>
+        <target>crwdns9106:0crwdne9106:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[3]</note>
+      </trans-unit>
+      <trans-unit id="9107" identifier="075f94d18cb6acba13e1140b2460ed17">
+        <source>The binary number system plays a central role in how information of all kinds is stored on computers.</source>
+        <target>crwdns9107:0crwdne9107:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="9108" identifier="5976ec006e53242a22d65773add430ba">
+        <source>Understanding binary representation can lift a lot of the mystery from computers, because at a fundamental level they’re really just machines for flipping binary digits on and off.</source>
+        <target>crwdns9108:0crwdne9108:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="9109" identifier="033fd974d971c06a81448f3e2f0807a2">
+        <source>Computers are simple machines, and they need very exact instructions to make them do complex tasks.</source>
+        <target>crwdns9109:0crwdne9109:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="9110" identifier="3314babb54734a42d3c2aff74b661da8">
+        <source>Teaching binary numbers as an introduction to computational thinking introduces students to {glossary-link term=&quot;algorithm&quot;}algorithms{glossary-link end} and decomposition, as they learn to break down the problems of calculating binary numbers and converting between binary and decimal numbers, into step by step processes that they can follow to solve these problems; it also introduces abstraction, as students learn that two different things can be used to represent any and all information.</source>
+        <target>crwdns9110:0{glossary-link end}crwdne9110:0</target>
+        <note>Context: XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="9111" identifier="44d24e36e299d2d7b9d64a0d644f39aa">
+        <source>It shows them that a computer isn’t actually that complex, and we use simple concepts in a clever way to make computers do extraordinary things!</source>
+        <target>crwdns9111:0crwdne9111:0</target>
+        <note>Context: XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="9112" identifier="3f64cf935d8e4ca8ddfa1436087b2e14">
+        <source>Vocabulary Explained</source>
+        <target>crwdns9112:0crwdne9112:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[4]</note>
+      </trans-unit>
+      <trans-unit id="9113" identifier="2d3266bac6c85895feeea9f724b4f4da">
+        <source>Binary Digits</source>
+        <target>crwdns9113:0crwdne9113:0</target>
+        <note>Context: Headline 3&#13;
+XPath: /h3</note>
+      </trans-unit>
+      <trans-unit id="9114" identifier="c72c2783bdd9d1fe9d33aa7becdde0ec">
+        <source>Each zero or one is called a bit. Bit is an abbreviation for Binary Digit.</source>
+        <target>crwdns9114:0crwdne9114:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="9115" identifier="203667f08aa14cd9d3c300d30612bd86">
+        <source>Bytes</source>
+        <target>crwdns9115:0crwdne9115:0</target>
+        <note>Context: Headline 3&#13;
+XPath: /h3[2]</note>
+      </trans-unit>
+      <trans-unit id="9116" identifier="e6cb3aa9b8b760b00ed9aa7495caae6a">
+        <source>8 bits grouped together are called a byte, and computers store data in bytes.</source>
+        <target>crwdns9116:0crwdne9116:0</target>
+        <note>Context: XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="9117" identifier="d1c111a49cd9c04af379e4ad020a9e20">
+        <source>A byte is a convenient number of bits as it can store things like simple characters, small numbers, and a useful range of colours, although usually information is stored using groups of bytes.</source>
+        <target>crwdns9117:0crwdne9117:0</target>
+        <note>Context: XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="9118" identifier="d1c29949e5689b4fd26796d655ded3bd">
+        <source>{image file-path=&quot;img/topics/col_binary_bite_vs_byte.png&quot;}</source>
+        <target>crwdns9118:0crwdne9118:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="9119" identifier="bc570793ae596520055aff4466b4f03b">
+        <source>{panel type=&quot;math&quot; title=&quot;Mathematical links&quot;}</source>
+        <target>crwdns9119:0crwdne9119:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="9120" identifier="5ee550521b1f2c64473f8e56b340be94">
+        <source>The binary number system is base 2, so there are only two digits before you need to move to the next place value: 0, 1.</source>
+        <target>crwdns9120:0crwdne9120:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="9121" identifier="58b0f87ffe942c902e2a49666aeb911d">
+        <source>Humans normally use the decimal number system, which is base 10, so there are ten digits before you move to the next place value: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.</source>
+        <target>crwdns9121:0crwdne9121:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="9122" identifier="3c3f493d2786bf99c9204ccae501eb69">
+        <source>{image file-path=&quot;img/topics/col_binary_CSU_boy_hands.png&quot;}</source>
+        <target>crwdns9122:0crwdne9122:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="9123" identifier="cfe6f67dd8e5d9d57d00b70708453b75">
+        <source>{image file-path=&quot;img/topics/col_binary_csu_girl_hands.png&quot;}</source>
+        <target>crwdns9123:0crwdne9123:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="9124" identifier="2c5987aa00c061ae37f4be2df77e21e8">
+        <source>{panel end}</source>
+        <target>crwdns9124:0{panel end}crwdne9124:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="9125" identifier="9e4bf7fea076516537f689bd0ab0bd59">
+        <source>Real World Implications</source>
+        <target>crwdns9125:0crwdne9125:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[5]</note>
+      </trans-unit>
+      <trans-unit id="9126" identifier="7477cd933b54d461bc154a708f5d0748">
+        <source>{image file-path=&quot;img/topics/col_binary_0.png&quot;}</source>
+        <target>crwdns9126:0crwdne9126:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="9127" identifier="207c7d8cf0da8b4e98d5b2114f7b3edb">
+        <source>{image file-path=&quot;img/topics/col_binary_1.png&quot;}</source>
+        <target>crwdns9127:0crwdne9127:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="9128" identifier="392e350ee3c3b34a4eacf58d5401d409">
+        <source>The number of bits used to represent characters in text affects the range of characters available; a short representation is more compact, but can't represent characters from all languages.</source>
+        <target>crwdns9128:0crwdne9128:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li/p</note>
+      </trans-unit>
+      <trans-unit id="9129" identifier="aa5acdbc49fd59f1d53e20af8cca5bc7">
+        <source>The number of bits used to represent colours in images affects how accurate the colours are.</source>
+        <target>crwdns9129:0crwdne9129:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="9130" identifier="9de68a58505943b1c175ab698673aaea">
+        <source>The number of bits used to store sound samples affects the quality of the sound or images.</source>
+        <target>crwdns9130:0crwdne9130:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[3]/p</note>
+      </trans-unit>
+      <trans-unit id="9131" identifier="49a9110d4d9e714fe1dc996895b479be">
+        <source>When designing a new application (perhaps storing genetic data or representing smells), the right number of bits to store a symbol needs to be selected - enough to be accurate, but not so many that it's wasteful.</source>
+        <target>crwdns9131:0crwdne9131:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[4]/p</note>
+      </trans-unit>
+      <trans-unit id="9132" identifier="78004b3638c809999a5947ae781e0406">
+        <source>In encryption and security applications, the more bits in a security key, the more secure it is.</source>
+        <target>crwdns9132:0crwdne9132:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[5]/p</note>
+      </trans-unit>
+      <trans-unit id="9133" identifier="f9cb1b3a0e1b935959c484ab764a09c5">
+        <source>When you purchase a device, measurements in bits relate to how much memory it has and how much data can be stored on different external storage devices.</source>
+        <target>crwdns9133:0crwdne9133:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[6]/p</note>
+      </trans-unit>
+      <trans-unit id="9134" identifier="c8430f3a424668cb1479df923edd0565">
+        <source>Working with only two digits makes it much easier to build reliable circuitry for digital devices.</source>
+        <target>crwdns9134:0crwdne9134:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[7]/p</note>
+      </trans-unit>
+      <trans-unit id="9135" identifier="ce348f1b07e1df277668a808d18076e7">
+        <source>Reflection Questions</source>
+        <target>crwdns9135:0crwdne9135:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[6]</note>
+      </trans-unit>
+      <trans-unit id="9136" identifier="5be7e55141e6c0277fdb381ee6822754">
+        <source>What was most surprising about the learning that happened from the teaching of this unit?</source>
+        <target>crwdns9136:0crwdne9136:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li</note>
+      </trans-unit>
+      <trans-unit id="9137" identifier="4a2faada4b74db67d9e767e933314990">
+        <source>Who were the students who were very systematic in their activities?</source>
+        <target>crwdns9137:0crwdne9137:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li[2]</note>
+      </trans-unit>
+      <trans-unit id="9138" identifier="c1a4618d2fb8f9419ab4b503feecaea2">
+        <source>Who were the students who were very detailed in their activities?</source>
+        <target>crwdns9138:0crwdne9138:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li[3]</note>
+      </trans-unit>
+      <trans-unit id="9139" identifier="153f25a2cbf60dcc820438a47c7b7285">
+        <source>What would I change in my delivery of this unit?</source>
+        <target>crwdns9139:0crwdne9139:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

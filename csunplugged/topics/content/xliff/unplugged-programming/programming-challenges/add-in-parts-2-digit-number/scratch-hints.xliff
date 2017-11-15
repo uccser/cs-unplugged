@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1086" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/add-in-parts-2-digit-number/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14186" identifier="f88812cd5b3618ee2ae7e482747c4206">
+        <source>Make two variables called “num1” and “num2” and set their values to the inputs entered by the user.</source>
+        <target>crwdns14186:0crwdne14186:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="14187" identifier="359b4df475204691150f5ce849a521ba">
+        <source>To make “num1” a tidy number, split “num2” into 2 parts (call these variables “add to tidy num1” and “left from num2”) so the sum of one part and “num1” is a multiple of 10.</source>
+        <target>crwdns14187:0crwdne14187:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="14188" identifier="f1ce39cb2e8f8e6612083be5778a6410">
+        <source>To calculate the value of the variable “add to tidy num1”, subtract the last digit of “num1” from 10 (i.e. 10 - “num1” modulo 10).</source>
+        <target>crwdns14188:0crwdne14188:0</target>
+        <note>Context: XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="14189" identifier="e37fbf656e4756ced5dd5547885ccbb3">
+        <source>For example to make 74 a tidy number, you need to add 6 (10-(74 modulo 10)) making it a tidy number 80.</source>
+        <target>crwdns14189:0crwdne14189:0</target>
+        <note>Context: XPath: /ul/li[3]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

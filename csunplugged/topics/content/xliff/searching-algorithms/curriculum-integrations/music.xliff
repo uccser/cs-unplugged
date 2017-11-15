@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1027" original="/csunplugged/topics/content/en/searching-algorithms/curriculum-integrations/music.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="11531" identifier="24aa45c92eca7adadbf8b5264d1e5180">
+        <source>Drama or video activity</source>
+        <target>crwdns11531:0crwdne11531:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="11532" identifier="80d8468cf526bd03cf2b5627a0588bb9">
+        <source>This activity is inspired by &lt;a href=&quot;http://computationaltales.blogspot.com/&quot;&gt;Computational Fairy Tales&lt;/a&gt; by Jeremy Kubica.</source>
+        <target>crwdns11532:0crwdne11532:0</target>
+        <note>Context: Text&#13;
+XPath: /p/em</note>
+      </trans-unit>
+      <trans-unit id="11533" identifier="47a653356455c041dfd1ecba0322b235">
+        <source>Sample story line</source>
+        <target>crwdns11533:0crwdne11533:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="11534" identifier="8d43a78c6c6fc93ed75e5e0bee6064fc">
+        <source>The Best Cow in the Land competition results are in and the top 31 cows entered are listed in order from the heaviest to the lightest.</source>
+        <target>crwdns11534:0crwdne11534:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="11535" identifier="dc50a1a0ed8c08515bbaabbc51e9cbdf">
+        <source>These cows have been transported back to their farms around the country.</source>
+        <target>crwdns11535:0crwdne11535:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="11536" identifier="38d1c7df6887e8c35749b477d9e5cea1">
+        <source>Now no-one knew that hiding in the hills was a very hungry giant, who loved roast beef the best, and tended to roast a whole cow at a time.</source>
+        <target>crwdns11536:0crwdne11536:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="11537" identifier="38cfeb1343fbecdec55ac9b2664f6278">
+        <source>This giant had a fantastic memory and had memorised, not only the order of the cows from heaviest to lightest, but also which farm they were on and where the farms are.</source>
+        <target>crwdns11537:0crwdne11537:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="11538" identifier="73a0371cc93a88c0ab38e765ba63cac6">
+        <source>The giant starts at the farm with the heaviest cow, and gradually works down in the order of their weights.</source>
+        <target>crwdns11538:0crwdne11538:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="11539" identifier="721f2f270d68628e815b60153f15ba4b">
+        <source>A giant slayer is called in to find the hungry giant.</source>
+        <target>crwdns11539:0crwdne11539:0</target>
+        <note>Context: XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="11540" identifier="2b4e1261e04947d2edbb9b5be240b8db">
+        <source>The giant slayer can tell if the giant has been at a farm because the cow will be missing - if the cow is still at a farm then the giant must be at a farm with heavier cows, but if the cow is gone, then the giant must be at the farms with lighter cows.</source>
+        <target>crwdns11540:0crwdne11540:0</target>
+        <note>Context: XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="11541" identifier="210cb1a453807d2008c88d1d3e4a4c40">
+        <source>Your task</source>
+        <target>crwdns11541:0crwdne11541:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="11542" identifier="35b417bfbb433efc185b46644e7a09be">
+        <source>To make up a stop motion video or play that demonstrates that the giant is using a sequential search to eat the cows in order from heaviest to smallest and that the giant slayers who need to stop the giant from eating all the cows can easily find the giant before too many cows are eaten by using a binary search.</source>
+        <target>crwdns11542:0crwdne11542:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="11543" identifier="b92d182664a64d967ed1e617ab819daa">
+        <source>Extra for experts</source>
+        <target>crwdns11543:0crwdne11543:0</target>
+        <note>Context: Headline 3&#13;
+XPath: /h3</note>
+      </trans-unit>
+      <trans-unit id="11544" identifier="09806b0281d2588395840555a7cd103c">
+        <source>You could change the setting and characters but keep the theme of the story!</source>
+        <target>crwdns11544:0crwdne11544:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="11545" identifier="8d218daa5fe74cdc39d7dfa3199b0c95">
+        <source>Remember that a searching algorithm follows the same rules every time to find an answer.</source>
+        <target>crwdns11545:0crwdne11545:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[7]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

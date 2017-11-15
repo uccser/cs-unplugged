@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1028" original="/csunplugged/topics/content/en/searching-algorithms/curriculum-integrations/where-is-my-hat.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="11546" identifier="5375583ef6217c062989c30315fa3113">
+        <source>Where is my hat?</source>
+        <target>crwdns11546:0crwdne11546:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="11547" identifier="851984ec3a5e40b532a6f75c28a1abaa">
+        <source>{image file-path=&quot;img/topics/where-is-my-hat.png&quot; alt=&quot;A girl thinks about where her hat could be.&quot;}</source>
+        <target>crwdns11547:0crwdne11547:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="11548" identifier="0006675522a61c3e3aacb0bb55517d83">
+        <source>What is something that you or your class lose all the time?
+In this example the student has lost their school hat.</source>
+        <target>crwdns11548:0crwdne11548:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="11549" identifier="2c533e38506404f56d3688a8aec9a523">
+        <source>Make a list of all the places they could look for it.</source>
+        <target>crwdns11549:0crwdne11549:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="11550" identifier="e01e0e9e3e4b9b4aca444142b50f785b">
+        <source>This student might look on the playground, in the lost property box, in the area where they keeps their things; like their desk, locker, or in their bag.</source>
+        <target>crwdns11550:0crwdne11550:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="11551" identifier="4a622ecabd61c8d46c6e4cd6ab9fd787">
+        <source>Write a sequential search algorithm for searching each place and finding your hat!</source>
+        <target>crwdns11551:0crwdne11551:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="11552" identifier="69d0feccfb09d244220ed7c5b9724630">
+        <source>Test that it works!</source>
+        <target>crwdns11552:0crwdne11552:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

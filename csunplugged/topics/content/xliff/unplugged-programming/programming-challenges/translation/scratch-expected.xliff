@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1338" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/translation/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15532" identifier="f3b5fe6b13c58314d4f8a7210242abe3">
+        <source>Click on the green flag to see the expected output of your program.</source>
+        <target>crwdns15532:0crwdne15532:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15533" identifier="84d5fc4a9f2b8e950d5fd8a4acfa65ba">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/154360503/?autostart=false&quot;}</source>
+        <target>crwdns15533:0crwdne15533:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="15534" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns15534:0crwdne15534:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="15535" identifier="33a9754026faa05677262c3790c953a1">
+        <source>when green flag clicked</source>
+        <target>crwdns15535:0crwdne15535:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="15536" identifier="2cf39215171363fb1ebc1aa530e36dc3">
+        <source>set [sides v] to [50]</source>
+        <target>crwdns15536:0[50]crwdne15536:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="15537" identifier="12ff3c5f66aaeb59a58f48f69cc584d1">
+        <source>clear
+
+pen down
+
+pen up
+
+set pen size to (3)</source>
+        <target>crwdns15537:0crwdne15537:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="15538" identifier="8487bc3023f7371a3dff00efbb74c266">
+        <source>go to x: (-180) y: (-50)
+
+point in direction (0 v)
+
+point in direction (90 v)
+
+point in direction (180 v)
+
+move (sides) steps
+
+move (sides) steps
+
+move (sides) steps
+
+move (sides) steps
+
+move (sides) steps
+
+move (sides) steps
+
+move (sides) steps
+
+move (sides) steps
+
+move ([sqrt v] of (((sides) * (sides)) + ((sides) * (sides)))) steps
+
+turn cw (45) degrees
+
+turn cw (45) degrees
+
+turn cw ((180) - (45)) degrees
+
+turn ccw (45) degrees
+
+turn ccw (90) degrees
+
+turn ccw ((180) - (45)) degrees
+
+turn ccw ((180) - (90)) degrees</source>
+        <target>crwdns15538:0crwdne15538:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[4]/code</note>
+      </trans-unit>
+      <trans-unit id="15539" identifier="618bb201e37890dd578dc8f42944d941">
+        <source>repeat (2)
+end
+
+repeat (6)
+end</source>
+        <target>crwdns15539:0crwdne15539:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[5]/code</note>
+      </trans-unit>
+      <trans-unit id="15540" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns15540:0{panel end}crwdne15540:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

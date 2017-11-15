@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1237" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/flip-coins/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15022" identifier="f3b5fe6b13c58314d4f8a7210242abe3">
+        <source>Click on the green flag to see the expected output of your program.</source>
+        <target>crwdns15022:0crwdne15022:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15023" identifier="19185873dfdfb52956de73a2f4ba6329">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/149429925/?autostart=false&quot;}</source>
+        <target>crwdns15023:0crwdne15023:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="15024" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns15024:0crwdne15024:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="15025" identifier="33a9754026faa05677262c3790c953a1">
+        <source>when green flag clicked</source>
+        <target>crwdns15025:0crwdne15025:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="15026" identifier="f6f5d9273eb629f059c3e44909ba3a39">
+        <source>set [coin v] to [0]
+
+set [number of heads v] to [0]
+
+set [number of tails v] to [0]
+
+set [coin v] to (pick random (1) to (2))
+
+change [number of heads v] by (1)
+
+change [number of tails v] by (1)
+
+set [number of flips v] to (answer)</source>
+        <target>crwdns15026:0[0]crwdnd15026:0[0]crwdnd15026:0[0]crwdne15026:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="15027" identifier="2a6f75156558cdf81bf66d2c75acde73">
+        <source>ask [How many times would you like to flip a coin?] and wait</source>
+        <target>crwdns15027:0crwdne15027:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="15028" identifier="7de638f5cc5025e71ee10a605ddb9fc2">
+        <source>say (join (round (((number of heads) * (100)) / (number of flips))) [% heads]) for (3) secs
+
+say (join (round (((number of tails) * (100)) / (number of flips))) [% tail]) for (3) secs</source>
+        <target>crwdns15028:0crwdne15028:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[4]/code</note>
+      </trans-unit>
+      <trans-unit id="15029" identifier="488df86dafd7d0ed7db39e179d28467a">
+        <source>if &amp;lt;(coin) = [1]&amp;gt; then
+else
+end
+
+repeat (number of flips)
+end</source>
+        <target>crwdns15029:0[1]crwdne15029:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[5]/code</note>
+      </trans-unit>
+      <trans-unit id="15030" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns15030:0{panel end}crwdne15030:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

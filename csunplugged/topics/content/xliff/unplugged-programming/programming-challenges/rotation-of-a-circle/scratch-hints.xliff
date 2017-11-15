@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1317" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/rotation-of-a-circle/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15475" identifier="6f09a9068ac2eb003dd1c62b7cdb3ef5">
+        <source>You may change the pen’s colour by a specified amount by using the &lt;code&gt;scratch:change pen color by (10)&lt;/code&gt; block under the “pen” script.</source>
+        <target>crwdns15475:0crwdne15475:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="15476" identifier="fc306435c5f00b402597418dca80d5a4">
+        <source>You can speed up the drawing by selecting the turbo speed under the edit menu.</source>
+        <target>crwdns15476:0crwdne15476:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

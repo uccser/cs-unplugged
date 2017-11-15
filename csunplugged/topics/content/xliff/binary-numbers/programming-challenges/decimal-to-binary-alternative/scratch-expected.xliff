@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="837" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/decimal-to-binary-alternative/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8903" identifier="084593ce34d694032eb79e9acb5080a5">
+        <source>Click on the green flag, enter the inputs provided in the “testing examples” to see the expected output of your program.</source>
+        <target>crwdns8903:0crwdne8903:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8904" identifier="6a6fb70c11006bcd75c0bd08c2d08c6d">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/148424337/?autostart=false&quot;}</source>
+        <target>crwdns8904:0crwdne8904:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="8905" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns8905:0crwdne8905:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="8906" identifier="091734b62d8aecb4fc1c8d93589c9c95">
+        <source>when green flag clicked
+
+ask [Please enter a decimal number:] and wait
+
+repeat until &amp;lt;(decimal number) = [1]&amp;gt;
+end
+
+say (join (join (join [The binary representation for the number ] (answer)) [ is ]) (binary number))</source>
+        <target>crwdns8906:0[1]crwdne8906:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="8907" identifier="6eb5ce70f5413995a11e0e973031c93f">
+        <source>set [decimal number v] to (answer)
+
+set [remainder v] to [0]
+
+set [binary number v] to []
+
+set [remainder v] to ((decimal number) mod (2))
+
+set [decimal number v] to ([floor v] of ((decimal number) / (2)))
+
+set [binary number v] to (join (remainder) (binary number))
+
+set [binary number v] to (join (decimal number) (binary number))</source>
+        <target>crwdns8907:0[0]crwdne8907:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="8908" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns8908:0{panel end}crwdne8908:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

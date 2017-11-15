@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="849" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/dots-right-left/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8965" identifier="75161bdb04090b72812c7c9cb2b3987f">
+        <source>Make variables:</source>
+        <target>crwdns8965:0crwdne8965:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li/p</note>
+      </trans-unit>
+      <trans-unit id="8966" identifier="c2d5bea3b1e601eae071ce5602b042a1">
+        <source>“number of cards” to store the number of cards to display entered by
+the end user as the input (e.g. 4).</source>
+        <target>crwdns8966:0crwdne8966:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li/ul/li</note>
+      </trans-unit>
+      <trans-unit id="8967" identifier="1941df42712269b6dadb55b06725294f">
+        <source>“number of dots” to store the number of dots.</source>
+        <target>crwdns8967:0crwdne8967:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li/ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="8968" identifier="1d3c2e525696f1a675d5f2ad6a1445fe">
+        <source>“binary cards” which is a variable type string and stores what is
+going to be displayed on the screen as the output (e.g. “1, 2, 4, 8,”).</source>
+        <target>crwdns8968:0crwdne8968:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li/ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="8969" identifier="a80a18ff31d07e0adfcf4ca6f3b5efe1">
+        <source>Use the &lt;code&gt;scratch: (join [hello] [world])&lt;/code&gt; block under “Operators” to combine
+two strings.</source>
+        <target>crwdns8969:0[hello]crwdnd8969:0[world]crwdne8969:0</target>
+        <note>Context: XPath: /ul/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="8970" identifier="1d62ffcf2f56b3a0117802d0513386c4">
+        <source>You can use multiple join blocks inside each other if you need to combine
+more than two strings.</source>
+        <target>crwdns8970:0crwdne8970:0</target>
+        <note>Context: XPath: /ul/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="8971" identifier="7ab80107fee2e8fbeb2e52ee9b418471">
+        <source>In Scratch, to concatenate data together you use the
+&lt;code&gt;scratch: (join [hello] [world])&lt;/code&gt; blocks.</source>
+        <target>crwdns8971:0[hello]crwdnd8971:0[world]crwdne8971:0</target>
+        <note>Context: XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="8972" identifier="8dcfd4ffb75e6b00a89f4be6145518b1">
+        <source>This can be used to join text, variables and calculations.</source>
+        <target>crwdns8972:0crwdne8972:0</target>
+        <note>Context: XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="8973" identifier="91027b83a96fd101061e09754b1330b0">
+        <source>Remember to check if the spaces are correct between the items being joined!</source>
+        <target>crwdns8973:0crwdne8973:0</target>
+        <note>Context: XPath: /ul/li[3]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

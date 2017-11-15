@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="918" original="/csunplugged/topics/content/en/error-detection-and-correction/programming-challenges/check-valid-isbn-10/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10279" identifier="829edb96c0ff09e3ffaeb9233604ca75">
+        <source>To check if an ISBN-10 number is valid, the sum of all the ten digits
+each multiplied by its (integer) weight, descending from 10 to 1, needs
+to be a multiple of 11 (i.e. total mod 11 is equal to 0).</source>
+        <target>crwdns10279:0crwdne10279:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li/p</note>
+      </trans-unit>
+      <trans-unit id="10280" identifier="d89f893c1fe2bdcf7726b63d9cd63da9">
+        <source>If the last digit of an ISBN-10 is X, you need to multiply 10 by its
+integer weight 1 (as it’s the last digit) to calculate the total.</source>
+        <target>crwdns10280:0crwdne10280:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="10281" identifier="45da970611576201c2b2359748d6b260">
+        <source>For example for an ISBN-10 of 0201530821:</source>
+        <target>crwdns10281:0crwdne10281:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[2]/p[2]</note>
+      </trans-unit>
+      <trans-unit id="10282" identifier="f7d580a6962773aaf412ab3ec85609a9">
+        <source>\[ total=(100)+(92)+(80)+(71)+(65)+(53)+(40)+(38)+(22)+(11) \]</source>
+        <target>crwdns10282:0crwdne10282:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[2]/p[3]</note>
+      </trans-unit>
+      <trans-unit id="10283" identifier="f48dc4fbdda799d9097090596876a2b6">
+        <source>\[ total=0+18+0+7+30+15+0+24+4+1=99 \]</source>
+        <target>crwdns10283:0crwdne10283:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[2]/p[4]</note>
+      </trans-unit>
+      <trans-unit id="10284" identifier="f144161fe6f4947db2154eb72cb1257c">
+        <source>This is a valid ISBN-10 as 99 mod 11 is 0.</source>
+        <target>crwdns10284:0crwdne10284:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[2]/p[5]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

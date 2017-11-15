@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1132" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/design-bee-bot/scratch-solution.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14492" identifier="23cc9a8c57febc9ccfeda8666cb92959">
+        <source>The Button Sprites</source>
+        <target>crwdns14492:0crwdne14492:0</target>
+        <note>Context: Text&#13;
+XPath: /p/strong</note>
+      </trans-unit>
+      <trans-unit id="14493" identifier="7af2b7c8e514dbb452725477d3a21f7c">
+        <source>forward:</source>
+        <target>crwdns14493:0crwdne14493:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14494" identifier="636c33f7a012226da1a0e188eed378ea">
+        <source>when this sprite clicked
+insert [forward] at (last v) of [source code v]</source>
+        <target>crwdns14494:0[forward]crwdne14494:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="14495" identifier="2c4ab71eba93f92b460182c54a288c6d">
+        <source>backward:</source>
+        <target>crwdns14495:0crwdne14495:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="14496" identifier="768576ed1a6e311e7a4d3057fcf5bd03">
+        <source>when this sprite clicked
+insert [backward] at (last v) of [source code v]</source>
+        <target>crwdns14496:0[backward]crwdne14496:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="14497" identifier="1d2697a869586936fc7e400b16144bb3">
+        <source>left:</source>
+        <target>crwdns14497:0crwdne14497:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="14498" identifier="2c71ec81d5df2fa32dbd5d47fd2fc535">
+        <source>when this sprite clicked
+insert [turn left] at (last v) of [source code v]</source>
+        <target>crwdns14498:0crwdne14498:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="14499" identifier="cb5fd7369830a1be5041407a5f660f8c">
+        <source>right:</source>
+        <target>crwdns14499:0crwdne14499:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="14500" identifier="8b4cca4348791c77c7a0b88f99b0c4d0">
+        <source>when this sprite clicked
+insert [turn right] at (last v) of [source code v]</source>
+        <target>crwdns14500:0crwdne14500:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[4]/code</note>
+      </trans-unit>
+      <trans-unit id="14501" identifier="1de40d51da09e8fff25d9ea98efa587b">
+        <source>go:</source>
+        <target>crwdns14501:0crwdne14501:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="14502" identifier="e7335d01815e6354e2304ff841ed9b78">
+        <source>when this sprite clicked
+broadcast [go v]</source>
+        <target>crwdns14502:0crwdne14502:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[5]/code</note>
+      </trans-unit>
+      <trans-unit id="14503" identifier="d9a78242e87faf29dd8fa37b5dcb6eb5">
+        <source>home:</source>
+        <target>crwdns14503:0crwdne14503:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="14504" identifier="e62ff7606d1cb4dcdb3c833c4d3d4bd3">
+        <source>when this sprite clicked
+broadcast [home v]</source>
+        <target>crwdns14504:0crwdne14504:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[6]/code</note>
+      </trans-unit>
+      <trans-unit id="14505" identifier="24bf4470d1212fc5fc9121aeee658a32">
+        <source>undo:</source>
+        <target>crwdns14505:0crwdne14505:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="14506" identifier="3b58eeb20d73c94c35384406e392f79c">
+        <source>when this sprite clicked
+delete (last v) of [source code v]</source>
+        <target>crwdns14506:0crwdne14506:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[7]/code</note>
+      </trans-unit>
+      <trans-unit id="14507" identifier="72660ee03ccd43a7a45094c9f9049336">
+        <source>pause:</source>
+        <target>crwdns14507:0crwdne14507:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="14508" identifier="178211d9205b21c3b379f20eeb49cad3">
+        <source>when this sprite clicked
+insert [pause] at (last v) of [source code v]</source>
+        <target>crwdns14508:0[pause]crwdne14508:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[8]/code</note>
+      </trans-unit>
+      <trans-unit id="14509" identifier="7e0d02d8418ad9a4506d9c1bf851ca91">
+        <source>clear:</source>
+        <target>crwdns14509:0crwdne14509:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="14510" identifier="5d0d259a7fcf27146be34303fa117ad5">
+        <source>when this sprite clicked
+delete (all v) of [source code v]</source>
+        <target>crwdns14510:0crwdne14510:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[9]/code</note>
+      </trans-unit>
+      <trans-unit id="14511" identifier="9bc8dbe4ef09bb5f3ed7d3efaf278890">
+        <source>The Sprites</source>
+        <target>crwdns14511:0crwdne14511:0</target>
+        <note>Context: Text&#13;
+XPath: /p[11]/strong</note>
+      </trans-unit>
+      <trans-unit id="14512" identifier="01514c00f2e755fd59d622b5f5d54732">
+        <source>Mouse:</source>
+        <target>crwdns14512:0crwdne14512:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="14513" identifier="1cc3c0f498dde3dace4b1944857855ba">
+        <source>when green flag clicked
+set size to (30) %
+go to x: ((pick random (-1) to (4)) * (50)) y: ((pick random (-3) to (3)) * (50))</source>
+        <target>crwdns14513:0crwdne14513:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[10]/code</note>
+      </trans-unit>
+      <trans-unit id="14514" identifier="2882584af84b5393f32ec3030e81df81">
+        <source>Cat:</source>
+        <target>crwdns14514:0crwdne14514:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="14515" identifier="06f6cb5740a5e494577a1b08ee8144d9">
+        <source>when I receive [go v]
+set [statement v] to [0]
+set [source line v] to [1]
+repeat (length of [source code v] :: list)
+  set [statement v] to (item (source line) of [source code v] :: list)
+  if &amp;lt;(statement) = [forward]&amp;gt; then
+    if &amp;lt;touching [border v] ?&amp;gt; then
+      say [Oh no!</source>
+        <target>crwdns14515:0[0]crwdnd14515:0[1]crwdnd14515:0[forward]crwdne14515:0</target>
+        <note>Context: XPath: /pre[11]/code</note>
+      </trans-unit>
+      <trans-unit id="14516" identifier="1d76deaba31dcf9e3d49953e09793bce">
+        <source>Missed it!</source>
+        <target>crwdns14516:0crwdne14516:0</target>
+        <note>Context: XPath: /pre[11]/code</note>
+      </trans-unit>
+      <trans-unit id="14517" identifier="4d7e23fed2b2c777cb4c9fca97160dc7">
+        <source>Press &quot;home&quot; and then &quot;clear&quot; to try again.] for (2) secs
+      stop [all v]
+    else
+      move (50) steps
+      wait (0.5) secs
+    end
+  else
+    if &amp;lt;(statement) = [backward]&amp;gt; then
+      if &amp;lt;touching [border v] ?&amp;gt; then
+        say [Oh no!</source>
+        <target>crwdns14517:0[backward]crwdne14517:0</target>
+        <note>Context: XPath: /pre[11]/code</note>
+      </trans-unit>
+      <trans-unit id="14518" identifier="9786b8cc4e0869cc2e64a82ef9b7d288">
+        <source>Missed it!</source>
+        <target>crwdns14518:0crwdne14518:0</target>
+        <note>Context: XPath: /pre[11]/code</note>
+      </trans-unit>
+      <trans-unit id="14519" identifier="81e2114f6d5f84935c8a6596eea563a4">
+        <source>Press &quot;home&quot; and then &quot;clear&quot; to try again.] for (2) secs
+        stop [all v]
+      else
+        move (-50) steps
+        wait (0.5) secs
+      end
+    else
+      if &amp;lt;(statement) = [turn left]&amp;gt; then
+        turn ccw (90) degrees
+        wait (0.5) secs
+      else
+        if &amp;lt;(statement) = [turn right]&amp;gt; then
+          turn cw (90) degrees
+          wait (0.5) secs
+        else
+          if &amp;lt;(statement) = [pause]&amp;gt; then
+            wait (5) secs
+          end
+        end
+      end
+    end
+  end
+  change [source line v] by (1)
+end
+if &amp;lt;touching [Mouse v] ?&amp;gt; then
+  play sound [meow v]
+  say [Gotcha!] for (2) secs
+else
+  say [Oh no!</source>
+        <target>crwdns14519:0[pause]crwdne14519:0</target>
+        <note>Context: XPath: /pre[11]/code</note>
+      </trans-unit>
+      <trans-unit id="14520" identifier="ef821ec7d8c900ef2956733adeed5f0d">
+        <source>Missed it!</source>
+        <target>crwdns14520:0crwdne14520:0</target>
+        <note>Context: XPath: /pre[11]/code</note>
+      </trans-unit>
+      <trans-unit id="14521" identifier="87ed6f41c35d7b11fd94bc8915826db7">
+        <source>Press &quot;home&quot; and then &quot;clear&quot; to try again.]
+end</source>
+        <target>crwdns14521:0crwdne14521:0</target>
+        <note>Context: XPath: /pre[11]/code</note>
+      </trans-unit>
+      <trans-unit id="14522" identifier="950b29e90471f0defc922eb9fa54342f">
+        <source>when green flag clicked
+set size to (50) %
+go to x: (50) y: (0)
+point in direction (90 v)
+delete (all v) of [source code v]</source>
+        <target>crwdns14522:0crwdne14522:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[12]/code</note>
+      </trans-unit>
+      <trans-unit id="14523" identifier="7111a69b383cae8a208c3ff15854b692">
+        <source>when I receive [home v]
+point in direction (90 v)
+go to x: (50) y: (0)</source>
+        <target>crwdns14523:0crwdne14523:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[13]/code</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

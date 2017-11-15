@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="853" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/left-right-given-largest/left-right-given-largest.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8976" identifier="c4c0afc16990348d239e96361f449216">
+        <source>Display number of dots left to right with a given largest card in one line</source>
+        <target>crwdns8976:0crwdne8976:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="8977" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns8977:0crwdne8977:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="8978" identifier="81f220fc1a7c855f221ad7b8483ac7c6">
+        <source>Write a program that takes the largest number of dots on a card as an input
+and displays the bit values from largest to smallest all in one line as the
+output.</source>
+        <target>crwdns8978:0crwdne8978:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8979" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns8979:0crwdne8979:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="8980" identifier="c4157e645991e13a72ced9574f6e8235">
+        <source>Your program should display the outputs shown in this table for the given
+inputs provided:</source>
+        <target>crwdns8980:0crwdne8980:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="8981" identifier="5bfb69c6f4701e747d0c20b0822e2580">
+        <source>Input</source>
+        <target>crwdns8981:0crwdne8981:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th</note>
+      </trans-unit>
+      <trans-unit id="8982" identifier="f36a1e77a6177da7e10093e12e92ec6c">
+        <source>Output</source>
+        <target>crwdns8982:0crwdne8982:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th[2]</note>
+      </trans-unit>
+      <trans-unit id="8983" identifier="091a01bacb249bb9211d98a1323da451">
+        <source>64</source>
+        <target>crwdns8983:0crwdne8983:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td</note>
+      </trans-unit>
+      <trans-unit id="8984" identifier="fab2290a60fd629c94df66fef6c9f73a">
+        <source>64, 32, 16, 8, 4, 2, 1,</source>
+        <target>crwdns8984:0crwdne8984:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td[2]</note>
+      </trans-unit>
+      <trans-unit id="8985" identifier="96a25b8dbc4397195aaac21be3742877">
+        <source>8</source>
+        <target>crwdns8985:0crwdne8985:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td</note>
+      </trans-unit>
+      <trans-unit id="8986" identifier="a6c56e1283aa1f0dd0454f95921d6591">
+        <source>8, 4, 2, 1,</source>
+        <target>crwdns8986:0crwdne8986:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="8987" identifier="196b33507c4d673908c1e1df84c192e3">
+        <source>1</source>
+        <target>crwdns8987:0crwdne8987:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td</note>
+      </trans-unit>
+      <trans-unit id="8988" identifier="10b000a63fbfe862eaf532f3b6332580">
+        <source>1,</source>
+        <target>crwdns8988:0crwdne8988:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

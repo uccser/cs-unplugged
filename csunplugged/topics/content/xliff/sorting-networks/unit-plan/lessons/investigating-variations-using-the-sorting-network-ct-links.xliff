@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1045" original="/csunplugged/topics/content/en/sorting-networks/unit-plan/lessons/investigating-variations-using-the-sorting-network-ct-links.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="12225" identifier="c09d484d5c97f95b54d0201d86f7afb2">
+        <source>Many of the connections are covered in the unit plan and lesson 1. Here are some additional connections:</source>
+        <target>crwdns12225:0crwdne12225:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="12226" identifier="810c0a17bff4d255aa141423eeaa69d5">
+        <source>{panel type=&quot;ct-algorithm&quot; title=&quot;Algorithmic thinking&quot;}</source>
+        <target>crwdns12226:0crwdne12226:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="12227" identifier="3537b6082c24abd644561d35ff0d0b4a">
+        <source>When comparing words for alphabetical order, the algorithm involves comparing the two words letter by letter, and basing the decision of the first pair of letters that differ.</source>
+        <target>crwdns12227:0crwdne12227:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="12228" identifier="e3474b22dcb45ca344ed0ca80dde5b49">
+        <source>What to look for:</source>
+        <target>crwdns12228:0crwdne12228:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4</note>
+      </trans-unit>
+      <trans-unit id="12229" identifier="17bc5021cbf7931a64e47af302db8c33">
+        <source>Were students able to systematically compare words?
+Can they articulate the algorithm, particularly when comparing words with a long prefix in common (such as &quot;computer&quot; and &quot;computing&quot;)?</source>
+        <target>crwdns12229:0crwdne12229:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="12230" identifier="0195c2d106e4d52b36bca78ff4c3e7a4">
+        <source>{panel end}</source>
+        <target>crwdns12230:0{panel end}crwdne12230:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="12231" identifier="17de7efa37d271303d10e7da564a0701">
+        <source>{panel type=&quot;ct-abstraction&quot; title=&quot;Abstraction&quot;}</source>
+        <target>crwdns12231:0crwdne12231:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="12232" identifier="dbc9b588329f4fdebdea4ecbe287d04c">
+        <source>Sorting Networks can work for any type of data that can be compared.
+This means that we do not need to know what the data is, we just need to know how to compare it and order it.</source>
+        <target>crwdns12232:0crwdne12232:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="12233" identifier="8af5c2e3ed5f14bd1473adb0988ca70c">
+        <source>What to look for</source>
+        <target>crwdns12233:0crwdne12233:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[2]</note>
+      </trans-unit>
+      <trans-unit id="12234" identifier="d35a2a9ba71f7b20f20a478bd9139ee7">
+        <source>Did students recognise that different types of data could be compared with the same Sorting Network and same process?
+Can they come up with new types of data to sort?</source>
+        <target>crwdns12234:0crwdne12234:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="12235" identifier="95e2aef312d8003ea83532ea9651f31f">
+        <source>{panel end}</source>
+        <target>crwdns12235:0{panel end}crwdne12235:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="12236" identifier="16c5229b7bb0bd77299bb63485055923">
+        <source>{panel type=&quot;ct-decomposition&quot; title=&quot;Decomposition&quot;}</source>
+        <target>crwdns12236:0crwdne12236:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="12237" identifier="5f3ea61670cb6ab6cf2f8c55a7dca362">
+        <source>Instead of simply comparing two values at each node, when students compare words in this activity they must break this down into smaller steps.</source>
+        <target>crwdns12237:0crwdne12237:0</target>
+        <note>Context: XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="12238" identifier="54ffa94ebd980937cc7b36adef09001c">
+        <source>When comparing words to see which comes first, the process involves a letter by letter comparison until they find two letters that differ.</source>
+        <target>crwdns12238:0crwdne12238:0</target>
+        <note>Context: XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="12239" identifier="04b5d6ccb74c1d41a41506f30365f7b4">
+        <source>What to look for</source>
+        <target>crwdns12239:0crwdne12239:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[3]</note>
+      </trans-unit>
+      <trans-unit id="12240" identifier="7948262ed2043700812b976745ad0f57">
+        <source>Were students able to break down the task of comparing words into single letter comparisons?</source>
+        <target>crwdns12240:0crwdne12240:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="12241" identifier="b1c2847763ba990ce3b79c43c0f66f9e">
+        <source>{panel end}</source>
+        <target>crwdns12241:0{panel end}crwdne12241:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="12242" identifier="40ad58809f56a2bf712e4dcd43bbd5e7">
+        <source>{panel type=&quot;ct-pattern&quot; title=&quot;Generalising and patterns&quot;}</source>
+        <target>crwdns12242:0crwdne12242:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="12243" identifier="2f26cd60a582f70d5237026844022c54">
+        <source>In this lesson the comparisons we moved from comparing numbers to the idea of comparing information in general.
+This meant we were able to compare other things like letters, words, and musical notes.</source>
+        <target>crwdns12243:0crwdne12243:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="12244" identifier="cde22dbce4426b622f14782199926240">
+        <source>What to look for</source>
+        <target>crwdns12244:0crwdne12244:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[4]</note>
+      </trans-unit>
+      <trans-unit id="12245" identifier="8cdad07dd3149fb4dff699e5c419c656">
+        <source>Did students recognise that comparing other types of information, such as words and notes, would sort them into a relevant order?</source>
+        <target>crwdns12245:0crwdne12245:0</target>
+        <note>Context: XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="12246" identifier="88599ed8746b362f9a08e8356e8d20c3">
+        <source>For example according to alphabetical order and musical pitch respectively?</source>
+        <target>crwdns12246:0crwdne12246:0</target>
+        <note>Context: XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="12247" identifier="29865c6bd6223a870160b434de9c35ce">
+        <source>{panel end}</source>
+        <target>crwdns12247:0{panel end}crwdne12247:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="12248" identifier="adab59f4c0dc0ca178defb9b221dd176">
+        <source>{panel type=&quot;ct-evaluation&quot; title=&quot;Evaluation&quot;}</source>
+        <target>crwdns12248:0crwdne12248:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="12249" identifier="75f16996af66795607330f546e5d760b">
+        <source>We evaluated if the Sorting Network would work backwards.
+If we find one example that fails, then that establishes that it can't be used in that way.</source>
+        <target>crwdns12249:0crwdne12249:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="12250" identifier="a330c684ed768aab589a428d0f45ef11">
+        <source>What to look for</source>
+        <target>crwdns12250:0crwdne12250:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[5]</note>
+      </trans-unit>
+      <trans-unit id="12251" identifier="bceab2d34ca8e2cd790a3e4c1752c34b">
+        <source>Did students recognise that the one example of a Sorting Network not working backwards was enough to show that it isn't a valid Sorting Network?</source>
+        <target>crwdns12251:0crwdne12251:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="12252" identifier="3e36fd398241fc175b47e35cddcdc6f1">
+        <source>{panel end}</source>
+        <target>crwdns12252:0{panel end}crwdne12252:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="12253" identifier="7f1b0f3b3177e2fc5aa8ccdf994c3388">
+        <source>{panel type=&quot;ct-logic&quot; title=&quot;Logic&quot;}</source>
+        <target>crwdns12253:0crwdne12253:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="12254" identifier="eca13f68240a0511ff9eb5b243ae124f">
+        <source>As described in the unit plan, if the data being sorted have a transitive relation then the Sorting Network will be able to sort them, and each of the types of data we used in this lesson has this transitive relation.</source>
+        <target>crwdns12254:0crwdne12254:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="12255" identifier="38dd5d0fb630743165fee2242a316d77">
+        <source>What to look for</source>
+        <target>crwdns12255:0crwdne12255:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[6]</note>
+      </trans-unit>
+      <trans-unit id="12256" identifier="4adf6b60ca30fcddd8999ec129071c53">
+        <source>Are students able to recognise that each of the sets of items compared in this exercise have a transitive relation?</source>
+        <target>crwdns12256:0crwdne12256:0</target>
+        <note>Context: XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="12257" identifier="ea510d23bcf76118972fb549c3f4d8fe">
+        <source>Could they identify the most logical comparison to use (such as alphabetical order and the pitch of notes)?</source>
+        <target>crwdns12257:0crwdne12257:0</target>
+        <note>Context: XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="12258" identifier="61f647fc73a4dfd1e5819719162ca5b6">
+        <source>Can they think of any types of data that don’t have a transitive relation, and that we can’t sort with the Sorting Network?</source>
+        <target>crwdns12258:0crwdne12258:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[25]</note>
+      </trans-unit>
+      <trans-unit id="12259" identifier="68d901d833cf9a4507db51c0ae3d724e">
+        <source>One answer could be putting food into order of tastiness - If you like pies more than spaghetti, and your friend likes lasagne more than spaghetti, that doesn’t necessarily mean you like lasagne more than pies, and your friend might not like spaghetti more than pies!</source>
+        <target>crwdns12259:0crwdne12259:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[26]</note>
+      </trans-unit>
+      <trans-unit id="12260" identifier="c28b40b1a7feb196275a70acccb99621">
+        <source>{panel end}</source>
+        <target>crwdns12260:0{panel end}crwdne12260:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[27]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

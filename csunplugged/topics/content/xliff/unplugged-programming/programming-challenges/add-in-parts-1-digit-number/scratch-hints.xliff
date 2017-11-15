@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1081" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/add-in-parts-1-digit-number/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14157" identifier="f88812cd5b3618ee2ae7e482747c4206">
+        <source>Make two variables called “num1” and “num2” and set their values to the inputs entered by the user.</source>
+        <target>crwdns14157:0crwdne14157:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="14158" identifier="90ae72b0066744a927a8b8854170cec1">
+        <source>To make “num1” a tidy number, split “num2” into 2 parts (call these variables “10 minus num1” and “left from num2”) so the sum of one part and “num1” is equal to 10.</source>
+        <target>crwdns14158:0crwdne14158:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

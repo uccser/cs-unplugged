@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1029" original="/csunplugged/topics/content/en/searching-algorithms/sequential-and-binary-search-unit-plan/sequential-and-binary-search-unit-plan-ct-links.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="11553" identifier="29587245fea6177d2282f2ca4a93001c">
+        <source>{panel type=&quot;ct-algorithm&quot; title=&quot;Algorithmic thinking&quot;}</source>
+        <target>crwdns11553:0crwdne11553:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="11554" identifier="73e952b3859790af9d18b224a86c61f5">
+        <source>Searching through data is something computers do all the time, just think about how often we need to search for words in documents and information on the internet!</source>
+        <target>crwdns11554:0crwdne11554:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="11555" identifier="401cde89ea55482f8d8598ebe91010db">
+        <source>Searching efficiently is a very important problem and that computer scientists have worked on for a long time.</source>
+        <target>crwdns11555:0crwdne11555:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="11556" identifier="a21f627ac2c5d4cb5e978877f6f85a24">
+        <source>To solve this problem we need algorithms, processes that can be followed each time we search for something, and many different ones have been developed (such as binary search).</source>
+        <target>crwdns11556:0crwdne11556:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="11557" identifier="6f5b267a067a8f7c894c1e59ecd5f4e9">
+        <source>Each of these algorithms can be seen as a solution to a problem.</source>
+        <target>crwdns11557:0crwdne11557:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="11558" identifier="037cfada24f77f4d0c448589cf01aaa9">
+        <source>Students will be learning, using, and describing different algorithms throughout these lessons.</source>
+        <target>crwdns11558:0crwdne11558:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="11559" identifier="28fcef1d079317b34624e08872f03271">
+        <source>They will need to follow clear instructions when doing the activities and when they are doing this they are carrying out algorithms.</source>
+        <target>crwdns11559:0crwdne11559:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="11560" identifier="1093b333f299c9092627b25dd67057ea">
+        <source>The two algorithms we are looking at in this unit, sequential search and binary search, take different amounts of time to complete a search, and sequential search is less efficient than binary search.</source>
+        <target>crwdns11560:0crwdne11560:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="11561" identifier="c3325587cae9558e52cc26935c203d21">
+        <source>The amount of time sequential search takes isn’t very predictable and can vary wildly, from finding something straight away, all the way to having to check every single item we have!</source>
+        <target>crwdns11561:0crwdne11561:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="11562" identifier="c8ba26ac4b9baf475577e214a8a4fa5b">
+        <source>On average it will look at half the items, which means the average time it takes is proportional to the number of items being searched; this is why it is also known as linear search, because the time needed is linear in the amount of data being searched.</source>
+        <target>crwdns11562:0crwdne11562:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="11563" identifier="ad672dde3631887ca3b792caad7118b8">
+        <source>Binary search on the other hand is more predictable and is guaranteed to work within a small number of steps.</source>
+        <target>crwdns11563:0crwdne11563:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="11564" identifier="5a163b5849bce2924156d6873218329b">
+        <source>Since it eliminates half the items we are searching every time we look at an item it works very fast, even with HUGE amounts of data!</source>
+        <target>crwdns11564:0crwdne11564:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="11565" identifier="5933c3e7f16a112c188d2080ed7b30c1">
+        <source>To search one billion items we would have to look at 30 of them at the very most!</source>
+        <target>crwdns11565:0crwdne11565:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="11566" identifier="e8dc6db8623270551f676e6f496291c1">
+        <source>{panel end}</source>
+        <target>crwdns11566:0{panel end}crwdne11566:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="11567" identifier="13429ebe60d726b36c6ca470424dbeee">
+        <source>{panel type=&quot;ct-abstraction&quot; title=&quot;Abstraction&quot;}</source>
+        <target>crwdns11567:0crwdne11567:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="11568" identifier="5df80a72b45c0954865c3608c33b9878">
+        <source>If we have an abstract idea of how the searching algorithms we can use work, then we can apply them to a whole range of situations!</source>
+        <target>crwdns11568:0crwdne11568:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="11569" identifier="8793ff514e4929031d298934bc576f32">
+        <source>When searching through data it is important to only focus on the information we need to find what we are looking for.</source>
+        <target>crwdns11569:0crwdne11569:0</target>
+        <note>Context: XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="11570" identifier="625e58de648755691ea36b751b14fdb8">
+        <source>When considering general algorithms for searching, one thing we can always abstract away is the nature of the data we are searching through.</source>
+        <target>crwdns11570:0crwdne11570:0</target>
+        <note>Context: XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="11571" identifier="daa387b6f7bfd8f5b0baeb72084e6559">
+        <source>When we use a searching algorithm we don’t need to know what the data represents, we just need to know what we are searching for, and if we are searching through an ordered list we also need to know how that data is ordered.</source>
+        <target>crwdns11571:0crwdne11571:0</target>
+        <note>Context: XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="11572" identifier="246ac7b8eab7583848b0b2ba82dc9f57">
+        <source>{image file-path=&quot;img/topics/max_dog.png&quot; alt=&quot;A dog with a nametag saying Max&quot;}</source>
+        <target>crwdns11572:0crwdne11572:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="11573" identifier="8d617ec22c1d0d7de406cdf5740f2ad5">
+        <source>For example say we are looking for the number 160 in an unordered list; we don’t need to know whether these numbers represent heights, dollars, or bank account balances, we just need to compare the number we are searching for to the numbers in the list.</source>
+        <target>crwdns11573:0crwdne11573:0</target>
+        <note>Context: XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="11574" identifier="bfbe923091848e318e8a501f9ee5eb7f">
+        <source>Now say we are searching for the word “Max” in a list of words which is sorted into alphabetical order; we don’t need to know if we are looking at a list of pets names, or a list of random 3 letter words; we only need to know what alphabetical order means and how we use this to determine if a word is earlier or later in the alphabet.</source>
+        <target>crwdns11574:0crwdne11574:0</target>
+        <note>Context: XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="11575" identifier="93199853e81599f46f3ead1b0d0275b3">
+        <source>Then the same rules for searching numbers can be applied to words.</source>
+        <target>crwdns11575:0crwdne11575:0</target>
+        <note>Context: XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="11576" identifier="e55a010e1bd87f56a31be3512ff5b51c">
+        <source>{panel end}</source>
+        <target>crwdns11576:0{panel end}crwdne11576:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="11577" identifier="aefde0fd02996a09f5149313547d0172">
+        <source>{panel type=&quot;ct-decomposition&quot; title=&quot;Decomposition&quot;}</source>
+        <target>crwdns11577:0crwdne11577:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="11578" identifier="d8917577b66439abf797950326805ff4">
+        <source>{image file-path=&quot;img/topics/apples_oranges.png&quot; alt=&quot;Shows that apples do not equal oranges&quot;}</source>
+        <target>crwdns11578:0crwdne11578:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="11579" identifier="7fee35428eb93b85073c11bb1a97204a">
+        <source>The most basic step in any searching algorithm is comparing two pieces of data and determining if they are the same or not.</source>
+        <target>crwdns11579:0crwdne11579:0</target>
+        <note>Context: XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="11580" identifier="ddea896789e8db9f716d8755d0586929">
+        <source>Each of the algorithms students will be exploring was created by decomposing the problem of searching down to make use of this very basic step.</source>
+        <target>crwdns11580:0crwdne11580:0</target>
+        <note>Context: XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="11581" identifier="55c6d813ffc6e8eda3ea65a64722c41f">
+        <source>One of the most important examples of decomposition will be covered in lessons 2 and 4, the Divide and Conquer method.</source>
+        <target>crwdns11581:0crwdne11581:0</target>
+        <note>Context: XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="11582" identifier="d201e9c082836b29bc545a12a2879546">
+        <source>This method is used when we perform a binary search, which is a classic method of decomposition - you divide the list of values into two parts, and then work on each half.</source>
+        <target>crwdns11582:0crwdne11582:0</target>
+        <note>Context: XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="11583" identifier="5dd328b8ea19cab699eb7d3c41afa726">
+        <source>In this case, one of the halves will be trivial to &quot;work on&quot; because we know it can't contain what we're searching for, and so we don’t have to do anything with it!</source>
+        <target>crwdns11583:0crwdne11583:0</target>
+        <note>Context: XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="11584" identifier="3a7d321b330c3173a38c0e40ad03d2df">
+        <source>Breaking the problem in half repeatedly soon decomposes it to a very simple case: a list of one item, which is very easy to search!</source>
+        <target>crwdns11584:0crwdne11584:0</target>
+        <note>Context: XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="11585" identifier="304ee8a6445ec4136a2404fbca65be4e">
+        <source>The divide and conquer strategy is a pattern that appears frequently in computer science, and also in real life!</source>
+        <target>crwdns11585:0crwdne11585:0</target>
+        <note>Context: XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="11586" identifier="b8b518ec5301c8fa58776bb53ba93af5">
+        <source>It is an efficient and logical way of attacking many different problems where you are searching for something in a group of objects that have different identifying features.</source>
+        <target>crwdns11586:0crwdne11586:0</target>
+        <note>Context: XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="11587" identifier="ba58d05e2b89cd1434f854f98b316f50">
+        <source>For example, if you were trying to guess your friends favourite food you could ask questions like “Is it bananas?”, “Is it chocolate?”, but this would be equivalent to doing a sequential search because with each question you can only eliminate one type of food from all the possible types of food it could be!</source>
+        <target>crwdns11587:0crwdne11587:0</target>
+        <note>Context: XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="11588" identifier="de60d160e9063858f646406b99ba46f1">
+        <source>Instead you could apply divide an conquer and ask questions like “Is it a vegetable?”, “Is it a savoury food?”.</source>
+        <target>crwdns11588:0crwdne11588:0</target>
+        <note>Context: XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="11589" identifier="e0ff2936211eda74cb3eb44e787a7006">
+        <source>These questions eliminate many possible foods just with one question.</source>
+        <target>crwdns11589:0crwdne11589:0</target>
+        <note>Context: XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="11590" identifier="29865c6bd6223a870160b434de9c35ce">
+        <source>{panel end}</source>
+        <target>crwdns11590:0{panel end}crwdne11590:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="11591" identifier="dac1bdeeb8ed3449682fb94e76500260">
+        <source>{panel type=&quot;ct-pattern&quot; title=&quot;Generalising and patterns&quot;}</source>
+        <target>crwdns11591:0crwdne11591:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="11592" identifier="8c3058b7c26d93d37c37f188b3d4e63f">
+        <source>When doing these lessons look to see if students recognise patterns between the activities.</source>
+        <target>crwdns11592:0crwdne11592:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="11593" identifier="5bd5346dce98add128097687833748cc">
+        <source>Do they notice that searching through the unsorted treasure chests is actually the same task as guessing which cup a number is in when the numbers are in a random order?</source>
+        <target>crwdns11593:0crwdne11593:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="11594" identifier="24f96e64942c99a064447788eb9c6cbc">
+        <source>Do they notice that searching the ordered treasure chests is actually exactly the same as the divide and conquer activity?</source>
+        <target>crwdns11594:0crwdne11594:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="11595" identifier="9199b8c3dded5bf74cd39b7a2b985dc8">
+        <source>If they do then they might also realise that they can use the same algorithms in each of these similar activities!</source>
+        <target>crwdns11595:0crwdne11595:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="11596" identifier="68755327709f7dd52f5f8e599789c822">
+        <source>If we generalise our algorithms (by abstracting away unnecessary information) then we can reuse them in new situations and apply them to new, but similar, problems.</source>
+        <target>crwdns11596:0crwdne11596:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="11597" identifier="b5d138da1e56d0bdc1dabf6065d835c8">
+        <source>They might also start recognising similar problems to these in their everyday lives and applying these strategies, because searching for things is something we all do a lot, whether we’re looking for a book on a bookshelf, or searching your wardrobe for that shirt you want to wear!</source>
+        <target>crwdns11597:0crwdne11597:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="11598" identifier="231094646c5390181a567fae1c089681">
+        <source>{panel end}</source>
+        <target>crwdns11598:0{panel end}crwdne11598:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="11599" identifier="688e2f3c2f8550756899d52d53314e9f">
+        <source>{panel type=&quot;ct-evaluation&quot; title=&quot;Evaluation&quot;}</source>
+        <target>crwdns11599:0crwdne11599:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="11600" identifier="95d63d96625f691f25da147fc74409a1">
+        <source>Evaluation is a key part of these lessons.</source>
+        <target>crwdns11600:0crwdne11600:0</target>
+        <note>Context: XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="11601" identifier="223c15638d267933ec3e76f6f1141100">
+        <source>There can be many different algorithms for the same problem so it is very important that we evaluate these algorithms and figure out which is the best to use in each situation.</source>
+        <target>crwdns11601:0crwdne11601:0</target>
+        <note>Context: XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="11602" identifier="a00bd32b30606406f771d17bfc975a47">
+        <source>In these lessons students will look at two different algorithms for searching, each of which performs differently.</source>
+        <target>crwdns11602:0crwdne11602:0</target>
+        <note>Context: XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="11603" identifier="fed8e024e900aadfcd4d1fd317b369c9">
+        <source>For each of the search algorithms used the class will be collecting data on how long each method takes, trying to make sense of that data (for example through looking at it all on a graph), and evaluating each of the algorithms based on the data they have collected.</source>
+        <target>crwdns11603:0crwdne11603:0</target>
+        <note>Context: XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="11604" identifier="22a6f7b6fdb4eb215c704a402358afec">
+        <source>This is one of the key points where Computational Thinking and statistics are linked, when we need to evaluate results.</source>
+        <target>crwdns11604:0crwdne11604:0</target>
+        <note>Context: XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="11605" identifier="59e042da1872bd44e9c06a8263fafdde">
+        <source>{panel end}</source>
+        <target>crwdns11605:0{panel end}crwdne11605:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="11606" identifier="202f350dd9453c6a443200f296f0a1b6">
+        <source>{panel type=&quot;ct-logic&quot; title=&quot;Logic&quot;}</source>
+        <target>crwdns11606:0crwdne11606:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="11607" identifier="a9aa7cb7f95db667a9b327f840c2720e">
+        <source>By understanding the algorithms, evaluating the data collected, and thinking about how each of the different algorithms work and the differences between them, students will be exercising their logic skills a lot!</source>
+        <target>crwdns11607:0crwdne11607:0</target>
+        <note>Context: XPath: /p[25]</note>
+      </trans-unit>
+      <trans-unit id="11608" identifier="d76191e41d9d80f8d87927bd8702e600">
+        <source>Logical problem solving skills are exercised when they think about the following:</source>
+        <target>crwdns11608:0crwdne11608:0</target>
+        <note>Context: XPath: /p[25]</note>
+      </trans-unit>
+      <trans-unit id="11609" identifier="b97b089ff4d53bd236b0534d7d1f2786">
+        <source>Why binary search can only be performed on an ordered list, and why the only algorithm we can use to search an unsorted list is sequential search,</source>
+        <target>crwdns11609:0crwdne11609:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="11610" identifier="4a602631be366b8bd18f58c78c6ede09">
+        <source>Why both algorithms are guaranteed to find the item you are searching for (or discover that the item isn’t actually in the list)</source>
+        <target>crwdns11610:0crwdne11610:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="11611" identifier="c709be4805e3a3c86c7248e98b5527d0">
+        <source>Why halving a list repeatedly (the way you do when using binary search) makes it much faster to search through large amounts of data</source>
+        <target>crwdns11611:0crwdne11611:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="11612" identifier="182f4649ecea0d35500893764f050359">
+        <source>Discuss how the efficiency of the algorithms compares when we use more and more data, i.e  as the amount of data sequential search has to look through grows, the amount of time it takes will increase at the same rate (a linear rate), but with binary search the amount of time grows very slowly compared to sequential search.</source>
+        <target>crwdns11612:0crwdne11612:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[4]</note>
+      </trans-unit>
+      <trans-unit id="11613" identifier="63abbb99647d9c7305002d1c2eee9dfd">
+        <source>{panel end}</source>
+        <target>crwdns11613:0{panel end}crwdne11613:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[26]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

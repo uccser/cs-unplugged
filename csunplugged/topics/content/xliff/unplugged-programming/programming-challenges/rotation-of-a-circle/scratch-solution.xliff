@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1318" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/rotation-of-a-circle/scratch-solution.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15477" identifier="9659f80d9f90e56ec1cee1ec5d12835b">
+        <source>when green flag clicked
+clear
+go to x: (0) y: (0)
+point in direction (90 v)
+set [pi v] to [3.1415]
+set [radius v] to [50]
+move (radius) steps
+point in direction (0 v)
+pen down
+forever
+  repeat (360)
+    move ((((radius) * (2)) * (pi)) / (360)) steps
+    turn ccw (1) degrees
+  end
+  turn cw (15) degrees
+  change pen color by (10)
+end</source>
+        <target>crwdns15477:0[3.1415]crwdnd15477:0[50]crwdne15477:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

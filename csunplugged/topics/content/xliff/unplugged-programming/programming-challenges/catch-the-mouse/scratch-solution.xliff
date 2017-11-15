@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1107" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/catch-the-mouse/scratch-solution.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14281" identifier="cd495220f53cbabcb62fc9cfe7c71f90">
+        <source>&lt;strong&gt;Backdrop 1&lt;/strong&gt;:</source>
+        <target>crwdns14281:0crwdne14281:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14282" identifier="953725fae83c996befd6f74c3ef7b9d6">
+        <source>when I receive [go v]
+move_forward(3) :: custom
+turn_left :: custom
+move_forward(8) :: custom
+turn_right :: custom
+move_forward(2) :: custom</source>
+        <target>crwdns14282:0crwdne14282:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="14283" identifier="de883bebb9dc96c9664cd82883ff7f14">
+        <source>&lt;strong&gt;Backdrop 2&lt;/strong&gt;:</source>
+        <target>crwdns14283:0crwdne14283:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14284" identifier="5a94e9f4cdf03ad4578cb2066c534e3d">
+        <source>when I receive [go v]
+move_forward(4) :: custom
+turn_left :: custom
+move_forward(7) :: custom
+turn_right :: custom
+move_forward(1) :: custom
+turn_left :: custom
+move_forward(1) :: custom</source>
+        <target>crwdns14284:0crwdne14284:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="14285" identifier="8bd11fcce1c4ec9ba4c89627b740e8f0">
+        <source>&lt;strong&gt;Backdrop 3&lt;/strong&gt;:</source>
+        <target>crwdns14285:0crwdne14285:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="14286" identifier="df516061524363dc66110ccb518bcec4">
+        <source>when I receive [go v]
+turn_left :: custom
+move_forward(6) :: custom
+turn_right :: custom
+move_forward(3) :: custom
+turn_left :: custom
+move_forward(2) :: custom
+turn_right :: custom
+move_forward(2) :: custom</source>
+        <target>crwdns14286:0crwdne14286:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="14287" identifier="9b3bf7bb9da93374a5219e323031572d">
+        <source>&lt;strong&gt;Backdrop 4&lt;/strong&gt;:</source>
+        <target>crwdns14287:0crwdne14287:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="14288" identifier="8c3ed12fafe434ab93b51cfebb7ce10d">
+        <source>when I receive [go v]
+move_forward(2) :: custom
+turn_left :: custom
+move_forward(8) :: custom
+turn_right :: custom
+move_forward(3) :: custom</source>
+        <target>crwdns14288:0crwdne14288:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[4]/code</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="854" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/left-right-given-largest/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8989" identifier="084593ce34d694032eb79e9acb5080a5">
+        <source>Click on the green flag, enter the inputs provided in the “testing examples” to see the expected output of your program.</source>
+        <target>crwdns8989:0crwdne8989:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8990" identifier="4f58744d4daab531aacfd374859de579">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/148424023/?autostart=false&quot;}</source>
+        <target>crwdns8990:0crwdne8990:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="8991" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns8991:0crwdne8991:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="8992" identifier="d67b04848924d3e9f69c30a4d6ddae87">
+        <source>when green flag clicked
+
+ask [Enter the largest card number:] and wait
+
+say (binary cards)
+
+repeat until &amp;lt;(number of dots) = [1]&amp;gt;
+end</source>
+        <target>crwdns8992:0[1]crwdne8992:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="8993" identifier="70f83d6ca3bfa8d84295571205fd6cd8">
+        <source>(join (answer) [, ])
+
+(join (binary cards) (join (number of dots) [, ]))
+
+(number of dots) / (2)</source>
+        <target>crwdns8993:0crwdne8993:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="8994" identifier="dc1e70db740ee82aa5903a18df54e48b">
+        <source>set [number of dots v] to ()
+
+set [number of dots v] to (answer)
+
+set [binary cards v] to ()
+
+set [binary cards v] to ()</source>
+        <target>crwdns8994:0crwdne8994:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="8995" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns8995:0{panel end}crwdne8995:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

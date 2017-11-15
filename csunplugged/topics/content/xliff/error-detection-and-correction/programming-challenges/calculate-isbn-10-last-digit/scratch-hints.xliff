@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="898" original="/csunplugged/topics/content/en/error-detection-and-correction/programming-challenges/calculate-isbn-10-last-digit/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10152" identifier="35e223fb8ed8f719c17ae7f7530b90c3">
+        <source>Calculate the sum of all the 9 digits each multiplied by its (integer)
+weight, descending from 10 to 2.
+The last digit (check digit) is calculated by subtracting the final
+total from 0 mod 11.</source>
+        <target>crwdns10152:0crwdne10152:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li/p</note>
+      </trans-unit>
+      <trans-unit id="10153" identifier="ff94e7239680396a26316d6ea041e210">
+        <source>If the last digit is the number 10, replace it with the letter ‘X’.</source>
+        <target>crwdns10153:0crwdne10153:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="10154" identifier="138847e365e4206eb7978c5ca3ebde0e">
+        <source>For example the last digit of the ISBN-10 “020153082” is calculated by:</source>
+        <target>crwdns10154:0crwdne10154:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[2]/p[2]</note>
+      </trans-unit>
+      <trans-unit id="10155" identifier="7785f6426730f10a897dd4f2f0716e45">
+        <source>\[ total=(100)+(92)+(80)+(71)+(65)+(53)+(40)+(38)+(22) \]</source>
+        <target>crwdns10155:0crwdne10155:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[2]/p[3]</note>
+      </trans-unit>
+      <trans-unit id="10156" identifier="953a92378998e94fccff46d8c2c1d82a">
+        <source>\[ total=0+18+0+7+30+15+0+24+4=98 \]</source>
+        <target>crwdns10156:0crwdne10156:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[2]/p[4]</note>
+      </trans-unit>
+      <trans-unit id="10157" identifier="103507bccd7319fa43257d5e64524311">
+        <source>So the last digit is 1 (i.e. (0-98) mod 11 which is equal to 1).</source>
+        <target>crwdns10157:0crwdne10157:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[2]/p[5]</note>
+      </trans-unit>
+      <trans-unit id="10158" identifier="bc3fb07de1182c6f81580887f8a32f4c">
+        <source>Another example: The last digit of the ISBN-10 “043942089” is
+calculated by:</source>
+        <target>crwdns10158:0crwdne10158:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[2]/p[6]</note>
+      </trans-unit>
+      <trans-unit id="10159" identifier="e7622134a2fe1a7eb4da36271ba8ce2f">
+        <source>\[ total=(100)+(94)+(83)+(79)+(64)+(52)+(40)+(38)+(29) \]</source>
+        <target>crwdns10159:0crwdne10159:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[2]/p[7]</note>
+      </trans-unit>
+      <trans-unit id="10160" identifier="0ada2ff801b338e41f2a15db8d7fac26">
+        <source>\[ total=0+36+24+63+24+10+0+24+18=199 \]</source>
+        <target>crwdns10160:0crwdne10160:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[2]/p[8]</note>
+      </trans-unit>
+      <trans-unit id="10161" identifier="4bc55aa671f37909ac9aa5e147ee6a57">
+        <source>So the last digit is ‘X’ (i.e. (0-199) mod 11 which is equal to 10).</source>
+        <target>crwdns10161:0crwdne10161:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[2]/p[9]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

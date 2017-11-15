@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1129" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/design-bee-bot/design-bee-bot.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14413" identifier="a85ad40b6286da7a871524dab9f7f74d">
+        <source>Design a Bee-Bot</source>
+        <target>crwdns14413:0crwdne14413:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="14414" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns14414:0crwdne14414:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="14415" identifier="8d5b5e0e55ee8f0bd24d8ba23451c7bf">
+        <source>{panel type=&quot;general&quot; title=&quot;Note&quot;}</source>
+        <target>crwdns14415:0crwdne14415:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14416" identifier="d290ece7759128b35856d4e66ffc4352">
+        <source>This is a very complex program, but if students can understand it then they will have tackled a deep concept in computer science, which is implementing a programming language using another programming language!</source>
+        <target>crwdns14416:0crwdne14416:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14417" identifier="44f97947128aa89a49e94b71ae3b7814">
+        <source>For students with less programming experience, it may be more helpful to start with the complete project and make modifications to it, such as adding a new command (like &quot;spin&quot;, which spins the cat on the spot).</source>
+        <target>crwdns14417:0crwdne14417:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14418" identifier="6c1553a86dab347792b0a68daea038c2">
+        <source>See &lt;strong&gt;KidBots challenges 1.2 and 1.3&lt;/strong&gt; for the complete solutions and the instructions for adding a spin button.</source>
+        <target>crwdns14418:0crwdne14418:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14419" identifier="3a1ae082a90b504339024ac691a2b919">
+        <source>{panel end}</source>
+        <target>crwdns14419:0{panel end}crwdne14419:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="14420" identifier="6476e070e14d7c0f60c06430e40464f9">
+        <source>Write a program to simulate a Bee-Bot, which can be programmed with five commands (forward, left, right, back, pause).</source>
+        <target>crwdns14420:0crwdne14420:0</target>
+        <note>Context: XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="14421" identifier="1a0658bdbf167b626539646718be148c">
+        <source>Pressing the four commands stores them in a list called &quot;source code&quot;, and pressing the GO button will activate a script that goes through the list of commands and moves the cat according to each command.</source>
+        <target>crwdns14421:0crwdne14421:0</target>
+        <note>Context: XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="14422" identifier="4e63dad26281f7d7b6c20b7c8a0e3e87">
+        <source>The HOME button returns the cat to the starting position; the UNDO button removes the last command from the list; and the CLEAR button empties the list.</source>
+        <target>crwdns14422:0crwdne14422:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="14423" identifier="92189b07690ad39585506083dd49fcf4">
+        <source>A project with the graphics needed is provided at &lt;a href=&quot;https://scratch.mit.edu/projects/159722851/&quot;&gt;scratch.mit.edu/projects/159722851/&lt;/a&gt;, but you will need to write the program to make it work</source>
+        <target>crwdns14423:0crwdne14423:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="14424" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns14424:0crwdne14424:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="14425" identifier="41ea4b12b915a98163394092580bdaa2">
+        <source>You will need to test your program by typing in your own commands to the simulated Bee-Bot to see if it behaves as intended.
+So you're testing your Scratch program by writing programs for the Bee-Bot!</source>
+        <target>crwdns14425:0crwdne14425:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="14426" identifier="c75fe64aa130e61b5ddd6693c42f6373">
+        <source>To use the program, when the green flag is clicked, give instructions to the cat to catch the mouse by pressing the arrows for the Bee-Bot.
+Press the “Go” button when you are ready.</source>
+        <target>crwdns14426:0crwdne14426:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[8]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

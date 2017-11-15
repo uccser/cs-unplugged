@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1321" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/rotation-of-a-pentagon/rotation-of-a-pentagon.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15479" identifier="1eccaf6085b6be7ceb9c806a8309133e">
+        <source>Rotation of a pentagon</source>
+        <target>crwdns15479:0crwdne15479:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="15480" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns15480:0crwdne15480:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="15481" identifier="8a2f3cd90cf41fc58221f0f54e187a14">
+        <source>Write a program that draws a pentagon, starting from point x:0, y:0, with its sides equal to 100 steps.</source>
+        <target>crwdns15481:0crwdne15481:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15482" identifier="953fa4f44fd01183dfdece356a0794f8">
+        <source>Your program must then draw pentagons that are each rotated 15 degrees from the previous one (forever), changing its colour every time it draws a new pentagon.</source>
+        <target>crwdns15482:0crwdne15482:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15483" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns15483:0crwdne15483:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="15484" identifier="c6c8bb685a40fd65c5411b1f6f48de56">
+        <source>There are no testing examples for this challenge.</source>
+        <target>crwdns15484:0crwdne15484:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

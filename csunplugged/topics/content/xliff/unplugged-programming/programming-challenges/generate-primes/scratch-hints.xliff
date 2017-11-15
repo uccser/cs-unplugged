@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1243" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/generate-primes/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15054" identifier="c1964044094a75c33c2d9479b6ec5f6b">
+        <source>To generate prime numbers up to a number, check every number less than the number (one at a time) to find out if it’s prime or not.</source>
+        <target>crwdns15054:0crwdne15054:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="15055" identifier="e5aa260846bee0197dc696d82a89c3ec">
+        <source>If it’s a prime number, add it to a string variable called “prime numbers” and check the next number.</source>
+        <target>crwdns15055:0crwdne15055:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="15056" identifier="6b947a8eec1efb0fc0e26d559f648b8c">
+        <source></source>
+        <target>crwdns15056:0crwdne15056:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

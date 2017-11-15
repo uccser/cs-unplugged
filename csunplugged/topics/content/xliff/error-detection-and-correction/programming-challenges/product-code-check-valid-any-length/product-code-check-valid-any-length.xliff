@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1007" original="/csunplugged/topics/content/en/error-detection-and-correction/programming-challenges/product-code-check-valid-any-length/product-code-check-valid-any-length.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10817" identifier="25000bea49e4b2dcd9fac6aa47984912">
+        <source>12 and 13 digit product codes: Check for a valid product code (any length)</source>
+        <target>crwdns10817:0crwdne10817:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="10818" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns10818:0crwdne10818:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="10819" identifier="382567bae5f7ad4612db5ceb3fa5a7f6">
+        <source>Write a program that asks the user to enter a product code of any length in
+one line of input and adds up all the digits (every second one multiplied
+by 3).</source>
+        <target>crwdns10819:0crwdne10819:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="10820" identifier="a9c20be063d7ade99021ccc1b203a52c">
+        <source>To add up the digits you need to start from the last digit, multiply the last
+digit by 1, second to last by 3 and so on.</source>
+        <target>crwdns10820:0crwdne10820:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="10821" identifier="9631c31db48efc21aab623b4b6f3b8ec">
+        <source>It then checks if the product code is valid (total number is a multiple of 10).</source>
+        <target>crwdns10821:0crwdne10821:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="10822" identifier="c61a876850808845d78f9a2951de1e96">
+        <source>Starting at the right-hand digit will make the formula work for a wide
+variety of product codes.</source>
+        <target>crwdns10822:0crwdne10822:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="10823" identifier="8c27ee5546e789724e96f2f1c7ba6772">
+        <source>(Note that this rule will work for most of the common product codes on shop
+products, which use the alternating multipliers of 3 and 1.</source>
+        <target>crwdns10823:0crwdne10823:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="10824" identifier="0e7b5348466209922af3019b2381ace6">
+        <source>The check digit is always multiplied by 1, so starting at the right is an
+easy way to get the sequence correct.</source>
+        <target>crwdns10824:0crwdne10824:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="10825" identifier="30e6b3a801f6c99f7491d7079b602dd2">
+        <source>Common codes that you may come across are GTIN-13, GTIN-12, GTIN-8, EAN-13,
+EAN-8 and UPC-A, and these all use the alternating 1/3 formula.</source>
+        <target>crwdns10825:0crwdne10825:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="10826" identifier="2728f1e30926536857a1be01849841f9">
+        <source>An exception is UPC-E, which is very complex.</source>
+        <target>crwdns10826:0crwdne10826:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="10827" identifier="4856099898ff5e600ceeb24c3e20b931">
+        <source>UPC-E is most common in America; it as an 8-digit code used on smaller items
+such as soda cans.</source>
+        <target>crwdns10827:0crwdne10827:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="10828" identifier="196df5af67078f9da973d7d3c7d9c409">
+        <source>Because the structure of UPC-E is so complex, it's best to not use them
+unless you have advanced students wanting a difficult challenge.</source>
+        <target>crwdns10828:0crwdne10828:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="10829" identifier="bec25bf8cef024d745a3883fbb932901">
+        <source>UPC-E product codes can be recognised because they do not have a double line
+from the bars extending down between the two sets of four digits i.e.
+the 8 digits are all written without any gaps.)</source>
+        <target>crwdns10829:0crwdne10829:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="10830" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns10830:0crwdne10830:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="10831" identifier="d6f826e3bf961e7e2a04ba15b1284d29">
+        <source>Your program should display the outputs shown in this table for the given
+inputs provided:</source>
+        <target>crwdns10831:0crwdne10831:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="10832" identifier="5bfb69c6f4701e747d0c20b0822e2580">
+        <source>Input</source>
+        <target>crwdns10832:0crwdne10832:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th</note>
+      </trans-unit>
+      <trans-unit id="10833" identifier="f36a1e77a6177da7e10093e12e92ec6c">
+        <source>Output</source>
+        <target>crwdns10833:0crwdne10833:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th[2]</note>
+      </trans-unit>
+      <trans-unit id="10834" identifier="10c8abcfa147e4aa2bcc8fd202b1cf64">
+        <source>50184385</source>
+        <target>crwdns10834:0crwdne10834:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td</note>
+      </trans-unit>
+      <trans-unit id="10835" identifier="d769973e75445ece5e3eac9767f3418c">
+        <source>Valid product code!</source>
+        <target>crwdns10835:0crwdne10835:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td[2]</note>
+      </trans-unit>
+      <trans-unit id="10836" identifier="f441735bd31111a075ce51177b2a2e65">
+        <source>036000241457</source>
+        <target>crwdns10836:0crwdne10836:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td</note>
+      </trans-unit>
+      <trans-unit id="10837" identifier="593d335a95832679e9419ed37be196b5">
+        <source>Valid product code!</source>
+        <target>crwdns10837:0crwdne10837:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="10838" identifier="450065d8be6c578bbefaa39ec8b00ac8">
+        <source>50174385</source>
+        <target>crwdns10838:0crwdne10838:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td</note>
+      </trans-unit>
+      <trans-unit id="10839" identifier="46300dd5ca5c6dba8def79538f9fc2d1">
+        <source>Invalid product code!</source>
+        <target>crwdns10839:0crwdne10839:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="10840" identifier="00f2e19a50ea48b88e28353c18987f47">
+        <source>9330462119318</source>
+        <target>crwdns10840:0crwdne10840:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[4]/td</note>
+      </trans-unit>
+      <trans-unit id="10841" identifier="81c3353bbce4814565a760eaba0ccb83">
+        <source>Valid product code!</source>
+        <target>crwdns10841:0crwdne10841:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[4]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="10842" identifier="4618e85ed6b5c269e24b088ec60e1ad5">
+        <source>9330463119318</source>
+        <target>crwdns10842:0crwdne10842:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[5]/td</note>
+      </trans-unit>
+      <trans-unit id="10843" identifier="0e87e340cb4a8d42018d59ab46d93e34">
+        <source>Invalid product code!</source>
+        <target>crwdns10843:0crwdne10843:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[5]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="10844" identifier="574b16fa9444ae9c960d6c072fff4b5f">
+        <source>036002241457</source>
+        <target>crwdns10844:0crwdne10844:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[6]/td</note>
+      </trans-unit>
+      <trans-unit id="10845" identifier="202a1dc33bfd9a2ba58f599348161b14">
+        <source>Invalid product code!</source>
+        <target>crwdns10845:0crwdne10845:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[6]/td[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

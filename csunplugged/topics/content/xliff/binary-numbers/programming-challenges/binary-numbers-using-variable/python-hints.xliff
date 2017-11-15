@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="774" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/binary-numbers-using-variable/python-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8566" identifier="850f019b03c6a4be0b4c274a8604a934">
+        <source>Make a variable called &lt;code&gt;number_of_dots&lt;/code&gt; and change its value by setting it
+to 1, 2, 4, 8 and 16 respectively.</source>
+        <target>crwdns8566:0crwdne8566:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="8567" identifier="a1b25d4197316c6fa614f04e41d5f8c8">
+        <source>Make sure your variable name is meaningful for someone else to read.</source>
+        <target>crwdns8567:0crwdne8567:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="8568" identifier="2772d66eccaea87ddc8bbcb7f54cc25d">
+        <source>In the above example, the variable is called &lt;code&gt;number_of_dots&lt;/code&gt; because
+it stores the number of dots on a card.</source>
+        <target>crwdns8568:0crwdne8568:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="8569" identifier="1b30b25ddb6efde0c2c086ccdcf01cc9">
+        <source>Use &lt;code&gt;number_of_dots = 0&lt;/code&gt; to set the value of your new variable.
+This code would set &lt;code&gt;number_of_dots&lt;/code&gt; to zero.</source>
+        <target>crwdns8569:0crwdne8569:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="8570" identifier="a305c4b47b5d501b9bb33d29c1f3868c">
+        <source>The &lt;code&gt;print()&lt;/code&gt; statement allows you to display text or values within the
+parentheses on the screen.
+For example: &lt;code&gt;print(100)&lt;/code&gt; would display &lt;code&gt;100&lt;/code&gt; on the screen.</source>
+        <target>crwdns8570:0crwdne8570:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="8571" identifier="47812200d5144202a850b1d97e6fb2ca">
+        <source>You will need to use a &lt;code&gt;print()&lt;/code&gt; statement for each number you wish to
+display.</source>
+        <target>crwdns8571:0crwdne8571:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

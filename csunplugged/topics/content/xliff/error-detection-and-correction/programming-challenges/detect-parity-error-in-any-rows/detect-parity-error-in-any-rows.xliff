@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="931" original="/csunplugged/topics/content/en/error-detection-and-correction/programming-challenges/detect-parity-error-in-any-rows/detect-parity-error-in-any-rows.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10342" identifier="a46cf6549c39f5e1972663055b1961a2">
+        <source>Detect parity error in any number of rows (after each row is entered)</source>
+        <target>crwdns10342:0crwdne10342:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="10343" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns10343:0crwdne10343:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="10344" identifier="3654360eb48e5d021d755272eb7ae559">
+        <source>Write a program which asks the user to enter any number of rows and checks if
+there is a parity error in any of the rows after entering each row.</source>
+        <target>crwdns10344:0crwdne10344:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="10345" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns10345:0crwdne10345:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="10346" identifier="1180b108f3b8fb06034bbe648a1c6036">
+        <source>Your program should display the outputs shown in these panels for the given
+inputs provided:</source>
+        <target>crwdns10346:0crwdne10346:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="10347" identifier="5bfb69c6f4701e747d0c20b0822e2580">
+        <source>Input</source>
+        <target>crwdns10347:0crwdne10347:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th</note>
+      </trans-unit>
+      <trans-unit id="10348" identifier="f36a1e77a6177da7e10093e12e92ec6c">
+        <source>Output</source>
+        <target>crwdns10348:0crwdne10348:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th[2]</note>
+      </trans-unit>
+      <trans-unit id="10349" identifier="0255fe5b78d09eb5132c8b9ec81f38ce">
+        <source>WWW</source>
+        <target>crwdns10349:0crwdne10349:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td</note>
+      </trans-unit>
+      <trans-unit id="10350" identifier="a3c35ef88f0a71e131e1b8e198a7670a">
+        <source>Row 1 is ok!</source>
+        <target>crwdns10350:0crwdne10350:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td[2]</note>
+      </trans-unit>
+      <trans-unit id="10351" identifier="b557448d9080f4ef39186aaf0210a35d">
+        <source>WBW</source>
+        <target>crwdns10351:0crwdne10351:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td</note>
+      </trans-unit>
+      <trans-unit id="10352" identifier="a5a8a6447817e92d0726eef66f6cee2a">
+        <source>There is a parity error in row 2!</source>
+        <target>crwdns10352:0crwdne10352:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="10353" identifier="1dff3a6fd0cb4b4678d898ee2670be7b">
+        <source>WBB</source>
+        <target>crwdns10353:0crwdne10353:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td</note>
+      </trans-unit>
+      <trans-unit id="10354" identifier="09a065a052fe067f761c10c22431f628">
+        <source>Row 3 is ok!</source>
+        <target>crwdns10354:0crwdne10354:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

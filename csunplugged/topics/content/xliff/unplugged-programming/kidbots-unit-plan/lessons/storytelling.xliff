@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1069" original="/csunplugged/topics/content/en/unplugged-programming/kidbots-unit-plan/lessons/storytelling.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="13644" identifier="f54b5c04100de3dbd64c085886801827">
+        <source>Storytelling</source>
+        <target>crwdns13644:0crwdne13644:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="13645" identifier="2e83e56c101cc8db71330234e43a9237">
+        <source>{image file-path=&quot;img/topics/unplugged-programming-icon.png&quot; alt=&quot;Students standing around a large checkerboard grid.&quot; caption=&quot;This example is a starter lesson with an object in the middle.</source>
+        <target>crwdns13645:0crwdne13645:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="13646" identifier="2ddd8d80a4bcdaf5d232d1a19004be19">
+        <source>The girl on the white square is &quot;The Bot&quot;, the girl at the back is &quot;The Programmer&quot; and the boy in the green and gold is the Tester.&quot;}</source>
+        <target>crwdns13646:0crwdne13646:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="13647" identifier="f17e7b5da610295808d4668fae87df1b">
+        <source>Key questions</source>
+        <target>crwdns13647:0crwdne13647:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="13648" identifier="2d3cb2ff82d308c24bb3562fb9c20f42">
+        <source>How could thinking about programming help us to retell stories?
+Why is it important to get the sequence right when retelling a story?</source>
+        <target>crwdns13648:0crwdne13648:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="13649" identifier="4460fd52c3ef567c91cd109657e20025">
+        <source>Lesson starter</source>
+        <target>crwdns13649:0crwdne13649:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="13650" identifier="e1930077d30f6bb137dfae3ab6fb7eba">
+        <source>Ideally this lesson should take place around a large grid such as:</source>
+        <target>crwdns13650:0crwdne13650:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="13651" identifier="c6a46036c72c30cec9337c8738805d4b">
+        <source>An outside painted chess board.</source>
+        <target>crwdns13651:0crwdne13651:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="13652" identifier="6e12598f3beb096433024a3764811eff">
+        <source>Grids in your classroom carpet.</source>
+        <target>crwdns13652:0crwdne13652:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="13653" identifier="44fe9faef12a0a3f1cf3861a444b0ef6">
+        <source>Making masking tape grids one the floor in your classroom.</source>
+        <target>crwdns13653:0crwdne13653:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="13654" identifier="dd0d687453134192231dfd64cb03b1a7">
+        <source>Draw a chalk grid either in your classroom or outside.</source>
+        <target>crwdns13654:0crwdne13654:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[4]</note>
+      </trans-unit>
+      <trans-unit id="13655" identifier="c410f70bda513ad6510801b5ba232d85">
+        <source>Ask for two volunteers and give yourself and them the roles of:</source>
+        <target>crwdns13655:0crwdne13655:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="13656" identifier="a72bbada2a08d83b887a20acfa1a835f">
+        <source>&lt;strong&gt;Role 1:&lt;/strong&gt; The Developer (who writes the program) -  The teacher will model this initially</source>
+        <target>crwdns13656:0crwdne13656:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="13657" identifier="9d27717b07fa4dfddfdca65f93502e35">
+        <source>&lt;strong&gt;Role 2:&lt;/strong&gt; The Tester (who instructs the Bot and looks for bugs)</source>
+        <target>crwdns13657:0crwdne13657:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="13658" identifier="135ef0bc3f0151cfd519dc7b5e8448e7">
+        <source>&lt;strong&gt;Role 3:&lt;/strong&gt; The Bot (who runs the program)</source>
+        <target>crwdns13658:0crwdne13658:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="13659" identifier="cc996e3d6ce5490eded75a90e922b8be">
+        <source>We’re going to write our own program that retells the story we just read.
+We read Little Red Riding Hood.
+I’m going to mix up the story!</source>
+        <target>crwdns13659:0crwdne13659:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="13660" identifier="850ba839d881d215e4b5562544c3ed33">
+        <source>I’ve placed on my grid the main ideas from the story.
+Let’s see what we have.</source>
+        <target>crwdns13660:0crwdne13660:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="13661" identifier="2ae703e62ca3604f87b5627e8c4c8d3b">
+        <source>There’s a big bad wolf.</source>
+        <target>crwdns13661:0crwdne13661:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li</note>
+      </trans-unit>
+      <trans-unit id="13662" identifier="906ec99225a47e07038bf99f3d2ee9f6">
+        <source>There’s Little Red Riding Hood</source>
+        <target>crwdns13662:0crwdne13662:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li[2]</note>
+      </trans-unit>
+      <trans-unit id="13663" identifier="97885b4d6bc53771952adecd8e688e59">
+        <source>There’s Grandma’s house.</source>
+        <target>crwdns13663:0crwdne13663:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li[3]</note>
+      </trans-unit>
+      <trans-unit id="13664" identifier="d591ae336212befd2ebd9a19dc1218de">
+        <source>There’s also a well.</source>
+        <target>crwdns13664:0crwdne13664:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li[4]</note>
+      </trans-unit>
+      <trans-unit id="13665" identifier="abff6e67604b530eba7682e3d5781831">
+        <source>Once upon a time there was a misunderstood wolf, who everyone thought was unfriendly because he had big sharp scary teeth.</source>
+        <target>crwdns13665:0crwdne13665:0</target>
+        <note>Context: XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="13666" identifier="dfbcaab562d7a6b88f5a2aee2a84a57b">
+        <source>He was very shy and one day he heard a little girl skipping down the path and he needed to hide quickly, and the only place was to hide in the well.</source>
+        <target>crwdns13666:0crwdne13666:0</target>
+        <note>Context: XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="13667" identifier="e639d1c8020abe25db6e78e201501a9f">
+        <source>{image file-path=&quot;img/topics/kidbots-little-red-riding-hood-alternative-story.png&quot; alt=&quot;An 8 by 8 grid with the following objects in different squares: A well, Grandma's house, Little Red Riding Hood, and a wolf.&quot;}</source>
+        <target>crwdns13667:0crwdne13667:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="13668" identifier="c59783e10e5d0d09745e43e52c883462">
+        <source>Program the wolf to hide in the well, the wolf can move one square at a time.</source>
+        <target>crwdns13668:0crwdne13668:0</target>
+        <note>Context: XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="13669" identifier="b9d51a39c7b893eec7ba23b3051734d1">
+        <source>The forward command moves them to the square they are facing, and turn left and turn right makes them turn 90 degrees on the square that they are standing on.</source>
+        <target>crwdns13669:0crwdne13669:0</target>
+        <note>Context: XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="13670" identifier="843abe4a0a4ac4994a45c58610e04901">
+        <source>How would we write the instructions using our whiteboards to make these moves?</source>
+        <target>crwdns13670:0crwdne13670:0</target>
+        <note>Context: XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="13671" identifier="01920ab7ff36a05920ccd77246115f8c">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns13671:0crwdne13671:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="13672" identifier="1235d00d2dda5dfd23dd545855eb58c7">
+        <source>Ideas for this include using arrows; abbreviations (like F, L, and R), writing in a different language, using symbols from other cultures, and writing in Braille.</source>
+        <target>crwdns13672:0crwdne13672:0</target>
+        <note>Context: XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="13673" identifier="e08fcdc4c26dcb9d2310c3045a0d2593">
+        <source>Start by programming one character to the end location.</source>
+        <target>crwdns13673:0crwdne13673:0</target>
+        <note>Context: XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="13674" identifier="3646952dd268ded79073a6129873e6a2">
+        <source>Students may ask if they can program both Little Red Riding Hood and the wolf.</source>
+        <target>crwdns13674:0crwdne13674:0</target>
+        <note>Context: XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="13675" identifier="b785a9672074fcd5d683a29518fee008">
+        <source>If they do that, have separate teams programming each character, or separate whiteboards for each character if the one team would like to try this.</source>
+        <target>crwdns13675:0crwdne13675:0</target>
+        <note>Context: XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="13676" identifier="9310d092388af7bdf4e961de50103c5a">
+        <source>{panel end}</source>
+        <target>crwdns13676:0{panel end}crwdne13676:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="13677" identifier="ea08f2f76d1ef4a9f87b3ba4c0221b4a">
+        <source>Lesson activities</source>
+        <target>crwdns13677:0crwdne13677:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[3]</note>
+      </trans-unit>
+      <trans-unit id="13678" identifier="4ec4fa40a80522aed94622ff3e210561">
+        <source>Work in groups of three, one person is the Bot, another is the Tester and last person is the Programmer.</source>
+        <target>crwdns13678:0crwdne13678:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol/li</note>
+      </trans-unit>
+      <trans-unit id="13679" identifier="6383086018faa068ff17edb22090b61f">
+        <source>Agree on what will be written down on the whiteboard to be the programming language for move forward, move left, and move right.</source>
+        <target>crwdns13679:0crwdne13679:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol/li[2]</note>
+      </trans-unit>
+      <trans-unit id="13680" identifier="dba3d6d596bd8ef0d9fedf8e134c790a">
+        <source>Find a toy and blocks from around the classroom.</source>
+        <target>crwdns13680:0crwdne13680:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol/li[3]</note>
+      </trans-unit>
+      <trans-unit id="13681" identifier="01d13f34a8d2feb14a9c69ff45b5a033">
+        <source>Together finish retelling the &quot;Little Red Riding Hood&quot; story and focus your programming on what one character will do so you can program them to move from one point to another point.</source>
+        <target>crwdns13681:0crwdne13681:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol/li[4]</note>
+      </trans-unit>
+      <trans-unit id="13682" identifier="b0c199607158bf1cffd0890718a9e22e">
+        <source>The Programmer writes down on a whiteboard what the &quot;program&quot; is to get the toy to where it needs to go.</source>
+        <target>crwdns13682:0crwdne13682:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol/li[5]</note>
+      </trans-unit>
+      <trans-unit id="13683" identifier="7079f47dd1c28fd188a204066c10b88a">
+        <source>The Tester then takes the whiteboard and a different coloured whiteboard pen.</source>
+        <target>crwdns13683:0crwdne13683:0</target>
+        <note>Context: XPath: /ol/li[6]/p</note>
+      </trans-unit>
+      <trans-unit id="13684" identifier="3bd5fa67d05a0871f167c86fc15aa458">
+        <source>The Tester tells the Bot each instruction in the program.</source>
+        <target>crwdns13684:0crwdne13684:0</target>
+        <note>Context: XPath: /ol/li[6]/p</note>
+      </trans-unit>
+      <trans-unit id="13685" identifier="dfedbb45e22f5d8e8c9a9116d6c01603">
+        <source>The Tester puts a tick next to the code that is correct and underlines any code that causes problems (such as running off the board or into an object, or running out of instructions before reaching the goal).</source>
+        <target>crwdns13685:0crwdne13685:0</target>
+        <note>Context: XPath: /ol/li[6]/p</note>
+      </trans-unit>
+      <trans-unit id="13686" identifier="9d2a972e6053462583eface2b9fabeaf">
+        <source>If this happens the Tester says &quot;Stop&quot; and the Bot stops and goes back to the start.</source>
+        <target>crwdns13686:0crwdne13686:0</target>
+        <note>Context: XPath: /ol/li[6]/p</note>
+      </trans-unit>
+      <trans-unit id="13687" identifier="c229334990894edbbb6e5b90a7f24e8c">
+        <source>The Tester gives the whiteboard to the Programmer, who then debugs the code and gives the Tester a revised version.</source>
+        <target>crwdns13687:0crwdne13687:0</target>
+        <note>Context: XPath: /ol/li[6]/p</note>
+      </trans-unit>
+      <trans-unit id="13688" identifier="368a2e127ad847e33f450ffba8e88fae">
+        <source>The &quot;bug&quot; might be earlier than where the Tester noted that things went wrong!</source>
+        <target>crwdns13688:0crwdne13688:0</target>
+        <note>Context: XPath: /ol/li[6]/p</note>
+      </trans-unit>
+      <trans-unit id="13689" identifier="87d416e9c2663553ceb265c4f43efd37">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns13689:0crwdne13689:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[6]/p[2]</note>
+      </trans-unit>
+      <trans-unit id="13690" identifier="ecbe5e57940884b3bd4e13798df39046">
+        <source>The Tester need not necessarily communicate using the words &quot;Forward&quot;, &quot;Left&quot; and &quot;Right&quot;.</source>
+        <target>crwdns13690:0crwdne13690:0</target>
+        <note>Context: XPath: /ol/li[6]/p[3]</note>
+      </trans-unit>
+      <trans-unit id="13691" identifier="4ef9a059042edf3c2d9d3f10ca3e0bd9">
+        <source>For example, the could use another language, including sign language, or use other gestures to communicate each action to the Bot.</source>
+        <target>crwdns13691:0crwdne13691:0</target>
+        <note>Context: XPath: /ol/li[6]/p[3]</note>
+      </trans-unit>
+      <trans-unit id="13692" identifier="0b074cf54aa0c840c43af6006fc3dba2">
+        <source>To write the program you could have cards with these written on so students don’t have to remember all the new learning.</source>
+        <target>crwdns13692:0crwdne13692:0</target>
+        <note>Context: XPath: /ol/li[6]/p[3]</note>
+      </trans-unit>
+      <trans-unit id="13693" identifier="79b092aa75480182b26c026b9fde067a">
+        <source>This is a great opportunity to use words from an unfamiliar language; there are only three words that will be used over and over (although you could also introduce phrases like &quot;your turn&quot;, 'well done&quot; and so on), so it is a good chance to learn by repetition of the new words.</source>
+        <target>crwdns13693:0crwdne13693:0</target>
+        <note>Context: XPath: /ol/li[6]/p[3]</note>
+      </trans-unit>
+      <trans-unit id="13694" identifier="52746d878c6f5301b11e9786da12b508">
+        <source>{panel end}</source>
+        <target>crwdns13694:0{panel end}crwdne13694:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[6]/p[4]</note>
+      </trans-unit>
+      <trans-unit id="13695" identifier="fc6de5aa7fc46a72bd36c78bc9928e78">
+        <source>Repeat step 6 until the program is free of bugs and works as intended.</source>
+        <target>crwdns13695:0crwdne13695:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[7]/p</note>
+      </trans-unit>
+      <trans-unit id="13696" identifier="302938be2ec0a27a09e915417b88fbc8">
+        <source>Change roles and move the Bot and the toy that needs rescuing until everyone has had a turn.</source>
+        <target>crwdns13696:0crwdne13696:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[8]/p</note>
+      </trans-unit>
+      <trans-unit id="13697" identifier="791041f240926847efae717816ecac3c">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns13697:0crwdne13697:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="13698" identifier="56edf80e9510971c71b1e9100f6b2ae3">
+        <source>If you notice that your students need support to visualise how to write the instructions you could use a whiteboard pen to scaffold the instructions.</source>
+        <target>crwdns13698:0crwdne13698:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="13699" identifier="127a98d13ea2273a464ad5925a0625d4">
+        <source>{panel end}</source>
+        <target>crwdns13699:0{panel end}crwdne13699:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="13700" identifier="31058e61159c73a417e1aa802fa04a38">
+        <source>Write your own story</source>
+        <target>crwdns13700:0crwdne13700:0</target>
+        <note>Context: Headline 3&#13;
+XPath: /h3</note>
+      </trans-unit>
+      <trans-unit id="13701" identifier="164fdaa83b29af14ee83dbfed82cc0c2">
+        <source>Make up your own story using a toy and a block.
+You could also put things in the way that the toy needs to avoid such as a pretend cave or a fierce animal.</source>
+        <target>crwdns13701:0crwdne13701:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="13702" identifier="b65b28cc0614c9971c8c9de62d9777b4">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns13702:0crwdne13702:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="13703" identifier="8d19f6b58f3d6b6c65fe43950a89e635">
+        <source>Making up their own story provides integrated learning with creative writing, and then writing a program to focus on what one character will do.</source>
+        <target>crwdns13703:0crwdne13703:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="13704" identifier="0d3de6c21e2d458b6944fce764817b3f">
+        <source>{panel end}</source>
+        <target>crwdns13704:0{panel end}crwdne13704:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="13705" identifier="93f7f710b96d25060d8fc0fdd8426091">
+        <source>Applying what we have just learnt</source>
+        <target>crwdns13705:0crwdne13705:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[4]</note>
+      </trans-unit>
+      <trans-unit id="13706" identifier="4d7af8610e2355c51d477573438ba9f0">
+        <source>It’s quite common to think that programming is some kind of special talent that people either have or don’t have, but this isn't so!</source>
+        <target>crwdns13706:0crwdne13706:0</target>
+        <note>Context: XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="13707" identifier="c5174ee40086a143e2f9d1ea81d7aee6">
+        <source>Like all skills, programming is something you learn through practise, making mistakes, and learning from them.</source>
+        <target>crwdns13707:0crwdne13707:0</target>
+        <note>Context: XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="13708" identifier="9c44a79e2afee2332559cb20a05d1aba">
+        <source>An important skill that programmers need is to be able to communicate with others, especially when they are working out what the program should do; they also need to be persistent when finding and fixing bugs.</source>
+        <target>crwdns13708:0crwdne13708:0</target>
+        <note>Context: XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="13709" identifier="fba0bb5cb0d78bc3402921236e9ac49f">
+        <source>Bugs happen all the time in programming, so being able to identify where the bug occurs and problem solving how to fix it is incredibly important.</source>
+        <target>crwdns13709:0crwdne13709:0</target>
+        <note>Context: XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="13710" identifier="1af8184171bb3fdcdaf58a406b609969">
+        <source>It doesn’t matter how experienced you are at programming, there will always be bugs that need to be found, and fixed.</source>
+        <target>crwdns13710:0crwdne13710:0</target>
+        <note>Context: XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="13711" identifier="2021380880e33c0ae5a34c6512291a99">
+        <source>That’s why the word “debugging” is so important to programmers.</source>
+        <target>crwdns13711:0crwdne13711:0</target>
+        <note>Context: XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="13712" identifier="cc600daa8a55c1ad19da6691fddb86dc">
+        <source>Storytelling programming challenges</source>
+        <target>crwdns13712:0crwdne13712:0</target>
+        <note>Context: Headline 3&#13;
+XPath: /h3[2]</note>
+      </trans-unit>
+      <trans-unit id="13713" identifier="75b8b6db38c5b329b9b22b99fa72ed21">
+        <source>Simple robotic toys like the &quot;Bee-Bot&quot; have a very similar set of commands, and can be used to follow up.</source>
+        <target>crwdns13713:0crwdne13713:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="13714" identifier="5130654c0e861f29672a02e1d1360b7f">
+        <source>Lesson reflection</source>
+        <target>crwdns13714:0crwdne13714:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[5]</note>
+      </trans-unit>
+      <trans-unit id="13715" identifier="7f070a66f0bca8cf82ab06de92b3d2b6">
+        <source>Now that you have experienced being a programmer, what did you think was the most challenging part of being a programmer?
+Do you think this is a way you could plan out your story writing?</source>
+        <target>crwdns13715:0crwdne13715:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[25]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

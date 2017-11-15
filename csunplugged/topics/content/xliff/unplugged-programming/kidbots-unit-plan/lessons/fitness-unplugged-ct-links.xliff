@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1062" original="/csunplugged/topics/content/en/unplugged-programming/kidbots-unit-plan/lessons/fitness-unplugged-ct-links.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="13101" identifier="ab6fd3797aed28f166b25667a1fb44cb">
+        <source>Many of the Computational Thinking connections in this lesson are the same as for lesson 1 and 2, so we have just included the additional ones specific to this lesson.</source>
+        <target>crwdns13101:0crwdne13101:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="13102" identifier="810c0a17bff4d255aa141423eeaa69d5">
+        <source>{panel type=&quot;ct-algorithm&quot; title=&quot;Algorithmic thinking&quot;}</source>
+        <target>crwdns13102:0crwdne13102:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="13103" identifier="0a6cc05f434673dda897e14522067047">
+        <source>Students were specifying and following an algorithm with a programming language that they create.</source>
+        <target>crwdns13103:0crwdne13103:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="13104" identifier="99658d1ba468f9d0e5770554cc2a5ed2">
+        <source>When they were creating their programming language they would have had to think about the algorithms they were going to be writing with these instructions, and figure out what types of instructions they would need.</source>
+        <target>crwdns13104:0crwdne13104:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="13105" identifier="d4789df7fc6fae273d42b3ff89b932ef">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns13105:0crwdne13105:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4</note>
+      </trans-unit>
+      <trans-unit id="13106" identifier="6d2590ce4514378f4f77b76523ded35b">
+        <source>Did students recognise that the instructions should be followed left to right?
+Were they able to interpret the loop correctly?</source>
+        <target>crwdns13106:0crwdne13106:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="13107" identifier="0195c2d106e4d52b36bca78ff4c3e7a4">
+        <source>{panel end}</source>
+        <target>crwdns13107:0{panel end}crwdne13107:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="13108" identifier="17de7efa37d271303d10e7da564a0701">
+        <source>{panel type=&quot;ct-abstraction&quot; title=&quot;Abstraction&quot;}</source>
+        <target>crwdns13108:0crwdne13108:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="13109" identifier="21ee1a8ae141409c7d75f7da6d7834f5">
+        <source>The symbols on the cards represented the physical actions students needed to perform; they were an abstract representation.</source>
+        <target>crwdns13109:0crwdne13109:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="13110" identifier="7ca1cce9bc789f9d38045770108363e7">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns13110:0crwdne13110:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[2]</note>
+      </trans-unit>
+      <trans-unit id="13111" identifier="26ec0256abf622f504a65c7666001dac">
+        <source>Were the students able to work with the symbols?</source>
+        <target>crwdns13111:0crwdne13111:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="13112" identifier="95e2aef312d8003ea83532ea9651f31f">
+        <source>{panel end}</source>
+        <target>crwdns13112:0{panel end}crwdne13112:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="13113" identifier="16c5229b7bb0bd77299bb63485055923">
+        <source>{panel type=&quot;ct-decomposition&quot; title=&quot;Decomposition&quot;}</source>
+        <target>crwdns13113:0crwdne13113:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="13114" identifier="ea3c7946ca57961ad88a6738599f6995">
+        <source>The hula hoop represents a compound action, as the cards inside it were a sub-list of actions that could be thought of as a single action that is composed of the sub-actions.</source>
+        <target>crwdns13114:0crwdne13114:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="13115" identifier="833d815031c5d5819a2b19b8c4affd40">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns13115:0crwdne13115:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[3]</note>
+      </trans-unit>
+      <trans-unit id="13116" identifier="fd5aede2d1af6c88082e18875d247d2e">
+        <source>Were students able to decompose the actions into the two inside the loop, and then repeat that sub-sequence of instructions multiple times?</source>
+        <target>crwdns13116:0crwdne13116:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="13117" identifier="b1c2847763ba990ce3b79c43c0f66f9e">
+        <source>{panel end}</source>
+        <target>crwdns13117:0{panel end}crwdne13117:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="13118" identifier="40ad58809f56a2bf712e4dcd43bbd5e7">
+        <source>{panel type=&quot;ct-pattern&quot; title=&quot;Generalising and patterns&quot;}</source>
+        <target>crwdns13118:0crwdne13118:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="13119" identifier="b7241a74327c5d2ddf1d697e38af5cb7">
+        <source>Placing a number beside an action indicated how many times it could be done, which is a concise representation of a pattern.</source>
+        <target>crwdns13119:0crwdne13119:0</target>
+        <note>Context: XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="13120" identifier="35530228c0fc8806058b4a93afee0cd6">
+        <source>For example, the actions &quot;jump, jump, skip, jump, jump, skip, jump, jump, skip&quot; make a pattern that could be represented as 3 lots of (2 jump, 1 skip).</source>
+        <target>crwdns13120:0crwdne13120:0</target>
+        <note>Context: XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="13121" identifier="ec993088561d59b2638cc84170b056e3">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns13121:0crwdne13121:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[4]</note>
+      </trans-unit>
+      <trans-unit id="13122" identifier="7f781ed059779ebd210fff45dcc217ff">
+        <source>Did students get the sequence of actions correct i.e. perform the two actions inside the hoop in sequence, then repeat that pair of actions multiple times based on the general case?</source>
+        <target>crwdns13122:0crwdne13122:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="13123" identifier="29865c6bd6223a870160b434de9c35ce">
+        <source>{panel end}</source>
+        <target>crwdns13123:0{panel end}crwdne13123:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="13124" identifier="adab59f4c0dc0ca178defb9b221dd176">
+        <source>{panel type=&quot;ct-evaluation&quot; title=&quot;Evaluation&quot;}</source>
+        <target>crwdns13124:0crwdne13124:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="13125" identifier="7fcd949ca79068d6fcf421311fad00ef">
+        <source>In this lesson students could evaluate their program by calculating how many steps would need to be performed to complete it.</source>
+        <target>crwdns13125:0crwdne13125:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="13126" identifier="6326e2917a502e3e1937ff696cda3ad2">
+        <source>In the example there are 10+5 = 15 actions in the hoop, and it is repeated 3 times, giving a total of 45 actions.</source>
+        <target>crwdns13126:0crwdne13126:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="13127" identifier="c02fdc1a3be3d9c328e0dae425b07257">
+        <source>Including the first 5 star jumps, there was a total of 50 actions.</source>
+        <target>crwdns13127:0crwdne13127:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="13128" identifier="ee945efc504e5ccf8a3f1c6b2bc14938">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns13128:0crwdne13128:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[5]</note>
+      </trans-unit>
+      <trans-unit id="13129" identifier="b4a9ac68480eaeb9e3c59c288c32d293">
+        <source>Did students recognise that the total number of actions could be worked out by adding the numbers in the loop, and multiplying them by the number on the loop?</source>
+        <target>crwdns13129:0crwdne13129:0</target>
+        <note>Context: XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="13130" identifier="93a67a1ff18347d9a50758e3d619e13a">
+        <source>Could they work out the total number of actions by adding the other instructions outside the loop to that total?</source>
+        <target>crwdns13130:0crwdne13130:0</target>
+        <note>Context: XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="13131" identifier="3e36fd398241fc175b47e35cddcdc6f1">
+        <source>{panel end}</source>
+        <target>crwdns13131:0{panel end}crwdne13131:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="13132" identifier="7f1b0f3b3177e2fc5aa8ccdf994c3388">
+        <source>{panel type=&quot;ct-logic&quot; title=&quot;Logic&quot;}</source>
+        <target>crwdns13132:0crwdne13132:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="13133" identifier="706082f8b3ff2110841896caacf8a8ce">
+        <source>When students encounter bugs in their programs they will need to logically step through their instructions one by one to locate the bug.</source>
+        <target>crwdns13133:0crwdne13133:0</target>
+        <note>Context: XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="13134" identifier="16b767d32e1ea39fd16802630a4acba3">
+        <source>They will need to think about what they expect to happen when each instruction is followed, and if they do not get the result they expected they will need to identify what went wrong, why it went wrong, and how to fix it.</source>
+        <target>crwdns13134:0crwdne13134:0</target>
+        <note>Context: XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="13135" identifier="3778fca0ef617c0bbbe9f0808d4e4c4a">
+        <source>This requires students to apply their logical thinking skills</source>
+        <target>crwdns13135:0crwdne13135:0</target>
+        <note>Context: XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="13136" identifier="d2663645150b5be5b55859ada486fd3c">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns13136:0crwdne13136:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[6]</note>
+      </trans-unit>
+      <trans-unit id="13137" identifier="474dedec11932408cb45239c16b9cf5b">
+        <source>Do students go through their instructions and predict what will happen each time one is executed?</source>
+        <target>crwdns13137:0crwdne13137:0</target>
+        <note>Context: XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="13138" identifier="5ec328b5d87f4d3a52589d13f9a35e46">
+        <source>When they debug their instructions do they use a logical method to do this?</source>
+        <target>crwdns13138:0crwdne13138:0</target>
+        <note>Context: XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="13139" identifier="1694111ace03b7023e69700d7c54250d">
+        <source>Such as stepping through each instruction one by one and checking if what they expected to happen does happen, or comparing their program to previous version which didn’t seem to contain a bug?</source>
+        <target>crwdns13139:0crwdne13139:0</target>
+        <note>Context: XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="13140" identifier="18d1b60b92ce620dfd28b967329a230d">
+        <source>{panel end}</source>
+        <target>crwdns13140:0{panel end}crwdne13140:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[25]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

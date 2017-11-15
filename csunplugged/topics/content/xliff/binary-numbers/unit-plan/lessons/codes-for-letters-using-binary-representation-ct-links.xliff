@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="869" original="/csunplugged/topics/content/en/binary-numbers/unit-plan/lessons/codes-for-letters-using-binary-representation-ct-links.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="9140" identifier="29587245fea6177d2282f2ca4a93001c">
+        <source>{panel type=&quot;ct-algorithm&quot; title=&quot;Algorithmic thinking&quot;}</source>
+        <target>crwdns9140:0crwdne9140:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="9141" identifier="482830a3824dda8688f9eb07a14f2d8f">
+        <source>We used two algorithms in this lesson: one to convert a letter into a decimal number and then into a binary number, and vice versa.</source>
+        <target>crwdns9141:0crwdne9141:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="9142" identifier="a144b6f0876ea7f7d7c41ad7dcd29599">
+        <source>These are algorithms because they are a step-by-step process that will always give the right solution for any input you give it as long as the process is followed exactly.</source>
+        <target>crwdns9142:0crwdne9142:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="9143" identifier="f3fac7459c472195f7101cf7ba0e6380">
+        <source>Here’s an algorithm for converting a letter into a decimal number:</source>
+        <target>crwdns9143:0crwdne9143:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="9144" identifier="0281b7a735caba43e435b7be8af6062a">
+        <source>Choose a letter to convert into a decimal number. Find the letter’s numerical position in the alphabet as follows:</source>
+        <target>crwdns9144:0crwdne9144:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="9145" identifier="5275bfface80ac9ad6e01eae620319f2">
+        <source>Say “A” (the first letter in the alphabet)</source>
+        <target>crwdns9145:0crwdne9145:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="9146" identifier="d3b28a7ad75d9297b8973df0ef69b768">
+        <source>Say “1” (the first letter in our sequence of numbers)</source>
+        <target>crwdns9146:0crwdne9146:0</target>
+        <note>Context: Text&#13;
+XPath: /ul/li[2]/text</note>
+      </trans-unit>
+      <trans-unit id="9147" identifier="9b109dcc430d002e54044b6962195cff">
+        <source>Repeat the following instructions until you come to the letter you are looking to convert</source>
+        <target>crwdns9147:0crwdne9147:0</target>
+        <note>Context: Text&#13;
+XPath: /ul/li[2]/ul/li/text</note>
+      </trans-unit>
+      <trans-unit id="9148" identifier="a302e0b0cc7f3996ca2b403868d02ac1">
+        <source>Say the next letter in the alphabet</source>
+        <target>crwdns9148:0crwdne9148:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]/ul/li/ul/li</note>
+      </trans-unit>
+      <trans-unit id="9149" identifier="cb635e8a38ef7880d128310f467da068">
+        <source>Say the next number (counting up by 1)</source>
+        <target>crwdns9149:0crwdne9149:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]/ul/li/ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="9150" identifier="ac1f048d0553f312121f0da39e3f38ff">
+        <source>The number you just said is the decimal number that your letter converts too.</source>
+        <target>crwdns9150:0crwdne9150:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="9151" identifier="a37221cc7d01852e050155be1757049f">
+        <source>For example, to convert the letter E, the algorithm would have you counting A,1; B, 2; C, 3; D, 4; E, 5.</source>
+        <target>crwdns9151:0crwdne9151:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="9152" identifier="8c7ae9b23e11a86a6faf3902553f3d44">
+        <source>{image file-path=&quot;img/topics/binary_count_girl.png&quot; alt=&quot;Girl thinking about the algorithm&quot;}</source>
+        <target>crwdns9152:0crwdne9152:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="9153" identifier="afdd22ece013a09c8b4f026231765422">
+        <source>(A more efficient algorithm would have a table to look up, like the one created at the start of the activity, and most programming languages can convert directly from characters to numbers, with the notable exception of Scratch, which needs to use the above algorithm.)</source>
+        <target>crwdns9153:0crwdne9153:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="9154" identifier="47bff9fc5b96a01380eb659653eee693">
+        <source>The next algorithm is the same algorithm we used in lesson 1, which we use to convert a decimal number to a binary number:</source>
+        <target>crwdns9154:0crwdne9154:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="9155" identifier="1722be5aa2c7c1a95eac2bba54b4cf1a">
+        <source>Find out the number of dots that is to be displayed. (We'll refer to this as the &quot;number of dots remaining&quot;, which initially is the total number to be displayed.)</source>
+        <target>crwdns9155:0crwdne9155:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li</note>
+      </trans-unit>
+      <trans-unit id="9156" identifier="df43d3f4b538e4913ea0bf314b615843">
+        <source>For each card, from the left to the right (i.e. 16, 8, 4, 2, then 1):</source>
+        <target>crwdns9156:0crwdne9156:0</target>
+        <note>Context: Text&#13;
+XPath: /ul[2]/li[2]/text</note>
+      </trans-unit>
+      <trans-unit id="9157" identifier="64f75b97a9dc9ab07c68aa2180c8c977">
+        <source>If the number of dots on the card is more than the number of dots remaining:</source>
+        <target>crwdns9157:0crwdne9157:0</target>
+        <note>Context: Text&#13;
+XPath: /ul[2]/li[2]/ul/li/text</note>
+      </trans-unit>
+      <trans-unit id="9158" identifier="139243c30072ffd862595ec65bf94b16">
+        <source>Hide the card</source>
+        <target>crwdns9158:0crwdne9158:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li[2]/ul/li/ul/li</note>
+      </trans-unit>
+      <trans-unit id="9159" identifier="eb511584c041589afc796b6a3b452120">
+        <source>Otherwise:</source>
+        <target>crwdns9159:0crwdne9159:0</target>
+        <note>Context: Text&#13;
+XPath: /ul[2]/li[2]/ul/li[2]/text</note>
+      </trans-unit>
+      <trans-unit id="9160" identifier="f7c3cc3bd38b6589bc44c24674d7c785">
+        <source>Show the card</source>
+        <target>crwdns9160:0crwdne9160:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li[2]/ul/li[2]/ul/li</note>
+      </trans-unit>
+      <trans-unit id="9161" identifier="555d674cddde15dc334edc40a19a777c">
+        <source>Subtract the number of dots on the card from the number of dots remaining</source>
+        <target>crwdns9161:0crwdne9161:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li[2]/ul/li[2]/ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="9162" identifier="d4789df7fc6fae273d42b3ff89b932ef">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns9162:0crwdne9162:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4</note>
+      </trans-unit>
+      <trans-unit id="9163" identifier="8411a3f0aa179389c4e12add27d1d793">
+        <source>Have students create instructions for, or demonstrate, converting a letter into a decimal number (with or without the table), and then convert a decimal number into binary; are they able to show a systematic solution?</source>
+        <target>crwdns9163:0crwdne9163:0</target>
+        <note>Context: XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="9164" identifier="58d8b65a4c8b3331690466290bc9f0b5">
+        <source>Can they explain what they are doing at each step and why?</source>
+        <target>crwdns9164:0crwdne9164:0</target>
+        <note>Context: XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="9165" identifier="95ea3e21342fab6d68dfbddae5b8294f">
+        <source>{panel end}</source>
+        <target>crwdns9165:0{panel end}crwdne9165:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="9166" identifier="ebca3295a45ecc03a0c6a67369811577">
+        <source>{panel type=&quot;ct-abstraction&quot; title=&quot;Abstraction&quot;}</source>
+        <target>crwdns9166:0crwdne9166:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="9167" identifier="4c65c66e39efb0c9671b2d67b6fa6002">
+        <source>This activity is particularly relevant to abstraction, since we are representing written text with a simple number, and the number can be represented using binary digits, which, as we know from lesson 1, are an abstraction of the physical electronics and circuits inside a computer.</source>
+        <target>crwdns9167:0crwdne9167:0</target>
+        <note>Context: XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="9168" identifier="d3fe403bc1caa86cc802e952598e0f21">
+        <source>We could also expand our abstraction because we could use any two symbols other than 0s and 1s to represent our message (although while students are first learning this we recommend sticking with 1s and 0s).</source>
+        <target>crwdns9168:0crwdne9168:0</target>
+        <note>Context: XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="9169" identifier="0495411b1e1dcb04d623cf736869dea6">
+        <source>For example, you could represent your message by flashing a torch on and off (this gives an idea of how information might be sent over a fibre-optic cable!), or drawing a line of squares and triangles on the whiteboard.</source>
+        <target>crwdns9169:0crwdne9169:0</target>
+        <note>Context: XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="9170" identifier="60a37648e02a8d132a23bb6690bdaf0c">
+        <source>{image file-path=&quot;img/topics/binary_torch.png&quot; alt=&quot;Flashlight&quot;}</source>
+        <target>crwdns9170:0crwdne9170:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="9171" identifier="c2b920d4d5929da2a7b906423b01d607">
+        <source>Abstraction helps us simplify things because we can ignore the details we don’t currently need to know.</source>
+        <target>crwdns9171:0crwdne9171:0</target>
+        <note>Context: XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="9172" identifier="ea9b922466121a0a747cb8b311b272db">
+        <source>Binary number representation is an abstraction that hides the complexity of the electronics and hardware inside a computer that stores data.</source>
+        <target>crwdns9172:0crwdne9172:0</target>
+        <note>Context: XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="9173" identifier="149a47a5dab470c9f80d21653bbdcf2b">
+        <source>Letters are an abstraction that a human can make sense of quickly; talking about the letter H is generally more meaningful than calling it &quot;the 10th letter of the alphabet&quot;, and when we are reading or speaking we don’t need to know it is the 10th letter anyway.</source>
+        <target>crwdns9173:0crwdne9173:0</target>
+        <note>Context: XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="9174" identifier="7ca1cce9bc789f9d38045770108363e7">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns9174:0crwdne9174:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[2]</note>
+      </trans-unit>
+      <trans-unit id="9175" identifier="0c7c84a36353aa01a50a0058f91a1188">
+        <source>When you use a different representation for binary, such as turning the torch on and off, who are the students who quickly see that this is equivalent to when they previously used 0s and 1s?</source>
+        <target>crwdns9175:0crwdne9175:0</target>
+        <note>Context: XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="9176" identifier="8448d1a280d51ce7fa2a7fb0222fb03c">
+        <source>They will probably feel comfortable working with this new representation quickly, and other students may be very confused by this change.</source>
+        <target>crwdns9176:0crwdne9176:0</target>
+        <note>Context: XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="9177" identifier="bed14545d9c47311b328e9595d7d18f4">
+        <source>Look for students who then decide to create their own representations of binary numbers.</source>
+        <target>crwdns9177:0crwdne9177:0</target>
+        <note>Context: XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="9178" identifier="2c5987aa00c061ae37f4be2df77e21e8">
+        <source>{panel end}</source>
+        <target>crwdns9178:0{panel end}crwdne9178:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="9179" identifier="34f3c2727d9d2c10c6e1f9d14dee66c9">
+        <source>{panel type=&quot;ct-decomposition&quot; title=&quot;Decomposition&quot;}</source>
+        <target>crwdns9179:0crwdne9179:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="9180" identifier="8509f95136656ff8792fa91853dfc7f1">
+        <source>The core example of decomposition in this activity is understanding that in computing we have to break down all information into tiny chunks so that computers can store and send this data as bits and bytes.</source>
+        <target>crwdns9180:0crwdne9180:0</target>
+        <note>Context: XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="9181" identifier="5914c0faeb04c4207d318b116ea76e11">
+        <source>Everything we store inside a computer and see appear on the screen has to have been, in some way, broken down into binary digits.</source>
+        <target>crwdns9181:0crwdne9181:0</target>
+        <note>Context: XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="9182" identifier="0d7c7d5bc0003399585bde433df37361">
+        <source>In this lesson students have performed several steps of decomposition as they have taken the task of encoding a message and broken it down into simple steps.</source>
+        <target>crwdns9182:0crwdne9182:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="9183" identifier="0a2547f9e8007213c3ead164edc73e6e">
+        <source>To write a message in binary we have to first look at the message one letter at a time and convert each of these, one-by-one, into decimal numbers, and then convert each of these numbers, one-by-one, into binary numbers.</source>
+        <target>crwdns9183:0crwdne9183:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="9184" identifier="a46440bfdd3c0efeeda921a7e8d95208">
+        <source>Students perform these same steps in reverse to convert the message back to text.</source>
+        <target>crwdns9184:0crwdne9184:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="9185" identifier="833d815031c5d5819a2b19b8c4affd40">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns9185:0crwdne9185:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[3]</note>
+      </trans-unit>
+      <trans-unit id="9186" identifier="443be3eb6d20e9f8655a02c2b4e3b430">
+        <source>Can students explain why it is important that we can use binary to represent letters?</source>
+        <target>crwdns9186:0crwdne9186:0</target>
+        <note>Context: XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="9187" identifier="4d91147fca2516a4886a7816ab25dea6">
+        <source>Ask them why it is useful each separate letter into binary, rather than choosing a decimal and binary number for each different word.</source>
+        <target>crwdns9187:0crwdne9187:0</target>
+        <note>Context: XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="9188" identifier="3e36fd398241fc175b47e35cddcdc6f1">
+        <source>{panel end}</source>
+        <target>crwdns9188:0{panel end}crwdne9188:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="9189" identifier="733ac6ef54d225ac2066b5785ca00f32">
+        <source>{panel type=&quot;ct-pattern&quot; title=&quot;Generalising and patterns&quot;}</source>
+        <target>crwdns9189:0crwdne9189:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="9190" identifier="922d7266b9a9acd1e2182156c3effd01">
+        <source>Recognising patterns in the way the binary number system works helps give us a deeper understanding of the concepts involved, and assists us in generalising these concepts and patterns so that we can apply them to other problems.</source>
+        <target>crwdns9190:0crwdne9190:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="9191" identifier="ec993088561d59b2638cc84170b056e3">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns9191:0crwdne9191:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[4]</note>
+      </trans-unit>
+      <trans-unit id="9192" identifier="52052b843bc60633db2f75f5bf87bd72">
+        <source>Have students decode a binary message from another student, by converting the binary numbers into decimal numbers, and then to text to view the message.</source>
+        <target>crwdns9192:0crwdne9192:0</target>
+        <note>Context: XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="9193" identifier="b56a3f0890bf39449d2f3253e861f65c">
+        <source>Ask them what they would do if they wanted to include other characters in their message: what if we wanted upper and lower case letters?</source>
+        <target>crwdns9193:0crwdne9193:0</target>
+        <note>Context: XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="9194" identifier="c3b4d77972aa381a7f26a18bb02307c9">
+        <source>What if we want to use exclamation and question marks?</source>
+        <target>crwdns9194:0crwdne9194:0</target>
+        <note>Context: XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="9195" identifier="384175e5232f528ea17d32a430424b50">
+        <source>Observe which students see that we can simply generalise the method they are already using and can match other characters to bigger decimal numbers, e.g a-z can be 1-26, and A-Z can be 27-52.</source>
+        <target>crwdns9195:0crwdne9195:0</target>
+        <note>Context: XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="9196" identifier="a3ba5b52d5afee5ba1d4f27a873fa9c2">
+        <source>If we can represent 32 different characters in binary when we use 5 bits for each character, then how many would we need for 64?</source>
+        <target>crwdns9196:0crwdne9196:0</target>
+        <note>Context: XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="9197" identifier="b2ea627e343943dde441bcbf32dc21e8">
+        <source>Which students can see the pattern of binary and doubling in this situation, and see that we simply need to use 1 more bit to do this?</source>
+        <target>crwdns9197:0crwdne9197:0</target>
+        <note>Context: XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="9198" identifier="18d1b60b92ce620dfd28b967329a230d">
+        <source>{panel end}</source>
+        <target>crwdns9198:0{panel end}crwdne9198:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[25]</note>
+      </trans-unit>
+      <trans-unit id="9199" identifier="902c71e9dc8bf37de8391aacfee7714e">
+        <source>{panel type=&quot;ct-logic&quot; title=&quot;Logic&quot;}</source>
+        <target>crwdns9199:0crwdne9199:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[26]</note>
+      </trans-unit>
+      <trans-unit id="9200" identifier="9c9d8975018c12a80373c91895f230f2">
+        <source>Logical thinking involves making decisions based on knowledge you have, and these decisions should be sensible and well thought out.</source>
+        <target>crwdns9200:0crwdne9200:0</target>
+        <note>Context: XPath: /p[27]</note>
+      </trans-unit>
+      <trans-unit id="9201" identifier="499d0582964fbcf1819418a67271cfba">
+        <source>If you memorise that the letter H is represented as binary 01010 it's not as useful as learning how to represent any character using the process described in this activity.</source>
+        <target>crwdns9201:0crwdne9201:0</target>
+        <note>Context: XPath: /p[27]</note>
+      </trans-unit>
+      <trans-unit id="9202" identifier="8e04bdc724fe59c75eb32affcbd20b16">
+        <source>If you can understand the logical steps we take as we convert a letter into a binary number, and how we can convert it back, then you will be able to represent any character as binary, and more importantly, you understand the process, since you're more likely to get a computer to do it for you rather than always do it manually.</source>
+        <target>crwdns9202:0crwdne9202:0</target>
+        <note>Context: XPath: /p[27]</note>
+      </trans-unit>
+      <trans-unit id="9203" identifier="4bf340fc6003d99342b0a5f3e6c86574">
+        <source>This is especially relevant if we want to represent a large number of characters.</source>
+        <target>crwdns9203:0crwdne9203:0</target>
+        <note>Context: XPath: /p[27]</note>
+      </trans-unit>
+      <trans-unit id="9204" identifier="b1ebcf8746abebc197b32bd15d96d41f">
+        <source>What if we wanted to represent every Chinese character?</source>
+        <target>crwdns9204:0crwdne9204:0</target>
+        <note>Context: XPath: /p[27]</note>
+      </trans-unit>
+      <trans-unit id="9205" identifier="89f3df8fae9279388cc8fec117f24f1e">
+        <source>There are over 50,000 of them so trying to memorise them all would take a long time!</source>
+        <target>crwdns9205:0crwdne9205:0</target>
+        <note>Context: XPath: /p[27]</note>
+      </trans-unit>
+      <trans-unit id="9206" identifier="076c033ff7cdc32d42ecebe9590e14af">
+        <source>When we choose the decimal numbers to use for each of the letters we didn’t have to choose 1 to 26, we could have decided to start at 17 instead and go from 17 to 42, or we could have chosen completely random numbers!</source>
+        <target>crwdns9206:0crwdne9206:0</target>
+        <note>Context: XPath: /p[27]</note>
+      </trans-unit>
+      <trans-unit id="9207" identifier="ca39a79981092e77fc18c406947ed2f8">
+        <source>What if we decide that A = 82, B = 5, C = 42… Would this be a logical decision to make?</source>
+        <target>crwdns9207:0crwdne9207:0</target>
+        <note>Context: XPath: /p[27]</note>
+      </trans-unit>
+      <trans-unit id="9208" identifier="43bbbbbdfe3ee6869df24f6913edf520">
+        <source>1 to 26 makes much more sense because it is much easier to describe and remember.</source>
+        <target>crwdns9208:0crwdne9208:0</target>
+        <note>Context: XPath: /p[27]</note>
+      </trans-unit>
+      <trans-unit id="9209" identifier="ee945efc504e5ccf8a3f1c6b2bc14938">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns9209:0crwdne9209:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[5]</note>
+      </trans-unit>
+      <trans-unit id="9210" identifier="02cee3440a121795136696a9741fc005">
+        <source>Observe the systems students have created to translate their letters into binary and vice versa.</source>
+        <target>crwdns9210:0crwdne9210:0</target>
+        <note>Context: XPath: /p[28]</note>
+      </trans-unit>
+      <trans-unit id="9211" identifier="6624c33b0ce183b4d91cfa2d44a6bf4a">
+        <source>What logic has been applied to these?</source>
+        <target>crwdns9211:0crwdne9211:0</target>
+        <note>Context: XPath: /p[28]</note>
+      </trans-unit>
+      <trans-unit id="9212" identifier="3af37474a79fce09e995ac5d51837d99">
+        <source>Are they efficient systems?</source>
+        <target>crwdns9212:0crwdne9212:0</target>
+        <note>Context: XPath: /p[28]</note>
+      </trans-unit>
+      <trans-unit id="9213" identifier="76a6599ceb20194294229e5f802c78f6">
+        <source>Can they explain what they are doing at each step?</source>
+        <target>crwdns9213:0crwdne9213:0</target>
+        <note>Context: XPath: /p[28]</note>
+      </trans-unit>
+      <trans-unit id="9214" identifier="363743f7d5af4c66c824371fe794406c">
+        <source>Ask students why we are using the numbers 1 to 26 to represent our letters, or if they think there could be a better choice.</source>
+        <target>crwdns9214:0crwdne9214:0</target>
+        <note>Context: XPath: /p[28]</note>
+      </trans-unit>
+      <trans-unit id="9215" identifier="92c5b1d4a38dd5deca54d11d8b8b3e60">
+        <source>Ask them how they would choose numbers for other characters, such as choosing a number to represent a space.</source>
+        <target>crwdns9215:0crwdne9215:0</target>
+        <note>Context: XPath: /p[28]</note>
+      </trans-unit>
+      <trans-unit id="9216" identifier="40be3eea383a49908d794e8d85972ea1">
+        <source>Which ones give logical answers and can explain why their solution is a good choice?</source>
+        <target>crwdns9216:0crwdne9216:0</target>
+        <note>Context: XPath: /p[28]</note>
+      </trans-unit>
+      <trans-unit id="9217" identifier="9aca39d85dbd2f8ca5905d048686626f">
+        <source>{panel end}</source>
+        <target>crwdns9217:0{panel end}crwdne9217:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[29]</note>
+      </trans-unit>
+      <trans-unit id="9218" identifier="7a926ea6dc4e2509b73aa6c593e826bc">
+        <source>{panel type=&quot;ct-evaluation&quot; title=&quot;Evaluation&quot;}</source>
+        <target>crwdns9218:0crwdne9218:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[30]</note>
+      </trans-unit>
+      <trans-unit id="9219" identifier="79c3fbfc4481c6661b47d89f3ff4c500">
+        <source>An example of evaluation is working out how many different characters can be represented by a given number of bits e.g. 5 bits can represent 26 characters comfortably, but 16 bits are needed for a language with 50,000 characters.</source>
+        <target>crwdns9219:0crwdne9219:0</target>
+        <note>Context: XPath: /p[31]</note>
+      </trans-unit>
+      <trans-unit id="9220" identifier="920c64962f58f5cc0168dea1ea7c2613">
+        <source>When thinking about how many bits to use to represent something Computer Scientists also have to think about are how much space this is going to take up on a computer (16-bit characters take up twice the space of 8-bit characters), and if we should have some extra bits in case we want to add more characters in the future.</source>
+        <target>crwdns9220:0crwdne9220:0</target>
+        <note>Context: XPath: /p[31]</note>
+      </trans-unit>
+      <trans-unit id="9221" identifier="9f59f0d8214b644435c38d2b1f90ffd1">
+        <source>Evaluating the benefits and costs of using a certain number of bits is also an idea students can explore.</source>
+        <target>crwdns9221:0crwdne9221:0</target>
+        <note>Context: XPath: /p[31]</note>
+      </trans-unit>
+      <trans-unit id="9222" identifier="d2663645150b5be5b55859ada486fd3c">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns9222:0crwdne9222:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[6]</note>
+      </trans-unit>
+      <trans-unit id="9223" identifier="6eb37aa32cebc453e10c4a83a6fba600">
+        <source>Can a student work out how many bits are needed to represent the characters in a language with 100 characters?</source>
+        <target>crwdns9223:0crwdne9223:0</target>
+        <note>Context: XPath: /p[32]</note>
+      </trans-unit>
+      <trans-unit id="9224" identifier="08f308ed05e05fcaa7b645662c105e88">
+        <source>(7 bits are needed)
+How about representing emojis, when you have about 4000 emojis available (12 bits will be needed for each one).</source>
+        <target>crwdns9224:0crwdne9224:0</target>
+        <note>Context: XPath: /p[32]</note>
+      </trans-unit>
+      <trans-unit id="9225" identifier="0d8b00e92e8a0387b80a0120677a2832">
+        <source>{panel end}</source>
+        <target>crwdns9225:0{panel end}crwdne9225:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[33]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="887" original="/csunplugged/topics/content/en/error-detection-and-correction/curriculum-integrations/what-if.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10092" identifier="d764b19a16166ea58566e75e27a953ac">
+        <source>What if?</source>
+        <target>crwdns10092:0crwdne10092:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="10093" identifier="ba24acb16cd22292d7d048fdd802bf68">
+        <source>{image file-path=&quot;img/topics/gobbly-gook-computer.png&quot; alt=&quot;computer with strange symbols instead of plain text&quot;}</source>
+        <target>crwdns10093:0crwdne10093:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="10094" identifier="67e6f961a6fb9fa3980e52a07e8a49d5">
+        <source>What if computers had no way of finding out if an error had occurred when reading a file or receiving transmitted data?</source>
+        <target>crwdns10094:0crwdne10094:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="10095" identifier="c465781ab266be9209082834fcb2841e">
+        <source>Where do you think we would be with technology?</source>
+        <target>crwdns10095:0crwdne10095:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="10096" identifier="836104a4293cc9bc09bd9c52a86a80d4">
+        <source>Write a report that explains this.</source>
+        <target>crwdns10096:0crwdne10096:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="10097" identifier="ca4bb012f6a3014847e0cd7c54ab677e">
+        <source>An example of what this could look like is your friend sends you a file and you open it, but some of the files data has been changed so that when you open it you can see some words, but there is some “gobbledygook” writing as well.</source>
+        <target>crwdns10097:0crwdne10097:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="10098" identifier="154237024a58bcd537acc60ffc49560e">
+        <source>Another example is you have clicked to open an app on your device, but it doesn’t open and just freezes.</source>
+        <target>crwdns10098:0crwdne10098:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

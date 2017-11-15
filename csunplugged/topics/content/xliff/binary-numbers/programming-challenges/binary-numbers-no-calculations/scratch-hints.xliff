@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="762" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/binary-numbers-no-calculations/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8531" identifier="cfdeb7c9ca33aa7fcc8472bfe74482de">
+        <source>Click inside the &lt;code&gt;scratch:say [Hello] for (2) secs&lt;/code&gt; block and type to change
+“Hello” to what you want to display on the the screen.</source>
+        <target>crwdns8531:0[Hello]crwdne8531:0</target>
+        <note>Context: XPath: /ul/li/p</note>
+      </trans-unit>
+      <trans-unit id="8532" identifier="dac0dcba071f823593d9d092c3864cf2">
+        <source>In this case, it will be ‘1’ for the first output, ‘2’ for the second, ‘4’ for
+the third and so on.</source>
+        <target>crwdns8532:0crwdne8532:0</target>
+        <note>Context: XPath: /ul/li/p</note>
+      </trans-unit>
+      <trans-unit id="8533" identifier="6af038de8ef4f2c736951e6fee2c26f3">
+        <source>The number of seconds tells the output how long to show.
+The script waits that long before continuing.</source>
+        <target>crwdns8533:0crwdne8533:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="8534" identifier="2cd14467d629dc0c4c30c0e1691c79c9">
+        <source>Make sure all your blocks are “snapped” together in a line like a jigsaw puzzle.</source>
+        <target>crwdns8534:0crwdne8534:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[3]/p</note>
+      </trans-unit>
+      <trans-unit id="8535" identifier="511236e285eb04b8a73ad4881a003a22">
+        <source>Whenever you click the green flag, your script will start.
+To stop, click the stop button.</source>
+        <target>crwdns8535:0crwdne8535:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[4]/p</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

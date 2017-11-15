@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1314" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/rotation-of-a-circle/extra-challenge.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15459" identifier="4f716667d3ae9c4d1a6066952c94734b">
+        <source>&lt;strong&gt;Extra challenge #1:&lt;/strong&gt;
+Edit your program so the circle rotates over and over (use a FOREVER block under the “control” script) for any given degrees entered by the user as the input.</source>
+        <target>crwdns15459:0crwdne15459:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

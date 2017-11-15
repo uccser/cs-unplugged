@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1212" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/draw-star-without-crossing-lines/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14902" identifier="7899f5a240f5a6dbe7b15c8773b4a182">
+        <source>The inside angles of a 6-pointed star are each 60 degrees.</source>
+        <target>crwdns14902:0crwdne14902:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="14903" identifier="aa56880a3247cb45f292dea634cd6249">
+        <source>The outside angles of a 6-pointed star are each 120 degrees.</source>
+        <target>crwdns14903:0crwdne14903:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

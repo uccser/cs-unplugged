@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1309" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/reflection/reflection.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15425" identifier="b8f38def2ff294580a1dab3794303310">
+        <source>Reflection</source>
+        <target>crwdns15425:0crwdne15425:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="15426" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns15426:0crwdne15426:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="15427" identifier="84bff0e40743b9c0349708c781365cef">
+        <source>Write a program that draws the reflection of the blue shape on the left about the y-axis line.
+Use two sprites drawing the blue and the red shapes simultaneously.</source>
+        <target>crwdns15427:0crwdne15427:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15428" identifier="df9dbfab9a3aff3dfd09bf9e282e6b60">
+        <source>{image file-path=&quot;img/topics/programming-challenges/geometry-reflection.png&quot;}</source>
+        <target>crwdns15428:0crwdne15428:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="15429" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns15429:0crwdne15429:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="15430" identifier="c37cdf2bf896da90b6eaed60803da712">
+        <source>There are no testing examples for this challenge.</source>
+        <target>crwdns15430:0crwdne15430:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

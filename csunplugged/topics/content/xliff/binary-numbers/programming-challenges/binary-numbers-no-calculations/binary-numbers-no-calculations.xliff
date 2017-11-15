@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="756" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/binary-numbers-no-calculations/binary-numbers-no-calculations.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8516" identifier="f3f7d7eba4758b0e61bc3cbebfc666df">
+        <source>Display binary numbers (without calculations)</source>
+        <target>crwdns8516:0crwdne8516:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="8517" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns8517:0crwdne8517:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="8518" identifier="ffd6c8f097070d3b1cc26cd670a58dbe">
+        <source>Create a program to display numbers 1, 2, 4, 8 and 16 on the screen, one at a
+time.</source>
+        <target>crwdns8518:0crwdne8518:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8519" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns8519:0crwdne8519:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="8520" identifier="9434918c4b0a5c79cd0998920f4cc241">
+        <source>The output will always show the numbers 1, 2, 4, 8 and 16 (there is no input).</source>
+        <target>crwdns8520:0crwdne8520:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

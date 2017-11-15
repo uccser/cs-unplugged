@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1104" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/catch-the-mouse/catch-the-mouse.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14254" identifier="95ab093182a70afdca13d494c37b3752">
+        <source>Catch the mouse</source>
+        <target>crwdns14254:0crwdne14254:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="14255" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns14255:0crwdne14255:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="14256" identifier="2aa28584c72e2d8405f1279a4c3d6986">
+        <source>Remix the program provided at &lt;a href=&quot;https://scratch.mit.edu/projects/164749053/&quot;&gt;https://scratch.mit.edu/projects/164749053/&lt;/a&gt; and change its name to: &lt;strong&gt;KidBots challenge 2.1 Catch the mouse.&lt;/strong&gt;</source>
+        <target>crwdns14256:0crwdne14256:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14257" identifier="71042cdfaf279df1a9d342b988436f6c">
+        <source>Give instructions to the “cat” to catch the “mouse” (avoiding the blue tiles) by altering the blocks under the &lt;code&gt;scratch:when I receive [go v]&lt;/code&gt; block inside the “cat” sprite.</source>
+        <target>crwdns14257:0crwdne14257:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14258" identifier="25f9cadf0043340a432f33b5e749e002">
+        <source>You may only use the following custom blocks:</source>
+        <target>crwdns14258:0crwdne14258:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14259" identifier="63c25fe328a9c44e0013b8b287d013e0">
+        <source>scratch:move_forward() :: custom</source>
+        <target>crwdns14259:0crwdne14259:0</target>
+        <note>Context: Text&#13;
+XPath: /ul/li/code</note>
+      </trans-unit>
+      <trans-unit id="14260" identifier="6aea2c1dca246c4df7f8f234cee10687">
+        <source>scratch:turn_right :: custom</source>
+        <target>crwdns14260:0crwdne14260:0</target>
+        <note>Context: Text&#13;
+XPath: /ul/li[2]/code</note>
+      </trans-unit>
+      <trans-unit id="14261" identifier="c43422e221ac22ac92fc60dbb889b15b">
+        <source>scratch:turn_left :: custom</source>
+        <target>crwdns14261:0crwdne14261:0</target>
+        <note>Context: Text&#13;
+XPath: /ul/li[3]/code</note>
+      </trans-unit>
+      <trans-unit id="14262" identifier="162f1e4f14ec4fa0c43c72f079b93947">
+        <source>which are the custom blocks found under the &quot;More Blocks&quot; script.</source>
+        <target>crwdns14262:0crwdne14262:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="14263" identifier="c90e4706c097582cf62d29aff416ae00">
+        <source>When your instructions are complete, press the “Go” button.</source>
+        <target>crwdns14263:0crwdne14263:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li</note>
+      </trans-unit>
+      <trans-unit id="14264" identifier="38ca2ecba058929ce48d3c483d44cedf">
+        <source>To move the &quot;cat&quot; to the starting point (x: 200 y:-100), press the &quot;Restart&quot; button .</source>
+        <target>crwdns14264:0crwdne14264:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li[2]</note>
+      </trans-unit>
+      <trans-unit id="14265" identifier="9c1765a23855c06e52b4474d3e0f7fb5">
+        <source>To change to a new background press the &quot;Change background&quot; button. We have provided 4 different backdrops for you to try out.</source>
+        <target>crwdns14265:0crwdne14265:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li[3]</note>
+      </trans-unit>
+      <trans-unit id="14266" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns14266:0crwdne14266:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="14267" identifier="7cd13c8bd908cb6f89e3b082d57938c4">
+        <source>You will need to add the correct set of blocks under the &lt;code&gt;scratch:when I receive [go v]&lt;/code&gt; block so the cat can catch the mouse.</source>
+        <target>crwdns14267:0crwdne14267:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="888" original="/csunplugged/topics/content/en/error-detection-and-correction/curriculum-integrations/word-study-activity.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10099" identifier="c8de9b8558ec11097d6fec54e1b1bd97">
+        <source>Word study activity</source>
+        <target>crwdns10099:0crwdne10099:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="10100" identifier="f5e2e07835b6ac81dcbe6fa6e772842f">
+        <source>{image file-path=&quot;img/topics/par-pair.png&quot; alt=&quot;golf bag with golf sticks&quot;}</source>
+        <target>crwdns10100:0crwdne10100:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="10101" identifier="19fd6674c48f9de7ea0d53cdcc581ca1">
+        <source>What are the dictionary meanings of the word &quot;parity&quot;.</source>
+        <target>crwdns10101:0crwdne10101:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="10102" identifier="7035ff56277286b009186bc0b8636d79">
+        <source>What Latin word does it come from?</source>
+        <target>crwdns10102:0crwdne10102:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="10103" identifier="2738a0919b4b346f2b2cd31f57ff32ad">
+        <source>What other common words derive from that Latin word?
+(One of the words is used for matching socks; another is used when playing golf).</source>
+        <target>crwdns10103:0crwdne10103:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[3]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="998" original="/csunplugged/topics/content/en/error-detection-and-correction/programming-challenges/product-code-13-multiple-10-one-line/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10781" identifier="3a29a7e836ccaa795883d72e41b8db48">
+        <source>Click on the green flag, enter the inputs provided in the “testing examples” to
+see the expected output of your program.</source>
+        <target>crwdns10781:0crwdne10781:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="10782" identifier="04aeb3ead06f69fc9c17709aa2079441">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/148476604/?autostart=false&quot;}</source>
+        <target>crwdns10782:0crwdne10782:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="10783" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns10783:0crwdne10783:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="10784" identifier="b04c5b561d2d4cc3c031188ebe0e43f2">
+        <source>when green flag clicked
+
+ask [Enter a 13-digit product code:] and wait</source>
+        <target>crwdns10784:0crwdne10784:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="10785" identifier="562f152f06b703453b8cd81421c98bce">
+        <source>say [Please enter a 13 digit number!]
+
+say [Invalid product code!]
+
+say [Valid product code!]</source>
+        <target>crwdns10785:0crwdne10785:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="10786" identifier="8b6874abd28c270abc1f3c16c66753a8">
+        <source>repeat (6)
+end
+
+if &amp;lt;((total) mod (10)) = [0]&amp;gt; then
+else 
+end
+
+if &amp;lt;(length of (product code)) = [13]&amp;gt; then
+else
+
+end</source>
+        <target>crwdns10786:0[0]crwdnd10786:0[13]crwdne10786:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="10787" identifier="7ce3ecf02a22025f5052abb9ce5ab55e">
+        <source>set [index v] to [1]
+
+set [product code v] to []
+
+set [total 1 v] to [0]
+
+set [total 2 v] to [0]
+
+set [total v] to [0]
+
+set [total 1 v] to ((total 1) + (letter (index) of (product code)))
+
+set [total v] to ((total 1) + ((total 2) * (3)))
+
+set [total 1 v] to ((total 1) + (letter (index) of (product code)))
+
+change [index v] by (1)
+
+set [total 2 v] to ((total 2) + (letter (index) of (product code)))
+
+change [index v] by (1)
+
+change [product code v] by (answer)</source>
+        <target>crwdns10787:0[1]crwdnd10787:0[0]crwdnd10787:0[0]crwdnd10787:0[0]crwdne10787:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[4]/code</note>
+      </trans-unit>
+      <trans-unit id="10788" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns10788:0{panel end}crwdne10788:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

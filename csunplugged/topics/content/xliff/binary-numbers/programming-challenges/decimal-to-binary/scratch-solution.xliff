@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="834" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/decimal-to-binary/scratch-solution.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8890" identifier="68fe6b0bbd7129f2370b7d1298f2934d">
+        <source>when green flag clicked
+ask [Please enter a decimal number:] and wait
+set [decimal number v] to (answer)
+set [bit value v] to [1]
+set [binary number v] to []
+repeat until &amp;lt;(decimal number) &amp;lt; (bit value)&amp;gt;
+  set [bit value v] to ((bit value) * (2))
+end
+repeat until &amp;lt;(bit value) = [1]&amp;gt;
+  set [bit value v] to ((bit value) / (2))
+  if &amp;lt;&amp;lt;(decimal number) &amp;gt; (bit value)&amp;gt; or &amp;lt;(decimal number) = (bit value)&amp;gt;&amp;gt; then
+    set [binary number v] to (join (binary number) [1])
+    set [decimal number v] to ((decimal number) - (bit value))
+  else
+    set [binary number v] to (join (binary number) [0])
+  end
+end
+say (join (join (join [The binary representation for the number ] (answer)) [ is ]) (binary number))</source>
+        <target>crwdns8890:0[1]crwdnd8890:0[1]crwdnd8890:0[1]crwdnd8890:0[0]crwdne8890:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

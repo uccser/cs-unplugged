@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1186" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/draw-rhombus/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14782" identifier="eb6cc52dab7181cf3a6667ccc61cdf15">
+        <source>A rhombus has 4 equal straight sides.</source>
+        <target>crwdns14782:0crwdne14782:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="14783" identifier="4a3bb8e3a681fc0aa3079073f56cadb8">
+        <source>Opposite sides of a rhombus are parallel and opposite angles are equal.</source>
+        <target>crwdns14783:0crwdne14783:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="14784" identifier="05b06d867fde7d712e81c7dd77f282da">
+        <source>Adjacent angles in a rhombus add up to 180 degrees.</source>
+        <target>crwdns14784:0crwdne14784:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="14785" identifier="9e1d1368366ae189c7650a0cac3f7773">
+        <source>A rhombus with 90 degree angles is a square.</source>
+        <target>crwdns14785:0crwdne14785:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

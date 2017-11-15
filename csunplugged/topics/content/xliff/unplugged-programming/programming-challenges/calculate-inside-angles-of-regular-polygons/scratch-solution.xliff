@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1102" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/calculate-inside-angles-of-regular-polygons/scratch-solution.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14253" identifier="3e13978a9dc6c84c7a2c739e7229e1bb">
+        <source>when green flag clicked
+clear
+go to x: (0) y: (0)
+point in direction (90 v)
+ask [Enter the number of sides of a regular polygon:] and wait
+set [sides v] to (answer)
+set [turning angle v] to ((360) / (sides))
+set [inside angle v] to ((180) - (turning angle))
+pen down
+repeat (sides)
+  move (50) steps
+  turn cw (turning angle) degrees
+  wait (1) secs
+end
+pen up
+say (join (join [Each inside angle is ] (inside angle)) [ degrees.])</source>
+        <target>crwdns14253:0crwdne14253:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

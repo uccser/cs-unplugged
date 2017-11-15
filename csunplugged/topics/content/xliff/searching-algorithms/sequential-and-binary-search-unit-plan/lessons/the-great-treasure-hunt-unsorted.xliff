@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1038" original="/csunplugged/topics/content/en/searching-algorithms/sequential-and-binary-search-unit-plan/lessons/the-great-treasure-hunt-unsorted.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="12043" identifier="cdd5140dae64705d2c411bf0325f4fde">
+        <source>The Great Treasure Hunt (Unsorted)</source>
+        <target>crwdns12043:0crwdne12043:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="12044" identifier="f17e7b5da610295808d4668fae87df1b">
+        <source>Key questions</source>
+        <target>crwdns12044:0crwdne12044:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="15613" identifier="66edae01812a451b7c9cc24efaf6e1b0">
+        <source>{image file-path=&quot;img/topics/child_searches_book.png&quot; alt=&quot;A child searches through some unsorted books on a shelf&quot;}</source>
+        <target>crwdns15613:0crwdne15613:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15614" identifier="e167cb9eb34a3b49c87fd62a6f183943">
+        <source>How would you find the a book on a bookshelf, when all the books aren’t in any particular order?
+Are there any other methods you could use?</source>
+        <target>crwdns15614:0crwdne15614:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="12046" identifier="520931391486d72531ac7266ad8e4c85">
+        <source>Potential answers</source>
+        <target>crwdns12046:0crwdne12046:0</target>
+        <note>Context: Headline 3&#13;
+XPath: /h3</note>
+      </trans-unit>
+      <trans-unit id="15615" identifier="8dfc5ef07f8467a4ae80f54f6ed5d649">
+        <source>{image file-path=&quot;img/topics/linear_search.gif&quot; alt=&quot;This animation shows that the only way to search the unsorted list is to go through every item (whether they choose randomly or look at the first, then second, then third…) because they are still just checking and eliminating one at a time.&quot;}</source>
+        <target>crwdns15615:0crwdne15615:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="15616" identifier="b58021ab34d8678c5767a5f8009c62ed">
+        <source>Guide students to discuss the algorithm or process that they would use to find a value in an unsorted list and how that would be harder than in a sorted list.</source>
+        <target>crwdns15616:0crwdne15616:0</target>
+        <note>Context: XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="15617" identifier="6ed9e15394d8acb99d0505c94640dc8c">
+        <source>Help them to recognise that the only way to search the unsorted list is to go through every item (whether they choose randomly or look at the first, then second, then third…) because they are still just checking and eliminating one at a time.</source>
+        <target>crwdns15617:0crwdne15617:0</target>
+        <note>Context: XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="12049" identifier="4460fd52c3ef567c91cd109657e20025">
+        <source>Lesson starter</source>
+        <target>crwdns12049:0crwdne12049:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="15618" identifier="c9be9c69de7723332068a7b1743c3e3f">
+        <source>On each sheet are 26 treasure chests with lots of money in them.</source>
+        <target>crwdns15618:0crwdne15618:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="15619" identifier="07e20ffaddfb21e71c02e1a9a66b3463">
+        <source>All money has a serial number on it and in each of the treasure chests all the notes start with the same serial number.</source>
+        <target>crwdns15619:0crwdne15619:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="15620" identifier="fb005fe741d79e9d3815f153c12aefe9">
+        <source>The only problem is there is only one treasure chest that has the real money in it, the rest are fake.</source>
+        <target>crwdns15620:0crwdne15620:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="15621" identifier="38b34cc0cff20223f98194fbe585d061">
+        <source>You know what the serial number on the real money is, and your challenge is to find the treasure chest with the real money in it, but you should &quot;open&quot; as few treasure chests as possible.</source>
+        <target>crwdns15621:0crwdne15621:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="15622" identifier="6fd0bcd6cebf099f6c86f8013dcfc08e">
+        <source>Guide students through how the game will work by following the instructions on the &lt;a href=&quot;'resources:resource' 'treasure-hunt'&quot;&gt;Treasure Hunt Instructions pdf&lt;/a&gt;.</source>
+        <target>crwdns15622:0crwdne15622:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="15623" identifier="d34b5f41cf6613df29ff8490bd6d120a">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns15623:0crwdne15623:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="15624" identifier="6e66fcf1112bf89836cefee6852eacdc">
+        <source>If students make the connection that the real money serial could have a check digit, they would be correct in that what they learnt in the error detection and correction unit would apply in knowing if the serial number represents real money or fake money.</source>
+        <target>crwdns15624:0crwdne15624:0</target>
+        <note>Context: XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="15625" identifier="232e316eeaa443401b888a0366e3b3cd">
+        <source>Here’s a link to the &lt;a href=&quot;'topics:unit_plan' 'error-detection-and-correction' 'unit-plan'&quot;&gt;Error Detection and Correction unit&lt;/a&gt; for more information.</source>
+        <target>crwdns15625:0crwdne15625:0</target>
+        <note>Context: XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="15626" identifier="5ea9a3a53f68a96dc7aeeb241ab1a7e1">
+        <source>However, this isn't the purpose of this exercise; the goal is to find a number in the treasure chests.</source>
+        <target>crwdns15626:0crwdne15626:0</target>
+        <note>Context: XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="15627" identifier="95e2aef312d8003ea83532ea9651f31f">
+        <source>{panel end}</source>
+        <target>crwdns15627:0{panel end}crwdne15627:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="15628" identifier="0b6ee983d8e5fd27f22993d23cfa56a5">
+        <source>{panel type=&quot;math&quot; title=&quot;Mathematical Links&quot;}</source>
+        <target>crwdns15628:0crwdne15628:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="15629" identifier="ef1edd02595ee899d02638404efe892b">
+        <source>This is a teachable moment for the class to discuss different strategies to ensure the least number of guesses are needed.</source>
+        <target>crwdns15629:0crwdne15629:0</target>
+        <note>Context: XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="15630" identifier="b008a3b213df2a1c5fc66c09f3816097">
+        <source>The only useful strategy in this case is to make sure that you don't ask for the same chest twice i.e. record which ones you have looked at.</source>
+        <target>crwdns15630:0crwdne15630:0</target>
+        <note>Context: XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="15631" identifier="c676ad11eec27186667eb3ec9cf99b36">
+        <source>This will give a number of guesses between 1 and the total number of chests.</source>
+        <target>crwdns15631:0crwdne15631:0</target>
+        <note>Context: XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="15632" identifier="99a4c821dad5e06ceb02b3702c3175bc">
+        <source>Statistics: Gather the raw data of the number of guesses made by each student and graph it on a bar chart.
+Repeat the game a number of times to see what the pattern of data is.</source>
+        <target>crwdns15632:0crwdne15632:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="15633" identifier="567b0df38084ac4cf7987d57130380b8">
+        <source>Number Knowledge: Read and say numbers between 100 and 9999.</source>
+        <target>crwdns15633:0crwdne15633:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="15634" identifier="84c3fb5452681920df97e5738602f6bb">
+        <source>{panel end}</source>
+        <target>crwdns15634:0{panel end}crwdne15634:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="12067" identifier="ea08f2f76d1ef4a9f87b3ba4c0221b4a">
+        <source>Lesson activities</source>
+        <target>crwdns12067:0crwdne12067:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[3]</note>
+      </trans-unit>
+      <trans-unit id="12068" identifier="b9b89d10196ce91460d8b1e259a7b999">
+        <source>Organise your class into pairs.</source>
+        <target>crwdns12068:0crwdne12068:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol/li</note>
+      </trans-unit>
+      <trans-unit id="12069" identifier="2369b154217b5c59b4757a1c28e4349b">
+        <source>They need a hard surface to write on and a pencil or pen (or whiteboard pen if you have laminated the sheets)</source>
+        <target>crwdns12069:0crwdne12069:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol/li[2]</note>
+      </trans-unit>
+      <trans-unit id="12070" identifier="83da84371f3b27af9599e52f39b2aed1">
+        <source>Have students seated back to back</source>
+        <target>crwdns12070:0crwdne12070:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol/li[3]</note>
+      </trans-unit>
+      <trans-unit id="12071" identifier="3997fabc93e06f81b9ebe402570cd53c">
+        <source>Have them number off i.e. one or two</source>
+        <target>crwdns12071:0crwdne12071:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol/li[4]</note>
+      </trans-unit>
+      <trans-unit id="12072" identifier="2e511b33d8ebf3bccb21389457707519">
+        <source>Have the “ones” come up and get a Treasure hunt sheet</source>
+        <target>crwdns12072:0crwdne12072:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol/li[5]</note>
+      </trans-unit>
+      <trans-unit id="12073" identifier="ca90aa0682a4ed915b83a3b2b8e35dcf">
+        <source>Have the “twos” come up and get a different Treasure hunt sheet</source>
+        <target>crwdns12073:0crwdne12073:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol/li[6]</note>
+      </trans-unit>
+      <trans-unit id="12074" identifier="da766ebf916a78752720fd8544bbe709">
+        <source>Go through the [&lt;a href=&quot;'resources:resource' 'treasure-hunt'&quot;&gt;Treasure Hunt instructions&lt;/a&gt;] guide sheet and set up their games.</source>
+        <target>crwdns12074:0crwdne12074:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol/li[7]</note>
+      </trans-unit>
+      <trans-unit id="12075" identifier="4b2280f4dc21071aa42f8db511fa1c33">
+        <source>Play the game and have students add up how many guesses it took each of them to find the treasure chest with the correct number in it.</source>
+        <target>crwdns12075:0crwdne12075:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol/li[8]</note>
+      </trans-unit>
+      <trans-unit id="12076" identifier="2d0b1c3f6c5e4dd4114a761410cb398f">
+        <source>Add this data to either a whiteboard or paper record and graph how often each number of guesses was required, or add it to a spreadsheet that also displays the graph and watch the graph grow as more data becomes available.</source>
+        <target>crwdns12076:0crwdne12076:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol/li[9]</note>
+      </trans-unit>
+      <trans-unit id="15635" identifier="e59b42d957881852dc290c1589d09099">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns15635:0crwdne15635:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="15636" identifier="3adcec68d836f4e4a0b81f5a40e386ea">
+        <source>It is recommended to have the activity from lesson one and lesson two set up for students to move on to when they have both finished guessing their numbers, or else new sheets with different numbers on for them to try again.</source>
+        <target>crwdns15636:0crwdne15636:0</target>
+        <note>Context: XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="15637" identifier="c98e18c3de940d4f581e4710de2b71eb">
+        <source>As the range of guesses could be the first guess through to 26 guesses, the time delay for everyone finishing means that some students will have nothing to do for 10 or 15 minutes.</source>
+        <target>crwdns15637:0crwdne15637:0</target>
+        <note>Context: XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="15638" identifier="6579ecd72b0f9110a7f2fd4b57ea108d">
+        <source>Having the other searching algorithm games available helps with classroom management.</source>
+        <target>crwdns15638:0crwdne15638:0</target>
+        <note>Context: XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="15639" identifier="29865c6bd6223a870160b434de9c35ce">
+        <source>{panel end}</source>
+        <target>crwdns15639:0{panel end}crwdne15639:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="12082" identifier="93f7f710b96d25060d8fc0fdd8426091">
+        <source>Applying what we have just learnt</source>
+        <target>crwdns12082:0crwdne12082:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[4]</note>
+      </trans-unit>
+      <trans-unit id="15640" identifier="e01e51fd7619515330e507e6c6fcacca">
+        <source>{image file-path=&quot;img/topics/linear_search_chests.gif&quot; alt=&quot;This animation shows sequential search being used to find the chest that holds the number 38.&quot;}</source>
+        <target>crwdns15640:0crwdne15640:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="15641" identifier="b09c21008daec173be0d39e2549ed532">
+        <source>The method you have been using is called sequential search - if the values are out of order then we just go through them one-by-one, in some sequence, until we find the one we want.</source>
+        <target>crwdns15641:0crwdne15641:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="15642" identifier="19c2c7e4ad46387bc476a9769f955e7b">
+        <source>Some people probably found the number in one or two questions, while others may have &quot;opened&quot; most of the 26 chests before they found it.</source>
+        <target>crwdns15642:0crwdne15642:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="15643" identifier="c613c89e67e42fc163f9aee5b92d58ea">
+        <source>This algorithm is very variable in the time taken - sometimes it's instant, sometimes it's slow, and on average, you'll go halfway through the list of values.</source>
+        <target>crwdns15643:0crwdne15643:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="12086" identifier="5130654c0e861f29672a02e1d1360b7f">
+        <source>Lesson reflection</source>
+        <target>crwdns12086:0crwdne12086:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[5]</note>
+      </trans-unit>
+      <trans-unit id="15644" identifier="b1eca6749cb97899a9f098f4634a97f6">
+        <source>Can you write down the algorithm for a sequential search for the Treasure Hunt game?</source>
+        <target>crwdns15644:0crwdne15644:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[20]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

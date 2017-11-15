@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1032" original="/csunplugged/topics/content/en/searching-algorithms/sequential-and-binary-search-unit-plan/lessons/divide-and-conquer.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="11736" identifier="1baae4fd5862963a9e75818cd96d37dc">
+        <source>Divide and conquer</source>
+        <target>crwdns11736:0crwdne11736:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="11737" identifier="f17e7b5da610295808d4668fae87df1b">
+        <source>Key questions</source>
+        <target>crwdns11737:0crwdne11737:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="11738" identifier="9cac61d49c549857008180c607440b45">
+        <source>Imagine 31 numbers have been organised in ascending order in a list by a computer program.</source>
+        <target>crwdns11738:0crwdne11738:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="11739" identifier="ffb5c6d939cfe9a5305d5512d834f724">
+        <source>Now the program has to find a number in the list, but it can only look at one number at a time.</source>
+        <target>crwdns11739:0crwdne11739:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="11740" identifier="57aba0ed88f8046e69ee3457566b451c">
+        <source>Is it easier to find the number now, than if they were in a random order?</source>
+        <target>crwdns11740:0crwdne11740:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="11741" identifier="99b0f7b08a0fea55d9673bbf7f187851">
+        <source>Potential answers could include:</source>
+        <target>crwdns11741:0crwdne11741:0</target>
+        <note>Context: Headline 3&#13;
+XPath: /h3</note>
+      </trans-unit>
+      <trans-unit id="11742" identifier="22125f2cd0b78b4d6163fdb32f24ae14">
+        <source>The information is organised in a way that makes it more efficient to find.</source>
+        <target>crwdns11742:0crwdne11742:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="11743" identifier="ce9fe2e7dfd1f9d52a0e7317eca88fb2">
+        <source>By guessing one number and checking it, you can use logical thinking to eliminate the numbers below or above the number guessed because you know the numbers are in order.</source>
+        <target>crwdns11743:0crwdne11743:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="15555" identifier="b2162d57b0e0823712acfc0432bd2f42">
+        <source>{image file-path=&quot;img/topics/child_in_numbers.png&quot; alt=&quot;A child lost in a pile of random numbers.&quot;}</source>
+        <target>crwdns15555:0crwdne15555:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="15556" identifier="d304696c2070753e4f44ec3f2ee2b5d4">
+        <source>If they are in random order you can't use a strategy to find them quickly.</source>
+        <target>crwdns15556:0crwdne15556:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li</note>
+      </trans-unit>
+      <trans-unit id="11745" identifier="4460fd52c3ef567c91cd109657e20025">
+        <source>Lesson starter</source>
+        <target>crwdns11745:0crwdne11745:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="15557" identifier="6a05a69927d8db8be645fd8b4d53bc61">
+        <source>We have 31 different numbers, one on each card.</source>
+        <target>crwdns15557:0crwdne15557:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="15558" identifier="8069d273bfb2d059949cf02dc8891410">
+        <source>You can’t see them but this time they are in order from the lowest number to the highest number.</source>
+        <target>crwdns15558:0crwdne15558:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="15559" identifier="570389e9d57d1956257b51a66d05c55e">
+        <source>The numbers range from 0 to 1000.</source>
+        <target>crwdns15559:0crwdne15559:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="15560" identifier="951c4591e12140654654bbc2eae19fcc">
+        <source>Can you find number &lt;strong&gt;302&lt;/strong&gt;</source>
+        <target>crwdns15560:0crwdne15560:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="15561" identifier="ec11893929d653a46f4f0bd4eb8af6b8">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns15561:0crwdne15561:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="15562" identifier="275ca474025d387d04dcb80f11e9b66d">
+        <source>You can adapt the range to suit what your students are working on in their mathematics lessons.</source>
+        <target>crwdns15562:0crwdne15562:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="15563" identifier="5f26c451a545f8805c70e3930decd8a0">
+        <source>This lesson focuses on sorted lists and we are using a range of numbers from 0 - 999.</source>
+        <target>crwdns15563:0crwdne15563:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="15564" identifier="06648400d0e61169a3efbe6c3ff13713">
+        <source>This activity works best if the numbers &lt;strong&gt;aren’t&lt;/strong&gt; sequential because, for example, if there are 50 cards in the range 1 to 50 and they are sequential and you ask a student to find the number 10 they will probably just look at the 10th card straight away!</source>
+        <target>crwdns15564:0crwdne15564:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="15565" identifier="fbd5979a683dc2a908aa543e7648cd14">
+        <source>You can generate different sets of cards with various ranges of numbers &lt;a href=&quot;'resources:resource' 'searching-cards'&quot;&gt;here&lt;/a&gt;.</source>
+        <target>crwdns15565:0crwdne15565:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="15566" identifier="af6639ae1d131752852c51ffd3ec5641">
+        <source>It's best if the numbers aren't spread evenly so that it's very hard to guess where a particular value might be.</source>
+        <target>crwdns15566:0crwdne15566:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="15567" identifier="e8dc6db8623270551f676e6f496291c1">
+        <source>{panel end}</source>
+        <target>crwdns15567:0{panel end}crwdne15567:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="11757" identifier="ea08f2f76d1ef4a9f87b3ba4c0221b4a">
+        <source>Lesson activities</source>
+        <target>crwdns11757:0crwdne11757:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[3]</note>
+      </trans-unit>
+      <trans-unit id="15568" identifier="afc9928694edc57dc23705df2a50f7c0">
+        <source>{image file-path=&quot;img/topics/cards-0.png&quot; alt=&quot;A line of cards.&quot;}</source>
+        <target>crwdns15568:0crwdne15568:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="15569" identifier="835316aaaf899e1b11de795ef4c4c92f">
+        <source>Set up a line of cards, with the animal facing upwards.</source>
+        <target>crwdns15569:0crwdne15569:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="11759" identifier="bfaf38b7e602d0e29e44094685c84dbf">
+        <source>Have a payment system ready such as tokens for your classroom, counters, sweets, or marbles.</source>
+        <target>crwdns11759:0crwdne11759:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol/li</note>
+      </trans-unit>
+      <trans-unit id="15570" identifier="71937c249bd4fe14db71a4cc4662069a">
+        <source>The game is even better if you have some real stakes - for example: I have 10 marbles each is worth 2 minutes of game time.</source>
+        <target>crwdns15570:0crwdne15570:0</target>
+        <note>Context: XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="15571" identifier="5a84f584c4a27f0731a0db94adcce1a0">
+        <source>For every token you use to find the number I’m thinking of, you will lose a marble.</source>
+        <target>crwdns15571:0crwdne15571:0</target>
+        <note>Context: XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="15572" identifier="1c8fe226da34611c9dd32f911757c2d8">
+        <source>Let’s see how many guesses it takes to find the number: 302</source>
+        <target>crwdns15572:0crwdne15572:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="15573" identifier="5e4dc264c60f4033b14b110c9ed06577">
+        <source>{image file-path=&quot;img/topics/cards-1.png&quot; alt=&quot;A line of cards, middle one selected.&quot;}</source>
+        <target>crwdns15573:0crwdne15573:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="15574" identifier="bd3c1d2240602cc708cc8a823f7ac8c3">
+        <source>Who would like the first guess?</source>
+        <target>crwdns15574:0crwdne15574:0</target>
+        <note>Context: XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="15575" identifier="75b35f68fdff96587cbb74084c537cfa">
+        <source>(Choose a student).</source>
+        <target>crwdns15575:0crwdne15575:0</target>
+        <note>Context: XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="15576" identifier="fd4734b0e2b336553f6a400c23d4b16e">
+        <source>Which animal should I turn over?</source>
+        <target>crwdns15576:0crwdne15576:0</target>
+        <note>Context: XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="15577" identifier="ca5587e509947cde0bd311ad51dd64ba">
+        <source>Tell us why you chose that guess.</source>
+        <target>crwdns15577:0crwdne15577:0</target>
+        <note>Context: XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="15578" identifier="cccc743be6d891e3b2339717251c0fb0">
+        <source>(They should be selecting the card that is exactly half way.</source>
+        <target>crwdns15578:0crwdne15578:0</target>
+        <note>Context: XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="15579" identifier="0ef661c0c670712a8a30f2e22595b46e">
+        <source>If they didn’t, check with the class if they agree with the choice or could they add to the student’s thinking to select the middle card.</source>
+        <target>crwdns15579:0crwdne15579:0</target>
+        <note>Context: XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="15580" identifier="a78ab4b8e8756ba656839051e888a201">
+        <source>If they decide not to, that's fine; they will learn the hard way if they use a less efficient approach.)</source>
+        <target>crwdns15580:0crwdne15580:0</target>
+        <note>Context: XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="15581" identifier="acbbccb442d335ab776cc5b3c8e0d1cb">
+        <source>Turn over the chosen card to show the number under it.</source>
+        <target>crwdns15581:0crwdne15581:0</target>
+        <note>Context: XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="15582" identifier="e7708d67eac61dad98f2c26d9d8cbec2">
+        <source>If it's the correct one, you can stop, otherwise &lt;em&gt;remove that card and all other cards that the number can’t be&lt;/em&gt; (which will either be all cards to the right or all cards to the left of the chosen one) and take away one token from your pile.</source>
+        <target>crwdns15582:0crwdne15582:0</target>
+        <note>Context: XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="15583" identifier="a4868c763eaac221bc6b09c21b8669a9">
+        <source>Repeat this process until a student chooses the card with your number on it; if they use all ten tokens then the teacher &quot;wins&quot;.</source>
+        <target>crwdns15583:0crwdne15583:0</target>
+        <note>Context: XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="15584" identifier="5f11a12c31c1b36e4efdf1350523fdd1">
+        <source>{image file-path=&quot;img/topics/cards-2.png&quot; alt=&quot;A line of cards, middle of the remainder cards selected.&quot;}</source>
+        <target>crwdns15584:0crwdne15584:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="15585" identifier="e6ed8efcb8fbf42059cd6e1495c9f8b6">
+        <source>{image file-path=&quot;img/topics/cards-3.png&quot; alt=&quot;A line of cards, middle of the remainder cards selected.&quot;}</source>
+        <target>crwdns15585:0crwdne15585:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="15586" identifier="2d4238c4ae62f29447095661daf86d61">
+        <source>{image file-path=&quot;img/topics/cards-4.png&quot; alt=&quot;Correct card selected.&quot;}</source>
+        <target>crwdns15586:0crwdne15586:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="15587" identifier="9617eee8d7bed5d26b681a8e9621536f">
+        <source>How many guesses did it take to find the number?</source>
+        <target>crwdns15587:0crwdne15587:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="15588" identifier="77836669b5ceb89b72693085346c4170">
+        <source>With each guess, how many cards were eliminated from being a possibility?
+(Answer: half the cards could be eliminated with each guess if you picked the middle card. )</source>
+        <target>crwdns15588:0crwdne15588:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="15589" identifier="90267d0382c15d13194a8be60ca184bf">
+        <source>Did the students win because they guessed within 10  guesses or did you win because it took them longer?</source>
+        <target>crwdns15589:0crwdne15589:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="15590" identifier="8a71af0fb00d5fc538b6b0fbcaaab006">
+        <source>Repeat this game until the students have won 3 times or you have won 3 times.</source>
+        <target>crwdns15590:0crwdne15590:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="15591" identifier="91459119fbe8d6c103e9378044a708f2">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns15591:0crwdne15591:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="15592" identifier="5ba10dad6c465bd20ac68908c2278ba2">
+        <source>The number of guesses required can be anything from 1 (if you are lucky the first time), to 5 (if you have chosen the middle number each time).</source>
+        <target>crwdns15592:0crwdne15592:0</target>
+        <note>Context: XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="15593" identifier="1cf39a4f4b8e3d51936e43a7b7f10520">
+        <source>Of course, they may use more than 5 guesses if they use a poor strategy.</source>
+        <target>crwdns15593:0crwdne15593:0</target>
+        <note>Context: XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="15594" identifier="ccaf417c740db8f24ef0c4a249ea7732">
+        <source>Most of the time they will need close to 5 guesses.</source>
+        <target>crwdns15594:0crwdne15594:0</target>
+        <note>Context: XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="15595" identifier="1de884f368646aef680e34f5a008350c">
+        <source>This also means that students will always have tokens left if they use a good strategy, since the maximum number of guesses to find the number is 5.</source>
+        <target>crwdns15595:0crwdne15595:0</target>
+        <note>Context: XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="15596" identifier="59e042da1872bd44e9c06a8263fafdde">
+        <source>{panel end}</source>
+        <target>crwdns15596:0{panel end}crwdne15596:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="11783" identifier="93f7f710b96d25060d8fc0fdd8426091">
+        <source>Applying what we have just learnt</source>
+        <target>crwdns11783:0crwdne11783:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[4]</note>
+      </trans-unit>
+      <trans-unit id="15597" identifier="7480a499f5470f24bc035d7364c2b6a8">
+        <source>If any data is organised in order and a binary search is applied, then you can eliminate a lot of data quickly - cutting the number of items in half each time.</source>
+        <target>crwdns15597:0crwdne15597:0</target>
+        <note>Context: XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="15598" identifier="32f83df1b7a8e6d38af7e1cec77bc50c">
+        <source>As a slightly different example, if we were trying to guess a number between 1 and 1,000,000, then asking if the number is over 500,000 would eliminate 500,000 options in one question, the second question eliminates 250,000, the third question 125,000, and so on.</source>
+        <target>crwdns15598:0crwdne15598:0</target>
+        <note>Context: XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="15599" identifier="bbdbf1f157028e115d38658baebd0513">
+        <source>So in 3 questions you have eliminated 875,000 numbers.</source>
+        <target>crwdns15599:0crwdne15599:0</target>
+        <note>Context: XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="15600" identifier="0cffb599b20eac5abd4eb6c16f1849f0">
+        <source>With just 20 questions you can find the one number between 1 and 1,000,000.</source>
+        <target>crwdns15600:0crwdne15600:0</target>
+        <note>Context: XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="15601" identifier="46ba65bb3d4401471ab1519796221095">
+        <source>It's the same searching for objects that are sorted in descending order - each value that is checked halves the number of possible locations.</source>
+        <target>crwdns15601:0crwdne15601:0</target>
+        <note>Context: XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="15602" identifier="8b48bb5b293b865732b4f32bd1fd1bad">
+        <source>Dividing problems in half makes them very small very quickly.</source>
+        <target>crwdns15602:0crwdne15602:0</target>
+        <note>Context: XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="15603" identifier="0484ec422c5496076bd51b4c08ae3438">
+        <source>{image file-path=&quot;img/topics/divide.png&quot;}</source>
+        <target>crwdns15603:0crwdne15603:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[25]</note>
+      </trans-unit>
+      <trans-unit id="15604" identifier="79898200356c2fd7736e15d0dc032bed">
+        <source>This general process is called &quot;divide and conquer&quot; - you break the problem into (two) parts, and deal with each part separately, in turn break them into two parts.</source>
+        <target>crwdns15604:0crwdne15604:0</target>
+        <note>Context: XPath: /p[26]</note>
+      </trans-unit>
+      <trans-unit id="15605" identifier="128ae6440becbe701f9f7fbdf5ae62c1">
+        <source>Very soon you end up with very easy tasks, such as dealing with just one item.</source>
+        <target>crwdns15605:0crwdne15605:0</target>
+        <note>Context: XPath: /p[26]</note>
+      </trans-unit>
+      <trans-unit id="15606" identifier="533ffe3671287f78ade8188761c31b63">
+        <source>It's a great strategy for reducing any big task or challenge to achievable goals!</source>
+        <target>crwdns15606:0crwdne15606:0</target>
+        <note>Context: XPath: /p[26]</note>
+      </trans-unit>
+      <trans-unit id="11793" identifier="b5d2c04d6f8dd9fd9c3f275fa688aa8a">
+        <source>Divide and conquer programming challenges</source>
+        <target>crwdns11793:0crwdne11793:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[5]</note>
+      </trans-unit>
+      <trans-unit id="11794" identifier="7b9b3fcc529e1ac06673a9622e65269b">
+        <source>Lesson reflection</source>
+        <target>crwdns11794:0crwdne11794:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[6]</note>
+      </trans-unit>
+      <trans-unit id="15607" identifier="ee5d4901647665ca22708897cf1f07d9">
+        <source>What is the algorithm for a binary search? Here is a possible answer:</source>
+        <target>crwdns15607:0crwdne15607:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[27]</note>
+      </trans-unit>
+      <trans-unit id="15608" identifier="8bec113afed7071db7e210e6e3004dcc">
+        <source>Ask to see the middle card</source>
+        <target>crwdns15608:0crwdne15608:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[3]/li</note>
+      </trans-unit>
+      <trans-unit id="15609" identifier="628c93017e1c66c57ab5cff3b5f72ff0">
+        <source>Repeat until the correct number is found:</source>
+        <target>crwdns15609:0crwdne15609:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[3]/li[2]</note>
+      </trans-unit>
+      <trans-unit id="15610" identifier="d2a16482d63a822c10ffffd41a80c99c">
+        <source>Is the number greater than the number I want to find?</source>
+        <target>crwdns15610:0crwdne15610:0</target>
+        <note>Context: Text&#13;
+XPath: /ul[3]/li[3]/text</note>
+      </trans-unit>
+      <trans-unit id="15611" identifier="a0975cbc8e1f280276b72c241923e693">
+        <source>If yes, then keep the cards above that number,</source>
+        <target>crwdns15611:0crwdne15611:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[3]/li[3]/ul/li</note>
+      </trans-unit>
+      <trans-unit id="15612" identifier="96073dfafc7bddc14946e83f30d4dfb3">
+        <source>Else, keep the cards below that number</source>
+        <target>crwdns15612:0crwdne15612:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[3]/li[3]/ul/li[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

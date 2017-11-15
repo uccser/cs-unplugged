@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1251" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/go-up-10-numbers/extra-challenge.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15080" identifier="e3692dfe9dd9b8392147bd49c179acb4">
+        <source>&lt;strong&gt;Extra challenge #1:&lt;/strong&gt;
+Write a program that chooses a random number between 1 and 1000.</source>
+        <target>crwdns15080:0crwdne15080:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15081" identifier="608695cf372ccc2ce18d88e6f560792d">
+        <source>It then asks the user to go up (or back) 10 numbers.</source>
+        <target>crwdns15081:0crwdne15081:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15082" identifier="2b34efbde13e52ec472f8a494ecee6e8">
+        <source>If the answer is correct it displays a message saying “well done!” and if the answer is incorrect displays a messages showing the correct answer.</source>
+        <target>crwdns15082:0crwdne15082:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15083" identifier="6cb74c37c762f087a05bbfdcb7c73fbb">
+        <source>If you ask them to go back 10 numbers, start with a number that is 10 or more.</source>
+        <target>crwdns15083:0crwdne15083:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15084" identifier="fda27d739a1b42a3ff54adf8436c262a">
+        <source>&lt;strong&gt;Extra challenge #2:&lt;/strong&gt;
+Write a program that chooses a random number between 1 and 1000.</source>
+        <target>crwdns15084:0crwdne15084:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="15085" identifier="e93821ec39421a2600f51a2e27e75239">
+        <source>It then asks the user to go up (or back) 100 numbers.</source>
+        <target>crwdns15085:0crwdne15085:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="15086" identifier="19722a96b0e7f5f8931c7f8a766950b7">
+        <source>If the answer is correct it displays a message saying “well done!” and if the answer is incorrect displays a messages showing the correct answer.</source>
+        <target>crwdns15086:0crwdne15086:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="15087" identifier="9fbf69749aa4820e060a341faa3bc1ef">
+        <source>If you ask them to go back 100 numbers, start with a number that is 100 or more.</source>
+        <target>crwdns15087:0crwdne15087:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

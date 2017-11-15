@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1134" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/draw-360-sided-polygon/draw-360-sided-polygon.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14524" identifier="e5d7a6ded57018445337f6da7b6c4412">
+        <source>Draw a 360 sided polygon</source>
+        <target>crwdns14524:0crwdne14524:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="14525" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns14525:0crwdne14525:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="14526" identifier="bfe5925d4259f5a89af8fb59403274be">
+        <source>Write a program that draws a 360-gon, a polygon with 360 sides of length 1 step, turing one degree at each point.</source>
+        <target>crwdns14526:0crwdne14526:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14527" identifier="799208f71b1e9e70893fb72210a1e0aa">
+        <source>Note: The sides are so small that this will look like a circle, but a 360 sided polygon is geometrically different from a circle (i.e. circle has infinite number of sides).</source>
+        <target>crwdns14527:0crwdne14527:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14528" identifier="6402f1c6307ae31c42d8222d65fdc3ed">
+        <source>Still, in the following challenges we will call it a circle.</source>
+        <target>crwdns14528:0crwdne14528:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14529" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns14529:0crwdne14529:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="14530" identifier="c6c8bb685a40fd65c5411b1f6f48de56">
+        <source>There are no testing examples for this challenge.</source>
+        <target>crwdns14530:0crwdne14530:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="948" original="/csunplugged/topics/content/en/error-detection-and-correction/programming-challenges/detect-parity-error-in-row/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10483" identifier="3a29a7e836ccaa795883d72e41b8db48">
+        <source>Click on the green flag, enter the inputs provided in the “testing examples” to
+see the expected output of your program.</source>
+        <target>crwdns10483:0crwdne10483:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="10484" identifier="851d5ab33cae23e1bdec35a218da5fb4">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/148426097/?autostart=false&quot;}</source>
+        <target>crwdns10484:0crwdne10484:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="10485" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns10485:0crwdne10485:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="10486" identifier="62dc80c1d148852285a890653b7c5092">
+        <source>when green flag clicked
+
+ask [Please enter a row of black and white cards (B for black and W for white):] and wait</source>
+        <target>crwdns10486:0crwdne10486:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="10487" identifier="2922923d05995aa2cf845c663299a4e7">
+        <source>if &amp;lt;(letter (index) of (cards)) = [B]&amp;gt; then
+end
+
+repeat (length of (cards))
+end
+
+if &amp;lt;((black cards total) mod (2)) = [0]&amp;gt; then
+else
+end</source>
+        <target>crwdns10487:0[B]crwdnd10487:0[0]crwdne10487:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="10488" identifier="fbd00d832358c4f3e076e6eb3e18b4cc">
+        <source>say [There is no parity error in this row!]
+
+say [There is a parity error in this row!]</source>
+        <target>crwdns10488:0crwdne10488:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="10489" identifier="6b4224dc296fd50c3ddac78b764dadbf">
+        <source>change [black cards total v] by (1)
+
+change [index v] by (1)</source>
+        <target>crwdns10489:0crwdne10489:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[4]/code</note>
+      </trans-unit>
+      <trans-unit id="10490" identifier="5eb548319fde0151245afb0daba1a8dd">
+        <source>set [black cards total v] to [0]
+
+set [index v] to [1]
+
+set [cards v] to (answer)</source>
+        <target>crwdns10490:0[0]crwdnd10490:0[1]crwdne10490:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[5]/code</note>
+      </trans-unit>
+      <trans-unit id="10491" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns10491:0{panel end}crwdne10491:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

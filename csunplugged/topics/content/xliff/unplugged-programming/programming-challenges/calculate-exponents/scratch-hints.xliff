@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1096" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/calculate-exponents/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14229" identifier="0910236a14d5ea47f45a814e7c963c4d">
+        <source>Make a variable called “base” and set its value to the base number entered by the user.
+This is the number that will be multiplied by.</source>
+        <target>crwdns14229:0crwdne14229:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="14230" identifier="0e82ca8368ae746d09e72177e2c3c1aa">
+        <source>Make a variable called “power” and set its value to the power number entered by the user.
+This determines how many times to repeat the multiplication.</source>
+        <target>crwdns14230:0crwdne14230:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="14231" identifier="5430b4c37e330a8319b2ff4bb7eda147">
+        <source>Make a third variable called &quot;result&quot; and set its value to the number ‘1’ multiplied by &quot;base&quot;, &quot;power&quot; times.</source>
+        <target>crwdns14231:0crwdne14231:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[3]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

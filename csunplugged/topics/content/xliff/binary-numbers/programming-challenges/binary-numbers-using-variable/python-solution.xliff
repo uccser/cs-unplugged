@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="775" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/binary-numbers-using-variable/python-solution.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8572" identifier="d78ed22b1f664874772cd091e71ba7e9">
+        <source>number_of_dots = 1
+print(number_of_dots)
+number_of_dots = 2
+print(number_of_dots)
+number_of_dots = 4
+print(number_of_dots)
+number_of_dots = 8
+print(number_of_dots)
+number_of_dots = 16
+print(number_of_dots)</source>
+        <target>crwdns8572:0crwdne8572:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

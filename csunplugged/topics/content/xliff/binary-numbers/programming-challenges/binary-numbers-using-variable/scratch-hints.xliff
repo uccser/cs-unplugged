@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="777" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/binary-numbers-using-variable/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8580" identifier="4439e81ba1ed2897389a4edfeed27c1d">
+        <source>Make a variable called “number of dots” and change its value by setting it
+to 1, 2, 4, 8 and 16 respectively.</source>
+        <target>crwdns8580:0crwdne8580:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="8581" identifier="54608336d660660ef1ebd256b0f002cf">
+        <source>You can find “make a new variable” under the “data” script to create a new
+variable.</source>
+        <target>crwdns8581:0crwdne8581:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="8582" identifier="57cc55ef262dfe7f5580058f8f4af390">
+        <source>Make sure your variable name is meaningful for someone else to read.</source>
+        <target>crwdns8582:0crwdne8582:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="8583" identifier="d0b5db533a3d11b4c339c0373ee67a4e">
+        <source>In the above example, the variable is called &quot;number of dots&quot; because
+it stores the number of dots on a card.</source>
+        <target>crwdns8583:0crwdne8583:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="8584" identifier="104bdf64b87fc77d22fd04552d56df79">
+        <source>Use the &lt;code&gt;scratch:set [number of dots v] to [0]&lt;/code&gt; block to set the value of
+your new variable.</source>
+        <target>crwdns8584:0[0]crwdne8584:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="8585" identifier="6b0c0c6bcd02cd30ac6237a1abdb49d5">
+        <source>Display the value of your variable on the screen by replacing “Hello” in
+your &lt;code&gt;scratch:say [Hello] for (2) secs&lt;/code&gt; block with your variable.</source>
+        <target>crwdns8585:0[Hello]crwdne8585:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="8586" identifier="ddd8e12206694ffb5ab8b1193bdbc3b9">
+        <source>The number of seconds tells the output how long to show.
+The script waits that long before continuing.</source>
+        <target>crwdns8586:0crwdne8586:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[4]</note>
+      </trans-unit>
+      <trans-unit id="8587" identifier="0bfaacae4a79f65af7e6b2743b92fad9">
+        <source>Make sure all your blocks are “snapped” together in a line like a jigsaw
+puzzle.</source>
+        <target>crwdns8587:0crwdne8587:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[5]</note>
+      </trans-unit>
+      <trans-unit id="8588" identifier="ff8db6c3d270691e89444e69b7bdeaed">
+        <source>Whenever you click the green flag, your script will start.
+To stop, click the stop button.</source>
+        <target>crwdns8588:0crwdne8588:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[6]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

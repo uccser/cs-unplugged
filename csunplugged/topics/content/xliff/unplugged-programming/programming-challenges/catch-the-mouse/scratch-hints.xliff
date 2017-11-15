@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1106" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/catch-the-mouse/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14273" identifier="2fedae5854317bf6f91a804e38f71106">
+        <source>The custom block &lt;code&gt;scratch:move_forward() :: custom&lt;/code&gt; moves the “cat” sprite forward for the number of tiles entered as its input (i.e. move_forward(3) would move the “cat” sprite 3 tiles forward).</source>
+        <target>crwdns14273:0crwdne14273:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="14274" identifier="df1a4038c7acfc5dec5f1e6ea232660c">
+        <source>The distance from the centre of one tile to a neighbouring tile is 50 steps long, so for this reason we have used a variable called “one tile” which is always set to 50.</source>
+        <target>crwdns14274:0crwdne14274:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="14275" identifier="6f424e19415b668cf2f185a02862e16b">
+        <source>The custom block &lt;code&gt;scratch:turn_right() :: custom&lt;/code&gt; rotates the “cat” sprite to the right 90 degrees.</source>
+        <target>crwdns14275:0crwdne14275:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="14276" identifier="ea995d93926c5cd4a95ddd474b5881ae">
+        <source>The custom block &lt;code&gt;scratch:turn_left() :: custom&lt;/code&gt; rotates the “cat” sprite to the left 90 degrees.</source>
+        <target>crwdns14276:0crwdne14276:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="14277" identifier="96e57d6fb10352281abe88d74ed5297b">
+        <source>When your set of instructions are complete, press the “Go” button.
+If your instructions were incorrect (i.e. the cat didn’t catch the mouse), press the “Restart” button and start over.</source>
+        <target>crwdns14277:0crwdne14277:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[4]</note>
+      </trans-unit>
+      <trans-unit id="14278" identifier="9779365867b8a8a1f4a8efcf7a40aadb">
+        <source>The “cat” sprite can not go through the blue tiles.</source>
+        <target>crwdns14278:0crwdne14278:0</target>
+        <note>Context: XPath: /ul/li[5]</note>
+      </trans-unit>
+      <trans-unit id="14279" identifier="930179bf1ff5c874437f21a6a2c7d9f5">
+        <source>If your instructions takes the “cat” over any of the blue tiles, you will hear a crash sound with a message instructing you to press the “restart” button and start again.</source>
+        <target>crwdns14279:0crwdne14279:0</target>
+        <note>Context: XPath: /ul/li[5]</note>
+      </trans-unit>
+      <trans-unit id="14280" identifier="c6b8f6b5eb9c5755c2fe9106dbf9d570">
+        <source>We have provided 4 different backdrops for this challenge.
+Press “New background” to try a new challenge.</source>
+        <target>crwdns14280:0crwdne14280:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[6]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

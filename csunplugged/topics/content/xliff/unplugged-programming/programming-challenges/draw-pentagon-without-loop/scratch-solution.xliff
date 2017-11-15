@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1175" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/draw-pentagon-without-loop/scratch-solution.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14734" identifier="74679d91d5c535483fefd940c3b68342">
+        <source>when green flag clicked
+clear
+go to x: (0) y: (0)
+pen down
+move (100) steps
+turn cw (72) degrees
+wait (1) secs
+move (100) steps
+turn cw (72) degrees
+wait (1) secs
+move (100) steps
+turn cw (72) degrees
+wait (1) secs
+move (100) steps
+turn cw (72) degrees
+wait (1) secs
+move (100) steps
+turn cw (72) degrees
+wait (1) secs
+pen up</source>
+        <target>crwdns14734:0crwdne14734:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

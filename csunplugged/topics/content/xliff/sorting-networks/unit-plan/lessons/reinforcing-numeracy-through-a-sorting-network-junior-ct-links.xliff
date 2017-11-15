@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1050" original="/csunplugged/topics/content/en/sorting-networks/unit-plan/lessons/reinforcing-numeracy-through-a-sorting-network-junior-ct-links.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="12475" identifier="29587245fea6177d2282f2ca4a93001c">
+        <source>{panel type=&quot;ct-algorithm&quot; title=&quot;Algorithmic thinking&quot;}</source>
+        <target>crwdns12475:0crwdne12475:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="12476" identifier="9dd35ea3ee44391d4279fe541fea6ef1">
+        <source>We used an algorithm in this lesson to sort the numbers into order using a parallel processor (normally this processor would be implemented in hardware, but our chalk network is still actually one!</source>
+        <target>crwdns12476:0crwdne12476:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="12477" identifier="b0c9ee6e0c1020d2c8c55dc52359b344">
+        <source>It’s powered by people instead of electricity).</source>
+        <target>crwdns12477:0crwdne12477:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="12478" identifier="d4789df7fc6fae273d42b3ff89b932ef">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns12478:0crwdne12478:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4</note>
+      </trans-unit>
+      <trans-unit id="12479" identifier="30a705c51b739f6a35e81ccc4bd6aa86">
+        <source>Do students understand how each node functions (taking in two values and swapping them if they are in the wrong order)?
+Are they able to explain to other students how to use the network correctly?</source>
+        <target>crwdns12479:0crwdne12479:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="12480" identifier="463696aefcca739064f0499c5e7a8cd7">
+        <source>Do the students see that no matter what numbers or data we put into the network we will always get a solution if we follow the algorithm correctly?</source>
+        <target>crwdns12480:0crwdne12480:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="12481" identifier="0195c2d106e4d52b36bca78ff4c3e7a4">
+        <source>{panel end}</source>
+        <target>crwdns12481:0{panel end}crwdne12481:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="12482" identifier="17de7efa37d271303d10e7da564a0701">
+        <source>{panel type=&quot;ct-abstraction&quot; title=&quot;Abstraction&quot;}</source>
+        <target>crwdns12482:0crwdne12482:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="12483" identifier="e57ca53bcbb50d454148c3a280005afd">
+        <source>The Sorting Network used in these activities is itself an abstract representation of how Sorting Networks are implemented in hardware and software.</source>
+        <target>crwdns12483:0crwdne12483:0</target>
+        <note>Context: XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="12484" identifier="ec770811fcf586d063de992466ada6af">
+        <source>It represents the core functionality of a Sorting Network, whilst hiding all the nitty gritty details of how the hardware and circuitry works.</source>
+        <target>crwdns12484:0crwdne12484:0</target>
+        <note>Context: XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="12485" identifier="7ca1cce9bc789f9d38045770108363e7">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns12485:0crwdne12485:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[2]</note>
+      </trans-unit>
+      <trans-unit id="12486" identifier="4dccbc4d1045b484b55bea52beeb4940">
+        <source>Can students make the connection between the lines and nodes on this graph and the way computers can process information by making comparisons?</source>
+        <target>crwdns12486:0crwdne12486:0</target>
+        <note>Context: XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="12487" identifier="931dec68778e0db3c93962163b3aef76">
+        <source>Can students understand that this representation can be used to model how a real parallel processing computer would work?</source>
+        <target>crwdns12487:0crwdne12487:0</target>
+        <note>Context: XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="12488" identifier="95e2aef312d8003ea83532ea9651f31f">
+        <source>{panel end}</source>
+        <target>crwdns12488:0{panel end}crwdne12488:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="12489" identifier="16c5229b7bb0bd77299bb63485055923">
+        <source>{panel type=&quot;ct-decomposition&quot; title=&quot;Decomposition&quot;}</source>
+        <target>crwdns12489:0crwdne12489:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="12490" identifier="daf63bd74f50e6a00ecb70d1221ba9d5">
+        <source>The whole process of sorting in this activity is decomposed into a very simple operation: comparing two values.</source>
+        <target>crwdns12490:0crwdne12490:0</target>
+        <note>Context: XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="12491" identifier="5aa597ed8e77d91af21c1f7d6a3e849c">
+        <source>This operation alone is very simplistic, but when it is performed many many times it can be used to build up a solution to a much larger task.</source>
+        <target>crwdns12491:0crwdne12491:0</target>
+        <note>Context: XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="12492" identifier="833d815031c5d5819a2b19b8c4affd40">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns12492:0crwdne12492:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[3]</note>
+      </trans-unit>
+      <trans-unit id="12493" identifier="bb65e7a7d15b6da2eafa81d7473609f5">
+        <source>Can students see how to design a Sorting Network to sort just 2 values?
+(It would just be a single comparator node).</source>
+        <target>crwdns12493:0crwdne12493:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="12494" identifier="b1c2847763ba990ce3b79c43c0f66f9e">
+        <source>{panel end}</source>
+        <target>crwdns12494:0{panel end}crwdne12494:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="12495" identifier="40ad58809f56a2bf712e4dcd43bbd5e7">
+        <source>{panel type=&quot;ct-pattern&quot; title=&quot;Generalising and patterns&quot;}</source>
+        <target>crwdns12495:0crwdne12495:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="12496" identifier="9c4e132c36e30cbac7670fb9ba1138ed">
+        <source>In this lesson students only worked with one type of information, numbers, so there wasn’t much use of generalisation.
+It is more prominent in the next lesson.</source>
+        <target>crwdns12496:0crwdne12496:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="12497" identifier="2c5987aa00c061ae37f4be2df77e21e8">
+        <source>{panel end}</source>
+        <target>crwdns12497:0{panel end}crwdne12497:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="12498" identifier="1048ee5c08ce80660a5ea18e0ae59002">
+        <source>{panel type=&quot;ct-evaluation&quot; title=&quot;Evaluation&quot;}</source>
+        <target>crwdns12498:0crwdne12498:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="12499" identifier="9fd8afd099ad62435f30200b967d59df">
+        <source>For this Sorting Network there can be up to three comparisons happening at once, and the length of the network determines how long it would take to complete all these comparisons.</source>
+        <target>crwdns12499:0crwdne12499:0</target>
+        <note>Context: XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="12500" identifier="67929ce38973396118772330af4a2e1b">
+        <source>Although 12 comparisons need to be made when going through the network, the network can be completed in the time it takes to an individual node to make 5 comparisons.</source>
+        <target>crwdns12500:0crwdne12500:0</target>
+        <note>Context: XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="12501" identifier="ec993088561d59b2638cc84170b056e3">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns12501:0crwdne12501:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[4]</note>
+      </trans-unit>
+      <trans-unit id="12502" identifier="44d120c9892e880c229fd22d14547a5f">
+        <source>Can students identify the longest path that any number would have to go through to get to the end?</source>
+        <target>crwdns12502:0crwdne12502:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="12503" identifier="da7d923d9c50099b4e9d6f7d556771a7">
+        <source>(The middle two numbers need to make 5 comparisons).</source>
+        <target>crwdns12503:0crwdne12503:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="12504" identifier="1a890a1e567fa62ced878d102c3783ad">
+        <source>Can students explain that if every comparison were to take, say, 2 seconds, then the sorting would be finished in 5x2 seconds, and not 12x2 seconds?</source>
+        <target>crwdns12504:0crwdne12504:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="12505" identifier="231094646c5390181a567fae1c089681">
+        <source>{panel end}</source>
+        <target>crwdns12505:0{panel end}crwdne12505:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="12506" identifier="b4522e14a3cf699a7916c3ab83dca67a">
+        <source>{panel type=&quot;ct-logic&quot; title=&quot;Logic&quot;}</source>
+        <target>crwdns12506:0crwdne12506:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="12507" identifier="8a5d4e8e57de3bf0fce97d68c9c1f811">
+        <source>The smallest value will always take the left path at any comparison, and from every starting point the path that always takes the left branch will lead to that node, the smallest value will therefore always end up in the left-most position at the end.</source>
+        <target>crwdns12507:0crwdne12507:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="12508" identifier="ee945efc504e5ccf8a3f1c6b2bc14938">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns12508:0crwdne12508:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[5]</note>
+      </trans-unit>
+      <trans-unit id="12509" identifier="80d7509b8e84b5ab0fb2add2bdd672ec">
+        <source>Can students explain where the smallest value will end up regardless of what the other values are?</source>
+        <target>crwdns12509:0crwdne12509:0</target>
+        <note>Context: XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="12510" identifier="7ca6bbc8b67762878b147b94e1bff61a">
+        <source>Do students understand the function of each node?</source>
+        <target>crwdns12510:0crwdne12510:0</target>
+        <note>Context: XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="12511" identifier="1b8da8a4551a42b22d6588dea38c7de9">
+        <source>Do they avoid simply going to the final node without doing the comparisons?</source>
+        <target>crwdns12511:0crwdne12511:0</target>
+        <note>Context: XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="12512" identifier="093abdb537e736ae5cbb83c1caa2e7ed">
+        <source>{panel end}</source>
+        <target>crwdns12512:0{panel end}crwdne12512:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[24]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1141" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/draw-5-pointed-star/scratch-solution.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14555" identifier="0f053122378ec18b9c546bec8d43fd50">
+        <source>when green flag clicked
+clear
+set pen size to (3)
+pen down
+repeat (5)
+  move (200) steps
+  turn cw ((180) - (36)) degrees
+end
+pen up</source>
+        <target>crwdns14555:0crwdne14555:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

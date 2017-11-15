@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1075" original="/csunplugged/topics/content/en/unplugged-programming/numeracy-unit-plan/lessons/move-to-a-number-ct-links.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="13928" identifier="29587245fea6177d2282f2ca4a93001c">
+        <source>{panel type=&quot;ct-algorithm&quot; title=&quot;Algorithmic thinking&quot;}</source>
+        <target>crwdns13928:0crwdne13928:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="13929" identifier="4aee12f29f94254f6c8553b5d29d656c">
+        <source>Creating a sequence of instructions for this lesson exercises algorithmic problem solving, as it requires students to create an algorithm to accomplish a task.</source>
+        <target>crwdns13929:0crwdne13929:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="13930" identifier="67bf3ce29042ad2b9370423621811f65">
+        <source>Computational algorithms are based on input, output, storage, sequence, selection and iteration.</source>
+        <target>crwdns13930:0crwdne13930:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="13931" identifier="434c40ccf9481ee5e4a5d76d71158cca">
+        <source>This exercise focuses on sequencing instructions.</source>
+        <target>crwdns13931:0crwdne13931:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="13932" identifier="d4789df7fc6fae273d42b3ff89b932ef">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns13932:0crwdne13932:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4</note>
+      </trans-unit>
+      <trans-unit id="13933" identifier="408af5f24113a1a93c087a3f2d49dbc9">
+        <source>Are students able to see what the result will be of their program before it is executed?
+Did students successfully create a set of step by step instructions for the robot to follow?</source>
+        <target>crwdns13933:0crwdne13933:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="13934" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns13934:0{panel end}crwdne13934:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="13935" identifier="59ced97ef8757b49683caaf57e6207bd">
+        <source>{panel type=&quot;ct-abstraction&quot; title=&quot;Abstraction&quot;}</source>
+        <target>crwdns13935:0crwdne13935:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="13936" identifier="01165cf722796dad14e0f315b28b0b68">
+        <source>In this lesson we have abstracted out writing a program and using a programming language to very basic instructions of move forward, turn left or turn right.</source>
+        <target>crwdns13936:0crwdne13936:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="13937" identifier="8b3b3275d7ee7167864b6e7c3c0b742f">
+        <source>Students write these instructions down in familiar words or symbols and give the instructions to the Bot verbally, which removes the need to know how to use a programming language and implement this on a computer.</source>
+        <target>crwdns13937:0crwdne13937:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="13938" identifier="733cb7050a69a1c45939eed914361bd2">
+        <source>This supports students to understand how sequence works in programming, without being overwhelmed with technical terminology and tools.</source>
+        <target>crwdns13938:0crwdne13938:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="13939" identifier="7ca1cce9bc789f9d38045770108363e7">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns13939:0crwdne13939:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[2]</note>
+      </trans-unit>
+      <trans-unit id="13940" identifier="206146d6dfa4024bda41027829e1f1e9">
+        <source>Can students see the stages of programming (designing the program, testing it, and debugging it), even though the environment is removed from physical devices?</source>
+        <target>crwdns13940:0crwdne13940:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="13941" identifier="76814e424523d7b9391aeb58dbd9452d">
+        <source>{panel end}</source>
+        <target>crwdns13941:0{panel end}crwdne13941:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="13942" identifier="a4adec0aaaba7c1c6402ab5f49f51dd7">
+        <source>{panel type=&quot;ct-decomposition&quot; title=&quot;Decomposition&quot;}</source>
+        <target>crwdns13942:0crwdne13942:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="13943" identifier="2bd121aa4cbadbe4f8f85818100c0f1b">
+        <source>In our everyday lives we don't often give instructions as specifically as saying &quot;Turn right, take a step forward, take a step, turn right&quot;, and it seems much more straightforward to simply say &quot;please go over there&quot;.</source>
+        <target>crwdns13943:0crwdne13943:0</target>
+        <note>Context: XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="13944" identifier="8786e1d6d0cbce293146c61fe0763a3f">
+        <source>But when we program we have to be very specific because we have to tell computers exactly how to do each thing and limit ourselves to the few instructions that they can follow.</source>
+        <target>crwdns13944:0crwdne13944:0</target>
+        <note>Context: XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="13945" identifier="e091fa2075e254ffadb520366a45a306">
+        <source>Students need to work on taking something they are familiar with, like &quot;go to that square&quot; and identifying the simplest individual steps that need to happen for someone to accomplish this.</source>
+        <target>crwdns13945:0crwdne13945:0</target>
+        <note>Context: XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="13946" identifier="3fb2d430fcb8675ba9440b816f02679b">
+        <source>Also, programs can be written incrementally; instead of trying to solve the whole problem, students were encouraged to write a few steps first, test these, and then add to them.</source>
+        <target>crwdns13946:0crwdne13946:0</target>
+        <note>Context: XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="13947" identifier="ce6de10acbf6f9b86d6813d39a47dddb">
+        <source>Breaking a program down into smaller components makes the task less overwhelming.</source>
+        <target>crwdns13947:0crwdne13947:0</target>
+        <note>Context: XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="13948" identifier="833d815031c5d5819a2b19b8c4affd40">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns13948:0crwdne13948:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[3]</note>
+      </trans-unit>
+      <trans-unit id="13949" identifier="4ef0f1801fe40fed3b9339522487e199">
+        <source>Do students work on the problem incrementally?
+Can they take the action of &quot;going to the left&quot; and break it down further to the instructions &quot;turn left, move forward&quot;?</source>
+        <target>crwdns13949:0crwdne13949:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="13950" identifier="b1c2847763ba990ce3b79c43c0f66f9e">
+        <source>{panel end}</source>
+        <target>crwdns13950:0{panel end}crwdne13950:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="13951" identifier="40ad58809f56a2bf712e4dcd43bbd5e7">
+        <source>{panel type=&quot;ct-pattern&quot; title=&quot;Generalising and patterns&quot;}</source>
+        <target>crwdns13951:0crwdne13951:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="13952" identifier="6693c2bda7566c06820c729ac11a48c2">
+        <source>Many different patterns are likely to emerge when students write their programs, and when students recognise these patterns they can reuse some of them multiple times, rather than having to figure out each step again.</source>
+        <target>crwdns13952:0crwdne13952:0</target>
+        <note>Context: XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="13953" identifier="6d2103dc0de84a866612929e1e34ebc4">
+        <source>For example, students may recognise that if they want to turn around 180° they can repeat &quot;left&quot; or &quot;right&quot; twice, and they can repeat this same sequence whenever they need to do this movement.</source>
+        <target>crwdns13953:0crwdne13953:0</target>
+        <note>Context: XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="13954" identifier="4ed7016c23dfc8881eb39d573c0f534e">
+        <source>Or if they need to move diagonally across the grid they can take the group of instructions &quot;left, go forward, right, go forward&quot; (right and left swapped depending on which way you're going) and repeat this as many times as they need to cross the board.</source>
+        <target>crwdns13954:0crwdne13954:0</target>
+        <note>Context: XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="13955" identifier="ec993088561d59b2638cc84170b056e3">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns13955:0crwdne13955:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[4]</note>
+      </trans-unit>
+      <trans-unit id="13956" identifier="1ddc7635d724652e8716e9c5bb618ed9">
+        <source>When students recognise patterns in their programs and in how they move the bot do they also see that they can reuse these instruction sets whenever they need the bot to make the same movement?</source>
+        <target>crwdns13956:0crwdne13956:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="13957" identifier="29865c6bd6223a870160b434de9c35ce">
+        <source>{panel end}</source>
+        <target>crwdns13957:0{panel end}crwdne13957:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="13958" identifier="adab59f4c0dc0ca178defb9b221dd176">
+        <source>{panel type=&quot;ct-evaluation&quot; title=&quot;Evaluation&quot;}</source>
+        <target>crwdns13958:0crwdne13958:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="13959" identifier="2dc6dfe57bd3df6b47166097976f47b0">
+        <source>There is a clear way for students to evaluate their programs in this activity, which is simply to ask themselves &quot;did it work?&quot;.</source>
+        <target>crwdns13959:0crwdne13959:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="13960" identifier="f79d3100f63b2234ac40d3f7a4d8715b">
+        <source>By testing their programs they can evaluate whether their instructions accomplish the task.</source>
+        <target>crwdns13960:0crwdne13960:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="13961" identifier="ea13c48c128d2ca29c5a282ff7ebfda1">
+        <source>There are multiple programs students could write that will get the Bot to the goal square, but some of these are probably more efficient than others.</source>
+        <target>crwdns13961:0crwdne13961:0</target>
+        <note>Context: XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="13962" identifier="eab4e8d3253176eda674992a81728199">
+        <source>This could be measure be either the number of instructions, or the amount of time used.</source>
+        <target>crwdns13962:0crwdne13962:0</target>
+        <note>Context: XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="13963" identifier="ee945efc504e5ccf8a3f1c6b2bc14938">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns13963:0crwdne13963:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[5]</note>
+      </trans-unit>
+      <trans-unit id="13964" identifier="fa3e772b4e87614eda491a61fbc1cd5e">
+        <source>Did students recognise that multiple solutions (many different sets of instructions) are possible?</source>
+        <target>crwdns13964:0crwdne13964:0</target>
+        <note>Context: XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="13965" identifier="2474336a8d506f2bee868b01b99527eb">
+        <source>Were they able to compare some and evaluate which ones use fewer commands and are the fastest?</source>
+        <target>crwdns13965:0crwdne13965:0</target>
+        <note>Context: XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="13966" identifier="37a1ef576fb42675070617ea4192985f">
+        <source>Are they able to see that measuring the time taken is a practical measure of the performance of a program, but counting the number of instructions is more consistent as it doesn't depend on who has the Bot and Tester roles.</source>
+        <target>crwdns13966:0crwdne13966:0</target>
+        <note>Context: XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="13967" identifier="0d3de6c21e2d458b6944fce764817b3f">
+        <source>{panel end}</source>
+        <target>crwdns13967:0{panel end}crwdne13967:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="13968" identifier="d167885c0977f1b6d43c86a3424970a4">
+        <source>{panel type=&quot;ct-logic&quot; title=&quot;Logic&quot;}</source>
+        <target>crwdns13968:0crwdne13968:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="13969" identifier="0f92f77c76bc1a1c984bf59f6e9ba1fb">
+        <source>When students encounter bugs in their programs they will need to logically step through their instructions one by one to locate the bug.</source>
+        <target>crwdns13969:0crwdne13969:0</target>
+        <note>Context: XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="13970" identifier="0e9dd9266f6aa79a204db62cc281ecea">
+        <source>They will need to think about what they expect to happen when each instruction is followed, and if they do not get the result they expected they will need to identify what went wrong, why it went wrong, and how to fix it.</source>
+        <target>crwdns13970:0crwdne13970:0</target>
+        <note>Context: XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="13971" identifier="8184bf83d5e41abc2df909ee8807c3a6">
+        <source>This requires students to apply their logical thinking skills</source>
+        <target>crwdns13971:0crwdne13971:0</target>
+        <note>Context: XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="13972" identifier="d2663645150b5be5b55859ada486fd3c">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns13972:0crwdne13972:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[6]</note>
+      </trans-unit>
+      <trans-unit id="13973" identifier="66967214630acb59a33a1e13e6eb0323">
+        <source>Do students go through their instructions and predict what will happen each time one is executed?</source>
+        <target>crwdns13973:0crwdne13973:0</target>
+        <note>Context: XPath: /p[25]</note>
+      </trans-unit>
+      <trans-unit id="13974" identifier="a0d503a371e667eb25d33736f08b2bdf">
+        <source>When they debug their instructions do they use a logical method to do this?</source>
+        <target>crwdns13974:0crwdne13974:0</target>
+        <note>Context: XPath: /p[25]</note>
+      </trans-unit>
+      <trans-unit id="13975" identifier="2adfee42bd9b22cb3b9d4115b7b3af0b">
+        <source>Such as stepping through each instruction one by one and checking if what they expected to happen does happen, or comparing their program to previous version which didn't seem to contain a bug?</source>
+        <target>crwdns13975:0crwdne13975:0</target>
+        <note>Context: XPath: /p[25]</note>
+      </trans-unit>
+      <trans-unit id="13976" identifier="63abbb99647d9c7305002d1c2eee9dfd">
+        <source>{panel end}</source>
+        <target>crwdns13976:0{panel end}crwdne13976:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[26]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

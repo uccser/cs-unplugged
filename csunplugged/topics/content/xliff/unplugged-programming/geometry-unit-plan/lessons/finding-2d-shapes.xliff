@@ -1,0 +1,884 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1057" original="/csunplugged/topics/content/en/unplugged-programming/geometry-unit-plan/lessons/finding-2d-shapes.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="12766" identifier="6626ea00a2acb91d8f3996266161e51f">
+        <source>Finding 2D shapes</source>
+        <target>crwdns12766:0crwdne12766:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="12767" identifier="f17e7b5da610295808d4668fae87df1b">
+        <source>Key questions</source>
+        <target>crwdns12767:0crwdne12767:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="12768" identifier="d862f3c32809b80d92428dc9d5a09ecc">
+        <source>Why is it important to give very clear instructions?
+Have you ever been given unclear instructions and ended up doing the wrong thing?</source>
+        <target>crwdns12768:0crwdne12768:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="12769" identifier="4460fd52c3ef567c91cd109657e20025">
+        <source>Lesson starter</source>
+        <target>crwdns12769:0crwdne12769:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="12770" identifier="a787da867750dd854f045efd6bb24cbd">
+        <source>{panel type=&quot;general&quot; title=&quot;Notes on resources&quot;}</source>
+        <target>crwdns12770:0crwdne12770:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="12771" identifier="01e5d0edb521bcd537b0f9e4e48606bd">
+        <source>For the squared grid, this works on painted chess boards, snakes and ladders, or can be marked on the pavement/floor with chalk/tape.</source>
+        <target>crwdns12771:0crwdne12771:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="12772" identifier="903f8c2694630e3d67a90809469a2345">
+        <source>If there isn't space for a large grid, the activity could be done on a small board, such as a chess board, the blank side of 100s boards, or a printed grid.</source>
+        <target>crwdns12772:0crwdne12772:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="12773" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns12773:0{panel end}crwdne12773:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="12774" identifier="22405e29ea3b0f96fd04d944c9f7ed26">
+        <source>{image file-path=&quot;img/topics/geo-grid.png&quot; caption=&quot;This example is a starter lesson with an object in the middle.</source>
+        <target>crwdns12774:0crwdne12774:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="12775" identifier="d878d819a1d363cc6406c902ae4f0d0b">
+        <source>The girl on the white grid is “The Bot”, the girl at the back is “The Programmer” and the boy in the green and gold is the Tester.&quot; alt=&quot;Kids standing on and around a grid looking at shapes.&quot;}</source>
+        <target>crwdns12775:0crwdne12775:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="12776" identifier="e8da9facf3ee56773d0f5fb8429c3067">
+        <source>Ideally this lesson should take place around a large grid such as:</source>
+        <target>crwdns12776:0crwdne12776:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="12777" identifier="c6a46036c72c30cec9337c8738805d4b">
+        <source>An outside painted chess board.</source>
+        <target>crwdns12777:0crwdne12777:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="12778" identifier="f06e8e365a2f2ef776a4540f74b086ab">
+        <source>Grids in your classroom carpet</source>
+        <target>crwdns12778:0crwdne12778:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="12779" identifier="43e28e27f93d6bd52422c1eeb7714ec8">
+        <source>Making masking tape grids one the floor in your classroom</source>
+        <target>crwdns12779:0crwdne12779:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="12780" identifier="398023b6d3d81250475e061c2bb7967f">
+        <source>Draw a chalk grid either in your classroom or outside</source>
+        <target>crwdns12780:0crwdne12780:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[4]</note>
+      </trans-unit>
+      <trans-unit id="12781" identifier="0fc378436c16bc9c5d3b8d74e2cfe893">
+        <source>Ask for two volunteers and give yourself and them the roles of:</source>
+        <target>crwdns12781:0crwdne12781:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="12782" identifier="62e4087c6c84c61252a04720cbb7d98a">
+        <source>&lt;strong&gt;Role 1:&lt;/strong&gt; The Developer (who writes the program) - Teacher’s role to model</source>
+        <target>crwdns12782:0crwdne12782:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="12783" identifier="2cc6277700134f7a7fdd5139d8b684f0">
+        <source>&lt;strong&gt;Role 2:&lt;/strong&gt; The Tester (who instructs the bot and looks for bugs)</source>
+        <target>crwdns12783:0crwdne12783:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="12784" identifier="ce33fb89f371e1a0c948d1195f610533">
+        <source>&lt;strong&gt;Role 3:&lt;/strong&gt; The Bot (who runs the program)</source>
+        <target>crwdns12784:0crwdne12784:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="12785" identifier="ea08f2f76d1ef4a9f87b3ba4c0221b4a">
+        <source>Lesson activities</source>
+        <target>crwdns12785:0crwdne12785:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[3]</note>
+      </trans-unit>
+      <trans-unit id="12786" identifier="fe77b33db49655c2ddeb329cebf1132d">
+        <source>{image file-path=&quot;img/topics/kidbots-geometry-plane-1.png&quot; alt=&quot;Grid with the plane in (0,1)&quot;}</source>
+        <target>crwdns12786:0crwdne12786:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="12787" identifier="1eaafad4c749e6e2b416248a1e04267c">
+        <source>Teacher: “I’m going to be the programmer, but I’m going to need your help.”
+“We are  programming “the Bot”, not just remote controlling it, because ALL the instructions are written before the Bot can follow those instructions.</source>
+        <target>crwdns12787:0crwdne12787:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="12788" identifier="bfd86872b2fb8afe5af35d411ddb6ef6">
+        <source>“Debugging is fun because you get a chance to change your program after it’s finished when you notice it’s not working how you thought it should.”</source>
+        <target>crwdns12788:0crwdne12788:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="12789" identifier="dd7744ae6d6c6770f5d857697f96407b">
+        <source>” It’s my job to write down clear instructions for the Bot, who is going to be (say the person’s name) and “The Tester” (who is...) is going to give the instructions to the Bot and be on the lookout for bugs.”</source>
+        <target>crwdns12789:0crwdne12789:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="12790" identifier="4ca02f98e20b5a310ceaabcfaba3c10c">
+        <source>“First of all I need to decide, what programming language are we are going to use for this?
+I’ve chosen arrows to represent move forward, turn left and turn right.”</source>
+        <target>crwdns12790:0crwdne12790:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="12791" identifier="791041f240926847efae717816ecac3c">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns12791:0crwdne12791:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="12792" identifier="fb15083c43b7114381c4d4fd1f2650c8">
+        <source>There will be different ways to express the same instructions (such as drawing an arrow, or writing &quot;Forward&quot;), and the key is that we need to be consistent.</source>
+        <target>crwdns12792:0crwdne12792:0</target>
+        <note>Context: XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="12793" identifier="e50825563fd881f7326cca77b9a5b891">
+        <source>The choices about the exact format of the instructions is what leads to different programming languages, and it's fine that this happens, as long as we know the meaning for the particular language we're using at the moment.</source>
+        <target>crwdns12793:0crwdne12793:0</target>
+        <note>Context: XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="12794" identifier="127a98d13ea2273a464ad5925a0625d4">
+        <source>{panel end}</source>
+        <target>crwdns12794:0{panel end}crwdne12794:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="12795" identifier="eed6246de8436c1438d14e5b54906d23">
+        <source>If students aren't sure about the left and right direction, you can print the &quot;left and right hand cards&quot;, and stick them to their shoes or have them hold them in their hands.</source>
+        <target>crwdns12795:0crwdne12795:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="12796" identifier="75114fe5a4c441e51a580451eb4a4ee6">
+        <source>Have the Bot act out the individual instructions: forward means step one square forward, and left and right mean a 90 degree turn on the spot in the square (not moving to another square).</source>
+        <target>crwdns12796:0crwdne12796:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="12797" identifier="813986b754ab64bbdce987e518b69ffc">
+        <source>Teacher: “We’re going to write our own program that gets the plane to find a triangle.</source>
+        <target>crwdns12797:0crwdne12797:0</target>
+        <note>Context: XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="12798" identifier="30dc617d805533841504b355d469ee1f">
+        <source>The goal is to get the plane to the square that the triangle  is in.</source>
+        <target>crwdns12798:0crwdne12798:0</target>
+        <note>Context: XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="12799" identifier="7e3530f945aa04fe2c81e5dd57bfb374">
+        <source>Let’s write the first two steps on the board together.”
+(Draw two forward arrows.)</source>
+        <target>crwdns12799:0crwdne12799:0</target>
+        <note>Context: XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="12800" identifier="f1503269d8ab787743fcf4118c17a17e">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns12800:0crwdne12800:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="12801" identifier="a6e738bff232e54f9047bb96f5d86d70">
+        <source>To work it out students may initially need to see the program in action, so place the arrows within the grid to demonstrate what the plane will do.</source>
+        <target>crwdns12801:0crwdne12801:0</target>
+        <note>Context: XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="12802" identifier="d5fbeadde7386d74c9e26dba740631fd">
+        <source>It’s also a great technique to write the first few instructions of the code, test it and then add to it.</source>
+        <target>crwdns12802:0crwdne12802:0</target>
+        <note>Context: XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="12803" identifier="4bc716a4a867ec00807554349ef587cc">
+        <source>If you are putting arrows on the grid, the turning arrows will also need a forward arrow in the same box, or you can put the forward arrows on the line between boxes, which makes it clearer what it does.</source>
+        <target>crwdns12803:0crwdne12803:0</target>
+        <note>Context: XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="12804" identifier="093abdb537e736ae5cbb83c1caa2e7ed">
+        <source>{panel end}</source>
+        <target>crwdns12804:0{panel end}crwdne12804:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="12805" identifier="185d602f976e54697e6ffea4a8611cb6">
+        <source>“So let’s try that, and see what happens.</source>
+        <target>crwdns12805:0crwdne12805:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[25]</note>
+      </trans-unit>
+      <trans-unit id="12806" identifier="e135c1e782c0d8a66d9f40eaa7ab9867">
+        <source>Tester - could you please take these instructions and pass them onto the the Bot.</source>
+        <target>crwdns12806:0crwdne12806:0</target>
+        <note>Context: XPath: /p[26]</note>
+      </trans-unit>
+      <trans-unit id="12807" identifier="a5b3015f5325c57c0a0754d955be4836">
+        <source>Be ready to underline what doesn’t work when you see the Bot doing something that doesn’t look right and hand the whiteboard back to me to figure out how to fix the bug.</source>
+        <target>crwdns12807:0crwdne12807:0</target>
+        <note>Context: XPath: /p[26]</note>
+      </trans-unit>
+      <trans-unit id="12808" identifier="f23aa2bb7961c05774d7a63b64f58f12">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns12808:0crwdne12808:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[27]</note>
+      </trans-unit>
+      <trans-unit id="12809" identifier="4cb4c1773b713d5eb11f06901e6337f0">
+        <source>A key point in this activity is that the instructions are all written before they are tested.</source>
+        <target>crwdns12809:0crwdne12809:0</target>
+        <note>Context: XPath: /p[28]</note>
+      </trans-unit>
+      <trans-unit id="12810" identifier="3a21a667c94a5ec47cfff6624d155845">
+        <source>We don't allow anyone to give additional instructions to the Bot; they must follow exactly what is written (which can sometimes be humorous if they head off in the wrong direction.)
+This is what happens when programming: you write instructions for a program, and when you run the program, they are all executed without the programmer intervening.</source>
+        <target>crwdns12810:0crwdne12810:0</target>
+        <note>Context: XPath: /p[28]</note>
+      </trans-unit>
+      <trans-unit id="12811" identifier="cb9e7a3b62e13cd343027af2a3b50518">
+        <source>A programmer needs to visualise what would happen when they are writing the instructions; during testing they will find out if what they envisaged was correct!</source>
+        <target>crwdns12811:0crwdne12811:0</target>
+        <note>Context: XPath: /p[28]</note>
+      </trans-unit>
+      <trans-unit id="12812" identifier="9aca39d85dbd2f8ca5905d048686626f">
+        <source>{panel end}</source>
+        <target>crwdns12812:0{panel end}crwdne12812:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[29]</note>
+      </trans-unit>
+      <trans-unit id="12813" identifier="079c3782ac2ef7005c2b807b9fe37e88">
+        <source>Teacher: “Bot - please get ready to receive the instructions for the tester.”
+(The bot can carry a toy or token representing the plane; or they can imagine that they are guiding him).</source>
+        <target>crwdns12813:0crwdne12813:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[30]</note>
+      </trans-unit>
+      <trans-unit id="12814" identifier="263322ee0817969e1d5aad6f9bbd718d">
+        <source>Tester then reads off the board: “move forward, move forward.”</source>
+        <target>crwdns12814:0crwdne12814:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[31]</note>
+      </trans-unit>
+      <trans-unit id="12815" identifier="6ecf2426f35dc4f3e28cee0083705150">
+        <source>{image file-path=&quot;img/topics/kidbots-geometry-plane-2.gif&quot;}</source>
+        <target>crwdns12815:0crwdne12815:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[32]</note>
+      </trans-unit>
+      <trans-unit id="12816" identifier="544184d0d3e4ec540905ae0c02495c27">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns12816:0crwdne12816:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[33]</note>
+      </trans-unit>
+      <trans-unit id="12817" identifier="005df77f2d20d58ca81a25d6e46c7182">
+        <source>At this point you could question whether or not a “Stop” instruction is needed.</source>
+        <target>crwdns12817:0crwdne12817:0</target>
+        <note>Context: XPath: /p[34]</note>
+      </trans-unit>
+      <trans-unit id="12818" identifier="8f26c40d4fc6da79c54e0602263fe734">
+        <source>Students should be able to come up with the reasoning that the program stops automatically because there are no more instructions.</source>
+        <target>crwdns12818:0crwdne12818:0</target>
+        <note>Context: XPath: /p[34]</note>
+      </trans-unit>
+      <trans-unit id="12819" identifier="2a766ecb8638909d0767063b2809c3f4">
+        <source>{panel end}</source>
+        <target>crwdns12819:0{panel end}crwdne12819:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[35]</note>
+      </trans-unit>
+      <trans-unit id="12820" identifier="da7da3af37b55ee5fb2e4fad264418e2">
+        <source>“Tester,  did the program run as you expected it to?&quot;</source>
+        <target>crwdns12820:0crwdne12820:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[36]</note>
+      </trans-unit>
+      <trans-unit id="12821" identifier="4ca9930cb5717327504520dce0bb7913">
+        <source>Depending on the tester's response, if it did then carry on programming, otherwise fix what didn’t work and run that again.</source>
+        <target>crwdns12821:0crwdne12821:0</target>
+        <note>Context: XPath: /ul[2]/li/em</note>
+      </trans-unit>
+      <trans-unit id="12822" identifier="42b319e35f28751846beed5ac52c4403">
+        <source>In this example the plane should be in the square diagonally below the triangle.</source>
+        <target>crwdns12822:0crwdne12822:0</target>
+        <note>Context: XPath: /ul[2]/li/em</note>
+      </trans-unit>
+      <trans-unit id="12823" identifier="bf7737f6a9e3c97e6263018e0a2e1b7f">
+        <source>Now let’s add to it. What would we program next?</source>
+        <target>crwdns12823:0crwdne12823:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[37]</note>
+      </trans-unit>
+      <trans-unit id="12824" identifier="3f8f62fd4a121bd9f4a85633877bd44f">
+        <source>Point to where the next piece of code needs to be added and add a move forward and turn left, turn left.</source>
+        <target>crwdns12824:0crwdne12824:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[38]</note>
+      </trans-unit>
+      <trans-unit id="12825" identifier="90b01b571de3e4ece790b47ec4d258e9">
+        <source>{image file-path=&quot;img/topics/kidbots-geometry-plane-3.gif&quot;}</source>
+        <target>crwdns12825:0crwdne12825:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[39]</note>
+      </trans-unit>
+      <trans-unit id="12826" identifier="e33da0663a0916e0587fd2310836ed6e">
+        <source>I think it’s ready to test now.</source>
+        <target>crwdns12826:0crwdne12826:0</target>
+        <note>Context: XPath: /p[40]</note>
+      </trans-unit>
+      <trans-unit id="12827" identifier="be3470f045a6534f8f2d7bc93b96bc8a">
+        <source>Tester please test my program (the programmer hands the program on the whiteboard to the tester and the bot should return to the starting square ready to rerun the program).</source>
+        <target>crwdns12827:0crwdne12827:0</target>
+        <note>Context: XPath: /p[40]</note>
+      </trans-unit>
+      <trans-unit id="12828" identifier="033d8e0789911c0c26c2554ab907d45f">
+        <source>Teacher:  Remember Tester, it’s your job to find any “bugs” in my program.</source>
+        <target>crwdns12828:0crwdne12828:0</target>
+        <note>Context: XPath: /p[41]</note>
+      </trans-unit>
+      <trans-unit id="12829" identifier="bea9d17f6e61f950bfc9eacfbfe84594">
+        <source>A bug is when my program isn’t doing what was expected.</source>
+        <target>crwdns12829:0crwdne12829:0</target>
+        <note>Context: XPath: /p[41]</note>
+      </trans-unit>
+      <trans-unit id="12830" identifier="22c5792db6dab3dfebc0a1047ca324e8">
+        <source>Your job is to draw a line under the piece of code where they notice the instructions seem to be going wrong.</source>
+        <target>crwdns12830:0crwdne12830:0</target>
+        <note>Context: XPath: /p[41]</note>
+      </trans-unit>
+      <trans-unit id="12831" identifier="8768fa5dcec2394e4a8f6abb681410e3">
+        <source>You can stop the Bot at the point that you think there is a bug.</source>
+        <target>crwdns12831:0crwdne12831:0</target>
+        <note>Context: XPath: /p[41]</note>
+      </trans-unit>
+      <trans-unit id="12832" identifier="36b0633d7cd8d4f7820c69954fb0017f">
+        <source>&lt;strong&gt;Tester&lt;/strong&gt; then reads the instructions in the program off the board and the Bot executes them as they are read.</source>
+        <target>crwdns12832:0crwdne12832:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[42]</note>
+      </trans-unit>
+      <trans-unit id="12833" identifier="d86555bbd05c67791a9fe159c0497f51">
+        <source>Move forward</source>
+        <target>crwdns12833:0crwdne12833:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[43]</note>
+      </trans-unit>
+      <trans-unit id="12834" identifier="97d7640ff1391ea388ba487b9871eaeb">
+        <source>Move forward</source>
+        <target>crwdns12834:0crwdne12834:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[44]</note>
+      </trans-unit>
+      <trans-unit id="12835" identifier="32a65c2f5e36c69737ef42d7578d4fc9">
+        <source>Move forward</source>
+        <target>crwdns12835:0crwdne12835:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[45]</note>
+      </trans-unit>
+      <trans-unit id="12836" identifier="09cd3382b098a19fe0ec0d9fe8e9dd95">
+        <source>Turn left</source>
+        <target>crwdns12836:0crwdne12836:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[46]</note>
+      </trans-unit>
+      <trans-unit id="12837" identifier="19df00c0b8b801481e410664c5e370af">
+        <source>Turn left</source>
+        <target>crwdns12837:0crwdne12837:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[47]</note>
+      </trans-unit>
+      <trans-unit id="12838" identifier="87f10779be2b1fde0db1a2c10ebd3fee">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns12838:0crwdne12838:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[48]</note>
+      </trans-unit>
+      <trans-unit id="12839" identifier="e90d26187b78b6a4365c9bc2da825a15">
+        <source>The tester should underline under the second turn left because the plane will have turned around twice on the spot rather than turning once and going forward again.</source>
+        <target>crwdns12839:0crwdne12839:0</target>
+        <note>Context: XPath: /p[49]</note>
+      </trans-unit>
+      <trans-unit id="12840" identifier="91f276710b31e96cc971913f92105657">
+        <source>(Which is what is needed to get to the triangle.)</source>
+        <target>crwdns12840:0crwdne12840:0</target>
+        <note>Context: XPath: /p[49]</note>
+      </trans-unit>
+      <trans-unit id="12841" identifier="813e9fb8292ee73ba3e2915a799e8e69">
+        <source>{panel end}</source>
+        <target>crwdns12841:0{panel end}crwdne12841:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[50]</note>
+      </trans-unit>
+      <trans-unit id="12842" identifier="b053389baf9ac8ee665137d4df68a69d">
+        <source>Teacher: “Excellent, you found a bug!</source>
+        <target>crwdns12842:0crwdne12842:0</target>
+        <note>Context: XPath: /p[51]</note>
+      </trans-unit>
+      <trans-unit id="12843" identifier="91b3ffc5010a4f2830ed4f1139ebb591">
+        <source>I love finding bugs, so I can start solving them.</source>
+        <target>crwdns12843:0crwdne12843:0</target>
+        <note>Context: XPath: /p[51]</note>
+      </trans-unit>
+      <trans-unit id="12844" identifier="888c052a76ebcc2f0dd84a00a5cef7ea">
+        <source>Now class, let’s work through this together to find my bug.</source>
+        <target>crwdns12844:0crwdne12844:0</target>
+        <note>Context: XPath: /p[51]</note>
+      </trans-unit>
+      <trans-unit id="12845" identifier="c67e069209f999e504e18b1a02273764">
+        <source>Tester, you’ve done a great job finding it, but it’s the programmer’s job to find and fix the bug.”</source>
+        <target>crwdns12845:0crwdne12845:0</target>
+        <note>Context: XPath: /p[51]</note>
+      </trans-unit>
+      <trans-unit id="12846" identifier="4970fce6b8192bfbc535fbb70c084076">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns12846:0crwdne12846:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[52]</note>
+      </trans-unit>
+      <trans-unit id="12847" identifier="9f4bcd0d1c351b39bd59de089a4938ed">
+        <source>If the class can’t identify how the program needs debugging then talk through each step and model it with the plane.</source>
+        <target>crwdns12847:0crwdne12847:0</target>
+        <note>Context: XPath: /p[53]</note>
+      </trans-unit>
+      <trans-unit id="12848" identifier="552ab407e615e7b781db40edd8318c0b">
+        <source>Did move forward make sense?</source>
+        <target>crwdns12848:0crwdne12848:0</target>
+        <note>Context: XPath: /p[53]</note>
+      </trans-unit>
+      <trans-unit id="12849" identifier="75373c7e964bcdb4e18e12a15883358e">
+        <source>Did move forward a second time make sense?</source>
+        <target>crwdns12849:0crwdne12849:0</target>
+        <note>Context: XPath: /p[53]</note>
+      </trans-unit>
+      <trans-unit id="12850" identifier="c834025d3687dd6df0cbfbb758a1e982">
+        <source>Did move forward a third time make sense?</source>
+        <target>crwdns12850:0crwdne12850:0</target>
+        <note>Context: XPath: /p[53]</note>
+      </trans-unit>
+      <trans-unit id="12851" identifier="4a34db700654d72c1d729819c159727d">
+        <source>Did turn left make sense?</source>
+        <target>crwdns12851:0crwdne12851:0</target>
+        <note>Context: XPath: /p[53]</note>
+      </trans-unit>
+      <trans-unit id="12852" identifier="01eee6c072ea5a9439f03c31a09b7b21">
+        <source>What about turn left again?</source>
+        <target>crwdns12852:0crwdne12852:0</target>
+        <note>Context: XPath: /p[53]</note>
+      </trans-unit>
+      <trans-unit id="12853" identifier="1ba270808be12985cec9e88343a5ea30">
+        <source>No?</source>
+        <target>crwdns12853:0crwdne12853:0</target>
+        <note>Context: XPath: /p[53]</note>
+      </trans-unit>
+      <trans-unit id="12854" identifier="6da55c2f6105f63c03b503a2c7de7838">
+        <source>Okay I think we found our bug.</source>
+        <target>crwdns12854:0crwdne12854:0</target>
+        <note>Context: XPath: /p[53]</note>
+      </trans-unit>
+      <trans-unit id="12855" identifier="c988dc38832e6d0c02d1e3a09465f505">
+        <source>Let’s draw a line under that and think about what we would change it to?</source>
+        <target>crwdns12855:0crwdne12855:0</target>
+        <note>Context: XPath: /p[53]</note>
+      </trans-unit>
+      <trans-unit id="12856" identifier="e9c68954b24c2aa562a3b265676ea0e3">
+        <source>Move forward?</source>
+        <target>crwdns12856:0crwdne12856:0</target>
+        <note>Context: XPath: /p[53]</note>
+      </trans-unit>
+      <trans-unit id="12857" identifier="d5903c6db2fc0f178b405c0161a28c61">
+        <source>Let’s test it.</source>
+        <target>crwdns12857:0crwdne12857:0</target>
+        <note>Context: XPath: /p[53]</note>
+      </trans-unit>
+      <trans-unit id="12858" identifier="fe371fa35ce8a700d5044ebdf05dc6b8">
+        <source>{panel end}</source>
+        <target>crwdns12858:0{panel end}crwdne12858:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[54]</note>
+      </trans-unit>
+      <trans-unit id="12859" identifier="6a77a46c99fa4149c51b86e3d9fda461">
+        <source>Once the bug has been identified then ask the Tester to test it again; ask the Bot to pick up the plane and go back to the start position, then the Tester reads them the instructions.</source>
+        <target>crwdns12859:0crwdne12859:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[55]</note>
+      </trans-unit>
+      <trans-unit id="12860" identifier="675918c396f71fb88bc5657e4bebd48d">
+        <source>{image file-path=&quot;img/topics/kidbots-geometry-plane-4.gif&quot;}</source>
+        <target>crwdns12860:0crwdne12860:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[56]</note>
+      </trans-unit>
+      <trans-unit id="12861" identifier="5baccf647c027f61f10601ff4e352346">
+        <source>Did we successfully program the plane to get to the triangle? How do we know?</source>
+        <target>crwdns12861:0crwdne12861:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[57]</note>
+      </trans-unit>
+      <trans-unit id="12862" identifier="aa3d5fb1c37384e7cffec3ee1545d8fc">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns12862:0crwdne12862:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[58]</note>
+      </trans-unit>
+      <trans-unit id="12863" identifier="5fbdb05706bfd87b6d5d75b760082e32">
+        <source>We successfully programmed the plane to find the triangle because the plane and the triangle are in the same square.</source>
+        <target>crwdns12863:0crwdne12863:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[59]</note>
+      </trans-unit>
+      <trans-unit id="12864" identifier="5b1b66dde85cd99677d4e459730556a3">
+        <source>{panel end}</source>
+        <target>crwdns12864:0{panel end}crwdne12864:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[60]</note>
+      </trans-unit>
+      <trans-unit id="12865" identifier="683470e8b0feef3261464f219e3fade5">
+        <source>Are there other ways we could have programmed the plane to get to the triangle?</source>
+        <target>crwdns12865:0crwdne12865:0</target>
+        <note>Context: XPath: /p[61]</note>
+      </trans-unit>
+      <trans-unit id="12866" identifier="9f9eb94adbed1291051ff7d244a781d5">
+        <source>(There will be lots of ways; for example, Left, Forward, Right, Forward, Forward, Forward will work.)
+Discuss the programming options and test each one.</source>
+        <target>crwdns12866:0crwdne12866:0</target>
+        <note>Context: XPath: /p[61]</note>
+      </trans-unit>
+      <trans-unit id="12867" identifier="f91d36ca4b35505d79c3eac9cdcd47ad">
+        <source>What if we want the plane to get to the triangle, and then bring them back to safety?</source>
+        <target>crwdns12867:0crwdne12867:0</target>
+        <note>Context: XPath: /p[61]</note>
+      </trans-unit>
+      <trans-unit id="12868" identifier="9c7ecaf57123da36e7358ffef141a564">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns12868:0crwdne12868:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[62]</note>
+      </trans-unit>
+      <trans-unit id="12869" identifier="7e0bb3a821b61f616ad9cb145b01dfda">
+        <source>In programming, there are numerous ways to program the same thing.</source>
+        <target>crwdns12869:0crwdne12869:0</target>
+        <note>Context: XPath: /p[63]</note>
+      </trans-unit>
+      <trans-unit id="12870" identifier="1584bdf0f3779c4de800a74b9da058a5">
+        <source>Some might be more efficient than others, but all are correct if they achieve the desired result.</source>
+        <target>crwdns12870:0crwdne12870:0</target>
+        <note>Context: XPath: /p[63]</note>
+      </trans-unit>
+      <trans-unit id="12871" identifier="a82f4f37e53960e1a38b40a58226163d">
+        <source>For example a student might program the plane to go around the outside of the grid and then go and get to the triangle.</source>
+        <target>crwdns12871:0crwdne12871:0</target>
+        <note>Context: XPath: /p[63]</note>
+      </trans-unit>
+      <trans-unit id="12872" identifier="da51f1ba456dce1612c0462d2a831468">
+        <source>This is a correct solution, but there’s a lot of extra code that’s not necessary.</source>
+        <target>crwdns12872:0crwdne12872:0</target>
+        <note>Context: XPath: /p[63]</note>
+      </trans-unit>
+      <trans-unit id="12873" identifier="ac83af03c3db701772560b73ef4f23de">
+        <source>More commonly, two programmers might come up with programs that take a similar amount of time to achieve the same result (for example, &quot;Forward, Left, Forward, Right&quot; and &quot;Left, Forward, Right, Forward&quot; get the Bot to the same place and orientation; both are good answers).</source>
+        <target>crwdns12873:0crwdne12873:0</target>
+        <note>Context: XPath: /p[63]</note>
+      </trans-unit>
+      <trans-unit id="12874" identifier="328b3ba7fdd6a3475addfa55ee2b65a1">
+        <source>An important concept in programming is that there can be multiple good answers; there is rarely a single solution that is the best one, and this means that if a student's work looks different to a model answer that might be available, it isn't necessarily wrong.</source>
+        <target>crwdns12874:0crwdne12874:0</target>
+        <note>Context: XPath: /p[63]</note>
+      </trans-unit>
+      <trans-unit id="12875" identifier="ba053135fb977fd6736355af5310c5d4">
+        <source>If it achieves the intended outcome, but gets there in a different way it is still correct.</source>
+        <target>crwdns12875:0crwdne12875:0</target>
+        <note>Context: XPath: /p[63]</note>
+      </trans-unit>
+      <trans-unit id="12876" identifier="653de8c738fe1662cb2a391ce582df0b">
+        <source>{panel end}</source>
+        <target>crwdns12876:0{panel end}crwdne12876:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[64]</note>
+      </trans-unit>
+      <trans-unit id="12877" identifier="1263e4c908a3f219ebee3281a1ae9abe">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns12877:0crwdne12877:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[65]</note>
+      </trans-unit>
+      <trans-unit id="12878" identifier="ab57fff1eef7c1fab24421a885327dc5">
+        <source>Either set up your students to be working around the outside of your large grid, or you can use a smaller grid like a chessboard or the back of a 100s board (or print the one provided with this lesson), in which case the Bot moves a counter on the board instead of walking around the grid.</source>
+        <target>crwdns12878:0crwdne12878:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[66]</note>
+      </trans-unit>
+      <trans-unit id="12879" identifier="2af2e4bd96fdfe97669fde173c3faf76">
+        <source>If you have multiple small grids, students can work independently in groups of three (Programmer, Tester, Bot).</source>
+        <target>crwdns12879:0crwdne12879:0</target>
+        <note>Context: XPath: /p[67]</note>
+      </trans-unit>
+      <trans-unit id="12880" identifier="db9f5648f37f61484296aa218a07f90b">
+        <source>If you are using a large grid, one group of students can work on their program while another tests theirs.</source>
+        <target>crwdns12880:0crwdne12880:0</target>
+        <note>Context: XPath: /p[67]</note>
+      </trans-unit>
+      <trans-unit id="12881" identifier="29abf1d274edf9d56c0ce226fc4d89d3">
+        <source>Each group gets to try their program once, and then the next group has a turn while the previous one starts working on debugging their program.</source>
+        <target>crwdns12881:0crwdne12881:0</target>
+        <note>Context: XPath: /p[67]</note>
+      </trans-unit>
+      <trans-unit id="12882" identifier="6b59232f14e53a7c7236088674e3e769">
+        <source>{panel end}</source>
+        <target>crwdns12882:0{panel end}crwdne12882:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[68]</note>
+      </trans-unit>
+      <trans-unit id="12883" identifier="b17745c7dd3fdb4804a2c4484fbc37ab">
+        <source>Have the students choose their own 2D shapes and a toy to program to find the shapes.</source>
+        <target>crwdns12883:0crwdne12883:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[69]</note>
+      </trans-unit>
+      <trans-unit id="12884" identifier="5e31c35fd02e7c24d211a551c0f3685a">
+        <source>Place the toy on a square on the edge of the grid, facing inwards.</source>
+        <target>crwdns12884:0crwdne12884:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li/p</note>
+      </trans-unit>
+      <trans-unit id="12885" identifier="35587b33508590eb17090bb84a8021e5">
+        <source>Place the 2D shapes inside the grid.</source>
+        <target>crwdns12885:0crwdne12885:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="12886" identifier="ecfb53ff3695f156f21340dfabe77190">
+        <source>The Tester says a shape for the toy to be programmed to go to.</source>
+        <target>crwdns12886:0crwdne12886:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[3]/p</note>
+      </trans-unit>
+      <trans-unit id="12887" identifier="93ec599006a8afd19f17fdc010c5a711">
+        <source>The Programmer writes down the program on a whiteboard.</source>
+        <target>crwdns12887:0crwdne12887:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[4]/p</note>
+      </trans-unit>
+      <trans-unit id="12888" identifier="e6296cef62db05498527dc0896789092">
+        <source>The Tester then takes the whiteboard and a different coloured whiteboard pen.</source>
+        <target>crwdns12888:0crwdne12888:0</target>
+        <note>Context: XPath: /ol/li[5]/p</note>
+      </trans-unit>
+      <trans-unit id="12889" identifier="ac97dfb92f1f2f2fd449ffa7c7ad78e3">
+        <source>The Tester tells the Bot each instruction in the program.</source>
+        <target>crwdns12889:0crwdne12889:0</target>
+        <note>Context: XPath: /ol/li[5]/p</note>
+      </trans-unit>
+      <trans-unit id="12890" identifier="beac80aa70988308219dfb9295bb40f9">
+        <source>The Tester puts a tick next to the code that is correct and underlines when the code is different to what the Bot should be doing.</source>
+        <target>crwdns12890:0crwdne12890:0</target>
+        <note>Context: XPath: /ol/li[5]/p</note>
+      </trans-unit>
+      <trans-unit id="12891" identifier="3ab745e647e6621011c7a9f9b8404123">
+        <source>If this happens the Tester says “Stop” and the Bot stops and goes back to the start.</source>
+        <target>crwdns12891:0crwdne12891:0</target>
+        <note>Context: XPath: /ol/li[5]/p</note>
+      </trans-unit>
+      <trans-unit id="12892" identifier="f6e5b6404241af004386cd2e80f60945">
+        <source>The Tester gives the whiteboard to the Programmer, who then debugs the code, and gives the Tester a revised version.</source>
+        <target>crwdns12892:0crwdne12892:0</target>
+        <note>Context: XPath: /ol/li[5]/p</note>
+      </trans-unit>
+      <trans-unit id="12893" identifier="99c20e112cee25edf3f97fb7ce8d13f4">
+        <source>Repeat step 6 until the program is free of bugs and works as intended.</source>
+        <target>crwdns12893:0crwdne12893:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[6]/p</note>
+      </trans-unit>
+      <trans-unit id="12894" identifier="87ff488bf289b0df6a8f364bc5c2a66d">
+        <source>Change roles and move the Bot toy and the 2D shapes until everyone has had a turn.</source>
+        <target>crwdns12894:0crwdne12894:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[7]/p</note>
+      </trans-unit>
+      <trans-unit id="12895" identifier="16dd1a15dc34ba5f42748447717d58d8">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns12895:0crwdne12895:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[70]</note>
+      </trans-unit>
+      <trans-unit id="12896" identifier="3f6b55f5176f31c353bcdfc58e2f11d8">
+        <source>If you notice that your students need support to visualise how to write the instructions you could use a whiteboard pen to scaffold the instructions, or the arrows provided.</source>
+        <target>crwdns12896:0crwdne12896:0</target>
+        <note>Context: XPath: /p[71]</note>
+      </trans-unit>
+      <trans-unit id="12897" identifier="352d4eeeeb27ecb95b7c88215be61920">
+        <source>This supports students to visualise what they want to program.</source>
+        <target>crwdns12897:0crwdne12897:0</target>
+        <note>Context: XPath: /p[71]</note>
+      </trans-unit>
+      <trans-unit id="12898" identifier="2e1956195331bffc3515a46932ac4ea5">
+        <source>{panel end}</source>
+        <target>crwdns12898:0{panel end}crwdne12898:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[72]</note>
+      </trans-unit>
+      <trans-unit id="12899" identifier="8f6373ef3b0cb4433ecc66dd75f6546c">
+        <source>The next challenge:</source>
+        <target>crwdns12899:0crwdne12899:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[4]</note>
+      </trans-unit>
+      <trans-unit id="12900" identifier="14cf6aea9c2eb341cf9cfeb97ece7a8b">
+        <source>Add barriers to the grid so that the path is more complex because it needs to avoid the barriers.
+This could be blocks blocking the way.</source>
+        <target>crwdns12900:0crwdne12900:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[73]</note>
+      </trans-unit>
+      <trans-unit id="12901" identifier="e510ecbff0c75beb15c54ac74fa1d9c0">
+        <source>{image file-path=&quot;img/topics/kidbots-geometry-plane-5.png&quot;}</source>
+        <target>crwdns12901:0crwdne12901:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[74]</note>
+      </trans-unit>
+      <trans-unit id="12902" identifier="f525ba6eca4031bed40b6db47c82b446">
+        <source>Other challenges:</source>
+        <target>crwdns12902:0crwdne12902:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[5]</note>
+      </trans-unit>
+      <trans-unit id="12903" identifier="ec28b92b4a23c9f45bcf33d4faf32f95">
+        <source>Have groups program the rescue without using the left hand turn (i.e. the only instructions are forward and right turn.)
+Scaffold the students to realise that a left hand turn can be achieved by doing three right turn instructions.</source>
+        <target>crwdns12903:0crwdne12903:0</target>
+        <note>Context: XPath: /p[75]</note>
+      </trans-unit>
+      <trans-unit id="12904" identifier="2df7d41d234f77cae2713adcf92a547f">
+        <source>Then challenge them to program with a Left turn but no right turn.</source>
+        <target>crwdns12904:0crwdne12904:0</target>
+        <note>Context: XPath: /p[75]</note>
+      </trans-unit>
+      <trans-unit id="12905" identifier="c36dc2f8a9058def27e588cd9dccd3e9">
+        <source>Ask if they can write programs with only the right and left turn instructions (i.e. no forward instruction)?
+(This isn't possible, as you would only be able to turn around on one square.)</source>
+        <target>crwdns12905:0crwdne12905:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[76]</note>
+      </trans-unit>
+      <trans-unit id="12906" identifier="be2718af51c2e7f56240960c4a5753fb">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns12906:0crwdne12906:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[77]</note>
+      </trans-unit>
+      <trans-unit id="12907" identifier="70ee22f6f9007b300c63a4eba806a123">
+        <source>Eliminating one of the turn instructions highlights that different instruction sets can achieve the same thing, although some may be more convenient than others (for example, there are many different programming languages, but they can all do essentially the same kind of computation; it's just that some are better suited to some purposes than others.)</source>
+        <target>crwdns12907:0crwdne12907:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[78]</note>
+      </trans-unit>
+      <trans-unit id="12908" identifier="af2304c2550dd4fe1a81e107f3d26dc1">
+        <source>Implementing fewer instructions simplifies building a computer, and this can make it either faster or cheaper.</source>
+        <target>crwdns12908:0crwdne12908:0</target>
+        <note>Context: XPath: /p[79]</note>
+      </trans-unit>
+      <trans-unit id="12909" identifier="5a7bc6215089e3e0771e3c50e7fbd299">
+        <source>For example, a very simple computer might have an addition instruction, but no multiply instruction; but if you need to do multiplication it can be achieved by doing lots of additions.</source>
+        <target>crwdns12909:0crwdne12909:0</target>
+        <note>Context: XPath: /p[79]</note>
+      </trans-unit>
+      <trans-unit id="12910" identifier="bee307c6b07197a44f25679808a6acaf">
+        <source>Many common processors these days tend to have a small number of simple instructions (they are called Reduced Instruction Set Computers, or RISC) because it's more efficient than having lots of instructions (Complex Instruction Set Computers, or CISC).</source>
+        <target>crwdns12910:0crwdne12910:0</target>
+        <note>Context: XPath: /p[79]</note>
+      </trans-unit>
+      <trans-unit id="12911" identifier="e1c006f651dc197dc2935457f93ebd89">
+        <source>{panel end}</source>
+        <target>crwdns12911:0{panel end}crwdne12911:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[80]</note>
+      </trans-unit>
+      <trans-unit id="12912" identifier="441fe06e71d44c0ffce791bf48c5fb7a">
+        <source>Applying what we have just learnt</source>
+        <target>crwdns12912:0crwdne12912:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[6]</note>
+      </trans-unit>
+      <trans-unit id="12913" identifier="3dcc62d503bf2e31a140345111d55c4a">
+        <source>It’s quite common to think that programming is some kind of special talent that people either have or don’t have, but this isn't so!</source>
+        <target>crwdns12913:0crwdne12913:0</target>
+        <note>Context: XPath: /p[81]</note>
+      </trans-unit>
+      <trans-unit id="12914" identifier="9d1edbf4fb96944da7ac1edf705a29c5">
+        <source>Like all skills, programming is something you learn through practise, making mistakes, and learning from them.</source>
+        <target>crwdns12914:0crwdne12914:0</target>
+        <note>Context: XPath: /p[81]</note>
+      </trans-unit>
+      <trans-unit id="12915" identifier="5a6a5548a27f36ca141d7e7fedfe8a88">
+        <source>An important skill that programmers need is to be able to communicate with others, especially when they are working out what the program should do; they also need to be persistent when finding and fixing bugs.</source>
+        <target>crwdns12915:0crwdne12915:0</target>
+        <note>Context: XPath: /p[81]</note>
+      </trans-unit>
+      <trans-unit id="12916" identifier="94a44c44ae652da9501bb075ce6dc086">
+        <source>Bugs happen all the time in programming, so being able to identify where the bug occurs and problem solving how to fix it is incredibly important.</source>
+        <target>crwdns12916:0crwdne12916:0</target>
+        <note>Context: XPath: /p[81]</note>
+      </trans-unit>
+      <trans-unit id="12917" identifier="c67c0aefdd6b7549af808fc89f6c98e1">
+        <source>It doesn’t matter how experienced you are at programming, there will always be bugs that need to be found, and fixed.</source>
+        <target>crwdns12917:0crwdne12917:0</target>
+        <note>Context: XPath: /p[81]</note>
+      </trans-unit>
+      <trans-unit id="12918" identifier="77c1270ecd4bbdf84af07d17162ba996">
+        <source>That’s why the word “debugging” is so important to programmers.</source>
+        <target>crwdns12918:0crwdne12918:0</target>
+        <note>Context: XPath: /p[81]</note>
+      </trans-unit>
+      <trans-unit id="12919" identifier="cf61f6628b815b30d841cb026ee16e0f">
+        <source>2D programming challenges</source>
+        <target>crwdns12919:0crwdne12919:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[7]</note>
+      </trans-unit>
+      <trans-unit id="12920" identifier="c1ac22a71588fff7ec6d707d14423e89">
+        <source>Simple robotic toys like the &quot;Bee-Bot&quot; have a very similar set of commands, and can be used to follow up.</source>
+        <target>crwdns12920:0crwdne12920:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[82]</note>
+      </trans-unit>
+      <trans-unit id="12921" identifier="0da2fe42124cf064b4fdd9dad7c1bb19">
+        <source>Lesson reflection</source>
+        <target>crwdns12921:0crwdne12921:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[8]</note>
+      </trans-unit>
+      <trans-unit id="12922" identifier="2d05a7683586dfc0b75f79d25ae7d865">
+        <source>Who are the students who can visualise what needs to be programmed?</source>
+        <target>crwdns12922:0crwdne12922:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[83]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

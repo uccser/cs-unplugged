@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="782" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/binary-numbers-using-variable-operator-repeat/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8597" identifier="f3b5fe6b13c58314d4f8a7210242abe3">
+        <source>Click on the green flag to see the expected output of your program.</source>
+        <target>crwdns8597:0crwdne8597:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8598" identifier="6b1eab78ad89e6963844d720703cbd04">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/148423848/?autostart=false&quot;}</source>
+        <target>crwdns8598:0crwdne8598:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="8599" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns8599:0crwdne8599:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="8600" identifier="85d5dcbf160def5b280945f99434c49a">
+        <source>when green flag clicked
+
+set [number of dots v] to [1]
+
+repeat (5)
+end
+
+say (number of dots) for (1) secs
+
+set [number of dots v] to ((number of dots) * (2))</source>
+        <target>crwdns8600:0[1]crwdne8600:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="8601" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns8601:0{panel end}crwdne8601:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1183" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/draw-rhombus/draw-rhombus.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14758" identifier="67ee93cf0272697e0e1e3e94bb1ca9a9">
+        <source>Draw irregular polygons (draw a rhombus)</source>
+        <target>crwdns14758:0crwdne14758:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="14759" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns14759:0crwdne14759:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="14760" identifier="0fec31afdd2ddac9073f6968604ef640">
+        <source>Write a program that asks the user to enter one angle of a rhombus and draws a rhombus with the given angle and each side equal to 100 steps.</source>
+        <target>crwdns14760:0crwdne14760:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14761" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns14761:0crwdne14761:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="14762" identifier="c9bf31e2ea57693ba5afd83cc57b14b3">
+        <source>Your program should display the outputs shown in this table for the given inputs provided;</source>
+        <target>crwdns14762:0crwdne14762:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14763" identifier="5bfb69c6f4701e747d0c20b0822e2580">
+        <source>Input</source>
+        <target>crwdns14763:0crwdne14763:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th</note>
+      </trans-unit>
+      <trans-unit id="14764" identifier="f36a1e77a6177da7e10093e12e92ec6c">
+        <source>Output</source>
+        <target>crwdns14764:0crwdne14764:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th[2]</note>
+      </trans-unit>
+      <trans-unit id="14765" identifier="8733122df1fe9ad6f0d4fe95e15c2402">
+        <source>45</source>
+        <target>crwdns14765:0crwdne14765:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td</note>
+      </trans-unit>
+      <trans-unit id="14766" identifier="cd1c8696e18abbdf47c8cc28291a520e">
+        <source>{image-inline file-path=&quot;img/topics/programming-challenges/rhombus.png&quot;}</source>
+        <target>crwdns14766:0crwdne14766:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td[2]</note>
+      </trans-unit>
+      <trans-unit id="14767" identifier="cd4cbf9f85d2f7e316c65df34c54f632">
+        <source>90</source>
+        <target>crwdns14767:0crwdne14767:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td</note>
+      </trans-unit>
+      <trans-unit id="14768" identifier="da24613d416f3faeba8a101275fd7e82">
+        <source>{image-inline file-path=&quot;img/topics/programming-challenges/rhombus-square.png&quot;}</source>
+        <target>crwdns14768:0crwdne14768:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

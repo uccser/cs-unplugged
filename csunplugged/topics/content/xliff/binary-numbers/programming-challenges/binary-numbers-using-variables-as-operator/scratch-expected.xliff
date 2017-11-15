@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="791" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/binary-numbers-using-variables-as-operator/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8622" identifier="f3b5fe6b13c58314d4f8a7210242abe3">
+        <source>Click on the green flag to see the expected output of your program.</source>
+        <target>crwdns8622:0crwdne8622:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8623" identifier="f32ec0788e7f2ca578ee1d55d6299d4f">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/148423827/?autostart=false&quot;}</source>
+        <target>crwdns8623:0crwdne8623:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="8624" identifier="21bf0327412c8d2b6e7636f5ee0d4233">
+        <source>{panel type=&quot;teacher-note&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns8624:0crwdne8624:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="8625" identifier="b50e0975e41e31632234c683eea01151">
+        <source>when flag clicked</source>
+        <target>crwdns8625:0crwdne8625:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="8626" identifier="5ed8a99af694a80dff1ff2171480b215">
+        <source>set [number of dots v] to [1]
+
+set [number of dots v] to ((number of dots) * (2))
+
+set [number of dots v] to ((number of dots) * (2))
+
+set [number of dots v] to ((number of dots) * (2))
+
+set [number of dots v] to ((number of dots) * (2))</source>
+        <target>crwdns8626:0[1]crwdne8626:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="8627" identifier="2290f0cb2dca0f26b3a67b7186dbb28b">
+        <source>say (number of dots) for (1) secs
+
+say (number of dots) for (1) secs
+
+say (number of dots) for (1) secs
+
+say (number of dots) for (1) secs
+
+say (number of dots) for (1) secs</source>
+        <target>crwdns8627:0crwdne8627:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="8628" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns8628:0{panel end}crwdne8628:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1061" original="/csunplugged/topics/content/en/unplugged-programming/kidbots-unit-plan/kidbots-unit-plan.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="13067" identifier="2968f76d1e62c28e1bdc58627057b9f0">
+        <source>Kidbots</source>
+        <target>crwdns13067:0crwdne13067:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="13068" identifier="cceba71c188ef3e566256eafefee9f1d">
+        <source>See teaching the Kidbots unit in action!</source>
+        <target>crwdns13068:0crwdne13068:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="13069" identifier="274247b5ce18448f8dbd15315ee6347f">
+        <source>A version of this can curently be seen at 1:09:56 &lt;a href=&quot;https://educationonair.withgoogle.com/live/2016-dec/watch/keynote-au/keynote-7&quot;&gt;here&lt;/a&gt;.</source>
+        <target>crwdns13069:0crwdne13069:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="13070" identifier="f7d6e80499df422a183a2c3e887df273">
+        <source>What’s it all about?</source>
+        <target>crwdns13070:0crwdne13070:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="13071" identifier="5b0a9822087afe34c04ae4f0bfb59d8b">
+        <source>{image file-path=&quot;img/topics/teamwork.png&quot; alt=&quot;Cartoon kids working together&quot;}</source>
+        <target>crwdns13071:0crwdne13071:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="13072" identifier="92adc613ddc20557836260cf09346b58">
+        <source>Writing a computer program involves planning what you're going to do, &quot;coding&quot; the instructions, testing them, tracking down any bugs, and changing the program to that it works correctly.</source>
+        <target>crwdns13072:0crwdne13072:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="13073" identifier="98e7456b466e7dab0b7a27e110d8402c">
+        <source>In these activities students explore a simple programming language by taking on separate roles to make these elements of programming explicit.</source>
+        <target>crwdns13073:0crwdne13073:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="13074" identifier="3cf4872b9c6f444326c5d96f77efb53b">
+        <source>This isn't completely artificial; most substantial program is written by a team of people, and often the roles of design, coding and testing are separated out.</source>
+        <target>crwdns13074:0crwdne13074:0</target>
+        <note>Context: XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="13075" identifier="10ee40724d7f9422c28269c466d806a3">
+        <source>The program is made because there is a problem to solve to help other people to improve their lives.</source>
+        <target>crwdns13075:0crwdne13075:0</target>
+        <note>Context: XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="13076" identifier="cff773c2cc9edaa5ccc5981dab3e25cb">
+        <source>The people who write the program using a programming language are called the &lt;strong&gt;programmer&lt;/strong&gt; (or possibly a &lt;strong&gt;developer&lt;/strong&gt; or &lt;strong&gt;software engineer&lt;/strong&gt;) - they write the instructions to tell the computer what to do.</source>
+        <target>crwdns13076:0crwdne13076:0</target>
+        <note>Context: XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="13077" identifier="aed4a8c93bed8026e20ad41dde0908f0">
+        <source>To be sure that the code is working exactly as it needs to for the people it’s been written for, someone needs to test the program and feeds back to the programmer(s) what needs fixing and why.</source>
+        <target>crwdns13077:0crwdne13077:0</target>
+        <note>Context: XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="13078" identifier="b9716acc56c0d7e2de82668b1ac5109f">
+        <source>They are &lt;strong&gt;testers&lt;/strong&gt;.</source>
+        <target>crwdns13078:0crwdne13078:0</target>
+        <note>Context: XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="13079" identifier="47f124c0c3f3b7313bae965780b1a210">
+        <source>In a small project usually the testing is done by the person who wrote the program, but for larger applications testing is often separated out, partly to spread the workload, but also because sometimes the programmer might be so familiar with the program that they can't see it from a users' point of view.</source>
+        <target>crwdns13079:0crwdne13079:0</target>
+        <note>Context: XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="13080" identifier="2af66ea3109c140cad366a9e11b2c51d">
+        <source>The Kidbots activities separates the programming from the testing to avoid the programmer adjusting their program on the fly, and also support students to understand that programming is about working together, thinking through what you want to have happen and collaborating to solve problems.</source>
+        <target>crwdns13080:0crwdne13080:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="13081" identifier="1a11ea20dc948a3ceffff060731e64b2">
+        <source>Digital Technologies | Programming</source>
+        <target>crwdns13081:0crwdne13081:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[3]</note>
+      </trans-unit>
+      <trans-unit id="13082" identifier="2f7b87679c3a2b5b3102eb339110f2c5">
+        <source>Programming or &quot;coding&quot; is when a person (&lt;strong&gt;a programmer&lt;/strong&gt;) types in instructions in a programming language so that the computer knows what it needs to do (programmers do lots of other things as well).</source>
+        <target>crwdns13082:0crwdne13082:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="13083" identifier="be8c3294f5ddf38254dcb6be926656e6">
+        <source>Common programming languages that are used in the junior classroom include Scratch, ScratchJr, Python, Snap!, Blockly, and some older languages like Basic and Logo (which are still popular today).</source>
+        <target>crwdns13083:0crwdne13083:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="13084" identifier="f9ac2e254277b66a509e1e3dfe1b5eda">
+        <source>Being a programmer isn't so much about knowing the particular commands in a programming language, but knowing how to put together the building blocks such as loops, if statements, variables, input and output in a way that the computer will do what is intended.</source>
+        <target>crwdns13084:0crwdne13084:0</target>
+        <note>Context: XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="13085" identifier="ac5c574d37841d1956966e8ea5744c4b">
+        <source>This involves working out the general process for achieving the goal, representing that process in the particular language, and making sure that it does what is intended.</source>
+        <target>crwdns13085:0crwdne13085:0</target>
+        <note>Context: XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="13086" identifier="09c60108a1d75b9413ec5c402ecf03ae">
+        <source>{image file-path=&quot;img/topics/program.png&quot; alt=&quot;Cartoon kid showing scratch program to computer&quot;}</source>
+        <target>crwdns13086:0crwdne13086:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="13087" identifier="569de03195870a529df0e7ddd537b9fe">
+        <source>{panel type=&quot;math&quot; title=&quot;Mathematical links&quot;}</source>
+        <target>crwdns13087:0crwdne13087:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="13088" identifier="21f5843864be4ba776bdccb82af80307">
+        <source>There are strong connections between mathematics and programming.</source>
+        <target>crwdns13088:0crwdne13088:0</target>
+        <note>Context: XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="13089" identifier="02e0c4b151fa7b494b4a646fe6aa07f2">
+        <source>Good programmers need to have a good base of mathematical knowledge, since a program is effectively a mathematical formula, and getting the structure of a program right requires good reasoning.</source>
+        <target>crwdns13089:0crwdne13089:0</target>
+        <note>Context: XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="13090" identifier="9708110760548ce8659c59eaafcd60e3">
+        <source>{panel end}</source>
+        <target>crwdns13090:0{panel end}crwdne13090:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="13091" identifier="3dfd1f526f511efe5f48bcfff7102627">
+        <source>Real world implications</source>
+        <target>crwdns13091:0crwdne13091:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[4]</note>
+      </trans-unit>
+      <trans-unit id="13092" identifier="d28a7d1436900f8c6518abeb945b359a">
+        <source>{image file-path=&quot;img/topics/careers.png&quot; alt=&quot;Cartoon director, doctor and chef&quot;}</source>
+        <target>crwdns13092:0crwdne13092:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="13093" identifier="b4f0ef1c562ac04acac62c87cdb6414b">
+        <source>Giving sequential instructions are an important element of all programming languages, and so the Kidbots activity lays the foundation for understanding more conventional languages.</source>
+        <target>crwdns13093:0crwdne13093:0</target>
+        <note>Context: XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="13094" identifier="10016adedf571ab35e038ad9107d65e4">
+        <source>It also exercises the ability to predict what a program will do, reason about where any bugs are, and understand that there can be multiple correct ways to program a solution.</source>
+        <target>crwdns13094:0crwdne13094:0</target>
+        <note>Context: XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="13095" identifier="dc9b04cde63bc75c2848a303190f0fcd">
+        <source>Being able to give exact sequential instructions, work well together and understand how to break a big problem into small pieces and then tackling the small piece one at a time are all life skills that can be transferred from computer programming to other tasks that students need to do.</source>
+        <target>crwdns13095:0crwdne13095:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="13096" identifier="aa4f6f1fcb4494ab26a613bfc3e9f3f9">
+        <source>Reflection questions</source>
+        <target>crwdns13096:0crwdne13096:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[5]</note>
+      </trans-unit>
+      <trans-unit id="13097" identifier="e1c59b32c80d630c9e3be6f1a8e1bc22">
+        <source>What was most surprising about the learning that happened from the teaching of this unit?</source>
+        <target>crwdns13097:0crwdne13097:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li/p</note>
+      </trans-unit>
+      <trans-unit id="13098" identifier="fde5707dcb0cbe4ffc95549768585c34">
+        <source>Who were the students who were very systematic in their activities?</source>
+        <target>crwdns13098:0crwdne13098:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="13099" identifier="745a4cfdd28c24310e5c435b6af0f857">
+        <source>Who were the students who were very detailed in their activities?</source>
+        <target>crwdns13099:0crwdne13099:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[3]/p</note>
+      </trans-unit>
+      <trans-unit id="13100" identifier="c1aec942dbeb11286e04eda6c875aada">
+        <source>What would I change in my delivery of this unit?</source>
+        <target>crwdns13100:0crwdne13100:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[4]/p</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

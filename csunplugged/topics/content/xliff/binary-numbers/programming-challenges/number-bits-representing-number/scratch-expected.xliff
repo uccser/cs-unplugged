@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="859" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/number-bits-representing-number/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="9021" identifier="084593ce34d694032eb79e9acb5080a5">
+        <source>Click on the green flag, enter the inputs provided in the “testing examples” to see the expected output of your program.</source>
+        <target>crwdns9021:0crwdne9021:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="9022" identifier="0c3f75424219d4c9db8c100fdffe305c">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/148424235/?autostart=false&quot;}</source>
+        <target>crwdns9022:0crwdne9022:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="9023" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns9023:0crwdne9023:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="9024" identifier="4b45fc79f7dbada4bfc448798c54cef9">
+        <source>when green flag clicked
+
+ask [Please enter the number of dots:] and wait
+
+change [bits v] by (1)
+
+repeat until &amp;lt;(total number of dots) &amp;lt; (bit value)&amp;gt;
+end
+
+say (join (join (join [You will need ] (bits)) [ bits to store number ]) (total number of dots))</source>
+        <target>crwdns9024:0crwdne9024:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="9025" identifier="0ae83ce7c5d17e375408b05860438add">
+        <source>set [total number of dots v] to (answer)
+
+set [bits v] to [0]
+
+set [bit value v] to [1]
+
+set [bit value v] to ((bit value) * (2))</source>
+        <target>crwdns9025:0[0]crwdnd9025:0[1]crwdne9025:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="9026" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns9026:0{panel end}crwdne9026:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

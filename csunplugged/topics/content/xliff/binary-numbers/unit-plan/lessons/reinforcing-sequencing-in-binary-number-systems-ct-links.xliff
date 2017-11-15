@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="877" original="/csunplugged/topics/content/en/binary-numbers/unit-plan/lessons/reinforcing-sequencing-in-binary-number-systems-ct-links.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="9886" identifier="29587245fea6177d2282f2ca4a93001c">
+        <source>{panel type=&quot;ct-algorithm&quot; title=&quot;Algorithmic thinking&quot;}</source>
+        <target>crwdns9886:0crwdne9886:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="9887" identifier="d4789df7fc6fae273d42b3ff89b932ef">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns9887:0crwdne9887:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4</note>
+      </trans-unit>
+      <trans-unit id="9888" identifier="0ebe8f41ea796f5a3987b8c9b90eb892">
+        <source>Do students demonstrate how the binary number system works by explaining, systematically, what is happening to work out the binary representation of a given number?</source>
+        <target>crwdns9888:0crwdne9888:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="9889" identifier="3a1ae082a90b504339024ac691a2b919">
+        <source>{panel end}</source>
+        <target>crwdns9889:0{panel end}crwdne9889:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="9890" identifier="2a1f9c20ca90a8140fe3bf4977790c3b">
+        <source>{panel type=&quot;ct-abstraction&quot; title=&quot;Abstraction&quot;}</source>
+        <target>crwdns9890:0crwdne9890:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="9891" identifier="7ca1cce9bc789f9d38045770108363e7">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns9891:0crwdne9891:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[2]</note>
+      </trans-unit>
+      <trans-unit id="9892" identifier="12ce5fff4f5f86a8502b097b5d5b206b">
+        <source>Ask students to look at a video created and  list the features of the objects used that are important to demonstrate the binary number system and those that aren’t relevant at all.</source>
+        <target>crwdns9892:0crwdne9892:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="9893" identifier="adbdb38115094a9c25d1ac9696cf19c5">
+        <source>e.g. using Maths teddy bears - having the back or front showing is important, the colour of the teddy isn’t important, the size of the teddy isn’t important.</source>
+        <target>crwdns9893:0crwdne9893:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="9894" identifier="e8dc6db8623270551f676e6f496291c1">
+        <source>{panel end}</source>
+        <target>crwdns9894:0{panel end}crwdne9894:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="9895" identifier="eedc040dab9fc03781b20811648ce32f">
+        <source>{panel type=&quot;ct-decomposition&quot; title=&quot;Decomposition&quot;}</source>
+        <target>crwdns9895:0crwdne9895:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="9896" identifier="833d815031c5d5819a2b19b8c4affd40">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns9896:0crwdne9896:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[3]</note>
+      </trans-unit>
+      <trans-unit id="9897" identifier="3c8f074184947d52cb7aa0245d6ebc55">
+        <source>Watch a video and ask students to point out one element in it that is decomposition e.g.  this could be when a single bit out of a group is determined to be on or off.</source>
+        <target>crwdns9897:0crwdne9897:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="9898" identifier="95e2aef312d8003ea83532ea9651f31f">
+        <source>{panel end}</source>
+        <target>crwdns9898:0{panel end}crwdne9898:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="9899" identifier="075a916f1d096aa24d594c28336a6bbe">
+        <source>{panel type=&quot;ct-pattern&quot; title=&quot;Generalising and patterns&quot;}</source>
+        <target>crwdns9899:0crwdne9899:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="9900" identifier="ec993088561d59b2638cc84170b056e3">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns9900:0crwdne9900:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[4]</note>
+      </trans-unit>
+      <trans-unit id="9901" identifier="05c277d2616e305cb5257d991cb14b2c">
+        <source>Have students review three videos and ask what do these videos have in common and what is different about them.</source>
+        <target>crwdns9901:0crwdne9901:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="9902" identifier="e55a010e1bd87f56a31be3512ff5b51c">
+        <source>{panel end}</source>
+        <target>crwdns9902:0{panel end}crwdne9902:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="9903" identifier="f754abaa72e0e53f47ac70123435df17">
+        <source>{panel type=&quot;ct-logic&quot; title=&quot;Logic&quot;}</source>
+        <target>crwdns9903:0crwdne9903:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="9904" identifier="ee945efc504e5ccf8a3f1c6b2bc14938">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns9904:0crwdne9904:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[5]</note>
+      </trans-unit>
+      <trans-unit id="9905" identifier="72b81b60987b2e5d0122308cf1a2a83a">
+        <source>Finding errors or misconceptions in the videos may exercise some logical reasoning.</source>
+        <target>crwdns9905:0crwdne9905:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="9906" identifier="9310d092388af7bdf4e961de50103c5a">
+        <source>{panel end}</source>
+        <target>crwdns9906:0{panel end}crwdne9906:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="9907" identifier="18834977eea6b637077f14240006b26f">
+        <source>{panel type=&quot;ct-evaluation&quot; title=&quot;Evaluation&quot;}</source>
+        <target>crwdns9907:0crwdne9907:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="9908" identifier="d2663645150b5be5b55859ada486fd3c">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns9908:0crwdne9908:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[6]</note>
+      </trans-unit>
+      <trans-unit id="9909" identifier="8d2124666c883acefbef4a33bc55b39f">
+        <source>Have students consider the number of bits used in each demonstration, and the difference this makes in the range of values that can be represented.</source>
+        <target>crwdns9909:0crwdne9909:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="9910" identifier="127a98d13ea2273a464ad5925a0625d4">
+        <source>{panel end}</source>
+        <target>crwdns9910:0{panel end}crwdne9910:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[18]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

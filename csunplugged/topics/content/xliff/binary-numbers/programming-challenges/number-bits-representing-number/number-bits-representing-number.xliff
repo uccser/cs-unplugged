@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="858" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/number-bits-representing-number/number-bits-representing-number.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="9004" identifier="945a541e34a4067b986b57fb5727ae80">
+        <source>Display the number of bits needed to represent a number</source>
+        <target>crwdns9004:0crwdne9004:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="9005" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns9005:0crwdne9005:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="9006" identifier="df3ec5a89a52d84876b44aad69c6b1ab">
+        <source>Write a program that asks the user to enter a number of dots (i.e. decimal
+value) as the input and displays how many bits will be needed to represent
+that number as the output.</source>
+        <target>crwdns9006:0crwdne9006:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="9007" identifier="4b7c4ba210df71c3ab3b0e923cc77739">
+        <source>For example, the number 15 can be represented in 4 bits, but 16 requires 5 bits.</source>
+        <target>crwdns9007:0crwdne9007:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="9008" identifier="83626eb3061b712218741dca8576e82c">
+        <source>You can work this out by starting with the number 1, and doubling it until it
+gives you a value more than the number you need to represent, so this program
+can be based on the earlier challenge to work out the number of dots on each card.</source>
+        <target>crwdns9008:0crwdne9008:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="9009" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns9009:0crwdne9009:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="9010" identifier="c4157e645991e13a72ced9574f6e8235">
+        <source>Your program should display the outputs shown in this table for the given
+inputs provided:</source>
+        <target>crwdns9010:0crwdne9010:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="9011" identifier="5bfb69c6f4701e747d0c20b0822e2580">
+        <source>Input</source>
+        <target>crwdns9011:0crwdne9011:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th</note>
+      </trans-unit>
+      <trans-unit id="9012" identifier="f36a1e77a6177da7e10093e12e92ec6c">
+        <source>Output</source>
+        <target>crwdns9012:0crwdne9012:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th[2]</note>
+      </trans-unit>
+      <trans-unit id="9013" identifier="84ac9e43030dad937e9b5f636a79d40d">
+        <source>5</source>
+        <target>crwdns9013:0crwdne9013:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td</note>
+      </trans-unit>
+      <trans-unit id="9014" identifier="89ead70d200564af524cd39f814c9305">
+        <source>3 bits</source>
+        <target>crwdns9014:0crwdne9014:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td[2]</note>
+      </trans-unit>
+      <trans-unit id="9015" identifier="c6df9e1c6c341113a36fa81bb99c7cf4">
+        <source>31</source>
+        <target>crwdns9015:0crwdne9015:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td</note>
+      </trans-unit>
+      <trans-unit id="9016" identifier="0b916b163e6861c96c1d9b0209a70542">
+        <source>5 bits</source>
+        <target>crwdns9016:0crwdne9016:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="9017" identifier="f38ebd751f7ab62dca2de0a9cd925c48">
+        <source>32</source>
+        <target>crwdns9017:0crwdne9017:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td</note>
+      </trans-unit>
+      <trans-unit id="9018" identifier="0c07ce73d84b50cad9564be1fee1b719">
+        <source>6 bits</source>
+        <target>crwdns9018:0crwdne9018:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="9019" identifier="8d960d67087e6035b185f999d5487b5a">
+        <source>1</source>
+        <target>crwdns9019:0crwdne9019:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[4]/td</note>
+      </trans-unit>
+      <trans-unit id="9020" identifier="c32993173c695255c1078b2e21f4c194">
+        <source>1 bits</source>
+        <target>crwdns9020:0crwdne9020:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[4]/td[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

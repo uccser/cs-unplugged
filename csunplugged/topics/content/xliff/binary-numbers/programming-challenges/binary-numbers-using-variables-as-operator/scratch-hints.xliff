@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="792" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/binary-numbers-using-variables-as-operator/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8629" identifier="6b3d3e51d727c2bd4134175fae99d104">
+        <source>Make a variable called “number of dots” and change its value by using an
+operator (multiplying it by 2 before displaying it on the screen each time).</source>
+        <target>crwdns8629:0crwdne8629:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="8630" identifier="c74a3cf035dbc17eb8e0e38baa62d207">
+        <source>You can find “make a new variable” under “data” script to create a new
+variable.</source>
+        <target>crwdns8630:0crwdne8630:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="8631" identifier="1518b5d580f4bc7403d05689fdfd8688">
+        <source>Make sure your variable name is as descriptive as possible.</source>
+        <target>crwdns8631:0crwdne8631:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="8632" identifier="b9402ce57598fabacf36a36c872147fa">
+        <source>Use the &lt;code&gt;scratch:set [number of dots v] to [1]&lt;/code&gt; block to set the value of
+your new variable.</source>
+        <target>crwdns8632:0[1]crwdne8632:0</target>
+        <note>Context: XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="8633" identifier="407d2ed6ca7ba6f2ad1f4a840ec3973e">
+        <source>Use the &lt;code&gt;scratch:() * ()&lt;/code&gt; operation under “Operators” to double the value of
+your variable.</source>
+        <target>crwdns8633:0crwdne8633:0</target>
+        <note>Context: XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="8634" identifier="fe2a6470783cb0ce27fa65a79e0d2958">
+        <source>Display the value of your variable on the screen by replacing
+“Hello” in your &lt;code&gt;scratch:say [Hello] for (2) secs&lt;/code&gt; block with your new
+variable.</source>
+        <target>crwdns8634:0[Hello]crwdne8634:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[3]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

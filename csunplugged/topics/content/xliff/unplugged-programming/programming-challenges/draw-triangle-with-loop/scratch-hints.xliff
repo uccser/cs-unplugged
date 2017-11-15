@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1218" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/draw-triangle-with-loop/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14919" identifier="e9a784c9dc03050f93cac65d5dd8cb70">
+        <source>A triangle has 3 sides and 3 angles (all 3 angles always add up to 180 degrees).
+A equilateral triangle has 3 equal sides and 3 equal angles.</source>
+        <target>crwdns14919:0crwdne14919:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="14920" identifier="74bc4aa9a29295c6567a3507f105ad1d">
+        <source>Block &lt;code&gt;scratch:wait () secs&lt;/code&gt; waits specified number of seconds, then continues with next block.</source>
+        <target>crwdns14920:0crwdne14920:0</target>
+        <note>Context: XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="14921" identifier="c07931d8af4fd2397a32f8d3aed5c33d">
+        <source>To be able to see each sides of the triangle being drawn, use the wait block after turning each angle.</source>
+        <target>crwdns14921:0crwdne14921:0</target>
+        <note>Context: XPath: /ul/li[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1233" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/find-prime-factors/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15006" identifier="8435c72f211abb2d923b1c7740b0ac4a">
+        <source>You need to find the factors of the number (see &lt;a href=&quot;'topics:programming_challenge' 'unplugged-programming' 'check-if-divisor'&quot;&gt;challenge 4.1&lt;/a&gt;) and check each factor to see if it’s a prime number (see &lt;a href=&quot;'topics:programming_challenge' 'unplugged-programming' 'check-if-divisor-series'&quot;&gt;challenge 4.2&lt;/a&gt;).</source>
+        <target>crwdns15006:0crwdne15006:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="15007" identifier="65b275d48cf35ebfc01680e8b7e9cd4e">
+        <source>Add the factors which are also prime numbers to a string variable called “prime factors”.</source>
+        <target>crwdns15007:0crwdne15007:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

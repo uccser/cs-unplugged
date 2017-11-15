@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1301" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/modulo-even-odd-numbers/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15406" identifier="f3b5fe6b13c58314d4f8a7210242abe3">
+        <source>Click on the green flag to see the expected output of your program.</source>
+        <target>crwdns15406:0crwdne15406:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15407" identifier="6a626887f92007792b818e9a2c7680d5">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/148426036/?autostart=false&quot;}</source>
+        <target>crwdns15407:0crwdne15407:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="15408" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns15408:0crwdne15408:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="15409" identifier="21cccb41a74d12f88cef808e80ca233f">
+        <source>when green flag clicked
+
+ask [Enter a number:] and wait
+
+set [number v] to (answer)
+
+say [You entered an even number!]
+
+say [You entered an odd number!]
+
+if &amp;lt;((number) mod (2)) = [0]&amp;gt; then
+else
+end</source>
+        <target>crwdns15409:0[0]crwdne15409:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="15410" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns15410:0{panel end}crwdne15410:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

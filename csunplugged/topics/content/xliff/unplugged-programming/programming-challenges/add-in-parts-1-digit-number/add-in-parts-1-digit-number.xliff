@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1079" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/add-in-parts-1-digit-number/add-in-parts-1-digit-number.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14132" identifier="b93820499241e0735e80bafc9c5f2e0c">
+        <source>Add in parts (add two 1-digit numbers)</source>
+        <target>crwdns14132:0crwdne14132:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="14133" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns14133:0crwdne14133:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="14134" identifier="f667dc093564d29f2c91bd3ecbc1cce1">
+        <source>Write a program that asks the user to enter two numbers less than 10 (entering the larger number first).</source>
+        <target>crwdns14134:0crwdne14134:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14135" identifier="935ecf0a5521cb0bb9ebb83168cb06eb">
+        <source>If the numbers add up to 10 or less you can just display the two numbers, but if they add up to more than 10, then by splitting numbers into parts, the program should display how they can be added together by making a sum up to 10 (e.g. if the numbers entered are 6 and 5 it displays 6+5 as (6+4)+1).</source>
+        <target>crwdns14135:0crwdne14135:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14136" identifier="d2e08e60e6a267e3aeff2432ac568b66">
+        <source>It then displays the answer which is 11.</source>
+        <target>crwdns14136:0crwdne14136:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14137" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns14137:0crwdne14137:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="14138" identifier="c9bf31e2ea57693ba5afd83cc57b14b3">
+        <source>Your program should display the outputs shown in this table for the given inputs provided;</source>
+        <target>crwdns14138:0crwdne14138:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14139" identifier="cba6b4800108c82267efa7cede56fc42">
+        <source>Input</source>
+        <target>crwdns14139:0crwdne14139:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/tr/th</note>
+      </trans-unit>
+      <trans-unit id="14140" identifier="67db30d78708ccc80d53b9b484cffb63">
+        <source>Output</source>
+        <target>crwdns14140:0crwdne14140:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/tr/th[2]</note>
+      </trans-unit>
+      <trans-unit id="14141" identifier="aac92520f0c768fd88a467f285352052">
+        <source>8&lt;br&gt;7</source>
+        <target>crwdns14141:0crwdne14141:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[2]/td</note>
+      </trans-unit>
+      <trans-unit id="14142" identifier="bffaf10b3afdd70189252c11cbbc5fc0">
+        <source>(8 + 2) + 5 = 15</source>
+        <target>crwdns14142:0crwdne14142:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[2]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="14143" identifier="c043074cc70b8cf9821abd5b3b3a3a94">
+        <source>9&lt;br&gt;3</source>
+        <target>crwdns14143:0crwdne14143:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[3]/td</note>
+      </trans-unit>
+      <trans-unit id="14144" identifier="89a342ee14e85e3ab0f51975616979da">
+        <source>(9 + 1) + 2 = 12</source>
+        <target>crwdns14144:0crwdne14144:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[3]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="14145" identifier="67e4cb8cf033ade1c3a60ea187c5dcca">
+        <source>5&lt;br&gt;4</source>
+        <target>crwdns14145:0crwdne14145:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[4]/td</note>
+      </trans-unit>
+      <trans-unit id="14146" identifier="f4041f6edbf439658a3192dc71a29dd2">
+        <source>5 + 4 = 9</source>
+        <target>crwdns14146:0crwdne14146:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[4]/td[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

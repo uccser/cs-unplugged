@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="908" original="/csunplugged/topics/content/en/error-detection-and-correction/programming-challenges/check-odd-even-using-subtraction/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10209" identifier="ce0067962aec91c9a18f056c4459a783">
+        <source>To check if a number is greater, less than or equal to another number
+use the &lt;code&gt;scratch:&amp;lt;[] &amp;lt; []&amp;gt;&lt;/code&gt;, &lt;code&gt;scratch:&amp;lt;[] &amp;gt; []&amp;gt;&lt;/code&gt;, or &lt;code&gt;scratch:&amp;lt;[] = []&amp;gt;&lt;/code&gt;
+blocks under “Operators”.</source>
+        <target>crwdns10209:0crwdne10209:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="10210" identifier="953b4a9a7fa957ce729d08a1b3879f99">
+        <source>You can make a negative number positive by multiplying it by -1.</source>
+        <target>crwdns10210:0crwdne10210:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="10211" identifier="a3b4a2909aa01fa33deee1e618e8ebcb">
+        <source>The &lt;code&gt;scratch:&amp;lt; &amp;lt;&amp;gt; or &amp;lt;&amp;gt; &amp;gt;&lt;/code&gt; operation under “Operators” joins two
+boolean blocks so any one of them can be true to return &lt;em&gt;true&lt;/em&gt;.</source>
+        <target>crwdns10211:0crwdne10211:0</target>
+        <note>Context: XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="10212" identifier="acb693f29a9ba5fc72f6a3553daf3acb">
+        <source>If at least one of them is true, the block returns &lt;em&gt;true&lt;/em&gt;.</source>
+        <target>crwdns10212:0crwdne10212:0</target>
+        <note>Context: XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="10213" identifier="bf0413a29ebc3f11c6af63c01985971b">
+        <source>If neither of them are true, it returns &lt;em&gt;false&lt;/em&gt;.</source>
+        <target>crwdns10213:0crwdne10213:0</target>
+        <note>Context: XPath: /ul/li[3]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1144" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/draw-circle-with-radius-100/extra-challenge.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14562" identifier="aa870366a180bbea07105cefddb48077">
+        <source>&lt;strong&gt;Extra challenge #1:&lt;/strong&gt;
+Write a program that works for any radius.</source>
+        <target>crwdns14562:0crwdne14562:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14563" identifier="1feea79694bd272caa18eda147e44f59">
+        <source>That means that it takes a radius as the input then draws a circle with the given radius, and then displays the circumference as the output.</source>
+        <target>crwdns14563:0crwdne14563:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14564" identifier="4127af91e8a713e105e6540398d2d24b">
+        <source>&lt;strong&gt;Extra challenge #2:&lt;/strong&gt;
+Write a program that takes a circumference as the input then draws a circle with the given circumference and then displays the radius as the output.</source>
+        <target>crwdns14564:0crwdne14564:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14565" identifier="6bc1ad6c53f0c10d8457369e32a17a6c">
+        <source>&lt;strong&gt;Extra challenge #3:&lt;/strong&gt;
+[This requires advanced maths, but is a good challenge for a student who is familiar with Pythagoras' theorem] Draw a Circle Using Pythagoras’ Theorem.</source>
+        <target>crwdns14565:0crwdne14565:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="14566" identifier="c28c98621e4cbaa92551ef4d3628edcc">
+        <source>{image file-path=&quot;img/topics/programming-challenges/circle_red.png&quot;}</source>
+        <target>crwdns14566:0crwdne14566:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="14567" identifier="1a12f1ada4b928009de01b455c45e30e">
+        <source>The diagram above shows a circle (radius 100) drawn using the Pythagoras’ Theorem method.
+(Note: The red triangle inside the circle is only to show the calculation and does not need to be drawn).</source>
+        <target>crwdns14567:0crwdne14567:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="14568" identifier="6c3a5abf71d5c3c5bd7e1a212123d8d1">
+        <source>You can use Pythagoras’ Theorem (in any right-angle triangle, the square of the side opposite the right angle is equal to the sum of the squares of the other two sides so here \( x^{2}+y^{2}=radius^{2}\)) to draw a circle.</source>
+        <target>crwdns14568:0{2}crwdnd14568:0{2}crwdnd14568:0{2}crwdne14568:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="14569" identifier="0e06e1eb8af46330282dbc99b670d203">
+        <source>We can do this by rearranging the formula to solve for \(y\) like this:</source>
+        <target>crwdns14569:0crwdne14569:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="14570" identifier="c45168750df0a99494a5d6d61fd21ffc">
+        <source>\[
+  y^{2} = radius ^{2} - x^{2} \\
+  y = sqrt{(radius^{2} - x^{2})}&lt;br /&gt;
+\]</source>
+        <target>crwdns14570:0{2}crwdnd14570:0{2}crwdnd14570:0{2}crwdnd14570:0{2}crwdnd14570:0{2}crwdne14570:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="14571" identifier="3f3766e86e0903fbe767fecbe99191eb">
+        <source>We then calculate \(y\) using a range of values for \(x\) (i.e. from 0 to \(\pm radius\)).</source>
+        <target>crwdns14571:0crwdne14571:0</target>
+        <note>Context: XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="14572" identifier="6179664ae6387edb35a4fcc4df168a4e">
+        <source>Your programming language will probably only give you the positive square root, so you will also need to plot the negative of \(y\).</source>
+        <target>crwdns14572:0crwdne14572:0</target>
+        <note>Context: XPath: /p[8]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

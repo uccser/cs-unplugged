@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="732" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/binary-cards-as-dots/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8333" identifier="7eaaf83bd11b152eafcd517d0dde06ab">
+        <source>We have provided 4 different solutions to code this program, based on two template programs.</source>
+        <target>crwdns8333:0crwdne8333:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8334" identifier="7823f8e04f1e30bb96a7ae9cdae605ac">
+        <source>The first three sample solutions are based on &lt;a href=&quot;https://scratch.mit.edu/projects/159437081/&quot;&gt;remixing this program&lt;/a&gt;.</source>
+        <target>crwdns8334:0crwdne8334:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="8335" identifier="ca52af24141f40ea36c5b8c72f7430f2">
+        <source>Remix this program and change its name to: Binary challenge 9 (version 1).</source>
+        <target>crwdns8335:0crwdne8335:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="8336" identifier="ca49bd28f45e05923d3a7a10cfe45521">
+        <source>For this version, all cards should change to black when the green flag is pressed,
+and then a program can work through each of the bit values and broadcast to a
+card if it should change costume.</source>
+        <target>crwdns8336:0crwdne8336:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="8337" identifier="3c8c4d8a8fc57de5f6f87950d5b0f7a8">
+        <source>The fourth variation is based on remixing &lt;a href=&quot;https://scratch.mit.edu/projects/159499667/&quot;&gt;this program&lt;/a&gt;.
+Remix this program and change its name to: Binary challenge 9 (version 2).</source>
+        <target>crwdns8337:0crwdne8337:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="8338" identifier="864a700e85ccaa3a6b81ed24441fdef9">
+        <source>This solution displays 5 cards (with dots showing for all the cards) on the
+screen and asks the user to enter a number between 0 and 31.</source>
+        <target>crwdns8338:0crwdne8338:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="8339" identifier="0c236eb1203b05b20a6dd5b2b93a7d97">
+        <source>It then clones a black card sprite over the cards which need to be hidden (dots not showing).</source>
+        <target>crwdns8339:0crwdne8339:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="8340" identifier="d7604c94f01437df619c39f99f862dab">
+        <source>The fourth variation should work like this:</source>
+        <target>crwdns8340:0crwdne8340:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="8341" identifier="6bfb4a2e9cbd280c588072222b81f9b7">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/159501752/?autostart=false&quot;}</source>
+        <target>crwdns8341:0crwdne8341:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[7]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

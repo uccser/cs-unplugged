@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1010" original="/csunplugged/topics/content/en/error-detection-and-correction/programming-challenges/product-code-check-valid-any-length/scratch-solution.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10862" identifier="b58e6c015fe11824fc933ac6976f840a">
+        <source>when green flag clicked
+set [product code v] to [0]
+set [total 1 v] to [0]
+set [total 2 v] to [0]
+set [total v] to [0]
+ask [Enter a product code:] and wait
+change [product code v] by (answer)
+set [index v] to (length of (product code))
+repeat until &amp;lt;(index) &amp;lt; [1]&amp;gt;
+  set [total 1 v] to ((total 1) + (letter (index) of (product code)))
+  change [index v] by (-1)
+  set [total 2 v] to ((total 2) + (letter (index) of (product code)))
+  change [index v] by (-1)
+end
+set [total v] to ((total 1) + ((total 2) * (3)))
+if &amp;lt;((total) mod (10)) = [0]&amp;gt; then
+  say [This is a valid product code]
+else
+  say [This is an invalid product code]
+end</source>
+        <target>crwdns10862:0[0]crwdnd10862:0[0]crwdnd10862:0[0]crwdnd10862:0[0]crwdnd10862:0[1]crwdnd10862:0[0]crwdne10862:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

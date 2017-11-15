@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1279" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/modulo-add-months/scratch-solution.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15282" identifier="78e284569cee43ac57d757acebe883cd">
+        <source>when green flag clicked
+set [new month v] to [0]
+ask [Type in a number betweem 1 and 12 for a month of the year:] and wait
+set [original month v] to (answer)
+ask [Enter the number of months to add to the month:] and wait
+set [months to add v] to (answer)
+set [new month v] to (((original month) + (months to add)) mod (12))
+if &amp;lt;(new month) = [0]&amp;gt; then
+  say (join (join (months to add) (join [ months after ] (item (original month) of [months v] :: list))) [ is December.</source>
+        <target>crwdns15282:0[0]crwdnd15282:0[0]crwdne15282:0</target>
+        <note>Context: XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="15283" identifier="866f0670a18d3f5c59ea3b98cc368547">
+        <source>])
+else
+  say (join (join (join (join (months to add) (join [ months after ] (item (original month) of [months v] :: list))) [ is ]) (item (new month) of [months v] :: list)) [.])
+end</source>
+        <target>crwdns15283:0[.]crwdne15283:0</target>
+        <note>Context: XPath: /pre/code</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="880" original="/csunplugged/topics/content/en/binary-numbers/unit-plan/lessons/reinforcing-sequencing-in-binary-number-systems.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="9986" identifier="8c11f836f6f68ef8c9af5ec23678a987">
+        <source>Reinforcing sequencing in binary number systems</source>
+        <target>crwdns9986:0crwdne9986:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="9987" identifier="18b8b1a4b0223621f587c4e8991fd86b">
+        <source>Key question</source>
+        <target>crwdns9987:0crwdne9987:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="9988" identifier="4c505c39b98cd8ca4896ede961595d22">
+        <source>How can you create a 60 second or less video to teach someone how binary works without using the binary cards?</source>
+        <target>crwdns9988:0crwdne9988:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="9989" identifier="4460fd52c3ef567c91cd109657e20025">
+        <source>Lesson starter</source>
+        <target>crwdns9989:0crwdne9989:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="9990" identifier="452c3bccc110436f288943d81755dd92">
+        <source>{panel type=&quot;general&quot; title=&quot;Notes on resources&quot;}</source>
+        <target>crwdns9990:0crwdne9990:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="9991" identifier="2294599c60bcc1006bbcc2083228a944">
+        <source>The following items are highly motivating, however you can use any resources you have available in your classroom that have two different states or sizes.</source>
+        <target>crwdns9991:0crwdne9991:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="9992" identifier="700232e0896f71df37847b43d7d241d8">
+        <source>Playdough/plasticine</source>
+        <target>crwdns9992:0crwdne9992:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li</note>
+      </trans-unit>
+      <trans-unit id="9993" identifier="bf59e153dae88a31e72f1a541a3c0c5a">
+        <source>Musical instruments</source>
+        <target>crwdns9993:0crwdne9993:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li[2]</note>
+      </trans-unit>
+      <trans-unit id="9994" identifier="6319d024a27ba912c73d0b3bee6dd6f5">
+        <source>Mathematics equipment such as mini teddy bears</source>
+        <target>crwdns9994:0crwdne9994:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li[3]</note>
+      </trans-unit>
+      <trans-unit id="9995" identifier="83e90c60bf2deebe14c07128d5c4463c">
+        <source>Glue a stick onto paper plates and have one side on and the other side off</source>
+        <target>crwdns9995:0crwdne9995:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li[4]</note>
+      </trans-unit>
+      <trans-unit id="9996" identifier="1eb212d37d4e44a416d379608cfbdbb2">
+        <source>There is also an online interactive version of the binary cards &lt;a href=&quot;http://www.csfieldguide.org.nz/en/interactives/binary-cards/index.html?digits=8&quot;&gt;here&lt;/a&gt;, from the &lt;a href=&quot;http://www.csfieldguide.org.nz/&quot;&gt;Computer Science Field Guide&lt;/a&gt;, but it is preferable to work with physical cards.</source>
+        <target>crwdns9996:0crwdne9996:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="9997" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns9997:0{panel end}crwdne9997:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="9998" identifier="69d6b6684d0be7c706eca69092f8ad57">
+        <source>Teacher says to class: “We are going to create a video that shows binary
+numbers in use.”</source>
+        <target>crwdns9998:0crwdne9998:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="9999" identifier="ea08f2f76d1ef4a9f87b3ba4c0221b4a">
+        <source>Lesson activities</source>
+        <target>crwdns9999:0crwdne9999:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[3]</note>
+      </trans-unit>
+      <trans-unit id="10000" identifier="e7e7ca6987c31c830da13f07ad9467d7">
+        <source>In this lesson students will make a video that gives instructions on how to
+represent any given number in binary.
+The video must include a demonstration of one of the following:</source>
+        <target>crwdns10000:0crwdne10000:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="10001" identifier="9d40b341f90ae2e2e7f9a6ad6816795f">
+        <source>How to count from 0 to 8 or more using binary numbers.</source>
+        <target>crwdns10001:0crwdne10001:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[3]/li</note>
+      </trans-unit>
+      <trans-unit id="10002" identifier="2637fadc85a23c9d5f959006ebb4feba">
+        <source>How you would work out the number 22.</source>
+        <target>crwdns10002:0crwdne10002:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[3]/li[2]</note>
+      </trans-unit>
+      <trans-unit id="10003" identifier="13935be0cf65234493e6ee54feaf7229">
+        <source>Brainstorm together items you could use to make this video with.</source>
+        <target>crwdns10003:0crwdne10003:0</target>
+        <note>Context: XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="10004" identifier="b25b1a73ffe1ef5449c5cd16fbbb1760">
+        <source>It should be different to how it has been demonstrated to the class, so they
+are not allowed to just video cards with dots on them (but they may want to
+use them to help with their planning).</source>
+        <target>crwdns10004:0crwdne10004:0</target>
+        <note>Context: XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="10005" identifier="ab319fb3ab2af6735bd8fef48f8043e8">
+        <source>Within the hour students will have taken the raw footage needed to make the
+movie and imported it into a simple movie format using available software
+like iMovie or StopMotion.</source>
+        <target>crwdns10005:0crwdne10005:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="10006" identifier="b99d8ffd74723aa099fd7bbfbb305189">
+        <source>Early finishers can edit their work, add music and then be camera crew
+for others.</source>
+        <target>crwdns10006:0crwdne10006:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="10007" identifier="ed444cc2e49266860e049eb1b7c2b145">
+        <source>Tips to before sending off for the 60 minute challenge:</source>
+        <target>crwdns10007:0crwdne10007:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="10008" identifier="6720e54c255db67df724af0c393b4c1f">
+        <source>The order of place values in a binary number is the same as the
+conventional (decimal) place value system, so the highest is on the left, smallest value on the right.</source>
+        <target>crwdns10008:0crwdne10008:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li/p</note>
+      </trans-unit>
+      <trans-unit id="10009" identifier="5abe40684b356c06cf3a58085393f1c7">
+        <source>Make sure that if you are using colours or other representations there is a strong contrast.</source>
+        <target>crwdns10009:0crwdne10009:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="10010" identifier="2fa03e98639d31b677467738157e01d2">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns10010:0crwdne10010:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="10011" identifier="2dc3e16bdbef15942e8c54096d94b42e">
+        <source>The number pattern is from highest to lowest, left to right (it's just a
+convention, but we use the same one in decimal, with the most significant
+digits on the left):</source>
+        <target>crwdns10011:0crwdne10011:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[2]/li/p</note>
+      </trans-unit>
+      <trans-unit id="10012" identifier="11703353919c50f54c585b3b351994e3">
+        <source>16, 8, 4, 2, 1</source>
+        <target>crwdns10012:0crwdne10012:0</target>
+        <note>Context: Text&#13;
+XPath: /ol[2]/li/p[2]/em</note>
+      </trans-unit>
+      <trans-unit id="10013" identifier="6d3fd5b733bffa3d9e06718f1a1b2ddc">
+        <source>Therefore watch that they aren’t representing 1 as:</source>
+        <target>crwdns10013:0crwdne10013:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[2]/li/p[3]</note>
+      </trans-unit>
+      <trans-unit id="10014" identifier="822f5887fef9395917156ba1ec84dabe">
+        <source>&lt;em&gt;1, 0, 0, 0, 0&lt;/em&gt; (which actually represents the decimal number 16)</source>
+        <target>crwdns10014:0crwdne10014:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[2]/li/p[4]</note>
+      </trans-unit>
+      <trans-unit id="10015" identifier="e34a5015f83c9d31138e9c8adb66615a">
+        <source>Below is an example of where students believed that 3 in decimal is
+represented as 00100, as they focused on the pattern of numbers rather
+than using the place values.</source>
+        <target>crwdns10015:0crwdne10015:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[2]/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="10016" identifier="2f2489e438b7efeec6d8f9d51d08d168">
+        <source>00001</source>
+        <target>crwdns10016:0crwdne10016:0</target>
+        <note>Context: Text&#13;
+XPath: /ol[2]/li[2]/p[2]/em</note>
+      </trans-unit>
+      <trans-unit id="10017" identifier="d38312b7ab7fe7953eb2c23a8f115520">
+        <source>00010</source>
+        <target>crwdns10017:0crwdne10017:0</target>
+        <note>Context: Text&#13;
+XPath: /ol[2]/li[2]/p[3]/em</note>
+      </trans-unit>
+      <trans-unit id="10018" identifier="4e5fa93552dde92f1230dadeb98a1efa">
+        <source>&lt;em&gt;00100&lt;/em&gt; (where it should be 00011 for 3)</source>
+        <target>crwdns10018:0crwdne10018:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[2]/li[2]/p[4]</note>
+      </trans-unit>
+      <trans-unit id="10019" identifier="746ddb45c763e91c9a55db9dce5d128a">
+        <source>The videos below were made within 60 minutes, to provide you with
+realistic videos that your students can expand on.</source>
+        <target>crwdns10019:0crwdne10019:0</target>
+        <note>Context: XPath: /ol[2]/li[3]/p</note>
+      </trans-unit>
+      <trans-unit id="10020" identifier="4fa578e9205c9fb503c83a7a1261f169">
+        <source>Like all completed work, there is always something you can improve on.</source>
+        <target>crwdns10020:0crwdne10020:0</target>
+        <note>Context: XPath: /ol[2]/li[3]/p</note>
+      </trans-unit>
+      <trans-unit id="10021" identifier="98f9543b9ad51bfd8e7aa133d4e9a34c">
+        <source>It's very hard to get every detail exactly right when you are explaining
+things, so the important thing is that students are demonstrating that
+they have the big concepts, rather than getting every detail right;
+minor errors such as an incorrect number can be discussion points for
+other students.</source>
+        <target>crwdns10021:0crwdne10021:0</target>
+        <note>Context: XPath: /ol[2]/li[3]/p</note>
+      </trans-unit>
+      <trans-unit id="10022" identifier="e55a010e1bd87f56a31be3512ff5b51c">
+        <source>{panel end}</source>
+        <target>crwdns10022:0{panel end}crwdne10022:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="10023" identifier="6eb773f631c550bfd598c98c51e425a2">
+        <source>{panel type=&quot;general&quot; title=&quot;Examplars&quot;}</source>
+        <target>crwdns10023:0crwdne10023:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="10024" identifier="5ada15228d797e63c02d749a2a2ae455">
+        <source>Samples of work after an hour challenge:</source>
+        <target>crwdns10024:0crwdne10024:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="10025" identifier="58281a5603cd4d583899731c67255e8f">
+        <source>Binary numbers: Using trailer on iMovie</source>
+        <target>crwdns10025:0crwdne10025:0</target>
+        <note>Context: Text&#13;
+XPath: /p[15]/strong</note>
+      </trans-unit>
+      <trans-unit id="10026" identifier="96537eeeefec3a70dc2c43764dfc88f8">
+        <source>{video url=&quot;https://youtu.be/-B0CnXv6pzo&quot;}</source>
+        <target>crwdns10026:0crwdne10026:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="10027" identifier="f0b9723221514d3d277ca69a399b8b6d">
+        <source>Percussion binary</source>
+        <target>crwdns10027:0crwdne10027:0</target>
+        <note>Context: Text&#13;
+XPath: /p[17]/strong</note>
+      </trans-unit>
+      <trans-unit id="10028" identifier="25d55b005e15548ffaf5bea9d10412bc">
+        <source>{video url=&quot;https://youtu.be/0sQtZhAYUbU&quot;}</source>
+        <target>crwdns10028:0crwdne10028:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="10029" identifier="d91bbd02e78e34c7cbfb60b708e43827">
+        <source>Binary teddies</source>
+        <target>crwdns10029:0crwdne10029:0</target>
+        <note>Context: Text&#13;
+XPath: /p[19]/strong</note>
+      </trans-unit>
+      <trans-unit id="10030" identifier="0c935681becc80f56da280ead8b9d34a">
+        <source>{video url=&quot;https://youtu.be/KNC1CgmVOus&quot;}</source>
+        <target>crwdns10030:0crwdne10030:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="10031" identifier="ba5e70791937c61ebbb4939bac7ed67f">
+        <source>Binary guy</source>
+        <target>crwdns10031:0crwdne10031:0</target>
+        <note>Context: Text&#13;
+XPath: /p[21]/strong</note>
+      </trans-unit>
+      <trans-unit id="10032" identifier="bfc6f21cd7368fe44c6bb2a19e9111fa">
+        <source>{video url=&quot;https://youtu.be/9CzELd9DFwc&quot;}</source>
+        <target>crwdns10032:0crwdne10032:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="10033" identifier="59e042da1872bd44e9c06a8263fafdde">
+        <source>{panel end}</source>
+        <target>crwdns10033:0{panel end}crwdne10033:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="10034" identifier="9ae1c8adcfc6900767e6972f5c6c8c0d">
+        <source>Applying what we have just learn</source>
+        <target>crwdns10034:0crwdne10034:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[4]</note>
+      </trans-unit>
+      <trans-unit id="10035" identifier="dda1306f2c022730966981dffd1bc8d9">
+        <source>Review each other’s videos</source>
+        <target>crwdns10035:0crwdne10035:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="10036" identifier="ec0e34d29ba5e46e109a8747f3c9271a">
+        <source>Can you recognise any misconceptions about the binary number system that
+have appeared in a video?</source>
+        <target>crwdns10036:0crwdne10036:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[3]/li/p</note>
+      </trans-unit>
+      <trans-unit id="10037" identifier="c71e14a596cf3f11efacab9600c24e1c">
+        <source>What made the videos interesting or appealing that another person might
+be able to learn from them?</source>
+        <target>crwdns10037:0crwdne10037:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[3]/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="10038" identifier="5130654c0e861f29672a02e1d1360b7f">
+        <source>Lesson reflection</source>
+        <target>crwdns10038:0crwdne10038:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[5]</note>
+      </trans-unit>
+      <trans-unit id="10039" identifier="8032f9443e97ecc0e2e7ed2b816b0e55">
+        <source>How can you use these videos to support others to learn about the
+binary number system?</source>
+        <target>crwdns10039:0crwdne10039:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[4]/li</note>
+      </trans-unit>
+      <trans-unit id="10040" identifier="2613dda206af5bb9f6781399b5e3f7a8">
+        <source>What were the key points that are now clear about the binary number
+system now that you’ve created your video?</source>
+        <target>crwdns10040:0crwdne10040:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[4]/li[2]</note>
+      </trans-unit>
+      <trans-unit id="10041" identifier="b3161dd5d09855137dd7dfafbbd33dea">
+        <source>What questions do you have after making this video in relation to the
+binary number system?</source>
+        <target>crwdns10041:0crwdne10041:0</target>
+        <note>Context: XPath: /ul[4]/li[3]</note>
+      </trans-unit>
+      <trans-unit id="10042" identifier="3b37f0e08ddc4bea2de9f24130d97263">
+        <source>(Typically responses are that they want to understand further how binary
+numbers are used to show letters, images, videos and all things
+on a computer - these topics are covered in further lesson plans)</source>
+        <target>crwdns10042:0crwdne10042:0</target>
+        <note>Context: XPath: /ul[4]/li[3]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

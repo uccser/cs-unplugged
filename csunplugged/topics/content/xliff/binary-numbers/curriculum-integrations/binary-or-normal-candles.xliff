@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="723" original="/csunplugged/topics/content/en/binary-numbers/curriculum-integrations/binary-or-normal-candles.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8273" identifier="0c8a5e4b6b6dd350c29ece1f7b78c8e3">
+        <source>Binary Candles or Normal Candles on your Cake</source>
+        <target>crwdns8273:0crwdne8273:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="8274" identifier="fd7af16f646dacdfe8e00b7b0d3b8a60">
+        <source>On a birthday cake we often use one candle for each year of age.</source>
+        <target>crwdns8274:0crwdne8274:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8275" identifier="8ce98c4395e9113ee6935212ab1dd151">
+        <source>But since each candle can be either lit or not lit, we could use them to show a binary representation of your age.</source>
+        <target>crwdns8275:0crwdne8275:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="8276" identifier="48acb897b27a1d940440ac76a9334d8b">
+        <source>For example, 14 years old is 1110 in binary, so you could represent it with four candles.</source>
+        <target>crwdns8276:0crwdne8276:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="8277" identifier="5313944d0799114fce5d994200ad62a7">
+        <source>{image file-path=&quot;img/topics/col_binary_cake.png&quot;}</source>
+        <target>crwdns8277:0crwdne8277:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="8278" identifier="e8068112bbaa4d11df19ac87bac8229a">
+        <source>Persuade people to start using binary candles on their birthday cake.</source>
+        <target>crwdns8278:0crwdne8278:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="8279" identifier="39489b07f6d3bc064620d5775c9d2150">
+        <source>What are the advantages of using binary candles?</source>
+        <target>crwdns8279:0crwdne8279:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="8280" identifier="d9f8f1cfe8c17d8bb9178894d0db6bf4">
+        <source>Why do binary candles get better when you get older?</source>
+        <target>crwdns8280:0crwdne8280:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="8281" identifier="439e37daa307de82d2a3de78623256b3">
+        <source>Are there any disadvantages of using binary candles and how would you overcome them?</source>
+        <target>crwdns8281:0crwdne8281:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="8282" identifier="d625b0afc158d4f595ac2e90c1f58a2b">
+        <source>(By the way, the traditional system is called unary, or base one. Each candle is worth one times as much as the previous one!)</source>
+        <target>crwdns8282:0crwdne8282:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

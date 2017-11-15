@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1221" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/draw-triangle-without-loop/draw-triangle-without-loop.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14923" identifier="b633a5316cbe1bf530ef18d8ea21aae2">
+        <source>Draw a triangle (without a loop)</source>
+        <target>crwdns14923:0crwdne14923:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="14924" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns14924:0crwdne14924:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="14925" identifier="9f04cc9f89be3fa1fe82dc867b672325">
+        <source>Write a program that draws a triangle (with equal sides), starting from point x:0, y:0, with its sides equal to 100 steps without using a repeat loop.</source>
+        <target>crwdns14925:0crwdne14925:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14926" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns14926:0crwdne14926:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="14927" identifier="c6c8bb685a40fd65c5411b1f6f48de56">
+        <source>There are no testing examples for this challenge.</source>
+        <target>crwdns14927:0crwdne14927:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

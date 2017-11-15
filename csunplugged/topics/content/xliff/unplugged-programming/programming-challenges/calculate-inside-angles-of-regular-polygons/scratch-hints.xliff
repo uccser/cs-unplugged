@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1101" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/calculate-inside-angles-of-regular-polygons/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14250" identifier="4705b4dfc6e2accbb87fffd9492fda78">
+        <source>A regular polygon has all angles equal and all sides equal.</source>
+        <target>crwdns14250:0crwdne14250:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="14251" identifier="0245fe7dcbab7d81a12042cf774a56f5">
+        <source>The turning angle or external angle for a regular polygon can be calculated by dividing 360 by the number of sides of the polygon.</source>
+        <target>crwdns14251:0crwdne14251:0</target>
+        <note>Context: XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="14252" identifier="39475369fe10844cae836cbd763a14cf">
+        <source>Note that the turning angle at each vertex of the polygon is different from the inside or the interior angle (i.e. the turning angle and the inside angle of each vertex of the polygon add up to 180 degrees).</source>
+        <target>crwdns14252:0crwdne14252:0</target>
+        <note>Context: XPath: /ul/li[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

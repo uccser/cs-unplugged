@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="719" original="/csunplugged/topics/content/en/binary-numbers/other-resources.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8259" identifier="fe7b3ce38d07566b669a03a3fcc19d46">
+        <source>Other Resources</source>
+        <target>crwdns8259:0crwdne8259:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="8260" identifier="6db89107a207d84343c20a17f53c38c3">
+        <source>The &lt;a href=&quot;http://csfieldguide.org.nz/&quot;&gt;Computer Science Field Guide&lt;/a&gt; has a chapter on &lt;a href=&quot;http://csfieldguide.org.nz/en/chapters/data-representation.html&quot;&gt;Data Representation&lt;/a&gt; which covers Binary Numbers and how they can represent different different types of data.</source>
+        <target>crwdns8260:0crwdne8260:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8261" identifier="1d3565eb10a9a1a1099128fb30bf9dfb">
+        <source>It also has an interactive version of the &lt;a href=&quot;http://csfieldguide.org.nz/en/interactives/binary-cards/index.html?digits=4&amp;amp;start=WWWW&quot;&gt;binary cards&lt;/a&gt;, you can find out extra information on how to use these &lt;a href=&quot;https://github.com/uccser/cs-field-guide/tree/develop/interactives/binary-cards&quot;&gt;here&lt;/a&gt;.</source>
+        <target>crwdns8261:0crwdne8261:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

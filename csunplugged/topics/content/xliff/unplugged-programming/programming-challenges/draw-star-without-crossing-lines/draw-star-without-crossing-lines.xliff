@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1210" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/draw-star-without-crossing-lines/draw-star-without-crossing-lines.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14888" identifier="d90ae36461ca69096c670f7146a03ce6">
+        <source>Draw a star without the crossing lines</source>
+        <target>crwdns14888:0crwdne14888:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="14889" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns14889:0crwdne14889:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="14890" identifier="20b5e6b5b5337043aa4549aae7b91793">
+        <source>Write a program that draws a 6-pointed star (without the crossing lines).</source>
+        <target>crwdns14890:0crwdne14890:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14891" identifier="3bf89793fd5f4cec0b644d70ac61b190">
+        <source>{image file-path=&quot;img/topics/programming-challenges/star-without-crossing-lines.png&quot;}</source>
+        <target>crwdns14891:0crwdne14891:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14892" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns14892:0crwdne14892:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="14893" identifier="c37cdf2bf896da90b6eaed60803da712">
+        <source>There are no testing examples for this challenge.</source>
+        <target>crwdns14893:0crwdne14893:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

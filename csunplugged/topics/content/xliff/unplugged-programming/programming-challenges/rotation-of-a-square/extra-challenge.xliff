@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1326" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/rotation-of-a-square/extra-challenge.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15496" identifier="3f48cd6486c4b489432e55323e4fcb23">
+        <source>&lt;strong&gt;Extra challenge #1:&lt;/strong&gt;
+Edit your program so the square rotates over and over (use a FOREVER block under the “control” script) for any given angle (in degrees) entered by the user as the input.</source>
+        <target>crwdns15496:0crwdne15496:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

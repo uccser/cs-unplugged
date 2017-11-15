@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="911" original="/csunplugged/topics/content/en/error-detection-and-correction/programming-challenges/check-valid-credit-card/check-valid-credit-card.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10215" identifier="c8d312efda76ce9ac60b902682925ab1">
+        <source>Check for valid credit card number</source>
+        <target>crwdns10215:0crwdne10215:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="10216" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns10216:0crwdne10216:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="10217" identifier="db78b9a6a9a77ea763f5c3131ecdaeb5">
+        <source>Write a program that asks the user to enter a credit card number (16 digits)
+as the input and says if the credit card number is valid as the output.</source>
+        <target>crwdns10217:0crwdne10217:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="10218" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns10218:0crwdne10218:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="10219" identifier="c4157e645991e13a72ced9574f6e8235">
+        <source>Your program should display the outputs shown in this table for the given
+inputs provided:</source>
+        <target>crwdns10219:0crwdne10219:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="10220" identifier="f78278ddeb4328294ea87d0f2c4426e0">
+        <source>Important: None of these is an actual credit card number, but the correct
+ones have the correct checksum.</source>
+        <target>crwdns10220:0crwdne10220:0</target>
+        <note>Context: Text&#13;
+XPath: /p[3]/em</note>
+      </trans-unit>
+      <trans-unit id="10221" identifier="5bfb69c6f4701e747d0c20b0822e2580">
+        <source>Input</source>
+        <target>crwdns10221:0crwdne10221:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th</note>
+      </trans-unit>
+      <trans-unit id="10222" identifier="f36a1e77a6177da7e10093e12e92ec6c">
+        <source>Output</source>
+        <target>crwdns10222:0crwdne10222:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th[2]</note>
+      </trans-unit>
+      <trans-unit id="10223" identifier="1e42907939599e47e46a2d61cbee5b82">
+        <source>5105105105105100</source>
+        <target>crwdns10223:0crwdne10223:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td</note>
+      </trans-unit>
+      <trans-unit id="10224" identifier="fcb6de5845a7088337cb2a386806fb56">
+        <source>Valid credit card number!</source>
+        <target>crwdns10224:0crwdne10224:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td[2]</note>
+      </trans-unit>
+      <trans-unit id="10225" identifier="694c16c47bed50cd7b74d41ee2bf91b9">
+        <source>4111111111111111</source>
+        <target>crwdns10225:0crwdne10225:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td</note>
+      </trans-unit>
+      <trans-unit id="10226" identifier="319443c9db8c31c212eaa80740220c44">
+        <source>Valid credit card number!</source>
+        <target>crwdns10226:0crwdne10226:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="10227" identifier="fa20c408852aa567720b3e2c9f234dd8">
+        <source>4012888888881881</source>
+        <target>crwdns10227:0crwdne10227:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td</note>
+      </trans-unit>
+      <trans-unit id="10228" identifier="3fc8195628d7e33f93fae0768cf7b254">
+        <source>Valid credit card number!</source>
+        <target>crwdns10228:0crwdne10228:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="10229" identifier="d199e1ca022a7a3e41128213ec97b25f">
+        <source>5105105505105100</source>
+        <target>crwdns10229:0crwdne10229:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[4]/td</note>
+      </trans-unit>
+      <trans-unit id="10230" identifier="d0e2818d845a31251dfbb640fa6866aa">
+        <source>Invalid credit card number!</source>
+        <target>crwdns10230:0crwdne10230:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[4]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="10231" identifier="9cfde778f7aa675a9baca689d8966242">
+        <source>4111112111111111</source>
+        <target>crwdns10231:0crwdne10231:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[5]/td</note>
+      </trans-unit>
+      <trans-unit id="10232" identifier="7a7ded01ab56d4676e2b8a622db34fa2">
+        <source>Invalid credit card number!</source>
+        <target>crwdns10232:0crwdne10232:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[5]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="10233" identifier="88f0977a2c2486845c131a7a4f3d8dd4">
+        <source>4112888888881881</source>
+        <target>crwdns10233:0crwdne10233:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[6]/td</note>
+      </trans-unit>
+      <trans-unit id="10234" identifier="ce983b2b8e7ea59b85098232a44c84eb">
+        <source>Invalid credit card number!</source>
+        <target>crwdns10234:0crwdne10234:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[6]/td[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

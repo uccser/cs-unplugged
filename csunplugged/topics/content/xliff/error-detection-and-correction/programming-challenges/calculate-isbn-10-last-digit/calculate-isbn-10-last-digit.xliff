@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="896" original="/csunplugged/topics/content/en/error-detection-and-correction/programming-challenges/calculate-isbn-10-last-digit/calculate-isbn-10-last-digit.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10129" identifier="d5707f6386fab69086a39ee2b8e35b05">
+        <source>Calculate the last digit of an ISBN-10 number</source>
+        <target>crwdns10129:0crwdne10129:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="10130" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns10130:0crwdne10130:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="10131" identifier="0eb666edf8ea03318e4f36e781054ddc">
+        <source>Write a program that asks the user to enter the first 9 digits of an
+ISBN-10 number as the input and says what the last digit should be.</source>
+        <target>crwdns10131:0crwdne10131:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="10132" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns10132:0crwdne10132:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="10133" identifier="c4157e645991e13a72ced9574f6e8235">
+        <source>Your program should display the outputs shown in this table for the given
+inputs provided:</source>
+        <target>crwdns10133:0crwdne10133:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="10134" identifier="5bfb69c6f4701e747d0c20b0822e2580">
+        <source>Input</source>
+        <target>crwdns10134:0crwdne10134:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th</note>
+      </trans-unit>
+      <trans-unit id="10135" identifier="f36a1e77a6177da7e10093e12e92ec6c">
+        <source>Output</source>
+        <target>crwdns10135:0crwdne10135:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th[2]</note>
+      </trans-unit>
+      <trans-unit id="10136" identifier="cd91dc5ee15d6d83961deddd4a14ef84">
+        <source>020153082</source>
+        <target>crwdns10136:0crwdne10136:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td</note>
+      </trans-unit>
+      <trans-unit id="10137" identifier="13601b576d8930f58c29ac9b30417630">
+        <source>The last digit is: 1</source>
+        <target>crwdns10137:0crwdne10137:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td[2]</note>
+      </trans-unit>
+      <trans-unit id="10138" identifier="d9484cbb31c3e6651ca13ac9455ecd4a">
+        <source>014003219</source>
+        <target>crwdns10138:0crwdne10138:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td</note>
+      </trans-unit>
+      <trans-unit id="10139" identifier="a37c927861ccc8bf72cee78bce2f1418">
+        <source>The last digit is: 3</source>
+        <target>crwdns10139:0crwdne10139:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="10140" identifier="35726356c124399bb8d77e6c48acf90d">
+        <source>052135741</source>
+        <target>crwdns10140:0crwdne10140:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td</note>
+      </trans-unit>
+      <trans-unit id="10141" identifier="ba9529c75650168e220c0ac04c5c5a35">
+        <source>The last digit is: 1</source>
+        <target>crwdns10141:0crwdne10141:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="10142" identifier="a5a6417d39b62746c943c908de3aac73">
+        <source>043942089</source>
+        <target>crwdns10142:0crwdne10142:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[4]/td</note>
+      </trans-unit>
+      <trans-unit id="10143" identifier="be282301d0843ce7fa1ee288c8b91345">
+        <source>The last digit is: X</source>
+        <target>crwdns10143:0crwdne10143:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[4]/td[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

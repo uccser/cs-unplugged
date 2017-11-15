@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1292" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/modulo-check-leap-year/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15357" identifier="f3b5fe6b13c58314d4f8a7210242abe3">
+        <source>Click on the green flag to see the expected output of your program.</source>
+        <target>crwdns15357:0crwdne15357:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15358" identifier="9280094109c09716ae09f1d95b55b55d">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/165754830/?autostart=false&quot;}</source>
+        <target>crwdns15358:0crwdne15358:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="15359" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns15359:0crwdne15359:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="15360" identifier="33a9754026faa05677262c3790c953a1">
+        <source>when green flag clicked</source>
+        <target>crwdns15360:0crwdne15360:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="15361" identifier="8a1483fad4d12479f11c6d4650815bef">
+        <source>set [year v] to (answer)</source>
+        <target>crwdns15361:0crwdne15361:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="15362" identifier="1cc0279de20d08b6e3d3cfeebd13c2a8">
+        <source>ask [Enter the year and I will tell you if it's a leap year or not:] and wait</source>
+        <target>crwdns15362:0crwdne15362:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="15363" identifier="31745730e0f888bf9c59f2514b9adfa4">
+        <source>say (join (year) [ is not a leap year!])
+
+say (join (year) [ is a leap year!])
+
+say (join (year) [ is not a leap year!])
+
+say (join (year) [ is a leap year!])</source>
+        <target>crwdns15363:0crwdne15363:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[4]/code</note>
+      </trans-unit>
+      <trans-unit id="15364" identifier="430276ea4f293206ed8ae333c8582396">
+        <source>if &amp;lt;not &amp;lt;((year) mod (4)) = [0]&amp;gt;&amp;gt; then
+else
+end
+
+if &amp;lt;not &amp;lt;((year) mod (100)) = [0]&amp;gt;&amp;gt; then
+else
+end
+
+if &amp;lt;not &amp;lt;((year) mod (400)) = [0]&amp;gt;&amp;gt; then
+else
+end</source>
+        <target>crwdns15364:0[0]crwdnd15364:0[0]crwdnd15364:0[0]crwdne15364:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[5]/code</note>
+      </trans-unit>
+      <trans-unit id="15365" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns15365:0{panel end}crwdne15365:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

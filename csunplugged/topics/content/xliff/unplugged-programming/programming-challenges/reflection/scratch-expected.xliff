@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1310" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/reflection/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15431" identifier="f3b5fe6b13c58314d4f8a7210242abe3">
+        <source>Click on the green flag to see the expected output of your program.</source>
+        <target>crwdns15431:0crwdne15431:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15432" identifier="ec709241d3d5d032f0f172678000d824">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/153740678/?autostart=false&quot;}</source>
+        <target>crwdns15432:0crwdne15432:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="15433" identifier="1914a5295999e5fd59333908f0138323">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks for solution 1&quot;}</source>
+        <target>crwdns15433:0crwdne15433:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="15434" identifier="622d253ff4d50dc728ad265a0cc2181a">
+        <source>when green flag clicked
+
+when green flag clicked</source>
+        <target>crwdns15434:0crwdne15434:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="15435" identifier="bfb8a0cb4b6f792eed9c340f6d61a06d">
+        <source>clear
+
+clear
+
+set pen size to (3)
+
+set pen color to [#2ca5e2]
+
+pen down
+
+pen up
+
+set pen size to (3)
+
+set pen color to [#db0705]
+
+pen down
+
+pen up</source>
+        <target>crwdns15435:0crwdne15435:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="15436" identifier="cf7edbdb80a33c0ce6b6303cc95cdfc4">
+        <source>wait (1) secs
+
+wait (1) secs
+
+wait (1) secs
+
+wait (1) secs
+
+wait (1) secs
+
+wait (1) secs
+
+wait (1) secs
+
+wait (1) secs
+
+wait (1) secs
+
+wait (1) secs
+
+wait (1) secs
+
+wait (1) secs
+
+wait (1) secs
+
+wait (1) secs</source>
+        <target>crwdns15436:0crwdne15436:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="15437" identifier="3ebbfe52987908850a93dbff8651242f">
+        <source>go to x: (0) y: (100)
+
+go to x: (-100) y: (100)
+
+go to x: (-100) y: (0)
+
+go to x: (-100) y: (0)
+
+go to x: (-200) y: (0)
+
+go to x: (-200) y: (-100)
+
+go to x: (0) y: (-100)
+
+go to x: (0) y: (100)
+
+go to x: (0) y: (100)
+
+go to x: (100) y: (100)
+
+go to x: (100) y: (0)
+
+go to x: (100) y: (0)
+
+go to x: (200) y: (0)
+
+go to x: (200) y: (-100)
+
+go to x: (0) y: (-100)
+
+go to x: (0) y: (100)</source>
+        <target>crwdns15437:0crwdne15437:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[4]/code</note>
+      </trans-unit>
+      <trans-unit id="15438" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns15438:0{panel end}crwdne15438:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="15439" identifier="e13e6277d7311f708b75fb97fb7fad7a">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks for solution 2&quot;}</source>
+        <target>crwdns15439:0crwdne15439:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="15440" identifier="286e0dc036c0627f1e057854e35b571c">
+        <source>when green flag clicked
+
+when green flag clicked</source>
+        <target>crwdns15440:0crwdne15440:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[5]/code</note>
+      </trans-unit>
+      <trans-unit id="15441" identifier="555f7788a53620ce503d6fec90b7d14c">
+        <source>wait (1) secs
+
+wait (1) secs
+
+wait (1) secs
+
+wait (1) secs
+
+wait (1) secs
+
+wait (1) secs
+
+wait (1) secs
+
+wait (1) secs
+
+wait (1) secs
+
+wait (1) secs
+
+wait (1) secs
+
+wait (1) secs
+
+wait (1) secs
+
+wait (1) secs</source>
+        <target>crwdns15441:0crwdne15441:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[6]/code</note>
+      </trans-unit>
+      <trans-unit id="15442" identifier="bb167962bcbed9291111e3c6b50a10a0">
+        <source>clear
+
+set pen size to (3)
+
+set pen color to [#05d382]
+
+pen down
+
+pen up
+
+clear
+
+set pen size to (3)
+
+set pen color to [#e81818]
+
+pen down
+
+pen up</source>
+        <target>crwdns15442:0crwdne15442:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[7]/code</note>
+      </trans-unit>
+      <trans-unit id="15443" identifier="7510cdbb833fbaaf625df01508b4674d">
+        <source>set [angle v] to [90]
+
+set [mirror angle v] to ((360) - (angle))</source>
+        <target>crwdns15443:0[90]crwdne15443:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[8]/code</note>
+      </trans-unit>
+      <trans-unit id="15444" identifier="5011ac3dfad26835c490e1960ff0cf73">
+        <source>go to x: (0) y: (0)
+
+point in direction (0 v)
+
+move (100) steps
+
+turn ccw (angle) degrees
+
+move (100) steps
+
+turn ccw (angle) degrees
+
+move (100) steps
+
+turn cw (angle) degrees
+
+move (100) steps
+
+turn ccw (angle) degrees
+
+move (100) steps
+
+turn ccw (angle) degrees
+
+move (200) steps
+
+turn ccw (angle) degrees
+
+move (100) steps
+
+go to x: (0) y: (0)
+
+point in direction (0 v)
+
+move (100) steps
+
+turn ccw (mirror angle) degrees
+
+move (100) steps
+
+turn ccw (mirror angle) degrees
+
+move (100) steps
+
+turn cw (mirror angle) degrees
+
+move (100) steps
+
+turn ccw (mirror angle) degrees
+
+move (100) steps
+
+turn ccw (mirror angle) degrees
+
+move (200) steps
+
+turn ccw (mirror angle) degrees
+
+move (100) steps</source>
+        <target>crwdns15444:0crwdne15444:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[9]/code</note>
+      </trans-unit>
+      <trans-unit id="15445" identifier="e8dc6db8623270551f676e6f496291c1">
+        <source>{panel end}</source>
+        <target>crwdns15445:0{panel end}crwdne15445:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

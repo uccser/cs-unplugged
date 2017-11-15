@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1002" original="/csunplugged/topics/content/en/error-detection-and-correction/programming-challenges/product-code-13-weighted-sum-one-at-a-time/product-code-13-weighted-sum-one-at-a-time.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10795" identifier="5c1f73c9aa2bf0f32072ad5d28fc1b70">
+        <source>13 digit product codes: Weighted sum of digits (entered one at a time)</source>
+        <target>crwdns10795:0crwdne10795:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="10796" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns10796:0crwdne10796:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="10797" identifier="bc2d6c7ce053d21e44c0e332b71b188b">
+        <source>Write a program that asks the user to enter a 13 digit product code,
+entering each digit one at a time.</source>
+        <target>crwdns10797:0crwdne10797:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="10798" identifier="b5873032e8e460b73d8dfa3feafbae76">
+        <source>Then adds up all the digits, every second one multiplied by 3 (2nd, 4th, and
+so on), and shows the total as the output.</source>
+        <target>crwdns10798:0crwdne10798:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="10799" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns10799:0crwdne10799:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="10800" identifier="a1930a6ec23e156497fdd158166531e0">
+        <source>Your program should display the outputs shown in this panel for the given
+inputs provided:</source>
+        <target>crwdns10800:0crwdne10800:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="10801" identifier="5bfb69c6f4701e747d0c20b0822e2580">
+        <source>Input</source>
+        <target>crwdns10801:0crwdne10801:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th</note>
+      </trans-unit>
+      <trans-unit id="10802" identifier="f36a1e77a6177da7e10093e12e92ec6c">
+        <source>Output</source>
+        <target>crwdns10802:0crwdne10802:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th[2]</note>
+      </trans-unit>
+      <trans-unit id="10803" identifier="d881275965224c76a47252e05f7c5b6e">
+        <source>9&lt;br&gt;4&lt;br&gt;2&lt;br&gt;1&lt;br&gt;9&lt;br&gt;0&lt;br&gt;2&lt;br&gt;8&lt;br&gt;1&lt;br&gt;4&lt;br&gt;7&lt;br&gt;9&lt;br&gt;2</source>
+        <target>crwdns10803:0crwdne10803:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td</note>
+      </trans-unit>
+      <trans-unit id="10804" identifier="7962506500574f7d4162b6a2cc2976a8">
+        <source>Total: 110</source>
+        <target>crwdns10804:0crwdne10804:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

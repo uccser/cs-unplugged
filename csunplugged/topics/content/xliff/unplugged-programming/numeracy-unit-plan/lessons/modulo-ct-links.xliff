@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1072" original="/csunplugged/topics/content/en/unplugged-programming/numeracy-unit-plan/lessons/modulo-ct-links.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="13781" identifier="60d301c26f809c65c0e4912d6c1cdfc9">
+        <source>This topic is primarily a maths topic, which supports later activities for
+computational thinking.</source>
+        <target>crwdns13781:0crwdne13781:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="13782" identifier="8fdab9953956c1f35adcc99f12ed308d">
+        <source>The connections with Computational Thinking are therefore more indirect,
+since CT isn't the main purpose of the topic, and so we haven't
+provided the usual list of connections.</source>
+        <target>crwdns13782:0crwdne13782:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="13783" identifier="20103ec3be9e2d905bd0191176e68bed">
+        <source>Nevertheless, there are some connections worth noting.</source>
+        <target>crwdns13783:0crwdne13783:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="13784" identifier="6287761b05ea97734e0dae478ab4315f">
+        <source>One connection with computational thinking is an example of &lt;strong&gt;abstraction&lt;/strong&gt;:
+sequences like &quot;Monday, Tuesday, Wednesday...&quot; or &quot;January, February,
+March...&quot; or &quot;C, C#, D, D#, E, F...&quot; can be represented by a
+cycle of numbers (0, 1, 2, 3...).</source>
+        <target>crwdns13784:0crwdne13784:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="13785" identifier="1a3db5a95fe68059759a3a8416833da5">
+        <source>There are also a lot of &lt;strong&gt;patterns&lt;/strong&gt; for students to explore; for example,
+using modulo 10, the result is always the last digit, and using modulo 2
+the pattern for ascending numbers is 0, 1, 0, 1, 0, 1..., that is, it
+alternates for even and odd numbers, and also corresponds to the right-hand
+bit of the binary representation.</source>
+        <target>crwdns13785:0crwdne13785:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

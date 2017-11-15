@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="757" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/binary-numbers-no-calculations/extra-challenge.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8521" identifier="0ee19209337706e33479e60bc3410bdd">
+        <source>Display the numbers from largest to smallest (display numbers 16, 8, 4, 2 and 1).</source>
+        <target>crwdns8521:0crwdne8521:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1300" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/modulo-even-odd-numbers/modulo-even-odd-numbers.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15393" identifier="5a868bb648ab1b80dc1b725f2308007d">
+        <source>Check for odd/even numbers using “mod” operation</source>
+        <target>crwdns15393:0crwdne15393:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="15394" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns15394:0crwdne15394:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="15395" identifier="afe467db5f21aca1647c89d220c928db">
+        <source>Create a program which asks the user to enter a number and checks if the number is odd or even.
+Use the “mod” operation for this challenge.</source>
+        <target>crwdns15395:0crwdne15395:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15396" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns15396:0crwdne15396:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="15397" identifier="c9bf31e2ea57693ba5afd83cc57b14b3">
+        <source>Your program should display the outputs shown in this table for the given inputs provided;</source>
+        <target>crwdns15397:0crwdne15397:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="15398" identifier="5bfb69c6f4701e747d0c20b0822e2580">
+        <source>Input</source>
+        <target>crwdns15398:0crwdne15398:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th</note>
+      </trans-unit>
+      <trans-unit id="15399" identifier="f36a1e77a6177da7e10093e12e92ec6c">
+        <source>Output</source>
+        <target>crwdns15399:0crwdne15399:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th[2]</note>
+      </trans-unit>
+      <trans-unit id="15400" identifier="83a3c923fdd51dd9fde44fc5389ece9d">
+        <source>265</source>
+        <target>crwdns15400:0crwdne15400:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td</note>
+      </trans-unit>
+      <trans-unit id="15401" identifier="7ce9a1f309c3f416c3c1f0d5ecff1ca0">
+        <source>You entered an odd number!</source>
+        <target>crwdns15401:0crwdne15401:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td[2]</note>
+      </trans-unit>
+      <trans-unit id="15402" identifier="38cef62074191c43e210924a8d27f5c3">
+        <source>0</source>
+        <target>crwdns15402:0crwdne15402:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td</note>
+      </trans-unit>
+      <trans-unit id="15403" identifier="d0e217a24528da63c76fd73eaf4b58c1">
+        <source>You entered an even number!</source>
+        <target>crwdns15403:0crwdne15403:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="15404" identifier="e89b084d6c2c87c4a5b6bac148c1a2b6">
+        <source>-22</source>
+        <target>crwdns15404:0crwdne15404:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td</note>
+      </trans-unit>
+      <trans-unit id="15405" identifier="2524e43dce07a6911e164bffc1c7bded">
+        <source>You entered an even number!</source>
+        <target>crwdns15405:0crwdne15405:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

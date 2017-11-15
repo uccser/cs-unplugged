@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="733" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/binary-cards-as-dots/scratch-solution.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8342" identifier="191690e563dfa8d8a9aab56e1c6d5a2c">
+        <source>{panel type=&quot;general&quot; title=&quot;Solution 1&quot; subtitle=&quot;(check digits of the binary number)&quot;}</source>
+        <target>crwdns8342:0crwdne8342:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8343" identifier="8413ec19905ce0164643122ba75896d0">
+        <source>Blocks for cat sprite (labelled binary number)</source>
+        <target>crwdns8343:0crwdne8343:0</target>
+        <note>Context: Text&#13;
+XPath: /p[2]/strong</note>
+      </trans-unit>
+      <trans-unit id="8344" identifier="e66d940f8c204e75b49e67e9cfc38548">
+        <source>when green flag clicked
+ask [Please enter a decimal number between 0 and 31] and wait
+set [decimal number v] to (answer)
+set [bit value v] to [32]
+set [binary number v] to []
+repeat until &amp;lt;(bit value) = [1]&amp;gt;
+  set [bit value v] to ((bit value) / (2))
+  if &amp;lt;&amp;lt;(decimal number) &amp;gt; (bit value)&amp;gt; or &amp;lt;(decimal number) = (bit value)&amp;gt;&amp;gt; then
+    set [binary number v] to (join (binary number) [1])
+    set [decimal number v] to ((decimal number) - (bit value))
+  else
+    set [binary number v] to (join (binary number) [0])
+  end
+end
+broadcast [turn over card v]</source>
+        <target>crwdns8344:0[32]crwdnd8344:0[1]crwdnd8344:0[1]crwdnd8344:0[0]crwdne8344:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="8345" identifier="b4cde8c01f5e5673fb26f8eecf42b720">
+        <source>Blocks for 1 dot card sprite</source>
+        <target>crwdns8345:0crwdne8345:0</target>
+        <note>Context: Text&#13;
+XPath: /p[3]/strong</note>
+      </trans-unit>
+      <trans-unit id="8346" identifier="ea445d9f6d975861c460a846c9a7a734">
+        <source>when green flag clicked
+switch costume to [black v]
+
+when I receive [turn over card v]
+if &amp;lt;(letter (5) of (binary number)) = [1]&amp;gt; then
+  switch costume to [white v]
+end</source>
+        <target>crwdns8346:0[1]crwdne8346:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="8347" identifier="f829cf196d9dd65788ee69232ac6aff3">
+        <source>Blocks for 2 dots card sprite</source>
+        <target>crwdns8347:0crwdne8347:0</target>
+        <note>Context: Text&#13;
+XPath: /p[4]/strong</note>
+      </trans-unit>
+      <trans-unit id="8348" identifier="388836d171856d030ea6360c5f0bb4e3">
+        <source>when green flag clicked
+switch costume to [black v]
+
+when I receive [turn over card v]
+if &amp;lt;(letter (4) of (binary number)) = [1]&amp;gt; then
+  switch costume to [white v]
+end</source>
+        <target>crwdns8348:0[1]crwdne8348:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="8349" identifier="b65f7c858ab051ffc1c38f7d29bd7523">
+        <source>Blocks for 4 dots card sprite</source>
+        <target>crwdns8349:0crwdne8349:0</target>
+        <note>Context: Text&#13;
+XPath: /p[5]/strong</note>
+      </trans-unit>
+      <trans-unit id="8350" identifier="76f07808cf1b9b88df9d674ad43829c0">
+        <source>when green flag clicked
+switch costume to [black v]
+
+when I receive [turn over card v]
+if &amp;lt;(letter (3) of (binary number)) = [1]&amp;gt; then
+  switch costume to [white v]
+end</source>
+        <target>crwdns8350:0[1]crwdne8350:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[4]/code</note>
+      </trans-unit>
+      <trans-unit id="8351" identifier="e0a6318baf41bbead2084d8f859a01dc">
+        <source>Blocks for 8 dots card sprite</source>
+        <target>crwdns8351:0crwdne8351:0</target>
+        <note>Context: Text&#13;
+XPath: /p[6]/strong</note>
+      </trans-unit>
+      <trans-unit id="8352" identifier="afe1c9925074930632e43764c1a3a185">
+        <source>when green flag clicked
+switch costume to [black v]
+
+when I receive [turn over card v]
+if &amp;lt;(letter (2) of (binary number)) = [1]&amp;gt; then
+  switch costume to [white v]
+end</source>
+        <target>crwdns8352:0[1]crwdne8352:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[5]/code</note>
+      </trans-unit>
+      <trans-unit id="8353" identifier="02d43d7bf5b3079ae7e1121b16a8b93d">
+        <source>Blocks for 16 dots card sprite</source>
+        <target>crwdns8353:0crwdne8353:0</target>
+        <note>Context: Text&#13;
+XPath: /p[7]/strong</note>
+      </trans-unit>
+      <trans-unit id="8354" identifier="7ad8e04546dd1327d599ff9806b28589">
+        <source>when green flag clicked
+switch costume to [black v]
+
+when I receive [turn over card v]
+if &amp;lt;(letter (1) of (binary number)) = [1]&amp;gt; then
+  switch costume to [white v]
+end</source>
+        <target>crwdns8354:0[1]crwdne8354:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[6]/code</note>
+      </trans-unit>
+      <trans-unit id="8355" identifier="76814e424523d7b9391aeb58dbd9452d">
+        <source>{panel end}</source>
+        <target>crwdns8355:0{panel end}crwdne8355:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="8356" identifier="44056e9ac1ceb4abcfc33a7ed8a677ac">
+        <source>{panel type=&quot;general&quot; title=&quot;Solution 2&quot; subtitle=&quot;(broadcast the bit value)&quot;}</source>
+        <target>crwdns8356:0crwdne8356:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="8357" identifier="d3d2b0a655a88f14ff8b51dc76fe3b85">
+        <source>Blocks for cat sprite (labelled binary number)</source>
+        <target>crwdns8357:0crwdne8357:0</target>
+        <note>Context: Text&#13;
+XPath: /p[10]/strong</note>
+      </trans-unit>
+      <trans-unit id="8358" identifier="14b1ac930434f5d59759311139e36e04">
+        <source>when green flag clicked
+ask [Please enter a decimal number between 0 and 31] and wait
+set [decimal number v] to (answer)
+set [bit value v] to [32]
+repeat until &amp;lt;(bit value) = [1]&amp;gt;
+  set [bit value v] to ((bit value) / (2))
+  if &amp;lt;&amp;lt;(decimal number) &amp;gt; (bit value)&amp;gt; or &amp;lt;(decimal number) = (bit value)&amp;gt;&amp;gt; then
+    set [decimal number v] to ((decimal number) - (bit value))
+    broadcast (bit value)
+  end
+end</source>
+        <target>crwdns8358:0[32]crwdnd8358:0[1]crwdne8358:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[7]/code</note>
+      </trans-unit>
+      <trans-unit id="8359" identifier="32aa061c40ab40f9788aea2d619bcad7">
+        <source>Blocks for 1 dot card sprite</source>
+        <target>crwdns8359:0crwdne8359:0</target>
+        <note>Context: Text&#13;
+XPath: /p[11]/strong</note>
+      </trans-unit>
+      <trans-unit id="8360" identifier="899e143d84e9b0eb5650ce5eebdbba3a">
+        <source>when green flag clicked
+switch costume to [black v]
+
+when I receive [1 v]
+switch costume to [white v]</source>
+        <target>crwdns8360:0crwdne8360:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[8]/code</note>
+      </trans-unit>
+      <trans-unit id="8361" identifier="092ac37dd40d96632ba55288bb2b3977">
+        <source>Blocks for 2 dots card sprite</source>
+        <target>crwdns8361:0crwdne8361:0</target>
+        <note>Context: Text&#13;
+XPath: /p[12]/strong</note>
+      </trans-unit>
+      <trans-unit id="8362" identifier="90bae6ea84ffb9832ab842c5688b0bd0">
+        <source>when green flag clicked
+switch costume to [black v]
+
+when I receive [2 v]
+switch costume to [white v]</source>
+        <target>crwdns8362:0crwdne8362:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[9]/code</note>
+      </trans-unit>
+      <trans-unit id="8363" identifier="0d2ae8a38415e748e8f8b92308158ed6">
+        <source>Blocks for 4 dots card sprite</source>
+        <target>crwdns8363:0crwdne8363:0</target>
+        <note>Context: Text&#13;
+XPath: /p[13]/strong</note>
+      </trans-unit>
+      <trans-unit id="8364" identifier="beff01cad09a6b8a04706aa438115231">
+        <source>when green flag clicked
+switch costume to [black v]
+
+when I receive [4 v]
+switch costume to [white v]</source>
+        <target>crwdns8364:0crwdne8364:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[10]/code</note>
+      </trans-unit>
+      <trans-unit id="8365" identifier="676537142aba739d50ed86e7feb9c0a1">
+        <source>Blocks for 8 dots card sprite</source>
+        <target>crwdns8365:0crwdne8365:0</target>
+        <note>Context: Text&#13;
+XPath: /p[14]/strong</note>
+      </trans-unit>
+      <trans-unit id="8366" identifier="4f964acb41ca45ffde6aac3ccc3cd93e">
+        <source>when green flag clicked
+switch costume to [black v]
+
+when I receive [8 v]
+switch costume to [white v]</source>
+        <target>crwdns8366:0crwdne8366:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[11]/code</note>
+      </trans-unit>
+      <trans-unit id="8367" identifier="3f52a1da0ade15ece6e3a7fa68cb80b8">
+        <source>Blocks for 16 dots card sprite</source>
+        <target>crwdns8367:0crwdne8367:0</target>
+        <note>Context: Text&#13;
+XPath: /p[15]/strong</note>
+      </trans-unit>
+      <trans-unit id="8368" identifier="99a6c1b8bd8c69f7722412d731fe646e">
+        <source>when green flag clicked
+switch costume to [black v]
+
+when I receive [16 v]
+switch costume to [white v]</source>
+        <target>crwdns8368:0crwdne8368:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[12]/code</note>
+      </trans-unit>
+      <trans-unit id="8369" identifier="2c5987aa00c061ae37f4be2df77e21e8">
+        <source>{panel end}</source>
+        <target>crwdns8369:0{panel end}crwdne8369:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="8370" identifier="e339c1e3758a4fb9fbf6a3d7497a4481">
+        <source>{panel type=&quot;general&quot; title=&quot;Solution 3&quot; subtitle=&quot;(using a variable to broadcast the bit value)&quot;}</source>
+        <target>crwdns8370:0crwdne8370:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="8371" identifier="e4f229cb785f59c72491c680062b6170">
+        <source>Blocks for cat sprite (labelled binary number)</source>
+        <target>crwdns8371:0crwdne8371:0</target>
+        <note>Context: Text&#13;
+XPath: /p[18]/strong</note>
+      </trans-unit>
+      <trans-unit id="8372" identifier="4833b7ccae7edaeca073640726d09b43">
+        <source>when green flag clicked
+ask [Please enter a decimal number between 0 and 31] and wait
+set [decimal number v] to (answer)
+set [bit value v] to [32]
+repeat until &amp;lt;(bit value) = [1]&amp;gt;
+  set [bit value v] to ((bit value) / (2))
+  if &amp;lt;&amp;lt;(decimal number) &amp;gt; (bit value)&amp;gt; or &amp;lt;(decimal number) = (bit value)&amp;gt;&amp;gt; then
+    set [decimal number v] to ((decimal number) - (bit value))
+    set [number of dots v] to (bit value)
+  end
+end</source>
+        <target>crwdns8372:0[32]crwdnd8372:0[1]crwdne8372:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[13]/code</note>
+      </trans-unit>
+      <trans-unit id="8373" identifier="7dd44c46defe4b8a661d2fed48f25bb6">
+        <source>Blocks for 1 dot card sprite</source>
+        <target>crwdns8373:0crwdne8373:0</target>
+        <note>Context: Text&#13;
+XPath: /p[19]/strong</note>
+      </trans-unit>
+      <trans-unit id="8374" identifier="b34587977f75252a9993108d8379bac8">
+        <source>when green flag clicked
+set [number of dots v] to [0]
+switch costume to [black v]
+wait until &amp;lt;(number of dots) = [1]&amp;gt;
+switch costume to [white v]</source>
+        <target>crwdns8374:0[0]crwdnd8374:0[1]crwdne8374:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[14]/code</note>
+      </trans-unit>
+      <trans-unit id="8375" identifier="af10c2eb934d045b02718187862b1614">
+        <source>Blocks for 2 dots card sprite</source>
+        <target>crwdns8375:0crwdne8375:0</target>
+        <note>Context: Text&#13;
+XPath: /p[20]/strong</note>
+      </trans-unit>
+      <trans-unit id="8376" identifier="b759458b0beaa524a52bb1a56521802e">
+        <source>when green flag clicked
+set [number of dots v] to [0]
+switch costume to [black v]
+wait until &amp;lt;(number of dots) = [2]&amp;gt;
+switch costume to [white v]</source>
+        <target>crwdns8376:0[0]crwdnd8376:0[2]crwdne8376:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[15]/code</note>
+      </trans-unit>
+      <trans-unit id="8377" identifier="2e4ca227567400d3661392dff9ecd1f3">
+        <source>Blocks for 4 dots card sprite</source>
+        <target>crwdns8377:0crwdne8377:0</target>
+        <note>Context: Text&#13;
+XPath: /p[21]/strong</note>
+      </trans-unit>
+      <trans-unit id="8378" identifier="99e7bf263536bdf76c64679bbca57f78">
+        <source>when green flag clicked
+set [number of dots v] to [0]
+switch costume to [black v]
+wait until &amp;lt;(number of dots) = [4]&amp;gt;
+switch costume to [white v]</source>
+        <target>crwdns8378:0[0]crwdnd8378:0[4]crwdne8378:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[16]/code</note>
+      </trans-unit>
+      <trans-unit id="8379" identifier="1993b1beb5d91512e716eee1931f8c69">
+        <source>Blocks for 8 dots card sprite</source>
+        <target>crwdns8379:0crwdne8379:0</target>
+        <note>Context: Text&#13;
+XPath: /p[22]/strong</note>
+      </trans-unit>
+      <trans-unit id="8380" identifier="ed09081f1bf09d9ac67245c1d00cc8e5">
+        <source>when green flag clicked
+set [number of dots v] to [0]
+switch costume to [black v]
+wait until &amp;lt;(number of dots) = [8]&amp;gt;
+switch costume to [white v]</source>
+        <target>crwdns8380:0[0]crwdnd8380:0[8]crwdne8380:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[17]/code</note>
+      </trans-unit>
+      <trans-unit id="8381" identifier="305aa55c363c5eea64c3e2c9b29b2006">
+        <source>Blocks for 16 dots card sprite</source>
+        <target>crwdns8381:0crwdne8381:0</target>
+        <note>Context: Text&#13;
+XPath: /p[23]/strong</note>
+      </trans-unit>
+      <trans-unit id="8382" identifier="1e4bff59406daf1d7854f34a485d4f0c">
+        <source>when green flag clicked
+set [number of dots v] to [0]
+switch costume to [black v]
+wait until &amp;lt;(number of dots) = [16]&amp;gt;
+switch costume to [white v]</source>
+        <target>crwdns8382:0[0]crwdnd8382:0[16]crwdne8382:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[18]/code</note>
+      </trans-unit>
+      <trans-unit id="8383" identifier="093abdb537e736ae5cbb83c1caa2e7ed">
+        <source>{panel end}</source>
+        <target>crwdns8383:0{panel end}crwdne8383:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="8384" identifier="c2ae65421d95339cde1cd65262b7ef3d">
+        <source>{panel type=&quot;general&quot; title=&quot;Solution 4&quot; subtitle=&quot;(cloning the black card)&quot;}</source>
+        <target>crwdns8384:0crwdne8384:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[25]</note>
+      </trans-unit>
+      <trans-unit id="8385" identifier="3d6e3a03f8618ee96e34d69396c25a9f">
+        <source>Blocks for black card sprite</source>
+        <target>crwdns8385:0crwdne8385:0</target>
+        <note>Context: Text&#13;
+XPath: /p[26]/strong</note>
+      </trans-unit>
+      <trans-unit id="8386" identifier="273bc3703023d4901a88461b0cb92051">
+        <source>when green flag clicked
+hide
+set [x v] to [-190]
+ask [Please enter a decimal number between 0 and 31] and wait
+set [decimal number v] to (answer)
+set [bit value v] to [32]
+repeat until &amp;lt;(bit value) = [1]&amp;gt;
+  set [bit value v] to ((bit value) / (2))
+  if &amp;lt;&amp;lt;(decimal number) &amp;gt; (bit value)&amp;gt; or &amp;lt;(decimal number) = (bit value)&amp;gt;&amp;gt; then
+    set [decimal number v] to ((decimal number) - (bit value))
+  else
+    go to x: (x) y: (0)
+    show
+    create clone of [myself v]
+  end
+  change [x v] by (94)
+end</source>
+        <target>crwdns8386:0[-190]crwdnd8386:0[32]crwdnd8386:0[1]crwdne8386:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[19]/code</note>
+      </trans-unit>
+      <trans-unit id="8387" identifier="c28b40b1a7feb196275a70acccb99621">
+        <source>{panel end}</source>
+        <target>crwdns8387:0{panel end}crwdne8387:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[27]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

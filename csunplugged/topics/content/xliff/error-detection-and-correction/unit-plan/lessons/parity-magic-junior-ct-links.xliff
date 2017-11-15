@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1014" original="/csunplugged/topics/content/en/error-detection-and-correction/unit-plan/lessons/parity-magic-junior-ct-links.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="11021" identifier="29587245fea6177d2282f2ca4a93001c">
+        <source>{panel type=&quot;ct-algorithm&quot; title=&quot;Algorithmic thinking&quot;}</source>
+        <target>crwdns11021:0crwdne11021:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="11022" identifier="01fea73dbf2916d568a3405ec150e02c">
+        <source>The step by step process of counting the number of black squares in each row and identifying whether the parity is even, and then repeating the process with each column, is an example of an algorithm.</source>
+        <target>crwdns11022:0crwdne11022:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="11023" identifier="9604303368ba30fed71114445270b0ca">
+        <source>The full error detection algorithm includes what to to do when the error is found as well.</source>
+        <target>crwdns11023:0crwdne11023:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="11024" identifier="d4789df7fc6fae273d42b3ff89b932ef">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns11024:0crwdne11024:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4</note>
+      </trans-unit>
+      <trans-unit id="11025" identifier="57c0492f467e310a88535232d75e7f54">
+        <source>Can students reliably find the flipped card in a grid?
+Can they articulate the algorithm to another student to help them complete the task?</source>
+        <target>crwdns11025:0crwdne11025:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="11026" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns11026:0{panel end}crwdne11026:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="11027" identifier="59ced97ef8757b49683caaf57e6207bd">
+        <source>{panel type=&quot;ct-abstraction&quot; title=&quot;Abstraction&quot;}</source>
+        <target>crwdns11027:0crwdne11027:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="11028" identifier="7a3f474f96b41f8444cfc0a314a5578c">
+        <source>Each of the cards in this activity represents a bit inside a digital device.</source>
+        <target>crwdns11028:0crwdne11028:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="11029" identifier="b68bacb26eaef236cd7a2342d96c7163">
+        <source>When we arrange all of our ‘bits’ together in the square this is a representation of some data (admittedly random data in the magic trick, but it could be done with real data!).</source>
+        <target>crwdns11029:0crwdne11029:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="11030" identifier="c281152544e4b50e2aaf2e037765ad76">
+        <source>This means our grid is an abstraction because it is a model that could be used to represent any piece of data that can be stored on a digital device, for example a sound file, a video, or even a piece of code!</source>
+        <target>crwdns11030:0crwdne11030:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="11031" identifier="7ca1cce9bc789f9d38045770108363e7">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns11031:0crwdne11031:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[2]</note>
+      </trans-unit>
+      <trans-unit id="11032" identifier="7932a70da5f16d21fdf6e62baa838f5f">
+        <source>Are students able to explain that each card is a bit and that the cards can represent data?
+Can they see the connection between the grid of cards and a piece of data made up of bytes?</source>
+        <target>crwdns11032:0crwdne11032:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="11033" identifier="76814e424523d7b9391aeb58dbd9452d">
+        <source>{panel end}</source>
+        <target>crwdns11033:0{panel end}crwdne11033:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="11034" identifier="a4adec0aaaba7c1c6402ab5f49f51dd7">
+        <source>{panel type=&quot;ct-decomposition&quot; title=&quot;Decomposition&quot;}</source>
+        <target>crwdns11034:0crwdne11034:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="11035" identifier="7db58f149077ebc81242410a0a596c52">
+        <source>To accomplish this task students must decompose the process “find the error” into smaller steps.</source>
+        <target>crwdns11035:0crwdne11035:0</target>
+        <note>Context: XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="11036" identifier="3ca0270cb37da1e4997780e3e1ef6cd9">
+        <source>The first step students break it down to could be “look at each row, one by one, until I find an error”.</source>
+        <target>crwdns11036:0crwdne11036:0</target>
+        <note>Context: XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="11037" identifier="8e819670f053bd58b2f9a32b19dfce87">
+        <source>Students can break it down further, focusing on one row, and asking themselves whether the row has an even or odd number of black cards.</source>
+        <target>crwdns11037:0crwdne11037:0</target>
+        <note>Context: XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="11038" identifier="3a2bb9a0546b8e8fc2627a849092a850">
+        <source>They are decomposing the bigger problem down to a subtask, which they can then work through and move closer to completing the full problem.</source>
+        <target>crwdns11038:0crwdne11038:0</target>
+        <note>Context: XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="11039" identifier="43ebb41a5fad413fd0f8f1af2d8d7adf">
+        <source>Likewise when they need to find the column with an error they can break this down in the same way, focusing on one column, and asking the same question above: does the column have an even or odd number of black cards?</source>
+        <target>crwdns11039:0crwdne11039:0</target>
+        <note>Context: XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="11040" identifier="b95b26883002f12e052201f9b823108d">
+        <source>These processes are much simpler to solve that the big problem “Find the error”, but if you work through them all then you will have completely solved that big problem!</source>
+        <target>crwdns11040:0crwdne11040:0</target>
+        <note>Context: XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="11041" identifier="833d815031c5d5819a2b19b8c4affd40">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns11041:0crwdne11041:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[3]</note>
+      </trans-unit>
+      <trans-unit id="11042" identifier="2a64969da1af39952205032f26b4b16c">
+        <source>Are students able to break the task down into steps and describe these steps, without having to have the algorithm described to them first?</source>
+        <target>crwdns11042:0crwdne11042:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="11043" identifier="e55a010e1bd87f56a31be3512ff5b51c">
+        <source>{panel end}</source>
+        <target>crwdns11043:0{panel end}crwdne11043:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="11044" identifier="356dd2e97b134add242dca9b239c55d2">
+        <source>{panel type=&quot;ct-pattern&quot; title=&quot;Generalising and patterns&quot;}</source>
+        <target>crwdns11044:0crwdne11044:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="11045" identifier="ca099f470e1c1a2ec797423842055689">
+        <source>Once students understand the algorithm to find the card that has been turned, they will be able to find a (single) flipped card for any size grid; a 10 x 10 grid (100 cards) can be done fairly quickly, and even a 20 x 20 grid is possible given enough time (and cards!)
+They can generalise the problem “find the error in a &lt;strong&gt;6 x 6 grid&lt;/strong&gt;” to: “find the error in &lt;strong&gt;a grid&lt;/strong&gt;”.</source>
+        <target>crwdns11045:0crwdne11045:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="11046" identifier="ec993088561d59b2638cc84170b056e3">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns11046:0crwdne11046:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[4]</note>
+      </trans-unit>
+      <trans-unit id="11047" identifier="fa196b03eb89bd72ad549270416ce051">
+        <source>Can students find the flipped card on larger grids?</source>
+        <target>crwdns11047:0crwdne11047:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="11048" identifier="2c5987aa00c061ae37f4be2df77e21e8">
+        <source>{panel end}</source>
+        <target>crwdns11048:0{panel end}crwdne11048:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="11049" identifier="1048ee5c08ce80660a5ea18e0ae59002">
+        <source>{panel type=&quot;ct-evaluation&quot; title=&quot;Evaluation&quot;}</source>
+        <target>crwdns11049:0crwdne11049:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="11050" identifier="1804a0a11a3d92bf91e57b22224a0a39">
+        <source>The parity trick is always able to detect and correct errors if one bit has been flipped, but it is important to evaluate this algorithm for different kinds of errors as well.</source>
+        <target>crwdns11050:0crwdne11050:0</target>
+        <note>Context: XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="11051" identifier="63f9ff158978ebdd4d125b3d5ca2b952">
+        <source>If more than one card is flipped (i.e. more than one error occurs) then we can tell something is wrong with the data, but our algorithm can’t tell us how to fix this!</source>
+        <target>crwdns11051:0crwdne11051:0</target>
+        <note>Context: XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="11052" identifier="dd20c893dccd698c44b5149167db093b">
+        <source>Even worse, if more than two bits are flipped then sometimes we might not even be able to detect the error!</source>
+        <target>crwdns11052:0crwdne11052:0</target>
+        <note>Context: XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="11053" identifier="f332309dd8924fc90b10012e063f1b35">
+        <source>It’s important that we evaluate this algorithm, because if it is going to fail sometimes we need to know.</source>
+        <target>crwdns11053:0crwdne11053:0</target>
+        <note>Context: XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="11054" identifier="016aa06482de734cfb701eb95ac1d167">
+        <source>Computer Scientists evaluate algorithms like these and improve them when they find problems with them.</source>
+        <target>crwdns11054:0crwdne11054:0</target>
+        <note>Context: XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="11055" identifier="ee945efc504e5ccf8a3f1c6b2bc14938">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns11055:0crwdne11055:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[5]</note>
+      </trans-unit>
+      <trans-unit id="11056" identifier="4013b12e0c4dab4fc01066a997663c3a">
+        <source>Ask students “What kind of errors can be detected and corrected with the parity cards?</source>
+        <target>crwdns11056:0crwdne11056:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="11057" identifier="24b46a095064de2cf7417b0dc42398fe">
+        <source>At what point can you only detect but not correct and error?</source>
+        <target>crwdns11057:0crwdne11057:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="11058" identifier="aa36b015adc396acf3643e9ed847bdd9">
+        <source>Why is that?”
+Can students explain what goes wrong when we try to detect the error if two cards are flipped?</source>
+        <target>crwdns11058:0crwdne11058:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="11059" identifier="231094646c5390181a567fae1c089681">
+        <source>{panel end}</source>
+        <target>crwdns11059:0{panel end}crwdne11059:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="11060" identifier="b4522e14a3cf699a7916c3ab83dca67a">
+        <source>{panel type=&quot;ct-logic&quot; title=&quot;Logic&quot;}</source>
+        <target>crwdns11060:0crwdne11060:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="11061" identifier="22950bf352074c92e69fb473b87afe63">
+        <source>Flipping a card will always change a row/column from odd to even, no matter what the card is in what the other cards in the row/column are.</source>
+        <target>crwdns11061:0crwdne11061:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="11062" identifier="3ab5187882c4857ff967291e5f7160a2">
+        <source>Also, the idea that the corner card is correct for both the new row and column is an advanced concept, but a pattern that some students might recognise.</source>
+        <target>crwdns11062:0crwdne11062:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="11063" identifier="d2663645150b5be5b55859ada486fd3c">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns11063:0crwdne11063:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[6]</note>
+      </trans-unit>
+      <trans-unit id="11064" identifier="1e7b40575548e87f0d5861f758e34ad2">
+        <source>Can students explain why a single card flip always changes the number of black cards to an odd number?</source>
+        <target>crwdns11064:0crwdne11064:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="11065" identifier="561e44c845248fd07bcf8e37fcd5e4bf">
+        <source>Can students explain why the corner card will be correct for both the row and column? (This involves fairly advanced reasoning).</source>
+        <target>crwdns11065:0crwdne11065:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[25]</note>
+      </trans-unit>
+      <trans-unit id="11066" identifier="63abbb99647d9c7305002d1c2eee9dfd">
+        <source>{panel end}</source>
+        <target>crwdns11066:0{panel end}crwdne11066:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[26]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

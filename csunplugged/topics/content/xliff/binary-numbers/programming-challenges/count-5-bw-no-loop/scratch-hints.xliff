@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="808" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/count-5-bw-no-loop/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8727" identifier="6c5f1e339bb565790cb854e5b94517db">
+        <source>Make a variable called “total number of dots” and set it to 0.</source>
+        <target>crwdns8727:0crwdne8727:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="8728" identifier="49858b0e5b21c9a0675246589fdbe849">
+        <source>Add the corresponding number of dots (16 for the first input, 8 for the
+second input and so on) to the “total number of dots” every time the end
+user enters ‘W’ as the input.</source>
+        <target>crwdns8728:0crwdne8728:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="8729" identifier="4ae01209535ebb84dc7a220592a620b9">
+        <source>You would need to use 5 &lt;code&gt;scratch:if &amp;lt;&amp;gt; then&lt;/code&gt; blocks for this challenge.</source>
+        <target>crwdns8729:0crwdne8729:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="8730" identifier="19d79a5b71f249051c52c7faa1581548">
+        <source>Use the &lt;code&gt;scratch:set [] to [0]&lt;/code&gt; block to set the value of your new
+variable.
+Use the &lt;code&gt;scratch:() + ()&lt;/code&gt; operation under “Operators” to add to the
+value of your variable.</source>
+        <target>crwdns8730:0[0]crwdne8730:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="8731" identifier="4dd430c0ae7f1fb36f8bace7ac5bb936">
+        <source>The &lt;code&gt;scratch:if &amp;lt;&amp;gt; then&lt;/code&gt; block checks if the condition is true and then
+runs the blocks inside of the if block.</source>
+        <target>crwdns8731:0crwdne8731:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[3]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

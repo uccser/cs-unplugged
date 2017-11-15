@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="978" original="/csunplugged/topics/content/en/error-detection-and-correction/programming-challenges/product-code-12-weighted-sum-one-at-a-time/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10666" identifier="3a29a7e836ccaa795883d72e41b8db48">
+        <source>Click on the green flag, enter the inputs provided in the “testing examples” to
+see the expected output of your program.</source>
+        <target>crwdns10666:0crwdne10666:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="10667" identifier="78f4295324a984a4bcdb42c0d2a3cda4">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/148476857/?autostart=false&quot;}</source>
+        <target>crwdns10667:0crwdne10667:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="10668" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns10668:0crwdne10668:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="10669" identifier="33a9754026faa05677262c3790c953a1">
+        <source>when green flag clicked</source>
+        <target>crwdns10669:0crwdne10669:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="10670" identifier="45308618cc56451702dcb11a49c2a93d">
+        <source>ask (join (join [Enter digit ] (counter)) [ of the product code:]) and wait
+
+ask (join (join [Enter digit ] (counter)) [ of the product code:]) and wait</source>
+        <target>crwdns10670:0crwdne10670:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="10671" identifier="cad77a3d51ed439e3cf3c5ceb56ef83f">
+        <source>repeat (6)
+end
+
+if &amp;lt;((total) mod (10)) = [0]&amp;gt; then
+else
+end</source>
+        <target>crwdns10671:0[0]crwdne10671:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="10672" identifier="3b96c9c7d806239d48d827f8f14a5b2d">
+        <source>say [The sum is a multiple of 10]
+
+say [The sum is NOT a multiple of 10]</source>
+        <target>crwdns10672:0crwdne10672:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[4]/code</note>
+      </trans-unit>
+      <trans-unit id="10673" identifier="27410744d078d3074c2d1b59b5d2733c">
+        <source>set [total 1 v] to [0]
+
+set [total 2 v] to [0]
+
+set [counter v] to [1]
+
+change [counter v] by (1)
+
+change [total 1 v] by (answer)
+
+change [counter v] by (1)
+
+change [total 2 v] by (answer)
+
+set [total v] to (((total 1) * (3)) + (total 2))</source>
+        <target>crwdns10673:0[0]crwdnd10673:0[0]crwdnd10673:0[1]crwdne10673:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[5]/code</note>
+      </trans-unit>
+      <trans-unit id="10674" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns10674:0{panel end}crwdne10674:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

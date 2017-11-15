@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1037" original="/csunplugged/topics/content/en/searching-algorithms/sequential-and-binary-search-unit-plan/lessons/the-great-treasure-hunt-unsorted-ct-links.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="11992" identifier="29587245fea6177d2282f2ca4a93001c">
+        <source>{panel type=&quot;ct-algorithm&quot; title=&quot;Algorithmic thinking&quot;}</source>
+        <target>crwdns11992:0crwdne11992:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="11993" identifier="0f7238415a7ef9ecc28d353dce10449a">
+        <source>In this lesson we used the same algorithm and algorithmic thinking as we did in lesson 1, but applied it to treasure chests instead of the numbers being guessed.</source>
+        <target>crwdns11993:0crwdne11993:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="11994" identifier="2db4fd8601f2f0a75b4935665a578691">
+        <source>Just like in lesson 1, if we check in every treasure chest then we are guaranteed to find the real money at some stage (unless all the money is fake!)</source>
+        <target>crwdns11994:0crwdne11994:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="11995" identifier="59281193db103701deadea48459ee1f5">
+        <source>From lesson 1: We used an algorithm in this lesson to find the number we were searching for.</source>
+        <target>crwdns11995:0crwdne11995:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="11996" identifier="84daa3040bac5a019c4f550000f1eeea">
+        <source>This is an algorithm because it is a step-by-step process that will always give the right solution for any input you give it as long as the process is followed exactly; if we check every card in the list we are guaranteed to find the right number (as long as it is in the list!)</source>
+        <target>crwdns11996:0crwdne11996:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="11997" identifier="d4789df7fc6fae273d42b3ff89b932ef">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns11997:0crwdne11997:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4</note>
+      </trans-unit>
+      <trans-unit id="11998" identifier="83e9ac772e91d85a15d90adbdb8ee362">
+        <source>Who are the students who not only can explain the exact process to find the real money, but are also the students who don’t deviate from that process?</source>
+        <target>crwdns11998:0crwdne11998:0</target>
+        <note>Context: XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="11999" identifier="66d8612ba64ec68755b44abb97dc03a5">
+        <source>Do they realise that if the value isn't there, then every chest will have to be opened to find that out?</source>
+        <target>crwdns11999:0crwdne11999:0</target>
+        <note>Context: XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="12000" identifier="0195c2d106e4d52b36bca78ff4c3e7a4">
+        <source>{panel end}</source>
+        <target>crwdns12000:0{panel end}crwdne12000:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="12001" identifier="17de7efa37d271303d10e7da564a0701">
+        <source>{panel type=&quot;ct-abstraction&quot; title=&quot;Abstraction&quot;}</source>
+        <target>crwdns12001:0crwdne12001:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="12002" identifier="2f378f3dfae08c709a5bf6a67bd56f0f">
+        <source>As in lesson 1, we can ignore many details about the items we are searching for.</source>
+        <target>crwdns12002:0crwdne12002:0</target>
+        <note>Context: XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="12003" identifier="43817fad53b1fe7445015a47a932b912">
+        <source>For example it doesn’t matter if the money is in New Zealand dollars/$, Japanese yen/¥, or pounds/£.</source>
+        <target>crwdns12003:0crwdne12003:0</target>
+        <note>Context: XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="12004" identifier="8da09722eae7679315782aeabba9f2a1">
+        <source>You only need to focus on the serial numbers and remember that the chests are in order, as this is all the information you need to solve the problem.</source>
+        <target>crwdns12004:0crwdne12004:0</target>
+        <note>Context: XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="12005" identifier="7ca1cce9bc789f9d38045770108363e7">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns12005:0crwdne12005:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[2]</note>
+      </trans-unit>
+      <trans-unit id="12006" identifier="53b657b74fa503143fd966a75820349d">
+        <source>What questions are students asking about the treasure chests?
+Organise them into useful questions and no as useful questions.
+Which students can identify quickly what the relevant information is?</source>
+        <target>crwdns12006:0crwdne12006:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="12007" identifier="95e2aef312d8003ea83532ea9651f31f">
+        <source>{panel end}</source>
+        <target>crwdns12007:0{panel end}crwdne12007:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="12008" identifier="16c5229b7bb0bd77299bb63485055923">
+        <source>{panel type=&quot;ct-decomposition&quot; title=&quot;Decomposition&quot;}</source>
+        <target>crwdns12008:0crwdne12008:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="12009" identifier="83f8dc3e02a4d8d368e5133f3339a2d0">
+        <source>The larger task of “find my number” is broken down into a series of small steps, each of which is simply “check one of the cards to see if your number is there&quot; and eliminate that card if it isn’t the correct one.</source>
+        <target>crwdns12009:0crwdne12009:0</target>
+        <note>Context: XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="12010" identifier="fdb76d69d52c8fd4be65210455b95d27">
+        <source>This is important because when a computer searches through data this is the most basic step it performs, it can only compare two things at a time so our algorithm must only compare two things at a time.</source>
+        <target>crwdns12010:0crwdne12010:0</target>
+        <note>Context: XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="12011" identifier="833d815031c5d5819a2b19b8c4affd40">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns12011:0crwdne12011:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[3]</note>
+      </trans-unit>
+      <trans-unit id="12012" identifier="1d44a13d6a61dcf8e227e60c976895fd">
+        <source>Who are the students who are able to break the problem down into steps and then explain why each step is important?</source>
+        <target>crwdns12012:0crwdne12012:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="12013" identifier="8623998590e9e00276e810e64a414ad2">
+        <source>Which students can articulate that the computer is only checking one number at a time, and so can only eliminate one number at a time.</source>
+        <target>crwdns12013:0crwdne12013:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="12014" identifier="84c3fb5452681920df97e5738602f6bb">
+        <source>{panel end}</source>
+        <target>crwdns12014:0{panel end}crwdne12014:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="12015" identifier="ab8e36a56495c0d2715b526ac734d5d1">
+        <source>{panel type=&quot;ct-pattern&quot; title=&quot;Generalising and patterns&quot;}</source>
+        <target>crwdns12015:0crwdne12015:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="12016" identifier="81e70c013d43940d173603f81db89df7">
+        <source>The generalised idea of this activity is that any searching problem where the data being searched is not organised into some structure or order can only be approached using sequential search.</source>
+        <target>crwdns12016:0crwdne12016:0</target>
+        <note>Context: XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="12017" identifier="7ad83e9654e6ecce62fade6601796d91">
+        <source>Recognising this pattern can save students, and programmers, time because when they encounter this problem in the future they are aware that they do not need to spend their time trying to come up with an especially clever solution.</source>
+        <target>crwdns12017:0crwdne12017:0</target>
+        <note>Context: XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="12018" identifier="dcf0e1a079f593ea59e512c4d98c09e6">
+        <source>This situation can be generalised to apply to any type of data.</source>
+        <target>crwdns12018:0crwdne12018:0</target>
+        <note>Context: XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="12019" identifier="ec993088561d59b2638cc84170b056e3">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns12019:0crwdne12019:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[4]</note>
+      </trans-unit>
+      <trans-unit id="12020" identifier="6cef0b116e463a247956bbba44526fb0">
+        <source>Which students quickly understand that this is actually no different to playing the “how many guesses game” in lesson one?</source>
+        <target>crwdns12020:0crwdne12020:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="12021" identifier="127a98d13ea2273a464ad5925a0625d4">
+        <source>{panel end}</source>
+        <target>crwdns12021:0{panel end}crwdne12021:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="12022" identifier="a3e3426456e22d4b45b8e7bd62b49d34">
+        <source>{panel type=&quot;ct-evaluation&quot; title=&quot;Evaluation&quot;}</source>
+        <target>crwdns12022:0crwdne12022:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="12023" identifier="b79bbf889066bc6c9f2961fe9664e15e">
+        <source>Students will be evaluating sequential search when they collect and examine the statistics of how many chests they had to check.</source>
+        <target>crwdns12023:0crwdne12023:0</target>
+        <note>Context: XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="12024" identifier="089a6e8b4fc07f6f312e0b140d6631bc">
+        <source>They can further evaluate it by collecting the number of guesses it takes to search through larger numbers of chests and examining these statistics.</source>
+        <target>crwdns12024:0crwdne12024:0</target>
+        <note>Context: XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="12025" identifier="295cbd1289e6cb89eff4556c27853496">
+        <source>For example, what do students think will happen if there are twice as many chests to search through?</source>
+        <target>crwdns12025:0crwdne12025:0</target>
+        <note>Context: XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="12026" identifier="b998ec900ed8253de01af6c6dd78e313">
+        <source>10 times as many?</source>
+        <target>crwdns12026:0crwdne12026:0</target>
+        <note>Context: XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="12027" identifier="8424f1c604475d3003623b7a4ee91771">
+        <source>1,000,000 as many?</source>
+        <target>crwdns12027:0crwdne12027:0</target>
+        <note>Context: XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="12028" identifier="d20d69480187fbdcea1736aeb51405c0">
+        <source>Would this algorithm be efficient for this many chests?</source>
+        <target>crwdns12028:0crwdne12028:0</target>
+        <note>Context: XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="12029" identifier="ee945efc504e5ccf8a3f1c6b2bc14938">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns12029:0crwdne12029:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[5]</note>
+      </trans-unit>
+      <trans-unit id="12030" identifier="95b414b248b49691b323948f1d221f59">
+        <source>How much longer would this take if there were twice as many cards?</source>
+        <target>crwdns12030:0crwdne12030:0</target>
+        <note>Context: XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="12031" identifier="3a209da5649cc4175d4645330b0ae1d2">
+        <source>10 times as many cards?</source>
+        <target>crwdns12031:0crwdne12031:0</target>
+        <note>Context: XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="12032" identifier="32876b602cd527fbba2d20e0f86d0107">
+        <source>Search engines routinely search through billions of web pages to find the term you're looking for, would this algorithm be efficient for this application?</source>
+        <target>crwdns12032:0crwdne12032:0</target>
+        <note>Context: XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="12033" identifier="532111807ef991f3a5b1433559011150">
+        <source>Discuss other ideas on how you could find a number more effectively.</source>
+        <target>crwdns12033:0crwdne12033:0</target>
+        <note>Context: XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="12034" identifier="0d3de6c21e2d458b6944fce764817b3f">
+        <source>{panel end}</source>
+        <target>crwdns12034:0{panel end}crwdne12034:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="12035" identifier="d167885c0977f1b6d43c86a3424970a4">
+        <source>{panel type=&quot;ct-logic&quot; title=&quot;Logic&quot;}</source>
+        <target>crwdns12035:0crwdne12035:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="12036" identifier="a71d40f759c17e01c00bde7f64e5fd2a">
+        <source>Let's think about the problem logically: The cards have been placed in a random order, therefore all we learn when we look at a card is what is on that card, we don’t learn anything at all about what is on the other cards.</source>
+        <target>crwdns12036:0crwdne12036:0</target>
+        <note>Context: XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="12037" identifier="684e7179a2b15a3934b509c204cd73f6">
+        <source>Since all we can learn from checking a card is whether or not that card is the one we are searching for, it doesn’t matter what order we check the cards in because it won’t change the fact that we have to check each card, one-by-one, until we find the correct one.</source>
+        <target>crwdns12037:0crwdne12037:0</target>
+        <note>Context: XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="12038" identifier="d2663645150b5be5b55859ada486fd3c">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns12038:0crwdne12038:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[6]</note>
+      </trans-unit>
+      <trans-unit id="12039" identifier="12a917a45a5b03c7c7a2d1649002f5d5">
+        <source>Which students can explain why it would be easier to find the money if the chests where in sorted order?</source>
+        <target>crwdns12039:0crwdne12039:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[25]</note>
+      </trans-unit>
+      <trans-unit id="12040" identifier="ed848cbdf6b04aed04bbc5018422e885">
+        <source>Ask the students if it would be worth sorting these chests into order, and look for the students who can identify why this might not be worth it if you're only doing the search once (we only need to search through the chests once because once we’ve found the money there is no point looking for it again!</source>
+        <target>crwdns12040:0crwdne12040:0</target>
+        <note>Context: XPath: /p[26]</note>
+      </trans-unit>
+      <trans-unit id="12041" identifier="e38a297c5c216585a51b2a4b0fc03eb0">
+        <source>So sorting them wouldn’t be helpful, it would actually slow things down).</source>
+        <target>crwdns12041:0crwdne12041:0</target>
+        <note>Context: XPath: /p[26]</note>
+      </trans-unit>
+      <trans-unit id="12042" identifier="c28b40b1a7feb196275a70acccb99621">
+        <source>{panel end}</source>
+        <target>crwdns12042:0{panel end}crwdne12042:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[27]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

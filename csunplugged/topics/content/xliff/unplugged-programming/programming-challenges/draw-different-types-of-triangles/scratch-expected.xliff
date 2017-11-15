@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1162" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/draw-different-types-of-triangles/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14684" identifier="f3b5fe6b13c58314d4f8a7210242abe3">
+        <source>Click on the green flag to see the expected output of your program.</source>
+        <target>crwdns14684:0crwdne14684:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14685" identifier="80691173ef45a78174eb59914500a3e7">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/152883486/?autostart=false&quot;}</source>
+        <target>crwdns14685:0crwdne14685:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14686" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns14686:0crwdne14686:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="14687" identifier="33a9754026faa05677262c3790c953a1">
+        <source>when green flag clicked</source>
+        <target>crwdns14687:0crwdne14687:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="14688" identifier="187c9b076fa899b8a257b70a5d5d7a1a">
+        <source>clear
+
+set pen size to (3)
+
+pen down
+
+pen up</source>
+        <target>crwdns14688:0crwdne14688:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="14689" identifier="3ff74c4ea1004e591d58377dd198d94f">
+        <source>set [angle v] to (answer)
+
+ask [Enter an angle between 0 and 180 (not including 0 and 180):] and wait</source>
+        <target>crwdns14689:0crwdne14689:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="14690" identifier="864d8d2c885ca09fb11e0a164df80f83">
+        <source>go to x: (0) y: (0)
+
+go to x: (0) y: (0)
+
+point in direction (90 v)
+
+move (100) steps
+
+move (100) steps
+
+turn ccw ((180) - (angle)) degrees</source>
+        <target>crwdns14690:0crwdne14690:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[4]/code</note>
+      </trans-unit>
+      <trans-unit id="14691" identifier="46a16282bf0d231e16fc11a206830225">
+        <source>say [This is an acute triangle.] for (2) secs
+
+say [This is a right triangle.] for (2) secs
+
+say [This is an obtuse triangle.] for (2) secs</source>
+        <target>crwdns14691:0crwdne14691:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[5]/code</note>
+      </trans-unit>
+      <trans-unit id="14692" identifier="eacb094bc78c11ae9063f0906e017e63">
+        <source>if &amp;lt;(angle) &amp;lt; [90]&amp;gt; then
+end
+
+if &amp;lt;(angle) = [90]&amp;gt; then
+end
+
+if &amp;lt;(angle) &amp;gt; [90]&amp;gt; then
+end</source>
+        <target>crwdns14692:0[90]crwdnd14692:0[90]crwdnd14692:0[90]crwdne14692:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[6]/code</note>
+      </trans-unit>
+      <trans-unit id="14693" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns14693:0{panel end}crwdne14693:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

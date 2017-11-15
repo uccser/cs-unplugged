@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="746" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/binary-notes-representing-any-number/extra-challenge.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8464" identifier="7ae815c3943b46e5a06578456663cfa9">
+        <source>Modify your program so it would play a low note when the user enters the number
+zero as the input.</source>
+        <target>crwdns8464:0crwdne8464:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

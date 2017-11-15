@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="800" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/cards-given-number-one-line/cards-given-number-one-line.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8670" identifier="eca0c4a4745930a19aed3ccc39a87229">
+        <source>Display the binary cards needed to represent a given number of dots (all in one line)</source>
+        <target>crwdns8670:0crwdne8670:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="8671" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns8671:0crwdne8671:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="8672" identifier="ed414979ff25ba93cdfe58ad2880a191">
+        <source>Write a program that asks the user to enter a number of dots less than or
+equal to 31 as the input and displays which of the 5 cards should be showing
+as the output all in one line.</source>
+        <target>crwdns8672:0crwdne8672:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8673" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns8673:0crwdne8673:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="8674" identifier="924f68d2bac30adf91e01528139bc6f6">
+        <source>Your program should display the outputs shown in this table for the given
+inputs provided;</source>
+        <target>crwdns8674:0crwdne8674:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="8675" identifier="5bfb69c6f4701e747d0c20b0822e2580">
+        <source>Input</source>
+        <target>crwdns8675:0crwdne8675:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th</note>
+      </trans-unit>
+      <trans-unit id="8676" identifier="f36a1e77a6177da7e10093e12e92ec6c">
+        <source>Output</source>
+        <target>crwdns8676:0crwdne8676:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th[2]</note>
+      </trans-unit>
+      <trans-unit id="8677" identifier="e085f2eea9693e55fabf9b0e93a59d9b">
+        <source>15</source>
+        <target>crwdns8677:0crwdne8677:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td</note>
+      </trans-unit>
+      <trans-unit id="8678" identifier="4dcce237a835266811f00a8f30bcadc6">
+        <source>8, 4, 2, 1,</source>
+        <target>crwdns8678:0crwdne8678:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td[2]</note>
+      </trans-unit>
+      <trans-unit id="8679" identifier="3d1c6722a927a9e9eb2e68f2badbcd32">
+        <source>1</source>
+        <target>crwdns8679:0crwdne8679:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td</note>
+      </trans-unit>
+      <trans-unit id="8680" identifier="bc84dff59d0a4e3732928379fa5649e2">
+        <source>1,</source>
+        <target>crwdns8680:0crwdne8680:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="8681" identifier="009c68a83b13e7f0a271931c7372803b">
+        <source>8</source>
+        <target>crwdns8681:0crwdne8681:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td</note>
+      </trans-unit>
+      <trans-unit id="8682" identifier="fd1fe7db7d91570d0882e0e6971b46d4">
+        <source>8,</source>
+        <target>crwdns8682:0crwdne8682:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="8683" identifier="3ead824490f17956559c652403f4e162">
+        <source>31</source>
+        <target>crwdns8683:0crwdne8683:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[4]/td</note>
+      </trans-unit>
+      <trans-unit id="8684" identifier="2e1551b3995eed26f3ecc165d13d2a4e">
+        <source>16, 8, 4, 2, 1,</source>
+        <target>crwdns8684:0crwdne8684:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[4]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="8685" identifier="6e924fa02b12dec85e59e1bcdd9c2d79">
+        <source>32</source>
+        <target>crwdns8685:0crwdne8685:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[5]/td</note>
+      </trans-unit>
+      <trans-unit id="8686" identifier="4f665742c1f89492106c5a4ea780023c">
+        <source>Please choose a number less than or equal to 31.</source>
+        <target>crwdns8686:0crwdne8686:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[5]/td[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

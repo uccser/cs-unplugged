@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="864" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/number-cards-display/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="9055" identifier="084593ce34d694032eb79e9acb5080a5">
+        <source>Click on the green flag, enter the inputs provided in the “testing examples” to see the expected output of your program.</source>
+        <target>crwdns9055:0crwdne9055:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="9056" identifier="c132a59630e5b04a86dd7ceaef37d796">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/148423938/?autostart=false&quot;}</source>
+        <target>crwdns9056:0crwdne9056:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="9057" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns9057:0crwdne9057:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="9058" identifier="edc21672789163ea682a32633091d78f">
+        <source>set [number of dots v] to [1]
+
+set [number of dots v] to ((number of dots) * (2))
+
+set [number of cards v] to (answer)</source>
+        <target>crwdns9058:0[1]crwdne9058:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="9059" identifier="e7151a9dd89903c91e735512c35aa99a">
+        <source>when green flag clicked
+
+ask [How many cards would you like to display?] and wait
+
+repeat (number of cards)
+end
+
+say (number of dots) for (1) secs</source>
+        <target>crwdns9059:0crwdne9059:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="9060" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns9060:0{panel end}crwdne9060:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

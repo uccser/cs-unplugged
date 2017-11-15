@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="994" original="/csunplugged/topics/content/en/error-detection-and-correction/programming-challenges/product-code-13-multiple-10-one-at-a-time/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10755" identifier="d329c966906993c434030603f53132df">
+        <source>You need to add up 1st, 3rd, 5th and so on digits and store the result
+in a variable called &quot;total 1&quot;.</source>
+        <target>crwdns10755:0crwdne10755:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="10756" identifier="8ca2a895a0dbb8ebb90f0d65ed35498c">
+        <source>Then add up 2nd, 4th, 6th and so on digits and store the result in a
+variable called &quot;total 2&quot;.</source>
+        <target>crwdns10756:0crwdne10756:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="10757" identifier="6a2724d536baee9b5cae6ea6e94ef9fb">
+        <source>Store the sum of &quot;total 2&quot; multiplied by 3 and &quot;total 1&quot; in a variable
+called &quot;total&quot;.</source>
+        <target>crwdns10757:0crwdne10757:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="10758" identifier="badc1463714f770a217784b297657a2a">
+        <source>The output displays if this total is a multiple of 10 or not
+(i.e. if “total” mod 10 is equal to 0).</source>
+        <target>crwdns10758:0crwdne10758:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

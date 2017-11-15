@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="949" original="/csunplugged/topics/content/en/error-detection-and-correction/programming-challenges/detect-parity-error-in-row/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10492" identifier="9a0deca349041a31630b115d3184d562">
+        <source>You can access a letter at the specified position in a string by using
+the &lt;code&gt;scratch:letter (1) of [world]&lt;/code&gt; block under “Operators”.</source>
+        <target>crwdns10492:0[world]crwdne10492:0</target>
+        <note>Context: XPath: /ul/li/p</note>
+      </trans-unit>
+      <trans-unit id="10493" identifier="9b200f997a3d3034cbfb44c4bfc1308c">
+        <source>For example: &lt;code&gt;scratch:letter (1) of [world] //w&lt;/code&gt;</source>
+        <target>crwdns10493:0[world]crwdne10493:0</target>
+        <note>Context: XPath: /ul/li/p</note>
+      </trans-unit>
+      <trans-unit id="10494" identifier="93b990f0208ed4dfeabaf05025c21471">
+        <source>In this challenge you need to access all the letters in user’s input and
+check to see how many of them are equal to B (black).</source>
+        <target>crwdns10494:0crwdne10494:0</target>
+        <note>Context: XPath: /ul/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="10495" identifier="7c7b4995b8b8db2f33eb8e41c7a3c1eb">
+        <source>Store the total number of black squares in a variable called “black
+cards total”.</source>
+        <target>crwdns10495:0crwdne10495:0</target>
+        <note>Context: XPath: /ul/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="10496" identifier="5d58ed44a7cd11cdfcbf5524245da7bf">
+        <source>You can find how many letters a string has by using the
+&lt;code&gt;scratch:length of [world]&lt;/code&gt; block unders “Operators”.</source>
+        <target>crwdns10496:0[world]crwdne10496:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[3]/p</note>
+      </trans-unit>
+      <trans-unit id="10497" identifier="463686db9266645d6e2709f0c60d5bd9">
+        <source>To find out if a number is even or odd, use the &lt;code&gt;scratch:() mod ()&lt;/code&gt; block
+(under &quot;Operators&quot;) to find the remainder after dividing that number by
+two.</source>
+        <target>crwdns10497:0crwdne10497:0</target>
+        <note>Context: XPath: /ul/li[4]/p</note>
+      </trans-unit>
+      <trans-unit id="10498" identifier="38fca463c680f351e59e553a8160e7bf">
+        <source>If the remainder is zero the number is even.</source>
+        <target>crwdns10498:0crwdne10498:0</target>
+        <note>Context: XPath: /ul/li[4]/p</note>
+      </trans-unit>
+      <trans-unit id="10499" identifier="3736945c5a4f6435ef9af079f9cf1e6a">
+        <source>For example: &lt;code&gt;scratch:(37) mod (10) //7&lt;/code&gt;</source>
+        <target>crwdns10499:0crwdne10499:0</target>
+        <note>Context: XPath: /ul/li[4]/p</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

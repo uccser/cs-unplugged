@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1099" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/calculate-inside-angles-of-regular-polygons/calculate-inside-angles-of-regular-polygons.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14233" identifier="49dd0d277a4d4bc036318259b8dbd1f9">
+        <source>Calculate the inside angles of regular polygons</source>
+        <target>crwdns14233:0crwdne14233:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="14234" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns14234:0crwdne14234:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="14235" identifier="9c7f6f2f9328b3e9883ecfa296983431">
+        <source>Write a program that draws any regular polygon with the number of sides entered by the user as the input and the length of each sides equal to 50 steps.</source>
+        <target>crwdns14235:0crwdne14235:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14236" identifier="455ebd108c7b1c02f53e9ef8a68eaa81">
+        <source>It then displays the interior angles of the the polygon in degrees.</source>
+        <target>crwdns14236:0crwdne14236:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14237" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns14237:0crwdne14237:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="14238" identifier="890866c321f141e58fc3fcc8571097c2">
+        <source>Test your program with 3, 5 and 10 number of sides as the input.</source>
+        <target>crwdns14238:0crwdne14238:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

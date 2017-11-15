@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1273" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/modulo-add-hours-24-hour-clock/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15247" identifier="7a4df8a1b88d2d0afc632f8f44b39675">
+        <source>Make variables called “original time” and “hours to add” and set their values to the inputs entered by the user.</source>
+        <target>crwdns15247:0crwdne15247:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="15248" identifier="11028bc90c74b4db6c570d1dd1f92910">
+        <source>Make a variable called “new time” and set its value to the sum of the “original time” and “hours to add” modulo 24.</source>
+        <target>crwdns15248:0crwdne15248:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="15249" identifier="1292b125ff89d197ea7f1e7758bfcfdf">
+        <source>Display the output as 00:00, If the value of “new time” equal to 0.</source>
+        <target>crwdns15249:0crwdne15249:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

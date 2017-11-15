@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="903" original="/csunplugged/topics/content/en/error-detection-and-correction/programming-challenges/check-odd-even-using-mod/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10182" identifier="040d4678ba6a3ab98c3ef3f88be72e83">
+        <source>To find out if a number is even or odd, use the &lt;code&gt;scratch:() mod ()&lt;/code&gt; block
+(under &quot;Operators&quot;) to find the remainder after dividing that number by
+two.</source>
+        <target>crwdns10182:0crwdne10182:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="10183" identifier="ddf7560290ec7be5a041a73a4b5832fb">
+        <source>If the remainder is zero the number is even.</source>
+        <target>crwdns10183:0crwdne10183:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="10184" identifier="7459f2da4f299b192c2ef9c89777d4bf">
+        <source>For example: &lt;code&gt;scratch:(37) mod (10) //7&lt;/code&gt;</source>
+        <target>crwdns10184:0crwdne10184:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

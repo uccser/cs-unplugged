@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1272" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/modulo-add-hours-24-hour-clock/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15238" identifier="f3b5fe6b13c58314d4f8a7210242abe3">
+        <source>Click on the green flag to see the expected output of your program.</source>
+        <target>crwdns15238:0crwdne15238:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15239" identifier="584cc0e23635f25c05f66b960c3b633f">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/165919715/?autostart=false&quot;}</source>
+        <target>crwdns15239:0crwdne15239:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="15240" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns15240:0crwdne15240:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="15241" identifier="33a9754026faa05677262c3790c953a1">
+        <source>when green flag clicked</source>
+        <target>crwdns15241:0crwdne15241:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="15242" identifier="163f2fabfbe4006e3930d61128656fb4">
+        <source>set [original time v] to (answer)
+
+set [hours to add v] to (answer)
+
+set [new time v] to (((original time) + (hours to add)) mod (24))</source>
+        <target>crwdns15242:0crwdne15242:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="15243" identifier="1195ebcba8a4cdd194ff466bb61a4945">
+        <source>ask [Enter a time:] and wait
+
+ask [Enter the number of hours to add:] and wait</source>
+        <target>crwdns15243:0crwdne15243:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="15244" identifier="8a76991cbaa45308f35ec5e2b8a7aabc">
+        <source>say [The new time is 00:00]
+
+say (join [The new time is ] (join (new time) [:00.]))</source>
+        <target>crwdns15244:0crwdne15244:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[4]/code</note>
+      </trans-unit>
+      <trans-unit id="15245" identifier="7791e209a0932975b0e5256045cdc475">
+        <source>if &amp;lt;(new time) = [0]&amp;gt; then
+else
+end</source>
+        <target>crwdns15245:0[0]crwdne15245:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[5]/code</note>
+      </trans-unit>
+      <trans-unit id="15246" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns15246:0{panel end}crwdne15246:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

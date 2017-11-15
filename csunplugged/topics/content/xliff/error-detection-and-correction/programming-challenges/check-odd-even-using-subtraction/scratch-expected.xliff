@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="907" original="/csunplugged/topics/content/en/error-detection-and-correction/programming-challenges/check-odd-even-using-subtraction/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10201" identifier="3a29a7e836ccaa795883d72e41b8db48">
+        <source>Click on the green flag, enter the inputs provided in the “testing examples” to
+see the expected output of your program.</source>
+        <target>crwdns10201:0crwdne10201:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="10202" identifier="a15899266c583ebe1855ea7ed801a771">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/148426073/?autostart=false&quot;}</source>
+        <target>crwdns10202:0crwdne10202:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="10203" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns10203:0crwdne10203:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="10204" identifier="2f65f318ba1424ad4cfbd56feccaa173">
+        <source>when green flag clicked
+
+ask [Enter a number:] and wait
+
+change [number v] by (-2)</source>
+        <target>crwdns10204:0crwdne10204:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="10205" identifier="26aeb30ff27f6d58709fdd2a03bf58fd">
+        <source>if &amp;lt;(number) &amp;lt; [0]&amp;gt; then
+end
+
+repeat until &amp;lt;&amp;lt;(number) = [0]&amp;gt; or &amp;lt;(number) = [1]&amp;gt;&amp;gt;
+end
+
+if &amp;lt;(number) = [0]&amp;gt; then
+end
+
+if &amp;lt;(number) = [1]&amp;gt; then
+end</source>
+        <target>crwdns10205:0[0]crwdnd10205:0[0]crwdnd10205:0[1]crwdnd10205:0[0]crwdnd10205:0[1]crwdne10205:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="10206" identifier="2da2f387bfcbee8163ea18c842a06d34">
+        <source>say [You entered an odd number!]
+
+say [You entered an even number!]</source>
+        <target>crwdns10206:0crwdne10206:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="10207" identifier="d5ed82f4e43008847c374c3e301af314">
+        <source>set [number v] to [0]
+
+set [number v] to (answer)
+
+set [number v] to ((-1) * (number))</source>
+        <target>crwdns10207:0[0]crwdne10207:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[4]/code</note>
+      </trans-unit>
+      <trans-unit id="10208" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns10208:0{panel end}crwdne10208:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

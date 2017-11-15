@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1282" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/modulo-add-video-timings/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15300" identifier="f3b5fe6b13c58314d4f8a7210242abe3">
+        <source>Click on the green flag to see the expected output of your program.</source>
+        <target>crwdns15300:0crwdne15300:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15301" identifier="69af5057ea6df3530aad1a4b8b331be5">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/165605502/?autostart=false&quot;}</source>
+        <target>crwdns15301:0crwdne15301:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="15302" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns15302:0crwdne15302:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="15303" identifier="33a9754026faa05677262c3790c953a1">
+        <source>when green flag clicked</source>
+        <target>crwdns15303:0crwdne15303:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="15304" identifier="9a58967c22b1071ea5bedbbbe27d8860">
+        <source>set [secs1 v] to [0]
+
+set [mins1 v] to [0]
+
+set [hours1 v] to [0]
+
+set [secs2 v] to [0]
+
+set [mins2 v] to [0]
+
+set [hours2 v] to [0]
+
+set [total secs v] to [0]
+
+set [total mins v] to [0]
+
+set [total hours v] to [0]
+
+set [hours1 v] to (answer)
+
+set [mins1 v] to (answer)
+
+set [secs1 v] to (answer)
+
+set [hours2 v] to (answer)
+
+set [mins2 v] to (answer)
+
+set [secs2 v] to (answer)
+
+set [total secs v] to ((secs1) + (secs2))
+
+set [total mins v] to ((mins1) + (mins2))
+
+set [total hours v] to ((hours1) + (hours2))
+
+set [total secs v] to ((total secs) mod (60))
+
+change [total mins v] by (1)
+
+set [total mins v] to ((total mins) mod (60))
+
+change [total hours v] by (1)</source>
+        <target>crwdns15304:0[0]crwdnd15304:0[0]crwdnd15304:0[0]crwdnd15304:0[0]crwdnd15304:0[0]crwdnd15304:0[0]crwdnd15304:0[0]crwdnd15304:0[0]crwdnd15304:0[0]crwdne15304:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="15305" identifier="ba6f80246f4f28fbcf99b4d660a9a860">
+        <source>ask [Enter the number of hours for the first clip: ] and wait
+
+ask [Enter the number of minutes for the first clip: ] and wait
+
+ask [Enter the number of seconds for the first clip: ] and wait
+
+ask [Enter the number of hours for the second clip: ] and wait
+
+ask [Enter the number of minutes for the second clip: ] and wait
+
+ask [Enter the number of seconds for the second clip: ] and wait</source>
+        <target>crwdns15305:0crwdne15305:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="15306" identifier="b4eb74fe08c1d49750bc8e405613024e">
+        <source>if &amp;lt;(total secs) &amp;gt; [59]&amp;gt; then
+end
+
+if &amp;lt;(total mins) &amp;gt; [59]&amp;gt; then
+end</source>
+        <target>crwdns15306:0[59]crwdnd15306:0[59]crwdne15306:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[4]/code</note>
+      </trans-unit>
+      <trans-unit id="15307" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns15307:0{panel end}crwdne15307:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

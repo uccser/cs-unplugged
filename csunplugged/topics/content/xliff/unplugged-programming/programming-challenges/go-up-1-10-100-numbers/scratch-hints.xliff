@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1248" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/go-up-1-10-100-numbers/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15075" identifier="f7ba899dba9dfb72dc500eba3a239be1">
+        <source>Make a list of length 3 containing numbers 1, 10 and 100.</source>
+        <target>crwdns15075:0crwdne15075:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li/p</note>
+      </trans-unit>
+      <trans-unit id="15076" identifier="6b25517e56501cd7ab7c64bb97217a6c">
+        <source>{image file-path=&quot;img/topics/programming-challenges/numeracy-go-up-list.png&quot;}</source>
+        <target>crwdns15076:0crwdne15076:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li/p[2]</note>
+      </trans-unit>
+      <trans-unit id="15077" identifier="dfd87d676fb667318f972351ba6c6ad7">
+        <source>To choose an item randomly from the list use the block: &lt;code&gt;scratch:item (random v) of [list v]&lt;/code&gt;</source>
+        <target>crwdns15077:0crwdne15077:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[2]/p</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

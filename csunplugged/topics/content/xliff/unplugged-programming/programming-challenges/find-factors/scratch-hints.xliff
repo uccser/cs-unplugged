@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1228" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/find-factors/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14969" identifier="c0a4b00ad14676aa81764549355e0f1a">
+        <source>We have provided 2 different algorithms to code this program;</source>
+        <target>crwdns14969:0crwdne14969:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14970" identifier="da1885c5a366497b874645115ca9d4b1">
+        <source>Algorithms to find the factors of “number”:</source>
+        <target>crwdns14970:0crwdne14970:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14971" identifier="498000d34b1317079b935afcbfdbf6f2">
+        <source>Solution 1:</source>
+        <target>crwdns14971:0crwdne14971:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="14972" identifier="d5bdcb02de239c3ae5c546f398c743ea">
+        <source>Create a variable called “divisor” and set its value to 1.</source>
+        <target>crwdns14972:0crwdne14972:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol/li</note>
+      </trans-unit>
+      <trans-unit id="14973" identifier="2c34c319660b0f47cfecb6ae6d163fd1">
+        <source>If “number” mod “divisor” is 0, “divisor” is one of the factors.</source>
+        <target>crwdns14973:0crwdne14973:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol/li[2]</note>
+      </trans-unit>
+      <trans-unit id="14974" identifier="9916f16878c2ff4806cbc746fa44bc96">
+        <source>Increase the value of “divisor” by 1.</source>
+        <target>crwdns14974:0crwdne14974:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol/li[3]</note>
+      </trans-unit>
+      <trans-unit id="14975" identifier="b389ded1fb136be185701dd9824bc22c">
+        <source>Repeat steps 2 and 3 until “divisor” &gt; “number”.</source>
+        <target>crwdns14975:0crwdne14975:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol/li[4]</note>
+      </trans-unit>
+      <trans-unit id="14976" identifier="4831204dc363c065e0d3022e6d51ab78">
+        <source>Solution 2:</source>
+        <target>crwdns14976:0crwdne14976:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="14977" identifier="48f601cffb68640acbcc10261caa7422">
+        <source>Create a variable called “divisor” and set its value to the “number”.</source>
+        <target>crwdns14977:0crwdne14977:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol[2]/li</note>
+      </trans-unit>
+      <trans-unit id="14978" identifier="116cbf76adda9b0d58ce3f95b7b00a29">
+        <source>If “number” mod “divisor” is 0, “divisor” is one of the factors.</source>
+        <target>crwdns14978:0crwdne14978:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol[2]/li[2]</note>
+      </trans-unit>
+      <trans-unit id="14979" identifier="81be34cbc80ae75f9549e5e3efa274f1">
+        <source>Decrease the value of “divisor” by 1.</source>
+        <target>crwdns14979:0crwdne14979:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol[2]/li[3]</note>
+      </trans-unit>
+      <trans-unit id="14980" identifier="d45781f037132846c642f265b3c77e32">
+        <source>Repeat steps 2 and 3 until “divisor” = 0.</source>
+        <target>crwdns14980:0crwdne14980:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol[2]/li[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

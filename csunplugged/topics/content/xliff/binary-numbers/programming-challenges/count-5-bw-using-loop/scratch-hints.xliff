@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="823" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/count-5-bw-using-loop/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8813" identifier="669ee3053d3f7ea825d32192aacd7a08">
+        <source>Make a variable called “total number of dots” and set its value to 0.</source>
+        <target>crwdns8813:0crwdne8813:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="8814" identifier="f64277d26a9a90db47d69ee80bf6f365">
+        <source>Make another variable called “number of dots” and set its value to 16.</source>
+        <target>crwdns8814:0crwdne8814:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="8815" identifier="2a0af155ce3458c66a0114078f42dbab">
+        <source>Add the value of “number of dots” to the value of “total number of dots”
+every time the end user enters ‘W’ as the input.</source>
+        <target>crwdns8815:0crwdne8815:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="8816" identifier="4bdbf13107a3a197146d84ae07ecb3bf">
+        <source>Repeat this 5 times dividing the value of “number of dots” by 2 each time.</source>
+        <target>crwdns8816:0crwdne8816:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="8817" identifier="11b6b816650163453e7fc9270f0f1966">
+        <source>Display the “total number of dots” as the output.</source>
+        <target>crwdns8817:0crwdne8817:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="8818" identifier="a99987c00486a450f4876a2ae67fa53c">
+        <source>Use the &lt;code&gt;scratch:repeat ()&lt;/code&gt; block to run the blocks inside a specified
+number of times.
+In this challenge you need to repeat the blocks 5 times.</source>
+        <target>crwdns8818:0crwdne8818:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="8819" identifier="4dd430c0ae7f1fb36f8bace7ac5bb936">
+        <source>The &lt;code&gt;scratch:if &amp;lt;&amp;gt; then&lt;/code&gt; block checks if the condition is true and then
+runs the blocks inside of the if block.</source>
+        <target>crwdns8819:0crwdne8819:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[3]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

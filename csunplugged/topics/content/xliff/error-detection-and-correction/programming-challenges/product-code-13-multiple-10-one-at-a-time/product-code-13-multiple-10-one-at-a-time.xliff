@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="992" original="/csunplugged/topics/content/en/error-detection-and-correction/programming-challenges/product-code-13-multiple-10-one-at-a-time/product-code-13-multiple-10-one-at-a-time.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10734" identifier="2fd1bb951d66b2f2195f00206e488f9d">
+        <source>13 digit product codes: Check if total is a multiple of 10 (entered one at a time)</source>
+        <target>crwdns10734:0crwdne10734:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="10735" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns10735:0crwdne10735:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="10736" identifier="bc2d6c7ce053d21e44c0e332b71b188b">
+        <source>Write a program that asks the user to enter a 13 digit product code,
+entering each digit one at a time.</source>
+        <target>crwdns10736:0crwdne10736:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="10737" identifier="9f7440fadc5c560c522ff4240f32ffba">
+        <source>Then adds up all the digits, every second one multiplied by 3 (2nd, 4th,
+and so on) and show if this total is a multiple of 10 or not.</source>
+        <target>crwdns10737:0crwdne10737:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="10738" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns10738:0crwdne10738:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="10739" identifier="c4157e645991e13a72ced9574f6e8235">
+        <source>Your program should display the outputs shown in this table for the given
+inputs provided:</source>
+        <target>crwdns10739:0crwdne10739:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="10740" identifier="8dfb27f1c44af31bff77d95e7cac3796">
+        <source>{panel type=&quot;general&quot; title=&quot;Example&quot;}</source>
+        <target>crwdns10740:0crwdne10740:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="10741" identifier="12c3bc24ba6a11b01f795bb73db1c3b7">
+        <source>Input</source>
+        <target>crwdns10741:0crwdne10741:0</target>
+        <note>Context: Text&#13;
+XPath: /p[4]/strong</note>
+      </trans-unit>
+      <trans-unit id="10742" identifier="968ec56c2da05a388d73222765db878f">
+        <source>Enter digit 1 of the product code:
+9
+
+Enter digit 2 of the product code:
+4
+
+Enter digit 3 of the product code:
+2
+
+Enter digit 4 of the product code:
+1
+
+Enter digit 5 of the product code:
+9
+
+Enter digit 6 of the product code:
+0
+
+Enter digit 7 of the product code:
+2
+
+Enter digit 8 of the product code:
+8
+
+Enter digit 9 of the product code:
+1
+
+Enter digit 10 of the product code:
+4
+
+Enter digit 11 of the product code:
+7
+
+Enter digit 12 of the product code:
+9
+
+Enter digit 13 of the product code:
+2</source>
+        <target>crwdns10742:0crwdne10742:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="10743" identifier="da4a7590373cc6684d2b5cc2033aa041">
+        <source>Output</source>
+        <target>crwdns10743:0crwdne10743:0</target>
+        <note>Context: Text&#13;
+XPath: /p[5]/strong</note>
+      </trans-unit>
+      <trans-unit id="10744" identifier="27ec14682d59b9f44d45581812ac0942">
+        <source>The sum is a multiple of 10</source>
+        <target>crwdns10744:0crwdne10744:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="10745" identifier="e8dc6db8623270551f676e6f496291c1">
+        <source>{panel end}</source>
+        <target>crwdns10745:0{panel end}crwdne10745:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

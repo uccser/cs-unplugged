@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="885" original="/csunplugged/topics/content/en/error-detection-and-correction/curriculum-integrations/instructional-writing.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10068" identifier="86e51a260f3415ec2120ff198ea17564">
+        <source>Instructional writing</source>
+        <target>crwdns10068:0crwdne10068:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="10069" identifier="8a01bd7ae29f0097710461ecccf10207">
+        <source>Write instructions on how to play the parity card game so that others can play it.</source>
+        <target>crwdns10069:0crwdne10069:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="10070" identifier="35c122980a45800a09b29c63391ffa7e">
+        <source>Write instructions on how to add up a check digit for a 12 digit barcode so that someone else can do it.</source>
+        <target>crwdns10070:0crwdne10070:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

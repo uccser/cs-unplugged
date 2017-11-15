@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="786" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/binary-numbers-using-variables-as-operator/binary-numbers-using-variables-as-operator.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8607" identifier="ebce547924a91be4a22f398a5e63d696">
+        <source>Display Binary Numbers (using variables as an operator)</source>
+        <target>crwdns8607:0crwdne8607:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="8608" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns8608:0crwdne8608:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="8609" identifier="c42575b9601a3049a9b76dcb21919823">
+        <source>Write a program to display numbers 1, 2, 4, 8 and 16 on the screen one at a
+time.</source>
+        <target>crwdns8609:0crwdne8609:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8610" identifier="c689b297252cd1fcc6a6cc0e6536a69d">
+        <source>This is similar to the previous challenge, but instead of storing a number
+directly into the variable, you should double the value in the variable each
+time.</source>
+        <target>crwdns8610:0crwdne8610:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8611" identifier="53078441a7b041c0aa474c736f6e1139">
+        <source>You need to use an operator (for multiplying 2 numbers) for this challenge.</source>
+        <target>crwdns8611:0crwdne8611:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8612" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns8612:0crwdne8612:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="8613" identifier="9434918c4b0a5c79cd0998920f4cc241">
+        <source>The output will always show the numbers 1, 2, 4, 8 and 16 (there is no input).</source>
+        <target>crwdns8613:0crwdne8613:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

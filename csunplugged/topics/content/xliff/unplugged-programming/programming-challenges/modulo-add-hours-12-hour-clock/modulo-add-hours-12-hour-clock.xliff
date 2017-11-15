@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1260" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/modulo-add-hours-12-hour-clock/modulo-add-hours-12-hour-clock.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15158" identifier="f096cc0abda754db3bf95891e0c727f3">
+        <source>Add hours on a clock (12-hour clock)</source>
+        <target>crwdns15158:0crwdne15158:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="15159" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns15159:0crwdne15159:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="15160" identifier="a0d92b025a677c059b03fe679cbf2972">
+        <source>Write a program that adds hours on a clock; for example, on a 12-hour clock, 11 o'clock plus 3 hours is 2 o'clock.</source>
+        <target>crwdns15160:0crwdne15160:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15161" identifier="15e531379f674087eb42e3d8dca9fefe">
+        <source>This can be done using the modulo operator, except you need to adjust the output so that 0 in mod 12 is displayed as 12.</source>
+        <target>crwdns15161:0crwdne15161:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15162" identifier="c3b8068cd578152fbea27648e25865f3">
+        <source>See &lt;a href=&quot;'topics:programming_challenge' 'unplugged-programming' 'modulo-add-hours-24-hour-clock'&quot;&gt;challenge &quot;Add hours on a clock (24-hour clock)&quot;&lt;/a&gt; if a 24-hour clock is usual in your country.</source>
+        <target>crwdns15162:0crwdne15162:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15163" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns15163:0crwdne15163:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="15164" identifier="c9bf31e2ea57693ba5afd83cc57b14b3">
+        <source>Your program should display the outputs shown in this table for the given inputs provided;</source>
+        <target>crwdns15164:0crwdne15164:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="15165" identifier="cba6b4800108c82267efa7cede56fc42">
+        <source>Input</source>
+        <target>crwdns15165:0crwdne15165:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/tr/th</note>
+      </trans-unit>
+      <trans-unit id="15166" identifier="67db30d78708ccc80d53b9b484cffb63">
+        <source>Output</source>
+        <target>crwdns15166:0crwdne15166:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/tr/th[2]</note>
+      </trans-unit>
+      <trans-unit id="15167" identifier="95eddf3fc2595b72caa955e30bf4b49e">
+        <source>11&lt;br&gt;1</source>
+        <target>crwdns15167:0crwdne15167:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[2]/td</note>
+      </trans-unit>
+      <trans-unit id="15168" identifier="52db0c07107fceaa4c002d5ae85c4b2b">
+        <source>The new time is 12 o’clock.</source>
+        <target>crwdns15168:0crwdne15168:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[2]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="15169" identifier="b8f40e9f0194ff610989580e05c40b33">
+        <source>11&lt;br&gt;4</source>
+        <target>crwdns15169:0crwdne15169:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[3]/td</note>
+      </trans-unit>
+      <trans-unit id="15170" identifier="3bdac36de59985876b23e0d12c988cf0">
+        <source>The new time is 3 o’clock.</source>
+        <target>crwdns15170:0crwdne15170:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[3]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="15171" identifier="482c4b5799ef7dba393f0adb5b7fde59">
+        <source>11&lt;br&gt;12</source>
+        <target>crwdns15171:0crwdne15171:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[4]/td</note>
+      </trans-unit>
+      <trans-unit id="15172" identifier="fd73fc5caad269e1d9c1a8f2e88deae6">
+        <source>The new time is 11 o’clock.</source>
+        <target>crwdns15172:0crwdne15172:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[4]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="15173" identifier="0e8d8d79854ee77aa215356d8482bf50">
+        <source>11&lt;br&gt;72</source>
+        <target>crwdns15173:0crwdne15173:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[5]/td</note>
+      </trans-unit>
+      <trans-unit id="15174" identifier="86c24ee33764ad4e920b645422bde71e">
+        <source>The new time is 11 o’clock.</source>
+        <target>crwdns15174:0crwdne15174:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[5]/td[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

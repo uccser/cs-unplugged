@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1231" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/find-prime-factors/find-prime-factors.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14985" identifier="64f8755c039a6aa0c1962f3bd3a9ab45">
+        <source>Find prime factors of a number</source>
+        <target>crwdns14985:0crwdne14985:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="14986" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns14986:0crwdne14986:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="14987" identifier="2271adeaa59622dbe3095ccca2aee9d8">
+        <source>Write a program that asks the user to enter a number as an input and displays the prime  factors of that number.
+Write your own function (block) to check if the number it is given is a prime.</source>
+        <target>crwdns14987:0crwdne14987:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14988" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns14988:0crwdne14988:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="14989" identifier="c9bf31e2ea57693ba5afd83cc57b14b3">
+        <source>Your program should display the outputs shown in this table for the given inputs provided;</source>
+        <target>crwdns14989:0crwdne14989:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14990" identifier="5bfb69c6f4701e747d0c20b0822e2580">
+        <source>Input</source>
+        <target>crwdns14990:0crwdne14990:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th</note>
+      </trans-unit>
+      <trans-unit id="14991" identifier="f36a1e77a6177da7e10093e12e92ec6c">
+        <source>Output</source>
+        <target>crwdns14991:0crwdne14991:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th[2]</note>
+      </trans-unit>
+      <trans-unit id="14992" identifier="010f511723b89cdcf13f3a2b61ddb1d2">
+        <source>26</source>
+        <target>crwdns14992:0crwdne14992:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td</note>
+      </trans-unit>
+      <trans-unit id="14993" identifier="fa0a4e8092d0102e949059a251755c88">
+        <source>2, 13,</source>
+        <target>crwdns14993:0crwdne14993:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td[2]</note>
+      </trans-unit>
+      <trans-unit id="14994" identifier="e3a61d3d3f4f71943036735099738554">
+        <source>150</source>
+        <target>crwdns14994:0crwdne14994:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td</note>
+      </trans-unit>
+      <trans-unit id="14995" identifier="22dad9afc412a1e9693d73f88d447abf">
+        <source>2, 3, 5,</source>
+        <target>crwdns14995:0crwdne14995:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

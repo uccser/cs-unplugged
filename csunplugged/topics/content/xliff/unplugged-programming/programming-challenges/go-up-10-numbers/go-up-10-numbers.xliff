@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1252" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/go-up-10-numbers/go-up-10-numbers.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15088" identifier="c816b982619d33e1384be2206b369da7">
+        <source>Go up 10 numbers</source>
+        <target>crwdns15088:0crwdne15088:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="15089" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns15089:0crwdne15089:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="15090" identifier="841dc6c66cf1ea936438aa0ea747ef0b">
+        <source>Write a program that chooses a random number between 1 and 100.</source>
+        <target>crwdns15090:0crwdne15090:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15091" identifier="7ecb62436361665b64feec695d7e6ff0">
+        <source>It then asks the user to go up 10 numbers.</source>
+        <target>crwdns15091:0crwdne15091:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15092" identifier="d418e6e694cb9678617374292b9d375c">
+        <source>If the answer is correct, it displays a message saying “well done!” and if the answer is incorrect displays a messages showing the correct answer.</source>
+        <target>crwdns15092:0crwdne15092:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15093" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns15093:0crwdne15093:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="15094" identifier="c9bf31e2ea57693ba5afd83cc57b14b3">
+        <source>Your program should display the outputs shown in this table for the given inputs provided;</source>
+        <target>crwdns15094:0crwdne15094:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="15095" identifier="5bfb69c6f4701e747d0c20b0822e2580">
+        <source>Input</source>
+        <target>crwdns15095:0crwdne15095:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th</note>
+      </trans-unit>
+      <trans-unit id="15096" identifier="f36a1e77a6177da7e10093e12e92ec6c">
+        <source>Output</source>
+        <target>crwdns15096:0crwdne15096:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th[2]</note>
+      </trans-unit>
+      <trans-unit id="15097" identifier="9ec198a3fe794c2bdd66b0fdc4fb6273">
+        <source>What is 10 numbers after 46? 56</source>
+        <target>crwdns15097:0crwdne15097:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td</note>
+      </trans-unit>
+      <trans-unit id="15098" identifier="b389717bc4530be72c3e65b6ae38de72">
+        <source>Well done!</source>
+        <target>crwdns15098:0crwdne15098:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td[2]</note>
+      </trans-unit>
+      <trans-unit id="15099" identifier="7bc964716c99c9cb4fbb6b930705a319">
+        <source>What is 10 numbers after 72? 92</source>
+        <target>crwdns15099:0crwdne15099:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td</note>
+      </trans-unit>
+      <trans-unit id="15100" identifier="e167b7aad33619ee409beeb452e480db">
+        <source>92 is a good try! But 10 numbers after 72 is 82.</source>
+        <target>crwdns15100:0crwdne15100:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="875" original="/csunplugged/topics/content/en/binary-numbers/unit-plan/lessons/how-binary-digits-work-junior.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="9587" identifier="7d909f414b49fd05f4b06aad638a5e7f">
+        <source>How binary digits work</source>
+        <target>crwdns9587:0crwdne9587:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="9588" identifier="833d1c43e6800ff57bf06b3185eaa9f3">
+        <source>Note from the authors</source>
+        <target>crwdns9588:0crwdne9588:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="9589" identifier="bb4b6c66d6751b600f54ffbff9b51428">
+        <source>We’ve noticed that when we teach the binary number system to students ages 5 - 7 we are focusing on number knowledge and number identification rather than how the binary number system works.</source>
+        <target>crwdns9589:0crwdne9589:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="9590" identifier="8007ad014867d1b787aaeba2c6ac85c8">
+        <source>We also support students to learn to count by one to one matching, because they are counting the dots.</source>
+        <target>crwdns9590:0crwdne9590:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="9591" identifier="d271b5d75eeac996e546c94c438768bd">
+        <source>Students are motivated to learn because they are learning how computers store information.</source>
+        <target>crwdns9591:0crwdne9591:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="9592" identifier="e4509ce670c96ad36b278e4a4f2b3162">
+        <source>Students may ask you questions and be excited to explore the concepts outlined in this lesson further.</source>
+        <target>crwdns9592:0crwdne9592:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="9593" identifier="96078c3a6a35390e402a60652d443ab0">
+        <source>We’ve added a lot of information into this lesson, however, it is not our intention that you will teach and cover all the concepts, but that you have at your fingertips the information you need when your students express an interest in learning more.</source>
+        <target>crwdns9593:0crwdne9593:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="9594" identifier="e675421f6510eb6ccccb0f0f95bdfee5">
+        <source>Key question</source>
+        <target>crwdns9594:0crwdne9594:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="9595" identifier="0fe25d69478d6ff4996ffdd99f2ed3a0">
+        <source>How do you think a digital device stores information?</source>
+        <target>crwdns9595:0crwdne9595:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="9596" identifier="346de465bed4a81d9baec3bb0567f379">
+        <source>Accept and record all answers to revisit at the end of the lesson.</source>
+        <target>crwdns9596:0crwdne9596:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="9597" identifier="c187755a265deaae165ec7817bcbd0de">
+        <source>Lesson starter</source>
+        <target>crwdns9597:0crwdne9597:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[3]</note>
+      </trans-unit>
+      <trans-unit id="9598" identifier="d9014380796394fce3e46229b3ead590">
+        <source>{panel type=&quot;general&quot; title=&quot;Notes on resources&quot;}</source>
+        <target>crwdns9598:0crwdne9598:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="9599" identifier="c49c8b6008b987f21d73830ade84e487">
+        <source>There is also an online interactive version of the binary cards available (4 card version, corresponding to this activity, or 5 card version if students are comfortable with numbers up to 31), from the &lt;a href=&quot;http://www.csfieldguide.org.nz/en/interactives/binary-cards/index.html?digits=8&quot;&gt;Computer Science Field Guide&lt;/a&gt;.</source>
+        <target>crwdns9599:0crwdne9599:0</target>
+        <note>Context: XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="9600" identifier="dbea15195c48f36a8b5e9ff20629281d">
+        <source>However, we strongly recommend using physical cards to start with.</source>
+        <target>crwdns9600:0crwdne9600:0</target>
+        <note>Context: XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="9601" identifier="0195c2d106e4d52b36bca78ff4c3e7a4">
+        <source>{panel end}</source>
+        <target>crwdns9601:0{panel end}crwdne9601:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="9602" identifier="2ceb5c9d83bacf35b9214fb6384e258d">
+        <source>Did you know that right in the inside of any computer there are billions (that’s a really really big number) of little tiny things that can be turned on or off, like a light switch, and that when you have lots of these things together they can display a number or a letter or a movie or make up your favourite game on your device?</source>
+        <target>crwdns9602:0crwdne9602:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="9603" identifier="8d7821ee56f498f155defab3d3e9ac2b">
+        <source>So let’s look at how they work.</source>
+        <target>crwdns9603:0crwdne9603:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="9604" identifier="2ab4218455f1f2c21c0fd5386ab4ef07">
+        <source>Now we need to pretend that we are so incredibly small that we are now inside a computer and we are making the computer show a number.</source>
+        <target>crwdns9604:0crwdne9604:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="9605" identifier="25f2510f7f925ebdac5fca7885c6db33">
+        <source>Are you ready?</source>
+        <target>crwdns9605:0crwdne9605:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="9606" identifier="110d21d7452080bd14c25ffd908940be">
+        <source>First of all here’s a card that is the tiny thing that can be turned on or off.
+The technical word for that is a “bit”.</source>
+        <target>crwdns9606:0crwdne9606:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="9607" identifier="39eeaeabb654ef56ba4b2eec976438ec">
+        <source>Hold the 4 cards (1, 2, 4, and 8 dots), but don't let students see the dots.
+Ask for 4 students to volunteer to be “bits”, and have them stand in a line in front of the class.</source>
+        <target>crwdns9607:0crwdne9607:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li/p</note>
+      </trans-unit>
+      <trans-unit id="9608" identifier="048b1028578c73e091b4c850add0d1c4">
+        <source>Hand out the 1-dot card to the person on the right.</source>
+        <target>crwdns9608:0crwdne9608:0</target>
+        <note>Context: XPath: /ol/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="9609" identifier="9ce0d973b3b9d2a6d957332421f011d0">
+        <source>Explain that they are one &quot;bit&quot; (binary digit), and can be on or off, black or white, 0 or 1 dots.</source>
+        <target>crwdns9609:0crwdne9609:0</target>
+        <note>Context: XPath: /ol/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="9610" identifier="85af953d87e0b92196c50d4bed29f7aa">
+        <source>The only rule is that their card is either completely visible, or not visible (i.e. flipped over).</source>
+        <target>crwdns9610:0crwdne9610:0</target>
+        <note>Context: XPath: /ol/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="9611" identifier="50c14844435f293707d2e23f2a507153">
+        <source>Hand out the second card so that the first card is on the far right.</source>
+        <target>crwdns9611:0crwdne9611:0</target>
+        <note>Context: XPath: /ol/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="9612" identifier="89f6a9d8645776707fa409d56e7472c1">
+        <source>Point out that this card has either 2 dots, or none.</source>
+        <target>crwdns9612:0crwdne9612:0</target>
+        <note>Context: XPath: /ol/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="9613" identifier="e00e807b215612185025d4989a949338">
+        <source>{image file-path=&quot;img/topics/col_binary_4_kids_2_cards.png&quot; alt=&quot;2 kids holding binary cards&quot;}</source>
+        <target>crwdns9613:0crwdne9613:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[2]/p[2]</note>
+      </trans-unit>
+      <trans-unit id="9614" identifier="aeb0d63555659fdc0e28a0dc2f45383d">
+        <source>Ask the class what the number of dots on the next card will be.
+Get them to explain why they think that.</source>
+        <target>crwdns9614:0crwdne9614:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[3]/p</note>
+      </trans-unit>
+      <trans-unit id="9615" identifier="456424b1deaccd5ded3963a7be7646fb">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns9615:0crwdne9615:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[3]/p[2]</note>
+      </trans-unit>
+      <trans-unit id="9616" identifier="17d2e6a462f1f16750e68cce7733fd08">
+        <source>Students will usually suggest it should be three.</source>
+        <target>crwdns9616:0crwdne9616:0</target>
+        <note>Context: XPath: /ol/li[3]/p[3]</note>
+      </trans-unit>
+      <trans-unit id="9617" identifier="6a79bd225d365d9803d2c3d00d687f9d">
+        <source>If they suggest 4, they may have done the activity before (or have seen the cards you are holding!), or they may have very good pattern recognition skills!</source>
+        <target>crwdns9617:0crwdne9617:0</target>
+        <note>Context: XPath: /ol/li[3]/p[3]</note>
+      </trans-unit>
+      <trans-unit id="9618" identifier="0afd35b33bc31225844e52ae50704675">
+        <source>If they suggest the wrong number, don't correct them, but continue without comment, so that they can construct the rule for themselves.</source>
+        <target>crwdns9618:0crwdne9618:0</target>
+        <note>Context: XPath: /ol/li[3]/p[3]</note>
+      </trans-unit>
+      <trans-unit id="9619" identifier="7a3c2a405ccc045a7dc3784449b8a9fa">
+        <source>{panel end}</source>
+        <target>crwdns9619:0{panel end}crwdne9619:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[3]/p[4]</note>
+      </trans-unit>
+      <trans-unit id="9620" identifier="3d707a173a78c5590e1920f182883f57">
+        <source>Silently give out the 4-dot card, and let them try to see the pattern.</source>
+        <target>crwdns9620:0crwdne9620:0</target>
+        <note>Context: XPath: /ol/li[4]/p</note>
+      </trans-unit>
+      <trans-unit id="9621" identifier="549380c230ab650f22774f07f8801ca9">
+        <source>This will be dependent on their level of number knowledge.</source>
+        <target>crwdns9621:0crwdne9621:0</target>
+        <note>Context: XPath: /ol/li[4]/p</note>
+      </trans-unit>
+      <trans-unit id="9622" identifier="613aa4d1e637b8d1ea2df55196923265">
+        <source>Mention that each number is doubling (or that if you had two of a card, that would give you the card beside it), and move onto the next step.</source>
+        <target>crwdns9622:0crwdne9622:0</target>
+        <note>Context: XPath: /ol/li[4]/p</note>
+      </trans-unit>
+      <trans-unit id="9623" identifier="58a03ddbb1112401432373f6858bbeec">
+        <source>{image file-path=&quot;img/topics/col_binary_4_kids_3_cards.png&quot; alt=&quot;3 kids holding binary cards&quot;}</source>
+        <target>crwdns9623:0crwdne9623:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[4]/p[2]</note>
+      </trans-unit>
+      <trans-unit id="9624" identifier="4df90a090a3da3ca363fe0683fcfdf48">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns9624:0crwdne9624:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[4]/p[3]</note>
+      </trans-unit>
+      <trans-unit id="9625" identifier="a8ed562bf6abb9571cd37c0aeed1b237">
+        <source>Usually some students will point out  that you've missed out the three, but simply indicate that you haven't made a mistake, something is happening to the numbers and we will be able to make three by using the cards.</source>
+        <target>crwdns9625:0crwdne9625:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[4]/p[4]</note>
+      </trans-unit>
+      <trans-unit id="9626" identifier="31896dbcdab71c7991c4d605452beedf">
+        <source>{panel end}</source>
+        <target>crwdns9626:0{panel end}crwdne9626:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[4]/p[5]</note>
+      </trans-unit>
+      <trans-unit id="9627" identifier="ee83a41c7344203ffcd8ead13014ad3f">
+        <source>Ask what the next card is, and why.</source>
+        <target>crwdns9627:0crwdne9627:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[5]/p</note>
+      </trans-unit>
+      <trans-unit id="9628" identifier="2ceeb9102485cc0839d06bd7ccdf907f">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns9628:0crwdne9628:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[5]/p[2]</note>
+      </trans-unit>
+      <trans-unit id="9629" identifier="9dcf99fd603d711fb15d956b1fc39ba2">
+        <source>At this point it is common for students to guess that it is 6 (since it follow the numbers 2 and 4).</source>
+        <target>crwdns9629:0crwdne9629:0</target>
+        <note>Context: XPath: /ol/li[5]/p[3]</note>
+      </trans-unit>
+      <trans-unit id="9630" identifier="27ca6ea95d7caf96b98bd246f56ac9d1">
+        <source>However, if you let them think about it a little more, some will usually come up with 8, and those students should be able to convince the others that they are correct.</source>
+        <target>crwdns9630:0crwdne9630:0</target>
+        <note>Context: XPath: /ol/li[5]/p[3]</note>
+      </trans-unit>
+      <trans-unit id="9631" identifier="825e004b131b654fe51b34e32b94d3bb">
+        <source>There are several ways a student could explain this e.g. that each card is double the previous one, or that if you take two of a card, you get the next one.</source>
+        <target>crwdns9631:0crwdne9631:0</target>
+        <note>Context: XPath: /ol/li[5]/p[3]</note>
+      </trans-unit>
+      <trans-unit id="9632" identifier="bf7db4ee2ff2c4b7729ff275d6a48071">
+        <source>Some may recite the pattern 1+1=2, 2+2=4, 4+4=8.</source>
+        <target>crwdns9632:0crwdne9632:0</target>
+        <note>Context: XPath: /ol/li[5]/p[3]</note>
+      </trans-unit>
+      <trans-unit id="9633" identifier="f428c5b348235257389d5f31dabbb90d">
+        <source>If your class are learning to count then show all the cards and count how many dots are on each one.
+Look for the patterns of doubling and count the dots to prove this.</source>
+        <target>crwdns9633:0crwdne9633:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[5]/p[4]</note>
+      </trans-unit>
+      <trans-unit id="9634" identifier="1aa6cd8c4d71be87b9202d4074331dc1">
+        <source>{panel end}</source>
+        <target>crwdns9634:0{panel end}crwdne9634:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[5]/p[5]</note>
+      </trans-unit>
+      <trans-unit id="9635" identifier="4c38c882f79d846a9e75a12c2b784e92">
+        <source>Show the 4th card and hand it out:</source>
+        <target>crwdns9635:0crwdne9635:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[6]/p</note>
+      </trans-unit>
+      <trans-unit id="9636" identifier="87d416e9c2663553ceb265c4f43efd37">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns9636:0crwdne9636:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[6]/p[2]</note>
+      </trans-unit>
+      <trans-unit id="9637" identifier="ff2405658aff52b03c0f3ea96d2e0e4a">
+        <source>Background information for those who are curious!</source>
+        <target>crwdns9637:0crwdne9637:0</target>
+        <note>Context: XPath: /ol/li[6]/p[3]</note>
+      </trans-unit>
+      <trans-unit id="9638" identifier="677ee77e8d269b880cd68fc12756bcc8">
+        <source>If we kept handing out cards then once we got to 8 cards we would have 256 dots in total if we added up all the cards.</source>
+        <target>crwdns9638:0crwdne9638:0</target>
+        <note>Context: XPath: /ol/li[6]/p[3]</note>
+      </trans-unit>
+      <trans-unit id="9639" identifier="93ffe63ca1281ec727c92e1a91b952c2">
+        <source>This is 8 bits, which is commonly referred to as a byte.</source>
+        <target>crwdns9639:0crwdne9639:0</target>
+        <note>Context: XPath: /ol/li[6]/p[3]</note>
+      </trans-unit>
+      <trans-unit id="9640" identifier="fd1345618954fd1f33161b9aa1626da2">
+        <source>It may be distracting to bring this up at this point, but some students may already be familiar with the idea that 8 bits is a byte, and make that observation.</source>
+        <target>crwdns9640:0crwdne9640:0</target>
+        <note>Context: XPath: /ol/li[6]/p[3]</note>
+      </trans-unit>
+      <trans-unit id="9641" identifier="787ff9af249f747e2b902bef9e1a8ff1">
+        <source>However, in the meantime, we'll work with a 4-bit representation, which isn't as useful as a whole byte, but a good size for teaching younger students.</source>
+        <target>crwdns9641:0crwdne9641:0</target>
+        <note>Context: XPath: /ol/li[6]/p[3]</note>
+      </trans-unit>
+      <trans-unit id="9642" identifier="a4c9dca724da5303847812533a6eea6a">
+        <source>4 bits is actually called a nibble (sometimes spelt nybble)!</source>
+        <target>crwdns9642:0crwdne9642:0</target>
+        <note>Context: XPath: /ol/li[6]/p[3]</note>
+      </trans-unit>
+      <trans-unit id="9643" identifier="392b61ee23e40b10d19c853eab79e8c0">
+        <source>This is a fun extra piece of information for interested students.</source>
+        <target>crwdns9643:0crwdne9643:0</target>
+        <note>Context: XPath: /ol/li[6]/p[3]</note>
+      </trans-unit>
+      <trans-unit id="9644" identifier="cfc72c8c7d58895f8bd6505706991acb">
+        <source>A common mistake is to hand out the cards from left to right, but it's convention in number representation that the least significant value is on the right, and this is an important idea for students to take away from this activity.</source>
+        <target>crwdns9644:0crwdne9644:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[6]/p[4]</note>
+      </trans-unit>
+      <trans-unit id="9645" identifier="424c035769262429d281c35e13527ffe">
+        <source>{panel end}</source>
+        <target>crwdns9645:0{panel end}crwdne9645:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[6]/p[5]</note>
+      </trans-unit>
+      <trans-unit id="9646" identifier="ca790cb1ae3a740bb6ae51dae3ac6de8">
+        <source>Lesson activities</source>
+        <target>crwdns9646:0crwdne9646:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[4]</note>
+      </trans-unit>
+      <trans-unit id="9647" identifier="1ddaaa1c690351408f8a4f486e772315">
+        <source>Tell the students that the rule is that a card either has the dots showing, or hiding.</source>
+        <target>crwdns9647:0crwdne9647:0</target>
+        <note>Context: XPath: /ol[2]/li/p</note>
+      </trans-unit>
+      <trans-unit id="9648" identifier="9763dec059424fdcf0cefb2df822dee5">
+        <source>If we can turn cards on (showing)  and off (hiding) by showing the front and back of the card, how would we show 3 dots?</source>
+        <target>crwdns9648:0crwdne9648:0</target>
+        <note>Context: XPath: /ol[2]/li/p</note>
+      </trans-unit>
+      <trans-unit id="9649" identifier="e476a99f77bf89171647395623736718">
+        <source>Begin by asking: how many dots are on the left-most card?</source>
+        <target>crwdns9649:0crwdne9649:0</target>
+        <note>Context: XPath: /ol[2]/li/p</note>
+      </trans-unit>
+      <trans-unit id="9650" identifier="16c5b285d006f0134fa7742b8eb7cbd2">
+        <source>Count together that there are 8 dots.</source>
+        <target>crwdns9650:0crwdne9650:0</target>
+        <note>Context: XPath: /ol[2]/li/p</note>
+      </trans-unit>
+      <trans-unit id="9651" identifier="e748b15231b4f8137959edcf7a0b5022">
+        <source>Let’s look at the number line.</source>
+        <target>crwdns9651:0crwdne9651:0</target>
+        <note>Context: XPath: /ol[2]/li/p</note>
+      </trans-unit>
+      <trans-unit id="9652" identifier="47b65122459b3c259f17f65e3774185d">
+        <source>Is 8 bigger than 3?</source>
+        <target>crwdns9652:0crwdne9652:0</target>
+        <note>Context: XPath: /ol[2]/li/p</note>
+      </trans-unit>
+      <trans-unit id="9653" identifier="71673d5e134bb5e1345629d1d0f2a1b8">
+        <source>Let’s hide it because it’s too big.</source>
+        <target>crwdns9653:0crwdne9653:0</target>
+        <note>Context: XPath: /ol[2]/li/p</note>
+      </trans-unit>
+      <trans-unit id="9654" identifier="7653f1853f9fbc0644bf51f2d9f0d98c">
+        <source>Now let’s look at the next card, how many dots can we see?</source>
+        <target>crwdns9654:0crwdne9654:0</target>
+        <note>Context: XPath: /ol[2]/li/p</note>
+      </trans-unit>
+      <trans-unit id="9655" identifier="8d8376af81c9992e6b2f6804ab783b30">
+        <source>Let’s count them.</source>
+        <target>crwdns9655:0crwdne9655:0</target>
+        <note>Context: XPath: /ol[2]/li/p</note>
+      </trans-unit>
+      <trans-unit id="9656" identifier="b1c592c4f4d59c2d848d598ddb54f97d">
+        <source>There are 4, is 4 bigger than 3?</source>
+        <target>crwdns9656:0crwdne9656:0</target>
+        <note>Context: XPath: /ol[2]/li/p</note>
+      </trans-unit>
+      <trans-unit id="9657" identifier="565c130d4c52d2ca926a55069e6a1127">
+        <source>Yes, so we need to hide the card.</source>
+        <target>crwdns9657:0crwdne9657:0</target>
+        <note>Context: XPath: /ol[2]/li/p</note>
+      </trans-unit>
+      <trans-unit id="9658" identifier="c4688f7ea249344b8dbf41aeb57e4c6b">
+        <source>If we didn’t hide the 4 card what would happen?</source>
+        <target>crwdns9658:0crwdne9658:0</target>
+        <note>Context: XPath: /ol[2]/li/p</note>
+      </trans-unit>
+      <trans-unit id="9659" identifier="b9c1ea698ece98e95e11cadbd7c2317a">
+        <source>(There would be too many dots).</source>
+        <target>crwdns9659:0crwdne9659:0</target>
+        <note>Context: XPath: /ol[2]/li/p</note>
+      </trans-unit>
+      <trans-unit id="9660" identifier="69e3eddd668827a197b7dff7eb6b6852">
+        <source>How many dots are on the next card?</source>
+        <target>crwdns9660:0crwdne9660:0</target>
+        <note>Context: XPath: /ol[2]/li/p</note>
+      </trans-unit>
+      <trans-unit id="9661" identifier="e70c449f4b5d675df3e200ec01c9fdde">
+        <source>Let’s count them.</source>
+        <target>crwdns9661:0crwdne9661:0</target>
+        <note>Context: XPath: /ol[2]/li/p</note>
+      </trans-unit>
+      <trans-unit id="9662" identifier="423add6c397a850a5a7c3f031012c500">
+        <source>There are 2 dots.</source>
+        <target>crwdns9662:0crwdne9662:0</target>
+        <note>Context: XPath: /ol[2]/li/p</note>
+      </trans-unit>
+      <trans-unit id="9663" identifier="67c9d8d2b443e86a7d4c02f8a448aa8a">
+        <source>Let’s look at the number 3, (show it with materials and show that 2 fits into 3, with how many left over?)
+We need one more dot to make the number 3.</source>
+        <target>crwdns9663:0crwdne9663:0</target>
+        <note>Context: XPath: /ol[2]/li/p</note>
+      </trans-unit>
+      <trans-unit id="9664" identifier="7221d54099d2a33ad665f34a749e3017">
+        <source>So we will leave that card visible.</source>
+        <target>crwdns9664:0crwdne9664:0</target>
+        <note>Context: XPath: /ol[2]/li/p</note>
+      </trans-unit>
+      <trans-unit id="9665" identifier="6dbeb4019ade55b46830660063165866">
+        <source>Without being given any rules other than each card being visible or not, students will usually come up with the following representation.</source>
+        <target>crwdns9665:0crwdne9665:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[2]/li/p[2]</note>
+      </trans-unit>
+      <trans-unit id="9666" identifier="9622e746941e99e9019f7cb2586395cb">
+        <source>{image file-path=&quot;img/topics/binary_cards_equals_three.png&quot; alt=&quot;Diagram showing that 2 binary cards make the number 3&quot;}</source>
+        <target>crwdns9666:0crwdne9666:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[2]/li/p[3]</note>
+      </trans-unit>
+      <trans-unit id="9667" identifier="459942f1946eda5662f30766be3587bb">
+        <source>{panel type=&quot;math&quot; title=&quot;Mathematical links&quot;}</source>
+        <target>crwdns9667:0crwdne9667:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[2]/li/p[4]</note>
+      </trans-unit>
+      <trans-unit id="9668" identifier="372e4a410ac700c4caee506ef2742ff6">
+        <source>At a junior level we are focusing on using this counting system to represent numbers and making the association that with these “bits” you can make any number.</source>
+        <target>crwdns9668:0crwdne9668:0</target>
+        <note>Context: XPath: /ol[2]/li/p[5]</note>
+      </trans-unit>
+      <trans-unit id="9669" identifier="f632838cf2344a5492732b5afa6945fa">
+        <source>We’re not going to focus on further knowledge about number base systems.</source>
+        <target>crwdns9669:0crwdne9669:0</target>
+        <note>Context: XPath: /ol[2]/li/p[5]</note>
+      </trans-unit>
+      <trans-unit id="9670" identifier="f52a12b5b39c9828ae5baf91b171a87c">
+        <source>The information below is extra information for you.</source>
+        <target>crwdns9670:0crwdne9670:0</target>
+        <note>Context: XPath: /ol[2]/li/p[5]</note>
+      </trans-unit>
+      <trans-unit id="9671" identifier="30f024dda52eaa8092b0e07ce2e465ba">
+        <source>For teachers: Base 10 (our normal counting system) has 10 digits, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.</source>
+        <target>crwdns9671:0crwdne9671:0</target>
+        <note>Context: XPath: /ol[2]/li/p[6]</note>
+      </trans-unit>
+      <trans-unit id="9672" identifier="a7dd2ed00c526579ea665c47e3e7f799">
+        <source>When we count in base 10, we count from 0 to 9 and then run out of digits.</source>
+        <target>crwdns9672:0crwdne9672:0</target>
+        <note>Context: XPath: /ol[2]/li/p[6]</note>
+      </trans-unit>
+      <trans-unit id="9673" identifier="593f44ee5f1b96a50b9bc45487f5493a">
+        <source>So we need to add another column; we put a 1 in that column and start counting again from 0.</source>
+        <target>crwdns9673:0crwdne9673:0</target>
+        <note>Context: XPath: /ol[2]/li/p[6]</note>
+      </trans-unit>
+      <trans-unit id="9674" identifier="5c004c216f9eb4dd95724da9f44070c3">
+        <source>This makes the number 10, we then repeat that process until the tens column is 9 and the ones column is 9 (making 99); from there we then add another column.</source>
+        <target>crwdns9674:0crwdne9674:0</target>
+        <note>Context: XPath: /ol[2]/li/p[6]</note>
+      </trans-unit>
+      <trans-unit id="9675" identifier="f1b9a9b0bca62a91e266ae94a309f853">
+        <source>Hence we have the familiar place value system that can be shown something like this:</source>
+        <target>crwdns9675:0crwdne9675:0</target>
+        <note>Context: XPath: /ol[2]/li/p[6]</note>
+      </trans-unit>
+      <trans-unit id="9676" identifier="7c1555b93ae8650dd1630d375f736eb1">
+        <source>100,000s | 10,000s | 1,000s | 100s |10s | 1
+&lt;strong&gt;Note: Use the appropriate place value example based on what you have already taught in your class; this is an extended example.&lt;/strong&gt;</source>
+        <target>crwdns9676:0crwdne9676:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[2]/li/p[7]</note>
+      </trans-unit>
+      <trans-unit id="9677" identifier="1c255e4c17ef0e9bf96222669229bee9">
+        <source>Base 2 (binary) follows the same logic, except it moves a lot quicker to the “next” place value, because there are only two digits, 0 and 1.
+The binary place values look like this:</source>
+        <target>crwdns9677:0crwdne9677:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[2]/li/p[8]</note>
+      </trans-unit>
+      <trans-unit id="9678" identifier="92f2aa2eff9e757e495329894295368c">
+        <source>32 | 16 | 8 | 4 | 2 | 1 |</source>
+        <target>crwdns9678:0crwdne9678:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[2]/li/p[9]</note>
+      </trans-unit>
+      <trans-unit id="9679" identifier="c49d0dfd280aae6fbb3b31312805b74b">
+        <source>Sometimes students confuse the order of digits in a binary representation.</source>
+        <target>crwdns9679:0crwdne9679:0</target>
+        <note>Context: XPath: /ol[2]/li/p[10]</note>
+      </trans-unit>
+      <trans-unit id="9680" identifier="f863ea5dd1a9d27da5c095fa77a2fe59">
+        <source>To support students to understand the correct ordering of binary digits, ask the question: If I was going to give you $435.00 which number are you most interested in?</source>
+        <target>crwdns9680:0crwdne9680:0</target>
+        <note>Context: XPath: /ol[2]/li/p[10]</note>
+      </trans-unit>
+      <trans-unit id="9681" identifier="4671c51e4ccc0b4bf044f40491f016a2">
+        <source>Is it the 4 or the 5?</source>
+        <target>crwdns9681:0crwdne9681:0</target>
+        <note>Context: XPath: /ol[2]/li/p[10]</note>
+      </trans-unit>
+      <trans-unit id="9682" identifier="31c6d0198717c50cd58ba3fe4fae4f7e">
+        <source>Why is that?</source>
+        <target>crwdns9682:0crwdne9682:0</target>
+        <note>Context: XPath: /ol[2]/li/p[10]</note>
+      </trans-unit>
+      <trans-unit id="9683" identifier="742940d52d2781dd84ec50cdde222a93">
+        <source>It’s the same for binary code, the lowest value (least significant digit) is on the far right, whereas the most significant digit is on the far left.</source>
+        <target>crwdns9683:0crwdne9683:0</target>
+        <note>Context: XPath: /ol[2]/li/p[10]</note>
+      </trans-unit>
+      <trans-unit id="9684" identifier="c1cfc2f530af8edc763111889afe06ab">
+        <source>Base 16 is also commonly used on computers - it's called hexadecimal, and has 16 digits.</source>
+        <target>crwdns9684:0crwdne9684:0</target>
+        <note>Context: XPath: /ol[2]/li/p[11]</note>
+      </trans-unit>
+      <trans-unit id="9685" identifier="b663c806f6307f143ddb682b8f858907">
+        <source>While this is far beyond the scope of this lesson, we wanted to point out that one hexadecimal digit is the equivalent of 4 binary digits (bits), because both can represent 16 different values (from 0 to 15).</source>
+        <target>crwdns9685:0crwdne9685:0</target>
+        <note>Context: XPath: /ol[2]/li/p[11]</note>
+      </trans-unit>
+      <trans-unit id="9686" identifier="179d34014bdaaed33fd50421aed16b8a">
+        <source>So this exercise that the students are doing provides a great basis for later understanding another common representation that they will encounter on digital devices.</source>
+        <target>crwdns9686:0crwdne9686:0</target>
+        <note>Context: XPath: /ol[2]/li/p[11]</note>
+      </trans-unit>
+      <trans-unit id="9687" identifier="b4560dcb40e6a176b9bc0b717d666daa">
+        <source>{panel end}</source>
+        <target>crwdns9687:0{panel end}crwdne9687:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[2]/li/p[12]</note>
+      </trans-unit>
+      <trans-unit id="9688" identifier="dceb617aba879e2813d86b5cdfa52253">
+        <source>Now ask &quot;How would you make the number 6?&quot; (Again, start by asking if they want the 8 card, and so on from left to right).</source>
+        <target>crwdns9688:0crwdne9688:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[2]/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="9689" identifier="4bc7a178c5b3566980c109091c2f0cc8">
+        <source>The process we have been following to make these numbers is an algorithm, which converts our normal counting numbers to a binary representation.</source>
+        <target>crwdns9689:0crwdne9689:0</target>
+        <note>Context: XPath: /ol[2]/li[3]/p</note>
+      </trans-unit>
+      <trans-unit id="9690" identifier="0771b440e1a3b63da676b20f427b0820">
+        <source>Together let’s think through the steps we followed to do this.</source>
+        <target>crwdns9690:0crwdne9690:0</target>
+        <note>Context: XPath: /ol[2]/li[3]/p</note>
+      </trans-unit>
+      <trans-unit id="9691" identifier="2ca3265ec20c37281d75f4cf7248411d">
+        <source>We'll do this by using the earlier example of representing the number 3 again.</source>
+        <target>crwdns9691:0crwdne9691:0</target>
+        <note>Context: XPath: /ol[2]/li[3]/p</note>
+      </trans-unit>
+      <trans-unit id="9692" identifier="bbcc38cf6838a411deb57c013ffccc4b">
+        <source>a.</source>
+        <target>crwdns9692:0crwdne9692:0</target>
+        <note>Context: XPath: /ol[2]/li[3]/p[2]</note>
+      </trans-unit>
+      <trans-unit id="9693" identifier="fe56fc57b2562dc7fd84f0dbc1d290ad">
+        <source>Start with all the numbers switched to on (all the dots visible).</source>
+        <target>crwdns9693:0crwdne9693:0</target>
+        <note>Context: XPath: /ol[2]/li[3]/p[2]</note>
+      </trans-unit>
+      <trans-unit id="9694" identifier="cba66e1cc4765f556a9ce915f943d5f2">
+        <source>You could start to introduce abstract representations, like varying the description of the cards (visible/hidden; dots/no-dots; white/black if the backing is black; yes/no; or on/off)</source>
+        <target>crwdns9694:0crwdne9694:0</target>
+        <note>Context: XPath: /ol[2]/li[3]/p[2]</note>
+      </trans-unit>
+      <trans-unit id="9695" identifier="bcaeafb019141449521761a3c148da44">
+        <source>{image file-path=&quot;img/topics/lightbulb_series_4_bulbs_4.png&quot; alt=&quot;4 lightbulbs switched on&quot;}</source>
+        <target>crwdns9695:0crwdne9695:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[2]/li[3]/p[3]</note>
+      </trans-unit>
+      <trans-unit id="9696" identifier="98561689da5578b13e2eb65ee09e2736">
+        <source>b.  Does 8 fit into 3? No - so turn it off</source>
+        <target>crwdns9696:0crwdne9696:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[2]/li[3]/p[4]</note>
+      </trans-unit>
+      <trans-unit id="9697" identifier="12904f794de5b6577cdb274c665fe572">
+        <source>{image file-path=&quot;img/topics/lightbulb_series_4_bulbs_3.png&quot; alt=&quot;3 lightbulbs switched on&quot;}</source>
+        <target>crwdns9697:0crwdne9697:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[2]/li[3]/p[5]</note>
+      </trans-unit>
+      <trans-unit id="9698" identifier="0375f157514f7f2b2fa52396ce7d5446">
+        <source>c.  Does 4 fit into 3? No - so turn it off</source>
+        <target>crwdns9698:0crwdne9698:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[2]/li[3]/p[6]</note>
+      </trans-unit>
+      <trans-unit id="9699" identifier="f2b735a6340f91d1cbabf46d53848252">
+        <source>{image file-path=&quot;img/topics/lightbulb_series_4_bulbs_2.png&quot; alt=&quot;2 lightbulbs switched on&quot;}</source>
+        <target>crwdns9699:0crwdne9699:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[2]/li[3]/p[7]</note>
+      </trans-unit>
+      <trans-unit id="9700" identifier="19afde241f1736cfe7d82f4779d6f8b6">
+        <source>d.  Does 2 fit into 3? Yes - so keep it on. How many are left over? (1)</source>
+        <target>crwdns9700:0crwdne9700:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[2]/li[3]/p[8]</note>
+      </trans-unit>
+      <trans-unit id="9701" identifier="2ad1282a7df91384a6619a127ebc2282">
+        <source>e.  Does 1 fit into 1? Yes - so keep it on. How many are left over? (none)</source>
+        <target>crwdns9701:0crwdne9701:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[2]/li[3]/p[9]</note>
+      </trans-unit>
+      <trans-unit id="9702" identifier="63d7d6057b3899b71e6ff6209e9bd382">
+        <source>{image file-path=&quot;img/topics/lightbulb_series_4_bulbs_2.png&quot; alt=&quot;2 lightbulbs switched on&quot;}</source>
+        <target>crwdns9702:0crwdne9702:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[2]/li[3]/p[10]</note>
+      </trans-unit>
+      <trans-unit id="9703" identifier="6fd48c64dcb1038f7d425ef4d49df7f5">
+        <source>Applying what we have just learnt</source>
+        <target>crwdns9703:0crwdne9703:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[5]</note>
+      </trans-unit>
+      <trans-unit id="9704" identifier="377594c32b5b6ac3902105bb6130efc4">
+        <source>Group students into pairs</source>
+        <target>crwdns9704:0crwdne9704:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li</note>
+      </trans-unit>
+      <trans-unit id="9705" identifier="6b1753e01a325cf33427547c1fc2af47">
+        <source>Give each pair a set of the smaller binary cards</source>
+        <target>crwdns9705:0crwdne9705:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li[2]</note>
+      </trans-unit>
+      <trans-unit id="9706" identifier="c76bf5c53745472d72923b6f0f11cde3">
+        <source>Have them practise the algorithm for numbers below 10.</source>
+        <target>crwdns9706:0crwdne9706:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li[3]</note>
+      </trans-unit>
+      <trans-unit id="9707" identifier="043b6ba48e077ba3e84ea9fb61d9a3dd">
+        <source>Explain to students that we're working with just two digits, so they are called binary digits.</source>
+        <target>crwdns9707:0crwdne9707:0</target>
+        <note>Context: XPath: /ol[3]/li/p</note>
+      </trans-unit>
+      <trans-unit id="9708" identifier="cc8e22af8988909b6f2cc21ed874a65e">
+        <source>(You could explore the meaning of the &quot;bi&quot; prefix with words like bicycle, biennial, bilingual and bicultural.)
+Binary digits are so common that we have a short name for them: write &quot;binary digit&quot; on a piece of paper, then rip off the &quot;bi&quot; at the start, and the &quot;t&quot; at the end, put it together and ask what the combined word (&quot;bit&quot;) spells.</source>
+        <target>crwdns9708:0crwdne9708:0</target>
+        <note>Context: XPath: /ol[3]/li/p</note>
+      </trans-unit>
+      <trans-unit id="9709" identifier="9cc8420abb86b451526062206e323d19">
+        <source>This is the short name for a binary digit, which is why we've been referring to the cards as bits; the 4 cards that they have are actually 4 bits.</source>
+        <target>crwdns9709:0crwdne9709:0</target>
+        <note>Context: XPath: /ol[3]/li/p</note>
+      </trans-unit>
+      <trans-unit id="9710" identifier="bfed1e0068e0270d3771010816b861e9">
+        <source>Now let’s count from the smallest number that we can make, up to the highest number</source>
+        <target>crwdns9710:0crwdne9710:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[3]/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="9711" identifier="0bfd2ae023a422a7b14b738b6a2b8d13">
+        <source>a.  What is the smallest number? (they may suggest 1, then realise that it’s actually 0).</source>
+        <target>crwdns9711:0crwdne9711:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[3]/li[2]/p[2]</note>
+      </trans-unit>
+      <trans-unit id="9712" identifier="e6870de0284a97f1475efd236ba3b9db">
+        <source>Get the number 0 displayed on the cards (i.e. no dots showing)</source>
+        <target>crwdns9712:0crwdne9712:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[3]/li[3]/p</note>
+      </trans-unit>
+      <trans-unit id="9713" identifier="506b455330b4ff40d1c45b56e67f6977">
+        <source>Now count up 1, 2, 3, 4 …. (each pair should work out these numbers between them)</source>
+        <target>crwdns9713:0crwdne9713:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[3]/li[4]/p</note>
+      </trans-unit>
+      <trans-unit id="9714" identifier="e6e37c741fd3977ac114da8ccc764b81">
+        <source>Once they start to get into a routine, ask: how often are we seeing the 1-dot card? (every second time, every odd number)</source>
+        <target>crwdns9714:0crwdne9714:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[3]/li[5]/p</note>
+      </trans-unit>
+      <trans-unit id="9715" identifier="23d195aeedb722fa50a23ffa3e0f41ca">
+        <source>a.</source>
+        <target>crwdns9715:0crwdne9715:0</target>
+        <note>Context: XPath: /ol[3]/li[5]/p[2]</note>
+      </trans-unit>
+      <trans-unit id="9716" identifier="11a9d78d94869346af10154f52fe0d46">
+        <source>What other patterns are we seeing?</source>
+        <target>crwdns9716:0crwdne9716:0</target>
+        <note>Context: XPath: /ol[3]/li[5]/p[2]</note>
+      </trans-unit>
+      <trans-unit id="9717" identifier="940da7b3a9fd02f6d11a6a07b98dedbd">
+        <source>(the 2-dot card flips on every second count, the 4-dot on every 4th and so on; the 8 dot card doesn't do much; this may be challenging for some students to recognise, and the main goal is that they are aware that the 1-dot card flips every time, and that every second number is an odd number).</source>
+        <target>crwdns9717:0crwdne9717:0</target>
+        <note>Context: XPath: /ol[3]/li[5]/p[2]</note>
+      </trans-unit>
+      <trans-unit id="9718" identifier="37a4e002e0851dd0f0e41a1716b9133c">
+        <source>Continue until all the cards are switched to “on” and have counted to 15.</source>
+        <target>crwdns9718:0crwdne9718:0</target>
+        <note>Context: XPath: /ol[3]/li[6]/p</note>
+      </trans-unit>
+      <trans-unit id="9719" identifier="213315956c2c076fb26c453e182932b5">
+        <source>What happens next?</source>
+        <target>crwdns9719:0crwdne9719:0</target>
+        <note>Context: XPath: /ol[3]/li[6]/p</note>
+      </trans-unit>
+      <trans-unit id="9720" identifier="b2396def52154532273016509f500740">
+        <source>(We have to add a new card.)
+How many dots on it?</source>
+        <target>crwdns9720:0crwdne9720:0</target>
+        <note>Context: XPath: /ol[3]/li[6]/p</note>
+      </trans-unit>
+      <trans-unit id="9721" identifier="bfb5542b22681ecd6702b2b2f41920df">
+        <source>(16) What do we have to do to the other 4 cards when we get to 16?</source>
+        <target>crwdns9721:0crwdne9721:0</target>
+        <note>Context: XPath: /ol[3]/li[6]/p</note>
+      </trans-unit>
+      <trans-unit id="9722" identifier="e0732135ad28f9b1218d5e3f72442b43">
+        <source>(we have to turn them all off)</source>
+        <target>crwdns9722:0crwdne9722:0</target>
+        <note>Context: XPath: /ol[3]/li[6]/p</note>
+      </trans-unit>
+      <trans-unit id="9723" identifier="712bb03220767a3423464f2e1c99ae3b">
+        <source>Extension ideas ...</source>
+        <target>crwdns9723:0crwdne9723:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[3]/li[7]/p</note>
+      </trans-unit>
+      <trans-unit id="9724" identifier="67f2a8b3ffc32f87e7319d52c57c0449">
+        <source>a.  So when I have two bits I can make a maximum of? (3)</source>
+        <target>crwdns9724:0crwdne9724:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[3]/li[7]/p[2]</note>
+      </trans-unit>
+      <trans-unit id="9725" identifier="9d2acb274bfcb1ff2e17b5b03f126d34">
+        <source>b.  I add another bit and that has how many dots on it? (4)</source>
+        <target>crwdns9725:0crwdne9725:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[3]/li[7]/p[3]</note>
+      </trans-unit>
+      <trans-unit id="9726" identifier="a518e73888dc33fd6c5dff127a8a2ea9">
+        <source>c. I turn off the first two bits to make 4 right?</source>
+        <target>crwdns9726:0crwdne9726:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[3]/li[7]/p[4]</note>
+      </trans-unit>
+      <trans-unit id="9727" identifier="295ae47f03b64ee07fcb4e0189c2b5b1">
+        <source>d.  Now let’s turn on all three bits, so now we have how many? (7)</source>
+        <target>crwdns9727:0crwdne9727:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[3]/li[7]/p[5]</note>
+      </trans-unit>
+      <trans-unit id="9728" identifier="aa875417a48a9678e319a9f114aca187">
+        <source>e.  I add another bit and that has how many dots on it? (8)</source>
+        <target>crwdns9728:0crwdne9728:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[3]/li[7]/p[6]</note>
+      </trans-unit>
+      <trans-unit id="9729" identifier="e7ac0b88615ab5b5898566d2610841b4">
+        <source>f.</source>
+        <target>crwdns9729:0crwdne9729:0</target>
+        <note>Context: XPath: /ol[3]/li[7]/p[7]</note>
+      </trans-unit>
+      <trans-unit id="9730" identifier="5ba29ab647e3ff5175e9c128383a6727">
+        <source>Repeat until a pattern is recognised that the number on the next card is one more than the total number of dots on all the cards to the right (e.g. there are 7 dots on the 4, 2 and 1 cards, so the next card to the left is 8).</source>
+        <target>crwdns9730:0crwdne9730:0</target>
+        <note>Context: XPath: /ol[3]/li[7]/p[7]</note>
+      </trans-unit>
+      <trans-unit id="9731" identifier="e609be7a12e6d259604ef33af8b216b9">
+        <source>This makes it easy to work out the number if all the bits are switched on - double the left-hand card, and subtract 1.</source>
+        <target>crwdns9731:0crwdne9731:0</target>
+        <note>Context: XPath: /ol[3]/li[7]/p[7]</note>
+      </trans-unit>
+      <trans-unit id="9732" identifier="7fc84a994f424b3e0a5513443e527847">
+        <source>g.  How many different numbers can I make with two bits? (4; often students will say 3 because they haven’t counted 0).</source>
+        <target>crwdns9732:0crwdne9732:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[3]/li[7]/p[8]</note>
+      </trans-unit>
+      <trans-unit id="9733" identifier="9f27b51c6898e833282ca27dc7458b79">
+        <source>h.  Let’s add the next bit; how many different numbers can we make now? (8, again 7 will often be given as an answer first).</source>
+        <target>crwdns9733:0crwdne9733:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[3]/li[7]/p[9]</note>
+      </trans-unit>
+      <trans-unit id="9734" identifier="83142753fb159b1ce9fed3a560941b97">
+        <source>i.  Repeat until a pattern is recognised that each time we add another bit we can now represent twice as many numbers.</source>
+        <target>crwdns9734:0crwdne9734:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[3]/li[7]/p[10]</note>
+      </trans-unit>
+      <trans-unit id="9735" identifier="b2e2b540688840ed6b07a872f64bd627">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns9735:0crwdne9735:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="9736" identifier="0895f8365c2317a83219defa7dfd6a6d">
+        <source>A concept that students may struggle with here is that the number of values is one more than the maximum value (e.g. from 0 to 7, there are 8 different numbers).</source>
+        <target>crwdns9736:0crwdne9736:0</target>
+        <note>Context: XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="9737" identifier="c20c267d61e42c954b7b7ce98144d717">
+        <source>The same observation occurs with the number of digits in conventional decimal numbers; the largest digit is 9, but there are 10 possible digits (counting 0).</source>
+        <target>crwdns9737:0crwdne9737:0</target>
+        <note>Context: XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="9738" identifier="90a3b2b0a658fc95503d7882382dcb46">
+        <source>This is sometimes called the fencepost problem (the number of fence posts is one more than the number of gaps between them), and it comes up a lot in computing and in maths.</source>
+        <target>crwdns9738:0crwdne9738:0</target>
+        <note>Context: XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="9739" identifier="95ea3e21342fab6d68dfbddae5b8294f">
+        <source>{panel end}</source>
+        <target>crwdns9739:0{panel end}crwdne9739:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="9740" identifier="7b9b3fcc529e1ac06673a9622e65269b">
+        <source>Lesson reflection</source>
+        <target>crwdns9740:0crwdne9740:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[6]</note>
+      </trans-unit>
+      <trans-unit id="9741" identifier="5ed33861a87d7513a49c37200560898c">
+        <source>Would this activity work if we used white and cream cards? Why? Why not?</source>
+        <target>crwdns9741:0crwdne9741:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul[3]/li/p</note>
+      </trans-unit>
+      <trans-unit id="9742" identifier="29c8471421129521ece54727f947f115">
+        <source>In principle you could use these, but it wouldn’t be a good idea.</source>
+        <target>crwdns9742:0crwdne9742:0</target>
+        <note>Context: XPath: /ul[3]/li/ul/li</note>
+      </trans-unit>
+      <trans-unit id="9743" identifier="5afe6c92bc797d1be00534f6518e16da">
+        <source>We are looking for the answer that they are not contrasting colours, therefore it would be difficult to see if it is actually on or off.</source>
+        <target>crwdns9743:0crwdne9743:0</target>
+        <note>Context: XPath: /ul[3]/li/ul/li</note>
+      </trans-unit>
+      <trans-unit id="9744" identifier="24e7dc56f420198f4162e33ad460c294">
+        <source>Computers are easier to build and break less often when we just use two contrasting values.</source>
+        <target>crwdns9744:0crwdne9744:0</target>
+        <note>Context: XPath: /ul[3]/li/ul/li</note>
+      </trans-unit>
+      <trans-unit id="9745" identifier="19ef9133addc5e89ddf4b8a3301ff6c1">
+        <source>What are some other ways we could physically show that each of the bits are on or off?</source>
+        <target>crwdns9745:0crwdne9745:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul[3]/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="9746" identifier="8051f34e1e430f0c201d68ea132f55ae">
+        <source>Ideas could include holding the cards up high, or down low; simply holding up a hand; sitting down or standing up; or using a different representation such as lights that are on or off.</source>
+        <target>crwdns9746:0crwdne9746:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[3]/li[2]/ul/li</note>
+      </trans-unit>
+      <trans-unit id="9747" identifier="5b89e22c400513629aa7f84f3dc4b100">
+        <source>What else could we use to represent two opposites, like on and off, in writing?</source>
+        <target>crwdns9747:0crwdne9747:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul[3]/li[3]/p</note>
+      </trans-unit>
+      <trans-unit id="9748" identifier="447e265e128904491678eb0e0f9566c8">
+        <source>Perhaps a cross or tick; happy or sad face; or any other pair of symbols.</source>
+        <target>crwdns9748:0crwdne9748:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[3]/li[3]/ul/li</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

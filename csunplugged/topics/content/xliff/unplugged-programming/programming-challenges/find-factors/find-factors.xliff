@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1226" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/find-factors/find-factors.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14940" identifier="21f4a989bcdd5879a7de5d3d60d3b945">
+        <source>Find factors of a number</source>
+        <target>crwdns14940:0crwdne14940:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="14941" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns14941:0crwdne14941:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="14942" identifier="db2d99408137c6163fa485d44758cd29">
+        <source>Write a program that asks the user to enter a number as an input and displays all the factors of that number.</source>
+        <target>crwdns14942:0crwdne14942:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14943" identifier="acd1794a18215aae0e9de8cbc42fce6d">
+        <source>(Note: Factor is a whole number that divides exactly into another number.</source>
+        <target>crwdns14943:0crwdne14943:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14944" identifier="2004a9abc83b1a1f488e77973850980a">
+        <source>In another word a number modulo its factor is 0).</source>
+        <target>crwdns14944:0crwdne14944:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14945" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns14945:0crwdne14945:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="14946" identifier="c9bf31e2ea57693ba5afd83cc57b14b3">
+        <source>Your program should display the outputs shown in this table for the given inputs provided;</source>
+        <target>crwdns14946:0crwdne14946:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14947" identifier="5bfb69c6f4701e747d0c20b0822e2580">
+        <source>Input</source>
+        <target>crwdns14947:0crwdne14947:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th</note>
+      </trans-unit>
+      <trans-unit id="14948" identifier="f36a1e77a6177da7e10093e12e92ec6c">
+        <source>Output</source>
+        <target>crwdns14948:0crwdne14948:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th[2]</note>
+      </trans-unit>
+      <trans-unit id="14949" identifier="be89ebc445e0210b1a54572f1cc0ee64">
+        <source>12</source>
+        <target>crwdns14949:0crwdne14949:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td</note>
+      </trans-unit>
+      <trans-unit id="14950" identifier="5738a14f06cb7ff2c0ec5c525621a941">
+        <source>1, 2, 3, 4, 6, 12,</source>
+        <target>crwdns14950:0crwdne14950:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td[2]</note>
+      </trans-unit>
+      <trans-unit id="14951" identifier="f5d78bf735c097b641c49bb4a0cdff20">
+        <source>61</source>
+        <target>crwdns14951:0crwdne14951:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td</note>
+      </trans-unit>
+      <trans-unit id="14952" identifier="bc3116487ef80a5ad8d03474eb001d43">
+        <source>1, 61,</source>
+        <target>crwdns14952:0crwdne14952:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

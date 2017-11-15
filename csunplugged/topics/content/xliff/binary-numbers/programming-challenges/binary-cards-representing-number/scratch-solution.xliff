@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="743" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/binary-cards-representing-number/scratch-solution.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8450" identifier="5067eaf1ef6d0512dcb4c71c649796a7">
+        <source>when green flag clicked
+ask [Please enter a number between 0 and 31:] and wait
+set [number v] to (answer)
+set [bit value v] to [32]
+set [cards v] to []
+repeat until &amp;lt;(bit value) = [1]&amp;gt;
+  set [bit value v] to ((bit value) / (2))
+  if &amp;lt;&amp;lt;(number) &amp;gt; (bit value)&amp;gt; or &amp;lt;(number) = (bit value)&amp;gt;&amp;gt; then
+    set [cards v] to (join (cards) [W])
+    set [number v] to ((number) - (bit value))
+  else
+    set [cards v] to (join (cards) [B])
+  end
+end
+say (join (join (join [The binary representation for the number ] (answer)) [ is ]) (cards))</source>
+        <target>crwdns8450:0[32]crwdnd8450:0[1]crwdnd8450:0[W]crwdnd8450:0[B]crwdne8450:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1146" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/draw-circle-with-radius-100/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14582" identifier="fb85dc5a426737263b936e6af12455d3">
+        <source>The radius of a circle is the distance of its centre to the edge of the circle.</source>
+        <target>crwdns14582:0crwdne14582:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="14583" identifier="f33f55b0b1bc273f3b7ce0a1fa471f88">
+        <source>The circumference is the distance around a circle (its perimeter) and is equal to \(2 \pi r\) where \(r\) is the radius of the circle.</source>
+        <target>crwdns14583:0crwdne14583:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="14584" identifier="c7c9c4867f90da512df42379d250981b">
+        <source>To be able to draw the circle right in the centre, you will need to set your sprite to point in the right direction.</source>
+        <target>crwdns14584:0crwdne14584:0</target>
+        <note>Context: XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="14585" identifier="44f5f0088d007ac0d08223986ecf455e">
+        <source>To set the direction of the current sprite use the &lt;code&gt;scratch:point in direction (0 v)&lt;/code&gt; block under the “motion” script.</source>
+        <target>crwdns14585:0crwdne14585:0</target>
+        <note>Context: XPath: /ul/li[3]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

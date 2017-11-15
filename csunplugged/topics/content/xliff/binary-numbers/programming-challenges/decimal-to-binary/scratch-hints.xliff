@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="833" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/decimal-to-binary/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8878" identifier="36710e8e1305fd9b7986bb20340cf7af">
+        <source>Make variables called:</source>
+        <target>crwdns8878:0crwdne8878:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li/p</note>
+      </trans-unit>
+      <trans-unit id="8879" identifier="ca2ef64e6b857d4a4bbb8e7613c74f04">
+        <source>“decimal number” and set its value to the input number given by the
+end user.</source>
+        <target>crwdns8879:0crwdne8879:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li/ul/li</note>
+      </trans-unit>
+      <trans-unit id="8880" identifier="c6695ad2fbafce6c699ceb291df121c9">
+        <source>“bit value” and set its value to ‘1’.</source>
+        <target>crwdns8880:0crwdne8880:0</target>
+        <note>Context: XPath: /ul/li/ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="8881" identifier="f5491124f5a0664b3147bef42d7ad83b">
+        <source>Find the smallest bit value which is larger than the “decimal number”
+by doubling value of “bit value” until it is bigger than the “decimal
+number”.</source>
+        <target>crwdns8881:0crwdne8881:0</target>
+        <note>Context: XPath: /ul/li/ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="8882" identifier="fc24c234a0cfaf076cdda686887ebe42">
+        <source>“binary number” is a string variable and stores the binary cards
+needed (‘1’ for dots showing and ‘0’ for not showing).</source>
+        <target>crwdns8882:0crwdne8882:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li/ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="8883" identifier="c95c6d61aa8cbff4d3a788425f08561f">
+        <source>Set the variable “bit value” to 1 and find the smallest “bit value” which
+is larger than “decimal number” by multiplying “bit value” by 2 (Use the
+&lt;code&gt;scratch:() * ()&lt;/code&gt; block under “Operators” to multiply the “bit value” by
+2) until it is larger than “decimal number”.</source>
+        <target>crwdns8883:0crwdne8883:0</target>
+        <note>Context: XPath: /ul/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="8884" identifier="8c7a6ce24b080a1cf2de51961db232fc">
+        <source>You can do this by using a &lt;code&gt;scratch:repeat until &amp;lt;&amp;gt;&lt;/code&gt; loop.</source>
+        <target>crwdns8884:0crwdne8884:0</target>
+        <note>Context: XPath: /ul/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="8885" identifier="1cc0fd44cb465656f458b0471378dba5">
+        <source>Now divide the “bit value” by 2 and check if “decimal number” is greater
+than or equal to “bit value”.</source>
+        <target>crwdns8885:0crwdne8885:0</target>
+        <note>Context: XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="8886" identifier="b862f0695dc9dbc57807dd70e58b186b">
+        <source>If it is, add ‘1’ to string variable “cards” and subtract “bit value” from
+the “ decimal number”.</source>
+        <target>crwdns8886:0crwdne8886:0</target>
+        <note>Context: XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="8887" identifier="28fd25d7dc3a21ac20f0dd9ff865e0f2">
+        <source>If not, add ‘0’ to string variable “cards”.</source>
+        <target>crwdns8887:0crwdne8887:0</target>
+        <note>Context: XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="8888" identifier="0a304bde332c26a02cd7007b488d913a">
+        <source>Repeat until “bit value” is equal to 1.</source>
+        <target>crwdns8888:0crwdne8888:0</target>
+        <note>Context: XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="8889" identifier="81dda0f7308b060b995f6a06072920b6">
+        <source>Display the value of “cards” as the output.</source>
+        <target>crwdns8889:0crwdne8889:0</target>
+        <note>Context: XPath: /ul/li[3]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

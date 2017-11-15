@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="899" original="/csunplugged/topics/content/en/error-detection-and-correction/programming-challenges/calculate-isbn-10-last-digit/scratch-solution.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10162" identifier="05152b036021bbece2b8345c0f90dec1">
+        <source>when green flag clicked
+set [index v] to [1]
+set [multiplier v] to [10]
+set [first 9 digits v] to [0]
+set [total v] to [0]
+set [last digit v] to [0]
+ask [Enter the first 9 digits of an ISBN-10 number:] and wait
+set [first 9 digits v] to (answer)
+repeat (9)
+  change [total v] by ((multiplier) * (letter (index) of (first 9 digits)))
+  change [index v] by (1)
+  change [multiplier v] by (-1)
+end
+set [last digit v] to (((0) - (total)) mod (11))
+if &amp;lt;(last digit) = [10]&amp;gt; then
+  say [The last digit is: X]
+else
+  say (join [The last digit is: ] (last digit))
+end</source>
+        <target>crwdns10162:0[1]crwdnd10162:0[10]crwdnd10162:0[0]crwdnd10162:0[0]crwdnd10162:0[0]crwdnd10162:0[10]crwdne10162:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

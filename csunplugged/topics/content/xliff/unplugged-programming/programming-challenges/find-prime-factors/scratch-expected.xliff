@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1232" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/find-prime-factors/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14996" identifier="f3b5fe6b13c58314d4f8a7210242abe3">
+        <source>Click on the green flag to see the expected output of your program.</source>
+        <target>crwdns14996:0crwdne14996:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14997" identifier="b5d77c5039972845db87f8d7bb92205d">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/149429841/?autostart=false&quot;}</source>
+        <target>crwdns14997:0crwdne14997:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14998" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns14998:0crwdne14998:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="14999" identifier="33a9754026faa05677262c3790c953a1">
+        <source>when green flag clicked</source>
+        <target>crwdns14999:0crwdne14999:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="15000" identifier="a0bcb11f5e640f0969b2c865e808f2ba">
+        <source>set [prime factors v] to []
+
+set [number v] to (answer)
+
+set [divisor v] to (number)
+
+set [index v] to [2]
+
+set [is prime v] to [true]
+
+set [is prime v] to [false]
+
+set [prime factors v] to (join (number) (join [, ] (prime factors)))
+
+change [divisor v] by (-1)
+
+change [index v] by (1)</source>
+        <target>crwdns15000:0[2]crwdnd15000:0[true]crwdnd15000:0[false]crwdne15000:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="15001" identifier="d11d331d1c6a58e578af9d4663ada288">
+        <source>ask [What's the number you want to find prime factors of?] and wait</source>
+        <target>crwdns15001:0crwdne15001:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="15002" identifier="b124d97e5c54f699d3d65cc9bbacbe2c">
+        <source>say (prime factors)</source>
+        <target>crwdns15002:0crwdne15002:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[4]/code</note>
+      </trans-unit>
+      <trans-unit id="15003" identifier="0c5545e6c46cb70d32212e4536b25f3a">
+        <source>if &amp;lt;((number) mod (divisor)) = [0]&amp;gt; then
+end
+
+if &amp;lt;(number) &amp;gt; [1]&amp;gt; then
+end
+
+if &amp;lt;((number) mod (index)) = [0]&amp;gt; then
+end
+
+if &amp;lt;(is prime) = [true]&amp;gt; then
+end
+
+repeat until &amp;lt;(divisor) = [0]&amp;gt;
+end
+
+repeat until &amp;lt;&amp;lt;(is prime) = [false]&amp;gt; or &amp;lt;(index) = (number)&amp;gt;&amp;gt;
+end</source>
+        <target>crwdns15003:0[0]crwdnd15003:0[1]crwdnd15003:0[0]crwdnd15003:0[true]crwdnd15003:0[0]crwdnd15003:0[false]crwdne15003:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[5]/code</note>
+      </trans-unit>
+      <trans-unit id="15004" identifier="322b1101eaee1221996f4a29063d4ca8">
+        <source>define check_prime (number)
+
+check_prime (divisor) :: custom</source>
+        <target>crwdns15004:0crwdne15004:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[6]/code</note>
+      </trans-unit>
+      <trans-unit id="15005" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns15005:0{panel end}crwdne15005:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

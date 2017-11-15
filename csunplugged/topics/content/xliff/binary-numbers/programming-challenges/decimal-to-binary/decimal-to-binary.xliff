@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="831" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/decimal-to-binary/decimal-to-binary.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8857" identifier="ec725f22a354537c42044e8cde7efced">
+        <source>Convert a positive decimal number to a binary number</source>
+        <target>crwdns8857:0crwdne8857:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="8858" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns8858:0crwdne8858:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="8859" identifier="a24c2b2e2516632998b133474edbb4bf">
+        <source>Write a program that asks the user to enter any decimal number as the input
+and displays the binary cards representing that number using '1' for dots
+showing and '0' for not showing as the output (this converts the decimal
+number to binary).</source>
+        <target>crwdns8859:0crwdne8859:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8860" identifier="9c986b5d961699e071ff47d5045efeb5">
+        <source>Do this by working out the largest bit value needed, and then working down
+through smaller bit values.</source>
+        <target>crwdns8860:0crwdne8860:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8861" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns8861:0crwdne8861:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="8862" identifier="c4157e645991e13a72ced9574f6e8235">
+        <source>Your program should display the outputs shown in this table for the given
+inputs provided:</source>
+        <target>crwdns8862:0crwdne8862:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="8863" identifier="5bfb69c6f4701e747d0c20b0822e2580">
+        <source>Input</source>
+        <target>crwdns8863:0crwdne8863:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th</note>
+      </trans-unit>
+      <trans-unit id="8864" identifier="f36a1e77a6177da7e10093e12e92ec6c">
+        <source>Output</source>
+        <target>crwdns8864:0crwdne8864:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th[2]</note>
+      </trans-unit>
+      <trans-unit id="8865" identifier="93a96c545dbcc81847716ddc4db49695">
+        <source>31</source>
+        <target>crwdns8865:0crwdne8865:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td</note>
+      </trans-unit>
+      <trans-unit id="8866" identifier="1b496715b596d45bc0261f5b8b75ab56">
+        <source>The binary representation for the number 31 is 11111</source>
+        <target>crwdns8866:0crwdne8866:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td[2]</note>
+      </trans-unit>
+      <trans-unit id="8867" identifier="61cd2a58c9946b944153c05ebd67c25b">
+        <source>32</source>
+        <target>crwdns8867:0crwdne8867:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td</note>
+      </trans-unit>
+      <trans-unit id="8868" identifier="48b14b6c5dc1e64eb531b38c2126bddf">
+        <source>The binary representation for the number 32 is 100000</source>
+        <target>crwdns8868:0crwdne8868:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="8869" identifier="196b33507c4d673908c1e1df84c192e3">
+        <source>1</source>
+        <target>crwdns8869:0crwdne8869:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td</note>
+      </trans-unit>
+      <trans-unit id="8870" identifier="7a2dcf5a48b85952bf4b7a27d02d358d">
+        <source>The binary representation for the number 1 is 1</source>
+        <target>crwdns8870:0crwdne8870:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

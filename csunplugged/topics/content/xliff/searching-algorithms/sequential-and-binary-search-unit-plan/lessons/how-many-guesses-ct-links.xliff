@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1033" original="/csunplugged/topics/content/en/searching-algorithms/sequential-and-binary-search-unit-plan/lessons/how-many-guesses-ct-links.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="11801" identifier="29587245fea6177d2282f2ca4a93001c">
+        <source>{panel type=&quot;ct-algorithm&quot; title=&quot;Algorithmic thinking&quot;}</source>
+        <target>crwdns11801:0crwdne11801:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="11802" identifier="d8cd5c062e0e620ce12633136d8d82d6">
+        <source>We used an algorithm in this lesson to find the number we were searching for.</source>
+        <target>crwdns11802:0crwdne11802:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="11803" identifier="9c9b170cb0638fdf693ef28ebd678003">
+        <source>This is an algorithm because it is a step-by-step process that will always give the right solution for any input you give it as long as the process is followed exactly; if we check every card in the list we are guaranteed to find the right number (as long as it is in the list!)</source>
+        <target>crwdns11803:0crwdne11803:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="11804" identifier="d4789df7fc6fae273d42b3ff89b932ef">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns11804:0crwdne11804:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4</note>
+      </trans-unit>
+      <trans-unit id="11805" identifier="3bde0ea724bfe6e50a858ceaa2d37809">
+        <source>Can students work out how many guesses it could take if you mentioned that there are now 100 cards on the table instead of 31?</source>
+        <target>crwdns11805:0crwdne11805:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="11806" identifier="a83641ce9a2be7f0115b0ebf6b6b99d0">
+        <source>What would be the smallest number of guesses?</source>
+        <target>crwdns11806:0crwdne11806:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="11807" identifier="96186a7d92ebcb0516b2db729468a32a">
+        <source>What would be the greatest number of guesses?</source>
+        <target>crwdns11807:0crwdne11807:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="11808" identifier="4bd50332ab5d73ee38cd9cd1d48484f8">
+        <source>What about if you were looking for one number out of a thousand?</source>
+        <target>crwdns11808:0crwdne11808:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="11809" identifier="4e812d5099b38047a8b7eeaf78e87953">
+        <source>If students can answer this question with one being the least amount of guesses or the maximum number of cards being the maximum number of guesses then they are showing a thorough understanding of sequential search.</source>
+        <target>crwdns11809:0crwdne11809:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="11810" identifier="0195c2d106e4d52b36bca78ff4c3e7a4">
+        <source>{panel end}</source>
+        <target>crwdns11810:0{panel end}crwdne11810:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="11811" identifier="17de7efa37d271303d10e7da564a0701">
+        <source>{panel type=&quot;ct-abstraction&quot; title=&quot;Abstraction&quot;}</source>
+        <target>crwdns11811:0crwdne11811:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="11812" identifier="f62cebb979e3c06df9b462d7ffac945c">
+        <source>In this activity there are many details which are irrelevant to the task of finding the right number, and these can be ignored.</source>
+        <target>crwdns11812:0crwdne11812:0</target>
+        <note>Context: XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="11813" identifier="879b765602c121d0855e46694ca28814">
+        <source>For example, it matters that the numbers are all hidden but it doesn’t matter what they are hidden by.</source>
+        <target>crwdns11813:0crwdne11813:0</target>
+        <note>Context: XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="11814" identifier="424ea64413e940ba14d7ff09bb62e1f4">
+        <source>They could be hidden under cups, or rocks, or the students could be blindfolded!</source>
+        <target>crwdns11814:0crwdne11814:0</target>
+        <note>Context: XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="11815" identifier="e362b1516ba2a864a732a02ab4c1b1c6">
+        <source>It wouldn’t change the task or the algorithm.</source>
+        <target>crwdns11815:0crwdne11815:0</target>
+        <note>Context: XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="11816" identifier="7ca1cce9bc789f9d38045770108363e7">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns11816:0crwdne11816:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[2]</note>
+      </trans-unit>
+      <trans-unit id="11817" identifier="d4a8ce2a4ea012db7b32db79fc790ed1">
+        <source>If you repeat this exercise but with the numbers underneath different objects, or maybe use different letters of the alphabet or different coloured discs to search for, who are the students that can see that these differences don’t actually matter and they are still solving the same problem?</source>
+        <target>crwdns11817:0crwdne11817:0</target>
+        <note>Context: XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="11818" identifier="f7396e46ab5751b1a44c566881efe174">
+        <source>Which students immediately apply the same searching strategy?</source>
+        <target>crwdns11818:0crwdne11818:0</target>
+        <note>Context: XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="11819" identifier="95e2aef312d8003ea83532ea9651f31f">
+        <source>{panel end}</source>
+        <target>crwdns11819:0{panel end}crwdne11819:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="11820" identifier="16c5229b7bb0bd77299bb63485055923">
+        <source>{panel type=&quot;ct-decomposition&quot; title=&quot;Decomposition&quot;}</source>
+        <target>crwdns11820:0crwdne11820:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="11821" identifier="83f8dc3e02a4d8d368e5133f3339a2d0">
+        <source>The larger task of “find my number” is broken down into a series of small steps, each of which is simply “check one of the cards to see if your number is there&quot; and eliminate that card if it isn’t the correct one.</source>
+        <target>crwdns11821:0crwdne11821:0</target>
+        <note>Context: XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="11822" identifier="fdb76d69d52c8fd4be65210455b95d27">
+        <source>This is important because when a computer searches through data this is the most basic step it performs, it can only compare two things at a time so our algorithm must only compare two things at a time.</source>
+        <target>crwdns11822:0crwdne11822:0</target>
+        <note>Context: XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="11823" identifier="833d815031c5d5819a2b19b8c4affd40">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns11823:0crwdne11823:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[3]</note>
+      </trans-unit>
+      <trans-unit id="11824" identifier="6dc39a545a0e56f580adad957f28fb75">
+        <source>Who are the students who are able to break the problem down into steps and then explain why each step is important?</source>
+        <target>crwdns11824:0crwdne11824:0</target>
+        <note>Context: XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="11825" identifier="036836978d8456ebc57a0ae7e089f7bb">
+        <source>Which students can articulate that the computer is only checking one number at a time, and so can only eliminate one number at a time.</source>
+        <target>crwdns11825:0crwdne11825:0</target>
+        <note>Context: XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="11826" identifier="b1c2847763ba990ce3b79c43c0f66f9e">
+        <source>{panel end}</source>
+        <target>crwdns11826:0{panel end}crwdne11826:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="11827" identifier="40ad58809f56a2bf712e4dcd43bbd5e7">
+        <source>{panel type=&quot;ct-pattern&quot; title=&quot;Generalising and patterns&quot;}</source>
+        <target>crwdns11827:0crwdne11827:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="11828" identifier="ab8de7d6be31df54361cb37cbbe12672">
+        <source>The generalised idea of this activity is that any searching problem where the data being searched is not organised into some structure or order can only be approached using sequential search.</source>
+        <target>crwdns11828:0crwdne11828:0</target>
+        <note>Context: XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="11829" identifier="dd1c91802e18f2df282004b6583c250b">
+        <source>Recognising this pattern can save students, and programmers, time because when they encounter this problem in the future they are aware that they do not need to spend their time trying to come up with an especially clever solution.</source>
+        <target>crwdns11829:0crwdne11829:0</target>
+        <note>Context: XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="11830" identifier="ca634c4f5a310696fe5cd738b218c0d9">
+        <source>This situation can be generalised to apply to any type of data.</source>
+        <target>crwdns11830:0crwdne11830:0</target>
+        <note>Context: XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="11831" identifier="ec993088561d59b2638cc84170b056e3">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns11831:0crwdne11831:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[4]</note>
+      </trans-unit>
+      <trans-unit id="11832" identifier="20dea931720a5e215d0e8f9a80bea7ec">
+        <source>Just like with abstraction, if you repeat this exercise but with the numbers underneath different objects, or use different letters of the alphabet, who are the students that can see that these differences don’t actually matter and they are still solving the same problem?</source>
+        <target>crwdns11832:0crwdne11832:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="11833" identifier="29865c6bd6223a870160b434de9c35ce">
+        <source>{panel end}</source>
+        <target>crwdns11833:0{panel end}crwdne11833:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="11834" identifier="adab59f4c0dc0ca178defb9b221dd176">
+        <source>{panel type=&quot;ct-evaluation&quot; title=&quot;Evaluation&quot;}</source>
+        <target>crwdns11834:0crwdne11834:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="11835" identifier="c7dfe6776ecf2a8a35d6170a43382379">
+        <source>How much longer would this take if there were twice as many cards?</source>
+        <target>crwdns11835:0crwdne11835:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="11836" identifier="c86d6ff2d53984e510da22d12d925a85">
+        <source>10 times as many cards?</source>
+        <target>crwdns11836:0crwdne11836:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="11837" identifier="3cf6f2c2fe1dcd120d2317e557ff8d13">
+        <source>Search engines routinely search through billions of web pages to find the term you're looking for, would this algorithm be efficient for this application?</source>
+        <target>crwdns11837:0crwdne11837:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="11838" identifier="1d8f6777b2927be91122844154dbdf1c">
+        <source>Discuss other ideas on how you could find a number more effectively.</source>
+        <target>crwdns11838:0crwdne11838:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="11839" identifier="ee945efc504e5ccf8a3f1c6b2bc14938">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns11839:0crwdne11839:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[5]</note>
+      </trans-unit>
+      <trans-unit id="11840" identifier="b890c665ddcdc3b415257a4bc0c47152">
+        <source>Who are the students who can explain the strengths and potential problems of using a sequential search to find the number?</source>
+        <target>crwdns11840:0crwdne11840:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="11841" identifier="3e36fd398241fc175b47e35cddcdc6f1">
+        <source>{panel end}</source>
+        <target>crwdns11841:0{panel end}crwdne11841:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="11842" identifier="7f1b0f3b3177e2fc5aa8ccdf994c3388">
+        <source>{panel type=&quot;ct-logic&quot; title=&quot;Logic&quot;}</source>
+        <target>crwdns11842:0crwdne11842:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="11843" identifier="7028379cbcd978f545e3ddb476a1295f">
+        <source>Let's think about the problem logically: The cards have been placed in a random order, therefore all we learn when we look at a card is what is on that card, we don’t learn anything at all about what is on the other cards.</source>
+        <target>crwdns11843:0crwdne11843:0</target>
+        <note>Context: XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="11844" identifier="6263bddabf83aaa9b4fd715d2e973b88">
+        <source>Since all we can learn from checking a card is whether or not that card is the one we are searching for, it doesn’t matter what order we check the cards in because it won’t change the fact that we have to check each card, one-by-one, until we find the correct one.</source>
+        <target>crwdns11844:0crwdne11844:0</target>
+        <note>Context: XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="11845" identifier="d2663645150b5be5b55859ada486fd3c">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns11845:0crwdne11845:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[6]</note>
+      </trans-unit>
+      <trans-unit id="11846" identifier="7565cb1c39529d2fcf14beda32f774da">
+        <source>Which students can explain why it would be easier to find the number if they were in sorted order?</source>
+        <target>crwdns11846:0crwdne11846:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="11847" identifier="18d1b60b92ce620dfd28b967329a230d">
+        <source>{panel end}</source>
+        <target>crwdns11847:0{panel end}crwdne11847:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[25]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

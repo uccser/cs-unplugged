@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="731" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/binary-cards-as-dots/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8331" identifier="f3b5fe6b13c58314d4f8a7210242abe3">
+        <source>Click on the green flag to see the expected output of your program.</source>
+        <target>crwdns8331:0crwdne8331:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8332" identifier="18e31213f444a1dd387a472e33bbdc64">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/158861081/?autostart=false&quot;}</source>
+        <target>crwdns8332:0crwdne8332:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

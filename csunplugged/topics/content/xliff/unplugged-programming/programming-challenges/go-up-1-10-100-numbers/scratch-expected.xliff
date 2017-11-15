@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1247" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/go-up-1-10-100-numbers/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15065" identifier="f3b5fe6b13c58314d4f8a7210242abe3">
+        <source>Click on the green flag to see the expected output of your program.</source>
+        <target>crwdns15065:0crwdne15065:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15066" identifier="70ac7e0bc81843a50eba124f3b215232">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/149428180/?autostart=false&quot;}</source>
+        <target>crwdns15066:0crwdne15066:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="15067" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns15067:0crwdne15067:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="15068" identifier="33a9754026faa05677262c3790c953a1">
+        <source>when green flag clicked</source>
+        <target>crwdns15068:0crwdne15068:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="15069" identifier="6015f5d1c674d20ef7fcc1b2fe794b98">
+        <source>set [upper range v] to (answer)
+
+set [number v] to (pick random (1) to (upper range))
+
+set [numbers after v] to (item (random v) of [numbers after list v] :: list)</source>
+        <target>crwdns15069:0crwdne15069:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="15070" identifier="ed7b4128a2bfd1e9d4a2d77e73927566">
+        <source>ask [Enter a number as the upper range:] and wait
+
+ask (join (join [What is the number after ] (number)) [?]) and wait
+
+ask (join (join (join (join [What's ] (numbers after)) [ numbers after ]) (number)) [?]) and wait</source>
+        <target>crwdns15070:0crwdne15070:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="15071" identifier="5e690efb974ca6bf22f1d5bb6b439844">
+        <source>say [I'll generate a random number between 1 and a number you enter.] for (5) secs
+
+say [Well done!] for (3) secs
+
+say (join [Nice try!</source>
+        <target>crwdns15071:0crwdne15071:0</target>
+        <note>Context: XPath: /pre[4]/code</note>
+      </trans-unit>
+      <trans-unit id="15072" identifier="e26b7b99e498c128e8dd448c817c5b25">
+        <source>The right answer is: ] ((number) + (numbers after))) for (3) secs</source>
+        <target>crwdns15072:0crwdne15072:0</target>
+        <note>Context: XPath: /pre[4]/code</note>
+      </trans-unit>
+      <trans-unit id="15073" identifier="583bebc26a947eb411f34c3cd3700ac8">
+        <source>forever
+end
+
+if &amp;lt;(numbers after) = [1]&amp;gt; then
+else
+end
+
+if &amp;lt;(answer) = ((number) + (numbers after))&amp;gt; then
+else
+end</source>
+        <target>crwdns15073:0[1]crwdne15073:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[5]/code</note>
+      </trans-unit>
+      <trans-unit id="15074" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns15074:0{panel end}crwdne15074:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

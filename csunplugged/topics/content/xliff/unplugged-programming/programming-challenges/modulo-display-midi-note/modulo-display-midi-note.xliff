@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1295" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/modulo-display-midi-note/modulo-display-midi-note.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15367" identifier="b24270f0a480ad7aa471eabacdc08084">
+        <source>Display MIDI note names</source>
+        <target>crwdns15367:0crwdne15367:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="15368" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns15368:0crwdne15368:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="15369" identifier="f73112e8017035a38920844cc5f5dfbf">
+        <source>Write a program that asks the user to type in a number between 0 and 127 (60 is middle C) as the input and displays the corresponding MIDI note name as well as playing the note (the midi value mod 12 will be 0 to 11 for C, C#, D, Eb, E, F, F#, G, G#, A, Bb, B - and these can be looked up in a list).</source>
+        <target>crwdns15369:0crwdne15369:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15370" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns15370:0crwdne15370:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="15371" identifier="c9bf31e2ea57693ba5afd83cc57b14b3">
+        <source>Your program should display the outputs shown in this table for the given inputs provided;</source>
+        <target>crwdns15371:0crwdne15371:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="15372" identifier="5bfb69c6f4701e747d0c20b0822e2580">
+        <source>Input</source>
+        <target>crwdns15372:0crwdne15372:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th</note>
+      </trans-unit>
+      <trans-unit id="15373" identifier="f36a1e77a6177da7e10093e12e92ec6c">
+        <source>Output</source>
+        <target>crwdns15373:0crwdne15373:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th[2]</note>
+      </trans-unit>
+      <trans-unit id="15374" identifier="b9a6eae813bf87966755902747d39c75">
+        <source>60</source>
+        <target>crwdns15374:0crwdne15374:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td</note>
+      </trans-unit>
+      <trans-unit id="15375" identifier="9c7894e7c8f7432ba93f320f3472047e">
+        <source>C</source>
+        <target>crwdns15375:0crwdne15375:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td[2]</note>
+      </trans-unit>
+      <trans-unit id="15376" identifier="93d07dad338f5803970a506806d4de7d">
+        <source>34</source>
+        <target>crwdns15376:0crwdne15376:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td</note>
+      </trans-unit>
+      <trans-unit id="15377" identifier="44fff32ddf983bca04bb42096f5d4f35">
+        <source>Bb</source>
+        <target>crwdns15377:0crwdne15377:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="15378" identifier="28dcfd7af708989535d3f51996e6685b">
+        <source>85</source>
+        <target>crwdns15378:0crwdne15378:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td</note>
+      </trans-unit>
+      <trans-unit id="15379" identifier="bf55cbbe910da773791985cff7e6205f">
+        <source>C#</source>
+        <target>crwdns15379:0crwdne15379:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="15380" identifier="79cec1a32caf81846a8dc58aa740a1e4">
+        <source>127</source>
+        <target>crwdns15380:0crwdne15380:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[4]/td</note>
+      </trans-unit>
+      <trans-unit id="15381" identifier="aa1e8d134cd84a422238efd1e134023f">
+        <source>G</source>
+        <target>crwdns15381:0crwdne15381:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[4]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="15382" identifier="7eb216b09391c1ae4f279540794fe42a">
+        <source>0</source>
+        <target>crwdns15382:0crwdne15382:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[5]/td</note>
+      </trans-unit>
+      <trans-unit id="15383" identifier="b5eecf2bacc63bd945626f2d3ccc0927">
+        <source>C</source>
+        <target>crwdns15383:0crwdne15383:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[5]/td[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

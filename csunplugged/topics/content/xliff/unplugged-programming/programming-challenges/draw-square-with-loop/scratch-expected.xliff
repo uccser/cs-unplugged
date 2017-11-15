@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1191" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/draw-square-with-loop/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14793" identifier="f3b5fe6b13c58314d4f8a7210242abe3">
+        <source>Click on the green flag to see the expected output of your program.</source>
+        <target>crwdns14793:0crwdne14793:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14794" identifier="e30e06f8f7e9e21a4efbc16980425074">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/152445283/?autostart=false&quot;}</source>
+        <target>crwdns14794:0crwdne14794:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14795" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns14795:0crwdne14795:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="14796" identifier="33a9754026faa05677262c3790c953a1">
+        <source>when green flag clicked</source>
+        <target>crwdns14796:0crwdne14796:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="14797" identifier="e9b0fb8e51359b5daf53d4a3442c9674">
+        <source>clear
+
+pen down
+
+pen up</source>
+        <target>crwdns14797:0crwdne14797:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="14798" identifier="8d8ef004f9907670824406e44090e1e5">
+        <source>go to x: (0) y: (0)
+
+move (100) steps
+
+turn cw (90) degrees</source>
+        <target>crwdns14798:0crwdne14798:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="14799" identifier="e561594f54f5f4d6d573c533917c038d">
+        <source>repeat (4)
+end
+
+wait (1) secs</source>
+        <target>crwdns14799:0crwdne14799:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[4]/code</note>
+      </trans-unit>
+      <trans-unit id="14800" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns14800:0{panel end}crwdne14800:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

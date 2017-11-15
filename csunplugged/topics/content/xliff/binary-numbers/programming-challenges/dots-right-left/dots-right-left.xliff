@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="846" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/dots-right-left/dots-right-left.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8945" identifier="c20f0e068fd9a06667ec5d10b017533c">
+        <source>Display number of dots from right to left in one line</source>
+        <target>crwdns8945:0crwdne8945:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="8946" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns8946:0crwdne8946:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="8947" identifier="e333c4eeba66b237d2bc7d2b73c52279">
+        <source>Write a program to display numbers 1, 2, 4, 8,... (all in one line) for a
+given number of cards as the input.</source>
+        <target>crwdns8947:0crwdne8947:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8948" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns8948:0crwdne8948:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="8949" identifier="c4157e645991e13a72ced9574f6e8235">
+        <source>Your program should display the outputs shown in this table for the given
+inputs provided:</source>
+        <target>crwdns8949:0crwdne8949:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="8950" identifier="5bfb69c6f4701e747d0c20b0822e2580">
+        <source>Input</source>
+        <target>crwdns8950:0crwdne8950:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th</note>
+      </trans-unit>
+      <trans-unit id="8951" identifier="f36a1e77a6177da7e10093e12e92ec6c">
+        <source>Output</source>
+        <target>crwdns8951:0crwdne8951:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th[2]</note>
+      </trans-unit>
+      <trans-unit id="8952" identifier="cd5643239a99d97953b15477979055a1">
+        <source>4</source>
+        <target>crwdns8952:0crwdne8952:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td</note>
+      </trans-unit>
+      <trans-unit id="8953" identifier="aa81563ffe3aa348fc63f1a17ff6795b">
+        <source>1, 2, 4, 8,</source>
+        <target>crwdns8953:0crwdne8953:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td[2]</note>
+      </trans-unit>
+      <trans-unit id="8954" identifier="96a25b8dbc4397195aaac21be3742877">
+        <source>8</source>
+        <target>crwdns8954:0crwdne8954:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td</note>
+      </trans-unit>
+      <trans-unit id="8955" identifier="9a096ad029b6a0e07d3f123b82ee5751">
+        <source>1, 2, 4, 8, 16, 32, 64, 128,</source>
+        <target>crwdns8955:0crwdne8955:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="8956" identifier="196b33507c4d673908c1e1df84c192e3">
+        <source>1</source>
+        <target>crwdns8956:0crwdne8956:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td</note>
+      </trans-unit>
+      <trans-unit id="8957" identifier="10b000a63fbfe862eaf532f3b6332580">
+        <source>1,</source>
+        <target>crwdns8957:0crwdne8957:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

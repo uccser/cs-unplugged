@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1196" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/draw-square-without-loop/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14810" identifier="f3b5fe6b13c58314d4f8a7210242abe3">
+        <source>Click on the green flag to see the expected output of your program.</source>
+        <target>crwdns14810:0crwdne14810:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14811" identifier="f6871a73609dd7dc5e3994e3995f95e8">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/152445214/?autostart=false&quot;}</source>
+        <target>crwdns14811:0crwdne14811:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14812" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns14812:0crwdne14812:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="14813" identifier="33a9754026faa05677262c3790c953a1">
+        <source>when green flag clicked</source>
+        <target>crwdns14813:0crwdne14813:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="14814" identifier="e9b0fb8e51359b5daf53d4a3442c9674">
+        <source>clear
+
+pen down
+
+pen up</source>
+        <target>crwdns14814:0crwdne14814:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="14815" identifier="cd3f48300fb404ad4a6043eb8a012bbf">
+        <source>go to x: (0) y: (0)
+
+move (100) steps
+
+turn cw (90) degrees
+
+move (100) steps
+
+turn cw (90) degrees
+
+move (100) steps
+
+turn cw (90) degrees
+
+move (100) steps
+
+turn cw (90) degrees</source>
+        <target>crwdns14815:0crwdne14815:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="14816" identifier="a2f81e0e131ea7dd17b9f89ec495c2d0">
+        <source>wait (1) secs
+
+wait (1) secs
+
+wait (1) secs
+
+wait (1) secs</source>
+        <target>crwdns14816:0crwdne14816:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[4]/code</note>
+      </trans-unit>
+      <trans-unit id="14817" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns14817:0{panel end}crwdne14817:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

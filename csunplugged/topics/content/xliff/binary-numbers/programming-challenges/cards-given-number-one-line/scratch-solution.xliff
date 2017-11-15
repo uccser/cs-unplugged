@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="804" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/cards-given-number-one-line/scratch-solution.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8705" identifier="de6363d563bc9c40b0b8df0349b13cef">
+        <source>when green flag clicked
+ask [Please enter a number of dots less than or equal to 31:] and wait
+set [number of dots v] to (answer)
+set [cards v] to []
+if &amp;lt;&amp;lt;(number of dots) &amp;lt; [31]&amp;gt; or &amp;lt;(number of dots) = [31]&amp;gt;&amp;gt; then
+  if &amp;lt;&amp;lt;(number of dots) &amp;gt; [16]&amp;gt; or &amp;lt;(number of dots) = [16]&amp;gt;&amp;gt; then
+    set [cards v] to (join (cards) [16, ])
+    set [number of dots v] to ((number of dots) - (16))
+  end
+  if &amp;lt;&amp;lt;(number of dots) &amp;gt; [8]&amp;gt; or &amp;lt;(number of dots) = [8]&amp;gt;&amp;gt; then
+    set [cards v] to (join (cards) [8, ])
+    set [number of dots v] to ((number of dots) - (8))
+  end
+  if &amp;lt;&amp;lt;(number of dots) &amp;gt; [4]&amp;gt; or &amp;lt;(number of dots) = [4]&amp;gt;&amp;gt; then
+    set [cards v] to (join (cards) [4, ])
+    set [number of dots v] to ((number of dots) - (4))
+  end
+  if &amp;lt;&amp;lt;(number of dots) &amp;gt; [2]&amp;gt; or &amp;lt;(number of dots) = [2]&amp;gt;&amp;gt; then
+    set [cards v] to (join (cards) [2, ])
+    set [number of dots v] to ((number of dots) - (2))
+  end
+  if &amp;lt;&amp;lt;(number of dots) &amp;gt; [1]&amp;gt; or &amp;lt;(number of dots) = [1]&amp;gt;&amp;gt; then
+    set [cards v] to (join (cards) [1, ])
+    set [number of dots v] to ((number of dots) - (1))
+  end
+  say (cards)
+else
+  say [Please choose a number less than or equal to 31.]
+end</source>
+        <target>crwdns8705:0[31]crwdnd8705:0[31]crwdnd8705:0[16]crwdnd8705:0[16]crwdnd8705:0[8]crwdnd8705:0[8]crwdnd8705:0[4]crwdnd8705:0[4]crwdnd8705:0[2]crwdnd8705:0[2]crwdnd8705:0[1]crwdnd8705:0[1]crwdne8705:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

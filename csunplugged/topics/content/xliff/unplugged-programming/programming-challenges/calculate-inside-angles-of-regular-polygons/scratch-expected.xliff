@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1100" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/calculate-inside-angles-of-regular-polygons/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14239" identifier="f3b5fe6b13c58314d4f8a7210242abe3">
+        <source>Click on the green flag to see the expected output of your program.</source>
+        <target>crwdns14239:0crwdne14239:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14240" identifier="bf32e3dd713d94429e45b62655f8d850">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/152498752/?autostart=false&quot;}</source>
+        <target>crwdns14240:0crwdne14240:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14241" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns14241:0crwdne14241:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="14242" identifier="33a9754026faa05677262c3790c953a1">
+        <source>when green flag clicked</source>
+        <target>crwdns14242:0crwdne14242:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="14243" identifier="e9b0fb8e51359b5daf53d4a3442c9674">
+        <source>clear
+
+pen down
+
+pen up</source>
+        <target>crwdns14243:0crwdne14243:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="14244" identifier="a95fdd9bfbfd09c342f5854ef1610c7b">
+        <source>set [sides v] to (answer)
+
+set [turning angle v] to ((360) / (sides))
+
+set [inside angle v] to ((180) - (turning angle))</source>
+        <target>crwdns14244:0crwdne14244:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="14245" identifier="13b14491b0b446e61d412c619e6fb2b7">
+        <source>go to x: (0) y: (0)
+
+point in direction (90 v)
+
+move (50) steps
+
+turn cw (turning angle) degrees</source>
+        <target>crwdns14245:0crwdne14245:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[4]/code</note>
+      </trans-unit>
+      <trans-unit id="14246" identifier="f7b78b7738133fb91cd6b68e8206a569">
+        <source>say (join (join [Each inside angle is ] (inside angle)) [ degrees.])</source>
+        <target>crwdns14246:0crwdne14246:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[5]/code</note>
+      </trans-unit>
+      <trans-unit id="14247" identifier="a7d8615a21da27a848f066d8eb7443a1">
+        <source>ask [Enter the number of sides of a regular polygon:] and wait</source>
+        <target>crwdns14247:0crwdne14247:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[6]/code</note>
+      </trans-unit>
+      <trans-unit id="14248" identifier="bdd74e3d4e92f9aa6d182c0c5a985060">
+        <source>wait (1) secs
+
+repeat (sides)
+end</source>
+        <target>crwdns14248:0crwdne14248:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[7]/code</note>
+      </trans-unit>
+      <trans-unit id="14249" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns14249:0{panel end}crwdne14249:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

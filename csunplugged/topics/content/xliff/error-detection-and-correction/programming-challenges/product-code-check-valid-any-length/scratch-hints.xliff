@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1009" original="/csunplugged/topics/content/en/error-detection-and-correction/programming-challenges/product-code-check-valid-any-length/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10854" identifier="f0b8048a27a1226486fe59be669d0210">
+        <source>To add up the digits you need to start from the last digit, multiply the
+last digit by 1, second to last by 3 and so on.</source>
+        <target>crwdns10854:0crwdne10854:0</target>
+        <note>Context: XPath: /ul/li/p</note>
+      </trans-unit>
+      <trans-unit id="10855" identifier="2299a0d51026d8b037354ba3d6a23666">
+        <source>It then checks if the product code is valid (total number is a multiple
+of 10).</source>
+        <target>crwdns10855:0crwdne10855:0</target>
+        <note>Context: XPath: /ul/li/p</note>
+      </trans-unit>
+      <trans-unit id="10856" identifier="ffdb2db7dc23da007ef98c6d491927d6">
+        <source>Starting at the right-hand digit will make the formula work for a wide variety of product codes.</source>
+        <target>crwdns10856:0crwdne10856:0</target>
+        <note>Context: XPath: /ul/li/p</note>
+      </trans-unit>
+      <trans-unit id="10857" identifier="efdb494a3607d1dd6d9b5be7cac40588">
+        <source>You can find the number digits in a number by using the
+&lt;code&gt;scratch:length of ()&lt;/code&gt; block unders “Operators”.
+For example: &lt;code&gt;scratch:length of (2938339392383) //13&lt;/code&gt;</source>
+        <target>crwdns10857:0crwdne10857:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="10858" identifier="db4c78bc8b731202711868da1cfd121e">
+        <source>You can access a letter (or a digit) at a specified position in a string
+(or number) by using the &lt;code&gt;scratch:letter () of []&lt;/code&gt; block under “Operators”.</source>
+        <target>crwdns10858:0crwdne10858:0</target>
+        <note>Context: XPath: /ul/li[3]/p</note>
+      </trans-unit>
+      <trans-unit id="10859" identifier="7083909d9f979da6b89fbf6531e7efea">
+        <source>For example: &lt;code&gt;scratch:letter (4) of [18392819202910] //9&lt;/code&gt;</source>
+        <target>crwdns10859:0[18392819202910]crwdne10859:0</target>
+        <note>Context: XPath: /ul/li[3]/p</note>
+      </trans-unit>
+      <trans-unit id="10860" identifier="ff00c0de7f501cd86e5414ba3fccec8e">
+        <source>To access the last digit of the product code, make a variable called
+“index” and set it to the length of the product code.</source>
+        <target>crwdns10860:0crwdne10860:0</target>
+        <note>Context: XPath: /ul/li[4]/p</note>
+      </trans-unit>
+      <trans-unit id="10861" identifier="4f214440dc3707e193ab564d18c8f75a">
+        <source>Now the last digit of the product code can be accessed by using the
+&lt;code&gt;scratch:length of ()&lt;/code&gt; block with the index variable and the product code.</source>
+        <target>crwdns10861:0crwdne10861:0</target>
+        <note>Context: XPath: /ul/li[4]/p</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

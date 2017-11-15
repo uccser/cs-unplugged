@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1070" original="/csunplugged/topics/content/en/unplugged-programming/numeracy-unit-plan/numeracy-unit-plan-ct-links.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="13716" identifier="29587245fea6177d2282f2ca4a93001c">
+        <source>{panel type=&quot;ct-algorithm&quot; title=&quot;Algorithmic thinking&quot;}</source>
+        <target>crwdns13716:0crwdne13716:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="13717" identifier="2e6ac8d426fc7167b8ec90e109a6df32">
+        <source>Throughout this unit students will be creating algorithms to ‘program’ the Bot to move across grids.</source>
+        <target>crwdns13717:0crwdne13717:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="13718" identifier="6a3409d9b253e6b763a49d86243e83b6">
+        <source>The algorithmic thinking focuses on students learning to sequence a set of instructions to complete a task, to use specific types of instructions in their algorithms, and to find equivalent ways to achieve the same outcome.</source>
+        <target>crwdns13718:0crwdne13718:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="13719" identifier="3a1ae082a90b504339024ac691a2b919">
+        <source>{panel end}</source>
+        <target>crwdns13719:0{panel end}crwdne13719:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="13720" identifier="2a1f9c20ca90a8140fe3bf4977790c3b">
+        <source>{panel type=&quot;ct-abstraction&quot; title=&quot;Abstraction&quot;}</source>
+        <target>crwdns13720:0crwdne13720:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="13721" identifier="4ef737a3ca203aab743dd332b7beb25a">
+        <source>The ‘programming’ students will be doing in these activities is an abstract version of the type of programming we do on computers using conventional programming languages.</source>
+        <target>crwdns13721:0crwdne13721:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="13722" identifier="3e649f1e537cdbf5a9fef0740ef6c3b3">
+        <source>In this unit students will use a small set of very basic instructions as their programming language, write their programs in simple words, and give their instructions verbally to the bot.</source>
+        <target>crwdns13722:0crwdne13722:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="13723" identifier="1b585223e85e76bbec24d30733571ed3">
+        <source>This allows students to learn about sequencing in programming and practice creating algorithms without needing to learn a programming language first or use technical terminology and tools.</source>
+        <target>crwdns13723:0crwdne13723:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="13724" identifier="f2cd0addbffcb72fc6f96590e76a0f3a">
+        <source>The choice of commands for the programming language also demonstrate the use of abstraction (such as using &quot;L&quot; or an arrow to represent the command &quot;Left&quot;).</source>
+        <target>crwdns13724:0crwdne13724:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="13725" identifier="937c65a9c36445f206bb6c23295e09fd">
+        <source>In lesson 3 students will also be using another level of abstraction, as some instructions will be encapsulated inside a loop.</source>
+        <target>crwdns13725:0crwdne13725:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="13726" identifier="76814e424523d7b9391aeb58dbd9452d">
+        <source>{panel end}</source>
+        <target>crwdns13726:0{panel end}crwdne13726:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="13727" identifier="a4adec0aaaba7c1c6402ab5f49f51dd7">
+        <source>{panel type=&quot;ct-decomposition&quot; title=&quot;Decomposition&quot;}</source>
+        <target>crwdns13727:0crwdne13727:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="13728" identifier="f0345955eb3a21eb31c9fc6ab05a8db1">
+        <source>In every activity in this unit students will be practicing decomposition, as they break down the movements they want the bot to make into basic and specific instructions.</source>
+        <target>crwdns13728:0crwdne13728:0</target>
+        <note>Context: XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="13729" identifier="2771ea0d9c8779a6ddcc7c3062a97313">
+        <source>They will also be encouraged to write their programs incrementally, to write the first few steps, test them, and then add the next steps to the program, instead of trying to solve the whole problem at once.</source>
+        <target>crwdns13729:0crwdne13729:0</target>
+        <note>Context: XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="13730" identifier="9708110760548ce8659c59eaafcd60e3">
+        <source>{panel end}</source>
+        <target>crwdns13730:0{panel end}crwdne13730:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="13731" identifier="f07030afb05c4adef71aed0edafe6cda">
+        <source>{panel type=&quot;ct-pattern&quot; title=&quot;Generalising and patterns&quot;}</source>
+        <target>crwdns13731:0crwdne13731:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="13732" identifier="973d85777da45045f602c94711a72862">
+        <source>As students write their algorithms and programs in this unit there are many different patterns that emerge in how the instructions are sequenced.</source>
+        <target>crwdns13732:0crwdne13732:0</target>
+        <note>Context: XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="13733" identifier="fc4f945857ee225aeb1ea38305e23769">
+        <source>Groups of instructions might tell the Bot to move a specific way, such as walk in a square, and if students identify these patterns they can reuse these groups of instructions if they need to have the Bot make the same movements again.</source>
+        <target>crwdns13733:0crwdne13733:0</target>
+        <note>Context: XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="13734" identifier="84c3fb5452681920df97e5738602f6bb">
+        <source>{panel end}</source>
+        <target>crwdns13734:0{panel end}crwdne13734:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="13735" identifier="cf012de3bf48ca4ac18c42b13b0b0405">
+        <source>{panel type=&quot;ct-evaluation&quot; title=&quot;Evaluation&quot;}</source>
+        <target>crwdns13735:0crwdne13735:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="13736" identifier="79105e7822f9d5967ada951d1514c46b">
+        <source>Each time students write their programs and test them they will be evaluating them, because the most important thing they need to determine is “did the program work?”.</source>
+        <target>crwdns13736:0crwdne13736:0</target>
+        <note>Context: XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="13737" identifier="cb975894cb17c2225a43941e751b2e33">
+        <source>Each time they test their programs they can identify whether it accomplished the task or not.</source>
+        <target>crwdns13737:0crwdne13737:0</target>
+        <note>Context: XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="13738" identifier="182f6e72995fd4434153a205ae92da9b">
+        <source>There will almost always be multiple programs students could use to accomplish each task, but some will be more efficient than others as they will use fewer steps.</source>
+        <target>crwdns13738:0crwdne13738:0</target>
+        <note>Context: XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="13739" identifier="598861827fa701aed124f1e5142f1471">
+        <source>Students can compare these and explain why they think certain programs are better than others.</source>
+        <target>crwdns13739:0crwdne13739:0</target>
+        <note>Context: XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="13740" identifier="85cc8d373ec98cf1020ee0cdd8fc140c">
+        <source>There is also the opportunity to compare programming languages.</source>
+        <target>crwdns13740:0crwdne13740:0</target>
+        <note>Context: XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="13741" identifier="8896986ec1147bbe7ea334fa00fd592d">
+        <source>We explore reducing the number of instructions available; in some cases the same goals can be achieved (the language has the same computing ability), but the programs might be longer.</source>
+        <target>crwdns13741:0crwdne13741:0</target>
+        <note>Context: XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="13742" identifier="ab76f63ac4106565b02bea96cd4e574f">
+        <source>{panel end}</source>
+        <target>crwdns13742:0{panel end}crwdne13742:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="13743" identifier="f1f1d274f9e772b8e18e617660c637f4">
+        <source>{panel type=&quot;ct-logic&quot; title=&quot;Logic&quot;}</source>
+        <target>crwdns13743:0crwdne13743:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="13744" identifier="912fbdac899a22903fda322c8b13ecb2">
+        <source>Students will be continuously exercising their logical thinking skills throughout this unit.</source>
+        <target>crwdns13744:0crwdne13744:0</target>
+        <note>Context: XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="13745" identifier="2f997823e08aa794540d3bab89b9acce">
+        <source>As they are planning their algorithms they will need to step through what they think will happen with each instruction, e.g. “at this point they’ll be facing that way so if I then say move forward twice then they’ll end up on that square”.</source>
+        <target>crwdns13745:0crwdne13745:0</target>
+        <note>Context: XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="13746" identifier="4e16b7b1baa4f4577b24fadade1ac25e">
+        <source>They will also need a logical approach to debugging their programs when they do not work correctly.</source>
+        <target>crwdns13746:0crwdne13746:0</target>
+        <note>Context: XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="13747" identifier="96454b486cbf35a5a533307fe0f32869">
+        <source>They will need to step through each instruction and identify when something goes wrong and how they can fix the bug so the program then behaves as expected.</source>
+        <target>crwdns13747:0crwdne13747:0</target>
+        <note>Context: XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="13748" identifier="0d3de6c21e2d458b6944fce764817b3f">
+        <source>{panel end}</source>
+        <target>crwdns13748:0{panel end}crwdne13748:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[22]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

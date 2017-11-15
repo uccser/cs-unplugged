@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1047" original="/csunplugged/topics/content/en/sorting-networks/unit-plan/lessons/investigating-variations-using-the-sorting-network-junior.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="12289" identifier="cc9a0cf9d3ef54f0aaabdcbf0a56b8f7">
+        <source>Investigating variations using the Sorting Network</source>
+        <target>crwdns12289:0crwdne12289:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="12290" identifier="054badfdd2aa8c7c90cf723d9225e1d4">
+        <source>Preparatory knowledge</source>
+        <target>crwdns12290:0crwdne12290:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="12291" identifier="e85f58cb718f1abb7c9c30e74eb441c9">
+        <source>Students should have completed lesson 1 to introduce Sorting Networks.</source>
+        <target>crwdns12291:0crwdne12291:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="12292" identifier="25c54ea5be10ce512e83219888e76ab2">
+        <source>Key questions</source>
+        <target>crwdns12292:0crwdne12292:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="12293" identifier="03983ab3fdd6b9bcd1131e17ad9381c3">
+        <source>In the Sorting Network, do you think that we can sort things other than numbers?
+What do you think we could sort?
+(Potential answers could include sorting things by colour, size, age, and height).</source>
+        <target>crwdns12293:0crwdne12293:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="12294" identifier="c187755a265deaae165ec7817bcbd0de">
+        <source>Lesson starter</source>
+        <target>crwdns12294:0crwdne12294:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[3]</note>
+      </trans-unit>
+      <trans-unit id="12295" identifier="0294cd4923dfef496ed44c2bcc6edebd">
+        <source>Show the students the Sorting Network again (if the network needs redrawing then students often enjoy doing this, and drawing it accurately from the diagram is a useful exercise).</source>
+        <target>crwdns12295:0crwdne12295:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="12296" identifier="ed68ccb6f38668d84c33424ffea6292a">
+        <source>Tell them that they will be trying it with some variations this time.</source>
+        <target>crwdns12296:0crwdne12296:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="12297" identifier="cb6796c468841953e87c74f3f6b1cc4d">
+        <source>{panel type=&quot;math&quot; title=&quot;Mathematical links&quot;}</source>
+        <target>crwdns12297:0crwdne12297:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="12298" identifier="6e38ddb527b30b291647894ae9885965">
+        <source>Predicting outcomes: By understanding how the Sorting Network works students will be investigating different ways of using the Sorting Network and exploring how the lowest and highest number always ends up in the correct output position.</source>
+        <target>crwdns12298:0crwdne12298:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="12299" identifier="0195c2d106e4d52b36bca78ff4c3e7a4">
+        <source>{panel end}</source>
+        <target>crwdns12299:0{panel end}crwdne12299:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="12300" identifier="dff8f9c01901b8d77cee2c1a23df8bce">
+        <source>Variations</source>
+        <target>crwdns12300:0crwdne12300:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[4]</note>
+      </trans-unit>
+      <trans-unit id="12301" identifier="05d328fafb00655232aebf59cbfce11e">
+        <source>This part of the lesson explores changing the way the numbers are used.</source>
+        <target>crwdns12301:0crwdne12301:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="12302" identifier="0ec5912b4e8591bb2b444494eeaf9f16">
+        <source>Variation 1: Identical value</source>
+        <target>crwdns12302:0crwdne12302:0</target>
+        <note>Context: Headline 3&#13;
+XPath: /h3</note>
+      </trans-unit>
+      <trans-unit id="12303" identifier="cf1c26793eec2e6b94fe894b992a4909">
+        <source>{image file-path=&quot;img/topics/sorting-network-equal-3.png&quot;}</source>
+        <target>crwdns12303:0crwdne12303:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="12304" identifier="d3ff6ce066cd74a513d6cf060cfd049e">
+        <source>In this variation, students try the Sorting Network with a set of cards where some cards have an identical value, such as  1, 2, 3, 3, 4, 5.</source>
+        <target>crwdns12304:0crwdne12304:0</target>
+        <note>Context: XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="12305" identifier="a1a1807a565f1db56bca34d03b0a0898">
+        <source>They will probably ask what to do when comparing the identical cards - ask them what they think, and they are likely to realise that it won't make any difference (if 3 and 3 meet, then it won't matter which one goes left and which goes right!).</source>
+        <target>crwdns12305:0crwdne12305:0</target>
+        <note>Context: XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="12306" identifier="b835145fd4891d8dc6cad75055c4c2e7">
+        <source>Ask them to predict will happen at the end of the network (they may realise that the identical values will end up adjacent).</source>
+        <target>crwdns12306:0crwdne12306:0</target>
+        <note>Context: XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="12307" identifier="d52bd65c14f770fc473f63944acf01b4">
+        <source>Now run the numbers through the network to check.
+Here's a brief reminder of the Sorting Network instructions; full details are in lesson 1.</source>
+        <target>crwdns12307:0crwdne12307:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="12308" identifier="503490897ea276d98e7438ed15d5dfc7">
+        <source>Six students start in the input circles, each holding a card with one of the numbers on it.</source>
+        <target>crwdns12308:0crwdne12308:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li/p</note>
+      </trans-unit>
+      <trans-unit id="12309" identifier="6da5680ac8f6608d1195ffbd04231a7f">
+        <source>They all step forward at the same time, and when they meet someone in a box, they compare their cards.</source>
+        <target>crwdns12309:0crwdne12309:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="12310" identifier="301aabfd3ee18267707c13b3216042cf">
+        <source>The person with the smaller card follows the line out to the left, and and the larger card to the right (this is reversed in the second variation for this lesson).</source>
+        <target>crwdns12310:0crwdne12310:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[3]/p</note>
+      </trans-unit>
+      <trans-unit id="12311" identifier="c810566a0e22d4563a82de3fa4d00d54">
+        <source>This continues until all the students reach the output circles, at which point they should be in sorted order.</source>
+        <target>crwdns12311:0crwdne12311:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[4]/p</note>
+      </trans-unit>
+      <trans-unit id="12312" identifier="dc9f448431f8782b407c06da0e455129">
+        <source>Variation 2: Larger to the left</source>
+        <target>crwdns12312:0crwdne12312:0</target>
+        <note>Context: Headline 3&#13;
+XPath: /h3[2]</note>
+      </trans-unit>
+      <trans-unit id="12313" identifier="cbf8b92571808136a594b6414a928848">
+        <source>This time, the person with the larger number goes to the left instead of the right and follows the line to the next square, while the person with the lower number goes to the right instead of the left and follows the line to the next square.</source>
+        <target>crwdns12313:0crwdne12313:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="12314" identifier="c60135f1ded3e534248f1fefb26a5a39">
+        <source>Ask the students to predict what will happen (they should be able to work out that the values will come out in reverse sorted order i.e. from largest to smallest instead of smallest to largest).</source>
+        <target>crwdns12314:0crwdne12314:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="12315" identifier="1230a38385b735ef3c8b4da1aeb3ea8a">
+        <source>Have them try it out with some numbers to check it.</source>
+        <target>crwdns12315:0crwdne12315:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="12316" identifier="a44e7c23767456000c71c5070ab25d87">
+        <source>{panel type=&quot;teaching&quot; title=&quot;&quot;Teaching observations&quot;}</source>
+        <target>crwdns12316:0crwdne12316:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="12317" identifier="1a1ba439dd9c888e49365af49ab9aec6">
+        <source>By reversing the left/right decision, the final result will be in the reverse order to how it would have been in lesson 1.</source>
+        <target>crwdns12317:0crwdne12317:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="12318" identifier="9310d092388af7bdf4e961de50103c5a">
+        <source>{panel end}</source>
+        <target>crwdns12318:0{panel end}crwdne12318:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="12319" identifier="cb2ae68ef8b75f57719671185777bf24">
+        <source>Variation 3: Letters of the alphabet</source>
+        <target>crwdns12319:0crwdne12319:0</target>
+        <note>Context: Headline 3&#13;
+XPath: /h3[3]</note>
+      </trans-unit>
+      <trans-unit id="12320" identifier="b33cf03fbc0317b415a3921f885f9e6c">
+        <source>{image file-path=&quot;img/topics/sorting-network-variation-alphabet.png&quot;}</source>
+        <target>crwdns12320:0crwdne12320:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="12321" identifier="2fa469dfc7f2867784f53562b508ce1a">
+        <source>Give the students cards with letters on them.
+Ask how we could compare these (students should observe that they could be in alphabetical order).
+Have them test this by sorting the cards.</source>
+        <target>crwdns12321:0crwdne12321:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="12322" identifier="d9cb6cfea95d4f73b19d2c2965c57633">
+        <source>Using the network backwards</source>
+        <target>crwdns12322:0crwdne12322:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[5]</note>
+      </trans-unit>
+      <trans-unit id="12323" identifier="111e941a1785ec42a965b7dd433c391c">
+        <source>This is an experiment that addresses a question that students may have asked: does the Sorting Network correctly sort the values if we start at the other end?</source>
+        <target>crwdns12323:0crwdne12323:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="12324" identifier="a608de2d5b1fd7dd3ca1609da63251f6">
+        <source>Have students try this with some simple values (such as the numbers 1 to 6).</source>
+        <target>crwdns12324:0crwdne12324:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="12325" identifier="06fff5650b209dc13c287d70745cb58e">
+        <source>Chances are that it will work for many starting orders of the values.</source>
+        <target>crwdns12325:0crwdne12325:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="12326" identifier="f36bbb63e82f0b7005dd0f6f9a281186">
+        <source>However, encourage them to keep trying until they find an initial order for which it doesn't work.</source>
+        <target>crwdns12326:0crwdne12326:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="12327" identifier="1e9f4c27e1f428bae96d012c21bbb701">
+        <source>This will require considerable reasoning to achieve.</source>
+        <target>crwdns12327:0crwdne12327:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="12328" identifier="3775bafeecd9edb7711468dbf070a28a">
+        <source>If they struggle to find an example, you could give the one below, and then challenge them to find a different one that doesn't come out sorted.</source>
+        <target>crwdns12328:0crwdne12328:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="12329" identifier="91459119fbe8d6c103e9378044a708f2">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns12329:0crwdne12329:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="12330" identifier="bbf868716ead4a46bf4a278ed538bb3e">
+        <source>The Sorting Network is designed to work consistently one way, rather than working both ways.</source>
+        <target>crwdns12330:0crwdne12330:0</target>
+        <note>Context: XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="12331" identifier="9dbfafc07f5e3ef93fdf19073513a33b">
+        <source>For example, the first image below shows an input that happens to come out sorted when going through the network backwards, while the second one doesn't.</source>
+        <target>crwdns12331:0crwdne12331:0</target>
+        <note>Context: XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="12332" identifier="a995ef6faf5aa042c237fc56cb36e0db">
+        <source>If it fails on just one input (the second one) then we can't rely on it, even though it sometimes works.</source>
+        <target>crwdns12332:0crwdne12332:0</target>
+        <note>Context: XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="12333" identifier="f90901dec08ae7918ec012c275b99a03">
+        <source>In the other direction, it will always sort correctly.</source>
+        <target>crwdns12333:0crwdne12333:0</target>
+        <note>Context: XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="12334" identifier="42126398af388feacae5bfcf31fb8596">
+        <source>{image file-path=&quot;img/topics/sorting-network-backwards-1.png&quot;}</source>
+        <target>crwdns12334:0crwdne12334:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="12335" identifier="be7e98393423e5b62797cc925dbcb28a">
+        <source>{image file-path=&quot;img/topics/sorting-network-backwards-2.png&quot;}</source>
+        <target>crwdns12335:0crwdne12335:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="12336" identifier="18d1b60b92ce620dfd28b967329a230d">
+        <source>{panel end}</source>
+        <target>crwdns12336:0{panel end}crwdne12336:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[25]</note>
+      </trans-unit>
+      <trans-unit id="12337" identifier="441fe06e71d44c0ffce791bf48c5fb7a">
+        <source>Applying what we have just learnt</source>
+        <target>crwdns12337:0crwdne12337:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[6]</note>
+      </trans-unit>
+      <trans-unit id="12338" identifier="f1c7fb164cb19b276d322998a641c2c2">
+        <source>This kind of algorithm needs to run on special hardware to take advantage of doing multiple comparisons at the same time.</source>
+        <target>crwdns12338:0crwdne12338:0</target>
+        <note>Context: XPath: /p[26]</note>
+      </trans-unit>
+      <trans-unit id="12339" identifier="abf6b207f86f2a171fc38f9cf8aaed38">
+        <source>It is only used for specialist applications at present, for example it is sometimes done on the graphics processor (GPU) of a computer, because these processors are good at doing parallel computation.</source>
+        <target>crwdns12339:0crwdne12339:0</target>
+        <note>Context: XPath: /p[26]</note>
+      </trans-unit>
+      <trans-unit id="12340" identifier="614ebf8a2506cd226f507354a17e1e60">
+        <source>Sorting Networks were invented long before powerful GPUs came along; this is an exciting thing about Computer Science - some of the our discoveries are ahead of the hardware that is available, so we're ready to make use of the hardware when it does become commonly available!</source>
+        <target>crwdns12340:0crwdne12340:0</target>
+        <note>Context: XPath: /p[26]</note>
+      </trans-unit>
+      <trans-unit id="12341" identifier="79145d65d7a32cae3133730bf53e3a5d">
+        <source>Note that this is &lt;em&gt;not&lt;/em&gt; a conventional sorting algorithm, as the sorting that is done on a conventional system can make only one comparison at a time; conventional sorting algorithms are explored in another lesson.</source>
+        <target>crwdns12341:0crwdne12341:0</target>
+        <note>Context: XPath: /p[26]</note>
+      </trans-unit>
+      <trans-unit id="12342" identifier="f6e50201c75cc942078787f9195b3834">
+        <source>Lesson reflection</source>
+        <target>crwdns12342:0crwdne12342:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[7]</note>
+      </trans-unit>
+      <trans-unit id="12343" identifier="c94b7da06e5c0a725435402aeff31b7c">
+        <source>What did you notice happen with each variation of using the Sorting Network?</source>
+        <target>crwdns12343:0crwdne12343:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[27]</note>
+      </trans-unit>
+      <trans-unit id="12344" identifier="708b53dcf8e43c8e5f3cda0b73abce12">
+        <source>Was it what you had expected?</source>
+        <target>crwdns12344:0crwdne12344:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[28]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="955" original="/csunplugged/topics/content/en/error-detection-and-correction/programming-challenges/detect-parity-error-in-six-rows/scratch-solution.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10542" identifier="89f0ac3ad43a697b244ed83b37022277">
+        <source>when green flag clicked
+set [row v] to []
+set [black cards total v] to [0]
+set [row number v] to [1]
+repeat (6)
+  ask (join [Please enter 6 black or white cards for row ] (row number)) and wait
+  set [row v] to (answer)
+  set [index v] to [1]
+  repeat (6)
+    if &amp;lt;(letter (index) of (row)) = [B]&amp;gt; then
+      change [black cards total v] by (1)
+    end
+    change [index v] by (1)
+  end
+  if &amp;lt;((black cards total) mod (2)) = [0]&amp;gt; then
+    say (join (join [Row ] (row number)) [ is OK!]) for (2) secs
+  else
+    say (join [There is a parity error in row ] (row number)) for (2) secs
+  end
+  change [row number v] by (1)
+  set [black cards total v] to [0]
+end</source>
+        <target>crwdns10542:0[0]crwdnd10542:0[1]crwdnd10542:0[1]crwdnd10542:0[B]crwdnd10542:0[0]crwdnd10542:0[0]crwdne10542:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

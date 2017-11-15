@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1034" original="/csunplugged/topics/content/en/searching-algorithms/sequential-and-binary-search-unit-plan/lessons/how-many-guesses.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="11848" identifier="8dfc463a63c454014316f542837f5404">
+        <source>How many guesses?</source>
+        <target>crwdns11848:0crwdne11848:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="11849" identifier="f17e7b5da610295808d4668fae87df1b">
+        <source>Key questions</source>
+        <target>crwdns11849:0crwdne11849:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="11850" identifier="193370d455ad83b7d657777d8e4a49a1">
+        <source>Suppose you lent a friend your favourite book to read and can’t remember who you lent it to.</source>
+        <target>crwdns11850:0crwdne11850:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="11851" identifier="90dfbee1cc7e651ff132eebdf9ed771b">
+        <source>Imagine these 6 houses represent where they live.</source>
+        <target>crwdns11851:0crwdne11851:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="11852" identifier="ab3f620e1a4e413d6bdaa592b6ce468b">
+        <source>You need it back urgently because you are going on holiday tomorrow, so you start visiting each house to see if they have your book.</source>
+        <target>crwdns11852:0crwdne11852:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="11853" identifier="496a1c02d5852e73b8aab4c58c2f5ffc">
+        <source>{image file-path=&quot;img/topics/houses_randomnumbers.png&quot; alt=&quot;Six houses numbered 16, 24, 36, 41, 48, and 56&quot;}</source>
+        <target>crwdns11853:0crwdne11853:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="11854" identifier="0b41823f469f89ff14d5cab0af9f600e">
+        <source>How many houses do you predict you will need to visit to find the one where your book is?</source>
+        <target>crwdns11854:0crwdne11854:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="11855" identifier="cdeb9fbaa9a2049ed58da208048760c8">
+        <source>Write the number of guesses you think and your initials on a post-it note.</source>
+        <target>crwdns11855:0crwdne11855:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="11856" identifier="f4cd584992430451c75c7240c6bf12dc">
+        <source>Place your post-it on a continuum like the one below.</source>
+        <target>crwdns11856:0crwdne11856:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="11857" identifier="b1583991fd51b02b08b99631336f6681">
+        <source>{image file-path=&quot;img/topics/6_guesses.png&quot; alt=&quot;A continuum line with marks
+for 1, 2, 3, 4, 5, and 6 guesses&quot;}</source>
+        <target>crwdns11857:0crwdne11857:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="11858" identifier="866b04cf03b88d4054f2359dd6b40acf">
+        <source>What do you notice about our predictions?</source>
+        <target>crwdns11858:0crwdne11858:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="11859" identifier="4460fd52c3ef567c91cd109657e20025">
+        <source>Lesson starter</source>
+        <target>crwdns11859:0crwdne11859:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="11860" identifier="1d7932b5cbd87a60467c70fa6034142d">
+        <source>Place the 31 searching squares on a table.</source>
+        <target>crwdns11860:0crwdne11860:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="11861" identifier="4ebe46ef69e31de34afe0b148e03b787">
+        <source>Explain that we have 31 different numbers, one on each card.</source>
+        <target>crwdns11861:0crwdne11861:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="11862" identifier="5c6e083b7f74dbd3545a665a6989fa6b">
+        <source>Show that one side has an animal on it and the other a number.</source>
+        <target>crwdns11862:0crwdne11862:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="11863" identifier="b5bb35be8979dfb85684ad77ac4fb37e">
+        <source>Under each of these cards is a number that you can’t see, and they aren’t in order.</source>
+        <target>crwdns11863:0crwdne11863:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="11864" identifier="d5e4a87632e9dd0fe5f1e53fbf8b0769">
+        <source>The numbers range from 0 to 1000.</source>
+        <target>crwdns11864:0crwdne11864:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="11865" identifier="8d31fffd58600e60ca72a4e9c40ac4fb">
+        <source>Can you find the card with the number 302?</source>
+        <target>crwdns11865:0crwdne11865:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="11866" identifier="d34b5f41cf6613df29ff8490bd6d120a">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns11866:0crwdne11866:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="11867" identifier="20c448a799e66ba50a321aaa5d241453">
+        <source>You can adapt the range to suit what your students are working on in their mathematics lessons.</source>
+        <target>crwdns11867:0crwdne11867:0</target>
+        <note>Context: XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="11868" identifier="7abf8a8cedc3a71026b2afa37beddcd4">
+        <source>This lesson focuses on unsorted lists so it doesn’t matter if the numbers are all from a sequential range ie all the numbers in the range from 0 - 31, as long as the cards are placed in a random order.</source>
+        <target>crwdns11868:0crwdne11868:0</target>
+        <note>Context: XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="11869" identifier="059c9e1c941b1bff7859c11b32da3e24">
+        <source>When you’re using a sorted list in future exercises though it works better to not have all the numbers from a certain range, otherwise students can just count to figure out where the number is!</source>
+        <target>crwdns11869:0crwdne11869:0</target>
+        <note>Context: XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="11870" identifier="42fc5e7d465d2f68119601ce897755b0">
+        <source>You can generate different sets of cards with various ranges of numbers &lt;a href=&quot;'resources:resource' 'searching-cards'&quot;&gt;here&lt;/a&gt;.</source>
+        <target>crwdns11870:0crwdne11870:0</target>
+        <note>Context: XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="11871" identifier="95e2aef312d8003ea83532ea9651f31f">
+        <source>{panel end}</source>
+        <target>crwdns11871:0{panel end}crwdne11871:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="11872" identifier="ea08f2f76d1ef4a9f87b3ba4c0221b4a">
+        <source>Lesson activities</source>
+        <target>crwdns11872:0crwdne11872:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[3]</note>
+      </trans-unit>
+      <trans-unit id="11873" identifier="6aff43c999f7d585277e79945fadcfea">
+        <source>Set up a line of 31 cards, with the animal facing upwards.</source>
+        <target>crwdns11873:0crwdne11873:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="11874" identifier="ff71757fc42a7fcd43b08ff0fd1418c5">
+        <source>Have a payment system ready such as tokens for your classroom, counters, sweets, or marbles.</source>
+        <target>crwdns11874:0crwdne11874:0</target>
+        <note>Context: XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="11875" identifier="22f3fa7716f3fb463aa52c9ff600d271">
+        <source>The game could be set to have some real stakes - for example: I have 10 marbles, and each is worth 2 minutes of free time.</source>
+        <target>crwdns11875:0crwdne11875:0</target>
+        <note>Context: XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="11876" identifier="c0528893518a7511053a9854d32b1a77">
+        <source>For every guess you make you have to pay me one marble.</source>
+        <target>crwdns11876:0crwdne11876:0</target>
+        <note>Context: XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="11877" identifier="32943eb56a3e422b711b3d0947b93ef2">
+        <source>Say to the students: let’s see how many guesses it takes to find the number 302.</source>
+        <target>crwdns11877:0crwdne11877:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="11878" identifier="f87f4cb350cf4450751bbca350222975">
+        <source>Who would like the first guess?</source>
+        <target>crwdns11878:0crwdne11878:0</target>
+        <note>Context: XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="11879" identifier="b50e4cb2c98d7692cefda4eae260177a">
+        <source>(Choose a student).</source>
+        <target>crwdns11879:0crwdne11879:0</target>
+        <note>Context: XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="11880" identifier="70629c2ed556d19e8cd9c6dab8be6d1a">
+        <source>Which animal should I turn over?</source>
+        <target>crwdns11880:0crwdne11880:0</target>
+        <note>Context: XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="11881" identifier="cfaa432e57d6f718ae6dc58cec5be6c5">
+        <source>Tell us why you chose that guess.</source>
+        <target>crwdns11881:0crwdne11881:0</target>
+        <note>Context: XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="11882" identifier="c403b151627104e27fa0f4bad4cdaf37">
+        <source>(There's no particular logic for which card to choose, but students might choose to be methodical and go from left to right, or simply choose cards at random.)</source>
+        <target>crwdns11882:0crwdne11882:0</target>
+        <note>Context: XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="11883" identifier="6b623cc8751c2f619569bc031cdaf414">
+        <source>Turn over the chosen card to show the number under it.</source>
+        <target>crwdns11883:0crwdne11883:0</target>
+        <note>Context: XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="11884" identifier="c5630944c4f2fb0c8e4df9606d718ed9">
+        <source>If it's the correct one, you can stop, otherwise remove it from the row and put it aside and have the student pay you with one marble (or with whatever you are using as tokens).</source>
+        <target>crwdns11884:0crwdne11884:0</target>
+        <note>Context: XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="11885" identifier="5550e1c0daaf03fefbefbe62599d969b">
+        <source>Repeat this process until a student chooses the card with your number on it (you should carry on even if they have lost all their tokens).</source>
+        <target>crwdns11885:0crwdne11885:0</target>
+        <note>Context: XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="11886" identifier="9e8036b89ca1f77e68b2eda3cd4da29d">
+        <source>If at the end of the game the student has no tokens left then you have one, and if they found it before using all their marbles then they win the game.</source>
+        <target>crwdns11886:0crwdne11886:0</target>
+        <note>Context: XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="11887" identifier="16a2cee933b12ebd57d65edaf84b767b">
+        <source>If you find they guessed the number quickly, then shuffle the cards and repeat the game to demonstrate that they might guess on the first guess, but likewise it could be the very last guess as well.</source>
+        <target>crwdns11887:0crwdne11887:0</target>
+        <note>Context: XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="11888" identifier="9f09b715665a590bf7097ad281946df4">
+        <source>At the beginning of a new game the student starts with all their tokens again.</source>
+        <target>crwdns11888:0crwdne11888:0</target>
+        <note>Context: XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="11889" identifier="cb22609d6b449dcefc48b5a7350b70fc">
+        <source>How many guesses did it take to find the number this time?</source>
+        <target>crwdns11889:0crwdne11889:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="11890" identifier="4ba7bd0263b0c86b26ac8ce46e4b9164">
+        <source>With each guess, how many cards were eliminated from being a possibility? (Answer one - each question can only get rid of one option).</source>
+        <target>crwdns11890:0crwdne11890:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="11891" identifier="ef3193393d7619177a2e554fe2175975">
+        <source>Did the students win because they guessed within 10 guesses or did you win because it took them longer and they lost all their tokens?</source>
+        <target>crwdns11891:0crwdne11891:0</target>
+        <note>Context: XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="11892" identifier="6ba682234af3634d654e2e1f6a83841f">
+        <source>Repeat this game until the students have won 3 times or you have won 3 times.</source>
+        <target>crwdns11892:0crwdne11892:0</target>
+        <note>Context: XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="11893" identifier="4483bc31397e5644626742c035800804">
+        <source>You should shuffle the cards each time, and introduce new cards or different sets if necessary to avoid students memorising what is on each card.</source>
+        <target>crwdns11893:0crwdne11893:0</target>
+        <note>Context: XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="11894" identifier="094fc45dd6c99f8514cf86bc622e53ec">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns11894:0crwdne11894:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="11895" identifier="a9075c3533f2fa99ce7c3df8e1310e66">
+        <source>The number of guesses required can be anything from 1 (if you are lucky and find the number on the first guess), to 31 (if you’re very unlucky and have to turn over every card).</source>
+        <target>crwdns11895:0crwdne11895:0</target>
+        <note>Context: XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="11896" identifier="2a59e6592fa8f08b97aadf83c79e5c69">
+        <source>The number of guesses should be evenly distributed between 1 and 31 - each number is equally likely.</source>
+        <target>crwdns11896:0crwdne11896:0</target>
+        <note>Context: XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="11897" identifier="5dc718d8a7b98e2ae7b3663dff52907f">
+        <source>Students could also work out the average (which should be close to 16 if enough games are played).</source>
+        <target>crwdns11897:0crwdne11897:0</target>
+        <note>Context: XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="11898" identifier="f9caeb333a35ff08139af50b7b933994">
+        <source>This also means that most of the time students won't have any tokens left if you start with 10 for each search.</source>
+        <target>crwdns11898:0crwdne11898:0</target>
+        <note>Context: XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="11899" identifier="3e36fd398241fc175b47e35cddcdc6f1">
+        <source>{panel end}</source>
+        <target>crwdns11899:0{panel end}crwdne11899:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="11900" identifier="810e29f8c2dcb73248b9794ca86f4d46">
+        <source>How many guesses programming challenges</source>
+        <target>crwdns11900:0crwdne11900:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[4]</note>
+      </trans-unit>
+      <trans-unit id="11901" identifier="5130654c0e861f29672a02e1d1360b7f">
+        <source>Lesson reflection</source>
+        <target>crwdns11901:0crwdne11901:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[5]</note>
+      </trans-unit>
+      <trans-unit id="11902" identifier="ae566dfc98e24e06ec88176860413da7">
+        <source>The method you have been using is called sequential search - if the values are out of order then we just go through them in some sequence until we find the one we want.</source>
+        <target>crwdns11902:0crwdne11902:0</target>
+        <note>Context: XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="11903" identifier="91d1b64e1ba51f16107f833d360dc79b">
+        <source>What is the algorithm for a sequential search?</source>
+        <target>crwdns11903:0crwdne11903:0</target>
+        <note>Context: XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="11904" identifier="74552e4a9da8a246242b2bedb7ff073a">
+        <source>Repeat until the number is found.</source>
+        <target>crwdns11904:0crwdne11904:0</target>
+        <note>Context: Text&#13;
+XPath: /ul/li/text</note>
+      </trans-unit>
+      <trans-unit id="11905" identifier="c214160dfbd446c5b8336a0ba2aff2ef">
+        <source>Remove one item from the payment system</source>
+        <target>crwdns11905:0crwdne11905:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li/ul/li</note>
+      </trans-unit>
+      <trans-unit id="11906" identifier="007ba6fc2374ebe73e5d03f21fae7fd8">
+        <source>Turn over a card.</source>
+        <target>crwdns11906:0crwdne11906:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li/ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="11907" identifier="4809b365eeebf34eb1dd2979024c37e3">
+        <source>If it isn’t the card you are searching for then remove that card (or leave the card turned over to show the number).</source>
+        <target>crwdns11907:0crwdne11907:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li/ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="11908" identifier="5c791019489b56e091d458d8e3224208">
+        <source>How much longer will this take if we give the algorithm twice as many cards to search? (It will take twice as long, on average.)
+In lesson 3 we will collect more accurate statistics to measure this.</source>
+        <target>crwdns11908:0crwdne11908:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[23]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

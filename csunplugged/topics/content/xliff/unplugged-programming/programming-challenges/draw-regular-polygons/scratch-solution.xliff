@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1181" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/draw-regular-polygons/scratch-solution.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14757" identifier="6065d41576b7186ac49fbc02eb2f6db1">
+        <source>when green flag clicked
+clear
+go to x: (0) y: (0)
+say [I'll draw a polygon with the number of sides you give me.] for (3) secs
+ask [Enter the number of sides:] and wait
+set [sides v] to (answer)
+pen down
+repeat (sides)
+  move (50) steps
+  turn cw ((360) / (sides)) degrees
+end
+pen up</source>
+        <target>crwdns14757:0crwdne14757:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

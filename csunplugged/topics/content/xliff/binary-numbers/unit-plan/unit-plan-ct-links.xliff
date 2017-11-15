@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="867" original="/csunplugged/topics/content/en/binary-numbers/unit-plan/unit-plan-ct-links.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="9069" identifier="29587245fea6177d2282f2ca4a93001c">
+        <source>{panel type=&quot;ct-algorithm&quot; title=&quot;Algorithmic thinking&quot;}</source>
+        <target>crwdns9069:0crwdne9069:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="9070" identifier="86b6d6e8b4b41303dedc674741fd0a6b">
+        <source>There are several important algorithms for students to learn and follow in
+this unit.</source>
+        <target>crwdns9070:0crwdne9070:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="9071" identifier="08db2f67e16b0005f9a602efbfc5ebc5">
+        <source>These algorithms are solutions to the problems “How do we convert between
+decimal and binary numbers?”, “How do we represent letters using binary
+numbers?”, and “How do we convert a message written in a binary code back to
+letters?”.</source>
+        <target>crwdns9071:0crwdne9071:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="9072" identifier="2b3974bb9155c608822d8f560f7e4cee">
+        <source>Students will be tasked with following these algorithms accurately,
+articulating them, and explaining them.</source>
+        <target>crwdns9072:0crwdne9072:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="9073" identifier="3a1ae082a90b504339024ac691a2b919">
+        <source>{panel end}</source>
+        <target>crwdns9073:0{panel end}crwdne9073:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="9074" identifier="2a1f9c20ca90a8140fe3bf4977790c3b">
+        <source>{panel type=&quot;ct-abstraction&quot; title=&quot;Abstraction&quot;}</source>
+        <target>crwdns9074:0crwdne9074:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="9075" identifier="fc31a5782a94fff30788e443519b5001">
+        <source>Binary number representation is an abstraction that hides the complexity of the
+electronics and hardware inside a computer that store data.</source>
+        <target>crwdns9075:0crwdne9075:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="9076" identifier="89e0ba24d6d29121ec453fc046e3476b">
+        <source>Abstraction helps us simplify things because we can ignore the details we don’t
+currently need to know.</source>
+        <target>crwdns9076:0crwdne9076:0</target>
+        <note>Context: XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="9077" identifier="e8dc6db8623270551f676e6f496291c1">
+        <source>{panel end}</source>
+        <target>crwdns9077:0{panel end}crwdne9077:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="9078" identifier="eedc040dab9fc03781b20811648ce32f">
+        <source>{panel type=&quot;ct-decomposition&quot; title=&quot;Decomposition&quot;}</source>
+        <target>crwdns9078:0crwdne9078:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="9079" identifier="cc88d56079ab40c0ec5a56f796e7308e">
+        <source>An example of decomposition is breaking the conversion of the number to binary
+into one bit at a time.</source>
+        <target>crwdns9079:0crwdne9079:0</target>
+        <note>Context: XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="9080" identifier="72b8b2993e1cb0afdb0beadd45814ca1">
+        <source>The questions &quot;Should this be 1 or 0&quot; for each of the dot cards is decomposing
+the problem to a series of questions.</source>
+        <target>crwdns9080:0crwdne9080:0</target>
+        <note>Context: XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="9081" identifier="95e2aef312d8003ea83532ea9651f31f">
+        <source>{panel end}</source>
+        <target>crwdns9081:0{panel end}crwdne9081:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="9082" identifier="075a916f1d096aa24d594c28336a6bbe">
+        <source>{panel type=&quot;ct-pattern&quot; title=&quot;Generalising and patterns&quot;}</source>
+        <target>crwdns9082:0crwdne9082:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="9083" identifier="7aeab3ac5d791dc7cd87187bc9e221df">
+        <source>Recognising patterns in the way the binary number system works helps give us a
+deeper understanding of the concepts involved, and assists us in generalising
+these concepts and patterns so that we can apply them to other problems.</source>
+        <target>crwdns9083:0crwdne9083:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="9084" identifier="e55a010e1bd87f56a31be3512ff5b51c">
+        <source>{panel end}</source>
+        <target>crwdns9084:0{panel end}crwdne9084:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="9085" identifier="f754abaa72e0e53f47ac70123435df17">
+        <source>{panel type=&quot;ct-logic&quot; title=&quot;Logic&quot;}</source>
+        <target>crwdns9085:0crwdne9085:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="9086" identifier="df48c77966b91c0edd71f4a1f004aa95">
+        <source>Logical thinking means using rules you already know and using logic to deduce
+more rules and information from these.</source>
+        <target>crwdns9086:0crwdne9086:0</target>
+        <note>Context: XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="9087" identifier="3e3c3290b9c78c2b40a2172148d7474b">
+        <source>Once we know what number each of the binary cards represents then we can use
+this knowledge to figure out how to represent other numbers with the cards.</source>
+        <target>crwdns9087:0crwdne9087:0</target>
+        <note>Context: XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="9088" identifier="677ea12d1ac6817031969320e50e510f">
+        <source>If you memorise how to represent the numbers we can make with 5 cards, does
+that mean you understand how to represent any number with any number of bits?</source>
+        <target>crwdns9088:0crwdne9088:0</target>
+        <note>Context: XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="9089" identifier="09360b4754ac717acf3fd4880d84a049">
+        <source>It doesn’t, but you can understand how to do that if you understand the logic
+behind how these numbers with the 5 cards are made.</source>
+        <target>crwdns9089:0crwdne9089:0</target>
+        <note>Context: XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="9090" identifier="9310d092388af7bdf4e961de50103c5a">
+        <source>{panel end}</source>
+        <target>crwdns9090:0{panel end}crwdne9090:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="9091" identifier="18834977eea6b637077f14240006b26f">
+        <source>{panel type=&quot;ct-evaluation&quot; title=&quot;Evaluation&quot;}</source>
+        <target>crwdns9091:0crwdne9091:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="9092" identifier="39a924aad02886a0db32139e3d1b5dc5">
+        <source>An example of evaluation is working out how many different values can be
+represented by a given number of bits (e.g. 5 bits can represent 32 different
+values), and vice versa (to represent 1000 different values, you need at least
+10 bits).</source>
+        <target>crwdns9092:0crwdne9092:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="9093" identifier="127a98d13ea2273a464ad5925a0625d4">
+        <source>{panel end}</source>
+        <target>crwdns9093:0{panel end}crwdne9093:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[18]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

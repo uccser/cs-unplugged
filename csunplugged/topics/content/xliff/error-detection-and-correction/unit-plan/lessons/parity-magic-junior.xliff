@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1015" original="/csunplugged/topics/content/en/error-detection-and-correction/unit-plan/lessons/parity-magic-junior.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="11067" identifier="dfd3f4676bd66e49e9d71d811e934730">
+        <source>Parity magic for junior students</source>
+        <target>crwdns11067:0crwdne11067:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="11068" identifier="b0426755bb1a8f61c0799e08ebbebb56">
+        <source>{panel type=&quot;teaching&quot; title=&quot;See teaching this in action!&quot;}</source>
+        <target>crwdns11068:0crwdne11068:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="11069" identifier="39338fdeb67ed25847784c91230ea883">
+        <source>A demonstration of lesson one (&quot;Parity magic&quot;) being taught is available here:</source>
+        <target>crwdns11069:0crwdne11069:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="11070" identifier="4cd3b20557ca000c8667fc744ae7e4e6">
+        <source>{video url=&quot;https://www.youtube.com/embed/FnwBratAhfg&quot;}</source>
+        <target>crwdns11070:0crwdne11070:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="11071" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns11071:0{panel end}crwdne11071:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="11072" identifier="40cb246877fa6cb5ef5848142ae6449b">
+        <source>{panel type=&quot;general&quot; title=&quot;Notes on resources&quot;}</source>
+        <target>crwdns11072:0crwdne11072:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="11073" identifier="e9888aa4f5f41e25251e0acbb03c47cb">
+        <source>{image file-path=&quot;img/topics/parity-cards.png&quot; alt=&quot;A pile of square cards with black on one side and white on the other side.&quot;}</source>
+        <target>crwdns11073:0crwdne11073:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="11074" identifier="4cf038d379b72453455a74cbebfaac97">
+        <source>You will require:</source>
+        <target>crwdns11074:0crwdne11074:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="11075" identifier="0ac024cd696cb696de961c6508b9e68a">
+        <source>A set of 36 &quot;fridge magnet&quot; cards, all identical with a different colour on
+each side (e.g. black and white); or non-magnetic cards, in which case the
+demonstration should be done on a table-top or the floor.</source>
+        <target>crwdns11075:0crwdne11075:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="11076" identifier="e171888988a6bf049c2c2646fea80029">
+        <source>The magnetic ones would need to be magnetic both ways up; sheets of
+double-sided magnetic material can be purchased, but conventional fridge
+magnets usually won't stick upside down.</source>
+        <target>crwdns11076:0crwdne11076:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="11077" identifier="e45d109cf54e4b3f0a7673e763e9be38">
+        <source>Double sided magnetic cards can also be made by sticking single-sided
+magnetic sheet back to back.</source>
+        <target>crwdns11077:0crwdne11077:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="11078" identifier="3fb7832ac822733febaaa2e5a0b77d9f">
+        <source>Paper (non-magnetic) cards can be made by cutting up a sheet of light card
+that is a different colour on each side.</source>
+        <target>crwdns11078:0crwdne11078:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="11079" identifier="61a1544dddb272b3acbfafe6cc07a655">
+        <source>A metal board (ideally a whiteboard) if magnetic cards are being used.</source>
+        <target>crwdns11079:0crwdne11079:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="11080" identifier="0b3685fa782122b13d9b11a749e00d77">
+        <source>Each pair of children will need: a set of 36 (non-magnetic) cards as above.</source>
+        <target>crwdns11080:0crwdne11080:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="11081" identifier="2429dfa0fba4bec5d8253f3aae873a5b">
+        <source>There is also an
+&lt;a href=&quot;http://csfieldguide.org.nz/en/interactives/parity/index.html&quot;&gt;online interactive version of the parity cards here&lt;/a&gt;,
+from the Computer Science Field Guide.</source>
+        <target>crwdns11081:0crwdne11081:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="11082" identifier="95e2aef312d8003ea83532ea9651f31f">
+        <source>{panel end}</source>
+        <target>crwdns11082:0{panel end}crwdne11082:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="11083" identifier="f17e7b5da610295808d4668fae87df1b">
+        <source>Key questions</source>
+        <target>crwdns11083:0crwdne11083:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="11084" identifier="d17ae89841c77dba338fd4199c2de09a">
+        <source>Have you ever had a DVD not work properly?
+Or tried to scan a QR code and it didn’t load the website?</source>
+        <target>crwdns11084:0crwdne11084:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li</note>
+      </trans-unit>
+      <trans-unit id="11085" identifier="b389952d62f9a61b1aa2241218f4b501">
+        <source>How many of you think that computers correct these sorts of mistakes automatically?</source>
+        <target>crwdns11085:0crwdne11085:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li[2]</note>
+      </trans-unit>
+      <trans-unit id="11086" identifier="99b0f7b08a0fea55d9673bbf7f187851">
+        <source>Potential answers could include:</source>
+        <target>crwdns11086:0crwdne11086:0</target>
+        <note>Context: Headline 3&#13;
+XPath: /h3</note>
+      </trans-unit>
+      <trans-unit id="11087" identifier="1ff77ffc6bdded16b6e39d2fdf562ab4">
+        <source>Students may come up with situations where computers won't read a disc or scan a code, but they may also confuse this kind of problem with other kinds of failures such as an error in a program or a flat battery.</source>
+        <target>crwdns11087:0crwdne11087:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="11088" identifier="3fdc860b098f95370f461b4b7075ae22">
+        <source>{image file-path=&quot;img/topics/school-test-error.png&quot; alt=&quot;A school test shows every question marked correct but the overall score is 0%.&quot;}</source>
+        <target>crwdns11088:0crwdne11088:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="11089" identifier="cce7d7a3546b10c939bf4d1a862f4ee2">
+        <source>Adults use computers for important things like banking, writing school reports, and communicating with each other.</source>
+        <target>crwdns11089:0crwdne11089:0</target>
+        <note>Context: XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="11090" identifier="bbc138bd9e0ec049a6b0b09655b7bf79">
+        <source>If the information being stored got changed without anyone knowing, you'd get the wrong balance in your account (too much or too little), the wrong grade in your report, or the wrong message in an email.</source>
+        <target>crwdns11090:0crwdne11090:0</target>
+        <note>Context: XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="11091" identifier="2165ba1104175df0fe1d9f0d3a510886">
+        <source>Or worst still the website you are wanting to go to for your learning or the DVD you want to play won’t work!</source>
+        <target>crwdns11091:0crwdne11091:0</target>
+        <note>Context: XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="11092" identifier="f7b13712a6a987d1df7af0c94808ba38">
+        <source>This activity will look at how computers correct this automatically.</source>
+        <target>crwdns11092:0crwdne11092:0</target>
+        <note>Context: XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="11093" identifier="4460fd52c3ef567c91cd109657e20025">
+        <source>Lesson starter</source>
+        <target>crwdns11093:0crwdne11093:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="11094" identifier="c9d4a56e4775b784341f22a32f785806">
+        <source>Teacher to class: &quot;I’ve just learnt a magic trick I want to show you&quot;.</source>
+        <target>crwdns11094:0crwdne11094:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li/p</note>
+      </trans-unit>
+      <trans-unit id="11095" identifier="2c5fb1640b2e6c7969d8b5eb88693015">
+        <source>Teacher to class: &quot;So who will be my assistant?&quot;</source>
+        <target>crwdns11095:0crwdne11095:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="11096" identifier="4d103ae6b52204b945cfb69fd9e86164">
+        <source>Teacher to student: Hand the cards to the student and ask them to put up one row of 5 cards with some cards showing black and the other white.</source>
+        <target>crwdns11096:0crwdne11096:0</target>
+        <note>Context: XPath: /ol/li[3]/p</note>
+      </trans-unit>
+      <trans-unit id="11097" identifier="6c0b5e9214a503df93320f144fc2b573">
+        <source>Ask them to add another row, but making sure there isn’t a pattern between the 2 rows.</source>
+        <target>crwdns11097:0crwdne11097:0</target>
+        <note>Context: XPath: /ol/li[3]/p</note>
+      </trans-unit>
+      <trans-unit id="11098" identifier="a638e70bbfa42cdf0f4a4c509d65407c">
+        <source>Continue to do that until you have a grid of 5 x 5.</source>
+        <target>crwdns11098:0crwdne11098:0</target>
+        <note>Context: XPath: /ol/li[3]/p</note>
+      </trans-unit>
+      <trans-unit id="11099" identifier="6ea997bdd2d1b28bd6f3db251f7d49f1">
+        <source>This is an opportunity to count all the cards, skip count in fives to 25, or to double check there really isn’t any patterns happening.</source>
+        <target>crwdns11099:0crwdne11099:0</target>
+        <note>Context: XPath: /ol/li[3]/p</note>
+      </trans-unit>
+      <trans-unit id="11100" identifier="01920ab7ff36a05920ccd77246115f8c">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns11100:0crwdne11100:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="11101" identifier="ed3e5f94bb5207ddb820c4ece1c6d599">
+        <source>For teachers: The cards represent bits (binary digits).</source>
+        <target>crwdns11101:0crwdne11101:0</target>
+        <note>Context: XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="11102" identifier="756442ec1df7a9e0d77978db78435aec">
+        <source>If they haven't studied binary numbers, you may need to just point out that this is the way everything is represented on computers - the cards here could represent a file, a message, a web page or even a program.</source>
+        <target>crwdns11102:0crwdne11102:0</target>
+        <note>Context: XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="11103" identifier="9310d092388af7bdf4e961de50103c5a">
+        <source>{panel end}</source>
+        <target>crwdns11103:0{panel end}crwdne11103:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="11104" identifier="3fdc15a3a4ee5f432bbf65490cfb5e4e">
+        <source>Teacher to class: “I’m going to make this a little bit harder by adding another row and another column”.</source>
+        <target>crwdns11104:0crwdne11104:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol[2]/li</note>
+      </trans-unit>
+      <trans-unit id="11105" identifier="791041f240926847efae717816ecac3c">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns11105:0crwdne11105:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="11106" identifier="5c6da2e662a1512312aab66127380c70">
+        <source>Of course, you are doing this on purpose because what you want to do is make sure that the number of black sides showing in each row and column is an even number.</source>
+        <target>crwdns11106:0crwdne11106:0</target>
+        <note>Context: XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="11107" identifier="60868fd3df5d1459be1938458f242e7e">
+        <source>This is always possible; if the student put an odd number of black cards in a row, you add another black card to the row; if they put an even number in the row, add a white card, to keep it as an even number.</source>
+        <target>crwdns11107:0crwdne11107:0</target>
+        <note>Context: XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="11108" identifier="57443f932a0db2241f2d34ee7e4d82d3">
+        <source>Remember that zero is an even number.</source>
+        <target>crwdns11108:0crwdne11108:0</target>
+        <note>Context: XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="11109" identifier="a290653beafb8bd059630a6b06799657">
+        <source>The extra cards are called &quot;parity bits&quot; (or parity cards), but there's no need to introduce the terminology yet, since that reveals the &quot;magic&quot;; for the meantime the idea is for the class to think that you are just adding even more random cards to make the task harder.</source>
+        <target>crwdns11109:0crwdne11109:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="11110" identifier="f5e99f120f1809b3e4388f73936c23f7">
+        <source>You should practise this several times before doing it in front of the class, as it becomes a lot easier to make it look casual when you've done it before, and makes the trick more mysterious.</source>
+        <target>crwdns11110:0crwdne11110:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="11111" identifier="231094646c5390181a567fae1c089681">
+        <source>{panel end}</source>
+        <target>crwdns11111:0{panel end}crwdne11111:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="11112" identifier="e3668daf0f788be71dfc88057e267b33">
+        <source>{image file-path=&quot;img/topics/parity-cards-6x6-grid-step-1.png&quot; alt=&quot;5 rows of 5 parity cards in a random arrangement.&quot; caption=&quot;Step 1: Example layout of a 5x5 grid set up by the volunteer.&quot;}</source>
+        <target>crwdns11112:0crwdne11112:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="11113" identifier="24a2c84ace4ea93a6f25975ac6a10bfd">
+        <source>Step by step adding a parity bit to each row and column</source>
+        <target>crwdns11113:0crwdne11113:0</target>
+        <note>Context: Headline 3&#13;
+XPath: /h3[2]</note>
+      </trans-unit>
+      <trans-unit id="11114" identifier="8f0eaacca0d643c51181002b1308551d">
+        <source>{image file-path=&quot;img/topics/parity-cards-6x6-grid-step-2.png&quot; alt=&quot;Progress image of adding parity bits.&quot; caption=&quot;Step 2: Adding parity bit for the first row.&quot;}</source>
+        <target>crwdns11114:0crwdne11114:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="11115" identifier="6959b4e859692cded43f6a40ff8c5343">
+        <source>{image file-path=&quot;img/topics/parity-cards-6x6-grid-step-3.png&quot; alt=&quot;Progress image of adding parity bits.&quot; caption=&quot;Step 3: Adding parity bit for the second row.&quot;}</source>
+        <target>crwdns11115:0crwdne11115:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="11116" identifier="ea285df18c836cbd675a3359c6b79510">
+        <source>{image file-path=&quot;img/topics/parity-cards-6x6-grid-step-4.png&quot; alt=&quot;Progress image of adding parity bits.&quot; caption=&quot;Step 4: Adding parity bit for the third row.&quot;}</source>
+        <target>crwdns11116:0crwdne11116:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="11117" identifier="a0e14f39434180bdc339bb1c9350cf46">
+        <source>{image file-path=&quot;img/topics/parity-cards-6x6-grid-step-5.png&quot; alt=&quot;Progress image of adding parity bits.&quot; caption=&quot;Step 5: Adding parity bit for the fourth row.&quot;}</source>
+        <target>crwdns11117:0crwdne11117:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[25]</note>
+      </trans-unit>
+      <trans-unit id="11118" identifier="6476e016fd25da57e840ab207d870a3c">
+        <source>{image file-path=&quot;img/topics/parity-cards-6x6-grid-step-6.png&quot; alt=&quot;Progress image of adding parity bits.&quot; caption=&quot;Step 6: Adding parity bit for the fifth row.&quot;}</source>
+        <target>crwdns11118:0crwdne11118:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[26]</note>
+      </trans-unit>
+      <trans-unit id="11119" identifier="1c09bd929c3d16aa003a4e85e6bf0303">
+        <source>{image file-path=&quot;img/topics/parity-cards-6x6-grid-step-7.png&quot; alt=&quot;Progress image of adding parity bits.&quot; caption=&quot;Step 7: Adding parity bit for the first column.&quot;}</source>
+        <target>crwdns11119:0crwdne11119:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[27]</note>
+      </trans-unit>
+      <trans-unit id="11120" identifier="b9ee691f26519eb9ebde2fa7c6725d18">
+        <source>{image file-path=&quot;img/topics/parity-cards-6x6-grid-step-8.png&quot; alt=&quot;Progress image of adding parity bits.&quot; caption=&quot;Step 8: Adding parity bit for the second column.&quot;}</source>
+        <target>crwdns11120:0crwdne11120:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[28]</note>
+      </trans-unit>
+      <trans-unit id="11121" identifier="50b07ebec4fb30659aa1cc23aae31cf2">
+        <source>{image file-path=&quot;img/topics/parity-cards-6x6-grid-step-9.png&quot; alt=&quot;Progress image of adding parity bits.&quot; caption=&quot;Step 9: Adding parity bit for the third column.&quot;}</source>
+        <target>crwdns11121:0crwdne11121:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[29]</note>
+      </trans-unit>
+      <trans-unit id="11122" identifier="467a16a3c37f56cfcb75e451455698dd">
+        <source>{image file-path=&quot;img/topics/parity-cards-6x6-grid-step-10.png&quot; alt=&quot;Progress image of adding parity bits.&quot; caption=&quot;Step 10: Adding parity bit for the fourth column.&quot;}</source>
+        <target>crwdns11122:0crwdne11122:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[30]</note>
+      </trans-unit>
+      <trans-unit id="11123" identifier="3bcd480afde1d2806ea6bce3c63f0320">
+        <source>{image file-path=&quot;img/topics/parity-cards-6x6-grid-step-11.png&quot; alt=&quot;Progress image of adding parity bits.&quot; caption=&quot;Step 11: Adding parity bit for the fifth column.&quot;}</source>
+        <target>crwdns11123:0crwdne11123:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[31]</note>
+      </trans-unit>
+      <trans-unit id="11124" identifier="cf25040565e170f3919f6993d03a1a02">
+        <source>{image file-path=&quot;img/topics/parity-cards-6x6-grid-step-12.png&quot; alt=&quot;Progress image of adding parity bits.&quot; caption=&quot;Step 12: Adding parity bit for the sixth column.&quot;}</source>
+        <target>crwdns11124:0crwdne11124:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[32]</note>
+      </trans-unit>
+      <trans-unit id="11125" identifier="5e473efc6328e0df7f4191fb8f3129d1">
+        <source>The last parity bit placed is useful because it will always work for both the column and row;
+if it doesn't match for both the row and column then you'll have made a mistake with one of the cards, and should go back and check them (try to not make it obvious that you're doing that).</source>
+        <target>crwdns11125:0crwdne11125:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[33]</note>
+      </trans-unit>
+      <trans-unit id="11126" identifier="ac29e3302e9912d3da3fdadeeaf8e5d8">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns11126:0crwdne11126:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[34]</note>
+      </trans-unit>
+      <trans-unit id="11127" identifier="aa633c06d096c5470f3d7b9afe8bc830">
+        <source>Now you have added parity cards to make the number of black squares in every row and every column equal to an even number.
+Don't point this out to the students at this stage.</source>
+        <target>crwdns11127:0crwdne11127:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[35]</note>
+      </trans-unit>
+      <trans-unit id="11128" identifier="db23b2a4bb407a3ad6cb9043dcb1cfd1">
+        <source>{panel end}</source>
+        <target>crwdns11128:0{panel end}crwdne11128:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[36]</note>
+      </trans-unit>
+      <trans-unit id="11129" identifier="ea08f2f76d1ef4a9f87b3ba4c0221b4a">
+        <source>Lesson activities</source>
+        <target>crwdns11129:0crwdne11129:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[3]</note>
+      </trans-unit>
+      <trans-unit id="11130" identifier="a48c859e06a354efcdd473f2ed3407a1">
+        <source>Teacher to student: &quot;I'd like you flip over one card while I cover my eyes&quot;.</source>
+        <target>crwdns11130:0crwdne11130:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[37]</note>
+      </trans-unit>
+      <trans-unit id="11131" identifier="2babab2025d02942779db6ec62ce6382">
+        <source>Teacher to class: &quot;Keep a close eye on which card it is to check if I have done my magic trick correctly!&quot;</source>
+        <target>crwdns11131:0crwdne11131:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[38]</note>
+      </trans-unit>
+      <trans-unit id="11132" identifier="8cf2c85a34aeca6366653a2038852ac9">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns11132:0crwdne11132:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[39]</note>
+      </trans-unit>
+      <trans-unit id="11133" identifier="e743357848a964649e90c8b28782ac5a">
+        <source>You need to emphasise that you want just one card flipped over.</source>
+        <target>crwdns11133:0crwdne11133:0</target>
+        <note>Context: XPath: /p[40]</note>
+      </trans-unit>
+      <trans-unit id="11134" identifier="f792b5059e73dc639917ead8cfa1371c">
+        <source>This prevents them from turning over too many cards (or none!).</source>
+        <target>crwdns11134:0crwdne11134:0</target>
+        <note>Context: XPath: /p[40]</note>
+      </trans-unit>
+      <trans-unit id="11135" identifier="0c8d866e12bbc75d9825367888f19661">
+        <source>Usually students will follow this instruction, and their classmates will be able to confirm to you that, or let you know if one hasn't been turned over yet.</source>
+        <target>crwdns11135:0crwdne11135:0</target>
+        <note>Context: XPath: /p[40]</note>
+      </trans-unit>
+      <trans-unit id="11136" identifier="5da2b7782a8a36ff79379114a236578c">
+        <source>{panel end}</source>
+        <target>crwdns11136:0{panel end}crwdne11136:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[41]</note>
+      </trans-unit>
+      <trans-unit id="11137" identifier="528d63e1c08697fed2e768dfe0f43630">
+        <source>After the class confirms that a single card has been flipped, turn around to look at the cards.</source>
+        <target>crwdns11137:0crwdne11137:0</target>
+        <note>Context: XPath: /p[42]</note>
+      </trans-unit>
+      <trans-unit id="11138" identifier="18d69de551c3663cac6b43abd5e7a053">
+        <source>Scan the cards looking for the row with an odd number of black squares, and the column that has an odd number of black squares.</source>
+        <target>crwdns11138:0crwdne11138:0</target>
+        <note>Context: XPath: /p[42]</note>
+      </trans-unit>
+      <trans-unit id="11139" identifier="0869dc56ba4e93756cc48d78344c1154">
+        <source>The card that has been flipped will be at the intersection of these two lines.</source>
+        <target>crwdns11139:0crwdne11139:0</target>
+        <note>Context: XPath: /p[42]</note>
+      </trans-unit>
+      <trans-unit id="11140" identifier="6653dc343a1a06f439cc6dab0d3a7ced">
+        <source>Turn this card over casually to restore it to the correct colour, saying “it’s this one”.</source>
+        <target>crwdns11140:0crwdne11140:0</target>
+        <note>Context: XPath: /p[42]</note>
+      </trans-unit>
+      <trans-unit id="11141" identifier="c3a604d877040a6556cea8f0881c4f67">
+        <source>You can make a fuss that it might have been a fluke, so repeat the trick again.
+(After you put the card back to how it was originally, look away again and ask for another card to be flipped over.)</source>
+        <target>crwdns11141:0crwdne11141:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[43]</note>
+      </trans-unit>
+      <trans-unit id="11142" identifier="20b4a9a644f13afcbc5bdf84faaf1f9a">
+        <source>{image file-path=&quot;img/topics/parity-wizard.png&quot; alt=&quot;A wizard holding a magic one with parity cards on it.&quot;}</source>
+        <target>crwdns11142:0crwdne11142:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[44]</note>
+      </trans-unit>
+      <trans-unit id="11143" identifier="811921fd0006478bbdbeb5732c07d070">
+        <source>So is it magic? Or is it a trick?</source>
+        <target>crwdns11143:0crwdne11143:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[45]</note>
+      </trans-unit>
+      <trans-unit id="11144" identifier="76d062ad6de73423e4245e165510516b">
+        <source>Teacher to class: &quot;Let’s first look at the cards before one was turned over&quot; (make sure you've restored the card that was just flipped).</source>
+        <target>crwdns11144:0crwdne11144:0</target>
+        <note>Context: XPath: /p[46]</note>
+      </trans-unit>
+      <trans-unit id="11145" identifier="81f68635acb17db4770ae4a466f9fc79">
+        <source>The following steps will help the students to uncover what you've done:</source>
+        <target>crwdns11145:0crwdne11145:0</target>
+        <note>Context: XPath: /p[46]</note>
+      </trans-unit>
+      <trans-unit id="11146" identifier="64c8616cc578ee50b72e1972df8b72c6">
+        <source>&quot;Are there any patterns you can see? Think, pair, share.&quot;</source>
+        <target>crwdns11146:0crwdne11146:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[3]/li</note>
+      </trans-unit>
+      <trans-unit id="11147" identifier="62c12a065aecc24fa89dff64752015ab">
+        <source>&quot;Let’s break it down into parts&quot;</source>
+        <target>crwdns11147:0crwdne11147:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[3]/li[2]</note>
+      </trans-unit>
+      <trans-unit id="11148" identifier="36a0893b2eda3707d90680adfdeb6ab3">
+        <source>&quot;Let’s look at the first row - count the black squares - how many are there?&quot; (4 in the example above)</source>
+        <target>crwdns11148:0crwdne11148:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[3]/li[3]</note>
+      </trans-unit>
+      <trans-unit id="11149" identifier="60ca57a65db8f05611be74f0cb764375">
+        <source>&quot;Now the second row - count the black squares - how many are there?&quot; 2</source>
+        <target>crwdns11149:0crwdne11149:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[3]/li[4]</note>
+      </trans-unit>
+      <trans-unit id="11150" identifier="d62cf34db4fd810f941fd5a2ecdc9499">
+        <source>Note that it could be a row of all white squares - which would be 0 black squares; or it could be a row of all black squares - 6</source>
+        <target>crwdns11150:0crwdne11150:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[3]/li[5]</note>
+      </trans-unit>
+      <trans-unit id="11151" identifier="86833066d5ff5fd6b25a746c9d7ba8ba">
+        <source>Teacher to class: “If we group these numbers together, 0, 2, 4, 6, what do we call this group?
+Even numbers.
+What about 1, 3, 5?
+What is the name for this group of numbers?
+Odd numbers.</source>
+        <target>crwdns11151:0crwdne11151:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[47]</note>
+      </trans-unit>
+      <trans-unit id="11152" identifier="9a4306c7d42b4e40042347e079e90a78">
+        <source>Let’s now look at the columns:</source>
+        <target>crwdns11152:0crwdne11152:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[48]</note>
+      </trans-unit>
+      <trans-unit id="11153" identifier="112e02addcff01d35b44303725284833">
+        <source>&quot;Does the first column have the same rule as the rows?&quot;.</source>
+        <target>crwdns11153:0crwdne11153:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[4]/li</note>
+      </trans-unit>
+      <trans-unit id="11154" identifier="d47fccc32e1f669e92d84abb37863a4c">
+        <source>&quot;What about the other columns?&quot;.</source>
+        <target>crwdns11154:0crwdne11154:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[4]/li[2]</note>
+      </trans-unit>
+      <trans-unit id="11155" identifier="2d70766c439a1e5370d6990646b48902">
+        <source>Teacher to class: “So how did we end up with an even number in every row and column - did the volunteer choose that?” (they didn't!).</source>
+        <target>crwdns11155:0crwdne11155:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[49]</note>
+      </trans-unit>
+      <trans-unit id="11156" identifier="88d330ee03066335baf68fe0497d198e">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns11156:0crwdne11156:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[50]</note>
+      </trans-unit>
+      <trans-unit id="11157" identifier="64af2eec769792e57351904f2bd4a4f8">
+        <source>Break these steps down to what is appropriate for your groups numeracy knowledge.</source>
+        <target>crwdns11157:0crwdne11157:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[51]</note>
+      </trans-unit>
+      <trans-unit id="11158" identifier="87be98beaeacdbb19d6e36a85ae885b7">
+        <source>{panel end}</source>
+        <target>crwdns11158:0{panel end}crwdne11158:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[52]</note>
+      </trans-unit>
+      <trans-unit id="11159" identifier="e7c7af95254e8636340189a144ca5e3b">
+        <source>Remove your extra row and column, and have them explain what colour to place at the end of the first row to make sure there is an even number of black cards.</source>
+        <target>crwdns11159:0crwdne11159:0</target>
+        <note>Context: XPath: /p[53]</note>
+      </trans-unit>
+      <trans-unit id="11160" identifier="e80b4cf7a88f9cad5eb78c82bad1bca3">
+        <source>For example, if there are 3 black cards, ask what colour you need to add to make it into an even number (black)?</source>
+        <target>crwdns11160:0crwdne11160:0</target>
+        <note>Context: XPath: /p[53]</note>
+      </trans-unit>
+      <trans-unit id="11161" identifier="ef54c480b066f7d652bd678239a9d5d5">
+        <source>If there are 4 black cards, they should work out that you need a white card to keep it even.</source>
+        <target>crwdns11161:0crwdne11161:0</target>
+        <note>Context: XPath: /p[53]</note>
+      </trans-unit>
+      <trans-unit id="11162" identifier="fdef34a55727a1c467d6c78afb4a5745">
+        <source>Continue doing this for each row; then do it for the columns.</source>
+        <target>crwdns11162:0crwdne11162:0</target>
+        <note>Context: XPath: /p[54]</note>
+      </trans-unit>
+      <trans-unit id="11163" identifier="5783f976ff57dbbb5fc3c1f30647abc9">
+        <source>This is a good exercise for students thinking about even and odd numbers.</source>
+        <target>crwdns11163:0crwdne11163:0</target>
+        <note>Context: XPath: /p[54]</note>
+      </trans-unit>
+      <trans-unit id="11164" identifier="ad80d8a1e4c160af3ed929ae235db4d2">
+        <source>For the last (corner) card, ask if you should use the row or column to decide it.</source>
+        <target>crwdns11164:0crwdne11164:0</target>
+        <note>Context: XPath: /p[54]</note>
+      </trans-unit>
+      <trans-unit id="11165" identifier="d7e884e9337f094da25280c59c76cb12">
+        <source>They should observe that it's the same for both.</source>
+        <target>crwdns11165:0crwdne11165:0</target>
+        <note>Context: XPath: /p[54]</note>
+      </trans-unit>
+      <trans-unit id="11166" identifier="8195489d5cfa2293178233ced2ceec43">
+        <source>Once the extra row and column have been added, ask “So what happens when I turn a card over from black to white?” (It reduces the number of black cards by one, so it's now an odd number).</source>
+        <target>crwdns11166:0crwdne11166:0</target>
+        <note>Context: XPath: /p[55]</note>
+      </trans-unit>
+      <trans-unit id="11167" identifier="5ab93a62c9e748be9297d47a5a62f4e5">
+        <source>&quot;What if I change a white card to black?&quot; (it adds one, which also gives an odd number).</source>
+        <target>crwdns11167:0crwdne11167:0</target>
+        <note>Context: XPath: /p[55]</note>
+      </trans-unit>
+      <trans-unit id="11168" identifier="3e82f00056094813a17ac1a8b29affe5">
+        <source>The students might work out from this how to find the flipped card, but in either case, have a student come up, and ask them to look away while you flip a card.</source>
+        <target>crwdns11168:0crwdne11168:0</target>
+        <note>Context: XPath: /p[56]</note>
+      </trans-unit>
+      <trans-unit id="11169" identifier="bdc9738955c9b148519bc417775c681b">
+        <source>Then, when they look back, ask &quot;Is the first row ok?&quot; (They should notice that it's still even, so hasn't been changed).</source>
+        <target>crwdns11169:0crwdne11169:0</target>
+        <note>Context: XPath: /p[56]</note>
+      </trans-unit>
+      <trans-unit id="11170" identifier="cb3604eedeeff1364078e806686aeb01">
+        <source>Carry on for each row until they identify the one with an odd number of black cards.</source>
+        <target>crwdns11170:0crwdne11170:0</target>
+        <note>Context: XPath: /p[56]</note>
+      </trans-unit>
+      <trans-unit id="11171" identifier="2c13bf6d68d5640eecf9bb678ef3230f">
+        <source>Draw a box around that row, and say &quot;So one of these cards was flipped?&quot;
+Now do the same with the columns - ask if each one is correct, then draw around the column that they identify.</source>
+        <target>crwdns11171:0crwdne11171:0</target>
+        <note>Context: XPath: /p[56]</note>
+      </trans-unit>
+      <trans-unit id="11172" identifier="899d1edb48084aac50553473d499c298">
+        <source>Now ask &quot;So which card was flipped?&quot; Usually students will identify the one at the intersection.</source>
+        <target>crwdns11172:0crwdne11172:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[57]</note>
+      </trans-unit>
+      <trans-unit id="11173" identifier="aa3d5fb1c37384e7cffec3ee1545d8fc">
+        <source>{panel type=&quot;teaching&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns11173:0crwdne11173:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[58]</note>
+      </trans-unit>
+      <trans-unit id="11174" identifier="170cd93b22bbd912283035722641c4e6">
+        <source>Students have now worked out for themselves how this works.
+The key idea is that we just added a little more data, but could reconstruct the original if one card was changed.</source>
+        <target>crwdns11174:0crwdne11174:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[59]</note>
+      </trans-unit>
+      <trans-unit id="11175" identifier="5b1b66dde85cd99677d4e459730556a3">
+        <source>{panel end}</source>
+        <target>crwdns11175:0{panel end}crwdne11175:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[60]</note>
+      </trans-unit>
+      <trans-unit id="11176" identifier="20400ae131b745536b72b5558d86ffec">
+        <source>{panel type=&quot;math&quot; title=&quot;Mathematical links&quot;}</source>
+        <target>crwdns11176:0crwdne11176:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[61]</note>
+      </trans-unit>
+      <trans-unit id="11177" identifier="82b7e4e8a05d064b818258262bbcbe6f">
+        <source>It also exercises the idea of grids (you can use phrases like &quot;5 by 5&quot;) and the language of columns and rows.</source>
+        <target>crwdns11177:0crwdne11177:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[62]</note>
+      </trans-unit>
+      <trans-unit id="11178" identifier="02ba9cf0718349a4e5923e19a78ec919">
+        <source>For junior students there are a lot of opportunities to practise counting to 5 and recognising the patterns of even and odd numbers.</source>
+        <target>crwdns11178:0crwdne11178:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[63]</note>
+      </trans-unit>
+      <trans-unit id="11179" identifier="653de8c738fe1662cb2a391ce582df0b">
+        <source>{panel end}</source>
+        <target>crwdns11179:0{panel end}crwdne11179:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[64]</note>
+      </trans-unit>
+      <trans-unit id="11180" identifier="93f7f710b96d25060d8fc0fdd8426091">
+        <source>Applying what we have just learnt</source>
+        <target>crwdns11180:0crwdne11180:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[4]</note>
+      </trans-unit>
+      <trans-unit id="11181" identifier="d012b220edf914463007eea33571f855">
+        <source>This kind of method is applied to almost all data that is stored or transmitted on computers (although usually a more sophisticated method is used that is even more reliable).</source>
+        <target>crwdns11181:0crwdne11181:0</target>
+        <note>Context: XPath: /ul[5]/li</note>
+      </trans-unit>
+      <trans-unit id="11182" identifier="dde76d718c706e260b544950a8c613f6">
+        <source>If we didn’t have error detection and correction then unexpected errors in data would be common, and digital devices wouldn't be used to store anything important.</source>
+        <target>crwdns11182:0crwdne11182:0</target>
+        <note>Context: XPath: /ul[5]/li</note>
+      </trans-unit>
+      <trans-unit id="11183" identifier="fcf882eef821d2fb947f3ed993a969cf">
+        <source>The world would be in chaos and people wouldn’t trust computers.</source>
+        <target>crwdns11183:0crwdne11183:0</target>
+        <note>Context: XPath: /ul[5]/li</note>
+      </trans-unit>
+      <trans-unit id="11184" identifier="3ec6eab150e59ce53ae63e7cc574731f">
+        <source>Computers wouldn’t be reliable.</source>
+        <target>crwdns11184:0crwdne11184:0</target>
+        <note>Context: XPath: /ul[5]/li</note>
+      </trans-unit>
+      <trans-unit id="11185" identifier="5311c0a11d8a89cf34e606aa8efb59d7">
+        <source>DVDs and CDs wouldn’t work if one fleck of dust was on the disc.</source>
+        <target>crwdns11185:0crwdne11185:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[5]/li[2]</note>
+      </trans-unit>
+      <trans-unit id="11186" identifier="019b79b12ffdc15ed146bdf0e8dad207">
+        <source>Backing up wouldn't help much as this would also be unreliable too.</source>
+        <target>crwdns11186:0crwdne11186:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[5]/li[3]</note>
+      </trans-unit>
+      <trans-unit id="11187" identifier="3fb6b225c7fcf852c74dfa78944da35b">
+        <source>Transmitting data over long distances (e.g. from space probes) would be particularly unreliable, since it can take minutes, or even days, for data to arrive, and it's not feasible to request it to be retransmitted if it has had interference.</source>
+        <target>crwdns11187:0crwdne11187:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[5]/li[4]</note>
+      </trans-unit>
+      <trans-unit id="11188" identifier="5130654c0e861f29672a02e1d1360b7f">
+        <source>Lesson reflection</source>
+        <target>crwdns11188:0crwdne11188:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[5]</note>
+      </trans-unit>
+      <trans-unit id="11189" identifier="7ac4119d5113e8d1d47058b67cae1fa0">
+        <source>If each square was a piece of information sent to the computer and there wasn’t any parity data added to it, could the information be received correctly from one computer to another if one of the pieces of data is changed?</source>
+        <target>crwdns11189:0crwdne11189:0</target>
+        <note>Context: XPath: /p[65]</note>
+      </trans-unit>
+      <trans-unit id="11190" identifier="a10b261ebad875ce9b3f1f2dce1c04f0">
+        <source>It can’t because if just one piece of information is incorrect then you have no way of knowing.</source>
+        <target>crwdns11190:0crwdne11190:0</target>
+        <note>Context: XPath: /p[65]</note>
+      </trans-unit>
+      <trans-unit id="11191" identifier="037b146985157d79e1e21ce7f0c43b77">
+        <source>But when we add the parity data to the information, even if one small piece of information is incorrect (turned off instead of on) then the computer can correct the information and can read it properly.</source>
+        <target>crwdns11191:0crwdne11191:0</target>
+        <note>Context: XPath: /p[65]</note>
+      </trans-unit>
+      <trans-unit id="11192" identifier="612e302823043220d34b9c985a047e6d">
+        <source>You could try using other objects.</source>
+        <target>crwdns11192:0crwdne11192:0</target>
+        <note>Context: XPath: /p[66]</note>
+      </trans-unit>
+      <trans-unit id="11193" identifier="5800b0269f84ca18da05a93aa15e98d2">
+        <source>Anything that has two easily distinguished ‘states’ is suitable.</source>
+        <target>crwdns11193:0crwdne11193:0</target>
+        <note>Context: XPath: /p[66]</note>
+      </trans-unit>
+      <trans-unit id="11194" identifier="4f9c2f489682455b22e3eebda79c9460">
+        <source>For example, you could use playing cards, coins (heads or tails) or counters with two different colours on each side.</source>
+        <target>crwdns11194:0crwdne11194:0</target>
+        <note>Context: XPath: /p[66]</note>
+      </trans-unit>
+      <trans-unit id="11195" identifier="99489a1118cca59df0f1f0d22eda7cab">
+        <source>What happens if two, or more, cards are flipped?</source>
+        <target>crwdns11195:0crwdne11195:0</target>
+        <note>Context: XPath: /p[67]</note>
+      </trans-unit>
+      <trans-unit id="11196" identifier="3e7f6a32fb6282b47514bc152179e2c8">
+        <source>(It is not possible to detect exactly which two cards were flipped, although it is possible to tell that something has been changed.</source>
+        <target>crwdns11196:0crwdne11196:0</target>
+        <note>Context: XPath: /p[67]</note>
+      </trans-unit>
+      <trans-unit id="11197" identifier="0c4c5e5c93e6122b9b690cb22a4a0b10">
+        <source>You can usually narrow it down to one of two pairs of cards.</source>
+        <target>crwdns11197:0crwdne11197:0</target>
+        <note>Context: XPath: /p[67]</note>
+      </trans-unit>
+      <trans-unit id="11198" identifier="a9f8bad49af9a6145d003769275bb85c">
+        <source>With 4 flips it is possible that all the parity bits will be correct afterwards, and so the error could go undetected.)</source>
+        <target>crwdns11198:0crwdne11198:0</target>
+        <note>Context: XPath: /p[67]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

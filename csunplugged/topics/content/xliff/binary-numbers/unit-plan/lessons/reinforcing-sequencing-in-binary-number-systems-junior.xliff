@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="879" original="/csunplugged/topics/content/en/binary-numbers/unit-plan/lessons/reinforcing-sequencing-in-binary-number-systems-junior.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="9938" identifier="8c11f836f6f68ef8c9af5ec23678a987">
+        <source>Reinforcing sequencing in binary number systems</source>
+        <target>crwdns9938:0crwdne9938:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="9939" identifier="18b8b1a4b0223621f587c4e8991fd86b">
+        <source>Key question</source>
+        <target>crwdns9939:0crwdne9939:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="9940" identifier="e9f01658d3f88a11c34583f2f6e45acd">
+        <source>How can you create a play to teach someone how binary works, without using the binary cards?</source>
+        <target>crwdns9940:0crwdne9940:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="9941" identifier="4460fd52c3ef567c91cd109657e20025">
+        <source>Lesson starter</source>
+        <target>crwdns9941:0crwdne9941:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="9942" identifier="452c3bccc110436f288943d81755dd92">
+        <source>{panel type=&quot;general&quot; title=&quot;Notes on resources&quot;}</source>
+        <target>crwdns9942:0crwdne9942:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="9943" identifier="b2ad1804e5995f41da3f44bbce15b502">
+        <source>The classroom resources we suggested are highly motivating, however please use any resources you have available in your classroom that have two different states, sounds or sizes.</source>
+        <target>crwdns9943:0crwdne9943:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="9944" identifier="3a1ae082a90b504339024ac691a2b919">
+        <source>{panel end}</source>
+        <target>crwdns9944:0{panel end}crwdne9944:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="9945" identifier="17efd0c64edba42e98da2752ad9f9eac">
+        <source>Computers use on and off to know how to display information or data.
+We can use anything we like that is opposite to each other.</source>
+        <target>crwdns9945:0crwdne9945:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="9946" identifier="36e209e76e22ae52baa948464eeeeb22">
+        <source>Today we will look at what opposites are and how we can count using these.
+If I said “happy face” what would be the opposite?</source>
+        <target>crwdns9946:0crwdne9946:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="9947" identifier="a6ac218d1c6a3ffd130fed0f6f2af7b4">
+        <source>What about a cat?</source>
+        <target>crwdns9947:0crwdne9947:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="9948" identifier="40daf4a78ceffce5ff33a4eeedc1b716">
+        <source>Introduce hats - hat on or hat off - or paper plates - one side on and one side off - and demonstrate how you would make the number 1, then 2, then 3.</source>
+        <target>crwdns9948:0crwdne9948:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="9949" identifier="b33c67378f8d94fc796ed153bc621cb6">
+        <source>Your play must include a demonstration of one of the following:</source>
+        <target>crwdns9949:0crwdne9949:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="9950" identifier="5ae8a71ad8382d57d44ff27b81bb730a">
+        <source>How to count from 0 to 10 or more using binary dots.</source>
+        <target>crwdns9950:0crwdne9950:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li</note>
+      </trans-unit>
+      <trans-unit id="9951" identifier="a33697a532d348361d6da253066111e8">
+        <source>How you would work out the number 5.</source>
+        <target>crwdns9951:0crwdne9951:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li[2]</note>
+      </trans-unit>
+      <trans-unit id="9952" identifier="ea08f2f76d1ef4a9f87b3ba4c0221b4a">
+        <source>Lesson activities</source>
+        <target>crwdns9952:0crwdne9952:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[3]</note>
+      </trans-unit>
+      <trans-unit id="9953" identifier="0b7870b2c1b4a80fa0e4eea56307ab0d">
+        <source>Brainstorm together items you could use to make the numbers.
+It should be different to how it has been demonstrated to the class, so they are not allowed to use cards with dots on them.</source>
+        <target>crwdns9953:0crwdne9953:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="9954" identifier="63c3d1dcee6b059559c332cfca7e4856">
+        <source>In groups of 4 have students decide how they will show ON and OFF.</source>
+        <target>crwdns9954:0crwdne9954:0</target>
+        <note>Context: XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="9955" identifier="0f61ffe6b1d3d3cf0f4dcf8043894d24">
+        <source>They need to choose which bit they are going to be.</source>
+        <target>crwdns9955:0crwdne9955:0</target>
+        <note>Context: XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="9956" identifier="d0cb69de9cf317a1a5a532612f71f019">
+        <source>(It may help to give them each their own bit card so they remember their number).</source>
+        <target>crwdns9956:0crwdne9956:0</target>
+        <note>Context: XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="9957" identifier="aa90f969e427cff70a3332bf5e2bf4c1">
+        <source>As well as physical representations like hats, it could be using words (e.g. saying &quot;yes and no&quot;), or musical sounds (high and low, long and short, loud and soft), or light.</source>
+        <target>crwdns9957:0crwdne9957:0</target>
+        <note>Context: XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="9958" identifier="98bb275e4f24a9a3149bac3e8694b9b9">
+        <source>8, 4, 2, 1</source>
+        <target>crwdns9958:0crwdne9958:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="9959" identifier="23a28e994bfe757544ea6a606ab328c2">
+        <source>Have a chance to practise counting in their group from 1 to 8.</source>
+        <target>crwdns9959:0crwdne9959:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="9960" identifier="0cb2d57fd4b85cc83b3024b7553ed67a">
+        <source>Once they have done that they change roles to they experience what it's like being each of the different bits:</source>
+        <target>crwdns9960:0crwdne9960:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="9961" identifier="f2133af1afefebae4a52d30421459d06">
+        <source>The person with 8 takes on the job of 1</source>
+        <target>crwdns9961:0crwdne9961:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[3]/li</note>
+      </trans-unit>
+      <trans-unit id="9962" identifier="a81a21fd16de9ff8a5e1b0898ca163b3">
+        <source>4 becomes 8</source>
+        <target>crwdns9962:0crwdne9962:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[3]/li[2]</note>
+      </trans-unit>
+      <trans-unit id="9963" identifier="46142e95317f8a704af9745cc0bd21d0">
+        <source>2 becomes 4</source>
+        <target>crwdns9963:0crwdne9963:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[3]/li[3]</note>
+      </trans-unit>
+      <trans-unit id="9964" identifier="d8453ba04b33fc020cb1c79d0db51451">
+        <source>1 becomes 2</source>
+        <target>crwdns9964:0crwdne9964:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[3]/li[4]</note>
+      </trans-unit>
+      <trans-unit id="9965" identifier="8290143fb3ccb4b886e1b42267da55d1">
+        <source>When they are ready ask each group to make the number (choose a random number between 0 and 8).</source>
+        <target>crwdns9965:0crwdne9965:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="9966" identifier="914dcf3822d31cba8493482ec8c1e4ed">
+        <source>Your plays will typically need 4 students in a group to represent the four bits.</source>
+        <target>crwdns9966:0crwdne9966:0</target>
+        <note>Context: XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="9967" identifier="8abb6f874939f8ebe2951e406c8610f9">
+        <source>If the number of students isn't a multiple of 4, the extra students could take on roles such as taking photos or videos.</source>
+        <target>crwdns9967:0crwdne9967:0</target>
+        <note>Context: XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="9968" identifier="bce5cb23507d13af597f3a0860c4cb42">
+        <source>The roles can swap over so they have a turn at being a “bit” as well as capturing the learning.</source>
+        <target>crwdns9968:0crwdne9968:0</target>
+        <note>Context: XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="9969" identifier="bf7bfa9427d0a56dc98bdf906d2b45be">
+        <source>Alternatively, a smaller group could explore other options, such as one student holding two bits, or using objects as bits on 4 chairs &quot;operated&quot; by the students, so one student can change all of them.</source>
+        <target>crwdns9969:0crwdne9969:0</target>
+        <note>Context: XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="9970" identifier="5fc81a64e7698a7d6a5d7cfee91b7088">
+        <source>{panel type=&quot;teacher-observation&quot; title=&quot;Teaching observations&quot;}</source>
+        <target>crwdns9970:0crwdne9970:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="9971" identifier="d50b760b21140f0e6efed29aa3a705d6">
+        <source>The number pattern is from highest to lowest, left to right (it's just a convention, but we use the same one in the decimal number system, with the most significant digits on the left):</source>
+        <target>crwdns9971:0crwdne9971:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li/p</note>
+      </trans-unit>
+      <trans-unit id="9972" identifier="848dad86ae35be9c435b72bc829d8e7f">
+        <source>8, 4, 2, 1</source>
+        <target>crwdns9972:0crwdne9972:0</target>
+        <note>Context: Text&#13;
+XPath: /ol/li/p[2]/em</note>
+      </trans-unit>
+      <trans-unit id="9973" identifier="11d4330d8a7f88f8770098ee3c59dcbb">
+        <source>Therefore watch that they haven’t switched the order of the place values, for example they check they aren’t representing the decimal number 1 as:</source>
+        <target>crwdns9973:0crwdne9973:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol/li/p[3]</note>
+      </trans-unit>
+      <trans-unit id="9974" identifier="02be7ebcabf6d70e6661cbc6a97dd3d3">
+        <source>1, 0, 0, 0 (which actually represents the decimal number 8)</source>
+        <target>crwdns9974:0crwdne9974:0</target>
+        <note>Context: Text&#13;
+XPath: /ol/li/p[4]/em</note>
+      </trans-unit>
+      <trans-unit id="9975" identifier="abbc987fdb59d3b1e77468ee798e10e7">
+        <source>Below is an example of where students believed that 3 in decimal is represented as 0100, as they focused on the pattern of numbers rather than using the place values.</source>
+        <target>crwdns9975:0crwdne9975:0</target>
+        <note>Context: XPath: /ol/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="9976" identifier="6e2cf299e1d0e787b4325cbab1e68a2c">
+        <source>&lt;em&gt;0001
+0010
+0100 (where it should be 00011 for 3)&lt;/em&gt;</source>
+        <target>crwdns9976:0crwdne9976:0</target>
+        <note>Context: XPath: /ol/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="9977" identifier="29865c6bd6223a870160b434de9c35ce">
+        <source>{panel end}</source>
+        <target>crwdns9977:0{panel end}crwdne9977:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="9978" identifier="93f7f710b96d25060d8fc0fdd8426091">
+        <source>Applying what we have just learnt</source>
+        <target>crwdns9978:0crwdne9978:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[4]</note>
+      </trans-unit>
+      <trans-unit id="9979" identifier="3a548b79ece217182ed199f3d1772f16">
+        <source>Reflect after each play is performed to reinforce learning by asking:</source>
+        <target>crwdns9979:0crwdne9979:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="9980" identifier="3cbe4c1bc8d9f42ba08ff6a4386d8f92">
+        <source>How did they choose to show on and off?</source>
+        <target>crwdns9980:0crwdne9980:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[2]/li/p</note>
+      </trans-unit>
+      <trans-unit id="9981" identifier="db5bcef6f36d7ec4aedc98294ed26ca8">
+        <source>What made the plays interesting or appealing that another person might be able to learn from them?</source>
+        <target>crwdns9981:0crwdne9981:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ol[2]/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="9982" identifier="5130654c0e861f29672a02e1d1360b7f">
+        <source>Lesson reflection</source>
+        <target>crwdns9982:0crwdne9982:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[5]</note>
+      </trans-unit>
+      <trans-unit id="9983" identifier="ad105c9b7413961c3690ccc8fa1d1fd2">
+        <source>What did you clarify about the binary number system now that you’ve created your play?</source>
+        <target>crwdns9983:0crwdne9983:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul[4]/li/p</note>
+      </trans-unit>
+      <trans-unit id="9984" identifier="bb70ee9567d30fa6a9f7a8adaaf2111d">
+        <source>What questions do you have after performing your play in relation to the binary number system?</source>
+        <target>crwdns9984:0crwdne9984:0</target>
+        <note>Context: XPath: /ul[4]/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="9985" identifier="f799ef1f3f0d5d35a8613ab7853dc2ee">
+        <source>(
+Typically responses are that they want to understand further how binary numbers are used to show letters, images, videos and all things on a computer - these topics are covered in further lesson plans)</source>
+        <target>crwdns9985:0crwdne9985:0</target>
+        <note>Context: XPath: /ul[4]/li[2]/p</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

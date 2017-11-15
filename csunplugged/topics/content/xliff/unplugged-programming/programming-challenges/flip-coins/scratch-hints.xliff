@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1238" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/flip-coins/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15031" identifier="99728c7fa669a7d90eff553ee6f1e2eb">
+        <source>To simulate a coin toss, use the block &lt;code&gt;scratch: pick random (1) to (10)&lt;/code&gt; and replace the number 10 with the number 2 (generating random numbers ‘1’ for tail, or ‘2’ for head).</source>
+        <target>crwdns15031:0crwdne15031:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="15032" identifier="218d49cda4280feae74a4d1447a763e0">
+        <source>To calculate the percentages of getting heads (or tails), multiply the total number of heads (or tails) by 100 then divide it by the total number of coin flips (entered as the input by the user).</source>
+        <target>crwdns15032:0crwdne15032:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

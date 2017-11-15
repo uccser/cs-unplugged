@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1189" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/draw-square-with-loop/draw-square-with-loop.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14787" identifier="66cf0da3b9e7fa02d66fafd0ba74e1f9">
+        <source>Draw a square (with a loop)</source>
+        <target>crwdns14787:0crwdne14787:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="14788" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns14788:0crwdne14788:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="14789" identifier="67612866156f7ed563a77a4cf68651d6">
+        <source>Write a program that draws a square, starting from point x:0, y:0, with its sides equal to 100 steps.
+You must use a repeat loop for this challenge.</source>
+        <target>crwdns14789:0crwdne14789:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14790" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns14790:0crwdne14790:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="14791" identifier="c6c8bb685a40fd65c5411b1f6f48de56">
+        <source>There are no testing examples for this challenge.</source>
+        <target>crwdns14791:0crwdne14791:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

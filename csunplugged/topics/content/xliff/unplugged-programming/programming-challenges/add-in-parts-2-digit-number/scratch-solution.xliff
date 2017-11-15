@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1087" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/add-in-parts-2-digit-number/scratch-solution.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14190" identifier="7de8b70849e617ed16fa5b817b595c3a">
+        <source>when green flag clicked
+say [Enter two numbers.</source>
+        <target>crwdns14190:0crwdne14190:0</target>
+        <note>Context: XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="14191" identifier="ce5be71f7e886d42c7d5b25d9a533be4">
+        <source>Enter the larger number first.] for (3) secs
+ask [Enter a number less than 100:] and wait
+set [num1 v] to (answer)
+ask [Enter a number less than 10:] and wait
+set [num2 v] to (answer)
+if &amp;lt;(((num1) mod (10)) + (num2)) &amp;gt; [10]&amp;gt; then
+  set [add to tidy num1 v] to ((10) - ((num1) mod (10)))
+  set [left from num2 v] to ((num2) - (add to tidy num1))
+  say (join (join (join (num1) [+]) (num2)) [=?]) for (3) secs
+  say (join (join (join (join (join (join (join [To make ] (num1)) [ a tidy number I am splitting ]) (num2)) [ into a ]) (add to tidy num1)) [ and a ]) (left from num2)) for (5) secs
+  say (join (join [(] (join (join (num1) [+]) (join (join (join (add to tidy num1) [)]) [+]) (left from num2)))) [=]) for (5) secs
+  say (join [] ((num1) + (num2)))
+else
+  say (join (join (join (num1) [+]) (num2)) [=?]) for (5) secs
+  say ((num1) + (num2))
+end</source>
+        <target>crwdns14191:0[10]crwdne14191:0</target>
+        <note>Context: XPath: /pre/code</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

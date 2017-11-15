@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1297" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/modulo-display-midi-note/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15389" identifier="509d4eb185a64086e3dc183f42a5df47">
+        <source>Make a list called “notes” and add the 12 notes; C, C#, D, Eb, E, F, F#, G, G#, A, Bb and B to your list (list of length 12).</source>
+        <target>crwdns15389:0crwdne15389:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="15390" identifier="0e6dd5e4bdeeb13b02153c47c1e3a330">
+        <source>When you apply the mod 12 function to the midi value you'll get a number ranging from 0 to 11, but in Scratch the first item in the list “notes” (which is C) is stored at index 1.</source>
+        <target>crwdns15390:0crwdne15390:0</target>
+        <note>Context: XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="15391" identifier="7ae5174324cf73b5c93f668d196de316">
+        <source>To display the correct corresponding note, you'll need to add 1 to the value of the midi value mod 12.</source>
+        <target>crwdns15391:0crwdne15391:0</target>
+        <note>Context: XPath: /ul/li[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

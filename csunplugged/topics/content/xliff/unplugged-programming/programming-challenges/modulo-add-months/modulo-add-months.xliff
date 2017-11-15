@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1276" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/modulo-add-months/modulo-add-months.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15251" identifier="5473c9b7d6d684a170cd31b8fb4cc0d6">
+        <source>Add number of months to a given month</source>
+        <target>crwdns15251:0crwdne15251:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="15252" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns15252:0crwdne15252:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="15253" identifier="8d09b0a2f5e572b2642b6b23970373fe">
+        <source>Write a program that asks for a month (as a number between 1 and 12) and the number of months to add to the month as the input and displays the result as the name of a month as the output.</source>
+        <target>crwdns15253:0crwdne15253:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15254" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns15254:0crwdne15254:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="15255" identifier="c9bf31e2ea57693ba5afd83cc57b14b3">
+        <source>Your program should display the outputs shown in this table for the given inputs provided;</source>
+        <target>crwdns15255:0crwdne15255:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="15256" identifier="cba6b4800108c82267efa7cede56fc42">
+        <source>Input</source>
+        <target>crwdns15256:0crwdne15256:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/tr/th</note>
+      </trans-unit>
+      <trans-unit id="15257" identifier="67db30d78708ccc80d53b9b484cffb63">
+        <source>Output</source>
+        <target>crwdns15257:0crwdne15257:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/tr/th[2]</note>
+      </trans-unit>
+      <trans-unit id="15258" identifier="2957f8be9b2fa6b35799ebc48cd54c1f">
+        <source>10&lt;br&gt;4</source>
+        <target>crwdns15258:0crwdne15258:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[2]/td</note>
+      </trans-unit>
+      <trans-unit id="15259" identifier="1413ac4bfe7138e2126a61af51e97460">
+        <source>4 months after October is February.</source>
+        <target>crwdns15259:0crwdne15259:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[2]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="15260" identifier="1ecc58c85010a74885924296177292b9">
+        <source>12&lt;br&gt;8</source>
+        <target>crwdns15260:0crwdne15260:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[3]/td</note>
+      </trans-unit>
+      <trans-unit id="15261" identifier="a4b7016096ae7b6551c8692fd9e3f5fe">
+        <source>8 months after December is August.</source>
+        <target>crwdns15261:0crwdne15261:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[3]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="15262" identifier="a1534e7b4cc61b987377da10268a28ac">
+        <source>1&lt;br&gt;6</source>
+        <target>crwdns15262:0crwdne15262:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[4]/td</note>
+      </trans-unit>
+      <trans-unit id="15263" identifier="7dfa15a0e1f130f5ee2b8f7dcdf48dde">
+        <source>6 months after January is July.</source>
+        <target>crwdns15263:0crwdne15263:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[4]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="15264" identifier="74bf93b9e54ff26a4a09f2c945b8d338">
+        <source>6&lt;br&gt;6</source>
+        <target>crwdns15264:0crwdne15264:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[5]/td</note>
+      </trans-unit>
+      <trans-unit id="15265" identifier="16113481549e9330b3344499afdae41d">
+        <source>6 months after June is December.</source>
+        <target>crwdns15265:0crwdne15265:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[5]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="15266" identifier="f1cf2f4b381bd0e4efdd169c73a4c11c">
+        <source>12&lt;br&gt;12</source>
+        <target>crwdns15266:0crwdne15266:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[6]/td</note>
+      </trans-unit>
+      <trans-unit id="15267" identifier="a9cca0e110a47dbc4dab0072ca3cd852">
+        <source>12 months after December is December.</source>
+        <target>crwdns15267:0crwdne15267:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[6]/td[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1094" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/calculate-exponents/extra-challenge.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14215" identifier="d39232f8ecdc31ad06285a8a1912251c">
+        <source>Edit your program so it can take any integer (including negative integers) for the power (e.g. \(8^{-2} = \frac{1}{8^{2}} = \frac{1}{64}\)).</source>
+        <target>crwdns14215:0{-2}crwdnd14215:0{1}crwdnd14215:0{2}crwdnd14215:0{1}crwdnd14215:0{64}crwdne14215:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14216" identifier="8186c46264e4391f37cea49e4012f05d">
+        <source>Note: To make a negative number positive you can take its absolute value.</source>
+        <target>crwdns14216:0crwdne14216:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14217" identifier="447c4f0eabd0939a694c317b05cc898f">
+        <source>For example the absolute value of -9 is +9 and the absolute value of +9 is +9.</source>
+        <target>crwdns14217:0crwdne14217:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14218" identifier="b994d7c40d7de4c2cf6bb191a0fb81d0">
+        <source>That is &lt;code&gt;scratch:[abs v] of (-9) // 9&lt;/code&gt;.</source>
+        <target>crwdns14218:0crwdne14218:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14219" identifier="cb6382e35d706ff7ca082402c8b08d3a">
+        <source>To return an absolute value of a number in Scratch, choose the “abs” function from the drop down menu of &lt;code&gt;scratch:[sqrt v] of ()&lt;/code&gt; block under the “operators” scripts.</source>
+        <target>crwdns14219:0crwdne14219:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

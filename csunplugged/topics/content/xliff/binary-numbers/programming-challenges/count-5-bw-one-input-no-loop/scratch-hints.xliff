@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="813" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/count-5-bw-one-input-no-loop/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8754" identifier="669ee3053d3f7ea825d32192aacd7a08">
+        <source>Make a variable called “total number of dots” and set its value to 0.</source>
+        <target>crwdns8754:0crwdne8754:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="8755" identifier="66484723e8f7ef06429097b3401c3a87">
+        <source>Make a string variable called “cards” and set its value to the input
+entered by the end user (5 black and white cards).</source>
+        <target>crwdns8755:0crwdne8755:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="8756" identifier="88febd0b01db519e360bea4db4a0a5c2">
+        <source>Check each letter of the string and if it’s ‘W’ add the corresponding
+number of dots (16 for the first letter, 8 for the second letter and so
+on) to the “total number of dots”.</source>
+        <target>crwdns8756:0crwdne8756:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="8757" identifier="d948aa06cda0866af5861614f527e28d">
+        <source>Display the “total number of dots” as the output.</source>
+        <target>crwdns8757:0crwdne8757:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="8758" identifier="d44020939499a21a92a9dd1355da0c98">
+        <source>You can access a letter at the specified position in a string by using
+the &lt;code&gt;scratch:letter (1) of [world]&lt;/code&gt; block under “Operators”.</source>
+        <target>crwdns8758:0[world]crwdne8758:0</target>
+        <note>Context: XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="8759" identifier="12946444f538ad3542f3de90c0f076ce">
+        <source>For example: &lt;code&gt;scratch:letter (1) of [world] //w&lt;/code&gt;</source>
+        <target>crwdns8759:0[world]crwdne8759:0</target>
+        <note>Context: XPath: /ul/li[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

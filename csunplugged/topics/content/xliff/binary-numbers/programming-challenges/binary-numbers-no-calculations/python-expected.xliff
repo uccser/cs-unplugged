@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="758" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/binary-numbers-no-calculations/python-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8522" identifier="ccbe303e7d49c40941bac7d91d961e56">
+        <source>1
+2
+4
+8
+16</source>
+        <target>crwdns8522:0crwdne8522:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

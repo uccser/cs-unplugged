@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="740" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/binary-cards-representing-number/binary-cards-representing-number.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8421" identifier="7f45b90285f515fe7c3301a06f09ec62">
+        <source>Display the binary cards needed to represent a decimal number between 0 and 31</source>
+        <target>crwdns8421:0crwdne8421:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="8422" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns8422:0crwdne8422:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="8423" identifier="7fe95c7799c06036718e015261b38082">
+        <source>Write a program that asks the user to enter a decimal number between 0 and 31
+as the input and displays the 5 binary cards representing that number (B for
+displaying black cards with no dots, and W for displaying white cards with
+dots) as the output.</source>
+        <target>crwdns8423:0crwdne8423:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8424" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns8424:0crwdne8424:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="8425" identifier="c4157e645991e13a72ced9574f6e8235">
+        <source>Your program should display the outputs shown in this table for the given
+inputs provided:</source>
+        <target>crwdns8425:0crwdne8425:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="8426" identifier="5bfb69c6f4701e747d0c20b0822e2580">
+        <source>Input</source>
+        <target>crwdns8426:0crwdne8426:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th</note>
+      </trans-unit>
+      <trans-unit id="8427" identifier="f36a1e77a6177da7e10093e12e92ec6c">
+        <source>Output</source>
+        <target>crwdns8427:0crwdne8427:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th[2]</note>
+      </trans-unit>
+      <trans-unit id="8428" identifier="41b10780fc73a8ab8ee027897e619936">
+        <source>11</source>
+        <target>crwdns8428:0crwdne8428:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td</note>
+      </trans-unit>
+      <trans-unit id="8429" identifier="3576b29769d7b8c0d4eb7b4187491a6a">
+        <source>The binary representation for the number 11 is BWBWW</source>
+        <target>crwdns8429:0crwdne8429:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td[2]</note>
+      </trans-unit>
+      <trans-unit id="8430" identifier="c6df9e1c6c341113a36fa81bb99c7cf4">
+        <source>31</source>
+        <target>crwdns8430:0crwdne8430:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td</note>
+      </trans-unit>
+      <trans-unit id="8431" identifier="9ed6478cb0f997d007ebbabc2b92779b">
+        <source>The binary representation for the number 31 is WWWWW</source>
+        <target>crwdns8431:0crwdne8431:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="8432" identifier="58161fa3de8fcce091377bc19c34f602">
+        <source>0</source>
+        <target>crwdns8432:0crwdne8432:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td</note>
+      </trans-unit>
+      <trans-unit id="8433" identifier="b0db9e851fe19b19ce084c4c17776abe">
+        <source>The binary representation for the number 0 is BBBBB</source>
+        <target>crwdns8433:0crwdne8433:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

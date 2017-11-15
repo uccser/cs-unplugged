@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="727" original="/csunplugged/topics/content/en/binary-numbers/curriculum-integrations/whose-cake-is-it.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8317" identifier="2b6ed103ff243f271f973a96bc255d50">
+        <source>Whose cake is it?</source>
+        <target>crwdns8317:0crwdne8317:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="8318" identifier="f8dc36270a1f6a3ecec7620ce1cc14f3">
+        <source>Write an explanation as to why there is confusion as to whose cake it is?
+Remember to add a conclusion as to who you think should have the cake and why?
+There is more than one possible explanation.</source>
+        <target>crwdns8318:0crwdne8318:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8319" identifier="3a3925874a0fdaaab8e51ec9346611e6">
+        <source>{image file-path=&quot;img/topics/col_binary_birthdayFinal.png&quot;}</source>
+        <target>crwdns8319:0crwdne8319:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

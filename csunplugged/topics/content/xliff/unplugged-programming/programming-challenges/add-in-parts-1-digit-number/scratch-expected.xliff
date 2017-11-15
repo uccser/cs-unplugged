@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1080" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/add-in-parts-1-digit-number/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14147" identifier="f3b5fe6b13c58314d4f8a7210242abe3">
+        <source>Click on the green flag to see the expected output of your program.</source>
+        <target>crwdns14147:0crwdne14147:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14148" identifier="03012e7812fe33236109fab83b75a97d">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/149427587/?autostart=false&quot;}</source>
+        <target>crwdns14148:0crwdne14148:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14149" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns14149:0crwdne14149:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="14150" identifier="33a9754026faa05677262c3790c953a1">
+        <source>when green flag clicked</source>
+        <target>crwdns14150:0crwdne14150:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="14151" identifier="b37558f83cf373b9606e4b36ef8a3c89">
+        <source>set [num1 v] to (answer)
+
+set [num2 v] to (answer)
+
+set [ten minus num1 v] to ((10) - (num1))
+
+set [left from num2 v] to ((num2) - (ten minus num1))</source>
+        <target>crwdns14151:0crwdne14151:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="14152" identifier="c6167470e9c6431f0c4186ec3e72a720">
+        <source>ask [Enter the 1st number:] and wait
+
+ask [Enter the 2nd number:] and wait</source>
+        <target>crwdns14152:0crwdne14152:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="14153" identifier="dee4788e248288a2a28869b3cc79c588">
+        <source>say [Enter two numbers less than 10.</source>
+        <target>crwdns14153:0crwdne14153:0</target>
+        <note>Context: XPath: /pre[4]/code</note>
+      </trans-unit>
+      <trans-unit id="14154" identifier="cc175a0957cc1d54819e50a86b9e3674">
+        <source>Enter the larger number first.] for (3) secs
+
+say (join (join (join (num1) [+]) (num2)) [=?]) for (3) secs
+
+say (join (join (join (join (join (join (join [To make ] (num1)) [ a tidy number I am splitting ]) (num2)) [ into a ]) (ten minus num1)) [ and a ]) (left from num2)) for (5) secs
+
+say (join (join [(] (join (join (num1) [+]) (join (join (join (ten minus num1) [)]) [+]) (left from num2)))) [=]) for (5) secs
+
+say (join [] ((num1) + (num2)))
+
+say (join (join (join (num1) [+]) (num2)) [=?]) for (5) secs
+
+say ((num1) + (num2))</source>
+        <target>crwdns14154:0crwdne14154:0</target>
+        <note>Context: XPath: /pre[4]/code</note>
+      </trans-unit>
+      <trans-unit id="14155" identifier="5eab58bb2e3d7f9881a8fc8464396191">
+        <source>if &amp;lt;((num1) + (num2)) &amp;gt; [10]&amp;gt; then
+else
+end</source>
+        <target>crwdns14155:0[10]crwdne14155:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[5]/code</note>
+      </trans-unit>
+      <trans-unit id="14156" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns14156:0{panel end}crwdne14156:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

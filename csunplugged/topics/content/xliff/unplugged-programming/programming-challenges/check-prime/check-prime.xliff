@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1124" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/check-prime/check-prime.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14359" identifier="ed6ed67adc0902f95b05bb495f0d92a1">
+        <source>Check if a number is a prime or not</source>
+        <target>crwdns14359:0crwdne14359:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="14360" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns14360:0crwdne14360:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="14361" identifier="c7b342304bd78aaa872308925af56254">
+        <source>Write a program that asks the user to enter a number and displays a message saying if it's a prime number or not.</source>
+        <target>crwdns14361:0crwdne14361:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14362" identifier="7f97b1787db52c4fd919f430a652d079">
+        <source>(Note: A prime number is a whole number greater than 1, whose only two whole-number factors are 1 and itself).</source>
+        <target>crwdns14362:0crwdne14362:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14363" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns14363:0crwdne14363:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="14364" identifier="c9bf31e2ea57693ba5afd83cc57b14b3">
+        <source>Your program should display the outputs shown in this table for the given inputs provided;</source>
+        <target>crwdns14364:0crwdne14364:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14365" identifier="5bfb69c6f4701e747d0c20b0822e2580">
+        <source>Input</source>
+        <target>crwdns14365:0crwdne14365:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th</note>
+      </trans-unit>
+      <trans-unit id="14366" identifier="f36a1e77a6177da7e10093e12e92ec6c">
+        <source>Output</source>
+        <target>crwdns14366:0crwdne14366:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th[2]</note>
+      </trans-unit>
+      <trans-unit id="14367" identifier="e9f753ef25bcaf86d764b43804426096">
+        <source>73</source>
+        <target>crwdns14367:0crwdne14367:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td</note>
+      </trans-unit>
+      <trans-unit id="14368" identifier="00160c2a361079eeae3e8bf0623e6e8d">
+        <source>73 is a prime number.</source>
+        <target>crwdns14368:0crwdne14368:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td[2]</note>
+      </trans-unit>
+      <trans-unit id="14369" identifier="bf440f374d867a9078d3452a27eac8ab">
+        <source>123</source>
+        <target>crwdns14369:0crwdne14369:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td</note>
+      </trans-unit>
+      <trans-unit id="14370" identifier="83402504ce82d5f5511b5246b2c66387">
+        <source>123 is not a prime number.</source>
+        <target>crwdns14370:0crwdne14370:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="14371" identifier="196b33507c4d673908c1e1df84c192e3">
+        <source>1</source>
+        <target>crwdns14371:0crwdne14371:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td</note>
+      </trans-unit>
+      <trans-unit id="14372" identifier="5a51c8567549a45dbdf52c7936814fc2">
+        <source>1 is not a prime number.</source>
+        <target>crwdns14372:0crwdne14372:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="14373" identifier="a6cb6d8c07f05cef738826342185bde2">
+        <source>0</source>
+        <target>crwdns14373:0crwdne14373:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[4]/td</note>
+      </trans-unit>
+      <trans-unit id="14374" identifier="fb29ff4cb81e27292a32b861e64c6a06">
+        <source>0 is not a prime number.</source>
+        <target>crwdns14374:0crwdne14374:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[4]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="14375" identifier="9ace472c7033147a5555f1b81ac71c51">
+        <source>-3</source>
+        <target>crwdns14375:0crwdne14375:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[5]/td</note>
+      </trans-unit>
+      <trans-unit id="14376" identifier="e71d6025d4c36e7848e62ccb428b3a8c">
+        <source>-3 is not a prime number.</source>
+        <target>crwdns14376:0crwdne14376:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[5]/td[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

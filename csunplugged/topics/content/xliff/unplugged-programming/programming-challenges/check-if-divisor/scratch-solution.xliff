@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1117" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/check-if-divisor/scratch-solution.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14337" identifier="90ff68a1035d9671912bf69a81dcad46">
+        <source>when green flag clicked
+say [Enter 2 numbers and I'll tell you if the second number is a divisor of the first number.] for (5) secs
+ask [Enter the 1st number:] and wait
+set [number1 v] to (answer)
+ask [Enter the 2nd number:] and wait
+set [number2 v] to (answer)
+if &amp;lt;((number1) mod (number2)) = [0]&amp;gt; then
+  say (join (join (number2) [ is a divisor of the number ]) (number1))
+else
+  say (join (join (number2) [ is not a divisor of the number ]) (number1))
+end</source>
+        <target>crwdns14337:0[0]crwdne14337:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

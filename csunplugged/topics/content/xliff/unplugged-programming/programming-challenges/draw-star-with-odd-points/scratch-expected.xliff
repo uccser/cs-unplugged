@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1206" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/draw-star-with-odd-points/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14877" identifier="f3b5fe6b13c58314d4f8a7210242abe3">
+        <source>Click on the green flag to see the expected output of your program.</source>
+        <target>crwdns14877:0crwdne14877:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14878" identifier="5da6686ed29cc3a7da2c264f8aa1367e">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/153925156/?autostart=false&quot;}</source>
+        <target>crwdns14878:0crwdne14878:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14879" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns14879:0crwdne14879:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="14880" identifier="33a9754026faa05677262c3790c953a1">
+        <source>when green flag clicked</source>
+        <target>crwdns14880:0crwdne14880:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="14881" identifier="e9b0fb8e51359b5daf53d4a3442c9674">
+        <source>clear
+
+pen down
+
+pen up</source>
+        <target>crwdns14881:0crwdne14881:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="14882" identifier="f3dc21a286ee04f31837e896d93b27cb">
+        <source>ask [Enter an odd number of points to draw a star:] and wait
+
+repeat (points)
+end
+
+set [points v] to (answer)</source>
+        <target>crwdns14882:0crwdne14882:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="14883" identifier="338af6cc10fe725d292d2c131474f1b5">
+        <source>go to x: (0) y: (0)
+
+move (200) steps
+
+turn cw ((180) - ((180) / (points))) degrees</source>
+        <target>crwdns14883:0crwdne14883:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[4]/code</note>
+      </trans-unit>
+      <trans-unit id="14884" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns14884:0{panel end}crwdne14884:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

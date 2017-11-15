@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="912" original="/csunplugged/topics/content/en/error-detection-and-correction/programming-challenges/check-valid-credit-card/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10235" identifier="3a29a7e836ccaa795883d72e41b8db48">
+        <source>Click on the green flag, enter the inputs provided in the “testing examples” to
+see the expected output of your program.</source>
+        <target>crwdns10235:0crwdne10235:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="10236" identifier="2bdcab7e3990d3dc44ccda2443395ecb">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/148477751/?autostart=false&quot;}</source>
+        <target>crwdns10236:0crwdne10236:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="10237" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns10237:0crwdne10237:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="10238" identifier="4f802a01659ae11b55569dae5655424b">
+        <source>when green flag clicked
+
+ask [Enter a credit card number:] and wait</source>
+        <target>crwdns10238:0crwdne10238:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="10239" identifier="c93552041c69fdc27e8fce22754659d8">
+        <source>repeat (8)
+end
+
+if &amp;lt;((letter (index) of (credit card number)) * (2)) &amp;lt; [10]&amp;gt; then
+else
+end
+
+if &amp;lt;(((even total) + (odd total)) mod (10)) = [0]&amp;gt; then
+else
+end</source>
+        <target>crwdns10239:0[10]crwdnd10239:0[0]crwdne10239:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="10240" identifier="72bb27bf1385b00c74819d68fb3076e5">
+        <source>say [Invalid credit card number!]
+
+say [Valid credit card number!]</source>
+        <target>crwdns10240:0crwdne10240:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="10241" identifier="91f7acc31836ebbd209d975c6a7cfe6b">
+        <source>set [index v] to [1]
+
+set [credit card number v] to [0]
+
+set [even total v] to [0]
+
+set [odd total v] to [0]
+
+change [credit card number v] by (answer)
+
+change [odd total v] by ((letter (index) of (credit card number)) * (2))
+
+change [index v] by (1)
+
+change [odd total v] by (((letter (index) of (credit card number)) * (2)) - (9))
+
+change [index v] by (1)
+
+change [even total v] by (letter (index) of (credit card number))
+
+change [index v] by (1)</source>
+        <target>crwdns10241:0[1]crwdnd10241:0[0]crwdnd10241:0[0]crwdnd10241:0[0]crwdne10241:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[4]/code</note>
+      </trans-unit>
+      <trans-unit id="10242" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns10242:0{panel end}crwdne10242:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

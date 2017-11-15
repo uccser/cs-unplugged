@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="836" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/decimal-to-binary-alternative/decimal-to-binary-alternative.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8891" identifier="269bfe9b4e1780c129c0df0b4e8824ab">
+        <source>Convert a decimal number to a binary number (alternative method)</source>
+        <target>crwdns8891:0crwdne8891:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="8892" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns8892:0crwdne8892:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="8893" identifier="3767f8bc629e3433f8e9f9f90db920ff">
+        <source>Using a different method from “Binary challenge 7.3”, write a program that
+asks the user to enter any decimal number as the input and displays the
+binary cards representing that number using '1' for dots showing and '0' for
+not showing as the output (this converts the decimal number to binary).</source>
+        <target>crwdns8893:0crwdne8893:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8894" identifier="cdbb383405893bd974cfe423713fdbd1">
+        <source>This method generates the number from right to left by observing that an even
+number has a 0 on the right, and an odd number as a 1 on the right.</source>
+        <target>crwdns8894:0crwdne8894:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8895" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns8895:0crwdne8895:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="8896" identifier="c4157e645991e13a72ced9574f6e8235">
+        <source>Your program should display the outputs shown in this table for the given
+inputs provided:</source>
+        <target>crwdns8896:0crwdne8896:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="8897" identifier="5bfb69c6f4701e747d0c20b0822e2580">
+        <source>Input</source>
+        <target>crwdns8897:0crwdne8897:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th</note>
+      </trans-unit>
+      <trans-unit id="8898" identifier="f36a1e77a6177da7e10093e12e92ec6c">
+        <source>Output</source>
+        <target>crwdns8898:0crwdne8898:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th[2]</note>
+      </trans-unit>
+      <trans-unit id="8899" identifier="93a96c545dbcc81847716ddc4db49695">
+        <source>31</source>
+        <target>crwdns8899:0crwdne8899:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td</note>
+      </trans-unit>
+      <trans-unit id="8900" identifier="1b496715b596d45bc0261f5b8b75ab56">
+        <source>The binary representation for the number 31 is 11111</source>
+        <target>crwdns8900:0crwdne8900:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td[2]</note>
+      </trans-unit>
+      <trans-unit id="8901" identifier="61cd2a58c9946b944153c05ebd67c25b">
+        <source>32</source>
+        <target>crwdns8901:0crwdne8901:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td</note>
+      </trans-unit>
+      <trans-unit id="8902" identifier="48b14b6c5dc1e64eb531b38c2126bddf">
+        <source>The binary representation for the number 32 is 100000</source>
+        <target>crwdns8902:0crwdne8902:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

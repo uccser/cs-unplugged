@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1320" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/rotation-of-a-pentagon/extra-challenge.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15478" identifier="99613543b40b6e9d7973a899bc2eec39">
+        <source>&lt;strong&gt;Extra challenge #1:&lt;/strong&gt;
+Edit your program so the pentagon rotates over and over (use a FOREVER block under the “control” script) for any given degrees entered by the user as the input.</source>
+        <target>crwdns15478:0crwdne15478:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

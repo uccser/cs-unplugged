@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="826" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/count-bw-one-input-using-loop/count-bw-one-input-using-loop.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8821" identifier="61b2f4e932e0b5416583688059eedba1">
+        <source>Count dots on any number of black and white cards as one input (using a loop)</source>
+        <target>crwdns8821:0crwdne8821:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="8822" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns8822:0crwdne8822:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="8823" identifier="d5e0635496a6f1c57611e69613aeb338">
+        <source>Write a program that asks the user to enter any number of black and white
+cards representing bits, all as one input ('B' for black and 'W' for white),
+and displays the total number of dots as the output.</source>
+        <target>crwdns8823:0crwdne8823:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8824" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns8824:0crwdne8824:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="8825" identifier="c4157e645991e13a72ced9574f6e8235">
+        <source>Your program should display the outputs shown in this table for the given
+inputs provided:</source>
+        <target>crwdns8825:0crwdne8825:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="8826" identifier="5bfb69c6f4701e747d0c20b0822e2580">
+        <source>Input</source>
+        <target>crwdns8826:0crwdne8826:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th</note>
+      </trans-unit>
+      <trans-unit id="8827" identifier="f36a1e77a6177da7e10093e12e92ec6c">
+        <source>Output</source>
+        <target>crwdns8827:0crwdne8827:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th[2]</note>
+      </trans-unit>
+      <trans-unit id="8828" identifier="48e0e2fa35212348e2ab3d41111a6571">
+        <source>W&lt;br&gt;B&lt;br&gt;B</source>
+        <target>crwdns8828:0crwdne8828:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td</note>
+      </trans-unit>
+      <trans-unit id="8829" identifier="78fac9cc635fa6e07a869b4ff5e1601e">
+        <source>4</source>
+        <target>crwdns8829:0crwdne8829:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td[2]</note>
+      </trans-unit>
+      <trans-unit id="8830" identifier="821338f2481cf2c8cb1e4b535091f66d">
+        <source>W</source>
+        <target>crwdns8830:0crwdne8830:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td</note>
+      </trans-unit>
+      <trans-unit id="8831" identifier="9b969435a6f3f1d4cea531198b1a29ab">
+        <source>1</source>
+        <target>crwdns8831:0crwdne8831:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="8832" identifier="61554ca4b0240d1962b0675ac7aedd9f">
+        <source>B</source>
+        <target>crwdns8832:0crwdne8832:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td</note>
+      </trans-unit>
+      <trans-unit id="8833" identifier="67c71dd0c4c386ad676d33e04ef56301">
+        <source>0</source>
+        <target>crwdns8833:0crwdne8833:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="8834" identifier="29ed6901e9469120c85d7e47cc649dc5">
+        <source>W&lt;br&gt;W&lt;br&gt;W&lt;br&gt;W&lt;br&gt;W&lt;br&gt;W&lt;br&gt;W&lt;br&gt;W</source>
+        <target>crwdns8834:0crwdne8834:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[4]/td</note>
+      </trans-unit>
+      <trans-unit id="8835" identifier="f1566481fc845d2bc8a67226d7e814a0">
+        <source>255</source>
+        <target>crwdns8835:0crwdne8835:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[4]/td[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

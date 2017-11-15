@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1012" original="/csunplugged/topics/content/en/error-detection-and-correction/unit-plan/unit-plan.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10898" identifier="701d20bb2a14ac10c26d359f980bf6fe">
+        <source>Error detection and correction</source>
+        <target>crwdns10898:0crwdne10898:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="10899" identifier="b0426755bb1a8f61c0799e08ebbebb56">
+        <source>{panel type=&quot;teaching&quot; title=&quot;See teaching this in action!&quot;}</source>
+        <target>crwdns10899:0crwdne10899:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="10900" identifier="39338fdeb67ed25847784c91230ea883">
+        <source>A demonstration of lesson one (&quot;Parity magic&quot;) being taught is available here:</source>
+        <target>crwdns10900:0crwdne10900:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="10901" identifier="4cd3b20557ca000c8667fc744ae7e4e6">
+        <source>{video url=&quot;https://www.youtube.com/embed/FnwBratAhfg&quot;}</source>
+        <target>crwdns10901:0crwdne10901:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="10902" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns10902:0{panel end}crwdne10902:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="10903" identifier="8eadc64c00efcf1f87ac6f8800a4a39e">
+        <source>What’s it all about?</source>
+        <target>crwdns10903:0crwdne10903:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="10904" identifier="39e826d6cf24aefe586b89344b71bc59">
+        <source>{image file-path=&quot;img/topics/parity-trick-example.png&quot; alt=&quot;A student is surprised another student can detect the changed card in the Parity Trick.&quot;}</source>
+        <target>crwdns10904:0crwdne10904:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="10905" identifier="f336aa38c8d38bdfcdb02cd2916f482f">
+        <source>The world is a complicated and imperfect place, and errors can occur whenever
+information is stored or transmitted.</source>
+        <target>crwdns10905:0crwdne10905:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="10906" identifier="4f9842a9bee5ea902398ed36e73faeb8">
+        <source>Data stored on hard disks, DVDs and flash memory can be changed if there is a
+tiny fault in the device (and these occur regularly!).</source>
+        <target>crwdns10906:0crwdne10906:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="10907" identifier="0823de07f8a3816b183a3c0dd1839a75">
+        <source>Information received over networks can be corrupted if there's interference on
+the line or a faulty component in the system.</source>
+        <target>crwdns10907:0crwdne10907:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="10908" identifier="02bd076c7cb52f7516af262034ba9cb1">
+        <source>Even scanning information from barcodes and QR codes is a form of information
+transmission, and small errors such as dirt or scratches on the code can change
+the information.</source>
+        <target>crwdns10908:0crwdne10908:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="10909" identifier="7bf520e0a7d4cb27e5b97a29ef563c93">
+        <source>Yet we rely on data so much that there could be serious implications from even
+a single digit error in a student's grade, or a small change to a payment, or
+an incorrect reading in a medical scan.</source>
+        <target>crwdns10909:0crwdne10909:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="10910" identifier="46a57a5461086a467511a076230092ca">
+        <source>Error detection techniques add extra information to data to determine when
+errors have occurred.</source>
+        <target>crwdns10910:0crwdne10910:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="10911" identifier="07e2f71b5884fa70a74a6dcdb9146edb">
+        <source>The extra information might be an extra &quot;check digit&quot; such as the last digit of
+a credit card number or barcode number on a product, or extra binary digits
+(bits) in data stored on a computer.</source>
+        <target>crwdns10911:0crwdne10911:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="10912" identifier="366b2fa89ba730ba3f04764f7a28977e">
+        <source>Not only can most digital systems detect errors, but many can correct them as
+well, back to what the data should have been.</source>
+        <target>crwdns10912:0crwdne10912:0</target>
+        <note>Context: XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="10913" identifier="c1440970f29f7a9dc84a6ad69b875162">
+        <source>Error correction can appear to be magic, since it involves being able to put
+data back to how it was originally, even when you don’t know what the original
+data was.</source>
+        <target>crwdns10913:0crwdne10913:0</target>
+        <note>Context: XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="10914" identifier="4e50810bf953cdd15134f26488ae70cd">
+        <source>In fact, the first lesson plan presents a technique called &quot;parity error
+correction&quot; as a magic trick that most audiences find intriguing.</source>
+        <target>crwdns10914:0crwdne10914:0</target>
+        <note>Context: XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="10915" identifier="4453a98d40ab8a9d24606de95c502841">
+        <source>In the trick the demonstrator is “magically” able to figure which one out of
+dozens of cards has been turned over, using the same kind of method that
+computers use to figure out when and where an error has occurred in a piece of
+data.</source>
+        <target>crwdns10915:0crwdne10915:0</target>
+        <note>Context: XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="10916" identifier="f8a67fd92f4f3371f4aa0f632bc1849b">
+        <source>{image file-path=&quot;img/topics/mug-with-barcode.png&quot;}</source>
+        <target>crwdns10916:0crwdne10916:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="10917" identifier="a7b4c78b35ee00b1f7abbe2e340dd999">
+        <source>A related technique is used on the barcodes printed on products to check that
+they are scanned correctly at a checkout; the last digit in the product code is
+based on a mathematical combination of all the other digits, and can easily be
+calculated from them.</source>
+        <target>crwdns10917:0crwdne10917:0</target>
+        <note>Context: XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="10918" identifier="eab46f1fa2c5e774d4f05a3bad6444cc">
+        <source>If the calculation comes up with a different value for the last digit, it's a
+warning that one of the digits is wrong, in which case the scanner gives a
+warning, and the operator might have to scan the item again, or type in the
+number, or look it up some other way.</source>
+        <target>crwdns10918:0crwdne10918:0</target>
+        <note>Context: XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="10919" identifier="9dcd7b941680f143b4f7ed6555721eb0">
+        <source>The lessons in this unit show how errors can be detected, and in same cases,
+corrected to restore the original data.</source>
+        <target>crwdns10919:0crwdne10919:0</target>
+        <note>Context: XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="10920" identifier="5071637fc0f19410e72cee435e1dc703">
+        <source>It also enables students to explore how we use some relatively simple ideas to
+make our digital systems so reliable that people using them don't realise that
+this is all happening underneath the surface!</source>
+        <target>crwdns10920:0crwdne10920:0</target>
+        <note>Context: XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="10921" identifier="13f459db4e2924a9bca5c1285849b325">
+        <source>Digital Technologies | Data Representation</source>
+        <target>crwdns10921:0crwdne10921:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="10922" identifier="3eca6d8958dbec55c1ac069dde0761d9">
+        <source>When data is stored on a disk or transmitted from one computer to another, we
+usually assume that it doesn’t get changed in the process.</source>
+        <target>crwdns10922:0crwdne10922:0</target>
+        <note>Context: XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="10923" identifier="9632ce5484b1d242e33da00e9faa4dfa">
+        <source>We are going to learn about some ways in which computers make sure that
+information can be retrieved reliably even when errors have occurred.</source>
+        <target>crwdns10923:0crwdne10923:0</target>
+        <note>Context: XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="10924" identifier="f1d7af53207341d5f11cbb247db75810">
+        <source>The digital nature of the data (i.e. it is made up of digits) is what allows us
+to detect and correct these errors.</source>
+        <target>crwdns10924:0crwdne10924:0</target>
+        <note>Context: XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="10925" identifier="5ed36bfad355e13b998902a606a4cfc5">
+        <source>Vocabulary Explained</source>
+        <target>crwdns10925:0crwdne10925:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[3]</note>
+      </trans-unit>
+      <trans-unit id="10926" identifier="bb65482b02150d120752b9dc11ec716e">
+        <source>&lt;strong&gt;Error detection&lt;/strong&gt; is a method that can look at some data and detect if it has
+been corrupted while it was stored or transmitted.</source>
+        <target>crwdns10926:0crwdne10926:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="10927" identifier="5a26da0e50b4d22beadaf9bf3329e9f2">
+        <source>&lt;strong&gt;Error correction&lt;/strong&gt; is a step better than error detection; when it detects an
+error it tries to put the data back to how it should have been.</source>
+        <target>crwdns10927:0crwdne10927:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="10928" identifier="c571edcb0fa54690021229b2fcb84dee">
+        <source>&lt;strong&gt;Error control&lt;/strong&gt; is the general term for error correction and error detection
+systems.</source>
+        <target>crwdns10928:0crwdne10928:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="10929" identifier="7e050c38df2b9f13451b4f2487afa709">
+        <source>{image file-path=&quot;img/topics/odd-parroty-parity.png&quot;}</source>
+        <target>crwdns10929:0crwdne10929:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="10930" identifier="22e24fd6d58af55a82263e6970d82676">
+        <source>“&lt;strong&gt;Parity&lt;/strong&gt;” often comes up in error control as there is a well-known method
+based on it.</source>
+        <target>crwdns10930:0crwdne10930:0</target>
+        <note>Context: XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="10931" identifier="12f0e00f873f6139d4ea6e57b9423021">
+        <source>The word &quot;parity&quot; has a general meaning of simply saying if a number is even or
+odd.</source>
+        <target>crwdns10931:0crwdne10931:0</target>
+        <note>Context: XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="10932" identifier="643fa8f74929b58ff32413a5b024cfc2">
+        <source>It comes from the same root word as “pair” – &lt;strong&gt;even parity&lt;/strong&gt; means that there is
+an even number of objects (they can be put in pairs), and &lt;strong&gt;odd parity&lt;/strong&gt; means
+they can’t be put into pairs.</source>
+        <target>crwdns10932:0crwdne10932:0</target>
+        <note>Context: XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="10933" identifier="d19f83adb96d1d3fc5fb8fb538124f38">
+        <source>If you have 5 white socks, then they have odd parity, but you want them to have
+even parity!</source>
+        <target>crwdns10933:0crwdne10933:0</target>
+        <note>Context: XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="10934" identifier="f815aea7dcda4497ea35a5fd85eebea8">
+        <source>The system described in lesson plan one uses even parity, as it is slightly
+easier to work with in this situation; so &quot;even parity&quot; is just a fancy way of
+saying that there is an even number of something.</source>
+        <target>crwdns10934:0crwdne10934:0</target>
+        <note>Context: XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="10935" identifier="0252e3790365a85239efbe0bc5d6ebc7">
+        <source>A &quot;&lt;strong&gt;check digit&lt;/strong&gt;&quot; is an extra digit added to the end of an important number
+such as a credit card number, product code (bar code), identity number, tax
+number, or a passport number, that can be used to check if the number has been
+typed in correctly.</source>
+        <target>crwdns10935:0crwdne10935:0</target>
+        <note>Context: XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="10936" identifier="6c97c836fa2b668fdf9f21235d79af45">
+        <source>In some situations more than one digit is used, in which case it is referred to
+as a checksum.</source>
+        <target>crwdns10936:0crwdne10936:0</target>
+        <note>Context: XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="10937" identifier="46a3f2fa829ce47e0612107aa4a0a229">
+        <source>{panel type=&quot;math&quot; title=&quot;Mathematical links&quot;}</source>
+        <target>crwdns10937:0crwdne10937:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="10938" identifier="72348b8c6efc0e8edd1064c8bcda602b">
+        <source>Even and odd numbers.</source>
+        <target>crwdns10938:0crwdne10938:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="10939" identifier="c4142f4489f3afead1eeb3a78d926c21">
+        <source>That even and odd numbers alternate (adding or subtracting one from a number
+changes it from even to odd, or from odd to even).</source>
+        <target>crwdns10939:0crwdne10939:0</target>
+        <note>Context: XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="10940" identifier="679a48788e511afcbb65b16434f1c3bd">
+        <source>Mathematically, if &lt;em&gt;N&lt;/em&gt; is even, then &lt;em&gt;N + 1&lt;/em&gt; and &lt;em&gt;N -1&lt;/em&gt; are odd.</source>
+        <target>crwdns10940:0crwdne10940:0</target>
+        <note>Context: XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="10941" identifier="2c3ba9d96c9ae2dc884beb1b8d205748">
+        <source>Basic facts knowledge (adding, multiplying).</source>
+        <target>crwdns10941:0crwdne10941:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="10942" identifier="784139b8a68c2d1b61a60002b2f4b11b">
+        <source>Clock arithmetic (can also be presented as remainder from division, or the
+modulo operator).</source>
+        <target>crwdns10942:0crwdne10942:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[4]</note>
+      </trans-unit>
+      <trans-unit id="10943" identifier="ab76f63ac4106565b02bea96cd4e574f">
+        <source>{panel end}</source>
+        <target>crwdns10943:0{panel end}crwdne10943:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="10944" identifier="3dfd1f526f511efe5f48bcfff7102627">
+        <source>Real world implications</source>
+        <target>crwdns10944:0crwdne10944:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[4]</note>
+      </trans-unit>
+      <trans-unit id="10945" identifier="fa9360664764ba5747d39d85d45c4d6c">
+        <source>{image file-path=&quot;img/topics/arrest-mugshot-for-typo.png&quot;}</source>
+        <target>crwdns10945:0crwdne10945:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="10946" identifier="1e938eb77635417258afce8cfe4df732">
+        <source>Imagine that you send an email to an online trader saying that you will pay $20
+for their product.</source>
+        <target>crwdns10946:0crwdne10946:0</target>
+        <note>Context: XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="10947" identifier="f1cf0e385ac985d5a149cdf291b51360">
+        <source>But suppose some interference occurs along the way, and the $20 is changed to
+$80.</source>
+        <target>crwdns10947:0crwdne10947:0</target>
+        <note>Context: XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="10948" identifier="43cdd8af45100febc56edd77dbbfeeb0">
+        <source>The trader will probably be very happy to accept your offer, and charge you 4
+times as much for the product as you wanted to pay!</source>
+        <target>crwdns10948:0crwdne10948:0</target>
+        <note>Context: XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="10949" identifier="de67efb78d6778b21bacb11948c1afd0">
+        <source>Or what if someone types in a credit card number to buy something, but gets one
+digit wrong?</source>
+        <target>crwdns10949:0crwdne10949:0</target>
+        <note>Context: XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="10950" identifier="2d2f042eb1df75e4196209cc3b7e0a23">
+        <source>Someone else might get charged for the item and person who mis-typed the number
+might be accused of fraud just because of a simple typing mistake.</source>
+        <target>crwdns10950:0crwdne10950:0</target>
+        <note>Context: XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="10951" identifier="ff4d642b528fea8b3016058e186f8038">
+        <source>{image file-path=&quot;img/topics/cd-with-marks.png&quot;}</source>
+        <target>crwdns10951:0crwdne10951:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="10952" identifier="111b53a5105c278cef2c8a7ea5426477">
+        <source>Everything stored by computers and sent between them is represented as bits
+(binary digits).</source>
+        <target>crwdns10952:0crwdne10952:0</target>
+        <note>Context: XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="10953" identifier="03d25721b598707c3abe3144a3952b30">
+        <source>It is easy for these to be changed accidentally because of errors in the devices
+that are storing or transmitting them.</source>
+        <target>crwdns10953:0crwdne10953:0</target>
+        <note>Context: XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="10954" identifier="9b6ee75f8c8903347d2e8295e75a8af8">
+        <source>A &lt;strong&gt;CD&lt;/strong&gt; might get a scratch or a piece of dust on it that changes a zero into a
+one or vice versa.</source>
+        <target>crwdns10954:0crwdne10954:0</target>
+        <note>Context: XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="10955" identifier="9d1cb4cac59809624a2e90aae8062527">
+        <source>A hard &lt;strong&gt;disk&lt;/strong&gt; might have the magnetism accidentally fade where a bit (binary
+digit) is stored.</source>
+        <target>crwdns10955:0crwdne10955:0</target>
+        <note>Context: XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="10956" identifier="30c9b29b7417d12bf2ed6794b4166819">
+        <source>On the Internet, interference and bad connections can cause bits to be altered.</source>
+        <target>crwdns10956:0crwdne10956:0</target>
+        <note>Context: XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="10957" identifier="bfa8a9d8c646c13fac4c3ca513fed159">
+        <source>When scanning printed information such as barcodes and QR codes there might be
+ice or dirt on the product that causes the wrong value to be scanned.</source>
+        <target>crwdns10957:0crwdne10957:0</target>
+        <note>Context: XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="10958" identifier="436a7823e9bf19cfb6f8da0c579822d1">
+        <source>So how come we don’t have to worry about this?</source>
+        <target>crwdns10958:0crwdne10958:0</target>
+        <note>Context: XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="10959" identifier="304ae31126355d252237779e8fafe0d1">
+        <source>And even worse, what if we detect that there's been an error in the data, but
+can't get a new copy?</source>
+        <target>crwdns10959:0crwdne10959:0</target>
+        <note>Context: XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="10960" identifier="cff166300687b06ed1cab230f1a7c49d">
+        <source>For example, if data is received from a deep space probe, it would be very
+tedious to wait for retransmission if an error has occurred and we can’t fix it!</source>
+        <target>crwdns10960:0crwdne10960:0</target>
+        <note>Context: XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="10961" identifier="fbcb5caed34f2935f2fcc4a0b13aebdb">
+        <source>(It takes just over half an hour to get a radio signal from Jupiter when it is
+at its closest to Earth!)
+And when you read data from a computer's file system, if an error is detected
+you can't go back in time and save a new copy (well, making a backup is like
+anticipating that you'll need to go back in time one day, but it's not always
+convenient or easy to remember to use a backup).</source>
+        <target>crwdns10961:0crwdne10961:0</target>
+        <note>Context: XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="10962" identifier="a0c57dd643e7d28f11874245b98bb77d">
+        <source>We need to be able to recognize when the data has been corrupted (error
+detection) and ideally we also need to be able to reconstruct the original data (error correction).</source>
+        <target>crwdns10962:0crwdne10962:0</target>
+        <note>Context: XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="10963" identifier="3dcbcd65b39ca569164e6102b000439d">
+        <source>This was a serious problem on early computers, so scientists soon invented
+methods to allow computers to detect errors in data and correct those errors.</source>
+        <target>crwdns10963:0crwdne10963:0</target>
+        <note>Context: XPath: /p[25]</note>
+      </trans-unit>
+      <trans-unit id="10964" identifier="f54bbfdeaa9646507786aecb8def1807">
+        <source>We will learn about one way to do this using a method that is called &lt;strong&gt;parity&lt;/strong&gt;.</source>
+        <target>crwdns10964:0crwdne10964:0</target>
+        <note>Context: XPath: /p[25]</note>
+      </trans-unit>
+      <trans-unit id="10965" identifier="181cef272af75974ea2eb381b1a7027b">
+        <source>But instead of using zero and one bits inside a computer system, we’ll use
+cards with two sides, and do it as a magic trick.</source>
+        <target>crwdns10965:0crwdne10965:0</target>
+        <note>Context: XPath: /p[25]</note>
+      </trans-unit>
+      <trans-unit id="10966" identifier="a4a494d44b5e89c17e9e8626edb10d78">
+        <source>More sophisticated versions of this are widely used on modern storage and
+transmission devices to make sure that typical minor hardware problems are
+unlikely to result in a major loss of data.</source>
+        <target>crwdns10966:0crwdne10966:0</target>
+        <note>Context: XPath: /p[25]</note>
+      </trans-unit>
+      <trans-unit id="10967" identifier="db7d3a971e6ebf148ff527fd998b7d6e">
+        <source>The more complex error control systems used on modern digital devices are able
+to detect and correct multiple errors.</source>
+        <target>crwdns10967:0crwdne10967:0</target>
+        <note>Context: XPath: /p[25]</note>
+      </trans-unit>
+      <trans-unit id="10968" identifier="0c3b86938b8d8834f2e56c302b2c5e11">
+        <source>The hard disk in a computer has a large amount of its space allocated to
+correcting errors so that it will work reliably even if parts of the disk
+surface fail.</source>
+        <target>crwdns10968:0crwdne10968:0</target>
+        <note>Context: XPath: /p[25]</note>
+      </trans-unit>
+      <trans-unit id="10969" identifier="5ee12d3d497c8075e3b2f2ab0e26abd4">
+        <source>The activities here will show how adding extra information (without going to the
+trouble of making a whole backup, which would use twice the space) provides a
+good level of resilience against errors.</source>
+        <target>crwdns10969:0crwdne10969:0</target>
+        <note>Context: XPath: /p[25]</note>
+      </trans-unit>
+      <trans-unit id="10970" identifier="aa4f6f1fcb4494ab26a613bfc3e9f3f9">
+        <source>Reflection questions</source>
+        <target>crwdns10970:0crwdne10970:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[5]</note>
+      </trans-unit>
+      <trans-unit id="10971" identifier="5be7e55141e6c0277fdb381ee6822754">
+        <source>What was most surprising about the learning that happened from the teaching of this unit?</source>
+        <target>crwdns10971:0crwdne10971:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li</note>
+      </trans-unit>
+      <trans-unit id="10972" identifier="4a2faada4b74db67d9e767e933314990">
+        <source>Who were the students who were very systematic in their activities?</source>
+        <target>crwdns10972:0crwdne10972:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li[2]</note>
+      </trans-unit>
+      <trans-unit id="10973" identifier="c1a4618d2fb8f9419ab4b503feecaea2">
+        <source>Who were the students who were very detailed in their activities?</source>
+        <target>crwdns10973:0crwdne10973:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li[3]</note>
+      </trans-unit>
+      <trans-unit id="10974" identifier="153f25a2cbf60dcc820438a47c7b7285">
+        <source>What would I change in my delivery of this unit?</source>
+        <target>crwdns10974:0crwdne10974:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="751" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/binary-notes-representing-number/binary-notes-representing-number.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8485" identifier="b82361c420033ab95a35aed754fe4b96">
+        <source>Binary representation of a decimal number between 0 and 31 by playing musical notes</source>
+        <target>crwdns8485:0crwdne8485:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="8486" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns8486:0crwdne8486:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="8487" identifier="42f5268e5d550ab78b9a2de302ce3ea7">
+        <source>Write a program that asks the user to enter a decimal number between 0 and 31
+as the input and plays the 5 musical notes representing that number in binary
+(a high note for dots showing and a low note for dots not showing).</source>
+        <target>crwdns8487:0crwdne8487:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8488" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns8488:0crwdne8488:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="8489" identifier="c4157e645991e13a72ced9574f6e8235">
+        <source>Your program should display the outputs shown in this table for the given
+inputs provided:</source>
+        <target>crwdns8489:0crwdne8489:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="8490" identifier="5bfb69c6f4701e747d0c20b0822e2580">
+        <source>Input</source>
+        <target>crwdns8490:0crwdne8490:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th</note>
+      </trans-unit>
+      <trans-unit id="8491" identifier="f36a1e77a6177da7e10093e12e92ec6c">
+        <source>Output</source>
+        <target>crwdns8491:0crwdne8491:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th[2]</note>
+      </trans-unit>
+      <trans-unit id="8492" identifier="41b10780fc73a8ab8ee027897e619936">
+        <source>11</source>
+        <target>crwdns8492:0crwdne8492:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td</note>
+      </trans-unit>
+      <trans-unit id="8493" identifier="8975c971e19d3642e86ec535858375f9">
+        <source>low, high, low, high, high</source>
+        <target>crwdns8493:0crwdne8493:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td[2]</note>
+      </trans-unit>
+      <trans-unit id="8494" identifier="c6df9e1c6c341113a36fa81bb99c7cf4">
+        <source>31</source>
+        <target>crwdns8494:0crwdne8494:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td</note>
+      </trans-unit>
+      <trans-unit id="8495" identifier="0cf6d9dd03761d9b39de7dc232cdc0d4">
+        <source>high, high, high, high, high</source>
+        <target>crwdns8495:0crwdne8495:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="8496" identifier="58161fa3de8fcce091377bc19c34f602">
+        <source>0</source>
+        <target>crwdns8496:0crwdne8496:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td</note>
+      </trans-unit>
+      <trans-unit id="8497" identifier="251ea96ac8986963036e62e4c732b2c6">
+        <source>low, low, low, low, low</source>
+        <target>crwdns8497:0crwdne8497:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

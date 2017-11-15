@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1003" original="/csunplugged/topics/content/en/error-detection-and-correction/programming-challenges/product-code-13-weighted-sum-one-at-a-time/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10805" identifier="3a29a7e836ccaa795883d72e41b8db48">
+        <source>Click on the green flag, enter the inputs provided in the “testing examples” to
+see the expected output of your program.</source>
+        <target>crwdns10805:0crwdne10805:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="10806" identifier="a2e015e856a840ad3db3d63ca8ee2e17">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/148476545/?autostart=false&quot;}</source>
+        <target>crwdns10806:0crwdne10806:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="10807" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns10807:0crwdne10807:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="10808" identifier="90935babdd9fcb2ea81f0fb5e2595782">
+        <source>when green flag clicked
+
+say (join [Total: ] (total))</source>
+        <target>crwdns10808:0crwdne10808:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="10809" identifier="b14d03c5acc09f3b9ca3473f0620731f">
+        <source>repeat (6)
+end</source>
+        <target>crwdns10809:0crwdne10809:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="10810" identifier="8fe100017e4f7dde48cf2bc5adab4b94">
+        <source>ask (join (join [Enter digit ] (index)) [ of the product code:]) and wait
+
+ask (join (join [Enter digit ] (index)) [ of the product code:]) and wait
+
+ask (join (join [Enter digit ] (index)) [ of the product code:]) and wait</source>
+        <target>crwdns10810:0crwdne10810:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="10811" identifier="702ebbb7cbdcc95246be6c37e4e9ee6f">
+        <source>change [total 1 v] by (answer)
+
+set [total v] to ((total 1) + ((total 2) * (3)))
+
+change [index v] by (1)
+
+change [total 1 v] by (answer)
+
+change [index v] by (1)
+
+change [total 2 v] by (answer)
+
+set [total 1 v] to [0]
+
+set [total 2 v] to [0]
+
+set [index v] to [1]</source>
+        <target>crwdns10811:0[0]crwdnd10811:0[0]crwdnd10811:0[1]crwdne10811:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[4]/code</note>
+      </trans-unit>
+      <trans-unit id="10812" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns10812:0{panel end}crwdne10812:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1114" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/check-if-divisor/check-if-divisor.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14316" identifier="3755cb27775938a7e41af3b7ffaa6a9e">
+        <source>Check if a number is a divisor of another number</source>
+        <target>crwdns14316:0crwdne14316:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="14317" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns14317:0crwdne14317:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="14318" identifier="24bd842e73746cd4d171b5271ba0b3fe">
+        <source>Write a program that asks the user to enter two numbers and displays a message saying if the second number is a divisor of the first number.</source>
+        <target>crwdns14318:0crwdne14318:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14319" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns14319:0crwdne14319:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="14320" identifier="c9bf31e2ea57693ba5afd83cc57b14b3">
+        <source>Your program should display the outputs shown in this table for the given inputs provided;</source>
+        <target>crwdns14320:0crwdne14320:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14321" identifier="cba6b4800108c82267efa7cede56fc42">
+        <source>Input</source>
+        <target>crwdns14321:0crwdne14321:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/tr/th</note>
+      </trans-unit>
+      <trans-unit id="14322" identifier="67db30d78708ccc80d53b9b484cffb63">
+        <source>Output</source>
+        <target>crwdns14322:0crwdne14322:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/tr/th[2]</note>
+      </trans-unit>
+      <trans-unit id="14323" identifier="1193e52f708c9a3f76ec2da132b4b9ba">
+        <source>20&lt;br&gt;4</source>
+        <target>crwdns14323:0crwdne14323:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[2]/td</note>
+      </trans-unit>
+      <trans-unit id="14324" identifier="57b3c1917ba59fa8fb04c01959d77549">
+        <source>4 is a divisor of the number 20.</source>
+        <target>crwdns14324:0crwdne14324:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[2]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="14325" identifier="7d98d188d4f74da64c045ed8a289e192">
+        <source>20&lt;br&gt;6</source>
+        <target>crwdns14325:0crwdne14325:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[3]/td</note>
+      </trans-unit>
+      <trans-unit id="14326" identifier="61cc949fc6c1328c6b44b71273567663">
+        <source>6 is not a divisor of the number 20.</source>
+        <target>crwdns14326:0crwdne14326:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tr[3]/td[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

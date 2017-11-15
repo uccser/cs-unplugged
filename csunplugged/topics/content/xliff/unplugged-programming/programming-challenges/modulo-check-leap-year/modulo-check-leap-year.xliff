@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1291" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/modulo-check-leap-year/modulo-check-leap-year.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15333" identifier="f44b3e58a1a4fc4e3e9efb78925bd8a6">
+        <source>Check if a year is a leap year</source>
+        <target>crwdns15333:0crwdne15333:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="15334" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns15334:0crwdne15334:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="15335" identifier="f779bcd0b71d801c45299b757eb18be0">
+        <source>Write a program that takes a year as the input and displays a message saying if the year is a leap year or not.</source>
+        <target>crwdns15335:0crwdne15335:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15336" identifier="37b25d534162a1f5196cf13fa133d9a5">
+        <source>Following is the algorithm to check if a year is a leap year or not:</source>
+        <target>crwdns15336:0crwdne15336:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="15337" identifier="3eed4456f1cca4d9654e7076ca2719d5">
+        <source>if (year is not divisible by 4) then (it is a common year)</source>
+        <target>crwdns15337:0crwdne15337:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol/li</note>
+      </trans-unit>
+      <trans-unit id="15338" identifier="07f181202bc7c0aee5aebd750ddaa110">
+        <source>else if (year is not divisible by 100) then (it is a leap year)</source>
+        <target>crwdns15338:0crwdne15338:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol/li[2]</note>
+      </trans-unit>
+      <trans-unit id="15339" identifier="16ba8380b10c4695c2bdc42ac14e8a0e">
+        <source>else if (year is not divisible by 400) then (it is a common year)</source>
+        <target>crwdns15339:0crwdne15339:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol/li[3]</note>
+      </trans-unit>
+      <trans-unit id="15340" identifier="e40302565cc735938062a5b738fa86c0">
+        <source>else (it is a leap year)</source>
+        <target>crwdns15340:0crwdne15340:0</target>
+        <note>Context: List Item&#13;
+XPath: /ol/li[4]</note>
+      </trans-unit>
+      <trans-unit id="15341" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns15341:0crwdne15341:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="15342" identifier="2881ad003686ae7616d6373439bdcf2a">
+        <source>Your program should display the outputs shown in this table for the given inputs provided;</source>
+        <target>crwdns15342:0crwdne15342:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="15343" identifier="5bfb69c6f4701e747d0c20b0822e2580">
+        <source>Input</source>
+        <target>crwdns15343:0crwdne15343:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th</note>
+      </trans-unit>
+      <trans-unit id="15344" identifier="f36a1e77a6177da7e10093e12e92ec6c">
+        <source>Output</source>
+        <target>crwdns15344:0crwdne15344:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th[2]</note>
+      </trans-unit>
+      <trans-unit id="15345" identifier="4a6054c2c4e28710f040734c67226276">
+        <source>1600</source>
+        <target>crwdns15345:0crwdne15345:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td</note>
+      </trans-unit>
+      <trans-unit id="15346" identifier="90c5f260cec95c1c292eb2b4e99d146c">
+        <source>1600 is a leap year!</source>
+        <target>crwdns15346:0crwdne15346:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td[2]</note>
+      </trans-unit>
+      <trans-unit id="15347" identifier="9d3a54812a72d837e1a9911fffb8167a">
+        <source>2000</source>
+        <target>crwdns15347:0crwdne15347:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td</note>
+      </trans-unit>
+      <trans-unit id="15348" identifier="be1178f2290d5749675d6d6b3b57a9f2">
+        <source>2000 is a leap year!</source>
+        <target>crwdns15348:0crwdne15348:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="15349" identifier="f09f5417a0e680cad3505f5a15d9eca8">
+        <source>2400</source>
+        <target>crwdns15349:0crwdne15349:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td</note>
+      </trans-unit>
+      <trans-unit id="15350" identifier="50c28b91a62b10ffedb00fbf0e091a0a">
+        <source>2400 is a leap year!</source>
+        <target>crwdns15350:0crwdne15350:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="15351" identifier="14da2998d65a10956fae8257f9c7b3d9">
+        <source>1700</source>
+        <target>crwdns15351:0crwdne15351:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[4]/td</note>
+      </trans-unit>
+      <trans-unit id="15352" identifier="6888e8783cf06d03baac5de75c620611">
+        <source>1700 is not a leap year!</source>
+        <target>crwdns15352:0crwdne15352:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[4]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="15353" identifier="ff2ea8dc46a8be1cdd3efe7f725431a8">
+        <source>2100</source>
+        <target>crwdns15353:0crwdne15353:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[5]/td</note>
+      </trans-unit>
+      <trans-unit id="15354" identifier="6e5ee6dc107bd4dd13753b60395f2879">
+        <source>2100 is not a leap year!</source>
+        <target>crwdns15354:0crwdne15354:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[5]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="15355" identifier="dc132648b693228b43c462f32b29e435">
+        <source>2300</source>
+        <target>crwdns15355:0crwdne15355:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[6]/td</note>
+      </trans-unit>
+      <trans-unit id="15356" identifier="babd19ecb03b01f1dbe63f33545dc560">
+        <source>2300 is not a leap year!</source>
+        <target>crwdns15356:0crwdne15356:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[6]/td[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

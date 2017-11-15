@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1097" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/calculate-exponents/scratch-solution.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14232" identifier="03d6e6985353a7c3cf31f30275bd15c8">
+        <source>when green flag clicked
+set [result v] to [1]
+ask [Enter an integer for the base:] and wait
+set [base v] to (answer)
+ask [Enter a positve integer for the power:] and wait
+set [power v] to (answer)
+repeat (power)
+  set [result v] to ((result) * (base))
+end
+say (join (join (join (join (base) [^]) (power)) [ = ]) (result))</source>
+        <target>crwdns14232:0[1]crwdne14232:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

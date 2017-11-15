@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1257" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/modify-bee-bot/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15116" identifier="263da1bc79f97b9f2c508b4addf11e4e">
+        <source>Click on the green flag, and use the buttons to see the expected output of your program.</source>
+        <target>crwdns15116:0crwdne15116:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15117" identifier="76d7ed3e4d9b73127194a3311c096298">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/164789645/?autostart=false&quot;}</source>
+        <target>crwdns15117:0crwdne15117:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="15118" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns15118:0crwdne15118:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="15119" identifier="fc049da3819ca8a04ee9d2c127ef8b90">
+        <source>Control</source>
+        <target>crwdns15119:0crwdne15119:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="15120" identifier="350d795fcbffe41f2c65fb512adff224">
+        <source>if &amp;lt;(statement) = [spin]&amp;gt; then
+end
+
+repeat (20)
+end</source>
+        <target>crwdns15120:0[spin]crwdne15120:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="15121" identifier="dc7a46776102ca941c0adafbd237af88">
+        <source>Data - List</source>
+        <target>crwdns15121:0crwdne15121:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="15122" identifier="38c611ffe5013413a3caa6deac3e6b6a">
+        <source>insert [spin] at (last v) of [source code v]</source>
+        <target>crwdns15122:0[spin]crwdne15122:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="15123" identifier="30d5e2528fd74d3eae86f712d3aea20c">
+        <source>Sensing</source>
+        <target>crwdns15123:0crwdne15123:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="15124" identifier="db00f2c9f6925a76a4ff2216f1169c52">
+        <source>turn cw (90) degrees</source>
+        <target>crwdns15124:0crwdne15124:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="15125" identifier="75f3655aa518ef3ac5f877b916373623">
+        <source>{panel end}</source>
+        <target>crwdns15125:0{panel end}crwdne15125:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[7]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

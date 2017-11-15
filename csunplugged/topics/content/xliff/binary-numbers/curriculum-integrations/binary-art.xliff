@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="721" original="/csunplugged/topics/content/en/binary-numbers/curriculum-integrations/binary-art.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8262" identifier="ee2f1ce0127d898c812e394ff1d6d4cf">
+        <source>Binary Art</source>
+        <target>crwdns8262:0crwdne8262:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="8263" identifier="fc24765f7496da4b0c5a8d9bccc94a65">
+        <source>{image file-path=&quot;img/topics/binary_grids.png&quot;}</source>
+        <target>crwdns8263:0crwdne8263:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8264" identifier="ff98e6c2e6b0c4639fdd54c0f7b549ce">
+        <source>Write a secret message by colouring in the grids</source>
+        <target>crwdns8264:0crwdne8264:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="8265" identifier="b80b25f68f8af700eb6b14beb03dd990">
+        <source>Write your name in binary art</source>
+        <target>crwdns8265:0crwdne8265:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="8266" identifier="f991e987d480f40ce8b7e1d1af0b0fe3">
+        <source>Write your birthdate in binary art</source>
+        <target>crwdns8266:0crwdne8266:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[3]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

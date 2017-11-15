@@ -1,0 +1,864 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1074" original="/csunplugged/topics/content/en/unplugged-programming/numeracy-unit-plan/lessons/modulo.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="13790" identifier="cd406a2dc4b87a88cd42e6d14944d349">
+        <source>The Modulo operator Unplugged</source>
+        <target>crwdns13790:0crwdne13790:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="13791" identifier="7a3e2f2bf06c075a85537ccd137173ae">
+        <source>{panel type=&quot;note&quot; title=&quot;Note from the authors&quot;}</source>
+        <target>crwdns13791:0crwdne13791:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="13792" identifier="74a1f0857ca1895f3770535e7deb762c">
+        <source>This lesson is primarily on a maths topic rather than Computational Thinking,
+but the modulo operator is so widely used in digital systems that we've
+provided this lesson plan to teach it explicitly rather than introduce it in
+each of the several topics that use it.</source>
+        <target>crwdns13792:0crwdne13792:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="13793" identifier="02e22f39c3deff49a623c2cffcd69ae7">
+        <source>The &quot;mod&quot; operation (short for modulo) is used a lot in the error correction
+and detection lessons; in the Unplugged activities it also comes up in
+searching (hashing), and it applies to angles in turtle based languages like
+Scratch and Logo.</source>
+        <target>crwdns13793:0crwdne13793:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="13794" identifier="ba487e03b86dbd0f5e43b6e53a88b8fd">
+        <source>Students may already be familiar with the idea, since it is essentially the
+same as the &quot;remainder&quot; after division; it's also referred to as &quot;clock
+arithmetic&quot; because it is how we can add time.</source>
+        <target>crwdns13794:0crwdne13794:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="13795" identifier="3a1ae082a90b504339024ac691a2b919">
+        <source>{panel end}</source>
+        <target>crwdns13795:0{panel end}crwdne13795:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="13796" identifier="f17e7b5da610295808d4668fae87df1b">
+        <source>Key questions</source>
+        <target>crwdns13796:0crwdne13796:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="13797" identifier="e8538adf8fc4cf62cca52d806a1ce5cf">
+        <source>Which month comes first, January or December?
+What is the month after December?</source>
+        <target>crwdns13797:0crwdne13797:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="13798" identifier="617ca5db75a7e764d684d737addfdcc3">
+        <source>What is the weekday that comes after Friday?
+What is the weekday that is 4 days before Friday?</source>
+        <target>crwdns13798:0crwdne13798:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="13799" identifier="ac30fdeb886d54cb70874e6f9b9e9109">
+        <source>If you arrive at a car park at 5pm (17:00 if you use 24 hour time),
+and pay for 8 hours of parking, when will it expire?</source>
+        <target>crwdns13799:0crwdne13799:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="13800" identifier="99b0f7b08a0fea55d9673bbf7f187851">
+        <source>Potential answers could include:</source>
+        <target>crwdns13800:0crwdne13800:0</target>
+        <note>Context: Headline 3&#13;
+XPath: /h3</note>
+      </trans-unit>
+      <trans-unit id="13801" identifier="a3e1119f42ea76294132aa32b093f918">
+        <source>With the months, each month is both before and after every other month!
+If it's January, then there's a December just before it, but there's also
+one coming up in 11 months.</source>
+        <target>crwdns13801:0crwdne13801:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li</note>
+      </trans-unit>
+      <trans-unit id="13802" identifier="3558e525fd4cb1bde26b57aee370a3af">
+        <source>With the days, again, Monday comes after Friday, but it's also before
+Friday.</source>
+        <target>crwdns13802:0crwdne13802:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li[2]</note>
+      </trans-unit>
+      <trans-unit id="13803" identifier="2c7ba7abb6c205872653dee50827a8cd">
+        <source>The car parking ticket expires at 1am (1:00).
+When you add 8 to 5 (or 17), you get 1!</source>
+        <target>crwdns13803:0crwdne13803:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[2]/li[3]</note>
+      </trans-unit>
+      <trans-unit id="13804" identifier="4460fd52c3ef567c91cd109657e20025">
+        <source>Lesson starter</source>
+        <target>crwdns13804:0crwdne13804:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="13805" identifier="cc934edca9fbb607a5cad909fa2d3b69">
+        <source>Print the modulo clock resource with modulo 10 out for the students, or draw
+it on the board (This sequence of questions could also be run using the train
+or ferris wheel model; see the next section).</source>
+        <target>crwdns13805:0crwdne13805:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="13806" identifier="dcef983078aad62e57515169a47093ff">
+        <source>{image file-path=&quot;img/topics/modulo-10-clock.png&quot; alt=&quot;A clock face with the numbers 0 to 9 around inside.&quot;}</source>
+        <target>crwdns13806:0crwdne13806:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="13807" identifier="e682a18a34842b481c163c9cc4e95ca0">
+        <source>Ask what is unusual about this &quot;clock&quot; (it has only 10 points on the dial,
+and it has 0 at the top instead of 10).
+Explain that although it's a little odd, it's actually very useful.</source>
+        <target>crwdns13807:0crwdne13807:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="13808" identifier="ea08f2f76d1ef4a9f87b3ba4c0221b4a">
+        <source>Lesson activities</source>
+        <target>crwdns13808:0crwdne13808:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[3]</note>
+      </trans-unit>
+      <trans-unit id="13809" identifier="cb4283bdbcfa7d2770556dd86747156f">
+        <source>Ask which number is 2 hours (or 2 ticks) after 3?</source>
+        <target>crwdns13809:0crwdne13809:0</target>
+        <note>Context: XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="13810" identifier="57a6cb77b2a27f5576667a6dc3961794">
+        <source>(The answer is 5 i.e. just count 2 units clockwise).</source>
+        <target>crwdns13810:0crwdne13810:0</target>
+        <note>Context: XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="13811" identifier="29b34affa21cdf3f4092f0411166f1c1">
+        <source>If students have their own copy of the clock, they could put a counter on
+the 3, and move it 2 places.</source>
+        <target>crwdns13811:0crwdne13811:0</target>
+        <note>Context: XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="13812" identifier="f7b0569878ceca859734fa9121ac3944">
+        <source>Which is 3 hours after 9? (2) We'll refer to this as 9+3.</source>
+        <target>crwdns13812:0crwdne13812:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="13813" identifier="a14fccd6b1b7b4e0433d5be86d93f3c1">
+        <source>What is 2+10 (i.e. 10 ticks after 2)?</source>
+        <target>crwdns13813:0crwdne13813:0</target>
+        <note>Context: XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="13814" identifier="1f70ec9054174c720ce7efcb68cae9b7">
+        <source>(It is 2, since adding 10 goes right around the clock).</source>
+        <target>crwdns13814:0crwdne13814:0</target>
+        <note>Context: XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="13815" identifier="5522bc9193449715117dbab64ba60125">
+        <source>What is 2+20?</source>
+        <target>crwdns13815:0crwdne13815:0</target>
+        <note>Context: XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="13816" identifier="988e36284b47f67a496c8afe61098e0e">
+        <source>(it's also 2; you go around the clock twice).</source>
+        <target>crwdns13816:0crwdne13816:0</target>
+        <note>Context: XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="13817" identifier="52afa69d55b13d186b07576a4c94ecc5">
+        <source>What is 5+100?</source>
+        <target>crwdns13817:0crwdne13817:0</target>
+        <note>Context: XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="13818" identifier="c4714fef1de4d374c3acbc94b13f95fa">
+        <source>(5, since going a multiple of 10 gets you back to the same place).</source>
+        <target>crwdns13818:0crwdne13818:0</target>
+        <note>Context: XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="13819" identifier="8ed446b69f2e061dbfcfb62bd060c164">
+        <source>Now compare the following sums on the clock with the normal sum:</source>
+        <target>crwdns13819:0crwdne13819:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="13820" identifier="eee9d5e025e99bf06bf40da9c7869aae">
+        <source>8+3 (1, compared with 11).</source>
+        <target>crwdns13820:0crwdne13820:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[3]/li</note>
+      </trans-unit>
+      <trans-unit id="13821" identifier="e5ed123fa0f0374831bde4fb6fa231b6">
+        <source>9+8+7 (4, compared with 24).</source>
+        <target>crwdns13821:0crwdne13821:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[3]/li[2]</note>
+      </trans-unit>
+      <trans-unit id="13822" identifier="3f4e4fce8a9e5c177f9fb904efe0ea28">
+        <source>6+6+6 (8, compared with 18).</source>
+        <target>crwdns13822:0crwdne13822:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[3]/li[3]</note>
+      </trans-unit>
+      <trans-unit id="13823" identifier="2e2858a5f658c673c15e994819124164">
+        <source>Ask the students if they can see the pattern; with sufficient examples they
+will realise that it keeps the last digit of the sum e.g. the last digit of
+11 is 1, of 24 is 4, and of 18 is 8.</source>
+        <target>crwdns13823:0crwdne13823:0</target>
+        <note>Context: XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="13824" identifier="54609d142cbdc59703485813371bdce3">
+        <source>If they have done the product code activity, they may recognise this as the
+function that we use for working out the check digit in product codes.</source>
+        <target>crwdns13824:0crwdne13824:0</target>
+        <note>Context: XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="13825" identifier="14713bf26c69b9bdeda9e8a75b8d1dc5">
+        <source>The last calculation above is 3 times 6 (you could start at 0 and
+count 6 ticks 3 times).</source>
+        <target>crwdns13825:0crwdne13825:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="13826" identifier="67fa5c4c58fe12af7e04e41bb3af8cec">
+        <source>Ask what 4 times 6 might be on the clock (it's 4, which is
+the last digit of 24).
+How about 8 times 5? (it's 0, since it's the same as the number 40).</source>
+        <target>crwdns13826:0crwdne13826:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="13827" identifier="3e959b9c7328659c843727d27dd848c0">
+        <source>This strange kind of clock arithmetic that we're doing has a name:
+it's the &lt;em&gt;modulo&lt;/em&gt;.</source>
+        <target>crwdns13827:0crwdne13827:0</target>
+        <note>Context: XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="13828" identifier="d43f6bd46438daa67bb7317696ebec85">
+        <source>The clock here has 10 ticks on it, so the correct way to write
+a calculation is: &lt;code&gt;(8+3) modulo 10&lt;/code&gt;.</source>
+        <target>crwdns13828:0crwdne13828:0</target>
+        <note>Context: XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="13829" identifier="c103b18a301983095c8db77af0d9b976">
+        <source>This means add the 8 and 3, but reset to zero every time you would have
+got to 10.</source>
+        <target>crwdns13829:0crwdne13829:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="13830" identifier="8adb618352ab1d25b8cd70bbbd420147">
+        <source>(This function is also called the &quot;remainder&quot; after division, which for
+positive numbers is the same as the modulo.)</source>
+        <target>crwdns13830:0crwdne13830:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="13831" identifier="bbd2b902152d33426f36892d8ceb6050">
+        <source>Ferris wheels and train routes</source>
+        <target>crwdns13831:0crwdne13831:0</target>
+        <note>Context: Headline 3&#13;
+XPath: /h3[2]</note>
+      </trans-unit>
+      <trans-unit id="13832" identifier="828a1c7a4a5a702ada2d7db6b1315fa4">
+        <source>The above exercise could also be done with the train or ferris wheel handouts,
+which also cycle every 10 steps.</source>
+        <target>crwdns13832:0crwdne13832:0</target>
+        <note>Context: XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="13833" identifier="4e432da0f85f04d0260147c5c4df348b">
+        <source>Students can use counters to track their movement around the stations.</source>
+        <target>crwdns13833:0crwdne13833:0</target>
+        <note>Context: XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="13834" identifier="2587fe66aa912613ea2e974627c20191">
+        <source>We have provided resources for train routes above.</source>
+        <target>crwdns13834:0crwdne13834:0</target>
+        <note>Context: XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="13835" identifier="266b706cd1e7052eccf2c01a804b2c19">
+        <source>{image file-path=&quot;img/topics/modulo-train-stations-tracks-circular.png&quot; alt=&quot;A circle of 10 train stations connected by train tracks.&quot;}</source>
+        <target>crwdns13835:0crwdne13835:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="13836" identifier="76704f3699dfb6591b1e4c35063997fa">
+        <source>Time to rewind</source>
+        <target>crwdns13836:0crwdne13836:0</target>
+        <note>Context: Headline 3&#13;
+XPath: /h3[3]</note>
+      </trans-unit>
+      <trans-unit id="13837" identifier="2ad8a5609816a3733072922845b99f62">
+        <source>The modulo counting is like a circular number line.</source>
+        <target>crwdns13837:0crwdne13837:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="13838" identifier="3f39fec4e8f4c18ecc2ad054e4eabe99">
+        <source>As well as going forward, let's experiment with going backwards
+(i.e. subtraction, or adding negative numbers).</source>
+        <target>crwdns13838:0crwdne13838:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="13839" identifier="9945e4b25f84903ba83be494b864cac0">
+        <source>On the clock it would be winding the time back; on the train and ferris
+wheel it's going in reverse.</source>
+        <target>crwdns13839:0crwdne13839:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="13840" identifier="7220d3bbbdcf9f3c28b58659d41a4a29">
+        <source>Ask the class what they think 2 - 4 is on this system (i.e. 4 steps before 2).
+(This takes you to location 8).</source>
+        <target>crwdns13840:0crwdne13840:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="13841" identifier="4d71eb9eaf722a2a1ad46d33ca15d63c">
+        <source>How about 2 - 10? (It's still 2).
+Or 2-100?
+(We're still going to end up at 2).</source>
+        <target>crwdns13841:0crwdne13841:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="13842" identifier="f954faabe32eda0f8de8f81c88a60eb9">
+        <source>What is 0 - 7? (3)</source>
+        <target>crwdns13842:0crwdne13842:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="13843" identifier="9812a18b54d3773c85a93c5376da4471">
+        <source>But what about -8 i.e. negative 8?
+(That's 8 units before 0, which is 4.)
+Other numbers that land at 4 are -18, -28, and so on.</source>
+        <target>crwdns13843:0crwdne13843:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="13844" identifier="43ef36e461518d36161032680490ee12">
+        <source>(This idea comes up with calculating some check digits; for several systems
+we need to ask &quot;what do you add to x to get to 0 in modulo 10&quot;;
+the short way to calculate that in a computer program is &quot;(0-x) mod 10&quot;.)</source>
+        <target>crwdns13844:0crwdne13844:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="13845" identifier="580c1b293764ba179644dcbbf0b79fe9">
+        <source>Other sized clocks</source>
+        <target>crwdns13845:0crwdne13845:0</target>
+        <note>Context: Headline 3&#13;
+XPath: /h3[4]</note>
+      </trans-unit>
+      <trans-unit id="13846" identifier="72166750d35af85d12982b2c77135077">
+        <source>Now have the students imagine (or draw) a clock with 11 ticks on it,
+numbered from 0 to 10.</source>
+        <target>crwdns13846:0crwdne13846:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[25]</note>
+      </trans-unit>
+      <trans-unit id="13847" identifier="526dc6640292f8f64b69540c190455e0">
+        <source>What is 9+3 on this clock (it's 1).</source>
+        <target>crwdns13847:0crwdne13847:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[26]</note>
+      </trans-unit>
+      <trans-unit id="13848" identifier="3cbdee37bb8e6efd04ee26efb19e008d">
+        <source>What is 7+11? (7, since 11 goes right around the clock).</source>
+        <target>crwdns13848:0crwdne13848:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[27]</note>
+      </trans-unit>
+      <trans-unit id="13849" identifier="77bcd6b27bf66da8c216dcab28e493d4">
+        <source>You can experiment with other sums, and other clock sizes.
+Modulo 11 is mentioned because it is used by ISBN-10 numbers.</source>
+        <target>crwdns13849:0crwdne13849:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[28]</note>
+      </trans-unit>
+      <trans-unit id="13850" identifier="2e9bbd2dfce4d8c7892bb1e0f7af6d80">
+        <source>If you get the students to consider modulo 12 or 24, they should see that it
+relates to normal clocks (12-hour or 24-hour clocks respectively).</source>
+        <target>crwdns13850:0crwdne13850:0</target>
+        <note>Context: XPath: /p[29]</note>
+      </trans-unit>
+      <trans-unit id="13851" identifier="9caf3290523bb385c2c14ee6d823b8ee">
+        <source>For example, (8+5) modulo 12 is the same as working out what the time is 5
+hours after 8 o'clock; or (22+4) modulo 24 is the same as working out the
+time 4 hours after 22:00.</source>
+        <target>crwdns13851:0crwdne13851:0</target>
+        <note>Context: XPath: /p[29]</note>
+      </trans-unit>
+      <trans-unit id="13852" identifier="377a765ff0a6bb640033698786e124e1">
+        <source>In the modulo system, the number at the top of the clock would be 0 rather
+than 12 or 24, but all the other values work as expected.</source>
+        <target>crwdns13852:0crwdne13852:0</target>
+        <note>Context: XPath: /p[29]</note>
+      </trans-unit>
+      <trans-unit id="13853" identifier="8c33f77a40d5fceca87f4edef55749e9">
+        <source>An interesting one to experiment with is modulo 360 i.e. a clock with 360
+ticks, numbered from 0 to 359.</source>
+        <target>crwdns13853:0crwdne13853:0</target>
+        <note>Context: XPath: /p[30]</note>
+      </trans-unit>
+      <trans-unit id="13854" identifier="0e6dd7795de0cbb56a01b8a6268a52b6">
+        <source>This kind of calculation happens when we add angles, since turning 360 degrees
+ends up in the same place as the starting position.</source>
+        <target>crwdns13854:0crwdne13854:0</target>
+        <note>Context: XPath: /p[30]</note>
+      </trans-unit>
+      <trans-unit id="13855" identifier="07423ed6c0bd7f3f39c2c49b7900a8e9">
+        <source>Have the students stand up and face the front.
+Now ask them to turn right 90 degrees (a right angle).
+Now have them turn another 90 degrees.
+Ask what angle they've turned in total (180 degrees).</source>
+        <target>crwdns13855:0crwdne13855:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[31]</note>
+      </trans-unit>
+      <trans-unit id="13856" identifier="d2f4aaaf56c01df23656aac9220b8272">
+        <source>Continuing on, have them turn 90 degrees twice more.</source>
+        <target>crwdns13856:0crwdne13856:0</target>
+        <note>Context: XPath: /p[32]</note>
+      </trans-unit>
+      <trans-unit id="13857" identifier="bbdf2200ca20059c672d642960434feb">
+        <source>They should now be facing the front.</source>
+        <target>crwdns13857:0crwdne13857:0</target>
+        <note>Context: XPath: /p[32]</note>
+      </trans-unit>
+      <trans-unit id="13858" identifier="63f53f85c90ef40e1d887620c9c013a4">
+        <source>How far have they turned in total?</source>
+        <target>crwdns13858:0crwdne13858:0</target>
+        <note>Context: XPath: /p[32]</note>
+      </trans-unit>
+      <trans-unit id="13859" identifier="8c3b4a34008c0178130eaeab6249f487">
+        <source>(90+90+90+90 = 360 degrees)
+Students may be familiar with the idea that a &quot;360&quot; represents a full rotation!</source>
+        <target>crwdns13859:0crwdne13859:0</target>
+        <note>Context: XPath: /p[32]</note>
+      </trans-unit>
+      <trans-unit id="13860" identifier="66e14ac6dc9ac3ef02bda3135ba09e1f">
+        <source>Now ask which way they would be facing if the turned another 360 degrees?
+(It would be facing the front again.)
+What if they turn 360 degrees 10 times (i.e. 3600 degrees)?
+(Still facing the front).</source>
+        <target>crwdns13860:0crwdne13860:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[33]</note>
+      </trans-unit>
+      <trans-unit id="13861" identifier="564e4ffc7c232c2a5e5c4272394306f3">
+        <source>Using similar questions, help the students to realise that the total of the
+angles they turn modulo 360 gives the final result.</source>
+        <target>crwdns13861:0crwdne13861:0</target>
+        <note>Context: XPath: /p[34]</note>
+      </trans-unit>
+      <trans-unit id="13862" identifier="5a44671d710780eba47fb15460220074">
+        <source>For example, turning 3690 degrees to the right is the same as turning 90
+degrees to the right (and the latter is a lot easier!)
+Doing rotations is just another kind of modulo arithmetic.</source>
+        <target>crwdns13862:0crwdne13862:0</target>
+        <note>Context: XPath: /p[34]</note>
+      </trans-unit>
+      <trans-unit id="13863" identifier="bcdd309391ba1307bfcf728343170868">
+        <source>Doing these calculations in modulo 360 relates to programming in turtle-based
+languages such as Scratch and Logo, where sprites turn through angles.</source>
+        <target>crwdns13863:0crwdne13863:0</target>
+        <note>Context: XPath: /p[35]</note>
+      </trans-unit>
+      <trans-unit id="13864" identifier="d6c0869986dffe95fde5a0ac36694735">
+        <source>Turning left 90 degrees six times is the same as turning 540 degrees,
+but that puts the sprite in the same direction as it would be if it had
+turned 180 degrees.</source>
+        <target>crwdns13864:0crwdne13864:0</target>
+        <note>Context: XPath: /p[35]</note>
+      </trans-unit>
+      <trans-unit id="13865" identifier="adda7177cfea51382844c89ff643e0fa">
+        <source>Likewise, turning 3600 (or 360, or 720) degrees is the same as turning
+0 degrees!</source>
+        <target>crwdns13865:0crwdne13865:0</target>
+        <note>Context: XPath: /p[35]</note>
+      </trans-unit>
+      <trans-unit id="13866" identifier="3d241cea18979919e6fe5db64f172d0d">
+        <source>And 365 degrees is the same as 5 degrees.</source>
+        <target>crwdns13866:0crwdne13866:0</target>
+        <note>Context: XPath: /p[35]</note>
+      </trans-unit>
+      <trans-unit id="13867" identifier="a01bb2004d524fd251f87f50413db284">
+        <source>Turning -10 degrees is the same as 350 degrees.</source>
+        <target>crwdns13867:0crwdne13867:0</target>
+        <note>Context: XPath: /p[35]</note>
+      </trans-unit>
+      <trans-unit id="13868" identifier="8feffc200b661efb2f5328c1f738b4db">
+        <source>Going to another extreme, ask the students to consider a clock with only
+two marks on it.
+What would they be? (They would be 0 and 1).</source>
+        <target>crwdns13868:0crwdne13868:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[36]</note>
+      </trans-unit>
+      <trans-unit id="13869" identifier="8eb9f1590d19fce4b041d1f8bf72c139">
+        <source>{image file-path=&quot;img/topics/modulo-2-clock.png&quot; alt=&quot;A clock face with the number 0 at the top (12 o'clock position) and number 1 at the bottom (6 o'clock position).&quot;}</source>
+        <target>crwdns13869:0crwdne13869:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[37]</note>
+      </trans-unit>
+      <trans-unit id="13870" identifier="b41b525c75773e4010c1eb5d9de51f43">
+        <source>In this modulo 2 system, what is 1+1? (0).</source>
+        <target>crwdns13870:0crwdne13870:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[38]</note>
+      </trans-unit>
+      <trans-unit id="13871" identifier="c730b8f02794f742c9d1f6abf54b1091">
+        <source>What is 1+1+1? (1).</source>
+        <target>crwdns13871:0crwdne13871:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[39]</note>
+      </trans-unit>
+      <trans-unit id="13872" identifier="b25007144251ff723a05c629a2f6b8c8">
+        <source>Count up through the numbers.</source>
+        <target>crwdns13872:0crwdne13872:0</target>
+        <note>Context: XPath: /p[40]</note>
+      </trans-unit>
+      <trans-unit id="13873" identifier="54091659faee31283a381aa6ed43173d">
+        <source>For example, 4 is 4 ticks past 0, which gets you back to 0.</source>
+        <target>crwdns13873:0crwdne13873:0</target>
+        <note>Context: XPath: /p[40]</note>
+      </trans-unit>
+      <trans-unit id="13874" identifier="dc7ed5692f63f0795861d3d08f317202">
+        <source>Moving 5 ticks gets you to 1, 6 gets you back to 0.</source>
+        <target>crwdns13874:0crwdne13874:0</target>
+        <note>Context: XPath: /p[40]</note>
+      </trans-unit>
+      <trans-unit id="13875" identifier="3b30663b9c1bb8eb5f9e18fea93b55c6">
+        <source>With some hints, students should realise that a number modulo 2 tells you
+if it is odd or even.</source>
+        <target>crwdns13875:0crwdne13875:0</target>
+        <note>Context: XPath: /p[40]</note>
+      </trans-unit>
+      <trans-unit id="13876" identifier="34ac7aee866a8b40df94e721c1b8fe56">
+        <source>This is used for the parity code!</source>
+        <target>crwdns13876:0crwdne13876:0</target>
+        <note>Context: XPath: /p[40]</note>
+      </trans-unit>
+      <trans-unit id="13877" identifier="a17685ff3e2bcd349b0e4a5bfb41af17">
+        <source>If you count black as 1 and white as 0, then each line with even
+parity adds up to 0 modulo 2.</source>
+        <target>crwdns13877:0crwdne13877:0</target>
+        <note>Context: XPath: /p[40]</note>
+      </trans-unit>
+      <trans-unit id="13878" identifier="26b7c0185feaea4fad16b2e6ee6060df">
+        <source>There's a parity error if it adds up to 1 modulo 2; and the extra
+bit that was added can be thought of as the value needed to make the
+line add up to 0, which is the same idea that is used for most of
+the other checksums, just with a different modulo!</source>
+        <target>crwdns13878:0crwdne13878:0</target>
+        <note>Context: XPath: /p[40]</note>
+      </trans-unit>
+      <trans-unit id="13879" identifier="a134886e826f4a5afd4995e5540f4074">
+        <source>Does the order matter?</source>
+        <target>crwdns13879:0crwdne13879:0</target>
+        <note>Context: Headline 3&#13;
+XPath: /h3[5]</note>
+      </trans-unit>
+      <trans-unit id="13880" identifier="44326e92190c15a9126412c322effde5">
+        <source>Going back to the modulo 10 clock, ask students if the number 7+8 is
+different to the number 8+7.</source>
+        <target>crwdns13880:0crwdne13880:0</target>
+        <note>Context: XPath: /p[41]</note>
+      </trans-unit>
+      <trans-unit id="13881" identifier="2efe0a9284296e7d0c788201bc273fbe">
+        <source>(They aren't, since they both are 15 ticks after 0).</source>
+        <target>crwdns13881:0crwdne13881:0</target>
+        <note>Context: XPath: /p[41]</note>
+      </trans-unit>
+      <trans-unit id="13882" identifier="eeaa8a66a4dbe5cb7cd3117fc9ea94fc">
+        <source>If necessary, use more examples, so that students recognise that this new
+way of adding isn't affected by the order.</source>
+        <target>crwdns13882:0crwdne13882:0</target>
+        <note>Context: XPath: /p[41]</note>
+      </trans-unit>
+      <trans-unit id="13883" identifier="1705cce438d52f093f1eeb7c2fce614a">
+        <source>Likewise, have them experiment with applying the mod function at each
+step of adding three numbers, compared with adding them first.</source>
+        <target>crwdns13883:0crwdne13883:0</target>
+        <note>Context: XPath: /p[42]</note>
+      </trans-unit>
+      <trans-unit id="13884" identifier="e48bb15c7962d4c4507ca4a0eb30a6b0">
+        <source>For example, 7+8+6 gets to 1 on the clock.</source>
+        <target>crwdns13884:0crwdne13884:0</target>
+        <note>Context: XPath: /p[42]</note>
+      </trans-unit>
+      <trans-unit id="13885" identifier="2810a845a14e11a9bb096de6e1743855">
+        <source>Now have them consider 7+8 (which gets to 5), and then add the 6 to it.</source>
+        <target>crwdns13885:0crwdne13885:0</target>
+        <note>Context: XPath: /p[42]</note>
+      </trans-unit>
+      <trans-unit id="13886" identifier="5b1ac764dbc18b76de94d54321e1a57e">
+        <source>It turns out that you can apply the modulo at each step, or just
+at the end; both give the same result.</source>
+        <target>crwdns13886:0crwdne13886:0</target>
+        <note>Context: XPath: /p[42]</note>
+      </trans-unit>
+      <trans-unit id="13887" identifier="f54c26b97abc23f96456a947d2e6fda3">
+        <source>This means that you can add numbers up quickly by grouping them.
+For example, suppose you're adding up: 3 + 7 + 2 + 9 + 1 + 3</source>
+        <target>crwdns13887:0crwdne13887:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[43]</note>
+      </trans-unit>
+      <trans-unit id="13888" identifier="7ad1f5756e22cb59cf18084010c8b837">
+        <source>You could work out the total (25), which is 5 in modulo 10.
+Or you could add up the digits in pairs.
+In this example, the first two digits add up to 0 mod 10: 3 + 7 = 0</source>
+        <target>crwdns13888:0crwdne13888:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[44]</note>
+      </trans-unit>
+      <trans-unit id="13889" identifier="5bbb73461eea1cb2ab82306191ea6724">
+        <source>This means that the 3 and the 7 cancel each other out - they won't
+affect the total.</source>
+        <target>crwdns13889:0crwdne13889:0</target>
+        <note>Context: XPath: /p[45]</note>
+      </trans-unit>
+      <trans-unit id="13890" identifier="de34f23dd8fc9f82cc6e42c0033b74e5">
+        <source>There's also a 9+1 in the sum, so that will also make no
+difference to the total.</source>
+        <target>crwdns13890:0crwdne13890:0</target>
+        <note>Context: XPath: /p[45]</note>
+      </trans-unit>
+      <trans-unit id="13891" identifier="00d33be0bbe1a5aa5c33f542218153aa">
+        <source>That leaves just 2 and 3 to add up, which come to 5 for the grand total.</source>
+        <target>crwdns13891:0crwdne13891:0</target>
+        <note>Context: XPath: /p[45]</note>
+      </trans-unit>
+      <trans-unit id="13892" identifier="265d6f9ba1501670c46dfee3ed3349c4">
+        <source>By grouping numbers that add to 10 (or 20 etc.), you can usually add up
+several digits quite quickly in your head.</source>
+        <target>crwdns13892:0crwdne13892:0</target>
+        <note>Context: XPath: /p[46]</note>
+      </trans-unit>
+      <trans-unit id="13893" identifier="8bc3ebe479cff0bdb510fc063c27b353">
+        <source>This isn't useful on computers, but means you could possibly add up
+a product code checksum without even using pencil and paper!</source>
+        <target>crwdns13893:0crwdne13893:0</target>
+        <note>Context: XPath: /p[46]</note>
+      </trans-unit>
+      <trans-unit id="13894" identifier="5e98bbee92f8df039d0f8cbd183c3abe">
+        <source>Plugging it in</source>
+        <target>crwdns13894:0crwdne13894:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[4]</note>
+      </trans-unit>
+      <trans-unit id="13895" identifier="3f452161b589f98d759448bed9b50348">
+        <source>The &quot;modulo&quot; or &quot;mod&quot; function is easily tested in most programming languages.</source>
+        <target>crwdns13895:0crwdne13895:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[47]</note>
+      </trans-unit>
+      <trans-unit id="13896" identifier="a1638f415def0a79e646ccd540c49a56">
+        <source>In Scratch, you can just choose the &quot;mod&quot; block from the Operators, type in
+two numbers and double click it to see the result:</source>
+        <target>crwdns13896:0crwdne13896:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[48]</note>
+      </trans-unit>
+      <trans-unit id="13897" identifier="269d2d0eb76fc34afb6602bc54b0b597">
+        <source>(37)mod(10) // 7
+
+(-3)mod(10) // 7</source>
+        <target>crwdns13897:0crwdne13897:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="13898" identifier="ca062a936d935b8e4ba1572161381f31">
+        <source>In several programming languages, the &lt;code&gt;%&lt;/code&gt; sign is used to represent &quot;modulo&quot;,
+which is a very confusing choice!</source>
+        <target>crwdns13898:0crwdne13898:0</target>
+        <note>Context: XPath: /p[49]</note>
+      </trans-unit>
+      <trans-unit id="13899" identifier="c417ed3f9838bccae431420d79d908a0">
+        <source>You would type &lt;code&gt;37 % 10&lt;/code&gt; to do the above calculation in Python, Java, C, C++,
+C#, and JavaScript.</source>
+        <target>crwdns13899:0crwdne13899:0</target>
+        <note>Context: XPath: /p[49]</note>
+      </trans-unit>
+      <trans-unit id="13900" identifier="fa1606725c98198d624714700ea43c0d">
+        <source>Some other languages use &lt;code&gt;mod&lt;/code&gt;, including spreadsheets - for example, you
+can type &lt;code&gt;=mod(37,10)&lt;/code&gt; in a spreadsheet formula.</source>
+        <target>crwdns13900:0crwdne13900:0</target>
+        <note>Context: XPath: /p[49]</note>
+      </trans-unit>
+      <trans-unit id="13901" identifier="445422c19f4fc94a6696fe045e449fa5">
+        <source>You could project a program onto the screen, and ask students to predict
+the value when you type in two numbers.</source>
+        <target>crwdns13901:0crwdne13901:0</target>
+        <note>Context: XPath: /p[50]</note>
+      </trans-unit>
+      <trans-unit id="13902" identifier="d18c9a80cb32169be31ea38c72d92566">
+        <source>For example, in Scratch you could put &lt;code&gt;scratch:((8)+(5))mod(12)&lt;/code&gt; into the
+Scratch work area and double click it once students make their predictions.</source>
+        <target>crwdns13902:0crwdne13902:0</target>
+        <note>Context: XPath: /p[50]</note>
+      </trans-unit>
+      <trans-unit id="13903" identifier="fcb4bce5fc716fa7fc61e6b4db6a2de4">
+        <source>In Python you would use &lt;code&gt;(8+5)%12&lt;/code&gt;.</source>
+        <target>crwdns13903:0%12crwdne13903:0</target>
+        <note>Context: XPath: /p[50]</note>
+      </trans-unit>
+      <trans-unit id="13904" identifier="e70fa4c9ff86fc82782ffa9069813f81">
+        <source>Now try &lt;code&gt;8+4&lt;/code&gt; instead of &lt;code&gt;8+5&lt;/code&gt;.</source>
+        <target>crwdns13904:0crwdne13904:0</target>
+        <note>Context: XPath: /p[50]</note>
+      </trans-unit>
+      <trans-unit id="13905" identifier="443a5fb6e6d91e46ae7173a7a88b71c7">
+        <source>&lt;code&gt;8+12&lt;/code&gt;?</source>
+        <target>crwdns13905:0crwdne13905:0</target>
+        <note>Context: XPath: /p[50]</note>
+      </trans-unit>
+      <trans-unit id="13906" identifier="8e87b96a9b54720bf13a74bfcd2545b8">
+        <source>&lt;code&gt;8+24&lt;/code&gt;?</source>
+        <target>crwdns13906:0crwdne13906:0</target>
+        <note>Context: XPath: /p[50]</note>
+      </trans-unit>
+      <trans-unit id="13907" identifier="486c590e3b1f238a5645f3b907148167">
+        <source>&lt;code&gt;8+25&lt;/code&gt;?</source>
+        <target>crwdns13907:0crwdne13907:0</target>
+        <note>Context: XPath: /p[50]</note>
+      </trans-unit>
+      <trans-unit id="13908" identifier="a8bf9c91918a24bcaca2b9db8c3b3946">
+        <source>Fun facts</source>
+        <target>crwdns13908:0crwdne13908:0</target>
+        <note>Context: Headline 3&#13;
+XPath: /h3[6]</note>
+      </trans-unit>
+      <trans-unit id="13909" identifier="ca59db9a2a5996c1c391bd83b380e129">
+        <source>The months of the year are modulo 12; 4 months after November is March,
+13 months after January is February, and so on (if you want to use the
+modulo function, you'd need to number the months from 0 to 11, which is
+a little unconventional).</source>
+        <target>crwdns13909:0crwdne13909:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[51]</note>
+      </trans-unit>
+      <trans-unit id="13910" identifier="73431b6ea4846616cd638526745fa492">
+        <source>{image file-path=&quot;img/topics/modulo-keyboard.png&quot; alt=&quot;A keyboard with keys labelled A to G, with the D keys highlighted.&quot;}</source>
+        <target>crwdns13910:0crwdne13910:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[52]</note>
+      </trans-unit>
+      <trans-unit id="13911" identifier="b168d629e0e595c11da3021bed3b5f94">
+        <source>The naming of musical notes is modulo 7; if you start at the note &quot;D&quot; on a
+piano, and count up 7 white notes, you'll end up back on &quot;D&quot;,
+which is the same note an octave higher.</source>
+        <target>crwdns13911:0crwdne13911:0</target>
+        <note>Context: XPath: /p[53]</note>
+      </trans-unit>
+      <trans-unit id="13912" identifier="2e5824ab55175af5f33ea3261b99b6d4">
+        <source>This raises the interesting fact that there are 7 different notes in an octave;
+it gets its name because if you count the notes at the start and end
+(&quot;D&quot; in this case, there are 8 notes).</source>
+        <target>crwdns13912:0crwdne13912:0</target>
+        <note>Context: XPath: /p[53]</note>
+      </trans-unit>
+      <trans-unit id="13913" identifier="99e8fcda3948758e4014321c3ffa6fd3">
+        <source>Actually, there are really 12 different notes in an octave if you count the
+black keys (if you go 12 semitones up from the note &quot;D&quot;, you'll end
+up at D again), so in this sense the 12 different notes on a piano are a
+lot like the 12 months or the 12 ticks on a 12-hour clock;
+but it would be really confusing if we referred to the notes
+as &quot;January, February,...&quot;.</source>
+        <target>crwdns13913:0crwdne13913:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[54]</note>
+      </trans-unit>
+      <trans-unit id="13914" identifier="71b57b13739abe9080de4d249e697258">
+        <source>The cyclic number relationship comes up when playing notes in computer
+programs, which often use a digital representation of piano notes called
+MIDI (for example, these numbers are used in Scratch).</source>
+        <target>crwdns13914:0crwdne13914:0</target>
+        <note>Context: XPath: /p[55]</note>
+      </trans-unit>
+      <trans-unit id="13915" identifier="9381c180550206d9d0a485f14f152459">
+        <source>In this system, middle C is note number 60, C# is 61, and D is 62.</source>
+        <target>crwdns13915:0crwdne13915:0</target>
+        <note>Context: XPath: /p[55]</note>
+      </trans-unit>
+      <trans-unit id="13916" identifier="03e358f5f0cbd0f424bcdc2bf06480cb">
+        <source>So an octave above 62 is 62+12 = 74.</source>
+        <target>crwdns13916:0crwdne13916:0</target>
+        <note>Context: XPath: /p[55]</note>
+      </trans-unit>
+      <trans-unit id="13917" identifier="36d2808541bf2726771d412ea4046029">
+        <source>Every 12th number corresponds to the same note name.</source>
+        <target>crwdns13917:0crwdne13917:0</target>
+        <note>Context: XPath: /p[55]</note>
+      </trans-unit>
+      <trans-unit id="13918" identifier="9593472b13142bccc3c737e8b73d8611">
+        <source>This will be explained in more detail in the activity on programming
+musical scales, which is under development.</source>
+        <target>crwdns13918:0crwdne13918:0</target>
+        <note>Context: XPath: /p[55]</note>
+      </trans-unit>
+      <trans-unit id="13919" identifier="72bc99e09c55c94a8961dd75f9c13ae2">
+        <source>Applying what we have just learnt</source>
+        <target>crwdns13919:0crwdne13919:0</target>
+        <note>Context: Headline 3&#13;
+XPath: /h3[7]</note>
+      </trans-unit>
+      <trans-unit id="13920" identifier="4ceea6fa445caee777164bc3b15369b5">
+        <source>Mathematical concepts are part of our everyday life.</source>
+        <target>crwdns13920:0crwdne13920:0</target>
+        <note>Context: XPath: /p[56]</note>
+      </trans-unit>
+      <trans-unit id="13921" identifier="df9b2c3e7d040c13b8c4229b87a08162">
+        <source>Modular arithmetic (which uses the modulo function) is the formal term
+for clock arithmetic.</source>
+        <target>crwdns13921:0crwdne13921:0</target>
+        <note>Context: XPath: /p[56]</note>
+      </trans-unit>
+      <trans-unit id="13922" identifier="2f32ada181b9c95041bf3c07cd1976cd">
+        <source>As we expose students to the technical terms of things that we use every
+day, such as when learning to tell the time, the months of the year,
+and during our music lessons, the mathematical links become more obvious.</source>
+        <target>crwdns13922:0crwdne13922:0</target>
+        <note>Context: XPath: /p[56]</note>
+      </trans-unit>
+      <trans-unit id="13923" identifier="d80637a5545b26565c4f3595e0826b29">
+        <source>The modulo function is also closely related to finding the remainder.</source>
+        <target>crwdns13923:0crwdne13923:0</target>
+        <note>Context: XPath: /p[56]</note>
+      </trans-unit>
+      <trans-unit id="13924" identifier="a9ccc96464264220c7c38eb5456b5a88">
+        <source>Lesson reflection</source>
+        <target>crwdns13924:0crwdne13924:0</target>
+        <note>Context: Headline 3&#13;
+XPath: /h3[8]</note>
+      </trans-unit>
+      <trans-unit id="13925" identifier="a5034980bcfc73ebfe724342de905f1d">
+        <source>Who were the students who were able to make the connections quickly?</source>
+        <target>crwdns13925:0crwdne13925:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[4]/li</note>
+      </trans-unit>
+      <trans-unit id="13926" identifier="a0ffe6e73144ad42c28c9f4cd1ec1f4a">
+        <source>Were there any students who found this a logical way to calculate the
+remainder of a number?</source>
+        <target>crwdns13926:0crwdne13926:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[4]/li[2]</note>
+      </trans-unit>
+      <trans-unit id="13927" identifier="dadacbf25f0da328b6ea1366d4a1a18e">
+        <source>What surprised you and your students when learning about Modulo arithmetic?</source>
+        <target>crwdns13927:0crwdne13927:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul[4]/li[3]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

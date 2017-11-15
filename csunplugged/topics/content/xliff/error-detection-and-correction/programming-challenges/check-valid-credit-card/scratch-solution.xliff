@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="914" original="/csunplugged/topics/content/en/error-detection-and-correction/programming-challenges/check-valid-credit-card/scratch-solution.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10246" identifier="fade4348a973fffddbd29f56309d5f9d">
+        <source>when green flag clicked
+set [index v] to [1]
+set [credit card number v] to [0]
+set [even total v] to [0]
+set [odd total v] to [0]
+ask [Enter a credit card number:] and wait
+change [credit card number v] by (answer)
+repeat (8)
+  if &amp;lt;((letter (index) of (credit card number)) * (2)) &amp;lt; [10]&amp;gt; then
+    change [odd total v] by ((letter (index) of (credit card number)) * (2))
+    change [index v] by (1)
+  else
+    change [odd total v] by (((letter (index) of (credit card number)) * (2)) - (9))
+    change [index v] by (1)
+  end
+  change [even total v] by (letter (index) of (credit card number))
+  change [index v] by (1)
+end
+if &amp;lt;(((even total) + (odd total)) mod (10)) = [0]&amp;gt; then
+  say [Valid credit card number!]
+else
+  say [Invalid credit card number!]
+end</source>
+        <target>crwdns10246:0[1]crwdnd10246:0[0]crwdnd10246:0[0]crwdnd10246:0[0]crwdnd10246:0[10]crwdnd10246:0[0]crwdne10246:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

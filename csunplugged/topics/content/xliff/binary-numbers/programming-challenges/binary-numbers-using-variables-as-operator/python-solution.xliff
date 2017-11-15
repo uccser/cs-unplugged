@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="790" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/binary-numbers-using-variables-as-operator/python-solution.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8621" identifier="1b597d8a17e9fbef0f19432c1f7d6db7">
+        <source>number_of_dots = 1
+print(number_of_dots)
+number_of_dots = number_of_dots * 2
+print(number_of_dots)
+number_of_dots = number_of_dots * 2
+print(number_of_dots)
+number_of_dots = number_of_dots * 2
+print(number_of_dots)
+number_of_dots = number_of_dots * 2
+print(number_of_dots)</source>
+        <target>crwdns8621:0crwdne8621:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

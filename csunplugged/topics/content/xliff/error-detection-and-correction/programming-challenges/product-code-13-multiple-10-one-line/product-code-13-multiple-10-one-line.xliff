@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="997" original="/csunplugged/topics/content/en/error-detection-and-correction/programming-challenges/product-code-13-multiple-10-one-line/product-code-13-multiple-10-one-line.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10760" identifier="7f0b2f1fc7e046e607e2a80f63c5f67c">
+        <source>13 digit product codes: Check if total is a multiple of 10 (one line of input)</source>
+        <target>crwdns10760:0crwdne10760:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="10761" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns10761:0crwdne10761:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="10762" identifier="625a716e9a0b215e625458f44b4d93c7">
+        <source>Write a program that asks the user to enter a 13 digit product code, all
+in one line of input.</source>
+        <target>crwdns10762:0crwdne10762:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="10763" identifier="5332736188d99870b273224a66e1b7e2">
+        <source>Then adds up all the digits, every second one multiplied by 3 (2nd, 4th, and
+so on) and show if this total is a multiple of 10 (valid product code).</source>
+        <target>crwdns10763:0crwdne10763:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="10764" identifier="1315b11e73bb106e24f8e6c4d402d04d">
+        <source>For this challenge make sure the user can only enter a 13 digit product code.</source>
+        <target>crwdns10764:0crwdne10764:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="10765" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns10765:0crwdne10765:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="10766" identifier="c4157e645991e13a72ced9574f6e8235">
+        <source>Your program should display the outputs shown in this table for the given
+inputs provided:</source>
+        <target>crwdns10766:0crwdne10766:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="10767" identifier="5bfb69c6f4701e747d0c20b0822e2580">
+        <source>Input</source>
+        <target>crwdns10767:0crwdne10767:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th</note>
+      </trans-unit>
+      <trans-unit id="10768" identifier="f36a1e77a6177da7e10093e12e92ec6c">
+        <source>Output</source>
+        <target>crwdns10768:0crwdne10768:0</target>
+        <note>Context: Table Header&#13;
+XPath: /table/thead/tr/th[2]</note>
+      </trans-unit>
+      <trans-unit id="10769" identifier="1fadb5c82150ad1eda9e5497fc78848a">
+        <source>9418870000852</source>
+        <target>crwdns10769:0crwdne10769:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td</note>
+      </trans-unit>
+      <trans-unit id="10770" identifier="d769973e75445ece5e3eac9767f3418c">
+        <source>Valid product code!</source>
+        <target>crwdns10770:0crwdne10770:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr/td[2]</note>
+      </trans-unit>
+      <trans-unit id="10771" identifier="e3876f8957142a625023b659753212f3">
+        <source>9415277000126</source>
+        <target>crwdns10771:0crwdne10771:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td</note>
+      </trans-unit>
+      <trans-unit id="10772" identifier="593d335a95832679e9419ed37be196b5">
+        <source>Valid product code!</source>
+        <target>crwdns10772:0crwdne10772:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[2]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="10773" identifier="fdc1ed044f7b56c1b927742801c62e0e">
+        <source>9300728854542</source>
+        <target>crwdns10773:0crwdne10773:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td</note>
+      </trans-unit>
+      <trans-unit id="10774" identifier="46300dd5ca5c6dba8def79538f9fc2d1">
+        <source>Invalid product code!</source>
+        <target>crwdns10774:0crwdne10774:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[3]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="10775" identifier="f3120649dbc5d683ba04a87edefd50f0">
+        <source>9328350003719</source>
+        <target>crwdns10775:0crwdne10775:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[4]/td</note>
+      </trans-unit>
+      <trans-unit id="10776" identifier="81c3353bbce4814565a760eaba0ccb83">
+        <source>Valid product code!</source>
+        <target>crwdns10776:0crwdne10776:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[4]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="10777" identifier="93a0c5fb7001c4815debbd9cf09180d9">
+        <source>9415377000126</source>
+        <target>crwdns10777:0crwdne10777:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[5]/td</note>
+      </trans-unit>
+      <trans-unit id="10778" identifier="0e87e340cb4a8d42018d59ab46d93e34">
+        <source>Invalid product code!</source>
+        <target>crwdns10778:0crwdne10778:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[5]/td[2]</note>
+      </trans-unit>
+      <trans-unit id="10779" identifier="da3bf7d4b0f1f038640a090e39d69b1c">
+        <source>9418770000852</source>
+        <target>crwdns10779:0crwdne10779:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[6]/td</note>
+      </trans-unit>
+      <trans-unit id="10780" identifier="202a1dc33bfd9a2ba58f599348161b14">
+        <source>Invalid product code!</source>
+        <target>crwdns10780:0crwdne10780:0</target>
+        <note>Context: Table Data&#13;
+XPath: /table/tbody/tr[6]/td[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

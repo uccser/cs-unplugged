@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1017" original="/csunplugged/topics/content/en/error-detection-and-correction/unit-plan/lessons/product-code-check-digits-ct-links.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="11332" identifier="29587245fea6177d2282f2ca4a93001c">
+        <source>{panel type=&quot;ct-algorithm&quot; title=&quot;Algorithmic thinking&quot;}</source>
+        <target>crwdns11332:0crwdne11332:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="11333" identifier="653892f84386e0674d6cad333b217aa4">
+        <source>The steps we follow to calculate the barcode checksum is an Algorithm.</source>
+        <target>crwdns11333:0crwdne11333:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="11334" identifier="fdefb1dfcf170bb0cf43c92a5c1b477b">
+        <source>We follow this same Algorithm every time we want to create a checksum for a
+barcode, and every time we want to check if there is an error in a barcode.</source>
+        <target>crwdns11334:0crwdne11334:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="11335" identifier="cffb08d31bf521549d25ac2376b7f1a6">
+        <source>It specifies exactly how we should do this, and students practice algorithmic
+thinking as they follow and articulate this algorithm.</source>
+        <target>crwdns11335:0crwdne11335:0</target>
+        <note>Context: XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="11336" identifier="d4789df7fc6fae273d42b3ff89b932ef">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns11336:0crwdne11336:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4</note>
+      </trans-unit>
+      <trans-unit id="11337" identifier="3e8fdcf5416b1baf8ffe1d5bc3f46cfb">
+        <source>Can your students write instructions that allow someone else to calculate the
+barcode checksum of different products with the same number of digits in their
+barcodes (e.g. 12)?</source>
+        <target>crwdns11337:0crwdne11337:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="11338" identifier="20c814ce4d99465329101ed6aeb3b40d">
+        <source>What about instructions that can be used for any different product, regardless
+of the number of digits?</source>
+        <target>crwdns11338:0crwdne11338:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="11339" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns11339:0{panel end}crwdne11339:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="11340" identifier="59ced97ef8757b49683caaf57e6207bd">
+        <source>{panel type=&quot;ct-abstraction&quot; title=&quot;Abstraction&quot;}</source>
+        <target>crwdns11340:0crwdne11340:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="11341" identifier="492a81655ee021af79d86da21c4e859b">
+        <source>When a barcode goes through a scanner the scanner reads the black and white
+bars on the barcode, whereas when a human looks at a barcode they will read
+the digits.</source>
+        <target>crwdns11341:0crwdne11341:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="11342" identifier="f12c803b901b4b41f2ba3c2eb447d4bf">
+        <source>The numbers on the barcode and the black and white bars both represent the
+same thing though - a numeric code that identifies a product, and the bars
+are an abstracted representation of these numbers.</source>
+        <target>crwdns11342:0crwdne11342:0</target>
+        <note>Context: XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="11343" identifier="2a9a0245d538cb88371b0639b6ed8e53">
+        <source>When we are calculating the checksum we also don’t need to think about what
+product it actually represents is, we just want to find out whether or not
+the barcode is correct and all we need to do that is the barcode itself.</source>
+        <target>crwdns11343:0crwdne11343:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="11344" identifier="7ca1cce9bc789f9d38045770108363e7">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns11344:0crwdne11344:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[2]</note>
+      </trans-unit>
+      <trans-unit id="11345" identifier="4171075d0b66b529b86a8f597e8ecb4d">
+        <source>Can your students explain how both of these represent the product?
+Can they explain the reason for the different representations?</source>
+        <target>crwdns11345:0crwdne11345:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[8]</note>
+      </trans-unit>
+      <trans-unit id="11346" identifier="95e2aef312d8003ea83532ea9651f31f">
+        <source>{panel end}</source>
+        <target>crwdns11346:0{panel end}crwdne11346:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[9]</note>
+      </trans-unit>
+      <trans-unit id="11347" identifier="16c5229b7bb0bd77299bb63485055923">
+        <source>{panel type=&quot;ct-decomposition&quot; title=&quot;Decomposition&quot;}</source>
+        <target>crwdns11347:0crwdne11347:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[10]</note>
+      </trans-unit>
+      <trans-unit id="11348" identifier="1b14d3a5eb788980cf6f823940bfa07e">
+        <source>To check the product code, the task of calculating the checksum is broken
+down into individual steps: adding one number at a time; doing that for
+each subset of digits.</source>
+        <target>crwdns11348:0crwdne11348:0</target>
+        <note>Context: XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="11349" identifier="9fcf49e2637fde9fe144c8665b3b1255">
+        <source>By doing this we are decomposing the problem into smaller subtasks which are
+easier to solve than the overall problem of “Is this barcode correct?”.</source>
+        <target>crwdns11349:0crwdne11349:0</target>
+        <note>Context: XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="11350" identifier="45822e9f68cc2ea0b9079a1838b37e9f">
+        <source>Each time we solve one of these subtasks we move on to the next and move
+closer to a solution.</source>
+        <target>crwdns11350:0crwdne11350:0</target>
+        <note>Context: XPath: /p[11]</note>
+      </trans-unit>
+      <trans-unit id="11351" identifier="833d815031c5d5819a2b19b8c4affd40">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns11351:0crwdne11351:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[3]</note>
+      </trans-unit>
+      <trans-unit id="11352" identifier="32559908ad675530b34e00a497dc9057">
+        <source>Are students able to independently break the calculation into the two halves,
+and then perform the additions on each group of values, and combine them
+to get the checksum?</source>
+        <target>crwdns11352:0crwdne11352:0</target>
+        <note>Context: XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="11353" identifier="a1cbd26cbb10243bfd45ce5b5ea130b4">
+        <source>Can they do this for a range of different codes with different errors in them?</source>
+        <target>crwdns11353:0crwdne11353:0</target>
+        <note>Context: XPath: /p[12]</note>
+      </trans-unit>
+      <trans-unit id="11354" identifier="b1c2847763ba990ce3b79c43c0f66f9e">
+        <source>{panel end}</source>
+        <target>crwdns11354:0{panel end}crwdne11354:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[13]</note>
+      </trans-unit>
+      <trans-unit id="11355" identifier="40ad58809f56a2bf712e4dcd43bbd5e7">
+        <source>{panel type=&quot;ct-pattern&quot; title=&quot;Generalising and patterns&quot;}</source>
+        <target>crwdns11355:0crwdne11355:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[14]</note>
+      </trans-unit>
+      <trans-unit id="11356" identifier="68f32ded76e3dd12f8c8d1db80c3edf3">
+        <source>The same method can apply to shorter (e.g. 8-digit) and longer product codes.</source>
+        <target>crwdns11356:0crwdne11356:0</target>
+        <note>Context: XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="11357" identifier="2ed7a5df91d58028a3139e503bfcfb38">
+        <source>If you look at some courier packages you might see much larger bar codes,
+and these use similar error detection techniques.</source>
+        <target>crwdns11357:0crwdne11357:0</target>
+        <note>Context: XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="11358" identifier="9bddd12109f1230125e25a47b468e08b">
+        <source>To check each of these bar codes we follow the same algorithmic pattern of
+using the numbers on the code (except for the last one) and applying a
+mathematical formula to these to get the final digit (or what it should be
+if there are no errors!).</source>
+        <target>crwdns11358:0crwdne11358:0</target>
+        <note>Context: XPath: /p[15]</note>
+      </trans-unit>
+      <trans-unit id="11359" identifier="ec993088561d59b2638cc84170b056e3">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns11359:0crwdne11359:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[4]</note>
+      </trans-unit>
+      <trans-unit id="11360" identifier="b31613841c57e5b362ed32df62d9b7de">
+        <source>Can students apply the algorithm (the version starting at the right hand end)
+to different length product codes?</source>
+        <target>crwdns11360:0crwdne11360:0</target>
+        <note>Context: XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="11361" identifier="a5344f3ef2dd7035f2f68e49d7cf47eb">
+        <source>Do they appreciate how it still checks the digits in each case?</source>
+        <target>crwdns11361:0crwdne11361:0</target>
+        <note>Context: XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="11362" identifier="86a85f2b4e7a661cfe1eb2d36b85fb07">
+        <source>(You can find different codes by searching for images of barcodes online).</source>
+        <target>crwdns11362:0crwdne11362:0</target>
+        <note>Context: XPath: /p[16]</note>
+      </trans-unit>
+      <trans-unit id="11363" identifier="29865c6bd6223a870160b434de9c35ce">
+        <source>{panel end}</source>
+        <target>crwdns11363:0{panel end}crwdne11363:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[17]</note>
+      </trans-unit>
+      <trans-unit id="11364" identifier="adab59f4c0dc0ca178defb9b221dd176">
+        <source>{panel type=&quot;ct-evaluation&quot; title=&quot;Evaluation&quot;}</source>
+        <target>crwdns11364:0crwdne11364:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[18]</note>
+      </trans-unit>
+      <trans-unit id="11365" identifier="c76b354b431b2a93c40f7aab02c88617">
+        <source>This error detecting process isn't perfect.</source>
+        <target>crwdns11365:0crwdne11365:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="11366" identifier="09ff38a7f36a13bf0cf1a9d7eb5f58ab">
+        <source>To evaluate its effectiveness we need to thoroughly test it.</source>
+        <target>crwdns11366:0crwdne11366:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="11367" identifier="fe32e1001cfe682b7dc91b5f0a18f7f8">
+        <source>Ask students what the different ways we need to test the algorithm are.</source>
+        <target>crwdns11367:0crwdne11367:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="11368" identifier="08b77569cd3517fb800a43561ebad686">
+        <source>Interestingly it is not enough to just test it with a bunch of different
+barcodes with one number in them changed, we need to test a range of
+different types of errors as well!</source>
+        <target>crwdns11368:0crwdne11368:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="11369" identifier="238cd9c00c8014263847380845a56fe0">
+        <source>For example what if instead of one number changing two of the numbers are
+switched around?</source>
+        <target>crwdns11369:0crwdne11369:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="11370" identifier="963cf57ac311059c519ac76a58baae5d">
+        <source>What if two numbers are changed?</source>
+        <target>crwdns11370:0crwdne11370:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="11371" identifier="1fa7afc4f8ec86fd52063eb2b942048b">
+        <source>Are there any situations where we couldn’t figure out if something had changed?</source>
+        <target>crwdns11371:0crwdne11371:0</target>
+        <note>Context: XPath: /p[19]</note>
+      </trans-unit>
+      <trans-unit id="11372" identifier="dc7cfd90b202c216be0d0168c42220c3">
+        <source>This is an example of an important technique used when evaluating algorithms
+and programs, called edge case testing.</source>
+        <target>crwdns11372:0crwdne11372:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[20]</note>
+      </trans-unit>
+      <trans-unit id="11373" identifier="ee945efc504e5ccf8a3f1c6b2bc14938">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns11373:0crwdne11373:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[5]</note>
+      </trans-unit>
+      <trans-unit id="11374" identifier="858d27b971ccf45e9e4226ad627b9f9c">
+        <source>Can students demonstrate what kind of errors the checksum is guaranteed
+to detect?</source>
+        <target>crwdns11374:0crwdne11374:0</target>
+        <note>Context: XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="11375" identifier="61ba79ca9220803e29049cdcb2a5e011">
+        <source>Can they give examples of errors that a human might make when typing in a
+number that wouldn't be detected?</source>
+        <target>crwdns11375:0crwdne11375:0</target>
+        <note>Context: XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="11376" identifier="36b7811797b00e96075c0f04d2bc7540">
+        <source>Can they work out how likely it is that an error will go undetected in each
+of these cases?</source>
+        <target>crwdns11376:0crwdne11376:0</target>
+        <note>Context: XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="11377" identifier="3788ec149cd16ec0265b896195cd6a57">
+        <source>They can do this by trial and error or by logical reasoning.</source>
+        <target>crwdns11377:0crwdne11377:0</target>
+        <note>Context: XPath: /p[21]</note>
+      </trans-unit>
+      <trans-unit id="11378" identifier="0d3de6c21e2d458b6944fce764817b3f">
+        <source>{panel end}</source>
+        <target>crwdns11378:0{panel end}crwdne11378:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[22]</note>
+      </trans-unit>
+      <trans-unit id="11379" identifier="d167885c0977f1b6d43c86a3424970a4">
+        <source>{panel type=&quot;ct-logic&quot; title=&quot;Logic&quot;}</source>
+        <target>crwdns11379:0crwdne11379:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[23]</note>
+      </trans-unit>
+      <trans-unit id="11380" identifier="77503b0a72c7c9addeddb02a8f9f8c84">
+        <source>The algorithm is designed to be sensitive to the type of errors that are
+most likely to happen.</source>
+        <target>crwdns11380:0crwdne11380:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[24]</note>
+      </trans-unit>
+      <trans-unit id="11381" identifier="1bc15b3379a0a74b42ff366fe111fbea">
+        <source>We can also evaluate the algorithm using logical thinking.</source>
+        <target>crwdns11381:0crwdne11381:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[25]</note>
+      </trans-unit>
+      <trans-unit id="11382" identifier="d2663645150b5be5b55859ada486fd3c">
+        <source>Examples of what you could look for:</source>
+        <target>crwdns11382:0crwdne11382:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4[6]</note>
+      </trans-unit>
+      <trans-unit id="11383" identifier="50089d271e8e0d9096cde958792a2f13">
+        <source>Can students explain the logic that was applied in the process of
+designing a barcode checksum, and especially the choice to multiply some
+of the numbers by 3?</source>
+        <target>crwdns11383:0crwdne11383:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[26]</note>
+      </trans-unit>
+      <trans-unit id="11384" identifier="b5feca34bf0b61ebb2a6023917e19340">
+        <source>In cases where the checksum is unable to detect and error can students
+explain logically why the error cannot be detected?</source>
+        <target>crwdns11384:0crwdne11384:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[27]</note>
+      </trans-unit>
+      <trans-unit id="11385" identifier="d871d9839b19bd202423ecc559922cb0">
+        <source>{panel end}</source>
+        <target>crwdns11385:0{panel end}crwdne11385:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[28]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

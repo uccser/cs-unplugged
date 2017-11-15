@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1193" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/draw-square-with-loop/scratch-solution.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14804" identifier="0e9838aeaf7da680d817762c674d01fa">
+        <source>when green flag clicked
+clear
+go to x: (0) y: (0)
+pen down
+repeat (4)
+  move (100) steps
+  turn cw (90) degrees
+  wait (1) secs
+end
+pen up</source>
+        <target>crwdns14804:0crwdne14804:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

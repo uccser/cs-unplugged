@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="882" original="/csunplugged/topics/content/en/error-detection-and-correction/other-resources.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10047" identifier="fe7b3ce38d07566b669a03a3fcc19d46">
+        <source>Other Resources</source>
+        <target>crwdns10047:0crwdne10047:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="10048" identifier="a9361f327d48b4fd13c8cb921c678e99">
+        <source>The &lt;a href=&quot;http://csfieldguide.org.nz/&quot;&gt;Computer Science Field Guide&lt;/a&gt; has a chapter that covers &lt;a href=&quot;http://csfieldguide.org.nz/en/chapters/coding-error-control.html&quot;&gt;Error Control&lt;/a&gt; in more detail, and has an online interactive of the &lt;a href=&quot;http://csfieldguide.org.nz/en/interactives/parity/index.html&quot;&gt;Parity Trick&lt;/a&gt;.</source>
+        <target>crwdns10048:0crwdne10048:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

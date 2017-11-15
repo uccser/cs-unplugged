@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1200" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/draw-star/draw-star.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14822" identifier="04279cfccabd64e86d38c2fdd1e4f843">
+        <source>Draw a star</source>
+        <target>crwdns14822:0crwdne14822:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="14823" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns14823:0crwdne14823:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="14824" identifier="f2798983104c2a5a7d66fed8dac26f9e">
+        <source>Write a program that draws a 6-pointed star (hexagram).</source>
+        <target>crwdns14824:0crwdne14824:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14825" identifier="665143cf8eb137e88c46e6de23050e65">
+        <source>{image file-path=&quot;img/topics/programming-challenges/6-pointed-star.png&quot;}</source>
+        <target>crwdns14825:0crwdne14825:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14826" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns14826:0crwdne14826:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="14827" identifier="c37cdf2bf896da90b6eaed60803da712">
+        <source>There are no testing examples for this challenge.</source>
+        <target>crwdns14827:0crwdne14827:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

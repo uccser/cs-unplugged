@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1156" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/draw-different-types-of-angles/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14635" identifier="f3b5fe6b13c58314d4f8a7210242abe3">
+        <source>Click on the green flag to see the expected output of your program.</source>
+        <target>crwdns14635:0crwdne14635:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14636" identifier="4edb22cbbd899fe0d71b7f8c4fe74999">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/152883319/?autostart=false&quot;}</source>
+        <target>crwdns14636:0crwdne14636:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14637" identifier="1914a5295999e5fd59333908f0138323">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks for solution 1&quot;}</source>
+        <target>crwdns14637:0crwdne14637:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="14638" identifier="33a9754026faa05677262c3790c953a1">
+        <source>when green flag clicked</source>
+        <target>crwdns14638:0crwdne14638:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="14639" identifier="187c9b076fa899b8a257b70a5d5d7a1a">
+        <source>clear
+
+set pen size to (3)
+
+pen down
+
+pen up</source>
+        <target>crwdns14639:0crwdne14639:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="14640" identifier="7f24951881a88e89682d10ed8f3779f7">
+        <source>go to x: (0) y: (0)
+
+point in direction (90 v)
+
+move (100) steps
+
+turn ccw ((180) - (angle)) degrees
+
+move (100) steps</source>
+        <target>crwdns14640:0crwdne14640:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="14641" identifier="e8b15bd49fc95df150c64b84002c0758">
+        <source>say [The angle you entered is an acute angle.] for (3) secs
+
+say [The angle you entered is a right angle.] for (3) secs
+
+say [The angle you entered is an obtuse angle.] for (3) secs
+
+say [The angle you entered is a straight angle.] for (3) secs
+
+say [The angle you entered is a reflex angle.] for (3) secs</source>
+        <target>crwdns14641:0crwdne14641:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[4]/code</note>
+      </trans-unit>
+      <trans-unit id="14642" identifier="731459c175f8793c4b5e5bb2df558d94">
+        <source>ask [Enter an angle between 0 and 360 (not including 0 and 360):] and wait
+
+set [angle v] to (answer)</source>
+        <target>crwdns14642:0crwdne14642:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[5]/code</note>
+      </trans-unit>
+      <trans-unit id="14643" identifier="aaaab431a294fc3a863635cd8a11fd91">
+        <source>if &amp;lt;&amp;lt;(angle) &amp;gt; [0]&amp;gt; and &amp;lt;(angle) &amp;lt; [90]&amp;gt;&amp;gt; then
+end
+
+if &amp;lt;(angle) = [90]&amp;gt; then
+end
+
+if &amp;lt;&amp;lt;(angle) &amp;gt; [90]&amp;gt; and &amp;lt;(angle) &amp;lt; [180]&amp;gt;&amp;gt; then
+end
+
+if &amp;lt;(angle) = [180]&amp;gt; then
+end
+
+if &amp;lt;(angle) &amp;gt; [180]&amp;gt; then
+end</source>
+        <target>crwdns14643:0[0]crwdnd14643:0[90]crwdnd14643:0[90]crwdnd14643:0[90]crwdnd14643:0[180]crwdnd14643:0[180]crwdnd14643:0[180]crwdne14643:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[6]/code</note>
+      </trans-unit>
+      <trans-unit id="14644" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns14644:0{panel end}crwdne14644:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="14645" identifier="e13e6277d7311f708b75fb97fb7fad7a">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks for solution 2&quot;}</source>
+        <target>crwdns14645:0crwdne14645:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="14646" identifier="f6809988d45b9318168f95c0d83cca61">
+        <source>when green flag clicked</source>
+        <target>crwdns14646:0crwdne14646:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[7]/code</note>
+      </trans-unit>
+      <trans-unit id="14647" identifier="50169185439575483a42ddc4d4c6195f">
+        <source>clear
+
+set pen size to (3)
+
+pen down
+
+pen up</source>
+        <target>crwdns14647:0crwdne14647:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[8]/code</note>
+      </trans-unit>
+      <trans-unit id="14648" identifier="c4c0c29a77c0ef385af4a77e4368b78b">
+        <source>go to x: (0) y: (0)
+
+point in direction (90 v)
+
+move (100) steps
+
+turn ccw ((180) - (angle)) degrees
+
+move (100) steps</source>
+        <target>crwdns14648:0crwdne14648:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[9]/code</note>
+      </trans-unit>
+      <trans-unit id="14649" identifier="25383a20812e34a98ad6474554eab471">
+        <source>ask [Enter an angle between 0 and 360 (not including 0 and 360):] and wait
+
+set [angle v] to (answer)</source>
+        <target>crwdns14649:0crwdne14649:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[10]/code</note>
+      </trans-unit>
+      <trans-unit id="14650" identifier="95ad08bca69ceeca416eb07f1fb4bd8f">
+        <source>say [The angle you entered is an acute angle.] for (3) secs
+
+say [The angle you entered is a right angle.] for (3) secs
+
+say [The angle you entered is an obtuse angle.] for (3) secs
+
+say [The angle you entered is a straight angle.] for (3) secs
+
+say [The angle you entered is a reflex angle.] for (3) secs</source>
+        <target>crwdns14650:0crwdne14650:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[11]/code</note>
+      </trans-unit>
+      <trans-unit id="14651" identifier="039ee50815ed4abe6101ce0b3a698703">
+        <source>if &amp;lt;(angle) &amp;lt; [90]&amp;gt; then
+else
+end
+
+if &amp;lt;(angle) &amp;lt; [180]&amp;gt; then
+else
+end
+
+if &amp;lt;(angle) = [90]&amp;gt; then
+else
+end
+
+if &amp;lt;(angle) = [180]&amp;gt; then 
+else
+end</source>
+        <target>crwdns14651:0[90]crwdnd14651:0[180]crwdnd14651:0[90]crwdnd14651:0[180]crwdne14651:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[12]/code</note>
+      </trans-unit>
+      <trans-unit id="14652" identifier="e8dc6db8623270551f676e6f496291c1">
+        <source>{panel end}</source>
+        <target>crwdns14652:0{panel end}crwdne14652:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

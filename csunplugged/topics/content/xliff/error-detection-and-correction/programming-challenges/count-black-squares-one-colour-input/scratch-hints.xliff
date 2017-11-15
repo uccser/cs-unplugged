@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="923" original="/csunplugged/topics/content/en/error-detection-and-correction/programming-challenges/count-black-squares-one-colour-input/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10306" identifier="5c4a87241fecbf747473d2463c4b282b">
+        <source>To store the total number of black cards, create a variable called “black
+cards total”.</source>
+        <target>crwdns10306:0crwdne10306:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="10307" identifier="ffdaa316cbdf8623b178dd229ba2bb4e">
+        <source>You need to increase the value of this variable every time the user enters
+a black card.</source>
+        <target>crwdns10307:0crwdne10307:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="10308" identifier="41c2520ed670f6f25099632d2598d9ca">
+        <source>Display the value of “black cards total” at the end.</source>
+        <target>crwdns10308:0crwdne10308:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="10309" identifier="a99987c00486a450f4876a2ae67fa53c">
+        <source>Use the &lt;code&gt;scratch:repeat ()&lt;/code&gt; block to run the blocks inside a specified
+number of times.
+In this challenge you need to repeat the blocks 5 times.</source>
+        <target>crwdns10309:0crwdne10309:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="10310" identifier="6108472d78b8014c3585f9074a30a6f4">
+        <source>The &lt;code&gt;scratch:if &amp;lt;&amp;gt; then&lt;/code&gt; block checks if the condition is true and then
+runs the blocks inside of the IF block.</source>
+        <target>crwdns10310:0crwdne10310:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[3]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

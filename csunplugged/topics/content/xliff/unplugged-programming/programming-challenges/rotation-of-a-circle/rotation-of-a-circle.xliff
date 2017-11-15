@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1315" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/rotation-of-a-circle/rotation-of-a-circle.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15460" identifier="868cb97a515f7418949b129e05fb52b4">
+        <source>Rotation of a circle</source>
+        <target>crwdns15460:0crwdne15460:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="15461" identifier="e2a1e90db9818ad166e4f7bc8c6fd9ff">
+        <source>Requirement:</source>
+        <target>crwdns15461:0crwdne15461:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2</note>
+      </trans-unit>
+      <trans-unit id="15462" identifier="af35695c6eac6b4eebc3197dd6d0fb95">
+        <source>Write a program that draws a circle, with the given centre point x:0, y:0, and its radius equal to 50 steps.</source>
+        <target>crwdns15462:0crwdne15462:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15463" identifier="32cea27b7f82b61eb414208bbdaac113">
+        <source>Your program must then draw circles that are each rotated 15 degrees from the previous one (forever), changing its colour every time it draws a new circle.</source>
+        <target>crwdns15463:0crwdne15463:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="15464" identifier="7b5b46f96b1ae99f34b27082107746eb">
+        <source>Testing examples:</source>
+        <target>crwdns15464:0crwdne15464:0</target>
+        <note>Context: Headline 2&#13;
+XPath: /h2[2]</note>
+      </trans-unit>
+      <trans-unit id="15465" identifier="c6c8bb685a40fd65c5411b1f6f48de56">
+        <source>There are no testing examples for this challenge.</source>
+        <target>crwdns15465:0crwdne15465:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

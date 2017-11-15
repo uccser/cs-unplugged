@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1201" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/draw-star/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14828" identifier="f3b5fe6b13c58314d4f8a7210242abe3">
+        <source>Click on the green flag to see the expected output of your program.</source>
+        <target>crwdns14828:0crwdne14828:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14829" identifier="086b2e5a5d02be2deb3ada2c0fe75069">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/152939066/?autostart=false&quot;}</source>
+        <target>crwdns14829:0crwdne14829:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14830" identifier="1914a5295999e5fd59333908f0138323">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks for solution 1&quot;}</source>
+        <target>crwdns14830:0crwdne14830:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="14831" identifier="33a9754026faa05677262c3790c953a1">
+        <source>when green flag clicked</source>
+        <target>crwdns14831:0crwdne14831:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="14832" identifier="b2942dadacec122069b1aaa45fff13ce">
+        <source>go to x: (50) y: (0)
+
+move (50) steps
+
+turn cw (120) degrees
+
+move (50) steps
+
+turn ccw (60) degrees
+
+turn cw (60) degrees
+
+move (50) steps</source>
+        <target>crwdns14832:0crwdne14832:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="14833" identifier="3e846526bf36486409913431192e4160">
+        <source>clear
+
+set pen size to (3)
+
+set pen color to (0)
+
+pen down
+
+change pen color by (50)
+
+pen up</source>
+        <target>crwdns14833:0crwdne14833:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="14834" identifier="c3eedb01a981c78e3811801cb98247db">
+        <source>repeat (6)
+end
+
+repeat (6)
+end</source>
+        <target>crwdns14834:0crwdne14834:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[4]/code</note>
+      </trans-unit>
+      <trans-unit id="14835" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns14835:0{panel end}crwdne14835:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+      <trans-unit id="14836" identifier="e13e6277d7311f708b75fb97fb7fad7a">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks for solution 2&quot;}</source>
+        <target>crwdns14836:0crwdne14836:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[5]</note>
+      </trans-unit>
+      <trans-unit id="14837" identifier="c5ad6061ed66489a681bf9fafe88be26">
+        <source>when green flag clicked</source>
+        <target>crwdns14837:0crwdne14837:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[5]/code</note>
+      </trans-unit>
+      <trans-unit id="14838" identifier="a2f3f73ca067b9555900e2b7bca40040">
+        <source>go to x: (50) y: (0)
+
+point in direction (0 v)
+
+move (50) steps
+
+turn ccw (60) degrees
+
+turn ccw ((360) / (3)) degrees
+
+move (50) steps</source>
+        <target>crwdns14838:0crwdne14838:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[6]/code</note>
+      </trans-unit>
+      <trans-unit id="14839" identifier="9e04f88baf388973779935e44342062d">
+        <source>clear
+
+set pen size to (3)
+
+change pen color by (30)
+
+pen up
+
+pen down</source>
+        <target>crwdns14839:0crwdne14839:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[7]/code</note>
+      </trans-unit>
+      <trans-unit id="14840" identifier="f2c7b2d7ad6aaf300a78e1443fb26ff2">
+        <source>repeat (6)
+end
+
+repeat (3)
+end</source>
+        <target>crwdns14840:0crwdne14840:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[8]/code</note>
+      </trans-unit>
+      <trans-unit id="14841" identifier="e7ee3a5b6d3f0d42bd0fcfcbe2652f8e">
+        <source>define triangle
+
+triangle :: custom</source>
+        <target>crwdns14841:0crwdne14841:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[9]/code</note>
+      </trans-unit>
+      <trans-unit id="14842" identifier="e8dc6db8623270551f676e6f496291c1">
+        <source>{panel end}</source>
+        <target>crwdns14842:0{panel end}crwdne14842:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[6]</note>
+      </trans-unit>
+      <trans-unit id="14843" identifier="ba3681083cf744f210e36c6e6bafe5fc">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks for solution 3&quot;}</source>
+        <target>crwdns14843:0crwdne14843:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[7]</note>
+      </trans-unit>
+      <trans-unit id="14844" identifier="f19e2dd1443157fc384497e8eeacc6fa">
+        <source>when green flag clicked</source>
+        <target>crwdns14844:0crwdne14844:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[10]/code</note>
+      </trans-unit>
+      <trans-unit id="14845" identifier="652ce2d65f2ed2f204d0a26959fb2bb9">
+        <source>go to x: (0) y: (0)
+
+move (150) steps
+
+turn cw (120) degrees
+
+move (150) steps
+
+turn ccw (120) degrees
+
+point in direction (90 v)
+
+go to x: (75) y: (-45)
+
+turn ccw (120) degrees</source>
+        <target>crwdns14845:0crwdne14845:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[11]/code</note>
+      </trans-unit>
+      <trans-unit id="14846" identifier="e19618e7df46649d0b033458fca90e91">
+        <source>clear
+
+set pen size to (3)
+
+set pen color to (0)
+
+pen down
+
+pen up
+
+change pen color by (50)
+
+pen down
+
+pen up</source>
+        <target>crwdns14846:0crwdne14846:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[12]/code</note>
+      </trans-unit>
+      <trans-unit id="14847" identifier="9b87e49713963deb981706738b18c179">
+        <source>repeat (3)
+end
+
+repeat (3)
+end</source>
+        <target>crwdns14847:0crwdne14847:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[13]/code</note>
+      </trans-unit>
+      <trans-unit id="14848" identifier="76814e424523d7b9391aeb58dbd9452d">
+        <source>{panel end}</source>
+        <target>crwdns14848:0{panel end}crwdne14848:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[8]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

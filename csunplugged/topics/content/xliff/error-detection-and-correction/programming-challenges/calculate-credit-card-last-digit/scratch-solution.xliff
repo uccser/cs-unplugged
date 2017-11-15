@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="894" original="/csunplugged/topics/content/en/error-detection-and-correction/programming-challenges/calculate-credit-card-last-digit/scratch-solution.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10128" identifier="ba25ebd20adbdc0447bbaf4962016e29">
+        <source>when green flag clicked
+set [index v] to [1]
+set [first 15 digits v] to [0]
+set [total 2 v] to [0]
+set [total 1 v] to [0]
+ask [Enter the first 15 digits of the credit card:] and wait
+set [first 15 digits v] to (answer)
+repeat (8)
+  if &amp;lt;((letter (index) of (first 15 digits)) * (2)) &amp;lt; [10]&amp;gt; then
+    change [total 1 v] by ((letter (index) of (first 15 digits)) * (2))
+    change [index v] by (2)
+  else
+    change [total 1 v] by (((letter (index) of (first 15 digits)) * (2)) - (9))
+    change [index v] by (2)
+  end
+end
+set [index v] to [2]
+repeat (7)
+  change [total 2 v] by (letter (index) of (first 15 digits))
+  change [index v] by (2)
+end
+say (join [The last digit of the credit card should be: ] (((0) - ((total 2) + (total 1))) mod (10)))</source>
+        <target>crwdns10128:0[1]crwdnd10128:0[0]crwdnd10128:0[0]crwdnd10128:0[0]crwdnd10128:0[10]crwdnd10128:0[2]crwdne10128:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

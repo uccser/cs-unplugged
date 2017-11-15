@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1278" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/modulo-add-months/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15278" identifier="715fa8a13ea3bbbb2fdc4d60bb7051f7">
+        <source>Make variables called “original month” and “months to add” and set their values to the inputs entered by the user.</source>
+        <target>crwdns15278:0crwdne15278:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="15279" identifier="1b9cd7ee55259b7e3d9c9e4b5ebf71ba">
+        <source>Make a variable called “new month” and set its value to the sum of the “original month” and “months to add” modulo 12.</source>
+        <target>crwdns15279:0crwdne15279:0</target>
+        <note>Context: XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="15280" identifier="b6c81016e49418a83a184a6513913cb5">
+        <source>Make a list called “months” and add the 12 months; January, February, March, April, May, June, July, August, September, October, November and December to your list (list of length 12).</source>
+        <target>crwdns15280:0crwdne15280:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="15281" identifier="808c19e7a41d6df8663eb325cf0ccc4d">
+        <source>Display the output as December, If the value of “new month” is equal to 0 otherwise display the month at the index “new month” as the output.</source>
+        <target>crwdns15281:0crwdne15281:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[3]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

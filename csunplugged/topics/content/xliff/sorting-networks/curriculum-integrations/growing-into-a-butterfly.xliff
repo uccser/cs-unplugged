@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1041" original="/csunplugged/topics/content/en/sorting-networks/curriculum-integrations/growing-into-a-butterfly.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="12092" identifier="635e9ca219e1dd9797191509955dc1fb">
+        <source>Growing into a butterfly</source>
+        <target>crwdns12092:0crwdne12092:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="12093" identifier="feb4a0db7440744982a2f993e27ba3bd">
+        <source>Use the &lt;a href=&quot;'resources:resource' 'sorting-network-cards'&quot;&gt;butterfly life cycle images&lt;/a&gt; with the Sorting Network!</source>
+        <target>crwdns12093:0crwdne12093:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="12094" identifier="0fb0f52eb4797abe1374fe63a105b9db">
+        <source>These images could also apply to any 6 stages of development that you are focusing on in your curriculum.</source>
+        <target>crwdns12094:0crwdne12094:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="12095" identifier="8a220fecf7cc52f594c25b5a2f6b0c66">
+        <source>The life cycle of a butterfly - egg, small larvae, eating lots to become a big larvae, pupa, ready to hatch, butterfly flies away.</source>
+        <target>crwdns12095:0crwdne12095:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="12096" identifier="369df4a47aa555cfa22cbd4ae33f5300">
+        <source>{image file-path=&quot;img/resources/sorting-network-cards/butterfly-story-caterpillar.png&quot; alt=&quot;A caterpillar.&quot;}</source>
+        <target>crwdns12096:0crwdne12096:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

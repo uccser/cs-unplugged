@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1053" original="/csunplugged/topics/content/en/unplugged-programming/unplugged-programming.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="12646" identifier="cff4d108ec07c56e98c46786324a9236">
+        <source>Unplugged programming</source>
+        <target>crwdns12646:0crwdne12646:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="12647" identifier="733123cf691443ce3e163242aef1794d">
+        <source>Computer programs are all around us, not just in the things we call computers, but in things like fitness devices, smartphones and alarm systems, and in many many more places.</source>
+        <target>crwdns12647:0crwdne12647:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="12648" identifier="61cdacf31c8b6499805a2303d4e6e004">
+        <source>Sometimes they programs are referred to as &quot;applications&quot;, &quot;apps&quot; or &quot;software&quot;, and often they are nearly invisible, in devices like TVs and washing machines, where the software &quot;boots up&quot; when you switch it on, and keeps going until you switch it off.</source>
+        <target>crwdns12648:0crwdne12648:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="12649" identifier="163521c90170b5ace097af742a9f328a">
+        <source>Despite the variety of ways that computer programs are used, they all work on similar principles that are accessible to students of all ages, and this unit explores some of the fundamental principles in programming.</source>
+        <target>crwdns12649:0crwdne12649:0</target>
+        <note>Context: XPath: /p</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

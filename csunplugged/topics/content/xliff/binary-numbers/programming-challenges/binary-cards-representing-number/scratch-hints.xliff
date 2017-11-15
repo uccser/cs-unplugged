@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="742" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/binary-cards-representing-number/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8440" identifier="36710e8e1305fd9b7986bb20340cf7af">
+        <source>Make variables called:</source>
+        <target>crwdns8440:0crwdne8440:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li/p</note>
+      </trans-unit>
+      <trans-unit id="8441" identifier="b42a9f98b8f02083c7b712d1979c309e">
+        <source>“number” and set its value to the input number given by the end user.</source>
+        <target>crwdns8441:0crwdne8441:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li/ul/li</note>
+      </trans-unit>
+      <trans-unit id="8442" identifier="1d360a2235995e46f5c3549661cd3ae2">
+        <source>“bit value” and set its value to ‘32’.</source>
+        <target>crwdns8442:0crwdne8442:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li/ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="8443" identifier="afde2476b038f321d802539f2dd1b562">
+        <source>“cards” is a string variable and stores the binary cards needed (‘B’
+for black cards and ‘W’ for white cards).</source>
+        <target>crwdns8443:0crwdne8443:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li/ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="8444" identifier="9f9f99b485fd6c4dc7d28247c3c73a71">
+        <source>Now divide the “bit value” by 2 and check if “number” is greater than or
+equal to “bit value”.</source>
+        <target>crwdns8444:0crwdne8444:0</target>
+        <note>Context: XPath: /ul/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="8445" identifier="6ceb04692e87c9c9c5f26a3a8234374b">
+        <source>If it is, add ‘W’ to string variable “cards” and subtract “bit value”
+from the “number”.</source>
+        <target>crwdns8445:0crwdne8445:0</target>
+        <note>Context: XPath: /ul/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="8446" identifier="6e92bafc6808e87438ecb543f74c9c42">
+        <source>If not, add ‘B’ to string variable “cards”.</source>
+        <target>crwdns8446:0crwdne8446:0</target>
+        <note>Context: XPath: /ul/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="8447" identifier="59dd64b7020a1145fec7b7479487c95e">
+        <source>Repeat until “bit value” is equal to 1.</source>
+        <target>crwdns8447:0crwdne8447:0</target>
+        <note>Context: XPath: /ul/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="8448" identifier="21645f70f494ec25863297584291bd6c">
+        <source>Display the value of “cards” as the output.</source>
+        <target>crwdns8448:0crwdne8448:0</target>
+        <note>Context: XPath: /ul/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="8449" identifier="1dfcb144708ebc29c4781f3a5faea4f9">
+        <source>Test your program with some values on the boundaries (for example test it
+with numbers 0 and 31).</source>
+        <target>crwdns8449:0crwdne8449:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li[3]/p</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

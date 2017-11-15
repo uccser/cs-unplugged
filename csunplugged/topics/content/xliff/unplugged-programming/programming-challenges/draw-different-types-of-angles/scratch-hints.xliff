@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1157" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/draw-different-types-of-angles/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="14653" identifier="c4273cfcf0d560b5128dcd4e284b53de">
+        <source>Description of different angles:</source>
+        <target>crwdns14653:0crwdne14653:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="14654" identifier="8db6461be20765ba424e082d5fa580fe">
+        <source>An acute angle is an angle between 0 and 90 degrees (not including 90).</source>
+        <target>crwdns14654:0crwdne14654:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="14655" identifier="01a503f2a30e3c0239055a94b4b5a907">
+        <source>A right angle is a 90 degrees angle.</source>
+        <target>crwdns14655:0crwdne14655:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="14656" identifier="53a8d8f22c1a483badf1647dc341de9b">
+        <source>Obtuse angle is an angle between 90 and 180 degree (not including 90 and 180).</source>
+        <target>crwdns14656:0crwdne14656:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="14657" identifier="4ddb0c9081547d67ed0f8ef83417e337">
+        <source>A straight angle is a 180 degrees angle.</source>
+        <target>crwdns14657:0crwdne14657:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[4]</note>
+      </trans-unit>
+      <trans-unit id="14658" identifier="09fd8a641ba968dfe5b4b7e3f0a027f7">
+        <source>A reflex angle is an angle greater than 180 degrees.</source>
+        <target>crwdns14658:0crwdne14658:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[5]</note>
+      </trans-unit>
+      <trans-unit id="14659" identifier="3b466192f6533f1f4909b1189b4e4bfe">
+        <source>There are different ways to program checking the range using the &lt;strong&gt;if()/else&lt;/strong&gt; blocks.
+Below are hints for two different ways you may program this:</source>
+        <target>crwdns14659:0crwdne14659:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="14660" identifier="17a325b3062a62a48706f67f7f5a2261">
+        <source>Use a series of &lt;strong&gt;if()&lt;/strong&gt; blocks sequentially checking for the ranges in each if() block.</source>
+        <target>crwdns14660:0crwdne14660:0</target>
+        <note>Context: XPath: /ul[2]/li/p</note>
+      </trans-unit>
+      <trans-unit id="14661" identifier="77e428b380f641c03b093bc6eb24792f">
+        <source>If you need to check a range between two values you can use the &lt;code&gt;scratch:&amp;lt;&amp;gt; and &amp;lt;&amp;gt;&lt;/code&gt; operator in the condition for your if() block (the AND operator reports true if both conditions are true).</source>
+        <target>crwdns14661:0crwdne14661:0</target>
+        <note>Context: XPath: /ul[2]/li/p</note>
+      </trans-unit>
+      <trans-unit id="14662" identifier="632caaf00b97d459c12e7ae91a75e5a9">
+        <source>Use nested &lt;strong&gt;if()&lt;/strong&gt; or &lt;strong&gt;if()/else&lt;/strong&gt; blocks, which are &lt;strong&gt;if()/else&lt;/strong&gt; blocks inside another set of &lt;strong&gt;if()/else&lt;/strong&gt; blocks (i.e. a nested conditional statement is a conditional statement where the &lt;strong&gt;if()&lt;/strong&gt; and/or &lt;strong&gt;else&lt;/strong&gt; contains another conditional statement).</source>
+        <target>crwdns14662:0crwdne14662:0</target>
+        <note>Context: XPath: /ul[2]/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="14663" identifier="3f34fd497a496467d16d0e9677596e65">
+        <source>For example:</source>
+        <target>crwdns14663:0crwdne14663:0</target>
+        <note>Context: XPath: /ul[2]/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="14664" identifier="08bdf0089b6ee7c3822f63e868d98478">
+        <source>if &amp;lt;[angle] &amp;lt; [180]&amp;gt; then
+  if &amp;lt;[angle] &amp;lt; [90]&amp;gt; then
+    acute angle :: custom
+  else
+    if &amp;lt;[angle] = [90]&amp;gt; then
+      right angle :: custom
+    else
+      obtuse angle :: custom
+    end
+  end
+else
+  if &amp;lt;[angle] = [180]&amp;gt; then
+    straight angle :: custom
+  else
+    reflex angle :: custom
+  end
+end</source>
+        <target>crwdns14664:0[angle]crwdnd14664:0[180]crwdnd14664:0[angle]crwdnd14664:0[90]crwdnd14664:0[angle]crwdnd14664:0[90]crwdnd14664:0[angle]crwdnd14664:0[180]crwdne14664:0</target>
+        <note>Context: Text&#13;
+XPath: /ul[2]/li[2]/pre/code</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

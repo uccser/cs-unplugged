@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="722" original="/csunplugged/topics/content/en/binary-numbers/curriculum-integrations/binary-name-necklaces.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8267" identifier="61a4b1099c3f8a5a79fda2603e3b2bee">
+        <source>Binary Name Necklaces</source>
+        <target>crwdns8267:0crwdne8267:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="8268" identifier="f17d550da870efa79d1da11a45aa692f">
+        <source>{image file-path=&quot;img/topics/col_binary_necklace_copy.png&quot;}</source>
+        <target>crwdns8268:0crwdne8268:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8269" identifier="9d8549b215b7aad8fa39a0ae2d98c171">
+        <source>Create a necklace or a bag tag with your initials written in 5 bit binary.</source>
+        <target>crwdns8269:0crwdne8269:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="8270" identifier="62c4c92aaf3f971f8af086ec94beaf1d">
+        <source>Decide on which bead colour will be a 1 and which bead will be a 0.</source>
+        <target>crwdns8270:0crwdne8270:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="8271" identifier="e48ab48f05e1aec5c874ba1daaddd812">
+        <source>Computers don’t need to know when a new letter starts because it knows the rule that every 5th bit is a new letter.</source>
+        <target>crwdns8271:0crwdne8271:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="8272" identifier="395946cb4dcc1143b44ece6995b88fad">
+        <source>The lowest value bit of each group of 5 goes on the right.</source>
+        <target>crwdns8272:0crwdne8272:0</target>
+        <note>Context: XPath: /p[3]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

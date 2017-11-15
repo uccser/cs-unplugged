@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="822" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/count-5-bw-using-loop/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8807" identifier="084593ce34d694032eb79e9acb5080a5">
+        <source>Click on the green flag, enter the inputs provided in the “testing examples” to see the expected output of your program.</source>
+        <target>crwdns8807:0crwdne8807:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="8808" identifier="e4cd99f935da0d03be69c8534d64db1b">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/148424135/?autostart=false&quot;}</source>
+        <target>crwdns8808:0crwdne8808:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="8809" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns8809:0crwdne8809:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="8810" identifier="94dd70fb297f7911db0eb6a5e90043f8">
+        <source>when green flag clicked
+
+repeat (5)
+end
+
+say (total number of dots)
+
+ask [Please enter a black or white card ('B' for black or 'W' for white):] and wait
+
+if &amp;lt;(answer) = [W]&amp;gt; then
+end</source>
+        <target>crwdns8810:0[W]crwdne8810:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="8811" identifier="920359fd1b97c45238cea1def134432c">
+        <source>set [number of dots v] to ((number of dots) / (2))
+
+set [total number of dots v] to ((total number of dots) + (number of dots))
+
+set [number of dots v] to [16]
+
+set [total number of dots v] to [0]</source>
+        <target>crwdns8811:0[16]crwdnd8811:0[0]crwdne8811:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="8812" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns8812:0{panel end}crwdne8812:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

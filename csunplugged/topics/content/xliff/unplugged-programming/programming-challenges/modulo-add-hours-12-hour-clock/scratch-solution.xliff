@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="1263" original="/csunplugged/topics/content/en/unplugged-programming/programming-challenges/modulo-add-hours-12-hour-clock/scratch-solution.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="15187" identifier="a377f627def6c6ec8c34fc33805b7792">
+        <source>when green flag clicked
+ask [Enter a time:] and wait
+set [original time v] to (answer)
+ask [Enter the number of hours to add:] and wait
+set [hours to add v] to (answer)
+set [new time v] to (((original time) + (hours to add)) mod (12))
+if &amp;lt;(new time) = [0]&amp;gt; then
+  say [The new time is 12 o'clock.]
+else
+  say (join [The new time is ] (join (new time) [ o'clock.]))
+end</source>
+        <target>crwdns15187:0[0]crwdne15187:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

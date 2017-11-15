@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="927" original="/csunplugged/topics/content/en/error-detection-and-correction/programming-challenges/count-black-squares-one-line-input/scratch-expected.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="10325" identifier="3a29a7e836ccaa795883d72e41b8db48">
+        <source>Click on the green flag, enter the inputs provided in the “testing examples” to
+see the expected output of your program.</source>
+        <target>crwdns10325:0crwdne10325:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+      <trans-unit id="10326" identifier="2bf6f9547ae2f19ff7e9f46aced75ab0">
+        <source>{iframe link=&quot;https://scratch.mit.edu/projects/embed/148426017/?autostart=false&quot;}</source>
+        <target>crwdns10326:0crwdne10326:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[2]</note>
+      </trans-unit>
+      <trans-unit id="10327" identifier="43b2eea72a798bccac86d4a5d83e4a56">
+        <source>{panel type=&quot;help&quot; title=&quot;Recommended blocks&quot;}</source>
+        <target>crwdns10327:0crwdne10327:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[3]</note>
+      </trans-unit>
+      <trans-unit id="10328" identifier="a797b94e0ea4b55d1e80f25b5986ae7e">
+        <source>when green flag clicked
+
+say (black cards total)
+
+ask [Please enter a sequence of black and white squares (B for black and W for white):] and wait</source>
+        <target>crwdns10328:0crwdne10328:0</target>
+        <note>Context: Text&#13;
+XPath: /pre/code</note>
+      </trans-unit>
+      <trans-unit id="10329" identifier="19008252c251c41003d39c4d2734774b">
+        <source>change [index v] by (1)
+
+change [black cards total v] by (1)</source>
+        <target>crwdns10329:0crwdne10329:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[2]/code</note>
+      </trans-unit>
+      <trans-unit id="10330" identifier="1ba58880882ad34adcbb2481cb0bb33d">
+        <source>repeat (length of (cards))
+end
+
+if &amp;lt;(letter (index) of (cards)) = [B]&amp;gt; then
+end</source>
+        <target>crwdns10330:0[B]crwdne10330:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[3]/code</note>
+      </trans-unit>
+      <trans-unit id="10331" identifier="511c742525b1320efec2ad12909cb887">
+        <source>set [black cards total v] to [0]
+
+set [index v] to [1]
+
+set [cards v] to (answer)</source>
+        <target>crwdns10331:0[0]crwdnd10331:0[1]crwdne10331:0</target>
+        <note>Context: Text&#13;
+XPath: /pre[4]/code</note>
+      </trans-unit>
+      <trans-unit id="10332" identifier="1be4c01d2096b1876d7bd199ccb4c3b9">
+        <source>{panel end}</source>
+        <target>crwdns10332:0{panel end}crwdne10332:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

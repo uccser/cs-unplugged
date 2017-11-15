@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="725" original="/csunplugged/topics/content/en/binary-numbers/curriculum-integrations/binary-tunes.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="8289" identifier="7fe3c409088bc1b993162ee9ebddd572">
+        <source>Binary Tunes</source>
+        <target>crwdns8289:0crwdne8289:0</target>
+        <note>Context: Headline 1&#13;
+XPath: /h1</note>
+      </trans-unit>
+      <trans-unit id="8290" identifier="463054408376a474187290ab46bd018f">
+        <source>Use a high note for a 1, and a low note for a 0</source>
+        <target>crwdns8290:0crwdne8290:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li</note>
+      </trans-unit>
+      <trans-unit id="8291" identifier="83b3190a2df8c4510025a5e404e1e47c">
+        <source>Represent letters using the binary numbers from 00001 to 11010 (1 to 26)</source>
+        <target>crwdns8291:0crwdne8291:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="8292" identifier="8f8fdd0ec9082b48fe683239f3be40de">
+        <source>This is explained in more detail here, with examples: &lt;a href=&quot;http://csunplugged.org/modems-unplugged-2/&quot;&gt;http://csunplugged.org/modems-unplugged-2/&lt;/a&gt;</source>
+        <target>crwdns8292:0crwdne8292:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="8293" identifier="25400c03fe0a5ab3b6bce3bc25bfff2c">
+        <source>Steganography: is a message hidden in something else - in this case, a song</source>
+        <target>crwdns8293:0crwdne8293:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[4]</note>
+      </trans-unit>
+      <trans-unit id="8294" identifier="1c76fef78cd9ec2e1023769cc2625306">
+        <source>Write your own song that contains a hidden message.</source>
+        <target>crwdns8294:0crwdne8294:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[5]</note>
+      </trans-unit>
+      <trans-unit id="8295" identifier="fe7ad74884b6cb423b69f8ab66119736">
+        <source>Extension</source>
+        <target>crwdns8295:0crwdne8295:0</target>
+        <note>Context: Headline 4&#13;
+XPath: /h4</note>
+      </trans-unit>
+      <trans-unit id="8296" identifier="22801f27efdb8ce80d0a23e5c253eadf">
+        <source>Consider hiding the binary numbers in the rhythm (long and short notes), or make a video with dance moves that code binary numbers</source>
+        <target>crwdns8296:0crwdne8296:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /p</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

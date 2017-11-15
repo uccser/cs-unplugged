@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file id="860" original="/csunplugged/topics/content/en/binary-numbers/programming-challenges/number-bits-representing-number/scratch-hints.md" source-language="en" target-language="en-UD" datatype="plaintext">
+    <body>
+      <trans-unit id="9027" identifier="36710e8e1305fd9b7986bb20340cf7af">
+        <source>Make variables called:</source>
+        <target>crwdns9027:0crwdne9027:0</target>
+        <note>Context: Paragraph text&#13;
+XPath: /ul/li/p</note>
+      </trans-unit>
+      <trans-unit id="9028" identifier="a98ba285a356685ae5d44202d81de72c">
+        <source>&quot;total number of dots&quot; and set its value to the number entered by the
+end user.</source>
+        <target>crwdns9028:0crwdne9028:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li/ul/li</note>
+      </trans-unit>
+      <trans-unit id="9029" identifier="004c8f066f7fdff9934431b0db196f0f">
+        <source>“bit value” and set its value to ‘1’.
+Double its value until it is bigger than the “total number of dots”.</source>
+        <target>crwdns9029:0crwdne9029:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li/ul/li[2]</note>
+      </trans-unit>
+      <trans-unit id="9030" identifier="881f86cee67c33d9dfd213167cf0450c">
+        <source>“bits” and set its value to 0.
+Every time that you double the “bit value” you need to add a new bit
+for storing the number (increase the value of “bits” by 1).</source>
+        <target>crwdns9030:0crwdne9030:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li/ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="9031" identifier="11d47ba679a4955a436a3278f7b027c2">
+        <source>Use &lt;code&gt;scratch:repeat until &amp;lt;&amp;gt;&lt;/code&gt; block to repeat the blocks until “total
+number of dots” is greater than the “bit value”.</source>
+        <target>crwdns9031:0crwdne9031:0</target>
+        <note>Context: XPath: /ul/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="9032" identifier="b1d0de7eb33efe94dce2d6300ccab98c">
+        <source>Stop the loop when you find the “bit value” which is larger than the
+“total number of dots”.</source>
+        <target>crwdns9032:0crwdne9032:0</target>
+        <note>Context: XPath: /ul/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="9033" identifier="dbd8627678132943c8e01b1eb2fbf4ee">
+        <source>Display the value of “bits” as the output.</source>
+        <target>crwdns9033:0crwdne9033:0</target>
+        <note>Context: XPath: /ul/li[2]/p</note>
+      </trans-unit>
+      <trans-unit id="9034" identifier="9c21b5fed7c95baa04fbdac708a6f627">
+        <source>Set the variable “bit value” to ‘1’ and double it (Use the
+&lt;code&gt;scratch: () * ()&lt;/code&gt; operation under “Operators” to multiply the “bit value”
+by 2) until it is bigger than the “total number of dots”.</source>
+        <target>crwdns9034:0crwdne9034:0</target>
+        <note>Context: XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="9035" identifier="f0243c3974182fe53df1aab55696d19f">
+        <source>Every time that you double the “bit value” you need to add a new bit for
+storing the number.</source>
+        <target>crwdns9035:0crwdne9035:0</target>
+        <note>Context: XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="9036" identifier="52d35cf901331d8e53437f6315289a1d">
+        <source>You can do this by using the &lt;code&gt;scratch:change [] by ()&lt;/code&gt; block to increase
+the value of variable “bits” value by 1.</source>
+        <target>crwdns9036:0crwdne9036:0</target>
+        <note>Context: XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="9037" identifier="66638493f130a663147fac7c1b83a643">
+        <source>Use &lt;code&gt;scratch:repeat until &amp;lt;&amp;gt;&lt;/code&gt; block to repeat these steps until condition
+is true.</source>
+        <target>crwdns9037:0crwdne9037:0</target>
+        <note>Context: XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="9038" identifier="b5dd59c18fb4829268a2fa7a01d87dad">
+        <source>In this challenge you need to repeat the blocks until
+“total number of dots” is greater than the “bit value”.</source>
+        <target>crwdns9038:0crwdne9038:0</target>
+        <note>Context: XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="9039" identifier="3b04b150c0d6a0b0a3b1f3643c1f05d6">
+        <source>Stop the loop when you find the “bit value” is larger than the “total
+number of dots”.</source>
+        <target>crwdns9039:0crwdne9039:0</target>
+        <note>Context: XPath: /ul/li[3]</note>
+      </trans-unit>
+      <trans-unit id="9040" identifier="e32ae53f8ba2180d158990c3282fc73b">
+        <source>Test your program with some values on the boundaries (for example number
+31 would need 5 bits and 32 needs 6 bits).</source>
+        <target>crwdns9040:0crwdne9040:0</target>
+        <note>Context: List Item&#13;
+XPath: /ul/li[4]</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
