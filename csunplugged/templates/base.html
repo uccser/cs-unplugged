@@ -8,13 +8,20 @@
 {% get_language_info for LANGUAGE_CODE as current_language %}
 {% get_available_languages as LANGUAGES %}
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    {% if LANGUAGE_CODE == "xx-lr" or LANGUAGE_CODE == "xx-rl" %}
+      <script type="text/javascript">
+        var _jipt = [];
+        _jipt.push(['project', 'cs-unplugged']);
+      </script>
+      <script type="text/javascript" src="//cdn.crowdin.com/jipt/jipt.js"></script>
+    {% endif %}
     <title>
       {% block custom_title %}
         {% block title %}{% endblock title %} - {% trans "CS Unplugged" %}
