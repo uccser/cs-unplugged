@@ -37,7 +37,7 @@ class ResourceViewBaseTest(BaseTestWithDB):
             url = base_url + query
             response = self.client.get(url)
             self.assertEqual(HTTPStatus.OK, response.status_code)
-            combination_generator = get_resource_generator(resource.generator_module, QueryDict(query))
+            combination_generator = get_resource_generator(resource.generator_module, QueryDict(query[1:]))
             self.assertEqual(
                 response.get("Content-Disposition"),
                 self.CONTENT_DISPOSITION.format(
