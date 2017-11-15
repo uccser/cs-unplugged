@@ -126,7 +126,7 @@ defhelp -dev flush 'Run Django flush command.'
 # Run Django makemigrations command
 dev_makemigrations() {
   echo "Creating database migrations..."
-  docker-compose exec django /docker_venv/bin/python3 ./manage.py makemigrations
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py makemigrations --no-input
 }
 defhelp -dev makemigrations 'Run Django makemigrations command.'
 
