@@ -1,13 +1,10 @@
 """Custom loader for loading curriculum integrations."""
 
 from django.core.exceptions import ObjectDoesNotExist
-
 from utils.TranslatableModelLoader import TranslatableModelLoader
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
-
-
-from topics.models import CurriculumArea, Lesson
+from topics.models import CurriculumArea, UnitPlan, Lesson
 
 
 class CurriculumIntegrationsLoader(TranslatableModelLoader):
@@ -33,7 +30,6 @@ class CurriculumIntegrationsLoader(TranslatableModelLoader):
         structure = self.load_yaml_file(self.structure_file_path)
 
         for (integration_slug, integration_data) in structure.items():
-
             if integration_data is None:
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
@@ -91,10 +87,23 @@ class CurriculumIntegrationsLoader(TranslatableModelLoader):
                                 ["unit-plan"],
                                 "Prerequisite Lesson"
                             )
+                        try:
+                            UnitPlan.objects.get(
+                                topic__slug=self.topic.slug,
+                                slug=unit_plan_slug
+                            )
+                        except ObjectDoesNotExist:
+                            raise KeyNotFoundError(
+                                self.structure_file_path,
+                                unit_plan_slug,
+                                "Unit Plans"
+                            )
                         for lesson_slug in lessons:
                             try:
                                 lesson = Lesson.objects.get(
-                                    slug=lesson_slug
+                                    topic__slug=self.topic.slug,
+                                    unit_plan__slug=unit_plan_slug,
+                                    slug=lesson_slug,
                                 )
                                 integration.prerequisite_lessons.add(lesson)
                             except ObjectDoesNotExist:

@@ -249,19 +249,18 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
             column = 0
             while not page_reference_added and row < page_columns:
                 pixel_value = image.getpixel((page_start_column + column, page_start_row + row))
-                if not page_reference_added:
-                    if isinstance(pixel_value, tuple):
-                        is_black = pixel_value == (0, 0, 0)
-                    else:
-                        is_black = pixel_value == 0
-                    if not is_black:
-                        draw.text(
-                            ((column * self.BOX_SIZE) + self.LINE_WIDTH * 4, (row * self.BOX_SIZE) + -4),
-                            page_reference,
-                            font=self.FONT_SMALL,
-                            fill="#000"
-                        )
-                        page_reference_added = True
+                if isinstance(pixel_value, tuple):
+                    is_black = pixel_value == (0, 0, 0)
+                else:
+                    is_black = pixel_value == 0
+                if not is_black:
+                    draw.text(
+                        ((column * self.BOX_SIZE) + self.LINE_WIDTH * 4, (row * self.BOX_SIZE) + -4),
+                        page_reference,
+                        font=self.FONT_SMALL,
+                        fill="#000"
+                    )
+                    page_reference_added = True
                 column += 1
             row += 1
 

@@ -4,8 +4,8 @@ from tests.BaseTestWithDB import BaseTestWithDB
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
 from tests.resources.BareResourceGenerator import BareResourceGenerator
 from unittest.mock import MagicMock
-from utils.errors.ThumbnailPageNotFound import ThumbnailPageNotFound
-from utils.errors.MoreThanOneThumbnailPageFound import MoreThanOneThumbnailPageFound
+from utils.errors.ThumbnailPageNotFoundError import ThumbnailPageNotFoundError
+from utils.errors.MoreThanOneThumbnailPageFoundError import MoreThanOneThumbnailPageFoundError
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 from io import BytesIO
 from PyPDF2 import PdfFileReader
@@ -79,7 +79,7 @@ class BaseResourceGeneratorTest(BaseTestWithDB):
             ]
         )
         self.assertRaises(
-            ThumbnailPageNotFound,
+            ThumbnailPageNotFoundError,
             generator.generate_thumbnail,
         )
 
@@ -92,7 +92,7 @@ class BaseResourceGeneratorTest(BaseTestWithDB):
             ]
         )
         self.assertRaises(
-            MoreThanOneThumbnailPageFound,
+            MoreThanOneThumbnailPageFoundError,
             generator.generate_thumbnail,
         )
 

@@ -1,4 +1,4 @@
-"""Custom error for missing image."""
+"""Custom error for Markdown style error."""
 
 from .Error import Error
 

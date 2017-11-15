@@ -27,8 +27,8 @@ class LearningOutcomesLoader(TranslatableModelLoader):
             required_fields=["text"],
             required_slugs=learning_outcomes.keys()
         )
-        for (outcome_slug, outcome_data) in learning_outcomes.items():
 
+        for (outcome_slug, outcome_data) in learning_outcomes.items():
             translations = self.get_blank_translation_dictionary()
             translations.update(learning_outcomes_translations.get(outcome_slug, dict()))
 

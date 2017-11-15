@@ -2,7 +2,7 @@
 
 from .Error import Error
 
-ERROR_MESSAGE = "\nCould not find yaml file.\n"
+ERROR_MESSAGE = "\nCould not find YAML file (.yaml).\n"
 
 
 class CouldNotFindYAMLFileError(Error):

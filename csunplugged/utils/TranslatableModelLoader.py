@@ -4,7 +4,7 @@ from utils.BaseLoader import BaseLoader
 from utils.language_utils import get_available_languages, get_default_language
 from utils.errors.CouldNotFindYAMLFileError import CouldNotFindYAMLFileError
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
-from utils.errors.InvalidConfigValueError import InvalidConfigValueError
+from utils.errors.InvalidYAMLValueError import InvalidYAMLValueError
 from utils.errors.MissingRequiredModelsError import MissingRequiredModelsError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from django.utils import translation
@@ -55,7 +55,7 @@ class TranslatableModelLoader(BaseLoader):
                 contain all slugs in required_slugs
             MissingRequiredFieldError: in the file in the /en directory, one
                 of the models was missing an entry for a field in required_fields
-            InvalidConfigValueError: one of the 'translated strings' in the file
+            InvalidYAMLValueError: one of the 'translated strings' in the file
                 was not a string.
         """
         translations = {}
@@ -84,7 +84,7 @@ class TranslatableModelLoader(BaseLoader):
                         )
                 for field, value in model_fields.items():
                     if not isinstance(value, str):
-                        raise InvalidConfigValueError(
+                        raise InvalidYAMLValueError(
                             translations_filename,
                             "{}->{}".format(model_slug, field),
                             "String"

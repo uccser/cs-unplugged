@@ -5,7 +5,7 @@ from django.db import transaction
 from django.http.request import QueryDict
 from utils.BaseLoader import BaseLoader
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
-from utils.errors.InvalidConfigValueError import InvalidConfigValueError
+from utils.errors.InvalidYAMLValueError import InvalidYAMLValueError
 from resources.utils.get_resource_generator import get_resource_generator
 from resources.models import Resource
 from django.contrib.staticfiles import finders
@@ -61,7 +61,7 @@ class ResourcesLoader(BaseLoader):
 
             # Check copies value is boolean
             if not isinstance(resource_copies, bool):
-                raise InvalidConfigValueError(
+                raise InvalidYAMLValueError(
                     self.structure_file_path,
                     "copies",
                     "'true' or 'false'"
