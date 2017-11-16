@@ -1,9 +1,11 @@
 {% extends "resources/resource.html" %}
 
+{% load i18n %}
+
 <!-- Description of resource -->
 {% block description %}
   <p>
-    This resource contains printouts for Kidbots activities.
+    {% trans "This resource contains printouts for Kidbots activities." %}
   </p>
 {% endblock description %}
 

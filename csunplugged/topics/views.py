@@ -1,10 +1,12 @@
 """Views for the topics application."""
 
+from django.db.models import Q
 from django.shortcuts import get_object_or_404
 from django.views import generic
 from django.http import JsonResponse, Http404
 from config.templatetags.render_html_field import render_html_with_static
 from utils.group_lessons_by_age import group_lessons_by_age
+from django.utils.translation import get_language
 from .models import (
     Topic,
     CurriculumIntegration,
@@ -146,11 +148,14 @@ class LessonView(generic.DetailView):
         context["topic"] = self.object.topic
         context["unit_plan"] = self.object.unit_plan
         # Add all the connected programming challenges
-        context["programming_challenges"] = self.object.programming_challenges.all()
+        context["programming_challenges"] = self.object.programming_challenges.exists()
         # Add all the connected learning outcomes
-        context["learning_outcomes"] = self.object.learning_outcomes.all().select_related()
+        context["learning_outcomes"] = self.object.learning_outcomes(manager="translated_objects") \
+                                           .all().select_related()
+        context["classroom_resources"] = self.object.classroom_resources(manager="translated_objects") \
+                                             .all().select_related()
         # Add all the connected generated resources
-        related_resources = self.object.generated_resources.all()
+        related_resources = self.object.generated_resources.order_by("name")
         generated_resources = []
         for related_resource in related_resources:
             generated_resource = dict()
@@ -227,7 +232,7 @@ class ProgrammingChallengeView(generic.DetailView):
             lesson.challenge_number = challenge_numbers.challenge_number
         context["topic"] = self.object.topic
         # Add all the connected learning outcomes
-        context["learning_outcomes"] = self.object.learning_outcomes.all()
+        context["learning_outcomes"] = self.object.learning_outcomes(manager="translated_objects").all()
         context["implementations"] = self.object.ordered_implementations()
         return context
 
@@ -345,6 +350,17 @@ class GlossaryList(generic.ListView):
         """
         return GlossaryTerm.objects.order_by("term")
 
+    def get_context_data(self):
+        """Get context data for template rendering."""
+        return {
+            "glossary_terms": GlossaryTerm.objects.filter(
+                Q(languages__contains=[get_language()])
+            ).order_by("term_en"),
+            "untranslated_glossary_terms": GlossaryTerm.objects.filter(
+                ~Q(languages__contains=[get_language()])
+            ).order_by("term_en")
+        }
+
 
 def glossary_json(request, **kwargs):
     """Provide JSON data for glossary term.
@@ -367,6 +383,7 @@ def glossary_json(request, **kwargs):
         )
         data = {
             "slug": glossary_slug,
+            "translated": glossary_item.translation_available,
             "term": glossary_item.term,
             "definition": render_html_with_static(glossary_item.definition)
         }

@@ -19,10 +19,9 @@ function open_glossary_definition() {
     // TODO: Allow code to work for different languages
     $("#glossary-modal-term").text("Loading glossary definition...");
     $("#glossary-modal-definition").html("");
-    var url = "/topics/glossary/json/";
     $.ajax({
       type: "GET",
-      url: url,
+      url: glossary_url,
       data: "term=" + slug,
       async: true,
       cache: true,

@@ -8,9 +8,8 @@ from django.core.management.base import BaseCommand
 from django.http.request import QueryDict
 from django.conf import settings
 from resources.models import Resource
-from resources.views.views import generate_resource_pdf
 from resources.utils.get_resource_generator import get_resource_generator
-from resources.utils.resource_valid_test_configurations import resource_valid_test_configurations
+from resources.utils.resource_valid_configurations import resource_valid_configurations
 
 
 class Command(BaseCommand):
@@ -29,9 +28,9 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         """Automatically called when the makeresources command is given."""
-        BASE_PATH = "staticfiles/resources/"
-        if not os.path.exists(BASE_PATH):
-            os.makedirs(BASE_PATH)
+        base_path = settings.RESOURCE_GENERATION_LOCATION
+        if not os.path.exists(base_path):
+            os.makedirs(base_path)
 
         if options["resource_name"]:
             resources = [Resource.objects.get(name=options["resource_name"])]
@@ -43,7 +42,7 @@ class Command(BaseCommand):
 
             # TODO: Import repeated in next for loop, check alternatives
             empty_generator = get_resource_generator(resource.generator_module)
-            combinations = resource_valid_test_configurations(
+            combinations = resource_valid_configurations(
                 empty_generator.valid_options,
                 header_text=False
             )
@@ -54,9 +53,9 @@ class Command(BaseCommand):
                     combination["copies"] = settings.RESOURCE_COPY_AMOUNT
                 requested_options = QueryDict(urlencode(combination, doseq=True))
                 generator = get_resource_generator(resource.generator_module, requested_options)
-                (pdf_file, filename) = generate_resource_pdf(resource.name, generator)
+                (pdf_file, filename) = generator.pdf(resource.name)
 
                 filename = "{}.pdf".format(filename)
-                pdf_file_output = open(os.path.join(BASE_PATH, filename), "wb")
+                pdf_file_output = open(os.path.join(base_path, filename), "wb")
                 pdf_file_output.write(pdf_file)
                 pdf_file_output.close()
