@@ -1,7 +1,5 @@
 import os
 import requests
-import csunplugged
-from csunplugged.config.settings.base import INCONTEXT_L10N_PSEUDOLANGUAGE
 
 INCONTEXT_L10N_PSEUDOLANGUAGE_CROWDIN = "en-UD"
 API_KEY = os.environ["CROWDIN_API_KEY"]
