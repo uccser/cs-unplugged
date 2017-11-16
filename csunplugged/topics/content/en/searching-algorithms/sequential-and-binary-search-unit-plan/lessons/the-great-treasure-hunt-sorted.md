@@ -2,6 +2,8 @@
 
 ## Key questions
 
+{image file-path="img/topics/binary_search_books.png" alt="A row of books in alphabetical order."}
+
 How would you look for a book in a library if the books were sorted in alphabetical order?
 Is that easier than if they were out of order?
 
@@ -54,5 +56,7 @@ It also shows how sometimes algorithms aren’t strongly affected by how big the
 This is a pleasant contrast to some other problems where we don't have such efficient algorithms.
 
 ## Lesson reflection
+
+{image file-path="img/topics/binary_search_chests.gif" alt="This animation shows binary search being used to find the chest that holds the number 64."}
 
 What is the algorithm for a binary search for the Treasure Hunt game?
