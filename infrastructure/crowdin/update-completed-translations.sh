@@ -1,31 +1,28 @@
 set -e
 set -x
 
+source config.sh
+source utils.sh
+
 REPO="git@github.com:jordangriffiths01/crowdin_testing.git"
 CLONED_REPO_DIR="translations-download-cloned-repo"
-CROWDIN_CONFIG_FILE="crowdin_content.yaml"
+TRANSLATION_PR_BRANCH_BASE="${TRANSLATION_TARGET_BRANCH}-translations"
 
-SOURCE_BRANCH="develop"
-TARGET_BRANCH_BASE="develop-translations"
-
-CONTENT_PATHS=(
-    "csunplugged/topics/content"
-    "csunplugged/locale"
-)
+echo ${REPO}
 
 # Clone repo, deleting old clone if exists
 if [ -d "${CLONED_REPO_DIR}" ]; then
-    rm -rf "${CLONED_REPO_DIR}"
+    reset_repo "${CLONED_REPO_DIR}" "${TRANSLATION_TARGET_BRANCH}"
+else
+    git clone "${REPO}" "${CLONED_REPO_DIR}" --branch ${TRANSLATION_TARGET_BRANCH}
 fi
-git clone "${REPO}" "${CLONED_REPO_DIR}" --branch ${SOURCE_BRANCH}
 
 # Change into the working repo
 cd "${CLONED_REPO_DIR}"
 
 # Set up git bot parameters
-# TODO: Change these
-git config user.name "Travis CI"
-git config user.email "test@test.com"
+git config user.name "${GITHUB_BOT_NAME}"
+git config user.email "${GITHUB_BOT_EMAIL}"
 
 # Populate array of all project languages
 languages=($(python3 ../get_crowdin_languages.py))
@@ -33,13 +30,13 @@ languages=($(python3 ../get_crowdin_languages.py))
 for language in ${languages[@]}; do
 
     # The branch for new translationss
-    TARGET_BRANCH="${TARGET_BRANCH_BASE}-${language}"
+    TRANSLATION_PR_BRANCH="${TRANSLATION_PR_BRANCH_BASE}-${language}"
 
-    # Checkout the translation branch, creating if off $SOURCE_BRANCH if it didn't already exist
-    git checkout $TARGET_BRANCH || git checkout -b $TARGET_BRANCH $SOURCE_BRANCH
+    # Checkout the translation branch, creating if off $TRANSLATION_TARGET_BRANCH if it didn't already exist
+    git checkout -B $TRANSLATION_PR_BRANCH $TRANSLATION_TARGET_BRANCH
 
     # Merge if required
-    git merge $SOURCE_BRANCH --quiet --no-edit
+    git merge $TRANSLATION_TARGET_BRANCH --quiet --no-edit
 
     # Delete existing translation directories
     mapped_code=$(python3 ../language_map.py ${language})
@@ -80,17 +77,17 @@ for language in ${languages[@]}; do
 
     # If any changes were made, push to github
     if [[ $changes -eq 1 ]]; then
-        git push -q origin $TARGET_BRANCH > /dev/null
+        git push -q origin $TRANSLATION_PR_BRANCH > /dev/null
     fi
 
     # If the target branch differs from the source branch, create a PR
-    if [[ $(git diff $TARGET_BRANCH $SOURCE_BRANCH) ]]; then
-        hub pull-request -m "Updated translations for ${language}" -b "${SOURCE_BRANCH}" -h "${TARGET_BRANCH}" || \
+    if [[ $(git diff $TRANSLATION_PR_BRANCH $TRANSLATION_TARGET_BRANCH) ]]; then
+        hub pull-request -m "Updated translations for ${language}" -b "${TRANSLATION_TARGET_BRANCH}" -h "${TRANSLATION_PR_BRANCH}" || \
             echo "Could not create pull request - perhaps one already exists?"
     fi
 
     # Return repo to clean state for next language
     git reset --hard
-    git clean -fd
+    git clean -fdx
 
 done
