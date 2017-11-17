@@ -5,7 +5,7 @@ from lxml import etree
 
 CONTENT_ROOT = "csunplugged/topics/content"
 EN_DIR = os.path.join(CONTENT_ROOT, 'en')
-PSEUDO_LANGUAGE = "xx-lr"
+PSEUDO_LANGUAGE = "xx_LR"
 PSEUDO_DIR = os.path.join(CONTENT_ROOT, PSEUDO_LANGUAGE)
 XLIFF_DIR = os.path.join(CONTENT_ROOT, 'xliff')
 

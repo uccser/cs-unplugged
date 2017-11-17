@@ -5,6 +5,9 @@ REPO="git@github.com:jordangriffiths01/crowdin_testing.git"
 CLONED_REPO_DIR="incontext-download-cloned-repo"
 CROWDIN_CONFIG_FILE="crowdin_content.yaml"
 
+CROWDIN_PSEUDO_LANGUAGE="en-UD"
+CSU_PSEUDO_LANGUAGE="xx_LR"
+
 if [ -d "${CLONED_REPO_DIR}" ]; then
     rm -rf "${CLONED_REPO_DIR}"
 fi
@@ -26,11 +29,11 @@ git checkout $TARGET_BRANCH || git checkout -b $TARGET_BRANCH origin/$SOURCE_BRA
 # Merge if required
 git merge origin/$SOURCE_BRANCH --quiet --no-edit
 
-crowdin -c "${CROWDIN_CONFIG_FILE}" download
-python3 infrastructure/crowdin/download_xliff.py
-python3 infrastructure/crowdin/modify_pseudo_translations.py
+crowdin -c "${CROWDIN_CONFIG_FILE}" -l "${CROWDIN_PSEUDO_LANGUAGE}" download
+python3 ../download_xliff.py
+python3 ../modify_pseudo_translations.py
 
-git add csunplugged/topics/content/xx-lr
+git add "csunplugged/topics/content/${CSU_PSEUDO_LANGUAGE}"
 
 # If there are no changes to the compiled out (e.g. this is a README update) then just bail.
 if [[ $(git diff --cached) ]]; then

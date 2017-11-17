@@ -4,10 +4,14 @@ set -x
 REPO="git@github.com:jordangriffiths01/crowdin_testing.git"
 CLONED_REPO_DIR="translations-download-cloned-repo"
 CROWDIN_CONFIG_FILE="crowdin_content.yaml"
-CROWDIN_BUILD_DIR="crowdin_build"
 
 SOURCE_BRANCH="develop"
 TARGET_BRANCH_BASE="develop-translations"
+
+CONTENT_PATHS=(
+    "csunplugged/topics/content"
+    "csunplugged/locale"
+)
 
 # Clone repo, deleting old clone if exists
 if [ -d "${CLONED_REPO_DIR}" ]; then
@@ -15,19 +19,8 @@ if [ -d "${CLONED_REPO_DIR}" ]; then
 fi
 git clone "${REPO}" "${CLONED_REPO_DIR}" --branch ${SOURCE_BRANCH}
 
-# Copy repo to separate build directory
-# This keeps it out of the way when changing between branches etc.
-if [ -d "${CROWDIN_BUILD_DIR}" ]; then
-    rm -rf "${CROWDIN_BUILD_DIR}"
-fi
-cp -r ${CLONED_REPO_DIR} ${CROWDIN_BUILD_DIR}
-
-# Download all translation files from crowdin
-cd "${CROWDIN_BUILD_DIR}"
-crowdin -c "${CROWDIN_CONFIG_FILE}" download
-
 # Change into the working repo
-cd "../${CLONED_REPO_DIR}"
+cd "${CLONED_REPO_DIR}"
 
 # Set up git bot parameters
 # TODO: Change these
@@ -35,8 +28,7 @@ git config user.name "Travis CI"
 git config user.email "test@test.com"
 
 # Populate array of all project languages
-languages=($(python3 infrastructure/crowdin/get_crowdin_languages.py))
-
+languages=($(python3 ../get_crowdin_languages.py))
 
 for language in ${languages[@]}; do
 
@@ -49,15 +41,33 @@ for language in ${languages[@]}; do
     # Merge if required
     git merge $SOURCE_BRANCH --quiet --no-edit
 
-    # Overwrite directory tree with saved built version
-    cp -r "../${CROWDIN_BUILD_DIR}/csunplugged" .
+    # Delete existing translation directories
+    mapped_code=$(python3 ../language_map.py ${language})
+    for content_path in "${CONTENT_PATHS[@]}"; do
+        translation_path="${content_path}/${mapped_code}"
+        if [ -d "${translation_path}" ]; then
+            rm -r "${translation_path}"
+        fi
+    done
+
+    # Download translations from crowdin
+    crowdin -c "${CROWDIN_CONFIG_FILE}" -l "${language}" download
+
+    # Boolean flag indicating whether changes are made that should be pushed
+    changes=0
+
+    # If there are any files that were not re-downloaded from crowdin, they
+    # no longer exist on the translation server - delete them
+    if [[ $(git ls-files --deleted) ]]; then
+        git rm $(git ls-files --deleted)
+        git commit -m "Deleting old translation files no longer present on Crowdin"
+        changes=1
+    fi
 
     # Get list of files that are completely translated/ready for committing
     # Note that .po files are included even if not completely translated
-    python3 infrastructure/crowdin/get_complete_translations.py "${language}" > "${language}_completed"
+    python3 ../get_complete_translations.py "${language}" > "${language}_completed"
 
-
-    changes=0
     # Loop through each completed translation file:
     while read path; do
         # If file is different to what's already on the branch, commit it

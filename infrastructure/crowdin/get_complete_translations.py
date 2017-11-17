@@ -4,6 +4,7 @@ from lxml import etree
 import sys
 from django.conf import settings
 from django.utils import translation
+import language_map
 
 settings.configure()
 
@@ -15,7 +16,7 @@ NS_DICT = {
 }
 
 if len(sys.argv) != 2:
-    raise Exception("Usage: python3 get_completed_translations.py <language code>")
+    raise Exception("Usage: python3 get_completed_translations.py <crowdin language code>")
 
 SOURCE_LANGUAGE = "en"
 TARGET_LANGUAGE = sys.argv[1]
@@ -32,10 +33,6 @@ def get_language_info(language):
     info = etree.fromstring(response.text.encode())
     return info
 
-def convert_source_language(source_language, path_to_dir):
-    if path_to_dir == "csunplugged/locale":
-        return translation.to_locale(TARGET_LANGUAGE)
-    return TARGET_LANGUAGE.lower()
 
 def process_item(item, parent_path=None):
     if item.find("node_type").text == "file":
@@ -49,7 +46,7 @@ def process_item(item, parent_path=None):
         if filename.endswith(".po"):
             return [path]
 
-        if item.find("phrases") != item.find("approved"):
+        if item.find("phrases") == item.find("approved"):
             return [path]
         else:
             return []
@@ -58,7 +55,7 @@ def process_item(item, parent_path=None):
         inner_nodes = item.find("files")
         dirname = item.find("name").text
         if dirname == SOURCE_LANGUAGE:
-            dirname = convert_source_language(dirname, parent_path)
+            dirname = language_map.from_crowdin(TARGET_LANGUAGE)
         if parent_path:
             path = os.path.join(parent_path, dirname)
         else:
