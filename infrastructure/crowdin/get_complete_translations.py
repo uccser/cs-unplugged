@@ -2,11 +2,8 @@ import os
 import requests
 from lxml import etree
 import sys
-from django.conf import settings
-from django.utils import translation
 import language_map
 
-settings.configure()
 
 API_KEY = os.environ["CROWDIN_API_KEY"]
 API_URL = "https://api.crowdin.com/api/project/cs-unplugged/{method}"
