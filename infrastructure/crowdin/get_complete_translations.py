@@ -46,7 +46,7 @@ def process_item(item, parent_path=None):
         if filename.endswith(".po"):
             return [path]
 
-        if item.find("phrases") == item.find("approved"):
+        if item.find("phrases").text == item.find("approved").text:
             return [path]
         else:
             return []
