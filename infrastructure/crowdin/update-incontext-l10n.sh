@@ -1,6 +1,7 @@
 # Deal with SSH KEYS here
  set -e
  set -x
+ set -o pipefail
 
 source config.sh
 source utils.sh
