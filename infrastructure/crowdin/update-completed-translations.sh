@@ -8,8 +8,6 @@ REPO="git@github.com:jordangriffiths01/crowdin_testing.git"
 CLONED_REPO_DIR="translations-download-cloned-repo"
 TRANSLATION_PR_BRANCH_BASE="${TRANSLATION_TARGET_BRANCH}-translations"
 
-echo ${REPO}
-
 # Clone repo, deleting old clone if exists
 if [ -d "${CLONED_REPO_DIR}" ]; then
     reset_repo "${CLONED_REPO_DIR}" "${TRANSLATION_TARGET_BRANCH}"
@@ -33,7 +31,7 @@ for language in ${languages[@]}; do
     TRANSLATION_PR_BRANCH="${TRANSLATION_PR_BRANCH_BASE}-${language}"
 
     # Checkout the translation branch, creating if off $TRANSLATION_TARGET_BRANCH if it didn't already exist
-    git checkout -B $TRANSLATION_PR_BRANCH $TRANSLATION_TARGET_BRANCH
+    git checkout $TRANSLATION_PR_BRANCH || git checkout -b $TRANSLATION_PR_BRANCH $TRANSLATION_TARGET_BRANCH
 
     # Merge if required
     git merge $TRANSLATION_TARGET_BRANCH --quiet --no-edit
@@ -82,8 +80,8 @@ for language in ${languages[@]}; do
 
     # If the target branch differs from the source branch, create a PR
     if [[ $(git diff $TRANSLATION_PR_BRANCH $TRANSLATION_TARGET_BRANCH) ]]; then
-        hub pull-request -m "Updated translations for ${language}" -b "${TRANSLATION_TARGET_BRANCH}" -h "${TRANSLATION_PR_BRANCH}" || \
-            echo "Could not create pull request - perhaps one already exists?"
+        hub pull-request -f -m "Updated translations for ${language}" -b "${TRANSLATION_TARGET_BRANCH}" -h "${TRANSLATION_PR_BRANCH}" || \
+            echo "Could not create pull request - this probably means one already exists"
     fi
 
     # Return repo to clean state for next language

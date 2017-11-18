@@ -24,7 +24,7 @@ git config user.email "${GITHUB_BOT_EMAIL}"
 
 SHA=$(git rev-parse --verify HEAD)
 
-git checkout -B $IN_CONTEXT_L10N_PR_BRANCH
+git checkout $IN_CONTEXT_L10N_PR_BRANCH || git checkout -b $IN_CONTEXT_L10N_PR_BRANCH $IN_CONTEXT_L10N_TARGET_BRANCH
 
 # Merge if required
 git merge origin/$IN_CONTEXT_L10N_TARGET_BRANCH --quiet --no-edit
