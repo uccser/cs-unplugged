@@ -10,7 +10,7 @@ files: [
         source: "/csunplugged/topics/content/en/**/*.yaml",
         translation: "/csunplugged/topics/content/%osx_locale%/**/%original_file_name%",
         languages_mapping: {
-            two_letters_code: {
+            osx_locale: {
                 "en-UD": "xx_LR",  # Pseudo language
                 "zh-CN": "zh_Hans",
                 "zh-TW": "zh_Hant"
@@ -21,7 +21,7 @@ files: [
         source: "/csunplugged/topics/content/en/**/*.md",
         translation: "/csunplugged/topics/content/%osx_locale%/**/%original_file_name%",
         languages_mapping: {
-            two_letters_code: {
+            osx_locale: {
                 "en-UD": "xx_LR",  # Pseudo language
                 "zh-CN": "zh_Hans",
                 "zh-TW": "zh_Hant"
@@ -32,7 +32,7 @@ files: [
         source: "/csunplugged/locale/en/LC_MESSAGES/*.po",
         translation: "/csunplugged/locale/%osx_locale%/LC_MESSAGES/%original_file_name%",
         languages_mapping: {
-            two_letters_code: {
+            osx_locale: {
                 "en-UD": "xx_LR",  # Pseudo language
                 "zh-CN": "zh_Hans",
                 "zh-TW": "zh_Hant"
