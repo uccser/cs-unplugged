@@ -2,8 +2,8 @@ set -e
 set -x
 set -o pipefail
 
-source config.sh
-source utils.sh
+source crowdin-bot-config.sh
+source crowdin-bot-utils.sh
 
 CLONED_REPO_DIR="get-unused-crowdin-files-cloned-repo"
 

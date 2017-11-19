@@ -2,8 +2,8 @@ set -e
 set -x
 set -o pipefail
 
-source config.sh
-source utils.sh
+source crowdin-bot-config.sh
+source crowdin-bot-utils.sh
 
 REPO="git@github.com:jordangriffiths01/crowdin_testing.git"
 CLONED_REPO_DIR="update-completed-translations-cloned-repo"
