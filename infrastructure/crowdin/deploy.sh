@@ -21,11 +21,4 @@ tar cvzf crowdin-bot.tar.gz crowdin_bot_python_package crowdin_bot_scripts crowd
 gcloud beta compute scp setup-instance.sh crowdin-bot.tar.gz "${INSTANCE_NAME}:/tmp" --zone="${ZONE}"
 
 # Unzip files and run setup script
-gcloud compute ssh "${INSTANCE_NAME}" --zone="${ZONE}" -- "cp /tmp/crowdin-bot.tar.gz /tmp/setup-instance.sh ~ && chmod +x setup-instance.sh && sudo ./setup-instance.sh"
-
-
-
-# Only once, check in encrypted key
-# gcloud kms encrypt --plaintext-file=gce_key --ciphertext-file=gce_key.enc --keyring=csunplugged-keyring --key=uccser-bot-ssh-key --location=global
-# gcloud kms encrypt --plaintext-file=crowdin_api_key --ciphertext-file=crowdin_api_key.enc --keyring=csunplugged-keyring --key=crowdin-api-key --location=global
-# gcloud kms encrypt --plaintext-file=uccser_bot_token --ciphertext-file=uccser_bot_token.enc --keyring=csunplugged-keyring --key=uccser-bot-token --location=global
+gcloud compute ssh "${INSTANCE_NAME}" --zone="${ZONE}" -- "cp /tmp/crowdin-bot.tar.gz /tmp/setup-instance.sh ~ && chmod +x setup-instance.sh && ./setup-instance.sh"
