@@ -6,7 +6,7 @@ source config.sh
 source utils.sh
 
 REPO="git@github.com:jordangriffiths01/crowdin_testing.git"
-CLONED_REPO_DIR="translations-download-cloned-repo"
+CLONED_REPO_DIR="update-completed-translations-cloned-repo"
 TRANSLATION_PR_BRANCH_BASE="${TRANSLATION_TARGET_BRANCH}-translations"
 
 # Clone repo, deleting old clone if exists
@@ -23,8 +23,10 @@ cd "${CLONED_REPO_DIR}"
 git config user.name "${GITHUB_BOT_NAME}"
 git config user.email "${GITHUB_BOT_EMAIL}"
 
+python3 -m crowdin_bot.get_language_map --crowdin-config "${CROWDIN_CONFIG_FILE}" > language_map.json
+
 # Populate array of all project languages
-languages=($(python3 ../get_crowdin_languages.py))
+languages=($(python3 -m crowdin_bot.get_crowdin_languages))
 
 for language in ${languages[@]}; do
 
@@ -38,7 +40,7 @@ for language in ${languages[@]}; do
     git merge $TRANSLATION_TARGET_BRANCH --quiet --no-edit
 
     # Delete existing translation directories
-    mapped_code=$(python3 ../language_map.py ${language})
+    mapped_code=$(cat ../language_map.json | python -c "import json,sys;obj=json.load(sys.stdin);print(obj[\"${language}\"]);")
     for content_path in "${CONTENT_PATHS[@]}"; do
         translation_path="${content_path}/${mapped_code}"
         if [ -d "${translation_path}" ]; then
@@ -62,7 +64,7 @@ for language in ${languages[@]}; do
 
     # Get list of files that are completely translated/ready for committing
     # Note that .po files are included even if not completely translated
-    python3 ../get_complete_translations.py "${language}" > "${language}_completed"
+    python3 -m crowdin_bot.get_complete_translations --crowdin-code "${language}" --csu-code "${mapped_code}" > "${language}_completed"
 
     # Loop through each completed translation file:
     while read path; do

@@ -31,8 +31,8 @@ git checkout $IN_CONTEXT_L10N_PR_BRANCH || git checkout -b $IN_CONTEXT_L10N_PR_B
 git merge origin/$IN_CONTEXT_L10N_TARGET_BRANCH --quiet --no-edit
 
 crowdin -c "${CROWDIN_CONFIG_FILE}" -l "${CROWDIN_PSEUDO_LANGUAGE}" download
-python3 ../download_xliff.py
-python3 ../modify_pseudo_translations.py
+python3 -m crowdin_bot.download_xliff
+python3 -m modify_pseudo_translations
 
 git add "csunplugged/topics/content/${CSU_PSEUDO_LANGUAGE}"
 

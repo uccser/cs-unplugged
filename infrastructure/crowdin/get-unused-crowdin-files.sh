@@ -16,7 +16,7 @@ fi
 
 cd "${CLONED_REPO_DIR}"
 
-python3 ../get_crowdin_files.py | sort > all_crowdin_files
+python3 -m crowdin_bot.get_crowdin_files | sort > all_crowdin_files
 crowdin -c "${CROWDIN_CONFIG_FILE}" --dryrun upload | sort > current_crowdin_files
 
 # Diff returns exit code 1 if diff found - don't abort script if that is the case
