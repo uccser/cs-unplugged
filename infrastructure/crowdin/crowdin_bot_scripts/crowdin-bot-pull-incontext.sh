@@ -1,7 +1,8 @@
-# Deal with SSH KEYS here
- set -e
- set -x
- set -o pipefail
+#!/usr/bin/env bash
+
+set -e
+set -x
+set -o pipefail
 
 source crowdin-bot-config.sh
 source crowdin-bot-utils.sh

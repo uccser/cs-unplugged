@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 reset_repo() {
     repo_dir=$1
     branch=$2

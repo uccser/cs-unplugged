@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # CS Unplugged repo
 REPO="git@github.com:uccser/cs-unplugged.git"
 
