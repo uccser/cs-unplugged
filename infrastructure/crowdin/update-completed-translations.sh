@@ -16,14 +16,14 @@ else
     git clone "${REPO}" "${CLONED_REPO_DIR}" --branch ${TRANSLATION_TARGET_BRANCH}
 fi
 
+python3 -m crowdin_bot.get_language_map --crowdin-config "${CLONED_REPO_DIR}/${CROWDIN_CONFIG_FILE}" > language_map.json
+
 # Change into the working repo
 cd "${CLONED_REPO_DIR}"
 
 # Set up git bot parameters
 git config user.name "${GITHUB_BOT_NAME}"
 git config user.email "${GITHUB_BOT_EMAIL}"
-
-python3 -m crowdin_bot.get_language_map --crowdin-config "${CROWDIN_CONFIG_FILE}" > language_map.json
 
 # Populate array of all project languages
 languages=($(python3 -m crowdin_bot.get_crowdin_languages))
