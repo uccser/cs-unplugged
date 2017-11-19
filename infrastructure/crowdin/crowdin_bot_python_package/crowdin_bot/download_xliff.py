@@ -10,7 +10,6 @@ XLIFF_DIR = os.path.join(CONTENT_ROOT, 'xliff')
 
 def download_xliff(source_filename, dest_filename, language=INCONTEXT_L10N_PSEUDOLANGUAGE_CROWDIN):
     params = {
-        "key" : API_KEY,
         "file": source_filename,
         "language": language,
         "format": "xliff"
