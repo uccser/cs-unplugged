@@ -1,37 +1,17 @@
 import os
-import requests
-from lxml import etree
-import sys
-import language_map
+import argparse
 
-
-API_KEY = os.environ["CROWDIN_API_KEY"]
-API_URL = "https://api.crowdin.com/api/project/cs-unplugged/{method}"
-
-NS_DICT = {
-    'ns': "urn:oasis:names:tc:xliff:document:1.2"
-}
-
-if len(sys.argv) != 2:
-    raise Exception("Usage: python3 get_completed_translations.py <crowdin language code>")
+from crowdin_bot import api
 
 SOURCE_LANGUAGE = "en"
-TARGET_LANGUAGE = sys.argv[1]
 
 def get_language_info(language):
-    params = {
-        "key" : API_KEY,
-        "language": language
-    }
-    response = requests.get(
-        API_URL.format(method="language-status"),
-        params=params
+    return api.api_call_xml(
+        "language-status",
+        language=language
     )
-    info = etree.fromstring(response.text.encode())
-    return info
 
-
-def process_item(item, parent_path=None):
+def process_item(item, parent_path=None, csu_language_code=None):
     if item.find("node_type").text == "file":
         filename = item.find("name").text
         if parent_path:
@@ -52,21 +32,29 @@ def process_item(item, parent_path=None):
         inner_nodes = item.find("files")
         dirname = item.find("name").text
         if dirname == SOURCE_LANGUAGE:
-            dirname = language_map.from_crowdin(TARGET_LANGUAGE)
+            dirname = csu_language_code
         if parent_path:
             path = os.path.join(parent_path, dirname)
         else:
             path = dirname
         completed = []
         for inner_node in inner_nodes:
-            completed += process_item(inner_node, parent_path=path)
+            completed += process_item(inner_node, parent_path=path, csu_language_code=csu_language_code)
         return completed
 
 
 if __name__ == "__main__":
-    lang_info = get_language_info(TARGET_LANGUAGE)
+    parser = argparse.ArgumentParser()
+    # parser.add_argument('--crowdin-code', required=True,
+    #                     help='Crowdin language code')
+    parser.add_argument('--crowdin-code', required=True,
+                        help='Crowdin language code for target language')
+    parser.add_argument('--csu-code', required=True,
+                        help='CSU language code for target language')
+    args = parser.parse_args()
+    lang_info = get_language_info(args.crowdin_code)
     files = lang_info.find("files")
     completed = []
     for item in files:
-        completed += process_item(item)
+        completed += process_item(item, csu_language_code=args.csu_code)
     print('\n'.join(completed))

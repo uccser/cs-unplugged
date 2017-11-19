@@ -1,10 +1,8 @@
 import os
-import requests
+
+from crowdin_bot import api
 
 INCONTEXT_L10N_PSEUDOLANGUAGE_CROWDIN = "en-UD"
-API_KEY = os.environ["CROWDIN_API_KEY"]
-API_URL = "https://api.crowdin.com/api/project/cs-unplugged/{method}"
-
 CONTENT_ROOT = "csunplugged/topics/content"
 EN_DIR = os.path.join(CONTENT_ROOT, 'en')
 XLIFF_DIR = os.path.join(CONTENT_ROOT, 'xliff')
@@ -17,14 +15,10 @@ def download_xliff(source_filename, dest_filename, language=INCONTEXT_L10N_PSEUD
         "language": language,
         "format": "xliff"
     }
-    response = requests.get(
-        API_URL.format(method="export-file"),
-        params=params
-    )
-    print("Downloading {}".format(response.url))
-    xliff_text = response.text.replace('\x0C', '')
+    xliff_content = api.api_call_text("export-file", **params)
+    xliff_content = xliff_content.replace('\x0C', '')
     with open(dest_filename, 'w') as f:
-        f.write(xliff_text)
+        f.write(xliff_content)
 
 if __name__ == "__main__":
     if not os.path.exists(XLIFF_DIR):

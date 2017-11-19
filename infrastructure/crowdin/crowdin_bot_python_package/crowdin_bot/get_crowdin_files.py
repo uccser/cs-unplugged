@@ -1,22 +1,9 @@
 import os
-import requests
-from lxml import etree
-import sys
-import language_map
+from crowdin_bot import api
 
-API_KEY = os.environ["CROWDIN_API_KEY"]
-API_URL = "https://api.crowdin.com/api/project/cs-unplugged/{method}"
 
 def get_project_info():
-    params = {
-        "key" : API_KEY,
-    }
-    response = requests.get(
-        API_URL.format(method="info"),
-        params=params
-    )
-    info = etree.fromstring(response.text.encode())
-    return info
+    return api.api_call_xml("info")
 
 
 def process_item(item, parent_path="/"):
