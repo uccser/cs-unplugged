@@ -71,6 +71,6 @@ sudo pip3 install "${PYTHON_PACKAGE_DIR}"/
 crontab << EOF
 SHELL=/bin/bash
 4 12 * * * PATH=\$PATH:/usr/local/bin; source crowdin-bot-env-secrets.sh; crowdin-bot-push-source.sh > crowdin-bot-push-source.log 2> crowdin-bot-push-source.err
-4 13 * * * PATH=\$PATH:/usr/local/bin; source crowdin-bot-env-secrets.sh; crowdin-bot-pull-translations.sh > crowdin-bot-push-source.log 2> crowdin-bot-pull-translations.err
+4 13 * * * PATH=\$PATH:/usr/local/bin; source crowdin-bot-env-secrets.sh; crowdin-bot-pull-translations.sh > crowdin-bot-pull-translations.log 2> crowdin-bot-pull-translations.err
 4 14 * * * PATH=\$PATH:/usr/local/bin; source crowdin-bot-env-secrets.sh; crowdin-bot-pull-incontext.sh > crowdin-bot-pull-incontext.log 2> crowdin-bot-pull-incontext.err
 EOF
