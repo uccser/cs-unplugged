@@ -12,9 +12,25 @@ from django.conf import settings
 from django.template.loader import render_to_string
 from django.contrib.staticfiles import finders
 
+from resources.utils.resource_parameters import EnumResourceParameter
+from lxml import etree
+from django.utils.translation import ugettext as _
+
+PAPER_SIZE_VALUES = {
+    "a4": _("A4"),
+    "letter": _("US Letter")
+}
 
 class BaseResourceGenerator(ABC):
     """Class for generator for a resource."""
+    default_options = {
+        "paper_size": EnumResourceParameter(
+            name="paper_size",
+            description=_("Paper Size"),
+            values=PAPER_SIZE_VALUES,
+            default="a4"
+        ),
+    }
 
     default_valid_options = {
         "paper_size": ["a4", "letter"]
@@ -33,6 +49,16 @@ class BaseResourceGenerator(ABC):
         self.valid_options.update(self.additional_valid_options)
         if requested_options:
             self.requested_options = self.process_requested_options(requested_options)
+
+    def get_options_html(self):
+        html = ""
+        for parameter in self.additional_options.values():
+            param_html = etree.tostring(parameter.html_element(), encoding='utf-8').decode('utf-8')
+            html += param_html
+        for parameter in self.default_options.values():
+            param_html = etree.tostring(parameter.html_element(), encoding='utf-8').decode('utf-8')
+            html += param_html
+        return html
 
     @abstractmethod
     def data(self):
