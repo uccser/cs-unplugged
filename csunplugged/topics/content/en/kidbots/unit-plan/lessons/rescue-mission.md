@@ -1,4 +1,4 @@
-# Rescue Mission (Sequential programming)
+# Rescue Mission
 
 {image file-path="img/topics/unplugged-programming-icon.png" alt="Students standing around a large checkerboard grid." caption="This example is a starter lesson with an object in the middle. The girl on the white square is "The Bot", the girl at the back is "The Programmer" and the boy in the green and gold is the Tester."}
 
