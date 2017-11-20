@@ -77,7 +77,7 @@ class BaseResourceGenerator(ABC):
     def get_additional_options(self):
         return {}
 
-    def get_options_html(self, slug):
+    def get_options_html(self):
         html_elements = []
         for parameter in self.get_options().values():
             html_elements.append(parameter.html_element())
