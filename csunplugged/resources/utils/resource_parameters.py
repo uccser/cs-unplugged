@@ -20,7 +20,7 @@ class EnumResourceParameter(ResourceParameter):
         self.values = values
         self.default = default
         if self.default not in self.values:
-            raise Exception(self.values)
+            self.default = list(values.keys())[0] # Select first value
 
     def html_element(self):
         base_elem = super().html_element()
