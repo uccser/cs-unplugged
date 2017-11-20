@@ -27,14 +27,7 @@
     {% block generation_form %}
     {% endblock generation_form %}
 
-    <fieldset>
-      <legend>{% trans "Paper Size" %}</legend>
-      <input type="radio" name="paper_size" id="size_a4" value="a4" checked="checked">
-      <label for="size_a4">{% trans "A4" %}</label>
-      <br>
-      <input type="radio" name="paper_size" id="size_letter" value="letter">
-      <label for="size_letter">{% trans "US Letter" %}</label>
-    </fieldset>
+    {{ options_html|safe }}
 
     {% if debug %}
       <hr>

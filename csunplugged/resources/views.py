@@ -41,6 +41,7 @@ def resource(request, resource_slug):
     """
     resource = get_object_or_404(Resource, slug=resource_slug)
     context = dict()
+    context["options_html"] = get_resource_generator(resource.generator_module).get_options_html()
     context["resource"] = resource
     context["debug"] = settings.DEBUG
     context["resource_thumbnail_base"] = "{}img/resources/{}/thumbnails/".format(settings.STATIC_URL, resource.slug)
@@ -48,7 +49,7 @@ def resource(request, resource_slug):
     context["copies_amount"] = settings.RESOURCE_COPY_AMOUNT
     if resource.thumbnail_static_path:
         context["thumbnail"] = resource.thumbnail_static_path
-    return render(request, resource.webpage_template, context)
+    return render(request, "resources/resource.html", context)
 
 
 def generate_resource(request, resource_slug):
