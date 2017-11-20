@@ -15,14 +15,17 @@ PREFILLED_VALUES_VALUES = {
 
 class SortingNetworkResourceGenerator(BaseResourceGenerator):
     """Class for Sorting Network resource generator."""
-    additional_options = {
-        "prefilled_values": EnumResourceParameter(
-            name="prefilled_values",
-            description=_("Prefill with Numbers"),
-            values=PREFILLED_VALUES_VALUES,
-            default="none"
-        ),
-    }
+    copies = True
+
+    def get_additional_options(self):
+        return {
+            "prefilled_values": EnumResourceParameter(
+                name="prefilled_values",
+                description=_("Prefill with Numbers"),
+                values=PREFILLED_VALUES_VALUES,
+                default="none"
+            ),
+        }
 
     def data(self):
         """Create data for a copy of the Sorting Network resource.
@@ -36,7 +39,7 @@ class SortingNetworkResourceGenerator(BaseResourceGenerator):
         draw = ImageDraw.Draw(image)
         (range_min, range_max, font_size) = self.number_range()
 
-        if self.requested_options["prefilled_values"] != "blank":
+        if self.options["prefilled_values"].value != "blank":
             font = ImageFont.truetype(font_path, font_size)
             numbers = sample(range(range_min, range_max), 6)
             base_coord_x = 70
@@ -66,7 +69,7 @@ class SortingNetworkResourceGenerator(BaseResourceGenerator):
         Returns:
             text for subtitle (str).
         """
-        if self.requested_options["prefilled_values"] == "blank":
+        if self.options["prefilled_values"].value == "blank":
             range_text = "blank"
         else:
             SUBTITLE_TEMPLATE = "{} to {}"
@@ -80,7 +83,7 @@ class SortingNetworkResourceGenerator(BaseResourceGenerator):
         Returns:
             Tuple of (range_min, range_max, font_size).
         """
-        prefilled_values = self.requested_options["prefilled_values"]
+        prefilled_values = self.options["prefilled_values"].value
         range_min = 0
         range_max = 0
         font_size = 150

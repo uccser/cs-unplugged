@@ -25,20 +25,6 @@ IMAGE_VALUES = {
 
 class PixelPainterResourceGenerator(BaseResourceGenerator):
     """Class for Pixel Painter resource generator."""
-    additional_options = {
-        "method": EnumResourceParameter(
-            name="method",
-            description=_("Colouring type"),
-            values=METHOD_VALUES,
-            default="black-white"
-        ),
-        "image": EnumResourceParameter(
-            name="image",
-            description=_("Image"),
-            values=IMAGE_VALUES,
-            default="fish"
-        ),
-    }
 
     methods = {
         "black-white": {
@@ -99,14 +85,30 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
     LINE_COLOUR = "#666"
     LINE_WIDTH = 1
 
+    def get_additional_options(self):
+        return {
+            "method": EnumResourceParameter(
+                name="method",
+                description=_("Colouring type"),
+                values=METHOD_VALUES,
+                default="black-white"
+            ),
+            "image": EnumResourceParameter(
+                name="image",
+                description=_("Image"),
+                values=IMAGE_VALUES,
+                default="fish"
+            ),
+        }
+
     def data(self):
         """Create data for a copy of the Pixel Painter resource.
 
         Returns:
             A dictionary of the one page for the resource.
         """
-        method = self.requested_options["method"]
-        image_name = self.requested_options["image"]
+        method = self.options["method"].value
+        image_name = self.options["image"].value
 
         if method == "run-length-encoding":
             image_filename = "{}-black-white.png".format(image_name)
@@ -411,7 +413,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
             text("Pixel legend")
         with tag("table", id="pixel-legend", style="padding-top:1rem;"):
             with tag("tbody"):
-                for (values, label) in self.methods[self.requested_options["method"]]["labels"].items():
+                for (values, label) in self.methods[self.options["method"].value]["labels"].items():
                     with tag("tr"):
                         if isinstance(values, tuple):
                             line("td", " ", style="background-color:rgb{};width:3em;".format(values))
@@ -455,8 +457,8 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
             text for subtitle (str).
         """
         text = "{} - {} - {}".format(
-            self.image_strings[self.requested_options["image"]],
-            self.methods[self.requested_options["method"]]["name"],
+            self.image_strings[self.options["image"].value],
+            self.methods[self.options["method"].value]["name"],
             super().subtitle
         )
         return text
@@ -470,8 +472,8 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
 
         The images are not resized as the images used are small already.
         """
-        method = self.requested_options["method"]
-        image_name = self.requested_options["image"]
+        method = self.options["method"].value
+        image_name = self.options["image"].value
         if method == "run-length-encoding":
             image_filename = "{}-black-white.png".format(image_name)
         else:

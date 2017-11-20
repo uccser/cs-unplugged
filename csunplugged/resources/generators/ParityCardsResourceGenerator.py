@@ -23,14 +23,16 @@ BACK_COLOUR_VALUES={
 
 class ParityCardsResourceGenerator(BaseResourceGenerator):
     """Class for Parity Cards resource generator."""
-    additional_options = {
-        "back_colour": EnumResourceParameter(
-            name="barcode_length",
-            description=_("Card back colour"),
-            values=BACK_COLOUR_VALUES,
-            default="black"
-        )
-    }
+
+    def get_additional_options(self):
+        return  {
+            "back_colour": EnumResourceParameter(
+                name="barcode_length",
+                description=_("Card back colour"),
+                values=BACK_COLOUR_VALUES,
+                default="black"
+            )
+        }
 
     def data(self):
         """Create a image for Parity Cards resource.
@@ -63,7 +65,7 @@ class ParityCardsResourceGenerator(BaseResourceGenerator):
             width=LINE_WIDTH
         )
 
-        back_colour = self.requested_options["back_colour"]
+        back_colour = self.options["back_colour"].value
 
         if back_colour == "black":
             back_colour_hex = "#000000"
@@ -99,7 +101,7 @@ class ParityCardsResourceGenerator(BaseResourceGenerator):
             text for subtitle (str).
         """
         text = "{} back - {}".format(
-            self.requested_options["back_colour"],
+            self.options["back_colour"].value,
             super().subtitle
         )
         return text

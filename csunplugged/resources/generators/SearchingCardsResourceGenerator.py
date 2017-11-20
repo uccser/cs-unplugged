@@ -28,25 +28,27 @@ MAX_NUMBER_VALUE = {
 
 class SearchingCardsResourceGenerator(BaseResourceGenerator):
     """Class for Searching Cards resource generator."""
-    additional_options = {
-        "number_cards": EnumResourceParameter(
-            name="number_cards",
-            description=_("Number of cards"),
-            values=NUMBER_CARDS_VALUES,
-            default="15"
-        ),
-        "max_number": EnumResourceParameter(
-            name="max_number",
-            description=_("Range of numbers"),
-            values=MAX_NUMBER_VALUE,
-            default="number"
-        ),
-        "help_sheet": BoolResourceParameter(
-            name="help_sheet",
-            description=_("Include teacher guide sheet"),
-            default=True
-        ),
-    }
+
+    def get_additional_options(self):
+        return {
+            "number_cards": EnumResourceParameter(
+                name="number_cards",
+                description=_("Number of cards"),
+                values=NUMBER_CARDS_VALUES,
+                default="15"
+            ),
+            "max_number": EnumResourceParameter(
+                name="max_number",
+                description=_("Range of numbers"),
+                values=MAX_NUMBER_VALUE,
+                default="number"
+            ),
+            "help_sheet": BoolResourceParameter(
+                name="help_sheet",
+                description=_("Include teacher guide sheet"),
+                default=True
+            ),
+        }
 
     def data(self):
         """Create a image for Searching Cards resource.
@@ -55,9 +57,9 @@ class SearchingCardsResourceGenerator(BaseResourceGenerator):
             A list of dictionaries for each resource page.
         """
         pages = []
-        number_cards = int(self.requested_options["number_cards"])
-        max_number = self.requested_options["max_number"]
-        help_sheet = self.requested_options["help_sheet"]
+        number_cards = int(self.options["number_cards"].value)
+        max_number = self.options["max_number"].value
+        help_sheet = self.options["help_sheet"].value
 
         if max_number == "cards":
             numbers = list(range(1, number_cards + 1))
@@ -156,9 +158,9 @@ class SearchingCardsResourceGenerator(BaseResourceGenerator):
         Returns:
             text for subtitle (str).
         """
-        max_number = self.requested_options["max_number"]
-        help_sheet = self.requested_options["help_sheet"]
-        number_cards = self.requested_options["number_cards"]
+        max_number = self.options["max_number"].value
+        help_sheet = self.options["help_sheet"].value
+        number_cards = self.options["number_cards"].value
 
         if max_number == "blank":
             range_text = "blank"

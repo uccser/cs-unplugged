@@ -26,14 +26,16 @@ TYPE_VALUES = {
 
 class SortingNetworkCardsResourceGenerator(BaseResourceGenerator):
     """Class for Sorting Network Cards resource generator."""
-    additional_options = {
-        "type": EnumResourceParameter(
-            name="type",
-            description=_("Card Type"),
-            values=TYPE_VALUES,
-            default="small_numbers"
-        )
-    }
+
+    def get_additional_options(self):
+        return {
+            "type": EnumResourceParameter(
+                name="type",
+                description=_("Card Type"),
+                values=TYPE_VALUES,
+                default="small_numbers"
+            )
+        }
 
     def data(self):
         """Create a image for Sorting Network Cards resource.
@@ -42,7 +44,7 @@ class SortingNetworkCardsResourceGenerator(BaseResourceGenerator):
             A list of dictionaries for each resource page.
         """
         font_path = "static/fonts/PatrickHand-Regular.ttf"
-        card_type = self.requested_options["type"]
+        card_type = self.options["type"].value
 
         # Create card outlines
         card_outlines = Image.new("RGB", (IMAGE_SIZE_X, IMAGE_SIZE_Y), "#fff")
@@ -177,6 +179,6 @@ class SortingNetworkCardsResourceGenerator(BaseResourceGenerator):
             text for subtitle (str).
         """
         return "{} - {}".format(
-            self.requested_options["type"].replace("_", " "),
+            self.options["type"].value.replace("_", " "),
             super().subtitle
         )

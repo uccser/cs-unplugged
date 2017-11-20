@@ -71,14 +71,16 @@ HIGHLIGHT_VALUES = {
 
 class PianoKeysResourceGenerator(BaseResourceGenerator):
     """Class for Piano Keys resource generator."""
-    additional_options = {
-        "highlight": EnumResourceParameter(
-            name="highlight",
-            description=_("Piano keys to highlight"),
-            values=HIGHLIGHT_VALUES,
-            default=False
-        )
-    }
+
+    def get_additional_options(self):
+        return {
+            "highlight": EnumResourceParameter(
+                name="highlight",
+                description=_("Piano keys to highlight"),
+                values=HIGHLIGHT_VALUES,
+                default=False
+            )
+        }
 
     def data(self):
         """Create a image for Piano Keys resource.
@@ -86,7 +88,7 @@ class PianoKeysResourceGenerator(BaseResourceGenerator):
         Returns:
             A list of dictionaries for each resource page.
         """
-        highlight = self.requested_options["highlight"]
+        highlight = self.options["highlight"].value
         image_path = "static/img/resources/piano-keys/keyboard.png"
         image = Image.open(image_path)
         page = Image.new("RGB", image.size, "#FFF")
@@ -122,6 +124,6 @@ class PianoKeysResourceGenerator(BaseResourceGenerator):
             text for subtitle (str).
         """
         return "{} highlight - {}".format(
-            bool_to_yes_no(self.requested_options["highlight"]),
+            bool_to_yes_no(self.options["highlight"].value),
             super().subtitle
         )

@@ -14,14 +14,15 @@ BARCODE_LENGTH_VALUES = {
 class BarcodeChecksumPosterResourceGenerator(BaseResourceGenerator):
     """Class for Grid resource generator."""
 
-    additional_options = {
-        "barcode_length": EnumResourceParameter(
-            name="barcode_length",
-            description=_("Barcode length"),
-            values=BARCODE_LENGTH_VALUES,
-            default="12"
-        )
-    }
+    def get_additional_options(self):
+        return {
+            "barcode_length": EnumResourceParameter(
+                name="barcode_length",
+                description=_("Barcode length"),
+                values=BARCODE_LENGTH_VALUES,
+                default="12"
+            )
+        }
 
     def data(self):
         """Create data for a copy of the Grid resource.
@@ -30,7 +31,7 @@ class BarcodeChecksumPosterResourceGenerator(BaseResourceGenerator):
             A dictionary of the one page for the resource.
         """
         path = "static/img/resources/barcode-checksum-poster/{}-digits"
-        barcode_length = self.requested_options["barcode_length"]
+        barcode_length = self.options["barcode_length"].value
         path = path.format(barcode_length)
         image_path = "{}.png".format(path)
         svg_path = "{}.svg".format(path)
@@ -75,5 +76,5 @@ class BarcodeChecksumPosterResourceGenerator(BaseResourceGenerator):
         Returns:
             text for subtitle (str).
         """
-        barcode_length = self.requested_options["barcode_length"]
+        barcode_length = self.options["barcode_length"].value
         return "{} digits - {}".format(barcode_length, super().subtitle)

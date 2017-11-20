@@ -29,31 +29,34 @@ ART_VALUES = {
 
 class TreasureHuntResourceGenerator(BaseResourceGenerator):
     """Class for Treasure Hunt resource generator."""
-    additional_options = {
-        "prefilled_values": EnumResourceParameter(
-            name="prefilled_values",
-            description=_("Prefill with Numbers"),
-            values=PREFILLED_VALUES_VALUES,
-            default="easy"
-        ),
-        "number_order": EnumResourceParameter(
-            name="number_order",
-            description=_("Numbers Unsorted/Sorted"),
-            values=NUMBER_ORDER_VALUES,
-            default="sorted"
-        ),
-        "instructions": BoolResourceParameter(
-            name="instructions",
-            description=_("Include instruction sheets"),
-            default=True
-        ),
-        "art": EnumResourceParameter(
-            name="art",
-            description=_("Printing mode"),
-            values=ART_VALUES,
-            default="bw"
-        ),
-    }
+    copies = True
+
+    def get_additional_options(self):
+        return {
+            "prefilled_values": EnumResourceParameter(
+                name="prefilled_values",
+                description=_("Prefill with Numbers"),
+                values=PREFILLED_VALUES_VALUES,
+                default="easy"
+            ),
+            "number_order": EnumResourceParameter(
+                name="number_order",
+                description=_("Numbers Unsorted/Sorted"),
+                values=NUMBER_ORDER_VALUES,
+                default="sorted"
+            ),
+            "instructions": BoolResourceParameter(
+                name="instructions",
+                description=_("Include instruction sheets"),
+                default=True
+            ),
+            "art": EnumResourceParameter(
+                name="art",
+                description=_("Printing mode"),
+                values=ART_VALUES,
+                default="bw"
+            ),
+        }
 
     def __init__(self, requested_options=None):
         """Construct TreasureHuntResourceGenerator instance.
@@ -74,10 +77,10 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
         pages = []
         font_path = "static/fonts/PatrickHand-Regular.ttf"
 
-        prefilled_values = self.requested_options["prefilled_values"]
-        number_order = self.requested_options["number_order"]
-        instructions = self.requested_options["instructions"]
-        art_style = self.requested_options["art"]
+        prefilled_values = self.options["prefilled_values"].value
+        number_order = self.options["number_order"].value
+        instructions = self.options["instructions"].value
+        art_style = self.options["art"].value
 
         if instructions:
             image = Image.open(IMAGE_PATH.format("instructions"))
@@ -139,10 +142,10 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
         Returns:
             text for subtitle (str)
         """
-        prefilled_values = self.requested_options["prefilled_values"]
-        number_order = self.requested_options["number_order"]
-        instructions = self.requested_options["instructions"]
-        art_style = self.requested_options["art"]
+        prefilled_values = self.options["prefilled_values"].value
+        number_order = self.options["number_order"].value
+        instructions = self.options["instructions"].value
+        art_style = self.options["art"].value
 
         if prefilled_values == "blank":
             range_text = "blank"
@@ -169,7 +172,7 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
         Returns:
             Tuple of (range_min, range_max, font_size)
         """
-        prefilled_values = self.requested_options.get("prefilled_values", None)
+        prefilled_values = self.options["prefilled_values"].value
         self.range_min = 0
         if prefilled_values == "easy":
             self.range_max = 100

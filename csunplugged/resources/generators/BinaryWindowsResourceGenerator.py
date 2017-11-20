@@ -23,26 +23,28 @@ VALUE_TYPE_VALUES = {
 
 class BinaryWindowsResourceGenerator(BaseResourceGenerator):
     """Class for Binary Windows resource generator."""
-    additional_options = {
-        "number_bits": EnumResourceParameter(
-            name="number_bits",
-            description=_("Number of Bits"),
-            values=NUMBER_BITS_VALUES,
-            default="4"
-        ),
-        "dot_counts": BoolResourceParameter(
-            name="dot_counts",
-            description=_("Display Dot Counts"),
-            default=True
-        ),
-        "value_type": EnumResourceParameter(
-            name="value_type",
-            description=_("Value Representation"),
-            values=VALUE_TYPE_VALUES,
-            default="binary"
-        ),
 
-    }
+    def get_additional_options(self):
+        return {
+            "number_bits": EnumResourceParameter(
+                name="number_bits",
+                description=_("Number of Bits"),
+                values=NUMBER_BITS_VALUES,
+                default="4"
+            ),
+            "dot_counts": BoolResourceParameter(
+                name="dot_counts",
+                description=_("Display Dot Counts"),
+                default=True
+            ),
+            "value_type": EnumResourceParameter(
+                name="value_type",
+                description=_("Value Representation"),
+                values=VALUE_TYPE_VALUES,
+                default="binary"
+            ),
+
+        }
 
     def data(self):
         """Create a image for Binary Windows resource.
@@ -51,9 +53,9 @@ class BinaryWindowsResourceGenerator(BaseResourceGenerator):
             A dictionary or list of dictionaries for each resource page.
         """
         # Retrieve parameters
-        number_of_bits = self.requested_options["number_bits"]
-        value_type = self.requested_options["value_type"]
-        dot_counts = self.requested_options["dot_counts"]
+        number_of_bits = self.options["number_bits"].value
+        value_type = self.options["value_type"].value
+        dot_counts = self.options["dot_counts"].value
 
         pages = []
         page_sets = [("binary-windows-1-to-8.png", 8)]
@@ -183,15 +185,15 @@ class BinaryWindowsResourceGenerator(BaseResourceGenerator):
         Returns:
             text for subtitle (str).
         """
-        dot_counts = self.requested_options["dot_counts"]
+        dot_counts = self.options["dot_counts"].value
         if dot_counts:
             count_text = "with dot counts"
         else:
             count_text = "without dot counts"
         TEMPLATE = "{} bits - {} - {} - {}"
         text = TEMPLATE.format(
-            self.requested_options["number_bits"],
-            self.requested_options["value_type"],
+            self.options["number_bits"].value,
+            self.options["value_type"].value,
             count_text,
             super().subtitle
         )

@@ -14,13 +14,15 @@ MODULO_NUMBER_VALUES = {
 
 class ModuloClockResourceGenerator(BaseResourceGenerator):
     """Class for Modulo Clock resource generator."""
-    additional_options = {
-        "modulo_number": EnumResourceParameter(
-            name="modulo_number",
-            description=_("Modulo"),
-            values=MODULO_NUMBER_VALUES
-        )
-    }
+
+    def get_additional_options(self):
+        return  {
+            "modulo_number": EnumResourceParameter(
+                name="modulo_number",
+                description=_("Modulo"),
+                values=MODULO_NUMBER_VALUES
+            )
+        }
 
     def data(self):
         """Create a image for Modulo Clock resource.
@@ -30,7 +32,7 @@ class ModuloClockResourceGenerator(BaseResourceGenerator):
         """
         image_path = "static/img/resources/modulo-clock/modulo-clock-{}.png"
 
-        modulo_number = int(self.requested_options["modulo_number"])
+        modulo_number = int(self.options["modulo_number"].value)
         image = Image.open(image_path.format(modulo_number))
         draw = ImageDraw.Draw(image)
 
@@ -72,7 +74,7 @@ class ModuloClockResourceGenerator(BaseResourceGenerator):
         Returns:
             Text for subtitle (str).
         """
-        modulo_number = self.requested_options["modulo_number"]
+        modulo_number = self.options["modulo_number"].value
         if modulo_number == "1":
             modulo_text = "blank"
         else:
