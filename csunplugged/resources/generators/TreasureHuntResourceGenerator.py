@@ -3,18 +3,56 @@
 from PIL import Image, ImageDraw, ImageFont
 from random import sample
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
+from django.utils.translation import ugettext as _
+from collections import OrderedDict
+from resources.utils.resource_parameters import EnumResourceParameter, BoolResourceParameter
 
 IMAGE_PATH = "static/img/resources/treasure-hunt/{}.png"
+
+PREFILLED_VALUES_VALUES = {
+    "easy": _("Easy Numbers (2 digits)"),
+    "medium": _("Medium Numbers (3 digits)"),
+    "hard": _("Hard Numbers (4 digits)"),
+    "none": _("None (Blank)")
+}
+
+NUMBER_ORDER_VALUES = {
+    "sorted": _("Sorted Numbers"),
+    "unsorted": _("Unsorted Numbers")
+}
+
+ART_VALUES = {
+    "bw": _("Table only - Little ink usage."),
+    "colour": _("Table and artwork - Uses a lot of colour ink."),
+}
 
 
 class TreasureHuntResourceGenerator(BaseResourceGenerator):
     """Class for Treasure Hunt resource generator."""
-
-    additional_valid_options = {
-        "prefilled_values": ["blank", "easy", "medium", "hard"],
-        "number_order": ["sorted", "unsorted"],
-        "instructions": [True, False],
-        "art": ["colour", "bw"],
+    additional_options = {
+        "prefilled_values": EnumResourceParameter(
+            name="prefilled_values",
+            description=_("Prefill with Numbers"),
+            values=PREFILLED_VALUES_VALUES,
+            default="easy"
+        ),
+        "number_order": EnumResourceParameter(
+            name="number_order",
+            description=_("Numbers Unsorted/Sorted"),
+            values=NUMBER_ORDER_VALUES,
+            default="sorted"
+        ),
+        "instructions": BoolResourceParameter(
+            name="instructions",
+            description=_("Include instruction sheets"),
+            default=True
+        ),
+        "art": EnumResourceParameter(
+            name="art",
+            description=_("Printing mode"),
+            values=ART_VALUES,
+            default="bw"
+        ),
     }
 
     def __init__(self, requested_options=None):

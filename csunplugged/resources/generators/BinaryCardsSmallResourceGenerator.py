@@ -3,6 +3,9 @@
 from PIL import Image, ImageDraw, ImageFont
 import os.path
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
+from django.utils.translation import ugettext as _
+from resources.utils.resource_parameters import EnumResourceParameter, BoolResourceParameter
+
 
 BASE_IMAGE_PATH = "static/img/resources/binary-cards-small/"
 IMAGE_SIZE_X = 2480
@@ -13,10 +16,36 @@ IMAGE_DATA = [
     ("binary-cards-small-3.png", 12),
 ]
 
+NUMBER_BITS_VALUES = {
+    "4": _("Four (1 to 8)"),
+    "8": _("Eight (1 to 128)"),
+    "12": _("Twelve (1 to 2048)")
+}
+
 
 class BinaryCardsSmallResourceGenerator(BaseResourceGenerator):
     """Class for Binary Cards (small) resource generator."""
 
+    additional_options = {
+        "number_bits": EnumResourceParameter(
+            name="number_bits",
+            description=_("Number of Bits"),
+            values=NUMBER_BITS_VALUES,
+            default="4"
+        ),
+        "dot_counts": BoolResourceParameter(
+            name="dot_counts",
+            description=_("Display Dot Counts"),
+            default=True,
+        ),
+        "black_back": BoolResourceParameter(
+            name="black_back",
+            description=_("Black on Card Back"),
+            default=False,
+            true_text=_("Yes - Uses a lot of black ink, but conveys clearer card state. Print double sided."),
+            false_text=_("No - Print single sided.")
+        )
+    }
     additional_valid_options = {
         "number_bits": ["4", "8", "12"],
         "dot_counts": [True, False],

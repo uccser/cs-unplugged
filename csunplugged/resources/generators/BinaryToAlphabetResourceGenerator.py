@@ -2,10 +2,26 @@
 
 from PIL import Image, ImageDraw, ImageFont
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
+from django.utils.translation import ugettext as _
+from resources.utils.resource_parameters import EnumResourceParameter
 
+
+WORKSHEET_VERSION_VALUES = {
+    "student": _("Student"),
+    "teacher": _("Teacher (solutions)")
+}
 
 class BinaryToAlphabetResourceGenerator(BaseResourceGenerator):
     """Class for Binary to Alphabet resource generator."""
+
+    additional_options = {
+        "worksheet_version": EnumResourceParameter(
+            name="worksheet_version",
+            description=_("Worksheet Version"),
+            values=WORKSHEET_VERSION_VALUES,
+            default="student"
+        )
+    }
 
     additional_valid_options = {
         "worksheet_version": ["student", "teacher"],

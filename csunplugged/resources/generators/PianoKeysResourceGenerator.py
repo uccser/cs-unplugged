@@ -3,6 +3,8 @@
 from PIL import Image, ImageDraw
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 from utils.bool_to_yes_no import bool_to_yes_no
+from django.utils.translation import ugettext as _
+from resources.utils.resource_parameters import EnumResourceParameter
 
 KEY_DATA = {
     "A": {
@@ -56,12 +58,26 @@ KEY_DATA = {
     },
 }
 
+HIGHLIGHT_VALUES = {
+    False: _("None"),
+    "A": "A",
+    "B": "B",
+    "C": "C",
+    "D": "D",
+    "E": "E",
+    "F": "F",
+    "G": "G"
+}
 
 class PianoKeysResourceGenerator(BaseResourceGenerator):
     """Class for Piano Keys resource generator."""
-
-    additional_valid_options = {
-        "highlight": [False, "A", "B", "C", "D", "E", "F", "G"],
+    additional_options = {
+        "highlight": EnumResourceParameter(
+            name="highlight",
+            description=_("Piano keys to highlight"),
+            values=HIGHLIGHT_VALUES,
+            default=False
+        )
     }
 
     def data(self):

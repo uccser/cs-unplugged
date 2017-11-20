@@ -3,20 +3,45 @@
 import os.path
 from PIL import Image, ImageDraw, ImageFont
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
+from django.utils.translation import ugettext as _
+from resources.utils.resource_parameters import EnumResourceParameter, BoolResourceParameter
 
 BASE_IMAGE_PATH = "static/img/resources/binary-windows/"
 FONT_PATH = "static/fonts/PatrickHand-Regular.ttf"
 FONT = ImageFont.truetype(FONT_PATH, 300)
 SMALL_FONT = ImageFont.truetype(FONT_PATH, 180)
 
+NUMBER_BITS_VALUES = {
+    "4": _("Four (1 to 8)"),
+    "8": _("Eight (1 to 128)")
+}
+
+VALUE_TYPE_VALUES = {
+    "binary": _("Binary (0 or 1)"),
+    "lightbulb": _("Lightbulb (off or on)")
+}
 
 class BinaryWindowsResourceGenerator(BaseResourceGenerator):
     """Class for Binary Windows resource generator."""
+    additional_options = {
+        "number_bits": EnumResourceParameter(
+            name="number_bits",
+            description=_("Number of Bits"),
+            values=NUMBER_BITS_VALUES,
+            default="4"
+        ),
+        "dot_counts": BoolResourceParameter(
+            name="dot_counts",
+            description=_("Display Dot Counts"),
+            default=True
+        ),
+        "value_type": EnumResourceParameter(
+            name="value_type",
+            description=_("Value Representation"),
+            values=VALUE_TYPE_VALUES,
+            default="binary"
+        ),
 
-    additional_valid_options = {
-        "number_bits": ["4", "8"],
-        "value_type": ["binary", "lightbulb"],
-        "dot_counts": [True, False],
     }
 
     def data(self):

@@ -4,28 +4,35 @@ import os.path
 from random import sample
 from PIL import Image, ImageDraw, ImageFont
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
+from django.utils.translation import ugettext as _
+from resources.utils.resource_parameters import EnumResourceParameter
 
 IMAGE_SIZE_X = 2000
 IMAGE_SIZE_Y = 2800
 LINE_COLOUR = "#000000"
 LINE_WIDTH = 3
 
+TYPE_VALUES = {
+    "small_numbers": _("Small numbers (1 to 6)"),
+    "large_numbers": _("Large numbers (7 digit numbers)"),
+    "letters": _("Letters"),
+    "words": _("Words"),
+    "fractions": _("Fractions"),
+    "maori_colours": _("Māori colours"),
+    "maori_numbers": _("Māori numbers"),
+    "butterfly": _("Butterfly life cycle"),
+    "riding_hood": _("Little Red Riding Hood"),
+}
 
 class SortingNetworkCardsResourceGenerator(BaseResourceGenerator):
     """Class for Sorting Network Cards resource generator."""
-
-    additional_valid_options = {
-        "type": [
-            "letters",
-            "words",
-            "small_numbers",
-            "large_numbers",
-            "fractions",
-            "maori_colours",
-            "maori_numbers",
-            "butterfly",
-            "riding_hood",
-        ],
+    additional_options = {
+        "type": EnumResourceParameter(
+            name="type",
+            description=_("Card Type"),
+            values=TYPE_VALUES,
+            default="small_numbers"
+        )
     }
 
     def data(self):

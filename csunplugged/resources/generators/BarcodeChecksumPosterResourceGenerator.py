@@ -4,13 +4,23 @@ from PIL import Image, ImageDraw
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 from utils.TextBoxDrawer import TextBoxDrawer
 from django.utils.translation import ugettext as _
+from resources.utils.resource_parameters import EnumResourceParameter
 
+BARCODE_LENGTH_VALUES = {
+    "12": _("12 digits"),
+    "13": _("13 digits")
+}
 
 class BarcodeChecksumPosterResourceGenerator(BaseResourceGenerator):
     """Class for Grid resource generator."""
 
-    additional_valid_options = {
-        "barcode_length": ["12", "13"]
+    additional_options = {
+        "barcode_length": EnumResourceParameter(
+            name="barcode_length",
+            description=_("Barcode length"),
+            values=BARCODE_LENGTH_VALUES,
+            default="12"
+        )
     }
 
     def data(self):

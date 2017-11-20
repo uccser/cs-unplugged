@@ -2,6 +2,8 @@
 
 from PIL import Image, ImageDraw
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
+from django.utils.translation import ugettext as _
+from resources.utils.resource_parameters import EnumResourceParameter
 
 CARDS_COLUMNS = 4
 CARDS_ROWS = 5
@@ -11,12 +13,23 @@ IMAGE_SIZE_Y = CARD_SIZE * CARDS_ROWS
 LINE_COLOUR = "#000000"
 LINE_WIDTH = 3
 
+BACK_COLOUR_VALUES={
+    "black": _("Black"),
+    "blue": _("Blue"),
+    "green": _("Green"),
+    "purple": _("Purple"),
+    "red": _("Red")
+}
 
 class ParityCardsResourceGenerator(BaseResourceGenerator):
     """Class for Parity Cards resource generator."""
-
-    additional_valid_options = {
-        "back_colour": ["black", "blue", "green", "purple", "red"],
+    additional_options = {
+        "back_colour": EnumResourceParameter(
+            name="barcode_length",
+            description=_("Card back colour"),
+            values=BACK_COLOUR_VALUES,
+            default="black"
+        )
     }
 
     def data(self):

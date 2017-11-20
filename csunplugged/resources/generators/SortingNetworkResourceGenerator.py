@@ -3,13 +3,25 @@
 from PIL import Image, ImageDraw, ImageFont
 from random import sample
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
+from django.utils.translation import ugettext as _
+from resources.utils.resource_parameters import EnumResourceParameter
 
+PREFILLED_VALUES_VALUES = {
+    "easy": _("Easy Numbers (1 digits)"),
+    "medium": _("Medium Numbers (2 digits)"),
+    "hard": _("Hard Numbers (3 digits)"),
+    "none": _("None (Blank - Useful as template) ")
+}
 
 class SortingNetworkResourceGenerator(BaseResourceGenerator):
     """Class for Sorting Network resource generator."""
-
-    additional_valid_options = {
-        "prefilled_values": ["blank", "easy", "medium", "hard"]
+    additional_options = {
+        "prefilled_values": EnumResourceParameter(
+            name="prefilled_values",
+            description=_("Prefill with Numbers"),
+            values=PREFILLED_VALUES_VALUES,
+            default="none"
+        ),
     }
 
     def data(self):

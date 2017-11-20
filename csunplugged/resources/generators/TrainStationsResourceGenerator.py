@@ -2,13 +2,23 @@
 
 from PIL import Image
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
+from django.utils.translation import ugettext as _
+from resources.utils.resource_parameters import EnumResourceParameter
 
+TRACKS_VALUES = {
+    "circular": _("Circular"),
+    "twisted": _("Twisted")
+}
 
 class TrainStationsResourceGenerator(BaseResourceGenerator):
     """Class for Train Stations resource generator."""
-
-    additional_valid_options = {
-        "tracks": ["circular", "twisted"],
+    additional_options = {
+        "tracks": EnumResourceParameter(
+            name="tracks",
+            description=_("Train track shape"),
+            values=TRACKS_VALUES,
+            default="circular"
+        )
     }
 
     def data(self):

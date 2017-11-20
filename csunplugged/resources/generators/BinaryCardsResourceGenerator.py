@@ -3,6 +3,8 @@
 import os.path
 from PIL import Image, ImageDraw, ImageFont
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
+from django.utils.translation import ugettext as _
+from resources.utils.resource_parameters import BoolResourceParameter
 
 BASE_IMAGE_PATH = "static/img/resources/binary-cards/"
 IMAGE_SIZE_X = 2480
@@ -22,9 +24,19 @@ IMAGE_DATA = [
 class BinaryCardsResourceGenerator(BaseResourceGenerator):
     """Class for Binary Cards resource generator."""
 
-    additional_valid_options = {
-        "display_numbers": [True, False],
-        "black_back": [True, False],
+    additional_options = {
+        "display_numbers": BoolResourceParameter(
+            name="display_numbers",
+            description=_("Display Numbers"),
+            default=True
+        ),
+        "black_back": BoolResourceParameter(
+            name="black_back",
+            description=_("Black on Card Back"),
+            default=False,
+            true_text=_("Yes - Uses a lot of black ink, but conveys clearer card state. Print double sided."),
+            false_text=_("No - Print single sided.")
+        )
     }
 
     def data(self):

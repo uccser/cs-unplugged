@@ -7,14 +7,37 @@ import string
 from shutil import copy2
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 from django.utils.translation import ugettext as _
+from resources.utils.resource_parameters import EnumResourceParameter
 
+METHOD_VALUES = {
+    "black-white": _("Black and White (2 possible binary values)"),
+    "run-length-encoding": _("Black and White (2 possible binary values) in Run Length Encoding"),
+    "greyscale": _("Greyscale (4 possible binary values)"),
+    "colour": _("Colour (8 possible binary values)")
+}
+
+IMAGE_VALUES = {
+    "fish": _("Fish - 6 pages"),
+    "hot-air-balloon": _("Hot air balloon - 8 pages"),
+    "boat": _("Boat - 9 pages"),
+    "parrots": _("Parrots - 32 pages")
+}
 
 class PixelPainterResourceGenerator(BaseResourceGenerator):
     """Class for Pixel Painter resource generator."""
-
-    additional_valid_options = {
-        "method": ["black-white", "run-length-encoding", "greyscale", "colour"],
-        "image": ["boat", "fish", "hot-air-balloon", "parrots"],
+    additional_options = {
+        "method": EnumResourceParameter(
+            name="method",
+            description=_("Colouring type"),
+            values=METHOD_VALUES,
+            default="black-white"
+        ),
+        "image": EnumResourceParameter(
+            name="image",
+            description=_("Image"),
+            values=IMAGE_VALUES,
+            default="fish"
+        ),
     }
 
     methods = {

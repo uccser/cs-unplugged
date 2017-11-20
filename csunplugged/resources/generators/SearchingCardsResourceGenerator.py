@@ -5,7 +5,8 @@ from math import ceil
 from PIL import Image, ImageDraw, ImageFont
 from yattag import Doc
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
-
+from django.utils.translation import ugettext as _
+from resources.utils.resource_parameters import EnumResourceParameter, BoolResourceParameter
 IMAGE_PATH = "static/img/resources/searching-cards/{}-cards-{}.png"
 X_BASE_COORD = 1803
 X_COORD_DECREMENT = 516
@@ -13,14 +14,38 @@ Y_COORD = 240
 FONT_PATH = "static/fonts/PatrickHand-Regular.ttf"
 FONT = ImageFont.truetype(FONT_PATH, 200)
 
+NUMBER_CARDS_VALUES = {
+    "15": "15",
+    "31": "31",
+}
+
+MAX_NUMBER_VALUE = {
+    "cards": _("Number of cards (15 or 31)"),
+    "99": _("0 to 99"),
+    "999": _("0 to 999"),
+    "blank": _("Blank")
+}
 
 class SearchingCardsResourceGenerator(BaseResourceGenerator):
     """Class for Searching Cards resource generator."""
-
-    additional_valid_options = {
-        "number_cards": ["15", "31"],
-        "max_number": ["cards", "99", "999", "blank"],
-        "help_sheet": [True, False],
+    additional_options = {
+        "number_cards": EnumResourceParameter(
+            name="number_cards",
+            description=_("Number of cards"),
+            values=NUMBER_CARDS_VALUES,
+            default="15"
+        ),
+        "max_number": EnumResourceParameter(
+            name="max_number",
+            description=_("Range of numbers"),
+            values=MAX_NUMBER_VALUE,
+            default="number"
+        ),
+        "help_sheet": BoolResourceParameter(
+            name="help_sheet",
+            description=_("Include teacher guide sheet"),
+            default=True
+        ),
     }
 
     def data(self):
