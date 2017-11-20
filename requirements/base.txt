@@ -28,4 +28,4 @@ lxml==4.1.1
 # I18n
 uniseg==0.7.1
 python-bidi==0.4.0
-arabic-reshaper==2.0.8
+arabic-reshaper==2.0.10
