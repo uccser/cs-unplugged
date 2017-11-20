@@ -29,23 +29,9 @@
 
     {{ options_html|safe }}
 
+    <hr>
+
     {% if debug %}
-      <hr>
-      <h3>{% trans "Local Generation Only" %}</h3>
-
-      <fieldset>
-        <legend>{% trans "Header Text" %}</legend>
-        <input type="text" name="header_text" placeholder="Example School: Room Four" class="long-text-field">
-      </fieldset>
-
-      {% if resource.copies %}
-        <fieldset>
-          <legend>{% trans "Number of Copies" %}</legend>
-          <input type="number" name="copies" value=1 min=1 max=50>
-        </fieldset>
-      {% endif %}
-
-      <hr>
       <input type="submit" value="{% trans "Generate Resource" %}" class="btn btn-outline-primary mb-3" />
     {% else %}
       {% if resource.copies %}
@@ -55,7 +41,6 @@
       {% endblocktrans %}
       </div>
       {% endif %}
-
       <input type="submit" value="Download Resource" class="btn btn-outline-primary mb-3"/>
     {% endif %}
   </form>
