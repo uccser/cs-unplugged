@@ -71,6 +71,8 @@ def generate_resource(request, resource_slug):
         raise Http404(e) from e
     except QueryParameterInvalidError as e:
         raise Http404(e) from e
+    except QueryParameterMultipleValuesError as e:
+        raise Http404(e) from e
 
     # TODO: Weasyprint handling in production
     # TODO: Add creation of PDF as job to job queue
