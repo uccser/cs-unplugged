@@ -24,7 +24,8 @@ VALUE_TYPE_VALUES = {
 class BinaryWindowsResourceGenerator(BaseResourceGenerator):
     """Class for Binary Windows resource generator."""
 
-    def get_additional_options(self):
+    @classmethod
+    def get_additional_options(cls):
         return {
             "number_bits": EnumResourceParameter(
                 name="number_bits",

@@ -85,7 +85,8 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
     LINE_COLOUR = "#666"
     LINE_WIDTH = 1
 
-    def get_additional_options(self):
+    @classmethod
+    def get_additional_options(cls):
         return {
             "method": EnumResourceParameter(
                 name="method",

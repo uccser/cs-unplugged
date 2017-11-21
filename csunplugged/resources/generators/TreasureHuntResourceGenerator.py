@@ -31,7 +31,8 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
     """Class for Treasure Hunt resource generator."""
     copies = True
 
-    def get_additional_options(self):
+    @classmethod
+    def get_additional_options(cls):
         return {
             "prefilled_values": EnumResourceParameter(
                 name="prefilled_values",

@@ -15,7 +15,8 @@ MODULO_NUMBER_VALUES = {
 class ModuloClockResourceGenerator(BaseResourceGenerator):
     """Class for Modulo Clock resource generator."""
 
-    def get_additional_options(self):
+    @classmethod
+    def get_additional_options(cls):
         return  {
             "modulo_number": EnumResourceParameter(
                 name="modulo_number",

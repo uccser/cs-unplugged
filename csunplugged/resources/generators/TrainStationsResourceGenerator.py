@@ -13,7 +13,8 @@ TRACKS_VALUES = {
 class TrainStationsResourceGenerator(BaseResourceGenerator):
     """Class for Train Stations resource generator."""
 
-    def get_additional_options(self):
+    @classmethod
+    def get_additional_options(cls):
         return {
             "tracks": EnumResourceParameter(
                 name="tracks",

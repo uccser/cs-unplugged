@@ -72,7 +72,8 @@ HIGHLIGHT_VALUES = {
 class PianoKeysResourceGenerator(BaseResourceGenerator):
     """Class for Piano Keys resource generator."""
 
-    def get_additional_options(self):
+    @classmethod
+    def get_additional_options(cls):
         return {
             "highlight": EnumResourceParameter(
                 name="highlight",

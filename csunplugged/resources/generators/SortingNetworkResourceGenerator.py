@@ -17,7 +17,8 @@ class SortingNetworkResourceGenerator(BaseResourceGenerator):
     """Class for Sorting Network resource generator."""
     copies = True
 
-    def get_additional_options(self):
+    @classmethod
+    def get_additional_options(cls):
         return {
             "prefilled_values": EnumResourceParameter(
                 name="prefilled_values",

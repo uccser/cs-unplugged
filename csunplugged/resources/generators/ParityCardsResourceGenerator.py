@@ -24,7 +24,8 @@ BACK_COLOUR_VALUES={
 class ParityCardsResourceGenerator(BaseResourceGenerator):
     """Class for Parity Cards resource generator."""
 
-    def get_additional_options(self):
+    @classmethod
+    def get_additional_options(cls):
         return  {
             "back_colour": EnumResourceParameter(
                 name="back_colour",

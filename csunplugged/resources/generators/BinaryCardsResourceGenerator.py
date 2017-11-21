@@ -24,7 +24,8 @@ IMAGE_DATA = [
 class BinaryCardsResourceGenerator(BaseResourceGenerator):
     """Class for Binary Cards resource generator."""
 
-    def get_additional_options(self):
+    @classmethod
+    def get_additional_options(cls):
         return {
             "display_numbers": BoolResourceParameter(
                 name="display_numbers",

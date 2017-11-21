@@ -14,7 +14,8 @@ WORKSHEET_VERSION_VALUES = {
 class BinaryToAlphabetResourceGenerator(BaseResourceGenerator):
     """Class for Binary to Alphabet resource generator."""
 
-    def get_additional_options(self):
+    @classmethod
+    def get_additional_options(cls):
         return {
             "worksheet_version": EnumResourceParameter(
                 name="worksheet_version",

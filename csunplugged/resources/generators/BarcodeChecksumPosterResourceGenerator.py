@@ -14,7 +14,8 @@ BARCODE_LENGTH_VALUES = {
 class BarcodeChecksumPosterResourceGenerator(BaseResourceGenerator):
     """Class for Grid resource generator."""
 
-    def get_additional_options(self):
+    @classmethod
+    def get_additional_options(cls):
         return {
             "barcode_length": EnumResourceParameter(
                 name="barcode_length",

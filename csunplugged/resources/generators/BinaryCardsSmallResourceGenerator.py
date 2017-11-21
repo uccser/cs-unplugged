@@ -26,7 +26,8 @@ NUMBER_BITS_VALUES = {
 class BinaryCardsSmallResourceGenerator(BaseResourceGenerator):
     """Class for Binary Cards (small) resource generator."""
 
-    def get_additional_options(self):
+    @classmethod
+    def get_additional_options(cls):
         return {
             "number_bits": EnumResourceParameter(
                 name="number_bits",
