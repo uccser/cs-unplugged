@@ -4,7 +4,9 @@ from tests.BaseTestWithDB import BaseTestWithDB
 from resources.generators.PixelPainterResourceGenerator import PixelPainterResourceGenerator
 from filecmp import cmp
 from copy import deepcopy
+from utils.errors.QueryParameterInvalidError import QueryParameterInvalidError
 import os
+from tests.resources.generators.utils import run_parameter_smoke_tests
 
 
 @tag("resource")
@@ -15,45 +17,39 @@ class PixelPainterResourceGeneratorTest(BaseTestWithDB):
         self.language = "en"
         self.test_output_path = "tests/output/"
         os.makedirs(os.path.dirname(self.test_output_path), exist_ok=True)
+        self.base_valid_query = QueryDict("image=boat&method=black-white&paper_size=a4")
+
+    def test_image_values(self):
+        generator = PixelPainterResourceGenerator(self.base_valid_query)
+        run_parameter_smoke_tests(generator, "image")
+
+    def test_method_values(self):
+        generator = PixelPainterResourceGenerator(self.base_valid_query)
+        run_parameter_smoke_tests(generator, "method")
 
     def test_pixel_painter_resource_generator_invalid_pixel_black_white(self):
+        options = QueryDict("image=invalid&method=black-white&paper_size=a4")
         generator = PixelPainterResourceGenerator()
-        generator.STATIC_PATH = "tests/resources/generators/assets/pixel-painter/{}"
-        generator.additional_valid_options = deepcopy(generator.additional_valid_options)
-        generator.additional_valid_options["image"].append("invalid")
-        generator.requested_options = QueryDict("image=invalid&method=black-white&paper_size=a4")
-        self.assertRaises(
-            ValueError,
-            generator.data,
-        )
+        with self.assertRaises(QueryParameterInvalidError):
+            generator.process_requested_options(options)
 
     def test_pixel_painter_resource_generator_invalid_pixel_greyscale(self):
+        options = QueryDict("image=invalid&method=greyscale&paper_size=a4")
         generator = PixelPainterResourceGenerator()
-        generator.STATIC_PATH = "tests/resources/generators/assets/pixel-painter/{}"
-        generator.additional_valid_options = deepcopy(generator.additional_valid_options)
-        generator.additional_valid_options["image"].append("invalid")
-        generator.requested_options = QueryDict("image=invalid&method=greyscale&paper_size=a4")
-        self.assertRaises(
-            ValueError,
-            generator.data,
-        )
+        with self.assertRaises(QueryParameterInvalidError):
+            generator.process_requested_options(options)
 
     def test_pixel_painter_resource_generator_invalid_pixel_colour(self):
+        options = QueryDict("image=invalid&method=colour&paper_size=a4")
         generator = PixelPainterResourceGenerator()
-        generator.STATIC_PATH = "tests/resources/generators/assets/pixel-painter/{}"
-        generator.additional_valid_options = deepcopy(generator.additional_valid_options)
-        generator.additional_valid_options["image"].append("invalid")
-        generator.requested_options = QueryDict("image=invalid&method=colour&paper_size=a4")
-        self.assertRaises(
-            ValueError,
-            generator.data,
-        )
+        with self.assertRaises(QueryParameterInvalidError):
+            generator.process_requested_options(options)
 
     def test_pixel_painter_resource_generator_thumbnail(self):
         test_output_path = os.path.join(self.test_output_path, "pixel-painter-thumbnail-test-1.png")
-        generator = PixelPainterResourceGenerator()
+        options = QueryDict("image=boat&method=black-white&paper_size=a4")
+        generator = PixelPainterResourceGenerator(options)
         generator.STATIC_PATH = "tests/resources/generators/assets/pixel-painter/{}"
-        generator.requested_options = QueryDict("image=boat&method=black-white&paper_size=a4")
         generator.save_thumbnail("Test", test_output_path)
         compare_result = cmp(
             test_output_path,
@@ -64,9 +60,9 @@ class PixelPainterResourceGeneratorTest(BaseTestWithDB):
 
     def test_pixel_painter_resource_generator_thumbnail_run_length(self):
         test_output_path = os.path.join(self.test_output_path, "pixel-painter-thumbnail-test-2.png")
-        generator = PixelPainterResourceGenerator()
+        options = QueryDict("image=boat&method=run-length-encoding&paper_size=a4")
+        generator = PixelPainterResourceGenerator(options)
         generator.STATIC_PATH = "tests/resources/generators/assets/pixel-painter/{}"
-        generator.requested_options = QueryDict("image=boat&method=run-length-encoding&paper_size=a4")
         generator.save_thumbnail("Test", test_output_path)
         compare_result = cmp(
             test_output_path,
