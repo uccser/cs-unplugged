@@ -10,7 +10,7 @@ PREFILLED_VALUES_VALUES = {
     "easy": _("Easy Numbers (1 digits)"),
     "medium": _("Medium Numbers (2 digits)"),
     "hard": _("Hard Numbers (3 digits)"),
-    "none": _("None (Blank - Useful as template) ")
+    "blank": _("None (Blank - Useful as template) ")
 }
 
 class SortingNetworkResourceGenerator(BaseResourceGenerator):

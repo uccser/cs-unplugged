@@ -13,12 +13,12 @@ SMALL_FONT = ImageFont.truetype(FONT_PATH, 180)
 
 NUMBER_BITS_VALUES = {
     "4": _("Four (1 to 8)"),
-    "8": _("Eight (1 to 128)")
+    "8": _("Eight (1 to 128)"),
 }
 
 VALUE_TYPE_VALUES = {
     "binary": _("Binary (0 or 1)"),
-    "lightbulb": _("Lightbulb (off or on)")
+    "lightbulb": _("Lightbulb (off or on)"),
 }
 
 class BinaryWindowsResourceGenerator(BaseResourceGenerator):
@@ -43,7 +43,6 @@ class BinaryWindowsResourceGenerator(BaseResourceGenerator):
                 values=VALUE_TYPE_VALUES,
                 default="binary"
             ),
-
         }
 
     def data(self):

@@ -18,7 +18,7 @@ BACK_COLOUR_VALUES={
     "blue": _("Blue"),
     "green": _("Green"),
     "purple": _("Purple"),
-    "red": _("Red")
+    "red": _("Red"),
 }
 
 class ParityCardsResourceGenerator(BaseResourceGenerator):
@@ -27,7 +27,7 @@ class ParityCardsResourceGenerator(BaseResourceGenerator):
     def get_additional_options(self):
         return  {
             "back_colour": EnumResourceParameter(
-                name="barcode_length",
+                name="back_colour",
                 description=_("Card back colour"),
                 values=BACK_COLOUR_VALUES,
                 default="black"

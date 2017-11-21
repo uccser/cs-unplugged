@@ -13,7 +13,7 @@ PREFILLED_VALUES_VALUES = {
     "easy": _("Easy Numbers (2 digits)"),
     "medium": _("Medium Numbers (3 digits)"),
     "hard": _("Hard Numbers (4 digits)"),
-    "none": _("None (Blank)")
+    "blank": _("None (Blank)")
 }
 
 NUMBER_ORDER_VALUES = {
@@ -58,22 +58,13 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
             ),
         }
 
-    def __init__(self, requested_options=None):
-        """Construct TreasureHuntResourceGenerator instance.
-
-        Args:
-            requested_options: QueryDict of requested_options (QueryDict).
-        """
-        super().__init__(requested_options)
-        if requested_options:
-            self.set_number_range()
-
     def data(self):
         """Create data for a copy of the Treasure Hunt resource.
 
         Returns:
             A dictionary of the two pages for the resource.
         """
+
         pages = []
         font_path = "static/fonts/PatrickHand-Regular.ttf"
 
@@ -92,10 +83,11 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
 
         # Add numbers to image if required
         if prefilled_values != "blank":
-            font = ImageFont.truetype(font_path, self.font_size)
+            range_min, range_max, font_size = self.get_number_range(prefilled_values)
+            font = ImageFont.truetype(font_path, font_size)
 
             total_numbers = 26
-            numbers = sample(range(self.range_min, self.range_max), total_numbers)
+            numbers = sample(range(range_min, range_max), total_numbers)
             if number_order == "sorted":
                 numbers.sort()
 
@@ -118,7 +110,7 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
                     fill="#000"
                 )
 
-            text = "{} - {} to {}".format(number_order.title(), self.range_min, self.range_max - 1)
+            text = "{} - {} to {}".format(number_order.title(), range_min, range_max - 1)
             font = ImageFont.truetype(font_path, 75)
             text_width, text_height = draw.textsize(text, font=font)
             coord_x = 1220 - (text_width / 2)
@@ -150,9 +142,10 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
         if prefilled_values == "blank":
             range_text = "blank"
         else:
+            range_min, range_max, font_size = self.get_number_range(prefilled_values)
             template = "{} - {} to {}"
             number_order_text = number_order.title()
-            range_text = template.format(number_order_text, self.range_min, self.range_max - 1)
+            range_text = template.format(number_order_text, range_min, range_max - 1)
 
         if art_style == "colour":
             art_style_text = "full colour"
@@ -166,20 +159,23 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
 
         return "{} - {} - {} - {}".format(range_text, art_style_text, instructions_text, super().subtitle)
 
-    def set_number_range(self):
+    def get_number_range(self, range_descriptor):
         """Return number range tuple for resource.
 
         Returns:
             Tuple of (range_min, range_max, font_size)
         """
-        prefilled_values = self.options["prefilled_values"].value
-        self.range_min = 0
-        if prefilled_values == "easy":
-            self.range_max = 100
-            self.font_size = 55
-        elif prefilled_values == "medium":
-            self.range_max = 1000
-            self.font_size = 50
-        elif prefilled_values == "hard":
-            self.range_max = 10000
-            self.font_size = 45
+        # prefilled_values = self.options["prefilled_values"].value
+        range_min = 0
+        if range_descriptor == "easy":
+            range_max = 100
+            font_size = 55
+        elif range_descriptor == "medium":
+            range_max = 1000
+            font_size = 50
+        elif range_descriptor == "hard":
+            range_max = 10000
+            font_size = 45
+        else:
+            raise Exception("Unknown number range descriptor {}, wanted one of [easy, medium, hard".format(range_descriptor))
+        return (range_min, range_max, font_size)

@@ -59,7 +59,7 @@ KEY_DATA = {
 }
 
 HIGHLIGHT_VALUES = {
-    False: _("None"),
+    "no": _("None"),
     "A": "A",
     "B": "B",
     "C": "C",
@@ -93,7 +93,7 @@ class PianoKeysResourceGenerator(BaseResourceGenerator):
         image = Image.open(image_path)
         page = Image.new("RGB", image.size, "#FFF")
 
-        if highlight:
+        if highlight != "no":
             self.highlight_key_areas(page, KEY_DATA.get(highlight))
 
         # Add piano keys overlay

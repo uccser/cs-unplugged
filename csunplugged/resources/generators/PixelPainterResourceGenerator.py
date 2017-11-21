@@ -372,7 +372,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         Returns:
             A 2D list containing page grid references as strings (list).
         """
-        image_number = self.additional_valid_options["image"].index(image)
+        image_number = self.options["image"].index(image)
         LETTERS = string.ascii_uppercase
         page_grid_coords = [[""] * columns for i in range(rows)]
         for row in range(0, rows):

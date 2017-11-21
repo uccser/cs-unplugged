@@ -8,7 +8,7 @@ from resources.utils.resource_parameters import EnumResourceParameter
 
 WORKSHEET_VERSION_VALUES = {
     "student": _("Student"),
-    "teacher": _("Teacher (solutions)")
+    "teacher": _("Teacher (solutions)"),
 }
 
 class BinaryToAlphabetResourceGenerator(BaseResourceGenerator):

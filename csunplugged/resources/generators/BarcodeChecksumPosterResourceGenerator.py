@@ -8,7 +8,7 @@ from resources.utils.resource_parameters import EnumResourceParameter
 
 BARCODE_LENGTH_VALUES = {
     "12": _("12 digits"),
-    "13": _("13 digits")
+    "13": _("13 digits"),
 }
 
 class BarcodeChecksumPosterResourceGenerator(BaseResourceGenerator):

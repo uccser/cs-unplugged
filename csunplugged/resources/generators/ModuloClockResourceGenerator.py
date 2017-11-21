@@ -9,7 +9,7 @@ from resources.utils.resource_parameters import EnumResourceParameter
 MODULO_NUMBER_VALUES = {
     "1": "Blank",
     "2": "2",
-    "10": "10"
+    "10": "10",
 }
 
 class ModuloClockResourceGenerator(BaseResourceGenerator):
