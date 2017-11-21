@@ -2,6 +2,7 @@
 
 {% load i18n %}
 {% load django_bootstrap_breadcrumbs %}
+{% load render_html_field %}
 
 {% block breadcrumbs %}
   {% breadcrumb "Home" "/" %}
@@ -15,9 +16,7 @@
 
 {% block page_heading %}
   <h1>{{ resource.name }}</h1>
-
-  {% block description %}
-  {% endblock description %}
+  {% render_html_field resource.content %}
 {% endblock page_heading %}
 
 {% block left_column_content %}

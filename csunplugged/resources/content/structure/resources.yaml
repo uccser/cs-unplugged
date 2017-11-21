@@ -1,90 +1,72 @@
 sorting-network:
-  name: Sorting Network
   generator-module: SortingNetworkResourceGenerator
   thumbnail-static-path: img/resources/resource-sorting-network-thumbnail-example.png
   copies: true
 sorting-network-cards:
-  name: Sorting Network Cards
   generator-module: SortingNetworkCardsResourceGenerator
   thumbnail-static-path: img/resources/sorting-network-cards/thumbnail.png
   copies: false
 treasure-hunt:
-  name: Treasure Hunt
   generator-module: TreasureHuntResourceGenerator
   thumbnail-static-path: img/resources/treasure-hunt/thumbnail.png
   copies: true
 binary-cards:
-  name: Binary Cards
   generator-module: BinaryCardsResourceGenerator
   thumbnail-static-path: img/resources/binary-cards/thumbnail.png
   copies: false
 binary-cards-small:
-  name: Binary Cards (Small)
   generator-module: BinaryCardsSmallResourceGenerator
   thumbnail-static-path: img/resources/binary-cards-small/thumbnail.png
   copies: false
 binary-windows:
-  name: Binary Windows
   generator-module: BinaryWindowsResourceGenerator
   thumbnail-static-path: img/resources/binary-windows/thumbnail.png
   copies: false
 modulo-clock:
-  name: Modulo Clock
   generator-module: ModuloClockResourceGenerator
   thumbnail-static-path: img/resources/modulo-clock/thumbnail.png
   copies: false
 binary-to-alphabet:
-  name: Binary to Alphabet
   generator-module: BinaryToAlphabetResourceGenerator
   thumbnail-static-path: img/resources/binary-to-alphabet/thumbnail.png
   copies: false
 parity-cards:
-  name: Parity Cards
   generator-module: ParityCardsResourceGenerator
   thumbnail-static-path: img/resources/parity-cards/thumbnail.png
   copies: false
 piano-keys:
-  name: Piano Keys
   generator-module: PianoKeysResourceGenerator
   thumbnail-static-path: img/resources/piano-keys/thumbnail.png
   copies: false
 train-stations:
-  name: Train Stations
   generator-module: TrainStationsResourceGenerator
   thumbnail-static-path: img/resources/train-stations/thumbnail.png
   copies: false
 job-badges:
-  name: Job Badges
   generator-module: JobBadgesResourceGenerator
   thumbnail-static-path: img/resources/job-badges/thumbnail.png
   copies: false
 arrows:
-  name: Arrows
   generator-module: ArrowsResourceGenerator
   thumbnail-static-path: img/resources/arrows/thumbnail.png
   copies: false
 left-right-cards:
-  name: Left and Right Cards
   generator-module: LeftRightCardsResourceGenerator
   thumbnail-static-path: img/resources/left-right-cards/thumbnail.png
   copies: false
 grid:
-  name: Grid
   generator-module: GridResourceGenerator
   thumbnail-static-path: img/resources/grid/thumbnail.png
   copies: false
 searching-cards:
-  name: Searching Cards
   generator-module: SearchingCardsResourceGenerator
   thumbnail-static-path: img/resources/searching-cards/thumbnail.png
   copies: false
 barcode-checksum-poster:
-  name: Barcode Checksum Poster
   generator-module: BarcodeChecksumPosterResourceGenerator
   thumbnail-static-path: img/resources/barcode-checksum-poster/thumbnail.gif
   copies: false
 pixel-painter:
-  name: Pixel Painter
   generator-module: PixelPainterResourceGenerator
   thumbnail-static-path: img/resources/pixel-painter/thumbnail.png
   copies: false

@@ -3,7 +3,7 @@
 import os.path
 from django.db import transaction
 from django.http.request import QueryDict
-from utils.BaseLoader import BaseLoader
+from utils.TranslatableModelLoader import TranslatableModelLoader
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.InvalidYAMLValueError import InvalidYAMLValueError
 from resources.utils.get_resource_generator import get_resource_generator
@@ -11,7 +11,7 @@ from resources.models import Resource
 from django.contrib.staticfiles import finders
 
 
-class ResourcesLoader(BaseLoader):
+class ResourcesLoader(TranslatableModelLoader):
     """Custom loader for loading resources."""
 
     @transaction.atomic
@@ -26,7 +26,6 @@ class ResourcesLoader(BaseLoader):
 
         for (resource_slug, resource_structure) in resources_structure.items():
             try:
-                resource_name = resource_structure["name"]
                 generator_module = resource_structure["generator-module"]
                 resource_thumbnail = resource_structure["thumbnail-static-path"]
                 resource_copies = resource_structure["copies"]
@@ -34,16 +33,18 @@ class ResourcesLoader(BaseLoader):
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
                     [
-                        "name",
                         "generator-module",
                         "thumbnail-static-path",
                         "copies"
                     ],
                     "Resource"
                 )
-
-            # Check resource template file exists
-            open(os.path.join("templates", resource_template), encoding="UTF-8")
+            resource_translations = self.get_blank_translation_dictionary()
+            content_filename = "{}.md".format(resource_slug)
+            content_translations = self.get_markdown_translations(content_filename)
+            for language, content in content_translations.items():
+                resource_translations[language]["content"] = content.html_string
+                resource_translations[language]["name"] = content.title
 
             # Remove .py extension if given
             if generator_module.endswith(".py"):
@@ -55,7 +56,7 @@ class ResourcesLoader(BaseLoader):
             # Check thumbnail exists
             if not finders.find(resource_thumbnail):
                 error_text = "Thumbnail image {} for resource {} could not be found."
-                raise FileNotFoundError(error_text.format(resource_thumbnail, resource_name))
+                raise FileNotFoundError(error_text.format(resource_thumbnail, resource_slug))
 
             # Check copies value is boolean
             if not isinstance(resource_copies, bool):
@@ -67,11 +68,12 @@ class ResourcesLoader(BaseLoader):
 
             resource = Resource(
                 slug=resource_slug,
-                name=resource_name,
                 generator_module=generator_module,
                 thumbnail_static_path=resource_thumbnail,
                 copies=resource_copies,
             )
+            self.populate_translations(resource, resource_translations)
+            self.mark_translation_availability(resource, required_fields=["name", "content"])
             resource.save()
 
             self.log("Added Resource: {}".format(resource.name))
