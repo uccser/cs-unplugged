@@ -1,14 +1,15 @@
-storytelling:
+rescue-mission:
   duration: 30
-  computational-thinking-links: storytelling-ct-links.md
+  computational-thinking-links: rescue-mission-ct-links.md
   learning-outcomes:
-    - unplugged-programming-give-instructions
+    - unplugged-programming-give-instructions-move
     - unplugged-programming-identify-bug-correct
-    - unplugged-programming-communicate-debugging
-    - literacy-plan-story-props
-    - unplugged-programming-explain-tell-stories
+    - unplugged-programming-explain-exact-instructions
     - unplugged-programming-follow-instructions
-    - unplugged-programming-recall-direction-words
+    - unplugged-programming-give-accurate-instructions-pace
+    - unplugged-programming-accurately-count
+    - unplugged-programming-communicate-debugging
+    - unplugged-programming-actively-listen-feedback
   generated-resources:
     - arrows
     - left-right-cards
@@ -16,8 +17,11 @@ storytelling:
     - grid
   classroom-resources:
     - blocks
-    - whiteboard
+    - handheld-whiteboards
     - whiteboard-pens
+    - clipboards
+    - paper
+    - pens
 
 fitness-unplugged:
   duration: 45
@@ -65,96 +69,6 @@ sending-a-rocket-to-mars:
     - modify-bee-bot
     - catch-the-mouse
     - catch-the-mouse-random
-
-rescue-mission:
-  duration: 30
-  computational-thinking-links: rescue-mission-ct-links.md
-  learning-outcomes:
-    - unplugged-programming-give-instructions-move
-    - unplugged-programming-identify-bug-correct
-    - unplugged-programming-explain-exact-instructions
-    - unplugged-programming-follow-instructions
-    - unplugged-programming-give-accurate-instructions-pace
-    - unplugged-programming-accurately-count
-    - unplugged-programming-communicate-debugging
-    - unplugged-programming-actively-listen-feedback
-  generated-resources:
-    - arrows
-    - left-right-cards
-    - job-badges
-    - grid
-  classroom-resources:
-    - blocks
-    - handheld-whiteboards
-    - whiteboard-pens
-    - clipboards
-    - paper
-    - pens
-
-finding-2d-shapes:
-  duration: 30
-  computational-thinking-links: finding-2d-shapes-ct-links.md
-  learning-outcomes:
-    - unplugged-programming-give-instructions
-    - unplugged-programming-identify-bug-correct
-    - unplugged-programming-explain-exact-instructions
-    - unplugged-programming-follow-instructions
-    - unplugged-programming-identify-2D-shapes
-    - unplugged-programming-communicate-debugging
-    - unplugged-programming-actively-listen-feedback
-    - unplugged-programming-give-accurate-instructions-pace
-  generated-resources:
-    - arrows
-    - left-right-cards
-    - job-badges
-  classroom-resources:
-    - handheld-whiteboards
-    - whiteboard-pens
-    - clipboards
-    - paper
-
-moving-in-a-shape:
-  duration: 30
-  computational-thinking-links: moving-in-a-shape-ct-links.md
-  learning-outcomes:
-    - unplugged-programming-give-instructions-shape
-    - unplugged-programming-identify-bug-shape
-    - unplugged-programming-explain-exact-instructions
-    - unplugged-programming-follow-instructions
-    - unplugged-programming-give-accurate-instructions-pace
-    - unplugged-programming-describe-draw-2D-shape
-  generated-resources:
-    - arrows
-    - left-right-cards
-    - job-badges
-  classroom-resources:
-    - blocks
-    - whiteboard
-    - whiteboard-pens
-
-move-to-a-number:
-  duration: 30
-  computational-thinking-links: move-to-a-number-ct-links.md
-  learning-outcomes:
-    - unplugged-programming-identify-bug-correct
-    - unplugged-programming-explain-exact-instructions
-    - unplugged-programming-follow-instructions
-    - unplugged-programming-give-accurate-instructions-pace
-    - unplugged-programming-accurately-count
-    - numeracy-recognise-numbers-represented
-    - unplugged-programming-communicate-debugging
-    - unplugged-programming-actively-listen-feedback
-  generated-resources:
-    - arrows
-    - left-right-cards
-    - job-badges
-    - grid
-  classroom-resources:
-    - handheld-whiteboards
-    - whiteboard-pens
-    - clipboards
-    - paper
-    - pens
 
 modulo:
   duration: 30

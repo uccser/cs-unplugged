@@ -228,3 +228,18 @@ For example, a very simple computer might have an addition instruction, but no m
 Many common processors these days tend to have a small number of simple instructions (they are called Reduced Instruction Set Computers, or RISC) because it's more efficient than having lots of instructions (Complex Instruction Set Computers, or CISC).
 
 {panel end}
+
+## Applying what we have just learnt
+
+It’s quite common to think that programming is some kind of special talent that people either have or don’t have, but this isn't so!
+Like all skills, programming is something you learn through practise, making mistakes, and learning from them.
+An important skill that programmers need is to be able to communicate with others, especially when they are working out what the program should do; they also need to be persistent when finding and fixing bugs.
+Bugs happen all the time in programming, so being able to identify where the bug occurs and problem solving how to fix it is incredibly important.
+It doesn’t matter how experienced you are at programming, there will always be bugs that need to be found, and fixed.
+That’s why the word “debugging” is so important to programmers.
+
+Simple robotic toys like the "Bee-Bot" have a very similar set of commands, and can be used to follow up.
+
+## Lesson reflection
+
+Now that you have experienced being a programmer, what did you think was the most challenging part of being a programmer?

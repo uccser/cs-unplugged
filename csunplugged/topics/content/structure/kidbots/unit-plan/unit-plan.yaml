@@ -5,16 +5,8 @@ age-groups:
   5-7:
     rescue-mission:
       number: 1
-    storytelling:
-      number: 2
     fitness-unplugged:
-      number: 3
-    finding-2d-shapes:
-      number: 4
-    moving-in-a-shape:
-      number: 5
-    move-to-a-number:
-      number: 6
+      number: 2
   8-10:
     sending-a-rocket-to-mars:
       number: 1
