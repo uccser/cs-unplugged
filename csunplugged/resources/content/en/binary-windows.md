@@ -2,4 +2,6 @@
 
 This resource contains printouts for binary numbers activities.
 
-Note: This resource should be printed double sided on short edge.
+<div class="alert alert-info" role="alert">
+  <p class="mb-1">Note: This resource should be printed double sided on short edge.</p>
+</div>
