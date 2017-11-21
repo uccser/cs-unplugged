@@ -27,7 +27,6 @@ class ResourcesLoader(BaseLoader):
         for (resource_slug, resource_structure) in resources_structure.items():
             try:
                 resource_name = resource_structure["name"]
-                resource_template = resource_structure["webpage-template"]
                 generator_module = resource_structure["generator-module"]
                 resource_thumbnail = resource_structure["thumbnail-static-path"]
                 resource_copies = resource_structure["copies"]
@@ -36,7 +35,6 @@ class ResourcesLoader(BaseLoader):
                     self.structure_file_path,
                     [
                         "name",
-                        "webpage-template",
                         "generator-module",
                         "thumbnail-static-path",
                         "copies"
@@ -70,7 +68,6 @@ class ResourcesLoader(BaseLoader):
             resource = Resource(
                 slug=resource_slug,
                 name=resource_name,
-                webpage_template=resource_template,
                 generator_module=generator_module,
                 thumbnail_static_path=resource_thumbnail,
                 copies=resource_copies,
