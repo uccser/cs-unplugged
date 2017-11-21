@@ -23,7 +23,7 @@ class IndexViewTest(BaseTestWithDB):
         self.test_data.create_resource(
             "binary-cards",
             "Binary Cards",
-            "resources/binary-cards.html",
+            "Description of binary cards",
             "BinaryCardsResourceGenerator",
         )
         url = reverse("resources:index")
@@ -38,13 +38,13 @@ class IndexViewTest(BaseTestWithDB):
         self.test_data.create_resource(
             "binary-cards",
             "Binary Cards",
-            "resources/binary-cards.html",
+            "Description of binary cards",
             "BinaryCardsResourceGenerator",
         )
         self.test_data.create_resource(
             "sorting-network",
             "Sorting Network",
-            "resources/sorting-network.html",
+            "Description of sorting network",
             "SortingNetworkResourceGenerator.py",
         )
         url = reverse("resources:index")
