@@ -42,8 +42,9 @@ class BaseResourceGenerator(ABC):
         if requested_options:
             self.process_requested_options(requested_options)
 
-    def get_options(self):
-        options = self.get_additional_options()
+    @classmethod
+    def get_options(cls):
+        options = cls.get_additional_options()
         options.update({
             "paper_size": EnumResourceParameter(
                 name="paper_size",
@@ -54,7 +55,9 @@ class BaseResourceGenerator(ABC):
         })
         return options
 
-    def get_local_options(self):
+    @classmethod
+    def get_local_options(cls):
+        local_options = cls.get_additional_local_options()
         local_options = {
             "header_text": TextResourceParameter(
                 name="header_text",
@@ -63,7 +66,7 @@ class BaseResourceGenerator(ABC):
                 required=False
             ),
         }
-        if self.copies:
+        if cls.copies:
             local_options.update({
                 "copies":  IntegerResourceParameter(
                     name="copies",
@@ -76,25 +79,13 @@ class BaseResourceGenerator(ABC):
             })
         return local_options
 
-    def get_additional_options(self):
+    @classmethod
+    def get_additional_options(cls):
         return {}
 
-    def get_options_html(self):
-        html_elements = []
-        for parameter in self.get_options().values():
-            html_elements.append(parameter.html_element())
-        if settings.DEBUG:
-            html_elements.append(etree.Element("hr"))
-            h3 = etree.Element("h3")
-            h3.text = _("Local Generation Only")
-            html_elements.append(h3)
-            for parameter in self.get_local_options().values():
-                html_elements.append(parameter.html_element())
-
-        html_string = ""
-        for html_elem in html_elements:
-            html_string += etree.tostring(html_elem, pretty_print=True, encoding='utf-8').decode('utf-8')
-        return html_string
+    @classmethod
+    def get_additional_local_options(cls):
+        return {}
 
     @abstractmethod
     def data(self):

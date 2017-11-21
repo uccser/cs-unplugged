@@ -6,6 +6,7 @@ from django.shortcuts import get_object_or_404, render
 from django.views import generic
 from resources.models import Resource
 from resources.utils.resource_pdf_cache import resource_pdf_cache
+from resources.utils.get_options_html import get_options_html
 from utils.group_lessons_by_age import group_lessons_by_age
 from resources.utils.get_resource_generator import get_resource_generator
 from utils.errors.QueryParameterMissingError import QueryParameterMissingError
@@ -41,7 +42,8 @@ def resource(request, resource_slug):
     """
     resource = get_object_or_404(Resource, slug=resource_slug)
     context = dict()
-    context["options_html"] = get_resource_generator(resource.generator_module).get_options_html()
+    generator = get_resource_generator(resource.generator_module)
+    context["options_html"] = get_options_html(generator.get_options(), generator.get_local_options())
     context["resource"] = resource
     context["debug"] = settings.DEBUG
     context["resource_thumbnail_base"] = "{}img/resources/{}/thumbnails/".format(settings.STATIC_URL, resource.slug)
