@@ -59,7 +59,8 @@ class BaseResourceGenerator(ABC):
             "header_text": TextResourceParameter(
                 name="header_text",
                 description=_("Header Text"),
-                placeholder=_("Example School: Room Four")
+                placeholder=_("Example School: Room Four"),
+                required=False
             ),
         }
         if self.copies:
@@ -69,7 +70,8 @@ class BaseResourceGenerator(ABC):
                     description=_("Number of Copies"),
                     min_val=1,
                     max_val=50,
-                    default=1
+                    default=1,
+                    required=False
                 ),
             })
         return local_options
@@ -91,7 +93,7 @@ class BaseResourceGenerator(ABC):
 
         html_string = ""
         for html_elem in html_elements:
-            html_string += etree.tostring(html_elem, encoding='utf-8').decode('utf-8')
+            html_string += etree.tostring(html_elem, pretty_print=True, encoding='utf-8').decode('utf-8')
         return html_string
 
     @abstractmethod
@@ -151,9 +153,12 @@ class BaseResourceGenerator(ABC):
         context["header_text"] = self.options["header_text"].value
         context["paper_size"] = self.options["paper_size"].value
 
-        num_copies = range(0, int(self.options["copies"].value))
+        if self.copies:
+            num_copies = self.options["copies"].value
+        else:
+            num_copies = 1
         context["all_data"] = []
-        for copy in num_copies:
+        for copy in range(num_copies):
             copy_data = self.data()
             if not isinstance(copy_data, list):
                 copy_data = [copy_data]

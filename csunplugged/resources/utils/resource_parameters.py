@@ -31,12 +31,16 @@ class SingleValuedParameter(ResourceParameter):
         self.required = required
 
     def process_requested_values(self, requested_values):
+
+        if len(requested_values) > 1:
+            raise QueryParameterMultipleValuesError(self.name, requested_values)
         if len(requested_values) == 0:
             if self.required:
                 raise QueryParameterMissingError(self.name)
-        if len(requested_values) > 1:
-            raise QueryParameterMultipleValuesError(self.name, requested_values)
-        self.value = self.process_value(requested_values[0])
+            else:
+                self.value = self.default
+        else:
+            self.value = self.process_value(requested_values[0])
 
 
 class MultiValuedParameter(ResourceParameter):
@@ -50,9 +54,10 @@ class MultiValuedParameter(ResourceParameter):
 
 
 class EnumResourceParameter(SingleValuedParameter):
-    def __init__(self, values=[], default=None, **kwargs):
+    def __init__(self, values=dict(), default=None, **kwargs):
         super().__init__(**kwargs)
         self.valid_values = values
+        self.indices = {value: i for i, value in enumerate(values.keys())}
         self.default = default
         if self.default not in self.valid_values:
             self.default = list(self.valid_values.keys())[0] # Select first value
@@ -80,14 +85,17 @@ class EnumResourceParameter(SingleValuedParameter):
             base_elem.append(etree.Element('br'))
         return base_elem
 
+    def index(self, value):
+        return self.indices[value]
+
     def process_value(self, value):
         if value not in self.valid_values:
             raise QueryParameterInvalidError(self.name, value)
         return value
 
 class BoolResourceParameter(EnumResourceParameter):
-    TRUE_VALUE="true"
-    FALSE_VALUE="false"
+    TRUE_VALUE="yes"
+    FALSE_VALUE="no"
 
     def __init__(self, default=True, true_text=_("Yes"), false_text=_("No"), **kwargs):
         values = {
