@@ -10,6 +10,7 @@ from django.conf import settings
 from resources.models import Resource
 from resources.utils.get_resource_generator import get_resource_generator
 from resources.utils.resource_valid_configurations import resource_valid_configurations
+from resources.utils.resource_parameters import EnumResourceParameter
 
 
 class Command(BaseCommand):
@@ -42,10 +43,10 @@ class Command(BaseCommand):
 
             # TODO: Import repeated in next for loop, check alternatives
             empty_generator = get_resource_generator(resource.generator_module)
-            combinations = resource_valid_configurations(
-                empty_generator.valid_options,
-                header_text=False
-            )
+            if not all([isinstance(option, EnumResourceParameter) for option in empty_generator.get_options().values()]):
+                raise Exception("Only EnumResourceParameters are supported for pre-generation")
+            valid_options = {option.name: list(option.valid_values.keys()) for option in empty_generator.get_options().values()}
+            combinations = resource_valid_configurations(valid_options)
             progress_bar = tqdm(combinations, ascii=True)
             # Create PDF for all possible combinations
             for combination in progress_bar:
