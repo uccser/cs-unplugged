@@ -18,6 +18,9 @@ class ResourceParameter(object):
         fieldset.append(legend)
         return fieldset
 
+    def process_requested_values(self):
+        raise NotImplementedError("process_requested_values must be implemented on all ResourceParameter subclasses")
+
     def process_value(self, value):
         return value
 
