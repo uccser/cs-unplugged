@@ -316,6 +316,8 @@ cmd_logs() {
 defhelp logs 'View logs.'
 
 ci_test_general() {
+  dev_static
+  dev_collect_static
   docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --exclude-tag=resource --exclude-tag=management --nomigrations
   test_status=$?
   dev_test_coverage
@@ -325,6 +327,8 @@ ci_test_general() {
 }
 
 ci_test_resources() {
+  dev_static
+  dev_collect_static
   docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --tag=resource --nomigrations
   test_status=$?
   dev_test_coverage
@@ -334,6 +338,8 @@ ci_test_resources() {
 }
 
 ci_test_management() {
+  dev_static
+  dev_collect_static
   docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --tag=management --nomigrations
   test_status=$?
   dev_test_coverage
@@ -347,6 +353,8 @@ ci_style() {
 }
 
 ci_test_backwards() {
+  dev_static
+  dev_collect_static
   dev_test_backwards
 }
 
@@ -360,8 +368,6 @@ ci_load_content() {
 
 cmd_ci() {
   cmd_start
-  dev_static
-  dev_collect_static
   local cmd="$1"
   shift
   if [ -z "$cmd" ]; then
