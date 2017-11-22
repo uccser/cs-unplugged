@@ -25,7 +25,7 @@
   {% endfor %}
   {% if untranslated_glossary_terms %}
     <div class="alert alert-danger" role="alert">
-      {% with language=current_language.name_translated %}
+      {% with language=current_language.name_local %}
         <strong>
           {% blocktrans trimmed %}
           The following glossary terms are not yet available in {{ language }}. Sorry about that!
