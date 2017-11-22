@@ -132,5 +132,7 @@
 {% endblock right_column_content %}
 
 {% block scripts %}
-  {% include "generic/import-stick-state-js.html" %}
+  {% if topic.translation_available %}
+    {% include "generic/import-stick-state-js.html" %}
+  {% endif %}
 {% endblock scripts %}
