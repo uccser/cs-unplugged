@@ -360,6 +360,8 @@ ci_load_content() {
 
 cmd_ci() {
   cmd_start
+  dev_static
+  dev_collect_static
   local cmd="$1"
   shift
   if [ -z "$cmd" ]; then
