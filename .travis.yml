@@ -15,6 +15,7 @@ install:
 jobs:
   include:
     - stage: test
+      script: ./csu ci load_content
       script: ./csu ci test_general
     - script: ./csu ci test_resources
     - script: ./csu ci test_management
