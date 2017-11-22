@@ -27,7 +27,6 @@ class MakeResourceThumnbailsCommandTest(BaseTestWithDB):
         open(self.THUMBNAIL_PATH.format("resource-grid", "resource-grid-paper_size-a4.png"))
         open(self.THUMBNAIL_PATH.format("resource-grid", "resource-grid-paper_size-letter.png"))
 
-
     def test_makeresourcethumbnails_command_multiple_resources(self):
         self.test_data.create_resource(
             "grid",
