@@ -3,6 +3,7 @@
 from django.db import models
 from utils.TranslatableModel import TranslatableModel
 
+
 class Resource(TranslatableModel):
     """Model for resource in database."""
 

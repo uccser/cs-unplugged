@@ -13,7 +13,7 @@ IMAGE_SIZE_Y = CARD_SIZE * CARDS_ROWS
 LINE_COLOUR = "#000000"
 LINE_WIDTH = 3
 
-BACK_COLOUR_VALUES={
+BACK_COLOUR_VALUES = {
     "black": _("Black"),
     "blue": _("Blue"),
     "green": _("Green"),
@@ -21,12 +21,14 @@ BACK_COLOUR_VALUES={
     "red": _("Red"),
 }
 
+
 class ParityCardsResourceGenerator(BaseResourceGenerator):
     """Class for Parity Cards resource generator."""
 
     @classmethod
     def get_additional_options(cls):
-        return  {
+        """Additional options for ParityCardsResourceGenerator."""
+        return {
             "back_colour": EnumResourceParameter(
                 name="back_colour",
                 description=_("Card back colour"),

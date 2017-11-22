@@ -23,6 +23,7 @@ IMAGE_VALUES = {
     "parrots": _("Parrots - 32 pages")
 }
 
+
 class PixelPainterResourceGenerator(BaseResourceGenerator):
     """Class for Pixel Painter resource generator."""
 
@@ -87,6 +88,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
 
     @classmethod
     def get_additional_options(cls):
+        """Additional options for PixelPainterResourceGenerator."""
         return {
             "method": EnumResourceParameter(
                 name="method",

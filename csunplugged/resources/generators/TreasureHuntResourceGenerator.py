@@ -4,7 +4,6 @@ from PIL import Image, ImageDraw, ImageFont
 from random import sample
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 from django.utils.translation import ugettext as _
-from collections import OrderedDict
 from resources.utils.resource_parameters import EnumResourceParameter, BoolResourceParameter
 
 IMAGE_PATH = "static/img/resources/treasure-hunt/{}.png"
@@ -29,10 +28,12 @@ ART_VALUES = {
 
 class TreasureHuntResourceGenerator(BaseResourceGenerator):
     """Class for Treasure Hunt resource generator."""
+
     copies = True
 
     @classmethod
     def get_additional_options(cls):
+        """Additional options for TreasureHuntResourceGenerator."""
         return {
             "prefilled_values": EnumResourceParameter(
                 name="prefilled_values",
@@ -65,7 +66,6 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
         Returns:
             A dictionary of the two pages for the resource.
         """
-
         pages = []
         font_path = "static/fonts/PatrickHand-Regular.ttf"
 
@@ -178,5 +178,6 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
             range_max = 10000
             font_size = 45
         else:
-            raise Exception("Unknown number range descriptor {}, wanted one of [easy, medium, hard".format(range_descriptor))
+            raise Exception("Unknown number range descriptor {}, "
+                            "wanted one of [easy, medium, hard".format(range_descriptor))
         return (range_min, range_max, font_size)

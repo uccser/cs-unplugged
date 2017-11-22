@@ -24,11 +24,13 @@ TYPE_VALUES = {
     "riding_hood": _("Little Red Riding Hood"),
 }
 
+
 class SortingNetworkCardsResourceGenerator(BaseResourceGenerator):
     """Class for Sorting Network Cards resource generator."""
 
     @classmethod
     def get_additional_options(cls):
+        """Additional options for SortingNetworkCardsResourceGenerator."""
         return {
             "type": EnumResourceParameter(
                 name="type",

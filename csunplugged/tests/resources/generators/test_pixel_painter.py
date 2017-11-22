@@ -3,7 +3,6 @@ from django.test import tag
 from tests.BaseTestWithDB import BaseTestWithDB
 from resources.generators.PixelPainterResourceGenerator import PixelPainterResourceGenerator
 from filecmp import cmp
-from copy import deepcopy
 from utils.errors.QueryParameterInvalidError import QueryParameterInvalidError
 import os
 from tests.resources.generators.utils import run_parameter_smoke_tests

@@ -1,3 +1,5 @@
+"""Modeltranslation configuration for Resource application."""
+
 from modeltranslation.translator import translator, TranslationOptions
 from resources.models import Resource
 
@@ -9,5 +11,6 @@ class ResourceTranslationOptions(TranslationOptions):
     fallback_undefined = {
         "content": None,
     }
+
 
 translator.register(Resource, ResourceTranslationOptions)

@@ -105,7 +105,6 @@ class BaseResourceGeneratorTest(BaseTestWithDB):
         with self.assertRaises(TypeError):
             InvalidGenerator()
 
-
     def test_get_options(self):
         options = BaseResourceGenerator.get_options()
         options_order = ["paper_size"]
@@ -140,10 +139,8 @@ class BaseResourceGeneratorTest(BaseTestWithDB):
         for option in local_options.values():
             self.assertIsInstance(option, ResourceParameter)
 
-
     def test_get_options_subclass_additional_options(self):
         class GeneratorSubclass(BaseResourceGenerator):
-
             @classmethod
             def get_additional_options(cls):
                 return {
@@ -180,7 +177,6 @@ class BaseResourceGeneratorTest(BaseTestWithDB):
         self.assertListEqual(options_order, list(local_options))
         for option in local_options.values():
             self.assertIsInstance(option, ResourceParameter)
-
 
     def test_process_requested_options_valid(self):
         pass

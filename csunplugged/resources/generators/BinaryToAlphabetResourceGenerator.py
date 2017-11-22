@@ -11,11 +11,13 @@ WORKSHEET_VERSION_VALUES = {
     "teacher": _("Teacher (solutions)"),
 }
 
+
 class BinaryToAlphabetResourceGenerator(BaseResourceGenerator):
     """Class for Binary to Alphabet resource generator."""
 
     @classmethod
     def get_additional_options(cls):
+        """Additional options for BinaryToAlphabetResourceGenerator."""
         return {
             "worksheet_version": EnumResourceParameter(
                 name="worksheet_version",

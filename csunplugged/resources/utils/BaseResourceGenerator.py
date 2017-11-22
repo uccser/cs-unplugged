@@ -2,12 +2,8 @@
 
 from abc import ABC, abstractmethod
 from resources.utils.resize_encode_resource_images import resize_encode_resource_images
-from utils.str_to_bool import str_to_bool
-from utils.errors.QueryParameterMissingError import QueryParameterMissingError
-from utils.errors.QueryParameterInvalidError import QueryParameterInvalidError
 from utils.errors.ThumbnailPageNotFoundError import ThumbnailPageNotFoundError
 from utils.errors.MoreThanOneThumbnailPageFoundError import MoreThanOneThumbnailPageFoundError
-from copy import deepcopy
 from django.conf import settings
 from django.template.loader import render_to_string
 from django.contrib.staticfiles import finders
@@ -18,17 +14,17 @@ from resources.utils.resource_parameters import (
     IntegerResourceParameter,
 )
 
-from lxml import etree
 from django.utils.translation import ugettext as _
-from django.urls import reverse
 
 PAPER_SIZE_VALUES = {
     "a4": _("A4"),
     "letter": _("US Letter")
 }
 
+
 class BaseResourceGenerator(ABC):
     """Class for generator for a resource."""
+
     copies = False  # Default
 
     def __init__(self, requested_options=None):
@@ -44,6 +40,11 @@ class BaseResourceGenerator(ABC):
 
     @classmethod
     def get_options(cls):
+        """Get options dictionary, including additional subclass options.
+
+        Returns:
+            Dictionary, of form {option name: ResourceParameter object, ...}
+        """
         options = cls.get_additional_options()
         options.update({
             "paper_size": EnumResourceParameter(
@@ -57,6 +58,13 @@ class BaseResourceGenerator(ABC):
 
     @classmethod
     def get_local_options(cls):
+        """Get local options dictionary, including additional subclass local options.
+
+        These options are only included when running locally.
+
+        Returns:
+            Dictionary, of form {option name: ResourceParameter object, ...}
+        """
         local_options = cls.get_additional_local_options()
         local_options = {
             "header_text": TextResourceParameter(
@@ -81,10 +89,20 @@ class BaseResourceGenerator(ABC):
 
     @classmethod
     def get_additional_options(cls):
+        """Return additional options, for use on subclass.
+
+        Returns:
+            Dictionary, of form {option name: ResourceParameter object, ...}
+        """
         return {}
 
     @classmethod
     def get_additional_local_options(cls):
+        """Return additional options, for use on subclass.
+
+        Returns:
+            Dictionary, of form {option name: ResourceParameter object, ...}
+        """
         return {}
 
     @abstractmethod

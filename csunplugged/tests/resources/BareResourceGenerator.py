@@ -27,4 +27,6 @@ class BareResourceGenerator(BaseResourceGenerator):
 
 
 class BareResourceGeneratorWithCopies(BareResourceGenerator):
+    """Class for bare resource generator with copies."""
+
     copies = True

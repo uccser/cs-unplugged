@@ -26,6 +26,7 @@ class BinaryCardsResourceGenerator(BaseResourceGenerator):
 
     @classmethod
     def get_additional_options(cls):
+        """Additional options for BinaryCardsResourceGenerator."""
         return {
             "display_numbers": BoolResourceParameter(
                 name="display_numbers",

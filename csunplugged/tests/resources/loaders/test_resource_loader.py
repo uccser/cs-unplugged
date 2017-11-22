@@ -8,8 +8,8 @@ from utils.errors.EmptyYAMLFileError import EmptyYAMLFileError
 from utils.errors.InvalidYAMLValueError import InvalidYAMLValueError
 from django.utils import translation
 
-class ResourceLoaderTest(BaseTestWithDB):
 
+class ResourceLoaderTest(BaseTestWithDB):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.test_data = ResourcesTestDataGenerator()

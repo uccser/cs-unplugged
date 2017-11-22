@@ -10,11 +10,13 @@ TRACKS_VALUES = {
     "twisted": _("Twisted")
 }
 
+
 class TrainStationsResourceGenerator(BaseResourceGenerator):
     """Class for Train Stations resource generator."""
 
     @classmethod
     def get_additional_options(cls):
+        """Additional options for TrainStationsResourceGenerator."""
         return {
             "tracks": EnumResourceParameter(
                 name="tracks",

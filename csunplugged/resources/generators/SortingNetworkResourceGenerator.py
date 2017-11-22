@@ -13,12 +13,15 @@ PREFILLED_VALUES_VALUES = {
     "blank": _("None (Blank - Useful as template) ")
 }
 
+
 class SortingNetworkResourceGenerator(BaseResourceGenerator):
     """Class for Sorting Network resource generator."""
+
     copies = True
 
     @classmethod
     def get_additional_options(cls):
+        """Additional options for SortingNetworkResourceGenerator."""
         return {
             "prefilled_values": EnumResourceParameter(
                 name="prefilled_values",

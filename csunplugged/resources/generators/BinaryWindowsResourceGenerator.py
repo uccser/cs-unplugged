@@ -21,11 +21,13 @@ VALUE_TYPE_VALUES = {
     "lightbulb": _("Lightbulb (off or on)"),
 }
 
+
 class BinaryWindowsResourceGenerator(BaseResourceGenerator):
     """Class for Binary Windows resource generator."""
 
     @classmethod
     def get_additional_options(cls):
+        """Additional options for BinaryWindowsResourceGenerator."""
         return {
             "number_bits": EnumResourceParameter(
                 name="number_bits",

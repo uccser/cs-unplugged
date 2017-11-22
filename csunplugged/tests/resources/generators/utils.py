@@ -1,3 +1,5 @@
+"""Module for testing utilities for resource generators."""
+
 import sys
 
 from resources.utils.resource_parameters import (
@@ -7,7 +9,17 @@ from resources.utils.resource_parameters import (
     BoolResourceParameter,
 )
 
+
 def run_parameter_smoke_tests(generator, option_name):
+    """Run generator.data for a range of test values for the given option.
+
+    The values run depend on the option type:
+        EnumResourceParameter: All valid values
+        TextResourceParameter: Empty string, and non-empty string
+        IntegerResourceParameter: min and maximum values, or very large
+            positive/negative numbers if range bounds not given
+        BoolResourceParameter: True and false
+    """
     option = generator.options[option_name]
     if isinstance(option, EnumResourceParameter):
         test_values = option.valid_values

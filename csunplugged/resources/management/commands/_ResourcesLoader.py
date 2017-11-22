@@ -1,6 +1,5 @@
 """Custom loader for loading resources."""
 
-import os.path
 from django.db import transaction
 from django.http.request import QueryDict
 from utils.TranslatableModelLoader import TranslatableModelLoader

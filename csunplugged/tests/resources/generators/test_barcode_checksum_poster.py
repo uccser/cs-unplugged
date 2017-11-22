@@ -4,6 +4,7 @@ from tests.BaseTestWithDB import BaseTestWithDB
 from resources.generators.BarcodeChecksumPosterResourceGenerator import BarcodeChecksumPosterResourceGenerator
 from tests.resources.generators.utils import run_parameter_smoke_tests
 
+
 @tag("resource")
 class BarcodeChecksumPosterResourceGeneratorTest(BaseTestWithDB):
 

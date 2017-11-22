@@ -28,6 +28,7 @@ class BinaryCardsSmallResourceGenerator(BaseResourceGenerator):
 
     @classmethod
     def get_additional_options(cls):
+        """Additional options for BinaryCardsSmallResourceGenerator."""
         return {
             "number_bits": EnumResourceParameter(
                 name="number_bits",

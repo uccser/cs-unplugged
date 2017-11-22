@@ -4,8 +4,8 @@ from resources.utils.resource_parameters import EnumResourceParameter
 from lxml import etree
 from django.test import override_settings
 
-class GetOptionsHTMLTest(BaseTest):
 
+class GetOptionsHTMLTest(BaseTest):
     def test_get_options_html_no_local(self):
         options = {
             "option1": EnumResourceParameter(
@@ -29,7 +29,6 @@ class GetOptionsHTMLTest(BaseTest):
         # Check local generation heading is not included
         self.assertNotIn("Local Generation Only", html)
 
-
     def test_get_options_html_with_local_no_debug(self):
         options = {
             "option1": EnumResourceParameter(
@@ -43,7 +42,7 @@ class GetOptionsHTMLTest(BaseTest):
                 values={"value2": "Value 2"},
             )
         }
-        local_options =  {
+        local_options = {
             "local1": EnumResourceParameter(
                 name="local1",
                 description="Option 1",
@@ -82,7 +81,7 @@ class GetOptionsHTMLTest(BaseTest):
                 values={"value2": "Value 2"},
             )
         }
-        local_options =  {
+        local_options = {
             "local1": EnumResourceParameter(
                 name="local1",
                 description="Option 1",
@@ -114,7 +113,7 @@ class GetOptionsHTMLTest(BaseTest):
         local1_elems = local_options_headings[0].xpath("following-sibling::fieldset/input[@name='local1']")
         self.assertEqual(1, len(local1_elems))
         local2_elems = local1_elems[0].xpath("../following-sibling::fieldset/input[@name='local2']")
-        self.assertEqual(1, len(local1_elems))
+        self.assertEqual(1, len(local2_elems))
 
     def test_get_options_html_no_options(self):
         result = get_options_html({}, {})

@@ -11,11 +11,13 @@ BARCODE_LENGTH_VALUES = {
     "13": _("13 digits"),
 }
 
+
 class BarcodeChecksumPosterResourceGenerator(BaseResourceGenerator):
     """Class for Grid resource generator."""
 
     @classmethod
     def get_additional_options(cls):
+        """Additional options for BarcodeChecksumPosterResourceGenerator."""
         return {
             "barcode_length": EnumResourceParameter(
                 name="barcode_length",

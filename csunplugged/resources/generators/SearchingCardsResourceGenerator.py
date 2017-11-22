@@ -26,11 +26,13 @@ MAX_NUMBER_VALUE = {
     "blank": _("Blank")
 }
 
+
 class SearchingCardsResourceGenerator(BaseResourceGenerator):
     """Class for Searching Cards resource generator."""
 
     @classmethod
     def get_additional_options(cls):
+        """Additional options for SearchingCardsResourceGenerator."""
         return {
             "number_cards": EnumResourceParameter(
                 name="number_cards",

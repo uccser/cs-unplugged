@@ -14,8 +14,8 @@ from resources.utils.resource_parameters import (
     IntegerResourceParameter
 )
 
-class ResourceParametersTest(BaseTest):
 
+class ResourceParametersTest(BaseTest):
     def test_resource_parameter_base_process_requested_values(self):
         param = ResourceParameter()
         with self.assertRaises(NotImplementedError):
@@ -32,7 +32,7 @@ class ResourceParametersTest(BaseTest):
         html = param.html_element()
         self.assertIsInstance(html, etree._Element)
         self.assertEqual("fieldset", html.tag)
-        self.assertEqual(1, len(html)) # Should only have 1 child, the
+        self.assertEqual(1, len(html))  # Should only have 1 child, the
         self.assertEqual("legend", html[0].tag)
         self.assertEqual("param1 description", html[0].text)
 
@@ -50,7 +50,6 @@ class ResourceParametersTest(BaseTest):
         param = SingleValuedParameter(default="default value", required=False)
         param.process_requested_values([])
         self.assertEqual("default value", param.value)
-
 
     def test_single_valued_parameter_process_requested_values_multiple_values(self):
         param = SingleValuedParameter()
@@ -78,7 +77,7 @@ class ResourceParametersTest(BaseTest):
         html = param.html_element()
         self.assertIsInstance(html, etree._Element)
         self.assertEqual("fieldset", html.tag)
-        self.assertEqual(7, len(html)) # legend, (input, label, br) X 2
+        self.assertEqual(7, len(html))  # legend, (input, label, br) X 2
 
         self.assertEqual("legend", html[0].tag)
         self.assertEqual("option1 description", html[0].text)
@@ -108,7 +107,7 @@ class ResourceParametersTest(BaseTest):
     def test_enum_resource_parameter_process_value_valid_value(self):
         param = EnumResourceParameter(values={"value1": "Value 1"})
         processed = param.process_value("value1")
-        self.assertEqual("value1", processed) # Returned unchanged
+        self.assertEqual("value1", processed)  # Returned unchanged
 
     def test_enum_resource_parameter_process_value_invalid_value(self):
         param = EnumResourceParameter(values={"value1": "Value 1"})
@@ -116,8 +115,8 @@ class ResourceParametersTest(BaseTest):
             param.process_value("invalid")
 
     def test_enum_resource_parameter_index(self):
-        param = EnumResourceParameter(values={"1":"One", "2":"Two", "3":"Three"})
-        self.assertEqual(1, param.index("2")) # Index of value 2 in the dict
+        param = EnumResourceParameter(values={"1": "One", "2": "Two", "3": "Three"})
+        self.assertEqual(1, param.index("2"))  # Index of value 2 in the dict
 
     def test_bool_resource_parameter_default_text(self):
         param = BoolResourceParameter()
@@ -143,7 +142,7 @@ class ResourceParametersTest(BaseTest):
         self.assertIsInstance(html, etree._Element)
 
         self.assertEqual("fieldset", html.tag)
-        self.assertEqual(2, len(html)) # legend and input
+        self.assertEqual(2, len(html))  # legend and input
         self.assertEqual("legend", html[0].tag)
 
         self.assertEqual("input", html[1].tag)
@@ -157,7 +156,7 @@ class ResourceParametersTest(BaseTest):
         self.assertIsInstance(html, etree._Element)
 
         self.assertEqual("fieldset", html.tag)
-        self.assertEqual(2, len(html)) # legend and input
+        self.assertEqual(2, len(html))  # legend and input
         self.assertEqual("legend", html[0].tag)
 
         self.assertEqual("input", html[1].tag)
@@ -171,7 +170,7 @@ class ResourceParametersTest(BaseTest):
         self.assertIsInstance(html, etree._Element)
 
         self.assertEqual("fieldset", html.tag)
-        self.assertEqual(2, len(html)) # legend and input
+        self.assertEqual(2, len(html))  # legend and input
         self.assertEqual("legend", html[0].tag)
 
         self.assertEqual("input", html[1].tag)
@@ -192,7 +191,7 @@ class ResourceParametersTest(BaseTest):
         self.assertIsInstance(html, etree._Element)
 
         self.assertEqual("fieldset", html.tag)
-        self.assertEqual(2, len(html)) # legend and input
+        self.assertEqual(2, len(html))  # legend and input
         self.assertEqual("legend", html[0].tag)
 
         self.assertEqual("input", html[1].tag)
