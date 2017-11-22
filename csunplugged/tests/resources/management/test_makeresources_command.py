@@ -1,12 +1,14 @@
 """Module for the testing custom Django resource commands."""
 
 from tests.BaseTestWithDB import BaseTestWithDB
+from unittest.mock import patch
 from django.core import management
 from django.test import tag, override_settings
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
 from PyPDF2 import PdfFileReader
 import os.path
 import shutil
+from resources.models import Resource
 
 RESOURCE_PATH = "temp/resources/"
 
@@ -68,14 +70,14 @@ class MakeResourcesCommandTest(BaseTestWithDB):
 
     def test_makeresources_command_single_resource_with_copies(self):
         self.test_data.create_resource(
-            "grid",
-            "Grid",
-            "resources/grid.html",
-            "GridResourceGenerator",
+            "sortingnetwork",
+            "Sorting Network",
+            "Sorting network content",
+            "SortingNetworkResourceGenerator",
             copies=True
         )
         management.call_command("makeresources")
-        filepath = os.path.join(RESOURCE_PATH, "Resource Grid (a4).pdf")
+        filepath = os.path.join(RESOURCE_PATH, "Resource Sorting Network (1 to 9 - a4).pdf")
         pdf = PdfFileReader(open(filepath, "rb"))
         self.assertEqual(pdf.getNumPages(), 20)
 
@@ -121,14 +123,14 @@ class MakeResourcesCommandTest(BaseTestWithDB):
 
     def test_makeresources_command_single_resource_with_copies_single_parameter(self):
         self.test_data.create_resource(
-            "grid",
-            "Grid",
-            "resources/grid.html",
-            "GridResourceGenerator",
+            "sortingnetwork",
+            "Sorting Network",
+            "Sorting network content",
+            "SortingNetworkResourceGenerator",
             copies=True
         )
-        management.call_command("makeresources", "Resource Grid")
-        filepath = os.path.join(RESOURCE_PATH, "Resource Grid (a4).pdf")
+        management.call_command("makeresources", "Resource Sorting Network")
+        filepath = os.path.join(RESOURCE_PATH, "Resource Sorting Network (1 to 9 - a4).pdf")
         pdf = PdfFileReader(open(filepath, "rb"))
         self.assertEqual(pdf.getNumPages(), 20)
 
@@ -137,7 +139,7 @@ class MakeResourcesCommandTest(BaseTestWithDB):
         self.test_data.create_resource(
             "grid",
             "Grid",
-            "resources/grid.html",
+            "Grid content",
             "GridResourceGenerator",
         )
         management.call_command("makeresources")
