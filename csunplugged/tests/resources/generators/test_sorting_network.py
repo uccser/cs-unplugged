@@ -1,12 +1,11 @@
 from django.http import QueryDict
 from django.test import tag
-from tests.BaseTestWithDB import BaseTestWithDB
 from resources.generators.SortingNetworkResourceGenerator import SortingNetworkResourceGenerator
-from tests.resources.generators.utils import run_parameter_smoke_tests
+from tests.resources.generators.utils import BaseGeneratorTest
 
 
 @tag("resource")
-class SortingNetworkResourceGeneratorTest(BaseTestWithDB):
+class SortingNetworkResourceGeneratorTest(BaseGeneratorTest):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -15,7 +14,7 @@ class SortingNetworkResourceGeneratorTest(BaseTestWithDB):
 
     def test_prefilled_values_values(self):
         generator = SortingNetworkResourceGenerator(self.base_valid_query)
-        run_parameter_smoke_tests(generator, "prefilled_values")
+        self.run_parameter_smoke_tests(generator, "prefilled_values")
 
     def test_subtitle_blank_a4(self):
         query = QueryDict("prefilled_values=blank&paper_size=a4")

@@ -1,15 +1,14 @@
 from django.http import QueryDict
 from django.test import tag
-from tests.BaseTestWithDB import BaseTestWithDB
 from resources.generators.PixelPainterResourceGenerator import PixelPainterResourceGenerator
 from filecmp import cmp
 from utils.errors.QueryParameterInvalidError import QueryParameterInvalidError
 import os
-from tests.resources.generators.utils import run_parameter_smoke_tests
+from tests.resources.generators.utils import BaseGeneratorTest
 
 
 @tag("resource")
-class PixelPainterResourceGeneratorTest(BaseTestWithDB):
+class PixelPainterResourceGeneratorTest(BaseGeneratorTest):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -20,11 +19,11 @@ class PixelPainterResourceGeneratorTest(BaseTestWithDB):
 
     def test_image_values(self):
         generator = PixelPainterResourceGenerator(self.base_valid_query)
-        run_parameter_smoke_tests(generator, "image")
+        self.run_parameter_smoke_tests(generator, "image")
 
     def test_method_values(self):
         generator = PixelPainterResourceGenerator(self.base_valid_query)
-        run_parameter_smoke_tests(generator, "method")
+        self.run_parameter_smoke_tests(generator, "method")
 
     def test_pixel_painter_resource_generator_invalid_pixel_black_white(self):
         options = QueryDict("image=invalid&method=black-white&paper_size=a4")

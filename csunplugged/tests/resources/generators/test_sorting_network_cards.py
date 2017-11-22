@@ -1,12 +1,11 @@
 from django.http import QueryDict
 from django.test import tag
-from tests.BaseTestWithDB import BaseTestWithDB
 from resources.generators.SortingNetworkCardsResourceGenerator import SortingNetworkCardsResourceGenerator
-from tests.resources.generators.utils import run_parameter_smoke_tests
+from tests.resources.generators.utils import BaseGeneratorTest
 
 
 @tag("resource")
-class SortingNetworkCardsResourceGeneratorTest(BaseTestWithDB):
+class SortingNetworkCardsResourceGeneratorTest(BaseGeneratorTest):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -15,7 +14,7 @@ class SortingNetworkCardsResourceGeneratorTest(BaseTestWithDB):
 
     def test_type_values(self):
         generator = SortingNetworkCardsResourceGenerator(self.base_valid_query)
-        run_parameter_smoke_tests(generator, "type")
+        self.run_parameter_smoke_tests(generator, "type")
 
     def test_subtitle_letters_a4(self):
         query = QueryDict("type=letters&paper_size=a4")

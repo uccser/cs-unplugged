@@ -1,12 +1,11 @@
 from django.http import QueryDict
 from django.test import tag
-from tests.BaseTestWithDB import BaseTestWithDB
 from resources.generators.BinaryToAlphabetResourceGenerator import BinaryToAlphabetResourceGenerator
-from tests.resources.generators.utils import run_parameter_smoke_tests
+from tests.resources.generators.utils import BaseGeneratorTest
 
 
 @tag("resource")
-class BinaryToAlphabetResourceGeneratorTest(BaseTestWithDB):
+class BinaryToAlphabetResourceGeneratorTest(BaseGeneratorTest):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -15,7 +14,7 @@ class BinaryToAlphabetResourceGeneratorTest(BaseTestWithDB):
 
     def test_worksheet_version_values(self):
         generator = BinaryToAlphabetResourceGenerator(self.base_valid_query)
-        run_parameter_smoke_tests(generator, "worksheet_version")
+        self.run_parameter_smoke_tests(generator, "worksheet_version")
 
     def test_subtitle_student_a4(self):
         query = QueryDict("worksheet_version=student&paper_size=a4")
