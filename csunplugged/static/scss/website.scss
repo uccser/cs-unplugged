@@ -198,13 +198,8 @@ $rounded-corner-radius: 0.5rem;
     height: 2.5rem;
   }
 
-  .navbar-nav .nav-link {
-    font-weight: 500;
-    border: 1px $white solid;
-    border-radius: 0.3rem;
-    &:hover {
-      border-color: $red;
-    }
+  .nav-link:hover {
+    text-decoration: underline;
   }
 }
 

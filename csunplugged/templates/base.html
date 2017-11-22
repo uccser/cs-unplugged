@@ -42,23 +42,21 @@
           <a href="http://cs-unplugged.readthedocs.io/en/latest/changelog.html" class="badge badge-red">{{ VERSION_NUMBER_ENGLISH }}</a>
         </a>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <div class="navbar-nav ml-auto text-center">
-            <div class="dropdown">
-              <button class="nav-item nav-link btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span>{{ current_language.name_local|capfirst }}</span>
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                {% for language in LANGUAGES %}
-                  {% get_language_info for language.0 as lang %}
-                  <a class="dropdown-item" href="{% translate_url language.0 %}">
-                    {{ lang.name_local|capfirst }}
-                  </a>
-                {% endfor %}
-              </div>
-            </div>
+          <div class="navbar-nav mr-auto">
             <a class="nav-item nav-link" href="{% url 'topics:index' %}">{% trans "Topics" %}</a>
             <a class="nav-item nav-link" href="{% url 'resources:index' %}">{% trans "Resources" %}</a>
             <a class="nav-item nav-link" href="{% url 'general:about' %}">{% trans "About" %}</a>
+          </div>
+          <div class="navbar-nav">
+            <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarLanguageSelector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ current_language.name_local|capfirst }}</a>
+              <div class="dropdown-menu" aria-labelledby="navbarLanguageSelector">
+                {% for language in LANGUAGES %}
+                  {% get_language_info for language.0 as lang %}
+                  <a class="dropdown-item" href="{% translate_url language.0 %}">{{ lang.name_local|capfirst }}</a>
+                {% endfor %}
+              </div>
+            </div>
           </div>
         </div>
       </div>
