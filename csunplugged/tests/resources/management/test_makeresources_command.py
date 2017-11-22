@@ -1,14 +1,12 @@
 """Module for the testing custom Django resource commands."""
 
 from tests.BaseTestWithDB import BaseTestWithDB
-from unittest.mock import patch
 from django.core import management
 from django.test import tag, override_settings
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
 from PyPDF2 import PdfFileReader
 import os.path
 import shutil
-from resources.models import Resource
 
 RESOURCE_PATH = "temp/resources/"
 
