@@ -58,9 +58,9 @@ class BaseGeneratorTest(BaseTest):
             ]
         elif isinstance(option, BoolResourceParameter):
             test_values = [True, False]
-
         for value in test_values:
-            generator.options[option_name].value = value
+            option = generator.options[option_name]
+            option.value = option.process_value(value)
             try:
                 data = generator.data()  # Smoke test
             except Exception as e:
