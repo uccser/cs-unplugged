@@ -2,18 +2,17 @@ import os.path
 
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
-
-from django.utils import translation
-
+from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
 from topics.models import Lesson
 from topics.management.commands._LessonsLoader import LessonsLoader
-
 from utils.errors.CouldNotFindYAMLFileError import CouldNotFindYAMLFileError
 from utils.errors.EmptyYAMLFileError import EmptyYAMLFileError
+from django.utils import translation
 from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.NoHeadingFoundInMarkdownFileError import NoHeadingFoundInMarkdownFileError
+from utils.errors.InvalidYAMLValueError import InvalidYAMLValueError
 
 
 class LessonsLoaderTest(BaseTestWithDB):
@@ -21,6 +20,7 @@ class LessonsLoaderTest(BaseTestWithDB):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.test_data = TopicsTestDataGenerator()
+        self.resource_test_data = ResourcesTestDataGenerator()
         self.loader_name = "lessons"
         self.base_path = os.path.join(self.test_data.LOADER_ASSET_PATH, "lessons")
 
@@ -313,6 +313,18 @@ class LessonsLoaderTest(BaseTestWithDB):
             ordered=False,
         )
 
+    def test_lesson_loader_optional_programming_challenges_empty(self):
+        config_file = "programming-challenges-empty.yaml"
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        lesson_loader = LessonsLoader(
+            topic,
+            unit_plan,
+            structure_filename=config_file,
+            base_path=self.base_path
+        )
+        lesson_loader.load()
+
     def test_lesson_loader_optional_programming_challenges_invalid_slug(self):
         config_file = "programming-challenges-invalid.yaml"
 
@@ -407,6 +419,41 @@ class LessonsLoaderTest(BaseTestWithDB):
             ordered=False,
         )
 
+    def test_lesson_loader_optional_learning_outcomes_invalid(self):
+        config_file = "learning-outcomes.yaml"
+
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        self.test_data.create_learning_outcome(1)
+
+        lesson_loader = LessonsLoader(
+            topic,
+            unit_plan,
+            structure_filename=config_file,
+            base_path=self.base_path
+        )
+        self.assertRaises(
+            KeyNotFoundError,
+            lesson_loader.load
+        )
+
+    def test_lesson_loader_optional_learning_outcomes_empty(self):
+        config_file = "learning-outcomes-empty.yaml"
+
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+
+        lesson_loader = LessonsLoader(
+            topic,
+            unit_plan,
+            structure_filename=config_file,
+            base_path=self.base_path
+        )
+        self.assertRaises(
+            InvalidYAMLValueError,
+            lesson_loader.load
+        )
+
     def test_lesson_loader_optional_learning_outcomes_set_correctly_when_omitted(self):
         config_file = "basic-config.yaml"
 
@@ -425,6 +472,65 @@ class LessonsLoaderTest(BaseTestWithDB):
         self.assertQuerysetEqual(
             Lesson.objects.get(slug="lesson-1").learning_outcomes.all(),
             [],
+        )
+
+    def test_lesson_loader_optional_classroom_resources_set_correctly(self):
+        config_file = "classroom-resources.yaml"
+
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        self.test_data.create_classroom_resource(1)
+        self.test_data.create_classroom_resource(2)
+
+        lesson_loader = LessonsLoader(
+            topic,
+            unit_plan,
+            structure_filename=config_file,
+            base_path=self.base_path
+        )
+        lesson_loader.load()
+        self.assertQuerysetEqual(
+            Lesson.objects.get(slug="lesson-1").classroom_resources.all(),
+            [
+                "<ClassroomResource: Resource 1>",
+                "<ClassroomResource: Resource 2>",
+            ],
+            ordered=False,
+        )
+
+    def test_lesson_loader_optional_classroom_resources_invalid(self):
+        config_file = "classroom-resources.yaml"
+
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        self.test_data.create_classroom_resource(1)
+
+        lesson_loader = LessonsLoader(
+            topic,
+            unit_plan,
+            structure_filename=config_file,
+            base_path=self.base_path
+        )
+        self.assertRaises(
+            KeyNotFoundError,
+            lesson_loader.load
+        )
+
+    def test_lesson_loader_optional_classroom_resources_empty(self):
+        config_file = "classroom-resources-empty.yaml"
+
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+
+        lesson_loader = LessonsLoader(
+            topic,
+            unit_plan,
+            structure_filename=config_file,
+            base_path=self.base_path
+        )
+        lesson_loader.load()
+        self.assertFalse(
+            Lesson.objects.get(slug="lesson-1").classroom_resources.exists()
         )
 
     def test_lesson_loader_optional_classroom_resources_set_correctly_when_omitted(self):
@@ -513,12 +619,83 @@ class LessonsLoaderTest(BaseTestWithDB):
             lesson_loader.load,
         )
 
-    def test_lessons_loader_translation_basic(self):
-        config_file = "basic-translation.yaml"
+    def test_lesson_loader_optional_generated_resources_set_correctly(self):
+        config_file = "generated-resources.yaml"
 
-        topic = self.test_data.create_topic("1")
-        unit_plan = self.test_data.create_unit_plan(topic, "1")
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        self.resource_test_data.create_resource(
+            "grid",
+            "Grid",
+            "Grid description",
+            "GridResourceGenerator",
+        )
+        self.resource_test_data.create_resource(
+            "arrows",
+            "Arrows",
+            "Arrows description",
+            "ArrowsResourceGenerator",
+        )
+        lesson_loader = LessonsLoader(
+            topic,
+            unit_plan,
+            structure_filename=config_file,
+            base_path=self.base_path
+        )
+        lesson_loader.load()
+        self.assertQuerysetEqual(
+            Lesson.objects.get(slug="lesson-1").generated_resources.order_by("name"),
+            [
+                "<Resource: Arrows>",
+                "<Resource: Grid>",
+            ],
+        )
 
+    def test_lesson_loader_optional_generated_resources_empty(self):
+        config_file = "generated-resources-empty.yaml"
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        lesson_loader = LessonsLoader(
+            topic,
+            unit_plan,
+            structure_filename=config_file,
+            base_path=self.base_path
+        )
+        lesson_loader.load()
+        lesson = Lesson.objects.get(slug="lesson-1")
+        self.assertFalse(lesson.generated_resources.exists())
+
+    def test_lesson_loader_optional_generated_resources_description_empty(self):
+        config_file = "generated-resources-description-empty.yaml"
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        self.resource_test_data.create_resource(
+            "grid",
+            "Grid",
+            "Grid description",
+            "GridResourceGenerator",
+        )
+        lesson_loader = LessonsLoader(
+            topic,
+            unit_plan,
+            structure_filename=config_file,
+            base_path=self.base_path
+        )
+        self.assertRaises(
+            InvalidYAMLValueError,
+            lesson_loader.load
+        )
+
+    def test_lesson_loader_optional_generated_resources_description_missing(self):
+        config_file = "generated-resources-description-missing.yaml"
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        self.resource_test_data.create_resource(
+            "grid",
+            "Grid",
+            "Grid description",
+            "GridResourceGenerator",
+        )
         lesson_loader = LessonsLoader(
             topic,
             unit_plan,
@@ -527,12 +704,36 @@ class LessonsLoaderTest(BaseTestWithDB):
         )
         lesson_loader.load()
 
-        lesson = Lesson.objects.get(slug="lesson-basic-translation")
+    def test_lesson_loader_optional_generated_resources_slug_invalid(self):
+        config_file = "generated-resources.yaml"
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        lesson_loader = LessonsLoader(
+            topic,
+            unit_plan,
+            structure_filename=config_file,
+            base_path=self.base_path
+        )
+        self.assertRaises(
+            KeyNotFoundError,
+            lesson_loader.load
+        )
 
+    def test_lessons_loader_translation_basic(self):
+        config_file = "basic-translation.yaml"
+        topic = self.test_data.create_topic("1")
+        unit_plan = self.test_data.create_unit_plan(topic, "1")
+        lesson_loader = LessonsLoader(
+            topic,
+            unit_plan,
+            structure_filename=config_file,
+            base_path=self.base_path
+        )
+        lesson_loader.load()
+        lesson = Lesson.objects.get(slug="lesson-basic-translation")
         self.assertSetEqual(set(["en", "de"]), set(lesson.languages))
         self.assertEqual(lesson.name, "Basic Translated Lesson English")
         self.assertIn("English lesson content", lesson.content)
-
         with translation.override("de"):
             self.assertEqual(lesson.name, "Basic Translated Lesson German")
             self.assertIn("German lesson content", lesson.content)

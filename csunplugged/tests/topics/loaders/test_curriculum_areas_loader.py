@@ -1,16 +1,13 @@
 import os.path
-
 from django.utils import translation
-
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
-
 from topics.models import CurriculumArea
 from topics.management.commands._CurriculumAreasLoader import CurriculumAreasLoader
-
 from utils.errors.CouldNotFindYAMLFileError import CouldNotFindYAMLFileError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.EmptyYAMLFileError import EmptyYAMLFileError
+from utils.errors.InvalidYAMLValueError import InvalidYAMLValueError
 
 
 class CurriculumAreasLoaderTest(BaseTestWithDB):
@@ -62,6 +59,14 @@ class CurriculumAreasLoaderTest(BaseTestWithDB):
         self.assertEquals(
             CurriculumArea.objects.get(slug="maths").name,
             "Maths",
+        )
+
+    def test_curriculum_areas_loader_missing_data(self):
+        config_file = "missing-data.yaml"
+        area_loader = CurriculumAreasLoader(structure_filename=config_file, base_path=self.base_path)
+        self.assertRaises(
+            MissingRequiredFieldError,
+            area_loader.load,
         )
 
     def test_curriculum_areas_loader_missing_name_value(self):
@@ -153,6 +158,14 @@ class CurriculumAreasLoaderTest(BaseTestWithDB):
         self.assertEqual(
             CurriculumArea.objects.get(slug="algebra").slug,
             "algebra",
+        )
+
+    def test_curriculum_areas_loader_children_name_empty(self):
+        config_file = "children-name-empty.yaml"
+        area_loader = CurriculumAreasLoader(structure_filename=config_file, base_path=self.base_path)
+        self.assertRaises(
+            InvalidYAMLValueError,
+            area_loader.load,
         )
 
     def test_curriculum_areas_loader_correct_children_name_value(self):

@@ -17,6 +17,9 @@ from topics.models import (
     ProgrammingChallengeImplementation,
     ProgrammingChallengeNumber,
     LearningOutcome,
+    GlossaryTerm,
+    ResourceDescription,
+    ClassroomResource,
 )
 
 
@@ -290,7 +293,7 @@ class TopicsTestDataGenerator:
         """Create learning outcome object.
 
         Args:
-            number: Identifier of the challenge (int).
+            number: Identifier of the outcome (int).
 
         Returns:
             LearningOutcome object.
@@ -302,6 +305,23 @@ class TopicsTestDataGenerator:
         )
         outcome.save()
         return outcome
+
+    def create_classroom_resource(self, number):
+        """Create classroom resource object.
+
+        Args:
+            number: Identifier of the resource (int).
+
+        Returns:
+            ClassroomResource object.
+        """
+        resource = ClassroomResource(
+            slug="resource-{}".format(number),
+            description="Resource {}".format(number),
+            languages=["en"],
+        )
+        resource.save()
+        return resource
 
     def add_challenge_lesson_relationship(self, challenge, lesson, set_number, number):
         """Add relationship between challenge and lesson objects.
@@ -318,5 +338,37 @@ class TopicsTestDataGenerator:
             lesson=lesson,
             challenge_set_number=set_number,
             challenge_number=number,
+        )
+        relationship.save()
+
+    def create_glossary_term(self, number):
+        """Create glossary term object.
+
+        Args:
+            number: Identifier of the glossary term (int).
+
+        Returns:
+            GlossaryTerm object.
+        """
+        term = GlossaryTerm(
+            slug="term-{}".format(number),
+            term="Term {}".format(number),
+            definition="Defintion for term {}".format(number),
+        )
+        term.save()
+        return term
+
+    def add_lesson_resource_relationship(self, lesson, resource, number):
+        """Add relationship between challenge and lesson objects.
+
+        Args:
+            lesson (Lesson): Lesson to add relationship between.
+            resource (Resource): Resource to add relationship between.
+            number (int): Number to display in description.
+        """
+        relationship = ResourceDescription(
+            lesson=lesson,
+            resource=resource,
+            description="Description {}".format(number),
         )
         relationship.save()

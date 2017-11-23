@@ -2,14 +2,30 @@
 
 from PIL import Image, ImageDraw, ImageFont
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
+from django.utils.translation import ugettext as _
+from resources.utils.resource_parameters import EnumResourceParameter
+
+
+WORKSHEET_VERSION_VALUES = {
+    "student": _("Student"),
+    "teacher": _("Teacher (solutions)"),
+}
 
 
 class BinaryToAlphabetResourceGenerator(BaseResourceGenerator):
     """Class for Binary to Alphabet resource generator."""
 
-    additional_valid_options = {
-        "worksheet_version": ["student", "teacher"],
-    }
+    @classmethod
+    def get_additional_options(cls):
+        """Additional options for BinaryToAlphabetResourceGenerator."""
+        return {
+            "worksheet_version": EnumResourceParameter(
+                name="worksheet_version",
+                description=_("Worksheet Version"),
+                values=WORKSHEET_VERSION_VALUES,
+                default="student"
+            )
+        }
 
     def data(self):
         """Create a image for Binary to Alphabet resource.
@@ -18,7 +34,7 @@ class BinaryToAlphabetResourceGenerator(BaseResourceGenerator):
             A dictionary for the resource page.
         """
         # Retrieve relevant image
-        worksheet_version = self.requested_options["worksheet_version"]
+        worksheet_version = self.options["worksheet_version"].value
         if worksheet_version == "student":
             image_path = "static/img/resources/binary-to-alphabet/table.png"
         else:
@@ -94,7 +110,7 @@ class BinaryToAlphabetResourceGenerator(BaseResourceGenerator):
             Text for subtitle (str).
         """
         text = "{} - {}".format(
-            self.requested_options["worksheet_version"],
+            self.options["worksheet_version"].value,
             super().subtitle
         )
         return text

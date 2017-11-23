@@ -2,6 +2,7 @@
 
 {% load i18n %}
 {% load django_bootstrap_breadcrumbs %}
+{% load render_html_field %}
 
 {% block breadcrumbs %}
   {% breadcrumb "Home" "/" %}
@@ -15,9 +16,7 @@
 
 {% block page_heading %}
   <h1>{{ resource.name }}</h1>
-
-  {% block description %}
-  {% endblock description %}
+  {% render_html_field resource.content %}
 {% endblock page_heading %}
 
 {% block left_column_content %}
@@ -27,32 +26,11 @@
     {% block generation_form %}
     {% endblock generation_form %}
 
-    <fieldset>
-      <legend>{% trans "Paper Size" %}</legend>
-      <input type="radio" name="paper_size" id="size_a4" value="a4" checked="checked">
-      <label for="size_a4">{% trans "A4" %}</label>
-      <br>
-      <input type="radio" name="paper_size" id="size_letter" value="letter">
-      <label for="size_letter">{% trans "US Letter" %}</label>
-    </fieldset>
+    {{ options_html|safe }}
+
+    <hr>
 
     {% if debug %}
-      <hr>
-      <h3>{% trans "Local Generation Only" %}</h3>
-
-      <fieldset>
-        <legend>{% trans "Header Text" %}</legend>
-        <input type="text" name="header_text" placeholder="Example School: Room Four" class="long-text-field">
-      </fieldset>
-
-      {% if resource.copies %}
-        <fieldset>
-          <legend>{% trans "Number of Copies" %}</legend>
-          <input type="number" name="copies" value=1 min=1 max=50>
-        </fieldset>
-      {% endif %}
-
-      <hr>
       <input type="submit" value="{% trans "Generate Resource" %}" class="btn btn-outline-primary mb-3" />
     {% else %}
       {% if resource.copies %}
@@ -62,7 +40,6 @@
       {% endblocktrans %}
       </div>
       {% endif %}
-
       <input type="submit" value="Download Resource" class="btn btn-outline-primary mb-3"/>
     {% endif %}
   </form>

@@ -19,16 +19,37 @@ class GlossaryTermsLoaderTest(BaseTestWithDB):
 
     def test_basic_config(self):
         folder = "glossary_folder"
-
         glossary_loader = GlossaryTermsLoader(base_path=self.base_path, content_path=folder)
         glossary_loader.load()
-
         glossary_objects = GlossaryTerm.objects.all()
-        self.assertEqual(1, len(glossary_objects))
-        term = glossary_objects[0]
-        self.assertSetEqual(set(["en"]), set(term.languages))
-        self.assertEqual("Glossary Term 1 English", term.term)
-        self.assertIn("English definition.", term.definition)
+        self.assertQuerysetEqual(
+            glossary_objects,
+            ["<GlossaryTerm: Glossary Term 1 English>"]
+        )
+
+    def test_multiple_files(self):
+        folder = "glossary_folder_multiple"
+        glossary_loader = GlossaryTermsLoader(base_path=self.base_path, content_path=folder)
+        glossary_loader.load()
+        glossary_objects = GlossaryTerm.objects.order_by("term")
+        self.assertQuerysetEqual(
+            glossary_objects,
+            [
+                "<GlossaryTerm: Glossary Term 1>",
+                "<GlossaryTerm: Glossary Term 2>",
+                "<GlossaryTerm: Glossary Term 3>"
+            ],
+        )
+
+    def test_invalid_files(self):
+        folder = "invalid_files"
+        glossary_loader = GlossaryTermsLoader(base_path=self.base_path, content_path=folder)
+        glossary_loader.load()
+        glossary_objects = GlossaryTerm.objects.all()
+        self.assertQuerysetEqual(
+            glossary_objects,
+            ["<GlossaryTerm: Glossary Term 1>"]
+        )
 
     def test_translation(self):
         folder = "glossary_translation"

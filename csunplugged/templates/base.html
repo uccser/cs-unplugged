@@ -4,13 +4,11 @@
 {% load translate_url %}
 {% load django_bootstrap_breadcrumbs %}
 
-{% get_current_language as LANGUAGE_CODE %}
 {% get_language_info for LANGUAGE_CODE as current_language %}
-{% get_available_languages as LANGUAGES %}
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ LANGUAGE_CODE }}" {% if current_language.bidi %}dir="rtl"{% endif %}>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -51,7 +49,7 @@
           <a href="http://cs-unplugged.readthedocs.io/en/latest/changelog.html" class="badge badge-red">{{ VERSION_NUMBER_ENGLISH }}</a>
         </a>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <div class="navbar-nav ml-auto text-center">
+          <div class="navbar-nav mr-auto">
             <a class="nav-item nav-link" href="{% url 'topics:index' %}">{% trans "Topics" %}</a>
             <a class="nav-item nav-link" href="{% url 'resources:index' %}">{% trans "Resources" %}</a>
             <a class="nav-item nav-link" href="{% url 'general:about' %}">{% trans "About" %}</a>
@@ -199,7 +197,14 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body" id="glossary-modal-definition"></div>
+          <div class="modal-body">
+            <div class="alert alert-danger" role="alert" id="glossary-modal-translation-unavailable">
+              {% blocktrans trimmed with language=current_language.name_local %}
+                This definition is not available in {{ language }}, sorry!
+              {% endblocktrans %}
+            </div>
+            <div id="glossary-modal-definition"></div>
+          </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Close" %}</button>
           </div>

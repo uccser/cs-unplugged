@@ -4,14 +4,28 @@ from PIL import Image, ImageDraw
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 from utils.TextBoxDrawer import TextBoxDrawer
 from django.utils.translation import ugettext as _
+from resources.utils.resource_parameters import EnumResourceParameter
+
+BARCODE_LENGTH_VALUES = {
+    "12": _("12 digits"),
+    "13": _("13 digits"),
+}
 
 
 class BarcodeChecksumPosterResourceGenerator(BaseResourceGenerator):
     """Class for Grid resource generator."""
 
-    additional_valid_options = {
-        "barcode_length": ["12", "13"]
-    }
+    @classmethod
+    def get_additional_options(cls):
+        """Additional options for BarcodeChecksumPosterResourceGenerator."""
+        return {
+            "barcode_length": EnumResourceParameter(
+                name="barcode_length",
+                description=_("Barcode length"),
+                values=BARCODE_LENGTH_VALUES,
+                default="12"
+            )
+        }
 
     def data(self):
         """Create data for a copy of the Grid resource.
@@ -20,7 +34,7 @@ class BarcodeChecksumPosterResourceGenerator(BaseResourceGenerator):
             A dictionary of the one page for the resource.
         """
         path = "static/img/resources/barcode-checksum-poster/{}-digits"
-        barcode_length = self.requested_options["barcode_length"]
+        barcode_length = self.options["barcode_length"].value
         path = path.format(barcode_length)
         image_path = "{}.png".format(path)
         svg_path = "{}.svg".format(path)
@@ -65,5 +79,5 @@ class BarcodeChecksumPosterResourceGenerator(BaseResourceGenerator):
         Returns:
             text for subtitle (str).
         """
-        barcode_length = self.requested_options["barcode_length"]
+        barcode_length = self.options["barcode_length"].value
         return "{} digits - {}".format(barcode_length, super().subtitle)

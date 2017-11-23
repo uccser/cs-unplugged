@@ -17,8 +17,16 @@
   {% breadcrumb lesson.name "topics:lesson" topic.slug unit_plan.slug lesson.slug %}
 {% endblock breadcrumbs %}
 
-  {% block page_heading %}
+{% block page_heading %}
     <h1 id="{{ lesson.slug }}" class="heading-underline">{{ lesson.name }}</h1>
+    {% if not lesson.translation_available %}
+      {% url "topics:unit_plan" topic.slug unit_plan.slug as parent_url %}
+      {% trans "unit plan" as unit_plan_l10n %}
+      {% trans "lesson" as lesson_l10n %}
+      {% with model=lesson model_type=lesson_l10n parent=unit_plan parent_type=unit_plan_l10n parent_url=parent_url %}
+        {% include "topics/not-available-warning.html" %}
+      {% endwith %}
+    {% else %}
     <ul>
       <li>{% blocktrans trimmed %}<strong>Duration:</strong> {{ lesson.duration }} minutes{% endblocktrans %}</li>
       {% for lesson_age in lesson_ages %}
@@ -29,9 +37,11 @@
       </li>
       {% endfor %}
     </ul>
-  {% endblock page_heading %}
+  {% endif %}
+{% endblock page_heading %}
 
-  {% block left_column_content %}
+{% block left_column_content %}
+  {% if lesson.translation_available %}
     {% if learning_outcomes %}
     <h2 class="heading-underline">{% trans "Learning outcomes" %}</h2>
       <p>{% trans "Students will be able to:" %}</p>
@@ -49,14 +59,16 @@
 
     {% render_html_field lesson.content %}
 
-    {% with computational_thinking_links=lesson.computational_thinking_links %}
-      {% include "topics/computational-thinking-links.html" %}
-    {% endwith %}
-  {% endblock left_column_content %}
+      {% with computational_thinking_links=lesson.computational_thinking_links %}
+        {% include "topics/computational-thinking-links.html" %}
+      {% endwith %}
+  {% endif %}
+{% endblock left_column_content %}
 
-  {% block right_column_content %}
+{% block right_column_content %}
+  {% if lesson.translation_available %}
     {% if generated_resources %}
-      <h2 class="heading-underline">{% trans "CS Unplugged resources" %}</h2>
+    <h2 class="heading-underline">{% trans "CS Unplugged resources" %}</h2>
       <div class="link-box-container">
         {% for generated_resource in generated_resources %}
           <a href="{% url 'resources:resource' generated_resource.slug %}" class="link-box">
@@ -107,8 +119,11 @@
         {% endif %}
       </ul>
     </div>
-  {% endblock right_column_content %}
+  {% endif %}
+{% endblock right_column_content %}
 
 {% block scripts %}
-  {% include "generic/import-stick-state-js.html" %}
+  {% if lesson.translation_available %}
+    {% include "generic/import-stick-state-js.html" %}
+  {% endif %}
 {% endblock scripts %}

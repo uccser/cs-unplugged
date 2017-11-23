@@ -1,14 +1,12 @@
 import os.path
-
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
-
 from django.utils import translation
-
 from topics.models import ProgrammingChallenge
 from topics.management.commands._ProgrammingChallengesLoader import ProgrammingChallengesLoader
-
 from utils.errors.MarkdownStyleError import MarkdownStyleError
+from utils.errors.KeyNotFoundError import KeyNotFoundError
+from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
 
 
@@ -22,16 +20,12 @@ class ProgrammingChallengesLoaderTest(BaseTestWithDB):
 
     def test_basic_config(self):
         config_file = "basic-config-1.yaml"
-
         self.test_data.create_difficulty_level("1")
         self.test_data.create_programming_language("1")
         topic = self.test_data.create_topic("1")
-
         pc_loader = ProgrammingChallengesLoader(topic, structure_filename=config_file, base_path=self.base_path)
         pc_loader.load()
-
         pc_objects = ProgrammingChallenge.objects.all()
-
         self.assertQuerysetEqual(
             pc_objects,
             ["<ProgrammingChallenge: Programming Challenge 1>"]
@@ -39,15 +33,12 @@ class ProgrammingChallengesLoaderTest(BaseTestWithDB):
 
     def test_missing_translation_is_listed_unavailable(self):
         config_file = "basic-config-1.yaml"
-
         self.test_data.create_difficulty_level("1")
         self.test_data.create_programming_language("1")
         topic = self.test_data.create_topic("1")
-
         pc_loader = ProgrammingChallengesLoader(topic, structure_filename=config_file, base_path=self.base_path)
         pc_loader.load()
         pc = ProgrammingChallenge.objects.get(slug="programming-challenge-1")
-
         self.assertSetEqual(set(["en"]), set(pc.languages))
 
     def test_missing_hints_optional(self):
@@ -179,12 +170,133 @@ class ProgrammingChallengesLoaderTest(BaseTestWithDB):
 
     def test_markdown_with_style_error(self):
         config_file = "basic-config-2.yaml"
-
-        self.test_data.create_difficulty_level("1")
-        self.test_data.create_programming_language("1")
-        topic = self.test_data.create_topic("1")
-
+        self.test_data.create_difficulty_level(1)
+        self.test_data.create_programming_language(1)
+        topic = self.test_data.create_topic(1)
         pc_loader = ProgrammingChallengesLoader(topic, structure_filename=config_file, base_path=self.base_path)
-
         with self.assertRaises(MarkdownStyleError):
             pc_loader.load()
+
+    def test_empty_data(self):
+        config_file = "empty-data.yaml"
+        topic = self.test_data.create_topic(1)
+        pc_loader = ProgrammingChallengesLoader(topic, structure_filename=config_file, base_path=self.base_path)
+        self.assertRaises(
+            MissingRequiredFieldError,
+            pc_loader.load
+        )
+
+    def test_missing_challenge_number(self):
+        config_file = "missing-challenge-number.yaml"
+        topic = self.test_data.create_topic(1)
+        pc_loader = ProgrammingChallengesLoader(topic, structure_filename=config_file, base_path=self.base_path)
+        self.assertRaises(
+            MissingRequiredFieldError,
+            pc_loader.load
+        )
+
+    def test_missing_challenge_set_number(self):
+        config_file = "missing-challenge-set-number.yaml"
+        topic = self.test_data.create_topic(1)
+        pc_loader = ProgrammingChallengesLoader(topic, structure_filename=config_file, base_path=self.base_path)
+        self.assertRaises(
+            MissingRequiredFieldError,
+            pc_loader.load
+        )
+
+    def test_missing_difficulty_level(self):
+        config_file = "missing-difficulty-level.yaml"
+        topic = self.test_data.create_topic(1)
+        pc_loader = ProgrammingChallengesLoader(topic, structure_filename=config_file, base_path=self.base_path)
+        self.assertRaises(
+            MissingRequiredFieldError,
+            pc_loader.load
+        )
+
+    def test_invalid_difficulty_level(self):
+        config_file = "basic-config-1.yaml"
+        self.test_data.create_programming_language(1)
+        topic = self.test_data.create_topic(1)
+        pc_loader = ProgrammingChallengesLoader(topic, structure_filename=config_file, base_path=self.base_path)
+        self.assertRaises(
+            KeyNotFoundError,
+            pc_loader.load
+        )
+
+    def test_missing_programming_languages(self):
+        config_file = "missing-programming-languages.yaml"
+        topic = self.test_data.create_topic(1)
+        pc_loader = ProgrammingChallengesLoader(topic, structure_filename=config_file, base_path=self.base_path)
+        self.assertRaises(
+            MissingRequiredFieldError,
+            pc_loader.load
+        )
+
+    def test_empty_programming_languages(self):
+        config_file = "empty-programming-languages.yaml"
+        topic = self.test_data.create_topic(1)
+        self.test_data.create_difficulty_level(1)
+        pc_loader = ProgrammingChallengesLoader(topic, structure_filename=config_file, base_path=self.base_path)
+        self.assertRaises(
+            MissingRequiredFieldError,
+            pc_loader.load
+        )
+
+    def test_invalid_programming_language(self):
+        config_file = "basic-config-1.yaml"
+        self.test_data.create_difficulty_level(1)
+        topic = self.test_data.create_topic(1)
+        pc_loader = ProgrammingChallengesLoader(topic, structure_filename=config_file, base_path=self.base_path)
+        self.assertRaises(
+            KeyNotFoundError,
+            pc_loader.load
+        )
+
+    def test_missing_learning_outcomes(self):
+        config_file = "basic-config-1.yaml"
+        topic = self.test_data.create_topic(1)
+        self.test_data.create_programming_language(1)
+        self.test_data.create_difficulty_level(1)
+        pc_loader = ProgrammingChallengesLoader(topic, structure_filename=config_file, base_path=self.base_path)
+        pc_loader.load()
+        challenge = ProgrammingChallenge.objects.get(slug="programming-challenge-1")
+        self.assertFalse(challenge.learning_outcomes.exists())
+
+    def test_empty_learning_outcomes(self):
+        config_file = "empty-learning-outcomes.yaml"
+        topic = self.test_data.create_topic(1)
+        self.test_data.create_programming_language(1)
+        self.test_data.create_difficulty_level(1)
+        pc_loader = ProgrammingChallengesLoader(topic, structure_filename=config_file, base_path=self.base_path)
+        pc_loader.load()
+        challenge = ProgrammingChallenge.objects.get(slug="programming-challenge-1")
+        self.assertFalse(challenge.learning_outcomes.exists())
+
+    def test_invalid_learning_outcomes(self):
+        config_file = "invalid-learning-outcomes.yaml"
+        topic = self.test_data.create_topic(1)
+        self.test_data.create_programming_language(1)
+        self.test_data.create_difficulty_level(1)
+        pc_loader = ProgrammingChallengesLoader(topic, structure_filename=config_file, base_path=self.base_path)
+        self.assertRaises(
+            KeyNotFoundError,
+            pc_loader.load
+        )
+
+    def test_valid_learning_outcomes(self):
+        config_file = "learning-outcomes.yaml"
+        topic = self.test_data.create_topic(1)
+        self.test_data.create_difficulty_level(1)
+        self.test_data.create_programming_language(1)
+        self.test_data.create_learning_outcome(1)
+        self.test_data.create_learning_outcome(2)
+        pc_loader = ProgrammingChallengesLoader(topic, structure_filename=config_file, base_path=self.base_path)
+        pc_loader.load()
+        challenge = ProgrammingChallenge.objects.get(slug="programming-challenge-1")
+        self.assertQuerysetEqual(
+            challenge.learning_outcomes.order_by("slug"),
+            [
+                "<LearningOutcome: Outcome 1>",
+                "<LearningOutcome: Outcome 2>",
+            ]
+        )

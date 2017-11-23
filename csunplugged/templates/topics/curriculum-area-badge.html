@@ -1,3 +1,5 @@
-<span class="badge badge-default badge-{{ area.colour }}">
-  {{ area }}
-</span>
+{% if area.translation_available %}
+  <span class="badge badge-default badge-{{ area.colour }}">
+    {{ area }}
+  </span>
+{% endif %}

@@ -10,5 +10,14 @@ class QueryParameterMissingError(Exception):
         Args:
             parameter: The query parameter for the exception (str).
         """
-        message = "Parameter '{}' not specified.".format(parameter)
-        super().__init__(message)
+        super().__init__()
+        self.parameter = parameter
+
+    def __str__(self):
+        """Override default error string.
+
+        Returns:
+            Error message for empty config file.
+        """
+        text = "Parameter '{}' not specified."
+        return text.format(self.parameter)

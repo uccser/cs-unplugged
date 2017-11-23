@@ -5,6 +5,7 @@ from utils.TranslatableModelLoader import TranslatableModelLoader
 from utils.convert_heading_tree_to_dict import convert_heading_tree_to_dict
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
+from utils.errors.InvalidYAMLValueError import InvalidYAMLValueError
 
 
 from topics.models import (
@@ -36,7 +37,7 @@ class LessonsLoader(TranslatableModelLoader):
 
         Raises:
             KeyNotFoundError: when no object can be found with the matching attribute.
-            InvalidConfigValueError: when provided value is not valid.
+            InvalidYAMLValueError: when provided value is not valid.
             MissingRequiredFieldError: when a value for a required model field cannot be
                 found in the config file.
         """
@@ -155,8 +156,15 @@ class LessonsLoader(TranslatableModelLoader):
 
             # Add learning outcomes
             if "learning-outcomes" in lesson_structure:
-                learning_outcome_slugs = lesson_structure["learning-outcomes"]
-                if learning_outcome_slugs is not None:
+                learning_outcome_slugs = lesson_structure.get("learning-outcomes", None)
+
+                if learning_outcome_slugs is None:
+                    raise InvalidYAMLValueError(
+                        self.structure_file_path,
+                        ["learning-outcomes"],
+                        "Lesson"
+                    )
+                else:
                     for learning_outcome_slug in learning_outcome_slugs:
                         try:
                             learning_outcome = LearningOutcome.objects.get(
@@ -191,7 +199,6 @@ class LessonsLoader(TranslatableModelLoader):
             if "generated-resources" in lesson_structure:
                 resources = lesson_structure["generated-resources"]
                 if resources is not None:
-
                     relationship_strings_filename = "{}-resource-descriptions.yaml".format(lesson_slug)
                     relationship_translations = self.get_yaml_translations(
                         relationship_strings_filename,

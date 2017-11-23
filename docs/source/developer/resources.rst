@@ -15,7 +15,7 @@ Resource Specification
 Each resource requires the following:
 
 - Definition in YAML file.
-- Custom HTML form to allow user generation.
+- Markdown file containing name/description.
 - Python module for creating the resource pages.
 - Thumbnail image.
 
@@ -23,20 +23,17 @@ Each of these are explained in further detail below.
 We recommend looking at existing resources to get a clearer picture of how new
 resources should look.
 
+
 YAML file definition
 ------------------------------------------------------------------------------
 
 Each resource is defined in the YAML file located at:
-``csunplugged/resources/content/resources.yaml``.
+``csunplugged/resources/content/structure/resources.yaml``.
 
 Each resource requires the following:
 
 -  ``<resource-key>``: This is the key for the resource.
 
-  - ``name``: English name of the resource.
-  - ``webpage-template``: Template file for the HTML form, relative from
-    ``csunplugged/templates/``
-    (for example: ``resources/sorting-network.html``).
   - ``generator-module``: Python module for generating resource, relative from
     ``csunplugged/resources/generators/`` (for example: ``SortingNetworkResourceGenerator``).
   - ``thumbnail-static-path``: Thumbnail image for the resource, relative from
@@ -46,19 +43,15 @@ Each resource requires the following:
     If each resource is exactly the same, then the value should be set
     to ``false``.)
 
-HTML form
+
+Markdown file
 ------------------------------------------------------------------------------
 
-Each resource has a HTML form to allow the user to customise the resulting
-generated resource.
-The HTML form file is specified in the YAML definition.
+Every resource must have a markdown file containing the name and description
+of the resource. This will be parsed by Verto, and must begin with a top level
+heading which will be used as the resource name. This file must be named
+``<resource-key>.md`` and located in ``csunplugged/resources/content/en``.
 
-The template should extend ``resources/resource.html``, and contain two blocks:
-
-1. ``block description``: This should contain a paragraph describing the resource.
-
-2. ``block generation_form`` (optional): This should contain any additional
-inputs for the generation form (paper size and custom header are already provided).
 
 Python module
 ------------------------------------------------------------------------------
@@ -85,17 +78,44 @@ The generator class must contain the following method definition:
     page), one of the dictionaries must have the key ``thumbnail`` set to ``True``.
     This is used to determine which page is used to create the resource thumbnails.
 
-If required, the generator class can contain the class variable ``additional_valid_options`` containing the dictionary of parameter options for the resource.
-For example, a resource may contain the following:
+If specific user options are required for resource generation, the generator class
+can implement a function ``get_additional_options(self)`` which must return a dictionary
+mapping an option identifier to a ``ResourceParameter`` instance.
+For example, a resource subclass may implement the following:
 
 .. code-block:: python
 
-  additional_valid_options = {
-      "display_numbers": [True, False],
-      "black_back": [True, False],
-  }
+  @classmethod
+  def get_additional_options(cls):
+      """Additional options for BinaryCardsSmallResourceGenerator."""
+      return {
+          "number_bits": EnumResourceParameter(
+              name="number_bits",
+              description=_("Number of Bits"),
+              values= {
+                  "4": _("Four (1 to 8)"),
+                  "8": _("Eight (1 to 128)"),
+                  "12": _("Twelve (1 to 2048)")
+              },
+              default="4"
+          ),
+          "dot_counts": BoolResourceParameter(
+              name="dot_counts",
+              description=_("Display Dot Counts"),
+              default=True,
+          ),
 
-If ``additional_valid_options`` are given, the ``subtitle`` property method should be overridden.
+The following ResourceParameter subclasses are available:
+
+  - EnumResourceParameter - One from a set of predefined values
+  - BoolResourceParameter - True/False values
+  - TextResourceParameter - Freeform text value
+  - IntegerResourceParameter - Integer value
+
+Each ResourceParameter class has configurable options which are documented on in the class docstring.
+We recommend looking at existing resources to see how the various ResourceParameter classes can be used.
+
+If ``get_additional_options`` is implemented, the ``subtitle`` property method should be overridden.
 The method should display the additional options and also call the parent's subtitle result:
 
 .. note::
@@ -111,7 +131,7 @@ The method should display the additional options and also call the parent's subt
 
   :rtype: Text for subtitle (str).
 
-For example, the subtitle method for the ``additional_valid_options`` above could be:
+For example, a resource with options ``display_numbers`` and ``black_back`` might implement the following subtitle method
 
 .. code-block:: python
 
@@ -141,6 +161,8 @@ For example, the subtitle method for the ``additional_valid_options`` above coul
           super().subtitle
       )
       return text
+
+If copies are required for the resource, ``COPIES = True`` should be added as a class constant on the subclass.
 
 If custom thumbnails are to be displayed for each resource combination, the ``save_thumbnail`` method can be overridden.
 

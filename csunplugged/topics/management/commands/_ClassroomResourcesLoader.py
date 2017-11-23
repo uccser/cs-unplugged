@@ -15,7 +15,7 @@ class ClassroomResourcesLoader(TranslatableModelLoader):
         """Load the content for classroom resource.
 
         Raise:
-            InvalidConfigValueError: Description provided is not a string.
+            InvalidYAMLValueError: Description provided is not a string.
         """
         classroom_resources = self.load_yaml_file(self.structure_file_path)["classroom-resources"]
         classroom_resources_translations = self.get_yaml_translations(

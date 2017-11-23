@@ -1,10 +1,12 @@
 import os.path
-
 from django.utils import translation
-
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
-
+from utils.errors.KeyNotFoundError import KeyNotFoundError
+from utils.errors.CouldNotFindYAMLFileError import CouldNotFindYAMLFileError
+from utils.errors.MissingRequiredModelsError import MissingRequiredModelsError
+from utils.errors.EmptyYAMLFileError import EmptyYAMLFileError
+from utils.errors.InvalidYAMLValueError import InvalidYAMLValueError
 from topics.models import LearningOutcome
 from topics.management.commands._LearningOutcomesLoader import LearningOutcomesLoader
 
@@ -19,17 +21,69 @@ class LearningOutcomesLoaderTest(BaseTestWithDB):
 
     def test_basic_config(self):
         self.test_data.create_curriculum_area(1)
-
         config_file = "basic-config.yaml"
-
         lo_loader = LearningOutcomesLoader(structure_filename=config_file, base_path=self.base_path)
         lo_loader.load()
-
         lo_objects = LearningOutcome.objects.all()
-
         self.assertQuerysetEqual(
             lo_objects,
             ["<LearningOutcome: Justify why there aren’t actual 0’s and 1’s zooming around inside a computer.>"]
+        )
+
+    def test_missing_configuration_file(self):
+        config_file = "missing.yaml"
+        lo_loader = LearningOutcomesLoader(structure_filename=config_file, base_path=self.base_path)
+        self.assertRaises(
+            CouldNotFindYAMLFileError,
+            lo_loader.load,
+        )
+
+    def test_empty_configuration_file(self):
+        config_file = "empty.yaml"
+        lo_loader = LearningOutcomesLoader(structure_filename=config_file, base_path=self.base_path)
+        self.assertRaises(
+            EmptyYAMLFileError,
+            lo_loader.load,
+        )
+
+    def test_missing_text(self):
+        config_file = "missing-text.yaml"
+        lo_loader = LearningOutcomesLoader(structure_filename=config_file, base_path=self.base_path)
+        self.assertRaises(
+            MissingRequiredModelsError,
+            lo_loader.load
+        )
+
+    def test_empty_text(self):
+        config_file = "empty-text.yaml"
+        lo_loader = LearningOutcomesLoader(structure_filename=config_file, base_path=self.base_path)
+        self.assertRaises(
+            InvalidYAMLValueError,
+            lo_loader.load
+        )
+
+    def test_curriculum_areas(self):
+        config_file = "curriculum-areas.yaml"
+        self.test_data.create_curriculum_area("1")
+        self.test_data.create_curriculum_area("2")
+        lo_loader = LearningOutcomesLoader(structure_filename=config_file, base_path=self.base_path)
+        lo_loader.load()
+        outcome = LearningOutcome.objects.get(slug="outcome-key")
+        self.assertQuerysetEqual(
+            outcome.curriculum_areas.order_by("name"),
+            [
+                "<CurriculumArea: Area 1>",
+                "<CurriculumArea: Area 2>",
+            ]
+        )
+
+    def test_curriculum_areas_undefined(self):
+        config_file = "curriculum-areas.yaml"
+        self.test_data.create_curriculum_area("1")
+        lo_loader = LearningOutcomesLoader(structure_filename=config_file, base_path=self.base_path)
+        self.assertRaises(
+            KeyNotFoundError,
+            lo_loader.load
         )
 
     def test_translation(self):
