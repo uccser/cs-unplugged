@@ -32,7 +32,7 @@
     <meta name="theme-color" content="#ffffff">
   </head>
   <body>
-    <nav class="navbar fixed-top navbar-toggleable-sm navbar-light py-1">
+    <nav class="navbar fixed-top navbar-expand-md navbar-light py-1">
       <div class="container px-0">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -160,13 +160,15 @@
     </div>
 
     <footer id="page-footer" class="text-center">
-      <div class="container background-csfg py-3 w-100">
-        <p class="mb-0">
-          {% blocktrans trimmed %}
-          Looking for something for high schools?
-          Check out the <a href="http://csfieldguide.org.nz/">Computer Science Field Guide</a>.
-          {% endblocktrans %}
-        </p>
+      <div class="background-csfg py-3 w-100">
+        <div class="container">
+          <p class="mb-0">
+            {% blocktrans trimmed %}
+            Looking for something for high schools?
+            Check out the <a href="http://csfieldguide.org.nz/">Computer Science Field Guide</a>.
+            {% endblocktrans %}
+          </p>
+        </div>
       </div>
       <div class="container py-3">
         <p>
@@ -210,7 +212,7 @@
       glossary_url = "{% url 'topics:glossary_json' %}";
     </script>
     <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
-    <script src="{% static 'js/tether.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/website.js' %}"></script>
     <script src="{% static 'js/details-element-polyfill.js' %}"></script>

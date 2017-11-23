@@ -14,9 +14,7 @@
 
 // Contextual colors
 
-.text-white {
-  color: #fff !important;
-}
+.text-white { color: #fff !important; }
 
 @include text-emphasis-variant('.text-muted', $text-muted);
 
