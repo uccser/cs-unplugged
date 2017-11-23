@@ -183,19 +183,21 @@ $rounded-corner-radius: 0.5rem;
 }
 
 .navbar {
-  background-color: $white;
-  border-bottom: 2px $red solid;
+  background: linear-gradient(90deg, darken($red, 10%), $red, $red);
+  // border-bottom: 2px $red solid;
 
   #navbar-brand-logo {
-    height: 2.5rem;
+    height: 2rem;
   }
 
   .navbar-nav .nav-link {
-    font-weight: 500;
-    border: 1px $white solid;
-    border-radius: 0.3rem;
+    // font-weight: 500;
+    // border: 1px $white solid;
+    // border-radius: 0.3rem;
+    color: $white;
     &:hover {
-      border-color: $red;
+      color: $white;
+      text-decoration: underline;
     }
   }
 }
