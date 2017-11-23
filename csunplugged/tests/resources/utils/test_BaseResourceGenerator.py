@@ -177,15 +177,3 @@ class BaseResourceGeneratorTest(BaseTestWithDB):
         self.assertListEqual(options_order, list(local_options))
         for option in local_options.values():
             self.assertIsInstance(option, ResourceParameter)
-
-    def test_process_requested_options_valid(self):
-        pass
-
-    def test_process_requested_options_invalid(self):
-        pass
-
-    def test_process_requested_options_missing_required(self):
-        pass
-
-    def test_process_requested_options_subclass_additional_options(self):
-        pass
