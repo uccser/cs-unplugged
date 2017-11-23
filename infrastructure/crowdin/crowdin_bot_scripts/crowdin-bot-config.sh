@@ -6,13 +6,13 @@
 REPO="git@github.com:uccser/cs-unplugged.git"
 
 # Branch for upload of source content to crowdin
-TRANSLATION_SOURCE_BRANCH="translation-pipeline"
+TRANSLATION_SOURCE_BRANCH="develop"
 
 # Branch that new translations will be merged into
-TRANSLATION_TARGET_BRANCH="translation-pipeline"
+TRANSLATION_TARGET_BRANCH="develop"
 
 # Branch that new metadata for in context localisation will be merged into
-IN_CONTEXT_L10N_TARGET_BRANCH="translation-pipeline"
+IN_CONTEXT_L10N_TARGET_BRANCH="develop"
 
 # Name of crowdin config file
 CROWDIN_CONFIG_FILE="crowdin_content.yaml"
