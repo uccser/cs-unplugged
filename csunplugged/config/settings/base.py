@@ -117,7 +117,7 @@ LANGUAGES = (
     ("en", "English"),
 )
 
-if env.bool("INCLUDE_INCONTEXT_L10N", True):
+if env.bool("INCLUDE_INCONTEXT_L10N", False):
     EXTRA_LANGUAGES = [
         (INCONTEXT_L10N_PSEUDOLANGUAGE, "In-context translations"),
         (INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI, "In-context translations (Bidi)"),
