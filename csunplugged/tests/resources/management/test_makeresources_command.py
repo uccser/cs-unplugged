@@ -119,7 +119,6 @@ class MakeResourcesCommandTest(BaseTestWithDB):
         pdf = PdfFileReader(open(filepath, "rb"))
         self.assertEqual(pdf.getNumPages(), 20)
 
-
     def test_makeresources_command_resource_generator_has_non_enum_options(self):
         self.test_data.create_resource(
             "resource1",
