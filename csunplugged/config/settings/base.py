@@ -104,8 +104,6 @@ LANGUAGE_CODE = "en"
 
 LANGUAGES = (
     ("en", "English"),
-    ("de", "German"),
-    ("fr", "French"),
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#site-id
