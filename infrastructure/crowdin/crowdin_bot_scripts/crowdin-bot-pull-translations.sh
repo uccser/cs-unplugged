@@ -12,7 +12,6 @@ set -o pipefail
 source crowdin-bot-config.sh
 source crowdin-bot-utils.sh
 
-REPO="git@github.com:jordangriffiths01/crowdin_testing.git"
 CLONED_REPO_DIR="update-completed-translations-cloned-repo"
 TRANSLATION_PR_BRANCH_BASE="${TRANSLATION_TARGET_BRANCH}-translations"
 

@@ -13,7 +13,6 @@ set -o pipefail
 source crowdin-bot-config.sh
 source crowdin-bot-utils.sh
 
-REPO="git@github.com:jordangriffiths01/crowdin_testing.git"
 CLONED_REPO_DIR="incontext-download-cloned-repo"
 IN_CONTEXT_L10N_PR_BRANCH="${IN_CONTEXT_L10N_TARGET_BRANCH}-in-context-l10n"
 
