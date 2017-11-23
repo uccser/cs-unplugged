@@ -40,7 +40,7 @@ Teacher: "I’m going to be the programmer, but I’m going to need your help."
 
 {panel type="teaching" title="Teaching observations"}
 
-There will be different ways to express the same instructions (such as drawing an arrow, or writing "Forward"), and the key is that we need to be consistent.
+There will be different ways to express the same instructions (such as drawing an arrow, writing "Forward", or using the printed arrows resource above), and the key is that we need to be consistent.
 The choices about the exact format of the instructions is what leads to different programming languages, and it's fine that this happens, as long as we know the meaning for the particular language we're using at the moment.
 
 {panel end}
