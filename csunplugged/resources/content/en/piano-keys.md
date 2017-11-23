@@ -1,3 +1,3 @@
 # Piano Keys
 
-This resource contains printouts for the Piano Keys activity
+This resource contains printouts for the modulo activities.

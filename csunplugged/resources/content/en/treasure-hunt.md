@@ -1,3 +1,3 @@
 # Treasure Hunt
 
-This resource contains printouts for the Treasure Hunt activity
+This resource contains printouts for searching algorithms activities.

@@ -1,3 +1,3 @@
 # Arrows
 
-This resource contains printouts for geometry activities.
+This resource contains different arrows for Kidbots activities.
