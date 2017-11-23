@@ -11,7 +11,7 @@ class TreasureHuntResourceGeneratorTest(BaseGeneratorTest):
         super().__init__(*args, **kwargs)
         self.language = "en"
         self.base_valid_query = QueryDict(
-            "prefilled_values=blank&number_order=sorted&instructions=yes&art=colour&paper_size=a4"
+            "prefilled_values=easy&number_order=sorted&instructions=yes&art=colour&paper_size=a4"
         )
 
     def test_prefilled_values_values(self):
@@ -669,3 +669,14 @@ class TreasureHuntResourceGeneratorTest(BaseGeneratorTest):
             generator.subtitle,
             "Unsorted - 0 to 9999 - black and white - without instructions - letter"
         )
+
+    def test_get_range_descriptor(self):
+        get_number_range = TreasureHuntResourceGenerator.get_number_range
+        self.assertEqual((0, 100, 55), get_number_range("easy"))
+        self.assertEqual((0, 1000, 50), get_number_range("medium"))
+        self.assertEqual((0, 10000, 45), get_number_range("hard"))
+
+    def test_get_range_descriptor_invalid(self):
+        get_number_range = TreasureHuntResourceGenerator.get_number_range
+        with self.assertRaises(ValueError):
+            get_number_range("invalid")

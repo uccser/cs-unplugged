@@ -292,7 +292,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
                 column += 1
             row += 1
 
-    def get_pixel_label(self, image, coords, image_name, method):
+    def get_pixel_label(cls, image, coords, image_name, method):
         """Return label of specific pixel on given image.
 
         Args:
@@ -306,7 +306,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         """
         pixel_value = image.getpixel(coords)
         try:
-            text = self.methods[method]["labels"][pixel_value]
+            text = cls.methods[method]["labels"][pixel_value]
         except KeyError:
             message = "Image: {}\n".format(image_name)
             message += "Method: {}\n".format(method)

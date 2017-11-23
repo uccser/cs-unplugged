@@ -73,7 +73,6 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
         number_order = self.options["number_order"].value
         instructions = self.options["instructions"].value
         art_style = self.options["art"].value
-
         if instructions:
             image = Image.open(IMAGE_PATH.format("instructions"))
             ImageDraw.Draw(image)
@@ -160,7 +159,8 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
 
         return "{} - {} - {} - {}".format(range_text, art_style_text, instructions_text, super().subtitle)
 
-    def get_number_range(self, range_descriptor):
+    @staticmethod
+    def get_number_range(range_descriptor):
         """Return number range tuple for resource.
 
         Returns:
@@ -178,6 +178,6 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
             range_max = 10000
             font_size = 45
         else:
-            raise Exception("Unknown number range descriptor {}, "
-                            "wanted one of [easy, medium, hard".format(range_descriptor))
+            raise ValueError("Unknown number range descriptor {}, "
+                             "wanted one of [easy, medium, hard".format(range_descriptor))
         return (range_min, range_max, font_size)
