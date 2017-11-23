@@ -114,7 +114,7 @@ class BinaryWindowsResourceGenerator(BaseResourceGenerator):
                 text = "1"
             else:
                 text = "0"
-        elif value_type == "lightbulb":
+        else:  # lightbulb
             if on:
                 image_file = "col_binary_lightbulb.png"
             else:
@@ -142,7 +142,7 @@ class BinaryWindowsResourceGenerator(BaseResourceGenerator):
                     font=font,
                     fill="#000"
                 )
-            elif value_type == "lightbulb":
+            else:  # lightbulb
                 coords = (text_coord_x - lightbulb_width, base_y_coord - lightbulb_height + 75)
                 image.paste(lightbulb, box=coords, mask=lightbulb)
             text_coord_x += x_coord_increment

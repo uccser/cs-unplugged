@@ -1,14 +1,10 @@
 import os.path
 from unittest.mock import Mock
-
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
-
 from topics.models import Topic
 from topics.management.commands._TopicLoader import TopicLoader
-
 from django.utils import translation
-
 from utils.errors.CouldNotFindYAMLFileError import CouldNotFindYAMLFileError
 from utils.errors.NoHeadingFoundInMarkdownFileError import NoHeadingFoundInMarkdownFileError
 from utils.errors.EmptyMarkdownFileError import EmptyMarkdownFileError
@@ -225,3 +221,57 @@ class TopicLoaderTest(BaseTestWithDB):
         with translation.override("de"):
             # accessing the untranslated field should not default back to english
             self.assertEqual("", topic.other_resources)
+
+    def test_topic_loader_empty_icon(self):
+        content_path = "empty-icon"
+        structure_filename = "empty-icon.yaml"
+        factory = Mock()
+        topic_loader = TopicLoader(
+            factory,
+            content_path=content_path,
+            base_path=self.base_path,
+            structure_filename=structure_filename
+        )
+        topic_loader.load()
+        topic = Topic.objects.get(slug="empty-icon")
+        self.assertIsNone(topic.icon)
+
+    def test_topic_loader_other_resources_empty(self):
+        content_path = "empty-other-resources"
+        structure_filename = "empty-other-resources.yaml"
+        factory = Mock()
+        topic_loader = TopicLoader(
+            factory,
+            content_path=content_path,
+            base_path=self.base_path,
+            structure_filename=structure_filename
+        )
+        topic_loader.load()
+        topic = Topic.objects.get(slug="empty-other-resources")
+        self.assertEqual(topic.other_resources, "")
+
+    def test_topic_loader_programming_challenges_empty(self):
+        content_path = "empty-programming-challenges"
+        structure_filename = "empty-programming-challenges.yaml"
+        factory = Mock()
+        topic_loader = TopicLoader(
+            factory,
+            content_path=content_path,
+            base_path=self.base_path,
+            structure_filename=structure_filename
+        )
+        # Passes if loader throws no exception
+        topic_loader.load()
+
+    def test_topic_loader_curriculum_integrations_empty(self):
+        content_path = "empty-curriculum-integrations"
+        structure_filename = "empty-curriculum-integrations.yaml"
+        factory = Mock()
+        topic_loader = TopicLoader(
+            factory,
+            content_path=content_path,
+            base_path=self.base_path,
+            structure_filename=structure_filename
+        )
+        # Passes if loader throws no exception
+        topic_loader.load()

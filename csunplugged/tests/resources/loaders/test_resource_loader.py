@@ -5,7 +5,7 @@ from resources.management.commands._ResourcesLoader import ResourcesLoader
 from utils.errors.CouldNotFindYAMLFileError import CouldNotFindYAMLFileError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.EmptyYAMLFileError import EmptyYAMLFileError
-from utils.errors.InvalidConfigValueError import InvalidConfigValueError
+from utils.errors.InvalidYAMLValueError import InvalidYAMLValueError
 
 
 class ResourceLoaderTest(BaseTestWithDB):
@@ -172,7 +172,7 @@ class ResourceLoaderTest(BaseTestWithDB):
         config_file = "invalid-copies.yaml"
         resource_loader = ResourcesLoader(structure_filename=config_file, base_path=self.BASE_PATH)
         self.assertRaises(
-            InvalidConfigValueError,
+            InvalidYAMLValueError,
             resource_loader.load,
         )
 

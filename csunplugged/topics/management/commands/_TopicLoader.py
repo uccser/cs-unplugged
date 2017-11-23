@@ -48,7 +48,7 @@ class TopicLoader(TranslatableModelLoader):
             topic_translations[language]["content"] = content.html_string
             topic_translations[language]["name"] = content.title
 
-        if "other-resources" in topic_structure:
+        if "other-resources" in topic_structure and topic_structure["other-resources"] is not None:
             other_resources_filename = topic_structure["other-resources"]
             other_resources_translations = self.get_markdown_translations(other_resources_filename)
             for language, content in other_resources_translations.items():

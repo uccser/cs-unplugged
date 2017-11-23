@@ -52,7 +52,7 @@ Ask the students to predict what will happen (they should be able to work out th
 
 Have them try it out with some numbers to check it.
 
-{panel type="teaching" title=""Teaching observations"}
+{panel type="teaching" title="Teaching observations"}
 
 By reversing the left/right decision, the final result will be in the reverse order to how it would have been in lesson 1.
 

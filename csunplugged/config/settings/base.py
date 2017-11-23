@@ -218,5 +218,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # OTHER SETTINGS
 # ------------------------------------------------------------------------------
 DJANGO_PRODUCTION = env.bool("DJANGO_PRODUCTION")
+TOPICS_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("topics")), "content")
+RESOURCES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("resources")), "content")
+RESOURCE_GENERATION_LOCATION = os.path.join(str(ROOT_DIR.path("staticfiles")), "resources")
 RESOURCE_COPY_AMOUNT = 20
+SCRATCH_GENERATION_LOCATION = str(ROOT_DIR.path("temp"))
+CUSTOM_VERTO_TEMPLATES = os.path.join(str(ROOT_DIR.path("utils")), "custom_converter_templates", "")
 MODELTRANSLATION_CUSTOM_FIELDS = ("JSONField",)

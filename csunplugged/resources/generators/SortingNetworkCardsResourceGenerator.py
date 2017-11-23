@@ -89,7 +89,7 @@ class SortingNetworkCardsResourceGenerator(BaseResourceGenerator):
                 "little-red-riding-hood-5.png",
                 "little-red-riding-hood-6.png",
             ]
-        elif card_type == "butterfly":
+        else:  # butterfly
             card_data_type = "image"
             images = [
                 "butterfly-story-leaf.png",

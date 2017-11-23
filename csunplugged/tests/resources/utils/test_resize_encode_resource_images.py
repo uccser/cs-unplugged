@@ -1,5 +1,5 @@
 from django.test import tag
-from tests.BaseTestWithDB import BaseTestWithDB
+from django.test import SimpleTestCase
 from resources.utils.resize_encode_resource_images import resize_encode_resource_images
 from io import BytesIO
 from PIL import Image
@@ -7,7 +7,7 @@ import base64
 
 
 @tag("resource")
-class ResizeEncodeResourceTest(BaseTestWithDB):
+class ResizeEncodeResourceTest(SimpleTestCase):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -52,3 +52,11 @@ class ResizeEncodeResourceTest(BaseTestWithDB):
         copy_data = BytesIO(base64.b64decode(copy[0]["data"]))
         copy_image = Image.open(copy_data)
         self.assertEqual(expected_size, copy_image.size)
+
+    def test_resize_encode_resource_images_invalid_size(self):
+        self.assertRaises(
+            ValueError,
+            resize_encode_resource_images,
+            "invalid size",
+            dict()
+        )

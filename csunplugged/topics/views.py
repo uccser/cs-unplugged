@@ -148,14 +148,14 @@ class LessonView(generic.DetailView):
         context["topic"] = self.object.topic
         context["unit_plan"] = self.object.unit_plan
         # Add all the connected programming challenges
-        context["programming_challenges"] = self.object.programming_challenges.all()
+        context["programming_challenges"] = self.object.programming_challenges.exists()
         # Add all the connected learning outcomes
         context["learning_outcomes"] = self.object.learning_outcomes(manager="translated_objects") \
                                            .all().select_related()
         context["classroom_resources"] = self.object.classroom_resources(manager="translated_objects") \
                                              .all().select_related()
         # Add all the connected generated resources
-        related_resources = self.object.generated_resources.all()
+        related_resources = self.object.generated_resources.order_by("name")
         generated_resources = []
         for related_resource in related_resources:
             generated_resource = dict()

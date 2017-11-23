@@ -1,12 +1,8 @@
 import os.path
-
 from django.utils import translation
-
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
-
-from utils.errors.InvalidConfigValueError import InvalidConfigValueError
-
+from utils.errors.InvalidYAMLValueError import InvalidYAMLValueError
 from topics.models import ClassroomResource
 from topics.management.commands._ClassroomResourcesLoader import ClassroomResourcesLoader
 
@@ -37,7 +33,7 @@ class ClassroomResourcesLoaderTest(BaseTestWithDB):
     def test_missing_description(self):
         config_file = "missing-description.yaml"
         cr_loader = ClassroomResourcesLoader(structure_filename=config_file, base_path=self.base_path)
-        self.assertRaises(InvalidConfigValueError, cr_loader.load)
+        self.assertRaises(InvalidYAMLValueError, cr_loader.load)
 
     def test_translation(self):
         config_file = "translation.yaml"
