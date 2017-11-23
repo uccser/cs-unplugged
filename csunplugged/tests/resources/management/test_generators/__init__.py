@@ -13,7 +13,8 @@ from resources.utils.resource_parameters import TextResourceParameter
 class BareResourceGeneratorWithNonEnumerableOptions(BareResourceGenerator):
     """Class to simulate a resource generator with options that can't be enumerated."""
 
-    def get_additional_options(self):
+    @classmethod
+    def get_additional_options(cls):
         """Add option that is not an EnumResourceParameter."""
         return {
             "header_text": TextResourceParameter(

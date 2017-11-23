@@ -118,3 +118,14 @@ class MakeResourcesCommandTest(BaseTestWithDB):
         filepath = os.path.join(RESOURCE_PATH, "Resource 1 (a4).pdf")
         pdf = PdfFileReader(open(filepath, "rb"))
         self.assertEqual(pdf.getNumPages(), 20)
+
+
+    def test_makeresources_command_resource_generator_has_non_enum_options(self):
+        self.test_data.create_resource(
+            "resource1",
+            "Resource 1",
+            "Description of resource 1",
+            "BareResourceGeneratorWithNonEnumerableOptions",
+        )
+        with self.assertRaises(TypeError):
+            management.call_command("makeresources")

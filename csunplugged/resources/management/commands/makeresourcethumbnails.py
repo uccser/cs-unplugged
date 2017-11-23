@@ -34,7 +34,7 @@ class Command(BaseCommand):
 
             if not all([isinstance(option, EnumResourceParameter)
                         for option in empty_generator.get_options().values()]):
-                raise Exception("Only EnumResourceParameters are supported for pre-generation")
+                raise TypeError("Only EnumResourceParameters are supported for pre-generation")
             valid_options = {option.name: list(option.valid_values.keys())
                              for option in empty_generator.get_options().values()}
             combinations = resource_valid_configurations(valid_options)
