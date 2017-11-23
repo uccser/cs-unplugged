@@ -1,3 +1,5 @@
+"""Script to print list of file paths of all completely translated files for a given language."""
+
 import os
 import argparse
 
@@ -6,12 +8,24 @@ from crowdin_bot import api
 SOURCE_LANGUAGE = "en"
 
 def get_language_info(language):
+    """Get xml tree from language info api call."""
     return api.api_call_xml(
         "language-status",
         language=language
     )
 
 def process_item(item, parent_path=None, csu_language_code=None):
+    """Return list of completely translated file paths in a given directory tree node.
+
+    Args:
+        item: (etree.Element): itemm node in language-status xml tree
+            (see https://support.crowdin.com/api/language-status/)
+        parent_path: (str) path to the translated file node (None if the current item is
+            the root of the directory tree).
+        csu_language_code: (str) Language code (in locale format) on CSU end
+            (may differ from crowdin language code according to language mapping
+            in yaml file)
+    """
     if item.find("node_type").text == "file":
         filename = item.find("name").text
         if parent_path:
@@ -45,8 +59,6 @@ def process_item(item, parent_path=None, csu_language_code=None):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    # parser.add_argument('--crowdin-code', required=True,
-    #                     help='Crowdin language code')
     parser.add_argument('--crowdin-code', required=True,
                         help='Crowdin language code for target language')
     parser.add_argument('--csu-code', required=True,

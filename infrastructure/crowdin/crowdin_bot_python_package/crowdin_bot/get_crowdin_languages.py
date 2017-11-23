@@ -1,3 +1,5 @@
+"""Script to print list of all crowdin language codes for project."""
+
 from crowdin_bot import api
 
 NS_DICT = {
@@ -5,6 +7,7 @@ NS_DICT = {
 }
 
 def get_project_languages():
+    """Get list of crowdin language codes."""
     info_xml = api.api_call_xml("info")
     languages = info_xml.find('languages')
     translatable_languages = []
