@@ -71,7 +71,7 @@ class ResourceLoaderTest(BaseTestWithDB):
         config_file = "invalid-module.yaml"
         resource_loader = ResourcesLoader(structure_filename=config_file, base_path=self.BASE_PATH)
         self.assertRaises(
-            ModuleNotFoundError,
+            AttributeError,
             resource_loader.load,
         )
 

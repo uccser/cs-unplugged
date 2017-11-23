@@ -33,7 +33,7 @@ class GenerateResourceTest(BaseTestWithDB):
         self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertEqual(
             response.get("Content-Disposition"),
-            'attachment; filename="Resource Grid (a4).pdf"'
+            'attachment; filename="Grid (a4).pdf"'
         )
 
     @override_settings(DJANGO_PRODUCTION=True)
@@ -56,7 +56,7 @@ class GenerateResourceTest(BaseTestWithDB):
         self.assertEqual(HTTPStatus.FOUND, response.status_code)
         self.assertEqual(
             response.url,
-            "/staticfiles/resources/Resource%20Grid%20(a4).pdf"
+            "/staticfiles/resources/Grid%20(a4).pdf"
         )
 
     def test_generate_view_valid_slug_missing_parameter(self):
