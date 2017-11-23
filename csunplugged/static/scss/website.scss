@@ -21,13 +21,6 @@ img {
   &.inline-image-small {
     max-height: 1.4rem;
   }
-  &.img-200 {
-    width: 200%;
-  }
-  &.img-pixel {
-    image-rendering: pixelated;
-    image-rendering: crisp-edges;
-  }
 }
 
 h1 {
@@ -141,6 +134,21 @@ $rounded-corner-radius: 0.5rem;
   &:focus {
     text-decoration: none;
   }
+  &.unavailable {
+    background-color: rgba($black, 0.2);
+  }
+  .badge-language-unavailable {
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: 0;
+    margin-left: 0;
+  }
+}
+
+.badge-language-unavailable {
+  margin-right: auto;
+  margin-bottom: auto;
+  margin: 0.5em;
 }
 
 @mixin link-box-colour-variant($color) {
@@ -190,13 +198,8 @@ $rounded-corner-radius: 0.5rem;
     height: 2.5rem;
   }
 
-  .navbar-nav .nav-link {
-    font-weight: 500;
-    border: 1px $white solid;
-    border-radius: 0.3rem;
-    &:hover {
-      border-color: $red;
-    }
+  .nav-link:hover {
+    text-decoration: underline;
   }
 }
 
