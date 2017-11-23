@@ -70,11 +70,9 @@ def generate_resource(request, resource_slug):
         raise Http404("No parameters given for resource generation.")
     try:
         generator = get_resource_generator(resource.generator_module, request.GET)
-    except QueryParameterMissingError as e:
-        raise Http404(e) from e
-    except QueryParameterInvalidError as e:
-        raise Http404(e) from e
-    except QueryParameterMultipleValuesError as e:
+    except (QueryParameterMissingError,
+            QueryParameterInvalidError,
+            QueryParameterMultipleValuesError) as e:
         raise Http404(e) from e
 
     # TODO: Weasyprint handling in production

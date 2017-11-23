@@ -90,3 +90,18 @@ class GenerateResourceTest(BaseTestWithDB):
         url += query_string(get_parameters)
         response = self.client.get(url)
         self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
+
+    def test_generate_view_valid_slug_multiple_parameter(self):
+        resource = self.test_data.create_resource(
+            "grid",
+            "Grid",
+            "resources/grid.html",
+            "GridResourceGenerator",
+        )
+        kwargs = {
+            "resource_slug": resource.slug,
+        }
+        url = reverse("resources:generate", kwargs=kwargs)
+        url += "?paper_size=a4&paper_size=letter"
+        response = self.client.get(url)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
