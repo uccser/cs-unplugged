@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Script to list files present on crowdin that are not uploaded/download
+# using the current configuration file in TRANSLATION_SOURCE_BRANCH
+
 set -e
 set -x
 set -o pipefail

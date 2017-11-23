@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# Script to pull in-context pseudo-language translation files from crowdin,
+# And update them to restore verto tags and non-translatable strings.
+# If the resulting files differ from the current state of IN_CONTEXT_L10N_TARGET_BRANCH,
+# the changes are pushed to a branch "IN_CONTEXT_L10N_TARGET_BRANCH-in-context-l10n",
+# and a pull request opened to merge into IN_CONTEXT_L10N_TARGET_BRANCH
+
 set -e
 set -x
 set -o pipefail

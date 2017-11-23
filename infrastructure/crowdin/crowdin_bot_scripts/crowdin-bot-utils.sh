@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+# Function to reset a repo to a like-checkout state
+# End result similar to 'git clone -b <branch> <remote_repo>'
+# Usage: reset_repo <repo_dir> <branch>
+#   repo_dir: path to repository to reset
+#   branch: The branch to be on after the reset.
+#           This branch must exist on origin, and will be checked out to the
+#           current origin state.
+#           All other local branches will be deleted.
 reset_repo() {
     repo_dir=$1
     branch=$2

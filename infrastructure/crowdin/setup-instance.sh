@@ -1,3 +1,5 @@
+# Script to setup crowdin_bot on a GCE instance
+
 set -e
 
 SECRETS_DIR="crowdin_bot_secrets"

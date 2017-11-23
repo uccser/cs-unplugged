@@ -1,3 +1,5 @@
+# Script to deploy crowdin bot to GCE
+
 set -e
 
 PROJECT="cs-unplugged-dev"

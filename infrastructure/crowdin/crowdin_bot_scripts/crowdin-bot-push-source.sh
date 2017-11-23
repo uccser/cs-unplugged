@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Script to push source files from crowdin.
+# Source files are uploaded from the current state of branch TRANSLATION_SOURCE_BRANCH.
+
 set -e
 set -x
 set -o pipefail

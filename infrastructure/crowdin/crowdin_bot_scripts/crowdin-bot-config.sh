@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Configuration for crowdin-bot
+
 # CS Unplugged repo
 REPO="git@github.com:uccser/cs-unplugged.git"
 

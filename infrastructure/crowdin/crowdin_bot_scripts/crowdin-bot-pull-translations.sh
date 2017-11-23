@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Script to pull translation files from crowdin.
+# If the resulting files differ from the current state of TRANSLATION_TARGET_BRANCH,
+# the changes are pushed to a branch "TRANSLATION_TARGET_BRANCH-translations",
+# and a pull request opened to merge into TRANSLATION_TARGET_BRANCH
+
 set -e
 set -x
 set -o pipefail
