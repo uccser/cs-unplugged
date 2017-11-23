@@ -3,29 +3,62 @@
 from PIL import Image, ImageDraw, ImageFont
 from random import sample
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
+from django.utils.translation import ugettext as _
+from resources.utils.resource_parameters import EnumResourceParameter, BoolResourceParameter
 
 IMAGE_PATH = "static/img/resources/treasure-hunt/{}.png"
+
+PREFILLED_VALUES_VALUES = {
+    "easy": _("Easy Numbers (2 digits)"),
+    "medium": _("Medium Numbers (3 digits)"),
+    "hard": _("Hard Numbers (4 digits)"),
+    "blank": _("None (Blank)")
+}
+
+NUMBER_ORDER_VALUES = {
+    "sorted": _("Sorted Numbers"),
+    "unsorted": _("Unsorted Numbers")
+}
+
+ART_VALUES = {
+    "bw": _("Table only - Little ink usage."),
+    "colour": _("Table and artwork - Uses a lot of colour ink."),
+}
 
 
 class TreasureHuntResourceGenerator(BaseResourceGenerator):
     """Class for Treasure Hunt resource generator."""
 
-    additional_valid_options = {
-        "prefilled_values": ["blank", "easy", "medium", "hard"],
-        "number_order": ["sorted", "unsorted"],
-        "instructions": [True, False],
-        "art": ["colour", "bw"],
-    }
+    copies = True
 
-    def __init__(self, requested_options=None):
-        """Construct TreasureHuntResourceGenerator instance.
-
-        Args:
-            requested_options: QueryDict of requested_options (QueryDict).
-        """
-        super().__init__(requested_options)
-        if requested_options:
-            self.set_number_range()
+    @classmethod
+    def get_additional_options(cls):
+        """Additional options for TreasureHuntResourceGenerator."""
+        return {
+            "prefilled_values": EnumResourceParameter(
+                name="prefilled_values",
+                description=_("Prefill with Numbers"),
+                values=PREFILLED_VALUES_VALUES,
+                default="easy"
+            ),
+            "number_order": EnumResourceParameter(
+                name="number_order",
+                description=_("Numbers Unsorted/Sorted"),
+                values=NUMBER_ORDER_VALUES,
+                default="sorted"
+            ),
+            "instructions": BoolResourceParameter(
+                name="instructions",
+                description=_("Include instruction sheets"),
+                default=True
+            ),
+            "art": EnumResourceParameter(
+                name="art",
+                description=_("Printing mode"),
+                values=ART_VALUES,
+                default="bw"
+            ),
+        }
 
     def data(self):
         """Create data for a copy of the Treasure Hunt resource.
@@ -36,11 +69,10 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
         pages = []
         font_path = "static/fonts/PatrickHand-Regular.ttf"
 
-        prefilled_values = self.requested_options["prefilled_values"]
-        number_order = self.requested_options["number_order"]
-        instructions = self.requested_options["instructions"]
-        art_style = self.requested_options["art"]
-
+        prefilled_values = self.options["prefilled_values"].value
+        number_order = self.options["number_order"].value
+        instructions = self.options["instructions"].value
+        art_style = self.options["art"].value
         if instructions:
             image = Image.open(IMAGE_PATH.format("instructions"))
             ImageDraw.Draw(image)
@@ -51,10 +83,11 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
 
         # Add numbers to image if required
         if prefilled_values != "blank":
-            font = ImageFont.truetype(font_path, self.font_size)
+            range_min, range_max, font_size = self.get_number_range(prefilled_values)
+            font = ImageFont.truetype(font_path, font_size)
 
             total_numbers = 26
-            numbers = sample(range(self.range_min, self.range_max), total_numbers)
+            numbers = sample(range(range_min, range_max), total_numbers)
             if number_order == "sorted":
                 numbers.sort()
 
@@ -77,7 +110,7 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
                     fill="#000"
                 )
 
-            text = "{} - {} to {}".format(number_order.title(), self.range_min, self.range_max - 1)
+            text = "{} - {} to {}".format(number_order.title(), range_min, range_max - 1)
             font = ImageFont.truetype(font_path, 75)
             text_width, text_height = draw.textsize(text, font=font)
             coord_x = 1220 - (text_width / 2)
@@ -101,17 +134,18 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
         Returns:
             text for subtitle (str)
         """
-        prefilled_values = self.requested_options["prefilled_values"]
-        number_order = self.requested_options["number_order"]
-        instructions = self.requested_options["instructions"]
-        art_style = self.requested_options["art"]
+        prefilled_values = self.options["prefilled_values"].value
+        number_order = self.options["number_order"].value
+        instructions = self.options["instructions"].value
+        art_style = self.options["art"].value
 
         if prefilled_values == "blank":
             range_text = "blank"
         else:
+            range_min, range_max, font_size = self.get_number_range(prefilled_values)
             template = "{} - {} to {}"
             number_order_text = number_order.title()
-            range_text = template.format(number_order_text, self.range_min, self.range_max - 1)
+            range_text = template.format(number_order_text, range_min, range_max - 1)
 
         if art_style == "colour":
             art_style_text = "full colour"
@@ -125,20 +159,25 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
 
         return "{} - {} - {} - {}".format(range_text, art_style_text, instructions_text, super().subtitle)
 
-    def set_number_range(self):
+    @staticmethod
+    def get_number_range(range_descriptor):
         """Return number range tuple for resource.
 
         Returns:
             Tuple of (range_min, range_max, font_size)
         """
-        prefilled_values = self.requested_options.get("prefilled_values", None)
-        self.range_min = 0
-        if prefilled_values == "easy":
-            self.range_max = 100
-            self.font_size = 55
-        elif prefilled_values == "medium":
-            self.range_max = 1000
-            self.font_size = 50
-        elif prefilled_values == "hard":
-            self.range_max = 10000
-            self.font_size = 45
+        # prefilled_values = self.options["prefilled_values"].value
+        range_min = 0
+        if range_descriptor == "easy":
+            range_max = 100
+            font_size = 55
+        elif range_descriptor == "medium":
+            range_max = 1000
+            font_size = 50
+        elif range_descriptor == "hard":
+            range_max = 10000
+            font_size = 45
+        else:
+            raise ValueError("Unknown number range descriptor {}, "
+                             "wanted one of [easy, medium, hard".format(range_descriptor))
+        return (range_min, range_max, font_size)
