@@ -5,6 +5,7 @@ from filecmp import cmp
 from utils.errors.QueryParameterInvalidError import QueryParameterInvalidError
 import os
 from tests.resources.generators.utils import BaseGeneratorTest
+from PIL import Image
 
 
 @tag("resource")
@@ -324,3 +325,30 @@ class PixelPainterResourceGeneratorTest(BaseGeneratorTest):
             generator.subtitle,
             "Hot air balloon - Colour - letter"
         )
+
+    def test_get_pixel_label_valid(self):
+        image = Image.frombytes("L", (1, 2), bytes([255, 0]))
+        label = PixelPainterResourceGenerator.get_pixel_label(
+            image,
+            (0, 0),
+            "name",
+            "black-white"
+        )
+        self.assertEqual('0', label)
+        label = PixelPainterResourceGenerator.get_pixel_label(
+            image,
+            (0, 1),
+            "name",
+            "black-white"
+        )
+        self.assertEqual('1', label)
+
+    def test_get_pixel_label_invalid(self):
+        image = Image.frombytes("L", (1, 1), bytes([127]))
+        with self.assertRaises(ValueError):
+            PixelPainterResourceGenerator.get_pixel_label(
+                image,
+                (0, 0),
+                "name",
+                "black-white"
+            )

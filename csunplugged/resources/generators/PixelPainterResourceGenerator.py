@@ -292,6 +292,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
                 column += 1
             row += 1
 
+    @classmethod
     def get_pixel_label(cls, image, coords, image_name, method):
         """Return label of specific pixel on given image.
 
