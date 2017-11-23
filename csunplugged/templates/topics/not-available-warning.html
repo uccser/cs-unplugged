@@ -5,18 +5,20 @@
 <div class="alert alert-danger" role="alert">
   {% blocktrans trimmed with language=current_language.name_local %}
   <h4>Sorry! This {{ model_type }} is not yet available in {{ language }}.</h4>
-  <p>If you're totally awesome and can speak multiple languages, then feel free to check it out in...</p>
+  <p>This {{ model_type }} is available in the following languages:</p>
   {% endblocktrans %}
-  <p><div class="btn-group">
-    {% for language in model.languages %}
-      {% get_language_info for language as lang %}
-      <a class="btn btn-outline-danger" role="button" href="{% translate_url language %}">
-        {{ lang.name_local }}
-      </a>
-    {% endfor %}
-  </div></p>
+  <p>
+    <div class="btn-group">
+      {% for language in model.languages %}
+        {% get_language_info for language as lang %}
+        <a class="btn btn-outline-danger" role="button" href="{% translate_url language %}">
+          {{ lang.name_local }}
+        </a>
+      {% endfor %}
+    </div>
+  </p>
   {% if parent_type %}
-  <p>...{% trans "or" %}...</p>
+    <p>...{% trans "or" %}...</p>
     <a class="btn btn-outline-danger" role="button" href="{{ parent_url }}">
       {% blocktrans trimmed %}
       Return to the {{ parent_type }}

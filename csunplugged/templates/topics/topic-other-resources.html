@@ -28,7 +28,7 @@
     {% render_html_field topic.other_resources %}
   {% else %}
   <div class="alert alert-danger" role="alert">
-    <p>{% trans "Whoops! We couldn't find any information on other resources for this topic." %}</p>
+    <p>{% trans "Sorry! We couldn't find any information on other resources for this topic." %}</p>
     <p>
       <a class="btn btn-outline-danger" role="button" href="{% url "topics:topic" topic.slug %}">
         {% trans "Return to the topic" %}

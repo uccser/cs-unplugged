@@ -203,7 +203,9 @@
           </div>
           <div class="modal-body">
             <div class="alert alert-danger" role="alert" id="glossary-modal-translation-unavailable">
-              This definition is not available in {{ LANGUAGE_CODE|language_name }}, sorry!
+              {% blocktrans trimmed with language=current_language.name_local %}
+                This definition is not available in {{ language }}, sorry!
+              {% endblocktrans %}
             </div>
             <div id="glossary-modal-definition"></div>
           </div>
