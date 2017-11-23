@@ -21,4 +21,4 @@ class QueryParameterMultipleValuesError(Exception):
             Error message for empty config file.
         """
         text = "Parameter '{}' must only have one value, but multiple were given ({})."
-        return text.format(self.parameter, self.value)
+        return text.format(self.parameter, self.values)
