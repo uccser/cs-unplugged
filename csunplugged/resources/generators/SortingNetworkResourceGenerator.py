@@ -3,14 +3,33 @@
 from PIL import Image, ImageDraw, ImageFont
 from random import sample
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
+from django.utils.translation import ugettext as _
+from resources.utils.resource_parameters import EnumResourceParameter
+
+PREFILLED_VALUES_VALUES = {
+    "easy": _("Easy Numbers (1 digits)"),
+    "medium": _("Medium Numbers (2 digits)"),
+    "hard": _("Hard Numbers (3 digits)"),
+    "blank": _("None (Blank - Useful as template) ")
+}
 
 
 class SortingNetworkResourceGenerator(BaseResourceGenerator):
     """Class for Sorting Network resource generator."""
 
-    additional_valid_options = {
-        "prefilled_values": ["blank", "easy", "medium", "hard"]
-    }
+    copies = True
+
+    @classmethod
+    def get_additional_options(cls):
+        """Additional options for SortingNetworkResourceGenerator."""
+        return {
+            "prefilled_values": EnumResourceParameter(
+                name="prefilled_values",
+                description=_("Prefill with Numbers"),
+                values=PREFILLED_VALUES_VALUES,
+                default="none"
+            ),
+        }
 
     def data(self):
         """Create data for a copy of the Sorting Network resource.
@@ -24,7 +43,7 @@ class SortingNetworkResourceGenerator(BaseResourceGenerator):
         draw = ImageDraw.Draw(image)
         (range_min, range_max, font_size) = self.number_range()
 
-        if self.requested_options["prefilled_values"] != "blank":
+        if self.options["prefilled_values"].value != "blank":
             font = ImageFont.truetype(font_path, font_size)
             numbers = sample(range(range_min, range_max), 6)
             base_coord_x = 70
@@ -54,7 +73,7 @@ class SortingNetworkResourceGenerator(BaseResourceGenerator):
         Returns:
             text for subtitle (str).
         """
-        if self.requested_options["prefilled_values"] == "blank":
+        if self.options["prefilled_values"].value == "blank":
             range_text = "blank"
         else:
             SUBTITLE_TEMPLATE = "{} to {}"
@@ -68,7 +87,7 @@ class SortingNetworkResourceGenerator(BaseResourceGenerator):
         Returns:
             Tuple of (range_min, range_max, font_size).
         """
-        prefilled_values = self.requested_options["prefilled_values"]
+        prefilled_values = self.options["prefilled_values"].value
         range_min = 0
         range_max = 0
         font_size = 150

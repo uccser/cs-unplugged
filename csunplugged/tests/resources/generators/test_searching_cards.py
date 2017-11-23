@@ -1,15 +1,28 @@
 from django.http import QueryDict
 from django.test import tag
-from tests.BaseTestWithDB import BaseTestWithDB
 from resources.generators.SearchingCardsResourceGenerator import SearchingCardsResourceGenerator
+from tests.resources.generators.utils import BaseGeneratorTest
 
 
 @tag("resource")
-class SearchingCardsResourceGeneratorTest(BaseTestWithDB):
+class SearchingCardsResourceGeneratorTest(BaseGeneratorTest):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.language = "en"
+        self.base_valid_query = QueryDict("number_cards=15&max_number=cards&help_sheet=yes&paper_size=a4")
+
+    def test_number_cards_values(self):
+        generator = SearchingCardsResourceGenerator(self.base_valid_query)
+        self.run_parameter_smoke_tests(generator, "number_cards")
+
+    def test_max_number_values(self):
+        generator = SearchingCardsResourceGenerator(self.base_valid_query)
+        self.run_parameter_smoke_tests(generator, "max_number")
+
+    def test_help_sheet_values(self):
+        generator = SearchingCardsResourceGenerator(self.base_valid_query)
+        self.run_parameter_smoke_tests(generator, "help_sheet")
 
     def test_subtitle_15_cards_sheet_a4(self):
         query = QueryDict("number_cards=15&max_number=cards&help_sheet=yes&paper_size=a4")

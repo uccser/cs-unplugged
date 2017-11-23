@@ -6,10 +6,12 @@ from django.shortcuts import get_object_or_404, render
 from django.views import generic
 from resources.models import Resource
 from resources.utils.resource_pdf_cache import resource_pdf_cache
+from resources.utils.get_options_html import get_options_html
 from utils.group_lessons_by_age import group_lessons_by_age
 from resources.utils.get_resource_generator import get_resource_generator
 from utils.errors.QueryParameterMissingError import QueryParameterMissingError
 from utils.errors.QueryParameterInvalidError import QueryParameterInvalidError
+from utils.errors.QueryParameterMultipleValuesError import QueryParameterMultipleValuesError
 
 RESPONSE_CONTENT_DISPOSITION = 'attachment; filename="{filename}.pdf"'
 
@@ -41,6 +43,8 @@ def resource(request, resource_slug):
     """
     resource = get_object_or_404(Resource, slug=resource_slug)
     context = dict()
+    generator = get_resource_generator(resource.generator_module)
+    context["options_html"] = get_options_html(generator.get_options(), generator.get_local_options())
     context["resource"] = resource
     context["debug"] = settings.DEBUG
     context["resource_thumbnail_base"] = "{}img/resources/{}/thumbnails/".format(settings.STATIC_URL, resource.slug)
@@ -48,7 +52,7 @@ def resource(request, resource_slug):
     context["copies_amount"] = settings.RESOURCE_COPY_AMOUNT
     if resource.thumbnail_static_path:
         context["thumbnail"] = resource.thumbnail_static_path
-    return render(request, resource.webpage_template, context)
+    return render(request, "resources/resource.html", context)
 
 
 def generate_resource(request, resource_slug):
@@ -66,9 +70,9 @@ def generate_resource(request, resource_slug):
         raise Http404("No parameters given for resource generation.")
     try:
         generator = get_resource_generator(resource.generator_module, request.GET)
-    except QueryParameterMissingError as e:
-        raise Http404(e) from e
-    except QueryParameterInvalidError as e:
+    except (QueryParameterMissingError,
+            QueryParameterInvalidError,
+            QueryParameterMultipleValuesError) as e:
         raise Http404(e) from e
 
     # TODO: Weasyprint handling in production

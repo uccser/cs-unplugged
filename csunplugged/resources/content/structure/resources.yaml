@@ -1,108 +1,72 @@
 sorting-network:
-  name: Sorting Network
-  webpage-template: resources/sorting-network.html
   generator-module: SortingNetworkResourceGenerator
   thumbnail-static-path: img/resources/resource-sorting-network-thumbnail-example.png
   copies: true
 sorting-network-cards:
-  name: Sorting Network Cards
-  webpage-template: resources/sorting-network-cards.html
   generator-module: SortingNetworkCardsResourceGenerator
   thumbnail-static-path: img/resources/sorting-network-cards/thumbnail.png
   copies: false
 treasure-hunt:
-  name: Treasure Hunt
-  webpage-template: resources/treasure-hunt.html
   generator-module: TreasureHuntResourceGenerator
   thumbnail-static-path: img/resources/treasure-hunt/thumbnail.png
   copies: true
 binary-cards:
-  name: Binary Cards
-  webpage-template: resources/binary-cards.html
   generator-module: BinaryCardsResourceGenerator
   thumbnail-static-path: img/resources/binary-cards/thumbnail.png
   copies: false
 binary-cards-small:
-  name: Binary Cards (Small)
-  webpage-template: resources/binary-cards-small.html
   generator-module: BinaryCardsSmallResourceGenerator
   thumbnail-static-path: img/resources/binary-cards-small/thumbnail.png
   copies: false
 binary-windows:
-  name: Binary Windows
-  webpage-template: resources/binary-windows.html
   generator-module: BinaryWindowsResourceGenerator
   thumbnail-static-path: img/resources/binary-windows/thumbnail.png
   copies: false
 modulo-clock:
-  name: Modulo Clock
-  webpage-template: resources/modulo-clock.html
   generator-module: ModuloClockResourceGenerator
   thumbnail-static-path: img/resources/modulo-clock/thumbnail.png
   copies: false
 binary-to-alphabet:
-  name: Binary to Alphabet
-  webpage-template: resources/binary-to-alphabet.html
   generator-module: BinaryToAlphabetResourceGenerator
   thumbnail-static-path: img/resources/binary-to-alphabet/thumbnail.png
   copies: false
 parity-cards:
-  name: Parity Cards
-  webpage-template: resources/parity-cards.html
   generator-module: ParityCardsResourceGenerator
   thumbnail-static-path: img/resources/parity-cards/thumbnail.png
   copies: false
 piano-keys:
-  name: Piano Keys
-  webpage-template: resources/piano-keys.html
   generator-module: PianoKeysResourceGenerator
   thumbnail-static-path: img/resources/piano-keys/thumbnail.png
   copies: false
 train-stations:
-  name: Train Stations
-  webpage-template: resources/train-stations.html
   generator-module: TrainStationsResourceGenerator
   thumbnail-static-path: img/resources/train-stations/thumbnail.png
   copies: false
 job-badges:
-  name: Job Badges
-  webpage-template: resources/job-badges.html
   generator-module: JobBadgesResourceGenerator
   thumbnail-static-path: img/resources/job-badges/thumbnail.png
   copies: false
 arrows:
-  name: Arrows
-  webpage-template: resources/arrows.html
   generator-module: ArrowsResourceGenerator
   thumbnail-static-path: img/resources/arrows/thumbnail.png
   copies: false
 left-right-cards:
-  name: Left and Right Cards
-  webpage-template: resources/left-right-cards.html
   generator-module: LeftRightCardsResourceGenerator
   thumbnail-static-path: img/resources/left-right-cards/thumbnail.png
   copies: false
 grid:
-  name: Grid
-  webpage-template: resources/grid.html
   generator-module: GridResourceGenerator
   thumbnail-static-path: img/resources/grid/thumbnail.png
   copies: false
 searching-cards:
-  name: Searching Cards
-  webpage-template: resources/searching-cards.html
   generator-module: SearchingCardsResourceGenerator
   thumbnail-static-path: img/resources/searching-cards/thumbnail.png
   copies: false
 barcode-checksum-poster:
-  name: Barcode Checksum Poster
-  webpage-template: resources/barcode-checksum-poster.html
   generator-module: BarcodeChecksumPosterResourceGenerator
   thumbnail-static-path: img/resources/barcode-checksum-poster/thumbnail.gif
   copies: false
 pixel-painter:
-  name: Pixel Painter
-  webpage-template: resources/pixel-painter.html
   generator-module: PixelPainterResourceGenerator
   thumbnail-static-path: img/resources/pixel-painter/thumbnail.png
   copies: false
