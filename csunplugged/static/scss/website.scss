@@ -1,4 +1,5 @@
 @import "bootstrap/bootstrap";
+@import "bootstrap-overrides";
 @import "pygments-colorful";
 @import "sticky-state";
 @import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
@@ -101,8 +102,8 @@ $rounded-corner-radius: 0.5rem;
   border: 0.2em solid $blue;
   border-radius: $border-radius;
   overflow: hidden;
-  padding: ($spacer-y * .5) ($spacer-x * .5);
-  margin-bottom: $spacer-y;
+  padding: ($spacer * .5) ($spacer * .5);
+  margin-bottom: $spacer;
   width: 100%;
   transition: 0.1s;
   display: flex;
@@ -223,10 +224,10 @@ $rounded-corner-radius: 0.5rem;
 .boxed-text {
   border: 2px dashed $gray-light;
   border-radius: $border-radius;
-  margin-bottom: $spacer-y;
+  margin-bottom: $spacer;
 
   .boxed-text-content {
-    margin: ($spacer-y * .5) ($spacer-x * .5);
+    margin: ($spacer * .5) ($spacer * .5);
     overflow: auto;
   }
 }
@@ -257,7 +258,7 @@ details {
     color: $gray-dark;
     cursor: pointer;
     font-size: 1.1em;
-    padding: ($spacer-y * .25) ($spacer-x * .25) ($spacer-y * .25) $spacer-x;
+    padding: ($spacer * .25) ($spacer * .25) ($spacer * .25) $spacer;
     display: flex;
     align-items: center;
   }
@@ -303,7 +304,7 @@ details {
 }
 
 .embed-responsive {
-   margin: $spacer-y 0;
+   margin: $spacer 0;
 }
 
 .badge- {
@@ -358,7 +359,7 @@ body {
 
 #scrollspy-table-of-contents .nav-link {
   font-size: 0.9rem;
-  padding: ($spacer-y * .25) $spacer-x;
+  padding: ($spacer * .25) $spacer;
 }
 
 #content-container table:not(.table) {
@@ -368,7 +369,7 @@ body {
   overflow-x: auto;
   width: 100%;
   td, th {
-    padding: ($spacer-x * .75);
+    padding: ($spacer * .75);
   }
   th {
     color: #464a4c;
