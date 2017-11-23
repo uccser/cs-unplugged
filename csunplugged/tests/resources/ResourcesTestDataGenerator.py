@@ -19,8 +19,8 @@ class ResourcesTestDataGenerator:
             Resource object.
         """
         resource = Resource(
-            slug="resource-{}".format(slug),
-            name="Resource {}".format(name),
+            slug=slug,
+            name=name,
             content=content,
             generator_module=generator_module,
             copies=copies,

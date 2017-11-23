@@ -13,8 +13,6 @@ class BareResourceGenerator(BaseResourceGenerator):
         Args:
             requested_options: QueryDict of requested_options (QueryDict).
         """
-        # Use deepcopy to avoid successive generators from sharing the same
-        # valid_options dictionary.
         super().__init__(requested_options)
 
     def data(self):
@@ -30,3 +28,18 @@ class BareResourceGeneratorWithCopies(BareResourceGenerator):
     """Class for bare resource generator with copies."""
 
     copies = True
+
+
+class BareResourceGeneratorMultiPage(BareResourceGenerator):
+    """Class for bare resource generator with two pages."""
+
+    def data(self):
+        """Create data for a copy of the resource.
+
+        Returns:
+            A list of two dictionaries, one for each page of the resource.
+        """
+        return [
+            {"type": "html", "data": "Page 1"},
+            {"type": "html", "data": "Page 2"}
+        ]
