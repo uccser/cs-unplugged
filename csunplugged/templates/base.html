@@ -7,7 +7,7 @@
 {% get_language_info for LANGUAGE_CODE as current_language %}
 
 <!DOCTYPE html>
-<html lang="{{ LANGUAGE_CODE }}">
+<html lang="{{ LANGUAGE_CODE }}" {% if current_language.bidi %}dir="rtl"{% endif %}>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
