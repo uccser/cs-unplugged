@@ -3,6 +3,8 @@
 from PIL import Image, ImageDraw
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 from utils.bool_to_yes_no import bool_to_yes_no
+from django.utils.translation import ugettext as _
+from resources.utils.resource_parameters import EnumResourceParameter
 
 KEY_DATA = {
     "A": {
@@ -56,13 +58,32 @@ KEY_DATA = {
     },
 }
 
+HIGHLIGHT_VALUES = {
+    "no": _("None"),
+    "A": "A",
+    "B": "B",
+    "C": "C",
+    "D": "D",
+    "E": "E",
+    "F": "F",
+    "G": "G"
+}
+
 
 class PianoKeysResourceGenerator(BaseResourceGenerator):
     """Class for Piano Keys resource generator."""
 
-    additional_valid_options = {
-        "highlight": [False, "A", "B", "C", "D", "E", "F", "G"],
-    }
+    @classmethod
+    def get_additional_options(cls):
+        """Additional options for PianoKeysResourceGenerator."""
+        return {
+            "highlight": EnumResourceParameter(
+                name="highlight",
+                description=_("Piano keys to highlight"),
+                values=HIGHLIGHT_VALUES,
+                default=False
+            )
+        }
 
     def data(self):
         """Create a image for Piano Keys resource.
@@ -70,12 +91,12 @@ class PianoKeysResourceGenerator(BaseResourceGenerator):
         Returns:
             A list of dictionaries for each resource page.
         """
-        highlight = self.requested_options["highlight"]
+        highlight = self.options["highlight"].value
         image_path = "static/img/resources/piano-keys/keyboard.png"
         image = Image.open(image_path)
         page = Image.new("RGB", image.size, "#FFF")
 
-        if highlight:
+        if highlight != "no":
             self.highlight_key_areas(page, KEY_DATA.get(highlight))
 
         # Add piano keys overlay
@@ -106,6 +127,6 @@ class PianoKeysResourceGenerator(BaseResourceGenerator):
             text for subtitle (str).
         """
         return "{} highlight - {}".format(
-            bool_to_yes_no(self.requested_options["highlight"]),
+            bool_to_yes_no(self.options["highlight"].value),
             super().subtitle
         )

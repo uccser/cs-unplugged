@@ -1,15 +1,20 @@
 from django.http import QueryDict
 from django.test import tag
-from tests.BaseTestWithDB import BaseTestWithDB
 from resources.generators.PianoKeysResourceGenerator import PianoKeysResourceGenerator
+from tests.resources.generators.utils import BaseGeneratorTest
 
 
 @tag("resource")
-class PianoKeysResourceGeneratorTest(BaseTestWithDB):
+class PianoKeysResourceGeneratorTest(BaseGeneratorTest):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.language = "en"
+        self.base_valid_query = QueryDict("highlight=no&paper_size=a4")
+
+    def test_highlight_values(self):
+        generator = PianoKeysResourceGenerator(self.base_valid_query)
+        self.run_parameter_smoke_tests(generator, "highlight")
 
     def test_subtitle_no_a4(self):
         query = QueryDict("highlight=no&paper_size=a4")

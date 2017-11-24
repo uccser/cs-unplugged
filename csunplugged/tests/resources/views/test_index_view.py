@@ -23,7 +23,7 @@ class IndexViewTest(BaseTestWithDB):
         self.test_data.create_resource(
             "binary-cards",
             "Binary Cards",
-            "resources/binary-cards.html",
+            "Description of binary cards",
             "BinaryCardsResourceGenerator",
         )
         url = reverse("resources:index")
@@ -31,20 +31,20 @@ class IndexViewTest(BaseTestWithDB):
         self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertQuerysetEqual(
             response.context["all_resources"],
-            ["<Resource: Resource Binary Cards>"]
+            ["<Resource: Binary Cards>"]
         )
 
     def test_resources_index_with_multiple_resources(self):
         self.test_data.create_resource(
             "binary-cards",
             "Binary Cards",
-            "resources/binary-cards.html",
+            "Description of binary cards",
             "BinaryCardsResourceGenerator",
         )
         self.test_data.create_resource(
             "sorting-network",
             "Sorting Network",
-            "resources/sorting-network.html",
+            "Description of sorting network",
             "SortingNetworkResourceGenerator.py",
         )
         url = reverse("resources:index")
@@ -53,7 +53,7 @@ class IndexViewTest(BaseTestWithDB):
         self.assertQuerysetEqual(
             response.context["all_resources"],
             [
-                "<Resource: Resource Binary Cards>",
-                "<Resource: Resource Sorting Network>",
+                "<Resource: Binary Cards>",
+                "<Resource: Sorting Network>",
             ]
         )
