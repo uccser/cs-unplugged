@@ -232,12 +232,8 @@ $rounded-corner-radius: 0.5rem;
     height: 2rem;
   }
 
-  .navbar-nav .nav-link {
-    color: $white;
-    &:hover {
-      color: $white;
-      text-decoration: underline;
-    }
+  .navbar-nav .nav-link:hover {
+    text-decoration: underline;
   }
 }
 
