@@ -117,13 +117,10 @@
               {% endblocktrans %}
             </p>
             <p>
+              {% url 'general:principles' as principles_url %}
               {% blocktrans trimmed %}
-              See more about our principles
+              Read more about <a href="{{ principles_url }}">our principles here</a>.
               {% endblocktrans %}
-              <a href="{% url 'general:principles' %}">
-                {% trans "here" %}.
-              </a>
-
             </p>
           </div>
 
