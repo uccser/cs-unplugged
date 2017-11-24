@@ -183,7 +183,7 @@ $rounded-corner-radius: 0.5rem;
 }
 
 .navbar {
-  background: linear-gradient(90deg, darken($red, 10%), $red, $red);
+  background-color: $red;
   // border-bottom: 2px $red solid;
 
   #navbar-brand-logo {
@@ -204,6 +204,10 @@ $rounded-corner-radius: 0.5rem;
 
 .white-footer {
   border-top: 2px $red solid;
+}
+
+.footer-statement {
+  border-top: 1px $white solid;
 }
 
 #page-footer {

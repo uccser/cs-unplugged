@@ -40,7 +40,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="{% url 'general:home' %}">
-          <img src="{% static 'img/logo-white.png' %}" id="navbar-brand-logo" class="d-inline-block align-top" alt="CS Unplugged logo">
+          <img src="{% static 'img/logo-mono.png' %}" id="navbar-brand-logo" class="d-inline-block align-top" alt="CS Unplugged logo">
           <a href="http://cs-unplugged.readthedocs.io/en/latest/changelog.html" class="badge">{{ VERSION_NUMBER_ENGLISH }}</a>
         </a>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -78,7 +78,7 @@
       {% endblock body_container %}
     </div>
 
-    <div class="container white-footer mt-5 py-5 text-center">
+    <div class="container white-footer mt-5 py-5">
       <div class="row align-items-center justify-content-center">
         <div class="col-4 col-lg-3">
           <a href="http://www.cosc.canterbury.ac.nz/research/RG/CSE/">
@@ -96,73 +96,10 @@
           </a>
         </div>
       </div>
-
-      <div class="row justify-content-center mt-5">
-        <div class="col-3">
-          <p class="mb-1 font-weight-bold">{% trans "Useful Links" %}</p>
-          <ul class="list-unstyled">
-            <li>
-              <a href="{% url 'general:about' %}">
-                {% trans "About" %}
-              </a>
-            </li>
-            <li>
-              <a href="{% url 'topics:index' %}">
-                {% trans "Topics" %}
-              </a>
-            </li>
-            <li>
-              <a href="{% url 'resources:index' %}">
-                {% trans "Resources" %}
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-3">
-          <p class="mb-1 font-weight-bold">{% trans "Community" %}</p>
-          <ul class="list-unstyled">
-            <li>
-              <a href="https://twitter.com/UCCSEd">
-                {% trans "Twitter" %}
-              </a>
-            </li>
-            <li>
-              <a href="https://www.youtube.com/user/csunplugged">
-                {% trans "YouTube" %}
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/uccser/cs-unplugged">
-                {% trans "GitHub" %}
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-3">
-          <p class="mb-1 font-weight-bold">{% trans "Help" %}</p>
-          <ul class="list-unstyled">
-            <li>
-              <a href="{% url 'topics:glossary' %}">
-                {% trans "Glossary" %}
-              </a>
-            </li>
-            <li>
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSccsE8TC-o0iptiT83iQ9R3nbUngkK0ch4G8sljCL8IpF-89Q/viewform">
-                {% trans "Feedback" %}
-              </a>
-            </li>
-            <li>
-              <a href="{% url 'general:contact' %}">
-                {% trans "Contact" %}
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
     </div>
 
-    <footer id="page-footer" class="text-center">
-      <div class="container background-csfg py-3 w-100">
+    <footer id="page-footer">
+      <div class="container background-csfg py-3 w-100 text-center">
         <p class="mb-0">
           {% blocktrans trimmed %}
           Looking for something for high schools?
@@ -170,7 +107,86 @@
           {% endblocktrans %}
         </p>
       </div>
+
       <div class="container py-3">
+        <div class="row justify-content-center mt-4">
+          <div class="col-6">
+            <p>
+              {% blocktrans trimmed %}
+              The primary goal of the Unplugged project is to promote Computer Science (and computing in general) to young people as an interesting, engaging, and intellectually stimulating discipline.
+              {% endblocktrans %}
+            </p>
+            <p>
+              {% blocktrans trimmed %}
+              See more about our principles <a href="">here</a>.
+              {% endblocktrans %}
+            </p>
+          </div>
+
+          <div class="col-2">
+            <p class="mb-1 font-weight-bold">{% trans "Useful Links" %}</p>
+            <ul class="list-unstyled">
+              <li>
+                <a href="{% url 'general:about' %}">
+                  {% trans "About" %}
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'topics:index' %}">
+                  {% trans "Topics" %}
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'resources:index' %}">
+                  {% trans "Resources" %}
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-2">
+            <p class="mb-1 font-weight-bold">{% trans "Community" %}</p>
+            <ul class="list-unstyled">
+              <li>
+                <a href="https://twitter.com/UCCSEd">
+                  {% trans "Twitter" %}
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/csunplugged">
+                  {% trans "YouTube" %}
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/uccser/cs-unplugged">
+                  {% trans "GitHub" %}
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-2">
+            <p class="mb-1 font-weight-bold">{% trans "Help" %}</p>
+            <ul class="list-unstyled">
+              <li>
+                <a href="{% url 'topics:glossary' %}">
+                  {% trans "Glossary" %}
+                </a>
+              </li>
+              <li>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSccsE8TC-o0iptiT83iQ9R3nbUngkK0ch4G8sljCL8IpF-89Q/viewform">
+                  {% trans "Feedback" %}
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'general:contact' %}">
+                  {% trans "Contact" %}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="container py-3 footer-statement text-center">
         <p>
           {% blocktrans trimmed %}
           The CS Unplugged material is open source on <a href="https://github.com/uccser/cs-unplugged">GitHub</a>, and this website's content is shared under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International license</a>.
