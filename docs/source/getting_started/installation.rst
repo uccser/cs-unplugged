@@ -224,12 +224,13 @@ To check the project works, open a terminal in the project root directory,
 which is the ``cs-unplugged/`` directory (should contain a file called
 ``csu``).
 
-Type the following command into the terminal (we will cover this command
+Type the following commands into the terminal (we will cover these commands
 in more detail on the next page):
 
 .. code-block:: bash
 
     $ ./csu start
+    $ ./csu update
 
 If this is the first time you're running this script, it will need to build
 system images.

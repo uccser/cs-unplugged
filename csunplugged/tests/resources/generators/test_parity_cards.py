@@ -1,15 +1,20 @@
 from django.http import QueryDict
 from django.test import tag
-from tests.BaseTestWithDB import BaseTestWithDB
 from resources.generators.ParityCardsResourceGenerator import ParityCardsResourceGenerator
+from tests.resources.generators.utils import BaseGeneratorTest
 
 
 @tag("resource")
-class ParityCardsResourceGeneratorTest(BaseTestWithDB):
+class ParityCardsResourceGeneratorTest(BaseGeneratorTest):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.language = "en"
+        self.base_valid_query = QueryDict("back_colour=black&paper_size=a4")
+
+    def test_back_colour_values(self):
+        generator = ParityCardsResourceGenerator(self.base_valid_query)
+        self.run_parameter_smoke_tests(generator, "back_colour")
 
     def test_subtitle_black_a4(self):
         query = QueryDict("back_colour=black&paper_size=a4")

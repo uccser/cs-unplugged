@@ -6,10 +6,10 @@ from utils.errors.CouldNotFindYAMLFileError import CouldNotFindYAMLFileError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.EmptyYAMLFileError import EmptyYAMLFileError
 from utils.errors.InvalidYAMLValueError import InvalidYAMLValueError
+from django.utils import translation
 
 
 class ResourceLoaderTest(BaseTestWithDB):
-
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.test_data = ResourcesTestDataGenerator()
@@ -20,10 +20,28 @@ class ResourceLoaderTest(BaseTestWithDB):
         config_file = "basic-config.yaml"
         resource_loader = ResourcesLoader(structure_filename=config_file, base_path=self.BASE_PATH)
         resource_loader.load()
-        self.assertQuerysetEqual(
-            Resource.objects.all(),
-            ["<Resource: Grid>"]
-        )
+        resources = Resource.objects.all()
+        self.assertEqual(1, len(resources))
+        resource = resources[0]
+        self.assertEqual("Resource 1", resource.name)
+        self.assertIn("Description of resource 1", resource.content)
+        self.assertEqual("resource-untranslated", resource.slug)
+        self.assertEqual("GridResourceGenerator", resource.generator_module)
+        self.assertEqual("img/resources/grid/thumbnail.png", resource.thumbnail_static_path)
+        self.assertEqual(False, resource.copies)
+
+    def test_resource_loader_config_missing_translation_fallback(self):
+        config_file = "basic-config.yaml"
+        resource_loader = ResourcesLoader(structure_filename=config_file, base_path=self.BASE_PATH)
+        resource_loader.load()
+        resources = Resource.objects.all()
+        self.assertEqual(1, len(resources))
+        resource = resources[0]
+        with translation.override("de"):
+            # Name should fall back to English
+            self.assertEqual("Resource 1", resource.name)
+            # Content should not fall back to English
+            self.assertEqual("", resource.content)
 
     def test_resource_loader_missing_configuration_file(self):
         config_file = "missing.yaml"
@@ -41,66 +59,6 @@ class ResourceLoaderTest(BaseTestWithDB):
             resource_loader.load,
         )
 
-    def test_resource_loader_correct_slug_value(self):
-        config_file = "basic-config.yaml"
-        resource_loader = ResourcesLoader(structure_filename=config_file, base_path=self.BASE_PATH)
-        resource_loader.load()
-        self.assertEquals(
-            Resource.objects.get(slug="grid").slug,
-            "grid",
-        )
-
-    def test_resource_loader_correct_name_value(self):
-        config_file = "basic-config.yaml"
-        resource_loader = ResourcesLoader(structure_filename=config_file, base_path=self.BASE_PATH)
-        resource_loader.load()
-        self.assertEquals(
-            Resource.objects.get(slug="grid").name,
-            "Grid",
-        )
-
-    def test_resource_loader_missing_name_value(self):
-        config_file = "missing-name.yaml"
-        resource_loader = ResourcesLoader(structure_filename=config_file, base_path=self.BASE_PATH)
-        self.assertRaises(
-            MissingRequiredFieldError,
-            resource_loader.load,
-        )
-
-    def test_resource_loader_correct_template_value(self):
-        config_file = "basic-config.yaml"
-        resource_loader = ResourcesLoader(structure_filename=config_file, base_path=self.BASE_PATH)
-        resource_loader.load()
-        self.assertEquals(
-            Resource.objects.get(slug="grid").webpage_template,
-            "resources/grid.html",
-        )
-
-    def test_resource_loader_missing_template_value(self):
-        config_file = "missing-template.yaml"
-        resource_loader = ResourcesLoader(structure_filename=config_file, base_path=self.BASE_PATH)
-        self.assertRaises(
-            MissingRequiredFieldError,
-            resource_loader.load,
-        )
-
-    def test_resource_loader_invalid_template_value(self):
-        config_file = "invalid-template.yaml"
-        resource_loader = ResourcesLoader(structure_filename=config_file, base_path=self.BASE_PATH)
-        self.assertRaises(
-            FileNotFoundError,
-            resource_loader.load,
-        )
-
-    def test_resource_loader_correct_module_value(self):
-        config_file = "basic-config.yaml"
-        resource_loader = ResourcesLoader(structure_filename=config_file, base_path=self.BASE_PATH)
-        resource_loader.load()
-        self.assertEquals(
-            Resource.objects.get(slug="grid").generator_module,
-            "GridResourceGenerator",
-        )
-
     def test_resource_loader_missing_module_value(self):
         config_file = "missing-module.yaml"
         resource_loader = ResourcesLoader(structure_filename=config_file, base_path=self.BASE_PATH)
@@ -113,7 +71,7 @@ class ResourceLoaderTest(BaseTestWithDB):
         config_file = "invalid-module.yaml"
         resource_loader = ResourcesLoader(structure_filename=config_file, base_path=self.BASE_PATH)
         self.assertRaises(
-            ModuleNotFoundError,
+            AttributeError,
             resource_loader.load,
         )
 
@@ -122,17 +80,8 @@ class ResourceLoaderTest(BaseTestWithDB):
         resource_loader = ResourcesLoader(structure_filename=config_file, base_path=self.BASE_PATH)
         resource_loader.load()
         self.assertEquals(
-            Resource.objects.get(slug="grid").generator_module,
+            Resource.objects.get(slug="resource-untranslated").generator_module,
             "GridResourceGenerator",
-        )
-
-    def test_resource_loader_correct_thumbnail_value(self):
-        config_file = "basic-config.yaml"
-        resource_loader = ResourcesLoader(structure_filename=config_file, base_path=self.BASE_PATH)
-        resource_loader.load()
-        self.assertEquals(
-            Resource.objects.get(slug="grid").thumbnail_static_path,
-            "img/resources/grid/thumbnail.png",
         )
 
     def test_resource_loader_missing_thumbnail_value(self):
@@ -149,15 +98,6 @@ class ResourceLoaderTest(BaseTestWithDB):
         self.assertRaises(
             FileNotFoundError,
             resource_loader.load,
-        )
-
-    def test_resource_loader_correct_copies_value(self):
-        config_file = "basic-config.yaml"
-        resource_loader = ResourcesLoader(structure_filename=config_file, base_path=self.BASE_PATH)
-        resource_loader.load()
-        self.assertEquals(
-            Resource.objects.get(slug="grid").copies,
-            False,
         )
 
     def test_resource_loader_missing_copies_value(self):
@@ -183,8 +123,21 @@ class ResourceLoaderTest(BaseTestWithDB):
         self.assertQuerysetEqual(
             Resource.objects.all(),
             [
-                "<Resource: Grid>",
-                "<Resource: Job Badges>",
+                "<Resource: Resource 1>",
+                "<Resource: Resource 2>",
             ],
             ordered=False,
         )
+
+    def test_resource_loader_translation(self):
+        config_file = "translation.yaml"
+        resource_loader = ResourcesLoader(structure_filename=config_file, base_path=self.BASE_PATH)
+        resource_loader.load()
+        resources = Resource.objects.all()
+        self.assertEqual(1, len(resources))
+        resource = resources[0]
+        self.assertEqual("English Resource Name", resource.name)
+        self.assertIn("English resource description", resource.content)
+        with translation.override("de"):
+            self.assertEqual("German Resource Name", resource.name)
+            self.assertIn("German resource description", resource.content)

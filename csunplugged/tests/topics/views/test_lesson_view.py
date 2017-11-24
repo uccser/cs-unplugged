@@ -333,8 +333,8 @@ class LessonViewTest(BaseTestWithDB):
             [
                 {
                     "description": "Description 1",
-                    "slug": "resource-grid",
-                    "name": "Resource Grid",
+                    "slug": "grid",
+                    "name": "Grid",
                     "thumbnail": "static/images/thumbnail-grid",
                 }
             ]
@@ -376,14 +376,14 @@ class LessonViewTest(BaseTestWithDB):
             [
                 {
                     "description": "Description 2",
-                    "slug": "resource-arrows",
-                    "name": "Resource Arrows",
+                    "slug": "arrows",
+                    "name": "Arrows",
                     "thumbnail": "static/images/thumbnail-arrows",
                 },
                 {
                     "description": "Description 1",
-                    "slug": "resource-grid",
-                    "name": "Resource Grid",
+                    "slug": "grid",
+                    "name": "Grid",
                     "thumbnail": "static/images/thumbnail-grid",
                 },
             ]
