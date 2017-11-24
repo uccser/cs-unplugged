@@ -2,24 +2,30 @@
 
 from abc import ABC, abstractmethod
 from resources.utils.resize_encode_resource_images import resize_encode_resource_images
-from utils.str_to_bool import str_to_bool
-from utils.errors.QueryParameterMissingError import QueryParameterMissingError
-from utils.errors.QueryParameterInvalidError import QueryParameterInvalidError
 from utils.errors.ThumbnailPageNotFoundError import ThumbnailPageNotFoundError
 from utils.errors.MoreThanOneThumbnailPageFoundError import MoreThanOneThumbnailPageFoundError
-from copy import deepcopy
 from django.conf import settings
 from django.template.loader import render_to_string
 from django.contrib.staticfiles import finders
+
+from resources.utils.resource_parameters import (
+    EnumResourceParameter,
+    TextResourceParameter,
+    IntegerResourceParameter,
+)
+
+from django.utils.translation import ugettext as _
+
+PAPER_SIZE_VALUES = {
+    "a4": _("A4"),
+    "letter": _("US Letter")
+}
 
 
 class BaseResourceGenerator(ABC):
     """Class for generator for a resource."""
 
-    default_valid_options = {
-        "paper_size": ["a4", "letter"]
-    }
-    additional_valid_options = dict()
+    copies = False  # Default
 
     def __init__(self, requested_options=None):
         """Construct BaseResourceGenerator instance.
@@ -27,12 +33,77 @@ class BaseResourceGenerator(ABC):
         Args:
             requested_options: QueryDict of requested_options (QueryDict).
         """
-        # Use deepcopy to avoid successive generators from sharing the same
-        # valid_options dictionary.
-        self.valid_options = deepcopy(BaseResourceGenerator.default_valid_options)
-        self.valid_options.update(self.additional_valid_options)
+        self.options = self.get_options()
+        self.options.update(self.get_local_options())
         if requested_options:
-            self.requested_options = self.process_requested_options(requested_options)
+            self.process_requested_options(requested_options)
+
+    @classmethod
+    def get_options(cls):
+        """Get options dictionary, including additional subclass options.
+
+        Returns:
+            Dictionary, of form {option name: ResourceParameter object, ...}
+        """
+        options = cls.get_additional_options()
+        options.update({
+            "paper_size": EnumResourceParameter(
+                name="paper_size",
+                description=_("Paper Size"),
+                values=PAPER_SIZE_VALUES,
+                default="a4"
+            ),
+        })
+        return options
+
+    @classmethod
+    def get_local_options(cls):
+        """Get local options dictionary, including additional subclass local options.
+
+        These options are only included when running locally.
+
+        Returns:
+            Dictionary, of form {option name: ResourceParameter object, ...}
+        """
+        local_options = cls.get_additional_local_options()
+        local_options = {
+            "header_text": TextResourceParameter(
+                name="header_text",
+                description=_("Header Text"),
+                placeholder=_("Example School: Room Four"),
+                required=False
+            ),
+        }
+        if cls.copies:
+            local_options.update({
+                "copies":  IntegerResourceParameter(
+                    name="copies",
+                    description=_("Number of Copies"),
+                    min_val=1,
+                    max_val=50,
+                    default=1,
+                    required=False
+                ),
+            })
+        return local_options
+
+    @classmethod
+    def get_additional_options(cls):
+        """Return additional options, for use on subclass.
+
+        Returns:
+            Dictionary, of form {option name: ResourceParameter object, ...}
+        """
+        return {}
+
+    @classmethod
+    def get_additional_local_options(cls):
+        """Return additional options, for use on subclass.
+
+        Returns:
+            Dictionary, of form {option name: ResourceParameter object, ...}
+        """
+        return {}
 
     @abstractmethod
     def data(self):
@@ -49,7 +120,7 @@ class BaseResourceGenerator(ABC):
         Returns:
             Text for subtitle (str).
         """
-        return self.requested_options["paper_size"]
+        return self.options["paper_size"].value
 
     def process_requested_options(self, requested_options):
         """Convert requested options to usable types.
@@ -65,18 +136,10 @@ class BaseResourceGenerator(ABC):
         Returns:
             QueryDict of converted requested options (QueryDict).
         """
-        requested_options = requested_options.copy()
-        for option in self.valid_options.keys():
-            values = requested_options.getlist(option)
-            if not values:
-                raise QueryParameterMissingError(option)
-            for (i, value) in enumerate(values):
-                update_value = str_to_bool(value)
-                if update_value not in self.valid_options[option]:
-                    raise QueryParameterInvalidError(option, value)
-                values[i] = update_value
-            requested_options.setlist(option, values)
-        return requested_options
+        # requested_options = requested_options.copy()
+        for option_name, option in self.options.items():
+            values = requested_options.getlist(option_name)
+            option.process_requested_values(values)
 
     def pdf(self, resource_name):
         """Return PDF for resource request.
@@ -96,17 +159,20 @@ class BaseResourceGenerator(ABC):
         from weasyprint import HTML, CSS
         context = dict()
         context["resource"] = resource_name
-        context["header_text"] = self.requested_options.get("header_text", "")
-        context["paper_size"] = self.requested_options["paper_size"]
+        context["header_text"] = self.options["header_text"].value
+        context["paper_size"] = self.options["paper_size"].value
 
-        num_copies = range(0, int(self.requested_options.get("copies", 1)))
+        if self.copies:
+            num_copies = self.options["copies"].value
+        else:
+            num_copies = 1
         context["all_data"] = []
-        for copy in num_copies:
+        for copy in range(num_copies):
             copy_data = self.data()
             if not isinstance(copy_data, list):
                 copy_data = [copy_data]
             copy_data = resize_encode_resource_images(
-                self.requested_options["paper_size"],
+                self.options["paper_size"].value,
                 copy_data
             )
             context["all_data"].append(copy_data)
@@ -156,7 +222,7 @@ class BaseResourceGenerator(ABC):
                 raise MoreThanOneThumbnailPageFoundError(self)
 
         thumbnail_data = resize_encode_resource_images(
-            self.requested_options["paper_size"],
+            self.options["paper_size"].value,
             thumbnail_data
         )
         return thumbnail_data[0]
@@ -174,7 +240,7 @@ class BaseResourceGenerator(ABC):
         from weasyprint import HTML, CSS
         context = dict()
         context["resource"] = resource_name
-        context["paper_size"] = self.requested_options["paper_size"]
+        context["paper_size"] = self.options["paper_size"].value
         context["all_data"] = [[thumbnail_data]]
         pdf_html = render_to_string("resources/base-resource-pdf.html", context)
         html = HTML(string=pdf_html, base_url=settings.BUILD_ROOT)

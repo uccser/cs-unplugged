@@ -3,6 +3,9 @@
 from PIL import Image, ImageDraw, ImageFont
 import os.path
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
+from django.utils.translation import ugettext as _
+from resources.utils.resource_parameters import EnumResourceParameter, BoolResourceParameter
+
 
 BASE_IMAGE_PATH = "static/img/resources/binary-cards-small/"
 IMAGE_SIZE_X = 2480
@@ -13,15 +16,39 @@ IMAGE_DATA = [
     ("binary-cards-small-3.png", 12),
 ]
 
+NUMBER_BITS_VALUES = {
+    "4": _("Four (1 to 8)"),
+    "8": _("Eight (1 to 128)"),
+    "12": _("Twelve (1 to 2048)")
+}
+
 
 class BinaryCardsSmallResourceGenerator(BaseResourceGenerator):
     """Class for Binary Cards (small) resource generator."""
 
-    additional_valid_options = {
-        "number_bits": ["4", "8", "12"],
-        "dot_counts": [True, False],
-        "black_back": [True, False],
-    }
+    @classmethod
+    def get_additional_options(cls):
+        """Additional options for BinaryCardsSmallResourceGenerator."""
+        return {
+            "number_bits": EnumResourceParameter(
+                name="number_bits",
+                description=_("Number of Bits"),
+                values=NUMBER_BITS_VALUES,
+                default="4"
+            ),
+            "dot_counts": BoolResourceParameter(
+                name="dot_counts",
+                description=_("Display Dot Counts"),
+                default=True,
+            ),
+            "black_back": BoolResourceParameter(
+                name="black_back",
+                description=_("Black on Card Back"),
+                default=False,
+                true_text=_("Yes - Uses a lot of black ink, but conveys clearer card state. Print double sided."),
+                false_text=_("No - Print single sided.")
+            )
+        }
 
     def data(self):
         """Create a image for Binary Cards (small) resource.
@@ -29,7 +56,7 @@ class BinaryCardsSmallResourceGenerator(BaseResourceGenerator):
         Returns:
             A dictionary or list of dictionaries for each resource page.
         """
-        if self.requested_options["dot_counts"]:
+        if self.options["dot_counts"].value:
             font_path = "static/fonts/PatrickHand-Regular.ttf"
             font = ImageFont.truetype(font_path, 200)
             TEXT_COORDS = [
@@ -42,9 +69,9 @@ class BinaryCardsSmallResourceGenerator(BaseResourceGenerator):
         pages = []
 
         for (image_path, image_bits) in IMAGE_DATA:
-            if image_bits <= int(self.requested_options["number_bits"]):
+            if image_bits <= int(self.options["number_bits"].value):
                 image = Image.open(os.path.join(BASE_IMAGE_PATH, image_path))
-                if self.requested_options["dot_counts"]:
+                if self.options["dot_counts"].value:
                     draw = ImageDraw.Draw(image)
                     for number in range(image_bits - 4, image_bits):
                         text = str(pow(2, number))
@@ -59,7 +86,7 @@ class BinaryCardsSmallResourceGenerator(BaseResourceGenerator):
                         )
                 pages.append({"type": "image", "data": image})
 
-                if self.requested_options["black_back"]:
+                if self.options["black_back"].value:
                     black_card = Image.new("1", (IMAGE_SIZE_X, IMAGE_SIZE_Y))
                     pages.append({"type": "image", "data": black_card})
         pages[0]["thumbnail"] = True
@@ -75,16 +102,16 @@ class BinaryCardsSmallResourceGenerator(BaseResourceGenerator):
         Returns:
             text for subtitle (str)
         """
-        if self.requested_options["dot_counts"]:
+        if self.options["dot_counts"].value:
             display_numbers_text = "with dot counts"
         else:
             display_numbers_text = "without dot counts"
-        if self.requested_options["black_back"]:
+        if self.options["black_back"].value:
             black_back_text = "with black back"
         else:
             black_back_text = "without black back"
         text = "{} bits - {} - {} - {}".format(
-            self.requested_options["number_bits"],
+            self.options["number_bits"].value,
             display_numbers_text,
             black_back_text,
             super().subtitle
