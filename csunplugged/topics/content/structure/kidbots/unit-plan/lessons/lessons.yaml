@@ -1,14 +1,15 @@
-storytelling:
+rescue-mission:
   duration: 30
-  computational-thinking-links: storytelling-ct-links.md
+  computational-thinking-links: rescue-mission-ct-links.md
   learning-outcomes:
-    - unplugged-programming-give-instructions
+    - unplugged-programming-give-instructions-move
     - unplugged-programming-identify-bug-correct
-    - unplugged-programming-communicate-debugging
-    - literacy-plan-story-props
-    - unplugged-programming-explain-tell-stories
+    - unplugged-programming-explain-exact-instructions
     - unplugged-programming-follow-instructions
-    - unplugged-programming-recall-direction-words
+    - unplugged-programming-give-accurate-instructions-pace
+    - unplugged-programming-accurately-count
+    - unplugged-programming-communicate-debugging
+    - unplugged-programming-actively-listen-feedback
   generated-resources:
     - arrows
     - left-right-cards
@@ -16,8 +17,11 @@ storytelling:
     - grid
   classroom-resources:
     - blocks
-    - whiteboard
+    - handheld-whiteboards
     - whiteboard-pens
+    - clipboards
+    - paper
+    - pens
 
 fitness-unplugged:
   duration: 45
@@ -66,27 +70,23 @@ sending-a-rocket-to-mars:
     - catch-the-mouse
     - catch-the-mouse-random
 
-rescue-mission:
+modulo:
   duration: 30
-  computational-thinking-links: rescue-mission-ct-links.md
-  learning-outcomes:
-    - unplugged-programming-give-instructions-move
-    - unplugged-programming-identify-bug-correct
-    - unplugged-programming-explain-exact-instructions
-    - unplugged-programming-follow-instructions
-    - unplugged-programming-give-accurate-instructions-pace
-    - unplugged-programming-accurately-count
-    - unplugged-programming-communicate-debugging
-    - unplugged-programming-actively-listen-feedback
+  computational-thinking-links: modulo-ct-links.md
   generated-resources:
-    - arrows
-    - left-right-cards
-    - job-badges
-    - grid
+    - modulo-clock
+    - train-stations
+    - piano-keys
   classroom-resources:
-    - blocks
-    - handheld-whiteboards
-    - whiteboard-pens
-    - clipboards
-    - paper
-    - pens
+    - counters
+  programming-challenges:
+    - modulo-even-odd-numbers
+    - modulo-check-divisor
+    - modulo-add-hours-12-hour-clock
+    - modulo-add-hours-12-hour-clock-without-mod
+    - modulo-add-hours-24-hour-clock
+    - modulo-display-midi-note
+    - modulo-add-months
+    - modulo-add-video-timings
+    - modulo-check-leap-year
+  programming-challenges-description: modulo-programming.md

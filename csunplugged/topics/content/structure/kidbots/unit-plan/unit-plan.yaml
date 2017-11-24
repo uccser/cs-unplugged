@@ -1,14 +1,14 @@
 lessons: lessons/lessons.yaml
-computational-thinking-links: kidbots-unit-plan-ct-links.md
+computational-thinking-links: unit-plan-ct-links.md
 
 age-groups:
   5-7:
     rescue-mission:
       number: 1
-    storytelling:
-      number: 2
     fitness-unplugged:
-      number: 3
+      number: 2
   8-10:
     sending-a-rocket-to-mars:
       number: 1
+    modulo:
+      number: 3

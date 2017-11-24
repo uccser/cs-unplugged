@@ -1,9 +1,0 @@
-lessons: lessons/lessons.yaml
-computational-thinking-links: geometry-unit-plan-ct-links.md
-
-age-groups:
-  5-7:
-    finding-2d-shapes:
-      number: 1
-    moving-in-a-shape:
-      number: 2
