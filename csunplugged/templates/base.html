@@ -118,8 +118,12 @@
             </p>
             <p>
               {% blocktrans trimmed %}
-              See more about our principles <a href="">here</a>.
+              See more about our principles
               {% endblocktrans %}
+              <a href="{% url 'general:principles' %}">
+                {% trans "here" %}.
+              </a>
+
             </p>
           </div>
 
