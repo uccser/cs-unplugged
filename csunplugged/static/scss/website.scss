@@ -1,4 +1,39 @@
-@import "bootstrap/bootstrap";
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap-overrides";
+@import "bootstrap/root";
+@import "bootstrap/print";
+@import "bootstrap/reboot";
+@import "bootstrap/type";
+@import "bootstrap/images";
+@import "bootstrap/code";
+@import "bootstrap/grid";
+@import "bootstrap/tables";
+@import "bootstrap/forms";
+@import "bootstrap/buttons";
+@import "bootstrap/transitions";
+@import "bootstrap/dropdown";
+@import "bootstrap/button-group";
+@import "bootstrap/input-group";
+@import "bootstrap/custom-forms";
+@import "bootstrap/nav";
+@import "bootstrap/navbar";
+@import "bootstrap/card";
+@import "bootstrap/breadcrumb";
+@import "bootstrap/pagination";
+@import "bootstrap/badge";
+@import "bootstrap/jumbotron";
+@import "bootstrap/alert";
+@import "bootstrap/progress";
+@import "bootstrap/media";
+@import "bootstrap/list-group";
+@import "bootstrap/close";
+@import "bootstrap/modal";
+@import "bootstrap/tooltip";
+@import "bootstrap/popover";
+@import "bootstrap/carousel";
+@import "bootstrap/utilities";
 @import "pygments-colorful";
 @import "sticky-state";
 @import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
@@ -20,13 +55,6 @@ img {
   }
   &.inline-image-small {
     max-height: 1.4rem;
-  }
-  &.img-200 {
-    width: 200%;
-  }
-  &.img-pixel {
-    image-rendering: pixelated;
-    image-rendering: crisp-edges;
   }
 }
 
@@ -101,8 +129,8 @@ $rounded-corner-radius: 0.5rem;
   border: 0.2em solid $blue;
   border-radius: $border-radius;
   overflow: hidden;
-  padding: ($spacer-y * .5) ($spacer-x * .5);
-  margin-bottom: $spacer-y;
+  padding: ($spacer * .5) ($spacer * .5);
+  margin-bottom: $spacer;
   width: 100%;
   transition: 0.1s;
   display: flex;
@@ -141,6 +169,21 @@ $rounded-corner-radius: 0.5rem;
   &:focus {
     text-decoration: none;
   }
+  &.unavailable {
+    background-color: rgba($black, 0.2);
+  }
+  .badge-language-unavailable {
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: 0;
+    margin-left: 0;
+  }
+}
+
+.badge-language-unavailable {
+  margin-right: auto;
+  margin-bottom: auto;
+  margin: 0.5em;
 }
 
 @mixin link-box-colour-variant($color) {
@@ -183,25 +226,23 @@ $rounded-corner-radius: 0.5rem;
 }
 
 .navbar {
-  background-color: $white;
-  border-bottom: 2px $red solid;
+  background-color: $red;
 
   #navbar-brand-logo {
-    height: 2.5rem;
+    height: 2rem;
   }
 
-  .navbar-nav .nav-link {
-    font-weight: 500;
-    border: 1px $white solid;
-    border-radius: 0.3rem;
-    &:hover {
-      border-color: $red;
-    }
+  .navbar-nav .nav-link:hover {
+    text-decoration: underline;
   }
 }
 
 .white-footer {
   border-top: 2px $red solid;
+}
+
+.footer-statement {
+  border-top: 1px $white solid;
 }
 
 #page-footer {
@@ -223,10 +264,10 @@ $rounded-corner-radius: 0.5rem;
 .boxed-text {
   border: 2px dashed $gray-light;
   border-radius: $border-radius;
-  margin-bottom: $spacer-y;
+  margin-bottom: $spacer;
 
   .boxed-text-content {
-    margin: ($spacer-y * .5) ($spacer-x * .5);
+    margin: ($spacer * .5) ($spacer * .5);
     overflow: auto;
   }
 }
@@ -257,7 +298,7 @@ details {
     color: $gray-dark;
     cursor: pointer;
     font-size: 1.1em;
-    padding: ($spacer-y * .25) ($spacer-x * .25) ($spacer-y * .25) $spacer-x;
+    padding: ($spacer * .25) ($spacer * .25) ($spacer * .25) $spacer;
     display: flex;
     align-items: center;
   }
@@ -303,36 +344,40 @@ details {
 }
 
 .embed-responsive {
-   margin: $spacer-y 0;
+   margin: $spacer 0;
 }
 
-.badge- {
-  &pink {
+.badge {
+  &-pink {
     background-color: $pink;
   }
-  &green {
+  &-green {
     background-color: $green;
   }
-  &orange {
+  &-orange {
     background-color: $orange;
   }
-  &teal {
+  &-teal {
     background-color: $teal;
   }
-  &blue {
+  &-blue {
     background-color: $blue;
   }
-  &light-purple {
+  &-light-purple {
     background-color: $light-purple;
   }
-  &purple {
+  &-purple {
     background-color: $purple;
   }
-  &yellow {
+  &-yellow {
     background-color: $yellow;
   }
-  &red {
+  &-red {
     background-color: $red;
+  }
+  color: $white;
+  &:hover {
+    color: $white;
   }
 }
 
@@ -358,7 +403,7 @@ body {
 
 #scrollspy-table-of-contents .nav-link {
   font-size: 0.9rem;
-  padding: ($spacer-y * .25) $spacer-x;
+  padding: ($spacer * .25) $spacer;
 }
 
 #content-container table:not(.table) {
@@ -368,7 +413,7 @@ body {
   overflow-x: auto;
   width: 100%;
   td, th {
-    padding: ($spacer-x * .75);
+    padding: ($spacer * .75);
   }
   th {
     color: #464a4c;

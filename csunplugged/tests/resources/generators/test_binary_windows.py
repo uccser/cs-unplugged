@@ -1,15 +1,28 @@
 from django.http import QueryDict
 from django.test import tag
-from tests.BaseTestWithDB import BaseTestWithDB
 from resources.generators.BinaryWindowsResourceGenerator import BinaryWindowsResourceGenerator
+from tests.resources.generators.utils import BaseGeneratorTest
 
 
 @tag("resource")
-class BinaryWindowsResourceGeneratorTest(BaseTestWithDB):
+class BinaryWindowsResourceGeneratorTest(BaseGeneratorTest):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.language = "en"
+        self.base_valid_query = QueryDict("number_bits=4&value_type=binary&dot_counts=yes&paper_size=a4")
+
+    def test_number_bits_values(self):
+        generator = BinaryWindowsResourceGenerator(self.base_valid_query)
+        self.run_parameter_smoke_tests(generator, "number_bits")
+
+    def test_value_type_values(self):
+        generator = BinaryWindowsResourceGenerator(self.base_valid_query)
+        self.run_parameter_smoke_tests(generator, "value_type")
+
+    def test_dot_counts_values(self):
+        generator = BinaryWindowsResourceGenerator(self.base_valid_query)
+        self.run_parameter_smoke_tests(generator, "dot_counts")
 
     def test_subtitle_4_binary_dots_a4(self):
         query = QueryDict("number_bits=4&value_type=binary&dot_counts=yes&paper_size=a4")

@@ -1,15 +1,28 @@
 from django.http import QueryDict
 from django.test import tag
-from tests.BaseTestWithDB import BaseTestWithDB
 from resources.generators.BinaryCardsSmallResourceGenerator import BinaryCardsSmallResourceGenerator
+from tests.resources.generators.utils import BaseGeneratorTest
 
 
 @tag("resource")
-class BinaryCardsSmallResourceGeneratorTest(BaseTestWithDB):
+class BinaryCardsSmallResourceGeneratorTest(BaseGeneratorTest):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.language = "en"
+        self.base_valid_query = QueryDict("number_bits=4&dot_counts=yes&black_back=yes&paper_size=a4")
+
+    def test_number_bits_values(self):
+        generator = BinaryCardsSmallResourceGenerator(self.base_valid_query)
+        self.run_parameter_smoke_tests(generator, "number_bits")
+
+    def test_black_back_values(self):
+        generator = BinaryCardsSmallResourceGenerator(self.base_valid_query)
+        self.run_parameter_smoke_tests(generator, "black_back")
+
+    def test_dot_counts(self):
+        generator = BinaryCardsSmallResourceGenerator(self.base_valid_query)
+        self.run_parameter_smoke_tests(generator, "dot_counts")
 
     def test_subtitle_4_dots_black_a4(self):
         query = QueryDict("number_bits=4&dot_counts=yes&black_back=yes&paper_size=a4")

@@ -133,8 +133,8 @@ class TopicViewTest(BaseTestWithDB):
         self.assertQuerysetEqual(
             response.context["resources"],
             [
-                "<Resource: Resource Binary Windows>",
-                "<Resource: Resource Binary Cards (small)>",
+                "<Resource: Binary Windows>",
+                "<Resource: Binary Cards (small)>",
             ],
             ordered=False,
         )

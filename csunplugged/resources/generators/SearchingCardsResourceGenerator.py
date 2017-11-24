@@ -5,7 +5,8 @@ from math import ceil
 from PIL import Image, ImageDraw, ImageFont
 from yattag import Doc
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
-
+from django.utils.translation import ugettext as _
+from resources.utils.resource_parameters import EnumResourceParameter, BoolResourceParameter
 IMAGE_PATH = "static/img/resources/searching-cards/{}-cards-{}.png"
 X_BASE_COORD = 1803
 X_COORD_DECREMENT = 516
@@ -13,15 +14,44 @@ Y_COORD = 240
 FONT_PATH = "static/fonts/PatrickHand-Regular.ttf"
 FONT = ImageFont.truetype(FONT_PATH, 200)
 
+NUMBER_CARDS_VALUES = {
+    "15": "15",
+    "31": "31",
+}
+
+MAX_NUMBER_VALUE = {
+    "cards": _("Number of cards (15 or 31)"),
+    "99": _("0 to 99"),
+    "999": _("0 to 999"),
+    "blank": _("Blank")
+}
+
 
 class SearchingCardsResourceGenerator(BaseResourceGenerator):
     """Class for Searching Cards resource generator."""
 
-    additional_valid_options = {
-        "number_cards": ["15", "31"],
-        "max_number": ["cards", "99", "999", "blank"],
-        "help_sheet": [True, False],
-    }
+    @classmethod
+    def get_additional_options(cls):
+        """Additional options for SearchingCardsResourceGenerator."""
+        return {
+            "number_cards": EnumResourceParameter(
+                name="number_cards",
+                description=_("Number of cards"),
+                values=NUMBER_CARDS_VALUES,
+                default="15"
+            ),
+            "max_number": EnumResourceParameter(
+                name="max_number",
+                description=_("Range of numbers"),
+                values=MAX_NUMBER_VALUE,
+                default="number"
+            ),
+            "help_sheet": BoolResourceParameter(
+                name="help_sheet",
+                description=_("Include teacher guide sheet"),
+                default=True
+            ),
+        }
 
     def data(self):
         """Create a image for Searching Cards resource.
@@ -30,9 +60,9 @@ class SearchingCardsResourceGenerator(BaseResourceGenerator):
             A list of dictionaries for each resource page.
         """
         pages = []
-        number_cards = int(self.requested_options["number_cards"])
-        max_number = self.requested_options["max_number"]
-        help_sheet = self.requested_options["help_sheet"]
+        number_cards = int(self.options["number_cards"].value)
+        max_number = self.options["max_number"].value
+        help_sheet = self.options["help_sheet"].value
 
         if max_number == "cards":
             numbers = list(range(1, number_cards + 1))
@@ -131,9 +161,9 @@ class SearchingCardsResourceGenerator(BaseResourceGenerator):
         Returns:
             text for subtitle (str).
         """
-        max_number = self.requested_options["max_number"]
-        help_sheet = self.requested_options["help_sheet"]
-        number_cards = self.requested_options["number_cards"]
+        max_number = self.options["max_number"].value
+        help_sheet = self.options["help_sheet"].value
+        number_cards = self.options["number_cards"].value
 
         if max_number == "blank":
             range_text = "blank"
