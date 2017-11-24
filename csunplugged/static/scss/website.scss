@@ -37,6 +37,7 @@
 @import "pygments-colorful";
 @import "sticky-state";
 @import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
 
 $body-space-from-top: 72px;
 $ct-abstraction: #E30613;
@@ -107,7 +108,7 @@ $rounded-corner-radius: 0.5rem;
   width: 100%;
 
   h1 {
-    font-family: 'Patrick Hand', cursive;
+    font-family: $headings-font-family;
     color: $white;
   }
 }
