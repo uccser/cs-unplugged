@@ -184,16 +184,12 @@ $rounded-corner-radius: 0.5rem;
 
 .navbar {
   background-color: $red;
-  // border-bottom: 2px $red solid;
 
   #navbar-brand-logo {
     height: 2rem;
   }
 
   .navbar-nav .nav-link {
-    // font-weight: 500;
-    // border: 1px $white solid;
-    // border-radius: 0.3rem;
     color: $white;
     &:hover {
       color: $white;
