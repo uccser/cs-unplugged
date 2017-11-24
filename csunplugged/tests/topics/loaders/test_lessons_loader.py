@@ -627,13 +627,13 @@ class LessonsLoaderTest(BaseTestWithDB):
         self.resource_test_data.create_resource(
             "grid",
             "Grid",
-            "resources/grid.html",
+            "Grid description",
             "GridResourceGenerator",
         )
         self.resource_test_data.create_resource(
             "arrows",
             "Arrows",
-            "resources/arrows.html",
+            "Arrows description",
             "ArrowsResourceGenerator",
         )
         lesson_loader = LessonsLoader(
@@ -646,8 +646,8 @@ class LessonsLoaderTest(BaseTestWithDB):
         self.assertQuerysetEqual(
             Lesson.objects.get(slug="lesson-1").generated_resources.order_by("name"),
             [
-                "<Resource: Resource Arrows>",
-                "<Resource: Resource Grid>",
+                "<Resource: Arrows>",
+                "<Resource: Grid>",
             ],
         )
 
@@ -672,7 +672,7 @@ class LessonsLoaderTest(BaseTestWithDB):
         self.resource_test_data.create_resource(
             "grid",
             "Grid",
-            "resources/grid.html",
+            "Grid description",
             "GridResourceGenerator",
         )
         lesson_loader = LessonsLoader(
@@ -693,7 +693,7 @@ class LessonsLoaderTest(BaseTestWithDB):
         self.resource_test_data.create_resource(
             "grid",
             "Grid",
-            "resources/grid.html",
+            "Grid description",
             "GridResourceGenerator",
         )
         lesson_loader = LessonsLoader(

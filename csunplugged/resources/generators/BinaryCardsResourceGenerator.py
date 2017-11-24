@@ -3,6 +3,8 @@
 import os.path
 from PIL import Image, ImageDraw, ImageFont
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
+from django.utils.translation import ugettext as _
+from resources.utils.resource_parameters import BoolResourceParameter
 
 BASE_IMAGE_PATH = "static/img/resources/binary-cards/"
 IMAGE_SIZE_X = 2480
@@ -22,10 +24,23 @@ IMAGE_DATA = [
 class BinaryCardsResourceGenerator(BaseResourceGenerator):
     """Class for Binary Cards resource generator."""
 
-    additional_valid_options = {
-        "display_numbers": [True, False],
-        "black_back": [True, False],
-    }
+    @classmethod
+    def get_additional_options(cls):
+        """Additional options for BinaryCardsResourceGenerator."""
+        return {
+            "display_numbers": BoolResourceParameter(
+                name="display_numbers",
+                description=_("Display Numbers"),
+                default=True
+            ),
+            "black_back": BoolResourceParameter(
+                name="black_back",
+                description=_("Black on Card Back"),
+                default=False,
+                true_text=_("Yes - Uses a lot of black ink, but conveys clearer card state. Print double sided."),
+                false_text=_("No - Print single sided.")
+            )
+        }
 
     def data(self):
         """Create a image for Binary Cards resource.
@@ -34,8 +49,8 @@ class BinaryCardsResourceGenerator(BaseResourceGenerator):
             A dictionary or list of dictionaries for each resource page.
         """
         # Retrieve parameters
-        display_numbers = self.requested_options["display_numbers"]
-        black_back = self.requested_options["black_back"]
+        display_numbers = self.options["display_numbers"].value
+        black_back = self.options["black_back"].value
         image_size_y = IMAGE_SIZE_Y
 
         if display_numbers:
@@ -85,12 +100,12 @@ class BinaryCardsResourceGenerator(BaseResourceGenerator):
         Returns:
             text for subtitle (str)
         """
-        if self.requested_options["display_numbers"]:
+        if self.options["display_numbers"].value:
             display_numbers_text = "with numbers"
         else:
             display_numbers_text = "without numbers"
 
-        if self.requested_options["black_back"]:
+        if self.options["black_back"].value:
             black_back_text = "with black back"
         else:
             black_back_text = "without black back"

@@ -2,14 +2,29 @@
 
 from PIL import Image
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
+from django.utils.translation import ugettext as _
+from resources.utils.resource_parameters import EnumResourceParameter
+
+TRACKS_VALUES = {
+    "circular": _("Circular"),
+    "twisted": _("Twisted")
+}
 
 
 class TrainStationsResourceGenerator(BaseResourceGenerator):
     """Class for Train Stations resource generator."""
 
-    additional_valid_options = {
-        "tracks": ["circular", "twisted"],
-    }
+    @classmethod
+    def get_additional_options(cls):
+        """Additional options for TrainStationsResourceGenerator."""
+        return {
+            "tracks": EnumResourceParameter(
+                name="tracks",
+                description=_("Train track shape"),
+                values=TRACKS_VALUES,
+                default="circular"
+            )
+        }
 
     def data(self):
         """Create a image for Train Stations resource.
@@ -18,7 +33,7 @@ class TrainStationsResourceGenerator(BaseResourceGenerator):
             A list of dictionaries for each resource page.
         """
         image_path = "static/img/resources/train-stations/train-stations-tracks-{}.png"
-        image = Image.open(image_path.format(self.requested_options["tracks"]))
+        image = Image.open(image_path.format(self.options["tracks"].value))
         image = image.rotate(90, expand=True)
         return {"type": "image", "data": image}
 
@@ -33,6 +48,6 @@ class TrainStationsResourceGenerator(BaseResourceGenerator):
             text for subtitle (str).
         """
         return "{} tracks - {}".format(
-            self.requested_options["tracks"],
+            self.options["tracks"].value,
             super().subtitle
         )

@@ -1,5 +1,3 @@
-grid:
-  name: Grid
-  webpage-template: resources/grid.html
+resource-untranslated:
   thumbnail-static-path: img/resources/grid/thumbnail.png
   copies: false
