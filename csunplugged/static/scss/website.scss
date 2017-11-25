@@ -460,3 +460,33 @@ ol, ul {
 .large-text {
   font-size: 3rem;
 }
+
+.no-text-decoration {
+  text-decoration: none !important;
+}
+
+.link-item {
+  // border-top: 1px solid $blue;
+  h2,
+  h3 {
+    color: $gray;
+  }
+  img {
+    max-height: 6rem;
+  }
+  &:hover {
+    background-color: rgba($blue, 0.1);
+  }
+  &.unavailable {
+    background-color: rgba($black, 0.2);
+    img {
+      opacity: 0.5;
+    }
+  }
+  .badge-language-unavailable {
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: 0;
+    margin-left: 0;
+  }
+}
