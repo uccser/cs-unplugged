@@ -121,7 +121,7 @@ LANGUAGES = (
 if env.bool("INCLUDE_INCONTEXT_L10N", False):
     EXTRA_LANGUAGES = [
         (INCONTEXT_L10N_PSEUDOLANGUAGE, "Translation mode"),
-        (INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI, "In-Translation mode (Bi-directional)"),
+        (INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI, "Translation mode (Bi-directional)"),
     ]
 
     EXTRA_LANG_INFO = {
