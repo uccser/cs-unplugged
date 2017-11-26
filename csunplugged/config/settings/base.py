@@ -123,8 +123,6 @@ if env.bool("INCLUDE_INCONTEXT_L10N", False):
         (INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI, "In-context translations (Bidi)"),
     ]
 
-    LANGUAGES += tuple(EXTRA_LANGUAGES)
-
     EXTRA_LANG_INFO = {
         INCONTEXT_L10N_PSEUDOLANGUAGE: {
             'bidi': False,
@@ -141,7 +139,11 @@ if env.bool("INCLUDE_INCONTEXT_L10N", False):
     }
 
     django.conf.locale.LANG_INFO.update(EXTRA_LANG_INFO)
+    # Add new languages to the list of all django languages
     global_settings.LANGUAGES = global_settings.LANGUAGES + EXTRA_LANGUAGES
+    # Add new languages to the list of languages used for this project
+    LANGUAGES += tuple(EXTRA_LANGUAGES)
+
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#site-id
 SITE_ID = 1
