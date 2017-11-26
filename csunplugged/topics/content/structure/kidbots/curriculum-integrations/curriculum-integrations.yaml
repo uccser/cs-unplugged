@@ -1,0 +1,31 @@
+storytelling:
+  number: 1
+  curriculum-areas:
+    - literacy
+  prerequisite-lessons:
+    unit-plan:
+      - rescue-mission
+
+move-to-a-number:
+  number: 2
+  curriculum-areas:
+    - numeracy
+  prerequisite-lessons:
+    unit-plan:
+      - rescue-mission
+
+finding-shapes:
+  number: 3
+  curriculum-areas:
+    - geometry
+  prerequisite-lessons:
+    unit-plan:
+      - rescue-mission
+
+moving-in-a-shape:
+  number: 4
+  curriculum-areas:
+    - geometry
+  prerequisite-lessons:
+    unit-plan:
+      - rescue-mission

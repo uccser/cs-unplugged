@@ -3,7 +3,7 @@ topics:
   - error-detection-and-correction
   - searching-algorithms
   - sorting-networks
-  - unplugged-programming
+  - kidbots
 
 age-groups: age-groups.yaml
 programming-challenges-structure: programming-challenges-structure.yaml
