@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./load-prod-deploy-config-envs.sh
+source ./infrastructure/prod-deploy/load-prod-deploy-config-envs.sh
 
 # Deploys the application to Google App Engine
 
