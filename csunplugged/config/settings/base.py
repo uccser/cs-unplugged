@@ -15,6 +15,7 @@ import os.path
 # Add custom languages not provided by Django
 import django.conf.locale
 from django.conf import global_settings
+from django.utils.translation import ugettext_lazy as _
 
 # cs-unplugged/csunplugged/config/settings/base.py - 3 = csunplugged/
 ROOT_DIR = environ.Path(__file__) - 3
@@ -119,22 +120,22 @@ LANGUAGES = (
 
 if env.bool("INCLUDE_INCONTEXT_L10N", False):
     EXTRA_LANGUAGES = [
-        (INCONTEXT_L10N_PSEUDOLANGUAGE, "In-context translations"),
-        (INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI, "In-context translations (Bidi)"),
+        (INCONTEXT_L10N_PSEUDOLANGUAGE, "Translation mode"),
+        (INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI, "Translation mode (Bi-directional)"),
     ]
 
     EXTRA_LANG_INFO = {
         INCONTEXT_L10N_PSEUDOLANGUAGE: {
             'bidi': False,
             'code': INCONTEXT_L10N_PSEUDOLANGUAGE,
-            'name': "In-context translations",
-            'name_local': "In-context translations",
+            'name': "Translation mode",
+            'name_local': _("Translation mode"),
         },
         INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI: {
             'bidi': True,
             'code': INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI,
-            'name': "In-context translations (Bidi)",
-            'name_local': "In-context translations (Bidi)",
+            'name': "Translation mode (Bi-directional)",
+            'name_local': _("Translation mode (Bi-directional)"),
         }
     }
 
