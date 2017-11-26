@@ -49,7 +49,10 @@ def get_xliff_trans(path):
 
 
 def get_verto_block_patterns():
-    """Get list of compiled regex patterns for verto block tags."""
+    """Get list of compiled regex patterns for verto block tags.
+
+    Returns:
+        (list) list of verto block regexes compiled with re.compile"""
     convertor = Verto()
     ext = convertor.verto_extension
     block_pattern = ext.processor_info['style']['block_pattern']

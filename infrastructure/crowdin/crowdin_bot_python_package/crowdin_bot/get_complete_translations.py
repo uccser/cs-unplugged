@@ -8,7 +8,14 @@ from crowdin_bot import api
 SOURCE_LANGUAGE = "en"
 
 def get_language_info(language):
-    """Get xml tree from language info api call."""
+    """Get xml tree from language info api call.
+
+    Args:
+        language: (str) crowdin language code
+
+    Returns:
+        lxml.etree object
+    """
     return api.api_call_xml(
         "language-status",
         language=language
@@ -25,6 +32,9 @@ def process_item(item, parent_path=None, csu_language_code=None):
         csu_language_code: (str) Language code (in locale format) on CSU end
             (may differ from crowdin language code according to language mapping
             in yaml file)
+
+    Returns:
+        (list) list of file paths that are completely translated
     """
     if item.find("node_type").text == "file":
         filename = item.find("name").text

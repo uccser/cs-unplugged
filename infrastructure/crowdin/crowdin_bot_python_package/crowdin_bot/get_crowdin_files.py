@@ -5,7 +5,11 @@ from crowdin_bot import api
 
 
 def get_project_info():
-    """Get xml containing all crowdin files (from api)."""
+    """Get xml containing all crowdin files (from api).
+
+    Returns:
+        lxml.etree object
+    """
     return api.api_call_xml("info")
 
 
@@ -15,7 +19,11 @@ def process_item(item, parent_path="/"):
     Args:
         item: (etree.Element): itemm node in info xml tree
             (see https://support.crowdin.com/api/info/)
-        parent_path: (str) path to the file/folder node "item"."""
+        parent_path: (str) path to the file/folder node "item".
+
+    Returns:
+        (list) list of paths of source files inside given node
+    """
     if item.find("node_type").text == "file":
         filename = item.find("name").text
         path = os.path.join(parent_path, filename)
