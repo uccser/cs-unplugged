@@ -9,7 +9,6 @@ LABEL maintainer="csse-education-research@canterbury.ac.nz"
 ARG DEBIAN_FRONTEND=noninteractive
 
 ENV DJANGO_PRODUCTION=False
-ENV INCLUDE_INCONTEXT_L10N=True
 EXPOSE 8080
 
 # Copy and create virtual environment
