@@ -86,13 +86,13 @@ class ProgrammingChallengesStructureLoader(TranslatableModelLoader):
             required_fields=["name"],
         )
 
-        for difficulty in difficulty_levels:
+        for level, difficulty_slug in enumerate(difficulty_levels):
 
             new_difficulty = ProgrammingChallengeDifficulty(
-                level=int(difficulty),
+                level=level,
             )
 
-            translations = difficulties_translations.get(difficulty, dict())
+            translations = difficulties_translations.get(difficulty_slug, dict())
             self.populate_translations(new_difficulty, translations)
             self.mark_translation_availability(new_difficulty, required_fields=["name"])
             new_difficulty.save()
