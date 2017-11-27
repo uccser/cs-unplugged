@@ -9,7 +9,7 @@ languages:
         icon: img/python-logo.png
 
 difficulties:
-  - 0
-  - 1
-  - 2
-  - 3
+  - "0"
+  - "1"
+  - "2"
+  - "3"
