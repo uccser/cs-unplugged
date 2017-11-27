@@ -129,7 +129,7 @@ class TopicsTestDataGenerator:
         unit_plan.save()
         return unit_plan
 
-    def create_lesson(self, topic, unit_plan, number, age_group=None):
+    def create_lesson(self, topic, unit_plan, number, age_groups=None):
         """Create lesson object.
 
         Args:
@@ -140,26 +140,29 @@ class TopicsTestDataGenerator:
         Returns:
             Lesson object.
         """
+        if age_groups and not isinstance(age_groups, list):
+            age_groups = [age_groups]
         lesson = Lesson(
             topic=topic,
             unit_plan=unit_plan,
             slug="lesson-{}".format(number),
             name="Lesson {} ({} to {})".format(
                 number,
-                age_group.ages[0] if age_group else "none",
-                age_group.ages[1] if age_group else "none"
+                age_groups[0].ages[0] if age_groups else "none",
+                age_groups[-1].ages[1] if age_groups else "none"
             ),
             duration=number,
             content="<p>Content for lesson {}.</p>".format(number),
             languages=["en"],
         )
         lesson.save()
-        if age_group:
-            LessonNumber(
-                age_group=age_group,
-                lesson=lesson,
-                number=number,
-            ).save()
+        if age_groups:
+            for age_group in age_groups:
+                LessonNumber(
+                    age_group=age_group,
+                    lesson=lesson,
+                    number=number,
+                ).save()
         return lesson
 
     def create_age_group(self, min_age, max_age):
