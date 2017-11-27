@@ -54,6 +54,19 @@
             <a class="nav-item nav-link" href="{% url 'resources:index' %}">{% trans "Resources" %}</a>
             <a class="nav-item nav-link" href="{% url 'general:about' %}">{% trans "About" %}</a>
           </div>
+          {% if LANGUAGES|length > 1 %}
+            <div class="navbar-nav">
+              <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarLanguageSelector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ current_language.name_local|capfirst }}</a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarLanguageSelector">
+                  {% for language in LANGUAGES %}
+                    {% get_language_info for language.0 as lang %}
+                    <a class="dropdown-item" href="{% translate_url language.0 %}">{{ lang.name_local|capfirst }}</a>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
         </div>
       </div>
     </nav>
@@ -84,18 +97,18 @@
     </div>
 
     <div class="container white-footer mt-5 py-5">
-      <div class="row align-items-center justify-content-center">
-        <div class="col-4 col-lg-3">
+      <div class="row align-items-center text-center">
+        <div class="col-12 col-sm-6 col-md-4">
           <a href="http://www.cosc.canterbury.ac.nz/research/RG/CSE/">
-            <img class="img-fluid" src="{% static 'img/uc-computer-science-education-logo.png' %}">
+            <img class="img-fluid py-5" src="{% static 'img/uc-computer-science-education-logo.png' %}">
           </a>
         </div>
-        <div class="col-4 col-lg-3">
+        <div class="col-12 col-sm-6 col-md-4">
           <a href="https://www.google.com">
-            <img class="img-fluid" src="{% static 'img/google-logo-colour.png' %}">
+            <img class="img-fluid px-3" src="{% static 'img/google-logo-colour.png' %}">
           </a>
         </div>
-        <div class="col-4 col-lg-3">
+        <div class="col-12 col-sm-6 col-md-4">
           <a href="https://www.microsoft.com/about/philanthropies/">
             <img class="img-fluid" src="{% static 'img/microsoft-philanthropies-logo' %}.png">
           </a>
