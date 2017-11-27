@@ -57,6 +57,7 @@ class IndexView(generic.ListView):
             topic.max_age = topic_age_groups[-1].ages.upper
         return context
 
+
 class TopicView(generic.DetailView):
     """View for a specific topic."""
 

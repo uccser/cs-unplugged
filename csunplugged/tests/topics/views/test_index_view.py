@@ -1,7 +1,6 @@
 from http import HTTPStatus
 from tests.BaseTestWithDB import BaseTestWithDB
 from django.urls import reverse
-from topics.models import Topic
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 
 
