@@ -1,0 +1,2 @@
+- If total seconds (sum of the number of seconds from the first clip and the second clip) is greater than 59, increase total minutes (sum of minutes from the first clip and the second clip) by 1 and set total seconds to total seconds modulo 60.
+- If total minutes (sum of the number of minutes from the first clip and the second clip) is greater than 59, increase total hours (sum of hour from the first clip and the second clip) by 1 and set total minutes to total minutes modulo 60.
