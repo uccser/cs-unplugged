@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./load-prod-deploy-config-envs.sh
+source ./infrastructure/prod-deploy/load-prod-deploy-config-envs.sh
 
 # Deploys the application to Google App Engine
 
@@ -22,7 +22,6 @@ ssh-keygen -q -N "" -f ~/.ssh/google_compute_engine
 
 # Load environment variables.
 source ./load-prod-deploy-envs.sh
-source ./load-prod-deploy-config-envs.sh
 
 # Create app-prod.yaml file using environment variables.
 python ./infrastructure/replace_envs.py ./infrastructure/prod-deploy/app-prod.yaml

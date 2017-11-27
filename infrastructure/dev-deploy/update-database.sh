@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./load-dev-deploy-config-envs.sh
+source ./infrastructure/dev-deploy/load-dev-deploy-config-envs.sh
 
 # Updates the database for the development system
 mv ./infrastructure/cloud-sql-proxy/docker-compose.yml ./docker-compose.yml

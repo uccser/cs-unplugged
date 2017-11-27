@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./load-dev-deploy-config-envs.sh
+source ./infrastructure/dev-deploy/load-dev-deploy-config-envs.sh
 
 # Deploys the application to Google App Engine
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./load-dev-deploy-config-envs.sh
+source ./infrastructure/dev-deploy/load-dev-deploy-config-envs.sh
 
 # Deploy static files to the development static file server.
 
