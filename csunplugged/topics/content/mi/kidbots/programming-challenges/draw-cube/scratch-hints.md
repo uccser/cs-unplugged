@@ -1,0 +1,1 @@
+- A cube can be drawn by drawing a square and two 45 degree rhombuses adjacent to each other.
