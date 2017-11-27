@@ -5,6 +5,7 @@ from django.shortcuts import get_object_or_404
 from django.views import generic
 from django.http import JsonResponse, Http404
 from config.templatetags.render_html_field import render_html_with_static
+from topics.utils.add_lesson_ages_to_objects import add_lesson_ages_to_objects
 from utils.group_lessons_by_age import group_lessons_by_age
 from django.utils.translation import get_language
 from .models import (
@@ -18,7 +19,6 @@ from .models import (
     ProgrammingChallengeImplementation,
     ResourceDescription,
     GlossaryTerm,
-    AgeGroup,
 )
 
 
@@ -49,12 +49,7 @@ class IndexView(generic.ListView):
         """
         # Call the base implementation first to get a context
         context = super(IndexView, self).get_context_data(**kwargs)
-        age_groups = AgeGroup.objects.distinct()
-        # Add in a QuerySet of all the connected unit plans
-        for topic in self.object_list:
-            topic_age_groups = list(age_groups.filter(lessons__id__in=topic.lessons.all()))
-            topic.min_age = topic_age_groups[0].ages.lower
-            topic.max_age = topic_age_groups[-1].ages.upper
+        add_lesson_ages_to_objects(self.object_list)
         return context
 
 
@@ -74,10 +69,8 @@ class TopicView(generic.DetailView):
         # Call the base implementation first to get a context
         context = super(TopicView, self).get_context_data(**kwargs)
         # Add in a QuerySet of all the connected unit plans
-        unit_plans = UnitPlan.objects.filter(topic=self.object).order_by("name").select_related()
-        for unit_plan in unit_plans:
-            unit_plan.grouped_lessons = group_lessons_by_age(unit_plan.lessons.all())
-        context["unit_plans"] = unit_plans
+        unit_plans = self.object.unit_plans.order_by("name")
+        context["unit_plans"] = add_lesson_ages_to_objects(unit_plans)
         # Add in a QuerySet of all the connected curriculum integrations
         context["curriculum_integrations"] = CurriculumIntegration.objects.filter(topic=self.object).order_by("number")
         context["programming_challenges"] = ProgrammingChallenge.objects.filter(topic=self.object).order_by(

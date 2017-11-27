@@ -1,4 +1,4 @@
-{% extends "columns.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
 {% load static %}
@@ -27,39 +27,38 @@
   {% endif %}
 {% endblock page_heading %}
 
-{% block left_column_content %}
+{% block content %}
   {% if topic.translation_available %}
     {% render_html_field topic.content %}
 
-    {% for unit_plan in unit_plans %}
-      <div class="link-box-container">
-        {% if not unit_plan.translation_available %}
-          <a class="link-box link-box-md-6 unavailable" href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">
+    <h2 class="heading-underline">{% trans "Units" %}</h2>
+    <div class="row">
+      {% for unit_plan in unit_plans %}
+        <a class="col-12 col-md-8 col-lg-6 link-item no-text-decoration py-4 align-items-center{% if not unit_plan.translation_available %} unavailable{% endif %}" href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">
+          {% if not unit_plan.translation_available %}
             {% include "topics/not-available-badge.html" %}
-        {% else %}
-          <a class="link-box link-box-md-6" href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">
-        {% endif %}
-          <h3 id="{{ unit_plan.slug }}" class="link-box-title">
-            <span class="text-muted">{% trans "Unit plan:" %}</span> {{ unit_plan.name }}
-          </h3>
+          {% endif %}
+          <h3>{{ unit_plan.name }}</h3>
+          <ul class="list-unstyled text-muted mb-0">
+            {% if unit_plan.lessons.exists %}
+              <li>
+                <strong>
+                  {% blocktrans trimmed with min_age=unit_plan.min_age max_age=unit_plan.max_age%}
+                    Ages {{ min_age }} to {{ max_age }}
+                  {% endblocktrans %}
+                </strong>
+              </li>
+              <li>
+                {{ unit_plan.lessons.count }} {% trans "lessons" %}
+              </li>
+            {% endif %}
+            {% if unit_plan.programming_challenges.exists %}
+              <li>{{ unit_plan.programming_challenges.count }} {% trans "programming challenges" %}</li>
+            {% endif %}
+          </ul>
         </a>
-      </div>
-
-      {% if unit_plan.grouped_lessons %}
-        <p class="text-center">
-          {% trans "or jump straight to a lesson of the unit:" %}
-        </p>
-      {% endif %}
-      {% if unit_plan.grouped_lessons %}
-        {% with grouped_lessons=unit_plan.grouped_lessons %}
-          {% include "topics/lessons-table.html" %}
-        {% endwith %}
-      {% endif %}
-
-      {% if not forloop.last %}
-        <hr>
-      {% endif %}
-    {% endfor %}
+      {% endfor %}
+    </div>
 
     {% if curriculum_integrations %}
     <h2 id="integrations" class="heading-underline">{% trans "Curriculum Integrations" %}</h2>
@@ -91,48 +90,4 @@
       </p>
     {% endif %}
   {% endif %}
-{% endblock left_column_content %}
-
-{% block right_column_content %}
-  {% if topic.translation_available %}
-    <div id="sticky-sidebar" class="sticky">
-      <h2 class="heading-underline">{% trans "Table of contents" %}</h2>
-      <ul class="nav nav-pills flex-column" id="scrollspy-table-of-contents">
-        <li class="nav-item">
-          <a class="nav-link" href="#{{ topic.slug }}">{{ topic.name }}</a>
-        </li>
-        {% for unit_plan in unit_plans %}
-          <li class="nav-item">
-            <a class="nav-link {% if not unit_plan.translation_available %}disabled{% endif %}" href="#{{ unit_plan.slug }}">
-              {{ unit_plan.name }}
-              {% if not unit_plan.translation_available %}
-                {% include 'topics/not-available-badge.html'}
-              {% endif %}
-            </a>
-          </li>
-        {% endfor %}
-        {% if curriculum_integrations %}
-          <li class="nav-item">
-            <a class="nav-link" href="#integrations">{% trans "Curriculum integrations" %}</a>
-          </li>
-        {% endif %}
-        {% if resources %}
-          <li class="nav-item">
-            <a class="nav-link" href="#resources">{% trans "Resources" %}</a>
-          </li>
-        {% endif %}
-        {% if topic.other_resources %}
-          <li class="nav-item">
-            <a class="nav-link" href="#other-resources">{% trans "Other resources" %}</a>
-          </li>
-        {% endif %}
-      </ul>
-    </div>
-  {% endif %}
-{% endblock right_column_content %}
-
-{% block scripts %}
-  {% if topic.translation_available %}
-    {% include "generic/import-stick-state-js.html" %}
-  {% endif %}
-{% endblock scripts %}
+{% endblock content %}
