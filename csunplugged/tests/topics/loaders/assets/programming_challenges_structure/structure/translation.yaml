@@ -5,5 +5,5 @@ languages:
     number: 2
 
 difficulties:
-  - 1
-  - 2
+  - difficulty-1
+  - difficulty-2

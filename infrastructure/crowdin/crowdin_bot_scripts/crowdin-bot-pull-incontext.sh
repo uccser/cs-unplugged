@@ -40,7 +40,11 @@ crowdin -c "${CROWDIN_CONFIG_FILE}" -l "${CROWDIN_PSEUDO_LANGUAGE}" download
 python3 -m crowdin_bot.download_xliff
 python3 -m crowdin_bot.modify_pseudo_translations
 
-git add "csunplugged/topics/content/${CSU_PSEUDO_LANGUAGE}"
+
+for content_path in "${CONTENT_PATHS[@]}"; do
+  git add "${content_path}/${CSU_PSEUDO_LANGUAGE}"
+done
+
 
 # If there are no changes to the compiled out (e.g. this is a README update) then just bail.
 if [[ $(git diff --cached) ]]; then
