@@ -37,6 +37,10 @@ source ./load-dev-deploy-envs.sh
 # Create app-dev.yaml file using environment variables.
 python ./infrastructure/replace_envs.py ./infrastructure/dev-deploy/app-dev.yaml
 
+# Symlinks aren't added into a docker image, so replace symlink with actual directory
+rm -rf csunplugged/locale/yy_RL
+cp -r csunplugged/locale/xx_LR csunplugged/locale/yy_RL
+
 # Publish Django system to Google App Engine.
 #
 # This deploys using the 'app-develop.yaml' decrypted earlier that contains
