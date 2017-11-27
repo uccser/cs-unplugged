@@ -6,7 +6,7 @@ import os
 import re
 import sys
 
-REGEX = re.compile("\$\{([A-Z_]+)\}")
+REGEX = re.compile("\$\{([a-zA-Z_][a-zA-Z0-9_]*)\}")
 
 
 def get_filename():

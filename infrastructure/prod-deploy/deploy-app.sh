@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ./infrastructure/prod-deploy/load-prod-deploy-config-envs.sh
+
 # Deploys the application to Google App Engine
 
 # Install Google Cloud SDK

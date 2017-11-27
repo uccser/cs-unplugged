@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 import environ
 import os.path
 
+# Add custom languages not provided by Django
+import django.conf.locale
+from django.conf import global_settings
+from django.utils.translation import ugettext_lazy as _
+
 # cs-unplugged/csunplugged/config/settings/base.py - 3 = csunplugged/
 ROOT_DIR = environ.Path(__file__) - 3
 
@@ -102,9 +107,44 @@ TIME_ZONE = "UTC"
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#language-code
 LANGUAGE_CODE = "en"
 
+INCONTEXT_L10N_PSEUDOLANGUAGE = "xx-lr"
+INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI = "yy-rl"
+INCONTEXT_L10N_PSEUDOLANGUAGES = (
+    INCONTEXT_L10N_PSEUDOLANGUAGE,
+    INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI
+)
+
 LANGUAGES = (
     ("en", "English"),
 )
+
+if env.bool("INCLUDE_INCONTEXT_L10N", False):
+    EXTRA_LANGUAGES = [
+        (INCONTEXT_L10N_PSEUDOLANGUAGE, "Translation mode"),
+        (INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI, "Translation mode (Bi-directional)"),
+    ]
+
+    EXTRA_LANG_INFO = {
+        INCONTEXT_L10N_PSEUDOLANGUAGE: {
+            'bidi': False,
+            'code': INCONTEXT_L10N_PSEUDOLANGUAGE,
+            'name': "Translation mode",
+            'name_local': _("Translation mode"),
+        },
+        INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI: {
+            'bidi': True,
+            'code': INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI,
+            'name': "Translation mode (Bi-directional)",
+            'name_local': _("Translation mode (Bi-directional)"),
+        }
+    }
+
+    django.conf.locale.LANG_INFO.update(EXTRA_LANG_INFO)
+    # Add new languages to the list of all django languages
+    global_settings.LANGUAGES = global_settings.LANGUAGES + EXTRA_LANGUAGES
+    # Add new languages to the list of languages used for this project
+    LANGUAGES += tuple(EXTRA_LANGUAGES)
+
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#site-id
 SITE_ID = 1

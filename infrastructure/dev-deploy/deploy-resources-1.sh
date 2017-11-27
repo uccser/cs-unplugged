@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ./infrastructure/dev-deploy/load-dev-deploy-config-envs.sh
+
 # Deploy generated resource files to the development static file server.
 
 ./csu start
