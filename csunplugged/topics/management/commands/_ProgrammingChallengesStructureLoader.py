@@ -89,7 +89,7 @@ class ProgrammingChallengesStructureLoader(TranslatableModelLoader):
         for difficulty in difficulty_levels:
 
             new_difficulty = ProgrammingChallengeDifficulty(
-                level=difficulty,
+                level=int(difficulty),
             )
 
             translations = difficulties_translations.get(difficulty, dict())
