@@ -37,8 +37,6 @@
 @import "pygments-colorful";
 @import "sticky-state";
 @import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
-
-$dir: rtl;
 @import "directional";
 
 $body-space-from-top: 72px;
@@ -497,17 +495,12 @@ ol, ul {
   }
 }
 
-.crowdin_jipt_untranslated {
-    unicode-bidi: bidi-override;
-    direction: ltr;
-}
-
-.list-unstyled {
+.list-unstyled-i18n {
   padding-#{$left}: 0;
   padding-#{$right}: auto;
 }
 
-.navbar-nav-margins {
+.navbar-nav-i18n {
   margin-#{$right}: auto !important;
   margin-#{$left}: 0 !important;
 }

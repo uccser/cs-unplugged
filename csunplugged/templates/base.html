@@ -28,7 +28,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{% static 'css/website.css' %}">
+    {% if LANGUAGE_BIDI %}
+        <link rel="stylesheet" href="{% static 'css/website-rtl.css' %}">
+    {% else %}
+        <link rel="stylesheet" href="{% static 'css/website.css' %}">
+    {% endif %}
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
@@ -49,7 +53,7 @@
           <a href="http://cs-unplugged.readthedocs.io/en/latest/changelog.html" class="badge">{{ VERSION_NUMBER_ENGLISH }}</a>
         </a>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <div class="navbar-nav mr-auto navbar-nav-margins">
+          <div class="navbar-nav navbar-nav-i18n mr-auto">
             <a class="nav-item nav-link" href="{% url 'topics:index' %}">{% trans "Topics" %}</a>
             <a class="nav-item nav-link" href="{% url 'resources:index' %}">{% trans "Resources" %}</a>
             <a class="nav-item nav-link" href="{% url 'general:about' %}">{% trans "About" %}</a>
@@ -146,7 +150,7 @@
 
           <div class="col-6 col-md-2">
             <p class="mb-1 font-weight-bold">{% trans "Useful Links" %}</p>
-            <ul class="list-unstyled">
+            <ul class="list-unstyled list-unstyled-i18n">
               <li>
                 <a href="{% url 'general:about' %}">
                   {% trans "About" %}
@@ -166,7 +170,7 @@
           </div>
           <div class="col-6 col-md-2">
             <p class="mb-1 font-weight-bold">{% trans "Community" %}</p>
-            <ul class="list-unstyled">
+            <ul class="list-unstyled list-unstyled-i18n">
               <li>
                 <a href="https://twitter.com/UCCSEd">
                   {% trans "Twitter" %}
@@ -186,7 +190,7 @@
           </div>
           <div class="col-12 col-md-2">
             <p class="mb-1 font-weight-bold">{% trans "Help" %}</p>
-            <ul class="list-unstyled">
+            <ul class="list-unstyled list-unstyled-i18n">
               <li>
                 <a href="{% url 'topics:glossary' %}">
                   {% trans "Glossary" %}
