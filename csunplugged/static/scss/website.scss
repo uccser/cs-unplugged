@@ -38,6 +38,9 @@
 @import "sticky-state";
 @import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
 
+$dir: rtl;
+@import "directional";
+
 $body-space-from-top: 72px;
 $ct-abstraction: #E30613;
 $ct-algorithm: #0B983A;
@@ -173,15 +176,15 @@ $rounded-corner-radius: 0.5rem;
     background-color: rgba($black, 0.2);
   }
   .badge-language-unavailable {
-    margin-right: auto;
+    margin-#{$right}: auto;
     margin-bottom: auto;
     margin-top: 0;
-    margin-left: 0;
+    margin-#{$left}: 0;
   }
 }
 
 .badge-language-unavailable {
-  margin-right: auto;
+  margin-#{$right}: auto;
   margin-bottom: auto;
   margin: 0.5em;
 }
@@ -273,7 +276,7 @@ $rounded-corner-radius: 0.5rem;
 }
 
 .boxed-text-indented {
-  margin-left: 1em;
+  margin-#{$left}: 1em;
 }
 
 @mixin detail-colour-variant($color) {
@@ -281,7 +284,10 @@ $rounded-corner-radius: 0.5rem;
     background-color: hsl(hue($color), saturation($color), 90%);
     color: $color !important;
     .inline-image {
-      margin: 0.2rem 0.2rem 0.2rem auto;
+      margin-top: 0.2rem;
+      margin-bottom: 0.2rem;
+      margin-#{$left}: auto;
+      margin-#{$right}: 0.2rem;
     }
     &:hover {
       background-color: hsl(hue($color), saturation($color), 85%);
@@ -484,9 +490,24 @@ ol, ul {
     }
   }
   .badge-language-unavailable {
-    margin-right: auto;
+    margin-#{$right}: auto;
     margin-bottom: auto;
     margin-top: 0;
-    margin-left: 0;
+    margin-#{$left}: 0;
   }
+}
+
+.crowdin_jipt_untranslated {
+    unicode-bidi: bidi-override;
+    direction: ltr;
+}
+
+.list-unstyled {
+  padding-#{$left}: 0;
+  padding-#{$right}: auto;
+}
+
+.navbar-nav-margins {
+  margin-#{$right}: auto !important;
+  margin-#{$left}: 0 !important;
 }

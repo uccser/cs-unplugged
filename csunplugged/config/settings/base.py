@@ -43,6 +43,7 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     "django_bootstrap_breadcrumbs",
     "modeltranslation",
+    "bidiutils",
 ]
 
 # Apps specific for this project go here.
@@ -142,8 +143,10 @@ if env.bool("INCLUDE_INCONTEXT_L10N", False):
     django.conf.locale.LANG_INFO.update(EXTRA_LANG_INFO)
     # Add new languages to the list of all django languages
     global_settings.LANGUAGES = global_settings.LANGUAGES + EXTRA_LANGUAGES
+    global_settings.LANGUAGES_BIDI = global_settings.LANGUAGES_BIDI + [INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI.split('-')[0]]
     # Add new languages to the list of languages used for this project
     LANGUAGES += tuple(EXTRA_LANGUAGES)
+    LANGUAGES_BIDI = global_settings.LANGUAGES_BIDI
 
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#site-id
@@ -193,6 +196,7 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
                 "config.context_processors.version_number.version_number",
                 "config.context_processors.deployed.deployed",
+                "bidiutils.context_processors.bidi",
             ],
             "libraries": {
                 "render_html_field": "config.templatetags.render_html_field",
