@@ -22,7 +22,7 @@ gcloud compute --project "${PROJECT}" instances create "${INSTANCE_NAME}" \
 # Transfer files to instance
 source_tarball=crowdin-bot.tar.gz
 echo "Creating tarball ${source_tarball}"
-tar cvzf "${source_tarball}" crowdin_bot_python_package crowdin_bot_scripts crowdin_bot_secrets
+tar cvzf "${source_tarball}" crowdin_bot_python_package crowdin_bot_scripts crowdin_bot_secrets requirements.txt
 for i in $(seq 1 10); do
     echo "Copying ${source_tarball} to /tmp on ${INSTANCE_NAME}"
     gcloud beta compute scp setup-instance.sh "${source_tarball}" "${INSTANCE_NAME}:/tmp" --zone="${ZONE}" && break
