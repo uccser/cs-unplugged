@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-10 02:02+0000\n"
-"PO-Revision-Date: 2017-11-26 20:24-0500\n"
+"POT-Creation-Date: 2017-11-28 00:11+0000\n"
+"PO-Revision-Date: 2017-11-27 20:21-0500\n"
 "Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
 "Language-Team: English (upside down)\n"
 "Language: en_UD\n"
@@ -16,73 +16,490 @@ msgstr ""
 "X-Crowdin-Language: en-UD\n"
 "X-Crowdin-File: /csunplugged/locale/en/LC_MESSAGES/django.po\n"
 
-#: templates/base.html:20 templates/general/index.html:7
+#: config/settings/base.py:132
+msgid "Translation mode"
+msgstr "crwdns18197:0crwdne18197:0"
+
+#: config/settings/base.py:138
+msgid "Translation mode (Bi-directional)"
+msgstr "crwdns18198:0crwdne18198:0"
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:10
+msgid "12 digits"
+msgstr "crwdns15756:0crwdne15756:0"
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:11
+msgid "13 digits"
+msgstr "crwdns15757:0crwdne15757:0"
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:24
+msgid "Barcode length"
+msgstr "crwdns15755:0crwdne15755:0"
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:48
+msgid "{} Digit Barcode"
+msgstr "crwdns18199:0crwdne18199:0"
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:53
+msgid "Separate!"
+msgstr "crwdns18200:0crwdne18200:0"
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:54
+msgid "Operate!"
+msgstr "crwdns18201:0crwdne18201:0"
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:55
+msgid "Calculate!"
+msgstr "crwdns18202:0crwdne18202:0"
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:66
+msgid "Remember that this algorithm uses modulo 10, so we are only interested in the number in the one's column."
+msgstr "crwdns18203:0crwdne18203:0"
+
+#: resources/generators/BinaryCardsResourceGenerator.py:33
+msgid "Display Numbers"
+msgstr "crwdns15769:0crwdne15769:0"
+
+#: resources/generators/BinaryCardsResourceGenerator.py:38
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:46
+msgid "Black on Card Back"
+msgstr "crwdns15766:0crwdne15766:0"
+
+#: resources/generators/BinaryCardsResourceGenerator.py:40
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:48
+msgid "Yes - Uses a lot of black ink, but conveys clearer card state. Print double sided."
+msgstr "crwdns18204:0crwdne18204:0"
+
+#: resources/generators/BinaryCardsResourceGenerator.py:41
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:49
+msgid "No - Print single sided."
+msgstr "crwdns18205:0crwdne18205:0"
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:20
+#: resources/generators/BinaryWindowsResourceGenerator.py:15
+msgid "Four (1 to 8)"
+msgstr "crwdns15760:0crwdne15760:0"
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:21
+#: resources/generators/BinaryWindowsResourceGenerator.py:16
+msgid "Eight (1 to 128)"
+msgstr "crwdns15761:0crwdne15761:0"
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:22
+msgid "Twelve (1 to 2048)"
+msgstr "crwdns15762:0crwdne15762:0"
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:35
+#: resources/generators/BinaryWindowsResourceGenerator.py:34
+msgid "Number of Bits"
+msgstr "crwdns15759:0crwdne15759:0"
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:41
+#: resources/generators/BinaryWindowsResourceGenerator.py:40
+msgid "Display Dot Counts"
+msgstr "crwdns15763:0crwdne15763:0"
+
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:10
+msgid "Student"
+msgstr "crwdns15772:0crwdne15772:0"
+
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:11
+msgid "Teacher (solutions)"
+msgstr "crwdns15773:0crwdne15773:0"
+
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:24
+msgid "Worksheet Version"
+msgstr "crwdns15771:0crwdne15771:0"
+
+#: resources/generators/BinaryWindowsResourceGenerator.py:20
+msgid "Binary (0 or 1)"
+msgstr "crwdns15776:0crwdne15776:0"
+
+#: resources/generators/BinaryWindowsResourceGenerator.py:21
+msgid "Lightbulb (off or on)"
+msgstr "crwdns15777:0crwdne15777:0"
+
+#: resources/generators/BinaryWindowsResourceGenerator.py:45
+msgid "Value Representation"
+msgstr "crwdns15775:0crwdne15775:0"
+
+#: resources/generators/ModuloClockResourceGenerator.py:25
+msgid "Modulo"
+msgstr "crwdns15783:0crwdne15783:0"
+
+#: resources/generators/ParityCardsResourceGenerator.py:17
+msgid "Black"
+msgstr "crwdns15787:0crwdne15787:0"
+
+#: resources/generators/ParityCardsResourceGenerator.py:18
+msgid "Blue"
+msgstr "crwdns15788:0crwdne15788:0"
+
+#: resources/generators/ParityCardsResourceGenerator.py:19
+msgid "Green"
+msgstr "crwdns15789:0crwdne15789:0"
+
+#: resources/generators/ParityCardsResourceGenerator.py:20
+msgid "Purple"
+msgstr "crwdns15790:0crwdne15790:0"
+
+#: resources/generators/ParityCardsResourceGenerator.py:21
+msgid "Red"
+msgstr "crwdns15791:0crwdne15791:0"
+
+#: resources/generators/ParityCardsResourceGenerator.py:34
+msgid "Card back colour"
+msgstr "crwdns15786:0crwdne15786:0"
+
+#: resources/generators/PianoKeysResourceGenerator.py:62
+msgid "None"
+msgstr "crwdns15793:0crwdne15793:0"
+
+#: resources/generators/PianoKeysResourceGenerator.py:82
+msgid "Piano keys to highlight"
+msgstr "crwdns15792:0crwdne15792:0"
+
+#: resources/generators/PixelPainterResourceGenerator.py:13
+msgid "Black and White (2 possible binary values)"
+msgstr "crwdns18206:0crwdne18206:0"
+
+#: resources/generators/PixelPainterResourceGenerator.py:14
+msgid "Black and White (2 possible binary values) in Run Length Encoding"
+msgstr "crwdns18207:0crwdne18207:0"
+
+#: resources/generators/PixelPainterResourceGenerator.py:15
+msgid "Greyscale (4 possible binary values)"
+msgstr "crwdns18208:0crwdne18208:0"
+
+#: resources/generators/PixelPainterResourceGenerator.py:16
+msgid "Colour (8 possible binary values)"
+msgstr "crwdns18209:0crwdne18209:0"
+
+#: resources/generators/PixelPainterResourceGenerator.py:20
+msgid "Fish - 6 pages"
+msgstr "crwdns18210:0crwdne18210:0"
+
+#: resources/generators/PixelPainterResourceGenerator.py:21
+msgid "Hot air balloon - 8 pages"
+msgstr "crwdns18211:0crwdne18211:0"
+
+#: resources/generators/PixelPainterResourceGenerator.py:22
+msgid "Boat - 9 pages"
+msgstr "crwdns18212:0crwdne18212:0"
+
+#: resources/generators/PixelPainterResourceGenerator.py:23
+msgid "Parrots - 32 pages"
+msgstr "crwdns18213:0crwdne18213:0"
+
+#: resources/generators/PixelPainterResourceGenerator.py:32
+msgid "Black and White"
+msgstr "crwdns18214:0crwdne18214:0"
+
+#: resources/generators/PixelPainterResourceGenerator.py:39
+msgid "Run length encoding"
+msgstr "crwdns18215:0crwdne18215:0"
+
+#: resources/generators/PixelPainterResourceGenerator.py:46
+msgid "Greyscale"
+msgstr "crwdns18216:0crwdne18216:0"
+
+#: resources/generators/PixelPainterResourceGenerator.py:55
+msgid "Colour"
+msgstr "crwdns18217:0crwdne18217:0"
+
+#: resources/generators/PixelPainterResourceGenerator.py:70
+msgid "Boat"
+msgstr "crwdns18218:0crwdne18218:0"
+
+#: resources/generators/PixelPainterResourceGenerator.py:71
+msgid "Fish"
+msgstr "crwdns18219:0crwdne18219:0"
+
+#: resources/generators/PixelPainterResourceGenerator.py:72
+msgid "Hot air balloon"
+msgstr "crwdns18220:0crwdne18220:0"
+
+#: resources/generators/PixelPainterResourceGenerator.py:73
+#: templates/general/people.html:140
+msgid "Parrots"
+msgstr "crwdns15729:0crwdne15729:0"
+
+#: resources/generators/PixelPainterResourceGenerator.py:95
+msgid "Colouring type"
+msgstr "crwdns18221:0crwdne18221:0"
+
+#: resources/generators/PixelPainterResourceGenerator.py:101
+msgid "Image"
+msgstr "crwdns18222:0crwdne18222:0"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:23
+msgid "Number of cards (15 or 31)"
+msgstr "crwdns15817:0crwdne15817:0"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:24
+msgid "0 to 99"
+msgstr "crwdns15818:0crwdne15818:0"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:25
+msgid "0 to 999"
+msgstr "crwdns15819:0crwdne15819:0"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:26
+msgid "Blank"
+msgstr "crwdns15784:0crwdne15784:0"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:39
+msgid "Number of cards"
+msgstr "crwdns15815:0crwdne15815:0"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:45
+msgid "Range of numbers"
+msgstr "crwdns15816:0crwdne15816:0"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:51
+msgid "Include teacher guide sheet"
+msgstr "crwdns15820:0crwdne15820:0"
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:16
+msgid "Small numbers (1 to 6)"
+msgstr "crwdns15823:0crwdne15823:0"
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:17
+msgid "Large numbers (7 digit numbers)"
+msgstr "crwdns15824:0crwdne15824:0"
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:18
+msgid "Letters"
+msgstr "crwdns15828:0crwdne15828:0"
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:19
+msgid "Words"
+msgstr "crwdns15827:0crwdne15827:0"
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:20
+msgid "Fractions"
+msgstr "crwdns15825:0crwdne15825:0"
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:21
+msgid "Māori colours"
+msgstr "crwdns15829:0crwdne15829:0"
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:22
+msgid "Māori numbers"
+msgstr "crwdns15826:0crwdne15826:0"
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:23
+msgid "Butterfly life cycle"
+msgstr "crwdns15831:0crwdne15831:0"
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:24
+msgid "Little Red Riding Hood"
+msgstr "crwdns15830:0crwdne15830:0"
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:37
+msgid "Card Type"
+msgstr "crwdns15822:0crwdne15822:0"
+
+#: resources/generators/SortingNetworkResourceGenerator.py:10
+msgid "Easy Numbers (1 digits)"
+msgstr "crwdns18223:0crwdne18223:0"
+
+#: resources/generators/SortingNetworkResourceGenerator.py:11
+msgid "Medium Numbers (2 digits)"
+msgstr "crwdns15837:0crwdne15837:0"
+
+#: resources/generators/SortingNetworkResourceGenerator.py:12
+msgid "Hard Numbers (3 digits)"
+msgstr "crwdns15838:0crwdne15838:0"
+
+#: resources/generators/SortingNetworkResourceGenerator.py:13
+msgid "None (Blank - Useful as template) "
+msgstr "crwdns18224:0crwdne18224:0"
+
+#: resources/generators/SortingNetworkResourceGenerator.py:28
+#: resources/generators/TreasureHuntResourceGenerator.py:40
+msgid "Prefill with Numbers"
+msgstr "crwdns15834:0crwdne15834:0"
+
+#: resources/generators/TrainStationsResourceGenerator.py:9
+msgid "Circular"
+msgstr "crwdns15840:0crwdne15840:0"
+
+#: resources/generators/TrainStationsResourceGenerator.py:10
+msgid "Twisted"
+msgstr "crwdns15841:0crwdne15841:0"
+
+#: resources/generators/TrainStationsResourceGenerator.py:23
+msgid "Train track shape"
+msgstr "crwdns15839:0crwdne15839:0"
+
+#: resources/generators/TreasureHuntResourceGenerator.py:12
+msgid "Easy Numbers (2 digits)"
+msgstr "crwdns15842:0crwdne15842:0"
+
+#: resources/generators/TreasureHuntResourceGenerator.py:13
+msgid "Medium Numbers (3 digits)"
+msgstr "crwdns15843:0crwdne15843:0"
+
+#: resources/generators/TreasureHuntResourceGenerator.py:14
+msgid "Hard Numbers (4 digits)"
+msgstr "crwdns15844:0crwdne15844:0"
+
+#: resources/generators/TreasureHuntResourceGenerator.py:15
+msgid "None (Blank)"
+msgstr "crwdns15845:0crwdne15845:0"
+
+#: resources/generators/TreasureHuntResourceGenerator.py:19
+msgid "Sorted Numbers"
+msgstr "crwdns15848:0crwdne15848:0"
+
+#: resources/generators/TreasureHuntResourceGenerator.py:20
+msgid "Unsorted Numbers"
+msgstr "crwdns15847:0crwdne15847:0"
+
+#: resources/generators/TreasureHuntResourceGenerator.py:24
+msgid "Table only - Little ink usage."
+msgstr "crwdns15852:0crwdne15852:0"
+
+#: resources/generators/TreasureHuntResourceGenerator.py:25
+msgid "Table and artwork - Uses a lot of colour ink."
+msgstr "crwdns15851:0crwdne15851:0"
+
+#: resources/generators/TreasureHuntResourceGenerator.py:46
+msgid "Numbers Unsorted/Sorted"
+msgstr "crwdns15846:0crwdne15846:0"
+
+#: resources/generators/TreasureHuntResourceGenerator.py:52
+msgid "Include instruction sheets"
+msgstr "crwdns15849:0crwdne15849:0"
+
+#: resources/generators/TreasureHuntResourceGenerator.py:57
+msgid "Printing mode"
+msgstr "crwdns15850:0crwdne15850:0"
+
+#: resources/utils/BaseResourceGenerator.py:20
+msgid "A4"
+msgstr "crwdns15802:0crwdne15802:0"
+
+#: resources/utils/BaseResourceGenerator.py:21
+msgid "US Letter"
+msgstr "crwdns15803:0crwdne15803:0"
+
+#: resources/utils/BaseResourceGenerator.py:52
+msgid "Paper Size"
+msgstr "crwdns15801:0crwdne15801:0"
+
+#: resources/utils/BaseResourceGenerator.py:72
+msgid "Header Text"
+msgstr "crwdns15805:0crwdne15805:0"
+
+#: resources/utils/BaseResourceGenerator.py:73
+msgid "Example School: Room Four"
+msgstr "crwdns18225:0crwdne18225:0"
+
+#: resources/utils/BaseResourceGenerator.py:81
+msgid "Number of Copies"
+msgstr "crwdns15806:0crwdne15806:0"
+
+#: resources/utils/get_options_html.py:24
+msgid "Local Generation Only"
+msgstr "crwdns15804:0crwdne15804:0"
+
+#: resources/utils/resource_parameters.py:172
+#: templates/topics/all-curriculum-integration-list.html:58
+#: templates/topics/curriculum-integrations-table.html:32
+#: templates/topics/lessons-table.html:42
+msgid "Yes"
+msgstr "crwdns15764:0crwdne15764:0"
+
+#: resources/utils/resource_parameters.py:172
+#: templates/topics/all-curriculum-integration-list.html:61
+#: templates/topics/curriculum-integrations-table.html:35
+#: templates/topics/lessons-table.html:46
+msgid "No"
+msgstr "crwdns15765:0crwdne15765:0"
+
+#: templates/base.html:25 templates/general/index.html:7
 msgid "CS Unplugged"
 msgstr "crwdns15645:0crwdne15645:0"
 
-#: templates/base.html:48 templates/base.html:111 templates/topics/index.html:8
-#: templates/topics/index.html:17
+#: templates/base.html:53 templates/base.html:157
+#: templates/topics/index.html:8 templates/topics/index.html:17
 msgid "Topics"
 msgstr "crwdns15646:0crwdne15646:0"
 
-#: templates/base.html:49 templates/base.html:116
+#: templates/base.html:54 templates/base.html:162
 #: templates/general/index.html:60 templates/resources/index.html:8
-#: templates/resources/index.html:17 templates/topics/topic.html:56
-#: templates/topics/topic.html:102
+#: templates/resources/index.html:17 templates/topics/topic.html:70
+#: templates/topics/topic.html:121
 msgid "Resources"
 msgstr "crwdns15647:0crwdne15647:0"
 
-#: templates/base.html:50 templates/base.html:106
+#: templates/base.html:55 templates/base.html:152
 #: templates/general/about.html:6 templates/general/base.html:9
 msgid "About"
 msgstr "crwdns15648:0crwdne15648:0"
 
-#: templates/base.html:102
+#: templates/base.html:123
+msgid "Looking for something for high schools? Check out the <a href=\"http://csfieldguide.org.nz/\">Computer Science Field Guide</a>."
+msgstr "crwdns15658:0crwdne15658:0"
+
+#: templates/base.html:135
+msgid "The primary goal of the Unplugged project is to promote Computer Science (and computing in general) to young people as an interesting, engaging, and intellectually stimulating discipline."
+msgstr "crwdns18226:0crwdne18226:0"
+
+#: templates/base.html:141
+#, python-format
+msgid "Read more about <a href=\"%(principles_url)s\">our principles here</a>."
+msgstr "crwdns18227:0%(principles_url)scrwdne18227:0"
+
+#: templates/base.html:148
 msgid "Useful Links"
 msgstr "crwdns15649:0crwdne15649:0"
 
-#: templates/base.html:122
+#: templates/base.html:168
 msgid "Community"
 msgstr "crwdns15650:0crwdne15650:0"
 
-#: templates/base.html:126
+#: templates/base.html:172
 msgid "Twitter"
 msgstr "crwdns15651:0crwdne15651:0"
 
-#: templates/base.html:131
+#: templates/base.html:177
 msgid "YouTube"
 msgstr "crwdns15652:0crwdne15652:0"
 
-#: templates/base.html:136
+#: templates/base.html:182
 msgid "GitHub"
 msgstr "crwdns15653:0crwdne15653:0"
 
-#: templates/base.html:142
+#: templates/base.html:188
 msgid "Help"
 msgstr "crwdns15654:0crwdne15654:0"
 
-#: templates/base.html:146 templates/topics/glossary.html:8
+#: templates/base.html:192 templates/topics/glossary.html:8
 #: templates/topics/glossary.html:18
 msgid "Glossary"
 msgstr "crwdns15655:0crwdne15655:0"
 
-#: templates/base.html:151
+#: templates/base.html:197
 msgid "Feedback"
 msgstr "crwdns15656:0crwdne15656:0"
 
-#: templates/base.html:156 templates/general/contact.html:7
+#: templates/base.html:202 templates/general/contact.html:7
 msgid "Contact"
 msgstr "crwdns15657:0crwdne15657:0"
 
-#: templates/base.html:167
-msgid "Looking for something for high schools? Check out the <a href=\"http://csfieldguide.org.nz/\">Computer Science Field Guide</a>."
-msgstr "crwdns15658:0crwdne15658:0"
-
-#: templates/base.html:175
+#: templates/base.html:212
 msgid "The CS Unplugged material is open source on <a href=\"https://github.com/uccser/cs-unplugged\">GitHub</a>, and this website's content is shared under a <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons Attribution-ShareAlike 4.0 International license</a>. The CS Unplugged is a project by the <a href=\"http://www.cosc.canterbury.ac.nz/research/RG/CSE/\">Computer Science Education Research Group</a> at the <a href=\"http://www.canterbury.ac.nz/\">University of Canterbury</a>, New Zealand."
 msgstr "crwdns15659:0crwdne15659:0"
 
-#: templates/base.html:197
+#: templates/base.html:234
+#, python-format
+msgid "This definition is not available in %(language)s, sorry!"
+msgstr "crwdns18228:0%(language)scrwdne18228:0"
+
+#: templates/base.html:241
 msgid "Close"
 msgstr "crwdns15660:0crwdne15660:0"
 
@@ -336,7 +753,7 @@ msgstr "crwdns15720:0crwdne15720:0"
 #: templates/general/index.html:57
 #: templates/topics/all-curriculum-integration-list.html:8
 #: templates/topics/all-curriculum-integration-list.html:18
-#: templates/topics/topic.html:51
+#: templates/topics/topic.html:65
 msgid "Curriculum Integrations"
 msgstr "crwdns15721:0crwdne15721:0"
 
@@ -367,10 +784,6 @@ msgstr "crwdns15727:0crwdne15727:0"
 #: templates/general/people.html:129
 msgid "Website"
 msgstr "crwdns15728:0crwdne15728:0"
-
-#: templates/general/people.html:140
-msgid "Parrots"
-msgstr "crwdns15729:0crwdne15729:0"
 
 #: templates/general/principles.html:23
 msgid "The primary goal of the Unplugged project is to promote Computer Science (and computing in general) to young people as an interesting, engaging, and intellectually stimulating discipline. We want to capture people’s imagination and address common misconceptions about what it means to be a computer scientist. We want to convey fundamentals that do not depend on particular software or systems, ideas that will still be fresh in 10 years. We want to reach kids in elementary schools and provide supplementary material for university courses. We want to tread where high-tech educational solutions are infeasible; to cross the divide between the information-rich and information-poor, between industrialized countries and the developing world."
@@ -464,134 +877,6 @@ msgstr "crwdns15751:0crwdne15751:0"
 msgid "The activities are resilient to errors made by students; they should not depend on getting many difficult steps exactly right, and minor mistakes should not prevent participants from understanding the principles. The instructions are usually just one or two rules and a goal that can be expressed in a single sentence (e.g. “Each card is either fully visible or not; how can you display exactly 11 dots?”, or “We need to get from any house to any other house; what is the smallest number of paving stones that make this possible”)."
 msgstr "crwdns15752:0crwdne15752:0"
 
-#: templates/resources/arrows.html:8
-#: templates/resources/left-right-cards.html:8
-msgid "This resource contains printouts for geometry activities."
-msgstr "crwdns15753:0crwdne15753:0"
-
-#: templates/resources/barcode-checksum-poster.html:8
-msgid "This resource is a poster showing how to calculate the checksum for a 12 or 13 digit barcode."
-msgstr "crwdns15754:0crwdne15754:0"
-
-#: templates/resources/barcode-checksum-poster.html:14
-msgid "Barcode length"
-msgstr "crwdns15755:0crwdne15755:0"
-
-#: templates/resources/barcode-checksum-poster.html:16
-msgid "12 digits"
-msgstr "crwdns15756:0crwdne15756:0"
-
-#: templates/resources/barcode-checksum-poster.html:19
-msgid "13 digits"
-msgstr "crwdns15757:0crwdne15757:0"
-
-#: templates/resources/binary-cards-small.html:8
-#: templates/resources/binary-cards.html:8
-#: templates/resources/binary-windows.html:8
-msgid "This resource contains printouts for binary numbers activities."
-msgstr "crwdns15758:0crwdne15758:0"
-
-#: templates/resources/binary-cards-small.html:14
-#: templates/resources/binary-windows.html:22
-msgid "Number of Bits"
-msgstr "crwdns15759:0crwdne15759:0"
-
-#: templates/resources/binary-cards-small.html:16
-#: templates/resources/binary-windows.html:24
-msgid "Four (1 to 8)"
-msgstr "crwdns15760:0crwdne15760:0"
-
-#: templates/resources/binary-cards-small.html:19
-#: templates/resources/binary-windows.html:27
-msgid "Eight (1 to 128)"
-msgstr "crwdns15761:0crwdne15761:0"
-
-#: templates/resources/binary-cards-small.html:22
-msgid "Twelve (1 to 2048)"
-msgstr "crwdns15762:0crwdne15762:0"
-
-#: templates/resources/binary-cards-small.html:26
-#: templates/resources/binary-windows.html:31
-msgid "Display Dot Counts"
-msgstr "crwdns15763:0crwdne15763:0"
-
-#: templates/resources/binary-cards-small.html:28
-#: templates/resources/binary-cards.html:16
-#: templates/resources/binary-windows.html:33
-#: templates/resources/searching-cards.html:55
-#: templates/resources/treasure-hunt.html:39
-#: templates/topics/all-curriculum-integration-list.html:54
-#: templates/topics/curriculum-integrations-table.html:28
-#: templates/topics/lessons-table.html:36
-msgid "Yes"
-msgstr "crwdns15764:0crwdne15764:0"
-
-#: templates/resources/binary-cards-small.html:31
-#: templates/resources/binary-cards.html:19
-#: templates/resources/binary-windows.html:36
-#: templates/resources/searching-cards.html:61
-#: templates/resources/treasure-hunt.html:45
-#: templates/topics/all-curriculum-integration-list.html:57
-#: templates/topics/curriculum-integrations-table.html:31
-#: templates/topics/lessons-table.html:40
-msgid "No"
-msgstr "crwdns15765:0crwdne15765:0"
-
-#: templates/resources/binary-cards-small.html:35
-#: templates/resources/binary-cards.html:23
-msgid "Black on Card Back"
-msgstr "crwdns15766:0crwdne15766:0"
-
-#: templates/resources/binary-cards-small.html:38
-#: templates/resources/binary-cards.html:26
-msgid "Yes - <em>Uses a lot of black ink, but conveys clearer card state. Print double sided.</em>"
-msgstr "crwdns15767:0crwdne15767:0"
-
-#: templates/resources/binary-cards-small.html:45
-#: templates/resources/binary-cards.html:33
-msgid "No - <em>Print single sided.</em>"
-msgstr "crwdns15768:0crwdne15768:0"
-
-#: templates/resources/binary-cards.html:14
-msgid "Display Numbers"
-msgstr "crwdns15769:0crwdne15769:0"
-
-#: templates/resources/binary-to-alphabet.html:8
-msgid "This resource will show you how to use binary numbers to represent letters."
-msgstr "crwdns15770:0crwdne15770:0"
-
-#: templates/resources/binary-to-alphabet.html:14
-msgid "Worksheet Version"
-msgstr "crwdns15771:0crwdne15771:0"
-
-#: templates/resources/binary-to-alphabet.html:16
-msgid "Student"
-msgstr "crwdns15772:0crwdne15772:0"
-
-#: templates/resources/binary-to-alphabet.html:19
-msgid "Teacher (solutions)"
-msgstr "crwdns15773:0crwdne15773:0"
-
-#: templates/resources/binary-windows.html:13
-msgid "<strong>Note:</strong> This resource should be printed double sided on short edge."
-msgstr "crwdns15774:0crwdne15774:0"
-
-#: templates/resources/binary-windows.html:40
-msgid "Value Representation"
-msgstr "crwdns15775:0crwdne15775:0"
-
-#: templates/resources/binary-windows.html:42
-msgid "Binary (0 or 1)"
-msgstr "crwdns15776:0crwdne15776:0"
-
-#: templates/resources/binary-windows.html:45
-msgid "Lightbulb (off or on)"
-msgstr "crwdns15777:0crwdne15777:0"
-
-#: templates/resources/grid.html:8
-msgid "This resource contains a 8 by 8 grid on a page."
-msgstr "crwdns15778:0crwdne15778:0"
-
 #: templates/resources/index.html:20
 msgid "This page diplays a complete list of all available resources. If a lesson uses a resource, the lesson will contain a direct link to the resource with a description on how to use it."
 msgstr "crwdns15779:0crwdne15779:0"
@@ -600,307 +885,40 @@ msgstr "crwdns15779:0crwdne15779:0"
 msgid "No resources are available."
 msgstr "crwdns15780:0crwdne15780:0"
 
-#: templates/resources/job-badges.html:8
-msgid "This resource contains printouts for Kidbots activities."
-msgstr "crwdns15781:0crwdne15781:0"
-
-#: templates/resources/modulo-clock.html:8
-msgid "This resource contains printouts for modulo activities."
-msgstr "crwdns15782:0crwdne15782:0"
-
-#: templates/resources/modulo-clock.html:14
-msgid "Modulo"
-msgstr "crwdns15783:0crwdne15783:0"
-
-#: templates/resources/modulo-clock.html:16
-#: templates/resources/searching-cards.html:45
-msgid "Blank"
-msgstr "crwdns15784:0crwdne15784:0"
-
-#: templates/resources/parity-cards.html:7
-msgid "<p> This resource contains printouts for parity card activities. To use this resource: </p> <ul> <li> Printed the PDF double sided. </li> <li> Printing on 120 gsm card also can be useful. </li> </ul> <p> Each page contains 20 parity cards, so we recommend printing at least 2 pages of cards as 40 cards is a useful number for most activities. </p>"
-msgstr "crwdns15785:0crwdne15785:0"
-
-#: templates/resources/parity-cards.html:31
-msgid "Card back colour"
-msgstr "crwdns15786:0crwdne15786:0"
-
-#: templates/resources/parity-cards.html:34
-msgid "Black"
-msgstr "crwdns15787:0crwdne15787:0"
-
-#: templates/resources/parity-cards.html:39
-msgid "Blue"
-msgstr "crwdns15788:0crwdne15788:0"
-
-#: templates/resources/parity-cards.html:44
-msgid "Green"
-msgstr "crwdns15789:0crwdne15789:0"
-
-#: templates/resources/parity-cards.html:49
-msgid "Purple"
-msgstr "crwdns15790:0crwdne15790:0"
-
-#: templates/resources/parity-cards.html:54
-msgid "Red"
-msgstr "crwdns15791:0crwdne15791:0"
-
-#: templates/resources/piano-keys.html:7
-msgid "Piano keys to highlight"
-msgstr "crwdns15792:0crwdne15792:0"
-
-#: templates/resources/piano-keys.html:11
-msgid "None"
-msgstr "crwdns15793:0crwdne15793:0"
-
-#. Translators: Musical note
-#: templates/resources/piano-keys.html:18
-msgid "A"
-msgstr "crwdns15794:0crwdne15794:0"
-
-#. Translators: Musical note
-#: templates/resources/piano-keys.html:25
-msgid "B"
-msgstr "crwdns15795:0crwdne15795:0"
-
-#. Translators: Musical note
-#: templates/resources/piano-keys.html:32
-msgid "C"
-msgstr "crwdns15796:0crwdne15796:0"
-
-#. Translators: Musical note
-#: templates/resources/piano-keys.html:39
-msgid "D"
-msgstr "crwdns15797:0crwdne15797:0"
-
-#. Translators: Musical note
-#: templates/resources/piano-keys.html:46
-msgid "E"
-msgstr "crwdns15798:0crwdne15798:0"
-
-#. Translators: Musical note
-#: templates/resources/piano-keys.html:53
-msgid "F"
-msgstr "crwdns15799:0crwdne15799:0"
-
-#. Translators: Musical note
-#: templates/resources/piano-keys.html:60
-msgid "G"
-msgstr "crwdns15800:0crwdne15800:0"
-
-#: templates/resources/resource.html:31
-msgid "Paper Size"
-msgstr "crwdns15801:0crwdne15801:0"
-
-#: templates/resources/resource.html:33
-msgid "A4"
-msgstr "crwdns15802:0crwdne15802:0"
-
-#: templates/resources/resource.html:36
-msgid "US Letter"
-msgstr "crwdns15803:0crwdne15803:0"
-
-#: templates/resources/resource.html:41
-msgid "Local Generation Only"
-msgstr "crwdns15804:0crwdne15804:0"
-
-#: templates/resources/resource.html:44
-msgid "Header Text"
-msgstr "crwdns15805:0crwdne15805:0"
-
-#: templates/resources/resource.html:50
-msgid "Number of Copies"
-msgstr "crwdns15806:0crwdne15806:0"
-
-#: templates/resources/resource.html:56
+#: templates/resources/resource.html:34
 msgid "Generate Resource"
 msgstr "crwdns15807:0crwdne15807:0"
 
-#: templates/resources/resource.html:60
+#: templates/resources/resource.html:38
 #, python-format
 msgid "The download of this resource includes %(copies_amount)s unique copies."
 msgstr "crwdns15808:0%(copies_amount)scrwdne15808:0"
 
-#: templates/resources/resource.html:73
+#: templates/resources/resource.html:50
 msgid "Preview"
 msgstr "crwdns15809:0crwdne15809:0"
 
-#: templates/resources/resource.html:81
+#: templates/resources/resource.html:58
 msgid "Related Lessons"
 msgstr "crwdns15810:0crwdne15810:0"
 
-#: templates/resources/resource.html:86
+#: templates/resources/resource.html:63
 #: templates/topics/all-curriculum-integration-list.html:28
 msgid "Topic"
 msgstr "crwdns15811:0crwdne15811:0"
 
-#: templates/resources/resource.html:87
+#: templates/resources/resource.html:64
 msgid "Ages"
 msgstr "crwdns15812:0crwdne15812:0"
 
-#: templates/resources/resource.html:88
+#: templates/resources/resource.html:65
 #: templates/topics/programming-challenges-table.html:8
 msgid "Number"
 msgstr "crwdns15813:0crwdne15813:0"
 
-#: templates/resources/resource.html:89
+#: templates/resources/resource.html:66
 msgid "Lesson"
 msgstr "crwdns15814:0crwdne15814:0"
-
-#: templates/resources/searching-cards.html:7
-msgid "Number of cards"
-msgstr "crwdns15815:0crwdne15815:0"
-
-#: templates/resources/searching-cards.html:23
-msgid "Range of numbers"
-msgstr "crwdns15816:0crwdne15816:0"
-
-#: templates/resources/searching-cards.html:27
-msgid "Number of cards (15 or 31)"
-msgstr "crwdns15817:0crwdne15817:0"
-
-#: templates/resources/searching-cards.html:33
-msgid "0 to 99"
-msgstr "crwdns15818:0crwdne15818:0"
-
-#: templates/resources/searching-cards.html:39
-msgid "0 to 999"
-msgstr "crwdns15819:0crwdne15819:0"
-
-#: templates/resources/searching-cards.html:51
-msgid "Include teacher guide sheet"
-msgstr "crwdns15820:0crwdne15820:0"
-
-#: templates/resources/sorting-network-cards.html:9
-#, python-format
-msgid "These cards are to be used with the <a href=\"%(sorting_network_cards_url)s\">Sorting Network resource</a>."
-msgstr "crwdns15821:0%(sorting_network_cards_url)scrwdne15821:0"
-
-#: templates/resources/sorting-network-cards.html:18
-msgid "Card Type"
-msgstr "crwdns15822:0crwdne15822:0"
-
-#: templates/resources/sorting-network-cards.html:22
-msgid "Small numbers (1 to 6)"
-msgstr "crwdns15823:0crwdne15823:0"
-
-#: templates/resources/sorting-network-cards.html:28
-msgid "Large numbers (7 digit numbers)"
-msgstr "crwdns15824:0crwdne15824:0"
-
-#: templates/resources/sorting-network-cards.html:34
-msgid "Fractions"
-msgstr "crwdns15825:0crwdne15825:0"
-
-#: templates/resources/sorting-network-cards.html:40
-msgid "Māori numbers"
-msgstr "crwdns15826:0crwdne15826:0"
-
-#: templates/resources/sorting-network-cards.html:46
-msgid "Words"
-msgstr "crwdns15827:0crwdne15827:0"
-
-#: templates/resources/sorting-network-cards.html:52
-msgid "Letters"
-msgstr "crwdns15828:0crwdne15828:0"
-
-#: templates/resources/sorting-network-cards.html:58
-msgid "Māori colours"
-msgstr "crwdns15829:0crwdne15829:0"
-
-#: templates/resources/sorting-network-cards.html:64
-msgid "Little Red Riding Hood"
-msgstr "crwdns15830:0crwdne15830:0"
-
-#: templates/resources/sorting-network-cards.html:70
-msgid "Butterfly life cycle"
-msgstr "crwdns15831:0crwdne15831:0"
-
-#: templates/resources/sorting-network.html:8
-msgid "This resource will show you how computers sort random numbers into order using a thing called a sorting network."
-msgstr "crwdns15832:0crwdne15832:0"
-
-#: templates/resources/sorting-network.html:15
-#, python-format
-msgid "Can be used with the <a href=\"%(sorting_network_url)s\">Sorting Network cards resource</a>."
-msgstr "crwdns15833:0%(sorting_network_url)scrwdne15833:0"
-
-#: templates/resources/sorting-network.html:24
-#: templates/resources/treasure-hunt.html:11
-msgid "Prefill with Numbers"
-msgstr "crwdns15834:0crwdne15834:0"
-
-#: templates/resources/sorting-network.html:26
-msgid "None (Blank - Useful as template)"
-msgstr "crwdns15835:0crwdne15835:0"
-
-#: templates/resources/sorting-network.html:29
-msgid "Easy Numbers (1 digit)"
-msgstr "crwdns15836:0crwdne15836:0"
-
-#: templates/resources/sorting-network.html:32
-msgid "Medium Numbers (2 digits)"
-msgstr "crwdns15837:0crwdne15837:0"
-
-#: templates/resources/sorting-network.html:35
-msgid "Hard Numbers (3 digits)"
-msgstr "crwdns15838:0crwdne15838:0"
-
-#: templates/resources/train-stations.html:7
-msgid "Train track shape"
-msgstr "crwdns15839:0crwdne15839:0"
-
-#: templates/resources/train-stations.html:11
-msgid "Circular"
-msgstr "crwdns15840:0crwdne15840:0"
-
-#: templates/resources/train-stations.html:17
-msgid "Twisted"
-msgstr "crwdns15841:0crwdne15841:0"
-
-#: templates/resources/treasure-hunt.html:13
-msgid "Easy Numbers (2 digits)"
-msgstr "crwdns15842:0crwdne15842:0"
-
-#: templates/resources/treasure-hunt.html:16
-msgid "Medium Numbers (3 digits)"
-msgstr "crwdns15843:0crwdne15843:0"
-
-#: templates/resources/treasure-hunt.html:19
-msgid "Hard Numbers (4 digits)"
-msgstr "crwdns15844:0crwdne15844:0"
-
-#: templates/resources/treasure-hunt.html:22
-msgid "None (Blank)"
-msgstr "crwdns15845:0crwdne15845:0"
-
-#: templates/resources/treasure-hunt.html:26
-msgid "Numbers Unsorted/Sorted"
-msgstr "crwdns15846:0crwdne15846:0"
-
-#: templates/resources/treasure-hunt.html:28
-msgid "Unsorted Numbers"
-msgstr "crwdns15847:0crwdne15847:0"
-
-#: templates/resources/treasure-hunt.html:31
-msgid "Sorted Numbers"
-msgstr "crwdns15848:0crwdne15848:0"
-
-#: templates/resources/treasure-hunt.html:35
-msgid "Include instruction sheets"
-msgstr "crwdns15849:0crwdne15849:0"
-
-#: templates/resources/treasure-hunt.html:51
-msgid "Printing mode"
-msgstr "crwdns15850:0crwdne15850:0"
-
-#: templates/resources/treasure-hunt.html:55
-msgid "Table and artwork - Uses a lot of colour ink."
-msgstr "crwdns15851:0crwdne15851:0"
-
-#: templates/resources/treasure-hunt.html:61
-msgid "Table only - Little ink usage."
-msgstr "crwdns15852:0crwdne15852:0"
 
 #: templates/topics/all-curriculum-integration-list.html:20
 msgid "The following table lists curriculum integrations for all topics in the CS Unplugged content."
@@ -938,70 +956,129 @@ msgstr "crwdns15859:0crwdne15859:0"
 msgid "These Computational Thinking concepts are all connected to each other and support each other, but it’s important to note that not all aspects of Computational Thinking happen in every unit or lesson. We’ve highlighted the important connections for you to observe your students in action. For more background information on what our definition of Computational Thinking <a href=\"%(ct_url)s\">see our notes about computational thinking</a>."
 msgstr "crwdns15860:0%(ct_url)scrwdne15860:0"
 
-#: templates/topics/curriculum-integration.html:38
+#: templates/topics/curriculum-integration.html:31
+#: templates/topics/programming-challenge.html:26
+#: templates/topics/topic.html:21 templates/topics/unit-plan.html:23
+msgid "topic"
+msgstr "crwdns18229:0crwdne18229:0"
+
+#: templates/topics/curriculum-integration.html:32
+msgid "curriculum integration"
+msgstr "crwdns18230:0crwdne18230:0"
+
+#: templates/topics/curriculum-integration.html:49
 msgid "Heads up!"
 msgstr "crwdns15861:0crwdne15861:0"
 
-#: templates/topics/curriculum-integration.html:39
+#: templates/topics/curriculum-integration.html:50
 msgid "To do this activity it's expected you understand the content covered in the following:"
 msgstr "crwdns15862:0crwdne15862:0"
+
+#: templates/topics/glossary.html:30
+#, python-format
+msgid "The following glossary terms are not yet available in %(language)s. Sorry about that!"
+msgstr "crwdns18231:0%(language)scrwdne18231:0"
 
 #: templates/topics/index.html:22
 msgid "Open a topic to see all related unit plans, lessons, curriculum integrations, and programming challenges."
 msgstr "crwdns15863:0crwdne15863:0"
 
-#: templates/topics/index.html:39
+#: templates/topics/index.html:40
+#, python-format
+msgid "Ages %(min_age)s to %(max_age)s"
+msgstr "crwdns18232:0%(min_age)scrwdnd18232:0%(max_age)scrwdne18232:0"
+
+#: templates/topics/index.html:46
+msgid "lessons"
+msgstr "crwdns18233:0crwdne18233:0"
+
+#: templates/topics/index.html:50
+msgid "curriculum integrations"
+msgstr "crwdns18234:0crwdne18234:0"
+
+#: templates/topics/index.html:53
+msgid "programming challenges"
+msgstr "crwdns18235:0crwdne18235:0"
+
+#: templates/topics/index.html:62
 msgid "No topics are available."
 msgstr "crwdns15864:0crwdne15864:0"
 
-#: templates/topics/lesson.html:23
+#: templates/topics/lesson.html:24 templates/topics/unit-plan.html:22
+msgid "unit plan"
+msgstr "crwdns18236:0crwdne18236:0"
+
+#: templates/topics/lesson.html:25
+msgid "lesson"
+msgstr "crwdns18237:0crwdne18237:0"
+
+#: templates/topics/lesson.html:31
 #, python-format
 msgid "<strong>Duration:</strong> %(lesson.duration)s minutes"
 msgstr "crwdns15865:0%(lesson.duration)scrwdne15865:0"
 
-#: templates/topics/lesson.html:26
+#: templates/topics/lesson.html:34
 #, python-format
 msgid "<strong>Ages %(lower)s to %(upper)s:</strong> Lesson %(number)s"
 msgstr "crwdns15866:0%(lower)scrwdnd15866:0%(upper)scrwdnd15866:0%(number)scrwdne15866:0"
 
-#: templates/topics/lesson.html:36
-#: templates/topics/programming-challenge.html:59
+#: templates/topics/lesson.html:46
+#: templates/topics/programming-challenge.html:71
 msgid "Learning outcomes"
 msgstr "crwdns15867:0crwdne15867:0"
 
-#: templates/topics/lesson.html:37
+#: templates/topics/lesson.html:47
 msgid "Students will be able to:"
 msgstr "crwdns15868:0crwdne15868:0"
 
-#: templates/topics/lesson.html:60
+#: templates/topics/lesson.html:71
 msgid "CS Unplugged resources"
 msgstr "crwdns15869:0crwdne15869:0"
 
-#: templates/topics/lesson.html:75
+#: templates/topics/lesson.html:86
 msgid "Classroom resources"
 msgstr "crwdns15870:0crwdne15870:0"
 
-#: templates/topics/lesson.html:84 templates/topics/lessons-table.html:12
+#: templates/topics/lesson.html:95 templates/topics/lessons-table.html:14
 msgid "Programming challenges"
 msgstr "crwdns15871:0crwdne15871:0"
 
-#: templates/topics/lesson.html:87
+#: templates/topics/lesson.html:98
 msgid "View related programming challenges"
 msgstr "crwdns15872:0crwdne15872:0"
 
-#: templates/topics/lesson.html:93 templates/topics/topic.html:83
-#: templates/topics/unit-plan.html:37
+#: templates/topics/lesson.html:104 templates/topics/topic.html:99
+#: templates/topics/unit-plan.html:48
 msgid "Table of contents"
 msgstr "crwdns15873:0crwdne15873:0"
 
-#: templates/topics/lesson.html:106 templates/topics/unit-plan.html:49
+#: templates/topics/lesson.html:117 templates/topics/unit-plan.html:60
 msgid "Computational Thinking"
 msgstr "crwdns15874:0crwdne15874:0"
 
-#: templates/topics/lessons-table.html:8
+#: templates/topics/lessons-table.html:10
 #, python-format
 msgid "Ages %(lower)s to %(upper)s"
 msgstr "crwdns15875:0%(lower)scrwdnd15875:0%(upper)scrwdne15875:0"
+
+#: templates/topics/not-available-badge.html:4
+#, python-format
+msgid "Not available in %(language)s"
+msgstr "crwdns18238:0%(language)scrwdne18238:0"
+
+#: templates/topics/not-available-warning.html:6
+#, python-format
+msgid "<h4>Sorry! This %(model_type)s is not yet available in %(language)s.</h4> <p>This %(model_type)s is available in the following languages:</p>"
+msgstr "crwdns18239:0%(model_type)scrwdnd18239:0%(language)scrwdnd18239:0%(model_type)scrwdne18239:0"
+
+#: templates/topics/not-available-warning.html:21
+msgid "or"
+msgstr "crwdns18240:0crwdne18240:0"
+
+#: templates/topics/not-available-warning.html:23
+#, python-format
+msgid "Return to the %(parent_type)s"
+msgstr "crwdns18241:0%(parent_type)scrwdne18241:0"
 
 #: templates/topics/programming-challenge-language-solution.html:10
 #, python-format
@@ -1009,27 +1086,32 @@ msgid "%(name)s solution"
 msgstr "crwdns15876:0%(name)scrwdne15876:0"
 
 #: templates/topics/programming-challenge-language-solution.html:28
+#: templates/topics/programming-challenge-language-solution.html:32
 msgid "solution"
 msgstr "crwdns15877:0crwdne15877:0"
 
-#: templates/topics/programming-challenge-language-solution.html:34
+#: templates/topics/programming-challenge-language-solution.html:33
+msgid "challenge"
+msgstr "crwdns18242:0crwdne18242:0"
+
+#: templates/topics/programming-challenge-language-solution.html:43
 msgid "<strong>Heads Up!</strong> If you are ready to compare your programming to ours or are wanting to have a look at how we solved it, click 'View solution' below to view at least one way to write this program."
 msgstr "crwdns15878:0crwdne15878:0"
 
-#: templates/topics/programming-challenge-language-solution.html:41
+#: templates/topics/programming-challenge-language-solution.html:50
 msgid "View solution"
 msgstr "crwdns15879:0crwdne15879:0"
 
-#: templates/topics/programming-challenge-language-solution.html:45
+#: templates/topics/programming-challenge-language-solution.html:54
 msgid "This is just one of many possible solutions:"
 msgstr "crwdns15880:0crwdne15880:0"
 
-#: templates/topics/programming-challenge-language-solution.html:52
+#: templates/topics/programming-challenge-language-solution.html:61
 msgid "Back to programming challenge"
 msgstr "crwdns15881:0crwdne15881:0"
 
-#: templates/topics/programming-challenge-language-solution.html:61
-#: templates/topics/programming-challenge.html:123
+#: templates/topics/programming-challenge-language-solution.html:72
+#: templates/topics/programming-challenge.html:146
 msgid "Extra Challenge"
 msgstr "crwdns15882:0crwdne15882:0"
 
@@ -1044,47 +1126,51 @@ msgstr "crwdns15883:0%(name)scrwdne15883:0"
 msgid "No programming challenges for %(topic)s."
 msgstr "crwdns15884:0%(topic)scrwdne15884:0"
 
-#: templates/topics/programming-challenge.html:25
+#: templates/topics/programming-challenge.html:24
+msgid "programming challenge"
+msgstr "crwdns18243:0crwdne18243:0"
+
+#: templates/topics/programming-challenge.html:32
 msgid "Challenge Level:"
 msgstr "crwdns15885:0crwdne15885:0"
 
-#: templates/topics/programming-challenge.html:33
+#: templates/topics/programming-challenge.html:42
 msgid "This programming challenge is linked to the following lessons:"
 msgstr "crwdns15886:0crwdne15886:0"
 
-#: templates/topics/programming-challenge.html:39
+#: templates/topics/programming-challenge.html:48
 #, python-format
 msgid "Challenge %(set_num)s.%(chal_num)s for %(name)s"
 msgstr "crwdns15887:0%(set_num)scrwdnd15887:0%(chal_num)scrwdnd15887:0%(name)scrwdne15887:0"
 
-#: templates/topics/programming-challenge.html:44
+#: templates/topics/programming-challenge.html:53
 #, python-format
 msgid "%(lower)s to %(upper)s"
 msgstr "crwdns15888:0%(lower)scrwdnd15888:0%(upper)scrwdne15888:0"
 
-#: templates/topics/programming-challenge.html:48
+#: templates/topics/programming-challenge.html:57
 msgid "and"
 msgstr "crwdns15889:0crwdne15889:0"
 
-#: templates/topics/programming-challenge.html:72
+#: templates/topics/programming-challenge.html:84
 #, python-format
 msgid "No learning outcomes listed for %(programming_challenge.name)s."
 msgstr "crwdns15890:0%(programming_challenge.name)scrwdne15890:0"
 
-#: templates/topics/programming-challenge.html:78
+#: templates/topics/programming-challenge.html:90
 #: templates/topics/programming-challenges-table.html:11
 msgid "Languages"
 msgstr "crwdns15891:0crwdne15891:0"
 
-#: templates/topics/programming-challenge.html:91
+#: templates/topics/programming-challenge.html:111
 msgid "What it should look like"
 msgstr "crwdns15892:0crwdne15892:0"
 
-#: templates/topics/programming-challenge.html:98
+#: templates/topics/programming-challenge.html:118
 msgid "Hints"
 msgstr "crwdns15893:0crwdne15893:0"
 
-#: templates/topics/programming-challenge.html:110
+#: templates/topics/programming-challenge.html:130
 #, python-format
 msgid "Show %(implementation.language.name)s solution"
 msgstr "crwdns15894:0%(implementation.language.name)scrwdne15894:0"
@@ -1102,36 +1188,49 @@ msgstr "crwdns15896:0crwdne15896:0"
 msgid "%(topic.name)s other resources"
 msgstr "crwdns15897:0%(topic.name)scrwdne15897:0"
 
-#: templates/topics/topic.html:29 templates/topics/unit-plan.html:19
+#: templates/topics/topic-other-resources.html:26
+#: templates/topics/topic.html:126
+msgid "Other resources"
+msgstr "crwdns15904:0crwdne15904:0"
+
+#: templates/topics/topic-other-resources.html:31
+msgid "Sorry! We couldn't find any information on other resources for this topic."
+msgstr "crwdns18244:0crwdne18244:0"
+
+#: templates/topics/topic-other-resources.html:34
+msgid "Return to the topic"
+msgstr "crwdns18245:0crwdne18245:0"
+
+#: templates/topics/topic.html:22
+msgid "list of topics"
+msgstr "crwdns18246:0crwdne18246:0"
+
+#: templates/topics/topic.html:43 templates/topics/unit-plan.html:19
 msgid "Unit plan:"
 msgstr "crwdns15898:0crwdne15898:0"
 
-#: templates/topics/topic.html:36
+#: templates/topics/topic.html:50
 msgid "or jump straight to a lesson of the unit:"
 msgstr "crwdns15899:0crwdne15899:0"
 
-#: templates/topics/topic.html:58
+#: templates/topics/topic.html:72
 #, python-format
 msgid "The following resources are used in %(name)s lessons, and can be accessed here (and also on each lesson page)."
 msgstr "crwdns15900:0%(name)scrwdne15900:0"
 
-#: templates/topics/topic.html:72
+#: templates/topics/topic.html:86
 msgid "Looking for more?"
 msgstr "crwdns15901:0crwdne15901:0"
 
-#: templates/topics/topic.html:75
+#: templates/topics/topic.html:89
 msgid "Click here for other resources"
 msgstr "crwdns15902:0crwdne15902:0"
 
-#: templates/topics/topic.html:97
+#: templates/topics/topic.html:116
 msgid "Curriculum integrations"
 msgstr "crwdns15903:0crwdne15903:0"
 
-#: templates/topics/topic.html:107
-msgid "Other resources"
-msgstr "crwdns15904:0crwdne15904:0"
-
-#: templates/topics/unit-plan.html:30 templates/topics/unit-plan.html:53
+#: templates/topics/unit-plan.html:39 templates/topics/unit-plan.html:64
 msgid "Lessons"
 msgstr "crwdns15905:0crwdne15905:0"
 
