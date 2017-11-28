@@ -1,8 +1,7 @@
 """Module for the custom render_html_field template tag."""
 
 from django import template
-from django.template import Template, Variable, Context, RequestContext, TemplateSyntaxError
-from bidiutils.context_processors import bidi
+from django.template import Template, Variable, Context, TemplateSyntaxError
 
 INVALID_ATTRIBUTE_MESSAGE = "The 'render_html_field' tag was given an " \
                             "attribute that could not be converted to a string."
@@ -24,8 +23,6 @@ class RenderHTMLFieldNode(template.Node):
         Returns:
             Rendered string of text, or raise an exception.
         """
-        # bidi_context = bidi(None)
-        # context.update(bidi_context)
         try:
             html = self.item_to_be_rendered.resolve(context)
             return render_html_with_static(html, context)
