@@ -43,9 +43,9 @@ def process_item(item, parent_path=None, csu_language_code=None):
         else:
             path = filename
 
-        # Skip full translated check for *.po - they can always be included
+        # Skip *.po - they are handled separately
         if filename.endswith(".po"):
-            return [path]
+            return []
 
         if item.find("phrases").text == item.find("approved").text:
             return [path]
@@ -79,4 +79,5 @@ if __name__ == "__main__":
     completed = []
     for item in files:
         completed += process_item(item, csu_language_code=args.csu_code)
-    print('\n'.join(completed))
+    for path in completed:
+        print(path)
