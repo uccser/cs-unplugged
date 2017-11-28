@@ -3,1234 +3,1234 @@ msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-28 00:11+0000\n"
-"PO-Revision-Date: 2017-11-27 20:21-0500\n"
+"PO-Revision-Date: 2017-11-27 20:14-0500\n"
 "Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
-"Language-Team: English (upside down)\n"
-"Language: en_UD\n"
+"Language-Team: Polish\n"
+"Language: pl_PL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: crowdin.com\n"
 "X-Crowdin-Project: cs-unplugged\n"
-"X-Crowdin-Language: en-UD\n"
+"X-Crowdin-Language: pl\n"
 "X-Crowdin-File: /csunplugged/locale/en/LC_MESSAGES/django.po\n"
 
 #: config/settings/base.py:132
 msgid "Translation mode"
-msgstr "crwdns18197:0crwdne18197:0"
+msgstr ""
 
 #: config/settings/base.py:138
 msgid "Translation mode (Bi-directional)"
-msgstr "crwdns18198:0crwdne18198:0"
+msgstr ""
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:10
 msgid "12 digits"
-msgstr "crwdns15756:0crwdne15756:0"
+msgstr ""
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:11
 msgid "13 digits"
-msgstr "crwdns15757:0crwdne15757:0"
+msgstr ""
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:24
 msgid "Barcode length"
-msgstr "crwdns15755:0crwdne15755:0"
+msgstr ""
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:48
 msgid "{} Digit Barcode"
-msgstr "crwdns18199:0crwdne18199:0"
+msgstr ""
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:53
 msgid "Separate!"
-msgstr "crwdns18200:0crwdne18200:0"
+msgstr ""
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:54
 msgid "Operate!"
-msgstr "crwdns18201:0crwdne18201:0"
+msgstr ""
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:55
 msgid "Calculate!"
-msgstr "crwdns18202:0crwdne18202:0"
+msgstr ""
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:66
 msgid "Remember that this algorithm uses modulo 10, so we are only interested in the number in the one's column."
-msgstr "crwdns18203:0crwdne18203:0"
+msgstr ""
 
 #: resources/generators/BinaryCardsResourceGenerator.py:33
 msgid "Display Numbers"
-msgstr "crwdns15769:0crwdne15769:0"
+msgstr ""
 
 #: resources/generators/BinaryCardsResourceGenerator.py:38
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:46
 msgid "Black on Card Back"
-msgstr "crwdns15766:0crwdne15766:0"
+msgstr ""
 
 #: resources/generators/BinaryCardsResourceGenerator.py:40
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:48
 msgid "Yes - Uses a lot of black ink, but conveys clearer card state. Print double sided."
-msgstr "crwdns18204:0crwdne18204:0"
+msgstr ""
 
 #: resources/generators/BinaryCardsResourceGenerator.py:41
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:49
 msgid "No - Print single sided."
-msgstr "crwdns18205:0crwdne18205:0"
+msgstr ""
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:20
 #: resources/generators/BinaryWindowsResourceGenerator.py:15
 msgid "Four (1 to 8)"
-msgstr "crwdns15760:0crwdne15760:0"
+msgstr ""
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:21
 #: resources/generators/BinaryWindowsResourceGenerator.py:16
 msgid "Eight (1 to 128)"
-msgstr "crwdns15761:0crwdne15761:0"
+msgstr ""
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:22
 msgid "Twelve (1 to 2048)"
-msgstr "crwdns15762:0crwdne15762:0"
+msgstr ""
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:35
 #: resources/generators/BinaryWindowsResourceGenerator.py:34
 msgid "Number of Bits"
-msgstr "crwdns15759:0crwdne15759:0"
+msgstr ""
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:41
 #: resources/generators/BinaryWindowsResourceGenerator.py:40
 msgid "Display Dot Counts"
-msgstr "crwdns15763:0crwdne15763:0"
+msgstr ""
 
 #: resources/generators/BinaryToAlphabetResourceGenerator.py:10
 msgid "Student"
-msgstr "crwdns15772:0crwdne15772:0"
+msgstr ""
 
 #: resources/generators/BinaryToAlphabetResourceGenerator.py:11
 msgid "Teacher (solutions)"
-msgstr "crwdns15773:0crwdne15773:0"
+msgstr ""
 
 #: resources/generators/BinaryToAlphabetResourceGenerator.py:24
 msgid "Worksheet Version"
-msgstr "crwdns15771:0crwdne15771:0"
+msgstr ""
 
 #: resources/generators/BinaryWindowsResourceGenerator.py:20
 msgid "Binary (0 or 1)"
-msgstr "crwdns15776:0crwdne15776:0"
+msgstr ""
 
 #: resources/generators/BinaryWindowsResourceGenerator.py:21
 msgid "Lightbulb (off or on)"
-msgstr "crwdns15777:0crwdne15777:0"
+msgstr ""
 
 #: resources/generators/BinaryWindowsResourceGenerator.py:45
 msgid "Value Representation"
-msgstr "crwdns15775:0crwdne15775:0"
+msgstr ""
 
 #: resources/generators/ModuloClockResourceGenerator.py:25
 msgid "Modulo"
-msgstr "crwdns15783:0crwdne15783:0"
+msgstr ""
 
 #: resources/generators/ParityCardsResourceGenerator.py:17
 msgid "Black"
-msgstr "crwdns15787:0crwdne15787:0"
+msgstr ""
 
 #: resources/generators/ParityCardsResourceGenerator.py:18
 msgid "Blue"
-msgstr "crwdns15788:0crwdne15788:0"
+msgstr ""
 
 #: resources/generators/ParityCardsResourceGenerator.py:19
 msgid "Green"
-msgstr "crwdns15789:0crwdne15789:0"
+msgstr ""
 
 #: resources/generators/ParityCardsResourceGenerator.py:20
 msgid "Purple"
-msgstr "crwdns15790:0crwdne15790:0"
+msgstr ""
 
 #: resources/generators/ParityCardsResourceGenerator.py:21
 msgid "Red"
-msgstr "crwdns15791:0crwdne15791:0"
+msgstr ""
 
 #: resources/generators/ParityCardsResourceGenerator.py:34
 msgid "Card back colour"
-msgstr "crwdns15786:0crwdne15786:0"
+msgstr ""
 
 #: resources/generators/PianoKeysResourceGenerator.py:62
 msgid "None"
-msgstr "crwdns15793:0crwdne15793:0"
+msgstr ""
 
 #: resources/generators/PianoKeysResourceGenerator.py:82
 msgid "Piano keys to highlight"
-msgstr "crwdns15792:0crwdne15792:0"
+msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:13
 msgid "Black and White (2 possible binary values)"
-msgstr "crwdns18206:0crwdne18206:0"
+msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:14
 msgid "Black and White (2 possible binary values) in Run Length Encoding"
-msgstr "crwdns18207:0crwdne18207:0"
+msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:15
 msgid "Greyscale (4 possible binary values)"
-msgstr "crwdns18208:0crwdne18208:0"
+msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:16
 msgid "Colour (8 possible binary values)"
-msgstr "crwdns18209:0crwdne18209:0"
+msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:20
 msgid "Fish - 6 pages"
-msgstr "crwdns18210:0crwdne18210:0"
+msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:21
 msgid "Hot air balloon - 8 pages"
-msgstr "crwdns18211:0crwdne18211:0"
+msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:22
 msgid "Boat - 9 pages"
-msgstr "crwdns18212:0crwdne18212:0"
+msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:23
 msgid "Parrots - 32 pages"
-msgstr "crwdns18213:0crwdne18213:0"
+msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:32
 msgid "Black and White"
-msgstr "crwdns18214:0crwdne18214:0"
+msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:39
 msgid "Run length encoding"
-msgstr "crwdns18215:0crwdne18215:0"
+msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:46
 msgid "Greyscale"
-msgstr "crwdns18216:0crwdne18216:0"
+msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:55
 msgid "Colour"
-msgstr "crwdns18217:0crwdne18217:0"
+msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:70
 msgid "Boat"
-msgstr "crwdns18218:0crwdne18218:0"
+msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:71
 msgid "Fish"
-msgstr "crwdns18219:0crwdne18219:0"
+msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:72
 msgid "Hot air balloon"
-msgstr "crwdns18220:0crwdne18220:0"
+msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:73
 #: templates/general/people.html:140
 msgid "Parrots"
-msgstr "crwdns15729:0crwdne15729:0"
+msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:95
 msgid "Colouring type"
-msgstr "crwdns18221:0crwdne18221:0"
+msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:101
 msgid "Image"
-msgstr "crwdns18222:0crwdne18222:0"
+msgstr ""
 
 #: resources/generators/SearchingCardsResourceGenerator.py:23
 msgid "Number of cards (15 or 31)"
-msgstr "crwdns15817:0crwdne15817:0"
+msgstr ""
 
 #: resources/generators/SearchingCardsResourceGenerator.py:24
 msgid "0 to 99"
-msgstr "crwdns15818:0crwdne15818:0"
+msgstr ""
 
 #: resources/generators/SearchingCardsResourceGenerator.py:25
 msgid "0 to 999"
-msgstr "crwdns15819:0crwdne15819:0"
+msgstr ""
 
 #: resources/generators/SearchingCardsResourceGenerator.py:26
 msgid "Blank"
-msgstr "crwdns15784:0crwdne15784:0"
+msgstr ""
 
 #: resources/generators/SearchingCardsResourceGenerator.py:39
 msgid "Number of cards"
-msgstr "crwdns15815:0crwdne15815:0"
+msgstr ""
 
 #: resources/generators/SearchingCardsResourceGenerator.py:45
 msgid "Range of numbers"
-msgstr "crwdns15816:0crwdne15816:0"
+msgstr ""
 
 #: resources/generators/SearchingCardsResourceGenerator.py:51
 msgid "Include teacher guide sheet"
-msgstr "crwdns15820:0crwdne15820:0"
+msgstr ""
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:16
 msgid "Small numbers (1 to 6)"
-msgstr "crwdns15823:0crwdne15823:0"
+msgstr ""
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:17
 msgid "Large numbers (7 digit numbers)"
-msgstr "crwdns15824:0crwdne15824:0"
+msgstr ""
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:18
 msgid "Letters"
-msgstr "crwdns15828:0crwdne15828:0"
+msgstr ""
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:19
 msgid "Words"
-msgstr "crwdns15827:0crwdne15827:0"
+msgstr ""
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:20
 msgid "Fractions"
-msgstr "crwdns15825:0crwdne15825:0"
+msgstr ""
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:21
 msgid "Māori colours"
-msgstr "crwdns15829:0crwdne15829:0"
+msgstr ""
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:22
 msgid "Māori numbers"
-msgstr "crwdns15826:0crwdne15826:0"
+msgstr ""
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:23
 msgid "Butterfly life cycle"
-msgstr "crwdns15831:0crwdne15831:0"
+msgstr ""
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:24
 msgid "Little Red Riding Hood"
-msgstr "crwdns15830:0crwdne15830:0"
+msgstr ""
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:37
 msgid "Card Type"
-msgstr "crwdns15822:0crwdne15822:0"
+msgstr ""
 
 #: resources/generators/SortingNetworkResourceGenerator.py:10
 msgid "Easy Numbers (1 digits)"
-msgstr "crwdns18223:0crwdne18223:0"
+msgstr ""
 
 #: resources/generators/SortingNetworkResourceGenerator.py:11
 msgid "Medium Numbers (2 digits)"
-msgstr "crwdns15837:0crwdne15837:0"
+msgstr ""
 
 #: resources/generators/SortingNetworkResourceGenerator.py:12
 msgid "Hard Numbers (3 digits)"
-msgstr "crwdns15838:0crwdne15838:0"
+msgstr ""
 
 #: resources/generators/SortingNetworkResourceGenerator.py:13
 msgid "None (Blank - Useful as template) "
-msgstr "crwdns18224:0crwdne18224:0"
+msgstr ""
 
 #: resources/generators/SortingNetworkResourceGenerator.py:28
 #: resources/generators/TreasureHuntResourceGenerator.py:40
 msgid "Prefill with Numbers"
-msgstr "crwdns15834:0crwdne15834:0"
+msgstr ""
 
 #: resources/generators/TrainStationsResourceGenerator.py:9
 msgid "Circular"
-msgstr "crwdns15840:0crwdne15840:0"
+msgstr ""
 
 #: resources/generators/TrainStationsResourceGenerator.py:10
 msgid "Twisted"
-msgstr "crwdns15841:0crwdne15841:0"
+msgstr ""
 
 #: resources/generators/TrainStationsResourceGenerator.py:23
 msgid "Train track shape"
-msgstr "crwdns15839:0crwdne15839:0"
+msgstr ""
 
 #: resources/generators/TreasureHuntResourceGenerator.py:12
 msgid "Easy Numbers (2 digits)"
-msgstr "crwdns15842:0crwdne15842:0"
+msgstr ""
 
 #: resources/generators/TreasureHuntResourceGenerator.py:13
 msgid "Medium Numbers (3 digits)"
-msgstr "crwdns15843:0crwdne15843:0"
+msgstr ""
 
 #: resources/generators/TreasureHuntResourceGenerator.py:14
 msgid "Hard Numbers (4 digits)"
-msgstr "crwdns15844:0crwdne15844:0"
+msgstr ""
 
 #: resources/generators/TreasureHuntResourceGenerator.py:15
 msgid "None (Blank)"
-msgstr "crwdns15845:0crwdne15845:0"
+msgstr ""
 
 #: resources/generators/TreasureHuntResourceGenerator.py:19
 msgid "Sorted Numbers"
-msgstr "crwdns15848:0crwdne15848:0"
+msgstr ""
 
 #: resources/generators/TreasureHuntResourceGenerator.py:20
 msgid "Unsorted Numbers"
-msgstr "crwdns15847:0crwdne15847:0"
+msgstr ""
 
 #: resources/generators/TreasureHuntResourceGenerator.py:24
 msgid "Table only - Little ink usage."
-msgstr "crwdns15852:0crwdne15852:0"
+msgstr ""
 
 #: resources/generators/TreasureHuntResourceGenerator.py:25
 msgid "Table and artwork - Uses a lot of colour ink."
-msgstr "crwdns15851:0crwdne15851:0"
+msgstr ""
 
 #: resources/generators/TreasureHuntResourceGenerator.py:46
 msgid "Numbers Unsorted/Sorted"
-msgstr "crwdns15846:0crwdne15846:0"
+msgstr ""
 
 #: resources/generators/TreasureHuntResourceGenerator.py:52
 msgid "Include instruction sheets"
-msgstr "crwdns15849:0crwdne15849:0"
+msgstr ""
 
 #: resources/generators/TreasureHuntResourceGenerator.py:57
 msgid "Printing mode"
-msgstr "crwdns15850:0crwdne15850:0"
+msgstr ""
 
 #: resources/utils/BaseResourceGenerator.py:20
 msgid "A4"
-msgstr "crwdns15802:0crwdne15802:0"
+msgstr ""
 
 #: resources/utils/BaseResourceGenerator.py:21
 msgid "US Letter"
-msgstr "crwdns15803:0crwdne15803:0"
+msgstr ""
 
 #: resources/utils/BaseResourceGenerator.py:52
 msgid "Paper Size"
-msgstr "crwdns15801:0crwdne15801:0"
+msgstr ""
 
 #: resources/utils/BaseResourceGenerator.py:72
 msgid "Header Text"
-msgstr "crwdns15805:0crwdne15805:0"
+msgstr ""
 
 #: resources/utils/BaseResourceGenerator.py:73
 msgid "Example School: Room Four"
-msgstr "crwdns18225:0crwdne18225:0"
+msgstr ""
 
 #: resources/utils/BaseResourceGenerator.py:81
 msgid "Number of Copies"
-msgstr "crwdns15806:0crwdne15806:0"
+msgstr ""
 
 #: resources/utils/get_options_html.py:24
 msgid "Local Generation Only"
-msgstr "crwdns15804:0crwdne15804:0"
+msgstr ""
 
 #: resources/utils/resource_parameters.py:172
 #: templates/topics/all-curriculum-integration-list.html:58
 #: templates/topics/curriculum-integrations-table.html:32
 #: templates/topics/lessons-table.html:42
 msgid "Yes"
-msgstr "crwdns15764:0crwdne15764:0"
+msgstr ""
 
 #: resources/utils/resource_parameters.py:172
 #: templates/topics/all-curriculum-integration-list.html:61
 #: templates/topics/curriculum-integrations-table.html:35
 #: templates/topics/lessons-table.html:46
 msgid "No"
-msgstr "crwdns15765:0crwdne15765:0"
+msgstr ""
 
 #: templates/base.html:25 templates/general/index.html:7
 msgid "CS Unplugged"
-msgstr "crwdns15645:0crwdne15645:0"
+msgstr ""
 
 #: templates/base.html:53 templates/base.html:157
 #: templates/topics/index.html:8 templates/topics/index.html:17
 msgid "Topics"
-msgstr "crwdns15646:0crwdne15646:0"
+msgstr ""
 
 #: templates/base.html:54 templates/base.html:162
 #: templates/general/index.html:60 templates/resources/index.html:8
 #: templates/resources/index.html:17 templates/topics/topic.html:70
 #: templates/topics/topic.html:121
 msgid "Resources"
-msgstr "crwdns15647:0crwdne15647:0"
+msgstr ""
 
 #: templates/base.html:55 templates/base.html:152
 #: templates/general/about.html:6 templates/general/base.html:9
 msgid "About"
-msgstr "crwdns15648:0crwdne15648:0"
+msgstr ""
 
 #: templates/base.html:123
 msgid "Looking for something for high schools? Check out the <a href=\"http://csfieldguide.org.nz/\">Computer Science Field Guide</a>."
-msgstr "crwdns15658:0crwdne15658:0"
+msgstr ""
 
 #: templates/base.html:135
 msgid "The primary goal of the Unplugged project is to promote Computer Science (and computing in general) to young people as an interesting, engaging, and intellectually stimulating discipline."
-msgstr "crwdns18226:0crwdne18226:0"
+msgstr ""
 
 #: templates/base.html:141
 #, python-format
 msgid "Read more about <a href=\"%(principles_url)s\">our principles here</a>."
-msgstr "crwdns18227:0%(principles_url)scrwdne18227:0"
+msgstr ""
 
 #: templates/base.html:148
 msgid "Useful Links"
-msgstr "crwdns15649:0crwdne15649:0"
+msgstr ""
 
 #: templates/base.html:168
 msgid "Community"
-msgstr "crwdns15650:0crwdne15650:0"
+msgstr ""
 
 #: templates/base.html:172
 msgid "Twitter"
-msgstr "crwdns15651:0crwdne15651:0"
+msgstr ""
 
 #: templates/base.html:177
 msgid "YouTube"
-msgstr "crwdns15652:0crwdne15652:0"
+msgstr ""
 
 #: templates/base.html:182
 msgid "GitHub"
-msgstr "crwdns15653:0crwdne15653:0"
+msgstr ""
 
 #: templates/base.html:188
 msgid "Help"
-msgstr "crwdns15654:0crwdne15654:0"
+msgstr ""
 
 #: templates/base.html:192 templates/topics/glossary.html:8
 #: templates/topics/glossary.html:18
 msgid "Glossary"
-msgstr "crwdns15655:0crwdne15655:0"
+msgstr ""
 
 #: templates/base.html:197
 msgid "Feedback"
-msgstr "crwdns15656:0crwdne15656:0"
+msgstr ""
 
 #: templates/base.html:202 templates/general/contact.html:7
 msgid "Contact"
-msgstr "crwdns15657:0crwdne15657:0"
+msgstr ""
 
 #: templates/base.html:212
 msgid "The CS Unplugged material is open source on <a href=\"https://github.com/uccser/cs-unplugged\">GitHub</a>, and this website's content is shared under a <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons Attribution-ShareAlike 4.0 International license</a>. The CS Unplugged is a project by the <a href=\"http://www.cosc.canterbury.ac.nz/research/RG/CSE/\">Computer Science Education Research Group</a> at the <a href=\"http://www.canterbury.ac.nz/\">University of Canterbury</a>, New Zealand."
-msgstr "crwdns15659:0crwdne15659:0"
+msgstr ""
 
 #: templates/base.html:234
 #, python-format
 msgid "This definition is not available in %(language)s, sorry!"
-msgstr "crwdns18228:0%(language)scrwdne18228:0"
+msgstr ""
 
 #: templates/base.html:241
 msgid "Close"
-msgstr "crwdns15660:0crwdne15660:0"
+msgstr ""
 
 #: templates/dev/index.html:22
 msgid "Unit Plan:"
-msgstr "crwdns15661:0crwdne15661:0"
+msgstr ""
 
 #: templates/general/about.html:23
 msgid "CS Unplugged is a collection of free learning activities that teach Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around. We originally developed this so that young students could dive head-first into Computer Science, experiencing the kinds of questions and challenges that computer scientists experience, but without having to learn programming first."
-msgstr "crwdns15662:0crwdne15662:0"
+msgstr ""
 
 #: templates/general/about.html:30
 msgid "The collection was originally intended as a resource for outreach and extension, but with the adoption of computing and computational thinking into many classrooms around the world, it is now widely used for teaching. The material has been used in many contexts outside the classroom as well, including science shows, talks for senior citizens, and special events."
-msgstr "crwdns15663:0crwdne15663:0"
+msgstr ""
 
 #: templates/general/about.html:37
 msgid "Thanks to generous sponsorships we have been able to create associated resources such as the videos, which are intended to help teachers see how the activities work (please don’t show them to your classes – let them experience the activities themselves!). All of the activities that we provide are “open source” – they are released under a Creative Commons BY-NC-SA licence, so you can copy, share and modify the material."
-msgstr "crwdns15664:0crwdne15664:0"
+msgstr ""
 
 #: templates/general/about.html:45
 #, python-format
 msgid "To view the team of contributors who work on this project, see our <a href=\"%(people_url)s\">people page</a>."
-msgstr "crwdns15665:0%(people_url)scrwdne15665:0"
+msgstr ""
 
 #: templates/general/about.html:52
 #, python-format
 msgid "For details on how to contact us, see our <a href=\"%(contact_url)s\">contact us page</a>."
-msgstr "crwdns15666:0%(contact_url)scrwdne15666:0"
+msgstr ""
 
 #: templates/general/about.html:59
 #, python-format
 msgid "For more information about the principles behind CS Unplugged, see our <a href=\"%(principles_url)s\">principles page</a>."
-msgstr "crwdns15667:0%(principles_url)scrwdne15667:0"
+msgstr ""
 
 #: templates/general/base.html:6
 msgid "About pages"
-msgstr "crwdns15668:0crwdne15668:0"
+msgstr ""
 
 #: templates/general/base.html:10
 #: templates/general/computational-thinking.html:8
 #: templates/general/computational-thinking.html:17
 msgid "Computational Thinking and CS Unplugged"
-msgstr "crwdns15669:0crwdne15669:0"
+msgstr ""
 
 #: templates/general/base.html:11 templates/general/people.html:7
 #: templates/general/people.html:17
 msgid "People"
-msgstr "crwdns15670:0crwdne15670:0"
+msgstr ""
 
 #: templates/general/base.html:12 templates/general/contact.html:17
 msgid "Contact Us"
-msgstr "crwdns15671:0crwdne15671:0"
+msgstr ""
 
 #: templates/general/base.html:13 templates/general/principles.html:7
 #: templates/general/principles.html:18
 msgid "Principles"
-msgstr "crwdns15672:0crwdne15672:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:21
 msgid "What is Computational Thinking?"
-msgstr "crwdns15673:0crwdne15673:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:24
 msgid "The world we live in has become a digital one, filled with technology and driven by Computer Science. Software and technology have transformed every subject and job area, from science and medicine, to art history and psychology. Digital technology is ubiquitous. To be informed and empowered citizens, the next generation of students need to understand this digital world that they live in."
-msgstr "crwdns15674:0crwdne15674:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:33
 msgid "This is why Computational Thinking has been called the ‘21st Century Skill Set’, and is important for everyone to learn. It is critical to understanding how the digital world works, for harnessing the power of computers to solve tough problems, and making great things happen! It also enables us to think critically about not just the benefits of certain technologies, but also the potential harm, ethical implications, or unintended consequences of these."
-msgstr "crwdns15675:0crwdne15675:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:41
 msgid "But what exactly is Computational Thinking? Let’s have a look at a technical definition..."
-msgstr "crwdns15676:0crwdne15676:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:48
 msgid "\"Computational Thinking is the thought processes involved in formulating problems and their solutions so that the solutions are represented in a form that can be effectively carried out by an information-processing agent.\""
-msgstr "crwdns15677:0crwdne15677:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:58
 msgid "Phew, it’s quite a mouthful isn’t it? But, as we like to say at CS Unplugged, it’s just big words for simple ideas! 'Information-processing agent' means anything that follows a set of instructions to complete a task (we call this 'computing'). Most of the time this 'agent' means a computer or other type of digital device - but it could also be a human! We’ll refer to it as a computer to make things a bit simpler. To represent solutions in a way that a computer can carry them out, we have to represent them as a step by step process - an <strong>algorithm</strong>. To create these algorithmic solutions we apply some special problem solving skills to. These skill are what make up Computational Thinking! And they are skills that are transferrable to any field."
-msgstr "crwdns15678:0crwdne15678:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:72
 msgid "Computational Thinking could be described as 'thinking like a Computer Scientist', but it is now an important skill for everyone to learn, whether they want to be a Computer Scientist or not! It’s interesting, and important, to note that Computational Thinking, and Computer Science, aren’t entirely about computers, they are more about <strong>people</strong>. You might think that we write programs for computers, but really we write programs for people - to help them communicate, find information, and solve problems."
-msgstr "crwdns15679:0crwdne15679:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:80
 msgid "For example, you might use an app on a smartphone to get directions to a friend's house; the app is an example of a computer program, and the smartphone is the \"information processing agent\" that runs the program for us. Whoever designed the algorithm for working out the best route, and all the details like the interface and how to store the map, applied computational thinking to design the system. But they didn't design it for the sake of the smartphone; they designed it to help the person using the smartphone."
-msgstr "crwdns15680:0crwdne15680:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:87
 msgid "Computational Thinking in CS Unplugged"
-msgstr "crwdns15681:0crwdne15681:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:89
 msgid "<p> Throughout the lessons and units in CS Unplugged there are many links to Computational Thinking. Teaching Computational Thinking through CS Unplugged activities teaches students how to: </p> <ul> <li>describe a problem,</li> <li>identify the important details needed to solve this problem,</li> <li>break the problem down into small, logical steps,</li> <li>use these steps to create a process (algorithm) that solves the problem,</li> <li>and then evaluate this process.</li> </ul>"
-msgstr "crwdns15682:0crwdne15682:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:106
 msgid "These skills are transferable to any other curriculum area, but are particularly relevant to developing digital systems and solving problems using the capabilities of computers.</p>"
-msgstr "crwdns15683:0crwdne15683:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:111
 msgid "These Computational Thinking concepts are all connected to each other and support each other, but it's important to note that not all aspects of Computational Thinking will necessarily happen in every unit or lesson. In each unit and lesson we've highlighted the important connections for you to observe your students in action."
-msgstr "crwdns15684:0crwdne15684:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:118
 msgid "There are a number of definitions of Computational Thinking, but most have a set of 5 or 6 problem solving skills that Computational Thinking embodies. For the Unplugged project we've identified the following six CT skills that are often mentioned in the literature; they are described below, and at the end of each Unplugged lesson we've identified ways that these skills appeared in the lesson, to help you see the CT connection with the lessons."
-msgstr "crwdns15685:0crwdne15685:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:124
 msgid "Computational Thinking skills"
-msgstr "crwdns15686:0crwdne15686:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:128
 msgid "Algorithmic thinking"
-msgstr "crwdns15687:0crwdne15687:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:133
 msgid "Algorithms are at the heart of Computational Thinking and Computer Science, because in Computer Science the solutions to problems are not simply an answer (e.g. ‘42’, or a fact), they are algorithms. An algorithm is a step-by-step process that solves a problem or completes a task. If you follow the algorithm's steps correctly, you will arrive at a correct solution, even for different inputs. For example, we can use an algorithm to find the shortest route between two locations on a map; the same algorithm can be used for any pair of starting and finishing points, so the solution depends on the input to the algorithm. If we know the algorithm for solving a problem then we can solve that problem easily, whenever we want, without having to think! We can just follow the steps. Computers can’t think for themselves, so they need to be given algorithms to do things."
-msgstr "crwdns15688:0crwdne15688:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:144
 msgid "Algorithmic thinking is the process of creating algorithms. When we create an algorithm to solve a problem, we call this an algorithmic solution."
-msgstr "crwdns15689:0crwdne15689:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:151
 msgid "Computational algorithms (the kind that can run on digital devices) have relatively few ingredients because digital devices only have a few types of instruction that they can follow; the main things they can do are receive input, provide output, store values, follow instructions in a sequence, choose between options, and repeat instructions in a loop. Despite how limited this range of instructions is, we've described everything that digital devices can compute, and this is why algorithms are described restricted to these elements."
-msgstr "crwdns15690:0crwdne15690:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:161
 msgid "Abstraction"
-msgstr "crwdns15691:0crwdne15691:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:166
 msgid "Abstraction is all about simplifying things to help us manage complexity. It requires identifying what the most important aspects of a problem are and hiding the other specific details that we don’t need to focus on. The important aspects can be used to create a model, or simplified representation, of the original thing we were dealing with. We can then work with this model to solve the problem, rather than having to deal with all the nitty gritty details at once. Computer Scientists often work with multiple levels of abstraction."
-msgstr "crwdns15692:0crwdne15692:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:176
 msgid "We use abstraction often in our everyday lives, for example when we use maps. Maps show us a simplified version of the world by leaving out unnecessary details, like where every individual tree in a park is, and only keeping the most relevant information the map reader will need, such as roads and street names."
-msgstr "crwdns15693:0crwdne15693:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:183
 msgid "Digital devices use abstraction all the time; they try to hide as much unnecessary information from the user as possible. For example, let's say you took a nice scenic photo on your last camping trip, and now you want to edit it on your laptop and adjust the colours in it. Normally we could do this by opening a picture editing program, adjusting some colour sliders or maybe choosing a filter. When you do this there are a lot of complicated operations happening which the computer is hiding from you."
-msgstr "crwdns15694:0crwdne15694:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:196
 msgid "The picture you took is stored on the computer as a big list of pixels, which are each a different colour, and each colour is represented by a set of numbers, and each of these numbers are stored as binary digits! That’s a lot of information. Imagine if when you adjusted the colours you had to go through and look at all the colour values of every pixel and change each and every one of those! That’s what the computer is doing for you, but since you don’t need to know this to accomplish your goal the computer hides this information away."
-msgstr "crwdns15695:0crwdne15695:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:207
 msgid "Decomposition"
-msgstr "crwdns15696:0crwdne15696:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:212
 msgid "Decomposition is about breaking down problems into smaller, more manageable, parts, and then focusing on solving each of these smaller problems. We can break a complex problem down until the smaller parts are so simple they become easy to solve. The solutions to each of these smaller, and simpler, problems build up to a solution to the big problem we started with. Decomposition helps make large problems much less intimidating!"
-msgstr "crwdns15697:0crwdne15697:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:221
 msgid "Decomposition is an important skill for creating algorithms and processes that can be implemented on a computing device, because computers need very specific instructions. They need to be told each of the tiny steps they need to follow in order to do things."
-msgstr "crwdns15698:0crwdne15698:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:228
 msgid "For example the overall task of making a cake can be decomposed into several smaller tasks, each of which can be performed easily."
-msgstr "crwdns15699:0crwdne15699:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:233
 msgid "<p><strong>Make cake</strong></p> <ol> <li>Bake cake <ol> <li>Put ingredients in bowl (butter, sugar, egg, flour)</li> <li>Mix</li> <li>Pour into tin</li> <li>Put in oven for 30mins</li> <li>Take out of tin</li> </ol> </li> <li>Make icing</li> <li>Put on cake</li> </ol>"
-msgstr "crwdns15700:0crwdne15700:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:255
 msgid "Generalising and patterns"
-msgstr "crwdns15701:0crwdne15701:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:260
 msgid "Generalising is also referred to as 'pattern recognition and generalisation'. Generalisation is taking a solution (or part of a solution) to a problem and generalising it so it can be applied to other similar problems and tasks. Since solutions in Computer Science are algorithms, this means we take an algorithm and make it general enough that it can be used for a range of problems. This process involves abstraction, because to make something more general we have to remove unnecessary details that are related to a specific problem or situation, but are not important to how the algorithm functions."
-msgstr "crwdns15702:0crwdne15702:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:269
 msgid "Spotting patterns is an important part of this process, when we think about problems we might recognise similarities between them and that they can be solved in similar ways. This is called pattern matching, and it’s something we do naturally all the time in our daily life."
-msgstr "crwdns15703:0crwdne15703:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:276
 msgid "Generalised algorithms can be reused for a whole group of similar problems, which means we can come up with solutions quickly and effectively."
-msgstr "crwdns15704:0crwdne15704:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:285
 msgid "Evaluation"
-msgstr "crwdns15705:0crwdne15705:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:290
 msgid "Evaluation is about identifying the possible solutions to a problem and judging which is the best to use, if they will work in some situations but not others, and how they can be improved. When judging our solutions we need to think about a range of factors. For example how much time it will take these processes (algorithms) to solve the problem and will it reliably solve the problem, or if there are certain situations where it will perform in a very different way. Evaluation is something we do a lot in our everyday lives."
-msgstr "crwdns15706:0crwdne15706:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:299
 msgid "There are different ways we can evaluate our algorithmic solutions. We can test their speed by implementing them on a computer; or we can analyse them by counting or calculating how many steps they are likely to take. We can test that they work correctly by giving our solution lots of different inputs, and checking it works as expected. When we do this we need to think about the different inputs we test, because we don’t want to check every possible input (often there's an infinite number of different possible inputs!), but we still need to know if it will work for them. Testing is something Computer Scientists and programmers do all the time. But because we can't usually test every possible input, we also try to evaluate a system using logical reasoning."
-msgstr "crwdns15707:0crwdne15707:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:313
 msgid "Logic"
-msgstr "crwdns15708:0crwdne15708:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:318
 msgid "When trying to solve problems we need to think logically. Logical reasoning is about trying to make sense of things by observing, collecting data, thinking about the facts you know, and then figuring things out based on what you already know. It helps us use our existing knowledge to establish rules and check facts."
-msgstr "crwdns15709:0crwdne15709:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:326
 msgid "For example, suppose you are writing software that works out the shortest route to a location from your house. In the following map it's 2 minutes to the library if you head north from your house, but if you head south it's 3 minutes to the next intersection. You might wonder if there's a better route to the library if you start by heading south, but logically there can't be because you'll already have walked for 3 minutes to get to the intersection."
-msgstr "crwdns15710:0crwdne15710:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:334
 msgid "At a deeper level, computers are built entirely on logic. They use 'True' and 'False' values, and use something called 'Boolean expressions', like “is age > 5”, to make decisions in computer programs."
-msgstr "crwdns15711:0crwdne15711:0"
+msgstr ""
 
 #: templates/general/computational-thinking.html:341
 msgid "Tracking down a bug in a program also requires logical thinking, to work out where, and why, something in the program is going wrong."
-msgstr "crwdns15712:0crwdne15712:0"
+msgstr ""
 
 #: templates/general/contact.html:22
 msgid "<strong>Email:</strong> You can <a href=\"mailto:csse.education.research@gmail.com\">email the CS Unplugged team here</a>."
-msgstr "crwdns15713:0crwdne15713:0"
+msgstr ""
 
 #: templates/general/contact.html:28
 msgid "<strong>Twitter:</strong> <a href=\"https://twitter.com/UCCSEd\">@UCCSEd</a>"
-msgstr "crwdns15714:0crwdne15714:0"
+msgstr ""
 
 #: templates/general/contact.html:34
 msgid "<strong>Community Google Group:</strong> We have a <a href=\"https://groups.google.com/forum/#!forum/cs-unplugged-sharing\">Google Group</a> you can join and talk about CS Unplugged."
-msgstr "crwdns15715:0crwdne15715:0"
+msgstr ""
 
 #: templates/general/index.html:15
 msgid "Computer Science<br>without a computer"
-msgstr "crwdns15716:0crwdne15716:0"
+msgstr ""
 
 #: templates/general/index.html:28
 msgid "CS Unplugged is a collection of free teaching material that teaches Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around."
-msgstr "crwdns15717:0crwdne15717:0"
+msgstr ""
 
 #: templates/general/index.html:33
 msgid "The resources available to teachers include unit plans, lesson plans, teaching videos, curriculum integration activities, and programming exercises to plug in the Computer Science concepts they have just learnt unplugged."
-msgstr "crwdns15718:0crwdne15718:0"
+msgstr ""
 
 #: templates/general/index.html:48
 msgid "Learn about CS Unplugged"
-msgstr "crwdns15719:0crwdne15719:0"
+msgstr ""
 
 #: templates/general/index.html:52
 msgid "Topics covered by CS Unplugged"
-msgstr "crwdns15720:0crwdne15720:0"
+msgstr ""
 
 #: templates/general/index.html:57
 #: templates/topics/all-curriculum-integration-list.html:8
 #: templates/topics/all-curriculum-integration-list.html:18
 #: templates/topics/topic.html:65
 msgid "Curriculum Integrations"
-msgstr "crwdns15721:0crwdne15721:0"
+msgstr ""
 
 #: templates/general/index.html:63 templates/general/people.html:60
 msgid "Classic CS Unplugged"
-msgstr "crwdns15722:0crwdne15722:0"
+msgstr ""
 
 #: templates/general/people.html:22
 msgid "CS Unplugged (2017 onwards)"
-msgstr "crwdns15723:0crwdne15723:0"
+msgstr ""
 
 #: templates/general/people.html:24
 msgid "Founders"
-msgstr "crwdns15724:0crwdne15724:0"
+msgstr ""
 
 #: templates/general/people.html:32 templates/general/people.html:99
 msgid "Advisers"
-msgstr "crwdns15725:0crwdne15725:0"
+msgstr ""
 
 #: templates/general/people.html:39
 msgid "Current Team"
-msgstr "crwdns15726:0crwdne15726:0"
+msgstr ""
 
 #: templates/general/people.html:62
 msgid "Contributors"
-msgstr "crwdns15727:0crwdne15727:0"
+msgstr ""
 
 #: templates/general/people.html:129
 msgid "Website"
-msgstr "crwdns15728:0crwdne15728:0"
+msgstr ""
 
 #: templates/general/principles.html:23
 msgid "The primary goal of the Unplugged project is to promote Computer Science (and computing in general) to young people as an interesting, engaging, and intellectually stimulating discipline. We want to capture people’s imagination and address common misconceptions about what it means to be a computer scientist. We want to convey fundamentals that do not depend on particular software or systems, ideas that will still be fresh in 10 years. We want to reach kids in elementary schools and provide supplementary material for university courses. We want to tread where high-tech educational solutions are infeasible; to cross the divide between the information-rich and information-poor, between industrialized countries and the developing world."
-msgstr "crwdns15730:0crwdne15730:0"
+msgstr ""
 
 #: templates/general/principles.html:33
 msgid "There are many worthy projects for promoting Computer Science. The main principles that distinguish the Unplugged activities are:"
-msgstr "crwdns15731:0crwdne15731:0"
+msgstr ""
 
 #: templates/general/principles.html:39
 msgid "No Computers Required"
-msgstr "crwdns15732:0crwdne15732:0"
+msgstr ""
 
 #: templates/general/principles.html:42
 msgid "The activities do not depend on computers. This avoids confusing Computer Science with programming or learning application software, makes the activities available to those who aren’t able to or don’t want to work with computers, and skips the barrier of learning to program before being able to explore ideas. It also provides physical, kinaesthetic experiences as part of learning computing, which can be a welcome break from sitting in front of a screen. For example, the parity magic trick is a card game that happens to use the same principle as error correction in computer memory. Unplugged isn’t a completely Luddite approach – we do exploit the internet and other computing facilities to share and develop the activities, and we hope that students will have to opportunity to learn to program so that they can put wheels on the ideas they have been exploring."
-msgstr "crwdns15733:0crwdne15733:0"
+msgstr ""
 
 #: templates/general/principles.html:51
 msgid "Real Computer Science"
-msgstr "crwdns15734:0crwdne15734:0"
+msgstr ""
 
 #: templates/general/principles.html:54
 msgid "Unplugged presents fundamental concepts in Computer Science such as algorithms, artificial intelligence, graphics, information theory, human computer interfaces, programming languages, and so on. We want to emphasize that programming is a means, not an end. Wikipedia provides a definition of Computer Science, and Peter Denning’s Great Principles project provides a more detailed analysis of the topics it covers."
-msgstr "crwdns15735:0crwdne15735:0"
+msgstr ""
 
 #: templates/general/principles.html:61
 msgid "Learning by doing"
-msgstr "crwdns15736:0crwdne15736:0"
+msgstr ""
 
 #: templates/general/principles.html:64
 msgid "The activities tend to be kinaesthetic, often on a large scale and involving team work. For example, the Sorting Network activity has teams of six running through a network drawn on the ground. The activities tend to allow students to discover answers for themselves, rather than just being given solutions or algorithms to follow; that is, a constructivist approach is encouraged (where the teacher uses the scaffolding provided by Unplugged to ask questions that lead them to discover the knowledge themselves), as we want students to realize that they are capable of finding solutions to problems on their own, rather than being given a solution to apply to the problem. For example, students don’t really need to be able to convert numbers to binary, but it is valuable for them to discover the patterns such as the doubling value of bits, patterns when you count in binary, and how the range increases exponentially as you add bits."
-msgstr "crwdns15737:0crwdne15737:0"
+msgstr ""
 
 #: templates/general/principles.html:72
 msgid "Fun"
-msgstr "crwdns15738:0crwdne15738:0"
+msgstr ""
 
 #: templates/general/principles.html:75
 msgid "The activities are fun and engaging, not just busy-work for the sake of it. Usually the explanations are quite brief – the teacher lays out the materials and a few rules, and the students follow the challenge from there. There are puzzles, challenges, competitions, problem solving and humour. Unplugged activities should leave students with a sense of genuine achievement. There is often a strong sense of story in the activities; problems are presented as part of a story rather than as an abstract mathematical challenge. Children are more interested in pirates than privacy, and absurd fictitious stories can be more memorable than compelling business applications."
-msgstr "crwdns15739:0crwdne15739:0"
+msgstr ""
 
 #: templates/general/principles.html:85
 msgid "No specialised equipment"
-msgstr "crwdns15740:0crwdne15740:0"
+msgstr ""
 
 #: templates/general/principles.html:88
 msgid "The activities are low cost, using equipment commonly found in classrooms or stationery stores. Most require only paper and pencil, and perhaps cards, string, chalk, whiteboard markers, balls or similar items."
-msgstr "crwdns15741:0crwdne15741:0"
+msgstr ""
 
 #: templates/general/principles.html:94
 msgid "Variations encouraged"
-msgstr "crwdns15742:0crwdne15742:0"
+msgstr ""
 
 #: templates/general/principles.html:97
 msgid "Unplugged is published under a Creative Commons licence, which permits free sharing (with acknowledgement). Variations, adaptations and extensions are encouraged. This also allows local publishing arrangements to take account of the kind of packaging that would make the material more accessible to local educational practitioners."
-msgstr "crwdns15743:0crwdne15743:0"
+msgstr ""
 
 #: templates/general/principles.html:104
 msgid "<p> Two specific situations that we get asked about are: </p> <ul> <li> <strong>For-profit classes (e.g. clubs with a subscription fee):</strong> It is fine to charge a fee for people to attend classes that you're running that uses this material. </li> <li> <strong>Selling packs of support material (such as pre-printed cards):</strong> It is fine to do this. We hope that you'll do it for a reasonable price, and it's even better if you can get someone to sponsor you so that you can give it away to educators, but the license allows you to set your own price. </li> </ul>"
-msgstr "crwdns15744:0crwdne15744:0"
+msgstr ""
 
 #: templates/general/principles.html:120
 msgid "For everyone"
-msgstr "crwdns15745:0crwdne15745:0"
+msgstr ""
 
 #: templates/general/principles.html:123
 msgid "The programme is strongly international – we encourage variations that are relevant to local cultures (for example, some activities that require a large playground can be changed to a board game for schools that have very little open space; others use contexts that might not be familiar to students in a different culture). Translators should try the activities locally and involve teachers. It is better to adapt activities rather than translate them faithfully to something that would be less meaningful in the local culture. The activities are intended to be inclusive."
-msgstr "crwdns15746:0crwdne15746:0"
+msgstr ""
 
 #: templates/general/principles.html:131
 msgid "Co-operative"
-msgstr "crwdns15747:0crwdne15747:0"
+msgstr ""
 
 #: templates/general/principles.html:134
 msgid "We encourage co-operation, communication and problem solving. Competition can also be effective if it is used appropriately, especially between teams rather than individuals, but having students working cooperatively is a great way to learn about problem solving."
-msgstr "crwdns15748:0crwdne15748:0"
+msgstr ""
 
 #: templates/general/principles.html:140
 msgid "Stand-alone Activities"
-msgstr "crwdns15749:0crwdne15749:0"
+msgstr ""
 
 #: templates/general/principles.html:143
 msgid "As much as possible, the activities are stand-alone modules that can be used independently of each other, so that they can be used for enrichment in curricula or for outreach on their own rather than having to be used as a series. The ones that have been presented as lesson plans will sometimes require a series of lessons to be followed, but we will indicate if particular preparation is required."
-msgstr "crwdns15750:0crwdne15750:0"
+msgstr ""
 
 #: templates/general/principles.html:149
 msgid "Resilient"
-msgstr "crwdns15751:0crwdne15751:0"
+msgstr ""
 
 #: templates/general/principles.html:152
 msgid "The activities are resilient to errors made by students; they should not depend on getting many difficult steps exactly right, and minor mistakes should not prevent participants from understanding the principles. The instructions are usually just one or two rules and a goal that can be expressed in a single sentence (e.g. “Each card is either fully visible or not; how can you display exactly 11 dots?”, or “We need to get from any house to any other house; what is the smallest number of paving stones that make this possible”)."
-msgstr "crwdns15752:0crwdne15752:0"
+msgstr ""
 
 #: templates/resources/index.html:20
 msgid "This page diplays a complete list of all available resources. If a lesson uses a resource, the lesson will contain a direct link to the resource with a description on how to use it."
-msgstr "crwdns15779:0crwdne15779:0"
+msgstr ""
 
 #: templates/resources/index.html:40
 msgid "No resources are available."
-msgstr "crwdns15780:0crwdne15780:0"
+msgstr ""
 
 #: templates/resources/resource.html:34
 msgid "Generate Resource"
-msgstr "crwdns15807:0crwdne15807:0"
+msgstr ""
 
 #: templates/resources/resource.html:38
 #, python-format
 msgid "The download of this resource includes %(copies_amount)s unique copies."
-msgstr "crwdns15808:0%(copies_amount)scrwdne15808:0"
+msgstr ""
 
 #: templates/resources/resource.html:50
 msgid "Preview"
-msgstr "crwdns15809:0crwdne15809:0"
+msgstr ""
 
 #: templates/resources/resource.html:58
 msgid "Related Lessons"
-msgstr "crwdns15810:0crwdne15810:0"
+msgstr ""
 
 #: templates/resources/resource.html:63
 #: templates/topics/all-curriculum-integration-list.html:28
 msgid "Topic"
-msgstr "crwdns15811:0crwdne15811:0"
+msgstr ""
 
 #: templates/resources/resource.html:64
 msgid "Ages"
-msgstr "crwdns15812:0crwdne15812:0"
+msgstr ""
 
 #: templates/resources/resource.html:65
 #: templates/topics/programming-challenges-table.html:8
 msgid "Number"
-msgstr "crwdns15813:0crwdne15813:0"
+msgstr ""
 
 #: templates/resources/resource.html:66
 msgid "Lesson"
-msgstr "crwdns15814:0crwdne15814:0"
+msgstr ""
 
 #: templates/topics/all-curriculum-integration-list.html:20
 msgid "The following table lists curriculum integrations for all topics in the CS Unplugged content."
-msgstr "crwdns15853:0crwdne15853:0"
+msgstr ""
 
 #: templates/topics/all-curriculum-integration-list.html:29
 #: templates/topics/curriculum-integrations-table.html:6
 msgid "Activity"
-msgstr "crwdns15854:0crwdne15854:0"
+msgstr ""
 
 #: templates/topics/all-curriculum-integration-list.html:30
 #: templates/topics/curriculum-integrations-table.html:7
 msgid "Curriculum Areas"
-msgstr "crwdns15855:0crwdne15855:0"
+msgstr ""
 
 #: templates/topics/all-curriculum-integration-list.html:31
 #: templates/topics/curriculum-integrations-table.html:8
 msgid "Prerequisite Lessons?"
-msgstr "crwdns15856:0crwdne15856:0"
+msgstr ""
 
 #: templates/topics/computational-thinking-links.html:5
 msgid "Seeing the Computational Thinking connections"
-msgstr "crwdns15857:0crwdne15857:0"
+msgstr ""
 
 #: templates/topics/computational-thinking-links.html:8
 msgid "Throughout the lessons there are links to computational thinking. Below we've noted some general links that apply to this content."
-msgstr "crwdns15858:0crwdne15858:0"
+msgstr ""
 
 #: templates/topics/computational-thinking-links.html:15
 msgid "Teaching computational thinking through CSUnplugged activities supports students to learn how to describe a problem, identify what are the important details they need to solve this problem, and break it down into small, logical steps so that they can then create a process which solves the problem, and then evaluate this process. These skills are transferable to any other curriculum area, but are particularly relevant to developing digital systems and solving problems using the capabilities of computers."
-msgstr "crwdns15859:0crwdne15859:0"
+msgstr ""
 
 #: templates/topics/computational-thinking-links.html:23
 #, python-format
 msgid "These Computational Thinking concepts are all connected to each other and support each other, but it’s important to note that not all aspects of Computational Thinking happen in every unit or lesson. We’ve highlighted the important connections for you to observe your students in action. For more background information on what our definition of Computational Thinking <a href=\"%(ct_url)s\">see our notes about computational thinking</a>."
-msgstr "crwdns15860:0%(ct_url)scrwdne15860:0"
+msgstr ""
 
 #: templates/topics/curriculum-integration.html:31
 #: templates/topics/programming-challenge.html:26
 #: templates/topics/topic.html:21 templates/topics/unit-plan.html:23
 msgid "topic"
-msgstr "crwdns18229:0crwdne18229:0"
+msgstr ""
 
 #: templates/topics/curriculum-integration.html:32
 msgid "curriculum integration"
-msgstr "crwdns18230:0crwdne18230:0"
+msgstr ""
 
 #: templates/topics/curriculum-integration.html:49
 msgid "Heads up!"
-msgstr "crwdns15861:0crwdne15861:0"
+msgstr ""
 
 #: templates/topics/curriculum-integration.html:50
 msgid "To do this activity it's expected you understand the content covered in the following:"
-msgstr "crwdns15862:0crwdne15862:0"
+msgstr ""
 
 #: templates/topics/glossary.html:30
 #, python-format
 msgid "The following glossary terms are not yet available in %(language)s. Sorry about that!"
-msgstr "crwdns18231:0%(language)scrwdne18231:0"
+msgstr ""
 
 #: templates/topics/index.html:22
 msgid "Open a topic to see all related unit plans, lessons, curriculum integrations, and programming challenges."
-msgstr "crwdns15863:0crwdne15863:0"
+msgstr ""
 
 #: templates/topics/index.html:40
 #, python-format
 msgid "Ages %(min_age)s to %(max_age)s"
-msgstr "crwdns18232:0%(min_age)scrwdnd18232:0%(max_age)scrwdne18232:0"
+msgstr ""
 
 #: templates/topics/index.html:46
 msgid "lessons"
-msgstr "crwdns18233:0crwdne18233:0"
+msgstr ""
 
 #: templates/topics/index.html:50
 msgid "curriculum integrations"
-msgstr "crwdns18234:0crwdne18234:0"
+msgstr ""
 
 #: templates/topics/index.html:53
 msgid "programming challenges"
-msgstr "crwdns18235:0crwdne18235:0"
+msgstr ""
 
 #: templates/topics/index.html:62
 msgid "No topics are available."
-msgstr "crwdns15864:0crwdne15864:0"
+msgstr ""
 
 #: templates/topics/lesson.html:24 templates/topics/unit-plan.html:22
 msgid "unit plan"
-msgstr "crwdns18236:0crwdne18236:0"
+msgstr ""
 
 #: templates/topics/lesson.html:25
 msgid "lesson"
-msgstr "crwdns18237:0crwdne18237:0"
+msgstr ""
 
 #: templates/topics/lesson.html:31
 #, python-format
 msgid "<strong>Duration:</strong> %(lesson.duration)s minutes"
-msgstr "crwdns15865:0%(lesson.duration)scrwdne15865:0"
+msgstr ""
 
 #: templates/topics/lesson.html:34
 #, python-format
 msgid "<strong>Ages %(lower)s to %(upper)s:</strong> Lesson %(number)s"
-msgstr "crwdns15866:0%(lower)scrwdnd15866:0%(upper)scrwdnd15866:0%(number)scrwdne15866:0"
+msgstr ""
 
 #: templates/topics/lesson.html:46
 #: templates/topics/programming-challenge.html:71
 msgid "Learning outcomes"
-msgstr "crwdns15867:0crwdne15867:0"
+msgstr ""
 
 #: templates/topics/lesson.html:47
 msgid "Students will be able to:"
-msgstr "crwdns15868:0crwdne15868:0"
+msgstr ""
 
 #: templates/topics/lesson.html:71
 msgid "CS Unplugged resources"
-msgstr "crwdns15869:0crwdne15869:0"
+msgstr ""
 
 #: templates/topics/lesson.html:86
 msgid "Classroom resources"
-msgstr "crwdns15870:0crwdne15870:0"
+msgstr ""
 
 #: templates/topics/lesson.html:95 templates/topics/lessons-table.html:14
 msgid "Programming challenges"
-msgstr "crwdns15871:0crwdne15871:0"
+msgstr ""
 
 #: templates/topics/lesson.html:98
 msgid "View related programming challenges"
-msgstr "crwdns15872:0crwdne15872:0"
+msgstr ""
 
 #: templates/topics/lesson.html:104 templates/topics/topic.html:99
 #: templates/topics/unit-plan.html:48
 msgid "Table of contents"
-msgstr "crwdns15873:0crwdne15873:0"
+msgstr ""
 
 #: templates/topics/lesson.html:117 templates/topics/unit-plan.html:60
 msgid "Computational Thinking"
-msgstr "crwdns15874:0crwdne15874:0"
+msgstr ""
 
 #: templates/topics/lessons-table.html:10
 #, python-format
 msgid "Ages %(lower)s to %(upper)s"
-msgstr "crwdns15875:0%(lower)scrwdnd15875:0%(upper)scrwdne15875:0"
+msgstr ""
 
 #: templates/topics/not-available-badge.html:4
 #, python-format
 msgid "Not available in %(language)s"
-msgstr "crwdns18238:0%(language)scrwdne18238:0"
+msgstr ""
 
 #: templates/topics/not-available-warning.html:6
 #, python-format
 msgid "<h4>Sorry! This %(model_type)s is not yet available in %(language)s.</h4> <p>This %(model_type)s is available in the following languages:</p>"
-msgstr "crwdns18239:0%(model_type)scrwdnd18239:0%(language)scrwdnd18239:0%(model_type)scrwdne18239:0"
+msgstr ""
 
 #: templates/topics/not-available-warning.html:21
 msgid "or"
-msgstr "crwdns18240:0crwdne18240:0"
+msgstr ""
 
 #: templates/topics/not-available-warning.html:23
 #, python-format
 msgid "Return to the %(parent_type)s"
-msgstr "crwdns18241:0%(parent_type)scrwdne18241:0"
+msgstr ""
 
 #: templates/topics/programming-challenge-language-solution.html:10
 #, python-format
 msgid "%(name)s solution"
-msgstr "crwdns15876:0%(name)scrwdne15876:0"
+msgstr ""
 
 #: templates/topics/programming-challenge-language-solution.html:28
 #: templates/topics/programming-challenge-language-solution.html:32
 msgid "solution"
-msgstr "crwdns15877:0crwdne15877:0"
+msgstr ""
 
 #: templates/topics/programming-challenge-language-solution.html:33
 msgid "challenge"
-msgstr "crwdns18242:0crwdne18242:0"
+msgstr ""
 
 #: templates/topics/programming-challenge-language-solution.html:43
 msgid "<strong>Heads Up!</strong> If you are ready to compare your programming to ours or are wanting to have a look at how we solved it, click 'View solution' below to view at least one way to write this program."
-msgstr "crwdns15878:0crwdne15878:0"
+msgstr ""
 
 #: templates/topics/programming-challenge-language-solution.html:50
 msgid "View solution"
-msgstr "crwdns15879:0crwdne15879:0"
+msgstr ""
 
 #: templates/topics/programming-challenge-language-solution.html:54
 msgid "This is just one of many possible solutions:"
-msgstr "crwdns15880:0crwdne15880:0"
+msgstr ""
 
 #: templates/topics/programming-challenge-language-solution.html:61
 msgid "Back to programming challenge"
-msgstr "crwdns15881:0crwdne15881:0"
+msgstr ""
 
 #: templates/topics/programming-challenge-language-solution.html:72
 #: templates/topics/programming-challenge.html:146
 msgid "Extra Challenge"
-msgstr "crwdns15882:0crwdne15882:0"
+msgstr ""
 
 #: templates/topics/programming-challenge-lesson-list.html:9
 #: templates/topics/programming-challenge-lesson-list.html:20
 #, python-format
 msgid "%(name)s programming challenges"
-msgstr "crwdns15883:0%(name)scrwdne15883:0"
+msgstr ""
 
 #: templates/topics/programming-challenge-lesson-list.html:31
 #, python-format
 msgid "No programming challenges for %(topic)s."
-msgstr "crwdns15884:0%(topic)scrwdne15884:0"
+msgstr ""
 
 #: templates/topics/programming-challenge.html:24
 msgid "programming challenge"
-msgstr "crwdns18243:0crwdne18243:0"
+msgstr ""
 
 #: templates/topics/programming-challenge.html:32
 msgid "Challenge Level:"
-msgstr "crwdns15885:0crwdne15885:0"
+msgstr ""
 
 #: templates/topics/programming-challenge.html:42
 msgid "This programming challenge is linked to the following lessons:"
-msgstr "crwdns15886:0crwdne15886:0"
+msgstr ""
 
 #: templates/topics/programming-challenge.html:48
 #, python-format
 msgid "Challenge %(set_num)s.%(chal_num)s for %(name)s"
-msgstr "crwdns15887:0%(set_num)scrwdnd15887:0%(chal_num)scrwdnd15887:0%(name)scrwdne15887:0"
+msgstr ""
 
 #: templates/topics/programming-challenge.html:53
 #, python-format
 msgid "%(lower)s to %(upper)s"
-msgstr "crwdns15888:0%(lower)scrwdnd15888:0%(upper)scrwdne15888:0"
+msgstr ""
 
 #: templates/topics/programming-challenge.html:57
 msgid "and"
-msgstr "crwdns15889:0crwdne15889:0"
+msgstr ""
 
 #: templates/topics/programming-challenge.html:84
 #, python-format
 msgid "No learning outcomes listed for %(programming_challenge.name)s."
-msgstr "crwdns15890:0%(programming_challenge.name)scrwdne15890:0"
+msgstr ""
 
 #: templates/topics/programming-challenge.html:90
 #: templates/topics/programming-challenges-table.html:11
 msgid "Languages"
-msgstr "crwdns15891:0crwdne15891:0"
+msgstr ""
 
 #: templates/topics/programming-challenge.html:111
 msgid "What it should look like"
-msgstr "crwdns15892:0crwdne15892:0"
+msgstr ""
 
 #: templates/topics/programming-challenge.html:118
 msgid "Hints"
-msgstr "crwdns15893:0crwdne15893:0"
+msgstr ""
 
 #: templates/topics/programming-challenge.html:130
 #, python-format
 msgid "Show %(implementation.language.name)s solution"
-msgstr "crwdns15894:0%(implementation.language.name)scrwdne15894:0"
+msgstr ""
 
 #: templates/topics/programming-challenges-table.html:9
 msgid "Name"
-msgstr "crwdns15895:0crwdne15895:0"
+msgstr ""
 
 #: templates/topics/programming-challenges-table.html:10
 msgid "Challenge Level"
-msgstr "crwdns15896:0crwdne15896:0"
+msgstr ""
 
 #: templates/topics/topic-other-resources.html:9
 #, python-format
 msgid "%(topic.name)s other resources"
-msgstr "crwdns15897:0%(topic.name)scrwdne15897:0"
+msgstr ""
 
 #: templates/topics/topic-other-resources.html:26
 #: templates/topics/topic.html:126
 msgid "Other resources"
-msgstr "crwdns15904:0crwdne15904:0"
+msgstr ""
 
 #: templates/topics/topic-other-resources.html:31
 msgid "Sorry! We couldn't find any information on other resources for this topic."
-msgstr "crwdns18244:0crwdne18244:0"
+msgstr ""
 
 #: templates/topics/topic-other-resources.html:34
 msgid "Return to the topic"
-msgstr "crwdns18245:0crwdne18245:0"
+msgstr ""
 
 #: templates/topics/topic.html:22
 msgid "list of topics"
-msgstr "crwdns18246:0crwdne18246:0"
+msgstr ""
 
 #: templates/topics/topic.html:43 templates/topics/unit-plan.html:19
 msgid "Unit plan:"
-msgstr "crwdns15898:0crwdne15898:0"
+msgstr ""
 
 #: templates/topics/topic.html:50
 msgid "or jump straight to a lesson of the unit:"
-msgstr "crwdns15899:0crwdne15899:0"
+msgstr ""
 
 #: templates/topics/topic.html:72
 #, python-format
 msgid "The following resources are used in %(name)s lessons, and can be accessed here (and also on each lesson page)."
-msgstr "crwdns15900:0%(name)scrwdne15900:0"
+msgstr ""
 
 #: templates/topics/topic.html:86
 msgid "Looking for more?"
-msgstr "crwdns15901:0crwdne15901:0"
+msgstr ""
 
 #: templates/topics/topic.html:89
 msgid "Click here for other resources"
-msgstr "crwdns15902:0crwdne15902:0"
+msgstr ""
 
 #: templates/topics/topic.html:116
 msgid "Curriculum integrations"
-msgstr "crwdns15903:0crwdne15903:0"
+msgstr ""
 
 #: templates/topics/unit-plan.html:39 templates/topics/unit-plan.html:64
 msgid "Lessons"
-msgstr "crwdns15905:0crwdne15905:0"
+msgstr ""
 

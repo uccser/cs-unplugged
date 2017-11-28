@@ -1,4 +1,4 @@
-<figure class="figure{% if alignment == 'left' %} float-md-left{% elif alignment =='right' %} float-md-right{% else %} d-block text-center{% endif %}">
+<figure class="figure{% if alignment == 'left' %} float-md-{{ '{{' }}LANGUAGE_START{{ '}}' }}{% elif alignment =='right' %} float-md-{{ '{{' }}LANGUAGE_END{{ '}}' }}{% else %} d-block text-center{% endif %}">
 <img src="{{ file_path }}"
 class="content-image figure-img img-fluid"
 {% if alt %} alt="{{ alt }}"{% endif %}
