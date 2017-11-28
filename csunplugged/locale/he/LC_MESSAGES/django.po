@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-10 02:02+0000\n"
-"PO-Revision-Date: 2017-11-27 08:05-0500\n"
+"POT-Creation-Date: 2017-11-28 00:11+0000\n"
+"PO-Revision-Date: 2017-11-27 20:13-0500\n"
 "Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
 "Language-Team: Hebrew\n"
 "Language: he_IL\n"
@@ -16,73 +16,490 @@ msgstr ""
 "X-Crowdin-Language: he\n"
 "X-Crowdin-File: /csunplugged/locale/en/LC_MESSAGES/django.po\n"
 
-#: templates/base.html:20 templates/general/index.html:7
+#: config/settings/base.py:132
+msgid "Translation mode"
+msgstr ""
+
+#: config/settings/base.py:138
+msgid "Translation mode (Bi-directional)"
+msgstr ""
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:10
+msgid "12 digits"
+msgstr ""
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:11
+msgid "13 digits"
+msgstr ""
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:24
+msgid "Barcode length"
+msgstr ""
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:48
+msgid "{} Digit Barcode"
+msgstr ""
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:53
+msgid "Separate!"
+msgstr ""
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:54
+msgid "Operate!"
+msgstr ""
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:55
+msgid "Calculate!"
+msgstr ""
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:66
+msgid "Remember that this algorithm uses modulo 10, so we are only interested in the number in the one's column."
+msgstr ""
+
+#: resources/generators/BinaryCardsResourceGenerator.py:33
+msgid "Display Numbers"
+msgstr ""
+
+#: resources/generators/BinaryCardsResourceGenerator.py:38
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:46
+msgid "Black on Card Back"
+msgstr ""
+
+#: resources/generators/BinaryCardsResourceGenerator.py:40
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:48
+msgid "Yes - Uses a lot of black ink, but conveys clearer card state. Print double sided."
+msgstr ""
+
+#: resources/generators/BinaryCardsResourceGenerator.py:41
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:49
+msgid "No - Print single sided."
+msgstr ""
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:20
+#: resources/generators/BinaryWindowsResourceGenerator.py:15
+msgid "Four (1 to 8)"
+msgstr ""
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:21
+#: resources/generators/BinaryWindowsResourceGenerator.py:16
+msgid "Eight (1 to 128)"
+msgstr ""
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:22
+msgid "Twelve (1 to 2048)"
+msgstr ""
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:35
+#: resources/generators/BinaryWindowsResourceGenerator.py:34
+msgid "Number of Bits"
+msgstr ""
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:41
+#: resources/generators/BinaryWindowsResourceGenerator.py:40
+msgid "Display Dot Counts"
+msgstr ""
+
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:10
+msgid "Student"
+msgstr ""
+
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:11
+msgid "Teacher (solutions)"
+msgstr ""
+
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:24
+msgid "Worksheet Version"
+msgstr ""
+
+#: resources/generators/BinaryWindowsResourceGenerator.py:20
+msgid "Binary (0 or 1)"
+msgstr ""
+
+#: resources/generators/BinaryWindowsResourceGenerator.py:21
+msgid "Lightbulb (off or on)"
+msgstr ""
+
+#: resources/generators/BinaryWindowsResourceGenerator.py:45
+msgid "Value Representation"
+msgstr ""
+
+#: resources/generators/ModuloClockResourceGenerator.py:25
+msgid "Modulo"
+msgstr ""
+
+#: resources/generators/ParityCardsResourceGenerator.py:17
+msgid "Black"
+msgstr ""
+
+#: resources/generators/ParityCardsResourceGenerator.py:18
+msgid "Blue"
+msgstr ""
+
+#: resources/generators/ParityCardsResourceGenerator.py:19
+msgid "Green"
+msgstr ""
+
+#: resources/generators/ParityCardsResourceGenerator.py:20
+msgid "Purple"
+msgstr ""
+
+#: resources/generators/ParityCardsResourceGenerator.py:21
+msgid "Red"
+msgstr ""
+
+#: resources/generators/ParityCardsResourceGenerator.py:34
+msgid "Card back colour"
+msgstr ""
+
+#: resources/generators/PianoKeysResourceGenerator.py:62
+msgid "None"
+msgstr ""
+
+#: resources/generators/PianoKeysResourceGenerator.py:82
+msgid "Piano keys to highlight"
+msgstr ""
+
+#: resources/generators/PixelPainterResourceGenerator.py:13
+msgid "Black and White (2 possible binary values)"
+msgstr ""
+
+#: resources/generators/PixelPainterResourceGenerator.py:14
+msgid "Black and White (2 possible binary values) in Run Length Encoding"
+msgstr ""
+
+#: resources/generators/PixelPainterResourceGenerator.py:15
+msgid "Greyscale (4 possible binary values)"
+msgstr ""
+
+#: resources/generators/PixelPainterResourceGenerator.py:16
+msgid "Colour (8 possible binary values)"
+msgstr ""
+
+#: resources/generators/PixelPainterResourceGenerator.py:20
+msgid "Fish - 6 pages"
+msgstr ""
+
+#: resources/generators/PixelPainterResourceGenerator.py:21
+msgid "Hot air balloon - 8 pages"
+msgstr ""
+
+#: resources/generators/PixelPainterResourceGenerator.py:22
+msgid "Boat - 9 pages"
+msgstr ""
+
+#: resources/generators/PixelPainterResourceGenerator.py:23
+msgid "Parrots - 32 pages"
+msgstr ""
+
+#: resources/generators/PixelPainterResourceGenerator.py:32
+msgid "Black and White"
+msgstr ""
+
+#: resources/generators/PixelPainterResourceGenerator.py:39
+msgid "Run length encoding"
+msgstr ""
+
+#: resources/generators/PixelPainterResourceGenerator.py:46
+msgid "Greyscale"
+msgstr ""
+
+#: resources/generators/PixelPainterResourceGenerator.py:55
+msgid "Colour"
+msgstr ""
+
+#: resources/generators/PixelPainterResourceGenerator.py:70
+msgid "Boat"
+msgstr ""
+
+#: resources/generators/PixelPainterResourceGenerator.py:71
+msgid "Fish"
+msgstr ""
+
+#: resources/generators/PixelPainterResourceGenerator.py:72
+msgid "Hot air balloon"
+msgstr ""
+
+#: resources/generators/PixelPainterResourceGenerator.py:73
+#: templates/general/people.html:140
+msgid "Parrots"
+msgstr ""
+
+#: resources/generators/PixelPainterResourceGenerator.py:95
+msgid "Colouring type"
+msgstr ""
+
+#: resources/generators/PixelPainterResourceGenerator.py:101
+msgid "Image"
+msgstr ""
+
+#: resources/generators/SearchingCardsResourceGenerator.py:23
+msgid "Number of cards (15 or 31)"
+msgstr ""
+
+#: resources/generators/SearchingCardsResourceGenerator.py:24
+msgid "0 to 99"
+msgstr ""
+
+#: resources/generators/SearchingCardsResourceGenerator.py:25
+msgid "0 to 999"
+msgstr ""
+
+#: resources/generators/SearchingCardsResourceGenerator.py:26
+msgid "Blank"
+msgstr ""
+
+#: resources/generators/SearchingCardsResourceGenerator.py:39
+msgid "Number of cards"
+msgstr ""
+
+#: resources/generators/SearchingCardsResourceGenerator.py:45
+msgid "Range of numbers"
+msgstr ""
+
+#: resources/generators/SearchingCardsResourceGenerator.py:51
+msgid "Include teacher guide sheet"
+msgstr ""
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:16
+msgid "Small numbers (1 to 6)"
+msgstr ""
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:17
+msgid "Large numbers (7 digit numbers)"
+msgstr ""
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:18
+msgid "Letters"
+msgstr ""
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:19
+msgid "Words"
+msgstr ""
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:20
+msgid "Fractions"
+msgstr ""
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:21
+msgid "Māori colours"
+msgstr ""
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:22
+msgid "Māori numbers"
+msgstr ""
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:23
+msgid "Butterfly life cycle"
+msgstr ""
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:24
+msgid "Little Red Riding Hood"
+msgstr ""
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:37
+msgid "Card Type"
+msgstr ""
+
+#: resources/generators/SortingNetworkResourceGenerator.py:10
+msgid "Easy Numbers (1 digits)"
+msgstr ""
+
+#: resources/generators/SortingNetworkResourceGenerator.py:11
+msgid "Medium Numbers (2 digits)"
+msgstr ""
+
+#: resources/generators/SortingNetworkResourceGenerator.py:12
+msgid "Hard Numbers (3 digits)"
+msgstr ""
+
+#: resources/generators/SortingNetworkResourceGenerator.py:13
+msgid "None (Blank - Useful as template) "
+msgstr ""
+
+#: resources/generators/SortingNetworkResourceGenerator.py:28
+#: resources/generators/TreasureHuntResourceGenerator.py:40
+msgid "Prefill with Numbers"
+msgstr ""
+
+#: resources/generators/TrainStationsResourceGenerator.py:9
+msgid "Circular"
+msgstr ""
+
+#: resources/generators/TrainStationsResourceGenerator.py:10
+msgid "Twisted"
+msgstr ""
+
+#: resources/generators/TrainStationsResourceGenerator.py:23
+msgid "Train track shape"
+msgstr ""
+
+#: resources/generators/TreasureHuntResourceGenerator.py:12
+msgid "Easy Numbers (2 digits)"
+msgstr ""
+
+#: resources/generators/TreasureHuntResourceGenerator.py:13
+msgid "Medium Numbers (3 digits)"
+msgstr ""
+
+#: resources/generators/TreasureHuntResourceGenerator.py:14
+msgid "Hard Numbers (4 digits)"
+msgstr ""
+
+#: resources/generators/TreasureHuntResourceGenerator.py:15
+msgid "None (Blank)"
+msgstr ""
+
+#: resources/generators/TreasureHuntResourceGenerator.py:19
+msgid "Sorted Numbers"
+msgstr ""
+
+#: resources/generators/TreasureHuntResourceGenerator.py:20
+msgid "Unsorted Numbers"
+msgstr ""
+
+#: resources/generators/TreasureHuntResourceGenerator.py:24
+msgid "Table only - Little ink usage."
+msgstr ""
+
+#: resources/generators/TreasureHuntResourceGenerator.py:25
+msgid "Table and artwork - Uses a lot of colour ink."
+msgstr ""
+
+#: resources/generators/TreasureHuntResourceGenerator.py:46
+msgid "Numbers Unsorted/Sorted"
+msgstr ""
+
+#: resources/generators/TreasureHuntResourceGenerator.py:52
+msgid "Include instruction sheets"
+msgstr ""
+
+#: resources/generators/TreasureHuntResourceGenerator.py:57
+msgid "Printing mode"
+msgstr ""
+
+#: resources/utils/BaseResourceGenerator.py:20
+msgid "A4"
+msgstr ""
+
+#: resources/utils/BaseResourceGenerator.py:21
+msgid "US Letter"
+msgstr ""
+
+#: resources/utils/BaseResourceGenerator.py:52
+msgid "Paper Size"
+msgstr ""
+
+#: resources/utils/BaseResourceGenerator.py:72
+msgid "Header Text"
+msgstr ""
+
+#: resources/utils/BaseResourceGenerator.py:73
+msgid "Example School: Room Four"
+msgstr ""
+
+#: resources/utils/BaseResourceGenerator.py:81
+msgid "Number of Copies"
+msgstr ""
+
+#: resources/utils/get_options_html.py:24
+msgid "Local Generation Only"
+msgstr ""
+
+#: resources/utils/resource_parameters.py:172
+#: templates/topics/all-curriculum-integration-list.html:58
+#: templates/topics/curriculum-integrations-table.html:32
+#: templates/topics/lessons-table.html:42
+msgid "Yes"
+msgstr ""
+
+#: resources/utils/resource_parameters.py:172
+#: templates/topics/all-curriculum-integration-list.html:61
+#: templates/topics/curriculum-integrations-table.html:35
+#: templates/topics/lessons-table.html:46
+msgid "No"
+msgstr ""
+
+#: templates/base.html:25 templates/general/index.html:7
 msgid "CS Unplugged"
 msgstr ""
 
-#: templates/base.html:48 templates/base.html:111 templates/topics/index.html:8
-#: templates/topics/index.html:17
+#: templates/base.html:53 templates/base.html:157
+#: templates/topics/index.html:8 templates/topics/index.html:17
 msgid "Topics"
 msgstr ""
 
-#: templates/base.html:49 templates/base.html:116
+#: templates/base.html:54 templates/base.html:162
 #: templates/general/index.html:60 templates/resources/index.html:8
-#: templates/resources/index.html:17 templates/topics/topic.html:56
-#: templates/topics/topic.html:102
+#: templates/resources/index.html:17 templates/topics/topic.html:70
+#: templates/topics/topic.html:121
 msgid "Resources"
 msgstr ""
 
-#: templates/base.html:50 templates/base.html:106
+#: templates/base.html:55 templates/base.html:152
 #: templates/general/about.html:6 templates/general/base.html:9
 msgid "About"
 msgstr ""
 
-#: templates/base.html:102
+#: templates/base.html:123
+msgid "Looking for something for high schools? Check out the <a href=\"http://csfieldguide.org.nz/\">Computer Science Field Guide</a>."
+msgstr ""
+
+#: templates/base.html:135
+msgid "The primary goal of the Unplugged project is to promote Computer Science (and computing in general) to young people as an interesting, engaging, and intellectually stimulating discipline."
+msgstr ""
+
+#: templates/base.html:141
+#, python-format
+msgid "Read more about <a href=\"%(principles_url)s\">our principles here</a>."
+msgstr ""
+
+#: templates/base.html:148
 msgid "Useful Links"
 msgstr ""
 
-#: templates/base.html:122
+#: templates/base.html:168
 msgid "Community"
 msgstr ""
 
-#: templates/base.html:126
+#: templates/base.html:172
 msgid "Twitter"
 msgstr ""
 
-#: templates/base.html:131
+#: templates/base.html:177
 msgid "YouTube"
 msgstr ""
 
-#: templates/base.html:136
+#: templates/base.html:182
 msgid "GitHub"
 msgstr ""
 
-#: templates/base.html:142
+#: templates/base.html:188
 msgid "Help"
 msgstr ""
 
-#: templates/base.html:146 templates/topics/glossary.html:8
+#: templates/base.html:192 templates/topics/glossary.html:8
 #: templates/topics/glossary.html:18
 msgid "Glossary"
 msgstr ""
 
-#: templates/base.html:151
+#: templates/base.html:197
 msgid "Feedback"
 msgstr ""
 
-#: templates/base.html:156 templates/general/contact.html:7
+#: templates/base.html:202 templates/general/contact.html:7
 msgid "Contact"
 msgstr ""
 
-#: templates/base.html:167
-msgid "Looking for something for high schools? Check out the <a href=\"http://csfieldguide.org.nz/\">Computer Science Field Guide</a>."
-msgstr ""
-
-#: templates/base.html:175
+#: templates/base.html:212
 msgid "The CS Unplugged material is open source on <a href=\"https://github.com/uccser/cs-unplugged\">GitHub</a>, and this website's content is shared under a <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons Attribution-ShareAlike 4.0 International license</a>. The CS Unplugged is a project by the <a href=\"http://www.cosc.canterbury.ac.nz/research/RG/CSE/\">Computer Science Education Research Group</a> at the <a href=\"http://www.canterbury.ac.nz/\">University of Canterbury</a>, New Zealand."
 msgstr ""
 
-#: templates/base.html:197
+#: templates/base.html:234
+#, python-format
+msgid "This definition is not available in %(language)s, sorry!"
+msgstr ""
+
+#: templates/base.html:241
 msgid "Close"
 msgstr ""
 
@@ -336,7 +753,7 @@ msgstr ""
 #: templates/general/index.html:57
 #: templates/topics/all-curriculum-integration-list.html:8
 #: templates/topics/all-curriculum-integration-list.html:18
-#: templates/topics/topic.html:51
+#: templates/topics/topic.html:65
 msgid "Curriculum Integrations"
 msgstr ""
 
@@ -366,10 +783,6 @@ msgstr ""
 
 #: templates/general/people.html:129
 msgid "Website"
-msgstr ""
-
-#: templates/general/people.html:140
-msgid "Parrots"
 msgstr ""
 
 #: templates/general/principles.html:23
@@ -464,134 +877,6 @@ msgstr ""
 msgid "The activities are resilient to errors made by students; they should not depend on getting many difficult steps exactly right, and minor mistakes should not prevent participants from understanding the principles. The instructions are usually just one or two rules and a goal that can be expressed in a single sentence (e.g. “Each card is either fully visible or not; how can you display exactly 11 dots?”, or “We need to get from any house to any other house; what is the smallest number of paving stones that make this possible”)."
 msgstr ""
 
-#: templates/resources/arrows.html:8
-#: templates/resources/left-right-cards.html:8
-msgid "This resource contains printouts for geometry activities."
-msgstr ""
-
-#: templates/resources/barcode-checksum-poster.html:8
-msgid "This resource is a poster showing how to calculate the checksum for a 12 or 13 digit barcode."
-msgstr ""
-
-#: templates/resources/barcode-checksum-poster.html:14
-msgid "Barcode length"
-msgstr ""
-
-#: templates/resources/barcode-checksum-poster.html:16
-msgid "12 digits"
-msgstr ""
-
-#: templates/resources/barcode-checksum-poster.html:19
-msgid "13 digits"
-msgstr ""
-
-#: templates/resources/binary-cards-small.html:8
-#: templates/resources/binary-cards.html:8
-#: templates/resources/binary-windows.html:8
-msgid "This resource contains printouts for binary numbers activities."
-msgstr ""
-
-#: templates/resources/binary-cards-small.html:14
-#: templates/resources/binary-windows.html:22
-msgid "Number of Bits"
-msgstr ""
-
-#: templates/resources/binary-cards-small.html:16
-#: templates/resources/binary-windows.html:24
-msgid "Four (1 to 8)"
-msgstr ""
-
-#: templates/resources/binary-cards-small.html:19
-#: templates/resources/binary-windows.html:27
-msgid "Eight (1 to 128)"
-msgstr ""
-
-#: templates/resources/binary-cards-small.html:22
-msgid "Twelve (1 to 2048)"
-msgstr ""
-
-#: templates/resources/binary-cards-small.html:26
-#: templates/resources/binary-windows.html:31
-msgid "Display Dot Counts"
-msgstr ""
-
-#: templates/resources/binary-cards-small.html:28
-#: templates/resources/binary-cards.html:16
-#: templates/resources/binary-windows.html:33
-#: templates/resources/searching-cards.html:55
-#: templates/resources/treasure-hunt.html:39
-#: templates/topics/all-curriculum-integration-list.html:54
-#: templates/topics/curriculum-integrations-table.html:28
-#: templates/topics/lessons-table.html:36
-msgid "Yes"
-msgstr ""
-
-#: templates/resources/binary-cards-small.html:31
-#: templates/resources/binary-cards.html:19
-#: templates/resources/binary-windows.html:36
-#: templates/resources/searching-cards.html:61
-#: templates/resources/treasure-hunt.html:45
-#: templates/topics/all-curriculum-integration-list.html:57
-#: templates/topics/curriculum-integrations-table.html:31
-#: templates/topics/lessons-table.html:40
-msgid "No"
-msgstr ""
-
-#: templates/resources/binary-cards-small.html:35
-#: templates/resources/binary-cards.html:23
-msgid "Black on Card Back"
-msgstr ""
-
-#: templates/resources/binary-cards-small.html:38
-#: templates/resources/binary-cards.html:26
-msgid "Yes - <em>Uses a lot of black ink, but conveys clearer card state. Print double sided.</em>"
-msgstr ""
-
-#: templates/resources/binary-cards-small.html:45
-#: templates/resources/binary-cards.html:33
-msgid "No - <em>Print single sided.</em>"
-msgstr ""
-
-#: templates/resources/binary-cards.html:14
-msgid "Display Numbers"
-msgstr ""
-
-#: templates/resources/binary-to-alphabet.html:8
-msgid "This resource will show you how to use binary numbers to represent letters."
-msgstr ""
-
-#: templates/resources/binary-to-alphabet.html:14
-msgid "Worksheet Version"
-msgstr ""
-
-#: templates/resources/binary-to-alphabet.html:16
-msgid "Student"
-msgstr ""
-
-#: templates/resources/binary-to-alphabet.html:19
-msgid "Teacher (solutions)"
-msgstr ""
-
-#: templates/resources/binary-windows.html:13
-msgid "<strong>Note:</strong> This resource should be printed double sided on short edge."
-msgstr ""
-
-#: templates/resources/binary-windows.html:40
-msgid "Value Representation"
-msgstr ""
-
-#: templates/resources/binary-windows.html:42
-msgid "Binary (0 or 1)"
-msgstr ""
-
-#: templates/resources/binary-windows.html:45
-msgid "Lightbulb (off or on)"
-msgstr ""
-
-#: templates/resources/grid.html:8
-msgid "This resource contains a 8 by 8 grid on a page."
-msgstr ""
-
 #: templates/resources/index.html:20
 msgid "This page diplays a complete list of all available resources. If a lesson uses a resource, the lesson will contain a direct link to the resource with a description on how to use it."
 msgstr ""
@@ -600,306 +885,39 @@ msgstr ""
 msgid "No resources are available."
 msgstr ""
 
-#: templates/resources/job-badges.html:8
-msgid "This resource contains printouts for Kidbots activities."
-msgstr ""
-
-#: templates/resources/modulo-clock.html:8
-msgid "This resource contains printouts for modulo activities."
-msgstr ""
-
-#: templates/resources/modulo-clock.html:14
-msgid "Modulo"
-msgstr ""
-
-#: templates/resources/modulo-clock.html:16
-#: templates/resources/searching-cards.html:45
-msgid "Blank"
-msgstr ""
-
-#: templates/resources/parity-cards.html:7
-msgid "<p> This resource contains printouts for parity card activities. To use this resource: </p> <ul> <li> Printed the PDF double sided. </li> <li> Printing on 120 gsm card also can be useful. </li> </ul> <p> Each page contains 20 parity cards, so we recommend printing at least 2 pages of cards as 40 cards is a useful number for most activities. </p>"
-msgstr ""
-
-#: templates/resources/parity-cards.html:31
-msgid "Card back colour"
-msgstr ""
-
-#: templates/resources/parity-cards.html:34
-msgid "Black"
-msgstr ""
-
-#: templates/resources/parity-cards.html:39
-msgid "Blue"
-msgstr ""
-
-#: templates/resources/parity-cards.html:44
-msgid "Green"
-msgstr ""
-
-#: templates/resources/parity-cards.html:49
-msgid "Purple"
-msgstr ""
-
-#: templates/resources/parity-cards.html:54
-msgid "Red"
-msgstr ""
-
-#: templates/resources/piano-keys.html:7
-msgid "Piano keys to highlight"
-msgstr ""
-
-#: templates/resources/piano-keys.html:11
-msgid "None"
-msgstr ""
-
-#. Translators: Musical note
-#: templates/resources/piano-keys.html:18
-msgid "A"
-msgstr ""
-
-#. Translators: Musical note
-#: templates/resources/piano-keys.html:25
-msgid "B"
-msgstr ""
-
-#. Translators: Musical note
-#: templates/resources/piano-keys.html:32
-msgid "C"
-msgstr ""
-
-#. Translators: Musical note
-#: templates/resources/piano-keys.html:39
-msgid "D"
-msgstr ""
-
-#. Translators: Musical note
-#: templates/resources/piano-keys.html:46
-msgid "E"
-msgstr ""
-
-#. Translators: Musical note
-#: templates/resources/piano-keys.html:53
-msgid "F"
-msgstr ""
-
-#. Translators: Musical note
-#: templates/resources/piano-keys.html:60
-msgid "G"
-msgstr ""
-
-#: templates/resources/resource.html:31
-msgid "Paper Size"
-msgstr ""
-
-#: templates/resources/resource.html:33
-msgid "A4"
-msgstr ""
-
-#: templates/resources/resource.html:36
-msgid "US Letter"
-msgstr ""
-
-#: templates/resources/resource.html:41
-msgid "Local Generation Only"
-msgstr ""
-
-#: templates/resources/resource.html:44
-msgid "Header Text"
-msgstr ""
-
-#: templates/resources/resource.html:50
-msgid "Number of Copies"
-msgstr ""
-
-#: templates/resources/resource.html:56
+#: templates/resources/resource.html:34
 msgid "Generate Resource"
 msgstr ""
 
-#: templates/resources/resource.html:60
+#: templates/resources/resource.html:38
 #, python-format
 msgid "The download of this resource includes %(copies_amount)s unique copies."
 msgstr ""
 
-#: templates/resources/resource.html:73
+#: templates/resources/resource.html:50
 msgid "Preview"
 msgstr ""
 
-#: templates/resources/resource.html:81
+#: templates/resources/resource.html:58
 msgid "Related Lessons"
 msgstr ""
 
-#: templates/resources/resource.html:86
+#: templates/resources/resource.html:63
 #: templates/topics/all-curriculum-integration-list.html:28
 msgid "Topic"
 msgstr ""
 
-#: templates/resources/resource.html:87
+#: templates/resources/resource.html:64
 msgid "Ages"
 msgstr ""
 
-#: templates/resources/resource.html:88
+#: templates/resources/resource.html:65
 #: templates/topics/programming-challenges-table.html:8
 msgid "Number"
 msgstr ""
 
-#: templates/resources/resource.html:89
+#: templates/resources/resource.html:66
 msgid "Lesson"
-msgstr ""
-
-#: templates/resources/searching-cards.html:7
-msgid "Number of cards"
-msgstr ""
-
-#: templates/resources/searching-cards.html:23
-msgid "Range of numbers"
-msgstr ""
-
-#: templates/resources/searching-cards.html:27
-msgid "Number of cards (15 or 31)"
-msgstr ""
-
-#: templates/resources/searching-cards.html:33
-msgid "0 to 99"
-msgstr ""
-
-#: templates/resources/searching-cards.html:39
-msgid "0 to 999"
-msgstr ""
-
-#: templates/resources/searching-cards.html:51
-msgid "Include teacher guide sheet"
-msgstr ""
-
-#: templates/resources/sorting-network-cards.html:9
-#, python-format
-msgid "These cards are to be used with the <a href=\"%(sorting_network_cards_url)s\">Sorting Network resource</a>."
-msgstr ""
-
-#: templates/resources/sorting-network-cards.html:18
-msgid "Card Type"
-msgstr ""
-
-#: templates/resources/sorting-network-cards.html:22
-msgid "Small numbers (1 to 6)"
-msgstr ""
-
-#: templates/resources/sorting-network-cards.html:28
-msgid "Large numbers (7 digit numbers)"
-msgstr ""
-
-#: templates/resources/sorting-network-cards.html:34
-msgid "Fractions"
-msgstr ""
-
-#: templates/resources/sorting-network-cards.html:40
-msgid "Māori numbers"
-msgstr ""
-
-#: templates/resources/sorting-network-cards.html:46
-msgid "Words"
-msgstr ""
-
-#: templates/resources/sorting-network-cards.html:52
-msgid "Letters"
-msgstr ""
-
-#: templates/resources/sorting-network-cards.html:58
-msgid "Māori colours"
-msgstr ""
-
-#: templates/resources/sorting-network-cards.html:64
-msgid "Little Red Riding Hood"
-msgstr ""
-
-#: templates/resources/sorting-network-cards.html:70
-msgid "Butterfly life cycle"
-msgstr ""
-
-#: templates/resources/sorting-network.html:8
-msgid "This resource will show you how computers sort random numbers into order using a thing called a sorting network."
-msgstr ""
-
-#: templates/resources/sorting-network.html:15
-#, python-format
-msgid "Can be used with the <a href=\"%(sorting_network_url)s\">Sorting Network cards resource</a>."
-msgstr ""
-
-#: templates/resources/sorting-network.html:24
-#: templates/resources/treasure-hunt.html:11
-msgid "Prefill with Numbers"
-msgstr ""
-
-#: templates/resources/sorting-network.html:26
-msgid "None (Blank - Useful as template)"
-msgstr ""
-
-#: templates/resources/sorting-network.html:29
-msgid "Easy Numbers (1 digit)"
-msgstr ""
-
-#: templates/resources/sorting-network.html:32
-msgid "Medium Numbers (2 digits)"
-msgstr ""
-
-#: templates/resources/sorting-network.html:35
-msgid "Hard Numbers (3 digits)"
-msgstr ""
-
-#: templates/resources/train-stations.html:7
-msgid "Train track shape"
-msgstr ""
-
-#: templates/resources/train-stations.html:11
-msgid "Circular"
-msgstr ""
-
-#: templates/resources/train-stations.html:17
-msgid "Twisted"
-msgstr ""
-
-#: templates/resources/treasure-hunt.html:13
-msgid "Easy Numbers (2 digits)"
-msgstr ""
-
-#: templates/resources/treasure-hunt.html:16
-msgid "Medium Numbers (3 digits)"
-msgstr ""
-
-#: templates/resources/treasure-hunt.html:19
-msgid "Hard Numbers (4 digits)"
-msgstr ""
-
-#: templates/resources/treasure-hunt.html:22
-msgid "None (Blank)"
-msgstr ""
-
-#: templates/resources/treasure-hunt.html:26
-msgid "Numbers Unsorted/Sorted"
-msgstr ""
-
-#: templates/resources/treasure-hunt.html:28
-msgid "Unsorted Numbers"
-msgstr ""
-
-#: templates/resources/treasure-hunt.html:31
-msgid "Sorted Numbers"
-msgstr ""
-
-#: templates/resources/treasure-hunt.html:35
-msgid "Include instruction sheets"
-msgstr ""
-
-#: templates/resources/treasure-hunt.html:51
-msgid "Printing mode"
-msgstr ""
-
-#: templates/resources/treasure-hunt.html:55
-msgid "Table and artwork - Uses a lot of colour ink."
-msgstr ""
-
-#: templates/resources/treasure-hunt.html:61
-msgid "Table only - Little ink usage."
 msgstr ""
 
 #: templates/topics/all-curriculum-integration-list.html:20
@@ -938,69 +956,128 @@ msgstr ""
 msgid "These Computational Thinking concepts are all connected to each other and support each other, but it’s important to note that not all aspects of Computational Thinking happen in every unit or lesson. We’ve highlighted the important connections for you to observe your students in action. For more background information on what our definition of Computational Thinking <a href=\"%(ct_url)s\">see our notes about computational thinking</a>."
 msgstr ""
 
-#: templates/topics/curriculum-integration.html:38
+#: templates/topics/curriculum-integration.html:31
+#: templates/topics/programming-challenge.html:26
+#: templates/topics/topic.html:21 templates/topics/unit-plan.html:23
+msgid "topic"
+msgstr ""
+
+#: templates/topics/curriculum-integration.html:32
+msgid "curriculum integration"
+msgstr ""
+
+#: templates/topics/curriculum-integration.html:49
 msgid "Heads up!"
 msgstr ""
 
-#: templates/topics/curriculum-integration.html:39
+#: templates/topics/curriculum-integration.html:50
 msgid "To do this activity it's expected you understand the content covered in the following:"
+msgstr ""
+
+#: templates/topics/glossary.html:30
+#, python-format
+msgid "The following glossary terms are not yet available in %(language)s. Sorry about that!"
 msgstr ""
 
 #: templates/topics/index.html:22
 msgid "Open a topic to see all related unit plans, lessons, curriculum integrations, and programming challenges."
 msgstr ""
 
-#: templates/topics/index.html:39
+#: templates/topics/index.html:40
+#, python-format
+msgid "Ages %(min_age)s to %(max_age)s"
+msgstr ""
+
+#: templates/topics/index.html:46
+msgid "lessons"
+msgstr ""
+
+#: templates/topics/index.html:50
+msgid "curriculum integrations"
+msgstr ""
+
+#: templates/topics/index.html:53
+msgid "programming challenges"
+msgstr ""
+
+#: templates/topics/index.html:62
 msgid "No topics are available."
 msgstr ""
 
-#: templates/topics/lesson.html:23
+#: templates/topics/lesson.html:24 templates/topics/unit-plan.html:22
+msgid "unit plan"
+msgstr ""
+
+#: templates/topics/lesson.html:25
+msgid "lesson"
+msgstr ""
+
+#: templates/topics/lesson.html:31
 #, python-format
 msgid "<strong>Duration:</strong> %(lesson.duration)s minutes"
 msgstr ""
 
-#: templates/topics/lesson.html:26
+#: templates/topics/lesson.html:34
 #, python-format
 msgid "<strong>Ages %(lower)s to %(upper)s:</strong> Lesson %(number)s"
 msgstr ""
 
-#: templates/topics/lesson.html:36
-#: templates/topics/programming-challenge.html:59
+#: templates/topics/lesson.html:46
+#: templates/topics/programming-challenge.html:71
 msgid "Learning outcomes"
 msgstr ""
 
-#: templates/topics/lesson.html:37
+#: templates/topics/lesson.html:47
 msgid "Students will be able to:"
 msgstr ""
 
-#: templates/topics/lesson.html:60
+#: templates/topics/lesson.html:71
 msgid "CS Unplugged resources"
 msgstr ""
 
-#: templates/topics/lesson.html:75
+#: templates/topics/lesson.html:86
 msgid "Classroom resources"
 msgstr ""
 
-#: templates/topics/lesson.html:84 templates/topics/lessons-table.html:12
+#: templates/topics/lesson.html:95 templates/topics/lessons-table.html:14
 msgid "Programming challenges"
 msgstr ""
 
-#: templates/topics/lesson.html:87
+#: templates/topics/lesson.html:98
 msgid "View related programming challenges"
 msgstr ""
 
-#: templates/topics/lesson.html:93 templates/topics/topic.html:83
-#: templates/topics/unit-plan.html:37
+#: templates/topics/lesson.html:104 templates/topics/topic.html:99
+#: templates/topics/unit-plan.html:48
 msgid "Table of contents"
 msgstr ""
 
-#: templates/topics/lesson.html:106 templates/topics/unit-plan.html:49
+#: templates/topics/lesson.html:117 templates/topics/unit-plan.html:60
 msgid "Computational Thinking"
 msgstr ""
 
-#: templates/topics/lessons-table.html:8
+#: templates/topics/lessons-table.html:10
 #, python-format
 msgid "Ages %(lower)s to %(upper)s"
+msgstr ""
+
+#: templates/topics/not-available-badge.html:4
+#, python-format
+msgid "Not available in %(language)s"
+msgstr ""
+
+#: templates/topics/not-available-warning.html:6
+#, python-format
+msgid "<h4>Sorry! This %(model_type)s is not yet available in %(language)s.</h4> <p>This %(model_type)s is available in the following languages:</p>"
+msgstr ""
+
+#: templates/topics/not-available-warning.html:21
+msgid "or"
+msgstr ""
+
+#: templates/topics/not-available-warning.html:23
+#, python-format
+msgid "Return to the %(parent_type)s"
 msgstr ""
 
 #: templates/topics/programming-challenge-language-solution.html:10
@@ -1009,27 +1086,32 @@ msgid "%(name)s solution"
 msgstr ""
 
 #: templates/topics/programming-challenge-language-solution.html:28
+#: templates/topics/programming-challenge-language-solution.html:32
 msgid "solution"
 msgstr ""
 
-#: templates/topics/programming-challenge-language-solution.html:34
+#: templates/topics/programming-challenge-language-solution.html:33
+msgid "challenge"
+msgstr ""
+
+#: templates/topics/programming-challenge-language-solution.html:43
 msgid "<strong>Heads Up!</strong> If you are ready to compare your programming to ours or are wanting to have a look at how we solved it, click 'View solution' below to view at least one way to write this program."
 msgstr ""
 
-#: templates/topics/programming-challenge-language-solution.html:41
+#: templates/topics/programming-challenge-language-solution.html:50
 msgid "View solution"
 msgstr ""
 
-#: templates/topics/programming-challenge-language-solution.html:45
+#: templates/topics/programming-challenge-language-solution.html:54
 msgid "This is just one of many possible solutions:"
 msgstr ""
 
-#: templates/topics/programming-challenge-language-solution.html:52
+#: templates/topics/programming-challenge-language-solution.html:61
 msgid "Back to programming challenge"
 msgstr ""
 
-#: templates/topics/programming-challenge-language-solution.html:61
-#: templates/topics/programming-challenge.html:123
+#: templates/topics/programming-challenge-language-solution.html:72
+#: templates/topics/programming-challenge.html:146
 msgid "Extra Challenge"
 msgstr ""
 
@@ -1044,47 +1126,51 @@ msgstr ""
 msgid "No programming challenges for %(topic)s."
 msgstr ""
 
-#: templates/topics/programming-challenge.html:25
+#: templates/topics/programming-challenge.html:24
+msgid "programming challenge"
+msgstr ""
+
+#: templates/topics/programming-challenge.html:32
 msgid "Challenge Level:"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:33
+#: templates/topics/programming-challenge.html:42
 msgid "This programming challenge is linked to the following lessons:"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:39
+#: templates/topics/programming-challenge.html:48
 #, python-format
 msgid "Challenge %(set_num)s.%(chal_num)s for %(name)s"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:44
+#: templates/topics/programming-challenge.html:53
 #, python-format
 msgid "%(lower)s to %(upper)s"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:48
+#: templates/topics/programming-challenge.html:57
 msgid "and"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:72
+#: templates/topics/programming-challenge.html:84
 #, python-format
 msgid "No learning outcomes listed for %(programming_challenge.name)s."
 msgstr ""
 
-#: templates/topics/programming-challenge.html:78
+#: templates/topics/programming-challenge.html:90
 #: templates/topics/programming-challenges-table.html:11
 msgid "Languages"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:91
+#: templates/topics/programming-challenge.html:111
 msgid "What it should look like"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:98
+#: templates/topics/programming-challenge.html:118
 msgid "Hints"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:110
+#: templates/topics/programming-challenge.html:130
 #, python-format
 msgid "Show %(implementation.language.name)s solution"
 msgstr ""
@@ -1102,36 +1188,49 @@ msgstr ""
 msgid "%(topic.name)s other resources"
 msgstr ""
 
-#: templates/topics/topic.html:29 templates/topics/unit-plan.html:19
+#: templates/topics/topic-other-resources.html:26
+#: templates/topics/topic.html:126
+msgid "Other resources"
+msgstr ""
+
+#: templates/topics/topic-other-resources.html:31
+msgid "Sorry! We couldn't find any information on other resources for this topic."
+msgstr ""
+
+#: templates/topics/topic-other-resources.html:34
+msgid "Return to the topic"
+msgstr ""
+
+#: templates/topics/topic.html:22
+msgid "list of topics"
+msgstr ""
+
+#: templates/topics/topic.html:43 templates/topics/unit-plan.html:19
 msgid "Unit plan:"
 msgstr ""
 
-#: templates/topics/topic.html:36
+#: templates/topics/topic.html:50
 msgid "or jump straight to a lesson of the unit:"
 msgstr ""
 
-#: templates/topics/topic.html:58
+#: templates/topics/topic.html:72
 #, python-format
 msgid "The following resources are used in %(name)s lessons, and can be accessed here (and also on each lesson page)."
 msgstr ""
 
-#: templates/topics/topic.html:72
+#: templates/topics/topic.html:86
 msgid "Looking for more?"
 msgstr ""
 
-#: templates/topics/topic.html:75
+#: templates/topics/topic.html:89
 msgid "Click here for other resources"
 msgstr ""
 
-#: templates/topics/topic.html:97
+#: templates/topics/topic.html:116
 msgid "Curriculum integrations"
 msgstr ""
 
-#: templates/topics/topic.html:107
-msgid "Other resources"
-msgstr ""
-
-#: templates/topics/unit-plan.html:30 templates/topics/unit-plan.html:53
+#: templates/topics/unit-plan.html:39 templates/topics/unit-plan.html:64
 msgid "Lessons"
 msgstr ""
 
