@@ -7,7 +7,7 @@
 (type == 'ct-pattern') or
 (type == 'ct-logic') or
 (type == 'ct-evaluation') %}
-<img class="inline-image float-right" src="{{ "{% static '" }}img/general/{{ type }}.png{{ "' %}" }}">
+<img class="inline-image float-{{ '{{' }}LANGUAGE_END{{ '}}' }}" src="{{ "{% static '" }}img/general/{{ type }}.png{{ "' %}" }}">
 {% endif %}
 </summary>
 <div class="boxed-text-content">
