@@ -143,7 +143,8 @@ if env.bool("INCLUDE_INCONTEXT_L10N", False):
     django.conf.locale.LANG_INFO.update(EXTRA_LANG_INFO)
     # Add new languages to the list of all django languages
     global_settings.LANGUAGES = global_settings.LANGUAGES + EXTRA_LANGUAGES
-    global_settings.LANGUAGES_BIDI = global_settings.LANGUAGES_BIDI + [INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI.split('-')[0]]
+    global_settings.LANGUAGES_BIDI = (global_settings.LANGUAGES_BIDI +
+                                      [INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI.split('-')[0]])
     # Add new languages to the list of languages used for this project
     LANGUAGES += tuple(EXTRA_LANGUAGES)
     LANGUAGES_BIDI = global_settings.LANGUAGES_BIDI
