@@ -117,6 +117,8 @@ for language in ${languages[@]}; do
   crowdin -c "${CROWDIN_CONFIG_FILE}" -l "${language}" download
 
   git add csunplugged/locale >/dev/null 2>&1 || true
+  reset_po_files_timestamp_only
+
   if [[ $(git diff --cached) ]]; then
     git commit -m "Update ${language} message file (django.po)"
     changes=1

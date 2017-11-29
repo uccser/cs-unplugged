@@ -28,10 +28,11 @@ git checkout $UPDATE_MESSAGES_PR_BRANCH || git checkout -b $UPDATE_MESSAGES_PR_B
 git merge origin/$UPDATE_MESSAGES_TARGET_BRANCH --quiet --no-edit
 
 cd csunplugged
+python3 manage.py makemessages -l en --no-location
 
-python3 manage.py makemessages -l en
+git add locale/en/LC_MESSAGES/django.po
 
-git add -A
+reset_po_files_timestamp_only
 
 # If there are no changes to the compiled out (e.g. this is a README update) then just bail.
 if [[ $(git diff --cached) ]]; then
