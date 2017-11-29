@@ -14,6 +14,9 @@ TRANSLATION_TARGET_BRANCH="develop"
 # Branch that new metadata for in context localisation will be merged into
 IN_CONTEXT_L10N_TARGET_BRANCH="develop"
 
+# Branch that updated english message files will be merged into
+UPDATE_MESSAGES_TARGET_BRANCH="develop"
+
 # Name of crowdin config file
 CROWDIN_CONFIG_FILE="crowdin_content.yaml"
 

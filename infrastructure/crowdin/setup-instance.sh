@@ -6,13 +6,17 @@ SECRETS_DIR="crowdin_bot_secrets"
 SCRIPTS_DIR="crowdin_bot_scripts"
 PYTHON_PACKAGE_DIR="crowdin_bot_python_package"
 
+# Unzip crowdin-bot source
+tar -xvzf crowdin-bot.tar.gz
+
 # Install packages
 sudo apt-get install git --yes
+sudo apt-get install gettext --yes
 sudo apt-get install default-jre --yes  # Java, for crowdin cli
 sudo apt-get install python3-pip --yes
 sudo apt-get install python3-lxml --yes  # Install here instead of pip3 because compilation uses too much RAM
 sudo pip3 install -U pip setuptools
-sudo pip3 install verto pyyaml
+sudo pip3 install -r requirements.txt
 
 # Install crowdin cli
 wget -qO - https://artifacts.crowdin.com/repo/GPG-KEY-crowdin | sudo apt-key add -
@@ -25,9 +29,6 @@ wget https://github.com/github/hub/releases/download/v2.2.5/hub-linux-amd64-2.2.
 tar zvxvf hub-linux-amd64-2.2.5.tgz
 sudo ./hub-linux-amd64-2.2.5/install
 rm -rf hub-linux-amd64-2.2.5
-
-# Unzip crowdin-bot source
-tar -xvzf crowdin-bot.tar.gz
 
 # Move into secrets directory
 cd "${SECRETS_DIR}"
@@ -72,7 +73,8 @@ sudo pip3 install "${PYTHON_PACKAGE_DIR}"/
 # Setup crontab
 crontab << EOF
 SHELL=/bin/bash
-4 12 * * * PATH=\$PATH:/usr/local/bin; source crowdin-bot-env-secrets.sh; crowdin-bot-push-source.sh > crowdin-bot-push-source.log 2> crowdin-bot-push-source.err
-4 13 * * * PATH=\$PATH:/usr/local/bin; source crowdin-bot-env-secrets.sh; crowdin-bot-pull-translations.sh > crowdin-bot-pull-translations.log 2> crowdin-bot-pull-translations.err
-4 14 * * * PATH=\$PATH:/usr/local/bin; source crowdin-bot-env-secrets.sh; crowdin-bot-pull-incontext.sh > crowdin-bot-pull-incontext.log 2> crowdin-bot-pull-incontext.err
+4 12 * * * PATH=\$PATH:/usr/local/bin; source crowdin-bot-env-secrets.sh; crowdin-bot-update-messages.sh > crowdin-bot-update-messages.log 2> crowdin-bot-update-messages.err
+4 13 * * * PATH=\$PATH:/usr/local/bin; source crowdin-bot-env-secrets.sh; crowdin-bot-push-source.sh > crowdin-bot-push-source.log 2> crowdin-bot-push-source.err
+4 14 * * * PATH=\$PATH:/usr/local/bin; source crowdin-bot-env-secrets.sh; crowdin-bot-pull-translations.sh > crowdin-bot-pull-translations.log 2> crowdin-bot-pull-translations.err
+4 15 * * * PATH=\$PATH:/usr/local/bin; source crowdin-bot-env-secrets.sh; crowdin-bot-pull-incontext.sh > crowdin-bot-pull-incontext.log 2> crowdin-bot-pull-incontext.err
 EOF
