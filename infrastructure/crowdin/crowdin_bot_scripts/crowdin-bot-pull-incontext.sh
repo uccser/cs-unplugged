@@ -45,6 +45,7 @@ for content_path in "${CONTENT_PATHS[@]}"; do
   git add "${content_path}/${CSU_PSEUDO_LANGUAGE}"
 done
 
+reset_po_files_timestamp_only
 
 # If there are no changes to the compiled out (e.g. this is a README update) then just bail.
 if [[ $(git diff --cached) ]]; then

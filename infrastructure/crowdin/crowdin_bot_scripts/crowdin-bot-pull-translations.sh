@@ -98,3 +98,44 @@ for language in ${languages[@]}; do
     git clean -fdx
 
 done
+
+# Next handle *.PO files together on their own branch
+
+# The branch for new .po file translations
+PO_TRANSLATION_PR_BRANCH="${TRANSLATION_PR_BRANCH_BASE}-message-files"
+
+# Checkout the translation branch, creating if off $TRANSLATION_TARGET_BRANCH if it didn't already exist
+git checkout $PO_TRANSLATION_PR_BRANCH || git checkout -b $PO_TRANSLATION_PR_BRANCH $TRANSLATION_TARGET_BRANCH
+
+# Merge if required
+git merge $TRANSLATION_TARGET_BRANCH --quiet --no-edit
+
+# Boolean flag indicating whether changes are made that should be pushed
+changes=0
+
+for language in ${languages[@]}; do
+  crowdin -c "${CROWDIN_CONFIG_FILE}" -l "${language}" download
+
+  git add csunplugged/locale >/dev/null 2>&1 || true
+  reset_po_files_timestamp_only
+
+  if [[ $(git diff --cached) ]]; then
+    git commit -m "Update ${language} message file (django.po)"
+    changes=1
+  fi
+
+  # Return repo to clean state for next language
+  git reset --hard
+  git clean -fdx
+done
+
+# If any changes were made, push to github
+if [[ $changes -eq 1 ]]; then
+    git push -q origin $PO_TRANSLATION_PR_BRANCH > /dev/null
+fi
+
+# If branch differs from target branch, open pull request
+if [[ $(git diff $PO_TRANSLATION_PR_BRANCH origin/$TRANSLATION_TARGET_BRANCH) ]]; then
+    hub pull-request -m "Update translation message files (django.po)" -b "${TRANSLATION_TARGET_BRANCH}" -h "${PO_TRANSLATION_PR_BRANCH}" || \
+        echo "Could not create pull request - perhaps one already exists?"
+fi
