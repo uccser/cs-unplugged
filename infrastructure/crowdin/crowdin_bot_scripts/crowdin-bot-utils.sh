@@ -29,7 +29,17 @@ reset_repo() {
 # to timestamp metadata.
 # This is achieved by checking the diff with HEAD, excluding any lines starting
 # with PO-Revision-Date or POT-Creation-Date
+# NB: Must be run from the repo root directory
 reset_po_files_timestamp_only() {
+
+  if ! [[ $(git rev-parse --show-toplevel 2>/dev/null) = "$PWD" ]]; then
+    echo "Error: reset_po_files_timestamp_only must be run from the repository root directory"
+    echo "Root:    $(git rev-parse --show-toplevel 2>/dev/null)"
+    echo "Current: $(pwd)"
+    echo "Aborting...."
+    return 1
+  fi
+
   # Loop through each .po file:
   while read path; do
     # Diff check to see whether staged .po file only has trivial changes to timestamp metadata
@@ -40,8 +50,8 @@ reset_po_files_timestamp_only() {
     elif [[ $result -eq 1 ]]; then
       echo "File ${path} has non-trivial changes, so it will remain staged"
     else
-      # Diff command failed, abort
-      false
+      echo "Diff command failed, aborting..."
+      return 1
     fi
   done < <(git diff --cached --name-only | grep django.po)
 }

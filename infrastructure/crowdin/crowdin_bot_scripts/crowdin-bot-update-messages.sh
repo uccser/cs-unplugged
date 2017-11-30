@@ -29,8 +29,9 @@ git merge origin/$UPDATE_MESSAGES_TARGET_BRANCH --quiet --no-edit
 
 cd csunplugged
 python3 manage.py makemessages -l en --no-location
+cd ..
 
-git add locale/en/LC_MESSAGES/django.po
+git add csunplugged/locale/en/LC_MESSAGES/django.po
 
 reset_po_files_timestamp_only
 
