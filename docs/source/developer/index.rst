@@ -17,3 +17,4 @@ The following pages are for those wanting to develop the CS Unplugged system.
     dev
     deployment
     test_suite
+    translations
