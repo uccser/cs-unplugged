@@ -14,6 +14,7 @@ In summary:
 
 - We plan to use Bootstrap 4 for the underlying framework for responsive design.
 - We use SCSS for style sheets where possible.
+- We wrap translatable strings in {% trans %} or {% blocktrans trimmed %} tags.
 - We use the `django-bootstrap-breadcrumbs`_ package for breadcrumbs on the
   website.
 
