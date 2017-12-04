@@ -388,6 +388,7 @@ details {
 body {
   padding-top: $body-space-from-top;
   position: relative;
+  background-color: $gray-100;
 }
 
 #sticky-sidebar {
@@ -470,16 +471,20 @@ ol, ul {
 }
 
 .link-item {
-  // border-top: 1px solid $blue;
+  background-color: $white;
+  border-top: 5px solid $red;
+  border-left: 1px solid $gray-200;
+  border-bottom: 1px solid $gray-200;
+  border-right: 1px solid $gray-200;
   h2,
   h3 {
     color: $gray;
   }
   img {
-    max-height: 6rem;
+    max-height: 8rem;
   }
   &:hover {
-    background-color: rgba($blue, 0.1);
+    background-color: rgba($red, 0.05);
   }
   &.unavailable {
     background-color: rgba($black, 0.2);
