@@ -24,16 +24,15 @@
     <div class="row justify-content-between">
       {% for topic in topics %}
         <div class="col-12 col-md-8 col-lg-6 mb-4">
-          <a class="link-item no-text-decoration d-block h-100 p-2{% if not topic.translation_available %} unavailable{% endif %}" href="{% url 'topics:topic' topic.slug %}">
+          <a class="link-item no-text-decoration d-block h-100 p-2 pl-3{% if not topic.translation_available %} unavailable{% endif %}" href="{% url 'topics:topic' topic.slug %}">
             <div class="row align-items-center h-100">
-              <div class="col-12 col-md-5 d-flex justify-content-center align-items-center">
-                <img class="img-fluid inline-image" src="{% static topic.icon %}">
+              <div class="col-12 text-center text-md-{{LANGUAGE_START}}">
+                <h2>{{ topic.name }}</h2>
                 {% if not topic.translation_available %}
                   {% include "topics/not-available-badge.html" %}
                 {% endif %}
               </div>
               <div class="col-12 col-md-7 text-center text-md-{{LANGUAGE_START}}">
-                <h2>{{ topic.name }}</h2>
                 <ul class="list-unstyled list-unstyled-i18n text-muted mb-0">
                   {% if topic.lessons.exists %}
                     <li>
@@ -54,6 +53,9 @@
                     <li>{{ topic.programming_challenges.count }} {% trans "programming challenges" %}</li>
                   {% endif %}
                 </ul>
+              </div>
+              <div class="d-none col-md-5 d-md-flex justify-content-end align-items-end">
+                <img class="img-fluid inline-image" src="{% static topic.icon %}">
               </div>
             </div>
           </a>
