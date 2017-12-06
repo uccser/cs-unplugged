@@ -24,7 +24,7 @@
     <div class="row justify-content-between">
       {% for topic in topics %}
         <div class="col-12 col-md-8 col-lg-6 mb-4">
-          <a class="link-item no-text-decoration d-block h-100 p-2 pl-3{% if not topic.translation_available %} unavailable{% endif %}" href="{% url 'topics:topic' topic.slug %}">
+          <a class="link-item no-text-decoration d-block h-100{% if not topic.translation_available %} unavailable{% endif %}" href="{% url 'topics:topic' topic.slug %}">
             <div class="row align-items-center h-100">
               <div class="col-12 text-center text-md-{{LANGUAGE_START}}">
                 <h2>{{ topic.name }}</h2>
@@ -55,7 +55,7 @@
                 </ul>
               </div>
               <div class="d-none col-md-5 d-md-flex justify-content-end align-items-end">
-                <img class="img-fluid inline-image" src="{% static topic.icon %}">
+                <img class="img-fluid" src="{% static topic.icon %}">
               </div>
             </div>
           </a>

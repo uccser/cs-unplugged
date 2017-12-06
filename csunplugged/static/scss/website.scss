@@ -473,8 +473,10 @@ ol, ul {
 .link-item {
   background-color: $white;
   border-#{$left}: 5px solid $red;
-  border-bottom: 1px solid $gray-200;
-  border-#{$right}: 1px solid $gray-200;
+  border-bottom: 2px solid $gray-200;
+  border-#{$right}: 2px solid $gray-200;
+  border-radius: 4px;
+  padding: 0.5rem 1rem 1rem 1rem;
   h2,
   h3 {
     color: $gray;
@@ -483,6 +485,7 @@ ol, ul {
     max-height: 6rem;
   }
   &:hover {
+    transform: translateY(2px);
     background-color: rgba($red, 0.05);
   }
   &.unavailable {
