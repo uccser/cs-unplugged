@@ -57,9 +57,9 @@ $breadcrumb-bg:                 inherit;
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-serif: 'Patrick Hand', cursive;
-$headings-font-family: $font-family-serif;
-
+$font-family-sans-serif: "Noto Sans", sans-serif;
+$headings-font-family: "Sniglet", cursive;
+$font-family-base: $font-family-sans-serif;
 
 // Links
 //

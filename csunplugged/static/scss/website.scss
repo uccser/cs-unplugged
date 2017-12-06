@@ -36,8 +36,9 @@
 @import "bootstrap/utilities";
 @import "pygments-colorful";
 @import "sticky-state";
-@import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
 @import "directional";
+@import url('https://fonts.googleapis.com/css?family=Sniglet');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
 
 $body-space-from-top: 72px;
 $ct-abstraction: #E30613;
@@ -108,7 +109,7 @@ $rounded-corner-radius: 0.5rem;
   width: 100%;
 
   h1 {
-    font-family: 'Patrick Hand', cursive;
+    font-family: $headings-font-family;
     color: $white;
   }
 }
@@ -477,9 +478,9 @@ ol, ul {
   border-#{$right}: 2px solid $gray-200;
   border-radius: 4px;
   padding: 0.5rem 1rem 1rem 1rem;
-  h2,
-  h3 {
+  h2 {
     color: $gray;
+    font-size: 28px;
   }
   img {
     max-height: 6rem;
