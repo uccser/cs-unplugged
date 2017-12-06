@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ./infrastructure/prod-deploy/load-prod-deploy-config-envs.sh
+
 # Deploy generated resource files to the development static file server.
 
 ./csu start

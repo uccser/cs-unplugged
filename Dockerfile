@@ -18,4 +18,5 @@ COPY requirements /requirements
 RUN /docker_venv/bin/pip3 install -r /requirements/production.txt
 
 ADD ./csunplugged /csunplugged/
-CMD /docker_venv/bin/gunicorn -c gunicorn.conf.py -b :8080 config.wsgi
+
+CMD /csunplugged/docker-production-entrypoint.sh
