@@ -1,10 +1,11 @@
 {% extends "columns.html" %}
 
+{% load i18n %}
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block title %}
-  Glossary
+  {% trans "Glossary" %}
 {% endblock title %}
 
 {% block breadcrumbs %}
@@ -14,7 +15,7 @@
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-  <h1>Glossary</h1>
+  <h1>{% trans "Glossary" %}</h1>
 {% endblock page_heading %}
 
 {% block left_column_content %}
@@ -22,4 +23,19 @@
     <h2>{{ glossary_term.term }}</h2>
     {% render_html_field glossary_term.definition %}
   {% endfor %}
+  {% if untranslated_glossary_terms %}
+    <div class="alert alert-danger" role="alert">
+      {% with language=current_language.name_local %}
+        <strong>
+          {% blocktrans trimmed %}
+          The following glossary terms are not yet available in {{ language }}. Sorry about that!
+          {% endblocktrans %}
+        </strong>
+      {% endwith %}
+      {% for glossary_term in untranslated_glossary_terms %}
+        <h2>{{ glossary_term.term }}</h2>
+        {% render_html_field glossary_term.definition %}
+      {% endfor %}
+    </div>
+  {% endif %}
 {% endblock left_column_content %}

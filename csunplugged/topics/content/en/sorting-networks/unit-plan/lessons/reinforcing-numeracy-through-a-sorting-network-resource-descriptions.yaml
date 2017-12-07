@@ -1,0 +1,4 @@
+sorting-network:
+  description: Use blank copy as template for creating Sorting Network.
+sorting-network-cards:
+  description: Cards for students to use with the Sorting Network.

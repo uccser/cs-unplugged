@@ -1,0 +1,7 @@
+unit-plans:
+  - unit-plan/unit-plan.yaml
+
+icon: img/topics/unplugged-programming-icon.png
+
+programming-challenges: programming-challenges/programming-challenges.yaml
+curriculum-integrations: curriculum-integrations/curriculum-integrations.yaml

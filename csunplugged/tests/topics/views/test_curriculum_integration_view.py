@@ -1,5 +1,5 @@
+from http import HTTPStatus
 from django.urls import reverse
-
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 
@@ -20,7 +20,7 @@ class CurriculumIntegrationViewTest(BaseTestWithDB):
         }
         url = reverse("topics:integration", kwargs=kwargs)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
 
     def test_curriculum_integration_view_with_invalid_topic_slug(self):
         topic = self.test_data.create_topic(1)
@@ -31,7 +31,7 @@ class CurriculumIntegrationViewTest(BaseTestWithDB):
         }
         url = reverse("topics:integration", kwargs=kwargs)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_curriculum_integration_view_with_invalid_integration_slug(self):
         topic = self.test_data.create_topic(1)
@@ -42,7 +42,7 @@ class CurriculumIntegrationViewTest(BaseTestWithDB):
         }
         url = reverse("topics:integration", kwargs=kwargs)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_curriculum_integration_view_topic_context(self):
         topic = self.test_data.create_topic(1)

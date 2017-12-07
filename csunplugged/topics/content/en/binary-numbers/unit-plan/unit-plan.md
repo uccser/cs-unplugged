@@ -1,4 +1,4 @@
-# Binary Numbers Unit Plan
+# Binary numbers
 
 ## See Teaching the Binary Number System in Action!
 

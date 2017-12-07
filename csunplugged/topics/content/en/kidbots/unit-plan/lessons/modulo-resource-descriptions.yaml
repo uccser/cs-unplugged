@@ -1,0 +1,6 @@
+modulo-clock:
+  description: Clock face with blank, 2, and 10 digit combinations.
+train-stations:
+  description: Train stations with circular or twisted tracks.
+piano-keys:
+  description: Piano keys with optional highlighted keys.

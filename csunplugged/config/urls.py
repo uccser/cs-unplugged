@@ -22,7 +22,7 @@ urlpatterns += [
     url(r"^_ah/health", views.health_check),
 ]
 
-if settings.DEBUG:
+if settings.DEBUG:  # pragma: no cover
     import debug_toolbar
     urlpatterns += [
         url(r"^__debug__/", include(debug_toolbar.urls)),

@@ -1,5 +1,5 @@
+from http import HTTPStatus
 from django.urls import reverse
-
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 
@@ -28,7 +28,7 @@ class ProgrammingChallengeSolutionViewTest(BaseTestWithDB):
         }
         url = reverse("topics:programming_challenge_solution", kwargs=kwargs)
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
 
     def test_programming_challenge_solution_view_with_invalid_topic_slug(self):
         topic = self.test_data.create_topic(1)
@@ -47,7 +47,7 @@ class ProgrammingChallengeSolutionViewTest(BaseTestWithDB):
         }
         url = reverse("topics:programming_challenge_solution", kwargs=kwargs)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_programming_challenge_solution_view_with_invalid_challenge_slug(self):
         topic = self.test_data.create_topic(1)
@@ -66,7 +66,7 @@ class ProgrammingChallengeSolutionViewTest(BaseTestWithDB):
         }
         url = reverse("topics:programming_challenge_solution", kwargs=kwargs)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_programming_challenge_solution_view_with_invalid_language_slug(self):
         topic = self.test_data.create_topic(1)
@@ -85,7 +85,7 @@ class ProgrammingChallengeSolutionViewTest(BaseTestWithDB):
         }
         url = reverse("topics:programming_challenge_solution", kwargs=kwargs)
         response = self.client.get(url)
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(HTTPStatus.NOT_FOUND, response.status_code)
 
     def test_programming_challenge_solution_view_topic_context(self):
         topic = self.test_data.create_topic(1)

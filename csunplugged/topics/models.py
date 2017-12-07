@@ -2,16 +2,17 @@
 
 from django.urls import reverse
 from django.db import models
-from django.contrib.postgres.fields import ArrayField, JSONField, IntegerRangeField
+from django.contrib.postgres.fields import JSONField, IntegerRangeField
 from resources.models import Resource
+from utils.TranslatableModel import TranslatableModel
 
 
-class GlossaryTerm(models.Model):
+class GlossaryTerm(TranslatableModel):
     """Model for glossary term in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(unique=True)
-    term = models.CharField(max_length=200, unique=True, null=True)
+    term = models.CharField(max_length=200, unique=True)
     definition = models.TextField()
 
     def __str__(self):
@@ -23,14 +24,14 @@ class GlossaryTerm(models.Model):
         return self.term
 
 
-class CurriculumArea(models.Model):
+class CurriculumArea(TranslatableModel):
     """Model for curriculum area in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(unique=True)
-    name = models.CharField(max_length=100, unique=True)
+    name = models.CharField(max_length=100, default="")
     number = models.PositiveSmallIntegerField()
-    colour = models.CharField(max_length=15, null=True)
+    colour = models.CharField(max_length=15)
     parent = models.ForeignKey(
         "self",
         null=True,
@@ -62,15 +63,15 @@ class CurriculumArea(models.Model):
         ordering = ["number", "name"]
 
 
-class LearningOutcome(models.Model):
+class LearningOutcome(TranslatableModel):
     """Model for learning outcome in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(max_length=80, unique=True)
-    text = models.CharField(max_length=200, unique=True)
+    text = models.CharField(max_length=200, default="")
     curriculum_areas = models.ManyToManyField(
         CurriculumArea,
-        related_name='learning_outcomes',
+        related_name="learning_outcomes",
     )
 
     def __str__(self):
@@ -87,14 +88,29 @@ class LearningOutcome(models.Model):
         ordering = ["curriculum_areas__number", "curriculum_areas__name", "text"]
 
 
-class Topic(models.Model):
+class ClassroomResource(TranslatableModel):
+    """Model for classroom resource."""
+
+    slug = models.SlugField(max_length=80, unique=True)
+    description = models.CharField(max_length=100, default="")
+
+    def __str__(self):
+        """Text representation of ClassroomResource object.
+
+        Returns:
+            Description of classroom resource (str).
+        """
+        return self.description
+
+
+class Topic(TranslatableModel):
     """Model for topic in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(unique=True)
-    name = models.CharField(max_length=100)
-    content = models.TextField()
-    other_resources = models.TextField(null=True)
+    name = models.CharField(max_length=100, default="")
+    content = models.TextField(default="")
+    other_resources = models.TextField(default="")
     icon = models.CharField(max_length=100, null=True)
 
     def get_absolute_url(self):
@@ -125,7 +141,7 @@ class Topic(models.Model):
         return self.name
 
 
-class UnitPlan(models.Model):
+class UnitPlan(TranslatableModel):
     """Model for unit plan in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
@@ -135,10 +151,10 @@ class UnitPlan(models.Model):
         related_name="unit_plans"
     )
     slug = models.SlugField()
-    name = models.CharField(max_length=100)
-    content = models.TextField()
-    computational_thinking_links = models.TextField(null=True)
-    heading_tree = JSONField(null=True)
+    name = models.CharField(max_length=100, default="")
+    content = models.TextField(default="")
+    computational_thinking_links = models.TextField(default="")
+    heading_tree = JSONField(default=dict)
 
     def get_absolute_url(self):
         """Return the canonical URL for a unit plan.
@@ -169,12 +185,12 @@ class UnitPlan(models.Model):
         return self.name
 
 
-class ProgrammingChallengeDifficulty(models.Model):
+class ProgrammingChallengeDifficulty(TranslatableModel):
     """Model for programming challenge difficulty in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
     level = models.PositiveSmallIntegerField(unique=True)
-    name = models.CharField(max_length=100, unique=True)
+    name = models.CharField(max_length=100, default="")
 
     def __str__(self):
         """Text representation of ProgrammingChallengeDifficulty object.
@@ -185,7 +201,7 @@ class ProgrammingChallengeDifficulty(models.Model):
         return self.name
 
 
-class ProgrammingChallenge(models.Model):
+class ProgrammingChallenge(TranslatableModel):
     """Model for programming challenge in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
@@ -195,11 +211,11 @@ class ProgrammingChallenge(models.Model):
         related_name="programming_challenges"
     )
     slug = models.SlugField()
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, default="")
     challenge_set_number = models.PositiveSmallIntegerField()
     challenge_number = models.PositiveSmallIntegerField()
-    content = models.TextField()
-    extra_challenge = models.TextField(null=True)
+    content = models.TextField(default="")
+    extra_challenge = models.TextField(default="")
     learning_outcomes = models.ManyToManyField(
         LearningOutcome,
         related_name="programming_challenges"
@@ -247,7 +263,7 @@ class ProgrammingChallenge(models.Model):
         return self.name
 
 
-class ProgrammingChallengeLanguage(models.Model):
+class ProgrammingChallengeLanguage(TranslatableModel):
     """Model for programming language in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
@@ -265,7 +281,7 @@ class ProgrammingChallengeLanguage(models.Model):
         return self.name
 
 
-class ProgrammingChallengeImplementation(models.Model):
+class ProgrammingChallengeImplementation(TranslatableModel):
     """Model for programming challenge language implementation in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
@@ -284,9 +300,9 @@ class ProgrammingChallengeImplementation(models.Model):
         on_delete=models.CASCADE,
         related_name="implementations"
     )
-    expected_result = models.TextField()
-    hints = models.TextField(null=True)
-    solution = models.TextField()
+    expected_result = models.TextField(default="")
+    hints = models.TextField(default="")
+    solution = models.TextField(default="")
 
     def __str__(self):
         """Text representation of ProgrammingChallengeImplementation.
@@ -302,13 +318,13 @@ class ProgrammingChallengeImplementation(models.Model):
         )
 
 
-class AgeGroup(models.Model):
+class AgeGroup(TranslatableModel):
     """Model for age group in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField()
     ages = IntegerRangeField()
-    description = models.CharField(max_length=500, null=True)
+    description = models.CharField(max_length=500, default="")
 
     def __str__(self):
         """Text representation of AgeGroup object.
@@ -324,7 +340,7 @@ class AgeGroup(models.Model):
         ordering = ["ages"]
 
 
-class Lesson(models.Model):
+class Lesson(TranslatableModel):
     """Model for lesson in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
@@ -339,11 +355,11 @@ class Lesson(models.Model):
         related_name="lessons"
     )
     slug = models.SlugField(max_length=100)
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, default="")
     duration = models.PositiveSmallIntegerField(null=True)
-    content = models.TextField()
-    computational_thinking_links = models.TextField(null=True)
-    heading_tree = JSONField(null=True)
+    content = models.TextField(default="")
+    computational_thinking_links = models.TextField(default="")
+    heading_tree = JSONField(default=list)
     age_group = models.ManyToManyField(
         AgeGroup,
         through="LessonNumber",
@@ -354,7 +370,7 @@ class Lesson(models.Model):
         through="ProgrammingChallengeNumber",
         related_name="lessons"
     )
-    programming_challenges_description = models.TextField(null=True)
+    programming_challenges_description = models.TextField(default="")
     learning_outcomes = models.ManyToManyField(
         LearningOutcome,
         related_name="lessons"
@@ -364,9 +380,8 @@ class Lesson(models.Model):
         through="ResourceDescription",
         related_name="lessons"
     )
-    classroom_resources = ArrayField(
-        models.CharField(max_length=100),
-        null=True
+    classroom_resources = models.ManyToManyField(
+        ClassroomResource,
     )
 
     def has_programming_challenges(self):
@@ -452,7 +467,7 @@ class ProgrammingChallengeNumber(models.Model):
     challenge_number = models.PositiveSmallIntegerField()
 
 
-class CurriculumIntegration(models.Model):
+class CurriculumIntegration(TranslatableModel):
     """Model for curriculum integration in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
@@ -463,8 +478,8 @@ class CurriculumIntegration(models.Model):
     )
     slug = models.SlugField()
     number = models.PositiveSmallIntegerField()
-    name = models.CharField(max_length=200)
-    content = models.TextField()
+    name = models.CharField(max_length=200, default="")
+    content = models.TextField(default="")
     curriculum_areas = models.ManyToManyField(
         CurriculumArea,
         related_name="curriculum_integrations",
@@ -512,10 +527,10 @@ class CurriculumIntegration(models.Model):
         return self.name
 
 
-class ResourceDescription(models.Model):
+class ResourceDescription(TranslatableModel):
     """Model for relationship between resource and lesson in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
     resource = models.ForeignKey(Resource, on_delete=models.CASCADE)
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
-    description = models.CharField(max_length=300)
+    description = models.CharField(max_length=300, default="")

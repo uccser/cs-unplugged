@@ -2,18 +2,19 @@
 
 from django.db import models
 from django.urls import reverse
+from utils.TranslatableModel import TranslatableModel
 
 
-class Resource(models.Model):
+class Resource(TranslatableModel):
     """Model for resource in database."""
 
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(unique=True)
-    name = models.CharField(max_length=200)
-    webpage_template = models.CharField(max_length=200)
-    generation_view = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, default="")
+    generator_module = models.CharField(max_length=200)
     thumbnail_static_path = models.CharField(max_length=200)
     copies = models.BooleanField()
+    content = models.TextField(default="")
 
     def get_absolute_url(self):
         """Return the canonical URL for a programming challenge.
