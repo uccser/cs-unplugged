@@ -41,6 +41,15 @@ third-party-licenses/details-element-polyfill.txt
 ==============================================================================
 
 ==============================================================================
+directional-scss
+------------------------------------------------------------------------------
+https://github.com/tysonmatanich/directional-scss
+Copyright (c) 2013 Tyson Matanich
+Licensed under MIT License.
+third-party-licenses/directional-scss.txt
+==============================================================================
+
+==============================================================================
 Django
 ------------------------------------------------------------------------------
 https://www.djangoproject.com/
@@ -188,6 +197,16 @@ http://pyyaml.org/
 Copyright (c) 2006 Kirill Simonov.
 Licensed under MIT License.
 third-party-licenses/pyyaml.txt
+==============================================================================
+
+==============================================================================
+Sniglet
+------------------------------------------------------------------------------
+https://fonts.google.com/specimen/Sniglet
+https://github.com/theleagueof/sniglet
+Copyright (c) 2008 Haley Fiege
+Licensed under SIL Open Font License, Version 1.1.
+third-party-licenses/sniglet.txt
 ==============================================================================
 
 ==============================================================================

@@ -21,41 +21,45 @@
   {% if topics %}
     <p>{% trans "Open a topic to see all related unit plans, lessons, curriculum integrations, and programming challenges." %}</p>
 
-    <div class="row">
+    <div class="row justify-content-between">
       {% for topic in topics %}
-        <a class="col-12 col-md-8 col-lg-6 link-item no-text-decoration py-4 align-items-center{% if not topic.translation_available %} unavailable{% endif %}" href="{% url 'topics:topic' topic.slug %}">
-          <div class="row">
-            <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
-              <img class="img-fluid inline-image" src="{% static topic.icon %}">
-              {% if not topic.translation_available %}
-                {% include "topics/not-available-badge.html" %}
-              {% endif %}
+        <div class="col-12 col-md-8 col-lg-6 mb-4">
+          <a class="link-item no-text-decoration d-block h-100{% if not topic.translation_available %} unavailable{% endif %}" href="{% url 'topics:topic' topic.slug %}">
+            <div class="row align-items-center h-100">
+              <div class="col-12 text-center text-md-{{LANGUAGE_START}}">
+                <h2>{{ topic.name }}</h2>
+                {% if not topic.translation_available %}
+                  {% include "topics/not-available-badge.html" %}
+                {% endif %}
+              </div>
+              <div class="col-12 col-md-7 text-center text-md-{{LANGUAGE_START}}">
+                <ul class="list-unstyled list-unstyled-i18n text-muted mb-0">
+                  {% if topic.lessons.exists %}
+                    <li>
+                      <strong>
+                        {% blocktrans trimmed with min_age=topic.min_age max_age=topic.max_age%}
+                          Ages {{ min_age }} to {{ max_age }}
+                        {% endblocktrans %}
+                      </strong>
+                    </li>
+                    <li>
+                      {{ topic.lessons.count }} {% trans "lessons" %}
+                    </li>
+                  {% endif %}
+                  {% if topic.curriculum_integrations.exists %}
+                    <li>{{ topic.curriculum_integrations.count }} {% trans "curriculum integrations" %}</li>
+                  {% endif %}
+                  {% if topic.programming_challenges.exists %}
+                    <li>{{ topic.programming_challenges.count }} {% trans "programming challenges" %}</li>
+                  {% endif %}
+                </ul>
+              </div>
+              <div class="d-none col-md-5 d-md-flex justify-content-end align-items-end">
+                <img class="img-fluid" src="{% static topic.icon %}">
+              </div>
             </div>
-            <div class="col-12 col-md-8 text-center text-md-left">
-              <h2>{{ topic.name }}</h2>
-              <ul class="list-unstyled text-muted mb-0">
-                {% if topic.lessons.exists %}
-                  <li>
-                    <strong>
-                      {% blocktrans trimmed with min_age=topic.min_age max_age=topic.max_age%}
-                        Ages {{ min_age }} to {{ max_age }}
-                      {% endblocktrans %}
-                    </strong>
-                  </li>
-                  <li>
-                    {{ topic.lessons.count }} {% trans "lessons" %}
-                  </li>
-                {% endif %}
-                {% if topic.curriculum_integrations.exists %}
-                  <li>{{ topic.curriculum_integrations.count }} {% trans "curriculum integrations" %}</li>
-                {% endif %}
-                {% if topic.programming_challenges.exists %}
-                  <li>{{ topic.programming_challenges.count }} {% trans "programming challenges" %}</li>
-                {% endif %}
-              </ul>
-            </div>
-          </div>
-        </a>
+          </a>
+        </div>
       {% endfor %}
     </div>
   {% else %}

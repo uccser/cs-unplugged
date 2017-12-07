@@ -19,7 +19,4 @@ RUN /docker_venv/bin/pip3 install -r /requirements/production.txt
 
 ADD ./csunplugged /csunplugged/
 
-# Compile locale message files
-CMD /docker_venv/bin/python3 ./manage.py compilemessages
-
-CMD /docker_venv/bin/gunicorn -c gunicorn.conf.py -b :8080 config.wsgi
+CMD /csunplugged/docker-production-entrypoint.sh
