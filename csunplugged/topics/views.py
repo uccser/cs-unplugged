@@ -72,18 +72,7 @@ class TopicView(generic.DetailView):
         unit_plans = self.object.unit_plans.order_by("name")
         context["unit_plans"] = add_lesson_ages_to_objects(unit_plans)
         # Add in a QuerySet of all the connected curriculum integrations
-        context["curriculum_integrations"] = CurriculumIntegration.objects.filter(topic=self.object).order_by("number")
-        context["programming_challenges"] = ProgrammingChallenge.objects.filter(topic=self.object).order_by(
-            "challenge_set_number",
-            "challenge_number"
-        )
-        lessons = self.object.lessons.all()
-        resources = set()
-        for lesson in lessons:
-            lesson_resources = lesson.generated_resources.all()
-            for lesson_resource in lesson_resources:
-                resources.add(lesson_resource)
-        context["resources"] = resources
+        context["curriculum_integrations"] = self.object.curriculum_integrations.order_by("number")
         return context
 
 
