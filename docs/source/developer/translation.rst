@@ -35,7 +35,7 @@ Both types of file are stored inside the directory tree for a given language (ie
         <field-2>: <translated value for field-2>
     <object-slug-2>
 
-  For example, the following snippet is from the yaml translation file for all classroom resources
+  For example, the following snippet is from the YAML translation file for all classroom resources
 
   .. code-block:: yaml
 
@@ -111,7 +111,7 @@ Utility Functions
 The following utility functions are available:
 
 - ``get_yaml_translations`` - Load translations for model fields from a given YAML file
-- ``get_markdown_translations`` - Load translations for a given markdown file
+- ``get_markdown_translations`` - Load translations for a given Markdown file
 - ``populate_translations`` - Populate translation fields on a model using values in a given dictionary
 - ``mark_translation_availability`` - Modify ``languages`` field to contain all languages for which all required translation fields are populated
 

@@ -8,7 +8,7 @@ We use a localisation management platform called `Crowdin <https://crowdin.com/p
 Currently, the following languages are available for translation:
 
   - Hebrew
-  - Maori
+  - Māori
   - Polish
 
 These languages serve as a test bed for internationalisation of CS Unplugged.
@@ -16,12 +16,12 @@ Further languages will be added over time once the developers are satisfied
 that the translation pipeline is stable.
 
 
-Files Configurations
+Translatable Files
 ==============================================================================
 There are 3 types of files that contain translatable content:
 
-- Content markdown files
-- Content yaml files containg translatable model strings
+- Content Markdown files
+- Content YAML files containg translatable model strings
 - ``django.po`` file containing translatable system strings
 
 Translatable source files must always reside under an ``en`` directory tree.
@@ -44,7 +44,7 @@ stored in the file ``crowdin_content.yaml`` in the repository root. For details
 about the structure of this file, see the `documentation <https://support.crowdin.com/configuration-file/>`_.
 
 .. note::
-  The crowdin placeholder ``osx_locale`` matches the django locale code
+  The Crowdin placeholder ``osx_locale`` matches the django locale code
   in almost all cases, and should be used for every entry in the config file.
   You can view a list of the Crowdin language code values `here <https://api.crowdin.com/api/supported-languages>`_.
   In any cases where the osx_locale code does not match the django locale code,
@@ -65,7 +65,7 @@ For a translation of any given string to make it to production release, it must
 pass the following stages of review:
 
 1. (Crowdin) Translation Proofread - Review by a second translator with 'proofreader' status in the target language.
-2. (Crowdin) Tech Review - Review by a member of the CS Unplugged technical team to catch technical errors (i.e. with Verto tags, links, markdown syntax etc).
+2. (Crowdin) Technical Review - Review by a member of the CS Unplugged technical team to catch technical errors (i.e. with Verto tags, links, Markdown syntax etc).
 3. (GitHub) PR Review - Final review of completed translation files being merged into develop. Automated testing on travis will also occur at this stage.
 
 The first two review phases are enforced by a `custom workflow <https://support.crowdin.com/advanced-workflows/>`_ on Crowdin.
@@ -85,22 +85,22 @@ In-context translation is only enabled on the `development version <http://cs-un
   Additionally, a bi-directional translation mode is available using the language ``yy-rl``.
   The directory trees for this language are always symlinks to ``xx-lr``, but the website is rendered using a RTL layout.
   This enables translators to see how their RTL translations will look when released.
-  This language is not involved in the process of downloading translations from crowdin.
+  This language is not involved in the process of downloading translations from Crowdin.
 
 .. _inContextVertoCaveat:
 
 .. note::
 
-  Verto tags are treated like any other string on Crowdin. Because of this, the in-context pseudo-translation files have replaced verto tags with their crowdin identifiers (which then get substituted with the original/translated string on the front end).
+  Verto tags are treated like any other string on Crowdin. Because of this, the in-context pseudo-translation files have replaced verto tags with their Crowdin identifiers (which then get substituted with the original/translated string on the front end).
   This is problematic, because tags need to be present when processed by Verto which occurs before the content gets to the front end.
 
-  As a workaround, the following modifications are made to in-context pseudo translations of markdown files:
+  As a workaround, the following modifications are made to in-context pseudo translations of Markdown files:
 
   - An XLIFF file is downloaded containing the source strings together with their identifiers.
   - All source strings in XLIFF file are matched against a regex for Verto block tags.
   - For every match:
 
-    - The identifier in the markdown file is replaced by the source string (the verto tag).
+    - The identifier in the Markdown file is replaced by the source string (the verto tag).
     - The identifier is placed immediately above the verto tag, to allow editing of the tag on the front end.
 
   This allows the verto tags to render correctly, while still giving translators the option to modify the tag if required.
@@ -126,7 +126,7 @@ The following sections provide more detail on the path through the translation p
 - `New/Updated content files`_.
 - `Deleted content files`_.
 - `Moved content files`_.
-- `Added/deleted/updated strings in HTML templates and python code`_.
+- `Added/deleted/updated strings in HTML templates and Python code`_.
 
 
 New/Updated content files
@@ -134,25 +134,25 @@ New/Updated content files
 
 1. English content changes on feature branch
 
-2. English content changes merged into develop
+2. English content changes merged into ``develop``
 
-3. Source files on develop uploaded to Crowdin
+3. Source files on ``develop`` uploaded to Crowdin (`automated <CrowdinBot_>`_)
 
    - Translation can begin on Crowdin
 
-4. Metadata for in context translation is downloaded on separate branch
+4. Metadata for in-context translation is downloaded on separate branch (`automated <CrowdinBot_>`_)
 
-5. Metadata for in context translation merged into develop
+5. Metadata for in-context translation merged into ``develop``
 
    - In context translation mode now available on dev site
 
 6. All strings in file completely translated into a certain language and approved on Crowdin (see review process above)
 
-7. Translated content file downloaded on separate branch for that language
+7. Translated content file downloaded on separate branch for that language (`automated <CrowdinBot_>`_)
 
-8. Translated content merged into develop and available in dev deployment
+8. Translated content merged into ``develop`` and available in dev deployment
 
-9. Translated content merged into master and released
+9. Translated content merged into ``master`` and available in production deployment
 
 
 Deleted content files
@@ -160,9 +160,9 @@ Deleted content files
 
 1. English content file deleted on feature branch
 
-2. English content file deletion merged into develop
+2. English content file deletion merged into ``develop``
 
-3. Source files on develop uploaded to Crowdin
+3. Source files on ``develop`` uploaded to Crowdin (`automated <CrowdinBot_>`_)
 
    - Note, at this point the file will not be pushed to Crowdin (because it doesn't exist on develop), but it will not be deleted off Crowdin
 
@@ -174,7 +174,7 @@ The remaining steps are the same as for `New/Updated content files`_
 
   The script ``crowdin-bot-list-unused.sh`` can be used to list all files currently present on Crowdin that are no longer used.
 
-  As a house-keeping task, this should be manually run every so often to identify deprecated files on crowdin, which can then be deleted through the Crowdin web interface.
+  As a house-keeping task, this should be manually run every so often to identify deprecated files on Crowdin, which can then be deleted through the Crowdin web interface.
   This has not been automated as source file deletion is a potentially destructive action, as all translations for that file will be lost.
 
 
@@ -184,12 +184,12 @@ Moved content files
 A moved content file are treated as a combination of `deleting an old file <Deleted content files_>`_ and `adding a new file <New/Updated content files_>`_.
 
 
-Added/deleted/updated strings in HTML templates and python code
+Added/deleted/updated strings in HTML templates and Python code
 ------------------------------------------------------------------------------
 
 This refers to all strings marked for translation using
 
-- ``ugettext()``/``_()`` in python code.
+- ``ugettext()``/``_()`` in Python code.
 - ``{% trans %}``/``{% blocktrans %}`` tags in HTML templates.
 
 In these cases, the translatable strings must be first collected into a message file (``.po``) for translation.
@@ -197,7 +197,7 @@ This is achieved by running ``./csu dev makemessages`` which will update the fil
 
 This can be done in two ways:
 
-- manually running the command before merging the template/python changes into develop.
+- manually running the command before merging the template/Python changes into develop.
 
 - automatically by `Crowdin Bot`_, which will periodically update the message file if required.
 
@@ -210,6 +210,7 @@ After the updated message file is merged into develop, the pipeline is similar t
 
 ==============================================================================
 
+.. _CrowdinBot:
 
 Crowdin Bot
 ==============================================================================
@@ -217,7 +218,7 @@ Crowdin Bot
 In order to manage the complex translation pipeline, an autmoation bot is used to perform the following tasks:
 
 - Updating source message files with new translatable system strings.
-- Pushing source files to crowdin for translation.
+- Pushing source files to Crowdin for translation.
 - Downloading updated metadata for in-context translation mode on dev deployment.
 - Downloading completed translations for release.
 
@@ -246,7 +247,7 @@ The 4 periodic tasks above are implemented as bash scripts:
     - Checkout and pull ``IN_CONTEXT_L10N_TARGET_BRANCH``.
     - Download in-context pseudo-translations using Crowdin CLI.
     - Download XLIFF files containing source strings and string identifiers.
-    - Perform `necessary modifications <inContextVertoCaveat_>`_ to markdown files.
+    - Perform `necessary modifications <inContextVertoCaveat_>`_ to Markdown files.
     - If there are changes, commit and create PR back into ``IN_CONTEXT_L10N_TARGET_BRANCH``.
 
 - **Downloading completed translations** - ``crowdin-bot-pull-translations.sh``
@@ -254,7 +255,7 @@ The 4 periodic tasks above are implemented as bash scripts:
     - Checkout and pull ``TRANSLATION_TARGET_BRANCH``.
     - For each language:
 
-      - Download markdown and yaml files for that language.
+      - Download Markdown and YAML files for that language.
       - For each file:
 
         - Download XLIFF file containing translation status.
@@ -282,9 +283,9 @@ Many of the above scripts utilise Python modules to do the heavy lifting.
 Python modules are used for:
 
 - Interacting with Crowdin through their `API <https://support.crowdin.com/api>`_.
-- Performing `necessary modifications <inContextVertoCaveat_>`_ to in-context translation markdown files.
+- Performing `necessary modifications <inContextVertoCaveat_>`_ to in-context translation Markdown files.
 
-These python modules are installed as a python package ``crowdin_bot`` during deployment.
+These Python modules are installed as a Python package ``crowdin_bot`` during deployment.
 
 
 Environment secrets
@@ -294,13 +295,13 @@ The following environment variables must be available when running the above scr
 - ``CROWDIN_API_KEY`` - `API key <https://support.crowdin.com/api/api-integration-setup/>`_ for Crowdin project.
 - ``GITHUB_TOKEN`` - `Personal access token <https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/>`_ for UCCSER Bot GitHub account.
 
-Additionally, SSH pull/push access to the csunplugged repository is required.
+Additionally, SSH pull/push access to the cs-unplugged repository is required.
 To achieve this on deployed instances, an encrypted private key linked to the UCCSER Bot
 account is stored in the repo. This key is retrieved and decrypted in ``setup-instance.sh``.
 This is not required when running commands on a local machine, provided the user running the
-script has setup SSH authentication with their github account, and has push/pull access to the CS Unplugged repository
+script has setup SSH authentication with their GitHub account, and has push/pull access to the CS Unplugged repository
 
-To update the keys used by Crowdin Bot, create the following files in the crowdin_bot_secrets directory:
+To update the keys used by Crowdin Bot, create the following files in the ``crowdin_bot_secrets`` directory:
 
 - ``crowdin_api_key`` - Generated Crowdin API key.
 - ``uccser_bot_token`` - Generated Personal access token for UCCSER Bot GitHub account.
