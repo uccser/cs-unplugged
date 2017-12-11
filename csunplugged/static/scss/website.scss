@@ -101,10 +101,10 @@ div.plugged-in-language-implementation {
 $rounded-corner-radius: 0.5rem;
 
 .jumbotron {
-  background: linear-gradient( rgba($red,.7), rgba($red,.7) ), url("../img/home-page-banner-photo.jpg");
+  background: url("../img/red-hero-banner.png");
   background-size: cover;
-  border: $card-border-width solid darken($red, 10%);
-  border-radius: $rounded-corner-radius;
+  // border: $card-border-width solid darken($red, 10%);
+  // border-radius: $rounded-corner-radius;
   margin: 1rem 0;
   width: 100%;
 
