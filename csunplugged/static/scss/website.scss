@@ -105,12 +105,18 @@ $rounded-corner-radius: 0.5rem;
   background-size: cover;
   // border: $card-border-width solid darken($red, 10%);
   // border-radius: $rounded-corner-radius;
-  margin: 1rem 0;
+  // margin: 1rem 0;
   width: 100%;
+  padding-bottom: 10vh;
 
   h1 {
     font-family: $headings-font-family;
     color: $white;
+  }
+
+  p {
+    color: $gray-lighter;
+    font-size: 1rem;
   }
 }
 
