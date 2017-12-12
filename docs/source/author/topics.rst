@@ -1,6 +1,10 @@
 Topic Content
 ##############################################################################
 
+.. warning::
+  All flowcharts in this guide need to be updated to reflect changes to the content directory structure.
+  This is tracked by by `isssue/749 <https://github.com/uccser/cs-unplugged/issues/749>`__.
+
 The topics application (see :ref:`what-is-an-application`) is the main focus of
 the CS Unplugged website, as it contains the majority of educational material
 for the project.
@@ -60,15 +64,34 @@ For more information about what this page displays, see :doc:`../developer/dev`.
 Topics Content Directory
 ==============================================================================
 
-The diagram below is an example of the ``content/en/`` language directory for
-the project's topic application, where:
+The ``content`` directory for the topics application contains
 
-- Blue is directories.
-- Red is YAML configuration files (see :doc:`understanding_configuration_files`).
-- Green is Markdown text files.
+- a directory for each language in which content exists, named using the django locale code. This directory contains
 
-.. raw:: html
-  :file: ../_static/html_snippets/topics_content_directory_tree.html
+  - Content markdown files
+  - YAML files containing translatable strings
+
+- a special ``structure`` directory which contains all configuration YAML files
+
+.. _file-types:
+
+Content Files
+==============================================================================
+
+There are 3 different types of files used for adding content to CS Unplugged:
+
+- Content markdown files
+- YAML files containing translatable strings
+- YAML configuration files
+
+All files live inside the ``topics/content`` directory.
+The first two files are unique for each translation language, and are stored in a directory tree specific to that language.
+This directory is named using the languages django locale code eg. ``en``, ``de_AT``.
+Configuration files are shared amongst all languages, because the content structure is the same for all languages.
+These files live under a special ``structure`` directory.
+
+As a simple rule, structure files situated inside the ``structure`` directory contain **no** user facing text.
+Any user facing text lives in either a markdown file or a YAML translation file inside the locale specific directories.
 
 .. _adding-topics-content:
 
@@ -159,6 +182,8 @@ The Markdown file containing the content og the unit plan:
 Adding a Lesson
 ------------------------------------------------------------------------------
 
+.. TODO(issue/749): Update diagram with optional step to add resource description YAML translation file.
+
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. The image is included as raw HTML because it has clickable nodes.
 .. raw:: html
@@ -185,6 +210,23 @@ The Markdown file containing the content for the lesson:
   The heading written in this file will be used exactly as it is given
   throughout the website as the name of the lesson.
 
+(Optional) The translation YAML file containing resource descriptions:
+
+- **Is in:** the lesson subdirectory in the unit plan directory, e.g.
+  ``topics/content/en/binary-numbers/unit-plan/lessons/``.
+- **Is called:** ``<lesson-key>-resource-descriptions.md``
+- **Contains:** Descriptions of how printed resources should be used.
+  For example,
+
+  .. code-block:: yaml
+
+    binary-cards:
+      description: One set for class demonstration.
+    binary-cards-small:
+      description: One set of cards per student.
+    binary-to-alphabet:
+      description: Blank sheets for students, plus teacher answer sheet.
+
 .. note::
 
   If a lesson includes programming challenges, Computational Thinking links,
@@ -195,6 +237,8 @@ The Markdown file containing the content for the lesson:
 
 Adding Learning Outcomes
 ------------------------------------------------------------------------------
+
+.. TODO(issue/749): Update diagram with step to add learning outcomes YAML translation file.
 
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. The image is included as raw HTML because it has clickable nodes.
@@ -207,6 +251,25 @@ Adding Learning Outcomes
     <area shape="rect" coords="240,330,317,362" href="../getting_started/helper_commands.html#update">
   </map>
   <img src="../_static/img/topics_adding_learning_outcomes_flowchart.png" usemap="#learning-outcomes-map">
+
+
+The translation YAML file containing learning outcomes descriptions:
+
+- **Is in:** ``topics/content/en``
+- **Is called:** ``learning-outcomes.yaml``
+- **Contains:** Descriptions of all learning outcomes. Every learning outcome
+  key present in the `Learning Outcomes Configuration File`_ must be present in the English translation file.
+
+  For example,
+
+  .. code-block:: yaml
+
+    binary-convert-decimal:
+      text: Perform a demonstration of how the binary number system works by converting any decimal number into a binary number.
+    binary-justify-zeros-and-ones:
+      text: Justify why there aren’t actual 0’s and 1’s zooming around inside a computer.
+    binary-argue-zeros-and-ones-stored:
+      text: Argue that 0’s and 1’s are still a correct way to explain what is stored in the computer.
 
 You will now be able to add learning outcomes to lessons and programming
 challenges by referencing the keys you specified in the learning outcomes configuration
@@ -222,6 +285,8 @@ file.
 Adding Curriculum Areas
 ------------------------------------------------------------------------------
 
+.. TODO(issue/749): Update diagram with step to add curriculum areas YAML translation file.
+
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. The image is included as raw HTML because it has clickable nodes.
 .. raw:: html
@@ -233,6 +298,24 @@ Adding Curriculum Areas
     <area shape="rect" coords="240,330,317,362" href="../getting_started/helper_commands.html#update">
   </map>
   <img src="../_static/img/topics_adding_curriculum_areas_flowchart.png" usemap="#curriculum-areas-map">
+
+The translation YAML file containing curriculum areas descriptions:
+
+- **Is in:** ``topics/content/en``
+- **Is called:** ``curriculum-areas.yaml``
+- **Contains:** Descriptions of all curriculum areas. Every curriculum area
+  key present in the `Curriculum Areas Configuration File`_ must be present in the English translation file.
+
+  For example,
+
+  .. code-block:: yaml
+
+    computational-thinking:
+      name: Computational Thinking
+    algorithmic-thinking:
+      name: Algorithmic Thinking
+    decomposition:
+      name: Decomposition
 
 You will now be able to add curriculum areas to learning outcomes and curriculum
 integrations by referencing the keys you specified in the curriculum areas
@@ -385,16 +468,109 @@ contents of that file.
     tiny squares that make up a grid that is used to represent images on a
     computer.
 
+
+.. _adding-classroom-resources:
+
+Adding a Classroom Resource
+------------------------------------------------------------------------------
+
+.. TODO(issue/749): Add diagram for adding a classroom resource.
+
+The translation YAML file containing classroom resource descriptions:
+
+- **Is in:** ``topics/content/en``
+- **Is called:** ``classroom-resources.yaml``
+- **Contains:** Descriptions of all classroom resources. Every classroom resource
+  key present in the `Classroom Resources Configuration File`_ must be present in the English translation file.
+  Descriptions must be short (less than 100 characters), as this list is displayed on the lesson sidebar.
+  If a longer description is required, this should be within the lesson text within a panel.
+
+  For example,
+
+  .. code-block:: yaml
+
+    pens:
+      description:  Pens
+    paper:
+      description:  Paper
+    number-line-0-20:
+      description:  Number line from 0 to 20
+
+
+Adding an Age Group
+------------------------------------------------------------------------------
+
+.. TODO(issue/749): Add diagram for adding an age group.
+
+The translation YAML file containing age group descriptions:
+
+- **Is in:** ``topics/content/en``
+- **Is called:** ``age-groups.yaml``
+- **Contains:** Optional descriptions of programming challenge defined in the `Age Group Configuration File`_ .
+
+  For example,
+
+  .. code-block:: yaml
+
+    5-7:
+      description: Description of the 5-7 age group.
+
+
+Adding a Programming Challenge Difficulty
+------------------------------------------------------------------------------
+
+.. TODO(issue/749): Add diagram for adding a programming challenge difficulty.
+
+The translation YAML file containing difficulty descriptions:
+
+- **Is in:** ``topics/content/en``
+- **Is called:** ``programming-challenges-structure-difficulties.yaml``
+- **Contains:** Descriptions of difficulties defined in the `Programming Challenges Structure Configuration File`_.
+  Every difficulty key present in the configuration file must also be present in the English YAML translation file.
+
+  For example,
+
+  .. code-block:: yaml
+
+    difficulty-0:
+      name: Try it out
+    difficulty-1:
+      name: Beginner
+    difficulty-2:
+      name: Growing experience
+
+Adding a Programming Challenge Languages
+------------------------------------------------------------------------------
+
+.. TODO(issue/749): Add diagram for adding a programming challenge language.
+
+The translation YAML file containing programming language descriptions:
+
+- **Is in:** ``topics/content/en``
+- **Is called:** ``programming-challenges-structure-languages.yaml``
+- **Contains:** Names of languages defined in the `Programming Challenges Structure Configuration File`_.
+  Every language key present in the configuration file must also be present in the English YAML translation file.
+
+  For example,
+
+  .. code-block:: yaml
+
+    scratch:
+      name: Scratch
+    python:
+      name: Python
+
+
+
 Configuration Files
 ==============================================================================
 
-This section details configuration files within the ``content`` directory for a specific
-language.
+This section details configuration files within the ``content/structure`` directory.
 These files are in YAML format. If you are not familiar with YAML, see
 :doc:`understanding_configuration_files`.
 
 The diagram below shows an example of YAML file locations for the
-``content/en/`` language directory, where:
+``content/structure/`` language directory, where:
 
 - Blue is directories.
 - Red is YAML configuration files.
@@ -417,7 +593,7 @@ Application Structure Configuration File
 
 - **File Name:** ``structure.yaml``
 
-- **Location:** ``topics/content/<language>/``
+- **Location:** ``topics/content/structure/``
 
 - **Purpose:** Defines the top level configuration files to process for defining
   the content of the topics application.
@@ -456,9 +632,9 @@ Topic Configuration File
 
 - **File Name:** ``<topic-key>.yaml``
 
-- **Location:** ``topic/content/<language>/<topic-key>/``
+- **Location:** ``topic/content/structure/<topic-key>/``
 
-- **Referenced In:** ``topic/content/<launguage>/structure.yaml``
+- **Referenced In:** ``topic/content/structure/structure.yaml``
 
 - **Purpose:** This file defines the attributes of a specific topic, including connected
   unit plan, programming challenge, and curriculum integration configuration files.
@@ -501,9 +677,9 @@ Unit Plan Configuration File
 
 - **File Name:** ``<unit-plan-key>.yaml``
 
-- **Location:** ``topic/content/<language>/<topic-key>/<unit-plan-key>/``
+- **Location:** ``topic/content/structure/<topic-key>/<unit-plan-key>/``
 
-- **Referenced In:** ``topic/content/<language>/<topic-key>/<topic-key>.yaml``
+- **Referenced In:** ``topic/content/structure/<topic-key>/<topic-key>.yaml``
 
 - **Purpose:** This file defines which lessons to use in each age group
 
@@ -561,9 +737,9 @@ Lesson Configuration File
 
 - **File Name:** ``<lessons>.yaml``
 
-- **Location:** ``topic/content/<language>/<topic-key>/<unit-plan-key>/lessons/``
+- **Location:** ``topic/content/structure/<topic-key>/<unit-plan-key>/lessons/``
 
-- **Referenced In:** ``topic/content/<language>/<topic-key>/<unit-plan-key>/<unit-plan-key>.yaml``
+- **Referenced In:** ``topic/content/structure/<topic-key>/<unit-plan-key>/<unit-plan-key>.yaml``
 
 - **Purpose:** This file defines all the lessons (and their respective)
   attributes for the unit plan.
@@ -588,23 +764,10 @@ Lesson Configuration File
 
         - ``learning-outcomes:`` A list of keys corresponding to learning outcomes.
 
-        - ``classroom-resources:`` A list of strings describing the required
-          classroom resources.
-          The list items must be short (less than 100 characters),
-          as this list is displayed on the lesson sidebar.
-          If a longer description is required, this should be within the lesson
-          text within a panel.
+        - ``classroom-resources:`` A list of keys corresponding to classroom resources.
 
-        - ``generated-resources:`` A list of generated CSU resources connected to this
+        - ``generated-resources:`` A list of keys of generated CSU resources connected to this
           lesson.
-
-          - **Required Fields:**:
-
-            - ``<resource>``: The key corresponding to the resource.
-
-              - **Required Fields:**:
-
-                - ``description:`` A description of how the resource should be used.
 
 A complete lesson structure file with multiple lessons may look like the
 following:
@@ -618,11 +781,11 @@ following:
     learning-outcomes:
       - binary-data-representation
     generated-resources:
-      sorting-network:
-        description: One per student.
+      - sorting-network
     classroom-resources:
-      - Pens and paper
-      - Dice
+      - pens
+      - paper
+      - dice
 
   how-binary-digits-work:
     computational-thinking-links: how-binary-digits-work-ct-links.md
@@ -637,9 +800,9 @@ Age Group Configuration File
 
 - **File Name:** ``age-groups.yaml``
 
-- **Location:** ``topics/content/<language>/``
+- **Location:** ``topics/content/structure/``
 
-- **Referenced In:** ``topics/content/<language>/structure.yaml``
+- **Referenced In:** ``topics/content/structure/structure.yaml``
 
 - **Purpose:** Defines the age groups avilable for all lessons.
 
@@ -653,10 +816,6 @@ Age Group Configuration File
       - ``min_age:`` The minimum age of the age group.
       - ``max_age:`` The maximum age of the age group.
 
-    - **Optional Fields:**
-
-      - ``description:`` A text description for the age group.
-
 A complete age group structure file may look like the following:
 
 .. code-block:: yaml
@@ -664,13 +823,21 @@ A complete age group structure file may look like the following:
   5-7:
       min_age: 5
       max_age: 7
-      description: In the teacher observations sections there may also be background notes on the big picture. There is no expectation that 5 to 7 year olds will need to know this, but if you are asked, you have the answer at your fingertips.
   8-10:
       min_age: 8
       max_age: 10
   11-14:
       min_age: 11
       max_age: 14
+
+Age group descriptions can then be set by creating a YAML translation file ``topics/content/en/age-groups.yaml``.
+
+For example,
+
+.. code-block:: yaml
+
+  5-7:
+    description: Description of the 5-7 age group.
 
 .. _learning-outcomes-file:
 
@@ -679,9 +846,9 @@ Learning Outcomes Configuration File
 
 - **File Name:** ``learning-outcomes.yaml``
 
-- **Location:** ``topics/content/<language>/``
+- **Location:** ``topics/content/structure/``
 
-- **Referenced In:** ``topics/content/<language>/structure.yaml``
+- **Referenced In:** ``topics/content/structure/structure.yaml``
 
 - **Purpose:** Defines the learning outcomes avilable for all topics.
 
@@ -689,11 +856,6 @@ Learning Outcomes Configuration File
 
   - ``<learning-outcome-key>:`` This is the key for the learning outcome.
     Each learning outcome has its own list of required and optional fields:
-
-    - **Required Fields:**
-
-      - ``text:`` The text of the learning outcome (this is what will
-        be displayed to the user).
 
     - **Optional Fields:**
 
@@ -704,18 +866,15 @@ A complete learning outcome structure file may look like the following:
 .. code-block:: yaml
 
   no-physical-zeros-ones:
-    text: Justify why there aren’t actual 0’s and 1’s zooming around inside a computer.
     curriculum-areas:
       - computational-thinking
 
   binary-correct-representation:
-    text: Argue that 0’s and 1’s are still a correct way to represent what is stored in the computer.
     curriculum-areas:
       - computational-thinking
       - data-representation
 
   maths-comparing-numbers:
-    text: Compare numbers
     curriculum-areas:
       - numeracy
 
@@ -726,9 +885,9 @@ Curriculum Areas Configuration File
 
 - **File Name:** ``curriculum-areas.yaml``
 
-- **Location:** ``topics/content/<language>/``
+- **Location:** ``topics/content/structure/``
 
-- **Referenced In:** ``topics/content/<language>/structure.yaml``
+- **Referenced In:** ``topics/content/structure/structure.yaml``
 
 - **Purpose:** Defines the curriculum areas available for all topics.
 
@@ -739,8 +898,6 @@ Curriculum Areas Configuration File
 
     - **Required Fields:**
 
-      - ``name:`` The name of the curriculum area (this is what will be displayed to the
-        user).
       - ``number:`` A number used for ordering curriculum areas.
         Areas are sorted in ascending numbers (smallest to largest).
       - ``colour:`` The CSS colour class to use for colouring the curriculum
@@ -763,8 +920,7 @@ Curriculum Areas Configuration File
 
     - **Optional Fields:**
 
-      - ``children:`` A list of sub-curriculum areas (see example file below). Each child
-        requires a ``name`` field.
+      - ``children:`` A list of sub-curriculum areas (see example file below).
         Children inherit the same colour and number as their parent.
 
 An example curriculum areas file with multiple curriculums may look like
@@ -773,20 +929,15 @@ the following:
 .. code-block:: yaml
 
   maths:
-    name: Maths
     colour: green
     children:
-      geometry:
-        name: Geometry
-      algebra:
-        name: Algebra
+      - geometry
+      - algebra
 
   science:
-    name: Science
     colour: blue
 
   art:
-    name: Art
     colour: teal
 
 .. note::
@@ -808,9 +959,9 @@ Programming Challenges Structure Configuration File
 
 - **File Name:** ``programming-challenges-structure.yaml``
 
-- **Location:** ``topics/content/<language>/``
+- **Location:** ``topics/content/structure/``
 
-- **Referenced In:** ``topics/content/<language>/structure.yaml``
+- **Referenced In:** ``topics/content/structure/structure.yaml``
 
 - **Purpose:** This file defines the structure of programming challenges for all
   topics.
@@ -826,9 +977,6 @@ Programming Challenges Structure Configuration File
 
         - **Required Fields:**
 
-          - ``name:`` The name of the programming language (this is what will be
-            displayed to the user).
-
           - ``number:`` A number used for ordering programming languages.
             Languages are sorted in ascending numbers (smallest to largest).
 
@@ -836,16 +984,12 @@ Programming Challenges Structure Configuration File
 
           - ``icon:`` An image file to be used as the icon for the language.
 
-  - ``difficulties:`` A list of difficulties programming challenges can be labelled as.
+  - ``difficulties:`` A list of difficulty keys programming challenges can be labelled with, from easiest to hardest.
 
-    - **Required Fields:**
+.. warning::
 
-      - ``<level>:`` An integer value.
-
-        - **Required Fields:**
-
-        - ``name:`` The name of the difficulty level (this is what will be displayed to
-          the user).
+  Due to technical limitations, the programming challenge difficulty keys must not be purely numeric.
+  For example, the key ``difficulty-1`` is valid, but the key ``1`` is not.
 
 A complete programming challenge structure file may look like the following:
 
@@ -853,20 +997,16 @@ A complete programming challenge structure file may look like the following:
 
   language:
     scratch:
-      name: Scratch
       number: 1
       icon: img/scratch-cat.png
     ruby:
-      name: Ruby
       number: 2
 
   difficulties:
-    1:
-      name: Beginner
-    2:
-      name: Intermediate
-    3:
-      name: Advanced
+    - difficulty-1
+    - difficulty-2
+    - difficulty-3
+
 
 .. _programming-challenges-file:
 
@@ -875,9 +1015,9 @@ Programming Challenges Configuration File
 
 - **File Name:** ``programming-challenges.yaml``
 
-- **Location:** ``topics/content/<language>/<topic-key>/programming-challenges/``
+- **Location:** ``topics/content/structure/<topic-key>/programming-challenges/``
 
-- **Referenced In:** ``topics/content/<language>/<topic-key>/<topic-key>.yaml``
+- **Referenced In:** ``topics/content/structure/<topic-key>/<topic-key>.yaml``
 
 - **Purpose:** This file defines the programming challenges (and their respective attributes)
   for a particular topic.
@@ -957,9 +1097,9 @@ Curriculum Integrations Configuration File
 
 - **File Name:** ``curriculum-intergrations.yaml``
 
-- **Location:** ``topics/content/<language>/<topic-key>/``
+- **Location:** ``topics/content/structure/<topic-key>/``
 
-- **Referenced In:** ``topics/content/<language>/<topic-key>.yaml``
+- **Referenced In:** ``topics/content/structure/<topic-key>.yaml``
 
 - **Purpose:** Contains a list of curriculum integrations that can be used to integrate
   the topic with another area in the curriculum.
@@ -1015,3 +1155,45 @@ may look like the following:
     prerequisite-lessons:
       unit-plan-2:
         - counting-in-binary
+
+.. _classroom-resources-file:
+
+Classroom Resources Configuration File
+------------------------------------------------------------------------------
+
+- **File Name:** ``classroom-resources.yaml``
+
+- **Location:** ``topics/content/structure/``
+
+- **Referenced In:** ``topics/content/structure/<topic-key>/<unit-plan-key>/lessons/lessons.yaml``
+
+- **Purpose:** Defines the classroom resources avilable for all topics.
+
+- **Required Fields:**
+
+  - ``classroom-resources:`` List of available classroom resource keys
+
+A complete classroom resources structure file may look like the following:
+
+.. code-block:: yaml
+
+  classroom-resources:
+    - pens
+    - paper
+    - number-line-0-20
+    - musical-instruments
+    - alphabet-cards
+    - parity-cards-set
+    - whiteboard
+    - whiteboard-pens
+    - product-barcodes
+    - payment-system
+    - pencils
+    - stopwatch
+    - handheld-whiteboards
+    - clipboards
+    - blocks
+    - hula-hoop
+    - counters
+    - chalk
+    - coloring-pens
