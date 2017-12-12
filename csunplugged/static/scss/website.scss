@@ -40,7 +40,6 @@
 @import url('https://fonts.googleapis.com/css?family=Sniglet');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
 
-// $body-space-from-top: 72px;
 $ct-abstraction: #E30613;
 $ct-algorithm: #0B983A;
 $ct-decomposition: #DABB00;
@@ -103,11 +102,9 @@ $rounded-corner-radius: 0.5rem;
 .jumbotron {
   background: url("../img/red-hero-banner.png");
   background-size: cover;
-  // border: $card-border-width solid darken($red, 10%);
-  // border-radius: $rounded-corner-radius;
-  // margin: 1rem 0;
   width: 100%;
-  padding-bottom: 10vh;
+  padding-bottom: 15vh;
+  text-shadow: 0 2px 2px rgba(0,0,0,0.4);
 
   h1 {
     font-family: $headings-font-family;
