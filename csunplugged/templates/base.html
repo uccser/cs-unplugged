@@ -78,8 +78,8 @@
     {% block breadcrumbs %}
     {% endblock breadcrumbs %}
 
-    <div id="content-container" class="container">
-      {% block body_container %}
+    {% block body_container %}
+      <div id="content-container" class="container">
         {% render_breadcrumbs "django_bootstrap_breadcrumbs/bootstrap4.html" %}
         <div class="row">
           <div class="col-12">
@@ -97,8 +97,8 @@
             {% endblock end_content %}
           </div>
         </div>
-      {% endblock body_container %}
-    </div>
+      </div>
+    {% endblock body_container %}
 
     <div class="container white-footer mt-5 py-5">
       <div class="row align-items-center text-center">

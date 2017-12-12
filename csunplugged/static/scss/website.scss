@@ -40,7 +40,7 @@
 @import url('https://fonts.googleapis.com/css?family=Sniglet');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
 
-$body-space-from-top: 72px;
+// $body-space-from-top: 72px;
 $ct-abstraction: #E30613;
 $ct-algorithm: #0B983A;
 $ct-decomposition: #DABB00;
@@ -393,14 +393,18 @@ details {
   }
 }
 
+$navbar-height: 50px;
+$navbar-padding-bottom: 24px;
 body {
-  padding-top: $body-space-from-top;
+  padding-top: $navbar-height;
   position: relative;
   background-color: $gray-100;
 }
-
+#content-container {
+  padding-top: $navbar-padding-bottom;
+}
 #sticky-sidebar {
-  top: $body-space-from-top;
+  top: $navbar-height + $navbar-padding-bottom;
 }
 .sticky-top {
   z-index: 1020;
