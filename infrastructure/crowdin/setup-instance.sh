@@ -10,6 +10,7 @@ PYTHON_PACKAGE_DIR="crowdin_bot_python_package"
 tar -xvzf crowdin-bot.tar.gz
 
 # Install packages
+sudo apt-get update
 sudo apt-get install git --yes
 sudo apt-get install gettext --yes
 sudo apt-get install default-jre --yes  # Java, for crowdin cli

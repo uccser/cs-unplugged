@@ -36,8 +36,9 @@
 @import "bootstrap/utilities";
 @import "pygments-colorful";
 @import "sticky-state";
-@import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
 @import "directional";
+@import url('https://fonts.googleapis.com/css?family=Sniglet');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
 
 $body-space-from-top: 72px;
 $ct-abstraction: #E30613;
@@ -108,7 +109,7 @@ $rounded-corner-radius: 0.5rem;
   width: 100%;
 
   h1 {
-    font-family: 'Patrick Hand', cursive;
+    font-family: $headings-font-family;
     color: $white;
   }
 }
@@ -388,6 +389,7 @@ details {
 body {
   padding-top: $body-space-from-top;
   position: relative;
+  background-color: $gray-100;
 }
 
 #sticky-sidebar {
@@ -470,16 +472,22 @@ ol, ul {
 }
 
 .link-item {
-  // border-top: 1px solid $blue;
-  h2,
-  h3 {
+  background-color: $white;
+  border-#{$left}: 5px solid $red;
+  border-bottom: 2px solid $gray-200;
+  border-#{$right}: 2px solid $gray-200;
+  border-radius: 4px;
+  padding: 0.5rem 1rem 1rem 1rem;
+  h2 {
     color: $gray;
+    font-size: 28px;
   }
   img {
     max-height: 6rem;
   }
   &:hover {
-    background-color: rgba($blue, 0.1);
+    transform: translateY(2px);
+    background-color: rgba($red, 0.05);
   }
   &.unavailable {
     background-color: rgba($black, 0.2);
