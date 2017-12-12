@@ -7,16 +7,17 @@
   {% trans "CS Unplugged" %}
 {% endblock custom_title %}
 
-{% block body_container %}
-  <div class="row">
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-3 text-center">
-          {% blocktrans trimmed %}
-          Computer Science<br>without a computer
-          {% endblocktrans %}
-        </h1>
 
+{% block body_container %}
+<div class="container">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-3 text-center">
+        {% blocktrans trimmed %}
+        Computer Science<br>without a computer
+        {% endblocktrans %}
+      </h1>
+      <div class="container">
         <div class="row align-items-center">
           <div class="col-md-1 d-none d-md-block">
           </div>
@@ -37,10 +38,9 @@
         </div>
       </div>
     </div>
-
-
-
-
+  </div>
+</div>
+  <div class="row">
 
     <div class="link-box-container justify-content-between">
       <a class="link-box link-box-md-6 link-box-blue" href="{% url 'general:about' %}">
