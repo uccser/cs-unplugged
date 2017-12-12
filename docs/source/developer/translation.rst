@@ -5,7 +5,7 @@ Translation
 Translation Principles
 =============================================================================
 
-The following principles were used to guide the design of a translation system for CS Unplugged\:.
+The following principles were used to guide the design of a translation system for CS Unplugged:
 
 1. Translations should be 'first class citizens' - they should exist as independent entities from the source content, and be coupled as loosely as possible to it.
 2. Translated content should remain accessible even if the source material changes, and an updated translation is not yet available.
@@ -15,12 +15,14 @@ The following principles were used to guide the design of a translation system f
 
 Translatable Files
 =============================================================================
-Translatable content is stored in two types of files:
+Translatable content is stored in four types of files:
 
 - Markdown files, for content to be processed by Verto.
 - YAML files containg field translations for a given model type.
+- HTML templates.
+- Python code.
 
-Both types of file are stored inside the directory tree for a given language (ie. the directory named using the django locale code).
+The first two types of file are stored inside the directory tree for a given language (ie. the directory named using the Django locale code).
 
 .. note::
 
@@ -50,6 +52,11 @@ Both types of file are stored inside the directory tree for a given language (ie
 
   These files can be parsed and loaded using a `utility function <UtilityFunctions_>`_ on the ``TranslatableModelLoader`` base class.
 
+For the latter two type of files, Django's built-in `translation support <https://docs.djangoproject.com/en/2.0/topics/i18n/>`_ is utilised to handle translatable strings.
+In python code, text is wrapped in a ``ugettext`` function call (usually aliased to ``_``).
+In HTML templates, text is wrapped in ``{% trans %}``/``{% blocktrans trimmed %}`` tags.
+
+
 Translatable Model
 =============================================================================
 
@@ -58,8 +65,8 @@ It is availabe in the file ``utils/TranslatableModel.py`` and should be subclass
 
 Django Package - ``modeltranslation``
 ******************************************************************************
-The django modeltranslation package is utilised to stored translated content on a model.
-The basic idea is that for each translatable field, an extra database column is added for every language defined in the django settings file.
+The Django modeltranslation package is utilised to stored translated content on a model.
+The basic idea is that for each translatable field, an extra database column is added for every language defined in the Django settings file.
 When the base field is accessed, ``modeltranslation`` performs some magic to retrieve the translation for the users language
 
 
@@ -68,8 +75,8 @@ For more details, see the models already registered, or read the `modeltranslati
 
 .. note::
 
-  The default behaviour for modeltranslation is to fallback to the english value if no translation is present.
-  In CS Unplugged, this is desirable for fields such as name and title, but is often undesirable for most other fields (see `Translation Principles`_).
+  The default behaviour for ``modeltranslation`` is to fallback to the English value if no translation is present.
+  In CS Unplugged, this is desirable for text fields such as name and title, but is often undesirable for most other fields (see `Translation Principles`_).
 
   To disable fallback for a given field:
 
@@ -84,7 +91,7 @@ The ``TranslatableModel`` base class includes a mechanism to determine whether a
 
 This mechanism consists of
 
-- The ``languages`` field, which is an array field storing the django language codes for languages in which the model is available
+- The ``languages`` field, which is an array field storing the Django language codes for languages in which the model is available
 - The ``translation_available`` property, which returns true if the model is available in the current language
 
 When creating the ``TranslatableModel`` instance, the list of available languages should be determined.

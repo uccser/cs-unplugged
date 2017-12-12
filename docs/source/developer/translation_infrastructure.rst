@@ -70,6 +70,7 @@ pass the following stages of review:
 
 The first two review phases are enforced by a `custom workflow <https://support.crowdin.com/advanced-workflows/>`_ on Crowdin.
 
+.. _inContextTranslations:
 
 In-Context Translation
 ==============================================================================

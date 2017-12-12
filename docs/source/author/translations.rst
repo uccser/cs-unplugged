@@ -3,8 +3,9 @@ Translations
 
 .. note::
   This guide is a work in progress, as translation support for CS Unplugged is a recent addition.
-  Many of the finer details of the translation workflow are likely to changes as translators begin to work on the project.
+  Many of the finer details of the translation workflow are likely to change as translators begin to work on the project.
   Any roadblocks encountered and lessons learned will be used to refine the translation workflow and improve this guide.
+
 
 Getting Started
 ==============================================================================
@@ -13,11 +14,10 @@ It's really easy to start contributing translations using CS Unplugged
 
 1. Read this documentation page, especially the `Translation Notes`_ section.
 2. Create an account on `Crowdin <https://crowdin.com/join>`__.
-3. Read the Crowdin `documentation <https://support.crowdin.com/crowdin-intro/>`_ for translators.
-4. Visit the CS Unplugged `development site <http://cs-unplugged-dev.appspot.com/>`_.
-5. Switch to translation mode using the language drop down.
-6. Log in with your Crowdin credentials and select a target language.
-7. Start translating!
+3. Visit the CS Unplugged `development site <http://cs-unplugged-dev.appspot.com/>`_.
+4. Switch to translation mode using the language drop down.
+5. Log in with your Crowdin credentials and select a target language.
+6. Start translating!
 
 Crowdin Overview
 ==============================================================================
@@ -63,28 +63,26 @@ This lets translators see their translations appear as it will look on the final
   These raw text tags will never be visible in the final release, as they are parsed and removed during verto processing.
 
   For technical reasons, any changes in the translation of a verto tag will not be rendered in-context translation mode, and will only be visible after the translated file is downloaded for release.
-  See `here <../developer/translation_infrastructure.html#in-context-translation>`_ for more details.
+  See :ref:`inContextTranslations` for more details.
 
 To use in-context translation features, simply visit the CS Unplugged `development site <http://cs-unplugged-dev.appspot.com/>`_, and use the language selector to select ``Translation Mode``.
 
 .. note::
   For bi-directional languages such as Hebrew and Arabic, translators should instead select ``Translation Mode (Bi-Directional)`` using the language selector.
 
-
 In cases where in-context translation mode is not available, it is also possible to use the standard Crowdin UI.
 To access this, visit the CS Unplugged project page on `Crowdin <https://crowdin.com/project/cs-unplugged>`_.
-
 
 Translation notes
 ==============================================================================
 
 .. note::
 
-  On Crowdin, markdown files are translated on a per-sentence basis. There may
+  On Crowdin, Markdown files are translated on a per-sentence basis. There may
   be some cases where this is not desirable, and some paragraph level restructuring
   is required to convey a concept in a given language.
 
-  In these cases, it's possible to work around this with tricks such as
+  In these cases, it could be possible to work around this with tricks such as
 
   - translating one sentence into the translation box for another.
   - translating a sentence into a blank string.
