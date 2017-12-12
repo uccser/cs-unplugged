@@ -1,64 +1,321 @@
-no-physical-zeros-ones:
+# BINARY NUMBERS LEARNING OUTCOMES
+
+binary-convert-decimal:
+  text: Perform a demonstration of how the binary number system works by converting any decimal number into a binary number.
+
+binary-justify-zeros-and-ones:
   text: Justify why there aren’t actual 0’s and 1’s zooming around inside a computer.
-  curriculum-areas:
-    - computational-thinking
 
-binary-correct-representation:
-  text: Argue that 0’s and 1’s are still a correct way to represent what is stored in the computer.
-  curriculum-areas:
-    - computational-thinking
+binary-argue-zeros-and-ones-stored:
+  text: Argue that 0’s and 1’s are still a correct way to explain what is stored in the computer.
 
-maths-comparing-numbers:
-  text: Compare numbers
-  curriculum-areas:
-    - numeracy
+binary-explain-different-states:
+  text: Explain why we can use any two different states or things to represent binary; it doesn’t have to just be 0’s and 1’s.
+
+binary-explain-logic-one-bit:
+  text: Explain the logic of why the right-hand bit needs to represent a one.
+
+binary-explain-off-on:
+  text: Explain why a particular card (bit) must be turned off or on for a given number.
+
+binary-predict-bit-value:
+  text: Predict what value the next card (bit) e.g. the last bit value is 16, what is the next one?
+
+binary-explain-doubling:
+  text: Explain why we only need one more bit to represent twice as many numbers.
+
+binary-recognise-alphabet-bits:
+  text: Recognise how computers represent alphabet characters as bits using a simplified method.
+
+binary-create-message-converting:
+  text: Create your own message by converting alphabet characters to decimal numbers then to binary.
+
+binary-interpret-message-binary:
+  text: Interpret a message using binary.
+
+binary-explain-codes-alphabets:
+  text: Explain how codes for larger alphabets could be created that also include capital letters, punctuation, symbols and diacritics (e.g. macrons, accents).
+
+binary-make-play-instructions-binary:
+  text: Make a play that gives instructions on how to represent a number in binary.
+
+binary-identify-opposite-pairs:
+  text: Identify opposite pairs such as happy face and sad face.
+
+binary-match-letters-numbers:
+  text: Match letters in the alphabet to the numbers representing them.
+
+binary-count-highest-number:
+  text: Count on from the highest number to find the total number of dots on the binary cards.
+
+# DRAMA LEARNING OUTCOMES
+
+drama-create-video-binary:
+  text: Create an instructional video outlining how to count using the binary number system.
+
+# ENGLISH LEARNING OUTCOMES
+
+speaking-clear-instructions-binary-cards:
+  text: Give clear instructions to explain how the binary cards can show any number between 0
+# ERROR DETECTION AND CORRRECTION LEARNING OUTCOMES
+
+error-describe-steps-to-find-card:
+  text: Describe the steps it takes to work out how to find the card that is turned over.
+
+error-explain-each-card-bit:
+  text: Explain that each card is a bit and that the cards can represent data.
+
+error-explain-chose-parity-card:
+  text: Explain why they chose each extra bit (card) when setting up a parity column/row.
+
+error-explain-checksum-algorithm:
+  text: Explain why the checksum algorithm is so reliable.
+
+error-follow-steps-find-card-turned-over:
+  text: Follow the steps to work out how to find the bit (card) that was turned over in the parity trick.
+
+error-explain-group-numbers:
+  text: Explain how to group numbers into even or odd numbers.
+
+error-recognise-groups-of-5:
+  text: Recognise groups of 5 and skip count in fives
+
+error-demonstrate-count-to-5:
+  text: Demonstrate how to count to 5 by matching their counting to the cards.
+
+# LANUGAGE LEARNING OUTCOMES
+
+language-discuss-storing-characters:
+  text: Discuss why it's important to be able to store more than the standard English alphabet.
+
+# NUMERACY LEARNING OUTCOMES
+
+numeracy-adding-given-number:
+  text: Add numbers to a given amount.
+
+numeracy-identify-even-odd:
+  text: Identify even and odd numbers by explaining why the most right number is different to the others.
+
+numeracy-discuss-count-zeros-ones:
+  text: Discuss why you can count up to any number by only using 0s and 1s.
+
+numeracy-explain-squaring:
+  text: Explain how understanding how binary numbers increase supports your knowledge of place value.
+
+numeracy-compare-base10-base2:
+  text: Compare the base value systems of base 10 (our number system)  and base 2 (binary).
+
+numeracy-identify-larger-number:
+  text: Identify which number is larger, when comparing two numbers.
+
+numeracy-count-by-pointing:
+  text: Count accurately by pointing at each item.
+
+numeracy-recognise-patterns:
+  text: Recognise patterns for numbers 1 through to 8.
+
+numeracy-recognise-number-alphabet-order:
+  text: Recognise that the alphabet is in an order and so are numbers.
+
+numeracy-explain-even-odd-parity-problem:
+  text: Explain how knowing what odd and evens numbers are means you can solve the parity problem.
+
+numeracy-describe-rows-columns:
+  text: Describe what are rows and what are columns.
+
+numeracy-discuss-changing-one-card-state:
+  text: Discuss why changing one card will change the state of the row and column which it is in.
+
+numeracy-explain-modulo:
+  text: Explain how the modulo operator works.
+
+numeracy-identify-modulo-everyday-life:
+  text: Identify where modulo occurs in everyday life.
+
+numeracy-recognise-numbers-represented:
+  text: Recognise that numbers can be represented in different ways.
+
+numeracy-discuss-modulo-understanding-remainders:
+  text: Discuss how knowing how modulo works, supports your understanding of remainders.
+
+# PROGRAMMING LEARNING OUTCOMES
 
 programming-explain-sequencing:
-  text: Explain how sequence works in programming
-  curriculum-areas:
-    - programming
+  text: Explain how sequence works in programming.
 
 programming-explain-output:
   text: Explain why a program gives the output that it does.
-  curriculum-areas:
-    - programming
+
+programming-explain-variable-name:
+  text: Explain why choosing a good name for a variable is important.
 
 programming-describe-variables:
   text: Describe how variables store values and how they are used in your program.
-  curriculum-areas:
-    - programming
+
+programming-describe-mathematical-operations:
+  text: Describe how you have used mathematical operations in your program.
 
 programming-outline-variable-updates:
   text: Outline how storing values in a variable is updated because of the code you have used.
-  curriculum-areas:
-    - programming
 
 programming-describe-variable-output:
   text: Describe how a variable can be displayed as an output.
-  curriculum-areas:
-    - programming
+
+programming-describe-function:
+  text: Describe the reason why you wrote a function in your program.
 
 programming-identify-loop:
-  text: Identify when to use a loop to repeat a set of instructions.
-  curriculum-areas:
-    - programming
+  text: Identify how and when to use a loop to repeat a set of instructions.
 
 programming-explain-join-concatenate:
   text: Explain how to concatenate (join) strings of characters together.
-  curriculum-areas:
-    - programming
 
 programming-explain-asking-input-end-user:
   text: Explain what you need to consider if you are asking for an input from the end user.
-  curriculum-areas:
-    - programming
 
 programming-identify-if-statement:
   text: Identify when to use an if statement to check a set of conditions.
-  curriculum-areas:
-    - programming
 
-programming-prove-indexing:
+programming-demonstrate-indexing:
   text: Demonstrate how indexing to access a letter at the specified position in a string works.
-  curriculum-areas:
-    - programming
+
+programming-explain-set-and-change-statement:
+  text: Explain the difference between the set statement and the change statement when used to update the value of a variable.
+
+programming-describe-variable-initial-value:
+  text: Describe why a variable should be set to the correct type of initial value.
+
+programming-explain-mod:
+  text: Explain what the modulo operator does in your program.
+
+programming-explain-differences-if-else-if-statements:
+  text: Explain the difference between an if-else statement and an if statement and how you have used them in your program.
+
+programming-describe-nested-statement:
+  text: Describe how a nested statement works in relation to your program.
+
+programming-identify-list-store-data:
+  text: Identify when to use a list to store a set of data.
+
+programming-show-item-specified-position-list:
+  text: Show how to access an the item at a specified position in a list.
+
+# SEARCHING ALGORITHMS LEARNING OUTCOMES
+
+search-algorithms-identify-unsorted-lists:
+    text: Identify search algorithms for unsorted lists (sequential search).
+
+search-algorithms-describe-time-size-input:
+    text: Describe how the time taken grows with the size of the input.
+
+search-algorithms-explore-probability-value-random-set:
+    text: Explore the probability of finding a particular value in a random set.
+
+search-algorithms-explain-range-unsorted-lists:
+    text: Explain the range of the number of guesses for unsorted lists.
+
+search-algorithms-identify-sequential-binary:
+  text: Identify search algorithms for sorted and unsorted lists (sequential and binary search).
+
+search-algorithms-explain-decomposition-binary:
+  text: Explain how they used decomposition to divide and conquer when doing a binary search.
+
+search-algorithms-describe-time-size-input-different:
+  text: Describe how the time taken grows with the size of the input, and most importantly how it grows in different ways for two different algorithms.
+
+search-algorithms-describe-compare-values:
+  text: Describe how to compare number values for equality and inequality (greater than, less than).
+
+search-algorithms-explain-unsorted-lists:
+  text: Explain the range of the number of guesses for unsorted lists compared to sorted lists.
+
+# UNPLUGGED PROGRAMMING LEARNING OUTCOMES
+
+unplugged-programming-apply-addition-multiplication:
+  text: Apply addition and multiplication to work out the number of actions that an end user will complete.
+
+unplugged-programming-design-fitness-achievable:
+  text: Design a series of fitness activities that are achievable for your end users.
+
+unplugged-programming-construct-fitness-workout:
+  text: Construct a fitness workout that combines strength and cardio activities.
+
+unplugged-programming-design-language:
+  text: Design a fitness unplugged programming language that is easily interpreted.
+
+unplugged-programming-give-instructions:
+  text: Give a set of instructions that moves an object from a starting point to a desired destination.
+
+unplugged-programming-identify-bug-correct:
+  text: Identify where a bug has occured and be able to correct the code to allow the object to move to the desired destination.
+
+unplugged-programming-explain-exact-instructions:
+  text: Explain why it’s important to give very exact instructions.
+
+unplugged-programming-follow-instructions:
+  text: Follow instructions accurately.
+
+unplugged-programming-identify-2D-shapes:
+  text: Identify and name 2D shapes.
+
+unplugged-programming-communicate-debugging:
+  text: Communicate when the code isn’t correct so that the person knows what needs debugging.
+
+unplugged-programming-actively-listen-feedback:
+  text: Actively listen to the feedback and debug the program.
+
+unplugged-programming-give-accurate-instructions-pace:
+  text: Give accurate instructions at a pace that the person can follow.
+
+unplugged-programming-give-instructions-shape:
+  text: Give a set of instructions that moves an object from a starting point in a desired shape.
+
+unplugged-programming-identify-bug-shape:
+  text: Identify where a bug has occurred and be able to correct the code to allow the object to move in a desired shape.
+
+unplugged-programming-describe-draw-2D-shape:
+  text: Describe how to draw a given 2D shape like a square or a rectangle.
+
+unplugged-programming-accurately-count:
+  text: Accurately count from one space to the next one.
+
+unplugged-programming-give-precise-instructions:
+  text: Give a set of precise instructions that programs an object to move efficiently from one point to another.
+
+unplugged-programming-identify-bug-correct:
+  text: Identify where a bug has occurred and be able to correct the code to allow the object to move to the desired destination.
+
+unplugged-programming-give-instructions-move:
+  text: Give a set of instructions that programs an object to move from one point to another.
+
+unplugged-programming-explain-tell-stories:
+  text: Explain how you can tell stories by combining oral, written, and visual language.
+
+unplugged-programming-recall-direction-words:
+  text: Recall directional words in another language for 'go', 'move forward', 'left', 'right', and numbers.
+
+# SORTING LEARNING OUTCOMES
+
+sorting-explain-parallel-algorithm:
+  text: Explain how a Sorting Network parallel algorithm works.
+
+sorting-use-selection-sort:
+  text: Use selection (data comparisons) to sort multiple items.
+
+sorting-identify-number-range:
+  text: Identify which number comes before or after in any range of numbers.
+
+sorting-identify-number-given-range:
+  text: Identify which number comes before or after in a given range of numbers.
+
+sorting-organise-objects-size:
+  text: Organise objects from smallest in size to largest in size.
+
+sorting-recognise-sorting-method:
+  text: Recognise that a sorting method can be applied to any values that can be ordered.
+
+sorting-demonstrate-alphabet-knowledge:
+  text: Demonstrate how your alphabet knowledge supports ordering words or books.
+
+sorting-comparing-musical-pitch:
+  text: Compare musical pitch in musical notation and aurally.

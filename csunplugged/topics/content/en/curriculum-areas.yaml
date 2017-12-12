@@ -1,111 +1,93 @@
-literacy:
-  name: Literacy
-  colour: red
-  children:
-    reading:
-      name: Reading
-    writing:
-      name: Writing
-    listening:
-      name: Listening
-    speaking:
-      name: Speaking
-    library:
-      name: Library
-
-mathematics:
-  name: Mathematics
-  colour: blue
-  children:
-    geometry:
-      name: Geometry
-    measurement:
-      name: Measurement
-    numeracy:
-      name: Numeracy
-    algebra:
-      name: Algebra
-    statistics:
-      name: Statistics
-
-performing-arts:
-  name: Performing Arts
-  colour: orange
-  children:
-    music:
-      name: Music
-    dance:
-      name: Dance
-    drama:
-      name: Drama
-
-art:
-  name: Art
-  colour: orange
-
-science:
-  name: Science
-  colour: green
-  children:
-    biology:
-      name: Biology
-    physics:
-      name: Physics
-    astronomy:
-      name: Astronomy
-    chemistry:
-      name: Chemistry
-    geology:
-      name: Geology
-
-physical-education:
-  name: Physical Education
-  colour: orange
-  children:
-    fitness:
-      name: Fitness
-    sport:
-      name: Sport
-    health:
-      name: Health
-
-language:
-  name: Language Learning
-  colour: pink
-
-social-studies:
-  name: Social Studies
-  colour: teal
-  children:
-    history:
-      name: History
-    geograph:
-      name: Geography
+computational-thinking:
+  name: Computational Thinking
+algorithmic-thinking:
+  name: Algorithmic Thinking
+decomposition:
+  name: Decomposition
+abstraction:
+  name: Abstraction
+generalising-and-patterns:
+  name: Generalising and Patterns
+logic:
+  name: Logic
+evaluation:
+  name: Evaluation
 
 computer-science:
   name: Computer Science
-  colour: purple
-  children:
-    data-representation:
-      name: Data Representation
-    algorithms:
-      name: Algorithms
-    programming:
-      name: Programming
+data-representation:
+  name: Data Representation
+algorithms:
+  name: Algorithms
+programming:
+  name: Programming
 
-computational-thinking:
-  name: Computation Thinking
-  colour: light-purple
-  children:
-    algorithmic-thinking:
-      name: Algorithmic Thinking
-    decomposition:
-      name: Decomposition
-    abstraction:
-      name: Abstraction
-    generalising-and-patterns:
-      name: Generalising and Patterns
-    logic:
-      name: Logic
-    evaluation:
-      name: Evaluation
+mathematics:
+  name: Mathematics
+geometry:
+  name: Geometry
+measurement:
+  name: Measurement
+numeracy:
+  name: Numeracy
+algebra:
+  name: Algebra
+statistics:
+  name: Statistics
+
+literacy:
+  name: Literacy
+reading:
+  name: Reading
+writing:
+  name: Writing
+listening:
+  name: Listening
+speaking:
+  name: Speaking
+library:
+  name: Library
+
+art:
+  name: Art
+
+language:
+  name: Language Learning
+
+performing-arts:
+  name: Performing Arts
+music:
+  name: Music
+dance:
+  name: Dance
+drama:
+  name: Drama
+
+physical-education:
+  name: Physical Education
+fitness:
+  name: Fitness
+sport:
+  name: Sport
+health:
+  name: Health
+
+science:
+  name: Science
+biology:
+  name: Biology
+physics:
+  name: Physics
+astronomy:
+  name: Astronomy
+chemistry:
+  name: Chemistry
+geology:
+  name: Geology
+
+social-studies:
+  name: Social Studies
+history:
+  name: History
+geograph:
+  name: Geography

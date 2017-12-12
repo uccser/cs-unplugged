@@ -10,6 +10,12 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
 import environ
+import os.path
+
+# Add custom languages not provided by Django
+import django.conf.locale
+from django.conf import global_settings
+from django.utils.translation import ugettext_lazy as _
 
 # cs-unplugged/csunplugged/config/settings/base.py - 3 = csunplugged/
 ROOT_DIR = environ.Path(__file__) - 3
@@ -36,6 +42,8 @@ DJANGO_APPS = [
 ]
 THIRD_PARTY_APPS = [
     "django_bootstrap_breadcrumbs",
+    "modeltranslation",
+    "bidiutils",
 ]
 
 # Apps specific for this project go here.
@@ -98,7 +106,49 @@ FIXTURE_DIRS = (
 TIME_ZONE = "UTC"
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#language-code
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "en"
+
+INCONTEXT_L10N_PSEUDOLANGUAGE = "xx-lr"
+INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI = "yy-rl"
+INCONTEXT_L10N_PSEUDOLANGUAGES = (
+    INCONTEXT_L10N_PSEUDOLANGUAGE,
+    INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI
+)
+
+LANGUAGES = (
+    ("en", "English"),
+)
+
+if env.bool("INCLUDE_INCONTEXT_L10N", False):
+    EXTRA_LANGUAGES = [
+        (INCONTEXT_L10N_PSEUDOLANGUAGE, "Translation mode"),
+        (INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI, "Translation mode (Bi-directional)"),
+    ]
+
+    EXTRA_LANG_INFO = {
+        INCONTEXT_L10N_PSEUDOLANGUAGE: {
+            'bidi': False,
+            'code': INCONTEXT_L10N_PSEUDOLANGUAGE,
+            'name': "Translation mode",
+            'name_local': _("Translation mode"),
+        },
+        INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI: {
+            'bidi': True,
+            'code': INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI,
+            'name': "Translation mode (Bi-directional)",
+            'name_local': _("Translation mode (Bi-directional)"),
+        }
+    }
+
+    django.conf.locale.LANG_INFO.update(EXTRA_LANG_INFO)
+    # Add new languages to the list of all django languages
+    global_settings.LANGUAGES = global_settings.LANGUAGES + EXTRA_LANGUAGES
+    global_settings.LANGUAGES_BIDI = (global_settings.LANGUAGES_BIDI +
+                                      [INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI.split('-')[0]])
+    # Add new languages to the list of languages used for this project
+    LANGUAGES += tuple(EXTRA_LANGUAGES)
+    LANGUAGES_BIDI = global_settings.LANGUAGES_BIDI
+
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#site-id
 SITE_ID = 1
@@ -145,10 +195,13 @@ TEMPLATES = [
                 "django.template.context_processors.static",
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
-                # Your stuff: custom template context processors go here
+                "config.context_processors.version_number.version_number",
+                "config.context_processors.deployed.deployed",
+                "bidiutils.context_processors.bidi",
             ],
             "libraries": {
-                "render_html_field": "general.templatetags.render_html_field",
+                "render_html_field": "config.templatetags.render_html_field",
+                "translate_url": "config.templatetags.translate_url",
             },
         },
     },
@@ -157,14 +210,15 @@ TEMPLATES = [
 # STATIC FILE CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-root
-STATIC_ROOT = str(ROOT_DIR.path("staticfiles"))
+STATIC_ROOT = os.path.join(str(ROOT_DIR.path("staticfiles")), "")
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
+BUILD_ROOT = os.path.join(str(ROOT_DIR.path("build")), "")
 STATIC_URL = "/staticfiles/"
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = [
-    str(ROOT_DIR.path("build")),
+    BUILD_ROOT,
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
@@ -206,3 +260,14 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
+# OTHER SETTINGS
+# ------------------------------------------------------------------------------
+DJANGO_PRODUCTION = env.bool("DJANGO_PRODUCTION")
+TOPICS_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("topics")), "content")
+RESOURCES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("resources")), "content")
+RESOURCE_GENERATION_LOCATION = os.path.join(str(ROOT_DIR.path("staticfiles")), "resources")
+RESOURCE_GENERATORS_PACKAGE = "resources.generators"
+RESOURCE_COPY_AMOUNT = 20
+SCRATCH_GENERATION_LOCATION = str(ROOT_DIR.path("temp"))
+CUSTOM_VERTO_TEMPLATES = os.path.join(str(ROOT_DIR.path("utils")), "custom_converter_templates", "")
+MODELTRANSLATION_CUSTOM_FIELDS = ("JSONField",)

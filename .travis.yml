@@ -1,39 +1,123 @@
 sudo: required
 services:
-- docker
+  - docker
 env:
-- DOCKER_COMPOSE_VERSION=1.11.2
+  - DOCKER_COMPOSE_VERSION=1.11.2
 language: python
 python:
-- '3.6'
+  - '3.6'
+before_install:
+  # See https://github.com/travis-ci/travis-ci/issues/7940
+  - sudo rm -f /etc/boto.cfg
 install:
-- sudo apt-get update
-- sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-engine
-- sudo rm /usr/local/bin/docker-compose
-- curl -L "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" > docker-compose
-- chmod +x docker-compose
-- sudo mv docker-compose /usr/local/bin
-- sudo docker --version
-- sudo docker-compose --version
-before_script:
-- "./csu start"
-script:
-- "./csu dev test"
-- "./csu dev test_backwards"
-- "./csu dev test_coverage"
-- "./csu dev style"
-- "./csu dev docs"
-deploy:
-  provider: script
-  script: bash ./infrastructure/develop-deploy/develop-deploy.sh
-  skip_cleanup: true
-  on:
-    branch: develop
-after_script:
-- bash <(curl -s https://codecov.io/bash)
+  - sudo docker --version
+  - sudo docker-compose --version
+jobs:
+  include:
+    - stage: test
+      script: ./csu ci load_content
+    - script: ./csu ci test_general
+    - script: ./csu ci test_resources
+    - script: ./csu ci test_management
+    - script: ./csu ci test_backwards
+      if: type = pull_request
+    - script: ./csu ci style
+    - script: ./csu ci docs
+    - stage: develop deploy
+      script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/dev-deploy/deploy-app.sh
+          skip_cleanup: true
+          on:
+            branch: develop
+    - script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/dev-deploy/deploy-resources-1.sh
+          skip_cleanup: true
+          on:
+            branch: develop
+    - script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/dev-deploy/deploy-resources-2.sh
+          skip_cleanup: true
+          on:
+            branch: develop
+    - script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/dev-deploy/deploy-resources-3.sh
+          skip_cleanup: true
+          on:
+            branch: develop
+    - script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/dev-deploy/deploy-static-files.sh
+          skip_cleanup: true
+          on:
+            branch: develop
+    - script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/dev-deploy/update-database.sh
+          skip_cleanup: true
+          on:
+            branch: develop
+    - stage: production deploy
+      script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/prod-deploy/deploy-app.sh
+          skip_cleanup: true
+          on:
+            branch: master
+    - script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/prod-deploy/deploy-resources-1.sh
+          skip_cleanup: true
+          on:
+            branch: master
+    - script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/prod-deploy/deploy-resources-2.sh
+          skip_cleanup: true
+          on:
+            branch: master
+    - script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/prod-deploy/deploy-resources-3.sh
+          skip_cleanup: true
+          on:
+            branch: master
+    - script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/prod-deploy/deploy-static-files.sh
+          skip_cleanup: true
+          on:
+            branch: master
+    - script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/prod-deploy/update-database.sh
+          skip_cleanup: true
+          on:
+            branch: master
 notifications:
   email: false
   slack:
     rooms: deptfunstuff:abJKvzApk5SKtcEyAgtswXAv
     on_success: change
     on_failure: change
+stages:
+  - name: test
+  - name: develop deploy
+    if: branch = develop
+  - name: production deploy
+    if: branch = master

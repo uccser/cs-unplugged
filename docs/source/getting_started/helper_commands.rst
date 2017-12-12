@@ -29,6 +29,7 @@ Where ``[COMMAND]`` is a word from the list below:
 - :ref:`dev`
 - :ref:`end`
 - :ref:`help`
+- :ref:`restart`
 - :ref:`start`
 - :ref:`update`
 - :ref:`wipe`
@@ -239,12 +240,33 @@ More details for each command can be found on this page.
 
 -----------------------------------------------------------------------------
 
+.. _restart:
+
+``restart``
+==============================================================================
+
+Running ``./csu restart`` is a shortcut for running:
+
+- ``./csu end``
+- ``./csu start``
+
+More details for each command can be found on this page.
+
+-----------------------------------------------------------------------------
+
 .. _start:
 
 ``start``
 ==============================================================================
 
-Running ``./csu start`` starts the development environment.
+Running ``./csu start`` starts the development environment. It performs the
+following tasks:
+
+- Build system Docker images if required (see below)
+- Start the Django website system
+- Start the Nginx server to display the website and static files
+- Start the database server
+
 When you run this command for the first time on a computer it will also run
 ``./csu build`` to build the system Docker images.
 This can take some time, roughly 15 to 30 minutes, depending on your computer
@@ -253,19 +275,10 @@ Images are only required to be built once, unless the image specifications
 change (you can rebuild the images with ``./csu build``).
 Once the images are built, the script will run these images in containers.
 
-Once the development environment is operational, the script will perform the
-following tasks:
+Once the development environment is operational, run the ``./csu update``
+command to load the CS Unplugged content.
 
-- Start the Django website system
-- Start the Nginx server to display the website and static files
-- Start the database server
-- Update the database with the required structure (known as the schema)
-- Load the CS Unplugged content into the database
-- Create the required static files
 
-Once the script has performed all these tasks, the script will let you know
-the website is ready.
-Open your preferred web browser to the URL ``localhost`` to view the website.
 
 -----------------------------------------------------------------------------
 
@@ -274,7 +287,17 @@ Open your preferred web browser to the URL ``localhost`` to view the website.
 ``update``
 ==============================================================================
 
-Running ``./csu update`` runs the Django ``makemigratations`` and ``migrate``
+Running ``./csu update`` performs the following tasks:
+
+- Update the database with the required structure (known as the schema)
+- Load the CS Unplugged content into the database
+- Create the required static files
+
+Once the script has performed all these tasks, the script will let you know
+the website is ready.
+Open your preferred web browser to the URL ``localhost`` to view the website.
+
+In more detail, ``./csu update`` runs the Django ``makemigratations`` and ``migrate``
 commands for updating the database schema, and then runs the custom
 ``updatedata`` command to load the topics content into the database.
 It also runs the ``static`` command to generate static files.

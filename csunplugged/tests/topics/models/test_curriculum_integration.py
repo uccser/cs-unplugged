@@ -15,12 +15,12 @@ class CurriculumIntegrationModelTest(BaseTestWithDB):
         topic = self.test_data.create_topic(1)
         curriculum_area = self.test_data.create_curriculum_area(1)
         unit_plan = self.test_data.create_unit_plan(topic, 1)
+        age_group_1 = self.test_data.create_age_group(1, 99)
         prerequisite_lesson = self.test_data.create_lesson(
             topic,
             unit_plan,
             1,
-            1,
-            99
+            age_group_1
         )
         new_curriculum_integration = CurriculumIntegration.objects.create(
             topic=topic,

@@ -3,6 +3,10 @@
 {% load i18n %}
 {% load django_bootstrap_breadcrumbs %}
 
+{% block title %}
+  {% trans "Contact" %}
+{% endblock title %}
+
 {% block breadcrumbs %}
   {% breadcrumb "Home" "/" %}
   {% breadcrumb "About" "general:about" %}
@@ -15,15 +19,20 @@
 
 {% block left_column_content %}
   <p>
-    <strong>Email:</strong> CS Unplugged is directed by Tim Bell.
-    You can <a href="mailto:tim.bell@canterbury.ac.nz">email him here</a>.
+    {% blocktrans trimmed %}
+    <strong>Email:</strong> You can <a href="mailto:csse.education.research@gmail.com">email the CS Unplugged team here</a>.
+    {% endblocktrans %}
   </p>
 
   <p>
+    {% blocktrans trimmed %}
     <strong>Twitter:</strong> <a href="https://twitter.com/UCCSEd">@UCCSEd</a>
+    {% endblocktrans %}
   </p>
 
   <p>
+    {% blocktrans trimmed %}
     <strong>Community Google Group:</strong> We have a <a href="https://groups.google.com/forum/#!forum/cs-unplugged-sharing">Google Group</a> you can join and talk about CS Unplugged.
+    {% endblocktrans %}
   </p>
 {% endblock left_column_content %}

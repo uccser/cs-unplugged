@@ -1,17 +1,6 @@
 Welcome to CS Unplugged
 ##############################################################################
 
-.. warning::
-
-  .. image:: _static/img/under-construction.png
-    :align: left
-    :alt: A picture of a construction worker
-    :scale: 20%
-
-  This repository (including this documentation) is currently in development!
-  Therefore features may not be implemented yet, may change, be buggy, or
-  completely broken. ¯\\_(ツ)_/¯
-
 Welcome to the documentation for the CS Unplugged project.
 The documentation is split into the following sections:
 
@@ -69,3 +58,4 @@ following (or similar):
     developer/index
     other/index
     troubleshooting
+    changelog

@@ -4,6 +4,10 @@
 {% load static %}
 {% load django_bootstrap_breadcrumbs %}
 
+{% block title %}
+  {% trans "Curriculum Integrations" %}
+{% endblock title %}
+
 {% block breadcrumbs %}
   {% breadcrumb "Home" "/" %}
   {% breadcrumb "Topics" "topics:index" %}
@@ -13,7 +17,7 @@
 {% block page_heading %}
   <h1>{% trans "Curriculum Integrations" %}</h1>
   <p>
-    The following table lists curriculum integrations for all topics in the CS Unplugged content.
+    {% trans "The following table lists curriculum integrations for all topics in the CS Unplugged content." %}
   </p>
 {% endblock page_heading %}
 
@@ -21,15 +25,15 @@
   <table class="table table-responsive table-center-vertical">
     <thead class="thead-default">
       <tr>
-        <th>Topic</th>
-        <th>Activity</th>
-        <th>Curriculum Areas</th>
-        <th>Prerequisite Lessons?</th>
+        <th>{% trans "Topic" %}</th>
+        <th>{% trans "Activity" %}</th>
+        <th>{% trans "Curriculum Areas" %}</th>
+        <th>{% trans "Prerequisite Lessons?" %}</th>
       </tr>
     </thead>
     <tbody>
       {% for curriculum_integration in curriculum_integrations %}
-      <tr class="align-middle">
+      <tr class="align-middle{% if not curriculum_integration.translation_available %} table-active{% endif %}">
         <td>
           {{ curriculum_integration.topic.name }}
         </td>
@@ -37,6 +41,10 @@
           <a href="{% url 'topics:integration' curriculum_integration.topic.slug curriculum_integration.slug %}">
             <strong>
               {{ curriculum_integration.name }}
+              {% if not curriculum_integration.translation_available %}
+                <br>
+                {% include "topics/not-available-badge.html" %}
+              {% endif %}
             </strong>
           </a>
         </td>
@@ -47,10 +55,10 @@
         </td>
         {% if curriculum_integration.has_prerequisite_lessons %}
           <td class="text-center table-success-cell">
-            Yes
+            {% trans "Yes" %}
         {% else %}
           <td class="text-center">
-            No
+            {% trans "No" %}
         {% endif %}
           </td>
       </tr>

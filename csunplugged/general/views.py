@@ -34,6 +34,12 @@ class GeneralPrinciplesView(TemplateView):
     template_name = "general/principles.html"
 
 
+class ComputationalThinkingView(TemplateView):
+    """View for the Computational Thinking page that renders from a template."""
+
+    template_name = "general/computational-thinking.html"
+
+
 def health_check(request):
     """Return heath check response for Google App Engine.
 

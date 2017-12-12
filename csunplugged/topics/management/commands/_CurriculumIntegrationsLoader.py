@@ -1,30 +1,22 @@
 """Custom loader for loading curriculum integrations."""
 
-import os.path
-
-from utils.BaseLoader import BaseLoader
-
+from django.core.exceptions import ObjectDoesNotExist
+from utils.TranslatableModelLoader import TranslatableModelLoader
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
+from topics.models import CurriculumArea, UnitPlan, Lesson
 
-from topics.models import CurriculumArea, Lesson
 
-
-class CurriculumIntegrationsLoader(BaseLoader):
+class CurriculumIntegrationsLoader(TranslatableModelLoader):
     """Custom loader for loading curriculum integrations."""
 
-    def __init__(self, load_log, structure_file_path, topic, BASE_PATH):
+    def __init__(self, topic, **kwargs):
         """Create the loader for loading curriculum integrations.
 
         Args:
-            load_log: List of log messages (list).
-            structure_file_path: File path for structure YAML file (string).
-            topic: Object of related topic model.
-            BASE_PATH: Base file path (string).
+            topic: Object of related topic model (Topic).
         """
-        super().__init__(BASE_PATH, load_log)
-        self.structure_file_path = os.path.join(self.BASE_PATH, structure_file_path)
-        self.BASE_PATH = os.path.join(self.BASE_PATH, os.path.split(structure_file_path)[0])
+        super().__init__(**kwargs)
         self.topic = topic
 
     def load(self):
@@ -38,13 +30,20 @@ class CurriculumIntegrationsLoader(BaseLoader):
         structure = self.load_yaml_file(self.structure_file_path)
 
         for (integration_slug, integration_data) in structure.items():
-
             if integration_data is None:
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
                     ["number", "curriculum-areas"],
                     "Curriculum Integration"
                 )
+
+            integration_translations = self.get_blank_translation_dictionary()
+
+            content_filename = "{}.md".format(integration_slug)
+            content_translations = self.get_markdown_translations(content_filename)
+            for language, content in content_translations.items():
+                integration_translations[language]["content"] = content.html_string
+                integration_translations[language]["name"] = content.title
 
             integration_number = integration_data.get("number", None)
             integration_curriculum_areas = integration_data.get("curriculum-areas", None)
@@ -55,20 +54,12 @@ class CurriculumIntegrationsLoader(BaseLoader):
                     "Curriculum Integration"
                 )
 
-            integration_content = self.convert_md_file(
-                os.path.join(
-                    self.BASE_PATH,
-                    "{}.md".format(integration_slug)
-                ),
-                self.structure_file_path
-            )
-
             integration = self.topic.curriculum_integrations.create(
                 slug=integration_slug,
                 number=integration_number,
-                name=integration_content.title,
-                content=integration_content.html_string,
             )
+            self.populate_translations(integration, integration_translations)
+            self.mark_translation_availability(integration, required_fields=["name", "content"])
             integration.save()
 
             # Add curriculum areas
@@ -78,7 +69,7 @@ class CurriculumIntegrationsLoader(BaseLoader):
                         slug=curriculum_area_slug
                     )
                     integration.curriculum_areas.add(curriculum_area)
-                except:
+                except ObjectDoesNotExist:
                     raise KeyNotFoundError(
                         self.structure_file_path,
                         curriculum_area_slug,
@@ -96,22 +87,30 @@ class CurriculumIntegrationsLoader(BaseLoader):
                                 ["unit-plan"],
                                 "Prerequisite Lesson"
                             )
+                        try:
+                            UnitPlan.objects.get(
+                                topic__slug=self.topic.slug,
+                                slug=unit_plan_slug
+                            )
+                        except ObjectDoesNotExist:
+                            raise KeyNotFoundError(
+                                self.structure_file_path,
+                                unit_plan_slug,
+                                "Unit Plans"
+                            )
                         for lesson_slug in lessons:
                             try:
                                 lesson = Lesson.objects.get(
-                                    slug=lesson_slug,
+                                    topic__slug=self.topic.slug,
                                     unit_plan__slug=unit_plan_slug,
-                                    topic__slug=self.topic.slug
+                                    slug=lesson_slug,
                                 )
                                 integration.prerequisite_lessons.add(lesson)
-                            except:
+                            except ObjectDoesNotExist:
                                 raise KeyNotFoundError(
                                     self.structure_file_path,
-                                    "{} and/or {}".format(
-                                        lesson_slug,
-                                        unit_plan_slug,
-                                    ),
+                                    lesson_slug,
                                     "Lessons"
                                 )
 
-            self.log("Added Curriculum Integration: {}".format(integration.name), 1)
+            self.log("Added curriculum integration: {}".format(integration.name), 1)

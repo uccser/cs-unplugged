@@ -1,0 +1,13 @@
+lessons: lessons/lessons.yaml
+computational-thinking-links: sequential-and-binary-search-unit-plan-ct-links.md
+
+age-groups:
+  8-10:
+    how-many-guesses:
+      number: 1
+    divide-and-conquer:
+      number: 2
+    the-great-treasure-hunt-unsorted:
+      number: 3
+    the-great-treasure-hunt-sorted:
+      number: 4

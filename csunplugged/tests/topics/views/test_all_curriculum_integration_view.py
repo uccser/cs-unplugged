@@ -1,5 +1,5 @@
+from http import HTTPStatus
 from django.urls import reverse
-
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 
@@ -14,7 +14,7 @@ class AllCurriculumIntegrationViewTest(BaseTestWithDB):
     def test_all_curriculum_integration_view_with_no_integrations(self):
         url = reverse("topics:all_curriculum_integrations")
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertEqual(len(response.context["curriculum_integrations"]), 0)
 
     def test_all_curriculum_integration_view_with_one_integration(self):
@@ -23,7 +23,7 @@ class AllCurriculumIntegrationViewTest(BaseTestWithDB):
 
         url = reverse("topics:all_curriculum_integrations")
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertEqual(len(response.context["curriculum_integrations"]), 1)
         self.assertQuerysetEqual(
             response.context["curriculum_integrations"],
@@ -38,7 +38,7 @@ class AllCurriculumIntegrationViewTest(BaseTestWithDB):
 
         url = reverse("topics:all_curriculum_integrations")
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertEqual(len(response.context["curriculum_integrations"]), 3)
         self.assertQuerysetEqual(
             response.context["curriculum_integrations"],
@@ -61,7 +61,7 @@ class AllCurriculumIntegrationViewTest(BaseTestWithDB):
 
         url = reverse("topics:all_curriculum_integrations")
         response = self.client.get(url)
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertEqual(len(response.context["curriculum_integrations"]), 6)
         self.assertQuerysetEqual(
             response.context["curriculum_integrations"],

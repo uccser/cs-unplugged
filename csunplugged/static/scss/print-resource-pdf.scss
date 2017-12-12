@@ -1,10 +1,29 @@
-div.base-image-container {
-  text-align: center;
-  page-break-after: always;
+// Bootstrap 4
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap-overrides";
+@import "weasyprint_bootstrap/reboot";
+@import "bootstrap/type";
+@import "weasyprint_bootstrap/text";
+@import "weasyprint_bootstrap/tables";
+
+// General
+@page {
+  margin: 10mm 10mm;
 }
-img.base-image {
-  max-width: 100%;
-  margin: 8mm;
+footer {
+  bottom: 0;
+}
+header {
+  text-align: center;
+  width: 100%;
+  position: relative;;
+  height: 8mm;
+  margin-bottom: -8mm;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8em;
+  color: #888;
 }
 .fixed-running-element{
   text-align: center;
@@ -19,16 +38,20 @@ img.base-image {
     vertical-align: text-bottom;
   }
 }
-footer {
-  bottom: 0;
+div.page-break {
+  page-break-after: always;
 }
-header {
+
+// Image page
+div.resource-image-container {
   text-align: center;
-  width: 100%;
-  position: relative;;
-  height: 8mm;
-  margin-bottom: -8mm;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 0.8em;
-  color: #888;
+}
+img.resource-image {
+  max-width: 100%;
+  body.paper-a4 & {
+    max-height: 257mm !important;
+  }
+  body.paper-letter & {
+    max-height: 239mm !important;
+  }
 }

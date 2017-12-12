@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load static %}
+{% load render_html_field %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}
+  {{ programming_challenge.name }}
+{% endblock title %}
+
+{% block breadcrumbs %}
+  {% breadcrumb "Home" "/" %}
+  {% breadcrumb "Topics" "topics:index" %}
+  {% breadcrumb topic.name "topics:topic" topic.slug %}
+  {% breadcrumb programming_challenge.name "topics:programming_challenge" topic.slug programming_challenge.slug %}
+{% endblock breadcrumbs %}
+
+{% block page_heading %}
+  <h1>
+    {{ programming_challenge.name }}
+  </h1>
+  {% if not programming_challenge.translation_available %}
+    {% trans "programming challenge" as programming_challenge_l10n %}
+    {% url "topics:topic" topic.slug as parent_url %}
+    {% trans "topic" as topic_l10n %}
+    {% with model=programming_challenge model_type=programming_challenge_l10n parent=topic parent_type=topic_l10n parent_url=parent_url %}
+      {% include 'topics/not-available-warning.html' %}
+    {% endwith %}
+  {% else %}
+    <p class="w-100 text-white rounded p-2 mt-3 difficulty-level-{{ programming_challenge.difficulty.level }}">
+      <strong>{% trans "Challenge Level:" %}</strong> {{ programming_challenge.difficulty.name }}
+    </p>
+  {% endif %}
+{% endblock page_heading %}
+
+{% block content_container %}
+{% if programming_challenge.translation_available %}
+  <div class="col-12 col-md-6">
+    {% if lessons %}
+      <div class="alert alert-info" role="alert">
+        <p>{% trans "This programming challenge is linked to the following lessons:" %}</p>
+
+        <ul class="mb-0">
+          {% for lesson in lessons %}
+            <li>
+              <a href="{% url 'topics:lesson' topic.slug lesson.unit_plan.slug lesson.slug %}">
+                {% blocktrans with set_num=lesson.challenge_set_number chal_num=lesson.challenge_number name=lesson.name trimmed %}
+                Challenge {{ set_num }}.{{ chal_num }} for {{ name }}
+                {% endblocktrans %}
+                (
+                  {% for age_group in lesson.age_group.all %}
+                    {% blocktrans with lower=age_group.ages.lower upper=age_group.ages.upper trimmed %}
+                      {{ lower }} to {{ upper }}
+                    {% endblocktrans %}
+                    {% if not forloop.last %}
+                      {% trans "and" %}
+                    {% endif %}
+                  {% endfor %}
+                )
+              </a>
+              {% if not lesson.translation_available %}
+                {% include 'topics/not-available-badge.html' %}
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+    <h2>{% trans "Learning outcomes" %}</h2>
+    {% if learning_outcomes %}
+      <ul>
+      {% for learning_outcome in learning_outcomes %}
+        <li>
+          {{ learning_outcome.text }}<br>
+          {% for area in learning_outcome.curriculum_areas.all %}
+            {% include "topics/curriculum-area-badge.html" %}
+          {% endfor %}
+        </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+      <p>{% blocktrans trimmed %}No learning outcomes listed for {{ programming_challenge.name }}.{% endblocktrans %}</p>
+    {% endif %}
+
+    {% render_html_field programming_challenge.content %}
+  </div>
+  <div class="col-12 col-md-6">
+    <h2 class="mt-0">{% trans "Languages" %}</h2>
+
+    {% for implementation in implementations %}
+      <details>
+        <summary>
+          <img src="{% get_static_prefix %}{{ implementation.language.icon }}" class="inline-image mr-2" />
+          <strong>
+            {{ implementation.language.name }}
+          </strong>
+          {% if not implementation.translation_available %}
+            {% include 'topics/not-available-badge.html' %}
+          {% endif %}
+        </summary>
+
+
+        <div class="boxed-text-content">
+          {% if not implementation.translation_available %}
+            {% with model=implementation %}
+              {% include 'topics/not-available-warning.html' %}
+            {% endwith %}
+          {% else %}
+            <h4>{% trans "What it should look like" %}</h4>
+            {% render_html_field implementation.expected_result %}
+
+            {% if implementation.hints %}
+              <details>
+                <summary>
+                  <strong>
+                    {% trans "Hints" %}
+                  </strong>
+                </summary>
+
+                <div class="boxed-text-content">
+                  {% render_html_field implementation.hints %}
+                </div>
+              </details>
+            {% endif %}
+
+          <p class="text-center">
+            <a href="{% url 'topics:programming_challenge_solution' topic.slug programming_challenge.slug implementation.language.slug %}">
+              {% blocktrans trimmed %}
+                Show {{ implementation.language.name }} solution
+              {% endblocktrans %}
+            </a>
+          </p>
+          {% endif %}
+        </div>
+      </details>
+    {% endfor %}
+  </div>
+  {% endif %}
+{% endblock content_container %}
+
+{% block end_content %}
+  {% if programming_challenge.translation_available %}
+    {% if programming_challenge.extra_challenge %}
+      <h2>{% trans "Extra Challenge" %}</h2>
+      {% render_html_field programming_challenge.extra_challenge %}
+    {% endif %}
+  {% endif %}
+{% endblock end_content %}

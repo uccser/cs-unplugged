@@ -4,6 +4,10 @@
 {% load static %}
 {% load django_bootstrap_breadcrumbs %}
 
+{% block title %}
+  {% trans "Topics" %}
+{% endblock title %}
+
 {% block breadcrumbs %}
   {% breadcrumb "Home" "/" %}
   {% breadcrumb "Topics" "topics:index" %}
@@ -14,17 +18,51 @@
 {% endblock page_heading %}
 
 {% block content %}
-  {% if all_topics %}
-    <p>Open a topic to see all related unit plans, lessons, curriculum integrations, and programming challenges.</p>
-    <div class="link-box-container">
-      {% for topic in all_topics %}
-        <a class="link-box" href="{% url 'topics:topic' topic.slug %}">
-          <img class="img-fluid" src="{% if topic.icon %}{% static topic.icon %}{% else %}http://placehold.it/238x200{% endif %}">
-          <h3 class="link-box-title">{{ topic.name }}</h3>
-        </a>
+  {% if topics %}
+    <p>{% trans "Open a topic to see all related unit plans, lessons, curriculum integrations, and programming challenges." %}</p>
+
+    <div class="row justify-content-between">
+      {% for topic in topics %}
+        <div class="col-12 col-md-8 col-lg-6 mb-4">
+          <a class="link-item no-text-decoration d-block h-100{% if not topic.translation_available %} unavailable{% endif %}" href="{% url 'topics:topic' topic.slug %}">
+            <div class="row align-items-center h-100">
+              <div class="col-12 text-center text-md-{{LANGUAGE_START}}">
+                <h2>{{ topic.name }}</h2>
+                {% if not topic.translation_available %}
+                  {% include "topics/not-available-badge.html" %}
+                {% endif %}
+              </div>
+              <div class="col-12 col-md-7 text-center text-md-{{LANGUAGE_START}}">
+                <ul class="list-unstyled list-unstyled-i18n text-muted mb-0">
+                  {% if topic.lessons.exists %}
+                    <li>
+                      <strong>
+                        {% blocktrans trimmed with min_age=topic.min_age max_age=topic.max_age%}
+                          Ages {{ min_age }} to {{ max_age }}
+                        {% endblocktrans %}
+                      </strong>
+                    </li>
+                    <li>
+                      {{ topic.lessons.count }} {% trans "lessons" %}
+                    </li>
+                  {% endif %}
+                  {% if topic.curriculum_integrations.exists %}
+                    <li>{{ topic.curriculum_integrations.count }} {% trans "curriculum integrations" %}</li>
+                  {% endif %}
+                  {% if topic.programming_challenges.exists %}
+                    <li>{{ topic.programming_challenges.count }} {% trans "programming challenges" %}</li>
+                  {% endif %}
+                </ul>
+              </div>
+              <div class="d-none col-md-5 d-md-flex justify-content-end align-items-end">
+                <img class="img-fluid" src="{% static topic.icon %}">
+              </div>
+            </div>
+          </a>
+        </div>
       {% endfor %}
     </div>
   {% else %}
-    <p>No topics are available.</p>
+    <p>{% trans "No topics are available." %}</p>
   {% endif %}
 {% endblock content %}

@@ -3,6 +3,7 @@
 import os
 import os.path
 from django.contrib.staticfiles import finders
+from django.conf import settings
 from utils.errors.CouldNotFindImageError import CouldNotFindImageError
 
 
@@ -23,9 +24,10 @@ def render_scratch_images(scratch_images):
         scratch_images: List of named tuples containing
             scratch image data to be rendered (list).
     """
-    FILEPATH_TEMPLATE = "temp/scratch-blocks-{hash}.txt"
-    if scratch_images and not os.path.exists("temp"):
-        os.makedirs("temp")
+    base_directory = settings.SCRATCH_GENERATION_LOCATION
+    FILEPATH_TEMPLATE = os.path.join(base_directory, "scratch-blocks-{hash}.txt")
+    if scratch_images and not os.path.exists(base_directory):
+        os.makedirs(base_directory)
     for scratch_image in scratch_images:
         filepath = FILEPATH_TEMPLATE.format(hash=scratch_image.hash)
         if not os.path.isfile(filepath):
@@ -38,7 +40,7 @@ def find_image_files(images, md_file_path):
 
     Args:
         images: image file names (set).
-        md_file_path: path to Markdown file (string).
+        md_file_path: path to Markdown file (str).
 
     Raises:
         CouldNotFindImageError: when image file cannot be found.

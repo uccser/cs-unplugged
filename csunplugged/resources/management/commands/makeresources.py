@@ -1,13 +1,16 @@
-"""Module for the custom Django makestaticresources command."""
+"""Module for the custom Django makeresources command."""
 
 import os
 import os.path
-import importlib
-import itertools
+from urllib.parse import urlencode
+from tqdm import tqdm
 from django.core.management.base import BaseCommand
-from django.http.request import HttpRequest
+from django.http.request import QueryDict
+from django.conf import settings
 from resources.models import Resource
-from resources.views.generate_resource_pdf import generate_resource_pdf
+from resources.utils.get_resource_generator import get_resource_generator
+from resources.utils.resource_valid_configurations import resource_valid_configurations
+from resources.utils.resource_parameters import EnumResourceParameter
 
 
 class Command(BaseCommand):
@@ -15,32 +18,47 @@ class Command(BaseCommand):
 
     help = "Creates static PDF files of resource combinations."
 
-    def handle(self, *args, **options):
-        """Automatically called when the makestaticresources command is given."""
-        BASE_PATH = "staticfiles/resources/"
-        if not os.path.exists(BASE_PATH):
-            os.makedirs(BASE_PATH)
+    def add_arguments(self, parser):
+        """Add optional parameter to makeresources command."""
+        parser.add_argument(
+            "resource_name",
+            nargs="?",
+            default=None,
+            help="The resource name to generate",
+        )
 
-        for resource in Resource.objects.all():
-            # Get path to resource module
-            resource_view = resource.generation_view
-            if resource_view.endswith(".py"):
-                resource_view = resource_view[:-3]
-            module_path = "resources.views.{}".format(resource_view)
-            # Save resource module
-            resource_module = importlib.import_module(module_path)
-            parameter_options = resource_module.valid_options()
-            parameter_option_keys = sorted(parameter_options)
-            combinations = [dict(zip(parameter_option_keys, product)) for product in itertools.product(*(parameter_options[parameter_option_key] for parameter_option_key in parameter_option_keys))]  # noqa: E501
+    def handle(self, *args, **options):
+        """Automatically called when the makeresources command is given."""
+        base_path = settings.RESOURCE_GENERATION_LOCATION
+        if not os.path.exists(base_path):
+            os.makedirs(base_path)
+
+        if options["resource_name"]:
+            resources = [Resource.objects.get(name=options["resource_name"])]
+        else:
+            resources = Resource.objects.order_by("name")
+
+        for resource in resources:
+            print("Creating {}".format(resource.name))
+
+            # TODO: Import repeated in next for loop, check alternatives
+            empty_generator = get_resource_generator(resource.generator_module)
+            if not all([isinstance(option, EnumResourceParameter)
+                        for option in empty_generator.get_options().values()]):
+                raise TypeError("Only EnumResourceParameters are supported for pre-generation")
+            valid_options = {option.name: list(option.valid_values.keys())
+                             for option in empty_generator.get_options().values()}
+            combinations = resource_valid_configurations(valid_options)
+            progress_bar = tqdm(combinations, ascii=True)
             # Create PDF for all possible combinations
-            for combination in combinations:
-                request = HttpRequest()
+            for combination in progress_bar:
                 if resource.copies:
-                    combination["copies"] = 30
-                request.GET = combination
-                (pdf_file, filename) = generate_resource_pdf(request, resource, module_path)
+                    combination["copies"] = settings.RESOURCE_COPY_AMOUNT
+                requested_options = QueryDict(urlencode(combination, doseq=True))
+                generator = get_resource_generator(resource.generator_module, requested_options)
+                (pdf_file, filename) = generator.pdf(resource.name)
+
                 filename = "{}.pdf".format(filename)
-                pdf_file_output = open(os.path.join(BASE_PATH, filename), "wb")
+                pdf_file_output = open(os.path.join(base_path, filename), "wb")
                 pdf_file_output.write(pdf_file)
                 pdf_file_output.close()
-                print("Created {}".format(filename))

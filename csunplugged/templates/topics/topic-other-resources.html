@@ -1,7 +1,15 @@
 {% extends "columns.html" %}
 
+{% load i18n %}
+
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
+
+{% block title %}
+  {% blocktrans trimmed %}
+    {{ topic.name }} other resources
+  {% endblocktrans %}
+{% endblock title %}
 
 {% block breadcrumbs %}
   {% breadcrumb "Home" "/" %}
@@ -15,7 +23,19 @@
 {% endblock page_heading %}
 
 {% block left_column_content %}
-  <h2>Other Resources</h2>
+  <h2>{% trans "Other resources" %}</h2>
+  {% if topic.other_resources %}
+    {% render_html_field topic.other_resources %}
+  {% else %}
+  <div class="alert alert-danger" role="alert">
+    <p>{% trans "Sorry! We couldn't find any information on other resources for this topic." %}</p>
+    <p>
+      <a class="btn btn-outline-danger" role="button" href="{% url "topics:topic" topic.slug %}">
+        {% trans "Return to the topic" %}
+      </a>
+    </p>
+  </div>
+  {% endif %}
 
-  {% render_html_field topic.other_resources %}
+
 {% endblock left_column_content %}

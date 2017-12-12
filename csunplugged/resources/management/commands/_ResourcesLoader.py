@@ -1,26 +1,17 @@
 """Custom loader for loading resources."""
 
 from django.db import transaction
-
-from utils.BaseLoader import BaseLoader
-
+from django.http.request import QueryDict
+from utils.TranslatableModelLoader import TranslatableModelLoader
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
-
+from utils.errors.InvalidYAMLValueError import InvalidYAMLValueError
+from resources.utils.get_resource_generator import get_resource_generator
 from resources.models import Resource
+from django.contrib.staticfiles import finders
 
 
-class ResourcesLoader(BaseLoader):
+class ResourcesLoader(TranslatableModelLoader):
     """Custom loader for loading resources."""
-
-    def __init__(self, structure_file, BASE_PATH):
-        """Create the loader for loading resources.
-
-        Args:
-            structure_file: file path for structure YAML file (string)
-            BASE_PATH: base file path (string)
-        """
-        super().__init__(BASE_PATH)
-        self.structure_file = structure_file
 
     @transaction.atomic
     def load(self):
@@ -30,32 +21,59 @@ class ResourcesLoader(BaseLoader):
             MissingRequiredFieldError: when no object can be found with the matching
                 attribute.
         """
-        resources_structure = self.load_yaml_file(
-            self.BASE_PATH.format(
-                self.structure_file
-            )
-        )
+        resources_structure = self.load_yaml_file(self.structure_file_path)
 
         for (resource_slug, resource_structure) in resources_structure.items():
             try:
-                resource_name = resource_structure["name"]
-                resource_template = resource_structure["webpage-template"]
-                resource_view = resource_structure["generation-view"]
+                generator_module = resource_structure["generator-module"]
                 resource_thumbnail = resource_structure["thumbnail-static-path"]
                 resource_copies = resource_structure["copies"]
-            except:
-                raise MissingRequiredFieldError()
+            except KeyError:
+                raise MissingRequiredFieldError(
+                    self.structure_file_path,
+                    [
+                        "generator-module",
+                        "thumbnail-static-path",
+                        "copies"
+                    ],
+                    "Resource"
+                )
+            resource_translations = self.get_blank_translation_dictionary()
+            content_filename = "{}.md".format(resource_slug)
+            content_translations = self.get_markdown_translations(content_filename)
+            for language, content in content_translations.items():
+                resource_translations[language]["content"] = content.html_string
+                resource_translations[language]["name"] = content.title
+
+            # Remove .py extension if given
+            if generator_module.endswith(".py"):
+                generator_module = generator_module[:-3]
+
+            # Check module can be imported
+            get_resource_generator(generator_module, QueryDict())
+
+            # Check thumbnail exists
+            if not finders.find(resource_thumbnail):
+                error_text = "Thumbnail image {} for resource {} could not be found."
+                raise FileNotFoundError(error_text.format(resource_thumbnail, resource_slug))
+
+            # Check copies value is boolean
+            if not isinstance(resource_copies, bool):
+                raise InvalidYAMLValueError(
+                    self.structure_file_path,
+                    "copies",
+                    "'true' or 'false'"
+                )
 
             resource = Resource(
                 slug=resource_slug,
-                name=resource_name,
-                webpage_template=resource_template,
-                generation_view=resource_view,
+                generator_module=generator_module,
                 thumbnail_static_path=resource_thumbnail,
                 copies=resource_copies,
             )
+            self.populate_translations(resource, resource_translations)
+            self.mark_translation_availability(resource, required_fields=["name", "content"])
             resource.save()
 
             self.log("Added Resource: {}".format(resource.name))
-
-        self.print_load_log()
+        self.log("All resources loaded!\n")

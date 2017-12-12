@@ -1,39 +1,49 @@
-{% for age_range, lessons in grouped_lessons.items %}
+{% load i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+
+{% for age_group, lessons in grouped_lessons.items %}
   <table class="table table-responsive table-center-vertical">
     <thead class="thead-default">
       <tr>
-        <th class="text-center">Ages</th>
-        <th class="text-center">Number</th>
-        <th>Lesson</th>
-        <th class="text-center">Programming Challenges</th>
+        <th colspan="2">
+          {% blocktrans with lower=age_group.ages.lower upper=age_group.ages.upper trimmed %}
+          Ages {{ lower }} to {{ upper }}
+          {% endblocktrans %}
+          </th>
+        <th class="text-center">{% trans "Programming challenges" %}</th>
       </tr>
     </thead>
     <tbody>
-      {% for lesson in lessons %}
+      {% if age_group.description %}
         <tr class="align-middle">
-          {% if forloop.first %}
-            <td rowspan="{{ lessons|length }}" class="text-center px-0">
-              <span class="table-text-emphasis">{{ age_range.0 }}</span><br>
-              to<br>
-              <span class="table-text-emphasis">{{ age_range.1 }}</span>
-            </td>
-          {% endif %}
-          <td class="text-center">
+          <td colspan="3" class="small">
+            {{ age_group.description }}
+          </td>
+        </tr>
+      {% endif %}
+      {% for lesson in lessons %}
+        <tr class="align-middle{% if not lesson.translation_available %} table-active unavailable{% endif %}">
+          <td class="text-center" style="width:10%">
             {{ lesson.number }}
           </td>
-          <td>
+          <td style="width:60%">
             <a href="{% url 'topics:lesson' topic.slug unit_plan.slug lesson.slug %}">
               <strong>{{ lesson.name }}</strong>
+              {% if not lesson.translation_available %}
+                <br>
+                {% include "topics/not-available-badge.html" %}
+              {% endif %}
             </a>
           </td>
-          {% if lesson.has_programming_exercises %}
-            <td class="text-center table-success-cell">
-              <a href="{% url 'topics:programming_exercises_list' topic.slug unit_plan.slug lesson.slug %}">
-                Yes
+          {% if lesson.has_programming_challenges %}
+            <td class="text-center table-success-cell" style="width:20%">
+              <a href="{% url 'topics:programming_challenges_list' topic.slug unit_plan.slug lesson.slug %}">
+                {% trans "Yes" %}
               </a>
           {% else %}
-            <td class="text-center">
-              No
+            <td class="text-center" style="width:20%">
+              {% trans "No" %}
           {% endif %}
             </td>
         </tr>
