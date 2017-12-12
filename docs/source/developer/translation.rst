@@ -53,7 +53,7 @@ The first two types of file are stored inside the directory tree for a given lan
   These files can be parsed and loaded using a `utility function <UtilityFunctions_>`_ on the ``TranslatableModelLoader`` base class.
 
 For the latter two type of files, Django's built-in `translation support <https://docs.djangoproject.com/en/2.0/topics/i18n/>`_ is utilised to handle translatable strings.
-In python code, text is wrapped in a ``ugettext`` function call (usually aliased to ``_``).
+In Python code, text is wrapped in a ``ugettext`` function call (usually aliased to ``_``).
 In HTML templates, text is wrapped in ``{% trans %}``/``{% blocktrans trimmed %}`` tags.
 
 
