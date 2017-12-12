@@ -12,7 +12,7 @@ Getting Started
 It's really easy to start contributing translations using CS Unplugged
 
 1. Read this documentation page, especially the `Translation Notes`_ section.
-2. Create an account on `Crowdin <https://crowdin.com/join>`_.
+2. Create an account on `Crowdin <https://crowdin.com/join>`__.
 3. Read the Crowdin `documentation <https://support.crowdin.com/crowdin-intro/>`_ for translators.
 4. Visit the CS Unplugged `development site <http://cs-unplugged-dev.appspot.com/>`_.
 5. Switch to translation mode using the language drop down.
@@ -21,7 +21,7 @@ It's really easy to start contributing translations using CS Unplugged
 
 Crowdin Overview
 ==============================================================================
-We use a localisation management platform called `Crowdin <https://crowdin.com/project/cs-unplugged>`_ for translation of CS Unplugged.
+We use a localisation management platform called `Crowdin <https://crowdin.com/project/cs-unplugged>`__ for translation of CS Unplugged.
 Our project is public, meaning that anyone can create an account and contribute translations.
 
 Crowdin has excellent documentation for translators, and all translators should read the following documents:
