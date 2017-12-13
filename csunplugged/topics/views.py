@@ -18,6 +18,7 @@ from .models import (
     ProgrammingChallengeImplementation,
     ResourceDescription,
     GlossaryTerm,
+    AgeGroup,
 )
 
 
@@ -25,7 +26,7 @@ class IndexView(generic.ListView):
     """View for the topics application homepage."""
 
     template_name = "topics/index.html"
-    context_object_name = "all_topics"
+    context_object_name = "topics"
 
     def get_queryset(self):
         """Get queryset of all topics.
@@ -33,7 +34,28 @@ class IndexView(generic.ListView):
         Returns:
             Queryset of Topic objects ordered by name.
         """
-        return Topic.objects.order_by("name").prefetch_related("unit_plans")
+        return Topic.objects.order_by("name").prefetch_related(
+            "unit_plans",
+            "lessons",
+            "curriculum_integrations",
+            "programming_challenges",
+        )
+
+    def get_context_data(self, **kwargs):
+        """Provide the context data for the index view.
+
+        Returns:
+            Dictionary of context data.
+        """
+        # Call the base implementation first to get a context
+        context = super(IndexView, self).get_context_data(**kwargs)
+        age_groups = AgeGroup.objects.distinct()
+        # Add in a QuerySet of all the connected unit plans
+        for topic in self.object_list:
+            topic_age_groups = list(age_groups.filter(lessons__id__in=topic.lessons.all()))
+            topic.min_age = topic_age_groups[0].ages.lower
+            topic.max_age = topic_age_groups[-1].ages.upper
+        return context
 
 
 class TopicView(generic.DetailView):

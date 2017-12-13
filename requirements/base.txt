@@ -17,7 +17,7 @@ python-markdown-math==0.3
 PyYAML==3.12
 
 # System tools
-tqdm==4.19.4
+tqdm==4.19.5
 
 # Translations
 django-modeltranslation==0.12.1
@@ -29,3 +29,4 @@ lxml==4.1.1
 uniseg==0.7.1
 python-bidi==0.4.0
 arabic-reshaper==2.0.14
+django-bidi-utils==1.0

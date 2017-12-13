@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ./infrastructure/prod-deploy/load-prod-deploy-config-envs.sh
+
 # Deploys the application to Google App Engine
 
 # Install Google Cloud SDK
@@ -23,6 +25,10 @@ source ./load-prod-deploy-envs.sh
 
 # Create app-prod.yaml file using environment variables.
 python ./infrastructure/replace_envs.py ./infrastructure/prod-deploy/app-prod.yaml
+
+# Symlinks aren't added into a docker image, so replace symlink with actual directory
+rm -rf csunplugged/locale/yy_RL
+cp -r csunplugged/locale/xx_LR csunplugged/locale/yy_RL
 
 # Publish Django system to Google App Engine.
 #

@@ -108,7 +108,7 @@ class ProgrammingChallengesStructureLoaderTest(BaseTestWithDB):
         with translation.override("de"):
             self.assertEqual("German language 1", translated_lang.name)
 
-        translated_difficulty = ProgrammingChallengeDifficulty.objects.get(level=1)
+        translated_difficulty = ProgrammingChallengeDifficulty.objects.get(level=0)
         self.assertSetEqual(set(["en", "de"]), set(translated_difficulty.languages))
         self.assertEqual("English difficulty 1", translated_difficulty.name)
         with translation.override("de"):
@@ -127,7 +127,7 @@ class ProgrammingChallengesStructureLoaderTest(BaseTestWithDB):
         with translation.override("de"):
             self.assertEqual("English language 2", untranslated_lang.name)
 
-        untranslated_difficulty = ProgrammingChallengeDifficulty.objects.get(level=2)
+        untranslated_difficulty = ProgrammingChallengeDifficulty.objects.get(level=1)
         self.assertSetEqual(set(["en"]), set(untranslated_difficulty.languages))
         self.assertEqual("English difficulty 2", untranslated_difficulty.name)
         # Check name does not fall back to english for missing translation
