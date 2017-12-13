@@ -87,7 +87,7 @@ class RenderHTMLFieldTest(BaseTestWithDB):
         )
         context = {"integration": curriculum_integration_with_static}
         self.assertRaises(
-            template.TemplateSyntaxError,
+            TypeError,
             self.render_template,
             "{% load render_html_field %}\n{% render_html_field integration.topic %}",
             context

@@ -30,8 +30,9 @@
 {% block content %}
   {% if unit_plan.translation_available %}
     <h2 class="heading-underline">{% trans "What's it all about?" %}</h2>
-    {% render_html_field unit_plan.content at content_html %}
-    {{ content_html|truncatewords_html:2 }}
+    {% render_html_field unit_plan.content as content_html %}
+    {{ content_html|truncatewords_html:150 }}
+    <a href="{% url 'topics:unit_plan_description' topic.slug unit_plan.slug %}">Read the full unit plan description</a>
 
     {% if grouped_lessons %}
       <h2 class="heading-underline" id="lessons">{% trans "Lessons" %}</h2>
