@@ -117,15 +117,29 @@ class TextBoxDrawer(object):
         Raises:
             TextBoxNotFoundInSVG: No textbox could be found with the given id
         """
+        # Replace underscores with hex code (mimic AI export behavior)
+        box_id = box_id.replace('_', '_x5F_')
+        # If starts with digit, replace with hex code (mimic AI export behavior)
+        if box_id[0].isdigit():
+            box_id = "_x{}_{}".format(hex(ord(box_id[0]))[2:], box_id[1:])
         text_layer = self.svg.find("{http://www.w3.org/2000/svg}g[@id=\"TEXT\"]")
-
+        namespaces = {
+            "x": "http://www.w3.org/2000/svg",
+            "re": "http://exslt.org/regular-expressions"
+        }
         try:
-            text_elem = text_layer.find("{{http://www.w3.org/2000/svg}}text[@id=\"{}\"]".format(box_id))
+            text_elem = text_layer.xpath(
+                "x:text[re:test(@id, '{}(_[0-9]_)?')]".format(box_id),
+                namespaces=namespaces
+            )[0]
             box_elem = text_elem.getprevious()
             assert box_elem is not None
         except Exception:
             try:
-                box_elem = text_layer.find("{{http://www.w3.org/2000/svg}}rect[@id=\"{}\"]".format(box_id))
+                box_elem = text_layer.xpath(
+                    "x:rect[re:test(@id, '{}(_[0-9]_)?')]".format(box_id),
+                    namespaces=namespaces
+                )[0]
                 text_elem = box_elem.getnext()
                 assert text_elem is not None
             except Exception:
