@@ -56,4 +56,4 @@ def render_html_with_static(html, context=dict()):
 
 
 register = template.Library()
-render_html_field = register.tag(render_html_field)
+register.tag(render_html_field)
