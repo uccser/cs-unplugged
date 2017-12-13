@@ -36,7 +36,7 @@
       {% for unit_plan in unit_plans %}
         <div class="col-12 col-md-8 col-lg-6 mb-4">
           <a class="link-item no-text-decoration d-block h-100{% if not unit_plan.translation_available %} unavailable{% endif %}" href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">
-            <h2>{{ unit_plan.name }}</h2>
+            <h3>{{ unit_plan.name }}</h3>
             {% if not unit_plan.translation_available %}
               {% include "topics/not-available-badge.html" %}
             {% endif %}
