@@ -110,6 +110,38 @@ class UnitPlanView(generic.DetailView):
         return context
 
 
+class UnitPlanDescriptionView(generic.DetailView):
+    """View for a specific unit plan."""
+
+    model = UnitPlan
+    template_name = "topics/unit-plan-description.html"
+    context_object_name = "unit_plan"
+
+    def get_object(self, **kwargs):
+        """Retrieve object for the unit plan view.
+
+        Returns:
+            UnitPlan object, or raises 404 error if not found.
+        """
+        return get_object_or_404(
+            self.model.objects.select_related(),
+            topic__slug=self.kwargs.get("topic_slug", None),
+            slug=self.kwargs.get("unit_plan_slug", None)
+        )
+
+    def get_context_data(self, **kwargs):
+        """Provide the context data for the unit plan view.
+
+        Returns:
+            Dictionary of context data.
+        """
+        # Call the base implementation first to get a context
+        context = super(UnitPlanDescriptionView, self).get_context_data(**kwargs)
+        # Loading object under consistent context names for breadcrumbs
+        context["topic"] = self.object.topic
+        return context
+
+
 class LessonView(generic.DetailView):
     """View for a specific lesson."""
 

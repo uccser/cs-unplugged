@@ -1,13 +1,5 @@
 # Binary numbers
 
-## See Teaching the Binary Number System in Action!
-
-Binary (Computer Science Unplugged Part 1) - these are place-holder videos, new videos are planned to be developed to represent each lesson plan.
-
-{video url="https://www.youtube.com/embed/Wy6-FXtLMV8"}
-
-## What’s It All About?
-
 Computers today use digits to represent information - that's why they're called digital systems.
 The simplest and most common way to represent digits is the binary number system, with just two digits (usually written as 0 and 1).
 It is called binary because there are only two different digits used, or two states.
@@ -16,6 +8,12 @@ A bit is usually stored in a memory cell inside a computer, which is an electron
 
 There are billions of these bits on a typical computer, and they are used to store text, numbers, images, video, and anything else that we need to store or transmit. On computer networks the bits are communicated by light, voltages or sound.
 Anything that can have two different values can represent a bit!
+
+{panel type="video" title="See teaching the Binary Number system in action!"}
+
+{video url="https://www.youtube.com/embed/Wy6-FXtLMV8"}
+
+{panel end}
 
 ## Digital Technologies | Data Representation
 
