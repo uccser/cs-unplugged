@@ -18,7 +18,7 @@
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-    <h1 id="{{ lesson.slug }}" class="heading-underline">{{ lesson.name }}</h1>
+    <h1 id="{{ lesson.slug }}">{{ lesson.name }}</h1>
     {% if not lesson.translation_available %}
       {% url "topics:unit_plan" topic.slug unit_plan.slug as parent_url %}
       {% trans "unit plan" as unit_plan_l10n %}
@@ -43,7 +43,7 @@
 {% block left_column_content %}
   {% if lesson.translation_available %}
     {% if learning_outcomes %}
-    <h2 class="heading-underline">{% trans "Learning outcomes" %}</h2>
+    <h2>{% trans "Learning outcomes" %}</h2>
       <p>{% trans "Students will be able to:" %}</p>
       <ul>
         {% for learning_outcome in learning_outcomes %}
@@ -68,7 +68,7 @@
 {% block right_column_content %}
   {% if lesson.translation_available %}
     {% if generated_resources %}
-    <h2 class="heading-underline">{% trans "CS Unplugged resources" %}</h2>
+    <h2>{% trans "CS Unplugged resources" %}</h2>
       <div class="link-box-container">
         {% for generated_resource in generated_resources %}
           <a href="{% url 'resources:resource' generated_resource.slug %}" class="link-box">
@@ -83,7 +83,7 @@
     {% endif %}
 
     {% if classroom_resources %}
-    <h2 class="heading-underline mt-2">{% trans "Classroom resources" %}</h2>
+    <h2 class="mt-2">{% trans "Classroom resources" %}</h2>
       <ul>
         {% for classroom_resource in classroom_resources.all %}
           <li>{{ classroom_resource.description }}</li>
@@ -92,7 +92,7 @@
     {% endif %}
 
     {% if programming_challenges %}
-    <h2 class="heading-underline mt-2">{% trans "Programming challenges" %}</h2>
+    <h2 class="mt-2">{% trans "Programming challenges" %}</h2>
       <p>
         <a href="{% url 'topics:programming_challenges_list' topic.slug unit_plan.slug lesson.slug %}">
           {% trans "View related programming challenges" %}
@@ -101,7 +101,7 @@
     {% endif %}
 
     <div id="sticky-sidebar" class="sticky">
-      <h2 class="heading-underline mt-2">{% trans "Table of contents" %}</h2>
+      <h2 class="mt-2">{% trans "Table of contents" %}</h2>
       <ul class="nav nav-pills flex-column" id="scrollspy-table-of-contents">
         <li class="nav-item">
           <a class="nav-link" href="#{{ lesson.slug }}">{{ lesson.name }}</a>
