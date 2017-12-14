@@ -1,10 +1,10 @@
 # Kidbots
 
-## See teaching the Kidbots unit in action!
+{panel type="video" title="See teaching this in action!"}
 
 A version of this can curently be seen at 1:09:56 [here](https://educationonair.withgoogle.com/live/2016-dec/watch/keynote-au/keynote-7).
 
-## What’s it all about?
+{panel end}
 
 {image file-path="img/topics/teamwork.png" alt="Cartoon kids working together"}
 
@@ -18,6 +18,8 @@ They are **testers**.
 In a small project usually the testing is done by the person who wrote the program, but for larger applications testing is often separated out, partly to spread the workload, but also because sometimes the programmer might be so familiar with the program that they can't see it from a users' point of view.
 
 The Kidbots activities separates the programming from the testing to avoid the programmer adjusting their program on the fly, and also support students to understand that programming is about working together, thinking through what you want to have happen and collaborating to solve problems.
+
+
 
 ## Digital Technologies | Programming
 
