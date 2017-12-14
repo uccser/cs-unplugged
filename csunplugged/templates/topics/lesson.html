@@ -28,7 +28,7 @@
       {% endwith %}
     {% else %}
     <ul>
-      <li>{% blocktrans trimmed %}<strong>Duration:</strong> {{ lesson.duration }} minutes{% endblocktrans %}</li>
+      <li>{% blocktrans with duration=lesson.duration trimmed %}<strong>Duration:</strong> {{ duration }} minutes{% endblocktrans %}</li>
       {% for lesson_age in lesson_ages %}
       <li>
         {% blocktrans with lower=lesson_age.lower upper=lesson_age.upper number=lesson_age.number trimmed %}
