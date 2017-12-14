@@ -2,6 +2,7 @@
 
 from topics.models import AgeGroup
 
+
 def add_lesson_ages_to_objects(objects):
     """Add lesson min and max ages to given list of objects.
 
