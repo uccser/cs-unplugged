@@ -2,8 +2,6 @@ from http import HTTPStatus
 from django.urls import reverse
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
-from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
-from topics.models import ResourceDescription
 
 
 class TopicViewTest(BaseTestWithDB):
