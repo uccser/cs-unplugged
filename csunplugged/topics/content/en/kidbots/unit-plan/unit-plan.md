@@ -19,8 +19,6 @@ In a small project usually the testing is done by the person who wrote the progr
 
 The Kidbots activities separates the programming from the testing to avoid the programmer adjusting their program on the fly, and also support students to understand that programming is about working together, thinking through what you want to have happen and collaborating to solve problems.
 
-
-
 ## Digital Technologies | Programming
 
 Programming or "coding" is when a person (**a programmer**) types in instructions in a programming language so that the computer knows what it needs to do (programmers do lots of other things as well).
