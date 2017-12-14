@@ -27,16 +27,25 @@
   {% endif %}
 {% endblock page_heading %}
 
-{% block content %}
-  {% if unit_plan.translation_available %}
-    <h2>{% trans "What's it all about?" %}</h2>
-    {% render_html_field unit_plan.content as content_html %}
-    {{ content_html|truncatewords_html:150 }}
-    <a href="{% url 'topics:unit_plan_description' topic.slug unit_plan.slug %}">Read the full unit plan description</a>
+{% block content_container %}
+  <div class="col-12 col-lg-6 col-xl-5">
+    {% if unit_plan.translation_available %}
+      <h2>{% trans "What's it all about?" %}</h2>
+      {% render_html_field unit_plan.content as content_html %}
+      {{ content_html|truncatewords_html:150 }}
 
+      <p class="text-center">
+        <a href="{% url 'topics:unit_plan_description' topic.slug unit_plan.slug %}" class="btn btn-outline-primary">
+          {% trans "Read the full unit plan description" %}
+        </a>
+      </p>
+    {% endif %}
+  </div>
+
+  <div class="col-12 col-lg-6 col-xl-7">
     {% if grouped_lessons %}
       <h2 id="lessons">{% trans "Lessons" %}</h2>
       {% include "topics/lessons-table.html" %}
     {% endif %}
-  {% endif %}
-{% endblock content %}
+  </div>
+{% endblock content_container %}
