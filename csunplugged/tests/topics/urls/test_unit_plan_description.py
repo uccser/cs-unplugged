@@ -9,5 +9,9 @@ class UnitPlanDescriptionURLTest(BaseTestWithDB):
         self.language = "en"
 
     def test_valid_unit_plan_description(self):
-        url = reverse("topics:unit_plan_description", args=["binary-numbers", "unit-plan"])
+        kwargs = {
+            "topic_slug": "binary-numbers",
+            "unit_plan_slug": "unit-plan",
+        }
+        url = reverse("topics:unit_plan_description", kwargs=kwargs)
         self.assertEqual(url, "/en/topics/binary-numbers/unit-plan/description/")

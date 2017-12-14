@@ -9,5 +9,8 @@ class OtherResourcesURLTest(BaseTestWithDB):
         self.language = "en"
 
     def test_valid_other_resources(self):
-        url = reverse("topics:other_resources", args=["binary-numbers"])
+        kwargs = {
+            "topic_slug": "binary-numbers",
+        }
+        url = reverse("topics:other_resources", kwargs=kwargs)
         self.assertEqual(url, "/en/topics/binary-numbers/other-resources/")
