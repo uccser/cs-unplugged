@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-29 02:44+0000\n"
+"POT-Creation-Date: 2017-12-15 12:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1098,7 +1098,7 @@ msgid "lesson"
 msgstr ""
 
 #, python-format
-msgid "<strong>Duration:</strong> %(lesson.duration)s minutes"
+msgid "<strong>Duration:</strong> %(duration)s minutes"
 msgstr ""
 
 #, python-format
@@ -1246,16 +1246,7 @@ msgstr ""
 msgid "list of topics"
 msgstr ""
 
-msgid "Unit plan:"
-msgstr ""
-
-msgid "or jump straight to a lesson of the unit:"
-msgstr ""
-
-#, python-format
-msgid ""
-"The following resources are used in %(name)s lessons, and can be accessed "
-"here (and also on each lesson page)."
+msgid "Unit Plans"
 msgstr ""
 
 msgid "Looking for more?"
@@ -1264,7 +1255,16 @@ msgstr ""
 msgid "Click here for other resources"
 msgstr ""
 
-msgid "Curriculum integrations"
+msgid "Description"
+msgstr ""
+
+msgid "Unit plan:"
+msgstr ""
+
+msgid "What's it all about?"
+msgstr ""
+
+msgid "Read the full unit plan description"
 msgstr ""
 
 msgid "Lessons"
