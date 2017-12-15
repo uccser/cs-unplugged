@@ -42,7 +42,7 @@
 
 $ct-abstraction: #E30613;
 $ct-algorithm: #0B983A;
-$ct-decomposition: #DABB00;
+$ct-decomposition: #E4AB0D;
 $ct-evaluation: #0F70B7;
 $ct-logic: #EA5B0C;
 $ct-pattern: #82358C;
@@ -72,10 +72,6 @@ h4,
 h5,
 h6 {
   color: $gray;
-}
-
-.heading-underline {
-  border-bottom: 2px solid $gray-lighter;
 }
 
 .subtitle {
@@ -517,16 +513,21 @@ ol, ul {
     }
   }
   padding: 0.5rem 1rem 1rem 1rem;
-  h2 {
+  h2, h3 {
     color: $gray;
+  }
+  h2 {
     font-size: 28px;
+  }
+  h3 {
+    font-size: 26px;
   }
   img {
     max-height: 6rem;
   }
   &:hover {
     transform: translateY(2px);
-    background-color: rgba($red, 0.05);
+    background-color: rgba($blue, 0.05);
   }
   &.unavailable {
     background-color: rgba($black, 0.2);
