@@ -485,6 +485,35 @@ ol, ul {
   border-bottom: 2px solid $gray-200;
   border-#{$right}: 2px solid $gray-200;
   border-radius: 4px;
+  &.link-item-top {
+    border: 0;
+    border-top: 7px solid $red;
+    box-shadow: 2px 2px 2px $gray-500;
+    &-pink {
+      border-top-color: $pink;
+    }
+    &-green {
+      border-top-color: $green;
+    }
+    &-orange {
+      border-top-color: $orange;
+    }
+    &-teal {
+      border-top-color: $teal;
+    }
+    &-blue {
+      border-top-color: $blue;
+    }
+    &-light-purple {
+      border-top-color: $light-purple;
+    }
+    &-purple {
+      border-top-color: $purple;
+    }
+    &-yellow {
+      border-top-color: $yellow;
+    }
+  }
   padding: 0.5rem 1rem 1rem 1rem;
   h2 {
     color: $gray;

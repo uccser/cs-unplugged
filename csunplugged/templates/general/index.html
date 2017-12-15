@@ -34,18 +34,22 @@
 </div>
 
   <div class="container">
-    <div class="row">
-
-      <div class="link-box-container justify-content-between">
-        <a class="link-box link-box-md-6 link-box-blue" href="{% url 'general:about' %}">
+    <div class="row justify-content-center text-center">
+      <div class="col-12 col-md-4">
+        <a class="link-item link-item-top link-item-top-blue no-text-decoration d-block" href="{% url 'general:about' %}">
           <img class="img-fluid" src="{% static "img/topics/sorting-network-confused-people.png" %}">
           <h2 class="link-box-title">{% trans "Learn about CS Unplugged" %}</h2>
         </a>
-        <a class="link-box link-box-md-6 link-box-green" href="{% url 'topics:index' %}">
+      </div>
+      <div class="col-12 col-md-4">
+        <a class="link-item link-item-top link-item-top-green no-text-decoration d-block" href="{% url 'topics:index' %}">
           <img class="img-fluid" src="{% static "img/general/binary-cards-5.png" %}">
           <h2 class="link-box-title">{% trans "Topics covered by CS Unplugged" %}</h2>
         </a>
       </div>
+    </div>
+
+    <div class="row">
       <div class="link-box-container justify-content-between">
         <a class="link-box link-box-md-3 link-box-purple" href="{% url 'topics:all_curriculum_integrations' %}">
           <h2 class="link-box-title">{% trans "Curriculum Integrations" %}</h2>
