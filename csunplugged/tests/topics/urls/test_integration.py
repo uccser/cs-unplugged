@@ -9,5 +9,9 @@ class IntegrationURLTest(BaseTestWithDB):
         self.language = "en"
 
     def test_valid_integration(self):
-        url = reverse("topics:integration", args=["binary-numbers", "binary-bracelets"])
+        kwargs = {
+            "topic_slug": "binary-numbers",
+            "integration_slug": "binary-bracelets",
+        }
+        url = reverse("topics:integration", kwargs=kwargs)
         self.assertEqual(url, "/en/topics/binary-numbers/integrations/binary-bracelets/")

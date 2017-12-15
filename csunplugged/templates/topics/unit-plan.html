@@ -1,4 +1,4 @@
-{% extends "columns.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
 {% load render_html_field %}
@@ -16,7 +16,7 @@
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-  <h1 id="{{ unit_plan.slug }}" class="heading-underline"><span class="text-muted">{% trans "Unit plan:" %}</span> {{ unit_plan.name }}</h1>
+  <h1 id="{{ unit_plan.slug }}" class="mb-3"><span class="text-muted">{% trans "Unit plan:" %}</span> {{ unit_plan.name }}</h1>
   {% if not topic.translation_available %}
     {% url "topics:topic" topic.slug as parent_url %}
     {% trans "unit plan" as unit_plan_l10n %}
@@ -27,49 +27,25 @@
   {% endif %}
 {% endblock page_heading %}
 
-{% block left_column_content %}
-  {% if unit_plan.translation_available %}
-  {% render_html_field unit_plan.content %}
+{% block content_container %}
+  <div class="col-12 col-lg-6 col-xl-5">
+    {% if unit_plan.translation_available %}
+      <h2>{% trans "What's it all about?" %}</h2>
+      {% render_html_field unit_plan.content as content_html %}
+      {{ content_html|truncatewords_html:150 }}
 
-  {% with computational_thinking_links=unit_plan.computational_thinking_links %}
-    {% include "topics/computational-thinking-links.html" %}
-  {% endwith %}
-
-  {% if grouped_lessons %}
-    <h2 class="heading-underline" id="lessons">{% trans "Lessons" %}</h2>
-    {% include "topics/lessons-table.html" %}
-  {% endif %}
-  {% endif %}
-{% endblock left_column_content %}
-
-{% block right_column_content %}
-  {% if unit_plan.translation_available %}
-  <div id="sticky-sidebar" class="sticky">
-    <h2 class="heading-underline">{% trans "Table of contents" %}</h2>
-    <ul class="nav nav-pills flex-column" id="scrollspy-table-of-contents">
-      <li class="nav-item">
-        <a class="nav-link" href="#{{ unit_plan.slug }}">{{ unit_plan.name }}</a>
-      </li>
-      {% for heading_node in unit_plan.heading_tree %}
-        <li class="nav-item">
-          <a class="nav-link" href="#{{ heading_node.slug }}">{{ heading_node.text }}</a>
-        </li>
-      {% endfor %}
-      {% if unit_plan.computational_thinking_links %}
-        <li class="nav-item">
-          <a class="nav-link" href="#ct-links">{% trans "Computational Thinking" %}</a>
-        </li>
-      {% endif %}
-      <li class="nav-item">
-        <a class="nav-link" href="#lessons">{% trans "Lessons" %}</a>
-      </li>
-    </ul>
+      <p class="text-center">
+        <a href="{% url 'topics:unit_plan_description' topic.slug unit_plan.slug %}" class="btn btn-outline-primary">
+          {% trans "Read the full unit plan description" %}
+        </a>
+      </p>
+    {% endif %}
   </div>
-  {% endif %}
-{% endblock right_column_content %}
 
-{% block scripts %}
-  {% if unit_plan.translation_available %}
-    {% include "generic/import-stick-state-js.html" %}
-  {% endif %}
-{% endblock scripts %}
+  <div class="col-12 col-lg-6 col-xl-7">
+    {% if grouped_lessons %}
+      <h2 id="lessons">{% trans "Lessons" %}</h2>
+      {% include "topics/lessons-table.html" %}
+    {% endif %}
+  </div>
+{% endblock content_container %}

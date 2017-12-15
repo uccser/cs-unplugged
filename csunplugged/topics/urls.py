@@ -54,6 +54,12 @@ urlpatterns = [
         views.UnitPlanView.as_view(),
         name="unit_plan"
     ),
+    # eg: /topics/binary-numbers/unit-plan/description/
+    url(
+        r"^(?P<topic_slug>[-\w]+)/(?P<unit_plan_slug>[-\w]+)/description/$",
+        views.UnitPlanDescriptionView.as_view(),
+        name="unit_plan_description"
+    ),
     # eg: /topics/binary-numbers/unit-plan/lesson-1/
     url(
         r"^(?P<topic_slug>[-\w]+)/(?P<unit_plan_slug>[-\w]+)/(?P<lesson_slug>[-\w]+)/$",

@@ -2,17 +2,16 @@ from tests.BaseTestWithDB import BaseTestWithDB
 from django.urls import reverse
 
 
-class LessonURLTest(BaseTestWithDB):
+class UnitPlanDescriptionURLTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.language = "en"
 
-    def test_valid_lesson(self):
+    def test_valid_unit_plan_description(self):
         kwargs = {
             "topic_slug": "binary-numbers",
             "unit_plan_slug": "unit-plan",
-            "lesson_slug": "lesson-1",
         }
-        url = reverse("topics:lesson", kwargs=kwargs)
-        self.assertEqual(url, "/en/topics/binary-numbers/unit-plan/lesson-1/")
+        url = reverse("topics:unit_plan_description", kwargs=kwargs)
+        self.assertEqual(url, "/en/topics/binary-numbers/unit-plan/description/")
