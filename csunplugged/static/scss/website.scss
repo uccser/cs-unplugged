@@ -491,7 +491,10 @@ ol, ul {
       }
     }
     .img-container {
-      height: 6em;
+      height: 8em;
+      img {
+        max-height: 100%;
+      }
     }
   }
   padding: 0.5rem 1rem 1rem 1rem;
