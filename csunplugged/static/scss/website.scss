@@ -103,7 +103,7 @@ $rounded-corner-radius: 0.5rem;
   background: url("../img/red-hero-banner.png");
   background-size: cover;
   width: 100%;
-  padding-bottom: 10vh;
+  padding-bottom: 60px;
   text-shadow: 0 2px 2px rgba(0,0,0,0.4);
 
   h1 {
@@ -116,6 +116,13 @@ $rounded-corner-radius: 0.5rem;
     color: $gray-lighter;
     font-size: 1rem;
   }
+}
+
+
+#homepage-cards {
+  position: relative;
+  top: -80px;
+  margin-bottom: -50px;
 }
 
 .link-box-container {
@@ -482,36 +489,31 @@ ol, ul {
 .link-item {
   background-color: $white;
   border-#{$left}: 5px solid $red;
-  border-bottom: 2px solid $gray-200;
-  border-#{$right}: 2px solid $gray-200;
+  box-shadow: 0px 2px 5px 0px $gray-400;
   border-radius: 4px;
   &.link-item-top {
     border: 0;
     border-top: 7px solid $red;
-    box-shadow: 2px 2px 2px $gray-500;
-    &-pink {
-      border-top-color: $pink;
-    }
     &-green {
       border-top-color: $green;
-    }
-    &-orange {
-      border-top-color: $orange;
-    }
-    &-teal {
-      border-top-color: $teal;
+      &:hover {
+        background-color: mix($green, $white, 10%)
+      }
     }
     &-blue {
       border-top-color: $blue;
-    }
-    &-light-purple {
-      border-top-color: $light-purple;
-    }
-    &-purple {
-      border-top-color: $purple;
+      &:hover {
+        background-color: mix($blue, $white, 10%)
+      }
     }
     &-yellow {
       border-top-color: $yellow;
+      &:hover {
+        background-color: mix($yellow, $white, 10%)
+      }
+    }
+    .img-container {
+      height: 6em;
     }
   }
   padding: 0.5rem 1rem 1rem 1rem;
