@@ -1,42 +1,40 @@
 # crwdns10898:0crwdne10898:0
 
-*BlockTag: crwdns10899:0crwdne10899:0*
-
-{panel type="teaching" title="See teaching this in action!"}
-
-crwdns10900:0crwdne10900:0
-
-*BlockTag: crwdns10901:0crwdne10901:0*
-
-{video url="https://www.youtube.com/embed/FnwBratAhfg"}
-
-*BlockTag: crwdns10902:0crwdne10902:0*
-
-{panel end}
-
-## crwdns10903:0crwdne10903:0
-
-*BlockTag: crwdns10904:0crwdne10904:0*
+*BlockTag: crwdns18316:0crwdne18316:0*
 
 {image file-path="img/topics/parity-trick-example.png" alt="A student is surprised another student can detect the changed card in the Parity Trick."}
 
-crwdns10905:0crwdne10905:0 crwdns10906:0crwdne10906:0 crwdns10907:0crwdne10907:0 crwdns10908:0crwdne10908:0 crwdns10909:0crwdne10909:0 crwdns10910:0crwdne10910:0 crwdns10911:0crwdne10911:0
+crwdns18317:0crwdne18317:0 crwdns18318:0crwdne18318:0 crwdns18319:0crwdne18319:0 crwdns18320:0crwdne18320:0 crwdns18321:0crwdne18321:0 crwdns18322:0crwdne18322:0 crwdns18323:0crwdne18323:0
 
-crwdns10912:0crwdne10912:0 crwdns10913:0crwdne10913:0 crwdns10914:0crwdne10914:0 crwdns10915:0crwdne10915:0
+crwdns18324:0crwdne18324:0 crwdns18325:0crwdne18325:0 crwdns18326:0crwdne18326:0 crwdns18327:0crwdne18327:0
 
-*BlockTag: crwdns10916:0crwdne10916:0*
+*BlockTag: crwdns18328:0crwdne18328:0*
 
 {image file-path="img/topics/mug-with-barcode.png"}
 
-crwdns10917:0crwdne10917:0 crwdns10918:0crwdne10918:0
+crwdns18329:0crwdne18329:0 crwdns18330:0crwdne18330:0
 
-crwdns10919:0crwdne10919:0 crwdns10920:0crwdne10920:0
+crwdns18331:0crwdne18331:0 crwdns18332:0crwdne18332:0
 
-## crwdns10921:0crwdne10921:0
+*BlockTag: crwdns18333:0crwdne18333:0*
+
+{panel type="video" title="See teaching this in action!"}
+
+crwdns18334:0crwdne18334:0
+
+*BlockTag: crwdns18335:0crwdne18335:0*
+
+{video url="https://www.youtube.com/embed/FnwBratAhfg"}
+
+*BlockTag: crwdns18336:0crwdne18336:0*
+
+{panel end}
+
+## crwdns18337:0crwdne18337:0
 
 crwdns10922:0crwdne10922:0 crwdns10923:0crwdne10923:0 crwdns10924:0crwdne10924:0
 
-## crwdns10925:0crwdne10925:0
+## crwdns18338:0crwdne18338:0
 
 crwdns10926:0crwdne10926:0
 
@@ -65,7 +63,7 @@ crwdns10935:0crwdne10935:0 crwdns10936:0crwdne10936:0
 
 {panel end}
 
-## crwdns10944:0crwdne10944:0
+## crwdns18339:0crwdne18339:0
 
 *BlockTag: crwdns10945:0crwdne10945:0*
 
@@ -83,7 +81,7 @@ crwdns10959:0crwdne10959:0 crwdns10960:0crwdne10960:0 crwdns10961:0crwdne10961:0
 
 crwdns10963:0crwdne10963:0 crwdns10964:0crwdne10964:0 crwdns10965:0crwdne10965:0 crwdns10966:0crwdne10966:0 crwdns10967:0crwdne10967:0 crwdns10968:0crwdne10968:0 crwdns10969:0crwdne10969:0
 
-## crwdns10970:0crwdne10970:0
+## crwdns18340:0crwdne18340:0
 
 - crwdns10971:0crwdne10971:0
 - crwdns10972:0crwdne10972:0
