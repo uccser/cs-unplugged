@@ -16,9 +16,19 @@ urlpatterns = [
         name="about"
     ),
     url(
+        r"^what-is-computer-science/$",
+        views.WhatIsCSView.as_view(),
+        name="what_is_cs"
+    ),
+    url(
         r"^computational-thinking/$",
         views.ComputationalThinkingView.as_view(),
         name="computational_thinking"
+    ),
+    url(
+        r"^how-do-i-teach-cs-unplugged/$",
+        views.HowDoITeachCSUnpluggedView.as_view(),
+        name="how_do_i_teach_cs_unplugged"
     ),
     url(
         r"^contact/$",

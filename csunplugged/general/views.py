@@ -34,10 +34,22 @@ class GeneralPrinciplesView(TemplateView):
     template_name = "general/principles.html"
 
 
+class WhatIsCSView(TemplateView):
+    """View for the Computational Thinking page that renders from a template."""
+
+    template_name = "general/what-is-computer-science.html"
+
+
 class ComputationalThinkingView(TemplateView):
     """View for the Computational Thinking page that renders from a template."""
 
     template_name = "general/computational-thinking.html"
+
+
+class HowDoITeachCSUnpluggedView(TemplateView):
+    """View for the Computational Thinking page that renders from a template."""
+
+    template_name = "general/how-do-i-teach-cs-unplugged.html"
 
 
 def health_check(request):

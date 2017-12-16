@@ -1,0 +1,67 @@
+{% extends "general/base.html" %}
+
+{% load i18n %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}
+  {% trans "What is Computer Science?" %}
+{% endblock title %}
+
+{% block breadcrumbs %}
+  {% breadcrumb "Home" "/" %}
+  {% breadcrumb "What is Computer Science?" "general:what_is_cs" %}
+{% endblock breadcrumbs %}
+
+{% block page_heading %}
+  <h1>{% trans "What is Computer Science?" %}</h1>
+{% endblock page_heading %}
+
+{% block left_column_content %}
+  <p>
+    {% blocktrans trimmed %}
+      The term "Computer Science" has become widely used in recent years as the skills associated with the subject have become crucial to developing innovative digital technology, and qualifications in this area are highly sought after.
+    {% endblocktrans %}
+  </p>
+
+  <p>
+    {% blocktrans trimmed %}
+      The CS Unplugged activities are intended to give you a feel for what the subject is - you can learn what it is by doing.
+      At this early stage, rather than define it formally, let's think about how it might influence our daily lives.
+      For example, think of your favourite search engine.
+      On the surface it seems like a fairly simple interface: a text box where you type what you want to search for, and a button to start the search.
+      The level of programming knowledge needed to implement a text box and a button is fairly rudimentary, and you could implement a search by writing a short program (probably less than 20 lines) to go through all the text on the web and displaying any that match.
+      But obviously there's more to it than this!
+      There are billions of searches are made every day, on billions on web pages, and the approach above will give answers (eventually), but will be so slow and ineffective that no-one would use it.
+    {% endblocktrans %}
+  </p>
+
+  <p>
+    {% blocktrans trimmed %}
+      This is where computer science comes in; many areas of Computer Science are employed to make the system work well, and most of them are illustrated through Unplugged.
+      How could you search billions of items in a fraction of a second (see the Unplugged activity on searching)?
+      How do you make sure that it's easy to use (Human-Computer Interaction)?
+      We need to keep it secure - users don't want other people to know what they are searching for, and the search engine doesn't want commercial interests to manipulate search ranking (Computer Security and Encryption)?
+      Search engines generally predict what you are about to search for (Artificial Intelligence).
+      It needs to be reliable - a small mistake from one of the thousands of programmers at a search engine company shouldn't prevent the site working (Software Engineering).
+      It needs to scale well - if it becomes 10 times as popular, you don't want it to need 100 times the computing resources (Algorithms).
+      The relevance of a search generally depends on the relationships between web sites - you need a map showing which sites are linked to which other ones (Graphs).
+    {% endblocktrans %}
+  </p>
+
+  <p>
+    {% blocktrans trimmed %}
+      The areas above cover much of what the subject of computer science is about.
+      Programming is just a tool for implementing ideas (well, it's a very powerful tool, and requires considerable skill to use well).
+      But programming on its own isn't enough to create software that people love to use, and Computer Science is the area that gives programmers the inside knowledge to make their software fast, efficient, reliable, secure, usable, intelligent, scalable, and even delightful!
+    {% endblocktrans %}
+  </p>
+
+  <p>
+    {% blocktrans trimmed %}
+      That's why we developed CS Unplugged - we want young students to be empowered to understand the great ideas that computer science covers, without having to become expert programmers first.
+      They won't be learning exactly how to build the next search engine, social network or game app, but they will have an idea of what sort of techniques are needed to make it successful.
+      We don't want them to see digital systems as some kind of magic that they can't participate in, but as something that they could understand and, for some, create themselves.
+      Actually, it is is kind of magic when you start understanding what can and can't be done.
+    {% endblocktrans %}
+  </p>
+{% endblock left_column_content %}
