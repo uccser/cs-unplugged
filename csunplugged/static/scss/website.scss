@@ -490,6 +490,24 @@ ol, ul {
         background-color: mix($yellow, $white, 10%)
       }
     }
+    &-light-purple {
+      border-top-color: $light-purple;
+      &:hover {
+        background-color: mix($light-purple, $white, 10%)
+      }
+    }
+    &-orange {
+      border-top-color: $orange;
+      &:hover {
+        background-color: mix($orange, $white, 10%)
+      }
+    }
+    &-teal {
+      border-top-color: $teal;
+      &:hover {
+        background-color: mix($teal, $white, 10%)
+      }
+    }
     .img-container {
       height: 8em;
       img {

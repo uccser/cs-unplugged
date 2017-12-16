@@ -55,22 +55,35 @@
           </h2>
         </a>
       </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="row text-center h4">
-      <div class="col-12 col-md-6 col-lg-3 mb-5">
-        <a href="{% url 'topics:index' %}">{% trans "Topics" %}</a>
+      <div class="w-100"></div>
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <a class="link-item link-item-top link-item-top-yellow no-text-decoration d-block h-100" href="{% url 'topics:index' %}">
+          <h2 class="mb-0">
+            {% trans "Topics" %}
+          </h2>
+        </a>
       </div>
-      <div class="col-12 col-md-6 col-lg-3 mb-5">
-        <a href="{% url 'topics:all_curriculum_integrations' %}">{% trans "Curriculum Integrations" %}</a>
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <a class="link-item link-item-top link-item-top-teal no-text-decoration d-block h-100" href="{% url 'resources:index' %}">
+          <h2 class="mb-0">
+            {% trans "Resources" %}
+          </h2>
+        </a>
       </div>
-      <div class="col-12 col-md-6 col-lg-3 mb-5">
-        <a href="{% url 'resources:index' %}">{% trans "Resources" %}</a>
+      <div class="w-100"></div>
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <a class="link-item link-item-top link-item-top-light-purple no-text-decoration d-block h-100" href="{% url 'topics:all_curriculum_integrations' %}">
+          <h2 class="mb-0">
+            {% trans "Curriculum Integrations" %}
+          </h2>
+        </a>
       </div>
-      <div class="col-12 col-md-6 col-lg-3 mb-5">
-        <a href="http://csunplugged.org/">{% trans "Classic CS Unplugged" %}</a>
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <a class="link-item link-item-top link-item-top-orange no-text-decoration d-block h-100" href="http://csunplugged.org/">
+          <h2 class="mb-0">
+            {% trans "Classic CS Unplugged" %}
+          </h2>
+        </a>
       </div>
     </div>
   </div>
