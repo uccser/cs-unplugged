@@ -1,10 +1,10 @@
 # Kidbots
 
-## See teaching the Kidbots unit in action!
+{panel type="video" title="See teaching this in action!"}
 
 A version of this can curently be seen at 1:09:56 [here](https://educationonair.withgoogle.com/live/2016-dec/watch/keynote-au/keynote-7).
 
-## What’s it all about?
+{panel end}
 
 {image file-path="img/topics/teamwork.png" alt="Cartoon kids working together"}
 

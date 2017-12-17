@@ -20,8 +20,8 @@
       <td>
         {% if not programming_challenge.translation_available %}
           {% include "topics/not-available-badge.html" %}
+          <br>
         {% endif %}
-        <br>
         <a href="{% url 'topics:programming_challenge' topic.slug programming_challenge.slug %}">
           <strong>
             {{ programming_challenge.name }}
