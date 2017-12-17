@@ -555,3 +555,20 @@ ol, ul {
   margin-#{$right}: auto !important;
   margin-#{$left}: 0 !important;
 }
+
+.img-wrap {
+  @include img-fluid;
+  margin-bottom: $spacer * 0.5;
+  @include media-breakpoint-up(md) {
+    margin-top: $spacer * 0.5;
+    width: 50%;
+    &-left {
+       @include float-left;
+       margin-right: $spacer * 0.5;
+    }
+    &-right {
+       @include float-right;
+       margin-left: $spacer * 0.5;
+    }
+  }
+}
