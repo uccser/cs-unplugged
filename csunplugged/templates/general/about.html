@@ -3,10 +3,8 @@
 {% load i18n %}
 {% load django_bootstrap_breadcrumbs %}
 
-{% trans "About" as l10n_about %}
-
 {% block title %}
-  {{ l10n_about }}
+  {% trans "About" %}
 {% endblock title %}
 
 {% block breadcrumbs %}
@@ -15,7 +13,7 @@
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-  <h1>{{ l10n_about }}</h1>
+  <h1>{% trans "About" %}</h1>
 {% endblock page_heading %}
 
 {% block left_column_content %}
