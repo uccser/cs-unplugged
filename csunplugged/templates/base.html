@@ -80,9 +80,9 @@
 
     {% block body_container %}
       <div id="content-container" class="container">
-        {% render_breadcrumbs "django_bootstrap_breadcrumbs/bootstrap4.html" %}
         <div class="row">
           <div class="col-12">
+            {% render_breadcrumbs "django_bootstrap_breadcrumbs/bootstrap4.html" %}
             {% block page_heading %}
             {% endblock page_heading %}
           </div>
