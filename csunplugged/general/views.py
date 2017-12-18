@@ -35,7 +35,7 @@ class GeneralPrinciplesView(TemplateView):
 
 
 class WhatIsCSView(TemplateView):
-    """View for the Computational Thinking page that renders from a template."""
+    """View for the 'What is Computer Science?' page that renders from a template."""
 
     template_name = "general/what-is-computer-science.html"
 
@@ -47,7 +47,7 @@ class ComputationalThinkingView(TemplateView):
 
 
 class HowDoITeachCSUnpluggedView(TemplateView):
-    """View for the Computational Thinking page that renders from a template."""
+    """View for the 'How do I teach CS Unplugged?' page that renders from a template."""
 
     template_name = "general/how-do-i-teach-cs-unplugged.html"
 
