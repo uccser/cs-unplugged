@@ -7,9 +7,11 @@
 
   <nav class="nav flex-column">
     <a class="nav-link" href="{% url 'general:about' %}">{% trans "About" %}</a>
+    <a class="nav-link" href="{% url 'general:what_is_cs' %}">{% trans "What is Computer Science?" %}</a>
     <a class="nav-link" href="{% url 'general:computational_thinking' %}">{% trans "Computational Thinking and CS Unplugged" %}</a>
+    <a class="nav-link" href="{% url 'general:how_do_i_teach_cs_unplugged' %}">{% trans "How do I teach CS Unplugged?" %}</a>
+    <a class="nav-link" href="{% url 'general:principles' %}">{% trans "Principles" %}</a>
     <a class="nav-link" href="{% url 'general:people' %}">{% trans "People" %}</a>
     <a class="nav-link" href="{% url 'general:contact' %}">{% trans "Contact Us" %}</a>
-    <a class="nav-link" href="{% url 'general:principles' %}">{% trans "Principles" %}</a>
   </nav>
 {% endblock right_column_content %}
