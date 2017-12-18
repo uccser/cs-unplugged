@@ -20,9 +20,9 @@ crwdns9364:0crwdne9364:0 crwdns9365:0crwdne9365:0
 
 crwdns9366:0crwdne9366:0
 
-*BlockTag: crwdns9367:0crwdne9367:0*
+*BlockTag: crwdns18341:0crwdne18341:0*
 
-{image file-path="img/topics/col_binary_robot_boy_convo.png" alt="Cartoon boy talking to robot"}
+{image file-path="img/topics/col_binary_robot_boy_convo.png" alt="Cartoon boy talking to robot" alignment="right"}
 
 *BlockTag: crwdns9368:0crwdne9368:0*
 
