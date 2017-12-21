@@ -1,4 +1,5 @@
 ![Computer Science Unplugged](https://cloud.githubusercontent.com/assets/8001048/25562071/9c90501a-2dcf-11e7-959a-bf15dfee8362.png)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fuccser%2Fcs-unplugged.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fuccser%2Fcs-unplugged?ref=badge_shield)
 
 Computer Science Unplugged is a collection of free learning activities that
 teach Computer Science through engaging games and puzzles that use cards,
@@ -47,3 +48,6 @@ repository, then a copyright notice should be present at the top of the file.
 The rest of the project, which is the underlying source code used to manage
 and display this content, is licensed under the
 [MIT license](https://opensource.org/licenses/MIT) (`LICENSE` file).
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fuccser%2Fcs-unplugged.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fuccser%2Fcs-unplugged?ref=badge_large)
