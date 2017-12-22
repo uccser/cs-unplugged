@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-18 12:04+0000\n"
+"POT-Creation-Date: 2017-12-22 12:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -434,13 +434,7 @@ msgstr ""
 msgid "About pages"
 msgstr ""
 
-msgid "What is Computer Science?"
-msgstr ""
-
 msgid "Computational Thinking and CS Unplugged"
-msgstr ""
-
-msgid "How do I teach CS Unplugged?"
 msgstr ""
 
 msgid "Principles"
@@ -769,6 +763,9 @@ msgid ""
 "join and talk about CS Unplugged."
 msgstr ""
 
+msgid "How do I teach CS Unplugged?"
+msgstr ""
+
 msgid ""
 "CS Unplugged is very much based on a constructivist approach: students are "
 "given challenges based on a few simple rules, and in the process of solving "
@@ -825,13 +822,16 @@ msgid ""
 "unplugged."
 msgstr ""
 
+msgid "What is Computer Science?"
+msgstr ""
+
 msgid "Curriculum Integrations"
 msgstr ""
 
 msgid "Classic CS Unplugged"
 msgstr ""
 
-msgid "CS Unplugged (2017 onwards)"
+msgid "CS Unplugged (2.0 onwards)"
 msgstr ""
 
 msgid "Founders"
