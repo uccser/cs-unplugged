@@ -59,6 +59,15 @@ third-party-licenses/django.txt
 ==============================================================================
 
 ==============================================================================
+django-bidi-utils
+------------------------------------------------------------------------------
+https://github.com/MeirKriheli/django-bidi-utils
+Copyright (c) 2009 Meir Kriheli
+Licensed under MIT License.
+third-party-licenses/django-bidi-utils.txt
+==============================================================================
+
+==============================================================================
 django-bootstrap-breadcrumbs
 ------------------------------------------------------------------------------
 https://github.com/prymitive/bootstrap-breadcrumbs
@@ -92,6 +101,15 @@ https://django-extensions.readthedocs.io/
 Copyright (c) 2007 Michael Trier.
 Licensed under MIT License.
 third-party-licenses/django-extensions.txt
+==============================================================================
+
+==============================================================================
+django-modeltranslation
+------------------------------------------------------------------------------
+https://github.com/deschler/django-modeltranslation
+Copyright (c) 2012, 2011, 2010, 2009, Peter Eschler, Dirk Eschler.
+Licensed under BSD 3-clause "New" or "Revised" License.
+third-party-licenses/django-modeltranslation.txt
 ==============================================================================
 
 ==============================================================================
@@ -130,6 +148,15 @@ https://jquery.com/
 Copyright JS Foundation and other contributors, https://js.foundation/
 Licensed under MIT License.
 third-party-licenses/jquery.txt
+==============================================================================
+
+==============================================================================
+lxml
+------------------------------------------------------------------------------
+http://lxml.de/
+Copyright (c) 2004 Infrae. All rights reserved.
+Licensed under BSD License.
+third-party-licenses/lxml.txt
 ==============================================================================
 
 ==============================================================================
@@ -179,6 +206,15 @@ Copyright (c) 2012 GreenSteam, <http://greensteam.dk/>
 Copyright (c) 2014-2017 Amir Rachum, <http://amir.rachum.com/>
 Licensed under MIT License.
 third-party-licenses/pydocstyle.txt
+==============================================================================
+
+==============================================================================
+python-bidi
+------------------------------------------------------------------------------
+https://github.com/MeirKriheli/python-bidi
+Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+Licensed under GNU Lesser General Public License.
+third-party-licenses/python-bidi.txt
 ==============================================================================
 
 ==============================================================================
@@ -234,6 +270,33 @@ https://github.com/soenkekluth/sticky-state
 Copyright Sönke Kluth <soenke.kluth@gmail.com> (http://soenkekluth.com/).
 Licensed under MIT License.
 third-party-licenses/sticky-state.txt
+==============================================================================
+
+==============================================================================
+tinycss
+------------------------------------------------------------------------------
+https://github.com/Kozea/tinycss
+Copyright (c) 2012 Simon Sapin
+Licensed under BSD 3-clause "New" or "Revised" License.
+third-party-licenses/tinycss.txt
+==============================================================================
+
+==============================================================================
+tqdm
+------------------------------------------------------------------------------
+https://github.com/noamraph/tqdm
+Copyright (c) 2013 noamraph
+Licensed under MIT License.
+third-party-licenses/tqdm.txt
+==============================================================================
+
+==============================================================================
+uniseg
+------------------------------------------------------------------------------
+https://bitbucket.org/emptypage/uniseg-python
+Copyright (c) 2013 Masaaki Shibata.
+Licensed under MIT License.
+third-party-licenses/uniseg.txt
 ==============================================================================
 
 ==============================================================================
