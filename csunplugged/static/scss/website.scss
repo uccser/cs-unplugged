@@ -121,99 +121,10 @@ $rounded-corner-radius: 0.5rem;
   margin-bottom: -50px;
 }
 
-.link-box-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    @include media-breakpoint-up(md) {
-      flex-direction: row;
-    }
-    align-content: stretch;
-    align-items: stretch;
-    justify-content: space-around;
-    width: 100%;
-}
-
-.link-box {
-  border: 0.2em solid $blue;
-  border-radius: $border-radius;
-  overflow: hidden;
-  padding: ($spacer * .5) ($spacer * .5);
-  margin-bottom: $spacer;
-  width: 100%;
-  transition: 0.1s;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  justify-content: space-around;
-  &.link-box-md-3 {
-    @include media-breakpoint-up(md) {
-      width: 32%;
-    }
-  }
-  &.link-box-md-6 {
-    @include media-breakpoint-up(md) {
-      width: 49%;
-    }
-  }
-  &.link-box-lg-4 {
-    @include media-breakpoint-up(lg) {
-      width: 24%;
-    }
-  }
-  img {
-    max-height: 8rem;
-  }
-  h2,
-  h3 {
-    color: $gray;
-  }
-  &:hover {
-    background-color: rgba($blue, 0.1);
-  }
-  &:hover,
-  &:active,
-  &:visited,
-  &:focus {
-    text-decoration: none;
-  }
-  &.unavailable {
-    background-color: rgba($black, 0.2);
-  }
-  .badge-language-unavailable {
-    margin-#{$right}: auto;
-    margin-bottom: auto;
-    margin-top: 0;
-    margin-#{$left}: 0;
-  }
-}
-
 .badge-language-unavailable {
   margin-#{$right}: auto;
   margin-bottom: auto;
   margin: 0.5em;
-}
-
-@mixin link-box-colour-variant($color) {
-  background-color: $color !important;
-  border: 0.2em solid darken($color, 10%) !important;
-  .link-box-title {
-    color: $white !important;
-  }
-  &:hover {
-    background-color: darken($color, 6%) !important;
-  }
-}
-
-.link-box-orange {
-  @include link-box-colour-variant($orange);
-}
-.link-box-green {
-  @include link-box-colour-variant($green);
-}
-.link-box-blue {
-  @include link-box-colour-variant($blue);
 }
 
 .navbar {
@@ -466,22 +377,16 @@ ol, ul {
 
 .link-item {
   background-color: $white;
-  border-#{$left}: 5px solid $red;
+  border-#{$left}: 5px solid $blue;
   box-shadow: 0px 2px 5px 0px $gray-400;
   border-radius: 4px;
   &.link-item-top {
     border: 0;
-    border-top: 7px solid $red;
+    border-top: 7px solid $blue;
     &-green {
       border-top-color: $green;
       &:hover {
         background-color: mix($green, $white, 10%)
-      }
-    }
-    &-blue {
-      border-top-color: $blue;
-      &:hover {
-        background-color: mix($blue, $white, 10%)
       }
     }
     &-yellow {
@@ -530,7 +435,7 @@ ol, ul {
   }
   &:hover {
     transform: translateY(2px);
-    background-color: rgba($blue, 0.05);
+    background-color: mix($blue, $white, 10%)
   }
   &.unavailable {
     background-color: rgba($black, 0.2);
