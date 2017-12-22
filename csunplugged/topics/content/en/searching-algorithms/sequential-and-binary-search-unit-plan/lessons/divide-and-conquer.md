@@ -96,8 +96,6 @@ This general process is called "divide and conquer" - you break the problem into
 Very soon you end up with very easy tasks, such as dealing with just one item.
 It's a great strategy for reducing any big task or challenge to achievable goals!
 
-## Divide and conquer programming challenges
-
 ## Lesson reflection
 
 What is the algorithm for a binary search? Here is a possible answer:
