@@ -23,6 +23,9 @@ var sourcemaps = require('gulp-sourcemaps');
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 
+// images
+var responsive = require('gulp-responsive');
+
 // Scratch image rendering
 var scratchblocks = require('scratchblocks');
 var rename = require("gulp-rename");
@@ -105,8 +108,59 @@ var tasks = {
   // --------------------------
   images: function() {
     return gulp.src('static/img/**/*')
+      .pipe(responsive({
+        // Resize images in JPEG format
+        'topics/*.{jpg,jpeg}': [
+          {
+            width: 200,
+            rename: {
+              suffix: '-200px',
+              extname: '.jpg',
+            },
+          }, {
+            width: 400,
+            rename: {
+              suffix: '-400px',
+              extname: '.jpg',
+            },
+          }, {
+            width: 600,
+            rename: {
+              suffix: '-600px',
+              extname: '.jpg',
+            },
+          }, {} // Create version at original size
+        ],
+        'topics/*.png': [
+          {
+            width: 200,
+            rename: {
+              suffix: '-200px',
+              extname: '.png',
+            },
+          }, {
+            width: 400,
+            rename: {
+              suffix: '-400px',
+              extname: '.png',
+            },
+          }, {
+            width: 600,
+            rename: {
+              suffix: '-600px',
+              extname: '.png',
+            },
+          }, {} // Create version at original size
+        ],
+      }, {
+      skipOnEnlargement: true,
+      errorOnEnlargement: false,
+      errorOnUnusedImage: false,
+      passThroughUnused: true,
+      withMetadata: false,
+    }))
       .pipe(gulp.dest('build/img'));
-  },
+   },
   // --------------------------
   // CSS
   // --------------------------
