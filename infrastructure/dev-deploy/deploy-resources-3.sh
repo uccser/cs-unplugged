@@ -1,8 +1,11 @@
 #!/bin/bash
 
+source ./infrastructure/dev-deploy/load-dev-deploy-config-envs.sh
+
 # Deploy generated resource files to the development static file server.
 
 ./csu start
+./csu update
 
 # Generate static PDF resources for deployment.
 docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Treasure Hunt"

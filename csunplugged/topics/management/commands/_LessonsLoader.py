@@ -1,12 +1,12 @@
 """Custom loader for loading lessons."""
 
-import os.path
 from django.core.exceptions import ObjectDoesNotExist
-from utils.BaseLoader import BaseLoader
+from utils.TranslatableModelLoader import TranslatableModelLoader
 from utils.convert_heading_tree_to_dict import convert_heading_tree_to_dict
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
-from utils.errors.InvalidConfigValueError import InvalidConfigValueError
+from utils.errors.InvalidYAMLValueError import InvalidYAMLValueError
+
 
 from topics.models import (
     ProgrammingChallenge,
@@ -14,23 +14,21 @@ from topics.models import (
     LearningOutcome,
     Resource,
     ResourceDescription,
+    ClassroomResource
 )
 
 
-class LessonsLoader(BaseLoader):
+class LessonsLoader(TranslatableModelLoader):
     """Custom loader for loading lessons."""
 
-    def __init__(self, lessons_structure_file_path, topic, unit_plan, BASE_PATH):
+    def __init__(self, topic, unit_plan, **kwargs):
         """Create the loader for loading lessons.
 
         Args:
-            lessons_structure_file_path: file path to lessons yaml file (str).
             topic: Object of Topic model (Topic).
             unit_plan: Object of UnitPlan model (UnitPlan).
-            BASE_PATH: Base file path (str).
         """
-        super().__init__(BASE_PATH)
-        self.lessons_structure_file_path = lessons_structure_file_path
+        super().__init__(**kwargs)
         self.topic = topic
         self.unit_plan = unit_plan
 
@@ -39,109 +37,64 @@ class LessonsLoader(BaseLoader):
 
         Raises:
             KeyNotFoundError: when no object can be found with the matching attribute.
-            InvalidConfigValueError: when provided value is not valid.
+            InvalidYAMLValueError: when provided value is not valid.
             MissingRequiredFieldError: when a value for a required model field cannot be
                 found in the config file.
         """
-        lessons_structure = self.load_yaml_file(self.lessons_structure_file_path)
+        lessons_structure = self.load_yaml_file(self.structure_file_path)
 
         for (lesson_slug, lesson_structure) in lessons_structure.items():
 
             if lesson_structure is None:
                 raise MissingRequiredFieldError(
-                    self.lessons_structure_file_path,
+                    self.structure_file_path,
                     ["number"],
                     "Lesson"
                 )
 
-            # Build the file path to the lesson"s md file
-            file_path = os.path.join(
-                self.BASE_PATH,
-                "lessons",
-                "{}.md".format(lesson_slug)
-            )
+            lesson_translations = self.get_blank_translation_dictionary()
 
-            lesson_content = self.convert_md_file(
-                file_path,
-                self.lessons_structure_file_path,
-            )
+            content_filename = "{}.md".format(lesson_slug)
+            content_translations = self.get_markdown_translations(content_filename)
+            for language, content in content_translations.items():
+                lesson_translations[language]["content"] = content.html_string
+                lesson_translations[language]["name"] = content.title
+                if content.heading_tree:
+                    heading_tree = convert_heading_tree_to_dict(content.heading_tree)
+                    lesson_translations[language]["heading_tree"] = heading_tree
 
             if "computational-thinking-links" in lesson_structure:
-                file_name = lesson_structure["computational-thinking-links"]
-                file_path = os.path.join(
-                    self.BASE_PATH,
-                    "lessons",
-                    file_name
-                )
-                ct_links_content = self.convert_md_file(
-                    file_path,
-                    self.lessons_structure_file_path,
+                filename = lesson_structure["computational-thinking-links"]
+                ct_links_translations = self.get_markdown_translations(
+                    filename,
                     heading_required=False,
                     remove_title=False,
                 )
-                ct_links = ct_links_content.html_string
-            else:
-                ct_links = None
+                for language, content in ct_links_translations.items():
+                    lesson_translations[language]["computational_thinking_links"] = content.html_string
+
+            if "programming-challenges-description" in lesson_structure:
+                filename = lesson_structure["programming-challenges-description"]
+                pcd_translations = self.get_markdown_translations(
+                    filename,
+                    heading_required=False,
+                    remove_title=False,
+                )
+                for language, content in pcd_translations.items():
+                    lesson_translations[language]["programming_challenges_description"] = content.html_string
 
             if "duration" in lesson_structure:
                 lesson_duration = lesson_structure["duration"]
             else:
                 lesson_duration = None
 
-            heading_tree = None
-            if lesson_content.heading_tree:
-                heading_tree = convert_heading_tree_to_dict(lesson_content.heading_tree)
-
-            if "programming-challenges-description" in lesson_structure:
-                file_name = lesson_structure["programming-challenges-description"]
-                file_path = os.path.join(
-                    self.BASE_PATH,
-                    "lessons",
-                    file_name
-                )
-                programming_description_content = self.convert_md_file(
-                    file_path,
-                    self.lessons_structure_file_path,
-                    heading_required=False,
-                    remove_title=False,
-                )
-                programming_description = programming_description_content.html_string
-            else:
-                programming_description = None
-
-            classroom_resources = lesson_structure.get("classroom-resources", None)
-            if isinstance(classroom_resources, list):
-                for classroom_resource in classroom_resources:
-                    if not isinstance(classroom_resource, str):
-                        raise InvalidConfigValueError(
-                            self.lessons_structure_file_path,
-                            "classroom-resources list item",
-                            "A string describing the classroom resource."
-                        )
-                    elif len(classroom_resource) > 100:
-                        raise InvalidConfigValueError(
-                            self.lessons_structure_file_path,
-                            "classroom-resources list item",
-                            "Item description must be less than 100 characters."
-                        )
-            elif classroom_resources is not None:
-                raise InvalidConfigValueError(
-                    self.lessons_structure_file_path,
-                    "classroom-resources",
-                    "List of strings."
-                )
-
             lesson = self.topic.lessons.create(
                 unit_plan=self.unit_plan,
                 slug=lesson_slug,
-                name=lesson_content.title,
                 duration=lesson_duration,
-                content=lesson_content.html_string,
-                computational_thinking_links=ct_links,
-                heading_tree=heading_tree,
-                programming_challenges_description=programming_description,
-                classroom_resources=classroom_resources,
             )
+            self.populate_translations(lesson, lesson_translations)
+            self.mark_translation_availability(lesson, required_fields=["name", "content"])
             lesson.save()
 
             # Add programming challenges
@@ -158,7 +111,7 @@ class LessonsLoader(BaseLoader):
 
                         except ObjectDoesNotExist:
                             raise KeyNotFoundError(
-                                self.lessons_structure_file_path,
+                                self.structure_file_path,
                                 programming_challenge_slug,
                                 "Programming Challenges"
                             )
@@ -203,8 +156,15 @@ class LessonsLoader(BaseLoader):
 
             # Add learning outcomes
             if "learning-outcomes" in lesson_structure:
-                learning_outcome_slugs = lesson_structure["learning-outcomes"]
-                if learning_outcome_slugs is not None:
+                learning_outcome_slugs = lesson_structure.get("learning-outcomes", None)
+
+                if learning_outcome_slugs is None:
+                    raise InvalidYAMLValueError(
+                        self.structure_file_path,
+                        ["learning-outcomes"],
+                        "Lesson"
+                    )
+                else:
                     for learning_outcome_slug in learning_outcome_slugs:
                         try:
                             learning_outcome = LearningOutcome.objects.get(
@@ -213,45 +173,56 @@ class LessonsLoader(BaseLoader):
                             lesson.learning_outcomes.add(learning_outcome)
                         except ObjectDoesNotExist:
                             raise KeyNotFoundError(
-                                self.lessons_structure_file_path,
+                                self.structure_file_path,
                                 learning_outcome_slug,
                                 "Learning Outcomes"
+                            )
+
+            # Add classroom resources
+            if "classroom-resources" in lesson_structure:
+                classroom_resources_slugs = lesson_structure["classroom-resources"]
+                if classroom_resources_slugs is not None:
+                    for classroom_resources_slug in classroom_resources_slugs:
+                        try:
+                            classroom_resource = ClassroomResource.objects.get(
+                                slug=classroom_resources_slug
+                            )
+                            lesson.classroom_resources.add(classroom_resource)
+                        except ObjectDoesNotExist:
+                            raise KeyNotFoundError(
+                                self.structure_file_path,
+                                classroom_resources_slug,
+                                "Classroom Resources"
                             )
 
             # Add generated resources
             if "generated-resources" in lesson_structure:
                 resources = lesson_structure["generated-resources"]
                 if resources is not None:
-                    for (resource_slug, resource_data) in resources.items():
-                        if resource_data is None:
-                            raise MissingRequiredFieldError(
-                                self.lessons_structure_file_path,
-                                ["description"],
-                                "Generated Resource"
-                            )
+                    relationship_strings_filename = "{}-resource-descriptions.yaml".format(lesson_slug)
+                    relationship_translations = self.get_yaml_translations(
+                        relationship_strings_filename,
+                    )
+                    for resource_slug in resources:
+                        relationship_translation = relationship_translations.get(resource_slug, dict())
                         try:
                             resource = Resource.objects.get(
                                 slug=resource_slug
                             )
                         except ObjectDoesNotExist:
                             raise KeyNotFoundError(
-                                self.lessons_structure_file_path,
+                                self.structure_file_path,
                                 resource_slug,
                                 "Resources"
-                            )
-                        resource_description = resource_data.get("description", None)
-                        if resource_description is None:
-                            raise MissingRequiredFieldError(
-                                self.lessons_structure_file_path,
-                                ["description"],
-                                "Generated Resource"
                             )
 
                         relationship = ResourceDescription(
                             resource=resource,
                             lesson=lesson,
-                            description=resource_description
                         )
+                        self.populate_translations(relationship, relationship_translation)
+                        self.mark_translation_availability(relationship, required_fields=["description"])
+
                         relationship.save()
 
             self.log("Added lesson: {}".format(lesson.__str__()), 2)

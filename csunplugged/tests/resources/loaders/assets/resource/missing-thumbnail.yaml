@@ -1,5 +1,0 @@
-grid:
-  name: Grid
-  webpage-template: resources/grid.html
-  generator-module: GridResourceGenerator
-  copies: false

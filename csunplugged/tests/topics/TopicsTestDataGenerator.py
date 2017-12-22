@@ -17,6 +17,9 @@ from topics.models import (
     ProgrammingChallengeImplementation,
     ProgrammingChallengeNumber,
     LearningOutcome,
+    GlossaryTerm,
+    ResourceDescription,
+    ClassroomResource,
 )
 
 
@@ -83,6 +86,7 @@ class TopicsTestDataGenerator:
             name="Area {}".format(number),
             number=number,
             parent=parent,
+            languages=["en"],
         )
         area.save()
         return area
@@ -100,6 +104,7 @@ class TopicsTestDataGenerator:
             slug="topic-{}".format(number),
             name="Topic {}".format(number),
             content="<p>Content for topic {}.</p>".format(number),
+            languages=["en"],
         )
         topic.save()
         return topic
@@ -119,11 +124,12 @@ class TopicsTestDataGenerator:
             slug="unit-plan-{}".format(number),
             name="Unit Plan {}".format(number),
             content="<p>Content for unit plan {}.</p>".format(number),
+            languages=["en"],
         )
         unit_plan.save()
         return unit_plan
 
-    def create_lesson(self, topic, unit_plan, number, age_group=None):
+    def create_lesson(self, topic, unit_plan, number, age_groups=None):
         """Create lesson object.
 
         Args:
@@ -134,25 +140,29 @@ class TopicsTestDataGenerator:
         Returns:
             Lesson object.
         """
+        if age_groups and not isinstance(age_groups, list):
+            age_groups = [age_groups]
         lesson = Lesson(
             topic=topic,
             unit_plan=unit_plan,
             slug="lesson-{}".format(number),
             name="Lesson {} ({} to {})".format(
                 number,
-                age_group.ages[0] if age_group else "none",
-                age_group.ages[1] if age_group else "none"
+                age_groups[0].ages[0] if age_groups else "none",
+                age_groups[-1].ages[1] if age_groups else "none"
             ),
             duration=number,
             content="<p>Content for lesson {}.</p>".format(number),
+            languages=["en"],
         )
         lesson.save()
-        if age_group:
-            LessonNumber(
-                age_group=age_group,
-                lesson=lesson,
-                number=number,
-            ).save()
+        if age_groups:
+            for age_group in age_groups:
+                LessonNumber(
+                    age_group=age_group,
+                    lesson=lesson,
+                    number=number,
+                ).save()
         return lesson
 
     def create_age_group(self, min_age, max_age):
@@ -167,7 +177,8 @@ class TopicsTestDataGenerator:
         """
         age_group = AgeGroup(
             slug="{}-{}".format(min_age, max_age),
-            ages=(min_age, max_age)
+            ages=(min_age, max_age),
+            languages=["en"],
         )
         age_group.save()
         return age_group
@@ -183,7 +194,8 @@ class TopicsTestDataGenerator:
         """
         difficulty = ProgrammingChallengeDifficulty(
             level="1",
-            name="Difficulty-{}".format(number)
+            name="Difficulty-{}".format(number),
+            languages=["en"],
         )
         difficulty.save()
         return difficulty
@@ -201,6 +213,7 @@ class TopicsTestDataGenerator:
             slug="language-{}".format(number),
             name="Language {}".format(number),
             number=number,
+            languages=["en"],
         )
         language.save()
         return language
@@ -240,6 +253,7 @@ class TopicsTestDataGenerator:
             content=content,
             extra_challenge=extra_challenge,
             difficulty=difficulty,
+            languages=["en"],
         )
         challenge.save()
         return challenge
@@ -273,6 +287,7 @@ class TopicsTestDataGenerator:
             expected_result=expected_result,
             hints=hints,
             solution=solution,
+            languages=["en"],
         )
         implementation.save()
         return implementation
@@ -281,7 +296,7 @@ class TopicsTestDataGenerator:
         """Create learning outcome object.
 
         Args:
-            number: Identifier of the challenge (int).
+            number: Identifier of the outcome (int).
 
         Returns:
             LearningOutcome object.
@@ -289,9 +304,27 @@ class TopicsTestDataGenerator:
         outcome = LearningOutcome(
             slug="outcome-{}".format(number),
             text="Outcome {}".format(number),
+            languages=["en"],
         )
         outcome.save()
         return outcome
+
+    def create_classroom_resource(self, number):
+        """Create classroom resource object.
+
+        Args:
+            number: Identifier of the resource (int).
+
+        Returns:
+            ClassroomResource object.
+        """
+        resource = ClassroomResource(
+            slug="resource-{}".format(number),
+            description="Resource {}".format(number),
+            languages=["en"],
+        )
+        resource.save()
+        return resource
 
     def add_challenge_lesson_relationship(self, challenge, lesson, set_number, number):
         """Add relationship between challenge and lesson objects.
@@ -308,5 +341,37 @@ class TopicsTestDataGenerator:
             lesson=lesson,
             challenge_set_number=set_number,
             challenge_number=number,
+        )
+        relationship.save()
+
+    def create_glossary_term(self, number):
+        """Create glossary term object.
+
+        Args:
+            number: Identifier of the glossary term (int).
+
+        Returns:
+            GlossaryTerm object.
+        """
+        term = GlossaryTerm(
+            slug="term-{}".format(number),
+            term="Term {}".format(number),
+            definition="Defintion for term {}".format(number),
+        )
+        term.save()
+        return term
+
+    def add_lesson_resource_relationship(self, lesson, resource, number):
+        """Add relationship between challenge and lesson objects.
+
+        Args:
+            lesson (Lesson): Lesson to add relationship between.
+            resource (Resource): Resource to add relationship between.
+            number (int): Number to display in description.
+        """
+        relationship = ResourceDescription(
+            lesson=lesson,
+            resource=resource,
+            description="Description {}".format(number),
         )
         relationship.save()

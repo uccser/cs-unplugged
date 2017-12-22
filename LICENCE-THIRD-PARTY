@@ -41,12 +41,30 @@ third-party-licenses/details-element-polyfill.txt
 ==============================================================================
 
 ==============================================================================
+directional-scss
+------------------------------------------------------------------------------
+https://github.com/tysonmatanich/directional-scss
+Copyright (c) 2013 Tyson Matanich
+Licensed under MIT License.
+third-party-licenses/directional-scss.txt
+==============================================================================
+
+==============================================================================
 Django
 ------------------------------------------------------------------------------
 https://www.djangoproject.com/
 Copyright (c) Django Software Foundation and individual contributors.
 Licensed under BSD 3-clause "New" or "Revised" License.
 third-party-licenses/django.txt
+==============================================================================
+
+==============================================================================
+django-bidi-utils
+------------------------------------------------------------------------------
+https://github.com/MeirKriheli/django-bidi-utils
+Copyright (c) 2009 Meir Kriheli
+Licensed under MIT License.
+third-party-licenses/django-bidi-utils.txt
 ==============================================================================
 
 ==============================================================================
@@ -86,6 +104,15 @@ third-party-licenses/django-extensions.txt
 ==============================================================================
 
 ==============================================================================
+django-modeltranslation
+------------------------------------------------------------------------------
+https://github.com/deschler/django-modeltranslation
+Copyright (c) 2012, 2011, 2010, 2009, Peter Eschler, Dirk Eschler.
+Licensed under BSD 3-clause "New" or "Revised" License.
+third-party-licenses/django-modeltranslation.txt
+==============================================================================
+
+==============================================================================
 flake8
 ------------------------------------------------------------------------------
 http://flake8.pycqa.org/en/latest/
@@ -121,6 +148,15 @@ https://jquery.com/
 Copyright JS Foundation and other contributors, https://js.foundation/
 Licensed under MIT License.
 third-party-licenses/jquery.txt
+==============================================================================
+
+==============================================================================
+lxml
+------------------------------------------------------------------------------
+http://lxml.de/
+Copyright (c) 2004 Infrae. All rights reserved.
+Licensed under BSD License.
+third-party-licenses/lxml.txt
 ==============================================================================
 
 ==============================================================================
@@ -173,6 +209,15 @@ third-party-licenses/pydocstyle.txt
 ==============================================================================
 
 ==============================================================================
+python-bidi
+------------------------------------------------------------------------------
+https://github.com/MeirKriheli/python-bidi
+Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+Licensed under GNU Lesser General Public License.
+third-party-licenses/python-bidi.txt
+==============================================================================
+
+==============================================================================
 python-markdown-math
 ------------------------------------------------------------------------------
 https://github.com/mitya57/python-markdown-math
@@ -188,6 +233,16 @@ http://pyyaml.org/
 Copyright (c) 2006 Kirill Simonov.
 Licensed under MIT License.
 third-party-licenses/pyyaml.txt
+==============================================================================
+
+==============================================================================
+Sniglet
+------------------------------------------------------------------------------
+https://fonts.google.com/specimen/Sniglet
+https://github.com/theleagueof/sniglet
+Copyright (c) 2008 Haley Fiege
+Licensed under SIL Open Font License, Version 1.1.
+third-party-licenses/sniglet.txt
 ==============================================================================
 
 ==============================================================================
@@ -215,6 +270,33 @@ https://github.com/soenkekluth/sticky-state
 Copyright Sönke Kluth <soenke.kluth@gmail.com> (http://soenkekluth.com/).
 Licensed under MIT License.
 third-party-licenses/sticky-state.txt
+==============================================================================
+
+==============================================================================
+tinycss
+------------------------------------------------------------------------------
+https://github.com/Kozea/tinycss
+Copyright (c) 2012 Simon Sapin
+Licensed under BSD 3-clause "New" or "Revised" License.
+third-party-licenses/tinycss.txt
+==============================================================================
+
+==============================================================================
+tqdm
+------------------------------------------------------------------------------
+https://github.com/noamraph/tqdm
+Copyright (c) 2013 noamraph
+Licensed under MIT License.
+third-party-licenses/tqdm.txt
+==============================================================================
+
+==============================================================================
+uniseg
+------------------------------------------------------------------------------
+https://bitbucket.org/emptypage/uniseg-python
+Copyright (c) 2013 Masaaki Shibata.
+Licensed under MIT License.
+third-party-licenses/uniseg.txt
 ==============================================================================
 
 ==============================================================================

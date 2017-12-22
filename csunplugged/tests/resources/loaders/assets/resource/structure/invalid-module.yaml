@@ -1,0 +1,4 @@
+resource-untranslated:
+  generator-module: InvalidGenerator
+  thumbnail-static-path: img/resources/grid/thumbnail.png
+  copies: false

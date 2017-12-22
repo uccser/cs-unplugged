@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <html>
 <head>
@@ -14,9 +15,11 @@
   </style>
 </head>
 <body class="paper-{{ paper_size }}">
-  <header class="fixed-running-element">
-    {{ header_text }}
-  </header>
+  {% if header_text %}
+    <header class="fixed-running-element">
+      {{ header_text }}
+    </header>
+  {% endif %}
   {% for copy_data in all_data %}
     {% for page in copy_data %}
       <div class="page-break resource-{{ page.type }}-container">

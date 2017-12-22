@@ -19,10 +19,9 @@ function open_glossary_definition() {
     // TODO: Allow code to work for different languages
     $("#glossary-modal-term").text("Loading glossary definition...");
     $("#glossary-modal-definition").html("");
-    var url = "/topics/glossary/json/";
     $.ajax({
       type: "GET",
-      url: url,
+      url: glossary_url,
       data: "term=" + slug,
       async: true,
       cache: true,
@@ -42,6 +41,11 @@ function update_glossary_modal(data) {
   glossary_modal.attr("data-glossary-term", data.slug);
   $("#glossary-modal-term").text(data.term);
   $("#glossary-modal-definition").html(data.definition);
+  if (data.translated) {
+    $("#glossary-modal-translation-unavailable").css({ "display": "none"});
+  } else {
+    $("#glossary-modal-translation-unavailable").css({ "display": "block"});
+  }
 }
 
 function show_glossary_modal_error(jqXHR, text_status, error_thrown) {

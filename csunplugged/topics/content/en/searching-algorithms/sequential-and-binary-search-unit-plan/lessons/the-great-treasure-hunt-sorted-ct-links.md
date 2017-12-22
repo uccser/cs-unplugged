@@ -75,6 +75,8 @@ Which students can explain why the logical decision is to always stick with bina
 
 #### Examples of what you could look for:
 
+{image file-path="img/topics/numbers-middle-bright.png" alt="The middle item is the important item."}
+
 Which students instinctively go for the middle square when searching?
 They are likely logical thinkers who can deduce that since the numbers are sorted then the middle square will tell them the most useful information.
 

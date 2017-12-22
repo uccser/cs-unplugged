@@ -9,5 +9,8 @@ class TopicURLTest(BaseTestWithDB):
         self.language = "en"
 
     def test_valid_topic(self):
-        url = reverse("topics:topic", args=["binary-numbers"])
+        kwargs = {
+            "topic_slug": "binary-numbers",
+        }
+        url = reverse("topics:topic", kwargs=kwargs)
         self.assertEqual(url, "/en/topics/binary-numbers/")

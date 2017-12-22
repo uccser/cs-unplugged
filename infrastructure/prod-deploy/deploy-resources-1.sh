@@ -1,8 +1,11 @@
 #!/bin/bash
 
+source ./infrastructure/prod-deploy/load-prod-deploy-config-envs.sh
+
 # Deploy generated resource files to the development static file server.
 
 ./csu start
+./csu update
 
 # Generate static PDF resources for deployment.
 docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Arrows"
@@ -20,6 +23,8 @@ docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "L
 
 # Decrypt secret files archive that contain credentials.
 ./infrastructure/prod-deploy/decrypt-prod-secrets.sh
+
+source ./load-prod-deploy-config-envs.sh
 
 # Authenticate with gcloud tool using the decrypted service account credentials.
 # See: https://cloud.google.com/sdk/gcloud/reference/auth/activate-service-account

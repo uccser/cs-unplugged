@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 
+{% load i18n %}
 {% load static %}
 {% load render_html_field %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block title %}
   {{ programming_challenge.challenge_set_number }}.{{ programming_challenge.challenge_number }}
-  {{ programming_challenge.name }} solution
+  {% blocktrans with name=programming_challenge.name trimmed %}{{ name }} solution{% endblocktrans %}
 {% endblock title %}
 
 {% block breadcrumbs %}
@@ -24,40 +25,54 @@
   </h1>
   <h2>
     <img src="{% get_static_prefix %}{{ implementation.language.icon }}" class="inline-image" />
-    {{ implementation.language.name }} solution
+    {{ implementation.language.name }} {% trans "solution" %}
   </h2>
+  {% if not implementation.translation_available %}
+    {% url "topics:programming_challenge" topic.slug programming_challenge.slug as parent_url %}
+    {% trans "solution" as solution_l10n %}
+    {% trans "challenge" as challenge_l10n %}
+    {% with model=implementation model_type=solution_l10n parent=programming_challenge parent_type=challenge_l10n parent_url=parent_url %}
+      {% include 'topics/not-available-warning.html' %}
+    {% endwith %}
+  {% endif %}
 {% endblock page_heading %}
 
 {% block content %}
+  {% if implementation.translation_available %}
   <div class="alert alert-warning" role="alert">
+    {% blocktrans trimmed %}
     <strong>Heads Up!</strong> If you are ready to compare your programming to ours or are wanting to have a look at how we solved it, click 'View solution' below to view at least one way to write this program.
+    {% endblocktrans %}
   </div>
 
   <details>
     <summary>
-      <strong>View solution</strong>
+      <strong>{% trans "View solution" %}</strong>
     </summary>
 
     <div class="boxed-text-content disable-selection">
-      <p>This is just one of many possible solutions:</p>
+      <p>{% trans "This is just one of many possible solutions:" %}</p>
       {% render_html_field implementation.solution %}
     </div>
   </details>
 
   <p>
     <a href="{% url 'topics:programming_challenge' topic.slug programming_challenge.slug %}">
-      Back to programming challenge
+      {% trans "Back to programming challenge" %}
     </a>
   </p>
+  {% endif %}
 {% endblock content %}
 
 {% block end_content %}
-  {% if programming_challenge.extra_challenge %}
-    <div class="boxed-text">
-      <div class="boxed-text-content">
-        <h2>Extra Challenge</h2>
-        {% render_html_field programming_challenge.extra_challenge %}
+  {% if implementation.translation_available %}
+    {% if programming_challenge.extra_challenge %}
+      <div class="boxed-text">
+        <div class="boxed-text-content">
+          <h2>{% trans "Extra Challenge" %}</h2>
+          {% render_html_field programming_challenge.extra_challenge %}
+        </div>
       </div>
-    </div>
+    {% endif %}
   {% endif %}
 {% endblock end_content %}

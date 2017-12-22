@@ -1,13 +1,17 @@
 #!/bin/bash
 
+source ./infrastructure/dev-deploy/load-dev-deploy-config-envs.sh
+
 # Deploy generated resource files to the development static file server.
 
 ./csu start
+./csu update
 
 # Generate static PDF resources for deployment.
 docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Modulo Clock"
 docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Parity Cards"
 docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Piano Keys"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Pixel Painter"
 docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Searching Cards"
 docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Sorting Network"
 docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Sorting Network Cards"

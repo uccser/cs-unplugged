@@ -1,6 +1,6 @@
-<figure class="figure{% if alignment == 'left' %} float-md-left{% elif alignment =='right' %} float-md-right{% else %} d-block text-center{% endif %}">
+<figure class="figure img-wrap{% if alignment == 'left' %} img-wrap-left{% elif alignment =='right' %} img-wrap-right{% endif %}">
 <img src="{{ file_path }}"
-class="content-image figure-img img-fluid"
+class="figure-img"
 {% if alt %} alt="{{ alt }}"{% endif %}
 {% if hover_text %} title="{{ hover_text }}"{% endif %}>
 {% if caption %}

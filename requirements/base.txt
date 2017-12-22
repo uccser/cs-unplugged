@@ -7,6 +7,7 @@ wheel==0.30.0
 # Resources
 Pillow==4.3.0
 yattag==1.9.2
+tinycss==0.4
 
 # Markdown
 verto==0.6.1
@@ -16,4 +17,15 @@ python-markdown-math==0.3
 PyYAML==3.12
 
 # System tools
-tqdm==4.19.4
+tqdm==4.19.5
+
+# Translations
+django-modeltranslation==0.12.1
+
+# XML Parsing
+lxml==4.1.1
+
+# I18n
+uniseg==0.7.1
+python-bidi==0.4.0
+django-bidi-utils==1.0
