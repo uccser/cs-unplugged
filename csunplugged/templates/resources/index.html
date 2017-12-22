@@ -32,7 +32,7 @@
         <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
           <a class="link-item no-text-decoration d-block h-100 py-2 text-center" href="{% url 'resources:resource' resource.slug %}">
             <img class="border-thin" src="{% static resource.thumbnail_static_path %}" alt="Thumbnail of resource">
-            <p class="mb-0"><strong>{{ resource.name }}</strong></p>
+            <p class="mb-0 mt-2"><strong>{{ resource.name }}</strong></p>
           </a>
         </div>
       {% endfor %}
