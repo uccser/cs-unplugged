@@ -27,7 +27,7 @@ All notable changes to this project will be documented in this file.
 2.0.0-alpha.6
 ==============================================================================
 
-- **Release date:** 21st December 2017
+- **Release date:** 22nd December 2017
 - **Downloads:** `Source downloads are available on GitHub`_
 
 **Summary of changes:**
@@ -49,6 +49,7 @@ Many other smaller corrections, illustrations, and bugfixes have also been added
   - New navigation bar (with language picker).
   - New homepage design with card design for links. `#698 <https://github.com/uccser/cs-unplugged/issues/698>`_
   - Update topics index to show summary information. `#696 <https://github.com/uccser/cs-unplugged/issues/696>`_
+  - Update resources index to use card design for links.
   - Simplify topic page. `#696 <https://github.com/uccser/cs-unplugged/issues/696>`_
   - Simplify unit plan page.
   - New footer design. `#695 <https://github.com/uccser/cs-unplugged/issues/695>`_
@@ -73,7 +74,6 @@ Many other smaller corrections, illustrations, and bugfixes have also been added
   - Add lxml 4.1.1.
   - Add uniseg 0.7.1.
   - Add python-bidi 0.4.0.
-  - Add arabic-reshaper 2.0.14.
   - Add django-bidi-utils 1.0.
   - Update tqdm to 4.19.5.
   - Update django-debug-toolbar 1.9.1.
