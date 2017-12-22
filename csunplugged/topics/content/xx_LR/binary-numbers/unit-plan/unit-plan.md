@@ -60,13 +60,9 @@ crwdns18308:0crwdne18308:0
 
 ## crwdns18312:0crwdne18312:0
 
-*BlockTag: crwdns18313:0crwdne18313:0*
+*BlockTag: crwdns18343:0crwdne18343:0*
 
-{image file-path="img/topics/col_binary_0.png"}
-
-*BlockTag: crwdns18314:0crwdne18314:0*
-
-{image file-path="img/topics/col_binary_1.png"}
+{image file-path="img/topics/col_binary_01.png"}
 
 - crwdns9128:0crwdne9128:0
 
