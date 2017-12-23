@@ -110,50 +110,34 @@ var tasks = {
     return gulp.src('static/img/**/*')
       .pipe(responsive({
         // Resize images in JPEG format
-        'topics/*.{jpg,jpeg}': [
+        'topics/*.{jpg,jpeg,png}': [
           {
-            width: 200,
+            width: 100,
             rename: {
-              suffix: '-200px',
-              extname: '.jpg',
+              suffix: '@100px',
             },
           }, {
-            width: 400,
+            width: 300,
             rename: {
-              suffix: '-400px',
-              extname: '.jpg',
+              suffix: '@300px',
             },
           }, {
-            width: 600,
+            width: 500,
             rename: {
-              suffix: '-600px',
-              extname: '.jpg',
-            },
-          }, {} // Create version at original size
-        ],
-        'topics/*.png': [
-          {
-            width: 200,
-            rename: {
-              suffix: '-200px',
-              extname: '.png',
+              suffix: '@500px',
             },
           }, {
-            width: 400,
+            width: 700,
             rename: {
-              suffix: '-400px',
-              extname: '.png',
+              suffix: '@700px',
             },
-          }, {
-            width: 600,
-            rename: {
-              suffix: '-600px',
-              extname: '.png',
-            },
-          }, {} // Create version at original size
+          }, {} // Create copy at original size wit original filename
         ],
       }, {
-      skipOnEnlargement: true,
+      quality: 100,
+      progressive: true,
+      compressionLevel: 9,
+      withoutAdaptiveFiltering: true,
       errorOnEnlargement: false,
       errorOnUnusedImage: false,
       passThroughUnused: true,
