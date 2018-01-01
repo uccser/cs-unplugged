@@ -2,6 +2,7 @@
 
 from lxml import etree
 from django.utils.translation import ugettext as _
+from django.http import QueryDict
 from utils.errors.QueryParameterMissingError import QueryParameterMissingError
 from utils.errors.QueryParameterInvalidError import QueryParameterInvalidError
 from utils.errors.QueryParameterMultipleValuesError import QueryParameterMultipleValuesError
@@ -83,6 +84,26 @@ class SingleValuedParameter(ResourceParameter):
         else:
             self.value = self.process_value(requested_values[0])
 
+    def html_default(self, request_parameters):
+        """Return the default parameter HTML value.
+
+        If the HTTP request for the resource form has a requested parameter
+        default, return the requested value. Otherwise return the parameter
+        default.
+
+        Args:
+            request_parameters (QueryDict): Request QueryDict for resource form.
+
+        Return:
+            String of default value.
+        """
+        default = self.default
+        if request_parameters:
+            requested_default = request_parameters.get(self.name)
+            if requested_default and requested_default in self.valid_values.keys():
+                default = requested_default
+        return default
+
 
 class MultiValuedParameter(ResourceParameter):
     """Resource parameter class where requesting multiple values is valid."""
@@ -121,8 +142,16 @@ class EnumResourceParameter(SingleValuedParameter):
             self.default = list(self.valid_values.keys())[0]  # Select first value
         self.value = None
 
-    def html_element(self):
-        """Return HTML element for the EnumResourceParameter."""
+    def html_element(self, request_parameters=None):
+        """Return HTML element for the EnumResourceParameter.
+
+        Args:
+            request_parameters (QueryDict): QueryDict of request_parameters.
+
+        Returns:
+            Element tree of HTML.
+        """
+        default_value = super().html_default(request_parameters)
         base_elem = super().html_element()
         for value, value_desc in self.valid_values.items():
             input_elem = etree.Element(
@@ -132,7 +161,7 @@ class EnumResourceParameter(SingleValuedParameter):
                 id='{}_{}'.format(self.name, value),
                 value=str(value)
             )
-            if value == self.default:
+            if value == default_value:
                 input_elem.set("checked", "checked")
             base_elem.append(input_elem)
             label_elem = etree.Element(
@@ -214,8 +243,15 @@ class TextResourceParameter(SingleValuedParameter):
         super().__init__(**kwargs)
         self.placeholder = placeholder
 
-    def html_element(self):
-        """Return HTML element for the TextResourceParameter."""
+    def html_element(self, request_parameters=None):
+        """Return HTML element for the TextResourceParameter.
+
+        Args:
+            request_parameters (QueryDict): QueryDict of request_parameters.
+
+        Returns:
+            Element tree of HTML.
+        """
         base_elem = super().html_element()
         input_elem = etree.Element(
             "input",
@@ -244,8 +280,16 @@ class IntegerResourceParameter(SingleValuedParameter):
         self.max_val = max_val
         self.default = default
 
-    def html_element(self):
-        """Return HTML element for the IntegerResourceParameter."""
+    def html_element(self, request_parameters=None):
+        """Return HTML element for the IntegerResourceParameter.
+
+        Args:
+            request_parameters (QueryDict): QueryDict of request_parameters.
+
+        Returns:
+            Element tree of HTML.
+        """
+        default_value = super().html_default(request_parameters)
         base_elem = super().html_element()
         input_elem = etree.Element(
             "input",
@@ -256,8 +300,8 @@ class IntegerResourceParameter(SingleValuedParameter):
             input_elem.set("min", str(self.min_val))
         if self.max_val:
             input_elem.set("max", str(self.max_val))
-        if self.default:
-            input_elem.set("value", str(self.default))
+        if default_value:
+            input_elem.set("value", str(default_value))
         base_elem.append(input_elem)
         return base_elem
 
