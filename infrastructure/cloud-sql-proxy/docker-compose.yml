@@ -4,7 +4,7 @@ services:
     image: gcr.io/cloudsql-docker/gce-proxy:1.11
     volumes:
       - .:/cs-unplugged
-    command: /cloud_sql_proxy -instances=${GOOGLE_CLOUD_SQL_CONNECTION_NAME}=tcp:0.0.0.0:5432 -credential_file=/cs-unplugged/continuous-deployment-dev.json
+    command: /cloud_sql_proxy -instances=${GOOGLE_CLOUD_SQL_CONNECTION_NAME}=tcp:0.0.0.0:5432 -credential_file=/cs-unplugged/continuous-deployment-${DEPLOYMENT}.json
 
   django:
     build:
