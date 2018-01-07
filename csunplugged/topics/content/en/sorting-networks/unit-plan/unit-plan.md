@@ -1,6 +1,6 @@
 # Sorting networks
 
-{panel type="teaching" title="See teaching this in action!"}
+{panel type="video" title="See teaching this in action!"}
 
 A demonstration of sorting networks being taught is available here:
 
@@ -12,8 +12,6 @@ Some other videos showing different situations using Sorting Networks:
 -   [Video 2](https://www.youtube.com/watch?v=30WcPnvfiKE)
 
 {panel end}
-
-## What’s it all about?
 
 As we use computers more and more, and the amount of data we use increases, we
 want them to process information as quickly as possible.

@@ -25,7 +25,7 @@ you could do is say a number between 0 and 26.
 Work out and write down the binary numbers using 5 bits from 0 to 26 on the
 Binary to Alphabet resource, then add the letters of the alphabet.
 
-{image file-path="img/topics/col_binary_robot_boy_convo.png" alt="Cartoon boy talking to robot"}
+{image file-path="img/topics/col_binary_robot_boy_convo.png" alt="Cartoon boy talking to robot" alignment="right"}
 
 {panel type="teaching" title="Teaching observations"}
 

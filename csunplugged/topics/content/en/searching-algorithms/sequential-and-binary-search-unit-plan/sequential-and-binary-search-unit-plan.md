@@ -8,8 +8,6 @@
 
 {comment Video 3: Linking the “Treasure Hunt” activities to statistics.}
 
-## What’s it all about?
-
 {image file-path="img/topics/different-sized-haystacks.png" alt="A farmer can easily find a needle in a small haystack, but can't find it in a large haystack."}
 
 Searching for a keyword, a value, or a specific piece of data (information) is the basis of many computing applications, whether it’s looking up a bank account balance, using an internet search engine, or searching for a file on your laptop.
