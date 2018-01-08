@@ -1,0 +1,107 @@
+<style>
+  /* Global settings */
+  table, th, td {
+    border-collapse: collapse;
+    vertical-align: top;
+    text-align: center;
+    table-layout: fixed;
+  }
+  table {
+    width: 100%;
+  }
+  /* Hash table */
+  table.hash-table th,
+  table.hash-table > tbody > tr > td {
+    border: 2px solid black;
+    padding: 0.4em;
+  }
+  table.hash-table th {
+    font-size: 1.2em;
+  }
+  /* Linked list */
+  div.linked-list {
+    display: inline-block;
+    text-align: center;
+  }
+  div.linked-list-item {
+    border: 1px solid #222;
+    padding: 0.3em;
+  }
+  div.linked-list-connector {
+    border-right: 1px solid #222;
+    width: 50%;
+    height: 0.7em;
+  }
+  /* Other */
+  .page-break {
+    page-break-after: always;
+  }
+</style>
+
+<h1>Hash Table Worksheet</h1>
+
+<h2>Hash Table 1</h2>
+<p>
+  The following hash table stores a number using a hash function that is modulo 10 of the sum of the number’s digits.
+</p>
+
+<table class="hash-table page-break">
+  <thead>
+    <tr>
+      {% for bucket in mod_10_buckets %}
+        <th>{{ bucket.number }}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      {% for bucket in mod_10_buckets %}
+        <td>
+          <div class="linked-list">
+            {% for bucket_number in bucket.numbers %}
+              <div class="linked-list-item">
+                {{ bucket_number }}
+              </div>
+              {% if not forloop.last %}
+                  <div class="linked-list-connector"></div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </td>
+      {% endfor %}
+    </tr>
+  </tbody>
+</table>
+
+<h2>Hash Table 2</h2>
+<p>
+  The following hash table stores a number using a hash function that is modulo 5 of the sum of the number’s digits.
+</p>
+
+<table class="hash-table">
+  <thead>
+    <tr>
+      {% for bucket in mod_5_buckets %}
+        <th>{{ bucket.number }}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      {% for bucket in mod_5_buckets %}
+        <td>
+          <div class="linked-list">
+            {% for bucket_number in bucket.numbers %}
+              <div class="linked-list-item">
+                {{ bucket_number }}
+              </div>
+              {% if not forloop.last %}
+                  <div class="linked-list-connector"></div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </td>
+      {% endfor %}
+    </tr>
+  </tbody>
+</table>
