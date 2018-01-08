@@ -24,6 +24,16 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+2.0.0-alpha.6.1
+==============================================================================
+
+- **Release date:** 22nd December 2017
+- **Downloads:** `Source downloads are available on GitHub`_
+
+**Changelog:**
+
+- Fix bug where Cloud SQL Proxy searched for wrong credential file.
+
 2.0.0-alpha.6
 ==============================================================================
 
