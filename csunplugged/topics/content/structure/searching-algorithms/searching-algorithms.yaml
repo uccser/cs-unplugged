@@ -3,5 +3,5 @@ unit-plans:
   - data-structures-for-searching-unit-plan/data-structures-for-searching-unit-plan.yaml
 
 icon: img/topics/searching-algorithms-icon.png
-
+other-resources: other-resources.md
 curriculum-integrations: curriculum-integrations/curriculum-integrations.yaml
