@@ -2,9 +2,10 @@
 
 from copy import deepcopy
 from operator import itemgetter
-from random import choice, randint, sample, shuffle
+from random import randint, shuffle
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 from django.template.loader import render_to_string
+
 
 class HashTableWorksheetResourceGenerator(BaseResourceGenerator):
     """Class for Hash Table Worksheet resource generator."""
