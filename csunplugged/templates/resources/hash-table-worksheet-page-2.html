@@ -1,0 +1,47 @@
+<table>
+  <tr>
+    <td>
+      <h2>Hash Table 2</h2>
+      <p>
+        The following hash table stores a number using a hash function that is modulo 5 of the sum of the number’s digits.
+      </p>
+
+      <h3>Questions</h3>
+      <p><strong>How many comparisons does it take to find?</strong></p>
+      <ul>
+        {% for number in comparison_numbers %}
+          <li>{{ number }} = _______</li>
+        {% endfor %}
+      </ul>
+    </td>
+    <td>
+      <table class="hash-table">
+        <thead>
+          <tr>
+            {% for bucket in mod_5_buckets %}
+              <th>{{ bucket.number }}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            {% for bucket in mod_5_buckets %}
+              <td>
+                <div class="linked-list">
+                  {% for bucket_number in bucket.numbers %}
+                    <div class="linked-list-item">
+                      {{ bucket_number }}
+                    </div>
+                    {% if not forloop.last %}
+                        <div class="linked-list-connector"></div>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              </td>
+            {% endfor %}
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+</table>
