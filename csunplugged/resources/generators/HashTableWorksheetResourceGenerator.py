@@ -71,8 +71,6 @@ class HashTableWorksheetResourceGenerator(BaseResourceGenerator):
     def populate_buckets(self, buckets, modulo):
         """Populate buckets to their number counts.
 
-        Currently duplicate numbers are allowed.
-
         Args:
             buckets (list): List of bucket dictionaries.
             modulo (int): Modulo used in hash function.
@@ -81,7 +79,8 @@ class HashTableWorksheetResourceGenerator(BaseResourceGenerator):
             bucket["numbers"] = list()
             while len(bucket["numbers"]) < bucket["count"]:
                 number = self.generate_number(bucket, modulo)
-                bucket["numbers"].append(number)
+                if number not in bucket["numbers"]:
+                    bucket["numbers"].append(number)
 
     def generate_number(self, bucket, modulo):
         """Generate unique number for bucket.
@@ -94,7 +93,7 @@ class HashTableWorksheetResourceGenerator(BaseResourceGenerator):
             Unique integer for bucket.
         """
         number_prefix = randint(100, 999)
-        number_prefix_sum_digit = self.sum_digits(number_prefix) % modulo
+        number_prefix_sum_digit = self.sum_digits(number_prefix)
         number_postfix = (modulo - (number_prefix_sum_digit - bucket["number"])) % modulo
         return int(str(number_prefix) + str(number_postfix))
 
