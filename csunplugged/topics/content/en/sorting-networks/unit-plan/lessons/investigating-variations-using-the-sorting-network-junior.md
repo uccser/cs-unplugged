@@ -15,7 +15,9 @@ Students should have completed lesson 1 to introduce Sorting Networks.
 Show the students the Sorting Network again (if the network needs redrawing then students often enjoy doing this, and drawing it accurately from the diagram is a useful exercise).
 Tell them that they will be trying it with some variations this time.
 
-{panel type="math" title="Mathematical links"}
+{panel type="math"}
+
+# Mathematical links
 
 Predicting outcomes: By understanding how the Sorting Network works students will be investigating different ways of using the Sorting Network and exploring how the lowest and highest number always ends up in the correct output position.
 
@@ -52,7 +54,9 @@ Ask the students to predict what will happen (they should be able to work out th
 
 Have them try it out with some numbers to check it.
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 By reversing the left/right decision, the final result will be in the reverse order to how it would have been in lesson 1.
 
@@ -77,7 +81,9 @@ This will require considerable reasoning to achieve.
 
 If they struggle to find an example, you could give the one below, and then challenge them to find a different one that doesn't come out sorted.
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 The Sorting Network is designed to work consistently one way, rather than working both ways.
 For example, the first image below shows an input that happens to come out sorted when going through the network backwards, while the second one doesn't.

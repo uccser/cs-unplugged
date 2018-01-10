@@ -1,6 +1,8 @@
 # Sorting networks
 
-{panel type="video" title="See teaching this in action!"}
+{panel type="video"}
+
+# See teaching this in action
 
 A demonstration of sorting networks being taught is available here:
 
@@ -113,7 +115,9 @@ they will be doing this in a simplified way.
     These are often used for other computations because of their ability to do
     parallel processing.
 
-{panel type="math" title="Mathematical links"}
+{panel type="math"}
+
+# Mathematical links
 
 This activity strongly supports learning about the concept of before and after
 (ordering) for numbers, including determining the relationship between two

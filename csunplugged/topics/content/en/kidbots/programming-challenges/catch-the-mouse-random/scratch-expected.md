@@ -1,4 +1,6 @@
-{panel type="help" title="Recommended blocks"}
+{panel type="help"}
+
+# Recommended blocks
 
 ```scratch:split:random
 when I receive [go v]

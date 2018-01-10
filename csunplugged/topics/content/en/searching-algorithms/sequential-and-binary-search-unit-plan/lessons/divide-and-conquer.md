@@ -22,7 +22,9 @@ You can’t see them but this time they are in order from the lowest number to t
 The numbers range from 0 to 1000.
 Can you find number **302**
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 You can adapt the range to suit what your students are working on in their mathematics lessons.
 This lesson focuses on sorted lists and we are using a range of numbers from 0 - 999.
@@ -72,7 +74,9 @@ Did the students win because they guessed within 10  guesses or did you win beca
 
 Repeat this game until the students have won 3 times or you have won 3 times.
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 The number of guesses required can be anything from 1 (if you are lucky the first time), to 5 (if you have chosen the middle number each time).
 Of course, they may use more than 5 guesses if they use a poor strategy. Most of the time they will need close to 5 guesses.

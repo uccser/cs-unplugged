@@ -1,4 +1,6 @@
-{panel type="ct-algorithm" title="Algorithmic thinking"}
+{panel type="ct-algorithm"}
+
+# Algorithmic thinking
 
 In this lesson we used the same algorithm and algorithmic thinking as we did in lesson 1, but applied it to treasure chests instead of the numbers being guessed.
 Just like in lesson 1, if we check in every treasure chest then we are guaranteed to find the real money at some stage (unless all the money is fake!)
@@ -13,7 +15,9 @@ Do they realise that if the value isn't there, then every chest will have to be 
 
 {panel end}
 
-{panel type="ct-abstraction" title="Abstraction"}
+{panel type="ct-abstraction"}
+
+# Abstraction
 
 As in lesson 1, we can ignore many details about the items we are searching for.
 For example it doesn’t matter if the money is in New Zealand dollars/$, Japanese yen/¥, or pounds/£.
@@ -27,7 +31,9 @@ Which students can identify quickly what the relevant information is?
 
 {panel end}
 
-{panel type="ct-decomposition" title="Decomposition"}
+{panel type="ct-decomposition"}
+
+# Decomposition
 
 The larger task of “find my number” is broken down into a series of small steps, each of which is simply “check one of the cards to see if your number is there" and eliminate that card if it isn’t the correct one.
 This is important because when a computer searches through data this is the most basic step it performs, it can only compare two things at a time so our algorithm must only compare two things at a time.
@@ -40,7 +46,9 @@ Which students can articulate that the computer is only checking one number at a
 
 {panel end}
 
-{panel type="ct-pattern" title="Generalising and patterns"}
+{panel type="ct-pattern"}
+
+# Generalising and patterns
 
 The generalised idea of this activity is that any searching problem where the data being searched is not organised into some structure or order can only be approached using sequential search. Recognising this pattern can save students, and programmers, time because when they encounter this problem in the future they are aware that they do not need to spend their time trying to come up with an especially clever solution.
 This situation can be generalised to apply to any type of data.
@@ -51,7 +59,9 @@ Which students quickly understand that this is actually no different to playing 
 
 {panel end}
 
-{panel type="ct-evaluation" title="Evaluation"}
+{panel type="ct-evaluation"}
+
+# Evaluation
 
 Students will be evaluating sequential search when they collect and examine the statistics of how many chests they had to check.
 They can further evaluate it by collecting the number of guesses it takes to search through larger numbers of chests and examining these statistics.
@@ -66,7 +76,9 @@ Discuss other ideas on how you could find a number more effectively.
 
 {panel end}
 
-{panel type="ct-logic" title="Logic"}
+{panel type="ct-logic"}
+
+# Logic
 
 Let's think about the problem logically: The cards have been placed in a random order, therefore all we learn when we look at a card is what is on that card, we don’t learn anything at all about what is on the other cards.
 Since all we can learn from checking a card is whether or not that card is the one we are searching for, it doesn’t matter what order we check the cards in because it won’t change the fact that we have to check each card, one-by-one, until we find the correct one.
