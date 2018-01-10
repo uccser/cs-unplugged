@@ -1,6 +1,10 @@
-*BlockTag: crwdns8342:0crwdne8342:0*
+*BlockTag: crwdns18981:0crwdne18981:0*
 
-{panel type="general" title="Solution 1" subtitle="(check digits of the binary number)"}
+{panel type="general" subtitle="true"}
+
+# crwdns18982:0crwdne18982:0
+
+## crwdns18983:0crwdne18983:0
 
 **crwdns8343:0crwdne8343:0**
 
@@ -37,9 +41,13 @@ crwdns8344:0[32]crwdnd8344:0[1]crwdnd8344:0[1]crwdnd8344:0[0]crwdne8344:0
 
 {panel end}
 
-*BlockTag: crwdns8356:0crwdne8356:0*
+*BlockTag: crwdns18984:0crwdne18984:0*
 
-{panel type="general" title="Solution 2" subtitle="(broadcast the bit value)"}
+{panel type="general" subtitle="true"}
+
+# crwdns18985:0crwdne18985:0
+
+## crwdns18986:0crwdne18986:0
 
 **crwdns8357:0crwdne8357:0**
 
@@ -76,9 +84,13 @@ crwdns8358:0[32]crwdnd8358:0[1]crwdne8358:0
 
 {panel end}
 
-*BlockTag: crwdns8370:0crwdne8370:0*
+*BlockTag: crwdns18987:0crwdne18987:0*
 
-{panel type="general" title="Solution 3" subtitle="(using a variable to broadcast the bit value)"}
+{panel type="general" subtitle="true"}
+
+# crwdns18988:0crwdne18988:0
+
+## crwdns18989:0crwdne18989:0
 
 **crwdns8371:0crwdne8371:0**
 
@@ -115,9 +127,13 @@ crwdns8372:0[32]crwdnd8372:0[1]crwdne8372:0
 
 {panel end}
 
-*BlockTag: crwdns8384:0crwdne8384:0*
+*BlockTag: crwdns18990:0crwdne18990:0*
 
-{panel type="general" title="Solution 4" subtitle="(cloning the black card)"}
+{panel type="general" subtitle="true"}
+
+# crwdns18991:0crwdne18991:0
+
+## crwdns18992:0crwdne18992:0
 
 **crwdns8385:0crwdne8385:0**
 

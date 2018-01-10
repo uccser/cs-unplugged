@@ -18,9 +18,11 @@ crwdns15937:0crwdne15937:0 crwdns15938:0crwdne15938:0 crwdns15939:0crwdne15939:0
 
 crwdns15941:0crwdne15941:0
 
-*BlockTag: crwdns15942:0crwdne15942:0*
+*BlockTag: crwdns18377:0crwdne18377:0*
 
-{panel type="math" title="Mathematical Links"}
+{panel type="math"}
+
+# crwdns18378:0crwdne18378:0
 
 crwdns15943:0crwdne15943:0 crwdns15944:0crwdne15944:0
 

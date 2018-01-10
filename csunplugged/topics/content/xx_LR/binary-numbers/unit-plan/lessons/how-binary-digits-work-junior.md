@@ -12,9 +12,11 @@ crwdns9596:0crwdne9596:0
 
 ## crwdns9597:0crwdne9597:0
 
-*BlockTag: crwdns9598:0crwdne9598:0*
+*BlockTag: crwdns19079:0crwdne19079:0*
 
-{panel type="general" title="Notes on resources"}
+{panel type="general"}
+
+# crwdns19080:0crwdne19080:0
 
 crwdns9599:0crwdne9599:0 crwdns9600:0crwdne9600:0
 
@@ -36,9 +38,11 @@ crwdns9606:0crwdne9606:0
 
 3. crwdns9614:0crwdne9614:0
     
-    *BlockTag: crwdns9615:0crwdne9615:0*
+    *BlockTag: crwdns19081:0crwdne19081:0*
 
-    {panel type="teaching" title="Teaching observations"}
+    {panel type="teaching"}
+    
+    # crwdns19082:0crwdne19082:0
     
     crwdns9616:0crwdne9616:0 crwdns9617:0crwdne9617:0 crwdns9618:0crwdne9618:0
     
@@ -52,9 +56,11 @@ crwdns9606:0crwdne9606:0
 
     {image file-path="img/topics/col_binary_4_kids_3_cards.png" alt="3 kids holding binary cards"}
     
-    *BlockTag: crwdns9624:0crwdne9624:0*
+    *BlockTag: crwdns19083:0crwdne19083:0*
 
-    {panel type="teaching" title="Teaching observations"}
+    {panel type="teaching"}
+    
+    # crwdns19084:0crwdne19084:0
     
     crwdns9625:0crwdne9625:0
     
@@ -64,9 +70,11 @@ crwdns9606:0crwdne9606:0
 
 5. crwdns9627:0crwdne9627:0
     
-    *BlockTag: crwdns9628:0crwdne9628:0*
+    *BlockTag: crwdns19085:0crwdne19085:0*
 
-    {panel type="teaching" title="Teaching observations"}
+    {panel type="teaching"}
+    
+    # crwdns19086:0crwdne19086:0
     
     crwdns9629:0crwdne9629:0 crwdns9630:0crwdne9630:0 crwdns9631:0crwdne9631:0 crwdns9632:0crwdne9632:0
     
@@ -78,9 +86,11 @@ crwdns9606:0crwdne9606:0
 
 6. crwdns9635:0crwdne9635:0
     
-    *BlockTag: crwdns9636:0crwdne9636:0*
+    *BlockTag: crwdns19087:0crwdne19087:0*
 
-    {panel type="teaching" title="Teaching observations"}
+    {panel type="teaching"}
+    
+    # crwdns19088:0crwdne19088:0
     
     crwdns9637:0crwdne9637:0 crwdns9638:0crwdne9638:0 crwdns9639:0crwdne9639:0 crwdns9640:0crwdne9640:0 crwdns9641:0crwdne9641:0 crwdns9642:0crwdne9642:0 crwdns9643:0crwdne9643:0
     
@@ -100,9 +110,11 @@ crwdns9606:0crwdne9606:0
 
     {image file-path="img/topics/binary_cards_equals_three.png" alt="Diagram showing that 2 binary cards make the number 3"}
     
-    *BlockTag: crwdns9667:0crwdne9667:0*
+    *BlockTag: crwdns19089:0crwdne19089:0*
 
-    {panel type="math" title="Mathematical links"}
+    {panel type="math"}
+    
+    # crwdns19090:0crwdne19090:0
     
     crwdns9668:0crwdne9668:0 crwdns9669:0crwdne9669:0 crwdns9670:0crwdne9670:0
     
@@ -194,9 +206,11 @@ crwdns9606:0crwdne9606:0
     
     crwdns9734:0crwdne9734:0
 
-*BlockTag: crwdns9735:0crwdne9735:0*
+*BlockTag: crwdns19091:0crwdne19091:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# crwdns19092:0crwdne19092:0
 
 crwdns9736:0crwdne9736:0 crwdns9737:0crwdne9737:0 crwdns9738:0crwdne9738:0
 

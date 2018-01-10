@@ -8,8 +8,6 @@
 
 {comment Video 3: Linking the “Treasure Hunt” activities to statistics.}
 
-## What’s it all about?
-
 {image file-path="img/topics/different-sized-haystacks.png" alt="A farmer can easily find a needle in a small haystack, but can't find it in a large haystack."}
 
 Searching for a keyword, a value, or a specific piece of data (information) is the basis of many computing applications, whether it’s looking up a bank account balance, using an internet search engine, or searching for a file on your laptop.
@@ -90,7 +88,9 @@ Likewise if we are searching for a book in the library that hasn’t been return
 Searching is everywhere in our lives, from finding a person’s address to looking up a phone number in a phone book.
 We can apply binary or sequential search methods depending on how the data has been organised to start with.
 
-{panel type="math" title="Mathematical links"}
+{panel type="math"}
+
+# Mathematical links
 
 This unit could be taught within a statistics unit at all curriculum levels to support students' understanding of why particular searching methods are faster than others.
 

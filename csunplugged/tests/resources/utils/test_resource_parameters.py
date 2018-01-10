@@ -3,7 +3,7 @@ from lxml import etree
 from utils.errors.QueryParameterMissingError import QueryParameterMissingError
 from utils.errors.QueryParameterInvalidError import QueryParameterInvalidError
 from utils.errors.QueryParameterMultipleValuesError import QueryParameterMultipleValuesError
-
+from django.http import QueryDict
 from resources.utils.resource_parameters import (
     ResourceParameter,
     SingleValuedParameter,
@@ -55,6 +55,39 @@ class ResourceParametersTest(BaseTest):
         param = SingleValuedParameter()
         with self.assertRaises(QueryParameterMultipleValuesError):
             param.process_requested_values(["value1", "value2"])
+
+    def test_single_valued_parameter_html_default_of_parameter_blank_query(self):
+        param = SingleValuedParameter(name="param", default="value")
+        query = QueryDict()
+        result = param.html_default(query)
+        self.assertEqual(result, "value")
+
+    def test_single_valued_parameter_html_default_of_parameter_query(self):
+        param = SingleValuedParameter(name="param", default="value")
+        query = QueryDict("other-param=value")
+        result = param.html_default(query)
+        self.assertEqual(result, "value")
+
+    def test_single_valued_parameter_html_default_query(self):
+        param = SingleValuedParameter(name="param", default="value")
+        param.valid_values = {"override": ""}
+        query = QueryDict("param=override")
+        result = param.html_default(query)
+        self.assertEqual(result, "override")
+
+    def test_single_valued_parameter_html_default_query_multiple(self):
+        param = SingleValuedParameter(name="param", default="value")
+        param.valid_values = {"override": "", "override2": ""}
+        query = QueryDict("param=override&param=override2")
+        result = param.html_default(query)
+        self.assertEqual(result, "override2")
+
+    def test_single_valued_parameter_html_default_query_invalid_value(self):
+        param = SingleValuedParameter(name="param", default="value")
+        param.valid_values = dict()
+        query = QueryDict("param=override")
+        result = param.html_default(query)
+        self.assertEqual(result, "value")
 
     def test_multi_valued_parameter_process_requested_values_single_value(self):
         param = MultiValuedParameter()

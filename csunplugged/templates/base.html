@@ -45,7 +45,7 @@
   <body style="text-align: {{LANGUAGE_START}};">
     <nav class="navbar fixed-top navbar-expand-md navbar-dark py-1">
       <div class="container px-0">
-        <button class="navbar-toggler navbar-toggler-{{LANGUAGE_START}}" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="{% url 'general:home' %}">
@@ -63,7 +63,7 @@
             <div class="navbar-nav">
               <div class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarLanguageSelector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ current_language.name_local|capfirst }}</a>
-                <div class="dropdown-menu dropdown-menu-{{LANGUAGE_START}}" aria-labelledby="navbarLanguageSelector">
+                <div class="dropdown-menu dropdown-menu-{{ LANGUAGE_END }}" aria-labelledby="navbarLanguageSelector">
                   {% for language in LANGUAGES %}
                     {% get_language_info for language.0 as lang %}
                     <a class="dropdown-item" href="{% translate_url language.0 %}">{{ lang.name_local|capfirst }}</a>
@@ -79,11 +79,11 @@
     {% block breadcrumbs %}
     {% endblock breadcrumbs %}
 
-    <div id="content-container" class="container">
-      {% block body_container %}
-        {% render_breadcrumbs "django_bootstrap_breadcrumbs/bootstrap4.html" %}
+    {% block body_container %}
+      <div id="content-container" class="container">
         <div class="row">
           <div class="col-12">
+            {% render_breadcrumbs "django_bootstrap_breadcrumbs/bootstrap4.html" %}
             {% block page_heading %}
             {% endblock page_heading %}
           </div>
@@ -93,13 +93,13 @@
               {% endblock content %}
             </div>
           {% endblock content_container %}
-          <div class="col-12">
+          <div class="col-12 order-md-12">
             {% block end_content %}
             {% endblock end_content %}
           </div>
         </div>
-      {% endblock body_container %}
-    </div>
+      </div>
+    {% endblock body_container %}
 
     <div class="container white-footer mt-5 py-5">
       <div class="row align-items-center text-center">

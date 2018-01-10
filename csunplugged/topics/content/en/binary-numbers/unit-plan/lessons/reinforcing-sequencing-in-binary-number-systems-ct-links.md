@@ -1,4 +1,6 @@
-{panel type="ct-algorithm" title="Algorithmic thinking"}
+{panel type="ct-algorithm"}
+
+# Algorithmic thinking
 
 #### Examples of what you could look for:
 
@@ -6,7 +8,9 @@ Do students demonstrate how the binary number system works by explaining, system
 
 {panel end}
 
-{panel type="ct-abstraction" title="Abstraction"}
+{panel type="ct-abstraction"}
+
+# Abstraction
 
 #### Examples of what you could look for:
 
@@ -14,7 +18,9 @@ Ask students to look at a video created and  list the features of the objects us
 
 {panel end}
 
-{panel type="ct-decomposition" title="Decomposition"}
+{panel type="ct-decomposition"}
+
+# Decomposition
 
 #### Examples of what you could look for:
 
@@ -22,7 +28,9 @@ Watch a video and ask students to point out one element in it that is decomposit
 
 {panel end}
 
-{panel type="ct-pattern" title="Generalising and patterns"}
+{panel type="ct-pattern"}
+
+# Generalising and patterns
 
 #### Examples of what you could look for:
 
@@ -30,7 +38,9 @@ Have students review three videos and ask what do these videos have in common an
 
 {panel end}
 
-{panel type="ct-logic" title="Logic"}
+{panel type="ct-logic"}
+
+# Logic
 
 #### Examples of what you could look for:
 
@@ -38,7 +48,9 @@ Finding errors or misconceptions in the videos may exercise some logical reasoni
 
 {panel end}
 
-{panel type="ct-evaluation" title="Evaluation"}
+{panel type="ct-evaluation"}
+
+# Evaluation
 
 #### Examples of what you could look for:
 

@@ -40,10 +40,9 @@
 @import url('https://fonts.googleapis.com/css?family=Sniglet');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
 
-$body-space-from-top: 72px;
 $ct-abstraction: #E30613;
 $ct-algorithm: #0B983A;
-$ct-decomposition: #DABB00;
+$ct-decomposition: #E4AB0D;
 $ct-evaluation: #0F70B7;
 $ct-logic: #EA5B0C;
 $ct-pattern: #82358C;
@@ -75,10 +74,6 @@ h6 {
   color: $gray;
 }
 
-.heading-underline {
-  border-bottom: 2px solid $gray-lighter;
-}
-
 .subtitle {
   color: $gray-light;
 }
@@ -101,130 +96,35 @@ div.plugged-in-language-implementation {
 $rounded-corner-radius: 0.5rem;
 
 .jumbotron {
-  background: linear-gradient( rgba($red,.7), rgba($red,.7) ), url("../img/home-page-banner-photo.jpg");
+  background: url("../img/red-hero-banner.png");
   background-size: cover;
-  border: $card-border-width solid darken($red, 10%);
-  border-radius: $rounded-corner-radius;
-  margin: 1rem 0;
   width: 100%;
+  padding-bottom: 60px;
+  text-shadow: 0 2px 2px rgba(0,0,0,0.4);
 
   h1 {
     font-family: $headings-font-family;
     color: $white;
+    font-size: 3.5rem;
+  }
+
+  p {
+    color: $gray-lighter;
+    font-size: 1rem;
   }
 }
 
-.link-box-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    @include media-breakpoint-up(md) {
-      flex-direction: row;
-    }
-    align-content: stretch;
-    align-items: stretch;
-    justify-content: space-around;
-    width: 100%;
-}
 
-.link-box {
-  border: 0.2em solid $blue;
-  border-radius: $border-radius;
-  overflow: hidden;
-  padding: ($spacer * .5) ($spacer * .5);
-  margin-bottom: $spacer;
-  width: 100%;
-  transition: 0.1s;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  justify-content: space-around;
-  &.link-box-md-3 {
-    @include media-breakpoint-up(md) {
-      width: 32%;
-    }
-  }
-  &.link-box-md-6 {
-    @include media-breakpoint-up(md) {
-      width: 49%;
-    }
-  }
-  &.link-box-lg-4 {
-    @include media-breakpoint-up(lg) {
-      width: 24%;
-    }
-  }
-  img {
-    max-height: 8rem;
-  }
-  h2,
-  h3 {
-    color: $gray;
-  }
-  &:hover {
-    background-color: rgba($blue, 0.1);
-  }
-  &:hover,
-  &:active,
-  &:visited,
-  &:focus {
-    text-decoration: none;
-  }
-  &.unavailable {
-    background-color: rgba($black, 0.2);
-  }
-  .badge-language-unavailable {
-    margin-#{$right}: auto;
-    margin-bottom: auto;
-    margin-top: 0;
-    margin-#{$left}: 0;
-  }
+#homepage-cards {
+  position: relative;
+  top: -80px;
+  margin-bottom: -50px;
 }
 
 .badge-language-unavailable {
   margin-#{$right}: auto;
   margin-bottom: auto;
   margin: 0.5em;
-}
-
-@mixin link-box-colour-variant($color) {
-  background-color: $color !important;
-  border: 0.2em solid darken($color, 10%) !important;
-  .link-box-title {
-    color: $white !important;
-  }
-  &:hover {
-    background-color: darken($color, 6%) !important;
-  }
-}
-
-.link-box-red {
-  @include link-box-colour-variant($red);
-}
-.link-box-orange {
-  @include link-box-colour-variant($orange);
-}
-.link-box-yellow {
-  @include link-box-colour-variant($yellow);
-}
-.link-box-green {
-  @include link-box-colour-variant($green);
-}
-.link-box-light-blue {
-  @include link-box-colour-variant($light-blue);
-}
-.link-box-blue {
-  @include link-box-colour-variant($blue);
-}
-.link-box-teal {
-  @include link-box-colour-variant($teal);
-}
-.link-box-pink {
-  @include link-box-colour-variant($pink);
-}
-.link-box-purple {
-  @include link-box-colour-variant($purple);
 }
 
 .navbar {
@@ -386,14 +286,18 @@ details {
   }
 }
 
+$navbar-height: 50px;
+$navbar-padding-bottom: 24px;
 body {
-  padding-top: $body-space-from-top;
+  padding-top: $navbar-height;
   position: relative;
   background-color: $gray-100;
 }
-
+#content-container {
+  padding-top: $navbar-padding-bottom;
+}
 #sticky-sidebar {
-  top: $body-space-from-top;
+  top: $navbar-height + $navbar-padding-bottom;
 }
 .sticky-top {
   z-index: 1020;
@@ -473,21 +377,65 @@ ol, ul {
 
 .link-item {
   background-color: $white;
-  border-#{$left}: 5px solid $red;
-  border-bottom: 2px solid $gray-200;
-  border-#{$right}: 2px solid $gray-200;
+  border-#{$left}: 5px solid $blue;
+  box-shadow: 0px 2px 5px 0px $gray-400;
   border-radius: 4px;
+  &.link-item-top {
+    border: 0;
+    border-top: 7px solid $blue;
+    &-green {
+      border-top-color: $green;
+      &:hover {
+        background-color: mix($green, $white, 10%)
+      }
+    }
+    &-yellow {
+      border-top-color: $yellow;
+      &:hover {
+        background-color: mix($yellow, $white, 10%)
+      }
+    }
+    &-light-purple {
+      border-top-color: $light-purple;
+      &:hover {
+        background-color: mix($light-purple, $white, 10%)
+      }
+    }
+    &-orange {
+      border-top-color: $orange;
+      &:hover {
+        background-color: mix($orange, $white, 10%)
+      }
+    }
+    &-teal {
+      border-top-color: $teal;
+      &:hover {
+        background-color: mix($teal, $white, 10%)
+      }
+    }
+    .img-container {
+      height: 8em;
+      img {
+        max-height: 100%;
+      }
+    }
+  }
   padding: 0.5rem 1rem 1rem 1rem;
-  h2 {
+  h2, h3 {
     color: $gray;
+  }
+  h2 {
     font-size: 28px;
+  }
+  h3 {
+    font-size: 26px;
   }
   img {
     max-height: 6rem;
   }
   &:hover {
     transform: translateY(2px);
-    background-color: rgba($red, 0.05);
+    background-color: mix($blue, $white, 10%)
   }
   &.unavailable {
     background-color: rgba($black, 0.2);
@@ -511,4 +459,30 @@ ol, ul {
 .navbar-nav-i18n {
   margin-#{$right}: auto !important;
   margin-#{$left}: 0 !important;
+}
+
+.img-wrap {
+  img {
+    @include img-fluid;
+  }
+  margin-bottom: $spacer * 0.5;
+  @include media-breakpoint-up(md) {
+    margin-top: $spacer * 0.5;
+    &-left {
+      @include float-left;
+      margin-right: $spacer * 0.5;
+    }
+    &-right {
+      @include float-right;
+      margin-left: $spacer * 0.5;
+    }
+    &-left,
+    &-right {
+      width: 50%;
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6, details {
+  clear: both;
 }

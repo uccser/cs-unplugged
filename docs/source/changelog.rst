@@ -24,6 +24,73 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+2.0.0-alpha.6.1
+==============================================================================
+
+- **Release date:** 22nd December 2017
+- **Downloads:** `Source downloads are available on GitHub`_
+
+**Changelog:**
+
+- Fix bug where Cloud SQL Proxy searched for wrong credential file.
+
+2.0.0-alpha.6
+==============================================================================
+
+- **Release date:** 22nd December 2017
+- **Downloads:** `Source downloads are available on GitHub`_
+
+**Summary of changes:**
+
+This release adds support for multiple languages, while also finalising the website design.
+New introductory pages and Pixel Painter resource have been added, and the 'Unplugged Programming' topic has been streamlined into the 'Kidbots' topic.
+Many other smaller corrections, illustrations, and bugfixes have also been added.
+
+**Changelog:**
+
+- Add support for multiple languages. `#103 <https://github.com/uccser/cs-unplugged/issues/103>`_
+
+  - Automatically upload and download translations from `Crowdin`_. `#618 <https://github.com/uccser/cs-unplugged/issues/618>`_ `#619 <https://github.com/uccser/cs-unplugged/issues/619>`_ `#620 <https://github.com/uccser/cs-unplugged/issues/620>`_ `#621 <https://github.com/uccser/cs-unplugged/issues/621>`_
+  - Update website design for bidirectional langauges. `#736 <https://github.com/uccser/cs-unplugged/issues/736>`_
+  - Implement dynamic text overlay for resource generation. `#670 <https://github.com/uccser/cs-unplugged/issues/670>`_
+
+- Update website design
+
+  - New navigation bar (with language picker).
+  - New homepage design with card design for links. `#698 <https://github.com/uccser/cs-unplugged/issues/698>`_
+  - Update topics index to show summary information. `#696 <https://github.com/uccser/cs-unplugged/issues/696>`_
+  - Update resources index to use card design for links.
+  - Simplify topic page. `#696 <https://github.com/uccser/cs-unplugged/issues/696>`_
+  - Simplify unit plan page.
+  - New footer design. `#695 <https://github.com/uccser/cs-unplugged/issues/695>`_
+  - Update Bootstrap 4 from Alpha 6 to Beta 2.
+  - Change header font to Sniglet and body font to Noto Sans.
+
+- Add introductory pages on 'What is Computer Science?' and 'How do I teach CS Unplugged?'.
+- Restructure 'Unplugged Programming' to 'Kidbots' and remove duplicate lessons. `#588 <https://github.com/uccser/cs-unplugged/issues/588>`_
+- Add Pixel Painter resource.
+- Mention arrows resource in text. `#702 <https://github.com/uccser/cs-unplugged/issues/702>`_
+- Restructure resource options to be generated from Python module. `#701 <https://github.com/uccser/cs-unplugged/pull/701>`_
+- Add animations and illustrations for 'The Great Treasure Hunt (Sorted)' lessons. `#672 <https://github.com/uccser/cs-unplugged/pull/672>`_
+- Add animations and illustrations for 'Divide and Conquer' lessons. `#673 <https://github.com/uccser/cs-unplugged/pull/673>`_
+- Update Microsoft logo. `#708 <https://github.com/uccser/cs-unplugged/issues/708>`_
+- Fix blank dropdown box in 'Investigating variations using the Sorting Network'. `#675 <https://github.com/uccser/cs-unplugged/issues/675>`_
+- Simplify 'Error detection and correction' logo.
+- Modify ``csu`` helper script and Docker setup for OSX compatability. `#651 <https://github.com/uccser/cs-unplugged/issues/651>`_
+- Package updates:
+
+  - Add tinycss 0.4.
+  - Add django-modeltranslation 0.12.1.
+  - Add lxml 4.1.1.
+  - Add uniseg 0.7.1.
+  - Add python-bidi 0.4.0.
+  - Add django-bidi-utils 1.0.
+  - Update tqdm to 4.19.5.
+  - Update django-debug-toolbar 1.9.1.
+  - Update django-extensions 1.9.8.
+  - Update coverage to 4.4.2
+  - Update Django to 1.11.7 and lock Django to 1.11 versions (long term release). `#679 <https://github.com/uccser/cs-unplugged/issues/679>`_ `#743 <https://github.com/uccser/cs-unplugged/issues/743>`_
+
 2.0.0-alpha.5
 ==============================================================================
 
@@ -210,3 +277,4 @@ The following topics are available in this version:
 .. _#502: https://github.com/uccser/cs-unplugged/issues/502
 .. _#503: https://github.com/uccser/cs-unplugged/issues/503
 .. _#506: https://github.com/uccser/cs-unplugged/issues/506
+.. _Crowdin: https://crowdin.com/project/cs-unplugged

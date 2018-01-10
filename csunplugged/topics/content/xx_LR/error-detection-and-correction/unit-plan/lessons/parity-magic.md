@@ -1,8 +1,10 @@
 # crwdns11199:0crwdne11199:0
 
-*BlockTag: crwdns11200:0crwdne11200:0*
+*BlockTag: crwdns19393:0crwdne19393:0*
 
-{panel type="teaching" title="See teaching this in action!"}
+{panel type="video"}
+
+# crwdns19394:0crwdne19394:0
 
 crwdns11201:0crwdne11201:0
 
@@ -14,9 +16,11 @@ crwdns11201:0crwdne11201:0
 
 {panel end}
 
-*BlockTag: crwdns11204:0crwdne11204:0*
+*BlockTag: crwdns19395:0crwdne19395:0*
 
-{panel type="general" title="Notes on resources"}
+{panel type="general"}
+
+# crwdns19396:0crwdne19396:0
 
 *BlockTag: crwdns11205:0crwdne11205:0*
 
@@ -62,9 +66,11 @@ crwdns11223:0crwdne11223:0 crwdns11224:0crwdne11224:0 crwdns11225:0crwdne11225:0
 
 5. crwdns11235:0crwdne11235:0
 
-*BlockTag: crwdns11236:0crwdne11236:0*
+*BlockTag: crwdns19397:0crwdne19397:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# crwdns19398:0crwdne19398:0
 
 crwdns11237:0crwdne11237:0 crwdns11238:0crwdne11238:0 crwdns11239:0crwdne11239:0
 
@@ -76,95 +82,171 @@ crwdns11241:0crwdne11241:0
 
 {panel end}
 
-*BlockTag: crwdns11243:0crwdne11243:0*
+*BlockTag: crwdns19399:0crwdne19399:0*
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-1.png" alt="5 rows of 5 parity cards in a random arrangement." caption="Step 1: Example layout of a 5x5 grid set up by the volunteer."}
+{image file-path="img/topics/parity-cards-6x6-grid-step-1.png" alt="5 rows of 5 parity cards in a random arrangement." caption="true"}
+
+crwdns19400:0crwdne19400:0
+
+*BlockTag: crwdns19401:0crwdne19401:0*
+
+{image end}
 
 ### crwdns11244:0crwdne11244:0
 
-*BlockTag: crwdns11245:0crwdne11245:0*
+*BlockTag: crwdns19402:0crwdne19402:0*
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-2.png" alt="Progress image of adding parity bits." caption="Step 2: Adding parity bit for the first row."}
+{image file-path="img/topics/parity-cards-6x6-grid-step-2.png" alt="Progress image of adding parity bits." caption="true"}
 
-*BlockTag: crwdns11246:0crwdne11246:0*
+crwdns19403:0crwdne19403:0
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-3.png" alt="Progress image of adding parity bits." caption="Step 3: Adding parity bit for the second row."}
+*BlockTag: crwdns19404:0crwdne19404:0*
 
-*BlockTag: crwdns11247:0crwdne11247:0*
+{image end}
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-4.png" alt="Progress image of adding parity bits." caption="Step 4: Adding parity bit for the third row."}
+*BlockTag: crwdns19405:0crwdne19405:0*
 
-*BlockTag: crwdns11248:0crwdne11248:0*
+{image file-path="img/topics/parity-cards-6x6-grid-step-3.png" alt="Progress image of adding parity bits." caption="true"}
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-5.png" alt="Progress image of adding parity bits." caption="Step 5: Adding parity bit for the fourth row."}
+crwdns19406:0crwdne19406:0
 
-*BlockTag: crwdns11249:0crwdne11249:0*
+*BlockTag: crwdns19407:0crwdne19407:0*
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-6.png" alt="Progress image of adding parity bits." caption="Step 6: Adding parity bit for the fifth row."}
+{image end}
 
-*BlockTag: crwdns11250:0crwdne11250:0*
+*BlockTag: crwdns19408:0crwdne19408:0*
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-7.png" alt="Progress image of adding parity bits." caption="Step 7: Adding parity bit for the first column."}
+{image file-path="img/topics/parity-cards-6x6-grid-step-4.png" alt="Progress image of adding parity bits." caption="true"}
 
-*BlockTag: crwdns11251:0crwdne11251:0*
+crwdns19409:0crwdne19409:0
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-8.png" alt="Progress image of adding parity bits." caption="Step 8: Adding parity bit for the second column."}
+*BlockTag: crwdns19410:0crwdne19410:0*
 
-*BlockTag: crwdns11252:0crwdne11252:0*
+{image end}
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-9.png" alt="Progress image of adding parity bits." caption="Step 9: Adding parity bit for the third column."}
+*BlockTag: crwdns19411:0crwdne19411:0*
 
-*BlockTag: crwdns11253:0crwdne11253:0*
+{image file-path="img/topics/parity-cards-6x6-grid-step-5.png" alt="Progress image of adding parity bits." caption="true"}
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-10.png" alt="Progress image of adding parity bits." caption="Step 10: Adding parity bit for the fourth column."}
+crwdns19412:0crwdne19412:0
 
-*BlockTag: crwdns11254:0crwdne11254:0*
+*BlockTag: crwdns19413:0crwdne19413:0*
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-11.png" alt="Progress image of adding parity bits." caption="Step 11: Adding parity bit for the fifth column."}
+{image end}
 
-*BlockTag: crwdns11255:0crwdne11255:0*
+*BlockTag: crwdns19414:0crwdne19414:0*
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-12.png" alt="Progress image of adding parity bits." caption="Step 12: Adding parity bit for the sixth column."}
+{image file-path="img/topics/parity-cards-6x6-grid-step-6.png" alt="Progress image of adding parity bits." caption="true"}
 
-crwdns11256:0crwdne11256:0
+crwdns19415:0crwdne19415:0
 
-*BlockTag: crwdns11257:0crwdne11257:0*
+*BlockTag: crwdns19416:0crwdne19416:0*
 
-{panel type="teaching" title="Teaching observations"}
+{image end}
 
-crwdns11258:0crwdne11258:0
+*BlockTag: crwdns19417:0crwdne19417:0*
 
-*BlockTag: crwdns11259:0crwdne11259:0*
+{image file-path="img/topics/parity-cards-6x6-grid-step-7.png" alt="Progress image of adding parity bits." caption="true"}
+
+crwdns19418:0crwdne19418:0
+
+*BlockTag: crwdns19419:0crwdne19419:0*
+
+{image end}
+
+*BlockTag: crwdns19420:0crwdne19420:0*
+
+{image file-path="img/topics/parity-cards-6x6-grid-step-8.png" alt="Progress image of adding parity bits." caption="true"}
+
+crwdns19421:0crwdne19421:0
+
+*BlockTag: crwdns19422:0crwdne19422:0*
+
+{image end}
+
+*BlockTag: crwdns19423:0crwdne19423:0*
+
+{image file-path="img/topics/parity-cards-6x6-grid-step-9.png" alt="Progress image of adding parity bits." caption="true"}
+
+crwdns19424:0crwdne19424:0
+
+*BlockTag: crwdns19425:0crwdne19425:0*
+
+{image end}
+
+*BlockTag: crwdns19426:0crwdne19426:0*
+
+{image file-path="img/topics/parity-cards-6x6-grid-step-10.png" alt="Progress image of adding parity bits." caption="true"}
+
+crwdns19427:0crwdne19427:0
+
+*BlockTag: crwdns19428:0crwdne19428:0*
+
+{image end}
+
+*BlockTag: crwdns19429:0crwdne19429:0*
+
+{image file-path="img/topics/parity-cards-6x6-grid-step-11.png" alt="Progress image of adding parity bits." caption="true"}
+
+crwdns19430:0crwdne19430:0
+
+*BlockTag: crwdns19431:0crwdne19431:0*
+
+{image end}
+
+*BlockTag: crwdns19432:0crwdne19432:0*
+
+{image file-path="img/topics/parity-cards-6x6-grid-step-12.png" alt="Progress image of adding parity bits." caption="true"}
+
+crwdns19433:0crwdne19433:0
+
+*BlockTag: crwdns19434:0crwdne19434:0*
+
+{image end}
+
+crwdns19435:0crwdne19435:0
+
+*BlockTag: crwdns19436:0crwdne19436:0*
+
+{panel type="teaching"}
+
+# crwdns19437:0crwdne19437:0
+
+crwdns19438:0crwdne19438:0
+
+*BlockTag: crwdns19439:0crwdne19439:0*
 
 {panel end}
 
 ## crwdns11260:0crwdne11260:0
 
-crwdns11261:0crwdne11261:0
+crwdns19440:0crwdne19440:0
 
-crwdns11262:0crwdne11262:0
+crwdns19441:0crwdne19441:0
 
-*BlockTag: crwdns11263:0crwdne11263:0*
+*BlockTag: crwdns19442:0crwdne19442:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
 
-crwdns11264:0crwdne11264:0 crwdns11265:0crwdne11265:0 crwdns11266:0crwdne11266:0
+# crwdns19443:0crwdne19443:0
 
-*BlockTag: crwdns11267:0crwdne11267:0*
+crwdns19444:0crwdne19444:0 crwdns19445:0crwdne19445:0 crwdns19446:0crwdne19446:0
+
+*BlockTag: crwdns19447:0crwdne19447:0*
 
 {panel end}
 
-crwdns11268:0crwdne11268:0 crwdns11269:0crwdne11269:0 crwdns11270:0crwdne11270:0 crwdns11271:0crwdne11271:0
+crwdns19448:0crwdne19448:0 crwdns19449:0crwdne19449:0 crwdns19450:0crwdne19450:0 crwdns19451:0crwdne19451:0
 
-crwdns11272:0crwdne11272:0
+crwdns19452:0crwdne19452:0
 
-*BlockTag: crwdns11273:0crwdne11273:0*
+*BlockTag: crwdns19453:0crwdne19453:0*
 
 {image file-path="img/topics/parity-wizard.png" alt="A wizard holding a magic one with parity cards on it."}
 
-crwdns11274:0crwdne11274:0
+crwdns19454:0crwdne19454:0
 
-crwdns11275:0crwdne11275:0 crwdns11276:0crwdne11276:0
+crwdns19455:0crwdne19455:0 crwdns19456:0crwdne19456:0
 
 - crwdns11277:0crwdne11277:0
 - crwdns11278:0crwdne11278:0
@@ -172,44 +254,48 @@ crwdns11275:0crwdne11275:0 crwdns11276:0crwdne11276:0
 - crwdns11280:0crwdne11280:0
 - crwdns11281:0crwdne11281:0
 
-crwdns11282:0crwdne11282:0
+crwdns19457:0crwdne19457:0
 
-crwdns11283:0crwdne11283:0
+crwdns19458:0crwdne19458:0
 
 - crwdns11284:0crwdne11284:0
 - crwdns11285:0crwdne11285:0
 
-crwdns11286:0crwdne11286:0
+crwdns19459:0crwdne19459:0
 
-crwdns11287:0crwdne11287:0 crwdns11288:0crwdne11288:0 crwdns11289:0crwdne11289:0
+crwdns19460:0crwdne19460:0 crwdns19461:0crwdne19461:0 crwdns19462:0crwdne19462:0
 
-crwdns11290:0crwdne11290:0 crwdns11291:0crwdne11291:0 crwdns11292:0crwdne11292:0 crwdns11293:0crwdne11293:0
+crwdns19463:0crwdne19463:0 crwdns19464:0crwdne19464:0 crwdns19465:0crwdne19465:0 crwdns19466:0crwdne19466:0
 
-crwdns11294:0crwdne11294:0 crwdns11295:0crwdne11295:0
+crwdns19467:0crwdne19467:0 crwdns19468:0crwdne19468:0
 
-crwdns11296:0crwdne11296:0 crwdns11297:0crwdne11297:0 crwdns11298:0crwdne11298:0 crwdns11299:0crwdne11299:0 crwdns11300:0crwdne11300:0
+crwdns19469:0crwdne19469:0 crwdns19470:0crwdne19470:0 crwdns19471:0crwdne19471:0 crwdns19472:0crwdne19472:0 crwdns19473:0crwdne19473:0
 
-crwdns11301:0crwdne11301:0
+crwdns19474:0crwdne19474:0
 
-*BlockTag: crwdns11302:0crwdne11302:0*
+*BlockTag: crwdns19475:0crwdne19475:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
 
-crwdns11303:0crwdne11303:0
+# crwdns19476:0crwdne19476:0
 
-*BlockTag: crwdns11304:0crwdne11304:0*
+crwdns19477:0crwdne19477:0
+
+*BlockTag: crwdns19478:0crwdne19478:0*
 
 {panel end}
 
-*BlockTag: crwdns11305:0crwdne11305:0*
+*BlockTag: crwdns19479:0crwdne19479:0*
 
-{panel type="math" title="Mathematical links"}
+{panel type="math"}
 
-crwdns11306:0crwdne11306:0
+# crwdns19480:0crwdne19480:0
 
-crwdns11307:0crwdne11307:0
+crwdns19481:0crwdne19481:0
 
-*BlockTag: crwdns11308:0crwdne11308:0*
+crwdns19482:0crwdne19482:0
+
+*BlockTag: crwdns19483:0crwdne19483:0*
 
 {panel end}
 
@@ -222,8 +308,8 @@ crwdns11307:0crwdne11307:0
 
 ## crwdns11317:0crwdne11317:0
 
-crwdns11318:0crwdne11318:0 crwdns11319:0crwdne11319:0 crwdns11320:0crwdne11320:0
+crwdns19484:0crwdne19484:0 crwdns19485:0crwdne19485:0 crwdns19486:0crwdne19486:0
 
-crwdns11321:0crwdne11321:0 crwdns11322:0crwdne11322:0 crwdns11323:0crwdne11323:0 crwdns11324:0crwdne11324:0
+crwdns19487:0crwdne19487:0 crwdns19488:0crwdne19488:0 crwdns19489:0crwdne19489:0 crwdns19490:0crwdne19490:0
 
-crwdns11325:0crwdne11325:0 crwdns11326:0crwdne11326:0 crwdns11327:0crwdne11327:0 crwdns11328:0crwdne11328:0 crwdns11329:0crwdne11329:0 crwdns11330:0crwdne11330:0 crwdns11331:0crwdne11331:0
+crwdns19491:0crwdne19491:0 crwdns19492:0crwdne19492:0 crwdns19493:0crwdne19493:0 crwdns19494:0crwdne19494:0 crwdns19495:0crwdne19495:0 crwdns19496:0crwdne19496:0 crwdns19497:0crwdne19497:0

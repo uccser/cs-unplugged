@@ -27,13 +27,14 @@
 
 {% block content %}
   {% if all_resources %}
-    <div class="link-box-container">
+    <div class="row">
       {% for resource in all_resources %}
-        <a href="{% url 'resources:resource' resource.slug %}" class="link-box link-box-md-3 link-box-lg-4">
-          <img class="border-thin" src="{% static resource.thumbnail_static_path %}" alt="Generic placeholder image">
-          <strong>{{ resource.name }}</strong>
-          <p class="mb-0">{{ resource.description }}</p>
-        </a>
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+          <a class="link-item no-text-decoration d-block h-100 py-2 text-center" href="{% url 'resources:resource' resource.slug %}">
+            <img class="border-thin" src="{% static resource.thumbnail_static_path %}" alt="Thumbnail of resource">
+            <p class="mb-0 mt-2"><strong>{{ resource.name }}</strong></p>
+          </a>
+        </div>
       {% endfor %}
     </div>
   {% else %}

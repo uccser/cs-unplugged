@@ -1,6 +1,8 @@
-*BlockTag: crwdns11021:0crwdne11021:0*
+*BlockTag: crwdns19369:0crwdne19369:0*
 
-{panel type="ct-algorithm" title="Algorithmic thinking"}
+{panel type="ct-algorithm"}
+
+# crwdns19370:0crwdne19370:0
 
 crwdns11022:0crwdne11022:0 crwdns11023:0crwdne11023:0
 
@@ -12,9 +14,11 @@ crwdns11025:0crwdne11025:0
 
 {panel end}
 
-*BlockTag: crwdns11027:0crwdne11027:0*
+*BlockTag: crwdns19371:0crwdne19371:0*
 
-{panel type="ct-abstraction" title="Abstraction"}
+{panel type="ct-abstraction"}
+
+# crwdns19372:0crwdne19372:0
 
 crwdns11028:0crwdne11028:0 crwdns11029:0crwdne11029:0 crwdns11030:0crwdne11030:0
 
@@ -26,9 +30,11 @@ crwdns11032:0crwdne11032:0
 
 {panel end}
 
-*BlockTag: crwdns11034:0crwdne11034:0*
+*BlockTag: crwdns19373:0crwdne19373:0*
 
-{panel type="ct-decomposition" title="Decomposition"}
+{panel type="ct-decomposition"}
+
+# crwdns19374:0crwdne19374:0
 
 crwdns11035:0crwdne11035:0 crwdns11036:0crwdne11036:0 crwdns11037:0crwdne11037:0 crwdns11038:0crwdne11038:0 crwdns11039:0crwdne11039:0 crwdns11040:0crwdne11040:0
 
@@ -40,9 +46,11 @@ crwdns11042:0crwdne11042:0
 
 {panel end}
 
-*BlockTag: crwdns11044:0crwdne11044:0*
+*BlockTag: crwdns19375:0crwdne19375:0*
 
-{panel type="ct-pattern" title="Generalising and patterns"}
+{panel type="ct-pattern"}
+
+# crwdns19376:0crwdne19376:0
 
 crwdns11045:0crwdne11045:0
 
@@ -54,9 +62,11 @@ crwdns11047:0crwdne11047:0
 
 {panel end}
 
-*BlockTag: crwdns11049:0crwdne11049:0*
+*BlockTag: crwdns19377:0crwdne19377:0*
 
-{panel type="ct-evaluation" title="Evaluation"}
+{panel type="ct-evaluation"}
+
+# crwdns19378:0crwdne19378:0
 
 crwdns11050:0crwdne11050:0 crwdns11051:0crwdne11051:0 crwdns11052:0crwdne11052:0 crwdns11053:0crwdne11053:0 crwdns11054:0crwdne11054:0
 
@@ -68,9 +78,11 @@ crwdns11056:0crwdne11056:0 crwdns11057:0crwdne11057:0 crwdns11058:0crwdne11058:0
 
 {panel end}
 
-*BlockTag: crwdns11060:0crwdne11060:0*
+*BlockTag: crwdns19379:0crwdne19379:0*
 
-{panel type="ct-logic" title="Logic"}
+{panel type="ct-logic"}
+
+# crwdns19380:0crwdne19380:0
 
 crwdns11061:0crwdne11061:0
 

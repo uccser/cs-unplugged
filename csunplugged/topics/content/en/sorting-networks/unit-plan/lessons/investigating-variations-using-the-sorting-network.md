@@ -22,7 +22,9 @@ Several variations are shown below, and you can choose the ones that suit the st
 The key is that the comparisons obey the transitive rule: that if a is smaller than b, and b is smaller than c, then a is smaller than c.
 Sorting by student height or other personal attributes can be problematic - not only might it be a sensitive issue, but comparing two students to find the highest might not give a consistent result if they are a similar height.
 
-{panel type="math" title="Mathematical links"}
+{panel type="math"}
+
+# Mathematical links
 
 Predicting outcomes: by understanding how the Sorting Network works students will be investigating different ways of using the Sorting Network and exploring how the outputs are affected by these changes.
 
@@ -59,7 +61,9 @@ Ask the students to predict what will happen (they should be able to work out th
 
 Have them try it out with some numbers to check it.
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 By reversing the left/right decision, the final result will be in the reverse order to how it would have been in lesson 1.
 
@@ -85,7 +89,9 @@ Some words with this property have double letters in them, such as BELLOW; these
 
 {image file-path="img/topics/sorting-network-toffees-cellos-sponge.png"}
 
-{panel type="general" title="List of words with letters in alphabetical order"}
+{panel type="general"}
+
+# List of words with letters in alphabetical order
 
 Here is a longer list of 6-letter words that can be used for this exercise.
 They are all from a dictionary, although some are rather obscure!
@@ -140,7 +146,9 @@ This will require considerable reasoning to achieve.
 
 If they struggle to find an example, you could give the one below, and then challenge them to find a different one that doesn't come out sorted.
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 The Sorting Network is designed to work consistently one way, rather than working both ways.
 For example, the first image below shows an input that happens to come out sorted when going through the network backwards, while the second one doesn't.
