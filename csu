@@ -27,13 +27,13 @@ defhelp() {
     local command="${2?}"
     local text="${3?}"
     local help_str
-    help_str="$(printf '   %-18s %s' "$command" "$text")"
+    help_str="$(printf '   %-24s %s' "$command" "$text")"
     dev_cmd_helps+=("$help_str")
   else
     local command="${1?}"
     local text="${2?}"
     local help_str
-    help_str="$(printf '   %-18s %s' "$command" "$text")"
+    help_str="$(printf '   %-24s %s' "$command" "$text")"
     cmd_helps+=("$help_str")
   fi
 }
