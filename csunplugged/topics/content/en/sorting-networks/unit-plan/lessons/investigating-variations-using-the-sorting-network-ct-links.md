@@ -1,6 +1,8 @@
 Many of the connections are covered in the unit plan and lesson 1. Here are some additional connections:
 
-{panel type="ct-algorithm" title="Algorithmic thinking"}
+{panel type="ct-algorithm"}
+
+# Algorithmic thinking
 
 When comparing words for alphabetical order, the algorithm involves comparing the two words letter by letter, and basing the decision of the first pair of letters that differ.
 
@@ -11,7 +13,9 @@ Can they articulate the algorithm, particularly when comparing words with a long
 
 {panel end}
 
-{panel type="ct-abstraction" title="Abstraction"}
+{panel type="ct-abstraction"}
+
+# Abstraction
 
 Sorting Networks can work for any type of data that can be compared.
 This means that we do not need to know what the data is, we just need to know how to compare it and order it.
@@ -23,7 +27,9 @@ Can they come up with new types of data to sort?
 
 {panel end}
 
-{panel type="ct-decomposition" title="Decomposition"}
+{panel type="ct-decomposition"}
+
+# Decomposition
 
 Instead of simply comparing two values at each node, when students compare words in this activity they must break this down into smaller steps.
 When comparing words to see which comes first, the process involves a letter by letter comparison until they find two letters that differ.
@@ -34,7 +40,9 @@ Were students able to break down the task of comparing words into single letter 
 
 {panel end}
 
-{panel type="ct-pattern" title="Generalising and patterns"}
+{panel type="ct-pattern"}
+
+# Generalising and patterns
 
 In this lesson the comparisons we moved from comparing numbers to the idea of comparing information in general.
 This meant we were able to compare other things like letters, words, and musical notes.
@@ -46,7 +54,9 @@ For example according to alphabetical order and musical pitch respectively?
 
 {panel end}
 
-{panel type="ct-evaluation" title="Evaluation"}
+{panel type="ct-evaluation"}
+
+# Evaluation
 
 We evaluated if the Sorting Network would work backwards.
 If we find one example that fails, then that establishes that it can't be used in that way.
@@ -57,7 +67,9 @@ Did students recognise that the one example of a Sorting Network not working bac
 
 {panel end}
 
-{panel type="ct-logic" title="Logic"}
+{panel type="ct-logic"}
+
+# Logic
 
 As described in the unit plan, if the data being sorted have a transitive relation then the Sorting Network will be able to sort them, and each of the types of data we used in this lesson has this transitive relation.
 

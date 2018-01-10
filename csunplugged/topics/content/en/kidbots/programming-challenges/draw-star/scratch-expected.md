@@ -2,7 +2,9 @@ Click on the green flag to see the expected output of your program.
 
 {iframe link="https://scratch.mit.edu/projects/embed/152939066/?autostart=false"}
 
-{panel type="help" title="Recommended blocks for solution 1"}
+{panel type="help"}
+
+# Recommended blocks for solution 1
 
 ```scratch:split:random
 when green flag clicked
@@ -49,7 +51,9 @@ end
 
 {panel end}
 
-{panel type="help" title="Recommended blocks for solution 2"}
+{panel type="help"}
+
+# Recommended blocks for solution 2
 
 ```scratch:split:random
 when green flag clicked
@@ -97,7 +101,9 @@ triangle :: custom
 
 {panel end}
 
-{panel type="help" title="Recommended blocks for solution 3"}
+{panel type="help"}
+
+# Recommended blocks for solution 3
 
 ```scratch:split:random
 when green flag clicked

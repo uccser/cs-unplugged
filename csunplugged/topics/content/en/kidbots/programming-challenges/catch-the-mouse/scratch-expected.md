@@ -3,7 +3,9 @@ Click on the green flag and press the “Go” button to see the expected output
 {iframe link="https://scratch.mit.edu/projects/embed/164769349/?autostart=false"}
 
 
-{panel type="help" title="Recommended blocks"}
+{panel type="help"}
+
+# Recommended blocks
 
 ```scratch:split:random
 when I receive [go v]

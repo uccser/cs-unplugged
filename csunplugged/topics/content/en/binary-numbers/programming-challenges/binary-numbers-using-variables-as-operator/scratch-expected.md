@@ -2,7 +2,9 @@ Click on the green flag to see the expected output of your program.
 
 {iframe link="https://scratch.mit.edu/projects/embed/148423827/?autostart=false"}
 
-{panel type="teacher-note" title="Recommended blocks"}
+{panel type="help"}
+
+# Recommended blocks
 
 ```scratch
 when flag clicked

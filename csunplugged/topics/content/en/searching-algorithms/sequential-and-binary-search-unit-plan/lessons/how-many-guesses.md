@@ -25,7 +25,9 @@ Show that one side has an animal on it and the other a number.
 Under each of these cards is a number that you can’t see, and they aren’t in order.
 The numbers range from 0 to 1000. Can you find the card with the number 302?
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 You can adapt the range to suit what your students are working on in their mathematics lessons.
 This lesson focuses on unsorted lists so it doesn’t matter if the numbers are all from a sequential range ie all the numbers in the range from 0 - 31, as long as the cards are placed in a random order.
@@ -64,7 +66,9 @@ Did the students win because they guessed within 10 guesses or did you win becau
 Repeat this game until the students have won 3 times or you have won 3 times.
 You should shuffle the cards each time, and introduce new cards or different sets if necessary to avoid students memorising what is on each card.
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 The number of guesses required can be anything from 1 (if you are lucky and find the number on the first guess), to 31 (if you’re very unlucky and have to turn over every card).
 The number of guesses should be evenly distributed between 1 and 31 - each number is equally likely.

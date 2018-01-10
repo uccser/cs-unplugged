@@ -1,6 +1,8 @@
 # The Modulo operator Unplugged
 
-{panel type="note" title="Note from the authors"}
+{panel type="general"}
+
+# Note from the authors
 
 This lesson is primarily on a maths topic rather than Computational Thinking,
 but the modulo operator is so widely used in digital systems that we've

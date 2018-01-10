@@ -88,7 +88,9 @@ Likewise if we are searching for a book in the library that hasn’t been return
 Searching is everywhere in our lives, from finding a person’s address to looking up a phone number in a phone book.
 We can apply binary or sequential search methods depending on how the data has been organised to start with.
 
-{panel type="math" title="Mathematical links"}
+{panel type="math"}
+
+# Mathematical links
 
 This unit could be taught within a statistics unit at all curriculum levels to support students' understanding of why particular searching methods are faster than others.
 

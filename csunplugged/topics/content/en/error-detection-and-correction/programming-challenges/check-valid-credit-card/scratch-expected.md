@@ -3,7 +3,9 @@ see the expected output of your program.
 
 {iframe link="https://scratch.mit.edu/projects/embed/148477751/?autostart=false"}
 
-{panel type="help" title="Recommended blocks"}
+{panel type="help"}
+
+# Recommended blocks
 
 ```scratch:split:random
 when green flag clicked
