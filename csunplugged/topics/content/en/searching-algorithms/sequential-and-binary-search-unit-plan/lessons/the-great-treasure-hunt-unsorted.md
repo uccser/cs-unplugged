@@ -22,7 +22,9 @@ You know what the serial number on the real money is, and your challenge is to f
 
 Guide students through how the game will work by following the instructions on the [Treasure Hunt Instructions pdf]('resources:resource' 'treasure-hunt').
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 If students make the connection that the real money serial could have a check digit, they would be correct in that what they learnt in the error detection and correction unit would apply in knowing if the serial number represents real money or fake money.
 Here’s a link to the [Error Detection and Correction unit]('topics:unit_plan' 'error-detection-and-correction' 'unit-plan') for more information.
@@ -30,7 +32,9 @@ However, this isn't the purpose of this exercise; the goal is to find a number i
 
 {panel end}
 
-{panel type="math" title="Mathematical Links"}
+{panel type="math"}
+
+# Mathematical Links
 
 This is a teachable moment for the class to discuss different strategies to ensure the least number of guesses are needed.
 The only useful strategy in this case is to make sure that you don't ask for the same chest twice i.e. record which ones you have looked at.
@@ -55,7 +59,9 @@ Number Knowledge: Read and say numbers between 100 and 9999.
 8.  Play the game and have students add up how many guesses it took each of them to find the treasure chest with the correct number in it.
 9.  Add this data to either a whiteboard or paper record and graph how often each number of guesses was required, or add it to a spreadsheet that also displays the graph and watch the graph grow as more data becomes available.
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 It is recommended to have the activity from lesson one and lesson two set up for students to move on to when they have both finished guessing their numbers, or else new sheets with different numbers on for them to try again.
 As the range of guesses could be the first guess through to 26 guesses, the time delay for everyone finishing means that some students will have nothing to do for 10 or 15 minutes.

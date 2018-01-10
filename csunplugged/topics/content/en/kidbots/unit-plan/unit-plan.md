@@ -1,6 +1,8 @@
 # Kidbots
 
-{panel type="video" title="See teaching this in action!"}
+{panel type="video"}
+
+# See teaching this in action
 
 A version of this can curently be seen at 1:09:56 [here](https://educationonair.withgoogle.com/live/2016-dec/watch/keynote-au/keynote-7).
 
@@ -29,7 +31,9 @@ This involves working out the general process for achieving the goal, representi
 
 {image file-path="img/topics/program.png" alt="Cartoon kid showing scratch program to computer"}
 
-{panel type="math" title="Mathematical links"}
+{panel type="math"}
+
+# Mathematical links
 
 There are strong connections between mathematics and programming.
 Good programmers need to have a good base of mathematical knowledge, since a program is effectively a mathematical formula, and getting the structure of a program right requires good reasoning.

@@ -1,4 +1,6 @@
-{panel type="ct-algorithm" title="Algorithmic thinking"}
+{panel type="ct-algorithm"}
+
+# Algorithmic thinking
 
 How to detect and correct errors in data is a very important problem in Computer
 Science, and to solve this problem we need algorithms.
@@ -11,7 +13,9 @@ can check any barcode we are given and find out if it is correct or not.
 
 {panel end}
 
-{panel type="ct-abstraction" title="Abstraction"}
+{panel type="ct-abstraction"}
+
+# Abstraction
 
 When we perform error control there are only some details we need to focus on to
 perform this task, and many others can be ignored by using abstraction when we
@@ -34,7 +38,9 @@ data.
 
 {panel end}
 
-{panel type="ct-decomposition" title="Decomposition"}
+{panel type="ct-decomposition"}
+
+# Decomposition
 
 To solve our problem of performing error control we need to break this problem
 down into smaller components.
@@ -45,7 +51,9 @@ be solved.
 
 {panel end}
 
-{panel type="ct-pattern" title="Generalising and patterns"}
+{panel type="ct-pattern"}
+
+# Generalising and patterns
 
 Detecting and correcting errors is a very common problem in Computer Science,
 and it relates to data validation in general, which is important for security
@@ -60,7 +68,9 @@ files have arrived reliably.
 
 {panel end}
 
-{panel type="ct-evaluation" title="Evaluation"}
+{panel type="ct-evaluation"}
+
+# Evaluation
 
 We can evaluate our solutions by testing them with a range of different inputs.
 Does our solution detect when data has an error in it or not?
@@ -73,7 +83,9 @@ reasoning, which ties in with the next Computational Thinking skill: logic.
 
 {panel end}
 
-{panel type="ct-logic" title="Logic"}
+{panel type="ct-logic"}
+
+# Logic
 
 If we have even parity in the magic trick, why will flipping a card always cause
 the number of white cards to become odd?

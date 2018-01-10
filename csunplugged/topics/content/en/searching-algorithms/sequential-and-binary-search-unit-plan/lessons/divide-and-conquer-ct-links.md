@@ -1,4 +1,6 @@
-{panel type="ct-algorithm" title="Algorithmic thinking"}
+{panel type="ct-algorithm"}
+
+# Algorithmic thinking
 
 The divide and conquer process of repeatedly checking the centre card and deducing which cards can be eliminated, and which ones could still contain the number you are searching for, can be written as an algorithm.
 When you ask students to say which card to check each time they are actually articulating an algorithm and instructing you on how to follow it.
@@ -13,7 +15,9 @@ Who are the students who not only can explain the exact process to find the numb
 
 {panel end}
 
-{panel type="ct-abstraction" title="Abstraction"}
+{panel type="ct-abstraction"}
+
+# Abstraction
 
 We can use the divide and conquer approach for more problems than just searching through an ordered list.
 We can use it to search through any set of objects that have identifying features.
@@ -26,7 +30,9 @@ If you repeat this exercise but with the numbers underneath different objects, o
 
 {panel end}
 
-{panel type="ct-decomposition" title="Decomposition"}
+{panel type="ct-decomposition"}
+
+# Decomposition
 
 The Divide and Conquer method is entirely about decomposition.
 When we use divide and conquer to solve a problem, we are breaking the problem in half repeatedly, which soon decomposes it to a very simple case: a list of one item, which is very easy to search!
@@ -37,7 +43,9 @@ Who are the students who are able to break the problem down into steps and then 
 
 {panel end}
 
-{panel type="ct-pattern" title="Generalising and patterns"}
+{panel type="ct-pattern"}
+
+# Generalising and patterns
 
 The key pattern to recognise in this activity is the process of eliminating half the possible cards by only looking in one, and that this is repeated over and over to accomplish the task.
 
@@ -50,7 +58,9 @@ Who are the students who quickly identified the pattern?
 
 {panel end}
 
-{panel type="ct-evaluation" title="Evaluation"}
+{panel type="ct-evaluation"}
+
+# Evaluation
 
 Students can evaluate how well the divide and conquer method works by looking at how many marbles (or whatever payment you decide to use) they have left at the end of the activity.
 Older students can further examine the efficiency of this algorithm by calculating the maximum number of checks it would make for a different numbers of cards.
@@ -63,7 +73,9 @@ Can they explain why the maximum number of checks a binary search will make is m
 
 {panel end}
 
-{panel type="ct-logic" title="Logic"}
+{panel type="ct-logic"}
+
+# Logic
 
 To retain as many marbles (or whatever payment you decide to use) as possible it makes sense to try and eliminate as many cards as possible with each guess.
 That way you can cut down the number of cards to 1 as fast as possible.
