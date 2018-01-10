@@ -2,7 +2,6 @@
 
 from lxml import etree
 from django.utils.translation import ugettext as _
-from django.http import QueryDict
 from utils.errors.QueryParameterMissingError import QueryParameterMissingError
 from utils.errors.QueryParameterInvalidError import QueryParameterInvalidError
 from utils.errors.QueryParameterMultipleValuesError import QueryParameterMultipleValuesError

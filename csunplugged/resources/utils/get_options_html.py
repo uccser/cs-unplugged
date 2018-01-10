@@ -1,7 +1,6 @@
 """Module for getting HTML form elements for list of ResourceParameters."""
 
 from django.conf import settings
-from django.http import QueryDict
 from lxml import etree
 from django.utils.translation import ugettext as _
 
