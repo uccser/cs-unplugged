@@ -1,4 +1,8 @@
-"""Search index for topics models."""
+"""Search index for topics models.
+
+Note: Document boosting for Whoosh backend is with keyword '_boost' instead
+      of 'boost'.
+"""
 
 from haystack import indexes
 from topics.models import (
@@ -14,7 +18,12 @@ from topics.models import (
 class TopicIndex(indexes.SearchIndex, indexes.Indexable):
     """Search index for Topic model."""
 
-    text = indexes.CharField(document=True, use_template=True)
+    text = indexes.NgramField(document=True, use_template=True)
+
+    def prepare(self, obj):
+        data = super(TopicIndex, self).prepare(obj)
+        data["_boost"] = 1.4
+        return data
 
     def get_model(self):
         """Return the Topic model.
@@ -28,8 +37,13 @@ class TopicIndex(indexes.SearchIndex, indexes.Indexable):
 class UnitPlanIndex(indexes.SearchIndex, indexes.Indexable):
     """Search index for UnitPlan model."""
 
-    text = indexes.CharField(document=True, use_template=True)
-    topic = indexes.CharField(model_attr='topic')
+    text = indexes.NgramField(document=True, use_template=True)
+    topic = indexes.CharField(model_attr="topic")
+
+    def prepare(self, obj):
+        data = super(UnitPlanIndex, self).prepare(obj)
+        data["_boost"] = 1.2
+        return data
 
     def get_model(self):
         """Return the UnitPlan model.
@@ -43,9 +57,14 @@ class UnitPlanIndex(indexes.SearchIndex, indexes.Indexable):
 class LessonIndex(indexes.SearchIndex, indexes.Indexable):
     """Search index for Lesson model."""
 
-    text = indexes.CharField(document=True, use_template=True)
-    topic = indexes.CharField(model_attr='topic')
-    unit_plan = indexes.CharField(model_attr='unit_plan')
+    text = indexes.NgramField(document=True, use_template=True)
+    topic = indexes.CharField(model_attr="topic")
+    unit_plan = indexes.CharField(model_attr="unit_plan")
+
+    def prepare(self, obj):
+        data = super(LessonIndex, self).prepare(obj)
+        data["_boost"] = 1
+        return data
 
     def get_model(self):
         """Return the Lesson model.
@@ -56,26 +75,16 @@ class LessonIndex(indexes.SearchIndex, indexes.Indexable):
         return Lesson
 
 
-class ProgrammingChallengeIndex(indexes.SearchIndex, indexes.Indexable):
-    """Search index for ProgrammingChallenge model."""
-
-    text = indexes.CharField(document=True, use_template=True)
-    topic = indexes.CharField(model_attr='topic')
-
-    def get_model(self):
-        """Return the ProgrammingChallenge model.
-
-        Returns:
-            ProgrammingChallenge object.
-        """
-        return ProgrammingChallenge
-
-
 class CurriculumIntegrationIndex(indexes.SearchIndex, indexes.Indexable):
     """Search index for CurriculumIntegration model."""
 
-    text = indexes.CharField(document=True, use_template=True)
-    topic = indexes.CharField(model_attr='topic')
+    text = indexes.NgramField(document=True, use_template=True, boost=1.2)
+    topic = indexes.CharField(model_attr="topic")
+
+    def prepare(self, obj):
+        data = super(CurriculumIntegrationIndex, self).prepare(obj)
+        data["_boost"] = 0.8
+        return data
 
     def get_model(self):
         """Return the CurriculumIntegration model.
@@ -86,15 +95,21 @@ class CurriculumIntegrationIndex(indexes.SearchIndex, indexes.Indexable):
         return CurriculumIntegration
 
 
-class CurriculumAreaIndex(indexes.SearchIndex, indexes.Indexable):
-    """Search index for CurriculumArea model."""
+class ProgrammingChallengeIndex(indexes.SearchIndex, indexes.Indexable):
+    """Search index for ProgrammingChallenge model."""
 
-    text = indexes.CharField(document=True, use_template=True)
+    text = indexes.NgramField(document=True, use_template=True)
+    topic = indexes.CharField(model_attr="topic")
+
+    def prepare(self, obj):
+        data = super(ProgrammingChallengeIndex, self).prepare(obj)
+        data["_boost"] = 0.4
+        return data
 
     def get_model(self):
-        """Return the CurriculumArea model.
+        """Return the ProgrammingChallenge model.
 
         Returns:
-            CurriculumArea object.
+            ProgrammingChallenge object.
         """
-        return CurriculumArea
+        return ProgrammingChallenge
