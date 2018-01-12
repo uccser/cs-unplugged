@@ -27,25 +27,36 @@
         </tr>
     </table>
 
-    {% if query %}
+    {% if object_list %}
         <h3>Results</h3>
 
-        {% for result in page.object_list %}
+        <p><em>Showing results {{ page_obj.start_index }} to {{ page_obj.end_index }} of {{ paginator.count }} results</em></p>
+
+        {% for result in page_obj.object_list %}
             <p>
               {{ result.object.model_type }} -
                 <a href="{{ result.object.get_absolute_url }}">
                   {{ result.object.name }}
                 </a>
+              {% if not DEPLOYED %}
+                <small class="text-muted">{{ result.score|floatformat:3 }}</small>
+              {% endif %}
             </p>
         {% empty %}
             <p>No results found.</p>
         {% endfor %}
 
-        {% if page.has_previous or page.has_next %}
+        {% if page_obj.has_previous or page_obj.has_next %}
             <div>
-                {% if page.has_previous %}<a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">{% endif %}&laquo; Previous{% if page.has_previous %}</a>{% endif %}
+                {% if page_obj.has_previous %}
+                  <a href="?q={{ query }}&amp;page={{ page_obj.previous_page_number }}">&laquo; Previous page</a>
+                {% endif %}
+                {% if page_obj.has_previous and page_obj.has_next %}
                 |
-                {% if page.has_next %}<a href="?q={{ query }}&amp;page={{ page.next_page_number }}">{% endif %}Next &raquo;{% if page.has_next %}</a>{% endif %}
+                {% endif %}
+                {% if page_obj.has_next %}
+                  <a href="?q={{ query }}&amp;page={{ page_obj.next_page_number }}">Next page &raquo;</a>
+                {% endif %}
             </div>
         {% endif %}
     {% else %}

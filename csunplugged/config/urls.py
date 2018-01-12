@@ -15,7 +15,7 @@ urlpatterns = i18n_patterns(
     url(r"^topics/", include("topics.urls", namespace="topics")),
     url(r"^resources/", include("resources.urls", namespace="resources")),
     url(r"^admin/", include(admin.site.urls)),
-    url(r"^search/", include("haystack.urls", namespace="search")),
+    url(r"^search/", include("search.urls", namespace="search")),
 )
 
 urlpatterns += [
