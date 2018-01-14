@@ -5,10 +5,10 @@ from haystack.inputs import AutoQuery
 
 
 class CustomSearchForm(ModelSearchForm):
-    # curriculum_areas = forms.ModelMultipleChoiceField(
-    #     queryset=CurriculumArea.objects.all(),
-    #     required=False
-    # )
+    curriculum_areas = forms.ModelMultipleChoiceField(
+        queryset=CurriculumArea.objects.all(),
+        required=False
+    )
 
     def all_items(self):
         """Workaround to return all items in search index.
@@ -33,9 +33,31 @@ class CustomSearchForm(ModelSearchForm):
 
         search_query_set = search_query_set.models(*self.get_models())
 
-        # if self.cleaned_data["curriculum_areas"]:
-        #     search_query_set = search_query_set.filter(
-        #         curriculum_areas__in=self.cleaned_data["curriculum_areas"]
-        #     )
-
+        # Filter items by curriculum areas if given in query
+        # --------------------------------------------------------------------
+        # TODO: Investigate the approach of this filter.
+        #
+        # Currently the given filter is provided as a QuerySet, but the search
+        # index saves the curriculum areas for objects (currently only
+        # curriculum integrations) as a list of primary keys, but stored as
+        # strings rather than integers. This may be due to the way data is
+        # stored.
+        #
+        # Because of this, the logic below must covert the QuerySet of the
+        # filter into a list of primary key strings.
+        #
+        # I also could not get Django/Haystack to filter by checking if any
+        # item in the filter was any item in each object in the index.
+        # Something similar to the following:
+        # search_query_set = search_query_set.filter(
+        #     curriculum_areas__in=self.cleaned_data["curriculum_areas"]
+        # )
+        # --------------------------------------------------------------------
+        if self.cleaned_data["curriculum_areas"]:
+            query_ids = list(map(str, self.cleaned_data["curriculum_areas"].values_list("pk", flat=True)))
+            filtered_search_query_set = []
+            for item in list(search_query_set):
+                if item.curriculum_areas and not set(item.curriculum_areas).isdisjoint(query_ids):
+                    filtered_search_query_set.append(item)
+            search_query_set = filtered_search_query_set
         return search_query_set

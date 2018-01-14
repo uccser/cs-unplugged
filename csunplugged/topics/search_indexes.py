@@ -80,11 +80,20 @@ class CurriculumIntegrationIndex(indexes.SearchIndex, indexes.Indexable):
 
     text = indexes.NgramField(document=True, use_template=True, boost=1.2)
     topic = indexes.CharField(model_attr="topic")
+    curriculum_areas = indexes.MultiValueField()
 
     def prepare(self, obj):
         data = super(CurriculumIntegrationIndex, self).prepare(obj)
         data["_boost"] = 0.8
         return data
+
+    def prepare_curriculum_areas(self, obj):
+        areas = set()
+        for curriculum_area in obj.curriculum_areas.all():
+            areas.add(str(curriculum_area.pk))
+            if curriculum_area.parent:
+                areas.add(str(curriculum_area.parent.pk))
+        return list(areas)
 
     def get_model(self):
         """Return the CurriculumIntegration model.
