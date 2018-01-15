@@ -60,11 +60,23 @@ class LessonIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.NgramField(document=True, use_template=True)
     topic = indexes.CharField(model_attr="topic")
     unit_plan = indexes.CharField(model_attr="unit_plan")
+    curriculum_areas = indexes.MultiValueField()
 
     def prepare(self, obj):
         data = super(LessonIndex, self).prepare(obj)
         data["_boost"] = 1
         return data
+
+    def prepare_curriculum_areas(self, obj):
+        curriculum_areas = CurriculumArea.objects.filter(
+            learning_outcomes__in=obj.learning_outcomes.all()
+        ).distinct()
+        areas = set()
+        for curriculum_area in curriculum_areas:
+            areas.add(str(curriculum_area.pk))
+            if curriculum_area.parent:
+                areas.add(str(curriculum_area.parent.pk))
+        return list(areas)
 
     def get_model(self):
         """Return the Lesson model.
