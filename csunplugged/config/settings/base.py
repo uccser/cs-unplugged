@@ -44,6 +44,7 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     "django_bootstrap_breadcrumbs",
     "haystack",
+    "widget_tweaks",
     "modeltranslation",
     "bidiutils",
 ]

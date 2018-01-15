@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% load django_bootstrap_breadcrumbs %}
+{% load widget_tweaks %}
 
 {% block title %}
   Search
@@ -16,9 +17,33 @@
 {% endblock page_heading %}
 
 {% block content %}
-  <form method="get" action=".">
+  <form method="get" action="." class="mb-3">
+
+    {% if form.non_field_errors %}
+      <div class="alert alert-danger" role="alert">
+        {% for error in form.non_field_errors %}
+          {{ error }}
+        {% endfor %}
+      </div>
+    {% endif %}
+
     <div class="form-group">
-      <input id="form-query-text" class="form-control form-control-lg" name="q" aria-describedby="form-query-text-help">
+
+      {% if form.is_bound %}
+        {% if form.q.errors %}
+          {% render_field form.q class="form-control is-invalid" aria-describedby="form-query-text-help" %}
+          {% for error in field.errors %}
+            <div class="invalid-feedback">
+              {{ error }}
+            </div>
+          {% endfor %}
+        {% else %}
+          {% render_field form.q class="form-control is-valid" aria-describedby="form-query-text-help" %}
+        {% endif %}
+      {% else %}
+        {% render_field form.q class="form-control" aria-describedby="form-query-text-help" %}
+      {% endif %}
+
       <small id="form-query-text-help" class="form-text text-muted">
         Leave blank to search all items.
       </small>
@@ -29,15 +54,28 @@
         <strong>Advanced search</strong>
       </summary>
       <div class="boxed-text-content">
-        <div class="form-group">
-          {% for area in curriculum_areas.all %}
-            <div class="form-check form-check-inline">
-              <label class="badge badge-default badge-{{ area.colour }}" for="area-{{ area.pk }}">
-                <input type="checkbox" id="area-{{ area.pk }}" value="{{ area.pk }}" name="curriculum_areas">
-                {% if area.parent__name %}{{ area.parent__name }}: {% endif %}{{ area.name }}
-              </label>
-            </div>
-          {% endfor %}
+        <label class="font-weight-bold">Search in:</label>
+        <div class="d-block mb-3">
+        {% for model in form.models %}
+          <div class="form-check form-check-inline">
+            {{ model.tag }}
+            <label class="" for="{{ model.id_for_label }}">
+              {{ model.choice_label }}
+            </label>
+          </div>
+        {% endfor %}
+        </div>
+
+        <label class="font-weight-bold">Filter by curriculum areas:</label>
+        <div class="d-block">
+        {% for area in curriculum_areas.all %}
+          <div class="form-check form-check-inline">
+            <label class="badge badge-default badge-{{ area.colour }}" for="area-{{ area.pk }}">
+              <input type="checkbox" id="area-{{ area.pk }}" value="{{ area.pk }}" name="curriculum_areas" class="align-top">
+              {% if area.parent__name %}{{ area.parent__name }}: {% endif %}{{ area.name }}
+            </label>
+          </div>
+        {% endfor %}
         </div>
       </div>
     </details>
@@ -45,7 +83,7 @@
     <button type="submit" class="btn btn-primary">Search</button>
   </form>
 
-    {% if object_list %}
+    {% if object_list or query %}
         <h3>Results</h3>
 
         <p><em>Showing {% if is_paginated %}results {{ page_obj.start_index }} to {{ page_obj.end_index }} of {% endif %}{{ paginator.count }} results</em></p>
