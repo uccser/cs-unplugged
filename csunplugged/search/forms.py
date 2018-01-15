@@ -1,6 +1,5 @@
 """Module for custom search form."""
 from django import forms
-from django.db.models.functions import Concat
 from haystack.forms import ModelSearchForm
 from topics.models import (
     Lesson,
@@ -13,11 +12,10 @@ class CustomSearchForm(ModelSearchForm):
     """Class for custom search form."""
 
     curriculum_areas = forms.ModelMultipleChoiceField(
-        queryset=CurriculumArea.objects.annotate(display_name=Concat("parent__name", "name")).order_by("display_name"),
+        queryset=CurriculumArea.objects.all(),
         required=False,
         widget=forms.CheckboxSelectMultiple,
     )
-
 
     def search(self):
         """Search index based off query.
