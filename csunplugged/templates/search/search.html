@@ -69,7 +69,7 @@
         <label class="font-weight-bold">Filter by curriculum areas:</label>
         <div class="d-block">
         {% for area in curriculum_areas.all %}
-          <div class="form-check form-check-inline">
+          <div class="form-check-inline">
             <label class="badge badge-default badge-{{ area.colour }}" for="area-{{ area.pk }}">
               <input type="checkbox" id="area-{{ area.pk }}" value="{{ area.pk }}" name="curriculum_areas" class="align-top">
               {% if area.parent__name %}{{ area.parent__name }}: {% endif %}{{ area.name }}
