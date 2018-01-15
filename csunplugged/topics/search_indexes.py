@@ -30,7 +30,7 @@ class TopicIndex(indexes.SearchIndex, indexes.Indexable):
             Dictionary of data.
         """
         data = super(TopicIndex, self).prepare(obj)
-        data["_boost"] = 1.4
+        data["_boost"] = 2
         return data
 
     def get_model(self):
@@ -58,7 +58,7 @@ class UnitPlanIndex(indexes.SearchIndex, indexes.Indexable):
             Dictionary of data.
         """
         data = super(UnitPlanIndex, self).prepare(obj)
-        data["_boost"] = 1.2
+        data["_boost"] = 1.5
         return data
 
     def get_model(self):
@@ -88,7 +88,7 @@ class LessonIndex(indexes.SearchIndex, indexes.Indexable):
             Dictionary of data.
         """
         data = super(LessonIndex, self).prepare(obj)
-        data["_boost"] = 1
+        data["_boost"] = 1.2
         return data
 
     def prepare_curriculum_areas(self, obj):
@@ -122,7 +122,7 @@ class LessonIndex(indexes.SearchIndex, indexes.Indexable):
 class CurriculumIntegrationIndex(indexes.SearchIndex, indexes.Indexable):
     """Search index for CurriculumIntegration model."""
 
-    text = indexes.NgramField(document=True, use_template=True, boost=1.2)
+    text = indexes.NgramField(document=True, use_template=True)
     topic = indexes.CharField(model_attr="topic")
     curriculum_areas = indexes.MultiValueField()
 
@@ -136,7 +136,7 @@ class CurriculumIntegrationIndex(indexes.SearchIndex, indexes.Indexable):
             Dictionary of data.
         """
         data = super(CurriculumIntegrationIndex, self).prepare(obj)
-        data["_boost"] = 0.8
+        data["_boost"] = 0.7
         return data
 
     def prepare_curriculum_areas(self, obj):
