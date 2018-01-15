@@ -21,6 +21,14 @@ class TopicIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.NgramField(document=True, use_template=True)
 
     def prepare(self, obj):
+        """Set boost of Topic model for index.
+
+        Args:
+            obj (Topic): Topic object.
+
+        Returns:
+            Dictionary of data.
+        """
         data = super(TopicIndex, self).prepare(obj)
         data["_boost"] = 1.4
         return data
@@ -41,6 +49,14 @@ class UnitPlanIndex(indexes.SearchIndex, indexes.Indexable):
     topic = indexes.CharField(model_attr="topic")
 
     def prepare(self, obj):
+        """Set boost of UnitPlan model for index.
+
+        Args:
+            obj (UnitPlan): UnitPlan object.
+
+        Returns:
+            Dictionary of data.
+        """
         data = super(UnitPlanIndex, self).prepare(obj)
         data["_boost"] = 1.2
         return data
@@ -63,11 +79,27 @@ class LessonIndex(indexes.SearchIndex, indexes.Indexable):
     curriculum_areas = indexes.MultiValueField()
 
     def prepare(self, obj):
+        """Set boost of Lesson model for index.
+
+        Args:
+            obj (Lesson): Lesson object.
+
+        Returns:
+            Dictionary of data.
+        """
         data = super(LessonIndex, self).prepare(obj)
         data["_boost"] = 1
         return data
 
     def prepare_curriculum_areas(self, obj):
+        """Create data for curriculum_areas index value.
+
+        Args:
+            obj (Lesson): Lesson object.
+
+        Returns:
+            List of curriculum area primary keys as strings.
+        """
         curriculum_areas = CurriculumArea.objects.filter(
             learning_outcomes__in=obj.learning_outcomes.all()
         ).distinct()
@@ -95,11 +127,27 @@ class CurriculumIntegrationIndex(indexes.SearchIndex, indexes.Indexable):
     curriculum_areas = indexes.MultiValueField()
 
     def prepare(self, obj):
+        """Set boost of CurriculumIntegration model for index.
+
+        Args:
+            obj (CurriculumIntegration): CurriculumIntegration object.
+
+        Returns:
+            Dictionary of data.
+        """
         data = super(CurriculumIntegrationIndex, self).prepare(obj)
         data["_boost"] = 0.8
         return data
 
     def prepare_curriculum_areas(self, obj):
+        """Create data for curriculum_areas index value.
+
+        Args:
+            obj (CurriculumIntegration): CurriculumIntegration object.
+
+        Returns:
+            List of curriculum area primary keys as strings.
+        """
         areas = set()
         for curriculum_area in obj.curriculum_areas.all():
             areas.add(str(curriculum_area.pk))
@@ -123,6 +171,14 @@ class ProgrammingChallengeIndex(indexes.SearchIndex, indexes.Indexable):
     topic = indexes.CharField(model_attr="topic")
 
     def prepare(self, obj):
+        """Set boost of ProgrammingChallenge model for index.
+
+        Args:
+            obj (ProgrammingChallenge): ProgrammingChallenge object.
+
+        Returns:
+            Dictionary of data.
+        """
         data = super(ProgrammingChallengeIndex, self).prepare(obj)
         data["_boost"] = 0.4
         return data
