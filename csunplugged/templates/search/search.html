@@ -30,7 +30,7 @@
     {% if object_list %}
         <h3>Results</h3>
 
-        <p><em>Showing results {{ page_obj.start_index }} to {{ page_obj.end_index }} of {{ paginator.count }} results</em></p>
+        <p><em>Showing {% if is_paginated %}results {{ page_obj.start_index }} to {{ page_obj.end_index }} of {% endif %}{{ paginator.count }} results</em></p>
 
         {% for result in page_obj.object_list %}
             <p>
