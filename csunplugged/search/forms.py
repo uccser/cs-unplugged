@@ -1,5 +1,6 @@
 """Module for custom search form."""
 from django import forms
+from django.db.models.functions import Concat
 from haystack.forms import ModelSearchForm
 from topics.models import (
     Lesson,
@@ -12,9 +13,11 @@ class CustomSearchForm(ModelSearchForm):
     """Class for custom search form."""
 
     curriculum_areas = forms.ModelMultipleChoiceField(
-        queryset=CurriculumArea.objects.all(),
-        required=False
+        queryset=CurriculumArea.objects.annotate(display_name=Concat("parent__name", "name")).order_by("display_name"),
+        required=False,
+        widget=forms.CheckboxSelectMultiple,
     )
+
 
     def search(self):
         """Search index based off query.
@@ -29,10 +32,7 @@ class CustomSearchForm(ModelSearchForm):
         if not self.is_valid():
             search_query_set = self.no_query_found()
         elif not self.cleaned_data.get('q'):
-            # A workaround is required to return all items due to Whoosh backend.
-            # See: https://github.com/django-haystack/django-haystack/issues/1021
-            # TODO: Implement test to check all items are returned.
-            search_query_set = self.searchqueryset.all().exclude(content="%"*100)
+            search_query_set = all_items(self.searchqueryset.all())
         else:
             search_query_set = self.searchqueryset.auto_query(self.cleaned_data['q'])
             if self.load_all:
@@ -53,3 +53,19 @@ class CustomSearchForm(ModelSearchForm):
             )
 
         return search_query_set
+
+
+def all_items(searchqueryset):
+    """Return all items of SearchQuerySet.
+
+    A workaround is required to return all items due to Whoosh backend.
+    See: https://github.com/django-haystack/django-haystack/issues/1021
+
+    Args:
+        searchqueryset (SearchQuerySet): QuerySet of search items.
+
+    Returns:
+        All items in index.
+    """
+    # TODO: Implement test to check all items are returned.
+    return searchqueryset.all().exclude(content="%"*100)

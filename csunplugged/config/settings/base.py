@@ -40,6 +40,7 @@ DJANGO_APPS = [
     # Admin
     "django.contrib.admin",
 ]
+
 THIRD_PARTY_APPS = [
     "django_bootstrap_breadcrumbs",
     "haystack",
@@ -52,10 +53,11 @@ LOCAL_APPS = [
     "general.apps.GeneralConfig",
     "topics.apps.TopicsConfig",
     "resources.apps.ResourcesConfig",
+    "search.apps.SearchConfig",
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
-INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
+INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
 # MIDDLEWARE CONFIGURATION
 # ----------------------------------------------------------------------------
