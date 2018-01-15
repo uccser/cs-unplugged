@@ -1,10 +1,14 @@
 from django import forms
 from haystack.forms import ModelSearchForm
-from topics.models import CurriculumArea
-from haystack.inputs import AutoQuery
+from topics.models import (
+    Lesson,
+    CurriculumIntegration,
+    CurriculumArea,
+)
 
 
 class CustomSearchForm(ModelSearchForm):
+
     curriculum_areas = forms.ModelMultipleChoiceField(
         queryset=CurriculumArea.objects.all(),
         required=False
@@ -45,19 +49,11 @@ class CustomSearchForm(ModelSearchForm):
         #
         # Because of this, the logic below must covert the QuerySet of the
         # filter into a list of primary key strings.
-        #
-        # I also could not get Django/Haystack to filter by checking if any
-        # item in the filter was any item in each object in the index.
-        # Something similar to the following:
-        # search_query_set = search_query_set.filter(
-        #     curriculum_areas__in=self.cleaned_data["curriculum_areas"]
-        # )
         # --------------------------------------------------------------------
         if self.cleaned_data["curriculum_areas"]:
             query_ids = list(map(str, self.cleaned_data["curriculum_areas"].values_list("pk", flat=True)))
-            filtered_search_query_set = []
-            for item in list(search_query_set):
-                if item.curriculum_areas and not set(item.curriculum_areas).isdisjoint(query_ids):
-                    filtered_search_query_set.append(item)
-            search_query_set = filtered_search_query_set
+            search_query_set = search_query_set.models(Lesson, CurriculumIntegration).filter(
+                curriculum_areas__in=query_ids
+            )
+
         return search_query_set
