@@ -46,7 +46,8 @@ class CustomSearchForm(ModelSearchForm):
             # covert the QuerySet of the filter into a list of primary key strings.
             query_ids = list(map(str, self.cleaned_data["curriculum_areas"].values_list("pk", flat=True)))
             # Only query models with curriculum_areas attribute.
-            search_query_set = search_query_set.models(Lesson, CurriculumIntegration).filter(
+            models = set(self.get_models()).intersection([Lesson, CurriculumIntegration])
+            search_query_set = search_query_set.models(*models).filter(
                 curriculum_areas__in=query_ids
             )
 
