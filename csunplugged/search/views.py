@@ -36,4 +36,7 @@ class CustomSearchView(SearchView):
                         }
                     )
                 result.lesson_ages = lesson_ages
+                result.curriculum_areas = CurriculumArea.objects.filter(
+                    learning_outcomes__in=result.object.learning_outcomes.all()
+                ).distinct()
         return context

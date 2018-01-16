@@ -19,3 +19,8 @@
     {{ object.topic.name }} > {{ object.unit_plan.name }}
   </small>
 </p>
+<p class="mb-0">
+  {% for area in result.curriculum_areas %}
+    {% include "topics/curriculum-area-badge.html" %}
+  {% endfor %}
+</p>
