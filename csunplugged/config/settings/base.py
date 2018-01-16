@@ -274,6 +274,7 @@ HAYSTACK_CONNECTIONS = {
         "PATH": str(ROOT_DIR.path("whoosh_index")),
     },
 }
+HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10
 
 # OTHER SETTINGS
 # ------------------------------------------------------------------------------
