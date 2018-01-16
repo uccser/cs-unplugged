@@ -1,0 +1,21 @@
+{% load i18n %}
+
+<p class="mb-0">
+  <a href="{{ object.get_absolute_url }}">
+    {{ object.name }}
+  </a>
+</p>
+{% for lesson_age in result.lesson_ages %}
+  <p class="mb-0">
+    <small class="text-muted">
+      {% blocktrans with lower=lesson_age.lower upper=lesson_age.upper number=lesson_age.number trimmed %}
+        <strong>Ages {{ lower }} to {{ upper }}:</strong> Lesson {{ number }}
+      {% endblocktrans %}
+    </small>
+  </p>
+{% endfor %}
+<p class="mb-0">
+  <small class="text-muted">
+    {{ object.topic.name }} > {{ object.unit_plan.name }}
+  </small>
+</p>

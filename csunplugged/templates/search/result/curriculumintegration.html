@@ -1,0 +1,9 @@
+<a href="{{ object.get_absolute_url }}" class="d-block">
+  {{ object.name }}
+</a>
+<div class="d-block">
+  {% for area in object.curriculum_areas.all %}
+    {% include "topics/curriculum-area-badge.html" %}
+  {% endfor %}
+</div>
+<small class="text-muted">{{ object.topic.name }}</small>

@@ -2,7 +2,10 @@
 from haystack.generic_views import SearchView
 from django.db.models.functions import Concat
 from search.forms import CustomSearchForm
-from topics.models import CurriculumArea
+from topics.models import (
+    CurriculumArea,
+    LessonNumber,
+)
 
 
 class CustomSearchView(SearchView):
@@ -20,4 +23,17 @@ class CustomSearchView(SearchView):
         context["curriculum_areas"] = CurriculumArea.objects.annotate(
             display_name=Concat("parent__name", "name")
         ).order_by("display_name").values("pk", "colour", "parent__name", "name")
+        for result in context["object_list"]:
+            if result.model_name == "lesson":
+                lesson_ages = []
+                for age_group in result.object.age_group.order_by("ages"):
+                    number = LessonNumber.objects.get(lesson=result.object, age_group=age_group).number
+                    lesson_ages.append(
+                        {
+                            "lower": age_group.ages.lower,
+                            "upper": age_group.ages.upper,
+                            "number": number,
+                        }
+                    )
+                result.lesson_ages = lesson_ages
         return context
