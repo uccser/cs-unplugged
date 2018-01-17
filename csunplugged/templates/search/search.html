@@ -68,14 +68,7 @@
 
         <label class="font-weight-bold">Filter by curriculum areas:</label>
         <div class="d-block">
-        {% for area in curriculum_areas.all %}
-          <div class="form-check-inline">
-            <label class="badge badge-default badge-{{ area.colour }}" for="area-{{ area.pk }}">
-              <input type="checkbox" id="area-{{ area.pk }}" value="{{ area.pk }}" name="curriculum_areas" class="align-top">
-              {% if area.parent__name %}{{ area.parent__name }}: {% endif %}{{ area.name }}
-            </label>
-          </div>
-        {% endfor %}
+          <select id="area-select2" name="curriculum_areas" class="form-control" multiple="multiple"></select>
         </div>
       </div>
     </details>
@@ -146,3 +139,41 @@
     {# Show some example queries to run, maybe query syntax, something else? #}
   {% endif %}
 {% endblock content %}
+
+{% block scripts %}
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/i18n/en.js"></script>
+  <script type="text/javascript">
+    var area_data = [
+      {% for area in curriculum_areas.all %}
+        {
+          "id": {{ area.pk }},
+          "text": "{% if area.parent__name %}{{ area.parent__name }}: {% endif %}{{ area.name }}",
+          "colour": "{{ area.colour }}"
+        },
+      {% endfor %}
+    ];
+
+    function formatArea (area) {
+      console.log(area);
+      if (!area.id) {
+        return area.text;
+      } else {
+        return $('<span class="px-1 text-white rounded badge-' + area.colour + '">' + area.text + '</span>');
+      }
+    };
+
+    $(document).ready(function() {
+      var area_select = $("#area-select2");
+      area_select.select2({
+        data: area_data,
+        templateSelection: formatArea,
+        templateResult: formatArea,
+        width: "100%",
+      });
+      // Get list of ids from query string and load into select
+      area_select.val([]).trigger("change");
+    });
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" type="text/css" media="screen" rel="stylesheet" />
+{% endblock scripts %}
