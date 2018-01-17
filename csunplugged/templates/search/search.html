@@ -50,27 +50,17 @@
       </small>
     </div>
 
-    <details>
-      <summary>
-        <strong>Advanced search</strong>
-      </summary>
-      <div class="boxed-text-content">
+    <div class="row">
+      <div class="col-12 col-md-6">
         <label class="font-weight-bold">Search in:</label>
-        <div class="d-block mb-3">
-        {% for model in form.models %}
-          <div class="form-check form-check-inline">
-            {{ model.tag }}
-            <label class="" for="{{ model.id_for_label }}">
-              {{ model.choice_label }}
-            </label>
-          </div>
-        {% endfor %}
-        </div>
-
-        <label class="font-weight-bold">Filter by curriculum areas:</label>
-        <select id="area-select2" name="curriculum_areas" class="d-none" multiple="multiple"></select>
+        <select id="models-select2" name="models" class="d-none" multiple="multiple"></select>
       </div>
-    </details>
+
+      <div class="col-12 col-md-6">
+        <label class="font-weight-bold">Filter by curriculum areas:</label>
+        <select id="areas-select2" name="curriculum_areas" class="d-none" multiple="multiple"></select>
+      </div>
+    </div>
 
     <button type="submit" class="btn btn-primary" name="page" value="1">Search</button>
 
@@ -143,6 +133,15 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/i18n/en.js"></script>
   <script type="text/javascript">
+    var model_data = [
+      {% for model in models %}
+        {
+          "id": "{{ model.value }}",
+          "text": "{{ model.name }}",
+          "selected": {{ model.selected }},
+        },
+      {% endfor %}
+    ];
     var area_data = [
       {% for area in curriculum_areas %}
         {
@@ -163,8 +162,11 @@
     };
 
     $(document).ready(function() {
-      var area_select = $("#area-select2");
-      area_select.select2({
+      $("#models-select2").select2({
+        data: model_data,
+        width: "100%",
+      });
+      $("#areas-select2").select2({
         data: area_data,
         templateSelection: formatArea,
         templateResult: formatArea,

@@ -21,6 +21,19 @@ class CustomSearchView(SearchView):
         """
         context = super(CustomSearchView, self).get_context_data(*args, **kwargs)
 
+        # Model filter
+        selected_models = self.request.GET.getlist("models")
+        models_tuples = context["form"].fields["models"].choices
+        models = []
+        for (model_value, model_name) in models_tuples:
+            selected = model_value in selected_models
+            models.append({
+                "value": model_value,
+                "name": model_name,
+                "selected": str(selected).lower(),
+            })
+        context["models"] = models
+
         # Curriculum area filter
         selected_curriculum_areas = self.request.GET.getlist("curriculum_areas")
         curriculum_areas = list(CurriculumArea.objects.annotate(
