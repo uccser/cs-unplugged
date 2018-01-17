@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+{% load static %}
 {% load django_bootstrap_breadcrumbs %}
 {% load widget_tweaks %}
 
@@ -141,6 +142,7 @@
 {% endblock content %}
 
 {% block scripts %}
+  <script type="text/javascript" src="{% static 'js/jquery-deparam.min.js' %}"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/i18n/en.js"></script>
   <script type="text/javascript">
@@ -172,7 +174,8 @@
         width: "100%",
       });
       // Get list of ids from query string and load into select
-      area_select.val([]).trigger("change");
+      var query = $.deparam(location.search);
+      area_select.val(query.curriculum_areas).trigger("change");
     });
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" type="text/css" media="screen" rel="stylesheet" />
