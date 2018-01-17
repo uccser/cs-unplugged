@@ -18,7 +18,7 @@ There is also an online interactive version of the binary cards [here](http://ww
 
 {panel end}
 
-{image file-path="img/topics/col_binary_robot_boy_convo.png" alt="Cartoon boy talking to robot" alignment="right"}
+{image file-path="img/topics/col_binary_robot_boy_convo.png" alt="Cartoon boy talking to robot" alignment="left"}
 
 Discuss how you would communicate a letter of the alphabet to someone if all
 you could do is say a number between 0 and 26.
