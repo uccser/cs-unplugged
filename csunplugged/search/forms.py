@@ -1,7 +1,6 @@
 """Module for custom search form."""
 from django import forms
 from haystack.forms import ModelSearchForm
-from django.db.models.functions import Concat
 from topics.models import (
     Lesson,
     CurriculumIntegration,
