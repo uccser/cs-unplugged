@@ -80,67 +80,67 @@
       </div>
     </details>
 
-    <button type="submit" class="btn btn-primary">Search</button>
-  </form>
+    <button type="submit" class="btn btn-primary" name="page" value="1">Search</button>
 
-  {% if object_list or query %}
-    <h3>Results</h3>
+    {% if object_list or query %}
+      <h3>Results</h3>
 
-    {% if object_list %}
-      <p><em>Showing {% if is_paginated %}results {{ page_obj.start_index }} to {{ page_obj.end_index }} of {% endif %}{{ paginator.count }} results</em></p>
+      {% if object_list %}
+        <p><em>Showing {% if is_paginated %}results {{ page_obj.start_index }} to {{ page_obj.end_index }} of {% endif %}{{ paginator.count }} results</em></p>
 
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Type</th>
-            <th>Name</th>
-            {% if not DEPLOYED %}
-              <th>Score</th>
-            {% endif %}
-          </tr>
-        </thead>
-        <tbody>
-          {% for result in page_obj.object_list %}
+        <table class="table table-striped">
+          <thead>
             <tr>
-              {% with object=result.object %}
-                <td>
-                  {{ object.model_type }}
-                </td>
-                <td>
-                  {% with template="search/result/"|add:result.model_name|add:".html" %}
-                    {% include template %}
-                  {% endwith %}
-                </td>
-              {% endwith %}
-
+              <th>Type</th>
+              <th>Name</th>
               {% if not DEPLOYED %}
-                <td>
-                  <small class="text-muted">
-                    {{ result.score|floatformat:3 }}
-                  </small>
-                </td>
+                <th>Score</th>
               {% endif %}
             </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {% for result in page_obj.object_list %}
+              <tr>
+                {% with object=result.object %}
+                  <td>
+                    {{ object.model_type }}
+                  </td>
+                  <td>
+                    {% with template="search/result/"|add:result.model_name|add:".html" %}
+                      {% include template %}
+                    {% endwith %}
+                  </td>
+                {% endwith %}
 
-      {% if page_obj.has_previous or page_obj.has_next %}
-      <div>
-        {% if page_obj.has_previous %}
-        <a href="?q={{ query }}&amp;page={{ page_obj.previous_page_number }}">&laquo; Previous page</a>
-        {% endif %}
-        {% if page_obj.has_previous and page_obj.has_next %}
-        |
-        {% endif %}
-        {% if page_obj.has_next %}
-        <a href="?q={{ query }}&amp;page={{ page_obj.next_page_number }}">Next page &raquo;</a>
-        {% endif %}
-      </div>
+                {% if not DEPLOYED %}
+                  <td>
+                    <small class="text-muted">
+                      {{ result.score|floatformat:3 }}
+                    </small>
+                  </td>
+                {% endif %}
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+        {% if page_obj.has_previous or page_obj.has_next %}
+        <div>
+          {% if page_obj.has_previous %}
+            <button type="submit" class="btn btn-link" name="page" value="{{ page_obj.previous_page_number }}">&laquo; Previous page</button>
+          {% endif %}
+          {% if page_obj.has_previous and page_obj.has_next %}
+            |
+          {% endif %}
+          {% if page_obj.has_next %}
+            <button type="submit" class="btn btn-link" name="page" value="{{ page_obj.next_page_number }}">Next page &raquo;</button>
+          {% endif %}
+        </div>
       {% endif %}
     {% else %}
       <p>No results found.</p>
     {% endif %}
+  </form>
 
   {% else %}
     {# Show some example queries to run, maybe query syntax, something else? #}
