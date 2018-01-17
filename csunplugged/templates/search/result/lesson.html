@@ -16,7 +16,13 @@
 {% endfor %}
 <p class="mb-0">
   <small class="text-muted">
-    {{ object.topic.name }} > {{ object.unit_plan.name }}
+    <a href="{{ object.topic.get_absolute_url }}" class="text-muted">
+      {{ object.topic.name }}
+    </a>
+    >
+    <a href="{{ object.unit_plan.get_absolute_url }}" class="text-muted">
+      {{ object.unit_plan.name }}
+    </a>
   </small>
 </p>
 <p class="mb-0">
