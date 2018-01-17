@@ -57,8 +57,11 @@
             <a class="nav-item nav-link" href="{% url 'topics:index' %}">{% trans "Topics" %}</a>
             <a class="nav-item nav-link" href="{% url 'resources:index' %}">{% trans "Resources" %}</a>
             <a class="nav-item nav-link" href="{% url 'general:about' %}">{% trans "About" %}</a>
-            <a class="nav-item nav-link" href="{% url 'search:index' %}">Search</a>
           </div>
+          <form class="form-inline" method="get" action="{% url 'search:index' %}">
+            <input class="form-control form-control-sm mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
+            <button class="btn btn-outline-light btn-sm my-2 my-sm-0" type="submit">{% trans "Search" %}</button>
+          </form>
           {% if LANGUAGES|length > 1 %}
             <div class="navbar-nav">
               <div class="nav-item dropdown">
@@ -192,6 +195,11 @@
           <div class="col-12 col-md-2">
             <p class="mb-1 font-weight-bold">{% trans "Help" %}</p>
             <ul class="list-unstyled list-unstyled-i18n">
+              <li>
+                <a href="{% url 'search:index' %}">
+                  {% trans "Search" %}
+                </a>
+              </li>
               <li>
                 <a href="{% url 'topics:glossary' %}">
                   {% trans "Glossary" %}
