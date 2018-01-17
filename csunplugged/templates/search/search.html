@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+{% load static %}
 {% load django_bootstrap_breadcrumbs %}
 {% load widget_tweaks %}
 
@@ -12,12 +13,8 @@
   {% breadcrumb "Search" "search:haystack_search" %}
 {% endblock breadcrumbs %}
 
-{% block page_heading %}
-  <h2>Search</h2>
-{% endblock page_heading %}
-
 {% block content %}
-  <form method="get" action="." class="mb-3">
+  <form method="get" action=".">
 
     {% if form.non_field_errors %}
       <div class="alert alert-danger" role="alert">
@@ -27,63 +24,43 @@
       </div>
     {% endif %}
 
-    <div class="form-group">
-
-      {% if form.is_bound %}
-        {% if form.q.errors %}
-          {% render_field form.q class="form-control is-invalid" aria-describedby="form-query-text-help" %}
+    <div class="form-group row">
+      <label for="{{ form.q.id_for_label }}" class="col-sm-2 col-form-label col-form-label-lg">Search</label>
+      <div class="col-sm-10">
+        {% if form.is_bound and form.q.errors %}
+          {% render_field form.q class="form-control form-control-lg is-invalid" aria-describedby="form-query-text-help" %}
           {% for error in field.errors %}
             <div class="invalid-feedback">
               {{ error }}
             </div>
           {% endfor %}
         {% else %}
-          {% render_field form.q class="form-control is-valid" aria-describedby="form-query-text-help" %}
+          {% render_field form.q class="form-control form-control-lg" aria-describedby="form-query-text-help" %}
         {% endif %}
-      {% else %}
-        {% render_field form.q class="form-control" aria-describedby="form-query-text-help" %}
-      {% endif %}
-
-      <small id="form-query-text-help" class="form-text text-muted">
-        Leave blank to search all items.
-      </small>
+        <small id="form-query-text-help" class="form-text text-muted">
+          Leave blank to search all items.
+        </small>
+      </div>
     </div>
 
-    <details>
-      <summary>
-        <strong>Advanced search</strong>
-      </summary>
-      <div class="boxed-text-content">
-        <label class="font-weight-bold">Search in:</label>
-        <div class="d-block mb-3">
-        {% for model in form.models %}
-          <div class="form-check form-check-inline">
-            {{ model.tag }}
-            <label class="" for="{{ model.id_for_label }}">
-              {{ model.choice_label }}
-            </label>
-          </div>
-        {% endfor %}
-        </div>
-
-        <label class="font-weight-bold">Filter by curriculum areas:</label>
-        <div class="d-block">
-        {% for area in curriculum_areas.all %}
-          <div class="form-check-inline">
-            <label class="badge badge-default badge-{{ area.colour }}" for="area-{{ area.pk }}">
-              <input type="checkbox" id="area-{{ area.pk }}" value="{{ area.pk }}" name="curriculum_areas" class="align-top">
-              {% if area.parent__name %}{{ area.parent__name }}: {% endif %}{{ area.name }}
-            </label>
-          </div>
-        {% endfor %}
-        </div>
+    <div class="form-group row">
+      <label class="col-sm-4 col-form-label">Filter by type</label>
+      <div class="col-sm-8">
+        <select id="models-select2" name="models" class="d-none" multiple="multiple"></select>
       </div>
-    </details>
+    </div>
 
-    <button type="submit" class="btn btn-primary" name="page" value="1">Search</button>
+    <div class="form-group row">
+      <label class="col-sm-4 col-form-label">Filter by curriculum areas</label>
+      <div class="col-sm-8 areas-select2">
+        <select id="areas-select2" name="curriculum_areas" class="d-none" multiple="multiple"></select>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary mb-3" name="page" value="1">Search</button>
 
     {% if object_list or query %}
-      <h3>Results</h3>
+      <p class="h3">Results</p>
 
       {% if object_list %}
         <p><em>Showing {% if is_paginated %}results {{ page_obj.start_index }} to {{ page_obj.end_index }} of {% endif %}{{ paginator.count }} results</em></p>
@@ -146,3 +123,51 @@
     {# Show some example queries to run, maybe query syntax, something else? #}
   {% endif %}
 {% endblock content %}
+
+{% block scripts %}
+  <script type="text/javascript" src="{% static 'js/select2.min.js' %}"></script>
+  <script type="text/javascript">
+    var model_data = [
+      {% for model in models %}
+        {
+          "id": "{{ model.value }}",
+          "text": "{{ model.name }}",
+          "selected": {{ model.selected }},
+        },
+      {% endfor %}
+    ];
+    var area_data = [
+      {% for area in curriculum_areas %}
+        {
+          "id": {{ area.pk }},
+          "text": "{% if area.parent__name %}{{ area.parent__name }}: {% endif %}{{ area.name }}",
+          "colour": "{{ area.colour }}",
+          "selected": {{ area.selected|default:"false" }},
+        },
+      {% endfor %}
+    ];
+
+    function formatArea (area) {
+      if (!area.id) {
+        return area.text;
+      } else {
+        return $('<span class="area-badge badge-' + area.colour + '">' + area.text + '</span>');
+      }
+    };
+
+    $(document).ready(function() {
+      $("#models-select2").select2({
+        data: model_data,
+        width: "100%",
+      });
+      $("#areas-select2").select2({
+        data: area_data,
+        templateSelection: formatArea,
+        templateResult: formatArea,
+        width: "100%",
+      });
+    });
+  </script>
+  <link href="{% static 'css/select2.min.css' %}" type="text/css" media="screen" rel="stylesheet" />
+  <link href="{% static 'css/search.css' %}" type="text/css" media="screen" rel="stylesheet" />
+{% endblock scripts %}

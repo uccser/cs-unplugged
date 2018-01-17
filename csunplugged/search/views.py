@@ -20,9 +20,32 @@ class CustomSearchView(SearchView):
             Dictionary of context values.
         """
         context = super(CustomSearchView, self).get_context_data(*args, **kwargs)
-        context["curriculum_areas"] = CurriculumArea.objects.annotate(
+
+        # Model filter
+        selected_models = self.request.GET.getlist("models")
+        models_tuples = context["form"].fields["models"].choices
+        models = []
+        for (model_value, model_name) in models_tuples:
+            selected = model_value in selected_models
+            models.append({
+                "value": model_value,
+                "name": model_name,
+                "selected": str(selected).lower(),
+            })
+        context["models"] = models
+
+        # Curriculum area filter
+        selected_curriculum_areas = self.request.GET.getlist("curriculum_areas")
+        curriculum_areas = list(CurriculumArea.objects.annotate(
             display_name=Concat("parent__name", "name")
-        ).order_by("display_name").values("pk", "colour", "parent__name", "name")
+        ).order_by("display_name").values("pk", "colour", "parent__name", "name"))
+        if selected_curriculum_areas:
+            for curriculum_area in curriculum_areas:
+                if str(curriculum_area["pk"]) in selected_curriculum_areas:
+                    curriculum_area["selected"] = "true"
+        context["curriculum_areas"] = curriculum_areas
+
+        # Update result objects
         for result in context["object_list"]:
             if result.model_name == "lesson":
                 lesson_ages = []

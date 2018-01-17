@@ -1,6 +1,7 @@
 """Module for custom search form."""
 from django import forms
 from haystack.forms import ModelSearchForm
+from django.db.models.functions import Concat
 from topics.models import (
     Lesson,
     CurriculumIntegration,
@@ -14,7 +15,7 @@ class CustomSearchForm(ModelSearchForm):
     curriculum_areas = forms.ModelMultipleChoiceField(
         queryset=CurriculumArea.objects.all(),
         required=False,
-        widget=forms.CheckboxSelectMultiple,
+        widget=None,
     )
 
     def search(self):
