@@ -68,9 +68,7 @@
         </div>
 
         <label class="font-weight-bold">Filter by curriculum areas:</label>
-        <div class="d-block">
-          <select id="area-select2" name="curriculum_areas" class="form-control" multiple="multiple"></select>
-        </div>
+        <select id="area-select2" name="curriculum_areas" class="d-none" multiple="multiple"></select>
       </div>
     </details>
 
@@ -142,22 +140,21 @@
 {% endblock content %}
 
 {% block scripts %}
-  <script type="text/javascript" src="{% static 'js/jquery-deparam.min.js' %}"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/i18n/en.js"></script>
   <script type="text/javascript">
     var area_data = [
-      {% for area in curriculum_areas.all %}
+      {% for area in curriculum_areas %}
         {
           "id": {{ area.pk }},
           "text": "{% if area.parent__name %}{{ area.parent__name }}: {% endif %}{{ area.name }}",
-          "colour": "{{ area.colour }}"
+          "colour": "{{ area.colour }}",
+          "selected": {{ area.selected|default:"false" }},
         },
       {% endfor %}
     ];
 
     function formatArea (area) {
-      console.log(area);
       if (!area.id) {
         return area.text;
       } else {
@@ -173,9 +170,6 @@
         templateResult: formatArea,
         width: "100%",
       });
-      // Get list of ids from query string and load into select
-      var query = $.deparam(location.search);
-      area_select.val(query.curriculum_areas).trigger("change");
     });
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" type="text/css" media="screen" rel="stylesheet" />

@@ -151,17 +151,6 @@ third-party-licenses/jquery.txt
 ==============================================================================
 
 ==============================================================================
-jQuery-deparam
-------------------------------------------------------------------------------
-https://github.com/chrissrogers/jquery-deparam
-Function extracted from jQuery BBQ under MIT License.
-http://benalman.com/projects/jquery-bbq-plugin/
-Copyright (c) 2010 "Cowboy" Ben Alman
-Licensed under MIT License.
-third-party-licenses/jquery-deparam.txt
-==============================================================================
-
-==============================================================================
 lxml
 ------------------------------------------------------------------------------
 http://lxml.de/
