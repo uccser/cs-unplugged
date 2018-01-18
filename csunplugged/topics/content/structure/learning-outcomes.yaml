@@ -56,12 +56,12 @@ binary-make-play-instructions-binary:
 binary-identify-opposite-pairs:
   curriculum-areas:
     - abstraction
-    - literacy
+    - speaking
 
 binary-match-letters-numbers:
   curriculum-areas:
     - abstraction
-    - literacy
+    - reading
 
 binary-count-highest-number:
   curriculum-areas:
@@ -344,7 +344,7 @@ unplugged-programming-explain-exact-instructions:
 unplugged-programming-follow-instructions:
   curriculum-areas:
     - geometry
-    - literacy
+    - listening
 
 unplugged-programming-identify-2D-shapes:
   curriculum-areas:
@@ -353,12 +353,12 @@ unplugged-programming-identify-2D-shapes:
 unplugged-programming-communicate-debugging:
   curriculum-areas:
     - programming
-    - literacy
+    - speaking
 
 unplugged-programming-actively-listen-feedback:
   curriculum-areas:
     - programming
-    - literacy
+    - listening
 
 unplugged-programming-give-accurate-instructions-pace:
   curriculum-areas:
@@ -399,7 +399,9 @@ unplugged-programming-give-instructions-move:
 
 unplugged-programming-explain-tell-stories:
   curriculum-areas:
-    - literacy
+    - speaking
+    - listening
+    - writing
 
 unplugged-programming-recall-direction-words:
   curriculum-areas:
@@ -433,7 +435,7 @@ sorting-recognise-sorting-method:
 
 sorting-demonstrate-alphabet-knowledge:
   curriculum-areas:
-    - literacy
+    - reading
 
 sorting-comparing-musical-pitch:
   curriculum-areas:

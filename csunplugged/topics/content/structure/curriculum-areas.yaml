@@ -36,6 +36,7 @@ literacy:
     - listening
     - speaking
     - library
+    - word-study
 
 art:
   colour: orange
@@ -77,4 +78,4 @@ social-studies:
   number: 10
   children:
     - history
-    - geograph
+    - geography
