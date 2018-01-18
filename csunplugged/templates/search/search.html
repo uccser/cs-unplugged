@@ -46,14 +46,22 @@
     <div class="form-group row">
       <label class="col-sm-4 col-form-label">Filter by type</label>
       <div class="col-sm-8">
-        <select id="models-select2" name="models" class="d-none" multiple="multiple"></select>
+        <select id="models-filter" name="models" multiple="multiple">
+          {% for model in models %}
+            <option value="{{ model.value }}"{% if model.selected == "true" %} selected="selected"{% endif %}>{{ model.name }}</option>
+          {% endfor %}
+        </select>
       </div>
     </div>
 
     <div class="form-group row">
       <label class="col-sm-4 col-form-label">Filter by curriculum areas</label>
-      <div class="col-sm-8 areas-select2">
-        <select id="areas-select2" name="curriculum_areas" class="d-none" multiple="multiple"></select>
+      <div class="col-sm-8">
+        <select id="areas-filter" name="curriculum_areas" multiple="multiple">
+          {% for area in curriculum_areas %}
+            <option value="{{ area.pk }}"{% if area.selected %} selected="selected"{% endif %}>{{ area.name }}</option>
+          {% endfor %}
+        </select>
       </div>
     </div>
 
@@ -125,49 +133,36 @@
 {% endblock content %}
 
 {% block scripts %}
-  <script type="text/javascript" src="{% static 'js/select2.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/multiple-select.js' %}"></script>
   <script type="text/javascript">
-    var model_data = [
-      {% for model in models %}
-        {
-          "id": "{{ model.value }}",
-          "text": "{{ model.name }}",
-          "selected": {{ model.selected }},
-        },
-      {% endfor %}
-    ];
-    var area_data = [
+    var area_data = {
       {% for area in curriculum_areas %}
-        {
-          "id": {{ area.pk }},
+        {{ area.pk }}: {
           "text": "{% if area.parent__name %}{{ area.parent__name }}: {% endif %}{{ area.name }}",
           "colour": "{{ area.colour }}",
-          "selected": {{ area.selected|default:"false" }},
         },
       {% endfor %}
-    ];
+    };
 
-    function formatArea (area) {
-      if (!area.id) {
-        return area.text;
-      } else {
-        return $('<span class="area-badge badge-' + area.colour + '">' + area.text + '</span>');
-      }
+    function formatArea (element) {
+      var data = area_data[element[0].value];
+      return '<span class="area-badge badge-' + data.colour + '">' + data.text + '</span>';
     };
 
     $(document).ready(function() {
-      $("#models-select2").select2({
-        data: model_data,
+      $("#models-filter").multipleSelect({
+        filter: true,
+        selectAll: false,
         width: "100%",
       });
-      $("#areas-select2").select2({
-        data: area_data,
-        templateSelection: formatArea,
-        templateResult: formatArea,
+      $("#areas-filter").multipleSelect({
+        filter: true,
+        textTemplate: formatArea,
+        selectAll: false,
         width: "100%",
       });
     });
   </script>
-  <link href="{% static 'css/select2.min.css' %}" type="text/css" media="screen" rel="stylesheet" />
+  <link href="{% static 'css/multiple-select.css' %}" type="text/css" media="screen" rel="stylesheet" />
   <link href="{% static 'css/search.css' %}" type="text/css" media="screen" rel="stylesheet" />
 {% endblock scripts %}

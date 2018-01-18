@@ -26,12 +26,13 @@ class CustomSearchView(SearchView):
         models_tuples = context["form"].fields["models"].choices
         models = []
         for (model_value, model_name) in models_tuples:
-            selected = model_value in selected_models
-            models.append({
+            model_data = {
                 "value": model_value,
                 "name": model_name,
-                "selected": str(selected).lower(),
-            })
+            }
+            if model_value in selected_models:
+                model_data["selected"] = "true"
+            models.append(model_data)
         context["models"] = models
 
         # Curriculum area filter
