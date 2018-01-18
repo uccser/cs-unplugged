@@ -162,7 +162,11 @@
 
     function formatArea (element) {
       var data = area_data[element[0].value];
-      return '<span class="area-badge badge-' + data.colour + '">' + data.text + '</span>';
+      return createAreaBadge(data.colour, data.text);
+    };
+
+    function createAreaBadge(colour, text) {
+      return '<span class="area-badge badge-' + colour + '">' + text + '</span>';
     };
 
     $(document).ready(function() {
@@ -177,11 +181,17 @@
         selectAll: false,
         width: "100%",
       });
+      // Add styling to <optgroup> labels
+      $(".areas-filter-container .ms-drop li.group").each(function(i, obj) {
+        var data = area_data[$(this).next().find(":checkbox").val()];
+        var label = $(this).find("label").contents().last();
+        label.replaceWith(createAreaBadge(data.colour, label.text()));
+      });
       // Indent all area children
-      $(".areas-filter-container .ms-drop ul li:not(.group)").find(":checkbox").each(function(i, obj) {
-          if (area_data[$(this).val()]["child"]) {
-            $(this).addClass("area-child");
-          }
+      $(".areas-filter-container .ms-drop li:not(.group)").find(":checkbox").each(function(i, obj) {
+        if (area_data[$(this).val()]["child"]) {
+          $(this).addClass("area-child");
+        }
       });
     });
   </script>
