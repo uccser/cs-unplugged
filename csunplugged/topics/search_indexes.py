@@ -18,7 +18,7 @@ from topics.models import (
 class TopicIndex(indexes.SearchIndex, indexes.Indexable):
     """Search index for Topic model."""
 
-    text = indexes.NgramField(document=True, use_template=True)
+    text = indexes.CharField(document=True, use_template=True)
 
     def prepare(self, obj):
         """Set boost of Topic model for index.
@@ -45,7 +45,7 @@ class TopicIndex(indexes.SearchIndex, indexes.Indexable):
 class UnitPlanIndex(indexes.SearchIndex, indexes.Indexable):
     """Search index for UnitPlan model."""
 
-    text = indexes.NgramField(document=True, use_template=True)
+    text = indexes.CharField(document=True, use_template=True)
     topic = indexes.CharField(model_attr="topic")
 
     def prepare(self, obj):
@@ -73,7 +73,7 @@ class UnitPlanIndex(indexes.SearchIndex, indexes.Indexable):
 class LessonIndex(indexes.SearchIndex, indexes.Indexable):
     """Search index for Lesson model."""
 
-    text = indexes.NgramField(document=True, use_template=True)
+    text = indexes.CharField(document=True, use_template=True)
     topic = indexes.CharField(model_attr="topic")
     unit_plan = indexes.CharField(model_attr="unit_plan")
     curriculum_areas = indexes.MultiValueField()
@@ -122,7 +122,7 @@ class LessonIndex(indexes.SearchIndex, indexes.Indexable):
 class CurriculumIntegrationIndex(indexes.SearchIndex, indexes.Indexable):
     """Search index for CurriculumIntegration model."""
 
-    text = indexes.NgramField(document=True, use_template=True)
+    text = indexes.CharField(document=True, use_template=True)
     topic = indexes.CharField(model_attr="topic")
     curriculum_areas = indexes.MultiValueField()
 
@@ -167,7 +167,7 @@ class CurriculumIntegrationIndex(indexes.SearchIndex, indexes.Indexable):
 class ProgrammingChallengeIndex(indexes.SearchIndex, indexes.Indexable):
     """Search index for ProgrammingChallenge model."""
 
-    text = indexes.NgramField(document=True, use_template=True)
+    text = indexes.CharField(document=True, use_template=True)
     topic = indexes.CharField(model_attr="topic")
 
     def prepare(self, obj):
