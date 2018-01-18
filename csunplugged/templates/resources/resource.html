@@ -6,7 +6,7 @@
 
 {% block breadcrumbs %}
   {% breadcrumb "Home" "/" %}
-  {% breadcrumb "Resources" "resources:index" %}
+  {% breadcrumb "Printouts" "resources:index" %}
   {% breadcrumb resource.name "resources:resource" resource.slug %}
 {% endblock breadcrumbs %}
 
@@ -20,7 +20,7 @@
 {% endblock page_heading %}
 
 {% block left_column_content %}
-  <h2>Create Resource</h2>
+  <h2>Create Printout</h2>
 
   <form action="{% url 'resources:generate' resource.slug %}" method="get"{% if not debug %} target="_blank"{% endif %} id="resource-generation-form">
     {% block generation_form %}
@@ -31,12 +31,12 @@
     <hr>
 
     {% if debug %}
-      <input type="submit" value="{% trans "Generate Resource" %}" class="btn btn-outline-primary mb-3" />
+      <input type="submit" value="{% trans "Generate Printout" %}" class="btn btn-outline-primary mb-3" />
     {% else %}
       {% if resource.copies %}
       <div class="alert alert-info" role="alert">
       {% blocktrans trimmed %}
-        The download of this resource includes {{ copies_amount }} unique copies.
+        The download of this printout includes {{ copies_amount }} unique copies.
       {% endblocktrans %}
       </div>
       {% endif %}
