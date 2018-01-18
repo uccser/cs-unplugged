@@ -56,10 +56,18 @@
 
     <div class="form-group row">
       <label class="col-sm-4 col-form-label">Filter by curriculum areas</label>
-      <div class="col-sm-8">
+      <div class="col-sm-8 areas-filter-container">
         <select id="areas-filter" name="curriculum_areas" multiple="multiple">
           {% for area in curriculum_areas %}
-            <option value="{{ area.pk }}"{% if area.selected %} selected="selected"{% endif %}>{{ area.name }}</option>
+            {% if area.children %}
+              <optgroup label="{{ area.name }}">
+              {% for child in area.children %}
+                <option value="{{ child.pk }}"{% if child.selected %} selected="selected"{% endif %}>{{ child.name }}</option>
+              {% endfor %}
+              </optgroup>
+            {% else %}
+              <option value="{{ area.pk }}"{% if area.selected %} selected="selected"{% endif %}>{{ area.name }}</option>
+            {% endif %}
           {% endfor %}
         </select>
       </div>
@@ -138,9 +146,17 @@
     var area_data = {
       {% for area in curriculum_areas %}
         {{ area.pk }}: {
-          "text": "{% if area.parent__name %}{{ area.parent__name }}: {% endif %}{{ area.name }}",
+          "text": "{{ area.name }}",
           "colour": "{{ area.colour }}",
+          "child": false,
         },
+        {% for child in area.children %}
+          {{ child.pk }}: {
+            "text": "{{ child.name }}",
+            "colour": "{{ child.colour }}",
+            "child": true,
+          },
+        {% endfor %}
       {% endfor %}
     };
 
@@ -160,6 +176,12 @@
         textTemplate: formatArea,
         selectAll: false,
         width: "100%",
+      });
+      // Indent all area children
+      $(".areas-filter-container .ms-drop ul li:not(.group)").find(":checkbox").each(function(i, obj) {
+          if (area_data[$(this).val()]["child"]) {
+            $(this).addClass("area-child");
+          }
       });
     });
   </script>

@@ -39,12 +39,19 @@ class CustomSearchView(SearchView):
         selected_curriculum_areas = self.request.GET.getlist("curriculum_areas")
         curriculum_areas = list(CurriculumArea.objects.annotate(
             display_name=Concat("parent__name", "name")
-        ).order_by("display_name").values("pk", "colour", "parent__name", "name"))
-        if selected_curriculum_areas:
-            for curriculum_area in curriculum_areas:
+        ).order_by("display_name").values("pk", "colour", "name", "parent__name", "parent__pk"))
+        grouped_curriculum_areas = []
+        for curriculum_area in curriculum_areas:
+            if selected_curriculum_areas:
                 if str(curriculum_area["pk"]) in selected_curriculum_areas:
                     curriculum_area["selected"] = "true"
-        context["curriculum_areas"] = curriculum_areas
+            parent_pk = curriculum_area["parent__pk"]
+            if parent_pk:
+                grouped_curriculum_areas[-1]["children"].append(curriculum_area)
+            else:
+                curriculum_area["children"] = []
+                grouped_curriculum_areas.append(curriculum_area)
+        context["curriculum_areas"] = grouped_curriculum_areas
 
         # Update result objects
         for result in context["object_list"]:

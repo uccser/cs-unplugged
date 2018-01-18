@@ -1,20 +1,14 @@
 @import "bootstrap/functions";
 @import "bootstrap/variables";
-.select2-container ul {
+.ms-drop ul {
   margin-bottom: 0 !important;
-}
-.select2-selection {
-  border: 1px solid $input-border-color !important;
-  .select2-selection__choice {
-    border: 0 !important;
-  }
-}
-.areas-select2 .select2-selection__choice {
-  padding-right: 0 !important;
 }
 .area-badge {
   display: inline-block;
   color: #fff;
   padding: 0 0.25em;
   border-radius: 4px;
+}
+.area-child {
+  margin-left: 1.5em;
 }
