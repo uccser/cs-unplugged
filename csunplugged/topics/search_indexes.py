@@ -100,15 +100,10 @@ class LessonIndex(indexes.SearchIndex, indexes.Indexable):
         Returns:
             List of curriculum area primary keys as strings.
         """
-        curriculum_areas = CurriculumArea.objects.filter(
+        curriculum_areas = list(CurriculumArea.objects.filter(
             learning_outcomes__in=obj.learning_outcomes.all()
-        ).distinct()
-        areas = set()
-        for curriculum_area in curriculum_areas:
-            areas.add(str(curriculum_area.pk))
-            if curriculum_area.parent:
-                areas.add(str(curriculum_area.parent.pk))
-        return list(areas)
+        ).distinct().values_list("pk", flat=True))
+        return curriculum_areas
 
     def get_model(self):
         """Return the Lesson model.
@@ -148,12 +143,8 @@ class CurriculumIntegrationIndex(indexes.SearchIndex, indexes.Indexable):
         Returns:
             List of curriculum area primary keys as strings.
         """
-        areas = set()
-        for curriculum_area in obj.curriculum_areas.all():
-            areas.add(str(curriculum_area.pk))
-            if curriculum_area.parent:
-                areas.add(str(curriculum_area.parent.pk))
-        return list(areas)
+        curriculum_areas = list(obj.curriculum_areas.all().values_list("pk", flat=True))
+        return curriculum_areas
 
     def get_model(self):
         """Return the CurriculumIntegration model.
