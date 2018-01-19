@@ -169,6 +169,16 @@
       return '<span class="area-badge badge-' + colour + '">' + text + '</span>';
     };
 
+    function updateSelectedAreas(change_data) {
+      var selected_span = $(".areas-filter-container .ms-choice span");
+      selected_span.empty();
+      var selected_values = $("#areas-filter").multipleSelect("getSelects");
+      for (var i = 0; i < selected_values.length; i++) {
+        var data = area_data[selected_values[i]];
+        selected_span.append(createAreaBadge(data.colour, data.text));
+      }
+    };
+
     $(document).ready(function() {
       $("#models-filter").multipleSelect({
         filter: true,
@@ -180,7 +190,10 @@
         textTemplate: formatArea,
         selectAll: false,
         width: "100%",
+        onClick: updateSelectedAreas,
+        onOptgroupClick: updateSelectedAreas,
       });
+      updateSelectedAreas();
       // Add styling to <optgroup> labels
       $(".areas-filter-container .ms-drop li.group").each(function(i, obj) {
         var data = area_data[$(this).next().find(":checkbox").val()];

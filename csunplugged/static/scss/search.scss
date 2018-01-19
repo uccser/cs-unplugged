@@ -8,6 +8,11 @@
   color: #fff;
   padding: 0 0.25em;
   border-radius: 4px;
+  user-select: none;
+  cursor: pointer;
+}
+.ms-choice .area-badge {
+  margin-right: 0.3em;
 }
 .area-child {
   margin-left: 1.5em;
