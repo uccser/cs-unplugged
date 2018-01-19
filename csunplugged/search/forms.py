@@ -24,17 +24,17 @@ class CustomSearchForm(ModelSearchForm):
         modify the default result if a blank query string is given. The form
         returns all items instead of zero items if a blank string is given.
 
+        The original search method checks if the form is valid, however
+        with all fields being optional with no validation, the form is always
+        valid. Therefore logic for an invalid form is removed.
+
         Returns:
             SearchQuerySet of search results.
         """
-        if not self.is_valid():
-            search_query_set = self.no_query_found()
-        elif not self.cleaned_data.get('q'):
+        if not self.cleaned_data.get('q'):
             search_query_set = all_items(self.searchqueryset.all())
         else:
             search_query_set = self.searchqueryset.auto_query(self.cleaned_data['q'])
-            if self.load_all:
-                search_query_set = search_query_set.load_all()
 
         search_query_set = search_query_set.models(*self.get_models())
 
