@@ -44,7 +44,7 @@ class CurriculumArea(TranslatableModel):
         Returns:
             Name of the model (str).
         """
-        return "Curriculum area"
+        return "Curriculum Area"
 
     def __str__(self):
         """Text representation of CurriculumArea object.
