@@ -1,7 +1,7 @@
 storytelling:
   number: 1
   curriculum-areas:
-    - literacy
+    - speaking
   prerequisite-lessons:
     unit-plan:
       - rescue-mission

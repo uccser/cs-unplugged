@@ -18,7 +18,7 @@ from topics.models import (
 class TopicIndex(indexes.SearchIndex, indexes.Indexable):
     """Search index for Topic model."""
 
-    text = indexes.NgramField(document=True, use_template=True)
+    text = indexes.CharField(document=True, use_template=True)
 
     def prepare(self, obj):
         """Set boost of Topic model for index.
@@ -45,7 +45,7 @@ class TopicIndex(indexes.SearchIndex, indexes.Indexable):
 class UnitPlanIndex(indexes.SearchIndex, indexes.Indexable):
     """Search index for UnitPlan model."""
 
-    text = indexes.NgramField(document=True, use_template=True)
+    text = indexes.CharField(document=True, use_template=True)
     topic = indexes.CharField(model_attr="topic")
 
     def prepare(self, obj):
@@ -73,7 +73,7 @@ class UnitPlanIndex(indexes.SearchIndex, indexes.Indexable):
 class LessonIndex(indexes.SearchIndex, indexes.Indexable):
     """Search index for Lesson model."""
 
-    text = indexes.NgramField(document=True, use_template=True)
+    text = indexes.CharField(document=True, use_template=True)
     topic = indexes.CharField(model_attr="topic")
     unit_plan = indexes.CharField(model_attr="unit_plan")
     curriculum_areas = indexes.MultiValueField()
@@ -100,15 +100,10 @@ class LessonIndex(indexes.SearchIndex, indexes.Indexable):
         Returns:
             List of curriculum area primary keys as strings.
         """
-        curriculum_areas = CurriculumArea.objects.filter(
+        curriculum_areas = list(CurriculumArea.objects.filter(
             learning_outcomes__in=obj.learning_outcomes.all()
-        ).distinct()
-        areas = set()
-        for curriculum_area in curriculum_areas:
-            areas.add(str(curriculum_area.pk))
-            if curriculum_area.parent:
-                areas.add(str(curriculum_area.parent.pk))
-        return list(areas)
+        ).distinct().values_list("pk", flat=True))
+        return curriculum_areas
 
     def get_model(self):
         """Return the Lesson model.
@@ -122,7 +117,7 @@ class LessonIndex(indexes.SearchIndex, indexes.Indexable):
 class CurriculumIntegrationIndex(indexes.SearchIndex, indexes.Indexable):
     """Search index for CurriculumIntegration model."""
 
-    text = indexes.NgramField(document=True, use_template=True)
+    text = indexes.CharField(document=True, use_template=True)
     topic = indexes.CharField(model_attr="topic")
     curriculum_areas = indexes.MultiValueField()
 
@@ -148,12 +143,8 @@ class CurriculumIntegrationIndex(indexes.SearchIndex, indexes.Indexable):
         Returns:
             List of curriculum area primary keys as strings.
         """
-        areas = set()
-        for curriculum_area in obj.curriculum_areas.all():
-            areas.add(str(curriculum_area.pk))
-            if curriculum_area.parent:
-                areas.add(str(curriculum_area.parent.pk))
-        return list(areas)
+        curriculum_areas = list(obj.curriculum_areas.all().values_list("pk", flat=True))
+        return curriculum_areas
 
     def get_model(self):
         """Return the CurriculumIntegration model.
@@ -167,7 +158,7 @@ class CurriculumIntegrationIndex(indexes.SearchIndex, indexes.Indexable):
 class ProgrammingChallengeIndex(indexes.SearchIndex, indexes.Indexable):
     """Search index for ProgrammingChallenge model."""
 
-    text = indexes.NgramField(document=True, use_template=True)
+    text = indexes.CharField(document=True, use_template=True)
     topic = indexes.CharField(model_attr="topic")
 
     def prepare(self, obj):

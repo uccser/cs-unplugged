@@ -35,7 +35,7 @@ class CurriculumArea(TranslatableModel):
     parent = models.ForeignKey(
         "self",
         null=True,
-        related_name="parent_curriculum_area"
+        related_name="children"
     )
 
     def model_type(self):

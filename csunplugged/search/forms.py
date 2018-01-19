@@ -57,14 +57,10 @@ class CustomSearchForm(ModelSearchForm):
 def all_items(searchqueryset):
     """Return all items of SearchQuerySet.
 
-    A workaround is required to return all items due to Whoosh backend.
-    See: https://github.com/django-haystack/django-haystack/issues/1021
-
     Args:
         searchqueryset (SearchQuerySet): QuerySet of search items.
 
     Returns:
         All items in index.
     """
-    # TODO: Implement test to check all items are returned.
-    return searchqueryset.all().exclude(content="%"*100)
+    return searchqueryset.all()
