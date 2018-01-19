@@ -86,6 +86,16 @@ class LearningOutcomesLoaderTest(BaseTestWithDB):
             lo_loader.load
         )
 
+    def test_parent_curriculum_area_raises_exception(self):
+        config_file = "basic-config.yaml"
+        area_1 = self.test_data.create_curriculum_area(1)
+        self.test_data.create_curriculum_area(2, parent=area_1)
+        lo_loader = LearningOutcomesLoader(structure_filename=config_file, base_path=self.base_path)
+        self.assertRaises(
+            InvalidYAMLValueError,
+            lo_loader.load
+        )
+
     def test_translation(self):
         self.test_data.create_curriculum_area(1)
         config_file = "translation.yaml"
