@@ -1,8 +1,12 @@
 from http import HTTPStatus
+from os import makedirs
+from shutil import rmtree
 from django.urls import reverse
+from django.conf import settings
+from django.core import management
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
-from django.core import management
+from tests.create_query_string import query_string
 
 
 class IndexViewTest(BaseTestWithDB):
@@ -11,6 +15,18 @@ class IndexViewTest(BaseTestWithDB):
         super().__init__(*args, **kwargs)
         self.language = "en"
         self.test_data = TopicsTestDataGenerator()
+
+    def setUp(self):
+        """Automatically called before each test."""
+        super().setUp()
+        makedirs(settings.SEARCH_INDEX_PATH)
+
+    def tearDown(self):
+        """Automatically called after each test."""
+        rmtree(settings.SEARCH_INDEX_PATH)
+        super().tearDown()
+
+    # No query
 
     def test_search_view_with_no_query_with_index(self):
         self.test_data.create_topic(1)
@@ -29,3 +45,269 @@ class IndexViewTest(BaseTestWithDB):
         self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertFalse(response.context["object_list"])
         self.assertIsNone(response.context.get("query"))
+
+    # Context
+
+    def test_search_view_context_model_data(self):
+        management.call_command("rebuild_index", "--noinput")
+        url = reverse("search:index")
+        response = self.client.get(url)
+        self.assertEqual(
+            response.context["models"],
+            [
+                {
+                    "value": "topics.curriculumintegration",
+                    "name": "Curriculum integrations"
+                },
+                {
+                    "value": "topics.lesson",
+                    "name": "Lessons"
+                },
+                {
+                    "value": "topics.programmingchallenge",
+                    "name": "Programming challenges"
+                },
+                {
+                    "value": "resources.resource",
+                    "name": "Resources"
+                },
+                {
+                    "value": "topics.topic",
+                    "name": "Topics"
+                },
+                {
+                    "value": "topics.unitplan",
+                    "name": "Unit plans"
+                }
+            ]
+        )
+
+    def test_search_view_context_model_data_with_selected(self):
+        management.call_command("rebuild_index", "--noinput")
+        url = reverse("search:index")
+        get_parameters = [
+            ("models", "topics.topic"),
+            ("models", "topics.unitplan"),
+        ]
+        url += query_string(get_parameters)
+        response = self.client.get(url)
+        self.assertEqual(
+            response.context["models"],
+            [
+                {
+                    "value": "topics.curriculumintegration",
+                    "name": "Curriculum integrations"
+                },
+                {
+                    "value": "topics.lesson",
+                    "name": "Lessons"
+                },
+                {
+                    "value": "topics.programmingchallenge",
+                    "name": "Programming challenges"
+                },
+                {
+                    "value": "resources.resource",
+                    "name": "Resources"
+                },
+                {
+                    "value": "topics.topic",
+                    "name": "Topics",
+                    "selected": "true",
+                },
+                {
+                    "value": "topics.unitplan",
+                    "name": "Unit plans",
+                    "selected": "true",
+                }
+            ]
+        )
+
+    def test_search_view_context_curriculum_areas_data(self):
+        area_1 = self.test_data.create_curriculum_area(1)
+        area_2 = self.test_data.create_curriculum_area(2)
+        management.call_command("rebuild_index", "--noinput")
+        url = reverse("search:index")
+        response = self.client.get(url)
+        self.assertEqual(
+            response.context["curriculum_areas"],
+            [
+                {
+                    "pk": area_1.pk,
+                    "name": "Area 1",
+                    "colour": "colour-1",
+                    "parent__pk": None,
+                    "parent__name": None,
+                    "children": []
+                },
+                {
+                    "pk": area_2.pk,
+                    "name": "Area 2",
+                    "colour": "colour-2",
+                    "parent__pk": None,
+                    "parent__name": None,
+                    "children": []
+                },
+            ]
+        )
+
+    def test_search_view_context_curriculum_areas_data_with_selected(self):
+        area_1 = self.test_data.create_curriculum_area(1)
+        area_2 = self.test_data.create_curriculum_area(2)
+        area_3 = self.test_data.create_curriculum_area(3)
+        management.call_command("rebuild_index", "--noinput")
+        url = reverse("search:index")
+        get_parameters = [
+            ("curriculum_areas", area_1.pk),
+            ("curriculum_areas", area_3.pk),
+        ]
+        url += query_string(get_parameters)
+        response = self.client.get(url)
+        self.assertEqual(
+            response.context["curriculum_areas"],
+            [
+                {
+                    "pk": area_1.pk,
+                    "name": "Area 1",
+                    "colour": "colour-1",
+                    "parent__pk": None,
+                    "parent__name": None,
+                    "children": [],
+                    "selected": "true",
+                },
+                {
+                    "pk": area_2.pk,
+                    "name": "Area 2",
+                    "colour": "colour-2",
+                    "parent__pk": None,
+                    "parent__name": None,
+                    "children": [],
+                },
+                {
+                    "pk": area_3.pk,
+                    "name": "Area 3",
+                    "colour": "colour-3",
+                    "parent__pk": None,
+                    "parent__name": None,
+                    "children": [],
+                    "selected": "true",
+                },
+            ]
+        )
+
+    def test_search_view_context_curriculum_areas_data_with_children(self):
+        area_1 = self.test_data.create_curriculum_area(1)
+        area_2 = self.test_data.create_curriculum_area(2)
+        area_3 = self.test_data.create_curriculum_area(3, parent=area_2)
+        area_4 = self.test_data.create_curriculum_area(4, parent=area_2)
+        area_5 = self.test_data.create_curriculum_area(5, parent=area_2)
+        management.call_command("rebuild_index", "--noinput")
+        url = reverse("search:index")
+        response = self.client.get(url)
+        self.assertEqual(
+            response.context["curriculum_areas"],
+            [
+                {
+                    "pk": area_1.pk,
+                    "name": "Area 1",
+                    "colour": "colour-1",
+                    "parent__pk": None,
+                    "parent__name": None,
+                    "children": []
+                },
+                {
+                    "pk": area_2.pk,
+                    "name": "Area 2",
+                    "colour": "colour-2",
+                    "parent__pk": None,
+                    "parent__name": None,
+                    "children": [
+                        {
+                            "pk": area_3.pk,
+                            "name": "Area 3",
+                            "colour": "colour-3",
+                            "parent__pk": area_2.pk,
+                            "parent__name": "Area 2",
+                        },
+                        {
+                            "pk": area_4.pk,
+                            "name": "Area 4",
+                            "colour": "colour-4",
+                            "parent__pk": area_2.pk,
+                            "parent__name": "Area 2",
+                        },
+                        {
+                            "pk": area_5.pk,
+                            "name": "Area 5",
+                            "colour": "colour-5",
+                            "parent__pk": area_2.pk,
+                            "parent__name": "Area 2",
+                        },
+                    ]
+                },
+            ]
+        )
+
+    def test_search_view_context_curriculum_areas_data_with_children_with_selected(self):
+        area_1 = self.test_data.create_curriculum_area(1)
+        area_2 = self.test_data.create_curriculum_area(2)
+        area_3 = self.test_data.create_curriculum_area(3, parent=area_2)
+        area_4 = self.test_data.create_curriculum_area(4, parent=area_2)
+        area_5 = self.test_data.create_curriculum_area(5, parent=area_2)
+        management.call_command("rebuild_index", "--noinput")
+        url = reverse("search:index")
+        get_parameters = [
+            ("curriculum_areas", area_1.pk),
+            ("curriculum_areas", area_2.pk),
+            ("curriculum_areas", area_3.pk),
+            ("curriculum_areas", area_5.pk),
+        ]
+        url += query_string(get_parameters)
+        response = self.client.get(url)
+        self.assertEqual(
+            response.context["curriculum_areas"],
+            [
+                {
+                    "pk": area_1.pk,
+                    "name": "Area 1",
+                    "colour": "colour-1",
+                    "parent__pk": None,
+                    "parent__name": None,
+                    "children": [],
+                    "selected": "true",
+                },
+                {
+                    "pk": area_2.pk,
+                    "name": "Area 2",
+                    "colour": "colour-2",
+                    "parent__pk": None,
+                    "parent__name": None,
+                    "selected": "true",
+                    "children": [
+                        {
+                            "pk": area_3.pk,
+                            "name": "Area 3",
+                            "colour": "colour-3",
+                            "parent__pk": area_2.pk,
+                            "parent__name": "Area 2",
+                            "selected": "true",
+                        },
+                        {
+                            "pk": area_4.pk,
+                            "name": "Area 4",
+                            "colour": "colour-4",
+                            "parent__pk": area_2.pk,
+                            "parent__name": "Area 2",
+                        },
+                        {
+                            "pk": area_5.pk,
+                            "name": "Area 5",
+                            "colour": "colour-5",
+                            "parent__pk": area_2.pk,
+                            "parent__name": "Area 2",
+                            "selected": "true",
+                        },
+                    ]
+                },
+            ]
+        )
