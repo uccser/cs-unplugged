@@ -311,3 +311,49 @@ class IndexViewTest(BaseTestWithDB):
                 },
             ]
         )
+
+    def test_search_view_context_lesson_data(self):
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        age_group = self.test_data.create_age_group(5, 7)
+        lesson = self.test_data.create_lesson(
+            topic,
+            unit_plan,
+            1,
+            age_group
+        )
+        learning_outcome1 = self.test_data.create_learning_outcome(1)
+        area_1 = self.test_data.create_curriculum_area(1)
+        learning_outcome1.curriculum_areas.add(area_1)
+        lesson.learning_outcomes.add(learning_outcome1)
+        learning_outcome2 = self.test_data.create_learning_outcome(2)
+        area_2 = self.test_data.create_curriculum_area(2)
+        learning_outcome2.curriculum_areas.add(area_2)
+        area_3 = self.test_data.create_curriculum_area(3)
+        learning_outcome2.curriculum_areas.add(area_3)
+        lesson.learning_outcomes.add(learning_outcome2)
+        self.test_data.create_curriculum_area(4)
+        management.call_command("rebuild_index", "--noinput")
+        url = reverse("search:index")
+        get_parameters = [("q", lesson.name)]
+        url += query_string(get_parameters)
+        response = self.client.get(url)
+        result_lesson = response.context["object_list"][0]
+        self.assertEqual(
+            result_lesson.lesson_ages,
+            [
+                {
+                    "lower": 5,
+                    "upper": 7,
+                    "number": 1,
+                },
+            ]
+        )
+        self.assertQuerysetEqual(
+            result_lesson.curriculum_areas,
+            [
+                "<CurriculumArea: Area 1>",
+                "<CurriculumArea: Area 2>",
+                "<CurriculumArea: Area 3>",
+            ]
+        )
