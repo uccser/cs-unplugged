@@ -30,5 +30,5 @@ class Command(rebuild_index.Command):
         total_results = len(all_items(SearchQuerySet()))
         if total_objects == total_results:
             print("Search index loaded.")
-        else:
+        else:   # pragma: no cover
             raise Exception("Search all_items() method does not return all items.")
