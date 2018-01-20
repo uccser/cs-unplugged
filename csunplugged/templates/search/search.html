@@ -81,7 +81,7 @@
       {% if object_list %}
         <p><em>Showing {% if is_paginated %}results {{ page_obj.start_index }} to {{ page_obj.end_index }} of {% endif %}{{ paginator.count }} results</em></p>
 
-        <table class="table table-striped">
+        <table id="results" class="table table-striped">
           <thead>
             <tr>
               <th>Type</th>
