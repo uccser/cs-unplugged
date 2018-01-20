@@ -358,6 +358,8 @@ class IndexViewTest(BaseTestWithDB):
             ]
         )
 
+    # With query
+
     def test_search_view_all_items(self):
         topic = self.test_data.create_topic(1)
         self.test_data.create_topic(2)
@@ -399,3 +401,148 @@ class IndexViewTest(BaseTestWithDB):
         self.assertEqual(result_objects[1].model_name, "topic")
         self.assertEqual(result_objects[2].model_name, "unitplan")
         self.assertEqual(result_objects[3].model_name, "lesson")
+
+    def test_search_view_model_filter(self):
+        topic = self.test_data.create_topic(1)
+        self.test_data.create_topic(2)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        age_group = self.test_data.create_age_group(5, 7)
+        self.test_data.create_lesson(
+            topic,
+            unit_plan,
+            1,
+            age_group
+        )
+        management.call_command("rebuild_index", "--noinput")
+        url = reverse("search:index")
+        get_parameters = [
+            ("models", "topics.topic"),
+        ]
+        url += query_string(get_parameters)
+        response = self.client.get(url)
+        result_objects = response.context["object_list"]
+        self.assertEqual(len(result_objects), 2)
+        self.assertEqual(result_objects[0].model_name, "topic")
+        self.assertEqual(result_objects[1].model_name, "topic")
+
+    def test_search_view_model_filter_multiple(self):
+        topic = self.test_data.create_topic(1)
+        self.test_data.create_topic(2)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        age_group = self.test_data.create_age_group(5, 7)
+        self.test_data.create_lesson(
+            topic,
+            unit_plan,
+            1,
+            age_group
+        )
+        management.call_command("rebuild_index", "--noinput")
+        url = reverse("search:index")
+        get_parameters = [
+            ("models", "topics.topic"),
+            ("models", "topics.unitplan"),
+        ]
+        url += query_string(get_parameters)
+        response = self.client.get(url)
+        result_objects = response.context["object_list"]
+        self.assertEqual(len(result_objects), 3)
+        self.assertEqual(result_objects[0].model_name, "topic")
+        self.assertEqual(result_objects[1].model_name, "topic")
+        self.assertEqual(result_objects[2].model_name, "unitplan")
+
+    def test_search_view_model_filter_multiple_with_query(self):
+        topic = self.test_data.create_topic(1)
+        self.test_data.create_topic(2)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        age_group = self.test_data.create_age_group(5, 7)
+        self.test_data.create_lesson(
+            topic,
+            unit_plan,
+            1,
+            age_group
+        )
+        management.call_command("rebuild_index", "--noinput")
+        url = reverse("search:index")
+        get_parameters = [
+            ("q", "Unit Plan 1"),
+            ("models", "topics.topic"),
+            ("models", "topics.unitplan"),
+        ]
+        url += query_string(get_parameters)
+        response = self.client.get(url)
+        result_objects = response.context["object_list"]
+        self.assertEqual(len(result_objects), 1)
+        self.assertEqual(result_objects[0].model_name, "unitplan")
+
+    def test_search_view_curriculum_areas_filter_1(self):
+        topic = self.test_data.create_topic(1)
+        area_1 = self.test_data.create_curriculum_area(1)
+        self.test_data.create_integration(topic, 1, curriculum_areas=[area_1])
+        area_2 = self.test_data.create_curriculum_area(2)
+        self.test_data.create_integration(topic, 2, curriculum_areas=[area_1, area_2])
+        self.test_data.create_integration(topic, 3)
+        self.test_data.create_integration(topic, 4)
+        management.call_command("rebuild_index", "--noinput")
+        url = reverse("search:index")
+        get_parameters = [
+            ("curriculum_areas", area_1.pk),
+        ]
+        url += query_string(get_parameters)
+        response = self.client.get(url)
+        result_objects = response.context["object_list"]
+        self.assertEqual(len(result_objects), 2)
+
+    def test_search_view_curriculum_areas_filter_2(self):
+        topic = self.test_data.create_topic(1)
+        area_1 = self.test_data.create_curriculum_area(1)
+        self.test_data.create_integration(topic, 1, curriculum_areas=[area_1])
+        area_2 = self.test_data.create_curriculum_area(2)
+        self.test_data.create_integration(topic, 2, curriculum_areas=[area_1, area_2])
+        self.test_data.create_integration(topic, 3)
+        self.test_data.create_integration(topic, 4)
+        management.call_command("rebuild_index", "--noinput")
+        url = reverse("search:index")
+        get_parameters = [
+            ("curriculum_areas", area_2.pk),
+        ]
+        url += query_string(get_parameters)
+        response = self.client.get(url)
+        result_objects = response.context["object_list"]
+        self.assertEqual(len(result_objects), 1)
+
+    def test_search_view_curriculum_areas_filter_parent_no_results(self):
+        # This search is not accessible to user, but
+        # checks indexes are created without including parent.
+        topic = self.test_data.create_topic(1)
+        area_1 = self.test_data.create_curriculum_area(1)
+        area_2 = self.test_data.create_curriculum_area(2, parent=area_1)
+        self.test_data.create_integration(topic, 1, curriculum_areas=[area_2])
+
+        management.call_command("rebuild_index", "--noinput")
+        url = reverse("search:index")
+        get_parameters = [
+            ("curriculum_areas", area_1.pk),
+        ]
+        url += query_string(get_parameters)
+        response = self.client.get(url)
+        self.assertFalse(response.context["object_list"])
+
+    def test_search_view_curriculum_areas_filter_with_query(self):
+        topic = self.test_data.create_topic(1)
+        area_1 = self.test_data.create_curriculum_area(1)
+        self.test_data.create_integration(topic, 1, curriculum_areas=[area_1])
+        area_2 = self.test_data.create_curriculum_area(2)
+        self.test_data.create_integration(topic, 2, curriculum_areas=[area_1, area_2])
+        self.test_data.create_integration(topic, 3)
+        self.test_data.create_integration(topic, 4)
+        management.call_command("rebuild_index", "--noinput")
+        url = reverse("search:index")
+        get_parameters = [
+            ("q", "Integration"),
+            ("curriculum_areas", area_2.pk),
+        ]
+        url += query_string(get_parameters)
+        response = self.client.get(url)
+        result_objects = response.context["object_list"]
+        self.assertEqual(len(result_objects), 1)
+        self.assertEqual(result_objects[0].object.name, "Integration 2")
