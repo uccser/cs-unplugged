@@ -73,7 +73,8 @@
       </div>
     </div>
 
-    <button type="submit" class="btn btn-primary mb-3" name="page" value="1">Search</button>
+    <button type="submit" class="btn btn-success mb-3" name="page" value="1">Search</button>
+    <button type="button" id="clear-form" class="btn btn-outline-danger mb-3 float-right">Clear form</button>
 
     {% if search %}
       <p class="h3">Results</p>
@@ -206,6 +207,11 @@
           $(this).addClass("area-child");
         }
       });
+      $("#clear-form").click(function(){
+         $("#id_q").val("");
+         $("#models-filter").multipleSelect("uncheckAll");
+         $("#areas-filter").multipleSelect("uncheckAll");
+     });
     });
   </script>
   <link href="{% static 'css/multiple-select.css' %}" type="text/css" media="screen" rel="stylesheet" />
