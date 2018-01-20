@@ -35,6 +35,7 @@ class CustomSearchView(SearchView):
             Dictionary of context values.
         """
         context = super(CustomSearchView, self).get_context_data(*args, **kwargs)
+        context["search"] = bool(self.request.GET)
 
         # Model filter
         selected_models = self.request.GET.getlist("models")
