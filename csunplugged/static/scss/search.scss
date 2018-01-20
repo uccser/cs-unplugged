@@ -1,18 +1,25 @@
 @import "bootstrap/functions";
 @import "bootstrap/variables";
-.ms-drop ul {
-  margin-bottom: 0 !important;
-}
 .area-badge {
   display: inline-block;
   color: #fff;
-  padding: 0 0.25em;
+  padding: 0px 5px;
+  line-height: 21px;
+  font-size: 14px;
   border-radius: 4px;
   user-select: none;
   cursor: pointer;
 }
 .ms-choice .area-badge {
-  margin-right: 0.3em;
+  margin-right: 4px;
+}
+.ms-drop {
+  ul {
+    margin-bottom: 0 !important;
+  }
+  .area-badge {
+    margin-left: 1px;
+  }
 }
 .area-child {
   margin-left: 1.5em;
