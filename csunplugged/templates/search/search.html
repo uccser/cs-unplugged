@@ -77,46 +77,34 @@
     <button type="button" id="clear-form" class="btn btn-outline-danger mb-3 float-right">Clear form</button>
 
     {% if search %}
-      <p class="h3">Results</p>
+      <h3 id="results-heading">Results</h3>
 
       {% if object_list %}
-        <p><em>Showing {% if is_paginated %}results {{ page_obj.start_index }} to {{ page_obj.end_index }} of {% endif %}{{ paginator.count }} results</em></p>
+        <p class="text-center"><em>Showing {% if is_paginated %}results {{ page_obj.start_index }} to {{ page_obj.end_index }} of {% endif %}{{ paginator.count }} results</em></p>
 
-        <table id="results" class="table table-striped">
-          <thead>
-            <tr>
-              <th>Type</th>
-              <th>Name</th>
-              {% if not DEPLOYED %}
-                <th>Score</th>
-              {% endif %}
-            </tr>
-          </thead>
-          <tbody>
-            {% for result in page_obj.object_list %}
-              <tr>
-                {% with object=result.object %}
-                  <td>
-                    {{ object.model_type }}
-                  </td>
-                  <td>
-                    {% with template="search/result/"|add:result.model_name|add:".html" %}
-                      {% include template %}
-                    {% endwith %}
-                  </td>
-                {% endwith %}
-
-                {% if not DEPLOYED %}
-                  <td>
-                    <small class="text-muted">
-                      {{ result.score|floatformat:3 }}
-                    </small>
-                  </td>
-                {% endif %}
-              </tr>
-            {% endfor %}
-          </tbody>
-        </table>
+        <div id="results">
+          {% for result in page_obj.object_list %}
+            <div class="row">
+              {% with object=result.object %}
+                <div class="col-12 col-sm-3 text-sm-right">
+                  {{ object.model_type }}
+                </div>
+                <div class="col-12 col-sm-9">
+                  {% with template="search/result/"|add:result.model_name|add:".html" %}
+                    {% include template %}
+                  {% endwith %}
+                  {% if not DEPLOYED %}
+                    <p class="mb-0">
+                      <small class="text-muted">
+                        Search score: {{ result.score|floatformat:3 }}
+                      </small>
+                    </p>
+                  {% endif %}
+                </div>
+              {% endwith %}
+            </div>
+          {% endfor %}
+        </div>
 
         {% if page_obj.has_previous or page_obj.has_next %}
         <div>
@@ -132,7 +120,7 @@
         </div>
       {% endif %}
     {% else %}
-      <p>No results found.</p>
+      <p class="text-center">No results found.</p>
     {% endif %}
   </form>
 
