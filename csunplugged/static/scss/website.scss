@@ -486,3 +486,15 @@ ol, ul {
 h1, h2, h3, h4, h5, h6, details {
   clear: both;
 }
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: $white;
+  fill: $white;
+}
+button:hover .icon {
+  stroke: $red;
+  fill: $red;
+}
