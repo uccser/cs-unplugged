@@ -139,7 +139,7 @@
 {% block scripts %}
   <script type="text/javascript" src="{% static 'js/multiple-select.js' %}"></script>
   <script type="text/javascript">
-    var area_data = {
+    var areaData = {
       {% for area in curriculum_areas %}
         {{ area.pk }}: {
           "text": "{{ area.name }}",
@@ -155,61 +155,8 @@
         {% endfor %}
       {% endfor %}
     };
-
-    function formatArea (element) {
-      var data = area_data[element[0].value];
-      return createAreaBadge(data.colour, data.text);
-    };
-
-    function createAreaBadge(colour, text) {
-      return '<span class="area-badge badge-' + colour + '">' + text + '</span>';
-    };
-
-    function updateSelectedAreas(change_data) {
-      var selected_span = $(".areas-filter-container .ms-choice span");
-      selected_span.empty();
-      var selected_values = $("#areas-filter").multipleSelect("getSelects");
-      for (var i = 0; i < selected_values.length; i++) {
-        var data = area_data[selected_values[i]];
-        selected_span.append(createAreaBadge(data.colour, data.text));
-      }
-    };
-
-    $(document).ready(function() {
-      $("#models-filter").multipleSelect({
-        filter: true,
-        selectAll: false,
-        width: "100%",
-      });
-      $("#areas-filter").multipleSelect({
-        filter: true,
-        textTemplate: formatArea,
-        selectAll: false,
-        width: "100%",
-        onClick: updateSelectedAreas,
-        onOptgroupClick: updateSelectedAreas,
-        maxHeight: 500,
-      });
-      updateSelectedAreas();
-      // Add styling to <optgroup> labels
-      $(".areas-filter-container .ms-drop li.group").each(function(i, obj) {
-        var data = area_data[$(this).next().find(":checkbox").val()];
-        var label = $(this).find("label").contents().last();
-        label.replaceWith(createAreaBadge(data.colour, label.text()));
-      });
-      // Indent all area children
-      $(".areas-filter-container .ms-drop li:not(.group)").find(":checkbox").each(function(i, obj) {
-        if (area_data[$(this).val()]["child"]) {
-          $(this).addClass("area-child");
-        }
-      });
-      $("#clear-form").click(function(){
-         $("#id_q").val("");
-         $("#models-filter").multipleSelect("uncheckAll");
-         $("#areas-filter").multipleSelect("uncheckAll");
-     });
-    });
   </script>
+  <script type="text/javascript" src="{% static 'js/website-search.js' %}"></script>
   <link href="{% static 'css/multiple-select.css' %}" type="text/css" media="screen" rel="stylesheet" />
   <link href="{% static 'css/search.css' %}" type="text/css" media="screen" rel="stylesheet" />
 {% endblock scripts %}
