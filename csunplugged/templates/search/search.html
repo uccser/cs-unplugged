@@ -41,8 +41,8 @@
           </div>
 
           <div class="form-group row">
-            <label class="col-sm-4 col-form-label">Filter by type</label>
-            <div class="col-sm-8">
+            <label class="col-md-4 col-lg-3 col-form-label">Filter by type</label>
+            <div class="col-md-8 col-lg-9">
               <select id="models-filter" name="models" multiple="multiple" style="display:none;">
                 {% for model in models %}
                   <option value="{{ model.value }}"{% if model.selected == "true" %} selected="selected"{% endif %}>{{ model.name }}</option>
@@ -52,8 +52,8 @@
           </div>
 
           <div class="form-group row">
-            <label class="col-sm-4 col-form-label">Filter by curriculum areas</label>
-            <div class="col-sm-8 areas-filter-container">
+            <label class="col-md-4 col-lg-3 col-form-label">Filter by curriculum areas</label>
+            <div class="col-md-8 col-lg-9 areas-filter-container">
               <select id="areas-filter" name="curriculum_areas" multiple="multiple" style="display:none;">
                 {% for area in curriculum_areas %}
                   {% if area.children %}
@@ -70,8 +70,8 @@
             </div>
           </div>
 
-          <button type="submit" class="btn btn-success mb-3" name="page" value="1">Search</button>
-          <button type="button" id="clear-form" class="btn btn-outline-danger mb-3 float-right">Clear form</button>
+          <button type="button" id="clear-form" class="btn btn-outline-danger mb-3">Clear form</button>
+          <button type="submit" class="btn btn-success mb-3 float-right" name="page" value="1">Search</button>
 
           {% if search %}
             <h3 id="results-heading">Results</h3>
@@ -103,17 +103,24 @@
                 {% endfor %}
               </div>
 
-              {% if page_obj.has_previous or page_obj.has_next %}
-              <div>
+            {% if paginator.num_pages > 1 %}
+              <div class="text-center">
                 {% if page_obj.has_previous %}
                   <button type="submit" class="btn btn-link" name="page" value="{{ page_obj.previous_page_number }}">&laquo; Previous page</button>
-                {% endif %}
-                {% if page_obj.has_previous and page_obj.has_next %}
-                  |
                 {% endif %}
                 {% if page_obj.has_next %}
                   <button type="submit" class="btn btn-link" name="page" value="{{ page_obj.next_page_number }}">Next page &raquo;</button>
                 {% endif %}
+              </div>
+              <div id="result-page-links" class="text-center">
+                <span>Jump to page:</span>
+                {% for page in paginator.page_range %}
+                  {% if page_obj.number == page %}
+                    <button class="btn btn-link" disabled="disabled">{{ page }}</button>
+                  {% else %}
+                    <button type="submit" class="btn btn-link" name="page" value="{{ page }}">{{ page }}</button>
+                  {% endif %}
+                {% endfor %}
               </div>
             {% endif %}
           {% else %}

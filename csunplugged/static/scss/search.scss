@@ -45,3 +45,12 @@
 #form-query-text-help {
   padding-left: 19px;
 }
+#result-page-links {
+  font-size: 0.9em;
+  .span {
+    vertical-align: text-top;
+  }
+  .btn-link {
+    padding: 0.3em;
+  }
+}
