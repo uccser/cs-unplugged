@@ -119,7 +119,7 @@
                   {% if page_obj.number == page %}
                     <a class="btn btn-link disabled" aria-disabled="true">{{ page }}</a>
                   {% else %}
-                    <a class="btn btn-link" href="{% url 'search:index' %}?{% query_replace page=page_obj.next_page_number %}">{{ page }}</a>
+                    <a class="btn btn-link" href="{% url 'search:index' %}?{% query_replace page=page %}">{{ page }}</a>
                   {% endif %}
                 {% endfor %}
               </div>
