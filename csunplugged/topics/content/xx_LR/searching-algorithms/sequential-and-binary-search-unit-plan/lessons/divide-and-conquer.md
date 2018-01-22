@@ -18,9 +18,11 @@ crwdns11738:0crwdne11738:0 crwdns11739:0crwdne11739:0 crwdns11740:0crwdne11740:0
 
 crwdns15557:0crwdne15557:0 crwdns15558:0crwdne15558:0 crwdns15559:0crwdne15559:0 crwdns15560:0crwdne15560:0
 
-*BlockTag: crwdns15561:0crwdne15561:0*
+*BlockTag: crwdns18391:0crwdne18391:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# crwdns18392:0crwdne18392:0
 
 crwdns15562:0crwdne15562:0 crwdns15563:0crwdne15563:0 crwdns15564:0crwdne15564:0 crwdns15565:0crwdne15565:0 crwdns15566:0crwdne15566:0
 
@@ -70,9 +72,11 @@ crwdns15589:0crwdne15589:0
 
 crwdns15590:0crwdne15590:0
 
-*BlockTag: crwdns15591:0crwdne15591:0*
+*BlockTag: crwdns18393:0crwdne18393:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# crwdns18394:0crwdne18394:0
 
 crwdns15592:0crwdne15592:0 crwdns15593:0crwdne15593:0 crwdns15594:0crwdne15594:0 crwdns15595:0crwdne15595:0
 
@@ -90,9 +94,7 @@ crwdns15597:0crwdne15597:0 crwdns15598:0crwdne15598:0 crwdns15599:0crwdne15599:0
 
 crwdns15604:0crwdne15604:0 crwdns15605:0crwdne15605:0 crwdns15606:0crwdne15606:0
 
-## crwdns11793:0crwdne11793:0
-
-## crwdns11794:0crwdne11794:0
+## crwdns18342:0crwdne18342:0
 
 crwdns15607:0crwdne15607:0
 

@@ -23,7 +23,9 @@ In a very confined situation, it could be done on a desk top using game counters
 
 Show the students the Sorting Network drawn on the ground, and tell them "This chalk computer can do some things very fast, let’s investigate what it does."
 
-{panel type="math" title="Mathematical links"}
+{panel type="math"}
+
+# Mathematical links
 
 Supports students understanding of ordering any range of numbers, from ordering single digit numbers to fractions and decimals, or numbers in their millions.
 
@@ -71,7 +73,9 @@ Supports students understanding of ordering any range of numbers, from ordering 
     shortest amount of time (either with two Sorting Networks racing teams at
     the same time, or one network with the times measured using a stopwatch).
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 If it didn’t work it may be because a pair incorrectly went to the wrong square or a person raced ahead of everyone else.
 Have the group repeat the task and check each comparison.

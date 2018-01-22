@@ -21,7 +21,9 @@ You know what the serial number on the real money is, and your challenge is to f
 
 Guide students through how the game will work by following the instructions on the [Treasure Hunt Instructions pdf](https://www.example.com) (although this time the numbers will be in sorted order).
 
-{panel type="math" title="Mathematical Links"}
+{panel type="math"}
+
+# Mathematical Links
 
 This is a teachable moment for the class to discuss different strategies to ensure the smallest number of guesses is used.
 It's not essential that they use the "best" method (starting with the middle item), since they will learn the hard way that this would have been a good idea, but it may save some frustration if they become aware of the strategy in advance.

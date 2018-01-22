@@ -6,7 +6,9 @@
 
 ## Lesson starter
 
-{panel type="general" title="Notes on resources"}
+{panel type="general"}
+
+# Notes on resources
 
 The following items are highly motivating, however you can use any resources you have available in your classroom that have two different states or sizes.
 
@@ -50,7 +52,9 @@ conventional (decimal) place value system, so the highest is on the left, smalle
 
 2.  Make sure that if you are using colours or other representations there is a strong contrast.
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 1.  The number pattern is from highest to lowest, left to right (it's just a
     convention, but we use the same one in decimal, with the most significant
@@ -83,7 +87,9 @@ conventional (decimal) place value system, so the highest is on the left, smalle
 
 {panel end}
 
-{panel type="general" title="Examplars"}
+{panel type="general"}
+
+# Examplars
 
 Samples of work after an hour challenge:
 

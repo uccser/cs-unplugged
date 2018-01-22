@@ -1,4 +1,6 @@
-{panel type="ct-algorithm" title="Algorithmic thinking"}
+{panel type="ct-algorithm"}
+
+# Algorithmic thinking
 
 Searching through data is something computers do all the time, just think about how often we need to search for words in documents and information on the internet!
 Searching efficiently is a very important problem and that computer scientists have worked on for a long time.
@@ -18,7 +20,9 @@ To search one billion items we would have to look at 30 of them at the very most
 
 {panel end}
 
-{panel type="ct-abstraction" title="Abstraction"}
+{panel type="ct-abstraction"}
+
+# Abstraction
 
 If we have an abstract idea of how the searching algorithms we can use work, then we can apply them to a whole range of situations!
 
@@ -34,7 +38,9 @@ Then the same rules for searching numbers can be applied to words.
 
 {panel end}
 
-{panel type="ct-decomposition" title="Decomposition"}
+{panel type="ct-decomposition"}
+
+# Decomposition
 
 {image file-path="img/topics/apples_oranges.png" alt="Shows that apples do not equal oranges"}
 
@@ -53,7 +59,9 @@ These questions eliminate many possible foods just with one question.
 
 {panel end}
 
-{panel type="ct-pattern" title="Generalising and patterns"}
+{panel type="ct-pattern"}
+
+# Generalising and patterns
 
 When doing these lessons look to see if students recognise patterns between the activities.
 Do they notice that searching through the unsorted treasure chests is actually the same task as guessing which cup a number is in when the numbers are in a random order?
@@ -64,7 +72,9 @@ They might also start recognising similar problems to these in their everyday li
 
 {panel end}
 
-{panel type="ct-evaluation" title="Evaluation"}
+{panel type="ct-evaluation"}
+
+# Evaluation
 
 Evaluation is a key part of these lessons.
 There can be many different algorithms for the same problem so it is very important that we evaluate these algorithms and figure out which is the best to use in each situation.
@@ -74,7 +84,9 @@ This is one of the key points where Computational Thinking and statistics are li
 
 {panel end}
 
-{panel type="ct-logic" title="Logic"}
+{panel type="ct-logic"}
+
+# Logic
 
 By understanding the algorithms, evaluating the data collected, and thinking about how each of the different algorithms work and the differences between them, students will be exercising their logic skills a lot!
 Logical problem solving skills are exercised when they think about the following:

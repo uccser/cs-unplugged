@@ -34,14 +34,18 @@ counters instead of students moving around, but this is much less engaging.
 Show the students the Sorting Network drawn on the ground, and tell them "This
 chalk computer can do some things very fast, let’s investigate what it does."
 
-{panel type="math" title="Mathematical links"}
+{panel type="math"}
+
+# Mathematical links
 
 Supports students understanding of ordering any range of numbers, from ordering
 single digit numbers to fractions and decimals, or numbers in their millions.
 
 {panel end}
 
-{panel type="exemplars" title="Exemplars"}
+{panel type="exemplars"}
+
+# Exemplars
 
 Here are examples of the kinds of numbers you could use to reinforce number
 ordering (two of each set of six cards are shown).
@@ -99,7 +103,9 @@ ability level.
     shortest amount of time (either with two Sorting Networks racing teams at
     the same time, or one network with the times measured using a stopwatch).
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 If it didn’t work it may be because a pair incorrectly went to the wrong square
 or a person raced ahead of everyone else.

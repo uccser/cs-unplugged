@@ -16,8 +16,6 @@
 
 {comment Video 3: Linking the “Treasure Hunt” activities to statistics.}
 
-## crwdns11619:0crwdne11619:0
-
 *BlockTag: crwdns11620:0crwdne11620:0*
 
 {image file-path="img/topics/different-sized-haystacks.png" alt="A farmer can easily find a needle in a small haystack, but can't find it in a large haystack."}
@@ -34,7 +32,7 @@ crwdns11632:0crwdne11632:0 crwdns11633:0crwdne11633:0 crwdns11634:0crwdne11634:0
 
 crwdns11635:0crwdne11635:0 crwdns11636:0crwdne11636:0
 
-## crwdns11637:0crwdne11637:0
+## crwdns18247:0crwdne18247:0
 
 crwdns11638:0crwdne11638:0 crwdns11639:0crwdne11639:0
 
@@ -46,7 +44,7 @@ crwdns11641:0crwdne11641:0 crwdns11642:0crwdne11642:0 crwdns11643:0crwdne11643:0
 
 crwdns11644:0crwdne11644:0
 
-## crwdns11645:0crwdne11645:0
+## crwdns18248:0crwdne18248:0
 
 crwdns11646:0crwdne11646:0 crwdns11647:0crwdne11647:0 crwdns11648:0crwdne11648:0 crwdns11649:0crwdne11649:0
 
@@ -64,13 +62,15 @@ crwdns11665:0crwdne11665:0 crwdns11666:0crwdne11666:0 crwdns11667:0crwdne11667:0
 
 {image file-path="img/topics/binary_detective.png" alt="A detective trying to find the word 'from' in a sentence using binary search"}
 
-## crwdns11673:0crwdne11673:0
+## crwdns18249:0crwdne18249:0
 
 crwdns11674:0crwdne11674:0 crwdns11675:0crwdne11675:0 crwdns11676:0crwdne11676:0 crwdns11677:0crwdne11677:0 crwdns11678:0crwdne11678:0
 
-*BlockTag: crwdns11679:0crwdne11679:0*
+*BlockTag: crwdns18375:0crwdne18375:0*
 
-{panel type="math" title="Mathematical links"}
+{panel type="math"}
+
+# crwdns18376:0crwdne18376:0
 
 crwdns11680:0crwdne11680:0
 
@@ -78,7 +78,7 @@ crwdns11680:0crwdne11680:0
 
 {panel end}
 
-## crwdns11682:0crwdne11682:0
+## crwdns18250:0crwdne18250:0
 
 crwdns11683:0crwdne11683:0
 

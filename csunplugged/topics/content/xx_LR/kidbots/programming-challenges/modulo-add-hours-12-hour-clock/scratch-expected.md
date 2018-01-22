@@ -4,9 +4,11 @@ crwdns17197:0crwdne17197:0
 
 {iframe link="https://scratch.mit.edu/projects/embed/165593878/?autostart=false"}
 
-*BlockTag: crwdns17199:0crwdne17199:0*
+*BlockTag: crwdns18539:0crwdne18539:0*
 
-{panel type="help" title="Recommended blocks"}
+{panel type="help"}
+
+# crwdns18540:0crwdne18540:0
 
 <pre><code class="scratch:split:random">crwdns17200:0crwdne17200:0
 </code></pre>

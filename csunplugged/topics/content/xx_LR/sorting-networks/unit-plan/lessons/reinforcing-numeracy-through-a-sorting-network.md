@@ -18,9 +18,11 @@ crwdns12584:0crwdne12584:0 crwdns12585:0crwdne12585:0 crwdns12586:0crwdne12586:0
 
 crwdns12588:0crwdne12588:0
 
-*BlockTag: crwdns12589:0crwdne12589:0*
+*BlockTag: crwdns18957:0crwdne18957:0*
 
-{panel type="math" title="Mathematical links"}
+{panel type="math"}
+
+# crwdns18958:0crwdne18958:0
 
 crwdns12590:0crwdne12590:0
 
@@ -28,9 +30,11 @@ crwdns12590:0crwdne12590:0
 
 {panel end}
 
-*BlockTag: crwdns12592:0crwdne12592:0*
+*BlockTag: crwdns18959:0crwdne18959:0*
 
-{panel type="exemplars" title="Exemplars"}
+{panel type="exemplars"}
+
+# crwdns18960:0crwdne18960:0
 
 crwdns12593:0crwdne12593:0 crwdns12594:0crwdne12594:0
 
@@ -68,9 +72,11 @@ crwdns12593:0crwdne12593:0 crwdns12594:0crwdne12594:0
 10. crwdns12612:0crwdne12612:0 crwdns12613:0crwdne12613:0
 11. crwdns12614:0crwdne12614:0
 
-*BlockTag: crwdns12615:0crwdne12615:0*
+*BlockTag: crwdns18961:0crwdne18961:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# crwdns18962:0crwdne18962:0
 
 crwdns12616:0crwdne12616:0 crwdns12617:0crwdne12617:0 crwdns12618:0crwdne12618:0 crwdns12619:0crwdne12619:0
 

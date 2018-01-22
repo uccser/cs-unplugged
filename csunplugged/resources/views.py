@@ -44,7 +44,7 @@ def resource(request, resource_slug):
     resource = get_object_or_404(Resource, slug=resource_slug)
     context = dict()
     generator = get_resource_generator(resource.generator_module)
-    context["options_html"] = get_options_html(generator.get_options(), generator.get_local_options())
+    context["options_html"] = get_options_html(generator.get_options(), generator.get_local_options(), request.GET)
     context["resource"] = resource
     context["debug"] = settings.DEBUG
     context["resource_thumbnail_base"] = "{}img/resources/{}/thumbnails/".format(settings.STATIC_URL, resource.slug)

@@ -1,6 +1,8 @@
-*BlockTag: crwdns12100:0crwdne12100:0*
+*BlockTag: crwdns18897:0crwdne18897:0*
 
-{panel type="ct-algorithm" title="Algorithmic thinking"}
+{panel type="ct-algorithm"}
+
+# crwdns18898:0crwdne18898:0
 
 crwdns12101:0crwdne12101:0 crwdns12102:0crwdne12102:0 crwdns12103:0crwdne12103:0 crwdns12104:0crwdne12104:0 crwdns12105:0crwdne12105:0
 
@@ -8,9 +10,11 @@ crwdns12101:0crwdne12101:0 crwdns12102:0crwdne12102:0 crwdns12103:0crwdne12103:0
 
 {panel end}
 
-*BlockTag: crwdns12107:0crwdne12107:0*
+*BlockTag: crwdns18899:0crwdne18899:0*
 
-{panel type="ct-abstraction" title="Abstraction"}
+{panel type="ct-abstraction"}
+
+# crwdns18900:0crwdne18900:0
 
 crwdns12108:0crwdne12108:0 crwdns12109:0crwdne12109:0
 
@@ -22,9 +26,11 @@ crwdns12114:0crwdne12114:0
 
 {panel end}
 
-*BlockTag: crwdns12116:0crwdne12116:0*
+*BlockTag: crwdns18901:0crwdne18901:0*
 
-{panel type="ct-decomposition" title="Decomposition"}
+{panel type="ct-decomposition"}
+
+# crwdns18902:0crwdne18902:0
 
 *BlockTag: crwdns12117:0crwdne12117:0*
 
@@ -38,9 +44,11 @@ crwdns12123:0crwdne12123:0
 
 {panel end}
 
-*BlockTag: crwdns12125:0crwdne12125:0*
+*BlockTag: crwdns18903:0crwdne18903:0*
 
-{panel type="ct-pattern" title="Generalising and patterns"}
+{panel type="ct-pattern"}
+
+# crwdns18904:0crwdne18904:0
 
 crwdns12126:0crwdne12126:0
 
@@ -54,9 +62,11 @@ crwdns12135:0crwdne12135:0 crwdns12136:0crwdne12136:0
 
 {panel end}
 
-*BlockTag: crwdns12138:0crwdne12138:0*
+*BlockTag: crwdns18905:0crwdne18905:0*
 
-{panel type="ct-evaluation" title="Evaluation"}
+{panel type="ct-evaluation"}
+
+# crwdns18906:0crwdne18906:0
 
 crwdns12139:0crwdne12139:0 crwdns12140:0crwdne12140:0 crwdns12141:0crwdne12141:0
 
@@ -64,9 +74,11 @@ crwdns12139:0crwdne12139:0 crwdns12140:0crwdne12140:0 crwdns12141:0crwdne12141:0
 
 {panel end}
 
-*BlockTag: crwdns12143:0crwdne12143:0*
+*BlockTag: crwdns18907:0crwdne18907:0*
 
-{panel type="ct-logic" title="Logic"}
+{panel type="ct-logic"}
+
+# crwdns18908:0crwdne18908:0
 
 crwdns12144:0crwdne12144:0 crwdns12145:0crwdne12145:0 crwdns12146:0crwdne12146:0 crwdns12147:0crwdne12147:0 crwdns12148:0crwdne12148:0
 

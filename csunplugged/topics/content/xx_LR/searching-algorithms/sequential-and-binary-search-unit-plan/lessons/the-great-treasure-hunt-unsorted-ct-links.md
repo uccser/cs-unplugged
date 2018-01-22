@@ -1,6 +1,8 @@
-*BlockTag: crwdns11992:0crwdne11992:0*
+*BlockTag: crwdns18379:0crwdne18379:0*
 
-{panel type="ct-algorithm" title="Algorithmic thinking"}
+{panel type="ct-algorithm"}
+
+# crwdns18380:0crwdne18380:0
 
 crwdns11993:0crwdne11993:0 crwdns11994:0crwdne11994:0
 
@@ -14,9 +16,11 @@ crwdns11998:0crwdne11998:0 crwdns11999:0crwdne11999:0
 
 {panel end}
 
-*BlockTag: crwdns12001:0crwdne12001:0*
+*BlockTag: crwdns18381:0crwdne18381:0*
 
-{panel type="ct-abstraction" title="Abstraction"}
+{panel type="ct-abstraction"}
+
+# crwdns18382:0crwdne18382:0
 
 crwdns12002:0crwdne12002:0 crwdns12003:0crwdne12003:0 crwdns12004:0crwdne12004:0
 
@@ -28,9 +32,11 @@ crwdns12006:0crwdne12006:0
 
 {panel end}
 
-*BlockTag: crwdns12008:0crwdne12008:0*
+*BlockTag: crwdns18383:0crwdne18383:0*
 
-{panel type="ct-decomposition" title="Decomposition"}
+{panel type="ct-decomposition"}
+
+# crwdns18384:0crwdne18384:0
 
 crwdns12009:0crwdne12009:0 crwdns12010:0crwdne12010:0
 
@@ -44,9 +50,11 @@ crwdns12013:0crwdne12013:0
 
 {panel end}
 
-*BlockTag: crwdns12015:0crwdne12015:0*
+*BlockTag: crwdns18385:0crwdne18385:0*
 
-{panel type="ct-pattern" title="Generalising and patterns"}
+{panel type="ct-pattern"}
+
+# crwdns18386:0crwdne18386:0
 
 crwdns12016:0crwdne12016:0 crwdns12017:0crwdne12017:0 crwdns12018:0crwdne12018:0
 
@@ -58,9 +66,11 @@ crwdns12020:0crwdne12020:0
 
 {panel end}
 
-*BlockTag: crwdns12022:0crwdne12022:0*
+*BlockTag: crwdns18387:0crwdne18387:0*
 
-{panel type="ct-evaluation" title="Evaluation"}
+{panel type="ct-evaluation"}
+
+# crwdns18388:0crwdne18388:0
 
 crwdns12023:0crwdne12023:0 crwdns12024:0crwdne12024:0 crwdns12025:0crwdne12025:0 crwdns12026:0crwdne12026:0 crwdns12027:0crwdne12027:0 crwdns12028:0crwdne12028:0
 
@@ -72,9 +82,11 @@ crwdns12030:0crwdne12030:0 crwdns12031:0crwdne12031:0 crwdns12032:0crwdne12032:0
 
 {panel end}
 
-*BlockTag: crwdns12035:0crwdne12035:0*
+*BlockTag: crwdns18389:0crwdne18389:0*
 
-{panel type="ct-logic" title="Logic"}
+{panel type="ct-logic"}
+
+# crwdns18390:0crwdne18390:0
 
 crwdns12036:0crwdne12036:0 crwdns12037:0crwdne12037:0
 
