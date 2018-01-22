@@ -1,8 +1,8 @@
 $(document).ready(function() {
   $('#models-filter').multipleSelect({
-    filter: true,
     selectAll: false,
     width: '100%',
+    placeholder: "Show all types",
   });
 
   $('#areas-filter').multipleSelect({
@@ -58,9 +58,13 @@ function updateSelectedAreas(changeData) {
   var $selectedSpan = $('.areas-filter-container .ms-choice span');
   $selectedSpan.empty();
   var $selectedValues = $('#areas-filter').multipleSelect('getSelects');
-  for (var i = 0; i < $selectedValues.length; i++) {
-    var data = areaData[$selectedValues[i]];
-    $selectedSpan.append(createAreaBadge(data.colour, data.text));
+  if ($selectedValues.length == 0) {
+    $selectedSpan.text("Show all curriculum areas");
+  } else {
+    for (var i = 0; i < $selectedValues.length; i++) {
+      var data = areaData[$selectedValues[i]];
+      $selectedSpan.append(createAreaBadge(data.colour, data.text));
+    }
   }
 };
 
