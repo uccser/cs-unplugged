@@ -37,6 +37,7 @@ $(document).ready(function() {
      $('#id_q').val('');
      $('#models-filter').multipleSelect('uncheckAll');
      $('#areas-filter').multipleSelect('uncheckAll');
+     updateSelectedAreas();
  });
 });
 
