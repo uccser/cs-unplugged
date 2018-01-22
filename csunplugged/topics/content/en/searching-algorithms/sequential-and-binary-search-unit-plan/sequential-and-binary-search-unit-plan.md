@@ -64,21 +64,25 @@ A computer would go to the first word “the” and ask is it the same as “is�
 If it is it will stop searching, if it isn’t, it will go to the next word and repeat this process until it finds the matching data.
 In this case it takes 5 guesses to find the word.
 It could have taken up to 7 guesses or just 1 guess, depending on which word you were searching for.
+
 Imagine our detective (below) is programmed to do a sequential search to find the word **"said"**. Here’s the process or algorithm he would follow to find it.
 Notice he can only compare one word at a time!
+
 Now imagine if he has a million words to search!
 
-{image file-path="img/topics/sequential_detective.png" alt="A detective looking at words sequentially in a sentence until he finds the word 'said'"}
+{image file-path="img/topics/sequential_detective3.gif" alt="A detective looking at words sequentially in a sentence until he finds the word 'said'"}
 
 **Binary search**: An algorithm that tells us how to efficiently find a specific value in an **ordered (sorted)** list.
 It is called ‘binary’ search because each time you look at a value in the list you divide the list into 2 parts, one is discarded and the other is kept.
 The word "binary" here just means something that has two parts, such as a binary star system (made of two stars); binary search shouldn't be confused binary numbers.
+
+
 Suppose our detective is looking for the word **"said"** from the following list, which is in alphabetical order: “a”, “from”, “is”, “it”, “my”, “said”, “the”.
 First the computer will go straight to the middle word, “it”  and see if that matches - because it doesn’t, the computer doesn’t need to check the 3 words to the left.
 Now the computer finds the middle word of the right half of the list, which is “said”.
 Binary search narrows in on the location of the word very quickly.
 
-{image file-path="img/topics/binary_detective.png" alt="A detective trying to find the word 'from' in a sentence using binary search"}
+{image file-path="img/topics/binary_detective.gif" alt="A detective trying to find the word 'said' in a sentence using binary search"}
 
 ## Real world implications
 
