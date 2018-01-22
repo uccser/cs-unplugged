@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-22 12:04+0000\n"
+"POT-Creation-Date: 2018-01-22 12:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -355,6 +355,9 @@ msgid "GitHub"
 msgstr ""
 
 msgid "Help"
+msgstr ""
+
+msgid "Search"
 msgstr ""
 
 msgid "Glossary"
@@ -1114,6 +1117,19 @@ msgstr ""
 msgid "Lesson"
 msgstr ""
 
+msgid "Within topic"
+msgstr ""
+
+#, python-format
+msgid "<strong>Ages %(lower)s to %(upper)s:</strong> Lesson %(number)s"
+msgstr ""
+
+msgid "within unit plan"
+msgstr ""
+
+msgid "Challenge Level:"
+msgstr ""
+
 msgid ""
 "The following table lists curriculum integrations for all topics in the CS "
 "Unplugged content."
@@ -1207,10 +1223,6 @@ msgstr ""
 msgid "<strong>Duration:</strong> %(duration)s minutes"
 msgstr ""
 
-#, python-format
-msgid "<strong>Ages %(lower)s to %(upper)s:</strong> Lesson %(number)s"
-msgstr ""
-
 msgid "Learning outcomes"
 msgstr ""
 
@@ -1293,9 +1305,6 @@ msgid "No programming challenges for %(topic)s."
 msgstr ""
 
 msgid "programming challenge"
-msgstr ""
-
-msgid "Challenge Level:"
 msgstr ""
 
 msgid "This programming challenge is linked to the following lessons:"
