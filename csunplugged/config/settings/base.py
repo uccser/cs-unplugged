@@ -206,6 +206,7 @@ TEMPLATES = [
             "libraries": {
                 "render_html_field": "config.templatetags.render_html_field",
                 "translate_url": "config.templatetags.translate_url",
+                "query_replace": "config.templatetags.query_replace",
             },
         },
     },

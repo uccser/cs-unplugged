@@ -3,6 +3,7 @@
 {% load static %}
 {% load django_bootstrap_breadcrumbs %}
 {% load widget_tweaks %}
+{% load query_replace %}
 
 {% block title %}
   Search
@@ -106,19 +107,19 @@
             {% if paginator.num_pages > 1 %}
               <div class="text-center">
                 {% if page_obj.has_previous %}
-                  <button type="submit" class="btn btn-link" name="page" value="{{ page_obj.previous_page_number }}">&laquo; Previous page</button>
+                  <a class="btn btn-link" href="{% url 'search:index' %}?{% query_replace page=page_obj.previous_page_number %}">&laquo; Previous page</a>
                 {% endif %}
                 {% if page_obj.has_next %}
-                  <button type="submit" class="btn btn-link" name="page" value="{{ page_obj.next_page_number }}">Next page &raquo;</button>
+                  <a class="btn btn-link" href="{% url 'search:index' %}?{% query_replace page=page_obj.next_page_number %}">Next page &raquo;</a>
                 {% endif %}
               </div>
               <div id="result-page-links" class="text-center">
                 <span>Jump to page:</span>
                 {% for page in paginator.page_range %}
                   {% if page_obj.number == page %}
-                    <button class="btn btn-link" disabled="disabled">{{ page }}</button>
+                    <a class="btn btn-link disabled" aria-disabled="true">{{ page }}</a>
                   {% else %}
-                    <button type="submit" class="btn btn-link" name="page" value="{{ page }}">{{ page }}</button>
+                    <a class="btn btn-link" href="{% url 'search:index' %}?{% query_replace page=page_obj.next_page_number %}">{{ page }}</a>
                   {% endif %}
                 {% endfor %}
               </div>
