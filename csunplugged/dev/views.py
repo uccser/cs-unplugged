@@ -45,8 +45,8 @@ class IndexView(generic.TemplateView):
 
         # Get curriculum area list
         context["curriculum_areas"] = []
-        for parent in CurriculumArea.objects.filter(parent=None):
-            children = [child for child in CurriculumArea.objects.filter(parent=parent)]
+        for parent in CurriculumArea.objects.filter(parent=None).order_by("name"):
+            children = list(CurriculumArea.objects.filter(parent=parent).order_by("name"))
             context["curriculum_areas"].append((parent, children))
 
         # Get learning outcome list

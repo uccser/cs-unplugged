@@ -1,0 +1,3 @@
+{{ object.name }}
+{{ object.content }}
+{{ object.computational_thinking_links }}

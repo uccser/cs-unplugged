@@ -5,6 +5,7 @@ source =
     general
     locale
     resources
+    search
     static
     templates
     topics

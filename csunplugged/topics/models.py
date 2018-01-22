@@ -1,5 +1,6 @@
 """Models for the topics application."""
 
+from django.urls import reverse
 from django.db import models
 from django.contrib.postgres.fields import JSONField, IntegerRangeField
 from resources.models import Resource
@@ -34,8 +35,16 @@ class CurriculumArea(TranslatableModel):
     parent = models.ForeignKey(
         "self",
         null=True,
-        related_name="parent_curriculum_area"
+        related_name="children"
     )
+
+    def model_type(self):
+        """Text name of model type.
+
+        Returns:
+            Name of the model (str).
+        """
+        return "Curriculum Area"
 
     def __str__(self):
         """Text representation of CurriculumArea object.
@@ -104,6 +113,25 @@ class Topic(TranslatableModel):
     other_resources = models.TextField(default="")
     icon = models.CharField(max_length=100, null=True)
 
+    def get_absolute_url(self):
+        """Return the canonical URL for a topic.
+
+        Returns:
+            URL as string.
+        """
+        kwargs = {
+            "topic_slug": self.slug
+        }
+        return reverse("topics:topic", kwargs=kwargs)
+
+    def model_type(self):
+        """Text name of model type.
+
+        Returns:
+            Name of the model (str).
+        """
+        return "Topic"
+
     def __str__(self):
         """Text representation of Topic object.
 
@@ -127,6 +155,26 @@ class UnitPlan(TranslatableModel):
     content = models.TextField(default="")
     computational_thinking_links = models.TextField(default="")
     heading_tree = JSONField(default=dict)
+
+    def get_absolute_url(self):
+        """Return the canonical URL for a unit plan.
+
+        Returns:
+            URL as string.
+        """
+        kwargs = {
+            "topic_slug": self.topic.slug,
+            "unit_plan_slug": self.slug
+        }
+        return reverse("topics:unit_plan", kwargs=kwargs)
+
+    def model_type(self):
+        """Text name of model type.
+
+        Returns:
+            Name of the model (str).
+        """
+        return "Unit Plan"
 
     def __str__(self):
         """Text representation of UnitPlan object.
@@ -177,6 +225,26 @@ class ProgrammingChallenge(TranslatableModel):
         on_delete=models.CASCADE,
         related_name="programming_challenges"
     )
+
+    def get_absolute_url(self):
+        """Return the canonical URL for a programming challenge.
+
+        Returns:
+            URL as string.
+        """
+        kwargs = {
+            "topic_slug": self.topic.slug,
+            "programming_challenge_slug": self.slug
+        }
+        return reverse("topics:programming_challenge", kwargs=kwargs)
+
+    def model_type(self):
+        """Text name of model type.
+
+        Returns:
+            Name of the model (str).
+        """
+        return "Programming Challenge"
 
     def ordered_implementations(self):
         """Return an ordered QuerySet of implementations.
@@ -345,6 +413,27 @@ class Lesson(TranslatableModel):
             programming_challenge.challenge_number = challenge_numbers.challenge_number
         return programming_challenges
 
+    def get_absolute_url(self):
+        """Return the canonical URL for a lesson.
+
+        Returns:
+            URL as string.
+        """
+        kwargs = {
+            "topic_slug": self.topic.slug,
+            "unit_plan_slug": self.unit_plan.slug,
+            "lesson_slug": self.slug
+        }
+        return reverse("topics:lesson", kwargs=kwargs)
+
+    def model_type(self):
+        """Text name of model type.
+
+        Returns:
+            Name of the model (str).
+        """
+        return "Lesson"
+
     def __str__(self):
         """Text representation of Lesson object.
 
@@ -408,6 +497,26 @@ class CurriculumIntegration(TranslatableModel):
             least one prerequisite lesson, otherwise False.
         """
         return bool(self.prerequisite_lessons.all())
+
+    def get_absolute_url(self):
+        """Return the canonical URL for a curriculum integration.
+
+        Returns:
+            URL as string.
+        """
+        kwargs = {
+            "topic_slug": self.topic.slug,
+            "integration_slug": self.slug
+        }
+        return reverse("topics:integration", kwargs=kwargs)
+
+    def model_type(self):
+        """Text name of model type.
+
+        Returns:
+            Name of the model (str).
+        """
+        return "Curriculum Integration"
 
     def __str__(self):
         """Text representation of CurriculumIntegration object.

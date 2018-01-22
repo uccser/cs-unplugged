@@ -15,8 +15,8 @@ def query_string(values):
         String of GET query.
     """
     string = "?"
-    for index, (key, value) in enumerate(values.items()):
+    for index, (key, value) in enumerate(values):
         string += "{key}={value}".format(key=key, value=bool_to_yes_no(value))
-        if index < len(values):
+        if index < len(values) - 1:
             string += "&"
     return string
