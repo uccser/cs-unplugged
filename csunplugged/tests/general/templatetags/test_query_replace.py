@@ -4,6 +4,7 @@ from django.template.exceptions import TemplateSyntaxError
 from urllib.parse import parse_qs
 from tests.BaseTest import BaseTest
 
+
 class QueryReplaceTest(BaseTest):
 
     def render_template(self, string, context=None):
@@ -19,7 +20,7 @@ class QueryReplaceTest(BaseTest):
             "request": request,
         }
         rendered = self.render_template(
-            "{% load query_replace %}" \
+            "{% load query_replace %}"
             "{% query_replace a=new_a %}",
             context
         )
@@ -36,7 +37,7 @@ class QueryReplaceTest(BaseTest):
             "request": request,
         }
         rendered = self.render_template(
-            "{% load query_replace %}" \
+            "{% load query_replace %}"
             "{% query_replace a=new_a %}",
             context
         )
@@ -52,7 +53,7 @@ class QueryReplaceTest(BaseTest):
             "request": request,
         }
         rendered = self.render_template(
-            "{% load query_replace %}" \
+            "{% load query_replace %}"
             "{% query_replace a=new_a %}",
             context
         )
@@ -70,7 +71,7 @@ class QueryReplaceTest(BaseTest):
             "request": request,
         }
         rendered = self.render_template(
-            "{% load query_replace %}" \
+            "{% load query_replace %}"
             "{% query_replace a=new_a b=new_b %}",
             context
         )
@@ -89,7 +90,7 @@ class QueryReplaceTest(BaseTest):
         self.assertRaises(
             TemplateSyntaxError,
             self.render_template,
-            "{% load query_replace %}" \
+            "{% load query_replace %}"
             "{% query_replace new_a %}",
             context
         )
@@ -102,7 +103,7 @@ class QueryReplaceTest(BaseTest):
             "request": request,
         }
         rendered = self.render_template(
-            "{% load query_replace %}" \
+            "{% load query_replace %}"
             "{% query_replace a=data.a %}",
             context
         )
