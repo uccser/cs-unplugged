@@ -1,4 +1,6 @@
-{panel type="ct-algorithm" title="Algorithmic thinking"}
+{panel type="ct-algorithm"}
+
+# Algorithmic thinking
 
 Binary search works by applying the Divide and Conquer process; we repeatedly check the centre treasure chest and deduce which chests can then be eliminated, and which ones could still potentially contain the real money you are hunting for. This can be given as an algorithm.
 
@@ -10,7 +12,9 @@ Who are the students who not only can explain the exact process to find the real
 
 {panel end}
 
-{panel type="ct-abstraction" title="Abstraction"}
+{panel type="ct-abstraction"}
+
+# Abstraction
 
 As in lesson 2 and lesson 3, we can ignore many details about the items we are searching for.
 
@@ -22,7 +26,9 @@ What questions are students asking about the treasure chests? Organise them into
 
 {panel end}
 
-{panel type="ct-decomposition" title="Decomposition"}
+{panel type="ct-decomposition"}
+
+# Decomposition
 
 Binary search is a classic method of divide and conquer and is entirely about decomposition. Refer to lesson 2.
 
@@ -32,7 +38,9 @@ Who are the students who are able to break the problem down into steps and then 
 
 {panel end}
 
-{panel type="ct-pattern" title="Generalising and patterns"}
+{panel type="ct-pattern"}
+
+# Generalising and patterns
 
 The key pattern to recognise in this activity is the process of eliminating half the possible cards by only looking in one, and that this is repeated over and over to accomplish the task.
 
@@ -45,7 +53,9 @@ Who are the students who quickly identified the pattern?
 
 {panel end}
 
-{panel type="ct-evaluation" title="Evaluation"}
+{panel type="ct-evaluation"}
+
+# Evaluation
 
 Students will be evaluating binary search in the same way they evaluated the divide and conquer method in lesson 2.
 
@@ -60,7 +70,9 @@ Who are the students who can explain the strengths and potential problems of usi
 
 {panel end}
 
-{panel type="ct-logic" title="Logic"}
+{panel type="ct-logic"}
+
+# Logic
 
 To search through the treasure chests and guarantee they will find the real money in a low number of guesses students must use the binary search algorithm rather than using a sequential search or just choosing randomly based on where they think the money might be.
 This is because they need to eliminate as many chests as possible with each guess.

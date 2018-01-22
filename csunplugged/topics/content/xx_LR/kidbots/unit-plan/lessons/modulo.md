@@ -1,8 +1,10 @@
 # crwdns17573:0crwdne17573:0
 
-*BlockTag: crwdns17574:0crwdne17574:0*
+*BlockTag: crwdns18587:0crwdne18587:0*
 
-{panel type="note" title="Note from the authors"}
+{panel type="general"}
+
+# crwdns18588:0crwdne18588:0
 
 crwdns17575:0crwdne17575:0 crwdns17576:0crwdne17576:0 crwdns17577:0crwdne17577:0
 

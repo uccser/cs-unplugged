@@ -9,7 +9,9 @@ A bit is usually stored in a memory cell inside a computer, which is an electron
 There are billions of these bits on a typical computer, and they are used to store text, numbers, images, video, and anything else that we need to store or transmit. On computer networks the bits are communicated by light, voltages or sound.
 Anything that can have two different values can represent a bit!
 
-{panel type="video" title="See teaching the Binary Number system in action!"}
+{panel type="video"}
+
+# See teaching this in action
 
 {video url="https://www.youtube.com/embed/Wy6-FXtLMV8"}
 
@@ -37,7 +39,9 @@ A byte is a convenient number of bits as it can store things like simple charact
 
 {image file-path="img/topics/col_binary_bite_vs_byte.png"}
 
-{panel type="math" title="Mathematical links"}
+{panel type="math"}
+
+# Mathematical links
 
 The binary number system is base 2, so there are only two digits before you need to move to the next place value: 0, 1.
 

@@ -1,6 +1,8 @@
 # Parity magic for junior students
 
-{panel type="teaching" title="See teaching this in action!"}
+{panel type="video"}
+
+# See teaching this in action
 
 A demonstration of lesson one ("Parity magic") being taught is available here:
 
@@ -8,7 +10,9 @@ A demonstration of lesson one ("Parity magic") being taught is available here:
 
 {panel end}
 
-{panel type="general" title="Notes on resources"}
+{panel type="general"}
+
+# Notes on resources
 
 {image file-path="img/topics/parity-cards.png" alt="A pile of square cards with black on one side and white on the other side."}
 
@@ -60,7 +64,9 @@ Or worst still the website you are wanting to go to for your learning or the DVD
     Continue to do that until you have a grid of 5 x 5.
     This is an opportunity to count all the cards, skip count in fives to 25, or to double check there really isn’t any patterns happening.
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 For teachers: The cards represent bits (binary digits).
 If they haven't studied binary numbers, you may need to just point out that this is the way everything is represented on computers - the cards here could represent a file, a message, a web page or even a program.
@@ -69,7 +75,9 @@ If they haven't studied binary numbers, you may need to just point out that this
 
 4.  Teacher to class: “I’m going to make this a little bit harder by adding another row and another column”.
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 Of course, you are doing this on purpose because what you want to do is make sure that the number of black sides showing in each row and column is an even number.
 This is always possible; if the student put an odd number of black cards in a row, you add another black card to the row; if they put an even number in the row, add a white card, to keep it as an even number.
@@ -81,36 +89,86 @@ You should practise this several times before doing it in front of the class, as
 
 {panel end}
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-1.png" alt="5 rows of 5 parity cards in a random arrangement." caption="Step 1: Example layout of a 5x5 grid set up by the volunteer."}
+{image file-path="img/topics/parity-cards-6x6-grid-step-1.png" alt="5 rows of 5 parity cards in a random arrangement." caption="true"}
+
+Step 1: Example layout of a 5x5 grid set up by the volunteer.
+
+{image end}
 
 ### Step by step adding a parity bit to each row and column
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-2.png" alt="Progress image of adding parity bits." caption="Step 2: Adding parity bit for the first row."}
+{image file-path="img/topics/parity-cards-6x6-grid-step-2.png" alt="Progress image of adding parity bits." caption="true"}
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-3.png" alt="Progress image of adding parity bits." caption="Step 3: Adding parity bit for the second row."}
+Step 2: Adding parity bit for the first row.
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-4.png" alt="Progress image of adding parity bits." caption="Step 4: Adding parity bit for the third row."}
+{image end}
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-5.png" alt="Progress image of adding parity bits." caption="Step 5: Adding parity bit for the fourth row."}
+{image file-path="img/topics/parity-cards-6x6-grid-step-3.png" alt="Progress image of adding parity bits." caption="true"}
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-6.png" alt="Progress image of adding parity bits." caption="Step 6: Adding parity bit for the fifth row."}
+Step 3: Adding parity bit for the second row.
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-7.png" alt="Progress image of adding parity bits." caption="Step 7: Adding parity bit for the first column."}
+{image end}
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-8.png" alt="Progress image of adding parity bits." caption="Step 8: Adding parity bit for the second column."}
+{image file-path="img/topics/parity-cards-6x6-grid-step-4.png" alt="Progress image of adding parity bits." caption="true"}
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-9.png" alt="Progress image of adding parity bits." caption="Step 9: Adding parity bit for the third column."}
+Step 4: Adding parity bit for the third row.
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-10.png" alt="Progress image of adding parity bits." caption="Step 10: Adding parity bit for the fourth column."}
+{image end}
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-11.png" alt="Progress image of adding parity bits." caption="Step 11: Adding parity bit for the fifth column."}
+{image file-path="img/topics/parity-cards-6x6-grid-step-5.png" alt="Progress image of adding parity bits." caption="true"}
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-12.png" alt="Progress image of adding parity bits." caption="Step 12: Adding parity bit for the sixth column."}
+Step 5: Adding parity bit for the fourth row.
+
+{image end}
+
+{image file-path="img/topics/parity-cards-6x6-grid-step-6.png" alt="Progress image of adding parity bits." caption="true"}
+
+Step 6: Adding parity bit for the fifth row.
+
+{image end}
+
+{image file-path="img/topics/parity-cards-6x6-grid-step-7.png" alt="Progress image of adding parity bits." caption="true"}
+
+Step 7: Adding parity bit for the first column.
+
+{image end}
+
+{image file-path="img/topics/parity-cards-6x6-grid-step-8.png" alt="Progress image of adding parity bits." caption="true"}
+
+Step 8: Adding parity bit for the second column.
+
+{image end}
+
+{image file-path="img/topics/parity-cards-6x6-grid-step-9.png" alt="Progress image of adding parity bits." caption="true"}
+
+Step 9: Adding parity bit for the third column.
+
+{image end}
+
+{image file-path="img/topics/parity-cards-6x6-grid-step-10.png" alt="Progress image of adding parity bits." caption="true"}
+
+Step 10: Adding parity bit for the fourth column.
+
+{image end}
+
+{image file-path="img/topics/parity-cards-6x6-grid-step-11.png" alt="Progress image of adding parity bits." caption="true"}
+
+Step 11: Adding parity bit for the fifth column.
+
+{image end}
+
+{image file-path="img/topics/parity-cards-6x6-grid-step-12.png" alt="Progress image of adding parity bits." caption="true"}
+
+Step 12: Adding parity bit for the sixth column.
+
+{image end}
 
 The last parity bit placed is useful because it will always work for both the column and row;
 if it doesn't match for both the row and column then you'll have made a mistake with one of the cards, and should go back and check them (try to not make it obvious that you're doing that).
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 Now you have added parity cards to make the number of black squares in every row and every column equal to an even number.
 Don't point this out to the students at this stage.
@@ -123,7 +181,9 @@ Teacher to student: "I'd like you flip over one card while I cover my eyes".
 
 Teacher to class: "Keep a close eye on which card it is to check if I have done my magic trick correctly!"
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 You need to emphasise that you want just one card flipped over.
 This prevents them from turning over too many cards (or none!).
@@ -165,7 +225,9 @@ Let’s now look at the columns:
 
 Teacher to class: “So how did we end up with an even number in every row and column - did the volunteer choose that?” (they didn't!).
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 Break these steps down to what is appropriate for your groups numeracy knowledge.
 
@@ -191,14 +253,18 @@ Now do the same with the columns - ask if each one is correct, then draw around 
 
 Now ask "So which card was flipped?" Usually students will identify the one at the intersection.
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 Students have now worked out for themselves how this works.
 The key idea is that we just added a little more data, but could reconstruct the original if one card was changed.
 
 {panel end}
 
-{panel type="math" title="Mathematical links"}
+{panel type="math"}
+
+# Mathematical links
 
 It also exercises the idea of grids (you can use phrases like "5 by 5") and the language of columns and rows.
 

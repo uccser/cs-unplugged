@@ -1,32 +1,40 @@
-This lesson supports students to apply and recognise the computational thinking links from lesson one. 
+This lesson supports students to apply and recognise the computational thinking links from lesson one.
 
 Explicit links could include:
 
-{panel type="ct-algorithm" title="Algorithms"}
+{panel type="ct-algorithm"}
 
-#### Examples of what you could look for: 
-
-Do students demonstrate how the binary number system works by explaining, systematically, what is happening to work out the binary representation of a given number? 
-
-{panel end}
-
-{panel type="ct-abstraction" title="Abstraction"}
+# Algorithms
 
 #### Examples of what you could look for:
 
-Ask students to look at a demonstration created by other students and list the features of the objects used that are important to demonstrate the binary number system and those that aren’t relevant at all. e.g. using teddy bears - having the back or front showing is important, the colour of the teddy isn’t important, the size of the teddy isn’t important. 
+Do students demonstrate how the binary number system works by explaining, systematically, what is happening to work out the binary representation of a given number?
 
 {panel end}
 
-{panel type="ct-decomposition" title="Decomposition"}
+{panel type="ct-abstraction"}
+
+# Abstraction
 
 #### Examples of what you could look for:
 
-Watch a demonstration and ask students to point out some of the small steps that the students in the demonstration had to do e.g.  this could be when a single bit out of a group is determined to be on or off. 
+Ask students to look at a demonstration created by other students and list the features of the objects used that are important to demonstrate the binary number system and those that aren’t relevant at all. e.g. using teddy bears - having the back or front showing is important, the colour of the teddy isn’t important, the size of the teddy isn’t important.
 
 {panel end}
 
-{panel type="ct-pattern" title="Generalising and patterns"}
+{panel type="ct-decomposition"}
+
+# Decomposition
+
+#### Examples of what you could look for:
+
+Watch a demonstration and ask students to point out some of the small steps that the students in the demonstration had to do e.g.  this could be when a single bit out of a group is determined to be on or off.
+
+{panel end}
+
+{panel type="ct-pattern"}
+
+# Generalising and patterns
 
 #### Examples of what you could look for:
 
@@ -35,7 +43,9 @@ Ask them if they notice any patterns while they are counting.
 
 {panel end}
 
-{panel type="ct-evaluation" title="Evaluation"}
+{panel type="ct-evaluation"}
+
+# Evaluation
 
 #### Examples of what you could look for:
 
@@ -43,7 +53,9 @@ Have students consider the number of bits used in each demonstration, and the di
 
 {panel end}
 
-{panel type="ct-logic" title="Logic"}
+{panel type="ct-logic"}
+
+# Logic
 
 #### Examples of what you could look for:
 

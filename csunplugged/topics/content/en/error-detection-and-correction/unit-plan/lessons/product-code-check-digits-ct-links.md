@@ -1,4 +1,6 @@
-{panel type="ct-algorithm" title="Algorithmic thinking"}
+{panel type="ct-algorithm"}
+
+# Algorithmic thinking
 
 The steps we follow to calculate the barcode checksum is an Algorithm.
 We follow this same Algorithm every time we want to create a checksum for a
@@ -16,7 +18,9 @@ of the number of digits?
 
 {panel end}
 
-{panel type="ct-abstraction" title="Abstraction"}
+{panel type="ct-abstraction"}
+
+# Abstraction
 
 When a barcode goes through a scanner the scanner reads the black and white
 bars on the barcode, whereas when a human looks at a barcode they will read
@@ -36,7 +40,9 @@ Can they explain the reason for the different representations?
 
 {panel end}
 
-{panel type="ct-decomposition" title="Decomposition"}
+{panel type="ct-decomposition"}
+
+# Decomposition
 
 To check the product code, the task of calculating the checksum is broken
 down into individual steps: adding one number at a time; doing that for
@@ -55,7 +61,9 @@ Can they do this for a range of different codes with different errors in them?
 
 {panel end}
 
-{panel type="ct-pattern" title="Generalising and patterns"}
+{panel type="ct-pattern"}
+
+# Generalising and patterns
 
 The same method can apply to shorter (e.g. 8-digit) and longer product codes.
 If you look at some courier packages you might see much larger bar codes,
@@ -74,7 +82,9 @@ Do they appreciate how it still checks the digits in each case?
 
 {panel end}
 
-{panel type="ct-evaluation" title="Evaluation"}
+{panel type="ct-evaluation"}
+
+# Evaluation
 
 This error detecting process isn't perfect.
 To evaluate its effectiveness we need to thoroughly test it.
@@ -102,7 +112,9 @@ They can do this by trial and error or by logical reasoning.
 
 {panel end}
 
-{panel type="ct-logic" title="Logic"}
+{panel type="ct-logic"}
+
+# Logic
 
 The algorithm is designed to be sensitive to the type of errors that are
 most likely to happen.

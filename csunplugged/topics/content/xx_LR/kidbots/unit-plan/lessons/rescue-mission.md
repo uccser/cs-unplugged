@@ -1,113 +1,129 @@
 # crwdns17711:0crwdne17711:0
 
-crwdns17712:0crwdne17712:0 crwdns17713:0crwdne17713:0
+*BlockTag: crwdns18589:0crwdne18589:0*
+
+{image file-path="img/topics/unplugged-programming-icon.png" alt="Students standing around a large checkerboard grid." caption="true"}
+
+crwdns18590:0crwdne18590:0
+
+*BlockTag: crwdns18591:0crwdne18591:0*
+
+{image end}
 
 ## crwdns17714:0crwdne17714:0
 
-crwdns17715:0crwdne17715:0
+crwdns18592:0crwdne18592:0
 
 ## crwdns17716:0crwdne17716:0
 
-crwdns17717:0crwdne17717:0
+crwdns18593:0crwdne18593:0
 
 - crwdns17718:0crwdne17718:0
 - crwdns17719:0crwdne17719:0
 - crwdns17720:0crwdne17720:0
 - crwdns17721:0crwdne17721:0
 
-crwdns17722:0crwdne17722:0
+crwdns18594:0crwdne18594:0
 
-crwdns17723:0crwdne17723:0
+crwdns18595:0crwdne18595:0
 
-crwdns17724:0crwdne17724:0
+crwdns18596:0crwdne18596:0
 
-crwdns17725:0crwdne17725:0
+crwdns18597:0crwdne18597:0
 
 ## crwdns17726:0crwdne17726:0
 
-crwdns17727:0crwdne17727:0 crwdns17728:0crwdne17728:0
+crwdns18598:0crwdne18598:0 crwdns18599:0crwdne18599:0
 
-crwdns17729:0crwdne17729:0
+crwdns18600:0crwdne18600:0
 
-crwdns17730:0crwdne17730:0
+crwdns18601:0crwdne18601:0
 
-crwdns17731:0crwdne17731:0
+crwdns18602:0crwdne18602:0
 
-crwdns17732:0crwdne17732:0
+crwdns18603:0crwdne18603:0
 
-*BlockTag: crwdns17733:0crwdne17733:0*
+*BlockTag: crwdns18604:0crwdne18604:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
 
-crwdns17734:0crwdne17734:0 crwdns17735:0crwdne17735:0
+# crwdns18605:0crwdne18605:0
 
-*BlockTag: crwdns17736:0crwdne17736:0*
+crwdns18606:0crwdne18606:0 crwdns18607:0crwdne18607:0
 
-{panel end}
-
-crwdns17737:0crwdne17737:0
-
-crwdns17738:0crwdne17738:0
-
-crwdns17739:0crwdne17739:0 crwdns17740:0crwdne17740:0 crwdns17741:0crwdne17741:0
-
-*BlockTag: crwdns17742:0crwdne17742:0*
-
-{panel type="teaching" title="Teaching observations"}
-
-crwdns17743:0crwdne17743:0 crwdns17744:0crwdne17744:0 crwdns17745:0crwdne17745:0
-
-*BlockTag: crwdns17746:0crwdne17746:0*
+*BlockTag: crwdns18608:0crwdne18608:0*
 
 {panel end}
 
-crwdns17747:0crwdne17747:0
+crwdns18609:0crwdne18609:0
 
-crwdns17748:0crwdne17748:0 crwdns17749:0crwdne17749:0 crwdns17750:0crwdne17750:0
+crwdns18610:0crwdne18610:0
 
-*BlockTag: crwdns17751:0crwdne17751:0*
+crwdns18611:0crwdne18611:0 crwdns18612:0crwdne18612:0 crwdns18613:0crwdne18613:0
 
-{panel type="teaching" title="Teaching observations"}
+*BlockTag: crwdns18614:0crwdne18614:0*
 
-crwdns17752:0crwdne17752:0 crwdns17753:0crwdne17753:0 crwdns17754:0crwdne17754:0
+{panel type="teaching"}
 
-*BlockTag: crwdns17755:0crwdne17755:0*
+# crwdns18615:0crwdne18615:0
+
+crwdns18616:0crwdne18616:0 crwdns18617:0crwdne18617:0 crwdns18618:0crwdne18618:0
+
+*BlockTag: crwdns18619:0crwdne18619:0*
 
 {panel end}
 
-crwdns17756:0crwdne17756:0
+crwdns18620:0crwdne18620:0
 
-crwdns17757:0crwdne17757:0
+crwdns18621:0crwdne18621:0 crwdns18622:0crwdne18622:0 crwdns18623:0crwdne18623:0
 
-*BlockTag: crwdns17758:0crwdne17758:0*
+*BlockTag: crwdns18624:0crwdne18624:0*
+
+{panel type="teaching"}
+
+# crwdns18625:0crwdne18625:0
+
+crwdns18626:0crwdne18626:0 crwdns18627:0crwdne18627:0 crwdns18628:0crwdne18628:0
+
+*BlockTag: crwdns18629:0crwdne18629:0*
+
+{panel end}
+
+crwdns18630:0crwdne18630:0
+
+crwdns18631:0crwdne18631:0
+
+*BlockTag: crwdns18632:0crwdne18632:0*
 
 {image file-path="img/topics/kidbots-little-red-riding-hood-2.gif"}
 
-*BlockTag: crwdns17759:0crwdne17759:0*
+*BlockTag: crwdns18633:0crwdne18633:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
 
-crwdns17760:0crwdne17760:0 crwdns17761:0crwdne17761:0
+# crwdns18634:0crwdne18634:0
 
-*BlockTag: crwdns17762:0crwdne17762:0*
+crwdns18635:0crwdne18635:0 crwdns18636:0crwdne18636:0
+
+*BlockTag: crwdns18637:0crwdne18637:0*
 
 {panel end}
 
-crwdns17763:0crwdne17763:0
+crwdns18638:0crwdne18638:0
 
-*crwdns17764:0crwdne17764:0 crwdns17765:0crwdne17765:0*
+*crwdns18639:0crwdne18639:0 crwdns18640:0crwdne18640:0*
 
-crwdns17766:0crwdne17766:0
+crwdns18641:0crwdne18641:0
 
-*BlockTag: crwdns17767:0crwdne17767:0*
+*BlockTag: crwdns18642:0crwdne18642:0*
 
 {image file-path="img/topics/kidbots-little-red-riding-hood-3.gif"}
 
-crwdns17768:0crwdne17768:0 crwdns17769:0crwdne17769:0
+crwdns18643:0crwdne18643:0 crwdns18644:0crwdne18644:0
 
-crwdns17770:0crwdne17770:0 crwdns17771:0crwdne17771:0 crwdns17772:0crwdne17772:0 crwdns17773:0crwdne17773:0
+crwdns18645:0crwdne18645:0 crwdns18646:0crwdne18646:0 crwdns18647:0crwdne18647:0 crwdns18648:0crwdne18648:0
 
-crwdns17774:0crwdne17774:0
+crwdns18649:0crwdne18649:0
 
 - crwdns17775:0crwdne17775:0
 - crwdns17776:0crwdne17776:0
@@ -115,71 +131,81 @@ crwdns17774:0crwdne17774:0
 - crwdns17778:0crwdne17778:0
 - crwdns17779:0crwdne17779:0
 
-*BlockTag: crwdns17780:0crwdne17780:0*
+*BlockTag: crwdns18650:0crwdne18650:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
 
-crwdns17781:0crwdne17781:0
+# crwdns18651:0crwdne18651:0
 
-*BlockTag: crwdns17782:0crwdne17782:0*
+crwdns18652:0crwdne18652:0
 
-{panel end}
-
-crwdns17783:0crwdne17783:0 crwdns17784:0crwdne17784:0 crwdns17785:0crwdne17785:0 crwdns17786:0crwdne17786:0
-
-*BlockTag: crwdns17787:0crwdne17787:0*
-
-{panel type="teaching" title="Teaching observations"}
-
-crwdns17788:0crwdne17788:0 crwdns17789:0crwdne17789:0 crwdns17790:0crwdne17790:0 crwdns17791:0crwdne17791:0 crwdns17792:0crwdne17792:0 crwdns17793:0crwdne17793:0 crwdns17794:0crwdne17794:0 crwdns17795:0crwdne17795:0 crwdns17796:0crwdne17796:0 crwdns17797:0crwdne17797:0 crwdns17798:0crwdne17798:0
-
-*BlockTag: crwdns17799:0crwdne17799:0*
+*BlockTag: crwdns18653:0crwdne18653:0*
 
 {panel end}
 
-crwdns17800:0crwdne17800:0
+crwdns18654:0crwdne18654:0 crwdns18655:0crwdne18655:0 crwdns18656:0crwdne18656:0 crwdns18657:0crwdne18657:0
 
-*BlockTag: crwdns17801:0crwdne17801:0*
+*BlockTag: crwdns18658:0crwdne18658:0*
+
+{panel type="teaching"}
+
+# crwdns18659:0crwdne18659:0
+
+crwdns18660:0crwdne18660:0 crwdns18661:0crwdne18661:0 crwdns18662:0crwdne18662:0 crwdns18663:0crwdne18663:0 crwdns18664:0crwdne18664:0 crwdns18665:0crwdne18665:0 crwdns18666:0crwdne18666:0 crwdns18667:0crwdne18667:0 crwdns18668:0crwdne18668:0 crwdns18669:0crwdne18669:0 crwdns18670:0crwdne18670:0
+
+*BlockTag: crwdns18671:0crwdne18671:0*
+
+{panel end}
+
+crwdns18672:0crwdne18672:0
+
+*BlockTag: crwdns18673:0crwdne18673:0*
 
 {image file-path="img/topics/kidbots-little-red-riding-hood-4.gif"}
 
-crwdns17802:0crwdne17802:0
+crwdns18674:0crwdne18674:0
 
-*BlockTag: crwdns17803:0crwdne17803:0*
+*BlockTag: crwdns18675:0crwdne18675:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
 
-crwdns17804:0crwdne17804:0
+# crwdns18676:0crwdne18676:0
 
-*BlockTag: crwdns17805:0crwdne17805:0*
+crwdns18677:0crwdne18677:0
 
-{panel end}
-
-crwdns17806:0crwdne17806:0 crwdns17807:0crwdne17807:0 crwdns17808:0crwdne17808:0
-
-*BlockTag: crwdns17809:0crwdne17809:0*
-
-{panel type="teaching" title="Teaching observations"}
-
-crwdns17810:0crwdne17810:0 crwdns17811:0crwdne17811:0 crwdns17812:0crwdne17812:0 crwdns17813:0crwdne17813:0 crwdns17814:0crwdne17814:0 crwdns17815:0crwdne17815:0 crwdns17816:0crwdne17816:0
-
-*BlockTag: crwdns17817:0crwdne17817:0*
+*BlockTag: crwdns18678:0crwdne18678:0*
 
 {panel end}
 
-*BlockTag: crwdns17818:0crwdne17818:0*
+crwdns18679:0crwdne18679:0 crwdns18680:0crwdne18680:0 crwdns18681:0crwdne18681:0
 
-{panel type="teaching" title="Teaching observations"}
+*BlockTag: crwdns18682:0crwdne18682:0*
 
-crwdns17819:0crwdne17819:0
+{panel type="teaching"}
 
-crwdns17820:0crwdne17820:0 crwdns17821:0crwdne17821:0 crwdns17822:0crwdne17822:0
+# crwdns18683:0crwdne18683:0
 
-*BlockTag: crwdns17823:0crwdne17823:0*
+crwdns18684:0crwdne18684:0 crwdns18685:0crwdne18685:0 crwdns18686:0crwdne18686:0 crwdns18687:0crwdne18687:0 crwdns18688:0crwdne18688:0 crwdns18689:0crwdne18689:0 crwdns18690:0crwdne18690:0
+
+*BlockTag: crwdns18691:0crwdne18691:0*
 
 {panel end}
 
-crwdns17824:0crwdne17824:0
+*BlockTag: crwdns18692:0crwdne18692:0*
+
+{panel type="teaching"}
+
+# crwdns18693:0crwdne18693:0
+
+crwdns18694:0crwdne18694:0
+
+crwdns18695:0crwdne18695:0 crwdns18696:0crwdne18696:0 crwdns18697:0crwdne18697:0
+
+*BlockTag: crwdns18698:0crwdne18698:0*
+
+{panel end}
+
+crwdns18699:0crwdne18699:0
 
 1. crwdns17825:0crwdne17825:0
 2. crwdns17826:0crwdne17826:0
@@ -188,48 +214,52 @@ crwdns17824:0crwdne17824:0
 5. crwdns17833:0crwdne17833:0
 6. crwdns17834:0crwdne17834:0
 
-*BlockTag: crwdns17835:0crwdne17835:0*
+*BlockTag: crwdns18700:0crwdne18700:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
 
-crwdns17836:0crwdne17836:0 crwdns17837:0crwdne17837:0
+# crwdns18701:0crwdne18701:0
 
-*BlockTag: crwdns17838:0crwdne17838:0*
+crwdns18702:0crwdne18702:0 crwdns18703:0crwdne18703:0
+
+*BlockTag: crwdns18704:0crwdne18704:0*
 
 {panel end}
 
 ### crwdns17839:0crwdne17839:0
 
-crwdns17840:0crwdne17840:0
+crwdns18705:0crwdne18705:0
 
-*BlockTag: crwdns17841:0crwdne17841:0*
+*BlockTag: crwdns18706:0crwdne18706:0*
 
 {image file-path="img/topics/kidbots-little-red-riding-hood-barriers.png" alt="A grid with various cells containing wolf, well, etc."}
 
 ### crwdns17842:0crwdne17842:0
 
-crwdns17843:0crwdne17843:0 crwdns17844:0crwdne17844:0 crwdns17845:0crwdne17845:0
+crwdns18707:0crwdne18707:0 crwdns18708:0crwdne18708:0 crwdns18709:0crwdne18709:0
 
-crwdns17846:0crwdne17846:0
+crwdns18710:0crwdne18710:0
 
-*BlockTag: crwdns17847:0crwdne17847:0*
+*BlockTag: crwdns18711:0crwdne18711:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
 
-crwdns17848:0crwdne17848:0
+# crwdns18712:0crwdne18712:0
 
-crwdns17849:0crwdne17849:0 crwdns17850:0crwdne17850:0 crwdns17851:0crwdne17851:0
+crwdns18713:0crwdne18713:0
 
-*BlockTag: crwdns17852:0crwdne17852:0*
+crwdns18714:0crwdne18714:0 crwdns18715:0crwdne18715:0 crwdns18716:0crwdne18716:0
+
+*BlockTag: crwdns18717:0crwdne18717:0*
 
 {panel end}
 
 ## crwdns17853:0crwdne17853:0
 
-crwdns17854:0crwdne17854:0 crwdns17855:0crwdne17855:0 crwdns17856:0crwdne17856:0 crwdns17857:0crwdne17857:0 crwdns17858:0crwdne17858:0 crwdns17859:0crwdne17859:0
+crwdns18718:0crwdne18718:0 crwdns18719:0crwdne18719:0 crwdns18720:0crwdne18720:0 crwdns18721:0crwdne18721:0 crwdns18722:0crwdne18722:0 crwdns18723:0crwdne18723:0
 
-crwdns17860:0crwdne17860:0
+crwdns18724:0crwdne18724:0
 
 ## crwdns17861:0crwdne17861:0
 
-crwdns17862:0crwdne17862:0
+crwdns18725:0crwdne18725:0

@@ -49,7 +49,9 @@ It also enables students to explore how we use some relatively simple ideas to
 make our digital systems so reliable that people using them don't realise that
 this is all happening underneath the surface!
 
-{panel type="video" title="See teaching this in action!"}
+{panel type="video"}
+
+# See teaching this in action
 
 A demonstration of lesson one ("Parity magic") being taught is available here:
 
@@ -99,7 +101,9 @@ typed in correctly.
 In some situations more than one digit is used, in which case it is referred to
 as a checksum.
 
-{panel type="math" title="Mathematical links"}
+{panel type="math"}
+
+# Mathematical links
 
 -   Even and odd numbers.
 -   That even and odd numbers alternate (adding or subtracting one from a number

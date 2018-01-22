@@ -26,9 +26,11 @@ crwdns16001:0crwdne16001:0
 
 crwdns16006:0crwdne16006:0 crwdns16007:0crwdne16007:0 crwdns16008:0crwdne16008:0
 
-*BlockTag: crwdns16009:0crwdne16009:0*
+*BlockTag: crwdns18441:0crwdne18441:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# crwdns18442:0crwdne18442:0
 
 crwdns16010:0crwdne16010:0 crwdns16011:0crwdne16011:0
 
@@ -42,9 +44,11 @@ crwdns16013:0crwdne16013:0
 
 crwdns16015:0crwdne16015:0
 
-*BlockTag: crwdns16016:0crwdne16016:0*
+*BlockTag: crwdns18443:0crwdne18443:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# crwdns18444:0crwdne18444:0
 
 crwdns16017:0crwdne16017:0
 
