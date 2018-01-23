@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-22 12:04+0000\n"
-"PO-Revision-Date: 2018-01-08 10:05-0500\n"
+"POT-Creation-Date: 2018-01-22 12:04+0000\n"
+"PO-Revision-Date: 2018-01-23 10:05-0500\n"
 "Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
 "Language-Team: English (upside down)\n"
 "Language: en_UD\n"
@@ -346,6 +346,9 @@ msgstr "crwdns15653:0crwdne15653:0"
 
 msgid "Help"
 msgstr "crwdns15654:0crwdne15654:0"
+
+msgid "Search"
+msgstr "crwdns19542:0crwdne19542:0"
 
 msgid "Glossary"
 msgstr "crwdns15655:0crwdne15655:0"
@@ -706,6 +709,19 @@ msgstr "crwdns15813:0crwdne15813:0"
 msgid "Lesson"
 msgstr "crwdns15814:0crwdne15814:0"
 
+msgid "Within topic"
+msgstr "crwdns19543:0crwdne19543:0"
+
+#, python-format
+msgid "<strong>Ages %(lower)s to %(upper)s:</strong> Lesson %(number)s"
+msgstr "crwdns15866:0%(lower)scrwdnd15866:0%(upper)scrwdnd15866:0%(number)scrwdne15866:0"
+
+msgid "within unit plan"
+msgstr "crwdns19544:0crwdne19544:0"
+
+msgid "Challenge Level:"
+msgstr "crwdns15885:0crwdne15885:0"
+
 msgid "The following table lists curriculum integrations for all topics in the CS Unplugged content."
 msgstr "crwdns15853:0crwdne15853:0"
 
@@ -775,10 +791,6 @@ msgstr "crwdns18237:0crwdne18237:0"
 #, python-format
 msgid "<strong>Duration:</strong> %(duration)s minutes"
 msgstr "crwdns18358:0%(duration)scrwdne18358:0"
-
-#, python-format
-msgid "<strong>Ages %(lower)s to %(upper)s:</strong> Lesson %(number)s"
-msgstr "crwdns15866:0%(lower)scrwdnd15866:0%(upper)scrwdnd15866:0%(number)scrwdne15866:0"
 
 msgid "Learning outcomes"
 msgstr "crwdns15867:0crwdne15867:0"
@@ -858,9 +870,6 @@ msgstr "crwdns15884:0%(topic)scrwdne15884:0"
 
 msgid "programming challenge"
 msgstr "crwdns18243:0crwdne18243:0"
-
-msgid "Challenge Level:"
-msgstr "crwdns15885:0crwdne15885:0"
 
 msgid "This programming challenge is linked to the following lessons:"
 msgstr "crwdns15886:0crwdne15886:0"
