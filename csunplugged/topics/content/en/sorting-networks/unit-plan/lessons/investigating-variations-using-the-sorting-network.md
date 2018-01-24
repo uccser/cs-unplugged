@@ -87,11 +87,11 @@ Have the students try the Sorting Network with some of these words (note that yo
 There is also a number of words that have the letters in reverse alphabetical order, such as SPONGE and ZONKED (these can be sorted using the "larger to the left" variation, or can be read from the far side of the Sorting Network).
 Some words with this property have double letters in them, such as BELLOW; these will sort correctly, since the order of the double letters is immaterial.
 
-{image file-path="img/topics/sorting-network-toffees-cellos-sponge.png"}
-
 {panel type="general"}
 
 # List of words with letters in alphabetical order
+
+{image file-path="img/topics/sorting-network-toffees-cellos-sponge.png"}
 
 Here is a longer list of 6-letter words that can be used for this exercise.
 They are all from a dictionary, although some are rather obscure!
