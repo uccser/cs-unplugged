@@ -84,6 +84,7 @@ class TopicsTestDataGenerator:
         area = CurriculumArea(
             slug="area-{}".format(number),
             name="Area {}".format(number),
+            colour="colour-{}".format(number),
             number=number,
             parent=parent,
             languages=["en"],
