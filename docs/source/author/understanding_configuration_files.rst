@@ -24,7 +24,7 @@ in the CS Unplugged project:
     number: 2
     md-file: hidden-binary-signals.md
     curriculum-areas:
-      - science
+      - listening
 
 This page aims to give a brief tutorial on YAML files, so you can modify
 configuration files within this project.

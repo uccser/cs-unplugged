@@ -4,7 +4,9 @@
 
 How do you think a computer knows which letter to show on the screen?
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 Discussion may start at the 26 letters of the English alphabet, and then expand to other characters on the keyboard, including capital letters, digits and punctuation.
 Students may be aware that other languages can have thousands of characters, and the range of characters is also expanding as emoticons are invented!
@@ -13,7 +15,9 @@ Students may be aware that other languages can have thousands of characters, and
 
 ## Lesson starter
 
-{panel type="general" title="Notes on resources"}
+{panel type="general"}
+
+# Notes on resources
 
 There is also an online interactive version of the binary cards [here](http://www.csfieldguide.org.nz/en/interactives/binary-cards/index.html?digits=8), from the [Computer Science Field Guide](http://www.csfieldguide.org.nz/), but it is preferable to work with physical cards.
 
@@ -49,7 +53,9 @@ Now try sending a different word to the class.
 The [Binary to Alphabet resource]('resources:resource' 'binary-to-alphabet') below shows the binary patterns for the 26-letter alphabet; you can use yes/no for 1/0, but you could also use other ways of saying them, such as "on/off", "up/down", or even "one/zero".
 In particular, it may be helpful to represent a number higher than 16 to give them experience with the 5th bit.
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 Note that if your local alphabet is slightly different (e.g. has diacritics such as macrons or accents.) then you may wish to adapt the code to match the common characters; this issue is also considered below.
 
@@ -87,7 +93,9 @@ Choose a student and work through the steps to create their name.
 
 To reinforce students' alphabet knowledge, you could translate all student's name into binary numbers onto a piece of card and display it around the room.
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 Some languages have more or fewer characters, which might include those with diacritic marks such as macrons and accents.
 If students ask about an alphabet with more than 32 characters, then 5 bits won't be sufficient.
@@ -107,7 +115,9 @@ This is an important property of binary representation that students should beco
 
 {panel end}
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 The rapid increase in the number of different values that can be represented as bits are added is exponential growth i.e. it doubles with each extra bit.
 After doubling 16 times we can represent 65,536 different values, and 20 bits can represent over a million different values.

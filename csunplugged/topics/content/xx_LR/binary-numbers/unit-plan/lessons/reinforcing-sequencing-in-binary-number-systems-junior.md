@@ -2,13 +2,15 @@
 
 ## crwdns9939:0crwdne9939:0
 
-- crwdns9940:0crwdne9940:0 
+- crwdns9940:0crwdne9940:0
 
 ## crwdns9941:0crwdne9941:0
 
-*BlockTag: crwdns9942:0crwdne9942:0*
+*BlockTag: crwdns19053:0crwdne19053:0*
 
-{panel type="general" title="Notes on resources"}
+{panel type="general"}
+
+# crwdns19054:0crwdne19054:0
 
 crwdns9943:0crwdne9943:0
 
@@ -50,9 +52,11 @@ crwdns9965:0crwdne9965:0
 
 crwdns9966:0crwdne9966:0 crwdns9967:0crwdne9967:0 crwdns9968:0crwdne9968:0 crwdns9969:0crwdne9969:0
 
-*BlockTag: crwdns9970:0crwdne9970:0*
+*BlockTag: crwdns19055:0crwdne19055:0*
 
-{panel type="teacher-observation" title="Teaching observations"}
+{panel type="teachering"}
+
+# crwdns19056:0crwdne19056:0
 
 1. crwdns9971:0crwdne9971:0
     

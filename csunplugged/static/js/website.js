@@ -16,7 +16,6 @@ function open_glossary_definition() {
 
   var slug = $(this).data("glossary-term");
   if (glossary_modal.attr("data-glossary-term") != slug) {
-    // TODO: Allow code to work for different languages
     $("#glossary-modal-term").text("Loading glossary definition...");
     $("#glossary-modal-definition").html("");
     $.ajax({

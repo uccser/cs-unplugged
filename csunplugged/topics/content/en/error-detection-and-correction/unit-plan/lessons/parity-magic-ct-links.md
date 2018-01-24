@@ -1,4 +1,6 @@
-{panel type="ct-algorithm" title="Algorithmic thinking"}
+{panel type="ct-algorithm"}
+
+# Algorithmic thinking
 
 The step by step process of counting the number of black squares in each row
 and identifying whether the parity is even, and then repeating the process
@@ -14,7 +16,9 @@ task?
 
 {panel end}
 
-{panel type="ct-abstraction" title="Abstraction"}
+{panel type="ct-abstraction"}
+
+# Abstraction
 
 Each of the cards in this activity represents a bit inside a digital device.
 When we arrange all of our ‘bits’ together in the square this is a
@@ -33,7 +37,9 @@ up of bytes?
 
 {panel end}
 
-{panel type="ct-decomposition" title="Decomposition"}
+{panel type="ct-decomposition"}
+
+# Decomposition
 
 To accomplish this task students must decompose the process “find the error”
 into smaller steps.
@@ -57,7 +63,9 @@ without having to have the algorithm described to them first?
 
 {panel end}
 
-{panel type="ct-pattern" title="Generalising and patterns"}
+{panel type="ct-pattern"}
+
+# Generalising and patterns
 
 Once students understand the algorithm to find the card that has been turned,
 they will be able to find a (single) flipped card for any size grid; a 10 x 10
@@ -72,7 +80,9 @@ Can students find the flipped card on larger grids?
 
 {panel end}
 
-{panel type="ct-evaluation" title="Evaluation"}
+{panel type="ct-evaluation"}
+
+# Evaluation
 
 The parity trick is always able to detect and correct errors if one bit has
 been flipped, but it is important to evaluate this algorithm for different
@@ -99,7 +109,9 @@ cards are flipped?
 
 {panel end}
 
-{panel type="ct-logic" title="Logic"}
+{panel type="ct-logic"}
+
+# Logic
 
 Flipping a card will always change a row/column from odd to even, no matter
 what the card is in what the other cards in the row/column are.

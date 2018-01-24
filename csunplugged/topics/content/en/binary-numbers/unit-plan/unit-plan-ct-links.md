@@ -1,4 +1,6 @@
-{panel type="ct-algorithm" title="Algorithmic thinking"}
+{panel type="ct-algorithm"}
+
+# Algorithmic thinking
 
 There are several important algorithms for students to learn and follow in
 this unit.
@@ -11,7 +13,9 @@ articulating them, and explaining them.
 
 {panel end}
 
-{panel type="ct-abstraction" title="Abstraction"}
+{panel type="ct-abstraction"}
+
+# Abstraction
 
 Binary number representation is an abstraction that hides the complexity of the
 electronics and hardware inside a computer that store data.
@@ -20,7 +24,9 @@ currently need to know.
 
 {panel end}
 
-{panel type="ct-decomposition" title="Decomposition"}
+{panel type="ct-decomposition"}
+
+# Decomposition
 
 An example of decomposition is breaking the conversion of the number to binary
 into one bit at a time.
@@ -29,7 +35,9 @@ the problem to a series of questions.
 
 {panel end}
 
-{panel type="ct-pattern" title="Generalising and patterns"}
+{panel type="ct-pattern"}
+
+# Generalising and patterns
 
 Recognising patterns in the way the binary number system works helps give us a
 deeper understanding of the concepts involved, and assists us in generalising
@@ -37,7 +45,9 @@ these concepts and patterns so that we can apply them to other problems.
 
 {panel end}
 
-{panel type="ct-logic" title="Logic"}
+{panel type="ct-logic"}
+
+# Logic
 
 Logical thinking means using rules you already know and using logic to deduce
 more rules and information from these.
@@ -50,7 +60,9 @@ behind how these numbers with the 5 cards are made.
 
 {panel end}
 
-{panel type="ct-evaluation" title="Evaluation"}
+{panel type="ct-evaluation"}
+
+# Evaluation
 
 An example of evaluation is working out how many different values can be
 represented by a given number of bits (e.g. 5 bits can represent 32 different

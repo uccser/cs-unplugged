@@ -24,9 +24,7 @@ class GenerateResourceTest(BaseTestWithDB):
         kwargs = {
             "resource_slug": resource.slug,
         }
-        get_parameters = {
-            "paper_size": "a4"
-        }
+        get_parameters = [("paper_size", "a4")]
         url = reverse("resources:generate", kwargs=kwargs)
         url += query_string(get_parameters)
         response = self.client.get(url)
@@ -47,9 +45,7 @@ class GenerateResourceTest(BaseTestWithDB):
         kwargs = {
             "resource_slug": resource.slug,
         }
-        get_parameters = {
-            "paper_size": "a4"
-        }
+        get_parameters = [("paper_size", "a4")]
         url = reverse("resources:generate", kwargs=kwargs)
         url += query_string(get_parameters)
         response = self.client.get(url)
@@ -83,9 +79,7 @@ class GenerateResourceTest(BaseTestWithDB):
         kwargs = {
             "resource_slug": resource.slug,
         }
-        get_parameters = {
-            "paper_size": "b7"
-        }
+        get_parameters = [("paper_size", "b7")]
         url = reverse("resources:generate", kwargs=kwargs)
         url += query_string(get_parameters)
         response = self.client.get(url)

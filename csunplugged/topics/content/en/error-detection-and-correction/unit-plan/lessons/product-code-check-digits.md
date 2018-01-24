@@ -1,12 +1,16 @@
 # Product code check digits
 
-{panel type="general" title="Preparatory knowledge"}
+{panel type="general"}
+
+# Preparatory knowledge
 
 It is helpful, but not essential, for students to have done the [lesson on the Modulo operator]('topics:lesson' 'unplugged-programming' 'numeracy-unit-plan' 'modulo') before doing this lesson.
 
 {panel end}
 
-{panel type="teaching" title="See teaching this in action!"}
+{panel type="video"}
+
+# See teaching this in action
 
 A demonstration of lesson two ("Product Code Check Digits") being taught is available here:
 
@@ -106,7 +110,9 @@ Of course, at this stage there's a small chance you guessed it, but now they
 can explore the codes themselves, and they'll soon find out that it always
 works if the number is copied correctly.
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 Check that students notice to multiply the second line by 3 and take the last
 digit of that number.
@@ -186,7 +192,9 @@ Of course, at this stage there's a small chance you guessed it, but now
 they can explore the codes themselves, and they'll soon find out that it
 always works if the number is copied correctly.
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 Check that students notice to multiply the first line by 3 and take the
 last digit of that number.

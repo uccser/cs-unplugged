@@ -27,7 +27,9 @@ Once upon a time there was a misunderstood wolf, who everyone thought was unfrie
 He was very shy and one day he heard a little girl skipping down the path and he needed to hide quickly, and the only place was to hide in the well.
 The goal is the program the wolf to hide in the well.
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 Students may ask if they can program both Little Red Riding Hood and the wolf.
 If they do that, have separate teams programming each character, or separate whiteboards for each character if the one team would like to try this.
@@ -41,7 +43,9 @@ Once students have completed the activity, ask them if they think this is a way 
 Make up your own story using a toy and a block.
 You could also put things in the way that the toy needs to avoid such as a pretend cave or a fierce animal.
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 Making up their own story provides integrated learning with creative writing, and then writing a program to focus on what one character will do.
 

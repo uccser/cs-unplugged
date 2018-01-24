@@ -2,7 +2,9 @@ Click on the green flag, enter the inputs provided in the “testing examples”
 
 {iframe link="https://scratch.mit.edu/projects/embed/148424317/?autostart=false"}
 
-{panel type="help" title="Recommended blocks"}
+{panel type="help"}
+
+# Recommended blocks
 
 ```scratch:split:random
 when green flag clicked

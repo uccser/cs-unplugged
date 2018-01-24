@@ -1,6 +1,8 @@
-*BlockTag: crwdns9507:0crwdne9507:0*
+*BlockTag: crwdns19107:0crwdne19107:0*
 
-{panel type="ct-algorithm" title="Algorithmic thinking"}
+{panel type="ct-algorithm"}
+
+# crwdns19108:0crwdne19108:0
 
 crwdns9508:0crwdne9508:0 crwdns9509:0crwdne9509:0
 
@@ -28,9 +30,11 @@ crwdns9519:0crwdne9519:0 crwdns9520:0crwdne9520:0
 
 {panel end}
 
-*BlockTag: crwdns9522:0crwdne9522:0*
+*BlockTag: crwdns19109:0crwdne19109:0*
 
-{panel type="ct-abstraction" title="Abstraction"}
+{panel type="ct-abstraction"}
+
+# crwdns19110:0crwdne19110:0
 
 crwdns9523:0crwdne9523:0 crwdns9524:0crwdne9524:0
 
@@ -50,9 +54,11 @@ crwdns9535:0crwdne9535:0 crwdns9536:0crwdne9536:0
 
 {panel end}
 
-*BlockTag: crwdns9538:0crwdne9538:0*
+*BlockTag: crwdns19111:0crwdne19111:0*
 
-{panel type="ct-decomposition" title="Decomposition"}
+{panel type="ct-decomposition"}
+
+# crwdns19112:0crwdne19112:0
 
 crwdns9539:0crwdne9539:0 crwdns9540:0crwdne9540:0
 
@@ -64,9 +70,11 @@ crwdns9542:0crwdne9542:0 crwdns9543:0crwdne9543:0
 
 {panel end}
 
-*BlockTag: crwdns9545:0crwdne9545:0*
+*BlockTag: crwdns19113:0crwdne19113:0*
 
-{panel type="ct-pattern" title="Generalising and patterns"}
+{panel type="ct-pattern"}
+
+# crwdns19114:0crwdne19114:0
 
 crwdns9546:0crwdne9546:0 crwdns9547:0crwdne9547:0
 
@@ -74,9 +82,11 @@ crwdns9548:0crwdne9548:0 crwdns9549:0crwdne9549:0
 
 crwdns9550:0crwdne9550:0 crwdns9551:0crwdne9551:0 crwdns9552:0crwdne9552:0
 
-*BlockTag: crwdns9553:0crwdne9553:0*
+*BlockTag: crwdns19115:0crwdne19115:0*
 
-{panel type="math" title="Mathematical links"}
+{panel type="math"}
+
+# crwdns19116:0crwdne19116:0
 
 crwdns9554:0crwdne9554:0
 
@@ -104,9 +114,11 @@ crwdns9565:0crwdne9565:0
 
 {panel end}
 
-*BlockTag: crwdns9567:0crwdne9567:0*
+*BlockTag: crwdns19117:0crwdne19117:0*
 
-{panel type="ct-logic" title="Logic"}
+{panel type="ct-logic"}
+
+# crwdns19118:0crwdne19118:0
 
 crwdns9568:0crwdne9568:0 crwdns9569:0crwdne9569:0 crwdns9570:0crwdne9570:0 crwdns9571:0crwdne9571:0
 
@@ -120,9 +132,11 @@ crwdns9575:0crwdne9575:0 crwdns9576:0crwdne9576:0 crwdns9577:0crwdne9577:0
 
 {panel end}
 
-*BlockTag: crwdns9579:0crwdne9579:0*
+*BlockTag: crwdns19119:0crwdne19119:0*
 
-{panel type="ct-evaluation" title="Evaluation"}
+{panel type="ct-evaluation"}
+
+# crwdns19120:0crwdne19120:0
 
 crwdns9580:0crwdne9580:0
 
