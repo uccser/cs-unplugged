@@ -5,22 +5,22 @@
 {% load django_bootstrap_breadcrumbs %}
 
 {% block title %}
-  {% trans "Printouts" %}
+  {% trans "Printables" %}
 {% endblock title %}
 
 {% block breadcrumbs %}
   {% breadcrumb "Home" "/" %}
-  {% breadcrumb "Printouts" "resources:index" %}
+  {% breadcrumb "Printables" "resources:index" %}
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-  <h1>{% trans "Printouts" %}</h1>
+  <h1>{% trans "Printables" %}</h1>
 
   <p>
     {% blocktrans trimmed %}
-    This page diplays a complete list of all available printouts.
-    If a lesson uses a printout, the lesson will contain a direct link to the
-    printout with a description on how to use it.
+    This page diplays a complete list of all available Printables.
+    If a lesson uses a Printable, the lesson will contain a direct link to the
+    Printable with a description on how to use it.
     {% endblocktrans %}
   </p>
 {% endblock page_heading %}
@@ -38,6 +38,6 @@
       {% endfor %}
     </div>
   {% else %}
-    <p>{% trans "No printouts are available." %}</p>
+    <p>{% trans "No Printables are available." %}</p>
   {% endif %}
 {% endblock content %}

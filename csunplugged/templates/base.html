@@ -55,7 +55,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <div class="navbar-nav navbar-nav-i18n mr-auto">
             <a class="nav-item nav-link" href="{% url 'topics:index' %}">{% trans "Topics" %}</a>
-            <a class="nav-item nav-link" href="{% url 'resources:index' %}">{% trans "Printouts" %}</a>
+            <a class="nav-item nav-link" href="{% url 'resources:index' %}">{% trans "Printables" %}</a>
             <a class="nav-item nav-link" href="{% url 'general:about' %}">{% trans "About" %}</a>
           </div>
           <form method="get" action="{% url 'search:index' %}">
@@ -177,7 +177,7 @@
               </li>
               <li>
                 <a href="{% url 'resources:index' %}">
-                  {% trans "Resources" %}
+                  {% trans "Printables" %}
                 </a>
               </li>
             </ul>
