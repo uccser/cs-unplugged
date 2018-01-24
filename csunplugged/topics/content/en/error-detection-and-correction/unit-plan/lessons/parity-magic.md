@@ -224,7 +224,7 @@ You can make a fuss that it might have been a fluke, so repeat the trick again.
 (After you put the card back to how it was originally, look away again and ask
 for another card to be flipped over.)
 
-{image file-path="img/topics/parity-wizard.png" alt="A wizard holding a magic one with parity cards on it."}
+{image file-path="img/topics/parity-wizard.png" alt="A wizard holding a magic one with parity cards on it." alignment="right"}
 
 So is it magic? Or is it a trick?
 
