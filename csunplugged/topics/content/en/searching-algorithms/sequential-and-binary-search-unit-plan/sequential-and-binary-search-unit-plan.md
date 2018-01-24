@@ -70,7 +70,7 @@ Notice he can only compare one word at a time!
 
 Now imagine if he has a million words to search!
 
-{image file-path="img/topics/sequential_detective3.gif" alt="A detective looking at words sequentially in a sentence until he finds the word 'said'"}
+{image file-path="img/topics/sequential_detective.gif" alt="A detective looking at words sequentially in a sentence until he finds the word 'said'"}
 
 **Binary search**: An algorithm that tells us how to efficiently find a specific value in an **ordered (sorted)** list.
 It is called ‘binary’ search because each time you look at a value in the list you divide the list into 2 parts, one is discarded and the other is kept.
