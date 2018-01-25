@@ -88,7 +88,10 @@ class TextBoxDrawer(object):
             MissingSVGFile: SVG file could not be found at given path
         """
         try:
-            return ET.parse(svg_path).getroot()
+            svg = ET.parse(svg_path).getroot()
+            # Remove comments within SVG to avoid errors
+            ET.strip_tags(svg, ET.Comment)
+            return svg
         except OSError:
             raise MissingSVGFile(svg_path)
 
