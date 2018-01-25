@@ -2,7 +2,9 @@ Click on the green flag, and use the buttons to see the expected output of your 
 
 {iframe link="https://scratch.mit.edu/projects/embed/164789645/?autostart=false"}
 
-{panel type="help" title="Recommended blocks"}
+{panel type="help"}
+
+# Recommended blocks
 
 Control
 ```scratch:split:random

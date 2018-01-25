@@ -16,9 +16,11 @@ crwdns12354:0crwdne12354:0 crwdns12355:0crwdne12355:0
 
 crwdns12356:0crwdne12356:0 crwdns12357:0crwdne12357:0 crwdns12358:0crwdne12358:0
 
-*BlockTag: crwdns12359:0crwdne12359:0*
+*BlockTag: crwdns18937:0crwdne18937:0*
 
-{panel type="math" title="Mathematical links"}
+{panel type="math"}
+
+# crwdns18938:0crwdne18938:0
 
 crwdns12360:0crwdne12360:0
 
@@ -56,9 +58,11 @@ crwdns12375:0crwdne12375:0
 
 crwdns12376:0crwdne12376:0
 
-*BlockTag: crwdns15920:0crwdne15920:0*
+*BlockTag: crwdns18939:0crwdne18939:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# crwdns18940:0crwdne18940:0
 
 crwdns12378:0crwdne12378:0
 
@@ -84,9 +88,11 @@ crwdns12388:0crwdne12388:0 crwdns12389:0crwdne12389:0
 
 {image file-path="img/topics/sorting-network-toffees-cellos-sponge.png"}
 
-*BlockTag: crwdns12391:0crwdne12391:0*
+*BlockTag: crwdns18941:0crwdne18941:0*
 
-{panel type="general" title="List of words with letters in alphabetical order"}
+{panel type="general"}
+
+# crwdns18942:0crwdne18942:0
 
 crwdns12392:0crwdne12392:0
 
@@ -142,9 +148,11 @@ crwdns12418:0crwdne12418:0 crwdns12419:0crwdne12419:0 crwdns12420:0crwdne12420:0
 
 crwdns12422:0crwdne12422:0
 
-*BlockTag: crwdns12423:0crwdne12423:0*
+*BlockTag: crwdns18943:0crwdne18943:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# crwdns18944:0crwdne18944:0
 
 crwdns12424:0crwdne12424:0 crwdns12425:0crwdne12425:0 crwdns12426:0crwdne12426:0 crwdns12427:0crwdne12427:0
 

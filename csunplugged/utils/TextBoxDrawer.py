@@ -7,7 +7,6 @@ import tinycss
 import os
 from bidi.algorithm import get_display
 from uniseg.linebreak import line_break_units
-import arabic_reshaper
 import math
 from utils.errors.TextBoxDrawerErrors import (
     MissingSVGFile,
@@ -350,8 +349,11 @@ class TextBoxDrawer(object):
             color: (RGB 3-tuple or HEX string) text color. This parameter is
                 checked first, falling back to the original color from the SVG
         """
-        if get_language() == "ar":
-            text = arabic_reshaper.reshape(text)
+        # TODO: Reshape Arabic textbox
+        # Issue: https://github.com/uccser/cs-unplugged/issues/769
+        # import arabic_reshaper
+        # if get_language() == "ar":
+        #     text = arabic_reshaper.reshape(text)
 
         font_path = font_path or text_box.font_path
         font_path = cls.fallback_font_if_required(font_path, text)

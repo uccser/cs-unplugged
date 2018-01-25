@@ -10,9 +10,11 @@ crwdns18077:0crwdne18077:0
 
 ## crwdns18078:0crwdne18078:0
 
-*BlockTag: crwdns18079:0crwdne18079:0*
+*BlockTag: crwdns18877:0crwdne18877:0*
 
-{panel type="general" title="Notes on resources"}
+{panel type="general"}
+
+# crwdns18878:0crwdne18878:0
 
 crwdns18080:0crwdne18080:0
 

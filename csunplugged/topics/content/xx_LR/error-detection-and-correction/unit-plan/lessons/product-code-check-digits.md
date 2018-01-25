@@ -1,8 +1,10 @@
 # crwdns11390:0crwdne11390:0
 
-*BlockTag: crwdns11391:0crwdne11391:0*
+*BlockTag: crwdns19510:0crwdne19510:0*
 
-{panel type="general" title="Preparatory knowledge"}
+{panel type="general"}
+
+# crwdns19511:0crwdne19511:0
 
 crwdns11392:0crwdne11392:0
 
@@ -10,9 +12,11 @@ crwdns11392:0crwdne11392:0
 
 {panel end}
 
-*BlockTag: crwdns11394:0crwdne11394:0*
+*BlockTag: crwdns19512:0crwdne19512:0*
 
-{panel type="teaching" title="See teaching this in action!"}
+{panel type="video"}
+
+# crwdns19513:0crwdne19513:0
 
 crwdns11395:0crwdne11395:0
 
@@ -98,9 +102,11 @@ crwdns11428:0crwdne11428:0 crwdns11429:0crwdne11429:0 crwdns11430:0crwdne11430:0
 
 crwdns11434:0crwdne11434:0 crwdns11435:0crwdne11435:0 crwdns11436:0crwdne11436:0
 
-*BlockTag: crwdns11437:0crwdne11437:0*
+*BlockTag: crwdns19514:0crwdne19514:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# crwdns19515:0crwdne19515:0
 
 crwdns11438:0crwdne11438:0 crwdns11439:0crwdne11439:0
 
@@ -162,9 +168,11 @@ crwdns11461:0crwdne11461:0 crwdns11462:0crwdne11462:0 crwdns11463:0crwdne11463:0
 
 crwdns11467:0crwdne11467:0 crwdns11468:0crwdne11468:0 crwdns11469:0crwdne11469:0
 
-*BlockTag: crwdns11470:0crwdne11470:0*
+*BlockTag: crwdns19516:0crwdne19516:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# crwdns19517:0crwdne19517:0
 
 crwdns11471:0crwdne11471:0 crwdns11472:0crwdne11472:0
 

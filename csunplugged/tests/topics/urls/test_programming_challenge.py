@@ -9,5 +9,9 @@ class ProgrammingChallengeURLTest(BaseTestWithDB):
         self.language = "en"
 
     def test_valid_programming_challenge(self):
-        url = reverse("topics:programming_challenge", args=["binary-numbers", "challenge-1"])
+        kwargs = {
+            "topic_slug": "binary-numbers",
+            "programming_challenge_slug": "challenge-1",
+        }
+        url = reverse("topics:programming_challenge", kwargs=kwargs)
         self.assertEqual(url, "/en/topics/binary-numbers/programming/challenge-1")

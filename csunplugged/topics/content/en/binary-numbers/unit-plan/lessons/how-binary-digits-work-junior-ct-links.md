@@ -1,4 +1,6 @@
-{panel type="ct-algorithm" title="Algorithmic thinking"}
+{panel type="ct-algorithm"}
+
+# Algorithmic thinking
 
 We used an algorithm in this lesson to convert a decimal number to a binary one.
 This is an algorithm because it is a step-by-step process that will always give the right solution for any input you give it as long as the process is followed exactly.
@@ -27,7 +29,9 @@ Which ones start with the leftmost card and move one card at a time to the right
  
 {panel end}
 
-{panel type="ct-abstraction" title="Abstraction"}
+{panel type="ct-abstraction"}
+
+# Abstraction
 
 Abstraction and abstract thinking is generally difficult for young students so only a small amount of this section is likely to be applicable for them.
 We have included the information here however because it is useful background knowledge for teaching this topic.
@@ -50,7 +54,9 @@ If you are able to interchange terms like "black" and "white" with 0 and 1 witho
 
 {panel end}
 
-{panel type="ct-decomposition" title="Decomposition"}
+{panel type="ct-decomposition"}
+
+# Decomposition
 
 An example of decomposition is breaking the conversion of the number to binary into one bit at a time.
 The questions "Should this be 1 or 0" for each of the dot cards is decomposing the problem to a series of questions.
@@ -62,7 +68,9 @@ Which students focus on each individual bit at a time, rather than being overwhe
 
 {panel end}
 
-{panel type="ct-pattern" title="Generalising and patterns"}
+{panel type="ct-pattern"}
+
+# Generalising and patterns
 
 Recognising patterns in the way the binary number system works helps give us a deeper understanding of the concepts involved, and assists us in generalising these concepts and patterns so that we can apply them to other problems.
 Generalising these patterns may be more difficult for junior students, but recognising the patterns is a good exercise.
@@ -74,7 +82,9 @@ The algorithm for converting a decimal number to a binary one follows a pattern 
 For binary numbers you start with the largest bit and turn it on if it is needed or off if it is not, just like when you’re giving change you start with the largest denomination and then always take a coin (or note) whenever you need it.
 Jargon note: This is called a greedy algorithm.
 
-{panel type="math" title="Mathematical links"}
+{panel type="math"}
+
+# Mathematical links
 
 Ask students what is special about the decimal to binary conversion, in contrast with the general change giving algorithm, and have them observe that in the general case, you may need to give more than one coin of the same denomination, whereas in the binary conversion there is always one (or none) of each.
 
@@ -100,7 +110,9 @@ Which students easily understand the patterns of cards flipping when counting wi
 
 {panel end}
 
-{panel type="ct-logic" title="Logic"}
+{panel type="ct-logic"}
+
+# Logic
 
 Logical thinking means using rules you already know and using logic to deduce more rules and information from these.
 Once we know what number each of the binary cards represents then we can use this knowledge to figure out how to represent other numbers with the cards.
@@ -117,7 +129,9 @@ Are students able to explain that each card "has to" be up the way it is for a g
 
 {panel end}
 
-{panel type="ct-evaluation" title="Evaluation"}
+{panel type="ct-evaluation"}
+
+# Evaluation
 
 An example of evaluation is working out how many different values can be represented by a given number of bits (e.g. 4 bits can represent 16 different values), and vice versa (to represent 1000 different values, you need at least 10 bits).
 

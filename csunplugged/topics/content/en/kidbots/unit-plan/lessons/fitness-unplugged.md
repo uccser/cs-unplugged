@@ -8,7 +8,9 @@ Who designs programming languages for computers?
 
 ## Lesson starter
 
-{panel type="general" title="Notes on resources"}
+{panel type="general"}
+
+# Notes on resources
 
 The resources we listed are for groups of 3 students.
 

@@ -27,13 +27,13 @@ defhelp() {
     local command="${2?}"
     local text="${3?}"
     local help_str
-    help_str="$(printf '   %-18s %s' "$command" "$text")"
+    help_str="$(printf '   %-24s %s' "$command" "$text")"
     dev_cmd_helps+=("$help_str")
   else
     local command="${1?}"
     local text="${2?}"
     local help_str
-    help_str="$(printf '   %-18s %s' "$command" "$text")"
+    help_str="$(printf '   %-24s %s' "$command" "$text")"
     cmd_helps+=("$help_str")
   fi
 }
@@ -100,6 +100,7 @@ cmd_update() {
   echo ""
   dev_updatedata
 
+  dev_rebuild_index
   dev_static_scratch
   echo ""
   dev_makeresourcethumbnails
@@ -207,6 +208,13 @@ dev_static_scratch() {
   docker-compose exec nginx gulp scratch
 }
 defhelp -dev static_scratch "Build scratch images."
+
+# Run Django command rebuild_index
+dev_rebuild_index() {
+  echo "Rebuilding search index..."
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py rebuild_index --noinput
+}
+defhelp -dev rebuild_index "Run Django rebuild_index command."
 
 # Run shell
 dev_shell() {

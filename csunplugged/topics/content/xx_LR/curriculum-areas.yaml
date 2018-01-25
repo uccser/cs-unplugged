@@ -45,6 +45,8 @@ speaking:
   name: crwdns8071:0crwdne8071:0
 library:
   name: crwdns8072:0crwdne8072:0
+word-study:
+  name: crwdns19518:0crwdne19518:0
 art:
   name: crwdns8073:0crwdne8073:0
 language:
@@ -81,5 +83,5 @@ social-studies:
   name: crwdns8089:0crwdne8089:0
 history:
   name: crwdns8090:0crwdne8090:0
-geograph:
-  name: crwdns8091:0crwdne8091:0
+geography:
+  name: crwdns19519:0crwdne19519:0

@@ -12,9 +12,11 @@ crwdns9751:0crwdne9751:0 crwdns9752:0crwdne9752:0
 
 ## crwdns9759:0crwdne9759:0
 
-*BlockTag: crwdns9760:0crwdne9760:0*
+*BlockTag: crwdns19093:0crwdne19093:0*
 
-{panel type="general" title="Notes on resources"}
+{panel type="general"}
+
+# crwdns19094:0crwdne19094:0
 
 crwdns9761:0crwdne9761:0
 
@@ -32,9 +34,11 @@ crwdns9761:0crwdne9761:0
 
 3. crwdns9770:0crwdne9770:0
     
-    *BlockTag: crwdns9771:0crwdne9771:0*
+    *BlockTag: crwdns19095:0crwdne19095:0*
 
-    {panel type="teaching" title="Teaching observations"}
+    {panel type="teaching"}
+    
+    # crwdns19096:0crwdne19096:0
     
     crwdns9772:0crwdne9772:0 crwdns9773:0crwdne9773:0
     
@@ -48,9 +52,11 @@ crwdns9761:0crwdne9761:0
 
     {image file-path="img/topics/col_binary_3cards.png" alt="3 kids holding binary cards"}
     
-    *BlockTag: crwdns9777:0crwdne9777:0*
+    *BlockTag: crwdns19097:0crwdne19097:0*
 
-    {panel type="teaching" title="Teaching observations"}
+    {panel type="teaching"}
+    
+    # crwdns19098:0crwdne19098:0
     
     crwdns9778:0crwdne9778:0 crwdns9779:0crwdne9779:0
     
@@ -60,9 +66,11 @@ crwdns9761:0crwdne9761:0
 
 5. crwdns9781:0crwdne9781:0
     
-    *BlockTag: crwdns9782:0crwdne9782:0*
+    *BlockTag: crwdns19099:0crwdne19099:0*
 
-    {panel type="teaching" title="Teaching observations"}
+    {panel type="teaching"}
+    
+    # crwdns19100:0crwdne19100:0
     
     crwdns9783:0crwdne9783:0 crwdns9784:0crwdne9784:0
     
@@ -80,9 +88,11 @@ crwdns9761:0crwdne9761:0
 
 8. crwdns9791:0crwdne9791:0
     
-    *BlockTag: crwdns9792:0crwdne9792:0*
+    *BlockTag: crwdns19101:0crwdne19101:0*
 
-    {panel type="teaching" title="Teaching observations"}
+    {panel type="teaching"}
+    
+    # crwdns19102:0crwdne19102:0
     
     crwdns9793:0crwdne9793:0 crwdns9794:0crwdne9794:0 crwdns9795:0crwdne9795:0 crwdns9796:0crwdne9796:0 crwdns9797:0crwdne9797:0
     
@@ -100,9 +110,11 @@ crwdns9761:0crwdne9761:0
 
     {image file-path="img/topics/binary-cards-total-9.png" alt="Diagram showing that 2 binary cards make the number 9"}
     
-    *BlockTag: crwdns9806:0crwdne9806:0*
+    *BlockTag: crwdns19103:0crwdne19103:0*
 
-    {panel type="math" title="Mathematical links"}
+    {panel type="math"}
+    
+    # crwdns19104:0crwdne19104:0
     
     crwdns9807:0crwdne9807:0 crwdns9808:0crwdne9808:0 crwdns9809:0crwdne9809:0 crwdns9810:0crwdne9810:0 crwdns9811:0crwdne9811:0
     
@@ -196,9 +208,11 @@ crwdns9761:0crwdne9761:0
     
     crwdns9864:0crwdne9864:0
 
-*BlockTag: crwdns9865:0crwdne9865:0*
+*BlockTag: crwdns19105:0crwdne19105:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# crwdns19106:0crwdne19106:0
 
 crwdns9866:0crwdne9866:0 crwdns9867:0crwdne9867:0 crwdns9868:0crwdne9868:0
 

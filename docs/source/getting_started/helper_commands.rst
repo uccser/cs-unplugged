@@ -79,6 +79,7 @@ The ``./csu dev [DEV_COMMAND]`` command runs developer tasks, where
 - :ref:`makemigrations`
 - :ref:`makeresources`
 - :ref:`migrate`
+- :ref:`rebuild_index`
 - :ref:`shell`
 - :ref:`static`
 - :ref:`static_prod`
@@ -131,6 +132,14 @@ command to create static resource PDF files.
 
 Running ``./csu dev migrate`` runs the Django ``migrate`` command
 to apply migration files.
+
+.. _rebuild_index:
+
+``rebuild_index``
+-----------------------------------------------------------------------------
+
+Running ``./csu dev rebuild_index`` runs the Haystack ``rebuild_index`` Django
+command.
 
 .. _shell:
 

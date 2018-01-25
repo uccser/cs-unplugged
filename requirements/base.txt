@@ -5,13 +5,18 @@
 wheel==0.30.0
 
 # Resources
-Pillow==4.3.0
+Pillow==5.0.0
 yattag==1.9.2
 tinycss==0.4
 
 # Markdown
-verto==0.6.1
+verto==0.7.3
 python-markdown-math==0.3
+
+# Search
+django-haystack==2.6.1
+Whoosh==2.7.4
+django-widget-tweaks==1.4.1
 
 # YAML Loading
 PyYAML==3.12
@@ -19,14 +24,11 @@ PyYAML==3.12
 # System tools
 tqdm==4.19.5
 
-# Translations
-django-modeltranslation==0.12.1
-
 # XML Parsing
 lxml==4.1.1
 
 # I18n
+django-modeltranslation==0.12.1
 uniseg==0.7.1
 python-bidi==0.4.0
-arabic-reshaper==2.0.11
 django-bidi-utils==1.0
