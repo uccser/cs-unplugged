@@ -5,20 +5,20 @@
 {% load django_bootstrap_breadcrumbs %}
 
 {% block title %}
-  {% trans "Printouts" %}
+  {% trans "Resources" %}
 {% endblock title %}
 
 {% block breadcrumbs %}
   {% breadcrumb "Home" "/" %}
-  {% breadcrumb "Printouts" "resources:index" %}
+  {% breadcrumb "Resources" "resources:index" %}
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-  <h1>{% trans "Printouts" %}</h1>
+  <h1>{% trans "Resources" %}</h1>
 
   <p>
     {% blocktrans trimmed %}
-    This page diplays a complete list of all available printouts.
+    This page diplays a complete list of all available resources.
     If a lesson uses a resource, the lesson will contain a direct link to the
     resource with a description on how to use it.
     {% endblocktrans %}
@@ -38,6 +38,6 @@
       {% endfor %}
     </div>
   {% else %}
-    <p>{% trans "No printouts are available." %}</p>
+    <p>{% trans "No resources are available." %}</p>
   {% endif %}
 {% endblock content %}
