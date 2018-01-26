@@ -14,9 +14,9 @@ A demonstration of lesson one ("Parity magic") being taught is available here:
 
 # Notes on resources
 
-{image file-path="img/topics/parity-cards.png" alt="A pile of square cards with black on one side and white on the other side."}
-
 You will require:
+
+{image file-path="img/topics/parity-cards.png" alt="A pile of square cards with black on one side and white on the other side." alignment="right"}
 
 -   A set of 36 "fridge magnet" cards, all identical with a different colour on
     each side (e.g. black and white); or non-magnetic cards, in which case the
@@ -28,6 +28,7 @@ You will require:
     magnetic sheet back to back.
     Paper (non-magnetic) cards can be made by cutting up a sheet of light card
     that is a different colour on each side.
+
 -   A metal board (ideally a whiteboard) if magnetic cards are being used.
 -   Each pair of children will need: a set of 36 (non-magnetic) cards as above.
 
