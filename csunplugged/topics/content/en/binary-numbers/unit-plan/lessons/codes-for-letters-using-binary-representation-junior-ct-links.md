@@ -16,7 +16,7 @@ Choose a letter to convert into a decimal number. Find the letter’s numerical 
 
 For example, to convert the letter E, the algorithm would have you counting A,1; B, 2; C, 3; D, 4; E, 5.
 
-{image file-path="img/topics/binary_count_girl.png" alt="girl thinking about alphabet and numbers"}
+{image file-path="img/topics/binary_count_girl.png" alt="girl thinking about alphabet and numbers" alignment="right"}
 
 (A more efficient algorithm would have a table to look up, like the one created at the start of the activity, and most programming languages can convert directly from characters to numbers, with the notable exception of Scratch, which needs to use the above algorithm.)
 
