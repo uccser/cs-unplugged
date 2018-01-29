@@ -13,7 +13,7 @@ A biography:
 -   Write about the significant events that happened in their lives
 -   Write about the impact their work has had on other people
 
-{image file-path="img/topics/shannon-juggling.png" caption="true" alt="person juggling on unicycle"}
+{image file-path="img/topics/shannon-juggling.png" caption="true" alt="person juggling on unicycle" alignment="right"}
 
 Claude Shannon
 
