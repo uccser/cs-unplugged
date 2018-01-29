@@ -43,7 +43,7 @@ this is explained under the generalisation heading.
 
 # Decomposition
 
-{image file-path="img/topics/sorting-network-comparing-apples.png" alt="A person compares a large apple and a small apple."}
+{image file-path="img/topics/sorting-network-comparing-apples.png" alt="A person compares a large apple and a small apple." alignment="right"}
 
 In order to create an algorithm that can solve computational problems
 effectively using parallel processors, we must first be able decompose the task
