@@ -318,20 +318,25 @@ body {
 
 #content-container table:not(.table) {
   display: block;
-  margin-bottom: 1rem;
-  max-width: 100%;
-  overflow-x: auto;
+  margin-bottom: $spacer;
   width: 100%;
-  td, th {
-    padding: ($spacer * .75);
+  max-width: 100%;
+  background-color: $table-bg;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  th,
+  td {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    vertical-align: top;
+    border-top: $table-border-width solid $table-border-color;
+    white-space: nowrap;
   }
   th {
-    color: #464a4c;
-    background-color: #eceeef;
-    border-bottom: 2px solid #eceeef;
-  }
-  tr {
-    border-top: 1px solid #eceeef;
+    color: $table-head-color;
+    background-color: $table-head-bg;
+    border-color: $table-border-color;
   }
 }
 
