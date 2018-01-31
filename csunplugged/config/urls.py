@@ -16,10 +16,10 @@ urlpatterns = i18n_patterns(
     url(r"^resources/", include("resources.urls", namespace="resources")),
     url(r"^admin/", include(admin.site.urls)),
     url(r"^search/", include("search.urls", namespace="search")),
-    url(r"", include("classic.urls")),
 )
 
 urlpatterns += [
+    url(r"", include("classic.urls")),
     url(r"^_ah/health", views.health_check),
 ]
 

@@ -1,204 +1,201 @@
 """URL redirect routing for the Classic CS Unplugged website."""
 
 from django.conf.urls import url
-from classic.views import redirect_to_classic_unplugged
-from general.views import (
-    GeneralIndexView,
-    GeneralContactView,
-)
+from classic import views
 
 
 urlpatterns = [
     url(
-        r"^activities$",
-        redirect_to_classic_unplugged,
+        r"^activities",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^artificial-intelligence$",
-        redirect_to_classic_unplugged,
+        r"^artificial-intelligence",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^binary-numbers$",
-        redirect_to_classic_unplugged,
+        r"^binary-numbers",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^books$",
-        redirect_to_classic_unplugged,
+        r"^books",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^changelog$",
-        redirect_to_classic_unplugged,
+        r"^changelog",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^class-simulation-computer-unfinished$",
-        redirect_to_classic_unplugged,
+        r"^class-simulation-computer-unfinished",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^community$",
-        redirect_to_classic_unplugged,
+        r"^community",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^community-activties$",
-        redirect_to_classic_unplugged,
+        r"^community-activties",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^contact-us/$",
-        GeneralContactView.as_view(),
+        r"^contact-us/",
+        views.redirect_to_contact,
     ),
     url(
-        r"^contribute$",
-        redirect_to_classic_unplugged,
+        r"^contribute",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^cryptographic-protocols$",
-        redirect_to_classic_unplugged,
+        r"^cryptographic-protocols",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^curriculum-links$",
-        redirect_to_classic_unplugged,
+        r"^curriculum-links",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^databases$",
-        redirect_to_classic_unplugged,
+        r"^databases",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^divideandconquer$",
-        redirect_to_classic_unplugged,
+        r"^divideandconquer",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^dominating-sets$",
-        redirect_to_classic_unplugged,
+        r"^dominating-sets",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^error-detection$",
-        redirect_to_classic_unplugged,
+        r"^error-detection",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^events$",
-        redirect_to_classic_unplugged,
+        r"^events",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^finite-state-automata$",
-        redirect_to_classic_unplugged,
+        r"^finite-state-automata",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^graph-colouring$",
-        redirect_to_classic_unplugged,
+        r"^graph-colouring",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^harold-the-robot-2$",
-        redirect_to_classic_unplugged,
+        r"^harold-the-robot-2",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^human-interface-design$",
-        redirect_to_classic_unplugged,
+        r"^human-interface-design",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^image-representation$",
-        redirect_to_classic_unplugged,
+        r"^image-representation",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^information-hiding$",
-        redirect_to_classic_unplugged,
+        r"^information-hiding",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^information-theory$",
-        redirect_to_classic_unplugged,
+        r"^information-theory",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^line-drawing$",
-        redirect_to_classic_unplugged,
+        r"^line-drawing",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^minimal-spanning-trees$",
-        redirect_to_classic_unplugged,
+        r"^minimal-spanning-trees",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^modems-unplugged-2$",
-        redirect_to_classic_unplugged,
+        r"^modems-unplugged-2",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^network-protocols$",
-        redirect_to_classic_unplugged,
+        r"^network-protocols",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^people$",
-        redirect_to_classic_unplugged,
+        r"^phylogenetics",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^phylogenetics$",
-        redirect_to_classic_unplugged,
+        r"^principles",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^principles$",
-        redirect_to_classic_unplugged,
+        r"^programming-languages",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^programming-languages$",
-        redirect_to_classic_unplugged,
+        r"^projects",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^projects$",
-        redirect_to_classic_unplugged,
+        r"^promotional",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^promotional$",
-        redirect_to_classic_unplugged,
+        r"^public-key-encryption",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^public-key-encryption$",
-        redirect_to_classic_unplugged,
+        r"^research",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^research$",
-        redirect_to_classic_unplugged,
+        r"^routing-and-deadlock",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^routing-and-deadlock$",
-        redirect_to_classic_unplugged,
+        r"^scout-patrol-encryption",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^scout-patrol-encryption$",
-        redirect_to_classic_unplugged,
+        r"^searching-algorithms",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^searching-algorithms$",
-        redirect_to_classic_unplugged,
+        r"^sneak-peek/",
+        views.redirect_to_homepage,
     ),
     url(
-        r"^sneak-peek/$",
-        GeneralIndexView.as_view(),
+        r"^sorting-algorithms",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^sorting-algorithms$",
-        redirect_to_classic_unplugged,
+        r"^sorting-networks",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^sorting-networks$",
-        redirect_to_classic_unplugged,
+        r"^steiner-trees",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^steiner-trees$",
-        redirect_to_classic_unplugged,
+        r"^teachers",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^teachers$",
-        redirect_to_classic_unplugged,
+        r"^text-compression",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^text-compression$",
-        redirect_to_classic_unplugged,
+        r"^the-turing-test",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^the-turing-test$",
-        redirect_to_classic_unplugged,
+        r"^translations",
+        views.redirect_to_classic_unplugged,
     ),
     url(
-        r"^translations$",
-        redirect_to_classic_unplugged,
+        r"^videos",
+        views.redirect_to_classic_unplugged,
     ),
+    # All media files
     url(
-        r"^videos$",
-        redirect_to_classic_unplugged,
+        r"^wp-content/",
+        views.redirect_to_classic_unplugged,
     ),
 ]
