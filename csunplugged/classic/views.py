@@ -27,3 +27,11 @@ def redirect_to_contact(request):
     Returns a 301 permenant redirect HTTP response.
     """
     return redirect("general:contact", permanent=True)
+
+
+def redirect_to_changelog(request):
+    """Redirect request to contact page.
+
+    Returns a 301 permenant redirect HTTP response.
+    """
+    return redirect("http://cs-unplugged.readthedocs.io/en/latest/changelog.html", permanent=True)

@@ -23,7 +23,7 @@ urlpatterns = [
     ),
     url(
         r"^changelog",
-        views.redirect_to_classic_unplugged,
+        views.redirect_to_changelog,
     ),
     url(
         r"^class-simulation-computer-unfinished",
@@ -119,10 +119,6 @@ urlpatterns = [
     ),
     url(
         r"^phylogenetics",
-        views.redirect_to_classic_unplugged,
-    ),
-    url(
-        r"^principles",
         views.redirect_to_classic_unplugged,
     ),
     url(
