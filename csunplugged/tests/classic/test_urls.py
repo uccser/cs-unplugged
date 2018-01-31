@@ -1,5 +1,4 @@
 from tests.BaseTestWithDB import BaseTestWithDB
-from http import HTTPStatus
 
 
 class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
@@ -145,7 +144,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
             "http://classic.csunplugged.org/error-detection",
             status_code=301,
             fetch_redirect_response=False
-    )
+        )
 
     def test_events(self):
         response = self.client.get("/events")

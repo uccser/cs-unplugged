@@ -12,12 +12,14 @@ def redirect_to_classic_unplugged(request):
     url = urljoin("http://classic.csunplugged.org", request.path)
     return redirect(url, permanent=True)
 
+
 def redirect_to_homepage(request):
     """Redirect request to homepage.
 
     Returns a 301 permenant redirect HTTP response.
     """
     return redirect("general:home", permanent=True)
+
 
 def redirect_to_contact(request):
     """Redirect request to contact page.
