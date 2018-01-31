@@ -182,12 +182,6 @@ $rounded-corner-radius: 0.5rem;
   > summary {
     background-color: hsl(hue($color), saturation($color), 90%);
     color: $color !important;
-    .inline-image {
-      margin-top: 0.2rem;
-      margin-bottom: 0.2rem;
-      margin-#{$left}: auto;
-      margin-#{$right}: 0.2rem;
-    }
     &:hover {
       background-color: hsl(hue($color), saturation($color), 85%);
     }
@@ -206,6 +200,12 @@ details {
     padding: ($spacer * .25) ($spacer * .25) ($spacer * .25) $spacer;
     display: flex;
     align-items: center;
+    .inline-image {
+      margin-top: 0.2rem;
+      margin-bottom: 0.2rem;
+      margin-#{$left}: auto;
+      margin-#{$right}: 0.2rem;
+    }
   }
   summary:hover {
     background-color: darken($gray-lighter, 10%);
