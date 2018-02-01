@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-22 12:04+0000\n"
+"POT-Creation-Date: 2018-02-01 12:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,6 +94,18 @@ msgid "Lightbulb (off or on)"
 msgstr ""
 
 msgid "Value Representation"
+msgstr ""
+
+msgid "Hello, I'm a"
+msgstr ""
+
+msgid "Programmer"
+msgstr ""
+
+msgid "Tester"
+msgstr ""
+
+msgid "Bot"
 msgstr ""
 
 msgid "Modulo"
@@ -318,7 +330,7 @@ msgstr ""
 msgid "Topics"
 msgstr ""
 
-msgid "Resources"
+msgid "Printables"
 msgstr ""
 
 msgid "About"
@@ -834,7 +846,7 @@ msgstr ""
 msgid "Classic CS Unplugged"
 msgstr ""
 
-msgid "CS Unplugged (2.0 onwards)"
+msgid "version 4.0.0 onwards"
 msgstr ""
 
 msgid "Founders"
@@ -844,6 +856,12 @@ msgid "Advisers"
 msgstr ""
 
 msgid "Current Team"
+msgstr ""
+
+msgid "Previous Team Members"
+msgstr ""
+
+msgid "up to version 3.2.2"
 msgstr ""
 
 msgid "Contributors"
@@ -1084,19 +1102,20 @@ msgid "Read 'How do I teach CS Unplugged?'"
 msgstr ""
 
 msgid ""
-"This page diplays a complete list of all available resources. If a lesson "
-"uses a resource, the lesson will contain a direct link to the resource with "
-"a description on how to use it."
+"This page diplays a complete list of all available printables. If a lesson "
+"uses a printable, the lesson will contain a direct link to the printable "
+"with a description on how to use it."
 msgstr ""
 
-msgid "No resources are available."
+msgid "No printables are available."
 msgstr ""
 
-msgid "Generate Resource"
+msgid "Generate Printable"
 msgstr ""
 
 #, python-format
-msgid "The download of this resource includes %(copies_amount)s unique copies."
+msgid ""
+"The download of this Printable includes %(copies_amount)s unique copies."
 msgstr ""
 
 msgid "Preview"
@@ -1227,9 +1246,6 @@ msgid "Learning outcomes"
 msgstr ""
 
 msgid "Students will be able to:"
-msgstr ""
-
-msgid "CS Unplugged resources"
 msgstr ""
 
 msgid "Classroom resources"
