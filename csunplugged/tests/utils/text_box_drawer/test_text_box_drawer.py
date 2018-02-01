@@ -69,6 +69,24 @@ class TextBoxDrawerTest(SimpleTestCase):
         with self.assertRaises(TextBoxNotFoundInSVG):
             tbd.get_box("invalid")
 
+    def test_get_box_id_with_digit(self):
+        svg = os.path.join(BASE_PATH, "basic.svg")
+        image = Image.new("RGB", (2000, 4000))
+        tbd = TextBoxDrawer(image, None, svg)
+        tbd.get_box("element2")
+
+    def test_get_box_id_start_with_digit(self):
+        svg = os.path.join(BASE_PATH, "basic.svg")
+        image = Image.new("RGB", (2000, 4000))
+        tbd = TextBoxDrawer(image, None, svg)
+        tbd.get_box("123")
+
+    def test_get_box_id_with_underscore(self):
+        svg = os.path.join(BASE_PATH, "basic.svg")
+        image = Image.new("RGB", (2000, 4000))
+        tbd = TextBoxDrawer(image, None, svg)
+        tbd.get_box("element_2")
+
     def text_get_box_with_tspan(self):
         svg = os.path.join(BASE_PATH, "basic.svg")
         image = Image.new("RGB", (1000, 1000))
