@@ -87,14 +87,14 @@ Have the students try the Sorting Network with some of these words (note that yo
 There is also a number of words that have the letters in reverse alphabetical order, such as SPONGE and ZONKED (these can be sorted using the "larger to the left" variation, or can be read from the far side of the Sorting Network).
 Some words with this property have double letters in them, such as BELLOW; these will sort correctly, since the order of the double letters is immaterial.
 
-{image file-path="img/topics/sorting-network-toffees-cellos-sponge.png"}
-
 {panel type="general"}
 
 # List of words with letters in alphabetical order
 
 Here is a longer list of 6-letter words that can be used for this exercise.
 They are all from a dictionary, although some are rather obscure!
+
+{image file-path="img/topics/sorting-network-toffees-cellos-sponge.png" align="right"}
 
 AFFLUX, AGLOOS, ALMOST, BEGILT, BEGINS, BEGIRT, BEKNOT, BELLOW, BIJOUX, BILLOW, BIOPSY, BLOOPS, BLOTTY, CELLOS, CHIKOR, CHILLS, CHILLY, CHIMPS, CHINOS, CHINTZ, CHIPPY, CHIRRS, CHITTY, CHIVVY, CHOOSY, CHOPPY, CLOOPS, CLOTTY, DEFFLY, DEHORT, DEKKOS, DIKKOP, DIMPSY, EFFLUX, EFFORT, ELLOPS, FILLOS, FLOORS, FLOOSY, FLOPPY, FLOSSY, GHOSTY, GIMMOR, GLOOPS, GLOOPY, GLOPPY, GLOSSY, HILLOS, KNOTTY, JIGGED, LIGGED, MIFFED, NIFFED, PIGGED, POLKED, POLLED, POLLEE, POMMEE, POMMIE, PONGED, PONGEE, PONIED, PONKED, POOHED, POOLED, RIFFED, RIGGED, ROLFED, ROLLED, RONNIE, ROOFED, ROOKED, ROOKIE, ROOMED, ROOMIE, SOGGED, SOOGEE, SOOKED, SOOLED, SOOMED, SPLIFF, SPOKED, SPONGE, TIFFED, TIGGED, TOFFEE, TOGGED, TOLLED, TOLLIE, TOMMED, TONGED, TONKED, TOOLED, TOOMED, TOONIE, TROKED, UNFEED, VOMICA, VUMMED, WIGGED, WOLFED, WONNED, WOOFED, WOOLED, WOOLIE, WOONED, WULLED, WURLIE, YOKKED, YOLKED, YONNIE, YTTRIA, YTTRIC, YUKKED, YUPPIE, YWROKE, ZIGGED, ZONKED, ZOOMED, ZOONED, ZOONIC.
 
