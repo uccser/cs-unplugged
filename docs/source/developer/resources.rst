@@ -201,7 +201,6 @@ Creating a new dynamic text field
   6.  Give the text box element a unique identifier.
 
       - This is achieved by expanding the ``TEXT`` layer in the layers panel, and double-clicking on the text box element.
-      - The identifier must contain lowercase letters only.
       - The identifier must be unique across all layers.
 
 Notes:
