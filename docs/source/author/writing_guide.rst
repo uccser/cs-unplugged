@@ -238,7 +238,7 @@ Link to page within website
   and we will be happy to help.
 
 Links to pages within the website use the Django ``url`` template tag.
-In order to create an link, use the values that would be given to the template tag.
+In order to create a link, use the values that would be given to the template tag.
 See the example below for an example.
 
 This following Markdown:
@@ -266,7 +266,13 @@ Link to resource page with pre-selected options
   If you are unsure on how to create a link of this type, please contact us
   and we will be happy to help.
 
-This link uses the same syntax as internal links, with appended query parameters.
+This link uses the same syntax as internal links, with a query string appended
+at the end.
+The Markdown processor Verto will read the link string and seperate everything
+before and after the ``?`` symbol, and will create a link using the Django URL tag
+with everything before symbol (the same way a normal internal link is created).
+Then the processor will append the query string at the end of the link (see
+example below).
 Each parameter should be a resource option with its desired value.
 Values given as query parameters override the default values for each resource.
 
@@ -276,7 +282,13 @@ This following Markdown:
 
   [Little Red Riding Hood cards]('resources:resource' 'sorting-network-cards'?type=riding_hood)
 
-results in the following HTML:
+results in the following HTML to the Django system:
+
+.. code-block:: html
+
+  <a href="{% url 'resources:resource' 'sorting-network-cards' %}?type=riding_hood">Little Red Riding Hood cards</a>
+
+results in the following HTML to the user:
 
 .. code-block:: html
 
