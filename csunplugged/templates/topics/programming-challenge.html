@@ -68,20 +68,26 @@
       </div>
     {% endif %}
 
-    <h2>{% trans "Learning outcomes" %}</h2>
     {% if learning_outcomes %}
-      <ul>
-      {% for learning_outcome in learning_outcomes %}
-        <li>
-          {{ learning_outcome.text }}<br>
-          {% for area in learning_outcome.curriculum_areas.all %}
-            {% include "topics/curriculum-area-badge.html" %}
-          {% endfor %}
-        </li>
-      {% endfor %}
-    </ul>
-    {% else %}
-      <p>{% blocktrans trimmed %}No learning outcomes listed for {{ programming_challenge.name }}.{% endblocktrans %}</p>
+      <details class="panel-learning-outcomes">
+        <summary>
+          <strong>{% trans "Learning outcomes" %}</strong>
+          <img class="inline-image" src="{% static 'img/general/outcomes.png' %}">
+        </summary>
+        <div class="boxed-text-content">
+          <p>{% trans "Students will be able to:" %}</p>
+          <ul>
+            {% for learning_outcome in learning_outcomes %}
+            <li>
+              {{ learning_outcome.text }}<br>
+              {% for area in learning_outcome.curriculum_areas.all %}
+                {% include "topics/curriculum-area-badge.html" %}
+              {% endfor %}
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </details>
     {% endif %}
 
     {% render_html_field programming_challenge.content %}
