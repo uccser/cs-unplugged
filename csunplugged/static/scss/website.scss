@@ -194,12 +194,14 @@ $rounded-corner-radius: 0.5rem;
   }
 }
 
+$details-summary-bg: #cbd0d4;
 details {
   @extend .boxed-text;
   overflow: hidden;
+  background-color: $gray-lighter;
 
   summary {
-    background-color: $gray-lighter;
+    background-color: $details-summary-bg;
     color: $gray-dark;
     cursor: pointer;
     font-size: 1.1em;
@@ -208,7 +210,7 @@ details {
     align-items: center;
   }
   summary:hover {
-    background-color: darken($gray-lighter, 10%);
+    background-color: darken($details-summary-bg, 10%);
   }
   &.panel-ct-abstraction {
     @include detail-colour-variant($ct-abstraction);
