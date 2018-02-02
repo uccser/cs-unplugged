@@ -500,3 +500,9 @@ button:hover .icon {
   stroke: $red;
   fill: $red;
 }
+
+// Fix for displaying images correcting in Internet Explorer
+// See: https://github.com/twbs/bootstrap/issues/25242
+.figure {
+  display: block !important;
+}
