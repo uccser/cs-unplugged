@@ -1,6 +1,7 @@
 [run]
 branch = True
 source =
+    classic
     config
     general
     locale
