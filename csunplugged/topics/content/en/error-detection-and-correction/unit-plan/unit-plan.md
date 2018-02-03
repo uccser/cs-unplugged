@@ -1,6 +1,14 @@
 # Error detection and correction
 
-{image file-path="img/topics/parity-trick-example.png" alt="A student is surprised another student can detect the changed card in the Parity Trick."}
+{panel type="video"}
+
+# See teaching this in action
+
+{video url="https://www.youtube.com/embed/FnwBratAhfg"}
+
+{video url="https://www.youtube.com/embed/WjMPd6sgou0"}
+
+{panel end}
 
 The world is a complicated and imperfect place, and errors can occur whenever
 information is stored or transmitted.
@@ -19,6 +27,8 @@ errors have occurred.
 The extra information might be an extra "check digit" such as the last digit of
 a credit card number or barcode number on a product, or extra binary digits
 (bits) in data stored on a computer.
+
+{image file-path="img/topics/parity-trick-example.png" alt="A student is surprised another student can detect the changed card in the Parity Trick."}
 
 Not only can most digital systems detect errors, but many can correct them as
 well, back to what the data should have been.
