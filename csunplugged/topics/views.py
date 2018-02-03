@@ -187,7 +187,9 @@ class LessonView(generic.DetailView):
         context["programming_challenges"] = self.object.programming_challenges.exists()
         # Add all the connected learning outcomes
         context["learning_outcomes"] = self.object.learning_outcomes(manager="translated_objects").order_by("text")
-        context["classroom_resources"] = self.object.classroom_resources(manager="translated_objects").order_by("description")
+        context["classroom_resources"] = self.object.classroom_resources(manager="translated_objects").order_by(
+            "description"
+        )
         # Add all the connected generated resources
         related_resources = self.object.generated_resources.order_by("name")
         generated_resources = []
@@ -266,7 +268,7 @@ class ProgrammingChallengeView(generic.DetailView):
             lesson.challenge_number = challenge_numbers.challenge_number
         context["topic"] = self.object.topic
         # Add all the connected learning outcomes
-        context["learning_outcomes"] = self.object.learning_outcomes(manager="translated_objects").all()
+        context["learning_outcomes"] = self.object.learning_outcomes(manager="translated_objects").order_by("text")
         context["implementations"] = self.object.ordered_implementations()
         return context
 
