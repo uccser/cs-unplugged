@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-01 12:04+0000\n"
-"PO-Revision-Date: 2018-02-02 10:05-0500\n"
+"POT-Creation-Date: 2018-02-02 12:04+0000\n"
+"PO-Revision-Date: 2018-02-03 10:05-0500\n"
 "Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
 "Language-Team: English (upside down)\n"
 "Language: en_UD\n"
@@ -899,10 +899,6 @@ msgstr "crwdns15888:0%(lower)scrwdnd15888:0%(upper)scrwdne15888:0"
 
 msgid "and"
 msgstr "crwdns15889:0crwdne15889:0"
-
-#, python-format
-msgid "No learning outcomes listed for %(programming_challenge.name)s."
-msgstr "crwdns15890:0%(programming_challenge.name)scrwdne15890:0"
 
 msgid "Languages"
 msgstr "crwdns15891:0crwdne15891:0"
