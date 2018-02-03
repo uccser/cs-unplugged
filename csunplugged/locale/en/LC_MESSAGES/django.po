@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-01 12:04+0000\n"
+"POT-Creation-Date: 2018-02-02 12:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1335,10 +1335,6 @@ msgid "%(lower)s to %(upper)s"
 msgstr ""
 
 msgid "and"
-msgstr ""
-
-#, python-format
-msgid "No learning outcomes listed for %(programming_challenge.name)s."
 msgstr ""
 
 msgid "Languages"
