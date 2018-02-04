@@ -270,7 +270,7 @@ This link uses the same syntax as internal links, with a query string appended
 at the end.
 The Markdown processor Verto will read the link string and seperate everything
 before and after the ``?`` symbol, and will create a link using the Django URL tag
-with everything before symbol (the same way a normal internal link is created).
+with everything before the symbol (the same way a normal internal link is created).
 Then the processor will append the query string at the end of the link (see
 example below).
 Each parameter should be a resource option with its desired value.
