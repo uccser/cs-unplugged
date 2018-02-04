@@ -1,4 +1,4 @@
-# Parity magic for junior students
+# Parity magic
 
 {panel type="video"}
 

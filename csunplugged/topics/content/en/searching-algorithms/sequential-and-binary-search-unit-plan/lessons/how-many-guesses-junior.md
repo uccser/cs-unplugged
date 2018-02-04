@@ -1,4 +1,4 @@
-# How many guesses? (for junior students)
+# How many guesses?
 
 ## Key questions
 

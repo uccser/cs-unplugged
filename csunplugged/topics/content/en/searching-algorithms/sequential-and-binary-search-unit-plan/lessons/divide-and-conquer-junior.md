@@ -1,4 +1,4 @@
-# Divide and conquer for junior students
+# Divide and conquer
 
 ## Key questions
 
