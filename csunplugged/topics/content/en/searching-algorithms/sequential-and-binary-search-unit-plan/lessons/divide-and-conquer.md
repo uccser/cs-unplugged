@@ -45,7 +45,7 @@ Set up a line of cards, with the animal facing upwards.
 The game is even better if you have some real stakes - for example: I have 10 marbles each is worth 2 minutes of game time.
 For every token you use to find the number I’m thinking of, you will lose a marble.
 
-Let’s see how many guesses it takes to find the number: 302
+Let’s see how many guesses it takes to find the number: **302**
 
 Who would like the first guess? (Choose a student).
 Which animal should I turn over? Tell us why you chose that guess.
