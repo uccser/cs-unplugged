@@ -53,11 +53,11 @@ It's good to start with the single digit numbers to get students used to the
 system, and then provide more difficult numbers appropriate to the students'
 ability level.
 
-{image file-path="img/topics/sorting-network-example-cards-1.jpg" alt="Two pieces of paper with single digit numbers printed on them."}
+{image file-path="img/topics/sorting-network-example-cards-1.png" alt="Two pieces of paper with single digit numbers printed on them."}
 
-{image file-path="img/topics/sorting-network-example-cards-2.jpg" alt="Two pieces of paper with seven digit numbers printed on them."}
+{image file-path="img/topics/sorting-network-example-cards-2.png" alt="Two pieces of paper with seven digit numbers printed on them."}
 
-{image file-path="img/topics/sorting-network-example-cards-3.jpg" alt="Two pieces of paper with fractions printed on them."}
+{image file-path="img/topics/sorting-network-example-cards-3.png" alt="Two pieces of paper with fractions printed on them."}
 
 {panel end}
 
