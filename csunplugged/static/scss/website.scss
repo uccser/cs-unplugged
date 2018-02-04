@@ -525,6 +525,10 @@ button:hover .icon {
     displayed with no background colour, and it is hard for a user to decipher
     what text belows to the detail element.
 
+ 3. padding: 0.5rem 1rem 0;
+    This provides extra spacing around the text within the panel so it doesn't
+    hit the background coloured edge.
+
  Both sets of rules use CSS tricks to determine the browser. If these fail, a
  JavaScript function could run on each page to determine the browser, or the
  Django system could check the browser and include an optional file with these
@@ -536,6 +540,7 @@ button:hover .icon {
     border: 0 !important;
     .boxed-text-content {
       background-color: $gray-lighter !important;
+      padding: 0.5rem 1rem 0;
     }
   }
 }
@@ -545,6 +550,7 @@ button:hover .icon {
     border: 0 !important;
     .boxed-text-content {
       background-color: $gray-lighter !important;
+      padding: 0.5rem 1rem 0;
     }
   }
 }
