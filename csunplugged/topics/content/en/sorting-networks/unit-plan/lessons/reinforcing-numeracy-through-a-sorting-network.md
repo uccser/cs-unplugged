@@ -23,8 +23,6 @@ people probably can't speed it up).
 
 # See teaching this in action
 
-A demonstration of sorting networks being taught is available here:
-
 {video url="https://www.youtube.com/embed/M-z5pDjqtZk"}
 
 Some other videos showing different situations using Sorting Networks:

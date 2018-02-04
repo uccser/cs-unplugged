@@ -19,8 +19,6 @@ Things that don't go faster might include delivering a note to the office (10 pe
 
 # See teaching this in action
 
-A demonstration of sorting networks being taught is available here:
-
 {video url="https://www.youtube.com/embed/M-z5pDjqtZk"}
 
 Some other videos showing different situations using Sorting Networks:
