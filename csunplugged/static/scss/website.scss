@@ -391,31 +391,31 @@ ol, ul {
     &-green {
       border-top-color: $green;
       &:hover {
-        background-color: mix($green, $white, 10%)
+        background-color: mix($green, $white, 10%);
       }
     }
     &-yellow {
       border-top-color: $yellow;
       &:hover {
-        background-color: mix($yellow, $white, 10%)
+        background-color: mix($yellow, $white, 10%);
       }
     }
     &-light-purple {
       border-top-color: $light-purple;
       &:hover {
-        background-color: mix($light-purple, $white, 10%)
+        background-color: mix($light-purple, $white, 10%);
       }
     }
     &-orange {
       border-top-color: $orange;
       &:hover {
-        background-color: mix($orange, $white, 10%)
+        background-color: mix($orange, $white, 10%);
       }
     }
     &-teal {
       border-top-color: $teal;
       &:hover {
-        background-color: mix($teal, $white, 10%)
+        background-color: mix($teal, $white, 10%);
       }
     }
     .img-container {
@@ -440,7 +440,7 @@ ol, ul {
   }
   &:hover {
     transform: translateY(2px);
-    background-color: mix($blue, $white, 10%)
+    background-color: mix($blue, $white, 10%);
   }
   &.unavailable {
     background-color: rgba($black, 0.2);
@@ -502,4 +502,30 @@ h1, h2, h3, h4, h5, h6, details {
 button:hover .icon {
   stroke: $red;
   fill: $red;
+}
+
+@media print {
+  body {
+    padding-top: 0;
+    background-color: $white;
+  }
+  .link-item {
+    border-top: 2px solid $gray-400;
+    border-right: 2px solid $gray-400;
+    border-bottom: 2px solid $gray-400;
+  }
+  .print-col-12 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  .print-col-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+  .print-order-1 {
+    order: 1;
+  }
+  .print-order-2 {
+    order: 2;
+  }
 }
