@@ -43,6 +43,12 @@ parity-magic:
 product-code-check-digits:
   duration: 30
   computational-thinking-links: product-code-check-digits-ct-links.md
+  learning-outcomes:
+    - error-explain-steps-product-code-checksum
+    - error-discuss-checksum-algorithm-12-13-product-code
+    - error-explain-checksum-algorithm
+    - numeracy-explain-modulo
+    - numeracy-identify-modulo-everyday-life
   generated-resources:
     - barcode-checksum-poster
   classroom-resources:
