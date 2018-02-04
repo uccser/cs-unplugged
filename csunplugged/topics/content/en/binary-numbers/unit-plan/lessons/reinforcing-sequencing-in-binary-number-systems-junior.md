@@ -19,10 +19,10 @@ We can use anything we like that is opposite to each other.
 
 Today we will look at what opposites are and how we can count using these.
 If I said “happy face” what would be the opposite?
+What would the opposite be of cat? (This could be a mouse or a dog).
 
-What about a cat?
-
-Introduce hats - hat on or hat off - or paper plates - one side on and one side off - and demonstrate how you would make the number 1, then 2, then 3.
+Introduce two opposite objects.
+They could be paper plates, dual coloured counters, hats (to put on or off), or two different percussion instruments.
 
 Your play must include a demonstration of one of the following:
 
