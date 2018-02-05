@@ -23,6 +23,54 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+4.0.0
+==============================================================================
+
+- **Release date:** 5th February 2018
+- **Downloads:** `Source downloads are available on GitHub`_
+
+**Summary of changes:**
+
+???????????????????????????????????
+
+**Changelog:**
+
+- Add search feature. `#789 <https://github.com/uccser/cs-unplugged/pull/789`__
+- Optimise all images `#801 <https://github.com/uccser/cs-unplugged/pull/801>`__
+- Change term 'Resources' to 'Printables'. `#787 <https://github.com/uccser/cs-unplugged/pull/787>`__
+- Allow pre-filling of resource forms. `#768 <https://github.com/uccser/cs-unplugged/issues/768>`__
+- Update relative link template to allow query parameters.
+- Add welcome message to homepage. `#850 <https://github.com/uccser/cs-unplugged/pull/850`__
+- Add print view CSS. `#175 <https://github.com/uccser/cs-unplugged/pull/175`__
+- Add all example classroom videos at appropriate positions. `#842 <https://github.com/uccser/cs-unplugged/pull/842`__
+- Update binary numbers topic description. `#365 <https://github.com/uccser/cs-unplugged/pull/365`__
+- Add learning outcomes for lesson 2 (8-10) for Error Correction and Detection. `#419 <https://github.com/uccser/cs-unplugged/pull/419`__
+- Update the wording on reinforcing sequencing junior. `#630 <https://github.com/uccser/cs-unplugged/pull/630`__
+- Add GitHub Code of Conduct page that points to page in docs. `#829 <https://github.com/uccser/cs-unplugged/pull/829`__
+- Fix bug where learning outcomes were displayed multiple times. `#827 <https://github.com/uccser/cs-unplugged/pull/827`__
+- Prevent line wrapping on tables for programming exercises. `#443 <https://github.com/uccser/cs-unplugged/pull/443`__
+- IE/Edge browser compatibility features. `#824 <https://github.com/uccser/cs-unplugged/pull/824`__
+- Show video symbol on video panels. `#814 <https://github.com/uccser/cs-unplugged/pull/814`__
+- Hide learning outcomes within panel. `#813 <https://github.com/uccser/cs-unplugged/pull/813`__
+- Add URL redirects for Classic CS Unplugged URLs to new subdomain. `#811 <https://github.com/uccser/cs-unplugged/pull/811`__
+- Combine and update changelogs with Classic CS Unplugged. `#820 <https://github.com/uccser/cs-unplugged/pull/820`__
+- Update documentation on Verto 'relative-link' behaviour. `#504 <https://github.com/uccser/cs-unplugged/pull/504`__
+- Rewrite content style guide for external contributors. `#791 <https://github.com/uccser/cs-unplugged/pull/791`__
+- Add pre-requisite lesson for binary art curriculum integration. `#366 <https://github.com/uccser/cs-unplugged/pull/366`__
+- Package updates:
+
+  - Update django to 1.11.10.
+  - Update verto to 0.7.3.
+  - Update Pillow to 5.0.0.
+  - Update yattag to 1.10.0.
+  - Update django-modeltranslation to 0.12.2.
+  - Update sphinx to 1.6.7.
+  - Update django-extensions to 1.9.9.
+  - Update coverage to 4.5.
+  - Add django-haystack 2.6.1.
+  - Add Whoosh 2.7.4.
+  - Add django-widget-tweaks 1.4.1.
+
 4.0.0-alpha.6.1
 ==============================================================================
 
