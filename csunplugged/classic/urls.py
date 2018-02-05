@@ -110,6 +110,10 @@ urlpatterns = [
         views.redirect_to_classic_unplugged,
     ),
     url(
+        r"^modem/",
+        views.redirect_to_modems_unplugged_2,
+    ),
+    url(
         r"^modems-unplugged-2",
         views.redirect_to_classic_unplugged,
     ),
