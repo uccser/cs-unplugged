@@ -23,7 +23,7 @@ ALLOWED_HOSTS = ["*"]
 
 # URL Configuration
 # ------------------------------------------------------------------------------
-if env("DEPLOYMENT", default="none") == "prod":
+if env("DEPLOYMENT", default="none") == "prod":  # noqa: F405
     PREPEND_WWW = True
 else:
     PREPEND_WWW = False
