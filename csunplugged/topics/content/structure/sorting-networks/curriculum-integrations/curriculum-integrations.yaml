@@ -2,8 +2,14 @@ retelling-a-story:
   number: 1
   curriculum-areas:
     - speaking
+  prerequisite-lessons:
+    unit-plan:
+      - investigating-variations-using-the-sorting-network-junior
 
 growing-into-a-butterfly:
   number: 2
   curriculum-areas:
     - biology
+  prerequisite-lessons:
+    unit-plan:
+      - investigating-variations-using-the-sorting-network-junior

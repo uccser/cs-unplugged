@@ -2,6 +2,9 @@ where-is-my-hat:
   number: 1
   curriculum-areas:
     - writing
+  prerequisite-lessons:
+    sequential-and-binary-search-unit-plan:
+      - how-many-guesses
 
 biography:
   number: 2
@@ -15,8 +18,15 @@ drama-video:
   curriculum-areas:
     - drama
     - art
-
+  prerequisite-lessons:
+    sequential-and-binary-search-unit-plan:
+      - how-many-guesses
+      - divide-and-conquer
 music:
   number: 4
   curriculum-areas:
     - music
+  prerequisite-lessons:
+    sequential-and-binary-search-unit-plan:
+      - how-many-guesses
+      - divide-and-conquer
