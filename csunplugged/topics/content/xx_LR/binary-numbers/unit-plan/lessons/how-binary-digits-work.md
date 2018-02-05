@@ -1,26 +1,48 @@
 # crwdns9749:0crwdne9749:0
 
-## crwdns9750:0crwdne9750:0
-
-crwdns9751:0crwdne9751:0 crwdns9752:0crwdne9752:0
-
-## crwdns9753:0crwdne9753:0
+## crwdns20196:0crwdne20196:0
 
 - crwdns9754:0crwdne9754:0 crwdns9755:0crwdne9755:0
 - crwdns9756:0crwdne9756:0
 - crwdns9757:0crwdne9757:0 crwdns9758:0crwdne9758:0
 
-## crwdns9759:0crwdne9759:0
+## crwdns20197:0crwdne20197:0
 
-*BlockTag: crwdns19093:0crwdne19093:0*
+*BlockTag: crwdns20198:0crwdne20198:0*
+
+{panel type="video"}
+
+# crwdns20199:0crwdne20199:0
+
+*BlockTag: crwdns20200:0crwdne20200:0*
+
+{video url="https://www.youtube.com/embed/Wy6-FXtLMV8"}
+
+*BlockTag: crwdns20201:0crwdne20201:0*
+
+{panel end}
+
+*BlockTag: crwdns20202:0crwdne20202:0*
 
 {panel type="general"}
 
-# crwdns19094:0crwdne19094:0
+# crwdns20203:0crwdne20203:0
 
-crwdns9761:0crwdne9761:0
+crwdns20204:0crwdne20204:0 crwdns20205:0crwdne20205:0
 
-*BlockTag: crwdns9762:0crwdne9762:0*
+*BlockTag: crwdns20206:0crwdne20206:0*
+
+{panel end}
+
+*BlockTag: crwdns20207:0crwdne20207:0*
+
+{panel type="general"}
+
+# crwdns20208:0crwdne20208:0
+
+crwdns20209:0crwdne20209:0
+
+*BlockTag: crwdns20210:0crwdne20210:0*
 
 {panel end}
 
@@ -102,7 +124,7 @@ crwdns9761:0crwdne9761:0
 
     {panel end}
 
-## crwdns9800:0crwdne9800:0
+## crwdns20211:0crwdne20211:0
 
 1. crwdns9801:0crwdne9801:0 crwdns9802:0crwdne9802:0 crwdns9803:0crwdne9803:0 crwdns9804:0crwdne9804:0
     
@@ -166,7 +188,7 @@ crwdns9761:0crwdne9761:0
 
     {image file-path="img/topics/lightbulb_series_4.png" alt="2 lightbulbs switched on"}
 
-## crwdns9835:0crwdne9835:0
+## crwdns20212:0crwdne20212:0
 
 - crwdns9836:0crwdne9836:0
 - crwdns9837:0crwdne9837:0
@@ -208,19 +230,19 @@ crwdns9761:0crwdne9761:0
     
     crwdns9864:0crwdne9864:0
 
-*BlockTag: crwdns19105:0crwdne19105:0*
+*BlockTag: crwdns20213:0crwdne20213:0*
 
 {panel type="teaching"}
 
-# crwdns19106:0crwdne19106:0
+# crwdns20214:0crwdne20214:0
 
-crwdns9866:0crwdne9866:0 crwdns9867:0crwdne9867:0 crwdns9868:0crwdne9868:0
+crwdns20215:0crwdne20215:0 crwdns20216:0crwdne20216:0 crwdns20217:0crwdne20217:0
 
-*BlockTag: crwdns9869:0crwdne9869:0*
+*BlockTag: crwdns20218:0crwdne20218:0*
 
 {panel end}
 
-## crwdns9870:0crwdne9870:0
+## crwdns20219:0crwdne20219:0
 
 - crwdns9871:0crwdne9871:0 crwdns9872:0crwdne9872:0 crwdns9873:0crwdne9873:0 crwdns9874:0crwdne9874:0 crwdns9875:0crwdne9875:0 crwdns9876:0crwdne9876:0
 - crwdns9877:0crwdne9877:0

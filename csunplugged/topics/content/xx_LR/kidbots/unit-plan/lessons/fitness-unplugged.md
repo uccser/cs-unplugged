@@ -28,9 +28,9 @@ crwdns18082:0crwdne18082:0
 
 1. crwdns18084:0crwdne18084:0
     
-    *BlockTag: crwdns18085:0crwdne18085:0*
+    *BlockTag: crwdns20015:0crwdne20015:0*
 
-    {image file-path="img/topics/exercise-2.png" alt="Cartoon kids exercising"}
+    {image file-path="img/topics/exercise-2.png" alt="Cartoon kids exercising" alignment="right"}
     
     crwdns18086:0crwdne18086:0
     

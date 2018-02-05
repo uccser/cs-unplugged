@@ -19,9 +19,9 @@ crwdns9230:0crwdne9230:0
 
 crwdns9237:0crwdne9237:0
 
-*BlockTag: crwdns9238:0crwdne9238:0*
+*BlockTag: crwdns20221:0crwdne20221:0*
 
-{image file-path="img/topics/binary_count_girl.png" alt="girl thinking about alphabet and numbers"}
+{image file-path="img/topics/binary_count_girl.png" alt="girl thinking about alphabet and numbers" alignment="right"}
 
 crwdns9239:0crwdne9239:0
 
@@ -51,9 +51,9 @@ crwdns9249:0crwdne9249:0
 
 crwdns9252:0crwdne9252:0 crwdns9253:0crwdne9253:0 crwdns9254:0crwdne9254:0
 
-*BlockTag: crwdns9255:0crwdne9255:0*
+*BlockTag: crwdns20222:0crwdne20222:0*
 
-{image file-path="img/topics/binary_torch.png" alt="Flashlight"}
+{image file-path="img/topics/binary_torch.png" alt="Flashlight" alignment="right"}
 
 crwdns9256:0crwdne9256:0 crwdns9257:0crwdne9257:0 crwdns9258:0crwdne9258:0
 

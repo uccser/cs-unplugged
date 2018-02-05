@@ -13,9 +13,9 @@ crwdns10053:0crwdne10053:0
 - crwdns10056:0crwdne10056:0
 - crwdns10057:0crwdne10057:0
 
-*BlockTag: crwdns19188:0crwdne19188:0*
+*BlockTag: crwdns20223:0crwdne20223:0*
 
-{image file-path="img/topics/shannon-juggling.png" caption="true" alt="person juggling on unicycle"}
+{image file-path="img/topics/shannon-juggling.png" caption="true" alt="person juggling on unicycle" alignment="right"}
 
 crwdns19189:0crwdne19189:0
 

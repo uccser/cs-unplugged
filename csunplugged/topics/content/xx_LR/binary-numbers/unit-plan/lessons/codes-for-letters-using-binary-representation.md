@@ -18,13 +18,13 @@ crwdns9362:0crwdne9362:0
 
 {panel end}
 
-crwdns9364:0crwdne9364:0 crwdns9365:0crwdne9365:0
+*BlockTag: crwdns20157:0crwdne20157:0*
 
-crwdns9366:0crwdne9366:0
+{image file-path="img/topics/col_binary_robot_boy_convo.png" alt="Cartoon boy talking to robot" alignment="left"}
 
-*BlockTag: crwdns18341:0crwdne18341:0*
+crwdns20158:0crwdne20158:0 crwdns20159:0crwdne20159:0
 
-{image file-path="img/topics/col_binary_robot_boy_convo.png" alt="Cartoon boy talking to robot" alignment="right"}
+crwdns20160:0crwdne20160:0
 
 *BlockTag: crwdns19059:0crwdne19059:0*
 

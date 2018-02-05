@@ -14,49 +14,68 @@ crwdns12581:0crwdne12581:0 crwdns12582:0crwdne12582:0
 
 ## crwdns12583:0crwdne12583:0
 
-crwdns12584:0crwdne12584:0 crwdns12585:0crwdne12585:0 crwdns12586:0crwdne12586:0 crwdns12587:0crwdne12587:0
+*BlockTag: crwdns20022:0crwdne20022:0*
 
-crwdns12588:0crwdne12588:0
+{panel type="video"}
 
-*BlockTag: crwdns18957:0crwdne18957:0*
+# crwdns20023:0crwdne20023:0
 
-{panel type="math"}
+*BlockTag: crwdns20024:0crwdne20024:0*
 
-# crwdns18958:0crwdne18958:0
+{video url="https://www.youtube.com/embed/M-z5pDjqtZk"}
 
-crwdns12590:0crwdne12590:0
+crwdns20025:0crwdne20025:0
 
-*BlockTag: crwdns12591:0crwdne12591:0*
+- [crwdns20027:0crwdne20027:0](https://www.youtube.com/watch?v=LOxfdsBBjKI)
+- [crwdns20029:0crwdne20029:0](https://www.youtube.com/watch?v=30WcPnvfiKE)
+
+*BlockTag: crwdns20030:0crwdne20030:0*
 
 {panel end}
 
-*BlockTag: crwdns18959:0crwdne18959:0*
+crwdns20031:0crwdne20031:0 crwdns20032:0crwdne20032:0 crwdns20033:0crwdne20033:0 crwdns20034:0crwdne20034:0
+
+crwdns20035:0crwdne20035:0
+
+*BlockTag: crwdns20036:0crwdne20036:0*
+
+{panel type="math"}
+
+# crwdns20037:0crwdne20037:0
+
+crwdns20038:0crwdne20038:0
+
+*BlockTag: crwdns20039:0crwdne20039:0*
+
+{panel end}
+
+*BlockTag: crwdns20040:0crwdne20040:0*
 
 {panel type="exemplars"}
 
-# crwdns18960:0crwdne18960:0
+# crwdns20041:0crwdne20041:0
 
-crwdns12593:0crwdne12593:0 crwdns12594:0crwdne12594:0
+crwdns20042:0crwdne20042:0 crwdns20043:0crwdne20043:0
 
-*BlockTag: crwdns12595:0crwdne12595:0*
+*BlockTag: crwdns20044:0crwdne20044:0*
 
-{image file-path="img/topics/sorting-network-example-cards-1.jpg" alt="Two pieces of paper with single digit numbers printed on them."}
+{image file-path="img/topics/sorting-network-example-cards-1.png" alt="Two pieces of paper with single digit numbers printed on them."}
 
-*BlockTag: crwdns12596:0crwdne12596:0*
+*BlockTag: crwdns20045:0crwdne20045:0*
 
-{image file-path="img/topics/sorting-network-example-cards-2.jpg" alt="Two pieces of paper with seven digit numbers printed on them."}
+{image file-path="img/topics/sorting-network-example-cards-2.png" alt="Two pieces of paper with seven digit numbers printed on them."}
 
-*BlockTag: crwdns12597:0crwdne12597:0*
+*BlockTag: crwdns20046:0crwdne20046:0*
 
-{image file-path="img/topics/sorting-network-example-cards-3.jpg" alt="Two pieces of paper with fractions printed on them."}
+{image file-path="img/topics/sorting-network-example-cards-3.png" alt="Two pieces of paper with fractions printed on them."}
 
-*BlockTag: crwdns12598:0crwdne12598:0*
+*BlockTag: crwdns20047:0crwdne20047:0*
 
 {panel end}
 
 ## crwdns12599:0crwdne12599:0
 
-*BlockTag: crwdns12600:0crwdne12600:0*
+*BlockTag: crwdns20048:0crwdne20048:0*
 
 {image file-path="img/topics/sorting-network-kids.png" alt="A group of children sort items on a Sorting Network drawn on concrete."}
 
@@ -72,51 +91,51 @@ crwdns12593:0crwdne12593:0 crwdns12594:0crwdne12594:0
 10. crwdns12612:0crwdne12612:0 crwdns12613:0crwdne12613:0
 11. crwdns12614:0crwdne12614:0
 
-*BlockTag: crwdns18961:0crwdne18961:0*
+*BlockTag: crwdns20049:0crwdne20049:0*
 
 {panel type="teaching"}
 
-# crwdns18962:0crwdne18962:0
+# crwdns20050:0crwdne20050:0
 
-crwdns12616:0crwdne12616:0 crwdns12617:0crwdne12617:0 crwdns12618:0crwdne12618:0 crwdns12619:0crwdne12619:0
+crwdns20051:0crwdne20051:0 crwdns20052:0crwdne20052:0 crwdns20053:0crwdne20053:0 crwdns20054:0crwdne20054:0
 
-*BlockTag: crwdns12620:0crwdne12620:0*
+*BlockTag: crwdns20055:0crwdne20055:0*
 
 {image file-path="img/topics/sorting-network-too-far-kid.png" alt="A child walks too far in the sorting network activity, failing the activity for everyone."}
 
-crwdns12621:0crwdne12621:0 crwdns12622:0crwdne12622:0
+crwdns20056:0crwdne20056:0 crwdns20057:0crwdne20057:0
 
-*BlockTag: crwdns12623:0crwdne12623:0*
+*BlockTag: crwdns20058:0crwdne20058:0*
 
 {panel end}
 
 ## crwdns12624:0crwdne12624:0
 
-crwdns12625:0crwdne12625:0 crwdns12626:0crwdne12626:0 crwdns12627:0crwdne12627:0 crwdns12628:0crwdne12628:0 crwdns12629:0crwdne12629:0
+crwdns20059:0crwdne20059:0 crwdns20060:0crwdne20060:0 crwdns20061:0crwdne20061:0 crwdns20062:0crwdne20062:0 crwdns20063:0crwdne20063:0
 
-crwdns12630:0crwdne12630:0
+crwdns20064:0crwdne20064:0
 
-crwdns12631:0crwdne12631:0 crwdns12632:0crwdne12632:0 crwdns12633:0crwdne12633:0 crwdns12634:0crwdne12634:0
+crwdns20065:0crwdne20065:0 crwdns20066:0crwdne20066:0 crwdns20067:0crwdne20067:0 crwdns20068:0crwdne20068:0
 
-crwdns12635:0crwdne12635:0 crwdns12636:0crwdne12636:0
+crwdns20069:0crwdne20069:0 crwdns20070:0crwdne20070:0
 
-*BlockTag: crwdns12637:0crwdne12637:0*
+*BlockTag: crwdns20071:0crwdne20071:0*
 
 {image file-path="img/topics/sorting-network-node-1.png" alt="An image showing the network with the path the smallest number would take through the network if the smallest number started in node 1."}
 
-crwdns12638:0crwdne12638:0
+crwdns20072:0crwdne20072:0
 
-*BlockTag: crwdns12639:0crwdne12639:0*
+*BlockTag: crwdns20073:0crwdne20073:0*
 
 {image file-path="img/topics/sorting-network-node-2.png" alt="An image showing the network with the path the smallest number would take through the network if the smallest number started in node 2."}
 
-crwdns12640:0crwdne12640:0
+crwdns20074:0crwdne20074:0
 
-crwdns12641:0crwdne12641:0
+crwdns20075:0crwdne20075:0
 
-crwdns12642:0crwdne12642:0
+crwdns20076:0crwdne20076:0
 
 ## crwdns12643:0crwdne12643:0
 
-- crwdns12644:0crwdne12644:0
-- crwdns12645:0crwdne12645:0
+- crwdns20077:0crwdne20077:0
+- crwdns20078:0crwdne20078:0

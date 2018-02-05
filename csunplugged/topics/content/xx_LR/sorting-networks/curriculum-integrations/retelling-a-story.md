@@ -2,6 +2,6 @@
 
 crwdns18892:0crwdne18892:0
 
-*BlockTag: crwdns12099:0crwdne12099:0*
+*BlockTag: crwdns20017:0crwdne20017:0*
 
-{image file-path="img/resources/sorting-network-cards/little-red-riding-hood-3.png" alt="Little Red Riding Hood knocking at the door for a house."}
+{image file-path="img/topics/little-red-riding-hood-3.png" alt="Little Red Riding Hood knocking at the door for a house."}

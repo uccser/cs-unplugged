@@ -32,9 +32,9 @@ crwdns12114:0crwdne12114:0
 
 # crwdns18902:0crwdne18902:0
 
-*BlockTag: crwdns12117:0crwdne12117:0*
+*BlockTag: crwdns20018:0crwdne20018:0*
 
-{image file-path="img/topics/sorting-network-comparing-apples.png" alt="A person compares a large apple and a small apple."}
+{image file-path="img/topics/sorting-network-comparing-apples.png" alt="A person compares a large apple and a small apple." alignment="right"}
 
 crwdns12118:0crwdne12118:0 crwdns12119:0crwdne12119:0 crwdns12120:0crwdne12120:0 crwdns12121:0crwdne12121:0 crwdns12122:0crwdne12122:0
 
