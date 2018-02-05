@@ -23,7 +23,10 @@ ALLOWED_HOSTS = ["*"]
 
 # URL Configuration
 # ------------------------------------------------------------------------------
-PREPEND_WWW = True
+if env("DEPLOYMENT", default="none") == "prod":
+    PREPEND_WWW = True
+else:
+    PREPEND_WWW = False
 
 # DATABASE CONFIGURATION
 # ----------------------------------------------------------------------------
