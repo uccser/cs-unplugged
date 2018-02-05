@@ -1,4 +1,4 @@
-# Codes for letters using binary representation for junior students
+# Codes for letters using binary representation
 
 ## Key questions
 

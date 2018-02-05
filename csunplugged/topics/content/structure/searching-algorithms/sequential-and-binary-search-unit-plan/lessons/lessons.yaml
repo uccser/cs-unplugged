@@ -1,3 +1,34 @@
+how-many-guesses-junior:
+  duration: 30
+  computational-thinking-links: how-many-guesses-ct-links.md
+  learning-outcomes:
+    - search-algorithms-identify-unsorted-lists
+    - search-algorithms-describe-time-size-input
+    - search-algorithms-explore-probability-value-random-set
+    - search-algorithms-explain-range-unsorted-lists
+  generated-resources:
+    - searching-cards
+  classroom-resources:
+    - payment-system
+    - pens
+    - paper
+
+divide-and-conquer-junior:
+  duration: 30
+  computational-thinking-links: divide-and-conquer-ct-links.md
+  learning-outcomes:
+    - search-algorithms-identify-sequential-binary
+    - search-algorithms-explain-decomposition-binary
+    - search-algorithms-describe-time-size-input-different
+    - search-algorithms-describe-compare-values
+    - search-algorithms-explain-unsorted-lists
+  generated-resources:
+    - searching-cards
+  classroom-resources:
+    - payment-system
+    - pens
+    - paper
+
 how-many-guesses:
   duration: 30
   computational-thinking-links: how-many-guesses-ct-links.md
