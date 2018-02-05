@@ -32,9 +32,9 @@ A demonstration of lesson one ("Parity magic") being taught is available here:
 
 # Notes on resources
 
-{image file-path="img/topics/parity-cards.png" alt="A pile of square cards with black on one side and white on the other side."}
-
 You will require:
+
+{image file-path="img/topics/parity-cards.png" alt="A pile of square cards with black on one side and white on the other side." alignment="right"}
 
 -   A set of 36 "fridge magnet" cards, all identical with a different colour on
     each side (e.g. black and white); or non-magnetic cards, in which case the
@@ -46,6 +46,7 @@ You will require:
     magnetic sheet back to back.
     Paper (non-magnetic) cards can be made by cutting up a sheet of light card
     that is a different colour on each side.
+
 -   A metal board (ideally a whiteboard) if magnetic cards are being used.
 -   Each pair of children will need: a set of 36 (non-magnetic) cards as above.
 
@@ -97,71 +98,7 @@ Step 1: Example layout of a 5x5 grid set up by the volunteer.
 
 ### Step by step adding a parity bit to each row and column
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-2.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 2: Adding parity bit for the first row.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-3.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 3: Adding parity bit for the second row.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-4.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 4: Adding parity bit for the third row.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-5.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 5: Adding parity bit for the fourth row.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-6.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 6: Adding parity bit for the fifth row.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-7.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 7: Adding parity bit for the first column.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-8.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 8: Adding parity bit for the second column.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-9.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 9: Adding parity bit for the third column.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-10.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 10: Adding parity bit for the fourth column.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-11.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 11: Adding parity bit for the fifth column.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-12.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 12: Adding parity bit for the sixth column.
-
-{image end}
+{image file-path="img/topics/parity-cards.gif"}
 
 The last parity bit placed is useful because it will always work for both the column and row;
 if it doesn't match for both the row and column then you'll have made a mistake with one of the cards, and should go back and check them (try to not make it obvious that you're doing that).
@@ -199,7 +136,7 @@ Turn this card over casually to restore it to the correct colour, saying â€œitâ€
 You can make a fuss that it might have been a fluke, so repeat the trick again.
 (After you put the card back to how it was originally, look away again and ask for another card to be flipped over.)
 
-{image file-path="img/topics/parity-wizard.png" alt="A wizard holding a magic one with parity cards on it."}
+{image file-path="img/topics/parity-wizard.png" alt="A wizard holding a magic one with parity cards on it." alignment="right"}
 
 So is it magic? Or is it a trick?
 

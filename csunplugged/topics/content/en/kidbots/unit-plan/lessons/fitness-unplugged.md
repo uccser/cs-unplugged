@@ -22,7 +22,7 @@ Today we are going to write our own unplugged fitness app. Before we start we ne
 
 1.  Brainstorm as a class all the different fitness exercises you could have in your programming language.
 
-    {image file-path="img/topics/exercise-2.png" alt="Cartoon kids exercising"}
+    {image file-path="img/topics/exercise-2.png" alt="Cartoon kids exercising" alignment="right"}
 
     Ideas to get you started include:
 

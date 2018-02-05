@@ -110,71 +110,7 @@ Step 1: Example layout of a 5x5 grid set up by the volunteer.
 
 ### Step by step adding a parity bit to each row and column
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-2.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 2: Adding parity bit for the first row.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-3.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 3: Adding parity bit for the second row.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-4.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 4: Adding parity bit for the third row.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-5.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 5: Adding parity bit for the fourth row.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-6.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 6: Adding parity bit for the fifth row.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-7.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 7: Adding parity bit for the first column.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-8.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 8: Adding parity bit for the second column.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-9.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 9: Adding parity bit for the third column.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-10.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 10: Adding parity bit for the fourth column.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-11.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 11: Adding parity bit for the fifth column.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-12.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 12: Adding parity bit for the sixth column.
-
-{image end}
+{image file-path="img/topics/parity-cards.gif"}
 
 The last parity bit placed is useful because it will always work for both the
 column and row; if it doesn't match for both the row and column then you'll
@@ -222,7 +158,7 @@ You can make a fuss that it might have been a fluke, so repeat the trick again.
 (After you put the card back to how it was originally, look away again and ask
 for another card to be flipped over.)
 
-{image file-path="img/topics/parity-wizard.png" alt="A wizard holding a magic one with parity cards on it."}
+{image file-path="img/topics/parity-wizard.png" alt="A wizard holding a magic one with parity cards on it." alignment="right"}
 
 So is it magic? Or is it a trick?
 

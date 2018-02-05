@@ -42,7 +42,7 @@ dozens of cards has been turned over, using the same kind of method that
 computers use to figure out when and where an error has occurred in a piece of
 data.
 
-{image file-path="img/topics/mug-with-barcode.png"}
+{image file-path="img/topics/mug-with-barcode.png" alignment="right"}
 
 A related technique is used on the barcodes printed on products to check that
 they are scanned correctly at a checkout; the last digit in the product code is
@@ -140,7 +140,7 @@ digit wrong?
 Someone else might get charged for the item and person who mis-typed the number
 might be accused of fraud just because of a simple typing mistake.
 
-{image file-path="img/topics/cd-with-marks.png"}
+{image file-path="img/topics/cd-with-marks.png" alignment="right"}
 
 Everything stored by computers and sent between them is represented as bits
 (binary digits).

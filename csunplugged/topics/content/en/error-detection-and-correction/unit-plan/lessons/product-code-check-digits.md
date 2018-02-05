@@ -28,7 +28,7 @@ It is helpful, but not essential, for students to have done the [lesson on the M
 
 {panel end}
 
-{image file-path="img/topics/error-correction-paint-tin.png" alt="A black paint tin with paint across the name and barcode."}
+{image file-path="img/topics/error-correction-paint-tin.png" alt="A black paint tin with paint across the name and barcode." alignment="right"}
 
 Explain to your class that you can calculate what the last digit will be on a
 12 or 13 digit product code (the number on a bar code).
