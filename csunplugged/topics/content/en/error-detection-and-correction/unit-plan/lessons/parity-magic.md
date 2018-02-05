@@ -1,10 +1,32 @@
 # Parity magic
 
+## Key questions
+
+-   Why is it important for computers to be able to detect if the data received
+    over the internet is the same as the data that was sent?
+-   What if I sent you an email that said you could now have Monday off school,
+    but when you received it, there was some electrical interference and a
+    **bit** was changed from off to on so that the word "now" became "not".
+    What would your reaction be?
+-   Can computers correct these sorts of mistakes automatically, and how would
+    they do that?
+
+### Potential answers could include:
+
+Students may come up with situations where computers won't read a disc or scan a code, but they may also confuse this kind of problem with other kinds of failures such as an error in a program or a flat battery.
+
+{image file-path="img/topics/school-test-error.png" alt="A school test shows every question marked correct but the overall score is 0%."}
+
+Adults use computers for important things like banking, writing school reports, and communicating with each other.
+If the information being stored got changed without anyone knowing, you'd get the wrong balance in your account (too much or too little), the wrong grade in your report, or the wrong message in an email.
+Or worst still the website you are wanting to go to for your learning or the DVD you want to play won’t work!
+This activity will look at how computers correct this automatically.
+
+## Lesson starter
+
 {panel type="video"}
 
 # See teaching this in action
-
-A demonstration of lesson one ("Parity magic") being taught is available here:
 
 {video url="https://www.youtube.com/embed/FnwBratAhfg"}
 
@@ -36,30 +58,6 @@ There is also an
 from the Computer Science Field Guide.
 
 {panel end}
-
-## Key questions
-
--   Why is it important for computers to be able to detect if the data received
-    over the internet is the same as the data that was sent?
--   What if I sent you an email that said you could now have Monday off school,
-    but when you received it, there was some electrical interference and a
-    **bit** was changed from off to on so that the word "now" became "not".
-    What would your reaction be?
--   Can computers correct these sorts of mistakes automatically, and how would
-    they do that?
-
-### Potential answers could include:
-
-Students may come up with situations where computers won't read a disc or scan a code, but they may also confuse this kind of problem with other kinds of failures such as an error in a program or a flat battery.
-
-{image file-path="img/topics/school-test-error.png" alt="A school test shows every question marked correct but the overall score is 0%."}
-
-Adults use computers for important things like banking, writing school reports, and communicating with each other.
-If the information being stored got changed without anyone knowing, you'd get the wrong balance in your account (too much or too little), the wrong grade in your report, or the wrong message in an email.
-Or worst still the website you are wanting to go to for your learning or the DVD you want to play won’t work!
-This activity will look at how computers correct this automatically.
-
-## Lesson starter
 
 1.  Teacher to class: "I’ve just learnt a magic trick I want to show you".
 

@@ -1,10 +1,5 @@
 # How binary digits work
 
-## Note from the authors
-
-We’ve noticed that once students understand how the binary number system works, they have many questions and are excited to explore the concepts outlined in this lesson further.
-We’ve added a lot of information into this lesson, however, it is not our intention that you will teach and cover all the concepts, but that you have at your fingertips the information you need when your students express an interest in learning more.
-
 ## Key questions
 
 -   What different number systems do we know about? (Answers might include:
@@ -18,7 +13,24 @@ We’ve added a lot of information into this lesson, however, it is not our inte
     numerals can be useful for making a number look more mysterious or harder
     to read.)
 
-## lesson starter
+## Lesson starter
+
+{panel type="video"}
+
+# See teaching this in action
+
+{video url="https://www.youtube.com/embed/Wy6-FXtLMV8"}
+
+{panel end}
+
+{panel type="general"}
+
+# Note from the authors
+
+We’ve noticed that once students understand how the binary number system works, they have many questions and are excited to explore the concepts outlined in this lesson further.
+We’ve added a lot of information into this lesson, however, it is not our intention that you will teach and cover all the concepts, but that you have at your fingertips the information you need when your students express an interest in learning more.
+
+{panel end}
 
 {panel type="general"}
 

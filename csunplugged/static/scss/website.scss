@@ -182,33 +182,35 @@ $rounded-corner-radius: 0.5rem;
   > summary {
     background-color: hsl(hue($color), saturation($color), 90%);
     color: $color !important;
-    .inline-image {
-      margin-top: 0.2rem;
-      margin-bottom: 0.2rem;
-      margin-#{$left}: auto;
-      margin-#{$right}: 0.2rem;
-    }
     &:hover {
       background-color: hsl(hue($color), saturation($color), 85%);
     }
   }
 }
 
+$details-summary-bg: #cbd0d4;
 details {
   @extend .boxed-text;
   overflow: hidden;
+  background-color: $gray-lighter;
 
   summary {
-    background-color: $gray-lighter;
+    background-color: $details-summary-bg;
     color: $gray-dark;
     cursor: pointer;
     font-size: 1.1em;
     padding: ($spacer * .25) ($spacer * .25) ($spacer * .25) $spacer;
     display: flex;
     align-items: center;
+    .inline-image {
+      margin-top: 0.2rem;
+      margin-bottom: 0.2rem;
+      margin-#{$left}: auto;
+      margin-#{$right}: 0.2rem;
+    }
   }
   summary:hover {
-    background-color: darken($gray-lighter, 10%);
+    background-color: darken($details-summary-bg, 10%);
   }
   &.panel-ct-abstraction {
     @include detail-colour-variant($ct-abstraction);
@@ -318,20 +320,25 @@ body {
 
 #content-container table:not(.table) {
   display: block;
-  margin-bottom: 1rem;
-  max-width: 100%;
-  overflow-x: auto;
+  margin-bottom: $spacer;
   width: 100%;
-  td, th {
-    padding: ($spacer * .75);
+  max-width: 100%;
+  background-color: $table-bg;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  th,
+  td {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    vertical-align: top;
+    border-top: $table-border-width solid $table-border-color;
+    white-space: nowrap;
   }
   th {
-    color: #464a4c;
-    background-color: #eceeef;
-    border-bottom: 2px solid #eceeef;
-  }
-  tr {
-    border-top: 1px solid #eceeef;
+    color: $table-head-color;
+    background-color: $table-head-bg;
+    border-color: $table-border-color;
   }
 }
 
@@ -386,31 +393,31 @@ ol, ul {
     &-green {
       border-top-color: $green;
       &:hover {
-        background-color: mix($green, $white, 10%)
+        background-color: mix($green, $white, 10%);
       }
     }
     &-yellow {
       border-top-color: $yellow;
       &:hover {
-        background-color: mix($yellow, $white, 10%)
+        background-color: mix($yellow, $white, 10%);
       }
     }
     &-light-purple {
       border-top-color: $light-purple;
       &:hover {
-        background-color: mix($light-purple, $white, 10%)
+        background-color: mix($light-purple, $white, 10%);
       }
     }
     &-orange {
       border-top-color: $orange;
       &:hover {
-        background-color: mix($orange, $white, 10%)
+        background-color: mix($orange, $white, 10%);
       }
     }
     &-teal {
       border-top-color: $teal;
       &:hover {
-        background-color: mix($teal, $white, 10%)
+        background-color: mix($teal, $white, 10%);
       }
     }
     .img-container {
@@ -435,7 +442,7 @@ ol, ul {
   }
   &:hover {
     transform: translateY(2px);
-    background-color: mix($blue, $white, 10%)
+    background-color: mix($blue, $white, 10%);
   }
   &.unavailable {
     background-color: rgba($black, 0.2);
@@ -508,4 +515,84 @@ h1, h2, h3, h4, h5, h6, details {
 button:hover .icon {
   stroke: $red;
   fill: $red;
+}
+
+@media print {
+  body {
+    padding-top: 0;
+    background-color: $white;
+  }
+  .link-item {
+    border-top: 2px solid $gray-400;
+    border-right: 2px solid $gray-400;
+    border-bottom: 2px solid $gray-400;
+  }
+  .print-col-12 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  .print-col-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+  .print-order-1 {
+    order: 1;
+  }
+  .print-order-2 {
+    order: 2;
+  }
+}
+
+// Fix for displaying images correcting in Internet Explorer
+// See: https://github.com/twbs/bootstrap/issues/25242
+.figure {
+  display: block !important;
+}
+
+/*
+ The following rules are used to better display <details> elements in Internet
+ Explorer and Edge, as they are currently unsupported. A JavaScript polyfill
+ is used to add functionality, however the following rules ensure to remove
+ some other issues.
+
+ 1. border: 0;
+    This is used as these browsers do not correctly calculate the position of
+    the element, and the border displays as a vertical line beside the element.
+    This removes the border completely.
+
+ 2. background-color: $gray-lighter;
+    This provides a backup to ensure the detail's contents display with a
+    background colour, by colouring a child div element which these browser
+    can properly calculate size and position. Without this the content is
+    displayed with no background colour, and it is hard for a user to decipher
+    what text belows to the detail element.
+
+ 3. padding: 0.5rem 1rem 0;
+    This provides extra spacing around the text within the panel so it doesn't
+    hit the background coloured edge.
+
+ Both sets of rules use CSS tricks to determine the browser. If these fail, a
+ JavaScript function could run on each page to determine the browser, or the
+ Django system could check the browser and include an optional file with these
+ rules.
+*/
+// IE10+ detail support
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  details {
+    border: 0 !important;
+    .boxed-text-content {
+      background-color: $gray-lighter !important;
+      padding: 0.5rem 1rem 0;
+    }
+  }
+}
+// Edge 12+ detail support
+@supports (-ms-ime-align:auto) {
+  details {
+    border: 0 !important;
+    .boxed-text-content {
+      background-color: $gray-lighter !important;
+      padding: 0.5rem 1rem 0;
+    }
+  }
 }

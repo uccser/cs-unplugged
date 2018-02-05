@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-22 12:04+0000\n"
-"PO-Revision-Date: 2018-01-23 10:05-0500\n"
+"POT-Creation-Date: 2018-02-02 12:04+0000\n"
+"PO-Revision-Date: 2018-02-03 10:05-0500\n"
 "Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
 "Language-Team: English (upside down)\n"
 "Language: en_UD\n"
@@ -90,6 +90,18 @@ msgstr "crwdns15777:0crwdne15777:0"
 
 msgid "Value Representation"
 msgstr "crwdns15775:0crwdne15775:0"
+
+msgid "Hello, I'm a"
+msgstr "crwdns19548:0crwdne19548:0"
+
+msgid "Programmer"
+msgstr "crwdns19549:0crwdne19549:0"
+
+msgid "Tester"
+msgstr "crwdns19550:0crwdne19550:0"
+
+msgid "Bot"
+msgstr "crwdns19551:0crwdne19551:0"
 
 msgid "Modulo"
 msgstr "crwdns15783:0crwdne15783:0"
@@ -313,8 +325,8 @@ msgstr "crwdns15645:0crwdne15645:0"
 msgid "Topics"
 msgstr "crwdns15646:0crwdne15646:0"
 
-msgid "Resources"
-msgstr "crwdns15647:0crwdne15647:0"
+msgid "Printables"
+msgstr "crwdns19552:0crwdne19552:0"
 
 msgid "About"
 msgstr "crwdns15648:0crwdne15648:0"
@@ -573,8 +585,8 @@ msgstr "crwdns15721:0crwdne15721:0"
 msgid "Classic CS Unplugged"
 msgstr "crwdns15722:0crwdne15722:0"
 
-msgid "CS Unplugged (2.0 onwards)"
-msgstr "crwdns18351:0crwdne18351:0"
+msgid "version 4.0.0 onwards"
+msgstr "crwdns19553:0crwdne19553:0"
 
 msgid "Founders"
 msgstr "crwdns15724:0crwdne15724:0"
@@ -584,6 +596,12 @@ msgstr "crwdns15725:0crwdne15725:0"
 
 msgid "Current Team"
 msgstr "crwdns15726:0crwdne15726:0"
+
+msgid "Previous Team Members"
+msgstr "crwdns19554:0crwdne19554:0"
+
+msgid "up to version 3.2.2"
+msgstr "crwdns19555:0crwdne19555:0"
 
 msgid "Contributors"
 msgstr "crwdns15727:0crwdne15727:0"
@@ -678,18 +696,18 @@ msgstr "crwdns18356:0crwdne18356:0"
 msgid "Read 'How do I teach CS Unplugged?'"
 msgstr "crwdns18357:0crwdne18357:0"
 
-msgid "This page diplays a complete list of all available resources. If a lesson uses a resource, the lesson will contain a direct link to the resource with a description on how to use it."
-msgstr "crwdns15779:0crwdne15779:0"
+msgid "This page diplays a complete list of all available printables. If a lesson uses a printable, the lesson will contain a direct link to the printable with a description on how to use it."
+msgstr "crwdns19556:0crwdne19556:0"
 
-msgid "No resources are available."
-msgstr "crwdns15780:0crwdne15780:0"
+msgid "No printables are available."
+msgstr "crwdns19557:0crwdne19557:0"
 
-msgid "Generate Resource"
-msgstr "crwdns15807:0crwdne15807:0"
+msgid "Generate Printable"
+msgstr "crwdns19558:0crwdne19558:0"
 
 #, python-format
-msgid "The download of this resource includes %(copies_amount)s unique copies."
-msgstr "crwdns15808:0%(copies_amount)scrwdne15808:0"
+msgid "The download of this Printable includes %(copies_amount)s unique copies."
+msgstr "crwdns19559:0%(copies_amount)scrwdne19559:0"
 
 msgid "Preview"
 msgstr "crwdns15809:0crwdne15809:0"
@@ -798,9 +816,6 @@ msgstr "crwdns15867:0crwdne15867:0"
 msgid "Students will be able to:"
 msgstr "crwdns15868:0crwdne15868:0"
 
-msgid "CS Unplugged resources"
-msgstr "crwdns15869:0crwdne15869:0"
-
 msgid "Classroom resources"
 msgstr "crwdns15870:0crwdne15870:0"
 
@@ -884,10 +899,6 @@ msgstr "crwdns15888:0%(lower)scrwdnd15888:0%(upper)scrwdne15888:0"
 
 msgid "and"
 msgstr "crwdns15889:0crwdne15889:0"
-
-#, python-format
-msgid "No learning outcomes listed for %(programming_challenge.name)s."
-msgstr "crwdns15890:0%(programming_challenge.name)scrwdne15890:0"
 
 msgid "Languages"
 msgstr "crwdns15891:0crwdne15891:0"

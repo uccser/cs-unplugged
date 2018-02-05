@@ -48,3 +48,6 @@ binary-art:
   number: 7
   curriculum-areas:
     - art
+  prerequisite-lessons:
+    unit-plan:
+      - codes-for-letters-using-binary-representation

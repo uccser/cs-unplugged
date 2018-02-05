@@ -84,17 +84,17 @@ crwdns12384:0crwdne12384:0 crwdns12385:0crwdne12385:0 crwdns12386:0crwdne12386:0
 
 crwdns12388:0crwdne12388:0 crwdns12389:0crwdne12389:0
 
-*BlockTag: crwdns12390:0crwdne12390:0*
-
-{image file-path="img/topics/sorting-network-toffees-cellos-sponge.png"}
-
-*BlockTag: crwdns18941:0crwdne18941:0*
+*BlockTag: crwdns19545:0crwdne19545:0*
 
 {panel type="general"}
 
 # crwdns18942:0crwdne18942:0
 
-crwdns12392:0crwdne12392:0
+crwdns19546:0crwdne19546:0
+
+*BlockTag: crwdns19547:0crwdne19547:0*
+
+{image file-path="img/topics/sorting-network-toffees-cellos-sponge.png" align="right"}
 
 crwdns12393:0crwdne12393:0
 

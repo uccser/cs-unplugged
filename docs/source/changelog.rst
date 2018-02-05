@@ -7,8 +7,7 @@ All notable changes to this project will be documented in this file.
 .. note ::
 
   We base our numbering system from the guidelines at `Semantic Versioning 2.0.0`_,
-  however since our project started before it was migrated to GitHub, the first
-  major open source release is being labeled as ``2.0.0``.
+  for versions ``4.0.0-alpha.1`` onwards.
 
   Given a version number MAJOR.MINOR.HOTFIX:
 
@@ -24,7 +23,7 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
-2.0.0-alpha.6.1
+4.0.0-alpha.6.1
 ==============================================================================
 
 - **Release date:** 22nd December 2017
@@ -34,7 +33,7 @@ All notable changes to this project will be documented in this file.
 
 - Fix bug where Cloud SQL Proxy searched for wrong credential file.
 
-2.0.0-alpha.6
+4.0.0-alpha.6
 ==============================================================================
 
 - **Release date:** 22nd December 2017
@@ -91,13 +90,13 @@ Many other smaller corrections, illustrations, and bugfixes have also been added
   - Update coverage to 4.4.2
   - Update Django to 1.11.7 and lock Django to 1.11 versions (long term release). `#679 <https://github.com/uccser/cs-unplugged/issues/679>`_ `#743 <https://github.com/uccser/cs-unplugged/issues/743>`_
 
-2.0.0-alpha.5
+4.0.0-alpha.5
 ==============================================================================
 
 - **Release date:** 30th October 2017
 - **Downloads:** `Source downloads are available on GitHub`_
 
-**Notable changes:**
+**Summary of changes:**
 
 This release improves many backend features, including smarter resource generation,
 dynamic resource previews, improved system testing, and bug fixes.
@@ -109,13 +108,13 @@ dynamic resource previews, improved system testing, and bug fixes.
 - Fix bug where production website is using development static files. `#646 <https://github.com/uccser/cs-unplugged/issues/646>`_
 - Fix bug where production static files are not deployed.
 
-2.0.0-alpha.4
+4.0.0-alpha.4
 ==============================================================================
 
 - **Release date:** 17th October 2017
 - **Downloads:** `Source downloads are available on GitHub`_
 
-**Notable changes:**
+**Summary of changes:**
 
 Adds a new searching algorithms topic including lessons, resources, and
 curriculum integrations.
@@ -148,13 +147,13 @@ New lessons for existing topics have also been added.
 - Open PDF resource download in new tab. `#431 <https://github.com/uccser/cs-unplugged/issues/431>`_
 - Fix bug in Google analytics. `#539 <https://github.com/uccser/cs-unplugged/issues/539>`_
 
-2.0.0-alpha.3
+4.0.0-alpha.3
 ==============================================================================
 
 - **Release date:** 27th June 2017
 - **Downloads:** `Source downloads are available on GitHub`_
 
-**Notable changes:**
+**Summary of changes:**
 
 This release adds several lessons, curriculum integrations, and programming challenges.
 It also fixes many visual bugs and inconsistencies.
@@ -176,13 +175,13 @@ It also fixes many visual bugs and inconsistencies.
 - Set lesson tables to always be consistent width. `#526 <https://github.com/uccser/cs-unplugged/issues/526>`_
 - Don't show curriculum integrations shortcut in topic sidebar if no integrations are available. `#533 <https://github.com/uccser/cs-unplugged/issues/533>`_
 
-2.0.0-alpha.2
+4.0.0-alpha.2
 ==============================================================================
 
 - **Release date:** 26th June 2017
 - **Downloads:** `Source downloads are available on GitHub`_
 
-**Notable changes:**
+**Summary of changes:**
 
 The inital content for the Unplugged programming topic has been added which
 includes the geometry, numeracy, and Kidbots units.
@@ -213,13 +212,13 @@ includes the geometry, numeracy, and Kidbots units.
 - Fix typo in how-binary-digits-work-junior lesson (thanks Richard S).`#503`_
 - Fix Nginx build after Travis image update. `#506`_
 
-2.0.0-alpha.1
+4.0.0-alpha.1
 ==============================================================================
 
 - **Release date:** 20th June 2017
 - **Downloads:** `Source downloads are available on GitHub`_
 
-**Notable changes:**
+**Summary of changes:**
 
 The first major step in releasing a open source version of CS Unplugged.
 While some existing content from the classic version of CS Unplugged have yet
@@ -256,6 +255,88 @@ The following topics are available in this version:
 - Sorting networks:
 
   - 1 lesson for ages 8 to 10.
+
+3.2.2
+==============================================================================
+
+- **Release date:** 11th January 2016
+- **Downloads:** `Word document <http://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_2015_v3.2.2.docx>`__
+
+**Changelog:**
+
+- Transcript of VP with chatbot reinstated in Turing Test material.
+
+3.2.1
+==============================================================================
+
+- **Release date:** 6th January 2016
+- **Downloads:** `Word document <http://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_2015_v3.2.1.docx>`__
+
+**Changelog:**
+
+- Two missing images (first example solution, and ladder networks) added to the Steiner trees activity.
+
+3.2.0
+==============================================================================
+
+- **Release date:** 5th January 2016
+- **Downloads:** `Word document <http://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_2015_v3.2.docx>`__
+
+**Changelog:**
+
+- Fixed some incorrect references to activity numbers caused by inserting a new activity.
+- Some minor grammar/spelling corrections.
+
+3.1.0
+==============================================================================
+
+- **Release date:** March 2015
+- **Downloads:** `Word document <http://classic.csunplugged.org/wp-content/uploads/2015/03/CSUnplugged_OS_2015_v3.1.docx>`__ and `PDF document <http://classic.csunplugged.org/wp-content/uploads/2015/03/CSUnplugged_OS_2015_v3.1.pdf>`__
+
+**Changelog:**
+
+- Switched to new logo design.
+- Combination of the two parts into one book and introduces version numbering.
+- Introduction updated.
+- New activity added – Tablets of Stone.
+- Minor updates to several activities and explanations.
+- Improve Curriculum links (moving away from NZ Curriculum to general curriculum).
+- Formatting improvements (fixing page numbers, layout, fonts changed – no more Comic Sans!).
+- Fixed footers and copyright information to make creative commons license clearer.
+
+2.5.0
+==============================================================================
+
+- **Release date:** 2012
+- **Downloads:** `Part 1 Word document <http://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_Part1_2012.docx>`__ and `Part 2 Word document <http://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_Part2_2012.doc>`__
+
+**Changelog:**
+
+- Updated version of the teachers’ edition, including the remaining 8 activities from version 1.0.
+- Updated a few terms that would no longer be meaningful to students e.g. mention of floppy disks.
+
+2.0.0
+==============================================================================
+
+- **Release date:** 2010
+- **Downloads:** `Word document <http://classic.csunplugged.org/wp-content/uploads/2015/01/unplugged-v2-teachers-March2010.doc>`__
+
+**Changelog:**
+
+- The first 12 activities of the original version re-written by teachers in 1999/2000 so that it was more suitable for use in the classroom; minor changes were made through to 2010.
+- This was eventually released as "open source" i.e. in MS Word, to support creating translations and local versions.
+- Updated images and cartoons.
+- Included links to the New Zealand curriculum.
+
+1.0.0
+==============================================================================
+
+- **Release date:** Mid 1990s
+- **Downloads:** `PDF document <http://classic.csunplugged.org/wp-content/uploads/2015/01/unplugged-book-v1.pdf>`__ and `LaTeX source <http://classic.csunplugged.org/wp-content/uploads/2015/01/unplugged-book-v1-latex-source.zip>`__
+
+**Changelog:**
+
+- Original version developed in the mid-1990s, with 20 activities, written by academics primarily for use as an outreach tool.
 
 .. _Semantic Versioning 2.0.0: http://semver.org/spec/v2.0.0.html
 .. _Source downloads are available on GitHub: https://github.com/uccser/cs-unplugged/releases

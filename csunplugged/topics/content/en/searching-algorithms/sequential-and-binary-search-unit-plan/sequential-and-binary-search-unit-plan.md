@@ -1,7 +1,5 @@
 # Sequential and binary search
 
-{comment ## See teaching Searching algorithms in action!}
-
 {comment Video 1: Sequential search: Random numbered cards with pictures on them. (using numbers from 0 - 31) - SETTING: As if it’s a maths group in a class setting}
 
 {comment Video 2: Binary search using numbered cards with pictures on them ranging from 0 - 999.}

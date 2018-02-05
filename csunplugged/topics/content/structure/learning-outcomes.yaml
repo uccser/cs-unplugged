@@ -94,6 +94,14 @@ error-explain-chose-parity-card:
   curriculum-areas:
     - generalising-and-patterns
 
+error-explain-steps-product-code-checksum:
+  curriculum-areas:
+    - algorithms
+
+error-discuss-checksum-algorithm-12-13-product-code:
+  curriculum-areas:
+    - algorithms
+
 error-explain-checksum-algorithm:
   curriculum-areas:
     - logic
