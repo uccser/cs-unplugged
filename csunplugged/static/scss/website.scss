@@ -585,3 +585,13 @@ button:hover .icon {
     }
   }
 }
+
+#welcome-alert {
+  @extend .alert;
+  background-color: rgba(132, 23, 23, 0.8);
+  border-color: rgba(189, 76, 76, 0.85);
+  a {
+    color: $gray-lighter;
+    text-decoration: underline;
+  }
+}
