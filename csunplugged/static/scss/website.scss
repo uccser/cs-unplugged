@@ -590,8 +590,11 @@ button:hover .icon {
   @extend .alert;
   background-color: rgba(132, 23, 23, 0.8);
   border-color: rgba(189, 76, 76, 0.85);
+  strong {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
   a {
     color: $gray-lighter;
-    text-decoration: underline;
   }
 }
