@@ -1,12 +1,14 @@
 # Product code check digits
 
-{panel type="general"}
+## Key questions
 
-# Preparatory knowledge
+How many people do you know check their dockets at the supermarket or in a shop to be sure that what they purchased matches the docket?
 
-It is helpful, but not essential, for students to have done the [lesson on the Modulo operator]('topics:lesson' 'unplugged-programming' 'numeracy-unit-plan' 'modulo') before doing this lesson.
+## Potential answers could include:
 
-{panel end}
+- Typically it’s not many, and that is because the barcode system is so reliable that we trust that it works.
+
+## Lesson starter
 
 {panel type="video"}
 
@@ -18,17 +20,15 @@ A demonstration of lesson two ("Product Code Check Digits") being taught is avai
 
 {panel end}
 
-## Key questions
+{panel type="general"}
 
-How many people do you know check their dockets at the supermarket or in a shop to be sure that what they purchased matches the docket?
+# Preparatory knowledge
 
-## Potential answers could include:
+It is helpful, but not essential, for students to have done the [lesson on the Modulo operator]('topics:lesson' 'unplugged-programming' 'numeracy-unit-plan' 'modulo') before doing this lesson.
 
-- Typically it’s not many, and that is because the barcode system is so reliable that we trust that it works.
+{panel end}
 
-## Lesson starter
-
-{image file-path="img/topics/error-correction-paint-tin.png" alt="A black paint tin with paint across the name and barcode."}
+{image file-path="img/topics/error-correction-paint-tin.png" alt="A black paint tin with paint across the name and barcode." alignment="right"}
 
 Explain to your class that you can calculate what the last digit will be on a
 12 or 13 digit product code (the number on a bar code).

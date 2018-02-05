@@ -15,6 +15,19 @@ Things that don't go faster might include delivering a note to the office (10 pe
 
 ## Lesson starter
 
+{panel type="video"}
+
+# See teaching this in action
+
+{video url="https://www.youtube.com/embed/M-z5pDjqtZk"}
+
+Some other videos showing different situations using Sorting Networks:
+
+-   [Video 1](https://www.youtube.com/watch?v=LOxfdsBBjKI)
+-   [Video 2](https://www.youtube.com/watch?v=30WcPnvfiKE)
+
+{panel end}
+
 Use the Sorting Network template to draw a 6 person Sorting Network on a paved surface outside using chalk (other alternatives include using masking/painters tape on a carpet or wooden floor, tape on a tarpaulin, or line marking paint on grass).
 Note that the Sorting Network needn't use different colours or line
 thicknesses, but if suitable chalk or tape is available, this can help students remember which way to go.

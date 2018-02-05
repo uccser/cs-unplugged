@@ -5,6 +5,11 @@
     <rect x="100.0" y="200.0" style="fill:none;" width="50.0" height="75.0"/>
     <text id="box1" transform="matrix(1 0 0 1 112.9186 39.8638)" style="fill:#006838; font-family:'PatrickHand-Regular'; font-size:48px;">13 Digit Barcode</text>
     <rect id="onrectangle" x="100.0" y="200.0" style="fill:none;" width="82.6" height="27.5"/>
+    <rect id="element2" x="100.0" y="100.0" style="fill:none;" width="100.0" height="100.0"/>
+    <!-- Next element has id '123' in Adobe Illustrator program -->
+    <rect id="_x31_23" x="100.0" y="100.0" style="fill:none;" width="100.0" height="100.0"/>
+    <!-- Next element has id 'element_2' in Adobe Illustrator program -->
+    <rect id="element_x5F_2" x="100.0" y="100.0" style="fill:none;" width="100.0" height="100.0"/>
     <text transform="matrix(1 0 0 1 6.7101 91.6138)" style="fill:#006838; font-family:'PatrickHand-Regular'; font-size:18px;">Separate!</text>
     <rect x="100.0" y="200.0" style="fill:none;" width="86.1" height="72.5"/>
     <text id="withtspan" transform="matrix(1 0 0 1 6.7101 339.1938)">

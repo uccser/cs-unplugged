@@ -4,11 +4,6 @@ Computers today use digits to represent information - that's why they're called 
 The simplest and most common way to represent digits is the binary number system, with just two digits (usually written as 0 and 1).
 It is called binary because there are only two different digits used, or two states.
 
-A bit is usually stored in a memory cell inside a computer, which is an electronic circuit that can be set to a high voltage level (1) or a low voltage level (0); on disks they are represented by magnetism or optical reflection.
-
-There are billions of these bits on a typical computer, and they are used to store text, numbers, images, video, and anything else that we need to store or transmit. On computer networks the bits are communicated by light, voltages or sound.
-Anything that can have two different values can represent a bit!
-
 {panel type="video"}
 
 # See teaching this in action
@@ -16,6 +11,11 @@ Anything that can have two different values can represent a bit!
 {video url="https://www.youtube.com/embed/Wy6-FXtLMV8"}
 
 {panel end}
+
+A bit is usually stored in a memory cell inside a computer, which is an electronic circuit that can be set to a high voltage level (1) or a low voltage level (0); on disks they are represented by magnetism or optical reflection.
+
+There are billions of these bits on a typical computer, and they are used to store text, numbers, images, video, and anything else that we need to store or transmit. On computer networks the bits are communicated by light, voltages or sound.
+Anything that can have two different values can represent a bit!
 
 ## Digital Technologies | Data Representation
 
@@ -55,7 +55,7 @@ Humans normally use the decimal number system, which is base 10, so there are te
 
 ## Real World Implications
 
-{image file-path="img/topics/col_binary_01.png"}
+{image file-path="img/topics/col_binary_01.png" alignment="right"}
 
 - The number of bits used to represent characters in text affects the range of characters available; a short representation is more compact, but can't represent characters from all languages.
 

@@ -1,6 +1,14 @@
 # Error detection and correction
 
-{image file-path="img/topics/parity-trick-example.png" alt="A student is surprised another student can detect the changed card in the Parity Trick."}
+{panel type="video"}
+
+# See teaching this in action
+
+{video url="https://www.youtube.com/embed/FnwBratAhfg"}
+
+{video url="https://www.youtube.com/embed/WjMPd6sgou0"}
+
+{panel end}
 
 The world is a complicated and imperfect place, and errors can occur whenever
 information is stored or transmitted.
@@ -20,6 +28,8 @@ The extra information might be an extra "check digit" such as the last digit of
 a credit card number or barcode number on a product, or extra binary digits
 (bits) in data stored on a computer.
 
+{image file-path="img/topics/parity-trick-example.png" alt="A student is surprised another student can detect the changed card in the Parity Trick."}
+
 Not only can most digital systems detect errors, but many can correct them as
 well, back to what the data should have been.
 Error correction can appear to be magic, since it involves being able to put
@@ -32,7 +42,7 @@ dozens of cards has been turned over, using the same kind of method that
 computers use to figure out when and where an error has occurred in a piece of
 data.
 
-{image file-path="img/topics/mug-with-barcode.png"}
+{image file-path="img/topics/mug-with-barcode.png" alignment="right"}
 
 A related technique is used on the barcodes printed on products to check that
 they are scanned correctly at a checkout; the last digit in the product code is
@@ -130,7 +140,7 @@ digit wrong?
 Someone else might get charged for the item and person who mis-typed the number
 might be accused of fraud just because of a simple typing mistake.
 
-{image file-path="img/topics/cd-with-marks.png"}
+{image file-path="img/topics/cd-with-marks.png" alignment="right"}
 
 Everything stored by computers and sent between them is represented as bits
 (binary digits).

@@ -227,47 +227,74 @@ destination of the link.
 **Escaping closing brackets within link URLs:** A closing bracket can be
 escaped by prefixing it with a backslash ``\)``.
 
-Internal links
+Link to page within website
 ------------------------------------------------------------------------------
 
-These are links to pages within the CS Unplugged website.
-These links will not work when viewed in a Markdown renderer, however these
-will function properly when converted to HTML and viewed on the website.
-Links to pages are referenced from the language directory within the
-``content/`` directory (see examples below).
+.. note::
 
-Link to Page Within Website (relative link - Verto feature)
-------------------------------------------------------------------------------
+  This type of link requires knowledge of project URL routing, required URL
+  values, and the `Django URL template tag <https://docs.djangoproject.com/en/1.11/ref/templates/builtins/#url>`__.
+  If you are unsure on how to create a link of this type, please contact us
+  and we will be happy to help.
 
-You can refer to a page by writing the page name with ``.html`` at the end.
-The name of a file is defined by it's slug in the configuration files, but
-it helps to have knowledge of the resulting URL path for a file.
-See the examples below:
+Links to pages within the website use the Django ``url`` template tag.
+In order to create a link, use the values that would be given to the template tag.
+See the example below for an example.
+
+This following Markdown:
 
 .. code-block:: none
 
-  Check out [binary numbers](topics/binary-numbers.html).
-  Check out the [about page](about.html).
+  See [challenge 4.1]('topics:programming_challenge' 'kidbots' 'check-if-divisor').
 
-`Click here to read the documentation on how to create a relative link`_.
+results in the following HTML:
 
-Link to Heading on Page Within Website
+.. code-block:: html
+
+  See <a href="/en/topics/kidbots/programming/check-if-divisor">challenge 4.1</a>.
+
+Currently linking to a heading within the page is not supported (or recommended
+as heading text can change easily).
+
+Link to resource page with pre-selected options
 ------------------------------------------------------------------------------
 
-You can refer to a subsection on a page by following the same syntax as above
-and then adding the subsection name at the end with a ``#`` separator.
-All headers are subsections that have a link that can be linked to (called an
-anchor link).
-The anchor link can be determined by converting the header name to lowercase,
-with spaces replaced with dashes, and punctuation removed.
-In cases where duplicate headings exist on the same page, a number is appended
-on the end of the anchor link.
+.. note::
+
+  This type of link requires knowledge of project URL routing, required URL
+  values, and the `Django URL template tag <https://docs.djangoproject.com/en/1.11/ref/templates/builtins/#url>`__.
+  If you are unsure on how to create a link of this type, please contact us
+  and we will be happy to help.
+
+This link uses the same syntax as internal links, with a query string appended
+at the end.
+The Markdown processor Verto will read the link string and seperate everything
+before and after the ``?`` symbol, and will create a link using the Django URL tag
+with everything before the symbol (the same way a normal internal link is created).
+Then the processor will append the query string at the end of the link (see
+example below).
+Each parameter should be a resource option with its desired value.
+Values given as query parameters override the default values for each resource.
+
+This following Markdown:
 
 .. code-block:: none
 
-  Please [contact us](about/index.html#contact).
+  [Little Red Riding Hood cards]('resources:resource' 'sorting-network-cards'?type=riding_hood)
 
-Link to a Page Outside of Website (external link)
+results in the following HTML to the Django system:
+
+.. code-block:: html
+
+  <a href="{% url 'resources:resource' 'sorting-network-cards' %}?type=riding_hood">Little Red Riding Hood cards</a>
+
+results in the following HTML to the user:
+
+.. code-block:: html
+
+  <a href="/en/resources/sorting-network-cards/?type=riding_hood">Little Red Riding Hood cards</a>
+
+Link to a page outside of website (external link)
 ------------------------------------------------------------------------------
 
 These are links to websites that are not a part of the CS Unplugged project.
@@ -277,13 +304,13 @@ The URL should include the ``https://`` or ``http://`` as required.
 
   Check out [Google's website](https://www.google.com).
 
-Create a Link on an Image (Verto feature)
+Create a link on an image (Verto feature)
 ------------------------------------------------------------------------------
 
 Images should now be linked using the ``caption-link`` and ``source`` tag
 parameters for including an image.
 
-Create a Link on a Button (Verto feature)
+Create a link on a button (Verto feature)
 ------------------------------------------------------------------------------
 
 `Click here to read the documentation on how to add a button link`_.

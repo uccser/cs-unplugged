@@ -1,4 +1,4 @@
-<figure class="figure img-wrap{% if alignment == 'left' %} img-wrap-left{% elif alignment =='right' %} img-wrap-right{% endif %}">
+<figure class="figure img-container {% if alignment %} img-wrap-{{ alignment }}{% endif %}">
 <img
 {% if file_relative %}
 {% autoescape false -%}

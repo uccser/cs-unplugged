@@ -68,6 +68,12 @@ error-explain-each-card-bit:
 error-explain-chose-parity-card:
   text: Explain why they chose each extra bit (card) when setting up a parity column/row.
 
+error-explain-steps-product-code-checksum:
+  text: Explain the steps you need to take to calculate a product code’s checksum.
+
+error-discuss-checksum-algorithm-12-13-product-code:
+  text: Discuss why the checksum algorithm works for both 12 and 13 digit product codes.
+
 error-explain-checksum-algorithm:
   text: Explain why the checksum algorithm is so reliable.
 

@@ -16,7 +16,7 @@ Choose a letter to convert into a decimal number. Find the letter’s numerical 
 
 For example, to convert the letter E, the algorithm would have you counting A,1; B, 2; C, 3; D, 4; E, 5.
 
-{image file-path="img/topics/binary_count_girl.png" alt="girl thinking about alphabet and numbers"}
+{image file-path="img/topics/binary_count_girl.png" alt="girl thinking about alphabet and numbers" alignment="right"}
 
 (A more efficient algorithm would have a table to look up, like the one created at the start of the activity, and most programming languages can convert directly from characters to numbers, with the notable exception of Scratch, which needs to use the above algorithm.)
 
@@ -44,7 +44,7 @@ This activity is particularly relevant to abstraction, since we are representing
 We could also expand our abstraction because we don’t actually have to use 0s and 1s to represent our message.
 We could use any two values, for example you could represent your message by flashing a torch on and off, or drawing a line of squares and triangles on the whiteboard.
 
-{image file-path="img/topics/binary_torch.png" alt="Flashlight"}
+{image file-path="img/topics/binary_torch.png" alt="Flashlight" alignment="right"}
 
 Abstraction helps us simplify things because we can ignore the details we don’t currently need to know.
 Binary number representation is an abstraction that hides the complexity of the electronics and hardware inside a computer that stores data.

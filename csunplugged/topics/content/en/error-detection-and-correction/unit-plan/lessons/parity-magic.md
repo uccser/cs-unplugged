@@ -1,10 +1,32 @@
 # Parity magic
 
+## Key questions
+
+-   Why is it important for computers to be able to detect if the data received
+    over the internet is the same as the data that was sent?
+-   What if I sent you an email that said you could now have Monday off school,
+    but when you received it, there was some electrical interference and a
+    **bit** was changed from off to on so that the word "now" became "not".
+    What would your reaction be?
+-   Can computers correct these sorts of mistakes automatically, and how would
+    they do that?
+
+### Potential answers could include:
+
+Students may come up with situations where computers won't read a disc or scan a code, but they may also confuse this kind of problem with other kinds of failures such as an error in a program or a flat battery.
+
+{image file-path="img/topics/school-test-error.png" alt="A school test shows every question marked correct but the overall score is 0%."}
+
+Adults use computers for important things like banking, writing school reports, and communicating with each other.
+If the information being stored got changed without anyone knowing, you'd get the wrong balance in your account (too much or too little), the wrong grade in your report, or the wrong message in an email.
+Or worst still the website you are wanting to go to for your learning or the DVD you want to play won’t work!
+This activity will look at how computers correct this automatically.
+
+## Lesson starter
+
 {panel type="video"}
 
 # See teaching this in action
-
-A demonstration of lesson one ("Parity magic") being taught is available here:
 
 {video url="https://www.youtube.com/embed/FnwBratAhfg"}
 
@@ -36,30 +58,6 @@ There is also an
 from the Computer Science Field Guide.
 
 {panel end}
-
-## Key questions
-
--   Why is it important for computers to be able to detect if the data received
-    over the internet is the same as the data that was sent?
--   What if I sent you an email that said you could now have Monday off school,
-    but when you received it, there was some electrical interference and a
-    **bit** was changed from off to on so that the word "now" became "not".
-    What would your reaction be?
--   Can computers correct these sorts of mistakes automatically, and how would
-    they do that?
-
-### Potential answers could include:
-
-Students may come up with situations where computers won't read a disc or scan a code, but they may also confuse this kind of problem with other kinds of failures such as an error in a program or a flat battery.
-
-{image file-path="img/topics/school-test-error.png" alt="A school test shows every question marked correct but the overall score is 0%."}
-
-Adults use computers for important things like banking, writing school reports, and communicating with each other.
-If the information being stored got changed without anyone knowing, you'd get the wrong balance in your account (too much or too little), the wrong grade in your report, or the wrong message in an email.
-Or worst still the website you are wanting to go to for your learning or the DVD you want to play won’t work!
-This activity will look at how computers correct this automatically.
-
-## Lesson starter
 
 1.  Teacher to class: "I’ve just learnt a magic trick I want to show you".
 
@@ -112,71 +110,7 @@ Step 1: Example layout of a 5x5 grid set up by the volunteer.
 
 ### Step by step adding a parity bit to each row and column
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-2.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 2: Adding parity bit for the first row.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-3.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 3: Adding parity bit for the second row.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-4.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 4: Adding parity bit for the third row.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-5.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 5: Adding parity bit for the fourth row.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-6.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 6: Adding parity bit for the fifth row.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-7.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 7: Adding parity bit for the first column.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-8.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 8: Adding parity bit for the second column.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-9.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 9: Adding parity bit for the third column.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-10.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 10: Adding parity bit for the fourth column.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-11.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 11: Adding parity bit for the fifth column.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-12.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 12: Adding parity bit for the sixth column.
-
-{image end}
+{image file-path="img/topics/parity-cards.gif"}
 
 The last parity bit placed is useful because it will always work for both the
 column and row; if it doesn't match for both the row and column then you'll
@@ -224,7 +158,7 @@ You can make a fuss that it might have been a fluke, so repeat the trick again.
 (After you put the card back to how it was originally, look away again and ask
 for another card to be flipped over.)
 
-{image file-path="img/topics/parity-wizard.png" alt="A wizard holding a magic one with parity cards on it."}
+{image file-path="img/topics/parity-wizard.png" alt="A wizard holding a magic one with parity cards on it." alignment="right"}
 
 So is it magic? Or is it a trick?
 

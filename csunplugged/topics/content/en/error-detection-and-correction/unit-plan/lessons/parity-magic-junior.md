@@ -1,42 +1,5 @@
 # Parity magic
 
-{panel type="video"}
-
-# See teaching this in action
-
-A demonstration of lesson one ("Parity magic") being taught is available here:
-
-{video url="https://www.youtube.com/embed/FnwBratAhfg"}
-
-{panel end}
-
-{panel type="general"}
-
-# Notes on resources
-
-{image file-path="img/topics/parity-cards.png" alt="A pile of square cards with black on one side and white on the other side."}
-
-You will require:
-
--   A set of 36 "fridge magnet" cards, all identical with a different colour on
-    each side (e.g. black and white); or non-magnetic cards, in which case the
-    demonstration should be done on a table-top or the floor.
-    The magnetic ones would need to be magnetic both ways up; sheets of
-    double-sided magnetic material can be purchased, but conventional fridge
-    magnets usually won't stick upside down.
-    Double sided magnetic cards can also be made by sticking single-sided
-    magnetic sheet back to back.
-    Paper (non-magnetic) cards can be made by cutting up a sheet of light card
-    that is a different colour on each side.
--   A metal board (ideally a whiteboard) if magnetic cards are being used.
--   Each pair of children will need: a set of 36 (non-magnetic) cards as above.
-
-There is also an
-[online interactive version of the parity cards here](http://csfieldguide.org.nz/en/interactives/parity/index.html),
-from the Computer Science Field Guide.
-
-{panel end}
-
 ## Key questions
 
 -   Have you ever had a DVD not work properly?
@@ -54,6 +17,44 @@ If the information being stored got changed without anyone knowing, you'd get th
 Or worst still the website you are wanting to go to for your learning or the DVD you want to play won’t work! This activity will look at how computers correct this automatically.
 
 ## Lesson starter
+
+{panel type="video"}
+
+# See teaching this in action
+
+A demonstration of lesson one ("Parity magic") being taught is available here:
+
+{video url="https://www.youtube.com/embed/FnwBratAhfg"}
+
+{panel end}
+
+{panel type="general"}
+
+# Notes on resources
+
+You will require:
+
+{image file-path="img/topics/parity-cards.png" alt="A pile of square cards with black on one side and white on the other side." alignment="right"}
+
+-   A set of 36 "fridge magnet" cards, all identical with a different colour on
+    each side (e.g. black and white); or non-magnetic cards, in which case the
+    demonstration should be done on a table-top or the floor.
+    The magnetic ones would need to be magnetic both ways up; sheets of
+    double-sided magnetic material can be purchased, but conventional fridge
+    magnets usually won't stick upside down.
+    Double sided magnetic cards can also be made by sticking single-sided
+    magnetic sheet back to back.
+    Paper (non-magnetic) cards can be made by cutting up a sheet of light card
+    that is a different colour on each side.
+
+-   A metal board (ideally a whiteboard) if magnetic cards are being used.
+-   Each pair of children will need: a set of 36 (non-magnetic) cards as above.
+
+There is also an
+[online interactive version of the parity cards here](http://csfieldguide.org.nz/en/interactives/parity/index.html),
+from the Computer Science Field Guide.
+
+{panel end}
 
 1.  Teacher to class: "I’ve just learnt a magic trick I want to show you".
 
@@ -97,71 +98,7 @@ Step 1: Example layout of a 5x5 grid set up by the volunteer.
 
 ### Step by step adding a parity bit to each row and column
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-2.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 2: Adding parity bit for the first row.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-3.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 3: Adding parity bit for the second row.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-4.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 4: Adding parity bit for the third row.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-5.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 5: Adding parity bit for the fourth row.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-6.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 6: Adding parity bit for the fifth row.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-7.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 7: Adding parity bit for the first column.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-8.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 8: Adding parity bit for the second column.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-9.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 9: Adding parity bit for the third column.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-10.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 10: Adding parity bit for the fourth column.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-11.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 11: Adding parity bit for the fifth column.
-
-{image end}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-12.png" alt="Progress image of adding parity bits." caption="true"}
-
-Step 12: Adding parity bit for the sixth column.
-
-{image end}
+{image file-path="img/topics/parity-cards.gif"}
 
 The last parity bit placed is useful because it will always work for both the column and row;
 if it doesn't match for both the row and column then you'll have made a mistake with one of the cards, and should go back and check them (try to not make it obvious that you're doing that).
@@ -199,7 +136,7 @@ Turn this card over casually to restore it to the correct colour, saying “it�
 You can make a fuss that it might have been a fluke, so repeat the trick again.
 (After you put the card back to how it was originally, look away again and ask for another card to be flipped over.)
 
-{image file-path="img/topics/parity-wizard.png" alt="A wizard holding a magic one with parity cards on it."}
+{image file-path="img/topics/parity-wizard.png" alt="A wizard holding a magic one with parity cards on it." alignment="right"}
 
 So is it magic? Or is it a trick?
 

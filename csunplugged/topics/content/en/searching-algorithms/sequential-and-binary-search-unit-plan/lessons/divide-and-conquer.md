@@ -42,7 +42,7 @@ Have a payment system ready such as tokens for your classroom, counters, sweets,
 The game is even better if you have some real stakes - for example: I have 10 marbles each is worth 2 minutes of game time.
 For every token you use to find the number I’m thinking of, you will lose a marble.
 
-Let’s see how many guesses it takes to find the number: 302
+Let’s see how many guesses it takes to find the number: **302**
 
 Who would like the first guess? (Choose a student).
 Which animal should I turn over? Tell us why you chose that guess.
@@ -53,6 +53,8 @@ If they decide not to, that's fine; they will learn the hard way if they use a l
 Turn over the chosen card to show the number under it.
 If it's the correct one, you can stop, otherwise *remove that card and all other cards that the number can’t be* (which will either be all cards to the right or all cards to the left of the chosen one) and take away one token from your pile.
 Repeat this process until a student chooses the card with your number on it; if they use all ten tokens then the teacher "wins".
+
+{image file-path="img/topics/searching_cards.gif" alt="Correct card selected."}
 
 How many guesses did it take to find the number?
 

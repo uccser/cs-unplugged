@@ -19,6 +19,7 @@ urlpatterns = i18n_patterns(
 )
 
 urlpatterns += [
+    url(r"", include("classic.urls")),
     url(r"^_ah/health", views.health_check),
 ]
 
