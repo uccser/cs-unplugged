@@ -20,6 +20,8 @@ Were they able to interpret the loop correctly?
 
 The symbols on the cards represented the physical actions students needed to perform; they were an abstract representation.
 
+Abstraction was also used to simplify things when the hula hoop was used as a loop.
+
 #### Examples of what you could look for:
 
 Were the students able to work with the symbols?

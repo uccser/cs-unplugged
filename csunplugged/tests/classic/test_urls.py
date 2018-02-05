@@ -236,6 +236,15 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
             fetch_redirect_response=False
         )
 
+    def test_modems(self):
+        response = self.client.get("/modem/")
+        self.assertRedirects(
+            response,
+            "http://classic.csunplugged.org/modems-unplugged-2",
+            status_code=301,
+            fetch_redirect_response=False
+        )
+
     def test_modems_unplugged_2(self):
         response = self.client.get("/modems-unplugged-2")
         self.assertRedirects(
