@@ -4,9 +4,11 @@ crwdns16972:0crwdne16972:0
 
 {iframe link="https://scratch.mit.edu/projects/embed/152939066/?autostart=false"}
 
-*BlockTag: crwdns16974:0crwdne16974:0*
+*BlockTag: crwdns18515:0crwdne18515:0*
 
-{panel type="help" title="Recommended blocks for solution 1"}
+{panel type="help"}
+
+# crwdns18516:0crwdne18516:0
 
 <pre><code class="scratch:split:random">crwdns16975:0crwdne16975:0
 </code></pre>
@@ -25,9 +27,11 @@ crwdns16972:0crwdne16972:0
 
 {panel end}
 
-*BlockTag: crwdns16980:0crwdne16980:0*
+*BlockTag: crwdns18517:0crwdne18517:0*
 
-{panel type="help" title="Recommended blocks for solution 2"}
+{panel type="help"}
+
+# crwdns18518:0crwdne18518:0
 
 <pre><code class="scratch:split:random">crwdns16981:0crwdne16981:0
 </code></pre>
@@ -48,9 +52,11 @@ crwdns16972:0crwdne16972:0
 
 {panel end}
 
-*BlockTag: crwdns16987:0crwdne16987:0*
+*BlockTag: crwdns18519:0crwdne18519:0*
 
-{panel type="help" title="Recommended blocks for solution 3"}
+{panel type="help"}
+
+# crwdns18520:0crwdne18520:0
 
 <pre><code class="scratch:split:random">crwdns16988:0crwdne16988:0
 </code></pre>

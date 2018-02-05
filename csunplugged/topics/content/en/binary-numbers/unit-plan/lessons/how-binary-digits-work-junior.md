@@ -1,9 +1,5 @@
 # How binary digits work
 
-## Note from the authors
-
-We’ve noticed that when we teach the binary number system to students ages 5 - 7 we are focusing on number knowledge and number identification rather than how the binary number system works. We also support students to learn to count by one to one matching, because they are counting the dots. Students are motivated to learn because they are learning how computers store information. Students may ask you questions and be excited to explore the concepts outlined in this lesson further. We’ve added a lot of information into this lesson, however, it is not our intention that you will teach and cover all the concepts, but that you have at your fingertips the information you need when your students express an interest in learning more.
-
 ## Key question
 
 -   How do you think a digital device stores information?
@@ -12,7 +8,25 @@ Accept and record all answers to revisit at the end of the lesson.
 
 ## Lesson starter
 
-{panel type="general" title="Notes on resources"}
+{panel type="video"}
+
+# See teaching this in action
+
+{video url="https://www.youtube.com/embed/Wy6-FXtLMV8"}
+
+{panel end}
+
+{panel type="general"}
+
+# Note from the authors
+
+We’ve noticed that when we teach the binary number system to students ages 5 - 7 we are focusing on number knowledge and number identification rather than how the binary number system works. We also support students to learn to count by one to one matching, because they are counting the dots. Students are motivated to learn because they are learning how computers store information. Students may ask you questions and be excited to explore the concepts outlined in this lesson further. We’ve added a lot of information into this lesson, however, it is not our intention that you will teach and cover all the concepts, but that you have at your fingertips the information you need when your students express an interest in learning more.
+
+{panel end}
+
+{panel type="general"}
+
+# Notes on resources
 
 There is also an online interactive version of the binary cards available (4 card version, corresponding to this activity, or 5 card version if students are comfortable with numbers up to 31), from the [Computer Science Field Guide](http://www.csfieldguide.org.nz/en/interactives/binary-cards/index.html?digits=8). However, we strongly recommend using physical cards to start with.
 
@@ -40,7 +54,9 @@ The technical word for that is a “bit”.
 3.  Ask the class what the number of dots on the next card will be.
     Get them to explain why they think that.
 
-    {panel type="teaching" title="Teaching observations"}
+    {panel type="teaching"}
+
+    # Teaching observations
 
     Students will usually suggest it should be three.
     If they suggest 4, they may have done the activity before (or have seen the cards you are holding!), or they may have very good pattern recognition skills!
@@ -54,7 +70,9 @@ The technical word for that is a “bit”.
 
     {image file-path="img/topics/col_binary_4_kids_3_cards.png" alt="3 kids holding binary cards"}
 
-    {panel type="teaching" title="Teaching observations"}
+    {panel type="teaching"}
+
+    # Teaching observations
 
     Usually some students will point out  that you've missed out the three, but simply indicate that you haven't made a mistake, something is happening to the numbers and we will be able to make three by using the cards.
 
@@ -62,7 +80,9 @@ The technical word for that is a “bit”.
 
 5.  Ask what the next card is, and why.
 
-    {panel type="teaching" title="Teaching observations"}
+    {panel type="teaching"}
+
+    # Teaching observations
 
     At this point it is common for students to guess that it is 6 (since it follow the numbers 2 and 4).
     However, if you let them think about it a little more, some will usually come up with 8, and those students should be able to convince the others that they are correct.
@@ -75,7 +95,9 @@ The technical word for that is a “bit”.
 
 6.  Show the 4th card and hand it out:
 
-    {panel type="teaching" title="Teaching observations"}
+    {panel type="teaching"}
+
+    # Teaching observations
 
     Background information for those who are curious!
     If we kept handing out cards then once we got to 8 cards we would have 256 dots in total if we added up all the cards.
@@ -113,7 +135,9 @@ The technical word for that is a “bit”.
 
     {image file-path="img/topics/binary_cards_equals_three.png" alt="Diagram showing that 2 binary cards make the number 3"}
 
-    {panel type="math" title="Mathematical links"}
+    {panel type="math"}
+
+    # Mathematical links
 
     At a junior level we are focusing on using this counting system to represent numbers and making the association that with these “bits” you can make any number.
     We’re not going to focus on further knowledge about number base systems.
@@ -215,7 +239,9 @@ The technical word for that is a “bit”.
 
     i.  Repeat until a pattern is recognised that each time we add another bit we can now represent twice as many numbers.
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 A concept that students may struggle with here is that the number of values is one more than the maximum value (e.g. from 0 to 7, there are 8 different numbers).
 The same observation occurs with the number of digits in conventional decimal numbers; the largest digit is 9, but there are 10 possible digits (counting 0).

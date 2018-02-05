@@ -1,5 +1,5 @@
 {% if area.translation_available %}
-  <span class="badge badge-default badge-{{ area.colour }}">
+  <a href="{% url 'search:index' %}?curriculum_areas={{ area.pk }}" class="badge badge-default badge-{{ area.colour }}">
     {{ area }}
-  </span>
+  </a>
 {% endif %}

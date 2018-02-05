@@ -1,8 +1,10 @@
 # crwdns12153:0crwdne12153:0
 
-*BlockTag: crwdns12154:0crwdne12154:0*
+*BlockTag: crwdns18893:0crwdne18893:0*
 
-{panel type="teaching" title="See teaching this in action!"}
+{panel type="video"}
+
+# crwdns18894:0crwdne18894:0
 
 crwdns12155:0crwdne12155:0
 
@@ -18,8 +20,6 @@ crwdns12157:0crwdne12157:0
 *BlockTag: crwdns12162:0crwdne12162:0*
 
 {panel end}
-
-## crwdns12163:0crwdne12163:0
 
 crwdns12164:0crwdne12164:0 crwdns12165:0crwdne12165:0 crwdns12166:0crwdne12166:0 crwdns12167:0crwdne12167:0
 
@@ -47,7 +47,7 @@ crwdns12183:0crwdne12183:0 crwdns12184:0crwdne12184:0
 
 crwdns12185:0crwdne12185:0 crwdns12186:0crwdne12186:0 crwdns12187:0crwdne12187:0 crwdns12188:0crwdne12188:0
 
-## crwdns12189:0crwdne12189:0
+## crwdns18281:0crwdne18281:0
 
 *BlockTag: crwdns12190:0crwdne12190:0*
 
@@ -55,7 +55,7 @@ crwdns12185:0crwdne12185:0 crwdns12186:0crwdne12186:0 crwdns12187:0crwdne12187:0
 
 crwdns12191:0crwdne12191:0 crwdns12192:0crwdne12192:0 crwdns12193:0crwdne12193:0 crwdns12194:0crwdne12194:0
 
-## crwdns12195:0crwdne12195:0
+## crwdns18282:0crwdne18282:0
 
 - crwdns12196:0crwdne12196:0
 - crwdns12197:0crwdne12197:0
@@ -64,9 +64,11 @@ crwdns12191:0crwdne12191:0 crwdns12192:0crwdne12192:0 crwdns12193:0crwdne12193:0
 - crwdns12200:0crwdne12200:0
 - crwdns12201:0crwdne12201:0 crwdns12202:0crwdne12202:0
 
-*BlockTag: crwdns12203:0crwdne12203:0*
+*BlockTag: crwdns18895:0crwdne18895:0*
 
-{panel type="math" title="Mathematical links"}
+{panel type="math"}
+
+# crwdns18896:0crwdne18896:0
 
 crwdns12204:0crwdne12204:0
 
@@ -74,7 +76,7 @@ crwdns12204:0crwdne12204:0
 
 {panel end}
 
-## crwdns12206:0crwdne12206:0
+## crwdns18283:0crwdne18283:0
 
 *BlockTag: crwdns12207:0crwdne12207:0*
 
@@ -92,7 +94,7 @@ crwdns12216:0crwdne12216:0 crwdns12217:0crwdne12217:0 crwdns12218:0crwdne12218:0
 
 crwdns12219:0crwdne12219:0
 
-## crwdns12220:0crwdne12220:0
+## crwdns18284:0crwdne18284:0
 
 - crwdns12221:0crwdne12221:0
 - crwdns12222:0crwdne12222:0

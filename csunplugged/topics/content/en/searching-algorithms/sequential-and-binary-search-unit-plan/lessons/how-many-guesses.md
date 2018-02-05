@@ -17,15 +17,33 @@ for 1, 2, 3, 4, 5, and 6 guesses"}
 
 What do you notice about our predictions?
 
+**Potential answers could include:**
+
+-   That we had different numbers of guesses, because you might get lucky and find your book at the first house, but you might also could be unlucky and find your book at the last house.
+-   Three and four guesses are likely to be popular because that’s approximately half way (this is indeed close to the average that could be expected).
+-   Some students might choose 6 guesses; that is the most that would ever be needed.
+
+{panel type="teaching"}
+
+# Teaching observations
+
+Students might expect that they could be 'lucky' and find the book early, or they might pessimistically go for the worst case, where it's in the last few houses that they visit.
+The activity below will illustrate that both of these cases could happen, but the actual number will be randomly distributed, so there's no simple answer to the question.
+
+{panel end}
+
 ## Lesson starter
 
 Place the 31 searching squares on a table.
 Explain that we have 31 different numbers, one on each card.
 Show that one side has an animal on it and the other a number.
 Under each of these cards is a number that you can’t see, and they aren’t in order.
-The numbers range from 0 to 1000. Can you find the card with the number 302?
+The numbers range from 0 to 1000.
+Can you find the card with the number 302?
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 You can adapt the range to suit what your students are working on in their mathematics lessons.
 This lesson focuses on unsorted lists so it doesn’t matter if the numbers are all from a sequential range ie all the numbers in the range from 0 - 31, as long as the cards are placed in a random order.
@@ -64,7 +82,9 @@ Did the students win because they guessed within 10 guesses or did you win becau
 Repeat this game until the students have won 3 times or you have won 3 times.
 You should shuffle the cards each time, and introduce new cards or different sets if necessary to avoid students memorising what is on each card.
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 The number of guesses required can be anything from 1 (if you are lucky and find the number on the first guess), to 31 (if you’re very unlucky and have to turn over every card).
 The number of guesses should be evenly distributed between 1 and 31 - each number is equally likely.
@@ -73,9 +93,13 @@ This also means that most of the time students won't have any tokens left if you
 
 {panel end}
 
-## How many guesses programming challenges
+## Applying what we have just learnt
 
-
+This algorithm is a practical one that is sometimes used for searching for data on a computer.
+It's very useful to be able to predict how long an algorithm will take.
+In this lesson, it might seem unpredictable, but there are some definite conclusions that can be drawn.
+For example, if there are 31 cards, you never need to look at more than 31 items, and it's a matter of luck whether you find it very quickly or if it's the last one you look at.
+A worse algorithm would be to pick a card at random, check it, put it back, and repeat this until you find what you're looking for; this could theoretically go on forever!
 
 ## Lesson reflection
 

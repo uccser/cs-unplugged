@@ -47,6 +47,8 @@ speaking:
   name: Speaking
 library:
   name: Library
+word-study:
+  name: Word Study
 
 art:
   name: Art
@@ -89,5 +91,5 @@ social-studies:
   name: Social Studies
 history:
   name: History
-geograph:
+geography:
   name: Geography

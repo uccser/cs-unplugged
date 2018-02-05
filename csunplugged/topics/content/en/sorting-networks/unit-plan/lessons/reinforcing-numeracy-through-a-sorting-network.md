@@ -19,6 +19,19 @@ people probably can't speed it up).
 
 ## Lesson starter
 
+{panel type="video"}
+
+# See teaching this in action
+
+{video url="https://www.youtube.com/embed/M-z5pDjqtZk"}
+
+Some other videos showing different situations using Sorting Networks:
+
+-   [Video 1](https://www.youtube.com/watch?v=LOxfdsBBjKI)
+-   [Video 2](https://www.youtube.com/watch?v=30WcPnvfiKE)
+
+{panel end}
+
 Use the Sorting Network template to draw a 6 person Sorting Network on a paved
 surface outside using chalk (other alternatives include using masking/painters
 tape on a carpet or wooden floor, tape on a tarpaulin, or line marking paint on
@@ -34,14 +47,18 @@ counters instead of students moving around, but this is much less engaging.
 Show the students the Sorting Network drawn on the ground, and tell them "This
 chalk computer can do some things very fast, let’s investigate what it does."
 
-{panel type="math" title="Mathematical links"}
+{panel type="math"}
+
+# Mathematical links
 
 Supports students understanding of ordering any range of numbers, from ordering
 single digit numbers to fractions and decimals, or numbers in their millions.
 
 {panel end}
 
-{panel type="exemplars" title="Exemplars"}
+{panel type="exemplars"}
+
+# Exemplars
 
 Here are examples of the kinds of numbers you could use to reinforce number
 ordering (two of each set of six cards are shown).
@@ -49,11 +66,11 @@ It's good to start with the single digit numbers to get students used to the
 system, and then provide more difficult numbers appropriate to the students'
 ability level.
 
-{image file-path="img/topics/sorting-network-example-cards-1.jpg" alt="Two pieces of paper with single digit numbers printed on them."}
+{image file-path="img/topics/sorting-network-example-cards-1.png" alt="Two pieces of paper with single digit numbers printed on them."}
 
-{image file-path="img/topics/sorting-network-example-cards-2.jpg" alt="Two pieces of paper with seven digit numbers printed on them."}
+{image file-path="img/topics/sorting-network-example-cards-2.png" alt="Two pieces of paper with seven digit numbers printed on them."}
 
-{image file-path="img/topics/sorting-network-example-cards-3.jpg" alt="Two pieces of paper with fractions printed on them."}
+{image file-path="img/topics/sorting-network-example-cards-3.png" alt="Two pieces of paper with fractions printed on them."}
 
 {panel end}
 
@@ -99,7 +116,9 @@ ability level.
     shortest amount of time (either with two Sorting Networks racing teams at
     the same time, or one network with the times measured using a stopwatch).
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 If it didn’t work it may be because a pair incorrectly went to the wrong square
 or a person raced ahead of everyone else.

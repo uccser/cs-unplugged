@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-29 02:44+0000\n"
-"PO-Revision-Date: 2017-11-29 10:05-0500\n"
+"POT-Creation-Date: 2018-02-02 12:04+0000\n"
+"PO-Revision-Date: 2018-02-03 10:05-0500\n"
 "Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
 "Language-Team: English (upside down)\n"
 "Language: en_UD\n"
@@ -90,6 +90,18 @@ msgstr "crwdns15777:0crwdne15777:0"
 
 msgid "Value Representation"
 msgstr "crwdns15775:0crwdne15775:0"
+
+msgid "Hello, I'm a"
+msgstr "crwdns19548:0crwdne19548:0"
+
+msgid "Programmer"
+msgstr "crwdns19549:0crwdne19549:0"
+
+msgid "Tester"
+msgstr "crwdns19550:0crwdne19550:0"
+
+msgid "Bot"
+msgstr "crwdns19551:0crwdne19551:0"
 
 msgid "Modulo"
 msgstr "crwdns15783:0crwdne15783:0"
@@ -313,8 +325,8 @@ msgstr "crwdns15645:0crwdne15645:0"
 msgid "Topics"
 msgstr "crwdns15646:0crwdne15646:0"
 
-msgid "Resources"
-msgstr "crwdns15647:0crwdne15647:0"
+msgid "Printables"
+msgstr "crwdns19552:0crwdne19552:0"
 
 msgid "About"
 msgstr "crwdns15648:0crwdne15648:0"
@@ -346,6 +358,9 @@ msgstr "crwdns15653:0crwdne15653:0"
 
 msgid "Help"
 msgstr "crwdns15654:0crwdne15654:0"
+
+msgid "Search"
+msgstr "crwdns19542:0crwdne19542:0"
 
 msgid "Glossary"
 msgstr "crwdns15655:0crwdne15655:0"
@@ -396,14 +411,14 @@ msgstr "crwdns15668:0crwdne15668:0"
 msgid "Computational Thinking and CS Unplugged"
 msgstr "crwdns15669:0crwdne15669:0"
 
+msgid "Principles"
+msgstr "crwdns15672:0crwdne15672:0"
+
 msgid "People"
 msgstr "crwdns15670:0crwdne15670:0"
 
 msgid "Contact Us"
 msgstr "crwdns15671:0crwdne15671:0"
-
-msgid "Principles"
-msgstr "crwdns15672:0crwdne15672:0"
 
 msgid "What is Computational Thinking?"
 msgstr "crwdns15673:0crwdne15673:0"
@@ -534,6 +549,24 @@ msgstr "crwdns15714:0crwdne15714:0"
 msgid "<strong>Community Google Group:</strong> We have a <a href=\"https://groups.google.com/forum/#!forum/cs-unplugged-sharing\">Google Group</a> you can join and talk about CS Unplugged."
 msgstr "crwdns15715:0crwdne15715:0"
 
+msgid "How do I teach CS Unplugged?"
+msgstr "crwdns18344:0crwdne18344:0"
+
+msgid "CS Unplugged is very much based on a constructivist approach: students are given challenges based on a few simple rules, and in the process of solving those challenges they uncover powerful ideas on their own. Not only is this a more memorable way to learn, but it empowers them to realise that these are ideas within their grasp. The activities are also very kinesthetic - the bigger the materials, the better."
+msgstr "crwdns18345:0crwdne18345:0"
+
+msgid "Because of this approach, you can also learn alongside the students. You'll need to read through the whole activity so that you're prepared for it, and we have provided videos for many of them so you can visualise them, but as the students discover how these ideas work out, you'll start to see patterns and ideas that the students are discovering as they understand the principles behind these topics from Computer Science."
+msgstr "crwdns18346:0crwdne18346:0"
+
+msgid "If you're working within a school curriculum, you can find appropriate activities based on the learning objectives and age group. In several countries there are guides to the local curriculum that link it to Unplugged (e.g. <a href=\"https://www.digitaltechnologieshub.edu.au/\">Digital Technologies Hub for Australia</a>). But the unit plans listed follow the common topics that are appearing in school curricula, so you are likely to find something relevant from the titles. Note that CS Unplugged does not teach programming - the Kidbots activity is an excellent lead in to programming and the \"Plugging it in\" sections give some programming exercises to follow up with - but in general we are trying to show students what they could do with programming, before they have to learn it."
+msgstr "crwdns18347:0crwdne18347:0"
+
+msgid "But reading about Unplugged isn't the fun way to engage with it - pick a lesson for your students, and dive into it!"
+msgstr "crwdns18348:0crwdne18348:0"
+
+msgid "View available topics"
+msgstr "crwdns18349:0crwdne18349:0"
+
 msgid "Computer Science<br>without a computer"
 msgstr "crwdns15716:0crwdne15716:0"
 
@@ -543,11 +576,8 @@ msgstr "crwdns15717:0crwdne15717:0"
 msgid "The resources available to teachers include unit plans, lesson plans, teaching videos, curriculum integration activities, and programming exercises to plug in the Computer Science concepts they have just learnt unplugged."
 msgstr "crwdns15718:0crwdne15718:0"
 
-msgid "Learn about CS Unplugged"
-msgstr "crwdns15719:0crwdne15719:0"
-
-msgid "Topics covered by CS Unplugged"
-msgstr "crwdns15720:0crwdne15720:0"
+msgid "What is Computer Science?"
+msgstr "crwdns18350:0crwdne18350:0"
 
 msgid "Curriculum Integrations"
 msgstr "crwdns15721:0crwdne15721:0"
@@ -555,8 +585,8 @@ msgstr "crwdns15721:0crwdne15721:0"
 msgid "Classic CS Unplugged"
 msgstr "crwdns15722:0crwdne15722:0"
 
-msgid "CS Unplugged (2017 onwards)"
-msgstr "crwdns15723:0crwdne15723:0"
+msgid "version 4.0.0 onwards"
+msgstr "crwdns19553:0crwdne19553:0"
 
 msgid "Founders"
 msgstr "crwdns15724:0crwdne15724:0"
@@ -566,6 +596,12 @@ msgstr "crwdns15725:0crwdne15725:0"
 
 msgid "Current Team"
 msgstr "crwdns15726:0crwdne15726:0"
+
+msgid "Previous Team Members"
+msgstr "crwdns19554:0crwdne19554:0"
+
+msgid "up to version 3.2.2"
+msgstr "crwdns19555:0crwdne19555:0"
 
 msgid "Contributors"
 msgstr "crwdns15727:0crwdne15727:0"
@@ -642,18 +678,36 @@ msgstr "crwdns15751:0crwdne15751:0"
 msgid "The activities are resilient to errors made by students; they should not depend on getting many difficult steps exactly right, and minor mistakes should not prevent participants from understanding the principles. The instructions are usually just one or two rules and a goal that can be expressed in a single sentence (e.g. “Each card is either fully visible or not; how can you display exactly 11 dots?”, or “We need to get from any house to any other house; what is the smallest number of paving stones that make this possible”)."
 msgstr "crwdns15752:0crwdne15752:0"
 
-msgid "This page diplays a complete list of all available resources. If a lesson uses a resource, the lesson will contain a direct link to the resource with a description on how to use it."
-msgstr "crwdns15779:0crwdne15779:0"
+msgid "The term \"Computer Science\" has become widely used in recent years as the skills associated with the subject have become crucial to developing innovative digital technology, and qualifications in this area are highly sought after."
+msgstr "crwdns18352:0crwdne18352:0"
 
-msgid "No resources are available."
-msgstr "crwdns15780:0crwdne15780:0"
+msgid "The CS Unplugged activities are intended to give you a feel for what the subject is - you can learn what it is by doing. At this early stage, rather than define it formally, let's think about how it might influence our daily lives. For example, think of your favourite search engine. On the surface it seems like a fairly simple interface: a text box where you type what you want to search for, and a button to start the search. The level of programming knowledge needed to implement a text box and a button is fairly rudimentary, and you could implement a search by writing a short program (probably less than 20 lines) to go through all the text on the web and displaying any that match. But obviously there's more to it than this! There are billions of searches are made every day, on billions on web pages, and the approach above will give answers (eventually), but will be so slow and ineffective that no-one would use it."
+msgstr "crwdns18353:0crwdne18353:0"
 
-msgid "Generate Resource"
-msgstr "crwdns15807:0crwdne15807:0"
+msgid "This is where computer science comes in; many areas of Computer Science are employed to make the system work well, and most of them are illustrated through Unplugged. How could you search billions of items in a fraction of a second (Searching Algorithms)? How do you make sure that it's easy to use (Human-Computer Interaction)? We need to keep it secure - users don't want other people to know what they are searching for, and the search engine doesn't want commercial interests to manipulate search ranking (Computer Security and Encryption)? Search engines generally predict what you are about to search for (Artificial Intelligence). It needs to be reliable - a small mistake from one of the thousands of programmers at a search engine company shouldn't prevent the site working (Software Engineering). It needs to scale well - if it becomes 10 times as popular, you don't want it to need 100 times the computing resources (Algorithms). The relevance of a search generally depends on the relationships between web sites - you need a map showing which sites are linked to which other ones (Graphs)."
+msgstr "crwdns18354:0crwdne18354:0"
+
+msgid "The areas above cover much of what the subject of computer science is about. Programming is just a tool for implementing ideas (well, it's a very powerful tool, and requires considerable skill to use well). But programming on its own isn't enough to create software that people love to use, and Computer Science is the area that gives programmers the inside knowledge to make their software fast, efficient, reliable, secure, usable, intelligent, scalable, and even delightful!"
+msgstr "crwdns18355:0crwdne18355:0"
+
+msgid "That's why we developed CS Unplugged - we want young students to be empowered to understand the great ideas that computer science covers, without having to become expert programmers first. They won't be learning exactly how to build the next search engine, social network or game app, but they will have an idea of what sort of techniques are needed to make it successful. We don't want them to see digital systems as some kind of magic that they can't participate in, but as something that they could understand and, for some, create themselves. Actually, it is is kind of magic when you start understanding what can and can't be done."
+msgstr "crwdns18356:0crwdne18356:0"
+
+msgid "Read 'How do I teach CS Unplugged?'"
+msgstr "crwdns18357:0crwdne18357:0"
+
+msgid "This page diplays a complete list of all available printables. If a lesson uses a printable, the lesson will contain a direct link to the printable with a description on how to use it."
+msgstr "crwdns19556:0crwdne19556:0"
+
+msgid "No printables are available."
+msgstr "crwdns19557:0crwdne19557:0"
+
+msgid "Generate Printable"
+msgstr "crwdns19558:0crwdne19558:0"
 
 #, python-format
-msgid "The download of this resource includes %(copies_amount)s unique copies."
-msgstr "crwdns15808:0%(copies_amount)scrwdne15808:0"
+msgid "The download of this Printable includes %(copies_amount)s unique copies."
+msgstr "crwdns19559:0%(copies_amount)scrwdne19559:0"
 
 msgid "Preview"
 msgstr "crwdns15809:0crwdne15809:0"
@@ -672,6 +726,19 @@ msgstr "crwdns15813:0crwdne15813:0"
 
 msgid "Lesson"
 msgstr "crwdns15814:0crwdne15814:0"
+
+msgid "Within topic"
+msgstr "crwdns19543:0crwdne19543:0"
+
+#, python-format
+msgid "<strong>Ages %(lower)s to %(upper)s:</strong> Lesson %(number)s"
+msgstr "crwdns15866:0%(lower)scrwdnd15866:0%(upper)scrwdnd15866:0%(number)scrwdne15866:0"
+
+msgid "within unit plan"
+msgstr "crwdns19544:0crwdne19544:0"
+
+msgid "Challenge Level:"
+msgstr "crwdns15885:0crwdne15885:0"
 
 msgid "The following table lists curriculum integrations for all topics in the CS Unplugged content."
 msgstr "crwdns15853:0crwdne15853:0"
@@ -740,21 +807,14 @@ msgid "lesson"
 msgstr "crwdns18237:0crwdne18237:0"
 
 #, python-format
-msgid "<strong>Duration:</strong> %(lesson.duration)s minutes"
-msgstr "crwdns15865:0%(lesson.duration)scrwdne15865:0"
-
-#, python-format
-msgid "<strong>Ages %(lower)s to %(upper)s:</strong> Lesson %(number)s"
-msgstr "crwdns15866:0%(lower)scrwdnd15866:0%(upper)scrwdnd15866:0%(number)scrwdne15866:0"
+msgid "<strong>Duration:</strong> %(duration)s minutes"
+msgstr "crwdns18358:0%(duration)scrwdne18358:0"
 
 msgid "Learning outcomes"
 msgstr "crwdns15867:0crwdne15867:0"
 
 msgid "Students will be able to:"
 msgstr "crwdns15868:0crwdne15868:0"
-
-msgid "CS Unplugged resources"
-msgstr "crwdns15869:0crwdne15869:0"
 
 msgid "Classroom resources"
 msgstr "crwdns15870:0crwdne15870:0"
@@ -826,9 +886,6 @@ msgstr "crwdns15884:0%(topic)scrwdne15884:0"
 msgid "programming challenge"
 msgstr "crwdns18243:0crwdne18243:0"
 
-msgid "Challenge Level:"
-msgstr "crwdns15885:0crwdne15885:0"
-
 msgid "This programming challenge is linked to the following lessons:"
 msgstr "crwdns15886:0crwdne15886:0"
 
@@ -842,10 +899,6 @@ msgstr "crwdns15888:0%(lower)scrwdnd15888:0%(upper)scrwdne15888:0"
 
 msgid "and"
 msgstr "crwdns15889:0crwdne15889:0"
-
-#, python-format
-msgid "No learning outcomes listed for %(programming_challenge.name)s."
-msgstr "crwdns15890:0%(programming_challenge.name)scrwdne15890:0"
 
 msgid "Languages"
 msgstr "crwdns15891:0crwdne15891:0"
@@ -882,15 +935,8 @@ msgstr "crwdns18245:0crwdne18245:0"
 msgid "list of topics"
 msgstr "crwdns18246:0crwdne18246:0"
 
-msgid "Unit plan:"
-msgstr "crwdns15898:0crwdne15898:0"
-
-msgid "or jump straight to a lesson of the unit:"
-msgstr "crwdns15899:0crwdne15899:0"
-
-#, python-format
-msgid "The following resources are used in %(name)s lessons, and can be accessed here (and also on each lesson page)."
-msgstr "crwdns15900:0%(name)scrwdne15900:0"
+msgid "Unit Plans"
+msgstr "crwdns18359:0crwdne18359:0"
 
 msgid "Looking for more?"
 msgstr "crwdns15901:0crwdne15901:0"
@@ -898,8 +944,17 @@ msgstr "crwdns15901:0crwdne15901:0"
 msgid "Click here for other resources"
 msgstr "crwdns15902:0crwdne15902:0"
 
-msgid "Curriculum integrations"
-msgstr "crwdns15903:0crwdne15903:0"
+msgid "Description"
+msgstr "crwdns18360:0crwdne18360:0"
+
+msgid "Unit plan:"
+msgstr "crwdns15898:0crwdne15898:0"
+
+msgid "What's it all about?"
+msgstr "crwdns18361:0crwdne18361:0"
+
+msgid "Read the full unit plan description"
+msgstr "crwdns18362:0crwdne18362:0"
 
 msgid "Lessons"
 msgstr "crwdns15905:0crwdne15905:0"

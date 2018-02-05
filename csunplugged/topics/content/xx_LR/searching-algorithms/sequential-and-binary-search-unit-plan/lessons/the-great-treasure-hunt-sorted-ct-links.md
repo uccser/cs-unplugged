@@ -1,6 +1,8 @@
-*BlockTag: crwdns11909:0crwdne11909:0*
+*BlockTag: crwdns18401:0crwdne18401:0*
 
-{panel type="ct-algorithm" title="Algorithmic thinking"}
+{panel type="ct-algorithm"}
+
+# crwdns18402:0crwdne18402:0
 
 crwdns11910:0crwdne11910:0 crwdns11911:0crwdne11911:0
 
@@ -14,9 +16,11 @@ crwdns11914:0crwdne11914:0
 
 {panel end}
 
-*BlockTag: crwdns11916:0crwdne11916:0*
+*BlockTag: crwdns18403:0crwdne18403:0*
 
-{panel type="ct-abstraction" title="Abstraction"}
+{panel type="ct-abstraction"}
+
+# crwdns18404:0crwdne18404:0
 
 crwdns11917:0crwdne11917:0
 
@@ -30,9 +34,11 @@ crwdns11921:0crwdne11921:0
 
 {panel end}
 
-*BlockTag: crwdns11923:0crwdne11923:0*
+*BlockTag: crwdns18405:0crwdne18405:0*
 
-{panel type="ct-decomposition" title="Decomposition"}
+{panel type="ct-decomposition"}
+
+# crwdns18406:0crwdne18406:0
 
 crwdns11924:0crwdne11924:0
 
@@ -44,9 +50,11 @@ crwdns11926:0crwdne11926:0
 
 {panel end}
 
-*BlockTag: crwdns11928:0crwdne11928:0*
+*BlockTag: crwdns18407:0crwdne18407:0*
 
-{panel type="ct-pattern" title="Generalising and patterns"}
+{panel type="ct-pattern"}
+
+# crwdns18408:0crwdne18408:0
 
 crwdns11929:0crwdne11929:0
 
@@ -60,9 +68,11 @@ crwdns11933:0crwdne11933:0
 
 {panel end}
 
-*BlockTag: crwdns11935:0crwdne11935:0*
+*BlockTag: crwdns18409:0crwdne18409:0*
 
-{panel type="ct-evaluation" title="Evaluation"}
+{panel type="ct-evaluation"}
+
+# crwdns18410:0crwdne18410:0
 
 crwdns11936:0crwdne11936:0
 
@@ -76,9 +86,11 @@ crwdns11941:0crwdne11941:0
 
 {panel end}
 
-*BlockTag: crwdns11943:0crwdne11943:0*
+*BlockTag: crwdns18411:0crwdne18411:0*
 
-{panel type="ct-logic" title="Logic"}
+{panel type="ct-logic"}
+
+# crwdns18412:0crwdne18412:0
 
 crwdns11944:0crwdne11944:0 crwdns11945:0crwdne11945:0 crwdns11946:0crwdne11946:0 crwdns11947:0crwdne11947:0 crwdns11948:0crwdne11948:0 crwdns11949:0crwdne11949:0
 

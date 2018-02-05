@@ -173,6 +173,27 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
             ]
         )
 
+    # Created to avoid https://github.com/uccser/cs-unplugged/issues/827
+    def test_programming_challenge_view_ages_context_learning_outcome_not_duplicated(self):
+        topic = self.test_data.create_topic(1)
+        difficulty = self.test_data.create_difficulty_level(1)
+        challenge = self.test_data.create_programming_challenge(topic, 1, difficulty)
+        learning_outcome = self.test_data.create_learning_outcome(1)
+        area_1 = self.test_data.create_curriculum_area(1)
+        area_2 = self.test_data.create_curriculum_area(2)
+        learning_outcome.curriculum_areas.add(area_1, area_2)
+        challenge.learning_outcomes.add(learning_outcome)
+        kwargs = {
+            "topic_slug": topic.slug,
+            "programming_challenge_slug": challenge.slug,
+        }
+        url = reverse("topics:programming_challenge", kwargs=kwargs)
+        response = self.client.get(url)
+        self.assertQuerysetEqual(
+            response.context["learning_outcomes"],
+            ["<LearningOutcome: Outcome 1>"]
+        )
+
     def test_programming_challenge_view_implementations_context(self):
         topic = self.test_data.create_topic(1)
         difficulty = self.test_data.create_difficulty_level(1)

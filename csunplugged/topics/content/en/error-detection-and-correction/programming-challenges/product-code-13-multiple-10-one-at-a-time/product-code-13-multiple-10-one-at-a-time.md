@@ -12,7 +12,9 @@ and so on) and show if this total is a multiple of 10 or not.
 Your program should display the outputs shown in this table for the given
 inputs provided:
 
-{panel type="general" title="Example"}
+{panel type="general"}
+
+# Example
 
 **Input**
 ```

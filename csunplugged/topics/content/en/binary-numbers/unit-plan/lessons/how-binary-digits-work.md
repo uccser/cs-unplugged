@@ -1,10 +1,5 @@
 # How binary digits work
 
-## Note from the authors
-
-We’ve noticed that once students understand how the binary number system works, they have many questions and are excited to explore the concepts outlined in this lesson further.
-We’ve added a lot of information into this lesson, however, it is not our intention that you will teach and cover all the concepts, but that you have at your fingertips the information you need when your students express an interest in learning more.
-
 ## Key questions
 
 -   What different number systems do we know about? (Answers might include:
@@ -18,9 +13,28 @@ We’ve added a lot of information into this lesson, however, it is not our inte
     numerals can be useful for making a number look more mysterious or harder
     to read.)
 
-## lesson starter
+## Lesson starter
 
-{panel type="general" title="Notes on resources"}
+{panel type="video"}
+
+# See teaching this in action
+
+{video url="https://www.youtube.com/embed/Wy6-FXtLMV8"}
+
+{panel end}
+
+{panel type="general"}
+
+# Note from the authors
+
+We’ve noticed that once students understand how the binary number system works, they have many questions and are excited to explore the concepts outlined in this lesson further.
+We’ve added a lot of information into this lesson, however, it is not our intention that you will teach and cover all the concepts, but that you have at your fingertips the information you need when your students express an interest in learning more.
+
+{panel end}
+
+{panel type="general"}
+
+# Notes on resources
 
 There is also an online interactive version of the binary cards [here](http://www.csfieldguide.org.nz/en/interactives/binary-cards/index.html?digits=8), from the [Computer Science Field Guide](http://www.csfieldguide.org.nz/), but it is preferable to work with physical cards.
 
@@ -45,7 +59,9 @@ There is also an online interactive version of the binary cards [here](http://ww
 3.  Ask the class what the number of dots on the next card will be.
     Get them to explain why they think that.
 
-    {panel type="teaching" title="Teaching observations"}
+    {panel type="teaching"}
+
+    # Teaching observations
 
     Students will usually suggest it should be three.
     If they suggest 4, they have probably done the activity before (or
@@ -59,7 +75,9 @@ There is also an online interactive version of the binary cards [here](http://ww
 
     {image file-path="img/topics/col_binary_3cards.png" alt="3 kids holding binary cards"}
 
-    {panel type="teaching" title="Teaching observations"}
+    {panel type="teaching"}
+
+    # Teaching observations
 
     Usually some students will complain that you've missed out the three,
     but simply indicate that you haven't made a mistake.
@@ -70,7 +88,9 @@ There is also an online interactive version of the binary cards [here](http://ww
 
 5.  Ask what the next card is, and why.
 
-    {panel type="teaching" title="Teaching observations"}
+    {panel type="teaching"}
+
+    # Teaching observations
 
     At this point it is common for students to guess that it is 6
     (since it follow the numbers 2 and 4).
@@ -94,7 +114,9 @@ There is also an online interactive version of the binary cards [here](http://ww
 
 8.  Continue with 64 and 128 dots.
 
-    {panel type="teaching" title="Teaching observations"}
+    {panel type="teaching"}
+
+    # Teaching observations
 
     At 128 dots there would be 8 cards. This is 8 bits, which is commonly
     referred to as a byte.
@@ -129,7 +151,9 @@ There is also an online interactive version of the binary cards [here](http://ww
 
     {image file-path="img/topics/binary-cards-total-9.png" alt="Diagram showing that 2 binary cards make the number 9"}
 
-    {panel type="math" title="Mathematical links"}
+    {panel type="math"}
+
+    # Mathematical links
 
     Base 10 (our counting system) has 10 digits, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.
     When we count in base 10, we count from 0 to 9 and then run out of digits.
@@ -259,7 +283,9 @@ There is also an online interactive version of the binary cards [here](http://ww
     i. Repeat until a pattern is recognised that each time we add another bit
     we can now represent twice as many numbers.
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 A concept that students may struggle with here is that the number of values
 is one more than the maximum value (e.g. from 0 to 7, there are 8 different

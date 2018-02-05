@@ -6,6 +6,7 @@ from topics.models import CurriculumIntegration
 from topics.management.commands._CurriculumIntegrationsLoader import CurriculumIntegrationsLoader
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
+from utils.errors.InvalidYAMLValueError import InvalidYAMLValueError
 
 
 class CurriculumIntegrationsLoaderTest(BaseTestWithDB):
@@ -58,7 +59,7 @@ class CurriculumIntegrationsLoaderTest(BaseTestWithDB):
             ci_loader.load
         )
 
-    def test_missing_areas_key(self):
+    def test_missing_curriculum_areas_key(self):
         config_file = "missing-areas.yaml"
         topic = self.test_data.create_topic("1")
         ci_loader = CurriculumIntegrationsLoader(topic, base_path=self.base_path, structure_filename=config_file)
@@ -76,7 +77,7 @@ class CurriculumIntegrationsLoaderTest(BaseTestWithDB):
             ci_loader.load
         )
 
-    def test_blank_areas_value(self):
+    def test_blank_curriculum_areas_value(self):
         config_file = "blank-areas.yaml"
         topic = self.test_data.create_topic("1")
         ci_loader = CurriculumIntegrationsLoader(topic, base_path=self.base_path, structure_filename=config_file)
@@ -85,12 +86,23 @@ class CurriculumIntegrationsLoaderTest(BaseTestWithDB):
             ci_loader.load
         )
 
-    def test_area_undefined(self):
+    def test_curriculum_area_undefined(self):
         config_file = "basic-config.yaml"
         topic = self.test_data.create_topic("1")
         ci_loader = CurriculumIntegrationsLoader(topic, base_path=self.base_path, structure_filename=config_file)
         self.assertRaises(
             KeyNotFoundError,
+            ci_loader.load
+        )
+
+    def test_parent_curriculum_area_raises_exception_when_parent_selected(self):
+        config_file = "basic-config.yaml"
+        area_1 = self.test_data.create_curriculum_area(1)
+        self.test_data.create_curriculum_area(2, parent=area_1)
+        topic = self.test_data.create_topic(1)
+        ci_loader = CurriculumIntegrationsLoader(topic, base_path=self.base_path, structure_filename=config_file)
+        self.assertRaises(
+            InvalidYAMLValueError,
             ci_loader.load
         )
 

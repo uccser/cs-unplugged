@@ -1,6 +1,8 @@
-*BlockTag: crwdns11332:0crwdne11332:0*
+*BlockTag: crwdns19498:0crwdne19498:0*
 
-{panel type="ct-algorithm" title="Algorithmic thinking"}
+{panel type="ct-algorithm"}
+
+# crwdns19499:0crwdne19499:0
 
 crwdns11333:0crwdne11333:0 crwdns11334:0crwdne11334:0 crwdns11335:0crwdne11335:0
 
@@ -12,9 +14,11 @@ crwdns11337:0crwdne11337:0 crwdns11338:0crwdne11338:0
 
 {panel end}
 
-*BlockTag: crwdns11340:0crwdne11340:0*
+*BlockTag: crwdns19500:0crwdne19500:0*
 
-{panel type="ct-abstraction" title="Abstraction"}
+{panel type="ct-abstraction"}
+
+# crwdns19501:0crwdne19501:0
 
 crwdns11341:0crwdne11341:0 crwdns11342:0crwdne11342:0
 
@@ -28,9 +32,11 @@ crwdns11345:0crwdne11345:0
 
 {panel end}
 
-*BlockTag: crwdns11347:0crwdne11347:0*
+*BlockTag: crwdns19502:0crwdne19502:0*
 
-{panel type="ct-decomposition" title="Decomposition"}
+{panel type="ct-decomposition"}
+
+# crwdns19503:0crwdne19503:0
 
 crwdns11348:0crwdne11348:0 crwdns11349:0crwdne11349:0 crwdns11350:0crwdne11350:0
 
@@ -42,9 +48,11 @@ crwdns11352:0crwdne11352:0 crwdns11353:0crwdne11353:0
 
 {panel end}
 
-*BlockTag: crwdns11355:0crwdne11355:0*
+*BlockTag: crwdns19504:0crwdne19504:0*
 
-{panel type="ct-pattern" title="Generalising and patterns"}
+{panel type="ct-pattern"}
+
+# crwdns19505:0crwdne19505:0
 
 crwdns11356:0crwdne11356:0 crwdns11357:0crwdne11357:0 crwdns11358:0crwdne11358:0
 
@@ -56,9 +64,11 @@ crwdns11360:0crwdne11360:0 crwdns11361:0crwdne11361:0 crwdns11362:0crwdne11362:0
 
 {panel end}
 
-*BlockTag: crwdns11364:0crwdne11364:0*
+*BlockTag: crwdns19506:0crwdne19506:0*
 
-{panel type="ct-evaluation" title="Evaluation"}
+{panel type="ct-evaluation"}
+
+# crwdns19507:0crwdne19507:0
 
 crwdns11365:0crwdne11365:0 crwdns11366:0crwdne11366:0 crwdns11367:0crwdne11367:0 crwdns11368:0crwdne11368:0 crwdns11369:0crwdne11369:0 crwdns11370:0crwdne11370:0 crwdns11371:0crwdne11371:0
 
@@ -72,9 +82,11 @@ crwdns11374:0crwdne11374:0 crwdns11375:0crwdne11375:0 crwdns11376:0crwdne11376:0
 
 {panel end}
 
-*BlockTag: crwdns11379:0crwdne11379:0*
+*BlockTag: crwdns19508:0crwdne19508:0*
 
-{panel type="ct-logic" title="Logic"}
+{panel type="ct-logic"}
+
+# crwdns19509:0crwdne19509:0
 
 crwdns11380:0crwdne11380:0
 

@@ -1,10 +1,12 @@
 [run]
 branch = True
 source =
+    classic
     config
     general
     locale
     resources
+    search
     static
     templates
     topics

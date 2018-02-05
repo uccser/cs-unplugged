@@ -320,6 +320,7 @@ The translation YAML file containing curriculum areas descriptions:
 You will now be able to add curriculum areas to learning outcomes and curriculum
 integrations by referencing the keys you specified in the curriculum areas
 configuration file.
+Only curriculum areas without any children can be added to items.
 
 .. _adding-a-programming-challenge:
 
@@ -860,6 +861,7 @@ Learning Outcomes Configuration File
     - **Optional Fields:**
 
       - ``curriculum-areas:`` A list of curriculum area key (see example file below).
+        Each curriculum area listed must not contain child curriculum areas.
 
 A complete learning outcome structure file may look like the following:
 
@@ -947,10 +949,13 @@ the following:
 
 .. note::
 
-  When including a curriculum area in another configuration file, adding a child
-  curriculum area will automatically add the parent curriculum area, you do not need to
-  specify this manually. For example, adding ``geometry`` means that ``maths`` is
-  automatically included.
+  When including a curriculum area in another configuration file, only
+  curriculum areas with no children can be listed.
+  This is because it can be confusing when items belong to the parent
+  curriculum area but not any child in particular.
+  Therefore each item must be linked to a curriculum are with no children.
+  Parent curriculum areas (areas with children) are used in search forms to
+  select all child curriculum areas and their related items.
 
 .. _programming-challenges-structure-file:
 
@@ -1116,6 +1121,7 @@ Curriculum Integrations Configuration File
 
       - ``curriculum-areas:`` A list of keys corresponding to other curriculum areas
         that this curriculum integration could be used in.
+        Each curriculum area listed must not contain child curriculum areas.
 
     - **Optional Fields:**
 

@@ -1,4 +1,6 @@
-{panel type="ct-algorithm" title="Algorithmic thinking"}
+{panel type="ct-algorithm"}
+
+# Algorithmic thinking
 
 In these lessons students will be sorting a variety of things into order, but
 the underlying algorithm for performing these tasks will remain the same.
@@ -13,7 +15,9 @@ It’s a great learning opportunity when someone does this).
 
 {panel end}
 
-{panel type="ct-abstraction" title="Abstraction"}
+{panel type="ct-abstraction"}
+
+# Abstraction
 
 The Sorting Network we use in these activities is a simple representation of
 something much more complex: how Sorting Networks are implemented using specific
@@ -35,9 +39,11 @@ this is explained under the generalisation heading.
 
 {panel end}
 
-{panel type="ct-decomposition" title="Decomposition"}
+{panel type="ct-decomposition"}
 
-{image file-path="img/topics/sorting-network-comparing-apples.png" alt="A person compares a large apple and a small apple."}
+# Decomposition
+
+{image file-path="img/topics/sorting-network-comparing-apples.png" alt="A person compares a large apple and a small apple." alignment="right"}
 
 In order to create an algorithm that can solve computational problems
 effectively using parallel processors, we must first be able decompose the task
@@ -56,7 +62,9 @@ algorithms!
 
 {panel end}
 
-{panel type="ct-pattern" title="Generalising and patterns"}
+{panel type="ct-pattern"}
+
+# Generalising and patterns
 
 There are many links between this section and the abstraction section above, see
 if you can spot them!
@@ -90,7 +98,9 @@ This is described in the logic section.
 
 {panel end}
 
-{panel type="ct-evaluation" title="Evaluation"}
+{panel type="ct-evaluation"}
+
+# Evaluation
 
 Parallel systems need to be evaluated for correctness: do they always sort
 values correctly?
@@ -100,7 +110,9 @@ Could this problem be solved easier by a non-parallel system?
 
 {panel end}
 
-{panel type="ct-logic" title="Logic"}
+{panel type="ct-logic"}
+
+# Logic
 
 A very important rule for the data that Sorting Networks can process is the data
 must have something called a transitive relation.
