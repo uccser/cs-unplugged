@@ -4,7 +4,7 @@
 
 {image file-path="img/topics/computer-searching-number.png" alt="A computer is searching for a number."}
 
-Imagine 31 numbers have been organised in ascending order in a list by a computer program.
+Imagine 15 numbers have been organised in ascending order in a list by a computer program.
 Now the program has to find a number in the list, but it can only look at one number at a time.
 Is it easier to find the number now, than if they were in a random order?
 
@@ -17,6 +17,7 @@ Is it easier to find the number now, than if they were in a random order?
 
 ## Lesson starter
 
+This is for students who are learning to identify numbers from 1 to 100.
 We have 15 different numbers, one on each card.
 You can’t see them but this time they are in order from the lowest number to the highest number.
 The numbers range from 1 to 100.
