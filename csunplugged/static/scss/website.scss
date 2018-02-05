@@ -596,3 +596,16 @@ button:hover .icon {
     }
   }
 }
+
+#welcome-alert {
+  @extend .alert;
+  background-color: rgba(245, 126, 126, 0.5);
+  border-color: rgba(189, 76, 76, 0.85);
+  strong {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  a {
+    color: $gray-lighter;
+  }
+}
