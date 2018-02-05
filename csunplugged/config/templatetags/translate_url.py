@@ -4,7 +4,7 @@ from django.template import Library
 from django.core.urlresolvers import resolve, reverse
 from django.utils.translation import activate, get_language
 from django.template import TemplateSyntaxError
-from django.urls.exceptions import Resolver404
+from django.urls.exceptions import Resolver404, NoReverseMatch
 
 from utils.language_utils import get_available_languages
 
@@ -33,7 +33,10 @@ def translate_url(context, lang, *args, **kwargs):
     cur_language = get_language()
     try:
         activate(lang)
-        url = reverse(url_parts.view_name, kwargs=url_parts.kwargs)
+        try:
+            url = reverse(url_parts.view_name, kwargs=url_parts.kwargs)
+        except NoReverseMatch:
+            url = reverse("general:home")
     finally:
         activate(cur_language)
 
