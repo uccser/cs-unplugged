@@ -40,64 +40,72 @@ crwdns11700:0crwdne11700:0
 
 # crwdns18418:0crwdne18418:0
 
-crwdns11703:0crwdne11703:0 crwdns11704:0crwdne11704:0
+*BlockTag: crwdns19786:0crwdne19786:0*
+
+{image file-path="img/topics/marbles.png" alt="The image shows a pile of marbles being halved again and again, until one marble remains."}
+
+crwdns19787:0crwdne19787:0 crwdns19788:0crwdne19788:0
 
 #### crwdns11705:0crwdne11705:0
 
-crwdns11706:0crwdne11706:0
+crwdns19789:0crwdne19789:0
 
-*BlockTag: crwdns11707:0crwdne11707:0*
+*BlockTag: crwdns19790:0crwdne19790:0*
 
 {panel end}
 
-*BlockTag: crwdns18419:0crwdne18419:0*
+*BlockTag: crwdns19791:0crwdne19791:0*
 
 {panel type="ct-pattern"}
 
 # crwdns18420:0crwdne18420:0
 
-crwdns11709:0crwdne11709:0
+crwdns19792:0crwdne19792:0
 
-crwdns11710:0crwdne11710:0 crwdns11711:0crwdne11711:0
+crwdns19793:0crwdne19793:0 crwdns19794:0crwdne19794:0
 
 #### crwdns11712:0crwdne11712:0
 
-crwdns11713:0crwdne11713:0
+crwdns19795:0crwdne19795:0
 
-*BlockTag: crwdns11714:0crwdne11714:0*
+*BlockTag: crwdns19796:0crwdne19796:0*
 
 {panel end}
 
-*BlockTag: crwdns18421:0crwdne18421:0*
+*BlockTag: crwdns19797:0crwdne19797:0*
 
 {panel type="ct-evaluation"}
 
 # crwdns18422:0crwdne18422:0
 
-crwdns11716:0crwdne11716:0 crwdns11717:0crwdne11717:0 crwdns11718:0crwdne11718:0
+*BlockTag: crwdns19798:0crwdne19798:0*
+
+{image file-path="img/topics/hand-with-marbles.png" alt="The image shows two hands, one with three marbles and the other with one marble." align="right"}
+
+crwdns19799:0crwdne19799:0 crwdns19800:0crwdne19800:0 crwdns19801:0crwdne19801:0
 
 #### crwdns11719:0crwdne11719:0
 
-crwdns11720:0crwdne11720:0 crwdns11721:0crwdne11721:0
+crwdns19802:0crwdne19802:0 crwdns19803:0crwdne19803:0
 
-*BlockTag: crwdns11722:0crwdne11722:0*
+*BlockTag: crwdns19804:0crwdne19804:0*
 
 {panel end}
 
-*BlockTag: crwdns18423:0crwdne18423:0*
+*BlockTag: crwdns19805:0crwdne19805:0*
 
 {panel type="ct-logic"}
 
 # crwdns18424:0crwdne18424:0
 
-crwdns11724:0crwdne11724:0 crwdns11725:0crwdne11725:0 crwdns11726:0crwdne11726:0 crwdns11727:0crwdne11727:0 crwdns11728:0crwdne11728:0 crwdns11729:0crwdne11729:0
+crwdns19806:0crwdne19806:0 crwdns19807:0crwdne19807:0 crwdns19808:0crwdne19808:0 crwdns19809:0crwdne19809:0 crwdns19810:0crwdne19810:0 crwdns19811:0crwdne19811:0
 
-crwdns11730:0crwdne11730:0 crwdns11731:0crwdne11731:0
+crwdns19812:0crwdne19812:0 crwdns19813:0crwdne19813:0
 
 #### crwdns11732:0crwdne11732:0
 
-crwdns11733:0crwdne11733:0 crwdns11734:0crwdne11734:0
+crwdns19814:0crwdne19814:0 crwdns19815:0crwdne19815:0
 
-*BlockTag: crwdns11735:0crwdne11735:0*
+*BlockTag: crwdns19816:0crwdne19816:0*
 
 {panel end}

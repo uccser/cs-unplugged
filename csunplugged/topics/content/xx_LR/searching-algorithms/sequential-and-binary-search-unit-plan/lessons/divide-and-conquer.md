@@ -32,71 +32,49 @@ crwdns15562:0crwdne15562:0 crwdns15563:0crwdne15563:0 crwdns15564:0crwdne15564:0
 
 ## crwdns11757:0crwdne11757:0
 
-*BlockTag: crwdns15568:0crwdne15568:0*
+crwdns19751:0crwdne19751:0
 
-{image file-path="img/topics/cards-0.png" alt="A line of cards."}
+crwdns19752:0crwdne19752:0 crwdns19753:0crwdne19753:0
 
-crwdns15569:0crwdne15569:0
+crwdns19754:0crwdne19754:0
 
-1. crwdns11759:0crwdne11759:0
+crwdns19755:0crwdne19755:0 crwdns19756:0crwdne19756:0 crwdns19757:0crwdne19757:0 crwdns19758:0crwdne19758:0 crwdns19759:0crwdne19759:0 crwdns19760:0crwdne19760:0 crwdns19761:0crwdne19761:0
 
-crwdns15570:0crwdne15570:0 crwdns15571:0crwdne15571:0
+crwdns19762:0crwdne19762:0 crwdns19763:0crwdne19763:0 crwdns19764:0crwdne19764:0
 
-crwdns15572:0crwdne15572:0
+*BlockTag: crwdns19765:0crwdne19765:0*
 
-*BlockTag: crwdns15573:0crwdne15573:0*
+{image file-path="img/topics/searching_cards.gif" alt="Correct card selected."}
 
-{image file-path="img/topics/cards-1.png" alt="A line of cards, middle one selected."}
+crwdns19766:0crwdne19766:0
 
-crwdns15574:0crwdne15574:0 crwdns15575:0crwdne15575:0 crwdns15576:0crwdne15576:0 crwdns15577:0crwdne15577:0 crwdns15578:0crwdne15578:0 crwdns15579:0crwdne15579:0 crwdns15580:0crwdne15580:0
+crwdns19767:0crwdne19767:0
 
-crwdns15581:0crwdne15581:0 crwdns15582:0crwdne15582:0 crwdns15583:0crwdne15583:0
+crwdns19768:0crwdne19768:0
 
-*BlockTag: crwdns15584:0crwdne15584:0*
+crwdns19769:0crwdne19769:0
 
-{image file-path="img/topics/cards-2.png" alt="A line of cards, middle of the remainder cards selected."}
-
-*BlockTag: crwdns15585:0crwdne15585:0*
-
-{image file-path="img/topics/cards-3.png" alt="A line of cards, middle of the remainder cards selected."}
-
-*BlockTag: crwdns15586:0crwdne15586:0*
-
-{image file-path="img/topics/cards-4.png" alt="Correct card selected."}
-
-crwdns15587:0crwdne15587:0
-
-crwdns15588:0crwdne15588:0
-
-crwdns15589:0crwdne15589:0
-
-crwdns15590:0crwdne15590:0
-
-*BlockTag: crwdns18393:0crwdne18393:0*
+*BlockTag: crwdns19770:0crwdne19770:0*
 
 {panel type="teaching"}
 
 # crwdns18394:0crwdne18394:0
 
-crwdns15592:0crwdne15592:0 crwdns15593:0crwdne15593:0 crwdns15594:0crwdne15594:0 crwdns15595:0crwdne15595:0
+crwdns19771:0crwdne19771:0 crwdns19772:0crwdne19772:0 crwdns19773:0crwdne19773:0 crwdns19774:0crwdne19774:0
 
-*BlockTag: crwdns15596:0crwdne15596:0*
+*BlockTag: crwdns19775:0crwdne19775:0*
 
 {panel end}
 
 ## crwdns11783:0crwdne11783:0
 
-crwdns15597:0crwdne15597:0 crwdns15598:0crwdne15598:0 crwdns15599:0crwdne15599:0 crwdns15600:0crwdne15600:0 crwdns15601:0crwdne15601:0 crwdns15602:0crwdne15602:0
+crwdns19776:0crwdne19776:0 crwdns19777:0crwdne19777:0 crwdns19778:0crwdne19778:0 crwdns19779:0crwdne19779:0 crwdns19780:0crwdne19780:0 crwdns19781:0crwdne19781:0
 
-*BlockTag: crwdns15603:0crwdne15603:0*
-
-{image file-path="img/topics/divide.png"}
-
-crwdns15604:0crwdne15604:0 crwdns15605:0crwdne15605:0 crwdns15606:0crwdne15606:0
+crwdns19782:0crwdne19782:0 crwdns19783:0crwdne19783:0 crwdns19784:0crwdne19784:0
 
 ## crwdns18342:0crwdne18342:0
 
-crwdns15607:0crwdne15607:0
+crwdns19785:0crwdne19785:0
 
 - crwdns15608:0crwdne15608:0
 - crwdns15609:0crwdne15609:0 

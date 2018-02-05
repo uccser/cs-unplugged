@@ -104,9 +104,9 @@ crwdns12393:0crwdne12393:0
 
 ### crwdns12395:0crwdne12395:0
 
-*BlockTag: crwdns12396:0crwdne12396:0*
+*BlockTag: crwdns20019:0crwdne20019:0*
 
-{image file-path="img/topics/sorting-network-variation-words.jpg"}
+{image file-path="img/topics/sorting-network-variation-words.png"}
 
 crwdns12397:0crwdne12397:0 crwdns12398:0crwdne12398:0 crwdns12399:0crwdne12399:0
 
@@ -116,17 +116,17 @@ crwdns12397:0crwdne12397:0 crwdns12398:0crwdne12398:0 crwdns12399:0crwdne12399:0
 
 crwdns12401:0crwdne12401:0
 
-*BlockTag: crwdns12402:0crwdne12402:0*
+*BlockTag: crwdns20020:0crwdne20020:0*
 
-{image file-path="img/topics/sorting-network-variation-words-2.jpg"}
+{image file-path="img/topics/sorting-network-variation-words-2.png"}
 
 crwdns12403:0crwdne12403:0 crwdns12404:0crwdne12404:0
 
 ### crwdns12405:0crwdne12405:0
 
-*BlockTag: crwdns12406:0crwdne12406:0*
+*BlockTag: crwdns20021:0crwdne20021:0*
 
-{image file-path="img/topics/sorting-network-variation-music.jpg"}
+{image file-path="img/topics/sorting-network-variation-music.png"}
 
 crwdns12407:0crwdne12407:0 crwdns12408:0crwdne12408:0 crwdns12409:0crwdne12409:0
 

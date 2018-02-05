@@ -1,36 +1,8 @@
 # crwdns11390:0crwdne11390:0
 
-*BlockTag: crwdns19510:0crwdne19510:0*
-
-{panel type="general"}
-
-# crwdns19511:0crwdne19511:0
-
-crwdns11392:0crwdne11392:0
-
-*BlockTag: crwdns11393:0crwdne11393:0*
-
-{panel end}
-
-*BlockTag: crwdns19512:0crwdne19512:0*
-
-{panel type="video"}
-
-# crwdns19513:0crwdne19513:0
-
-crwdns11395:0crwdne11395:0
-
-*BlockTag: crwdns11396:0crwdne11396:0*
-
-{video url="https://www.youtube.com/embed/WjMPd6sgou0"}
-
-*BlockTag: crwdns11397:0crwdne11397:0*
-
-{panel end}
-
 ## crwdns11398:0crwdne11398:0
 
-crwdns11399:0crwdne11399:0
+crwdns20468:0crwdne20468:0
 
 ## crwdns11400:0crwdne11400:0
 
@@ -38,9 +10,37 @@ crwdns11399:0crwdne11399:0
 
 ## crwdns11402:0crwdne11402:0
 
-*BlockTag: crwdns11403:0crwdne11403:0*
+*BlockTag: crwdns20469:0crwdne20469:0*
 
-{image file-path="img/topics/error-correction-paint-tin.png" alt="A black paint tin with paint across the name and barcode."}
+{panel type="video"}
+
+# crwdns20470:0crwdne20470:0
+
+crwdns20471:0crwdne20471:0
+
+*BlockTag: crwdns20472:0crwdne20472:0*
+
+{video url="https://www.youtube.com/embed/WjMPd6sgou0"}
+
+*BlockTag: crwdns20473:0crwdne20473:0*
+
+{panel end}
+
+*BlockTag: crwdns20474:0crwdne20474:0*
+
+{panel type="general"}
+
+# crwdns20475:0crwdne20475:0
+
+crwdns20476:0crwdne20476:0
+
+*BlockTag: crwdns20477:0crwdne20477:0*
+
+{panel end}
+
+*BlockTag: crwdns20478:0crwdne20478:0*
+
+{image file-path="img/topics/error-correction-paint-tin.png" alt="A black paint tin with paint across the name and barcode." alignment="right"}
 
 crwdns11404:0crwdne11404:0 crwdns11405:0crwdne11405:0
 

@@ -1,32 +1,54 @@
 # crwdns9587:0crwdne9587:0
 
-## crwdns9588:0crwdne9588:0
-
-crwdns9589:0crwdne9589:0 crwdns9590:0crwdne9590:0 crwdns9591:0crwdne9591:0 crwdns9592:0crwdne9592:0 crwdns9593:0crwdne9593:0
-
-## crwdns9594:0crwdne9594:0
+## crwdns20163:0crwdne20163:0
 
 - crwdns9595:0crwdne9595:0
 
-crwdns9596:0crwdne9596:0
+crwdns20164:0crwdne20164:0
 
-## crwdns9597:0crwdne9597:0
+## crwdns20165:0crwdne20165:0
 
-*BlockTag: crwdns19079:0crwdne19079:0*
+*BlockTag: crwdns20166:0crwdne20166:0*
 
-{panel type="general"}
+{panel type="video"}
 
-# crwdns19080:0crwdne19080:0
+# crwdns20167:0crwdne20167:0
 
-crwdns9599:0crwdne9599:0 crwdns9600:0crwdne9600:0
+*BlockTag: crwdns20168:0crwdne20168:0*
 
-*BlockTag: crwdns9601:0crwdne9601:0*
+{video url="https://www.youtube.com/embed/Wy6-FXtLMV8"}
+
+*BlockTag: crwdns20169:0crwdne20169:0*
 
 {panel end}
 
-crwdns9602:0crwdne9602:0 crwdns9603:0crwdne9603:0 crwdns9604:0crwdne9604:0 crwdns9605:0crwdne9605:0
+*BlockTag: crwdns20170:0crwdne20170:0*
 
-crwdns9606:0crwdne9606:0
+{panel type="general"}
+
+# crwdns20171:0crwdne20171:0
+
+crwdns20172:0crwdne20172:0 crwdns20173:0crwdne20173:0 crwdns20174:0crwdne20174:0 crwdns20175:0crwdne20175:0 crwdns20176:0crwdne20176:0
+
+*BlockTag: crwdns20177:0crwdne20177:0*
+
+{panel end}
+
+*BlockTag: crwdns20178:0crwdne20178:0*
+
+{panel type="general"}
+
+# crwdns20179:0crwdne20179:0
+
+crwdns20180:0crwdne20180:0 crwdns20181:0crwdne20181:0
+
+*BlockTag: crwdns9739:0crwdne9739:0*
+
+{panel end}
+
+crwdns20182:0crwdne20182:0 crwdns20183:0crwdne20183:0 crwdns20184:0crwdne20184:0 crwdns20185:0crwdne20185:0
+
+crwdns20186:0crwdne20186:0
 
 1. crwdns9607:0crwdne9607:0
 
@@ -100,7 +122,7 @@ crwdns9606:0crwdne9606:0
 
     {panel end}
 
-## crwdns9646:0crwdne9646:0
+## crwdns20187:0crwdne20187:0
 
 1. crwdns9647:0crwdne9647:0 crwdns9648:0crwdne9648:0 crwdns9649:0crwdne9649:0 crwdns9650:0crwdne9650:0 crwdns9651:0crwdne9651:0 crwdns9652:0crwdne9652:0 crwdns9653:0crwdne9653:0 crwdns9654:0crwdne9654:0 crwdns9655:0crwdne9655:0 crwdns9656:0crwdne9656:0 crwdns9657:0crwdne9657:0 crwdns9658:0crwdne9658:0 crwdns9659:0crwdne9659:0 crwdns9660:0crwdne9660:0 crwdns9661:0crwdne9661:0 crwdns9662:0crwdne9662:0 crwdns9663:0crwdne9663:0 crwdns9664:0crwdne9664:0
     
@@ -164,7 +186,7 @@ crwdns9606:0crwdne9606:0
 
     {image file-path="img/topics/lightbulb_series_4_bulbs_2.png" alt="2 lightbulbs switched on"}
 
-## crwdns9703:0crwdne9703:0
+## crwdns20188:0crwdne20188:0
 
 - crwdns9704:0crwdne9704:0
 - crwdns9705:0crwdne9705:0
@@ -206,19 +228,19 @@ crwdns9606:0crwdne9606:0
     
     crwdns9734:0crwdne9734:0
 
-*BlockTag: crwdns19091:0crwdne19091:0*
+*BlockTag: crwdns20189:0crwdne20189:0*
 
 {panel type="teaching"}
 
-# crwdns19092:0crwdne19092:0
+# crwdns20190:0crwdne20190:0
 
-crwdns9736:0crwdne9736:0 crwdns9737:0crwdne9737:0 crwdns9738:0crwdne9738:0
+crwdns20191:0crwdne20191:0 crwdns20192:0crwdne20192:0 crwdns20193:0crwdne20193:0
 
-*BlockTag: crwdns9739:0crwdne9739:0*
+*BlockTag: crwdns20194:0crwdne20194:0*
 
 {panel end}
 
-## crwdns9740:0crwdne9740:0
+## crwdns20195:0crwdne20195:0
 
 - crwdns9741:0crwdne9741:0
     

@@ -1,59 +1,61 @@
-# crwdns11067:0crwdne11067:0
+# crwdns20292:0crwdne20292:0
 
-*BlockTag: crwdns19264:0crwdne19264:0*
+## crwdns11083:0crwdne11083:0
+
+- crwdns20293:0crwdne20293:0
+- crwdns20294:0crwdne20294:0
+
+### crwdns11086:0crwdne11086:0
+
+crwdns20295:0crwdne20295:0
+
+*BlockTag: crwdns20296:0crwdne20296:0*
+
+{image file-path="img/topics/school-test-error.png" alt="A school test shows every question marked correct but the overall score is 0%."}
+
+crwdns20297:0crwdne20297:0 crwdns20298:0crwdne20298:0 crwdns20299:0crwdne20299:0 crwdns20300:0crwdne20300:0
+
+## crwdns11093:0crwdne11093:0
+
+*BlockTag: crwdns20301:0crwdne20301:0*
 
 {panel type="video"}
 
 # crwdns19265:0crwdne19265:0
 
-crwdns11069:0crwdne11069:0
+crwdns20302:0crwdne20302:0
 
-*BlockTag: crwdns11070:0crwdne11070:0*
+*BlockTag: crwdns20303:0crwdne20303:0*
 
 {video url="https://www.youtube.com/embed/FnwBratAhfg"}
 
-*BlockTag: crwdns11071:0crwdne11071:0*
+*BlockTag: crwdns20304:0crwdne20304:0*
 
 {panel end}
 
-*BlockTag: crwdns19266:0crwdne19266:0*
+*BlockTag: crwdns20305:0crwdne20305:0*
 
 {panel type="general"}
 
 # crwdns19267:0crwdne19267:0
 
-*BlockTag: crwdns11073:0crwdne11073:0*
+crwdns20306:0crwdne20306:0
 
-{image file-path="img/topics/parity-cards.png" alt="A pile of square cards with black on one side and white on the other side."}
+*BlockTag: crwdns20307:0crwdne20307:0*
 
-crwdns11074:0crwdne11074:0
+{image file-path="img/topics/parity-cards.png" alt="A pile of square cards with black on one side and white on the other side." alignment="right"}
 
-- crwdns11075:0crwdne11075:0 crwdns11076:0crwdne11076:0 crwdns11077:0crwdne11077:0 crwdns11078:0crwdne11078:0
-- crwdns11079:0crwdne11079:0
-- crwdns11080:0crwdne11080:0
+- crwdns20308:0crwdne20308:0 crwdns20309:0crwdne20309:0 crwdns20310:0crwdne20310:0 crwdns20311:0crwdne20311:0
 
-crwdns11081:0crwdne11081:0
+- crwdns20312:0crwdne20312:0
 
-*BlockTag: crwdns11082:0crwdne11082:0*
+- crwdns20313:0crwdne20313:0
+
+crwdns20314:0crwdne20314:0
+
+*BlockTag: crwdns20315:0crwdne20315:0*
 
 {panel end}
-
-## crwdns11083:0crwdne11083:0
-
-- crwdns11084:0crwdne11084:0
-- crwdns11085:0crwdne11085:0
-
-### crwdns11086:0crwdne11086:0
-
-crwdns11087:0crwdne11087:0
-
-*BlockTag: crwdns11088:0crwdne11088:0*
-
-{image file-path="img/topics/school-test-error.png" alt="A school test shows every question marked correct but the overall score is 0%."}
-
-crwdns11089:0crwdne11089:0 crwdns11090:0crwdne11090:0 crwdns11091:0crwdne11091:0 crwdns11092:0crwdne11092:0
-
-## crwdns11093:0crwdne11093:0
 
 1. crwdns11094:0crwdne11094:0
 
@@ -103,159 +105,53 @@ crwdns19273:0crwdne19273:0
 
 ### crwdns11113:0crwdne11113:0
 
-*BlockTag: crwdns19275:0crwdne19275:0*
+*BlockTag: crwdns20316:0crwdne20316:0*
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-2.png" alt="Progress image of adding parity bits." caption="true"}
+{image file-path="img/topics/parity-cards.gif"}
 
-crwdns19276:0crwdne19276:0
+crwdns20317:0crwdne20317:0
 
-*BlockTag: crwdns19277:0crwdne19277:0*
-
-{image end}
-
-*BlockTag: crwdns19278:0crwdne19278:0*
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-3.png" alt="Progress image of adding parity bits." caption="true"}
-
-crwdns19279:0crwdne19279:0
-
-*BlockTag: crwdns19280:0crwdne19280:0*
-
-{image end}
-
-*BlockTag: crwdns19281:0crwdne19281:0*
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-4.png" alt="Progress image of adding parity bits." caption="true"}
-
-crwdns19282:0crwdne19282:0
-
-*BlockTag: crwdns19283:0crwdne19283:0*
-
-{image end}
-
-*BlockTag: crwdns19284:0crwdne19284:0*
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-5.png" alt="Progress image of adding parity bits." caption="true"}
-
-crwdns19285:0crwdne19285:0
-
-*BlockTag: crwdns19286:0crwdne19286:0*
-
-{image end}
-
-*BlockTag: crwdns19287:0crwdne19287:0*
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-6.png" alt="Progress image of adding parity bits." caption="true"}
-
-crwdns19288:0crwdne19288:0
-
-*BlockTag: crwdns19289:0crwdne19289:0*
-
-{image end}
-
-*BlockTag: crwdns19290:0crwdne19290:0*
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-7.png" alt="Progress image of adding parity bits." caption="true"}
-
-crwdns19291:0crwdne19291:0
-
-*BlockTag: crwdns19292:0crwdne19292:0*
-
-{image end}
-
-*BlockTag: crwdns19293:0crwdne19293:0*
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-8.png" alt="Progress image of adding parity bits." caption="true"}
-
-crwdns19294:0crwdne19294:0
-
-*BlockTag: crwdns19295:0crwdne19295:0*
-
-{image end}
-
-*BlockTag: crwdns19296:0crwdne19296:0*
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-9.png" alt="Progress image of adding parity bits." caption="true"}
-
-crwdns19297:0crwdne19297:0
-
-*BlockTag: crwdns19298:0crwdne19298:0*
-
-{image end}
-
-*BlockTag: crwdns19299:0crwdne19299:0*
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-10.png" alt="Progress image of adding parity bits." caption="true"}
-
-crwdns19300:0crwdne19300:0
-
-*BlockTag: crwdns19301:0crwdne19301:0*
-
-{image end}
-
-*BlockTag: crwdns19302:0crwdne19302:0*
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-11.png" alt="Progress image of adding parity bits." caption="true"}
-
-crwdns19303:0crwdne19303:0
-
-*BlockTag: crwdns19304:0crwdne19304:0*
-
-{image end}
-
-*BlockTag: crwdns19305:0crwdne19305:0*
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-12.png" alt="Progress image of adding parity bits." caption="true"}
-
-crwdns19306:0crwdne19306:0
-
-*BlockTag: crwdns19307:0crwdne19307:0*
-
-{image end}
-
-crwdns19308:0crwdne19308:0
-
-*BlockTag: crwdns19309:0crwdne19309:0*
+*BlockTag: crwdns20318:0crwdne20318:0*
 
 {panel type="teaching"}
 
 # crwdns19310:0crwdne19310:0
 
-crwdns19311:0crwdne19311:0
+crwdns20319:0crwdne20319:0
 
-*BlockTag: crwdns11175:0crwdne11175:0*
+*BlockTag: crwdns20320:0crwdne20320:0*
 
 {panel end}
 
 ## crwdns11129:0crwdne11129:0
 
-crwdns19312:0crwdne19312:0
+crwdns20321:0crwdne20321:0
 
-crwdns19313:0crwdne19313:0
+crwdns20322:0crwdne20322:0
 
-*BlockTag: crwdns19314:0crwdne19314:0*
+*BlockTag: crwdns20323:0crwdne20323:0*
 
 {panel type="teaching"}
 
 # crwdns19315:0crwdne19315:0
 
-crwdns19316:0crwdne19316:0 crwdns19317:0crwdne19317:0 crwdns19318:0crwdne19318:0
+crwdns20324:0crwdne20324:0 crwdns20325:0crwdne20325:0 crwdns20326:0crwdne20326:0
 
-*BlockTag: crwdns19319:0crwdne19319:0*
+*BlockTag: crwdns20327:0crwdne20327:0*
 
 {panel end}
 
-crwdns19320:0crwdne19320:0 crwdns19321:0crwdne19321:0 crwdns19322:0crwdne19322:0 crwdns19323:0crwdne19323:0
+crwdns20328:0crwdne20328:0 crwdns20329:0crwdne20329:0 crwdns20330:0crwdne20330:0 crwdns20331:0crwdne20331:0
 
-crwdns19324:0crwdne19324:0
+crwdns20332:0crwdne20332:0
 
-*BlockTag: crwdns19325:0crwdne19325:0*
+*BlockTag: crwdns20333:0crwdne20333:0*
 
-{image file-path="img/topics/parity-wizard.png" alt="A wizard holding a magic one with parity cards on it."}
+{image file-path="img/topics/parity-wizard.png" alt="A wizard holding a magic one with parity cards on it." alignment="right"}
 
-crwdns19326:0crwdne19326:0
+crwdns20334:0crwdne20334:0
 
-crwdns19327:0crwdne19327:0 crwdns19328:0crwdne19328:0
+crwdns20335:0crwdne20335:0 crwdns20336:0crwdne20336:0
 
 - crwdns11146:0crwdne11146:0
 - crwdns11147:0crwdne11147:0
@@ -263,60 +159,60 @@ crwdns19327:0crwdne19327:0 crwdns19328:0crwdne19328:0
 - crwdns11149:0crwdne11149:0
 - crwdns11150:0crwdne11150:0
 
-crwdns19329:0crwdne19329:0
+crwdns20337:0crwdne20337:0
 
-crwdns19330:0crwdne19330:0
+crwdns20338:0crwdne20338:0
 
 - crwdns11153:0crwdne11153:0
 - crwdns11154:0crwdne11154:0
 
-crwdns19331:0crwdne19331:0
+crwdns20339:0crwdne20339:0
 
-*BlockTag: crwdns19332:0crwdne19332:0*
+*BlockTag: crwdns20340:0crwdne20340:0*
 
 {panel type="teaching"}
 
 # crwdns19333:0crwdne19333:0
 
-crwdns19334:0crwdne19334:0
+crwdns20341:0crwdne20341:0
 
-*BlockTag: crwdns19335:0crwdne19335:0*
+*BlockTag: crwdns20342:0crwdne20342:0*
 
 {panel end}
 
-crwdns19336:0crwdne19336:0 crwdns19337:0crwdne19337:0 crwdns19338:0crwdne19338:0
+crwdns20343:0crwdne20343:0 crwdns20344:0crwdne20344:0 crwdns20345:0crwdne20345:0
 
-crwdns19339:0crwdne19339:0 crwdns19340:0crwdne19340:0 crwdns19341:0crwdne19341:0 crwdns19342:0crwdne19342:0
+crwdns20346:0crwdne20346:0 crwdns20347:0crwdne20347:0 crwdns20348:0crwdne20348:0 crwdns20349:0crwdne20349:0
 
-crwdns19343:0crwdne19343:0 crwdns19344:0crwdne19344:0
+crwdns20350:0crwdne20350:0 crwdns20351:0crwdne20351:0
 
-crwdns19345:0crwdne19345:0 crwdns19346:0crwdne19346:0 crwdns19347:0crwdne19347:0 crwdns19348:0crwdne19348:0
+crwdns20352:0crwdne20352:0 crwdns20353:0crwdne20353:0 crwdns20354:0crwdne20354:0 crwdns20355:0crwdne20355:0
 
-crwdns19349:0crwdne19349:0
+crwdns20356:0crwdne20356:0
 
-*BlockTag: crwdns19350:0crwdne19350:0*
+*BlockTag: crwdns20357:0crwdne20357:0*
 
 {panel type="teaching"}
 
 # crwdns19351:0crwdne19351:0
 
-crwdns19352:0crwdne19352:0
+crwdns20358:0crwdne20358:0
 
-*BlockTag: crwdns19353:0crwdne19353:0*
+*BlockTag: crwdns20359:0crwdne20359:0*
 
 {panel end}
 
-*BlockTag: crwdns19354:0crwdne19354:0*
+*BlockTag: crwdns20360:0crwdne20360:0*
 
 {panel type="math"}
 
 # crwdns19355:0crwdne19355:0
 
-crwdns19356:0crwdne19356:0
+crwdns20361:0crwdne20361:0
 
-crwdns19357:0crwdne19357:0
+crwdns20362:0crwdne20362:0
 
-*BlockTag: crwdns19358:0crwdne19358:0*
+*BlockTag: crwdns20363:0crwdne20363:0*
 
 {panel end}
 
@@ -329,8 +225,8 @@ crwdns19357:0crwdne19357:0
 
 ## crwdns11188:0crwdne11188:0
 
-crwdns19359:0crwdne19359:0 crwdns19360:0crwdne19360:0 crwdns19361:0crwdne19361:0
+crwdns20364:0crwdne20364:0 crwdns20365:0crwdne20365:0 crwdns20366:0crwdne20366:0
 
-crwdns19362:0crwdne19362:0 crwdns19363:0crwdne19363:0 crwdns19364:0crwdne19364:0
+crwdns20367:0crwdne20367:0 crwdns20368:0crwdne20368:0 crwdns20369:0crwdne20369:0
 
-crwdns19365:0crwdne19365:0 crwdns19366:0crwdne19366:0 crwdns19367:0crwdne19367:0 crwdns19368:0crwdne19368:0
+crwdns20370:0crwdne20370:0 crwdns20371:0crwdne20371:0 crwdns20372:0crwdne20372:0 crwdns20373:0crwdne20373:0
