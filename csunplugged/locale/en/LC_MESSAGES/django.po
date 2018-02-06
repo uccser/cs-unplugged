@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-05 12:04+0000\n"
+"POT-Creation-Date: 2018-02-06 12:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -324,6 +324,24 @@ msgstr ""
 msgid "No"
 msgstr ""
 
+msgid "Page not found"
+msgstr ""
+
+msgid "We are sorry but we could not find a page for the link you provided."
+msgstr ""
+
+msgid "You may find one of the links below useful:"
+msgstr ""
+
+msgid "Home page"
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Classic CS Unplugged"
+msgstr ""
+
 msgid "CS Unplugged"
 msgstr ""
 
@@ -367,9 +385,6 @@ msgid "GitHub"
 msgstr ""
 
 msgid "Help"
-msgstr ""
-
-msgid "Search"
 msgstr ""
 
 msgid "Glossary"
@@ -840,7 +855,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"The original activities are still available at <a href=\"http://classic."
+"The original activities are still available at <a href=\"https://classic."
 "csunplugged.org/\">classic.csunplugged.org</a>."
 msgstr ""
 
@@ -848,9 +863,6 @@ msgid "What is Computer Science?"
 msgstr ""
 
 msgid "Curriculum Integrations"
-msgstr ""
-
-msgid "Classic CS Unplugged"
 msgstr ""
 
 msgid "version 4.0.0 onwards"
