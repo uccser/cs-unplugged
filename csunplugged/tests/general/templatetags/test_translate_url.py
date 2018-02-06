@@ -50,12 +50,14 @@ class TranslateURLTest(BaseTest):
             "request": request
         }
         tag = "{% load translate_url %}{% translate_url 'de' %}"
-        with self.assertRaises(TemplateSyntaxError):
-            self.render_template(tag, context)
+        rendered = self.render_template(tag, context)
+        self.assertEqual(
+            "/en/",
+            rendered
+        )
 
     def test_translate_url_missing_target_language(self):
-        path = "/topics/topic-name/unit-plan/unit-plan-name/"
-        localised_path = "/en" + path
+        localised_path = "/en" + VALID_PATH
         request = HttpRequest()
         request.path = localised_path
         context = {
@@ -67,8 +69,7 @@ class TranslateURLTest(BaseTest):
 
     @override_settings(LANGUAGES=AVAILABLE_LANGUAGES_EN)
     def test_translate_url_invalid_language(self):
-        path = "/topics/topic-name/unit-plan/unit-plan-name/"
-        localised_path = "/en" + path
+        localised_path = "/en" + VALID_PATH
         request = HttpRequest()
         request.path = localised_path
         context = {
