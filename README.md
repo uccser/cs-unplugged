@@ -1,18 +1,19 @@
-![Computer Science Unplugged](https://cloud.githubusercontent.com/assets/8001048/25562071/9c90501a-2dcf-11e7-959a-bf15dfee8362.png)
+<p align="center">
+  <a href="https://www.csunplugged.org/">
+    <img src="https://cloud.githubusercontent.com/assets/8001048/25562071/9c90501a-2dcf-11e7-959a-bf15dfee8362.png" alt="CS Unplugged" width=428 height=120>
+  </a>
 
-Computer Science Unplugged is a collection of free learning activities that
-teach Computer Science through engaging games and puzzles that use cards,
-string, crayons and lots of running around.
-The activities introduce students to Computational Thinking through concepts
-such as binary numbers, algorithms, and data compression, separated from the
-distractions and technical details of having to use computers.
-
-The CS Unplugged project is available at
-[csunplugged.org](http://csunplugged.org/).
-This version (considered as version 2.0) can be viewed at
-[csunplugged.org/sneak-peek/](http://csunplugged.org/sneak-peek/).
-A development build (`develop` branch) of this repository can be viewed at
-[cs-unplugged-dev.appspot.com](http://cs-unplugged-dev.appspot.com/).
+  <p align="center">
+    CS Unplugged is a collection of free teaching material that teaches Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around.
+    <br>
+    <br>
+    <a href="https://www.csunplugged.org/">
+      Production website
+    </a> (`master` branch)
+    <br>
+    <a href="https://cs-unplugged-dev.appspot.com/">Development website</a> (`develop` branch)
+  </p>
+</p>
 
 ## Documentation
 
