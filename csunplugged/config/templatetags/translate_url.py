@@ -4,7 +4,7 @@ from django.template import Library
 from django.core.urlresolvers import resolve, reverse
 from django.utils.translation import activate, get_language
 from django.template import TemplateSyntaxError
-from django.urls.exceptions import Resolver404, NoReverseMatch
+from django.urls.exceptions import Resolver404
 
 from utils.language_utils import get_available_languages
 
