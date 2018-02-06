@@ -27,17 +27,11 @@ def translate_url(context, lang, *args, **kwargs):
     url = context["request"].path
     try:
         url_parts = resolve(url)
-    except Resolver404:
-        raise TemplateSyntaxError(INVALID_PATH_MESSAGE.format(url))
-
-    cur_language = get_language()
-    try:
+        cur_language = get_language()
         activate(lang)
-        try:
-            url = reverse(url_parts.view_name, kwargs=url_parts.kwargs)
-        except NoReverseMatch:
-            url = reverse("general:home")
-    finally:
+        url = reverse(url_parts.view_name, kwargs=url_parts.kwargs)
         activate(cur_language)
+    except Resolver404:
+        url = reverse("general:home")
 
     return str(url)
