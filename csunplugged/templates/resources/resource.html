@@ -56,17 +56,17 @@
 {% block end_content %}
   {% if grouped_lessons %}
     <h2>{% trans "Related Lessons" %}</h2>
-    {% for age_group, lessons in grouped_lessons.items %}
-      <table class="table table-responsive table-center-vertical">
-        <thead class="thead-default">
-          <tr>
-            <th>{% trans "Topic" %}</th>
-            <th class="text-center">{% trans "Ages" %}</th>
-            <th class="text-center">{% trans "Number" %}</th>
-            <th>{% trans "Lesson" %}</th>
-          </tr>
-        </thead>
-        <tbody>
+    <table class="table table-responsive table-center-vertical">
+      <thead class="thead-default">
+        <tr>
+          <th>{% trans "Topic" %}</th>
+          <th class="text-center">{% trans "Ages" %}</th>
+          <th class="text-center">{% trans "Number" %}</th>
+          <th>{% trans "Lesson" %}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for age_group, lessons in grouped_lessons.items %}
           {% for lesson in lessons %}
             <tr class="align-middle">
               <td class="text-center">
@@ -87,10 +87,9 @@
               </td>
             </tr>
           {% endfor %}
-        </tbody>
-      </table>
-    {% endfor %}
-
+        {% endfor %}
+      </tbody>
+    </table>
   {% endif %}
 {% endblock end_content %}
 
