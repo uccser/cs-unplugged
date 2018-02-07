@@ -9,9 +9,9 @@
     <br>
     <a href="https://www.csunplugged.org/">
       Production website
-    </a> (`master` branch)
+    </a> (<code>master</code> branch)
     <br>
-    <a href="https://cs-unplugged-dev.appspot.com/">Development website</a> (`develop` branch)
+    <a href="https://cs-unplugged-dev.appspot.com/">Development website</a> (<code>develop</code> branch)
   </p>
 </p>
 
