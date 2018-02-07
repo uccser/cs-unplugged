@@ -37,7 +37,7 @@ All notable changes to this project will be documented in this file.
 - Redesign topic page to add emphasis to lessons. `#864 <https://github.com/uccser/cs-unplugged/issues/864>`__
 - Add 404 page when a page cannot be found. `#851 <https://github.com/uccser/cs-unplugged/issues/851>`__
 - Only prepend ``www`` for production website. `#860 <https://github.com/uccser/cs-unplugged/issues/860>`__
-- Update repository README file for version ``4.0.0 release``.
+- Update repository README file for version ``4.0.0`` release.
 
 4.0.0
 ==============================================================================
@@ -47,7 +47,7 @@ All notable changes to this project will be documented in this file.
 
 **Summary of changes:**
 
-This release is the official release of the rewritten CS Unplugged to the
+This is the official release of the rewritten CS Unplugged to the
 csunplugged.org domain, while the existing Wordpress site is archived to
 classic.csunplugged.org.
 
