@@ -23,6 +23,22 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+4.0.1
+==============================================================================
+
+- **Release date:** 7th February 2018
+- **Downloads:** `Source downloads are available on GitHub`_
+
+**Changelog:**
+
+- Fix bug where logo isn't centered in mobile navbar. `#863 <https://github.com/uccser/cs-unplugged/issues/863>`__
+- Increase size of pixel painter resource thumbnails. `#866 <https://github.com/uccser/cs-unplugged/issues/866>`__
+- Remove redundant headings in related lessons table for printable. `#857 <https://github.com/uccser/cs-unplugged/issues/857>`__
+- Redesign topic page to add emphasis to lessons. `#864 <https://github.com/uccser/cs-unplugged/issues/864>`__
+- Add 404 page when a page cannot be found. `#851 <https://github.com/uccser/cs-unplugged/issues/851>`__
+- Only prepend ``www`` for production website. `#860 <https://github.com/uccser/cs-unplugged/issues/860>`__
+- Update repository README file for version ``4.0.0 release``.
+
 4.0.0
 ==============================================================================
 
