@@ -2,6 +2,6 @@
 
 crwdns18891:0crwdne18891:0 crwdns12094:0crwdne12094:0 crwdns12095:0crwdne12095:0
 
-*BlockTag: crwdns12096:0crwdne12096:0*
+*BlockTag: crwdns20016:0crwdne20016:0*
 
-{image file-path="img/resources/sorting-network-cards/butterfly-story-caterpillar.png" alt="A caterpillar."}
+{image file-path="img/topics/butterfly-story-caterpillar.png" alt="A caterpillar."}

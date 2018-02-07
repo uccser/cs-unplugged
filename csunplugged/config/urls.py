@@ -31,3 +31,11 @@ if settings.DEBUG:  # pragma: no cover
     urlpatterns += i18n_patterns(
         url(r"^__dev__/", include("dev.urls", namespace="dev")),
     )
+    # These patterns allows these error pages to be debugged during development.
+    from django.views import defaults
+    urlpatterns += [
+        url(r'^400/$', defaults.bad_request, kwargs={'exception': Exception("Bad request")}),
+        url(r'^403/$', defaults.permission_denied, kwargs={'exception': Exception("Permissin denied")}),
+        url(r'^404/$', defaults.page_not_found, kwargs={'exception': Exception("Page not found")}),
+        url(r'^500/$', defaults.server_error),
+    ]

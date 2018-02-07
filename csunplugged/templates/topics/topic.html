@@ -31,16 +31,16 @@
   {% endif %}
 {% endblock page_heading %}
 
-{% block content_container %}
-  <div class="col-12 col-lg-6 col-xl-5">
-    <h2 id="units">{% trans "Unit Plans" %}</h2>
-    <div class="row justify-content-between">
-      {% for unit_plan in unit_plans %}
-        <div class="col-12 mb-4">
-          <a class="link-item no-text-decoration d-block h-100{% if not unit_plan.translation_available %} unavailable{% endif %}" href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">
+{% block content %}
+  <h2 id="units">{% trans "Unit Plans" %}</h2>
+  <div class="row justify-content-between">
+    {% for unit_plan in unit_plans %}
+      <div class="col-12 col-md-6 mb-4">
+        <a class="link-item no-text-decoration d-flex justify-content-between h-100{% if not unit_plan.translation_available %} unavailable{% endif %}" href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">
+          <div>
             <h3>{{ unit_plan.name }}</h3>
             {% if not unit_plan.translation_available %}
-              {% include "topics/not-available-badge.html" %}
+            {% include "topics/not-available-badge.html" %}
             {% endif %}
             <ul class="list-unstyled list-unstyled-i18n text-muted mb-0">
               <li>
@@ -50,23 +50,23 @@
                   {% endblocktrans %}
                 </strong>
               </li>
-              <li>
-                {{ unit_plan.lessons.count }} {% trans "lessons" %}
-              </li>
             </ul>
-          </a>
-        </div>
-      {% endfor %}
-    </div>
+          </div>
+          <div class="summary">
+            <span class="summary-value">{{ unit_plan.lessons.count }}</span>
+            <br>
+            {% trans "lessons" %}
+          </div>
+        </a>
+      </div>
+    {% endfor %}
   </div>
 
-  <div class="col-12 col-lg-6 col-xl-7">
-    {% if curriculum_integrations %}
-      <h2 id="integrations">{% trans "Curriculum Integrations" %}</h2>
-      {% include "topics/curriculum-integrations-table.html" %}
-    {% endif %}
-  </div>
-{% endblock content_container %}
+  {% if curriculum_integrations %}
+    <h2 id="integrations">{% trans "Curriculum Integrations" %}</h2>
+    {% include "topics/curriculum-integrations-table.html" %}
+  {% endif %}
+{% endblock content %}
 
 {% block end_content %}
   {% if topic.other_resources %}

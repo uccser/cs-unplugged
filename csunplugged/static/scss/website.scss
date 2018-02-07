@@ -385,7 +385,7 @@ ol, ul {
 .link-item {
   background-color: $white;
   border-#{$left}: 5px solid $blue;
-  box-shadow: 0px 2px 5px 0px $gray-400;
+  box-shadow: 0px 2px 5px 0px $gray-500;
   border-radius: 4px;
   &.link-item-top {
     border: 0;
@@ -427,7 +427,7 @@ ol, ul {
       }
     }
   }
-  padding: 0.5rem 1rem 1rem 1rem;
+  padding: 0.5rem 1rem;
   h2, h3 {
     color: $gray;
   }
@@ -439,6 +439,16 @@ ol, ul {
   }
   img {
     max-height: 6rem;
+  }
+  .summary {
+    @extend .border-left;
+    @extend .pl-3;
+    @extend .text-center;
+    @extend .text-muted;
+    .summary-value {
+      font-size: 3em;
+      line-height: 1;
+    }
   }
   &:hover {
     transform: translateY(2px);
@@ -607,5 +617,17 @@ button:hover .icon {
   }
   a {
     color: $gray-lighter;
+  }
+}
+
+// This removes the navbar button from the document flow,
+// allowing the logo to display perfectly center.
+.navbar > .container {
+  position: relative;
+  justify-content: center;
+  > .navbar-toggler {
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }

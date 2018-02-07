@@ -2,23 +2,23 @@
 
 crwdns18285:0crwdne18285:0 crwdns18286:0crwdne18286:0 crwdns18287:0crwdne18287:0
 
-crwdns18288:0crwdne18288:0
-
-crwdns18289:0crwdne18289:0 crwdns18290:0crwdne18290:0 crwdns18291:0crwdne18291:0
-
-*BlockTag: crwdns19037:0crwdne19037:0*
+*BlockTag: crwdns20130:0crwdne20130:0*
 
 {panel type="video"}
 
 # crwdns19038:0crwdne19038:0
 
-*BlockTag: crwdns18293:0crwdne18293:0*
+*BlockTag: crwdns20131:0crwdne20131:0*
 
 {video url="https://www.youtube.com/embed/Wy6-FXtLMV8"}
 
-*BlockTag: crwdns18294:0crwdne18294:0*
+*BlockTag: crwdns20132:0crwdne20132:0*
 
 {panel end}
+
+crwdns20133:0crwdne20133:0
+
+crwdns20134:0crwdne20134:0 crwdns20135:0crwdne20135:0 crwdns20136:0crwdne20136:0
 
 ## crwdns18295:0crwdne18295:0
 
@@ -64,9 +64,9 @@ crwdns18308:0crwdne18308:0
 
 ## crwdns18312:0crwdne18312:0
 
-*BlockTag: crwdns18343:0crwdne18343:0*
+*BlockTag: crwdns20137:0crwdne20137:0*
 
-{image file-path="img/topics/col_binary_01.png"}
+{image file-path="img/topics/col_binary_01.png" alignment="right"}
 
 - crwdns9128:0crwdne9128:0
 

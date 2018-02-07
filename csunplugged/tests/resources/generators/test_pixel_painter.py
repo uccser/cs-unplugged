@@ -52,7 +52,7 @@ class PixelPainterResourceGeneratorTest(BaseGeneratorTest):
         generator.save_thumbnail("Test", test_output_path)
         compare_result = cmp(
             test_output_path,
-            "tests/resources/generators/assets/pixel-painter/boat-black-white.png",
+            "tests/resources/generators/assets/pixel-painter/boat-black-white-thumbnail.png",
             shallow=False
         )
         self.assertTrue(compare_result)
@@ -65,7 +65,7 @@ class PixelPainterResourceGeneratorTest(BaseGeneratorTest):
         generator.save_thumbnail("Test", test_output_path)
         compare_result = cmp(
             test_output_path,
-            "tests/resources/generators/assets/pixel-painter/boat-black-white.png",
+            "tests/resources/generators/assets/pixel-painter/boat-black-white-thumbnail.png",
             shallow=False
         )
         self.assertTrue(compare_result)
