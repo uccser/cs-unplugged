@@ -4,7 +4,6 @@ from PIL import Image, ImageDraw, ImageFont
 from math import ceil
 from yattag import Doc
 import string
-from shutil import copy2
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 from django.utils.translation import ugettext as _
 from resources.utils.resource_parameters import EnumResourceParameter
@@ -112,11 +111,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         """
         method = self.options["method"].value
         image_name = self.options["image"].value
-
-        if method == "run-length-encoding":
-            image_filename = "{}-black-white.png".format(image_name)
-        else:
-            image_filename = "{}-{}.png".format(image_name, method)
+        image_filename = self.get_image_filename(image_name, method)
         image = Image.open(self.STATIC_PATH.format(image_filename))
         (image_width, image_height) = image.size
 
@@ -450,6 +445,22 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
                             line("li", ", ".join(str(number) for number in line_values))
         return doc.getvalue()
 
+    def get_image_filename(self, image_name, method):
+        """Return filename for requested image.
+
+        Args:
+            image_name (str): Name of the image.
+            method (str): Type of image used.
+
+        Returns:
+            Image filename (str).
+        """
+        if method == "run-length-encoding":
+            image_filename = "{}-black-white.png".format(image_name)
+        else:
+            image_filename = "{}-{}.png".format(image_name, method)
+        return image_filename
+
     @property
     def subtitle(self):
         """Return the subtitle string of the resource.
@@ -478,8 +489,11 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         """
         method = self.options["method"].value
         image_name = self.options["image"].value
-        if method == "run-length-encoding":
-            image_filename = "{}-black-white.png".format(image_name)
-        else:
-            image_filename = "{}-{}.png".format(image_name, method)
-        copy2(self.STATIC_PATH.format(image_filename), path)
+        image_filename = self.get_image_filename(image_name, method)
+        image = Image.open(self.STATIC_PATH.format(image_filename))
+        (width, height) = image.size
+        minimum_pixel_width = 400
+        ratio = ceil(minimum_pixel_width / width)
+        enlarged_size = (width * ratio, height * ratio)
+        enlarged_image = image.resize(enlarged_size, resample=Image.NEAREST)
+        enlarged_image.save(path)
