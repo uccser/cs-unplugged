@@ -7,7 +7,7 @@ import tinycss
 from bidi.algorithm import get_display
 from uniseg.linebreak import line_break_units
 import math
-from utils.font_ords import character_set
+from utils.nototools_coverage import character_set
 from utils.errors.TextBoxDrawerErrors import (
     MissingSVGFile,
     TextBoxNotFoundInSVG

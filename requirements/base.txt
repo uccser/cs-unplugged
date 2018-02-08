@@ -8,6 +8,7 @@ wheel==0.30.0
 Pillow==5.0.0
 yattag==1.10.0
 tinycss==0.4
+FontTools==3.22.0
 
 # Markdown
 verto==0.7.3
