@@ -4,10 +4,10 @@ from django.utils.translation import get_language, get_language_bidi
 from PIL import ImageFont, Image, ImageDraw
 from lxml import etree as ET
 import tinycss
-import os
 from bidi.algorithm import get_display
 from uniseg.linebreak import line_break_units
 import math
+from utils.font_ords import character_set
 from utils.errors.TextBoxDrawerErrors import (
     MissingSVGFile,
     TextBoxNotFoundInSVG
@@ -21,10 +21,6 @@ DEFAULT_FONT_OVERRIDES = {
 }
 DEFAULT_FONT_SIZE = 20
 DEFAULT_COLOR = (0, 0, 0)
-
-FONT_MAX_ORD = {
-    "PatrickHand-Regular": 255,
-}
 
 
 class TextBox(object):
@@ -248,11 +244,15 @@ class TextBoxDrawer(object):
             (str) <font_path> if all chars can be rendered, otherwise a default.
         """
         if font_path:
-            font_name = os.path.splitext(os.path.basename(font_path))[0]
-            max_ord_allowed = FONT_MAX_ORD[font_name]
-            max_ord = ord(max(text, key=ord))
-            if max_ord > max_ord_allowed:
-                # Text contains codepoints without a glyph in requested font
+            font_valid = True
+            font_ords = character_set(font_path)
+            i = 0
+            while i < len(text) and font_valid:
+                if ord(text[i]) not in font_ords:
+                    font_valid = False
+                i += 1
+            # Text contains codepoints without a glyph in requested font
+            if not font_valid:
                 font_path = cls.get_default_font()
         else:
             font_path = cls.get_default_font()
