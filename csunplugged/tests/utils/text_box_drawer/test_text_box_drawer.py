@@ -1,6 +1,7 @@
 """Test class for TextBoxDrawer."""
 
 from django.test import SimpleTestCase
+from django.utils import translation
 from utils.TextBoxDrawer import TextBoxDrawer, TextBox, DEFAULT_FONT
 from PIL import ImageFont, Image, ImageDraw
 from lxml import etree as ET
@@ -131,7 +132,7 @@ class TextBoxDrawerTest(SimpleTestCase):
         image = Image.new("RGB", (1000, 1000))
         tbd = TextBoxDrawer(image, None, svg)
         font_path = "static/fonts/PatrickHand-Regular.ttf"
-        new_font_path = tbd.fallback_font_if_required(font_path, chr(300))
+        new_font_path = tbd.fallback_font_if_required(font_path, chr(8000))
         self.assertNotEqual(font_path, new_font_path)
         self.assertEqual(DEFAULT_FONT, new_font_path)
 
@@ -219,6 +220,21 @@ class TextBoxDrawerTest(SimpleTestCase):
             "This is a string",
         )
 
+    def test_write_text_box_with_textbox_parameter(self):
+        image = Image.new("RGB", (1000, 1000))
+        draw = ImageDraw.Draw(image)
+        vertices = [
+            (0, 0), (200, 0), (200, 100), (0, 100)
+        ]
+        width = 200
+        height = 100
+        box = TextBox(vertices, width, height)
+        tbd = TextBoxDrawer(image, draw)
+        tbd.write_text_box(
+            box,
+            "This is a string",
+        )
+
     def test_write_text_box_object_justification_smoke_test(self):
         image = Image.new("RGB", (1000, 1000))
         draw = ImageDraw.Draw(image)
@@ -253,7 +269,7 @@ class TextBoxDrawerTest(SimpleTestCase):
             draw,
             box,
             "This is a string",
-            font_path="static/fonts/PatrickHand-Regular",
+            font_path="static/fonts/PatrickHand-Regular.ttf",
             font_size=17,
             line_spacing=10,
             color="#013291"
@@ -275,3 +291,42 @@ class TextBoxDrawerTest(SimpleTestCase):
             box,
             "This is a string",
         )
+
+    def test_create_drawer_without_svg(self):
+        image = Image.new("RGB", (2000, 4000))
+        TextBoxDrawer(image, None)
+
+    def test_default_font_en(self):
+        image = Image.new("RGB", (2000, 4000))
+        tbd = TextBoxDrawer(image, None)
+        self.assertEqual(
+                tbd.get_default_font(),
+                "static/fonts/NotoSans-Regular.ttf",
+            )
+
+    def test_default_font_ja(self):
+        image = Image.new("RGB", (2000, 4000))
+        tbd = TextBoxDrawer(image, None)
+        with translation.override("ja"):
+            self.assertEqual(
+                tbd.get_default_font(),
+                "static/fonts/NotoSansCJKjp-Regular.otf",
+            )
+
+    def test_default_font_he(self):
+        image = Image.new("RGB", (2000, 4000))
+        tbd = TextBoxDrawer(image, None)
+        with translation.override("he"):
+            self.assertEqual(
+                tbd.get_default_font(),
+                "static/fonts/OpenSansHebrew-Regular.ttf",
+            )
+
+    def test_default_font_ar(self):
+        image = Image.new("RGB", (2000, 4000))
+        tbd = TextBoxDrawer(image, None)
+        with translation.override("ar"):
+            self.assertEqual(
+                tbd.get_default_font(),
+                "static/fonts/DejaVuSans.ttf",
+            )

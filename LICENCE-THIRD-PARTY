@@ -186,6 +186,15 @@ third-party-licenses/noto-sans.txt
 ==============================================================================
 
 ==============================================================================
+NotoTools Coverage function
+------------------------------------------------------------------------------
+https://github.com/googlei18n/nototools/blob/master/nototools/coverage.py
+Copyright 2014 Google Inc. All rights reserved.
+Licensed under Apache License Version 2.0 License.
+third-party-licenses/nototools-coverage.txt
+==============================================================================
+
+==============================================================================
 Patrick Hand
 ------------------------------------------------------------------------------
 https://fonts.google.com/specimen/Patrick+Hand
