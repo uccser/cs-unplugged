@@ -4,7 +4,6 @@ from classic.management.commands._ClassicPagesLoader import ClassicPagesLoader
 from utils.errors.CouldNotFindYAMLFileError import CouldNotFindYAMLFileError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.EmptyYAMLFileError import EmptyYAMLFileError
-from utils.errors.InvalidYAMLValueError import InvalidYAMLValueError
 
 
 class ResourceLoaderTest(BaseTestWithDB):
@@ -51,7 +50,7 @@ class ResourceLoaderTest(BaseTestWithDB):
             EmptyYAMLFileError,
             classicpage_loader.load,
         )
-    #
+
     def test_classicpage_loader_missing_name_value(self):
         config_file = "missing-name.yaml"
         classicpage_loader = ClassicPagesLoader(
