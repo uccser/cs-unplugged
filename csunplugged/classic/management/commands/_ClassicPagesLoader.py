@@ -25,7 +25,7 @@ class ClassicPagesLoader(BaseLoader):
         for (slug, page_data) in classic_pages.items():
             try:
                 name = page_data["name"]
-            except KeyError:
+            except (TypeError, KeyError):
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
                     [
