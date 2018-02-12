@@ -518,7 +518,8 @@ h1, h2, h3, h4, h5, h6, details {
   clear: both;
 }
 .icon {
-  display: inline-block;
+  display: block;
+  margin: auto;
   width: 1em;
   height: 1em;
   stroke-width: 0;
@@ -632,5 +633,15 @@ button:hover .icon {
     position: absolute;
     top: 0;
     left: 0;
+  }
+}
+
+#search-navbar {
+  input,
+  button {
+    line-height: 1.4 !important;
+    padding-left: 0.4rem !important;
+    padding-right: 0.4rem !important;
+    // padding-top: 0.3rem !important;
   }
 }
