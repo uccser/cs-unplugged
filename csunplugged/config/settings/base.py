@@ -55,6 +55,7 @@ LOCAL_APPS = [
     "topics.apps.TopicsConfig",
     "resources.apps.ResourcesConfig",
     "search.apps.SearchConfig",
+    "classic.apps.ClassicConfig",
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -288,3 +289,4 @@ RESOURCE_COPY_AMOUNT = 20
 SCRATCH_GENERATION_LOCATION = str(ROOT_DIR.path("temp"))
 CUSTOM_VERTO_TEMPLATES = os.path.join(str(ROOT_DIR.path("utils")), "custom_converter_templates", "")
 MODELTRANSLATION_CUSTOM_FIELDS = ("JSONField",)
+CLASSIC_PAGES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("classic")), "content")
