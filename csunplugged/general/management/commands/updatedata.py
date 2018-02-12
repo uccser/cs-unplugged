@@ -13,3 +13,4 @@ class Command(management.base.BaseCommand):
         management.call_command("flush", interactive=False)
         management.call_command("loadresources")
         management.call_command("loadtopics")
+        management.call_command("loadclassicpages")

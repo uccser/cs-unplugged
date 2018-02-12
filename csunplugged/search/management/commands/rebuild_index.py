@@ -3,7 +3,8 @@
 from haystack.management.commands import rebuild_index
 from haystack.query import SearchQuerySet
 from search.forms import all_items
-from topics.models import Resource
+from resources.models import Resource
+from classic.models import ClassicPage
 from topics.models import (
     Topic,
     UnitPlan,
@@ -26,6 +27,7 @@ class Command(rebuild_index.Command):
         total_objects += Lesson.objects.count()
         total_objects += ProgrammingChallenge.objects.count()
         total_objects += CurriculumIntegration.objects.count()
+        total_objects += ClassicPage.objects.count()
         super(Command, self).handle(*args, **options)
         total_results = len(all_items(SearchQuerySet()))
         if total_objects == total_results:

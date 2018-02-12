@@ -9,7 +9,6 @@ class ClassicPage(models.Model):
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(unique=True)
     name = models.CharField(max_length=200)
-    indexed = models.BooleanField()
     redirect = models.URLField()
 
     def get_absolute_url(self):
@@ -26,7 +25,7 @@ class ClassicPage(models.Model):
         Returns:
             Name of the model (str).
         """
-        return "Classic CS Unplugged Page"
+        return "Classic CS Unplugged page"
 
     def __str__(self):
         """Text representation of ClassicPage object.
