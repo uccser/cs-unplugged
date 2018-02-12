@@ -1,158 +1,82 @@
-# This file stores data for Classic CS Unplugged, used for redirections
-# and searching.
+# This file stores data for Classic CS Unplugged, used for searching.
 
 # Text values are stored within this file (and not separate language
 # files) as the names are only used within the search application
 # for the English language. This is because the Classic CS Unplugged
 # website can only guarantee English content.
 
-# Each slug is used for URL matching, with the following values:
-# 1. name: Name of page, used for backend and search results.
-# 2. indexed: If 'false' given, the page will not be indexed for searching.
-# 3. redirect (optional - default is redirect to classic subdomain): Allows
-#    setting redirection method. If an explicit link is given (starts with
-#    http), then this is used. If a string is given, then this is used with
-#    Django URL routing.
+# Each slug can have the following values:
+# - name: Name of page, used for backend and search results.
 
 activities:
   name: Activities
-  indexed: true
 artificial-intelligence:
   name: Artificial intelligence
-  indexed: true
 binary-numbers:
   name: Binary numbers
-  indexed: true
 books:
   name: Books
-  indexed: true
-changelog:
-  name: Changelog
-  indexed: false
-  redirect: http://cs-unplugged.readthedocs.io/en/latest/changelog.html
 class-simulation-computer-unfinished:
   name: Class simulation computer (unfinished)
-  indexed: true
 community:
   name: Community
-  indexed: true
 community-activties:
   name: Community activties
-  indexed: true
-contact-us:
-  name: Contact us
-  indexed: false
-  redirect: general:contact
-contribute:
-  name: Contribute
-  indexed: false
 cryptographic-protocols:
   name: Cryptographic protocols
-  indexed: true
 curriculum-links:
   name: Curriculum links
-  indexed: true
 databases:
   name: Databases
-  indexed: true
 dominating-sets:
   name: Dominating sets
-  indexed: true
 error-detection:
   name: Error detection
-  indexed: true
 events:
   name: Events
-  indexed: true
 finite-state-automata:
   name: Finite state automata
-  indexed: true
 graph-colouring:
   name: Graph colouring
-  indexed: true
 harold-the-robot-2:
   name: Harold the Robot 2
-  indexed: true
 human-interface-design:
   name: Human interface design
-  indexed: true
 image-representation:
   name: Image representation
-  indexed: true
 information-hiding:
   name: Information hiding
-  indexed: true
 information-theory:
-  name: Iinformation theory
-  indexed: true
+  name: Information theory
 minimal-spanning-trees:
   name: Minimal spanning trees
-  indexed: true
-modem/:
-  name: Modem
-  indexed: false
-  redirect: https://classic.csunplugged.org/modems-unplugged-2
 modems-unplugged-2:
   name: Modems Unplugged 2
-  indexed: true
 network-protocols:
   name: Network protocols
-  indexed: true
 phylogenetics:
   name: Phylogenetics
-  indexed: true
 programming-languages:
   name: Programming languages
-  indexed: true
-projects:
-  name: Projects
-  indexed: false
 promotional:
   name: Promotional
-  indexed: true
 public-key-encryption:
   name: Public key encryption
-  indexed: true
-rename:
+research:
   name: Research
-  indexed: true
 routing-and-deadlock:
   name: Routing and deadlock
-  indexed: true
 scout-patrol-encryption:
   name: Scout patrol encryption
-  indexed: true
 searching-algorithms:
   name: Searching algorithms
-  indexed: true
-sneak-peek/:
-  name: Sneak peek
-  indexed: false
-  redirect: general:home
 sorting-algorithms:
   name: Sorting algorithms
-  indexed: true
 sorting-networks:
   name: Sorting networks
-  indexed: true
 steiner-trees:
   name: Steiner trees
-  indexed: true
-teachers:
-  name: Teachers
-  indexed: false
 text-compression:
   name: Text compression
-  indexed: true
 the-turing-test:
   name: The Turing Test
-  indexed: true
-translations:
-  name: Translations
-  indexed: false
-videos:
-  name: Videos
-  indexed: false
-wp-content/:
-  name: Content files
-  indexed: false
