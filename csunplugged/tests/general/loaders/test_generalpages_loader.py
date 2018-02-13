@@ -7,9 +7,9 @@ from general.management.commands._GeneralPagesLoader import GeneralPagesLoader
 
 BASE_PATH = "tests/general/loaders/assets/"
 test_template_settings = settings.TEMPLATES
-current_path = test_template_settings[0]["DIRS"][0]
-new_path = join(dirname(current_path), BASE_PATH, "templates/")
-test_template_settings[0]["DIRS"] = [new_path]
+default_path = test_template_settings[0]["DIRS"][0]
+new_path = join(dirname(default_path), BASE_PATH, "templates/")
+test_template_settings[0]["DIRS"].append(new_path)
 url_conf = join(BASE_PATH, "urls").replace("/", ".")
 
 
