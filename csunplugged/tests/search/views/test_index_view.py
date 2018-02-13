@@ -64,6 +64,10 @@ class IndexViewTest(BaseTestWithDB):
                     "name": "Curriculum integrations"
                 },
                 {
+                    "value": "general.generalpage",
+                    "name": "General pages"
+                },
+                {
                     "value": "topics.lesson",
                     "name": "Lessons"
                 },
@@ -105,6 +109,10 @@ class IndexViewTest(BaseTestWithDB):
                 {
                     "value": "topics.curriculumintegration",
                     "name": "Curriculum integrations"
+                },
+                {
+                    "value": "general.generalpage",
+                    "name": "General pages"
                 },
                 {
                     "value": "topics.lesson",

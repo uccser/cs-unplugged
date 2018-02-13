@@ -1,27 +1,40 @@
 # This file stores data for general website pages, used for searching.
 
 # Each slug can have the following values:
+# - name: Name of page.
 # - template: Filename of template to parse text values from.
 # - url-name: Name of page URL.
 
+# Text values are stored within this file (and not separate language
+# files) as the names are only used for the English site.
+# The retrieval of names will be need to be established for #798.
+# This could be accomplished by parsing template and using a TranslatableModel.
+
 about:
+  name: About
   template: general/about.html
   url-name: general:about
 contact:
+  name: Contact
   template: general/contact.html
   url-name: general:contact
 people:
+  name: People
   template: general/people.html
   url-name: general:people
 principles:
+  name: Principles
   template: general/principles.html
   url-name: general:principles
 what-is-computer-science:
+  name: What is Computer Science
   template: general/what-is-computer-science.html
   url-name: general:what_is_cs
 how-do-i-teach-cs-unplugged:
+  name: How do I teach CS Unplugged
   template: general/how-do-i-teach-cs-unplugged.html
   url-name: general:how_do_i_teach_cs_unplugged
 computational-thinking:
+  name: Computational Thinking
   template: general/computational-thinking.html
   url-name: general:computational_thinking
