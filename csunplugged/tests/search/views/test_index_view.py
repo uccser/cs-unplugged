@@ -37,14 +37,14 @@ class IndexViewTest(BaseTestWithDB):
         response = self.client.get(url)
         self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertFalse(response.context["object_list"])
-        self.assertIsNone(response.context.get("query"))
+        self.assertEqual(response.context.get("query"), "")
 
     def test_search_view_with_no_query_with_no_index(self):
         url = reverse("search:index")
         response = self.client.get(url)
         self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertFalse(response.context["object_list"])
-        self.assertIsNone(response.context.get("query"))
+        self.assertEqual(response.context.get("query"), "")
 
     # Context
 
