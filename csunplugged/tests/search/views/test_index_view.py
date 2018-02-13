@@ -56,6 +56,10 @@ class IndexViewTest(BaseTestWithDB):
             response.context["models"],
             [
                 {
+                    "value": "classic.classicpage",
+                    "name": "Classic pages"
+                },
+                {
                     "value": "topics.curriculumintegration",
                     "name": "Curriculum integrations"
                 },
@@ -94,6 +98,10 @@ class IndexViewTest(BaseTestWithDB):
         self.assertEqual(
             response.context["models"],
             [
+                {
+                    "value": "classic.classicpage",
+                    "name": "Classic pages"
+                },
                 {
                     "value": "topics.curriculumintegration",
                     "name": "Curriculum integrations"
