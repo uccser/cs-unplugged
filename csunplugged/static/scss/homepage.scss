@@ -1,11 +1,11 @@
 @import "bootstrap-overrides";
 
-.trans-navbar {
+.trans-navbar.opaque {
     background-color: $red;
     transition: background-color .5s ease 0s;
 }
 
-.trans-navbar.trans {
+.trans-navbar {
     background-color: rgba(0,0,0,0);
     transition: background-color .5s ease 0s;
 }
