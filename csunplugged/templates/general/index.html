@@ -9,6 +9,7 @@
 
 
 {% block body_container %}
+  <style>body { padding-top: 0px !important; }</style>
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="text-center">
@@ -100,3 +101,7 @@
     </div>
   </div>
 {% endblock body_container %}
+
+{% block scripts %}
+  <script src="{% static 'js/homepage.js' %}"></script>
+{% endblock scripts %}
