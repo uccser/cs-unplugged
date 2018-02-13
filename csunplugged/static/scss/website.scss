@@ -128,8 +128,14 @@ $rounded-corner-radius: 0.5rem;
   margin: 0.5em;
 }
 
+.trans-navbar {
+    background-color: rgba(0,0,0,0) !important;
+}
+
+
 .navbar {
   background-color: $red;
+  transition: background-color .5s ease 0s;
 
   #navbar-brand-logo {
     height: 2rem;
@@ -296,6 +302,9 @@ $navbar-height: 50px;
 $navbar-padding-bottom: 24px;
 body {
   padding-top: $navbar-height;
+  &.homepage {
+    padding-top: 0px;
+  }
   position: relative;
   background-color: $gray-100;
 }

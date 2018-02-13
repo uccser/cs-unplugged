@@ -42,8 +42,8 @@
     <meta name="msapplication-config" content="{% static 'img/browserconfig.xml' %}">
     <meta name="theme-color" content="#ffffff">
   </head>
-  <body style="text-align: {{LANGUAGE_START}};">
-    <nav class="navbar fixed-top navbar-expand-md navbar-dark py-1 d-print-none trans-navbar">
+  <body style="text-align: {{LANGUAGE_START}};"{% if homepage %} class="homepage"{% endif %}>
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark py-1 d-print-none{% if homepage %} trans-navbar{% endif %}">
       <div class="container px-0">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>

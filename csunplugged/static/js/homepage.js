@@ -1,8 +1,8 @@
 $(window).scroll(function() {
   if($(this).scrollTop() > 50)  /*height in pixels when the navbar becomes transparent*/
   {
-      $('.trans-navbar').addClass('opaque');
+      $('.navbar').removeClass('trans-navbar');
   } else {
-      $('.trans-navbar').removeClass('opaque');
+      $('.navbar').addClass('trans-navbar');
   }
 });
