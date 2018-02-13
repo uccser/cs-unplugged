@@ -15,9 +15,7 @@ class GeneralIndexView(TemplateView):
         Returns:
             Dictionary of context data.
         """
-        # Call the base implementation first to get a context
         context = super(GeneralIndexView, self).get_context_data(**kwargs)
-        # Add in a QuerySet of all the connected unit plans
         context["homepage"] = True
         return context
 
