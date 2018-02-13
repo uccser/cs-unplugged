@@ -6,7 +6,7 @@ from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.EmptyYAMLFileError import EmptyYAMLFileError
 
 
-class ResourceLoaderTest(BaseTestWithDB):
+class ClassicPageLoaderTest(BaseTestWithDB):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.loader_name = "classicpage"

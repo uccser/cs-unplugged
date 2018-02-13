@@ -1,4 +1,4 @@
-"""Module for the testing custom Django commands."""
+"""Module for the testing custom Django rebuild_index command."""
 
 from tests.BaseTestWithDB import BaseTestWithDB
 from django.core import management
@@ -6,6 +6,7 @@ from django.test import tag
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
 from classic.models import ClassicPage
+from general.models import GeneralPage
 
 
 @tag("management")
@@ -72,6 +73,16 @@ class ManagementCommandTest(BaseTestWithDB):
             slug="page",
             name="Page",
             redirect="http://www.example.com",
+        )
+        page.save()
+        management.call_command("rebuild_index", "--noinput")
+
+    def test_rebuild_index_command_general_page_model(self):
+        page = GeneralPage(
+            slug="page",
+            name="Page",
+            template="template.html",
+            url_name="url",
         )
         page.save()
         management.call_command("rebuild_index", "--noinput")
