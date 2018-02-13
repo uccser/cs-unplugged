@@ -5,6 +5,7 @@ from django.core import management
 from django.test import tag
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
+from classic.models import ClassicPage
 
 
 @tag("management")
@@ -64,6 +65,15 @@ class ManagementCommandTest(BaseTestWithDB):
             "resources/grid.html",
             "GridResourceGenerator",
         )
+        management.call_command("rebuild_index", "--noinput")
+
+    def test_rebuild_index_command_classic_page_model(self):
+        page = ClassicPage(
+            slug="page",
+            name="Page",
+            redirect="http://www.example.com",
+        )
+        page.save()
         management.call_command("rebuild_index", "--noinput")
 
     def test_rebuild_index_command_multiple_models(self):
