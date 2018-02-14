@@ -47,11 +47,7 @@
               <select id="models-filter" name="models" multiple="multiple" style="display:none;">
                 {% for model in models %}
                   <option value="{{ model.value }}"{% if model.selected == "true" %} selected="selected"{% endif %}>
-                    {% if model.name == "Classic pages" %}
-                      Classic CS Unplugged pages
-                    {% else %}
-                      {{ model.name }}
-                    {% endif %}
+                    {{ model.name }}
                   </option>
                 {% endfor %}
               </select>
