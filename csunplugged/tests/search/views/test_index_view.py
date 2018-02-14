@@ -57,7 +57,7 @@ class IndexViewTest(BaseTestWithDB):
             [
                 {
                     "value": "classic.classicpage",
-                    "name": "Classic pages"
+                    "name": "Classic CS Unplugged pages"
                 },
                 {
                     "value": "topics.curriculumintegration",
@@ -104,7 +104,7 @@ class IndexViewTest(BaseTestWithDB):
             [
                 {
                     "value": "classic.classicpage",
-                    "name": "Classic pages"
+                    "name": "Classic CS Unplugged pages"
                 },
                 {
                     "value": "topics.curriculumintegration",
