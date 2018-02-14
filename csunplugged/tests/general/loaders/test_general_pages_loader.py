@@ -25,14 +25,14 @@ class GeneralPageLoaderTest(BaseTestWithDB):
         self.loader_name = "generalpage"
         self.BASE_PATH = join(BASE_PATH, "generalpages/")
 
-    def test_basic_generalpage_loader_config(self):
+    def test_basic_general_page_loader_config(self):
         config_file = "basic-config.yaml"
-        generalpage_loader = GeneralPagesLoader(
+        general_page_loader = GeneralPagesLoader(
             structure_dir="",
             structure_filename=config_file,
             base_path=self.BASE_PATH,
         )
-        generalpage_loader.load()
+        general_page_loader.load()
         pages = GeneralPage.objects.all()
         self.assertEqual(1, len(pages))
         page = pages[0]
@@ -41,98 +41,98 @@ class GeneralPageLoaderTest(BaseTestWithDB):
         self.assertEqual("template.html", page.template)
         self.assertEqual("page", page.url_name)
 
-    def test_generalpage_loader_missing_configuration_file(self):
+    def test_general_page_loader_missing_configuration_file(self):
         config_file = "missing.yaml"
-        generalpage_loader = GeneralPagesLoader(
+        general_page_loader = GeneralPagesLoader(
             structure_dir="",
             structure_filename=config_file,
             base_path=self.BASE_PATH,
         )
         self.assertRaises(
             CouldNotFindYAMLFileError,
-            generalpage_loader.load,
+            general_page_loader.load,
         )
 
-    def test_generalpage_loader_empty_configuration_file(self):
+    def test_general_page_loader_empty_configuration_file(self):
         config_file = "empty.yaml"
-        generalpage_loader = GeneralPagesLoader(
+        general_page_loader = GeneralPagesLoader(
             structure_dir="",
             structure_filename=config_file,
             base_path=self.BASE_PATH,
         )
         self.assertRaises(
             EmptyYAMLFileError,
-            generalpage_loader.load,
+            general_page_loader.load,
         )
 
-    def test_generalpage_loader_missing_name_value(self):
+    def test_general_page_loader_missing_name_value(self):
         config_file = "missing-name.yaml"
-        generalpage_loader = GeneralPagesLoader(
+        general_page_loader = GeneralPagesLoader(
             structure_dir="",
             structure_filename=config_file,
             base_path=self.BASE_PATH,
         )
         self.assertRaises(
             MissingRequiredFieldError,
-            generalpage_loader.load,
+            general_page_loader.load,
         )
 
-    def test_generalpage_loader_missing_template_value(self):
+    def test_general_page_loader_missing_template_value(self):
         config_file = "missing-template.yaml"
-        generalpage_loader = GeneralPagesLoader(
+        general_page_loader = GeneralPagesLoader(
             structure_dir="",
             structure_filename=config_file,
             base_path=self.BASE_PATH,
         )
         self.assertRaises(
             MissingRequiredFieldError,
-            generalpage_loader.load,
+            general_page_loader.load,
         )
 
-    def test_generalpage_loader_invalid_template_file(self):
+    def test_general_page_loader_invalid_template_file(self):
         config_file = "invalid-template-file.yaml"
-        generalpage_loader = GeneralPagesLoader(
+        general_page_loader = GeneralPagesLoader(
             structure_dir="",
             structure_filename=config_file,
             base_path=self.BASE_PATH,
         )
         self.assertRaises(
             InvalidYAMLValueError,
-            generalpage_loader.load,
+            general_page_loader.load,
         )
 
-    def test_generalpage_loader_missing_url_name_value(self):
+    def test_general_page_loader_missing_url_name_value(self):
         config_file = "missing-url-name.yaml"
-        generalpage_loader = GeneralPagesLoader(
+        general_page_loader = GeneralPagesLoader(
             structure_dir="",
             structure_filename=config_file,
             base_path=self.BASE_PATH,
         )
         self.assertRaises(
             MissingRequiredFieldError,
-            generalpage_loader.load,
+            general_page_loader.load,
         )
 
-    def test_generalpage_loader_invalid_url_name_value(self):
+    def test_general_page_loader_invalid_url_name_value(self):
         config_file = "invalid-url-name.yaml"
-        generalpage_loader = GeneralPagesLoader(
+        general_page_loader = GeneralPagesLoader(
             structure_dir="",
             structure_filename=config_file,
             base_path=self.BASE_PATH,
         )
         self.assertRaises(
             InvalidYAMLValueError,
-            generalpage_loader.load,
+            general_page_loader.load,
         )
 
-    def test_generalpage_loader_multiple_configuration(self):
+    def test_general_page_loader_multiple_configuration(self):
         config_file = "multiple.yaml"
-        generalpage_loader = GeneralPagesLoader(
+        general_page_loader = GeneralPagesLoader(
             structure_dir="",
             structure_filename=config_file,
             base_path=self.BASE_PATH,
         )
-        generalpage_loader.load()
+        general_page_loader.load()
         pages = GeneralPage.objects.order_by("name")
         self.assertEqual(3, len(pages))
         self.assertQuerysetEqual(

@@ -18,7 +18,7 @@ The search page form uses `multiple-select <http://wenzhixin.net.cn/p/multiple-s
 Indexing of general and Classic CS Unplugged pages
 ==============================================================================
 
-Allowing the user to search for general pages (for example, the webpage on computational thinking) and Classic CS Unplugged page (for example, the muddy city activity) was an important feature to implement.
+Allowing the user to search for general pages (for example, the webpage on computational thinking) and Classic CS Unplugged page (for example, the graph colouring activity) was an important feature to implement.
 There were three main strategies to accomplish this task:
 
 1. **Modify Django Haystack to handle non-model data** - This would have been a very hard approach to take (Django Haystack authors do not recommend it) as the package is built around models to its core.
