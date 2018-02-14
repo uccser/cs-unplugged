@@ -7,14 +7,12 @@ The `urlpatterns` list routes URLs to views. For more information please see:
 from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.i18n import i18n_patterns
-from django.contrib import admin
 from general import views
 
 urlpatterns = i18n_patterns(
     url(r"", include("general.urls", namespace="general")),
     url(r"^topics/", include("topics.urls", namespace="topics")),
     url(r"^resources/", include("resources.urls", namespace="resources")),
-    url(r"^admin/", include(admin.site.urls)),
     url(r"^search/", include("search.urls", namespace="search")),
 )
 
