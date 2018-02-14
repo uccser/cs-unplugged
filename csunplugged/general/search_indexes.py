@@ -40,7 +40,7 @@ class GeneralPageIndex(indexes.SearchIndex, indexes.Indexable):
         """
         rendered = render_to_string(obj.template, {"LANGUAGE_CODE": "en"})
         html = fromstring(rendered)
-        selector = CSSSelector("div#general-page-content")
+        selector = CSSSelector("#general-page-content")
         try:
             contents = selector(html)[0].text_content()
         except IndexError:
