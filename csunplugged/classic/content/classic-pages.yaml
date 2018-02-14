@@ -1,12 +1,4 @@
-# This file stores data for Classic CS Unplugged, used for searching.
-
-# Each slug can have the following values:
-# - name: Name of page, used for backend and search results.
-
-# Text values are stored within this file (and not separate language
-# files) as the names are only used within the search application
-# for the English language. This is because the Classic CS Unplugged
-# website can only guarantee English content.
+# This file stores data for Classic CS Unplugged that are available for searching.
 
 activities:
   name: Activities
