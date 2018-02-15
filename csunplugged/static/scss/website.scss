@@ -99,6 +99,7 @@ $rounded-corner-radius: 0.5rem;
   background: url("../img/red-hero-banner.png");
   background-size: cover;
   width: 100%;
+  padding-top: 80px;
   padding-bottom: 60px;
   text-shadow: 0 2px 2px rgba(0,0,0,0.4);
 
@@ -114,7 +115,6 @@ $rounded-corner-radius: 0.5rem;
   }
 }
 
-
 #homepage-cards {
   position: relative;
   top: -80px;
@@ -127,11 +127,23 @@ $rounded-corner-radius: 0.5rem;
   margin: 0.5em;
 }
 
+@include media-breakpoint-up(md) {
+  .trans-navbar {
+    background-color: rgba(0,0,0,0) !important;
+    box-shadow: none !important;
+  }
+}
+
 .navbar {
   background-color: $red;
+  transition: background-color .3s ease 0s;
+  box-shadow: 0px 0px 3px 0px #6b0a19;
 
   #navbar-brand-logo {
     height: 2rem;
+    @include media-breakpoint-up(md) {
+      padding-right: .5em;
+    }
   }
 
   .navbar-nav .nav-link:hover {
@@ -292,9 +304,13 @@ $navbar-height: 50px;
 $navbar-padding-bottom: 24px;
 body {
   padding-top: $navbar-height;
+  &.homepage {
+    padding-top: 0px;
+  }
   position: relative;
   background-color: $gray-100;
 }
+
 #content-container {
   padding-top: $navbar-padding-bottom;
 }
@@ -515,7 +531,8 @@ h1, h2, h3, h4, h5, h6, details {
   clear: both;
 }
 .icon {
-  display: inline-block;
+  display: block;
+  margin: auto;
   width: 1em;
   height: 1em;
   stroke-width: 0;
@@ -629,5 +646,14 @@ button:hover .icon {
     position: absolute;
     top: 0;
     left: 0;
+  }
+}
+
+#search-navbar {
+  input,
+  button {
+    line-height: 1.4 !important;
+    padding-left: 0.4rem !important;
+    padding-right: 0.4rem !important;
   }
 }
