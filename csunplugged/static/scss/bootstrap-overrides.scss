@@ -76,4 +76,4 @@ $link-hover-decoration: underline;
 $navbar-dark-color:                $white;
 $navbar-dark-hover-color:          $white;
 $navbar-dark-toggler-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"), "#", "%23");
-$navbar-dark-toggler-border-color:       $red;
+$navbar-dark-toggler-border-color:       $white;
