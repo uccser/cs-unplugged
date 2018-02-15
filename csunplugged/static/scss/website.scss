@@ -129,11 +129,13 @@ $rounded-corner-radius: 0.5rem;
 
 .trans-navbar {
     background-color: rgba(0,0,0,0) !important;
+    box-shadow: 0px 0px 0px 0px #ffffff00 !important;
 }
 
 .navbar {
   background-color: $red;
   transition: background-color .5s ease 0s;
+  box-shadow: 0px 0px 3px 0px #6b0a19;
 
   #navbar-brand-logo {
     height: 2rem;
