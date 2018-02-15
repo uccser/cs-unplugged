@@ -64,7 +64,7 @@ searching-cards:
   copies: false
 barcode-checksum-poster:
   generator-module: BarcodeChecksumPosterResourceGenerator
-  thumbnail-static-path: img/resources/barcode-checksum-poster/thumbnail.gif
+  thumbnail-static-path: img/resources/barcode-checksum-poster/thumbnail.png
   copies: false
 pixel-painter:
   generator-module: PixelPainterResourceGenerator
