@@ -48,6 +48,8 @@ class CustomSearchView(SearchView):
             }
             if model_value in selected_models:
                 model_data["selected"] = "true"
+            if model_value == "classic.classicpage":
+                model_data["name"] = "Classic CS Unplugged pages"
             models.append(model_data)
         context["models"] = models
 

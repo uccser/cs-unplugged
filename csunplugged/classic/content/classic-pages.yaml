@@ -1,0 +1,74 @@
+# This file stores data for Classic CS Unplugged that are available for searching.
+
+activities:
+  name: Activities
+artificial-intelligence:
+  name: Artificial intelligence
+binary-numbers:
+  name: Binary numbers
+books:
+  name: CS Unplugged Book
+class-simulation-computer-unfinished:
+  name: Class simulation computer (unfinished)
+community:
+  name: Community
+community-activties:
+  name: Community activties
+cryptographic-protocols:
+  name: Cryptographic protocols
+curriculum-links:
+  name: Curriculum links
+databases:
+  name: Databases
+dominating-sets:
+  name: Dominating sets
+error-detection:
+  name: Error detection
+events:
+  name: Events
+finite-state-automata:
+  name: Finite state automata
+graph-colouring:
+  name: Graph colouring
+harold-the-robot-2:
+  name: Harold the Robot 2
+human-interface-design:
+  name: Human interface design
+image-representation:
+  name: Image representation
+information-hiding:
+  name: Information hiding
+information-theory:
+  name: Information theory
+minimal-spanning-trees:
+  name: Minimal spanning trees
+modems-unplugged-2:
+  name: Modems Unplugged 2
+network-protocols:
+  name: Network protocols
+phylogenetics:
+  name: Phylogenetics
+programming-languages:
+  name: Programming languages
+promotional:
+  name: Promotional
+public-key-encryption:
+  name: Public key encryption
+research:
+  name: Research
+routing-and-deadlock:
+  name: Routing and deadlock
+scout-patrol-encryption:
+  name: Scout patrol encryption
+searching-algorithms:
+  name: Searching algorithms
+sorting-algorithms:
+  name: Sorting algorithms
+sorting-networks:
+  name: Sorting networks
+steiner-trees:
+  name: Steiner trees
+text-compression:
+  name: Text compression
+the-turing-test:
+  name: The Turing Test

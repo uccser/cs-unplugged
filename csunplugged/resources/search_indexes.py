@@ -1,7 +1,7 @@
 """Search index for resources model."""
 
 from haystack import indexes
-from topics.models import Resource
+from resources.models import Resource
 
 
 class ResourceIndex(indexes.SearchIndex, indexes.Indexable):

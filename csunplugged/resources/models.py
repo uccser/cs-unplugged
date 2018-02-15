@@ -17,7 +17,7 @@ class Resource(TranslatableModel):
     content = models.TextField(default="")
 
     def get_absolute_url(self):
-        """Return the canonical URL for a programming challenge.
+        """Return the canonical URL for a resource.
 
         Returns:
             URL as string.
