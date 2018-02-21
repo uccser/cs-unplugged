@@ -1,0 +1,3 @@
+general-page:
+  template: template.html
+  url-name: page

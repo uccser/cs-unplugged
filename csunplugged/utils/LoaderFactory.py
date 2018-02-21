@@ -12,6 +12,8 @@ from topics.management.commands._TopicLoader import TopicLoader
 from topics.management.commands._UnitPlanLoader import UnitPlanLoader
 from topics.management.commands._ClassroomResourcesLoader import ClassroomResourcesLoader
 from resources.management.commands._ResourcesLoader import ResourcesLoader
+from classic.management.commands._ClassicPagesLoader import ClassicPagesLoader
+from general.management.commands._GeneralPagesLoader import GeneralPagesLoader
 
 
 class LoaderFactory:
@@ -64,3 +66,11 @@ class LoaderFactory:
     def create_resources_loader(self, **kwargs):
         """Create resources loader."""
         return ResourcesLoader(**kwargs)
+
+    def create_classic_pages_loader(self, **kwargs):
+        """Create Classic CS Unplugged pages loader."""
+        return ClassicPagesLoader(structure_dir="", **kwargs)
+
+    def create_general_pages_loader(self, **kwargs):
+        """Create general pages loader."""
+        return GeneralPagesLoader(structure_dir="", **kwargs)

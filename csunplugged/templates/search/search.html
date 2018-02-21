@@ -46,7 +46,9 @@
             <div class="col-md-8 col-lg-9">
               <select id="models-filter" name="models" multiple="multiple" style="display:none;">
                 {% for model in models %}
-                  <option value="{{ model.value }}"{% if model.selected == "true" %} selected="selected"{% endif %}>{{ model.name }}</option>
+                  <option value="{{ model.value }}"{% if model.selected == "true" %} selected="selected"{% endif %}>
+                    {{ model.name }}
+                  </option>
                 {% endfor %}
               </select>
             </div>

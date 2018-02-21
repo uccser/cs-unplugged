@@ -1,15 +1,21 @@
-{% extends "columns.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
 
-{% block right_column_content %}
-  <h4>{% trans "About pages" %}</h4>
+{% block content_container %}
+  <div class="col-12 col-md-4 order-md-2 print-col-12 print-order-1">
+    <h4>{% trans "About pages" %}</h4>
 
-  <nav class="nav flex-column">
-    <a class="nav-link" href="{% url 'general:about' %}">{% trans "About" %}</a>
-    <a class="nav-link" href="{% url 'general:computational_thinking' %}">{% trans "Computational Thinking and CS Unplugged" %}</a>
-    <a class="nav-link" href="{% url 'general:principles' %}">{% trans "Principles" %}</a>
-    <a class="nav-link" href="{% url 'general:people' %}">{% trans "People" %}</a>
-    <a class="nav-link" href="{% url 'general:contact' %}">{% trans "Contact Us" %}</a>
-  </nav>
-{% endblock right_column_content %}
+    <nav class="nav flex-column">
+      <a class="nav-link" href="{% url 'general:about' %}">{% trans "About" %}</a>
+      <a class="nav-link" href="{% url 'general:computational_thinking' %}">{% trans "Computational Thinking and CS Unplugged" %}</a>
+      <a class="nav-link" href="{% url 'general:principles' %}">{% trans "Principles" %}</a>
+      <a class="nav-link" href="{% url 'general:people' %}">{% trans "People" %}</a>
+      <a class="nav-link" href="{% url 'general:contact' %}">{% trans "Contact Us" %}</a>
+    </nav>
+  </div>
+  <div id="general-page-content" class="col-12 col-md-8 order-md-1 print-col-12 print-order-2">
+    {% block left_column_content %}
+    {% endblock left_column_content %}
+  </div>
+{% endblock content_container %}

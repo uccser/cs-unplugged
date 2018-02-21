@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-05 12:04+0000\n"
-"PO-Revision-Date: 2018-02-06 10:05-0500\n"
+"POT-Creation-Date: 2018-02-06 12:04+0000\n"
+"PO-Revision-Date: 2018-02-07 10:05-0500\n"
 "Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
 "Language-Team: English (upside down)\n"
 "Language: en_UD\n"
@@ -319,6 +319,24 @@ msgstr "crwdns15764:0crwdne15764:0"
 msgid "No"
 msgstr "crwdns15765:0crwdne15765:0"
 
+msgid "Page not found"
+msgstr "crwdns20515:0crwdne20515:0"
+
+msgid "We are sorry but we could not find a page for the link you provided."
+msgstr "crwdns20516:0crwdne20516:0"
+
+msgid "You may find one of the links below useful:"
+msgstr "crwdns20517:0crwdne20517:0"
+
+msgid "Home page"
+msgstr "crwdns20518:0crwdne20518:0"
+
+msgid "Search"
+msgstr "crwdns19542:0crwdne19542:0"
+
+msgid "Classic CS Unplugged"
+msgstr "crwdns15722:0crwdne15722:0"
+
 msgid "CS Unplugged"
 msgstr "crwdns15645:0crwdne15645:0"
 
@@ -358,9 +376,6 @@ msgstr "crwdns15653:0crwdne15653:0"
 
 msgid "Help"
 msgstr "crwdns15654:0crwdne15654:0"
-
-msgid "Search"
-msgstr "crwdns19542:0crwdne19542:0"
 
 msgid "Glossary"
 msgstr "crwdns15655:0crwdne15655:0"
@@ -579,17 +594,14 @@ msgstr "crwdns20512:0crwdne20512:0"
 msgid "This updated website has unit plans, lesson plans, teaching videos, curriculum integration activities, and programming exercises to plug in the Computer Science concepts they have just learnt unplugged."
 msgstr "crwdns20513:0crwdne20513:0"
 
-msgid "The original activities are still available at <a href=\"http://classic.csunplugged.org/\">classic.csunplugged.org</a>."
-msgstr "crwdns20514:0crwdne20514:0"
+msgid "The original activities are still available at <a href=\"https://classic.csunplugged.org/\">classic.csunplugged.org</a>."
+msgstr "crwdns20519:0crwdne20519:0"
 
 msgid "What is Computer Science?"
 msgstr "crwdns18350:0crwdne18350:0"
 
 msgid "Curriculum Integrations"
 msgstr "crwdns15721:0crwdne15721:0"
-
-msgid "Classic CS Unplugged"
-msgstr "crwdns15722:0crwdne15722:0"
 
 msgid "version 4.0.0 onwards"
 msgstr "crwdns19553:0crwdne19553:0"

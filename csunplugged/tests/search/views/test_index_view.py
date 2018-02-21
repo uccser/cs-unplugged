@@ -37,14 +37,14 @@ class IndexViewTest(BaseTestWithDB):
         response = self.client.get(url)
         self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertFalse(response.context["object_list"])
-        self.assertIsNone(response.context.get("query"))
+        self.assertEqual(response.context.get("query"), "")
 
     def test_search_view_with_no_query_with_no_index(self):
         url = reverse("search:index")
         response = self.client.get(url)
         self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertFalse(response.context["object_list"])
-        self.assertIsNone(response.context.get("query"))
+        self.assertEqual(response.context.get("query"), "")
 
     # Context
 
@@ -56,8 +56,16 @@ class IndexViewTest(BaseTestWithDB):
             response.context["models"],
             [
                 {
+                    "value": "classic.classicpage",
+                    "name": "Classic CS Unplugged pages"
+                },
+                {
                     "value": "topics.curriculumintegration",
                     "name": "Curriculum integrations"
+                },
+                {
+                    "value": "general.generalpage",
+                    "name": "General pages"
                 },
                 {
                     "value": "topics.lesson",
@@ -95,8 +103,16 @@ class IndexViewTest(BaseTestWithDB):
             response.context["models"],
             [
                 {
+                    "value": "classic.classicpage",
+                    "name": "Classic CS Unplugged pages"
+                },
+                {
                     "value": "topics.curriculumintegration",
                     "name": "Curriculum integrations"
+                },
+                {
+                    "value": "general.generalpage",
+                    "name": "General pages"
                 },
                 {
                     "value": "topics.lesson",

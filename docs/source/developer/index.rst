@@ -12,6 +12,7 @@ The following pages are for those wanting to develop the CS Unplugged system.
     website_design
     general
     topics
+    classic
     media
     resources
     dev
