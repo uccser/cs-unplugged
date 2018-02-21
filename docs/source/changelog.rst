@@ -23,6 +23,27 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+4.0.2
+==============================================================================
+
+- **Release date:** 21st February 2018
+- **Downloads:** `Source downloads are available on GitHub`_
+
+**Changelog:**
+
+- Allow searching for general pages and Classic CS Unplugged pages. `#799 <https://github.com/uccser/cs-unplugged/issues/799>`__
+- Update navigational bar. `#885 <https://github.com/uccser/cs-unplugged/pull/885>`__
+- Remove admin application. `#781 <https://github.com/uccser/cs-unplugged/issues/781>`__
+- Update Barcode Checksum Poster design. `#877 <https://github.com/uccser/cs-unplugged/issues/877>`__
+- Fix Kidbots illustration. `#875 <https://github.com/uccser/cs-unplugged/issues/875>`__
+- Fix positioning of programming challenge language implementation icon.
+- Package updates:
+
+  - Update django-haystack to 2.7.0.
+  - Update sphinx to 1.7.0.
+  - Update coverage to 4.5.1.
+  - Add cssselect 1.0.3.
+
 4.0.1
 ==============================================================================
 
