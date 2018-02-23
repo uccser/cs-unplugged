@@ -93,3 +93,16 @@ Translation notes
   - QA checks that ensure translations match the structure of the source strings.
   - Translation memory.
   - In context localisation.
+
+- Special Verto tags which are within curly braces ``{`` ``}`` should not be translated, except for text after ``alt`` in an ``image`` tag.
+  For example the text:
+
+  .. code-block:: none
+
+    {image file-path="img/topics/binary-cards.png" alt="Diagram showing 2 binary cards"}
+
+  The only text to translate is 'Diagram showing 2 binary cards'.
+
+- Text within Scratch tags should be translated using Scratchblocks syntax.
+
+If you are unsure how to translate a line, please leave it for another translator.
