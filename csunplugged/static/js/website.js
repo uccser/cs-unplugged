@@ -1,8 +1,17 @@
 /** JavaScript to load on each page of website */
+
 $(document).ready(function() {
+  // Display glossary-modal
   $("#content-container, #glossary-modal").on("click", ".glossary-term", open_glossary_definition);
+
+  // Scrollspy for sidebar table of contents
   $("body").scrollspy({ target: "#scrollspy-table-of-contents", offset: 140});
+
+  // If anchor link in URL, move page up to avoid link being covered by navbar
   window.addEventListener("hashchange", function() { scrollBy(0, -72) })
+
+  // Pause YouTube videos playing within a closed details elements
+  $("body").on("click", "details[open]", details_element_closed);
 });
 
 function open_glossary_definition() {
@@ -57,4 +66,32 @@ function show_glossary_modal_error(jqXHR, text_status, error_thrown) {
   var glossary_modal = $("#glossary-modal");
   glossary_modal.attr("data-glossary-term", "");
   $("#glossary-modal-term").text("Error!");
+}
+
+function details_element_closed() {
+  /**
+   * Pause any YouTube videos playing within the closed details element.
+   */
+  $('iframe[src*="youtube"]', this).each(function() {
+    var player = $(this).data('youtube-player');
+    if (player === undefined) {
+      // If iframe has no ID
+      if (!this.id) {
+        var src = this.src;
+        var video_id = src.substring(src.lastIndexOf('/') + 1, src.indexOf('?'));
+        this.id = 'youtube-embed-' + video_id;
+      }
+      // Create YouTube player for iframe
+      player = new YT.Player(this.id, {
+        events: {
+          'onReady': function (event) {
+            event.target.pauseVideo();
+          },
+        }
+      });
+      $(this).data('youtube-player', player);
+    } else {
+      player.pauseVideo();
+    }
+  });
 }
