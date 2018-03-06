@@ -1,10 +1,22 @@
-"""Module for the testing custom Django commands."""
+"""Module for the testing custom Django rebuild_index command."""
 
-from tests.BaseTestWithDB import BaseTestWithDB
+from os.path import join, dirname
+from django.conf import settings
+from django.test import override_settings
 from django.core import management
 from django.test import tag
+from django.template.exceptions import TemplateSyntaxError
+from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
+from classic.models import ClassicPage
+from general.models import GeneralPage
+
+BASE_PATH = "tests/search/management/assets/"
+test_template_settings = settings.TEMPLATES
+default_path = test_template_settings[0]["DIRS"][0]
+new_path = join(dirname(default_path), BASE_PATH, "templates/")
+test_template_settings[0]["DIRS"].append(new_path)
 
 
 @tag("management")
@@ -65,6 +77,42 @@ class ManagementCommandTest(BaseTestWithDB):
             "GridResourceGenerator",
         )
         management.call_command("rebuild_index", "--noinput")
+
+    def test_rebuild_index_command_classic_page_model(self):
+        page = ClassicPage(
+            slug="page",
+            name="Page",
+            redirect="http://www.example.com",
+        )
+        page.save()
+        management.call_command("rebuild_index", "--noinput")
+
+    @override_settings(TEMPLATES=test_template_settings)
+    def test_rebuild_index_command_general_page_model(self):
+        page = GeneralPage(
+            slug="page",
+            name="Page",
+            template="template.html",
+            url_name="url",
+        )
+        page.save()
+        management.call_command("rebuild_index", "--noinput")
+
+    @override_settings(TEMPLATES=test_template_settings)
+    def test_rebuild_index_command_general_page_with_invalid_template(self):
+        page = GeneralPage(
+            slug="page",
+            name="Page",
+            template="template_without_id.html",
+            url_name="url",
+        )
+        page.save()
+        self.assertRaises(
+            TemplateSyntaxError,
+            management.call_command,
+            "rebuild_index",
+            "--noinput"
+        )
 
     def test_rebuild_index_command_multiple_models(self):
         topic = self.test_data.create_topic(1)

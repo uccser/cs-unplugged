@@ -42,8 +42,8 @@
     <meta name="msapplication-config" content="{% static 'img/browserconfig.xml' %}">
     <meta name="theme-color" content="#ffffff">
   </head>
-  <body style="text-align: {{LANGUAGE_START}};">
-    <nav class="navbar fixed-top navbar-expand-md navbar-dark py-1 d-print-none">
+  <body style="text-align: {{LANGUAGE_START}};"{% if homepage %} class="homepage"{% endif %}>
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark py-1 d-print-none{% if homepage %} trans-navbar{% endif %}">
       <div class="container px-0">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -58,10 +58,10 @@
             <a class="nav-item nav-link" href="{% url 'general:about' %}">{% trans "About" %}</a>
           </div>
           <form method="get" action="{% url 'search:index' %}">
-            <div class="input-group">
+            <div class="input-group" id="search-navbar">
               <input type="text" class="form-control form-control-sm border-0" placeholder="Search" aria-label="Search" name="q">
               <div class="input-group-append">
-                <button class="btn btn-outline-light btn-sm px-2" type="submit">
+                <button class="btn btn-outline-light btn-sm" type="submit">
                   <!-- SVG from Icomoon-Free -->
                   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="icon icon-search">
                     <title>Search</title>

@@ -56,8 +56,16 @@ class IndexViewTest(BaseTestWithDB):
             response.context["models"],
             [
                 {
+                    "value": "classic.classicpage",
+                    "name": "Classic CS Unplugged pages"
+                },
+                {
                     "value": "topics.curriculumintegration",
                     "name": "Curriculum integrations"
+                },
+                {
+                    "value": "general.generalpage",
+                    "name": "General pages"
                 },
                 {
                     "value": "topics.lesson",
@@ -95,8 +103,16 @@ class IndexViewTest(BaseTestWithDB):
             response.context["models"],
             [
                 {
+                    "value": "classic.classicpage",
+                    "name": "Classic CS Unplugged pages"
+                },
+                {
                     "value": "topics.curriculumintegration",
                     "name": "Curriculum integrations"
+                },
+                {
+                    "value": "general.generalpage",
+                    "name": "General pages"
                 },
                 {
                     "value": "topics.lesson",

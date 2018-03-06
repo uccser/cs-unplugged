@@ -1,0 +1,4 @@
+general-page:
+  name: General page
+  template: template.html
+  url-name: invalid-url
