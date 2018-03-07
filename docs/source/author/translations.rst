@@ -1,16 +1,17 @@
 Translations
 ##############################################################################
 
-.. note::
-  This guide is a work in progress, as translation support for CS Unplugged is a recent addition.
-  Many of the finer details of the translation workflow are likely to change as translators begin to work on the project.
-  Any roadblocks encountered and lessons learned will be used to refine the translation workflow and improve this guide.
+We use a localisation management platform called `Crowdin <https://translate.csunplugged.org/>`__ for translation of CS Unplugged.
+Our project is public, meaning that anyone can create an account and contribute translations.
 
+.. note::
+
+  By becoming a translator you agree to uphold our :doc:`Code of Conduct <code_of_conduct>`.
 
 Getting Started
 ==============================================================================
 
-It's really easy to start contributing translations using CS Unplugged
+It's really easy to start contributing translations using CS Unplugged:
 
 1. Read this documentation page, especially the `Translation Notes`_ section.
 2. Create an account on `Crowdin <https://crowdin.com/join>`__.
@@ -21,8 +22,6 @@ It's really easy to start contributing translations using CS Unplugged
 
 Crowdin Overview
 ==============================================================================
-We use a localisation management platform called `Crowdin <https://crowdin.com/project/cs-unplugged>`__ for translation of CS Unplugged.
-Our project is public, meaning that anyone can create an account and contribute translations.
 
 Crowdin has excellent documentation for translators, and all translators should read the following documents:
 

@@ -5,17 +5,6 @@ Crowdin
 ==============================================================================
 We use a localisation management platform called `Crowdin <https://crowdin.com/project/cs-unplugged>`_ for translation of CS Unplugged. The project is public, meaning that anyone can create an account and contribute translations.
 
-Currently, the following languages are available for translation:
-
-  - Hebrew
-  - Māori
-  - Polish
-
-These languages serve as a test bed for internationalisation of CS Unplugged.
-Further languages will be added over time once the developers are satisfied
-that the translation pipeline is stable.
-
-
 Translatable Files
 ==============================================================================
 There are 3 types of files that contain translatable content:
