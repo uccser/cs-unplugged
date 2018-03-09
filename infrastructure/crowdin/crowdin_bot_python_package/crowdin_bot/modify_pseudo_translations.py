@@ -15,18 +15,15 @@ from verto import Verto
 import re
 import os
 from lxml import etree
+from constants import CONTENT_FOLDERS
 
-CONTENT_ROOT = "csunplugged/topics/content"
-EN_DIR = os.path.join(CONTENT_ROOT, 'en')
+
 PSEUDO_LANGUAGE = "xx_LR"
-PSEUDO_DIR = os.path.join(CONTENT_ROOT, PSEUDO_LANGUAGE)
-XLIFF_DIR = os.path.join(CONTENT_ROOT, 'xliff')
-
+XLIFF_PARSER = etree.XMLParser()
 NS_DICT = {
     'ns': "urn:oasis:names:tc:xliff:document:1.2"
 }
 
-XLIFF_PARSER = etree.XMLParser()
 
 def get_xliff_trans(path):
     """Get xml 'body' element for first file node in the xliff file.
@@ -110,27 +107,31 @@ def update_markdown_file(md_path, blocks, no_translate):
 
 
 if __name__ == "__main__":
-    for root, dirs, files in os.walk(EN_DIR):
-        for name in files:
-            if name.endswith(".md"):
-                source_md_path = os.path.join(root, name)
-                path_from_language_root = os.path.relpath(source_md_path, start=EN_DIR)
-                target_md_path = os.path.join(PSEUDO_DIR, path_from_language_root)
-                xliff_path = os.path.join(XLIFF_DIR, path_from_language_root)
-                xliff_path = os.path.splitext(xliff_path)[0] + ".xliff"
-                xliff_trans = get_xliff_trans(xliff_path)
+    for content_root in CONTENT_FOLDERS:
+        en_dir = os.path.join(content_root, 'en')
+        pseudo_dir = os.path.join(content_root, PSEUDO_LANGUAGE)
+        xliff_dir = os.path.join(content_root, 'xliff')
+        for root, dirs, files in os.walk(en_dir):
+            for name in files:
+                if name.endswith(".md"):
+                    source_md_path = os.path.join(root, name)
+                    path_from_language_root = os.path.relpath(source_md_path, start=en_dir)
+                    target_md_path = os.path.join(pseudo_dir, path_from_language_root)
+                    xliff_path = os.path.join(xliff_dir, path_from_language_root)
+                    xliff_path = os.path.splitext(xliff_path)[0] + ".xliff"
+                    xliff_trans = get_xliff_trans(xliff_path)
 
-                blocks = {}
-                block_patterns = get_verto_block_patterns()
+                    blocks = {}
+                    block_patterns = get_verto_block_patterns()
 
-                no_translate = {}
+                    no_translate = {}
 
-                for string in xliff_trans:
-                    id = string.attrib["id"]
-                    untranslated = string.find('ns:source', namespaces=NS_DICT).text
-                    if untranslated is not None:
-                        if string.attrib.get("translate") == "no":
-                            no_translate[id] = untranslated
-                        elif is_block(untranslated, block_patterns):
-                            blocks[id] = untranslated
-                update_markdown_file(target_md_path, blocks, no_translate)
+                    for string in xliff_trans:
+                        id = string.attrib["id"]
+                        untranslated = string.find('ns:source', namespaces=NS_DICT).text
+                        if untranslated is not None:
+                            if string.attrib.get("translate") == "no":
+                                no_translate[id] = untranslated
+                            elif is_block(untranslated, block_patterns):
+                                blocks[id] = untranslated
+                    update_markdown_file(target_md_path, blocks, no_translate)

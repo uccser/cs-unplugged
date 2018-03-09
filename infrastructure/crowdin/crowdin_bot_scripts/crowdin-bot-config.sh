@@ -33,5 +33,6 @@ GITHUB_BOT_NAME="UCCSER Bot"
 # Paths under which translated content lives
 CONTENT_PATHS=(
     "csunplugged/topics/content"
+    "csunplugged/resources/content"
     "csunplugged/locale"
 )

@@ -25,14 +25,14 @@ echo "Creating tarball ${source_tarball}"
 tar cvzf "${source_tarball}" crowdin_bot_python_package crowdin_bot_scripts crowdin_bot_secrets requirements.txt
 for i in $(seq 1 10); do
     echo "Copying ${source_tarball} to /tmp on ${INSTANCE_NAME}"
-    gcloud beta compute scp setup-instance.sh "${source_tarball}" "${INSTANCE_NAME}:/tmp" --zone="${ZONE}" && break
+    gcloud beta compute --project "${PROJECT}" scp setup-instance.sh "${source_tarball}" "${INSTANCE_NAME}:/tmp" --zone="${ZONE}" && break
     echo "Could not SCP, instance is probably still booting. Retrying in 10 seconds"
     sleep 10
 done
 
 # Unzip files and run setup script
 echo "Setting up instance and installing crowdin_bot"
-gcloud compute ssh "${INSTANCE_NAME}" --zone="${ZONE}" -- "cp /tmp/crowdin-bot.tar.gz /tmp/setup-instance.sh ~ && chmod +x setup-instance.sh && ./setup-instance.sh"
+gcloud compute --project "${PROJECT}" ssh "${INSTANCE_NAME}" --zone="${ZONE}" -- "cp /tmp/crowdin-bot.tar.gz /tmp/setup-instance.sh ~ && chmod +x setup-instance.sh && ./setup-instance.sh"
 
 echo "Cleaning up"
 rm crowdin-bot.tar.gz
