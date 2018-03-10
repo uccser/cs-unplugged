@@ -23,7 +23,7 @@ jobs:
       if: type = pull_request
     - script: ./csu ci style
     - script: ./csu ci docs
-    - script: python utils/broken_link_checker.py
+    - script: utils/broken_link_checker/broken_link_checker.sh
       if: type = pull_request
     - stage: develop deploy
       script: skip
