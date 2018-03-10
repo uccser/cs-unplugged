@@ -38,4 +38,4 @@ Verto documentation (for example: ``relative-image-link.html``).
 A list of the available processors is available in the `Verto Documentation`_.
 
 .. _django-bootstrap-breadcrumbs: http://django-bootstrap-breadcrumbs.readthedocs.io/en/latest/
-.. _Verto Documentation: http://verto.readthedocs.io/en/master/processors/index.html#available-processos
+.. _Verto Documentation: https://verto.readthedocs.io/en/latest/

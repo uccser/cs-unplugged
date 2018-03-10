@@ -4,7 +4,7 @@
 
 # See teaching this in action
 
-A version of this can curently be seen at 1:09:56 [here](https://educationonair.withgoogle.com/live/2016-dec/watch/keynote-au/keynote-7).
+A version of this can curently be seen at 1:09:56 [here](https://www.youtube.com/watch?time_continue=3748&v=LH7cNtnV5DY).
 
 {panel end}
 

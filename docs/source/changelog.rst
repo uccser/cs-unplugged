@@ -101,7 +101,7 @@ clearer video and learning outcome panels, new learning outcomes, and many more.
 - Combine and update changelogs with Classic CS Unplugged. `#820 <https://github.com/uccser/cs-unplugged/pull/820>`__
 - Update documentation on Verto 'relative-link' behaviour. `#504 <https://github.com/uccser/cs-unplugged/pull/504>`__
 - Rewrite content style guide for external contributors. `#791 <https://github.com/uccser/cs-unplugged/pull/791>`__
-- Add pre-requisite lesson for curriculum integrations. `#366 <https://github.com/uccser/cs-unplugged/issue/366>`__ `#849 <https://github.com/uccser/cs-unplugged/pull/849>`__
+- Add pre-requisite lesson for curriculum integrations. `#366 <https://github.com/uccser/cs-unplugged/issues/366>`__ `#849 <https://github.com/uccser/cs-unplugged/pull/849>`__
 - Package updates:
 
   - Update django to 1.11.10.
