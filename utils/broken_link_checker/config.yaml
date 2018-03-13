@@ -6,3 +6,7 @@ exclude_directories:
   - csunplugged/staticfiles/
   - csunplugged/temp/
   - csunplugged/utils/custom_converter_templates/
+
+skip_urls:
+  # Broken linksthat should not be changed as within license file
+  - http://www.zope.org/Resources/ZPL
