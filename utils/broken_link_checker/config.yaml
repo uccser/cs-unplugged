@@ -1,0 +1,8 @@
+exclude_directories:
+  - .git/
+  - docs/build/
+  - csunplugged/build/
+  - csunplugged/node_modules/
+  - csunplugged/staticfiles/
+  - csunplugged/temp/
+  - csunplugged/utils/custom_converter_templates/
