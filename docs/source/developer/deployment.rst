@@ -40,7 +40,7 @@ Development deployment
 Deployment of the ``develop`` branch occurs automatically with new commits to
 the ``develop`` branch, and is deployed by Travis CI.
 
-The system is deployed to: http://cs-unplugged-develop.appspot.com/.
+The system is deployed to: https://cs-unplugged-dev.appspot.com/.
 
 The script and files used for deployment is stored in the
 ``infrastructure/develop-deploy/`` directory.
@@ -52,7 +52,10 @@ containing sensitive data, and is decypted by Travis CI.
 Production deployment
 ==============================================================================
 
-There is currently no production deployment.
+Deployment of the ``master`` branch occurs automatically with new commits to
+the ``master`` branch, and is deployed by Travis CI.
+
+The system is deployed to: https://www.csunplugged.org/.
 
 Manual deployment
 ==============================================================================
@@ -62,8 +65,7 @@ Manual deployment
   The following steps will allow manual deployment.
   This information is not exhaustive, but will provide enough information for
   manual deployment.
-  The ``develop-deploy.sh`` script has greater details of the deployment
-  process.
+  The deployment scripts have greater details of the deployment process.
 
 For any manual deployment, you will require the `gcloud`_ tool to be
 installed on your machine, and login with the research group admin Google
