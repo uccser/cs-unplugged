@@ -4,6 +4,9 @@
 # Verified bug on Python 3.5.1
 wheel==0.30.0
 
+# Frontend
+django-bootstrap-breadcrumbs==0.9.1
+
 # Resources
 Pillow==5.0.0
 yattag==1.10.0
