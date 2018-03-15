@@ -225,7 +225,7 @@ In order to manage the complex translation pipeline, an autmoation bot is used t
 
 Crowdin bot is implemented as a number of cron jobs running on a Compute Engine VM.
 Each of the above tasks is stateless and runs as a scheduled cron job, independently from one another.
-The frequency of each task can be varied by modifying the crontab entry in ``setup-instance.py``.
+The frequency of each task can be varied by modifying the crontab entry in ``setup-instance.sh``.
 Currently each task is run once per day, staggered by 1 hour, starting from midnight NZDT.
 
 Scripts
