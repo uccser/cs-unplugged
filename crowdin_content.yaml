@@ -5,60 +5,39 @@ api_key_env: "CROWDIN_API_KEY"
 # Preserve directory tree during upload
 preserve_hierarchy: true
 
-files: [
-    {
-        source: "/csunplugged/topics/content/en/**/*.yaml",
-        translation: "/csunplugged/topics/content/%osx_locale%/**/%original_file_name%",
-        languages_mapping: {
-            osx_locale: {
-                "en-UD": "xx_LR",  # Pseudo language
-                "zh-CN": "zh_Hans",
-                "zh-TW": "zh_Hant"
-            }
-        }
-    },
-    {
-        source: "/csunplugged/topics/content/en/**/*.md",
-        translation: "/csunplugged/topics/content/%osx_locale%/**/%original_file_name%",
-        languages_mapping: {
-            osx_locale: {
-                "en-UD": "xx_LR",  # Pseudo language
-                "zh-CN": "zh_Hans",
-                "zh-TW": "zh_Hant"
-            }
-        }
-    },
-    {
-        source: "/csunplugged/resources/content/en/**/*.yaml",
-        translation: "/csunplugged/resources/content/%osx_locale%/**/%original_file_name%",
-        languages_mapping: {
-            osx_locale: {
-                "en-UD": "xx_LR",  # Pseudo language
-                "zh-CN": "zh_Hans",
-                "zh-TW": "zh_Hant"
-            }
-        }
-    },
-    {
-        source: "/csunplugged/resources/content/en/**/*.md",
-        translation: "/csunplugged/resources/content/%osx_locale%/**/%original_file_name%",
-        languages_mapping: {
-            osx_locale: {
-                "en-UD": "xx_LR",  # Pseudo language
-                "zh-CN": "zh_Hans",
-                "zh-TW": "zh_Hant"
-            }
-        }
-    },
-    {
-        source: "/csunplugged/locale/en/LC_MESSAGES/*.po",
-        translation: "/csunplugged/locale/%osx_locale%/LC_MESSAGES/%original_file_name%",
-        languages_mapping: {
-            osx_locale: {
-                "en-UD": "xx_LR",  # Pseudo language
-                "zh-CN": "zh_Hans",
-                "zh-TW": "zh_Hant"
-            }
-        }
-    },
-]
+files:
+  - source: "/csunplugged/topics/content/en/**/*.yaml"
+    translation: "/csunplugged/topics/content/%osx_locale%/**/%original_file_name%"
+    languages_mapping:
+      osx_locale:
+        "en-UD": "xx_LR"  # Pseudo language
+        "zh-CN": "zh_Hans"
+        "zh-TW": "zh_Hant"
+  - source: "/csunplugged/topics/content/en/**/*.md"
+    translation: "/csunplugged/topics/content/%osx_locale%/**/%original_file_name%"
+    languages_mapping:
+      osx_locale:
+        "en-UD": "xx_LR"  # Pseudo language
+        "zh-CN": "zh_Hans"
+        "zh-TW": "zh_Hant"
+  - source: "/csunplugged/resources/content/en/**/*.yaml"
+    translation: "/csunplugged/resources/content/%osx_locale%/**/%original_file_name%"
+    languages_mapping:
+      osx_locale:
+        "en-UD": "xx_LR"  # Pseudo language
+        "zh-CN": "zh_Hans"
+        "zh-TW": "zh_Hant"
+  - source: "/csunplugged/resources/content/en/**/*.md"
+    translation: "/csunplugged/resources/content/%osx_locale%/**/%original_file_name%"
+    languages_mapping:
+      osx_locale:
+        "en-UD": "xx_LR"  # Pseudo language
+        "zh-CN": "zh_Hans"
+        "zh-TW": "zh_Hant"
+  - source: "/csunplugged/locale/en/LC_MESSAGES/*.po"
+    translation: "/csunplugged/locale/%osx_locale%/LC_MESSAGES/%original_file_name%"
+    languages_mapping:
+      osx_locale:
+        "en-UD": "xx_LR"  # Pseudo language
+        "zh-CN": "zh_Hans"
+        "zh-TW": "zh_Hant"
