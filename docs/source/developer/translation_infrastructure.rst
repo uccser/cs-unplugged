@@ -379,7 +379,7 @@ Run required command(s):
   $ crowdin-bot-pull-translations.sh
   ...
 
-Additionally, it is possible to run the scripts on a local machine, provided the correct packages are installed (see ``setup-instance.py``)
+Additionally, it is possible to run the scripts on a local machine, provided the correct packages are installed (see ``setup-instance.sh``)
 
 Monitoring
 ------------------------------------------------------------------------------
