@@ -1,8 +1,6 @@
 sudo: required
 services:
   - docker
-env:
-  - DOCKER_COMPOSE_VERSION=1.11.2
 language: python
 python:
   - '3.6'
@@ -23,6 +21,8 @@ jobs:
       if: type = pull_request
     - script: ./csu ci style
     - script: ./csu ci docs
+    - script: utils/broken_link_checker/broken_link_checker.sh
+      if: type = pull_request
     - stage: develop deploy
       script: skip
       deploy:

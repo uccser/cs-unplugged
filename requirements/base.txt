@@ -4,6 +4,9 @@
 # Verified bug on Python 3.5.1
 wheel==0.30.0
 
+# Frontend
+django-bootstrap-breadcrumbs==0.9.1
+
 # Resources
 Pillow==5.0.0
 yattag==1.10.0
@@ -14,7 +17,7 @@ verto==0.7.3
 python-markdown-math==0.3
 
 # Search
-django-haystack==2.7.0
+django-haystack==2.8.0
 Whoosh==2.7.4
 django-widget-tweaks==1.4.1
 
@@ -22,10 +25,10 @@ django-widget-tweaks==1.4.1
 PyYAML==3.12
 
 # System tools
-tqdm==4.19.6
+tqdm==4.19.7
 
 # XML Parsing
-lxml==4.1.1
+lxml==4.2.0
 cssselect==1.0.3
 
 # I18n
