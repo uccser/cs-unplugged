@@ -3,4 +3,4 @@
 # aren't in development.
 -r base.txt
 
-gsutil==4.28
+gsutil==4.29
