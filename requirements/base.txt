@@ -8,7 +8,7 @@ wheel==0.30.0
 django-bootstrap-breadcrumbs==0.9.1
 
 # Resources
-Pillow==5.0.0
+Pillow==5.1.0
 yattag==1.10.0
 tinycss==0.4
 
