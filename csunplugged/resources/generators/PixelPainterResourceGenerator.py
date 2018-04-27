@@ -115,8 +115,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         """
         method = self.options["method"].value
         image_name = self.options["image"].value
-        image_filename = self.get_image_filename(image_name, method)
-        image = Image.open(self.STATIC_PATH.format(image=image_name, filename=image_filename))
+        image = self.base_image
         (image_width, image_height) = image.size
 
         pages = []
@@ -497,6 +496,18 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         return image_filename
 
     @property
+    def base_image(self):
+        """Get Image object of resource.
+
+        Returns:
+            Image object of image.
+        """
+        method = self.options["method"].value
+        image_name = self.options["image"].value
+        image_filename = self.get_image_filename(image_name, method)
+        return Image.open(self.STATIC_PATH.format(image=image_name, filename=image_filename))
+
+    @property
     def subtitle(self):
         """Return the subtitle string of the resource.
 
@@ -522,10 +533,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
 
         The images are not resized as the images used are small already.
         """
-        method = self.options["method"].value
-        image_name = self.options["image"].value
-        image_filename = self.get_image_filename(image_name, method)
-        image = Image.open(self.STATIC_PATH.format(image=image_name, filename=image_filename))
+        image = self.base_image
         (width, height) = image.size
         minimum_pixel_width = 400
         ratio = ceil(minimum_pixel_width / width)
