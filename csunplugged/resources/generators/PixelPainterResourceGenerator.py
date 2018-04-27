@@ -17,9 +17,11 @@ METHOD_VALUES = {
 
 IMAGE_VALUES = {
     "fish": _("Fish - 6 pages"),
+    "kauri-tree": _("Kauri tree - 6 pages"),
+    # "butterfly": _("Butterfly - 6 pages"),
     "hot-air-balloon": _("Hot air balloon - 8 pages"),
     "boat": _("Boat - 9 pages"),
-    "parrots": _("Parrots - 32 pages")
+    "parrots": _("Parrots - 32 pages"),
 }
 
 
@@ -70,9 +72,11 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         "fish": _("Fish"),
         "hot-air-balloon": _("Hot air balloon"),
         "parrots": _("Parrots"),
+        "kauri-tree": _("Kauri tree"),
+        # "butterfly": _("Butterfly"),
     }
 
-    STATIC_PATH = "static/img/resources/pixel-painter/{}"
+    STATIC_PATH = "static/img/resources/pixel-painter/{image}/{filename}"
     FONT_PATH = "static/fonts/PatrickHand-Regular.ttf"
     FONT = ImageFont.truetype(FONT_PATH, 80)
     FONT_SMALL = ImageFont.truetype(FONT_PATH, 50)
@@ -112,7 +116,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         method = self.options["method"].value
         image_name = self.options["image"].value
         image_filename = self.get_image_filename(image_name, method)
-        image = Image.open(self.STATIC_PATH.format(image_filename))
+        image = Image.open(self.STATIC_PATH.format(image=image_name, filename=image_filename))
         (image_width, image_height) = image.size
 
         pages = []
@@ -490,7 +494,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         method = self.options["method"].value
         image_name = self.options["image"].value
         image_filename = self.get_image_filename(image_name, method)
-        image = Image.open(self.STATIC_PATH.format(image_filename))
+        image = Image.open(self.STATIC_PATH.format(image=image_name, filename=image_filename))
         (width, height) = image.size
         minimum_pixel_width = 400
         ratio = ceil(minimum_pixel_width / width)
