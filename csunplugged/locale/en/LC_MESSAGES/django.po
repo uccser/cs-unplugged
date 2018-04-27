@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-15 12:04+0000\n"
+"POT-Creation-Date: 2018-04-27 12:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -150,6 +150,12 @@ msgstr ""
 msgid "Fish - 6 pages"
 msgstr ""
 
+msgid "Kauri tree - 6 pages"
+msgstr ""
+
+msgid "Butterfly - 6 pages"
+msgstr ""
+
 msgid "Hot air balloon - 8 pages"
 msgstr ""
 
@@ -183,10 +189,19 @@ msgstr ""
 msgid "Parrots"
 msgstr ""
 
+msgid "Kauri tree"
+msgstr ""
+
+msgid "Butterfly"
+msgstr ""
+
 msgid "Colouring type"
 msgstr ""
 
 msgid "Image"
+msgstr ""
+
+msgid "Pixel legend"
 msgstr ""
 
 msgid "Number of cards (15 or 31)"
