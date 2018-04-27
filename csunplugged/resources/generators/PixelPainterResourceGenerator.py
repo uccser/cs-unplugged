@@ -17,9 +17,11 @@ METHOD_VALUES = {
 
 IMAGE_VALUES = {
     "fish": _("Fish - 6 pages"),
+    "kauri-tree": _("Kauri tree - 6 pages"),
+    "butterfly": _("Butterfly - 6 pages"),
     "hot-air-balloon": _("Hot air balloon - 8 pages"),
     "boat": _("Boat - 9 pages"),
-    "parrots": _("Parrots - 32 pages")
+    "parrots": _("Parrots - 32 pages"),
 }
 
 
@@ -70,9 +72,11 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         "fish": _("Fish"),
         "hot-air-balloon": _("Hot air balloon"),
         "parrots": _("Parrots"),
+        "kauri-tree": _("Kauri tree"),
+        "butterfly": _("Butterfly"),
     }
 
-    STATIC_PATH = "static/img/resources/pixel-painter/{}"
+    STATIC_PATH = "static/img/resources/pixel-painter/{image}/{filename}"
     FONT_PATH = "static/fonts/PatrickHand-Regular.ttf"
     FONT = ImageFont.truetype(FONT_PATH, 80)
     FONT_SMALL = ImageFont.truetype(FONT_PATH, 50)
@@ -111,8 +115,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         """
         method = self.options["method"].value
         image_name = self.options["image"].value
-        image_filename = self.get_image_filename(image_name, method)
-        image = Image.open(self.STATIC_PATH.format(image_filename))
+        image = self.base_image
         (image_width, image_height) = image.size
 
         pages = []
@@ -123,7 +126,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         number_row_pages = ceil(image_height / self.ROWS_PER_PAGE)
         page_grid_coords = self.create_page_grid_coords(number_column_pages, number_row_pages, image_name)
 
-        grid_page = self.grid_reference_page(page_grid_coords, image_name)
+        grid_page = self.grid_reference_page(page_grid_coords, self.image_strings[image_name])
         pages.append({"type": "html", "data": grid_page})
 
         # For each page row
@@ -175,7 +178,12 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
 
                 pages.append({"type": "image", "data": page})
 
-        if method == "run-length-encoding":
+        if method in ["greyscale", "colour"]:
+            legend_html = self.create_pixel_legend(self.methods[method]["labels"].items())
+            legend_html = "<div style='display:inline;page-break-inside:avoid;'>{}</div>".format(legend_html)
+            legend_html *= number_row_pages * number_column_pages
+            pages.append({"type": "html", "data": legend_html})
+        elif method == "run-length-encoding":
             encoding_html = self.create_run_length_encoding_html(page_grid_coords, pages_encoding)
             pages.insert(1, {"type": "html", "data": encoding_html})
         return pages
@@ -389,11 +397,13 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         Returns:
             HTML string for the grid reference page.
         """
+        method = self.options["method"].value
         doc, tag, text, line = Doc().ttl()
         line("style", "#grid-table td {border:1px solid black;padding:1rem 0.5rem;}")
-        line("style", "#pixel-legend td {border:1px solid black;padding:0.5rem 0.5rem;}")
         with tag("h1"):
             text("Pixel Painter")
+        with tag("p"):
+            text("This page should be kept secret from students.")
         with tag("h2"):
             text("Page grid reference for {} image".format(image_name))
         with tag("p"):
@@ -402,17 +412,41 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
                 "cut each grid out and arrange in the following layout ",
                 "(page names are in the top right corner)."
             )
-        with tag("table", id="grid-table"):
+        with tag("div", style="padding-bottom:1cm;"):
+            with tag("table", id="grid-table", style="padding-bottom:1cm;"):
+                with tag("tbody"):
+                    for row_num in range(0, len(page_grid_coords)):
+                        with tag("tr"):
+                            for column_num in range(0, len(page_grid_coords[row_num])):
+                                line("td", page_grid_coords[row_num][column_num])
+
+        if method in ["greyscale", "colour"]:
+            with tag("p"):
+                if method == "greyscale":
+                    text("The pixel values are using 2 bit colour values.")
+                if method == "colour":
+                    text("The pixel values are using 5 bit RGB colour values (2 red, 2 blue, 1 green).")
+                text(" Extra pixel legends are at the end of this document for students.")
+        html = doc.getvalue()
+        html += self.create_pixel_legend(self.methods[method]["labels"].items())
+        return html
+
+    def create_pixel_legend(self, items):
+        """Create pixel legend HTML.
+
+        Args:
+            items (dict): Items in the legend to display.
+
+        Returns:
+            HTML string for pixel legend.
+        """
+        doc, tag, text, line = Doc().ttl()
+        line("style", "#pixel-legend td {border:1px solid black;padding:0.5rem 0.5rem;white-space: nowrap;}")
+        with tag("table", id="pixel-legend", style="display:inline;"):
             with tag("tbody"):
-                for row_num in range(0, len(page_grid_coords)):
-                    with tag("tr"):
-                        for column_num in range(0, len(page_grid_coords[row_num])):
-                            line("td", page_grid_coords[row_num][column_num])
-        with tag("h2"):
-            text("Pixel legend")
-        with tag("table", id="pixel-legend", style="padding-top:1rem;"):
-            with tag("tbody"):
-                for (values, label) in self.methods[self.options["method"].value]["labels"].items():
+                with tag("tr"):
+                    line("td", _("Pixel legend"), colspan="2", style="font-weight:bold;text-align:center;")
+                for (values, label) in items:
                     with tag("tr"):
                         if isinstance(values, tuple):
                             line("td", " ", style="background-color:rgb{};width:3em;".format(values))
@@ -462,6 +496,18 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         return image_filename
 
     @property
+    def base_image(self):
+        """Get Image object of resource.
+
+        Returns:
+            Image object of image.
+        """
+        method = self.options["method"].value
+        image_name = self.options["image"].value
+        image_filename = self.get_image_filename(image_name, method)
+        return Image.open(self.STATIC_PATH.format(image=image_name, filename=image_filename))
+
+    @property
     def subtitle(self):
         """Return the subtitle string of the resource.
 
@@ -487,10 +533,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
 
         The images are not resized as the images used are small already.
         """
-        method = self.options["method"].value
-        image_name = self.options["image"].value
-        image_filename = self.get_image_filename(image_name, method)
-        image = Image.open(self.STATIC_PATH.format(image_filename))
+        image = self.base_image
         (width, height) = image.size
         minimum_pixel_width = 400
         ratio = ceil(minimum_pixel_width / width)
