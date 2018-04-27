@@ -403,6 +403,8 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         line("style", "#grid-table td {border:1px solid black;padding:1rem 0.5rem;}")
         with tag("h1"):
             text("Pixel Painter")
+        with tag("p"):
+            text("This page should be kept secret from students.")
         with tag("h2"):
             text("Page grid reference for {} image".format(image_name))
         with tag("p"):
@@ -425,6 +427,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
                     text("The pixel values are using 2 bit colour values.")
                 if method == "colour":
                     text("The pixel values are using 5 bit RGB colour values (2 red, 2 blue, 1 green).")
+                text(" Extra pixel legends are at the end of this document for students.")
         html = doc.getvalue()
         html += self.create_pixel_legend(self.methods[method]["labels"].items())
         return html
