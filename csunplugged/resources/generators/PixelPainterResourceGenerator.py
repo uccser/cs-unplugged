@@ -18,7 +18,7 @@ METHOD_VALUES = {
 IMAGE_VALUES = {
     "fish": _("Fish - 6 pages"),
     "kauri-tree": _("Kauri tree - 6 pages"),
-    # "butterfly": _("Butterfly - 6 pages"),
+    "butterfly": _("Butterfly - 6 pages"),
     "hot-air-balloon": _("Hot air balloon - 8 pages"),
     "boat": _("Boat - 9 pages"),
     "parrots": _("Parrots - 32 pages"),
@@ -73,7 +73,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         "hot-air-balloon": _("Hot air balloon"),
         "parrots": _("Parrots"),
         "kauri-tree": _("Kauri tree"),
-        # "butterfly": _("Butterfly"),
+        "butterfly": _("Butterfly"),
     }
 
     STATIC_PATH = "static/img/resources/pixel-painter/{image}/{filename}"
