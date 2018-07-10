@@ -107,9 +107,6 @@
           <img src="{% get_static_prefix %}{{ implementation.language.icon }}" class="inline-image" />
         </summary>
 
-
-
-
         <div class="boxed-text-content">
           {% if not implementation.translation_available %}
             {% with model=implementation %}
@@ -117,47 +114,33 @@
             {% endwith %}
           {% else %}
 
-                      <!-- MY STUFF !-->
             {% if implementation.language.slug == "python" %}
-            <span> Enter your code here </span>
-            <div id="codeeditor">
+              <span> Enter your code here </span>
+              <div id="codeeditor">
 
-            </div>
+              </div>
 
-            <div style="margin:1em 0; text-align: center"> 
+              <div style="margin:1em 0; text-align: center"> 
 
-            <button type="submit" class="btn btn-light" style="border: 2px dashed" onclick="sendCode();"> Submit Code </button> 
+              <button type="submit" class="btn btn-light" style="border: 2px dashed" onclick="sendCode();"> Submit Code </button> 
 
-            </div>
-            <!-- TODO: inline css needs to be moved -->
+              </div>
+
             {% endif %}
-
-                      <!-- END OF MY STUFF -->
-
-    
 
             <h4>{% trans "What it should look like" %}</h4>
             {% render_html_field implementation.expected_result %}
 
-
-                          <!-- MY STUFF !-->
-
             {% if implementation.language.slug == "python" %}
 
-            <div> Your code output! </div>
-            <div disabled id="outputBox">
-              
-            </div>
+              <div> Your code output! </div>
+              <div disabled id="outputBox">
+                
+              </div>
 
-            <div id="outputImage" style="text-align: center; margin: 1em 0;">
-
-            </div>
+              <h1 id="output-text" style="text-align: center; visibility: hidden;"> </h1>
 
             {% endif %}
-                          <!-- END OF MY STUFF -->
-
-            
-
 
             {% if implementation.hints %}
               <details style="margin: 1em 0;">
@@ -186,17 +169,6 @@
     {% endfor %}
   </div>
   {% endif %}
-
-
-
-<!-- MY STUFF !-->
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-    <!-- <script src="{% static 'js/python.js' %}"></script> -->
 
     <script>
     var editor = CodeMirror(document.getElementById("codeeditor"), {
@@ -279,14 +251,17 @@
     };
 
     function viewCorrectAnswerImage(){
-      $("#outputImage").html("<img src='{% static 'img/right-answer.png' %}'' class='inline-image' style='max-height: 4rem;' />");
+      document.getElementById("output-text").style.visibility = "visible";
+      document.getElementById("output-text").className = "text-success";
+      $("#output-text").html("Correct!");
+
     }
 
     function viewIncorrectAnswerImage(){
-      $("#outputImage").html("<img src='{% static 'img/wrong-answer.png' %}'' class='inline-image' style='max-height: 4rem;' />");
+      document.getElementById("output-text").style.visibility = "visible";
+      document.getElementById("output-text").className = "text-danger";
+      $("#output-text").html("try again");
     }
-
-
     </script>
 
 {% endblock content_container %}
