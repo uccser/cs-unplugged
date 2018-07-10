@@ -1,0 +1,12 @@
+exclude_directories:
+  - .git/
+  - docs/build/
+  - csunplugged/build/
+  - csunplugged/node_modules/
+  - csunplugged/staticfiles/
+  - csunplugged/temp/
+  - csunplugged/utils/custom_converter_templates/
+
+skip_urls:
+  # Broken linksthat should not be changed as within license file
+  - http://www.zope.org/Resources/ZPL

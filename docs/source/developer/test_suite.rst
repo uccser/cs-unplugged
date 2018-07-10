@@ -17,7 +17,7 @@ Structure
 All tests are in the ``tests/`` directory, which in the ``csunplugged/`` directory (at the same level as the apps). It is structured as follows:
 
 .. code-block:: none
-      
+
   └── tests/
       ├── general/
       │   ├── management/
@@ -69,7 +69,7 @@ Items of interest from this diagram:
 Adding Tests
 ==============================================================================
 
-When writing a new test function, it is important that the method name is as 
+When writing a new test function, it is important that the method name is as
 descriptive as possible. The method name should also be prefixed with ``test_``
 as the test suite will only execute methods with this prefix.
 

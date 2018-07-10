@@ -108,18 +108,60 @@
         </summary>
 
 
+
+
         <div class="boxed-text-content">
           {% if not implementation.translation_available %}
             {% with model=implementation %}
               {% include 'topics/not-available-warning.html' %}
             {% endwith %}
           {% else %}
+
+                      <!-- MY STUFF !-->
+            {% if implementation.language.slug == "python" %}
+            <span> Enter your code here </span>
+            <div id="codeeditor">
+
+            </div>
+
+            <div style="margin:1em 0; text-align: center"> 
+
+            <button type="submit" class="btn btn-light" style="border: 2px dashed" onclick="sendCode();"> Submit Code </button> 
+
+            </div>
+            <!-- TODO: inline css needs to be moved -->
+            {% endif %}
+
+                      <!-- END OF MY STUFF -->
+
+    
+
             <h4>{% trans "What it should look like" %}</h4>
             {% render_html_field implementation.expected_result %}
 
+
+                          <!-- MY STUFF !-->
+
+            {% if implementation.language.slug == "python" %}
+
+            <div> Your code output! </div>
+            <div disabled id="outputBox">
+              
+            </div>
+
+            <div id="outputImage" style="text-align: center; margin: 1em 0;">
+
+            </div>
+
+            {% endif %}
+                          <!-- END OF MY STUFF -->
+
+            
+
+
             {% if implementation.hints %}
-              <details>
-                <summary>
+              <details style="margin: 1em 0;">
+                <summary >
                   <strong>
                     {% trans "Hints" %}
                   </strong>
@@ -144,6 +186,109 @@
     {% endfor %}
   </div>
   {% endif %}
+
+
+
+<!-- MY STUFF !-->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- <script src="{% static 'js/python.js' %}"></script> -->
+
+    <script>
+    var editor = CodeMirror(document.getElementById("codeeditor"), {
+      lineNumbers : true,
+      gutter: true,
+      lineWrapping: true,
+      autoRefresh: true,
+      mode: "python"
+    });
+
+    var outputBox = CodeMirror(document.getElementById("outputBox"), {
+      gutter: true,
+      lineWrapping: true,
+      readOnly: false,
+      cursorBlinkRate: -1,
+      mode: "python"
+    });
+
+
+      var base_url = "http://36adab90.compilers.sphere-engine.com/api/v3/submissions/";
+      var token = "?access_token=5ec1d247f7d8b651411587faf1af080c";
+
+      function sendCode() {
+        $.ajax({
+          type: "POST",
+          url: base_url + token,
+          data: {
+            "language": 116,
+            "sourceCode": editor.getValue(),
+          },
+          async: true,
+          dataType: "json",
+          success: function(result, status){
+            id = result.id;
+            setTimeout(function(){
+              getCodeCompiled(id);
+            }, 1000);
+          },
+          error: function(result, status){
+            console.log("Error", result, status)
+          }
+        });
+      };
+
+
+     function getCodeCompiled(id) {
+      $.ajax({
+        type: "GET",
+        url: base_url + id + token,
+        data: {
+            "withSource": true,
+            "withOutput": true,
+        },
+        async: true,
+        dataType: "json",
+        success: function(result, status){
+          if (result.status !== 0) {
+            setTimeout(function(){
+              getCodeCompiled(id);
+            }, 1000);
+          } else {
+            outputBox.getDoc().setValue(result.output);
+            if(isCorrectAnswer(result.output)){
+                viewCorrectAnswerImage();
+              } else {
+                viewIncorrectAnswerImage();
+              }
+          }
+        },
+        error: function(result, status){
+          console.log("Error", result, status)
+        }
+      });
+    };
+
+    function isCorrectAnswer(user_output){
+        var x = document.getElementsByClassName('codehilite')[0].innerHTML.substring(18,28) + '\n'; // TODO: CHANGE THIS LATER!
+        return user_output === x;
+
+    };
+
+    function viewCorrectAnswerImage(){
+      $("#outputImage").html("<img src='{% static 'img/right-answer.png' %}'' class='inline-image' style='max-height: 4rem;' />");
+    }
+
+    function viewIncorrectAnswerImage(){
+      $("#outputImage").html("<img src='{% static 'img/wrong-answer.png' %}'' class='inline-image' style='max-height: 4rem;' />");
+    }
+
+
+    </script>
+
 {% endblock content_container %}
 
 {% block end_content %}
@@ -154,3 +299,5 @@
     {% endif %}
   {% endif %}
 {% endblock end_content %}
+
+
