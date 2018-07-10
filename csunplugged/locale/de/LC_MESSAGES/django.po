@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-06 12:04+0000\n"
-"PO-Revision-Date: 2018-07-09 14:05\n"
+"PO-Revision-Date: 2018-07-10 14:05\n"
 "Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -59,31 +59,31 @@ msgid "No - Print single sided."
 msgstr ""
 
 msgid "Four (1 to 8)"
-msgstr ""
+msgstr "Vier (1 bis 8)"
 
 msgid "Eight (1 to 128)"
-msgstr ""
+msgstr "Acht (1 bis 128)"
 
 msgid "Twelve (1 to 2048)"
-msgstr ""
+msgstr "Zwölf (1 bis 2048)"
 
 msgid "Number of Bits"
-msgstr ""
+msgstr "Anzahl der Bits"
 
 msgid "Display Dot Counts"
 msgstr ""
 
 msgid "Student"
-msgstr ""
+msgstr "Schüler"
 
 msgid "Teacher (solutions)"
-msgstr ""
+msgstr "Lehrer (Lösungen)"
 
 msgid "Worksheet Version"
 msgstr ""
 
 msgid "Binary (0 or 1)"
-msgstr ""
+msgstr "Binär (0 oder 1)"
 
 msgid "Lightbulb (off or on)"
 msgstr ""
@@ -95,10 +95,10 @@ msgid "Hello, I'm a"
 msgstr ""
 
 msgid "Programmer"
-msgstr ""
+msgstr "Programmierer"
 
 msgid "Tester"
-msgstr ""
+msgstr "Tester"
 
 msgid "Bot"
 msgstr ""
@@ -107,7 +107,7 @@ msgid "Modulo"
 msgstr ""
 
 msgid "Black"
-msgstr ""
+msgstr "Schwarz"
 
 msgid "Blue"
 msgstr ""
