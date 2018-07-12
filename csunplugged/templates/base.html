@@ -27,7 +27,15 @@
     </title>
     <meta name="description" content="">
     <meta name="author" content="">
+
+    <script src="{% static 'js/codemirror.js' %}"></script>
+    <script src="{% static 'js/python-highlighting.js' %}"> </script>
+    <script src="{% static 'js/codemirror-autorefresh.js' %}"></script>
+
+    <link href="{% static 'css/codemirror.css' %}" rel="stylesheet">
+    <link href="{% static 'css/python-implementation.css' %}" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
     {% if LANGUAGE_BIDI %}
         <link rel="stylesheet" href="{% static 'css/website-rtl.css' %}">
     {% else %}
@@ -274,6 +282,8 @@
     <script>
       glossary_url = "{% url 'topics:glossary_json' %}";
     </script>
+
+
     <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>

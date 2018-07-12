@@ -40,6 +40,7 @@ binary-numbers-using-variable-operator-repeat:
   difficulty-level: 1
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-outline-variable-updates
     - programming-describe-variable-output
@@ -52,6 +53,7 @@ binary-numbers-one-line:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-describe-variables
     - programming-identify-loop
@@ -172,6 +174,7 @@ cards-given-number:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables

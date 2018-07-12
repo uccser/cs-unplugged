@@ -107,19 +107,44 @@
           <img src="{% get_static_prefix %}{{ implementation.language.icon }}" class="inline-image" />
         </summary>
 
-
         <div class="boxed-text-content">
           {% if not implementation.translation_available %}
             {% with model=implementation %}
               {% include 'topics/not-available-warning.html' %}
             {% endwith %}
           {% else %}
+
+            {% if implementation.language.slug == "python" %}
+              <span> Enter your code here </span>
+              <div id="codeeditor">
+
+              </div>
+
+              <div style="margin:1em 0; text-align: center"> 
+
+              <button type="submit" class="btn btn-light" style="border: 2px dashed" onclick="sendCode();"> Submit Code </button> 
+
+              </div>
+
+            {% endif %}
+
             <h4>{% trans "What it should look like" %}</h4>
             {% render_html_field implementation.expected_result %}
 
+            {% if implementation.language.slug == "python" %}
+
+              <div> Your code output! </div>
+              <div disabled id="outputBox">
+                
+              </div>
+
+              <h1 id="output-text" style="text-align: center; visibility: hidden;"> </h1>
+
+            {% endif %}
+
             {% if implementation.hints %}
               <details>
-                <summary>
+                <summary >
                   <strong>
                     {% trans "Hints" %}
                   </strong>
@@ -144,6 +169,10 @@
     {% endfor %}
   </div>
   {% endif %}
+
+  <script src="{% static 'js/sphere-engine.js' %}"></script>
+  <script src="{% static 'js/code-boxes.js' %}"></script>
+
 {% endblock content_container %}
 
 {% block end_content %}
@@ -154,3 +183,5 @@
     {% endif %}
   {% endif %}
 {% endblock end_content %}
+
+
