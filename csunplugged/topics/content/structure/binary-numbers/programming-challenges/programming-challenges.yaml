@@ -174,7 +174,6 @@ cards-given-number:
   difficulty-level: 2
   programming-languages:
     - scratch
-    - python
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables

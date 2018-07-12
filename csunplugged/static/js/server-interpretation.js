@@ -41,11 +41,6 @@
         }, 1000);
       } else {
         outputBox.getDoc().setValue(result.output);
-        if(isCorrectAnswer(result.output)){
-            correctAnswerText();
-          } else {
-            incorrectAnswerText();
-          }
       }
     },
     error: function(result, status){
@@ -53,24 +48,3 @@
     }
   });
 };
-
-
-function isCorrectAnswer(user_output){
-    var x = document.getElementsByClassName('codehilite')[0].innerHTML.substring(18,28) + '\n'; // TODO: CHANGE THIS LATER!
-    console.log(x);
-    return user_output === x;
-
-};
-
-function correctAnswerText(){
-  document.getElementById("output-text").style.visibility = "visible";
-  document.getElementById("output-text").className = "text-success";
-  $("#output-text").html("Correct!");
-
-}
-
-function incorrectAnswerText(){
-  document.getElementById("output-text").style.visibility = "visible";
-  document.getElementById("output-text").className = "text-danger";
-  $("#output-text").html("try again");
-}
