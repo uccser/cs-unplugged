@@ -34,7 +34,7 @@ more than one comparison happening at the same time.
 For example, in the six-number Sorting Network that we use a lot in this unit,
 a total of 12 comparisons are used to sort the numbers, but up to three
 comparisons can be performed simultaneously.
-This means that the time required will the same as what one computer by itself
+This means that the time required will be the same as what one computer by itself
 would take to make only 5 comparison steps.
 It's a bit like the situation where you might need to type in 4 pages of
 writing; if you have 4 people typing at the same time on 4 computers, then you
