@@ -55,7 +55,9 @@
                 </ul>
               </div>
               <div class="d-none col-md-5 d-md-flex justify-content-end align-items-end">
-                <img class="img-fluid" src="{% static topic.icon %}">
+                {% if topic.icon %}
+                  <img class="img-fluid" src="{% static topic.icon %}">
+                {% endif %}
               </div>
             </div>
           </a>

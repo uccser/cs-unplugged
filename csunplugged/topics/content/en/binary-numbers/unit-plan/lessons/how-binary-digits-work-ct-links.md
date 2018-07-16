@@ -30,7 +30,7 @@ Which ones start with the leftmost card and move one card at a time to the right
 
 Binary number representation (just using 0 and 1) is an abstraction that hides the complexity of the electronics and hardware inside a computer that store data. Abstraction helps us simplify things because we can ignore the details we don’t currently need to know.
 
-In this case the details we can ignore include: Computers use physical devices like electric circuits and voltages in circuits to store and move data, and there are many complex physics and mathematical theories that make this work.
+In this case the details we can ignore include: Computers use physical devices like electronic circuits and voltages in circuits to store and move data, and there are many complex physics and mathematical theories that make this work.
 
 We don’t need to understand how these circuits work to use data and represent things using binary.
 Using binary is an Abstraction of these circuits and allows us to represent numbers as being made out of bits (0s and 1s), to understand data and work out problems without having to think about what is happening ‘underneath the hood’ of the computer.

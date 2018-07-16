@@ -84,7 +84,7 @@ The technical word for that is a “bit”.
 
     # Teaching observations
 
-    At this point it is common for students to guess that it is 6 (since it follow the numbers 2 and 4).
+    At this point it is common for students to guess that it is 6 (since it follows the numbers 2 and 4).
     However, if you let them think about it a little more, some will usually come up with 8, and those students should be able to convince the others that they are correct.
     There are several ways a student could explain this e.g. that each card is double the previous one, or that if you take two of a card, you get the next one. Some may recite the pattern 1+1=2, 2+2=4, 4+4=8.
 
