@@ -14,7 +14,7 @@ tinycss==0.4
 
 # Markdown
 verto==0.7.3
-python-markdown-math==0.3
+python-markdown-math==0.5
 
 # Search
 django-haystack==2.8.1
