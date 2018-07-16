@@ -1,4 +1,4 @@
 verto==0.7.3
-PyYAML==3.12
+PyYAML==3.13
 django==1.11.14 # pyup: >=1.11,<2.0
 django-environ==0.4.5
