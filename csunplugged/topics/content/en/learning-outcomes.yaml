@@ -169,7 +169,7 @@ programming-describe-variable-output:
   text: Describe how a variable can be displayed as an output.
 
 programming-describe-function:
-  text: Describe the reason why you wrote a function in your program.
+  text: Describe the reason why you included a function in your program.
 
 programming-identify-loop:
   text: Identify how and when to use a loop to repeat a set of instructions.
