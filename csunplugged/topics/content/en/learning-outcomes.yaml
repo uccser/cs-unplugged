@@ -19,7 +19,7 @@ binary-explain-off-on:
   text: Explain why a particular card (bit) must be turned off or on for a given number.
 
 binary-predict-bit-value:
-  text: Predict what value the next card (bit) e.g. the last bit value is 16, what is the next one?
+  text: Predict the value of the next binary bit (card).
 
 binary-explain-doubling:
   text: Explain why we only need one more bit to represent twice as many numbers.
@@ -56,7 +56,8 @@ drama-create-video-binary:
 # ENGLISH LEARNING OUTCOMES
 
 speaking-clear-instructions-binary-cards:
-  text: Give clear instructions to explain how the binary cards can show any number between 0
+  text: Give clear instructions to explain how the binary cards can show any number between 0 and 63
+
 # ERROR DETECTION AND CORRRECTION LEARNING OUTCOMES
 
 error-describe-steps-to-find-card:
