@@ -93,7 +93,7 @@ There is also an online interactive version of the binary cards [here](http://ww
     # Teaching observations
 
     At this point it is common for students to guess that it is 6
-    (since it follow the numbers 2 and 4).
+    (since it follows the numbers 2 and 4).
     However, if you let them think about it a little more, some will usually
     come up with 8, and those students should be able to convince the others
     that they are correct (there are several ways a student could explain

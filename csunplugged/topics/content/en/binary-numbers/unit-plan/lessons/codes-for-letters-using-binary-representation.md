@@ -24,11 +24,10 @@ There is also an online interactive version of the binary cards [here](http://ww
 
 Discuss how you would communicate a letter of the alphabet to someone if all
 you could do is say a number between 0 and 26.
-*(Students will usually suggest using a code of 1 or a, 2 for b, and so on)*.
+*(Students will usually suggest using a code of 1 for a, 2 for b, and so on)*.
 
 Work out and write down the binary numbers using 5 bits from 0 to 26 on the
 Binary to Alphabet resource, then add the letters of the alphabet.
-
 
 {panel type="teaching"}
 

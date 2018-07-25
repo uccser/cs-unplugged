@@ -19,7 +19,7 @@ All money has a serial number on it and in each of the treasure chests all the n
 The only problem is there is only one treasure chest that has the real money in it, the rest are fake.
 You know what the serial number on the real money is, and your challenge is to find the treasure chest with the real money in it, in the least amount of guesses.
 
-Guide students through how the game will work by following the instructions on the [Treasure Hunt Instructions pdf](https://www.example.com) (although this time the numbers will be in sorted order).
+Guide students through how the game will work by following the instructions on the [Treasure Hunt instructions]('resources:resource' 'treasure-hunt') (although this time the numbers will be in sorted order).
 
 {panel type="math"}
 
