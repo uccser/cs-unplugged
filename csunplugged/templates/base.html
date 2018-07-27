@@ -90,6 +90,8 @@
       </div>
     </nav>
 
+    {% trans "Home" as home_label %}
+    {% breadcrumb home_label "general:home" %}
     {% block breadcrumbs %}
     {% endblock breadcrumbs %}
 
