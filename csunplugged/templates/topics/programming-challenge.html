@@ -115,14 +115,19 @@
           {% else %}
 
             {% if implementation.language.slug == "python" %}
-              <span> Enter your code here </span>
-              <div id="codeeditor" style="min-height: 130px;">
+
+
+              <div class="mb-2">
+                <button onclick="runit()" class="btn btn-default btn-sm"> Run 
+                  <i class="fas fa-play-circle" style="color: green;"></i>
+                </button>
+              </div>
+
+              <div id="outputField" style="min-height: 130px;">
 
               </div>
 
               <div style="margin:1em 0; text-align: center"> 
-
-              <button type="submit" class="btn btn-light" style="border: 2px dashed" onclick="sendCode();"> Submit Code </button> 
 
               </div>
 
@@ -133,12 +138,12 @@
 
             {% if implementation.language.slug == "python" %}
 
-              <div> Your code output! </div>
+              <!--<div> Your code output! </div>
               <div disabled id="outputBox">
                 
               </div>
 
-              <h1 id="output-text" style="text-align: center; visibility: hidden;"> </h1>
+              <h1 id="output-text" style="text-align: center; visibility: hidden;"> </h1> -->
 
             {% endif %}
 
@@ -170,8 +175,66 @@
   </div>
   {% endif %}
 
+
   <script src="{% static 'js/server-interpretation.js' %}"></script>
   <script src="{% static 'js/code-ioboxes.js' %}"></script>
+
+  <script> 
+  function outputFunction(text) {
+    editor.replaceRange(text, CodeMirror.Pos(editor.lastLine()));
+  } 
+
+  function builtinRead(x) {
+    if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
+            throw "File not found: '" + x + "'";
+    return Sk.builtinFiles["files"][x];
+  }
+
+  function runit() { 
+    var sourceCode = document.getElementById("inputField").value; 
+    editor.setValue('');
+
+    Sk.configure({
+      output: outputFunction,
+      read: builtinRead,
+      inputfun: sInput,
+      inputfunTakesPrompt: true,
+      python3: true
+    });
+
+    var myPromise = Sk.misceval.asyncToPromise(function() {
+      return Sk.importMainWithBody("<stdin>", false, sourceCode, true);
+    });
+  } 
+
+  function sInput() {
+    return new Promise(function(resolve,reject) {
+       $("#outputField").on("keyup", function(e) {
+           if (e.keyCode == 13){
+            var enter_key = 1;
+            var line = editor.getLine(editor.lineCount() - enter_key - 1);
+            resolve(line);
+           }
+       })
+    })
+  }
+</script> 
+
+
+<textarea id="inputField" style="display: none">
+print("How many cards do you want to display? for i in")
+num_range = int(input())
+for i in range(num_range):
+  print(2 ** i)
+
+
+#x = input()
+#print(x)
+#y = input()
+#print(y)
+</textarea>
+
+
 
 {% endblock content_container %}
 
