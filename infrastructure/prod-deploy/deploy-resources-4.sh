@@ -8,7 +8,7 @@ source ./infrastructure/prod-deploy/load-prod-deploy-config-envs.sh
 ./csu update
 
 # Generate static PDF resources for deployment.
-docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Treasure Hunt" "en"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Treasure Hunt" "de"
 
 # Install Google Cloud SDK
 ./infrastructure/install_google_cloud_sdk.sh

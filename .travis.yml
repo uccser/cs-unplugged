@@ -64,6 +64,13 @@ jobs:
           skip_cleanup: true
           on:
             branch: develop
+    - script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/dev-deploy/deploy-resources-4.sh
+          skip_cleanup: true
+          on:
+            branch: develop
     - stage: production deploy
       script: skip
       deploy:
@@ -104,6 +111,13 @@ jobs:
       deploy:
         - provider: script
           script: bash ./infrastructure/prod-deploy/deploy-resources-3.sh
+          skip_cleanup: true
+          on:
+            branch: master
+    - script: skip
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/prod-deploy/deploy-resources-4.sh
           skip_cleanup: true
           on:
             branch: master
