@@ -7,6 +7,7 @@ from tqdm import tqdm
 from django.core.management.base import BaseCommand
 from django.http.request import QueryDict
 from django.conf import settings
+from django.utils.translation import activate
 from resources.models import Resource
 from resources.utils.get_resource_generator import get_resource_generator
 from resources.utils.resource_valid_configurations import resource_valid_configurations
@@ -26,6 +27,12 @@ class Command(BaseCommand):
             default=None,
             help="The resource name to generate",
         )
+        parser.add_argument(
+            "resource_language",
+            nargs="?",
+            default=None,
+            help="The language to generate the resource in",
+        )
 
     def handle(self, *args, **options):
         """Automatically called when the makeresources command is given."""
@@ -37,6 +44,11 @@ class Command(BaseCommand):
             resources = [Resource.objects.get(name=options["resource_name"])]
         else:
             resources = Resource.objects.order_by("name")
+
+        if options["resource_language"]:
+            generation_languages = [options["resource_language"]]
+        else:
+            generation_languages = [lang[0] for lang in settings.DEFAULT_LANGUAGES]
 
         for resource in resources:
             print("Creating {}".format(resource.name))
@@ -52,13 +64,16 @@ class Command(BaseCommand):
             progress_bar = tqdm(combinations, ascii=True)
             # Create PDF for all possible combinations
             for combination in progress_bar:
-                if resource.copies:
-                    combination["copies"] = settings.RESOURCE_COPY_AMOUNT
-                requested_options = QueryDict(urlencode(combination, doseq=True))
-                generator = get_resource_generator(resource.generator_module, requested_options)
-                (pdf_file, filename) = generator.pdf(resource.name)
+                for language_code in generation_languages:
+                    print("  - Creating PDF in '{}'".format(language_code))
+                    activate(language_code)
+                    if resource.copies:
+                        combination["copies"] = settings.RESOURCE_COPY_AMOUNT
+                    requested_options = QueryDict(urlencode(combination, doseq=True))
+                    generator = get_resource_generator(resource.generator_module, requested_options)
+                    (pdf_file, filename) = generator.pdf(resource.name)
 
-                filename = "{}.pdf".format(filename)
-                pdf_file_output = open(os.path.join(base_path, filename), "wb")
-                pdf_file_output.write(pdf_file)
-                pdf_file_output.close()
+                    filename = "{}.pdf".format(filename)
+                    pdf_file_output = open(os.path.join(base_path, filename), "wb")
+                    pdf_file_output.write(pdf_file)
+                    pdf_file_output.close()

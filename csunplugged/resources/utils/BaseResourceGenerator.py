@@ -7,6 +7,7 @@ from utils.errors.MoreThanOneThumbnailPageFoundError import MoreThanOneThumbnail
 from django.conf import settings
 from django.template.loader import render_to_string
 from django.contrib.staticfiles import finders
+from django.utils.translation import get_language
 
 from resources.utils.resource_parameters import (
     EnumResourceParameter,
@@ -177,7 +178,7 @@ class BaseResourceGenerator(ABC):
             )
             context["all_data"].append(copy_data)
 
-        filename = "{} ({})".format(resource_name, self.subtitle)
+        filename = "{} - {} ({})".format(resource_name, self.subtitle, get_language())
         context["filename"] = filename
 
         pdf_html = render_to_string("resources/base-resource-pdf.html", context)
