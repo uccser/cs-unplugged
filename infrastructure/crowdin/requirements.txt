@@ -1,4 +1,0 @@
-verto==0.7.4
-PyYAML==4.2b4
-django==1.11.14 # pyup: >=1.11,<2.0
-django-environ==0.4.5
