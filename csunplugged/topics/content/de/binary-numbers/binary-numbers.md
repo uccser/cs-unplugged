@@ -1,0 +1,3 @@
+# Binärzahlen
+
+Computer verwenden heutzutage Binärzahlen um Daten darzustellen – deshalb werden sie auch digitale Systeme genannt. Die einfachste und gebräuchlichste Art und Weise, Zahlen darzustellen, ist das binäre Zahlensystem, das aus nur zwei Ziffern besteht (normalerweise als 0 und 1 geschrieben). Es wird binär genannt, da es nur zwei verschiedene Ziffern bzw. Zustände gibt. Diese Unterrichtseinheit und die zugehörigen Lektionen erkunden, wie das Binärsystem funktioniert und warum es wichtig ist, zu verstehen, wie Daten dargestellt werden.

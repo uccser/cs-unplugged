@@ -1,0 +1,3 @@
+# Weitere Ressourcen
+
+Der [Computer Science Field Guide](http://csfieldguide.org.nz/) enthält ein Kapitel zur [Darstellung von Daten](http://csfieldguide.org.nz/en/chapters/data-representation.html), das Binärzahlen behandelt und erläutert, wie damit verschiedene Arten von Daten dargestellt werden können. Es ist auch eine interaktive Version der [Binärkarten](http://csfieldguide.org.nz/en/interactives/binary-cards/index.html?digits=4&start=WWWW) vorhanden und nähere Informationen zur Verwendung dieser Karten finden Sie [hier](https://github.com/uccser/cs-field-guide/tree/develop/csfieldguide/static/interactives/binary-cards).
