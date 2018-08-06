@@ -1,5 +1,6 @@
 """Views for the resource application."""
 
+from urllib.parse import quote
 from django.conf import settings
 from django.http import HttpResponse, Http404
 from django.shortcuts import get_object_or_404, render
@@ -85,5 +86,5 @@ def generate_resource(request, resource_slug):
     else:
         (pdf_file, filename) = generator.pdf(resource.name)
         response = HttpResponse(pdf_file, content_type="application/pdf")
-        response["Content-Disposition"] = RESPONSE_CONTENT_DISPOSITION.format(filename=filename)
+        response["Content-Disposition"] = RESPONSE_CONTENT_DISPOSITION.format(filename=quote(filename))
         return response
