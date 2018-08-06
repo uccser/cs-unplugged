@@ -119,6 +119,7 @@ INCONTEXT_L10N_PSEUDOLANGUAGES = (
 
 LANGUAGES = (
     ("en", "English"),
+    ("de", "Deutsche"),
 )
 
 if env.bool("INCLUDE_INCONTEXT_L10N", False):

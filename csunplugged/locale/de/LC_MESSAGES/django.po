@@ -988,4 +988,3 @@ msgstr "Vollständige Lehrplanbeschreibung lesen"
 
 msgid "Lessons"
 msgstr "Lektionen"
-
