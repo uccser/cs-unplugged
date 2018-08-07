@@ -14,7 +14,7 @@ from utils.errors.QueryParameterMissingError import QueryParameterMissingError
 from utils.errors.QueryParameterInvalidError import QueryParameterInvalidError
 from utils.errors.QueryParameterMultipleValuesError import QueryParameterMultipleValuesError
 
-RESPONSE_CONTENT_DISPOSITION = 'attachment; filename="{filename}.pdf"'
+RESPONSE_CONTENT_DISPOSITION = "attachment; filename*=UTF-8''{filename}.pdf; filename=\"{filename}.pdf\""
 
 
 class IndexView(generic.ListView):
