@@ -25,10 +25,10 @@ django-widget-tweaks==1.4.2
 PyYAML==4.2b4
 
 # System tools
-tqdm==4.23.4
+tqdm==4.24.0
 
 # XML Parsing
-lxml==4.2.3
+lxml==4.2.4
 cssselect==1.0.3
 
 # I18n
