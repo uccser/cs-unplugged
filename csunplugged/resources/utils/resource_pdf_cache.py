@@ -1,5 +1,6 @@
 """Provide redirect to static resource file."""
 
+import os
 from django.conf import settings
 from django.shortcuts import redirect
 from django.utils.translation import get_language

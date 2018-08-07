@@ -38,7 +38,6 @@ class Command(BaseCommand):
         """Automatically called when the makeresources command is given."""
         base_path = settings.RESOURCE_GENERATION_LOCATION
 
-
         if options["resource_name"]:
             resources = [Resource.objects.get(name=options["resource_name"])]
         else:
