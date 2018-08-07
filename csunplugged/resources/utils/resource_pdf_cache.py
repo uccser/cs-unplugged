@@ -17,5 +17,5 @@ def resource_pdf_cache(resource, generator):
         HTTP redirect.
     """
     filename = "{} ({}).pdf".format(resource.name, generator.subtitle)
-    redirect_url = os.path.join(settings.STATIC_URL, resource.slug, get_language, filename)
+    redirect_url = os.path.join(settings.STATIC_URL, "resources", resource.slug, get_language(), filename)
     return redirect(redirect_url)
