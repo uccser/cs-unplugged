@@ -24,52 +24,53 @@ class MakeResourcesCommandTest(BaseTestWithDB):
 
     def tearDown(self):
         """Automatically called after each test."""
-        shutil.rmtree(RESOURCE_PATH)
+        if os.path.exists(RESOURCE_PATH):
+            shutil.rmtree(RESOURCE_PATH)
 
     def test_makeresources_command_single_resource(self):
-        self.test_data.create_resource(
+        resource = self.test_data.create_resource(
             "resource1",
             "Resource 1",
             "Description of resource 1",
             "BareResourceGenerator",
         )
         management.call_command("makeresources")
-        filepath = os.path.join(RESOURCE_PATH, "Resource 1 (a4).pdf")
+        filepath = os.path.join(RESOURCE_PATH, resource.slug, self.language, "Resource 1 (a4).pdf")
         pdf = PdfFileReader(open(filepath, "rb"))
         self.assertEqual(pdf.getNumPages(), 1)
-        filepath = os.path.join(RESOURCE_PATH, "Resource 1 (letter).pdf")
+        filepath = os.path.join(RESOURCE_PATH, resource.slug, self.language, "Resource 1 (letter).pdf")
         pdf = PdfFileReader(open(filepath, "rb"))
         self.assertEqual(pdf.getNumPages(), 1)
 
     def test_makeresources_command_multiple_resources(self):
-        self.test_data.create_resource(
+        resource_1 = self.test_data.create_resource(
             "resource1",
             "Resource 1",
             "Description of resource 1",
             "BareResourceGenerator",
         )
-        self.test_data.create_resource(
+        resource_2 = self.test_data.create_resource(
             "resource2",
             "Resource 2",
             "Description of resource 2",
             "BareResourceGenerator",
         )
         management.call_command("makeresources")
-        filepath = os.path.join(RESOURCE_PATH, "Resource 1 (a4).pdf")
+        filepath = os.path.join(RESOURCE_PATH, resource_1.slug, self.language, "Resource 1 (a4).pdf")
         pdf = PdfFileReader(open(filepath, "rb"))
         self.assertEqual(pdf.getNumPages(), 1)
-        filepath = os.path.join(RESOURCE_PATH, "Resource 1 (letter).pdf")
+        filepath = os.path.join(RESOURCE_PATH, resource_1.slug, self.language, "Resource 1 (letter).pdf")
         pdf = PdfFileReader(open(filepath, "rb"))
         self.assertEqual(pdf.getNumPages(), 1)
-        filepath = os.path.join(RESOURCE_PATH, "Resource 2 (a4).pdf")
+        filepath = os.path.join(RESOURCE_PATH, resource_2.slug, self.language, "Resource 2 (a4).pdf")
         pdf = PdfFileReader(open(filepath, "rb"))
         self.assertEqual(pdf.getNumPages(), 1)
-        filepath = os.path.join(RESOURCE_PATH, "Resource 2 (letter).pdf")
+        filepath = os.path.join(RESOURCE_PATH, resource_2.slug, self.language, "Resource 2 (letter).pdf")
         pdf = PdfFileReader(open(filepath, "rb"))
         self.assertEqual(pdf.getNumPages(), 1)
 
     def test_makeresources_command_single_resource_with_copies(self):
-        self.test_data.create_resource(
+        resource = self.test_data.create_resource(
             "resource1",
             "Resource 1",
             "Description of resource 1",
@@ -77,12 +78,12 @@ class MakeResourcesCommandTest(BaseTestWithDB):
             copies=True
         )
         management.call_command("makeresources")
-        filepath = os.path.join(RESOURCE_PATH, "Resource 1 (a4).pdf")
+        filepath = os.path.join(RESOURCE_PATH, resource.slug, self.language, "Resource 1 (a4).pdf")
         pdf = PdfFileReader(open(filepath, "rb"))
         self.assertEqual(pdf.getNumPages(), 20)
 
     def test_makeresources_command_valid_parameter(self):
-        self.test_data.create_resource(
+        resource = self.test_data.create_resource(
             "resource1",
             "Resource 1",
             "Description of resource 1",
@@ -90,7 +91,7 @@ class MakeResourcesCommandTest(BaseTestWithDB):
             copies=True
         )
         management.call_command("makeresources", "Resource 1")
-        filepath = os.path.join(RESOURCE_PATH, "Resource 1 (a4).pdf")
+        filepath = os.path.join(RESOURCE_PATH, resource.slug, self.language, "Resource 1 (a4).pdf")
         pdf = PdfFileReader(open(filepath, "rb"))
         self.assertEqual(pdf.getNumPages(), 20)
 
@@ -107,7 +108,7 @@ class MakeResourcesCommandTest(BaseTestWithDB):
 
     def test_makeresources_command_single_resource_existing_folder(self):
         os.makedirs(os.path.dirname(RESOURCE_PATH))
-        self.test_data.create_resource(
+        resource = self.test_data.create_resource(
             "resource1",
             "Resource 1",
             "Description of resource 1",
@@ -115,7 +116,7 @@ class MakeResourcesCommandTest(BaseTestWithDB):
             copies=True
         )
         management.call_command("makeresources", "Resource 1")
-        filepath = os.path.join(RESOURCE_PATH, "Resource 1 (a4).pdf")
+        filepath = os.path.join(RESOURCE_PATH, resource.slug, self.language, "Resource 1 (a4).pdf")
         pdf = PdfFileReader(open(filepath, "rb"))
         self.assertEqual(pdf.getNumPages(), 20)
 
