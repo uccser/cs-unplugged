@@ -7,7 +7,7 @@ from tqdm import tqdm
 from django.core.management.base import BaseCommand
 from django.http.request import QueryDict
 from django.conf import settings
-from django.utils.translation import activate
+from django.utils.translation import override
 from resources.models import Resource
 from resources.utils.get_resource_generator import get_resource_generator
 from resources.utils.resource_valid_configurations import resource_valid_configurations
@@ -66,14 +66,14 @@ class Command(BaseCommand):
             for combination in progress_bar:
                 for language_code in generation_languages:
                     print("  - Creating PDF in '{}'".format(language_code))
-                    activate(language_code)
-                    if resource.copies:
-                        combination["copies"] = settings.RESOURCE_COPY_AMOUNT
-                    requested_options = QueryDict(urlencode(combination, doseq=True))
-                    generator = get_resource_generator(resource.generator_module, requested_options)
-                    (pdf_file, filename) = generator.pdf(resource.name)
+                    with translation.override(language_code):
+                        if resource.copies:
+                            combination["copies"] = settings.RESOURCE_COPY_AMOUNT
+                        requested_options = QueryDict(urlencode(combination, doseq=True))
+                        generator = get_resource_generator(resource.generator_module, requested_options)
+                        (pdf_file, filename) = generator.pdf(resource.name)
 
-                    filename = "{}.pdf".format(filename)
-                    pdf_file_output = open(os.path.join(base_path, filename), "wb")
-                    pdf_file_output.write(pdf_file)
-                    pdf_file_output.close()
+                        filename = "{}.pdf".format(filename)
+                        pdf_file_output = open(os.path.join(base_path, filename), "wb")
+                        pdf_file_output.write(pdf_file)
+                        pdf_file_output.close()
