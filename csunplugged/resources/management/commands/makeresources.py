@@ -7,7 +7,7 @@ from tqdm import tqdm
 from django.core.management.base import BaseCommand
 from django.http.request import QueryDict
 from django.conf import settings
-from django.utils.translation import override
+from django.utils import translation
 from resources.models import Resource
 from resources.utils.get_resource_generator import get_resource_generator
 from resources.utils.resource_valid_configurations import resource_valid_configurations
@@ -37,8 +37,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         """Automatically called when the makeresources command is given."""
         base_path = settings.RESOURCE_GENERATION_LOCATION
-        if not os.path.exists(base_path):
-            os.makedirs(base_path)
+
 
         if options["resource_name"]:
             resources = [Resource.objects.get(name=options["resource_name"])]
@@ -73,7 +72,11 @@ class Command(BaseCommand):
                         generator = get_resource_generator(resource.generator_module, requested_options)
                         (pdf_file, filename) = generator.pdf(resource.name)
 
+                        pdf_directory = os.path.join(base_path, resource.slug, language_code)
+                        if not os.path.exists(pdf_directory):
+                            os.makedirs(pdf_directory)
+
                         filename = "{}.pdf".format(filename)
-                        pdf_file_output = open(os.path.join(base_path, filename), "wb")
+                        pdf_file_output = open(os.path.join(pdf_directory, filename), "wb")
                         pdf_file_output.write(pdf_file)
                         pdf_file_output.close()

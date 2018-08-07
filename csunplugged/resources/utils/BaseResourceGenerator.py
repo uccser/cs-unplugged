@@ -7,15 +7,13 @@ from utils.errors.MoreThanOneThumbnailPageFoundError import MoreThanOneThumbnail
 from django.conf import settings
 from django.template.loader import render_to_string
 from django.contrib.staticfiles import finders
-from django.utils.translation import get_language
-
+from django.utils.translation import ugettext as _
 from resources.utils.resource_parameters import (
     EnumResourceParameter,
     TextResourceParameter,
     IntegerResourceParameter,
 )
 
-from django.utils.translation import ugettext as _
 
 PAPER_SIZE_VALUES = {
     "a4": _("A4"),
@@ -178,7 +176,7 @@ class BaseResourceGenerator(ABC):
             )
             context["all_data"].append(copy_data)
 
-        filename = "{} - {} ({})".format(resource_name, self.subtitle, get_language())
+        filename = "{} ({})".format(resource_name, self.subtitle)
         context["filename"] = filename
 
         pdf_html = render_to_string("resources/base-resource-pdf.html", context)

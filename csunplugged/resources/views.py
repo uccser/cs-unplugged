@@ -82,7 +82,7 @@ def generate_resource(request, resource_slug):
         # Return cached static PDF file of resource.
         # Currently developing system for dynamically rendering
         # custom PDFs on request (https://github.com/uccser/render).
-        return resource_pdf_cache(resource.name, generator)
+        return resource_pdf_cache(resource, generator)
     else:
         (pdf_file, filename) = generator.pdf(resource.name)
         response = HttpResponse(pdf_file, content_type="application/pdf")
