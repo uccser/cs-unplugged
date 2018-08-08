@@ -1,0 +1,13 @@
+```python
+decimal_number = input('Please enter a decimal number:\n')
+bit_value = 1
+while decimal_number <= bit_value:
+  bit_value = bit_value * 2
+while bit_value > 1:
+  bit_value = bit_value / 2
+  if decimal_number >= bit_value:
+    print('high')
+    decimal_number = decimal_number - bit_value
+  else:
+    print('low')
+```
