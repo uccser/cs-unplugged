@@ -13,11 +13,11 @@ urlpatterns = i18n_patterns(
     url(r"", include("general.urls", namespace="general")),
     url(r"^topics/", include("topics.urls", namespace="topics")),
     url(r"^resources/", include("resources.urls", namespace="resources")),
-    url(r"^search/", include("search.urls", namespace="search")),
 )
 
 urlpatterns += [
     url(r"", include("classic.urls")),
+    url(r"^en/search/", include("search.urls", namespace="search")),
     url(r"^_ah/health", views.health_check),
 ]
 
