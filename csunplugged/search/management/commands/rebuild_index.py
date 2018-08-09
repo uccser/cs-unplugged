@@ -1,6 +1,5 @@
 """Module for the overriden Django Haystack rebuild_index command."""
 
-from django.conf import settings
 from haystack.management.commands import rebuild_index
 from haystack.query import SearchQuerySet
 from search.forms import all_items
@@ -32,10 +31,6 @@ class Command(rebuild_index.Command):
         total_objects += GeneralPage.objects.count()
         total_objects += ClassicPage.objects.count()
         super(Command, self).handle(*args, **options)
-
-        # for language_code, _ in settings.DEFAULT_LANGUAGES:
-
-
         total_results = len(all_items(SearchQuerySet()))
         if total_objects == total_results:
             print("Search index loaded with {} items.".format(total_results))

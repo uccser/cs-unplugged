@@ -1,7 +1,5 @@
 """Module for custom search form."""
 from django import forms
-from django.utils.translation import get_language
-from utils.search_index_utils import get_search_index_name
 from haystack.forms import ModelSearchForm
 from topics.models import (
     Lesson,
@@ -33,11 +31,10 @@ class CustomSearchForm(ModelSearchForm):
         Returns:
             SearchQuerySet of search results.
         """
-        index_name = get_search_index_name(get_language())
         if not self.cleaned_data.get('q'):
-            search_query_set = all_items(self.searchqueryset.using(index_name).all())
+            search_query_set = all_items(self.searchqueryset.all())
         else:
-            search_query_set = self.searchqueryset.using(index_name).auto_query(self.cleaned_data['q'])
+            search_query_set = self.searchqueryset.auto_query(self.cleaned_data['q'])
         search_query_set = search_query_set.models(*self.get_models())
 
         # Filter items by curriculum areas if given in query.

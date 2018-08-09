@@ -5,7 +5,6 @@ Note: Document boosting for Whoosh backend is with keyword '_boost' instead
 """
 
 from haystack import indexes
-from search.search_indexes import LanguageIndex
 from topics.models import (
     Topic,
     UnitPlan,
@@ -16,7 +15,7 @@ from topics.models import (
 )
 
 
-class TopicIndex(LanguageIndex, indexes.Indexable):
+class TopicIndex(indexes.SearchIndex, indexes.Indexable):
     """Search index for Topic model."""
 
     text = indexes.CharField(document=True, use_template=True)
@@ -43,7 +42,7 @@ class TopicIndex(LanguageIndex, indexes.Indexable):
         return Topic
 
 
-class UnitPlanIndex(LanguageIndex, indexes.Indexable):
+class UnitPlanIndex(indexes.SearchIndex, indexes.Indexable):
     """Search index for UnitPlan model."""
 
     text = indexes.CharField(document=True, use_template=True)
@@ -71,7 +70,7 @@ class UnitPlanIndex(LanguageIndex, indexes.Indexable):
         return UnitPlan
 
 
-class LessonIndex(LanguageIndex, indexes.Indexable):
+class LessonIndex(indexes.SearchIndex, indexes.Indexable):
     """Search index for Lesson model."""
 
     text = indexes.CharField(document=True, use_template=True)
@@ -115,7 +114,7 @@ class LessonIndex(LanguageIndex, indexes.Indexable):
         return Lesson
 
 
-class CurriculumIntegrationIndex(LanguageIndex, indexes.Indexable):
+class CurriculumIntegrationIndex(indexes.SearchIndex, indexes.Indexable):
     """Search index for CurriculumIntegration model."""
 
     text = indexes.CharField(document=True, use_template=True)
@@ -156,7 +155,7 @@ class CurriculumIntegrationIndex(LanguageIndex, indexes.Indexable):
         return CurriculumIntegration
 
 
-class ProgrammingChallengeIndex(LanguageIndex, indexes.Indexable):
+class ProgrammingChallengeIndex(indexes.SearchIndex, indexes.Indexable):
     """Search index for ProgrammingChallenge model."""
 
     text = indexes.CharField(document=True, use_template=True)

@@ -16,7 +16,6 @@ import os.path
 import django.conf.locale
 from django.conf import global_settings
 from django.utils.translation import ugettext_lazy as _
-from utils.search_index_utils import get_search_index_name
 
 # cs-unplugged/csunplugged/config/settings/base.py - 3 = csunplugged/
 ROOT_DIR = environ.Path(__file__) - 3
@@ -271,16 +270,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # SEARCH CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: http://django-haystack.readthedocs.io/en/v2.6.0/settings.html
-HAYSTACK_CONNECTIONS = dict()
-for language_code, _ in DEFAULT_LANGUAGES:
-    index_name = get_search_index_name(language_code)
-    index_settings = {
+HAYSTACK_CONNECTIONS = {
+    "default": {
         "ENGINE": "haystack.backends.whoosh_backend.WhooshEngine",
-        "PATH": os.path.join(str(ROOT_DIR), "whoosh_index", language_code),
-    }
-    HAYSTACK_CONNECTIONS[index_name] = index_settings
-# HAYSTACK_ROUTERS = ["search.routers.MultiLanguageRouter"]
-# HAYSTACK_LIMIT_TO_REGISTERED_MODELS = False
+        "PATH": str(ROOT_DIR.path("whoosh_index")),
+    },
+}
 HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10
 
 # OTHER SETTINGS
