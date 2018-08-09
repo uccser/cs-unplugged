@@ -38,8 +38,6 @@ class CustomSearchForm(ModelSearchForm):
             search_query_set = all_items(self.searchqueryset.using(index_name).all())
         else:
             search_query_set = self.searchqueryset.using(index_name).auto_query(self.cleaned_data['q'])
-        for item in search_query_set:
-            print(item.object)
         search_query_set = search_query_set.models(*self.get_models())
 
         # Filter items by curriculum areas if given in query.
