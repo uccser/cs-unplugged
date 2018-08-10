@@ -46,7 +46,10 @@ class Command(BaseCommand):
         if options["resource_language"]:
             generation_languages = [options["resource_language"]]
         else:
-            generation_languages = [lang[0] for lang in settings.DEFAULT_LANGUAGES]
+            generation_languages = []
+            for language_code, _ in settings.LANGUAGES:
+                if language_code not in settings.INCONTEXT_L10N_PSEUDOLANGUAGES:
+                    generation_languages.append(language_code)
 
         for resource in resources:
             print("Creating {}".format(resource.name))

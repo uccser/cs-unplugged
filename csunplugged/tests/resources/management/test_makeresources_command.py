@@ -10,17 +10,21 @@ import shutil
 from resources.models import Resource
 
 RESOURCE_PATH = "temp/resources/"
-
+LANGUAGE1 = "lang1"
+LANGUAGE2 = "lang2"
+SINGLE_LANGUAGE = ((LANGUAGE1, LANGUAGE1), )
+MULTIPLE_LANGUAGES = ((LANGUAGE1, LANGUAGE1), (LANGUAGE2, LANGUAGE2))
 
 @tag("management")
 @override_settings(RESOURCE_GENERATION_LOCATION=RESOURCE_PATH)
 @override_settings(RESOURCE_GENERATORS_PACKAGE="tests.resources.management.test_generators")
+@override_settings(LANGUAGES=SINGLE_LANGUAGE)
 class MakeResourcesCommandTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.test_data = ResourcesTestDataGenerator()
-        self.language = "en"
+        self.language = LANGUAGE1
 
     def tearDown(self):
         """Automatically called after each test."""
@@ -129,3 +133,42 @@ class MakeResourcesCommandTest(BaseTestWithDB):
         )
         with self.assertRaises(TypeError):
             management.call_command("makeresources")
+
+    @override_settings(LANGUAGES=MULTIPLE_LANGUAGES)
+    def test_makeresources_command_all_languages(self):
+        resource = self.test_data.create_resource(
+            "resource1",
+            "Resource 1",
+            "Description of resource 1",
+            "BareResourceGenerator",
+        )
+        management.call_command("makeresources")
+        for language_code, _ in MULTIPLE_LANGUAGES:
+            filepath = os.path.join(RESOURCE_PATH, resource.slug, language_code, "Resource 1 (a4).pdf")
+            pdf = PdfFileReader(open(filepath, "rb"))
+            self.assertEqual(pdf.getNumPages(), 1)
+            filepath = os.path.join(RESOURCE_PATH, resource.slug, language_code, "Resource 1 (letter).pdf")
+            pdf = PdfFileReader(open(filepath, "rb"))
+            self.assertEqual(pdf.getNumPages(), 1)
+
+    @override_settings(LANGUAGES=SINGLE_LANGUAGE)
+    def test_makeresources_command_single_language(self):
+        resource = self.test_data.create_resource(
+            "resource1",
+            "Resource 1",
+            "Description of resource 1",
+            "BareResourceGenerator",
+        )
+        management.call_command("makeresources", resource.name, LANGUAGE1)
+        # Check language 1 exists
+        filepath = os.path.join(RESOURCE_PATH, resource.slug, LANGUAGE1, "Resource 1 (a4).pdf")
+        pdf = PdfFileReader(open(filepath, "rb"))
+        self.assertEqual(pdf.getNumPages(), 1)
+        filepath = os.path.join(RESOURCE_PATH, resource.slug, LANGUAGE1, "Resource 1 (letter).pdf")
+        pdf = PdfFileReader(open(filepath, "rb"))
+        self.assertEqual(pdf.getNumPages(), 1)
+        # Check language 2 does not exist
+        filepath = os.path.join(RESOURCE_PATH, resource.slug, LANGUAGE2, "Resource 1 (a4).pdf")
+        self.assertFalse(os.path.exists(filepath))
+        filepath = os.path.join(RESOURCE_PATH, resource.slug, LANGUAGE2, "Resource 1 (letter).pdf")
+        self.assertFalse(os.path.exists(filepath))
