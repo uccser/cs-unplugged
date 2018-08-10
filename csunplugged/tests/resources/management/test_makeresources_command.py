@@ -15,6 +15,7 @@ LANGUAGE2 = "lang2"
 SINGLE_LANGUAGE = ((LANGUAGE1, LANGUAGE1), )
 MULTIPLE_LANGUAGES = ((LANGUAGE1, LANGUAGE1), (LANGUAGE2, LANGUAGE2))
 
+
 @tag("management")
 @override_settings(RESOURCE_GENERATION_LOCATION=RESOURCE_PATH)
 @override_settings(RESOURCE_GENERATORS_PACKAGE="tests.resources.management.test_generators")
