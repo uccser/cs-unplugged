@@ -1,11 +1,9 @@
-```python
-decimal_number = input('Please enter a decimal number between 0 and 31:\n')
-bit_value = 32
-while bit_value > 1:
-  bit_value = bit_value / 2
-  if decimal_number >= bit_value:
-    print('high')
-    decimal_number = decimal_number - bit_value
-  else:
-    print('low')
+For the input `11` the code will output:
+```
+Please enter a decimal number between 0 and 31:
+low
+high
+low
+high
+high
 ```

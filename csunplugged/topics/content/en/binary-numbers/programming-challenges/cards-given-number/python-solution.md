@@ -1,5 +1,5 @@
 ```python
-number_of_dots = input('Please enter a number of dots less than or equal to 31:\n')
+number_of_dots = input('Please enter a number of dots less than or equal to 31: ')
 if number_of_dots <= 31:
   if number_of_dots >= 16:
     number_of_dots = number_of_dots - 16
@@ -17,5 +17,5 @@ if number_of_dots <= 31:
     number_of_dots = number_of_dots - 1
     print('1')
 else:
-  print('Please choose a number less than or equal to 31.\n')
+  print('Please choose a number less than or equal to 31.')
 ```

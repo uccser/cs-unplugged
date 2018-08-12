@@ -3,8 +3,8 @@ binary-numbers-no-calculations:
   challenge-number: 1
   difficulty-level: 1
   programming-languages:
-    - python
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-sequencing
     - programming-explain-output
@@ -15,8 +15,8 @@ binary-numbers-using-variable:
   challenge-number: 2
   difficulty-level: 1
   programming-languages:
-    - python
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-sequencing
     - programming-describe-variables
@@ -27,8 +27,8 @@ binary-numbers-using-variables-as-operator:
   challenge-number: 3
   difficulty-level: 1
   programming-languages:
-    - python
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-sequencing
     - programming-outline-variable-updates

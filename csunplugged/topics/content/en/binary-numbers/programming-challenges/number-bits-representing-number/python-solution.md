@@ -1,5 +1,5 @@
 ```python
-total_number_of_dots = input('Please enter the number of dots:\n')
+total_number_of_dots = input('Please enter the number of dots: ')
 bits = 0
 bit_value = 1
 while total_number_of_dots >= bit_value:

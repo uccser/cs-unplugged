@@ -1,5 +1,5 @@
 ```python
-original = input('Please enter a decimal number:\n')
+original = input('Please enter a decimal number: ')
 decimal_number = original
 bit_value = 1
 binary_number = ''

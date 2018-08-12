@@ -1,9 +1,5 @@
-```python
-number_of_cards = input('How many cards would you like to display?\n')
-number_of_dots = 1
-binary_cards = ''
-for i in range(0, number_of_cards):
-  binary_cards = binary_cards + str(number_of_dots) + ', '
-  number_of_dots = number_of_dots * 2
-print(binary_cards)
+For the input `4` the code will output:
+```
+How many cards would you like to display?
+1, 2, 4, 8,
 ```

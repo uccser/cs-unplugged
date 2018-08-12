@@ -1,6 +1,6 @@
 ```python
 total_number_of_dots = 0
-cards = input('Please enter cards (B for black and W for white) as one line, no spaces\n')
+cards = input('Please enter cards (B for black and W for white) as one line, no spaces ')
 number_of_dots = 1
 i = len(cards) - 1
 while i >= 0:

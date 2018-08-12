@@ -1,12 +1,5 @@
-```python
-original = input('Please enter a decimal number:\n')
-decimal_number = original
-remainder = 0
-binary_number = ''
-while decimal_number > 1:
-  remainder = decimal_number % 2
-  decimal_number = decimal_number // 2
-  binary_number = str(remainder) + binary_number
-binary_number = str(decimal_number) + binary_number
-print('The binary representation for the number ' + str(original) + ' is ' + str(binary_number))
+For the input `11` the code will output:
+```
+Please enter a decimal number:
+The binary representation for the number 11 is 1011
 ```
