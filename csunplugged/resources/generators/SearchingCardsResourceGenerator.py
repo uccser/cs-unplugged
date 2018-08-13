@@ -18,11 +18,11 @@ NUMBER_CARDS_VALUES = {
     "15": "15",
     "31": "31",
 }
-
+MIN_VALUE = 1
 MAX_NUMBER_VALUE = {
     "cards": _("Number of cards (15 or 31)"),
-    "99": _("0 to 99"),
-    "999": _("0 to 999"),
+    "99": _("1 to 99"),
+    "999": _("1 to 999"),
     "blank": _("Blank")
 }
 
@@ -65,15 +65,15 @@ class SearchingCardsResourceGenerator(BaseResourceGenerator):
         help_sheet = self.options["help_sheet"].value
 
         if max_number == "cards":
-            numbers = list(range(1, number_cards + 1))
+            numbers = list(range(MIN_VALUE, number_cards + 1))
             shuffle(numbers)
-            range_text = "1 to {}".format(number_cards)
+            range_text = _("{} to {}").format(MIN_VALUE, number_cards)
         elif max_number != "blank":
-            numbers = sample(range(1, int(max_number) + 1), number_cards)
-            range_text = "1 to {}".format(max_number)
+            numbers = sample(range(MIN_VALUE, int(max_number) + 1), number_cards)
+            range_text = _("{} to {}").format(MIN_VALUE, max_number)
         else:
             numbers = []
-            range_text = "Add list of numbers below:"
+            range_text = _("Add list of numbers below:")
 
         if help_sheet:
             pages.append({"type": "html", "data": self.create_help_sheet(numbers, range_text)})
@@ -123,22 +123,21 @@ class SearchingCardsResourceGenerator(BaseResourceGenerator):
         doc, tag, text, line = Doc().ttl()
         with tag("div"):
             with tag("h1"):
-                text("Teacher guide sheet for binary search activity")
+                text(_("Teacher guide sheet for binary search activity"))
             with tag("p"):
-                text(
-                    "Use this sheet to circle the number you are asking your class ",
-                    "to look for when you are demonstrating how the binary search ",
-                    "works. This allows you to demonstrate the maximum number of ",
-                    "searches it would take. When students are playing the treasure ",
-                    "hunt game, they can choose any number. Avoid those numbers that are ",
-                    "underlined as they are key binary search positions (avoiding them is a ",
-                    "good thing to do for demonstrations, but in practice students, ",
+                text(_(
+                    "Use this sheet to circle the number you are asking your class "
+                    "to look for when you are demonstrating how the binary search "
+                    "works. This allows you to demonstrate the maximum number of "
+                    "searches it would take. When students are playing the treasure "
+                    "hunt game, they can choose any number. Avoid those numbers that are "
+                    "underlined as they are key binary search positions (avoiding them is a "
+                    "good thing to do for demonstrations, but in practice students, "
                     "or computers, won’t intentionally avoid these)."
-                )
+                ))
             with tag("h2"):
-                text("Sorted numbers")
+                text(_("Sorted numbers"))
             with tag("p"):
-                # doc.attr(style="columns:2;")
                 numbers.sort()
                 red_number_jump = (len(numbers) + 1) // 4
                 text = ""
@@ -166,21 +165,21 @@ class SearchingCardsResourceGenerator(BaseResourceGenerator):
         number_cards = self.options["number_cards"].value
 
         if max_number == "blank":
-            range_text = "blank"
+            range_text = _("blank")
         elif max_number == "cards":
-            range_text = "0 to {}".format(number_cards)
+            range_text = _("{} to {}").format(MIN_VALUE, number_cards)
         else:
-            range_text = "0 to {}".format(max_number)
+            range_text = _("{} to {}").format(MIN_VALUE, max_number)
 
         if help_sheet:
-            help_text = "with helper sheet"
+            help_text = _("with helper sheet")
         else:
-            help_text = "without helper sheet"
+            help_text = _("without helper sheet")
 
-        text = "{} cards - {} - {} - {}".format(
-            number_cards,
+        text = " - ".join([
+            _("{} cards").format(number_cards),
             range_text,
             help_text,
             super().subtitle
-        )
+        ])
         return text
