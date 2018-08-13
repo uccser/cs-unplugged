@@ -401,17 +401,17 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         doc, tag, text, line = Doc().ttl()
         line("style", "#grid-table td {border:1px solid black;padding:1rem 0.5rem;}")
         with tag("h1"):
-            text("Pixel Painter")
+            text(_("Pixel Painter"))
         with tag("p"):
-            text("This page should be kept secret from students.")
+            text(_("This page should be kept secret from students."))
         with tag("h2"):
-            text("Page grid reference for {} image".format(image_name))
+            text(_("Page grid reference for image: {}").format(image_name))
         with tag("p"):
-            text(
-                "Once pixels on each page are filled in correctly, ",
-                "cut each grid out and arrange in the following layout ",
+            text(_(
+                "Once pixels on each page are filled in correctly, "
+                "cut each grid out and arrange in the following layout "
                 "(page names are in the top right corner)."
-            )
+            ))
         with tag("div", style="padding-bottom:1cm;"):
             with tag("table", id="grid-table", style="padding-bottom:1cm;"):
                 with tag("tbody"):
@@ -423,10 +423,10 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         if method in ["greyscale", "colour"]:
             with tag("p"):
                 if method == "greyscale":
-                    text("The pixel values are using 2 bit colour values.")
+                    text(_("The pixel values are using 2 bit colour values."))
                 if method == "colour":
-                    text("The pixel values are using 5 bit RGB colour values (2 red, 2 blue, 1 green).")
-                text(" Extra pixel legends are at the end of this document for students.")
+                    text(_("The pixel values are using 5 bit RGB colour values (2 red, 2 blue, 1 green)."))
+                text(_("Extra pixel legends are at the end of this document for students."))
         html = doc.getvalue()
         html += self.create_pixel_legend(self.methods[method]["labels"].items())
         return html
@@ -467,12 +467,12 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         """
         doc, tag, text, line = Doc().ttl()
         with tag("h1"):
-            text("Run Length Encodings")
+            text(_("Run Length Encodings"))
         for index, row_of_page_references in enumerate(page_grid_coords):
             for page_reference in row_of_page_references:
                 with tag("div", klass="page-break"):
                     with tag("h2"):
-                        text("Encoding for page {}".format(page_reference))
+                        text(_("Encoding for page {}").format(page_reference))
                     page_encoding = pages_encoding[page_reference]
                     with tag("ul", klass="list-unstyled"):
                         for line_values in page_encoding:
