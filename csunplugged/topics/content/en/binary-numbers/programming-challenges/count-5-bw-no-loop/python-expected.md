@@ -1,4 +1,3 @@
-```
 For the input
 ```
 B
