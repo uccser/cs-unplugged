@@ -88,6 +88,7 @@ class PianoKeysResourceGenerator(BaseResourceGenerator):
                 width,
                 height,
                 color=LABEL_COLOURS[position],
+                font_path="static/fonts/PatrickHand-Regular.ttf",
                 font_size=120,
             )
             textbox_drawer.write_text_box(
