@@ -106,7 +106,6 @@ class SortingNetworkCardsResourceGenerator(BaseResourceGenerator):
         Returns:
             A list of dictionaries for each resource page.
         """
-
         card_type = self.options["type"].value
 
         # Create card outlines
