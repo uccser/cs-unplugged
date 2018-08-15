@@ -1,4 +1,4 @@
--   To simulate a coin toss, use the random package:
+-   To simulate a coin toss, use the `random` package:
 ```python
 import random
 coin = random.randint(1, 2)

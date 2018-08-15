@@ -11,7 +11,7 @@ Solution 1:
 
 Solution 2:
 
-  1.  Create a variable called `divisor` and set its value to the `number`.
+1.  Create a variable called `divisor` and set its value to the `number`.
 2.  If `number` mod `divisor` is 0, `divisor` is one of the factors.
 3.  Decrease the value of `divisor` by 1.
-  4.  Repeat steps 2 and 3 while `divisor` > 0.
+4.  Repeat steps 2 and 3 while `divisor` > 0.

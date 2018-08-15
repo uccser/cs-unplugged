@@ -2,9 +2,7 @@
 -   To choose an item randomly from the list use the random package:
 ```python
 import random
-```
-...other code...
-```python
+# Your code here
 numbers_after = numbers_after_list[random.randint(0, 2)]
 ```
-This will choose a random number from numbers_after_list
+This will choose a random number from `numbers_after_list`.

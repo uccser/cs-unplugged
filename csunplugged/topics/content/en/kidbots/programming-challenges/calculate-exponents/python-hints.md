@@ -5,4 +5,4 @@
 -   Make a third variable called `result` and set its value to `1` multiplied by `base`, `power` times.
 
 Note that python has a build in power function, so technically a loop is not necessary. For this
-lesson, use a loop, but for future reference, in python, `5 ** 2` means 5^2.
+lesson, use a loop, but for future reference, in Python, `5 ** 2` means 5^2.
