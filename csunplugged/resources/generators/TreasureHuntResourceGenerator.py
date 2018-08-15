@@ -22,21 +22,23 @@ NUMBER_ORDER_VALUES = {
 }
 LABEL_DATA = {
     "title": {
-        "text": _("The hidden treasure"),
-        "top-left-coords": (411, 30),
-        "width": 842,
-        "height": 288,
+        "text": _("Treasure Hunt"),
+        "top-left-coords": (388, 4),
+        "width": 890,
+        "height": 156,
         "font-size": 120,
+        "font-colour": "#000000",
         "horiz-just": "center",
         "vert-just": "center",
     },
     "subtitle": {
-        "top-left-coords": (411, 321),
-        "width": 842,
-        "height": 146,
+        "top-left-coords": (388, 176),
+        "width": 890,
+        "height": 156,
         "font-size": 80,
+        "font-colour": "#000000",
         "horiz-just": "center",
-        "vert-just": "center",
+        "vert-just": "top",
     },
     "player-1-box-title": {
         "text": _("My Boxes"),
@@ -44,6 +46,7 @@ LABEL_DATA = {
         "width": 372,
         "height": 100,
         "font-size": 60,
+        "font-colour": "#000000",
         "horiz-just": "center",
         "vert-just": "bottom",
     },
@@ -53,46 +56,56 @@ LABEL_DATA = {
         "width": 372,
         "height": 100,
         "font-size": 60,
+        "font-colour": "#000000",
         "horiz-just": "center",
         "vert-just": "bottom",
     },
-    "player-1-goal": {
-        "text": _("Opponent is looking for:"),
-        "top-left-coords": (412, 602),
-        "width": 344,
-        "height": 136,
-        "font-size": 60,
-        "horiz-just": "center",
-        "vert-just": "center",
-    },
-    "player-2-goal": {
-        "text": _("I'm looking for:"),
-        "top-left-coords": (903, 602),
-        "width": 344,
-        "height": 136,
-        "font-size": 60,
-        "horiz-just": "center",
-        "vert-just": "center",
-    },
-    "player-2-guesses": {
-        "text": _("Opponent's total guesses:"),
-        "top-left-coords": (412, 3255),
-        "width": 344,
-        "height": 136,
-        "font-size": 60,
-        "horiz-just": "center",
-        "vert-just": "center",
-    },
-    "player-1-guesses": {
-        "text": _("My total guesses:"),
-        "top-left-coords": (903, 3255),
-        "width": 344,
-        "height": 136,
-        "font-size": 60,
-        "horiz-just": "center",
-        "vert-just": "center",
-    },
 }
+
+INSTRUCTIONS_HTML = _("""
+<h5>Instructions</h5>
+
+<p>
+    <strong>Step 1:</strong>
+    Choose a number in your boxes for your opponent to find.
+</p>
+
+<p>
+    The number my opponent is looking for: _____
+</p>
+
+<p>
+    <strong>Step 2:</strong>
+    Write down the number your opponent has chosen for you to find.
+</p>
+
+<p>
+    The number of the box I'm looking for: _____
+</p>
+
+<p>
+    <strong>Step 3:</strong>
+    Ask your opponent for the number stored in a random box. For example: <em>"What is the number in the dotted circle?"</em>".
+    Write the number your opponent says in the box you asked about on the right.
+    Remember to listen for the number you are looking for.
+</p>
+
+<p>
+    <strong>Step 4:</strong>
+    Each time your opponent guesses a box, cross out that box.
+    Keep taking turns until each person's number is found.
+</p>
+
+<p>
+    <strong>Step 5:</strong>
+    Write down the total number of guesses for each person below.
+</p>
+
+<p>
+    <strong>My total guesses:</strong> _____<br>
+    <strong>Opponent's total guesses:</strong> _____
+</p>
+""".strip())
 
 
 class TreasureHuntResourceGenerator(BaseResourceGenerator):
@@ -116,11 +129,6 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
                 values=NUMBER_ORDER_VALUES,
                 default="sorted"
             ),
-            "instructions": BoolResourceParameter(
-                name="instructions",
-                description=_("Include instruction sheets"),
-                default=True
-            ),
         }
 
     def data(self):
@@ -134,11 +142,6 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
 
         prefilled_values = self.options["prefilled_values"].value
         number_order = self.options["number_order"].value
-        instructions = self.options["instructions"].value
-        if instructions:
-            image = Image.open(IMAGE_PATH.format("instructions"))
-            ImageDraw.Draw(image)
-            pages.append({"type": "image", "data": image})
 
         image = Image.open(IMAGE_PATH.format("template"))
         draw = ImageDraw.Draw(image)
@@ -160,6 +163,7 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
                 height,
                 font_path=FONT_PATH,
                 font_size=label_data["font-size"],
+                color=label_data["font-colour"],
             )
             textbox_drawer.write_text_box(
                 box,
@@ -178,7 +182,7 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
 
             coord_x = 106
             base_coord_y = 161
-            coord_y_increment = 107.5
+            coord_y_increment = 107.8
             width = 264
             height = 88
             for i, number in enumerate(numbers):
@@ -197,7 +201,11 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
                     horiz_just="center",
                     vert_just="center",
                 )
-        pages.append({"type": "image", "data": image, "thumbnail": True})
+        pages.append({
+            "type": "resource-treasure-hunt",
+            "data": [image, INSTRUCTIONS_HTML],
+            "thumbnail": True
+        })
         return pages
 
     def subtitle_text(self):
@@ -225,11 +233,7 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
         Returns:
             text for subtitle (str)
         """
-        if self.options["instructions"].value:
-            instructions_text = _("with instructions")
-        else:
-            instructions_text = _("without instructions")
-        return "{} - {} - {}".format(self.subtitle_text(), instructions_text, super().subtitle)
+        return "{} - {}".format(self.subtitle_text(), super().subtitle)
 
     @staticmethod
     def get_number_range(range_descriptor):

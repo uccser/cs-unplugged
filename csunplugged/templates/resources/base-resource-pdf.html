@@ -26,9 +26,14 @@
         {% if page.type == "image" %}
           <img class="resource-image" src="data:image/png;base64,{{ page.data }}" />
         {% elif page.type == "html" %}
-          {% autoescape off %}
-            {{ page.data }}
-          {% endautoescape %}
+          {% autoescape off %}{{ page.data }}{% endautoescape %}
+        {% elif page.type == "resource-treasure-hunt" %}
+          <div style="position:relative;text-align:center;">
+            <img class="resource-image" src="data:image/png;base64,{{ page.data.0 }}" />
+            <div style="position:absolute;left:50mm;bottom:0;height:85%;width:95mm;text-align:left;">
+              {% autoescape off %}{{ page.data.1 }}{% endautoescape %}
+            </div>
+          </div>
         {% endif %}
       </div>
     {% endfor %}

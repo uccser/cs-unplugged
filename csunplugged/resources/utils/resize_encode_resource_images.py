@@ -30,15 +30,21 @@ def resize_encode_resource_images(paper_size, data):
     # Resize images to reduce file size
     for index in range(len(data)):
         if data[index]["type"] == "image":
-            image = data[index]["data"]
-            (width, height) = image.size
-            if height > max_pixel_height:
-                ratio = max_pixel_height / height
-                width *= ratio
-                height *= ratio
-                image = image.resize((int(width), int(height)), Image.ANTIALIAS)
-            # Convert from Image object to base64 string
-            image_buffer = BytesIO()
-            image.save(image_buffer, format="PNG")
-            data[index]["data"] = base64.b64encode(image_buffer.getvalue())
+            data[index]["data"] = resize_image(data[index]["data"], max_pixel_height)
+        elif data[index]["type"] == "resource-treasure-hunt":
+            image, html = data[index]["data"]
+            data[index]["data"] = [resize_image(image, max_pixel_height), html]
     return data
+
+
+def resize_image(image, max_pixel_height):
+    (width, height) = image.size
+    if height > max_pixel_height:
+        ratio = max_pixel_height / height
+        width *= ratio
+        height *= ratio
+        image = image.resize((int(width), int(height)), Image.ANTIALIAS)
+    # Convert from Image object to base64 string
+    image_buffer = BytesIO()
+    image.save(image_buffer, format="PNG")
+    return base64.b64encode(image_buffer.getvalue())
