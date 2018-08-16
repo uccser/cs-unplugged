@@ -48,7 +48,14 @@
   {% if thumbnail %}
     <h2>{% trans "Preview" %}</h2>
     {% load static %}
-    <img id="resource-thumbnail" class="img-thumbnail">
+    <figure class="figure">
+      <img id="resource-thumbnail" class="figure-img img-thumbnail img-fluid">
+      {% if LANGUAGE_CODE != "en" %}
+        <figcaption class="figure-caption text-center">
+          {% trans "Preview shows English version" %}
+        </figcaption>
+      {% endif %}
+    </figure>
   {% endif %}
 {% endblock right_column_content %}
 
@@ -67,7 +74,7 @@
       <tbody>
         {% for age_group, lessons in grouped_lessons.items %}
           {% for lesson in lessons %}
-            <tr class="align-middle">
+            <tr class="align-middle{% if not lesson.translation_available %} table-active unavailable{% endif %}">
               <td class="text-center">
                 <a href="{% url 'topics:topic' lesson.topic.slug %}">
                   {{ lesson.topic.name }}
@@ -82,6 +89,10 @@
               <td>
                 <a href="{% url 'topics:lesson' lesson.topic.slug lesson.unit_plan.slug lesson.slug %}">
                   <strong>{{ lesson.name }}</strong>
+                  {% if not lesson.translation_available %}
+                    <br>
+                    {% include "generic/not-available-badge.html" %}
+                  {% endif %}
                 </a>
               </td>
             </tr>
