@@ -64,8 +64,8 @@ These questions eliminate many possible foods just with one question.
 # Generalising and patterns
 
 When doing these lessons look to see if students recognise patterns between the activities.
-Do they notice that searching through the unsorted treasure chests is actually the same task as guessing which cup a number is in when the numbers are in a random order?
-Do they notice that searching the ordered treasure chests is actually exactly the same as the divide and conquer activity?
+Do they notice that searching through the unsorted number boxes is actually the same task as guessing which cup a number is in when the numbers are in a random order?
+Do they notice that searching the ordered number boxes is actually exactly the same as the divide and conquer activity?
 If they do then they might also realise that they can use the same algorithms in each of these similar activities!
 If we generalise our algorithms (by abstracting away unnecessary information) then we can reuse them in new situations and apply them to new, but similar, problems.
 They might also start recognising similar problems to these in their everyday lives and applying these strategies, because searching for things is something we all do a lot, whether we’re looking for a book on a bookshelf, or searching your wardrobe for that shirt you want to wear!

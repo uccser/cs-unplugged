@@ -1,4 +1,4 @@
-"""Class for Treasure Hunt resource generator."""
+"""Class for Number Hunt resource generator."""
 
 from PIL import Image, ImageDraw, ImageFont
 from random import sample
@@ -8,7 +8,7 @@ from utils.TextBoxDrawer import TextBoxDrawer, TextBox
 from resources.utils.resource_parameters import EnumResourceParameter, BoolResourceParameter
 from resources.utils.coords import calculate_box_vertices
 
-IMAGE_PATH = "static/img/resources/treasure-hunt/{}.png"
+IMAGE_PATH = "static/img/resources/number-hunt/{}.png"
 FONT_PATH = "static/fonts/NotoSans-Regular.ttf"
 PREFILLED_VALUES_VALUES = {
     "easy": _("Easy Numbers (2 digits)"),
@@ -22,7 +22,7 @@ NUMBER_ORDER_VALUES = {
 }
 LABEL_DATA = {
     "title": {
-        "text": _("Treasure Hunt"),
+        "text": _("Number Hunt"),
         "top-left-coords": (388, 4),
         "width": 1435,
         "height": 156,
@@ -108,14 +108,14 @@ INSTRUCTIONS_HTML = _("""
 """.strip())
 
 
-class TreasureHuntResourceGenerator(BaseResourceGenerator):
-    """Class for Treasure Hunt resource generator."""
+class NumberHuntResourceGenerator(BaseResourceGenerator):
+    """Class for Number Hunt resource generator."""
 
     copies = True
 
     @classmethod
     def get_additional_options(cls):
-        """Additional options for TreasureHuntResourceGenerator."""
+        """Additional options for NumberHuntResourceGenerator."""
         return {
             "prefilled_values": EnumResourceParameter(
                 name="prefilled_values",
@@ -132,13 +132,12 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
         }
 
     def data(self):
-        """Create data for a copy of the Treasure Hunt resource.
+        """Create data for a copy of the Number Hunt resource.
 
         Returns:
             A dictionary of the two pages for the resource.
         """
         pages = []
-        font_path = "static/fonts/PatrickHand-Regular.ttf"
 
         prefilled_values = self.options["prefilled_values"].value
         number_order = self.options["number_order"].value
@@ -192,7 +191,7 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
                     vertices,
                     width,
                     height,
-                    font_path=font_path,
+                    font_path=FONT_PATH,
                     font_size=font_size,
                 )
                 textbox_drawer.write_text_box(
@@ -202,7 +201,7 @@ class TreasureHuntResourceGenerator(BaseResourceGenerator):
                     vert_just="center",
                 )
         pages.append({
-            "type": "resource-treasure-hunt",
+            "type": "resource-number-hunt",
             "data": [image, INSTRUCTIONS_HTML],
             "thumbnail": True
         })

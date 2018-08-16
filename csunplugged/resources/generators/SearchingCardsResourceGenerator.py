@@ -129,7 +129,7 @@ class SearchingCardsResourceGenerator(BaseResourceGenerator):
                     "Use this sheet to circle the number you are asking your class "
                     "to look for when you are demonstrating how the binary search "
                     "works. This allows you to demonstrate the maximum number of "
-                    "searches it would take. When students are playing the treasure "
+                    "searches it would take. When students are playing the number "
                     "hunt game, they can choose any number. Avoid those numbers that are "
                     "underlined as they are key binary search positions (avoiding them is a "
                     "good thing to do for demonstrations, but in practice students, "

@@ -31,7 +31,7 @@ def resize_encode_resource_images(paper_size, data):
     for index in range(len(data)):
         if data[index]["type"] == "image":
             data[index]["data"] = resize_image(data[index]["data"], max_pixel_height)
-        elif data[index]["type"] == "resource-treasure-hunt":
+        elif data[index]["type"] == "resource-number-hunt":
             image, html = data[index]["data"]
             data[index]["data"] = [resize_image(image, max_pixel_height), html]
     return data
