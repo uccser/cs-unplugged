@@ -2,8 +2,8 @@
 
 # Algorithmic thinking
 
-In this lesson we used the same algorithm and algorithmic thinking as we did in lesson 1, but applied it to treasure chests instead of the numbers being guessed.
-Just like in lesson 1, if we check in every treasure chest then we are guaranteed to find the real money at some stage (unless all the money is fake!)
+In this lesson we used the same algorithm and algorithmic thinking as we did in lesson 1, but applied it to number boxes instead of the numbers being guessed.
+Just like in lesson 1, if we check in every number box then we are guaranteed to find the real money at some stage (unless all the money is fake!)
 
 From lesson 1: We used an algorithm in this lesson to find the number we were searching for.
 This is an algorithm because it is a step-by-step process that will always give the right solution for any input you give it as long as the process is followed exactly; if we check every card in the list we are guaranteed to find the right number (as long as it is in the list!)
@@ -11,7 +11,7 @@ This is an algorithm because it is a step-by-step process that will always give 
 #### Examples of what you could look for:
 
 Who are the students who not only can explain the exact process to find the real money, but are also the students who don’t deviate from that process?
-Do they realise that if the value isn't there, then every chest will have to be opened to find that out?
+Do they realise that if the value isn't there, then every box will have to be opened to find that out?
 
 {panel end}
 
@@ -21,11 +21,11 @@ Do they realise that if the value isn't there, then every chest will have to be 
 
 As in lesson 1, we can ignore many details about the items we are searching for.
 For example it doesn’t matter if the money is in New Zealand dollars/$, Japanese yen/¥, or pounds/£.
-You only need to focus on the serial numbers and remember that the chests are in order, as this is all the information you need to solve the problem.
+You only need to focus on the serial numbers and remember that the boxes are in order, as this is all the information you need to solve the problem.
 
 #### Examples of what you could look for:
 
-What questions are students asking about the treasure chests?
+What questions are students asking about the number boxes?
 Organise them into useful questions and no as useful questions.
 Which students can identify quickly what the relevant information is?
 
@@ -63,9 +63,9 @@ Which students quickly understand that this is actually no different to playing 
 
 # Evaluation
 
-Students will be evaluating sequential search when they collect and examine the statistics of how many chests they had to check.
-They can further evaluate it by collecting the number of guesses it takes to search through larger numbers of chests and examining these statistics.
-For example, what do students think will happen if there are twice as many chests to search through? 10 times as many? 1,000,000 as many? Would this algorithm be efficient for this many chests?
+Students will be evaluating sequential search when they collect and examine the statistics of how many boxes they had to check.
+They can further evaluate it by collecting the number of guesses it takes to search through larger numbers of boxes and examining these statistics.
+For example, what do students think will happen if there are twice as many boxes to search through? 10 times as many? 1,000,000 as many? Would this algorithm be efficient for this many boxes?
 
 #### Examples of what you could look for:
 
@@ -85,8 +85,8 @@ Since all we can learn from checking a card is whether or not that card is the o
 
 #### Examples of what you could look for:
 
-Which students can explain why it would be easier to find the money if the chests where in sorted order?
+Which students can explain why it would be easier to find the money if the boxes where in sorted order?
 
-Ask the students if it would be worth sorting these chests into order, and look for the students who can identify why this might not be worth it if you're only doing the search once (we only need to search through the chests once because once we’ve found the money there is no point looking for it again! So sorting them wouldn’t be helpful, it would actually slow things down).
+Ask the students if it would be worth sorting these boxes into order, and look for the students who can identify why this might not be worth it if you're only doing the search once (we only need to search through the boxes once because once we’ve found the money there is no point looking for it again! So sorting them wouldn’t be helpful, it would actually slow things down).
 
 {panel end}

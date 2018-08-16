@@ -60,22 +60,22 @@ divide-and-conquer:
     - pens
     - paper
 
-the-great-treasure-hunt-unsorted:
+the-great-number-hunt-unsorted:
   duration: 30
-  computational-thinking-links: the-great-treasure-hunt-unsorted-ct-links.md
+  computational-thinking-links: the-great-number-hunt-unsorted-ct-links.md
   generated-resources:
-    - treasure-hunt
+    - number-hunt
   learning-outcomes:
     - search-algorithms-identify-unsorted-lists
     - search-algorithms-describe-time-size-input
     - search-algorithms-explain-range-unsorted-lists
     - search-algorithms-explore-probability-value-random-set
 
-the-great-treasure-hunt-sorted:
+the-great-number-hunt-sorted:
   duration: 45
-  computational-thinking-links: the-great-treasure-hunt-sorted-ct-links.md
+  computational-thinking-links: the-great-number-hunt-sorted-ct-links.md
   generated-resources:
-    - treasure-hunt
+    - number-hunt
   learning-outcomes:
     - search-algorithms-identify-sequential-binary
     - search-algorithms-explain-decomposition-binary

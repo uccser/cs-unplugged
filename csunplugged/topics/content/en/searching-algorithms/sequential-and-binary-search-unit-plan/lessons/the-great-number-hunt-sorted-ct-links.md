@@ -2,7 +2,7 @@
 
 # Algorithmic thinking
 
-Binary search works by applying the Divide and Conquer process; we repeatedly check the centre treasure chest and deduce which chests can then be eliminated, and which ones could still potentially contain the real money you are hunting for. This can be given as an algorithm.
+Binary search works by applying the Divide and Conquer process; we repeatedly check the centre number box and deduce which boxes can then be eliminated, and which ones could still potentially contain the real money you are hunting for. This can be given as an algorithm.
 
 By describing this method with the same algorithm as in lesson 2 a computer or person can follow it without having to think about how to actually do the task.
 
@@ -22,7 +22,7 @@ Also, as discussed in lesson 2, we can use the divide and conquer approach for m
 
 #### Examples of what you could look for:
 
-What questions are students asking about the treasure chests? Organise them into useful questions and no as useful questions. Which students can identify quickly what the relevant information is?
+What questions are students asking about the number boxes? Organise them into useful questions and no as useful questions. Which students can identify quickly what the relevant information is?
 
 {panel end}
 
@@ -74,14 +74,14 @@ Who are the students who can explain the strengths and potential problems of usi
 
 # Logic
 
-To search through the treasure chests and guarantee they will find the real money in a low number of guesses students must use the binary search algorithm rather than using a sequential search or just choosing randomly based on where they think the money might be.
-This is because they need to eliminate as many chests as possible with each guess.
-Students might think if there are 100 chests and the number they are looking for is 90 then the logical choice would be to look in a chest near the right end of the list first, instead of the middle, because they think 90 is likely to be near the 90th chest.
-But this isn’t actually a more logical choice than dividing the list in half with binary search if you don’t know the range of serial numbers on the money in the chests, and binary search is so fast that trying to be clever about where a value is doesn't help much even if you're right.
+To search through the number boxes and guarantee they will find the real money in a low number of guesses students must use the binary search algorithm rather than using a sequential search or just choosing randomly based on where they think the money might be.
+This is because they need to eliminate as many boxes as possible with each guess.
+Students might think if there are 100 boxes and the number they are looking for is 90 then the logical choice would be to look in a boxes near the right end of the list first, instead of the middle, because they think 90 is likely to be near the 90th box.
+But this isn’t actually a more logical choice than dividing the list in half with binary search if you don’t know the range of serial numbers on the money in the boxes, and binary search is so fast that trying to be clever about where a value is doesn't help much even if you're right.
 Which students can explain why the logical decision is to always stick with binary search? A good question to prompt them with is:
 
 -   You don’t know what the range of serial numbers on the money is, it could be anything!
-    If they were somewhere between 1 and 99,999,999 and you have 100 treasure chests would it be a good choice to guess where the money might roughly be?
+    If they were somewhere between 1 and 99,999,999 and you have 100 number boxes would it be a good choice to guess where the money might roughly be?
     Or should you stick to binary search?
 
 
