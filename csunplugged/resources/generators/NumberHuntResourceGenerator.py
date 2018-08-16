@@ -1,11 +1,11 @@
 """Class for Number Hunt resource generator."""
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw
 from random import sample
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 from django.utils.translation import ugettext as _
 from utils.TextBoxDrawer import TextBoxDrawer, TextBox
-from resources.utils.resource_parameters import EnumResourceParameter, BoolResourceParameter
+from resources.utils.resource_parameters import EnumResourceParameter
 from resources.utils.coords import calculate_box_vertices
 
 IMAGE_PATH = "static/img/resources/number-hunt/{}.png"
@@ -85,7 +85,8 @@ INSTRUCTIONS_HTML = _("""
 
 <p>
     <strong>Step 3:</strong>
-    Ask your opponent for the number stored in a random box. For example: <em>"What is the number in the dotted circle?"</em>.
+    Ask your opponent for the number stored in a random box.
+    For example: <em>"What is the number in the dotted circle?"</em>.
     Write the number your opponent says in the box you asked about on the right.
     Remember to listen for the number you are looking for.
 </p>

@@ -30,14 +30,26 @@ def resize_encode_resource_images(paper_size, data):
     # Resize images to reduce file size
     for index in range(len(data)):
         if data[index]["type"] == "image":
-            data[index]["data"] = resize_image(data[index]["data"], max_pixel_height)
+            data[index]["data"] = resize_encode_resource_image(data[index]["data"], max_pixel_height)
         elif data[index]["type"] == "resource-number-hunt":
             image, html = data[index]["data"]
-            data[index]["data"] = [resize_image(image, max_pixel_height), html]
+            data[index]["data"] = [resize_encode_resource_image(image, max_pixel_height), html]
     return data
 
 
-def resize_image(image, max_pixel_height):
+def resize_encode_resource_image(image, max_pixel_height):
+    """Process image pages in resource.
+
+    - Resizes image to required paper size.
+    - Encodes image in base64 for PDF rendering.
+
+    Args:
+        image (Image): Image to resize.
+        max_pixel_height (int): Maximum height of image.
+
+    Returns:
+        Base64 of resized image.
+    """
     (width, height) = image.size
     if height > max_pixel_height:
         ratio = max_pixel_height / height
