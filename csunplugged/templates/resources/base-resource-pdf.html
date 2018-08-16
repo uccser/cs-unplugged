@@ -28,9 +28,27 @@
         {% elif page.type == "html" %}
           {% autoescape off %}{{ page.data }}{% endautoescape %}
         {% elif page.type == "resource-treasure-hunt" %}
-          <div style="position:relative;text-align:center;">
+          <style>
+            .treasure-hunt-container {
+              position: relative;
+              text-align: center;
+            }
+            .treasure-hunt-instructions {
+              position: absolute;
+              left: 52mm;
+              bottom: 0;
+              height: 85%;
+              width: 93mm;
+              text-align: left;
+              color: #444;
+            }
+            h5 {
+              text-align: center;
+            }
+          </style>
+          <div class="treasure-hunt-container">
             <img class="resource-image" src="data:image/png;base64,{{ page.data.0 }}" />
-            <div style="position:absolute;left:50mm;bottom:0;height:85%;width:95mm;text-align:left;">
+            <div class="treasure-hunt-instructions">
               {% autoescape off %}{{ page.data.1 }}{% endautoescape %}
             </div>
           </div>

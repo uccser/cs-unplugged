@@ -9,7 +9,7 @@ from resources.utils.resource_parameters import EnumResourceParameter, BoolResou
 from resources.utils.coords import calculate_box_vertices
 
 IMAGE_PATH = "static/img/resources/treasure-hunt/{}.png"
-FONT_PATH = "static/fonts/PatrickHand-Regular.ttf"
+FONT_PATH = "static/fonts/NotoSans-Regular.ttf"
 PREFILLED_VALUES_VALUES = {
     "easy": _("Easy Numbers (2 digits)"),
     "medium": _("Medium Numbers (3 digits)"),
@@ -24,7 +24,7 @@ LABEL_DATA = {
     "title": {
         "text": _("Treasure Hunt"),
         "top-left-coords": (388, 4),
-        "width": 890,
+        "width": 1435,
         "height": 156,
         "font-size": 120,
         "font-colour": "#000000",
@@ -33,7 +33,7 @@ LABEL_DATA = {
     },
     "subtitle": {
         "top-left-coords": (388, 176),
-        "width": 890,
+        "width": 1435,
         "height": 156,
         "font-size": 80,
         "font-colour": "#000000",
@@ -52,7 +52,7 @@ LABEL_DATA = {
     },
     "player-2-box-title": {
         "text": _("Opponent's Boxes"),
-        "top-left-coords": (1290, 28),
+        "top-left-coords": (1866, 28),
         "width": 372,
         "height": 100,
         "font-size": 60,
@@ -85,7 +85,7 @@ INSTRUCTIONS_HTML = _("""
 
 <p>
     <strong>Step 3:</strong>
-    Ask your opponent for the number stored in a random box. For example: <em>"What is the number in the dotted circle?"</em>".
+    Ask your opponent for the number stored in a random box. For example: <em>"What is the number in the dotted circle?"</em>.
     Write the number your opponent says in the box you asked about on the right.
     Remember to listen for the number you are looking for.
 </p>
