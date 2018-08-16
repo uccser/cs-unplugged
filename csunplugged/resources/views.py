@@ -1,5 +1,6 @@
 """Views for the resource application."""
 
+from urllib.parse import quote
 from django.conf import settings
 from django.http import HttpResponse, Http404
 from django.shortcuts import get_object_or_404, render
@@ -13,7 +14,7 @@ from utils.errors.QueryParameterMissingError import QueryParameterMissingError
 from utils.errors.QueryParameterInvalidError import QueryParameterInvalidError
 from utils.errors.QueryParameterMultipleValuesError import QueryParameterMultipleValuesError
 
-RESPONSE_CONTENT_DISPOSITION = 'attachment; filename="{filename}.pdf"'
+RESPONSE_CONTENT_DISPOSITION = "attachment; filename*=UTF-8''{filename}.pdf; filename=\"{filename}.pdf\""
 
 
 class IndexView(generic.ListView):
@@ -81,9 +82,9 @@ def generate_resource(request, resource_slug):
         # Return cached static PDF file of resource.
         # Currently developing system for dynamically rendering
         # custom PDFs on request (https://github.com/uccser/render).
-        return resource_pdf_cache(resource.name, generator)
+        return resource_pdf_cache(resource, generator)
     else:
         (pdf_file, filename) = generator.pdf(resource.name)
         response = HttpResponse(pdf_file, content_type="application/pdf")
-        response["Content-Disposition"] = RESPONSE_CONTENT_DISPOSITION.format(filename=filename)
+        response["Content-Disposition"] = RESPONSE_CONTENT_DISPOSITION.format(filename=quote(filename))
         return response

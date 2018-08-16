@@ -60,3 +60,14 @@ class ResizeEncodeResourceTest(SimpleTestCase):
             "invalid size",
             dict()
         )
+
+    def test_resize_encode_resource_images_number_hunt(self):
+        size = 3000
+        ratio = (self.LETTER_HEIGHT * self.MM_TO_PIXEL_RATIO) / size
+        expected_size = (int(size * ratio), int(size * ratio))
+        image = Image.new("1", (size, size))
+        data = [{"type": "resource-number-hunt", "data": [image, ""]}]
+        copy = resize_encode_resource_images("letter", data)
+        copy_data = BytesIO(base64.b64decode(copy[0]["data"][0]))
+        copy_image = Image.open(copy_data)
+        self.assertEqual(expected_size, copy_image.size)

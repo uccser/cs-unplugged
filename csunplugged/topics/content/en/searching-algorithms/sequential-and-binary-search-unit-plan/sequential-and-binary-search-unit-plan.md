@@ -4,7 +4,7 @@
 
 {comment Video 2: Binary search using numbered cards with pictures on them ranging from 0 - 999.}
 
-{comment Video 3: Linking the “Treasure Hunt” activities to statistics.}
+{comment Video 3: Linking the "Number Hunt" activities to statistics.}
 
 {image file-path="img/topics/different-sized-haystacks.png" alt="A farmer can easily find a needle in a small haystack, but can't find it in a large haystack."}
 

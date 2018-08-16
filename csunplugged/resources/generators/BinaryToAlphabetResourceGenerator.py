@@ -1,15 +1,18 @@
 """Class for Binary to Alphabet resource generator."""
 
-from PIL import Image, ImageDraw, ImageFont
-from resources.utils.BaseResourceGenerator import BaseResourceGenerator
+from yattag import Doc
 from django.utils.translation import ugettext as _
+from django.utils.translation import get_language
+from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 from resources.utils.resource_parameters import EnumResourceParameter
+import utils.alphabets
 
 
 WORKSHEET_VERSION_VALUES = {
     "student": _("Student"),
     "teacher": _("Teacher (solutions)"),
 }
+COLUMNS = 2
 
 
 class BinaryToAlphabetResourceGenerator(BaseResourceGenerator):
@@ -33,71 +36,47 @@ class BinaryToAlphabetResourceGenerator(BaseResourceGenerator):
         Returns:
             A dictionary for the resource page.
         """
-        # Retrieve relevant image
-        worksheet_version = self.options["worksheet_version"].value
-        if worksheet_version == "student":
-            image_path = "static/img/resources/binary-to-alphabet/table.png"
-        else:
-            image_path = "static/img/resources/binary-to-alphabet/table-teacher.png"
-        image = Image.open(image_path)
-        draw = ImageDraw.Draw(image)
+        doc, tag, text, line = Doc().ttl()
+        alphabet = utils.alphabets.get_alphabet(get_language())
+        teacher_version = self.options["worksheet_version"].value == "teacher"
+        binary_length = len("{:b}".format(len(alphabet)))
+        binary_template = "{:0" + str(binary_length) + "b}"
+        half_binary_length = len(alphabet) // 2
+        column_uneven = len(alphabet) % 2 == 1
+        if column_uneven:
+            half_binary_length += 1
 
-        font_size = 30
-        font_path = "static/fonts/PatrickHand-Regular.ttf"
-        font = ImageFont.truetype(font_path, font_size)
-
-        # Draw headings
-        column_headings = ["Base 10", "Binary", "Letter"]
-        heading_coord_x = 18
-        heading_coord_y = 6
-
-        i = 0
-        while i < 9:  # 9 = number of columns
-
-            if i % 3 == 0:
-                text = str(column_headings[0])
-            elif i % 3 == 1:
-                text = str(column_headings[1])
-            else:
-                text = str(column_headings[2])
-
-            draw.text(
-                (heading_coord_x, heading_coord_y),
-                text,
-                font=font,
-                fill="#000"
-            )
-
-            heading_coord_x += 113
-
-            i += 1
-
-        # Draw numbers
-        # Column data: (min number, max number), x coord
-        columns_data = [((0, 9), 58), ((9, 18), 397), ((18, 27), 736)]
-
-        for column_set in columns_data:
-            start, end = column_set[0]
-            base_coord_x = column_set[1]
-            base_coord_y = 75
-
-            for number in range(start, end):
-                text = str(number)
-                text_width, text_height = draw.textsize(text, font=font)
-                coord_x = base_coord_x - (text_width / 2)
-                coord_y = base_coord_y - (text_height / 2)
-
-                draw.text(
-                    (coord_x, coord_y),
-                    text,
-                    font=font,
-                    fill="#000"
-                )
-
-                base_coord_y += 54
-
-        image = image.rotate(90, expand=True)
-        return {"type": "image", "data": image}
+        line("style", "th, td {text-align: center;} table {font-size: 1.4rem;}")
+        with tag("table", klass="table table-bordered"):
+            with tag("thead"):
+                with tag("tr"):
+                    for i in range(2):
+                        line("th", _("Base 10"))
+                        line("th", _("Binary"))
+                        line("th", _("Letter"))
+            with tag("tbody"):
+                for i in range(half_binary_length):
+                    with tag("tr"):
+                        first_col_num = i
+                        first_col_letter = alphabet[first_col_num]
+                        line("td", first_col_num)
+                        if teacher_version:
+                            line("td", binary_template.format(first_col_num), klass="text-monospace")
+                            line("td", first_col_letter)
+                        else:
+                            line("td", "")
+                            line("td", "")
+                        second_col_num = i + half_binary_length
+                        if not second_col_num == len(alphabet):
+                            second_col_letter = alphabet[second_col_num]
+                            line("td", second_col_num)
+                            if teacher_version:
+                                line("td", binary_template.format(second_col_num), klass="text-monospace")
+                                line("td", second_col_letter)
+                            else:
+                                line("td", "")
+                                line("td", "")
+        return {"type": "html", "data": doc.getvalue()}
 
     @property
     def subtitle(self):

@@ -10,136 +10,88 @@ class PianoKeysResourceGeneratorTest(BaseGeneratorTest):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.language = "en"
-        self.base_valid_query = QueryDict("highlight=no&paper_size=a4")
+        self.base_valid_query = QueryDict("label=no&paper_size=a4")
 
-    def test_highlight_values(self):
+    def test_label_values(self):
         generator = PianoKeysResourceGenerator(self.base_valid_query)
-        self.run_parameter_smoke_tests(generator, "highlight")
+        self.run_parameter_smoke_tests(generator, "label")
 
     def test_subtitle_no_a4(self):
-        query = QueryDict("highlight=no&paper_size=a4")
+        query = QueryDict("label=no&paper_size=a4")
         generator = PianoKeysResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "no highlight - a4"
+            "no labels - a4"
         )
 
     def test_subtitle_no_letter(self):
-        query = QueryDict("highlight=no&paper_size=letter")
+        query = QueryDict("label=no&paper_size=letter")
         generator = PianoKeysResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "no highlight - letter"
+            "no labels - letter"
         )
 
-    def test_subtitle_A_a4(self):
-        query = QueryDict("highlight=A&paper_size=a4")
+    def test_subtitle_type_1_a4(self):
+        query = QueryDict("label=type-1&paper_size=a4")
         generator = PianoKeysResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "A highlight - a4"
+            "type-1 labels - a4"
         )
 
-    def test_subtitle_A_letter(self):
-        query = QueryDict("highlight=A&paper_size=letter")
+    def test_subtitle_type_1_letter(self):
+        query = QueryDict("label=type-1&paper_size=letter")
         generator = PianoKeysResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "A highlight - letter"
+            "type-1 labels - letter"
         )
 
-    def test_subtitle_B_a4(self):
-        query = QueryDict("highlight=B&paper_size=a4")
+    def test_subtitle_type_2_a4(self):
+        query = QueryDict("label=type-2&paper_size=a4")
         generator = PianoKeysResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "B highlight - a4"
+            "type-2 labels - a4"
         )
 
-    def test_subtitle_B_letter(self):
-        query = QueryDict("highlight=B&paper_size=letter")
+    def test_subtitle_type_2_letter(self):
+        query = QueryDict("label=type-2&paper_size=letter")
         generator = PianoKeysResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "B highlight - letter"
+            "type-2 labels - letter"
         )
 
-    def test_subtitle_C_a4(self):
-        query = QueryDict("highlight=C&paper_size=a4")
+    def test_subtitle_type_3_a4(self):
+        query = QueryDict("label=type-3&paper_size=a4")
         generator = PianoKeysResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "C highlight - a4"
+            "type-3 labels - a4"
         )
 
-    def test_subtitle_C_letter(self):
-        query = QueryDict("highlight=C&paper_size=letter")
+    def test_subtitle_type_3_letter(self):
+        query = QueryDict("label=type-3&paper_size=letter")
         generator = PianoKeysResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "C highlight - letter"
+            "type-3 labels - letter"
         )
 
-    def test_subtitle_D_a4(self):
-        query = QueryDict("highlight=D&paper_size=a4")
+    def test_subtitle_type_4_a4(self):
+        query = QueryDict("label=type-4&paper_size=a4")
         generator = PianoKeysResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "D highlight - a4"
+            "type-4 labels - a4"
         )
 
-    def test_subtitle_D_letter(self):
-        query = QueryDict("highlight=D&paper_size=letter")
+    def test_subtitle_type_4_letter(self):
+        query = QueryDict("label=type-4&paper_size=letter")
         generator = PianoKeysResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "D highlight - letter"
-        )
-
-    def test_subtitle_E_a4(self):
-        query = QueryDict("highlight=E&paper_size=a4")
-        generator = PianoKeysResourceGenerator(query)
-        self.assertEqual(
-            generator.subtitle,
-            "E highlight - a4"
-        )
-
-    def test_subtitle_E_letter(self):
-        query = QueryDict("highlight=E&paper_size=letter")
-        generator = PianoKeysResourceGenerator(query)
-        self.assertEqual(
-            generator.subtitle,
-            "E highlight - letter"
-        )
-
-    def test_subtitle_F_a4(self):
-        query = QueryDict("highlight=F&paper_size=a4")
-        generator = PianoKeysResourceGenerator(query)
-        self.assertEqual(
-            generator.subtitle,
-            "F highlight - a4"
-        )
-
-    def test_subtitle_F_letter(self):
-        query = QueryDict("highlight=F&paper_size=letter")
-        generator = PianoKeysResourceGenerator(query)
-        self.assertEqual(
-            generator.subtitle,
-            "F highlight - letter"
-        )
-
-    def test_subtitle_G_a4(self):
-        query = QueryDict("highlight=G&paper_size=a4")
-        generator = PianoKeysResourceGenerator(query)
-        self.assertEqual(
-            generator.subtitle,
-            "G highlight - a4"
-        )
-
-    def test_subtitle_G_letter(self):
-        query = QueryDict("highlight=G&paper_size=letter")
-        generator = PianoKeysResourceGenerator(query)
-        self.assertEqual(
-            generator.subtitle,
-            "G highlight - letter"
+            "type-4 labels - letter"
         )
