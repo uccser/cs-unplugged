@@ -1,5 +1,6 @@
 from django.http import QueryDict
 from django.test import tag
+from django.utils import translation
 from resources.generators.BinaryToAlphabetResourceGenerator import BinaryToAlphabetResourceGenerator
 from tests.resources.generators.utils import BaseGeneratorTest
 
@@ -47,3 +48,10 @@ class BinaryToAlphabetResourceGeneratorTest(BaseGeneratorTest):
             generator.subtitle,
             "teacher - letter"
         )
+
+    def test_uneven_columns(self):
+        # Māori alphabet has 21 characters
+        with translation.override("mi"):
+            query = QueryDict("worksheet_version=student&paper_size=a4")
+            generator = BinaryToAlphabetResourceGenerator(query)
+            generator.data()
