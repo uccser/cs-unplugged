@@ -29,7 +29,7 @@ class SearchingCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SearchingCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "15 cards - 0 to 15 - with helper sheet - a4"
+            "15 cards - 1 to 15 - with helper sheet - a4"
         )
 
     def test_subtitle_15_cards_sheet_letter(self):
@@ -37,7 +37,7 @@ class SearchingCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SearchingCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "15 cards - 0 to 15 - with helper sheet - letter"
+            "15 cards - 1 to 15 - with helper sheet - letter"
         )
 
     def test_subtitle_31_cards_sheet_a4(self):
@@ -45,7 +45,7 @@ class SearchingCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SearchingCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "31 cards - 0 to 31 - with helper sheet - a4"
+            "31 cards - 1 to 31 - with helper sheet - a4"
         )
 
     def test_subtitle_31_cards_sheet_letter(self):
@@ -53,7 +53,7 @@ class SearchingCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SearchingCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "31 cards - 0 to 31 - with helper sheet - letter"
+            "31 cards - 1 to 31 - with helper sheet - letter"
         )
 
     def test_subtitle_15_99_sheet_a4(self):
@@ -61,7 +61,7 @@ class SearchingCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SearchingCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "15 cards - 0 to 99 - with helper sheet - a4"
+            "15 cards - 1 to 99 - with helper sheet - a4"
         )
 
     def test_subtitle_15_99_sheet_letter(self):
@@ -69,7 +69,7 @@ class SearchingCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SearchingCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "15 cards - 0 to 99 - with helper sheet - letter"
+            "15 cards - 1 to 99 - with helper sheet - letter"
         )
 
     def test_subtitle_31_99_sheet_a4(self):
@@ -77,7 +77,7 @@ class SearchingCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SearchingCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "31 cards - 0 to 99 - with helper sheet - a4"
+            "31 cards - 1 to 99 - with helper sheet - a4"
         )
 
     def test_subtitle_31_99_sheet_letter(self):
@@ -85,7 +85,7 @@ class SearchingCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SearchingCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "31 cards - 0 to 99 - with helper sheet - letter"
+            "31 cards - 1 to 99 - with helper sheet - letter"
         )
 
     def test_subtitle_15_999_sheet_a4(self):
@@ -93,7 +93,7 @@ class SearchingCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SearchingCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "15 cards - 0 to 999 - with helper sheet - a4"
+            "15 cards - 1 to 999 - with helper sheet - a4"
         )
 
     def test_subtitle_15_999_sheet_letter(self):
@@ -101,7 +101,7 @@ class SearchingCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SearchingCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "15 cards - 0 to 999 - with helper sheet - letter"
+            "15 cards - 1 to 999 - with helper sheet - letter"
         )
 
     def test_subtitle_31_999_sheet_a4(self):
@@ -109,7 +109,7 @@ class SearchingCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SearchingCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "31 cards - 0 to 999 - with helper sheet - a4"
+            "31 cards - 1 to 999 - with helper sheet - a4"
         )
 
     def test_subtitle_31_999_sheet_letter(self):
@@ -117,7 +117,7 @@ class SearchingCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SearchingCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "31 cards - 0 to 999 - with helper sheet - letter"
+            "31 cards - 1 to 999 - with helper sheet - letter"
         )
 
     def test_subtitle_15_blank_sheet_a4(self):
@@ -157,7 +157,7 @@ class SearchingCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SearchingCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "15 cards - 0 to 15 - without helper sheet - a4"
+            "15 cards - 1 to 15 - without helper sheet - a4"
         )
 
     def test_subtitle_15_cards_no_sheet_letter(self):
@@ -165,7 +165,7 @@ class SearchingCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SearchingCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "15 cards - 0 to 15 - without helper sheet - letter"
+            "15 cards - 1 to 15 - without helper sheet - letter"
         )
 
     def test_subtitle_31_cards_no_sheet_a4(self):
@@ -173,7 +173,7 @@ class SearchingCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SearchingCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "31 cards - 0 to 31 - without helper sheet - a4"
+            "31 cards - 1 to 31 - without helper sheet - a4"
         )
 
     def test_subtitle_31_cards_no_sheet_letter(self):
@@ -181,7 +181,7 @@ class SearchingCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SearchingCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "31 cards - 0 to 31 - without helper sheet - letter"
+            "31 cards - 1 to 31 - without helper sheet - letter"
         )
 
     def test_subtitle_15_99_no_sheet_a4(self):
@@ -189,7 +189,7 @@ class SearchingCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SearchingCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "15 cards - 0 to 99 - without helper sheet - a4"
+            "15 cards - 1 to 99 - without helper sheet - a4"
         )
 
     def test_subtitle_15_99_no_sheet_letter(self):
@@ -197,7 +197,7 @@ class SearchingCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SearchingCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "15 cards - 0 to 99 - without helper sheet - letter"
+            "15 cards - 1 to 99 - without helper sheet - letter"
         )
 
     def test_subtitle_31_99_no_sheet_a4(self):
@@ -205,7 +205,7 @@ class SearchingCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SearchingCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "31 cards - 0 to 99 - without helper sheet - a4"
+            "31 cards - 1 to 99 - without helper sheet - a4"
         )
 
     def test_subtitle_31_99_no_sheet_letter(self):
@@ -213,7 +213,7 @@ class SearchingCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SearchingCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "31 cards - 0 to 99 - without helper sheet - letter"
+            "31 cards - 1 to 99 - without helper sheet - letter"
         )
 
     def test_subtitle_15_999_no_sheet_a4(self):
@@ -221,7 +221,7 @@ class SearchingCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SearchingCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "15 cards - 0 to 999 - without helper sheet - a4"
+            "15 cards - 1 to 999 - without helper sheet - a4"
         )
 
     def test_subtitle_15_999_no_sheet_letter(self):
@@ -229,7 +229,7 @@ class SearchingCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SearchingCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "15 cards - 0 to 999 - without helper sheet - letter"
+            "15 cards - 1 to 999 - without helper sheet - letter"
         )
 
     def test_subtitle_31_999_no_sheet_a4(self):
@@ -237,7 +237,7 @@ class SearchingCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SearchingCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "31 cards - 0 to 999 - without helper sheet - a4"
+            "31 cards - 1 to 999 - without helper sheet - a4"
         )
 
     def test_subtitle_31_999_no_sheet_letter(self):
@@ -245,7 +245,7 @@ class SearchingCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SearchingCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "31 cards - 0 to 999 - without helper sheet - letter"
+            "31 cards - 1 to 999 - without helper sheet - letter"
         )
 
     def test_subtitle_15_blank_no_sheet_a4(self):
