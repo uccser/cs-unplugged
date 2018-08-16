@@ -218,11 +218,11 @@ class NumberHuntResourceGenerator(BaseResourceGenerator):
         number_order = self.options["number_order"].value
 
         if prefilled_values == "blank":
-            range_text = _("blank")
+            range_text = _("Blank")
         else:
             range_min, range_max, font_size = self.get_number_range(prefilled_values)
             range_text = _("{} to {}").format(range_min, range_max - 1)
-            number_order_text = number_order.title()
+            number_order_text = NUMBER_ORDER_VALUES[number_order]
             range_text = "{} - {}".format(number_order_text, range_text)
         return range_text
 

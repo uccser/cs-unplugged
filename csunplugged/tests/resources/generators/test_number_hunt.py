@@ -32,3 +32,67 @@ class NumberHuntResourceGeneratorTest(BaseGeneratorTest):
         get_number_range = NumberHuntResourceGenerator.get_number_range
         with self.assertRaises(ValueError):
             get_number_range("invalid")
+
+    def test_subtitle_a4(self):
+        query = QueryDict("prefilled_values=easy&number_order=sorted&paper_size=a4")
+        generator = NumberHuntResourceGenerator(query)
+        self.assertEqual(
+            generator.subtitle,
+            "Sorted Numbers - 0 to 99 - a4"
+        )
+
+    def test_subtitle_letter(self):
+        query = QueryDict("prefilled_values=easy&number_order=sorted&paper_size=letter")
+        generator = NumberHuntResourceGenerator(query)
+        self.assertEqual(
+            generator.subtitle,
+            "Sorted Numbers - 0 to 99 - letter"
+        )
+
+    def test_subtitle_sorted(self):
+        query = QueryDict("prefilled_values=easy&number_order=sorted&paper_size=a4")
+        generator = NumberHuntResourceGenerator(query)
+        self.assertEqual(
+            generator.subtitle,
+            "Sorted Numbers - 0 to 99 - a4"
+        )
+
+    def test_subtitle_unsorted(self):
+        query = QueryDict("prefilled_values=easy&number_order=unsorted&paper_size=a4")
+        generator = NumberHuntResourceGenerator(query)
+        self.assertEqual(
+            generator.subtitle,
+            "Unsorted Numbers - 0 to 99 - a4"
+        )
+
+    def test_subtitle_blank(self):
+        query = QueryDict("prefilled_values=blank&number_order=sorted&paper_size=a4")
+        generator = NumberHuntResourceGenerator(query)
+        self.assertEqual(
+            generator.subtitle,
+            "Blank - a4"
+        )
+
+    def test_subtitle_easy(self):
+        query = QueryDict("prefilled_values=easy&number_order=sorted&paper_size=a4")
+        generator = NumberHuntResourceGenerator(query)
+        self.assertEqual(
+            generator.subtitle,
+            "Sorted Numbers - 0 to 99 - a4"
+        )
+
+    def test_subtitle_medium(self):
+        query = QueryDict("prefilled_values=medium&number_order=sorted&paper_size=a4")
+        generator = NumberHuntResourceGenerator(query)
+        self.assertEqual(
+            generator.subtitle,
+            "Sorted Numbers - 0 to 999 - a4"
+        )
+
+    def test_subtitle_hard(self):
+        query = QueryDict("prefilled_values=hard&number_order=sorted&paper_size=a4")
+        generator = NumberHuntResourceGenerator(query)
+        self.assertEqual(
+            generator.subtitle,
+            "Sorted Numbers - 0 to 9999 - a4"
+        )
