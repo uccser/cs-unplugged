@@ -1,6 +1,6 @@
+from unittest import mock
 from django.http import QueryDict
 from django.test import tag
-from django.utils import translation
 from resources.generators.BinaryToAlphabetResourceGenerator import BinaryToAlphabetResourceGenerator
 from tests.resources.generators.utils import BaseGeneratorTest
 
@@ -49,9 +49,22 @@ class BinaryToAlphabetResourceGeneratorTest(BaseGeneratorTest):
             "teacher - letter"
         )
 
-    def test_uneven_columns(self):
-        # Māori alphabet has 21 characters
-        with translation.override("mi"):
-            query = QueryDict("worksheet_version=student&paper_size=a4")
-            generator = BinaryToAlphabetResourceGenerator(query)
-            generator.data()
+    @mock.patch(
+        "utils.alphabets.get_alphabet",
+        return_value=["a", "b", "c", "d"]
+    )
+    def test_even_columns(self, get_alphabet):
+        query = QueryDict("worksheet_version=student&paper_size=a4")
+        generator = BinaryToAlphabetResourceGenerator(query)
+        generator.data()
+        self.assertTrue(get_alphabet.called)
+
+
+    @mock.patch(
+        "utils.alphabets.get_alphabet",
+        return_value=["a", "b", "c"]
+    )
+    def test_uneven_columns(self, get_alphabet):
+        query = QueryDict("worksheet_version=student&paper_size=a4")
+        generator = BinaryToAlphabetResourceGenerator(query)
+        generator.data()

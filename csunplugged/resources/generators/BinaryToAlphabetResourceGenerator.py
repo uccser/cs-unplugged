@@ -5,7 +5,7 @@ from django.utils.translation import ugettext as _
 from django.utils.translation import get_language
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 from resources.utils.resource_parameters import EnumResourceParameter
-from utils.alphabets import get_alphabet
+import utils.alphabets
 
 
 WORKSHEET_VERSION_VALUES = {
@@ -37,7 +37,7 @@ class BinaryToAlphabetResourceGenerator(BaseResourceGenerator):
             A dictionary for the resource page.
         """
         doc, tag, text, line = Doc().ttl()
-        alphabet = get_alphabet(get_language())
+        alphabet = utils.alphabets.get_alphabet(get_language())
         teacher_version = self.options["worksheet_version"].value == "teacher"
         binary_length = len("{:b}".format(len(alphabet)))
         binary_template = "{:0" + str(binary_length) + "b}"
