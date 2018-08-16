@@ -13,15 +13,23 @@ install:
 jobs:
   include:
     - stage: test
+      name: "Load content"
       script: ./csu ci load_content
     - script: ./csu ci test_general
+      name: "Run general tests"
     - script: ./csu ci test_resources
+      name: "Run resource tests"
     - script: ./csu ci test_management
+      name: "Run management tests"
     - script: ./csu ci test_backwards
+      name: "Run test suite backwards"
       if: type = pull_request
     - script: ./csu ci style
+      name: "Run style checker"
     - script: ./csu ci docs
+      name: "Build documentation"
     - stage: develop deploy
+      name: "Deploy app to Google App Engine"
       script: skip
       deploy:
         - provider: script
@@ -30,6 +38,7 @@ jobs:
           on:
             branch: develop
     - script: skip
+      name: "Copy static files to Google Storage Bucket"
       deploy:
         - provider: script
           script: bash ./infrastructure/dev-deploy/deploy-static-files.sh
@@ -37,6 +46,7 @@ jobs:
           on:
             branch: develop
     - script: skip
+      name: "Update Google Cloud Platform database"
       deploy:
         - provider: script
           script: bash ./infrastructure/dev-deploy/update-database.sh
@@ -44,6 +54,7 @@ jobs:
           on:
             branch: develop
     - script: skip
+      name: "Copy resource PDFs to Google Storage Bucket - Part 1"
       deploy:
         - provider: script
           script: bash ./infrastructure/dev-deploy/deploy-resources-1.sh
@@ -51,6 +62,7 @@ jobs:
           on:
             branch: develop
     - script: skip
+      name: "Copy resource PDFs to Google Storage Bucket - Part 2"
       deploy:
         - provider: script
           script: bash ./infrastructure/dev-deploy/deploy-resources-2.sh
@@ -58,6 +70,7 @@ jobs:
           on:
             branch: develop
     - script: skip
+      name: "Copy resource PDFs to Google Storage Bucket - Part 3"
       deploy:
         - provider: script
           script: bash ./infrastructure/dev-deploy/deploy-resources-3.sh
@@ -65,6 +78,7 @@ jobs:
           on:
             branch: develop
     - script: skip
+      name: "Copy resource PDFs to Google Storage Bucket - Part 4"
       deploy:
         - provider: script
           script: bash ./infrastructure/dev-deploy/deploy-resources-4.sh
@@ -73,6 +87,7 @@ jobs:
             branch: develop
     - stage: production deploy
       script: skip
+      name: "Deploy app to Google App Engine"
       deploy:
         - provider: script
           script: bash ./infrastructure/prod-deploy/deploy-app.sh
@@ -80,6 +95,7 @@ jobs:
           on:
             branch: master
     - script: skip
+      name: "Copy static files to Google Storage Bucket"
       deploy:
         - provider: script
           script: bash ./infrastructure/prod-deploy/deploy-static-files.sh
@@ -87,6 +103,7 @@ jobs:
           on:
             branch: master
     - script: skip
+      name: "Update Google Cloud Platform database"
       deploy:
         - provider: script
           script: bash ./infrastructure/prod-deploy/update-database.sh
@@ -94,6 +111,7 @@ jobs:
           on:
             branch: master
     - script: skip
+      name: "Copy resource PDFs to Google Storage Bucket - Part 1"
       deploy:
         - provider: script
           script: bash ./infrastructure/prod-deploy/deploy-resources-1.sh
@@ -101,6 +119,7 @@ jobs:
           on:
             branch: master
     - script: skip
+      name: "Copy resource PDFs to Google Storage Bucket - Part 2"
       deploy:
         - provider: script
           script: bash ./infrastructure/prod-deploy/deploy-resources-2.sh
@@ -108,6 +127,7 @@ jobs:
           on:
             branch: master
     - script: skip
+      name: "Copy resource PDFs to Google Storage Bucket - Part 3"
       deploy:
         - provider: script
           script: bash ./infrastructure/prod-deploy/deploy-resources-3.sh
@@ -115,6 +135,7 @@ jobs:
           on:
             branch: master
     - script: skip
+      name: "Copy resource PDFs to Google Storage Bucket - Part 4"
       deploy:
         - provider: script
           script: bash ./infrastructure/prod-deploy/deploy-resources-4.sh
