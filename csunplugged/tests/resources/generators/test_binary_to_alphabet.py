@@ -59,7 +59,6 @@ class BinaryToAlphabetResourceGeneratorTest(BaseGeneratorTest):
         generator.data()
         self.assertTrue(get_alphabet.called)
 
-
     @mock.patch(
         "utils.alphabets.get_alphabet",
         return_value=["a", "b", "c"]
