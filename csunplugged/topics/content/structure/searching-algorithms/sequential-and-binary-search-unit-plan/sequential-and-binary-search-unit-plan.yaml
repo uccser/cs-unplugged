@@ -12,7 +12,7 @@ age-groups:
       number: 1
     divide-and-conquer:
       number: 2
-    the-great-treasure-hunt-unsorted:
+    the-great-number-hunt-unsorted:
       number: 3
-    the-great-treasure-hunt-sorted:
+    the-great-number-hunt-sorted:
       number: 4

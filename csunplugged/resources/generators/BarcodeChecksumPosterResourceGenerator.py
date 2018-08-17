@@ -45,7 +45,7 @@ class BarcodeChecksumPosterResourceGenerator(BaseResourceGenerator):
 
         textbox_drawer.write_text_box(
             "title",
-            _("{} Digit Barcode".format(barcode_length)),
+            _("{} Digit Barcode").format(barcode_length),
             horiz_just="center",
         )
 

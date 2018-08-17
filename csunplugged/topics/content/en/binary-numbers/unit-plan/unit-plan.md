@@ -23,7 +23,7 @@ The binary number system plays a central role in how information of all kinds is
 Understanding binary representation can lift a lot of the mystery from computers, because at a fundamental level they’re really just machines for flipping binary digits on and off.
 Computers are simple machines, and they need very exact instructions to make them do complex tasks.
 
-Teaching binary numbers as an introduction to computational thinking introduces students to {glossary-link term="algorithm"}algorithms{glossary-link end} and decomposition, as they learn to break down the problems of calculating binary numbers and converting between binary and decimal numbers, into step by step processes that they can follow to solve these problems; it also introduces abstraction, as students learn that two different things can be used to represent any and all information.
+Teaching binary numbers as an introduction to computational thinking introduces students to {glossary-link term="algorithm"}algorithms{glossary-link end} and decomposition, as they learn to break down the problems of calculating binary numbers and converting between binary and {glossary-link term="decimal-number"}decimal numbers{glossary-link end}, into step by step processes that they can follow to solve these problems; it also introduces abstraction, as students learn that two different things can be used to represent any and all information.
 It shows them that a computer isn’t actually that complex, and we use simple concepts in a clever way to make computers do extraordinary things!
 
 ##  Vocabulary Explained

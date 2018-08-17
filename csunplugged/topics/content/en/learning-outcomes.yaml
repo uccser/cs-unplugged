@@ -28,7 +28,7 @@ binary-recognise-alphabet-bits:
   text: Recognise how computers represent alphabet characters as bits using a simplified method.
 
 binary-create-message-converting:
-  text: Create your own message by converting alphabet characters to decimal numbers then to binary.
+  text: Create their own message by converting alphabet characters to decimal numbers then to binary.
 
 binary-interpret-message-binary:
   text: Interpret a message using binary.
