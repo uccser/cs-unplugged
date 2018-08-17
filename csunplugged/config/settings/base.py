@@ -291,3 +291,4 @@ CUSTOM_VERTO_TEMPLATES = os.path.join(str(ROOT_DIR.path("utils")), "custom_conve
 MODELTRANSLATION_CUSTOM_FIELDS = ("JSONField",)
 CLASSIC_PAGES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("classic")), "content")
 GENERAL_PAGES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("general")), "content")
+BREADCRUMBS_TEMPLATE = "generic/breadcrumbs.html"
