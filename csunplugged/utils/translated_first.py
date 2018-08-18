@@ -1,19 +1,19 @@
-"""Sort MultilingualQuerySet with translated items first, then untranslated items."""
+"""Sort QuerySet with translated items first, then untranslated items."""
 
-from modeltranslation.manager import MultilingualQuerySet
+from django.db.models.query import QuerySet
 
 
 def translated_first(items):
     """Sort items with translated items first, then untranslated items.
 
     Args:
-        items (MultilingualQuerySet): Set of items to sort.
+        items (QuerySet): Set of items to sort.
 
     Returns:
         List of sorted items.
     """
-    if not isinstance(items, MultilingualQuerySet):
-        raise TypeError("Can only sort MultilingualQuerySets")
+    if not isinstance(items, QuerySet):
+        raise TypeError("Can only sort QuerySet")
     translated = []
     untranslated = []
     for item in items:
