@@ -9,6 +9,7 @@ from resources.models import Resource
 from resources.utils.resource_pdf_cache import resource_pdf_cache
 from resources.utils.get_options_html import get_options_html
 from utils.group_lessons_by_age import group_lessons_by_age
+from utils.translated_first import translated_first
 from resources.utils.get_resource_generator import get_resource_generator
 from utils.errors.QueryParameterMissingError import QueryParameterMissingError
 from utils.errors.QueryParameterInvalidError import QueryParameterInvalidError
@@ -29,7 +30,7 @@ class IndexView(generic.ListView):
         Returns:
             Queryset of all resources ordered by name.
         """
-        return Resource.objects.order_by("name")
+        return translated_first(Resource.objects.all())
 
 
 def resource(request, resource_slug):

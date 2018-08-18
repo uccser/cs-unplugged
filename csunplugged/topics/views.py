@@ -6,6 +6,7 @@ from django.views import generic
 from django.http import JsonResponse, Http404
 from config.templatetags.render_html_field import render_html_with_static
 from topics.utils.add_lesson_ages_to_objects import add_lesson_ages_to_objects
+from utils.translated_first import translated_first
 from utils.group_lessons_by_age import group_lessons_by_age
 from django.utils.translation import get_language
 from .models import (
@@ -34,12 +35,13 @@ class IndexView(generic.ListView):
         Returns:
             Queryset of Topic objects ordered by name.
         """
-        return Topic.objects.order_by("name").prefetch_related(
+        topics = Topic.objects.order_by("name").prefetch_related(
             "unit_plans",
             "lessons",
             "curriculum_integrations",
             "programming_challenges",
         )
+        return translated_first(topics)
 
     def get_context_data(self, **kwargs):
         """Provide the context data for the index view.

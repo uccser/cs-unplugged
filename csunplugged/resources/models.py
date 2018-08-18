@@ -42,3 +42,8 @@ class Resource(TranslatableModel):
             Name of resource (str).
         """
         return self.name
+
+    class Meta:
+        """Meta class settings."""
+
+        ordering = ["name"]
