@@ -405,7 +405,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         with tag("p"):
             text(_("This page should be kept secret from students."))
         with tag("h2"):
-            text(_("Page grid reference for image: {}").format(image_name))
+            text(_("Page grid reference for {} image").format(image_name))
         with tag("p"):
             text(_(
                 "Once pixels on each page are filled in correctly, "
