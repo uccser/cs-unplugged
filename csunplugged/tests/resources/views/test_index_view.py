@@ -17,7 +17,7 @@ class IndexViewTest(BaseTestWithDB):
         url = reverse("resources:index")
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
-        self.assertFalse(response.context["all_resources"].exists())
+        self.assertEqual(len(response.context["all_resources"]), 0)
 
     def test_resources_index_with_one_resource(self):
         self.test_data.create_resource(
