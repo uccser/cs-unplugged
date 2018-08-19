@@ -138,6 +138,9 @@ class SearchingCardsResourceGenerator(BaseResourceGenerator):
             with tag("h2"):
                 text(_("Sorted numbers"))
             with tag("p"):
+                with tag("em"):
+                    text(range_text)
+            with tag("p"):
                 numbers.sort()
                 red_number_jump = (len(numbers) + 1) // 4
                 text = ""
