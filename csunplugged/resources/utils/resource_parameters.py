@@ -1,7 +1,7 @@
 """Module for resource parameter classes."""
 
 from lxml import etree
-from django.utils.translation import ugettext as _
+from django.utils.translation import gettext_lazy as _
 from utils.errors.QueryParameterMissingError import QueryParameterMissingError
 from utils.errors.QueryParameterInvalidError import QueryParameterInvalidError
 from utils.errors.QueryParameterMultipleValuesError import QueryParameterMultipleValuesError
@@ -34,7 +34,7 @@ class ResourceParameter(object):
             etree.Element
         """
         legend = etree.Element('legend')
-        legend.text = self.description
+        legend.text = str(self.description)
         fieldset = etree.Element('fieldset')
         fieldset.append(legend)
         return fieldset
@@ -178,7 +178,7 @@ class EnumResourceParameter(SingleValuedParameter):
             )
             label_elem.set("for", "{}_{}".format(self.name, value))
             label_elem.set("class", BOOTSTRAP_CLASSES["radio-label"])
-            label_elem.text = value_desc
+            label_elem.text = str(value_desc)
             container.append(label_elem)
             base_elem.append(container)
         return base_elem
@@ -267,7 +267,7 @@ class TextResourceParameter(SingleValuedParameter):
             "input",
             type="text",
             name=self.name,
-            placeholder=self.placeholder,
+            placeholder=str(self.placeholder),
         )
         input_elem.set("class", "long-text-field")
         base_elem.append(input_elem)

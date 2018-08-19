@@ -7,18 +7,16 @@ from utils.errors.MoreThanOneThumbnailPageFoundError import MoreThanOneThumbnail
 from django.conf import settings
 from django.template.loader import render_to_string
 from django.contrib.staticfiles import finders
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 from resources.utils.resource_parameters import (
     EnumResourceParameter,
     TextResourceParameter,
     IntegerResourceParameter,
 )
 
-A4_TEXT = _("A4")
-LETTER_TEXT = _("US Letter")
 PAPER_SIZE_VALUES = {
-    "a4": A4_TEXT,
-    "letter": LETTER_TEXT,
+    "a4": _("A4"),
+    "letter": _("US Letter"),
 }
 
 
