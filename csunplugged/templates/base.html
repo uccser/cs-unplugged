@@ -247,6 +247,19 @@
       </div>
 
       <div class="container py-3 footer-statement text-center">
+        <p class="mb-0">
+          <small>
+            {% for language in LANGUAGES %}
+              {% get_language_info for language.0 as lang %}
+              <a href="{% translate_url language.0 %}">
+                {{ lang.name_local|capfirst }}
+              </a>{% if not forloop.last %} | {% endif %}
+            {% endfor %}
+          </small>
+        </p>
+      </div>
+
+      <div class="container py-3 footer-statement text-center">
         <p>
           <small>
             {% blocktrans trimmed %}
