@@ -7,7 +7,7 @@ from django.utils.translation import ugettext as _
 from resources.utils.resource_parameters import EnumResourceParameter
 
 MODULO_NUMBER_VALUES = {
-    "1": "Blank",
+    "1": _("Blank"),
     "2": "2",
     "10": "10",
 }

@@ -14,10 +14,11 @@ from resources.utils.resource_parameters import (
     IntegerResourceParameter,
 )
 
-
+A4_TEXT = _("A4")
+LETTER_TEXT = _("US Letter")
 PAPER_SIZE_VALUES = {
-    "a4": _("A4"),
-    "letter": _("US Letter")
+    "a4": A4_TEXT,
+    "letter": LETTER_TEXT,
 }
 
 
