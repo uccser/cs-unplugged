@@ -637,16 +637,13 @@ button:hover .icon {
   }
 }
 
-// This removes the navbar button from the document flow,
-// allowing the logo to display perfectly center.
-.navbar > .container {
-  position: relative;
-  justify-content: center;
-  > .navbar-toggler {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
+#navbarLanguageSelector {
+   @extend .navbar-toggler;
+   display: block !important;
+}
+#navbarLanguageDropdown.dropdown-menu-right {
+  right: 0;
+  left: auto;
 }
 
 #search-navbar {
