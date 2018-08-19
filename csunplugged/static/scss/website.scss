@@ -530,19 +530,6 @@ ol, ul {
 h1, h2, h3, h4, h5, h6, details {
   clear: both;
 }
-.icon {
-  display: block;
-  margin: auto;
-  width: 1em;
-  height: 1em;
-  stroke-width: 0;
-  stroke: $white;
-  fill: $white;
-}
-button:hover .icon {
-  stroke: $red;
-  fill: $red;
-}
 
 @media print {
   body {
@@ -638,12 +625,45 @@ button:hover .icon {
 }
 
 #navbarLanguageSelector {
-   @extend .navbar-toggler;
-   display: block !important;
+  padding: 4px 7.25px;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid $white;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+@include media-breakpoint-up("md") {
+  #navbarLanguageSelector {
+    border-color: transparent;
+  }
+  #navbarLanguageSelector:hover,
+  #navbarLanguageSelector:focus {
+    border-color: $white;
+  }
 }
 #navbarLanguageDropdown.dropdown-menu-right {
   right: 0;
   left: auto;
+}
+
+.icon {
+  display: block;
+  margin: auto;
+  stroke-width: 0;
+  stroke: $white;
+  fill: $white;
+}
+.icon-language {
+  height: 1.5em;
+}
+.icon-search {
+  width: 1em;
+  height: 1em;
+}
+button:hover .icon-search {
+  stroke: $red;
+  fill: $red;
 }
 
 #search-navbar {
