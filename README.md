@@ -11,13 +11,17 @@
       Production website
     </a>
     (<code>master</code> branch)
-    [![Master Build Status](https://travis-ci.org/uccser/cs-unplugged.svg?branch=master)](https://travis-ci.org/uccser/cs-unplugged)
+    <a href="https://travis-ci.org/uccser/cs-unplugged">
+      <img src="https://travis-ci.org/uccser/cs-unplugged.svg?branch=master" alt="Master Build Status" />
+    </a>
     <br>
     <a href="https://cs-unplugged-dev.appspot.com/">
       Development website
     </a>
     (<code>develop</code> branch)
-    [![Develop Build Status](https://travis-ci.org/uccser/cs-unplugged.svg?branch=develop)](https://travis-ci.org/uccser/cs-unplugged)
+    <a href="https://travis-ci.org/uccser/cs-unplugged">
+      <img src="https://travis-ci.org/uccser/cs-unplugged.svg?branch=develop" alt="Develop Build Status" />
+    </a>
   </p>
 </p>
 
