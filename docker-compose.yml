@@ -21,7 +21,6 @@ services:
       - INCLUDE_INCONTEXT_L10N=True
     depends_on:
       - postgres
-    user: ${DJANGO_UID}:${DJANGO_GID}
 
   nginx:
     build:
@@ -34,4 +33,3 @@ services:
       - django
     ports:
       - "80:80"
-    user: ${NGINX_UID}:${NGINX_GID}

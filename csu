@@ -187,7 +187,7 @@ defhelp -dev build 'Build or rebuild Docker images.'
 # Build static files
 dev_static() {
   echo "Building static files..."
-  docker-compose exec --user="$NGINX_UID" nginx gulp build
+  docker-compose exec nginx gulp build
 }
 defhelp -dev static 'Build static files.'
 
@@ -417,15 +417,14 @@ if [ $# -eq 0 ]; then
   cmd_help
   exit 1
 fi
-export DJANGO_UID=${UID}
-export DJANGO_GID=${GID}
-export NGINX_UID=${UID}
-export NGINX_GID=${GID}
 cmd="$1"
 shift
 if silent type "cmd_$cmd"; then
   "cmd_$cmd" "$@"
-  exit $?
+  code=$?
+  # Set all files to be owned by host for development
+  docker-compose exec django chown -R `id -u` .
+  exit $code
 else
   echo -e "${RED}ERROR: Unknown command!${NC}"
   echo "Type './csu help' for available commands."
