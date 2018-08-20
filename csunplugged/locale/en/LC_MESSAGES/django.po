@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-17 02:01+0000\n"
+"POT-Creation-Date: 2018-08-20 04:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -164,6 +164,13 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
+#: resources/generators/ModuloClockResourceGenerator.py:10
+#: resources/generators/NumberHuntResourceGenerator.py:221
+#: resources/generators/PianoKeysResourceGenerator.py:12
+#: resources/generators/SearchingCardsResourceGenerator.py:26
+msgid "Blank"
+msgstr ""
+
 #: resources/generators/ModuloClockResourceGenerator.py:25
 msgid "Modulo"
 msgstr ""
@@ -262,17 +269,11 @@ msgstr ""
 msgid "Numbers Unsorted/Sorted"
 msgstr ""
 
-#: resources/generators/NumberHuntResourceGenerator.py:221
-#: resources/generators/PianoKeysResourceGenerator.py:12
-#: resources/generators/SearchingCardsResourceGenerator.py:26
-msgid "Blank"
-msgstr ""
-
 #: resources/generators/NumberHuntResourceGenerator.py:224
 #: resources/generators/SearchingCardsResourceGenerator.py:70
 #: resources/generators/SearchingCardsResourceGenerator.py:73
-#: resources/generators/SearchingCardsResourceGenerator.py:170
-#: resources/generators/SearchingCardsResourceGenerator.py:172
+#: resources/generators/SearchingCardsResourceGenerator.py:173
+#: resources/generators/SearchingCardsResourceGenerator.py:175
 msgid "{} to {}"
 msgstr ""
 
@@ -402,7 +403,7 @@ msgid "This page should be kept secret from students."
 msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:408
-msgid "Page grid reference for image: {}"
+msgid "Page grid reference for {} image"
 msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:411
@@ -483,19 +484,19 @@ msgstr ""
 msgid "Sorted numbers"
 msgstr ""
 
-#: resources/generators/SearchingCardsResourceGenerator.py:168
+#: resources/generators/SearchingCardsResourceGenerator.py:171
 msgid "blank"
 msgstr ""
 
-#: resources/generators/SearchingCardsResourceGenerator.py:175
+#: resources/generators/SearchingCardsResourceGenerator.py:178
 msgid "with helper sheet"
 msgstr ""
 
-#: resources/generators/SearchingCardsResourceGenerator.py:177
+#: resources/generators/SearchingCardsResourceGenerator.py:180
 msgid "without helper sheet"
 msgstr ""
 
-#: resources/generators/SearchingCardsResourceGenerator.py:180
+#: resources/generators/SearchingCardsResourceGenerator.py:182
 msgid "{} cards"
 msgstr ""
 
@@ -569,27 +570,27 @@ msgstr ""
 msgid "Train track shape"
 msgstr ""
 
-#: resources/utils/BaseResourceGenerator.py:19
+#: resources/utils/BaseResourceGenerator.py:18
 msgid "A4"
 msgstr ""
 
-#: resources/utils/BaseResourceGenerator.py:20
+#: resources/utils/BaseResourceGenerator.py:19
 msgid "US Letter"
 msgstr ""
 
-#: resources/utils/BaseResourceGenerator.py:51
+#: resources/utils/BaseResourceGenerator.py:50
 msgid "Paper Size"
 msgstr ""
 
-#: resources/utils/BaseResourceGenerator.py:71
+#: resources/utils/BaseResourceGenerator.py:70
 msgid "Header Text"
 msgstr ""
 
-#: resources/utils/BaseResourceGenerator.py:72
+#: resources/utils/BaseResourceGenerator.py:71
 msgid "Example School: Room Four"
 msgstr ""
 
-#: resources/utils/BaseResourceGenerator.py:80
+#: resources/utils/BaseResourceGenerator.py:79
 msgid "Number of Copies"
 msgstr ""
 
@@ -623,7 +624,7 @@ msgstr ""
 msgid "Home page"
 msgstr ""
 
-#: templates/404.html:26 templates/base.html:218
+#: templates/404.html:26 templates/base.html:91 templates/base.html:225
 msgid "Search"
 msgstr ""
 
@@ -637,84 +638,88 @@ msgstr ""
 msgid "CS Unplugged"
 msgstr ""
 
-#: templates/base.html:58 templates/base.html:181
+#: templates/base.html:60
+msgid "Language"
+msgstr ""
+
+#: templates/base.html:78 templates/base.html:188
 #: templates/general/index.html:74 templates/topics/index.html:8
 #: templates/topics/index.html:16
 msgid "Topics"
 msgstr ""
 
-#: templates/base.html:59 templates/base.html:186
+#: templates/base.html:79 templates/base.html:193
 #: templates/general/index.html:81 templates/resources/index.html:8
 #: templates/resources/index.html:16 templates/topics/lesson.html:77
 msgid "Printables"
 msgstr ""
 
-#: templates/base.html:60 templates/base.html:176
+#: templates/base.html:80 templates/base.html:183
 #: templates/general/about.html:7 templates/general/about.html:15
 #: templates/general/base.html:10
 msgid "About"
 msgstr ""
 
-#: templates/base.html:96
+#: templates/base.html:103
 msgid "Home"
 msgstr ""
 
-#: templates/base.html:147
+#: templates/base.html:154
 msgid ""
 "Looking for something for high schools? Check out the <a href=\"http://"
 "csfieldguide.org.nz/\">Computer Science Field Guide</a>."
 msgstr ""
 
-#: templates/base.html:159
+#: templates/base.html:166
 msgid ""
 "The primary goal of the Unplugged project is to promote Computer Science "
 "(and computing in general) to young people as an interesting, engaging, and "
 "intellectually stimulating discipline."
 msgstr ""
 
-#: templates/base.html:165
+#: templates/base.html:172
 #, python-format
 msgid "Read more about <a href=\"%(principles_url)s\">our principles here</a>."
 msgstr ""
 
-#: templates/base.html:172
+#: templates/base.html:179
 msgid "Useful Links"
 msgstr ""
 
-#: templates/base.html:192
+#: templates/base.html:199
 msgid "Community"
 msgstr ""
 
-#: templates/base.html:196
+#: templates/base.html:203
 msgid "Twitter"
 msgstr ""
 
-#: templates/base.html:201
+#: templates/base.html:208
 msgid "YouTube"
 msgstr ""
 
-#: templates/base.html:206
+#: templates/base.html:213
 msgid "GitHub"
 msgstr ""
 
-#: templates/base.html:212
+#: templates/base.html:219
 msgid "Help"
 msgstr ""
 
-#: templates/base.html:224 templates/topics/glossary.html:8
+#: templates/base.html:231 templates/topics/glossary.html:8
 #: templates/topics/glossary.html:17
 msgid "Glossary"
 msgstr ""
 
-#: templates/base.html:229
+#: templates/base.html:236
 msgid "Feedback"
 msgstr ""
 
-#: templates/base.html:234 templates/general/contact.html:7
+#: templates/base.html:241 templates/general/contact.html:7
 msgid "Contact"
 msgstr ""
 
-#: templates/base.html:245
+#: templates/base.html:265
 msgid ""
 "The CS Unplugged material is open source on <a href=\"https://github.com/"
 "uccser/cs-unplugged\">GitHub</a>, and this website's content is shared under "
@@ -726,12 +731,12 @@ msgid ""
 "Canterbury</a>, New Zealand."
 msgstr ""
 
-#: templates/base.html:268
+#: templates/base.html:288
 #, python-format
 msgid "This definition is not available in %(language)s, sorry!"
 msgstr ""
 
-#: templates/base.html:275
+#: templates/base.html:295
 msgid "Close"
 msgstr ""
 
@@ -1571,7 +1576,7 @@ msgid ""
 "with a description on how to use it."
 msgstr ""
 
-#: templates/resources/index.html:40
+#: templates/resources/index.html:43
 msgid "No printables are available."
 msgstr ""
 
@@ -1697,7 +1702,7 @@ msgstr ""
 #: templates/topics/programming-challenge.html:25
 #: templates/topics/topic.html:20
 #: templates/topics/unit-plan-description.html:23
-#: templates/topics/unit-plan.html:23
+#: templates/topics/unit-plan.html:22
 msgid "topic"
 msgstr ""
 
@@ -1751,7 +1756,7 @@ msgstr ""
 
 #: templates/topics/lesson.html:23
 #: templates/topics/unit-plan-description.html:22
-#: templates/topics/unit-plan.html:22
+#: templates/topics/unit-plan.html:21
 msgid "unit plan"
 msgstr ""
 
@@ -1953,18 +1958,18 @@ msgid "Description"
 msgstr ""
 
 #: templates/topics/unit-plan-description.html:19
-#: templates/topics/unit-plan.html:19
+#: templates/topics/unit-plan.html:18
 msgid "Unit plan:"
 msgstr ""
 
-#: templates/topics/unit-plan.html:33
+#: templates/topics/unit-plan.html:32
 msgid "What's it all about?"
 msgstr ""
 
-#: templates/topics/unit-plan.html:39
+#: templates/topics/unit-plan.html:38
 msgid "Read the full unit plan description"
 msgstr ""
 
-#: templates/topics/unit-plan.html:47
+#: templates/topics/unit-plan.html:46
 msgid "Lessons"
 msgstr ""
