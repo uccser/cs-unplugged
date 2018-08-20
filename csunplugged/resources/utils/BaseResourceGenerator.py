@@ -118,7 +118,7 @@ class BaseResourceGenerator(ABC):
         Returns:
             Text for subtitle (str).
         """
-        return self.options["paper_size"].value
+        return str(self.options["paper_size"].value)
 
     def process_requested_options(self, requested_options):
         """Convert requested options to usable types.

@@ -178,11 +178,10 @@ class SearchingCardsResourceGenerator(BaseResourceGenerator):
             help_text = _("with helper sheet")
         else:
             help_text = _("without helper sheet")
-
         text = " - ".join([
             _("{} cards").format(number_cards),
-            range_text,
-            help_text,
+            str(range_text),
+            str(help_text),
             super().subtitle
         ])
         return text
