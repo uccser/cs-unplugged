@@ -187,7 +187,7 @@ defhelp -dev build 'Build or rebuild Docker images.'
 # Build static files
 dev_static() {
   echo "Building static files..."
-  docker-compose exec nginx gulp build
+  docker-compose exec --user="$NGINX_UID" nginx gulp build
 }
 defhelp -dev static 'Build static files.'
 
