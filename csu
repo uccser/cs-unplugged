@@ -61,6 +61,8 @@ defhelp 'dev [DEV_COMMAND]' 'Run a developer command.'
 
 # Start development environment
 cmd_start() {
+  export NGINX_UID="0"
+  export NGINX_GID="0"
   echo "Creating systems..."
   docker-compose up -d
   echo ""
@@ -115,7 +117,7 @@ defhelp update 'Run Django migrate and updatedata commands and build static file
 dev_collect_static() {
   echo
   echo "Collecting static files..."
-  docker-compose exec --user="$HOST_UID" django /docker_venv/bin/python3 ./manage.py collectstatic --no-input --clear
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py collectstatic --no-input --clear
 }
 defhelp -dev collect_static "Collecting static files."
 
@@ -128,21 +130,21 @@ defhelp -dev flush 'Run Django flush command.'
 # Run Django makemigrations command
 dev_makemigrations() {
   echo "Creating database migrations..."
-  docker-compose exec --user="$HOST_UID" django /docker_venv/bin/python3 ./manage.py makemigrations --no-input
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py makemigrations --no-input
 }
 defhelp -dev makemigrations 'Run Django makemigrations command.'
 
 # Run Django makeresources command
 dev_makeresources() {
   echo "Creating static resource PDFs..."
-  docker-compose exec --user="$HOST_UID" django /docker_venv/bin/python3 ./manage.py makeresources
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources
 }
 defhelp -dev makeresources 'Run Django makeresources command.'
 
 # Run Django makeresourcethumbnails command
 dev_makeresourcethumbnails() {
   echo "Creating thumbnails for resource PDFs..."
-  docker-compose exec --user="$HOST_UID" django /docker_venv/bin/python3 ./manage.py makeresourcethumbnails
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresourcethumbnails
 }
 defhelp -dev makeresourcethumbnails 'Run Django makeresourcethumbnails command.'
 
@@ -150,14 +152,14 @@ defhelp -dev makeresourcethumbnails 'Run Django makeresourcethumbnails command.'
 # Run Django makemessages command
 dev_makemessages() {
   echo "Creating message files..."
-  docker-compose exec --user="$HOST_UID" django /docker_venv/bin/python3 ./manage.py makemessages -l en
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py makemessages -l en
 }
 defhelp -dev makemessages 'Run Django makemessages command.'
 
 # Run Django compilemessages command
 dev_compilemessages() {
   echo "Compiling message files..."
-  docker-compose exec --user="$HOST_UID" django /docker_venv/bin/python3 ./manage.py compilemessages
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py compilemessages
 }
 defhelp -dev compilemessages 'Run Django compilemessages command.'
 
@@ -171,7 +173,7 @@ defhelp -dev migrate 'Run Django migrate command.'
 # Run Django updatedata command
 dev_updatedata() {
   echo "Loading content..."
-  docker-compose exec --user="$HOST_UID" django /docker_venv/bin/python3 ./manage.py updatedata
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py updatedata
 }
 defhelp -dev updatedata 'Run updatedata command.'
 
@@ -185,28 +187,28 @@ defhelp -dev build 'Build or rebuild Docker images.'
 # Build static files
 dev_static() {
   echo "Building static files..."
-  docker-compose exec --user="$HOST_UID" nginx gulp build
+  docker-compose exec nginx gulp build
 }
 defhelp -dev static 'Build static files.'
 
 # Build production static files
 dev_static_prod() {
   echo "Building production static files..."
-  docker-compose exec --user="$HOST_UID" nginx gulp build --production
+  docker-compose exec nginx gulp build --production
 }
 defhelp -dev static_prod 'Build production static files.'
 
 # Build scratch static files
 dev_static_scratch() {
   echo "Building scratch images..."
-  docker-compose exec --user="$HOST_UID" nginx gulp scratch
+  docker-compose exec nginx gulp scratch
 }
 defhelp -dev static_scratch "Build scratch images."
 
 # Run Django command rebuild_index
 dev_rebuild_index() {
   echo "Rebuilding search index..."
-  docker-compose exec --user="$HOST_UID" django /docker_venv/bin/python3 ./manage.py rebuild_index --noinput
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py rebuild_index --noinput
 }
 defhelp -dev rebuild_index "Run Django rebuild_index command."
 
@@ -415,8 +417,10 @@ if [ $# -eq 0 ]; then
   cmd_help
   exit 1
 fi
-export HOST_UID=${UID}
-export HOST_GID=${GID}
+export DJANGO_UID=${UID}
+export DJANGO_GID=${GID}
+export NGINX_UID=${UID}
+export NGINX_GID=${GID}
 cmd="$1"
 shift
 if silent type "cmd_$cmd"; then
