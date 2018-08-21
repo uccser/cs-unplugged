@@ -422,8 +422,10 @@ shift
 if silent type "cmd_$cmd"; then
   "cmd_$cmd" "$@"
   code=$?
-  # Set all files to be owned by host for development
-  docker-compose exec django chown -R `id -u` .
+  if [ "$cmd" != "end" ]; then
+    # Set all files to be owned by host for development
+    docker-compose exec django chown -R `id -u` .
+  fi
   exit $code
 else
   echo -e "${RED}ERROR: Unknown command!${NC}"
