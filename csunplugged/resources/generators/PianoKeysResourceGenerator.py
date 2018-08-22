@@ -107,8 +107,11 @@ class PianoKeysResourceGenerator(BaseResourceGenerator):
         Returns:
             text for subtitle (str).
         """
-        return "{} labels - {}".format(
-            self.options["label"].value,
+        label = KEY_LABELS[self.options["label"].value]
+        if isinstance(label, list):
+            label = ", ".join(label)
+        return "{} - {}".format(
+            label,
             super().subtitle
         )
 

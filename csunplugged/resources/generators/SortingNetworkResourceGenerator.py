@@ -73,12 +73,7 @@ class SortingNetworkResourceGenerator(BaseResourceGenerator):
         Returns:
             text for subtitle (str).
         """
-        if self.options["prefilled_values"].value == "blank":
-            range_text = "blank"
-        else:
-            SUBTITLE_TEMPLATE = "{} to {}"
-            range_min, range_max, font_size = self.number_range()
-            range_text = SUBTITLE_TEMPLATE.format(range_min, range_max - 1)
+        range_text = PREFILLED_VALUES_VALUES[self.options["prefilled_values"].value]
         return "{} - {}".format(range_text, super().subtitle)
 
     def number_range(self):

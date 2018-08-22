@@ -79,7 +79,7 @@ class ModuloClockResourceGenerator(BaseResourceGenerator):
         """
         modulo_number = self.options["modulo_number"].value
         if modulo_number == "1":
-            modulo_text = "blank"
+            modulo_text = _("blank")
         else:
             modulo_text = modulo_number
         return "{} - {}".format(
