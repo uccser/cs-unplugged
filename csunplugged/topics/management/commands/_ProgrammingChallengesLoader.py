@@ -7,6 +7,7 @@ from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.TranslatableModelLoader import TranslatableModelLoader
 
 
+
 from topics.models import (
     LearningOutcome,
     ProgrammingChallengeDifficulty,
@@ -98,6 +99,7 @@ class ProgrammingChallengesLoader(TranslatableModelLoader):
                 challenge_number=challenge_number,
                 difficulty=difficulty_level
             )
+
             self.populate_translations(programming_challenge, challenge_translations)
             self.mark_translation_availability(programming_challenge, required_fields=["name", "content"])
 
@@ -136,13 +138,17 @@ class ProgrammingChallengesLoader(TranslatableModelLoader):
                     filename_template.format("expected"),
                     heading_required=False
                 )
+
                 for language, content in expected_result_translations.items():
                     implementation_translations[language]["expected_result"] = content.html_string
+
+
 
                 solution_translations = self.get_markdown_translations(
                     filename_template.format("solution"),
                     heading_required=False
                 )
+
                 for language, content in solution_translations.items():
                     implementation_translations[language]["solution"] = content.html_string
 
@@ -159,6 +165,19 @@ class ProgrammingChallengesLoader(TranslatableModelLoader):
                     challenge=programming_challenge,
                     topic=self.topic
                 )
+
+
+                if prog_language != "scratch":
+                    base_path ='./topics/content/en/binary-numbers/programming-challenges'
+                    file_path = os.path.join(
+                        base_path,
+                        challenge_slug,
+                        prog_language + "-raw-solution.txt")
+
+                    if os.path.exists(file_path):
+                        with open(file_path, 'r') as solution_file:
+                            implementation.raw_solution = solution_file.read()
+                            print("--------------IT WORKED for --->" + challenge_slug)
 
                 self.populate_translations(implementation, implementation_translations)
                 self.mark_translation_availability(implementation, required_fields=["solution", "expected_result"])

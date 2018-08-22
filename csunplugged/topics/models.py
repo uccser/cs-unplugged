@@ -303,6 +303,7 @@ class ProgrammingChallengeImplementation(TranslatableModel):
     expected_result = models.TextField(default="")
     hints = models.TextField(default="")
     solution = models.TextField(default="")
+    raw_solution = models.TextField(default="")
 
     def __str__(self):
         """Text representation of ProgrammingChallengeImplementation.
