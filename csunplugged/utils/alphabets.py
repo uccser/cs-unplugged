@@ -45,4 +45,4 @@ def get_alphabet(language_code):
     Returns:
         List of strings of alphabet.
     """
-    return [SPACER] + ALPHABETS.get(language_code)
+    return [SPACER] + ALPHABETS[language_code]

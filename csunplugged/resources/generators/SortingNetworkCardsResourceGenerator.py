@@ -202,7 +202,7 @@ class SortingNetworkCardsResourceGenerator(BaseResourceGenerator):
             text for subtitle (str).
         """
         return "{} - {}".format(
-            self.options["type"].value.replace("_", " "),
+            CARD_TYPE_DATA[self.options["type"].value]["label"],
             super().subtitle
         )
 

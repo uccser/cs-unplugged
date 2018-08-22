@@ -21,7 +21,7 @@ class SortingNetworkCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SortingNetworkCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "letters - a4"
+            "Letters - a4"
         )
 
     def test_subtitle_letters_letter(self):
@@ -29,7 +29,7 @@ class SortingNetworkCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SortingNetworkCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "letters - letter"
+            "Letters - letter"
         )
 
     def test_subtitle_words_a4(self):
@@ -37,7 +37,7 @@ class SortingNetworkCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SortingNetworkCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "words - a4"
+            "Words - a4"
         )
 
     def test_subtitle_words_letter(self):
@@ -45,7 +45,7 @@ class SortingNetworkCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SortingNetworkCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "words - letter"
+            "Words - letter"
         )
 
     def test_subtitle_small_numbers_a4(self):
@@ -53,7 +53,7 @@ class SortingNetworkCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SortingNetworkCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "small numbers - a4"
+            "Small numbers (1 to 10) - a4"
         )
 
     def test_subtitle_small_numbers_letter(self):
@@ -61,7 +61,7 @@ class SortingNetworkCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SortingNetworkCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "small numbers - letter"
+            "Small numbers (1 to 10) - letter"
         )
 
     def test_subtitle_large_numbers_a4(self):
@@ -69,7 +69,7 @@ class SortingNetworkCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SortingNetworkCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "large numbers - a4"
+            "Large numbers (7 digit numbers) - a4"
         )
 
     def test_subtitle_large_numbers_letter(self):
@@ -77,7 +77,7 @@ class SortingNetworkCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SortingNetworkCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "large numbers - letter"
+            "Large numbers (7 digit numbers) - letter"
         )
 
     def test_subtitle_fractions_a4(self):
@@ -85,7 +85,7 @@ class SortingNetworkCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SortingNetworkCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "fractions - a4"
+            "Fractions - a4"
         )
 
     def test_subtitle_fractions_letter(self):
@@ -93,7 +93,7 @@ class SortingNetworkCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SortingNetworkCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "fractions - letter"
+            "Fractions - letter"
         )
 
     def test_subtitle_maori_colours_a4(self):
@@ -101,7 +101,7 @@ class SortingNetworkCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SortingNetworkCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "maori colours - a4"
+            "Māori colours - a4"
         )
 
     def test_subtitle_maori_colours_letter(self):
@@ -109,7 +109,7 @@ class SortingNetworkCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SortingNetworkCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "maori colours - letter"
+            "Māori colours - letter"
         )
 
     def test_subtitle_maori_numbers_a4(self):
@@ -117,7 +117,7 @@ class SortingNetworkCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SortingNetworkCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "maori numbers - a4"
+            "Māori numbers - a4"
         )
 
     def test_subtitle_maori_numbers_letter(self):
@@ -125,7 +125,7 @@ class SortingNetworkCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SortingNetworkCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "maori numbers - letter"
+            "Māori numbers - letter"
         )
 
     def test_subtitle_butterfly_a4(self):
@@ -133,7 +133,7 @@ class SortingNetworkCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SortingNetworkCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "butterfly - a4"
+            "Butterfly life cycle - a4"
         )
 
     def test_subtitle_butterfly_letter(self):
@@ -141,7 +141,7 @@ class SortingNetworkCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SortingNetworkCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "butterfly - letter"
+            "Butterfly life cycle - letter"
         )
 
     def test_subtitle_riding_hood_a4(self):
@@ -149,7 +149,7 @@ class SortingNetworkCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SortingNetworkCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "riding hood - a4"
+            "Little Red Riding Hood - a4"
         )
 
     def test_subtitle_riding_hood_letter(self):
@@ -157,5 +157,5 @@ class SortingNetworkCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = SortingNetworkCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "riding hood - letter"
+            "Little Red Riding Hood - letter"
         )
