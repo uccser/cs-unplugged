@@ -103,8 +103,8 @@ class ParityCardsResourceGenerator(BaseResourceGenerator):
         Returns:
             text for subtitle (str).
         """
-        text = "{} back - {}".format(
-            self.options["back_colour"].value,
+        text = "{} - {}".format(
+            BACK_COLOUR_VALUES[self.options["back_colour"].value],
             super().subtitle
         )
         return text

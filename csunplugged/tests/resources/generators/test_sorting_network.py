@@ -21,7 +21,7 @@ class SortingNetworkResourceGeneratorTest(BaseGeneratorTest):
         generator = SortingNetworkResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "blank - a4"
+            "None (Blank - Useful as template) - a4"
         )
 
     def test_subtitle_blank_letter(self):
@@ -29,7 +29,7 @@ class SortingNetworkResourceGeneratorTest(BaseGeneratorTest):
         generator = SortingNetworkResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "blank - letter"
+            "None (Blank - Useful as template) - letter"
         )
 
     def test_subtitle_easy_a4(self):
@@ -37,7 +37,7 @@ class SortingNetworkResourceGeneratorTest(BaseGeneratorTest):
         generator = SortingNetworkResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "1 to 9 - a4"
+            "Easy Numbers (1 digits) - a4"
         )
 
     def test_subtitle_easy_letter(self):
@@ -45,7 +45,7 @@ class SortingNetworkResourceGeneratorTest(BaseGeneratorTest):
         generator = SortingNetworkResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "1 to 9 - letter"
+            "Easy Numbers (1 digits) - letter"
         )
 
     def test_subtitle_medium_a4(self):
@@ -53,7 +53,7 @@ class SortingNetworkResourceGeneratorTest(BaseGeneratorTest):
         generator = SortingNetworkResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "10 to 99 - a4"
+            "Medium Numbers (2 digits) - a4"
         )
 
     def test_subtitle_medium_letter(self):
@@ -61,7 +61,7 @@ class SortingNetworkResourceGeneratorTest(BaseGeneratorTest):
         generator = SortingNetworkResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "10 to 99 - letter"
+            "Medium Numbers (2 digits) - letter"
         )
 
     def test_subtitle_hard_a4(self):
@@ -69,7 +69,7 @@ class SortingNetworkResourceGeneratorTest(BaseGeneratorTest):
         generator = SortingNetworkResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "100 to 999 - a4"
+            "Hard Numbers (3 digits) - a4"
         )
 
     def test_subtitle_hard_letter(self):
@@ -77,5 +77,5 @@ class SortingNetworkResourceGeneratorTest(BaseGeneratorTest):
         generator = SortingNetworkResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "100 to 999 - letter"
+            "Hard Numbers (3 digits) - letter"
         )

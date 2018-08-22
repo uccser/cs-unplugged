@@ -189,13 +189,13 @@ class BinaryWindowsResourceGenerator(BaseResourceGenerator):
         """
         dot_counts = self.options["dot_counts"].value
         if dot_counts:
-            count_text = "with dot counts"
+            count_text = _("with dot counts")
         else:
-            count_text = "without dot counts"
-        TEMPLATE = "{} bits - {} - {} - {}"
+            count_text = _("without dot counts")
+        TEMPLATE = "{} - {} - {} - {}"
         text = TEMPLATE.format(
-            self.options["number_bits"].value,
-            self.options["value_type"].value,
+            NUMBER_BITS_VALUES[self.options["number_bits"].value],
+            VALUE_TYPE_VALUES[self.options["value_type"].value],
             count_text,
             super().subtitle
         )
