@@ -22,7 +22,7 @@ class BinaryToAlphabetResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryToAlphabetResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "student - a4"
+            "Student - a4"
         )
 
     def test_subtitle_student_letter(self):
@@ -30,7 +30,7 @@ class BinaryToAlphabetResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryToAlphabetResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "student - letter"
+            "Student - letter"
         )
 
     def test_subtitle_teacher_a4(self):
@@ -38,7 +38,7 @@ class BinaryToAlphabetResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryToAlphabetResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "teacher - a4"
+            "Teacher (solutions) - a4"
         )
 
     def test_subtitle_teacher_letter(self):
@@ -46,7 +46,7 @@ class BinaryToAlphabetResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryToAlphabetResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "teacher - letter"
+            "Teacher (solutions) - letter"
         )
 
     @mock.patch(

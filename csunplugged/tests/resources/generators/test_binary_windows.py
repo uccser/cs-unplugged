@@ -29,7 +29,7 @@ class BinaryWindowsResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryWindowsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "4 bits - binary - with dot counts - a4"
+            "Four (1 to 8) - Binary (0 or 1) - with dot counts - a4"
         )
 
     def test_subtitle_4_binary_dots_letter(self):
@@ -37,7 +37,7 @@ class BinaryWindowsResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryWindowsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "4 bits - binary - with dot counts - letter"
+            "Four (1 to 8) - Binary (0 or 1) - with dot counts - letter"
         )
 
     def test_subtitle_4_lightbulb_dots_a4(self):
@@ -45,7 +45,7 @@ class BinaryWindowsResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryWindowsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "4 bits - lightbulb - with dot counts - a4"
+            "Four (1 to 8) - Lightbulb (off or on) - with dot counts - a4"
         )
 
     def test_subtitle_4_lightbulb_dots_letter(self):
@@ -53,7 +53,7 @@ class BinaryWindowsResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryWindowsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "4 bits - lightbulb - with dot counts - letter"
+            "Four (1 to 8) - Lightbulb (off or on) - with dot counts - letter"
         )
 
     def test_subtitle_4_binary_no_dots_a4(self):
@@ -61,7 +61,7 @@ class BinaryWindowsResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryWindowsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "4 bits - binary - without dot counts - a4"
+            "Four (1 to 8) - Binary (0 or 1) - without dot counts - a4"
         )
 
     def test_subtitle_4_binary_no_dots_letter(self):
@@ -69,7 +69,7 @@ class BinaryWindowsResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryWindowsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "4 bits - binary - without dot counts - letter"
+            "Four (1 to 8) - Binary (0 or 1) - without dot counts - letter"
         )
 
     def test_subtitle_4_lightbulb_no_dots_a4(self):
@@ -77,7 +77,7 @@ class BinaryWindowsResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryWindowsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "4 bits - lightbulb - without dot counts - a4"
+            "Four (1 to 8) - Lightbulb (off or on) - without dot counts - a4"
         )
 
     def test_subtitle_4_lightbulb_no_dots_letter(self):
@@ -85,7 +85,7 @@ class BinaryWindowsResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryWindowsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "4 bits - lightbulb - without dot counts - letter"
+            "Four (1 to 8) - Lightbulb (off or on) - without dot counts - letter"
         )
 
     def test_subtitle_8_binary_dots_a4(self):
@@ -93,7 +93,7 @@ class BinaryWindowsResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryWindowsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "8 bits - binary - with dot counts - a4"
+            "Eight (1 to 128) - Binary (0 or 1) - with dot counts - a4"
         )
 
     def test_subtitle_8_binary_dots_letter(self):
@@ -101,7 +101,7 @@ class BinaryWindowsResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryWindowsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "8 bits - binary - with dot counts - letter"
+            "Eight (1 to 128) - Binary (0 or 1) - with dot counts - letter"
         )
 
     def test_subtitle_8_lightbulb_dots_a4(self):
@@ -109,7 +109,7 @@ class BinaryWindowsResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryWindowsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "8 bits - lightbulb - with dot counts - a4"
+            "Eight (1 to 128) - Lightbulb (off or on) - with dot counts - a4"
         )
 
     def test_subtitle_8_lightbulb_dots_letter(self):
@@ -117,7 +117,7 @@ class BinaryWindowsResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryWindowsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "8 bits - lightbulb - with dot counts - letter"
+            "Eight (1 to 128) - Lightbulb (off or on) - with dot counts - letter"
         )
 
     def test_subtitle_8_binary_no_dots_a4(self):
@@ -125,7 +125,7 @@ class BinaryWindowsResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryWindowsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "8 bits - binary - without dot counts - a4"
+            "Eight (1 to 128) - Binary (0 or 1) - without dot counts - a4"
         )
 
     def test_subtitle_8_binary_no_dots_letter(self):
@@ -133,7 +133,7 @@ class BinaryWindowsResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryWindowsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "8 bits - binary - without dot counts - letter"
+            "Eight (1 to 128) - Binary (0 or 1) - without dot counts - letter"
         )
 
     def test_subtitle_8_lightbulb_no_dots_a4(self):
@@ -141,7 +141,7 @@ class BinaryWindowsResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryWindowsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "8 bits - lightbulb - without dot counts - a4"
+            "Eight (1 to 128) - Lightbulb (off or on) - without dot counts - a4"
         )
 
     def test_subtitle_8_lightbulb_no_dots_letter(self):
@@ -149,5 +149,5 @@ class BinaryWindowsResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryWindowsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "8 bits - lightbulb - without dot counts - letter"
+            "Eight (1 to 128) - Lightbulb (off or on) - without dot counts - letter"
         )
