@@ -21,7 +21,7 @@ class PianoKeysResourceGeneratorTest(BaseGeneratorTest):
         generator = PianoKeysResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "no labels - a4"
+            "Blank - a4"
         )
 
     def test_subtitle_no_letter(self):
@@ -29,7 +29,7 @@ class PianoKeysResourceGeneratorTest(BaseGeneratorTest):
         generator = PianoKeysResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "no labels - letter"
+            "Blank - letter"
         )
 
     def test_subtitle_type_1_a4(self):
@@ -37,7 +37,7 @@ class PianoKeysResourceGeneratorTest(BaseGeneratorTest):
         generator = PianoKeysResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "type-1 labels - a4"
+            "C, D, E, F, G, A, B - a4"
         )
 
     def test_subtitle_type_1_letter(self):
@@ -45,7 +45,7 @@ class PianoKeysResourceGeneratorTest(BaseGeneratorTest):
         generator = PianoKeysResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "type-1 labels - letter"
+            "C, D, E, F, G, A, B - letter"
         )
 
     def test_subtitle_type_2_a4(self):
@@ -53,7 +53,7 @@ class PianoKeysResourceGeneratorTest(BaseGeneratorTest):
         generator = PianoKeysResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "type-2 labels - a4"
+            "C, D, E, F, G, A, H - a4"
         )
 
     def test_subtitle_type_2_letter(self):
@@ -61,7 +61,7 @@ class PianoKeysResourceGeneratorTest(BaseGeneratorTest):
         generator = PianoKeysResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "type-2 labels - letter"
+            "C, D, E, F, G, A, H - letter"
         )
 
     def test_subtitle_type_3_a4(self):
@@ -69,7 +69,7 @@ class PianoKeysResourceGeneratorTest(BaseGeneratorTest):
         generator = PianoKeysResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "type-3 labels - a4"
+            "Do, Re, Mi, Fa, So, La, Ti - a4"
         )
 
     def test_subtitle_type_3_letter(self):
@@ -77,7 +77,7 @@ class PianoKeysResourceGeneratorTest(BaseGeneratorTest):
         generator = PianoKeysResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "type-3 labels - letter"
+            "Do, Re, Mi, Fa, So, La, Ti - letter"
         )
 
     def test_subtitle_type_4_a4(self):
@@ -85,7 +85,7 @@ class PianoKeysResourceGeneratorTest(BaseGeneratorTest):
         generator = PianoKeysResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "type-4 labels - a4"
+            "Do, Re, Mi, Fa, Sol, La, Si - a4"
         )
 
     def test_subtitle_type_4_letter(self):
@@ -93,5 +93,5 @@ class PianoKeysResourceGeneratorTest(BaseGeneratorTest):
         generator = PianoKeysResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "type-4 labels - letter"
+            "Do, Re, Mi, Fa, Sol, La, Si - letter"
         )
