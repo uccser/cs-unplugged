@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-20 04:28+0000\n"
-"PO-Revision-Date: 2018-08-21 20:46\n"
+"POT-Creation-Date: 2018-08-22 07:36+0000\n"
+"PO-Revision-Date: 2018-08-22 21:53\n"
 "Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -75,6 +75,24 @@ msgstr "Ja – Verbraucht viel schwarze Tinte, vermittelt aber einen deutlichere
 msgid "No - Print single sided."
 msgstr "Nein – Einseitig drucken."
 
+#: resources/generators/BinaryCardsResourceGenerator.py:104
+msgid "with numbers"
+msgstr "mit Zahlen"
+
+#: resources/generators/BinaryCardsResourceGenerator.py:106
+msgid "without numbers"
+msgstr "ohne Zahlen"
+
+#: resources/generators/BinaryCardsResourceGenerator.py:109
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:110
+msgid "with black back"
+msgstr "mit schwarzer Rückseite"
+
+#: resources/generators/BinaryCardsResourceGenerator.py:111
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:112
+msgid "without black back"
+msgstr "ohne schwarze Rückseite"
+
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:20
 #: resources/generators/BinaryWindowsResourceGenerator.py:15
 msgid "Four (1 to 8)"
@@ -98,6 +116,16 @@ msgstr "Anzahl der Bits"
 #: resources/generators/BinaryWindowsResourceGenerator.py:40
 msgid "Display Dot Counts"
 msgstr "Punktezahl anzeigen"
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:106
+#: resources/generators/BinaryWindowsResourceGenerator.py:192
+msgid "with dot counts"
+msgstr "mit Punktezahl"
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:108
+#: resources/generators/BinaryWindowsResourceGenerator.py:194
+msgid "without dot counts"
+msgstr "ohne Punktezahl"
 
 #: resources/generators/BinaryToAlphabetResourceGenerator.py:12
 msgid "Student"
@@ -169,6 +197,11 @@ msgstr "Leer"
 #: resources/generators/ModuloClockResourceGenerator.py:25
 msgid "Modulo"
 msgstr "Modulo"
+
+#: resources/generators/ModuloClockResourceGenerator.py:82
+#: resources/generators/SearchingCardsResourceGenerator.py:171
+msgid "blank"
+msgstr "leer"
 
 #: resources/generators/NumberHuntResourceGenerator.py:14
 msgid "Easy Numbers (2 digits)"
@@ -494,10 +527,6 @@ msgstr "Kreisen Sie auf diesem Blatt die Zahl ein, die Sie Ihrer Klasse zur Aufg
 msgid "Sorted numbers"
 msgstr "Sortierte Zahlen"
 
-#: resources/generators/SearchingCardsResourceGenerator.py:171
-msgid "blank"
-msgstr "leer"
-
 #: resources/generators/SearchingCardsResourceGenerator.py:178
 msgid "with helper sheet"
 msgstr "mit Hinweisblatt"
@@ -565,8 +594,8 @@ msgid "Hard Numbers (3 digits)"
 msgstr "Schwierige Zahlen (3-stellig)"
 
 #: resources/generators/SortingNetworkResourceGenerator.py:13
-msgid "None (Blank - Useful as template) "
-msgstr "Ohne (Leer – als Vorlage geeignet) "
+msgid "None (Blank - Useful as template)"
+msgstr "Ohne (Leer – als Vorlage geeignet)"
 
 #: resources/generators/TrainStationsResourceGenerator.py:9
 msgid "Circular"
@@ -1197,6 +1226,10 @@ msgstr "Ausdruck erstellen"
 #, python-format
 msgid "The download of this Printable includes %(copies_amount)s unique copies."
 msgstr "Der Download dieses Ausdrucks umfasst %(copies_amount)s Varianten."
+
+#: templates/resources/resource.html:42
+msgid "Download Printable"
+msgstr "Ausdruck herunterladen"
 
 #: templates/resources/resource.html:49
 msgid "Preview"
