@@ -30,8 +30,6 @@ Cada cero o uno se llama bit. Bit es la abreviatura de dígito binario (binary d
 
 8 bits agrupados forman un byte y los ordenadores almacenan los datos en bytes. Un byte es un número práctico de bits, ya que puede almacenar cosas como caracteres simples, números pequeños y una útil gama de colores, aunque normalmente la información se almacena usando grupos de bytes.
 
-{image file-path="img/topics/col_binary_bite_vs_byte.png"}
-
 {panel type="math"}
 
 # Vínculos matemáticos
