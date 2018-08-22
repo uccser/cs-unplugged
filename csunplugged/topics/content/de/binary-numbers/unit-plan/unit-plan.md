@@ -30,8 +30,6 @@ Jede Null oder Eins wird als Bit bezeichnet. Bit ist die Abkürzung für Binäre
 
 8 zusammengruppierte Bits werden als Byte bezeichnet und Computer speichern Daten in Bytes. Ein Byte ist eine praktische Anzahl von Bits, da es Dinge wie einfache Zeichen, kleine Zahlen und eine nützliche Palette an Farben speichern kann. Allerdings werden Daten normalerweise mithilfe Gruppen von Bytes gespeichert.
 
-{image file-path="img/topics/col_binary_bite_vs_byte.png"}
-
 {panel type="math"}
 
 # Mathematische Zusammenhänge
