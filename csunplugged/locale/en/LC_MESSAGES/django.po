@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-20 04:28+0000\n"
+"POT-Creation-Date: 2018-08-22 04:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1592,6 +1592,10 @@ msgstr ""
 #, python-format
 msgid ""
 "The download of this Printable includes %(copies_amount)s unique copies."
+msgstr ""
+
+#: templates/resources/resource.html:42
+msgid "Download Printable"
 msgstr ""
 
 #: templates/resources/resource.html:49
