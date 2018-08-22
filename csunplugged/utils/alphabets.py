@@ -8,6 +8,8 @@ SPACER = " "
 ALPHABETS = {
     # English
     "en": list(ascii_lowercase),
+    # Spanish
+    "es": list(ascii_lowercase) + ["ñ"],
     # German,
     "de": list(ascii_lowercase) + ["ä", "ö", "ü", "ß"],
     # te reo Māori

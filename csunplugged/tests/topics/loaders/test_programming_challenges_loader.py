@@ -4,7 +4,7 @@ from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 from django.utils import translation
 from topics.models import ProgrammingChallenge
 from topics.management.commands._ProgrammingChallengesLoader import ProgrammingChallengesLoader
-from utils.errors.MarkdownStyleError import MarkdownStyleError
+from utils.errors.VertoConversionError import VertoConversionError
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.CouldNotFindMarkdownFileError import CouldNotFindMarkdownFileError
@@ -174,7 +174,7 @@ class ProgrammingChallengesLoaderTest(BaseTestWithDB):
         self.test_data.create_programming_language(1)
         topic = self.test_data.create_topic(1)
         pc_loader = ProgrammingChallengesLoader(topic, structure_filename=config_file, base_path=self.base_path)
-        with self.assertRaises(MarkdownStyleError):
+        with self.assertRaises(VertoConversionError):
             pc_loader.load()
 
     def test_empty_data(self):
