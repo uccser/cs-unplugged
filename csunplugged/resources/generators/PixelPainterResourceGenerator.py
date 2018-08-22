@@ -5,7 +5,7 @@ from math import ceil
 from yattag import Doc
 import string
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 from resources.utils.resource_parameters import EnumResourceParameter
 
 METHOD_VALUES = {
@@ -405,7 +405,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         with tag("p"):
             text(_("This page should be kept secret from students."))
         with tag("h2"):
-            text(_("Page grid reference for image: {}").format(image_name))
+            text(_("Page grid reference for {} image").format(image_name))
         with tag("p"):
             text(_(
                 "Once pixels on each page are filled in correctly, "

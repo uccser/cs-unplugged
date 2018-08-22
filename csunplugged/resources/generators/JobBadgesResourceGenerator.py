@@ -2,7 +2,7 @@
 
 from PIL import Image, ImageDraw
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 from utils.TextBoxDrawer import TextBoxDrawer
 
 

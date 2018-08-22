@@ -5,7 +5,7 @@ from math import ceil
 from PIL import Image, ImageDraw, ImageFont
 from yattag import Doc
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 from resources.utils.resource_parameters import EnumResourceParameter, BoolResourceParameter
 IMAGE_PATH = "static/img/resources/searching-cards/{}-cards-{}.png"
 X_BASE_COORD = 1803
@@ -138,6 +138,9 @@ class SearchingCardsResourceGenerator(BaseResourceGenerator):
             with tag("h2"):
                 text(_("Sorted numbers"))
             with tag("p"):
+                with tag("em"):
+                    text(range_text)
+            with tag("p"):
                 numbers.sort()
                 red_number_jump = (len(numbers) + 1) // 4
                 text = ""
@@ -165,7 +168,7 @@ class SearchingCardsResourceGenerator(BaseResourceGenerator):
         number_cards = self.options["number_cards"].value
 
         if max_number == "blank":
-            range_text = _("blank")
+            range_text = _("Blank")
         elif max_number == "cards":
             range_text = _("{} to {}").format(MIN_VALUE, number_cards)
         else:
@@ -175,11 +178,10 @@ class SearchingCardsResourceGenerator(BaseResourceGenerator):
             help_text = _("with helper sheet")
         else:
             help_text = _("without helper sheet")
-
         text = " - ".join([
             _("{} cards").format(number_cards),
-            range_text,
-            help_text,
+            str(range_text),
+            str(help_text),
             super().subtitle
         ])
         return text

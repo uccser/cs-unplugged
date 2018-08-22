@@ -2,7 +2,7 @@
 
 from PIL import Image
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 from resources.utils.resource_parameters import EnumResourceParameter
 
 TRACKS_VALUES = {
@@ -47,7 +47,7 @@ class TrainStationsResourceGenerator(BaseResourceGenerator):
         Returns:
             text for subtitle (str).
         """
-        return "{} tracks - {}".format(
-            self.options["tracks"].value,
+        return "{} - {}".format(
+            TRACKS_VALUES[self.options["tracks"].value],
             super().subtitle
         )

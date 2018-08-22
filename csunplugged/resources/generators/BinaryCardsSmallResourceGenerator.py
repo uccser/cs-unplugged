@@ -3,7 +3,7 @@
 from PIL import Image, ImageDraw, ImageFont
 import os.path
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 from resources.utils.resource_parameters import EnumResourceParameter, BoolResourceParameter
 
 
@@ -103,15 +103,15 @@ class BinaryCardsSmallResourceGenerator(BaseResourceGenerator):
             text for subtitle (str)
         """
         if self.options["dot_counts"].value:
-            display_numbers_text = "with dot counts"
+            display_numbers_text = _("with dot counts")
         else:
-            display_numbers_text = "without dot counts"
+            display_numbers_text = _("without dot counts")
         if self.options["black_back"].value:
-            black_back_text = "with black back"
+            black_back_text = _("with black back")
         else:
-            black_back_text = "without black back"
-        text = "{} bits - {} - {} - {}".format(
-            self.options["number_bits"].value,
+            black_back_text = _("without black back")
+        text = "{} - {} - {} - {}".format(
+            NUMBER_BITS_VALUES[self.options["number_bits"].value],
             display_numbers_text,
             black_back_text,
             super().subtitle
