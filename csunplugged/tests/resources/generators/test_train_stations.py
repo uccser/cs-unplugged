@@ -21,7 +21,7 @@ class TrainStationsResourceGeneratorTest(BaseGeneratorTest):
         generator = TrainStationsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "circular tracks - a4"
+            "Circular - a4"
         )
 
     def test_subtitle_circular_letter(self):
@@ -29,7 +29,7 @@ class TrainStationsResourceGeneratorTest(BaseGeneratorTest):
         generator = TrainStationsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "circular tracks - letter"
+            "Circular - letter"
         )
 
     def test_subtitle_twisted_a4(self):
@@ -37,7 +37,7 @@ class TrainStationsResourceGeneratorTest(BaseGeneratorTest):
         generator = TrainStationsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "twisted tracks - a4"
+            "Twisted - a4"
         )
 
     def test_subtitle_twisted_letter(self):
@@ -45,5 +45,5 @@ class TrainStationsResourceGeneratorTest(BaseGeneratorTest):
         generator = TrainStationsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "twisted tracks - letter"
+            "Twisted - letter"
         )

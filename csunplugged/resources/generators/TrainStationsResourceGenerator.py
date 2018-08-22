@@ -47,7 +47,7 @@ class TrainStationsResourceGenerator(BaseResourceGenerator):
         Returns:
             text for subtitle (str).
         """
-        return "{} tracks - {}".format(
-            self.options["tracks"].value,
+        return "{} - {}".format(
+            TRACKS_VALUES[self.options["tracks"].value],
             super().subtitle
         )

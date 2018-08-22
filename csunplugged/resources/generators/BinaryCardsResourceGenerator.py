@@ -101,14 +101,14 @@ class BinaryCardsResourceGenerator(BaseResourceGenerator):
             text for subtitle (str)
         """
         if self.options["display_numbers"].value:
-            display_numbers_text = "with numbers"
+            display_numbers_text = _("with numbers")
         else:
-            display_numbers_text = "without numbers"
+            display_numbers_text = _("without numbers")
 
         if self.options["black_back"].value:
-            black_back_text = "with black back"
+            black_back_text = _("with black back")
         else:
-            black_back_text = "without black back"
+            black_back_text = _("without black back")
 
         text = "{} - {} - {}".format(
             display_numbers_text,

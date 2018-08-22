@@ -89,7 +89,7 @@ class BinaryToAlphabetResourceGenerator(BaseResourceGenerator):
             Text for subtitle (str).
         """
         text = "{} - {}".format(
-            self.options["worksheet_version"].value,
+            WORKSHEET_VERSION_VALUES[self.options["worksheet_version"].value],
             super().subtitle
         )
         return text
