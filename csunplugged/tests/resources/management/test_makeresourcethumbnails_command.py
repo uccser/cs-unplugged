@@ -2,6 +2,7 @@
 
 from tests.BaseTestWithDB import BaseTestWithDB
 from django.core import management
+from django.conf import settings
 from django.test import tag, override_settings
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
 
@@ -57,3 +58,17 @@ class MakeResourceThumnbailsCommandTest(BaseTestWithDB):
         )
         with self.assertRaises(TypeError):
             management.call_command("makeresourcethumbnails")
+
+    @override_settings(DJANGO_PRODUCTION=True)
+    def test_makeresourcethumbnails_command_single_resource_multiple_languages(self):
+        self.test_data.create_resource(
+            "resource1",
+            "Resource 1",
+            "Description of resource 1",
+            "BareResourceGenerator",
+        )
+        management.call_command("makeresourcethumbnails")
+        for language_code, _ in settings.PRODUCTION_LANGUAGES:
+            if language_code not in settings.INCONTEXT_L10N_PSEUDOLANGUAGES:
+                open(self.THUMBNAIL_PATH.format("resource1", language_code, "resource1-paper_size-a4.png"))
+                open(self.THUMBNAIL_PATH.format("resource1", language_code, "resource1-paper_size-letter.png"))
