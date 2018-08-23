@@ -1,10 +1,12 @@
 """Views for the resource application."""
 
+from os.path import join
 from urllib.parse import quote
 from django.conf import settings
 from django.http import HttpResponse, Http404
 from django.shortcuts import get_object_or_404, render
 from django.views import generic
+from django.utils.translation import get_language
 from resources.models import Resource
 from resources.utils.resource_pdf_cache import resource_pdf_cache
 from resources.utils.get_options_html import get_options_html
@@ -49,7 +51,20 @@ def resource(request, resource_slug):
     context["options_html"] = get_options_html(generator.get_options(), generator.get_local_options(), request.GET)
     context["resource"] = resource
     context["debug"] = settings.DEBUG
-    context["resource_thumbnail_base"] = "{}img/resources/{}/thumbnails/".format(settings.STATIC_URL, resource.slug)
+    if settings.DJANGO_PRODUCTION:
+        resource_language = get_language()
+        if resource_language in settings.INCONTEXT_L10N_PSEUDOLANGUAGES:
+            resource_language = "en"
+    else:
+        resource_language = "en"
+    context["resource_thumbnail_base"] = join(
+        settings.STATIC_URL,
+        "img/resources/",
+        resource.slug,
+        "thumbnails",
+        resource_language,
+        ""
+    )
     context["grouped_lessons"] = group_lessons_by_age(resource.lessons.all())
     context["copies_amount"] = settings.RESOURCE_COPY_AMOUNT
     if resource.thumbnail_static_path:
