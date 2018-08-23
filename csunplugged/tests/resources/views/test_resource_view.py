@@ -63,7 +63,7 @@ class ResourceViewTest(BaseTestWithDB):
         self.assertFalse(response.context["debug"])
         self.assertEqual(
             response.context["resource_thumbnail_base"],
-            "/staticfiles/img/resources/grid/thumbnails/"
+            "/staticfiles/img/resources/grid/thumbnails/en/"
         )
         self.assertFalse(response.context["grouped_lessons"])
         self.assertEqual(
