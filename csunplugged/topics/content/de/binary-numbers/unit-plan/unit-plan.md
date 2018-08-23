@@ -38,9 +38,7 @@ Das binäre Zahlensystem beruht auf der Basis 2. Es gibt also nur zwei Ziffern, 
 
 Menschen verwenden normalerweise das dezimale Zahlensystem, das auf der Basis 10 beruht. Hier haben wir daher zehn Ziffern, bevor wir zum nächsten Stellenwert übergehen: 0, 1, 2, 3, 4, 5, 6, 7, 8 und 9.
 
-{image file-path="img/topics/col_binary_CSU_boy_hands.png"}
-
-{image file-path="img/topics/col_binary_csu_girl_hands.png"}
+{image file-path="img/topics/binary_fingers.png"}
 
 {panel end}
 

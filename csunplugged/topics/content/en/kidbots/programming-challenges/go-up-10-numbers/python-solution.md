@@ -1,7 +1,7 @@
 ```python
 import random
 number = random.randint(0, 100)
-answer = input('What\'s 10 numbers after ' + str(number) + '?')
+answer = int(input("What's 10 numbers after " + str(number) + "? "))
 if answer == number + 10:
   print('Well done!')
 else:
