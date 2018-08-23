@@ -3,7 +3,7 @@
 from PIL import Image, ImageDraw
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 from utils.TextBoxDrawer import TextBoxDrawer
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 from resources.utils.resource_parameters import EnumResourceParameter
 
 BARCODE_LENGTH_VALUES = {
@@ -45,7 +45,7 @@ class BarcodeChecksumPosterResourceGenerator(BaseResourceGenerator):
 
         textbox_drawer.write_text_box(
             "title",
-            _("{} Digit Barcode".format(barcode_length)),
+            _("{} Digit Barcode").format(barcode_length),
             horiz_just="center",
         )
 
@@ -80,4 +80,4 @@ class BarcodeChecksumPosterResourceGenerator(BaseResourceGenerator):
             text for subtitle (str).
         """
         barcode_length = self.options["barcode_length"].value
-        return "{} digits - {}".format(barcode_length, super().subtitle)
+        return "{} - {}".format(BARCODE_LENGTH_VALUES[barcode_length], super().subtitle)

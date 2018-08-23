@@ -3,11 +3,11 @@
 from PIL import Image, ImageDraw, ImageFont
 from math import pi, sin, cos
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 from resources.utils.resource_parameters import EnumResourceParameter
 
 MODULO_NUMBER_VALUES = {
-    "1": "Blank",
+    "1": _("Blank"),
     "2": "2",
     "10": "10",
 }
@@ -79,7 +79,7 @@ class ModuloClockResourceGenerator(BaseResourceGenerator):
         """
         modulo_number = self.options["modulo_number"].value
         if modulo_number == "1":
-            modulo_text = "blank"
+            modulo_text = _("Blank")
         else:
             modulo_text = modulo_number
         return "{} - {}".format(

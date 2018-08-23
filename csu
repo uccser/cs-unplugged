@@ -61,6 +61,8 @@ defhelp 'dev [DEV_COMMAND]' 'Run a developer command.'
 
 # Start development environment
 cmd_start() {
+  export NGINX_UID="0"
+  export NGINX_GID="0"
   echo "Creating systems..."
   docker-compose up -d
   echo ""
@@ -179,12 +181,6 @@ defhelp -dev updatedata 'Run updatedata command.'
 dev_build() {
   echo "Building Docker images..."
   docker-compose build
-  echo
-  echo "Deleting untagged images..."
-  untagged_images=($(docker images --no-trunc | grep '<none>' | awk '{print $3}'))
-  if [[ ${#untagged_images[@]} -gt 0 ]]; then
-      docker rmi "${untagged_images[@]}"
-  fi
 }
 defhelp -dev build 'Build or rebuild Docker images.'
 
@@ -425,7 +421,12 @@ cmd="$1"
 shift
 if silent type "cmd_$cmd"; then
   "cmd_$cmd" "$@"
-  exit $?
+  code=$?
+  if [ "$cmd" != "end" ]; then
+    # Set all files to be owned by host for development
+    docker-compose exec django chown -R `id -u` .
+  fi
+  exit $code
 else
   echo -e "${RED}ERROR: Unknown command!${NC}"
   echo "Type './csu help' for available commands."

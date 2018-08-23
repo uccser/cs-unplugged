@@ -6,9 +6,9 @@ sorting-network-cards:
   generator-module: SortingNetworkCardsResourceGenerator
   thumbnail-static-path: img/resources/sorting-network-cards/thumbnail.png
   copies: false
-treasure-hunt:
-  generator-module: TreasureHuntResourceGenerator
-  thumbnail-static-path: img/resources/treasure-hunt/thumbnail.png
+number-hunt:
+  generator-module: NumberHuntResourceGenerator
+  thumbnail-static-path: img/resources/number-hunt/thumbnail.png
   copies: true
 binary-cards:
   generator-module: BinaryCardsResourceGenerator

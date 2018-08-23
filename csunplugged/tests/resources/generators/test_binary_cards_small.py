@@ -29,7 +29,7 @@ class BinaryCardsSmallResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryCardsSmallResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "4 bits - with dot counts - with black back - a4"
+            "Four (1 to 8) - with dot counts - with black back - a4"
         )
 
     def test_subtitle_4_dots_black_letter(self):
@@ -37,7 +37,7 @@ class BinaryCardsSmallResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryCardsSmallResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "4 bits - with dot counts - with black back - letter"
+            "Four (1 to 8) - with dot counts - with black back - letter"
         )
 
     def test_subtitle_4_no_dots_black_a4(self):
@@ -45,7 +45,7 @@ class BinaryCardsSmallResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryCardsSmallResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "4 bits - without dot counts - with black back - a4"
+            "Four (1 to 8) - without dot counts - with black back - a4"
         )
 
     def test_subtitle_4_no_dots_black_letter(self):
@@ -53,7 +53,7 @@ class BinaryCardsSmallResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryCardsSmallResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "4 bits - without dot counts - with black back - letter"
+            "Four (1 to 8) - without dot counts - with black back - letter"
         )
 
     def test_subtitle_4_dots_no_black_a4(self):
@@ -61,7 +61,7 @@ class BinaryCardsSmallResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryCardsSmallResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "4 bits - with dot counts - without black back - a4"
+            "Four (1 to 8) - with dot counts - without black back - a4"
         )
 
     def test_subtitle_4_dots_no_black_letter(self):
@@ -69,7 +69,7 @@ class BinaryCardsSmallResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryCardsSmallResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "4 bits - with dot counts - without black back - letter"
+            "Four (1 to 8) - with dot counts - without black back - letter"
         )
 
     def test_subtitle_4_no_dots_no_black_a4(self):
@@ -77,7 +77,7 @@ class BinaryCardsSmallResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryCardsSmallResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "4 bits - without dot counts - without black back - a4"
+            "Four (1 to 8) - without dot counts - without black back - a4"
         )
 
     def test_subtitle_4_no_dots_no_black_letter(self):
@@ -85,7 +85,7 @@ class BinaryCardsSmallResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryCardsSmallResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "4 bits - without dot counts - without black back - letter"
+            "Four (1 to 8) - without dot counts - without black back - letter"
         )
 
     def test_subtitle_8_dots_black_a4(self):
@@ -93,7 +93,7 @@ class BinaryCardsSmallResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryCardsSmallResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "8 bits - with dot counts - with black back - a4"
+            "Eight (1 to 128) - with dot counts - with black back - a4"
         )
 
     def test_subtitle_8_dots_black_letter(self):
@@ -101,7 +101,7 @@ class BinaryCardsSmallResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryCardsSmallResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "8 bits - with dot counts - with black back - letter"
+            "Eight (1 to 128) - with dot counts - with black back - letter"
         )
 
     def test_subtitle_8_no_dots_black_a4(self):
@@ -109,7 +109,7 @@ class BinaryCardsSmallResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryCardsSmallResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "8 bits - without dot counts - with black back - a4"
+            "Eight (1 to 128) - without dot counts - with black back - a4"
         )
 
     def test_subtitle_8_no_dots_black_letter(self):
@@ -117,7 +117,7 @@ class BinaryCardsSmallResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryCardsSmallResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "8 bits - without dot counts - with black back - letter"
+            "Eight (1 to 128) - without dot counts - with black back - letter"
         )
 
     def test_subtitle_8_dots_no_black_a4(self):
@@ -125,7 +125,7 @@ class BinaryCardsSmallResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryCardsSmallResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "8 bits - with dot counts - without black back - a4"
+            "Eight (1 to 128) - with dot counts - without black back - a4"
         )
 
     def test_subtitle_8_dots_no_black_letter(self):
@@ -133,7 +133,7 @@ class BinaryCardsSmallResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryCardsSmallResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "8 bits - with dot counts - without black back - letter"
+            "Eight (1 to 128) - with dot counts - without black back - letter"
         )
 
     def test_subtitle_8_no_dots_no_black_a4(self):
@@ -141,7 +141,7 @@ class BinaryCardsSmallResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryCardsSmallResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "8 bits - without dot counts - without black back - a4"
+            "Eight (1 to 128) - without dot counts - without black back - a4"
         )
 
     def test_subtitle_8_no_dots_no_black_letter(self):
@@ -149,7 +149,7 @@ class BinaryCardsSmallResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryCardsSmallResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "8 bits - without dot counts - without black back - letter"
+            "Eight (1 to 128) - without dot counts - without black back - letter"
         )
 
     def test_subtitle_12_dots_black_a4(self):
@@ -157,7 +157,7 @@ class BinaryCardsSmallResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryCardsSmallResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "12 bits - with dot counts - with black back - a4"
+            "Twelve (1 to 2048) - with dot counts - with black back - a4"
         )
 
     def test_subtitle_12_dots_black_letter(self):
@@ -165,7 +165,7 @@ class BinaryCardsSmallResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryCardsSmallResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "12 bits - with dot counts - with black back - letter"
+            "Twelve (1 to 2048) - with dot counts - with black back - letter"
         )
 
     def test_subtitle_12_no_dots_black_a4(self):
@@ -173,7 +173,7 @@ class BinaryCardsSmallResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryCardsSmallResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "12 bits - without dot counts - with black back - a4"
+            "Twelve (1 to 2048) - without dot counts - with black back - a4"
         )
 
     def test_subtitle_12_no_dots_black_letter(self):
@@ -181,7 +181,7 @@ class BinaryCardsSmallResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryCardsSmallResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "12 bits - without dot counts - with black back - letter"
+            "Twelve (1 to 2048) - without dot counts - with black back - letter"
         )
 
     def test_subtitle_12_dots_no_black_a4(self):
@@ -189,7 +189,7 @@ class BinaryCardsSmallResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryCardsSmallResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "12 bits - with dot counts - without black back - a4"
+            "Twelve (1 to 2048) - with dot counts - without black back - a4"
         )
 
     def test_subtitle_12_dots_no_black_letter(self):
@@ -197,7 +197,7 @@ class BinaryCardsSmallResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryCardsSmallResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "12 bits - with dot counts - without black back - letter"
+            "Twelve (1 to 2048) - with dot counts - without black back - letter"
         )
 
     def test_subtitle_12_no_dots_no_black_a4(self):
@@ -205,7 +205,7 @@ class BinaryCardsSmallResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryCardsSmallResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "12 bits - without dot counts - without black back - a4"
+            "Twelve (1 to 2048) - without dot counts - without black back - a4"
         )
 
     def test_subtitle_12_no_dots_no_black_letter(self):
@@ -213,5 +213,5 @@ class BinaryCardsSmallResourceGeneratorTest(BaseGeneratorTest):
         generator = BinaryCardsSmallResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "12 bits - without dot counts - without black back - letter"
+            "Twelve (1 to 2048) - without dot counts - without black back - letter"
         )

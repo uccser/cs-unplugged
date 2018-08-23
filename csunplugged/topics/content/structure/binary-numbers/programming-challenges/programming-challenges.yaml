@@ -3,8 +3,8 @@ binary-numbers-no-calculations:
   challenge-number: 1
   difficulty-level: 1
   programming-languages:
-    - python
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-sequencing
     - programming-explain-output
@@ -15,8 +15,8 @@ binary-numbers-using-variable:
   challenge-number: 2
   difficulty-level: 1
   programming-languages:
-    - python
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-sequencing
     - programming-describe-variables
@@ -27,8 +27,8 @@ binary-numbers-using-variables-as-operator:
   challenge-number: 3
   difficulty-level: 1
   programming-languages:
-    - python
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-sequencing
     - programming-outline-variable-updates
@@ -66,6 +66,7 @@ number-cards-display:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
@@ -77,6 +78,7 @@ dots-right-left:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
@@ -89,6 +91,7 @@ dots-largest-to-1:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
@@ -100,6 +103,7 @@ left-right-given-largest:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
@@ -113,6 +117,7 @@ count-5-bw-no-loop:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
@@ -124,6 +129,7 @@ count-5-bw-using-loop:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
@@ -136,6 +142,7 @@ count-5-bw-one-input-no-loop:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
@@ -148,6 +155,7 @@ count-5-bw-one-input-using-loop:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
@@ -161,6 +169,7 @@ count-bw-one-input-using-loop:
   difficulty-level: 3
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
@@ -174,6 +183,7 @@ cards-given-number:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
@@ -185,6 +195,7 @@ cards-given-number-one-line:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
@@ -197,6 +208,7 @@ number-bits-representing-number:
   difficulty-level: 3
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
@@ -208,6 +220,7 @@ binary-cards-representing-number:
   difficulty-level: 3
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
@@ -220,6 +233,7 @@ binary-cards-representing-any-number:
   difficulty-level: 3
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
@@ -232,6 +246,7 @@ decimal-to-binary:
   difficulty-level: 3
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
@@ -244,6 +259,7 @@ decimal-to-binary-alternative:
   difficulty-level: 3
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
@@ -256,6 +272,7 @@ binary-notes-representing-number:
   difficulty-level: 3
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
@@ -268,6 +285,7 @@ binary-notes-representing-any-number:
   difficulty-level: 3
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-describe-variables

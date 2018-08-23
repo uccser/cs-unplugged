@@ -30,15 +30,33 @@ def resize_encode_resource_images(paper_size, data):
     # Resize images to reduce file size
     for index in range(len(data)):
         if data[index]["type"] == "image":
-            image = data[index]["data"]
-            (width, height) = image.size
-            if height > max_pixel_height:
-                ratio = max_pixel_height / height
-                width *= ratio
-                height *= ratio
-                image = image.resize((int(width), int(height)), Image.ANTIALIAS)
-            # Convert from Image object to base64 string
-            image_buffer = BytesIO()
-            image.save(image_buffer, format="PNG")
-            data[index]["data"] = base64.b64encode(image_buffer.getvalue())
+            data[index]["data"] = resize_encode_resource_image(data[index]["data"], max_pixel_height)
+        elif data[index]["type"] == "resource-number-hunt":
+            image, html = data[index]["data"]
+            data[index]["data"] = [resize_encode_resource_image(image, max_pixel_height), html]
     return data
+
+
+def resize_encode_resource_image(image, max_pixel_height):
+    """Process image pages in resource.
+
+    - Resizes image to required paper size.
+    - Encodes image in base64 for PDF rendering.
+
+    Args:
+        image (Image): Image to resize.
+        max_pixel_height (int): Maximum height of image.
+
+    Returns:
+        Base64 of resized image.
+    """
+    (width, height) = image.size
+    if height > max_pixel_height:
+        ratio = max_pixel_height / height
+        width *= ratio
+        height *= ratio
+        image = image.resize((int(width), int(height)), Image.ANTIALIAS)
+    # Convert from Image object to base64 string
+    image_buffer = BytesIO()
+    image.save(image_buffer, format="PNG")
+    return base64.b64encode(image_buffer.getvalue())

@@ -1,0 +1,5 @@
+---
+binary-cards:
+  description: Un conjunto para la demostración de clase.
+binary-cards-small:
+  description: Un conjunto de cartas por alumno.

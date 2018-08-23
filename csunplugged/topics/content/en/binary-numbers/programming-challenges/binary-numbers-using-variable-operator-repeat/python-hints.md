@@ -1,7 +1,3 @@
--   The `print()` statement allows you to display text or values within the
-    parentheses on the screen.
-    For example: `print(100)` would display `100` on the screen.
--   The numbers that are needed to be displayed are given, try collecting
-	them together as a group.
--   The `for` loop can be used to loop over a list.
-
+-   Create a variable called `number_of_dots` and set it equal to a value to start
+-   Display the value of the variable using the `python:print()` function
+-   Use a for loop to display the variable and change its value 5 times

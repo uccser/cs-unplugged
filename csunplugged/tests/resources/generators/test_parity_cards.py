@@ -21,7 +21,7 @@ class ParityCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = ParityCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "black back - a4"
+            "Black - a4"
         )
 
     def test_subtitle_black_letter(self):
@@ -29,7 +29,7 @@ class ParityCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = ParityCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "black back - letter"
+            "Black - letter"
         )
 
     def test_subtitle_blue_a4(self):
@@ -37,7 +37,7 @@ class ParityCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = ParityCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "blue back - a4"
+            "Blue - a4"
         )
 
     def test_subtitle_blue_letter(self):
@@ -45,7 +45,7 @@ class ParityCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = ParityCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "blue back - letter"
+            "Blue - letter"
         )
 
     def test_subtitle_green_a4(self):
@@ -53,7 +53,7 @@ class ParityCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = ParityCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "green back - a4"
+            "Green - a4"
         )
 
     def test_subtitle_green_letter(self):
@@ -61,7 +61,7 @@ class ParityCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = ParityCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "green back - letter"
+            "Green - letter"
         )
 
     def test_subtitle_purple_a4(self):
@@ -69,7 +69,7 @@ class ParityCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = ParityCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "purple back - a4"
+            "Purple - a4"
         )
 
     def test_subtitle_purple_letter(self):
@@ -77,7 +77,7 @@ class ParityCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = ParityCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "purple back - letter"
+            "Purple - letter"
         )
 
     def test_subtitle_red_a4(self):
@@ -85,7 +85,7 @@ class ParityCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = ParityCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "red back - a4"
+            "Red - a4"
         )
 
     def test_subtitle_red_letter(self):
@@ -93,5 +93,5 @@ class ParityCardsResourceGeneratorTest(BaseGeneratorTest):
         generator = ParityCardsResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "red back - letter"
+            "Red - letter"
         )

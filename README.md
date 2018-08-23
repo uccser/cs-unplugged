@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://www.csunplugged.org/">
-    <img src="https://cloud.githubusercontent.com/assets/8001048/25562071/9c90501a-2dcf-11e7-959a-bf15dfee8362.png" alt="CS Unplugged" width=428 height=120>
+    <img src="https://cloud.githubusercontent.com/assets/8001048/25562071/9c90501a-2dcf-11e7-959a-bf15dfee8362.png" alt="CS Unplugged" width=342 height=96>
   </a>
 
   <p align="center">
@@ -9,9 +9,19 @@
     <br>
     <a href="https://www.csunplugged.org/">
       Production website
-    </a> (<code>master</code> branch)
+    </a>
+    (<code>master</code> branch)
+    <a href="https://travis-ci.org/uccser/cs-unplugged">
+      <img src="https://travis-ci.org/uccser/cs-unplugged.svg?branch=master" alt="Master Build Status" />
+    </a>
     <br>
-    <a href="https://cs-unplugged-dev.appspot.com/">Development website</a> (<code>develop</code> branch)
+    <a href="https://cs-unplugged-dev.appspot.com/">
+      Development website
+    </a>
+    (<code>develop</code> branch)
+    <a href="https://travis-ci.org/uccser/cs-unplugged">
+      <img src="https://travis-ci.org/uccser/cs-unplugged.svg?branch=develop" alt="Develop Build Status" />
+    </a>
   </p>
 </p>
 

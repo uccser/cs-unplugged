@@ -9,7 +9,6 @@
 {% endblock title %}
 
 {% block breadcrumbs %}
-  {% breadcrumb "Home" "/" %}
   {% breadcrumb "Printables" "resources:index" %}
 {% endblock breadcrumbs %}
 
@@ -30,9 +29,12 @@
     <div class="row">
       {% for resource in all_resources %}
         <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
-          <a class="link-item no-text-decoration d-block h-100 py-2 text-center" href="{% url 'resources:resource' resource.slug %}">
+          <a class="link-item no-text-decoration d-block h-100 py-2 text-center{% if not resource.translation_available %} unavailable{% endif %}" href="{% url 'resources:resource' resource.slug %}">
             <img class="border-thin" src="{% static resource.thumbnail_static_path %}" alt="Thumbnail of resource">
             <p class="mb-0 mt-2"><strong>{{ resource.name }}</strong></p>
+            {% if not resource.translation_available %}
+              {% include "generic/not-available-badge.html" %}
+            {% endif %}
           </a>
         </div>
       {% endfor %}

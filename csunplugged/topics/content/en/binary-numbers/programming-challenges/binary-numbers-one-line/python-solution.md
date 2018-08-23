@@ -1,5 +1,8 @@
 ```python
-numbers_to_display = ["1","2", "4", "8", "16"]
-output = ",".join(numbers_to_display)
-print(output)
+number_of_dots = 1
+binary_cards = ''
+for i in range(0, 5):
+  binary_cards = binary_cards + str(number_of_dots) + ', '
+  number_of_dots = number_of_dots * 2
+print(binary_cards)
 ```

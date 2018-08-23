@@ -38,8 +38,6 @@ crwdns18303:0crwdne18303:0 crwdns18304:0crwdne18304:0
 
 *BlockTag: crwdns18305:0crwdne18305:0*
 
-{image file-path="img/topics/col_binary_bite_vs_byte.png"}
-
 *BlockTag: crwdns19039:0crwdne19039:0*
 
 {panel type="math"}

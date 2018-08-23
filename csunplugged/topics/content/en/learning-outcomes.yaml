@@ -19,7 +19,7 @@ binary-explain-off-on:
   text: Explain why a particular card (bit) must be turned off or on for a given number.
 
 binary-predict-bit-value:
-  text: Predict what value the next card (bit) e.g. the last bit value is 16, what is the next one?
+  text: Predict the value of the next binary bit (card).
 
 binary-explain-doubling:
   text: Explain why we only need one more bit to represent twice as many numbers.
@@ -28,7 +28,7 @@ binary-recognise-alphabet-bits:
   text: Recognise how computers represent alphabet characters as bits using a simplified method.
 
 binary-create-message-converting:
-  text: Create your own message by converting alphabet characters to decimal numbers then to binary.
+  text: Create their own message by converting alphabet characters to decimal numbers then to binary.
 
 binary-interpret-message-binary:
   text: Interpret a message using binary.
@@ -56,7 +56,8 @@ drama-create-video-binary:
 # ENGLISH LEARNING OUTCOMES
 
 speaking-clear-instructions-binary-cards:
-  text: Give clear instructions to explain how the binary cards can show any number between 0
+  text: Give clear instructions to explain how the binary cards can show any number between 0 and 63
+
 # ERROR DETECTION AND CORRRECTION LEARNING OUTCOMES
 
 error-describe-steps-to-find-card:
@@ -168,7 +169,7 @@ programming-describe-variable-output:
   text: Describe how a variable can be displayed as an output.
 
 programming-describe-function:
-  text: Describe the reason why you wrote a function in your program.
+  text: Describe the reason why you included a function in your program.
 
 programming-identify-loop:
   text: Identify how and when to use a loop to repeat a set of instructions.
@@ -204,7 +205,7 @@ programming-identify-list-store-data:
   text: Identify when to use a list to store a set of data.
 
 programming-show-item-specified-position-list:
-  text: Show how to access an the item at a specified position in a list.
+  text: Show how to access an item at a specified position in a list.
 
 # SEARCHING ALGORITHMS LEARNING OUTCOMES
 

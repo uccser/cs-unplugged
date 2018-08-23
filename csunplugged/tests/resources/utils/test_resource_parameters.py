@@ -110,32 +110,32 @@ class ResourceParametersTest(BaseTest):
         html = param.html_element()
         self.assertIsInstance(html, etree._Element)
         self.assertEqual("fieldset", html.tag)
-        self.assertEqual(7, len(html))  # legend, (input, label, br) X 2
+        self.assertEqual(3, len(html))  # legend, div, div
 
         self.assertEqual("legend", html[0].tag)
         self.assertEqual("option1 description", html[0].text)
 
-        self.assertEqual("input", html[1].tag)
-        self.assertEqual("option1", html[1].get("name"))
-        self.assertEqual("value1", html[1].get("value"))
-        self.assertEqual("radio", html[1].get("type"))
-        self.assertEqual(None, html[1].get("checked"))  # Not the default
+        self.assertEqual("div", html[1].tag)
 
-        self.assertEqual("label", html[2].tag)
-        self.assertEqual("Value 1", html[2].text)
+        self.assertEqual("input", html[1][0].tag)
+        self.assertEqual("option1", html[1][0].get("name"))
+        self.assertEqual("value1", html[1][0].get("value"))
+        self.assertEqual("radio", html[1][0].get("type"))
+        self.assertEqual(None, html[1][0].get("checked"))  # Not the default
 
-        self.assertEqual("br", html[3].tag)
+        self.assertEqual("label", html[1][1].tag)
+        self.assertEqual("Value 1", html[1][1].text)
 
-        self.assertEqual("input", html[4].tag)
-        self.assertEqual("option1", html[1].get("name"))
-        self.assertEqual("value2", html[4].get("value"))
-        self.assertEqual("radio", html[4].get("type"))
-        self.assertEqual("checked", html[4].get("checked"))  # default
+        self.assertEqual("div", html[2].tag)
 
-        self.assertEqual("label", html[5].tag)
-        self.assertEqual("Value 2", html[5].text)
+        self.assertEqual("input", html[2][0].tag)
+        self.assertEqual("option1", html[2][0].get("name"))
+        self.assertEqual("value2", html[2][0].get("value"))
+        self.assertEqual("radio", html[2][0].get("type"))
+        self.assertEqual("checked", html[2][0].get("checked"))  # default
 
-        self.assertEqual("br", html[6].tag)
+        self.assertEqual("label", html[2][1].tag)
+        self.assertEqual("Value 2", html[2][1].text)
 
     def test_enum_resource_parameter_process_value_valid_value(self):
         param = EnumResourceParameter(values={"value1": "Value 1"})

@@ -11,7 +11,11 @@ from resources.utils.resource_parameters import (
     BoolResourceParameter,
 )
 
-VALID_DATA_TYPES = {"html": str, "image": Image}
+VALID_DATA_TYPES = {
+    "html": str,
+    "image": Image,
+    "resource-number-hunt": list,
+}
 
 
 class BaseGeneratorTest(BaseTest):

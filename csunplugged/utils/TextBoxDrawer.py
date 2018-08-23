@@ -22,7 +22,10 @@ DEFAULT_FONT_OVERRIDES = {
 DEFAULT_FONT_SIZE = 20
 DEFAULT_COLOR = (0, 0, 0)
 
+# TODO: Automate detection of supported characters in TextBoxDrawer
+# https://github.com/uccser/cs-unplugged/issues/993
 FONT_MAX_ORD = {
+    "NotoSans-Regular": 255,
     "PatrickHand-Regular": 255,
 }
 

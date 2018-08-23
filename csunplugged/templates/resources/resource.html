@@ -5,7 +5,6 @@
 {% load render_html_field %}
 
 {% block breadcrumbs %}
-  {% breadcrumb "Home" "/" %}
   {% breadcrumb "Printables" "resources:index" %}
   {% breadcrumb resource.name "resources:resource" resource.slug %}
 {% endblock breadcrumbs %}
@@ -20,7 +19,7 @@
 {% endblock page_heading %}
 
 {% block left_column_content %}
-  <h2>Create Printable</h2>
+  <h2>{% trans "Create Printable" %}</h2>
 
   <form action="{% url 'resources:generate' resource.slug %}" method="get"{% if not debug %} target="_blank"{% endif %} id="resource-generation-form">
     {% block generation_form %}
@@ -40,7 +39,7 @@
       {% endblocktrans %}
       </div>
       {% endif %}
-      <input type="submit" value="Download Resource" class="btn btn-outline-primary mb-3"/>
+      <input type="submit" value="{% trans "Download Printable" %}" class="btn btn-outline-primary mb-3"/>
     {% endif %}
   </form>
 {% endblock left_column_content %}
@@ -49,7 +48,14 @@
   {% if thumbnail %}
     <h2>{% trans "Preview" %}</h2>
     {% load static %}
-    <img id="resource-thumbnail" class="img-thumbnail">
+    <figure class="figure">
+      <img id="resource-thumbnail" class="figure-img img-thumbnail img-fluid">
+      {% if LANGUAGE_CODE != "en" %}
+        <figcaption class="figure-caption text-center">
+          {% trans "Preview shows English version" %}
+        </figcaption>
+      {% endif %}
+    </figure>
   {% endif %}
 {% endblock right_column_content %}
 
@@ -68,7 +74,7 @@
       <tbody>
         {% for age_group, lessons in grouped_lessons.items %}
           {% for lesson in lessons %}
-            <tr class="align-middle">
+            <tr class="align-middle{% if not lesson.translation_available %} table-active unavailable{% endif %}">
               <td class="text-center">
                 <a href="{% url 'topics:topic' lesson.topic.slug %}">
                   {{ lesson.topic.name }}
@@ -83,6 +89,10 @@
               <td>
                 <a href="{% url 'topics:lesson' lesson.topic.slug lesson.unit_plan.slug lesson.slug %}">
                   <strong>{{ lesson.name }}</strong>
+                  {% if not lesson.translation_available %}
+                    <br>
+                    {% include "generic/not-available-badge.html" %}
+                  {% endif %}
                 </a>
               </td>
             </tr>

@@ -1,0 +1,3 @@
+# Números binarios
+
+Hoy en día, los ordenadores usan dígitos para representar información - por eso se les llama sistemas digitales. La manera más sencilla y común de representar dígitos es el sistema numérico binario, con solo dos dígitos (usualmente escritos como 0 y 1). Se le llama binario porque solo se usan dos dígitos diferentes, o dos estados. Esta unidad y estas lecciones exploran el funcionamiento del sistema binario y por qué es importante entender cómo se representan los datos.

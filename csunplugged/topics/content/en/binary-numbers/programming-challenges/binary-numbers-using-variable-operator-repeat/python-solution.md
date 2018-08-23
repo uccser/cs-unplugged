@@ -1,5 +1,6 @@
 ```python
-numbers_to_display = [1,2,4,8,16]
-for number in numbers_to_display:
-	print(number)
+number_of_dots = 1
+for i in range(0, 5):
+  print(number_of_dots)
+  number_of_dots = number_of_dots * 2
 ```
