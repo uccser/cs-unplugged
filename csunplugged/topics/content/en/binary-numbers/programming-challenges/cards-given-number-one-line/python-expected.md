@@ -7,5 +7,5 @@ Please enter a number less than or equal to 31:
 For the input `32` the code will output:
 ```
 Please enter a number less than or equal to 31:
-Please chose a number less than or equal to 31.
+Please choose a number less than or equal to 31.
 ```
