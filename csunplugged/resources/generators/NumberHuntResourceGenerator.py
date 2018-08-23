@@ -106,7 +106,7 @@ INSTRUCTIONS_HTML = _("""
     <strong>My total guesses:</strong> _____<br>
     <strong>Opponent's total guesses:</strong> _____
 </p>
-""".strip())
+""")
 
 
 class NumberHuntResourceGenerator(BaseResourceGenerator):
