@@ -1,0 +1,205 @@
+---
+binary-convert-decimal:
+  text: Realizar una demostración de cómo funciona el sistema numérico binario convirtiendo cualquier número decimal en un número binario.
+binary-justify-zeros-and-ones:
+  text: Justificar por qué no hay 0 y 1 reales dando vueltas dentro de un ordenador.
+binary-argue-zeros-and-ones-stored:
+  text: Argumentar que los 0 y los 1 siguen siendo una forma correcta de explicar lo que hay almacenado en el ordenador.
+binary-explain-different-states:
+  text: Explicar por qué podemos usar dos estados o cosas diferentes para representar el sistema binario; no tienen que ser solo 0 y 1.
+binary-explain-logic-one-bit:
+  text: Explicar la lógica de por qué el bit de la derecha debe representar un uno.
+binary-explain-off-on:
+  text: Explicar por qué una carta en particular (bit) debe estar desactivada o activada para un número determinado.
+binary-predict-bit-value:
+  text: Predecir el valor del siguiente bit binario (carta).
+binary-explain-doubling:
+  text: Explicar por qué solo necesitamos un bit más para representar el doble de números.
+binary-recognise-alphabet-bits:
+  text: Reconocer cómo los ordenadores representan los caracteres del alfabeto como bits utilizando un método simplificado.
+binary-create-message-converting:
+  text: Crear su propio mensaje convirtiendo caracteres del alfabeto a números decimales y luego a binario.
+binary-interpret-message-binary:
+  text: Interpretar un mensaje usando binario.
+binary-explain-codes-alphabets:
+  text: Explicar cómo se pueden crear códigos para alfabetos más grandes que incluyan también mayúsculas, signos de puntuación, símbolos y diacríticos (p. ej. macrones, acentos).
+binary-make-play-instructions-binary:
+  text: Representar una obra de teatro que dé instrucciones sobre cómo representar un número en binario.
+binary-identify-opposite-pairs:
+  text: Identificar pares opuestos como una cara feliz y una triste.
+binary-match-letters-numbers:
+  text: Emparejar las letras del alfabeto con los números que las representan.
+binary-count-highest-number:
+  text: Contar desde el número más alto para encontrar el número total de puntos en las cartas binarias.
+drama-create-video-binary:
+  text: Crear un vídeo instructivo que describa cómo contar usando el sistema numérico binario.
+speaking-clear-instructions-binary-cards:
+  text: Dar instrucciones claras para explicar cómo las cartas binarias pueden mostrar cualquier número entre 0 y 63
+error-describe-steps-to-find-card:
+  text: Describir los pasos necesarios para averiguar cómo encontrar la carta que está volteada.
+error-explain-each-card-bit:
+  text: Explicar que cada carta es un bit y que las cartas pueden representar datos.
+error-explain-chose-parity-card:
+  text: Explicar por qué eligieron cada bit extra (carta) al establecer una columna/fila de paridad.
+error-explain-steps-product-code-checksum:
+  text: Explicar los pasos que debes seguir para calcular la suma de comprobación del código de un producto.
+error-discuss-checksum-algorithm-12-13-product-code:
+  text: Discutir por qué el algoritmo de la suma de comprobación funciona tanto para los códigos de producto de 12 dígitos como para los de 13.
+error-explain-checksum-algorithm:
+  text: Explicar por qué el algoritmo de la suma de comprobación es tan fiable.
+error-follow-steps-find-card-turned-over:
+  text: Seguir los pasos necesarios para averiguar cómo encontrar el bit (carta) que estaba volteado en el truco de paridad.
+error-explain-group-numbers:
+  text: Explicar cómo agrupar los números en números pares o impares.
+error-recognise-groups-of-5:
+  text: Reconocer grupos de 5 y contar de cinco en cinco
+error-demonstrate-count-to-5:
+  text: Demostrar cómo contar hasta 5 haciendo que su conteo coincida con las cartas.
+language-discuss-storing-characters:
+  text: Discutir por qué es importante poder almacenar más que el alfabeto inglés estándar.
+numeracy-adding-given-number:
+  text: Añadir números a una cantidad dada.
+numeracy-identify-even-odd:
+  text: Identificar números pares e impares explicando por qué el número más a la derecha es diferente a los otros.
+numeracy-discuss-count-zeros-ones:
+  text: Discutir por qué es posible contar hasta cualquier número usando solo 0 y 1.
+numeracy-explain-squaring:
+  text: Explicar cómo al entender cómo aumentan los números binarios se respalda tu conocimiento del valor posicional.
+numeracy-compare-base10-base2:
+  text: Comparar los sistemas de numeración posicional de base 10 (nuestro sistema numérico) y base 2 (binario).
+numeracy-identify-larger-number:
+  text: Identificar qué número es mayor al comparar dos números.
+numeracy-count-by-pointing:
+  text: Contar con precisión señalando cada artículo.
+numeracy-recognise-patterns:
+  text: Reconocer patrones para los números del 1 al 8.
+numeracy-recognise-number-alphabet-order:
+  text: Comprender que el alfabeto está en un orden y los números también.
+numeracy-explain-even-odd-parity-problem:
+  text: Explicar cómo al saber lo que significan los números impares y pares se puede resolver el problema de la paridad.
+numeracy-describe-rows-columns:
+  text: Describir qué son las filas y qué son las columnas.
+numeracy-discuss-changing-one-card-state:
+  text: Discutir por qué al cambiar una carta cambiará el estado de la fila y la columna en la que se encuentra.
+numeracy-explain-modulo:
+  text: Explicar cómo funciona el operador módulo.
+numeracy-identify-modulo-everyday-life:
+  text: Identificar dónde se produce el módulo en la vida cotidiana.
+numeracy-recognise-numbers-represented:
+  text: Reconocer que los números se pueden representar de diferentes maneras.
+numeracy-discuss-modulo-understanding-remainders:
+  text: Discutir cómo al conocer el funcionamiento del módulo se respalda tu conocimiento de los restos.
+programming-explain-sequencing:
+  text: Explicar cómo funciona la secuencia en programación.
+programming-explain-output:
+  text: Explicar por qué un programa da el resultado que da.
+programming-explain-variable-name:
+  text: Explicar por qué es importante elegir un buen nombre para una variable.
+programming-describe-variables:
+  text: Describir cómo las variables almacenan valores y cómo se usan en tu programa.
+programming-describe-mathematical-operations:
+  text: Describir cómo has usado operaciones matemáticas en tu programa.
+programming-outline-variable-updates:
+  text: Describir cómo el almacenamiento de valores en una variable se actualiza debido al código que has utilizado.
+programming-describe-variable-output:
+  text: Describir cómo una variable se puede mostrar como una salida.
+programming-describe-function:
+  text: Describir la razón por la que has incluido una función en tu programa.
+programming-identify-loop:
+  text: Identificar cómo y cuándo usar un bucle para repetir un conjunto de instrucciones.
+programming-explain-join-concatenate:
+  text: Explicar cómo concatenar (unir) cadenas de caracteres.
+programming-explain-asking-input-end-user:
+  text: Explicar qué hay que tener en cuenta al solicitar una entrada por parte del usuario final.
+programming-identify-if-statement:
+  text: Identificar cuándo usar una sentencia IF para verificar un conjunto de condiciones.
+programming-demonstrate-indexing:
+  text: Demostrar cómo funciona la indexación para acceder a una letra en la posición especificada en una cadena.
+programming-explain-set-and-change-statement:
+  text: Explicar la diferencia entre la sentencia SET y la sentencia CHANGE cuando se usan para actualizar el valor de una variable.
+programming-describe-variable-initial-value:
+  text: Describir por qué a una variable se le debe asignar el tipo correcto de valor inicial.
+programming-explain-mod:
+  text: Explicar qué hace el operador módulo en tu programa.
+programming-explain-differences-if-else-if-statements:
+  text: Explicar la diferencia entre una sentencia IF-ELSE y una sentencia IF y cómo las has usado en tu programa.
+programming-describe-nested-statement:
+  text: Describir cómo funciona una sentencia anidada en relación a tu programa.
+programming-identify-list-store-data:
+  text: Identificar cuándo usar una lista para almacenar un conjunto de datos.
+programming-show-item-specified-position-list:
+  text: Mostrar cómo acceder a un elemento en una posición específica en una lista.
+search-algorithms-identify-unsorted-lists:
+  text: Identificar algoritmos de búsqueda para listas sin clasificar (búsqueda secuencial).
+search-algorithms-describe-time-size-input:
+  text: Describir cómo el tiempo empleado aumenta con el tamaño de la entrada.
+search-algorithms-explore-probability-value-random-set:
+  text: Explorar la probabilidad de encontrar un valor particular en un conjunto aleatorio.
+search-algorithms-explain-range-unsorted-lists:
+  text: Explicar el rango del número de suposiciones para listas sin clasificar.
+search-algorithms-identify-sequential-binary:
+  text: Identificar algoritmos de búsqueda para listas clasificadas y sin clasificar (búsqueda secuencial y binaria).
+search-algorithms-explain-decomposition-binary:
+  text: Explicar cómo han utilizado la descomposición para dividir y conquistar al hacer una búsqueda binaria.
+search-algorithms-describe-time-size-input-different:
+  text: Describir cómo el tiempo empleado aumenta con el tamaño de la entrada y, sobre todo, cómo aumenta de diferentes maneras para dos algoritmos diferentes.
+search-algorithms-describe-compare-values:
+  text: Describir cómo comparar valores numéricos para la igualdad y la desigualdad (mayor que, menor que).
+search-algorithms-explain-unsorted-lists:
+  text: Explicar el rango del número de suposiciones para listas sin clasificar en comparación con las listas clasificadas.
+unplugged-programming-apply-addition-multiplication:
+  text: Aplicar la suma y la multiplicación para averiguar el número de acciones que completará un usuario final.
+unplugged-programming-design-fitness-achievable:
+  text: Diseñar una serie de actividades de fitness que sean factibles para los usuarios finales.
+unplugged-programming-construct-fitness-workout:
+  text: Elaborar un entrenamiento de fitness que combine actividades de fuerza y cardio.
+unplugged-programming-design-language:
+  text: Diseñar un lenguaje de programación que se pueda interpretar fácilmente para un programa de fitness.
+unplugged-programming-give-instructions:
+  text: Dar un conjunto de instrucciones para mover un objeto desde un punto de partida al destino deseado.
+unplugged-programming-identify-bug-correct:
+  text: Identificar dónde ha ocurrido un error y ser capaz de corregir el código para permitir que el objeto se mueva al destino deseado.
+unplugged-programming-explain-exact-instructions:
+  text: Explicar por qué es importante dar instrucciones muy precisas.
+unplugged-programming-follow-instructions:
+  text: Seguir instrucciones con precisión.
+unplugged-programming-identify-2D-shapes:
+  text: Identificar y nombrar formas 2D.
+unplugged-programming-communicate-debugging:
+  text: Comunicar cuando el código no es correcto para que la persona sepa qué necesita depurarse.
+unplugged-programming-actively-listen-feedback:
+  text: Escuchar activamente los comentarios y depurar el programa.
+unplugged-programming-give-accurate-instructions-pace:
+  text: Dar instrucciones precisas a un ritmo que la persona pueda seguir.
+unplugged-programming-give-instructions-shape:
+  text: Dar un conjunto de instrucciones para mover un objeto desde un punto de partida en una forma deseada.
+unplugged-programming-identify-bug-shape:
+  text: Identificar dónde ha ocurrido un error y ser capaz de corregir el código para permitir que el objeto se mueva en una forma deseada.
+unplugged-programming-describe-draw-2D-shape:
+  text: Describir cómo dibujar una forma 2D dada como un cuadrado o un rectángulo.
+unplugged-programming-accurately-count:
+  text: Contar con precisión desde un espacio al siguiente.
+unplugged-programming-give-precise-instructions:
+  text: Dar un conjunto de instrucciones precisas que programen un objeto para moverse de forma eficiente desde un punto hasta otro.
+unplugged-programming-give-instructions-move:
+  text: Dar un conjunto de instrucciones que programen un objeto para moverse desde un punto hasta otro.
+unplugged-programming-explain-tell-stories:
+  text: Explicar cómo se pueden contar historias combinando el lenguaje oral, escrito y visual.
+unplugged-programming-recall-direction-words:
+  text: Recordar las palabras direccionales en otro idioma para "ir", "avanzar", "izquierda", "derecha" y los números.
+sorting-explain-parallel-algorithm:
+  text: Explicar cómo funciona el algoritmo paralelo de una red de ordenamiento.
+sorting-use-selection-sort:
+  text: Utilizar la selección (comparaciones de datos) para ordenar varios elementos.
+sorting-identify-number-range:
+  text: Identificar qué número viene antes o después en cualquier intervalo de números.
+sorting-identify-number-given-range:
+  text: Identificar qué número viene antes o después en un intervalo de números dado.
+sorting-organise-objects-size:
+  text: Organizar objetos desde el más pequeño hasta el más grande en tamaño.
+sorting-recognise-sorting-method:
+  text: Reconocer que se puede aplicar un método de clasificación a cualquier valor que se pueda ordenar.
+sorting-demonstrate-alphabet-knowledge:
+  text: Demostrar cómo tu conocimiendo del alfabeto te ayuda a ordenar palabras o libros.
+sorting-comparing-musical-pitch:
+  text: Comparar el tono musical en notación musical y auditivamente.

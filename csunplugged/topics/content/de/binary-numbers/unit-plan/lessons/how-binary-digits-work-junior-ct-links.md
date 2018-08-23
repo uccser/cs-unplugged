@@ -12,7 +12,7 @@ Hier ist ein Algorithmus in Textform, mit dem ausgerechnet werden kann, welche P
     
     - Wenn die Anzahl der Punkte auf der Karte höher ist als die Anzahl der verbleibenden Punkte:
         
-        - Karte verdecken 
+        - Karte verdecken
     
     - Anderenfalls:
         
