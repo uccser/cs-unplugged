@@ -23,6 +23,39 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+4.1.0
+==============================================================================
+
+- **Release date:** 24th August 2018
+- **Downloads:** `Source downloads are available on GitHub`_
+
+**Summary of changes:**
+
+This release focuses on adding multingual support, with limited versions of the website available in German (Deutsche) and Spanish (Español).
+
+**Changelog:**
+
+- Enable German (Deutsche) language, currently the following pages are available:
+  - All basic pages
+  - All printables
+  -
+- Enable Spanish (Español) language, currently the following pages are available:
+  - All basic pages
+  - All printables
+  -
+- Modify 'Treasure Hunt' printable to 'Number Hunt', due to redesign of activity for universal use (English language concepts were being used).
+- Modify 'Piano Keys' printable to allow different types of key labels.
+- Modify printable PDF generation to include all languages.
+- Modify printable thumbnail generation to only create English language (add warning when displaying thumbnail in non-English language).
+- Allow custom layout of printables in PDF generation.
+- Lock website search to English only, until multilingual search is implemented. `#989 <https://github.com/uccser/cs-unplugged/issues/989>`__
+- Add Travis CI status to README for each website. `#1003 <https://github.com/uccser/cs-unplugged/issues/1003>`__
+- Add name labels to Travis CI jobs. `#996 <https://github.com/uccser/cs-unplugged/pull/996>`__
+- Add configuration file for link checker and translation syncer.
+- Package updates:
+
+  - Update django to 1.11.14.
+
 4.0.2
 ==============================================================================
 
