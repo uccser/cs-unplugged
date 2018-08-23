@@ -212,13 +212,16 @@ details {
     cursor: pointer;
     font-size: 1.1em;
     padding: ($spacer * .25) ($spacer * .25) ($spacer * .25) $spacer;
-    display: flex;
     align-items: center;
     .inline-image {
       margin-top: 0.2rem;
       margin-bottom: 0.2rem;
       margin-#{$left}: auto;
       margin-#{$right}: 0.2rem;
+      float: right;
+    }
+    .clearfix {
+      clear: both;
     }
   }
   summary:hover {

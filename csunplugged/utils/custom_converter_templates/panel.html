@@ -1,5 +1,5 @@
 <details{% if expanded == 'true'%} open="open"{% endif %} class="panel-{{ type }}">
-<summary>
+<summary class="clearfix">
 <strong>{{ title }}{% if subtitle %}:</strong> {{ subtitle }}{% else %}</strong>{% endif %}
 {% if (type == 'ct-algorithm') or
 (type == 'ct-abstraction') or
