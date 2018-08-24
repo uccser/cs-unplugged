@@ -12,7 +12,7 @@ rm -r build/
 rm -r staticfiles/
 ./csu dev static_prod
 ./csu dev static_scratch
-./csu dev makeresourcethumbnails
+./csu dev makeresourcethumbnails --all-languages
 ./csu dev collect_static
 
 # Install Google Cloud SDK

@@ -22,11 +22,20 @@ class Command(BaseCommand):
 
     help = "Creates thumbnail images of resource combinations."
 
+    def add_arguments(self, parser):
+        """Add optional parameter to makeresourcethumbnails command."""
+        parser.add_argument(
+            "--all-languages",
+            action="store_true",
+            dest="all_languages",
+            help="Generate thumbnails for all languages",
+        )
+
     def handle(self, *args, **options):
         """Automatically called when makeresourcethumbnails command is given."""
         resources = Resource.objects.order_by("name")
 
-        if settings.DJANGO_PRODUCTION:
+        if options.get("all_languages"):
             languages = settings.DEFAULT_LANGUAGES
         else:
             languages = [("en", "")]
