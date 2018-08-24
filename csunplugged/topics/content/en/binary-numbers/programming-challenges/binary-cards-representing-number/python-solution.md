@@ -1,5 +1,5 @@
 ```python
-original = input('Please enter a number between 0 and 31: ')
+original = int(input('Please enter a number between 0 and 31: '))
 number = original
 bit_value = 32
 cards = ''

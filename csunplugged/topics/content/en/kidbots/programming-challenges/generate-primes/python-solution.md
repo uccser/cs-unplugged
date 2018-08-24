@@ -1,7 +1,7 @@
 ```python
 prime_numbers = []
 number = 2
-upper_range = input('I\'ll generate the prime numbers up to this number: ')
+upper_range = int(input("I'll generate the prime numbers up to this number: "))
 for i in range(1, upper_range):
   is_prime = True
   index = 2

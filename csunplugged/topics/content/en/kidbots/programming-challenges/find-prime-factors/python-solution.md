@@ -12,7 +12,7 @@ def check_prime(number):
   return False
 
 prime_factors = []
-number = input('What\'s the number you want to find prime factors of? ')
+number = int(input("What's the number you want to find prime factors of? "))
 divisor = number
 while divisor > 0:
   if number % divisor == 0:

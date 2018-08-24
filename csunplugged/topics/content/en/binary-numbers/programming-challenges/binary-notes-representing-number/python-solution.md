@@ -1,5 +1,5 @@
 ```python
-decimal_number = input('Please enter a decimal number between 0 and 31: ')
+decimal_number = int(input('Please enter a decimal number between 0 and 31: '))
 bit_value = 32
 while bit_value > 1:
   bit_value = bit_value / 2

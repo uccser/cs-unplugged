@@ -1,7 +1,7 @@
 ```python
 print('Enter two numbers less than 10. Enter the larger number first.')
-num1 = input('Enter the 1st number: ')
-num2 = input('Enter the 2nd number: ')
+num1 = int(input('Enter the 1st number: '))
+num2 = int(input('Enter the 2nd number: '))
 if (num1 + num2) > 10:
   ten_minus_num1 = 10 - num1
   left_from_num2 = num2 - ten_minus_num1

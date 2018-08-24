@@ -1,5 +1,5 @@
 ```python
-decimal_number = input('Please enter a decimal number: ')
+decimal_number = int(input('Please enter a decimal number: '))
 bit_value = 1
 while decimal_number <= bit_value:
   bit_value = bit_value * 2

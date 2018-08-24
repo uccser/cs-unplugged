@@ -20,7 +20,7 @@
 -   In this challenge you need to access all the letters in user’s input and
     check to see if each of them is equal to B (black) or W (white).
 
--   You can find how many letters a string has by using `python: len(cards)`
+-   You can find how many letters a string has by using ` len(cards)`
 
 -   In this challenge you need to check if each letter of the input is equal
     to ‘W’ or `B’ using and if statement
