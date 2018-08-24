@@ -70,3 +70,7 @@ pixel-painter:
   generator-module: PixelPainterResourceGenerator
   thumbnail-static-path: img/resources/pixel-painter/thumbnail.png
   copies: false
+treasure-island:
+  generator-module: TreasureIslandResourceGenerator
+  thumbnail-static-path: img/resources/pixel-painter/thumbnail.png
+  copies: false
