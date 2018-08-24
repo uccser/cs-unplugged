@@ -11,7 +11,6 @@
 {% endblock title %}
 
 {% block breadcrumbs %}
-  {% breadcrumb "Home" "/" %}
   {% breadcrumb "Topics" "topics:index" %}
   {% breadcrumb topic.name "topics:topic" topic.slug %}
   {% breadcrumb programming_challenge.name "topics:programming_challenge" topic.slug programming_challenge.slug %}

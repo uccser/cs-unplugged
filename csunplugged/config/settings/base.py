@@ -117,9 +117,13 @@ INCONTEXT_L10N_PSEUDOLANGUAGES = (
     INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI
 )
 
-LANGUAGES = (
+DEFAULT_LANGUAGES = (
     ("en", "English"),
+    ("de", "Deutsche"),
+    ("es", "Español"),
 )
+# Keep original values of languages for resource generation
+LANGUAGES = DEFAULT_LANGUAGES
 
 if env.bool("INCLUDE_INCONTEXT_L10N", False):
     EXTRA_LANGUAGES = [
@@ -288,3 +292,4 @@ CUSTOM_VERTO_TEMPLATES = os.path.join(str(ROOT_DIR.path("utils")), "custom_conve
 MODELTRANSLATION_CUSTOM_FIELDS = ("JSONField",)
 CLASSIC_PAGES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("classic")), "content")
 GENERAL_PAGES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("general")), "content")
+BREADCRUMBS_TEMPLATE = "django_bootstrap_breadcrumbs/bootstrap4.html"

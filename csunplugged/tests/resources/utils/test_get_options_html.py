@@ -21,9 +21,9 @@ class GetOptionsHTMLTest(BaseTest):
         }
         html = "<form>{}</form>".format(get_options_html(options, None))
         form = etree.fromstring(html)
-        option1_elems = form.xpath("fieldset/input[@name='option1']")
+        option1_elems = form.xpath("fieldset/div/input[@name='option1']")
         self.assertEqual(1, len(option1_elems))
-        option2_elems = option1_elems[0].xpath("../following-sibling::fieldset/input[@name='option2']")
+        option2_elems = option1_elems[0].xpath("../../following-sibling::fieldset/div/input[@name='option2']")
         self.assertEqual(1, len(option2_elems))
 
         # Check local generation heading is not included
@@ -56,10 +56,10 @@ class GetOptionsHTMLTest(BaseTest):
         }
         html = "<form>{}</form>".format(get_options_html(options, local_options))
         form = etree.fromstring(html)
-        option1_elems = form.xpath("fieldset/input[@name='option1']")
+        option1_elems = form.xpath("fieldset/div/input[@name='option1']")
         self.assertEqual(1, len(option1_elems))
         # Option 2 after Option 1
-        option2_elems = option1_elems[0].xpath("../following-sibling::fieldset/input[@name='option2']")
+        option2_elems = option1_elems[0].xpath("../../following-sibling::fieldset/div/input[@name='option2']")
         self.assertEqual(1, len(option2_elems))
 
         # Debug is not True, so local settings should not be included
@@ -95,9 +95,9 @@ class GetOptionsHTMLTest(BaseTest):
         }
         html = "<form>{}</form>".format(get_options_html(options, local_options))
         form = etree.fromstring(html)
-        option1_elems = form.xpath("fieldset/input[@name='option1']")
+        option1_elems = form.xpath("fieldset/div/input[@name='option1']")
         self.assertEqual(1, len(option1_elems))
-        option2_elems = option1_elems[0].xpath("../following-sibling::fieldset/input[@name='option2']")
+        option2_elems = option1_elems[0].xpath("../../following-sibling::fieldset/div/input[@name='option2']")
         self.assertEqual(1, len(option2_elems))
 
         # Debug is True, so local settings should be included
@@ -106,13 +106,13 @@ class GetOptionsHTMLTest(BaseTest):
         self.assertIn("Local Generation Only", html)
 
         # Local options heading should follow other options
-        local_options_headings = option2_elems[0].xpath("../following-sibling::h3[text()='Local Generation Only']")
+        local_options_headings = option2_elems[0].xpath("../../following-sibling::h3[text()='Local Generation Only']")
         self.assertEqual(1, len(local_options_headings))
 
         # Local options should follow heading
-        local1_elems = local_options_headings[0].xpath("following-sibling::fieldset/input[@name='local1']")
+        local1_elems = local_options_headings[0].xpath("following-sibling::fieldset/div/input[@name='local1']")
         self.assertEqual(1, len(local1_elems))
-        local2_elems = local1_elems[0].xpath("../following-sibling::fieldset/input[@name='local2']")
+        local2_elems = local1_elems[0].xpath("../../following-sibling::fieldset/div/input[@name='local2']")
         self.assertEqual(1, len(local2_elems))
 
     def test_get_options_html_no_options(self):

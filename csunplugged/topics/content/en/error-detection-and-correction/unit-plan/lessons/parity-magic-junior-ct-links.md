@@ -79,7 +79,7 @@ Can students explain what goes wrong when we try to detect the error if two card
 
 # Logic
 
-Flipping a card will always change a row/column from odd to even, no matter what the card is in what the other cards in the row/column are.
+Flipping a card will always change a row/column from even to odd (or odd to even), no matter what the card is and what the other cards in the row/column are.
 
 Also, the idea that the corner card is correct for both the new row and column is an advanced concept, but a pattern that some students might recognise.
 

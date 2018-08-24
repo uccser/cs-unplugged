@@ -38,8 +38,6 @@ crwdns18303:0crwdne18303:0 crwdns18304:0crwdne18304:0
 
 *BlockTag: crwdns18305:0crwdne18305:0*
 
-{image file-path="img/topics/col_binary_bite_vs_byte.png"}
-
 *BlockTag: crwdns19039:0crwdne19039:0*
 
 {panel type="math"}
@@ -52,11 +50,9 @@ crwdns18308:0crwdne18308:0
 
 *BlockTag: crwdns18309:0crwdne18309:0*
 
-{image file-path="img/topics/col_binary_CSU_boy_hands.png"}
-
 *BlockTag: crwdns18310:0crwdne18310:0*
 
-{image file-path="img/topics/col_binary_csu_girl_hands.png"}
+{image file-path="img/topics/binary_fingers.png"}
 
 *BlockTag: crwdns18311:0crwdne18311:0*
 

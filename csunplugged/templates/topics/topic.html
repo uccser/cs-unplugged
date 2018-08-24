@@ -10,7 +10,6 @@
 {% endblock title %}
 
 {% block breadcrumbs %}
-  {% breadcrumb "Home" "/" %}
   {% breadcrumb "Topics" "topics:index" %}
   {% breadcrumb topic.name "topics:topic" topic.slug %}
 {% endblock breadcrumbs %}
@@ -40,7 +39,7 @@
           <div>
             <h3>{{ unit_plan.name }}</h3>
             {% if not unit_plan.translation_available %}
-            {% include "topics/not-available-badge.html" %}
+              {% include "generic/not-available-badge.html" %}
             {% endif %}
             <ul class="list-unstyled list-unstyled-i18n text-muted mb-0">
               <li>

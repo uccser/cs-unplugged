@@ -93,7 +93,7 @@ There is also an online interactive version of the binary cards [here](http://ww
     # Teaching observations
 
     At this point it is common for students to guess that it is 6
-    (since it follow the numbers 2 and 4).
+    (since it follows the numbers 2 and 4).
     However, if you let them think about it a little more, some will usually
     come up with 8, and those students should be able to convince the others
     that they are correct (there are several ways a student could explain
@@ -145,7 +145,7 @@ There is also an online interactive version of the binary cards [here](http://ww
     how would we show exactly 9 dots?
     Begin by asking if they want the 16 card (they should observe that it has
     too many dots), then the 8 card (they will likely reason that without it
-    there aren't enough dots left without it), then 4, 2 and 1.
+    there aren't enough dots left), then 4, 2 and 1.
     Without being given any rules other than each card being visible or not,
     students will usually come up with the following representation.
 

@@ -9,7 +9,6 @@
 {% endblock title %}
 
 {% block breadcrumbs %}
-  {% breadcrumb "Home" "/" %}
   {% breadcrumb "Topics" "topics:index" %}
 {% endblock breadcrumbs %}
 
@@ -29,7 +28,7 @@
               <div class="col-12 text-center text-md-{{LANGUAGE_START}}">
                 <h2>{{ topic.name }}</h2>
                 {% if not topic.translation_available %}
-                  {% include "topics/not-available-badge.html" %}
+                  {% include "generic/not-available-badge.html" %}
                 {% endif %}
               </div>
               <div class="col-12 col-md-7 text-center text-md-{{LANGUAGE_START}}">
@@ -55,7 +54,9 @@
                 </ul>
               </div>
               <div class="d-none col-md-5 d-md-flex justify-content-end align-items-end">
-                <img class="img-fluid" src="{% static topic.icon %}">
+                {% if topic.icon %}
+                  <img class="img-fluid" src="{% static topic.icon %}">
+                {% endif %}
               </div>
             </div>
           </a>

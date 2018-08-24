@@ -1,19 +1,23 @@
 """Views for the resource application."""
 
+from os.path import join
+from urllib.parse import quote
 from django.conf import settings
 from django.http import HttpResponse, Http404
 from django.shortcuts import get_object_or_404, render
 from django.views import generic
+from django.utils.translation import get_language
 from resources.models import Resource
 from resources.utils.resource_pdf_cache import resource_pdf_cache
 from resources.utils.get_options_html import get_options_html
 from utils.group_lessons_by_age import group_lessons_by_age
+from utils.translated_first import translated_first
 from resources.utils.get_resource_generator import get_resource_generator
 from utils.errors.QueryParameterMissingError import QueryParameterMissingError
 from utils.errors.QueryParameterInvalidError import QueryParameterInvalidError
 from utils.errors.QueryParameterMultipleValuesError import QueryParameterMultipleValuesError
 
-RESPONSE_CONTENT_DISPOSITION = 'attachment; filename="{filename}.pdf"'
+RESPONSE_CONTENT_DISPOSITION = "attachment; filename*=UTF-8''{filename}.pdf; filename=\"{filename}.pdf\""
 
 
 class IndexView(generic.ListView):
@@ -28,7 +32,7 @@ class IndexView(generic.ListView):
         Returns:
             Queryset of all resources ordered by name.
         """
-        return Resource.objects.order_by("name")
+        return translated_first(Resource.objects.all())
 
 
 def resource(request, resource_slug):
@@ -47,7 +51,20 @@ def resource(request, resource_slug):
     context["options_html"] = get_options_html(generator.get_options(), generator.get_local_options(), request.GET)
     context["resource"] = resource
     context["debug"] = settings.DEBUG
-    context["resource_thumbnail_base"] = "{}img/resources/{}/thumbnails/".format(settings.STATIC_URL, resource.slug)
+    if settings.DJANGO_PRODUCTION:
+        resource_language = get_language()
+        if resource_language in settings.INCONTEXT_L10N_PSEUDOLANGUAGES:
+            resource_language = "en"
+    else:
+        resource_language = "en"
+    context["resource_thumbnail_base"] = join(
+        settings.STATIC_URL,
+        "img/resources/",
+        resource.slug,
+        "thumbnails",
+        resource_language,
+        ""
+    )
     context["grouped_lessons"] = group_lessons_by_age(resource.lessons.all())
     context["copies_amount"] = settings.RESOURCE_COPY_AMOUNT
     if resource.thumbnail_static_path:
@@ -81,9 +98,9 @@ def generate_resource(request, resource_slug):
         # Return cached static PDF file of resource.
         # Currently developing system for dynamically rendering
         # custom PDFs on request (https://github.com/uccser/render).
-        return resource_pdf_cache(resource.name, generator)
+        return resource_pdf_cache(resource, generator)
     else:
         (pdf_file, filename) = generator.pdf(resource.name)
         response = HttpResponse(pdf_file, content_type="application/pdf")
-        response["Content-Disposition"] = RESPONSE_CONTENT_DISPOSITION.format(filename=filename)
+        response["Content-Disposition"] = RESPONSE_CONTENT_DISPOSITION.format(filename=quote(filename))
         return response

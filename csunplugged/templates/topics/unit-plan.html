@@ -9,7 +9,6 @@
 {% endblock title %}
 
 {% block breadcrumbs %}
-  {% breadcrumb "Home" "/" %}
   {% breadcrumb "Topics" "topics:index" %}
   {% breadcrumb topic.name "topics:topic" topic.slug %}
   {% breadcrumb unit_plan.name "topics:unit_plan" topic.slug unit_plan.slug %}

@@ -7,18 +7,16 @@ from utils.errors.MoreThanOneThumbnailPageFoundError import MoreThanOneThumbnail
 from django.conf import settings
 from django.template.loader import render_to_string
 from django.contrib.staticfiles import finders
-
+from django.utils.translation import ugettext_lazy as _
 from resources.utils.resource_parameters import (
     EnumResourceParameter,
     TextResourceParameter,
     IntegerResourceParameter,
 )
 
-from django.utils.translation import ugettext as _
-
 PAPER_SIZE_VALUES = {
     "a4": _("A4"),
-    "letter": _("US Letter")
+    "letter": _("US Letter"),
 }
 
 
@@ -120,7 +118,7 @@ class BaseResourceGenerator(ABC):
         Returns:
             Text for subtitle (str).
         """
-        return self.options["paper_size"].value
+        return str(self.options["paper_size"].value)
 
     def process_requested_options(self, requested_options):
         """Convert requested options to usable types.

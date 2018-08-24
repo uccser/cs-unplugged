@@ -23,9 +23,9 @@ class CacheRedirectTest(BaseTestWithDB):
         )
         query = QueryDict("paper_size=a4")
         generator = get_resource_generator(resource.generator_module, query)
-        response = resource_pdf_cache(resource.name, generator)
+        response = resource_pdf_cache(resource, generator)
         self.assertEqual(response.status_code, HTTPStatus.FOUND)
         self.assertEqual(
             response.url,
-            "/staticfiles/resources/Grid%20(a4).pdf"
+            "/staticfiles/resources/grid/en/Grid%20(a4).pdf"
         )

@@ -1,10 +1,17 @@
 """Module for resource parameter classes."""
 
 from lxml import etree
-from django.utils.translation import ugettext as _
+from django.utils.translation import gettext_lazy as _
 from utils.errors.QueryParameterMissingError import QueryParameterMissingError
 from utils.errors.QueryParameterInvalidError import QueryParameterInvalidError
 from utils.errors.QueryParameterMultipleValuesError import QueryParameterMultipleValuesError
+
+
+BOOTSTRAP_CLASSES = {
+    "radio-container": "form-check",
+    "radio-input": "form-check-input",
+    "radio-label": "form-label",
+}
 
 
 class ResourceParameter(object):
@@ -27,7 +34,7 @@ class ResourceParameter(object):
             etree.Element
         """
         legend = etree.Element('legend')
-        legend.text = self.description
+        legend.text = str(self.description)
         fieldset = etree.Element('fieldset')
         fieldset.append(legend)
         return fieldset
@@ -153,23 +160,27 @@ class EnumResourceParameter(SingleValuedParameter):
         default_value = super().html_default(request_parameters)
         base_elem = super().html_element()
         for value, value_desc in self.valid_values.items():
+            container = etree.Element("div")
+            container.set("class", BOOTSTRAP_CLASSES["radio-container"])
             input_elem = etree.Element(
-                'input',
+                "input",
                 type="radio",
                 name=self.name,
                 id='{}_{}'.format(self.name, value),
-                value=str(value)
+                value=str(value),
             )
+            input_elem.set("class", BOOTSTRAP_CLASSES["radio-input"])
             if value == default_value:
                 input_elem.set("checked", "checked")
-            base_elem.append(input_elem)
+            container.append(input_elem)
             label_elem = etree.Element(
                 "label",
             )
             label_elem.set("for", "{}_{}".format(self.name, value))
-            label_elem.text = value_desc
-            base_elem.append(label_elem)
-            base_elem.append(etree.Element('br'))
+            label_elem.set("class", BOOTSTRAP_CLASSES["radio-label"])
+            label_elem.text = str(value_desc)
+            container.append(label_elem)
+            base_elem.append(container)
         return base_elem
 
     def index(self, value):
@@ -256,7 +267,7 @@ class TextResourceParameter(SingleValuedParameter):
             "input",
             type="text",
             name=self.name,
-            placeholder=self.placeholder,
+            placeholder=str(self.placeholder),
         )
         input_elem.set("class", "long-text-field")
         base_elem.append(input_elem)
