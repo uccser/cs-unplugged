@@ -12,7 +12,7 @@ rm -r build/
 rm -r staticfiles/
 ./csu dev static_prod
 ./csu dev static_scratch
-./csu dev makeresourcethumbnails --all-languages
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresourcethumbnails --all-languages
 ./csu dev collect_static
 
 # Install Google Cloud SDK
