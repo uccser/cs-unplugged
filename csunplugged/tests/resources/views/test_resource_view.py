@@ -1,11 +1,18 @@
 from http import HTTPStatus
-from django.test import tag
+from django.conf import settings
+from django.test import tag, override_settings
 from django.urls import reverse
+from django.utils import translation
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 from topics.models import ResourceDescription
 from collections import OrderedDict
+
+MULTIPLE_LANGUAGES_WITH_INCONTEXT = (
+    *settings.LANGUAGES,
+    (settings.INCONTEXT_L10N_PSEUDOLANGUAGE, settings.INCONTEXT_L10N_PSEUDOLANGUAGE)
+)
 
 
 @tag("resource")
@@ -61,15 +68,70 @@ class ResourceViewTest(BaseTestWithDB):
             resource
         )
         self.assertFalse(response.context["debug"])
-        self.assertEqual(
-            response.context["resource_thumbnail_base"],
-            "/staticfiles/img/resources/grid/thumbnails/"
-        )
         self.assertFalse(response.context["grouped_lessons"])
         self.assertEqual(
             response.context["thumbnail"],
             "static/images/thumbnail-grid"
         )
+
+    @override_settings(DJANGO_PRODUCTION=True)
+    def test_resource_view_resource_thumbnail_base_context_production_en(self):
+        resource = self.test_data.create_resource(
+            "grid",
+            "Grid",
+            "resources/grid.html",
+            "GridResourceGenerator",
+        )
+        kwargs = {
+            "resource_slug": resource.slug,
+        }
+        url = reverse("resources:resource", kwargs=kwargs)
+        response = self.client.get(url)
+        self.assertEqual(
+            response.context["resource_thumbnail_base"],
+            "/staticfiles/img/resources/grid/thumbnails/{}/".format(self.language)
+        )
+
+    @override_settings(DJANGO_PRODUCTION=True)
+    def test_resource_view_resource_thumbnail_base_context_production_de(self):
+        with translation.override("de"):
+            resource = self.test_data.create_resource(
+                "grid",
+                "Grid",
+                "resources/grid.html",
+                "GridResourceGenerator",
+            )
+            kwargs = {
+                "resource_slug": resource.slug,
+            }
+            url = reverse("resources:resource", kwargs=kwargs)
+            response = self.client.get(url)
+            self.assertEqual(
+                response.context["resource_thumbnail_base"],
+                "/staticfiles/img/resources/grid/thumbnails/de/"
+            )
+
+    @override_settings(DJANGO_PRODUCTION=True)
+    @override_settings(LANGUAGES=MULTIPLE_LANGUAGES_WITH_INCONTEXT)
+    def test_resource_view_resource_thumbnail_base_context_production_in_context(self):
+        resource = self.test_data.create_resource(
+            "grid",
+            "Grid",
+            "resources/grid.html",
+            "GridResourceGenerator",
+        )
+        kwargs = {
+            "resource_slug": resource.slug,
+        }
+        lang = settings.INCONTEXT_L10N_PSEUDOLANGUAGE
+        with translation.override(lang):
+            url = reverse("resources:resource", kwargs=kwargs)
+            response = self.client.get(url)
+            print(response.context["resource"])
+            self.assertEqual(
+                response.context["resource_thumbnail_base"],
+                "/staticfiles/img/resources/grid/thumbnails/en/"
+            )
 
     def test_resource_view_context_without_thumbnail(self):
         resource = self.test_data.create_resource(

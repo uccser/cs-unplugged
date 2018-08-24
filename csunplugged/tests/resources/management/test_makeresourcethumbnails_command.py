@@ -2,6 +2,7 @@
 
 from tests.BaseTestWithDB import BaseTestWithDB
 from django.core import management
+from django.conf import settings
 from django.test import tag, override_settings
 from tests.resources.ResourcesTestDataGenerator import ResourcesTestDataGenerator
 
@@ -14,7 +15,7 @@ class MakeResourceThumnbailsCommandTest(BaseTestWithDB):
         super().__init__(*args, **kwargs)
         self.test_data = ResourcesTestDataGenerator()
         self.language = "en"
-        self.THUMBNAIL_PATH = "build/img/resources/{}/thumbnails/{}"
+        self.THUMBNAIL_PATH = "build/img/resources/{}/thumbnails/{}/{}"
 
     def test_makeresourcethumbnails_command_single_resource(self):
         self.test_data.create_resource(
@@ -25,8 +26,8 @@ class MakeResourceThumnbailsCommandTest(BaseTestWithDB):
         )
         # TODO: Fix these tests, they shouldn't be writing files into the build directory
         management.call_command("makeresourcethumbnails")
-        open(self.THUMBNAIL_PATH.format("resource1", "resource1-paper_size-a4.png"))
-        open(self.THUMBNAIL_PATH.format("resource1", "resource1-paper_size-letter.png"))
+        open(self.THUMBNAIL_PATH.format("resource1", self.language, "resource1-paper_size-a4.png"))
+        open(self.THUMBNAIL_PATH.format("resource1", self.language, "resource1-paper_size-letter.png"))
 
     def test_makeresourcethumbnails_command_multiple_resources(self):
         self.test_data.create_resource(
@@ -43,10 +44,10 @@ class MakeResourceThumnbailsCommandTest(BaseTestWithDB):
         )
         # TODO: Fix these tests, they shouldn't be writing files into the build directory
         management.call_command("makeresourcethumbnails")
-        open(self.THUMBNAIL_PATH.format("resource1", "resource1-paper_size-a4.png"))
-        open(self.THUMBNAIL_PATH.format("resource1", "resource1-paper_size-letter.png"))
-        open(self.THUMBNAIL_PATH.format("resource2", "resource2-paper_size-a4.png"))
-        open(self.THUMBNAIL_PATH.format("resource2", "resource2-paper_size-letter.png"))
+        open(self.THUMBNAIL_PATH.format("resource1", self.language, "resource1-paper_size-a4.png"))
+        open(self.THUMBNAIL_PATH.format("resource1", self.language, "resource1-paper_size-letter.png"))
+        open(self.THUMBNAIL_PATH.format("resource2", self.language, "resource2-paper_size-a4.png"))
+        open(self.THUMBNAIL_PATH.format("resource2", self.language, "resource2-paper_size-letter.png"))
 
     def test_makeresourcethumbnails_command_resource_generator_has_non_enum_options(self):
         self.test_data.create_resource(
@@ -57,3 +58,17 @@ class MakeResourceThumnbailsCommandTest(BaseTestWithDB):
         )
         with self.assertRaises(TypeError):
             management.call_command("makeresourcethumbnails")
+
+    @override_settings(DJANGO_PRODUCTION=True)
+    def test_makeresourcethumbnails_command_single_resource_multiple_languages(self):
+        self.test_data.create_resource(
+            "resource1",
+            "Resource 1",
+            "Description of resource 1",
+            "BareResourceGenerator",
+        )
+        management.call_command("makeresourcethumbnails")
+        for language_code, _ in settings.PRODUCTION_LANGUAGES:
+            if language_code not in settings.INCONTEXT_L10N_PSEUDOLANGUAGES:
+                open(self.THUMBNAIL_PATH.format("resource1", language_code, "resource1-paper_size-a4.png"))
+                open(self.THUMBNAIL_PATH.format("resource1", language_code, "resource1-paper_size-letter.png"))
