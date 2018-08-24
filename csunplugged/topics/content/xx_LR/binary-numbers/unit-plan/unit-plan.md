@@ -50,11 +50,9 @@ crwdns18308:0crwdne18308:0
 
 *BlockTag: crwdns18309:0crwdne18309:0*
 
-{image file-path="img/topics/col_binary_CSU_boy_hands.png"}
-
 *BlockTag: crwdns18310:0crwdne18310:0*
 
-{image file-path="img/topics/col_binary_csu_girl_hands.png"}
+{image file-path="img/topics/binary_fingers.png"}
 
 *BlockTag: crwdns18311:0crwdne18311:0*
 

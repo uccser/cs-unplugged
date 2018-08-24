@@ -61,8 +61,6 @@ defhelp 'dev [DEV_COMMAND]' 'Run a developer command.'
 
 # Start development environment
 cmd_start() {
-  export NGINX_UID="0"
-  export NGINX_GID="0"
   echo "Creating systems..."
   docker-compose up -d
   echo ""

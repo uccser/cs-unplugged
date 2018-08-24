@@ -38,9 +38,7 @@ El sistema numérico binario es de base 2, por lo que hay solo dos dígitos ante
 
 Los humanos normalmente usan el sistema numérico decimal, que es de base 10, por lo que hay diez dígitos antes de tener que desplazarnos al siguiente valor posicional: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.
 
-{image file-path="img/topics/col_binary_CSU_boy_hands.png"}
-
-{image file-path="img/topics/col_binary_csu_girl_hands.png"}
+{image file-path="img/topics/binary_fingers.png"}
 
 {panel end}
 
