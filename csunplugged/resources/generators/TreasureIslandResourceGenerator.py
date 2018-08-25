@@ -20,7 +20,7 @@ ISLANDS = {
     "dead-mans-island": {
         "name": _("Dead Man's Island"),
         "map-location": {
-            "top-left-coords": (1206, 468),
+            "top-left-coords": (1206, 480),
             "width": 732,
             "height": 216,
         },
@@ -30,7 +30,7 @@ ISLANDS = {
     "musket-hill": {
         "name": _("Musket Hill"),
         "map-location": {
-            "top-left-coords": (537, 2052),
+            "top-left-coords": (537, 2080),
             "width": 831,
             "height": 141,
         },
@@ -40,7 +40,7 @@ ISLANDS = {
     "mutineers-island": {
         "name": _("Mutineers' Island"),
         "map-location": {
-            "top-left-coords": (1422, 1608),
+            "top-left-coords": (1422, 1640),
             "width": 690,
             "height": 159,
         },
@@ -50,7 +50,7 @@ ISLANDS = {
     "pirates-island": {
         "name": _("Pirates' Island"),
         "map-location": {
-            "top-left-coords": (72, 1362),
+            "top-left-coords": (72, 1370),
             "width": 885,
             "height": 204,
         },
@@ -60,7 +60,7 @@ ISLANDS = {
     "shipwreck-bay": {
         "name": _("Shipwreck Bay"),
         "map-location": {
-            "top-left-coords": (51, 546),
+            "top-left-coords": (51, 555),
             "width": 831,
             "height": 225,
         },
@@ -70,7 +70,7 @@ ISLANDS = {
     "smugglers-cove": {
         "name": _("Smugglers' Cove"),
         "map-location": {
-            "top-left-coords": (2298, 1209),
+            "top-left-coords": (2298, 1220),
             "width": 702,
             "height": 204,
         },
@@ -80,7 +80,7 @@ ISLANDS = {
     "treasure-island": {
         "name": _("Treasure Island"),
         "map-location": {
-            "top-left-coords": (2286, 444),
+            "top-left-coords": (2286, 450),
             "width": 711,
             "height": 237,
         },
@@ -112,40 +112,42 @@ class TreasureIslandResourceGenerator(BaseResourceGenerator):
         """
         pages = []
         if self.options["type"].value == MAP_TYPE:
-            path = BASE_PATH.format(MAP_TYPE)
-            image = Image.open(path)
-            draw = ImageDraw.Draw(image)
-            textbox_drawer = TextBoxDrawer(image, draw)
-
-            # Add island labels
-            for island_id, island_data in ISLANDS.items():
-                box_data = island_data["map-location"]
-                top_left_coords = box_data["top-left-coords"]
-                width = box_data["width"]
-                height = box_data["height"]
-                vertices = calculate_box_vertices(top_left_coords, width, height)
-                box = TextBox(
-                    vertices,
-                    width,
-                    height,
-                    font_path=FONT_PATH,
-                    font_size=10,
-                    color=FONT_COLOUR,
-                )
-                textbox_drawer.write_text_box(
-                    box,
-                    island_data["name"],
-                    horiz_just="center",
-                    vert_just="top",
-                )
-
-            image = image.rotate(90, expand=True)
-            pages.append({
-                "type": "image",
-                "data": image
-            })
-
+            pages.append(self.create_map_page())
         return pages
+
+    def create_map_page(self):
+        path = BASE_PATH.format(MAP_TYPE)
+        image = Image.open(path)
+        draw = ImageDraw.Draw(image)
+        textbox_drawer = TextBoxDrawer(image, draw)
+
+        for island_id, island_data in ISLANDS.items():
+            box_data = island_data["map-location"]
+            top_left_coords = box_data["top-left-coords"]
+            width = box_data["width"]
+            height = box_data["height"]
+            vertices = calculate_box_vertices(top_left_coords, width, height)
+            box = TextBox(
+                vertices,
+                width,
+                height,
+                font_path=FONT_PATH,
+                font_size=80,
+                color=FONT_COLOUR,
+            )
+            textbox_drawer.write_text_box(
+                box,
+                island_data["name"],
+                horiz_just="center",
+                vert_just="top",
+            )
+
+        image = image.rotate(90, expand=True)
+        page_data = {
+            "type": "image",
+            "data": image
+        }
+        return page_data
 
     @property
     def subtitle(self):
