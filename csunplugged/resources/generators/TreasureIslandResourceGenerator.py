@@ -12,7 +12,7 @@ MAP_TYPE = "map"
 ISLAND_TYPE = "island"
 TYPE_VALUES = {
     MAP_TYPE: _("Student map"),
-    ISLAND_TYPE: _("Islands"),
+    ISLAND_TYPE: _("Island posters"),
 }
 FONT_PATH = "static/fonts/PatrickHand-Regular.ttf"
 FONT_COLOUR = "#000000"
