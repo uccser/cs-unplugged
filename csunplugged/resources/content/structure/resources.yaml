@@ -72,5 +72,5 @@ pixel-painter:
   copies: false
 treasure-island:
   generator-module: TreasureIslandResourceGenerator
-  thumbnail-static-path: img/resources/pixel-painter/thumbnail.png
+  thumbnail-static-path: img/resources/treasure-island/thumbnail.png
   copies: false
