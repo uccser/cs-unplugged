@@ -29,19 +29,19 @@ class TreasureIslandResourceGeneratorTest(BaseGeneratorTest):
         generator = TreasureIslandResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "Island posters - letter"
+            "Student map - letter"
         )
 
     def test_subtitle_islands_a4(self):
-        query = QueryDict("type=islands&paper_size=a4")
+        query = QueryDict("type=island&paper_size=a4")
         generator = TreasureIslandResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "Student map - a4"
+            "Island posters - a4"
         )
 
     def test_subtitle_islands_letter(self):
-        query = QueryDict("type=islands&paper_size=letter")
+        query = QueryDict("type=island&paper_size=letter")
         generator = TreasureIslandResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
