@@ -116,7 +116,7 @@ class TreasureIslandResourceGenerator(BaseResourceGenerator):
         """
         if self.options["type"].value == MAP_TYPE:
             pages = self.create_map_page()
-        elif self.options["type"].value == ISLAND_TYPE:
+        else:
             pages = self.create_island_posters()
         return pages
 
