@@ -21,3 +21,4 @@ from .SortingNetworkCardsResourceGenerator import SortingNetworkCardsResourceGen
 from .SortingNetworkResourceGenerator import SortingNetworkResourceGenerator
 from .TrainStationsResourceGenerator import TrainStationsResourceGenerator
 from .NumberHuntResourceGenerator import NumberHuntResourceGenerator
+from .TreasureIslandResourceGenerator import TreasureIslandResourceGenerator
