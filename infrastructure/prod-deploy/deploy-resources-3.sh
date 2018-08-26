@@ -11,6 +11,7 @@ source ./infrastructure/prod-deploy/load-prod-deploy-config-envs.sh
 docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Sorting Network"
 docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Sorting Network Cards"
 docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Train Stations"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Treasure Island"
 
 # Install Google Cloud SDK
 ./infrastructure/install_google_cloud_sdk.sh
