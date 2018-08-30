@@ -30,10 +30,10 @@ class JobBadgesResourceGenerator(BaseResourceGenerator):
         image = Image.open(image_path)
         draw = ImageDraw.Draw(image)
         textbox_drawer = TextBoxDrawer(image, draw)
-        
+
         # coordinates of top left point of text box
         top_left_x_coord, top_left_y_coord = 50, 100
-        
+
         # Add text labels
         for label, label_text in LABEL_DATA.items():
             # left box
