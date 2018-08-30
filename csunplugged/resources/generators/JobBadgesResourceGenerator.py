@@ -6,30 +6,14 @@ from django.utils.translation import ugettext_lazy as _
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 from resources.utils.coords import calculate_box_vertices
 
-FONT_PATH = "static/fonts/NotoSans-Regular.ttf"
-FONT_SIZE = 90
+FONT_PATH = "static/fonts/PatrickHand-Regular.ttf"
+FONT_SIZE = 200
+TEXTBOX_WIDTH = 1000
+TEXTBOX_HEIGHT = 275
 LABEL_DATA = {
-    "programmer": {
-        "text": _("Hello, I'm a Programmer"),
-        "top-left-coords": (388, 4),
-        "width": 1435,
-        "height": 156,
-        "font-colour": "#000000",
-    },
-    "tester": {
-        "text": _("Hello, I'm a Tester"),
-        "top-left-coords": (388, 4),
-        "width": 1435,
-        "height": 156,
-        "horiz-just": "center",
-        "vert-just": "center",
-    },
-    "bot": {
-        "text": _("Hello, I'm a Bot"),
-        "top-left-coords": (388, 4),
-        "width": 1435,
-        "height": 156,
-    },
+    "programmer": _("Hello, I'm a Programmer"),
+    "tester": _("Hello, I'm a Tester"),
+    "bot": _("Hello, I'm a Bot"),
 }
 
 
@@ -47,20 +31,21 @@ class JobBadgesResourceGenerator(BaseResourceGenerator):
         draw = ImageDraw.Draw(image)
         textbox_drawer = TextBoxDrawer(image, draw)
         
+        # coordinates of top left point of text box
+        top_left_x_coord, top_left_y_coord = 50, 100
+        
         # Add text labels
-        for label_id, label_data in LABEL_DATA.items():
-            if label_id == "subtitle":
-                label_text = self.subtitle_text()
-            else:
-                label_text = label_data["text"]
-            top_left_coords = label_data["top-left-coords"]
-            width = label_data["width"]
-            height = label_data["height"]
-            vertices = calculate_box_vertices(top_left_coords, width, height)
+        for label, label_text in LABEL_DATA.items():
+            # left box
+            vertices = calculate_box_vertices(
+                (top_left_x_coord, top_left_y_coord),
+                TEXTBOX_WIDTH,
+                TEXTBOX_HEIGHT
+            )
             box = TextBox(
                 vertices=vertices,
-                width=width,
-                height=height,
+                width=TEXTBOX_WIDTH,
+                height=TEXTBOX_HEIGHT,
                 font_path=FONT_PATH,
                 font_size=FONT_SIZE,
             )
@@ -69,46 +54,27 @@ class JobBadgesResourceGenerator(BaseResourceGenerator):
                 label_text,
                 horiz_just="center",
             )
-        '''
-        image_path = "static/img/resources/job-badges/job-badges.png"
-        image = Image.open(image_path)
-        draw = ImageDraw.Draw(image)
-
-        textbox_drawer = TextBoxDrawer(image, draw)
-
-
-        hello_ids = [
-            "programmer_hello1",
-            "programmer_hello2",
-            "tester_hello1",
-            "tester_hello2",
-            "bot_hello1",
-            "bot_hello2",
-        ]
-
-        for hello_id in hello_ids:
-            textbox_drawer.write_text_box(
-                hello_id,
-                _("Hello, I'm a"),
-                horiz_just="center"
+            # right box
+            right_box_coords = (top_left_x_coord+1150, top_left_y_coord)
+            vertices = calculate_box_vertices(
+                right_box_coords,
+                TEXTBOX_WIDTH,
+                TEXTBOX_HEIGHT
             )
-
-        for i in range(1, 3):
-            textbox_drawer.write_text_box(
-                "programmer{}".format(i),
-                _("Programmer"),
-                horiz_just="center"
+            box = TextBox(
+                vertices=vertices,
+                width=TEXTBOX_WIDTH,
+                height=TEXTBOX_HEIGHT,
+                font_path=FONT_PATH,
+                font_size=FONT_SIZE,
             )
             textbox_drawer.write_text_box(
-                "tester{}".format(i),
-                _("Tester"),
-                horiz_just="center"
+                box,
+                label_text,
+                horiz_just="center",
             )
-            textbox_drawer.write_text_box(
-                "bot{}".format(i),
-                _("Bot"),
-                horiz_just="center"
-            )
-        '''
+
+            # increase y coord for next name tag down
+            top_left_y_coord += 700
 
         return {"type": "image", "data": image}
