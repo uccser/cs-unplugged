@@ -75,6 +75,6 @@ class JobBadgesResourceGenerator(BaseResourceGenerator):
             )
 
             # increase y coord for next name tag down
-            top_left_y_coord += 700
+            top_left_y_coord += 675
 
         return {"type": "image", "data": image}
