@@ -311,6 +311,20 @@ A simple example:
     "This is some text"
   )
 
+.. note::
+
+  It can sometimes be diffuclt to clearly identify the precise size and/or location of a
+  text box relative to the image, therefore while in development mode it may be useful to
+  draw an outline around the text box.
+  To do this, set the ``draw_outline`` variable to ``True`` when drawing the text box,
+  as given below:
+
+  .. code-block:: python
+
+    textbox_drawer = TextBoxDrawer(image, draw, svg_path, draw_outline=True)
+
+  You may also find third party software (e.g. GIMP) useful for this task.
+
 Specific Resource Details
 ==============================================================================
 
