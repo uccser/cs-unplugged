@@ -61,7 +61,7 @@ class TextBoxDrawer(object):
     Text_box layout is defined by elements in an exported SVG.
     """
 
-    def __init__(self, image, draw, svg_path=None):
+    def __init__(self, image, draw, svg_path=None, draw_outline=False):
         """Initialise TextBoxDrawer.
 
         Args:
@@ -70,9 +70,12 @@ class TextBoxDrawer(object):
             svg_path: (str) path to SVG file for text box layout. If None,
                 an instantiated TextBox objects will have to be provided for
                 each call to write_text_box
+            draw_outline: (boolean) boolean value to determine whether to draw outlines
+                around the text box for debugging.
         """
         self.image = image
         self.draw = draw
+        self.draw_outline = draw_outline
         if svg_path:
             self.svg = self.load_svg(svg_path)
             self.width_ratio, self.height_ratio = self.get_dimension_ratios()
@@ -219,6 +222,8 @@ class TextBoxDrawer(object):
             # We've been given a box id- retrieve from SVG
             box = self.get_box(box)
         self.write_text_box_object(self.image, self.draw, box, string, **kwargs)
+        if self.draw_outline:
+            self.draw_textbox_outline(box.vertices, self.draw)
 
     @staticmethod
     def get_text_width(font, text):
@@ -469,4 +474,23 @@ class TextBoxDrawer(object):
                 font=font,
                 align=horiz_just,
                 spacing=line_spacing
+            )
+
+    def draw_textbox_outline(self, vertices, draw):
+        """
+        Draws outline of a textbox.
+
+        Args:
+            draw: (ImageDraw.Draw) ImageDraw object for the resource image.
+            vertices: List of coordinates of each vertex of the text box.
+        """
+        top_left, top_right, bottom_right, bottom_left = vertices
+
+        for index, vertex in enumerate(vertices):
+            index = 0 if index == len(vertices)-1 else index+1
+            next_vertex = vertices[index]
+            draw.line(
+                [vertex, next_vertex],
+                fill=(255, 0, 0),
+                width=2
             )
