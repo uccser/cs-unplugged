@@ -63,15 +63,26 @@ and display this content, is licensed under the
 
 A massive thank you to the following companies for supporting this project:
 
-<a href="https://www.google.com/">
-  <img src="csunplugged/static/img/google-logo-colour.png" alt="Google" width="200">
-</a>
-<a href="https://www.microsoft.com/en-us/philanthropies/">
-  <img src="csunplugged/static/img/microsoft-philanthropies-logo.png" alt="Microsoft" width="200">
-</a>
-<a href="https://crowdin.com/">
-  <img src="csunplugged/static/img/crowdin-logo.png" alt="Crowdin" width="200">
-</a>
-<a href="https://www.browserstack.com/">
-  <img src="csunplugged/static/img/browserstack-logo.png" alt="Crowdin" width="200">
-</a>
+<p>
+  <a href="https://www.google.com/">
+    <img src="csunplugged/static/img/google-logo-colour.png" alt="Google" width="150">
+  </a>
+  <br>
+  <br>
+  <br>
+  <a href="https://www.microsoft.com/en-us/philanthropies/">
+    <img src="csunplugged/static/img/microsoft-philanthropies-logo.png" alt="Microsoft" width="200">
+  </a>
+  <br>
+  <br>
+  <br>
+  <a href="https://crowdin.com/">
+    <img src="csunplugged/static/img/crowdin-logo.png" alt="Crowdin" width="230">
+  </a>
+  <br>
+  <br>
+  <br>
+  <a href="https://www.browserstack.com/">
+    <img src="csunplugged/static/img/browserstack-logo.png" alt="Crowdin" width="250">
+  </a>
+</p>
