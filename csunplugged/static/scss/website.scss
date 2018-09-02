@@ -170,6 +170,10 @@ $rounded-corner-radius: 0.5rem;
   }
 }
 
+#sponsor-logos img {
+  max-height: 4rem;
+}
+
 .glossary-term {
   border-bottom: 1px $gray dotted;
   cursor: help;
