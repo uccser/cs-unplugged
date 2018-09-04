@@ -71,7 +71,7 @@ In this lesson students have performed several steps of decomposition as they ha
 
 #### Examples of what you could look for:
 
-Can students explain why it is important that we can use binary to represent letters? Ask them why it is useful each separate letter into binary, rather than choosing a decimal and binary number for each different word.
+Can students explain why it is important that we can use binary to represent letters? Ask them why it is useful to choose a number value (binary or decimal) representing each letter, rather than choosing a number value representing each word.
 
 {panel end}
 
