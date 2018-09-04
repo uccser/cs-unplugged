@@ -66,7 +66,7 @@ Supports students understanding of ordering any range of numbers, from ordering 
     higher number.
 6.  The student with the lower number should follow the line out to the left
     and go to the next box, while the person with the higher number follows the
-    line leaving to the right to go to the next square.
+    line leaving to the right to go to the next box.
 7.  Now get the next pair of students to do the same, meeting at a box and
     leaving it with the smaller to the left and the larger to the right.
 8.  You can now get the remaining pair of students to do this (remind them to
