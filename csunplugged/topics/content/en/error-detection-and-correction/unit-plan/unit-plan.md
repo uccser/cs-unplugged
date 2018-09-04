@@ -89,8 +89,6 @@ error it tries to put the data back to how it should have been.
 **Error control** is the general term for error correction and error detection
 systems.
 
-{image file-path="img/topics/odd-parroty-parity.png"}
-
 “**Parity**” often comes up in error control as there is a well-known method
 based on it.
 The word "parity" has a general meaning of simply saying if a number is even or
