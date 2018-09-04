@@ -32,47 +32,30 @@ class JobBadgesResourceGenerator(BaseResourceGenerator):
         textbox_drawer = TextBoxDrawer(image, draw)
 
         # coordinates of top left point of text box
-        top_left_x_coord, top_left_y_coord = 50, 100
+        top_left_x_coords = [50, 1200]
+        top_left_y_coord = 100
 
         # Add text labels
         for label, label_text in LABEL_DATA.items():
-            # left box
-            vertices = calculate_box_vertices(
-                (top_left_x_coord, top_left_y_coord),
-                TEXTBOX_WIDTH,
-                TEXTBOX_HEIGHT
-            )
-            box = TextBox(
-                vertices=vertices,
-                width=TEXTBOX_WIDTH,
-                height=TEXTBOX_HEIGHT,
-                font_path=FONT_PATH,
-                font_size=FONT_SIZE,
-            )
-            textbox_drawer.write_text_box(
-                box,
-                label_text,
-                horiz_just="center",
-            )
-            # right box
-            right_box_coords = (top_left_x_coord+1150, top_left_y_coord)
-            vertices = calculate_box_vertices(
-                right_box_coords,
-                TEXTBOX_WIDTH,
-                TEXTBOX_HEIGHT
-            )
-            box = TextBox(
-                vertices=vertices,
-                width=TEXTBOX_WIDTH,
-                height=TEXTBOX_HEIGHT,
-                font_path=FONT_PATH,
-                font_size=FONT_SIZE,
-            )
-            textbox_drawer.write_text_box(
-                box,
-                label_text,
-                horiz_just="center",
-            )
+            for top_left_x_coord in top_left_x_coords:
+                vertices = calculate_box_vertices(
+                    (top_left_x_coord, top_left_y_coord),
+                    TEXTBOX_WIDTH,
+                    TEXTBOX_HEIGHT
+                )
+                box = TextBox(
+                    vertices=vertices,
+                    width=TEXTBOX_WIDTH,
+                    height=TEXTBOX_HEIGHT,
+                    font_path=FONT_PATH,
+                    font_size=FONT_SIZE,
+                )
+                textbox_drawer.write_text_box(
+                    box,
+                    label_text,
+                    horiz_just="center",
+                    vert_just="center",
+                )
 
             # increase y coord for next name tag down
             top_left_y_coord += 675
