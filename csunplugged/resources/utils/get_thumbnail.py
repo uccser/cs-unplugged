@@ -50,15 +50,18 @@ def get_thumbnail_base(resource_slug):
     return resource_thumbnail_base
 
 
-def add_thumbnail_static_path_to_resources(resources):
-    """Add thumbnail attribute to resources.
+def get_thumbnail_static_path_for_resource(resource):
+    """Return static path to thumbnail for resource.
 
     Args:
-        resources (QuerySet): Resources to add thumbnails to.
+        resource (Resource): Resource to get thumbnail for.
+
+    Returns:
+        String of static path to thumbnail.
     """
-    for resource in resources:
-        generator = get_resource_generator(resource.generator_module)
-        resource.thumbnail = join(
-            get_thumbnail_base(resource.slug),
-            get_thumbnail_filename(resource.slug, generator.get_option_defaults())
-        )
+    generator = get_resource_generator(resource.generator_module)
+    thumbnail = join(
+        get_thumbnail_base(resource.slug),
+        get_thumbnail_filename(resource.slug, generator.get_option_defaults())
+    )
+    return thumbnail

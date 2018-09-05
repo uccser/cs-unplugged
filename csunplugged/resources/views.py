@@ -10,7 +10,7 @@ from resources.utils.resource_pdf_cache import resource_pdf_cache
 from resources.utils.get_options_html import get_options_html
 from resources.utils.get_thumbnail import (
     get_thumbnail_base,
-    add_thumbnail_static_path_to_resources,
+    get_thumbnail_static_path_for_resource,
 )
 from utils.group_lessons_by_age import group_lessons_by_age
 from utils.translated_first import translated_first
@@ -44,7 +44,8 @@ class IndexView(generic.ListView):
         """
         # Call the base implementation first to get a context
         context = super(IndexView, self).get_context_data(**kwargs)
-        add_thumbnail_static_path_to_resources(self.object_list)
+        for resource in self.object_list:
+            resource.thumbnail = get_thumbnail_static_path_for_resource(resource)
         return context
 
 

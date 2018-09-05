@@ -79,7 +79,7 @@
         {% for generated_resource in generated_resources %}
           <div class="col-12 mb-4 print-col-6">
             <a class="link-item no-text-decoration d-block h-100 py-2 text-center" href="{% url 'resources:resource' generated_resource.slug %}">
-              <img class="border-thin" src="{% static generated_resource.thumbnail %}" alt="Thumbnail of resource">
+              <img class="border-thin" src="{{ generated_resource.thumbnail }}" alt="Thumbnail of resource">
               <p class="mb-0"><strong>{{ generated_resource.name }}</strong></p>
               {% if generated_resource.description %}
                 <p class="mb-0">{{ generated_resource.description }}</p>
