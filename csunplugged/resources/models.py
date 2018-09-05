@@ -12,7 +12,6 @@ class Resource(TranslatableModel):
     slug = models.SlugField(unique=True)
     name = models.CharField(max_length=200, default="")
     generator_module = models.CharField(max_length=200)
-    thumbnail_static_path = models.CharField(max_length=200)
     copies = models.BooleanField()
     content = models.TextField(default="")
 

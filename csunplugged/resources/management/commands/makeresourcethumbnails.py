@@ -11,8 +11,8 @@ from django.utils import translation
 from resources.models import Resource
 from resources.utils.get_resource_generator import get_resource_generator
 from resources.utils.resource_valid_configurations import resource_valid_configurations
-from utils.bool_to_yes_no import bool_to_yes_no
 from resources.utils.resource_parameters import EnumResourceParameter
+from resources.utils.get_thumbnail_filename import get_thumbnail_filename
 
 BASE_PATH_TEMPLATE = "build/img/resources/{resource}/thumbnails/{language}"
 
@@ -67,11 +67,6 @@ class Command(BaseCommand):
                     for combination in progress_bar:
                         requested_options = QueryDict(urlencode(combination, doseq=True))
                         generator = get_resource_generator(resource.generator_module, requested_options)
-
-                        filename = resource.slug + "-"
-                        for (key, value) in sorted(combination.items()):
-                            filename += "{}-{}-".format(key, bool_to_yes_no(value))
-                        filename = "{}.png".format(filename[:-1])
+                        filename = get_thumbnail_filename(resource.slug, combination)
                         thumbnail_file_path = os.path.join(base_path, filename)
-
                         generator.save_thumbnail(resource.name, thumbnail_file_path)
