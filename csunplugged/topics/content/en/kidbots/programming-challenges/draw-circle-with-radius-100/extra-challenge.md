@@ -8,7 +8,7 @@ Write a program that takes a circumference as the input then draws a circle with
 **Extra challenge #3:**
 [This requires advanced maths, but is a good challenge for a student who is familiar with Pythagoras' theorem] Draw a Circle Using Pythagoras’ Theorem.
 
-{image file-path="img/topics/programming-challenges/circle_red.png"}
+{image file-path="img/topics/programming-challenges/circle_red.png" alt="A red circle drawn using the Pthagoras' Theorem method."}
 
 The diagram above shows a circle (radius 100) drawn using the Pythagoras’ Theorem method.
 (Note: The red triangle inside the circle is only to show the calculation and does not need to be drawn).
