@@ -33,6 +33,10 @@ class IndexViewTest(BaseTestWithDB):
             response.context["all_resources"],
             ["<Resource: Binary Cards>"]
         )
+        self.assertEqual(
+            response.context["all_resources"][0].thumbnail,
+            "/staticfiles/img/resources/binary-cards/thumbnails/en/binary-cards-black_back-no-display_numbers-yes-paper_size-a4.png"
+        )
 
     def test_resources_index_with_multiple_resources(self):
         self.test_data.create_resource(
