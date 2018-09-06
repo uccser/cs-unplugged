@@ -127,11 +127,45 @@ class BaseLoader():
         except FileNotFoundError:
             raise CouldNotFindMarkdownFileError(md_file_path, config_file_path)
 
+        # custom_processors = self.converter.processor_defaults()
+        # if remove_title:
+        #     custom_processors.add("remove-title")
+        # self.converter.update_processors(custom_processors)
+
+        """ Below is a hack to make the image-inline tag not require alt text to be
+            given when the language is not in English.
+            TODO: Remove this hack once translations are complete.
+        """
+        directories = md_file_path.split('/')
+        if 'en' not in directories:
+            custom_argument_rules = {
+                "image-inline": {
+                    "alt": False
+                }
+            }
+        else:
+            custom_argument_rules = {
+                "image-inline": {
+                    "alt": True
+                }
+            }
+
         custom_processors = self.converter.processor_defaults()
         if remove_title:
             custom_processors.add("remove-title")
-        self.converter.update_processors(custom_processors)
+        # self.converter.update_processors(custom_processors)
 
+        templates = self.load_template_files()
+        extensions = [
+            "markdown.extensions.fenced_code",
+            "markdown.extensions.codehilite",
+            "markdown.extensions.sane_lists",
+            "markdown.extensions.tables",
+            mdx_math.MathExtension()
+        ]
+        self.converter = Verto(html_templates=templates, extensions=extensions, custom_argument_rules=custom_argument_rules, processors=custom_processors)
+        """ End of hack. """
+        
         result = None
         try:
             result = self.converter.convert(content)
