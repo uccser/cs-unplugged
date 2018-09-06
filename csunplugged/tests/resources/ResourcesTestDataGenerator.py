@@ -6,7 +6,7 @@ from resources.models import Resource
 class ResourcesTestDataGenerator:
     """Class for generating test data for resource tests."""
 
-    def create_resource(self, slug, name, content, generator_module, thumbnail=True, copies=False):
+    def create_resource(self, slug, name, content, generator_module, copies=False):
         """Create resource object.
 
         Args:
@@ -25,7 +25,5 @@ class ResourcesTestDataGenerator:
             generator_module=generator_module,
             copies=copies,
         )
-        if thumbnail:
-            resource.thumbnail_static_path = "static/images/thumbnail-{}".format(slug)
         resource.save()
         return resource

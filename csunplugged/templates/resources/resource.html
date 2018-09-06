@@ -57,18 +57,16 @@
 
 {% block right_column_content %}
   {% if resource.translation_available %}
-    {% if thumbnail %}
-      <h2>{% trans "Preview" %}</h2>
-      {% load static %}
-      <figure class="figure">
-        <img id="resource-thumbnail" class="figure-img img-thumbnail img-fluid">
-        {% if not DEPLOYED  %}
-          <figcaption class="figure-caption text-center">
-            Preview shows English version in development mode
-          </figcaption>
-        {% endif %}
-      </figure>
-    {% endif %}
+    <h2>{% trans "Preview" %}</h2>
+    {% load static %}
+    <figure class="figure">
+      <img id="resource-thumbnail" class="figure-img img-thumbnail img-fluid">
+      {% if not DEPLOYED  %}
+        <figcaption class="figure-caption text-center">
+          Preview shows English version in development mode
+        </figcaption>
+      {% endif %}
+    </figure>
   {% endif %}
 {% endblock right_column_content %}
 

@@ -12,9 +12,9 @@ class TopicModelTest(BaseTestWithDB):
         topic = self.test_data.create_topic(1)
         self.assertEqual(topic.__str__(), "Topic 1")
 
-    def test_topic_model_type(self):
+    def test_topic_model_name(self):
         topic = self.test_data.create_topic(1)
-        self.assertEqual(topic.model_type(), "Topic")
+        self.assertEqual(topic.MODEL_NAME, "Topic")
 
     def test_topic_model_get_absolute_url(self):
         topic = self.test_data.create_topic(1)

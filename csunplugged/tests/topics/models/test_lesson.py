@@ -20,7 +20,7 @@ class LessonModelTest(BaseTestWithDB):
         )
         self.assertEqual(lesson.__str__(), "Lesson 1 (5 to 7)")
 
-    def test_lesson_model_type(self):
+    def test_lesson_model_name(self):
         topic = self.test_data.create_topic(1)
         unit_plan = self.test_data.create_unit_plan(topic, 1)
         age_group_1 = self.test_data.create_age_group(5, 7)
@@ -30,7 +30,7 @@ class LessonModelTest(BaseTestWithDB):
             1,
             age_group_1
         )
-        self.assertEqual(lesson.model_type(), "Lesson")
+        self.assertEqual(lesson.MODEL_NAME, "Lesson")
 
     def test_lesson_model_get_absolute_url(self):
         topic = self.test_data.create_topic(1)
