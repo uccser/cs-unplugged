@@ -54,10 +54,11 @@
                 <strong>{{ lesson.unit_plan.name }}:</strong> {{ lesson.name }}
                 ({% for age_group in lesson.age_group.all %}{{ age_group.ages.lower }} to {{ age_group.ages.upper }}{% if not forloop.last %} and {% endif %}{% endfor %})
               </a>
+              {% if not lesson.translation_available %}
+                <br>
+                {% include "generic/not-available-badge.html" %}
+              {% endif %}
             </li>
-            {% if not lesson.translation_available %}
-              {% include "generic/not-available-badge.html" %}
-            {% endif %}
             {% endfor %}
         </ul>
       </div>
