@@ -15,47 +15,60 @@
 
 {% block page_heading %}
   <h1>{{ resource.name }}</h1>
-  {% render_html_field resource.content %}
+  {% if not resource.translation_available %}
+    {% url "resources" resource.slug as parent_url %}
+    {% trans "resource" as resource_l10n %}
+    {% trans "lesson" as lesson_l10n %}
+    {% with model=resource model_type=resource_l10n parent=resource parent_type=resource_l10n parent_url=parent_url %}
+      {% include "topics/not-available-warning.html" %}
+    {% endwith %}
+  {% else %}
+    {% render_html_field resource.content %}
+  {% endif %}
 {% endblock page_heading %}
 
 {% block left_column_content %}
-  <h2>{% trans "Create Printable" %}</h2>
+  {% if resource.translation_available %}
+    <h2>{% trans "Create Printable" %}</h2>
 
-  <form action="{% url 'resources:generate' resource.slug %}" method="get"{% if not debug %} target="_blank"{% endif %} id="resource-generation-form">
-    {% block generation_form %}
-    {% endblock generation_form %}
+    <form action="{% url 'resources:generate' resource.slug %}" method="get"{% if not debug %} target="_blank"{% endif %} id="resource-generation-form">
+      {% block generation_form %}
+      {% endblock generation_form %}
 
-    {{ options_html|safe }}
+      {{ options_html|safe }}
 
-    <hr>
+      <hr>
 
-    {% if debug %}
-      <input type="submit" value="{% trans "Generate Printable" %}" class="btn btn-outline-primary mb-3" />
-    {% else %}
-      {% if resource.copies %}
-      <div class="alert alert-info" role="alert">
-      {% blocktrans trimmed %}
-        The download of this Printable includes {{ copies_amount }} unique copies.
-      {% endblocktrans %}
-      </div>
+      {% if debug %}
+        <input type="submit" value="{% trans "Generate Printable" %}" class="btn btn-outline-primary mb-3" />
+      {% else %}
+        {% if resource.copies %}
+        <div class="alert alert-info" role="alert">
+        {% blocktrans trimmed %}
+          The download of this Printable includes {{ copies_amount }} unique copies.
+        {% endblocktrans %}
+        </div>
+        {% endif %}
+        <input type="submit" value="{% trans "Download Printable" %}" class="btn btn-outline-primary mb-3"/>
       {% endif %}
-      <input type="submit" value="{% trans "Download Printable" %}" class="btn btn-outline-primary mb-3"/>
-    {% endif %}
-  </form>
+    </form>
+  {% endif %}
 {% endblock left_column_content %}
 
 {% block right_column_content %}
-  {% if thumbnail %}
-    <h2>{% trans "Preview" %}</h2>
-    {% load static %}
-    <figure class="figure">
-      <img id="resource-thumbnail" class="figure-img img-thumbnail img-fluid">
-      {% if not DEPLOYED  %}
-        <figcaption class="figure-caption text-center">
-          Preview shows English version in development mode
-        </figcaption>
-      {% endif %}
-    </figure>
+  {% if resource.translation_available %}
+    {% if thumbnail %}
+      <h2>{% trans "Preview" %}</h2>
+      {% load static %}
+      <figure class="figure">
+        <img id="resource-thumbnail" class="figure-img img-thumbnail img-fluid">
+        {% if not DEPLOYED  %}
+          <figcaption class="figure-caption text-center">
+            Preview shows English version in development mode
+          </figcaption>
+        {% endif %}
+      </figure>
+    {% endif %}
   {% endif %}
 {% endblock right_column_content %}
 
