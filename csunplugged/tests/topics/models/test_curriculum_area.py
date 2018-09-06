@@ -23,9 +23,9 @@ class CurriculumAreaModelTest(BaseTestWithDB):
             "Area 1: Area 2"
         )
 
-    def test_curriculum_area_model_type(self):
+    def test_curriculum_area_model_name(self):
         area = self.test_data.create_curriculum_area(1)
         self.assertEqual(
-            area.model_type(),
+            area.MODEL_NAME,
             "Curriculum Area"
         )

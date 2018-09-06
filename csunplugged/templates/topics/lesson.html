@@ -19,10 +19,7 @@
 {% block page_heading %}
     <h1 id="{{ lesson.slug }}">{{ lesson.name }}</h1>
     {% if not lesson.translation_available %}
-      {% url "topics:unit_plan" topic.slug unit_plan.slug as parent_url %}
-      {% trans "unit plan" as unit_plan_l10n %}
-      {% trans "lesson" as lesson_l10n %}
-      {% with model=lesson model_type=lesson_l10n parent=unit_plan parent_type=unit_plan_l10n parent_url=parent_url %}
+      {% with model=lesson parent=unit_plan %}
         {% include "topics/not-available-warning.html" %}
       {% endwith %}
     {% else %}

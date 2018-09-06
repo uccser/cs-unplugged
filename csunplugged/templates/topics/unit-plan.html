@@ -17,10 +17,7 @@
 {% block page_heading %}
   <h1 id="{{ unit_plan.slug }}" class="mb-3"><span class="text-muted">{% trans "Unit plan:" %}</span> {{ unit_plan.name }}</h1>
   {% if not topic.translation_available %}
-    {% url "topics:topic" topic.slug as parent_url %}
-    {% trans "unit plan" as unit_plan_l10n %}
-    {% trans "topic" as topic_l10n %}
-    {% with model=unit_plan model_type=unit_plan_l10n parent=topic parent_type=topic_l10n parent_url=parent_url %}
+    {% with model=unit_plan parent=topic %}
       {% include 'topics/not-available-warning.html' %}
     {% endwith %}
   {% endif %}

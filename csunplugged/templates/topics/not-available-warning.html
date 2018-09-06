@@ -7,22 +7,26 @@
   <h4>Sorry! This item is not yet available in {{ language }}.</h4>
   <p>This item is available in the following languages:</p>
   {% endblocktrans %}
-  <p>
-    <div class="btn-group">
-      {% for language in model.languages %}
-        {% get_language_info for language as lang %}
-        <a class="btn btn-outline-danger" role="button" href="{% translate_url language %}">
+  <ul>
+    {% for language in model.languages %}
+      {% get_language_info for language as lang %}
+      <li>
+        <a href="{% translate_url language %}">
           {{ lang.name_local }}
         </a>
-      {% endfor %}
-    </div>
-  </p>
-  {% if parent_type %}
-    <p>...{% trans "or" %}...</p>
-    <a class="btn btn-outline-danger" role="button" href="{{ parent_url }}">
-      {% blocktrans trimmed %}
-      Return to the {{ parent_type }}
-      {% endblocktrans %}
+      </li>
+    {% endfor %}
+  </ul>
+  {% if parent %}
+    <p>
+      <a class="btn btn-outline-danger" href="{{ parent.get_absolute_url }}">
+        {{ model.RETURN_TO_PARENT }}
+      </a>
+    </p>
+  {% endif %}
+  <p>
+    <a class="btn btn-outline-danger" href="{% url 'general:home' %}">
+      {% trans "Return to homepage "%}
     </a>
-    {% endif %}
+  </p>
 </div>

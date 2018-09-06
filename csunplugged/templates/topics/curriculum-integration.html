@@ -26,10 +26,7 @@
     </p>
   {% endif %}
   {% if not integration.translation_available %}
-    {% url "topics:topic" topic.slug as parent_url %}
-    {% trans "topic" as topic_l10n %}
-    {% trans "curriculum integration" as curriculum_integration_l10n %}
-    {% with model=integration model_type=curriculum_integration_l10n parent=topic parent_type=topic_l10n parent_url=parent_url %}
+    {% with model=integration parent=topic %}
       {% include "topics/not-available-warning.html" %}
     {% endwith %}
   {% endif %}
