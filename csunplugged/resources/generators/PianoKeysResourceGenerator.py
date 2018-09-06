@@ -53,7 +53,7 @@ class PianoKeysResourceGenerator(BaseResourceGenerator):
                 name="label",
                 description=_("Piano key labels"),
                 values=create_key_labels(),
-                default=False
+                default="type-1"
             )
         }
 

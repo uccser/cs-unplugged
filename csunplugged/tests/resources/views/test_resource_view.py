@@ -69,10 +69,6 @@ class ResourceViewTest(BaseTestWithDB):
         )
         self.assertFalse(response.context["debug"])
         self.assertFalse(response.context["grouped_lessons"])
-        self.assertEqual(
-            response.context["thumbnail"],
-            "static/images/thumbnail-grid"
-        )
 
     @override_settings(DJANGO_PRODUCTION=True)
     def test_resource_view_resource_thumbnail_base_context_production_en(self):
@@ -132,25 +128,6 @@ class ResourceViewTest(BaseTestWithDB):
                 response.context["resource_thumbnail_base"],
                 "/staticfiles/img/resources/grid/thumbnails/en/"
             )
-
-    def test_resource_view_context_without_thumbnail(self):
-        resource = self.test_data.create_resource(
-            "grid",
-            "Grid",
-            "resources/grid.html",
-            "GridResourceGenerator",
-            thumbnail=False
-        )
-        kwargs = {
-            "resource_slug": resource.slug,
-        }
-        url = reverse("resources:resource", kwargs=kwargs)
-        response = self.client.get(url)
-        self.assertRaises(
-            KeyError,
-            response.context.__getitem__,
-            "thumbnail"
-        )
 
     def test_resource_view_lesson_context(self):
         resource = self.test_data.create_resource(

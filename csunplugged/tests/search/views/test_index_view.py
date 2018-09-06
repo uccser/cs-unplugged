@@ -19,7 +19,7 @@ class IndexViewTest(BaseTestWithDB):
     def setUp(self):
         """Automatically called before each test."""
         super().setUp()
-        makedirs(settings.SEARCH_INDEX_PATH)
+        makedirs(settings.SEARCH_INDEX_PATH, exist_ok=True)
 
     def tearDown(self):
         """Automatically called after each test."""
