@@ -1,12 +1,15 @@
 """Models for the resources application."""
 
 from django.db import models
+from django.utils.translation import ugettext_lazy as _
 from django.urls import reverse
 from utils.TranslatableModel import TranslatableModel
 
 
 class Resource(TranslatableModel):
     """Model for resource in database."""
+
+    MODEL_NAME = _("Printable")
 
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(unique=True)
@@ -26,14 +29,6 @@ class Resource(TranslatableModel):
             "resource_slug": self.slug
         }
         return reverse("resources:resource", kwargs=kwargs)
-
-    def model_type(self):
-        """Text name of model type.
-
-        Returns:
-            Name of the model (str).
-        """
-        return "Resource"
 
     def __str__(self):
         """Text representation of Resource object.

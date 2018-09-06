@@ -2,10 +2,13 @@
 
 from django.db import models
 from django.urls import reverse
+from django.utils.translation import ugettext_lazy as _
 
 
 class GeneralPage(models.Model):
     """Model for general page in database."""
+
+    MODEL_NAME = _("General page")
 
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(unique=True)
@@ -20,14 +23,6 @@ class GeneralPage(models.Model):
             URL as string.
         """
         return reverse(self.url_name)
-
-    def model_type(self):
-        """Text name of GeneralPage model.
-
-        Returns:
-            Name of the model (str).
-        """
-        return "General page"
 
     def __str__(self):
         """Text representation of GeneralPage object.
