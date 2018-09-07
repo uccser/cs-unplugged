@@ -25,7 +25,8 @@ from utils.errors.CouldNotFindYAMLFileError import CouldNotFindYAMLFileError
 class BaseLoader():
     """Base loader class for individual loaders."""
 
-    def __init__(self, base_path="", structure_dir="structure", content_path="", structure_filename="", lite_loader=False):
+    def __init__(self, base_path="", structure_dir="structure", content_path="",
+                 structure_filename="", lite_loader=False):
         """Create a BaseLoader object.
 
         Args:
