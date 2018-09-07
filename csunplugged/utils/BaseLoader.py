@@ -127,11 +127,6 @@ class BaseLoader():
         except FileNotFoundError:
             raise CouldNotFindMarkdownFileError(md_file_path, config_file_path)
 
-        # custom_processors = self.converter.processor_defaults()
-        # if remove_title:
-        #     custom_processors.add("remove-title")
-        # self.converter.update_processors(custom_processors)
-
         """ Below is a hack to make the image-inline tag not require alt text to be
             given when the language is not in English.
             TODO: Remove this hack once translations are complete.
@@ -139,13 +134,25 @@ class BaseLoader():
         directories = md_file_path.split('/')
         if 'en' not in directories:
             custom_argument_rules = {
+                "image-container": {
+                    "alt": False
+                },
                 "image-inline": {
+                    "alt": False
+                },
+                "image-tag": {
                     "alt": False
                 }
             }
         else:
             custom_argument_rules = {
+                "image-container": {
+                    "alt": True
+                },
                 "image-inline": {
+                    "alt": True
+                },
+                "image-tag": {
                     "alt": True
                 }
             }
@@ -153,7 +160,6 @@ class BaseLoader():
         custom_processors = self.converter.processor_defaults()
         if remove_title:
             custom_processors.add("remove-title")
-        # self.converter.update_processors(custom_processors)
 
         templates = self.load_template_files()
         extensions = [
