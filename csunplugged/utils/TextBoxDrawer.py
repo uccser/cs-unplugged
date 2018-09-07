@@ -484,6 +484,19 @@ class TextBoxDrawer(object):
             draw: (ImageDraw.Draw) ImageDraw object for the resource image.
             vertices: List of coordinates of each vertex of the text box.
         """
+        # 1. DONE Add check box (shown in dev mode) to draw the lines around text boxes
+        #   resources/utils/get_options_html.py used in resources/views.py
+        # 2. Add django variable (textbox_outlines = False, or something similar)
+        # 3. Temporarily change this variable when check box is ticked - look at the
+        #    code for creating resource thumbnails for how to do this
+        #   This code in makeresourcethumbnails.py
+                # if options.get("all_languages"):
+                #     languages = settings.DEFAULT_LANGUAGES
+                # else:
+                #     languages = [("en", "")]
+                # for language_code, _ in languages:
+                #     with translation.override(language_code):
+
         top_left, top_right, bottom_right, bottom_left = vertices
 
         for index, vertex in enumerate(vertices):
