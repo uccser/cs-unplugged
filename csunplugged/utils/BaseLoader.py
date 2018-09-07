@@ -169,8 +169,12 @@ class BaseLoader():
             "markdown.extensions.tables",
             mdx_math.MathExtension()
         ]
-        self.converter = Verto(html_templates=templates, extensions=extensions, 
-            custom_argument_rules=custom_argument_rules, processors=custom_processors)
+        self.converter = Verto(
+            html_templates=templates,
+            extensions=extensions,
+            custom_argument_rules=custom_argument_rules,
+            processors=custom_processors
+        )
         """ End of hack. """
         result = None
         try:
