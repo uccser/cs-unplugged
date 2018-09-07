@@ -24,6 +24,13 @@
       </a>
     </p>
   {% endif %}
+  {% if url and url_label %}
+    <p>
+      <a class="btn btn-outline-danger" href="{{ url }}">
+        {{ url_label }}
+      </a>
+    </p>
+  {% endif %}
   <p>
     <a class="btn btn-outline-danger" href="{% url 'general:home' %}">
       {% trans "Return to homepage "%}
