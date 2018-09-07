@@ -15,18 +15,21 @@ def get_options_html(options, local_options, request_parameters=None):
     Returns:
         HTML string
     """
-    html_elements = []
+    html_string = ""
     for parameter in options.values():
-        html_elements.append(parameter.html_element(request_parameters))
+        html_string += element_to_string(parameter.html_element(request_parameters))
+    html_string = '<div id="resource-options">{}</div>'.format(html_string)
+
     if settings.DEBUG:
-        html_elements.append(etree.Element("hr"))
+        html_string_local_options = element_to_string(etree.Element("hr"))
         h3 = etree.Element("h3")
         h3.text = "Local Generation Only"
-        html_elements.append(h3)
+        html_string_local_options += element_to_string(h3)
         for parameter in local_options.values():
-            html_elements.append(parameter.html_element(request_parameters))
+            html_string_local_options += element_to_string(parameter.html_element(request_parameters))
 
-    html_string = ""
-    for html_elem in html_elements:
-        html_string += etree.tostring(html_elem, pretty_print=True, encoding='utf-8').decode('utf-8')
+        html_string += '<div id="local-generation-resource-options">{}</div>'.format(html_string_local_options)
     return html_string
+
+def element_to_string(element):
+    return etree.tostring(element, pretty_print=True, encoding='utf-8').decode('utf-8')

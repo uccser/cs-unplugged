@@ -12,6 +12,7 @@ from resources.utils.resource_parameters import (
     EnumResourceParameter,
     TextResourceParameter,
     IntegerResourceParameter,
+    BoolResourceParameter
 )
 
 PAPER_SIZE_VALUES = {
@@ -71,6 +72,12 @@ class BaseResourceGenerator(ABC):
                 placeholder=_("Example School: Room Four"),
                 required=False
             ),
+            "text_box_outline": BoolResourceParameter(
+                name="text_box_outline",
+                description="Show Text Box Outlines (Developer use only)",
+                default=False,
+                required=False
+            )
         }
         if cls.copies:
             local_options.update({

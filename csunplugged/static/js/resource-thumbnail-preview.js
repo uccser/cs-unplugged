@@ -7,15 +7,12 @@ function updateResourceThumbnail() {
   /**
    * Update resource thumbnail with currently selected options.
    */
-  var form = $("form#resource-generation-form");
-  var values = form.serializeArray();
+  var values = $("#resource-options :checked");
   values.sort(sortValuesAlphabetically);
   var query_string = "";
-  values.forEach(function(value){
-    if (["header_text", "copies"].indexOf(value.name) === -1) {
-      query_string += value.name + "-" + value.value + "-";
-    }
-  });
+  for (var i = 0; i < values.length; i++) {
+    query_string += values[i].name + "-" + values[i].value + "-";
+  }
   query_string = query_string.slice(0, -1);
   var thumbnail_filename = resource_slug + "-" + query_string + ".png";
   var thumbnail = document.getElementById("resource-thumbnail");
