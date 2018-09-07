@@ -123,7 +123,7 @@ Tester, please test my program (the programmer hands the program on the whiteboa
 
 Teacher: Remember Tester, it’s your job to find any "bugs" in my program.
 A bug is when my program isn’t doing what was expected.
-Your job is to draw a line under the piece of code where they notice the instructions seem to be going wrong.
+Your job is to draw a line under the piece of code where you notice the instructions seem to be going wrong.
 You can stop the Bot at the point that you think there is a bug.
 
 **Tester** then reads the instructions in the program off the board and the Bot executes them as they are read.
