@@ -92,7 +92,7 @@ class UnitPlanLoader(TranslatableModelLoader):
             content_path=os.path.join(self.content_path, lesson_path),
             structure_filename=lesson_structure_file,
             base_path=self.base_path,
-
+            lite_loader=self.lite_loader,
         ).load()
 
         # Create AgeGroup and assign to lessons

@@ -25,19 +25,22 @@ from utils.errors.CouldNotFindYAMLFileError import CouldNotFindYAMLFileError
 class BaseLoader():
     """Base loader class for individual loaders."""
 
-    def __init__(self, base_path="", structure_dir="structure", content_path="", structure_filename=""):
+    def __init__(self, base_path="", structure_dir="structure", content_path="", structure_filename="", lite_loader=False):
         """Create a BaseLoader object.
 
         Args:
-            base_path: path to content_root, eg. "topics/content/" (str).
-            structure_dir: name of directory under base_path storing structure files (str).
-            content_path: path within locale/structure dir to content directory, eg. "binary-numbers/unit-plan" (str).
-            structure_filename: name of yaml file, eg. "unit-plan.yaml" (str).
+            base_path (str): path to content_root, eg. "topics/content/".
+            structure_dir (str): name of directory under base_path storing structure files.
+            content_path (str): path within locale/structure dir to content directory, eg. "binary-numbers/unit-plan".
+            structure_filename (str): name of yaml file, eg. "unit-plan.yaml".
+            lite_loader (bool): Boolean to state whether loader should only
+                be loading key content and perform minimal checks."
         """
         self.base_path = base_path
         self.structure_dir = structure_dir
         self.content_path = content_path
         self.structure_filename = structure_filename
+        self.lite_loader = lite_loader
         self.setup_md_to_html_converter()
 
     def get_localised_file(self, language, filename):
@@ -144,8 +147,10 @@ class BaseLoader():
 
         if len(result.html_string) == 0:
             raise EmptyMarkdownFileError(md_file_path)
-        check_converter_required_files(result.required_files, md_file_path)
-        check_converter_glossary_links(result.required_glossary_terms, md_file_path)
+
+        if not self.lite_loader:
+            check_converter_required_files(result.required_files, md_file_path)
+            check_converter_glossary_links(result.required_glossary_terms, md_file_path)
         return result
 
     def log(self, message, indent_amount=0):
