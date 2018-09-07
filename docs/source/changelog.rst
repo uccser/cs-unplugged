@@ -23,6 +23,55 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+4.1.0
+==============================================================================
+
+- **Release date:** 24th August 2018
+- **Downloads:** `Source downloads are available on GitHub`_
+
+**Summary of changes:**
+
+This release focuses on adding multingual support, with limited versions of the website available in German (Deutsche) and Spanish (Español).
+
+**Changelog:**
+
+- Enable German (Deutsche) language, currently the following pages are available:
+  - All basic pages
+  - All printables
+  - Binary numbers topic: one lesson for 5 to 7 year olds, and 3 curriculum integrations.
+- Enable Spanish (Español) language, currently the following pages are available:
+  - All basic pages
+  - All printables
+  - Binary numbers topic: one lesson for 8 to 10 year olds, and 7 curriculum integrations.
+- Add Python implementations for many existing programming challenges.
+- Modify 'Treasure Hunt' printable to 'Number Hunt', due to redesign of activity for universal use (English language concepts were being used).
+- Modify 'Piano Keys' printable to allow different types of key labels.
+- Modify printable PDF generation to include all languages.
+- Modify printable thumbnail generation to only create English language (add warning when displaying thumbnail in non-English language).
+- Use Bootstrap styling for printable generation form.
+- Allow custom layout of printables in PDF generation.
+- Lock website search to English only, until multilingual search is implemented. `#989 <https://github.com/uccser/cs-unplugged/issues/989>`__
+- Add Travis CI status to README for each website. `#1003 <https://github.com/uccser/cs-unplugged/issues/1003>`__
+- Add name labels to Travis CI jobs. `#996 <https://github.com/uccser/cs-unplugged/pull/996>`__
+- Add configuration file for link checker and translation syncer.
+- Package updates:
+
+  - Update django to 1.11.14.
+  - Update django-bootstrap-breadcrumbs to 0.9.1.
+  - Update django-extensions to 2.1.0.
+  - Update django-haystack to 2.8.1.
+  - Update django-widget-tweaks to 1.4.2.
+  - Update gsutil to 4.33.
+  - Update lxml to 4.2.4.
+  - Update Pillow to 5.2.0.
+  - Update python-markdown-math to 0.5.
+  - Update PyYAML to 4.2b4.
+  - Update sphinx to 1.7.7.
+  - Update sphinx-rtd-theme to 0.4.1.
+  - Update tqdm to 4.25.0.
+  - Update verto to 0.7.4.
+  - Update wheel to 0.31.1.
+
 4.0.2
 ==============================================================================
 

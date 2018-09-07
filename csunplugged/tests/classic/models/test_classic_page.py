@@ -15,13 +15,13 @@ class ClassicPageModelTest(BaseTestWithDB):
         )
         self.assertEqual(page.__str__(), "Page")
 
-    def test_classic_page_model_type(self):
+    def test_classic_page_model_name(self):
         page = ClassicPage(
             slug="page",
             name="Page",
             redirect="http://www.example.com",
         )
-        self.assertEqual(page.model_type(), "Classic CS Unplugged page")
+        self.assertEqual(page.MODEL_NAME, "Classic CS Unplugged page")
 
     def test_classic_page_model_get_absolute_url(self):
         page = ClassicPage(

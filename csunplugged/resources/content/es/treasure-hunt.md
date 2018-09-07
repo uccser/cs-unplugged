@@ -1,0 +1,3 @@
+# Búsqueda del tesoro
+
+Este recurso contiene impresiones para las actividades de algoritmos de búsqueda.

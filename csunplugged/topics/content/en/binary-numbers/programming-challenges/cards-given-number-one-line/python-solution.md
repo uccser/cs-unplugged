@@ -1,5 +1,5 @@
 ```python
-number_of_dots = input('Please enter a number of dots less than or equal to 31: ')
+number_of_dots = int(input('Please enter a number of dots less than or equal to 31: '))
 cards = ''
 if number_of_dots <= 31:
   if number_of_dots >= 16:

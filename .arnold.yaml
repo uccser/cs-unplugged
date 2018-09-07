@@ -26,10 +26,12 @@ translation:
     - csunplugged/locale/{language}/LC_MESSAGES/
     - csunplugged/topics/content/{language}/
     - csunplugged/resources/content/{language}/
+    - subtitles/{language}/
   file-types:
     - .md
     - .yaml
     - .po
+    - .vtt
   language-mapping-overrides:
     # Crowdin to Django
     zh-CN: zh_Hans

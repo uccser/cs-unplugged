@@ -106,7 +106,7 @@ INSTRUCTIONS_HTML = _("""
     <strong>My total guesses:</strong> _____<br>
     <strong>Opponent's total guesses:</strong> _____
 </p>
-""".strip())
+""")
 
 
 class NumberHuntResourceGenerator(BaseResourceGenerator):
@@ -242,7 +242,6 @@ class NumberHuntResourceGenerator(BaseResourceGenerator):
         Returns:
             Tuple of (range_min, range_max, font_size)
         """
-        # prefilled_values = self.options["prefilled_values"].value
         range_min = 0
         if range_descriptor == "easy":
             range_max = 100

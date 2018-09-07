@@ -168,7 +168,7 @@ class SearchingCardsResourceGenerator(BaseResourceGenerator):
         number_cards = self.options["number_cards"].value
 
         if max_number == "blank":
-            range_text = _("blank")
+            range_text = _("Blank")
         elif max_number == "cards":
             range_text = _("{} to {}").format(MIN_VALUE, number_cards)
         else:

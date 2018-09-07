@@ -23,7 +23,8 @@ class ModuloClockResourceGenerator(BaseResourceGenerator):
             "modulo_number": EnumResourceParameter(
                 name="modulo_number",
                 description=_("Modulo"),
-                values=MODULO_NUMBER_VALUES
+                values=MODULO_NUMBER_VALUES,
+                default="10",
             )
         }
 
@@ -79,7 +80,7 @@ class ModuloClockResourceGenerator(BaseResourceGenerator):
         """
         modulo_number = self.options["modulo_number"].value
         if modulo_number == "1":
-            modulo_text = _("blank")
+            modulo_text = _("Blank")
         else:
             modulo_text = modulo_number
         return "{} - {}".format(

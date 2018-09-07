@@ -1,5 +1,5 @@
 ```python
-number = input('Enter a number: ')
+number = int(input('Enter a number: '))
 if number % 2 == 0:
   print('You entered an even number!')
 else:
