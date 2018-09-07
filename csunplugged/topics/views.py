@@ -6,6 +6,7 @@ from django.views import generic
 from django.http import JsonResponse, Http404
 from config.templatetags.render_html_field import render_html_with_static
 from topics.utils.add_lesson_ages_to_objects import add_lesson_ages_to_objects
+from resources.utils.get_thumbnail import get_thumbnail_static_path_for_resource
 from utils.translated_first import translated_first
 from utils.group_lessons_by_age import group_lessons_by_age
 from django.utils.translation import get_language
@@ -199,7 +200,7 @@ class LessonView(generic.DetailView):
             generated_resource = dict()
             generated_resource["slug"] = related_resource.slug
             generated_resource["name"] = related_resource.name
-            generated_resource["thumbnail"] = related_resource.thumbnail_static_path
+            generated_resource["thumbnail"] = get_thumbnail_static_path_for_resource(related_resource)
             relationship = ResourceDescription.objects.get(resource=related_resource, lesson=self.object)
             generated_resource["description"] = relationship.description
             generated_resources.append(generated_resource)

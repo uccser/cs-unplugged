@@ -23,7 +23,8 @@ class ModuloClockResourceGenerator(BaseResourceGenerator):
             "modulo_number": EnumResourceParameter(
                 name="modulo_number",
                 description=_("Modulo"),
-                values=MODULO_NUMBER_VALUES
+                values=MODULO_NUMBER_VALUES,
+                default="10",
             )
         }
 
