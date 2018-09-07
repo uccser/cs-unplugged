@@ -84,7 +84,7 @@ A programmer needs to visualise what would happen when they are writing the inst
 
 {panel end}
 
-Teacher: "Bot - please pick up Little Red Riding Hood ready to receive the instructions for the tester."
+Teacher: "Bot - please pick up Little Red Riding Hood and be ready to receive the instructions for the tester."
 (The bot can carry a toy or token representing Little Red Riding Hood; or they can imagine that they are guiding her).
 
 Tester then reads off the board: "move forward, move forward."
