@@ -16,10 +16,9 @@
 {% block page_heading %}
   <h1>{{ resource.name }}</h1>
   {% if not resource.translation_available %}
-    {% url "resources" resource.slug as parent_url %}
-    {% trans "resource" as resource_l10n %}
-    {% trans "lesson" as lesson_l10n %}
-    {% with model=resource model_type=resource_l10n parent=resource parent_type=resource_l10n parent_url=parent_url %}
+    {% url "resources:index" as url %}
+    {% trans "Return to list of printables" as url_label %}
+    {% with model=resource %}
       {% include "topics/not-available-warning.html" %}
     {% endwith %}
   {% else %}
