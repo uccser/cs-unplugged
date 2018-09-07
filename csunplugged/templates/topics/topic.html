@@ -17,6 +17,8 @@
 {% block page_heading %}
   <h1 id="{{ topic.slug }}">{{ topic.name }}</h1>
   {% if not topic.translation_available %}
+    {% url "topics:index" as url %}
+    {% trans "Return to list of topics" as url_label %}
     {% with model=topic %}
       {% include 'topics/not-available-warning.html' %}
     {% endwith %}
