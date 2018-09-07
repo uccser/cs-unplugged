@@ -17,14 +17,14 @@ class GeneralPageModelTest(BaseTestWithDB):
         )
         self.assertEqual(page.__str__(), "Page")
 
-    def test_general_page_model_type(self):
+    def test_general_page_model_name(self):
         page = GeneralPage(
             slug="page",
             name="Page",
             template="template.html",
             url_name="url",
         )
-        self.assertEqual(page.model_type(), "General page")
+        self.assertEqual(page.MODEL_NAME, "General page")
 
     @override_settings(ROOT_URLCONF="tests.general.models.assets.urls")
     def test_general_page_model_get_absolute_url(self):

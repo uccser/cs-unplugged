@@ -177,3 +177,12 @@ class BaseResourceGeneratorTest(BaseTestWithDB):
         self.assertListEqual(options_order, list(local_options))
         for option in local_options.values():
             self.assertIsInstance(option, ResourceParameter)
+
+    def test_get_option_defaults(self):
+        option_defaults = BaseResourceGenerator.get_option_defaults()
+        self.assertEqual(
+            option_defaults,
+            {
+                "paper_size": "a4",
+            }
+        )

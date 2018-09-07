@@ -27,10 +27,7 @@
     {{ implementation.language.name }} {% trans "solution" %}
   </h2>
   {% if not implementation.translation_available %}
-    {% url "topics:programming_challenge" topic.slug programming_challenge.slug as parent_url %}
-    {% trans "solution" as solution_l10n %}
-    {% trans "challenge" as challenge_l10n %}
-    {% with model=implementation model_type=solution_l10n parent=programming_challenge parent_type=challenge_l10n parent_url=parent_url %}
+    {% with model=implementation parent=programming_challenge %}
       {% include 'topics/not-available-warning.html' %}
     {% endwith %}
   {% endif %}
