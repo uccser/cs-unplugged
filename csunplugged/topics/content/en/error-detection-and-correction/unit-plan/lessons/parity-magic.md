@@ -110,7 +110,7 @@ Step 1: Example layout of a 5x5 grid set up by the volunteer.
 
 ### Step by step adding a parity bit to each row and column
 
-{image file-path="img/topics/parity-cards.gif"}
+{image file-path="img/topics/parity-cards.gif" alt="An animation of adding a parity bit to each row and column."}
 
 The last parity bit placed is useful because it will always work for both the
 column and row; if it doesn't match for both the row and column then you'll

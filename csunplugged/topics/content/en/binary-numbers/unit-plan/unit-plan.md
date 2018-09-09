@@ -45,13 +45,13 @@ The binary number system is base 2, so there are only two digits before you need
 
 Humans normally use the decimal number system, which is base 10, so there are ten digits before you move to the next place value: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.
 
-{image file-path="img/topics/binary_fingers.png"}
+{image file-path="img/topics/binary_fingers.png" alt="An image of one person holding up ten fingers and another person holding up two fingers."}
 
 {panel end}
 
 ## Real World Implications
 
-{image file-path="img/topics/col_binary_01.png" alignment="right"}
+{image file-path="img/topics/col_binary_01.png" alignment="right" alt="An image of a zero and a one."}
 
 - The number of bits used to represent characters in text affects the range of characters available; a short representation is more compact, but can't represent characters from all languages.
 
