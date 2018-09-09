@@ -13,6 +13,15 @@ class Command(BaseCommand):
 
     help = "Converts Markdown files listed in structure file and stores"
 
+    def add_arguments(self, parser):
+        """Add optional parameter to loadtopics command."""
+        parser.add_argument(
+            "--lite-load",
+            action="store_true",
+            dest="lite_load",
+            help="Perform lite load (only load key topics content)",
+        )
+
     def handle(self, *args, **options):
         """Automatically called when the loadresources command is given.
 
@@ -21,6 +30,7 @@ class Command(BaseCommand):
                 attribute.
         """
         factory = LoaderFactory()
+        lite_load = options.get("lite_load")
 
         # Get structure and content files
         base_loader = BaseLoader()
@@ -114,5 +124,6 @@ class Command(BaseCommand):
                 factory.create_topic_loader(
                     base_path=base_path,
                     content_path=topic_path,
-                    structure_filename=topic_structure_file
+                    structure_filename=topic_structure_file,
+                    lite_loader=lite_load,
                 ).load()
