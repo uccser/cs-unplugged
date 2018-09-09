@@ -90,7 +90,7 @@ Teacher: "Bot - please pick up Little Red Riding Hood ready to receive the instr
 
 Tester then reads off the board: "move forward, move forward."
 
-{image file-path="img/topics/kidbots-little-red-riding-hood-2.gif" alt="Little Red Riding Hood moves forward 2 spaces to positioin (3,3)."}
+{image file-path="img/topics/kidbots-little-red-riding-hood-2.gif" alt="Little Red Riding Hood moves forward 2 spaces to position (3,3)."}
 
 {panel type="teaching"}
 
