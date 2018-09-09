@@ -111,6 +111,22 @@ cmd_update() {
 }
 defhelp update 'Run Django migrate and updatedata commands and build static files.'
 
+# Run update command only for key content
+dev_update_lite() {
+  dev_static
+  echo ""
+  dev_migrate
+  echo ""
+  echo "Loading content..."
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py updatedata --lite-load
+  dev_collect_static
+  echo ""
+  echo -e "\n${GREEN}Key content is loaded!${NC}"
+  echo "Run the 'update' command to load all content"
+  echo "Open your preferred web browser to the URL 'localhost'"
+}
+defhelp -dev update_lite 'Run update command only for key content - Useful for development.'
+
 # Collecting static files
 dev_collect_static() {
   echo

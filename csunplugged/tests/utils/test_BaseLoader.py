@@ -1,9 +1,9 @@
 """Test class for BaseLoader class."""
 
+import os.path
 from django.test import SimpleTestCase
 from tests.utils.BareBaseLoader import BareBaseLoader
 from utils.errors.InvalidYAMLFileError import InvalidYAMLFileError
-import os.path
 
 TEST_ASSET_PATH = "tests/utils/assets/"
 
@@ -66,3 +66,10 @@ class BaseLoaderTest(SimpleTestCase):
                 loader.load_template_files(),
                 dict()
             )
+
+    def test_lite_loader(self):
+        test_file = os.path.join(TEST_ASSET_PATH, "lite-loader", "text.md")
+        loader = BareBaseLoader(
+            lite_loader=True,
+        )
+        loader.convert_md_file(test_file, "config.yaml")
