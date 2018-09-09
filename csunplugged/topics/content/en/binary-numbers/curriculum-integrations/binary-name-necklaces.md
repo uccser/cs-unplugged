@@ -1,6 +1,6 @@
 # Binary Name Necklaces
 
-{image file-path="img/topics/col_binary_necklace_copy.png"}
+{image file-path="img/topics/col_binary_necklace_copy.png" alt="An image of a person wearing a necklace."}
 
 Create a necklace or a bag tag with your initials written in 5 bit binary.
 

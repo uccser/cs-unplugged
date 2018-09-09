@@ -89,7 +89,7 @@ Teacher: "Bot - please pick up Little Red Riding Hood and be ready to receive th
 
 Tester then reads off the board: "move forward, move forward."
 
-{image file-path="img/topics/kidbots-little-red-riding-hood-2.gif"}
+{image file-path="img/topics/kidbots-little-red-riding-hood-2.gif" alt="Little Red Riding Hood moves forward 2 spaces to position (3,3)."}
 
 {panel type="teaching"}
 
@@ -110,7 +110,7 @@ What would we program next?
 Point to where the next piece of code needs to be added and add a move forward and turn left, turn left.
 (This is deliberately incorrect.)
 
-{image file-path="img/topics/kidbots-little-red-riding-hood-3.gif"}
+{image file-path="img/topics/kidbots-little-red-riding-hood-3.gif" alt="Little Red Riding Hood moves forward 3 spaces to position (4,3) and turns left twice."}
 
 I think it’s ready to test now.
 "Tester, please test my program" (the Programmer hands the program on the whiteboard to the Tester and the Bot should return to the starting square ready to rerun the program).
@@ -160,7 +160,7 @@ Let’s test it.
 
 Once the bug has been identified then ask the Tester to test it again; ask the Bot to pick up Little Red Riding Hood and go back to the start position, then the Tester reads them the instructions.
 
-{image file-path="img/topics/kidbots-little-red-riding-hood-4.gif"}
+{image file-path="img/topics/kidbots-little-red-riding-hood-4.gif" alt="Little Red Riding Hood moves forward 3 spaces to (4,3), turns left once and moves forward one space to (4,2)."}
 
 Did we successfully program Little Red Riding Hood to rescue Grandma?
 How do we know?
