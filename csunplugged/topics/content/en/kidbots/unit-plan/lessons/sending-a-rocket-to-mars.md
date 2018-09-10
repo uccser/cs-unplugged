@@ -33,12 +33,13 @@ Ask for two volunteers and give yourself and them the roles of:
 
 {image file-path="img/topics/kidbots-rocket-1.png" alt="8 x 8 grid with a rocket ship at position (1,5) and Mars at position (4,3). Positions are counted from the top left corner."}
 
-Teacher: "I’m going to be the programmer, but I’m going to need your help."
-"We are  programming "the Bot", not just remote controlling it, because ALL the instructions are written before the Bot can follow those instructions.
+Teacher: "I’m going to be the programmer, but I’m going to need your help. We are programming the Bot, not just remote controlling it, because ALL the instructions are written before the Bot can follow those instructions."
+
+"It’s our job to write down clear instructions for the Bot, who is going to be (say the person’s name). (Student's name) will be the Tester and is going to give the instructions to the Bot. The Tester will be on the lookout for bugs."
+
+"First of all we need to decide, what programming language are we are going to use for this? I’ve chosen arrows to represent move forward, turn left and turn right."
 
 "Debugging is fun because you get a chance to change your program after it’s finished when you notice it’s not working how you thought it should."
-
-"It’s my job to write down clear instructions for the Bot, who is going to be (say the person’s name) and "The Tester" (who is...) is going to give the instructions to the Bot and be on the lookout for bugs."
 
 "First of all I need to decide, what programming language are we are going to use for this? I’ve chosen arrows to represent move forward, turn left and turn right."
 
@@ -73,7 +74,7 @@ If you are putting arrows on the grid, the turning arrows will also need a forwa
 "So let’s try that, and see what happens.
 
 "Tester - could you please take these instructions and pass them onto the the Bot.
-Be ready to underline what doesn’t work when you see the Bot doing something that doesn’t look right, and hand the whiteboard back to me to figure out how to fix the bug. "
+Be ready to underline what doesn’t work when you see the Bot doing something that doesn’t look right, and hand the whiteboard back to me to figure out how to fix the bug."
 
 {panel type="teaching"}
 
@@ -123,7 +124,7 @@ Tester, please test my program (the programmer hands the program on the whiteboa
 
 Teacher: Remember Tester, it’s your job to find any "bugs" in my program.
 A bug is when my program isn’t doing what was expected.
-Your job is to draw a line under the piece of code where they notice the instructions seem to be going wrong.
+Your job is to draw a line under the piece of code where you notice the instructions seem to be going wrong.
 You can stop the Bot at the point that you think there is a bug.
 
 **Tester** then reads the instructions in the program off the board and the Bot executes them as they are read.
