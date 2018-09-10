@@ -29,7 +29,7 @@ This part of the lesson explores changing the way the numbers are used.
 
 ### Variation 1: Identical value
 
-{image file-path="img/topics/sorting-network-equal-3.png"}
+{image file-path="img/topics/sorting-network-equal-3.png" alt="Two people each holding up a card with the number 3 on it."}
 
 In this variation, students try the Sorting Network with a set of cards where some cards have an identical value, such as  1, 2, 3, 3, 4, 5.
 They will probably ask what to do when comparing the identical cards - ask them what they think, and they are likely to realise that it won't make any difference (if 3 and 3 meet, then it won't matter which one goes left and which goes right!).
@@ -64,7 +64,7 @@ By reversing the left/right decision, the final result will be in the reverse or
 
 ### Variation 3: Letters of the alphabet
 
-{image file-path="img/topics/sorting-network-variation-alphabet.png"}
+{image file-path="img/topics/sorting-network-variation-alphabet.png" alt="Cards with letters on them."}
 
 Give the students cards with letters on them.
 Ask how we could compare these (students should observe that they could be in alphabetical order).
@@ -90,9 +90,9 @@ For example, the first image below shows an input that happens to come out sorte
 If it fails on just one input (the second one) then we can't rely on it, even though it sometimes works.
 In the other direction, it will always sort correctly.
 
-{image file-path="img/topics/sorting-network-backwards-1.png"}
+{image file-path="img/topics/sorting-network-backwards-1.png" alt="This diagram shows that when the Sorting Network is given the input 654321 it happens to come out sorted when ran backwards."}
 
-{image file-path="img/topics/sorting-network-backwards-2.png"}
+{image file-path="img/topics/sorting-network-backwards-2.png" alt="This diagram shows that when the Sorting Network is given the input 512364 it does not come out sorted when ran backwards."}
 
 {panel end}
 
