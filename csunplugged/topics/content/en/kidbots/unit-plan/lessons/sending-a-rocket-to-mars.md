@@ -1,6 +1,10 @@
 # Sending a rocket to Mars
 
-{image file-path="img/topics/unplugged-programming-icon.png" alt="Students standing around a large checkerboard grid." caption="This example is a starter lesson with an object in the middle. The girl on the white square is 'The Bot', the girl at the back is 'The Programmer' and the boy in the green and gold is 'the Tester'."}
+{image file-path="img/topics/unplugged-programming-icon.png" alt="Students standing around a large checkerboard grid." caption="true"}
+
+This example is a starter lesson with an object in the middle. The girl on the white square is 'The Bot', the girl at the back is 'The Programmer' and the boy in the green and gold is 'the Tester'.
+
+{image end}
 
 ## Key questions
 
@@ -29,16 +33,19 @@ Ask for two volunteers and give yourself and them the roles of:
 
 {image file-path="img/topics/kidbots-rocket-1.png" alt="8 x 8 grid with a rocket ship at position (1,5) and Mars at position (4,3). Positions are counted from the top left corner."}
 
-Teacher: "I’m going to be the programmer, but I’m going to need your help."
-"We are  programming "the Bot", not just remote controlling it, because ALL the instructions are written before the Bot can follow those instructions.
+Teacher: "I’m going to be the programmer, but I’m going to need your help. We are programming the Bot, not just remote controlling it, because ALL the instructions are written before the Bot can follow those instructions."
+
+"It’s our job to write down clear instructions for the Bot, who is going to be (say the person’s name). (Student's name) will be the Tester and is going to give the instructions to the Bot. The Tester will be on the lookout for bugs."
+
+"First of all we need to decide, what programming language are we are going to use for this? I’ve chosen arrows to represent move forward, turn left and turn right."
 
 "Debugging is fun because you get a chance to change your program after it’s finished when you notice it’s not working how you thought it should."
 
-"It’s my job to write down clear instructions for the Bot, who is going to be (say the person’s name) and "The Tester" (who is...) is going to give the instructions to the Bot and be on the lookout for bugs."
-
 "First of all I need to decide, what programming language are we are going to use for this? I’ve chosen arrows to represent move forward, turn left and turn right."
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 There will be different ways to express the same instructions (such as drawing an arrow, writing "Forward", or using the printed arrows resource above), and the key is that we need to be consistent.
 The choices about the exact format of the instructions is what leads to different programming languages, and it's fine that this happens, as long as we know the meaning for the particular language we're using at the moment.
@@ -54,7 +61,9 @@ The goal is to get the rocket to the square that Mars is in.
 Let’s write the first two steps on the board together."
 (Draw two forward arrows.)
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 To work it out students may initially need to see the program in action, so place the arrows within the grid to demonstrate what the rocket will do.
 It’s also a great technique to write the first few instructions of the code, test it and then add to it.
@@ -65,9 +74,11 @@ If you are putting arrows on the grid, the turning arrows will also need a forwa
 "So let’s try that, and see what happens.
 
 "Tester - could you please take these instructions and pass them onto the the Bot.
-Be ready to underline what doesn’t work when you see the Bot doing something that doesn’t look right, and hand the whiteboard back to me to figure out how to fix the bug. "
+Be ready to underline what doesn’t work when you see the Bot doing something that doesn’t look right, and hand the whiteboard back to me to figure out how to fix the bug."
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 A key point in this activity is that the instructions are all written before they are tested.
 We don't allow anyone to give additional instructions to the Bot; they must follow exactly what is written (which can sometimes be humorous if they head off in the wrong direction.)
@@ -85,7 +96,9 @@ Tester then reads off the board: "move forward, move forward."
 
 {image file-path="img/topics/kidbots-rocket-2.gif" alt="This animation builds upon the previous grid image. The cell with the rocket ship contains an up arrow, and the cell above the rocket contains an up arrow."}
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 At this point you could question whether or not a "Stop" instruction is needed.
 Students should be able to come up with the reasoning that the program stops automatically because there are no more instructions.
@@ -111,7 +124,7 @@ Tester, please test my program (the programmer hands the program on the whiteboa
 
 Teacher: Remember Tester, it’s your job to find any "bugs" in my program.
 A bug is when my program isn’t doing what was expected.
-Your job is to draw a line under the piece of code where they notice the instructions seem to be going wrong.
+Your job is to draw a line under the piece of code where you notice the instructions seem to be going wrong.
 You can stop the Bot at the point that you think there is a bug.
 
 **Tester** then reads the instructions in the program off the board and the Bot executes them as they are read.
@@ -121,7 +134,9 @@ You can stop the Bot at the point that you think there is a bug.
 3.  Turn right
 4.  Turn right
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 The tester should underline under the second turn right because the rocket will have turned around twice on the spot rather than turning once and going forward again.
 (Which is what is needed to get to Mars.)
@@ -133,7 +148,9 @@ I love finding bugs, so I can start solving them.
 Now class, let’s work through this together to find my bug.
 Tester, you’ve done a great job finding it, but it’s the programmer’s job to find and fix the bug."
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 If the class can’t identify how the program needs debugging then talk through each step and model it with the rocket.
 Did move forward make sense?
@@ -156,7 +173,9 @@ Ask the Bot to pick up the rocket and go back to the start position, then the Te
 Did we successfully program the rocket to land on Mars?
 How do we know?
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 We successfully programmed the rocket  to land on Mars when the rocket and Mars are in the same square.
 
@@ -167,7 +186,9 @@ Are there other ways we could have programmed the rocket to get to Mars?
 Discuss the programming options and test each one.
 What if we want the rocket to get to Mars, and then come back safely?
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 In programming, there are numerous ways to program the same thing.
 Some might be more efficient than others, but all are correct if they achieve the desired result.
@@ -178,7 +199,9 @@ If it achieves the intended outcome, but gets there in a different way it is sti
 
 {panel end}
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 Either set up your students to be working around the outside of your large grid, or you can use a smaller grid like a chessboard or the back of a 100s board (or print the grid provided with this lesson), in which case the bot moves a counter on the board instead of walking around the grid.
 
@@ -201,7 +224,9 @@ Have the students choose their own two toys (one to be a space travelling object
 5.  Repeat step 4 until the program is free of bugs and works as intended.
 6.  Change roles and move the Bot (space travelling object) starting point and the toy that represents the destination until everyone has had a turn.
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 If you notice that your students need support to visualise how to write the instructions you could use the arrows (cards) provided on the ground, or for a small desktop grid, use a whiteboard marker or small arrows.
 This supports students to visualise what they want to program.
@@ -224,7 +249,9 @@ Then challenge them to program with a Left turn but no Right turn.
 Ask if they can write programs with only the Right and Left turn instructions (i.e. no Forward instruction)?
 (This isn't possible, as you would only be able to turn around on one square.)
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 Eliminating one of the turn instructions highlights that different instruction sets can achieve the same thing, although some may be more convenient than others (for example, there are many different programming languages, but they can all do essentially the same kind of computation; it's just that some are better suited to some purposes than others.)
 

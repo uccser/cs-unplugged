@@ -4,16 +4,18 @@ Computers today use digits to represent information - that's why they're called 
 The simplest and most common way to represent digits is the binary number system, with just two digits (usually written as 0 and 1).
 It is called binary because there are only two different digits used, or two states.
 
-A bit is usually stored in a memory cell inside a computer, which is an electronic circuit that can be set to a high voltage level (1) or a low voltage level (0); on disks they are represented by magnetism or optical reflection.
+{panel type="video"}
 
-There are billions of these bits on a typical computer, and they are used to store text, numbers, images, video, and anything else that we need to store or transmit. On computer networks the bits are communicated by light, voltages or sound.
-Anything that can have two different values can represent a bit!
-
-{panel type="video" title="See teaching the Binary Number system in action!"}
+# See teaching this in action
 
 {video url="https://www.youtube.com/embed/Wy6-FXtLMV8"}
 
 {panel end}
+
+A bit is usually stored in a memory cell inside a computer, which is an electronic circuit that can be set to a high voltage level (1) or a low voltage level (0); on disks they are represented by magnetism or optical reflection.
+
+There are billions of these bits on a typical computer, and they are used to store text, numbers, images, video, and anything else that we need to store or transmit. On computer networks the bits are communicated by light, voltages or sound.
+Anything that can have two different values can represent a bit!
 
 ## Digital Technologies | Data Representation
 
@@ -21,7 +23,7 @@ The binary number system plays a central role in how information of all kinds is
 Understanding binary representation can lift a lot of the mystery from computers, because at a fundamental level they’re really just machines for flipping binary digits on and off.
 Computers are simple machines, and they need very exact instructions to make them do complex tasks.
 
-Teaching binary numbers as an introduction to computational thinking introduces students to {glossary-link term="algorithm"}algorithms{glossary-link end} and decomposition, as they learn to break down the problems of calculating binary numbers and converting between binary and decimal numbers, into step by step processes that they can follow to solve these problems; it also introduces abstraction, as students learn that two different things can be used to represent any and all information.
+Teaching binary numbers as an introduction to computational thinking introduces students to {glossary-link term="algorithm"}algorithms{glossary-link end} and decomposition, as they learn to break down the problems of calculating binary numbers and converting between binary and {glossary-link term="decimal-number"}decimal numbers{glossary-link end}, into step by step processes that they can follow to solve these problems; it also introduces abstraction, as students learn that two different things can be used to represent any and all information.
 It shows them that a computer isn’t actually that complex, and we use simple concepts in a clever way to make computers do extraordinary things!
 
 ##  Vocabulary Explained
@@ -35,23 +37,21 @@ Each zero or one is called a bit. Bit is an abbreviation for Binary Digit.
 8 bits grouped together are called a byte, and computers store data in bytes.
 A byte is a convenient number of bits as it can store things like simple characters, small numbers, and a useful range of colours, although usually information is stored using groups of bytes.
 
-{image file-path="img/topics/col_binary_bite_vs_byte.png"}
+{panel type="math"}
 
-{panel type="math" title="Mathematical links"}
+# Mathematical links
 
 The binary number system is base 2, so there are only two digits before you need to move to the next place value: 0, 1.
 
 Humans normally use the decimal number system, which is base 10, so there are ten digits before you move to the next place value: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.
 
-{image file-path="img/topics/col_binary_CSU_boy_hands.png"}
-
-{image file-path="img/topics/col_binary_csu_girl_hands.png"}
+{image file-path="img/topics/binary_fingers.png" alt="An image of one person holding up ten fingers and another person holding up two fingers."}
 
 {panel end}
 
 ## Real World Implications
 
-{image file-path="img/topics/col_binary_01.png"}
+{image file-path="img/topics/col_binary_01.png" alignment="right" alt="An image of a zero and a one."}
 
 - The number of bits used to represent characters in text affects the range of characters available; a short representation is more compact, but can't represent characters from all languages.
 

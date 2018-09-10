@@ -22,7 +22,10 @@ DEFAULT_FONT_OVERRIDES = {
 DEFAULT_FONT_SIZE = 20
 DEFAULT_COLOR = (0, 0, 0)
 
+# TODO: Automate detection of supported characters in TextBoxDrawer
+# https://github.com/uccser/cs-unplugged/issues/993
 FONT_MAX_ORD = {
+    "NotoSans-Regular": 255,
     "PatrickHand-Regular": 255,
 }
 
@@ -88,7 +91,10 @@ class TextBoxDrawer(object):
             MissingSVGFile: SVG file could not be found at given path
         """
         try:
-            return ET.parse(svg_path).getroot()
+            svg = ET.parse(svg_path).getroot()
+            # Remove comments within SVG to avoid errors
+            ET.strip_tags(svg, ET.Comment)
+            return svg
         except OSError:
             raise MissingSVGFile(svg_path)
 
@@ -116,15 +122,29 @@ class TextBoxDrawer(object):
         Raises:
             TextBoxNotFoundInSVG: No textbox could be found with the given id
         """
+        # Replace underscores with hex code (mimic AI export behavior)
+        box_id = box_id.replace('_', '_x5F_')
+        # If starts with digit, replace with hex code (mimic AI export behavior)
+        if box_id[0].isdigit():
+            box_id = "_x{}_{}".format(hex(ord(box_id[0]))[2:], box_id[1:])
         text_layer = self.svg.find("{http://www.w3.org/2000/svg}g[@id=\"TEXT\"]")
-
+        namespaces = {
+            "x": "http://www.w3.org/2000/svg",
+            "re": "http://exslt.org/regular-expressions"
+        }
         try:
-            text_elem = text_layer.find("{{http://www.w3.org/2000/svg}}text[@id=\"{}\"]".format(box_id))
+            text_elem = text_layer.xpath(
+                "x:text[re:test(@id, '{}(_[0-9]_)?')]".format(box_id),
+                namespaces=namespaces
+            )[0]
             box_elem = text_elem.getprevious()
             assert box_elem is not None
         except Exception:
             try:
-                box_elem = text_layer.find("{{http://www.w3.org/2000/svg}}rect[@id=\"{}\"]".format(box_id))
+                box_elem = text_layer.xpath(
+                    "x:rect[re:test(@id, '{}(_[0-9]_)?')]".format(box_id),
+                    namespaces=namespaces
+                )[0]
                 text_elem = box_elem.getnext()
                 assert text_elem is not None
             except Exception:
@@ -275,42 +295,81 @@ class TextBoxDrawer(object):
                 height of fitted text (int)
             )
         """
-        font_size_is_ok = False
-        while not font_size_is_ok:
-            font = cls.get_font(font_path, font_size)
-            lines = []
-            line = ""
-            breakable_units = line_break_units(text)
-            for unit in breakable_units:
-                potential_line = line + unit
-                size = cls.get_text_width(font, potential_line)
-                if size >= box_width:
-                    lines.append(line)
-                    line = unit
-                else:
-                    line += unit
-
-            if line:
-                lines.append(line)
-
-            # Dummy image draw because multiline_textsize isn't a @classmethod
-            dummy_img = Image.new("1", (1, 1))
-            dummy_draw = ImageDraw.Draw(dummy_img)
-            text_width, text_height = dummy_draw.multiline_textsize(
-                "\n".join(lines),
-                font=font,
-                spacing=line_spacing)
-
-            # Reduce text_height by offset at top
-            text_height -= cls.get_font_y_offset(font)
-
+        if text:
+            font_size_is_ok = False
+            lines, text_width, text_height = cls.fit_text_for_font_size(
+                text,
+                box_width,
+                box_height,
+                font_path,
+                font_size,
+                line_spacing
+            )
             if text_height <= box_height:
                 font_size_is_ok = True
-            else:
+
+            while not font_size_is_ok:
                 # Decrease font size exponentially, and try again
                 font_size = max(int(0.9 * font_size), 1)
-
+                lines, text_width, text_height = cls.fit_text_for_font_size(
+                    text,
+                    box_width,
+                    box_height,
+                    font_path,
+                    font_size,
+                    line_spacing
+                )
+                if text_height <= box_height:
+                    font_size_is_ok = True
             return font_size, lines, text_width, text_height
+        else:
+            return 0, "", 0, 0
+
+    @classmethod
+    def fit_text_for_font_size(cls, text, box_width, box_height, font_path, font_size, line_spacing):
+        """Fit given text into given dimensons by modifying line breaks for given font size.
+
+        Args:
+            text: (str) text to fit
+            box_width: (int) width of available area
+            box_height: (int) height of available area
+            font_path: (str) path to font file
+            font_size: (int) size of font, in pixels
+            line_spacing: (int) number of pixels spacing between lines
+
+        Returns:
+            3-tuple: (
+                lines of text (list of strings),
+                width of fitted text (int),
+                height of fitted text (int)
+            )
+        """
+        font = cls.get_font(font_path, font_size)
+        lines = []
+        line = ""
+        breakable_units = line_break_units(text)
+        for unit in breakable_units:
+            potential_line = line + unit
+            size = cls.get_text_width(font, potential_line)
+            if size >= box_width:
+                lines.append(line)
+                line = unit
+            else:
+                line += unit
+
+        lines.append(line)
+
+        # Dummy image draw because multiline_textsize isn't a @classmethod
+        dummy_img = Image.new("1", (1, 1))
+        dummy_draw = ImageDraw.Draw(dummy_img)
+        text_width, text_height = dummy_draw.multiline_textsize(
+            "\n".join(lines),
+            font=font,
+            spacing=line_spacing)
+
+        # Reduce text_height by offset at top
+        text_height -= cls.get_font_y_offset(font)
+        return lines, text_width, text_height
 
     @classmethod
     def write_text_box_object(cls, image, draw, text_box, text, font_path=None,
@@ -329,7 +388,7 @@ class TextBoxDrawer(object):
             font_size: (int) target font size, may be reduced to fit if required.
                 This parameter is checked first, falling back to the original
                 font size from the SVG
-            horiz_just: (str) left, center, right or justify
+            horiz_just: (str) left, center, right
             vert_just: (str) top, center, bottom
             line_spacing: (int) number of pixels between text lines
             color: (RGB 3-tuple or HEX string) text color. This parameter is
@@ -370,14 +429,14 @@ class TextBoxDrawer(object):
             y = 0
         elif vert_just == "center":
             y = (text_box.height - text_height)/2
-        elif vert_just == "bottom":
+        else:  # bottom
             y = (text_box.height - text_height)
 
         if horiz_just == "left":
             x = 0
         elif horiz_just == "center":
             x = (text_box.width - text_width)/2
-        elif horiz_just == "right":
+        else:  # right
             x = (text_box.width - text_width)
 
         # Remove offset from top line, to mimic AI textbox behavior

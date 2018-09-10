@@ -10,7 +10,6 @@
 {% endblock title %}
 
 {% block breadcrumbs %}
-  {% breadcrumb "Home" "/" %}
   {% breadcrumb "Topics" "topics:index" %}
   {% breadcrumb topic.name "topics:topic" topic.slug %}
 {% endblock breadcrumbs %}
@@ -18,10 +17,9 @@
 {% block page_heading %}
   <h1 id="{{ topic.slug }}">{{ topic.name }}</h1>
   {% if not topic.translation_available %}
-    {% trans "topic" as topic_l10n %}
-    {% trans "list of topics" as list_of_topics_l10n %}
-    {% url "topics:index" as parent_url %}
-    {% with model=topic model_type=topic_l10n parent_type=list_of_topics_l10n parent_url=parent_url %}
+    {% url "topics:index" as url %}
+    {% trans "Return to list of topics" as url_label %}
+    {% with model=topic %}
       {% include 'topics/not-available-warning.html' %}
     {% endwith %}
   {% endif %}
@@ -31,16 +29,16 @@
   {% endif %}
 {% endblock page_heading %}
 
-{% block content_container %}
-  <div class="col-12 col-lg-6 col-xl-5">
-    <h2 id="units">{% trans "Unit Plans" %}</h2>
-    <div class="row justify-content-between">
-      {% for unit_plan in unit_plans %}
-        <div class="col-12 mb-4">
-          <a class="link-item no-text-decoration d-block h-100{% if not unit_plan.translation_available %} unavailable{% endif %}" href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">
+{% block content %}
+  <h2 id="units">{% trans "Unit Plans" %}</h2>
+  <div class="row justify-content-between">
+    {% for unit_plan in unit_plans %}
+      <div class="col-12 col-md-6 mb-4">
+        <a class="link-item no-text-decoration d-flex justify-content-between h-100{% if not unit_plan.translation_available %} unavailable{% endif %}" href="{% url 'topics:unit_plan' topic.slug unit_plan.slug %}">
+          <div>
             <h3>{{ unit_plan.name }}</h3>
             {% if not unit_plan.translation_available %}
-              {% include "topics/not-available-badge.html" %}
+              {% include "generic/not-available-badge.html" %}
             {% endif %}
             <ul class="list-unstyled list-unstyled-i18n text-muted mb-0">
               <li>
@@ -50,23 +48,23 @@
                   {% endblocktrans %}
                 </strong>
               </li>
-              <li>
-                {{ unit_plan.lessons.count }} {% trans "lessons" %}
-              </li>
             </ul>
-          </a>
-        </div>
-      {% endfor %}
-    </div>
+          </div>
+          <div class="summary">
+            <span class="summary-value">{{ unit_plan.lessons.count }}</span>
+            <br>
+            {% trans "lessons" %}
+          </div>
+        </a>
+      </div>
+    {% endfor %}
   </div>
 
-  <div class="col-12 col-lg-6 col-xl-7">
-    {% if curriculum_integrations %}
-      <h2 id="integrations">{% trans "Curriculum Integrations" %}</h2>
-      {% include "topics/curriculum-integrations-table.html" %}
-    {% endif %}
-  </div>
-{% endblock content_container %}
+  {% if curriculum_integrations %}
+    <h2 id="integrations">{% trans "Curriculum Integrations" %}</h2>
+    {% include "topics/curriculum-integrations-table.html" %}
+  {% endif %}
+{% endblock content %}
 
 {% block end_content %}
   {% if topic.other_resources %}

@@ -8,7 +8,9 @@ Who designs programming languages for computers?
 
 ## Lesson starter
 
-{panel type="general" title="Notes on resources"}
+{panel type="general"}
+
+# Notes on resources
 
 The resources we listed are for groups of 3 students.
 
@@ -20,7 +22,7 @@ Today we are going to write our own unplugged fitness app. Before we start we ne
 
 1.  Brainstorm as a class all the different fitness exercises you could have in your programming language.
 
-    {image file-path="img/topics/exercise-2.png" alt="Cartoon kids exercising"}
+    {image file-path="img/topics/exercise-2.png" alt="Cartoon kids exercising" alignment="right"}
 
     Ideas to get you started include:
 
@@ -29,7 +31,7 @@ Today we are going to write our own unplugged fitness app. Before we start we ne
     -   Ski jumps
     -   Balancing bean bags on your head
 
-2.  Work in your groups draw on each of the cards.
+2.  Work in your groups and draw on each of the cards.
     You should design:
 
     -   A "GO" card to show the start of the program

@@ -16,9 +16,11 @@ crwdns12354:0crwdne12354:0 crwdns12355:0crwdne12355:0
 
 crwdns12356:0crwdne12356:0 crwdns12357:0crwdne12357:0 crwdns12358:0crwdne12358:0
 
-*BlockTag: crwdns12359:0crwdne12359:0*
+*BlockTag: crwdns18937:0crwdne18937:0*
 
-{panel type="math" title="Mathematical links"}
+{panel type="math"}
+
+# crwdns18938:0crwdne18938:0
 
 crwdns12360:0crwdne12360:0
 
@@ -56,9 +58,11 @@ crwdns12375:0crwdne12375:0
 
 crwdns12376:0crwdne12376:0
 
-*BlockTag: crwdns15920:0crwdne15920:0*
+*BlockTag: crwdns18939:0crwdne18939:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# crwdns18940:0crwdne18940:0
 
 crwdns12378:0crwdne12378:0
 
@@ -80,15 +84,17 @@ crwdns12384:0crwdne12384:0 crwdns12385:0crwdne12385:0 crwdns12386:0crwdne12386:0
 
 crwdns12388:0crwdne12388:0 crwdns12389:0crwdne12389:0
 
-*BlockTag: crwdns12390:0crwdne12390:0*
+*BlockTag: crwdns19545:0crwdne19545:0*
 
-{image file-path="img/topics/sorting-network-toffees-cellos-sponge.png"}
+{panel type="general"}
 
-*BlockTag: crwdns12391:0crwdne12391:0*
+# crwdns18942:0crwdne18942:0
 
-{panel type="general" title="List of words with letters in alphabetical order"}
+crwdns19546:0crwdne19546:0
 
-crwdns12392:0crwdne12392:0
+*BlockTag: crwdns19547:0crwdne19547:0*
+
+{image file-path="img/topics/sorting-network-toffees-cellos-sponge.png" align="right"}
 
 crwdns12393:0crwdne12393:0
 
@@ -98,9 +104,9 @@ crwdns12393:0crwdne12393:0
 
 ### crwdns12395:0crwdne12395:0
 
-*BlockTag: crwdns12396:0crwdne12396:0*
+*BlockTag: crwdns20019:0crwdne20019:0*
 
-{image file-path="img/topics/sorting-network-variation-words.jpg"}
+{image file-path="img/topics/sorting-network-variation-words.png"}
 
 crwdns12397:0crwdne12397:0 crwdns12398:0crwdne12398:0 crwdns12399:0crwdne12399:0
 
@@ -110,17 +116,17 @@ crwdns12397:0crwdne12397:0 crwdns12398:0crwdne12398:0 crwdns12399:0crwdne12399:0
 
 crwdns12401:0crwdne12401:0
 
-*BlockTag: crwdns12402:0crwdne12402:0*
+*BlockTag: crwdns20020:0crwdne20020:0*
 
-{image file-path="img/topics/sorting-network-variation-words-2.jpg"}
+{image file-path="img/topics/sorting-network-variation-words-2.png"}
 
 crwdns12403:0crwdne12403:0 crwdns12404:0crwdne12404:0
 
 ### crwdns12405:0crwdne12405:0
 
-*BlockTag: crwdns12406:0crwdne12406:0*
+*BlockTag: crwdns20021:0crwdne20021:0*
 
-{image file-path="img/topics/sorting-network-variation-music.jpg"}
+{image file-path="img/topics/sorting-network-variation-music.png"}
 
 crwdns12407:0crwdne12407:0 crwdns12408:0crwdne12408:0 crwdns12409:0crwdne12409:0
 
@@ -142,9 +148,11 @@ crwdns12418:0crwdne12418:0 crwdns12419:0crwdne12419:0 crwdns12420:0crwdne12420:0
 
 crwdns12422:0crwdne12422:0
 
-*BlockTag: crwdns12423:0crwdne12423:0*
+*BlockTag: crwdns18943:0crwdne18943:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# crwdns18944:0crwdne18944:0
 
 crwdns12424:0crwdne12424:0 crwdns12425:0crwdne12425:0 crwdns12426:0crwdne12426:0 crwdns12427:0crwdne12427:0
 

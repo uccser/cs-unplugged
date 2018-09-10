@@ -27,13 +27,13 @@ defhelp() {
     local command="${2?}"
     local text="${3?}"
     local help_str
-    help_str="$(printf '   %-18s %s' "$command" "$text")"
+    help_str="$(printf '   %-24s %s' "$command" "$text")"
     dev_cmd_helps+=("$help_str")
   else
     local command="${1?}"
     local text="${2?}"
     local help_str
-    help_str="$(printf '   %-18s %s' "$command" "$text")"
+    help_str="$(printf '   %-24s %s' "$command" "$text")"
     cmd_helps+=("$help_str")
   fi
 }
@@ -100,6 +100,7 @@ cmd_update() {
   echo ""
   dev_updatedata
 
+  dev_rebuild_index
   dev_static_scratch
   echo ""
   dev_makeresourcethumbnails
@@ -109,6 +110,22 @@ cmd_update() {
   echo "Open your preferred web browser to the URL 'localhost'"
 }
 defhelp update 'Run Django migrate and updatedata commands and build static files.'
+
+# Run update command only for key content
+dev_update_lite() {
+  dev_static
+  echo ""
+  dev_migrate
+  echo ""
+  echo "Loading content..."
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py updatedata --lite-load
+  dev_collect_static
+  echo ""
+  echo -e "\n${GREEN}Key content is loaded!${NC}"
+  echo "Run the 'update' command to load all content"
+  echo "Open your preferred web browser to the URL 'localhost'"
+}
+defhelp -dev update_lite 'Run update command only for key content - Useful for development.'
 
 # Collecting static files
 dev_collect_static() {
@@ -178,12 +195,6 @@ defhelp -dev updatedata 'Run updatedata command.'
 dev_build() {
   echo "Building Docker images..."
   docker-compose build
-  echo
-  echo "Deleting untagged images..."
-  untagged_images=($(docker images --no-trunc | grep '<none>' | awk '{print $3}'))
-  if [[ ${#untagged_images[@]} -gt 0 ]]; then
-      docker rmi "${untagged_images[@]}"
-  fi
 }
 defhelp -dev build 'Build or rebuild Docker images.'
 
@@ -207,6 +218,13 @@ dev_static_scratch() {
   docker-compose exec nginx gulp scratch
 }
 defhelp -dev static_scratch "Build scratch images."
+
+# Run Django command rebuild_index
+dev_rebuild_index() {
+  echo "Rebuilding search index..."
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py rebuild_index --noinput
+}
+defhelp -dev rebuild_index "Run Django rebuild_index command."
 
 # Run shell
 dev_shell() {
@@ -417,7 +435,12 @@ cmd="$1"
 shift
 if silent type "cmd_$cmd"; then
   "cmd_$cmd" "$@"
-  exit $?
+  code=$?
+  if [ "$cmd" != "end" ]; then
+    # Set all files to be owned by host for development
+    docker-compose exec django chown -R `id -u` .
+  fi
+  exit $code
 else
   echo -e "${RED}ERROR: Unknown command!${NC}"
   echo "Type './csu help' for available commands."

@@ -1,24 +1,48 @@
 # crwdns9749:0crwdne9749:0
 
-## crwdns9750:0crwdne9750:0
-
-crwdns9751:0crwdne9751:0 crwdns9752:0crwdne9752:0
-
-## crwdns9753:0crwdne9753:0
+## crwdns20196:0crwdne20196:0
 
 - crwdns9754:0crwdne9754:0 crwdns9755:0crwdne9755:0
 - crwdns9756:0crwdne9756:0
 - crwdns9757:0crwdne9757:0 crwdns9758:0crwdne9758:0
 
-## crwdns9759:0crwdne9759:0
+## crwdns20197:0crwdne20197:0
 
-*BlockTag: crwdns9760:0crwdne9760:0*
+*BlockTag: crwdns20198:0crwdne20198:0*
 
-{panel type="general" title="Notes on resources"}
+{panel type="video"}
 
-crwdns9761:0crwdne9761:0
+# crwdns20199:0crwdne20199:0
 
-*BlockTag: crwdns9762:0crwdne9762:0*
+*BlockTag: crwdns20200:0crwdne20200:0*
+
+{video url="https://www.youtube.com/embed/Wy6-FXtLMV8"}
+
+*BlockTag: crwdns20201:0crwdne20201:0*
+
+{panel end}
+
+*BlockTag: crwdns20202:0crwdne20202:0*
+
+{panel type="general"}
+
+# crwdns20203:0crwdne20203:0
+
+crwdns20204:0crwdne20204:0 crwdns20205:0crwdne20205:0
+
+*BlockTag: crwdns20206:0crwdne20206:0*
+
+{panel end}
+
+*BlockTag: crwdns20207:0crwdne20207:0*
+
+{panel type="general"}
+
+# crwdns20208:0crwdne20208:0
+
+crwdns20209:0crwdne20209:0
+
+*BlockTag: crwdns20210:0crwdne20210:0*
 
 {panel end}
 
@@ -32,9 +56,11 @@ crwdns9761:0crwdne9761:0
 
 3. crwdns9770:0crwdne9770:0
     
-    *BlockTag: crwdns9771:0crwdne9771:0*
+    *BlockTag: crwdns19095:0crwdne19095:0*
 
-    {panel type="teaching" title="Teaching observations"}
+    {panel type="teaching"}
+    
+    # crwdns19096:0crwdne19096:0
     
     crwdns9772:0crwdne9772:0 crwdns9773:0crwdne9773:0
     
@@ -48,9 +74,11 @@ crwdns9761:0crwdne9761:0
 
     {image file-path="img/topics/col_binary_3cards.png" alt="3 kids holding binary cards"}
     
-    *BlockTag: crwdns9777:0crwdne9777:0*
+    *BlockTag: crwdns19097:0crwdne19097:0*
 
-    {panel type="teaching" title="Teaching observations"}
+    {panel type="teaching"}
+    
+    # crwdns19098:0crwdne19098:0
     
     crwdns9778:0crwdne9778:0 crwdns9779:0crwdne9779:0
     
@@ -60,9 +88,11 @@ crwdns9761:0crwdne9761:0
 
 5. crwdns9781:0crwdne9781:0
     
-    *BlockTag: crwdns9782:0crwdne9782:0*
+    *BlockTag: crwdns19099:0crwdne19099:0*
 
-    {panel type="teaching" title="Teaching observations"}
+    {panel type="teaching"}
+    
+    # crwdns19100:0crwdne19100:0
     
     crwdns9783:0crwdne9783:0 crwdns9784:0crwdne9784:0
     
@@ -80,9 +110,11 @@ crwdns9761:0crwdne9761:0
 
 8. crwdns9791:0crwdne9791:0
     
-    *BlockTag: crwdns9792:0crwdne9792:0*
+    *BlockTag: crwdns19101:0crwdne19101:0*
 
-    {panel type="teaching" title="Teaching observations"}
+    {panel type="teaching"}
+    
+    # crwdns19102:0crwdne19102:0
     
     crwdns9793:0crwdne9793:0 crwdns9794:0crwdne9794:0 crwdns9795:0crwdne9795:0 crwdns9796:0crwdne9796:0 crwdns9797:0crwdne9797:0
     
@@ -92,7 +124,7 @@ crwdns9761:0crwdne9761:0
 
     {panel end}
 
-## crwdns9800:0crwdne9800:0
+## crwdns20211:0crwdne20211:0
 
 1. crwdns9801:0crwdne9801:0 crwdns9802:0crwdne9802:0 crwdns9803:0crwdne9803:0 crwdns9804:0crwdne9804:0
     
@@ -100,9 +132,11 @@ crwdns9761:0crwdne9761:0
 
     {image file-path="img/topics/binary-cards-total-9.png" alt="Diagram showing that 2 binary cards make the number 9"}
     
-    *BlockTag: crwdns9806:0crwdne9806:0*
+    *BlockTag: crwdns19103:0crwdne19103:0*
 
-    {panel type="math" title="Mathematical links"}
+    {panel type="math"}
+    
+    # crwdns19104:0crwdne19104:0
     
     crwdns9807:0crwdne9807:0 crwdns9808:0crwdne9808:0 crwdns9809:0crwdne9809:0 crwdns9810:0crwdne9810:0 crwdns9811:0crwdne9811:0
     
@@ -154,7 +188,7 @@ crwdns9761:0crwdne9761:0
 
     {image file-path="img/topics/lightbulb_series_4.png" alt="2 lightbulbs switched on"}
 
-## crwdns9835:0crwdne9835:0
+## crwdns20212:0crwdne20212:0
 
 - crwdns9836:0crwdne9836:0
 - crwdns9837:0crwdne9837:0
@@ -196,17 +230,19 @@ crwdns9761:0crwdne9761:0
     
     crwdns9864:0crwdne9864:0
 
-*BlockTag: crwdns9865:0crwdne9865:0*
+*BlockTag: crwdns20213:0crwdne20213:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
 
-crwdns9866:0crwdne9866:0 crwdns9867:0crwdne9867:0 crwdns9868:0crwdne9868:0
+# crwdns20214:0crwdne20214:0
 
-*BlockTag: crwdns9869:0crwdne9869:0*
+crwdns20215:0crwdne20215:0 crwdns20216:0crwdne20216:0 crwdns20217:0crwdne20217:0
+
+*BlockTag: crwdns20218:0crwdne20218:0*
 
 {panel end}
 
-## crwdns9870:0crwdne9870:0
+## crwdns20219:0crwdne20219:0
 
 - crwdns9871:0crwdne9871:0 crwdns9872:0crwdne9872:0 crwdns9873:0crwdne9873:0 crwdns9874:0crwdne9874:0 crwdns9875:0crwdne9875:0 crwdns9876:0crwdne9876:0
 - crwdns9877:0crwdne9877:0

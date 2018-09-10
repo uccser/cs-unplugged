@@ -9,14 +9,13 @@
 {% endblock title %}
 
 {% block breadcrumbs %}
-  {% breadcrumb "Home" "/" %}
   {% breadcrumb "What is Computer Science?" "general:what_is_cs" %}
 {% endblock breadcrumbs %}
 
 {% block body_container %}
   <div id="content-container" class="container">
     <div class="row justify-content-center">
-      <div class="col-12 col-md-10 col-lg-8">
+      <div id="general-page-content" class="col-12 col-md-10 col-lg-8">
         {% render_breadcrumbs "django_bootstrap_breadcrumbs/bootstrap4.html" %}
         <h1>{% trans "What is Computer Science?" %}</h1>
 
@@ -38,7 +37,9 @@
           {% endblocktrans %}
         </p>
 
-        <img class="img-wrap img-wrap-right" src="{% static "img/general/what-is-cs.png" %}">
+        <div class="img-container img-wrap-right">
+          <img src="{% static "img/general/what-is-cs.png" %}">
+        </div>
 
         <p>
           {% blocktrans trimmed %}
@@ -61,7 +62,9 @@
           {% endblocktrans %}
         </p>
 
-        <img class="img-wrap img-wrap-right" src="{% static "img/topics/col_binary_4_kids_4_cards.png" %}">
+        <div class="img-container img-wrap-right">
+          <img src="{% static "img/topics/col_binary_4_kids_4_cards.png" %}">
+        </div>
 
         <p>
           {% blocktrans trimmed %}

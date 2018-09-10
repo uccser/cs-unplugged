@@ -10,7 +10,6 @@
 {% endblock title %}
 
 {% block breadcrumbs %}
-  {% breadcrumb "Home" "/" %}
   {% breadcrumb "Topics" "topics:index" %}
   {% breadcrumb topic.name "topics:topic" topic.slug %}
   {% breadcrumb programming_challenge.name "topics:programming_challenge" topic.slug programming_challenge.slug %}
@@ -21,10 +20,7 @@
     {{ programming_challenge.name }}
   </h1>
   {% if not programming_challenge.translation_available %}
-    {% trans "programming challenge" as programming_challenge_l10n %}
-    {% url "topics:topic" topic.slug as parent_url %}
-    {% trans "topic" as topic_l10n %}
-    {% with model=programming_challenge model_type=programming_challenge_l10n parent=topic parent_type=topic_l10n parent_url=parent_url %}
+    {% with model=programming_challenge parent=topic %}
       {% include 'topics/not-available-warning.html' %}
     {% endwith %}
   {% else %}
@@ -68,20 +64,26 @@
       </div>
     {% endif %}
 
-    <h2>{% trans "Learning outcomes" %}</h2>
     {% if learning_outcomes %}
-      <ul>
-      {% for learning_outcome in learning_outcomes %}
-        <li>
-          {{ learning_outcome.text }}<br>
-          {% for area in learning_outcome.curriculum_areas.all %}
-            {% include "topics/curriculum-area-badge.html" %}
-          {% endfor %}
-        </li>
-      {% endfor %}
-    </ul>
-    {% else %}
-      <p>{% blocktrans trimmed %}No learning outcomes listed for {{ programming_challenge.name }}.{% endblocktrans %}</p>
+      <details class="panel-learning-outcomes">
+        <summary>
+          <strong>{% trans "Learning outcomes" %}</strong>
+          <img class="inline-image" src="{% static 'img/general/outcomes.png' %}">
+        </summary>
+        <div class="boxed-text-content">
+          <p>{% trans "Students will be able to:" %}</p>
+          <ul>
+            {% for learning_outcome in learning_outcomes %}
+            <li>
+              {{ learning_outcome.text }}<br>
+              {% for area in learning_outcome.curriculum_areas.all %}
+                {% include "topics/curriculum-area-badge.html" %}
+              {% endfor %}
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </details>
     {% endif %}
 
     {% render_html_field programming_challenge.content %}
@@ -92,13 +94,13 @@
     {% for implementation in implementations %}
       <details>
         <summary>
-          <img src="{% get_static_prefix %}{{ implementation.language.icon }}" class="inline-image mr-2" />
           <strong>
             {{ implementation.language.name }}
           </strong>
           {% if not implementation.translation_available %}
             {% include 'topics/not-available-badge.html' %}
           {% endif %}
+          <img src="{% get_static_prefix %}{{ implementation.language.icon }}" class="inline-image" />
         </summary>
 
 

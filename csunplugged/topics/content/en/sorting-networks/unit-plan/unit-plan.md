@@ -1,6 +1,8 @@
 # Sorting networks
 
-{panel type="video" title="See teaching this in action!"}
+{panel type="video"}
+
+# See teaching this in action
 
 A demonstration of sorting networks being taught is available here:
 
@@ -32,7 +34,7 @@ more than one comparison happening at the same time.
 For example, in the six-number Sorting Network that we use a lot in this unit,
 a total of 12 comparisons are used to sort the numbers, but up to three
 comparisons can be performed simultaneously.
-This means that the time required will the same as what one computer by itself
+This means that the time required will be the same as what one computer by itself
 would take to make only 5 comparison steps.
 It's a bit like the situation where you might need to type in 4 pages of
 writing; if you have 4 people typing at the same time on 4 computers, then you
@@ -113,7 +115,9 @@ they will be doing this in a simplified way.
     These are often used for other computations because of their ability to do
     parallel processing.
 
-{panel type="math" title="Mathematical links"}
+{panel type="math"}
+
+# Mathematical links
 
 This activity strongly supports learning about the concept of before and after
 (ordering) for numbers, including determining the relationship between two
@@ -144,7 +148,7 @@ processors are good at doing parallel computation of simple tasks.
 {image file-path="img/topics/sorting-network-ancient-sorting-network-text-en.png" alt="A GPU finds a cave painting of an ancient sorting network."}
 
 Sorting Networks were invented long before powerful GPUs came along; this is an
-exciting thing about Computer Science - some of the our discoveries are ahead
+exciting thing about Computer Science - some of our discoveries are ahead
 of the hardware that is available, so we're ready for the hardware if it does
 become commonly available!
 Note that the approach explored in these lessons is **not** a conventional

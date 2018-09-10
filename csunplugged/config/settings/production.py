@@ -21,6 +21,13 @@ SECRET_KEY = env("DJANGO_SECRET_KEY")  # noqa: F405
 # See https://docs.djangoproject.com/en/1.10/ref/settings/
 ALLOWED_HOSTS = ["*"]
 
+# URL Configuration
+# ------------------------------------------------------------------------------
+if env("DEPLOYMENT", default=None) == "prod":  # noqa: F405
+    PREPEND_WWW = True
+else:
+    PREPEND_WWW = False
+
 # DATABASE CONFIGURATION
 # ----------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases

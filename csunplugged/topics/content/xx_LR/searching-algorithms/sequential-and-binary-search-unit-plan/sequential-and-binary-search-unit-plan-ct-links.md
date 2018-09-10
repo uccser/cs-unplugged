@@ -1,6 +1,8 @@
-*BlockTag: crwdns11553:0crwdne11553:0*
+*BlockTag: crwdns18363:0crwdne18363:0*
 
-{panel type="ct-algorithm" title="Algorithmic thinking"}
+{panel type="ct-algorithm"}
+
+# crwdns18364:0crwdne18364:0
 
 crwdns11554:0crwdne11554:0 crwdns11555:0crwdne11555:0 crwdns11556:0crwdne11556:0 crwdns11557:0crwdne11557:0
 
@@ -14,9 +16,11 @@ crwdns11561:0crwdne11561:0 crwdns11562:0crwdne11562:0 crwdns11563:0crwdne11563:0
 
 {panel end}
 
-*BlockTag: crwdns11567:0crwdne11567:0*
+*BlockTag: crwdns18365:0crwdne18365:0*
 
-{panel type="ct-abstraction" title="Abstraction"}
+{panel type="ct-abstraction"}
+
+# crwdns18366:0crwdne18366:0
 
 crwdns11568:0crwdne11568:0
 
@@ -32,9 +36,11 @@ crwdns11573:0crwdne11573:0 crwdns11574:0crwdne11574:0 crwdns11575:0crwdne11575:0
 
 {panel end}
 
-*BlockTag: crwdns11577:0crwdne11577:0*
+*BlockTag: crwdns18367:0crwdne18367:0*
 
-{panel type="ct-decomposition" title="Decomposition"}
+{panel type="ct-decomposition"}
+
+# crwdns18368:0crwdne18368:0
 
 *BlockTag: crwdns11578:0crwdne11578:0*
 
@@ -48,9 +54,11 @@ crwdns11585:0crwdne11585:0 crwdns11586:0crwdne11586:0 crwdns11587:0crwdne11587:0
 
 {panel end}
 
-*BlockTag: crwdns11591:0crwdne11591:0*
+*BlockTag: crwdns18369:0crwdne18369:0*
 
-{panel type="ct-pattern" title="Generalising and patterns"}
+{panel type="ct-pattern"}
+
+# crwdns18370:0crwdne18370:0
 
 crwdns11592:0crwdne11592:0 crwdns11593:0crwdne11593:0 crwdns11594:0crwdne11594:0 crwdns11595:0crwdne11595:0 crwdns11596:0crwdne11596:0 crwdns11597:0crwdne11597:0
 
@@ -58,9 +66,11 @@ crwdns11592:0crwdne11592:0 crwdns11593:0crwdne11593:0 crwdns11594:0crwdne11594:0
 
 {panel end}
 
-*BlockTag: crwdns11599:0crwdne11599:0*
+*BlockTag: crwdns18371:0crwdne18371:0*
 
-{panel type="ct-evaluation" title="Evaluation"}
+{panel type="ct-evaluation"}
+
+# crwdns18372:0crwdne18372:0
 
 crwdns11600:0crwdne11600:0 crwdns11601:0crwdne11601:0 crwdns11602:0crwdne11602:0 crwdns11603:0crwdne11603:0 crwdns11604:0crwdne11604:0
 
@@ -68,9 +78,11 @@ crwdns11600:0crwdne11600:0 crwdns11601:0crwdne11601:0 crwdns11602:0crwdne11602:0
 
 {panel end}
 
-*BlockTag: crwdns11606:0crwdne11606:0*
+*BlockTag: crwdns18373:0crwdne18373:0*
 
-{panel type="ct-logic" title="Logic"}
+{panel type="ct-logic"}
+
+# crwdns18374:0crwdne18374:0
 
 crwdns11607:0crwdne11607:0 crwdns11608:0crwdne11608:0
 

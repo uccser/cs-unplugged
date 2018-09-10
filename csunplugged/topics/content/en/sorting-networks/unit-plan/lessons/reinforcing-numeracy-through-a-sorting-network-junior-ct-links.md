@@ -1,4 +1,6 @@
-{panel type="ct-algorithm" title="Algorithmic thinking"}
+{panel type="ct-algorithm"}
+
+# Algorithmic thinking
 
 We used an algorithm in this lesson to sort the numbers into order using a parallel processor (normally this processor would be implemented in hardware, but our chalk network is still actually one!
 It’s powered by people instead of electricity).
@@ -12,7 +14,9 @@ Do the students see that no matter what numbers or data we put into the network 
 
 {panel end}
 
-{panel type="ct-abstraction" title="Abstraction"}
+{panel type="ct-abstraction"}
+
+# Abstraction
 
 The Sorting Network used in these activities is itself an abstract representation of how Sorting Networks are implemented in hardware and software.
 It represents the core functionality of a Sorting Network, whilst hiding all the nitty gritty details of how the hardware and circuitry works.
@@ -24,7 +28,9 @@ Can students understand that this representation can be used to model how a real
 
 {panel end}
 
-{panel type="ct-decomposition" title="Decomposition"}
+{panel type="ct-decomposition"}
+
+# Decomposition
 
 The whole process of sorting in this activity is decomposed into a very simple operation: comparing two values.
 This operation alone is very simplistic, but when it is performed many many times it can be used to build up a solution to a much larger task.
@@ -36,14 +42,18 @@ Can students see how to design a Sorting Network to sort just 2 values?
 
 {panel end}
 
-{panel type="ct-pattern" title="Generalising and patterns"}
+{panel type="ct-pattern"}
+
+# Generalising and patterns
 
 In this lesson students only worked with one type of information, numbers, so there wasn’t much use of generalisation.
 It is more prominent in the next lesson.
 
 {panel end}
 
-{panel type="ct-evaluation" title="Evaluation"}
+{panel type="ct-evaluation"}
+
+# Evaluation
 
 For this Sorting Network there can be up to three comparisons happening at once, and the length of the network determines how long it would take to complete all these comparisons.
 Although 12 comparisons need to be made when going through the network, the network can be completed in the time it takes to an individual node to make 5 comparisons.
@@ -56,7 +66,9 @@ Can students explain that if every comparison were to take, say, 2 seconds, then
 
 {panel end}
 
-{panel type="ct-logic" title="Logic"}
+{panel type="ct-logic"}
+
+# Logic
 
 The smallest value will always take the left path at any comparison, and from every starting point the path that always takes the left branch will lead to that node, the smallest value will therefore always end up in the left-most position at the end.
 

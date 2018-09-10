@@ -1,12 +1,14 @@
-# crwdns9287:0crwdne9287:0
+# crwdns20220:0crwdne20220:0
 
 ## crwdns9288:0crwdne9288:0
 
 crwdns9289:0crwdne9289:0
 
-*BlockTag: crwdns9290:0crwdne9290:0*
+*BlockTag: crwdns19133:0crwdne19133:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# crwdns19134:0crwdne19134:0
 
 crwdns9291:0crwdne9291:0 crwdns9292:0crwdne9292:0
 
@@ -16,9 +18,11 @@ crwdns9291:0crwdne9291:0 crwdns9292:0crwdne9292:0
 
 ## crwdns9294:0crwdne9294:0
 
-*BlockTag: crwdns9295:0crwdne9295:0*
+*BlockTag: crwdns19135:0crwdne19135:0*
 
-{panel type="general" title="Notes on resources"}
+{panel type="general"}
+
+# crwdns19136:0crwdne19136:0
 
 crwdns9296:0crwdne9296:0
 
@@ -46,9 +50,11 @@ crwdns9310:0crwdne9310:0
 
 crwdns9311:0crwdne9311:0 crwdns9312:0crwdne9312:0 crwdns9313:0crwdne9313:0
 
-*BlockTag: crwdns9314:0crwdne9314:0*
+*BlockTag: crwdns19137:0crwdne19137:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# crwdns19138:0crwdne19138:0
 
 crwdns9315:0crwdne9315:0
 
@@ -56,7 +62,7 @@ crwdns9315:0crwdne9315:0
 
 {panel end}
 
-# crwdns9317:0crwdne9317:0
+# crwdns19139:0crwdne19139:0
 
 crwdns9318:0crwdne9318:0
 
@@ -88,9 +94,11 @@ crwdns9329:0crwdne9329:0
 
 crwdns9330:0crwdne9330:0
 
-*BlockTag: crwdns9331:0crwdne9331:0*
+*BlockTag: crwdns19140:0crwdne19140:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# crwdns19141:0crwdne19141:0
 
 crwdns9332:0crwdne9332:0 crwdns9333:0crwdne9333:0 crwdns9334:0crwdne9334:0
 
@@ -104,9 +112,11 @@ crwdns9339:0crwdne9339:0 crwdns9340:0crwdne9340:0 crwdns9341:0crwdne9341:0
 
 {panel end}
 
-*BlockTag: crwdns9343:0crwdne9343:0*
+*BlockTag: crwdns19142:0crwdne19142:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# crwdns19143:0crwdne19143:0
 
 crwdns9344:0crwdne9344:0 crwdns9345:0crwdne9345:0 crwdns9346:0crwdne9346:0 crwdns9347:0crwdne9347:0 crwdns9348:0crwdne9348:0 crwdns9349:0crwdne9349:0
 

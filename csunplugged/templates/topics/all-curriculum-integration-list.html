@@ -9,7 +9,6 @@
 {% endblock title %}
 
 {% block breadcrumbs %}
-  {% breadcrumb "Home" "/" %}
   {% breadcrumb "Topics" "topics:index" %}
   {% breadcrumb "Curriculum Integrations" "topics:all_curriculum_integrations" %}
 {% endblock breadcrumbs %}
@@ -43,7 +42,7 @@
               {{ curriculum_integration.name }}
               {% if not curriculum_integration.translation_available %}
                 <br>
-                {% include "topics/not-available-badge.html" %}
+                {% include "generic/not-available-badge.html" %}
               {% endif %}
             </strong>
           </a>

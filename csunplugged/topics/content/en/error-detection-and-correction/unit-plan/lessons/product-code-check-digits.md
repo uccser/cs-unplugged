@@ -1,19 +1,5 @@
 # Product code check digits
 
-{panel type="general" title="Preparatory knowledge"}
-
-It is helpful, but not essential, for students to have done the [lesson on the Modulo operator]('topics:lesson' 'unplugged-programming' 'numeracy-unit-plan' 'modulo') before doing this lesson.
-
-{panel end}
-
-{panel type="teaching" title="See teaching this in action!"}
-
-A demonstration of lesson two ("Product Code Check Digits") being taught is available here:
-
-{video url="https://www.youtube.com/embed/WjMPd6sgou0"}
-
-{panel end}
-
 ## Key questions
 
 How many people do you know check their dockets at the supermarket or in a shop to be sure that what they purchased matches the docket?
@@ -24,7 +10,25 @@ How many people do you know check their dockets at the supermarket or in a shop 
 
 ## Lesson starter
 
-{image file-path="img/topics/error-correction-paint-tin.png" alt="A black paint tin with paint across the name and barcode."}
+{panel type="video"}
+
+# See teaching this in action
+
+A demonstration of lesson two ("Product Code Check Digits") being taught is available here:
+
+{video url="https://www.youtube.com/embed/WjMPd6sgou0"}
+
+{panel end}
+
+{panel type="general"}
+
+# Preparatory knowledge
+
+It is helpful, but not essential, for students to have done the [lesson on the Modulo operator]('topics:lesson' 'unplugged-programming' 'numeracy-unit-plan' 'modulo') before doing this lesson.
+
+{panel end}
+
+{image file-path="img/topics/error-correction-paint-tin.png" alt="A black paint tin with paint across the name and barcode." alignment="right"}
 
 Explain to your class that you can calculate what the last digit will be on a
 12 or 13 digit product code (the number on a bar code).
@@ -46,18 +50,18 @@ It's a somewhat odd process of adding and multiplying numbers, but the same
 formula will always give you the correct value for the 13th digit, as long as
 there isn't an error in the number!
 
-{image file-path="img/topics/barcode-13.jpg"}
+{image file-path="img/topics/barcode-13.jpg" alt="A barcode with the digits 9 400547 009879."}
 
 The above example barcode is from a product that a student might have selected,
 so they would give you these 12 digits (they should keep the 13th digit
 secret):
 
-{image file-path="img/topics/barcode-13-step-1.png"}
+{image file-path="img/topics/barcode-13-step-1.png" alt="63050942483."}
 
 However, instead of writing it out as above, write it on the board with every
 second digit on alternating lines:
 
-{image file-path="img/topics/barcode-13-step-2.png"}
+{image file-path="img/topics/barcode-13-step-2.png" alt="Top line has the digits 600443 and the bottom line has 35928."}
 
 What you are doing is writing the numbers in an odd position at the top and
 the even positions in the second row.
@@ -70,24 +74,24 @@ introduce this now through the lesson on modulo arithmetic.
 Using only the last digit can seem too easy to them, and can challenge their
 thinking!)
 
-{image file-path="img/topics/barcode-13-step-3.png"}
+{image file-path="img/topics/barcode-13-step-3.png" alt="6+0+0+4+4+3=17."}
 
 Next add up all the numbers in the second row (to get 24), and again take the
 number in the ones column only.
 
-{image file-path="img/topics/barcode-13-step-4.png"}
+{image file-path="img/topics/barcode-13-step-4.png" alt="4+0+4+0+9+7=24."}
 
 Multiply the digit from the second sum by three i.e. the 4 in the 24 is
 multiplied by 3, but take the ones column answer only (the 2).
 With 13-digit barcodes, the units digit from the second row sum is always
 multiplied by three.
 
-{image file-path="img/topics/barcode-13-step-5.png"}
+{image file-path="img/topics/barcode-13-step-5.png" alt="3x4=12."}
 
 Add the result from the first sum to the multiplied answer (in this case,
 the 9 from the 29 to the 2 from the 12):
 
-{image file-path="img/topics/barcode-13-step-6.png"}
+{image file-path="img/topics/barcode-13-step-6.png" alt="9+2=11."}
 
 Once again, we only need the last digit; in the example it's a 1.
 Now ask what you need to add to that digit to get a 0 in the ones column (i.e.
@@ -98,7 +102,7 @@ code.
 If the brown total above had ended with a 0, then the checksum would be 0
 (since that adds to give a 0 in the ones digit).
 
-{image file-path="img/topics/barcode-13-step-7.png"}
+{image file-path="img/topics/barcode-13-step-7.png" alt="The checksum is 9."}
 
 This number should be the final digit on the product code.
 Ask the student if you got the right one.
@@ -106,7 +110,9 @@ Of course, at this stage there's a small chance you guessed it, but now they
 can explore the codes themselves, and they'll soon find out that it always
 works if the number is copied correctly.
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 Check that students notice to multiply the second line by 3 and take the last
 digit of that number.
@@ -126,17 +132,17 @@ It's a somewhat odd process of adding and multiplying numbers, but the same
 formula will always give you the correct value for the 12th digit, as long as
 there isn't an error in the number!
 
-{image file-path="img/topics/barcode-12.jpg"}
+{image file-path="img/topics/barcode-12.jpg" alt="A barcode with the digits 6 30509 42483 2."}
 
 The above example barcode is from a product that a student might have
 selected, so they would give you these 11 digits:
 
-{image file-path="img/topics/barcode-12-step-1.png"}
+{image file-path="img/topics/barcode-12-step-1.png" alt="940054700987."}
 
 However, instead of writing as above, write it on the board with every
 second digit on alternating lines:
 
-{image file-path="img/topics/barcode-12-step-2.png"}
+{image file-path="img/topics/barcode-12-step-2.png" alt="Top line has the digits 600443 and the bottom line has 35928."}
 
 What you are doing is writing the numbers in an odd position at top and the
 even positions in the second row.
@@ -150,23 +156,23 @@ ones column only.
 Using only the last digit can seem too easy to them, and can challenge
 their thinking!)
 
-{image file-path="img/topics/barcode-12-step-3.png"}
+{image file-path="img/topics/barcode-12-step-3.png" alt="6+0+0+4+4+3=17."}
 
 Next add up all the numbers in the second row (to get 27), and again take
 the number in the ones column only.
 
-{image file-path="img/topics/barcode-12-step-4.png"}
+{image file-path="img/topics/barcode-12-step-4.png" alt="3+5+9+2+8=27."}
 
 Multiply the digit from the first sum by three i.e. the 7 in the 17 is
 multiplied by 3, but take the ones column answer only (the 1 from the 21).
 With 12-digit barcodes, the units digit from the first row sum is always
 multiplied by three.
 
-{image file-path="img/topics/barcode-12-step-5.png"}
+{image file-path="img/topics/barcode-12-step-5.png" alt="3x7=21."}
 
 Add the multiplied answer to the second sum (in this case, the 1 from the 21 to the 7 from the 27):
 
-{image file-path="img/topics/barcode-12-step-6.png"}
+{image file-path="img/topics/barcode-12-step-6.png" alt="9+2=11."}
 
 Once again, we only need the last digit; in the example it's a single
 digit already (8).
@@ -178,7 +184,7 @@ the product code.
 If the brown total above had ended with a 0, then the check digit would be
 0 (since that adds to give a 0 in the ones digit).
 
-{image file-path="img/topics/barcode-12-step-7.png"}
+{image file-path="img/topics/barcode-12-step-7.png" alt="The checksum is 2."}
 
 This number should be the final digit on the product code.
 Ask the student if you got the right one.
@@ -186,7 +192,9 @@ Of course, at this stage there's a small chance you guessed it, but now
 they can explore the codes themselves, and they'll soon find out that it
 always works if the number is copied correctly.
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 Check that students notice to multiply the first line by 3 and take the
 last digit of that number.

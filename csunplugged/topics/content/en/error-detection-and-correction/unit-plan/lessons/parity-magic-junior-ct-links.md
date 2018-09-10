@@ -1,4 +1,6 @@
-{panel type="ct-algorithm" title="Algorithmic thinking"}
+{panel type="ct-algorithm"}
+
+# Algorithmic thinking
 
 The step by step process of counting the number of black squares in each row and identifying whether the parity is even, and then repeating the process with each column, is an example of an algorithm.
 The full error detection algorithm includes what to to do when the error is found as well.
@@ -10,7 +12,9 @@ Can they articulate the algorithm to another student to help them complete the t
 
 {panel end}
 
-{panel type="ct-abstraction" title="Abstraction"}
+{panel type="ct-abstraction"}
+
+# Abstraction
 
 Each of the cards in this activity represents a bit inside a digital device.
 When we arrange all of our ‘bits’ together in the square this is a representation of some data (admittedly random data in the magic trick, but it could be done with real data!).
@@ -23,7 +27,9 @@ Can they see the connection between the grid of cards and a piece of data made u
 
 {panel end}
 
-{panel type="ct-decomposition" title="Decomposition"}
+{panel type="ct-decomposition"}
+
+# Decomposition
 
 To accomplish this task students must decompose the process “find the error” into smaller steps.
 The first step students break it down to could be “look at each row, one by one, until I find an error”.
@@ -38,7 +44,9 @@ Are students able to break the task down into steps and describe these steps, wi
 
 {panel end}
 
-{panel type="ct-pattern" title="Generalising and patterns"}
+{panel type="ct-pattern"}
+
+# Generalising and patterns
 
 Once students understand the algorithm to find the card that has been turned, they will be able to find a (single) flipped card for any size grid; a 10 x 10 grid (100 cards) can be done fairly quickly, and even a 20 x 20 grid is possible given enough time (and cards!)
 They can generalise the problem “find the error in a **6 x 6 grid**” to: “find the error in **a grid**”.
@@ -49,7 +57,9 @@ Can students find the flipped card on larger grids?
 
 {panel end}
 
-{panel type="ct-evaluation" title="Evaluation"}
+{panel type="ct-evaluation"}
+
+# Evaluation
 
 The parity trick is always able to detect and correct errors if one bit has been flipped, but it is important to evaluate this algorithm for different kinds of errors as well.
 If more than one card is flipped (i.e. more than one error occurs) then we can tell something is wrong with the data, but our algorithm can’t tell us how to fix this!
@@ -65,9 +75,11 @@ Can students explain what goes wrong when we try to detect the error if two card
 
 {panel end}
 
-{panel type="ct-logic" title="Logic"}
+{panel type="ct-logic"}
 
-Flipping a card will always change a row/column from odd to even, no matter what the card is in what the other cards in the row/column are.
+# Logic
+
+Flipping a card will always change a row/column from even to odd (or odd to even), no matter what the card is and what the other cards in the row/column are.
 
 Also, the idea that the corner card is correct for both the new row and column is an advanced concept, but a pattern that some students might recognise.
 

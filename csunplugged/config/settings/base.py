@@ -36,12 +36,12 @@ DJANGO_APPS = [
 
     # Useful template tags
     "django.contrib.humanize",
-
-    # Admin
-    "django.contrib.admin",
 ]
+
 THIRD_PARTY_APPS = [
     "django_bootstrap_breadcrumbs",
+    "haystack",
+    "widget_tweaks",
     "modeltranslation",
     "bidiutils",
 ]
@@ -51,10 +51,12 @@ LOCAL_APPS = [
     "general.apps.GeneralConfig",
     "topics.apps.TopicsConfig",
     "resources.apps.ResourcesConfig",
+    "search.apps.SearchConfig",
+    "classic.apps.ClassicConfig",
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
-INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
+INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
 # MIDDLEWARE CONFIGURATION
 # ----------------------------------------------------------------------------
@@ -115,9 +117,13 @@ INCONTEXT_L10N_PSEUDOLANGUAGES = (
     INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI
 )
 
-LANGUAGES = (
+DEFAULT_LANGUAGES = (
     ("en", "English"),
+    ("de", "Deutsche"),
+    ("es", "Español"),
 )
+# Keep original values of languages for resource generation
+LANGUAGES = DEFAULT_LANGUAGES
 
 if env.bool("INCLUDE_INCONTEXT_L10N", False):
     EXTRA_LANGUAGES = [
@@ -202,6 +208,7 @@ TEMPLATES = [
             "libraries": {
                 "render_html_field": "config.templatetags.render_html_field",
                 "translate_url": "config.templatetags.translate_url",
+                "query_replace": "config.templatetags.query_replace",
             },
         },
     },
@@ -260,6 +267,18 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
+
+# SEARCH CONFIGURATION
+# ------------------------------------------------------------------------------
+# See: http://django-haystack.readthedocs.io/en/v2.6.0/settings.html
+HAYSTACK_CONNECTIONS = {
+    "default": {
+        "ENGINE": "haystack.backends.whoosh_backend.WhooshEngine",
+        "PATH": str(ROOT_DIR.path("whoosh_index")),
+    },
+}
+HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10
+
 # OTHER SETTINGS
 # ------------------------------------------------------------------------------
 DJANGO_PRODUCTION = env.bool("DJANGO_PRODUCTION")
@@ -271,3 +290,6 @@ RESOURCE_COPY_AMOUNT = 20
 SCRATCH_GENERATION_LOCATION = str(ROOT_DIR.path("temp"))
 CUSTOM_VERTO_TEMPLATES = os.path.join(str(ROOT_DIR.path("utils")), "custom_converter_templates", "")
 MODELTRANSLATION_CUSTOM_FIELDS = ("JSONField",)
+CLASSIC_PAGES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("classic")), "content")
+GENERAL_PAGES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("general")), "content")
+BREADCRUMBS_TEMPLATE = "django_bootstrap_breadcrumbs/bootstrap4.html"

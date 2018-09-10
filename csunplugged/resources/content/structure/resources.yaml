@@ -1,74 +1,59 @@
 sorting-network:
   generator-module: SortingNetworkResourceGenerator
-  thumbnail-static-path: img/resources/resource-sorting-network-thumbnail-example.png
   copies: true
 sorting-network-cards:
   generator-module: SortingNetworkCardsResourceGenerator
-  thumbnail-static-path: img/resources/sorting-network-cards/thumbnail.png
   copies: false
-treasure-hunt:
-  generator-module: TreasureHuntResourceGenerator
-  thumbnail-static-path: img/resources/treasure-hunt/thumbnail.png
+number-hunt:
+  generator-module: NumberHuntResourceGenerator
   copies: true
 binary-cards:
   generator-module: BinaryCardsResourceGenerator
-  thumbnail-static-path: img/resources/binary-cards/thumbnail.png
   copies: false
 binary-cards-small:
   generator-module: BinaryCardsSmallResourceGenerator
-  thumbnail-static-path: img/resources/binary-cards-small/thumbnail.png
   copies: false
 binary-windows:
   generator-module: BinaryWindowsResourceGenerator
-  thumbnail-static-path: img/resources/binary-windows/thumbnail.png
   copies: false
 modulo-clock:
   generator-module: ModuloClockResourceGenerator
-  thumbnail-static-path: img/resources/modulo-clock/thumbnail.png
   copies: false
 binary-to-alphabet:
   generator-module: BinaryToAlphabetResourceGenerator
-  thumbnail-static-path: img/resources/binary-to-alphabet/thumbnail.png
   copies: false
 parity-cards:
   generator-module: ParityCardsResourceGenerator
-  thumbnail-static-path: img/resources/parity-cards/thumbnail.png
   copies: false
 piano-keys:
   generator-module: PianoKeysResourceGenerator
-  thumbnail-static-path: img/resources/piano-keys/thumbnail.png
   copies: false
 train-stations:
   generator-module: TrainStationsResourceGenerator
-  thumbnail-static-path: img/resources/train-stations/thumbnail.png
   copies: false
 job-badges:
   generator-module: JobBadgesResourceGenerator
-  thumbnail-static-path: img/resources/job-badges/thumbnail.png
   copies: false
 arrows:
   generator-module: ArrowsResourceGenerator
-  thumbnail-static-path: img/resources/arrows/thumbnail.png
   copies: false
 left-right-cards:
   generator-module: LeftRightCardsResourceGenerator
-  thumbnail-static-path: img/resources/left-right-cards/thumbnail.png
   copies: false
 grid:
   generator-module: GridResourceGenerator
-  thumbnail-static-path: img/resources/grid/thumbnail.png
   copies: false
 searching-cards:
   generator-module: SearchingCardsResourceGenerator
-  thumbnail-static-path: img/resources/searching-cards/thumbnail.png
   copies: false
 barcode-checksum-poster:
   generator-module: BarcodeChecksumPosterResourceGenerator
-  thumbnail-static-path: img/resources/barcode-checksum-poster/thumbnail.gif
   copies: false
 pixel-painter:
   generator-module: PixelPainterResourceGenerator
-  thumbnail-static-path: img/resources/pixel-painter/thumbnail.png
+  copies: false
+treasure-island:
+  generator-module: TreasureIslandResourceGenerator
   copies: false
 hash-table-worksheet:
   generator-module: HashTableWorksheetResourceGenerator

@@ -48,11 +48,11 @@ class PixelPainterResourceGeneratorTest(BaseGeneratorTest):
         test_output_path = os.path.join(self.test_output_path, "pixel-painter-thumbnail-test-1.png")
         options = QueryDict("image=boat&method=black-white&paper_size=a4")
         generator = PixelPainterResourceGenerator(options)
-        generator.STATIC_PATH = "tests/resources/generators/assets/pixel-painter/{}"
+        generator.STATIC_PATH = "tests/resources/generators/assets/pixel-painter/{image}/{filename}"
         generator.save_thumbnail("Test", test_output_path)
         compare_result = cmp(
             test_output_path,
-            "tests/resources/generators/assets/pixel-painter/boat-black-white.png",
+            "tests/resources/generators/assets/pixel-painter/boat/boat-black-white-thumbnail.png",
             shallow=False
         )
         self.assertTrue(compare_result)
@@ -61,11 +61,11 @@ class PixelPainterResourceGeneratorTest(BaseGeneratorTest):
         test_output_path = os.path.join(self.test_output_path, "pixel-painter-thumbnail-test-2.png")
         options = QueryDict("image=boat&method=run-length-encoding&paper_size=a4")
         generator = PixelPainterResourceGenerator(options)
-        generator.STATIC_PATH = "tests/resources/generators/assets/pixel-painter/{}"
+        generator.STATIC_PATH = "tests/resources/generators/assets/pixel-painter/{image}/{filename}"
         generator.save_thumbnail("Test", test_output_path)
         compare_result = cmp(
             test_output_path,
-            "tests/resources/generators/assets/pixel-painter/boat-black-white.png",
+            "tests/resources/generators/assets/pixel-painter/boat/boat-black-white-thumbnail.png",
             shallow=False
         )
         self.assertTrue(compare_result)

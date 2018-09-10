@@ -70,6 +70,8 @@ TEMPLATES[0]["OPTIONS"]["loaders"] = [  # noqa: F405
 INSTALLED_APPS += [  # noqa: F405
     "test_without_migrations",
     "dev.apps.DevConfig",
+    # Model for TranslatableModel tests
+    "tests.utils.translatable_model",
 ]
 
 # Save production LANGUAGES setting in case any tests need to refer to it
@@ -83,3 +85,12 @@ LANGUAGES = (
     ("de", "German"),
     ("fr", "French"),
 )
+
+# Search index location for testing
+SEARCH_INDEX_PATH = "temp/tests/search/"
+HAYSTACK_CONNECTIONS = {
+    "default": {
+        "ENGINE": "haystack.backends.whoosh_backend.WhooshEngine",
+        "PATH": SEARCH_INDEX_PATH,
+    }
+}

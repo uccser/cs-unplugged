@@ -4,7 +4,7 @@ import os.path
 from random import sample
 from PIL import Image, ImageDraw, ImageFont
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 from resources.utils.resource_parameters import EnumResourceParameter
 
 IMAGE_SIZE_X = 2000
@@ -12,16 +12,76 @@ IMAGE_SIZE_Y = 2800
 LINE_COLOUR = "#000000"
 LINE_WIDTH = 3
 
-TYPE_VALUES = {
-    "small_numbers": _("Small numbers (1 to 6)"),
-    "large_numbers": _("Large numbers (7 digit numbers)"),
-    "letters": _("Letters"),
-    "words": _("Words"),
-    "fractions": _("Fractions"),
-    "maori_colours": _("Māori colours"),
-    "maori_numbers": _("Māori numbers"),
-    "butterfly": _("Butterfly life cycle"),
-    "riding_hood": _("Little Red Riding Hood"),
+SEPERATOR = ","
+DEFAULT_FONT = "static/fonts/PatrickHand-Regular.ttf"
+CARD_TYPE_DATA = {
+    "small_numbers": {
+        "label": _("Small numbers (1 to 10)"),
+        "font-size": 800,
+    },
+    "large_numbers": {
+        "label": _("Large numbers (7 digit numbers)"),
+        "font-size": 500,
+    },
+    "letters": {
+        "label": _("Letters"),
+        # Translators: A set of letters from your language's alphabet, seperated by commas
+        "values": _("L,O,N,K,E,D,S,P,G,B,I,Y"),
+        "font-size": 800,
+        "translated": True,
+    },
+    "words": {
+        "label": _("Words"),
+        # Translators: A set of words from your language with similar spelling, seperated by commas
+        "values": _("crocodile,crochet,kiwi,weka,kiwi,kiwano"),
+        "font-size": 500,
+        "translated": True,
+    },
+    "fractions": {
+        "label": _("Fractions"),
+        "values": [u"\u00bd", u"\u2153", u"\u2154", u"\u215c", u"\u00be", u"\u215d"],
+        "font-size": 900,
+        "font": "static/fonts/NotoSans-Regular.ttf",
+    },
+    "butterfly": {
+        "label": _("Butterfly life cycle"),
+        "images": [
+            "butterfly-story-leaf.png",
+            "butterfly-story-baby-caterpillar.png",
+            "butterfly-story-caterpillar.png",
+            "butterfly-story-young-pupa.png",
+            "butterfly-story-mature-pupa.png",
+            "butterfly-story-butterfly.png",
+        ]
+    },
+    "riding_hood": {
+        "label": _("Little Red Riding Hood"),
+        "images": [
+            "little-red-riding-hood-1.png",
+            "little-red-riding-hood-2.png",
+            "little-red-riding-hood-3.png",
+            "little-red-riding-hood-4.png",
+            "little-red-riding-hood-5.png",
+            "little-red-riding-hood-6.png",
+        ]
+    },
+    "maori_colours": {
+        "label": "Māori colours",
+        "values": [
+            "whero", "kākāriki", "kiwikiwi", "karaka",
+            "kōwhai", "pango", "māwhero", "mā"
+        ],
+        "font-size": 500,
+    },
+    "maori_numbers": {
+        "label": "Māori numbers",
+        "values": [
+            "tahi", "rua", "toru", "whā", "rima", "ono", "whitu", "waru",
+            "iwa", "tekau", "tekau mā tahi", "tekau mā waru", "tekau mā toru",
+            "tekau mā whā", "rua tekau", "rua tekau mā ono"
+        ],
+        "font-size": 300,
+    },
 }
 
 
@@ -35,8 +95,8 @@ class SortingNetworkCardsResourceGenerator(BaseResourceGenerator):
             "type": EnumResourceParameter(
                 name="type",
                 description=_("Card Type"),
-                values=TYPE_VALUES,
-                default="small_numbers"
+                values=create_key_labels(),
+                default="large_numbers"
             )
         }
 
@@ -46,7 +106,6 @@ class SortingNetworkCardsResourceGenerator(BaseResourceGenerator):
         Returns:
             A list of dictionaries for each resource page.
         """
-        font_path = "static/fonts/PatrickHand-Regular.ttf"
         card_type = self.options["type"].value
 
         # Create card outlines
@@ -57,61 +116,6 @@ class SortingNetworkCardsResourceGenerator(BaseResourceGenerator):
         for y_coord in range(0, IMAGE_SIZE_Y, int(IMAGE_SIZE_Y / 2 - LINE_WIDTH)):
             draw.line([(0, y_coord), (IMAGE_SIZE_X, y_coord)], fill=LINE_COLOUR, width=LINE_WIDTH)
 
-        # Prepare text data
-        card_data_type = "text"
-        if card_type == "small_numbers":
-            font_size = 800
-            text = ["1", "2", "3", "4", "5", "6"]
-        elif card_type == "large_numbers":
-            font_size = 500
-            text = []
-            numbers = sample(range(1700000, 2100000), 6)
-            for number in numbers:
-                text.append("{:,}".format(number))
-        elif card_type == "fractions":
-            font_size = 900
-            font_path = "static/fonts/NotoSans-Regular.ttf"
-            text = [u"\u00bd", u"\u2153", u"\u2154", u"\u215c", u"\u00be", u"\u215d"]
-        elif card_type == "maori_numbers":
-            font_size = 300
-            text = [
-                "tahi", "rua", "toru", "whā", "rima", "ono", "whitu", "waru",
-                "iwa", "tekau", "tekau mā tahi", "tekau mā waru", "tekau mā toru",
-                "tekau mā whā", "rua tekau", "rua tekau mā ono"
-            ]
-        elif card_type == "words":
-            font_size = 500
-            text = ["crocodile", "crochet", "kiwi", "weka", "kiwi", "kiwano"]
-        elif card_type == "letters":
-            font_size = 800
-            text = ["L", "O", "N", "K", "E", "D", "S", "P", "G", "B", "I", "Y"]
-        elif card_type == "maori_colours":
-            font_size = 500
-            text = [
-                "whero", "kākāriki", "kiwikiwi", "karaka",
-                "kōwhai", "pango", "māwhero", "mā"
-            ]
-        elif card_type == "riding_hood":
-            card_data_type = "image"
-            images = [
-                "little-red-riding-hood-1.png",
-                "little-red-riding-hood-2.png",
-                "little-red-riding-hood-3.png",
-                "little-red-riding-hood-4.png",
-                "little-red-riding-hood-5.png",
-                "little-red-riding-hood-6.png",
-            ]
-        else:  # butterfly
-            card_data_type = "image"
-            images = [
-                "butterfly-story-leaf.png",
-                "butterfly-story-baby-caterpillar.png",
-                "butterfly-story-caterpillar.png",
-                "butterfly-story-young-pupa.png",
-                "butterfly-story-mature-pupa.png",
-                "butterfly-story-butterfly.png",
-            ]
-
         card_centers = [
             (IMAGE_SIZE_X / 2, IMAGE_SIZE_Y / 4),
             (IMAGE_SIZE_X / 2, (IMAGE_SIZE_Y / 4) * 3),
@@ -119,7 +123,9 @@ class SortingNetworkCardsResourceGenerator(BaseResourceGenerator):
 
         # Add text to cards
         pages = []
-        if card_data_type == "image":
+        type_data = CARD_TYPE_DATA[card_type]
+        if "images" in type_data:
+            images = type_data["images"]
             IMAGE_PADDING = 20
             MAX_IMAGE_X = IMAGE_SIZE_X - IMAGE_PADDING * 2
             MAX_IMAGE_Y = IMAGE_SIZE_Y / 2 - IMAGE_PADDING * 2
@@ -146,7 +152,21 @@ class SortingNetworkCardsResourceGenerator(BaseResourceGenerator):
                 if image_number % 2 == 1 and image_number != len(images) - 1:
                     pages.append({"type": "image", "data": page})
         else:
-            font = ImageFont.truetype(font_path, font_size)
+            if card_type == "small_numbers":
+                text = [str(i) for i in range(1, 11)]
+            elif card_type == "large_numbers":
+                text = []
+                numbers = sample(range(1700000, 2100000), 10)
+                for number in numbers:
+                    text.append("{:,}".format(number))
+            elif type_data.get("translated", False):
+                text = type_data["values"].split(SEPERATOR)
+            else:
+                text = type_data["values"]
+
+            font_path = type_data.get("font", DEFAULT_FONT)
+            font = ImageFont.truetype(font_path, type_data["font-size"])
+
             for (text_number, text_string) in enumerate(text):
                 if text_number % 2 == 0:
                     page = card_outlines.copy()
@@ -182,6 +202,18 @@ class SortingNetworkCardsResourceGenerator(BaseResourceGenerator):
             text for subtitle (str).
         """
         return "{} - {}".format(
-            self.options["type"].value.replace("_", " "),
+            CARD_TYPE_DATA[self.options["type"].value]["label"],
             super().subtitle
         )
+
+
+def create_key_labels():
+    """Return dictionary of option labels.
+
+    Returns:
+        Dictionary of values used for options.
+    """
+    labels = dict()
+    for key, data in CARD_TYPE_DATA.items():
+        labels[key] = data["label"]
+    return labels

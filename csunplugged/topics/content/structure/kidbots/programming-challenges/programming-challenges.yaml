@@ -202,6 +202,7 @@ calculate-inside-angles-of-regular-polygons:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-explain-sequencing
@@ -328,6 +329,7 @@ add-in-parts-1-digit-number:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-join-concatenate
     - programming-describe-variables
@@ -339,6 +341,7 @@ add-in-parts-2-digit-number:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-join-concatenate
     - programming-describe-variables
@@ -357,6 +360,7 @@ go-up-10-numbers:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-join-concatenate
     - programming-describe-variables
@@ -370,6 +374,7 @@ go-up-1-10-100-numbers:
   difficulty-level: 3
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-join-concatenate
     - programming-describe-variables
@@ -382,6 +387,7 @@ calculate-exponents:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-join-concatenate
     - programming-describe-variables
@@ -395,6 +401,7 @@ check-if-divisor:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-join-concatenate
     - programming-describe-variables
@@ -407,6 +414,7 @@ check-if-divisor-series:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-join-concatenate
     - programming-describe-variables
@@ -419,6 +427,7 @@ find-factors:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-join-concatenate
     - programming-describe-variables
@@ -431,6 +440,7 @@ check-prime:
   difficulty-level: 3
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-join-concatenate
     - programming-describe-variables
@@ -443,6 +453,7 @@ generate-primes:
   difficulty-level: 3
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-join-concatenate
     - programming-describe-variables
@@ -456,6 +467,7 @@ find-prime-factors:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-mod
     - programming-describe-function
@@ -467,6 +479,7 @@ flip-coins:
   difficulty-level: 3
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-join-concatenate
     - programming-describe-variables
@@ -479,6 +492,7 @@ modulo-even-odd-numbers:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-identify-if-statement
@@ -489,6 +503,7 @@ modulo-check-divisor:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-identify-if-statement
     - programming-explain-join-concatenate
@@ -500,6 +515,7 @@ modulo-add-hours-12-hour-clock:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-identify-if-statement
     - programming-explain-join-concatenate
@@ -511,6 +527,7 @@ modulo-add-hours-12-hour-clock-without-mod:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-describe-mathematical-operations
     - programming-explain-join-concatenate
@@ -522,6 +539,7 @@ modulo-add-hours-24-hour-clock:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-identify-if-statement
     - programming-explain-join-concatenate
@@ -534,6 +552,7 @@ modulo-display-midi-note:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-mod
     - programming-explain-asking-input-end-user
@@ -545,6 +564,7 @@ modulo-add-months:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-explain-join-concatenate
     - programming-describe-variables
@@ -556,6 +576,7 @@ modulo-add-video-timings:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-describe-variables
     - programming-explain-join-concatenate
@@ -567,6 +588,7 @@ modulo-check-leap-year:
   difficulty-level: 2
   programming-languages:
     - scratch
+    - python
   learning-outcomes:
     - programming-describe-mathematical-operations
     - programming-explain-mod

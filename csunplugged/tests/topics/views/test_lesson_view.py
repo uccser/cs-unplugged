@@ -285,6 +285,34 @@ class LessonViewTest(BaseTestWithDB):
             ordered=False
         )
 
+    # Created to avoid https://github.com/uccser/cs-unplugged/issues/827
+    def test_lesson_view_ages_context_learning_outcome_not_duplicated(self):
+        topic = self.test_data.create_topic(1)
+        unit_plan = self.test_data.create_unit_plan(topic, 1)
+        age_group_1 = self.test_data.create_age_group(5, 7)
+        lesson = self.test_data.create_lesson(
+            topic,
+            unit_plan,
+            1,
+            age_group_1
+        )
+        learning_outcome = self.test_data.create_learning_outcome(1)
+        area_1 = self.test_data.create_curriculum_area(1)
+        area_2 = self.test_data.create_curriculum_area(2)
+        learning_outcome.curriculum_areas.add(area_1, area_2)
+        lesson.learning_outcomes.add(learning_outcome)
+        kwargs = {
+            "topic_slug": "topic-1",
+            "unit_plan_slug": "unit-plan-1",
+            "lesson_slug": "lesson-1",
+        }
+        url = reverse("topics:lesson", kwargs=kwargs)
+        response = self.client.get(url)
+        self.assertQuerysetEqual(
+            response.context["learning_outcomes"],
+            ["<LearningOutcome: Outcome 1>"]
+        )
+
     def test_lesson_view_ages_context_learning_outcome_none(self):
         topic = self.test_data.create_topic(1)
         unit_plan = self.test_data.create_unit_plan(topic, 1)
@@ -335,7 +363,7 @@ class LessonViewTest(BaseTestWithDB):
                     "description": "Description 1",
                     "slug": "grid",
                     "name": "Grid",
-                    "thumbnail": "static/images/thumbnail-grid",
+                    "thumbnail": "/staticfiles/img/resources/grid/thumbnails/en/grid-paper_size-a4.png",
                 }
             ]
         )
@@ -378,13 +406,13 @@ class LessonViewTest(BaseTestWithDB):
                     "description": "Description 2",
                     "slug": "arrows",
                     "name": "Arrows",
-                    "thumbnail": "static/images/thumbnail-arrows",
+                    "thumbnail": "/staticfiles/img/resources/arrows/thumbnails/en/arrows-paper_size-a4.png",
                 },
                 {
                     "description": "Description 1",
                     "slug": "grid",
                     "name": "Grid",
-                    "thumbnail": "static/images/thumbnail-grid",
+                    "thumbnail": "/staticfiles/img/resources/grid/thumbnails/en/grid-paper_size-a4.png",
                 },
             ]
         )

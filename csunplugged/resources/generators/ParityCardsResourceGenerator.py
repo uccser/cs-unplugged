@@ -2,7 +2,7 @@
 
 from PIL import Image, ImageDraw
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 from resources.utils.resource_parameters import EnumResourceParameter
 
 CARDS_COLUMNS = 4
@@ -103,8 +103,8 @@ class ParityCardsResourceGenerator(BaseResourceGenerator):
         Returns:
             text for subtitle (str).
         """
-        text = "{} back - {}".format(
-            self.options["back_colour"].value,
+        text = "{} - {}".format(
+            BACK_COLOUR_VALUES[self.options["back_colour"].value],
             super().subtitle
         )
         return text

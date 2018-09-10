@@ -6,6 +6,8 @@ from django.views import generic
 from django.http import JsonResponse, Http404
 from config.templatetags.render_html_field import render_html_with_static
 from topics.utils.add_lesson_ages_to_objects import add_lesson_ages_to_objects
+from resources.utils.get_thumbnail import get_thumbnail_static_path_for_resource
+from utils.translated_first import translated_first
 from utils.group_lessons_by_age import group_lessons_by_age
 from django.utils.translation import get_language
 from .models import (
@@ -34,12 +36,13 @@ class IndexView(generic.ListView):
         Returns:
             Queryset of Topic objects ordered by name.
         """
-        return Topic.objects.order_by("name").prefetch_related(
+        topics = Topic.objects.order_by("name").prefetch_related(
             "unit_plans",
             "lessons",
             "curriculum_integrations",
             "programming_challenges",
         )
+        return translated_first(topics)
 
     def get_context_data(self, **kwargs):
         """Provide the context data for the index view.
@@ -188,10 +191,10 @@ class LessonView(generic.DetailView):
         # Add all the connected programming challenges
         context["programming_challenges"] = self.object.programming_challenges.exists()
         # Add all the connected learning outcomes
-        context["learning_outcomes"] = self.object.learning_outcomes(manager="translated_objects") \
-                                           .all().select_related()
-        context["classroom_resources"] = self.object.classroom_resources(manager="translated_objects") \
-                                             .all().select_related()
+        context["learning_outcomes"] = self.object.learning_outcomes(manager="translated_objects").order_by("text")
+        context["classroom_resources"] = self.object.classroom_resources(manager="translated_objects").order_by(
+            "description"
+        )
         # Add all the connected generated resources
         related_resources = self.object.generated_resources.order_by("name")
         generated_resources = []
@@ -199,7 +202,7 @@ class LessonView(generic.DetailView):
             generated_resource = dict()
             generated_resource["slug"] = related_resource.slug
             generated_resource["name"] = related_resource.name
-            generated_resource["thumbnail"] = related_resource.thumbnail_static_path
+            generated_resource["thumbnail"] = get_thumbnail_static_path_for_resource(related_resource)
             relationship = ResourceDescription.objects.get(resource=related_resource, lesson=self.object)
             generated_resource["description"] = relationship.description
             generated_resources.append(generated_resource)
@@ -270,7 +273,7 @@ class ProgrammingChallengeView(generic.DetailView):
             lesson.challenge_number = challenge_numbers.challenge_number
         context["topic"] = self.object.topic
         # Add all the connected learning outcomes
-        context["learning_outcomes"] = self.object.learning_outcomes(manager="translated_objects").all()
+        context["learning_outcomes"] = self.object.learning_outcomes(manager="translated_objects").order_by("text")
         context["implementations"] = self.object.ordered_implementations()
         return context
 

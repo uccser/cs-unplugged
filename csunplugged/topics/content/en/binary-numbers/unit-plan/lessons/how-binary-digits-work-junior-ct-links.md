@@ -1,4 +1,6 @@
-{panel type="ct-algorithm" title="Algorithmic thinking"}
+{panel type="ct-algorithm"}
+
+# Algorithmic thinking
 
 We used an algorithm in this lesson to convert a decimal number to a binary one.
 This is an algorithm because it is a step-by-step process that will always give the right solution for any input you give it as long as the process is followed exactly.
@@ -12,7 +14,7 @@ Here’s an algorithm for working out which dot cards should be showing, written
 
     -   If the number of dots on the card is more than the number of dots remaining:
 
-      -   Hide the card 
+      -   Hide the card
 
     -   Otherwise:
 
@@ -24,25 +26,27 @@ Here’s an algorithm for working out which dot cards should be showing, written
 
 Which students are methodical when they convert between decimal and binary?
 Which ones start with the leftmost card and move one card at a time to the right, rather than choosing cards at random and flipping them on and off until they get the right number?
- 
+
 {panel end}
 
-{panel type="ct-abstraction" title="Abstraction"}
+{panel type="ct-abstraction"}
+
+# Abstraction
 
 Abstraction and abstract thinking is generally difficult for young students so only a small amount of this section is likely to be applicable for them.
 We have included the information here however because it is useful background knowledge for teaching this topic.
 
 Abstraction helps us simplify things because we can ignore the details we don’t currently need to know.
-Binary number representation is an abstraction that hides the complexity of the electronics and hardware inside a computer that store data. 
+Binary number representation is an abstraction that hides the complexity of the electronics and hardware inside a computer that store data.
 
-In this case the details we can ignore include: Computers use physical devices like electric circuits and voltages in circuits to store and move data, and there are many complex physics and mathematical theories that make this work. 
+In this case the details we can ignore include: Computers use physical devices like electronic circuits and voltages in circuits to store and move data, and there are many complex physics and mathematical theories that make this work. 
 
 We don’t need to understand how these circuits work because we can use the abstraction of binary, as numbers made up of bits (0s and 1s), to understand data and work out problems, without having to think about what is happening ‘underneath the hood’ of the computer.
 
-Another use of abstraction is considering what is needed to represent any given digit in binary. The answer is all you need are two different things. 
+Another use of abstraction is considering what is needed to represent any given digit in binary. The answer is all you need are two different things.
 These things can be anything! Two different colours, two animals, two symbols etc.
 As long as there are two of them, and they are different, you can use these to represent any number, using binary, the same way a computer uses electricity to represent data.
- 
+
 #### Examples of what you could look for:
 
 Who are the students that can demonstrate converting and representing binary numbers using things other than “1’s and 0’s”, “black and white”, and “off and on” (for example using :] and :[, or using people standing up or sitting down).
@@ -50,7 +54,9 @@ If you are able to interchange terms like "black" and "white" with 0 and 1 witho
 
 {panel end}
 
-{panel type="ct-decomposition" title="Decomposition"}
+{panel type="ct-decomposition"}
+
+# Decomposition
 
 An example of decomposition is breaking the conversion of the number to binary into one bit at a time.
 The questions "Should this be 1 or 0" for each of the dot cards is decomposing the problem to a series of questions.
@@ -62,7 +68,9 @@ Which students focus on each individual bit at a time, rather than being overwhe
 
 {panel end}
 
-{panel type="ct-pattern" title="Generalising and patterns"}
+{panel type="ct-pattern"}
+
+# Generalising and patterns
 
 Recognising patterns in the way the binary number system works helps give us a deeper understanding of the concepts involved, and assists us in generalising these concepts and patterns so that we can apply them to other problems.
 Generalising these patterns may be more difficult for junior students, but recognising the patterns is a good exercise.
@@ -74,12 +82,14 @@ The algorithm for converting a decimal number to a binary one follows a pattern 
 For binary numbers you start with the largest bit and turn it on if it is needed or off if it is not, just like when you’re giving change you start with the largest denomination and then always take a coin (or note) whenever you need it.
 Jargon note: This is called a greedy algorithm.
 
-{panel type="math" title="Mathematical links"}
+{panel type="math"}
+
+# Mathematical links
 
 Ask students what is special about the decimal to binary conversion, in contrast with the general change giving algorithm, and have them observe that in the general case, you may need to give more than one coin of the same denomination, whereas in the binary conversion there is always one (or none) of each.
 
 {panel end}
- 
+
 When counting upwards in binary, there is a pattern for how often particular cards flip.
 The first bit (with 1 dot) turns over every time we count up by one, the 2nd (with 2 dots) turns for every second number, the 3rd (with 4 dots) turns for every fourth… Is there a pattern like this when we count in decimal numbers?
 
@@ -95,12 +105,14 @@ Working with these patterns is valuable for working out the relationship between
 
 #### Examples of what you could look for:
 
-Which students recognised quickly that each card was doubling the number of dots? 
+Which students recognised quickly that each card was doubling the number of dots?
 Which students easily understand the patterns of cards flipping when counting with binary numbers?
 
 {panel end}
 
-{panel type="ct-logic" title="Logic"}
+{panel type="ct-logic"}
+
+# Logic
 
 Logical thinking means using rules you already know and using logic to deduce more rules and information from these.
 Once we know what number each of the binary cards represents then we can use this knowledge to figure out how to represent other numbers with the cards.
@@ -117,7 +129,9 @@ Are students able to explain that each card "has to" be up the way it is for a g
 
 {panel end}
 
-{panel type="ct-evaluation" title="Evaluation"}
+{panel type="ct-evaluation"}
+
+# Evaluation
 
 An example of evaluation is working out how many different values can be represented by a given number of bits (e.g. 4 bits can represent 16 different values), and vice versa (to represent 1000 different values, you need at least 10 bits).
 
@@ -130,5 +144,5 @@ Can a student work out the range possible with 2 bits? (4)
 4 bits? (16)
 
 If we add one more bit to a representation, how much does that increase the range? (it doubles it)
- 
+
 {panel end}

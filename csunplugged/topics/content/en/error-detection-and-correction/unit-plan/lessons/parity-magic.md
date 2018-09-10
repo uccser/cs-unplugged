@@ -1,38 +1,5 @@
 # Parity magic
 
-{panel type="teaching" title="See teaching this in action!"}
-
-A demonstration of lesson one ("Parity magic") being taught is available here:
-
-{video url="https://www.youtube.com/embed/FnwBratAhfg"}
-
-{panel end}
-
-{panel type="general" title="Notes on resources"}
-
-{image file-path="img/topics/parity-cards.png" alt="A pile of square cards with black on one side and white on the other side."}
-
-You will require:
-
--   A set of 36 "fridge magnet" cards, all identical with a different colour on
-    each side (e.g. black and white); or non-magnetic cards, in which case the
-    demonstration should be done on a table-top or the floor.
-    The magnetic ones would need to be magnetic both ways up; sheets of
-    double-sided magnetic material can be purchased, but conventional fridge
-    magnets usually won't stick upside down.
-    Double sided magnetic cards can also be made by sticking single-sided
-    magnetic sheet back to back.
-    Paper (non-magnetic) cards can be made by cutting up a sheet of light card
-    that is a different colour on each side.
--   A metal board (ideally a whiteboard) if magnetic cards are being used.
--   Each pair of children will need: a set of 36 (non-magnetic) cards as above.
-
-There is also an
-[online interactive version of the parity cards here](http://csfieldguide.org.nz/en/interactives/parity/index.html),
-from the Computer Science Field Guide.
-
-{panel end}
-
 ## Key questions
 
 -   Why is it important for computers to be able to detect if the data received
@@ -57,6 +24,41 @@ This activity will look at how computers correct this automatically.
 
 ## Lesson starter
 
+{panel type="video"}
+
+# See teaching this in action
+
+{video url="https://www.youtube.com/embed/FnwBratAhfg"}
+
+{panel end}
+
+{panel type="general"}
+
+# Notes on resources
+
+{image file-path="img/topics/parity-cards.png" alt="A pile of square cards with black on one side and white on the other side."}
+
+You will require:
+
+-   A set of 36 "fridge magnet" cards, all identical with a different colour on
+    each side (e.g. black and white); or non-magnetic cards, in which case the
+    demonstration should be done on a table-top or the floor.
+    The magnetic ones would need to be magnetic both ways up; sheets of
+    double-sided magnetic material can be purchased, but conventional fridge
+    magnets usually won't stick upside down.
+    Double sided magnetic cards can also be made by sticking single-sided
+    magnetic sheet back to back.
+    Paper (non-magnetic) cards can be made by cutting up a sheet of light card
+    that is a different colour on each side.
+-   A metal board (ideally a whiteboard) if magnetic cards are being used.
+-   Each pair of children will need: a set of 36 (non-magnetic) cards as above.
+
+There is also an
+[online interactive version of the parity cards here](http://csfieldguide.org.nz/en/interactives/parity/index.html),
+from the Computer Science Field Guide.
+
+{panel end}
+
 1.  Teacher to class: "I’ve just learnt a magic trick I want to show you".
 
 2.  Teacher to class: "So who will be my assistant?"
@@ -77,7 +79,9 @@ This activity will look at how computers correct this automatically.
 5.  Teacher to class: "I’m going to make this a little bit harder by adding
     another row and another column".
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 Of course, you are doing this on purpose because what you want to do is make
 sure that the number of black sides showing in each row and column is an even
@@ -98,38 +102,24 @@ and makes the trick more mysterious.
 
 {panel end}
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-1.png" alt="5 rows of 5 parity cards in a random arrangement." caption="Step 1: Example layout of a 5x5 grid set up by the volunteer."}
+{image file-path="img/topics/parity-cards-6x6-grid-step-1.png" alt="5 rows of 5 parity cards in a random arrangement." caption="true"}
+
+Step 1: Example layout of a 5x5 grid set up by the volunteer.
+
+{image end}
 
 ### Step by step adding a parity bit to each row and column
 
-{image file-path="img/topics/parity-cards-6x6-grid-step-2.png" alt="Progress image of adding parity bits." caption="Step 2: Adding parity bit for the first row."}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-3.png" alt="Progress image of adding parity bits." caption="Step 3: Adding parity bit for the second row."}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-4.png" alt="Progress image of adding parity bits." caption="Step 4: Adding parity bit for the third row."}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-5.png" alt="Progress image of adding parity bits." caption="Step 5: Adding parity bit for the fourth row."}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-6.png" alt="Progress image of adding parity bits." caption="Step 6: Adding parity bit for the fifth row."}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-7.png" alt="Progress image of adding parity bits." caption="Step 7: Adding parity bit for the first column."}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-8.png" alt="Progress image of adding parity bits." caption="Step 8: Adding parity bit for the second column."}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-9.png" alt="Progress image of adding parity bits." caption="Step 9: Adding parity bit for the third column."}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-10.png" alt="Progress image of adding parity bits." caption="Step 10: Adding parity bit for the fourth column."}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-11.png" alt="Progress image of adding parity bits." caption="Step 11: Adding parity bit for the fifth column."}
-
-{image file-path="img/topics/parity-cards-6x6-grid-step-12.png" alt="Progress image of adding parity bits." caption="Step 12: Adding parity bit for the sixth column."}
+{image file-path="img/topics/parity-cards.gif" alt="An animation of adding a parity bit to each row and column."}
 
 The last parity bit placed is useful because it will always work for both the
 column and row; if it doesn't match for both the row and column then you'll
 have made a mistake with one of the cards, and should go back and check them
 (try to not make it obvious that you're doing that).
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 Now you have added parity cards to make the number of black squares in every
 row and every column equal to an even number.
@@ -144,7 +134,9 @@ Teacher to student: "I'd like you flip over one card while I cover my eyes".
 Teacher to class: "Keep a close eye on which card it is to check if I have done
 my magic trick correctly!"
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 You need to emphasise that you want just one card flipped over.
 This prevents them from turning over too many cards (or none!).
@@ -166,7 +158,7 @@ You can make a fuss that it might have been a fluke, so repeat the trick again.
 (After you put the card back to how it was originally, look away again and ask
 for another card to be flipped over.)
 
-{image file-path="img/topics/parity-wizard.png" alt="A wizard holding a magic one with parity cards on it."}
+{image file-path="img/topics/parity-wizard.png" alt="A wizard holding a magic wand with parity cards on it." alignment="right"}
 
 So is it magic? Or is it a trick?
 
@@ -227,7 +219,9 @@ the column that they identify.
 Now ask "So which card was flipped?" Usually students will identify the one at
 the intersection.
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 Students have now worked out for themselves how this works.
 The key idea is that we just added a little more data, but could reconstruct
@@ -235,7 +229,9 @@ the original if one card was changed.
 
 {panel end}
 
-{panel type="math" title="Mathematical links"}
+{panel type="math"}
+
+# Mathematical links
 
 This lesson would be useful for students learning about what even and odd
 numbers are.

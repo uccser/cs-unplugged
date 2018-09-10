@@ -1,6 +1,8 @@
 """Models for the topics application."""
 
+from django.urls import reverse
 from django.db import models
+from django.utils.translation import ugettext_lazy as _
 from django.contrib.postgres.fields import JSONField, IntegerRangeField
 from resources.models import Resource
 from utils.TranslatableModel import TranslatableModel
@@ -26,6 +28,8 @@ class GlossaryTerm(TranslatableModel):
 class CurriculumArea(TranslatableModel):
     """Model for curriculum area in database."""
 
+    MODEL_NAME = _("Curriculum Area")
+
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(unique=True)
     name = models.CharField(max_length=100, default="")
@@ -34,7 +38,7 @@ class CurriculumArea(TranslatableModel):
     parent = models.ForeignKey(
         "self",
         null=True,
-        related_name="parent_curriculum_area"
+        related_name="children"
     )
 
     def __str__(self):
@@ -56,6 +60,8 @@ class CurriculumArea(TranslatableModel):
 
 class LearningOutcome(TranslatableModel):
     """Model for learning outcome in database."""
+
+    MODEL_NAME = _("Learning Outcome")
 
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(max_length=80, unique=True)
@@ -82,6 +88,8 @@ class LearningOutcome(TranslatableModel):
 class ClassroomResource(TranslatableModel):
     """Model for classroom resource."""
 
+    MODEL_NAME = _("Classroom Resource")
+
     slug = models.SlugField(max_length=80, unique=True)
     description = models.CharField(max_length=100, default="")
 
@@ -97,12 +105,25 @@ class ClassroomResource(TranslatableModel):
 class Topic(TranslatableModel):
     """Model for topic in database."""
 
+    MODEL_NAME = _("Topic")
+
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(unique=True)
     name = models.CharField(max_length=100, default="")
     content = models.TextField(default="")
     other_resources = models.TextField(default="")
     icon = models.CharField(max_length=100, null=True)
+
+    def get_absolute_url(self):
+        """Return the canonical URL for a topic.
+
+        Returns:
+            URL as string.
+        """
+        kwargs = {
+            "topic_slug": self.slug
+        }
+        return reverse("topics:topic", kwargs=kwargs)
 
     def __str__(self):
         """Text representation of Topic object.
@@ -116,6 +137,9 @@ class Topic(TranslatableModel):
 class UnitPlan(TranslatableModel):
     """Model for unit plan in database."""
 
+    MODEL_NAME = _("Unit Plan")
+    RETURN_TO_PARENT = _("Return to topic")
+
     #  Auto-incrementing 'id' field is automatically set by Django
     topic = models.ForeignKey(
         Topic,
@@ -127,6 +151,18 @@ class UnitPlan(TranslatableModel):
     content = models.TextField(default="")
     computational_thinking_links = models.TextField(default="")
     heading_tree = JSONField(default=dict)
+
+    def get_absolute_url(self):
+        """Return the canonical URL for a unit plan.
+
+        Returns:
+            URL as string.
+        """
+        kwargs = {
+            "topic_slug": self.topic.slug,
+            "unit_plan_slug": self.slug
+        }
+        return reverse("topics:unit_plan", kwargs=kwargs)
 
     def __str__(self):
         """Text representation of UnitPlan object.
@@ -156,6 +192,9 @@ class ProgrammingChallengeDifficulty(TranslatableModel):
 class ProgrammingChallenge(TranslatableModel):
     """Model for programming challenge in database."""
 
+    MODEL_NAME = _("Programming Challenge")
+    RETURN_TO_PARENT = _("Return to topic")
+
     #  Auto-incrementing 'id' field is automatically set by Django
     topic = models.ForeignKey(
         Topic,
@@ -177,6 +216,18 @@ class ProgrammingChallenge(TranslatableModel):
         on_delete=models.CASCADE,
         related_name="programming_challenges"
     )
+
+    def get_absolute_url(self):
+        """Return the canonical URL for a programming challenge.
+
+        Returns:
+            URL as string.
+        """
+        kwargs = {
+            "topic_slug": self.topic.slug,
+            "programming_challenge_slug": self.slug
+        }
+        return reverse("topics:programming_challenge", kwargs=kwargs)
 
     def ordered_implementations(self):
         """Return an ordered QuerySet of implementations.
@@ -275,6 +326,9 @@ class AgeGroup(TranslatableModel):
 class Lesson(TranslatableModel):
     """Model for lesson in database."""
 
+    MODEL_NAME = _("Lesson")
+    RETURN_TO_PARENT = _("Return to unit plan")
+
     #  Auto-incrementing 'id' field is automatically set by Django
     topic = models.ForeignKey(
         Topic,
@@ -345,6 +399,19 @@ class Lesson(TranslatableModel):
             programming_challenge.challenge_number = challenge_numbers.challenge_number
         return programming_challenges
 
+    def get_absolute_url(self):
+        """Return the canonical URL for a lesson.
+
+        Returns:
+            URL as string.
+        """
+        kwargs = {
+            "topic_slug": self.topic.slug,
+            "unit_plan_slug": self.unit_plan.slug,
+            "lesson_slug": self.slug
+        }
+        return reverse("topics:lesson", kwargs=kwargs)
+
     def __str__(self):
         """Text representation of Lesson object.
 
@@ -381,6 +448,9 @@ class ProgrammingChallengeNumber(models.Model):
 class CurriculumIntegration(TranslatableModel):
     """Model for curriculum integration in database."""
 
+    MODEL_NAME = _("Curriculum Integration")
+    RETURN_TO_PARENT = _("Return to topic")
+
     #  Auto-incrementing 'id' field is automatically set by Django
     topic = models.ForeignKey(
         Topic,
@@ -408,6 +478,18 @@ class CurriculumIntegration(TranslatableModel):
             least one prerequisite lesson, otherwise False.
         """
         return bool(self.prerequisite_lessons.all())
+
+    def get_absolute_url(self):
+        """Return the canonical URL for a curriculum integration.
+
+        Returns:
+            URL as string.
+        """
+        kwargs = {
+            "topic_slug": self.topic.slug,
+            "integration_slug": self.slug
+        }
+        return reverse("topics:integration", kwargs=kwargs)
 
     def __str__(self):
         """Text representation of CurriculumIntegration object.

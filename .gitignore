@@ -111,5 +111,8 @@ temp/
 # Collected static files folder
 staticfiles/
 
+# Search index
+whoosh_index/
+
 # OSX system files
 .DS_Store

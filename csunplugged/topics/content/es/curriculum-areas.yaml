@@ -1,0 +1,87 @@
+---
+computational-thinking:
+  name: Pensamiento computacional
+algorithmic-thinking:
+  name: Pensamiento algorítmico
+decomposition:
+  name: Descomposición
+abstraction:
+  name: Abstracción
+generalising-and-patterns:
+  name: Generalización y patrones
+logic:
+  name: Lógica
+evaluation:
+  name: Evaluación
+computer-science:
+  name: Informática
+data-representation:
+  name: Representación de datos
+algorithms:
+  name: Algoritmos
+programming:
+  name: Programación
+mathematics:
+  name: Matemáticas
+geometry:
+  name: Geometría
+measurement:
+  name: Medición
+numeracy:
+  name: Aritmética
+algebra:
+  name: Álgebra
+statistics:
+  name: Estadística
+literacy:
+  name: Alfabetización
+reading:
+  name: Lectura
+writing:
+  name: Escritura
+listening:
+  name: Comprensión auditiva
+speaking:
+  name: Expresión oral
+library:
+  name: Biblioteca
+word-study:
+  name: Estudio de palabras
+art:
+  name: Arte
+language:
+  name: Aprendizaje de idiomas
+performing-arts:
+  name: Artes escénicas
+music:
+  name: Música
+dance:
+  name: Baile
+drama:
+  name: Teatro
+physical-education:
+  name: Educación física
+fitness:
+  name: Fitness
+sport:
+  name: Deporte
+health:
+  name: Salud
+science:
+  name: Ciencia
+biology:
+  name: Biología
+physics:
+  name: Física
+astronomy:
+  name: Astronomía
+chemistry:
+  name: Química
+geology:
+  name: Geología
+social-studies:
+  name: Ciencias sociales
+history:
+  name: Historia
+geography:
+  name: Geografía

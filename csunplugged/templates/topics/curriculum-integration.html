@@ -10,7 +10,6 @@
 {% endblock title %}
 
 {% block breadcrumbs %}
-  {% breadcrumb "Home" "/" %}
   {% breadcrumb "Topics" "topics:index" %}
   {% breadcrumb topic.name "topics:topic" topic.slug %}
   {% breadcrumb integration.name "topics:integration" topic.slug integration.slug %}
@@ -27,10 +26,7 @@
     </p>
   {% endif %}
   {% if not integration.translation_available %}
-    {% url "topics:topic" topic.slug as parent_url %}
-    {% trans "topic" as topic_l10n %}
-    {% trans "curriculum integration" as curriculum_integration_l10n %}
-    {% with model=integration model_type=curriculum_integration_l10n parent=topic parent_type=topic_l10n parent_url=parent_url %}
+    {% with model=integration parent=topic %}
       {% include "topics/not-available-warning.html" %}
     {% endwith %}
   {% endif %}
@@ -55,6 +51,10 @@
                 <strong>{{ lesson.unit_plan.name }}:</strong> {{ lesson.name }}
                 ({% for age_group in lesson.age_group.all %}{{ age_group.ages.lower }} to {{ age_group.ages.upper }}{% if not forloop.last %} and {% endif %}{% endfor %})
               </a>
+              {% if not lesson.translation_available %}
+                <br>
+                {% include "generic/not-available-badge.html" %}
+              {% endif %}
             </li>
             {% endfor %}
         </ul>

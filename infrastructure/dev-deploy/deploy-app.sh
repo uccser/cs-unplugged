@@ -41,6 +41,10 @@ python ./infrastructure/replace_envs.py ./infrastructure/dev-deploy/app-dev.yaml
 rm -rf csunplugged/locale/yy_RL
 cp -r csunplugged/locale/xx_LR csunplugged/locale/yy_RL
 
+# Start system to create search index files
+./csu start
+./csu update
+
 # Publish Django system to Google App Engine.
 #
 # This deploys using the 'app-develop.yaml' decrypted earlier that contains

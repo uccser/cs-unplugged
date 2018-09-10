@@ -3,14 +3,14 @@
 from PIL import Image, ImageDraw, ImageFont
 from random import sample
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 from resources.utils.resource_parameters import EnumResourceParameter
 
 PREFILLED_VALUES_VALUES = {
     "easy": _("Easy Numbers (1 digits)"),
     "medium": _("Medium Numbers (2 digits)"),
     "hard": _("Hard Numbers (3 digits)"),
-    "blank": _("None (Blank - Useful as template) ")
+    "blank": _("None (Blank - Useful as template)")
 }
 
 
@@ -73,12 +73,7 @@ class SortingNetworkResourceGenerator(BaseResourceGenerator):
         Returns:
             text for subtitle (str).
         """
-        if self.options["prefilled_values"].value == "blank":
-            range_text = "blank"
-        else:
-            SUBTITLE_TEMPLATE = "{} to {}"
-            range_min, range_max, font_size = self.number_range()
-            range_text = SUBTITLE_TEMPLATE.format(range_min, range_max - 1)
+        range_text = PREFILLED_VALUES_VALUES[self.options["prefilled_values"].value]
         return "{} - {}".format(range_text, super().subtitle)
 
     def number_range(self):

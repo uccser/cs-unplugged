@@ -9,14 +9,13 @@
 {% endblock title %}
 
 {% block breadcrumbs %}
-  {% breadcrumb "Home" "/" %}
   {% breadcrumb "How do I teach CS Unplugged?" "general:how_do_i_teach_cs_unplugged" %}
 {% endblock breadcrumbs %}
 
 {% block body_container %}
   <div id="content-container" class="container">
     <div class="row justify-content-center">
-      <div class="col-12 col-md-10 col-lg-8">
+      <div id="general-page-content" class="col-12 col-md-10 col-lg-8">
         {% render_breadcrumbs "django_bootstrap_breadcrumbs/bootstrap4.html" %}
         <h1>{% trans "How do I teach CS Unplugged?" %}</h1>
 
@@ -28,7 +27,9 @@
           {% endblocktrans %}
         </p>
 
-        <img class="img-wrap img-wrap-right" src="{% static "img/general/what-is-csu.png" %}">
+        <div class="img-container img-wrap-right">
+          <img src="{% static "img/general/what-is-csu.png" %}">
+        </div>
 
         <p>
           {% blocktrans trimmed %}
@@ -40,7 +41,7 @@
         <p>
           {% blocktrans trimmed %}
             If you're working within a school curriculum, you can find appropriate activities based on the learning objectives and age group.
-            In several countries there are guides to the local curriculum that link it to Unplugged (e.g. <a href="https://www.digitaltechnologieshub.edu.au/">Digital Technologies Hub for Australia</a>).
+            In several countries there are guides linking CS Unplugged to the local curriculum (e.g. <a href="https://www.digitaltechnologieshub.edu.au/">Digital Technologies Hub for Australia</a>).
             But the unit plans listed follow the common topics that are appearing in school curricula, so you are likely to find something relevant from the titles.
             Note that CS Unplugged does not teach programming - the Kidbots activity is an excellent lead in to programming and the "Plugging it in" sections give some programming exercises to follow up with - but in general we are trying to show students what they could do with programming, before they have to learn it.
           {% endblocktrans %}

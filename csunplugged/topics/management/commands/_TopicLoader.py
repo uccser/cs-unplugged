@@ -77,7 +77,7 @@ class TopicLoader(TranslatableModelLoader):
         self.log("Added Topic: {}".format(topic.name))
 
         # Load programming challenges
-        if "programming-challenges" in topic_structure:
+        if "programming-challenges" in topic_structure and not self.lite_loader:
             programming_challenges_structure_file_path = topic_structure["programming-challenges"]
             if programming_challenges_structure_file_path is not None:
                 programming_challenges_path, structure_filename = os.path.split(
@@ -97,7 +97,8 @@ class TopicLoader(TranslatableModelLoader):
                 topic,
                 base_path=self.base_path,
                 content_path=os.path.join(self.content_path, content_path),
-                structure_filename=structure_filename
+                structure_filename=structure_filename,
+                lite_loader=self.lite_loader,
             ).load()
 
         if "curriculum-integrations" in topic_structure:

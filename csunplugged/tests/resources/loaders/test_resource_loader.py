@@ -27,7 +27,6 @@ class ResourceLoaderTest(BaseTestWithDB):
         self.assertIn("Description of resource 1", resource.content)
         self.assertEqual("resource-untranslated", resource.slug)
         self.assertEqual("GridResourceGenerator", resource.generator_module)
-        self.assertEqual("img/resources/grid/thumbnail.png", resource.thumbnail_static_path)
         self.assertEqual(False, resource.copies)
 
     def test_resource_loader_config_missing_translation_fallback(self):
@@ -82,22 +81,6 @@ class ResourceLoaderTest(BaseTestWithDB):
         self.assertEquals(
             Resource.objects.get(slug="resource-untranslated").generator_module,
             "GridResourceGenerator",
-        )
-
-    def test_resource_loader_missing_thumbnail_value(self):
-        config_file = "missing-thumbnail.yaml"
-        resource_loader = ResourcesLoader(structure_filename=config_file, base_path=self.BASE_PATH)
-        self.assertRaises(
-            MissingRequiredFieldError,
-            resource_loader.load,
-        )
-
-    def test_resource_loader_invalid_thumbnail_value(self):
-        config_file = "invalid-thumbnail.yaml"
-        resource_loader = ResourcesLoader(structure_filename=config_file, base_path=self.BASE_PATH)
-        self.assertRaises(
-            FileNotFoundError,
-            resource_loader.load,
         )
 
     def test_resource_loader_missing_copies_value(self):

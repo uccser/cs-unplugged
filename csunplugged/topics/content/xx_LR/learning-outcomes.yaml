@@ -41,6 +41,10 @@ error-explain-each-card-bit:
   text: crwdns8112:0crwdne8112:0
 error-explain-chose-parity-card:
   text: crwdns8113:0crwdne8113:0
+error-explain-steps-product-code-checksum:
+  text: crwdns19560:0crwdne19560:0
+error-discuss-checksum-algorithm-12-13-product-code:
+  text: crwdns19561:0crwdne19561:0
 error-explain-checksum-algorithm:
   text: crwdns8114:0crwdne8114:0
 error-follow-steps-find-card-turned-over:

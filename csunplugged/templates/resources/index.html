@@ -5,22 +5,21 @@
 {% load django_bootstrap_breadcrumbs %}
 
 {% block title %}
-  {% trans "Resources" %}
+  {% trans "Printables" %}
 {% endblock title %}
 
 {% block breadcrumbs %}
-  {% breadcrumb "Home" "/" %}
-  {% breadcrumb "Resources" "resources:index" %}
+  {% breadcrumb "Printables" "resources:index" %}
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-  <h1>{% trans "Resources" %}</h1>
+  <h1>{% trans "Printables" %}</h1>
 
   <p>
     {% blocktrans trimmed %}
-    This page diplays a complete list of all available resources.
-    If a lesson uses a resource, the lesson will contain a direct link to the
-    resource with a description on how to use it.
+    This page diplays a complete list of all available printables.
+    If a lesson uses a printable, the lesson will contain a direct link to the
+    printable with a description on how to use it.
     {% endblocktrans %}
   </p>
 {% endblock page_heading %}
@@ -30,14 +29,17 @@
     <div class="row">
       {% for resource in all_resources %}
         <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
-          <a class="link-item no-text-decoration d-block h-100 py-2 text-center" href="{% url 'resources:resource' resource.slug %}">
-            <img class="border-thin" src="{% static resource.thumbnail_static_path %}" alt="Thumbnail of resource">
+          <a class="link-item no-text-decoration d-block h-100 py-2 text-center{% if not resource.translation_available %} unavailable{% endif %}" href="{% url 'resources:resource' resource.slug %}">
+            <img class="border-thin bg-white" src="{{ resource.thumbnail }}" alt="Thumbnail of {{ resource.name }}">
             <p class="mb-0 mt-2"><strong>{{ resource.name }}</strong></p>
+            {% if not resource.translation_available %}
+              {% include "generic/not-available-badge.html" %}
+            {% endif %}
           </a>
         </div>
       {% endfor %}
     </div>
   {% else %}
-    <p>{% trans "No resources are available." %}</p>
+    <p>{% trans "No printables are available." %}</p>
   {% endif %}
 {% endblock content %}

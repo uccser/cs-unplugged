@@ -21,7 +21,7 @@ class ModuloClockResourceGeneratorTest(BaseGeneratorTest):
         generator = ModuloClockResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "blank - a4"
+            "Blank - a4"
         )
 
     def test_subtitle_1_letter(self):
@@ -29,7 +29,7 @@ class ModuloClockResourceGeneratorTest(BaseGeneratorTest):
         generator = ModuloClockResourceGenerator(query)
         self.assertEqual(
             generator.subtitle,
-            "blank - letter"
+            "Blank - letter"
         )
 
     def test_subtitle_2_a4(self):

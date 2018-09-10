@@ -1,6 +1,6 @@
 # Quick card flip magic
 
-{image file-path="img/topics/kids-parity-trick.jpg"}
+{image file-path="img/topics/kids-parity-trick.jpg" alt="Kids using the parity trick."}
 
 *Every item of data that we store and transmit has extra bits added to it to prevent errors.
 Can you find the error and correct it?*

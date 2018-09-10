@@ -12,22 +12,26 @@
 
 ## Lesson starter
 
-{panel type="general" title="Notes on resources"}
+{panel type="general"}
+
+# Notes on resources
 
 There is also an online interactive version of the binary cards [here](http://www.csfieldguide.org.nz/en/interactives/binary-cards/index.html?digits=8), from the [Computer Science Field Guide](http://www.csfieldguide.org.nz/), but it is preferable to work with physical cards.
 
 {panel end}
 
+{image file-path="img/topics/col_binary_robot_boy_convo.png" alt="Cartoon boy talking to robot" alignment="left"}
+
 Discuss how you would communicate a letter of the alphabet to someone if all
 you could do is say a number between 0 and 26.
-*(Students will usually suggest using a code of 1 or a, 2 for b, and so on)*.
+*(Students will usually suggest using a code of 1 for a, 2 for b, and so on)*.
 
 Work out and write down the binary numbers using 5 bits from 0 to 26 on the
 Binary to Alphabet resource, then add the letters of the alphabet.
 
-{image file-path="img/topics/col_binary_robot_boy_convo.png" alt="Cartoon boy talking to robot" alignment="right"}
+{panel type="teaching"}
 
-{panel type="teaching" title="Teaching observations"}
+# Teaching observations
 
 -   Check their binary code for three is 00011 as students commonly write
     00100 as they anticipate the pattern without necessarily checking it is
@@ -90,7 +94,9 @@ How many bits are needed if you want a number for each of 50,000 Chinese
 characters?
 (16 bits allows for up to 65,536 different representations).
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 It may be a surprise that only 16 bits is needed for tens of thousands of
 characters.
@@ -101,7 +107,9 @@ become familiar with.
 
 {panel end}
 
-{panel type="math" title="Mathematical links"}
+{panel type="math"}
+
+# Mathematical links
 
 The rapid increase in the number of different values that can be represented
 as bits are added is *exponential* growth i.e. it doubles with each extra bit.
@@ -117,7 +125,9 @@ sheet of paper.
 
 {panel end}
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 Using a 5-bit code for an alphabet goes back to at least 1870 (the "Baudot"
 code); many different number to letter correspondences have been used over the

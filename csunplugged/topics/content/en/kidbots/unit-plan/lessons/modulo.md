@@ -1,6 +1,8 @@
 # The Modulo operator Unplugged
 
-{panel type="note" title="Note from the authors"}
+{panel type="general"}
+
+# Note from the authors
 
 This lesson is primarily on a maths topic rather than Computational Thinking,
 but the modulo operator is so widely used in digital systems that we've
@@ -120,8 +122,8 @@ Or 2-100?
 What is 0 - 7? (3)
 
 But what about -8 i.e. negative 8?
-(That's 8 units before 0, which is 4.)
-Other numbers that land at 4 are -18, -28, and so on.
+(That's 8 units before 0, which is 2.)
+Other numbers that land at 2 are -18, -28, and so on.
 
 (This idea comes up with calculating some check digits; for several systems
 we need to ask "what do you add to x to get to 0 in modulo 10";

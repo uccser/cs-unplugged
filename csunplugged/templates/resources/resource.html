@@ -5,8 +5,7 @@
 {% load render_html_field %}
 
 {% block breadcrumbs %}
-  {% breadcrumb "Home" "/" %}
-  {% breadcrumb "Resources" "resources:index" %}
+  {% breadcrumb "Printables" "resources:index" %}
   {% breadcrumb resource.name "resources:resource" resource.slug %}
 {% endblock breadcrumbs %}
 
@@ -16,59 +15,76 @@
 
 {% block page_heading %}
   <h1>{{ resource.name }}</h1>
-  {% render_html_field resource.content %}
+  {% if not resource.translation_available %}
+    {% url "resources:index" as url %}
+    {% trans "Return to list of printables" as url_label %}
+    {% with model=resource %}
+      {% include "topics/not-available-warning.html" %}
+    {% endwith %}
+  {% else %}
+    {% render_html_field resource.content %}
+  {% endif %}
 {% endblock page_heading %}
 
 {% block left_column_content %}
-  <h2>Create Resource</h2>
+  {% if resource.translation_available %}
+    <h2>{% trans "Create Printable" %}</h2>
 
-  <form action="{% url 'resources:generate' resource.slug %}" method="get"{% if not debug %} target="_blank"{% endif %} id="resource-generation-form">
-    {% block generation_form %}
-    {% endblock generation_form %}
+    <form action="{% url 'resources:generate' resource.slug %}" method="get"{% if not debug %} target="_blank"{% endif %} id="resource-generation-form">
+      {% block generation_form %}
+      {% endblock generation_form %}
 
-    {{ options_html|safe }}
+      {{ options_html|safe }}
 
-    <hr>
+      <hr>
 
-    {% if debug %}
-      <input type="submit" value="{% trans "Generate Resource" %}" class="btn btn-outline-primary mb-3" />
-    {% else %}
-      {% if resource.copies %}
-      <div class="alert alert-info" role="alert">
-      {% blocktrans trimmed %}
-        The download of this resource includes {{ copies_amount }} unique copies.
-      {% endblocktrans %}
-      </div>
+      {% if debug %}
+        <input type="submit" value="{% trans "Generate Printable" %}" class="btn btn-outline-primary mb-3" />
+      {% else %}
+        {% if resource.copies %}
+        <div class="alert alert-info" role="alert">
+        {% blocktrans trimmed %}
+          The download of this Printable includes {{ copies_amount }} unique copies.
+        {% endblocktrans %}
+        </div>
+        {% endif %}
+        <input type="submit" value="{% trans "Download Printable" %}" class="btn btn-outline-primary mb-3"/>
       {% endif %}
-      <input type="submit" value="Download Resource" class="btn btn-outline-primary mb-3"/>
-    {% endif %}
-  </form>
+    </form>
+  {% endif %}
 {% endblock left_column_content %}
 
 {% block right_column_content %}
-  {% if thumbnail %}
+  {% if resource.translation_available %}
     <h2>{% trans "Preview" %}</h2>
     {% load static %}
-    <img id="resource-thumbnail" class="img-thumbnail">
+    <figure class="figure">
+      <img id="resource-thumbnail" class="figure-img img-thumbnail img-fluid">
+      {% if not DEPLOYED  %}
+        <figcaption class="figure-caption text-center">
+          Preview shows English version in development mode
+        </figcaption>
+      {% endif %}
+    </figure>
   {% endif %}
 {% endblock right_column_content %}
 
 {% block end_content %}
   {% if grouped_lessons %}
     <h2>{% trans "Related Lessons" %}</h2>
-    {% for age_group, lessons in grouped_lessons.items %}
-      <table class="table table-responsive table-center-vertical">
-        <thead class="thead-default">
-          <tr>
-            <th>{% trans "Topic" %}</th>
-            <th class="text-center">{% trans "Ages" %}</th>
-            <th class="text-center">{% trans "Number" %}</th>
-            <th>{% trans "Lesson" %}</th>
-          </tr>
-        </thead>
-        <tbody>
+    <table class="table table-responsive table-center-vertical">
+      <thead class="thead-default">
+        <tr>
+          <th>{% trans "Topic" %}</th>
+          <th class="text-center">{% trans "Ages" %}</th>
+          <th class="text-center">{% trans "Number" %}</th>
+          <th>{% trans "Lesson" %}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for age_group, lessons in grouped_lessons.items %}
           {% for lesson in lessons %}
-            <tr class="align-middle">
+            <tr class="align-middle{% if not lesson.translation_available %} table-active unavailable{% endif %}">
               <td class="text-center">
                 <a href="{% url 'topics:topic' lesson.topic.slug %}">
                   {{ lesson.topic.name }}
@@ -83,14 +99,17 @@
               <td>
                 <a href="{% url 'topics:lesson' lesson.topic.slug lesson.unit_plan.slug lesson.slug %}">
                   <strong>{{ lesson.name }}</strong>
+                  {% if not lesson.translation_available %}
+                    <br>
+                    {% include "generic/not-available-badge.html" %}
+                  {% endif %}
                 </a>
               </td>
             </tr>
           {% endfor %}
-        </tbody>
-      </table>
-    {% endfor %}
-
+        {% endfor %}
+      </tbody>
+    </table>
   {% endif %}
 {% endblock end_content %}
 

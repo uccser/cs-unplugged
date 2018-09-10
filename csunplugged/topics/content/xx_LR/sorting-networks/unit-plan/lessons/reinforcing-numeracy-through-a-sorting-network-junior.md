@@ -14,23 +14,44 @@ crwdns12518:0crwdne12518:0 crwdns12519:0crwdne12519:0
 
 ## crwdns12520:0crwdne12520:0
 
-crwdns12521:0crwdne12521:0 crwdns12522:0crwdne12522:0 crwdns12523:0crwdne12523:0 crwdns12524:0crwdne12524:0
+*BlockTag: crwdns20079:0crwdne20079:0*
 
-crwdns12525:0crwdne12525:0
+{panel type="video"}
 
-*BlockTag: crwdns12526:0crwdne12526:0*
+# crwdns20080:0crwdne20080:0
 
-{panel type="math" title="Mathematical links"}
+*BlockTag: crwdns20081:0crwdne20081:0*
 
-crwdns12527:0crwdne12527:0
+{video url="https://www.youtube.com/embed/M-z5pDjqtZk"}
 
-*BlockTag: crwdns12528:0crwdne12528:0*
+crwdns20082:0crwdne20082:0
+
+- [crwdns20084:0crwdne20084:0](https://www.youtube.com/watch?v=LOxfdsBBjKI)
+- [crwdns20086:0crwdne20086:0](https://www.youtube.com/watch?v=30WcPnvfiKE)
+
+*BlockTag: crwdns20087:0crwdne20087:0*
+
+{panel end}
+
+crwdns20088:0crwdne20088:0 crwdns20089:0crwdne20089:0 crwdns20090:0crwdne20090:0 crwdns20091:0crwdne20091:0
+
+crwdns20092:0crwdne20092:0
+
+*BlockTag: crwdns20093:0crwdne20093:0*
+
+{panel type="math"}
+
+# crwdns20094:0crwdne20094:0
+
+crwdns20095:0crwdne20095:0
+
+*BlockTag: crwdns20096:0crwdne20096:0*
 
 {panel end}
 
 ## crwdns12529:0crwdne12529:0
 
-*BlockTag: crwdns12530:0crwdne12530:0*
+*BlockTag: crwdns20097:0crwdne20097:0*
 
 {image file-path="img/topics/sorting-network-kids.png" alt="A group of children sort items on a Sorting Network drawn on concrete."}
 
@@ -46,49 +67,51 @@ crwdns12527:0crwdne12527:0
 10. crwdns12542:0crwdne12542:0 crwdns12543:0crwdne12543:0
 11. crwdns12544:0crwdne12544:0
 
-*BlockTag: crwdns12545:0crwdne12545:0*
+*BlockTag: crwdns20098:0crwdne20098:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
 
-crwdns12546:0crwdne12546:0 crwdns12547:0crwdne12547:0 crwdns12548:0crwdne12548:0 crwdns12549:0crwdne12549:0
+# crwdns20099:0crwdne20099:0
 
-*BlockTag: crwdns12550:0crwdne12550:0*
+crwdns20100:0crwdne20100:0 crwdns20101:0crwdne20101:0 crwdns20102:0crwdne20102:0 crwdns20103:0crwdne20103:0
+
+*BlockTag: crwdns20104:0crwdne20104:0*
 
 {image file-path="img/topics/sorting-network-too-far-kid.png" alt="A child walks too far in the sorting network activity, failing the activity for everyone."}
 
-crwdns12551:0crwdne12551:0 crwdns12552:0crwdne12552:0
+crwdns20105:0crwdne20105:0 crwdns20106:0crwdne20106:0
 
-*BlockTag: crwdns12553:0crwdne12553:0*
+*BlockTag: crwdns20107:0crwdne20107:0*
 
 {panel end}
 
 ## crwdns12554:0crwdne12554:0
 
-crwdns12555:0crwdne12555:0 crwdns12556:0crwdne12556:0 crwdns12557:0crwdne12557:0 crwdns12558:0crwdne12558:0 crwdns12559:0crwdne12559:0
+crwdns20108:0crwdne20108:0 crwdns20109:0crwdne20109:0 crwdns20110:0crwdne20110:0 crwdns20111:0crwdne20111:0 crwdns20112:0crwdne20112:0
 
-crwdns12560:0crwdne12560:0
+crwdns20113:0crwdne20113:0
 
-crwdns12561:0crwdne12561:0 crwdns12562:0crwdne12562:0 crwdns12563:0crwdne12563:0 crwdns12564:0crwdne12564:0
+crwdns20114:0crwdne20114:0 crwdns20115:0crwdne20115:0 crwdns20116:0crwdne20116:0 crwdns20117:0crwdne20117:0
 
-crwdns12565:0crwdne12565:0 crwdns12566:0crwdne12566:0
+crwdns20118:0crwdne20118:0 crwdns20119:0crwdne20119:0
 
-*BlockTag: crwdns12567:0crwdne12567:0*
+*BlockTag: crwdns20120:0crwdne20120:0*
 
 {image file-path="img/topics/sorting-network-node-1.png" alt="An image showing the network with the path the smallest number would take through the network if the smallest number started in node 1."}
 
-crwdns12568:0crwdne12568:0
+crwdns20121:0crwdne20121:0
 
-*BlockTag: crwdns12569:0crwdne12569:0*
+*BlockTag: crwdns20122:0crwdne20122:0*
 
 {image file-path="img/topics/sorting-network-node-2.png" alt="An image showing the network with the path the smallest number would take through the network if the smallest number started in node 2."}
 
-crwdns12570:0crwdne12570:0
+crwdns20123:0crwdne20123:0
 
-crwdns12571:0crwdne12571:0
+crwdns20124:0crwdne20124:0
 
-crwdns12572:0crwdne12572:0
+crwdns20125:0crwdne20125:0
 
 ## crwdns12573:0crwdne12573:0
 
-- crwdns12574:0crwdne12574:0
-- crwdns12575:0crwdne12575:0
+- crwdns20126:0crwdne20126:0
+- crwdns20127:0crwdne20127:0

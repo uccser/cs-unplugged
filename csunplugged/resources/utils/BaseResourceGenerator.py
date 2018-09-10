@@ -7,18 +7,16 @@ from utils.errors.MoreThanOneThumbnailPageFoundError import MoreThanOneThumbnail
 from django.conf import settings
 from django.template.loader import render_to_string
 from django.contrib.staticfiles import finders
-
+from django.utils.translation import ugettext_lazy as _
 from resources.utils.resource_parameters import (
     EnumResourceParameter,
     TextResourceParameter,
     IntegerResourceParameter,
 )
 
-from django.utils.translation import ugettext as _
-
 PAPER_SIZE_VALUES = {
     "a4": _("A4"),
-    "letter": _("US Letter")
+    "letter": _("US Letter"),
 }
 
 
@@ -55,6 +53,18 @@ class BaseResourceGenerator(ABC):
             ),
         })
         return options
+
+    @classmethod
+    def get_option_defaults(cls):
+        """Get dictionary of default option values.
+
+        Returns:
+            Dictionary of option IDs to default values.
+        """
+        defaults = dict()
+        for key, values in cls.get_options().items():
+            defaults[key] = values.default
+        return defaults
 
     @classmethod
     def get_local_options(cls):
@@ -120,7 +130,7 @@ class BaseResourceGenerator(ABC):
         Returns:
             Text for subtitle (str).
         """
-        return self.options["paper_size"].value
+        return str(self.options["paper_size"].value)
 
     def process_requested_options(self, requested_options):
         """Convert requested options to usable types.

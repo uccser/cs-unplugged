@@ -7,8 +7,7 @@ All notable changes to this project will be documented in this file.
 .. note ::
 
   We base our numbering system from the guidelines at `Semantic Versioning 2.0.0`_,
-  however since our project started before it was migrated to GitHub, the first
-  major open source release is being labeled as ``2.0.0``.
+  for versions ``4.0.0-alpha.1`` onwards.
 
   Given a version number MAJOR.MINOR.HOTFIX:
 
@@ -24,7 +23,149 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
-2.0.0-alpha.6.1
+4.1.0
+==============================================================================
+
+- **Release date:** 24th August 2018
+- **Downloads:** `Source downloads are available on GitHub`_
+
+**Summary of changes:**
+
+This release focuses on adding multingual support, with limited versions of the website available in German (Deutsche) and Spanish (Español).
+
+**Changelog:**
+
+- Enable German (Deutsche) language, currently the following pages are available:
+  - All basic pages
+  - All printables
+  - Binary numbers topic: one lesson for 5 to 7 year olds, and 3 curriculum integrations.
+- Enable Spanish (Español) language, currently the following pages are available:
+  - All basic pages
+  - All printables
+  - Binary numbers topic: one lesson for 8 to 10 year olds, and 7 curriculum integrations.
+- Add Python implementations for many existing programming challenges.
+- Modify 'Treasure Hunt' printable to 'Number Hunt', due to redesign of activity for universal use (English language concepts were being used).
+- Modify 'Piano Keys' printable to allow different types of key labels.
+- Modify printable PDF generation to include all languages.
+- Modify printable thumbnail generation to only create English language (add warning when displaying thumbnail in non-English language).
+- Use Bootstrap styling for printable generation form.
+- Allow custom layout of printables in PDF generation.
+- Lock website search to English only, until multilingual search is implemented. `#989 <https://github.com/uccser/cs-unplugged/issues/989>`__
+- Add Travis CI status to README for each website. `#1003 <https://github.com/uccser/cs-unplugged/issues/1003>`__
+- Add name labels to Travis CI jobs. `#996 <https://github.com/uccser/cs-unplugged/pull/996>`__
+- Add configuration file for link checker and translation syncer.
+- Package updates:
+
+  - Update django to 1.11.14.
+  - Update django-bootstrap-breadcrumbs to 0.9.1.
+  - Update django-extensions to 2.1.0.
+  - Update django-haystack to 2.8.1.
+  - Update django-widget-tweaks to 1.4.2.
+  - Update gsutil to 4.33.
+  - Update lxml to 4.2.4.
+  - Update Pillow to 5.2.0.
+  - Update python-markdown-math to 0.5.
+  - Update PyYAML to 4.2b4.
+  - Update sphinx to 1.7.7.
+  - Update sphinx-rtd-theme to 0.4.1.
+  - Update tqdm to 4.25.0.
+  - Update verto to 0.7.4.
+  - Update wheel to 0.31.1.
+
+4.0.2
+==============================================================================
+
+- **Release date:** 21st February 2018
+- **Downloads:** `Source downloads are available on GitHub`_
+
+**Changelog:**
+
+- Allow searching for general pages and Classic CS Unplugged pages. `#799 <https://github.com/uccser/cs-unplugged/issues/799>`__
+- Update navigational bar. `#885 <https://github.com/uccser/cs-unplugged/pull/885>`__
+- Remove admin application. `#781 <https://github.com/uccser/cs-unplugged/issues/781>`__
+- Update Barcode Checksum Poster design. `#877 <https://github.com/uccser/cs-unplugged/issues/877>`__
+- Fix Kidbots illustration. `#875 <https://github.com/uccser/cs-unplugged/issues/875>`__
+- Fix positioning of programming challenge language implementation icon.
+- Package updates:
+
+  - Update django-haystack to 2.7.0.
+  - Update sphinx to 1.7.0.
+  - Update coverage to 4.5.1.
+  - Add cssselect 1.0.3.
+
+4.0.1
+==============================================================================
+
+- **Release date:** 7th February 2018
+- **Downloads:** `Source downloads are available on GitHub`_
+
+**Changelog:**
+
+- Fix bug where logo isn't centered in mobile navbar. `#863 <https://github.com/uccser/cs-unplugged/issues/863>`__
+- Increase size of pixel painter resource thumbnails. `#866 <https://github.com/uccser/cs-unplugged/issues/866>`__
+- Remove redundant headings in related lessons table for printable. `#857 <https://github.com/uccser/cs-unplugged/issues/857>`__
+- Redesign topic page to add emphasis to lessons. `#864 <https://github.com/uccser/cs-unplugged/issues/864>`__
+- Add 404 page when a page cannot be found. `#851 <https://github.com/uccser/cs-unplugged/issues/851>`__
+- Only prepend ``www`` for production website. `#860 <https://github.com/uccser/cs-unplugged/issues/860>`__
+- Update repository README file for version ``4.0.0`` release.
+
+4.0.0
+==============================================================================
+
+- **Release date:** 5th February 2018
+- **Downloads:** `Source downloads are available on GitHub`_
+
+**Summary of changes:**
+
+This is the official release of the rewritten CS Unplugged to the
+csunplugged.org domain, while the existing Wordpress site is archived to
+classic.csunplugged.org.
+
+This release adds search functionality, while also adding new lessons for
+5 to 7 year olds in the searching algorithms topic.
+Also included are many small improvements such as better printing of webpages,
+clearer video and learning outcome panels, new learning outcomes, and many more.
+
+**Changelog:**
+
+- Add search feature. `#789 <https://github.com/uccser/cs-unplugged/pull/789>`__
+- Add sequential and binary search lessons for ages 5 to 7. `#807 <https://github.com/uccser/cs-unplugged/issues/807>`__
+- Optimise all images `#801 <https://github.com/uccser/cs-unplugged/pull/801>`__
+- Change term 'Resources' to 'Printables'. `#787 <https://github.com/uccser/cs-unplugged/pull/787>`__
+- Allow pre-filling of resource forms. `#768 <https://github.com/uccser/cs-unplugged/issues/768>`__
+- Update relative link template to allow query parameters.
+- Add welcome message to homepage. `#850 <https://github.com/uccser/cs-unplugged/pull/850>`__
+- Add print view CSS. `#175 <https://github.com/uccser/cs-unplugged/pull/175>`__
+- Add all example classroom videos at appropriate positions. `#842 <https://github.com/uccser/cs-unplugged/pull/842>`__
+- Update binary numbers topic description. `#365 <https://github.com/uccser/cs-unplugged/pull/365>`__
+- Add learning outcomes for lesson 2 (8-10) for Error Correction and Detection. `#419 <https://github.com/uccser/cs-unplugged/pull/419>`__
+- Update the wording on reinforcing sequencing junior. `#630 <https://github.com/uccser/cs-unplugged/pull/630>`__
+- Add GitHub Code of Conduct page that points to page in docs. `#829 <https://github.com/uccser/cs-unplugged/pull/829>`__
+- Fix bug where learning outcomes were displayed multiple times. `#827 <https://github.com/uccser/cs-unplugged/pull/827>`__
+- Prevent line wrapping on tables for programming exercises. `#443 <https://github.com/uccser/cs-unplugged/pull/443>`__
+- IE/Edge browser compatibility features. `#824 <https://github.com/uccser/cs-unplugged/pull/824>`__
+- Show video symbol on video panels. `#814 <https://github.com/uccser/cs-unplugged/pull/814>`__
+- Hide learning outcomes within panel. `#813 <https://github.com/uccser/cs-unplugged/pull/813>`__
+- Add URL redirects for Classic CS Unplugged URLs to new subdomain. `#811 <https://github.com/uccser/cs-unplugged/pull/811>`__
+- Combine and update changelogs with Classic CS Unplugged. `#820 <https://github.com/uccser/cs-unplugged/pull/820>`__
+- Update documentation on Verto 'relative-link' behaviour. `#504 <https://github.com/uccser/cs-unplugged/pull/504>`__
+- Rewrite content style guide for external contributors. `#791 <https://github.com/uccser/cs-unplugged/pull/791>`__
+- Add pre-requisite lesson for curriculum integrations. `#366 <https://github.com/uccser/cs-unplugged/issues/366>`__ `#849 <https://github.com/uccser/cs-unplugged/pull/849>`__
+- Package updates:
+
+  - Update django to 1.11.10.
+  - Update verto to 0.7.3.
+  - Update Pillow to 5.0.0.
+  - Update yattag to 1.10.0.
+  - Update django-modeltranslation to 0.12.2.
+  - Update sphinx to 1.6.7.
+  - Update django-extensions to 1.9.9.
+  - Update coverage to 4.5.
+  - Add django-haystack 2.6.1.
+  - Add Whoosh 2.7.4.
+  - Add django-widget-tweaks 1.4.1.
+
+4.0.0-alpha.6.1
 ==============================================================================
 
 - **Release date:** 22nd December 2017
@@ -34,7 +175,7 @@ All notable changes to this project will be documented in this file.
 
 - Fix bug where Cloud SQL Proxy searched for wrong credential file.
 
-2.0.0-alpha.6
+4.0.0-alpha.6
 ==============================================================================
 
 - **Release date:** 22nd December 2017
@@ -91,13 +232,13 @@ Many other smaller corrections, illustrations, and bugfixes have also been added
   - Update coverage to 4.4.2
   - Update Django to 1.11.7 and lock Django to 1.11 versions (long term release). `#679 <https://github.com/uccser/cs-unplugged/issues/679>`_ `#743 <https://github.com/uccser/cs-unplugged/issues/743>`_
 
-2.0.0-alpha.5
+4.0.0-alpha.5
 ==============================================================================
 
 - **Release date:** 30th October 2017
 - **Downloads:** `Source downloads are available on GitHub`_
 
-**Notable changes:**
+**Summary of changes:**
 
 This release improves many backend features, including smarter resource generation,
 dynamic resource previews, improved system testing, and bug fixes.
@@ -109,13 +250,13 @@ dynamic resource previews, improved system testing, and bug fixes.
 - Fix bug where production website is using development static files. `#646 <https://github.com/uccser/cs-unplugged/issues/646>`_
 - Fix bug where production static files are not deployed.
 
-2.0.0-alpha.4
+4.0.0-alpha.4
 ==============================================================================
 
 - **Release date:** 17th October 2017
 - **Downloads:** `Source downloads are available on GitHub`_
 
-**Notable changes:**
+**Summary of changes:**
 
 Adds a new searching algorithms topic including lessons, resources, and
 curriculum integrations.
@@ -148,13 +289,13 @@ New lessons for existing topics have also been added.
 - Open PDF resource download in new tab. `#431 <https://github.com/uccser/cs-unplugged/issues/431>`_
 - Fix bug in Google analytics. `#539 <https://github.com/uccser/cs-unplugged/issues/539>`_
 
-2.0.0-alpha.3
+4.0.0-alpha.3
 ==============================================================================
 
 - **Release date:** 27th June 2017
 - **Downloads:** `Source downloads are available on GitHub`_
 
-**Notable changes:**
+**Summary of changes:**
 
 This release adds several lessons, curriculum integrations, and programming challenges.
 It also fixes many visual bugs and inconsistencies.
@@ -176,13 +317,13 @@ It also fixes many visual bugs and inconsistencies.
 - Set lesson tables to always be consistent width. `#526 <https://github.com/uccser/cs-unplugged/issues/526>`_
 - Don't show curriculum integrations shortcut in topic sidebar if no integrations are available. `#533 <https://github.com/uccser/cs-unplugged/issues/533>`_
 
-2.0.0-alpha.2
+4.0.0-alpha.2
 ==============================================================================
 
 - **Release date:** 26th June 2017
 - **Downloads:** `Source downloads are available on GitHub`_
 
-**Notable changes:**
+**Summary of changes:**
 
 The inital content for the Unplugged programming topic has been added which
 includes the geometry, numeracy, and Kidbots units.
@@ -213,13 +354,13 @@ includes the geometry, numeracy, and Kidbots units.
 - Fix typo in how-binary-digits-work-junior lesson (thanks Richard S).`#503`_
 - Fix Nginx build after Travis image update. `#506`_
 
-2.0.0-alpha.1
+4.0.0-alpha.1
 ==============================================================================
 
 - **Release date:** 20th June 2017
 - **Downloads:** `Source downloads are available on GitHub`_
 
-**Notable changes:**
+**Summary of changes:**
 
 The first major step in releasing a open source version of CS Unplugged.
 While some existing content from the classic version of CS Unplugged have yet
@@ -256,6 +397,88 @@ The following topics are available in this version:
 - Sorting networks:
 
   - 1 lesson for ages 8 to 10.
+
+3.2.2
+==============================================================================
+
+- **Release date:** 11th January 2016
+- **Downloads:** `Word document <http://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_2015_v3.2.2.docx>`__
+
+**Changelog:**
+
+- Transcript of VP with chatbot reinstated in Turing Test material.
+
+3.2.1
+==============================================================================
+
+- **Release date:** 6th January 2016
+- **Downloads:** `Word document <http://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_2015_v3.2.1.docx>`__
+
+**Changelog:**
+
+- Two missing images (first example solution, and ladder networks) added to the Steiner trees activity.
+
+3.2.0
+==============================================================================
+
+- **Release date:** 5th January 2016
+- **Downloads:** `Word document <http://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_2015_v3.2.docx>`__
+
+**Changelog:**
+
+- Fixed some incorrect references to activity numbers caused by inserting a new activity.
+- Some minor grammar/spelling corrections.
+
+3.1.0
+==============================================================================
+
+- **Release date:** March 2015
+- **Downloads:** `Word document <http://classic.csunplugged.org/wp-content/uploads/2015/03/CSUnplugged_OS_2015_v3.1.docx>`__ and `PDF document <http://classic.csunplugged.org/wp-content/uploads/2015/03/CSUnplugged_OS_2015_v3.1.pdf>`__
+
+**Changelog:**
+
+- Switched to new logo design.
+- Combination of the two parts into one book and introduces version numbering.
+- Introduction updated.
+- New activity added – Tablets of Stone.
+- Minor updates to several activities and explanations.
+- Improve Curriculum links (moving away from NZ Curriculum to general curriculum).
+- Formatting improvements (fixing page numbers, layout, fonts changed – no more Comic Sans!).
+- Fixed footers and copyright information to make creative commons license clearer.
+
+2.5.0
+==============================================================================
+
+- **Release date:** 2012
+- **Downloads:** `Part 1 Word document <http://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_Part1_2012.docx>`__ and `Part 2 Word document <http://classic.csunplugged.org/wp-content/uploads/2015/01/CSUnplugged_OS_Part2_2012.doc>`__
+
+**Changelog:**
+
+- Updated version of the teachers’ edition, including the remaining 8 activities from version 1.0.
+- Updated a few terms that would no longer be meaningful to students e.g. mention of floppy disks.
+
+2.0.0
+==============================================================================
+
+- **Release date:** 2010
+- **Downloads:** `Word document <http://classic.csunplugged.org/wp-content/uploads/2015/01/unplugged-v2-teachers-March2010.doc>`__
+
+**Changelog:**
+
+- The first 12 activities of the original version re-written by teachers in 1999/2000 so that it was more suitable for use in the classroom; minor changes were made through to 2010.
+- This was eventually released as "open source" i.e. in MS Word, to support creating translations and local versions.
+- Updated images and cartoons.
+- Included links to the New Zealand curriculum.
+
+1.0.0
+==============================================================================
+
+- **Release date:** Mid 1990s
+- **Downloads:** `PDF document <http://classic.csunplugged.org/wp-content/uploads/2015/01/unplugged-book-v1.pdf>`__ and `LaTeX source <http://classic.csunplugged.org/wp-content/uploads/2015/01/unplugged-book-v1-latex-source.zip>`__
+
+**Changelog:**
+
+- Original version developed in the mid-1990s, with 20 activities, written by academics primarily for use as an outreach tool.
 
 .. _Semantic Versioning 2.0.0: http://semver.org/spec/v2.0.0.html
 .. _Source downloads are available on GitHub: https://github.com/uccser/cs-unplugged/releases

@@ -1,4 +1,8 @@
-{panel type="general" title="Solution 1" subtitle="(check digits of the binary number)"}
+{panel type="general" subtitle="true"}
+
+# Solution 1
+
+## (check digits of the binary number)
 
 **Blocks for cat sprite (labelled binary number)**
 
@@ -82,7 +86,11 @@ end
 
 {panel end}
 
-{panel type="general" title="Solution 2" subtitle="(broadcast the bit value)"}
+{panel type="general" subtitle="true"}
+
+# Solution 2
+
+## (broadcast the bit value)
 
 **Blocks for cat sprite (labelled binary number)**
 
@@ -152,7 +160,11 @@ switch costume to [white v]
 
 {panel end}
 
-{panel type="general" title="Solution 3" subtitle="(using a variable to broadcast the bit value)"}
+{panel type="general" subtitle="true"}
+
+# Solution 3
+
+## (using a variable to broadcast the bit value)
 
 **Blocks for cat sprite (labelled binary number)**
 
@@ -222,7 +234,11 @@ switch costume to [white v]
 
 {panel end}
 
-{panel type="general" title="Solution 4" subtitle="(cloning the black card)"}
+{panel type="general" subtitle="true"}
+
+# Solution 4
+
+## (cloning the black card)
 
 **Blocks for black card sprite**
 

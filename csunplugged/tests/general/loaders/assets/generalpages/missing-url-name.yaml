@@ -1,0 +1,3 @@
+general-page:
+  name: General page
+  template: template.html

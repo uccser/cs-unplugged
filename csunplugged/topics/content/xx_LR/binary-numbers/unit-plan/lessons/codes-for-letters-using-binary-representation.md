@@ -6,9 +6,11 @@
 
 ## crwdns9360:0crwdne9360:0
 
-*BlockTag: crwdns9361:0crwdne9361:0*
+*BlockTag: crwdns19057:0crwdne19057:0*
 
-{panel type="general" title="Notes on resources"}
+{panel type="general"}
+
+# crwdns19058:0crwdne19058:0
 
 crwdns9362:0crwdne9362:0
 
@@ -16,17 +18,19 @@ crwdns9362:0crwdne9362:0
 
 {panel end}
 
-crwdns9364:0crwdne9364:0 crwdns9365:0crwdne9365:0
+*BlockTag: crwdns20157:0crwdne20157:0*
 
-crwdns9366:0crwdne9366:0
+{image file-path="img/topics/col_binary_robot_boy_convo.png" alt="Cartoon boy talking to robot" alignment="left"}
 
-*BlockTag: crwdns9367:0crwdne9367:0*
+crwdns20158:0crwdne20158:0 crwdns20159:0crwdne20159:0
 
-{image file-path="img/topics/col_binary_robot_boy_convo.png" alt="Cartoon boy talking to robot"}
+crwdns20160:0crwdne20160:0
 
-*BlockTag: crwdns9368:0crwdne9368:0*
+*BlockTag: crwdns19059:0crwdne19059:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# crwdns19060:0crwdne19060:0
 
 - crwdns9369:0crwdne9369:0
 - crwdns9370:0crwdne9370:0
@@ -56,9 +60,11 @@ crwdns9385:0crwdne9385:0 crwdns9386:0crwdne9386:0 crwdns9387:0crwdne9387:0
 
 crwdns9388:0crwdne9388:0
 
-*BlockTag: crwdns9389:0crwdne9389:0*
+*BlockTag: crwdns19061:0crwdne19061:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# crwdns19062:0crwdne19062:0
 
 crwdns9390:0crwdne9390:0 crwdns9391:0crwdne9391:0 crwdns9392:0crwdne9392:0
 
@@ -66,9 +72,11 @@ crwdns9390:0crwdne9390:0 crwdns9391:0crwdne9391:0 crwdns9392:0crwdne9392:0
 
 {panel end}
 
-*BlockTag: crwdns9394:0crwdne9394:0*
+*BlockTag: crwdns19063:0crwdne19063:0*
 
-{panel type="math" title="Mathematical links"}
+{panel type="math"}
+
+# crwdns19064:0crwdne19064:0
 
 crwdns9395:0crwdne9395:0 crwdns9396:0crwdne9396:0 crwdns9397:0crwdne9397:0 crwdns9398:0crwdne9398:0 crwdns9399:0crwdne9399:0 crwdns9400:0crwdne9400:0
 
@@ -76,9 +84,11 @@ crwdns9395:0crwdne9395:0 crwdns9396:0crwdne9396:0 crwdns9397:0crwdne9397:0 crwdn
 
 {panel end}
 
-*BlockTag: crwdns9402:0crwdne9402:0*
+*BlockTag: crwdns19065:0crwdne19065:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# crwdns19066:0crwdne19066:0
 
 crwdns9403:0crwdne9403:0 crwdns9404:0crwdne9404:0 crwdns9405:0crwdne9405:0 crwdns9406:0crwdne9406:0
 

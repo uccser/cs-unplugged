@@ -1,19 +1,24 @@
 from tests.BaseTestWithDB import BaseTestWithDB
-from topics.models import Topic
+from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 
 
 class TopicModelTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.test_data = TopicsTestDataGenerator()
 
-    def test_topic(self):
-        new_topic = Topic.objects.create(
-            slug="binary-numbers",
-            name="Binary Numbers",
-            content="content",
-            other_resources="content",
-            icon="icon"
+    def test_topic_str(self):
+        topic = self.test_data.create_topic(1)
+        self.assertEqual(topic.__str__(), "Topic 1")
+
+    def test_topic_model_name(self):
+        topic = self.test_data.create_topic(1)
+        self.assertEqual(topic.MODEL_NAME, "Topic")
+
+    def test_topic_model_get_absolute_url(self):
+        topic = self.test_data.create_topic(1)
+        self.assertEqual(
+            topic.get_absolute_url(),
+            "/en/topics/topic-1/"
         )
-        query_result = Topic.objects.get(name="Binary Numbers")
-        self.assertEqual(query_result, new_topic)

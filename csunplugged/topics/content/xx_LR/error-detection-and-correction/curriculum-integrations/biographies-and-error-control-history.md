@@ -8,18 +8,24 @@ crwdns10052:0crwdne10052:0
 
 crwdns10053:0crwdne10053:0
 
-- crwdns10054:0crwdne10054:0 
+- crwdns10054:0crwdne10054:0
 - crwdns10055:0crwdne10055:0
 - crwdns10056:0crwdne10056:0
 - crwdns10057:0crwdne10057:0
 
-*BlockTag: crwdns10058:0crwdne10058:0*
+*BlockTag: crwdns20223:0crwdne20223:0*
 
-{image file-path="img/topics/shannon-juggling.png" caption="Claude Shannon" alt="person juggling on unicycle"}
+{image file-path="img/topics/shannon-juggling.png" caption="true" alt="person juggling on unicycle" alignment="right"}
 
-crwdns10059:0crwdne10059:0 crwdns10060:0crwdne10060:0 crwdns10061:0crwdne10061:0 crwdns10062:0crwdne10062:0
+crwdns19189:0crwdne19189:0
 
-crwdns10063:0crwdne10063:0
+*BlockTag: crwdns19190:0crwdne19190:0*
+
+{image end}
+
+crwdns19191:0crwdne19191:0 crwdns19192:0crwdne19192:0 crwdns19193:0crwdne19193:0 crwdns19194:0crwdne19194:0
+
+crwdns19195:0crwdne19195:0
 
 - crwdns10064:0crwdne10064:0
 - crwdns10065:0crwdne10065:0

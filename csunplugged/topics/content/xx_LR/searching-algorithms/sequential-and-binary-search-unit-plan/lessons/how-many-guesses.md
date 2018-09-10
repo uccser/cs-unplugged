@@ -17,59 +17,83 @@ for 1, 2, 3, 4, 5, and 6 guesses"}
 
 crwdns11858:0crwdne11858:0
 
-## crwdns11859:0crwdne11859:0
+**crwdns19875:0crwdne19875:0**
 
-crwdns11860:0crwdne11860:0 crwdns11861:0crwdne11861:0 crwdns11862:0crwdne11862:0 crwdns11863:0crwdne11863:0 crwdns11864:0crwdne11864:0 crwdns11865:0crwdne11865:0
+- crwdns19876:0crwdne19876:0
+- crwdns19877:0crwdne19877:0
+- crwdns19878:0crwdne19878:0
 
-*BlockTag: crwdns11866:0crwdne11866:0*
+*BlockTag: crwdns18425:0crwdne18425:0*
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
 
-crwdns11867:0crwdne11867:0 crwdns11868:0crwdne11868:0 crwdns11869:0crwdne11869:0 crwdns11870:0crwdne11870:0
+# crwdns18426:0crwdne18426:0
+
+crwdns19879:0crwdne19879:0 crwdns19880:0crwdne19880:0
 
 *BlockTag: crwdns11871:0crwdne11871:0*
 
 {panel end}
 
-## crwdns11872:0crwdne11872:0
+## crwdns11859:0crwdne11859:0
 
-crwdns11873:0crwdne11873:0
+crwdns19881:0crwdne19881:0 crwdns19882:0crwdne19882:0 crwdns19883:0crwdne19883:0 crwdns19884:0crwdne19884:0 crwdns19885:0crwdne19885:0 crwdns19886:0crwdne19886:0
 
-crwdns11874:0crwdne11874:0 crwdns11875:0crwdne11875:0 crwdns11876:0crwdne11876:0
+*BlockTag: crwdns19887:0crwdne19887:0*
 
-crwdns11877:0crwdne11877:0
+{panel type="teaching"}
 
-crwdns11878:0crwdne11878:0 crwdns11879:0crwdne11879:0 crwdns11880:0crwdne11880:0 crwdns11881:0crwdne11881:0 crwdns11882:0crwdne11882:0
+# crwdns18428:0crwdne18428:0
 
-crwdns11883:0crwdne11883:0 crwdns11884:0crwdne11884:0 crwdns11885:0crwdne11885:0 crwdns11886:0crwdne11886:0
+crwdns19888:0crwdne19888:0 crwdns19889:0crwdne19889:0 crwdns19890:0crwdne19890:0 crwdns19891:0crwdne19891:0
 
-crwdns11887:0crwdne11887:0 crwdns11888:0crwdne11888:0
-
-crwdns11889:0crwdne11889:0
-
-crwdns11890:0crwdne11890:0
-
-crwdns11891:0crwdne11891:0 crwdns11892:0crwdne11892:0 crwdns11893:0crwdne11893:0
-
-*BlockTag: crwdns11894:0crwdne11894:0*
-
-{panel type="teaching" title="Teaching observations"}
-
-crwdns11895:0crwdne11895:0 crwdns11896:0crwdne11896:0 crwdns11897:0crwdne11897:0 crwdns11898:0crwdne11898:0
-
-*BlockTag: crwdns11899:0crwdne11899:0*
+*BlockTag: crwdns19892:0crwdne19892:0*
 
 {panel end}
 
-## crwdns11900:0crwdne11900:0
+## crwdns11872:0crwdne11872:0
+
+crwdns19893:0crwdne19893:0
+
+crwdns19894:0crwdne19894:0 crwdns19895:0crwdne19895:0 crwdns19896:0crwdne19896:0
+
+crwdns19897:0crwdne19897:0
+
+crwdns19898:0crwdne19898:0 crwdns19899:0crwdne19899:0 crwdns19900:0crwdne19900:0 crwdns19901:0crwdne19901:0 crwdns19902:0crwdne19902:0
+
+crwdns19903:0crwdne19903:0 crwdns19904:0crwdne19904:0 crwdns19905:0crwdne19905:0 crwdns19906:0crwdne19906:0
+
+crwdns19907:0crwdne19907:0 crwdns19908:0crwdne19908:0
+
+crwdns19909:0crwdne19909:0
+
+crwdns19910:0crwdne19910:0
+
+crwdns19911:0crwdne19911:0 crwdns19912:0crwdne19912:0 crwdns19913:0crwdne19913:0
+
+*BlockTag: crwdns19914:0crwdne19914:0*
+
+{panel type="teaching"}
+
+# crwdns19915:0crwdne19915:0
+
+crwdns19916:0crwdne19916:0 crwdns19917:0crwdne19917:0 crwdns19918:0crwdne19918:0 crwdns19919:0crwdne19919:0
+
+*BlockTag: crwdns19920:0crwdne19920:0*
+
+{panel end}
+
+## crwdns19921:0crwdne19921:0
+
+crwdns19922:0crwdne19922:0 crwdns19923:0crwdne19923:0 crwdns19924:0crwdne19924:0 crwdns19925:0crwdne19925:0 crwdns19926:0crwdne19926:0
 
 ## crwdns11901:0crwdne11901:0
 
-crwdns11902:0crwdne11902:0 crwdns11903:0crwdne11903:0
+crwdns19927:0crwdne19927:0 crwdns19928:0crwdne19928:0
 
-- crwdns11904:0crwdne11904:0 
-    - crwdns11905:0crwdne11905:0
-    - crwdns11906:0crwdne11906:0
-    - crwdns11907:0crwdne11907:0
+- crwdns19929:0crwdne19929:0 
+    - crwdns19930:0crwdne19930:0
+    - crwdns19931:0crwdne19931:0
+    - crwdns19932:0crwdne19932:0
 
-crwdns11908:0crwdne11908:0
+crwdns19933:0crwdne19933:0

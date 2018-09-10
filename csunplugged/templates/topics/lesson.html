@@ -10,7 +10,6 @@
 {% endblock title %}
 
 {% block breadcrumbs %}
-  {% breadcrumb "Home" "/" %}
   {% breadcrumb "Topics" "topics:index" %}
   {% breadcrumb topic.name "topics:topic" topic.slug %}
   {% breadcrumb unit_plan.name "topics:unit_plan" topic.slug unit_plan.slug %}
@@ -20,10 +19,7 @@
 {% block page_heading %}
     <h1 id="{{ lesson.slug }}">{{ lesson.name }}</h1>
     {% if not lesson.translation_available %}
-      {% url "topics:unit_plan" topic.slug unit_plan.slug as parent_url %}
-      {% trans "unit plan" as unit_plan_l10n %}
-      {% trans "lesson" as lesson_l10n %}
-      {% with model=lesson model_type=lesson_l10n parent=unit_plan parent_type=unit_plan_l10n parent_url=parent_url %}
+      {% with model=lesson parent=unit_plan %}
         {% include "topics/not-available-warning.html" %}
       {% endwith %}
     {% else %}
@@ -43,18 +39,25 @@
 {% block left_column_content %}
   {% if lesson.translation_available %}
     {% if learning_outcomes %}
-    <h2>{% trans "Learning outcomes" %}</h2>
-      <p>{% trans "Students will be able to:" %}</p>
-      <ul>
-        {% for learning_outcome in learning_outcomes %}
-          <li>
-            {{ learning_outcome.text }}<br>
-            {% for area in learning_outcome.curriculum_areas.all %}
-              {% include "topics/curriculum-area-badge.html" %}
+      <details class="panel-learning-outcomes">
+        <summary>
+          <strong>{% trans "Learning outcomes" %}</strong>
+          <img class="inline-image" src="{% static 'img/general/outcomes.png' %}">
+        </summary>
+        <div class="boxed-text-content">
+          <p>{% trans "Students will be able to:" %}</p>
+          <ul>
+            {% for learning_outcome in learning_outcomes %}
+            <li>
+              {{ learning_outcome.text }}<br>
+              {% for area in learning_outcome.curriculum_areas.all %}
+                {% include "topics/curriculum-area-badge.html" %}
+              {% endfor %}
+            </li>
             {% endfor %}
-          </li>
-        {% endfor %}
-      </ul>
+          </ul>
+        </div>
+      </details>
     {% endif %}
 
     {% render_html_field lesson.content %}
@@ -68,12 +71,12 @@
 {% block right_column_content %}
   {% if lesson.translation_available %}
     {% if generated_resources %}
-    <h2>{% trans "CS Unplugged resources" %}</h2>
+    <h2>{% trans "Printables" %}</h2>
       <div class="row">
         {% for generated_resource in generated_resources %}
-          <div class="col-12 mb-4">
+          <div class="col-12 mb-4 print-col-6">
             <a class="link-item no-text-decoration d-block h-100 py-2 text-center" href="{% url 'resources:resource' generated_resource.slug %}">
-              <img class="border-thin" src="{% static generated_resource.thumbnail %}" alt="Thumbnail of resource">
+              <img class="border-thin" src="{{ generated_resource.thumbnail }}" alt="Thumbnail of resource">
               <p class="mb-0"><strong>{{ generated_resource.name }}</strong></p>
               {% if generated_resource.description %}
                 <p class="mb-0">{{ generated_resource.description }}</p>
@@ -94,15 +97,17 @@
     {% endif %}
 
     {% if programming_challenges %}
-    <h2 class="mt-2">{% trans "Programming challenges" %}</h2>
-      <p>
-        <a href="{% url 'topics:programming_challenges_list' topic.slug unit_plan.slug lesson.slug %}">
-          {% trans "View related programming challenges" %}
-        </a>
-      </p>
+      <div class="d-print-none">
+        <h2 class="mt-2">{% trans "Programming challenges" %}</h2>
+        <p>
+          <a href="{% url 'topics:programming_challenges_list' topic.slug unit_plan.slug lesson.slug %}">
+            {% trans "View related programming challenges" %}
+          </a>
+        </p>
+      </div>
     {% endif %}
 
-    <div id="sticky-sidebar" class="sticky">
+    <div id="sticky-sidebar" class="sticky d-print-none">
       <h2 class="mt-2">{% trans "Table of contents" %}</h2>
       <ul class="nav nav-pills flex-column" id="scrollspy-table-of-contents">
         <li class="nav-item">

@@ -15,6 +15,19 @@ Things that don't go faster might include delivering a note to the office (10 pe
 
 ## Lesson starter
 
+{panel type="video"}
+
+# See teaching this in action
+
+{video url="https://www.youtube.com/embed/M-z5pDjqtZk"}
+
+Some other videos showing different situations using Sorting Networks:
+
+-   [Video 1](https://www.youtube.com/watch?v=LOxfdsBBjKI)
+-   [Video 2](https://www.youtube.com/watch?v=30WcPnvfiKE)
+
+{panel end}
+
 Use the Sorting Network template to draw a 6 person Sorting Network on a paved surface outside using chalk (other alternatives include using masking/painters tape on a carpet or wooden floor, tape on a tarpaulin, or line marking paint on grass).
 Note that the Sorting Network needn't use different colours or line
 thicknesses, but if suitable chalk or tape is available, this can help students remember which way to go.
@@ -23,7 +36,9 @@ In a very confined situation, it could be done on a desk top using game counters
 
 Show the students the Sorting Network drawn on the ground, and tell them "This chalk computer can do some things very fast, let’s investigate what it does."
 
-{panel type="math" title="Mathematical links"}
+{panel type="math"}
+
+# Mathematical links
 
 Supports students understanding of ordering any range of numbers, from ordering single digit numbers to fractions and decimals, or numbers in their millions.
 
@@ -51,7 +66,7 @@ Supports students understanding of ordering any range of numbers, from ordering 
     higher number.
 6.  The student with the lower number should follow the line out to the left
     and go to the next box, while the person with the higher number follows the
-    line leaving to the right to go to the next square.
+    line leaving to the right to go to the next box.
 7.  Now get the next pair of students to do the same, meeting at a box and
     leaving it with the smaller to the left and the larger to the right.
 8.  You can now get the remaining pair of students to do this (remind them to
@@ -71,7 +86,9 @@ Supports students understanding of ordering any range of numbers, from ordering 
     shortest amount of time (either with two Sorting Networks racing teams at
     the same time, or one network with the times measured using a stopwatch).
 
-{panel type="teaching" title="Teaching observations"}
+{panel type="teaching"}
+
+# Teaching observations
 
 If it didn’t work it may be because a pair incorrectly went to the wrong square or a person raced ahead of everyone else.
 Have the group repeat the task and check each comparison.
