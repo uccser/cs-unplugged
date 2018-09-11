@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-20 04:28+0000\n"
+"POT-Creation-Date: 2018-09-07 00:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,12 +17,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: config/settings/base.py:138
+#: classic/models.py:10
+msgid "Classic CS Unplugged page"
+msgstr ""
+
+#: config/settings/base.py:139
 msgid "Translation mode"
 msgstr ""
 
-#: config/settings/base.py:144
+#: config/settings/base.py:145
 msgid "Translation mode (Bi-directional)"
+msgstr ""
+
+#: general/models.py:11
+msgid "General page"
 msgstr ""
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:10
@@ -80,6 +88,24 @@ msgstr ""
 msgid "No - Print single sided."
 msgstr ""
 
+#: resources/generators/BinaryCardsResourceGenerator.py:104
+msgid "with numbers"
+msgstr ""
+
+#: resources/generators/BinaryCardsResourceGenerator.py:106
+msgid "without numbers"
+msgstr ""
+
+#: resources/generators/BinaryCardsResourceGenerator.py:109
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:110
+msgid "with black back"
+msgstr ""
+
+#: resources/generators/BinaryCardsResourceGenerator.py:111
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:112
+msgid "without black back"
+msgstr ""
+
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:20
 #: resources/generators/BinaryWindowsResourceGenerator.py:15
 msgid "Four (1 to 8)"
@@ -102,6 +128,16 @@ msgstr ""
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:41
 #: resources/generators/BinaryWindowsResourceGenerator.py:40
 msgid "Display Dot Counts"
+msgstr ""
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:106
+#: resources/generators/BinaryWindowsResourceGenerator.py:192
+msgid "with dot counts"
+msgstr ""
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:108
+#: resources/generators/BinaryWindowsResourceGenerator.py:194
+msgid "without dot counts"
 msgstr ""
 
 #: resources/generators/BinaryToAlphabetResourceGenerator.py:12
@@ -140,20 +176,16 @@ msgstr ""
 msgid "Value Representation"
 msgstr ""
 
-#: resources/generators/JobBadgesResourceGenerator.py:38
-msgid "Hello, I'm a"
+#: resources/generators/JobBadgesResourceGenerator.py:14
+msgid "Hello, I'm a Programmer"
 msgstr ""
 
-#: resources/generators/JobBadgesResourceGenerator.py:45
-msgid "Programmer"
+#: resources/generators/JobBadgesResourceGenerator.py:15
+msgid "Hello, I'm a Tester"
 msgstr ""
 
-#: resources/generators/JobBadgesResourceGenerator.py:50
-msgid "Tester"
-msgstr ""
-
-#: resources/generators/JobBadgesResourceGenerator.py:55
-msgid "Bot"
+#: resources/generators/JobBadgesResourceGenerator.py:16
+msgid "Hello, I'm a Bot"
 msgstr ""
 
 #: resources/generators/LeftRightCardsResourceGenerator.py:14
@@ -165,9 +197,11 @@ msgid "Right"
 msgstr ""
 
 #: resources/generators/ModuloClockResourceGenerator.py:10
+#: resources/generators/ModuloClockResourceGenerator.py:83
 #: resources/generators/NumberHuntResourceGenerator.py:221
 #: resources/generators/PianoKeysResourceGenerator.py:12
 #: resources/generators/SearchingCardsResourceGenerator.py:26
+#: resources/generators/SearchingCardsResourceGenerator.py:171
 msgid "Blank"
 msgstr ""
 
@@ -374,7 +408,7 @@ msgid "Hot air balloon"
 msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:74
-#: templates/general/people.html:144
+#: templates/general/people.html:154
 msgid "Parrots"
 msgstr ""
 
@@ -484,10 +518,6 @@ msgstr ""
 msgid "Sorted numbers"
 msgstr ""
 
-#: resources/generators/SearchingCardsResourceGenerator.py:171
-msgid "blank"
-msgstr ""
-
 #: resources/generators/SearchingCardsResourceGenerator.py:178
 msgid "with helper sheet"
 msgstr ""
@@ -555,7 +585,7 @@ msgid "Hard Numbers (3 digits)"
 msgstr ""
 
 #: resources/generators/SortingNetworkResourceGenerator.py:13
-msgid "None (Blank - Useful as template) "
+msgid "None (Blank - Useful as template)"
 msgstr ""
 
 #: resources/generators/TrainStationsResourceGenerator.py:9
@@ -570,6 +600,58 @@ msgstr ""
 msgid "Train track shape"
 msgstr ""
 
+#: resources/generators/TreasureIslandResourceGenerator.py:14
+msgid "Student map"
+msgstr ""
+
+#: resources/generators/TreasureIslandResourceGenerator.py:15
+msgid "Island posters"
+msgstr ""
+
+#: resources/generators/TreasureIslandResourceGenerator.py:25
+msgid "Dead Man's Island"
+msgstr ""
+
+#: resources/generators/TreasureIslandResourceGenerator.py:35
+msgid "Musket Hill"
+msgstr ""
+
+#: resources/generators/TreasureIslandResourceGenerator.py:45
+msgid "Mutineers' Island"
+msgstr ""
+
+#: resources/generators/TreasureIslandResourceGenerator.py:55
+msgid "Pirates' Island"
+msgstr ""
+
+#: resources/generators/TreasureIslandResourceGenerator.py:65
+msgid "Shipwreck Bay"
+msgstr ""
+
+#: resources/generators/TreasureIslandResourceGenerator.py:75
+msgid "Smugglers' Cove"
+msgstr ""
+
+#: resources/generators/TreasureIslandResourceGenerator.py:85
+msgid "Treasure Island"
+msgstr ""
+
+#: resources/generators/TreasureIslandResourceGenerator.py:105
+msgid "Printable type"
+msgstr ""
+
+#: resources/generators/TreasureIslandResourceGenerator.py:323
+msgid "Boat A"
+msgstr ""
+
+#: resources/generators/TreasureIslandResourceGenerator.py:326
+msgid "Boat B"
+msgstr ""
+
+#: resources/models.py:12
+msgid "Printable"
+msgstr ""
+
 #: resources/utils/BaseResourceGenerator.py:18
 msgid "A4"
 msgstr ""
@@ -582,15 +664,15 @@ msgstr ""
 msgid "Paper Size"
 msgstr ""
 
-#: resources/utils/BaseResourceGenerator.py:70
+#: resources/utils/BaseResourceGenerator.py:82
 msgid "Header Text"
 msgstr ""
 
-#: resources/utils/BaseResourceGenerator.py:71
+#: resources/utils/BaseResourceGenerator.py:83
 msgid "Example School: Room Four"
 msgstr ""
 
-#: resources/utils/BaseResourceGenerator.py:79
+#: resources/utils/BaseResourceGenerator.py:91
 msgid "Number of Copies"
 msgstr ""
 
@@ -621,7 +703,7 @@ msgid "You may find one of the links below useful:"
 msgstr ""
 
 #: templates/404.html:19
-msgid "Home page"
+msgid "Homepage"
 msgstr ""
 
 #: templates/404.html:26 templates/base.html:91 templates/base.html:225
@@ -629,7 +711,7 @@ msgid "Search"
 msgstr ""
 
 #: templates/404.html:32 templates/general/index.html:96
-#: templates/general/people.html:64
+#: templates/general/people.html:74
 msgid "Classic CS Unplugged"
 msgstr ""
 
@@ -650,7 +732,7 @@ msgstr ""
 
 #: templates/base.html:79 templates/base.html:193
 #: templates/general/index.html:81 templates/resources/index.html:8
-#: templates/resources/index.html:16 templates/topics/lesson.html:77
+#: templates/resources/index.html:16 templates/topics/lesson.html:74
 msgid "Printables"
 msgstr ""
 
@@ -1268,7 +1350,7 @@ msgstr ""
 #: templates/general/index.html:89
 #: templates/topics/all-curriculum-integration-list.html:8
 #: templates/topics/all-curriculum-integration-list.html:17
-#: templates/topics/topic.html:65
+#: templates/topics/topic.html:64
 msgid "Curriculum Integrations"
 msgstr ""
 
@@ -1280,27 +1362,61 @@ msgstr ""
 msgid "Founders"
 msgstr ""
 
-#: templates/general/people.html:31 templates/general/people.html:103
+#: templates/general/people.html:31 templates/general/people.html:113
 msgid "Advisers"
+msgstr ""
+
+#: templates/general/people.html:35
+msgid "Computer Scientist"
 msgstr ""
 
 #: templates/general/people.html:38
 msgid "Current Team"
 msgstr ""
 
-#: templates/general/people.html:48
+#: templates/general/people.html:41
+msgid "Founder &amp; Content Writer"
+msgstr ""
+
+#: templates/general/people.html:42 templates/general/people.html:43
+#: templates/general/people.html:52 templates/general/people.html:53
+msgid "Content Writer"
+msgstr ""
+
+#: templates/general/people.html:44
+msgid "Project Manager &amp; Technical Team"
+msgstr ""
+
+#: templates/general/people.html:45 templates/general/people.html:46
+#: templates/general/people.html:54 templates/general/people.html:55
+msgid "Technical Team"
+msgstr ""
+
+#: templates/general/people.html:49
 msgid "Previous Team Members"
 msgstr ""
 
-#: templates/general/people.html:64
+#: templates/general/people.html:56
+msgid "Creative Content Developer &amp; Illustrator"
+msgstr ""
+
+#: templates/general/people.html:59
+msgid "Community Contributors"
+msgstr ""
+
+#: templates/general/people.html:68
+msgid "Translations"
+msgstr ""
+
+#: templates/general/people.html:74
 msgid "up to version 3.2.2"
 msgstr ""
 
-#: templates/general/people.html:66
+#: templates/general/people.html:76
 msgid "Contributors"
 msgstr ""
 
-#: templates/general/people.html:133
+#: templates/general/people.html:143
 msgid "Website"
 msgstr ""
 
@@ -1580,47 +1696,52 @@ msgstr ""
 msgid "No printables are available."
 msgstr ""
 
-#: templates/resources/resource.html:22
+#: templates/resources/resource.html:20
+msgid "Return to list of printables"
+msgstr ""
+
+#: templates/resources/resource.html:31
 msgid "Create Printable"
 msgstr ""
 
-#: templates/resources/resource.html:33
+#: templates/resources/resource.html:42
 msgid "Generate Printable"
 msgstr ""
 
-#: templates/resources/resource.html:37
+#: templates/resources/resource.html:46
 #, python-format
 msgid ""
 "The download of this Printable includes %(copies_amount)s unique copies."
 msgstr ""
 
-#: templates/resources/resource.html:49
+#: templates/resources/resource.html:51
+msgid "Download Printable"
+msgstr ""
+
+#: templates/resources/resource.html:59
 msgid "Preview"
 msgstr ""
 
-#: templates/resources/resource.html:55
-msgid "Preview shows English version"
-msgstr ""
-
-#: templates/resources/resource.html:64
+#: templates/resources/resource.html:74
 msgid "Related Lessons"
 msgstr ""
 
-#: templates/resources/resource.html:68
+#: templates/resources/resource.html:78
 #: templates/topics/all-curriculum-integration-list.html:27
+#: topics/models.py:108
 msgid "Topic"
 msgstr ""
 
-#: templates/resources/resource.html:69
+#: templates/resources/resource.html:79
 msgid "Ages"
 msgstr ""
 
-#: templates/resources/resource.html:70
+#: templates/resources/resource.html:80
 #: templates/topics/programming-challenges-table.html:8
 msgid "Number"
 msgstr ""
 
-#: templates/resources/resource.html:71
+#: templates/resources/resource.html:81 topics/models.py:329
 msgid "Lesson"
 msgstr ""
 
@@ -1631,7 +1752,7 @@ msgstr ""
 msgid "Within topic"
 msgstr ""
 
-#: templates/search/result/lesson.html:11 templates/topics/lesson.html:33
+#: templates/search/result/lesson.html:11 templates/topics/lesson.html:30
 #, python-format
 msgid "<strong>Ages %(lower)s to %(upper)s:</strong> Lesson %(number)s"
 msgstr ""
@@ -1641,7 +1762,7 @@ msgid "within unit plan"
 msgstr ""
 
 #: templates/search/result/programmingchallenge.html:10
-#: templates/topics/programming-challenge.html:31
+#: templates/topics/programming-challenge.html:28
 msgid "Challenge Level:"
 msgstr ""
 
@@ -1698,23 +1819,11 @@ msgid ""
 "<a href=\"%(ct_url)s\">see our notes about computational thinking</a>."
 msgstr ""
 
-#: templates/topics/curriculum-integration.html:30
-#: templates/topics/programming-challenge.html:25
-#: templates/topics/topic.html:20
-#: templates/topics/unit-plan-description.html:23
-#: templates/topics/unit-plan.html:22
-msgid "topic"
-msgstr ""
-
-#: templates/topics/curriculum-integration.html:31
-msgid "curriculum integration"
-msgstr ""
-
-#: templates/topics/curriculum-integration.html:48
+#: templates/topics/curriculum-integration.html:45
 msgid "Heads up!"
 msgstr ""
 
-#: templates/topics/curriculum-integration.html:49
+#: templates/topics/curriculum-integration.html:46
 msgid ""
 "To do this activity it's expected you understand the content covered in the "
 "following:"
@@ -1733,12 +1842,12 @@ msgid ""
 "integrations, and programming challenges."
 msgstr ""
 
-#: templates/topics/index.html:39 templates/topics/topic.html:47
+#: templates/topics/index.html:39 templates/topics/topic.html:46
 #, python-format
 msgid "Ages %(min_age)s to %(max_age)s"
 msgstr ""
 
-#: templates/topics/index.html:45 templates/topics/topic.html:57
+#: templates/topics/index.html:45 templates/topics/topic.html:56
 msgid "lessons"
 msgstr ""
 
@@ -1754,50 +1863,40 @@ msgstr ""
 msgid "No topics are available."
 msgstr ""
 
-#: templates/topics/lesson.html:23
-#: templates/topics/unit-plan-description.html:22
-#: templates/topics/unit-plan.html:21
-msgid "unit plan"
-msgstr ""
-
-#: templates/topics/lesson.html:24
-msgid "lesson"
-msgstr ""
-
-#: templates/topics/lesson.html:30
+#: templates/topics/lesson.html:27
 #, python-format
 msgid "<strong>Duration:</strong> %(duration)s minutes"
 msgstr ""
 
-#: templates/topics/lesson.html:47
-#: templates/topics/programming-challenge.html:73
+#: templates/topics/lesson.html:44
+#: templates/topics/programming-challenge.html:70
 msgid "Learning outcomes"
 msgstr ""
 
-#: templates/topics/lesson.html:51
-#: templates/topics/programming-challenge.html:77
+#: templates/topics/lesson.html:48
+#: templates/topics/programming-challenge.html:74
 msgid "Students will be able to:"
 msgstr ""
 
-#: templates/topics/lesson.html:94
+#: templates/topics/lesson.html:91
 msgid "Classroom resources"
 msgstr ""
 
-#: templates/topics/lesson.html:104 templates/topics/lessons-table.html:14
+#: templates/topics/lesson.html:101 templates/topics/lessons-table.html:14
 msgid "Programming challenges"
 msgstr ""
 
-#: templates/topics/lesson.html:107
+#: templates/topics/lesson.html:104
 msgid "View related programming challenges"
 msgstr ""
 
-#: templates/topics/lesson.html:114
-#: templates/topics/unit-plan-description.html:43
+#: templates/topics/lesson.html:111
+#: templates/topics/unit-plan-description.html:40
 msgid "Table of contents"
 msgstr ""
 
-#: templates/topics/lesson.html:127
-#: templates/topics/unit-plan-description.html:55
+#: templates/topics/lesson.html:124
+#: templates/topics/unit-plan-description.html:52
 msgid "Computational Thinking"
 msgstr ""
 
@@ -1813,13 +1912,8 @@ msgid ""
 "is available in the following languages:</p>"
 msgstr ""
 
-#: templates/topics/not-available-warning.html:21
-msgid "or"
-msgstr ""
-
-#: templates/topics/not-available-warning.html:23
-#, python-format
-msgid "Return to the %(parent_type)s"
+#: templates/topics/not-available-warning.html:36
+msgid "Return to homepage "
 msgstr ""
 
 #: templates/topics/programming-challenge-language-solution.html:10
@@ -1828,35 +1922,30 @@ msgid "%(name)s solution"
 msgstr ""
 
 #: templates/topics/programming-challenge-language-solution.html:27
-#: templates/topics/programming-challenge-language-solution.html:31
 msgid "solution"
 msgstr ""
 
-#: templates/topics/programming-challenge-language-solution.html:32
-msgid "challenge"
-msgstr ""
-
-#: templates/topics/programming-challenge-language-solution.html:42
+#: templates/topics/programming-challenge-language-solution.html:39
 msgid ""
 "<strong>Heads Up!</strong> If you are ready to compare your programming to "
 "ours or are wanting to have a look at how we solved it, click 'View "
 "solution' below to view at least one way to write this program."
 msgstr ""
 
-#: templates/topics/programming-challenge-language-solution.html:49
+#: templates/topics/programming-challenge-language-solution.html:46
 msgid "View solution"
 msgstr ""
 
-#: templates/topics/programming-challenge-language-solution.html:53
+#: templates/topics/programming-challenge-language-solution.html:50
 msgid "This is just one of many possible solutions:"
 msgstr ""
 
-#: templates/topics/programming-challenge-language-solution.html:60
+#: templates/topics/programming-challenge-language-solution.html:57
 msgid "Back to programming challenge"
 msgstr ""
 
-#: templates/topics/programming-challenge-language-solution.html:71
-#: templates/topics/programming-challenge.html:151
+#: templates/topics/programming-challenge-language-solution.html:68
+#: templates/topics/programming-challenge.html:148
 msgid "Extra Challenge"
 msgstr ""
 
@@ -1871,42 +1960,38 @@ msgstr ""
 msgid "No programming challenges for %(topic)s."
 msgstr ""
 
-#: templates/topics/programming-challenge.html:23
-msgid "programming challenge"
-msgstr ""
-
-#: templates/topics/programming-challenge.html:41
+#: templates/topics/programming-challenge.html:38
 msgid "This programming challenge is linked to the following lessons:"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:47
+#: templates/topics/programming-challenge.html:44
 #, python-format
 msgid "Challenge %(set_num)s.%(chal_num)s for %(name)s"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:52
+#: templates/topics/programming-challenge.html:49
 #, python-format
 msgid "%(lower)s to %(upper)s"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:56
+#: templates/topics/programming-challenge.html:53
 msgid "and"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:95
+#: templates/topics/programming-challenge.html:92
 #: templates/topics/programming-challenges-table.html:11
 msgid "Languages"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:116
+#: templates/topics/programming-challenge.html:113
 msgid "What it should look like"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:123
+#: templates/topics/programming-challenge.html:120
 msgid "Hints"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:135
+#: templates/topics/programming-challenge.html:132
 #, python-format
 msgid "Show %(implementation.language.name)s solution"
 msgstr ""
@@ -1938,18 +2023,18 @@ msgid "Return to the topic"
 msgstr ""
 
 #: templates/topics/topic.html:21
-msgid "list of topics"
+msgid "Return to list of topics"
 msgstr ""
 
-#: templates/topics/topic.html:34
+#: templates/topics/topic.html:33
 msgid "Unit Plans"
 msgstr ""
 
-#: templates/topics/topic.html:72
+#: templates/topics/topic.html:71
 msgid "Looking for more?"
 msgstr ""
 
-#: templates/topics/topic.html:75
+#: templates/topics/topic.html:74
 msgid "Click here for other resources"
 msgstr ""
 
@@ -1962,14 +2047,46 @@ msgstr ""
 msgid "Unit plan:"
 msgstr ""
 
-#: templates/topics/unit-plan.html:32
+#: templates/topics/unit-plan.html:29
 msgid "What's it all about?"
 msgstr ""
 
-#: templates/topics/unit-plan.html:38
+#: templates/topics/unit-plan.html:35
 msgid "Read the full unit plan description"
 msgstr ""
 
-#: templates/topics/unit-plan.html:46
+#: templates/topics/unit-plan.html:43
 msgid "Lessons"
+msgstr ""
+
+#: topics/models.py:31
+msgid "Curriculum Area"
+msgstr ""
+
+#: topics/models.py:64
+msgid "Learning Outcome"
+msgstr ""
+
+#: topics/models.py:91
+msgid "Classroom Resource"
+msgstr ""
+
+#: topics/models.py:140
+msgid "Unit Plan"
+msgstr ""
+
+#: topics/models.py:141 topics/models.py:196 topics/models.py:452
+msgid "Return to topic"
+msgstr ""
+
+#: topics/models.py:195
+msgid "Programming Challenge"
+msgstr ""
+
+#: topics/models.py:330
+msgid "Return to unit plan"
+msgstr ""
+
+#: topics/models.py:451
+msgid "Curriculum Integration"
 msgstr ""
