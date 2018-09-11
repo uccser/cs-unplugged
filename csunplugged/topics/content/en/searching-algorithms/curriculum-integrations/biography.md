@@ -5,7 +5,11 @@ Imagine you have been asked to introduce one of the following people, so either:
 -   Write an introduction that explains why they are famous and some interesting information about them.
 -   Write a biography: what situation were they living in, what did they achieve, and what impact has that had on society?
 
-{image file-path="img/topics/don-knuth.png" alt="Don Knuth stands in front of a piano." caption="Don Knuth stands in front of a piano." alignment="right"}
+{image file-path="img/topics/don-knuth.png" alt="Don Knuth stands in front of a piano." caption="true" alignment="right"}
+
+Don Knuth stands in front of a piano
+
+{image end}
 
 The most famous book on searching algorithms was written by [Don Knuth](https://en.wikipedia.org/wiki/Donald_Knuth), a mathematician and computer scientist.
 
@@ -15,7 +19,11 @@ He has several interests outside of computer science, including calligraphy and 
 
 The first mention of the binary search algorithm seems to have been made by [John Mauchly](http://history-computer.com/People/MauchlyBio.html).
 
-{image file-path="img/topics/sergey-brin-and-larry-page.png" alt="Larry Page and Sergey Brin." caption="Larry Page and Sergey Brin" alignment="right"}
+{image file-path="img/topics/sergey-brin-and-larry-page.png" alt="Larry Page and Sergey Brin." caption="true" alignment="right"}
+
+Larry Page and Sergey Brin
+
+{image end}
 
 Search engines, which use algorithms to search the entire world wide web, were developed by many people, but one of the most famous search engines was developed by [Sergey Brin](https://en.wikipedia.org/wiki/Sergey_Brin) and [Larry Page](https://en.wikipedia.org/wiki/Larry_Page).
 

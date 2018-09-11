@@ -29,7 +29,9 @@ Even the structure of folders used on a personal computer is a type of tree.
 
 ## Digital Technologies | Algorithms (and Data representation?)
 
-{panel type="teaching" title="Hashing and hashtags"}
+{panel type="teaching"}
+
+# Hashing and hashtags
 
 {image file-path="img/topics/hash-vs-hash.png" alt="The image has a diagram of a hash table and a hashtag symbol (#) with a not equals sign separating them."}
 
@@ -56,7 +58,6 @@ This number can be used to find out where the data is stored.
 Hashing, and using hash functions support programmers to make really fast searching algorithms.
 This approach seems almost fanciful because it relies a lot on randomness - making a very random value out of the key you're searching for, and hoping that not too many other things come out to the same value.
 Fortunately the statistics around this is well understood, and people can design very fast and efficient hash tables.
-
 
 Binary search trees are also the basis of a commonly used structure where the relationships between the keys are important - especially if you're looking for values similar to the one being searched for.
 

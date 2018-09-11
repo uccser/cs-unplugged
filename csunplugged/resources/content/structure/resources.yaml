@@ -57,5 +57,4 @@ treasure-island:
   copies: false
 hash-table-worksheet:
   generator-module: HashTableWorksheetResourceGenerator
-  thumbnail-static-path: img/resources/hash-table-worksheet/thumbnail.png
   copies: true

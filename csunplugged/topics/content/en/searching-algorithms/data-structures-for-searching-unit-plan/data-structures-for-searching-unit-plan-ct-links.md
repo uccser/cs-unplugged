@@ -1,4 +1,6 @@
-{panel type="ct-algorithm" title="Algorithmic thinking"}
+{panel type="ct-algorithm"}
+
+# Algorithmic thinking
 
 Searching through data is something computers do all the time, just think about how often we need to search for words in documents and information on the internet!
 Searching efficiently is a very important problem, and computer scientists have worked for a long time on solving this.
@@ -11,7 +13,9 @@ These algorithms are different for each of these data structures, but they are a
 
 {panel end}
 
-{panel type="ct-abstraction" title="Abstraction"}
+{panel type="ct-abstraction"}
+
+# Abstraction
 
 We often have to deal with large amounts of data and complexity when we are working on computational problems.
 To help us manage that complexity we can use data structures to organise and represent data in a certain way. Using data structures is a way of encapsulating the data so that we can focus on what the data represents, rather than the details of how each individual piece of data is used.
@@ -28,7 +32,9 @@ This is very helpful because it means they don’t need to spend their time re-i
 
 {panel end}
 
-{panel type="ct-decomposition" title="Decomposition"}
+{panel type="ct-decomposition"}
+
+# Decomposition
 
 Using data structures allows us to view a problem from a higher level, without having to focus on each individual part of how the problem, and it’s solution, work.
 But to create good data structures and understand how, and why they work, we need to break them down into their components and see how each of these functions and how they fit together.
@@ -39,7 +45,9 @@ Binary search trees can be highly efficient because they are based on using the 
 
 {panel end}
 
-{panel type="ct-pattern" title="Generalising and patterns"}
+{panel type="ct-pattern"}
+
+# Generalising and patterns
 
 There are many patterns (some algorithmic, some mathematical, and some abstract concepts) that appear throughout this unit.
 We have included several in our explanations, but it’s possible that students will come across more as well!
@@ -62,7 +70,9 @@ Often students learn the general properties of various structures to help choose
 
 {panel end}
 
-{panel type="ct-evaluation" title="Evaluation"}
+{panel type="ct-evaluation"}
+
+# Evaluation
 
 {image file-path="img/topics/kid-thinking-data.png" alt="A child thinks about data."}
 
@@ -80,7 +90,9 @@ For example it is important to evaluate the hash function that a hash table uses
 
 {panel end}
 
-{panel type="ct-logic" title="Logic"}
+{panel type="ct-logic"}
+
+# Logic
 
 To design data structures to work well we must use our logic skills.
 For example, we need to design the hash function we choose to use for a hash table, as it has a large impact on how we store data in the hash table, and this in turn has a large impact on how quickly we can search through it.
