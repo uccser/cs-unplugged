@@ -106,7 +106,7 @@
           <img src="{% get_static_prefix %}{{ implementation.language.icon }}" class="inline-image" />
         </summary>
 
-        <div class="boxed-text-content">
+        <div class="boxed-text-content" style="margin: 8px;">
           {% if not implementation.translation_available %}
             {% with model=implementation %}
               {% include 'topics/not-available-warning.html' %}
@@ -114,7 +114,9 @@
           {% else %}
 
             {% if implementation.language.slug == "python" %}
+              <h4>{% trans "What it should look like" %}</h4>
 
+              <p> Click on the green arrow, enter the inputs provided in the “testing examples” to see the expected output of your program. </p>
               <div class="mb-1">
                 <button onclick="runit()" class="btn btn-default btn-sm"> Run 
                   <i class="fas fa-play-circle" style="color: green;"></i>
@@ -123,16 +125,19 @@
 
               </div>
 
-              <div id="console" class="editor-height mb-2">
+              <div id="console" class="editor-height mb-2 " style="margin: 8px;">
                 
               </div>
 
               <textarea id="inputField" style="display: none">{{ implementation.raw_solution }}</textarea>
 
-            {% endif %}
+            {% else %}
 
-            <h4>{% trans "What it should look like" %}</h4>
-            {% render_html_field implementation.expected_result %}
+              <h4>{% trans "What it should look like" %}</h4>
+              {% render_html_field implementation.expected_result %}
+
+            {% endif%}
+
 
             {% if implementation.hints %}
               <details>
@@ -164,7 +169,7 @@
 
       <script>
 
-    window.onload = function configurations(){
+    function configurations(){
       Sk.configure({
         output: outputFunction,
         read: builtinRead,
@@ -173,17 +178,19 @@
         python3: true
       });
 
+      $('#console').empty();
     }
 
     function builtinRead(x) {
       if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
-              throw "File not found: '" + x + "'";
+        throw "File not found: '" + x + "'";
       return Sk.builtinFiles["files"][x];
     }
 
     function initiateconsole() {
       window.jqconsole = $('#console').jqconsole();
       jqconsole.SetPromptLabel('>>> ');
+      jqconsole.Enable()
     };
 
     function startPrompt() {
@@ -197,10 +204,10 @@
     };
 
     function runit() {
-      $('#console').empty();
+      configurations();
       initiateconsole();
 
-      var sourceCode = document.getElementById("inputField").value;
+      var sourceCode = document.getElementById("inputField").value; 
 
       var myPromise = Sk.misceval.asyncToPromise(function() {
         return Sk.importMainWithBody("<stdin>", false, sourceCode, true);
@@ -208,6 +215,7 @@
 
       myPromise.then(function(mod) {
           startPrompt();
+          jqconsole.Disable()
       },
         function(err) {
           console.log(err.toString());

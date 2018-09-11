@@ -1,4 +1,5 @@
-print("How many cards would you like to display?")
-num_range = int(input())
-for i in range(num_range):
-  print(2 ** i)
+print(1)
+print(2)
+print(4)
+print(8)
+print(16)

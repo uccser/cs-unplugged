@@ -1,6 +1,6 @@
 ```python
 original = input('Please enter a decimal number: ')
-decimal_number = original
+decimal_number = int(original)
 bit_value = 1
 binary_number = ''
 while decimal_number >= bit_value:

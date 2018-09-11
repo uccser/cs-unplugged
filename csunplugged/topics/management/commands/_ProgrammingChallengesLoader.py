@@ -166,18 +166,24 @@ class ProgrammingChallengesLoader(TranslatableModelLoader):
                     topic=self.topic
                 )
 
+                topics_to_file_path = {
+                    "Binary numbers": "binary-numbers",
+                    "Kidbots": "kidbots",
+                    "Error detection and correction": "error-detection-and-correction"
+                }
 
                 if prog_language != "scratch":
-                    base_path ='./topics/content/en/binary-numbers/programming-challenges'
+                    base_path ='./topics/content/en/'
                     file_path = os.path.join(
                         base_path,
+                        topics_to_file_path[str(self.topic)],
+                        'programming-challenges',
                         challenge_slug,
                         prog_language + "-raw-solution.txt")
 
                     if os.path.exists(file_path):
                         with open(file_path, 'r') as solution_file:
                             implementation.raw_solution = solution_file.read()
-                            print("--------------IT WORKED for --->" + challenge_slug)
 
                 self.populate_translations(implementation, implementation_translations)
                 self.mark_translation_availability(implementation, required_fields=["solution", "expected_result"])

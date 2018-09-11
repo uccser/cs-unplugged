@@ -1,6 +1,6 @@
 ```python
 original = input('Please enter a decimal number: ')
-number = original
+number = int(original)
 bit_value = 1
 cards = ''
 while number >= bit_value:

@@ -1,6 +1,6 @@
 ```python
 divisor = 2
-number = input('Enter a number to check if it\'s a prime number: ')
+number = int(input('Enter a number to check if it\'s a prime number: '))
 if number <= 1:
   print(str(number) + ' is not a prime number.')
 else:

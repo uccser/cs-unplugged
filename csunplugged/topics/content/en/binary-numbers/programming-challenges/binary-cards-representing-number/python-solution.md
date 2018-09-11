@@ -1,6 +1,6 @@
 ```python
 original = input('Please enter a number between 0 and 31: ')
-number = original
+number = int(original)
 bit_value = 32
 cards = ''
 while bit_value > 1:
