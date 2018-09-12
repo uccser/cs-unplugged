@@ -7,9 +7,6 @@ wheel==0.31.1
 # Frontend
 django-bootstrap-breadcrumbs==0.9.1
 
-# Frontend
-django-bootstrap-breadcrumbs==0.9.1
-
 # Resources
 Pillow==5.2.0
 yattag==1.10.0

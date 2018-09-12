@@ -112,7 +112,6 @@
               {% include 'topics/not-available-warning.html' %}
             {% endwith %}
           {% else %}
-
             {% if implementation.language.slug == "python" %}
               <h4>{% trans "What it should look like" %}</h4>
 
@@ -132,13 +131,9 @@
               <textarea id="inputField" style="display: none">{{ implementation.raw_solution }}</textarea>
 
             {% else %}
-
               <h4>{% trans "What it should look like" %}</h4>
               {% render_html_field implementation.expected_result %}
-
             {% endif%}
-
-
             {% if implementation.hints %}
               <details>
                 <summary >
@@ -167,70 +162,6 @@
   </div>
   {% endif %}
 
-      <script>
-
-    function configurations(){
-      Sk.configure({
-        output: outputFunction,
-        read: builtinRead,
-        inputfun: sInput,
-        inputfunTakesPrompt: true,
-        python3: true
-      });
-
-      $('#console').empty();
-    }
-
-    function builtinRead(x) {
-      if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
-        throw "File not found: '" + x + "'";
-      return Sk.builtinFiles["files"][x];
-    }
-
-    function initiateconsole() {
-      window.jqconsole = $('#console').jqconsole();
-      jqconsole.SetPromptLabel('>>> ');
-      jqconsole.Enable()
-    };
-
-    function startPrompt() {
-      jqconsole.Prompt(true, function (input) {
-          startPrompt();
-        });
-    };
-
-    function outputFunction(text) {
-      jqconsole.Write(text);
-    };
-
-    function runit() {
-      configurations();
-      initiateconsole();
-
-      var sourceCode = document.getElementById("inputField").value; 
-
-      var myPromise = Sk.misceval.asyncToPromise(function() {
-        return Sk.importMainWithBody("<stdin>", false, sourceCode, true);
-      });
-
-      myPromise.then(function(mod) {
-          startPrompt();
-          jqconsole.Disable()
-      },
-        function(err) {
-          console.log(err.toString());
-      });
-    } 
-
-    function sInput() {
-      return new Promise(function(resolve,reject) {
-        jqconsole.Input(function(input){
-          resolve(input);
-        })
-      })
-    }
-  </script>
-
 {% endblock content_container %}
 
 {% block end_content %}
@@ -241,5 +172,17 @@
     {% endif %}
   {% endif %}
 {% endblock end_content %}
+
+{% block scripts %}
+  <script src="{% static 'js/jqconsole.js' %}"></script>
+  <script src="{% static 'js/python-intrepretation.js' %}"></script>
+  <script src="{% static 'js/skulpt_min.js' %}"></script>
+  <script src="{% static 'js/skulpt_stdlib.js' %}"></script>
+{% endblock scripts %}
+
+{% block css %}
+  <link href="{% static 'css/jqconsole.css' %}" rel="stylesheet">
+{% endblock css %}
+
 
 

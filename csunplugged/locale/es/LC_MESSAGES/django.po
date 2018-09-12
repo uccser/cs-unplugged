@@ -1581,4 +1581,3 @@ msgstr "Lee la descripción completa del plan de estudios"
 #: templates/topics/unit-plan.html:46
 msgid "Lessons"
 msgstr "Lecciones"
->>>>>>> upstream/develop

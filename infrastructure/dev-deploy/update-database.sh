@@ -1,5 +1,3 @@
-#!/bin/bash
-
 source ./infrastructure/dev-deploy/load-dev-deploy-config-envs.sh
 
 # Updates the database for the development system
