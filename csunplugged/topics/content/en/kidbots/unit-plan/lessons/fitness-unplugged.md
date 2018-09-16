@@ -36,7 +36,7 @@ Today we are going to write our own unplugged fitness app. Before we start we ne
 
     -   A "GO" card to show the start of the program
     -   4 cards, each with a different exercise depicted on it
-    -   A card with that depicts how you should finish.
+    -   A card that depicts how you should finish.
         Ideas could be:
 
         -   Strike a pose
