@@ -73,7 +73,7 @@ This could be measure be either the number of instructions, or the amount of tim
 
 Did students recognise that multiple solutions (many different sets of instructions) are possible?
 Were they able to compare some and evaluate which ones use fewer commands and are the fastest?
-Are they able to see that measuring the time taken is a practical measure of the performance of a program, but counting the number of instructions is more consistent as it doesn't depend on who has the Bot and Tester roles.
+Are they able to see that measuring the time taken is a practical measure of the performance of a program, but counting the number of instructions is more consistent? (As it doesn't depend on who has the Bot and Tester roles).
 
 {panel end}
 
