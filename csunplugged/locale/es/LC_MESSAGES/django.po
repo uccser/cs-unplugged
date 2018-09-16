@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-07 00:46+0000\n"
-"PO-Revision-Date: 2018-09-15 11:11\n"
+"PO-Revision-Date: 2018-09-15 20:52\n"
 "Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -1648,7 +1648,7 @@ msgstr ""
 
 #: topics/models.py:140
 msgid "Unit Plan"
-msgstr ""
+msgstr "Actividades de la unidad"
 
 #: topics/models.py:141 topics/models.py:196 topics/models.py:452
 msgid "Return to topic"
