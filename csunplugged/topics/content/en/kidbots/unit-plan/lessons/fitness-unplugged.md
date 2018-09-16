@@ -85,7 +85,7 @@ Today we are going to write our own unplugged fitness app. Before we start we ne
     The Programmer watches to see if everyone is doing it correctly.
     The Tester is looking for if there are any numbers to change or if the activities need further instructions. When the Tester says “Go” start following your fitness app.
 
-14.  The Programmer asks the Tester if they saw anything they thought could be changed or improved?
+14.  The Programmer asks the Tester if they saw anything they thought could be changed or improved.
 
 ## Applying what we have just learnt
 
