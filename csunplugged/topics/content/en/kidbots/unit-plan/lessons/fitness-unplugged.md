@@ -29,7 +29,7 @@ Today we are going to write our own unplugged fitness app. Before we start we ne
     -   Running on the spot
     -   Star jumps
     -   Ski jumps
-    -   Balancing bean bags on your head
+    -   Catching bean bags
 
 2.  Work in your groups and draw on each of the cards.
     You should design:
@@ -68,7 +68,7 @@ Today we are going to write our own unplugged fitness app. Before we start we ne
 
 10.  We need to set the parameters.
     A parameter tells us how long to do something or how many times to do something.
-    Here we know to Go, To do star jumps (but not how many), to do ski jumps (but not how many), to catch a bean bag (but not how many) and that we should repeat the ski jumps and catch a bean bag, (but not how many times)!
+    Here we know to Go, To do star jumps (but not how many), to do ski jumps (but not how many), to catch a bean bag (but not how many) and that we should repeat the ski jumps and catch a bean bag, (but not how many times).
 
     {image file-path="img/topics/whiteboards-and-hula-hoop-4.png" alt="6 whiteboards arranged around and in hula hoop"}
 
