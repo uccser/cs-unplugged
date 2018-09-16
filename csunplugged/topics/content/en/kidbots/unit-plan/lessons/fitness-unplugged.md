@@ -48,7 +48,7 @@ Today we are going to write our own unplugged fitness app. Before we start we ne
 
 4.  Each group goes around and tries to work out what each of the cards mean from the other groups.
 
-5.  Come together and discuss what was the same and for which cards you had to “learn” because you weren’t sure what it was?
+5.  Come together and discuss what was the same, and for which cards you had to “learn” because you weren’t sure what it was.
 
 6.  This is the same with computer programming languages.
     You can learn to program with different languages, and some things seem similar in a new language, while other things you have to learn as it isn’t clear how to use a particular command.
