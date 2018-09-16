@@ -47,6 +47,6 @@ You could also put things in the way that the toy needs to avoid such as a prete
 
 # Teaching observations
 
-Making up their own story provides integrated learning with creative writing, and then writing a program to focus on what one character will do.
+Allowing students to make up their own story provides integrated learning in both creative writing and programming.
 
 {panel end}
