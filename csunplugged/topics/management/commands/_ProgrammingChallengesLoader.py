@@ -166,17 +166,11 @@ class ProgrammingChallengesLoader(TranslatableModelLoader):
                     topic=self.topic
                 )
 
-                topics_to_file_path = {
-                    "Binary numbers": "binary-numbers",
-                    "Kidbots": "kidbots",
-                    "Error detection and correction": "error-detection-and-correction"
-                }
-
                 if prog_language != "scratch":
                     base_path ='./topics/content/en/'
                     file_path = os.path.join(
                         base_path,
-                        topics_to_file_path[str(self.topic)],
+                        self.topic.slug,
                         'programming-challenges',
                         challenge_slug,
                         prog_language + "-raw-solution.txt")
