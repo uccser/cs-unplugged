@@ -90,7 +90,7 @@ Sobald Schüler verstehen, wie das binäre Zahlensystem funktioniert, haben sie 
 
 ## Lektionsaktivitäten
 
-1. Erinnern Sie die Schüler an die Regel, dass eine Karte die Punkte entweder vollständig anzeigt oder keine davon sichtbar sind. Wenn wir Karten durch Zeigen der Vorder- und Rückseiten ein- oder ausschalten können – wie würden wir genau 9 Punkte darstellen? Begin by asking if they want the 16 card (they should observe that it has too many dots), then the 8 card (they will likely reason that without it there aren't enough dots left), then 4, 2 and 1. Mit nur der Regel ausgestattet, dass jede Karte entweder sichtbar ist oder nicht, kommen Schüler für gewöhnlich auf die folgende Darstellung.
+1. Erinnern Sie die Schüler an die Regel, dass eine Karte die Punkte entweder vollständig anzeigt oder keine davon sichtbar sind. Wenn wir Karten durch Zeigen der Vorder- und Rückseiten ein- oder ausschalten können – wie würden wir genau 9 Punkte darstellen? Fragen Sie zunächst, ob sie die 16er-Karte haben möchten (sie sollten erkennen, dass diese zu viele Punkte hat), dann die 8er-Karte (sie werden vermutlich folgern, dass ohne diese Karte nicht genügend Punkte übrig sind), dann 4, 2 und 1. Mit nur der Regel ausgestattet, dass jede Karte entweder sichtbar ist oder nicht, kommen Schüler für gewöhnlich auf die folgende Darstellung.
     
     {image file-path="img/topics/binary-cards-total-9.png" alt="Darstellung, wonach 2 Binärkarten die Zahl 9 bilden"}
     
@@ -190,7 +190,7 @@ Manche Schüler mögen sich hier mit dem Konzept schwer tun, dass die Anzahl der
 
 ## Lektionsbetrachtung
 
-- Würde diese Aktivität auch mit weißen und cremefarbenen Karten funktionieren? Warum? Warum nicht? (Generell könnten diese verwendet werden, es wäre jedoch keine gute Idee. Hier sind wir auf die Antwort aus, dass es sich nicht um Kontrastfarben handelt und daher schwer zu erkennen wäre, ob sie ein- oder ausgeschaltet sind. This hints why computers use easily distinguished physical representations.)
+- Würde diese Aktivität auch mit weißen und cremefarbenen Karten funktionieren? Warum? Warum nicht? (Generell könnten diese verwendet werden, es wäre jedoch keine gute Idee. Hier sind wir auf die Antwort aus, dass es sich nicht um Kontrastfarben handelt und daher schwer zu erkennen wäre, ob sie ein- oder ausgeschaltet sind. Dies zeigt auf, warum Computer einfach zu unterscheidende physische Darstellungen verwenden.)
 - Welche gegensätzlichen Symbole oder Möglichkeiten gibt es, die wir binär als ein und aus darstellen können?
     
     - (Hier sind Ideen gefragt wie beispielsweise die Karten nach oben oder nach unten zu halten, einfach den Arm hochzustrecken, sitzen oder stehen oder sich anderer Darstellungen wie ein- oder aus- geschalteter Glühbirnen zu bedienen.)

@@ -2,11 +2,11 @@ Viele der informatischen Denkzusammenhänge in dieser Lektion entsprechen denen 
 
 {panel type="ct-algorithm"}
 
-# Algorithmic thinking
+# Algorithmisches Denken
 
 Die Schüler haben einen Algorithmus festgelegt und sind diesem mit einer von ihnen erstellten Programmiersprache gefolgt. Dabei mussten sie sich beim Erstellen ihrer Programmiersprache die Algorithmen überlegen, die sie mit diesen Anweisungen schreiben würden und herausfinden, welche Art von Anweisungen sie benötigen werden.
 
-#### Examples of what you could look for:
+#### Worauf Sie beispielsweise achten können:
 
 Haben die Schüler erkannt, dass die Anweisungen von links nach rechts befolgt werden müssen? Waren sie in der Lage, die Schleife richtig zu interpretieren?
 
@@ -14,13 +14,13 @@ Haben die Schüler erkannt, dass die Anweisungen von links nach rechts befolgt w
 
 {panel type="ct-abstraction"}
 
-# Abstraction
+# Abstraktion
 
 Die Symbole auf den Karten haben die von den Schülern auszuführenden körperlichen Aktivitäten dargestellt; diese Symbole sind eine abstrakte Darstellung.
 
 Zudem wurde Abstraktion eingesetzt, um Dinge zu vereinfachen, wobei der Hula-Hoop-Reifen als Schleife verwendet wurde.
 
-#### Examples of what you could look for:
+#### Worauf Sie beispielsweise achten können:
 
 Sind die Schüler mit den Symbolen zurechtgekommen?
 
@@ -28,11 +28,11 @@ Sind die Schüler mit den Symbolen zurechtgekommen?
 
 {panel type="ct-decomposition"}
 
-# Decomposition
+# Dekomposition
 
 Der Hula-Hoop-Reifen stellt eine zusammengesetzte Aktion dar, da die im Reifen liegenden Karten eine Unterliste von Aktionen sind, die als eine einzelne, aus den Unteraktionen bestehende Aktion erachtet werden könnte.
 
-#### Examples of what you could look for:
+#### Worauf Sie beispielsweise achten können:
 
 Waren die Schüler in der Lage, die Aktionen in die beiden Aktionen innerhalb des Hula-Hoop-Reifens zu zerlegen und dann diese Teilfolge des Anweisungssatzes mehrfach zu wiederholen?
 
@@ -40,11 +40,11 @@ Waren die Schüler in der Lage, die Aktionen in die beiden Aktionen innerhalb de
 
 {panel type="ct-pattern"}
 
-# Generalising and patterns
+# Generalisierung und Muster
 
-Durch Platzieren einer Zahl neben einer Aktion wurde angezeigt, wie oft die Aktion zu wiederholen ist, was eine präzise Darstellung eines Musters ist. For example, the actions "jump, jump, skip, jump, jump, skip, jump, jump, skip" contains a pattern that is repeated, so the actions could be represented as 3 repeats of (2 jump, 1 skip).
+Durch Platzieren einer Zahl neben einer Aktion wurde angezeigt, wie oft die Aktion zu wiederholen ist, was eine präzise Darstellung eines Musters ist. Beispielsweise enthalten die Aktionen „Springen, Springen, Seitgalopp, Springen, Springen, Seitgalopp, Springen, Springen, Seitgalopp“ ein sich wiederholendes Muster und könnten daher auch als 3 Wiederholungen aus (2 Sprünge, 1 Seitgalopp) dargestellt werden.
 
-#### Examples of what you could look for:
+#### Worauf Sie beispielsweise achten können:
 
 Haben die Schüler den Ablauf der Aktionen verstanden, d. h. die beiden Aktionen innerhalb des Reifens der Reihe nach ausgeführt und dann dieses Aktionspaar auf dem allgemeinen Fall basierend mehrmals wiederholt?
 
@@ -52,11 +52,11 @@ Haben die Schüler den Ablauf der Aktionen verstanden, d. h. die beiden Aktionen
 
 {panel type="ct-evaluation"}
 
-# Evaluation
+# Auswertung
 
 In dieser Lektion konnten die Schüler ihr Programm auswerten, indem sie ermittelt haben, wie viele Schritte erforderlich sind, um es vollständig auszuführen. In unserem Beispiel haben wir 10 + 5 = 15 Aktionen im Reifen und es wird dreimal wiederholt, womit wir auf insgesamt 45 Aktionen kommen. Zusammen mit den ersten fünf Hampelmannsprünge haben wir also insgesamt 50 Aktionen.
 
-#### Examples of what you could look for:
+#### Worauf Sie beispielsweise achten können:
 
 Haben die Schüler erkannt, dass die Gesamtanzahl der Aktionen ausgearbeitet werden kann, indem man die Zahlen innerhalb der Schleife addiert und sie dann mit der Zahl auf der Schleife multipliziert? Konnten sie die Gesamtanzahl der Aktionen ausarbeiten, indem sie die anderen Anweisungen außerhalb der Schleife zu dieser Summe addiert haben?
 
@@ -64,11 +64,11 @@ Haben die Schüler erkannt, dass die Gesamtanzahl der Aktionen ausgearbeitet wer
 
 {panel type="ct-logic"}
 
-# Logic
+# Logik
 
 Wenn Schüler auf Fehlfunktionen in ihren Programmen stoßen, müssen sie ihre Anweisungen unter logischen Gesichtspunkten Schritt für Schritt durchgehen, um den Fehler zu finden. Sie müssen sich überlegen, was ihren Erwartungen zufolge passieren sollte, wenn alle Anweisungen befolgt werden. Sofern sie nicht das erwartete Ergebnis erhalten, müssen sie herausfinden, was schiefgelaufen ist, warum es schiefgelaufen ist und wie der Fehler behoben werden kann. Dies erfordert, dass die Schüler ihr logisches Denkvermögen anwenden.
 
-#### Examples of what you could look for:
+#### Worauf Sie beispielsweise achten können:
 
 Gehen die Schüler ihre Anweisungen durch und sehen voraus, was jeweils passieren wird, wenn eine Anweisung ausgeführt wird? Wenden sie eine logische Methode an, wenn sie ihre Anweisungen auf Fehler untersuchen? Wie beispielsweise die Anweisungen Schritt für Schritt durchzugehen und zu überprüfen, ob der erwartete Ablauf eintritt, oder ihr Programm mit vorherigen Versionen zu vergleichen, die scheinbar keinen Fehler enthielten?
 

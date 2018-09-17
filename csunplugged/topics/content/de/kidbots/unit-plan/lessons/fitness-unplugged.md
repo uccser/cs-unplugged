@@ -18,7 +18,7 @@ Die aufgeführten Ressourcen sind für Gruppen von je 3 Schülern.
 
 Heute wollen wir ohne Computer unser eigenes Fitnessprogramm schreiben. Bevor wir loslegen, müssen wir eine Programmiersprache entwerfen, damit wir wissen, was zu tun ist.
 
-## Lesson activities
+## Lektionsaktivitäten
 
 1. Steckt als Klasse die Köpfe zusammen und überlegt euch, welche verschiedenen Fitnessübungen in eurem Programm enthalten sein könnten.
     
@@ -29,13 +29,13 @@ Heute wollen wir ohne Computer unser eigenes Fitnessprogramm schreiben. Bevor wi
     - Auf der Stelle joggen
     - Hampelmannsprünge
     - Skisprünge
-    - Catching bean bags
+    - Beanbags fangen
 
-2. Work in your groups and draw on each of the cards. You should design:
+2. Arbeitet in euren Gruppen zusammen und zeichnet auf die einzelnen Karten. Folgendes wird benötigt:
     
     - Eine „LOS“-Karte, um den Start des Programms anzuzeigen
     - 4 Karten, auf der jeweils eine andere Übung abgebildet ist
-    - A card that depicts how you should finish. Ideas could be:
+    - Eine Karte, die zeigt, wie die Fitnessübungen abgeschlossen werden sollen. Zum Beispiel:
         
         - Eine Pose einnehmen
         - Mit verschränkten Armen hinsetzen
@@ -45,7 +45,7 @@ Heute wollen wir ohne Computer unser eigenes Fitnessprogramm schreiben. Bevor wi
 
 4. Besucht mit eurer Gruppe die anderen Gruppen und versucht herauszufinden, was deren einzelne Karten bedeuten.
 
-5. Come together and discuss what was the same, and for which cards you had to “learn” because you weren’t sure what it was.
+5. Setzt euch zusammen und besprecht, was gleich war und bei welchen Karten ihr „lernen“ musstet, da euch deren Bedeutung nicht klar war.
 
 6. Bei Computerprogrammiersprachen ist es genauso. Man kann lernen, mit verschiedenen Sprachen zu programmieren, wobei manche Dinge in einer neuen Sprache ähnlich zu sein scheinen, während wir andere Dingen lernen müssen, da uns bestimmte Befehle nicht klar sind.
 
@@ -61,7 +61,7 @@ Heute wollen wir ohne Computer unser eigenes Fitnessprogramm schreiben. Bevor wi
     
     {image file-path="img/topics/whiteboards-and-hula-hoop-3.png" alt="Sechs Whiteboards außerhalb und innerhalb eines Hula-Hoop-Reifens angeordnet"}
 
-10. Jetzt müssen wir die Parameter festlegen. Parameter geben an, wie lange oder wie oft etwas ausgeführt werden soll. Here we know to Go, To do star jumps (but not how many), to do ski jumps (but not how many), to catch a bean bag (but not how many) and that we should repeat the ski jumps and catch a bean bag, (but not how many times).
+10. Jetzt müssen wir die Parameter festlegen. Parameter geben an, wie lange oder wie oft etwas ausgeführt werden soll. Bisher wissen wir, wo es LOS geht, dass wir Hampelmannsprünge ausführen (aber nicht, wie oft), dass wir Skisprünge ausführen (aber nicht, wie oft), dass wir Beanbags fangen (aber nicht, wie oft), und dass es bei den Skisprüngen und beim Fangen der Beanbags Wiederholungen gibt (aber nicht, wie viele).
     
     {image file-path="img/topics/whiteboards-and-hula-hoop-4.png" alt="Sechs Whiteboards außerhalb und innerhalb eines Hula-Hoop-Reifens angeordnet"}
 
@@ -73,7 +73,7 @@ Heute wollen wir ohne Computer unser eigenes Fitnessprogramm schreiben. Bevor wi
 
 13. Nachdem wir nun unser Fitnessprogramm zusammengestellt haben, ist es Zeit zum Testen. Der Programmierer beobachtet, ob das Programm von allen richtig ausgeführt wird. Der Tester achtet darauf, ob irgendwelche Zahlen geändert werden müssen oder ob für die Übungen weitere Anfweisungen erforderlich sind. Wenn der Tester „Los“ sagt, beginnt ihr damit, euer Fitnessprogramm auszuführen.
 
-14. The Programmer asks the Tester if they saw anything they thought could be changed or improved.
+14. Anschließend erkundigt sich der Programmierer beim Tester, ob diesem etwas aufgefallen sei, das eventuell geändert oder verbessert werden sollte.
 
 ## Das Gelernte anwenden
 
