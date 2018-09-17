@@ -4,7 +4,7 @@
 
 # See teaching this in action
 
-An example of teaching this can be viewed at at [1:09:56 in this video](https://www.youtube.com/watch?time_continue=3748&v=LH7cNtnV5DY).
+An example of teaching this can be viewed at [1:09:56 in this video](https://www.youtube.com/watch?time_continue=3748&v=LH7cNtnV5DY).
 
 {panel end}
 
