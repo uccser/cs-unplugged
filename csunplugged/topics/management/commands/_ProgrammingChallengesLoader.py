@@ -12,6 +12,7 @@ from topics.models import (
     ProgrammingChallengeImplementation,
 )
 
+
 class ProgrammingChallengesLoader(TranslatableModelLoader):
     """Custom loader for loading programming challenges."""
 
