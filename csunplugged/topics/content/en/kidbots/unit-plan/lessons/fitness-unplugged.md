@@ -31,7 +31,7 @@ Today we are going to write our own unplugged fitness app. Before we start we ne
     -   Ski jumps
     -   Balancing bean bags on your head
 
-2.  Work in your groups draw on each of the cards.
+2.  Work in your groups and draw on each of the cards.
     You should design:
 
     -   A "GO" card to show the start of the program

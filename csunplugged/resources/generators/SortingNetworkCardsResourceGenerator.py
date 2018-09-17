@@ -96,7 +96,7 @@ class SortingNetworkCardsResourceGenerator(BaseResourceGenerator):
                 name="type",
                 description=_("Card Type"),
                 values=create_key_labels(),
-                default="small_numbers"
+                default="large_numbers"
             )
         }
 

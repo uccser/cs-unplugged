@@ -13,10 +13,10 @@ class UnitPlanModelTest(BaseTestWithDB):
         unit_plan = self.test_data.create_unit_plan(topic, 1)
         self.assertEqual(unit_plan.__str__(), "Unit Plan 1")
 
-    def test_unit_plan_model_type(self):
+    def test_unit_plan_model_name(self):
         topic = self.test_data.create_topic(1)
         unit_plan = self.test_data.create_unit_plan(topic, 1)
-        self.assertEqual(unit_plan.model_type(), "Unit Plan")
+        self.assertEqual(unit_plan.MODEL_NAME, "Unit Plan")
 
     def test_unit_plan_model_get_absolute_url(self):
         topic = self.test_data.create_topic(1)

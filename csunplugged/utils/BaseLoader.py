@@ -25,19 +25,23 @@ from utils.errors.CouldNotFindYAMLFileError import CouldNotFindYAMLFileError
 class BaseLoader():
     """Base loader class for individual loaders."""
 
-    def __init__(self, base_path="", structure_dir="structure", content_path="", structure_filename=""):
+    def __init__(self, base_path="", structure_dir="structure", content_path="",
+                 structure_filename="", lite_loader=False):
         """Create a BaseLoader object.
 
         Args:
-            base_path: path to content_root, eg. "topics/content/" (str).
-            structure_dir: name of directory under base_path storing structure files (str).
-            content_path: path within locale/structure dir to content directory, eg. "binary-numbers/unit-plan" (str).
-            structure_filename: name of yaml file, eg. "unit-plan.yaml" (str).
+            base_path (str): path to content_root, eg. "topics/content/".
+            structure_dir (str): name of directory under base_path storing structure files.
+            content_path (str): path within locale/structure dir to content directory, eg. "binary-numbers/unit-plan".
+            structure_filename (str): name of yaml file, eg. "unit-plan.yaml".
+            lite_loader (bool): Boolean to state whether loader should only
+                be loading key content and perform minimal checks."
         """
         self.base_path = base_path
         self.structure_dir = structure_dir
         self.content_path = content_path
         self.structure_filename = structure_filename
+        self.lite_loader = lite_loader
         self.setup_md_to_html_converter()
 
     def get_localised_file(self, language, filename):
@@ -127,11 +131,55 @@ class BaseLoader():
         except FileNotFoundError:
             raise CouldNotFindMarkdownFileError(md_file_path, config_file_path)
 
+        """ Below is a hack to make the image-inline tag not require alt text to be
+            given when the language is not in English.
+            TODO: Remove this hack once translations are complete.
+        """
+        directories = md_file_path.split('/')
+        if 'en' not in directories:
+            custom_argument_rules = {
+                "image-container": {
+                    "alt": False
+                },
+                "image-inline": {
+                    "alt": False
+                },
+                "image-tag": {
+                    "alt": False
+                }
+            }
+        else:
+            custom_argument_rules = {
+                "image-container": {
+                    "alt": True
+                },
+                "image-inline": {
+                    "alt": True
+                },
+                "image-tag": {
+                    "alt": True
+                }
+            }
+
         custom_processors = self.converter.processor_defaults()
         if remove_title:
             custom_processors.add("remove-title")
-        self.converter.update_processors(custom_processors)
 
+        templates = self.load_template_files()
+        extensions = [
+            "markdown.extensions.fenced_code",
+            "markdown.extensions.codehilite",
+            "markdown.extensions.sane_lists",
+            "markdown.extensions.tables",
+            mdx_math.MathExtension()
+        ]
+        self.converter = Verto(
+            html_templates=templates,
+            extensions=extensions,
+            custom_argument_rules=custom_argument_rules,
+            processors=custom_processors
+        )
+        """ End of hack. """
         result = None
         try:
             result = self.converter.convert(content)
@@ -144,8 +192,10 @@ class BaseLoader():
 
         if len(result.html_string) == 0:
             raise EmptyMarkdownFileError(md_file_path)
-        check_converter_required_files(result.required_files, md_file_path)
-        check_converter_glossary_links(result.required_glossary_terms, md_file_path)
+
+        if not self.lite_loader:
+            check_converter_required_files(result.required_files, md_file_path)
+            check_converter_glossary_links(result.required_glossary_terms, md_file_path)
         return result
 
     def log(self, message, indent_amount=0):

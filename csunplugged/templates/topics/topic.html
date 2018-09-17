@@ -17,10 +17,9 @@
 {% block page_heading %}
   <h1 id="{{ topic.slug }}">{{ topic.name }}</h1>
   {% if not topic.translation_available %}
-    {% trans "topic" as topic_l10n %}
-    {% trans "list of topics" as list_of_topics_l10n %}
-    {% url "topics:index" as parent_url %}
-    {% with model=topic model_type=topic_l10n parent_type=list_of_topics_l10n parent_url=parent_url %}
+    {% url "topics:index" as url %}
+    {% trans "Return to list of topics" as url_label %}
+    {% with model=topic %}
       {% include 'topics/not-available-warning.html' %}
     {% endwith %}
   {% endif %}

@@ -1,9 +1,9 @@
 ```python
 number1 = int(input('Enter a number: '))
 done = False
-print('Enter \'done\' at any time to stop')
+print("Enter 'done' at any time to stop")
 while not done:
-  number2 = input('Enter a number to check if it\'s a divisor of the number ' + str(number1))
+  number2 = int(input("Enter a number to check if it's a divisor of the number " + str(number1)))
   if number2 == 'done':
     done = True
   else:

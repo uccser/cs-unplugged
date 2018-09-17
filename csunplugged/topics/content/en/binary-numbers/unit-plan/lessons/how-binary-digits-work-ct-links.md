@@ -87,7 +87,7 @@ The 1st bit (with 1 dot) turns over every time, the 2nd (with 2 dots) turns for 
 
 {image file-path="img/topics/col_binary_counting_pattern.png" alt="Binary counting pattern"}
 
-If you have 5 of the cards and all are visible, you will have the number 31, which is 1 less that the value of the next card, 32. Is this pattern always true?
+If you have 5 of the cards and all are visible, you will have the number 31, which is 1 less than the value of the next card, 32. Is this pattern always true?
 
 The amount of numbers you can represent with a certain number of bits is the same as the value of the next bit that can be added.
 For example, using 4 cards (1, 2, 4, 8) you can represent 16 different numbers (0-15), and the next card in the sequence is the number 16.

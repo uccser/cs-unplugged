@@ -32,14 +32,13 @@ Ask for two volunteers and give yourself and them the roles of:
 
 {image file-path="img/topics/kidbots-little-red-riding-hood-1.png" alt="8 x 8 grid with Grandma's house at position (4,2) and Little Red Riding Hood at position (1,3). Positions are counted from the top left corner, left then down, starting at 1."}
 
-Teacher: "I’m going to be the programmer, but I’m going to need your help."
-"We are  programming "the Bot", not just remote controlling it, because ALL the instructions are written before the Bot can follow those instructions.
+Teacher: "I’m going to be the programmer, but I’m going to need your help. We are programming the Bot, not just remote controlling it, because ALL the instructions are written before the Bot can follow those instructions."
+
+"It’s our job to write down clear instructions for the Bot, who is going to be (say the person’s name). (Student's name) will be the Tester and is going to give the instructions to the Bot. The Tester will be on the lookout for bugs."
+
+"First of all we need to decide, what programming language are we are going to use for this? I’ve chosen arrows to represent move forward, turn left and turn right."
 
 "Debugging is fun because you get a chance to change your program after it’s finished when you notice it’s not working how you thought it should."
-
-"It’s my job to write down clear instructions for the Bot, who is going to be (say the person’s name) and "The Tester" (who is...) is going to give the instructions to the Bot and be on the lookout for bugs."
-
-"First of all I need to decide, what programming language are we are going to use for this? I’ve chosen arrows to represent move forward, turn left and turn right."
 
 {panel type="teaching"}
 
@@ -72,7 +71,7 @@ If you are putting arrows on the grid, the turning arrows will also need a forwa
 "So let’s try that, and see what happens.
 
 "Tester - could you please take these instructions and pass them onto the the Bot.
-Be ready to underline what doesn’t work when you see the Bot doing something that doesn’t look right, and hand the whiteboard back to me to figure out how to fix the bug. "
+Be ready to underline what doesn’t work when you see the Bot doing something that doesn’t look right, and hand the whiteboard back to me to figure out how to fix the bug."
 
 {panel type="teaching"}
 
@@ -85,12 +84,12 @@ A programmer needs to visualise what would happen when they are writing the inst
 
 {panel end}
 
-Teacher: "Bot - please pick up Little Red Riding Hood ready to receive the instructions for the tester."
+Teacher: "Bot - please pick up Little Red Riding Hood and be ready to receive the instructions for the tester."
 (The bot can carry a toy or token representing Little Red Riding Hood; or they can imagine that they are guiding her).
 
 Tester then reads off the board: "move forward, move forward."
 
-{image file-path="img/topics/kidbots-little-red-riding-hood-2.gif"}
+{image file-path="img/topics/kidbots-little-red-riding-hood-2.gif" alt="Little Red Riding Hood moves forward 2 spaces to position (3,3)."}
 
 {panel type="teaching"}
 
@@ -111,14 +110,14 @@ What would we program next?
 Point to where the next piece of code needs to be added and add a move forward and turn left, turn left.
 (This is deliberately incorrect.)
 
-{image file-path="img/topics/kidbots-little-red-riding-hood-3.gif"}
+{image file-path="img/topics/kidbots-little-red-riding-hood-3.gif" alt="Little Red Riding Hood moves forward 3 spaces to position (4,3) and turns left twice."}
 
 I think it’s ready to test now.
 "Tester, please test my program" (the Programmer hands the program on the whiteboard to the Tester and the Bot should return to the starting square ready to rerun the program).
 
 Teacher: "Remember Tester, it’s your job to find any 'bugs' in my program.
 A bug is when my program isn’t doing what was expected.
-Your job is to draw a line under the piece of code where they notice the instructions seem to be going wrong.
+Your job is to draw a line under the piece of code where you notice the instructions seem to be going wrong.
 You can stop the Bot at the point that you think there is a bug."
 
 **Tester** then reads the instructions in the program off the board and the Bot executes them as they are read.
@@ -161,7 +160,7 @@ Let’s test it.
 
 Once the bug has been identified then ask the Tester to test it again; ask the Bot to pick up Little Red Riding Hood and go back to the start position, then the Tester reads them the instructions.
 
-{image file-path="img/topics/kidbots-little-red-riding-hood-4.gif"}
+{image file-path="img/topics/kidbots-little-red-riding-hood-4.gif" alt="Little Red Riding Hood moves forward 3 spaces to (4,3), turns left once and moves forward one space to (4,2)."}
 
 Did we successfully program Little Red Riding Hood to rescue Grandma?
 How do we know?

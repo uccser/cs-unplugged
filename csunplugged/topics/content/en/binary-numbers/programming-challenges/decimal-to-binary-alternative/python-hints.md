@@ -15,8 +15,8 @@
     calculate the remainder. For example, `5 % 2` is 1.)
     Add `remainder` values using the addition operator to the front of the
     `binary_number` variable. Remember that when combining strings and integers,
-    you need to cast the integers to strings. For example, `python:'hello' + 5`
-    is not valid but `python:'hello' + str(5)` will become 'hello5'.
+    you need to cast the integers to strings. For example, `'hello' + 5`
+    is not valid but `'hello' + str(5)` will become 'hello5'.
 -   Repeat these blocks while `decimal_number` is greater than 1 (use a while loop)
 -   Add `decimal_number` (which is now 1) to `binary_number` and display it
     as the output.

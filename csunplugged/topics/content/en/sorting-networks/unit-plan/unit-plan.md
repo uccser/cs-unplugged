@@ -148,7 +148,7 @@ processors are good at doing parallel computation of simple tasks.
 {image file-path="img/topics/sorting-network-ancient-sorting-network-text-en.png" alt="A GPU finds a cave painting of an ancient sorting network."}
 
 Sorting Networks were invented long before powerful GPUs came along; this is an
-exciting thing about Computer Science - some of the our discoveries are ahead
+exciting thing about Computer Science - some of our discoveries are ahead
 of the hardware that is available, so we're ready for the hardware if it does
 become commonly available!
 Note that the approach explored in these lessons is **not** a conventional

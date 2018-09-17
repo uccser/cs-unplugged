@@ -1,12 +1,6 @@
 Translations
 ##############################################################################
 
-.. note::
-  This guide is a work in progress, as translation support for CS Unplugged is a recent addition.
-  Many of the finer details of the translation workflow are likely to change as translators begin to work on the project.
-  Any roadblocks encountered and lessons learned will be used to refine the translation workflow and improve this guide.
-
-
 Getting Started
 ==============================================================================
 
@@ -14,22 +8,23 @@ It's really easy to start contributing translations using CS Unplugged
 
 1. Read this documentation page, especially the `Translation Notes`_ section.
 2. Create an account on `Crowdin <https://crowdin.com/join>`__.
-3. Visit the CS Unplugged `development site <http://cs-unplugged-dev.appspot.com/>`_.
-4. Switch to translation mode using the language drop down.
-5. Log in with your Crowdin credentials and select a target language.
-6. Start translating!
+3. Visit the `CS Unplugged Crowdin page <https://translate.csunplugged.org/>`__.
+4. Start translating!
+
+.. note::
+
+  The in-context translation has been removed temporarily as translation infrastructure is being updated.
+  We aim to `re-add this feature in a future update <https://github.com/uccser/arnold/issues/4>`__.
 
 Crowdin Overview
 ==============================================================================
-We use a localisation management platform called `Crowdin <https://crowdin.com/project/cs-unplugged>`__ for translation of CS Unplugged.
+We use a localisation management platform called `Crowdin <https://translate.csunplugged.org>`__ for translation of CS Unplugged.
 Our project is public, meaning that anyone can create an account and contribute translations.
 
 Crowdin has excellent documentation for translators, and all translators should read the following documents:
 
 - `Crowdin Introduction <https://support.crowdin.com/crowdin-intro/>`_, which provides an overview of the Crowdin platform
 - `Online Editor <https://support.crowdin.com/online-editor/>`_, which explains how to use the Crowdin UI to contribute translations.
-  Note that this page is written about the full online editor on Crowdin.com, but most of the information is also relevant to the `in-context editor <In-Context Localisation_>`_ that we use.
-
 
 Translation Phases
 ==============================================================================
@@ -44,34 +39,12 @@ These translations are then reviewed by a designated proofreader who will check 
 To request to become a proofreader, please `contact <https://support.crowdin.com/joining-translation-project/#contacting-a-project-manager>`_ one of the Crowdin project managers.
 
 .. note::
+
   While not enforced by Crowdin, proofreaders should not approve their own translations.
   Instead, they should be reviewed by a different proofreader.
 
 Finally, a technical review will be performed by a member of the CS Unplugged technical team.
 In this review, technical components such as Verto tags and document structure will be checked.
-
-In-Context Localisation
-==============================================================================
-We utilise Crowdin's in-context localisation feature to allow content translation directly on the development website.
-This lets translators see their translations appear as it will look on the final website, in real time.
-
-.. note::
-
-  Verto tags are an exception to this rule.
-
-  The verto tag text is rendered as raw text onto the front end, to allow translators to modify the tag if required.
-  These raw text tags will never be visible in the final release, as they are parsed and removed during verto processing.
-
-  For technical reasons, any changes in the translation of a verto tag will not be rendered in-context translation mode, and will only be visible after the translated file is downloaded for release.
-  See :ref:`inContextTranslations` for more details.
-
-To use in-context translation features, simply visit the CS Unplugged `development site <http://cs-unplugged-dev.appspot.com/>`_, and use the language selector to select ``Translation Mode``.
-
-.. note::
-  For bi-directional languages such as Hebrew and Arabic, translators should instead select ``Translation Mode (Bi-Directional)`` using the language selector.
-
-In cases where in-context translation mode is not available, it is also possible to use the standard Crowdin UI.
-To access this, visit the CS Unplugged project page on `Crowdin <https://crowdin.com/project/cs-unplugged>`_.
 
 Translation notes
 ==============================================================================

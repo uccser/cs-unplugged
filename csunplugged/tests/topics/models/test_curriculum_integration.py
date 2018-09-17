@@ -13,10 +13,10 @@ class CurriculumIntegrationModelTest(BaseTestWithDB):
         curriculum_integration = self.test_data.create_integration(topic, 1)
         self.assertEqual(curriculum_integration.__str__(), "Integration 1")
 
-    def test_curriculum_integration_model_type(self):
+    def test_curriculum_integration_model_name(self):
         topic = self.test_data.create_topic(1)
         curriculum_integration = self.test_data.create_integration(topic, 1)
-        self.assertEqual(curriculum_integration.model_type(), "Curriculum Integration")
+        self.assertEqual(curriculum_integration.MODEL_NAME, "Curriculum Integration")
 
     def test_curriculum_integration_model_get_absolute_url(self):
         topic = self.test_data.create_topic(1)

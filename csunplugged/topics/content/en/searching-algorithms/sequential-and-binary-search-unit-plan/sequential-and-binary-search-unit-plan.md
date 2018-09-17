@@ -72,8 +72,7 @@ Now imagine if he has a million words to search!
 
 **Binary search**: An algorithm that tells us how to efficiently find a specific value in an **ordered (sorted)** list.
 It is called ‘binary’ search because each time you look at a value in the list you divide the list into 2 parts, one is discarded and the other is kept.
-The word "binary" here just means something that has two parts, such as a binary star system (made of two stars); binary search shouldn't be confused binary numbers.
-
+The word "binary" here just means something that has two parts, such as a binary star system (made of two stars); binary search shouldn't be confused with binary numbers.
 
 Suppose our detective is looking for the word **"said"** from the following list, which is in alphabetical order: “a”, “from”, “is”, “it”, “my”, “said”, “the”.
 First the computer will go straight to the middle word, “it”  and see if that matches - because it doesn’t, the computer doesn’t need to check the 3 words to the left.

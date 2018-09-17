@@ -1,10 +1,13 @@
 """Models for the classic application."""
 
 from django.db import models
+from django.utils.translation import ugettext_lazy as _
 
 
 class ClassicPage(models.Model):
     """Model for Classic CS Unplugged page in database."""
+
+    MODEL_NAME = _("Classic CS Unplugged page")
 
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(unique=True)
@@ -18,14 +21,6 @@ class ClassicPage(models.Model):
             URL as string.
         """
         return self.redirect
-
-    def model_type(self):
-        """Text name of ClassicPage model.
-
-        Returns:
-            Name of the model (str).
-        """
-        return "Classic CS Unplugged page"
 
     def __str__(self):
         """Text representation of ClassicPage object.

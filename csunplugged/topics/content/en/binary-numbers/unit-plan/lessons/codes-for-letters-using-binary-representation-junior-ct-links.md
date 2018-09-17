@@ -8,7 +8,7 @@ Here’s an algorithm for converting a letter into a decimal number:
 
 Choose a letter to convert into a decimal number. Find the letter’s numerical position in the alphabet as follows:
 -   Say A (the first letter in the alphabet)
--   Say 1 (the first letter in our sequence of numbers)
+-   Say 1 (the first number in our sequence of numbers)
     -   Repeat the following instructions until you come to the letter you are looking to convert
         -   Say the next letter in the alphabet
         -   Say the next number (counting up by 1)

@@ -10,5 +10,5 @@
 -   Use the addition operator to combine strings. You can use multiple to combine
     multiple strings. Remember to check if the spaces are correct between the items
     being joined!
--   Use the `python:input()` function to get the user's input. You can place text
+-   Use the `input()` function to get the user's input. You can place text
     inside the brackets of input if you'd like to display your question.
