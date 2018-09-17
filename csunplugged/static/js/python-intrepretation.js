@@ -58,3 +58,7 @@
         })
       })
     }
+
+    window.onload = function(){
+      runit();
+    }
