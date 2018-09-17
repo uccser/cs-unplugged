@@ -5,16 +5,12 @@ from django.core.exceptions import ObjectDoesNotExist
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.TranslatableModelLoader import TranslatableModelLoader
-
-
-
 from topics.models import (
     LearningOutcome,
     ProgrammingChallengeDifficulty,
     ProgrammingChallengeLanguage,
     ProgrammingChallengeImplementation,
 )
-
 
 class ProgrammingChallengesLoader(TranslatableModelLoader):
     """Custom loader for loading programming challenges."""
@@ -142,8 +138,6 @@ class ProgrammingChallengesLoader(TranslatableModelLoader):
                 for language, content in expected_result_translations.items():
                     implementation_translations[language]["expected_result"] = content.html_string
 
-
-
                 solution_translations = self.get_markdown_translations(
                     filename_template.format("solution"),
                     heading_required=False
@@ -157,6 +151,7 @@ class ProgrammingChallengesLoader(TranslatableModelLoader):
                     heading_required=False,
                     required=False
                 )
+
                 for language, content in hints_translations.items():
                     implementation_translations[language]["hints"] = content.html_string
 
@@ -167,7 +162,7 @@ class ProgrammingChallengesLoader(TranslatableModelLoader):
                 )
 
                 if prog_language != "scratch":
-                    base_path ='./topics/content/en/'
+                    base_path = './topics/content/en/'
                     file_path = os.path.join(
                         base_path,
                         self.topic.slug,
