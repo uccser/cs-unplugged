@@ -45,7 +45,7 @@ Were students able to decompose the actions into the two inside the loop, and th
 # Generalising and patterns
 
 Placing a number beside an action indicated how many times it could be done, which is a concise representation of a pattern.
-For example, the actions "jump, jump, skip, jump, jump, skip, jump, jump, skip" make a pattern that could be represented as 3 lots of (2 jump, 1 skip).
+For example, the actions "jump, jump, skip, jump, jump, skip, jump, jump, skip" contains a pattern that is repeated, so the actions could be represented as 3 repeats of (2 jump, 1 skip).
 
 #### Examples of what you could look for:
 
