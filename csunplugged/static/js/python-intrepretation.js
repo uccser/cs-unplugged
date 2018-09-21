@@ -1,3 +1,9 @@
+function builtinRead(x) {
+  if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
+    throw "File not found: '" + x + "'";
+  return Sk.builtinFiles["files"][x];
+}
+
 function configurations(){
   Sk.configure({
     output: outputFunction,
@@ -8,12 +14,6 @@ function configurations(){
   });
 
   $('#console').empty();
-}
-
-function builtinRead(x) {
-  if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
-    throw "File not found: '" + x + "'";
-  return Sk.builtinFiles["files"][x];
 }
 
 function initiateconsole() {
@@ -42,7 +42,7 @@ function runit() {
     return Sk.importMainWithBody("<stdin>", false, sourceCode, true);
   });
 
-  myPromise.then(function(mod) {
+  myPromise.then(function() {
       startPrompt();
       jqconsole.Disable()
   },
@@ -52,13 +52,9 @@ function runit() {
 } 
 
 function sInput() {
-  return new Promise(function(resolve,reject) {
+  return new Promise(function(resolve, reject) {
     jqconsole.Input(function(input){
       resolve(input);
     })
   })
-    }
-
-window.onload = function(){
-  runit();
 }
