@@ -25,7 +25,7 @@ Let’s see what we have.
 
 Once upon a time there was a misunderstood wolf, who everyone thought was unfriendly because he had big sharp scary teeth.
 He was very shy and one day he heard a little girl skipping down the path and he needed to hide quickly, and the only place was to hide in the well.
-The goal is the program the wolf to hide in the well.
+The goal is to program the wolf to hide in the well.
 
 {panel type="teaching"}
 
@@ -47,6 +47,6 @@ You could also put things in the way that the toy needs to avoid such as a prete
 
 # Teaching observations
 
-Making up their own story provides integrated learning with creative writing, and then writing a program to focus on what one character will do.
+Allowing students to make up their own story provides integrated learning in both creative writing and programming.
 
 {panel end}
