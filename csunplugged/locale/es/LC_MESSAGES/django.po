@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-07 00:46+0000\n"
-"PO-Revision-Date: 2018-09-15 20:52\n"
+"PO-Revision-Date: 2018-09-19 19:50\n"
 "Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -596,7 +596,7 @@ msgstr "Números difíciles (3 dígitos)"
 
 #: resources/generators/SortingNetworkResourceGenerator.py:13
 msgid "None (Blank - Useful as template)"
-msgstr ""
+msgstr "Ninguno (En blanco - Útil como plantilla)"
 
 #: resources/generators/TrainStationsResourceGenerator.py:9
 msgid "Circular"
