@@ -40,8 +40,8 @@ Logisches Denken bedeutet, von bereits bekannten Regeln Gebrauch zu machen und v
 
 {panel type="ct-evaluation"}
 
-# Beurteilung
+# Auswertung
 
-Im Zuge einer Beurteilung kann zum Beispiel ermittelt werden, wie viele verschiedene Werte mit einer bestimmten Anzahl von Bits dargestellt werden können (z. B. 5 Bits können 32 verschiedene Werte darstellen) und umgekehrt (um 1 000 verschiedene Werte darzustellen, werden mindestens 10 Bits benötigt).
+Im Zuge einer Auswertung kann zum Beispiel ermittelt werden, wie viele verschiedene Werte mit einer bestimmten Anzahl von Bits dargestellt werden können (z. B. 5 Bits können 32 verschiedene Werte darstellen) und umgekehrt (um 1 000 verschiedene Werte darzustellen, werden mindestens 10 Bits benötigt).
 
 {panel end}
