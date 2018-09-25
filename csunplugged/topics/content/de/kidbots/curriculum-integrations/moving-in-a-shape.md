@@ -18,7 +18,7 @@ Lassen Sie die Schüler auf einem leeren Kidbots-Gitterfeld versuchen, den Bot i
 
 ## Weitere Aufgaben
 
-Gibt es andere Möglichkeiten, wie wir den „Bot“ programmieren könnten, das Quadrat zu zeichnen? Diskutiert die Programmierungsoptionen und testet alle durch. Mögliche Antworten wären, das Quadrat rückwärts zu zeichnen oder eine Linie mehr als einmal auszuführen.
+Gibt es andere Möglichkeiten, wie wir den „Bot“ programmieren könnten, das Quadrat zu zeichnen? Diskutiert die Programmierungsoptionen und testet alle durch. Mögliche Antworten wären beispielsweise, das Quadrat rückwärts zu zeichnen oder eine Linie mehr als einmal auszuführen.
 
 Sie können die Schüler auch dazu auffordern, andere einfache geometrische Formen zu zeichnen.
 

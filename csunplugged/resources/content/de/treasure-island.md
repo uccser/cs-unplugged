@@ -1,3 +1,3 @@
-# Treasure Island
+# Schatzinsel
 
-This resource contains printouts for the Treasure Island activity for learning about Finite State Automata. You will need a map printout for each participant, and one set of island posters.
+Diese Ressource enthält Ausdrucke für die Schatzinselaktivität, um das Thema endliche Automaten zu erkunden. Für diese Aktivität wird ein Kartenausdruck pro Teilnehmer und ein Satz Inselposter benötigt.

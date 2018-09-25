@@ -1,4 +1,6 @@
 ---
+arrows:
+  description: Schneiden Sie diese für die Schüler aus.
 left-right-cards:
   description: Schneiden Sie diese für Schüler aus, die links und rechts noch lernen.
 job-badges:

@@ -27,15 +27,15 @@ Bitten Sie die Schüler um zwei Freiwillige und teilen Sie ihnen und sich selbst
 
 **Rolle 3:** Der Bot (der das Programm ausführt).
 
-## Lesson activities
+## Lektionsaktivitäten
 
 {image file-path="img/topics/kidbots-little-red-riding-hood-1.png" alt="8 x 8 Gitterfeld mit Großmutters Hütte auf Position (4,2) und Rotkäppchen auf Position (1,3). Positionen werden, mit 1 beginnend, von der oberen linken Ecke nach links und dann nach unten gezählt."}
 
-Teacher: "I’m going to be the programmer, but I’m going to need your help. We are programming the Bot, not just remote controlling it, because ALL the instructions are written before the Bot can follow those instructions."
+Lehrer: „Ich werde der Programmierer sein, werde aber eure Hilfe benötigen. Wir werden den Bot programmieren und nicht nur fernsteuern, da ALLE Anweisungen geschrieben werden, bevor der Bot diesen Anweisungen folgen kann.“
 
-"It’s our job to write down clear instructions for the Bot, who is going to be (say the person’s name). (Student's name) will be the Tester and is going to give the instructions to the Bot. The Tester will be on the lookout for bugs."
+„Es ist unsere Aufgabe, klare Anweisungen für den Bot niederzuschreiben, der (nennen Sie den Namen des Schülers) sein wird. (Name des Schülers) wird der Tester sein und die Anweisungen an den Bot weitergeben. Der Tester wird nach Fehlern Ausschau halten.“
 
-"First of all we need to decide, what programming language are we are going to use for this? I’ve chosen arrows to represent move forward, turn left and turn right."
+„Zuallererst müssen wir festlegen, welche Programmiersprache wir dafür verwenden werden. Ich habe Pfeile gewählt, um Vorwärts bewegen, Nach links drehen und Nach rechts drehen darzustellen.“
 
 „Debugging macht Spaß, da man Gelegenheit erhält, sein Programm nach erfolgter Fertigstellung zu ändern, wenn man feststellt, dass es nicht wie vorgesehen funktioniert.“
 
@@ -63,7 +63,7 @@ Eventuell müssen manche Schüler das Programm zunächst in Aktion sehen, um den
 
 „Versuchen wir es also einmal und schauen, was passiert.“
 
-„Tester – Kannst du bitte diese Anweisungen nehmen und sie an den Bot weitergeben. Be ready to underline what doesn’t work when you see the Bot doing something that doesn’t look right, and hand the whiteboard back to me to figure out how to fix the bug."
+„Tester – Kannst du bitte diese Anweisungen nehmen und sie an den Bot weitergeben. Unterstreiche alles, was nicht funktioniert, wenn du siehst, dass der Bot etwas macht, das nicht richtig aussieht, und gib mir dann das Whiteboard zurück, um herauszufinden, wie der Fehler behoben werden kann.“
 
 {panel type="teaching"}
 
@@ -73,11 +73,11 @@ Ein wichtiger Aspekt dieser Aktivität ist die Tatsache, dass alle Anweisungen g
 
 {panel end}
 
-Teacher: "Bot - please pick up Little Red Riding Hood and be ready to receive the instructions for the tester." (The bot can carry a toy or token representing Little Red Riding Hood; or they can imagine that they are guiding her).
+Lehrer: „Bot – nimm bitte das Rotkäppchen und bereite dich darauf vor, die Anweisungen für den Tester entgegenzunehmen.“ (Der Bot kann ein Spielzeug oder einen Spielstein tragen, um damit Rotkäppchen darzustellen oder sich vorstellen, Rotkäppchen zu leiten).
 
 Der Tester liest dann vom Whiteboard ab: „Vorwärts bewegen, vorwärts bewegen.“
 
-{image file-path="img/topics/kidbots-little-red-riding-hood-2.gif" alt="Little Red Riding Hood moves forward 2 spaces to position (3,3)."}
+{image file-path="img/topics/kidbots-little-red-riding-hood-2.gif" alt="Rotkäppchen bewegt sich zwei Stellen vorwärts zur Position (3,3)."}
 
 {panel type="teaching"}
 
@@ -93,11 +93,11 @@ An dieser Stelle könnten Sie die Frage aufwerfen, ob eventuell eine „Stopp“
 
 Ergänzen wir das Ganze nun etwas. Was wäre als Nächstes zu programmieren? Zeigen Sie auf die Stelle, an der das nächste Stück Code hinzugefügt werden muss und fügen Sie eine Vorwärtsbewegung und Nach links drehen, Nach links drehen hinzu. (Dies ist absichtlich falsch.)
 
-{image file-path="img/topics/kidbots-little-red-riding-hood-3.gif" alt="Little Red Riding Hood moves forward 3 spaces to position (4,3) and turns left twice."}
+{image file-path="img/topics/kidbots-little-red-riding-hood-3.gif" alt="Rotkäppchen bewegt sich drei Stellen vorwärts zur Position (4,3) und dreht sich zweimal nach links."}
 
 Ich glaube, wir können es jetzt testen. „Tester, bitte teste mein Programm“ (der Programmierer händigt das Whiteboard mit dem Programm dem Tester aus und der Bot sollte zum Startquadrat zurückkehren, um das Programm erneut ablaufen lassen zu können).
 
-Lehrer: „Tester, denk daran, dass es dein Job ist, etwaige Fehler in meinem Programm zu erkennen. Fehler sind alle nicht erwartungsgemäß ablaufenden Vorgänge. Your job is to draw a line under the piece of code where you notice the instructions seem to be going wrong. Du kannst den Bot an der Stelle stoppen, an der du einen Fehler vermutest.“
+Lehrer: „Tester, denk daran, dass es dein Job ist, etwaige Fehler in meinem Programm zu erkennen. Fehler sind alle nicht erwartungsgemäß ablaufenden Vorgänge. Deine Aufgabe ist es, den Teil des Codes zu unterstreichen, an der du bemerkst, dass eine Anweisung nicht den gewünschten Verlauf zu nehmen scheint. Du kannst den Bot an der Stelle stoppen, an der du einen Fehler vermutest.“
 
 Der **Tester** liest dann die Programmanweisungen vom Whiteboard ab und der Bot führt diese aus während sie vorgelesen werden.
 
@@ -127,7 +127,7 @@ Wenn die Klasse nicht bestimmen kann, wie der Programmfehler zu beseitigen ist, 
 
 Sobald der Fehler identifiziert wurde, bitten Sie den Tester, das Ganze erneut zu testen. Bitten Sie den Bot, das Rotkäppchen an die Startposition zurückzubringen, und dann den Tester, die Anweisungen vorzulesen.
 
-{image file-path="img/topics/kidbots-little-red-riding-hood-4.gif" alt="Little Red Riding Hood moves forward 3 spaces to (4,3), turns left once and moves forward one space to (4,2)."}
+{image file-path="img/topics/kidbots-little-red-riding-hood-4.gif" alt="Rotkäppchen bewegt sich drei Stellen vorwärts zur Position (4,3), dreht sich einmal nach links und bewegt sich eine Stelle vorwärts zur Position (4,2)."}
 
 Haben wir Rotkäppchen erfolgreich programmiert, die Großmutter zu retten?
 

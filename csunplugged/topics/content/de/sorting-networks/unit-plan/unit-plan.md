@@ -1,4 +1,4 @@
-# Sorting networks
+# Sortiernetzwerke
 
 {panel type="video"}
 
@@ -15,7 +15,7 @@ Die folgenden Videos zeigen weitere Beispiele zu Sortiernetzwerken:
 
 {panel end}
 
-Nachdem Computer immer mehr zu unserem Alltag gehören und die von uns genutzte Datenmenge beständig ansteigt, möchten wir natürlich, dass Computer all diese Daten so schnell wie möglich verarbeiten. One way to increase the speed of a computer is to write programs that use fewer computational steps (as shown in the lessons on sorting and searching algorithms). Another way to solve problems faster is to have several computers work on different parts of the same task at the same time, which is what this unit explores. Leider ist es nicht immer ganz so einfach, Arbeitsgänge zwischen verschiedenen Prozessoren aufzuteilen!
+Nachdem Computer immer mehr zu unserem Alltag gehören und die von uns genutzte Datenmenge beständig ansteigt, möchten wir natürlich, dass Computer all diese Daten so schnell wie möglich verarbeiten. Die Geschwindigkeit eines Computers kann zum einen mithilfe von Programmen beschleunigt werden, die weniger rechnerische Schritte anwenden (wie in den Lektionen zu Sortier- und Suchalgorithmen aufgezeigt). Zum anderen können Probleme schneller gelöst werden, wenn mehrere Computer gleichzeitig an verschiedenen Teilen derselben Aufgabe arbeiten, was in dieser Unterrichtseinheit behandelt wird. Leider ist es nicht immer ganz so einfach, Arbeitsgänge zwischen verschiedenen Prozessoren aufzuteilen!
 
 {image file-path="img/topics/sorting-network-many-computers-vs-one.png" alt="Bild mehrerer Menschen, die an ihren Computern arbeiten, im Vergleich zu einer Einzelperson an einem Computer."}
 
@@ -68,7 +68,7 @@ Eine solch kleine Operation (zwei Werte vergleichen) über mehrere Geräte zu ve
 
 {image file-path="img/topics/sorting-network-ancient-sorting-network-text-en.png" alt="Ein GPU entdeckt eine Höhlenmalerei eines antiken Sortiernetzwerks."}
 
-Sorting Networks were invented long before powerful GPUs came along; this is an exciting thing about Computer Science - some of our discoveries are ahead of the hardware that is available, so we're ready for the hardware if it does become commonly available! Hinweis: Die in diesen Lektionen behandelte Methode ist **kein** konventioneller Sortieralgorithmus, da das in einem konventionellen System ausgeführte Sortieren nur jeweils einen Vergleich anstellen kann. Konventionelle Sortieralgorithmen werden in einer anderen Lektion behandelt. Diese Lektionen sollen Schülern hauptsächlich dabei helfen, die Vor- und Nachteile zu erkunden, die zwischen der Verteilung von Arbeitsgängen über mehrere Computer und der Verwendung nur eines Prozessors bestehen.
+Sortiernetzwerke wurden lange vor der Entwicklung leistungsfähiger GPUs erfunden. Dies ist eine interessante Sache an der Informatik – einige unserer Entdeckungen sind der verfügbaren Hardware weit voraus. Wir sind also für die Hardware gerüstet, wenn sie denn allseits zur Verfügung stehen sollte! Hinweis: Die in diesen Lektionen behandelte Methode ist **kein** konventioneller Sortieralgorithmus, da das in einem konventionellen System ausgeführte Sortieren nur jeweils einen Vergleich anstellen kann. Konventionelle Sortieralgorithmen werden in einer anderen Lektion behandelt. Diese Lektionen sollen Schülern hauptsächlich dabei helfen, die Vor- und Nachteile zu erkunden, die zwischen der Verteilung von Arbeitsgängen über mehrere Computer und der Verwendung nur eines Prozessors bestehen.
 
 Eine zurzeit populäres Modell der parallelen Verarbeitung ist „MapReduce“, das in vielen Cloud-Computing-Systemen Anwendung findet, wo Unmengen an Berechnungen über eine große Anzahl von Prozessoren verteilt werden.
 

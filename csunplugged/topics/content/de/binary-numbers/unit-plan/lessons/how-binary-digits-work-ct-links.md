@@ -76,7 +76,7 @@ Beim binären Aufwärtszählen liegt ein Muster vor, wie oft bestimmte Karten um
 
 {image file-path="img/topics/col_binary_counting_pattern.png" alt="Binäres Zählmuster"}
 
-If you have 5 of the cards and all are visible, you will have the number 31, which is 1 less than the value of the next card, 32. Is this pattern always true?
+Wenn wir fünf der Karten haben und alle sichtbar sind, haben wir die Zahl 31, die um eins kleiner ist als der Wert der nächsten Karte, 32. Trifft dieses Muster immer zu?
 
 Die Anzahl der Zahlen, die mit einer bestimmten Anzahl von Bits dargestellt werden kann, entspricht dem Wert des nächsten Bit, das hinzugefügt werden kann. Beispiel: Anhand von vier Karten (1, 2, 4, 8) können 16 unterschiedliche Zahlen (0-15) dargestellt werden und die nächste Karte in der Folge ist die Zahl 16. Jedes Mal, wenn wir die nächste Karte hinzufügen, verdoppeln wir auch die Anzahl der verschiedenen Zahlen, die wir darstellen können.
 

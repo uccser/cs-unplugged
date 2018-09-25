@@ -26,7 +26,7 @@ Ein Programmierer zu sein bedeutet nicht nur, die einzelnen Befehle einer Progra
 
 {panel type="math"}
 
-# Mathematical links
+# Mathematische Zusammenhänge
 
 Zwischen Mathematik und Programmieren bestehen enge Zusammenhänge. Gute Programmierer müssen über ein solides mathematisches Grundwissen verfügen, da ein Programm im Grunde genommen eine mathematische Formel ist und die Erstellung der richtigen Programmstruktur ausgeprägtes logisches Denken erfordert.
 
@@ -46,6 +46,6 @@ Sequentielle Anweisungen erteilen zu können, gut mit anderen zusammenzuarbeiten
 
 - Welche der Schüler sind bei den Aufgaben sehr systematisch vorgegangen?
 
-- Who were the students who were very detailed in their activities?
+- Welche Schüler sind bei den Aktivitäten sehr detailliert vorgegangen?
 
 - Wie würde ich das Unterrichten dieser Einheit anders gestalten?

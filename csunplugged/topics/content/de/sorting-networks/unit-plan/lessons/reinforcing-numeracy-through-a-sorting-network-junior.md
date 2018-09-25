@@ -4,7 +4,7 @@
 
 Was sind Beispiele für Aufgaben, die schneller abgeschlossen werden, wenn mehr Personen dabei mitwirken? Was sind Beispiele für Aufgaben, die *nicht* schneller abgeschlossen werden, wenn mehr Personen dabei mitwirken?
 
-### Potential answers could include:
+### Mögliche Antworten wären beispielsweise:
 
 {image file-path="img/topics/sorting-network-office-note-text-en.png" alt="Mehrere Schüler, die zusammen eine Mitteilung zum Sekretariat tragen."}
 
@@ -18,7 +18,7 @@ Hier kommen eventuell Aufgaben wie das Aufräumen des Klassenzimmers, das Einsam
 
 {video url="https://www.youtube.com/embed/M-z5pDjqtZk"}
 
-Some other videos showing different situations using Sorting Networks:
+Die folgenden Videos zeigen weitere Beispiele zu Sortiernetzwerken:
 
 - [Video 1](https://www.youtube.com/watch?v=LOxfdsBBjKI)
 - [Video 2](https://www.youtube.com/watch?v=30WcPnvfiKE)
@@ -31,13 +31,13 @@ Zeigen Sie den Schülern das auf den Boden gezeichnete Sortiernetzwerk und erkl�
 
 {panel type="math"}
 
-# Mathematical links
+# Mathematische Zusammenhänge
 
 Unterstützt Schüler dabei, das Ordnen beliebiger Zahlenbereiche, vom Ordnen einstelliger Zahlen bis hin zu Brüchen und Dezimalzahlen oder Zahlen in Millionenhöhe, besser zu verstehen.
 
 {panel end}
 
-## Lesson activities
+## Lektionsaktivitäten
 
 {image file-path="img/topics/sorting-network-kids.png" alt="Eine Gruppe Kinder ordnet Elemente in einem auf Beton gezeichneten Sortiernetzwerk."}
 
@@ -46,7 +46,7 @@ Unterstützt Schüler dabei, das Ordnen beliebiger Zahlenbereiche, vom Ordnen ei
 3. Geben Sie jedem der sechs Schüler eine Karte in die Hand (verwenden Sie zunächst die Karten mit den Zahlen von 1 bis 6; die Karten sollten den Schülern ungeordnet ausgehändigt werden). Diese Karten sind die Eingaben in diesen coolen Kreidecomputer (es handelt sich um einen speziellen Computer, der mehrere Operationen gleichzeitig ausführen kann).
 4. Lassen Sie die ersten beiden Schüler den Linien von ihren Kreisen aus folgen, bis sie sich in einem Quadrat treffen (die anderen sollten aufmerksam zusehen).
 5. Nachdem die beiden das Quadrat betreten haben, sollten sie „Hallo“ zueinander sagen (damit soll sichergestellt werden, dass beide anhalten und sich mit diesem Schritt auseinandersetzen) und dann ihre Karten vergleichen, um festzustellen, wer die niedrigere und wer die höhere Zahl hat.
-6. The student with the lower number should follow the line out to the left and go to the next box, while the person with the higher number follows the line leaving to the right to go to the next box.
+6. Der Schüler mit der niedrigeren Zahl soll der nach links führenden Linie folgen und zum nächsten Quadrat gehen, während die Person mit der höheren Zahl der nach rechts führenden Linie folgt, um zum nächsten Quadrat zu gelangen.
 7. Lassen Sie nun das nächste Schülerpaar denselben Ablauf durchführen – sich in einem Quadrat treffen und mit der kleineren Zahl nach links und mit der größeren Zahl nach rechts gehen.
 8. Jetzt können Sie das verbleibende Schülerpaar den Ablauf durchführen lassen (erinnern Sie sie daran, „Hallo“ zu sagen, wenn sie sich treffen).
 9. Sobald die Schüler verstehen, worauf Sie hinauswollen, lassen Sie sie diesen Ablauf so oft wiederholen, bis sie am Ende des Netzwerks ankommen. Bleibt jemand zurück, müssen die Schüler zum Anfang zurückkehren. Sie müssen acht geben, wenn sie sich in einem Quadrat treffen, und sichergehen, dass beide Personen, die sich getroffen haben, das Ergebnis kennen.
@@ -57,9 +57,9 @@ Unterstützt Schüler dabei, das Ordnen beliebiger Zahlenbereiche, vom Ordnen ei
 
 # Unterrichtsbeobachtungen
 
-Sofern es nicht funktioniert hat, ist möglicherweise ein Schülerpaar zum falschen Quadrat gelaufen oder eine Person ist allen anderen voraus gerannt. Have the group repeat the task and check each comparison. Falls es ein zweites Mal nicht funktioniert, bitten Sie ein paar Schüler, als „Prüfer“ zu fungieren und zu bestätigen, dass an jedem Quadrat die richtige Entscheidung getroffen wurde, welche Person nach links und welche nach rechts laufen muss. Wenn die Schüler dazu anzuregt werden, beim Zusammentreffen in einem Quadrat „Hallo“ zu sagen, kann vermieden werden, dass jemand weiterläuft, bevor eine Entscheidung über die Werte getroffen wurde.
+Sofern es nicht funktioniert hat, ist möglicherweise ein Schülerpaar zum falschen Quadrat gelaufen oder eine Person ist allen anderen voraus gerannt. Lassen Sie die Gruppe die Aufgabe wiederholen und überprüfen Sie jeden Vergleich. Falls es ein zweites Mal nicht funktioniert, bitten Sie ein paar Schüler, als „Prüfer“ zu fungieren und zu bestätigen, dass an jedem Quadrat die richtige Entscheidung getroffen wurde, welche Person nach links und welche nach rechts laufen muss. Wenn die Schüler dazu anzuregt werden, beim Zusammentreffen in einem Quadrat „Hallo“ zu sagen, kann vermieden werden, dass jemand weiterläuft, bevor eine Entscheidung über die Werte getroffen wurde.
 
-{image file-path="img/topics/sorting-network-too-far-kid.png" alt="A child walks too far in the sorting network activity, failing the activity for everyone."}
+{image file-path="img/topics/sorting-network-too-far-kid.png" alt="Eines der Kinder läuft bei der Sortiernetzwerkaktivität zu weit, wodurch die Aktivität für alle misslingt."}
 
 Sofern ein Schüler vor allen anderen zum Ende rennt, weil er bereits weiß, wo die Zahl hinkommt, sobald die Zahlen sortiert sind (das passiert ziemlich oft!) werden einige Schüler im Netzwerk stecken bleiben, weil sie niemanden haben, mit dem sie ihre Zahl vergleichen können. Dies ist eine gute Gelegenheit, die Schüler daran zu erinnern, dass Computer die eingegebenen Anweisungen genau befolgen müssen, um sicherzustellen, dass sie das richtige Ergebnis erzielen. Und es bestärkt auch die Notwendigkeit von Teamarbeit!
 

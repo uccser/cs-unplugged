@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-07 00:46+0000\n"
-"PO-Revision-Date: 2018-09-15 10:56\n"
+"PO-Revision-Date: 2018-09-25 09:12\n"
 "Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #: classic/models.py:10
 msgid "Classic CS Unplugged page"
-msgstr ""
+msgstr "CS Unplugged Original-Seite"
 
 #: config/settings/base.py:139
 msgid "Translation mode"
@@ -30,7 +30,7 @@ msgstr "Übersetzungsmodus (bidirektional)"
 
 #: general/models.py:11
 msgid "General page"
-msgstr ""
+msgstr "Allgemeine Seite"
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:10
 msgid "12 digits"
@@ -85,21 +85,21 @@ msgstr "Nein – Einseitig drucken."
 
 #: resources/generators/BinaryCardsResourceGenerator.py:104
 msgid "with numbers"
-msgstr ""
+msgstr "mit Zahlen"
 
 #: resources/generators/BinaryCardsResourceGenerator.py:106
 msgid "without numbers"
-msgstr ""
+msgstr "ohne Zahlen"
 
 #: resources/generators/BinaryCardsResourceGenerator.py:109
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:110
 msgid "with black back"
-msgstr ""
+msgstr "mit schwarzer Rückseite"
 
 #: resources/generators/BinaryCardsResourceGenerator.py:111
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:112
 msgid "without black back"
-msgstr ""
+msgstr "ohne schwarze Rückseite"
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:20
 #: resources/generators/BinaryWindowsResourceGenerator.py:15
@@ -128,12 +128,12 @@ msgstr "Punktezahl anzeigen"
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:106
 #: resources/generators/BinaryWindowsResourceGenerator.py:192
 msgid "with dot counts"
-msgstr ""
+msgstr "mit Punktezahl"
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:108
 #: resources/generators/BinaryWindowsResourceGenerator.py:194
 msgid "without dot counts"
-msgstr ""
+msgstr "ohne Punktezahl"
 
 #: resources/generators/BinaryToAlphabetResourceGenerator.py:12
 msgid "Student"
@@ -173,15 +173,15 @@ msgstr "Wertedarstellung"
 
 #: resources/generators/JobBadgesResourceGenerator.py:14
 msgid "Hello, I'm a Programmer"
-msgstr ""
+msgstr "Hallo, ich bin ein Programmierer"
 
 #: resources/generators/JobBadgesResourceGenerator.py:15
 msgid "Hello, I'm a Tester"
-msgstr ""
+msgstr "Hallo, ich bin ein Tester"
 
 #: resources/generators/JobBadgesResourceGenerator.py:16
 msgid "Hello, I'm a Bot"
-msgstr ""
+msgstr "Hallo, ich bin ein Bot"
 
 #: resources/generators/LeftRightCardsResourceGenerator.py:14
 msgid "Left"
@@ -596,7 +596,7 @@ msgstr "Schwierige Zahlen (3-stellig)"
 
 #: resources/generators/SortingNetworkResourceGenerator.py:13
 msgid "None (Blank - Useful as template)"
-msgstr ""
+msgstr "Ohne (Leer – als Vorlage geeignet)"
 
 #: resources/generators/TrainStationsResourceGenerator.py:9
 msgid "Circular"
@@ -612,55 +612,55 @@ msgstr "Schienenform"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:14
 msgid "Student map"
-msgstr ""
+msgstr "Karte für Schüler"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:15
 msgid "Island posters"
-msgstr ""
+msgstr "Inselposter"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:25
 msgid "Dead Man's Island"
-msgstr ""
+msgstr "Totenkopfinsel"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:35
 msgid "Musket Hill"
-msgstr ""
+msgstr "Musketenhügel"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:45
 msgid "Mutineers' Island"
-msgstr ""
+msgstr "Meutererinsel"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:55
 msgid "Pirates' Island"
-msgstr ""
+msgstr "Pirateninsel"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:65
 msgid "Shipwreck Bay"
-msgstr ""
+msgstr "Schiffswrackbucht"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:75
 msgid "Smugglers' Cove"
-msgstr ""
+msgstr "Schmugglerbucht"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:85
 msgid "Treasure Island"
-msgstr ""
+msgstr "Schatzinsel"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:105
 msgid "Printable type"
-msgstr ""
+msgstr "Ausdrucksart"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:323
 msgid "Boat A"
-msgstr ""
+msgstr "Boot A"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:326
 msgid "Boat B"
-msgstr ""
+msgstr "Boot B"
 
 #: resources/models.py:12
 msgid "Printable"
-msgstr ""
+msgstr "Ausdruck"
 
 #: resources/utils/BaseResourceGenerator.py:18
 msgid "A4"
@@ -714,7 +714,7 @@ msgstr "Eventuell ist einer der nachstehenden Links nützlich:"
 
 #: templates/404.html:19
 msgid "Homepage"
-msgstr ""
+msgstr "Startseite"
 
 #: templates/404.html:26 templates/base.html:91 templates/base.html:225
 msgid "Search"
@@ -1120,7 +1120,7 @@ msgstr "Berater"
 
 #: templates/general/people.html:35
 msgid "Computer Scientist"
-msgstr ""
+msgstr "Informatiker"
 
 #: templates/general/people.html:38
 msgid "Current Team"
@@ -1128,21 +1128,21 @@ msgstr "Aktuelles Team"
 
 #: templates/general/people.html:41
 msgid "Founder &amp; Content Writer"
-msgstr ""
+msgstr "Gründer &amp; Content-Verfasser"
 
 #: templates/general/people.html:42 templates/general/people.html:43
 #: templates/general/people.html:52 templates/general/people.html:53
 msgid "Content Writer"
-msgstr ""
+msgstr "Content-Verfasser"
 
 #: templates/general/people.html:44
 msgid "Project Manager &amp; Technical Team"
-msgstr ""
+msgstr "Projektmanager &amp; Technisches Team"
 
 #: templates/general/people.html:45 templates/general/people.html:46
 #: templates/general/people.html:54 templates/general/people.html:55
 msgid "Technical Team"
-msgstr ""
+msgstr "Technisches Team"
 
 #: templates/general/people.html:49
 msgid "Previous Team Members"
@@ -1150,15 +1150,15 @@ msgstr "Frühere Teammitglieder"
 
 #: templates/general/people.html:56
 msgid "Creative Content Developer &amp; Illustrator"
-msgstr ""
+msgstr "Kreativer Content-Entwickler &amp; Grafiker"
 
 #: templates/general/people.html:59
 msgid "Community Contributors"
-msgstr ""
+msgstr "Community-Beiträge"
 
 #: templates/general/people.html:68
 msgid "Translations"
-msgstr ""
+msgstr "Übersetzungen"
 
 #: templates/general/people.html:74
 msgid "up to version 3.2.2"
@@ -1303,7 +1303,7 @@ msgstr "Keine Ausdrucke verfügbar."
 
 #: templates/resources/resource.html:20
 msgid "Return to list of printables"
-msgstr ""
+msgstr "Zurück zur Liste der Ausdrucke"
 
 #: templates/resources/resource.html:31
 msgid "Create Printable"
@@ -1320,7 +1320,7 @@ msgstr "Der Download dieses Ausdrucks umfasst %(copies_amount)s Varianten."
 
 #: templates/resources/resource.html:51
 msgid "Download Printable"
-msgstr ""
+msgstr "Ausdruck herunterladen"
 
 #: templates/resources/resource.html:59
 msgid "Preview"
@@ -1493,7 +1493,7 @@ msgstr "<h4>Tut uns leid! Dieses Unplugged-Element ist noch nicht in %(language)
 
 #: templates/topics/not-available-warning.html:36
 msgid "Return to homepage "
-msgstr ""
+msgstr "Zurück zur Startseite "
 
 #: templates/topics/programming-challenge-language-solution.html:10
 #, python-format
@@ -1599,7 +1599,7 @@ msgstr "Zurück zum Thema"
 
 #: templates/topics/topic.html:21
 msgid "Return to list of topics"
-msgstr ""
+msgstr "Zurück zur Themenliste"
 
 #: templates/topics/topic.html:33
 msgid "Unit Plans"
@@ -1636,33 +1636,33 @@ msgstr "Lektionen"
 
 #: topics/models.py:31
 msgid "Curriculum Area"
-msgstr ""
+msgstr "Bildungsbereich"
 
 #: topics/models.py:64
 msgid "Learning Outcome"
-msgstr ""
+msgstr "Lernerfolg"
 
 #: topics/models.py:91
 msgid "Classroom Resource"
-msgstr ""
+msgstr "Schulraumressource"
 
 #: topics/models.py:140
 msgid "Unit Plan"
-msgstr ""
+msgstr "Lehrplan"
 
 #: topics/models.py:141 topics/models.py:196 topics/models.py:452
 msgid "Return to topic"
-msgstr ""
+msgstr "Zurück zum Thema"
 
 #: topics/models.py:195
 msgid "Programming Challenge"
-msgstr ""
+msgstr "Progammieraufgabe"
 
 #: topics/models.py:330
 msgid "Return to unit plan"
-msgstr ""
+msgstr "Zurück zum Lehrplan"
 
 #: topics/models.py:451
 msgid "Curriculum Integration"
-msgstr ""
+msgstr "Lehrplaninhalt"
 

@@ -6,7 +6,7 @@ Schüler sollten über das Grundwissen zu Sortiernetzwerken aus Lektion 1 verfü
 
 ## Schlüsselfragen
 
-- Könnte man mit einem Sortiernetzwerk eventuell auch andere Dinge als Zahlen sortieren? Was könnten wir beispielsweise noch sortieren? (Mögliche Antworten wären: Dinge nach Farbe, Format, Alter oder Größe zu sortieren).
+- Könnte man mit einem Sortiernetzwerk eventuell auch andere Dinge als Zahlen sortieren? Was könnten wir beispielsweise noch sortieren? (Mögliche Antworten wären beispielsweise: Dinge nach Farbe, Format, Alter oder Größe zu sortieren).
 
 ## Lektionseinstieg
 
@@ -14,7 +14,7 @@ Zeigen Sie den Schülern das Sortiernetzwerk erneut (Schüler finden oft Gefalle
 
 {panel type="math"}
 
-# Mathematical links
+# Mathematische Zusammenhänge
 
 Ergebnisse voraussehen: Durch Nachvollziehen der Funktionsweise von Sortiernetzwerken untersuchen Schüler verschiedene Möglichkeiten der Verwendung des Sortiernetzwerks und erkunden, warum die niedrigste und die höchste Zahl stets an der richtigen Ausgabeposition ankommen.
 
@@ -26,7 +26,7 @@ Dieser Teil der Lektion behandelt weitere Möglichkeiten, mit den Zahlen zu arbe
 
 ### Abwandlung 1: Identischer Wert
 
-{image file-path="img/topics/sorting-network-equal-3.png" alt="Two people each holding up a card with the number 3 on it."}
+{image file-path="img/topics/sorting-network-equal-3.png" alt="Zwei Personen, die jeweils eine Karte mit der Zahl 3 darauf hochhalten."}
 
 Bei dieser Abwandlung testen die Schüler das Sortiernetzwerk mit einem Satz Karten, bei dem einige Karten identische Werte haben, wie beispielsweise 1, 2, 3, 3, 4, 5. Vermutlich werden die Schüler fragen, was zu tun ist, wenn sie zwei identische Karten vergleichen – fragen Sie zurück, was sie denken, und sie werden wahrscheinlich erkennen, dass es keinen Unterschied macht (wenn sich 3 und 3 treffen spielt es keine Rolle, welche Zahl nach links und welche nach rechts geht!). Stellen Sie den Schülern die Aufgabe vorauszusehen, was am Ende des Netzwerks passieren wird (eventuell erkennen sie, dass identische Werte nebeneinander landen werden).
 
@@ -58,7 +58,7 @@ Wenn wir die Links/Rechts-Entscheidung umkehren, erhalten wir eine umgekehrte Re
 
 ### Abwandlung 3: Buchstaben des Alphabets
 
-{image file-path="img/topics/sorting-network-variation-alphabet.png" alt="Cards with letters on them."}
+{image file-path="img/topics/sorting-network-variation-alphabet.png" alt="Karten mit Buchstaben darauf."}
 
 Geben Sie den Schülern Karten mit Buchstaben darauf. Fragen Sie, wie die Karten verglichen werden könnten (Schüler sollten erkennen, dass eine alphabetische Reihenfolge möglich wäre). Lassen sie es die Schüler durch Ordnen der Karten ausprobieren.
 
@@ -76,15 +76,15 @@ Wenn es den Schülern schwer fällt, ein Beispiel zu finden, können Sie ihnen d
 
 Das Sortiernetzwerk ist dazu ausgelegt, konsistent in eine Richtung und nicht in zwei Richtungen zu funktionieren. Zum Beispiel zeigt die erste Abbildung unten eine Eingabe, die zufällig geordnet herauskommt, wenn das Netzwerk rückwärts durchlaufen wird, während dies bei der zweiten Eingabe nicht der Fall ist. Wenn es bei nur einer Eingabe (der zweiten) scheitert, können wir uns nicht darauf verlassen, auch wenn es manchmal funktioniert. In die andere Richtung wird es die Zahlen stets richtig ordnen.
 
-{image file-path="img/topics/sorting-network-backwards-1.png" alt="This diagram shows that when the Sorting Network is given the input 654321 it happens to come out sorted when ran backwards."}
+{image file-path="img/topics/sorting-network-backwards-1.png" alt="Diese Darstellung zeigt, dass uns das Sortiernetzwerk die Eingabe 654321 bei umgekehrter Ausführung in geordneter Reihenfolge zurückgibt."}
 
-{image file-path="img/topics/sorting-network-backwards-2.png" alt="This diagram shows that when the Sorting Network is given the input 512364 it does not come out sorted when ran backwards."}
+{image file-path="img/topics/sorting-network-backwards-2.png" alt="Diese Darstellung zeigt, dass uns das Sortiernetzwerk die Eingabe 512364 bei umgekehrter Ausführung nicht in geordneter Reihenfolge zurückgibt."}
 
 {panel end}
 
 ## Das Gelernte anwenden
 
-Diese Art von Algorithmus muss auf spezialisierter Hardware ausgeführt werden, um mehrere Vergleichsvorgänge gleichzeitig vornehmen zu können. Derartige Algorithmen werden gegenwärtig nur für spezialisierte Programme verwendet, beispielsweise werden sie mitunter auf dem Grafikprozesser (GPU) eines Computers ausgeführt, da diese Prozessoren gut für die parallele Verarbeitung geeignet sind. Sorting Networks were invented long before powerful GPUs came along; this is an exciting thing about Computer Science - some of our discoveries are ahead of the hardware that is available, so we're ready to make use of the hardware when it does become commonly available! Hinweis: Dies ist *kein* konventioneller Sortieralgorithmus, da das in einem konventionellen System ausgeführte Sortieren nur jeweils einen Vergleich anstellen kann. Konventionelle Sortieralgorithmen werden in einer anderen Lektion behandelt.
+Diese Art von Algorithmus muss auf spezialisierter Hardware ausgeführt werden, um mehrere Vergleichsvorgänge gleichzeitig vornehmen zu können. Derartige Algorithmen werden gegenwärtig nur für spezialisierte Programme verwendet, beispielsweise werden sie mitunter auf dem Grafikprozesser (GPU) eines Computers ausgeführt, da diese Prozessoren gut für die parallele Verarbeitung geeignet sind. Sortiernetzwerke wurden lange vor der Entwicklung leistungsfähiger GPUs erfunden. Dies ist eine interessante Sache an der Informatik – einige unserer Entdeckungen sind der verfügbaren Hardware weit voraus. Wir sind also für die Nutzung der Hardware gerüstet, wenn sie allseits zur Verfügung stehen wird! Hinweis: Dies ist *kein* konventioneller Sortieralgorithmus, da das in einem konventionellen System ausgeführte Sortieren nur jeweils einen Vergleich anstellen kann. Konventionelle Sortieralgorithmen werden in einer anderen Lektion behandelt.
 
 ## Lektionsbetrachtung
 

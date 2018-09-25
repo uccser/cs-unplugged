@@ -2,7 +2,7 @@
 
 ## Schlüsselfragen
 
-- Welche verschiedenen Zahlensysteme kennen wir? (Mögliche Antworten wären: Römische Ziffern, Strichlisten, Zahlenbasen wie binäre, oktale und hexadezimale Systeme, sprachbasierte Systeme wie Chinesisch oder Altägyptisch.)
+- Welche verschiedenen Zahlensysteme kennen wir? (Mögliche Antworten wären beispielsweise: Römische Ziffern, Strichlisten, Zahlenbasen wie binäre, oktale und hexadezimale Systeme, sprachbasierte Systeme wie Chinesisch oder Altägyptisch.)
 - Warum verwenden wir normalerweise zehn Ziffern? (Vermutlich weil wir zehn Finger haben und weil es, beispielsweise im Vergleich zu Strichlisten, eine ziemlich effiziente Methode ist, Dinge zu erfassen.)
 - Warum haben wir verschiedene Zahlensysteme? (Sie sind für unterschiedliche Dinge geeignet. Beispielsweise sind Strichlisten beim Zählen praktisch und römische Ziffern können dazu dienen, eine Zahl mysteriöser aussehen zu lassen oder schwerer lesbar zu machen.)
 

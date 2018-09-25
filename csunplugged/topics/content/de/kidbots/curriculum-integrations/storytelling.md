@@ -22,7 +22,7 @@ Mal sehen, was wir hier haben.
 - Da ist Großmutters Hütte.
 - Und da ist auch ein Brunnen.
 
-Es war einmal ein missverstandener Wolf, von dem jeder dachte, dass er unfreundlich war, da er große scharfe und beängstigende Zähne hatte. Er war jedoch sehr schüchtern und eines Tages hörte er, wie ein kleines Mädchen den Weg herunter sprang, und wollte sich schnell verstecken und die einzige Möglichkeit war der Brunnen. The goal is to program the wolf to hide in the well.
+Es war einmal ein missverstandener Wolf, von dem jeder dachte, dass er unfreundlich war, da er große scharfe und beängstigende Zähne hatte. Er war jedoch sehr schüchtern und eines Tages hörte er, wie ein kleines Mädchen den Weg herunter sprang, und wollte sich schnell verstecken und die einzige Möglichkeit war der Brunnen. Unser Ziel ist es, den Wolf zu programmieren, sich im Brunnen zu verstecken.
 
 {panel type="teaching"}
 
@@ -42,6 +42,6 @@ Denkt euch anhand eines Spielzeugs und eines Hindernisses eure eigene Geschichte
 
 # Unterrichtsbeobachtungen
 
-Allowing students to make up their own story provides integrated learning in both creative writing and programming.
+Anhand der Möglichkeit, sich eigene Geschichten auszudenken, werden Schülern durch integratives Lernen die Strukturen des kreativen Schreibens und des Programmierens vermittelt.
 
 {panel end}

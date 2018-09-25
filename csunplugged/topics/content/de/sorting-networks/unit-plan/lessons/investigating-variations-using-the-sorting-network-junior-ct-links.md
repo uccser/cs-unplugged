@@ -2,7 +2,7 @@ Viele dieser Zusammenhänge sind vom Lehrplan und von Lektion 1 umfasst. Hier si
 
 {panel type="ct-algorithm"}
 
-# Algorithmic thinking
+# Algorithmisches Denken
 
 Beim Vergleichen von Wörtern für eine alphabetische Reihenfolge vergleicht der Algorithmus jeweils zwei Wörter Buchstabe für Buchstabe und basiert die Entscheidung auf den ersten beiden Buchstaben, die sich voneinander unterscheiden.
 
@@ -14,7 +14,7 @@ Waren die Schüler in der Lage, Wörter systematisch zu vergleichen? Können sie
 
 {panel type="ct-abstraction"}
 
-# Abstraction
+# Abstraktion
 
 Sortiernetzwerke sind für jede Art von Daten geeignet, die verglichen werden können. Das bedeutet, dass wir nicht wissen müssen, um welche Art von Daten es sich handelt. Wir müssen nur wissen, wie die Daten verglichen und geordnet werden können.
 
@@ -26,9 +26,9 @@ Haben die Schüler erkannt, dass verschiedene Arten von Daten mit demselben Sort
 
 {panel type="ct-pattern"}
 
-# Generalising and patterns
+# Generalisierung und Muster
 
-In this lesson we moved from comparing numbers to the idea of comparing information in general. This meant we were able to compare other things like letters.
+In dieser Lektion sind wir vom Vergleichen von Zahlen zum Konzept des Vergleichens von Daten im Allgemeinen übergegangen. Somit konnten wir auch andere Dinge, wie beispielsweise Buchstaben, vergleichen.
 
 #### Worauf Sie achten sollten
 
@@ -38,7 +38,7 @@ Haben die Schüler erkannt, dass andere Arten von Daten, wie beispielsweise Buch
 
 {panel type="ct-evaluation"}
 
-# Evaluation
+# Auswertung
 
 Wir haben ausgewertet, ob das Sortiernetzwerk rückwärts funktionieren würde. Falls wir ein Beispiel finden, das scheitert, ist nachgewiesen, dass es so nicht verwendet werden kann.
 
@@ -50,7 +50,7 @@ Haben die Schüler erkannt, dass dieses eine Beispiel eines rückwärts nicht fu
 
 {panel type="ct-logic"}
 
-# Logic
+# Logik
 
 Wie im Lehrplan beschrieben, kann das Sortiernetzwerk die Daten sortieren, zwischen denen eine transitive Relation besteht, und alle von uns in dieser Lektion verwendeten Arten von Daten verfügen über diese transitive Relation.
 
