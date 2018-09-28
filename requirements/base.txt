@@ -13,7 +13,7 @@ yattag==1.10.0
 tinycss==0.4
 
 # Markdown
-verto==0.9.3
+verto==0.10.0
 python-markdown-math==0.5
 
 # Search
