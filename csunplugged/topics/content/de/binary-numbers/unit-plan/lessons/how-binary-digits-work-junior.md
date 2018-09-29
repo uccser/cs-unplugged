@@ -82,7 +82,7 @@ Hier ist zunächst einmal eine Karte, die das klitzekleine Ding ist, das ein- od
     
     # Unterrichtsbeobachtungen
     
-    Hintergrundinformationen für wissbegierige Geister! Würden wir weiter Karten aushändigen, hätten wir nach 8 Karten insgesamt 256 Punkte, wenn wir alle Karten zusammenzählen würden. Das sind 8 Bits, was allgemein als ein Byte bezeichnet wird. Dies hier zu erwähnen, kann unter Umständen ablenken, manche Schüler mögen jedoch bereits mit dem Konzept vertraut sein, dass 8 Bits ein Byte sind, und dies feststellen. Einstweilen arbeiten wir jedoch mit einer 4-Bits-Darstellung, was nicht ganz so praktisch ist wie ein ganzes Byte, zum Unterrichten jüngerer Schüler aber eine gute Größe ist. 4 Bits werden übrigens als ein Nibble (manchmal auch Nybble geschrieben) bezeichnet! Dies nur nebenbei als amüsante Zusatzinformation für interessierte Schüler.
+    Hintergrundinformationen für wissbegierige Geister! Würden wir weiter Karten aushändigen, hätten wir nach 8 Karten insgesamt 256 Punkte, wenn wir alle Karten zusammenzählen würden. Das sind 8 Bits, was allgemein als ein Byte bezeichnet wird. Dies hier zu erwähnen, kann unter Umständen ablenken, manche Schüler mögen jedoch bereits mit dem Konzept vertraut sein, dass 8 Bits ein Byte sind, und dies feststellen. Einstweilen arbeiten wir jedoch mit einer 4-Bit-Darstellung, was nicht ganz so praktisch ist wie ein ganzes Byte, zum Unterrichten jüngerer Schüler aber eine gute Größe ist. 4 Bits werden übrigens als ein Nibble (manchmal auch Nybble geschrieben) bezeichnet! Dies nur nebenbei als amüsante Zusatzinformation für interessierte Schüler.
     
     Oftmals werden die Karten fälschlicherweise von links nach rechts ausgehändigt. Bei der Zahlendarstellung gilt jedoch der Grundsatz, dass sich der geringste Wert rechts befindet, was für Schüler ein wichtiges Konzept ist, das sie aus dieser Übung lernen können.
     
@@ -94,7 +94,7 @@ Hier ist zunächst einmal eine Karte, die das klitzekleine Ding ist, das ein- od
     
     Mit nur der Regel ausgestattet, dass jede Karte entweder sichtbar ist oder nicht, kommen Schüler für gewöhnlich auf die folgende Darstellung.
     
-    {image file-path="img/topics/binary_cards_equals_three.png" alt="Diagramm, das aufzeigt, dass 2 Binärkarten die Zahl 3 ergeben"}
+    {image file-path="img/topics/binary_cards_equals_three.png" alt="Darstellung, wonach 2 Binärkarten die Zahl 3 bilden"}
     
     {panel type="math"}
     
@@ -184,7 +184,7 @@ Hier ist zunächst einmal eine Karte, die das klitzekleine Ding ist, das ein- od
 
 # Unterrichtsbeobachtungen
 
-Manche Schüler mögen sich hier mit dem Konzept schwer tun, dass die Anzahl der Werte um eins größer ist als der Höchstwert (z. B. von 0 bis 7, hier haben wir 8 verschiedene Zahlen). Dieses Muster kann auch bei der Anzahl normaler Dezimalzahlen beobachtet werden: Die größte Zahl ist 9, es gibt jedoch 10 mögliche Zahlen (einschließlich 0). Dies wird gelegentlich auch als Zaunpfahlproblem bezeichnet (die Anzahl der Zaunpfähle ist um eins größer als die Anzahl der Zwischenräume).
+Manche Schüler mögen sich hier mit dem Konzept schwer tun, dass die Anzahl der Werte um eins größer ist als der Höchstwert (z. B. von 0 bis 7, hier haben wir 8 verschiedene Zahlen). Dieses Muster kann auch bei der Anzahl normaler Dezimalzahlen beobachtet werden: Die größte Zahl ist 9, es gibt jedoch 10 mögliche Zahlen (einschließlich 0). Dies wird gelegentlich auch als Zaunpfahlproblem bezeichnet (die Anzahl der Zaunpfähle ist um eins größer als die Anzahl der Zwischenräume), was bei der elektronischen Datenverarbeitung und in der Mathematik häufig vorkommt.
 
 {panel end}
 

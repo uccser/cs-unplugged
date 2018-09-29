@@ -12,7 +12,7 @@ generalising-and-patterns:
 logic:
   name: Logik
 evaluation:
-  name: Beurteilung
+  name: Auswertung
 computer-science:
   name: Informatik
 data-representation:
