@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-22 07:36+0000\n"
-"PO-Revision-Date: 2018-08-22 08:47\n"
+"POT-Creation-Date: 2018-08-20 04:28+0000\n"
+"PO-Revision-Date: 2018-09-29 14:49\n"
 "Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -75,24 +75,6 @@ msgstr "Sí - Usa mucha tinta negra, pero expresa el estado de la carta de forma
 msgid "No - Print single sided."
 msgstr "No - Impresión a una cara."
 
-#: resources/generators/BinaryCardsResourceGenerator.py:104
-msgid "with numbers"
-msgstr ""
-
-#: resources/generators/BinaryCardsResourceGenerator.py:106
-msgid "without numbers"
-msgstr ""
-
-#: resources/generators/BinaryCardsResourceGenerator.py:109
-#: resources/generators/BinaryCardsSmallResourceGenerator.py:110
-msgid "with black back"
-msgstr ""
-
-#: resources/generators/BinaryCardsResourceGenerator.py:111
-#: resources/generators/BinaryCardsSmallResourceGenerator.py:112
-msgid "without black back"
-msgstr ""
-
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:20
 #: resources/generators/BinaryWindowsResourceGenerator.py:15
 msgid "Four (1 to 8)"
@@ -116,16 +98,6 @@ msgstr "Número de bits"
 #: resources/generators/BinaryWindowsResourceGenerator.py:40
 msgid "Display Dot Counts"
 msgstr "Mostrar el número total de puntos"
-
-#: resources/generators/BinaryCardsSmallResourceGenerator.py:106
-#: resources/generators/BinaryWindowsResourceGenerator.py:192
-msgid "with dot counts"
-msgstr ""
-
-#: resources/generators/BinaryCardsSmallResourceGenerator.py:108
-#: resources/generators/BinaryWindowsResourceGenerator.py:194
-msgid "without dot counts"
-msgstr ""
 
 #: resources/generators/BinaryToAlphabetResourceGenerator.py:12
 msgid "Student"
@@ -165,19 +137,19 @@ msgstr "Representación de valores"
 
 #: resources/generators/JobBadgesResourceGenerator.py:38
 msgid "Hello, I'm a"
-msgstr "Hola, soy"
+msgstr ""
 
 #: resources/generators/JobBadgesResourceGenerator.py:45
 msgid "Programmer"
-msgstr "Programador"
+msgstr ""
 
 #: resources/generators/JobBadgesResourceGenerator.py:50
 msgid "Tester"
-msgstr "Tester"
+msgstr ""
 
 #: resources/generators/JobBadgesResourceGenerator.py:55
 msgid "Bot"
-msgstr "Bot"
+msgstr ""
 
 #: resources/generators/LeftRightCardsResourceGenerator.py:14
 msgid "Left"
@@ -197,11 +169,6 @@ msgstr "En blanco"
 #: resources/generators/ModuloClockResourceGenerator.py:25
 msgid "Modulo"
 msgstr "Módulo"
-
-#: resources/generators/ModuloClockResourceGenerator.py:82
-#: resources/generators/SearchingCardsResourceGenerator.py:171
-msgid "blank"
-msgstr "en blanco"
 
 #: resources/generators/NumberHuntResourceGenerator.py:14
 msgid "Easy Numbers (2 digits)"
@@ -527,6 +494,10 @@ msgstr "Usa esta hoja para dibujar un círculo alrededor del número que deberá
 msgid "Sorted numbers"
 msgstr "Números ordenados"
 
+#: resources/generators/SearchingCardsResourceGenerator.py:171
+msgid "blank"
+msgstr ""
+
 #: resources/generators/SearchingCardsResourceGenerator.py:178
 msgid "with helper sheet"
 msgstr "con hoja de ayuda"
@@ -594,7 +565,7 @@ msgid "Hard Numbers (3 digits)"
 msgstr "Números difíciles (3 dígitos)"
 
 #: resources/generators/SortingNetworkResourceGenerator.py:13
-msgid "None (Blank - Useful as template)"
+msgid "None (Blank - Useful as template) "
 msgstr ""
 
 #: resources/generators/TrainStationsResourceGenerator.py:9
@@ -661,7 +632,7 @@ msgstr "Puede que alguno de los siguientes enlaces te resulte útil:"
 
 #: templates/404.html:19
 msgid "Home page"
-msgstr "Página de inicio"
+msgstr ""
 
 #: templates/404.html:26 templates/base.html:91 templates/base.html:225
 msgid "Search"
@@ -1227,17 +1198,13 @@ msgstr "Generar material para imprimir"
 msgid "The download of this Printable includes %(copies_amount)s unique copies."
 msgstr "La descarga de este material para imprimir incluye %(copies_amount)s copias únicas."
 
-#: templates/resources/resource.html:42
-msgid "Download Printable"
-msgstr ""
-
 #: templates/resources/resource.html:49
 msgid "Preview"
 msgstr "Vista previa"
 
 #: templates/resources/resource.html:55
 msgid "Preview shows English version"
-msgstr "La vista previa se muestra en la versión inglesa"
+msgstr ""
 
 #: templates/resources/resource.html:64
 msgid "Related Lessons"
@@ -1324,11 +1291,11 @@ msgstr "Estos conceptos del pensamiento computacional están todos conectados en
 #: templates/topics/unit-plan-description.html:23
 #: templates/topics/unit-plan.html:22
 msgid "topic"
-msgstr "tema"
+msgstr ""
 
 #: templates/topics/curriculum-integration.html:31
 msgid "curriculum integration"
-msgstr "integración curricular"
+msgstr ""
 
 #: templates/topics/curriculum-integration.html:48
 msgid "Heads up!"
@@ -1372,11 +1339,11 @@ msgstr "No hay temas disponibles."
 #: templates/topics/unit-plan-description.html:22
 #: templates/topics/unit-plan.html:21
 msgid "unit plan"
-msgstr "plan de estudios"
+msgstr ""
 
 #: templates/topics/lesson.html:24
 msgid "lesson"
-msgstr "lección"
+msgstr ""
 
 #: templates/topics/lesson.html:30
 #, python-format
@@ -1427,12 +1394,12 @@ msgstr "<h4>¡Lo sentimos! Este elemento todavía no está disponible en %(langu
 
 #: templates/topics/not-available-warning.html:21
 msgid "or"
-msgstr "o"
+msgstr ""
 
 #: templates/topics/not-available-warning.html:23
 #, python-format
 msgid "Return to the %(parent_type)s"
-msgstr "Regresar a %(parent_type)s"
+msgstr ""
 
 #: templates/topics/programming-challenge-language-solution.html:10
 #, python-format
@@ -1446,7 +1413,7 @@ msgstr "solución"
 
 #: templates/topics/programming-challenge-language-solution.html:32
 msgid "challenge"
-msgstr "desafío"
+msgstr ""
 
 #: templates/topics/programming-challenge-language-solution.html:42
 msgid "<strong>Heads Up!</strong> If you are ready to compare your programming to ours or are wanting to have a look at how we solved it, click 'View solution' below to view at least one way to write this program."
@@ -1482,7 +1449,7 @@ msgstr "No hay desafíos de programación para %(topic)s."
 
 #: templates/topics/programming-challenge.html:23
 msgid "programming challenge"
-msgstr "desafío de programación"
+msgstr ""
 
 #: templates/topics/programming-challenge.html:41
 msgid "This programming challenge is linked to the following lessons:"
@@ -1547,7 +1514,7 @@ msgstr "Regresar al tema"
 
 #: templates/topics/topic.html:21
 msgid "list of topics"
-msgstr "lista de temas"
+msgstr ""
 
 #: templates/topics/topic.html:34
 msgid "Unit Plans"
