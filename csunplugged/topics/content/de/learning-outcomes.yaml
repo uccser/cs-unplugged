@@ -90,7 +90,7 @@ numeracy-recognise-numbers-represented:
 numeracy-discuss-modulo-understanding-remainders:
   text: Erörtern, wie wir Reste besser verstehen, wenn wir wissen, wie Modulo funktioniert.
 programming-explain-sequencing:
-  text: Erläutern, wie Sequenzen bei der Programmierung funktionieren.
+  text: Erläutern, wie beim Programmieren Abläufe gesteuert werden.
 programming-explain-output:
   text: Erklären, warum ein Programm eine bestimmte Ausgabe liefert.
 programming-explain-variable-name:
@@ -150,9 +150,9 @@ search-algorithms-explain-unsorted-lists:
 unplugged-programming-apply-addition-multiplication:
   text: Addition und Multiplikation anwenden, um die Anzahl der vom Endbenutzer auszuführenden Aktionen zu ermitteln.
 unplugged-programming-design-fitness-achievable:
-  text: Eine Reihe an Fitnessaktivitäten zu entwerfen, die für Ihre Endbenutzer ausführbar sind.
+  text: Eine Reihe an Fitnessaktivitäten zu entwerfen, die von Endbenutzern auch ausgeführt werden können.
 unplugged-programming-construct-fitness-workout:
-  text: Ein Fitnesstraining zu gestalten, dass Kraft- und Ausdaueraktivitäten vereint.
+  text: Ein Fitnesstraining zu gestalten, das Kraft- und Ausdaueraktivitäten vereint.
 unplugged-programming-design-language:
   text: Ohne Computer eine einfach zu interpretierende Programmiersprache für ein Fitnessprogramm zu erstellen.
 unplugged-programming-give-instructions:

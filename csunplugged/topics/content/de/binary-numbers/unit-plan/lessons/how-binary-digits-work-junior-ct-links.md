@@ -8,7 +8,7 @@ Hier ist ein Algorithmus in Textform, mit dem ausgerechnet werden kann, welche P
 
 - Zunächst müssen wir die Anzahl der zu zeigenden Punkte herausfinden. (Wir bezeichnen dies als die „Anzahl der verbleibenden Punkte“, was anfangs die insgesamt zu zeigende Anzahl ist.)
 
-- Für jede Karte, von links nach rechts (d. h. 8, 4, 2 dann 1), gilt:
+- Für jede Karte, von links nach rechts (d. h. 8, 4, 2 und dann 1), gilt:
     
     - Wenn die Anzahl der Punkte auf der Karte höher ist als die Anzahl der verbleibenden Punkte:
         
@@ -42,7 +42,7 @@ Außerdem lässt sich anhand von Abstraktion überlegen, wie jede beliebige Zahl
 
 #### Worauf Sie beispielsweise achten können:
 
-Welche der Schüler können demonstrieren, wie Binärzahlen mit anderen Mitteln als „Einsen und Nullen“, „Schwarz und Weiß“ oder „Ein und Aus“ umgewandelt und dargestellt werden können (beispielsweise mittels :] und :[ oder anhand von stehenden oder sitzenden Personen). Wenn es Ihnen möglich ist, Begriffe wie „Schwarz“ und „Weiß“ mit 0 und 1 zu vertauschen, ohne dass sich die Schüler Gedanken über den Unterschied machen, wenden sie Abstraktion an.
+Welche der Schüler können demonstrieren, wie Binärzahlen mit anderen Mitteln als „Einsen und Nullen“, „Schwarz und Weiß“ oder „Ein und Aus“ umgewandelt und dargestellt werden können (beispielsweise mittels :] und :[ oder anhand von stehenden oder sitzenden Personen)? Wenn es Ihnen möglich ist, Begriffe wie „Schwarz“ und „Weiß“ mit 0 und 1 zu vertauschen, ohne dass sich die Schüler Gedanken über den Unterschied machen, wenden sie Abstraktion an.
 
 {panel end}
 
@@ -108,18 +108,18 @@ Erklären die Schüler ausdrücklich, dass das erste Bit eine Eins sein muss, da
 
 {panel type="ct-evaluation"}
 
-# Beurteilung
+# Auswertung
 
-Im Zuge einer Beurteilung kann zum Beispiel ermittelt werden, wie viele verschiedene Werte mit einer bestimmten Anzahl von Bits dargestellt werden können (z. B. 4 Bits können 16 verschiedene Werte darstellen) und umgekehrt (um 1 000 verschiedene Werte darzustellen, werden mindestens 10 Bits benötigt).
+Im Zuge einer Auswertung kann zum Beispiel ermittelt werden, wie viele verschiedene Werte mit einer bestimmten Anzahl von Bits dargestellt werden können (z. B. 4 Bits können 16 verschiedene Werte darstellen) und umgekehrt (um 1 000 verschiedene Werte darzustellen, werden mindestens 10 Bits benötigt).
 
 #### Worauf Sie beispielsweise achten können:
 
-Kann ein Schüler den mit 2 Bits möglichen Wertebereich (4) bestimmen?
+Können Schüler den mit 2 Bits möglichen Wertebereich bestimmen? (4)
 
 3 Bits? (8)
 
 4 Bits? (16)
 
-Wenn wir einer Darstellungen ein weiteres Bit hinzufügen – um wie viel wird der Wertebereich dadurch erhöht? (er verdoppelt sich)
+Wenn wir einer Darstellung ein weiteres Bit hinzufügen – um wie viel wird der Wertebereich dadurch erhöht? (er verdoppelt sich)
 
 {panel end}
