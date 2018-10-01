@@ -425,7 +425,8 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
                 if method == "greyscale":
                     text(_("The pixel values are using 2 bit colour values."))
                 if method == "colour":
-                    text(_("The pixel values are using 5 bit RGB colour values (2 red, 2 blue, 1 green)."))
+                    text(_("The pixel values are using 5 bit RGB colour values (2 red, 2 green, 1 blue)."))
+                text(" ")
                 text(_("Extra pixel legends are at the end of this document for students."))
         html = doc.getvalue()
         html += self.create_pixel_legend(self.methods[method]["labels"].items())
@@ -441,7 +442,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
             HTML string for pixel legend.
         """
         doc, tag, text, line = Doc().ttl()
-        line("style", "#pixel-legend td {border:1px solid black;padding:0.5rem 0.5rem;white-space: nowrap;}")
+        line("style", "#pixel-legend td {border:1px solid black;padding:0.5rem 0.5rem;white-space:nowrap;}")
         with tag("table", id="pixel-legend", style="display:inline;"):
             with tag("tbody"):
                 with tag("tr"):
