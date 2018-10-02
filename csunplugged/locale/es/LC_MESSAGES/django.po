@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-20 04:28+0000\n"
-"PO-Revision-Date: 2018-09-29 14:49\n"
+"POT-Creation-Date: 2018-09-15 10:37+0000\n"
+"PO-Revision-Date: 2018-10-02 01:33\n"
 "Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -16,13 +16,21 @@ msgstr ""
 "X-Crowdin-Language: es-ES\n"
 "X-Crowdin-File: /csunplugged/locale/en/LC_MESSAGES/django.po\n"
 
-#: config/settings/base.py:138
+#: classic/models.py:10
+msgid "Classic CS Unplugged page"
+msgstr "Página de CS Unplugged Clásico"
+
+#: config/settings/base.py:139
 msgid "Translation mode"
 msgstr "Modo de traducción"
 
-#: config/settings/base.py:144
+#: config/settings/base.py:145
 msgid "Translation mode (Bi-directional)"
 msgstr "Modo de traducción (bidireccional)"
+
+#: general/models.py:11
+msgid "General page"
+msgstr "Página general"
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:10
 msgid "12 digits"
@@ -75,6 +83,24 @@ msgstr "Sí - Usa mucha tinta negra, pero expresa el estado de la carta de forma
 msgid "No - Print single sided."
 msgstr "No - Impresión a una cara."
 
+#: resources/generators/BinaryCardsResourceGenerator.py:104
+msgid "with numbers"
+msgstr "con números"
+
+#: resources/generators/BinaryCardsResourceGenerator.py:106
+msgid "without numbers"
+msgstr "sin números"
+
+#: resources/generators/BinaryCardsResourceGenerator.py:109
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:110
+msgid "with black back"
+msgstr "con la parte trasera negra"
+
+#: resources/generators/BinaryCardsResourceGenerator.py:111
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:112
+msgid "without black back"
+msgstr "sin la parte trasera negra"
+
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:20
 #: resources/generators/BinaryWindowsResourceGenerator.py:15
 msgid "Four (1 to 8)"
@@ -98,6 +124,16 @@ msgstr "Número de bits"
 #: resources/generators/BinaryWindowsResourceGenerator.py:40
 msgid "Display Dot Counts"
 msgstr "Mostrar el número total de puntos"
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:106
+#: resources/generators/BinaryWindowsResourceGenerator.py:192
+msgid "with dot counts"
+msgstr "con número total de puntos"
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:108
+#: resources/generators/BinaryWindowsResourceGenerator.py:194
+msgid "without dot counts"
+msgstr "sin número total de puntos"
 
 #: resources/generators/BinaryToAlphabetResourceGenerator.py:12
 msgid "Student"
@@ -135,21 +171,17 @@ msgstr "Bombilla (apagada o encendida)"
 msgid "Value Representation"
 msgstr "Representación de valores"
 
-#: resources/generators/JobBadgesResourceGenerator.py:38
-msgid "Hello, I'm a"
-msgstr ""
+#: resources/generators/JobBadgesResourceGenerator.py:14
+msgid "Hello, I'm a Programmer"
+msgstr "Hola, soy programador"
 
-#: resources/generators/JobBadgesResourceGenerator.py:45
-msgid "Programmer"
-msgstr ""
+#: resources/generators/JobBadgesResourceGenerator.py:15
+msgid "Hello, I'm a Tester"
+msgstr "Hola, soy tester"
 
-#: resources/generators/JobBadgesResourceGenerator.py:50
-msgid "Tester"
-msgstr ""
-
-#: resources/generators/JobBadgesResourceGenerator.py:55
-msgid "Bot"
-msgstr ""
+#: resources/generators/JobBadgesResourceGenerator.py:16
+msgid "Hello, I'm a Bot"
+msgstr "Hola, soy un bot"
 
 #: resources/generators/LeftRightCardsResourceGenerator.py:14
 msgid "Left"
@@ -160,9 +192,11 @@ msgid "Right"
 msgstr "Derecha"
 
 #: resources/generators/ModuloClockResourceGenerator.py:10
+#: resources/generators/ModuloClockResourceGenerator.py:83
 #: resources/generators/NumberHuntResourceGenerator.py:221
 #: resources/generators/PianoKeysResourceGenerator.py:12
 #: resources/generators/SearchingCardsResourceGenerator.py:26
+#: resources/generators/SearchingCardsResourceGenerator.py:171
 msgid "Blank"
 msgstr "En blanco"
 
@@ -394,7 +428,7 @@ msgid "Hot air balloon"
 msgstr "Globo aerostático"
 
 #: resources/generators/PixelPainterResourceGenerator.py:74
-#: templates/general/people.html:144
+#: templates/general/people.html:154
 msgid "Parrots"
 msgstr "Loros"
 
@@ -494,10 +528,6 @@ msgstr "Usa esta hoja para dibujar un círculo alrededor del número que deberá
 msgid "Sorted numbers"
 msgstr "Números ordenados"
 
-#: resources/generators/SearchingCardsResourceGenerator.py:171
-msgid "blank"
-msgstr ""
-
 #: resources/generators/SearchingCardsResourceGenerator.py:178
 msgid "with helper sheet"
 msgstr "con hoja de ayuda"
@@ -565,8 +595,8 @@ msgid "Hard Numbers (3 digits)"
 msgstr "Números difíciles (3 dígitos)"
 
 #: resources/generators/SortingNetworkResourceGenerator.py:13
-msgid "None (Blank - Useful as template) "
-msgstr ""
+msgid "None (Blank - Useful as template)"
+msgstr "Ninguno (En blanco - Útil como plantilla)"
 
 #: resources/generators/TrainStationsResourceGenerator.py:9
 msgid "Circular"
@@ -580,6 +610,58 @@ msgstr "Retorcido"
 msgid "Train track shape"
 msgstr "Forma de vía de tren"
 
+#: resources/generators/TreasureIslandResourceGenerator.py:14
+msgid "Student map"
+msgstr "Mapa para alumnos"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:15
+msgid "Island posters"
+msgstr "Carteles de la isla"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:25
+msgid "Dead Man's Island"
+msgstr "Isla del Hombre Muerto"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:35
+msgid "Musket Hill"
+msgstr "Colina del Mosquetón"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:45
+msgid "Mutineers' Island"
+msgstr "Isla de los Amotinados"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:55
+msgid "Pirates' Island"
+msgstr "Isla de los Piratas"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:65
+msgid "Shipwreck Bay"
+msgstr "Bahía del Naufragio"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:75
+msgid "Smugglers' Cove"
+msgstr "Cala de los Contrabandistas"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:85
+msgid "Treasure Island"
+msgstr "Isla del Tesoro"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:105
+msgid "Printable type"
+msgstr "Tipo de material para imprimir"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:323
+msgid "Boat A"
+msgstr "Barco A"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:326
+msgid "Boat B"
+msgstr "Barco B"
+
+#: resources/models.py:12
+msgid "Printable"
+msgstr "Material para imprimir"
+
 #: resources/utils/BaseResourceGenerator.py:18
 msgid "A4"
 msgstr "A4"
@@ -592,15 +674,15 @@ msgstr "Carta (EE. UU.)"
 msgid "Paper Size"
 msgstr "Tamaño del papel"
 
-#: resources/utils/BaseResourceGenerator.py:70
+#: resources/utils/BaseResourceGenerator.py:82
 msgid "Header Text"
 msgstr "Texto del encabezado"
 
-#: resources/utils/BaseResourceGenerator.py:71
+#: resources/utils/BaseResourceGenerator.py:83
 msgid "Example School: Room Four"
 msgstr "Ejemplo de escuela: Aula Cuatro"
 
-#: resources/utils/BaseResourceGenerator.py:79
+#: resources/utils/BaseResourceGenerator.py:91
 msgid "Number of Copies"
 msgstr "Número de copias"
 
@@ -631,15 +713,15 @@ msgid "You may find one of the links below useful:"
 msgstr "Puede que alguno de los siguientes enlaces te resulte útil:"
 
 #: templates/404.html:19
-msgid "Home page"
-msgstr ""
+msgid "Homepage"
+msgstr "Página de inicio"
 
 #: templates/404.html:26 templates/base.html:91 templates/base.html:225
 msgid "Search"
 msgstr "Buscar"
 
 #: templates/404.html:32 templates/general/index.html:96
-#: templates/general/people.html:64
+#: templates/general/people.html:74
 msgid "Classic CS Unplugged"
 msgstr "CS Unplugged Clásico"
 
@@ -660,7 +742,7 @@ msgstr "Temas"
 
 #: templates/base.html:79 templates/base.html:193
 #: templates/general/index.html:81 templates/resources/index.html:8
-#: templates/resources/index.html:16 templates/topics/lesson.html:77
+#: templates/resources/index.html:16 templates/topics/lesson.html:74
 msgid "Printables"
 msgstr "Para imprimir"
 
@@ -1020,7 +1102,7 @@ msgstr "¿Qué es la informática?"
 #: templates/general/index.html:89
 #: templates/topics/all-curriculum-integration-list.html:8
 #: templates/topics/all-curriculum-integration-list.html:17
-#: templates/topics/topic.html:65
+#: templates/topics/topic.html:64
 msgid "Curriculum Integrations"
 msgstr "Integraciones curriculares"
 
@@ -1032,27 +1114,61 @@ msgstr "a partir de la versión 4.0.0"
 msgid "Founders"
 msgstr "Fundadores"
 
-#: templates/general/people.html:31 templates/general/people.html:103
+#: templates/general/people.html:31 templates/general/people.html:113
 msgid "Advisers"
 msgstr "Asesores"
+
+#: templates/general/people.html:35
+msgid "Computer Scientist"
+msgstr "Informático"
 
 #: templates/general/people.html:38
 msgid "Current Team"
 msgstr "Equipo actual"
 
-#: templates/general/people.html:48
+#: templates/general/people.html:41
+msgid "Founder &amp; Content Writer"
+msgstr "Fundador y creador de contenido"
+
+#: templates/general/people.html:42 templates/general/people.html:43
+#: templates/general/people.html:52 templates/general/people.html:53
+msgid "Content Writer"
+msgstr "Creador de contenido"
+
+#: templates/general/people.html:44
+msgid "Project Manager &amp; Technical Team"
+msgstr "Gestor de proyectos y equipo técnico"
+
+#: templates/general/people.html:45 templates/general/people.html:46
+#: templates/general/people.html:54 templates/general/people.html:55
+msgid "Technical Team"
+msgstr "Equipo técnico"
+
+#: templates/general/people.html:49
 msgid "Previous Team Members"
 msgstr "Miembros anteriores del equipo"
 
-#: templates/general/people.html:64
+#: templates/general/people.html:56
+msgid "Creative Content Developer &amp; Illustrator"
+msgstr "Desarrollador de contenido creativo e ilustrador"
+
+#: templates/general/people.html:59
+msgid "Community Contributors"
+msgstr "Colaboradores de la comunidad"
+
+#: templates/general/people.html:68
+msgid "Translations"
+msgstr "Traducciones"
+
+#: templates/general/people.html:74
 msgid "up to version 3.2.2"
 msgstr "hasta la versión 3.2.2"
 
-#: templates/general/people.html:66
+#: templates/general/people.html:76
 msgid "Contributors"
 msgstr "Colaboradores"
 
-#: templates/general/people.html:133
+#: templates/general/people.html:143
 msgid "Website"
 msgstr "Sitio web"
 
@@ -1185,46 +1301,51 @@ msgstr "Esta página muestra una lista completa de todos los materiales disponib
 msgid "No printables are available."
 msgstr "No hay ningún material disponible para imprimir."
 
-#: templates/resources/resource.html:22
+#: templates/resources/resource.html:20
+msgid "Return to list of printables"
+msgstr "Volver a la lista de materiales para imprimir"
+
+#: templates/resources/resource.html:31
 msgid "Create Printable"
 msgstr "Crear material para imprimir"
 
-#: templates/resources/resource.html:33
+#: templates/resources/resource.html:42
 msgid "Generate Printable"
 msgstr "Generar material para imprimir"
 
-#: templates/resources/resource.html:37
+#: templates/resources/resource.html:46
 #, python-format
 msgid "The download of this Printable includes %(copies_amount)s unique copies."
 msgstr "La descarga de este material para imprimir incluye %(copies_amount)s copias únicas."
 
-#: templates/resources/resource.html:49
+#: templates/resources/resource.html:51
+msgid "Download Printable"
+msgstr "Descargar material para imprimir"
+
+#: templates/resources/resource.html:59
 msgid "Preview"
 msgstr "Vista previa"
 
-#: templates/resources/resource.html:55
-msgid "Preview shows English version"
-msgstr ""
-
-#: templates/resources/resource.html:64
+#: templates/resources/resource.html:74
 msgid "Related Lessons"
 msgstr "Lecciones relacionadas"
 
-#: templates/resources/resource.html:68
+#: templates/resources/resource.html:78
 #: templates/topics/all-curriculum-integration-list.html:27
+#: topics/models.py:108
 msgid "Topic"
 msgstr "Tema"
 
-#: templates/resources/resource.html:69
+#: templates/resources/resource.html:79
 msgid "Ages"
 msgstr "Edades"
 
-#: templates/resources/resource.html:70
+#: templates/resources/resource.html:80
 #: templates/topics/programming-challenges-table.html:8
 msgid "Number"
 msgstr "Número"
 
-#: templates/resources/resource.html:71
+#: templates/resources/resource.html:81 topics/models.py:329
 msgid "Lesson"
 msgstr "Lección"
 
@@ -1235,7 +1356,7 @@ msgstr "Lección"
 msgid "Within topic"
 msgstr "Dentro del tema"
 
-#: templates/search/result/lesson.html:11 templates/topics/lesson.html:33
+#: templates/search/result/lesson.html:11 templates/topics/lesson.html:30
 #, python-format
 msgid "<strong>Ages %(lower)s to %(upper)s:</strong> Lesson %(number)s"
 msgstr "<strong>Edades %(lower)s hasta %(upper)s:</strong> Lección %(number)s"
@@ -1245,7 +1366,7 @@ msgid "within unit plan"
 msgstr "dentro del plan de estudios"
 
 #: templates/search/result/programmingchallenge.html:10
-#: templates/topics/programming-challenge.html:31
+#: templates/topics/programming-challenge.html:28
 msgid "Challenge Level:"
 msgstr "Nivel del desafío:"
 
@@ -1285,23 +1406,11 @@ msgstr "La enseñanza del pensamiento computacional a través de las actividades
 msgid "These Computational Thinking concepts are all connected to each other and support each other, but it’s important to note that not all aspects of Computational Thinking happen in every unit or lesson. We’ve highlighted the important connections for you to observe your students in action. For more background information on what our definition of Computational Thinking is <a href=\"%(ct_url)s\">see our notes about computational thinking</a>."
 msgstr "Estos conceptos del pensamiento computacional están todos conectados entre sí y se apoyan mutuamente, pero es importante tener en cuenta que no todos los aspectos del pensamiento computacional ocurren en cada unidad o lección. Hemos resaltado las conexiones importantes para que puedas observar a tus alumnos en acción. Para obtener más información acerca de nuestra definición del pensamiento computacional, <a href=\"%(ct_url)s\">consulta nuestras notas sobre el pensamiento computacional</a>."
 
-#: templates/topics/curriculum-integration.html:30
-#: templates/topics/programming-challenge.html:25
-#: templates/topics/topic.html:20
-#: templates/topics/unit-plan-description.html:23
-#: templates/topics/unit-plan.html:22
-msgid "topic"
-msgstr ""
-
-#: templates/topics/curriculum-integration.html:31
-msgid "curriculum integration"
-msgstr ""
-
-#: templates/topics/curriculum-integration.html:48
+#: templates/topics/curriculum-integration.html:45
 msgid "Heads up!"
 msgstr "¡Aviso!"
 
-#: templates/topics/curriculum-integration.html:49
+#: templates/topics/curriculum-integration.html:46
 msgid "To do this activity it's expected you understand the content covered in the following:"
 msgstr "Para realizar esta actividad se espera que comprendas el contenido cubierto en los siguientes elementos:"
 
@@ -1314,12 +1423,12 @@ msgstr "Los siguientes términos del glosario todavía no están disponibles en 
 msgid "Open a topic to see all related unit plans, lessons, curriculum integrations, and programming challenges."
 msgstr "Abre un tema para ver todos los planes de estudios, lecciones, integraciones curriculares y desafíos de programación relacionados."
 
-#: templates/topics/index.html:39 templates/topics/topic.html:47
+#: templates/topics/index.html:39 templates/topics/topic.html:46
 #, python-format
 msgid "Ages %(min_age)s to %(max_age)s"
 msgstr "Edades %(min_age)s a %(max_age)s"
 
-#: templates/topics/index.html:45 templates/topics/topic.html:57
+#: templates/topics/index.html:45 templates/topics/topic.html:56
 msgid "lessons"
 msgstr "lecciones"
 
@@ -1335,50 +1444,40 @@ msgstr "desafíos de programación"
 msgid "No topics are available."
 msgstr "No hay temas disponibles."
 
-#: templates/topics/lesson.html:23
-#: templates/topics/unit-plan-description.html:22
-#: templates/topics/unit-plan.html:21
-msgid "unit plan"
-msgstr ""
-
-#: templates/topics/lesson.html:24
-msgid "lesson"
-msgstr ""
-
-#: templates/topics/lesson.html:30
+#: templates/topics/lesson.html:27
 #, python-format
 msgid "<strong>Duration:</strong> %(duration)s minutes"
 msgstr "<strong>Duración:</strong> %(duration)s minutos"
 
-#: templates/topics/lesson.html:47
-#: templates/topics/programming-challenge.html:73
+#: templates/topics/lesson.html:44
+#: templates/topics/programming-challenge.html:70
 msgid "Learning outcomes"
 msgstr "Resultados del aprendizaje"
 
-#: templates/topics/lesson.html:51
-#: templates/topics/programming-challenge.html:77
+#: templates/topics/lesson.html:48
+#: templates/topics/programming-challenge.html:74
 msgid "Students will be able to:"
 msgstr "Los alumnos podrán:"
 
-#: templates/topics/lesson.html:94
+#: templates/topics/lesson.html:91
 msgid "Classroom resources"
 msgstr "Recursos del aula"
 
-#: templates/topics/lesson.html:104 templates/topics/lessons-table.html:14
+#: templates/topics/lesson.html:101 templates/topics/lessons-table.html:14
 msgid "Programming challenges"
 msgstr "Desafíos de programación"
 
-#: templates/topics/lesson.html:107
+#: templates/topics/lesson.html:104
 msgid "View related programming challenges"
 msgstr "Ver desafíos de programación relacionados"
 
-#: templates/topics/lesson.html:114
-#: templates/topics/unit-plan-description.html:43
+#: templates/topics/lesson.html:111
+#: templates/topics/unit-plan-description.html:40
 msgid "Table of contents"
 msgstr "Índice"
 
-#: templates/topics/lesson.html:127
-#: templates/topics/unit-plan-description.html:55
+#: templates/topics/lesson.html:124
+#: templates/topics/unit-plan-description.html:52
 msgid "Computational Thinking"
 msgstr "Pensamiento computacional"
 
@@ -1392,14 +1491,9 @@ msgstr "Edades %(lower)s a %(upper)s"
 msgid "<h4>Sorry! This item is not yet available in %(language)s.</h4> <p>This item is available in the following languages:</p>"
 msgstr "<h4>¡Lo sentimos! Este elemento todavía no está disponible en %(language)s.</h4> <p>Este elemento está disponible en los siguientes idiomas:</p>"
 
-#: templates/topics/not-available-warning.html:21
-msgid "or"
-msgstr ""
-
-#: templates/topics/not-available-warning.html:23
-#, python-format
-msgid "Return to the %(parent_type)s"
-msgstr ""
+#: templates/topics/not-available-warning.html:36
+msgid "Return to homepage "
+msgstr "Volver a la página de inicio "
 
 #: templates/topics/programming-challenge-language-solution.html:10
 #, python-format
@@ -1407,32 +1501,27 @@ msgid "%(name)s solution"
 msgstr "Solución %(name)s"
 
 #: templates/topics/programming-challenge-language-solution.html:27
-#: templates/topics/programming-challenge-language-solution.html:31
 msgid "solution"
 msgstr "solución"
 
-#: templates/topics/programming-challenge-language-solution.html:32
-msgid "challenge"
-msgstr ""
-
-#: templates/topics/programming-challenge-language-solution.html:42
+#: templates/topics/programming-challenge-language-solution.html:39
 msgid "<strong>Heads Up!</strong> If you are ready to compare your programming to ours or are wanting to have a look at how we solved it, click 'View solution' below to view at least one way to write this program."
 msgstr "<strong>¡Aviso!</strong> Si estás listo para comparar tu programación con la nuestra o deseas echar un vistazo para ver cómo lo resolvimos, haz clic en \"Ver solución\" abajo para ver al menos una forma de escribir este programa."
 
-#: templates/topics/programming-challenge-language-solution.html:49
+#: templates/topics/programming-challenge-language-solution.html:46
 msgid "View solution"
 msgstr "Ver solución"
 
-#: templates/topics/programming-challenge-language-solution.html:53
+#: templates/topics/programming-challenge-language-solution.html:50
 msgid "This is just one of many possible solutions:"
 msgstr "Esta es solo una de las muchas posibles soluciones:"
 
-#: templates/topics/programming-challenge-language-solution.html:60
+#: templates/topics/programming-challenge-language-solution.html:57
 msgid "Back to programming challenge"
 msgstr "Volver al desafío de programación"
 
-#: templates/topics/programming-challenge-language-solution.html:71
-#: templates/topics/programming-challenge.html:151
+#: templates/topics/programming-challenge-language-solution.html:68
+#: templates/topics/programming-challenge.html:148
 msgid "Extra Challenge"
 msgstr "Desafío extra"
 
@@ -1447,42 +1536,38 @@ msgstr "Desafíos de programación %(name)s"
 msgid "No programming challenges for %(topic)s."
 msgstr "No hay desafíos de programación para %(topic)s."
 
-#: templates/topics/programming-challenge.html:23
-msgid "programming challenge"
-msgstr ""
-
-#: templates/topics/programming-challenge.html:41
+#: templates/topics/programming-challenge.html:38
 msgid "This programming challenge is linked to the following lessons:"
 msgstr "Este desafío de programación está enlazado a las siguientes lecciones:"
 
-#: templates/topics/programming-challenge.html:47
+#: templates/topics/programming-challenge.html:44
 #, python-format
 msgid "Challenge %(set_num)s.%(chal_num)s for %(name)s"
 msgstr "Desafío %(set_num)s.%(chal_num)s para %(name)s"
 
-#: templates/topics/programming-challenge.html:52
+#: templates/topics/programming-challenge.html:49
 #, python-format
 msgid "%(lower)s to %(upper)s"
 msgstr "%(lower)s a %(upper)s"
 
-#: templates/topics/programming-challenge.html:56
+#: templates/topics/programming-challenge.html:53
 msgid "and"
 msgstr "y"
 
-#: templates/topics/programming-challenge.html:95
+#: templates/topics/programming-challenge.html:92
 #: templates/topics/programming-challenges-table.html:11
 msgid "Languages"
 msgstr "Idiomas"
 
-#: templates/topics/programming-challenge.html:116
+#: templates/topics/programming-challenge.html:113
 msgid "What it should look like"
 msgstr "Cómo debería verse"
 
-#: templates/topics/programming-challenge.html:123
+#: templates/topics/programming-challenge.html:120
 msgid "Hints"
 msgstr "Pistas"
 
-#: templates/topics/programming-challenge.html:135
+#: templates/topics/programming-challenge.html:132
 #, python-format
 msgid "Show %(implementation.language.name)s solution"
 msgstr "Mostrar la solución %(implementation.language.name)s"
@@ -1513,18 +1598,18 @@ msgid "Return to the topic"
 msgstr "Regresar al tema"
 
 #: templates/topics/topic.html:21
-msgid "list of topics"
-msgstr ""
+msgid "Return to list of topics"
+msgstr "Volver a la lista de temas"
 
-#: templates/topics/topic.html:34
+#: templates/topics/topic.html:33
 msgid "Unit Plans"
 msgstr "Planes de estudios"
 
-#: templates/topics/topic.html:72
+#: templates/topics/topic.html:71
 msgid "Looking for more?"
 msgstr "¿Buscas más?"
 
-#: templates/topics/topic.html:75
+#: templates/topics/topic.html:74
 msgid "Click here for other resources"
 msgstr "Haz clic aquí para ver otros recursos"
 
@@ -1537,15 +1622,47 @@ msgstr "Descripción"
 msgid "Unit plan:"
 msgstr "Plan de estudios:"
 
-#: templates/topics/unit-plan.html:32
+#: templates/topics/unit-plan.html:29
 msgid "What's it all about?"
 msgstr "¿De qué trata esto?"
 
-#: templates/topics/unit-plan.html:38
+#: templates/topics/unit-plan.html:35
 msgid "Read the full unit plan description"
 msgstr "Lee la descripción completa del plan de estudios"
 
-#: templates/topics/unit-plan.html:46
+#: templates/topics/unit-plan.html:43
 msgid "Lessons"
 msgstr "Lecciones"
+
+#: topics/models.py:31
+msgid "Curriculum Area"
+msgstr "Área curricular"
+
+#: topics/models.py:64
+msgid "Learning Outcome"
+msgstr "Resultado del aprendizaje"
+
+#: topics/models.py:91
+msgid "Classroom Resource"
+msgstr "Recurso del aula"
+
+#: topics/models.py:140
+msgid "Unit Plan"
+msgstr "Actividades de la unidad"
+
+#: topics/models.py:141 topics/models.py:196 topics/models.py:452
+msgid "Return to topic"
+msgstr "Volver al tema"
+
+#: topics/models.py:195
+msgid "Programming Challenge"
+msgstr "Desafío de programación"
+
+#: topics/models.py:330
+msgid "Return to unit plan"
+msgstr "Volver al plan de estudios"
+
+#: topics/models.py:451
+msgid "Curriculum Integration"
+msgstr "Integración curricular"
 
