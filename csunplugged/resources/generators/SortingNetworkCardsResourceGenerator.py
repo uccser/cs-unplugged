@@ -65,6 +65,17 @@ CARD_TYPE_DATA = {
             "little-red-riding-hood-6.png",
         ]
     },
+    "kauri_tree": {
+        "label": _("Kauri tree"),
+        "images": [
+            "kauri-tree/kauri-1.png",
+            "kauri-tree/kauri-2.png",
+            "kauri-tree/kauri-3.png",
+            "kauri-tree/kauri-4.png",
+            "kauri-tree/kauri-5.png",
+            "kauri-tree/kauri-6.png",
+        ],
+    },
     "maori_colours": {
         "label": "Māori colours",
         "values": [
