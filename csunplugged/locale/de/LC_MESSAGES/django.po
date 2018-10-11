@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-15 10:37+0000\n"
-"PO-Revision-Date: 2018-10-02 00:53\n"
+"POT-Creation-Date: 2018-10-11 01:02+0000\n"
+"PO-Revision-Date: 2018-10-11 14:49\n"
 "Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -433,6 +433,7 @@ msgid "Parrots"
 msgstr "Papageien"
 
 #: resources/generators/PixelPainterResourceGenerator.py:75
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:69
 msgid "Kauri tree"
 msgstr "Kauribaum"
 
@@ -469,22 +470,22 @@ msgid "The pixel values are using 2 bit colour values."
 msgstr "Die Pixelwerte verwenden 2-Bit Farbwerte."
 
 #: resources/generators/PixelPainterResourceGenerator.py:428
-msgid "The pixel values are using 5 bit RGB colour values (2 red, 2 blue, 1 green)."
-msgstr "Die Pixelwerte verwenden 5-Bit RGB-Farbwerte (2 rot, 2 blau, 1 grün)."
+msgid "The pixel values are using 5 bit RGB colour values (2 red, 2 green, 1 blue)."
+msgstr ""
 
-#: resources/generators/PixelPainterResourceGenerator.py:429
+#: resources/generators/PixelPainterResourceGenerator.py:430
 msgid "Extra pixel legends are at the end of this document for students."
 msgstr "Zusätzliche Pixellegenden befinden sich am Ende des Dokuments für Schüler."
 
-#: resources/generators/PixelPainterResourceGenerator.py:448
+#: resources/generators/PixelPainterResourceGenerator.py:449
 msgid "Pixel legend"
 msgstr "Pixellegende"
 
-#: resources/generators/PixelPainterResourceGenerator.py:470
+#: resources/generators/PixelPainterResourceGenerator.py:471
 msgid "Run Length Encodings"
 msgstr "Lauflängenkodierungen"
 
-#: resources/generators/PixelPainterResourceGenerator.py:475
+#: resources/generators/PixelPainterResourceGenerator.py:476
 msgid "Encoding for page {}"
 msgstr "Kodierung für Seite {}"
 
@@ -578,7 +579,7 @@ msgstr "Schmetterlingslebenszyklus"
 msgid "Little Red Riding Hood"
 msgstr "Rotkäppchen"
 
-#: resources/generators/SortingNetworkCardsResourceGenerator.py:97
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:108
 msgid "Card Type"
 msgstr "Kartentyp"
 
