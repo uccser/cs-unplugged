@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-11 01:02+0000\n"
-"PO-Revision-Date: 2018-10-11 14:49\n"
+"PO-Revision-Date: 2018-10-11 21:16\n"
 "Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -471,7 +471,7 @@ msgstr "Die Pixelwerte verwenden 2-Bit Farbwerte."
 
 #: resources/generators/PixelPainterResourceGenerator.py:428
 msgid "The pixel values are using 5 bit RGB colour values (2 red, 2 green, 1 blue)."
-msgstr ""
+msgstr "Die Pixelwerte verwenden 5-Bit RGB-Farbwerte (2 rot, 2 grün, 1 blau)."
 
 #: resources/generators/PixelPainterResourceGenerator.py:430
 msgid "Extra pixel legends are at the end of this document for students."
