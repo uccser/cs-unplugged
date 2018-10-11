@@ -1,0 +1,389 @@
+WEBVTT
+Kind: captions
+Language: en
+
+NOTE
+Computer Science Education Research,
+University of Canterbury, New Zealand
+Subtitle file for the video "CS Unplugged - Product Code Check Digits (sample classroom lesson)"
+Author: Alasdair Smith
+Date: 01/10/2018
+
+00:00:04.120 --> 00:00:06.460
+[Product code check digits]
+
+00:00:06.840 --> 00:00:09.620
+Cool, so the last lesson we did we looked at
+
+00:00:09.620 --> 00:00:14.060
+how computers can detect errors
+and correct them.
+
+00:00:14.060 --> 00:00:20.380
+Hand's up if you've ever been to the supermarket
+and you've scanned in your groceries
+
+00:00:20.380 --> 00:00:22.920
+and it comes up with the grocery items?
+
+00:00:22.920 --> 00:00:24.260
+Have you guys done that?
+
+00:00:24.260 --> 00:00:24.940
+Yeah?
+
+00:00:24.950 --> 00:00:33.160
+Hands down, so what happens when you've scanned
+it and it isn't reading properly?
+
+00:00:33.160 --> 00:00:35.240
+What does the checkout person do?
+
+00:00:35.240 --> 00:00:38.540
+Or what would the checkout person do?
+
+00:00:38.540 --> 00:00:44.460
+You have to ask them and they'll scan something?
+
+00:00:44.460 --> 00:00:48.460
+Yeah, they do scan something, and sometimes
+they have to key in something don't they?
+
+00:00:48.460 --> 00:00:52.320
+It just can't be read because it might be
+folded and so they have to do something
+
+00:00:52.320 --> 00:00:53.460
+what do they have to do?
+
+00:00:53.460 --> 00:00:57.980
+Don't they have that on their key, don't they
+have that little barcode thingymabob.
+
+00:00:57.980 --> 00:01:01.760
+-- They do they do.
+-- And don't they scan that on the machine
+
+00:01:01.760 --> 00:01:02.720
+and it sorta--
+
+00:01:02.720 --> 00:01:06.420
+They do but that still doesn't tell us
+what the product is.
+
+00:01:06.420 --> 00:01:12.020
+So at the bottom of a product you've got the
+barcode right; the black and the white?
+
+00:01:12.020 --> 00:01:14.480
+But then you've got some numbers underneath.
+
+00:01:14.480 --> 00:01:18.080
+And those numbers have a thing
+called a checksum at the end.
+
+00:01:18.080 --> 00:01:18.840
+Yep?
+
+00:01:18.840 --> 00:01:24.180
+You sort of have a barcode that will be a
+bit smaller so you can put it in as a person.
+
+00:01:24.180 --> 00:01:25.420
+Yeah yeah absolutely.
+
+00:01:25.420 --> 00:01:29.180
+So they have to type in the numbers because
+they just can't read it right?
+
+00:01:29.180 --> 00:01:34.300
+And so that last number is called a checksum
+and I'm gonna teach you guys today how it works.
+
+00:01:34.300 --> 00:01:37.539
+Dylan, could you just go and get something
+from the back of the classroom there that's
+
+00:01:37.540 --> 00:01:41.260
+got a 13 digit barcode for us, 
+and we'll see how it works.
+
+00:01:45.260 --> 00:01:49.280
+Cool, so call out the numbers loud and proud
+but I don't want to know the 13th number.
+
+00:01:49.280 --> 00:01:52.180
+I only want to know the 12 digits before that.
+
+00:01:52.180 --> 00:02:12.780
+9, 3, 1, 0, 4, 9, 2, 0, 0, 0, 4 and 5.
+
+00:02:12.780 --> 00:02:16.580
+Okay I'm just gonna read that back to you
+can you double check that for me?
+
+00:02:16.580 --> 00:02:26.800
+9, 3, 1, 0, 4, 9, 2, 0, 0, 0, 4, 5.
+
+00:02:26.800 --> 00:02:27.560
+True?
+
+00:02:27.569 --> 00:02:28.569
+Cool.
+
+00:02:28.569 --> 00:02:32.310
+Okay so now we've got these numbers up on
+the board what I need you guys to do is to
+
+00:02:32.310 --> 00:02:34.879
+help me add up just this top row.
+
+00:02:34.880 --> 00:02:37.280
+-- So 9+1 is?
+-- 10.
+
+00:02:37.280 --> 00:02:39.220
+-- 10+4 is?
+-- 14.
+
+00:02:39.220 --> 00:02:41.760
+-- 14+2 is?
+-- 16.
+
+00:02:41.760 --> 00:02:45.580
+-- 16+4 is?
+-- 20.
+
+00:02:45.580 --> 00:02:52.050
+And we're only interested in the ones column,
+so what number in 20 is in the ones column?
+
+00:02:52.050 --> 00:02:53.050
+Sam?
+
+00:02:53.050 --> 00:02:54.050
+2.
+
+00:02:54.050 --> 00:02:55.360
+That's in the tens good try.
+
+00:02:55.360 --> 00:02:56.360
+Zero?
+
+00:02:56.360 --> 00:02:59.230
+Zero, so we're just gonna record the zero
+here.
+
+00:02:59.230 --> 00:03:01.069
+Because that's the only number
+we're interested in.
+
+00:03:01.069 --> 00:03:02.980
+Now we're gonna add up the bottom column.
+
+00:03:02.980 --> 00:03:05.360
+-- 3+0 is?
+-- 3.
+
+00:03:05.360 --> 00:03:07.880
+-- 3+9 is?
+-- 12.
+
+00:03:07.880 --> 00:03:12.120
+-- 12+0 is?
+-- 12, 12.
+
+00:03:12.120 --> 00:03:14.560
+-- 12+5 is?
+-- 17.
+
+00:03:14.560 --> 00:03:17.790
+17 but we're only interested in the ones column?
+
+00:03:17.790 --> 00:03:19.060
+7.
+
+00:03:19.060 --> 00:03:23.260
+Now the bottom one we're gonna times by 3,
+but here's the trick.
+
+00:03:23.260 --> 00:03:25.060
+We're only interested in the ones column.
+
+00:03:25.060 --> 00:03:29.400
+What's 7x3 and what's the
+value in the ones column?
+
+00:03:30.060 --> 00:03:30.900
+Freddy.
+
+00:03:30.900 --> 00:03:32.000
+1.
+
+00:03:32.000 --> 00:03:34.340
+Who else got 1?
+
+00:03:34.340 --> 00:03:35.600
+Cool.
+
+00:03:36.580 --> 00:03:37.880
+It is equal to 1.
+
+00:03:37.880 --> 00:03:39.520
+What's 0+1?
+
+00:03:40.780 --> 00:03:41.400
+1.
+
+00:03:41.400 --> 00:03:42.280
+Cool.
+
+00:03:42.280 --> 00:03:48.240
+Now, if I had to
+make 0 - which is really 10 - right?
+
+00:03:48.240 --> 00:03:51.040
+'Cause we're only interested in the ones column.
+
+00:03:51.049 --> 00:03:56.459
+If I had to make 0, what would be that
+missing number in there?
+
+00:03:56.460 --> 00:03:57.880
+Zero?
+
+00:03:57.880 --> 00:04:00.340
+One plus what makes 10?
+
+00:04:00.340 --> 00:04:01.620
+9.
+
+00:04:01.620 --> 00:04:05.180
+The checksum is 9.
+
+00:04:05.189 --> 00:04:06.659
+True or false?
+
+00:04:06.660 --> 00:04:07.500
+True.
+
+00:04:07.500 --> 00:04:08.000
+Cool.
+
+00:04:08.000 --> 00:04:13.840
+So that's the mathematical equation that's
+underneath every single barcode, right?
+
+00:04:13.840 --> 00:04:19.520
+Okay, so let's have a look at what happens
+if I heard something wrong.
+
+00:04:19.520 --> 00:04:23.380
+Let's say that I heard the 4 as a 5.
+
+00:04:23.380 --> 00:04:28.680
+So the first thing that would change is this,
+would this be a zero still?
+
+00:04:28.680 --> 00:04:30.460
+-- No.
+-- What would that become?
+
+00:04:30.460 --> 00:04:31.460
+1.
+
+00:04:31.460 --> 00:04:37.320
+Okay which then changes
+1+1 isn't 1 anymore, what is it?
+
+00:04:37.320 --> 00:04:38.060
+2.
+
+00:04:38.060 --> 00:04:39.520
+That becomes 2.
+
+00:04:39.520 --> 00:04:42.920
+So 2 plus what makes 10?
+
+00:04:42.920 --> 00:04:44.180
+Is it 9?
+
+00:04:44.180 --> 00:04:45.040
+No.
+
+00:04:45.040 --> 00:04:47.420
+It becomes 8.
+
+00:04:47.420 --> 00:04:54.160
+And so because I typed in one number wrong,
+the checksum is incorrect,
+
+00:04:54.160 --> 00:04:58.200
+and it beeps back at you to say it's not right.
+
+00:04:58.200 --> 00:05:00.520
+And so you have to type the number in again.
+
+00:05:00.520 --> 00:05:05.360
+And because we're people, what do you think
+the most common mistake is
+
+00:05:05.360 --> 00:05:07.280
+when we're typing in numbers?
+
+00:05:07.280 --> 00:05:10.000
+What's the thing we would get wrong the most?
+
+00:05:10.000 --> 00:05:11.770
+-- Robert?
+-- The number.
+
+00:05:11.770 --> 00:05:16.200
+Yeah the number, what would we do with the
+numbers that would make it different?
+
+00:05:17.000 --> 00:05:19.320
+Might not write them all?
+
+00:05:19.320 --> 00:05:21.900
+Yeah what, would I read the number wrong?
+
+00:05:21.910 --> 00:05:22.910
+What would I do?
+
+00:05:22.910 --> 00:05:28.410
+You might put instead of the 1, instead of
+it being 9, 1, it might be 1, 9.
+
+00:05:28.410 --> 00:05:34.750
+Yeah, so did you notice, that this was the
+first number, this was the second number,
+
+00:05:34.750 --> 00:05:37.690
+this is the first number,
+this is the second number.
+
+00:05:37.690 --> 00:05:44.240
+The reason for that is, is that the most common
+mistakes we make is we swap these around.
+
+00:05:44.940 --> 00:05:48.800
+I might read 93, but my fingers type in 39.
+
+00:05:48.800 --> 00:05:50.800
+True?  Have you ever done that when you're typing?
+
+00:05:50.800 --> 00:05:52.840
+And you get your letters around
+the wrong way?
+
+00:05:52.840 --> 00:06:00.100
+And that's the kind of thing: this checksum
+stops us from going in
+
+00:06:00.100 --> 00:06:06.520
+to buy a pack of Pokemon cards and getting charged for a solar panel robot kit.
+
+00:06:06.520 --> 00:06:07.280
+True?
+
