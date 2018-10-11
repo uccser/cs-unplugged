@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-15 10:37+0000\n"
-"PO-Revision-Date: 2018-10-02 01:33\n"
+"POT-Creation-Date: 2018-10-11 01:02+0000\n"
+"PO-Revision-Date: 2018-10-11 21:22\n"
 "Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -433,6 +433,7 @@ msgid "Parrots"
 msgstr "Loros"
 
 #: resources/generators/PixelPainterResourceGenerator.py:75
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:69
 msgid "Kauri tree"
 msgstr "Árbol kauri"
 
@@ -469,22 +470,22 @@ msgid "The pixel values are using 2 bit colour values."
 msgstr "Los valores de los píxeles usan valores de color de 2 bits."
 
 #: resources/generators/PixelPainterResourceGenerator.py:428
-msgid "The pixel values are using 5 bit RGB colour values (2 red, 2 blue, 1 green)."
-msgstr "Los valores de los píxeles usan valores de color RGB de 5 bits (2 rojos, 2 azules, 1 verde)."
+msgid "The pixel values are using 5 bit RGB colour values (2 red, 2 green, 1 blue)."
+msgstr "Los valores de los píxeles usan valores de color RGB de 5 bits (2 rojos, 2 verdes, 1 azul)."
 
-#: resources/generators/PixelPainterResourceGenerator.py:429
+#: resources/generators/PixelPainterResourceGenerator.py:430
 msgid "Extra pixel legends are at the end of this document for students."
 msgstr "Hay leyendas adicionales sobre los píxeles para los alumnos al final de este documento."
 
-#: resources/generators/PixelPainterResourceGenerator.py:448
+#: resources/generators/PixelPainterResourceGenerator.py:449
 msgid "Pixel legend"
 msgstr "Leyenda de píxeles"
 
-#: resources/generators/PixelPainterResourceGenerator.py:470
+#: resources/generators/PixelPainterResourceGenerator.py:471
 msgid "Run Length Encodings"
 msgstr "Run length encoding"
 
-#: resources/generators/PixelPainterResourceGenerator.py:475
+#: resources/generators/PixelPainterResourceGenerator.py:476
 msgid "Encoding for page {}"
 msgstr "Codificación para la página {}"
 
@@ -578,7 +579,7 @@ msgstr "Ciclo vital de la mariposa"
 msgid "Little Red Riding Hood"
 msgstr "Caperucita Roja"
 
-#: resources/generators/SortingNetworkCardsResourceGenerator.py:97
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:108
 msgid "Card Type"
 msgstr "Tipo de carta"
 
