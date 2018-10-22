@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-11 01:02+0000\n"
-"PO-Revision-Date: 2018-10-18 15:28\n"
+"PO-Revision-Date: 2018-10-22 14:53\n"
 "Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
 "Language-Team: Maori\n"
 "Language: mi_NZ\n"
@@ -94,7 +94,7 @@ msgstr "nama kore"
 #: resources/generators/BinaryCardsResourceGenerator.py:109
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:110
 msgid "with black back"
-msgstr ""
+msgstr "he pango kei muri"
 
 #: resources/generators/BinaryCardsResourceGenerator.py:111
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:112
@@ -173,7 +173,7 @@ msgstr "Whakaaturanga Uara"
 
 #: resources/generators/JobBadgesResourceGenerator.py:14
 msgid "Hello, I'm a Programmer"
-msgstr ""
+msgstr "Kia ora, he Kaituhiwaehere ahau"
 
 #: resources/generators/JobBadgesResourceGenerator.py:15
 msgid "Hello, I'm a Tester"
@@ -222,11 +222,11 @@ msgstr "Kore (Wātea)"
 
 #: resources/generators/NumberHuntResourceGenerator.py:20
 msgid "Sorted Numbers"
-msgstr ""
+msgstr "He Nama Kua Māhititia"
 
 #: resources/generators/NumberHuntResourceGenerator.py:21
 msgid "Unsorted Numbers"
-msgstr ""
+msgstr "Nama Kāore i Māhititia"
 
 #: resources/generators/NumberHuntResourceGenerator.py:25
 msgid "Number Hunt"
@@ -234,11 +234,11 @@ msgstr "Te Rapurapu Nama"
 
 #: resources/generators/NumberHuntResourceGenerator.py:44
 msgid "My Boxes"
-msgstr ""
+msgstr "Aku Pouaka"
 
 #: resources/generators/NumberHuntResourceGenerator.py:54
 msgid "Opponent's Boxes"
-msgstr ""
+msgstr "Ngā Pouaka a te Hoa Kakari"
 
 #: resources/generators/NumberHuntResourceGenerator.py:65
 msgid "\n"
@@ -277,16 +277,51 @@ msgid "\n"
 "    <strong>My total guesses:</strong> _____<br>\n"
 "    <strong>Opponent's total guesses:</strong> _____\n"
 "</p>\n"
-msgstr ""
+msgstr "\n"
+"<h5>Ngā Tohutohu</h5>\n\n"
+"<p>\n"
+"    <strong>Takahanga 1:</strong>\n"
+"    Kōwhiria tētahi nama o roto i ō pouaka hei kimihanga mā tō hoa kakari.\n"
+"</p>\n\n"
+"<p>\n"
+"    Te nama hei kimihanga mā taku hoa kakari: _____\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>Takahanga 2:</strong>\n"
+"    Tuhia te nama i kōwhiria e tō hoa kakari hei kimihanga māu.\n"
+"</p>\n\n"
+"<p>\n"
+"    Ko te nama o te pouaka e kimi ana ahau: _____\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>Takahanga 3:</strong>\n"
+"    Pātai atu ki tō hoa kakari mō te nama, kei roto i tētahi pouaka matapōkere.\n"
+"    Hei tauira: <em>\"He aha te nama kei roto i te porowhita ira?\"</em>.\n"
+"    Tuhia tōna nama ki roto i te pouaka i pātai atu koe, kei te taha katau.\n"
+"    Āta whakarongo, kei puta te nama e kimi ana koe.\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>Takahanga 4:</strong>\n"
+"    Ia wā ka pātai mai tō hoa kakari mō tētahi pouaka, rīpekangia taua pouaka.\n"
+"    Hurihuri ō koutou wā, kia tae ki te wā kua kite ngā nama e rua.\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>Takahanga 5:</strong>\n"
+"    Tuhia te kaute o ngā pātai mā ia tangata ki raro nei.\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>Aku pātai katoa:</strong> _____<br>\n"
+"    <strong>Ngā pātai o taku hoa:</strong> _____\n"
+"</p>\n"
 
 #: resources/generators/NumberHuntResourceGenerator.py:123
 #: resources/generators/SortingNetworkResourceGenerator.py:28
 msgid "Prefill with Numbers"
-msgstr ""
+msgstr "Tuatahi whakakīia ki ngā Nama"
 
 #: resources/generators/NumberHuntResourceGenerator.py:129
 msgid "Numbers Unsorted/Sorted"
-msgstr ""
+msgstr "He Nama Kāore i māhititia/Kua māhititia"
 
 #: resources/generators/NumberHuntResourceGenerator.py:224
 #: resources/generators/SearchingCardsResourceGenerator.py:70
@@ -294,79 +329,79 @@ msgstr ""
 #: resources/generators/SearchingCardsResourceGenerator.py:173
 #: resources/generators/SearchingCardsResourceGenerator.py:175
 msgid "{} to {}"
-msgstr ""
+msgstr "{} ki {}"
 
 #: resources/generators/ParityCardsResourceGenerator.py:17
 msgid "Black"
-msgstr ""
+msgstr "Pango"
 
 #: resources/generators/ParityCardsResourceGenerator.py:18
 msgid "Blue"
-msgstr ""
+msgstr "Kahurangi"
 
 #: resources/generators/ParityCardsResourceGenerator.py:19
 msgid "Green"
-msgstr ""
+msgstr "Kākāriki"
 
 #: resources/generators/ParityCardsResourceGenerator.py:20
 msgid "Purple"
-msgstr ""
+msgstr "Waiporoporo"
 
 #: resources/generators/ParityCardsResourceGenerator.py:21
 msgid "Red"
-msgstr ""
+msgstr "Whero"
 
 #: resources/generators/ParityCardsResourceGenerator.py:34
 msgid "Card back colour"
-msgstr ""
+msgstr "Te tae o tua i te kāri"
 
 #: resources/generators/PianoKeysResourceGenerator.py:54
 msgid "Piano key labels"
-msgstr ""
+msgstr "Tapanga patuoro piana"
 
 #: resources/generators/PixelPainterResourceGenerator.py:12
 msgid "Black and White (2 possible binary values)"
-msgstr ""
+msgstr "Te Pango me te Mā (e āhei ana ngā uara e rua)"
 
 #: resources/generators/PixelPainterResourceGenerator.py:13
 msgid "Black and White (2 possible binary values) in Run Length Encoding"
-msgstr ""
+msgstr "Te Pango me te Mā (e rua ngā uara tāhūrua) i te Whakawaehere Roanga-Rerenga"
 
 #: resources/generators/PixelPainterResourceGenerator.py:14
 msgid "Greyscale (4 possible binary values)"
-msgstr ""
+msgstr "Āwhata hina (e 4 ngā uara tāhūrua)"
 
 #: resources/generators/PixelPainterResourceGenerator.py:15
 msgid "Colour (8 possible binary values)"
-msgstr ""
+msgstr "Tae (e 8 ngā uara tāhūrua e taea ai)"
 
 #: resources/generators/PixelPainterResourceGenerator.py:19
 msgid "Fish - 6 pages"
-msgstr ""
+msgstr "Ika - e 6 ngā whārangi"
 
 #: resources/generators/PixelPainterResourceGenerator.py:20
 msgid "Kauri tree - 6 pages"
-msgstr ""
+msgstr "Rākau kauri - e 6 ngā whārangi"
 
 #: resources/generators/PixelPainterResourceGenerator.py:21
 msgid "Butterfly - 6 pages"
-msgstr ""
+msgstr "Pūrerehua - e 6 ngā whārangi"
 
 #: resources/generators/PixelPainterResourceGenerator.py:22
 msgid "Hot air balloon - 8 pages"
-msgstr ""
+msgstr "Poihau-wera - e 8 ngā whārangi"
 
 #: resources/generators/PixelPainterResourceGenerator.py:23
 msgid "Boat - 9 pages"
-msgstr ""
+msgstr "Waka - e 9 ngā whārangi"
 
 #: resources/generators/PixelPainterResourceGenerator.py:24
 msgid "Parrots - 32 pages"
-msgstr ""
+msgstr "Kākā - 32 ngā whārangi"
 
 #: resources/generators/PixelPainterResourceGenerator.py:33
 msgid "Black and White"
-msgstr ""
+msgstr "Te Pango me te Mā"
 
 #: resources/generators/PixelPainterResourceGenerator.py:40
 msgid "Run length encoding"
