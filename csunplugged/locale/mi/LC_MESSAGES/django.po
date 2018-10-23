@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-11 01:02+0000\n"
-"PO-Revision-Date: 2018-10-22 14:53\n"
+"PO-Revision-Date: 2018-10-23 15:20\n"
 "Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
 "Language-Team: Maori\n"
 "Language: mi_NZ\n"
@@ -18,15 +18,15 @@ msgstr ""
 
 #: classic/models.py:10
 msgid "Classic CS Unplugged page"
-msgstr ""
+msgstr "Whārangi CS Unplugged Ōkawa"
 
 #: config/settings/base.py:139
 msgid "Translation mode"
-msgstr ""
+msgstr "Momo whakawhitiwhiti reo"
 
 #: config/settings/base.py:145
 msgid "Translation mode (Bi-directional)"
-msgstr ""
+msgstr "Momo whakawhitiwhiti reo (ngā aronga e rua)"
 
 #: general/models.py:11
 msgid "General page"
@@ -42,7 +42,7 @@ msgstr "13 ngā mati"
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:24
 msgid "Barcode length"
-msgstr ""
+msgstr "Roanga pae waehere"
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:48
 msgid "{} Digit Barcode"
@@ -405,49 +405,49 @@ msgstr "Te Pango me te Mā"
 
 #: resources/generators/PixelPainterResourceGenerator.py:40
 msgid "Run length encoding"
-msgstr ""
+msgstr "Whakawaehere Roanga-Rerenga"
 
 #: resources/generators/PixelPainterResourceGenerator.py:47
 msgid "Greyscale"
-msgstr ""
+msgstr "Āwhata Hina"
 
 #: resources/generators/PixelPainterResourceGenerator.py:56
 msgid "Colour"
-msgstr ""
+msgstr "Tae"
 
 #: resources/generators/PixelPainterResourceGenerator.py:71
 msgid "Boat"
-msgstr ""
+msgstr "Waka"
 
 #: resources/generators/PixelPainterResourceGenerator.py:72
 msgid "Fish"
-msgstr ""
+msgstr "Ika"
 
 #: resources/generators/PixelPainterResourceGenerator.py:73
 msgid "Hot air balloon"
-msgstr ""
+msgstr "Poihau wera"
 
 #: resources/generators/PixelPainterResourceGenerator.py:74
 #: templates/general/people.html:154
 msgid "Parrots"
-msgstr ""
+msgstr "Kākā"
 
 #: resources/generators/PixelPainterResourceGenerator.py:75
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:69
 msgid "Kauri tree"
-msgstr ""
+msgstr "Rākau Kauri"
 
 #: resources/generators/PixelPainterResourceGenerator.py:76
 msgid "Butterfly"
-msgstr ""
+msgstr "Pūrerehua"
 
 #: resources/generators/PixelPainterResourceGenerator.py:98
 msgid "Colouring type"
-msgstr ""
+msgstr "Momo whakakī tae"
 
 #: resources/generators/PixelPainterResourceGenerator.py:104
 msgid "Image"
-msgstr ""
+msgstr "Whakaahua"
 
 #: resources/generators/PixelPainterResourceGenerator.py:404
 msgid "Pixel Painter"
@@ -455,23 +455,23 @@ msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:406
 msgid "This page should be kept secret from students."
-msgstr ""
+msgstr "Kaua e whākī atu tēnei whārangi ki ngā ākonga."
 
 #: resources/generators/PixelPainterResourceGenerator.py:408
 msgid "Page grid reference for {} image"
-msgstr ""
+msgstr "Taunga tukutuku mō te atahanga {}"
 
 #: resources/generators/PixelPainterResourceGenerator.py:411
 msgid "Once pixels on each page are filled in correctly, cut each grid out and arrange in the following layout (page names are in the top right corner)."
-msgstr ""
+msgstr "Ina, kua tika te tuhi i ngā tongi-iti, tapahia te tukutuku, ā, whakatakotoria kia pēnei ki raro nei (kei te taha katau o runga ngā ingoa o ngā whārangi)."
 
 #: resources/generators/PixelPainterResourceGenerator.py:426
 msgid "The pixel values are using 2 bit colour values."
-msgstr ""
+msgstr "Kei te whakamahi i ngā moka e rua mō ngā uara o ngā tae."
 
 #: resources/generators/PixelPainterResourceGenerator.py:428
 msgid "The pixel values are using 5 bit RGB colour values (2 red, 2 green, 1 blue)."
-msgstr ""
+msgstr "Kei te whakamahi ngā uara tongi-iti i ngā moka e 5, RGB mō ngā uara o ngā tae (2 whero, 2 kākāriki, 1 kahurangi)."
 
 #: resources/generators/PixelPainterResourceGenerator.py:430
 msgid "Extra pixel legends are at the end of this document for students."
@@ -507,7 +507,7 @@ msgstr "Kaute kāri"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:45
 msgid "Range of numbers"
-msgstr ""
+msgstr "Awhe nama"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:51
 msgid "Include teacher guide sheet"
@@ -523,377 +523,377 @@ msgstr "Pepa ārahi mā te kaiako mō te ngohe rapu ā-tāhūrua"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:129
 msgid "Use this sheet to circle the number you are asking your class to look for when you are demonstrating how the binary search works. This allows you to demonstrate the maximum number of searches it would take. When students are playing the number hunt game, they can choose any number. Avoid those numbers that are underlined as they are key binary search positions (avoiding them is a good thing to do for demonstrations, but in practice students, or computers, won’t intentionally avoid these)."
-msgstr ""
+msgstr "Whakamahia tēnei pepa kia porowhitangia te nama ka rapua e tō akomanga, i tō mahi whakamārama atu ki a rātou i ngā tikanga o te rapu tāhūrua. Mā tēnei e mōhio ai rātou ko tēnei te mōrahi o ngā rapunga kia mahia. Ka taea e ngā ākonga te kōwhiri i ō rātou ake nama i a rātou e tākaro ana i te kēmu rapurapu. Engari, i a koe e mahi ana, kaua e whakamahi i ngā nama kua tārarotia, nā te mea he kī ērā mō te rapu tāhūrua (ko te whakamahi kore i aua nama tētahi tikanga pai mō te whakaaturanga, engari tūturu e kore te ākonga, te rorohiko rānei, e āta kōwhiri kia kaua e whakamahi i ērā nama)."
 
 #: resources/generators/SearchingCardsResourceGenerator.py:139
 msgid "Sorted numbers"
-msgstr ""
+msgstr "Nama kua māhititia"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:178
 msgid "with helper sheet"
-msgstr ""
+msgstr "me tētahi whārangi āwhina"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:180
 msgid "without helper sheet"
-msgstr ""
+msgstr "kāore he whārangi āwhina"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:182
 msgid "{} cards"
-msgstr ""
+msgstr "kāri {}"
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:19
 msgid "Small numbers (1 to 10)"
-msgstr ""
+msgstr "He nama iti (1 ki te 10)"
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:23
 msgid "Large numbers (7 digit numbers)"
-msgstr ""
+msgstr "Nama nui (e 7 ngā mati)"
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:27
 msgid "Letters"
-msgstr ""
+msgstr "Reta"
 
 #. Translators: A set of letters from your language's alphabet, seperated by commas
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:29
 msgid "L,O,N,K,E,D,S,P,G,B,I,Y"
-msgstr ""
+msgstr "H,M,P,T,R,W,A,E,U"
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:34
 msgid "Words"
-msgstr ""
+msgstr "Kupu"
 
 #. Translators: A set of words from your language with similar spelling, seperated by commas
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:36
 msgid "crocodile,crochet,kiwi,weka,kiwi,kiwano"
-msgstr ""
+msgstr "mātou,matau,matua,pukamata,inati,nāhau,mōhou"
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:41
 msgid "Fractions"
-msgstr ""
+msgstr "Hautau"
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:47
 msgid "Butterfly life cycle"
-msgstr ""
+msgstr "Te hurihanga ora o te pūrerehua"
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:58
 msgid "Little Red Riding Hood"
-msgstr ""
+msgstr "Huriwhero"
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:108
 msgid "Card Type"
-msgstr ""
+msgstr "Momo Kāri"
 
 #: resources/generators/SortingNetworkResourceGenerator.py:10
 msgid "Easy Numbers (1 digits)"
-msgstr ""
+msgstr "He nama ngāwari (1 te mati)"
 
 #: resources/generators/SortingNetworkResourceGenerator.py:11
 msgid "Medium Numbers (2 digits)"
-msgstr ""
+msgstr "He nama waenganui (e 2 ngā mati)"
 
 #: resources/generators/SortingNetworkResourceGenerator.py:12
 msgid "Hard Numbers (3 digits)"
-msgstr ""
+msgstr "Ngā Nama Uaua (e 3 ngā mati)"
 
 #: resources/generators/SortingNetworkResourceGenerator.py:13
 msgid "None (Blank - Useful as template)"
-msgstr ""
+msgstr "Kore (Wātea - He pai hei tauira)"
 
 #: resources/generators/TrainStationsResourceGenerator.py:9
 msgid "Circular"
-msgstr ""
+msgstr "Porohitahita"
 
 #: resources/generators/TrainStationsResourceGenerator.py:10
 msgid "Twisted"
-msgstr ""
+msgstr "Takawirihia"
 
 #: resources/generators/TrainStationsResourceGenerator.py:23
 msgid "Train track shape"
-msgstr ""
+msgstr "Āhua o te ara tereina"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:14
 msgid "Student map"
-msgstr ""
+msgstr "Mahere ākonga"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:15
 msgid "Island posters"
-msgstr ""
+msgstr "Pānui whakaahua moutere"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:25
 msgid "Dead Man's Island"
-msgstr ""
+msgstr "Te Moutere Tūpāpaku"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:35
 msgid "Musket Hill"
-msgstr ""
+msgstr "Te Puke Pū Hoata"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:45
 msgid "Mutineers' Island"
-msgstr ""
+msgstr "Motu Whakakeke"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:55
 msgid "Pirates' Island"
-msgstr ""
+msgstr "Motu Pairete"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:65
 msgid "Shipwreck Bay"
-msgstr ""
+msgstr "Whanga Paeārau"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:75
 msgid "Smugglers' Cove"
-msgstr ""
+msgstr "Kokoru Tāhae Parakete"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:85
 msgid "Treasure Island"
-msgstr ""
+msgstr "Motu Taonga"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:105
 msgid "Printable type"
-msgstr ""
+msgstr "Te momo rite mō te tā"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:323
 msgid "Boat A"
-msgstr ""
+msgstr "Waka A"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:326
 msgid "Boat B"
-msgstr ""
+msgstr "Waka E"
 
 #: resources/models.py:12
 msgid "Printable"
-msgstr ""
+msgstr "Ka taea te tā"
 
 #: resources/utils/BaseResourceGenerator.py:18
 msgid "A4"
-msgstr ""
+msgstr "A4"
 
 #: resources/utils/BaseResourceGenerator.py:19
 msgid "US Letter"
-msgstr ""
+msgstr "US Letter"
 
 #: resources/utils/BaseResourceGenerator.py:50
 msgid "Paper Size"
-msgstr ""
+msgstr "Nui o te Pepa"
 
 #: resources/utils/BaseResourceGenerator.py:82
 msgid "Header Text"
-msgstr ""
+msgstr "Tuhinga Pane"
 
 #: resources/utils/BaseResourceGenerator.py:83
 msgid "Example School: Room Four"
-msgstr ""
+msgstr "Tauira Kura: Rūma Whā"
 
 #: resources/utils/BaseResourceGenerator.py:91
 msgid "Number of Copies"
-msgstr ""
+msgstr "E hia ngā Kape"
 
 #: resources/utils/resource_parameters.py:211
 #: templates/topics/all-curriculum-integration-list.html:57
 #: templates/topics/curriculum-integrations-table.html:32
 #: templates/topics/lessons-table.html:42
 msgid "Yes"
-msgstr ""
+msgstr "Āe"
 
 #: resources/utils/resource_parameters.py:211
 #: templates/topics/all-curriculum-integration-list.html:60
 #: templates/topics/curriculum-integrations-table.html:35
 #: templates/topics/lessons-table.html:46
 msgid "No"
-msgstr ""
+msgstr "Kāore"
 
 #: templates/404.html:6 templates/404.html:13
 msgid "Page not found"
-msgstr ""
+msgstr "Kāore i kitea te whārangi"
 
 #: templates/404.html:14
 msgid "We are sorry but we could not find a page for the link you provided."
-msgstr ""
+msgstr "Aroha mai. Kāore i kitea tētahi whārangi mō taua hononga i tukuna mai e koe."
 
 #: templates/404.html:15
 msgid "You may find one of the links below useful:"
-msgstr ""
+msgstr "Tērā pea, ka whai take māu tētahi o ēnei hononga kei raro:"
 
 #: templates/404.html:19
 msgid "Homepage"
-msgstr ""
+msgstr "Whārangi Kāinga"
 
 #: templates/404.html:26 templates/base.html:91 templates/base.html:225
 msgid "Search"
-msgstr ""
+msgstr "Rapua"
 
 #: templates/404.html:32 templates/general/index.html:96
 #: templates/general/people.html:74
 msgid "Classic CS Unplugged"
-msgstr ""
+msgstr "CS Unplugged Ōkawa"
 
 #: templates/base.html:25 templates/general/index.html:7
 #: templates/general/people.html:21
 msgid "CS Unplugged"
-msgstr ""
+msgstr "CS Unplugged"
 
 #: templates/base.html:60
 msgid "Language"
-msgstr ""
+msgstr "Reo"
 
 #: templates/base.html:78 templates/base.html:188
 #: templates/general/index.html:74 templates/topics/index.html:8
 #: templates/topics/index.html:16
 msgid "Topics"
-msgstr ""
+msgstr "Kaupapa"
 
 #: templates/base.html:79 templates/base.html:193
 #: templates/general/index.html:81 templates/resources/index.html:8
 #: templates/resources/index.html:16 templates/topics/lesson.html:74
 msgid "Printables"
-msgstr ""
+msgstr "He Rauemi Tānga"
 
 #: templates/base.html:80 templates/base.html:183
 #: templates/general/about.html:7 templates/general/about.html:15
 #: templates/general/base.html:10
 msgid "About"
-msgstr ""
+msgstr "Mō Tēnei"
 
 #: templates/base.html:103
 msgid "Home"
-msgstr ""
+msgstr "Kāinga"
 
 #: templates/base.html:154
 msgid "Looking for something for high schools? Check out the <a href=\"http://csfieldguide.org.nz/\">Computer Science Field Guide</a>."
-msgstr ""
+msgstr "Kei te kimi i ngā rauemi mō ngā wharekura? Tirohia te <a href=\"http://csfieldguide.org.nz/\">Computer Science Field Guide</a>."
 
 #: templates/base.html:166
 msgid "The primary goal of the Unplugged project is to promote Computer Science (and computing in general) to young people as an interesting, engaging, and intellectually stimulating discipline."
-msgstr ""
+msgstr "Ko te aronga tuatahi mō tēnei kaupapa Unplugged, ko te whakanui i te Pūtaiaio Rorohiko (me ngā mahinga rorohiko whānui) mō ngā taiohi, hei kaupapa whakakoakoa, whakarekareka hoki, whakahiki hoki i te hinengaro mō rātou."
 
 #: templates/base.html:172
 #, python-format
 msgid "Read more about <a href=\"%(principles_url)s\">our principles here</a>."
-msgstr ""
+msgstr "Pānui anō mō <a href=\"%(principles_url)s\">ō mātou mātāpono ki konei</a>."
 
 #: templates/base.html:179
 msgid "Useful Links"
-msgstr ""
+msgstr "He Hononga Hei Whakamahi"
 
 #: templates/base.html:199
 msgid "Community"
-msgstr ""
+msgstr "Hapori"
 
 #: templates/base.html:203
 msgid "Twitter"
-msgstr ""
+msgstr "Tīhau"
 
 #: templates/base.html:208
 msgid "YouTube"
-msgstr ""
+msgstr "YouTube"
 
 #: templates/base.html:213
 msgid "GitHub"
-msgstr ""
+msgstr "GitHub"
 
 #: templates/base.html:219
 msgid "Help"
-msgstr ""
+msgstr "Āwhina"
 
 #: templates/base.html:231 templates/topics/glossary.html:8
 #: templates/topics/glossary.html:17
 msgid "Glossary"
-msgstr ""
+msgstr "Kuputaka"
 
 #: templates/base.html:236
 msgid "Feedback"
-msgstr ""
+msgstr "Whakahoki Kōrero"
 
 #: templates/base.html:241 templates/general/contact.html:7
 msgid "Contact"
-msgstr ""
+msgstr "Whakapā mai"
 
 #: templates/base.html:265
 msgid "The CS Unplugged material is open source on <a href=\"https://github.com/uccser/cs-unplugged\">GitHub</a>, and this website's content is shared under a <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons Attribution-ShareAlike 4.0 International license</a>. The CS Unplugged is a project by the <a href=\"https://www.canterbury.ac.nz/engineering/schools/csse/research/cse/\">Computer Science Education Research Group</a> at the <a href=\"http://www.canterbury.ac.nz/\">University of Canterbury</a>, New Zealand."
-msgstr ""
+msgstr "Kua tukuna ngā rauemi CS Unplugged hei rauemi whakatuwhera pūtake ki <a href=\"https://github.com/uccser/cs-unplugged\">GitHub</a>, ā, kua tuaritia ngā ihirangi o te pae tukutuku kei raro i te <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons Attribution-ShareAlike 4.0 International license</a>. He kaupapa te CS Unplugged nā te <a href=\"https://www.canterbury.ac.nz/engineering/schools/csse/research/cse/\">Computer Science Education Research Group</a> kei <a href=\"http://www.canterbury.ac.nz/\">Te Whare Wānanga o Waitaha</a>, Aotearoa."
 
 #: templates/base.html:288
 #, python-format
 msgid "This definition is not available in %(language)s, sorry!"
-msgstr ""
+msgstr "Kāore e taea te tautuhi mō te reo %(language)s, aroha mai!"
 
 #: templates/base.html:295
 msgid "Close"
-msgstr ""
+msgstr "Katia"
 
 #: templates/dev/index.html:22
 msgid "Unit Plan:"
-msgstr ""
+msgstr "Mahere Kōwae:"
 
 #: templates/general/about.html:20
 msgid "CS Unplugged is a collection of free learning activities that teach Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around. We originally developed this so that young students could dive head-first into Computer Science, experiencing the kinds of questions and challenges that computer scientists experience, but without having to learn programming first."
-msgstr ""
+msgstr "Ko CS Unplugged tētahi kohinga ngohe utu kore e whakaako ana i te Pūtaiao Rorohiko, mā ngā kēmu whakakoakoa me ngā panga e whakamahi nei i ngā kāri, aho hoki, pene hinu hoki, omaoma haere hoki. Ko te kaupapa i tīmata ai ēnei mahi, kia tukua ngā ākonga nohinohi ki te ruku ki te Pūtaiao Rorohiko, kia waia rātou ki ngā momo pātai, ngā momo wero hoki e pā ana ki te mahi pūtaiao rorohiko, engari me te kore ako i te tuhiwaehere i te tuatahi."
 
 #: templates/general/about.html:27
 msgid "The collection was originally intended as a resource for outreach and extension, but with the adoption of computing and computational thinking into many classrooms around the world, it is now widely used for teaching. The material has been used in many contexts outside the classroom as well, including science shows, talks for senior citizens, and special events."
-msgstr ""
+msgstr "Ko te aronga tūturu mō tēnei kohikohinga kia noho hei rauemi mō te toro atu me te tāpiri atu, engari, nā te kaha o te uru o ngā rorohiko me te whakaaro rorohiko ki roto i ngā akomanga maha o te ao, ka whakamahia whānuitia hei whakaako. Kua whakamahia ēnei rauemi i ngā horopaki maha kei waho i te akomanga hoki, pērā ki ngā whakaaturanga pūtaiao, ngā kauhau mā te hunga pakeke, me ngā tauwhāinga whakahirahira."
 
 #: templates/general/about.html:34
 msgid "Thanks to generous sponsorships we have been able to create associated resources such as the videos, which are intended to help teachers see how the activities work (please don’t show them to your classes – let them experience the activities themselves!). All of the activities that we provide are open source – they are released under a <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons Attribution-ShareAlike licence</a>, so you can copy, share and modify the material."
-msgstr ""
+msgstr "Nā te pūtea tautoko nui i taea ai e matou te hanga i ngā rauemi tautoko pērā ki ngā kiriata, hei āwhina i ngā kaiako kia kitea pēhea te whakamahi i ēnei ngohe i te akomanga (tēnā, kaua e whakaatu ki ō akomanga - tukua ngā ngohe hei mea whai wheako mā rātou!). He \"tukunga-utu-kore\" ngā ngohe katoa - kua tukuna i raro i tētahi raihana <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons Attribution-ShareAlike licence</a>, nā reira ka āhei koe te tārua, te tuari hoki, te whakahou hoki i ngā rauemi."
 
 #: templates/general/about.html:42
 #, python-format
 msgid "To view the team of contributors who work on this project, see our <a href=\"%(people_url)s\">people page</a>."
-msgstr ""
+msgstr "Kia kitea ai te tīma mō tēnei kaupapa, tirohia tā mātou <a href=\"%(people_url)s\">whārangi tangata</a>."
 
 #: templates/general/about.html:49
 #, python-format
 msgid "For details on how to contact us, see our <a href=\"%(contact_url)s\">contact us page</a>."
-msgstr ""
+msgstr "Ki te whakapā mai ki a mātou, haere ki te <a href=\"%(contact_url)s\">whārangi whakapā mai</a>."
 
 #: templates/general/about.html:56
 #, python-format
 msgid "For more information about the principles behind CS Unplugged, see our <a href=\"%(principles_url)s\">principles page</a>."
-msgstr ""
+msgstr "Kia toro atu mō ngā mātāpono o CS Unplugged, tirohia <a href=\"%(principles_url)s\">whārangi mō ngā mātāpono</a>."
 
 #: templates/general/base.html:7
 msgid "About pages"
-msgstr ""
+msgstr "Whārangi mō mātou"
 
 #: templates/general/base.html:11
 #: templates/general/computational-thinking.html:8
 #: templates/general/computational-thinking.html:16
 msgid "Computational Thinking and CS Unplugged"
-msgstr ""
+msgstr "Te Whakaaro Rorohiko me CS Unplugged"
 
 #: templates/general/base.html:12 templates/general/principles.html:7
 #: templates/general/principles.html:17
 msgid "Principles"
-msgstr ""
+msgstr "Ngā Mātāpono"
 
 #: templates/general/base.html:13 templates/general/people.html:7
 #: templates/general/people.html:16
 msgid "People"
-msgstr ""
+msgstr "Tāngata"
 
 #: templates/general/base.html:14 templates/general/contact.html:16
 msgid "Contact Us"
-msgstr ""
+msgstr "Whakapā mai"
 
 #: templates/general/computational-thinking.html:20
 msgid "What is Computational Thinking?"
-msgstr ""
+msgstr "He aha te Whakaaro Rorohiko?"
 
 #: templates/general/computational-thinking.html:23
 msgid "The world we live in has become a digital one, filled with technology and driven by Computer Science. Software and technology have transformed every subject and job area, from science and medicine, to art history and psychology. Digital technology is ubiquitous. To be informed and empowered citizens, the next generation of students need to understand this digital world that they live in."
-msgstr ""
+msgstr "Kua huri tēnei ao e noho nei tātou hei ao matihiko, kua kī i te hangarau, kua whakakahangia e te pūtaiao rorohiko. Kua whakahuria ngā marau katoa, me ngā momo tūmahi katoa e te hangarau me ngā pūmanawa rorohiko, mai i te pūtaiao me te rongoā ki te mātai hinengaro me te rangahau toi ataata. He hangarau matihiko ka kitea, puta noa i te ao. Kia whakamanatia, kia whai mōhio hoki ngā kirirarau, me mōhio rawa te whakatipuranga hou o ngā ākonga ki tēnei ao hangarau matihiko e noho nei rātou."
 
 #: templates/general/computational-thinking.html:32
 msgid "This is why Computational Thinking has been called the ‘21st Century Skill Set’, and is important for everyone to learn. It is critical to understanding how the digital world works, for harnessing the power of computers to solve tough problems, and making great things happen! It also enables us to think critically about not just the benefits of certain technologies, but also the potential harm, ethical implications, or unintended consequences of these."
-msgstr ""
+msgstr "Ko tēnei te take, e kīia ai te Whakaaro Rorohiko he 'kete pukenga rau tau 21'. Koia hoki te take he tino kaupapa ako tēnei mō te tangata ahakoa ko wai. He mōhiotanga nui tēnei, kia mārama ki ngā nekenekehanga o te ao hangarau matihiko, me te whakamahi i te rorohiko ki te whakaoti rapanga uaua, kia puta ai ngā otinga pai! He pai hoki tēnei kia taea ai te whakaaro hōhonu mō ngā painga o ngā momo hangarau, me ngā raru hoki, ngā pānga matatika, me ngā pānga pokerehū."
 
 #: templates/general/computational-thinking.html:40
 msgid "But what exactly is Computational Thinking? Let’s have a look at a technical definition..."
-msgstr ""
+msgstr "Heoi anō, he aha tēnei mea te Whakaaro Rorohiko? Anei te whakapapa hangarau..."
 
 #: templates/general/computational-thinking.html:47
 msgid "\"Computational Thinking is the thought processes involved in formulating problems and their solutions so that the solutions are represented in a form that can be effectively carried out by an information-processing agent.\""
-msgstr ""
+msgstr "\"Ko te \"Whakaaro Rorohiko\" tētahi momo tukanga whakaaro e whakamahia ki te wetewete i ngā āhuatanga o tētahi rapanga, me ngā otinga, kia whakatakotoria hei tauira e tika ana kia whakahaerengia e te rorohiko, i tētahi atu pūnaha whakahaere i te mōhiohio rānei.\""
 
 #: templates/general/computational-thinking.html:57
 msgid "Phew, it’s quite a mouthful isn’t it? But, as we like to say at CS Unplugged, it’s just big words for simple ideas! 'Information-processing agent' means anything that follows a set of instructions to complete a task (we call this 'computing'). Most of the time this 'agent' means a computer or other type of digital device - but it could also be a human! We’ll refer to it as a computer to make things a bit simpler. To represent solutions in a way that a computer can carry them out, we have to represent them as a step by step process - an <strong>algorithm</strong>. To create these algorithmic solutions we apply some special problem solving skills to. These skill are what make up Computational Thinking! And they are skills that are transferrable to any field."
