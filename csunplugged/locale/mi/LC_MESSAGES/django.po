@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-11 01:02+0000\n"
-"PO-Revision-Date: 2018-10-23 15:20\n"
+"PO-Revision-Date: 2018-10-24 14:56\n"
 "Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
 "Language-Team: Maori\n"
 "Language: mi_NZ\n"
@@ -46,7 +46,7 @@ msgstr "Roanga pae waehere"
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:48
 msgid "{} Digit Barcode"
-msgstr ""
+msgstr "{} Mati Pae-waehere"
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:53
 msgid "Separate!"
@@ -451,7 +451,7 @@ msgstr "Whakaahua"
 
 #: resources/generators/PixelPainterResourceGenerator.py:404
 msgid "Pixel Painter"
-msgstr ""
+msgstr "Te Peita Tongi-iti"
 
 #: resources/generators/PixelPainterResourceGenerator.py:406
 msgid "This page should be kept secret from students."
@@ -897,31 +897,31 @@ msgstr "\"Ko te \"Whakaaro Rorohiko\" tētahi momo tukanga whakaaro e whakamahia
 
 #: templates/general/computational-thinking.html:57
 msgid "Phew, it’s quite a mouthful isn’t it? But, as we like to say at CS Unplugged, it’s just big words for simple ideas! 'Information-processing agent' means anything that follows a set of instructions to complete a task (we call this 'computing'). Most of the time this 'agent' means a computer or other type of digital device - but it could also be a human! We’ll refer to it as a computer to make things a bit simpler. To represent solutions in a way that a computer can carry them out, we have to represent them as a step by step process - an <strong>algorithm</strong>. To create these algorithmic solutions we apply some special problem solving skills to. These skill are what make up Computational Thinking! And they are skills that are transferrable to any field."
-msgstr ""
+msgstr "Auē! Te pīroiroi hoki! Heoi anō, ki a mātou o te CS Unplugged, he nui ngā kupu, he ngāwari ngā huatau! Ko te tikanga o te 'kaikawe tukatuka mōhiohio', ko tētahi mea kei te whai i ngā tohutohu kia oti ai tētahi mahi (arā, ko te 'mahi rorohiko'). I te nuinga o ngā wā he rorohiko tēnei 'kaikawe', ko tētahi atu momo pūrere matihiko rānei, heoi, he tangata pea rānei! Heoi anō, kia ngāwari te kōrero i konei, ka kīia he rorohiko. Kia taea ai e ngā rorohiko te whai i ngā tohutohu, me āta raupapa aua tohutohu - ka kīia tērā he <strong>hātepe</strong>. Ki te hanga i aua otinga hātepe, me whakamahi i ētahi pūkenga motuhake hei whakaoti rapanga. Koinei ngā pūkenga o te Whakaaro Rorohiko! Waihoki he pūkenga pai ēnei mō ngā tūmomo mahi katoa."
 
 #: templates/general/computational-thinking.html:71
 msgid "Computational Thinking could be described as 'thinking like a Computer Scientist', but it is now an important skill for everyone to learn, whether they want to be a Computer Scientist or not! It’s interesting, and important, to note that Computational Thinking, and Computer Science, aren’t entirely about computers, they are more about <strong>people</strong>. You might think that we write programs for computers, but really we write programs for people - to help them communicate, find information, and solve problems."
-msgstr ""
+msgstr "Tērā pea ka kīia ko te Whakaaro Rorohiko te 'whakaaro pērā ki te Kaipūtaiao Rorohiko', engari i ēnei rā, he pūkenga nui ēnei momo mōhiotanga kia ako te tangata, ahakoa ka pīrangi kia mahi hei kaipūtaiao rorohiko, kāore rānei! Ko te mea rerekē nei, ehara i te mea mō te rorohiko anake ēnei mea te whakaaro rorohiko me te pūtaiao rorohiko, engari mā te <strong>tangata</strong> rawa ēnei. Tērā e pōhēhētia ka tuhiwaehere tātou mō te rorohiko, engari, ka tuhi waehere tātou mā te tangata - ki te hāpai i te whakawhitiwhiti me te rapu mōhiohio me te whakaoti i ngā rapanga."
 
 #: templates/general/computational-thinking.html:79
 msgid "For example, you might use an app on a smartphone to get directions to a friend's house; the app is an example of a computer program, and the smartphone is the \"information processing agent\" that runs the program for us. Whoever designed the algorithm for working out the best route, and all the details like the interface and how to store the map, applied computational thinking to design the system. But they didn't design it for the sake of the smartphone; they designed it to help the person using the smartphone."
-msgstr ""
+msgstr "Hei tauira, ka whakamahi pea koe i te taupānga o tō waea pūkoro ki te rapu i te ara ki te whare o tō hoa; he tauira papatono rorohiko te taupānga, ā, ko te waea pūkoro te \"kaikawe tukatuka mōhiohio\" e whakahaere ana i te papatono mā tātou. Ahakoa ko wai te tangata nāna nei te hātepe i hoahoa hei kimi i te ara pai rawa atu, me ngā āhuatanga katoa pērā i te atanga, ka pēhea hoki te whakaputu i te mahere, nāna i whakamahi i te whakaaro rorohiko hei hoahoa i te pūnaha. Heoi anō, kāore i hoahoatia e rātou mā te waea pūkoro noa iho; i hoahoatia e rātou hei āwhina i te tangata e whakamahi ana i te waea pūkoro."
 
 #: templates/general/computational-thinking.html:86
 msgid "Computational Thinking in CS Unplugged"
-msgstr ""
+msgstr "Te Whakaaro Rorohiko kei roto i te CS Unplugged"
 
 #: templates/general/computational-thinking.html:88
 msgid "<p> Throughout the lessons and units in CS Unplugged there are many links to Computational Thinking. Teaching Computational Thinking through CS Unplugged activities teaches students how to: </p> <ul> <li>describe a problem,</li> <li>identify the important details needed to solve this problem,</li> <li>break the problem down into small, logical steps,</li> <li>use these steps to create a process (algorithm) that solves the problem,</li> <li>and then evaluate this process.</li> </ul>"
-msgstr ""
+msgstr "<p> Kei roto i ngā akomanga, me ngā wāhanga o CS Unplugged, he maha ngā hononga ki te Whakaaro Rorohiko. Mā te whakaako i te Whakaaro Rorohiko mā ngā mahinga o CS Unplugged e ako ai ngā ākonga ki te: </p> <ul> <li>whakaahua i tētahi rapanga,</li> <li>tautuhi i ngā meka nui hei whakaoti i tēnei rapanga,</li> <li>whakawāhi i te rapanga ki ngā wāhanga mahi iti, arorau hoki,</li> <li>whakamahia ngā wāwāhinga ki te waihanga i tētahi tukanga (hātepe) e whakaoti ai te rapanga,</li> <li>kātahi ka aromātai i tēnei tukanga.</li> </ul>"
 
 #: templates/general/computational-thinking.html:105
 msgid "These skills are transferable to any other curriculum area, but are particularly relevant to developing digital systems and solving problems using the capabilities of computers.</p>"
-msgstr ""
+msgstr "He pūkenga ēnei ka taea te whakawhiti atu ki marautanga kē, heoi anō, he tino hāngai ki te waihanga i ngā pūnaha hangarau matihiko me te whakaoti rapanga mā ngā āheitanga o te rorohiko.</p>"
 
 #: templates/general/computational-thinking.html:110
 msgid "These Computational Thinking concepts are all connected to each other and support each other, but it's important to note that not all aspects of Computational Thinking will necessarily happen in every unit or lesson. In each unit and lesson we've highlighted the important connections for you to observe your students in action."
-msgstr ""
+msgstr "Ka honohono, ka tautoko hoki katoa ēnei ariā Whakaaro Rorohiko, engari ko te mea nui kia mōhio kāore e kitea ngā āhuatanga katoa o te Whakaaro Rorohiko i roto i ia wāhanga ako, i ia akoranga rānei. Kua tīpako mātou i ngā hononga whakahirahira i roto i ia wāhanga ako, i ia akoranga hoki kia mātakitaki ai koe i ō ākonga e mahi ana."
 
 #: templates/general/computational-thinking.html:117
 msgid "There are a number of definitions of Computational Thinking, but most have a set of 5 or 6 problem solving skills that Computational Thinking embodies. For the Unplugged project we've identified the following six CT skills that are often mentioned in the literature; they are described below, and at the end of each Unplugged lesson we've identified ways that these skills appeared in the lesson, to help you see the CT connection with the lessons."
