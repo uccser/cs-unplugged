@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-11 01:02+0000\n"
-"PO-Revision-Date: 2018-10-23 15:10\n"
+"PO-Revision-Date: 2018-10-25 14:42\n"
 "Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -18,178 +18,178 @@ msgstr ""
 
 #: classic/models.py:10
 msgid "Classic CS Unplugged page"
-msgstr ""
+msgstr "经典版 CS Unplugged 页面"
 
 #: config/settings/base.py:139
 msgid "Translation mode"
-msgstr ""
+msgstr "翻译模式"
 
 #: config/settings/base.py:145
 msgid "Translation mode (Bi-directional)"
-msgstr ""
+msgstr "翻译模式（双向）"
 
 #: general/models.py:11
 msgid "General page"
-msgstr ""
+msgstr "通用页面"
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:10
 msgid "12 digits"
-msgstr ""
+msgstr "12 位"
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:11
 msgid "13 digits"
-msgstr ""
+msgstr "13 位"
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:24
 msgid "Barcode length"
-msgstr ""
+msgstr "条形码长度"
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:48
 msgid "{} Digit Barcode"
-msgstr ""
+msgstr "{} 位条形码"
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:53
 msgid "Separate!"
-msgstr ""
+msgstr "分开！"
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:54
 msgid "Operate!"
-msgstr ""
+msgstr "操作！"
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:55
 msgid "Calculate!"
-msgstr ""
+msgstr "计算！"
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:66
 msgid "Remember that this algorithm uses modulo 10, so we are only interested in the number in the one's column."
-msgstr ""
+msgstr "请记住，此算法使用 10 作为模数。因此，我们将仅注意一栏中的数字。"
 
 #: resources/generators/BinaryCardsResourceGenerator.py:33
 msgid "Display Numbers"
-msgstr ""
+msgstr "显示数字"
 
 #: resources/generators/BinaryCardsResourceGenerator.py:38
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:46
 msgid "Black on Card Back"
-msgstr ""
+msgstr "卡背为黑色"
 
 #: resources/generators/BinaryCardsResourceGenerator.py:40
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:48
 msgid "Yes - Uses a lot of black ink, but conveys clearer card state. Print double sided."
-msgstr ""
+msgstr "是 - 使用大量黑墨，但更清晰地反映卡片状态。双面打印。"
 
 #: resources/generators/BinaryCardsResourceGenerator.py:41
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:49
 msgid "No - Print single sided."
-msgstr ""
+msgstr "否 - 单面打印。"
 
 #: resources/generators/BinaryCardsResourceGenerator.py:104
 msgid "with numbers"
-msgstr ""
+msgstr "有数字"
 
 #: resources/generators/BinaryCardsResourceGenerator.py:106
 msgid "without numbers"
-msgstr ""
+msgstr "无数字"
 
 #: resources/generators/BinaryCardsResourceGenerator.py:109
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:110
 msgid "with black back"
-msgstr ""
+msgstr "有黑色卡背"
 
 #: resources/generators/BinaryCardsResourceGenerator.py:111
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:112
 msgid "without black back"
-msgstr ""
+msgstr "无黑色卡背"
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:20
 #: resources/generators/BinaryWindowsResourceGenerator.py:15
 msgid "Four (1 to 8)"
-msgstr ""
+msgstr "四（1 至 8）"
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:21
 #: resources/generators/BinaryWindowsResourceGenerator.py:16
 msgid "Eight (1 to 128)"
-msgstr ""
+msgstr "八（1 至 128）"
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:22
 msgid "Twelve (1 to 2048)"
-msgstr ""
+msgstr "十二（1 至 2048）"
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:35
 #: resources/generators/BinaryWindowsResourceGenerator.py:34
 msgid "Number of Bits"
-msgstr ""
+msgstr "位数"
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:41
 #: resources/generators/BinaryWindowsResourceGenerator.py:40
 msgid "Display Dot Counts"
-msgstr ""
+msgstr "显示点数"
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:106
 #: resources/generators/BinaryWindowsResourceGenerator.py:192
 msgid "with dot counts"
-msgstr ""
+msgstr "有点数"
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:108
 #: resources/generators/BinaryWindowsResourceGenerator.py:194
 msgid "without dot counts"
-msgstr ""
+msgstr "无点数"
 
 #: resources/generators/BinaryToAlphabetResourceGenerator.py:12
 msgid "Student"
-msgstr ""
+msgstr "学生"
 
 #: resources/generators/BinaryToAlphabetResourceGenerator.py:13
 msgid "Teacher (solutions)"
-msgstr ""
+msgstr "教师 (解决方案)"
 
 #: resources/generators/BinaryToAlphabetResourceGenerator.py:27
 msgid "Worksheet Version"
-msgstr ""
+msgstr "习题版"
 
 #: resources/generators/BinaryToAlphabetResourceGenerator.py:54
 msgid "Base 10"
-msgstr ""
+msgstr "基数 10"
 
 #: resources/generators/BinaryToAlphabetResourceGenerator.py:55
 msgid "Binary"
-msgstr ""
+msgstr "二进制"
 
 #: resources/generators/BinaryToAlphabetResourceGenerator.py:56
 msgid "Letter"
-msgstr ""
+msgstr "字母"
 
 #: resources/generators/BinaryWindowsResourceGenerator.py:20
 msgid "Binary (0 or 1)"
-msgstr ""
+msgstr "二进制（0 或 1）"
 
 #: resources/generators/BinaryWindowsResourceGenerator.py:21
 msgid "Lightbulb (off or on)"
-msgstr ""
+msgstr "电灯（关或开）"
 
 #: resources/generators/BinaryWindowsResourceGenerator.py:45
 msgid "Value Representation"
-msgstr ""
+msgstr "值的表示法"
 
 #: resources/generators/JobBadgesResourceGenerator.py:14
 msgid "Hello, I'm a Programmer"
-msgstr ""
+msgstr "您好，我是一名程序员"
 
 #: resources/generators/JobBadgesResourceGenerator.py:15
 msgid "Hello, I'm a Tester"
-msgstr ""
+msgstr "您好，我是一名测试人员"
 
 #: resources/generators/JobBadgesResourceGenerator.py:16
 msgid "Hello, I'm a Bot"
-msgstr ""
+msgstr "您好，我是一台机器人"
 
 #: resources/generators/LeftRightCardsResourceGenerator.py:14
 msgid "Left"
-msgstr ""
+msgstr "左"
 
 #: resources/generators/LeftRightCardsResourceGenerator.py:24
 msgid "Right"
-msgstr ""
+msgstr "右"
 
 #: resources/generators/ModuloClockResourceGenerator.py:10
 #: resources/generators/ModuloClockResourceGenerator.py:83
@@ -198,47 +198,47 @@ msgstr ""
 #: resources/generators/SearchingCardsResourceGenerator.py:26
 #: resources/generators/SearchingCardsResourceGenerator.py:171
 msgid "Blank"
-msgstr ""
+msgstr "空"
 
 #: resources/generators/ModuloClockResourceGenerator.py:25
 msgid "Modulo"
-msgstr ""
+msgstr "模数"
 
 #: resources/generators/NumberHuntResourceGenerator.py:14
 msgid "Easy Numbers (2 digits)"
-msgstr ""
+msgstr "简单数字（2 位）"
 
 #: resources/generators/NumberHuntResourceGenerator.py:15
 msgid "Medium Numbers (3 digits)"
-msgstr ""
+msgstr "中等难度数字（3 位）"
 
 #: resources/generators/NumberHuntResourceGenerator.py:16
 msgid "Hard Numbers (4 digits)"
-msgstr ""
+msgstr "高难度数字（4 位）"
 
 #: resources/generators/NumberHuntResourceGenerator.py:17
 msgid "None (Blank)"
-msgstr ""
+msgstr "无（空）"
 
 #: resources/generators/NumberHuntResourceGenerator.py:20
 msgid "Sorted Numbers"
-msgstr ""
+msgstr "已排序数字"
 
 #: resources/generators/NumberHuntResourceGenerator.py:21
 msgid "Unsorted Numbers"
-msgstr ""
+msgstr "未排序数字"
 
 #: resources/generators/NumberHuntResourceGenerator.py:25
 msgid "Number Hunt"
-msgstr ""
+msgstr "找数字"
 
 #: resources/generators/NumberHuntResourceGenerator.py:44
 msgid "My Boxes"
-msgstr ""
+msgstr "我的方框"
 
 #: resources/generators/NumberHuntResourceGenerator.py:54
 msgid "Opponent's Boxes"
-msgstr ""
+msgstr "对手的方框"
 
 #: resources/generators/NumberHuntResourceGenerator.py:65
 msgid "\n"
@@ -277,16 +277,51 @@ msgid "\n"
 "    <strong>My total guesses:</strong> _____<br>\n"
 "    <strong>Opponent's total guesses:</strong> _____\n"
 "</p>\n"
-msgstr ""
+msgstr "\n"
+"<h5>说明</h5>\n\n"
+"<p>\n"
+"    <strong>步骤 1：</strong>\n"
+"    在您的方框中选择一个数字，让对手进行查找。\n"
+"</p>\n\n"
+"<p>\n"
+"    对手所寻找的数字是: _____\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>步骤 2：</strong>\n"
+"    写下对手让您寻找的选定数字。\n"
+"</p>\n\n"
+"<p>\n"
+"    我正寻找的方框数字： _____\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>步骤 3：</strong>\n"
+"    询问对手随机方框中是什么数字。\n"
+"    例如: <em>\"虚线圆中的数字是什么？\"</em>.\n"
+"    在询问的方框右边写下对手所回答的数字。\n"
+"    请注意聆听您正寻找的数字。\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>步骤 4：</strong>\n"
+"    每当对手猜中一个方框时，划去它。\n"
+"    在找到每个人的数字前，一直轮流询问。\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>步骤 5：</strong>\n"
+"    在下方写下每人猜中的数量。\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>我一共猜中了：</strong> _____<br>\n"
+"    <strong>对手一共猜中了：</strong> _____\n"
+"</p>\n"
 
 #: resources/generators/NumberHuntResourceGenerator.py:123
 #: resources/generators/SortingNetworkResourceGenerator.py:28
 msgid "Prefill with Numbers"
-msgstr ""
+msgstr "使用数字进行预填充"
 
 #: resources/generators/NumberHuntResourceGenerator.py:129
 msgid "Numbers Unsorted/Sorted"
-msgstr ""
+msgstr "未排序/已排序数字"
 
 #: resources/generators/NumberHuntResourceGenerator.py:224
 #: resources/generators/SearchingCardsResourceGenerator.py:70
@@ -294,607 +329,607 @@ msgstr ""
 #: resources/generators/SearchingCardsResourceGenerator.py:173
 #: resources/generators/SearchingCardsResourceGenerator.py:175
 msgid "{} to {}"
-msgstr ""
+msgstr "{} 至 {}"
 
 #: resources/generators/ParityCardsResourceGenerator.py:17
 msgid "Black"
-msgstr ""
+msgstr "黑色"
 
 #: resources/generators/ParityCardsResourceGenerator.py:18
 msgid "Blue"
-msgstr ""
+msgstr "蓝色"
 
 #: resources/generators/ParityCardsResourceGenerator.py:19
 msgid "Green"
-msgstr ""
+msgstr "绿色"
 
 #: resources/generators/ParityCardsResourceGenerator.py:20
 msgid "Purple"
-msgstr ""
+msgstr "紫色"
 
 #: resources/generators/ParityCardsResourceGenerator.py:21
 msgid "Red"
-msgstr ""
+msgstr "红色"
 
 #: resources/generators/ParityCardsResourceGenerator.py:34
 msgid "Card back colour"
-msgstr ""
+msgstr "卡背颜色"
 
 #: resources/generators/PianoKeysResourceGenerator.py:54
 msgid "Piano key labels"
-msgstr ""
+msgstr "钢琴键标签"
 
 #: resources/generators/PixelPainterResourceGenerator.py:12
 msgid "Black and White (2 possible binary values)"
-msgstr ""
+msgstr "黑白 (2 种可能的二进制数值)"
 
 #: resources/generators/PixelPainterResourceGenerator.py:13
 msgid "Black and White (2 possible binary values) in Run Length Encoding"
-msgstr ""
+msgstr "行程编码中的黑白（2 种可能的二进制数值）"
 
 #: resources/generators/PixelPainterResourceGenerator.py:14
 msgid "Greyscale (4 possible binary values)"
-msgstr ""
+msgstr "灰度（4 种可能的二进制数值）"
 
 #: resources/generators/PixelPainterResourceGenerator.py:15
 msgid "Colour (8 possible binary values)"
-msgstr ""
+msgstr "彩色（8 种可能的二进制数值）"
 
 #: resources/generators/PixelPainterResourceGenerator.py:19
 msgid "Fish - 6 pages"
-msgstr ""
+msgstr "鱼 - 6 页"
 
 #: resources/generators/PixelPainterResourceGenerator.py:20
 msgid "Kauri tree - 6 pages"
-msgstr ""
+msgstr "贝壳杉 - 6 页"
 
 #: resources/generators/PixelPainterResourceGenerator.py:21
 msgid "Butterfly - 6 pages"
-msgstr ""
+msgstr "蝴蝶 - 6 页"
 
 #: resources/generators/PixelPainterResourceGenerator.py:22
 msgid "Hot air balloon - 8 pages"
-msgstr ""
+msgstr "热气球 - 8 页"
 
 #: resources/generators/PixelPainterResourceGenerator.py:23
 msgid "Boat - 9 pages"
-msgstr ""
+msgstr "船只 - 9 页"
 
 #: resources/generators/PixelPainterResourceGenerator.py:24
 msgid "Parrots - 32 pages"
-msgstr ""
+msgstr "鹦鹉 - 32 页"
 
 #: resources/generators/PixelPainterResourceGenerator.py:33
 msgid "Black and White"
-msgstr ""
+msgstr "黑白"
 
 #: resources/generators/PixelPainterResourceGenerator.py:40
 msgid "Run length encoding"
-msgstr ""
+msgstr "行程编码"
 
 #: resources/generators/PixelPainterResourceGenerator.py:47
 msgid "Greyscale"
-msgstr ""
+msgstr "灰度"
 
 #: resources/generators/PixelPainterResourceGenerator.py:56
 msgid "Colour"
-msgstr ""
+msgstr "颜色"
 
 #: resources/generators/PixelPainterResourceGenerator.py:71
 msgid "Boat"
-msgstr ""
+msgstr "船只"
 
 #: resources/generators/PixelPainterResourceGenerator.py:72
 msgid "Fish"
-msgstr ""
+msgstr "鱼"
 
 #: resources/generators/PixelPainterResourceGenerator.py:73
 msgid "Hot air balloon"
-msgstr ""
+msgstr "热气球"
 
 #: resources/generators/PixelPainterResourceGenerator.py:74
 #: templates/general/people.html:154
 msgid "Parrots"
-msgstr ""
+msgstr "鹦鹉"
 
 #: resources/generators/PixelPainterResourceGenerator.py:75
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:69
 msgid "Kauri tree"
-msgstr ""
+msgstr "贝壳杉"
 
 #: resources/generators/PixelPainterResourceGenerator.py:76
 msgid "Butterfly"
-msgstr ""
+msgstr "蝴蝶"
 
 #: resources/generators/PixelPainterResourceGenerator.py:98
 msgid "Colouring type"
-msgstr ""
+msgstr "上色类型"
 
 #: resources/generators/PixelPainterResourceGenerator.py:104
 msgid "Image"
-msgstr ""
+msgstr "图像"
 
 #: resources/generators/PixelPainterResourceGenerator.py:404
 msgid "Pixel Painter"
-msgstr ""
+msgstr "像素绘画"
 
 #: resources/generators/PixelPainterResourceGenerator.py:406
 msgid "This page should be kept secret from students."
-msgstr ""
+msgstr "此页面不应供学生访问。"
 
 #: resources/generators/PixelPainterResourceGenerator.py:408
 msgid "Page grid reference for {} image"
-msgstr ""
+msgstr "{} 图像的页面网格坐标"
 
 #: resources/generators/PixelPainterResourceGenerator.py:411
 msgid "Once pixels on each page are filled in correctly, cut each grid out and arrange in the following layout (page names are in the top right corner)."
-msgstr ""
+msgstr "一旦填入正确的每页像素后，将每个网格减下来，排为以下布局（页面名称位于右上角）。"
 
 #: resources/generators/PixelPainterResourceGenerator.py:426
 msgid "The pixel values are using 2 bit colour values."
-msgstr ""
+msgstr "像素值使用 2 位色值。"
 
 #: resources/generators/PixelPainterResourceGenerator.py:428
 msgid "The pixel values are using 5 bit RGB colour values (2 red, 2 green, 1 blue)."
-msgstr ""
+msgstr "像素值使用 5 位 RGB 色值（2 个红色、2 个绿色、1 个蓝色）。"
 
 #: resources/generators/PixelPainterResourceGenerator.py:430
 msgid "Extra pixel legends are at the end of this document for students."
-msgstr ""
+msgstr "学生可参考文件末尾的其他像素图例。"
 
 #: resources/generators/PixelPainterResourceGenerator.py:449
 msgid "Pixel legend"
-msgstr ""
+msgstr "像素图例"
 
 #: resources/generators/PixelPainterResourceGenerator.py:471
 msgid "Run Length Encodings"
-msgstr ""
+msgstr "行程编码"
 
 #: resources/generators/PixelPainterResourceGenerator.py:476
 msgid "Encoding for page {}"
-msgstr ""
+msgstr "页面 {} 的编码"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:23
 msgid "Number of cards (15 or 31)"
-msgstr ""
+msgstr "卡数（15 或 31）"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:24
 msgid "1 to 99"
-msgstr ""
+msgstr "1 至 99"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:25
 msgid "1 to 999"
-msgstr ""
+msgstr "1 至 999"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:39
 msgid "Number of cards"
-msgstr ""
+msgstr "卡数"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:45
 msgid "Range of numbers"
-msgstr ""
+msgstr "数字范围"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:51
 msgid "Include teacher guide sheet"
-msgstr ""
+msgstr "包含教师指南表"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:76
 msgid "Add list of numbers below:"
-msgstr ""
+msgstr "在下方添加数字列表："
 
 #: resources/generators/SearchingCardsResourceGenerator.py:126
 msgid "Teacher guide sheet for binary search activity"
-msgstr ""
+msgstr "二进制搜索活动的教师指南表"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:129
 msgid "Use this sheet to circle the number you are asking your class to look for when you are demonstrating how the binary search works. This allows you to demonstrate the maximum number of searches it would take. When students are playing the number hunt game, they can choose any number. Avoid those numbers that are underlined as they are key binary search positions (avoiding them is a good thing to do for demonstrations, but in practice students, or computers, won’t intentionally avoid these)."
-msgstr ""
+msgstr "演示二进制搜索的工作原理时，使用此表格圈出您要求班级学生查找的数字。 您可借此展示最大的搜索次数。 玩找数字游戏时，学生可选择任何数字。请避开那些加了下划线的数字，因为它们是关键的二进制搜索位置（在演示中避开它们是明智的选择，但在实践中，学生或计算机并不会故意避开）。"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:139
 msgid "Sorted numbers"
-msgstr ""
+msgstr "已排序数字"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:178
 msgid "with helper sheet"
-msgstr ""
+msgstr "有帮助表"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:180
 msgid "without helper sheet"
-msgstr ""
+msgstr "无帮助表"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:182
 msgid "{} cards"
-msgstr ""
+msgstr "{} 张卡"
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:19
 msgid "Small numbers (1 to 10)"
-msgstr ""
+msgstr "小数字（1 至 10）"
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:23
 msgid "Large numbers (7 digit numbers)"
-msgstr ""
+msgstr "大数字（7 位数字）"
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:27
 msgid "Letters"
-msgstr ""
+msgstr "字母"
 
 #. Translators: A set of letters from your language's alphabet, seperated by commas
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:29
 msgid "L,O,N,K,E,D,S,P,G,B,I,Y"
-msgstr ""
+msgstr "L,O,N,K,E,D,S,P,G,B,I,Y"
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:34
 msgid "Words"
-msgstr ""
+msgstr "单词"
 
 #. Translators: A set of words from your language with similar spelling, seperated by commas
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:36
 msgid "crocodile,crochet,kiwi,weka,kiwi,kiwano"
-msgstr ""
+msgstr "鳄鱼、钩边、奇异果、新西兰黑秧鸡、奇异果、刺角瓜"
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:41
 msgid "Fractions"
-msgstr ""
+msgstr "分数"
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:47
 msgid "Butterfly life cycle"
-msgstr ""
+msgstr "蝴蝶生命周期"
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:58
 msgid "Little Red Riding Hood"
-msgstr ""
+msgstr "小红帽"
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:108
 msgid "Card Type"
-msgstr ""
+msgstr "卡片类型"
 
 #: resources/generators/SortingNetworkResourceGenerator.py:10
 msgid "Easy Numbers (1 digits)"
-msgstr ""
+msgstr "简单数字（1 位数）"
 
 #: resources/generators/SortingNetworkResourceGenerator.py:11
 msgid "Medium Numbers (2 digits)"
-msgstr ""
+msgstr "中等难度数字（2 位数）"
 
 #: resources/generators/SortingNetworkResourceGenerator.py:12
 msgid "Hard Numbers (3 digits)"
-msgstr ""
+msgstr "高难度数字（3 位数）"
 
 #: resources/generators/SortingNetworkResourceGenerator.py:13
 msgid "None (Blank - Useful as template)"
-msgstr ""
+msgstr "无（空 - 可作为模板）"
 
 #: resources/generators/TrainStationsResourceGenerator.py:9
 msgid "Circular"
-msgstr ""
+msgstr "环形"
 
 #: resources/generators/TrainStationsResourceGenerator.py:10
 msgid "Twisted"
-msgstr ""
+msgstr "迂回"
 
 #: resources/generators/TrainStationsResourceGenerator.py:23
 msgid "Train track shape"
-msgstr ""
+msgstr "火车轨道形状"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:14
 msgid "Student map"
-msgstr ""
+msgstr "学生地图"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:15
 msgid "Island posters"
-msgstr ""
+msgstr "岛屿海报"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:25
 msgid "Dead Man's Island"
-msgstr ""
+msgstr "死人岛"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:35
 msgid "Musket Hill"
-msgstr ""
+msgstr "步枪山"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:45
 msgid "Mutineers' Island"
-msgstr ""
+msgstr "叛乱岛"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:55
 msgid "Pirates' Island"
-msgstr ""
+msgstr "海盗岛"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:65
 msgid "Shipwreck Bay"
-msgstr ""
+msgstr "沉船湾"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:75
 msgid "Smugglers' Cove"
-msgstr ""
+msgstr "走私湾"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:85
 msgid "Treasure Island"
-msgstr ""
+msgstr "宝藏岛"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:105
 msgid "Printable type"
-msgstr ""
+msgstr "可打印类型"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:323
 msgid "Boat A"
-msgstr ""
+msgstr "船只 A"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:326
 msgid "Boat B"
-msgstr ""
+msgstr "船只 B"
 
 #: resources/models.py:12
 msgid "Printable"
-msgstr ""
+msgstr "可打印"
 
 #: resources/utils/BaseResourceGenerator.py:18
 msgid "A4"
-msgstr ""
+msgstr "A4"
 
 #: resources/utils/BaseResourceGenerator.py:19
 msgid "US Letter"
-msgstr ""
+msgstr "US Letter"
 
 #: resources/utils/BaseResourceGenerator.py:50
 msgid "Paper Size"
-msgstr ""
+msgstr "纸张大小"
 
 #: resources/utils/BaseResourceGenerator.py:82
 msgid "Header Text"
-msgstr ""
+msgstr "标题文本"
 
 #: resources/utils/BaseResourceGenerator.py:83
 msgid "Example School: Room Four"
-msgstr ""
+msgstr "示例学校：教室四"
 
 #: resources/utils/BaseResourceGenerator.py:91
 msgid "Number of Copies"
-msgstr ""
+msgstr "份数"
 
 #: resources/utils/resource_parameters.py:211
 #: templates/topics/all-curriculum-integration-list.html:57
 #: templates/topics/curriculum-integrations-table.html:32
 #: templates/topics/lessons-table.html:42
 msgid "Yes"
-msgstr ""
+msgstr "是"
 
 #: resources/utils/resource_parameters.py:211
 #: templates/topics/all-curriculum-integration-list.html:60
 #: templates/topics/curriculum-integrations-table.html:35
 #: templates/topics/lessons-table.html:46
 msgid "No"
-msgstr ""
+msgstr "否"
 
 #: templates/404.html:6 templates/404.html:13
 msgid "Page not found"
-msgstr ""
+msgstr "未找到页面"
 
 #: templates/404.html:14
 msgid "We are sorry but we could not find a page for the link you provided."
-msgstr ""
+msgstr "很抱歉，无法找到您的链接页面。"
 
 #: templates/404.html:15
 msgid "You may find one of the links below useful:"
-msgstr ""
+msgstr "以下某个链接可能十分有用："
 
 #: templates/404.html:19
 msgid "Homepage"
-msgstr ""
+msgstr "主页"
 
 #: templates/404.html:26 templates/base.html:91 templates/base.html:225
 msgid "Search"
-msgstr ""
+msgstr "搜索"
 
 #: templates/404.html:32 templates/general/index.html:96
 #: templates/general/people.html:74
 msgid "Classic CS Unplugged"
-msgstr ""
+msgstr "经典版 CS Unplugged"
 
 #: templates/base.html:25 templates/general/index.html:7
 #: templates/general/people.html:21
 msgid "CS Unplugged"
-msgstr ""
+msgstr "CS Unplugged"
 
 #: templates/base.html:60
 msgid "Language"
-msgstr ""
+msgstr "语言"
 
 #: templates/base.html:78 templates/base.html:188
 #: templates/general/index.html:74 templates/topics/index.html:8
 #: templates/topics/index.html:16
 msgid "Topics"
-msgstr ""
+msgstr "主题"
 
 #: templates/base.html:79 templates/base.html:193
 #: templates/general/index.html:81 templates/resources/index.html:8
 #: templates/resources/index.html:16 templates/topics/lesson.html:74
 msgid "Printables"
-msgstr ""
+msgstr "可打印页"
 
 #: templates/base.html:80 templates/base.html:183
 #: templates/general/about.html:7 templates/general/about.html:15
 #: templates/general/base.html:10
 msgid "About"
-msgstr ""
+msgstr "关于"
 
 #: templates/base.html:103
 msgid "Home"
-msgstr ""
+msgstr "主页"
 
 #: templates/base.html:154
 msgid "Looking for something for high schools? Check out the <a href=\"http://csfieldguide.org.nz/\">Computer Science Field Guide</a>."
-msgstr ""
+msgstr "正在寻找高中课程？请前往<a href=\"http://csfieldguide.org.nz/\">计算机科学领域指南</a>查看。"
 
 #: templates/base.html:166
 msgid "The primary goal of the Unplugged project is to promote Computer Science (and computing in general) to young people as an interesting, engaging, and intellectually stimulating discipline."
-msgstr ""
+msgstr "Unplugged 项目的主要目标是向年轻人推广计算机科学（和一般计算），并向其呈现一个趣味无穷、引人入胜和启发思维的学科。"
 
 #: templates/base.html:172
 #, python-format
 msgid "Read more about <a href=\"%(principles_url)s\">our principles here</a>."
-msgstr ""
+msgstr "点击<a href=\"%(principles_url)s\">此处我们的原则</a>，了解更多信息。"
 
 #: templates/base.html:179
 msgid "Useful Links"
-msgstr ""
+msgstr "有用链接"
 
 #: templates/base.html:199
 msgid "Community"
-msgstr ""
+msgstr "社群"
 
 #: templates/base.html:203
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: templates/base.html:208
 msgid "YouTube"
-msgstr ""
+msgstr "YouTube"
 
 #: templates/base.html:213
 msgid "GitHub"
-msgstr ""
+msgstr "GitHub"
 
 #: templates/base.html:219
 msgid "Help"
-msgstr ""
+msgstr "帮助"
 
 #: templates/base.html:231 templates/topics/glossary.html:8
 #: templates/topics/glossary.html:17
 msgid "Glossary"
-msgstr ""
+msgstr "术语表"
 
 #: templates/base.html:236
 msgid "Feedback"
-msgstr ""
+msgstr "反馈"
 
 #: templates/base.html:241 templates/general/contact.html:7
 msgid "Contact"
-msgstr ""
+msgstr "联系"
 
 #: templates/base.html:265
 msgid "The CS Unplugged material is open source on <a href=\"https://github.com/uccser/cs-unplugged\">GitHub</a>, and this website's content is shared under a <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons Attribution-ShareAlike 4.0 International license</a>. The CS Unplugged is a project by the <a href=\"https://www.canterbury.ac.nz/engineering/schools/csse/research/cse/\">Computer Science Education Research Group</a> at the <a href=\"http://www.canterbury.ac.nz/\">University of Canterbury</a>, New Zealand."
-msgstr ""
+msgstr "CS Unplugged 资料属于 <a href=\"https://github.com/uccser/cs-unplugged\">GitHub</a> 上的开放资源，此网站的内容均根据 <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">创意公用授权-相同方式共享 4.0 国际许可</a>进行分享。CS Unplugged 是由<a href=\"https://www.canterbury.ac.nz/engineering/schools/csse/research/cse/\">计算机科学教育研究小组</a>在新西兰<a href=\"http://www.canterbury.ac.nz/\">坎特伯雷大学</a>开展的项目。"
 
 #: templates/base.html:288
 #, python-format
 msgid "This definition is not available in %(language)s, sorry!"
-msgstr ""
+msgstr "抱歉，尚无%(language)s定义！"
 
 #: templates/base.html:295
 msgid "Close"
-msgstr ""
+msgstr "关闭"
 
 #: templates/dev/index.html:22
 msgid "Unit Plan:"
-msgstr ""
+msgstr "单元计划："
 
 #: templates/general/about.html:20
 msgid "CS Unplugged is a collection of free learning activities that teach Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around. We originally developed this so that young students could dive head-first into Computer Science, experiencing the kinds of questions and challenges that computer scientists experience, but without having to learn programming first."
-msgstr ""
+msgstr "CS Unplugged 提供一系列的免费学习活动，并通过使用卡片、绳子、蜡笔和大量跑动的游戏和谜题来教授计算机科学。 我们开发此项目的最初宗旨在于，让青少年学生能够潜心研究计算机科学，体验计算机科学家们所经历过的各种问题和挑战，而无需提前学习编程。"
 
 #: templates/general/about.html:27
 msgid "The collection was originally intended as a resource for outreach and extension, but with the adoption of computing and computational thinking into many classrooms around the world, it is now widely used for teaching. The material has been used in many contexts outside the classroom as well, including science shows, talks for senior citizens, and special events."
-msgstr ""
+msgstr "此系列最初有意作为外展和扩展的资源，但随着计算和计算思维在全球大量教室中的应用，它现已广泛用于教学。 这些材料也被用于课堂以外的许多场合，包括科学节目、老年人讲座和特别活动。"
 
 #: templates/general/about.html:34
 msgid "Thanks to generous sponsorships we have been able to create associated resources such as the videos, which are intended to help teachers see how the activities work (please don’t show them to your classes – let them experience the activities themselves!). All of the activities that we provide are open source – they are released under a <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons Attribution-ShareAlike licence</a>, so you can copy, share and modify the material."
-msgstr ""
+msgstr "感谢慷慨赞助，我们现可创建视频等相关资源，从而帮助教师看到活动的操作原理（请不要向学生展示视频 - 让学生自己体验活动！）。我们所提供的全部活动均属于开放资源 – 根据<a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">创意公用授权-相同方式共享许可</a>发布。因此，您可复制、分享和修改资料。"
 
 #: templates/general/about.html:42
 #, python-format
 msgid "To view the team of contributors who work on this project, see our <a href=\"%(people_url)s\">people page</a>."
-msgstr ""
+msgstr "如欲查看此项目背后的贡献者团队，请参见我们的<a href=\"%(people_url)s\">人员</a>页面。"
 
 #: templates/general/about.html:49
 #, python-format
 msgid "For details on how to contact us, see our <a href=\"%(contact_url)s\">contact us page</a>."
-msgstr ""
+msgstr "如欲了解我们的具体联系方式，请参见<a href=\"%(contact_url)s\">联系我们页面</a>。"
 
 #: templates/general/about.html:56
 #, python-format
 msgid "For more information about the principles behind CS Unplugged, see our <a href=\"%(principles_url)s\">principles page</a>."
-msgstr ""
+msgstr "如欲了解有关 CS Unplugged 背后原则的更多信息，请参见我们的<a href=\"%(principles_url)s\">原则页面</a>。"
 
 #: templates/general/base.html:7
 msgid "About pages"
-msgstr ""
+msgstr "关于页面"
 
 #: templates/general/base.html:11
 #: templates/general/computational-thinking.html:8
 #: templates/general/computational-thinking.html:16
 msgid "Computational Thinking and CS Unplugged"
-msgstr ""
+msgstr "计算思维及 CS Unplugged"
 
 #: templates/general/base.html:12 templates/general/principles.html:7
 #: templates/general/principles.html:17
 msgid "Principles"
-msgstr ""
+msgstr "原则"
 
 #: templates/general/base.html:13 templates/general/people.html:7
 #: templates/general/people.html:16
 msgid "People"
-msgstr ""
+msgstr "人员"
 
 #: templates/general/base.html:14 templates/general/contact.html:16
 msgid "Contact Us"
-msgstr ""
+msgstr "联系我们"
 
 #: templates/general/computational-thinking.html:20
 msgid "What is Computational Thinking?"
-msgstr ""
+msgstr "什么是计算思维？"
 
 #: templates/general/computational-thinking.html:23
 msgid "The world we live in has become a digital one, filled with technology and driven by Computer Science. Software and technology have transformed every subject and job area, from science and medicine, to art history and psychology. Digital technology is ubiquitous. To be informed and empowered citizens, the next generation of students need to understand this digital world that they live in."
-msgstr ""
+msgstr "我们所生活的世界已成为数字化世界，充斥着各种技术，在计算机科学的推动下不断成长。 软件和技术已改变每个学科和工作领域，从科学和医学，直到艺术史和心理学，不一而足。 数字技术无处不在。 如欲成为知情和享有权利的公民，下一代学生将需了解其所居住的这个数字世界。"
 
 #: templates/general/computational-thinking.html:32
 msgid "This is why Computational Thinking has been called the ‘21st Century Skill Set’, and is important for everyone to learn. It is critical to understanding how the digital world works, for harnessing the power of computers to solve tough problems, and making great things happen! It also enables us to think critically about not just the benefits of certain technologies, but also the potential harm, ethical implications, or unintended consequences of these."
-msgstr ""
+msgstr "正因如此，计算思维被称为‘21 世纪的技能组合’。对每个人而言，学习计算思维至关重要。只有在理解数字世界的工作原理后，才能应用计算机的威力解决艰难的问题，创造丰功伟业！此外，其能促使我们进行批判性思考，内容不仅包括特定技术所带来的好处，还有其中所包含的潜在危害、伦理含意或意外后果。"
 
 #: templates/general/computational-thinking.html:40
 msgid "But what exactly is Computational Thinking? Let’s have a look at a technical definition..."
-msgstr ""
+msgstr "然而，到底什么才是计算思维？让我们看看技术定义……"
 
 #: templates/general/computational-thinking.html:47
 msgid "\"Computational Thinking is the thought processes involved in formulating problems and their solutions so that the solutions are represented in a form that can be effectively carried out by an information-processing agent.\""
-msgstr ""
+msgstr "“计算思维是制定问题及其解决方案所涉及的思维过程，促使以可由信息处理代理有效执行的形式，表示解决方案。”"
 
 #: templates/general/computational-thinking.html:57
 msgid "Phew, it’s quite a mouthful isn’t it? But, as we like to say at CS Unplugged, it’s just big words for simple ideas! 'Information-processing agent' means anything that follows a set of instructions to complete a task (we call this 'computing'). Most of the time this 'agent' means a computer or other type of digital device - but it could also be a human! We’ll refer to it as a computer to make things a bit simpler. To represent solutions in a way that a computer can carry them out, we have to represent them as a step by step process - an <strong>algorithm</strong>. To create these algorithmic solutions we apply some special problem solving skills to. These skill are what make up Computational Thinking! And they are skills that are transferrable to any field."
-msgstr ""
+msgstr "啊，这定义太长了对吗？但是，在 CS Unplugged 中，我们想要对大家说，这些长篇阔论背后的想法非常简单！'信息处理代理'是指遵循一组指令完成任务的任何内容（我们称之为'计算'）。 大多数情况下，这个'代理'指的是计算机或其他类型的数字装置 - 但也可能是人类！ 为了让一切变得更简单一些，我们将其称为计算机。 旨在以计算机可执行的方式表示解决方案，我们必须将其表示为逐步求解的过程 - <strong>算法</ strong>。 为了创建这些算法解决方案，我们应用一些特殊的问题解决技能。 这些技能构成了计算思维！ 这些技能还可转移至任何领域。"
 
 #: templates/general/computational-thinking.html:71
 msgid "Computational Thinking could be described as 'thinking like a Computer Scientist', but it is now an important skill for everyone to learn, whether they want to be a Computer Scientist or not! It’s interesting, and important, to note that Computational Thinking, and Computer Science, aren’t entirely about computers, they are more about <strong>people</strong>. You might think that we write programs for computers, but really we write programs for people - to help them communicate, find information, and solve problems."
-msgstr ""
+msgstr "计算思维可描述为'像计算机科学家一样思考'。如今，无论是否想成为计算机科学家，每个人均需学习这一重要技能！ 非常有趣且重要的一点是，计算思维和计算机科学并非完全关于计算机，它们与<strong>人</ strong>的关系更大。 您可能认为是我们在为计算机编写程序，但实际上是在为人编写程序 - 助其沟通、查找信息和解决问题。"
 
 #: templates/general/computational-thinking.html:79
 msgid "For example, you might use an app on a smartphone to get directions to a friend's house; the app is an example of a computer program, and the smartphone is the \"information processing agent\" that runs the program for us. Whoever designed the algorithm for working out the best route, and all the details like the interface and how to store the map, applied computational thinking to design the system. But they didn't design it for the sake of the smartphone; they designed it to help the person using the smartphone."
-msgstr ""
+msgstr "例如，您可使用智能手机上的应用程序获取前往朋友家的路线；此应用程序是计算机程序的一个示例，而智能手机则是为我们运行程序的'信息处理代理'。无论是谁设计出算法，以制定最佳路线以及全部细节，例如界面和存储地图的方法等，他们均应用计算思维来设计系统。 但是，他们并非因智能手机而设计；其设计旨在为使用智能手机的个人提供服务。"
 
 #: templates/general/computational-thinking.html:86
 msgid "Computational Thinking in CS Unplugged"
-msgstr ""
+msgstr "CS Unplugged 中的计算思维"
 
 #: templates/general/computational-thinking.html:88
 msgid "<p> Throughout the lessons and units in CS Unplugged there are many links to Computational Thinking. Teaching Computational Thinking through CS Unplugged activities teaches students how to: </p> <ul> <li>describe a problem,</li> <li>identify the important details needed to solve this problem,</li> <li>break the problem down into small, logical steps,</li> <li>use these steps to create a process (algorithm) that solves the problem,</li> <li>and then evaluate this process.</li> </ul>"
-msgstr ""
+msgstr "<p> 在 CS Unplugged 的整个课程和单元中，设有许多关于计算思维的链接。通过 CS Unplugged 活动教授计算思维，将教会学生如何：</p> <ul> <li>描述问题、</li> <li>确定解决问题所需的重要细节、</li> <li>将问题分解为更小的逻辑步骤、</li> <li>使用这些步骤创建解决问题的过程（算法），</li> <li>随后评估这一过程。</li> </ul>"
 
 #: templates/general/computational-thinking.html:105
 msgid "These skills are transferable to any other curriculum area, but are particularly relevant to developing digital systems and solving problems using the capabilities of computers.</p>"
-msgstr ""
+msgstr "这些技能可转移至任何其他课程领域，但与开发数字系统和使用计算机功能解决问题尤为相关。</p>"
 
 #: templates/general/computational-thinking.html:110
 msgid "These Computational Thinking concepts are all connected to each other and support each other, but it's important to note that not all aspects of Computational Thinking will necessarily happen in every unit or lesson. In each unit and lesson we've highlighted the important connections for you to observe your students in action."
-msgstr ""
+msgstr "这些计算思维概念全部均相互联系、相互支持，但重点在于注意到，并非计算思维的每个方面都会在每个单元或课程中发生。 在每一个单元和课程中，我们均强调您应在学生行为中观察到的重要联系。"
 
 #: templates/general/computational-thinking.html:117
 msgid "There are a number of definitions of Computational Thinking, but most have a set of 5 or 6 problem solving skills that Computational Thinking embodies. For the Unplugged project we've identified the following six CT skills that are often mentioned in the literature; they are described below, and at the end of each Unplugged lesson we've identified ways that these skills appeared in the lesson, to help you see the CT connection with the lessons."
-msgstr ""
+msgstr "计算思维具有多种定义，但大多数均有计算思维所体现的一套 5 或 6 种解决问题的技能。 对于 Unplugged 项目，我们经确定文献中经常提到的以下六种 CT 技能；其描述如下所示，并且，在每个 Unplugged 课程结束时，我们都将确定这些技能在课程中的出现方式，从而助您查看与课程的 CT 关联。"
 
 #: templates/general/computational-thinking.html:123
 msgid "Computational Thinking skills"
-msgstr ""
+msgstr "计算思维技能"
 
 #: templates/general/computational-thinking.html:127
 msgid "Algorithmic thinking"
@@ -902,7 +937,7 @@ msgstr "算法思维"
 
 #: templates/general/computational-thinking.html:132
 msgid "Algorithms are at the heart of Computational Thinking and Computer Science, because in Computer Science the solutions to problems are not simply an answer (e.g. ‘42’, or a fact), they are algorithms. An algorithm is a step-by-step process that solves a problem or completes a task. If you follow the algorithm's steps correctly, you will arrive at a correct solution, even for different inputs. For example, we can use an algorithm to find the shortest route between two locations on a map; the same algorithm can be used for any pair of starting and finishing points, so the solution depends on the input to the algorithm. If we know the algorithm for solving a problem then we can solve that problem easily, whenever we want, without having to think! We can just follow the steps. Computers can’t think for themselves, so they need to be given algorithms to do things."
-msgstr ""
+msgstr "算法是计算思维和计算机科学的核心。在计算机科学中，问题的解决方案不仅仅只是一个答案（例如'42'或一个事实），其实还是算法。算法是解决问题或完成任务的分步过程。若正确遵循算法的步骤，即使输入不同，也会得到正确的解决方案。例如，可以使用算法来找到地图上两个位置间的最短路径；相同的算法可用于任何一对起点和终点，因此，解决方案取决于算法中的输入。 若知道解决问题的算法，那么即可随时轻松地解决问题，而无需再进行思考！仅需按照步骤，进行操作即可。计算机无法自己思考，所以我们需要给它算法，让其完成目标。"
 
 #: templates/general/computational-thinking.html:143
 msgid "Algorithmic thinking is the process of creating algorithms. When we create an algorithm to solve a problem, we call this an algorithmic solution."
@@ -954,7 +989,7 @@ msgstr ""
 
 #: templates/general/computational-thinking.html:254
 msgid "Generalising and patterns"
-msgstr ""
+msgstr "泛化和模式"
 
 #: templates/general/computational-thinking.html:259
 msgid "Generalising is also referred to as 'pattern recognition and generalisation'. Generalisation is taking a solution (or part of a solution) to a problem and generalising it so it can be applied to other similar problems and tasks. Since solutions in Computer Science are algorithms, this means we take an algorithm and make it general enough that it can be used for a range of problems. This process involves abstraction, because to make something more general we have to remove unnecessary details that are related to a specific problem or situation, but are not important to how the algorithm functions."
