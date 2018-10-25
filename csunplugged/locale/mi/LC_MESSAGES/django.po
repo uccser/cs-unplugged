@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-11 01:02+0000\n"
-"PO-Revision-Date: 2018-10-24 14:56\n"
+"PO-Revision-Date: 2018-10-25 14:51\n"
 "Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
 "Language-Team: Maori\n"
 "Language: mi_NZ\n"
@@ -925,23 +925,23 @@ msgstr "Ka honohono, ka tautoko hoki katoa ēnei ariā Whakaaro Rorohiko, engari
 
 #: templates/general/computational-thinking.html:117
 msgid "There are a number of definitions of Computational Thinking, but most have a set of 5 or 6 problem solving skills that Computational Thinking embodies. For the Unplugged project we've identified the following six CT skills that are often mentioned in the literature; they are described below, and at the end of each Unplugged lesson we've identified ways that these skills appeared in the lesson, to help you see the CT connection with the lessons."
-msgstr ""
+msgstr "He maha ngā tautuhinga mō te Whakaaro Rorohiko, heoi anō, mō te nuinga, ka kitea te huinga pūkenga e 5, e 6 rānei o ngā pūkenga whakaoti rapanga. Mō te hinonga Unplugged, kua whakatau mātou i ngā pūkenga Whakaaro Rorohiko e ono kei raro nei. Ka kitea whānuitia ēnei pūkenga i roto i ngā tuhinga rangahau; ka whakamāramatia ēnei kei raro, kei te mutunga hoki o ia akomanga Unplugged, me te whakamārama hoki i pēhea i tipu ai aua pūkenga i roto i ngā mahi kia kite ai koe i ngā hononga ki te Whakaaro Rorohiko."
 
 #: templates/general/computational-thinking.html:123
 msgid "Computational Thinking skills"
-msgstr ""
+msgstr "Ngā Pūkenga Whakaaro Rorohiko"
 
 #: templates/general/computational-thinking.html:127
 msgid "Algorithmic thinking"
-msgstr ""
+msgstr "Te Whakaaro Hātepe"
 
 #: templates/general/computational-thinking.html:132
 msgid "Algorithms are at the heart of Computational Thinking and Computer Science, because in Computer Science the solutions to problems are not simply an answer (e.g. ‘42’, or a fact), they are algorithms. An algorithm is a step-by-step process that solves a problem or completes a task. If you follow the algorithm's steps correctly, you will arrive at a correct solution, even for different inputs. For example, we can use an algorithm to find the shortest route between two locations on a map; the same algorithm can be used for any pair of starting and finishing points, so the solution depends on the input to the algorithm. If we know the algorithm for solving a problem then we can solve that problem easily, whenever we want, without having to think! We can just follow the steps. Computers can’t think for themselves, so they need to be given algorithms to do things."
-msgstr ""
+msgstr "Ka noho te hātepe hei ngākau mō te Whakaaro Rorohiko me te Pūtaiao Rorohiko, nā te mea, mō te pūtaiao rorohiko, ehara te whakautu te mea nui (hei tauira: '42', ko tētahi meka noa iho rānei), ko te hātepe te mea nui. Ko te hātepe he tohutohu māmā e āta rārangihia ana hei whakaoti rapanga. Ina whāia te raupapa o te hātepe kia tika, ka tae ki te otinga tika, ahakoa ngā tāuru. Hei tauira, ka whakamahia tētahi hātepe ki te kimi i te ara poto rawa mai i tētahi tūnga i te mahere, ki tētahi atu; ka taea te whakamahi i te hātepe ōrite mō ngā ara katoa, ahakoa te tīmatanga me te whakamutunga. Ka rerekē te tāuru ki te hātepe ka rerekē te otinga. Heoi anō, mehemea ka mōhio tātou i te hātepe hei whakaoti i te rapanga, he ngāwari te whakaoti, ahakoa te aha, me te kore whakaaro! Ka whāia noatia e tātou ngā tohutohu o te hātepe. Kāore e taea e te rorohiko te whakaaro, nā reira e hangaia ngā hātepe, kia taea e te rorohiko te whakaoti rapanga."
 
 #: templates/general/computational-thinking.html:143
 msgid "Algorithmic thinking is the process of creating algorithms. When we create an algorithm to solve a problem, we call this an algorithmic solution."
-msgstr ""
+msgstr "Ko te whakaaro hātepe, te tukanga mō te waihanga i ngā hātepe. Ina waihanga te tangata i te hātepe, ki te whakaoti i tētahi rapanga, ka kīia tērā te otinga hātepe."
 
 #: templates/general/computational-thinking.html:150
 msgid "Computational algorithms (the kind that can run on digital devices) have relatively few ingredients because digital devices only have a few types of instruction that they can follow; the main things they can do are receive input, provide output, store values, follow instructions in a sequence, choose between options, and repeat instructions in a loop. Despite how limited this range of instructions is, we've described everything that digital devices can compute, and this is why algorithms are described restricted to these elements."
