@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-11 01:02+0000\n"
-"PO-Revision-Date: 2018-10-26 14:53\n"
+"PO-Revision-Date: 2018-10-27 15:07\n"
 "Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
 "Language-Team: Maori\n"
 "Language: mi_NZ\n"
@@ -965,7 +965,7 @@ msgstr "Ka whakamahi ngā pūrere matihiko i te waitaratanga i ngā wā katoa; k
 
 #: templates/general/computational-thinking.html:195
 msgid "The picture you took is stored on the computer as a big list of pixels, which are each a different colour, and each colour is represented by a set of numbers, and each of these numbers are stored as binary digits! That’s a lot of information. Imagine if when you adjusted the colours you had to go through and look at all the colour values of every pixel and change each and every one of those! That’s what the computer is doing for you, but since you don’t need to know this to accomplish your goal the computer hides this information away."
-msgstr ""
+msgstr "Ka utaina tō whakaahua ki te rorohiko hei rārangi roa o ngā tongi-iti, he rerekē ngā tae, ā, he nama te whakaahuahanga mō ia tongi-iti, he mati tāhūrua ia nama! He maha te mōhiohio kore rawa e taea te whakatikatika i ngā uara kano o ia tongi-iti! Ko tērā kē te mahi a te rorohiko, nā te mea kāore he take kia mōhio koe ki aua mahi a te rorohiko ka hunaia."
 
 #: templates/general/computational-thinking.html:206
 msgid "Decomposition"
@@ -973,11 +973,11 @@ msgstr "Whakamatariki"
 
 #: templates/general/computational-thinking.html:211
 msgid "Decomposition is about breaking down problems into smaller, more manageable, parts, and then focusing on solving each of these smaller problems. We can break a complex problem down until the smaller parts are so simple they become easy to solve. The solutions to each of these smaller, and simpler, problems build up to a solution to the big problem we started with. Decomposition helps make large problems much less intimidating!"
-msgstr ""
+msgstr "Ko te whakamatariki te whakawehewehe i te rapanga kia kitea ai ngā wāhanga iti, kia ngāwari ai hoki te whakahaere, kātahi ka taea te whakaoti i ēnei rapanga paku nei. Ka taea te whakawehewehe i ngā rapanga matatini ki ngā wāhanga iti, kia ngāwari ai te whakaoti. Mā te whakakotahi i ēnei otinga e hangaia ai te otinga nui katoa. Mā te whakamatariki e patua ai te taniwha whakamataku o ngā rapanga nui!"
 
 #: templates/general/computational-thinking.html:220
 msgid "Decomposition is an important skill for creating algorithms and processes that can be implemented on a computing device, because computers need very specific instructions. They need to be told each of the tiny steps they need to follow in order to do things."
-msgstr ""
+msgstr "Ko te whakamatariki tētahi pūkenga nui hei waihanga hātepe, hei waihanga tukanga hoki e taea ai te whakahaere i ngā pūrere matihiko, nā te mea, me tino whāiti te aronga o ngā tohutohu ki ngā rorohiko. Me āta tohutohu mō ia takahanga paku nei, he whāinga kia tutuki ai ngā mahi."
 
 #: templates/general/computational-thinking.html:227
 msgid "For example the overall task of making a cake can be decomposed into several smaller tasks, each of which can be performed easily."
@@ -997,7 +997,7 @@ msgstr ""
 
 #: templates/general/computational-thinking.html:268
 msgid "Spotting patterns is an important part of this process, when we think about problems we might recognise similarities between them and that they can be solved in similar ways. This is called pattern matching, and it’s something we do naturally all the time in our daily life."
-msgstr ""
+msgstr "Ko te kimi i ngā tauira tētahi wāhanga nui o tēnei tukanga. Ki te tīmata te tangata ki te whakaaro mō te rapanga, ka kitea pea ngā āhuatanga ōrite, ā, ka whāia te tauira kia pērā hoki te whakaoti i te rapanga hou. Ka kīia tēnei te rapu tauriterite, ā, ka whakamahia whānuitia e te tangata i āna mahi ia rā, ia rā."
 
 #: templates/general/computational-thinking.html:275
 msgid "Generalised algorithms can be reused for a whole group of similar problems, which means we can come up with solutions quickly and effectively."
@@ -1021,7 +1021,7 @@ msgstr "Arorau"
 
 #: templates/general/computational-thinking.html:317
 msgid "When trying to solve problems we need to think logically. Logical reasoning is about trying to make sense of things by observing, collecting data, thinking about the facts you know, and then figuring things out based on what you already know. It helps us use our existing knowledge to establish rules and check facts."
-msgstr ""
+msgstr "Ki te whakaoti rapanga, me whakaaro arorau tātou. Ka whakamahia te whakaaro arorau ki te kimi māramatanga, mā te āta titiro, mā te kohikohi raraunga hoki, mā te whakaaro hoki mō ngā mea kei te mōhiotia kētia, kātahi ka whiriwhiri i te otinga i runga i aua mōhiotanga. Mā te whakaaro arorau e pai ake ai te whakamahi mōhiotanga hei waihanga i ngā whakatau, hei arotake hoki i ngā meka."
 
 #: templates/general/computational-thinking.html:325
 msgid "For example, suppose you are writing software that works out the shortest route to a location from your house. In the following map it's 2 minutes to the library if you head north from your house, but if you head south it's 3 minutes to the next intersection. You might wonder if there's a better route to the library if you start by heading south, but logically there can't be because you'll already have walked for 3 minutes to get to the intersection."
@@ -1055,7 +1055,7 @@ msgstr "Me pēhea ahau ka whakaako i te CS Unplugged?"
 
 #: templates/general/how-do-i-teach-cs-unplugged.html:23
 msgid "CS Unplugged is very much based on a constructivist approach: students are given challenges based on a few simple rules, and in the process of solving those challenges they uncover powerful ideas on their own. Not only is this a more memorable way to learn, but it empowers them to realise that these are ideas within their grasp. The activities are also very kinesthetic - the bigger the materials, the better."
-msgstr ""
+msgstr "Ka whai a CS Unplugged i te kaupapa o te ako mā te waihanga; ka tukuna he wero ki ngā ākonga, kia whai ai rātou i ngā tikanga māmā hei whakaoti i ngā wero. Heoi anō, i a rātou e whakaoti ana i aua rapanga, ka puawai mai ō rātou ake whakaaro. Atu i te mau pai o te akoranga, ka kite hoki rātou ka taea e rātou te hopu i ēnei mātauranga. He ngohe rāwekeweke ēnei - mā te nui ake o ngā rauemi e pai ake ai te ako."
 
 #: templates/general/how-do-i-teach-cs-unplugged.html:35
 msgid "Because of this approach, you can also learn alongside the students. You'll need to read through the whole activity so that you're prepared for it, and we have provided videos for many of them so you can visualise them, but as the students discover how these ideas work out, you'll start to see patterns and ideas that the students are discovering as they understand the principles behind these topics from Computer Science."
@@ -1179,7 +1179,7 @@ msgstr ""
 
 #: templates/general/principles.html:32
 msgid "There are many worthy projects for promoting Computer Science. The main principles that distinguish the Unplugged activities are:"
-msgstr ""
+msgstr "He maha ngā kaupapa whaitake mō te whakanui i te Pūtaiao Rorohiko. Heoi anō, ko ngā mātāpono matua e noho motuhake ai ngā ngohe Unplugged:"
 
 #: templates/general/principles.html:38
 msgid "No Computers Required"
@@ -1219,7 +1219,7 @@ msgstr "Kāore he taputapu motuhake"
 
 #: templates/general/principles.html:87
 msgid "The activities are low cost, using equipment commonly found in classrooms or stationery stores. Most require only paper and pencil, and perhaps cards, string, chalk, whiteboard markers, balls or similar items."
-msgstr ""
+msgstr "He ngāwari te utu mō ēnei ngohe, ka whakamahia ngā taputapu ka kitea whānuitia i ngā akomanga me ngā toa pukapuka. Mō te nuinga, he pepa, he pene rākau noa iho hoki, he kāri pea, he aho, he tioka, he pene papamā, he pōro, ko ētahi atu mea pērā rānei."
 
 #: templates/general/principles.html:93
 msgid "Variations encouraged"
@@ -1227,11 +1227,11 @@ msgstr "Ka tautokona ngā rerekētanga"
 
 #: templates/general/principles.html:96
 msgid "Unplugged is published under a Creative Commons licence, which permits free sharing (with acknowledgement). Variations, adaptations and extensions are encouraged. This also allows local publishing arrangements to take account of the kind of packaging that would make the material more accessible to local educational practitioners."
-msgstr ""
+msgstr "Kua whakaputaina a Unplugged i raro i tētahi raihana Creative Commons, e whakaaetia ana te tuari utu-kore (me te tuku mihi tohutoro). Ka tautokona te whakarerekē, te whakahāngai hoki ki kaupapa kē, te whakatāpiri hoki. Ka taea tonu te whakaputa i ngā tā ā-rohe kia taea ai te whakahāngai i te takai i ngā rauemi ki ngā hiahia o ngā kaiwhakaako o te rohe."
 
 #: templates/general/principles.html:103
 msgid "<p> Two specific situations that we get asked about are: </p> <ul> <li> <strong>For-profit classes (e.g. clubs with a subscription fee):</strong> It is fine to charge a fee for people to attend classes that you're running that uses this material. </li> <li> <strong>Selling packs of support material (such as pre-printed cards):</strong> It is fine to do this. We hope that you'll do it for a reasonable price, and it's even better if you can get someone to sponsor you so that you can give it away to educators, but the license allows you to set your own price. </li> </ul>"
-msgstr ""
+msgstr "<p> E rua ngā pātai auau e uia ai mātou: </p> <ul> <li> <strong>Ngā akomanga moni hua (hei tauira: he karapū e kohi i te utu whakauru):</strong> Kei te pai te kohi utu mō ngā akomanga e whakamahia ana ēnei rauemi. </li> <li>Kei te pai hoki te <strong>hoko atu i ngā rauemi (pērā ki ngā kāri kua tāngia):</strong> Ko tō mātou tūmanako kia ngāwari te utu, ā, he pai ake hoki te kimi kaitautoko māna e utu, kia taea ai te hoatu ngā rauemi mō te utu-kore, engari, e ai ki te raihana māu anō e whakatau te utu mō ngā rauemi ka hokona atu.</li> </ul>"
 
 #: templates/general/principles.html:119
 msgid "For everyone"
@@ -1247,7 +1247,7 @@ msgstr "Mahi tahi"
 
 #: templates/general/principles.html:133
 msgid "We encourage co-operation, communication and problem solving. Competition can also be effective if it is used appropriately, especially between teams rather than individuals, but having students working cooperatively is a great way to learn about problem solving."
-msgstr ""
+msgstr "He kaupapa nui ki a mātou, te mahi tahi, te whakawhitiwhiti whakaaro hoki, te whakaoti rapanga hoki. He pai hoki te whakataetae, ina e tika ana, he pai ake ngā tīma i te tangata takitahi. Heoi anō ko te mahi tahi, ko te tautoko tētahi o ngā ara tino pai hei ako i te whakaoti rapanga."
 
 #: templates/general/principles.html:139
 msgid "Stand-alone Activities"
@@ -1267,7 +1267,7 @@ msgstr ""
 
 #: templates/general/what-is-computer-science.html:23
 msgid "The term \"Computer Science\" has become widely used in recent years as the skills associated with the subject have become crucial to developing innovative digital technology, and qualifications in this area are highly sought after."
-msgstr ""
+msgstr "Kua whakamahia whānuitia te ingoa \"Pūtaiao Rorohiko\" i ngā tau tata nei i te ekenga o ngā pūkenga e tika ana e pā ana ki te kaupapa, hei whakawhanake i ngā mahi hangarau matihiko, ā, ka hiahiatia ake ngā kaimahi kua whai tohu mō tēnei kaupapa."
 
 #: templates/general/what-is-computer-science.html:29
 msgid "The CS Unplugged activities are intended to give you a feel for what the subject is - you can learn what it is by doing. At this early stage, rather than define it formally, let's think about how it might influence our daily lives. For example, think of your favourite search engine. On the surface it seems like a fairly simple interface: a text box where you type what you want to search for, and a button to start the search. The level of programming knowledge needed to implement a text box and a button is fairly rudimentary, and you could implement a search by writing a short program (probably less than 20 lines) to go through all the text on the web and displaying any that match. But obviously there's more to it than this! There are billions of searches are made every day, on billions on web pages, and the approach above will give answers (eventually), but will be so slow and ineffective that no-one would use it."
@@ -1422,7 +1422,7 @@ msgstr "Kāore anō kia āhei ngā tuemi kuputaka i roto i ngā reo %(language)s
 
 #: templates/topics/index.html:21
 msgid "Open a topic to see all related unit plans, lessons, curriculum integrations, and programming challenges."
-msgstr ""
+msgstr "Huakina mai tētahi kaupapa kia kitea ai ngā mahere kōwae ako, ngā akoranga, ngā whakaurunga marautanga, ngā wero tuhiwaehere hoki."
 
 #: templates/topics/index.html:39 templates/topics/topic.html:46
 #, python-format
@@ -1435,7 +1435,7 @@ msgstr "ngā akoranga"
 
 #: templates/topics/index.html:49
 msgid "curriculum integrations"
-msgstr ""
+msgstr "te whakaurunga marautanga"
 
 #: templates/topics/index.html:52
 msgid "programming challenges"
