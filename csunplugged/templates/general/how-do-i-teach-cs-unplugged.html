@@ -5,11 +5,11 @@
 {% load django_bootstrap_breadcrumbs %}
 
 {% block title %}
-  {% trans "How do I teach CS Unplugged?" %}
+  {% trans "What is CS Unplugged?" %}
 {% endblock title %}
 
 {% block breadcrumbs %}
-  {% breadcrumb "How do I teach CS Unplugged?" "general:how_do_i_teach_cs_unplugged" %}
+  {% breadcrumb "What is CS Unplugged?" "general:how_do_i_teach_cs_unplugged" %}
 {% endblock breadcrumbs %}
 
 {% block body_container %}
@@ -17,8 +17,16 @@
     <div class="row justify-content-center">
       <div id="general-page-content" class="col-12 col-md-10 col-lg-8">
         {% render_breadcrumbs "django_bootstrap_breadcrumbs/bootstrap4.html" %}
-        <h1>{% trans "How do I teach CS Unplugged?" %}</h1>
+        <h1>{% trans "What is CS Unplugged?" %}</h1>
 
+        <p>
+          {% blocktrans trimmed %}
+            CS Unplugged isn't a full curriculum, but it's a collection of ideas that can be effective for getting students - and teachers - engaged with computer science ideas, either when they are getting started and want an accessible introduction, or as a break from "screen time" when learning on computers or working on projects.
+            These videos from Tim Bell and Mike Fellows explain where it came from, and how it should be used.
+          {% endblocktrans %}
+        </p>
+
+        <h1>{% trans "How do I teach CS Unplugged?" %}</h1>
         <p>
           {% blocktrans trimmed %}
             CS Unplugged is very much based on a constructivist approach: students are given challenges based on a few simple rules, and in the process of solving those challenges they uncover powerful ideas on their own.
@@ -43,7 +51,19 @@
             If you're working within a school curriculum, you can find appropriate activities based on the learning objectives and age group.
             In several countries there are guides linking CS Unplugged to the local curriculum (e.g. <a href="https://www.digitaltechnologieshub.edu.au/">Digital Technologies Hub for Australia</a>).
             But the unit plans listed follow the common topics that are appearing in school curricula, so you are likely to find something relevant from the titles.
+          {% endblocktrans %}
+        </p>
+
+        <p>
+          {% blocktrans trimmed %}
             Note that CS Unplugged does not teach programming - the Kidbots activity is an excellent lead in to programming and the "Plugging it in" sections give some programming exercises to follow up with - but in general we are trying to show students what they could do with programming, before they have to learn it.
+            Programming is a valuable skill for students to develop, and that simply requires a lot of time on the task, and experience using a computer. Unplugged is not an excuse for avoiding programming - it simply provides a way to understand the big ideas of computer science that help us to write better, faster, more reliable programs, and helps us to reach those who might not find programming interesting in itself, but are prepared to learn it if they can see the bigger picture.
+          {% endblocktrans %}
+        </p>
+
+        <p>
+          {% blocktrans trimmed %}
+            To support programming, we've included a "Plugging it in" section for each topic, so that you can give students relevant programming challenges for an activity. The challenges range from very simple tasks that are similar to a "Hello world" program, through to complex challenges. You can choose which ones are appropriate for your students.
           {% endblocktrans %}
         </p>
 
