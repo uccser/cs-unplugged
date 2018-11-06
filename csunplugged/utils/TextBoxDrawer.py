@@ -240,7 +240,6 @@ class TextBoxDrawer(object):
     def get_default_font():
         """Get default font for the current language."""
         language = get_language()
-        print(language)
         if language in DEFAULT_FONT_OVERRIDES:
             return DEFAULT_FONT_OVERRIDES[language]
         return DEFAULT_FONT
