@@ -18,6 +18,7 @@ DEFAULT_FONT_OVERRIDES = {
     "ja": "static/fonts/NotoSansCJKjp-Regular.otf",
     "he": "static/fonts/OpenSansHebrew-Regular.ttf",
     "ar": "static/fonts/DejaVuSans.ttf",
+    "zh-hans": "static/fonts/NotoSansCJKsc-Regular.otf",
 }
 DEFAULT_FONT_SIZE = 20
 DEFAULT_COLOR = (0, 0, 0)
@@ -239,6 +240,7 @@ class TextBoxDrawer(object):
     def get_default_font():
         """Get default font for the current language."""
         language = get_language()
+        print(language)
         if language in DEFAULT_FONT_OVERRIDES:
             return DEFAULT_FONT_OVERRIDES[language]
         return DEFAULT_FONT
