@@ -46,8 +46,13 @@ class BinaryToAlphabetResourceGenerator(BaseResourceGenerator):
         if column_uneven:
             half_binary_length += 1
 
+        alphabet_description = utils.alphabets.get_alphabet_description(get_language())
+        if alphabet_description:
+            with tag("h3", klass="text-center"):
+                text(alphabet_description)
+
         line("style", "th, td {text-align: center;} table {font-size: 1.4rem;}")
-        with tag("table", klass="table table-bordered"):
+        with tag("table", klass="table table-sm table-bordered"):
             with tag("thead"):
                 with tag("tr"):
                     for i in range(2):
