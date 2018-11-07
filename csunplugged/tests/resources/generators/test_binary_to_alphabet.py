@@ -67,3 +67,21 @@ class BinaryToAlphabetResourceGeneratorTest(BaseGeneratorTest):
         query = QueryDict("worksheet_version=student&paper_size=a4")
         generator = BinaryToAlphabetResourceGenerator(query)
         generator.data()
+
+    @mock.patch(
+        "utils.alphabets.get_alphabet_description",
+        return_value=""
+    )
+    def test_without_alphabet_description(self, get_alphabet_description):
+        query = QueryDict("worksheet_version=student&paper_size=a4")
+        generator = BinaryToAlphabetResourceGenerator(query)
+        generator.data()
+
+    @mock.patch(
+        "utils.alphabets.get_alphabet_description",
+        return_value="Alphabet description"
+    )
+    def test_with_alphabet_description(self, get_alphabet_description):
+        query = QueryDict("worksheet_version=student&paper_size=a4")
+        generator = BinaryToAlphabetResourceGenerator(query)
+        generator.data()
