@@ -32,11 +32,6 @@ translation:
     - .yaml
     - .po
     - .vtt
-  language-mapping-overrides:
-    # Crowdin to Django
-    zh-CN: zh_Hans
-    zh-TW: zh_Hant
-    en-UD: xx_LR # Pseudo language
 
 broken-link-checker:
   exclude-directories:

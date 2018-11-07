@@ -7,34 +7,47 @@ SPACER = " "
 
 ALPHABETS = {
     # English
-    "en": list(ascii_lowercase),
+    "en": {
+        "letters": list(ascii_lowercase),
+    },
     # Spanish
-    "es": list(ascii_lowercase) + ["ñ"],
+    "es": {
+        "letters": list(ascii_lowercase) + ["ñ"],
+    },
     # German,
-    "de": list(ascii_lowercase) + ["ä", "ö", "ü", "ß"],
+    "de": {
+        "letters": list(ascii_lowercase) + ["ä", "ö", "ü", "ß"],
+    },
     # te reo Māori
-    "mi": [
-        "a",
-        "ā",
-        "e",
-        "ē",
-        "h",
-        "i",
-        "ī",
-        "k",
-        "m",
-        "n",
-        "ng",
-        "o",
-        "ō",
-        "p",
-        "r",
-        "t",
-        "u",
-        "ū",
-        "w",
-        "wh",
-    ]
+    "mi": {
+        "letters": [
+            "a",
+            "ā",
+            "e",
+            "ē",
+            "h",
+            "i",
+            "ī",
+            "k",
+            "m",
+            "n",
+            "ng",
+            "o",
+            "ō",
+            "p",
+            "r",
+            "t",
+            "u",
+            "ū",
+            "w",
+            "wh",
+        ],
+    },
+    # Simplified Chinese
+    "zh-hans": {
+        "letters": ["─", "╱", "V", "╲"] + list(ascii_lowercase.replace("v", "ü")),
+        "description": "汉语拼音",
+    },
 }
 
 
@@ -47,4 +60,16 @@ def get_alphabet(language_code):
     Returns:
         List of strings of alphabet.
     """
-    return [SPACER] + ALPHABETS[language_code]
+    return [SPACER] + ALPHABETS[language_code]["letters"]
+
+
+def get_alphabet_description(language_code):
+    """Return the language description for the given language code.
+
+    Args:
+        language_code (str): Code of language.
+
+    Returns:
+        String description of alphabet.
+    """
+    return ALPHABETS[language_code].get("description", "")

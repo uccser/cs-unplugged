@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-15 10:37+0000\n"
+"POT-Creation-Date: 2018-10-11 01:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -413,6 +413,7 @@ msgid "Parrots"
 msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:75
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:69
 msgid "Kauri tree"
 msgstr ""
 
@@ -452,22 +453,22 @@ msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:428
 msgid ""
-"The pixel values are using 5 bit RGB colour values (2 red, 2 blue, 1 green)."
+"The pixel values are using 5 bit RGB colour values (2 red, 2 green, 1 blue)."
 msgstr ""
 
-#: resources/generators/PixelPainterResourceGenerator.py:429
+#: resources/generators/PixelPainterResourceGenerator.py:430
 msgid "Extra pixel legends are at the end of this document for students."
 msgstr ""
 
-#: resources/generators/PixelPainterResourceGenerator.py:448
+#: resources/generators/PixelPainterResourceGenerator.py:449
 msgid "Pixel legend"
 msgstr ""
 
-#: resources/generators/PixelPainterResourceGenerator.py:470
+#: resources/generators/PixelPainterResourceGenerator.py:471
 msgid "Run Length Encodings"
 msgstr ""
 
-#: resources/generators/PixelPainterResourceGenerator.py:475
+#: resources/generators/PixelPainterResourceGenerator.py:476
 msgid "Encoding for page {}"
 msgstr ""
 
@@ -568,7 +569,7 @@ msgstr ""
 msgid "Little Red Riding Hood"
 msgstr ""
 
-#: resources/generators/SortingNetworkCardsResourceGenerator.py:97
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:108
 msgid "Card Type"
 msgstr ""
 
