@@ -1,3 +1,3 @@
 # Hash Table Worksheet
 
-This worksheet is used demonstating understanding and using hash tables.
+This worksheet is used demonstrating understanding and using hash tables.
