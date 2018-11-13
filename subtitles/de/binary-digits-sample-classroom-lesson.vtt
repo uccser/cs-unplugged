@@ -1,0 +1,215 @@
+WEBVTT
+Kind: captions
+Language: de
+
+NOTE
+Subtitle file for the video "CS Unplugged - Binary digits (sample classroom lesson)"
+
+00:00:07.359 --> 00:00:19.100
+Heute lernen wir binäre Einheiten kennen.
+Handzeichen, wer schon von etwas in einem Computer
+gehört hat, das Bit genannt wird. Wer kennt das?
+
+00:00:19.119 --> 00:00:30.900
+Ein Bit kommt von binärer Einheit. Wir nehmen das B von binär und das Ende von Einheit und fügen dies zu Bit zusammen.
+
+00:00:30.939 --> 00:00:36.600
+Hier stehen jetzt also fünf Bits. Sehen wir
+uns einmal an, was das bedeutet.
+
+00:00:36.660 --> 00:00:42.020
+Dir gebe ich die Nummer 1, du wirst ein Bit
+sein, das einen Punkt darstellt.
+
+00:00:42.020 --> 00:00:44.530
+Du wirst ein Bit sein, das 2 Punkte darstellt.
+
+00:00:44.530 --> 00:00:48.600
+Was ist die nächste Zahl? Ruft sie aus. (4, 3)
+
+00:00:48.600 --> 00:00:52.600
+Handzeichen, wer 3 denkt. Das ist unser Zahlensystem.
+
+00:00:52.600 --> 00:00:57.800
+Und liegt ihr auch mit binär richtig? Oh! Es ist die 4.
+
+00:00:57.850 --> 00:01:07.800
+Was könnte die nächste Zahl sein? Ja? (6 oder 5).
+Es könnte 6 oder 5 sein. Es ist aber die 8.
+
+00:01:07.800 --> 00:01:14.400
+Was passiert mit diesen Zahlen? Was ist die nächste Zahl, Oliver? (16) Hat er recht?
+
+00:01:14.430 --> 00:01:23.500
+Was ist dann die nächste Zahl nach 16? Jacob (32) Und was kommt nach 32?
+
+00:01:23.570 --> 00:01:32.100
+(136) Möglich, was könnte es noch sein? Lachlin (64) Hat er recht? (ja).
+
+00:01:32.159 --> 00:01:42.300
+Was ist die nächste Zahl, die nach 64 kommt? Thomas (128) Und danach? Jacob? (256) Wunderbar.
+
+00:01:42.300 --> 00:01:53.000
+Wer weiß, was die nächste Zahl ist? Ben. (512) Wenn wir nun ... Was ist die nächste Zahl Jacob?
+
+00:01:53.000 --> 00:01:58.950
+Wir können also mit nur ein paar Bits wirklich
+weit zählen, richtig?
+
+00:01:58.950 --> 00:02:07.070
+Und wenn wir uns dies ansehen, können
+wir 1, 2, 4, 8, 16 Punkte zählen.
+
+00:02:07.070 --> 00:02:20.600
+Übertragen wir dies mal auf das Innere eines Computers. Ein Bit kann an oder aus sein. Dieses Bit kann also an oder aus sein.
+
+00:02:20.670 --> 00:02:29.900
+Jetzt möchte ich, dass ihr euch eine Zahl zwischen 31 und 1 ausdenkt. Handzeichen, wer sich eine überlegt hat. Ben, welche Zahl (12).
+
+00:02:29.930 --> 00:02:40.200
+12 Nun möchten wir mit diesen Punkten hier 12 Punkte binär darstellen. Soll 16 an oder aus sein? (aus). Ausschalten bitte.
+
+00:02:40.209 --> 00:02:53.500
+Wenn wir die Zahl 12 bilden, soll 8 an oder aus sein? (an) OK, wie viele sind dann übrig? (4) Sollen die 4 Punkte an oder aus sein? (an).
+
+00:02:53.550 --> 00:03:04.000
+Und was ist mit der 2? (aus) Warum? Warum wird 2 ausgeschaltet? (Weil wir mit 8 und 4 schon 12 haben). Also, 1 bleibt an oder ...? (aus)
+
+00:03:04.060 --> 00:03:16.100
+Wer kann mir sagen, was binär 12 wäre, 12 darstellen würde? Wer will's versuchen? (aus, an, an, aus, aus) Daumen hoch, wer zustimmt.
+
+00:03:16.170 --> 00:03:21.850
+Und wie wär's mit Elarn, möchtest du, könnt ihr euch bitte alle wieder einschalten,
+
+00:03:21.850 --> 00:03:29.400
+Elarn, wähle eine Zahl, die wir bilden sollen. (24) 24 Kannst du dich bitte auch wieder einschalten.
+
+00:03:33.599 --> 00:03:45.670
+Für 24 soll 16 an oder aus sein? (an) 8 an
+oder aus (an), 4 (aus) 2 (aus) 1 (aus).
+
+00:03:45.670 --> 00:03:53.769
+Elarn, wie sehen 24 Punkte binär aus? (an,
+an, aus, aus, aus).
+
+00:03:53.769 --> 00:03:56.400
+Könnt ihr die Zahl 1 für mich bilden. Wie würde das aussehen?
+
+00:03:56.470 --> 00:04:08.000
+Wie würden wir die Zahl 1 bilden? (schwarz, schwarz, schwarz, schwarz, weiß) Könnt ihr das machen?
+
+00:04:08.000 --> 00:04:15.700
+Nachdem ihr nun die Zahl 1 gesehen habt, fällt
+euch noch eine andere Zahl ein, die noch niedriger als 1 wäre? Will?
+
+00:04:15.769 --> 00:04:22.700
+(0) Wie würde die 0 gebildet? (die weiße ausschalten).
+
+00:04:22.720 --> 00:04:38.000
+Wir können die niedrigste Zahl Null bilden und die
+höchste Zahl, wenn ihr alle Karten wieder einschaltet, mit fünf Bits, was ist die höchste
+Zahl, die wir darstellen können? Ben? (31) Handzeichen, wer Ben zustimmt? Es ist 31.
+
+00:04:38.099 --> 00:04:49.300
+Wenn wir 31 bilden können, was ist die nächste Karte? Wenn ich das nächste Bit bin, was ist
+die nächste Zahl? (32) 32.
+
+00:04:49.389 --> 00:05:00.000
+Wenn ich 32 einschalte, müssen sie alle (aus)
+aus sein, um 32 zu bilden. Schaltet euch alle aus.
+
+00:05:00.000 --> 00:05:03.879
+Zählen wir jetzt einmal und schauen was mit den
+verschiedenen Bits passiert.
+
+00:05:03.879 --> 00:05:12.600
+Wir haben Null. Was brauchen wir für die 1? Ja, sag uns wie es geht (die 1 einschalten).
+
+00:05:12.629 --> 00:05:23.800
+2, wie bilden wir die 2? Sag es uns (1 ausschalten, 2 einschalten) 3? Lachlin, ja (1 einschalten und 2 an lassen).
+
+00:05:23.800 --> 00:05:43.500
+4? (2 und 1 ausschalten und 4 einschalten) 5? (1 einschalten ...)
+Was fällt euch am ersten Bit auf?
+
+00:05:43.550 --> 00:05:50.000
+Zander, was fällt dir auf (sie macht die
+ganze Arbeit) Sie scheint die ganze Arbeit zu tun.
+
+00:05:50.099 --> 00:06:00.900
+Warum scheint sie die ganze Arbeit zu tun? 
+Ben? (man braucht sie für ungerade Zahlen) Schaltet alle eure Bits wieder ein.
+
+00:06:00.979 --> 00:06:07.699
+Was ist der Unterschied zwischen dem ersten Bit
+und all den anderen Bits, die ihr seht?
+
+00:06:07.699 --> 00:06:16.439
+William? (Die 1 ist die einzige ungerade Zahl) Es ist die einzige ungerade Zahl.
+
+00:06:16.439 --> 00:06:21.500
+Wir können eine Menge Zahlen darstellen, oder? Wie würden wir wohl Buchstaben darstellen?
+
+00:06:21.520 --> 00:06:31.580
+Wendet euch eurem Nebensitzer zu und überlegt
+euch Ideen, wie Buchstaben dargestellt werden könnten.
+
+00:06:31.580 --> 00:06:35.900
+Wir würdet Ihr wohl einen Buchstaben darstellen?
+
+00:06:51.080 --> 00:06:55.920
+5, 4, 3, 2, 1, alle herschauen.
+
+00:06:56.000 --> 00:07:04.000
+Handzeichen, wer einen Vorschlag hat, wie wir
+damit Buchstaben darstellen können. Wer hat eine Idee?
+
+00:07:04.000 --> 00:07:19.200
+(Die Zahl könnte den Buchstaben darstellen. 26 könnte Z sein und A könnte 1 sein) 26 könnte Z sein, A könnte 1 sein, was wäre dann B? Jacob?
+
+00:07:19.270 --> 00:07:27.300
+(2), was wäre C (3), was wäre D? (4), E? (5). Ich glaube, ihr habt den Bogen raus.
+
+00:07:27.310 --> 00:07:35.600
+Ich frage mich, ob ihr herausfinden könnt, was ich
+euch sende. Ich werde euch eine Nachricht senden.
+
+00:07:35.669 --> 00:07:44.100
+Schwarz, weiß, schwarz, schwarz, schwarz. Welche Zahl ist das? (8).
+
+00:07:44.129 --> 00:07:53.200
+Was ist der achte Buchstabe des Alphabets? (H). Behaltet das im Gedächtnis.
+
+00:07:53.229 --> 00:07:58.600
+Aus, an, aus, aus, an. Welche Zahl ist das? (9)
+
+00:07:58.669 --> 00:08:13.500
+Was habe ich zu euch gesagt Zander? (Sie haben „Hi“ zu uns gesagt) Wirklich? Stimmt ihr ihm zu? Haben wir „Hi“ gebildet?
+
+00:08:13.520 --> 00:08:20.900
+Aber das sind doch nur Punkte und Karten, die
+an und aus sind, kann ich damit wirklich Nachrichten kommunizieren?
+
+00:08:20.919 --> 00:08:38.000
+(ja) Sehen wir mal, wie gut ihr seid. Mal sehen, ob ich meinen Geburtsmonat
+kommunizieren kann. Seid ihr bereit? Aus, an, an, aus, aus.
+
+00:08:38.070 --> 00:08:44.500
+In welchem Monat wurde ich geboren? Sagt es leise, so viele wissen die Antwort,
+und los. (Dezember) Richtig.
+
+00:08:44.510 --> 00:08:52.500
+Wir können also mit binären Einheiten und diesen Punkten
+von einem Buchstaben bis zu einer Zahl alles kommunizieren.
+
+00:08:52.540 --> 00:08:57.500
+Man kann auch Bilder oder Töne und sogar
+Filme machen.
+
+00:08:57.500 --> 00:09:03.730
+Und alles hat mit Bits zu tun, da in einem
+Computer nicht eine Menge Karten wie hier sind,
+
+00:09:03.730 --> 00:09:15.000
+dort sind auch keine Nullen und Einsen, sondern
+jede Menge Dinge, die ein- oder ausgeschaltet werden müssen.

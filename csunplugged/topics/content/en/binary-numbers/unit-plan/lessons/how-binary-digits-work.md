@@ -304,7 +304,7 @@ computing.
     (In principle you could use these, but it wouldn’t be a good idea.
     We are looking for the answer that they are not contrasting colours,
     therefore it would be difficult to see if it is actually on or off.
-    This hints and why computers use easily distinguished physical
+    This hints why computers use easily distinguished physical
     representations.)
 -   What are some contrasting symbols or ways that we can show on and off in
     binary?  

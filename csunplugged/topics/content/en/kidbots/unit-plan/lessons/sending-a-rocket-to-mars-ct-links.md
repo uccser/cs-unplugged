@@ -31,7 +31,7 @@ Can students see the stages of programming (designing the program, testing it, a
 
 # Decomposition
 
-In our everyday lives we don’t often give instructions as specifically as saying “Turn right, take a step forward, take a step, turn right”, and it seems much more straightforward to simply say “please go over there”.
+In our everyday lives we don’t often give instructions as specifically as saying “Turn right, take a step forward, take another step forward, turn right”, and it seems much more straightforward to simply say “please go over there”.
 But when we program we have to be very specific because we have to tell computers exactly how to do each thing and limit ourselves to the few instructions that they can follow.
 Students need to work on taking something they are familiar with, like “go to that square” and identifying the simplest individual steps that need to happen for someone to accomplish this.
 
@@ -73,7 +73,7 @@ This could be measure be either the number of instructions, or the amount of tim
 
 Did students recognise that multiple solutions (many different sets of instructions) are possible?
 Were they able to compare some and evaluate which ones use fewer commands and are the fastest?
-Are they able to see that measuring the time taken is a practical measure of the performance of a program, but counting the number of instructions is more consistent as it doesn't depend on who has the Bot and Tester roles.
+Are they able to see that measuring the time taken is a practical measure of the performance of a program, but counting the number of instructions is more consistent? (As it doesn't depend on who has the Bot and Tester roles).
 
 {panel end}
 
