@@ -50,7 +50,7 @@ Here are some examples of hashing based on the algorithm mentioned above.
 
 # Mathematical links
 
-The right-most digit is actually the modulo 10 value. See the [https://csunplugged.org/en/topics/kidbots/unit-plan/modulo/](lesson on modulo) for more detail on how this idea works..
+The right-most digit is actually the modulo 10 value. See the [lesson on modulo](https://csunplugged.org/en/topics/kidbots/unit-plan/modulo/) for more detail on how this idea works..
 
 {panel end}
 
@@ -106,13 +106,13 @@ Statistics: Have the students try to predict the number of guesses they think th
 
 The columns of numbers are usually referred to as "buckets" or "slots" in the hash table. The hash tables in this lesson had just 10 slots in them. In practice the number of slots is usually similar to the number of things being searched; if you have 1,000,000 customers, you might have up to 2,000,000 slots in the hash table, which means that most of the time you only have one thing in any slot. This makes for very fast searching - you'll usually go straight to what you're looking for. This is why hashing is so popular.
 
-Working with 10 slots is easy, since we can just take the last digit of the hash total. 100 slots would also be easy - just use the last two digits. In practice, we use the "modulo" function, which converts the hash total to a limited range. For example, if your hash total for an item is 39, and you have 15 slots, the slot number for that item would be 39 modulo 15, which is 9. There's more information about this in the lesson on [https://csunplugged.org/en/topics/kidbots/unit-plan/modulo/](modulo arithmetic).
+Working with 10 slots is easy, since we can just take the last digit of the hash total. 100 slots would also be easy - just use the last two digits. In practice, we use the "modulo" function, which converts the hash total to a limited range. For example, if your hash total for an item is 39, and you have 15 slots, the slot number for that item would be 39 modulo 15, which is 9. There's more information about this in the lesson on [modulo arithmetic](https://csunplugged.org/en/topics/kidbots/unit-plan/modulo/).
 
 Hashing a value seems very "random", but in fact it's a very powerful idea for several purposes, including fast searching as it was used for here. It is also used to calculate check digits for error detection, and for important applications in cryptography. Using hashing for searching does have a downside however: with the sorted list for binary search, similar values will be next to each other, but in a hash table similar values can hash to very different places, so it's hard to find things that are close to what you're looking for (such as all the names between L and P). But hashing is very fast and it is the method of choice if you're just needing to look something up like an account number or product code.
 
 ## Follow up task
 
-Link to Jacks worksheet....
+[Hash Table worksheet]("resources:resource" "hash-table-worksheet").
 
 ## Lesson reflection
 
