@@ -36,15 +36,15 @@ The terms "hash total" and "hashing"  are technical terms that comes up often in
 
 Here are some examples of hashing based on the algorithm mentioned above.
 
-| Original  | Sum of digits  | Last digit of sum |
-|-----------|----------------|-------------------|
-| 123       | 6              | 6                 |
-| 999       | 27             | 7                 |
-| 916       | 16             | 6                 |
-| 900       | 9              | 9                 |
-| 4321      | 10             | 0                 |
-| 1234      | 10             | 0                 |
-| 37281964  | 40             | 0                 |
+| Original       | Sum of digits  | Last digit of sum |
+|----------------|----------------|-------------------|
+| 123            | 6              | 6                 |
+| 999            | 27             | 7                 |
+| 916            | 16             | 6                 |
+| 900            | 9              | 9                 |
+| 4321           | 10             | 0                 |
+| 1234           | 10             | 0                 |
+| 37281964       | 40             | 0                 |
 
 {panel type="math"}
 
