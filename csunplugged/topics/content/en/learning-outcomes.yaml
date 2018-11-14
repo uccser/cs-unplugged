@@ -48,6 +48,17 @@ binary-match-letters-numbers:
 binary-count-highest-number:
   text: Count on from the highest number to find the total number of dots on the binary cards.
 
+# DATA STRUCTURES LEARNING OUTCOMES
+
+data-structures-understand-hashing-basis-fast-searching:
+  text: Understand how hashing can be used as the basis of a fast searching algorithm.
+
+data-structures-argue-hashtables-efficient:
+  text: Argue in which ways hash tables are more efficient compared to a binary search.
+
+data-structures-describe-hash-linear-search:
+  text: Describe how the hash table is based on a sequential search.
+
 # DRAMA LEARNING OUTCOMES
 
 drama-create-video-binary:
@@ -144,6 +155,9 @@ numeracy-recognise-numbers-represented:
 
 numeracy-discuss-modulo-understanding-remainders:
   text: Discuss how knowing how modulo works, supports your understanding of remainders.
+
+numeracy-explore-patterns-hash-table:
+  text: Explore number patterns within a particular hash table.
 
 # PROGRAMMING LEARNING OUTCOMES
 
