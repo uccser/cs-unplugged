@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-11 01:02+0000\n"
-"PO-Revision-Date: 2018-11-13 14:53\n"
+"PO-Revision-Date: 2018-11-14 14:55\n"
 "Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
 "Language-Team: Italian\n"
 "Language: it_IT\n"
@@ -826,7 +826,7 @@ msgstr "Unità didattica:"
 
 #: templates/general/about.html:20
 msgid "CS Unplugged is a collection of free learning activities that teach Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around. We originally developed this so that young students could dive head-first into Computer Science, experiencing the kinds of questions and challenges that computer scientists experience, but without having to learn programming first."
-msgstr "CS Unplugged è una raccolta di materiali didattici gratuiti che insegna l'Informatica attraverso giochi coinvolgenti e puzzle che usano carte, fili, pastelli e... un sacco di movimento fisico!. Inizialmente lo abbiamo sviluppato di modo che i giovani studenti potessero tuffarsi a capofitto nell'Informatica, sperimentando le tipologie di domande e sfide che gli informatici vivono, ma senza dover prima imparare a programmare."
+msgstr "CS Unplugged è una raccolta di materiali didattici gratuiti che insegna l'Informatica attraverso giochi coinvolgenti e puzzle che usano carte, fili, pastelli e un sacco di movimento fisico. Inizialmente lo abbiamo sviluppato di modo che i giovani studenti potessero tuffarsi a capofitto nell'Informatica, sperimentando le tipologie di domande e sfide che gli informatici vivono, ma senza dover prima imparare a programmare."
 
 #: templates/general/about.html:27
 msgid "The collection was originally intended as a resource for outreach and extension, but with the adoption of computing and computational thinking into many classrooms around the world, it is now widely used for teaching. The material has been used in many contexts outside the classroom as well, including science shows, talks for senior citizens, and special events."
@@ -1183,7 +1183,7 @@ msgstr ""
 
 #: templates/general/principles.html:38
 msgid "No Computers Required"
-msgstr ""
+msgstr "Nessun computer richiesto"
 
 #: templates/general/principles.html:41
 msgid "The activities do not depend on computers. This avoids confusing Computer Science with programming or learning application software, makes the activities available to those who aren’t able to or don’t want to work with computers, and skips the barrier of learning to program before being able to explore ideas. It also provides physical, kinaesthetic experiences as part of learning computing, which can be a welcome break from sitting in front of a screen. For example, the parity magic trick is a card game that happens to use the same principle as error correction in computer memory. Unplugged isn’t a completely Luddite approach – we do exploit the internet and other computing facilities to share and develop the activities, and we hope that students will have to opportunity to learn to program so that they can put wheels on the ideas they have been exploring."
@@ -1191,7 +1191,7 @@ msgstr ""
 
 #: templates/general/principles.html:50
 msgid "Real Computer Science"
-msgstr ""
+msgstr "Vera Informatica"
 
 #: templates/general/principles.html:53
 msgid "Unplugged presents fundamental concepts in Computer Science such as algorithms, artificial intelligence, graphics, information theory, human computer interfaces, programming languages, and so on. We want to emphasize that programming is a means, not an end. Wikipedia provides a definition of Computer Science, and Peter Denning’s Great Principles project provides a more detailed analysis of the topics it covers."
@@ -1199,7 +1199,7 @@ msgstr ""
 
 #: templates/general/principles.html:60
 msgid "Learning by doing"
-msgstr ""
+msgstr "Imparare facendo"
 
 #: templates/general/principles.html:63
 msgid "The activities tend to be kinaesthetic, often on a large scale and involving team work. For example, the Sorting Network activity has teams of six running through a network drawn on the ground. The activities tend to allow students to discover answers for themselves, rather than just being given solutions or algorithms to follow; that is, a constructivist approach is encouraged (where the teacher uses the scaffolding provided by Unplugged to ask questions that lead them to discover the knowledge themselves), as we want students to realize that they are capable of finding solutions to problems on their own, rather than being given a solution to apply to the problem. For example, students don’t really need to be able to convert numbers to binary, but it is valuable for them to discover the patterns such as the doubling value of bits, patterns when you count in binary, and how the range increases exponentially as you add bits."
