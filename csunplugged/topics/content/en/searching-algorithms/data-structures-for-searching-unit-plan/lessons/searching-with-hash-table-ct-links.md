@@ -3,7 +3,7 @@
 # Algorithmic thinking
 
 To identify which group of chests they should look in, students have to follow the algorithm we use to locate data in a hash table. 
-The have to first take the number on their partner’s chest, hash it using a hash function (following the steps to hash the number is an algorithm as well!), and now that they know which group of chests to look in they need to look at these one-by-one until the find the right chest.
+They have to first take the number on their partner’s chest, hash it using a hash function (following the steps to hash the number is an algorithm as well!), and now that they know which group of chests to look in they need to look at these one-by-one until they find the right chest.
 
 #### What to look for:
 
@@ -21,9 +21,9 @@ A hash table is a type of data structure commonly used by computer scientists an
 Data structures are abstract concepts, and are explored in the Abstraction section in the unit plan.
 
 If we compare the groups and chests in this activity to a hash table:
-    -   The groups the chests were placed in are the slots in a hash table, where data is placed according to its hashed value.
-    -   The number on a chest is the “key” of that chest, which is hashed and gives us the slot in the hash table where the chest (our data) should be placed.
-    -   The “key” is the information we have (the number on the chest), and the chest itself is the data we want to find in the hash table.
+    - The groups the chests were placed in are the slots in a hash table, where data is placed according to its hashed value.
+    - The number on a chest is the “key” of that chest, which is hashed and gives us the slot in the hash table where the chest (our data) should be placed.
+    - The “key” is the information we have (the number on the chest), and the chest itself is the data we want to find in the hash table.
 
 Another example of abstraction that students may demonstrate can happen after they have figured out which group their partner's chest is in. 
 Now that they know which group to look at, they can completely ignore all other groups, this is information that is no longer of use to them so it can be discarded.

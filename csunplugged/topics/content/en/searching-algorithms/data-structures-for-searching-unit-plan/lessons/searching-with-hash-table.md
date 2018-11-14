@@ -74,7 +74,7 @@ The right-most digit is actually the modulo 10 value. See the [lesson on modulo]
     -   turns the numbers over in the hash table so they are facing down. 
 They then swap tables and hand over the list of values they are looking for and have another relay race. 
 
-8. A student needs to run to the hola hoop, complete an agreed exercise for example 10 star jumpes and run back again before they can turn another card over. If it's not on the list then they put the number aside. The winning team is the first one to have all 5 values on the list.
+8. A student needs to run to the hula hoop, complete an agreed exercise for example 10 star jumps and run back again before they can turn another card over. If it's not on the list then they put the number aside. The winning team is the first one to have all 5 values on the list.
 
 {panel type="teaching"}
 
@@ -92,7 +92,7 @@ Statistics: Have the students try to predict the number of guesses they think th
 
 {panel end}
 
-## Follow up discusion
+## Follow up discussion
 
 1. Collect and discuss the scores. 
 
