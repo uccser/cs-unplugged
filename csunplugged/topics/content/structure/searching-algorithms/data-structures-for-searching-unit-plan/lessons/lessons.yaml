@@ -1,2 +1,13 @@
 searching-with-hash-table:
-    duration: 30
+	duration: 45
+	computational-thinking-links: searching-with-hash-table-ct-links.md
+	learning-outcomes:
+		- data-structures-understand-hashing-basis-fast-searching
+		- data-structures-argue-hashtables-efficient
+		- data-structures-describe-hash-linear-search
+	generated-resources:
+		- hash-table-worksheet
+	classroom-resources:
+		- chalk
+		- cones
+		- hula hoops
