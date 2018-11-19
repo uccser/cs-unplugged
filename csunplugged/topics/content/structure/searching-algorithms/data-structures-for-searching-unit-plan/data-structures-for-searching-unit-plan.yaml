@@ -1,0 +1,7 @@
+lessons: lessons/lessons.yaml
+computational-thinking-links: data-structures-for-searching-unit-plan-ct-links.md
+
+age-groups:
+  11-14:
+    searching-with-hash-table:
+      number: 1
