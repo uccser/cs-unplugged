@@ -39,8 +39,6 @@ Students should be getting used to the idea that a good hash table will usually 
 
 {panel end}
 
-{panel type="math"}
-
 ## Follow up
 
 You could try this with 30 envelopes or containers; the hash function would need to be calculated using the total modulo 30. To do this, you could keep subtracting 30 from the number until it is between 0 and 29. Discuss if this is better. (There should be fewer papers in each envelope on average, and it may be that you usually just find one paper and access the information directly.
@@ -54,6 +52,8 @@ Students could explore other hash functions. For example:
 -   Multiply the character values by 1, 2, 3... and then add them e.g. Tracy would give 20x1 + 18x2 + 13x3 + 25x4.
 
 -   There are other hash functions in the "plugging it in" programming activities that follow up from here. Some will be quite tedious for students to calculate, but are more effective at spreading the names out evenl
+
+{panel type="math"}
 
 # Mathematical links
 
