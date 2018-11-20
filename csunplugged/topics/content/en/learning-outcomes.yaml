@@ -50,13 +50,13 @@ binary-count-highest-number:
 
 # DATA STRUCTURES LEARNING OUTCOMES
 
- data-structures-understand-hashing-basis-fast-searching:
+data-structures-understand-hashing-basis-fast-searching:
   text: Understand how hashing can be used as the basis of a fast searching algorithm.
 
- data-structures-argue-hashtables-efficient:
+data-structures-argue-hashtables-efficient:
   text: Argue in which ways hash tables are more efficient compared to a binary search.
 
- data-structures-describe-hash-linear-search:
+data-structures-describe-hash-linear-search:
   text: Describe how the hash table is based on a sequential search.
 
 # DRAMA LEARNING OUTCOMES

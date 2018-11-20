@@ -1,4 +1,4 @@
-# Searching with a Hash Table
+# Create your own Hash Table
 
 ## Key questions
 

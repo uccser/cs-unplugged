@@ -1,4 +1,4 @@
-# Searching with a Hash Table
+# Hash Table relays
 
 ## Key questions
 
