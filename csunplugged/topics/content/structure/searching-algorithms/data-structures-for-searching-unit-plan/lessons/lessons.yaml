@@ -25,3 +25,15 @@ create-your-own-hash-table:
     - statistics-explain-collisions-statistical-phenomenon
   classroom-resources:
     - pencils
+
+our-names-in-a-hash-table:
+  duration: 45
+  computational-thinking-links: our-names-in-a-hash-table-ct-links.md
+  learning-outcomes:
+    - data-structures-understand-hashing-basis-fast-searching
+    - data-structures-argue-hashtables-efficient
+    - data-structures-describe-hash-linear-search
+    - numeracy-explore-patterns-hash-table
+    - statistics-explain-collisions-statistical-phenomenon
+  classroom-resources:
+    - pencils
