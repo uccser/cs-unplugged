@@ -71,9 +71,11 @@ class TopicView(generic.DetailView):
         """
         # Call the base implementation first to get a context
         context = super(TopicView, self).get_context_data(**kwargs)
-        # Add in a QuerySet of all the connected unit plans
-        unit_plans = self.object.unit_plans.order_by("name")
-        context["unit_plans"] = add_lesson_ages_to_objects(unit_plans)
+        # Add in a QuerySet of all the connected unit plans,
+        # sorted by minimum age, then maximum age.
+        unit_plans = add_lesson_ages_to_objects(self.object.unit_plans.all())
+        unit_plans = sorted(unit_plans, key=lambda x: x.min_age)
+        context["unit_plans"] = sorted(unit_plans, key=lambda x: x.max_age)
         # Add in a QuerySet of all the connected curriculum integrations
         context["curriculum_integrations"] = self.object.curriculum_integrations.order_by("number")
         return context

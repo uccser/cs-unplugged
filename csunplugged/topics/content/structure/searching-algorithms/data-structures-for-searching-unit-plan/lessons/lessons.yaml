@@ -1,0 +1,27 @@
+searching-with-hash-table:
+  duration: 45
+  computational-thinking-links: searching-with-hash-table-ct-links.md
+  learning-outcomes:
+    - data-structures-understand-hashing-basis-fast-searching
+    - data-structures-argue-hashtables-efficient
+    - data-structures-describe-hash-linear-search
+    - numeracy-explain-modulo
+    - numeracy-explore-patterns-hash-table
+  generated-resources:
+    - hash-table-worksheet
+  classroom-resources:
+    - chalk
+    - cones
+    - hula-hoops
+
+create-your-own-hash-table:
+  duration: 45
+  computational-thinking-links: create-your-own-hash-table-ct-links.md
+  learning-outcomes:
+    - data-structures-understand-hashing-basis-fast-searching
+    - data-structures-argue-hashtables-efficient
+    - data-structures-describe-hash-linear-search
+    - numeracy-explore-patterns-hash-table
+    - statistics-explain-collisions-statistical-phenomenon
+  classroom-resources:
+    - pencils
