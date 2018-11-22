@@ -72,15 +72,20 @@ binary-count-highest-number:
 
 data-structures-understand-hashing-basis-fast-searching:
   curriculum-areas:
-    - numeracy
+    - statistics
+    - algorithms
+    - data-representation
 
 data-structures-argue-hashtables-efficient:
   curriculum-areas:
-    - numeracy
+    - algorithms
+    - statistics
+    - logic
 
 data-structures-describe-hash-linear-search:
   curriculum-areas:
-    - numeracy
+    - logic
+    - generalising-and-patterns
 
 # DRAMA LEARNING OUTCOMES
 
@@ -213,6 +218,7 @@ numeracy-discuss-modulo-understanding-remainders:
 numeracy-explore-patterns-hash-table:
   curriculum-areas:
     - numeracy
+    - generalising-and-patterns
 
 statistics-explain-collisions-statistical-phenomenon:
   curriculum-areas:
