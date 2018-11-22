@@ -22,15 +22,17 @@ Where do people rely on computers to look up numbers and names for them quickly?
 
 ## Lesson activities
 
-1. Choose how many digits you will have in the numbers that you will use to label the treasure chests (about 4 or 5 digits is suitable).s.
+1. Choose how many digits you will have in the numbers that you will use to label the treasure chests (about 4 or 5 digits is suitable).
 
-2. Get students to generate a random number for their first treasure chest to put in their hash table. This could be done one digit at a time using a 10-sided die, drawing digits out of a hat, or a spinner pointing to 10 digits; or it could be done using an online random number generator such as random.org ([this link](https://www.random.org/integer-sets/?sets=1&num=8&min=1&max=99999&commas=on&order=random&format=html&rnd=new) will generate 8 5-digit numbers).
+2. Get students to generate a random number for their first treasure chest to put in their hash table. This could be done one digit at a time using a 10-sided die, drawing digits out of a hat, or a spinner pointing to 10 digits; or it could be done using an online random number generator such as random.org ([this link](https://www.random.org/integer-sets/?sets=1&num=8&min=1&max=99999&commas=on&order=random&format=html&rnd=new) will generate eight 5-digit numbers).
 
 3. Once the students have a number for a treasure chest, get them to calculate its hash total, and put the number in its correct slot in the table. On their second sheet, they should draw a chest (a rectangle is sufficient) in the same slot. The entry just put on each sheet should both be labeled with the letter "A".
  
 4. Have them add about 7 more treasure chests to their hash table, each with a different number generated randomly. They will need to label them with letters of the alphabet (sequentially), and put the corresponding blank chest on their second sheet.
 
 5. Explain that when two chests end up in the same slot it is called a “collision”. Get the students to work out which of their slots had the most collisions, and ask around the class to find out how many collisions each student had. (Some students may have two or three collisions, or even more. It's possible, but extremely unlikely, that a student had all 8 values hash to the same slot.).
+
+6. Now have students pair up, and give their blank sheet to their partner. They can now play the searching game, where each nominates which chest their partner needs to find, and then they take turns guessing the letter of the chest. (Students who have lots of collisions will have the best opportunity to give their partner a longer challenge!).
 
 {panel type="teaching"}
 
@@ -47,8 +49,6 @@ Students might recognise that it's hard to get a large number of collisions by c
 Collisions are a statistical phenomenon, and working out what will happen in a hash table requires a good understanding of statistics. One simple observation is that if 70% of the slots have a value in them, and a random value is to be added, there is a 70% chance that it will have a collision. In other words, it is more likely than not! For this reason, in practice hash tables avoid getting too full; ideally they would be less than half full, but this wastes a lot of space, so in practice around 60% or 70% full is a common rule of thumb. Beyond this, the chance of a collision is very high, and this makes the tables much less efficient.
 
 {panel end}
-
-6. Now have students pair up, and give their blank sheet to their partner. They can now play the searching game, where each nominates which chest their partner needs to find, and then they take turns guessing the letter of the chest. (Students who have lots of collisions will have the best opportunity to give their partner a longer challenge!).
 
 ## Extension activity
 
