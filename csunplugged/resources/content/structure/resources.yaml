@@ -58,3 +58,6 @@ treasure-island:
 hash-table-worksheet:
   generator-module: HashTableWorksheetResourceGenerator
   copies: true
+hash-table-10-slots-worksheet:
+  generator-module: HashTableBlankWorksheetResourceGenerator
+  copies: true

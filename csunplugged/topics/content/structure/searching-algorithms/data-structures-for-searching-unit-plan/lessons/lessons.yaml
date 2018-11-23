@@ -23,6 +23,8 @@ create-your-own-hash-table:
     - data-structures-describe-hash-linear-search
     - numeracy-explore-patterns-hash-table
     - statistics-explain-collisions-statistical-phenomenon
+  generated-resources:
+    - hash-table-10-slots-worksheet
   classroom-resources:
     - pencils
 
