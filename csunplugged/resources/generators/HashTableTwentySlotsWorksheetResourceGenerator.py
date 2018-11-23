@@ -4,7 +4,7 @@ from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 from django.template.loader import render_to_string
 
 
-class HashTableBlankWorksheetResourceGenerator(BaseResourceGenerator):
+class HashTableTwentySlotsWorksheetResourceGenerator(BaseResourceGenerator):
     """Class for Hash Table Worksheet resource generator."""
 
     copies = True
@@ -17,11 +17,11 @@ class HashTableBlankWorksheetResourceGenerator(BaseResourceGenerator):
         """
         pages = []
 
-        mod_10_buckets = [{"number": i} for i in range(10)]
+        mod_20_buckets = [{"number": i} for i in range(20)]
         html = render_to_string(
-            "resources/hash-table-10-slots-worksheet.html",
+            "resources/hash-table-20-slots-worksheet.html",
             {
-                "mod_10_buckets": mod_10_buckets,
+                "mod_20_buckets": mod_20_buckets,
             }
         )
         pages.append({"type": "html", "data": html, "thumbnail": True})
