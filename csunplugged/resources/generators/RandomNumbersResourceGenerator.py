@@ -1,8 +1,6 @@
 """Class for Hash Table Worksheet resource generator."""
 
-from copy import deepcopy
-from operator import itemgetter
-from random import randint, shuffle
+from random import randint
 from resources.utils.BaseResourceGenerator import BaseResourceGenerator
 from django.template.loader import render_to_string
 
@@ -21,12 +19,11 @@ class RandomNumbersResourceGenerator(BaseResourceGenerator):
         pages = []
 
         random_numbers = list()
-        self.set_bucket_counts(mod_10_buckets, zero=1, one=1)
-        self.populate_buckets(mod_10_buckets, 10)
-        insertion_numbers = self.create_insertion_numbers(mod_10_buckets)
-        comparison_numbers = self.create_comparison_numbers(mod_10_buckets)
+        for i in range(0, 20):
+            random_numbers.append(self.generate_number(i, 10))
+
         html = render_to_string(
-            "resources/hash-table-worksheet-page-1.html",
+            "resources/random-numbers.html",
             {
                 "random_numbers": random_numbers,
             }
@@ -35,7 +32,7 @@ class RandomNumbersResourceGenerator(BaseResourceGenerator):
 
         return pages
 
-    def generate_number(self, bucket, modulo):
+    def generate_number(self, num, modulo):
         """Generate unique number for bucket.
 
         Args:
@@ -47,7 +44,7 @@ class RandomNumbersResourceGenerator(BaseResourceGenerator):
         """
         number_prefix = randint(100, 999)
         number_prefix_sum_digit = self.sum_digits(number_prefix)
-        number_postfix = (modulo - (number_prefix_sum_digit - bucket["number"])) % modulo
+        number_postfix = (modulo - (number_prefix_sum_digit - num)) % modulo
         return int(str(number_prefix) + str(number_postfix))
 
     def sum_digits(self, n):
