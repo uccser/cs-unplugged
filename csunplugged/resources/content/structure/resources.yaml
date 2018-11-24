@@ -61,3 +61,6 @@ hash-table-worksheet:
 hash-table-10-slots-worksheet:
   generator-module: HashTableTenSlotsWorksheetResourceGenerator
   copies: true
+hash-table-20-slots-worksheet:
+  generator-module: HashTableTwentySlotsWorksheetResourceGenerator
+  copies: true

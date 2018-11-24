@@ -17,11 +17,13 @@ class HashTableTwentySlotsWorksheetResourceGenerator(BaseResourceGenerator):
         """
         pages = []
 
-        mod_20_buckets = [{"number": i} for i in range(20)]
+        zero_to_nine = [{"number": i} for i in range(10)]
+        ten_to_nineteen = [{"number": i} for i in range(10, 20)]
         html = render_to_string(
             "resources/hash-table-20-slots-worksheet.html",
             {
-                "mod_20_buckets": mod_20_buckets,
+                "zero_to_nine": zero_to_nine,
+                "ten_to_nineteen": ten_to_nineteen,
             }
         )
         pages.append({"type": "html", "data": html, "thumbnail": True})

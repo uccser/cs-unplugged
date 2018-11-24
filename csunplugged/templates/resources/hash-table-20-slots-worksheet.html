@@ -1,7 +1,6 @@
 <style>
   /* Global settings */
   table, th, td {
-    /* border-collapse: collapse; */
     vertical-align: top;
     table-layout: fixed;
   }
@@ -36,7 +35,7 @@
     height: 0.7em;
   }
   .row-height {
-    height: 400px;
+    height: 350px;
   }
   /* Other */
   .page-break {
@@ -46,27 +45,42 @@
 
 <h1>Hash Table Worksheet</h1>
 
-<h2>Hash Table 1</h2>
 <p>
-  The following hash table stores a number using a hash function that is modulo 10 of the sum of the number’s digits.
+  The following hash table stores a number using a hash function that is modulo 20 of the sum of the number’s digits.
 </p>
 
 <table class="hash-table">
   <thead>
     <tr>
-      {% for bucket in mod_10_buckets %}
+      {% for bucket in zero_to_nine %}
         <th>{{ bucket.number }}</th>
       {% endfor %}
     </tr>
   </thead>
   <tbody>
     <tr class="row-height">
-      {% for bucket in mod_10_buckets %}
+      {% for bucket in zero_to_nine %}
         <td>
           <div class="linked-list">
           </div>
         </td>
       {% endfor %}
     </tr>
+
+    <tr>
+      {% for bucket in ten_to_nineteen %}
+        <th>{{ bucket.number }}</th>
+      {% endfor %}
+    </tr>
+
+    <tr class="row-height">
+      {% for bucket in ten_to_nineteen %}
+        <td>
+          <div class="linked-list">
+          </div>
+        </td>
+      {% endfor %}
+    </tr>
+
   </tbody>
 </table>

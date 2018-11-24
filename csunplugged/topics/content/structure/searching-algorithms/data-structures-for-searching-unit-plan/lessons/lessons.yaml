@@ -25,6 +25,7 @@ create-your-own-hash-table:
     - statistics-explain-collisions-statistical-phenomenon
   generated-resources:
     - hash-table-10-slots-worksheet
+    - hash-table-20-slots-worksheet
   classroom-resources:
     - pencils
 
