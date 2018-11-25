@@ -26,6 +26,7 @@ create-your-own-hash-table:
   generated-resources:
     - hash-table-10-slots-worksheet
     - hash-table-20-slots-worksheet
+    - random-numbers
   classroom-resources:
     - pencils
 
