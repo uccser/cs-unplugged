@@ -18,13 +18,14 @@ The binary searching algorithm was much faster and more efficient than the seque
 It is based on generating a simple number from the longer number on the cards which is called a hash total. In this activity we're going to take the number, and apply a simple formula to it to get a number between 0 and 9. The formula is to add all the digits together, and take the right-most digit of the answer. For example, for the number 9240 you want to calculate the hash total you add the digits together (9+2+4+0 = 15), and take the 5 from the end. The result is referred to as a "hash" of the original number - it's a meaningless value derived from it, but a key point is that given the same original number, you'll always get the same hash value. Hashing a value is when you convert it into a hash total.
 Set up the Hash Table relay game outside or in your classroom. 
 
-| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
-|---|---|---|---|---|---|---|---|---|---|
-|   |   |   |   |   |   |   |   |   |   |
-
 -   Put 20 numbers faced down in a hula hoop.
 
 -   Draw a chalk table that has 10 compartments (or draw it on a whiteboard if you are running this activity inside).
+
+| 0    | 1    | 2    | 3    | 4    | 5    | 6    | 7    | 8    | 9    |
+|------|------|------|------|------|------|------|------|------|------|
+|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|
+|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|
 
 {panel type="teaching"}
 
