@@ -39,5 +39,8 @@ our-names-in-a-hash-table:
     - data-structures-describe-hash-linear-search
     - numeracy-explore-patterns-hash-table
     - statistics-explain-collisions-statistical-phenomenon
+  generated-resources:
+    - alphabet-to-number
   classroom-resources:
-    - pencils
+    - paper
+    - boxes-or-envelopes

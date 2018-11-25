@@ -67,3 +67,6 @@ hash-table-20-slots-worksheet:
 random-numbers:
   generator-module: RandomNumbersResourceGenerator
   copies: true
+alphabet-to-number:
+  generator-module: AlphabetToNumberResourceGenerator
+  copies: false
