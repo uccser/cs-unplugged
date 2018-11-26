@@ -18,14 +18,24 @@ class RandomNumbersResourceGenerator(BaseResourceGenerator):
         """
         pages = []
 
-        random_numbers = list()
-        for i in range(0, 20):
-            random_numbers.append(self.generate_number(i, 10))
+        random_numbers_col_1 = list()
+        random_numbers_col_2 = list()
+        random_numbers_col_3 = list()
+        random_numbers_col_4 = list()
+
+        for i in range(0, 10):
+            random_numbers_col_1.append(self.generate_number(i, 10))
+            random_numbers_col_2.append(self.generate_number(i, 10))
+            random_numbers_col_3.append(self.generate_number(i, 10))
+            random_numbers_col_4.append(self.generate_number(i, 10))
 
         html = render_to_string(
             "resources/random-numbers.html",
             {
-                "random_numbers": random_numbers,
+                "random_numbers_col_1": random_numbers_col_1,
+                "random_numbers_col_2": random_numbers_col_2,
+                "random_numbers_col_3": random_numbers_col_3,
+                "random_numbers_col_4": random_numbers_col_4,
             }
         )
         pages.append({"type": "html", "data": html, "thumbnail": True})

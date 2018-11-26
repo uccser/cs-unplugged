@@ -1,9 +1,43 @@
+<style>
+  .container-spacing {
+    margin-left: 75px; 
+  }
+  .column-spacing {
+    display: inline-block;
+    margin: 50px;
+  }
+</style>
+
 <h1>Random Numbers</h1>
 
 <p>
   Hash these numbers and insert them into your Hash Table.
 </p>
 
-{% for number in random_numbers %}
-  <p>{{ number }}</p>
-{% endfor %}
+<div class="container-spacing">
+
+  <div class="column-spacing">
+    {% for number in random_numbers_col_1 %}
+      <p>{{ number }}</p>
+    {% endfor %}
+  </div>
+
+  <div class="column-spacing">
+    {% for number in random_numbers_col_2 %}
+      <p>{{ number }}</p>
+    {% endfor %}
+  </div>
+
+  <div class="column-spacing">
+    {% for number in random_numbers_col_3 %}
+      <p>{{ number }}</p>
+    {% endfor %}
+  </div>
+
+  <div class="column-spacing">
+    {% for number in random_numbers_col_4 %}
+      <p>{{ number }}</p>
+    {% endfor %}
+  </div>
+
+</div>
