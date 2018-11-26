@@ -1,5 +1,5 @@
 -   Click inside the `scratch:say [Hello] for (2) secs` block and type to change
-    “Hello” to what you want to display on the the screen.
+    “Hello” to what you want to display on the screen.
     In this case, it will be ‘1’ for the first output, ‘2’ for the second, ‘4’ for
     the third and so on.
 
