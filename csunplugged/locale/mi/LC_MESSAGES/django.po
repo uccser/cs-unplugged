@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-11 01:02+0000\n"
-"PO-Revision-Date: 2018-10-29 15:24\n"
+"POT-Creation-Date: 2018-11-26 21:19+0000\n"
+"PO-Revision-Date: 2018-11-27 15:25\n"
 "Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
 "Language-Team: Maori\n"
 "Language: mi_NZ\n"
@@ -20,11 +20,11 @@ msgstr ""
 msgid "Classic CS Unplugged page"
 msgstr "Whārangi CS Unplugged Ōkawa"
 
-#: config/settings/base.py:139
+#: config/settings/base.py:140
 msgid "Translation mode"
 msgstr "Momo whakawhitiwhiti reo"
 
-#: config/settings/base.py:145
+#: config/settings/base.py:146
 msgid "Translation mode (Bi-directional)"
 msgstr "Momo whakawhitiwhiti reo (ngā aronga e rua)"
 
@@ -147,15 +147,15 @@ msgstr "Kaiako (whakautu)"
 msgid "Worksheet Version"
 msgstr "Hei Pepa Mahi"
 
-#: resources/generators/BinaryToAlphabetResourceGenerator.py:54
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:59
 msgid "Base 10"
 msgstr "Pūtake 10"
 
-#: resources/generators/BinaryToAlphabetResourceGenerator.py:55
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:60
 msgid "Binary"
 msgstr "Tāhūrua"
 
-#: resources/generators/BinaryToAlphabetResourceGenerator.py:56
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:61
 msgid "Letter"
 msgstr "Pū"
 
@@ -1282,8 +1282,8 @@ msgid "The areas above cover much of what the subject of computer science is abo
 msgstr "Kua kōrerotia he wāhanga whānui o ngā kaupapa pūtaiao rorohiko kei runga nei. Ko te tuhiwaehere tētahi o ngā taputapu hei whakatinana i ngā whakaaro (āe rā, he tino taonga, ā, me whai pūkenga kia whakamahi i tēnei taputapu). Heoi, ehara i te mea mā te tuhiwaehere anake e hangaia ai ngā papatono pai mā te tangata. Mā te mōhio ki te pūtaiao rorohiko e mōhio ai hoki ngā kaituhiwaehere ki ngā huarahi kia tere, kia tiakina ngā rawa, kia haumaru, kia whai hua, kia mārama, kia taea te tipu, kia rawe hoki ngā pūmanawa rorohiko!"
 
 #: templates/general/what-is-computer-science.html:70
-msgid "That's why we developed CS Unplugged - we want young students to be empowered to understand the great ideas that computer science covers, without having to become expert programmers first. They won't be learning exactly how to build the next search engine, social network or game app, but they will have an idea of what sort of techniques are needed to make it successful. We don't want them to see digital systems as some kind of magic that they can't participate in, but as something that they could understand and, for some, create themselves. Actually, it is is kind of magic when you start understanding what can and can't be done."
-msgstr "Koinei te take i hanga mātou i te CS Unplugged - e hiahia ana mātou ki te tautoko i ngā ākonga kia mōhio ki ngā kaupapa nui o te pūtaiao rorohiko me te kore eke ki ngā taumata o te tuhiwaehere i te tuatahi. Ehara i te mea, ka ako rātou ki te hanga i te pūkaha rapu, i te taupānga kēmu, i te whatunga pāpori rongonui rānei - hou rawa atu o te ao. Heoi anō ka kite rātou i ētahi o ngā tikanga hei kōkiri i ēnei momo kaupapa. Kia mōhio ai rātou, ehara ngā pūnaha matihiko i te maunga teitei, he pīnakitanga kē ka taea e rātou te eke. Heoi anō ka taea te eke i ngā maunga teitei ina hopu rātou i tēnei mātauranga."
+msgid "That's why we developed CS Unplugged - we want young students to be empowered to understand the great ideas that computer science covers, without having to become expert programmers first. They won't be learning exactly how to build the next search engine, social network or game app, but they will have an idea of what sort of techniques are needed to make it successful. We don't want them to see digital systems as some kind of magic that they can't participate in, but as something that they could understand and, for some, create themselves. Actually, it is kind of magic when you start understanding what can and can't be done."
+msgstr ""
 
 #: templates/general/what-is-computer-science.html:80
 msgid "Read 'How do I teach CS Unplugged?'"
