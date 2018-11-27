@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-11 01:02+0000\n"
-"PO-Revision-Date: 2018-11-15 14:51\n"
+"POT-Creation-Date: 2018-11-26 21:19+0000\n"
+"PO-Revision-Date: 2018-11-27 14:52\n"
 "Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
 "Language-Team: Italian\n"
 "Language: it_IT\n"
@@ -20,11 +20,11 @@ msgstr ""
 msgid "Classic CS Unplugged page"
 msgstr "Pagina di CS Unplugged classico"
 
-#: config/settings/base.py:139
+#: config/settings/base.py:140
 msgid "Translation mode"
 msgstr "Modalità di traduzione"
 
-#: config/settings/base.py:145
+#: config/settings/base.py:146
 msgid "Translation mode (Bi-directional)"
 msgstr "Modalità di traduzione (bidirezionale)"
 
@@ -147,15 +147,15 @@ msgstr "Insegnante (soluzioni)"
 msgid "Worksheet Version"
 msgstr "Versione del foglio di lavoro"
 
-#: resources/generators/BinaryToAlphabetResourceGenerator.py:54
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:59
 msgid "Base 10"
 msgstr "Base 10"
 
-#: resources/generators/BinaryToAlphabetResourceGenerator.py:55
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:60
 msgid "Binary"
 msgstr "Binario"
 
-#: resources/generators/BinaryToAlphabetResourceGenerator.py:56
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:61
 msgid "Letter"
 msgstr "Lettera"
 
@@ -1282,8 +1282,8 @@ msgid "The areas above cover much of what the subject of computer science is abo
 msgstr "Le aree sopra riportate coprono gran parte di ciò di cui si occupa l'Informatica. La programmazione è solo uno strumento per implementare le idee (beh, è uno strumento molto potente e richiede notevoli competenze per essere usato bene). Ma la programmazione, da sola, non è abbastanza per creare programmi che le persone amino usare, e l'Informatica è l'area che fornisce ai programmatori le conoscenze approfondite per rendere il loro software veloce, efficiente, affidabile, sicuro, utilizzabile, intelligente, scalabile e persino piacevole!"
 
 #: templates/general/what-is-computer-science.html:70
-msgid "That's why we developed CS Unplugged - we want young students to be empowered to understand the great ideas that computer science covers, without having to become expert programmers first. They won't be learning exactly how to build the next search engine, social network or game app, but they will have an idea of what sort of techniques are needed to make it successful. We don't want them to see digital systems as some kind of magic that they can't participate in, but as something that they could understand and, for some, create themselves. Actually, it is is kind of magic when you start understanding what can and can't be done."
-msgstr "Ecco perché abbiamo sviluppato CS Unplugged - vogliamo che i giovani studenti siano in grado di comprendere le grandi idee coperte dall'Informatica, senza dover prima diventare esperti programmatori. Non impareranno proprio come costruire il prossimo motore di ricerca, social network o gioco per smartphone, ma avranno un'idea di quali tipi di tecniche sono necessarie perché queste cose funzionino con successo. Non vogliamo che vedano i sistemi digitali come una sorta di magia a cui non possono partecipare, ma come qualcosa che potrebbero comprendere e, alcuni, creare essi stessi. In realtà, è proprio quasi magia quando inizi a capire cosa può e cosa non può essere fatto con i computer."
+msgid "That's why we developed CS Unplugged - we want young students to be empowered to understand the great ideas that computer science covers, without having to become expert programmers first. They won't be learning exactly how to build the next search engine, social network or game app, but they will have an idea of what sort of techniques are needed to make it successful. We don't want them to see digital systems as some kind of magic that they can't participate in, but as something that they could understand and, for some, create themselves. Actually, it is kind of magic when you start understanding what can and can't be done."
+msgstr ""
 
 #: templates/general/what-is-computer-science.html:80
 msgid "Read 'How do I teach CS Unplugged?'"
