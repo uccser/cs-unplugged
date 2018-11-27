@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-11 01:02+0000\n"
+"POT-Creation-Date: 2018-11-26 21:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,11 +21,11 @@ msgstr ""
 msgid "Classic CS Unplugged page"
 msgstr ""
 
-#: config/settings/base.py:139
+#: config/settings/base.py:140
 msgid "Translation mode"
 msgstr ""
 
-#: config/settings/base.py:145
+#: config/settings/base.py:146
 msgid "Translation mode (Bi-directional)"
 msgstr ""
 
@@ -152,15 +152,15 @@ msgstr ""
 msgid "Worksheet Version"
 msgstr ""
 
-#: resources/generators/BinaryToAlphabetResourceGenerator.py:54
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:59
 msgid "Base 10"
 msgstr ""
 
-#: resources/generators/BinaryToAlphabetResourceGenerator.py:55
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:60
 msgid "Binary"
 msgstr ""
 
-#: resources/generators/BinaryToAlphabetResourceGenerator.py:56
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:61
 msgid "Letter"
 msgstr ""
 
@@ -1673,7 +1673,7 @@ msgid ""
 "they will have an idea of what sort of techniques are needed to make it "
 "successful. We don't want them to see digital systems as some kind of magic "
 "that they can't participate in, but as something that they could understand "
-"and, for some, create themselves. Actually, it is is kind of magic when you "
+"and, for some, create themselves. Actually, it is kind of magic when you "
 "start understanding what can and can't be done."
 msgstr ""
 
