@@ -1,4 +1,4 @@
-The CT connections for this lesson are similar to lessons 1 and 2. Some extra connections are noted here.
+The Computational Thinking connections for this lesson are similar to lessons 1 and 2. Some extra connections are noted here.
 
 {panel type="ct-algorithm"}
 
@@ -43,7 +43,7 @@ Did students realise that long random numbers can be generated from single rando
 
 # Generalising and patterns
 
-As described above in Algorithmic thinking, the algorithm for building a hash table is very similar to the one used for searching it.
+As described above in algorithmic thinking, the algorithm for building a hash table is very similar to the one used for searching it.
 
 #### What to look for:
 

@@ -44,7 +44,7 @@ Once they had found the group their partner’s chest was in, did they then igno
 
 # Decomposition
 
-As noted under Algorithmic Thinking, the hash table searching algorithm is actually made up of two algorithms (hashing and sequential search) and we can decompose it into these two processes.
+As noted under algorithmic thinking, the hash table searching algorithm is actually made up of two algorithms (hashing and sequential search) and we can decompose it into these two processes.
 If we look at each step in the process of searching a hash table, it becomes clear that we are not performing one large task, but a number of smaller, simpler tasks. 
 
 As we have seen, sequential search becomes less and less efficient as it has to search more data, but if we are searching through a small amount of data, for example just 3 chests, it can still complete this task quickly. 
