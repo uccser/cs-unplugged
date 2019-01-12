@@ -8,10 +8,15 @@ source ./infrastructure/prod-deploy/load-prod-deploy-config-envs.sh
 ./csu update
 
 # Generate static PDF resources for deployment.
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Alphabet to Number"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Hash Table 10 slots Worksheet"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Hash Table 20 slots Worksheet"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Hash Table Worksheet"
 docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Modulo Clock"
 docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Parity Cards"
 docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Piano Keys"
 docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Pixel Painter"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Random Numbers"
 docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Searching Cards"
 
 # Install Google Cloud SDK

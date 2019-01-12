@@ -1,0 +1,72 @@
+<style>
+  /* Global settings */
+  table, th, td {
+    /* border-collapse: collapse; */
+    vertical-align: top;
+    table-layout: fixed;
+  }
+  table {
+    width: 100%;
+  }
+  h2, h3 {
+    margin-top: 1em;
+  }
+  /* Hash table */
+  table.hash-table th,
+  table.hash-table > tbody > tr > td {
+    text-align: center;
+    border: 2px solid black;
+    padding: 0.4em;
+  }
+  table.hash-table th {
+    font-size: 1.2em;
+  }
+  /* Linked list */
+  div.linked-list {
+    display: inline-block;
+    text-align: center;
+  }
+  div.linked-list-item {
+    border: 1px solid #222;
+    padding: 0.3em;
+  }
+  div.linked-list-connector {
+    border-right: 1px solid #222;
+    width: 50%;
+    height: 0.7em;
+  }
+  .row-height {
+    height: 400px;
+  }
+  /* Other */
+  .page-break {
+    page-break-after: always;
+  }
+</style>
+
+<h1>Hash Table Worksheet</h1>
+
+<h2>Hash Table 1</h2>
+<p>
+  The following hash table stores a number using a hash function that is modulo 10 of the sum of the number’s digits.
+</p>
+
+<table class="hash-table">
+  <thead>
+    <tr>
+      {% for bucket in mod_10_buckets %}
+        <th>{{ bucket.number }}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="row-height">
+      {% for bucket in mod_10_buckets %}
+        <td>
+          <div class="linked-list">
+          </div>
+        </td>
+      {% endfor %}
+    </tr>
+  </tbody>
+</table>

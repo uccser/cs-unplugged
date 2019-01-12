@@ -68,6 +68,25 @@ binary-count-highest-number:
     - decomposition
     - numeracy
 
+# DATA STRUCTURES LEARNING OUTCOMES
+
+data-structures-understand-hashing-basis-fast-searching:
+  curriculum-areas:
+    - statistics
+    - algorithms
+    - data-representation
+
+data-structures-argue-hashtables-efficient:
+  curriculum-areas:
+    - algorithms
+    - statistics
+    - logic
+
+data-structures-describe-hash-linear-search:
+  curriculum-areas:
+    - logic
+    - generalising-and-patterns
+
 # DRAMA LEARNING OUTCOMES
 
 drama-create-video-binary:
@@ -195,6 +214,15 @@ numeracy-recognise-numbers-represented:
 numeracy-discuss-modulo-understanding-remainders:
   curriculum-areas:
     - numeracy
+
+numeracy-explore-patterns-hash-table:
+  curriculum-areas:
+    - numeracy
+    - generalising-and-patterns
+
+statistics-explain-collisions-statistical-phenomenon:
+  curriculum-areas:
+    - statistics
 
 # PROGRAMMING LEARNING OUTCOMES
 

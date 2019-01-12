@@ -55,3 +55,18 @@ pixel-painter:
 treasure-island:
   generator-module: TreasureIslandResourceGenerator
   copies: false
+hash-table-worksheet:
+  generator-module: HashTableWorksheetResourceGenerator
+  copies: true
+hash-table-10-slots-worksheet:
+  generator-module: HashTableTenSlotsWorksheetResourceGenerator
+  copies: true
+hash-table-20-slots-worksheet:
+  generator-module: HashTableTwentySlotsWorksheetResourceGenerator
+  copies: true
+random-numbers:
+  generator-module: RandomNumbersResourceGenerator
+  copies: true
+alphabet-to-number:
+  generator-module: AlphabetToNumberResourceGenerator
+  copies: false
