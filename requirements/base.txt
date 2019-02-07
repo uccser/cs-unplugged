@@ -2,14 +2,14 @@
 # like Pillow and psycopg2
 # See http://bitly.com/wheel-building-fails-CPython-35
 # Verified bug on Python 3.5.1
-wheel==0.32.2
+wheel==0.32.3
 
 # Frontend
 django-bootstrap-breadcrumbs==0.9.1
 
 # Resources
 Pillow==5.3.0
-yattag==1.10.0
+yattag==1.10.1
 tinycss==0.4
 
 # Markdown
