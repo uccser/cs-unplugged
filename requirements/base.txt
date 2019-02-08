@@ -9,7 +9,7 @@ django-bootstrap-breadcrumbs==0.9.1
 
 # Resources
 Pillow==5.3.0
-yattag==1.10.1
+yattag==1.11.1
 tinycss==0.4
 
 # Markdown
