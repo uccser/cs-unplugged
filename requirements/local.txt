@@ -4,7 +4,7 @@
 
 # Documentation
 sphinx==2.0.0
-sphinx-rtd-theme==0.4.2
+sphinx-rtd-theme==0.4.3
 
 # Debugging Tools
 django-debug-toolbar==1.11
