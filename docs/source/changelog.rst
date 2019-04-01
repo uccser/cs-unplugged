@@ -23,6 +23,65 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+4.2.0
+==============================================================================
+
+- **Release date:** 1st April 2019
+- **Downloads:** `Source downloads are available on GitHub`_
+
+**Summary of changes:**
+
+This release adds Te Reo Māori, Simplified Chinese (简体中文), and German (Deutsche) content, along with many bugfixes.
+
+**Changelog:**
+
+- Added Simplified Chinese (简体中文) language, currently the following pages are available:
+  - All basic pages
+  - All printables
+  - Binary numbers topic: one lesson for 8 to 10 year olds, and 3 curriculum integrations.
+- Added Te Reo Māori language, currently the following pages are available:
+  - All basic pages
+  - All printables
+- Added new German (Deutsche) content:
+  - Kidbots topic has 2 lessons for 5 to 7 year olds, and 4 curriculum integrations.
+  - Sorting networks topic has 2 lessons for 5 to 7 year olds, and 2 curriculum integrations.
+  - Additional content to the binary numbers topic includes 2 new lessons for 8 to 10 year olds, and 4 more curriculum integrations.
+- Added 17 glossary definitions. `#472 <https://github.com/uccser/cs-unplugged/issues/472>`__
+- Added 'Treasure Island' printable.
+- Added description of alphabet on 'Binary to Alphabet' printable if required.
+- Removed use of SVG for adding labels to 'Job Badges' printable.
+- Added 'Kauri Tree' option for 'Sorting Network Cards' printable.
+- Removed 'Māori colours' and 'Māori numbers' option from 'Sorting Network Cards' printable, these are now accessed through the Te Reo Māori language.
+- Added 'alt' descriptions to images for greater content accessibility.
+- Fixed various minor text corrections across content.
+- Listed sponsors in README document.
+- Fixed incorrect statement on 'Pixel Painter' printable description page.
+- Removed extra spaces around programming language ages. `#1151 <https://github.com/uccser/cs-unplugged/issues/1151>`__
+- Simplified logic required for translation is not available badges within templates.
+- Added warning to printable if translation is not available.
+- Removed files of printable thumbnails, and use generated thumbnails.
+- Replace translation pipeline 'crowdin bot' with new 'Arnold system'.
+- Added 'lite_update' command for only loading key content for development.
+- Package updates:
+
+  - Update wheel from 0.31.1 to 0.33.1.
+  - Update Pillow from 5.2.0 to 5.4.1.
+  - Update yattag from 1.10.0 to 1.11.1.
+  - Update verto from 0.7.4 to 0.10.0.
+  - Update django-widget-tweaks from 1.4.2 to 1.4.3.
+  - Update PyYAML from 4.2b4 to 5.1.
+  - Update tqdm from 4.25.0 to 4.28.1.
+  - Update lxml from 4.2.4 to 4.2.5.
+  - Update django-modeltranslation from 0.12.2 to 0.13.
+  - Update sphinx from 1.7.7 to 2.0.0.
+  - Update sphinx-rtd-theme from 0.4.1 to 0.4.3.
+  - Update django-debug-toolbar from 1.9.1 to 1.11.
+  - Update django-extensions from 2.1.0 to 2.1.6.
+  - Update flake8 from 3.5.0 to 3.7.7.
+  - Update pydocstyle from 2.1.1 to 3.0.0.
+  - Update coverage from 4.5.1 to 4.5.2.
+  - Removed gsutil dependency.
+
 4.1.0
 ==============================================================================
 
