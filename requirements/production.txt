@@ -2,5 +2,3 @@
 # Avoid dependencies in production that
 # aren't in development.
 -r base.txt
-
-gsutil==4.34

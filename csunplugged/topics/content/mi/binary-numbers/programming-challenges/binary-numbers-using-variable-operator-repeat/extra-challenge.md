@@ -1,0 +1,1 @@
+Whakaaturia ngā nama mai i te nama nui rawa ki te nama iti iho (whakaaturia ngā nama 16, 8, 4, 2, me te 1).
