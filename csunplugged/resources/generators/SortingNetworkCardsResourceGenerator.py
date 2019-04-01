@@ -65,22 +65,16 @@ CARD_TYPE_DATA = {
             "little-red-riding-hood-6.png",
         ]
     },
-    "maori_colours": {
-        "label": "Māori colours",
-        "values": [
-            "whero", "kākāriki", "kiwikiwi", "karaka",
-            "kōwhai", "pango", "māwhero", "mā"
+    "kauri_tree": {
+        "label": _("Kauri tree"),
+        "images": [
+            "kauri-tree/kauri-1.png",
+            "kauri-tree/kauri-2.png",
+            "kauri-tree/kauri-3.png",
+            "kauri-tree/kauri-4.png",
+            "kauri-tree/kauri-5.png",
+            "kauri-tree/kauri-6.png",
         ],
-        "font-size": 500,
-    },
-    "maori_numbers": {
-        "label": "Māori numbers",
-        "values": [
-            "tahi", "rua", "toru", "whā", "rima", "ono", "whitu", "waru",
-            "iwa", "tekau", "tekau mā tahi", "tekau mā waru", "tekau mā toru",
-            "tekau mā whā", "rua tekau", "rua tekau mā ono"
-        ],
-        "font-size": 300,
     },
 }
 
@@ -96,7 +90,7 @@ class SortingNetworkCardsResourceGenerator(BaseResourceGenerator):
                 name="type",
                 description=_("Card Type"),
                 values=create_key_labels(),
-                default="small_numbers"
+                default="large_numbers"
             )
         }
 

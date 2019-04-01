@@ -1,0 +1,2 @@
+- Mā te tauākī `print()` e āhei ai koe te whakaatu i ngā kōrero, ngā uara rānei o roto i ngā taiapa kei runga i te mata. Hei tauira: mā te `print(100)` ka whakaaturia te `100` kei runga i te mata.
+- Me whakamahi e koe te tauākī `print()` mō ia nama e pīrangi ana koe ki te whakaatu.

@@ -1,0 +1,210 @@
+WEBVTT
+Kind: captions
+Language: es
+
+NOTE
+Subtitle file for the video "CS Unplugged - Binary digits (sample classroom lesson)"
+
+00:00:07.359 --> 00:00:19.100
+Hoy vamos a estudiar los dígitos binarios.
+Que levante la mano quien haya oído hablar de una cosa
+que hay en los ordenadores llamada bit. ¿Lo habéis escuchado alguna vez?
+
+00:00:19.119 --> 00:00:30.900
+Un bit viene de dígito binario. Tomamos la primera parte de binario y la t de dígito y lo acortamos a bit.
+
+00:00:30.939 --> 00:00:36.600
+Ahora mismo tenemos cinco bits aquí
+de pie. Vamos a ver lo que significa eso.
+
+00:00:36.660 --> 00:00:42.020
+Te voy a dar el número 1, vas a ser un bit,
+que representa 1 punto.
+
+00:00:42.020 --> 00:00:44.530
+Tú vas a ser un bit que representa 2 puntos.
+
+00:00:44.530 --> 00:00:48.600
+¿Cuál es el siguiente número? Decidlo en voz alta. (4,3)
+
+00:00:48.600 --> 00:00:52.600
+Levantad la mano si creéis que es el 3. Ese es nuestro sistema numérico.
+
+00:00:52.600 --> 00:00:57.800
+Vamos a ver si acertáis con binario. ¡Ah! Es el 4.
+
+00:00:57.850 --> 00:01:07.800
+¿Cuál podría ser el próximo número? ¿Sí? (6 o 5).
+Podría ser el 6 o el 5. En realidad es el 8.
+
+00:01:07.800 --> 00:01:14.400
+¿Qué está pasando con esos números? ¿Cuál es el siguiente número, Oliver? (16) ¿Es correcto?
+
+00:01:14.430 --> 00:01:23.500
+¿Entonces, cuál es el siguiente número después del 16? Jacob (32) ¿Y cuál viene después del 32?
+
+00:01:23.570 --> 00:01:32.100
+(136) Puede, ¿qué otro número podría ser? Lachlin (64) ¿Es correcto? (sí).
+
+00:01:32.159 --> 00:01:42.300
+¿Qué número viene después del 64? Thomas (128) ¿Y después? ¿Jacob? (256) Fantástico.
+
+00:01:42.300 --> 00:01:53.000
+¿Alguien sabe cuál es el siguiente? Ben. (512) Así que cuando... ¿Cuál es el siguiente, Jacob?
+
+00:01:53.000 --> 00:01:58.950
+Así que con solo unos pocos bits podemos contar hasta
+números muy muy altos, ¿verdad?
+
+00:01:58.950 --> 00:02:07.070
+Si miramos esto, podemos contar 1, 2, 4,
+8, 16 puntos.
+
+00:02:07.070 --> 00:02:20.600
+Vamos a ver qué significa esto dentro de un ordenador. Un bit puede estar encendido o apagado. Así que este bit puede estar encendido o puede estar apagado.
+
+00:02:20.670 --> 00:02:29.900
+Ahora quiero que penséis en un número entre 31 y 1. Levantad la mano si habéis pensado en un número. Ben, qué número (12).
+
+00:02:29.930 --> 00:02:40.200
+12 Lo que tenemos hacer es mirar estos puntos y mostrar 12 puntos en binario. ¿Queremos que el 16 esté encendido o apagado? (apagado). Apágate, por favor.
+
+00:02:40.209 --> 00:02:53.500
+Si estamos formando el número 12, ¿queremos el 8 encendido o apagado? (encendido) Vale, ¿cuántos faltan? (4) ¿Queremos 4 puntos encendidos o apagados? (encendidos).
+
+00:02:53.550 --> 00:03:04.000
+¿Y el 2? (apagado) ¿Por qué? ¿Por qué apagamos el 2? (Porque ya hemos formado el 12 con el 8 y el 4). ¿Entonces el 1 lo dejamos encendido o...? (apagado)
+
+00:03:04.060 --> 00:03:16.100
+¿Quién puede decirme cómo sería el 12 en binario, cómo se representaría? ¿Quién quiere probar? (apagado, encendido, encendido, apagado, apagado). Pulgares hacia arriba si estáis de acuerdo.
+
+00:03:16.170 --> 00:03:21.850
+¿Qué pasa con Elarn, queréis, podéis encenderos todos de nuevo?
+
+00:03:21.850 --> 00:03:29.400
+Elarn, elige el número que vamos a formar. (24) 24, ¿puedes volver a encenderte, por favor?
+
+00:03:33.599 --> 00:03:45.670
+Para el 24, ¿queremos el 16 encendido o apagado? (encendido) 8 encendido
+o apagado (encendido), 4 (apagado) 2 (apagado) 1 (apagado).
+
+00:03:45.670 --> 00:03:53.769
+Elarn, ¿cómo son 24 puntos en binario? (encendido, encendido,
+apagado, apagado, apagado).
+
+00:03:53.769 --> 00:03:56.400
+¿Podéis formar el número 1 para mí? ¿Cómo lo haríamos?
+
+00:03:56.470 --> 00:04:08.000
+¿Cómo formaríamos el número 1? (negro, negro, negro, negro, blanco) ¿Podéis hacerlo?
+
+00:04:08.000 --> 00:04:15.700
+Ahora que habéis visto el número 1, ¿se os ocurre
+algún otro número que sea menor que el 1? ¿Will?
+
+00:04:15.769 --> 00:04:22.700
+(0) ¿Cómo formaríais el 0? (apagando la blanca).
+
+00:04:22.720 --> 00:04:38.000
+Podemos formar el número más bajo, cero, y el número
+más alto, si volvéis a encender todas las cartas, con cinco bits, ¿cuál es el número más alto que podemos representar? ¿Ben? (31) Levantad la mano si estáis de acuerdo con Ben. Es 31.
+
+00:04:38.099 --> 00:04:49.300
+Si podemos formar el 31, ¿cuál será la siguiente carta? Si me uno y me convierto en el sexto bit, ¿cuál es el siguiente número? (32) 32.
+
+00:04:49.389 --> 00:05:00.000
+Si enciendo el 32, todos ellos se tienen que (apagar)
+apagar para formar 32. Apagáos todos.
+
+00:05:00.000 --> 00:05:03.879
+Vamos a contar a ver qué pasa
+con los diferentes bits.
+
+00:05:03.879 --> 00:05:12.600
+Tenemos cero. ¿Qué necesitamos para formar el 1? Sí, dad las instrucciones (encender el 1).
+
+00:05:12.629 --> 00:05:23.800
+2, ¿cómo formamos el 2? Decídselo a la gente (apagar el 1, encender el 2) ¿3? Lachlin, te toca (encender el 1 y dejar el 2 encendido).
+
+00:05:23.800 --> 00:05:43.500
+¿4? (apagar el 2 y el 1 y encender el 4) ¿5? (encender el 1...)
+¿Qué notáis acerca del primer bit?
+
+00:05:43.550 --> 00:05:50.000
+Zander, qué notas (hace todo el trabajo) Parece que hace todo el trabajo.
+
+00:05:50.099 --> 00:06:00.900
+¿Por qué parece que hace todo el trabajo?
+¿Ben? (no es posible formar números impares sin él) Volved a encender todos los bits.
+
+00:06:00.979 --> 00:06:07.699
+¿Cuál es la diferencia entre el primer bit
+y todos los otros bits que podéis ver?
+
+00:06:07.699 --> 00:06:16.439
+¿William? (el número 1 es el único número impar) Es el único número impar.
+
+00:06:16.439 --> 00:06:21.500
+Podemos representar muchos números, ¿verdad? Me pregunto, ¿cómo representaríamos letras?
+
+00:06:21.520 --> 00:06:31.580
+Trabajad con la persona que tenéis al lado y pensad en
+todas las ideas que se os ocurran para representar letras.
+
+00:06:31.580 --> 00:06:35.900
+¿Cómo crees que podrías representar una letra?
+
+00:06:51.080 --> 00:06:55.920
+5, 4, 3, 2, 1 mirad todos aquí.
+
+00:06:56.000 --> 00:07:04.000
+Que levanten la mano los que tengan alguna sugerencia
+sobre cómo podemos usarlos para representar letras? ¿Qué se os ocurre?
+
+00:07:04.000 --> 00:07:19.200
+(El número podría representar la letra. El 26 podría ser la Z y la A podría ser el 1) El 26 podría ser la Z, la A podría ser el 1, ¿cómo sería la B entonces? ¿Jacob?
+
+00:07:19.270 --> 00:07:27.300
+(2), ¿Cómo sería la C? (3), ¿Cómo sería la D? (4), ¿E? (5). Creo que le habéis cogido el truquillo.
+
+00:07:27.310 --> 00:07:35.600
+Me pregunto si seréis capaces de averiguar lo que os
+mando. Os voy a enviar un mensaje.
+
+00:07:35.669 --> 00:07:44.100
+Negro, blanco, negro, negro, negro. ¿Qué número es? (8).
+
+00:07:44.129 --> 00:07:53.200
+¿Cuál es la octava letra del alfabeto? (H). No os olvidéis de esto.
+
+00:07:53.229 --> 00:07:58.600
+Apagado, encendido, apagado, apagado, encendido. ¿Qué número es? (9)
+
+00:07:58.669 --> 00:08:13.500
+¿Qué te he dicho, Zander? (La palabra que nos has dicho es "Hi") ¿Lo es? ¿Estáis de acuerdo con él? ¿Hemos formado la palabra "Hi"?
+
+00:08:13.520 --> 00:08:20.900
+Pero no son más que puntos y cartas que están
+encendidos y apagados, ¿de verdad os puedo comunicar un mensaje haciendo eso?
+
+00:08:20.919 --> 00:08:38.000
+(sí) A ver qué tal se os da. Vamos a ver si puedo comunicaros el mes en el que nací. ¿Preparados? Apagado, encendido, encendido, apagado, apagado.
+
+00:08:38.070 --> 00:08:44.500
+¿En qué mes nací? Susurradlo, hay tanta gente que sabe la respuesta, venga. (Diciembre) Correcto.
+
+00:08:44.510 --> 00:08:52.500
+Así que usando dígitos binarios y usando estos puntos
+podemos comunicar cualquier cosa, desde una letra a un número.
+
+00:08:52.540 --> 00:08:57.500
+Podéis crear incluso imágenes, sonido,
+películas.
+
+00:08:57.500 --> 00:09:03.730
+Todo está relacionado con los bits, porque dentro
+de un ordenador no hay un montón de cartas como esta,
+
+00:09:03.730 --> 00:09:15.000
+ni un montón de ceros y unos, sino
+un montón de cosas que tienen que estar encendidas o apagadas.

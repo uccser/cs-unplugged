@@ -44,7 +44,7 @@ Were students able to break down the task of comparing words into single letter 
 
 # Generalising and patterns
 
-In this lesson the comparisons we moved from comparing numbers to the idea of comparing information in general.
+In this lesson we moved from comparing numbers to the idea of comparing information in general.
 This meant we were able to compare other things like letters, words, and musical notes.
 
 #### What to look for

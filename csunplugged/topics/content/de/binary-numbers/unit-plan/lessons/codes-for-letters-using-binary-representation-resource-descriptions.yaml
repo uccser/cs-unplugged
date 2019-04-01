@@ -1,0 +1,7 @@
+---
+binary-cards:
+  description: Ein Satz zur Klassendemonstration.
+binary-cards-small:
+  description: Ein Satz Karten pro Schüler.
+binary-to-alphabet:
+  description: Leeres Blatt für Schüler nebst Antwortblatt für Lehrer.

@@ -20,10 +20,7 @@
     {{ programming_challenge.name }}
   </h1>
   {% if not programming_challenge.translation_available %}
-    {% trans "programming challenge" as programming_challenge_l10n %}
-    {% url "topics:topic" topic.slug as parent_url %}
-    {% trans "topic" as topic_l10n %}
-    {% with model=programming_challenge model_type=programming_challenge_l10n parent=topic parent_type=topic_l10n parent_url=parent_url %}
+    {% with model=programming_challenge parent=topic %}
       {% include 'topics/not-available-warning.html' %}
     {% endwith %}
   {% else %}
@@ -47,16 +44,7 @@
                 {% blocktrans with set_num=lesson.challenge_set_number chal_num=lesson.challenge_number name=lesson.name trimmed %}
                 Challenge {{ set_num }}.{{ chal_num }} for {{ name }}
                 {% endblocktrans %}
-                (
-                  {% for age_group in lesson.age_group.all %}
-                    {% blocktrans with lower=age_group.ages.lower upper=age_group.ages.upper trimmed %}
-                      {{ lower }} to {{ upper }}
-                    {% endblocktrans %}
-                    {% if not forloop.last %}
-                      {% trans "and" %}
-                    {% endif %}
-                  {% endfor %}
-                )
+                ({% for age_group in lesson.age_group.all %}{% blocktrans with lower=age_group.ages.lower upper=age_group.ages.upper trimmed %}{{ lower }} to {{ upper }}{% endblocktrans %}{% if not forloop.last %}, {% endif %}{% endfor %})
               </a>
               {% if not lesson.translation_available %}
                 {% include 'topics/not-available-badge.html' %}

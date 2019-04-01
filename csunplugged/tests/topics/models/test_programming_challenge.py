@@ -20,7 +20,7 @@ class ProgrammingChallengeModelTest(BaseTestWithDB):
         )
         self.assertEqual(challenge.__str__(), "Challenge 1.1: 1")
 
-    def test_programming_challenge_model_type(self):
+    def test_programming_challenge_model_name(self):
         topic = self.test_data.create_topic(1)
         difficulty = self.test_data.create_difficulty_level(1)
         language = self.test_data.create_programming_language(1)
@@ -30,7 +30,7 @@ class ProgrammingChallengeModelTest(BaseTestWithDB):
             language,
             challenge,
         )
-        self.assertEqual(challenge.model_type(), "Programming Challenge")
+        self.assertEqual(challenge.MODEL_NAME, "Programming Challenge")
 
     def test_programming_challenge_model_get_absolute_url(self):
         topic = self.test_data.create_topic(1)

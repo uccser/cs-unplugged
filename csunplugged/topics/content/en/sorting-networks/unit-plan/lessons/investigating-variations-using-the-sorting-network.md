@@ -36,7 +36,7 @@ This part of the lesson explores changing the way the numbers are used.
 
 ### Variation 1: Identical value
 
-{image file-path="img/topics/sorting-network-equal-3.png"}
+{image file-path="img/topics/sorting-network-equal-3.png" alt="Two people each holding up a card with the number 3 on it."}
 
 In this variation, students try the Sorting Network with a set of cards where some cards have an identical value, such as  1, 2, 3, 3, 4, 5.
 They will probably ask what to do when comparing the identical cards - ask them what they think, and they are likely to realise that it won't make any difference (if 3 and 3 meet, then it won't matter which one goes left and which goes right!)
@@ -71,7 +71,7 @@ By reversing the left/right decision, the final result will be in the reverse or
 
 ### Variation 3: Letters of the alphabet
 
-{image file-path="img/topics/sorting-network-variation-alphabet.png"}
+{image file-path="img/topics/sorting-network-variation-alphabet.png" alt="Cards with letters on them."}
 
 Give the students cards with letters on them.
 Ask how we could compare these (students should observe that they could be in alphabetical order).
@@ -94,7 +94,7 @@ Some words with this property have double letters in them, such as BELLOW; these
 Here is a longer list of 6-letter words that can be used for this exercise.
 They are all from a dictionary, although some are rather obscure!
 
-{image file-path="img/topics/sorting-network-toffees-cellos-sponge.png" align="right"}
+{image file-path="img/topics/sorting-network-toffees-cellos-sponge.png" align="right" alt="2 toffees, 2 cellos and a sponge."}
 
 AFFLUX, AGLOOS, ALMOST, BEGILT, BEGINS, BEGIRT, BEKNOT, BELLOW, BIJOUX, BILLOW, BIOPSY, BLOOPS, BLOTTY, CELLOS, CHIKOR, CHILLS, CHILLY, CHIMPS, CHINOS, CHINTZ, CHIPPY, CHIRRS, CHITTY, CHIVVY, CHOOSY, CHOPPY, CLOOPS, CLOTTY, DEFFLY, DEHORT, DEKKOS, DIKKOP, DIMPSY, EFFLUX, EFFORT, ELLOPS, FILLOS, FLOORS, FLOOSY, FLOPPY, FLOSSY, GHOSTY, GIMMOR, GLOOPS, GLOOPY, GLOPPY, GLOSSY, HILLOS, KNOTTY, JIGGED, LIGGED, MIFFED, NIFFED, PIGGED, POLKED, POLLED, POLLEE, POMMEE, POMMIE, PONGED, PONGEE, PONIED, PONKED, POOHED, POOLED, RIFFED, RIGGED, ROLFED, ROLLED, RONNIE, ROOFED, ROOKED, ROOKIE, ROOMED, ROOMIE, SOGGED, SOOGEE, SOOKED, SOOLED, SOOMED, SPLIFF, SPOKED, SPONGE, TIFFED, TIGGED, TOFFEE, TOGGED, TOLLED, TOLLIE, TOMMED, TONGED, TONKED, TOOLED, TOOMED, TOONIE, TROKED, UNFEED, VOMICA, VUMMED, WIGGED, WOLFED, WONNED, WOOFED, WOOLED, WOOLIE, WOONED, WULLED, WURLIE, YOKKED, YOLKED, YONNIE, YTTRIA, YTTRIC, YUKKED, YUPPIE, YWROKE, ZIGGED, ZONKED, ZOOMED, ZOONED, ZOONIC.
 
@@ -102,24 +102,24 @@ AFFLUX, AGLOOS, ALMOST, BEGILT, BEGINS, BEGIRT, BEKNOT, BELLOW, BIJOUX, BILLOW, 
 
 ### Variation 5: Sorting words in dictionary order
 
-{image file-path="img/topics/sorting-network-variation-words.png"}
+{image file-path="img/topics/sorting-network-variation-words.png" alt="The words crochet and crocodile."}
 
 Give the students cards with dictionary words on them, and ask how these might be compared.
 Students should observe that they could be placed in dictionary order.
 A variation is to give them books and have them sort them in order of the authors' names.
 
-{image file-path="img/topics/sorting-network-crochet-v-crocodile.png"}
+{image file-path="img/topics/sorting-network-crochet-v-crocodile.png" alt="Crochet vs crocodile."}
 
 Comparing two words or names is challenging; they will need to know to compare each character until two differ (e.g. for "crochet" and "crocodile", the "croc" prefix is the same, so it is the "h" and "o" that determine their order; this process is an algorithm in itself!)
 
-{image file-path="img/topics/sorting-network-variation-words-2.png"}
+{image file-path="img/topics/sorting-network-variation-words-2.png" alt="The words kowhai and kākāriki."}
 
 The words being compared could also be used to reinforce spelling or meaning; for example, the words above are the colours in Te Reo Māori, so the student with the word "kowhai" would be reinforcing that it means the colour yellow.
 The use of macrons and other diacritical marks also gives the opportunity to explore the order that is used in the such languages for those letters.
 
 ### Variation 6: Music notation
 
-{image file-path="img/topics/sorting-network-variation-music.png"}
+{image file-path="img/topics/sorting-network-variation-music.png" alt="Two treble clefs."}
 
 Students can compare the pitch of music notation, with higher notes going to the right.
 If all the cards have the same clef (such as the treble clef here) then it reinforces that the height on the stave corresponds to the pitch.
@@ -127,7 +127,7 @@ Advanced music students can do the comparisons with different clefs (bass, alto 
 
 ### Variation 7: Music pitch - aural
 
-{image file-path="img/topics/sorting-network-variation-aural.jpg"}
+{image file-path="img/topics/sorting-network-variation-aural.jpg" alt="Two students compare the pitch of their bells."}
 
 In this variation, students compare the pitch of simple instruments that they are carrying.
 The bells shown above are ideal because they are all the same size, and force students to compare them by listening.
@@ -155,9 +155,9 @@ For example, the first image below shows an input that happens to come out sorte
 If it fails on just one input (the second one) then we can't rely on it, even though it sometimes works.
 In the other direction, it will always sort correctly.
 
-{image file-path="img/topics/sorting-network-backwards-1.png"}
+{image file-path="img/topics/sorting-network-backwards-1.png" alt="This diagram shows that when the Sorting Network is given the input 654321 it happens to come out sorted when ran backwards."}
 
-{image file-path="img/topics/sorting-network-backwards-2.png"}
+{image file-path="img/topics/sorting-network-backwards-2.png" alt="This diagram shows that when the Sorting Network is given the input 512364 it does not come out sorted when ran backwards."}
 
 {panel end}
 
@@ -165,7 +165,7 @@ In the other direction, it will always sort correctly.
 
 This kind of algorithm needs to run on special hardware to take advantage of doing multiple comparisons at the same time.
 It is only used for specialist applications at present, for example it is sometimes done on the graphics processor (GPU) of a computer, because these processors are good at doing parallel computation.
-Sorting Networks were invented long before powerful GPUs came along; this is an exciting thing about Computer Science - some of the our discoveries are ahead of the hardware that is available, so we're ready to make use of the hardware when it does become commonly available!
+Sorting Networks were invented long before powerful GPUs came along; this is an exciting thing about Computer Science - some of our discoveries are ahead of the hardware that is available, so we're ready to make use of the hardware when it does become commonly available!
 Note that this is *not* a conventional sorting algorithm, as the sorting that is done on a conventional system can make only one comparison at a time; conventional sorting algorithms are explored in another lesson.
 
 ## Lesson reflection

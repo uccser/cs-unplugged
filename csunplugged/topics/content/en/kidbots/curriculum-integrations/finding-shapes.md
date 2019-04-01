@@ -10,14 +10,14 @@ Fill a Kidbots grid with 2D or 3D shapes, according to the level the students ar
 
 Students should then try to move the bot object to a shape of the teacher's choosing, for example, "We’re going to write our own program that gets the plane to find a triangle."
 
-{image file-path="img/topics/kidbots-geometry-plane-4.gif"}
+{image file-path="img/topics/kidbots-geometry-plane-4.gif" alt="Animation showing the plane finding shapes."}
 
 ## The next challenge:
 
 Add barriers to the grid so that the path is more complex because it needs to avoid the barriers.
 This could be blocks blocking the way.
 
-{image file-path="img/topics/kidbots-geometry-plane-5.png"}
+{image file-path="img/topics/kidbots-geometry-plane-5.png" alt="Grid with the plane in (0,1) and two barriers in (1,0) and (1,1)."}
 
 ## Lesson reflection
 

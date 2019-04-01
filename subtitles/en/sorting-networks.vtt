@@ -1,0 +1,297 @@
+WEBVTT
+Kind: captions
+Language: en
+
+NOTE
+Computer Science Education Research,
+University of Canterbury, New Zealand
+Subtitle file for the video "CS Unplugged - Sorting Networks (sample classroom lesson)"
+Author: Alasdair Smith
+Date: 01/10/2018
+
+00:00:05.060 --> 00:00:10.000
+[Sorting Networks]
+
+00:00:11.480 --> 00:00:15.360
+So we've come outside today
+to learn a little bit more about how computers work,
+
+00:00:15.360 --> 00:00:21.160
+and what we have is, this is like a
+supercomputer made out of chalk.
+
+00:00:21.160 --> 00:00:24.919
+And I'm gonna show you why in a moment,
+I need six volunteers.
+
+00:00:24.919 --> 00:00:26.150
+Awesome.
+
+00:00:26.150 --> 00:00:30.710
+What I'm gonna do is I'm gonna give you a
+disk, and you need to go and stand on the
+
+00:00:30.710 --> 00:00:33.430
+circles - the far far away ones.
+
+00:00:33.430 --> 00:00:35.830
+So Rhylee you go away over
+in that far away one.
+
+00:00:35.830 --> 00:00:39.090
+Robert you go into the next one.
+
+00:00:39.090 --> 00:00:42.900
+Ellie you go over to that next one.
+
+00:00:42.900 --> 00:00:45.150
+Kourosh can you go over there.
+
+00:00:45.150 --> 00:00:47.629
+Lewis can you go into the last one.
+
+00:00:47.629 --> 00:00:48.629
+Okay!
+
+00:00:48.629 --> 00:00:52.219
+So I've got you guys here and this is all
+about teamwork.
+
+00:00:52.219 --> 00:00:55.850
+And it's all about organising data.
+
+00:00:55.850 --> 00:00:59.460
+So you guys are the start of the data you're
+coming in and you're all out of order, we've
+
+00:00:59.460 --> 00:01:05.460
+got the number 5, number 2, number 1,
+number 3, number 6 and number 4.
+
+00:01:05.460 --> 00:01:10.680
+And so before we start going into the supercomputer,
+all I need to teach you is this symbol here.
+
+00:01:10.680 --> 00:01:12.900
+What does this symbol here mean?
+
+00:01:12.900 --> 00:01:14.479
+What does it mean Lewis?
+
+00:01:14.480 --> 00:01:15.420
+Smaller then bigger.
+
+00:01:15.420 --> 00:01:19.940
+Smaller then bigger what's some more mathematical
+terms that we could use for smaller and bigger
+
+00:01:19.940 --> 00:01:21.200
+-- yep?
+-- Less than or greater than
+
+00:01:21.200 --> 00:01:27.100
+Less than or greater than. Awesome, so what
+we have is the orange line is the less than,
+
+00:01:27.100 --> 00:01:28.940
+and the blue line is the greater than.
+
+00:01:28.940 --> 00:01:33.560
+So let's see how this works. Can you all
+take a step into the box.
+
+00:01:33.560 --> 00:01:37.980
+Can you say hi to the person next to you and
+give them a big smile.
+
+00:01:37.990 --> 00:01:39.100
+Not too cheesy.
+
+00:01:39.100 --> 00:01:42.500
+Now what you need to do is decide: have I
+got the bigger number
+
+00:01:42.500 --> 00:01:44.600
+or have I got the smaller number.
+
+00:01:44.600 --> 00:01:47.100
+And then the bigger number
+follows the blue line,
+
+00:01:47.100 --> 00:01:50.400
+the smaller number follows the orange line, go.
+
+00:01:51.120 --> 00:01:55.320
+Now, you need to look around and check everyone's
+there and then you need to say hi and give
+
+00:01:55.320 --> 00:01:58.000
+the person a big smile go.
+
+00:01:58.000 --> 00:02:02.960
+Now decide who's got the smaller, who's got
+the greater number.
+
+00:02:07.480 --> 00:02:08.640
+Do you guys know what to do?
+
+00:02:08.649 --> 00:02:12.810
+Do the next one I didn't see anyone smiling
+and saying hello, smile and say hello.
+
+00:02:12.810 --> 00:02:13.810
+Hi.
+
+00:02:13.810 --> 00:02:15.980
+Now make your decision go.
+
+00:02:20.420 --> 00:02:21.260
+Hello!
+
+00:02:21.480 --> 00:02:22.120
+Nice.
+
+00:02:23.500 --> 00:02:24.660
+What number do you have?
+
+00:02:25.840 --> 00:02:27.880
+I have 4 so I'll go this way.
+
+00:02:27.880 --> 00:02:28.860
+Perfect.
+
+00:02:33.980 --> 00:02:37.040
+Cool so I'm gonna get you guys to turn and
+face me this way and we're gonna see what
+
+00:02:37.040 --> 00:02:40.860
+happened to our numbers, can you turn and
+hold up your numbers please?
+
+00:02:40.860 --> 00:02:44.000
+Oh, wow Kourosh what number have you got?
+
+00:02:44.000 --> 00:02:45.360
+-- One.
+-- What number have you got Lewis?
+
+00:02:45.360 --> 00:02:46.360
+Two.
+
+00:02:46.360 --> 00:02:47.100
+Three.
+
+00:02:47.100 --> 00:02:47.640
+Four.
+
+00:02:47.640 --> 00:02:48.540
+Five.
+
+00:02:48.540 --> 00:02:49.280
+Six.
+
+00:02:49.280 --> 00:02:51.060
+Okay what just happened to our numbers?
+
+00:02:51.080 --> 00:02:55.520
+We put them into our supercomputer that's
+chalk that's like a supercomputer,
+
+00:02:55.520 --> 00:02:58.480
+and we processed it and what happened?
+
+00:02:59.140 --> 00:03:01.980
+We came back in the right order.
+
+00:03:01.980 --> 00:03:04.680
+Oh, do you think that would work with everything?
+[Tip: This activity can be used to sort anything!]
+
+00:03:04.680 --> 00:03:05.600
+Yes.
+[Tip: This activity can be used to sort anything!]
+
+00:03:05.600 --> 00:03:07.840
+What kind of things
+could we sort in order do you think?
+
+00:03:07.840 --> 00:03:08.740
+-- Yep?
+-- Books.
+
+00:03:08.740 --> 00:03:10.060
+We could sort books, what else?
+
+00:03:10.580 --> 00:03:11.220
+Letters?
+
+00:03:11.220 --> 00:03:12.240
+Yes, what else?
+
+00:03:12.240 --> 00:03:13.080
+Bells?
+
+00:03:13.080 --> 00:03:14.100
+Yes, what else?
+
+00:03:14.100 --> 00:03:15.700
+Notes.
+
+00:03:15.700 --> 00:03:17.400
+Yes, what else?
+
+00:03:17.400 --> 00:03:18.400
+What about big numbers?
+
+00:03:18.409 --> 00:03:20.690
+Really big numbers could we do that?
+
+00:03:20.690 --> 00:03:22.020
+-- Yes.
+-- Yep, cool.
+
+00:03:22.020 --> 00:03:26.440
+[Book titles (alphabetical)]
+
+00:03:34.640 --> 00:03:43.100
+[Large Numbers (numeric order)]
+
+00:03:44.360 --> 00:03:50.260
+[Letters (alphabetical)]
+
+00:03:51.500 --> 00:03:58.460
+[Handbells (musical pitch, higher or lower)]
+
+00:03:58.740 --> 00:04:00.440
+Which one sounds lower and which one's higher?
+
+00:04:00.440 --> 00:04:01.420
+I'm lower.
+
+00:04:01.420 --> 00:04:03.040
+You're lower, sweet.
+
+00:04:08.420 --> 00:04:11.020
+Okay, let's sound one at a time.
+
+00:04:11.880 --> 00:04:14.100
+Yep. Which one sounds lower?
+
+00:04:14.480 --> 00:04:15.560
+This one's lower.
+
+00:04:15.560 --> 00:04:18.100
+Yep, let's try play it once more to make sure.
+
+00:04:19.880 --> 00:04:21.500
+That's sounds good.
+
+00:04:27.620 --> 00:04:30.240
+Let's hear it, let's hear it one more time.
+
+00:04:30.240 --> 00:04:31.560
+Yep.
+
+00:04:31.560 --> 00:04:33.480
+Okay, keep going.
+

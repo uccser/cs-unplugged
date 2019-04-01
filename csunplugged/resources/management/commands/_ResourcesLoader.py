@@ -7,7 +7,6 @@ from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.InvalidYAMLValueError import InvalidYAMLValueError
 from resources.utils.get_resource_generator import get_resource_generator
 from resources.models import Resource
-from django.contrib.staticfiles import finders
 
 
 class ResourcesLoader(TranslatableModelLoader):
@@ -26,14 +25,12 @@ class ResourcesLoader(TranslatableModelLoader):
         for (resource_slug, resource_structure) in resources_structure.items():
             try:
                 generator_module = resource_structure["generator-module"]
-                resource_thumbnail = resource_structure["thumbnail-static-path"]
                 resource_copies = resource_structure["copies"]
             except KeyError:
                 raise MissingRequiredFieldError(
                     self.structure_file_path,
                     [
                         "generator-module",
-                        "thumbnail-static-path",
                         "copies"
                     ],
                     "Resource"
@@ -52,11 +49,6 @@ class ResourcesLoader(TranslatableModelLoader):
             # Check module can be imported
             get_resource_generator(generator_module, QueryDict())
 
-            # Check thumbnail exists
-            if not finders.find(resource_thumbnail):
-                error_text = "Thumbnail image {} for resource {} could not be found."
-                raise FileNotFoundError(error_text.format(resource_thumbnail, resource_slug))
-
             # Check copies value is boolean
             if not isinstance(resource_copies, bool):
                 raise InvalidYAMLValueError(
@@ -68,7 +60,6 @@ class ResourcesLoader(TranslatableModelLoader):
             resource = Resource(
                 slug=resource_slug,
                 generator_module=generator_module,
-                thumbnail_static_path=resource_thumbnail,
                 copies=resource_copies,
             )
             self.populate_translations(resource, resource_translations)

@@ -121,9 +121,20 @@ DEFAULT_LANGUAGES = (
     ("en", "English"),
     ("de", "Deutsche"),
     ("es", "Español"),
+    ("mi", "Te Reo Māori"),
+    ("zh-hans", "简体中文"),
 )
 # Keep original values of languages for resource generation
 LANGUAGES = DEFAULT_LANGUAGES
+
+EXTRA_LANG_INFO = {
+    'mi': {
+        'bidi': False,
+        'code': 'mi',
+        'name': "Te Reo Māori",
+        'name_local': "Te Reo Māori",
+    }
+}
 
 if env.bool("INCLUDE_INCONTEXT_L10N", False):
     EXTRA_LANGUAGES = [
@@ -131,7 +142,7 @@ if env.bool("INCLUDE_INCONTEXT_L10N", False):
         (INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI, "Translation mode (Bi-directional)"),
     ]
 
-    EXTRA_LANG_INFO = {
+    EXTRA_LANG_INFO.update({
         INCONTEXT_L10N_PSEUDOLANGUAGE: {
             'bidi': False,
             'code': INCONTEXT_L10N_PSEUDOLANGUAGE,
@@ -144,7 +155,7 @@ if env.bool("INCLUDE_INCONTEXT_L10N", False):
             'name': "Translation mode (Bi-directional)",
             'name_local': _("Translation mode (Bi-directional)"),
         }
-    }
+    })
 
     django.conf.locale.LANG_INFO.update(EXTRA_LANG_INFO)
     # Add new languages to the list of all django languages

@@ -64,8 +64,6 @@ crwdns20255:0crwdne20255:0
 
 *BlockTag: crwdns20256:0crwdne20256:0*
 
-{image file-path="img/topics/odd-parroty-parity.png"}
-
 crwdns20257:0crwdne20257:0 crwdns20258:0crwdne20258:0 crwdns20259:0crwdne20259:0 crwdns20260:0crwdne20260:0 crwdns20261:0crwdne20261:0
 
 crwdns20262:0crwdne20262:0 crwdns20263:0crwdne20263:0

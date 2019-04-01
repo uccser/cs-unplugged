@@ -88,7 +88,7 @@
                 <div class="row">
                   {% with object=result.object %}
                     <div class="col-12 col-sm-3 text-sm-right">
-                      {{ object.model_type }}
+                      {{ object.MODEL_NAME }}
                     </div>
                     <div class="col-12 col-sm-9">
                       {% with template="search/result/"|add:result.model_name|add:".html" %}

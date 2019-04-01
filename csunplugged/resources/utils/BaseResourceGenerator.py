@@ -55,6 +55,18 @@ class BaseResourceGenerator(ABC):
         return options
 
     @classmethod
+    def get_option_defaults(cls):
+        """Get dictionary of default option values.
+
+        Returns:
+            Dictionary of option IDs to default values.
+        """
+        defaults = dict()
+        for key, values in cls.get_options().items():
+            defaults[key] = values.default
+        return defaults
+
+    @classmethod
     def get_local_options(cls):
         """Get local options dictionary, including additional subclass local options.
 

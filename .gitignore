@@ -116,3 +116,6 @@ whoosh_index/
 
 # OSX system files
 .DS_Store
+
+# Visual Studio Code
+.vscode/

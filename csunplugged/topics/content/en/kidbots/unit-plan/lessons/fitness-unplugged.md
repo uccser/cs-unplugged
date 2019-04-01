@@ -29,14 +29,14 @@ Today we are going to write our own unplugged fitness app. Before we start we ne
     -   Running on the spot
     -   Star jumps
     -   Ski jumps
-    -   Balancing bean bags on your head
+    -   Catching bean bags
 
-2.  Work in your groups draw on each of the cards.
+2.  Work in your groups and draw on each of the cards.
     You should design:
 
     -   A "GO" card to show the start of the program
     -   4 cards, each with a different exercise depicted on it
-    -   A card with that depicts how you should finish.
+    -   A card that depicts how you should finish.
         Ideas could be:
 
         -   Strike a pose
@@ -48,7 +48,7 @@ Today we are going to write our own unplugged fitness app. Before we start we ne
 
 4.  Each group goes around and tries to work out what each of the cards mean from the other groups.
 
-5.  Come together and discuss what was the same and for which cards you had to “learn” because you weren’t sure what it was?
+5.  Come together and discuss what was the same, and for which cards you had to “learn” because you weren’t sure what it was.
 
 6.  This is the same with computer programming languages.
     You can learn to program with different languages, and some things seem similar in a new language, while other things you have to learn as it isn’t clear how to use a particular command.
@@ -68,7 +68,7 @@ Today we are going to write our own unplugged fitness app. Before we start we ne
 
 10.  We need to set the parameters.
     A parameter tells us how long to do something or how many times to do something.
-    Here we know to Go, To do star jumps (but not how many), to do ski jumps (but not how many), to catch a bean bag (but not how many) and that we should repeat the ski jumps and catch a bean bag, (but not how many times)!
+    Here we know to Go, To do star jumps (but not how many), to do ski jumps (but not how many), to catch a bean bag (but not how many) and that we should repeat the ski jumps and catch a bean bag, (but not how many times).
 
     {image file-path="img/topics/whiteboards-and-hula-hoop-4.png" alt="6 whiteboards arranged around and in hula hoop"}
 
@@ -85,7 +85,7 @@ Today we are going to write our own unplugged fitness app. Before we start we ne
     The Programmer watches to see if everyone is doing it correctly.
     The Tester is looking for if there are any numbers to change or if the activities need further instructions. When the Tester says “Go” start following your fitness app.
 
-14.  The Programmer asks the Tester if they saw anything they thought could be changed or improved?
+14.  The Programmer asks the Tester if they saw anything they thought could be changed or improved.
 
 ## Applying what we have just learnt
 
