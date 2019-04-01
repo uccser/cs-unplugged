@@ -23,6 +23,16 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+4.2.1
+==============================================================================
+
+- **Release date:** 2nd April 2019
+- **Downloads:** `Source downloads are available on GitHub`_
+
+**Changelog:**
+
+- Fix bug where Te Reo Māori language data was not added to Django.
+
 4.2.0
 ==============================================================================
 
