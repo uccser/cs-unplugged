@@ -32,6 +32,8 @@ translation:
     - .yaml
     - .po
     - .vtt
+  file-overrides:
+    - csunplugged/topics/content/en/programming-challenges-structure-languages.yaml
 
 broken-link-checker:
   exclude-directories:
