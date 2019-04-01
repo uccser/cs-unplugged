@@ -249,11 +249,11 @@ logging.config.dictConfig({
     'loggers': {
         '': {
             'level': 'INFO',
-            'handlers': ['console',],
+            'handlers': ['console', ],
         },
         'csunplugged': {
             'level': 'INFO',
-            'handlers': ['console',],
+            'handlers': ['console', ],
             # required to avoid double logging with root logger
             'propagate': False,
         },
