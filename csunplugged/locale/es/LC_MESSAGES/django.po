@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-11 01:02+0000\n"
-"PO-Revision-Date: 2018-10-11 21:22\n"
-"Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
+"POT-Creation-Date: 2018-11-26 21:19+0000\n"
+"PO-Revision-Date: 2019-04-17 14:06\n"
+"Last-Translator: UC Computer Science Education (uccser-admin)\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
@@ -20,11 +20,11 @@ msgstr ""
 msgid "Classic CS Unplugged page"
 msgstr "Página de CS Unplugged Clásico"
 
-#: config/settings/base.py:139
+#: config/settings/base.py:140
 msgid "Translation mode"
 msgstr "Modo de traducción"
 
-#: config/settings/base.py:145
+#: config/settings/base.py:146
 msgid "Translation mode (Bi-directional)"
 msgstr "Modo de traducción (bidireccional)"
 
@@ -147,15 +147,15 @@ msgstr "Profesor (soluciones)"
 msgid "Worksheet Version"
 msgstr "Versión de la hoja de ejercicios"
 
-#: resources/generators/BinaryToAlphabetResourceGenerator.py:54
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:59
 msgid "Base 10"
 msgstr "Base 10"
 
-#: resources/generators/BinaryToAlphabetResourceGenerator.py:55
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:60
 msgid "Binary"
 msgstr "Binario"
 
-#: resources/generators/BinaryToAlphabetResourceGenerator.py:56
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:61
 msgid "Letter"
 msgstr "Letra"
 
@@ -1283,7 +1283,7 @@ msgstr "Las áreas anteriores cubren gran parte de lo que trata el tema de la in
 
 #: templates/general/what-is-computer-science.html:70
 msgid "That's why we developed CS Unplugged - we want young students to be empowered to understand the great ideas that computer science covers, without having to become expert programmers first. They won't be learning exactly how to build the next search engine, social network or game app, but they will have an idea of what sort of techniques are needed to make it successful. We don't want them to see digital systems as some kind of magic that they can't participate in, but as something that they could understand and, for some, create themselves. Actually, it is kind of magic when you start understanding what can and can't be done."
-msgstr "Por eso hemos desarrollado CS Unplugged - queremos que los estudiantes jóvenes se sientan capaces de entender las grandes ideas que cubre la informática, sin tener que convertirse en programadores expertos primero. No aprenderán exactamente cómo construir el siguiente motor de búsqueda, red social o juego, pero tendrán una idea del tipo de técnicas necesarias para que tenga éxito. No queremos que vean los sistemas digitales como una especie de magia en la que no pueden participar, sino como algo que pueden entender y, en algunos casos, crear por sí mismos. En realidad, es algo mágico cuando comienzas a entender lo que se puede y lo que no se puede hacer."
+msgstr ""
 
 #: templates/general/what-is-computer-science.html:80
 msgid "Read 'How do I teach CS Unplugged?'"
