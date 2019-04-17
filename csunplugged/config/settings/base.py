@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 
 import environ
 import os.path
+import logging.config
 
 # Add custom languages not provided by Django
 import django.conf.locale
@@ -22,6 +23,9 @@ ROOT_DIR = environ.Path(__file__) - 3
 
 # Load operating system environment variables and then prepare to use them
 env = environ.Env()
+
+# Wipe default Django logging
+LOGGING_CONFIG = None
 
 # APP CONFIGURATION
 # ----------------------------------------------------------------------------
@@ -157,7 +161,6 @@ if env.bool("INCLUDE_INCONTEXT_L10N", False):
         }
     })
 
-    django.conf.locale.LANG_INFO.update(EXTRA_LANG_INFO)
     # Add new languages to the list of all django languages
     global_settings.LANGUAGES = global_settings.LANGUAGES + EXTRA_LANGUAGES
     global_settings.LANGUAGES_BIDI = (global_settings.LANGUAGES_BIDI +
@@ -166,6 +169,7 @@ if env.bool("INCLUDE_INCONTEXT_L10N", False):
     LANGUAGES += tuple(EXTRA_LANGUAGES)
     LANGUAGES_BIDI = global_settings.LANGUAGES_BIDI
 
+django.conf.locale.LANG_INFO.update(EXTRA_LANG_INFO)
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#site-id
 SITE_ID = 1
@@ -224,6 +228,37 @@ TEMPLATES = [
         },
     },
 ]
+
+# LOGGING
+# ------------------------------------------------------------------------------
+logging.config.dictConfig({
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'console': {
+            # exact format is not important, this is the minimum information
+            'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'console',
+        },
+    },
+    'loggers': {
+        '': {
+            'level': 'INFO',
+            'handlers': ['console', ],
+        },
+        'csunplugged': {
+            'level': 'INFO',
+            'handlers': ['console', ],
+            # required to avoid double logging with root logger
+            'propagate': False,
+        },
+    },
+})
 
 # STATIC FILE CONFIGURATION
 # ------------------------------------------------------------------------------
