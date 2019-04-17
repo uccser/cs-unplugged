@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-11 01:02+0000\n"
-"PO-Revision-Date: 2018-10-26 14:44\n"
-"Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
+"POT-Creation-Date: 2018-11-26 21:19+0000\n"
+"PO-Revision-Date: 2019-04-17 14:52\n"
+"Last-Translator: UC Computer Science Education (uccser-admin)\n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -20,11 +20,11 @@ msgstr ""
 msgid "Classic CS Unplugged page"
 msgstr "经典版 CS Unplugged 页面"
 
-#: config/settings/base.py:139
+#: config/settings/base.py:140
 msgid "Translation mode"
 msgstr "翻译模式"
 
-#: config/settings/base.py:145
+#: config/settings/base.py:146
 msgid "Translation mode (Bi-directional)"
 msgstr "翻译模式（双向）"
 
@@ -147,15 +147,15 @@ msgstr "教师 (解决方案)"
 msgid "Worksheet Version"
 msgstr "习题版"
 
-#: resources/generators/BinaryToAlphabetResourceGenerator.py:54
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:59
 msgid "Base 10"
 msgstr "基数 10"
 
-#: resources/generators/BinaryToAlphabetResourceGenerator.py:55
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:60
 msgid "Binary"
 msgstr "二进制"
 
-#: resources/generators/BinaryToAlphabetResourceGenerator.py:56
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:61
 msgid "Letter"
 msgstr "字母"
 
@@ -1005,7 +1005,7 @@ msgstr "泛化的算法可以针对整组类似问题反复使用，这意味着
 
 #: templates/general/computational-thinking.html:284
 msgid "Evaluation"
-msgstr "评估"
+msgstr ""
 
 #: templates/general/computational-thinking.html:289
 msgid "Evaluation is about identifying the possible solutions to a problem and judging which is the best to use, if they will work in some situations but not others, and how they can be improved. When judging our solutions we need to think about a range of factors. For example how much time it will take these processes (algorithms) to solve the problem and will it reliably solve the problem, or if there are certain situations where it will perform in a very different way. Evaluation is something we do a lot in our everyday lives."
@@ -1017,7 +1017,7 @@ msgstr "我们可使用不同方式评估算法解决方案。通过在计算机
 
 #: templates/general/computational-thinking.html:312
 msgid "Logic"
-msgstr "逻辑"
+msgstr ""
 
 #: templates/general/computational-thinking.html:317
 msgid "When trying to solve problems we need to think logically. Logical reasoning is about trying to make sense of things by observing, collecting data, thinking about the facts you know, and then figuring things out based on what you already know. It helps us use our existing knowledge to establish rules and check facts."
@@ -1283,7 +1283,7 @@ msgstr "上述领域涵盖计算机科学主题的大部分内容。编程只是
 
 #: templates/general/what-is-computer-science.html:70
 msgid "That's why we developed CS Unplugged - we want young students to be empowered to understand the great ideas that computer science covers, without having to become expert programmers first. They won't be learning exactly how to build the next search engine, social network or game app, but they will have an idea of what sort of techniques are needed to make it successful. We don't want them to see digital systems as some kind of magic that they can't participate in, but as something that they could understand and, for some, create themselves. Actually, it is kind of magic when you start understanding what can and can't be done."
-msgstr "这就是我们开发 CS Unplugged 的原因 - 希望青少年学生能够理解计算机科学所涵盖的伟大创意，而不必首先将自己打造为专业程序员。他们并不会精确学习如何构建下一个搜索引擎、社交网络或游戏应用程序，但将了解需要哪些类型的技术方可成功。我们不希望他们将数字系统看作是无法参与的某种魔法，而是看作他们能够理解的东西，并且对某些人来说，是可创造的东西。实际上，当您开始了解哪些可以完成、哪些无法完成时，它也呈现出魔幻的一面。"
+msgstr ""
 
 #: templates/general/what-is-computer-science.html:80
 msgid "Read 'How do I teach CS Unplugged?'"
@@ -1480,7 +1480,7 @@ msgstr "目录"
 #: templates/topics/lesson.html:124
 #: templates/topics/unit-plan-description.html:52
 msgid "Computational Thinking"
-msgstr "计算思维"
+msgstr ""
 
 #: templates/topics/lessons-table.html:10
 #, python-format
