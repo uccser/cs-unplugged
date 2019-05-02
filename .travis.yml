@@ -1,163 +1,169 @@
 sudo: required
 services:
-  - docker
+- docker
 language: python
 python:
-  - '3.6'
+- '3.6'
+addons:
+  browserstack:
+    username: csse-education-research@canterbury.ac.nz
+    access_key:
+      secure: SECURE_PASSWORD
 before_install:
-  # See https://github.com/travis-ci/travis-ci/issues/7940
-  - sudo rm -f /etc/boto.cfg
+- sudo rm -f /etc/boto.cfg
 install:
-  - sudo docker --version
-  - sudo docker-compose --version
+- sudo docker --version
+- sudo docker-compose --version
 jobs:
   include:
-    - stage: test
-      name: "Load content"
-      script: ./csu ci load_content
-    - script: ./csu ci test_general
-      name: "Run general tests"
-    - script: ./csu ci test_resources
-      name: "Run resource tests"
-    - script: ./csu ci test_management
-      name: "Run management tests"
-    - script: ./csu ci test_backwards
-      name: "Run test suite backwards"
-      if: type = pull_request
-    - script: ./csu ci style
-      name: "Run style checker"
-    - script: ./csu ci docs
-      name: "Build documentation"
-    - stage: develop deploy
-      name: "Deploy app to Google App Engine"
-      script: skip
-      deploy:
-        - provider: script
-          script: bash ./infrastructure/dev-deploy/deploy-app.sh
-          skip_cleanup: true
-          on:
-            branch: develop
-    - script: skip
-      name: "Copy static files to Google Storage Bucket"
-      deploy:
-        - provider: script
-          script: bash ./infrastructure/dev-deploy/deploy-static-files.sh
-          skip_cleanup: true
-          on:
-            branch: develop
-    - script: skip
-      name: "Update Google Cloud Platform database"
-      deploy:
-        - provider: script
-          script: bash ./infrastructure/dev-deploy/update-database.sh
-          skip_cleanup: true
-          on:
-            branch: develop
-    - script: skip
-      name: "Copy resource PDFs to Google Storage Bucket - Part 1"
-      deploy:
-        - provider: script
-          script: bash ./infrastructure/dev-deploy/deploy-resources-1.sh
-          skip_cleanup: true
-          on:
-            branch: develop
-    - script: skip
-      name: "Copy resource PDFs to Google Storage Bucket - Part 2"
-      deploy:
-        - provider: script
-          script: bash ./infrastructure/dev-deploy/deploy-resources-2.sh
-          skip_cleanup: true
-          on:
-            branch: develop
-    - script: skip
-      name: "Copy resource PDFs to Google Storage Bucket - Part 3"
-      deploy:
-        - provider: script
-          script: bash ./infrastructure/dev-deploy/deploy-resources-3.sh
-          skip_cleanup: true
-          on:
-            branch: develop
-    - script: skip
-      name: "Copy resource PDFs to Google Storage Bucket - Part 4"
-      deploy:
-        - provider: script
-          script: bash ./infrastructure/dev-deploy/deploy-resources-4.sh
-          skip_cleanup: true
-          on:
-            branch: develop
-    - script: skip
-      name: "Copy resource PDFs to Google Storage Bucket - Part 5"
-      deploy:
-        - provider: script
-          script: bash ./infrastructure/dev-deploy/deploy-resources-5.sh
-          skip_cleanup: true
-          on:
-            branch: develop
-    - stage: production deploy
-      script: skip
-      name: "Deploy app to Google App Engine"
-      deploy:
-        - provider: script
-          script: bash ./infrastructure/prod-deploy/deploy-app.sh
-          skip_cleanup: true
-          on:
-            branch: master
-    - script: skip
-      name: "Copy static files to Google Storage Bucket"
-      deploy:
-        - provider: script
-          script: bash ./infrastructure/prod-deploy/deploy-static-files.sh
-          skip_cleanup: true
-          on:
-            branch: master
-    - script: skip
-      name: "Update Google Cloud Platform database"
-      deploy:
-        - provider: script
-          script: bash ./infrastructure/prod-deploy/update-database.sh
-          skip_cleanup: true
-          on:
-            branch: master
-    - script: skip
-      name: "Copy resource PDFs to Google Storage Bucket - Part 1"
-      deploy:
-        - provider: script
-          script: bash ./infrastructure/prod-deploy/deploy-resources-1.sh
-          skip_cleanup: true
-          on:
-            branch: master
-    - script: skip
-      name: "Copy resource PDFs to Google Storage Bucket - Part 2"
-      deploy:
-        - provider: script
-          script: bash ./infrastructure/prod-deploy/deploy-resources-2.sh
-          skip_cleanup: true
-          on:
-            branch: master
-    - script: skip
-      name: "Copy resource PDFs to Google Storage Bucket - Part 3"
-      deploy:
-        - provider: script
-          script: bash ./infrastructure/prod-deploy/deploy-resources-3.sh
-          skip_cleanup: true
-          on:
-            branch: master
-    - script: skip
-      name: "Copy resource PDFs to Google Storage Bucket - Part 4"
-      deploy:
-        - provider: script
-          script: bash ./infrastructure/prod-deploy/deploy-resources-4.sh
-          skip_cleanup: true
-          on:
-            branch: master
-    - script: skip
-      name: "Copy resource PDFs to Google Storage Bucket - Part 5"
-      deploy:
-        - provider: script
-          script: bash ./infrastructure/prod-deploy/deploy-resources-5.sh
-          skip_cleanup: true
-          on:
-            branch: master
+  - stage: test
+    name: Load content
+    script: "./csu ci load_content"
+  - script: "./csu ci test_general"
+    name: Run general tests
+  - script: "./csu ci test_resources"
+    name: Run resource tests
+  - script: "./csu ci test_management"
+    name: Run management tests
+  - script: "./csu ci test_backwards"
+    name: Run test suite backwards
+    if: type = pull_request
+  - script: "./csu ci test_in_browser"
+    name: Run in-browser tests
+  - script: "./csu ci style"
+    name: Run style checker
+  - script: "./csu ci docs"
+    name: Build documentation
+  - stage: develop deploy
+    name: Deploy app to Google App Engine
+    script: skip
+    deploy:
+    - provider: script
+      script: bash ./infrastructure/dev-deploy/deploy-app.sh
+      skip_cleanup: true
+      on:
+        branch: develop
+  - script: skip
+    name: Copy static files to Google Storage Bucket
+    deploy:
+    - provider: script
+      script: bash ./infrastructure/dev-deploy/deploy-static-files.sh
+      skip_cleanup: true
+      on:
+        branch: develop
+  - script: skip
+    name: Update Google Cloud Platform database
+    deploy:
+    - provider: script
+      script: bash ./infrastructure/dev-deploy/update-database.sh
+      skip_cleanup: true
+      on:
+        branch: develop
+  - script: skip
+    name: Copy resource PDFs to Google Storage Bucket - Part 1
+    deploy:
+    - provider: script
+      script: bash ./infrastructure/dev-deploy/deploy-resources-1.sh
+      skip_cleanup: true
+      on:
+        branch: develop
+  - script: skip
+    name: Copy resource PDFs to Google Storage Bucket - Part 2
+    deploy:
+    - provider: script
+      script: bash ./infrastructure/dev-deploy/deploy-resources-2.sh
+      skip_cleanup: true
+      on:
+        branch: develop
+  - script: skip
+    name: Copy resource PDFs to Google Storage Bucket - Part 3
+    deploy:
+    - provider: script
+      script: bash ./infrastructure/dev-deploy/deploy-resources-3.sh
+      skip_cleanup: true
+      on:
+        branch: develop
+  - script: skip
+    name: Copy resource PDFs to Google Storage Bucket - Part 4
+    deploy:
+    - provider: script
+      script: bash ./infrastructure/dev-deploy/deploy-resources-4.sh
+      skip_cleanup: true
+      on:
+        branch: develop
+  - script: skip
+    name: Copy resource PDFs to Google Storage Bucket - Part 5
+    deploy:
+    - provider: script
+      script: bash ./infrastructure/dev-deploy/deploy-resources-5.sh
+      skip_cleanup: true
+      on:
+        branch: develop
+  - stage: production deploy
+    script: skip
+    name: Deploy app to Google App Engine
+    deploy:
+    - provider: script
+      script: bash ./infrastructure/prod-deploy/deploy-app.sh
+      skip_cleanup: true
+      on:
+        branch: master
+  - script: skip
+    name: Copy static files to Google Storage Bucket
+    deploy:
+    - provider: script
+      script: bash ./infrastructure/prod-deploy/deploy-static-files.sh
+      skip_cleanup: true
+      on:
+        branch: master
+  - script: skip
+    name: Update Google Cloud Platform database
+    deploy:
+    - provider: script
+      script: bash ./infrastructure/prod-deploy/update-database.sh
+      skip_cleanup: true
+      on:
+        branch: master
+  - script: skip
+    name: Copy resource PDFs to Google Storage Bucket - Part 1
+    deploy:
+    - provider: script
+      script: bash ./infrastructure/prod-deploy/deploy-resources-1.sh
+      skip_cleanup: true
+      on:
+        branch: master
+  - script: skip
+    name: Copy resource PDFs to Google Storage Bucket - Part 2
+    deploy:
+    - provider: script
+      script: bash ./infrastructure/prod-deploy/deploy-resources-2.sh
+      skip_cleanup: true
+      on:
+        branch: master
+  - script: skip
+    name: Copy resource PDFs to Google Storage Bucket - Part 3
+    deploy:
+    - provider: script
+      script: bash ./infrastructure/prod-deploy/deploy-resources-3.sh
+      skip_cleanup: true
+      on:
+        branch: master
+  - script: skip
+    name: Copy resource PDFs to Google Storage Bucket - Part 4
+    deploy:
+    - provider: script
+      script: bash ./infrastructure/prod-deploy/deploy-resources-4.sh
+      skip_cleanup: true
+      on:
+        branch: master
+  - script: skip
+    name: Copy resource PDFs to Google Storage Bucket - Part 5
+    deploy:
+    - provider: script
+      script: bash ./infrastructure/prod-deploy/deploy-resources-5.sh
+      skip_cleanup: true
+      on:
+        branch: master
 notifications:
   email: false
   slack:
@@ -165,8 +171,11 @@ notifications:
     on_success: change
     on_failure: change
 stages:
-  - name: test
-  - name: develop deploy
-    if: branch = develop
-  - name: production deploy
-    if: branch = master
+- name: test
+- name: develop deploy
+  if: branch = develop
+- name: production deploy
+  if: branch = master
+env:
+  global:
+    secure: YmST3U8m7PErpcqG9kcKfK82rII37qhH5+U3fZgVhrQuS72gStDqSa7KrrtlKj8mdyhfNQMeAicb6Sp4zqnG2WR9LdPIs/aOr89OVaIkXTAiMAeGrYcHVC/A5/B/TkymGzyQ49Ox0Saqde2nlChQgPMw6EfICBYcRHHI5GF1A+vJbmUsz/NkTEbka4JjOQ9L4klggTfaYrcLaQXuR+gn2c6AYSPwHrxeekj+dgSVuopJ5a+tcod3S/kaAf3BYE6ibgiNHv10wNb2xbjXfmzyHl6+WP4ocZauHljc94K7i1+O+fj4jTe6xbN7/LkMz1ibRFAzIvQtsuf/Lfr5QpWCMZwZrgmfYYFLU2vRJ2sBed7KwG1bmlqVGnIeiKGH/CoFZ1rbxJa8fbC3WZxLoy3MQc7nmMtSN0ngGxMa64kCfBXTV35aKycAB9weWaGfbjZ4z0Dt4/o2bVL/SLp5/7V2IV1BvxUt6pUND7ZR3h5DyLL0HU63YeKYUe6RxR7kVAgukEu6ORRiLWxdSeQ/ZAUf2LncMjG10MoC88BVK6DYKYGjXdgCD0v3+6Rxr1kVoFXgS/NoS1IsFAO/UTpnV82vIETxj3BBt2RdRNH09SmpXf87Pai6Warr4kJcAyVvl3too30a4rQIlXTHQz/JiW+z8lJ1EDrpnV5kOhQQ2Fkptkg=
