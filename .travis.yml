@@ -8,7 +8,7 @@ addons:
   browserstack:
     username: csse-education-research@canterbury.ac.nz
     access_key:
-      secure: "iWs+cLNGHC2Q1o9WhYbmonf4Afe15BrFZ8FCJQ0f8D6uhibOHY8wpUgZooKyeFT8wRXC+JFvAkc0LXdA30RanT9w7CY9WYV+YQnPnrlyQnRCmmXY8ztZAQ4JQ/JVrzWC7mySNFa141ol1SC6d/4OTFyQcEGMIb2aW4+Bjt30Qq7bYFOTdztM3pzc3Qcr5VxmWD4QdK4H65Z8J51ZnpUWRgJKRuZ5z2lroskG2lxlNXLofoO1AeANJGOxvEgGXKDtExzpKQg3ERbL5+GH5g202dpQO/lIskrM047DVlo1k+zZAZMLTk+ZcEd+c5XZ4cKgTxQu41nsP+ABIfls1PFC6oOLLPeFOmY1neQbCvqR1BgcVTaMiAaCY6mxLFdboKI3gKR73ndcgMo9jzy9mSgE2oxAYeGTzrlo1jYuFRIa6piacNfTm/RVBLlD/kbU6txm7Xy+FyFJpbsegwsQbDlsAkO5qRgPqtzgmreQayk+vpTooqXxLeJKAmggTtIjTlCFGTJPLzcpMPdAz4YrbIPyOfACMnBZ7UB4OAKCPFLEMY2RK5HjomYgJTctRrcDgw8Pu563JKj7J+J+vWmXAFfxy2RJ/IhS3Kk6v6gjlx8aZd3UCqM5LUEvopPv9wlWAhratiGO8AyUQm5EciAHUCqCzyZA2CtF7ulZRefQ3tT977M="
+      secure: SECURE_PASSWORD
 before_install:
 - sudo rm -f /etc/boto.cfg
 install:
@@ -21,23 +21,23 @@ install:
 jobs:
   include:
   - stage: test
-    name: Load content
-    script: "./csu ci load_content"
-  - script: "./csu ci test_general"
-    name: Run general tests
-  - script: "./csu ci test_resources"
-    name: Run resource tests
-  - script: "./csu ci test_management"
-    name: Run management tests
-  - script: "./csu ci test_backwards"
-    name: Run test suite backwards
-    if: type = pull_request
+#    name: Load content
+#    script: "./csu ci load_content"
+#  - script: "./csu ci test_general"
+#    name: Run general tests
+#  - script: "./csu ci test_resources"
+#    name: Run resource tests
+#  - script: "./csu ci test_management"
+#    name: Run management tests
+#  - script: "./csu ci test_backwards"
+#    name: Run test suite backwards
+#    if: type = pull_request
   - script: "./csu ci test_in_browser"
     name: Run in-browser tests
-  - script: "./csu ci style"
-    name: Run style checker
-  - script: "./csu ci docs"
-    name: Build documentation
+#  - script: "./csu ci style"
+#    name: Run style checker
+#  - script: "./csu ci docs"
+#    name: Build documentation
   - stage: develop deploy
     name: Deploy app to Google App Engine
     script: skip
