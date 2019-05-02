@@ -8,7 +8,8 @@ addons:
   browserstack:
     username: csse-education-research@canterbury.ac.nz
     access_key:
-      secure: BROWSERSTACK_ACCESS_KEY
+      secure: "xqTTWSAXD4by8IPRLSusWK0vXdvDGhYj2oUzR7n/wKVO/x28CFPz11EsMwpYnN9KQx5qZTiQvYi0pEFxmgcbtP8b6+FBzsKo6/PeM8M+sJKoj+nZhnU4rDRXwMp904PQxC5HkYVG+uaZAt3KCA1FNC6RFYdUxMlJiswgdnIsMR4N6oy6c+M9wai0NAqMEogWQ3C2jHADWPuaoEcdRpvIks2x697refksZ1+0oZhMuUghsdwilVrEGmeQi9QZ/kxOAtAvyd36ro0FB0SAlkFVsfWFd9P9nMznhMvxhjUNFnO2rMHLNDE+LC67k05+jnRehvy9xv/hJhospP6AWZ9S0KRUEZCVuEAB5Acqs4IDKGI1sSHuC6OgUQ3ylPryPMzGoZg5pFKlhtTXqY6Hvtry2zLM2ZStrpMFXdOf7DCpXHdNeUIzogIlHCTqk5Xj30TxMb9hhMnj3g/rsFwSQW6RmEBeMQj1LoViPPfTJBrPtb0cgtNLxuhvLe/JKhdlWPjny+yIFqVJz13yYmDfcZgTAYHSd6o+J6Woj+5qaSYPgm8H7NkHjWLsi4CBoebvZ0fkTYVSYBivoAA1aH9GjJy0cBw6DYR7983xGjIaTNjG8OPWW36ipRAZzIFva2WXAvYvKgYx5VRyuozb+HIv+xXvGRSzcr7lEAT+p9QwP4a5j14="
+
 before_install:
 - sudo rm -f /etc/boto.cfg
 install:
