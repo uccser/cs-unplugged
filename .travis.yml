@@ -8,7 +8,7 @@ addons:
   browserstack:
     username: csse-education-research@canterbury.ac.nz
     access_key:
-      secure: SECURE_PASSWORD
+      secure: BROWSERSTACK_ACCESS_KEY
 before_install:
 - sudo rm -f /etc/boto.cfg
 install:
