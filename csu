@@ -284,7 +284,7 @@ defhelp -dev test_backwards 'Run test suite backwards.'
 # Run in-browser test suite
 dev_test_in_browser() {
   echo "Running in-browser test suite..."
-  docker-compose exec django /docker_venv/bin/nosetests ./csunplugged/tests/topics/in-browser/browser_test_1.py --processes=5
+  docker-compose exec django /docker_venv/bin/nosetests /csunplugged/tests/topics/in-browser --processes=5
 }
 defhelp -dev test_browser 'Run in-browser test suite.'
 
