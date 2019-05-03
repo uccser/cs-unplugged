@@ -94,7 +94,7 @@ def test_local():
     driver.quit()
 
 
-def browser_test_first():
+def test_browser_first():
     driver = webdriver.Remote(
         command_executor='http://cseducationresea1:y1shw2Ck8GyVc53Y4LrT@hub.browserstack.com:80/wd/hub',
         desired_capabilities=local_server)
