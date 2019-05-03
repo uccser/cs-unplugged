@@ -284,7 +284,7 @@ defhelp -dev test_backwards 'Run test suite backwards.'
 # Run in-browser test suite
 dev_test_in_browser() {
   echo "Running in-browser test suite..."
-  docker-compose exec django /docker_venv/bin/python3 ./manage.py test --settings=config.settings.testing --pattern "browser_test_*.py"
+  docker-compose exec django /docker_venv/bin/nosetests browser_test.py --processes=5 --process-timeout=60
 }
 defhelp -dev test_browser 'Run in-browser test suite.'
 
@@ -384,8 +384,6 @@ ci_test_backwards() {
 }
 
 ci_test_in_browser() {
-  dev_static
-  dev_collect_static
   dev_test_in_browser
 }
 
