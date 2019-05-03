@@ -384,7 +384,9 @@ ci_test_backwards() {
 }
 
 ci_test_in_browser() {
-    dev_test_in_browser
+  dev_static
+  dev_collect_static
+  dev_test_in_browser
 }
 
 ci_docs() {
