@@ -1,33 +1,37 @@
 # Image Representation
 
+**We recommend completing lesson 1 of the Binary Numbers unit before beginning this unit.**
+
 Computers today use digits to represent information - that's why they're called digital systems.
 But we use computers to store, display, and manipulate many different types of data, not just digits.
 
 
-This unit will include some discussions about, and use of, binary so we recommend completing lesson 1 of the Binary Numbers unit before beginning this unit.
+
 
 
 ## Digital Technologies | Data Representation
 
-
+All data on computers is stored using just 0's and 1's.
 
 {comment this image is currently too big for the page}
 
 {image file-path="img/topics/binary-picture-showing-bits.png" alt="If we look closely at an image on a computer screen we can see it is made up of a grid of tiny dots called pixels. The colour of each of these is stored inside a computer using binary."}
 
+{comment Could include Algorithms as well because of RLE/encoding Algorithms}
+
+
 ## Vocabulary Explained
 
-**Pixel**
+### Pixel
 
-
+Pixel is short for "picture element"...
 
 
 
 
 ## Real world implications
 
-
-
+Screen resolutions, file sizes, image quality, image processing time.
 
 
 

@@ -2,37 +2,35 @@
 
 {comment May need to split this into two seperate lessons for jnr vs snr}
 
-## Key questions
+{comment Need to figure out how to properly link to resources, then add in pixel painter}
+
+.
+
+## Key question
 
 - How do computers represent images when they can only store numbers?
 
 
-# Teaching observations
-
-
-
-
 ## Lesson starter
 
-Print colouring sheets
+Print pixel painter sheets. In the Colouring type list choose the first option 'Black and White (2 possible binary values)'.
+Choose one of the images from the list, ideally one of the 6 or 8 page options to start with.
+
+{comment Maybe suggest doing the activity as a group first?}
+
+
+{comment Maybe have a really simple one for the teacher to demonstrate with? Like a letter, as in the classic CSU.}
 
 # Notes on resources
 
 A normal writing pencil or black colouring pencil.
-Erasers - These are good to have as students will likely make some mistakes!
-
-
-# Teaching observations
+Erasers - These are good to have as students will likely make some mistakes.
 
 
 
 ## Lesson activities
 
-
-
-
-
-# Teaching observations
+.
 
 
 
