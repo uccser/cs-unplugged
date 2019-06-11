@@ -16,10 +16,22 @@
 Print pixel painter sheets. In the Colouring type list choose the first option 'Black and White (2 possible binary values)'.
 Choose one of the images from the list, ideally one of the 6 or 8 page options to start with.
 
+Teacher: Computer screens are divided up into a grid of small squares, which we call picture elements, or pixels. *Instructions on writing "picture elements" then changing to pixels*.
+Each of these pixels can be a different colour, and they can display different images.
+In a black and white image, each pixel can be either black or white.
+
+
+
+
+
+
+
 {comment Maybe suggest doing the activity as a group first?}
 
 
 {comment Maybe have a really simple one for the teacher to demonstrate with? Like a letter, as in the classic CSU.}
+
+
 
 # Notes on resources
 
