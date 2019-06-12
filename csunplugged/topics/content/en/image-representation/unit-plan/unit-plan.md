@@ -12,7 +12,7 @@ Everything you see on computer screens, whether it is photographs, videos, websi
 All information that modern computers store and process is stored as digits, using binary digits.
 This means that everything you see in computer images is stored inside a computer using just 0's and 1's, and these are used to *represent* images.
 
-Computer screens are divided into a grid of tiny squares called pixels.
+Computer screens are divided into a grid of tiny squares called {glossary-link term="pixel"}pixels{glossary-link end}.
 These pixels can each show a different colour, and because they are so small when we look at a screen we don't see the individual pixels, instead we see them blend together into an image.
 If you look very very closely at a computer or TV screen (especially older ones) then you might be able to see these individual pixels. Be careful not to hurt your eyes though!
 

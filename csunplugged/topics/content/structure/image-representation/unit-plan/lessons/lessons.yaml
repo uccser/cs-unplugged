@@ -1,2 +1,6 @@
 colour-by-numbers:
   duration: 45
+  generated-resources:
+    - pixel-painter
+  classroom-resources:
+    - coloring-pens
