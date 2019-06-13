@@ -1,7 +1,5 @@
 # Colour by numbers
 
-{comment May need to split this into two seperate lessons for jnr vs snr}
-
 {comment Need to figure out how to properly link to resources, then add in pixel painter}
 
 ## Key questions
@@ -27,7 +25,7 @@ For this activity you will need to print out Pixel Painter worksheets:
 Children will need:
 
   - A black pencil, colouring pencil, crayon, or felt tip pen.
-  - Erasers if they are using pencils. It's not neccesary for every child to have one, but it is useful to have them incase students make mistakes when colouring in.
+  - Erasers if they are using pencils. It's not necessary for every child to have one, but it is useful to have them incase students make mistakes when colouring in.
 
 {panel end}
 
@@ -49,12 +47,13 @@ A 0 indicates a white square and a 1 indicates a black square.
 
 ## Lesson activities
 
-
+- Colouring each image and putting them in order.
 
 
 
 
 ## Applying what we have just learnt
+- Creating your own. Use grid printable, colour in and then read the numbers out to another child (or group).
 
 
 
@@ -62,4 +61,15 @@ A 0 indicates a white square and a 1 indicates a black square.
 ## Lesson reflection
 
 
-This is just for black and white images, but what about coloured ones? We will explore this at older ages.
+This is just for black and white images, why can't we do more than two colours with this activity?
+
+  - If we can only use one binary digit for each we can only represent two different colours.
+  This means each pixel can only be one of two different colours.
+
+What could we do to represent more colours?
+
+  - If we want each pixel to be able to show more colours other than black and white then we need to use more numbers (or binary digits) to represent the colour of each pixel. This will be explored in future lessons.
+
+{comment Come back and split lessons later once all the other content is done}
+
+We will explore this at older ages.
