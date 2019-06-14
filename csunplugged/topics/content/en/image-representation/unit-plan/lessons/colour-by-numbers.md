@@ -1,6 +1,6 @@
 # Colour by numbers
 
-{comment Need to figure out how to properly link to resources, then add in pixel painter}
+{comment Do learning outcomes at some point. They go in the yaml file}
 
 ## Key questions
 
@@ -29,7 +29,9 @@ Children will need:
 
 {panel end}
 
-Put students into groups of 6 children. If there aren't enough students to have all full groups then this can be done with groups of 2 or 3 instead.
+Put students into groups of 6. If there aren't enough students to have all full groups then this can be done with groups of 2 or 3 instead.
+
+
 
 Teacher: Computer screens are divided up into a grid of small squares, which we call picture elements, or pixels. *Instructions on writing "picture elements" then changing to pixels*.
 Each of these pixels can be a different colour, and they can display different images.
