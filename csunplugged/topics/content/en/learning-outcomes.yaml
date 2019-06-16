@@ -326,3 +326,11 @@ sorting-demonstrate-alphabet-knowledge:
 
 sorting-comparing-musical-pitch:
   text: Compare musical pitch in musical notation and aurally.
+
+# IMAGE REPRESENTATION OUTCOMES
+
+image-rep-explain-pixels:
+  text: Explain that the images shown by computers are made up of pixels, each of which can display a different colour.
+
+image-rep-describe-digits-representing-images:
+  text: Describe how images can be stored and represented using digits.

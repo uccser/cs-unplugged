@@ -448,3 +448,13 @@ sorting-demonstrate-alphabet-knowledge:
 sorting-comparing-musical-pitch:
   curriculum-areas:
     - music
+
+# IMAGE REPRESENTATION OUTCOMES
+
+image-rep-explain-pixels:
+  curriculum-areas:
+    - decomposition
+
+image-rep-describe-digits-representing-images:
+  curriculum-areas:
+    - abstraction
