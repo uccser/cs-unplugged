@@ -46,24 +46,25 @@ Megapixel means one million pixels.
 Students may have heard the term "megapixels" used before because cameras are often described as being a certain number of megapixels, for example a phone with a 12-megapixel camera.
 This describes the resolution of the photos a camera can take. A 12-mega pixel camera can produce an image with 12 million pixels in it.
 
+Television screens are also made up of pixels.
+
 {panel end}
 
-Television screens are also made up of pixels.
-Every image we see on a screen, whether it is a picture, a video, or text, is shown using pixels.
-For example, if we want to display the letter *a* we can divide it into squares.
+
+Every image we see on a screen, whether it is a picture, a video, or text, is shown using pixels, and all a computer needs to store is what colour each of the pixels on the screen should be.
+
+In a black and white image, each pixel can be either black or white, so all the computer would need to store is which dots are black and which are white.
+For example, if we wanted to display the letter *a* we need to divide it into squares.
 If we zoom in further and further on the letter we can see a grid of pixels similar to these:
 
 {image file-path="img/topics/letter-zooming-to-pixels.png" alt="Three images of the lower case letter 'a' are shown. These progressively zoom in to show the individual black and white squares which make up the letter on the screen."}
 
+We can represent this image using binary digits.
+If a 0 indicates a white square and a 1 indicates a black square then we can represent our letter *a*, on a 5x6 pixel grid, like this:
 
-In a black and white image, each pixel can be either black or white.
+{image file-path="img/topics/a_in_binary_code.png" alt="A string of binary numbers is shown. They are divided in six lots of five numbers."}
 
-
-*explanation of images/pixels being stored using numbers, e.g. binary digits. How these can be converted to the colour of each pixel.*
-
-
-A 0 indicates a white square and a 1 indicates a black square.
-
+If we take these numbers and draw the image they represent we get the letter a:
 
 {image file-path="img/topics/pixel-visible-grid-with-letter-and-numbers.png" alt="A six by five grid is shown. Some of the squares are white and others are coloured black to create the shape of the letter 'a'. To the right of each row of squares there are five binary digits which describe the image."}
 
@@ -80,13 +81,12 @@ Now we are going to take binary digits and create images from these.
 - Advise students to colour the squares in lightly at first so it is easy to erase mistakes. They can colour the squares in darker later if they want to.
 
 
+- Try doing the larger images. Have the whole class work on a large one.
+
 
 ## Applying what we have just learnt
 
 - Creating your own. Use grid printable, colour in and then read the numbers out to another child (or group).
-
-- Whole class one using the bigger images.
-
 
 
 
