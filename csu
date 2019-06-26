@@ -384,6 +384,7 @@ ci_test_backwards() {
 }
 
 ci_test_in_browser() {
+  cmd_update()
   dev_test_in_browser
 }
 
