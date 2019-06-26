@@ -19,7 +19,7 @@ jobs:
   - stage: test
     name: Load content
     script: "./csu ci load_content"
-  - script: "env ACCESS_KEY=KEY ./csu ci test_general"
+  - script: "env ACCESS_KEY=$KEY ./csu ci test_general"
     name: Run general tests
   - script: "./csu ci test_resources"
     name: Run resource tests
