@@ -4,11 +4,6 @@ services:
 language: python
 python:
 - '3.6'
-addons:
-  browserstack:
-    username: csse-education-research@canterbury.ac.nz
-    access_key:
-      secure: KEY
 
 before_install:
 - sudo rm -f /etc/boto.cfg
@@ -16,7 +11,7 @@ install:
 - wget https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip
   -O browserStackLocal.zip
 - unzip browserStackLocal.zip
-- ./BrowserStackLocal --key KEY --force-local &
+- "./BrowserStackLocal --key $KEY --force-local &"
 - sudo docker --version
 - sudo docker-compose --version
 jobs:
@@ -183,6 +178,4 @@ stages:
   if: branch = master
 env:
   global:
-  - secure: YmST3U8m7PErpcqG9kcKfK82rII37qhH5+U3fZgVhrQuS72gStDqSa7KrrtlKj8mdyhfNQMeAicb6Sp4zqnG2WR9LdPIs/aOr89OVaIkXTAiMAeGrYcHVC/A5/B/TkymGzyQ49Ox0Saqde2nlChQgPMw6EfICBYcRHHI5GF1A+vJbmUsz/NkTEbka4JjOQ9L4klggTfaYrcLaQXuR+gn2c6AYSPwHrxeekj+dgSVuopJ5a+tcod3S/kaAf3BYE6ibgiNHv10wNb2xbjXfmzyHl6+WP4ocZauHljc94K7i1+O+fj4jTe6xbN7/LkMz1ibRFAzIvQtsuf/Lfr5QpWCMZwZrgmfYYFLU2vRJ2sBed7KwG1bmlqVGnIeiKGH/CoFZ1rbxJa8fbC3WZxLoy3MQc7nmMtSN0ngGxMa64kCfBXTV35aKycAB9weWaGfbjZ4z0Dt4/o2bVL/SLp5/7V2IV1BvxUt6pUND7ZR3h5DyLL0HU63YeKYUe6RxR7kVAgukEu6ORRiLWxdSeQ/ZAUf2LncMjG10MoC88BVK6DYKYGjXdgCD0v3+6Rxr1kVoFXgS/NoS1IsFAO/UTpnV82vIETxj3BBt2RdRNH09SmpXf87Pai6Warr4kJcAyVvl3too30a4rQIlXTHQz/JiW+z8lJ1EDrpnV5kOhQQ2Fkptkg=
-  - secure: DAs1gY2aiDXk4WASkVM3D9AlkPhJoBVkTU4Kugc5lBcmL0jGwYeJb0lrRbeBN8kI0Hi7W/5/e4KhGsLX5I+wHcynS/1aEO0HlETj+oeTiXbO50CFe2Po+VMvww5/uXzHh9gvR6eVqFwgo8NOywAlY2bE1IqFLOJ11Cw67JshiKSlQK3aBuBnWlVwbdREb7b7oWbItoYp2GoKgp4B8Gj89DJ/xJ46j7Yy4bLmz4NiguNZurC+iX6Vlt6VqccaqvLQllMbdRFTt6zLn0Nw1gQ/sa3+yMQLH10cKHAd/BlAF2Tp0NTQjQf/svVWzOPXB9NpPdsJCD55SSPW0ROJOkO05qL1IPbTp+cpZLBU6vU5CoTKEgjwGLNa2HFA8Yac0EEECNUL+fibCDCT4ZWEQoYsIluYy/f7mx0TZoy0dlaS1qUyjiRewxhFkhnnWt98ChA+YAzkZ/7IsBDCFDAUVC3l57yP4ddfbOYBtOQP+YSbTLIwYbJXHz+3/YozTD/GXUyA+aikziRt4d7nCaJ7UxvG+TnGY//sTvsdFlZ34vSNs91Qe6c2DUMhxDVyaycnR9/ptnnD08A9QO1r9I1uDT8hSho+ILHrAyoBpYweRO2bjaCxwCfbkLWn471xvQN3MK3oib527Ns0h4bHrWe717SIqhMoPXvZheE/vi/0Xyn8iEU=
-  - secure: OKk2qRDz1LSs80BtlBYSoi94GT11mxNm7aorSS9vHvHM01gsT5LbTTOFEJyEQV/gKkY11U22o3WYYXB+NjFl2fF9VyzP6c5AX/oU1W9yyqtyMrt+f0BfAYEfKGq8ITzAk7aT/JK+vpA9MHlWpUB5totZXFFMpY9wxziRPTU8peJitEamALA1Sg5KH+gpIih5qwFt4VpZt2xbVo5+s6f4vQkBLdYBtaViW9XQTlYwRSQVs/Ri1eQrg7raygP2TgFyhHPR39qG9GibV9wwa59DCHxX0R8ELkGU2d48I/HVCC9UFHZol3p2eHg+qfyPFM+gdkphMaj8RZLD/m+lm9J3C3tZo9uRiBVEv52m7qSrhN1ytzbR3R24aG20IugyVhauGjowl1tylIbn7bwFbjtGzpdPke0kPdV7UCB6VTmwiW2mOEemKpbPFVCkhAAZ/EcetiA/FbEkK1ZTaB2uLTuD8JY0+MEwDISSxVPvKo005ou3YfUaCniLFL29ccImvDokYiNsTRmFURD8PojeVJ9u3fo8fgSu0Z2pdF22HXwz1IBFkXqc1mH7aMsG+aYtaYCQp9pzzhxG91+JquikthOpoBJqy9DrvIxyajsYO0FJPbxbTSLV+d4sQ3JgMmch9l1RAhRdp/jQfC7MTtoqj35B0WjiFTxGenl69a4O7FUiEc8=
+    secure: ykCtZtuqG1Mo8tVIwGpsf+7n8784LCk7ELLXAvCdnUf1vj6yCJnMU44kLe750mnWhZ9bDpID5BjBSNoSJZhZ+gRiXStMhWiLOXwqj14jn3Yf/XWYk17ybBm/1es3ucE0QpzChyJF14dy5ARevVOl1rtoLuTF+VMFI0FJ6i0TK3x/1pG2yBh9b13NZx7coqjYgeMimQMgxO6OxjdW6Ld3LwJl+sw8VaAtesB4zadEuIUf2RdczoNrJrxN5+ARwOGB72YaDbtglB7L1NB+pFuCDrHykKvXNABiLeeLLhJr3UrsgD9cVhp77AC4CRODX5n5lsva02SHqK28J7Xs28UG5V/cWflNhuAGbkz40m1BgEi2btePA7RGy8VmsAaWzV+FZUjdV/N05EAf75uCKaFMKHZTTZACvKGHgObvjWDRHAapJsT5GVOPfiKm6CdLUC5nJ7HWSd/05qogs+NOhio3vF4M76WoYDnp3uUUOpTgfALt7CUZsIqudgxi2jE/WVKdA6TOpSUFporHzTpIm7W+R004lxmOrI1dQiIgcNQoFUpu8/3LIkHsD/Rx//Q2NcPoM9VskXpSl87utG3eTkPn33eUvtHvugGkB9npzeHbnIO8h/Z6rAG8u3Q6XlXYVX/juORVLOjjYjy3OWKmP2mOf5YllxCe13ASqT3e8bdTwpE=
