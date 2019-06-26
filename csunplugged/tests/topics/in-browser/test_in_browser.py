@@ -1,5 +1,4 @@
 from selenium import webdriver
-import time
 import os
 
 ACCESS_KEY = os.environ['KEY']
