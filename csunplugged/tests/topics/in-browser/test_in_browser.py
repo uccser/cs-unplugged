@@ -1,7 +1,7 @@
 from selenium import webdriver
 import os
 
-ACCESS_KEY = os.environ['KEY']
+ACCESS_KEY = os.environ['ACCESS_KEY']
 COMMAND_EXECUTOR = 'http://cseducationresea1:' + ACCESS_KEY + '@hub.browserstack.com:80/wd/hub'
 
 v1 = {
