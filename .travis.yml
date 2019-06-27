@@ -4,7 +4,6 @@ services:
 language: python
 python:
 - '3.6'
-
 before_install:
 - sudo rm -f /etc/boto.cfg
 install:
@@ -19,7 +18,7 @@ jobs:
   - stage: test
     name: Load content
     script: "./csu ci load_content"
-  - script: "env ACCESS_KEY=$KEY ./csu ci test_general"
+  - script: env ACCESS_KEY=$KEY ./csu ci test_general
     name: Run general tests
   - script: "./csu ci test_resources"
     name: Run resource tests
@@ -178,4 +177,5 @@ stages:
   if: branch = master
 env:
   global:
-    secure: ykCtZtuqG1Mo8tVIwGpsf+7n8784LCk7ELLXAvCdnUf1vj6yCJnMU44kLe750mnWhZ9bDpID5BjBSNoSJZhZ+gRiXStMhWiLOXwqj14jn3Yf/XWYk17ybBm/1es3ucE0QpzChyJF14dy5ARevVOl1rtoLuTF+VMFI0FJ6i0TK3x/1pG2yBh9b13NZx7coqjYgeMimQMgxO6OxjdW6Ld3LwJl+sw8VaAtesB4zadEuIUf2RdczoNrJrxN5+ARwOGB72YaDbtglB7L1NB+pFuCDrHykKvXNABiLeeLLhJr3UrsgD9cVhp77AC4CRODX5n5lsva02SHqK28J7Xs28UG5V/cWflNhuAGbkz40m1BgEi2btePA7RGy8VmsAaWzV+FZUjdV/N05EAf75uCKaFMKHZTTZACvKGHgObvjWDRHAapJsT5GVOPfiKm6CdLUC5nJ7HWSd/05qogs+NOhio3vF4M76WoYDnp3uUUOpTgfALt7CUZsIqudgxi2jE/WVKdA6TOpSUFporHzTpIm7W+R004lxmOrI1dQiIgcNQoFUpu8/3LIkHsD/Rx//Q2NcPoM9VskXpSl87utG3eTkPn33eUvtHvugGkB9npzeHbnIO8h/Z6rAG8u3Q6XlXYVX/juORVLOjjYjy3OWKmP2mOf5YllxCe13ASqT3e8bdTwpE=
+  - secure: ykCtZtuqG1Mo8tVIwGpsf+7n8784LCk7ELLXAvCdnUf1vj6yCJnMU44kLe750mnWhZ9bDpID5BjBSNoSJZhZ+gRiXStMhWiLOXwqj14jn3Yf/XWYk17ybBm/1es3ucE0QpzChyJF14dy5ARevVOl1rtoLuTF+VMFI0FJ6i0TK3x/1pG2yBh9b13NZx7coqjYgeMimQMgxO6OxjdW6Ld3LwJl+sw8VaAtesB4zadEuIUf2RdczoNrJrxN5+ARwOGB72YaDbtglB7L1NB+pFuCDrHykKvXNABiLeeLLhJr3UrsgD9cVhp77AC4CRODX5n5lsva02SHqK28J7Xs28UG5V/cWflNhuAGbkz40m1BgEi2btePA7RGy8VmsAaWzV+FZUjdV/N05EAf75uCKaFMKHZTTZACvKGHgObvjWDRHAapJsT5GVOPfiKm6CdLUC5nJ7HWSd/05qogs+NOhio3vF4M76WoYDnp3uUUOpTgfALt7CUZsIqudgxi2jE/WVKdA6TOpSUFporHzTpIm7W+R004lxmOrI1dQiIgcNQoFUpu8/3LIkHsD/Rx//Q2NcPoM9VskXpSl87utG3eTkPn33eUvtHvugGkB9npzeHbnIO8h/Z6rAG8u3Q6XlXYVX/juORVLOjjYjy3OWKmP2mOf5YllxCe13ASqT3e8bdTwpE=
+  - secure: CJ4i1yV/1pbLJ0kmL2hSEYWAMY1swJGiCIRdpB2yyvRTxwr/P8QWdXGXFFazDk/Ybfbk1Gr85kcZAd5R825NzTtdlTg77wHrsm9mSKisP9cFE8UtXXg+DxpkEWUGpM2Fr94ACmWYlaxxtB7nJyHQRkvTpCQajxeqzRaLwNwbqwM/ZTPC3Xgb+yjIfzKQJLmsyj/jxxkLtBWJIexi8xAJEmi1vnTbS4PJzUP3rCd9TdEMXWnuMHhwkljOCLjmJAJpBZmQOB+vdCHEFi8bQdKFTPXi3y+QTm5Rzicl/h/4p3/JTDk7ODnSxpSp2U0PFVPX+DIwRC6Aq/pwPvAJks8xvbP8rJEbm52Hou+/zHPXik+Pas9cH74pdAs3g9o3WL4mQvp1Fu6ulScMCJfVTsp+p3SrCS4AgEZgdck+OyKkcjZnluaKL1SLtt3eeeSvvpYmOh3l8F+w5F44VmlmByK5ZlRj8OM/uL0ZZAWeFO+X+I+TxeFrgTlmvyq9iDLMiNsyiViguy6sCNSFJeQoIfFL0NxFnvDO0IINMtceMMWvM5rgB/Qee75GKY7fzwwdI/PavSR1TOH7YQUqEZ3EPBB+fEiQaZ0E9nt2VAOKR+22PDdL0XSx5PnY7ZC2TGK6AFNdGDE1L6YoDjxFo8XKFxB4DqBkIIRu8en5kvUOB0tzKms=
