@@ -92,7 +92,7 @@ class BrowserTest(TestCase):
             command_executor=COMMAND_EXECUTOR,
             desired_capabilities=local_server)
 
-        driver.get("localhost")
+        driver.get("http://localhost/")
         element = driver.title
         if "CS Unplugged" not in element:
             raise Exception("Unable to load local page!")
@@ -104,7 +104,7 @@ class BrowserTest(TestCase):
             command_executor=COMMAND_EXECUTOR,
             desired_capabilities=local_server)
 
-        driver.get("localhost/topics")
+        driver.get("http://localhost/topics/")
         element = driver.title
         if "Topics - CS Unplugged" not in element:
             raise Exception("Unable to load local page!")
