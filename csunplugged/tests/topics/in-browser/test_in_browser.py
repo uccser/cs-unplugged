@@ -2,7 +2,6 @@ from selenium import webdriver
 import os
 from django.test import TestCase
 
-
 print("PRINTING OS.ENVIRON")
 print(os.environ)
 
@@ -94,7 +93,7 @@ class BrowserTest(TestCase):
 
         driver.get("http://localhost/en")
         element = driver.title
-        if "CS Unplugged" not in element.text:
+        if "CS Unplugged" not in element:
             raise Exception("Unable to load local page!")
         driver.quit()
 
@@ -104,8 +103,8 @@ class BrowserTest(TestCase):
             command_executor=COMMAND_EXECUTOR,
             desired_capabilities=local_server)
 
-        driver.get("http://localhost/en/topics/searching-algorithms/")
+        driver.get("localhost/topics/searching-algorithms/")
         element = driver.title
-        if "Searching Algorithms - CS Unplugged" not in element.text:
+        if "Searching Algorithms - CS Unplugged" not in element:
             raise Exception("Unable to load local page!")
         driver.quit()
