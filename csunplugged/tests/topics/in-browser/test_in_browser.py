@@ -1,5 +1,7 @@
 from selenium import webdriver
 import os
+from django.test import TestCase
+
 
 print("PRINTING OS.ENVIRON")
 print(os.environ)
@@ -83,26 +85,27 @@ local_server = {
 #         raise Exception("Unable to load CS unplugged page!")
 #     driver.quit()
 
+class BrowserTest(TestCase):
 
-def test_local():
-    driver = webdriver.Remote(
-        command_executor=COMMAND_EXECUTOR,
-        desired_capabilities=local_server)
+    def test_local(self):
+        driver = webdriver.Remote(
+            command_executor=COMMAND_EXECUTOR,
+            desired_capabilities=local_server)
 
-    driver.get("http://localhost/en")
-    element = driver.title
-    if "CS Unplugged" not in element.text:
-        raise Exception("Unable to load local page!")
-    driver.quit()
+        driver.get("http://localhost/en")
+        element = driver.title
+        if "CS Unplugged" not in element.text:
+            raise Exception("Unable to load local page!")
+        driver.quit()
 
 
-def test_local_2():
-    driver = webdriver.Remote(
-        command_executor=COMMAND_EXECUTOR,
-        desired_capabilities=local_server)
+    def test_local_2(self):
+        driver = webdriver.Remote(
+            command_executor=COMMAND_EXECUTOR,
+            desired_capabilities=local_server)
 
-    driver.get("http://localhost/en/topics/searching-algorithms/")
-    element = driver.title
-    if "Searching Algorithms - CS Unplugged" not in element.text:
-        raise Exception("Unable to load local page!")
-    driver.quit()
+        driver.get("http://localhost/en/topics/searching-algorithms/")
+        element = driver.title
+        if "Searching Algorithms - CS Unplugged" not in element.text:
+            raise Exception("Unable to load local page!")
+        driver.quit()
