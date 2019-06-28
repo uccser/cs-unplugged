@@ -341,8 +341,6 @@ cmd_logs() {
 defhelp logs 'View logs.'
 
 ci_test_general() {
-
-}
   echo -e "printing env variables"
   printenv
   dev_static
