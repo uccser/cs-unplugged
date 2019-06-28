@@ -341,6 +341,10 @@ cmd_logs() {
 defhelp logs 'View logs.'
 
 ci_test_general() {
+
+}
+  echo -e "printing env variables"
+  printenv
   dev_static
   dev_collect_static
   docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --exclude-tag=resource --exclude-tag=management --nomigrations
