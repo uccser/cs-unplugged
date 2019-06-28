@@ -1,7 +1,7 @@
 from selenium import webdriver
 import os
 
-
+print("PRINTING OS.ENVIRON")
 print(os.environ)
 
 ACCESS_KEY = os.environ['ACCESS_KEY']
