@@ -8,6 +8,7 @@ print(os.environ)
 ACCESS_KEY = os.environ['ACCESS_KEY']
 COMMAND_EXECUTOR = 'http://cseducationresea1:' + ACCESS_KEY + '@hub.browserstack.com:80/wd/hub'
 
+
 v1 = {
     'os_version': '10',
     'browser': 'Chrome',
