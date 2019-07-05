@@ -342,7 +342,6 @@ defhelp logs 'View logs.'
 
 ci_test_general() {
   echo -e "printing env variables"
-  printenv
   dev_static
   dev_collect_static
   docker-compose exec django env ACCESS_KEY=$KEY /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --exclude-tag=resource --exclude-tag=management --nomigrations
@@ -386,8 +385,10 @@ ci_test_backwards() {
 }
 
 ci_test_in_browser() {
-  cmd_update
-  dev_test_in_browser
+  echo "Running in-browser test suite..."
+  dev_static
+  dev_collect_static
+  docker-compose exec django env ACCESS_KEY=$KEY ./manage.py test --parallel=4 --settings=config.settings.testing --pattern "testbrowser_*.py" -v 3 --exclude-tag=resource --exclude-tag=management --nomigrations
 }
 
 ci_docs() {

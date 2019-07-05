@@ -87,7 +87,7 @@ local_server = {
 
 class BrowserTest(TestCase):
 
-    def test_local(self):
+    def testbrowser_local(self):
         driver = webdriver.Remote(
             command_executor=COMMAND_EXECUTOR,
             desired_capabilities=local_server)
@@ -99,7 +99,7 @@ class BrowserTest(TestCase):
         driver.quit()
 
 
-    def test_local_2(self):
+    def testbrowser_local_2(self):
         driver = webdriver.Remote(
             command_executor=COMMAND_EXECUTOR,
             desired_capabilities=local_server)
