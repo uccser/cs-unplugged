@@ -2,8 +2,6 @@ from selenium import webdriver
 import os
 from django.test import TestCase
 
-print("PRINTING OS.ENVIRON")
-print(os.environ)
 
 ACCESS_KEY = os.environ['ACCESS_KEY']
 COMMAND_EXECUTOR = 'http://cseducationresea1:' + ACCESS_KEY + '@hub.browserstack.com:80/wd/hub'
@@ -87,7 +85,7 @@ local_server = {
 
 class BrowserTest(TestCase):
 
-    def testbrowser_local(self):
+    def test_local(self):
         driver = webdriver.Remote(
             command_executor=COMMAND_EXECUTOR,
             desired_capabilities=local_server)
@@ -99,7 +97,7 @@ class BrowserTest(TestCase):
         driver.quit()
 
 
-    def testbrowser_local_2(self):
+    def test_local_2(self):
         driver = webdriver.Remote(
             command_executor=COMMAND_EXECUTOR,
             desired_capabilities=local_server)

@@ -388,7 +388,7 @@ ci_test_in_browser() {
   echo "Running in-browser test suite..."
   dev_static
   dev_collect_static
-  docker-compose exec django env ACCESS_KEY=$KEY ./manage.py test --parallel=4 --settings=config.settings.testing --pattern "testbrowser_*.py" -v 3 --exclude-tag=resource --exclude-tag=management --nomigrations
+  docker-compose exec django env ACCESS_KEY=$KEY ./manage.py test --parallel=4 --settings=config.settings.testing --pattern "testb_*.py" -v 3 --exclude-tag=resource --exclude-tag=management --nomigrations
 }
 
 ci_docs() {
