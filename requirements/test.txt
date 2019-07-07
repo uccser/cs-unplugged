@@ -15,4 +15,3 @@ PyPDF2==1.26.0
 
 # Browser testing
 selenium==3.14.0
-Django==2.2.3
