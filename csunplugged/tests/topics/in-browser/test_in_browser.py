@@ -97,39 +97,6 @@ class BrowserTest(TestCase):
             raise Exception("Unable to load local page!")
         driver.quit()
 
-    def test_local_2_5(self):
-        driver = webdriver.Remote(
-            command_executor=COMMAND_EXECUTOR,
-            desired_capabilities=local_server)
-
-        driver.get("localhost/en/resources/")
-        element = driver.title
-        if "Topics - CS Unplugged" not in element:
-            raise Exception("Unable to load local page!")
-        driver.quit()
-
-    def test_local_2_6(self):
-        driver = webdriver.Remote(
-            command_executor=COMMAND_EXECUTOR,
-            desired_capabilities=local_server)
-
-        driver.get("localhost/resources/")
-        element = driver.title
-        if "Topics - CS Unplugged" not in element:
-            raise Exception("Unable to load local page!")
-        driver.quit()
-
-    def test_local_2_7(self):
-        driver = webdriver.Remote(
-            command_executor=COMMAND_EXECUTOR,
-            desired_capabilities=local_server)
-
-        driver.get("localhost/resources")
-        element = driver.title
-        if "Topics - CS Unplugged" not in element:
-            raise Exception("Unable to load local page!")
-        driver.quit()
-
     def test_local_3(self):
         driver = webdriver.Remote(
             command_executor=COMMAND_EXECUTOR,
