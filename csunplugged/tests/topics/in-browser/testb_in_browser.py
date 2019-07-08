@@ -38,6 +38,7 @@ v3 = {
 }
 
 local_server = {
+    'os': 'Windows',
     'os_version': '10',
     'browser': 'Chrome',
     'browser_version': '63.0',
