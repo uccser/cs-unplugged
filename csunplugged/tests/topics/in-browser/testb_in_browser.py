@@ -3,9 +3,10 @@ import os
 from django.test import TestCase
 
 
-ACCESS_KEY = os.environ['ACCESS_KEY']
+ACCESS_KEY = os.environ['KEY']
 COMMAND_EXECUTOR = 'http://cseducationresea1:' + ACCESS_KEY + '@hub.browserstack.com:80/wd/hub'
 
+print(os.environ)
 
 v1 = {
     'os_version': '10',
