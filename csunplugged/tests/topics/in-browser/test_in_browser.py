@@ -1,3 +1,5 @@
+import unittest
+
 from selenium import webdriver
 import os
 from django.test import TestCase, tag
@@ -85,7 +87,7 @@ local_server = {
 #     driver.quit()
 
 @tag("browser")
-class BrowserTest(TestCase):
+class BrowserTest(unittest.TestCase):
     """ Test cases for the in-browser test suite"""
 
     def test_local_2(self):
