@@ -90,13 +90,14 @@ local_server = {
 class BrowserTest(unittest.TestCase):
     """ Test cases for the in-browser test suite"""
 
-    def test_local_2(self):
+    def test_local_2_test(self):
         driver = webdriver.Remote(
             command_executor=COMMAND_EXECUTOR,
             desired_capabilities=local_server)
 
         driver.get("http://localhost/en/resources/")
         element = driver.title
+        assert "Printables" in element
         if "Printables" not in element:
             raise Exception("Unable to load local page!")
         driver.quit()
