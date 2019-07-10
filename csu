@@ -388,7 +388,7 @@ ci_test_in_browser() {
   echo -e "HERE!!"
   echo $PWD
   ls
-  nosetests -w csunplugged/tests/topics/in-browser/test_in_browser.py --processes=-1 --process-timeout=60 -m="testb_*.py"
+  nosetests -w csunplugged/tests/topics/in-browser/ --processes=-1 --process-timeout=60 -m="testb_*.py"
 }
 
 ci_docs() {
