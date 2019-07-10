@@ -104,7 +104,8 @@ class BrowserTest(TestCase):
 
         driver.get("http://localhost/")
         driver.find_element_by_xpath(
-            "(.//*[normalize-space(text()) and normalize-space(.)='How do I teach CS Unplugged?'])[1]/following::h2[1]").click()
+            "(.//*[normalize-space(text()) and normalize-space(.)="
+            "'How do I teach CS Unplugged?'])[1]/following::h2[1]").click()
         element = driver.title
         if "Topics - CS Unplugged" not in element:
             raise Exception("Unable to load local page!")
