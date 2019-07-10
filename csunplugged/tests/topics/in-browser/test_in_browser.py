@@ -93,7 +93,7 @@ class BrowserTest(TestCase):
 
         driver.get("http://localhost/en/resources/")
         element = driver.title
-        if "Topics - CS Unplugged" not in element:
+        if "Printables" not in element:
             raise Exception("Unable to load local page!")
         driver.quit()
 
