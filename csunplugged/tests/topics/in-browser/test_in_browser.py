@@ -1,7 +1,6 @@
 from selenium import webdriver
 import os
-from django.test import TestCase
-
+from django.test import TestCase, tag
 
 ACCESS_KEY = os.environ['KEY']
 COMMAND_EXECUTOR = 'http://cseducationresea1:' + ACCESS_KEY + '@hub.browserstack.com:80/wd/hub'
@@ -85,7 +84,7 @@ local_server = {
 #         raise Exception("Unable to load CS unplugged page!")
 #     driver.quit()
 
-
+@tag("browser")
 class BrowserTest(TestCase):
     """ Test cases for the in-browser test suite"""
 
