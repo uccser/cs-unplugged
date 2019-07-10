@@ -385,6 +385,9 @@ ci_test_backwards() {
 
 ci_test_in_browser() {
   cmd_update
+  echo -e "HERE!!"
+  echo $PWD
+  ls
   nosetests -w /csunplugged/tests/topics/in-browser/ --processes=-1 --process-timeout=60 -m="testb_*.py"
 }
 
