@@ -85,7 +85,9 @@ local_server = {
 #         raise Exception("Unable to load CS unplugged page!")
 #     driver.quit()
 
+
 class BrowserTest(TestCase):
+    """ Test cases for the in-browser test suite"""
 
     def test_local_2(self):
         driver = webdriver.Remote(
