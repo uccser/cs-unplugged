@@ -384,8 +384,11 @@ ci_test_backwards() {
 }
 
 ci_test_in_browser() {
-  echo -e "PRINTING DIR"
-  ls
+  pip install selenium
+  pip install django
+  wget https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip -O browserStackLocal.zip
+  unzip browserStackLocal.zip
+  ./BrowserStackLocal --key $KEY --force-local &
   cmd_update
   cd csunplugged/tests/topics/in-browser/
   nosetests -v test_in_browser.py --processes=4 --process-timeout=60
