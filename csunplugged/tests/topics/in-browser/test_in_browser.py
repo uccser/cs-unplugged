@@ -90,3 +90,14 @@ class BrowserTest(unittest.TestCase):
         if "CS Unplugged" not in element:
             raise Exception("Unable to load local page!")
         driver.quit()
+
+    def test_local_dup(self):
+        driver = webdriver.Remote(
+            command_executor=COMMAND_EXECUTOR,
+            desired_capabilities=local_server)
+
+        driver.get("http://localhost/")
+        element = driver.title
+        if "CS Unplugged" not in element:
+            raise Exception("Unable to load local page!")
+        driver.quit()

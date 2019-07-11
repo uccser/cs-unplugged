@@ -343,7 +343,7 @@ defhelp logs 'View logs.'
 ci_test_general() {
   dev_static
   dev_collect_static
-  docker-compose exec django env ACCESS_KEY=$KEY /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --exclude-tag=resource --exclude-tag=management --exclude-tag=browser --nomigrations
+  docker-compose exec django env KEY=$KEY /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --exclude-tag=resource --exclude-tag=management --exclude-tag=browser --nomigrations
   test_status=$?
   dev_test_coverage
   coverage_status=$?
@@ -365,7 +365,7 @@ ci_test_resources() {
 ci_test_management() {
   dev_static
   dev_collect_static
-  docker-compose exec django env KEY=$KEY /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --tag=management --nomigrations
+  docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --tag=management --nomigrations
   test_status=$?
   dev_test_coverage
   coverage_status=$?
