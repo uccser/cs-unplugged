@@ -384,6 +384,8 @@ ci_test_backwards() {
 }
 
 ci_test_in_browser() {
+  echo -e "PRINTING DIR"
+  ls
   cmd_update
   cd csunplugged/tests/topics/in-browser/
   nosetests -v test_in_browser.py --processes=4 --process-timeout=60
