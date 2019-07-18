@@ -1,8 +1,8 @@
+import os
 import unittest
 
-from selenium import webdriver
-import os
 from django.test import tag
+from selenium import webdriver
 
 ACCESS_KEY = os.environ['KEY']
 COMMAND_EXECUTOR = 'http://cseducationresea1:' + ACCESS_KEY + '@hub.browserstack.com:80/wd/hub'
