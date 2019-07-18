@@ -18,7 +18,7 @@ local_server = {
 
 
 @tag("browser")
-class NavbarTests(unittest.TestCase):
+class NavbarTest(unittest.TestCase):
     """ Test cases for the in-browser test suite"""
 
     def test_navbar_loads_pages(self):
