@@ -390,8 +390,8 @@ ci_test_in_browser() {
   unzip browserStackLocal.zip
   ./BrowserStackLocal --key $KEY --force-local &
   cmd_update
-  cd csunplugged/tests/topics/in-browser/
-  nosetests -v test_in_browser.py --processes=4 --process-timeout=60
+  cd
+  nosetests -w /csunplugged/tests/topics/in-browser/ --processes=4 --process-timeout=60
 }
 
 ci_docs() {
