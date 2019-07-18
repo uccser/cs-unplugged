@@ -30,9 +30,7 @@ class NavbarTest(unittest.TestCase):
         driver.get("http://localhost/en")
         if driver.title != "CS Unplugged":
             raise Exception("Failed to load homepage\nCurrent title = {}, not {}".format(driver.title, "CS Unplugged"))
-        if driver.current_url != "localhost/en/":
-            raise Exception("Failed to load homepage\nCurrent url = {}, not {}".format(driver.current_url,
-                                                                                       "localhost/en/"))
+
         # Load topics page
         driver.find_element_by_link_text("Topics").click()
         if driver.title != "CS Unplugged":
@@ -40,5 +38,5 @@ class NavbarTest(unittest.TestCase):
                 "Failed to load Topics page\nCurrent title = {}, not {}".format(driver.title, "CS Unplugged"))
         if driver.current_url != "localhost/en/":
             raise Exception("Failed to load Topics page\nCurrent url = {}, not {}".format(driver.current_url,
-                                                                                          "localhost/en/"))
+                                                                                          "http://localhost/en/topics/"))
         driver.quit()
