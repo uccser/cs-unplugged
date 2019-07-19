@@ -16,6 +16,22 @@ local_server = {
     'browserstack.local': 'true'
 }
 
+TITLE_ERROR_TEXT = "Failed to load page\nExpected title = {}, got {}"
+URL_ERROR_TEXT = "Failed to load page\nExpected url = {}, not {}"
+
+
+def check_title_and_url(driver, expected_title, expected_url):
+    if driver.title != expected_title:
+        raise Exception(TITLE_ERROR_TEXT.format(expected_title, driver.title))
+    if driver.current_url != expected_url:
+        raise Exception(URL_ERROR_TEXT.format(expected_url, driver.current_url))
+
+
+def load_home_page(driver):
+    driver.get("http://localhost/en")
+    if driver.title != "CS Unplugged":
+        raise Exception(TITLE_ERROR_TEXT.format(driver.title, "CS Unplugged"))
+
 
 @tag("browser")
 class NavbarTest(unittest.TestCase):
@@ -26,17 +42,24 @@ class NavbarTest(unittest.TestCase):
             command_executor=COMMAND_EXECUTOR,
             desired_capabilities=local_server)
 
-        # Loading home page
-        driver.get("http://localhost/en")
-        if driver.title != "CS Unplugged":
-            raise Exception("Failed to load homepage\nCurrent title = {}, not {}".format(driver.title, "CS Unplugged"))
+        # Home page
+        load_home_page(driver)
 
-        # Load topics page
+        # Topics page
         driver.find_element_by_link_text("Topics").click()
-        if driver.title != "CS Unplugged":
-            raise Exception(
-                "Failed to load Topics page\nCurrent title = {}, not {}".format(driver.title, "CS Unplugged"))
-        if driver.current_url != "localhost/en/":
-            raise Exception("Failed to load Topics page\nCurrent url = {}, not {}".format(driver.current_url,
-                                                                                          "http://localhost/en/topics/"))
+        check_title_and_url(driver, "Topics - CS Unplugged", "http://localhost/en/topics/")
+
+        # Printables page
+        driver.find_element_by_link_text("Printables").click()
+        check_title_and_url(driver, "Printables - CS Unplugged", "https://csunplugged.org/en/resources/")
+
+        # About page
+        driver.find_element_by_link_text("About").click()
+        check_title_and_url(driver, "About - CS Unplugged", "https://csunplugged.org/en/about/")
+
+        # Return to home page
+        driver.find_element_by_id("navbar-brand-logo")
+        check_title_and_url(driver, "CS Unplugged", "http://localhost/en")
+
+        # Close driver
         driver.quit()
