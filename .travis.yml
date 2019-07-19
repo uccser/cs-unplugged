@@ -24,7 +24,7 @@ jobs:
     name: Run test suite backwards
     if: type = pull_request
   - script: "./csu ci test_in_browser"
-    name: Run in-browser tests
+    name: Run in_browser tests
   - script: "./csu ci style"
     name: Run style checker
   - script: "./csu ci docs"

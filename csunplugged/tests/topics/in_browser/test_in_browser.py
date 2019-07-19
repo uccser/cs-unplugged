@@ -52,7 +52,7 @@ local_server = {
 
 @tag("browser")
 class BrowserTest(unittest.TestCase):
-    """ Test cases for the in-browser test suite"""
+    """ Test cases for the in_browser test suite"""
 
     def test_local_2(self):
         driver = webdriver.Remote(
