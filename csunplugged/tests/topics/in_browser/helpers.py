@@ -27,3 +27,5 @@ def load_home_page(driver):
     driver.get("http://localhost/en")
     if driver.title != "CS Unplugged":
         raise Exception(TITLE_ERROR_TEXT.format(driver.title, "CS Unplugged"))
+
+    driver.find_element_by_id("djHideToolBarButton").click()

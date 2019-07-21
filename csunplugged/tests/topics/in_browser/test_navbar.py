@@ -31,7 +31,7 @@ class NavbarTest(unittest.TestCase):
         check_title_and_url(driver, "About - CS Unplugged", "http://localhost/en/about/")
 
         # Return to home page
-        driver.find_element_by_id("navbar-brand-logo")
+        driver.find_element_by_id("navbar-brand-logo").click()
         check_title_and_url(driver, "CS Unplugged", "http://localhost/en")
 
         # Close driver
