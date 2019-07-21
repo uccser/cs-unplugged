@@ -15,11 +15,10 @@ class LanguagePickerTest(unittest.TestCase):
             desired_capabilities=helpers.local_server)
 
         helpers.load_home_page(driver)
-        driver.find_element_by_id("navbarLangaugeSelector").click()
+        driver.find_element_by_id("navbarLanguageSelector").click()
         driver.find_element_by_link_text("Deutsch").click()
         lang_value = driver.find_element_by_tag_name("html").get_attribute("lang")
         if lang_value != "de":
             raise Exception("Language selector failed.\nExpected {}, got {}".format("de", lang_value))
-
         # Close driver
         driver.quit()
