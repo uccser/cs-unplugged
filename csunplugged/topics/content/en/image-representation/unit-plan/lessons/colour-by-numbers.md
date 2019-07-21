@@ -5,7 +5,7 @@
 ## Key questions
 
 - How do you think computers display images on a screen?
-- How do computers represent images when they can only store numbers?
+- How do computers store images when they store all information as digits?
 
 
 ## Lesson starter
@@ -21,7 +21,7 @@ Children will need:
 This lesson includes two activities, one which students complete individually and one group activity.
 In each activity you will need enough coloring pages for one per student.
 These each require different versions of the Pixel Painter worksheets.
-Use the Black and White colouring type (the first option on the list), and:
+Use the **Black and White colouring type** (the first option on the list), and:
 
   - for the first activity choose from the 1 page images (the star, teacup, or the cat). You can use a combination of these images, students do not all need to complete the same one,
   - for the second activity choose from the 6, 8, and 9 page images. Print enough for one set of image worksheets per group of students.
@@ -52,7 +52,7 @@ Has anyone heard of pixels before? What about megapixels?
 # Teaching observations
 
 Megapixel means one million pixels.
-Students may have heard the term "megapixels" used before because cameras are often described as being a certain number of megapixels, for example a phone with a 12-megapixel camera.
+Students may have heard the term "megapixels" used before because cameras are often described as being a certain number of megapixels, for example a phone might have a *12-megapixel* camera.
 This describes the resolution of the photos a camera can take. A 12-mega pixel camera can produce an image with 12 million pixels in it.
 
 Television screens are also made up of pixels.
@@ -111,7 +111,7 @@ The answer you are looking for is to use more pixels for the image, which is wha
 
 Put students into groups and give each group a set of the multipage image worksheets, so that each student has a page to work on.
 If this isn't possible with the number of students you have just make sure groups are small enough for each students to have at least one page, or preferably for each student to have the same number of pages.
-For example have groups of 3 each work on one of the 6 page images.
+For example have groups of 3 work on one of the 6 page images, so each student has 2 pages to complete.
 
 
 Teacher to class: These sets of grids can all be put together to create one larger image, which has much more pixels than the last ones. You're each going to colour in the pixels on your own sheet, in the same way as before, and then put the whole image together.
@@ -147,7 +147,7 @@ After creating their images they can try converting these to grid paper as well.
 ## Lesson reflection
 
 
-This is just for black and white images, why can't we do more than two colours with this activity?
+This lesson has just covered black and white images, why can't we do more than two colours with this activity?
 
   - If we can only use one binary digit for each we can only represent two different colours.
   This means each pixel can only be one of two different colours.
@@ -156,6 +156,4 @@ What could we do to represent more colours?
 
   - If we want each pixel to be able to show more colours other than black and white then we need to use more numbers (or binary digits) to represent the colour of each pixel. This will be explored in future lessons.
 
-{comment Come back and split lessons later once all the other content is done}
-
-(We will explore this at older ages.)
+{comment Come back and split lessons later if they need to be different for different age groups, once all the other content is done}
