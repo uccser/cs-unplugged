@@ -32,24 +32,24 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         "black-white": {
             "name": _("Black and White"),
             "labels": {
-                255: "0",
-                0: "1"
+                255: "1",
+                0: "0"
             }
         },
         "run-length-encoding": {
             "name": _("Run length encoding"),
             "labels": {
-                255: "0",
-                0: "1"
+                255: "1",
+                0: "0"
             }
         },
         "greyscale": {
             "name": _("Greyscale"),
             "labels": {
-                255: "00",
-                168: "01",
-                84: "10",
-                0: "11"
+                255: "11",
+                168: "10",
+                84: "01",
+                0: "00"
             }
         },
         "colour": {
