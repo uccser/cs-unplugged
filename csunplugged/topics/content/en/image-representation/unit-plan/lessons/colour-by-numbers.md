@@ -1,20 +1,16 @@
 # Colour by numbers
 
-
 ## Key questions
 
 - How do you think computers display images on a screen?
 - How do computers store images when they store all information as digits?
 
-
 ## Lesson starter
-
 
 Children will need:
 
   - A normal writing pencil, or a black pencil.
   - Erasers.
-
 
 This lesson includes two activities, one which students complete individually and one group activity.
 In each activity you will need enough coloring pages for one per student.
@@ -25,17 +21,15 @@ Use the **Black and White colouring type** (the first option on the list), and:
   You can use a combination of these images, students do not all need to complete the same one,
   - for the second activity choose from the 6, 8, and 9 page images. Print enough for one set of image worksheets per group of students.
 
-
 {panel type="general"}
 
 # Notes on resources
 
   - Print spare copies of each worksheet in case students make mistakes and need a new one.
-  - Use the *Black and White (2 possible binary values)* colouring option, **not** the option which says "in Run Length Encoding".
+  - Use the **Black and White (2 possible binary values)** colouring option, **not** the option which says "in Run Length Encoding".
   - Students can instead use a black crayon or felt tip pen, but easily erasable pencils work much better for the first time students do this activity.
 
 {panel end}
-
 
 Teacher to class: Computer screens are divided up into a grid of small squares, each of which can display a colour.
 We call these squares picture elements, or pixels.
@@ -60,9 +54,7 @@ Television screens and projectors also display images using pixels.
 
 {panel end}
 
-
 Teacher to class: Every image we see on a screen, whether it is a picture, a video, or text, is shown using pixels, and all a computer needs to store is what colour each of the pixels on the screen should be.
-
 
 Show the following images to students on a screen or on the board.
 
@@ -76,7 +68,6 @@ These progressively zoom in to show the individual black and white squares which
 We can represent this image using binary digits.
 If a 1 indicates a white square and a 0 indicates a black square then we can represent our letter *a*, on a 5x6 pixel grid, like this:
 
-
 **10001, 11110, 10000, 01110, 01110, 10000**
 
 If we take these numbers and draw the image they represent we get the letter a:
@@ -87,7 +78,6 @@ To the right of each row of squares there are five binary digits which describe 
 
 We are using 1 to represent white and 0 to represent black, in the same way we used white and black cards to represent 'on' and 'off' in the binary numbers unit.
 
-
 ## Lesson activities
 
 Hand out the 1 page image worksheets to students and ask them to look at the grid of squares.
@@ -97,13 +87,11 @@ They are all 1's or 0's.
 Teacher to class: The grid on these sheets represents the pixels on a computer screen.
 Now you are going to be the computer and use the digits in the squares to make an image.
 
-
 On the worksheets, have students colour in each square with a 0 in it black, and leave each square with a 1 blank so that it is white.
 We are using 1 to represent white and 0 to represent black, because 1 indicates that a pixel is 'on' (and therefore white) and a 0 indicates it is 'off' (and so it is black).
 By colouring the 0 squares in this activity, students are effectively 'turning off' those pixels.
 Advise them to colour them in lightly at first, and then when they are sure they have not made any mistakes they can colour them in fully.
 As they work through the worksheet they should see an image emerging.
-
 
 Teacher to class: Now that we have made some simple images with our numbers and pixels, we can try making some more detailed and complicated ones.
 How do you think we could make more complicated or higher quality images?
@@ -123,13 +111,10 @@ Put students into groups and give each group a set of the multipage image worksh
 If this is not possible with the number of students you have just make sure groups are small enough for each students to have at least one page, or preferably for each student to have the same number of pages.
 For example have groups of 3 work on a 6 page image, so each student has 2 pages to complete.
 
-
 Teacher to class: These sets of grids can all be put together to create one larger image, which has much more pixels than the last ones. you are each going to colour in the pixels on your own sheet, in the same way as before, and then put the whole image together.
 
 Once students have coloured in their sheets they can arrange them together to create the whole image.
 There are diagrams on the worksheet printables which teachers can use to help students put their images together if they get stuck.
-
-
 
 ## Applying what we have just learnt
 
@@ -139,7 +124,6 @@ There are diagrams on the worksheet printables which teachers can use to help st
 The Pixel Painter Parrots option is made up of 32 pages, and is a great challenge for a class.
 
 - Students can also try creating their own pixel art, convert this into a grid of digits, and then have their friends try to re-create their image.
-
 
 {panel type="general"}
 
@@ -153,9 +137,7 @@ After creating their images they can try converting these to grid paper as well.
 
 {panel end}
 
-
 ## Lesson reflection
-
 
 This lesson has just covered black and white images, why can't we do more than two colours with this activity?
 

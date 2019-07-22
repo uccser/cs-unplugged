@@ -13,9 +13,7 @@ If you think of all the different devices you use, and what you do with them, it
 Everything you see on computer screens, whether it is photographs, videos, websites, even text, is an image that a digital device has been programmed to display.
 Because modern computers store data as digits, computer images are ultimately represented inside a computer using just 0's and 1's.
 
-
 {comment Add teaching this in action video here}
-
 
 {panel type="text"}
 
@@ -25,7 +23,6 @@ In this unit and its lesson plans the word **image** is used to refer to what is
 It includes everything seen on a screen, such as videos, websites, apps, text, rather than just referring to static pictures or photos.
 
 {panel end}
-
 
 Computer screens are divided into a grid of tiny squares called {glossary-link term="pixel"}pixels{glossary-link end}.
 These pixels can each show a different colour, and because they are so small when we look at a screen we don't see the individual pixels, instead we see them blend together into an image.
@@ -37,7 +34,6 @@ There are many different methods we can use to convert images into digital data 
 The method we choose depends on what type of images the data needs to be converted into.
 A black and white image, where each pixel can be only either black or white, is much simpler to represent using digits than a full length, colour, and high-definition film is!
 In this unit students are introduced to simple examples of how they can use digits to create images, how the number of colours an image can include is based on the number of bits used to store it, and how images can be compressed so they take up less memory space and computers can process them faster.
-
 
 ## Digital Technologies | Data Representation
 
@@ -54,7 +50,6 @@ The ability for computers to represent multiple types of information using just 
 Just like learning about the binary number system, exploring image representation exposes students to the Computational Thinking concepts of Abstraction and Decomposition.
 Students learn to break down images into pixels and then to digits, and how to move back up from digits, to pixels, to images.
 
-
 ## Digital Technologies | Algorithms
 
 When pixels are used to represent images, the process we go through to convert digits into these pixels is a type of Algorithm.
@@ -70,12 +65,10 @@ Computer screens are divided into a grid of tiny coloured squares, which are cal
 The colour of each pixel can be set by a computer and they are used to display images on a computer screen (and printed images).
 The word pixel is an abbreviation of *picture element*.
 
-
 ### Display Resolution
 
 The resolution of a screen refers to the number, or density, of pixels on the screen.
 It is usually defined as either the number of pixels per inch on the screen, or the width and height of the screen measured in pixels (e.g. 1920 by 1080 pixels).
-
 
 ## Real world implications
 
@@ -92,8 +85,6 @@ This is also why old computers can't always run newer games; the older computers
 For some types of images there are ways we can {glossary-link term="compress"}compress{glossary-link end} them.
 This means we can decrease the size of the image files without losing, or only losing a small amount of, quality and information.
 Image compression algorithms allow us to store, process, transmit, and create images more quickly.
-
-
 
 ## Reflection questions
 
