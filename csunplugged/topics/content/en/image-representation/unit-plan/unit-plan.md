@@ -82,8 +82,8 @@ This means it will take up more space in memory, take longer for a computer to p
 Filmakers have to use powerful computers and store large amounts of data when they are editing their videos, otherwise it would take them far too long to do this, or they would have to decrease the image quality of their films.
 This is also why old computers can't always run newer games; the older computers simply can't process the game graphics quickly enough to display them.
 
-For some types of images there are ways we can {glossary-link term="compress"}compress{glossary-link end} them.
-This means we can decrease the size of the image files without losing, or only losing a small amount of, quality and information.
+For some types of images we can use a {glossary-link term="compression"}compression{glossary-link end} algorithm to decrease their file size.
+Compression algorithms can do this without losing, or only losing a small amount of, the image quality.
 Image compression algorithms allow us to store, process, transmit, and create images more quickly.
 
 ## Reflection questions

@@ -12,17 +12,17 @@ In each activity you will need enough coloring pages for one per student.
 These each require different versions of the Pixel Painter worksheets.
 Use the **Black and White colouring type** (the first option on the list), and:
 
-  - for the first activity choose from the 1 page images (the star, teacup, or the cat).
+- for the first activity choose from the 1 page images (the star, teacup, or the cat).
   You can use a combination of these images, students do not all need to complete the same one,
-  - for the second activity choose from the 6, 8, and 9 page images. Print enough for one set of image worksheets per group of students.
+- for the second activity choose from the 6, 8, and 9 page images. Print enough for one set of image worksheets per group of students.
 
 {panel type="general"}
 
 # Notes on resources
 
-  - Print spare copies of each worksheet in case students make mistakes and need a new one.
-  - Use the **Black and White (2 possible binary values)** colouring option, **not** the option which says "in Run Length Encoding".
-  - Students can instead use a black colouring pencil, crayon, or felt tip pen, but easily erasable pencils work much better for the first time students do this activity.
+- Print spare copies of each worksheet in case students make mistakes and need a new one.
+- Use the **Black and White (2 possible binary values)** colouring option, **not** the option which says "in Run Length Encoding".
+- Students can instead use a black colouring pencil, crayon, or felt tip pen, but easily erasable pencils work much better for the first time students do this activity.
 
 {panel end}
 
@@ -116,7 +116,7 @@ There are diagrams on the worksheet printables which teachers can use to help st
 - Instead of writing the 1's and 0's into each of the boxes on the grid, have students write out the binary digits that represent their image (in the same way as the 'a' in the lesson starter section) and give this to other students and see if they can re-create the same picture.
 
 - Now that students have tried creating the larger images they could take it a step further and make an image as a whole class.
-The Pixel Painter Parrots option is made up of 32 pages, and is a great challenge for a class.
+  The Pixel Painter Parrots option is made up of 32 pages, and is a great challenge for a class.
 
 - Students can also try creating their own pixel art, convert this into a grid of digits, and then have their friends try to re-create their image.
 
@@ -136,10 +136,10 @@ After creating their images they can try converting these to grid paper as well.
 
 This lesson has just covered black and white images, why can't we do more than two colours with this activity?
 
-  - With one binary digit we can only represent two different values.
+- With one binary digit we can only represent two different values.
   This means if we use one digit to represent the colour of one pixel, then each pixel can only be one of two different colours.
 
 What could we do to represent more colours?
 
-  - If we want each pixel to be able to show more colours other than black and white then we need to use more numbers (or binary digits) to represent the colour of each pixel.
+- If we want each pixel to be able to show more colours other than black and white then we need to use more numbers (or binary digits) to represent the colour of each pixel.
   This will be explored in future lessons.
