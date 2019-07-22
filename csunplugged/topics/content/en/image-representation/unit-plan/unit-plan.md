@@ -33,7 +33,8 @@ If you look very, very closely at a computer or TV screen (especially older ones
 
 The digits stored in the computer tell each of these pixels what colour they should be and when they should change colour, which means computers can turn a bunch of random looking binary digits into all the beautiful images we see on our screens.
 
-There are many different methods we can use to convert images into digital data and back again. The method we choose depends on what type of images the data needs to be converted into.
+There are many different methods we can use to convert images into digital data and back again.
+The method we choose depends on what type of images the data needs to be converted into.
 A black and white image, where each pixel can be only either black or white, is much simpler to represent using digits than a full length, colour, and high-definition film is!
 In this unit students are introduced to simple examples of how they can use digits to create images, how the number of colours an image can include is based on the number of bits used to store it, and how images can be compressed so they take up less memory space and computers can process them faster.
 
@@ -83,7 +84,8 @@ The more bits we use to store the colour of a pixel, the more different colours 
 If we use one bit to store the colour of a pixel then we only have two options for what that colour can be (remember, with one bit we can represent two different values only, because we can only use 0 or 1).
 If we use 8 bits (1 byte) then we can display 256 different colours instead, and if we use 24 bits (3 bytes) then we can display over 16 million different colours, which is more than the human eye can see!
 
-However, using more bits to represent a colour will increase the size of an image file. This means it will take up more space in memory, take longer for a computer to process and display. and take longer to be transmitted between computers and over the internet.
+However, using more bits to represent a colour will increase the size of an image file.
+This means it will take up more space in memory, take longer for a computer to process and display, and take longer to be transmitted between computers and over the internet.
 Filmakers have to use powerful computers and store large amounts of data when they are editing their videos, otherwise it would take them far too long to do this, or they would have to decrease the image quality of their films.
 This is also why old computers can't always run newer games; the older computers simply can't process the game graphics quickly enough to display them.
 

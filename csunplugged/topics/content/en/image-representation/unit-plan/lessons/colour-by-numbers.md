@@ -21,7 +21,8 @@ In each activity you will need enough coloring pages for one per student.
 These each require different versions of the Pixel Painter worksheets.
 Use the **Black and White colouring type** (the first option on the list), and:
 
-  - for the first activity choose from the 1 page images (the star, teacup, or the cat). You can use a combination of these images, students do not all need to complete the same one,
+  - for the first activity choose from the 1 page images (the star, teacup, or the cat).
+  You can use a combination of these images, students do not all need to complete the same one,
   - for the second activity choose from the 6, 8, and 9 page images. Print enough for one set of image worksheets per group of students.
 
 
@@ -30,7 +31,7 @@ Use the **Black and White colouring type** (the first option on the list), and:
 # Notes on resources
 
   - Print spare copies of each worksheet in case students make mistakes and need a new one.
-  - Use the *Black and White (2 possible binary values)* colouring option, **not** the option which says "in Run Length Encoding"
+  - Use the *Black and White (2 possible binary values)* colouring option, **not** the option which says "in Run Length Encoding".
   - Students can instead use a black crayon or felt tip pen, but easily erasable pencils work much better for the first time students do this activity.
 
 {panel end}
@@ -43,7 +44,8 @@ Write the words "picture elements" on the board.
 To show how we get the word pixels, circle the "pi" of picture and the "el" of elements, and write "pixel" underneath.
 
 Teacher to class: Each of these pixels can be a different colour, and when we have a lot of them on a screen they form an image.
-Has anyone heard of pixels before? What about megapixels?
+Has anyone heard of pixels before?
+What about megapixels?
 
 {panel type="general"}
 
@@ -51,7 +53,8 @@ Has anyone heard of pixels before? What about megapixels?
 
 Megapixel means one million pixels.
 Students may have heard the term "megapixels" used before because cameras are often described as being a certain number of megapixels, for example a phone might have a *12-megapixel* camera.
-This describes the resolution of the photos a camera can take. A 12-mega pixel camera can produce an image with 12 million pixels in it.
+This describes the resolution of the photos a camera can take.
+A 12-mega pixel camera can produce an image with 12 million pixels in it.
 
 Television screens and projectors also display images using pixels.
 
@@ -67,7 +70,8 @@ Teacher to class: In a black and white image, each pixel can be either black or 
 For example, if we wanted to display the letter *a* we first need to divide it into squares.
 If we zoom in further and further on the letter we can see a grid of pixels similar to these:
 
-{image file-path="img/topics/letter-zooming-to-pixels.png" alt="Three images of the lower case letter 'a' are shown. These progressively zoom in to show the individual black and white squares which make up the letter on the screen."}
+{image file-path="img/topics/letter-zooming-to-pixels.png" alt="Three images of the lower case letter 'a' are shown.
+These progressively zoom in to show the individual black and white squares which make up the letter on the screen."}
 
 We can represent this image using binary digits.
 If a 1 indicates a white square and a 0 indicates a black square then we can represent our letter *a*, on a 5x6 pixel grid, like this:
@@ -77,7 +81,9 @@ If a 1 indicates a white square and a 0 indicates a black square then we can rep
 
 If we take these numbers and draw the image they represent we get the letter a:
 
-{image file-path="img/topics/pixel-visible-grid-with-letter-and-numbers.png" alt="A six by five grid is shown. Some of the squares are white and others are coloured black to create the shape of the letter 'a'. To the right of each row of squares there are five binary digits which describe the image."}
+{image file-path="img/topics/pixel-visible-grid-with-letter-and-numbers.png" alt="A six by five grid is shown.
+Some of the squares are white and others are coloured black to create the shape of the letter 'a'.
+To the right of each row of squares there are five binary digits which describe the image."}
 
 We are using 1 to represent white and 0 to represent black, in the same way we used white and black cards to represent 'on' and 'off' in the binary numbers unit.
 
@@ -85,9 +91,11 @@ We are using 1 to represent white and 0 to represent black, in the same way we u
 ## Lesson activities
 
 Hand out the 1 page image worksheets to students and ask them to look at the grid of squares.
-What do they notice about the numbers in the squares? They are all 1's or 0's.
+What do they notice about the numbers in the squares?
+They are all 1's or 0's.
 
-Teacher to class: The grid on these sheets represents the pixels on a computer screen. Now you are going to be the computer and use the digits in the squares to make an image.
+Teacher to class: The grid on these sheets represents the pixels on a computer screen.
+Now you are going to be the computer and use the digits in the squares to make an image.
 
 
 On the worksheets, have students colour in each square with a 0 in it black, and leave each square with a 1 blank so that it is white.
@@ -97,13 +105,15 @@ Advise them to colour them in lightly at first, and then when they are sure they
 As they work through the worksheet they should see an image emerging.
 
 
-Teacher to class: Now that we have made some simple images with our numbers and pixels, we can try making some more detailed and complicated ones. How do you think we could make more complicated or higher quality images?
+Teacher to class: Now that we have made some simple images with our numbers and pixels, we can try making some more detailed and complicated ones.
+How do you think we could make more complicated or higher quality images?
 
 {panel type="general"}
 
 # Teaching observations
 
-Possible answers include adding more colours. This is a good answer and colours are part of more advanced lessons in this unit, but this lesson only focusses on black and white pixels, so bring students back to this and ask them how they can make a black and white image more detailed.
+Possible answers include adding more colours.
+This is a good answer and colours are part of more advanced lessons in this unit, but this lesson only focusses on black and white pixels, so bring students back to this and ask them how they can make a black and white image more detailed.
 
 {panel end}
 
@@ -154,4 +164,5 @@ This lesson has just covered black and white images, why can't we do more than t
 
 What could we do to represent more colours?
 
-  - If we want each pixel to be able to show more colours other than black and white then we need to use more numbers (or binary digits) to represent the colour of each pixel. This will be explored in future lessons.
+  - If we want each pixel to be able to show more colours other than black and white then we need to use more numbers (or binary digits) to represent the colour of each pixel.
+  This will be explored in future lessons.
