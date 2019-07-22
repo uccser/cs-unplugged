@@ -6,4 +6,5 @@ colour-by-numbers:
   generated-resources:
     - pixel-painter
   classroom-resources:
-    - coloring-pens
+    - pencils
+    - erasers

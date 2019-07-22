@@ -7,11 +7,6 @@
 
 ## Lesson starter
 
-Children will need:
-
-  - A normal writing pencil, or a black pencil.
-  - Erasers.
-
 This lesson includes two activities, one which students complete individually and one group activity.
 In each activity you will need enough coloring pages for one per student.
 These each require different versions of the Pixel Painter worksheets.
@@ -27,7 +22,7 @@ Use the **Black and White colouring type** (the first option on the list), and:
 
   - Print spare copies of each worksheet in case students make mistakes and need a new one.
   - Use the **Black and White (2 possible binary values)** colouring option, **not** the option which says "in Run Length Encoding".
-  - Students can instead use a black crayon or felt tip pen, but easily erasable pencils work much better for the first time students do this activity.
+  - Students can instead use a black colouring pencil, crayon, or felt tip pen, but easily erasable pencils work much better for the first time students do this activity.
 
 {panel end}
 
