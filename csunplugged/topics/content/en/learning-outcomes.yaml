@@ -329,8 +329,8 @@ sorting-comparing-musical-pitch:
 
 # IMAGE REPRESENTATION OUTCOMES
 
-image-rep-explain-pixels:
-  text: Explain that the images shown by computers are made up of pixels, each of which can display a different colour.
+image-rep-understand-digits-representing-images:
+  text: Understand how images can be stored and represented using digits.
 
-image-rep-describe-digits-representing-images:
-  text: Describe how images can be stored and represented using digits.
+image-rep-understand-pixels:
+  text: Understand that the images shown by computers are made up of pixels, each of which can display a different colour, based on digits.

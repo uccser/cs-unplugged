@@ -1,8 +1,8 @@
 colour-by-numbers:
   duration: 45
   learning-outcomes:
-    - image-rep-explain-pixels
-    - image-rep-describe-digits-representing-images
+    - image-rep-understand-digits-representing-images
+    - image-rep-understand-pixels
   generated-resources:
     - pixel-painter
   classroom-resources:

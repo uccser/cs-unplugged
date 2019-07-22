@@ -16,7 +16,6 @@ Because modern computers store data as digits, computer images are ultimately re
 
 {comment Add teaching this in action video here}
 
-{comment Old version of text: All information that modern computers store and process is stored using just two states, represented by binary digits. This means that everything you see in computer images is stored inside a computer using just 0's and 1's, and these are used to *represent* images.}
 
 {panel type="text"}
 
@@ -32,21 +31,17 @@ Computer screens are divided into a grid of tiny squares called {glossary-link t
 These pixels can each show a different colour, and because they are so small when we look at a screen we don't see the individual pixels, instead we see them blend together into an image.
 If you look very, very closely at a computer or TV screen (especially older ones) then you might be able to see these individual pixels.
 
-{comment Could add "Be careful not to hurt your eyes though!" on the end of this}
-
-The digits stored in the computer tell each of these pixels what colour they should be and when they should change colour, which means computers can turn a bunch of random looking binary digits into all the beautiful images we see on our screens!
+The digits stored in the computer tell each of these pixels what colour they should be and when they should change colour, which means computers can turn a bunch of random looking binary digits into all the beautiful images we see on our screens.
 
 There are many different methods we can use to convert images into digital data and back again. The method we choose depends on what type of images the data needs to be converted into.
-A black and white image, where each pixel can be only either black or white, is much simpler to represent using digits than a full length, colour, and high-definition movie is!
-In this unit students are introduced to simple examples of how they can use digits to create images, how the number of colours an image can include is based on the number of bits used to store it, and how images can be compressed so computers can process them faster.
+A black and white image, where each pixel can be only either black or white, is much simpler to represent using digits than a full length, colour, and high-definition film is!
+In this unit students are introduced to simple examples of how they can use digits to create images, how the number of colours an image can include is based on the number of bits used to store it, and how images can be compressed so they take up less memory space and computers can process them faster.
 
 
 ## Digital Technologies | Data Representation
 
 All data on computers is represented with digits, and using these digits to represent other types of data and information is a core concept of Computer Science.
 At this point you have probably noticed the words **represent** and **representation** are being used a lot, so let's look at exactly what we mean by this.
-
-{comment This image is currently too big for the page}
 
 {image file-path="img/topics/binary-picture-showing-bits.png" alt="If we look closely at an image on a computer screen we can see it is made up of a grid of tiny dots called pixels. The colour of each of these is stored inside a computer using binary."}
 
@@ -61,13 +56,10 @@ Students learn to break down images into pixels and then to digits, and how to m
 
 ## Digital Technologies | Algorithms
 
-{comment Could include Algorithms as well because of RLE/encoding Algorithms}
-
 When pixels are used to represent images, the process we go through to convert digits into these pixels is a type of Algorithm.
 There are many different algorithms computers use to do this, and the one they use depends on things like the file type of the images being displayed, for example if it is a picture like a .png or .jpeg, or a video file like an .mp4 or .avi; or what resolution the image is.
 We also use Algorithms to compress images to smaller file sizes, which means they use less memory, can be processed more quickly, and are faster to download.
-
-{comment Through lerning about image representation students practice algorithmic thinking and pattern matching...}
+Through lerning about image representation students practice algorithmic thinking, pattern matching, and abstract thinking.
 
 ## Vocabulary Explained
 
@@ -91,14 +83,13 @@ The more bits we use to store the colour of a pixel, the more different colours 
 If we use one bit to store the colour of a pixel then we only have two options for what that colour can be (remember, with one bit we can represent two different values only, because we can only use 0 or 1).
 If we use 8 bits (1 byte) then we can display 256 different colours instead, and if we use 24 bits (3 bytes) then we can display over 16 million different colours, which is more than the human eye can see!
 
-However, using more bits to represent a colour will increase the size of an image file, which means it will take up more space in memory and take longer for a computer to process and display.
+However, using more bits to represent a colour will increase the size of an image file. This means it will take up more space in memory, take longer for a computer to process and display. and take longer to be transmitted between computers and over the internet.
 Filmakers have to use powerful computers and store large amounts of data when they are editing their videos, otherwise it would take them far too long to do this, or they would have to decrease the image quality of their films.
 This is also why old computers can't always run newer games; the older computers simply can't process the game graphics quickly enough to display them.
 
 For some types of images there are ways we can {glossary-link term="compress"}compress{glossary-link end} them.
 This means we can decrease the size of the image files without losing, or only losing a small amount of, quality and information.
 Image compression algorithms allow us to store, process, transmit, and create images more quickly.
-
 
 
 
