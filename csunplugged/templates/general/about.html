@@ -38,6 +38,13 @@
   </p>
 
   <p>
+    {% url 'general:computational_thinking' as computational_thinking_url %}
+    {% blocktrans trimmed %}
+    For an explanation on the connections between CS Unplugged and Computational Thinking skills, see our <a href="{{ computational_thinking_url }}">Computational Thinking and CS Unplugged page</a>.
+    {% endblocktrans %}
+  </p>
+
+  <p>
     {% url 'general:people' as people_url %}
     {% blocktrans trimmed %}
     To view the team of contributors who work on this project, see our <a href="{{ people_url }}">people page</a>.
