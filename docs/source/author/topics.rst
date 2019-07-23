@@ -45,6 +45,7 @@ diagram.
   of that language.
 
 This is just a broad overview of the topics application.
+The following sections provide more details.
 
 Viewing All Topics Content
 ------------------------------------------------------------------------------
@@ -68,7 +69,7 @@ The ``content`` directory for the topics application contains
 
 - a directory for each language in which content exists, named using the Django locale code. This directory contains
 
-  - Content Markdown files
+  - A folder for each Topic, containing the content Markdown files
   - YAML files containing translatable strings
 
 - a special ``structure`` directory which contains all configuration YAML files
@@ -107,6 +108,28 @@ and write the configuration files for the topics application.
 Adding a Topic
 ------------------------------------------------------------------------------
 
+To set up a new topic, which you can then add content to, you will first need to:
+
+- Create a set of required directories and markdown files within the ``topics/content/en/`` directory (replace ``en/`` if you are creating content for a different language, e.g. ``de/``).
+- Add several required headings to these files.
+- Create a set of required directories and config files within the ``topics/structure/`` directory.
+- Add the minimum required configuration settings to these files.
+
+After these steps have been completed you can run the csu update command, and view the topic at localhost/en/topics/
+
+The following flow charts will take you through this process.
+
+.. image:: ../_static/img/topics_adding_topic_content_files_flowchart.png
+
+Adding content to these files...
+
+.. image:: ../_static/img/topics_adding_topic_structure_files_flowchart.png
+
+Adding content to these files...
+
+Previous version of Adding a Topic
+------------------------------------------------------------------------------
+
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. The image is included as raw HTML because it has clickable nodes.
 .. raw:: html
@@ -117,7 +140,7 @@ Adding a Topic
     <area shape="rect" coords="240,513,317,550" href="#adding-a-unit-plan">
     <area shape="rect" coords="240,615,317,650" href="../getting_started/helper_commands.html#update">
   </map>
-  <img src="../_static/img/topics_adding_topic_flowchart.png" usemap="#topics-map">
+  <img src="../_static/img/topics_adding_topic_flowchart_old.png" usemap="#topics-map">
 
 The Markdown file containing the description of the topic:
 
@@ -128,6 +151,12 @@ The Markdown file containing the description of the topic:
   e.g. ``binary-numbers.md`` or ``kidbots.md``.
 - **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
   of the description.
+
+Next several of these files need content added to them before the changes can be viewed.
+... add these steps...
+
+Now you can run the csu update command.
+Once this has finished you will be able to view the topic at localhost/en/topics/
 
 .. note ::
 
