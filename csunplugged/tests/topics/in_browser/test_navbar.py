@@ -3,7 +3,7 @@ import unittest
 from django.test import tag
 from selenium import webdriver
 
-from .helpers import *
+from . import helpers
 
 
 @tag("browser")
@@ -12,27 +12,27 @@ class NavbarTest(unittest.TestCase):
 
     def test_navbar_loads_pages(self):
         driver = webdriver.Remote(
-            command_executor=COMMAND_EXECUTOR,
-            desired_capabilities=local_server)
+            command_executor=helpers.COMMAND_EXECUTOR,
+            desired_capabilities=helpers.CAPABILITIES)
 
         # Home page
-        load_home_page(driver)
+        helpers.load_home_page(driver)
 
         # Topics page
         driver.find_element_by_link_text("Topics").click()
-        check_title_and_url(driver, "Topics - CS Unplugged", "http://localhost/en/topics/")
+        helpers.check_title_and_url(driver, "Topics - CS Unplugged", "{}topics/".format(helpers.BASE_URL))
 
         # Printables page
         driver.find_element_by_link_text("Printables").click()
-        check_title_and_url(driver, "Printables - CS Unplugged", "http://localhost/en/resources/")
+        helpers.check_title_and_url(driver, "Printables - CS Unplugged", "{}resources/".format(helpers.BASE_URL))
 
         # About page
         driver.find_element_by_link_text("About").click()
-        check_title_and_url(driver, "About - CS Unplugged", "http://localhost/en/about/")
+        helpers.check_title_and_url(driver, "About - CS Unplugged", "{}about/".format(helpers.BASE_URL))
 
         # Return to home page
         driver.find_element_by_id("navbar-brand-logo").click()
-        check_title_and_url(driver, "CS Unplugged", "http://localhost/en/")
+        helpers.check_title_and_url(driver, "CS Unplugged", helpers.BASE_URL)
 
         # Close driver
         driver.quit()

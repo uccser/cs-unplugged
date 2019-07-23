@@ -1,53 +1,8 @@
-import os
 import unittest
 
 from django.test import tag
 from selenium import webdriver
-
-ACCESS_KEY = os.environ['KEY']
-COMMAND_EXECUTOR = 'http://cseducationresea1:' + ACCESS_KEY + '@hub.browserstack.com:80/wd/hub'
-
-
-v1 = {
-    'os_version': '10',
-    'browser': 'Chrome',
-    'browser_version': '60.0',
-    'resolution': '1920x1080',
-    'browserstack.local': 'true',
-    # 'browserstack.selenium_version': '3.5.2',
-    # 'browserstack.localIdentifier': os.environ['BROWSERSTACK_LOCAL_IDENTIFIER']
-}
-
-v2 = {
-    'os_version': '10',
-    'browser': 'Chrome',
-    'browser_version': '61.0',
-    'resolution': '1920x1080',
-    'browserstack.local': 'true',
-    # 'browserstack.selenium_version': '3.5.2',
-    # 'browserstack.localIdentifier': os.environ['BROWSERSTACK_LOCAL_IDENTIFIER']
-}
-
-v3 = {
-    'os_version': '10',
-    'browser': 'Chrome',
-    'browser_version': '62.0',
-    'resolution': '1920x1080',
-    'browserstack.local': 'true',
-    # 'browserstack.selenium_version': '3.5.2',
-    # 'browserstack.localIdentifier': os.environ['BROWSERSTACK_LOCAL_IDENTIFIER']
-}
-
-local_server = {
-    'os': 'Windows',
-    'os_version': '10',
-    'browser': 'Chrome',
-    'browser_version': '63.0',
-    'resolution': '1920x1080',
-    'browserstack.local': 'true',
-    # 'browserstack.selenium_version': '3.5.2',
-    # 'browserstack.localIdentifier': os.environ['BROWSERSTACK_LOCAL_IDENTIFIER']
-}
+from . import helpers
 
 
 @tag("browser")
@@ -56,10 +11,10 @@ class BrowserTest(unittest.TestCase):
 
     def test_local_2(self):
         driver = webdriver.Remote(
-            command_executor=COMMAND_EXECUTOR,
-            desired_capabilities=local_server)
+            command_executor=helpers.COMMAND_EXECUTOR,
+            desired_capabilities=helpers.CAPABILITIES)
 
-        driver.get("http://localhost/en/resources/")
+        driver.get("{}resources/".format(helpers.BASE_URL))
         element = driver.title
         if "Printables" not in element:
             raise Exception("Unable to load local page!")
@@ -67,10 +22,10 @@ class BrowserTest(unittest.TestCase):
 
     def test_local(self):
         driver = webdriver.Remote(
-            command_executor=COMMAND_EXECUTOR,
-            desired_capabilities=local_server)
+            command_executor=helpers.COMMAND_EXECUTOR,
+            desired_capabilities=helpers.CAPABILITIES)
 
-        driver.get("http://localhost/")
+        driver.get(helpers.BASE_URL)
         element = driver.title
         if "CS Unplugged" not in element:
             raise Exception("Unable to load local page!")
@@ -78,10 +33,10 @@ class BrowserTest(unittest.TestCase):
 
     def test_local_dup(self):
         driver = webdriver.Remote(
-            command_executor=COMMAND_EXECUTOR,
-            desired_capabilities=local_server)
+            command_executor=helpers.COMMAND_EXECUTOR,
+            desired_capabilities=helpers.CAPABILITIES)
 
-        driver.get("http://localhost/")
+        driver.get(helpers.BASE_URL)
         element = driver.title
         if "CS Unplugged" not in element:
             raise Exception("Unable to load local page!")
