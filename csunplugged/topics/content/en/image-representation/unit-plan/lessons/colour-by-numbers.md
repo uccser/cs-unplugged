@@ -3,18 +3,19 @@
 ## Key questions
 
 - How do you think computers display images on a screen?
-- How do computers store images when they store all information as digits?
+- How do computers store images if they store all information as digits?
 
 ## Lesson starter
 
-This lesson includes two activities, one which students complete individually and one group activity.
-In each activity you will need enough coloring pages for one per student.
+This lesson includes two activities: one which students complete individually and one group activity.
+In each activity you will need enough colouring pages for one per student.
 These each require different versions of the Pixel Painter worksheets.
 Use the **Black and White colouring type** (the first option on the list), and:
 
-- for the first activity choose from the 1 page images (the star, teacup, or the cat).
+- For the first activity choose from the 1 page images (the star, teacup, or cat).
   You can use a combination of these images, students do not all need to complete the same one,
-- for the second activity choose from the 6, 8, and 9 page images. Print enough for one set of image worksheets per group of students.
+- For the second activity choose from the 6, 8, and 9 page images.
+  Print enough for one set of image worksheets per group of students.
 
 {panel type="general"}
 
@@ -43,7 +44,7 @@ What about megapixels?
 Megapixel means one million pixels.
 Students may have heard the term "megapixels" used before because cameras are often described as being a certain number of megapixels, for example a phone might have a *12-megapixel* camera.
 This describes the resolution of the photos a camera can take.
-A 12-mega pixel camera can produce an image with 12 million pixels in it.
+A 12-megapixel camera can produce an image with 12 million pixels in it.
 
 Television screens and projectors also display images using pixels.
 
@@ -113,12 +114,12 @@ There are diagrams on the worksheet printables which teachers can use to help st
 
 ## Applying what we have just learnt
 
-- Instead of writing the 1's and 0's into each of the boxes on the grid, have students write out the binary digits that represent their image (in the same way as the 'a' in the lesson starter section) and give this to other students and see if they can re-create the same picture.
+- Instead of writing the 1's and 0's into each of the boxes on the grid, have students write out the binary digits that represent their image (in the same way as the 'a' in the lesson starter section), give this to other students, and see if they can recreate the same picture.
 
 - Now that students have tried creating the larger images they could take it a step further and make an image as a whole class.
   The Pixel Painter Parrots option is made up of 32 pages, and is a great challenge for a class.
 
-- Students can also try creating their own pixel art, convert this into a grid of digits, and then have their friends try to re-create their image.
+- Students can also try creating their own pixel art, convert this into a grid of digits, and then have their friends try to recreate their image.
 
 {panel type="general"}
 

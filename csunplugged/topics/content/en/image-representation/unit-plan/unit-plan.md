@@ -4,11 +4,11 @@
 
 # Preparatory knowledge
 
-Students should have completed lesson 1 (for the relevant age group) of the [Binary Numbers unit]('topics:unit_plan' 'binary-numbers' 'unit-plan') before beginning this unit.
+Students should have completed Lesson 1 (for the relevant age group) of the [Binary Numbers unit]('topics:unit_plan' 'binary-numbers' 'unit-plan') before beginning this unit.
 
 {panel end}
 
-Images are everywhere on computers and digital devices.
+Images are everywhere on computers and other digital devices.
 If you think of all the different devices you use, and what you do with them, it is likely that almost all of these will involve a screen or display of some kind!
 Everything you see on computer screens, whether it is photographs, videos, websites, even text, is an image that a digital device has been programmed to display.
 Because modern computers store data as digits, computer images are ultimately represented inside a computer using just 0's and 1's.
@@ -25,7 +25,7 @@ It includes everything seen on a screen, such as videos, websites, apps, text, r
 {panel end}
 
 Computer screens are divided into a grid of tiny squares called {glossary-link term="pixel"}pixels{glossary-link end}.
-These pixels can each show a different colour, and because they are so small when we look at a screen we don't see the individual pixels, instead we see them blend together into an image.
+These pixels can each show a different colour, and because they are so small we don't see the individual pixels on a screen – instead we see them blend together into an image.
 If you look very, very closely at a computer or TV screen (especially older ones) then you might be able to see these individual pixels.
 
 The digits stored in the computer tell each of these pixels what colour they should be and when they should change colour, which means computers can turn a bunch of random looking binary digits into all the beautiful images we see on our screens.
@@ -44,8 +44,8 @@ At this point you have probably noticed the words **represent** and **representa
 
 The type of information a set of digits **represents** changes the way we interpret it.
 For example, if a set of digits represents an image then we interpret those digits as the colours of different pixels.
-If it is meant to be text on the other hand, we interpret it as letters.
-The ability for computers to represent multiple types of information using just two states (represented with binary digits) is one of the things that makes them so powerful.
+If it is meant to be text on the other hand, we interpret it as characters.
+The ability for computers to represent multiple types of information using just binary digits is one of the things that makes them so powerful.
 
 Just like learning about the binary number system, exploring image representation exposes students to the Computational Thinking concepts of Abstraction and Decomposition.
 Students learn to break down images into pixels and then to digits, and how to move back up from digits, to pixels, to images.
@@ -53,16 +53,16 @@ Students learn to break down images into pixels and then to digits, and how to m
 ## Digital Technologies | Algorithms
 
 When pixels are used to represent images, the process we go through to convert digits into these pixels is a type of Algorithm.
-There are many different algorithms computers use to do this, and the one they use depends on things like the file type of the images being displayed, for example if it is a picture like a .png or .jpeg, or a video file like an .mp4 or .avi; or what resolution the image is.
+There are many different algorithms computers use to do this, and the one they use depends on things like the file type of the images being displayed, for example if it is a picture like a `.png` or `.jpeg`, or a video file like an `.mp4` or `.avi`, or what resolution the image is.
 We also use Algorithms to compress images to smaller file sizes, which means they use less memory, can be processed more quickly, and are faster to download.
-Through lerning about image representation students practice algorithmic thinking, pattern matching, and abstract thinking.
+Through learning about image representation students practice algorithmic thinking, pattern matching, and abstract thinking.
 
-## Vocabulary Explained
+## Vocabulary explained
 
 ### Pixel
 
 Computer screens are divided into a grid of tiny coloured squares, which are called pixels.
-The colour of each pixel can be set by a computer and they are used to display images on a computer screen (and printed images).
+The colour of each pixel can be set by a computer and they are used to display images on a computer screen.
 The word pixel is an abbreviation of *picture element*.
 
 ### Display Resolution
@@ -72,14 +72,14 @@ It is usually defined as either the number of pixels per inch on the screen, or 
 
 ## Real world implications
 
-The way images are digitally repersented affects how they are displayed, created, stored, and manipulated.
-The more bits we use to store the colour of a pixel, the more different colours we can make.
+The way images are digitally represented affects how they are displayed, created, stored, and manipulated.
+The more bits we use to store the colour of a pixel, the larger the variety of colours we can make.
 If we use one bit to store the colour of a pixel then we only have two options for what that colour can be (remember, with one bit we can represent two different values only, because we can only use 0 or 1).
 If we use 8 bits (1 byte) then we can display 256 different colours instead, and if we use 24 bits (3 bytes) then we can display over 16 million different colours, which is more than the human eye can see!
 
 However, using more bits to represent a colour will increase the size of an image file.
 This means it will take up more space in memory, take longer for a computer to process and display, and take longer to be transmitted between computers and over the internet.
-Filmakers have to use powerful computers and store large amounts of data when they are editing their videos, otherwise it would take them far too long to do this, or they would have to decrease the image quality of their films.
+Film makers have to use powerful computers and store large amounts of data when they are editing their videos, otherwise it would take them far too long to do this, or they would have to decrease the image quality of their films.
 This is also why old computers can't always run newer games; the older computers simply can't process the game graphics quickly enough to display them.
 
 For some types of images we can use a {glossary-link term="compression"}compression{glossary-link end} algorithm to decrease their file size.
