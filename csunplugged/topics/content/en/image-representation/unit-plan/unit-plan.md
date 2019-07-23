@@ -37,12 +37,12 @@ In this unit students are introduced to simple examples of how they can use digi
 
 ## Digital Technologies | Data Representation
 
-All data on computers is represented with digits, and using these digits to represent other types of data and information is a core concept of Computer Science.
+All data on computers is represented with digits, and using these digits to represent other types of data and information is a core concept of computer science.
 At this point you have probably noticed the words **represent** and **representation** are being used a lot, so let's look at exactly what we mean by this.
 
 {image file-path="img/topics/binary-picture-showing-bits.png" alt="If we look closely at an image on a computer screen we can see it is made up of a grid of tiny dots called pixels. The colour of each of these is stored inside a computer using binary."}
 
-The type of information a set of digits **represents** changes the way we interpret it.
+The way a set of digits **represents** information changes the way we interpret it.
 For example, if a set of digits represents an image then we interpret those digits as the colours of different pixels.
 If it is meant to be text on the other hand, we interpret it as characters.
 The ability for computers to represent multiple types of information using just binary digits is one of the things that makes them so powerful.
@@ -52,9 +52,9 @@ Students learn to break down images into pixels and then to digits, and how to m
 
 ## Digital Technologies | Algorithms
 
-When pixels are used to represent images, the process we go through to convert digits into these pixels is a type of Algorithm.
+When pixels are used to represent images, the process we go through to convert digits into these pixels is a type of algorithm.
 There are many different algorithms computers use to do this, and the one they use depends on things like the file type of the images being displayed, for example if it is a picture like a `.png` or `.jpeg`, or a video file like an `.mp4` or `.avi`, or what resolution the image is.
-We also use Algorithms to compress images to smaller file sizes, which means they use less memory, can be processed more quickly, and are faster to download.
+We also use algorithms to compress images to smaller file sizes, which means they use less memory, can be processed more quickly, and are faster to download.
 Through learning about image representation students practice algorithmic thinking, pattern matching, and abstract thinking.
 
 ## Vocabulary explained
