@@ -42,7 +42,7 @@ What about megapixels?
 # Teaching observations
 
 Megapixel means one million pixels.
-Students may have heard the term "megapixels" used before because cameras are often described as being a certain number of megapixels, for example a phone might have a *12-megapixel* camera.
+Students may have heard the term "megapixels" before because cameras are often described as being a certain number of megapixels, for example a phone might have a *12-megapixel* camera.
 This describes the resolution of the photos a camera can take.
 A 12-megapixel camera can produce an image with 12 million pixels in it.
 
@@ -55,21 +55,21 @@ Teacher to class: Every image we see on a screen, whether it is a picture, a vid
 Show the following images to students on a screen or on the board.
 
 Teacher to class: In a black and white image, each pixel can be either black or white, so all the computer would need to store is which dots are black and which are white.
-For example, if we wanted to display the letter *a* we first need to divide it into squares.
+For example, if we wanted to display the letter *C*, we first need to divide the letter into squares.
 If we zoom in further and further on the letter we can see a grid of pixels similar to these:
 
-{image file-path="img/topics/letter-zooming-to-pixels.png" alt="Three images of the lower case letter 'a' are shown.
+{image file-path="img/topics/letter-zooming-to-pixels.png" alt="Three images of the upper case letter 'C' are shown.
 These progressively zoom in to show the individual black and white squares which make up the letter on the screen."}
 
 We can represent this image using binary digits.
-If a 1 indicates a white square and a 0 indicates a black square then we can represent our letter *a*, on a 5x6 pixel grid, like this:
+If a 1 indicates a white square and a 0 indicates a black square then we can represent our letter *C*, on a 5x6 pixel grid, like this:
 
-**10001, 11110, 10000, 01110, 01110, 10000**
+**10001, 01110, 01111, 01111, 01110, 10001**
 
-If we take these numbers and draw the image they represent we get the letter a:
+If we take these numbers and draw the image they represent we get the letter *C*:
 
 {image file-path="img/topics/pixel-visible-grid-with-letter-and-numbers.png" alt="A six by five grid is shown.
-Some of the squares are white and others are coloured black to create the shape of the letter 'a'.
+Some of the squares are white and others are coloured black to create the shape of the letter 'C'.
 To the right of each row of squares there are five binary digits which describe the image."}
 
 We are using 1 to represent white and 0 to represent black, in the same way we used white and black cards to represent 'on' and 'off' in the binary numbers unit.
@@ -114,7 +114,7 @@ There are diagrams on the worksheet printables which teachers can use to help st
 
 ## Applying what we have just learnt
 
-- Instead of writing the 1's and 0's into each of the boxes on the grid, have students write out the binary digits that represent their image (in the same way as the 'a' in the lesson starter section), give this to other students, and see if they can recreate the same picture.
+- Instead of writing the 1's and 0's into each of the boxes on the grid, have students write out the binary digits that represent their image (in the same way as the 'C' in the lesson starter section), give this to other students, and see if they can recreate the same picture.
 
 - Now that students have tried creating the larger images they could take it a step further and make an image as a whole class.
   The Pixel Painter Parrots option is made up of 32 pages, and is a great challenge for a class.
