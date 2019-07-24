@@ -28,7 +28,7 @@ Computer screens are divided into a grid of tiny squares called {glossary-link t
 These pixels can each show a different colour, and because they are so small we don't see the individual pixels on a screen – instead we see them blend together into an image.
 If you look very, very closely at a computer or TV screen (especially older ones) then you might be able to see these individual pixels.
 
-The digits stored in the computer tell each of these pixels what colour they should be and when they should change colour, which means computers can turn a bunch of random looking binary digits into all the beautiful images we see on our screens.
+The digits stored in the computer tell each of these pixels what colour they should be and when they should change colour, which means computers can turn a bunch of random looking binary digits (bits) into all the beautiful images we see on our screens.
 
 There are many different methods we can use to convert images into digital data and back again.
 The method we choose depends on what type of images the data needs to be converted into.
@@ -73,7 +73,7 @@ It is usually defined as either the number of pixels per inch on the screen, or 
 ## Real world implications
 
 The way images are digitally represented affects how they are displayed, created, stored, and manipulated.
-The more bits we use to store the colour of a pixel, the larger the variety of colours we can make.
+The more bits (binary digits) we use to store the colour of a pixel, the larger the variety of colours we can make.
 If we use one bit to store the colour of a pixel then we only have two options for what that colour can be (remember, with one bit we can represent two different values only, because we can only use 0 or 1).
 If we use 8 bits (1 byte) then we can display 256 different colours instead, and if we use 24 bits (3 bytes) then we can display over 16 million different colours, which is more than the human eye can see!
 

@@ -55,18 +55,18 @@ Teacher to class: Every image we see on a screen, whether it is a picture, a vid
 Show the following images to students on a screen or on the board.
 
 Teacher to class: In a black and white image, each pixel can be either black or white, so all the computer would need to store is which dots are black and which are white.
-For example, if we wanted to display the letter *C*, we first need to divide the letter into squares.
+For example, if we wanted to display the letter **C**, we first need to divide the letter into squares.
 If we zoom in further and further on the letter we can see a grid of pixels similar to these:
 
 {image file-path="img/topics/letter-zooming-to-pixels.png" alt="Three images of the upper case letter 'C' are shown.
 These progressively zoom in to show the individual black and white squares which make up the letter on the screen."}
 
-We can represent this image using binary digits.
-If a 1 indicates a white square and a 0 indicates a black square then we can represent our letter *C*, on a 5x6 pixel grid, like this:
+We can represent this image using binary digits (bits).
+If a 1 indicates a white square and a 0 indicates a black square then we can represent our letter **C**, on a 5x6 pixel grid, like this:
 
 **10001, 01110, 01111, 01111, 01110, 10001**
 
-If we take these numbers and draw the image they represent we get the letter *C*:
+If we take these numbers and draw the image they represent we get the letter **C**:
 
 {image file-path="img/topics/pixel-visible-grid-with-letter-and-numbers.png" alt="A six by five grid is shown.
 Some of the squares are white and others are coloured black to create the shape of the letter 'C'.
@@ -142,5 +142,5 @@ This lesson has just covered black and white images, why can't we do more than t
 
 What could we do to represent more colours?
 
-- If we want each pixel to be able to show more colours other than black and white then we need to use more numbers (or binary digits) to represent the colour of each pixel.
+- If we want each pixel to be able to show more colours other than black and white then we need to use more numbers (i.e. more binary digits) to represent the colour of each pixel.
   This will be explored in future lessons.
