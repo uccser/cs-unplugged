@@ -7,7 +7,7 @@
 
 ## Lesson starter
 
-This lesson includes two activities: one which students complete individually and one group activity.
+This lesson includes two activities: one that students complete individually and one group activity.
 In each activity you will need enough colouring pages for one per student.
 These each require different versions of the Pixel Painter worksheets.
 Use the **Black and White colouring type** (the first option on the list), and:
@@ -23,7 +23,7 @@ Use the **Black and White colouring type** (the first option on the list), and:
 
 - Print spare copies of each worksheet in case students make mistakes and need a new one.
 - Use the **Black and White (2 possible binary values)** colouring option, **not** the option which says "in Run Length Encoding".
-- Students can instead use a black colouring pencil, crayon, or felt tip pen, but easily erasable pencils work much better for the first time students do this activity.
+- Students can use a black colouring pencil, crayon, or felt tip pen, but easily erasable pencils work much better for the first time students do this activity.
 
 {panel end}
 
@@ -46,7 +46,7 @@ Students may have heard the term "megapixels" before because cameras are often d
 This describes the resolution of the photos a camera can take.
 A 12-megapixel camera can produce an image with 12 million pixels in it.
 
-Television screens and projectors also display images using pixels.
+Television screens and data projectors also display images using pixels.
 
 {panel end}
 
@@ -90,14 +90,18 @@ Advise them to colour them in lightly at first, and then when they are sure they
 As they work through the worksheet they should see an image emerging.
 
 Teacher to class: Now that we have made some simple images with our numbers and pixels, we can try making some more detailed and complicated ones.
-How do you think we could make more complicated or higher quality images?
+How do you think we could make more detailed images?
 
 {panel type="general"}
 
 # Teaching observations
 
 Possible answers include adding more colours.
-This is a good answer and colours are part of more advanced lessons in this unit, but this lesson only focusses on black and white pixels, so bring students back to this and ask them how they can make a black and white image more detailed.
+This is a good answer and colours are part of more advanced lessons in this unit, but this lesson only focusses on black and white pixels, so bring students back to this and ask them how they can make a more detailed black and white image.
+
+The may also suggest using smaller pixels for the same image they coloured in.
+This is a good answer and could be an idea for students to explore with in subsequent classes.
+For now we are looking at creating other more complicated and detailed images, rather than making the previous ones more detailed though.
 
 {panel end}
 
@@ -105,37 +109,36 @@ The answer you are looking for is to use more pixels for the image, which is wha
 
 Put students into groups and give each group a set of the multipage image worksheets, so that each student has a page to work on.
 If this is not possible with the number of students you have just make sure groups are small enough for each students to have at least one page, or preferably for each student to have the same number of pages.
-For example have groups of 3 work on a 6 page image, so each student has 2 pages to complete.
+For example, have groups of 3 work on a 6 page image, so each student has 2 pages to complete.
 
-Teacher to class: These sets of grids can all be put together to create one larger image, which has much more pixels than the last ones. you are each going to colour in the pixels on your own sheet, in the same way as before, and then put the whole image together.
+Teacher to class: These sets of grids can all be put together to create one larger image, which contains much more pixels than the previous ones.
+You are each going to colour in the pixels on your own sheet, in the same way as before, and then put the whole image together.
 
 Once students have coloured in their sheets they can arrange them together to create the whole image.
 There are diagrams on the worksheet printables which teachers can use to help students put their images together if they get stuck.
 
 ## Applying what we have just learnt
 
-- Instead of writing the 1's and 0's into each of the boxes on the grid, have students write out the binary digits that represent their image (in the same way as the 'C' in the lesson starter section), give this to other students, and see if they can recreate the same picture.
+- Students could use a grid or graph paper to create their own images.
+  Have students write out the binary digits that represent their image (in the same way as the 'C' in the lesson starter section, instead of writing the 1's and 0's into each of the boxes on the grid), give this to other students, and see if they can recreate the same picture.
+
+- There are a number of websites avaliable that students can use to easily create pixel art.
+  They can create their own pixel art, convert this into a grid of digits, and then have their friends try to recreate their image.
 
 - Now that students have tried creating the larger images they could take it a step further and make an image as a whole class.
   The Pixel Painter Parrots option is made up of 32 pages, and is a great challenge for a class.
-
-- Students can also try creating their own pixel art, convert this into a grid of digits, and then have their friends try to recreate their image.
 
 {panel type="general"}
 
 # Notes on resources
 
-Students could use grid or graph paper to create their pictures, or a printed grid.
-There is a printable 8 by 8 grid in the printables section.
-
-There are a number of websites students can also use to easily create pixel art.
-After creating their images they can try converting these to grid paper as well.
+There is an 8 by 8 [grid]('resources:resource' 'grid') in the printables section which can be used for drawing these images.
 
 {panel end}
 
 ## Lesson reflection
 
-This lesson has just covered black and white images, why can't we do more than two colours with this activity?
+This lesson has just covered black and white images; why can't we do more than two colours with this activity?
 
 - With one binary digit we can only represent two different values.
   This means if we use one digit to represent the colour of one pixel, then each pixel can only be one of two different colours.
