@@ -1,4 +1,4 @@
-FROM uccser/django:1.11.14-with-weasyprint
+FROM uccser/django:2.2.3-with-weasyprint
 
 # Add metadata to Docker image
 LABEL maintainer="csse-education-research@canterbury.ac.nz"

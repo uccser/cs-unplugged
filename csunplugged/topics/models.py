@@ -38,7 +38,8 @@ class CurriculumArea(TranslatableModel):
     parent = models.ForeignKey(
         "self",
         null=True,
-        related_name="children"
+        related_name="children",
+        on_delete=models.CASCADE
     )
 
     def __str__(self):
