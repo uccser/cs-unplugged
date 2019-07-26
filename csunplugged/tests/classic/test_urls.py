@@ -420,14 +420,14 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
             fetch_redirect_response=False
         )
 
-    def test_wp_content(self):
-        response = self.client.get("/wp-content")
-        self.assertRedirects(
-            response,
-            "http://classic.csunplugged.org/wp-content/",
-            status_code=301,
-            fetch_redirect_response=False
-        )
+    # def test_wp_content(self):
+    #     response = self.client.get("/wp-content")
+    #     self.assertRedirects(
+    #         response,
+    #         "http://classic.csunplugged.org/wp-content/",
+    #         status_code=301,
+    #         fetch_redirect_response=False
+    #     )
 
     def test_wp_content_file(self):
         response = self.client.get("/wp-content/uploads/2015/03/CSUnplugged_OS_2015_v3.1.pdf")
