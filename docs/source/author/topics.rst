@@ -112,6 +112,7 @@ Adding Content
 The following flow charts will take you step by step through the process of adding new
 content to the topics application. Below this section is full details on how to structure
 and write the configuration files for the topics application.
+These charts and descriptions will use "Algorithms" as an example topic.
 
 .. _adding-a-topic:
 
@@ -126,14 +127,20 @@ To set up a new topic, which you can then add content to, you will first need to
 - Create a set of required directories and config files within the ``topics/structure/`` directory.
 - Add the minimum required configuration settings to these files.
 
-After these steps have been completed you can run the csu update command, and view
-the topic at localhost/en/topics/
+After these steps have been completed you can run ``./csu update``, and view
+the topic at:
 
-The following flow charts will take you through this process.
+.. code-block:: none
+
+  localhost/en/topics/
+
+To create the required directories and markdown files follow this flow chart:
 
 .. image:: ../_static/img/topics_adding_topic_content_files_flowchart.png
 
-Adding content to these files...
+Each of these markdown files must include at least one heading and...
+
+To create the required directories and config files follow this flow chart:
 
 .. image:: ../_static/img/topics_adding_topic_structure_files_flowchart.png
 
