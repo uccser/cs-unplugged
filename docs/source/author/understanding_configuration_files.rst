@@ -26,7 +26,7 @@ in the CS Unplugged project:
     curriculum-areas:
       - listening
 
-This page aims to give a brief tutorial on YAML files, so you can modify
+This page aims to give a brief tutorial on YAML files, so you can modify and write
 configuration files within this project.
 
 YAML files are mostly made up of key/value pairs, often called a dictionary
@@ -68,4 +68,4 @@ This is because it is difficult to read files using deep nesting
 avoid this issue.
 
 If you want to learn more about YAML, there are plenty of great tutorials
-available on the internet.
+available online.

@@ -2,7 +2,7 @@ Topic Content
 ##############################################################################
 
 .. warning::
-  All flowcharts in this guide need to be updated to reflect changes to the content directory structure.
+  Most flowcharts in this guide need to be updated to reflect changes to the content directory structure.
   This is tracked by `isssue/749 <https://github.com/uccser/cs-unplugged/issues/749>`__.
 
 The topics application (see :ref:`what-is-an-application`) is the main focus of
@@ -15,8 +15,7 @@ for the project.
 Topics Overview
 ==============================================================================
 
-A general overview of the topics application can be described in the following
-diagram.
+The following diagram shows the general structure of the topics application.
 
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. image:: ../_static/img/topics_overview_diagram.png
@@ -39,20 +38,24 @@ diagram.
     - A **programming challenge** can use different **programming languages**, and be set at
       a specific **difficulty**.
 
-- **Learning outcomes**, **curriculum areas**, **glossary definitions**,
-  **programming languages**, and **programming challenge difficulties** are
-  defined at a language level, so can be used by all topic content
-  of that language.
+- **Programming challenges**, **learning outcomes**, **curriculum areas**, and
+  **glossary definitions**, are defined at a language level (e.g. English or German,
+  not programming language), so can be used by all topics within that language directory.
 
-This is just a broad overview of the topics application.
-The following sections provide more details.
+This is a broad overview of the topics application, and the following sections provide more details.
 
 Viewing All Topics Content
 ------------------------------------------------------------------------------
 
-When developing locally, once you have run ``./csu start`` (see
-:doc:`../getting_started/helper_commands`) you can go to the url below to get a
-quick overview of what content is loaded:
+When developing locally, once you have run ``./csu start`` and ``./csu update`` (see
+:doc:`../getting_started/helper_commands`) you can go to the url below to see your
+local version of the website:
+
+.. code-block:: none
+
+  localhost/
+
+You can also go to the url below to get a quick overview of what content is loaded:
 
 .. code-block:: none
 
@@ -65,14 +68,17 @@ For more information about what this page displays, see :doc:`../developer/dev`.
 Topics Content Directory
 ==============================================================================
 
-The ``content`` directory for the topics application contains
+The ``content`` directory for the topics application contains:
 
-- a directory for each language in which content exists, named using the Django locale code. This directory contains
+- A directory for each language in which content exists, named using the Django
+  locale code. These language directories each contain:
 
-  - A folder for each Topic, containing the content Markdown files
-  - YAML files containing translatable strings
+  - A folder for each Topic, containing the content Markdown files.
+  - YAML files containing translatable strings.
 
-- a special ``structure`` directory which contains all configuration YAML files
+- Several auto-generated directories. Please ignore these.
+
+- A ``structure`` directory which contains all configuration YAML files.
 
 .. _file-types:
 
@@ -85,14 +91,18 @@ There are 3 different types of files used for adding content to CS Unplugged:
 - YAML files containing translatable strings
 - YAML configuration files
 
-All files live inside the ``topics/content`` directory.
-The first two files are unique for each translation language, and are stored in a directory tree specific to that language.
+All of these files live inside the ``topics/content`` directory.
+The first two types of files are unique for each language, and are stored in a
+directory tree specific to that language.
 This directory is named using the languages Django locale code eg. ``en``, ``de_AT``.
-Configuration files are shared amongst all languages, because the content structure is the same for all languages.
+The YAML configuration files are shared amongst all languages, because the content structure
+is the same for all languages.
 These files live under a special ``structure`` directory.
 
-As a simple rule, structure files situated inside the ``structure`` directory contain **no** text a website user will see.
-Any user facing text lives in either a Markdown file or a YAML translation file inside the locale specific directories.
+As a simple rule, structure files situated inside the ``structure`` directory
+contain **no** text a website user will see.
+Any user facing text lives in either a Markdown file or a YAML translation file
+inside the locale specific directories.
 
 .. _adding-topics-content:
 
@@ -110,12 +120,14 @@ Adding a Topic
 
 To set up a new topic, which you can then add content to, you will first need to:
 
-- Create a set of required directories and markdown files within the ``topics/content/en/`` directory (replace ``en/`` if you are creating content for a different language, e.g. ``de/``).
+- Create a set of required directories and markdown files within the ``topics/content/en/``
+  directory (replace ``en/`` if you are creating content for a different language, e.g. ``de/``).
 - Add several required headings to these files.
 - Create a set of required directories and config files within the ``topics/structure/`` directory.
 - Add the minimum required configuration settings to these files.
 
-After these steps have been completed you can run the csu update command, and view the topic at localhost/en/topics/
+After these steps have been completed you can run the csu update command, and view
+the topic at localhost/en/topics/
 
 The following flow charts will take you through this process.
 
@@ -287,7 +299,8 @@ The translation YAML file containing learning outcomes descriptions:
 - **Is in:** ``topics/content/en``
 - **Is called:** ``learning-outcomes.yaml``
 - **Contains:** Descriptions of all learning outcomes. Every learning outcome
-  key present in the `Learning Outcomes Configuration File`_ must be present in the English translation file.
+  key present in the `Learning Outcomes Configuration File`_ must be present in
+  the English translation file.
 
   For example,
 
@@ -333,7 +346,8 @@ The translation YAML file containing curriculum areas descriptions:
 - **Is in:** ``topics/content/en``
 - **Is called:** ``curriculum-areas.yaml``
 - **Contains:** Descriptions of all curriculum areas. Every curriculum area
-  key present in the `Curriculum Areas Configuration File`_ must be present in the English translation file.
+  key present in the `Curriculum Areas Configuration File`_ must be present in
+  the English translation file.
 
   For example,
 
@@ -511,7 +525,8 @@ The translation YAML file containing classroom resource descriptions:
 - **Is in:** ``topics/content/en``
 - **Is called:** ``classroom-resources.yaml``
 - **Contains:** Descriptions of all classroom resources. Every classroom resource
-  key present in the `Classroom Resources Configuration File`_ must be present in the English translation file.
+  key present in the `Classroom Resources Configuration File`_ must be present in
+  the English translation file.
   Descriptions must be short (less than 100 characters), as this list is displayed on the lesson sidebar.
   If a longer description is required, this should be within the lesson text within a panel.
 
@@ -536,7 +551,8 @@ The translation YAML file containing age group descriptions:
 
 - **Is in:** ``topics/content/en``
 - **Is called:** ``age-groups.yaml``
-- **Contains:** Optional descriptions of programming challenge defined in the `Age Group Configuration File`_ .
+- **Contains:** Optional descriptions of programming challenge defined in the
+  `Age Group Configuration File`_ .
 
   For example,
 
@@ -556,7 +572,8 @@ The translation YAML file containing difficulty descriptions:
 - **Is in:** ``topics/content/en``
 - **Is called:** ``programming-challenges-structure-difficulties.yaml``
 - **Contains:** Descriptions of difficulties defined in the `Programming Challenges Structure Configuration File`_.
-  Every difficulty key present in the configuration file must also be present in the English YAML translation file.
+  Every difficulty key present in the configuration file must also be present in
+  the English YAML translation file.
 
   For example,
 
