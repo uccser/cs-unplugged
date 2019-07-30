@@ -17,6 +17,7 @@ class DetailsElementTest(unittest.TestCase):
             command_executor=helpers.COMMAND_EXECUTOR,
             desired_capabilities=helpers.CAPABILITIES)
 
+        helpers.load_page(driver, 'topics/binary-numbers/unit-plan/')
 
         element = driver.find_element_by_xpath('//*[@id="content-container"]/div/div[2]/details/div')
         assert(not element.is_displayed())
