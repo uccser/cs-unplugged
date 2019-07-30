@@ -65,6 +65,11 @@ def load_home_page(driver):
     hide_dev_toolbar(driver)
 
 
+def load_page(driver, path):
+    driver.get(BASE_URL + path)
+    hide_dev_toolbar(driver)
+
+
 def hide_dev_toolbar(driver):
     if BASE_URL == LOCAL_URL:
         driver.find_element_by_id("djHideToolBarButton").click()
