@@ -32,7 +32,7 @@ try:
     ACCESS_KEY = os.environ['KEY']
     BASE_URL = LOCAL_URL
     CAPABILITIES = LOCAL_SERVER_CAPABILITIES
-except KeyError as e:
+except KeyError:
     file = open('in_browser/local_browser_testing.txt')
     ACCESS_KEY = file.readline()
     file.close()
