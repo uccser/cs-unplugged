@@ -7,7 +7,7 @@ from . import helpers
 
 @tag("browser")
 class GlossaryTest(unittest.TestCase):
-    """Test cases for using the language selector"""
+    """Test cases for checking the contents of glossary items"""
 
     def test_binary_numbers_algorithm(self):
         driver = webdriver.Remote(

@@ -8,7 +8,7 @@ from . import helpers
 
 @tag("browser")
 class DetailsElementTest(unittest.TestCase):
-    """Test cases for using the language selector"""
+    """Test cases for accessing details elements"""
 
     def test_binary_numbers_unit_plan(self):
         driver = webdriver.Remote(

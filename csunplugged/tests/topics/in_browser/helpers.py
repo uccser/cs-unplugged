@@ -1,4 +1,4 @@
-""" Helper functions and variables for the running of the in-browser tests """
+"""Helper functions and variables for the running of the in-browser tests."""
 
 import os
 
