@@ -1,3 +1,5 @@
+""" Helper functions and variables for the running of the in-browser tests """
+
 import os
 
 TITLE_ERROR_TEXT = "Failed to load page\nExpected title = {}, got {}"
