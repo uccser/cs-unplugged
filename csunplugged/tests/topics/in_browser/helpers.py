@@ -62,7 +62,7 @@ def check_title_and_url(driver, expected_title, expected_url):
 
 
 def load_home_page(driver):
-    """Loads the base url and checks the title is correct."""
+    """Load the base url and checks the title is correct."""
     driver.get(BASE_URL)
     if driver.title != "CS Unplugged":
         raise Exception(TITLE_ERROR_TEXT.format(driver.title, "CS Unplugged"))
@@ -70,19 +70,19 @@ def load_home_page(driver):
 
 
 def load_page(driver, path):
-    """Loads the desired url excluding the base url."""
+    """Load the desired url excluding the base url."""
     driver.get(BASE_URL + path)
     hide_dev_toolbar(driver)
 
 
 def hide_dev_toolbar(driver):
-    """Hides the tool bar if the test has been run in developer mode, ie it has been run locally."""
+    """Hide the tool bar if the test has been run in developer mode, ie it has been run locally."""
     if BASE_URL == LOCAL_URL:
         driver.find_element_by_id("djHideToolBarButton").click()
 
 
 def change_language(driver, lang_code):
-    """Changes the language to the language code given."""
+    """Change the language to the language code given."""
     driver.find_element_by_id("navbarLanguageSelector").click()
     driver.find_element_by_link_text(language_dict[lang_code]).click()
     lang_value = driver.find_element_by_tag_name("html").get_attribute("lang")
