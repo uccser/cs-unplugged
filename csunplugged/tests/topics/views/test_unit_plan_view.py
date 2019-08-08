@@ -102,6 +102,16 @@ class UnitPlanViewTest(BaseTestWithDB):
             raise Exception("Unable to load local page!")
         driver.quit()
 
+        driver = webdriver.Remote(
+            command_executor=helpers.COMMAND_EXECUTOR,
+            desired_capabilities=CAPABILITIES)
+
+        driver.get(helpers.BASE_URL)
+        element = driver.title
+        if "CS Unplugged" not in element:
+            raise Exception("Unable to load local page!")
+        driver.quit()
+
         response = self.client.get(url)
         self.assertEqual(
             len(response.context["grouped_lessons"]),
