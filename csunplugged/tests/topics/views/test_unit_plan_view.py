@@ -116,7 +116,7 @@ class UnitPlanViewTest(BaseTestWithDB):
             command_executor=helpers.COMMAND_EXECUTOR,
             desired_capabilities=CAPABILITIES)
 
-        driver.get("http://localhost" + url)
+        driver.get(url)
         element = driver.title
         if "CS Unplugged" not in element:
             raise Exception("Unable to load local page!")
