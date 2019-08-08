@@ -79,8 +79,29 @@ class UnitPlanViewTest(BaseTestWithDB):
             "unit_plan_slug": unit_plan.slug,
         }
         url = reverse("topics:unit_plan", kwargs=kwargs)
-        print("HERE!!!")
-        print(url)
+
+
+        #TODO remove this selenium test after check.
+        CAPABILITIES = {
+            'os': 'Windows',
+            'os_version': '10',
+            'browser': 'Chrome',
+            'browser_version': '60.0',
+            'resolution': '1920x1080',
+            'browserstack.local': 'true'
+        }
+        from selenium import webdriver
+        from ..in_browser import helpers
+        driver = webdriver.Remote(
+            command_executor=helpers.COMMAND_EXECUTOR,
+            desired_capabilities=CAPABILITIES)
+
+        driver.get(helpers.BASE_URL)
+        element = driver.title
+        if "CS Unplugged" not in element:
+            raise Exception("Unable to load local page!")
+        driver.quit()
+
         response = self.client.get(url)
         self.assertEqual(
             len(response.context["grouped_lessons"]),
