@@ -96,9 +96,9 @@ class UnitPlanViewTest(BaseTestWithDB):
             command_executor=helpers.COMMAND_EXECUTOR,
             desired_capabilities=CAPABILITIES)
 
-        driver.get(helpers.BASE_URL)
+        driver.get("{}resources/".format(helpers.BASE_URL))
         element = driver.title
-        if "CS Unplugged" not in element:
+        if "Printables" not in element:
             raise Exception("Unable to load local page!")
         driver.quit()
 
