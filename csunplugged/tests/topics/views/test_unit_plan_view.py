@@ -116,13 +116,16 @@ class UnitPlanViewTest(BaseTestWithDB):
             command_executor=helpers.COMMAND_EXECUTOR,
             desired_capabilities=CAPABILITIES)
 
-        driver.get(url)
+        driver.get("127.0.0.1" + url)
         element = driver.title
         if "CS Unplugged" not in element:
             raise Exception("Unable to load local page!")
         driver.quit()
 
         response = self.client.get(url)
+        print("VALUES TO FOLLOW")
+        print(type(response))
+        print(response)
         self.assertEqual(
             len(response.context["grouped_lessons"]),
             1
