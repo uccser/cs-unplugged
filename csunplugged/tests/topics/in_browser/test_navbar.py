@@ -1,38 +1,27 @@
-import unittest
-
-from django.test import tag
-from selenium import webdriver
-
 from . import helpers
+from .BaseBrowserTest import BaseBrowserTest
 
 
-@tag("browser")
-class NavbarTest(unittest.TestCase):
+class NavbarTest(BaseBrowserTest):
     """ Test cases for using the navigation bar"""
 
     def test_navbar_loads_pages(self):
-        driver = webdriver.Remote(
-            command_executor=helpers.COMMAND_EXECUTOR,
-            desired_capabilities=helpers.CAPABILITIES)
 
         # Home page
-        helpers.load_home_page(driver)
+        helpers.load_home_page(self.driver)
 
         # Topics page
-        driver.find_element_by_link_text("Topics").click()
-        helpers.check_title_and_url(driver, "Topics - CS Unplugged", "{}topics/".format(helpers.BASE_URL))
+        self.driver.find_element_by_link_text("Topics").click()
+        helpers.check_title_and_url(self.driver, "Topics - CS Unplugged", "{}topics/".format(helpers.BASE_URL))
 
         # Printables page
-        driver.find_element_by_link_text("Printables").click()
-        helpers.check_title_and_url(driver, "Printables - CS Unplugged", "{}resources/".format(helpers.BASE_URL))
+        self.driver.find_element_by_link_text("Printables").click()
+        helpers.check_title_and_url(self.driver, "Printables - CS Unplugged", "{}resources/".format(helpers.BASE_URL))
 
         # About page
-        driver.find_element_by_link_text("About").click()
-        helpers.check_title_and_url(driver, "About - CS Unplugged", "{}about/".format(helpers.BASE_URL))
+        self.driver.find_element_by_link_text("About").click()
+        helpers.check_title_and_url(self.driver, "About - CS Unplugged", "{}about/".format(helpers.BASE_URL))
 
         # Return to home page
-        driver.find_element_by_id("navbar-brand-logo").click()
-        helpers.check_title_and_url(driver, "CS Unplugged", helpers.BASE_URL)
-
-        # Close driver
-        driver.quit()
+        self.driver.find_element_by_id("navbar-brand-logo").click()
+        helpers.check_title_and_url(self.driver, "CS Unplugged", helpers.BASE_URL)
