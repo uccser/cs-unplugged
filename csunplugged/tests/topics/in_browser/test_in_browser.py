@@ -20,6 +20,7 @@ class BrowserTest(unittest.TestCase):
         if "Printables" not in element:
             raise Exception("Unable to load local page!")
         driver.quit()
+        print(self._testMethodName)
 
     def test_local(self):
         driver = webdriver.Remote(

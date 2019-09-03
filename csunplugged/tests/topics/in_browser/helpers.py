@@ -54,7 +54,7 @@ language_dict = {
 
 
 def check_title_and_url(driver, expected_title, expected_url):
-    """Checks that the title and url are correct."""
+    """Check that the title and url are correct."""
     if driver.title != expected_title:
         raise Exception(TITLE_ERROR_TEXT.format(expected_title, driver.title))
     if driver.current_url != expected_url:
