@@ -9,7 +9,8 @@ from . import helpers
 
 @tag("browser")
 class BaseBrowserTest(unittest.TestCase):
-    """ Base test class for the in_browser test suite
+    """ Base test class for the in_browser test suite.
+
         This supplies the setup of the selenium driver, its teardown, and the setting of BrowserStack test names."""
 
     def setUp(self):

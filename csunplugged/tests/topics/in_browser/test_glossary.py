@@ -10,7 +10,7 @@ class GlossaryTest(BaseBrowserTest):
 
         # Click algorithms glossary link
         # Shakey solution no.1: Finds link 'n' within paragraph 'm'
-        self.self.driver.find_element_by_xpath('//*[@id="content-container"]/div/div[3]/p[5]/a[1]').click()
+        self.driver.find_element_by_xpath('//*[@id="content-container"]/div/div[3]/p[5]/a[1]').click()
 
         # Shakey solution no.2: Finds first clickable link with text 'algorithms'
         # self.driver.find_element_by_link_text('algorithms')
