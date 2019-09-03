@@ -80,52 +80,8 @@ class UnitPlanViewTest(BaseTestWithDB):
         }
         url = reverse("topics:unit_plan", kwargs=kwargs)
 
-        #
-        # #TODO remove this selenium test after check.
-        # CAPABILITIES = {
-        #     'os': 'Windows',
-        #     'os_version': '10',
-        #     'browser': 'Chrome',
-        #     'browser_version': '60.0',
-        #     'resolution': '1920x1080',
-        #     'browserstack.local': 'true'
-        # }
-        # from selenium import webdriver
-        # from ..in_browser import helpers
-        # driver = webdriver.Remote(
-        #     command_executor=helpers.COMMAND_EXECUTOR,
-        #     desired_capabilities=CAPABILITIES)
-        #
-        # driver.get("{}resources/".format(helpers.BASE_URL))
-        # element = driver.title
-        # if "Printables" not in element:
-        #     raise Exception("Unable to load local page!")
-        # driver.quit()
-        #
-        # driver = webdriver.Remote(
-        #     command_executor=helpers.COMMAND_EXECUTOR,
-        #     desired_capabilities=CAPABILITIES)
-        #
-        # driver.get(helpers.BASE_URL)
-        # element = driver.title
-        # if "CS Unplugged" not in element:
-        #     raise Exception("Unable to load local page!")
-        # driver.quit()
-        #
-        # driver = webdriver.Remote(
-        #     command_executor=helpers.COMMAND_EXECUTOR,
-        #     desired_capabilities=CAPABILITIES)
-        #
-        # driver.get("127.0.0.1" + url)
-        # element = driver.title
-        # if "CS Unplugged" not in element:
-        #     raise Exception("Unable to load local page!")
-        # driver.quit()
-
         response = self.client.get(url)
-        print("VALUES TO FOLLOW")
-        print(type(response))
-        print(response)
+
         self.assertEqual(
             len(response.context["grouped_lessons"]),
             1
