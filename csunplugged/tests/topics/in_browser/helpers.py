@@ -12,7 +12,7 @@ LIVE_URL = "https://csunplugged.org/en/"
 BASE_URL = None
 CAPABILITIES = None
 
-LIVE_SERVER_CAPABILITIES = {
+DEV_TESTING_ON_LIVE_SERVER_CAPABILITIES = {
     'os': 'Windows',
     'os_version': '10',
     'browser': 'Chrome',
@@ -20,7 +20,16 @@ LIVE_SERVER_CAPABILITIES = {
     'resolution': '1920x1080'
 }
 
-LOCAL_SERVER_CAPABILITIES = {
+DEV_TESTING_PARAMETERIZATION_TEST_CAPABILITIES = {
+    'os': 'Windows',
+    'os_version': '10',
+    'browser': 'Chrome',
+    'browser_version': '62.0',
+    'resolution': '1920x1080'
+}
+
+
+TRAVIS_BUILD_CAPABILITIES = {
     'os': 'Windows',
     'os_version': '10',
     'browser': 'Chrome',
@@ -33,13 +42,13 @@ LOCAL_SERVER_CAPABILITIES = {
 try:
     ACCESS_KEY = os.environ['KEY']
     BASE_URL = LOCAL_URL
-    CAPABILITIES = LOCAL_SERVER_CAPABILITIES
+    CAPABILITIES = TRAVIS_BUILD_CAPABILITIES
 except KeyError:
     file = open('in_browser/local_browser_testing.txt')
     ACCESS_KEY = file.readline()
     file.close()
     BASE_URL = LIVE_URL
-    CAPABILITIES = LIVE_SERVER_CAPABILITIES
+    CAPABILITIES = DEV_TESTING_ON_LIVE_SERVER_CAPABILITIES
     pass
 
 COMMAND_EXECUTOR = 'http://cseducationresea1:' + ACCESS_KEY + '@hub.browserstack.com:80/wd/hub'
