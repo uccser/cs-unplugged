@@ -9,11 +9,13 @@ from . import helpers
 
 @tag("browser")
 class BaseBrowserTest(unittest.TestCase):
-    """ Base test class for the in_browser test suite.
-
-        This supplies the setup of the selenium driver, its teardown, and the setting of BrowserStack test names."""
+    """Base test class for the in_browser test suite."""
 
     def setUp(self):
+        """Automatically called before each test.
+
+        Creates the selenium driver and sets the BrowserStack capabilities.
+        """
         test_capabilities = copy.deepcopy(helpers.CAPABILITIES)
         test_capabilities['name'] = self._testMethodName
         self.driver = webdriver.Remote(
@@ -21,4 +23,8 @@ class BaseBrowserTest(unittest.TestCase):
             desired_capabilities=test_capabilities)
 
     def tearDown(self):
+        """Automatically called after each test.
+
+        Quits the selenium webdriver.
+        """
         self.driver.quit()
