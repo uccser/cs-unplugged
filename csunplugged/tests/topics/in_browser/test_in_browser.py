@@ -1,16 +1,7 @@
-import pytest
-
 from . import helpers
 from .BaseBrowserTest import BaseBrowserTest
 
 
-@pytest.hookimpl(hookwrapper=True)
-def pytest_runtest_protocol(item, nextitem):
-    item.cls._item = item
-    yield
-
-
-@pytest.mark.parametrize("caps", [helpers.CAPABILITIES, helpers.DEV_TESTING_PARAMETERIZATION_TEST_CAPABILITIES])
 class BrowserTest(BaseBrowserTest):
     """ Test cases for the in_browser test suite"""
 
