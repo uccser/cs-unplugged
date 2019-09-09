@@ -30,8 +30,9 @@ The following diagram shows the general structure of the topics application.
       - A **lesson** can contain **learning outcomes**, and
         **generated resources**.
 
-  - A **topic** can also contain **curriculum integrations**, which can also contain
-    **curriculum areas**.
+  - A **topic** can also contain **curriculum integrations**.
+
+    - A **curriculum integration** can also contain **curriculum areas**.
 
   - A **topic** can also contain **programming challenges**.
 
@@ -74,7 +75,7 @@ The ``content`` directory for the topics application contains:
   locale code. These language directories each contain:
 
   - A folder for each Topic, containing the content Markdown files.
-  - YAML files containing translatable strings.
+  - YAML files containing strings that need to be translated in each different language folder.
 
 - Several auto-generated directories. Please ignore these.
 
@@ -110,9 +111,9 @@ Adding Content
 ==============================================================================
 
 The following flow charts will take you step by step through the process of adding new
-content to the topics application. Below this section is full details on how to structure
+content to the topics application. Below this section are full details on how to structure
 and write the configuration files for the topics application.
-These charts and descriptions will use "Algorithms" as an example topic.
+These charts and descriptions will use "Binary" as an example topic.
 
 .. _adding-a-topic:
 
@@ -121,11 +122,16 @@ Adding a Topic
 
 To set up a new topic, which you can then add content to, you will first need to:
 
-- Create a set of required directories and markdown files within the ``topics/content/en/``
+- Create a set of required directories and Markdown files within the ``topics/content/en/``
   directory (replace ``en/`` if you are creating content for a different language, e.g. ``de/``).
-- Add several required headings to these files.
+- Add the required headings to these files.
 - Create a set of required directories and config files within the ``topics/structure/`` directory.
 - Add the minimum required configuration settings to these files.
+
+Before you can run ``./csu update`` and view the topic on your local machine, these Markdown
+and YAML files must contain some required headings and content. We recommend adding some
+placeholder content to these files and checking that you can view them locally, before moving
+on to adding content.
 
 After these steps have been completed you can run ``./csu update``, and view
 the topic at:
@@ -134,48 +140,55 @@ the topic at:
 
   localhost/en/topics/
 
-To create the required directories and markdown files follow this flow chart:
+To create the required directories and Markdown files follow this flow chart:
 
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. image:: ../_static/img/topics_adding_topic_content_files_flowchart.png
 
-Each of these markdown files must include at least one heading and...
+Add the following content to these Markdown files:
+
+- An H1 heading (i.e. has a single ``#`` prefix) and some placeholder text to the **topic** description Markdown file.
+
+  - For example, add ``# Binary`` to the top of the file and the placeholder text ``test`` underneath this.
+
+- An H1 heading and placeholder text to the **unit-plan** Markdown file.
+
+- An H1 heading and placeholder text to the **lesson** Markdown file.
 
 To create the required directories and config files follow this flow chart:
-
-.. image:: ../_static/img/topics_adding_topic_structure_files_flowchart.png
-
-Adding content to these files...
-
-Previous version of Adding a Topic
-------------------------------------------------------------------------------
 
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. The image is included as raw HTML because it has clickable nodes.
 .. raw:: html
 
-  <map name="topics-map">
-    <area shape="rect" coords="240,308,317,343" href="#topic-configuration-file">
-    <area shape="rect" coords="240,410,317,445" href="#application-structure-configuration-file">
-    <area shape="rect" coords="240,513,317,550" href="#adding-a-unit-plan">
-    <area shape="rect" coords="240,615,317,650" href="../getting_started/helper_commands.html#update">
+  <map name="topic-structure-files-map">
+    <area shape="rect" coords="236,230,312,264" href="#topic-configuration-file">
+    <area shape="rect" coords="236,435,312,468" href="#unit-plan-configuration-file">
+    <area shape="rect" coords="236,633,312,668" href="#adding-a-lesson">
   </map>
-  <img src="../_static/img/topics_adding_topic_flowchart_old.png" usemap="#topics-map">
+  <img src="../_static/img/topics_adding_topic_structure_files_flowchart.png" usemap="#topic-structure-files-map">
 
-The Markdown file containing the description of the topic:
+Add the required fields, and their keys, to these YAML files:
+
+- The **topic** config file. The required fields are listed in the :ref:`topic-file` section.
+
+- The **unit-plan** config file. The required fields are listed in the :ref:`unit-plan-file` section.
+
+- The **lesson** config file. The required fields are listed in the section :ref:`lesson-file` section.
+
+Now you can run the ./csu update command.
+Once this has finished you will be able to view the topic at localhost/en/topics/
+
+The description of the topic is written in the **topic** Markdown file.
+This file:
 
 - **Is in:** the topic directory, e.g. the description file for
-  Binary Numbers will be in ``topics/content/en/binary-numbers/``.
+  Binary will be in ``topics/content/en/binary/``.
 - **Is called:** ``<topic-key>.md`` where ``<topic-key>`` is the key
   (:ref:`what-is-a-key`) of the topic and the name of the directory it is in,
-  e.g. ``binary-numbers.md`` or ``kidbots.md``.
-- **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
+  e.g. ``binary.md`` or ``kidbots.md``.
+- **Contains:** An H1 heading (i.e. has a single ``#`` prefix)  and the content
   of the description.
-
-Next several of these files need content added to them before the changes can be viewed.
-... add these steps...
-
-Now you can run the csu update command.
-Once this has finished you will be able to view the topic at localhost/en/topics/
 
 .. note ::
 
@@ -205,10 +218,10 @@ Adding a Unit Plan
   </map>
   <img src="../_static/img/topics_adding_unit_plan_flowchart.png" usemap="#unit-plan-map">
 
-The Markdown file containing the content og the unit plan:
+The Markdown file containing the content of the unit plan:
 
-- **Is in:** the unit plan directory, e.g. the unit plan file for Binary Numbers
-  Unit Plan 2 will be in ``topics/content/en/binary-numbers/unit-plan-2/``.
+- **Is in:** the unit plan directory, e.g. the unit plan file for Binary
+  Unit Plan 2 will be in ``topics/content/en/binary/unit-plan-2/``.
 - **Is called:** ``<unit-plan-key>.md`` where ``<unit-plan-key>`` is the key
   (:ref:`what-is-a-key`) of the unit plan and the name of the directory it is
   in, e.g. ``unit-plan-2.md``.
@@ -247,9 +260,9 @@ Adding a Lesson
 The Markdown file containing the content for the lesson:
 
 - **Is in:** the lesson subdirectory in the unit plan directory, e.g.
-  ``topics/content/en/binary-numbers/unit-plan/lessons/``.
+  ``topics/content/en/binary/unit-plan/lessons/``.
 - **Is called:** ``<lesson-key>.md`` where ``<lesson-key>`` is the key
-  (:ref:`what-is-a-key`) of the lesson, e.g. ``introduction-to-bits.md``.
+  (:ref:`what-is-a-key`) of the lesson, e.g. ``introduction-to-binary.md``.
 - **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
   for the lesson.
 
@@ -261,7 +274,7 @@ The Markdown file containing the content for the lesson:
 (Optional) The translation YAML file containing resource descriptions:
 
 - **Is in:** the lesson subdirectory in the unit plan directory, e.g.
-  ``topics/content/en/binary-numbers/unit-plan/lessons/``.
+  ``topics/content/en/binary/unit-plan/lessons/``.
 - **Is called:** ``<lesson-key>-resource-descriptions.md``
 - **Contains:** Descriptions of how printed resources should be used.
   For example,
@@ -395,7 +408,7 @@ keys you specified in the programming challenges configuration file.
 
 A programming challenge is split into several different sections, each of which
 is an its own Markdown file, all of which are in
-``topics/content/en/binary-numbers/programming-challenges/<challenge-key>/``
+``topics/content/en/binary/programming-challenges/<challenge-key>/``
 where ``<challenge-key>`` refers to the key (:ref:`what-is-a-key`) of the
 challenge, e.g. ``count-to-16``.
 
@@ -468,8 +481,8 @@ Adding a Curriculum Integration
 The Markdown file containing the content of the curriculum integration:
 
 - **Is in:** the curriculum integration directrory, e.g. curriculum integrations
-  in Binary Numbers will be in
-  ``topics/content/en/binary-numbers/curriculum-integrations/``.
+  in Binary will be in
+  ``topics/content/en/binary/curriculum-integrations/``.
 - **Is called:** ``<integration-key>.md`` where ``<integration-key>`` is the key
   (:ref:`what-is-a-key`) of the curriculum integration, e.g. ``whose-cake-is-it.md``.
 - **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
@@ -785,6 +798,7 @@ following:
       codes-for-letters-using-binary-representation:
         number: 3
 
+.. _lesson-file:
 
 Lesson Configuration File
 ------------------------------------------------------------------------------
