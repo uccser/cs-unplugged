@@ -210,11 +210,11 @@ Adding a Unit Plan
 .. raw:: html
 
   <map name="unit-plan-map">
-    <area shape="rect" coords="240,435,317,468" href="#unit-plan-configuration-file">
-    <area shape="rect" coords="240,547,317,581" href="#unit-plan-configuration-file">
-    <area shape="rect" coords="240,658,317,692" href="#topic-configuration-file">
-    <area shape="rect" coords="240,758,317,792" href="#adding-a-lesson">
-    <area shape="rect" coords="240,864,317,896" href="../getting_started/helper_commands.html#update">
+    <area shape="rect" coords="233,410,309,445" href="#unit-plan-configuration-file">
+    <area shape="rect" coords="233,616,309,650" href="#topic-configuration-file">
+    <area shape="rect" coords="233,823,309,857" href="#unit-plan-configuration-file">
+    <area shape="rect" coords="233,928,309,962" href="#adding-a-lesson">
+    <area shape="rect" coords="233,1034,309,1068" href="../getting_started/helper_commands.html#update">
   </map>
   <img src="../_static/img/topics_adding_unit_plan_flowchart.png" usemap="#unit-plan-map">
 
