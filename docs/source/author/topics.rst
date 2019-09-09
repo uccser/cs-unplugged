@@ -337,6 +337,10 @@ You will now be able to add learning outcomes to lessons and programming
 challenges by referencing the keys you specified in the learning outcomes configuration
 file.
 
+There should only be one ``learning-outcomes.yaml`` file per language directory.
+If one already exists in the language directory then add new learning outcomes to this,
+rather than creating a new file.
+
 .. note::
 
   If a learning outcome contains curriculum areas, then the curriculum areas
@@ -384,6 +388,10 @@ You will now be able to add curriculum areas to learning outcomes and curriculum
 integrations by referencing the keys you specified in the curriculum areas
 configuration file.
 Only curriculum areas without any children can be added to items.
+
+There should only be one ``curriculum-areas.yaml`` file per language directory.
+If one already exists in the language directory then add new curriculum areas to this,
+rather than creating a new file.
 
 .. _adding-a-programming-challenge:
 
