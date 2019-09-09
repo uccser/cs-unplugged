@@ -281,13 +281,6 @@ dev_test_backwards() {
 }
 defhelp -dev test_backwards 'Run test suite backwards.'
 
-# Run in-browser test suite
-dev_test_in_browser() {
-  echo "Running in-browser test suite..."
-  docker-compose exec django /docker_venv/bin/nosetests --processes=5 --process-timeout=60
-}
-defhelp -dev test_browser 'Run in-browser test suite.'
-
 # Generates the documentation (with warnings as errors)
 dev_docs() {
   echo "Removing any existing documentation..."
@@ -391,7 +384,8 @@ ci_test_in_browser() {
   ./BrowserStackLocal --key $KEY --force-local &
   cmd_update
 #  nosetests -w csunplugged/tests/topics/in_browser/ --processes=4 --process-timeout=60
-  python3 csunplugged/tests/topics/in_browser/run_browser_tests.py capabilities.json
+  cd csunplugged/tests/topics/in_browser/
+  python3 run_browser_tests.py capabilities.json
 }
 
 ci_docs() {
