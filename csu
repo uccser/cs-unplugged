@@ -391,7 +391,7 @@ ci_test_in_browser() {
   ./BrowserStackLocal --key $KEY --force-local &
   cmd_update
 #  nosetests -w csunplugged/tests/topics/in_browser/ --processes=4 --process-timeout=60
-  csunplugged/tests/topics/in_browser/run_in_browser.py capabilities.json
+  python3 csunplugged/tests/topics/in_browser/run_browser_tests.py capabilities.json
 }
 
 ci_docs() {
