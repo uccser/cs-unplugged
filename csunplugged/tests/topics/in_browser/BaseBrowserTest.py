@@ -1,5 +1,7 @@
 import copy
 import unittest
+import os
+from . import run_browser_tests
 
 from django.test import tag
 from selenium import webdriver
@@ -11,13 +13,18 @@ from . import helpers
 class BaseBrowserTest(unittest.TestCase):
     """Base test class for the in_browser test suite."""
 
+    @classmethod
+    def setUpClass(cls):
+        cls.browsers = run_browser_tests.get_browsers(os.getenv('JSONFILE', None))
+
     def setUp(self):
         """Automatically called before each test.
 
         Creates the Selenium driver and sets the BrowserStack capabilities.
         """
+        test_capabilities = copy.deepcopy(self.browsers[int(os.getenv('INDEX', None))])
+        # test_capabilities = helpers.CAP_MAP.get("environments").get(cap_key)
 
-        test_capabilities = copy.deepcopy(helpers.CAPABILITIES)
         test_capabilities['name'] = self._testMethodName
         self.driver = webdriver.Remote(
             command_executor=helpers.COMMAND_EXECUTOR,

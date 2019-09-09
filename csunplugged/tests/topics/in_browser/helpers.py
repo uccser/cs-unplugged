@@ -12,6 +12,31 @@ LIVE_URL = "https://csunplugged.org/en/"
 BASE_URL = None
 CAPABILITIES = None
 
+CAP_LIST = [
+  {
+    "os": "Windows",
+    "os_version": "10",
+    "browser": "Chrome",
+    "browser_version": "61.0",
+    "resolution": "1920x1080"
+  },
+  {
+    "os": "Windows",
+    "os_version": "10",
+    "browser": "Chrome",
+    "browser_version": "62.0",
+    "resolution": "1920x1080"
+  },
+  {
+    "os": "Windows",
+    "os_version": "10",
+    "browser": "Chrome",
+    "browser_version": "63.0",
+    "resolution": "1920x1080"
+  }
+]
+
+
 DEV_TESTING_ON_LIVE_SERVER_CAPABILITIES = {
     'os': 'Windows',
     'os_version': '10',
@@ -28,7 +53,6 @@ DEV_TESTING_PARAMETERIZATION_TEST_CAPABILITIES = {
     'resolution': '1920x1080'
 }
 
-
 TRAVIS_BUILD_CAPABILITIES = {
     'os': 'Windows',
     'os_version': '10',
@@ -38,15 +62,13 @@ TRAVIS_BUILD_CAPABILITIES = {
     'browserstack.local': 'true'
 }
 
-
 try:
     ACCESS_KEY = os.environ['KEY']
     BASE_URL = LOCAL_URL
     CAPABILITIES = TRAVIS_BUILD_CAPABILITIES
 except KeyError:
-    file = open('in_browser/local_browser_testing.txt')
-    ACCESS_KEY = file.readline()
-    file.close()
+    with open('local_browser_testing.txt', "r") as f:
+        ACCESS_KEY = f.readline()
     BASE_URL = LIVE_URL
     CAPABILITIES = DEV_TESTING_ON_LIVE_SERVER_CAPABILITIES
     pass
