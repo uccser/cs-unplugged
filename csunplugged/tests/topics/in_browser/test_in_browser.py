@@ -8,7 +8,7 @@ class BrowserTest(BaseBrowserTest):
     def test_local(self):
         self.driver.get(helpers.BASE_URL)
         element = self.driver.title
-        if "CS Unplugged" not in element:
+        if "INCORRECT" not in element:
             raise Exception("Unable to load local page!")
 
     def test_local_2(self):
