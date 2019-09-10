@@ -250,10 +250,15 @@ Adding a Lesson
 .. raw:: html
 
   <map name="lesson-map">
-    <area shape="rect" coords="238,318,315,351" href="#lesson-configuration-file">
-    <area shape="rect" coords="237,431,317,465" href="#lesson-configuration-file">
-    <area shape="rect" coords="237,534,317,569" href="#unit-plan-configuration-file">
-    <area shape="rect" coords="237,638,317,671" href="../getting_started/helper_commands.html#update">
+    <area shape="rect" coords="238,322,315,354" href="#lesson-configuration-file">
+    <area shape="rect" coords="238,534,315,569" href="#unit-plan-configuration-file">
+    <area shape="rect" coords="238,824,315,856" href="#lesson-configuration-file">
+    <area shape="rect" coords="238,919,315,951" href="../getting_started/helper_commands.html#update">
+
+    <area shape="rect" coords="595,322,670,354" href="#lesson-configuration-file">
+    <area shape="rect" coords="595,534,670,569" href="#unit-plan-configuration-file">
+    <area shape="rect" coords="595,632,670,666" href="#lesson-configuration-file">
+    <area shape="rect" coords="595,728,670,760" href="../getting_started/helper_commands.html#update">
   </map>
   <img src="../_static/img/topics_adding_lesson_flowchart.png" usemap="#lesson-map">
 
