@@ -121,3 +121,4 @@ whoosh_index/
 .vscode/
 /csunplugged/tests/topics/in_browser/browserStackLocal.zip
 /csunplugged/tests/topics/in_browser/BrowserStackLocal
+/csunplugged/tests/topics/in_browser/local_browser_testing.txt

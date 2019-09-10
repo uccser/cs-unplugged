@@ -15,6 +15,7 @@ class BaseBrowserTest(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        """ Called once for entire test suite. This retrieves the browser configurations and sets as variable."""
         cls.browsers = run_browser_tests.get_browsers(os.getenv('JSONFILE', 'in_browser/capabilities.json'))
 
     def setUp(self):
@@ -22,8 +23,8 @@ class BaseBrowserTest(unittest.TestCase):
 
         Creates the Selenium driver and sets the BrowserStack capabilities.
         """
-        test_capabilities = copy.deepcopy(self.browsers[int(os.getenv('INDEX', None))])
-        # test_capabilities = helpers.CAP_MAP.get("environments").get(cap_key)
+        # Defaults to first index if local
+        test_capabilities = copy.deepcopy(self.browsers[int(os.getenv('INDEX', 0))])
 
         test_capabilities['name'] = self._testMethodName
         self.driver = webdriver.Remote(
