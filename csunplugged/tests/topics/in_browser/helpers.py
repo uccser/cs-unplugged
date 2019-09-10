@@ -69,11 +69,17 @@ try:
 except KeyError:
     with open('local_browser_testing.txt', "r") as f:
         ACCESS_KEY = f.readline()
-    BASE_URL = LIVE_URL
-    CAPABILITIES = DEV_TESTING_ON_LIVE_SERVER_CAPABILITIES
+    # BASE_URL = LIVE_URL
+    # Remove
+    BASE_URL = LOCAL_URL
+
+    # CAPABILITIES = DEV_TESTING_ON_LIVE_SERVER_CAPABILITIES
+    CAPABILITIES = TRAVIS_BUILD_CAPABILITIES
     pass
 
 COMMAND_EXECUTOR = 'http://cseducationresea1:' + ACCESS_KEY + '@hub.browserstack.com:80/wd/hub'
+
+
 
 language_dict = {
     'en': 'English',

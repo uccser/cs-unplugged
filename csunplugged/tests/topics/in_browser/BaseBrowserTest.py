@@ -15,7 +15,7 @@ class BaseBrowserTest(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.browsers = run_browser_tests.get_browsers(os.getenv('JSONFILE', None))
+        cls.browsers = run_browser_tests.get_browsers(os.getenv('JSONFILE', 'in_browser/capabilities.json'))
 
     def setUp(self):
         """Automatically called before each test.
