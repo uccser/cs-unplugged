@@ -23,7 +23,10 @@ def main():
 
     for counter in range(num_of_tests):
         cmd = "JSONFILE={} INDEX={} nosetests --process-timeout=60".format(json_name, counter)
-        process.append(subprocess.Popen(cmd, shell=True))
+        process.append(subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE))
+
+    for counter in range(num_of_tests):
+        process[counter].communicate()
 
     for counter in range(num_of_tests):
         process[counter].wait()

@@ -80,7 +80,6 @@ except KeyError:
 COMMAND_EXECUTOR = 'http://cseducationresea1:' + ACCESS_KEY + '@hub.browserstack.com:80/wd/hub'
 
 
-
 language_dict = {
     'en': 'English',
     'de': 'Deutsch',
