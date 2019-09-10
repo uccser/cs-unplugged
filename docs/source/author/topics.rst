@@ -276,23 +276,6 @@ The Markdown file containing the content for the lesson:
   The heading written in this file will be used exactly as it is given
   throughout the website as the name of the lesson.
 
-(Optional) The translation YAML file containing resource descriptions:
-
-- **Is in:** the lesson subdirectory in the unit plan directory, e.g.
-  ``topics/content/en/binary/unit-plan/lessons/``.
-- **Is called:** ``<lesson-key>-resource-descriptions.md``
-- **Contains:** Descriptions of how printed resources should be used.
-  For example,
-
-  .. code-block:: yaml
-
-    binary-cards:
-      description: One set for class demonstration.
-    binary-cards-small:
-      description: One set of cards per student.
-    binary-to-alphabet:
-      description: Blank sheets for students, plus teacher answer sheet.
-
 .. note::
 
   If a lesson includes programming challenges, Computational Thinking links,
