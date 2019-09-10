@@ -287,7 +287,12 @@ The Markdown file containing the content for the lesson:
 Adding Learning Outcomes
 ------------------------------------------------------------------------------
 
-.. TODO(issue/749): Update diagram with step to add learning outcomes YAML translation file.
+There are two types of YAML files for Learning Outcomes.
+One is in ``topics/structure`` and is shared by all language folders.
+The other is unique to a language and is in ``topics/content/<language>``
+(e.g. ``content/en``)
+
+.. TODO(issue/749): Update diagram with step to add learning outcomes YAML translation file, and fix the coords
 
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. The image is included as raw HTML because it has clickable nodes.
@@ -296,7 +301,7 @@ Adding Learning Outcomes
   <map name="learning-outcomes-map">
     <area shape="rect" coords="240,100,317,135" href="#learning-outcomes-configuration-file">
     <area shape="rect" coords="240,210,317,245" href="#application-structure-configuration-file">
-    <area shape="rect" coords="555,200,633,235" href="#learning-outcomes-configuration-file">
+    <area shape="rect" coords="551,200,633,225" href="#learning-outcomes-configuration-file">
     <area shape="rect" coords="240,330,317,362" href="../getting_started/helper_commands.html#update">
   </map>
   <img src="../_static/img/topics_adding_learning_outcomes_flowchart.png" usemap="#learning-outcomes-map">
