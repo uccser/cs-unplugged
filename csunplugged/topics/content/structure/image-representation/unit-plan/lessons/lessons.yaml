@@ -8,3 +8,13 @@ colour-by-numbers:
   classroom-resources:
     - pencils
     - erasers
+
+run-length-encoding:
+  duration: 45
+  learning-outcomes:
+    - image-rep-understand-digits-representing-images
+  generated-resources:
+    - pixel-painter
+  classroom-resources:
+    - pencils
+    - erasers
