@@ -16,6 +16,9 @@ METHOD_VALUES = {
 }
 
 IMAGE_VALUES = {
+    "star": _("Star - 1 page"),
+    "teacup": _("Teacup - 1 page"),
+    "cat": _("Cat - 1 page"),
     "fish": _("Fish - 6 pages"),
     "kauri-tree": _("Kauri tree - 6 pages"),
     "butterfly": _("Butterfly - 6 pages"),
@@ -68,6 +71,9 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
     }
 
     image_strings = {
+        "star": _("Star"),
+        "teacup": _("Teacup"),
+        "cat": _("Cat"),
         "boat": _("Boat"),
         "fish": _("Fish"),
         "hot-air-balloon": _("Hot air balloon"),
