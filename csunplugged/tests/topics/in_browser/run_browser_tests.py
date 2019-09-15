@@ -20,22 +20,26 @@ def main():
 
     cap_list = get_browsers(json_name)
 
-    process = []
+    processes = []
     results = []
     num_of_tests = len(cap_list)
 
     for counter in range(num_of_tests):
         cmd = "JSONFILE={} INDEX={} nosetests --process-timeout=60".format(json_name, counter)
-        process.append(subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE))
+        processes.append(subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE))
 
     for counter in range(num_of_tests):
-        results.append(process[counter].wait())
+        results.append(processes[counter].wait())
 
     if all(result_code == 0 for result_code in results):
+        for process in processes:
+            print(process.stdout)
         print("TESTS PASS")
         sys.exit(0)
     else:
-        print("TESTS FAILED\nCHECK LOGS")
+        for process in processes:
+            print(process.stderr)
+        print("TESTS FAILED")
         sys.exit(1)
 
 
