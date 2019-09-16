@@ -26,7 +26,7 @@ def main():
 
     for counter in range(num_of_tests):
         cmd = "JSONFILE={} INDEX={} nosetests --process-timeout=60".format(json_name, counter)
-        processes.append(subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE))
+        processes.append(subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE))
 
     for counter in range(num_of_tests):
         results.append(processes[counter].wait())
@@ -38,7 +38,7 @@ def main():
         sys.exit(0)
     else:
         for process in processes:
-            print(process.stderr)
+            print(process.stderr.read().decode("utf-8"))
         print("TESTS FAILED")
         sys.exit(1)
 
