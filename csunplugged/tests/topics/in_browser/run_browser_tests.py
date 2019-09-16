@@ -1,11 +1,11 @@
-"""Program for launching the multiple subprocesses for each test configuration."""
+"""Program for launching a subprocess for each test configuration."""
 import json
 import sys
 import subprocess
 
 
 def get_browsers(json_name):
-    """Retrieve the browser capabilities from the given file."""
+    """Retrieve the browser capabilities from the given file as a dict."""
     with open(json_name, "r") as f:
         cap_list = json.loads(f.read())
     return cap_list

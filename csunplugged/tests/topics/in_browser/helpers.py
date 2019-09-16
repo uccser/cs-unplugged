@@ -10,42 +10,21 @@ LOCAL_URL = "http://localhost/en/"
 LIVE_URL = "https://csunplugged.org/en/"
 
 BASE_URL = None
-CAPABILITIES = None
 
-
-DEV_TESTING_ON_LIVE_SERVER_CAPABILITIES = {
-    'os': 'Windows',
-    'os_version': '10',
-    'browser': 'Chrome',
-    'browser_version': '63.0',
-    'resolution': '1920x1080'
-}
-
-
-TRAVIS_BUILD_CAPABILITIES = {
-    'os': 'Windows',
-    'os_version': '10',
-    'browser': 'Chrome',
-    'browser_version': '63.0',
-    'resolution': '1920x1080',
-    'browserstack.local': 'true'
-}
-
+# Gathers the BrowserStack access key from env variables or local file.
+# Testing URLs are then allocated accordingly.
 try:
     ACCESS_KEY = os.environ['KEY']
     BASE_URL = LOCAL_URL
-    CAPABILITIES = TRAVIS_BUILD_CAPABILITIES
 except KeyError:
     internal_test_launch = os.getenv('JSONFILE', None) is None
     if internal_test_launch:
-        BS_pass_file = 'in_browser/local_browser_testing.txt'
+        BS_access_file = 'in_browser/local_browser_testing.txt'
     else:
-        BS_pass_file = 'local_browser_testing.txt'
-    with open(BS_pass_file, "r") as f:
+        BS_access_file = 'local_browser_testing.txt'
+    with open(BS_access_file, "r") as f:
         ACCESS_KEY = f.readline()
     BASE_URL = LIVE_URL
-
-    CAPABILITIES = DEV_TESTING_ON_LIVE_SERVER_CAPABILITIES
     pass
 
 COMMAND_EXECUTOR = 'http://cseducationresea1:' + ACCESS_KEY + '@hub.browserstack.com:80/wd/hub'
