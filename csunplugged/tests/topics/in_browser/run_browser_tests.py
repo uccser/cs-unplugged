@@ -4,14 +4,14 @@ import subprocess
 
 
 def get_browsers(json_name):
-    """ Retrieve the browser capabilities from the given file."""
+    """Retrieve the browser capabilities from the given file."""
     with open(json_name, "r") as f:
         cap_list = json.loads(f.read())
     return cap_list
 
 
 def main():
-    """ Generate a subprocess for each browser configuration and run nosetests on this thread."""
+    """Generate a subprocess for each browser configuration and run nosetests on this thread."""
     try:
         json_name = sys.argv[1]
     except IndexError:

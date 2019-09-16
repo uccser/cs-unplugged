@@ -15,7 +15,7 @@ class BaseBrowserTest(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        """ Called once for entire test suite. This retrieves the browser configurations and sets as variable."""
+        """Call only once for entire test suite. This retrieves the browser configurations and sets as variable."""
         cls.browsers = run_browser_tests.get_browsers(os.getenv('JSONFILE', 'in_browser/capabilities.json'))
 
     def setUp(self):
