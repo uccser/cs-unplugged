@@ -12,29 +12,6 @@ LIVE_URL = "https://csunplugged.org/en/"
 BASE_URL = None
 CAPABILITIES = None
 
-CAP_LIST = [
-    {
-        "os": "Windows",
-        "os_version": "10",
-        "browser": "Chrome",
-        "browser_version": "61.0",
-        "resolution": "1920x1080"
-    },
-    {
-        "os": "Windows",
-        "os_version": "10",
-        "browser": "Chrome",
-        "browser_version": "62.0",
-        "resolution": "1920x1080"
-    },
-    {
-        "os": "Windows",
-        "os_version": "10",
-        "browser": "Chrome",
-        "browser_version": "63.0",
-        "resolution": "1920x1080"
-    }
-]
 
 DEV_TESTING_ON_LIVE_SERVER_CAPABILITIES = {
     'os': 'Windows',
@@ -44,13 +21,6 @@ DEV_TESTING_ON_LIVE_SERVER_CAPABILITIES = {
     'resolution': '1920x1080'
 }
 
-DEV_TESTING_PARAMETERIZATION_TEST_CAPABILITIES = {
-    'os': 'Windows',
-    'os_version': '10',
-    'browser': 'Chrome',
-    'browser_version': '62.0',
-    'resolution': '1920x1080'
-}
 
 TRAVIS_BUILD_CAPABILITIES = {
     'os': 'Windows',
@@ -66,7 +36,12 @@ try:
     BASE_URL = LOCAL_URL
     CAPABILITIES = TRAVIS_BUILD_CAPABILITIES
 except KeyError:
-    with open('local_browser_testing.txt', "r") as f:
+    internal_test_launch = os.getenv('JSONFILE', None) is None
+    if internal_test_launch:
+        BS_pass_file = 'in_browser/local_browser_testing.txt'
+    else:
+        BS_pass_file = 'local_browser_testing.txt'
+    with open(BS_pass_file, "r") as f:
         ACCESS_KEY = f.readline()
     BASE_URL = LIVE_URL
 
