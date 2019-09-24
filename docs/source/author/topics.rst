@@ -17,6 +17,7 @@ Topics Overview
 
 The following diagram shows the general structure of the topics application.
 
+.. Flowchart has been updated
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. image:: ../_static/img/topics_overview_diagram.png
   :alt: A diagram providing an overview of topics application content
@@ -646,7 +647,7 @@ The diagram below shows an example of YAML file locations for the
 .. raw:: html
   :file: ../_static/html_snippets/topics_content_directory_tree_only_yaml.html
 
-In the following sections, each configuration file is exaplained in more detail.
+In the following sections, each configuration file is explained in more detail.
 
 .. note::
 
@@ -672,12 +673,14 @@ Application Structure Configuration File
 
 - **Optional Fields:**
 
-    - ``learning-outcomes:`` The path to the learning outcomes configuration file.
+    - ``age-groups:`` The path to the age group configuration file.
+    - ``classroom-resources:`` The path to the classroom resources configuration file.
     - ``curriculum-areas:`` The path to the curriculum areas configuration file.
-    - ``programming-challenges-structure:`` The path to the programming exercies structure
-      configuration file.
     - ``glossary-folder:`` The folder name that contains the Markdown files for
       glossary definitions.
+    - ``learning-outcomes:`` The path to the learning outcomes configuration file.
+    - ``programming-challenges-structure:`` The path to the programming exercises structure
+      configuration file.
 
 A complete application structure file may look like the following:
 
@@ -687,6 +690,7 @@ A complete application structure file may look like the following:
     - binary-numbers
     - error-detection-correction
 
+  age-groups: age-groups.yaml
   learning-outcomes: learning-outcomes.yaml
   curriculum-areas: curriculum-areas.yaml
   programming-challenges-structure: programming-challenges-structure.yaml
@@ -810,8 +814,8 @@ Lesson Configuration File
 
 - **Referenced In:** ``topic/content/structure/<topic-key>/<unit-plan-key>/<unit-plan-key>.yaml``
 
-- **Purpose:** This file defines all the lessons (and their respective)
-  attributes for the unit plan.
+- **Purpose:** This file defines all the lessons (and their respective
+  attributes) for the specific unit plan.
 
   - **Required Fields:**
 
@@ -873,7 +877,7 @@ Age Group Configuration File
 
 - **Referenced In:** ``topics/content/structure/structure.yaml``
 
-- **Purpose:** Defines the age groups avilable for all lessons.
+- **Purpose:** Defines the age groups available for all lessons.
 
 - **Required Fields:**
 
@@ -919,7 +923,7 @@ Learning Outcomes Configuration File
 
 - **Referenced In:** ``topics/content/structure/structure.yaml``
 
-- **Purpose:** Defines the learning outcomes avilable for all topics.
+- **Purpose:** Defines the learning outcomes available for all topics.
 
 - **Required Fields:**
 
@@ -928,7 +932,7 @@ Learning Outcomes Configuration File
 
     - **Optional Fields:**
 
-      - ``curriculum-areas:`` A list of curriculum area key (see example file below).
+      - ``curriculum-areas:`` A list of curriculum area keys (see example file below).
         Each curriculum area listed must not contain child curriculum areas.
 
 A complete learning outcome structure file may look like the following:
@@ -1021,7 +1025,7 @@ the following:
   curriculum areas with no children can be listed.
   This is because it can be confusing when items belong to the parent
   curriculum area but not any child in particular.
-  Therefore each item must be linked to a curriculum are with no children.
+  Therefore each item must be linked to a curriculum area with no children.
   Parent curriculum areas (areas with children) are used in search forms to
   select all child curriculum areas and their related items.
 
@@ -1170,7 +1174,7 @@ Curriculum Integrations Configuration File
 
 - **File Name:** ``curriculum-intergrations.yaml``
 
-- **Location:** ``topics/content/structure/<topic-key>/``
+- **Location:** ``topics/content/structure/<topic-key>/curriculum-integrations/``
 
 - **Referenced In:** ``topics/content/structure/<topic-key>.yaml``
 
@@ -1241,7 +1245,7 @@ Classroom Resources Configuration File
 
 - **Referenced In:** ``topics/content/structure/<topic-key>/<unit-plan-key>/lessons/lessons.yaml``
 
-- **Purpose:** Defines the classroom resources avilable for all topics.
+- **Purpose:** Defines the classroom resources available for all topics.
 
 - **Required Fields:**
 
@@ -1270,4 +1274,4 @@ A complete classroom resources structure file may look like the following:
     - hula-hoop
     - counters
     - chalk
-    - coloring-pens
+    - colouring-pens
