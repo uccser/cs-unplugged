@@ -249,8 +249,6 @@ The Markdown file containing the content of the unit plan:
 Adding a Lesson
 ------------------------------------------------------------------------------
 
-.. TODO(issue/749): Update diagram with optional step to add resource description YAML translation file.
-
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. The image is included as raw HTML because it has clickable nodes.
 .. raw:: html
@@ -351,8 +349,6 @@ Adding Curriculum Areas
 There should only be one ``curriculum-areas.yaml`` file per language directory.
 If one already exists in the language directory then add new curriculum areas to this,
 rather than creating a new file.
-
-.. TODO(issue/749): Update diagram with step to add curriculum areas YAML translation file.
 
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. The image is included as raw HTML because it has clickable nodes.
