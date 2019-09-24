@@ -111,6 +111,11 @@ inside the locale specific directories.
 Adding Content
 ==============================================================================
 
+.. note ::
+  If you are adding content for a language other than english then wherever the directory
+  path ``topics/content/en/`` is used, replace ``en/`` with the relevant folder for that
+  language, e.g. ``de/``
+
 The following flow charts will take you step by step through the process of adding new
 content to the topics application. Below this section are full details on how to structure
 and write the configuration files for the topics application.
@@ -290,10 +295,12 @@ Adding Learning Outcomes
 
 There are two types of YAML files for Learning Outcomes.
 One is in ``topics/structure`` and is shared by all language folders.
-The other is unique to a language and is in ``topics/content/<language>``
-(e.g. ``content/en``)
+The other is the translation YAML file, which is unique to a language and is in
+``topics/content/<language>`` (e.g. ``content/en``)
 
-.. TODO(issue/749): Update diagram with step to add learning outcomes YAML translation file, and fix the coords
+There should only be one ``learning-outcomes.yaml`` file per language directory.
+If one already exists in the language directory then add new learning outcomes to this,
+rather than creating a new file.
 
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. The image is included as raw HTML because it has clickable nodes.
@@ -331,10 +338,6 @@ You will now be able to add learning outcomes to lessons and programming
 challenges by referencing the keys you specified in the learning outcomes configuration
 file.
 
-There should only be one ``learning-outcomes.yaml`` file per language directory.
-If one already exists in the language directory then add new learning outcomes to this,
-rather than creating a new file.
-
 .. note::
 
   If a learning outcome contains curriculum areas, then the curriculum areas
@@ -344,6 +347,10 @@ rather than creating a new file.
 
 Adding Curriculum Areas
 ------------------------------------------------------------------------------
+
+There should only be one ``curriculum-areas.yaml`` file per language directory.
+If one already exists in the language directory then add new curriculum areas to this,
+rather than creating a new file.
 
 .. TODO(issue/749): Update diagram with step to add curriculum areas YAML translation file.
 
@@ -382,10 +389,6 @@ You will now be able to add curriculum areas to learning outcomes and curriculum
 integrations by referencing the keys you specified in the curriculum areas
 configuration file.
 Only curriculum areas without any children can be added to items.
-
-There should only be one ``curriculum-areas.yaml`` file per language directory.
-If one already exists in the language directory then add new curriculum areas to this,
-rather than creating a new file.
 
 .. _adding-a-programming-challenge:
 
@@ -608,7 +611,7 @@ The translation YAML file containing difficulty descriptions:
     difficulty-2:
       name: Growing experience
 
-Adding a Programming Challenge Languages
+Adding Programming Challenge Languages
 ------------------------------------------------------------------------------
 
 .. TODO(issue/749): Add diagram for adding a programming challenge language.
@@ -779,7 +782,7 @@ Unit Plan Configuration File
 
   - **Optional Fields:**
 
-    - ``computational-thinking-links``: The Markdown filename containing
+    - ``computational-thinking-links:`` The Markdown filename containing
         Computational Thinking links.
 
 A complete unit plan structure file with multiple lessons may look like the
