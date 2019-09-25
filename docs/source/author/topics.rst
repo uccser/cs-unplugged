@@ -355,10 +355,10 @@ rather than creating a new file.
 .. raw:: html
 
   <map name="curriculum-areas-map">
-    <area shape="rect" coords="240,100,317,135" href="#curriculum-areas-configuration-file">
-    <area shape="rect" coords="240,210,317,245" href="#application-structure-configuration-file">
-    <area shape="rect" coords="560,200,642,232" href="#curriculum-areas-configuration-file">
-    <area shape="rect" coords="240,330,317,362" href="../getting_started/helper_commands.html#update">
+    <area shape="rect" coords="230,236,305,270" href="#curriculum-areas-configuration-file">
+    <area shape="rect" coords="230,362,305,396" href="#application-structure-configuration-file">
+    <area shape="rect" coords="230,618,305,650" href="#curriculum-areas-configuration-file">
+    <area shape="rect" coords="230,722,305,756" href="../getting_started/helper_commands.html#update">
   </map>
   <img src="../_static/img/topics_adding_curriculum_areas_flowchart.png" usemap="#curriculum-areas-map">
 
@@ -390,6 +390,10 @@ Only curriculum areas without any children can be added to items.
 
 Adding a Programming Challenge
 ------------------------------------------------------------------------------
+
+There should only be one ``.yaml`` file per language directory.
+If one already exists in the language directory then add new ... to this,
+rather than creating a new file.
 
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. The image is included as raw HTML because it has clickable nodes.
@@ -467,6 +471,10 @@ Therefore, the languages you have chosen must be specified in the
 Adding a Curriculum Integration
 ------------------------------------------------------------------------------
 
+There should only be one ``.yaml`` file per language directory.
+If one already exists in the language directory then add new ... to this,
+rather than creating a new file.
+
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. The image is included as raw HTML because it has clickable nodes.
 .. raw:: html
@@ -499,14 +507,18 @@ The Markdown file containing the content of the curriculum integration:
 Adding Glossary Definitions
 ------------------------------------------------------------------------------
 
+There should only be one ``glossary`` directory per language directory.
+If one already exists in the language directory then add new definitions to this,
+rather than creating a new directory.
+
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. The image is included as raw HTML because it has clickable nodes.
 .. raw:: html
 
   <map name="glossary-definitions-map">
-    <area shape="rect" coords="240,110,317,145" href="#application-structure-configuration-file">
-    <area shape="rect" coords="240,320,320,350" href="#glossary-definitions-markdown-file">
-    <area shape="rect" coords="240,430,319,462" href="../getting_started/helper_commands.html#update">
+    <area shape="rect" coords="240,200,317,230" href="#application-structure-configuration-file">
+    <area shape="rect" coords="240,408,320,442" href="#glossary-definitions-markdown-file">
+    <area shape="rect" coords="240,518,319,552" href="../getting_started/helper_commands.html#update">
   </map>
   <img src="../_static/img/topics_adding_glossary_definitions_flowchart.png" usemap="#glossary-definitions-map">
 
@@ -539,7 +551,21 @@ contents of that file.
 Adding a Classroom Resource
 ------------------------------------------------------------------------------
 
-.. TODO(issue/749): Add diagram for adding a classroom resource.
+There should only be one ``classroom-resources.yaml`` file per language directory.
+If one already exists in the language directory then add new resources to this,
+rather than creating a new file.
+
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="classroom-resources-map">
+    <area shape="rect" coords="230,236,305,270" href="#classroom-resources-configuration-file">
+    <area shape="rect" coords="230,362,305,396" href="#application-structure-configuration-file">
+    <area shape="rect" coords="230,618,305,650" href="#classroom-resources-configuration-file">
+    <area shape="rect" coords="230,722,305,756" href="../getting_started/helper_commands.html#update">
+  </map>
+  <img src="../_static/img/topics_adding_classroom_resource_flowchart.png" usemap="#classroom-resources-map">
 
 The translation YAML file containing classroom resource descriptions:
 
@@ -566,7 +592,21 @@ The translation YAML file containing classroom resource descriptions:
 Adding an Age Group
 ------------------------------------------------------------------------------
 
-.. TODO(issue/749): Add diagram for adding an age group.
+There should only be one ``age-groups.yaml`` file per language directory.
+If one already exists in the language directory then add new age groups to this,
+rather than creating a new file.
+
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="age-groups-map">
+    <area shape="rect" coords="230,236,305,270" href="#age-group-configuration-file">
+    <area shape="rect" coords="230,362,305,396" href="#application-structure-configuration-file">
+    <area shape="rect" coords="230,618,305,650" href="#age-group-configuration-file">
+    <area shape="rect" coords="230,722,305,756" href="../getting_started/helper_commands.html#update">
+  </map>
+  <img src="../_static/img/topics_adding_age_group_flowchart.png" usemap="#age-groups-map">
 
 The translation YAML file containing age group descriptions:
 
@@ -586,7 +626,21 @@ The translation YAML file containing age group descriptions:
 Adding a Programming Challenge Difficulty
 ------------------------------------------------------------------------------
 
-.. TODO(issue/749): Add diagram for adding a programming challenge difficulty.
+There should only be one ``programming-challenges-structure-difficulties.yaml`` file per language directory.
+If one already exists in the language directory then add new difficulties to this,
+rather than creating a new file.
+
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="programming-challenge-difficulty-map">
+    <area shape="rect" coords="238,258,312,292" href="#application-structure-configuration-file">
+    <area shape="rect" coords="238,563,312,597" href="#programming-challenges-structure-file">
+    <area shape="rect" coords="238,680,312,712" href="../getting_started/helper_commands.html#update">
+  </map>
+  <img src="../_static/img/topics_adding_programming_challenge_difficulty_flowchart.png" usemap="#programming-challenge-difficulty-map">
+
 
 The translation YAML file containing difficulty descriptions:
 
@@ -610,7 +664,20 @@ The translation YAML file containing difficulty descriptions:
 Adding Programming Challenge Languages
 ------------------------------------------------------------------------------
 
-.. TODO(issue/749): Add diagram for adding a programming challenge language.
+There should only be one ``programming-challenges-structure-languages.yaml`` file per language directory.
+If one already exists in the language directory then add new languages to this,
+rather than creating a new file.
+
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="programming-challenge-language-map">
+    <area shape="rect" coords="238,258,312,292" href="#application-structure-configuration-file">
+    <area shape="rect" coords="238,563,312,597" href="#programming-challenges-structure-file">
+    <area shape="rect" coords="238,680,312,712" href="../getting_started/helper_commands.html#update">
+  </map>
+  <img src="../_static/img/topics_adding_programming_challenge_language_flowchart.png" usemap="#programming-challenge-language-map">
 
 The translation YAML file containing programming language descriptions:
 
