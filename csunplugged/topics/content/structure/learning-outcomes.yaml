@@ -459,3 +459,8 @@ image-rep-understand-digits-representing-images:
 image-rep-understand-pixels:
   curriculum-areas:
     - data-representation
+
+image-rep-image-rle-compression-bw:
+  curriculum-areas:
+    - data-representation
+    - algorithms

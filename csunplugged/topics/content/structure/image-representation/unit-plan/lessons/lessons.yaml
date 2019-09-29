@@ -9,10 +9,22 @@ colour-by-numbers:
     - pencils
     - erasers
 
+run-length-encoding-junior:
+  duration: 45
+  learning-outcomes:
+    - image-rep-understand-digits-representing-images
+    - image-rep-image-rle-compression-bw
+  generated-resources:
+    - pixel-painter
+  classroom-resources:
+    - pencils
+    - erasers
+
 run-length-encoding:
   duration: 45
   learning-outcomes:
     - image-rep-understand-digits-representing-images
+    - image-rep-image-rle-compression-bw
   generated-resources:
     - pixel-painter
   classroom-resources:

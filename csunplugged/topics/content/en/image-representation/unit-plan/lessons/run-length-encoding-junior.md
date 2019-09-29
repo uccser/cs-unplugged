@@ -3,16 +3,12 @@
 ## Key questions
 
 - How can computers store images efficiently so that they take up less space?
-- Does the type of image change how it can be stored efficiently?
 
 ## Lesson starter
 
 In this lesson we will again just be looking at black and white images (this makes learning the CS concepts much simpler, and following lessons move on to coloured images).
 
 Remind students about what they learnt in the previous lesson, that digital images are made up of pixels and computers store the colour of pixels using binary digits (bits).
-Draw a 3x3 grid on the board, or display one to students in another way (e.g. with a projector or on a large piece of paper).
-
-Teacher: Let's say this grid represents a small image, with each box representing
 
 {panel type="general"}
 

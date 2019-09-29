@@ -334,3 +334,6 @@ image-rep-understand-digits-representing-images:
 
 image-rep-understand-pixels:
   text: Understand that the images shown by computers are made up of pixels, each of which can display a different colour, based on digits.
+
+image-rep-image-rle-compression-bw:
+  text: Understand that images can be compressed so that they take up less space, and demonstrate an aglorithm for compressing a black and white image. 
