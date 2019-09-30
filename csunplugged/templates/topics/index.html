@@ -62,48 +62,47 @@
         </div>
       {% endfor %}
       <div class="col-12 col-md-8 col-lg-6 mb-4">
-      {% if LANGUAGE_CODE == "en" %}
-        <a class="link-item no-text-decoration d-block h-100" href="https://classic.csunplugged.org/activities/">
+        {% if LANGUAGE_CODE == "en" %}
+          <a class="link-item no-text-decoration d-block h-100" href="https://classic.csunplugged.org/activities/">
+        {% else %}
+          <a class="link-item no-text-decoration d-block h-100" href="https://classic.csunplugged.org/books/">
+        {% endif %}
           <div class="row align-items-center h-100">
             <div class="col-12 text-center text-md-{{LANGUAGE_START}}">
-              <h2>More activities available at Classic CS Unplugged</h2>
+              {% if LANGUAGE_CODE == "en" %}
+                <h2>{% trans "More activities at the Classic CS Unplugged website" %}</h2>
+              {% else %}
+                <h2>{% trans "Translations for some activities available at the Classic CS Unplugged website" %}</h2>
+              {% endif %}
             </div>
             <div class="col-12 col-md-7 text-center text-md-{{LANGUAGE_START}}">
             </div>
             <div class="d-none col-md-5 d-md-flex justify-content-end align-items-end">
               <img class="img-fluid" src="{% static 'img/classic-cs-unplugged-logo.png' %}">
-              <!-- <img class="img-fluid" src="{% static 'img/logo.png' %}"> -->
-              <!-- <img class="img-fluid" src="{% static 'img/general/computer-searching.png' %}"> -->
             </div>
           </div>
         </a>
-      {% else %}
-        <a class="link-item no-text-decoration d-block h-100" href="https://classic.csunplugged.org/books/">
-          <div class="row align-items-center h-100">
-            <div class="col-12 text-center text-md-{{LANGUAGE_START}}">
-              <h2>{% trans "Translations for some activities are available at Classic CS Unplugged" %}</h2>
-            </div>
-            <div class="col-12 col-md-5 text-center text-md-{{LANGUAGE_START}}">
-            </div>
-            <div class="d-none col-md-7 d-md-flex justify-content-end align-items-end">
-              <img class="img-fluid" src="{% static 'img/classic-cs-unplugged-logo.png' %}">
-            </div>
-          </div>
-        </a>
-      {% endif %}
       </div>
     </div>
   {% else %}
     <p>{% trans "No topics are available." %}</p>
     <div class="col-12 col-md-8 col-lg-6 mb-4">
-      <a class="link-item no-text-decoration d-block h-100" href="https://classic.csunplugged.org/activities/">
+      {% if LANGUAGE_CODE == "en" %}
+        <a class="link-item no-text-decoration d-block h-100" href="https://classic.csunplugged.org/activities/">
+      {% else %}
+        <a class="link-item no-text-decoration d-block h-100" href="https://classic.csunplugged.org/books/">
+      {% endif %}
         <div class="row align-items-center h-100">
           <div class="col-12 text-center text-md-{{LANGUAGE_START}}">
-            <h2>{% trans "There are activities available at Classic CS Unplugged" %}</h2>
+            {% if LANGUAGE_CODE == "en" %}
+              <h2>{% trans "Activities available at the Classic CS Unplugged website" %}</h2>
+            {% else %}
+              <h2>{% trans "Translations for some activities available at the Classic CS Unplugged website" %}</h2>
+            {% endif %}
           </div>
-          <div class="col-12 col-md-5 text-center text-md-{{LANGUAGE_START}}">
+          <div class="col-12 col-md-7 text-center text-md-{{LANGUAGE_START}}">
           </div>
-          <div class="d-none col-md-7 d-md-flex justify-content-end align-items-end">
+          <div class="d-none col-md-5 d-md-flex justify-content-end align-items-end">
             <img class="img-fluid" src="{% static 'img/classic-cs-unplugged-logo.png' %}">
           </div>
         </div>
