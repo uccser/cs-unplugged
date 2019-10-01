@@ -1,27 +1,40 @@
-from . import helpers
 from .BaseBrowserTest import BaseBrowserTest
+from .setup_config import BASE_URL
 
 
 class NavbarTest(BaseBrowserTest):
     """ Test cases for using the navigation bar"""
 
+    URL = ""
+
+    TITLE_ERROR_TEXT = "Failed to load page\nExpected title = {}, got {}"
+
+    def check_title_and_url(self, expected_title, expected_url):
+        """Check that the title and url are correct."""
+
+        if self.driver.title != expected_title:
+            raise Exception(self.TITLE_ERROR_TEXT.format(expected_title, self.driver.title))
+        if self.driver.current_url != expected_url:
+            raise Exception(self.URL_ERROR_TEXT.format(expected_url, self.driver.current_url))
+
     def test_navbar_loads_pages(self):
+        """Check the navigation bar switches to the correct page."""
 
         # Home page
-        helpers.load_home_page(self.driver)
+        self.load_page()
 
         # Topics page
         self.driver.find_element_by_link_text("Topics").click()
-        helpers.check_title_and_url(self.driver, "Topics - CS Unplugged", "{}topics/".format(helpers.BASE_URL))
+        self.check_title_and_url("Topics - CS Unplugged", "{}topics/".format(BASE_URL))
 
         # Printables page
         self.driver.find_element_by_link_text("Printables").click()
-        helpers.check_title_and_url(self.driver, "Printables - CS Unplugged", "{}resources/".format(helpers.BASE_URL))
+        self.check_title_and_url("Printables - CS Unplugged", "{}resources/".format(BASE_URL))
 
         # About page
         self.driver.find_element_by_link_text("About").click()
-        helpers.check_title_and_url(self.driver, "About - CS Unplugged", "{}about/".format(helpers.BASE_URL))
+        self.check_title_and_url("About - CS Unplugged", "{}about/".format(BASE_URL))
 
         # Return to home page
         self.driver.find_element_by_id("navbar-brand-logo").click()
-        helpers.check_title_and_url(self.driver, "CS Unplugged", helpers.BASE_URL)
+        self.check_title_and_url("CS Unplugged", BASE_URL)

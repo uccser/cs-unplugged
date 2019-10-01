@@ -3,24 +3,36 @@
     "os": "Windows",
     "os_version": "10",
     "browser": "Chrome",
-    "browser_version": "61.0",
+    "browser_version": "75.0",
     "resolution": "1920x1080",
-    "browserstack.local": "true"
+    "browserstack.local": "true",
+    "browserstack.debug" : "true"
   },
   {
     "os": "Windows",
     "os_version": "10",
-    "browser": "Chrome",
-    "browser_version": "62.0",
+    "browser" : "Firefox",
+    "browser_version" : "69.0",
     "resolution": "1920x1080",
-    "browserstack.local": "true"
+    "browserstack.local": "true",
+    "browserstack.debug" : "true"
   },
   {
     "os": "Windows",
     "os_version": "10",
-    "browser": "Chrome",
-    "browser_version": "63.0",
+    "browser" : "Edge",
+    "browser_version" : "18.0",
     "resolution": "1920x1080",
-    "browserstack.local": "true"
+    "browserstack.local": "true",
+    "browserstack.debug" : "true"
+  },
+  {
+    "os" : "OS X",
+    "os_version" : "Mojave",
+    "browser" : "Safari",
+    "browser_version" : "12.1",
+    "resolution": "1920x1080",
+    "browserstack.local": "true",
+    "browserstack.debug" : "true"
   }
 ]

@@ -383,7 +383,6 @@ ci_test_in_browser() {
   unzip browserStackLocal.zip
   ./BrowserStackLocal --key $KEY --force-local &
   cmd_update
-#  nosetests -w csunplugged/tests/topics/in_browser/ --processes=4 --process-timeout=60
   cd csunplugged/tests/topics/in_browser/
   python3 run_browser_tests.py capabilities.json
 }
