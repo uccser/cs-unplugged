@@ -142,7 +142,7 @@ Important points:
 
 - Explicit and implicit waits.
     These can be used to wait until the required element or attribute is present or to add time in between each action being carried out.
-    Read the `Selenium wait documentation<https://selenium-python.readthedocs.io/waits.html>`_.
+    Read the `Selenium wait documentation <https://selenium-python.readthedocs.io/waits.html>`_.
 
 - ActionChains.
     These can be used to chain together complex web interactions like drag-and-drop actions for interactives.
@@ -152,26 +152,3 @@ BrowserStack
 
 Provides the devices to remotely test the given capabilities.
 Check out their extensive `docs <https://www.browserstack.com/docs>`_ for more information.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-sdfdsf

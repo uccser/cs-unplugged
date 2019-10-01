@@ -1,3 +1,6 @@
+from selenium.webdriver.support import expected_conditions as ec
+from selenium.webdriver.support.ui import WebDriverWait
+
 from .BaseBrowserTest import BaseBrowserTest
 from .setup_config import BASE_URL
 
@@ -10,8 +13,9 @@ class NavbarTest(BaseBrowserTest):
     def check_title_and_url(self, expected_title, expected_url):
         """Check that the title and url are correct."""
 
-        if self.driver.title != expected_title:
-            raise Exception(self.TITLE_ERROR_TEXT.format(expected_title, self.driver.title))
+        WebDriverWait(self.driver, 10).until(ec.title_is("this"),
+                                             message=self.TITLE_ERROR_TEXT.format(expected_title, self.driver.title))
+
         if self.driver.current_url != expected_url:
             raise Exception(self.URL_ERROR_TEXT.format(expected_url, self.driver.current_url))
 
