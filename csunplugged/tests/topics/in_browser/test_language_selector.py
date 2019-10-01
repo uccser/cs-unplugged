@@ -17,7 +17,6 @@ class LanguagePickerTest(BaseBrowserTest):
 
     def change_language(self, lang_code):
         """Change the language to the language code given."""
-        time.sleep(2)
         self.driver.find_element_by_id("navbarLanguageSelector").click()
         self.driver.find_element_by_link_text(self.LANGUAGE_DICT[lang_code]).click()
         lang_value = self.driver.find_element_by_tag_name("html").get_attribute("lang")
@@ -28,7 +27,7 @@ class LanguagePickerTest(BaseBrowserTest):
         """Check all language selector options change the homepage HTML lang attribute."""
 
         self.load_page()
-        
+
         # Select German
         self.change_language('de')
 
