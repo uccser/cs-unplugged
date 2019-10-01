@@ -36,7 +36,7 @@ class BaseBrowserTest(unittest.TestCase):
         Creates the Selenium driver and sets the BrowserStack capabilities.
         """
         # Defaults to first index if local
-        test_capabilities = copy.deepcopy(self.browsers[int(os.getenv('INDEX', 3))])
+        test_capabilities = copy.deepcopy(self.browsers[int(os.getenv('INDEX', 0))])
 
         test_capabilities['name'] = self._testMethodName
         self.driver = webdriver.Remote(
