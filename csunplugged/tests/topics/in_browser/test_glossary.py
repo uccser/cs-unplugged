@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 class GlossaryTest(BaseBrowserTest):
     """Test cases for checking the contents of glossary items"""
 
-    def test_binary_numbers_algorithm(self):
+    def test_binary_numbers_algorithm_glossary(self):
         """Check async loading of glossary terms is functioning for binary numbers."""
 
         self.load_page("topics/binary-numbers/unit-plan/description/")

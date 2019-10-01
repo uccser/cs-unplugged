@@ -13,7 +13,7 @@ class NavbarTest(BaseBrowserTest):
     def check_title_and_url(self, expected_title, expected_url):
         """Check that the title and url are correct."""
 
-        WebDriverWait(self.driver, 10).until(ec.title_is("this"),
+        WebDriverWait(self.driver, 10).until(ec.title_is(expected_title),
                                              message=self.TITLE_ERROR_TEXT.format(expected_title, self.driver.title))
 
         if self.driver.current_url != expected_url:
