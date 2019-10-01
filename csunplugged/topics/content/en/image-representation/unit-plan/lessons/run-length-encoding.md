@@ -9,10 +9,12 @@
 
 In this lesson we will again just be looking at black and white images (this makes learning the CS concepts much simpler, and following lessons move on to coloured images).
 
-Remind students about what they learnt in the previous lesson, that digital images are made up of pixels and computers store the colour of pixels using binary digits (bits).
-Draw a 3x3 grid on the board, or display one to students in another way (e.g. with a projector or on a large piece of paper).
+Remind students about what they learnt in the previous lesson, that digital images are made up of pixels and computers store these pixels using binary digits (bits).
+Show the students the following image.
+This can be on a projector or printed out, it just needs to be large enough for everyone to see.
 
-Teacher: Let's say this grid represents a small image, with each box representing
+... cup image ...
+
 
 {panel type="general"}
 
@@ -23,7 +25,6 @@ Teacher: Let's say this grid represents a small image, with each box representin
 - Students can use a black colouring pencil, crayon, or felt tip pen, but easily erasable pencils work much better for the first time students do this activity.
 
 {panel end}
-
 
 ## Lesson activities
 
