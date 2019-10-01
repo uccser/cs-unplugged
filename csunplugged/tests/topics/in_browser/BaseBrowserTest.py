@@ -15,7 +15,7 @@ from . import setup_config
 class BaseBrowserTest(unittest.TestCase):
     """Base test class for the in_browser test suite."""
 
-    URL = None  # Provides the address for the load_page method.
+    URL = ""  # Provides the address for the load_page method. An empty string represents the home page.
 
     @classmethod
     def setUpClass(cls):

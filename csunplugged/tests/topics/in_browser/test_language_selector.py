@@ -6,8 +6,6 @@ class LanguagePickerTest(BaseBrowserTest):
 
     LANG_SELECTOR_ERROR_TEXT = "Language selector failed.\nExpected {}, got {}"
 
-    URL = ""    # Indicates that calls to self.load_page() will access the homepage.
-
     LANGUAGE_DICT = {
         'en': 'English',
         'de': 'Deutsch',

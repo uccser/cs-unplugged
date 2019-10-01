@@ -5,8 +5,6 @@ from .setup_config import BASE_URL
 class NavbarTest(BaseBrowserTest):
     """ Test cases for using the navigation bar"""
 
-    URL = ""
-
     TITLE_ERROR_TEXT = "Failed to load page\nExpected title = {}, got {}"
 
     def check_title_and_url(self, expected_title, expected_url):
