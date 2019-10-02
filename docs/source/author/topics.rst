@@ -73,9 +73,10 @@ The ``content`` directory for the topics application contains:
   - A folder for each Topic, containing the content Markdown files.
   - YAML files containing strings that need to be translated in each different language folder.
 
+- A ``structure`` directory which contains all configuration YAML files.
+
 - Several auto-generated directories. Please ignore these.
 
-- A ``structure`` directory which contains all configuration YAML files.
 
 .. _file-types:
 
@@ -188,7 +189,7 @@ This file:
 - **Is called:** ``<topic-key>.md`` where ``<topic-key>`` is the key
   (:ref:`what-is-a-key`) of the topic and the name of the directory it is in,
   e.g. ``binary.md`` or ``kidbots.md``.
-- **Contains:** An H1 heading (i.e. has a single ``#`` prefix)  and the content
+- **Contains:** an H1 heading (i.e. has a single ``#`` prefix)  and the content
   of the description.
 
 .. note ::
@@ -226,7 +227,7 @@ The Markdown file containing the content of the unit plan:
 - **Is called:** ``<unit-plan-key>.md`` where ``<unit-plan-key>`` is the key
   (:ref:`what-is-a-key`) of the unit plan and the name of the directory it is
   in, e.g. ``unit-plan-2.md``.
-- **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
+- **Contains:** an H1 heading (i.e. has a single ``#`` prefix) and the content
   of the unit plan.
 
 .. note::
@@ -267,7 +268,7 @@ The Markdown file containing the content for the lesson:
   ``topics/content/en/binary/unit-plan/lessons/``.
 - **Is called:** ``<lesson-key>.md`` where ``<lesson-key>`` is the key
   (:ref:`what-is-a-key`) of the lesson, e.g. ``introduction-to-binary.md``.
-- **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
+- **Contains:** an H1 heading (i.e. has a single ``#`` prefix) and the content
   for the lesson.
 
 .. note::
@@ -387,7 +388,7 @@ Adding a Programming Challenge
 ------------------------------------------------------------------------------
 
 There should only be one ``.yaml`` file per language directory.
-If one already exists in the language directory then add new ... to this,
+If one already exists in the language directory then add new programming challenges to this,
 rather than creating a new file.
 
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
@@ -416,7 +417,7 @@ challenge, e.g. ``count-to-16``.
 
       - **Is called:** ``<challenge-key>.md`` where ``<challenge-key>`` is the key
         of the challenge, e.g. ``count-to-16.md``.
-      - **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
+      - **Contains:** an H1 heading (i.e. has a single ``#`` prefix) and the content
         of the challenge.
 
       .. note::
@@ -467,7 +468,7 @@ Adding a Curriculum Integration
 ------------------------------------------------------------------------------
 
 There should only be one ``.yaml`` file per language directory.
-If one already exists in the language directory then add new ... to this,
+If one already exists in the language directory then add new curriculum integrations to this,
 rather than creating a new file.
 
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
@@ -489,7 +490,7 @@ The Markdown file containing the content of the curriculum integration:
   ``topics/content/en/binary/curriculum-integrations/``.
 - **Is called:** ``<integration-key>.md`` where ``<integration-key>`` is the key
   (:ref:`what-is-a-key`) of the curriculum integration, e.g. ``whose-cake-is-it.md``.
-- **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
+- **Contains:** an H1 heading (i.e. has a single ``#`` prefix) and the content
   of the integration.
 
 .. note ::
