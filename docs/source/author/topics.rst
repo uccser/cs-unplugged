@@ -1,10 +1,6 @@
 Topic Content
 ##############################################################################
 
-.. warning::
-  Most flowcharts in this guide need to be updated to reflect changes to the content directory structure.
-  This is tracked by `isssue/749 <https://github.com/uccser/cs-unplugged/issues/749>`__.
-
 The topics application (see :ref:`what-is-an-application`) is the main focus of
 the CS Unplugged website, as it contains the majority of educational material
 for the project.
@@ -17,7 +13,6 @@ Topics Overview
 
 The following diagram shows the general structure of the topics application.
 
-.. Flowchart has been updated
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. image:: ../_static/img/topics_overview_diagram.png
   :alt: A diagram providing an overview of topics application content
