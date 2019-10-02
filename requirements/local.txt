@@ -8,4 +8,4 @@ sphinx-rtd-theme==0.4.3
 
 # Debugging Tools
 django-debug-toolbar==1.11
-django-extensions==2.1.6
+django-extensions==2.2.2
