@@ -1,10 +1,6 @@
 Topic Content
 ##############################################################################
 
-.. warning::
-  All flowcharts in this guide need to be updated to reflect changes to the content directory structure.
-  This is tracked by `isssue/749 <https://github.com/uccser/cs-unplugged/issues/749>`__.
-
 The topics application (see :ref:`what-is-an-application`) is the main focus of
 the CS Unplugged website, as it contains the majority of educational material
 for the project.
@@ -15,8 +11,7 @@ for the project.
 Topics Overview
 ==============================================================================
 
-A general overview of the topics application can be described in the following
-diagram.
+The following diagram shows the general structure of the topics application.
 
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. image:: ../_static/img/topics_overview_diagram.png
@@ -31,27 +26,33 @@ diagram.
       - A **lesson** can contain **learning outcomes**, and
         **generated resources**.
 
-  - A **topic** can also contain **curriculum integrations**, which can also contain
-    **curriculum areas**.
+  - A **topic** can also contain **curriculum integrations**.
+
+    - A **curriculum integration** can also contain **curriculum areas**.
 
   - A **topic** can also contain **programming challenges**.
 
     - A **programming challenge** can use different **programming languages**, and be set at
       a specific **difficulty**.
 
-- **Learning outcomes**, **curriculum areas**, **glossary definitions**,
-  **programming languages**, and **programming challenge difficulties** are
-  defined at a language level, so can be used by all topic content
-  of that language.
+- **Programming challenges**, **learning outcomes**, **curriculum areas**, and
+  **glossary definitions**, are defined at a language level (e.g. English or German,
+  not programming language), so can be used by all topics within that language directory.
 
-This is just a broad overview of the topics application.
+This is a broad overview of the topics application, and the following sections provide more details.
 
 Viewing All Topics Content
 ------------------------------------------------------------------------------
 
-When developing locally, once you have run ``./csu start`` (see
-:doc:`../getting_started/helper_commands`) you can go to the url below to get a
-quick overview of what content is loaded:
+When developing locally, once you have run ``./csu start`` and ``./csu update`` (see
+:doc:`../getting_started/helper_commands`) you can go to the url below to see your
+local version of the website:
+
+.. code-block:: none
+
+  localhost/
+
+You can also go to the url below to get a quick overview of what content is loaded:
 
 .. code-block:: none
 
@@ -64,14 +65,18 @@ For more information about what this page displays, see :doc:`../developer/dev`.
 Topics Content Directory
 ==============================================================================
 
-The ``content`` directory for the topics application contains
+The ``content`` directory for the topics application contains:
 
-- a directory for each language in which content exists, named using the Django locale code. This directory contains
+- A directory for each language in which content exists, named using the Django
+  locale code. These language directories each contain:
 
-  - Content Markdown files
-  - YAML files containing translatable strings
+  - A folder for each Topic, containing the content Markdown files.
+  - YAML files containing strings that need to be translated in each different language folder.
 
-- a special ``structure`` directory which contains all configuration YAML files
+- A ``structure`` directory which contains all configuration YAML files.
+
+- Several auto-generated directories. Please ignore these.
+
 
 .. _file-types:
 
@@ -84,49 +89,107 @@ There are 3 different types of files used for adding content to CS Unplugged:
 - YAML files containing translatable strings
 - YAML configuration files
 
-All files live inside the ``topics/content`` directory.
-The first two files are unique for each translation language, and are stored in a directory tree specific to that language.
+All of these files live inside the ``topics/content`` directory.
+The first two types of files are unique for each language, and are stored in a
+directory tree specific to that language.
 This directory is named using the languages Django locale code eg. ``en``, ``de_AT``.
-Configuration files are shared amongst all languages, because the content structure is the same for all languages.
+The YAML configuration files are shared amongst all languages, because the content structure
+is the same for all languages.
 These files live under a special ``structure`` directory.
 
-As a simple rule, structure files situated inside the ``structure`` directory contain **no** text a website user will see.
-Any user facing text lives in either a Markdown file or a YAML translation file inside the locale specific directories.
+As a simple rule, structure files situated inside the ``structure`` directory
+contain **no** text a website user will see.
+Any user facing text lives in either a Markdown file or a YAML translation file
+inside the locale specific directories.
 
 .. _adding-topics-content:
 
 Adding Content
 ==============================================================================
 
+.. note ::
+  If you are adding content for a language other than english then wherever the directory
+  path ``topics/content/en/`` is used, replace ``en/`` with the relevant folder for that
+  language, e.g. ``de/``
+
 The following flow charts will take you step by step through the process of adding new
-content to the topics application. Below this section is full details on how to structure
+content to the topics application. Below this section are full details on how to structure
 and write the configuration files for the topics application.
+These charts and descriptions will use "Binary" as an example topic.
 
 .. _adding-a-topic:
 
 Adding a Topic
 ------------------------------------------------------------------------------
 
+To set up a new topic, which you can then add content to, you will first need to:
+
+- Create a set of required directories and Markdown files within the ``topics/content/en/``
+  directory (replace ``en/`` if you are creating content for a different language, e.g. ``de/``).
+- Add the required headings to these files.
+- Create a set of required directories and config files within the ``topics/structure/`` directory.
+- Add the minimum required configuration settings to these files.
+
+Before you can run ``./csu update`` and view the topic on your local machine, these Markdown
+and YAML files must contain some required headings and content. We recommend adding some
+placeholder content to these files and checking that you can view them locally, before moving
+on to adding content.
+
+After these steps have been completed you can run ``./csu update``, and view
+the topic at:
+
+.. code-block:: none
+
+  localhost/en/topics/
+
+To create the required directories and Markdown files follow this flow chart:
+
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. image:: ../_static/img/topics_adding_topic_content_files_flowchart.png
+
+Add the following content to these Markdown files:
+
+- An H1 heading (i.e. has a single ``#`` prefix) and some placeholder text to the **topic** description Markdown file.
+
+  - For example, add ``# Binary`` to the top of the file and the placeholder text ``test`` underneath this.
+
+- An H1 heading and placeholder text to the **unit-plan** Markdown file.
+
+- An H1 heading and placeholder text to the **lesson** Markdown file.
+
+To create the required directories and config files follow this flow chart:
+
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. The image is included as raw HTML because it has clickable nodes.
 .. raw:: html
 
-  <map name="topics-map">
-    <area shape="rect" coords="240,308,317,343" href="#topic-configuration-file">
-    <area shape="rect" coords="240,410,317,445" href="#application-structure-configuration-file">
-    <area shape="rect" coords="240,513,317,550" href="#adding-a-unit-plan">
-    <area shape="rect" coords="240,615,317,650" href="../getting_started/helper_commands.html#update">
+  <map name="topic-structure-files-map">
+    <area shape="rect" coords="236,230,312,264" href="#topic-configuration-file">
+    <area shape="rect" coords="236,435,312,468" href="#unit-plan-configuration-file">
+    <area shape="rect" coords="236,633,312,668" href="#adding-a-lesson">
   </map>
-  <img src="../_static/img/topics_adding_topic_flowchart.png" usemap="#topics-map">
+  <img src="../_static/img/topics_adding_topic_structure_files_flowchart.png" usemap="#topic-structure-files-map">
 
-The Markdown file containing the description of the topic:
+Add the required fields, and their keys, to these YAML files:
+
+- The **topic** config file. The required fields are listed in the :ref:`topic-file` section.
+
+- The **unit-plan** config file. The required fields are listed in the :ref:`unit-plan-file` section.
+
+- The **lesson** config file. The required fields are listed in the section :ref:`lesson-file` section.
+
+Now you can run the ./csu update command.
+Once this has finished you will be able to view the topic at localhost/en/topics/
+
+The description of the topic is written in the **topic** Markdown file.
+This file:
 
 - **Is in:** the topic directory, e.g. the description file for
-  Binary Numbers will be in ``topics/content/en/binary-numbers/``.
+  Binary will be in ``topics/content/en/binary/``.
 - **Is called:** ``<topic-key>.md`` where ``<topic-key>`` is the key
   (:ref:`what-is-a-key`) of the topic and the name of the directory it is in,
-  e.g. ``binary-numbers.md`` or ``kidbots.md``.
-- **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
+  e.g. ``binary.md`` or ``kidbots.md``.
+- **Contains:** an H1 heading (i.e. has a single ``#`` prefix)  and the content
   of the description.
 
 .. note ::
@@ -149,22 +212,22 @@ Adding a Unit Plan
 .. raw:: html
 
   <map name="unit-plan-map">
-    <area shape="rect" coords="240,435,317,468" href="#unit-plan-configuration-file">
-    <area shape="rect" coords="240,547,317,581" href="#unit-plan-configuration-file">
-    <area shape="rect" coords="240,658,317,692" href="#topic-configuration-file">
-    <area shape="rect" coords="240,758,317,792" href="#adding-a-lesson">
-    <area shape="rect" coords="240,864,317,896" href="../getting_started/helper_commands.html#update">
+    <area shape="rect" coords="233,410,309,445" href="#unit-plan-configuration-file">
+    <area shape="rect" coords="233,616,309,650" href="#topic-configuration-file">
+    <area shape="rect" coords="233,823,309,857" href="#unit-plan-configuration-file">
+    <area shape="rect" coords="233,928,309,962" href="#adding-a-lesson">
+    <area shape="rect" coords="233,1034,309,1068" href="../getting_started/helper_commands.html#update">
   </map>
   <img src="../_static/img/topics_adding_unit_plan_flowchart.png" usemap="#unit-plan-map">
 
-The Markdown file containing the content og the unit plan:
+The Markdown file containing the content of the unit plan:
 
-- **Is in:** the unit plan directory, e.g. the unit plan file for Binary Numbers
-  Unit Plan 2 will be in ``topics/content/en/binary-numbers/unit-plan-2/``.
+- **Is in:** the unit plan directory, e.g. the unit plan file for Binary
+  Unit Plan 2 will be in ``topics/content/en/binary/unit-plan-2/``.
 - **Is called:** ``<unit-plan-key>.md`` where ``<unit-plan-key>`` is the key
   (:ref:`what-is-a-key`) of the unit plan and the name of the directory it is
   in, e.g. ``unit-plan-2.md``.
-- **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
+- **Contains:** an H1 heading (i.e. has a single ``#`` prefix) and the content
   of the unit plan.
 
 .. note::
@@ -182,50 +245,36 @@ The Markdown file containing the content og the unit plan:
 Adding a Lesson
 ------------------------------------------------------------------------------
 
-.. TODO(issue/749): Update diagram with optional step to add resource description YAML translation file.
-
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. The image is included as raw HTML because it has clickable nodes.
 .. raw:: html
 
   <map name="lesson-map">
-    <area shape="rect" coords="238,318,315,351" href="#lesson-configuration-file">
-    <area shape="rect" coords="237,431,317,465" href="#lesson-configuration-file">
-    <area shape="rect" coords="237,534,317,569" href="#unit-plan-configuration-file">
-    <area shape="rect" coords="237,638,317,671" href="../getting_started/helper_commands.html#update">
+    <area shape="rect" coords="238,322,315,354" href="#lesson-configuration-file">
+    <area shape="rect" coords="238,534,315,569" href="#unit-plan-configuration-file">
+    <area shape="rect" coords="238,824,315,856" href="#lesson-configuration-file">
+    <area shape="rect" coords="238,919,315,951" href="../getting_started/helper_commands.html#update">
+
+    <area shape="rect" coords="595,322,670,354" href="#lesson-configuration-file">
+    <area shape="rect" coords="595,534,670,569" href="#unit-plan-configuration-file">
+    <area shape="rect" coords="595,632,670,666" href="#lesson-configuration-file">
+    <area shape="rect" coords="595,728,670,760" href="../getting_started/helper_commands.html#update">
   </map>
   <img src="../_static/img/topics_adding_lesson_flowchart.png" usemap="#lesson-map">
 
 The Markdown file containing the content for the lesson:
 
 - **Is in:** the lesson subdirectory in the unit plan directory, e.g.
-  ``topics/content/en/binary-numbers/unit-plan/lessons/``.
+  ``topics/content/en/binary/unit-plan/lessons/``.
 - **Is called:** ``<lesson-key>.md`` where ``<lesson-key>`` is the key
-  (:ref:`what-is-a-key`) of the lesson, e.g. ``introduction-to-bits.md``.
-- **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
+  (:ref:`what-is-a-key`) of the lesson, e.g. ``introduction-to-binary.md``.
+- **Contains:** an H1 heading (i.e. has a single ``#`` prefix) and the content
   for the lesson.
 
 .. note::
 
   The heading written in this file will be used exactly as it is given
   throughout the website as the name of the lesson.
-
-(Optional) The translation YAML file containing resource descriptions:
-
-- **Is in:** the lesson subdirectory in the unit plan directory, e.g.
-  ``topics/content/en/binary-numbers/unit-plan/lessons/``.
-- **Is called:** ``<lesson-key>-resource-descriptions.md``
-- **Contains:** Descriptions of how printed resources should be used.
-  For example,
-
-  .. code-block:: yaml
-
-    binary-cards:
-      description: One set for class demonstration.
-    binary-cards-small:
-      description: One set of cards per student.
-    binary-to-alphabet:
-      description: Blank sheets for students, plus teacher answer sheet.
 
 .. note::
 
@@ -238,7 +287,14 @@ The Markdown file containing the content for the lesson:
 Adding Learning Outcomes
 ------------------------------------------------------------------------------
 
-.. TODO(issue/749): Update diagram with step to add learning outcomes YAML translation file.
+There are two types of YAML files for Learning Outcomes.
+One is in ``topics/structure`` and is shared by all language folders.
+The other is the translation YAML file, which is unique to a language and is in
+``topics/content/<language>`` (e.g. ``content/en``)
+
+There should only be one ``learning-outcomes.yaml`` file per language directory.
+If one already exists in the language directory then add new learning outcomes to this,
+rather than creating a new file.
 
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. The image is included as raw HTML because it has clickable nodes.
@@ -247,7 +303,7 @@ Adding Learning Outcomes
   <map name="learning-outcomes-map">
     <area shape="rect" coords="240,100,317,135" href="#learning-outcomes-configuration-file">
     <area shape="rect" coords="240,210,317,245" href="#application-structure-configuration-file">
-    <area shape="rect" coords="555,200,633,235" href="#learning-outcomes-configuration-file">
+    <area shape="rect" coords="551,200,633,225" href="#learning-outcomes-configuration-file">
     <area shape="rect" coords="240,330,317,362" href="../getting_started/helper_commands.html#update">
   </map>
   <img src="../_static/img/topics_adding_learning_outcomes_flowchart.png" usemap="#learning-outcomes-map">
@@ -258,7 +314,8 @@ The translation YAML file containing learning outcomes descriptions:
 - **Is in:** ``topics/content/en``
 - **Is called:** ``learning-outcomes.yaml``
 - **Contains:** Descriptions of all learning outcomes. Every learning outcome
-  key present in the `Learning Outcomes Configuration File`_ must be present in the English translation file.
+  key present in the `Learning Outcomes Configuration File`_ must be present in
+  the English translation file.
 
   For example,
 
@@ -285,17 +342,19 @@ file.
 Adding Curriculum Areas
 ------------------------------------------------------------------------------
 
-.. TODO(issue/749): Update diagram with step to add curriculum areas YAML translation file.
+There should only be one ``curriculum-areas.yaml`` file per language directory.
+If one already exists in the language directory then add new curriculum areas to this,
+rather than creating a new file.
 
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. The image is included as raw HTML because it has clickable nodes.
 .. raw:: html
 
   <map name="curriculum-areas-map">
-    <area shape="rect" coords="240,100,317,135" href="#curriculum-areas-configuration-file">
-    <area shape="rect" coords="240,210,317,245" href="#application-structure-configuration-file">
-    <area shape="rect" coords="560,200,642,232" href="#curriculum-areas-configuration-file">
-    <area shape="rect" coords="240,330,317,362" href="../getting_started/helper_commands.html#update">
+    <area shape="rect" coords="230,236,305,270" href="#curriculum-areas-configuration-file">
+    <area shape="rect" coords="230,362,305,396" href="#application-structure-configuration-file">
+    <area shape="rect" coords="230,618,305,650" href="#curriculum-areas-configuration-file">
+    <area shape="rect" coords="230,722,305,756" href="../getting_started/helper_commands.html#update">
   </map>
   <img src="../_static/img/topics_adding_curriculum_areas_flowchart.png" usemap="#curriculum-areas-map">
 
@@ -304,7 +363,8 @@ The translation YAML file containing curriculum areas descriptions:
 - **Is in:** ``topics/content/en``
 - **Is called:** ``curriculum-areas.yaml``
 - **Contains:** Descriptions of all curriculum areas. Every curriculum area
-  key present in the `Curriculum Areas Configuration File`_ must be present in the English translation file.
+  key present in the `Curriculum Areas Configuration File`_ must be present in
+  the English translation file.
 
   For example,
 
@@ -327,6 +387,10 @@ Only curriculum areas without any children can be added to items.
 Adding a Programming Challenge
 ------------------------------------------------------------------------------
 
+There should only be one ``.yaml`` file per language directory.
+If one already exists in the language directory then add new programming challenges to this,
+rather than creating a new file.
+
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. The image is included as raw HTML because it has clickable nodes.
 .. raw:: html
@@ -345,7 +409,7 @@ keys you specified in the programming challenges configuration file.
 
 A programming challenge is split into several different sections, each of which
 is an its own Markdown file, all of which are in
-``topics/content/en/binary-numbers/programming-challenges/<challenge-key>/``
+``topics/content/en/binary/programming-challenges/<challenge-key>/``
 where ``<challenge-key>`` refers to the key (:ref:`what-is-a-key`) of the
 challenge, e.g. ``count-to-16``.
 
@@ -353,7 +417,7 @@ challenge, e.g. ``count-to-16``.
 
       - **Is called:** ``<challenge-key>.md`` where ``<challenge-key>`` is the key
         of the challenge, e.g. ``count-to-16.md``.
-      - **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
+      - **Contains:** an H1 heading (i.e. has a single ``#`` prefix) and the content
         of the challenge.
 
       .. note::
@@ -403,6 +467,10 @@ Therefore, the languages you have chosen must be specified in the
 Adding a Curriculum Integration
 ------------------------------------------------------------------------------
 
+There should only be one ``.yaml`` file per language directory.
+If one already exists in the language directory then add new curriculum integrations to this,
+rather than creating a new file.
+
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. The image is included as raw HTML because it has clickable nodes.
 .. raw:: html
@@ -418,11 +486,11 @@ Adding a Curriculum Integration
 The Markdown file containing the content of the curriculum integration:
 
 - **Is in:** the curriculum integration directrory, e.g. curriculum integrations
-  in Binary Numbers will be in
-  ``topics/content/en/binary-numbers/curriculum-integrations/``.
+  in Binary will be in
+  ``topics/content/en/binary/curriculum-integrations/``.
 - **Is called:** ``<integration-key>.md`` where ``<integration-key>`` is the key
   (:ref:`what-is-a-key`) of the curriculum integration, e.g. ``whose-cake-is-it.md``.
-- **Contains:** An H1 heading (i.e. has a single ``#`` prefix) and the content
+- **Contains:** an H1 heading (i.e. has a single ``#`` prefix) and the content
   of the integration.
 
 .. note ::
@@ -435,14 +503,18 @@ The Markdown file containing the content of the curriculum integration:
 Adding Glossary Definitions
 ------------------------------------------------------------------------------
 
+There should only be one ``glossary`` directory per language directory.
+If one already exists in the language directory then add new definitions to this,
+rather than creating a new directory.
+
 .. The following image can copied for be edits here: https://goo.gl/Vjv6XV
 .. The image is included as raw HTML because it has clickable nodes.
 .. raw:: html
 
   <map name="glossary-definitions-map">
-    <area shape="rect" coords="240,110,317,145" href="#application-structure-configuration-file">
-    <area shape="rect" coords="240,320,320,350" href="#glossary-definitions-markdown-file">
-    <area shape="rect" coords="240,430,319,462" href="../getting_started/helper_commands.html#update">
+    <area shape="rect" coords="240,200,317,230" href="#application-structure-configuration-file">
+    <area shape="rect" coords="240,408,320,442" href="#glossary-definitions-markdown-file">
+    <area shape="rect" coords="240,518,319,552" href="../getting_started/helper_commands.html#update">
   </map>
   <img src="../_static/img/topics_adding_glossary_definitions_flowchart.png" usemap="#glossary-definitions-map">
 
@@ -475,14 +547,29 @@ contents of that file.
 Adding a Classroom Resource
 ------------------------------------------------------------------------------
 
-.. TODO(issue/749): Add diagram for adding a classroom resource.
+There should only be one ``classroom-resources.yaml`` file per language directory.
+If one already exists in the language directory then add new resources to this,
+rather than creating a new file.
+
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="classroom-resources-map">
+    <area shape="rect" coords="230,236,305,270" href="#classroom-resources-configuration-file">
+    <area shape="rect" coords="230,362,305,396" href="#application-structure-configuration-file">
+    <area shape="rect" coords="230,618,305,650" href="#classroom-resources-configuration-file">
+    <area shape="rect" coords="230,722,305,756" href="../getting_started/helper_commands.html#update">
+  </map>
+  <img src="../_static/img/topics_adding_classroom_resource_flowchart.png" usemap="#classroom-resources-map">
 
 The translation YAML file containing classroom resource descriptions:
 
 - **Is in:** ``topics/content/en``
 - **Is called:** ``classroom-resources.yaml``
 - **Contains:** Descriptions of all classroom resources. Every classroom resource
-  key present in the `Classroom Resources Configuration File`_ must be present in the English translation file.
+  key present in the `Classroom Resources Configuration File`_ must be present in
+  the English translation file.
   Descriptions must be short (less than 100 characters), as this list is displayed on the lesson sidebar.
   If a longer description is required, this should be within the lesson text within a panel.
 
@@ -501,13 +588,28 @@ The translation YAML file containing classroom resource descriptions:
 Adding an Age Group
 ------------------------------------------------------------------------------
 
-.. TODO(issue/749): Add diagram for adding an age group.
+There should only be one ``age-groups.yaml`` file per language directory.
+If one already exists in the language directory then add new age groups to this,
+rather than creating a new file.
+
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="age-groups-map">
+    <area shape="rect" coords="230,236,305,270" href="#age-group-configuration-file">
+    <area shape="rect" coords="230,362,305,396" href="#application-structure-configuration-file">
+    <area shape="rect" coords="230,618,305,650" href="#age-group-configuration-file">
+    <area shape="rect" coords="230,722,305,756" href="../getting_started/helper_commands.html#update">
+  </map>
+  <img src="../_static/img/topics_adding_age_group_flowchart.png" usemap="#age-groups-map">
 
 The translation YAML file containing age group descriptions:
 
 - **Is in:** ``topics/content/en``
 - **Is called:** ``age-groups.yaml``
-- **Contains:** Optional descriptions of programming challenge defined in the `Age Group Configuration File`_ .
+- **Contains:** Optional descriptions of programming challenge defined in the
+  `Age Group Configuration File`_ .
 
   For example,
 
@@ -520,14 +622,29 @@ The translation YAML file containing age group descriptions:
 Adding a Programming Challenge Difficulty
 ------------------------------------------------------------------------------
 
-.. TODO(issue/749): Add diagram for adding a programming challenge difficulty.
+There should only be one ``programming-challenges-structure-difficulties.yaml`` file per language directory.
+If one already exists in the language directory then add new difficulties to this,
+rather than creating a new file.
+
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="programming-challenge-difficulty-map">
+    <area shape="rect" coords="238,258,312,292" href="#application-structure-configuration-file">
+    <area shape="rect" coords="238,563,312,597" href="#programming-challenges-structure-file">
+    <area shape="rect" coords="238,680,312,712" href="../getting_started/helper_commands.html#update">
+  </map>
+  <img src="../_static/img/topics_adding_programming_challenge_difficulty_flowchart.png" usemap="#programming-challenge-difficulty-map">
+
 
 The translation YAML file containing difficulty descriptions:
 
 - **Is in:** ``topics/content/en``
 - **Is called:** ``programming-challenges-structure-difficulties.yaml``
 - **Contains:** Descriptions of difficulties defined in the `Programming Challenges Structure Configuration File`_.
-  Every difficulty key present in the configuration file must also be present in the English YAML translation file.
+  Every difficulty key present in the configuration file must also be present in
+  the English YAML translation file.
 
   For example,
 
@@ -540,10 +657,23 @@ The translation YAML file containing difficulty descriptions:
     difficulty-2:
       name: Growing experience
 
-Adding a Programming Challenge Languages
+Adding Programming Challenge Languages
 ------------------------------------------------------------------------------
 
-.. TODO(issue/749): Add diagram for adding a programming challenge language.
+There should only be one ``programming-challenges-structure-languages.yaml`` file per language directory.
+If one already exists in the language directory then add new languages to this,
+rather than creating a new file.
+
+.. The following image can copied for be edits here: https://goo.gl/Vjv6XV
+.. The image is included as raw HTML because it has clickable nodes.
+.. raw:: html
+
+  <map name="programming-challenge-language-map">
+    <area shape="rect" coords="238,258,312,292" href="#application-structure-configuration-file">
+    <area shape="rect" coords="238,563,312,597" href="#programming-challenges-structure-file">
+    <area shape="rect" coords="238,680,312,712" href="../getting_started/helper_commands.html#update">
+  </map>
+  <img src="../_static/img/topics_adding_programming_challenge_language_flowchart.png" usemap="#programming-challenge-language-map">
 
 The translation YAML file containing programming language descriptions:
 
@@ -579,7 +709,7 @@ The diagram below shows an example of YAML file locations for the
 .. raw:: html
   :file: ../_static/html_snippets/topics_content_directory_tree_only_yaml.html
 
-In the following sections, each configuration file is exaplained in more detail.
+In the following sections, each configuration file is explained in more detail.
 
 .. note::
 
@@ -605,12 +735,14 @@ Application Structure Configuration File
 
 - **Optional Fields:**
 
-    - ``learning-outcomes:`` The path to the learning outcomes configuration file.
+    - ``age-groups:`` The path to the age group configuration file.
+    - ``classroom-resources:`` The path to the classroom resources configuration file.
     - ``curriculum-areas:`` The path to the curriculum areas configuration file.
-    - ``programming-challenges-structure:`` The path to the programming exercies structure
-      configuration file.
     - ``glossary-folder:`` The folder name that contains the Markdown files for
       glossary definitions.
+    - ``learning-outcomes:`` The path to the learning outcomes configuration file.
+    - ``programming-challenges-structure:`` The path to the programming exercises structure
+      configuration file.
 
 A complete application structure file may look like the following:
 
@@ -620,6 +752,7 @@ A complete application structure file may look like the following:
     - binary-numbers
     - error-detection-correction
 
+  age-groups: age-groups.yaml
   learning-outcomes: learning-outcomes.yaml
   curriculum-areas: curriculum-areas.yaml
   programming-challenges-structure: programming-challenges-structure.yaml
@@ -708,7 +841,7 @@ Unit Plan Configuration File
 
   - **Optional Fields:**
 
-    - ``computational-thinking-links``: The Markdown filename containing
+    - ``computational-thinking-links:`` The Markdown filename containing
         Computational Thinking links.
 
 A complete unit plan structure file with multiple lessons may look like the
@@ -732,6 +865,7 @@ following:
       codes-for-letters-using-binary-representation:
         number: 3
 
+.. _lesson-file:
 
 Lesson Configuration File
 ------------------------------------------------------------------------------
@@ -742,8 +876,8 @@ Lesson Configuration File
 
 - **Referenced In:** ``topic/content/structure/<topic-key>/<unit-plan-key>/<unit-plan-key>.yaml``
 
-- **Purpose:** This file defines all the lessons (and their respective)
-  attributes for the unit plan.
+- **Purpose:** This file defines all the lessons (and their respective
+  attributes) for the specific unit plan.
 
   - **Required Fields:**
 
@@ -805,7 +939,7 @@ Age Group Configuration File
 
 - **Referenced In:** ``topics/content/structure/structure.yaml``
 
-- **Purpose:** Defines the age groups avilable for all lessons.
+- **Purpose:** Defines the age groups available for all lessons.
 
 - **Required Fields:**
 
@@ -851,7 +985,7 @@ Learning Outcomes Configuration File
 
 - **Referenced In:** ``topics/content/structure/structure.yaml``
 
-- **Purpose:** Defines the learning outcomes avilable for all topics.
+- **Purpose:** Defines the learning outcomes available for all topics.
 
 - **Required Fields:**
 
@@ -860,7 +994,7 @@ Learning Outcomes Configuration File
 
     - **Optional Fields:**
 
-      - ``curriculum-areas:`` A list of curriculum area key (see example file below).
+      - ``curriculum-areas:`` A list of curriculum area keys (see example file below).
         Each curriculum area listed must not contain child curriculum areas.
 
 A complete learning outcome structure file may look like the following:
@@ -953,7 +1087,7 @@ the following:
   curriculum areas with no children can be listed.
   This is because it can be confusing when items belong to the parent
   curriculum area but not any child in particular.
-  Therefore each item must be linked to a curriculum are with no children.
+  Therefore each item must be linked to a curriculum area with no children.
   Parent curriculum areas (areas with children) are used in search forms to
   select all child curriculum areas and their related items.
 
@@ -1102,7 +1236,7 @@ Curriculum Integrations Configuration File
 
 - **File Name:** ``curriculum-intergrations.yaml``
 
-- **Location:** ``topics/content/structure/<topic-key>/``
+- **Location:** ``topics/content/structure/<topic-key>/curriculum-integrations/``
 
 - **Referenced In:** ``topics/content/structure/<topic-key>.yaml``
 
@@ -1173,7 +1307,7 @@ Classroom Resources Configuration File
 
 - **Referenced In:** ``topics/content/structure/<topic-key>/<unit-plan-key>/lessons/lessons.yaml``
 
-- **Purpose:** Defines the classroom resources avilable for all topics.
+- **Purpose:** Defines the classroom resources available for all topics.
 
 - **Required Fields:**
 
@@ -1202,4 +1336,4 @@ A complete classroom resources structure file may look like the following:
     - hula-hoop
     - counters
     - chalk
-    - coloring-pens
+    - colouring-pens
