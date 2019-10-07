@@ -10,6 +10,7 @@ from .base import *  # noqa: F403
 DATABASES = {
     "default": env.db("DATABASE_URL"),  # noqa: F405
 }
+
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 # DEBUG

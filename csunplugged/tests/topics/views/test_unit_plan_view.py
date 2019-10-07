@@ -79,7 +79,9 @@ class UnitPlanViewTest(BaseTestWithDB):
             "unit_plan_slug": unit_plan.slug,
         }
         url = reverse("topics:unit_plan", kwargs=kwargs)
+
         response = self.client.get(url)
+
         self.assertEqual(
             len(response.context["grouped_lessons"]),
             1

@@ -1,0 +1,3 @@
+  wget https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip -O browserStackLocal.zip
+  unzip browserStackLocal.zip
+  ./BrowserStackLocal --key {Enter your sensitive BrowserStack key here ONCE IN TERMINAL} --force-local &

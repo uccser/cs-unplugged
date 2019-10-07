@@ -19,5 +19,6 @@ The following pages are for those wanting to develop the CS Unplugged system.
     search
     deployment
     test_suite
+    browser_testing
     translation
     translation_infrastructure
