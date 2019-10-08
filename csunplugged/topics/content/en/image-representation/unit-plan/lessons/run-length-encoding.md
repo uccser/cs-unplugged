@@ -23,18 +23,24 @@ Demonstrate how to do this by writing down the number of consecutive white pixel
 Then write down the number of consecutive black pixels (three), and then the number of white (one).
 The first line of the image is now repesented by 1, 3, 1.
 
-Continue doing this for each line of the image, asking students to tell you each number to write down.
+Continue doing this for each line of the image, asking students to tell you what numbers to write down.
 You always start each line by writing down the number of white pixels, so the second line of the image starts with a 0 since there are no white pixels at the start of the line.
-Students might say you should start this line with a 1, or ask why you always start with the number of white pixels.
-The answer to this is you need to follow a specific rule or algorithm, like "always start with the number of white pixels", because otherwise a computer wont know what the first number repersents.
-A computer will follow an algorithm exactly as it is given. Similarly, if you were using these numbers to draw the image you wouldn't want to just guess what numbers meant what colour! You might end up with a completely different picture.
 
 The final number representation for this image is shown below.
 
 {image file-path="img/topics/pixel-visible-grid-with-letter-and-RLE-numbers.png" alt="A six by five grid is shown.
 Some of the squares are white and others are coloured black to create the shape of the letter 'C'. To the right of this grid are a set of numbers which repesent the pixels in the grid."}
 
+Students might say you should start the second line with a 1, or ask why you always start with the number of white pixels.
+The answer to this is you need to follow a specific rule or algorithm, like "always start with the number of white pixels", because otherwise a computer wont know what the first number represents.
+A computer will follow an algorithm exactly as it is given. Similarly, if you were using these numbers to draw the image you wouldn't want to just guess what numbers meant what colour! You might end up with a completely different picture.
+
+
+
 ## Lesson activities
+
+Now that students have seen
+
 
 {panel type="general"}
 
@@ -45,5 +51,3 @@ Some of the squares are white and others are coloured black to create the shape 
 - Students can use a black colouring pencil, crayon, or felt tip pen, but easily erasable pencils work much better for the first time students do this activity.
 
 {panel end}
-
-Hand out the worksheets to students.
