@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-26 21:19+0000\n"
-"PO-Revision-Date: 2019-04-17 15:11\n"
+"PO-Revision-Date: 2019-10-14 15:13\n"
 "Last-Translator: UC Computer Science Education (uccser-admin)\n"
 "Language-Team: Maori\n"
 "Language: mi_NZ\n"
@@ -1553,7 +1553,7 @@ msgstr "%(lower)s ki %(upper)s"
 
 #: templates/topics/programming-challenge.html:53
 msgid "and"
-msgstr ""
+msgstr "me"
 
 #: templates/topics/programming-challenge.html:92
 #: templates/topics/programming-challenges-table.html:11
