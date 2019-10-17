@@ -35,8 +35,6 @@ Students might say you should start the second line with a 1, or ask why you alw
 The answer to this is you need to follow a specific rule or algorithm, like "always start with the number of white pixels", because otherwise a computer wont know what the first number represents.
 A computer will follow an algorithm exactly as it is given. Similarly, if you were using these numbers to draw the image you wouldn't want to just guess what numbers meant what colour! You might end up with a completely different picture.
 
-
-
 ## Lesson activities
 
 Now that students have seen
