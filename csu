@@ -20,22 +20,13 @@ GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 
 cmd_helps=()
-dev_cmd_helps=()
 
 defhelp() {
-  if [ "$1" = '-dev' ]; then
-    local command="${2?}"
-    local text="${3?}"
-    local help_str
-    help_str="$(printf '   %-24s %s' "$command" "$text")"
-    dev_cmd_helps+=("$help_str")
-  else
-    local command="${1?}"
-    local text="${2?}"
-    local help_str
-    help_str="$(printf '   %-24s %s' "$command" "$text")"
-    cmd_helps+=("$help_str")
-  fi
+  local command="${1?}"
+  local text="${2?}"
+  local help_str
+  help_str="$(printf '   %-24s %s' "$command" "$text")"
+  cmd_helps+=("$help_str")
 }
 
 # Print out help information
@@ -49,15 +40,9 @@ cmd_help() {
   for str in "${cmd_helps[@]}"; do
     echo -e "$str"
   done
-  echo
-  echo "DEV_COMMAND list:"
-  for str in "${dev_cmd_helps[@]}"; do
-    echo -e "$str"
-  done
 }
 
 defhelp help 'View all help.'
-defhelp 'dev [DEV_COMMAND]' 'Run a developer command.'
 
 # Start development environment
 cmd_start() {
@@ -92,19 +77,19 @@ defhelp restart 'Stop and then restart development environment.'
 
 # Run Django migrate and updatedata commands
 cmd_update() {
-  dev_static
+  cmd_static
 
   echo ""
-  dev_migrate
+  cmd_migrate
 
   echo ""
-  dev_updatedata
+  cmd_updatedata
 
-  dev_rebuild_index
-  dev_static_scratch
+  cmd_rebuild_index
+  cmd_static_scratch
   echo ""
-  dev_makeresourcethumbnails
-  dev_collect_static
+  cmd_makeresourcethumbnails
+  cmd_collect_static
   echo ""
   echo -e "\n${GREEN}Content is loaded!${NC}"
   echo "Open your preferred web browser to the URL 'localhost'"
@@ -112,135 +97,135 @@ cmd_update() {
 defhelp update 'Run Django migrate and updatedata commands and build static files.'
 
 # Run update command only for key content
-dev_update_lite() {
-  dev_static
+cmd_update_lite() {
+  cmd_static
   echo ""
-  dev_migrate
+  cmd_migrate
   echo ""
   echo "Loading content..."
   docker-compose exec django /docker_venv/bin/python3 ./manage.py updatedata --lite-load
-  dev_collect_static
+  cmd_collect_static
   echo ""
   echo -e "\n${GREEN}Key content is loaded!${NC}"
   echo "Run the 'update' command to load all content"
   echo "Open your preferred web browser to the URL 'localhost'"
 }
-defhelp -dev update_lite 'Run update command only for key content - Useful for development.'
+defhelp update_lite 'Run update command only for key content - Useful for development.'
 
 # Collecting static files
-dev_collect_static() {
+cmd_collect_static() {
   echo
   echo "Collecting static files..."
   docker-compose exec django /docker_venv/bin/python3 ./manage.py collectstatic --no-input --clear
 }
-defhelp -dev collect_static "Collecting static files."
+defhelp collect_static "Collecting static files."
 
 # Run Django flush command
-dev_flush() {
+cmd_flush() {
   docker-compose exec django /docker_venv/bin/python3 ./manage.py flush
 }
-defhelp -dev flush 'Run Django flush command.'
+defhelp flush 'Run Django flush command.'
 
 # Run Django makemigrations command
-dev_makemigrations() {
+cmd_makemigrations() {
   echo "Creating database migrations..."
   docker-compose exec django /docker_venv/bin/python3 ./manage.py makemigrations --no-input
 }
-defhelp -dev makemigrations 'Run Django makemigrations command.'
+defhelp makemigrations 'Run Django makemigrations command.'
 
 # Run Django makeresources command
-dev_makeresources() {
+cmd_makeresources() {
   echo "Creating static resource PDFs..."
   docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources
 }
-defhelp -dev makeresources 'Run Django makeresources command.'
+defhelp makeresources 'Run Django makeresources command.'
 
 # Run Django makeresourcethumbnails command
-dev_makeresourcethumbnails() {
+cmd_makeresourcethumbnails() {
   echo "Creating thumbnails for resource PDFs..."
   docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresourcethumbnails
 }
-defhelp -dev makeresourcethumbnails 'Run Django makeresourcethumbnails command.'
+defhelp makeresourcethumbnails 'Run Django makeresourcethumbnails command.'
 
 
 # Run Django makemessages command
-dev_makemessages() {
+cmd_makemessages() {
   echo "Creating message files..."
   docker-compose exec django /docker_venv/bin/python3 ./manage.py makemessages -l en
 }
-defhelp -dev makemessages 'Run Django makemessages command.'
+defhelp makemessages 'Run Django makemessages command.'
 
 # Run Django compilemessages command
-dev_compilemessages() {
+cmd_compilemessages() {
   echo "Compiling message files..."
   docker-compose exec django /docker_venv/bin/python3 ./manage.py compilemessages
 }
-defhelp -dev compilemessages 'Run Django compilemessages command.'
+defhelp compilemessages 'Run Django compilemessages command.'
 
 # Run Django migrate command
-dev_migrate() {
+cmd_migrate() {
   echo "Applying database migrations..."
   docker-compose exec django /docker_venv/bin/python3 ./manage.py migrate
 }
-defhelp -dev migrate 'Run Django migrate command.'
+defhelp migrate 'Run Django migrate command.'
 
 # Run Django updatedata command
-dev_updatedata() {
+cmd_updatedata() {
   echo "Loading content..."
   docker-compose exec django /docker_venv/bin/python3 ./manage.py updatedata
 }
-defhelp -dev updatedata 'Run updatedata command.'
+defhelp updatedata 'Run updatedata command.'
 
 # Build Docker images
-dev_build() {
+cmd_build() {
   echo "Building Docker images..."
   docker-compose build
 }
-defhelp -dev build 'Build or rebuild Docker images.'
+defhelp build 'Build or rebuild Docker images.'
 
 # Build static files
-dev_static() {
+cmd_static() {
   echo "Building static files..."
   docker-compose exec nginx gulp build
 }
-defhelp -dev static 'Build static files.'
+defhelp static 'Build static files.'
 
 # Build production static files
-dev_static_prod() {
+cmd_static_prod() {
   echo "Building production static files..."
   docker-compose exec nginx gulp build --production
 }
-defhelp -dev static_prod 'Build production static files.'
+defhelp static_prod 'Build production static files.'
 
 # Build scratch static files
-dev_static_scratch() {
+cmd_static_scratch() {
   echo "Building scratch images..."
   docker-compose exec nginx gulp scratch
 }
-defhelp -dev static_scratch "Build scratch images."
+defhelp static_scratch "Build scratch images."
 
 # Run Django command rebuild_index
-dev_rebuild_index() {
+cmd_rebuild_index() {
   echo "Rebuilding search index..."
   docker-compose exec django /docker_venv/bin/python3 ./manage.py rebuild_index --noinput
 }
-defhelp -dev rebuild_index "Run Django rebuild_index command."
+defhelp rebuild_index "Run Django rebuild_index command."
 
 # Run shell
-dev_shell() {
+cmd_shell() {
   docker-compose exec django bash
 }
-defhelp -dev shell "Open shell to Django folder."
+defhelp shell "Open shell to Django folder."
 
 # Reboot Django Docker container
-dev_reboot_django() {
+cmd_reboot_django() {
   echo "Rebooting Django Docker container..."
   docker-compose restart django
 }
-defhelp -dev reboot_django 'Reboot Django Docker container.'
+defhelp reboot_django 'Reboot Django Docker container.'
 
 # Run style checks
-dev_style() {
+cmd_style() {
   echo "Running PEP8 style checker..."
   docker-compose exec django /docker_venv/bin/flake8
   pep8_status=$?
@@ -250,39 +235,39 @@ dev_style() {
   pydocstyle_status=$?
   ! (( pep8_status || pydocstyle_status ))
 }
-defhelp -dev style 'Run style checks.'
+defhelp style 'Run style checks.'
 
 # Run test suite
-dev_test_suite() {
+cmd_test_suite() {
   echo "Running test suite..."
   docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --nomigrations
 }
-defhelp -dev test_suite 'Run test suite with code coverage.'
+defhelp test_suite 'Run test suite with code coverage.'
 
 # Run specific test suite
-dev_test_specific() {
+cmd_test_specific() {
   echo "Running specific test suite..."
   docker-compose exec django /docker_venv/bin/python3 ./manage.py test --settings=config.settings.testing "${1}" -v 3 --nomigrations
 }
-defhelp -dev test_specific 'Run specific test suite. Pass in parameter of Python test module.'
+defhelp test_specific 'Run specific test suite. Pass in parameter of Python test module.'
 
 # Display test coverage table
-dev_test_coverage() {
+cmd_test_coverage() {
   echo "Displaying test suite coverage..."
   docker-compose exec django /docker_venv/bin/coverage xml -i
   docker-compose exec django /docker_venv/bin/coverage report -m --skip-covered
 }
-defhelp -dev test_coverage 'Display code coverage report.'
+defhelp test_coverage 'Display code coverage report.'
 
 # Run test suite backwards for CI testing
-dev_test_backwards() {
+cmd_test_backwards() {
   echo "Running test suite backwards..."
   docker-compose exec django /docker_venv/bin/python3 ./manage.py test --settings=config.settings.testing --pattern "test_*.py" --reverse -v 0 --nomigrations
 }
-defhelp -dev test_backwards 'Run test suite backwards.'
+defhelp test_backwards 'Run test suite backwards.'
 
 # Generates the documentation (with warnings as errors)
-dev_docs() {
+cmd_docs() {
   echo "Removing any existing documentation..."
   docker-compose exec django rm -rf /cs-unplugged/docs/build/
   docker-compose exec django mkdir /cs-unplugged/docs/build/
@@ -290,7 +275,7 @@ dev_docs() {
   echo "Creating documentation..."
   docker-compose exec django /docker_venv/bin/sphinx-build -W /cs-unplugged/docs/source/ /cs-unplugged/docs/build/
 }
-defhelp -dev docs 'Generate documentation.'
+defhelp docs 'Generate documentation.'
 
 # Delete all untagged dangling Docker images
 cmd_clean() {
@@ -334,50 +319,50 @@ cmd_logs() {
 defhelp logs 'View logs.'
 
 ci_test_general() {
-  dev_static
-  dev_collect_static
+  cmd_static
+  cmd_collect_static
   docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --exclude-tag=resource --exclude-tag=management --nomigrations
   test_status=$?
-  dev_test_coverage
+  cmd_test_coverage
   coverage_status=$?
   bash <(curl -s https://codecov.io/bash)
   ! (( $test_status || $coverage_status ))
 }
 
 ci_test_resources() {
-  dev_static
-  dev_collect_static
+  cmd_static
+  cmd_collect_static
   docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --tag=resource --nomigrations
   test_status=$?
-  dev_test_coverage
+  cmd_test_coverage
   coverage_status=$?
   bash <(curl -s https://codecov.io/bash)
   ! (( $test_status || $coverage_status ))
 }
 
 ci_test_management() {
-  dev_static
-  dev_collect_static
+  cmd_static
+  cmd_collect_static
   docker-compose exec django /docker_venv/bin/coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --tag=management --nomigrations
   test_status=$?
-  dev_test_coverage
+  cmd_test_coverage
   coverage_status=$?
   bash <(curl -s https://codecov.io/bash)
   ! (( $test_status || $coverage_status ))
 }
 
 ci_style() {
-  dev_style
+  cmd_style
 }
 
 ci_test_backwards() {
-  dev_static
-  dev_collect_static
-  dev_test_backwards
+  cmd_static
+  cmd_collect_static
+  cmd_test_backwards
 }
 
 ci_docs() {
-  dev_docs
+  cmd_docs
 }
 
 ci_load_content() {
@@ -411,12 +396,12 @@ cmd_dev() {
   local cmd="$1"
   shift
   if [ -z "$cmd" ]; then
-    echo -e "${RED}ERROR: dev command requires one parameter!${NC}"
+    echo -e "${RED}ERROR: command requires one parameter!${NC}"
     cmd_help
     return 1
   fi
-  if silent type "dev_$cmd"; then
-    "dev_$cmd" "$@"
+  if silent type "cmd_$cmd"; then
+    "cmd_$cmd" "$@"
     exit $?
   else
     echo -e "${RED}ERROR: Unknown command!${NC}"
