@@ -38,6 +38,7 @@ class CurriculumArea(TranslatableModel):
     parent = models.ForeignKey(
         "self",
         null=True,
+        on_delete=models.CASCADE,
         related_name="children"
     )
 
@@ -68,7 +69,7 @@ class LearningOutcome(TranslatableModel):
     text = models.CharField(max_length=200, default="")
     curriculum_areas = models.ManyToManyField(
         CurriculumArea,
-        related_name="learning_outcomes",
+        related_name="learning_outcomes"
     )
 
     def __str__(self):
