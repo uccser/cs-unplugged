@@ -32,7 +32,7 @@ urlpatterns = [
     ),
     # eg: /topics/binary-numbers/
     path(
-        "(<topic_slug>/",
+        "<topic_slug>/",
         views.TopicView.as_view(),
         name="topic"
     ),
