@@ -50,19 +50,19 @@ urlpatterns = [
     ),
     # eg: /topics/binary-numbers/unit-plan/
     path(
-        "<topic_slug>/unit_plan_slug>/",
+        "<topic_slug>/<unit_plan_slug>/",
         views.UnitPlanView.as_view(),
         name="unit_plan"
     ),
     # eg: /topics/binary-numbers/unit-plan/description/
     path(
-        "<topic_slug>/unit_plan_slug>/description/",
+        "<topic_slug>/<unit_plan_slug>/description/",
         views.UnitPlanDescriptionView.as_view(),
         name="unit_plan_description"
     ),
     # eg: /topics/binary-numbers/unit-plan/lesson-1/
     path(
-        "<topic_slug>/unit_plan_slug>/<lesson_slug>/",
+        "<topic_slug>/<unit_plan_slug>/<lesson_slug>/",
         views.LessonView.as_view(),
         name="lesson"
     ),
@@ -74,7 +74,7 @@ urlpatterns = [
     ),
     # eg: /topics/binary-numbers/programming/challenge-1/
     path(
-        "<topic_slug>/programming/programming_challenge_slug>",  # noqa: E501
+        "<topic_slug>/programming/<programming_challenge_slug>",  # noqa: E501
         views.ProgrammingChallengeView.as_view(),
         name="programming_challenge"
     ),
