@@ -1,6 +1,6 @@
 """URL redirect routing for the Classic CS Unplugged website."""
 
-from django.urls import path
+from django.urls import path, re_path
 from classic import views
 
 
@@ -194,8 +194,8 @@ urlpatterns = [
         views.redirect_to_classic_unplugged,
     ),
     # All media files
-    path(
-        "wp-content/",
+    re_path(
+        r"^wp-content/",
         views.redirect_to_classic_unplugged,
     ),
 ]
