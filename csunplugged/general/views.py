@@ -60,12 +60,3 @@ class HowDoITeachCSUnpluggedView(TemplateView):
     """View for the 'How do I teach CS Unplugged?' page that renders from a template."""
 
     template_name = "general/how-do-i-teach-cs-unplugged.html"
-
-
-def health_check(request):
-    """Return heath check response for Google App Engine.
-
-    Returns a 200 HTTP response for Google App Engine to detect the system
-    is running.
-    """
-    return HttpResponse(status=200)
