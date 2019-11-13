@@ -7,7 +7,7 @@
 **Ngā paraka mō te parehe ngeru (he nama tāhūrua me te tapanga)**
 
 ```scratch
-ina pāwhiria te haki kākāriki 
+ina pāwhiria te haki kākāriki
 pātai [Tēnā, whakaurua tētahi nama mai i te 0 ki te 31], kātahi tatari
 tautuhia [tauoti v] ki te (whakautu)
 tautuhia [uara moka v] ki te [32]
@@ -26,58 +26,63 @@ whakapaoho [hurihia kāri v]
 
 **Ngā paraka mō te parehe, kāri 1 te tongi**
 
-<pre><code class="scratch:inline">ina pāwhiria te haki kākāriki
+```scratch
+ina pāwhiria te haki kākāriki
 panonihia te kākahu kia [pango v]
 
 ina ka riro mai te [hurihia kāri v]
 mēnā  &lt;(te pū (5) o te (nama tāhūrua)) = [1]&gt; mahia
   panonitia te kākahu kia [mā v]
 ka mutu
-</code></pre>
+```
 
 **Ngā paraka mō te parehe, kāri e 2 ngā tongi**
 
-<pre><code class="scratch:inline">ina pāwhiria te haki kākāriki
+```scratch
+ina pāwhiria te haki kākāriki
 panonihia te kākahu kia [pango v]
 
 ina ka riro mai te [hurihia kāri v]
 mēnā  &lt;(te pū (4) o te (nama tāhūrua)) = [1]&gt; mahia
   panonitia te kākahu kia [mā v]
 ka mutu
-</code></pre>
+```
 
 **Ngā paraka mō te parehe, kāri e 4 ngā tongi**
 
-<pre><code class="scratch:inline">ina pāwhiria te haki kākāriki
+```scratch
+ina pāwhiria te haki kākāriki
 panonihia te kākahu kia [pango v]
 
 ina ka riro mai te [hurihia kāri v]
 mēnā  &lt;(te pū (3) o te (nama tāhūrua)) = [1]&gt; mahia
   panonihia te kākahu kia [mā v]
 ka mutu
-</code></pre>
+```
 
 **Ngā paraka mō te parehe, kāri e 8 ngā tongi**
 
-<pre><code class="scratch:inline">ina pāwhiria te haki kākāriki
+```scratch
+ina pāwhiria te haki kākāriki
 panonihia te kākahu kia [pango v]
 
 ina ka riro mai te [hurihia kāri v]
 mēnā  &lt;(te pū (2) o te (nama tāhūrua)) = [1]&gt; mahia
   panonihia te kākahu kia [mā v]
 ka mutu
-</code></pre>
+```
 
 **Ngā paraka mō te parehe, kāri e 16 ngā tongi**
 
-<pre><code class="scratch:inline">ina pāwhiria te haki kākāriki
+```scratch
+ina pāwhiria te haki kākāriki
 panonihia te kākahu kia [pango v]
 
 ina ka riro mai te [hurihia kāri v]
 mēnā  &lt;(te pū (1) o te (nama tāhūrua)) = [1]&gt; mahia
   panonihia te kākahu kia [mā v]
 ka mutu
-</code></pre>
+```
 
 {panel end}
 
@@ -90,7 +95,7 @@ ka mutu
 **Ngā paraka mō te parehe ngeru (he nama tāhūrua me te tapanga)**
 
 ```scratch
-ina pāwhiria te haki kākāriki 
+ina pāwhiria te haki kākāriki
 pātai [Tēnā, whakaurua tētahi nama tauoti mai i te 0 ki te 31], kātahi tatari
 tautuhia [tauoti v] ki te (whakautu)
 tautuhia [uara moka v] ki te [32]
@@ -105,48 +110,53 @@ ka mutu
 
 **Ngā paraka mō te parehe, kāri 1 te tongi**
 
-<pre><code class="scratch:inline">ina pāwhiria te haki kākāriki
+```scratch
+ina pāwhiria te haki kākāriki
 panonihia te kākahu kia [pango v]
 
 ina ka riro mai te [1 v]
 panonihia te kākahu kia [mā v]
-</code></pre>
+```
 
 **Ngā paraka mō te parehe, kāri e 2 ngā tongi**
 
-<pre><code class="scratch:inline">ina pāwhiria te haki kākāriki
+```scratch
+ina pāwhiria te haki kākāriki
 panonihia te kākahu kia [pango v]
 
 ina ka riro mai te [2 v]
 panonihia te kākahu kia [mā v]
-</code></pre>
+```
 
 **Ngā paraka mō te parehe, kāri e 4 ngā tongi**
 
-<pre><code class="scratch:inline">ina pāwhiria te haki kākāriki
+```scratch
+ina pāwhiria te haki kākāriki
 panonihia te kākahu kia [pango v]
 
 ina ka riro mai te [4 v]
 panonihia te kākahu kia [mā v]
-</code></pre>
+```
 
 **Ngā paraka mō te parehe, kāri e 8 ngā tongi**
 
-<pre><code class="scratch:inline">ina pāwhiria te haki kākāriki
+```scratch
+ina pāwhiria te haki kākāriki
 panonihia te kākahu kia [pango v]
 
 ina ka riro mai te [8 v]
 panonihia te kākahu kia [mā v]
-</code></pre>
+```
 
 **Ngā paraka mō te parehe, kāri e 16 ngā tongi**
 
-<pre><code class="scratch:inline">ina pāwhiria te haki kākāriki
+```scratch
+ina pāwhiria te haki kākāriki
 panonihia te kākahu kia [pango v]
 
 ina ka riro mai te [16 v]
 panonihia te kākahu kia [mā v]
-</code></pre>
+```
 
 {panel end}
 
@@ -159,7 +169,7 @@ panonihia te kākahu kia [mā v]
 **Ngā paraka mō te parehe ngeru (he nama tāhūrua me te tapanga)**
 
 ```scratch
-ina pāwhiria te haki kākāriki 
+ina pāwhiria te haki kākāriki
 pātai [Tēnā, whakaurua tētahi nama tauoti mai i te 0 ki te 31], kātahi tatari
 tautuhia [tauoti v] ki te (whakautu)
 tautuhia [uara moka v] ki te [32]
@@ -174,48 +184,53 @@ ka mutu
 
 **Ngā paraka mō te parehe, kāri 1 te tongi**
 
-<pre><code class="scratch:inline">ina pāwhiria te haki kākāriki
+```scratch
+ina pāwhiria te haki kākāriki
 tautuhia te [kaute tongi v] ki te [0]
 panonihia te kākahu kia [pango v]
 tatari kia &lt;(kaute tongi) = [1]&gt;
 panonihia te kākahu kia [mā v]
-</code></pre>
+```
 
 **Ngā paraka mō te parehe, kāri e 2 ngā tongi**
 
-<pre><code class="scratch:inline">ina pāwhiria te haki kākāriki
+```scratch
+ina pāwhiria te haki kākāriki
 tautuhia te [kaute tongi v] ki te [0]
 panonihia te kākahu kia [pango v]
 tatari kia &lt;(kaute tongi) = [2]&gt;
 panonihia te kākahu kia [mā v]
-</code></pre>
+```
 
 **Ngā paraka mō te parehe, kāri e 4 ngā tongi**
 
-<pre><code class="scratch:inline">ina pāwhiria te haki kākāriki
+```scratch
+ina pāwhiria te haki kākāriki
 tautuhia te [kaute tongi v] ki te [0]
 panonihia te kākahu kia [pango v]
 tatari kia &lt;(kaute tongi) = [4]&gt;
 panonihia te kākahu kia [mā v]
-</code></pre>
+```
 
 **Ngā paraka mō te parehe, kāri e 8 ngā tongi**
 
-<pre><code class="scratch:inline">ina pāwhiria te haki kākāriki
+```scratch
+ina pāwhiria te haki kākāriki
 tautuhia te [kaute tongi v] ki te [0]
 panonihia te kākahu kia [pango v]
 tatari kia &lt;(kaute tongi) = [8]&gt;
 panonihia te kākahu kia [mā v]
-</code></pre>
+```
 
 **Ngā paraka mō te parehe, kāri e 16 ngā tongi**
 
-<pre><code class="scratch:inline">ina pāwhiria te haki kākāriki
+```scratch
+ina pāwhiria te haki kākāriki
 tautuhia te [kaute tongi v] ki te [0]
 panonihia te kākahu kia [pango v]
 tatari kia &lt;(kaute tongi) = [16]&gt;
 panonihia te kākahu kia [mā v]
-</code></pre>
+```
 
 {panel end}
 
@@ -228,7 +243,7 @@ panonihia te kākahu kia [mā v]
 **Ngā paraka mō te parehe kāri pango**
 
 ```scratch
-ina pāwhiria te haki kākāriki 
+ina pāwhiria te haki kākāriki
 huna
 tautuhia te [x v] kia [-190]
 pātai [Tēnā, whakaurua tētahi nama tauoti mai i te 0 ki te 31], kātahi tatari
