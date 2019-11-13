@@ -1,0 +1,3 @@
+# Kōpeketanga
+
+Ko te kōpeketanga te tukanga kia whakaiti ai i tētahi mea. Mō ngā rorohiko, ko te kōpeketanga raraunga te whakamahi i ngā hātepe whakakōpeke ki te whakaiti i ngā kōnae, kia iti haere te wāhi rokiroki, ā, kia tere ake te whakawhitiwhiti i aua kōnae. Ka kimihia ngā wāhanga o te kōnae kua tōaitia me ngā wāhanga e taea ai te matapae hoki, ā, ka tukua kētia he waehere poto hei kawe i te mōhiohio mō te kōnae.

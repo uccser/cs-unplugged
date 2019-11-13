@@ -1,0 +1,3 @@
+# Te rapu me te whakatikatika i ngā hapa
+
+He ao matatini, he ao whīwhiwhi hoki tēnei ao, nā reira ka puta ngā hapa i te whakawhitiwhiti, i te rokiroki i ngā mōhiohio matihiko. Ina he hapa pakupaku noa i te pūmārō, ka taea te panoni te raraunga (he riterite tonu te puta mai o ērā momo hapa); ā, i te whakawhitiwhitinga o ngā raraunga i ngā whatunga, ka pōraruraru ngā raraunga ina ka raru te hononga (kāore e kore ka puta mai ēnei raru ā tōna wā). Kei tēnei kōwae ako me ngā ngohe e whai ake nei, ka tūhuratia ka pēhea ngā pūrere matihiko e rapu, e whakatika hoki i ngā hapa raraunga, ā, ka titiro hoki ki te take ka kite atu te rorohiko i te hapa, engari he itiiti rawa noa te mōhiohio kia taea ai te whakatika.
