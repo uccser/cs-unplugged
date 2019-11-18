@@ -1,0 +1,3 @@
+# Rapu ā-tāhūrua
+
+He momo hātepe e whakahaere ana i te rapunga o tētahi uara kei roto i te **kua kōmaka (raupapahia)**. Ka kīia he rapu 'ā-tāhūrua' nā te mea, ia wā ka titiro ki tētahi uara o te rārangi, ka wehewehea te rārangi ki ngā wāhanga e rua, ko tētahi ka whakarērea, ko tētahi ka mau tonu. I tēnei horopaki, ko te tikanga o te kupu "tāhūrua", ko tētahi mea, e rua ngā wāhanga, pērā ki te paheko tāhūrua (he pāheko e hono ana i ngā uara e rua); he rerekē te rapu ā-tāhūrua i ngā nama tāhūrua.
