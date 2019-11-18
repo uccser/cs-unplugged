@@ -1,4 +1,5 @@
 ---
+#BINARY NUMBERS LEARNING OUTCOMES
 binary-convert-decimal:
   text: Te whakaatu i ngā mahi o te pūnaha tāhūrua, mā te panoni o ngā tau-tekau ki ngā tau-tāhūrua.
 binary-justify-zeros-and-ones:
@@ -31,10 +32,13 @@ binary-match-letters-numbers:
   text: Whakahāngai i ngā reta o te arapū ki ngā nama whakaahuahanga i aua reta.
 binary-count-highest-number:
   text: Kaute tonu i te nama nui rawa, ki te kimi i te kaute o ngā tongi katoa o runga i ngā kāri tāhūrua.
+#DRAMA LEARNING OUTCOMES
 drama-create-video-binary:
   text: Waihanga i tētahi ataata whakamārama mō te mahi kaute tāhurua.
+#ENGLISH LEARNING OUTCOMES
 speaking-clear-instructions-binary-cards:
   text: Tuku i ngā tohutohu mārama, ki te whakaatu ka pēhea te whakaraupapa i ngā kāri tāhūrua ki te whakaputa i ngā nama i waenga i te 0 me te 63
+#ERROR DETECTION AND CORRRECTION LEARNING OUTCOMES
 error-describe-steps-to-find-card:
   text: Whakaatu i ngā takahanga, kia kimi ai, ko tēhea te kāri i whakahurihia.
 error-explain-each-card-bit:
@@ -55,8 +59,10 @@ error-recognise-groups-of-5:
   text: Āhukahuka i ngā huinga e rima, me te tatau māwhitiwhiti i ngā rima
 error-demonstrate-count-to-5:
   text: Whakaatu mai ka pēhea te kaute ki te 5, mā te tūhonohono o te kaute ki ngā kāri.
+#LANUGAGE LEARNING OUTCOMES
 language-discuss-storing-characters:
   text: Matapaki i te take me tiaki i ngā pū maha, ehara ko te arapū reo Pākehā noa iho.
+#NUMERACY LEARNING OUTCOMES
 numeracy-adding-given-number:
   text: Tāpiri i ngā nama kia tae atu ki tētahi uara.
 numeracy-identify-even-odd:
@@ -89,6 +95,7 @@ numeracy-recognise-numbers-represented:
   text: Kia āhukahuka he maha ngā whakaahuahanga o ngā nama.
 numeracy-discuss-modulo-understanding-remainders:
   text: Matapaki i te pai o te mōhio ki te tātai ā-porowhita, hei tautoko i tō mōhio ki te toenga o ngā whakawehe.
+#PROGRAMMING LEARNING OUTCOMES
 programming-explain-sequencing:
   text: Whakamārama mai i te tikanga o te raupapa i te tuhiwaehere.
 programming-explain-output:
@@ -129,6 +136,7 @@ programming-identify-list-store-data:
   text: Tautuhi i ngā wā e tika ana kia whakamahia tētahi rārangi ki te rokiroki i ngā raraunga.
 programming-show-item-specified-position-list:
   text: Whakaatu ka pēhea te tiki i te tuemi kei te tūnga o te rārangi i tautuhia ai.
+#SEARCHING ALGORITHMS LEARNING OUTCOMES
 search-algorithms-identify-unsorted-lists:
   text: Tautuhi i te hātepe rapu e tika ana mō ngā rārangi kāore anō kia kōmakatia (he rapu ā-raupapa).
 search-algorithms-describe-time-size-input:
@@ -147,6 +155,7 @@ search-algorithms-describe-compare-values:
   text: Whakaatu i ngā tikanga whakatairite, he ōrite, he tōrite (iti iho, nui ake rānei) rānei ngā uara o ētahi nama.
 search-algorithms-explain-unsorted-lists:
   text: Whakamārama atu i te whānuitanga o te nama o ngā kapo noa mō te rārangi kore-kōmaka me te rārangi kōmaka.
+#UNPLUGGED PROGRAMMING LEARNING OUTCOMES
 unplugged-programming-apply-addition-multiplication:
   text: Whakamahi i te tāpiri me te whakarea ki te tātai e hia ngā mahinga ka tukua e te kaiwhakamahi.
 unplugged-programming-design-fitness-achievable:
@@ -187,6 +196,7 @@ unplugged-programming-explain-tell-stories:
   text: Whakamārama ka pēhea te hono i ngā kupu kōrero, te tuhituhi me ngā reo ataata hei tuku i te kōrero paki.
 unplugged-programming-recall-direction-words:
   text: Tiki i ngā reo tohutohu o te reo kē mō te 'haere', 'neke ki mua', 'mauī', 'matau', me ngā nama.
+#SORTING LEARNING OUTCOMES
 sorting-explain-parallel-algorithm:
   text: Whakamārama i ngā whakahaere o te hātepe whakarara mō te Whatunga Kōmaka.
 sorting-use-selection-sort:
@@ -203,3 +213,8 @@ sorting-demonstrate-alphabet-knowledge:
   text: Whakamārama i te whakamahi i tō mōhio ki te arapū hei whakarārangi i ngā kupu, i ngā pukapuka rānei.
 sorting-comparing-musical-pitch:
   text: Whakatairite i te hauoro o te puoro mā te tuhi puoro mā te mahi whakarongo hoki.
+#IMAGE REPRESENTATION OUTCOMES
+image-rep-understand-digits-representing-images:
+  text: Kia mārama ki te rokiroki, ki te whakaahuahanga hoki i ngā ataata mā ngā mati.
+image-rep-understand-pixels:
+  text: Kia mārama, mō ngā ataata e whakaaturia i ngā rorohiko, kua hangaia ki ngā tongiiti, ka taea he tae rerekē mēnā he rerekē ngā mati mō taua tongiiti.

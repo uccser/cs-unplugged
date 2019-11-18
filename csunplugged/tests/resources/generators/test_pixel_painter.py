@@ -334,14 +334,14 @@ class PixelPainterResourceGeneratorTest(BaseGeneratorTest):
             "name",
             "black-white"
         )
-        self.assertEqual('0', label)
+        self.assertEqual('1', label)
         label = PixelPainterResourceGenerator.get_pixel_label(
             image,
             (0, 1),
             "name",
             "black-white"
         )
-        self.assertEqual('1', label)
+        self.assertEqual('0', label)
 
     def test_get_pixel_label_invalid(self):
         image = Image.frombytes("L", (1, 1), bytes([127]))

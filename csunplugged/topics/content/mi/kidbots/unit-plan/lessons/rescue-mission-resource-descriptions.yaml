@@ -1,0 +1,9 @@
+---
+arrows:
+  description: Tapahia ēnei tapawhārite mā ngā ākonga.
+left-right-cards:
+  description: Tapahia ēnei pepa mā ngā ākonga kāore anō kia ako te katau me te mauī.
+job-badges:
+  description: Tapahia ēnei, hei pinetohu mā ngā ākonga tokotoru e mahi takitahi ana i ngā mahi e toru mō tēnei ngohe. Tērā pea he pai kia piri ki tētahi pine, taura rānei.
+grid:
+  description: He ripanga 8 x 8 mā ngā ākonga ki te kore e wātea te ripanga nui.
