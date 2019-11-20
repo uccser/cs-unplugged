@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-18 02:10+0000\n"
-"PO-Revision-Date: 2019-11-18 15:00\n"
+"PO-Revision-Date: 2019-11-20 15:52\n"
 "Last-Translator: UC Computer Science Education (uccser-admin)\n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -377,15 +377,15 @@ msgstr "彩色（8 种可能的二进制数值）"
 
 #: resources/generators/PixelPainterResourceGenerator.py:19
 msgid "Star - 1 page"
-msgstr ""
+msgstr "星星 - 1 页"
 
 #: resources/generators/PixelPainterResourceGenerator.py:20
 msgid "Teacup - 1 page"
-msgstr ""
+msgstr "茶杯 - 1 页"
 
 #: resources/generators/PixelPainterResourceGenerator.py:21
 msgid "Cat - 1 page"
-msgstr ""
+msgstr "猫 - 1 页"
 
 #: resources/generators/PixelPainterResourceGenerator.py:22
 msgid "Fish - 6 pages"
@@ -429,15 +429,15 @@ msgstr "颜色"
 
 #: resources/generators/PixelPainterResourceGenerator.py:74
 msgid "Star"
-msgstr ""
+msgstr "星星"
 
 #: resources/generators/PixelPainterResourceGenerator.py:75
 msgid "Teacup"
-msgstr ""
+msgstr "茶杯"
 
 #: resources/generators/PixelPainterResourceGenerator.py:76
 msgid "Cat"
-msgstr ""
+msgstr "猫"
 
 #: resources/generators/PixelPainterResourceGenerator.py:77
 msgid "Boat"
@@ -863,7 +863,7 @@ msgstr "感谢慷慨赞助，我们现可创建视频等相关资源，从而帮
 #: templates/general/about.html:42
 #, python-format
 msgid "For an explanation on the connections between CS Unplugged and Computational Thinking skills, see our <a href=\"%(computational_thinking_url)s\">Computational Thinking and CS Unplugged page</a>."
-msgstr ""
+msgstr "如需了解 CS Unplugged 与计算思维技能之间的关联性，请参阅我们的<a href=\"%(computational_thinking_url)s\">计算思维和 CS Unplugged</a> 页面。"
 
 #: templates/general/about.html:49
 #, python-format
@@ -1297,7 +1297,7 @@ msgstr "活动中允许学生犯错；学生不应只遵循完全正确的许多
 #: templates/general/what-is-computer-science.html:24
 #, python-format
 msgid "In todays digital world, Computer Science has become an important subject for everyone to learn about. The knowledge and <a href=\"%(computational_thinking_url)s\">Computational Thinking skills</a> associated with it are now crucial to developing innovative digital technology, understanding modern society, and qualifications in this area are highly sought after."
-msgstr ""
+msgstr "在今天的数字世界中，计算机科学已成为人人皆需学习的一门重要学科。如今，与之相关的知识以及<a href=\"%(computational_thinking_url)s\">计算思维技能</a>对于创新数字技术的开发以及现代社会的理解殊为重要， 并且该领域的相关资质亦备受追捧。"
 
 #: templates/general/what-is-computer-science.html:31
 msgid "The CS Unplugged activities are intended to give you a feel for what the subject is - you can learn what it is by doing. At this early stage, rather than define it formally, let's think about how it might influence our daily lives. For example, think of your favourite search engine. On the surface it seems like a fairly simple interface: a text box where you type what you want to search for, and a button to start the search. The level of programming knowledge needed to implement a text box and a button is fairly rudimentary, and you could implement a search by writing a short program (probably less than 20 lines) to go through all the text on the web and displaying any that match. But obviously there's more to it than this! There are billions of searches are made every day, on billions on web pages, and the approach above will give answers (eventually), but will be so slow and ineffective that no-one would use it."
@@ -1305,11 +1305,11 @@ msgstr "CS Unplugged 活动旨在让您了解是什么主题 - 您可通过这�
 
 #: templates/general/what-is-computer-science.html:47
 msgid "This is where Computer Science comes in; many areas of Computer Science are employed to make the system work well, and most of them are illustrated through Unplugged. How could you search billions of items in a fraction of a second (Searching Algorithms)? How do you make sure that it's easy to use (Human-Computer Interaction)? We need to keep it secure - users don't want other people to know what they are searching for, and the search engine doesn't want commercial interests to manipulate search ranking (Computer Security and Encryption)? Search engines generally predict what you are about to search for (Artificial Intelligence). It needs to be reliable - a small mistake from one of the thousands of programmers at a search engine company shouldn't prevent the site working (Software Engineering). It needs to scale well - if it becomes 10 times as popular, you don't want it to need 100 times the computing resources (Algorithms). The relevance of a search generally depends on the relationships between web sites - you need a map showing which sites are linked to which other ones (Graphs)."
-msgstr ""
+msgstr "此种情况正是计算机科学大显身手之时。计算机科学有许多领域可确保系统运行良好，而 Unplugged 就对其中大部分领域进行了相关说明。您如何能够在几分之一秒内搜遍数十亿个条目（搜索算法）？您如何能够确保其易于使用（人机交互）？我们需要保证其安全性——用户不希望其他人知道他们在搜索什么，而搜索引擎亦不希望被商业利益操纵其搜索排名（计算机安全和加密）？搜索引擎通常会预测您要搜索的内容（人工智能）。它必须足够可靠——即便搜索引擎公司数千名程序员当中有人犯了一个小小的错误，搜索引擎网站的正常运行也不会受到丝毫影响（软件工程）。它需要具备良好的扩展性——即便访问量增加到 10 倍，其也无需消耗 100  倍的计算资源（算法）。搜索的相关性通常取决于网站之间的关系——您需要一张能够显示哪些网站链接至哪些其他网站的地图（图表）。"
 
 #: templates/general/what-is-computer-science.html:60
 msgid "The areas above cover much of what the subject of Computer Science is about. Programming is just a tool for implementing ideas (well, it's a very powerful tool, and requires considerable skill to use well). But programming on its own isn't enough to create software that people love to use, and Computer Science is the area that gives programmers the inside knowledge to make their software fast, efficient, reliable, secure, usable, intelligent, scalable, and even delightful!"
-msgstr ""
+msgstr "上述领域涵盖计算机科学这一学科的绝大部分内容。编程只是我们将想法付诸实现的一个工具（这是一个极其强大的工具，需要丰富技巧方可驾驭得当）。但是，仅靠编程本身并不足以帮助我们打造出人人爱用的软件。计算机科学为程序员提供了必要的独门秘籍，帮助他们了解如何让自己的软件变得快速、高效、可靠、安全、易用、智能、可扩展甚至令人愉悦！"
 
 #: templates/general/what-is-computer-science.html:72
 msgid "That's why we developed CS Unplugged - we want young students to be empowered to understand the great ideas that computer science covers, without having to become expert programmers first. They won't be learning exactly how to build the next search engine, social network or game app, but they will have an idea of what sort of techniques are needed to make it successful. We don't want them to see digital systems as some kind of magic that they can't participate in, but as something that they could understand and, for some, create themselves. Actually, it is kind of magic when you start understanding what can and can't be done."
@@ -1321,11 +1321,11 @@ msgstr "阅读‘我应如何进行 CS Unplugged 教学？’"
 
 #: templates/generic/classic-unplugged-button.html:13
 msgid "More activities at the Classic CS Unplugged website"
-msgstr ""
+msgstr "更多活动请访问经典版 CS Unplugged 网站"
 
 #: templates/generic/classic-unplugged-button.html:15
 msgid "Translations for some activities available at the Classic CS Unplugged website"
-msgstr ""
+msgstr "请访问经典版 CS Unplugged 网站查看某些活动的翻译内容"
 
 #: templates/generic/not-available-badge.html:4
 #, python-format
