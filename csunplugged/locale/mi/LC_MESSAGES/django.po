@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-18 02:10+0000\n"
-"PO-Revision-Date: 2019-11-18 15:17\n"
+"PO-Revision-Date: 2019-12-10 14:56\n"
 "Last-Translator: UC Computer Science Education (uccser-admin)\n"
 "Language-Team: Maori\n"
 "Language: mi_NZ\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #: classic/models.py:10
 msgid "Classic CS Unplugged page"
-msgstr "Whārangi CS Unplugged Ōkawa"
+msgstr "Whārangi CS Unplugged Classic"
 
 #: config/settings/base.py:154
 msgid "Translation mode"
@@ -377,15 +377,15 @@ msgstr "Tae (e 8 ngā uara tāhūrua e taea ai)"
 
 #: resources/generators/PixelPainterResourceGenerator.py:19
 msgid "Star - 1 page"
-msgstr ""
+msgstr "Whetū - 1 te whārangi"
 
 #: resources/generators/PixelPainterResourceGenerator.py:20
 msgid "Teacup - 1 page"
-msgstr ""
+msgstr "Kapu tī - 1 te whārangi"
 
 #: resources/generators/PixelPainterResourceGenerator.py:21
 msgid "Cat - 1 page"
-msgstr ""
+msgstr "Ngeru - 1 te whārangi"
 
 #: resources/generators/PixelPainterResourceGenerator.py:22
 msgid "Fish - 6 pages"
@@ -429,15 +429,15 @@ msgstr "Tae"
 
 #: resources/generators/PixelPainterResourceGenerator.py:74
 msgid "Star"
-msgstr ""
+msgstr "Whetū"
 
 #: resources/generators/PixelPainterResourceGenerator.py:75
 msgid "Teacup"
-msgstr ""
+msgstr "Kapu tī"
 
 #: resources/generators/PixelPainterResourceGenerator.py:76
 msgid "Cat"
-msgstr ""
+msgstr "Ngeru"
 
 #: resources/generators/PixelPainterResourceGenerator.py:77
 msgid "Boat"
@@ -863,7 +863,7 @@ msgstr "Nā te pūtea tautoko nui i taea ai e matou te hanga i ngā rauemi tauto
 #: templates/general/about.html:42
 #, python-format
 msgid "For an explanation on the connections between CS Unplugged and Computational Thinking skills, see our <a href=\"%(computational_thinking_url)s\">Computational Thinking and CS Unplugged page</a>."
-msgstr ""
+msgstr "Tirohia tā mātou <a href=\"%(computational_thinking_url)s\">whārangi mō te Whakaaro Rorohiko me te CS Unplugged</a> mō tētahi whakamāramatanga mō ngā hononga o ngā pūkenga o te CS Unplugged me te Whakaaro Rorohiko."
 
 #: templates/general/about.html:49
 #, python-format
@@ -1297,7 +1297,7 @@ msgstr "Ko te tūmanako ka taea tonutia ēnei ngohe ahakoa ngā hapa o ngā āko
 #: templates/general/what-is-computer-science.html:24
 #, python-format
 msgid "In todays digital world, Computer Science has become an important subject for everyone to learn about. The knowledge and <a href=\"%(computational_thinking_url)s\">Computational Thinking skills</a> associated with it are now crucial to developing innovative digital technology, understanding modern society, and qualifications in this area are highly sought after."
-msgstr ""
+msgstr "I tēnei ao matihiko hou kua whakahirahira ake te kaupapa nei, ko te Pūtaiao Rorohiko hei akoranga mā te katoa. Ko te mātauranga me ngā <a href=\"%(computational_thinking_url)s\">Pūkenga Whakaaro Rorohiko</a> e hāngai ana, he waiwai mō te whakawhanake i ngā hangarau matihiko auaha, mō te mārama hoki ki te pāpori, ā, ko ngā tohu mātauranga mō tēnei momo mahi he tohu kua hiahiatia whānuitia."
 
 #: templates/general/what-is-computer-science.html:31
 msgid "The CS Unplugged activities are intended to give you a feel for what the subject is - you can learn what it is by doing. At this early stage, rather than define it formally, let's think about how it might influence our daily lives. For example, think of your favourite search engine. On the surface it seems like a fairly simple interface: a text box where you type what you want to search for, and a button to start the search. The level of programming knowledge needed to implement a text box and a button is fairly rudimentary, and you could implement a search by writing a short program (probably less than 20 lines) to go through all the text on the web and displaying any that match. But obviously there's more to it than this! There are billions of searches are made every day, on billions on web pages, and the approach above will give answers (eventually), but will be so slow and ineffective that no-one would use it."
@@ -1305,11 +1305,11 @@ msgstr "Ko te whāinga mā ēnei ngohe CS Unplugged e waia ai koe ki te kaupapa 
 
 #: templates/general/what-is-computer-science.html:47
 msgid "This is where Computer Science comes in; many areas of Computer Science are employed to make the system work well, and most of them are illustrated through Unplugged. How could you search billions of items in a fraction of a second (Searching Algorithms)? How do you make sure that it's easy to use (Human-Computer Interaction)? We need to keep it secure - users don't want other people to know what they are searching for, and the search engine doesn't want commercial interests to manipulate search ranking (Computer Security and Encryption)? Search engines generally predict what you are about to search for (Artificial Intelligence). It needs to be reliable - a small mistake from one of the thousands of programmers at a search engine company shouldn't prevent the site working (Software Engineering). It needs to scale well - if it becomes 10 times as popular, you don't want it to need 100 times the computing resources (Algorithms). The relevance of a search generally depends on the relationships between web sites - you need a map showing which sites are linked to which other ones (Graphs)."
-msgstr ""
+msgstr "Mā konei e whai wāhi ai te Pūtaiao Rorohiko; mā te āta whakamahi i ngā wāhanga maha o te pūtaiao rorohiko e piki ai te kaha o te pūnaha mā te Unplugged. Ka kitea te nuinga o ēnei kaupapa i konei i te Unplugged. Ka pēhea te rapu i tētahi o ngā tuemi manomano i tētahi wāhanga paku o te hēkona (Hātepe Rapu)? Me pēhea hoki ngā whakaritenga kia ngāwari ai te whakamahi (Pāhekoheko Tangata-Rorohiko)? Me haumaru hoki kia kaua e whakaatu ki tangata kē ngā mea ka rapua e koe, ki kaua hoki e tukuna ngā hunga arumoni ki te rāwekeweke i te kapatanga o ngā whārangi (Whakamarumaru Rorohiko, Whakamunatanga Rorohiko hoki)? Ka matapae hoki te nuinga o ngā pūkaha rapu i ngā kupu ka rapua (Atamai Tāwhaiwhai). Me horopū - kaua e tukuna mā te hapa paku o tētahi o te tini o ngā kaituhiwaehere e mahi ana i te kamupene pūkaha rapu e whakahoro i te paetukutuku (Mataarotanga Pūmanawa). Kia pai te piki i te taurahi - mēnā ka whakareatia ngā manuhiri mā te 10, ka kore e hiahiatia kia whakareatia ngā rauemi rorohiko mā te 100 (Hātepe). Ka whai te hāngai o ngā otinga rapu i ngā honohono o ngā paetukutuku, nā reira, ka hiahiatia he mahere o ngā hononga paetukutuku (Kauwhata)."
 
 #: templates/general/what-is-computer-science.html:60
 msgid "The areas above cover much of what the subject of Computer Science is about. Programming is just a tool for implementing ideas (well, it's a very powerful tool, and requires considerable skill to use well). But programming on its own isn't enough to create software that people love to use, and Computer Science is the area that gives programmers the inside knowledge to make their software fast, efficient, reliable, secure, usable, intelligent, scalable, and even delightful!"
-msgstr ""
+msgstr "Kua kōrerotia he wāhanga whānui o ngā kaupapa Pūtaiao Rorohiko kei runga nei. Ko te tuhiwaehere tētahi o ngā taputapu hei whakatinana i ngā whakaaro (āe rā, he tino taonga, ā, me whai pūkenga kia whakamahi i tēnei taputapu). Heoi, ehara i te mea mā te tuhiwaehere anake e hangaia ai ngā papatono pai mā te tangata. Mā te mōhio ki te pūtaiao rorohiko e mōhio ai hoki ngā kaituhiwaehere ki ngā huarahi kia tere, kia tiakina ngā rawa, kia haumaru, kia whai hua, kia mārama, kia taea te tipu, kia rawe hoki ngā pūmanawa rorohiko!"
 
 #: templates/general/what-is-computer-science.html:72
 msgid "That's why we developed CS Unplugged - we want young students to be empowered to understand the great ideas that computer science covers, without having to become expert programmers first. They won't be learning exactly how to build the next search engine, social network or game app, but they will have an idea of what sort of techniques are needed to make it successful. We don't want them to see digital systems as some kind of magic that they can't participate in, but as something that they could understand and, for some, create themselves. Actually, it is kind of magic when you start understanding what can and can't be done."
@@ -1321,11 +1321,11 @@ msgstr "Pānuitia 'Me pēhea ka whakaako ahau i te CS Unplugged?'"
 
 #: templates/generic/classic-unplugged-button.html:13
 msgid "More activities at the Classic CS Unplugged website"
-msgstr ""
+msgstr "He ngohe anō kei te whārangi CS Unplugged Classic"
 
 #: templates/generic/classic-unplugged-button.html:15
 msgid "Translations for some activities available at the Classic CS Unplugged website"
-msgstr ""
+msgstr "He whakamāoritanga mō ētahi o ngā ngohe o te paetukutuku CS Unplugged Classic"
 
 #: templates/generic/not-available-badge.html:4
 #, python-format
