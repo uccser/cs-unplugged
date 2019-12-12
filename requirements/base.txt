@@ -29,7 +29,7 @@ tqdm==4.28.1
 
 # XML Parsing
 lxml==4.3.3
-cssselect==1.0.3
+cssselect==1.1.0
 
 # I18n
 django-modeltranslation==0.13
