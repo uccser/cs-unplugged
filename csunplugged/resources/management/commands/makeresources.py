@@ -3,7 +3,6 @@
 import os
 import os.path
 from urllib.parse import urlencode
-from tqdm import tqdm
 from django.core.management.base import BaseCommand
 from django.http.request import QueryDict
 from django.conf import settings
@@ -62,23 +61,36 @@ class Command(BaseCommand):
             valid_options = {option.name: list(option.valid_values.keys())
                              for option in empty_generator.get_options().values()}
             combinations = resource_valid_configurations(valid_options)
-            progress_bar = tqdm(combinations, ascii=True)
+
+            # TODO: Create PDFs in parallel
+
             # Create PDF for all possible combinations
-            for combination in progress_bar:
+            for combination in combinations:
                 for language_code in generation_languages:
-                    print("  - Creating PDF in '{}'".format(language_code))
-                    with translation.override(language_code):
-                        if resource.copies:
-                            combination["copies"] = settings.RESOURCE_COPY_AMOUNT
-                        requested_options = QueryDict(urlencode(combination, doseq=True))
-                        generator = get_resource_generator(resource.generator_module, requested_options)
-                        (pdf_file, filename) = generator.pdf(resource.name)
+                    self.create_resource_pdf(resource, combination, language_codel, base_path)
 
-                        pdf_directory = os.path.join(base_path, resource.slug, language_code)
-                        if not os.path.exists(pdf_directory):
-                            os.makedirs(pdf_directory)
+        def create_resource_pdf(self, resource, combination, language_codel, base_path):
+            """Create a given resource PDF.
 
-                        filename = "{}.pdf".format(filename)
-                        pdf_file_output = open(os.path.join(pdf_directory, filename), "wb")
-                        pdf_file_output.write(pdf_file)
-                        pdf_file_output.close()
+            Args:
+                resource (Resource): Resource to create.
+                combination (dict): Specific option attributes for this resource.
+                language_code (str): Code for language.
+                base_path (str): Base path for outputting P
+            """
+            print("  - Creating PDF in '{}'".format(language_code))
+            with translation.override(language_code):
+                if resource.copies:
+                    combination["copies"] = settings.RESOURCE_COPY_AMOUNT
+                requested_options = QueryDict(urlencode(combination, doseq=True))
+                generator = get_resource_generator(resource.generator_module, requested_options)
+                (pdf_file, filename) = generator.pdf(resource.name)
+
+                pdf_directory = os.path.join(base_path, resource.slug, language_code)
+                if not os.path.exists(pdf_directory):
+                    os.makedirs(pdf_directory)
+
+                filename = "{}.pdf".format(filename)
+                pdf_file_output = open(os.path.join(pdf_directory, filename), "wb")
+                pdf_file_output.write(pdf_file)
+                pdf_file_output.close()
