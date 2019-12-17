@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-18 02:10+0000\n"
-"PO-Revision-Date: 2019-12-12 14:06\n"
+"PO-Revision-Date: 2019-12-16 08:29\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -376,15 +376,15 @@ msgstr "Color (8 valores binarios posibles)"
 
 #: resources/generators/PixelPainterResourceGenerator.py:19
 msgid "Star - 1 page"
-msgstr ""
+msgstr "Estrella - 1 página"
 
 #: resources/generators/PixelPainterResourceGenerator.py:20
 msgid "Teacup - 1 page"
-msgstr ""
+msgstr "Taza de té - 1 página"
 
 #: resources/generators/PixelPainterResourceGenerator.py:21
 msgid "Cat - 1 page"
-msgstr ""
+msgstr "Gato - 1 página"
 
 #: resources/generators/PixelPainterResourceGenerator.py:22
 msgid "Fish - 6 pages"
@@ -428,15 +428,15 @@ msgstr "Color"
 
 #: resources/generators/PixelPainterResourceGenerator.py:74
 msgid "Star"
-msgstr ""
+msgstr "Estrella"
 
 #: resources/generators/PixelPainterResourceGenerator.py:75
 msgid "Teacup"
-msgstr ""
+msgstr "Taza de té"
 
 #: resources/generators/PixelPainterResourceGenerator.py:76
 msgid "Cat"
-msgstr ""
+msgstr "Gato"
 
 #: resources/generators/PixelPainterResourceGenerator.py:77
 msgid "Boat"
@@ -862,7 +862,7 @@ msgstr "Gracias a generosos patrocinios, hemos podido crear recursos asociados c
 #: templates/general/about.html:42
 #, python-format
 msgid "For an explanation on the connections between CS Unplugged and Computational Thinking skills, see our <a href=\"%(computational_thinking_url)s\">Computational Thinking and CS Unplugged page</a>."
-msgstr ""
+msgstr "Para ver una explicación sobre las conexiones entre CS Unplugged y las habilidades del pensamiento computacional, consulta nuestra <a href=\"%(computational_thinking_url)s\">página Pensamiento computacional y CS Unplugged</a>."
 
 #: templates/general/about.html:49
 #, python-format
@@ -1296,7 +1296,7 @@ msgstr "Las actividades son flexibles ante los errores cometidos por los alumnos
 #: templates/general/what-is-computer-science.html:24
 #, python-format
 msgid "In todays digital world, Computer Science has become an important subject for everyone to learn about. The knowledge and <a href=\"%(computational_thinking_url)s\">Computational Thinking skills</a> associated with it are now crucial to developing innovative digital technology, understanding modern society, and qualifications in this area are highly sought after."
-msgstr ""
+msgstr "En el mundo digital actual, la informática se ha convertido en una materia importante que todo el mundo debería estudiar. El conocimiento y las <a href=\"%(computational_thinking_url)s\">Habilidades del pensamiento computacional</a> asociados a ella ahora son cruciales para desarrollar tecnología digital innovadora y para comprender la sociedad moderna y la demanda de personas cualificadas en este campo es muy alta."
 
 #: templates/general/what-is-computer-science.html:31
 msgid "The CS Unplugged activities are intended to give you a feel for what the subject is - you can learn what it is by doing. At this early stage, rather than define it formally, let's think about how it might influence our daily lives. For example, think of your favourite search engine. On the surface it seems like a fairly simple interface: a text box where you type what you want to search for, and a button to start the search. The level of programming knowledge needed to implement a text box and a button is fairly rudimentary, and you could implement a search by writing a short program (probably less than 20 lines) to go through all the text on the web and displaying any that match. But obviously there's more to it than this! There are billions of searches are made every day, on billions on web pages, and the approach above will give answers (eventually), but will be so slow and ineffective that no-one would use it."
@@ -1304,15 +1304,15 @@ msgstr "Las actividades de CS Unplugged están destinadas a darte una idea de lo
 
 #: templates/general/what-is-computer-science.html:47
 msgid "This is where Computer Science comes in; many areas of Computer Science are employed to make the system work well, and most of them are illustrated through Unplugged. How could you search billions of items in a fraction of a second (Searching Algorithms)? How do you make sure that it's easy to use (Human-Computer Interaction)? We need to keep it secure - users don't want other people to know what they are searching for, and the search engine doesn't want commercial interests to manipulate search ranking (Computer Security and Encryption)? Search engines generally predict what you are about to search for (Artificial Intelligence). It needs to be reliable - a small mistake from one of the thousands of programmers at a search engine company shouldn't prevent the site working (Software Engineering). It needs to scale well - if it becomes 10 times as popular, you don't want it to need 100 times the computing resources (Algorithms). The relevance of a search generally depends on the relationships between web sites - you need a map showing which sites are linked to which other ones (Graphs)."
-msgstr ""
+msgstr "Aquí es donde entra la informática; muchas áreas de la informática se emplean para hacer que el sistema funcione bien y la mayoría de ellas se ilustran en Unplugged. ¿Cómo podrías buscar entre millones de elementos en una fracción de segundo (algoritmos de búsqueda)? ¿Cómo te aseguras de que sea fácil de usar (interacción persona-ordenador)? Necesitamos que sea seguro - los usuarios no quieren que otras personas sepan lo que están buscando y el motor de búsqueda no quiere que los intereses comerciales manipulen la clasificación de búsqueda (seguridad y cifrado informáticos)? Los motores de búsqueda generalmente predicen lo que vas a buscar (inteligencia artificial). Tiene que ser fiable - un pequeño error de uno de los miles de programadores en una empresa de motores de búsqueda no debería hacer que el sitio deje de funcionar (ingeniería del software). Necesita funcionar bien a gran escala - si se vuelve 10 veces más popular, no querrás que necesite 100 veces los recursos informáticos (algoritmos). La relevancia de una búsqueda generalmente depende de las relaciones entre los sitios web - necesitas un mapa que muestre qué sitios están vinculados a otros (gráficos)."
 
 #: templates/general/what-is-computer-science.html:60
 msgid "The areas above cover much of what the subject of Computer Science is about. Programming is just a tool for implementing ideas (well, it's a very powerful tool, and requires considerable skill to use well). But programming on its own isn't enough to create software that people love to use, and Computer Science is the area that gives programmers the inside knowledge to make their software fast, efficient, reliable, secure, usable, intelligent, scalable, and even delightful!"
-msgstr ""
+msgstr "Las áreas anteriores cubren gran parte de lo que trata el tema de la informática. La programación es solo una herramienta para implementar ideas (bueno, es una herramienta muy potente y requiere una habilidad considerable para usarse bien). Pero la programación por sí sola no es suficiente para crear un programa que le encante a la gente y la informática es el área que le da a los programadores el conocimiento interno para hacer que sus programas sean rápidos, eficientes, fiables, seguros, utilizables, inteligentes, escalables, ¡e incluso encantadores!"
 
 #: templates/general/what-is-computer-science.html:72
 msgid "That's why we developed CS Unplugged - we want young students to be empowered to understand the great ideas that computer science covers, without having to become expert programmers first. They won't be learning exactly how to build the next search engine, social network or game app, but they will have an idea of what sort of techniques are needed to make it successful. We don't want them to see digital systems as some kind of magic that they can't participate in, but as something that they could understand and, for some, create themselves. Actually, it is kind of magic when you start understanding what can and can't be done."
-msgstr ""
+msgstr "Por eso hemos desarrollado CS Unplugged - queremos que los estudiantes jóvenes se sientan capaces de entender las grandes ideas que cubre la informática, sin tener que convertirse en programadores expertos primero. No aprenderán exactamente cómo construir el siguiente motor de búsqueda, red social o juego, pero tendrán una idea del tipo de técnicas necesarias para que tenga éxito. No queremos que vean los sistemas digitales como una especie de magia en la que no pueden participar, sino como algo que pueden entender y, en algunos casos, crear por sí mismos. En realidad, es algo mágico cuando comienzas a entender lo que se puede y lo que no se puede hacer."
 
 #: templates/general/what-is-computer-science.html:82
 msgid "Read 'How do I teach CS Unplugged?'"
@@ -1320,11 +1320,11 @@ msgstr "Leer \"¿Cómo enseño CS Unplugged?\""
 
 #: templates/generic/classic-unplugged-button.html:13
 msgid "More activities at the Classic CS Unplugged website"
-msgstr ""
+msgstr "Más actividades en el sitio web de CS Unplugged Clásico"
 
 #: templates/generic/classic-unplugged-button.html:15
 msgid "Translations for some activities available at the Classic CS Unplugged website"
-msgstr ""
+msgstr "En el sitio web de CS Unplugged Clásico hay traducciones disponibles para algunas de las actividades"
 
 #: templates/generic/not-available-badge.html:4
 #, python-format
