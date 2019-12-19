@@ -23,6 +23,53 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+4.3.0
+==============================================================================
+
+- **Release date:** 20th December 2019
+- **Downloads:** `Source downloads are available on GitHub <https://github.com/uccser/cs-unplugged/releases/tag/4.3.0>`__
+
+**Summary of changes:**
+
+This release adds the image representation topic, along with new lessons for the Māori language.
+
+**Changelog:**
+
+- Add Image Representation topic, which includes one lesson for ages 5 to 10. `#1225 <https://github.com/uccser/cs-unplugged/pull/1225>`__
+- Add Māori content:
+  - Two Kidbot (Ngā Karetao Tamariki) lessons.
+  - Two Error Detection and Correction (Te rapu me te whakatikatika i ngā hapa) lessons.
+  - Glossary definitions.
+- Improve links to Computational Thinking and CS Unplugged page. `#1203 <https://github.com/uccser/cs-unplugged/issues/1203>`__
+- Change Pixel Painter legend to reverse digits for 1 and 0. `#1220 <https://github.com/uccser/cs-unplugged/issues/1220>`__
+- Add new single page variations for Pixel Painter printable.
+- Add button on topics page to link to classic topic list. `#985 <https://github.com/uccser/cs-unplugged/issues/985>`__
+- Fix bug when viewing programming language questions that are not translated.
+- Remove deprecated custom Google App Engine health check logic.
+- Update documentation for topics application. `#1205 <https://github.com/uccser/cs-unplugged/issues/1205>`__
+- Update flow charts in author/topics documentation page. `#749 <https://github.com/uccser/cs-unplugged/issues/749>`__
+
+- Dependency updates:
+
+  - Update coverage from 4.5.2 to 5.0.
+  - Update cssselect from 1.0.3 to 1.1.0.
+  - Update django-debug-toolbar from 1.11 to 2.1.
+  - Update django-extensions from 2.1.6 to 2.2.5.
+  - Update django-modeltranslation from 0.13 to 0.14.1.
+  - Update django-widget-tweaks from 1.4.3 to 1.4.5.
+  - Update flake8 from 3.7.7 to 3.7.9.
+  - Update lxml from 4.2.5 to 4.40.2.
+  - Update Pillow from 5.4.1 to 6.2.1.
+  - Update pydocstyle from 3.0.0 to 5.0.1.
+  - Update python-bidi from 0.4.0 to 0.4.2.
+  - Update python-markdown-math from 0.5 to 0.6.
+  - Update PyYAML from 5.1 to 5.2.
+  - Update sphinx from 2.0.0 to 2.2.2.
+  - Update sphinx from 2.2.2 to 2.3.0.
+  - Update tqdm from 4.28.1 to 4.40.2.
+  - Update wheel from 0.33.1 to 0.33.6.
+  - Update yattag from 1.11.1 to 1.12.2.
+
 4.2.1
 ==============================================================================
 

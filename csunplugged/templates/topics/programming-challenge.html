@@ -47,7 +47,7 @@
                 ({% for age_group in lesson.age_group.all %}{% blocktrans with lower=age_group.ages.lower upper=age_group.ages.upper trimmed %}{{ lower }} to {{ upper }}{% endblocktrans %}{% if not forloop.last %}, {% endif %}{% endfor %})
               </a>
               {% if not lesson.translation_available %}
-                {% include 'topics/not-available-badge.html' %}
+                {% include 'generic/not-available-badge.html' %}
               {% endif %}
             </li>
           {% endfor %}
@@ -89,7 +89,7 @@
             {{ implementation.language.name }}
           </strong>
           {% if not implementation.translation_available %}
-            {% include 'topics/not-available-badge.html' %}
+            {% include 'generic/not-available-badge.html' %}
           {% endif %}
           <img src="{% get_static_prefix %}{{ implementation.language.icon }}" class="inline-image" />
         </summary>

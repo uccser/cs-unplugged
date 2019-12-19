@@ -15,5 +15,5 @@ class ProgrammingChallengeSolutionURLTest(BaseTestWithDB):
             "programming_language_slug": "python",
         }
         url = reverse("topics:programming_challenge_solution", kwargs=kwargs)
-        expected_url = "/en/topics/binary-numbers/programming/challenge-1/python-solution"
+        expected_url = "/en/topics/binary-numbers/programming/challenge-1/python-solution/"
         self.assertEqual(url, expected_url)
