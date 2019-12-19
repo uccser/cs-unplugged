@@ -44,5 +44,5 @@ class ProgrammingChallengeModelTest(BaseTestWithDB):
         )
         self.assertEqual(
             challenge.get_absolute_url(),
-            "/en/topics/topic-1/programming/challenge-1"
+            "/en/topics/topic-1/programming/challenge-1/"
         )
