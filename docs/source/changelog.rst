@@ -35,14 +35,19 @@ This release adds the image representation topic, along with new lessons for the
 
 **Changelog:**
 
-- Add Image Representation topic, which includes one lesson for ages 5 to 10.
+- Add Image Representation topic, which includes one lesson for ages 5 to 10. `#1225 <https://github.com/uccser/cs-unplugged/pull/1225>`__
 - Add Māori content:
   - Two Kidbot (Ngā Karetao Tamariki) lessons.
   - Two Error Detection and Correction (Te rapu me te whakatikatika i ngā hapa) lessons.
   - Glossary definitions.
+- Improve links to Computational Thinking and CS Unplugged page. `#1203 <https://github.com/uccser/cs-unplugged/issues/1203>`__
+- Change Pixel Painter legend to reverse digits for 1 and 0. `#1220 <https://github.com/uccser/cs-unplugged/issues/1220>`__
 - Add new single page variations for Pixel Painter printable.
-- Update documentation for topics application.
+- Add button on topics page to link to classic topic list. `#985 <https://github.com/uccser/cs-unplugged/issues/985>`__
+- Fix bug when viewing programming language questions that are not translated.
 - Remove deprecated custom Google App Engine health check logic.
+- Update documentation for topics application. `#1205 <https://github.com/uccser/cs-unplugged/issues/1205>`__
+- Update flow charts in author/topics documentation page. `#749 <https://github.com/uccser/cs-unplugged/issues/749>`__
 
 - Dependency updates:
 
