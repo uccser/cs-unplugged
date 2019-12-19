@@ -7,7 +7,6 @@ The `urlpatterns` list routes URLs to views. For more information please see:
 from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.i18n import i18n_patterns
-from general import views
 
 urlpatterns = i18n_patterns(
     url(r"", include("general.urls", namespace="general")),
@@ -18,7 +17,6 @@ urlpatterns = i18n_patterns(
 urlpatterns += [
     url(r"", include("classic.urls")),
     url(r"^en/search/", include("search.urls", namespace="search")),
-    url(r"^_ah/health", views.health_check),
 ]
 
 if settings.DEBUG:  # pragma: no cover

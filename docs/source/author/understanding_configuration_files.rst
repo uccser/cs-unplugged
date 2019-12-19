@@ -4,9 +4,9 @@ Understanding Configuration Files
 There is a lot of content within the CS Unplugged project.
 We split this content across many files and configuration files are the things
 that bring everything together.
-These files are used for configuring the content data when stored in the
-system database, so it's important to understand how to read and write these
-configuration files for working on this project.
+These files are used for configuring the content data stored in the
+system database, so it is important to understand how to read and write these
+configuration files if you are working on this project.
 
 Here is an example configuration file used to define follow up activities
 in the CS Unplugged project:
@@ -26,11 +26,12 @@ in the CS Unplugged project:
     curriculum-areas:
       - listening
 
-This page aims to give a brief tutorial on YAML files, so you can modify
+This page aims to give a brief tutorial on YAML files, so you can modify and write
 configuration files within this project.
 
-YAML files are mostly made up of key/value pairs, often called a dictionary
-within programming languages.
+YAML files are mostly made up of key/value pairs, where each key is matched with
+one value.
+This is often called a dictionary in programming languages.
 This configuration file contains the follow three key/value pairs:
 
 - The key ``learning-outcomes`` points to the file
@@ -42,7 +43,7 @@ This configuration file contains the follow three key/value pairs:
   ``error-detection-and-correction/structure.yaml``
 
 The majority of configuration files within this project only use dictionaries
-and lists to store their data.
+(sets of key/value pairs) and lists to store their data.
 Here are some other useful tips:
 
 .. code-block:: yaml
@@ -68,4 +69,4 @@ This is because it is difficult to read files using deep nesting
 avoid this issue.
 
 If you want to learn more about YAML, there are plenty of great tutorials
-available on the internet.
+available online.

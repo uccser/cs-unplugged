@@ -14,4 +14,4 @@ class ProgrammingChallengeURLTest(BaseTestWithDB):
             "programming_challenge_slug": "challenge-1",
         }
         url = reverse("topics:programming_challenge", kwargs=kwargs)
-        self.assertEqual(url, "/en/topics/binary-numbers/programming/challenge-1")
+        self.assertEqual(url, "/en/topics/binary-numbers/programming/challenge-1/")
