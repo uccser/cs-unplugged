@@ -26,7 +26,7 @@ All notable changes to this project will be documented in this file.
 4.3.0
 ==============================================================================
 
-- **Release date:** 17th December 2019
+- **Release date:** 20th December 2019
 - **Downloads:** `Source downloads are available on GitHub <https://github.com/uccser/cs-unplugged/releases/tag/4.3.0>`__
 
 **Summary of changes:**
