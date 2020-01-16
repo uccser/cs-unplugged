@@ -2,7 +2,6 @@
 
 import os
 import os.path
-import time
 from urllib.parse import urlencode
 from django.core.management.base import BaseCommand
 from django.http.request import QueryDict
@@ -39,7 +38,6 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         """Automatically called when the makeresources command is given."""
-        base_path = settings.RESOURCE_GENERATION_LOCATION
 
         if options["resource_name"]:
             resources = [Resource.objects.get(name=options["resource_name"])]
@@ -55,13 +53,16 @@ class Command(BaseCommand):
                     generation_languages.append(language_code)
 
         for resource in resources:
-            extras = [base_path, generation_languages]
-            self.create_pdfs_for_resource(resource, extras)
+            self.create_pdfs_for_resource(resource, generation_languages)
     
-    def create_pdfs_for_resource(self, resource, extras):
-        """TODO"""
-        base_path = extras[0]
-        generation_languages = extras[1]
+    def create_pdfs_for_resource(self, resource, generation_languages):
+        """Create all PDFs for a given resource.
+        
+        Args:
+            resource (Resource): The resource PDFs will be generated for
+            generation_languages (list): All languages to generate PDFs in  
+        """
+        base_path = settings.RESOURCE_GENERATION_LOCATION
         pool = Pool(THREADS)
 
         # TODO: Import repeated in next for loop, check alternatives
@@ -74,30 +75,29 @@ class Command(BaseCommand):
         combinations = resource_valid_configurations(valid_options)
 
         # Create parameter sets for all possible combinations of resource
-        parameters = []
+        parameter_sets = []
         for combination in combinations:
             for language_code in generation_languages:
-                parameters.append([resource, combination, language_code, base_path])
+                parameter_sets.append([resource, combination, language_code, base_path])
 
         # Generate resources
-        print("Creating {} PDFs with {} processes for '{}'...".format(len(parameters), THREADS, resource.name))
-        start = time.process_time()
+        print("Creating {} PDFs with {} processes for '{}'...".format(len(parameter_sets), THREADS, resource.name))
         try:
-            pool.map(self.create_resource_pdf, parameters)
+            pool.map(self.create_resource_pdf, parameter_sets)
         except: # sqlite3.ProgrammingError:
-            print("Error using parallel processing, creating {} PDFs in series for '{}'...".format(len(parameters), resource.name))
-            for parameter_set in parameters:
+            print("Error using parallel processing, creating {} PDFs in series for '{}'...".format(len(parameter_sets), resource.name))
+            for parameter_set in parameter_sets:
                 self.create_resource_pdf(parameter_set)
-        print("Done, time taken: {}s.".format(time.process_time() - start))
 
     def create_resource_pdf(self, parameter_set):
         """Create a given resource PDF.
 
         Args:
-            resource (Resource): Resource to create.
-            combination (dict): Specific option attributes for this resource.
-            language_code (str): Code for language.
-            base_path (str): Base path for outputting P
+            parameter_set (list): A list of...
+                resource (Resource): Resource to create.
+                combination (dict): Specific option attributes for this resource.
+                language_code (str): Code for language.
+                base_path (str): Base path for outputting the resource
         """
         resource = parameter_set[0]
         combination = parameter_set[1]
@@ -109,7 +109,7 @@ class Command(BaseCommand):
                 combination["copies"] = settings.RESOURCE_COPY_AMOUNT
             requested_options = QueryDict(urlencode(combination, doseq=True))
             generator = get_resource_generator(resource.generator_module, requested_options)
-            (pdf_file, filename) = generator.pdf(resource.name) ##Breaks here SQLite object
+            (pdf_file, filename) = generator.pdf(resource.name)
 
             pdf_directory = os.path.join(base_path, resource.slug, language_code)
             if not os.path.exists(pdf_directory):

@@ -2,7 +2,6 @@
 
 import os
 import os.path
-import time
 from urllib.parse import urlencode
 from tqdm import tqdm
 from django.conf import settings
@@ -48,7 +47,7 @@ class Command(BaseCommand):
             with translation.override(language_code):
                 print("Creating thumbnails for language '{}''".format(language_code))
                 for resource in resources:
-                    settings = []
+                    parameter_sets = []
                     base_path = BASE_PATH_TEMPLATE.format(
                         resource=resource.slug,
                         language=language_code
@@ -69,26 +68,31 @@ class Command(BaseCommand):
                     # Create thumbnail for all possible combinations
 
                     for combination in combinations:
-                        settings.append([resource, combination, base_path])
+                        parameter_sets.append([resource, combination, base_path])
 
-                    print("Creating {} thumbnails with {} processes for '{}'...".format(len(settings), THREADS, resource.name))
-                    start = time.process_time()
+                    print("Creating {} thumbnails with {} processes for '{}'...".format(len(parameter_sets), THREADS, resource.name))
                     try:
-                        pool.map(self.generate_thumbnail_set, settings)
+                        pool.map(self.generate_thumbnail, parameter_sets)
                     except: # sqlite3.ProgrammingError:
-                        print("Error using parallel processing, creating {} thumbnails in series for '{}'...".format(len(settings), resource.name))
-                        for settings_set in settings:
-                            self.generate_thumbnail_set(settings_set)
-                    print("Done, time taken: {}s.".format(time.process_time() - start))
+                        print("Error using parallel processing, creating {} thumbnails in series for '{}'...".format(len(parameter_sets), resource.name))
+                        for parameter_set in parameter_sets:
+                            self.generate_thumbnail(parameter_set)
 
-    def generate_thumbnail_set(self, settings):
-        """TODO"""
-        resource = settings[0]
-        combination = settings[1]
-        base_path = settings[2]
+    def generate_thumbnail(self, parameter_set):
+        """Create a given resource thumbnial.
+
+        Args:
+            parameter_set (list): A list of...
+                resource (Resource): Resource to create.
+                combination (dict): Specific option attributes for this resource.
+                base_path (str): Base path for outputting the thumbnail
+        """
+        resource = parameter_set[0]
+        combination = parameter_set[1]
+        base_path = parameter_set[2]
         print("  - Creating thumbnail for {}".format(resource.name))
         requested_options = QueryDict(urlencode(combination, doseq=True))
         generator = get_resource_generator(resource.generator_module, requested_options)
         filename = get_thumbnail_filename(resource.slug, combination)
         thumbnail_file_path = os.path.join(base_path, filename)
-        generator.save_thumbnail(resource.name, thumbnail_file_path) #breaks
+        generator.save_thumbnail(resource.name, thumbnail_file_path)
