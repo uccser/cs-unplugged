@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-18 02:10+0000\n"
-"PO-Revision-Date: 2020-01-09 14:03\n"
+"PO-Revision-Date: 2020-01-16 14:03\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -21,11 +21,11 @@ msgstr ""
 
 #: config/settings/base.py:154
 msgid "Translation mode"
-msgstr ""
+msgstr "Mode de traduction"
 
 #: config/settings/base.py:160
 msgid "Translation mode (Bi-directional)"
-msgstr ""
+msgstr "Mode de traduction (bidirectionnel)"
 
 #: general/models.py:11
 msgid "General page"
@@ -41,11 +41,11 @@ msgstr "13 chiffres"
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:24
 msgid "Barcode length"
-msgstr ""
+msgstr "Longueur du code-barres"
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:48
 msgid "{} Digit Barcode"
-msgstr ""
+msgstr "Code-barre à {} chiffres"
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:53
 msgid "Separate!"
@@ -80,7 +80,7 @@ msgstr ""
 #: resources/generators/BinaryCardsResourceGenerator.py:41
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:49
 msgid "No - Print single sided."
-msgstr ""
+msgstr "Non - Imprimer un seul côté."
 
 #: resources/generators/BinaryCardsResourceGenerator.py:104
 msgid "with numbers"
@@ -127,12 +127,12 @@ msgstr ""
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:106
 #: resources/generators/BinaryWindowsResourceGenerator.py:192
 msgid "with dot counts"
-msgstr ""
+msgstr "avec le nombre de points"
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:108
 #: resources/generators/BinaryWindowsResourceGenerator.py:194
 msgid "without dot counts"
-msgstr ""
+msgstr "sans le nombre de points"
 
 #: resources/generators/BinaryToAlphabetResourceGenerator.py:12
 msgid "Student"
@@ -221,11 +221,11 @@ msgstr "Aucun (vide)"
 
 #: resources/generators/NumberHuntResourceGenerator.py:20
 msgid "Sorted Numbers"
-msgstr ""
+msgstr "Nombres triés"
 
 #: resources/generators/NumberHuntResourceGenerator.py:21
 msgid "Unsorted Numbers"
-msgstr ""
+msgstr "Nombres non triés"
 
 #: resources/generators/NumberHuntResourceGenerator.py:25
 msgid "Number Hunt"
@@ -317,7 +317,7 @@ msgstr "Rouge"
 
 #: resources/generators/ParityCardsResourceGenerator.py:34
 msgid "Card back colour"
-msgstr ""
+msgstr "Couleur du dos de la carte"
 
 #: resources/generators/PianoKeysResourceGenerator.py:54
 msgid "Piano key labels"
@@ -385,7 +385,7 @@ msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:50
 msgid "Greyscale"
-msgstr ""
+msgstr "Échelle de gris"
 
 #: resources/generators/PixelPainterResourceGenerator.py:59
 msgid "Colour"
@@ -483,7 +483,7 @@ msgstr "Nombre de cartes (15 ou 31)"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:24
 msgid "1 to 99"
-msgstr ""
+msgstr "de 1 à 99"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:25
 msgid "1 to 999"
@@ -544,7 +544,7 @@ msgstr "Lettres"
 #. Translators: A set of letters from your language's alphabet, seperated by commas
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:29
 msgid "L,O,N,K,E,D,S,P,G,B,I,Y"
-msgstr ""
+msgstr "L, O, N, K, E, D, S, P, G, B, I, Y"
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:34
 msgid "Words"
@@ -561,7 +561,7 @@ msgstr "Fractions"
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:47
 msgid "Butterfly life cycle"
-msgstr ""
+msgstr "Cycle de vie du papillon"
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:58
 msgid "Little Red Riding Hood"
@@ -569,7 +569,7 @@ msgstr ""
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:91
 msgid "Card Type"
-msgstr ""
+msgstr "Type de carte"
 
 #: resources/generators/SortingNetworkResourceGenerator.py:10
 msgid "Easy Numbers (1 digits)"
@@ -699,7 +699,7 @@ msgstr "Nous sommes désolés mais nous n'avons pas trouvé de page pour le lien
 
 #: templates/404.html:15
 msgid "You may find one of the links below useful:"
-msgstr ""
+msgstr "Vous pouvez trouver utile l'un des liens ci-dessous :"
 
 #: templates/404.html:19
 msgid "Homepage"
@@ -727,7 +727,7 @@ msgstr "Langue"
 #: templates/general/index.html:74 templates/topics/index.html:8
 #: templates/topics/index.html:16
 msgid "Topics"
-msgstr ""
+msgstr "Thèmes"
 
 #: templates/base.html:79 templates/base.html:193
 #: templates/general/index.html:81 templates/resources/index.html:8
@@ -789,7 +789,7 @@ msgstr "Glossaire"
 
 #: templates/base.html:236
 msgid "Feedback"
-msgstr ""
+msgstr "Votre avis"
 
 #: templates/base.html:241 templates/general/contact.html:7
 msgid "Contact"
@@ -842,7 +842,7 @@ msgstr ""
 #: templates/general/about.html:63
 #, python-format
 msgid "For more information about the principles behind CS Unplugged, see our <a href=\"%(principles_url)s\">principles page</a>."
-msgstr ""
+msgstr "Pour plus d'informations sur les principes sur lesquels CS Unplugged repose, voyez notre page <a href=\"%(principles_url)s\">Principes</a>."
 
 #: templates/general/base.html:7
 msgid "About pages"
@@ -852,7 +852,7 @@ msgstr ""
 #: templates/general/computational-thinking.html:8
 #: templates/general/computational-thinking.html:17
 msgid "Computational Thinking and CS Unplugged"
-msgstr ""
+msgstr "La Pensée Informatique et CS Unplugged"
 
 #: templates/general/base.html:12 templates/general/principles.html:7
 #: templates/general/principles.html:17
@@ -870,7 +870,7 @@ msgstr "Contactez-nous"
 
 #: templates/general/computational-thinking.html:21
 msgid "What is Computational Thinking?"
-msgstr ""
+msgstr "Qu'est-ce que la Pensée informatique?"
 
 #: templates/general/computational-thinking.html:24
 msgid "The world we live in has become a digital one, filled with technology and driven by Computer Science. Software and technology have transformed every subject and job area, from science and medicine, to art history and psychology. Digital technology is ubiquitous. To be informed and empowered citizens, the next generation of students need to understand this digital world that they live in."
@@ -902,7 +902,7 @@ msgstr ""
 
 #: templates/general/computational-thinking.html:87
 msgid "Computational Thinking in CS Unplugged"
-msgstr ""
+msgstr "La Pensée Informatique dans CS Unplugged"
 
 #: templates/general/computational-thinking.html:89
 msgid "<p> Throughout the lessons and units in CS Unplugged there are many links to Computational Thinking. Teaching Computational Thinking through CS Unplugged activities teaches students how to: </p> <ul> <li>describe a problem,</li> <li>identify the important details needed to solve this problem,</li> <li>break the problem down into small, logical steps,</li> <li>use these steps to create a process (algorithm) that solves the problem,</li> <li>and then evaluate this process.</li> </ul>"
@@ -926,7 +926,7 @@ msgstr ""
 
 #: templates/general/computational-thinking.html:128
 msgid "Algorithmic thinking"
-msgstr ""
+msgstr "Pensée algorithmique"
 
 #: templates/general/computational-thinking.html:133
 msgid "Algorithms are at the heart of Computational Thinking and Computer Science, because in Computer Science the solutions to problems are not simply an answer (e.g. ‘42’, or a fact), they are algorithms. An algorithm is a step-by-step process that solves a problem or completes a task. If you follow the algorithm's steps correctly, you will arrive at a correct solution, even for different inputs. For example, we can use an algorithm to find the shortest route between two locations on a map; the same algorithm can be used for any pair of starting and finishing points, so the solution depends on the input to the algorithm. If we know the algorithm for solving a problem then we can solve that problem easily, whenever we want, without having to think! We can just follow the steps. Computers can’t think for themselves, so they need to be given algorithms to do things."
@@ -942,7 +942,7 @@ msgstr ""
 
 #: templates/general/computational-thinking.html:161
 msgid "Abstraction"
-msgstr ""
+msgstr "Abstraction"
 
 #: templates/general/computational-thinking.html:166
 msgid "Abstraction is all about simplifying things to help us manage complexity. It requires identifying what the most important aspects of a problem are and hiding the other specific details that we don’t need to focus on. The important aspects can be used to create a model, or simplified representation, of the original thing we were dealing with. We can then work with this model to solve the problem, rather than having to deal with all the nitty gritty details at once. Computer Scientists often work with multiple levels of abstraction."
@@ -962,7 +962,7 @@ msgstr ""
 
 #: templates/general/computational-thinking.html:207
 msgid "Decomposition"
-msgstr ""
+msgstr "Décomposition"
 
 #: templates/general/computational-thinking.html:212
 msgid "Decomposition is about breaking down problems into smaller, more manageable, parts, and then focusing on solving each of these smaller problems. We can break a complex problem down until the smaller parts are so simple they become easy to solve. The solutions to each of these smaller, and simpler, problems build up to a solution to the big problem we started with. Decomposition helps make large problems much less intimidating!"
@@ -982,7 +982,7 @@ msgstr ""
 
 #: templates/general/computational-thinking.html:255
 msgid "Generalising and patterns"
-msgstr ""
+msgstr "Généralisation et motifs"
 
 #: templates/general/computational-thinking.html:260
 msgid "Generalising is also referred to as 'pattern recognition and generalisation'. Generalisation is taking a solution (or part of a solution) to a problem and generalising it so it can be applied to other similar problems and tasks. Since solutions in Computer Science are algorithms, this means we take an algorithm and make it general enough that it can be used for a range of problems. This process involves abstraction, because to make something more general we have to remove unnecessary details that are related to a specific problem or situation, but are not important to how the algorithm functions."
@@ -998,7 +998,7 @@ msgstr ""
 
 #: templates/general/computational-thinking.html:285
 msgid "Evaluation"
-msgstr ""
+msgstr "Évaluation"
 
 #: templates/general/computational-thinking.html:290
 msgid "Evaluation is about identifying the possible solutions to a problem and judging which is the best to use, if they will work in some situations but not others, and how they can be improved. When judging our solutions we need to think about a range of factors. For example how much time it will take these processes (algorithms) to solve the problem and will it reliably solve the problem, or if there are certain situations where it will perform in a very different way. Evaluation is something we do a lot in our everyday lives."
@@ -1010,7 +1010,7 @@ msgstr ""
 
 #: templates/general/computational-thinking.html:313
 msgid "Logic"
-msgstr ""
+msgstr "Logique"
 
 #: templates/general/computational-thinking.html:318
 msgid "When trying to solve problems we need to think logically. Logical reasoning is about trying to make sense of things by observing, collecting data, thinking about the facts you know, and then figuring things out based on what you already know. It helps us use our existing knowledge to establish rules and check facts."
@@ -1044,7 +1044,7 @@ msgstr ""
 #: templates/general/how-do-i-teach-cs-unplugged.html:20
 #: templates/general/index.html:66
 msgid "How do I teach CS Unplugged?"
-msgstr ""
+msgstr "Comment enseigner l'Informatique Débranchée ?"
 
 #: templates/general/how-do-i-teach-cs-unplugged.html:23
 msgid "CS Unplugged is very much based on a constructivist approach: students are given challenges based on a few simple rules, and in the process of solving those challenges they uncover powerful ideas on their own. Not only is this a more memorable way to learn, but it empowers them to realise that these are ideas within their grasp. The activities are also very kinesthetic - the bigger the materials, the better."
@@ -1069,7 +1069,7 @@ msgstr ""
 
 #: templates/general/index.html:15
 msgid "Computer Science<br>without a computer"
-msgstr ""
+msgstr "L'Informatique<br>sans ordinateur"
 
 #: templates/general/index.html:22
 msgid "CS Unplugged is a collection of free teaching material that teaches Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around."
@@ -1102,7 +1102,7 @@ msgstr ""
 
 #: templates/general/people.html:21
 msgid "version 4.0.0 onwards"
-msgstr ""
+msgstr "à partir de la version 4.0.0"
 
 #: templates/general/people.html:23
 msgid "Founders"
@@ -1118,7 +1118,7 @@ msgstr "Informaticien"
 
 #: templates/general/people.html:38
 msgid "Current Team"
-msgstr ""
+msgstr "Équipe actuelle"
 
 #: templates/general/people.html:41
 msgid "Founder &amp; Content Writer"
@@ -1127,7 +1127,7 @@ msgstr ""
 #: templates/general/people.html:42 templates/general/people.html:43
 #: templates/general/people.html:47 templates/general/people.html:53
 msgid "Content Writer"
-msgstr ""
+msgstr "Rédacteur"
 
 #: templates/general/people.html:44
 msgid "Project Manager &amp; Technical Team"
@@ -1136,7 +1136,7 @@ msgstr "Chef de projet &amp; équipe technique"
 #: templates/general/people.html:45 templates/general/people.html:46
 #: templates/general/people.html:54 templates/general/people.html:55
 msgid "Technical Team"
-msgstr ""
+msgstr "Équipe technique"
 
 #: templates/general/people.html:50
 msgid "Previous Team Members"
@@ -1152,11 +1152,11 @@ msgstr ""
 
 #: templates/general/people.html:68
 msgid "Translations"
-msgstr ""
+msgstr "Traductions"
 
 #: templates/general/people.html:74
 msgid "up to version 3.2.2"
-msgstr ""
+msgstr "jusqu'à la version 3.2.2"
 
 #: templates/general/people.html:76
 msgid "Contributors"
@@ -1164,7 +1164,7 @@ msgstr ""
 
 #: templates/general/people.html:143
 msgid "Website"
-msgstr ""
+msgstr "Site web"
 
 #: templates/general/principles.html:22
 msgid "The primary goal of the Unplugged project is to promote Computer Science (and computing in general) to young people as an interesting, engaging, and intellectually stimulating discipline. We want to capture people’s imagination and address common misconceptions about what it means to be a computer scientist. We want to convey fundamentals that do not depend on particular software or systems, ideas that will still be fresh in 10 years. We want to reach kids in elementary schools and provide supplementary material for university courses. We want to tread where high-tech educational solutions are infeasible; to cross the divide between the information-rich and information-poor, between industrialized countries and the developing world."
@@ -1192,7 +1192,7 @@ msgstr ""
 
 #: templates/general/principles.html:60
 msgid "Learning by doing"
-msgstr ""
+msgstr "L'Apprentissage par la Pratique"
 
 #: templates/general/principles.html:63
 msgid "The activities tend to be kinaesthetic, often on a large scale and involving team work. For example, the Sorting Network activity has teams of six running through a network drawn on the ground. The activities tend to allow students to discover answers for themselves, rather than just being given solutions or algorithms to follow; that is, a constructivist approach is encouraged (where the teacher uses the scaffolding provided by Unplugged to ask questions that lead them to discover the knowledge themselves), as we want students to realize that they are capable of finding solutions to problems on their own, rather than being given a solution to apply to the problem. For example, students don’t really need to be able to convert numbers to binary, but it is valuable for them to discover the patterns such as the doubling value of bits, patterns when you count in binary, and how the range increases exponentially as you add bits."
@@ -1236,7 +1236,7 @@ msgstr ""
 
 #: templates/general/principles.html:130
 msgid "Co-operative"
-msgstr ""
+msgstr "Coopératif"
 
 #: templates/general/principles.html:133
 msgid "We encourage co-operation, communication and problem solving. Competition can also be effective if it is used appropriately, especially between teams rather than individuals, but having students working cooperatively is a great way to learn about problem solving."
@@ -1281,7 +1281,7 @@ msgstr ""
 
 #: templates/general/what-is-computer-science.html:82
 msgid "Read 'How do I teach CS Unplugged?'"
-msgstr ""
+msgstr "Lire \"Comment enseigner l'Informatique Débranchée ?\""
 
 #: templates/generic/classic-unplugged-button.html:13
 msgid "More activities at the Classic CS Unplugged website"
@@ -1294,7 +1294,7 @@ msgstr ""
 #: templates/generic/not-available-badge.html:4
 #, python-format
 msgid "Not available in %(language)s"
-msgstr ""
+msgstr "Non disponible en %(language)s"
 
 #: templates/resources/index.html:19
 msgid "This page diplays a complete list of all available printables. If a lesson uses a printable, the lesson will contain a direct link to the printable with a description on how to use it."
@@ -1310,7 +1310,7 @@ msgstr ""
 
 #: templates/resources/resource.html:31
 msgid "Create Printable"
-msgstr ""
+msgstr "Créer un document à imprimer"
 
 #: templates/resources/resource.html:42
 msgid "Generate Printable"
@@ -1327,7 +1327,7 @@ msgstr ""
 
 #: templates/resources/resource.html:59
 msgid "Preview"
-msgstr ""
+msgstr "Aperçu"
 
 #: templates/resources/resource.html:74
 msgid "Related Lessons"
@@ -1337,7 +1337,7 @@ msgstr ""
 #: templates/topics/all-curriculum-integration-list.html:27
 #: topics/models.py:108
 msgid "Topic"
-msgstr ""
+msgstr "Thème"
 
 #: templates/resources/resource.html:79
 msgid "Ages"
@@ -1411,7 +1411,7 @@ msgstr ""
 
 #: templates/topics/curriculum-integration.html:45
 msgid "Heads up!"
-msgstr ""
+msgstr "Avertissement !"
 
 #: templates/topics/curriculum-integration.html:46
 msgid "To do this activity it's expected you understand the content covered in the following:"
@@ -1450,7 +1450,7 @@ msgstr ""
 #: templates/topics/lesson.html:27
 #, python-format
 msgid "<strong>Duration:</strong> %(duration)s minutes"
-msgstr ""
+msgstr "<strong>Durée :</strong> %(duration)s minutes"
 
 #: templates/topics/lesson.html:44
 #: templates/topics/programming-challenge.html:61
@@ -1482,12 +1482,12 @@ msgstr "Table des matières"
 #: templates/topics/lesson.html:124
 #: templates/topics/unit-plan-description.html:52
 msgid "Computational Thinking"
-msgstr ""
+msgstr "Pensée informatique"
 
 #: templates/topics/lessons-table.html:10
 #, python-format
 msgid "Ages %(lower)s to %(upper)s"
-msgstr ""
+msgstr "Âges : de %(lower)s à %(upper)s ans"
 
 #: templates/topics/not-available-warning.html:6
 #, python-format
@@ -1505,7 +1505,7 @@ msgstr ""
 
 #: templates/topics/programming-challenge-language-solution.html:27
 msgid "solution"
-msgstr ""
+msgstr "solution"
 
 #: templates/topics/programming-challenge-language-solution.html:39
 msgid "<strong>Heads Up!</strong> If you are ready to compare your programming to ours or are wanting to have a look at how we solved it, click 'View solution' below to view at least one way to write this program."
@@ -1532,7 +1532,7 @@ msgstr "Défi supplémentaire"
 #: templates/topics/programming-challenge-lesson-list.html:19
 #, python-format
 msgid "%(name)s programming challenges"
-msgstr ""
+msgstr "défis de programmation %(name)s"
 
 #: templates/topics/programming-challenge-lesson-list.html:30
 #, python-format
@@ -1577,7 +1577,7 @@ msgstr "Nom"
 
 #: templates/topics/programming-challenges-table.html:10
 msgid "Challenge Level"
-msgstr ""
+msgstr "Niveau de défi"
 
 #: templates/topics/topic-other-resources.html:9
 #, python-format
@@ -1598,7 +1598,7 @@ msgstr ""
 
 #: templates/topics/topic.html:21
 msgid "Return to list of topics"
-msgstr ""
+msgstr "Retour à la liste des thèmes"
 
 #: templates/topics/topic.html:33
 msgid "Unit Plans"
@@ -1663,5 +1663,5 @@ msgstr ""
 
 #: topics/models.py:451
 msgid "Curriculum Integration"
-msgstr ""
+msgstr "Intégration dans le programme scolaire"
 
