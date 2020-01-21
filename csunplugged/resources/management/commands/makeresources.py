@@ -39,7 +39,6 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         """Automatically called when the makeresources command is given."""
-
         if options["resource_name"]:
             resources = [Resource.objects.get(name=options["resource_name"])]
         else:
