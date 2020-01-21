@@ -12,6 +12,7 @@ from resources.utils.get_resource_generator import get_resource_generator
 from resources.utils.resource_valid_configurations import resource_valid_configurations
 from resources.utils.resource_parameters import EnumResourceParameter
 from multiprocessing.dummy import Pool
+from sqlite3 import ProgrammingError as sqlite3_ProgrammingError
 
 THREADS = 6
 
@@ -54,13 +55,13 @@ class Command(BaseCommand):
 
         for resource in resources:
             self.create_pdfs_for_resource(resource, generation_languages)
-    
+
     def create_pdfs_for_resource(self, resource, generation_languages):
         """Create all PDFs for a given resource.
-        
+
         Args:
             resource (Resource): The resource PDFs will be generated for
-            generation_languages (list): All languages to generate PDFs in  
+            generation_languages (list): All languages to generate PDFs in
         """
         base_path = settings.RESOURCE_GENERATION_LOCATION
         pool = Pool(THREADS)
@@ -71,7 +72,7 @@ class Command(BaseCommand):
                     for option in empty_generator.get_options().values()]):
             raise TypeError("Only EnumResourceParameters are supported for pre-generation")
         valid_options = {option.name: list(option.valid_values.keys())
-                            for option in empty_generator.get_options().values()}
+                         for option in empty_generator.get_options().values()}
         combinations = resource_valid_configurations(valid_options)
 
         # Create parameter sets for all possible combinations of resource
@@ -81,11 +82,15 @@ class Command(BaseCommand):
                 parameter_sets.append([resource, combination, language_code, base_path])
 
         # Generate resources
-        print("Creating {} PDFs with {} processes for '{}'...".format(len(parameter_sets), THREADS, resource.name))
+        print("Creating {} PDFs with {} processes for '{}'...".format(
+            len(parameter_sets), THREADS, resource.name)
+            )
         try:
             pool.map(self.create_resource_pdf, parameter_sets)
-        except: # sqlite3.ProgrammingError:
-            print("Error using parallel processing, creating {} PDFs in series for '{}'...".format(len(parameter_sets), resource.name))
+        except sqlite3_ProgrammingError:
+            print("Error using parallel processing, creating {} PDFs in series for '{}'...".format(
+                len(parameter_sets), resource.name)
+                )
             for parameter_set in parameter_sets:
                 self.create_resource_pdf(parameter_set)
 

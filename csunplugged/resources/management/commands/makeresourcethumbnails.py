@@ -3,7 +3,6 @@
 import os
 import os.path
 from urllib.parse import urlencode
-from tqdm import tqdm
 from django.conf import settings
 from django.core.management.base import BaseCommand
 from django.http.request import QueryDict
@@ -14,6 +13,7 @@ from resources.utils.resource_valid_configurations import resource_valid_configu
 from resources.utils.resource_parameters import EnumResourceParameter
 from resources.utils.get_thumbnail import get_thumbnail_filename
 from multiprocessing.dummy import Pool
+from sqlite3 import ProgrammingError as sqlite3_ProgrammingError
 
 THREADS = 6
 
@@ -70,11 +70,15 @@ class Command(BaseCommand):
                     for combination in combinations:
                         parameter_sets.append([resource, combination, base_path])
 
-                    print("Creating {} thumbnails with {} processes for '{}'...".format(len(parameter_sets), THREADS, resource.name))
+                    print("Creating {} thumbnails with {} processes for '{}'...".format(
+                        len(parameter_sets), THREADS, resource.name)
+                        )
                     try:
                         pool.map(self.generate_thumbnail, parameter_sets)
-                    except: # sqlite3.ProgrammingError:
-                        print("Error using parallel processing, creating {} thumbnails in series for '{}'...".format(len(parameter_sets), resource.name))
+                    except sqlite3_ProgrammingError:
+                        print("Error using parallel processing, creating {} thumbnails in series for '{}'...".format(
+                            len(parameter_sets), resource.name)
+                            )
                         for parameter_set in parameter_sets:
                             self.generate_thumbnail(parameter_set)
 

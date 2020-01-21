@@ -168,8 +168,7 @@ class BaseResourceGenerator(ABC):
         # does not have it installed.
         # Also adapt logging so that weasyprint doesn't print warnings when it detects unknown css properties:
         import logging
-        logger = logging.getLogger("weasyprint").setLevel(100)
-
+        logging.getLogger("weasyprint").setLevel(100)
         from weasyprint import HTML, CSS
         context = dict()
         context["resource"] = resource_name
@@ -253,8 +252,7 @@ class BaseResourceGenerator(ABC):
         # does not have it installed.
         # Also adapt logging so that weasyprint doesn't print warnings when it detects unknown css properties:
         import logging
-        logger = logging.getLogger("weasyprint").setLevel(100)
-
+        logging.getLogger("weasyprint").setLevel(100)
         from weasyprint import HTML, CSS
         context = dict()
         context["resource"] = resource_name
