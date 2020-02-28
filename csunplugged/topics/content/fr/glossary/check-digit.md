@@ -1,3 +1,3 @@
-# Check digit
+# Chiffre de contrôle
 
-A check digit is an extra digit added to the end of an important number such as a credit card number, product code (bar code), identity number, tax number, or a passport number, that can be used to check if the number has been typed in correctly. In some situations more than one digit is used, in which case it is referred to as a checksum.
+Un chiffre de contrôle est un chiffre supplémentaire ajouté à la fin d'un nombre important tel qu'un numéro de carte bancaire, un code produit (code barres), le numéro de carte d'identité, le numéro d'identification fiscale, ou un numéro de passeport ; qui peut être utilisé pour vérifier si le numéro a été saisi correctement. Dans certains cas, plus d'un chiffre est utilisé auquel cas on les appelle somme de contrôle.

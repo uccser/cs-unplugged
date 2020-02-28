@@ -1,3 +1,3 @@
 # Compression
 
-Compression is the process of trying to make something smaller. On computers, data compression is about using a compression algorithm to reduce the size of files, so that they take up less space and can be transmitted faster. This is generally done by trying to find repeated or predictable patterns in a file and replacing them with short codes that convey they same information.
+La compression consiste à tenter de rendre quelque chose plus petit. Dans les ordinateurs, la compression de données consiste à utiliser un algorithme de compression pour réduire la taille des fichiers, afin qu'ils prennent moins de place et puissent être transférés plus rapidement. Cela consiste généralement à essayer de trouver des motifs répétitifs ou prédictibles dans un fichier, puis à les remplacer par des codes plus courts qui véhiculent la même information.

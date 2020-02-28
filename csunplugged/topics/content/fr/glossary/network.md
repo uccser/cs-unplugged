@@ -1,3 +1,3 @@
-# Network
+# Réseau
 
-A series of connected nodes such as a computer network, a road map, or a comparator network.
+C'est une suite de noeuds connectés tels qu'un réseau informatique, un réseau routier ou un réseau de tri.

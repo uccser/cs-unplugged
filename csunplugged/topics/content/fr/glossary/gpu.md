@@ -1,3 +1,3 @@
-# GPU/Graphics Processing Unit
+# GPU/Processeur graphique
 
-A specialised processor in a computer that can do simple operations for the many pixels in an image in parallel. These are often used for other computations because of their ability to do parallel processing.
+C'est un processeur spécialisé dans un ordinateur qui peut réaliser des opérations simples en parallèle sur les nombreux pixels constituant une image. Ils sont souvent utilisés pour d'autres calculs en raison de leur capacité de traitement parallèle des données.

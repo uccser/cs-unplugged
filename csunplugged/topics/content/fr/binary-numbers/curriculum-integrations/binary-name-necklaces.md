@@ -1,7 +1,7 @@
-# Binary Name Necklaces
+# Les colliers de nom binaire
 
-{image file-path="img/topics/col_binary_necklace_copy.png" alt="An image of a person wearing a necklace."}
+{image file-path="img/topics/col_binary_necklace_copy.png" alt="Une image d'une personne portant un collier."}
 
-Create a necklace or a bag tag with your initials written in 5 bit binary.
+Créez un collier ou une étiquette de bagage avec vos initiales écrites en binaire 5 bits.
 
-Decide on which bead colour will be a 1 and which bead will be a 0. Computers don’t need to know when a new letter starts because it knows the rule that every 5th bit is a new letter. The lowest value bit of each group of 5 goes on the right.
+Décidez quelle couleur de perle sera un 1 et laquelle sera un 0. Les ordinateurs n’ont pas besoin de savoir quand une nouvelle lettre commence parce qu’ils savent que chaque ensemble de 5 bits est une nouvelle lettre. Le bit de plus basse valeur de chaque groupe de 5 perles est sur la droite.

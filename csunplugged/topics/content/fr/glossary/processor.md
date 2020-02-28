@@ -1,3 +1,3 @@
-# Processor/CPU
+# Processeur/CPU
 
-A device that can run computer programs. CPU is an abbreviation for "Central Processing Unit".
+Un composant pouvant exécuter des programmes informatiques. CPU est une abbréviation pour "Central Processing Unit" (Unité Centrale de Traitement en français).

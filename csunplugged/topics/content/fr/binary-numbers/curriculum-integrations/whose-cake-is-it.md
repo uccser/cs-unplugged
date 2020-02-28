@@ -1,5 +1,5 @@
-# Whose cake is it?
+# À qui est ce gateau ?
 
-Write an explanation as to why there is confusion as to whose cake it is? Remember to add a conclusion as to who you think should have the cake and why? There is more than one possible explanation.
+Écris pourquoi il y a une incertitude pour savoir à qui est destiné ce gâteau. N'oublie pas d'ajouter une conclusion expliquant ton avis sur la question et pourquoi. Il y a plus d'une explication possible.
 
-{image file-path="img/topics/col_binary_birthdayFinal.png" alt="Two people looking at a cake."}
+{image file-path="img/topics/col_binary_birthdayFinal.png" alt="Deux personnes qui regardent un gâteau."}

@@ -1,3 +1,3 @@
-# Decimal Number
+# Nombre décimal
 
-In CS Unplugged we use the term decimal number to represent all whole numbers. There are many different phrases for these numbers including whole numbers, counting in base 10, cardinal numbers and ordinal numbers. Examples of these numbers are 7, 41, 1052.
+Dans CS Unplugged, on utilise le terme nombre décimal pour représenter tous les nombres entiers. Il existe beaucoup de dénominations différentes pour ces nombres telles que nombres entiers, compter en base 10, nombres cardinaux et nombres ordinaux. Ces nombres sont par exemple 7, 41, 1052.

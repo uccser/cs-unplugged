@@ -8,16 +8,16 @@ Ou
 
 Une biographie :
 
-- Gives an account of a person’s life
-- Start by introducing the person and what they achieved
-- Write about the significant events that happened in their lives
-- Write about the impact their work has had on other people
+- Rend compte de la vie d'une personne
+- Commence par présenter la personne et ce qu'elle a accompli
+- Écris à propos des évènements importants qui se sont déroulés dans sa vie
+- Traite de l'impact que son travail a eu sur d'autres personnes
 
-L'informatique a commencé il y a des centaines d'années lorsque les gens ont commencé à penser à la manière de représenter et de manipuler les données. Some of the people who worked on early ideas have modern concepts named after them (such as Boolean true/false values, named after George Boole). Find out more about the people whose work is used every day in computers today. We've given some links to Wikipedia below to get you started, but make sure you look more widely than that.
+L'informatique a commencé il y a des centaines d'années lorsque les gens ont commencé à penser à la manière de représenter et de manipuler les données. Certaines des personnes qui ont travaillé sur les premières idées, ont donné leur nom à des concepts modernes (comme les valeurs booléennes vrai/faux, qui tiennent leur nom de George Boole). Découvre les personnes dont le travail est utilisé chaque jour dans les ordinateurs aujourd'hui. Nous avons donné quelques liens vers Wikipedia ci-dessous pour vous aider à démarrer, mais explore aussi d'autres pistes.
 
-Some people and historic ideas to research about are:
+Quelques personnes et leurs idées historiques à découvrir :
 
-- [George Boole](https://en.wikipedia.org/wiki/George_Boole) did extensive work on the idea of representing things with just two values, and many current programming languages have "Boolean variables", which are named after him.
-- Baudot, telegraph codes, Braille, Morse all relate to binary representations (although Morse really uses three symbols: dot, dash and gap). See what you can find out about the lives of Baudot, Braille or Morse, and what led them to invent their codes.
-- [Donald Murray](https://en.wikipedia.org/wiki/Donald_Murray_%28inventor%29) (who was born in New Zealand) came up with a letter code that was widely used for some time.
-- [Early telegraph systems](https://en.wikipedia.org/wiki/Semaphore_line) sometimes used binary representations; you could research shutter telegraphs.
+- [George Boole](https://en.wikipedia.org/wiki/George_Boole) a travaillé de manière approfondie sur l'idée de représenter des choses avec seulement deux valeurs, et de nombreux langages de programmation actuels ont des "variables booléennes", qui portent son nom.
+- Baudot, les codes télégraphiques, Braille, Morse sont tous liés à des représentations binaires (bien que Morse utilise en fait trois symboles : point, tiret et vide). Voyez ce que vous pouvez trouver sur la vie de Baudot, de Braille ou de Morse, et ce qui les a conduits à inventer leurs codes.
+- [Donald Murray](https://en.wikipedia.org/wiki/Donald_Murray_%28inventor%29) (né en Nouvelle-Zélande) a inventé un code de lettres largement utilisé pendant un certain temps.
+- [Les premiers systèmes de télégraphe](https://en.wikipedia.org/wiki/Semaphore_line) ont parfois utilisé des représentations binaires ; vous pouvez rechercher les télégraphes à obturateurs par exemple.
