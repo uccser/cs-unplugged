@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-18 02:10+0000\n"
-"PO-Revision-Date: 2020-02-26 14:08\n"
+"PO-Revision-Date: 2020-03-02 14:09\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -824,7 +824,7 @@ msgstr "Glossaire"
 
 #: templates/base.html:236
 msgid "Feedback"
-msgstr "Votre avis"
+msgstr "Feedback"
 
 #: templates/base.html:241 templates/general/contact.html:7
 msgid "Contact"
