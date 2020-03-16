@@ -1,0 +1,220 @@
+---
+#BINARY NUMBERS LEARNING OUTCOMES
+binary-convert-decimal:
+  text: Effectuer une démonstration de la façon dont le système de numération binaire fonctionne par conversion de n'importe quel nombre décimal en nombre binaire.
+binary-justify-zeros-and-ones:
+  text: Expliquer pourquoi il n'y a pas vraiment des 0 et des 1 courant de partout à l'intérieur d'un ordinateur.
+binary-argue-zeros-and-ones-stored:
+  text: Argumenter que les 0 et les 1 restent une bonne façon d'expliquer ce qui est stocké dans l'ordinateur.
+binary-explain-different-states:
+  text: Expliquer pourquoi on peut utiliser deux états ou choses différentes quelconques pour représenter le binaire ; on n'a pas nécessairement besoin de 0 et de 1.
+binary-explain-logic-one-bit:
+  text: Expliquer pourquoi le bit de droite doit représenter 1.
+binary-explain-off-on:
+  text: Expliquer pourquoi une carte en particulier (bit) doit être montrée ou cachée pour un nombre donné.
+binary-predict-bit-value:
+  text: Prédire la valeur du prochain bit binaire (carte).
+binary-explain-doubling:
+  text: Expliquer pourquoi nous n'avons besoin que d'un bit supplémentaire pour représenter deux fois plus de nombres.
+binary-recognise-alphabet-bits:
+  text: Savoir à l'aide d'une méthode simplifiée comment les ordinateurs représentent les lettres de l'alphabet sous forme de bits.
+binary-create-message-converting:
+  text: Créer leur propre message en convertissant des lettres de l'alphabet en chiffres décimaux, puis en binaire.
+binary-interpret-message-binary:
+  text: Interpréter un message en utilisant le binaire.
+binary-explain-codes-alphabets:
+  text: Expliquer comment les codes pour des alphabets plus grands pourraient être créés pour également inclure les lettres majuscules, la ponctuation, les symboles et les signes diacritiques (par exemple les macrons, les accents).
+binary-make-play-instructions-binary:
+  text: Créer un sketch qui donne des instructions sur la façon de représenter un nombre en binaire.
+binary-identify-opposite-pairs:
+  text: Identifier des paires opposées comme un visage heureux et un visage triste.
+binary-match-letters-numbers:
+  text: Associer des lettres dans l'alphabet aux nombres qui les représentent.
+binary-count-highest-number:
+  text: Comptez à partir du plus grand nombre pour trouver le nombre total de points sur les cartes binaires.
+#DRAMA LEARNING OUTCOMES
+drama-create-video-binary:
+  text: Créer une vidéo pédagogique expliquant comment compter en utilisant le système de numération binaire.
+#ENGLISH LEARNING OUTCOMES
+speaking-clear-instructions-binary-cards:
+  text: Donner des instructions claires pour expliquer comment les cartes binaires peuvent afficher n'importe quel nombre entre 0 et 63
+#ERROR DETECTION AND CORRRECTION LEARNING OUTCOMES
+error-describe-steps-to-find-card:
+  text: Décrire les étapes qu'il faut pour comprendre la manière de trouver la carte qui est retournée.
+error-explain-each-card-bit:
+  text: Expliquer que chaque carte est un bit et que les cartes peuvent représenter des données.
+error-explain-chose-parity-card:
+  text: Expliquer pourquoi ils ont choisi chaque bit supplémentaire (carte) lors de l'ajout d'une colonne/ligne de parité.
+error-explain-steps-product-code-checksum:
+  text: Expliquez les étapes à suivre pour calculer la somme de contrôle d’un code d'article.
+error-discuss-checksum-algorithm-12-13-product-code:
+  text: Discuter des raisons pour lesquelles l'algorithme de somme de contrôle fonctionne aussi bien pour les codes d'article à 12 et 13 chiffres.
+error-explain-checksum-algorithm:
+  text: Expliquez pourquoi l'algorithme de somme de contrôle est si fiable.
+error-follow-steps-find-card-turned-over:
+  text: Suivez les étapes pour comprendre comment trouver le bit (carte) qui a été retourné dans le tour sur la parité.
+error-explain-group-numbers:
+  text: Expliquer comment regrouper les numéros en pairs ou impairs.
+error-recognise-groups-of-5:
+  text: Reconnaître les groupes de 5 et compter de 5 en 5
+error-demonstrate-count-to-5:
+  text: Démontrer comment compter jusqu'à 5 en faisant correspondre leur comptage aux cartes.
+#LANUGAGE LEARNING OUTCOMES
+language-discuss-storing-characters:
+  text: Discuter des raisons pour lesquelles il est important de pouvoir stocker plus que l'alphabet français standard.
+#NUMERACY LEARNING OUTCOMES
+numeracy-adding-given-number:
+  text: Ajouter des nombres à une quantité donnée.
+numeracy-identify-even-odd:
+  text: Identifier les nombres pairs et impairs en expliquant pourquoi le nombre le plus à droite est différent dans un cas et dans l'autre.
+numeracy-discuss-count-zeros-ones:
+  text: Discuter des raisons pour lesquelles vous pouvez compter jusqu'à n'importe quel nombre en utilisant seulement des 0 et des 1.
+numeracy-explain-squaring:
+  text: Expliquer comment la compréhension du développement des nombres binaires conforte la compréhension de la valeur de la position.
+numeracy-compare-base10-base2:
+  text: Comparer les systèmes de numération en base 10 (notre système de numération) et en base 2 (binaire).
+numeracy-identify-larger-number:
+  text: Identifier le nombre le plus grand, lorsque l'on compare deux nombres.
+numeracy-count-by-pointing:
+  text: Compter correctement en pointant chaque élément.
+numeracy-recognise-patterns:
+  text: Reconnaître les motifs pour les nombres de 1 à 8.
+numeracy-recognise-number-alphabet-order:
+  text: Savoir que l'alphabet est dans un ordre particulier, tout comme les nombres.
+numeracy-explain-even-odd-parity-problem:
+  text: Expliquer pourquoi savoir distinguer les nombres pairs des nombres impairs permet de résoudre le problème de parité.
+numeracy-describe-rows-columns:
+  text: Décrire ce que sont des lignes et ce que sont des colonnes.
+numeracy-discuss-changing-one-card-state:
+  text: Discuter des raisons pour lesquelles changer une carte changera l'état de la ligne et de la colonne dans laquelle elle se trouve.
+numeracy-explain-modulo:
+  text: Expliquer comment fonctionne l'opérateur modulo.
+numeracy-identify-modulo-everyday-life:
+  text: Identifier où l'opération modulo apparaît dans la vie de tous les jours.
+numeracy-recognise-numbers-represented:
+  text: Savoir que les nombres peuvent être représentés de différentes façons.
+numeracy-discuss-modulo-understanding-remainders:
+  text: Discuter du fait que savoir comment l'opération modulo fonctionne renforce la compréhension des restes dans les divisions.
+#PROGRAMMING LEARNING OUTCOMES
+programming-explain-sequencing:
+  text: Expliquer comment les séquences fonctionnent en programmation.
+programming-explain-output:
+  text: Expliquer pourquoi un programme donne telle ou telle réponse.
+programming-explain-variable-name:
+  text: Expliquez pourquoi il est important de choisir un bon nom pour une variable.
+programming-describe-variables:
+  text: Décrire la manière dont les variables stockent des valeurs et comment elles sont utilisées dans votre programme.
+programming-describe-mathematical-operations:
+  text: Décrire la manière dont vous avez utilisé des opérations mathématiques dans votre programme.
+programming-outline-variable-updates:
+  text: Décrire comment le stockage de valeurs dans une variable est mis à jour par le code que vous avez utilisé.
+programming-describe-variable-output:
+  text: Décrire comment une variable peut être affichée en sortie.
+programming-describe-function:
+  text: Décrire la raison pour laquelle vous avez ajouté une fonction dans votre programme.
+programming-identify-loop:
+  text: Identifier comment et quand utiliser une boucle pour répéter une série d'instructions.
+programming-explain-join-concatenate:
+  text: Expliquer comment concaténer (réunir) les chaines de caractères.
+programming-explain-asking-input-end-user:
+  text: Expliquer ce à quoi vous devez penser si vous demandez une valeur d'entrée à l'utilisateur.
+programming-identify-if-statement:
+  text: Identifier quand utiliser une instruction si, pour vérifier un ensemble de conditions.
+programming-demonstrate-indexing:
+  text: Démontrer comment fonctionne l'indexation permettant d'accéder à une lettre par sa position dans une chaîne de caractères.
+programming-explain-set-and-change-statement:
+  text: Expliquer la différence entre une instruction d'initialisation et une instruction de modification lorsqu'elles sont utilisées pour mettre à jour la valeur d'une variable.
+programming-describe-variable-initial-value:
+  text: Décrire pourquoi une variable doit être définie dans le type approprié pour la valeur initiale.
+programming-explain-mod:
+  text: Expliquer ce que fait l'opérateur modulo dans votre programme.
+programming-explain-differences-if-else-if-statements:
+  text: Expliquer la différence entre une instruction si-sinon et une instruction si, et comment vous les avez utilisées dans votre programme.
+programming-describe-nested-statement:
+  text: Décrire de quelle manière fonctionnent des instructions imbriquées dans votre programme.
+programming-identify-list-store-data:
+  text: Identifier quand utiliser une liste pour stocker un ensemble de données.
+programming-show-item-specified-position-list:
+  text: Montrer comment accéder à un élément situé à une position donnée dans une liste.
+#SEARCHING ALGORITHMS LEARNING OUTCOMES
+search-algorithms-identify-unsorted-lists:
+  text: Identifier des algorithmes de recherche pour les listes non triées (recherche séquentielle).
+search-algorithms-describe-time-size-input:
+  text: Décrire comment le temps nécessaire augmente avec la taille de l'entrée.
+search-algorithms-explore-probability-value-random-set:
+  text: Explorer la probabilité de trouver une valeur particulière dans un ensemble aléatoire.
+search-algorithms-explain-range-unsorted-lists:
+  text: Expliquer la fourchette du nombre de suppositions pour les listes non triées.
+search-algorithms-identify-sequential-binary:
+  text: Identifier des algorithmes de recherche pour des listes triées ou non triées (recherche séquentielle ou dichotomique).
+search-algorithms-explain-decomposition-binary:
+  text: Expliquer comment on a utilisé la stratégie de diviser pour mieux régner lorsque l'on fait une recherche dichotomique.
+search-algorithms-describe-time-size-input-different:
+  text: Décrire comment le temps nécessaire augmente avec la taille de l'entrée, et, surtout, comment il augmente de différentes manières pour les différents algorithmes.
+search-algorithms-describe-compare-values:
+  text: Décrire comment comparer les valeurs numériques pour l'égalité et pour l'inégalité (plus grand que, plus petit que).
+search-algorithms-explain-unsorted-lists:
+  text: Expliquer la fourchette du nombre de suppositions pour des listes non triées par rapport aux listes triées.
+#UNPLUGGED PROGRAMMING LEARNING OUTCOMES
+unplugged-programming-apply-addition-multiplication:
+  text: Utiliser l'addition et la multiplication pour déterminer le nombre d'actions qu'un utilisateur final effectuera.
+unplugged-programming-design-fitness-achievable:
+  text: Concevoir une série d'activités physiques qui sont réalisables par vos utilisateurs.
+unplugged-programming-construct-fitness-workout:
+  text: Construire un exercice physique qui combine des activités de force et de cardio.
+unplugged-programming-design-language:
+  text: Concevoir un langage de programmation débranchée pour les exercices physiques qui soit facilement interprétable.
+unplugged-programming-give-instructions:
+  text: Donner un ensemble d'instructions qui déplace un objet à partir d'un point de départ vers une destination souhaitée.
+unplugged-programming-identify-bug-correct:
+  text: Identifier où un bug s'est produit, et être en mesure de corriger le code pour permettre à l'objet de se déplacer vers la destination souhaitée.
+unplugged-programming-explain-exact-instructions:
+  text: Expliquer pourquoi il est important de donner des instructions très précises.
+unplugged-programming-follow-instructions:
+  text: Suivez les instructions avec précision.
+unplugged-programming-identify-2D-shapes:
+  text: Identifier et nommer des formes 2D.
+unplugged-programming-communicate-debugging:
+  text: Communiquer lorsque le code n'est pas correct de sorte que la personne sache ce qui doit être débogué.
+unplugged-programming-actively-listen-feedback:
+  text: Écouter activement les commentaires et déboguer le programme.
+unplugged-programming-give-accurate-instructions-pace:
+  text: Donner des instructions précises à un rythme que la personne peut suivre.
+unplugged-programming-give-instructions-shape:
+  text: Donner une suite d'instructions qui déplace un objet à partir d'un point de départ dans une forme souhaitée.
+unplugged-programming-identify-bug-shape:
+  text: Identifier où un bug s'est produit, et être en mesure de corriger le code pour permettre à l'objet de se déplacer dans une forme désirée.
+unplugged-programming-describe-draw-2D-shape:
+  text: Décrire comment dessiner une forme 2D telle qu'un carré ou un rectangle.
+unplugged-programming-accurately-count:
+  text: Compter avec précision d'un espace à l'autre.
+unplugged-programming-give-precise-instructions:
+  text: Donner un ensemble d'instructions précises qui programme un objet pour se déplacer de manière efficace d'un point à un autre.
+unplugged-programming-give-instructions-move:
+  text: Donner un ensemble d'instructions qui programme un objet pour se déplacer d'un point à un autre.
+unplugged-programming-explain-tell-stories:
+  text: Expliquer comment il est possible de raconter des histoires en combinant les langues orale, écrite et visuelle.
+unplugged-programming-recall-direction-words:
+  text: Connaitre les mots directionnels dans une autre langue pour "aller", "avancer", "gauche", "droite" et les nombres.
+#SORTING LEARNING OUTCOMES
+sorting-explain-parallel-algorithm:
+  text: Expliquer comment fonctionne un algorithme parallèle de Réseau de Tri.
+sorting-use-selection-sort:
+  text: Utiliser la sélection (les comparaisons de données) pour trier plusieurs éléments.
+sorting-identify-number-range:
+  text: Identifier quel nombre vient avant ou après dans n'importe quelle série de nombres.
+sorting-identify-number-given-range:
+  text: Identifier quel nombre vient avant ou après dans une plage donnée de nombres.
+sorting-organise-objects-size:
+  text: Trier les objets de la plus petite taille à la plus grande.
+sorting-recognise-sorting-method:
+  text: Savoir qu'une méthode de tri peut être appliquée à toutes les valeurs qui peuvent être ordonnées.
+sorting-demonstrate-alphabet-knowledge:
+  text: Démontrer comment votre connaissance de l'alphabet vous permet de classer des mots ou des livres.
+sorting-comparing-musical-pitch:
+  text: Comparer les hauteurs musicales en notation musicale et à l'oreille.
+#IMAGE REPRESENTATION OUTCOMES
+image-rep-understand-digits-representing-images:
+  text: Comprendre comment les images peuvent être stockées et représentées à l'aide de nombres.
+image-rep-understand-pixels:
+  text: Comprendre que les images affichées par les ordinateurs sont composées de pixels, chacun pouvant afficher une couleur différente, en fonction des nombres.
