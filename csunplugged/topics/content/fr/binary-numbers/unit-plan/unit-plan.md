@@ -18,51 +18,51 @@ Il y a des milliards de ces bits dans un ordinateur standard, et ils sont utilis
 
 Le système de numération binaire joue un rôle central dans la façon dont les informations de toutes sortes sont stockées sur les ordinateurs. Comprendre la représentation binaire peut dévoiler une grande partie des mystères des ordinateurs, parce que, fondamentalement, ce sont en fait juste des machines qui permettent d'allumer ou d'éteindre des chiffres binaires. Les ordinateurs sont des machines simples, et ils ont besoin d'instructions très précises pour accomplir des tâches complexes.
 
-L'enseignement des nombres binaires comme introduction à la pensée informatique initie les élèves aux {glossary-link term="algorithm"}algorithmes{glossary-link end} et à la décomposition, car ils apprennent à décomposer les problèmes de calcul des nombres binaires et de conversion entre les nombres binaires et {glossary-link term="decimal-number"}décimaux{glossary-link end}, en processus d'étape par étape qu'ils peuvent suivre pour résoudre ces problèmes ; cela initie également à l'abstraction, car les élèves apprennent que deux choses différentes peuvent être utilisées pour représenter toute information. It shows them that a computer isn’t actually that complex, and we use simple concepts in a clever way to make computers do extraordinary things!
+L'enseignement des nombres binaires comme introduction à la pensée informatique initie les élèves aux {glossary-link term="algorithm"}algorithmes{glossary-link end} et à la décomposition, car ils apprennent à décomposer les problèmes de calcul des nombres binaires et de conversion entre les nombres binaires et {glossary-link term="decimal-number"}décimaux{glossary-link end}, en processus d'étape par étape qu'ils peuvent suivre pour résoudre ces problèmes ; cela initie également à l'abstraction, car les élèves apprennent que deux choses différentes peuvent être utilisées pour représenter toute information. Cela leur montre qu'un ordinateur n'est pas si complexe, et que nous utilisons des concepts simples d'une manière astucieuse pour faire faire des choses extraordinaires aux ordinateurs !
 
-## Vocabulary Explained
+## Explication du Vocabulaire
 
-### Binary Digits
+### Chiffres Binaires
 
-Each zero or one is called a bit. Bit is an abbreviation for Binary Digit.
+Chaque zéro ou un est appelé un bit. Bit est l'abréviation de "Binary Digit" (Chiffre Binaire en anglais).
 
-### Bytes
+### Octets
 
-8 bits grouped together are called a byte, and computers store data in bytes. A byte is a convenient number of bits as it can store things like simple characters, small numbers, and a useful range of colours, although usually information is stored using groups of bytes.
+8 bits regroupés sont appelés un octet, et les ordinateurs stockent des données en octets. Un octet est un nombre pratique de bits parce qu'il peut stocker des choses comme des caractères simples, des petits nombres, et une gamme utile de couleurs, bien que l'information soit généralement stockée à l'aide de groupes d'octets.
 
 {panel type="math"}
 
 # Liens mathématiques
 
-The binary number system is base 2, so there are only two digits before you need to move to the next place value: 0, 1.
+Le système de numération binaire est en base 2, donc il y a seulement deux chiffres (0 ou 1) avant de devoir se déplacer à position suivante.
 
-Humans normally use the decimal number system, which is base 10, so there are ten digits before you move to the next place value: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.
+Les humains utilisent normalement le système décimal, qui est en base 10, il y a donc dix chiffres (0, 1, 2, 3, 4, 5, 6, 7, 8, 9) avant de passer à la position suivante.
 
-{image file-path="img/topics/binary_fingers.png" alt="An image of one person holding up ten fingers and another person holding up two fingers."}
+{image file-path="img/topics/binary_fingers.png" alt="Image d'une personne montrant dix doigts et d'une autre personne montrant deux doigts."}
 
 {panel end}
 
-## Real World Implications
+## Implications dans le Monde Réel
 
-{image file-path="img/topics/col_binary_01.png" alignment="right" alt="An image of a zero and a one."}
+{image file-path="img/topics/col_binary_01.png" alignment="right" alt="Image d'un zéro et d'un un."}
 
-- The number of bits used to represent characters in text affects the range of characters available; a short representation is more compact, but can't represent characters from all languages.
+- Le nombre de bits utilisés pour représenter des caractères dans du texte détermine la gamme de caractères disponibles ; une représentation courte est plus compacte, mais ne permet pas de représenter les caractères de toutes les langues.
 
-- The number of bits used to represent colours in images affects how accurate the colours are.
+- Le nombre de bits utilisés pour représenter les couleurs dans les images détermine la précision des couleurs.
 
-- The number of bits used to store sound samples affects the quality of the sound or images.
+- Le nombre de bits utilisés pour stocker des échantillons sonores détermine la qualité du son ou des images.
 
-- When designing a new application (perhaps storing genetic data or representing smells), the right number of bits to store a symbol needs to be selected - enough to be accurate, but not so many that it's wasteful.
+- Lors de la conception d'une nouvelle application (par exemple le stockage de données génétiques ou représentant des odeurs), le nombre de bits pour stocker un symbole doit être choisi — suffisamment pour être précis, mais pas trop pour ne pas gaspiller.
 
-- In encryption and security applications, the more bits in a security key, the more secure it is.
+- Dans les applications de chiffrage et de sécurité, plus il y a de bits dans une clé de sécurité, plus elle est sécurisée.
 
-- When you purchase a device, measurements in bits relate to how much memory it has and how much data can be stored on different external storage devices.
+- Lorsque vous achetez un appareil, les mesures dans les bits concernent la quantité de mémoire dont il dispose et la quantité de données qui peuvent être stockées sur différents périphériques de stockage externes.
 
-- Working with only two digits makes it much easier to build reliable circuitry for digital devices.
+- En travaillant avec seulement deux chiffres, il est beaucoup plus facile de construire des circuits fiables pour les appareils numériques.
 
-## Reflection Questions
+## Questions de Réflexion
 
-- What was most surprising about the learning that happened from the teaching of this unit?
-- Who were the students who were very systematic in their activities?
-- Who were the students who were very detailed in their activities?
-- What would I change in my delivery of this unit?
+- Qu'est-ce qui était le plus surprenant dans l'apprentissage de ce module ?
+- Quels étaient les étudiants très méthodiques dans leurs activités ?
+- Quels étaient les étudiants très minutieux dans leurs activités ?
+- Que changerais-je dans ma façon d'enseigner ce module ?
