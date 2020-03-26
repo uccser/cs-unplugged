@@ -1,0 +1,4 @@
+#!/bin/bash
+# Calls csu script with same parameters.
+
+./csu "$@"
