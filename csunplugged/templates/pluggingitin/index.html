@@ -17,13 +17,13 @@
 {% endblock page_heading %}
 
 {% block content %}
-  {% if topics %}
+  {% if programming_topics %}
     <p>{% trans "[PLUGGING IT IN BLURB.....] Lorem ipsum dolor sit amet, nec metus leo pulvinar urna. Vestibulum ut, wisi neque rutrum. Euismod volutpat integer libero justo, sit erat dapibus tortor duis arcu elit, class nisl massa dictum eleifend adipiscing, a nec ridiculus risus egestas augue id. Ligula non nulla at curabitur feugiat, vestibulum sit at vestibulum nam arcu." %}</p>
     <div class="row justify-content-between">
-      {% for topic in topics %}
+      {% for topic in programming_topics %}
         {% if topic.programming_challenges.exists %}
           <div class="col-12 col-md-8 col-lg-6 mb-4">
-            <a class="link-item no-text-decoration d-block h-100{% if not topic.translation_available %} unavailable{% endif %}" href="{% url 'topics:topic' topic.slug %}">
+            <a class="link-item no-text-decoration d-block h-100{% if not topic.translation_available %} unavailable{% endif %}" href="{% url 'pluggingitin:topic' topic.slug %}">
               <div class="row align-items-center h-100">
                 <div class="col-12 text-center text-md-{{LANGUAGE_START}}">
                   <h2>{{ topic.name }}</h2>
