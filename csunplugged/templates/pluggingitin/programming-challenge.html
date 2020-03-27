@@ -3,7 +3,6 @@
 {% load i18n %}
 {% load static %}
 {% load render_html_field %}
-{% comment %} {% load django_bootstrap_breadcrumbs %} {% endcomment %}
 
 {% block title %}
   {{ programming_challenge.name }}
@@ -53,9 +52,13 @@
   </div>
   <div class="col-12 col-md-4">
     <h2>Code Editor</h2>
+    <textarea id="codemirror_editor"></textarea>
+    <button id="editor_run_button" >Submit</button>
   </div>
    <div class="col-12 col-md-4">
     <h2>Results</h2>
+    <strong><p id="jobe_result"></p></strong>
+    <p id="jobe_output"></p>
   </div>
    {% endif %}
    </div>
@@ -70,3 +73,12 @@
     {% endif %}
   {% endif %}
 {% endblock end_content %}
+
+{% block scripts %}
+  <link rel="stylesheet" href="{% static '../node_modules/codemirror/lib/codemirror.css' %}" >
+  <link rel="stylesheet" href="{% static 'css/programming-editor.css' %}" >
+
+  <script src="{% static '../node_modules/codemirror/lib/codemirror.js' %}" ></script>
+  <script src="{% static '../node_modules/codemirror/mode/python/python.js' %}" ></script>
+  <script src="{% static 'js/jobe-editor.js' %}"></script>
+{% endblock scripts %}
