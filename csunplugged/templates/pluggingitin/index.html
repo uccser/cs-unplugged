@@ -18,50 +18,34 @@
 
 {% block content %}
   {% if topics %}
-    <p>{% trans "Open a topic to see all related unit plans, lessons, curriculum integrations, and programming challenges." %}</p>
+    <p>{% trans "[PLUGGING IT IN BLURB.....] Lorem ipsum dolor sit amet, nec metus leo pulvinar urna. Vestibulum ut, wisi neque rutrum. Euismod volutpat integer libero justo, sit erat dapibus tortor duis arcu elit, class nisl massa dictum eleifend adipiscing, a nec ridiculus risus egestas augue id. Ligula non nulla at curabitur feugiat, vestibulum sit at vestibulum nam arcu." %}</p>
     <div class="row justify-content-between">
       {% for topic in topics %}
-        <div class="col-12 col-md-8 col-lg-6 mb-4">
-          <a class="link-item no-text-decoration d-block h-100{% if not topic.translation_available %} unavailable{% endif %}" href="{% url 'topics:topic' topic.slug %}">
-            <div class="row align-items-center h-100">
-              <div class="col-12 text-center text-md-{{LANGUAGE_START}}">
-                <h2>{{ topic.name }}</h2>
-                {% if not topic.translation_available %}
-                  {% include "generic/not-available-badge.html" %}
-                {% endif %}
-              </div>
-              <div class="col-12 col-md-7 text-center text-md-{{LANGUAGE_START}}">
-                <ul class="list-unstyled list-unstyled-i18n text-muted mb-0">
-                  {% if topic.lessons.exists %}
-                    <li>
-                      <strong>
-                        {% blocktrans trimmed with min_age=topic.min_age max_age=topic.max_age%}
-                          Ages {{ min_age }} to {{ max_age }}
-                        {% endblocktrans %}
-                      </strong>
-                    </li>
-                    <li>
-                      {{ topic.lessons.count }} {% trans "lessons" %}
-                    </li>
+        {% if topic.programming_challenges.exists %}
+          <div class="col-12 col-md-8 col-lg-6 mb-4">
+            <a class="link-item no-text-decoration d-block h-100{% if not topic.translation_available %} unavailable{% endif %}" href="{% url 'topics:topic' topic.slug %}">
+              <div class="row align-items-center h-100">
+                <div class="col-12 text-center text-md-{{LANGUAGE_START}}">
+                  <h2>{{ topic.name }}</h2>
+                  {% if not topic.translation_available %}
+                    {% include "generic/not-available-badge.html" %}
                   {% endif %}
-                  {% if topic.curriculum_integrations.exists %}
-                    <li>{{ topic.curriculum_integrations.count }} {% trans "curriculum integrations" %}</li>
-                  {% endif %}
-                  {% if topic.programming_challenges.exists %}
+                </div>
+                <div class="col-12 col-md-7 text-center text-md-{{LANGUAGE_START}}">
+                  <ul class="list-unstyled list-unstyled-i18n text-muted mb-0">
                     <li>{{ topic.programming_challenges.count }} {% trans "programming challenges" %}</li>
+                  </ul>
+                </div>
+                <div class="d-none col-md-5 d-md-flex justify-content-end align-items-end">
+                  {% if topic.icon %}
+                    <img class="img-fluid" src="{% static topic.icon %}">
                   {% endif %}
-                </ul>
+                </div>
               </div>
-              <div class="d-none col-md-5 d-md-flex justify-content-end align-items-end">
-                {% if topic.icon %}
-                  <img class="img-fluid" src="{% static topic.icon %}">
-                {% endif %}
-              </div>
-            </div>
-          </a>
-        </div>
+            </a>
+          </div>
+        {% endif %}
       {% endfor %}
-      {% include "generic/classic-unplugged-button.html" %}
     </div>
   {% else %}
     <p>{% trans "No topics are available." %}</p>
