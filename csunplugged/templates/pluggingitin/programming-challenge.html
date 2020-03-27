@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load static %}
+{% load render_html_field %}
+{% comment %} {% load django_bootstrap_breadcrumbs %} {% endcomment %}
+
+{% block title %}
+  {{ programming_challenge.name }}
+{% endblock title %}
+
+{% block body_container %}
+
+  <div class="row">
+{% if programming_challenge.translation_available %}
+  <div class="col-12 col-md-4">
+    <h1>
+    {{ programming_challenge.name }}
+  </h1>
+  {% if not programming_challenge.translation_available %}
+    {% with model=programming_challenge parent=topic %}
+      {% include 'topics/not-available-warning.html' %}
+    {% endwith %}
+  {% else %}
+    <p class="w-100 text-white rounded p-2 mt-3 difficulty-level-{{ programming_challenge.difficulty.level }}">
+      <strong>{% trans "Challenge Level:" %}</strong> {{ programming_challenge.difficulty.name }}
+    </p>
+  {% endif %}
+
+    {% if learning_outcomes %}
+      <details class="panel-learning-outcomes">
+        <summary>
+          <strong>{% trans "Learning outcomes" %}</strong>
+          <img class="inline-image" src="{% static 'img/general/outcomes.png' %}">
+        </summary>
+        <div class="boxed-text-content">
+          <p>{% trans "Students will be able to:" %}</p>
+          <ul>
+            {% for learning_outcome in learning_outcomes %}
+            <li>
+              {{ learning_outcome.text }}<br>
+              {% for area in learning_outcome.curriculum_areas.all %}
+                {% include "topics/curriculum-area-badge.html" %}
+              {% endfor %}
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </details>
+    {% endif %}
+
+    {% render_html_field programming_challenge.content %}
+  </div>
+  <div class="col-12 col-md-4">
+    <h2>Code Editor</h2>
+  </div>
+   <div class="col-12 col-md-4">
+    <h2>Results</h2>
+  </div>
+   {% endif %}
+   </div>
+  
+{% endblock body_container %}
+
+{% block end_content %}
+  {% if programming_challenge.translation_available %}
+    {% if programming_challenge.extra_challenge %}
+      <h2>{% trans "Extra Challenge" %}</h2>
+      {% render_html_field programming_challenge.extra_challenge %}
+    {% endif %}
+  {% endif %}
+{% endblock end_content %}

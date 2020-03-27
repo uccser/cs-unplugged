@@ -1,11 +1,13 @@
 from django.http import HttpResponse
 
 from topics.utils.add_lesson_ages_to_objects import add_lesson_ages_to_objects
+from django.shortcuts import get_object_or_404
 from django.views import generic
 from utils.translated_first import translated_first
 from topics.models import (
     Topic,
-    ProgrammingChallenge
+    ProgrammingChallenge,
+    ProgrammingChallengeNumber
 )
 
 class IndexView(generic.ListView):
@@ -57,3 +59,37 @@ class TopicView(generic.DetailView):
         context["programming_challenges"] = ProgrammingChallenge.objects.filter(topic=self.object)
         return context
 
+
+class ProgrammingChallengeView(generic.DetailView):
+    """View for a specific programming challenge."""
+
+    model = ProgrammingChallenge
+    template_name = "pluggingitin/programming-challenge.html"
+    context_object_name = "programming_challenge"
+
+    def get_object(self, **kwargs):
+        """Retrieve object for the programming challenge view.
+
+        Returns:
+            ProgrammingChallenge object, or raises 404 error if not found.
+        """
+        return get_object_or_404(
+            self.model.objects.select_related(),
+            topic__slug=self.kwargs.get("topic_slug", None),
+            slug=self.kwargs.get("programming_challenge_slug", None)
+        )
+
+    def get_context_data(self, **kwargs):
+        """Provide the context data for the programming challenge view.
+
+        Returns:
+            Dictionary of context data.
+        """
+        # Call the base implementation first to get a context
+        context = super(ProgrammingChallengeView, self).get_context_data(**kwargs)
+        
+        context["topic"] = self.object.topic
+        # Add all the connected learning outcomes
+        context["learning_outcomes"] = self.object.learning_outcomes(manager="translated_objects").order_by("text")
+        context["implementations"] = self.object.ordered_implementations()
+        return context

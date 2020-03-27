@@ -15,4 +15,9 @@ urlpatterns = [
         views.TopicView.as_view(),
         name="topic"
     ),
+    url(
+        r"^(?P<topic_slug>[-\w]+)/(?P<programming_challenge_slug>[-\w]+)/$",  # noqa: E501
+        views.ProgrammingChallengeView.as_view(),
+        name="programming_challenge"
+    ),
 ]
