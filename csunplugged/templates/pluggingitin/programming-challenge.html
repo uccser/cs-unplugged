@@ -10,9 +10,9 @@
 
 {% block body_container %}
 
-  <div class="row">
+<div class="row programming__challenge-screen">
 {% if programming_challenge.translation_available %}
-  <div class="col-12 col-md-4">
+  <div class="col-12 col-md-4 programming__info-area">
     <h1>
     {{ programming_challenge.name }}
   </h1>
@@ -50,18 +50,18 @@
 
     {% render_html_field programming_challenge.content %}
   </div>
-  <div class="col-12 col-md-4">
-    <h2>Code Editor</h2>
+  <div class="col-12 col-md-4 programming__editor">
     <textarea id="codemirror_editor"></textarea>
-    <button id="editor_run_button" >Submit</button>
+    <div class="programming__submit d-flex justify-content-start">
+      <button id="editor_run_button" >RUN</button>
+    </div>
   </div>
-   <div class="col-12 col-md-4">
+  <div class="col-12 col-md-4 programming__results">
     <h2>Results</h2>
-    <strong><p id="jobe_result"></p></strong>
-    <p id="jobe_output"></p>
+    <p id="jobe_results"></p>
   </div>
-   {% endif %}
-   </div>
+{% endif %}
+</div>
   
 {% endblock body_container %}
 
@@ -80,5 +80,6 @@
 
   <script src="{% static '../node_modules/codemirror/lib/codemirror.js' %}" ></script>
   <script src="{% static '../node_modules/codemirror/mode/python/python.js' %}" ></script>
+  <script src="{% static 'js/test-code.js' %}"></script>
   <script src="{% static 'js/jobe-editor.js' %}"></script>
 {% endblock scripts %}
