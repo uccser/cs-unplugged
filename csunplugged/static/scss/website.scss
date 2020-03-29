@@ -47,6 +47,10 @@ $ct-evaluation: #0F70B7;
 $ct-logic: #EA5B0C;
 $ct-pattern: #82358C;
 
+$educator-colour: $light-purple;
+$at-home-colour: #167531;
+$student-colour: #3044b3;
+
 img {
   &.content-image {
     max-height: 18em;
@@ -77,6 +81,9 @@ h6 {
 .subtitle {
   color: $gray-light;
 }
+.educator-colour { color: $educator-colour;}
+.at-home-colour { color: $at-home-colour;}
+.student-colour { color: $student-colour;}
 
 input[type="text"].long-text-field {
   width: 20em;
@@ -101,7 +108,7 @@ $rounded-corner-radius: 0.5rem;
   width: 100%;
   padding-top: 80px;
   padding-bottom: 60px;
-  text-shadow: 0 2px 2px rgba(0,0,0,0.4);
+  text-shadow: 0px 0px 9px rgba(0, 0, 0, 0.8);
 
   h1 {
     font-family: $headings-font-family;
@@ -119,6 +126,11 @@ $rounded-corner-radius: 0.5rem;
   position: relative;
   top: -80px;
   margin-bottom: -50px;
+}
+#homepage-cards-columns {
+    > div:not(:last-child) {
+        border-right: 1px solid #e8e8e8;
+    }
 }
 
 .badge-language-unavailable {
@@ -410,23 +422,42 @@ ol, ul {
   &.link-item-top {
     border: 0;
     border-top: 7px solid $blue;
-    &-green {
-      border-top-color: $green;
-      &:hover {
-        background-color: mix($green, $white, 10%);
-      }
-    }
     &-yellow {
       border-top-color: $yellow;
       &:hover {
         background-color: mix($yellow, $white, 10%);
       }
     }
-    &-light-purple {
-      border-top-color: $light-purple;
+    &-educator-1 {
+      border-top-color: $educator-colour;
       &:hover {
-        background-color: mix($light-purple, $white, 10%);
+        background-color: mix($educator-colour, $white, 10%);
       }
+    }
+    &-educator-2 {
+      border-top-color: mix($educator-colour, $white, 80%);
+      &:hover {
+        background-color: mix($educator-colour, $white, 10%);
+      }
+    }
+    &-educator-3 {
+      border-top-color: mix($educator-colour, $white, 60%);
+      &:hover {
+        background-color: mix($educator-colour, $white, 10%);
+      }
+    }
+    &-at-home-1 {
+      border-top-color: $at-home-colour;
+      &:hover {
+        background-color: mix($at-home-colour, $white, 10%);
+      }
+    }
+    &-student-1 {
+      border-top-color: $student-colour;
+      cursor: not-allowed;
+    //   &:hover {
+    //     background-color: mix($student-colour, $white, 10%);
+    //   }
     }
     &-orange {
       border-top-color: $orange;
@@ -617,14 +648,15 @@ h1, h2, h3, h4, h5, h6, details {
 
 #welcome-alert {
   @extend .alert;
-  background-color: rgba(245, 126, 126, 0.5);
-  border-color: rgba(189, 76, 76, 0.85);
+  background-color: rgba(245, 171, 126, 0.8);
+  border: none;
   strong {
     font-weight: bold;
     font-size: 1.1rem;
   }
   a {
     color: $gray-lighter;
+    text-decoration: underline;
   }
 }
 
