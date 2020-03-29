@@ -1,0 +1,71 @@
+const JOBE_SERVER = "http://localhost:4000/jobe/index.php/restapi/runs/";
+
+async function run_code(program, givenInput) {
+  let data = {
+    run_spec: {
+      language_id: "python3",
+      sourcefilename: "test.py",
+      sourcecode: program
+    }
+  };
+
+  let response = await fetch(JOBE_SERVER, {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json; charset=utf-8",
+      Accept: "application/json"
+    },
+    body: JSON.stringify(data)
+  });
+
+  let result = await response.json();
+  return result;
+}
+
+async function run_testcase(userProgram, givenInput, expectedOutput) {
+  let userResult = await run_code(userProgram, givenInput);
+  console.log("jobe result");
+  console.log(userResult);
+
+  testcaseResult = {
+    status: "Passed",
+    input: givenInput,
+    userOutput: "",
+    expectedOutput: expectedOutput
+  };
+
+  if (userResult.outcome == 15) {
+    // Outcome 15: Run Successfully
+    let userOutput = userResult.stdout.replace(/(\r\n|\n|\r)/gm, "");
+    if (userOutput === expectedOutput) { 
+      testcaseResult.userOutput = userOutput
+    } else {
+      testcaseResult.status = "Failed";
+      testcaseResult.userOutput = userResult.stdout;
+    }
+  } else if (userResult.outcome == 11) {
+    // Outcome 11: Compiler Error
+    testcaseResult.status = "Compiler Error";
+    testcaseResult.userOutput = userResult.cmpinfo;
+  } else {
+    // Any other error
+    testcaseResult.status = "Error";
+    testcaseResult.userOutput = userResult.stderr;
+  }
+
+  return testcaseResult;
+}
+
+async function run_all_testcases(userProgram, testInputs, testOutputs) {
+  allTestCaseResults = [];
+
+  for (let i = 0; i < testInputs.length; i++) {
+    await run_testcase(userProgram, testInputs[i], testOutputs[i]).then(
+      testcaseResult => {
+        allTestCaseResults.push(testcaseResult);
+      }
+    );
+  }
+
+  return allTestCaseResults;
+}
