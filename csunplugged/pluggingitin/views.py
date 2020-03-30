@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 
+import json
 from topics.utils.add_lesson_ages_to_objects import add_lesson_ages_to_objects
 from django.shortcuts import get_object_or_404
 from django.views import generic
@@ -92,4 +93,6 @@ class ProgrammingChallengeView(generic.DetailView):
         # Add all the connected learning outcomes
         context["learning_outcomes"] = self.object.learning_outcomes(manager="translated_objects").order_by("text")
         context["implementations"] = self.object.ordered_implementations()
+        context["test_cases"] = [{"id": "1", "test_input": "", "expected_output": "Hello World"}]
+        
         return context

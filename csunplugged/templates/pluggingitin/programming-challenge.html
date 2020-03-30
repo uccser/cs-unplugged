@@ -58,7 +58,8 @@
   </div>
   <div class="col-12 col-md-4 programming__results">
     <h2>Results</h2>
-    <p id="jobe_results"></p>
+    <p id="jobe_results"></p> 
+    {% include "pluggingitin/results-table.html" %}
   </div>
 {% endif %}
 </div>
@@ -77,6 +78,10 @@
 {% block scripts %}
   <link rel="stylesheet" href="{% static '../node_modules/codemirror/lib/codemirror.css' %}" >
   <link rel="stylesheet" href="{% static 'css/programming-editor.css' %}" >
+
+  <script type="text/javascript">
+    let test_cases = {{ test_cases|safe }};
+  </script>
 
   <script src="{% static '../node_modules/codemirror/lib/codemirror.js' %}" ></script>
   <script src="{% static '../node_modules/codemirror/mode/python/python.js' %}" ></script>

@@ -1,0 +1,34 @@
+<div class="table-responsive">
+    <table id="test-case-table" class="table table-sm table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Input</th>
+                <th scope="col">Expected output</th>
+                <th scope="col">Received output</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for test_case in test_cases %}
+            <tr id="test-case-{{ test_case.id }}-row">
+                <td>
+                    <pre class="mb-0 test-case-input"
+                        id="test-case-{{ test_case.id }}-input">{{ test_case.test_input }}</pre>
+                </td>
+                <td>
+                    <pre class="mb-0"
+                        id="test-case-{{ test_case.id }}-expected-output">{{ test_case.expected_output }}</pre>
+                </td>
+                <td>
+                    <pre class="mb-0 test-case-output" id="test-case-{{ test_case.id }}-output"></pre>
+                </td>
+                <td id="test-case-{{ test_case.id }}-status">
+                    <span class="text-muted">
+                        Not yet run
+                    </span>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

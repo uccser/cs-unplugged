@@ -37,8 +37,8 @@ async function run_testcase(userProgram, givenInput, expectedOutput) {
   if (userResult.outcome == 15) {
     // Outcome 15: Run Successfully
     let userOutput = userResult.stdout.replace(/(\r\n|\n|\r)/gm, "");
-    if (userOutput === expectedOutput) { 
-      testcaseResult.userOutput = userOutput
+    if (userOutput === expectedOutput) {
+      testcaseResult.userOutput = userOutput;
     } else {
       testcaseResult.status = "Failed";
       testcaseResult.userOutput = userResult.stdout;
@@ -56,15 +56,18 @@ async function run_testcase(userProgram, givenInput, expectedOutput) {
   return testcaseResult;
 }
 
-async function run_all_testcases(userProgram, testInputs, testOutputs) {
+async function run_all_testcases(userProgram, testCases) {
   allTestCaseResults = [];
 
-  for (let i = 0; i < testInputs.length; i++) {
-    await run_testcase(userProgram, testInputs[i], testOutputs[i]).then(
-      testcaseResult => {
-        allTestCaseResults.push(testcaseResult);
-      }
-    );
+  for (const testCase of testCases) {
+    await run_testcase(
+      userProgram,
+      testCase.test_input,
+      testCase.expected_output
+    ).then(testcaseResult => {
+      testcaseResult.id = testCase.id;
+      allTestCaseResults.push(testcaseResult);
+    });
   }
 
   return allTestCaseResults;
