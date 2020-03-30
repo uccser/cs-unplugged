@@ -94,6 +94,9 @@ class ProgrammingChallengeView(generic.DetailView):
         # Add all the connected learning outcomes
         context["learning_outcomes"] = self.object.learning_outcomes(manager="translated_objects").order_by("text")
         context["implementations"] = self.object.ordered_implementations()
-        context["test_cases"] = [{"id": "1", "test_input": "World", "expected_output": "Hello World"}, {
-            "id": "2", "test_input": "\n", "expected_output": "Hello "}, {"id": "3", "test_input": "Test", "expected_output": "Hello Test"}]
+        # context["test_cases"] = [{"id": "1", "test_input": "World", "expected_output": "Hello World", "questionType": "INPUT"}, {
+        #     "id": "2", "test_input": "\n", "expected_output": "Hello ", "questionType": "INPUT"}, {"id": "3", "test_input": "Test", "expected_output": "Hello Test", "questionType": "INPUT"}]
+        
+        context["test_cases"] = [{"id": "1", "test_input": "hello('World')", "expected_output": "Hello World", "questionType": "FUNCTION"}, {
+            "id": "2", "test_input": "hello('')", "expected_output": "Hello ", "questionType": "FUNCTION"}, {"id": "3", "test_input": "hello('Test')", "expected_output": "Hello Test", "questionType": "FUNCTION"}]
         return context
