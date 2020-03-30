@@ -1,12 +1,12 @@
 const JOBE_SERVER = "http://localhost:4000/jobe/index.php/restapi/runs/";
 
-async function run_code(program, givenInput) {
+async function run_code(program, givenInput, questionType) {
   let data = {
     run_spec: {
       language_id: "python3",
       sourcefilename: "test.py",
       sourcecode: program,
-      input: givenInput
+      input: givenInput ? questionType == "INPUT" : ""
     }
   };
 
@@ -23,8 +23,12 @@ async function run_code(program, givenInput) {
   return result;
 }
 
-async function run_testcase(userProgram, givenInput, expectedOutput) {
-  let userResult = await run_code(userProgram, givenInput);
+async function run_testcase(userProgram, givenInput, expectedOutput, questionType) {
+  if (questionType === "FUNCTION") {
+    userProgram = userProgram.concat("\n" + givenInput)
+  }
+
+  let userResult = await run_code(userProgram, givenInput, questionType);
 
   testcaseResult = {
     status: "Passed",
@@ -62,7 +66,8 @@ async function run_all_testcases(userProgram, testCases) {
     await run_testcase(
       userProgram,
       testCase.test_input,
-      testCase.expected_output
+      testCase.expected_output,
+      testCase.questionType
     ).then(testcaseResult => {
       testcaseResult.id = testCase.id;
       allTestCaseResults.push(testcaseResult);
