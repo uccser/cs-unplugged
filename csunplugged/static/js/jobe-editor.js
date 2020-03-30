@@ -38,6 +38,22 @@ function updateResultsTable(results) {
     // Update output cell
     var output_element = $("#test-case-" + result.id + "-output");
     output_element.text(result.userOutput);
+
+    // Update row colors
+    var row_element = $("#test-case-" + result.id + "-row");
+    if (result.status == "Passed") {
+      row_element.addClass("table-success");
+      row_element.removeClass("table-danger");
+      row_element.removeClass("table-warning");
+    } else if (result.status == "Compiler Error") {
+      row_element.addClass("table-warning");
+      row_element.removeClass("table-danger");
+      row_element.removeClass("table-success");
+    } else {
+      row_element.addClass("table-danger");
+      row_element.removeClass("table-success");
+      row_element.removeClass("table-warning");
+    }
   }
 }
 
