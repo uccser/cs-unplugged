@@ -11,6 +11,7 @@ from topics.models import (
     ProgrammingChallengeNumber
 )
 
+
 class IndexView(generic.ListView):
     """View for the topics application homepage."""
 
@@ -88,11 +89,11 @@ class ProgrammingChallengeView(generic.DetailView):
         """
         # Call the base implementation first to get a context
         context = super(ProgrammingChallengeView, self).get_context_data(**kwargs)
-        
+
         context["topic"] = self.object.topic
         # Add all the connected learning outcomes
         context["learning_outcomes"] = self.object.learning_outcomes(manager="translated_objects").order_by("text")
         context["implementations"] = self.object.ordered_implementations()
-        context["test_cases"] = [{"id": "1", "test_input": "", "expected_output": "Hello World"}]
-        
+        context["test_cases"] = [{"id": "1", "test_input": "World", "expected_output": "Hello World"}, {
+            "id": "2", "test_input": "\n", "expected_output": "Hello "}, {"id": "3", "test_input": "Test", "expected_output": "Hello Test"}]
         return context
