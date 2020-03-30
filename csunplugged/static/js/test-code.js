@@ -5,7 +5,8 @@ async function run_code(program, givenInput) {
     run_spec: {
       language_id: "python3",
       sourcefilename: "test.py",
-      sourcecode: program
+      sourcecode: program,
+      input: givenInput
     }
   };
 
@@ -24,8 +25,6 @@ async function run_code(program, givenInput) {
 
 async function run_testcase(userProgram, givenInput, expectedOutput) {
   let userResult = await run_code(userProgram, givenInput);
-  console.log("jobe result");
-  console.log(userResult);
 
   testcaseResult = {
     status: "Passed",
@@ -37,7 +36,7 @@ async function run_testcase(userProgram, givenInput, expectedOutput) {
   if (userResult.outcome == 15) {
     // Outcome 15: Run Successfully
     let userOutput = userResult.stdout.replace(/(\r\n|\n|\r)/gm, "");
-    if (userOutput === expectedOutput) {
+    if (userOutput === expectedOutput || (givenInput && userOutput.includes(expectedOutput))) {
       testcaseResult.userOutput = userOutput;
     } else {
       testcaseResult.status = "Failed";
