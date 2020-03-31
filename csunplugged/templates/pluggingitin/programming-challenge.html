@@ -56,6 +56,7 @@
       <button id="editor_run_button" >RUN</button>
     </div>
   </div>
+
   <div class="col-12 col-md-4 programming__results">
     {% include "pluggingitin/results-table.html" %}
   </div>
@@ -78,7 +79,7 @@
   <link rel="stylesheet" href="{% static 'css/programming-editor.css' %}" >
 
   <script type="text/javascript">
-    let test_cases = {{ test_cases|safe }};
+    let test_cases = {{ test_cases_json|safe }};
   </script>
 
   <script src="{% static '../node_modules/codemirror/lib/codemirror.js' %}" ></script>

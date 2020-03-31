@@ -6,7 +6,7 @@ async function run_code(program, givenInput, questionType) {
       language_id: "python3",
       sourcefilename: "test.py",
       sourcecode: program,
-      input: givenInput ? questionType == "INPUT" : ""
+      input: givenInput ? questionType == "input" : ""
     }
   };
 
@@ -24,7 +24,7 @@ async function run_code(program, givenInput, questionType) {
 }
 
 async function run_testcase(userProgram, givenInput, expectedOutput, questionType) {
-  if (questionType === "FUNCTION") {
+  if (questionType === "function") {
     userProgram = userProgram.concat("\n" + givenInput)
   }
 
@@ -39,7 +39,7 @@ async function run_testcase(userProgram, givenInput, expectedOutput, questionTyp
 
   if (userResult.outcome == 15) {
     // Outcome 15: Run Successfully
-    let userOutput = userResult.stdout.replace(/(\r\n|\n|\r)/gm, "");
+    let userOutput = userResult.stdout.replace(/\n$/, "")
     if (userOutput === expectedOutput || (givenInput && userOutput.includes(expectedOutput))) {
       testcaseResult.userOutput = userOutput;
     } else {
@@ -67,7 +67,7 @@ async function run_all_testcases(userProgram, testCases) {
       userProgram,
       testCase.test_input,
       testCase.expected_output,
-      testCase.questionType
+      testCase.question_type
     ).then(testcaseResult => {
       testcaseResult.id = testCase.id;
       allTestCaseResults.push(testcaseResult);
