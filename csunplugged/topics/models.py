@@ -237,6 +237,15 @@ class ProgrammingChallenge(TranslatableModel):
         """
         return self.implementations.all().order_by("language__number").select_related()
 
+    def oredered_test_cases(self):
+        """Return a QuerySet of test cases.
+
+        Returns:
+            QuerySet.
+        """
+        return self.test_cases.all().select_related()
+
+
     def __str__(self):
         """Text representation of ProgrammingChallenge object.
 
