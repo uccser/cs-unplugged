@@ -57,6 +57,7 @@ LOCAL_APPS = [
     "resources.apps.ResourcesConfig",
     "search.apps.SearchConfig",
     "classic.apps.ClassicConfig",
+    "at_home.apps.AtHomeConfig",
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

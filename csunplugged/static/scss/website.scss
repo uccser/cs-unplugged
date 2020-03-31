@@ -48,8 +48,12 @@ $ct-logic: #EA5B0C;
 $ct-pattern: #82358C;
 
 $educator-colour: $light-purple;
-$at-home-colour: #167531;
+$at-home-colour: #00554E;
 $student-colour: #3044b3;
+
+.at-home-divider {
+    border-top: 3px solid $at-home-colour;
+}
 
 img {
   &.content-image {
@@ -60,6 +64,9 @@ img {
   }
   &.inline-image-small {
     max-height: 1.4rem;
+  }
+  &.img-y-10 {
+      max-height: 10rem;
   }
 }
 
@@ -103,23 +110,34 @@ div.plugged-in-language-implementation {
 $rounded-corner-radius: 0.5rem;
 
 .jumbotron {
-  background: url("../img/red-hero-banner.png");
-  background-size: cover;
   width: 100%;
   padding-top: 80px;
   padding-bottom: 60px;
-  text-shadow: 0px 0px 9px rgba(0, 0, 0, 0.8);
 
-  h1 {
+  h1, h2 {
     font-family: $headings-font-family;
-    color: $white;
-    font-size: 3.5rem;
   }
-
   p {
-    color: $gray-lighter;
     font-size: 1rem;
   }
+}
+.text-shadow {
+    text-shadow: 0px 0px 9px rgba(0, 0, 0, 0.8);
+}
+
+#educator-jumbotron {
+    background: url("../img/red-hero-banner.png");
+    background-size: cover;
+    h1 {
+        font-size: 3.5rem;
+    }
+}
+#at-home-jumbotron {
+    background: url("../img/csu-at-home-tile.png");
+    background-repeat: repeat;
+    h2 {
+        font-size: 2rem;
+    }
 }
 
 #homepage-cards {
@@ -127,9 +145,11 @@ $rounded-corner-radius: 0.5rem;
   top: -80px;
   margin-bottom: -50px;
 }
-#homepage-cards-columns {
-    > div:not(:last-child) {
-        border-right: 1px solid #e8e8e8;
+@include media-breakpoint-up(md) {
+    #homepage-cards-columns {
+        > div:not(:last-child) {
+            border-right: 1px solid #e8e8e8;
+        }
     }
 }
 
@@ -149,7 +169,14 @@ $rounded-corner-radius: 0.5rem;
 .navbar {
   background-color: $red;
   transition: background-color .3s ease 0s;
-  box-shadow: 0px 0px 3px 0px #6b0a19;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
+
+  &.navbar-at-home {
+    background-color: $at-home-colour;
+  }
+  &.navbar-student {
+    background-color: $student-colour;
+  }
 
   #navbar-brand-logo {
     height: 2rem;

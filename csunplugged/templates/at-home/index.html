@@ -1,0 +1,125 @@
+{% extends "base-at-home.html" %}
+
+{% load i18n %}
+{% load static %}
+{% load translate_url %}
+
+{% block custom_title %}
+    {% trans "CS Unplugged at home" %}
+{% endblock custom_title %}
+
+{% block body_attribute_overrides %} class="homepage"{% endblock body_attribute_overrides %}
+{% block navbar_class_overrides %} trans-navbar{% endblock navbar_class_overrides %}
+
+{% block body_container %}
+    <div id="at-home-jumbotron" class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 text-center">
+                    <img src="{% static 'img/cs-unplugged-logo-at-home-white.svg' %}" class="my-5" alt="CS Unplugged at home logo">
+                    <h2 class="text-light">
+                        {% blocktrans trimmed %}
+                            Try something different away from the screen
+                        {% endblocktrans %}
+                    </h2>
+                    {% if LANGUAGE_CODE != "en" %}
+                        <div class="alert alert-danger text-dark" role="alert">
+                            {% blocktrans trimmed with language=current_language.name_local %}
+                            <h4>Sorry! This item is not yet available in {{ language }}.</h4>
+                            <p>This item is available in the following languages:</p>
+                            {% endblocktrans %}
+                            <p class="mb-0">
+                                {% with language='en' %}
+                                    <a class="btn btn-outline-primary" href="{% translate_url language %}">
+                                        English
+                                    </a>
+                                {% endwith %}
+                                <a class="btn btn-outline-danger" href="{% url 'general:home' %}">
+                                    {% trans "Return to homepage "%}
+                                </a>
+                            </p>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-3 text-center mb-4">
+                <img class="img-fluid content-image p-3" src="{% static 'img/topics/exercise-2.png' %}">
+            </div>
+            <div class="col-12 col-md-10 col-lg-6 mb-4">
+                <p class="lead mb-0">
+                    {% blocktrans trimmed %}
+                    <strong>Welcome to Computer Science Unplugged!</strong>
+                    This is a collection of fun and engaging activities that enable children to explore fundamental ideas in Computer Science, <em>without</em> having to use a computer.
+                    Traditionally these activities have been designed to be used with school classes and larger groups, but we’ve got many ideas for you to try out if you’re at home.
+                    {% endblocktrans %}
+                </p>
+            </div>
+
+            <div class="col-12 col-md-10 col-lg-3 text-center mb-4">
+                <img class="img-fluid content-image p-3" src="{% static 'img/topics/searching-algorithms-icon.png' %}">
+            </div>
+            <div class="w-100"></div>
+            <div class="col-6 col-md-4 col-lg-2 at-home-divider mb-4"></div>
+            <div class="w-100"></div>
+            <div class="col-12 col-md-10 col-lg-8">
+                <p>
+                    We’ll soon be releasing a series of step-by-step guides to some magic tricks, puzzles, and activities that are easy to do and engage children with deep computational ideas.
+                    In the meantime here are some quick guides to a few of our favourite activities.
+                </p>
+
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <img src="{% static 'img/topics/parity-trick-example-icon.png' %}" class="img-fluid img-y-10 mb-3 mx-auto d-block">
+                        <h5 class="card-title text-center">
+                            Card flip magic
+                        </h5>
+                        <p class="card-text">
+                            A good one to start with is the <a href="https://csunplugged.org/en/topics/error-detection-and-correction/unit-plan/parity-magic/">Parity Magic trick</a>.
+                            You can read up how to do it, and make up a set of cards (they just need to have each side with a different marking; for example, you could cut up  a cereal box into squares, with one side plain and the other with markings on it), then make sure you practice it on your own.
+                            Once you’ve got good at putting down the cards and spotting the incorrect one, try it out on someone else.
+                            Not only is it an impressive trick, but you’ve delved into a fundamental idea that underlies all the data that’s stored and transmitted between computers.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <img src="{% static 'img/topics/barcode-13-step-1.png' %}" class="img-fluid img-y-10 mb-3 mx-auto d-block">
+                        <h5 class="card-title text-center">
+                            Bar Code magic
+                        </h5>
+                        <p class="card-text">
+                            The <a href="https://csunplugged.org/en/topics/error-detection-and-correction/unit-plan/product-code-check-digits/">Bar Code magic trick</a> is another great  one to learn, and it has the side effect of motivating children to practice their basic maths facts over and over.
+                            The link above takes you through the trick for working out the last digit on a product code (the 12 or 13 digit number under the barcode on most products).
+                            Once you’re confident you can work it out, impress others with your ability to figure out the digit (if you’re really good, do the calculation in your head, like <a href="https://www.youtube.com/watch?v=RP8jepN3zMc">Matt Parker</a>).
+                            This one works great over video connections and even better over a phone - get the person at the other end to read all but the last digit, and you can tell them what the last one is even though you can’t see it!
+                            Once you explain the trick to kids, get them to check that it works on products they can find around the house, and if they are confident, they can do it with someone else, perhaps over the phone or a video link.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <img src="{% static 'img/topics/col_binary_2_kids_2_cards.png' %}" class="img-fluid img-y-10 mb-3 mx-auto d-block">
+                        <h5 class="card-title text-center">
+                            Count the dots
+                        </h5>
+                        <p class="card-text">
+                            The <a href="https://csunplugged.org/en/topics/binary-numbers/unit-plan/how-binary-digits-work/">binary number challenge</a> can be done easily with two people using a small set of cards with the dots on.
+                            By doing the challenges with these cards you’ll get to see how you can <a href="https://csunplugged.org/en/topics/binary-numbers/unit-plan/how-binary-digits-work/">represent numbers</a> and <a href="https://csunplugged.org/en/topics/binary-numbers/unit-plan/codes-for-letters-using-binary-representation/">letters</a> using just two values.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body_container %}
+
+{% block scripts %}
+    <script src="{% static 'js/homepage.js' %}"></script>
+{% endblock scripts %}
