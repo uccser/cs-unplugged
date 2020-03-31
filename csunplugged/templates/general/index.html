@@ -22,11 +22,11 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-md-10 col-lg-8 text-center">
                     {% if LANGUAGE_CODE == "en" %}
-                        <a class="btn btn-warning mb-3" role="button" href="{% url 'at_home:index' %}">
+                        <a class="btn btn-warning text-wrap mb-3" role="button" href="{% url 'at_home:index' %}">
                             <strong>COVID-19</strong>: Click here to see how to use CS Unplugged at home
                         </a>
                     {% endif %}
-                    <p class="lead text-light text-shadow">
+                    <p class="lead text-light text-wrap text-shadow">
                         {% blocktrans trimmed %}
                             CS Unplugged is a collection of free teaching material that teaches Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around.
                         {% endblocktrans %}

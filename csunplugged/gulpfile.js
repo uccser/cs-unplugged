@@ -2,6 +2,14 @@
 // gulp build --production : for a minified production build
 
 'use strict';
+
+const js_files_skip_optimisation = [
+  // Optimise all files
+  '**',
+  // But skip the following files
+  // For example: '!static/js/vendor/**/*.js'
+];
+
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var del = require('del');
@@ -11,6 +19,8 @@ var runSequence = require('run-sequence')
 var notify = require('gulp-notify');
 var buffer = require('vinyl-buffer');
 var argv = require('yargs').argv;
+const filter = require('gulp-filter');
+const errorHandler = require('gulp-error-handle');
 
 // sass
 var sass = require('gulp-sass');
@@ -18,10 +28,6 @@ var postcss = require('gulp-postcss');
 var postcssFlexbugFixes = require('postcss-flexbugs-fixes');
 var autoprefixer = require('autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
-
-// linting
-var jshint = require('gulp-jshint');
-var stylish = require('jshint-stylish');
 
 // Scratch image rendering
 var scratchblocks = require('scratchblocks');
@@ -31,171 +37,163 @@ var PluginError = require('gulp-util').PluginError;
 
 // gulp build --production
 var production = !!argv.production;
-// determine if we're doing a build
-// and if so, bypass the livereload
-var build = argv._.length ? argv._[0] === 'build' : true;
+
+// js
+const tap = require('gulp-tap');
+const terser = require('gulp-terser');
+const browserify = require('browserify');
+const jshint = require('gulp-jshint');
+const stylish = require('jshint-stylish');
 
 // ----------------------------
 // Error notification methods
 // ----------------------------
-var beep = function() {
-  var os = require('os');
-  var file = 'gulp/error.wav';
-  if (os.platform() === 'linux') {
-    // linux
-    exec("aplay " + file);
-  } else {
-    // mac
-    console.log("afplay " + file);
-    exec("afplay " + file);
-  }
-};
-var handleError = function(task) {
-  return function(err) {
-    beep();
+var handleError = function handle_error_func(task) {
+    return function (err) {
+        notify.onError({
+            message: task + ' failed, check the logs..',
+            sound: false
+        })(err);
 
-      notify.onError({
-        message: task + ' failed, check the logs..',
-        sound: false
-      })(err);
-
-    gutil.log(gutil.colors.bgRed(task + ' error:'), gutil.colors.red(err));
-  };
+        gutil.log(gutil.colors.bgRed(task + ' error:'), gutil.colors.red(err));
+    };
 };
 
-var scratchSVG = function() {
-  var PLUGIN_NAME = 'scratchSVG';
-  return through.obj(function(file, encoding, callback) {
-    if (file.isNull()) {
-        // nothing to do
-        return callback(null, file);
-    }
+function catchError(error) {
+    gutil.log(
+        gutil.colors.bgRed('Error:'),
+        gutil.colors.red(error)
+    );
+    this.emit('end');
+}
 
-    if (file.isStream()) {
-        // file.contents is a Stream - https://nodejs.org/api/stream.html
-        this.emit('error', new PluginError(PLUGIN_NAME, 'Streams not supported!'));
-    } else if (file.isBuffer()) {
-        // file.contents is a Buffer - https://nodejs.org/api/buffer.html
-        var doc = scratchblocks.parse(file.contents.toString())
-        doc.render(svg => {
-          var string = doc.exportSVGString();
-          // Remove invalid xmlns attribute due to issue https://github.com/scratchblocks/scratchblocks/issues/219
-          string = string.replace(
-            /<use xmlns="http:\/\/www\.w3\.org\/1999\/xlink"/g,
-            '<use'
-          );
-          file.contents = new Buffer(string);
-        })
-        return callback(null, file);
-    }
-  });
-};
 // --------------------------
-// CUSTOM TASK METHODS
+// Delete build folder
 // --------------------------
-var tasks = {
-  // --------------------------
-  // Delete build folder
-  // --------------------------
-  clean: function() {
+function clean() {
     return del(['build/']);
-  },
-  // --------------------------
-  // Copy static images
-  // --------------------------
-  images: function() {
+}
+// --------------------------
+// Copy static images
+// --------------------------
+function images() {
     return gulp.src('static/img/**/*')
-      .pipe(gulp.dest('build/img'));
-  },
-  // --------------------------
-  // CSS
-  // --------------------------
-  css: function() {
+        .pipe(gulp.dest('build/img'));
+}
+// --------------------------
+// CSS
+// --------------------------
+function css() {
     return gulp.src('static/css/**/*.css')
-      .pipe(gulp.dest('build/css'));
-  },
-  // --------------------------
-  // JS
-  // --------------------------
-  js: function() {
-    return gulp.src('static/js/**/*.js')
-      .pipe(gulp.dest('build/js'));
-  },
-  // --------------------------
-  // Scratch
-  // --------------------------
-  scratch: function() {
-    return gulp.src('temp/scratch-blocks-*.txt')
-      .pipe(scratchSVG())
-      .pipe(rename(function (path) {
-        path.extname = ".svg"
-      }))
-      // give it a file and save
-      .pipe(gulp.dest('build/img'));
-  },
-  // --------------------------
-  // SASS (libsass)
-  // --------------------------
-  sass: function() {
-    return gulp.src('static/scss/*.scss')
-      // sourcemaps + sass + error handling
-      .pipe(gulpif(!production, sourcemaps.init()))
-      .pipe(sass({
-        sourceComments: !production,
-        outputStyle: production ? 'compressed' : 'nested'
-      }))
-      .on('error', handleError('SASS'))
-      // generate .maps
-      .pipe(gulpif(!production, sourcemaps.write({
-        'includeContent': false,
-        'sourceRoot': '.'
-      })))
-      // autoprefixer
-      .pipe(gulpif(!production, sourcemaps.init({
-        'loadMaps': true
-      })))
-      .pipe(postcss([autoprefixer({browsers: ['last 2 versions']}), postcssFlexbugFixes]))
-      // we don't serve the source files
-      // so include scss content inside the sourcemaps
-      .pipe(sourcemaps.write({
-        'includeContent': true
-      }))
-      // write sourcemaps to a specific directory
-      // give it a file and save
-      .pipe(gulp.dest('build/css'));
-  },
+        .pipe(gulp.dest('build/css'));
+}
 
-  // --------------------------
-  // linting
-  // --------------------------
-  lintjs: function() {
-    return gulp.src([
-        'gulpfile.js',
-        'static/js/index.js',
-        'static/js/**/*.js'
-      ]).pipe(jshint())
-      .pipe(jshint.reporter(stylish))
-      .on('error', function() {
-        beep();
-      });
-  },
+// --------------------------
+// Scratch
+// --------------------------
+function scratchSVG() {
+    var PLUGIN_NAME = 'scratchSVG';
+    return through.obj(function (file, encoding, callback) {
+        if (file.isNull()) {
+            // nothing to do
+            return callback(null, file);
+        }
+
+        if (file.isStream()) {
+            // file.contents is a Stream - https://nodejs.org/api/stream.html
+            this.emit('error', new PluginError(PLUGIN_NAME, 'Streams not supported!'));
+        } else if (file.isBuffer()) {
+            // file.contents is a Buffer - https://nodejs.org/api/buffer.html
+            var doc = scratchblocks.parse(file.contents.toString())
+            doc.render(svg => {
+                var string = doc.exportSVGString();
+                // Remove invalid xmlns attribute due to issue https://github.com/scratchblocks/scratchblocks/issues/219
+                string = string.replace(
+                    /<use xmlns="http:\/\/www\.w3\.org\/1999\/xlink"/g,
+                    '<use'
+                );
+                file.contents = new Buffer(string);
+            })
+            return callback(null, file);
+        }
+    });
 };
+function scratch() {
+    return gulp.src('temp/scratch-blocks-*.txt')
+        .pipe(scratchSVG())
+        .pipe(rename(function (path) {
+            path.extname = ".svg"
+        }))
+        // give it a file and save
+        .pipe(gulp.dest('build/img'));
+}
+
+// --------------------------
+// scss (libsass)
+// --------------------------
+function scss() {
+    return gulp.src('static/scss/**/*.scss')
+        .pipe(errorHandler(catchError))
+        // sourcemaps + scss + error handling
+        .pipe(gulpif(!production, sourcemaps.init()))
+        .pipe(sass({
+            sourceComments: !production,
+            outputStyle: production ? 'compressed' : 'nested'
+        }))
+        .on('error', handleError('SASS'))
+        // generate .maps
+        .pipe(gulpif(!production, sourcemaps.write({
+            'includeContent': false,
+            'sourceRoot': '.'
+        })))
+        // autoprefixer
+        .pipe(gulpif(!production, sourcemaps.init({
+            'loadMaps': true
+        })))
+        .pipe(postcss([autoprefixer({ browsers: ['last 2 versions'] }), postcssFlexbugFixes]))
+        // we don't serve the source files
+        // so include scss content inside the sourcemaps
+        .pipe(sourcemaps.write({
+            'includeContent': true
+        }))
+        .pipe(rename(function (path) {
+            path.dirname = path.dirname.replace("scss", "css");
+        }))
+        .pipe(gulp.dest('build/css'));
+}
+// --------------------------
+// JavaScript
+// --------------------------
+function js() {
+    const f = filter(js_files_skip_optimisation, { restore: true });
+    return gulp.src(['static/**/*.js', '!static/js/modules/**/*.js'])
+        .pipe(f)
+        .pipe(errorHandler(catchError))
+        .pipe(tap(function (file) {
+            file.contents = browserify(file.path, { debug: true }).bundle().on('error', catchError);
+        }))
+        .pipe(buffer())
+        .pipe(errorHandler(catchError))
+        .pipe(gulpif(production, sourcemaps.init({ loadMaps: true })))
+        .pipe(gulpif(production, terser({ keep_fnames: true })))
+        .pipe(gulpif(production, sourcemaps.write('./')))
+        .pipe(f.restore)
+        .pipe(gulp.dest('build'));
+}
 
 // // --------------------------
 // // CUSTOMS TASKS
 // // --------------------------
-gulp.task('clean', tasks.clean);
-// // for production we require the clean method on every individual task
-var req = [];
-// // individual tasks
-gulp.task('images', req, tasks.images);
-gulp.task('js', req, tasks.js);
-gulp.task('css', req, tasks.css);
-gulp.task('sass', req, tasks.sass);
-gulp.task('scratch', req, tasks.scratch);
-gulp.task('lint:js', tasks.lintjs);
+// define complex tasks
+const build = gulp.series(clean, gulp.parallel(images, css, scss, scratch, js));
 
-// // build task
-gulp.task('build', function(callback) {
-  runSequence('clean', ['images', 'css', 'js', 'sass'], callback);
-});
+// export tasks
+exports.clean = clean;
+exports.images = images;
+exports.css = css;
+exports.scss = scss;
+exports.js = js;
+exports.scratch = scratch;
+
+exports.build = build;
+exports.default = build;
