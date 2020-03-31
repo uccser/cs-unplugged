@@ -33,6 +33,8 @@ binary-numbers-using-variables-as-operator:
     - programming-explain-sequencing
     - programming-outline-variable-updates
   extra-challenge: extra-challenge.md
+  test-cases: 
+    1: input
 
 binary-numbers-using-variable-operator-repeat:
   challenge-set-number: 1
@@ -304,3 +306,6 @@ binary-cards-as-dots:
     - programming-describe-variables
     - programming-identify-if-statement
     - programming-identify-loop
+  test-cases:
+    1: function
+    2: function
