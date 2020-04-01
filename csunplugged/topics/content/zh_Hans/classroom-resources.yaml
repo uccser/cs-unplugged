@@ -37,3 +37,5 @@ chalk:
   description: 粉笔
 coloring-pens:
   description: 利用铅笔、蜡笔或毡尖笔上色
+erasers:
+  description: 橡皮擦
