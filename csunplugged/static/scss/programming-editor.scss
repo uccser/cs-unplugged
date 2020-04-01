@@ -40,6 +40,12 @@ body,
     height: 5%;
     background-color: #d6c1e1ff;
 
+    .code_running_spinner {
+      display: none;
+      color: white;
+      margin-right: 10px;
+    }
+
     #editor_run_button {
       border: none;
       background-color: #06a284ff;
@@ -52,6 +58,11 @@ body,
     #editor_run_button:hover {
       cursor: pointer;
       background-color: #05856dff;
+    }
+
+    #editor_run_button:disabled {
+      background-color: #05856dff;
+      cursor: normal;
     }
   }
 }

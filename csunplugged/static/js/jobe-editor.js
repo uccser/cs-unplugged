@@ -28,8 +28,13 @@ let myCodeMirror = CodeMirror.fromTextArea(myTextarea, {
 function sendCodeToJobe() {
   let code = myCodeMirror.getValue();
 
+  $("#editor_run_button").prop('disabled', true);
+  $(".code_running_spinner").css("display", "inline-block");
+
   code_tester.run_all_testcases(code, test_cases).then(result => {
     updateResultsTable(result);
+    $("#editor_run_button").prop('disabled', false);
+    $(".code_running_spinner").css("display", "none");
   });
 }
 
