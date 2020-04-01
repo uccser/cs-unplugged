@@ -82,8 +82,5 @@
     let test_cases = {{ test_cases_json|safe }};
   </script>
 
-  <script src="{% static '../node_modules/codemirror/lib/codemirror.js' %}" ></script>
-  <script src="{% static '../node_modules/codemirror/mode/python/python.js' %}" ></script>
-  <script src="{% static 'js/test-code.js' %}"></script>
   <script src="{% static 'js/jobe-editor.js' %}"></script>
 {% endblock scripts %}

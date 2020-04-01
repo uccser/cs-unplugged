@@ -76,3 +76,5 @@ async function run_all_testcases(userProgram, testCases) {
 
   return allTestCaseResults;
 }
+
+exports.run_all_testcases = run_all_testcases;

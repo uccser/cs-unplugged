@@ -1,3 +1,7 @@
+const code_tester = require('./test-code.js');
+var CodeMirror = require('codemirror');
+require('codemirror/mode/python/python.js');
+
 // Set up code mirror
 let myTextarea = document.getElementById("codemirror_editor");
 let myCodeMirror = CodeMirror.fromTextArea(myTextarea, {
@@ -24,7 +28,7 @@ let myCodeMirror = CodeMirror.fromTextArea(myTextarea, {
 function sendCodeToJobe() {
   let code = myCodeMirror.getValue();
 
-  run_all_testcases(code, test_cases).then(result => {
+  code_tester.run_all_testcases(code, test_cases).then(result => {
     updateResultsTable(result);
   });
 }
