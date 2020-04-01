@@ -1,5 +1,9 @@
 // Customised Bootstrap text utility styles for use with Weasyprint
 
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/mixins";
+@import "node_modules/bootstrap/scss/variables";
+
 // Transformation
 
 .text-lowercase  { text-transform: lowercase !important; }
