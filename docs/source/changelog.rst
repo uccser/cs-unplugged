@@ -23,6 +23,25 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+4.4.0
+==============================================================================
+
+- **Release date:** 1st April 2020
+- **Downloads:** `Source downloads are available on GitHub`_
+
+**Summary of changes:**
+
+This release add a new CS Unplugged at home section.
+
+**Changelog:**
+
+- Add 'At home' application, with basic activities before new content is released.
+- Darken colours to improve readability of white text on backgrounds.
+- Update logo to increase the size of the 'CS' and lessened the rounded corners to improve readability.
+- Separate core HTML structure in templates to allow subsites to exist.
+- Update static pipeline to use NPM, based off other UCCSER repositories.
+- Add 'dev' helper script to align with other UCCSER repositories.
+
 4.3.0
 ==============================================================================
 

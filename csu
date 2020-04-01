@@ -120,6 +120,17 @@ cmd_collect_static() {
 }
 defhelp collect_static "Collecting static files."
 
+# Update and collect static files
+cmd_update_static() {
+  cmd_static
+
+  echo ""
+  cmd_collect_static
+  echo ""
+  echo -e "\n${GREEN}Static files are updated!${NC}"
+}
+defhelp update_static 'Update and collect static files.'
+
 # Run Django flush command
 cmd_flush() {
   docker-compose exec django /docker_venv/bin/python3 ./manage.py flush

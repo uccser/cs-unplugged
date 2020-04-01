@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-18 02:10+0000\n"
+"POT-Creation-Date: 2020-03-31 23:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,11 +21,11 @@ msgstr ""
 msgid "Classic CS Unplugged page"
 msgstr ""
 
-#: config/settings/base.py:154
+#: config/settings/base.py:155
 msgid "Translation mode"
 msgstr ""
 
-#: config/settings/base.py:160
+#: config/settings/base.py:161
 msgid "Translation mode (Bi-directional)"
 msgstr ""
 
@@ -731,102 +731,142 @@ msgstr ""
 msgid "Homepage"
 msgstr ""
 
-#: templates/404.html:26 templates/base.html:91 templates/base.html:225
+#: templates/404.html:26 templates/base-educators.html:71
+#: templates/core.html:178
 msgid "Search"
 msgstr ""
 
-#: templates/404.html:32 templates/general/index.html:96
+#: templates/404.html:32 templates/general/index.html:106
 #: templates/general/people.html:74
 msgid "Classic CS Unplugged"
 msgstr ""
 
-#: templates/base.html:25 templates/general/index.html:7
-#: templates/general/people.html:21
-msgid "CS Unplugged"
+#: templates/at-home/index.html:8
+msgid "CS Unplugged at home"
 msgstr ""
 
-#: templates/base.html:60
+#: templates/at-home/index.html:21
+msgid "Try something different away from the screen"
+msgstr ""
+
+#: templates/at-home/index.html:27
+#: templates/topics/not-available-warning.html:6
+#, python-format
+msgid ""
+"<h4>Sorry! This item is not yet available in %(language)s.</h4> <p>This item "
+"is available in the following languages:</p>"
+msgstr ""
+
+#: templates/at-home/index.html:38
+#: templates/topics/not-available-warning.html:36
+msgid "Return to homepage "
+msgstr ""
+
+#: templates/at-home/index.html:55
+msgid ""
+"<strong>Welcome to Computer Science Unplugged!</strong> This is a collection "
+"of fun and engaging activities that enable children to explore fundamental "
+"ideas in Computer Science, <em>without</em> having to use a computer. "
+"Traditionally these activities have been designed to be used with school "
+"classes and larger groups, but we’ve got many ideas for you to try out if "
+"you’re at home."
+msgstr ""
+
+#: templates/base-at-home.html:28 templates/base-educators.html:28
 msgid "Language"
 msgstr ""
 
-#: templates/base.html:78 templates/base.html:188
-#: templates/general/index.html:74 templates/topics/index.html:8
+#: templates/base-at-home.html:58
+msgid "Back to CS Unplugged"
+msgstr ""
+
+#: templates/base-educators.html:56 templates/core.html:136
+#: templates/general/index.html:67 templates/topics/index.html:8
 #: templates/topics/index.html:16
 msgid "Topics"
 msgstr ""
 
-#: templates/base.html:79 templates/base.html:193
-#: templates/general/index.html:81 templates/resources/index.html:8
+#: templates/base-educators.html:57 templates/core.html:141
+#: templates/general/index.html:72 templates/resources/index.html:8
 #: templates/resources/index.html:16 templates/topics/lesson.html:74
 msgid "Printables"
 msgstr ""
 
-#: templates/base.html:80 templates/base.html:183
+#: templates/base-educators.html:58 templates/core.html:131
 #: templates/general/about.html:7 templates/general/about.html:15
 #: templates/general/base.html:10
 msgid "About"
 msgstr ""
 
-#: templates/base.html:103
+#: templates/core.html:25 templates/general/index.html:7
+#: templates/general/people.html:21
+msgid "CS Unplugged"
+msgstr ""
+
+#: templates/core.html:51
 msgid "Home"
 msgstr ""
 
-#: templates/base.html:154
+#: templates/core.html:102
 msgid ""
 "Looking for something for high schools? Check out the <a href=\"http://"
 "csfieldguide.org.nz/\">Computer Science Field Guide</a>."
 msgstr ""
 
-#: templates/base.html:166
+#: templates/core.html:114
 msgid ""
 "The primary goal of the Unplugged project is to promote Computer Science "
 "(and computing in general) to young people as an interesting, engaging, and "
 "intellectually stimulating discipline."
 msgstr ""
 
-#: templates/base.html:172
+#: templates/core.html:120
 #, python-format
 msgid "Read more about <a href=\"%(principles_url)s\">our principles here</a>."
 msgstr ""
 
-#: templates/base.html:179
+#: templates/core.html:127
 msgid "Useful Links"
 msgstr ""
 
-#: templates/base.html:199
+#: templates/core.html:146
+msgid "At home"
+msgstr ""
+
+#: templates/core.html:152
 msgid "Community"
 msgstr ""
 
-#: templates/base.html:203
+#: templates/core.html:156
 msgid "Twitter"
 msgstr ""
 
-#: templates/base.html:208
+#: templates/core.html:161
 msgid "YouTube"
 msgstr ""
 
-#: templates/base.html:213
+#: templates/core.html:166
 msgid "GitHub"
 msgstr ""
 
-#: templates/base.html:219
+#: templates/core.html:172
 msgid "Help"
 msgstr ""
 
-#: templates/base.html:231 templates/topics/glossary.html:8
+#: templates/core.html:184 templates/topics/glossary.html:8
 #: templates/topics/glossary.html:17
 msgid "Glossary"
 msgstr ""
 
-#: templates/base.html:236
+#: templates/core.html:189
 msgid "Feedback"
 msgstr ""
 
-#: templates/base.html:241 templates/general/contact.html:7
+#: templates/core.html:194 templates/general/contact.html:7
 msgid "Contact"
 msgstr ""
 
-#: templates/base.html:265
+#: templates/core.html:218
 msgid ""
 "The CS Unplugged material is open source on <a href=\"https://github.com/"
 "uccser/cs-unplugged\">GitHub</a>, and this website's content is shared under "
@@ -838,12 +878,18 @@ msgid ""
 "Canterbury</a>, New Zealand."
 msgstr ""
 
-#: templates/base.html:288
+#: templates/core.html:222
+msgid ""
+"Icons provided generously by <a target=\"_blank\" rel=\"noopener noreferrer"
+"\" href=\"https://icons8.com/\">icons8</a>."
+msgstr ""
+
+#: templates/core.html:244
 #, python-format
 msgid "This definition is not available in %(language)s, sorry!"
 msgstr ""
 
-#: templates/base.html:295
+#: templates/core.html:251
 msgid "Close"
 msgstr ""
 
@@ -1296,7 +1342,7 @@ msgstr ""
 
 #: templates/general/how-do-i-teach-cs-unplugged.html:8
 #: templates/general/how-do-i-teach-cs-unplugged.html:20
-#: templates/general/index.html:66
+#: templates/general/index.html:57
 msgid "How do I teach CS Unplugged?"
 msgstr ""
 
@@ -1346,45 +1392,36 @@ msgstr ""
 msgid "View available topics"
 msgstr ""
 
-#: templates/general/index.html:15
+#: templates/general/index.html:18
 msgid "Computer Science<br>without a computer"
 msgstr ""
 
-#: templates/general/index.html:22
+#: templates/general/index.html:30
 msgid ""
 "CS Unplugged is a collection of free teaching material that teaches Computer "
 "Science through engaging games and puzzles that use cards, string, crayons "
 "and lots of running around."
 msgstr ""
 
-#: templates/general/index.html:29
-msgid "Welcome to the new CS Unplugged!"
-msgstr ""
-
-#: templates/general/index.html:33
-msgid ""
-"This updated website has unit plans, lesson plans, teaching videos, "
-"curriculum integration activities, and programming exercises to plug in the "
-"Computer Science concepts they have just learnt unplugged."
-msgstr ""
-
-#: templates/general/index.html:38
-msgid ""
-"The original activities are still available at <a href=\"https://classic."
-"csunplugged.org/\">classic.csunplugged.org</a>."
-msgstr ""
-
-#: templates/general/index.html:56
+#: templates/general/index.html:47
 #: templates/general/what-is-computer-science.html:8
 #: templates/general/what-is-computer-science.html:20
 msgid "What is Computer Science?"
 msgstr ""
 
-#: templates/general/index.html:89
+#: templates/general/index.html:77
 #: templates/topics/all-curriculum-integration-list.html:8
 #: templates/topics/all-curriculum-integration-list.html:17
 #: templates/topics/topic.html:64
 msgid "Curriculum Integrations"
+msgstr ""
+
+#: templates/general/index.html:85
+msgid "Activities"
+msgstr ""
+
+#: templates/general/index.html:96
+msgid "Plugging it in"
 msgstr ""
 
 #: templates/general/people.html:21
@@ -1644,7 +1681,7 @@ msgstr ""
 #: templates/general/what-is-computer-science.html:24
 #, python-format
 msgid ""
-"In todays digital world, Computer Science has become an important subject "
+"In today's digital world, Computer Science has become an important subject "
 "for everyone to learn about. The knowledge and <a href="
 "\"%(computational_thinking_url)s\">Computational Thinking skills</a> "
 "associated with it are now crucial to developing innovative digital "
@@ -1949,17 +1986,6 @@ msgstr ""
 #: templates/topics/lessons-table.html:10
 #, python-format
 msgid "Ages %(lower)s to %(upper)s"
-msgstr ""
-
-#: templates/topics/not-available-warning.html:6
-#, python-format
-msgid ""
-"<h4>Sorry! This item is not yet available in %(language)s.</h4> <p>This item "
-"is available in the following languages:</p>"
-msgstr ""
-
-#: templates/topics/not-available-warning.html:36
-msgid "Return to homepage "
 msgstr ""
 
 #: templates/topics/programming-challenge-language-solution.html:10
