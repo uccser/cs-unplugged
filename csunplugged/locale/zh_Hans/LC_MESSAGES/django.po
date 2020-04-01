@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-18 02:10+0000\n"
-"PO-Revision-Date: 2019-12-16 09:13\n"
+"POT-Creation-Date: 2020-03-31 23:54+0000\n"
+"PO-Revision-Date: 2020-04-01 14:13\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -19,11 +19,11 @@ msgstr ""
 msgid "Classic CS Unplugged page"
 msgstr "经典版 CS Unplugged 页面"
 
-#: config/settings/base.py:154
+#: config/settings/base.py:155
 msgid "Translation mode"
 msgstr "翻译模式"
 
-#: config/settings/base.py:160
+#: config/settings/base.py:161
 msgid "Translation mode (Bi-directional)"
 msgstr "翻译模式（双向）"
 
@@ -740,106 +740,142 @@ msgstr "以下某个链接可能十分有用："
 msgid "Homepage"
 msgstr "主页"
 
-#: templates/404.html:26 templates/base.html:91 templates/base.html:225
+#: templates/404.html:26 templates/base-educators.html:71
+#: templates/core.html:178
 msgid "Search"
 msgstr "搜索"
 
-#: templates/404.html:32 templates/general/index.html:96
+#: templates/404.html:32 templates/general/index.html:106
 #: templates/general/people.html:74
 msgid "Classic CS Unplugged"
 msgstr "经典版 CS Unplugged"
 
-#: templates/base.html:25 templates/general/index.html:7
-#: templates/general/people.html:21
-msgid "CS Unplugged"
-msgstr "CS Unplugged"
+#: templates/at-home/index.html:8
+msgid "CS Unplugged at home"
+msgstr ""
 
-#: templates/base.html:60
+#: templates/at-home/index.html:21
+msgid "Try something different away from the screen"
+msgstr ""
+
+#: templates/at-home/index.html:27
+#: templates/topics/not-available-warning.html:6
+#, python-format
+msgid "<h4>Sorry! This item is not yet available in %(language)s.</h4> <p>This item is available in the following languages:</p>"
+msgstr "<h4>抱歉！本条目暂无可用%(language)s版本。</h4> <p>本条目设有以下语言版本：</p>"
+
+#: templates/at-home/index.html:38
+#: templates/topics/not-available-warning.html:36
+msgid "Return to homepage "
+msgstr "返回主页 "
+
+#: templates/at-home/index.html:55
+msgid "<strong>Welcome to Computer Science Unplugged!</strong> This is a collection of fun and engaging activities that enable children to explore fundamental ideas in Computer Science, <em>without</em> having to use a computer. Traditionally these activities have been designed to be used with school classes and larger groups, but we’ve got many ideas for you to try out if you’re at home."
+msgstr ""
+
+#: templates/base-at-home.html:28 templates/base-educators.html:28
 msgid "Language"
 msgstr "语言"
 
-#: templates/base.html:78 templates/base.html:188
-#: templates/general/index.html:74 templates/topics/index.html:8
+#: templates/base-at-home.html:58
+msgid "Back to CS Unplugged"
+msgstr ""
+
+#: templates/base-educators.html:56 templates/core.html:136
+#: templates/general/index.html:67 templates/topics/index.html:8
 #: templates/topics/index.html:16
 msgid "Topics"
 msgstr "主题"
 
-#: templates/base.html:79 templates/base.html:193
-#: templates/general/index.html:81 templates/resources/index.html:8
+#: templates/base-educators.html:57 templates/core.html:141
+#: templates/general/index.html:72 templates/resources/index.html:8
 #: templates/resources/index.html:16 templates/topics/lesson.html:74
 msgid "Printables"
 msgstr "可打印页"
 
-#: templates/base.html:80 templates/base.html:183
+#: templates/base-educators.html:58 templates/core.html:131
 #: templates/general/about.html:7 templates/general/about.html:15
 #: templates/general/base.html:10
 msgid "About"
 msgstr "关于"
 
-#: templates/base.html:103
+#: templates/core.html:25 templates/general/index.html:7
+#: templates/general/people.html:21
+msgid "CS Unplugged"
+msgstr "CS Unplugged"
+
+#: templates/core.html:51
 msgid "Home"
 msgstr "主页"
 
-#: templates/base.html:154
+#: templates/core.html:102
 msgid "Looking for something for high schools? Check out the <a href=\"http://csfieldguide.org.nz/\">Computer Science Field Guide</a>."
 msgstr "正在寻找高中课程？请前往<a href=\"http://csfieldguide.org.nz/\">计算机科学领域指南</a>查看。"
 
-#: templates/base.html:166
+#: templates/core.html:114
 msgid "The primary goal of the Unplugged project is to promote Computer Science (and computing in general) to young people as an interesting, engaging, and intellectually stimulating discipline."
 msgstr "Unplugged 项目的主要目标是向年轻人推广计算机科学（和一般计算），并向其呈现一个趣味无穷、引人入胜和启发思维的学科。"
 
-#: templates/base.html:172
+#: templates/core.html:120
 #, python-format
 msgid "Read more about <a href=\"%(principles_url)s\">our principles here</a>."
 msgstr "点击<a href=\"%(principles_url)s\">此处我们的原则</a>，了解更多信息。"
 
-#: templates/base.html:179
+#: templates/core.html:127
 msgid "Useful Links"
 msgstr "有用链接"
 
-#: templates/base.html:199
+#: templates/core.html:146
+msgid "At home"
+msgstr ""
+
+#: templates/core.html:152
 msgid "Community"
 msgstr "社群"
 
-#: templates/base.html:203
+#: templates/core.html:156
 msgid "Twitter"
 msgstr "Twitter"
 
-#: templates/base.html:208
+#: templates/core.html:161
 msgid "YouTube"
 msgstr "YouTube"
 
-#: templates/base.html:213
+#: templates/core.html:166
 msgid "GitHub"
 msgstr "GitHub"
 
-#: templates/base.html:219
+#: templates/core.html:172
 msgid "Help"
 msgstr "帮助"
 
-#: templates/base.html:231 templates/topics/glossary.html:8
+#: templates/core.html:184 templates/topics/glossary.html:8
 #: templates/topics/glossary.html:17
 msgid "Glossary"
 msgstr "术语表"
 
-#: templates/base.html:236
+#: templates/core.html:189
 msgid "Feedback"
 msgstr "反馈"
 
-#: templates/base.html:241 templates/general/contact.html:7
+#: templates/core.html:194 templates/general/contact.html:7
 msgid "Contact"
 msgstr "联系"
 
-#: templates/base.html:265
+#: templates/core.html:218
 msgid "The CS Unplugged material is open source on <a href=\"https://github.com/uccser/cs-unplugged\">GitHub</a>, and this website's content is shared under a <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons Attribution-ShareAlike 4.0 International license</a>. The CS Unplugged is a project by the <a href=\"https://www.canterbury.ac.nz/engineering/schools/csse/research/cse/\">Computer Science Education Research Group</a> at the <a href=\"http://www.canterbury.ac.nz/\">University of Canterbury</a>, New Zealand."
 msgstr "CS Unplugged 资料属于 <a href=\"https://github.com/uccser/cs-unplugged\">GitHub</a> 上的开放资源，此网站的内容均根据 <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">创意公用授权-相同方式共享 4.0 国际许可</a>进行分享。CS Unplugged 是由<a href=\"https://www.canterbury.ac.nz/engineering/schools/csse/research/cse/\">计算机科学教育研究小组</a>在新西兰<a href=\"http://www.canterbury.ac.nz/\">坎特伯雷大学</a>开展的项目。"
 
-#: templates/base.html:288
+#: templates/core.html:222
+msgid "Icons provided generously by <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://icons8.com/\">icons8</a>."
+msgstr ""
+
+#: templates/core.html:244
 #, python-format
 msgid "This definition is not available in %(language)s, sorry!"
 msgstr "抱歉，尚无%(language)s定义！"
 
-#: templates/base.html:295
+#: templates/core.html:251
 msgid "Close"
 msgstr "关闭"
 
@@ -1077,7 +1113,7 @@ msgstr "<strong>Google 社群：</strong> 我们建有 <a href=\"https://groups.
 
 #: templates/general/how-do-i-teach-cs-unplugged.html:8
 #: templates/general/how-do-i-teach-cs-unplugged.html:20
-#: templates/general/index.html:66
+#: templates/general/index.html:57
 msgid "How do I teach CS Unplugged?"
 msgstr "我应如何进行 CS Unplugged 教学？"
 
@@ -1102,38 +1138,34 @@ msgstr "然而，阅读 Unplugged 并非了解其的有趣方式 - 为学生选�
 msgid "View available topics"
 msgstr "查看可用主题"
 
-#: templates/general/index.html:15
+#: templates/general/index.html:18
 msgid "Computer Science<br>without a computer"
 msgstr "无需计算机的<br>计算机科学"
 
-#: templates/general/index.html:22
+#: templates/general/index.html:30
 msgid "CS Unplugged is a collection of free teaching material that teaches Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around."
 msgstr "CS Unplugged 提供一系列的免费教学素材，并通过使用卡片、绳子、蜡笔和大量跑动的游戏和谜题来教授计算机科学。"
 
-#: templates/general/index.html:29
-msgid "Welcome to the new CS Unplugged!"
-msgstr "欢迎访问全新 CS Unplugged！"
-
-#: templates/general/index.html:33
-msgid "This updated website has unit plans, lesson plans, teaching videos, curriculum integration activities, and programming exercises to plug in the Computer Science concepts they have just learnt unplugged."
-msgstr "更新的网站提供单元计划、课程计划、教学视频、课程整合活动以及编程练习，从而在线向学生导入他们刚刚在无计算机环境中学到的计算机科学概念。"
-
-#: templates/general/index.html:38
-msgid "The original activities are still available at <a href=\"https://classic.csunplugged.org/\">classic.csunplugged.org</a>."
-msgstr "原本的活动仍可在 <a href=\"https://classic.csunplugged.org/\">classic.csunplugged.org</a> 找到。"
-
-#: templates/general/index.html:56
+#: templates/general/index.html:47
 #: templates/general/what-is-computer-science.html:8
 #: templates/general/what-is-computer-science.html:20
 msgid "What is Computer Science?"
 msgstr "什么是计算机科学？"
 
-#: templates/general/index.html:89
+#: templates/general/index.html:77
 #: templates/topics/all-curriculum-integration-list.html:8
 #: templates/topics/all-curriculum-integration-list.html:17
 #: templates/topics/topic.html:64
 msgid "Curriculum Integrations"
 msgstr "课程整合"
+
+#: templates/general/index.html:85
+msgid "Activities"
+msgstr ""
+
+#: templates/general/index.html:96
+msgid "Plugging it in"
+msgstr ""
 
 #: templates/general/people.html:21
 msgid "version 4.0.0 onwards"
@@ -1295,8 +1327,8 @@ msgstr "活动中允许学生犯错；学生不应只遵循完全正确的许多
 
 #: templates/general/what-is-computer-science.html:24
 #, python-format
-msgid "In todays digital world, Computer Science has become an important subject for everyone to learn about. The knowledge and <a href=\"%(computational_thinking_url)s\">Computational Thinking skills</a> associated with it are now crucial to developing innovative digital technology, understanding modern society, and qualifications in this area are highly sought after."
-msgstr "在今天的数字世界中，计算机科学已成为人人皆需学习的一门重要学科。如今，与之相关的知识以及<a href=\"%(computational_thinking_url)s\">计算思维技能</a>对于创新数字技术的开发以及现代社会的理解殊为重要， 并且该领域的相关资质亦备受追捧。"
+msgid "In today's digital world, Computer Science has become an important subject for everyone to learn about. The knowledge and <a href=\"%(computational_thinking_url)s\">Computational Thinking skills</a> associated with it are now crucial to developing innovative digital technology, understanding modern society, and qualifications in this area are highly sought after."
+msgstr ""
 
 #: templates/general/what-is-computer-science.html:31
 msgid "The CS Unplugged activities are intended to give you a feel for what the subject is - you can learn what it is by doing. At this early stage, rather than define it formally, let's think about how it might influence our daily lives. For example, think of your favourite search engine. On the surface it seems like a fairly simple interface: a text box where you type what you want to search for, and a button to start the search. The level of programming knowledge needed to implement a text box and a button is fairly rudimentary, and you could implement a search by writing a short program (probably less than 20 lines) to go through all the text on the web and displaying any that match. But obviously there's more to it than this! There are billions of searches are made every day, on billions on web pages, and the approach above will give answers (eventually), but will be so slow and ineffective that no-one would use it."
@@ -1523,15 +1555,6 @@ msgstr "计算思维"
 #, python-format
 msgid "Ages %(lower)s to %(upper)s"
 msgstr "年龄 %(lower)s 至 %(upper)s"
-
-#: templates/topics/not-available-warning.html:6
-#, python-format
-msgid "<h4>Sorry! This item is not yet available in %(language)s.</h4> <p>This item is available in the following languages:</p>"
-msgstr "<h4>抱歉！本条目暂无可用%(language)s版本。</h4> <p>本条目设有以下语言版本：</p>"
-
-#: templates/topics/not-available-warning.html:36
-msgid "Return to homepage "
-msgstr "返回主页 "
 
 #: templates/topics/programming-challenge-language-solution.html:10
 #, python-format
