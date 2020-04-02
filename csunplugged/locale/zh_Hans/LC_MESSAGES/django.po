@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-31 23:54+0000\n"
-"PO-Revision-Date: 2020-04-01 14:13\n"
+"PO-Revision-Date: 2020-04-02 14:21\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -752,11 +752,11 @@ msgstr "经典版 CS Unplugged"
 
 #: templates/at-home/index.html:8
 msgid "CS Unplugged at home"
-msgstr ""
+msgstr "CS Unplugged 居家版"
 
 #: templates/at-home/index.html:21
 msgid "Try something different away from the screen"
-msgstr ""
+msgstr "尝试一些屏幕之外的不同内容"
 
 #: templates/at-home/index.html:27
 #: templates/topics/not-available-warning.html:6
@@ -771,7 +771,7 @@ msgstr "返回主页 "
 
 #: templates/at-home/index.html:55
 msgid "<strong>Welcome to Computer Science Unplugged!</strong> This is a collection of fun and engaging activities that enable children to explore fundamental ideas in Computer Science, <em>without</em> having to use a computer. Traditionally these activities have been designed to be used with school classes and larger groups, but we’ve got many ideas for you to try out if you’re at home."
-msgstr ""
+msgstr "<strong>欢迎使用 Computer Science Unplugged！</strong>我们融合一系列有趣而好玩的活动，让孩子们<em>无需</em>使用计算机即可了解与计算机科学相关的各种基本概念。以往，这些活动均通过学校课堂以及更多群体参加的方式进行组织，但如果您目前留在家中的话，我们亦有众多想法供您尝试。"
 
 #: templates/base-at-home.html:28 templates/base-educators.html:28
 msgid "Language"
@@ -779,7 +779,7 @@ msgstr "语言"
 
 #: templates/base-at-home.html:58
 msgid "Back to CS Unplugged"
-msgstr ""
+msgstr "返回 CS Unplugged"
 
 #: templates/base-educators.html:56 templates/core.html:136
 #: templates/general/index.html:67 templates/topics/index.html:8
@@ -827,7 +827,7 @@ msgstr "有用链接"
 
 #: templates/core.html:146
 msgid "At home"
-msgstr ""
+msgstr "居家版"
 
 #: templates/core.html:152
 msgid "Community"
@@ -868,7 +868,7 @@ msgstr "CS Unplugged 资料属于 <a href=\"https://github.com/uccser/cs-unplugg
 
 #: templates/core.html:222
 msgid "Icons provided generously by <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://icons8.com/\">icons8</a>."
-msgstr ""
+msgstr "所有图标均由 <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://icons8.com/\">icons8</a> 慷慨捐赠。"
 
 #: templates/core.html:244
 #, python-format
@@ -1161,11 +1161,11 @@ msgstr "课程整合"
 
 #: templates/general/index.html:85
 msgid "Activities"
-msgstr ""
+msgstr "活动"
 
 #: templates/general/index.html:96
 msgid "Plugging it in"
-msgstr ""
+msgstr "插上电"
 
 #: templates/general/people.html:21
 msgid "version 4.0.0 onwards"
@@ -1328,7 +1328,7 @@ msgstr "活动中允许学生犯错；学生不应只遵循完全正确的许多
 #: templates/general/what-is-computer-science.html:24
 #, python-format
 msgid "In today's digital world, Computer Science has become an important subject for everyone to learn about. The knowledge and <a href=\"%(computational_thinking_url)s\">Computational Thinking skills</a> associated with it are now crucial to developing innovative digital technology, understanding modern society, and qualifications in this area are highly sought after."
-msgstr ""
+msgstr "在今天的数字世界当中，计算机科学已成为人人皆需学习的重要科目。与之相关的知识以及<a href=\"%(computational_thinking_url)s\">计算思维技能</a>对于开发创新数字技术、理解现代社会以及获得该领域相关资质而言最为重要。"
 
 #: templates/general/what-is-computer-science.html:31
 msgid "The CS Unplugged activities are intended to give you a feel for what the subject is - you can learn what it is by doing. At this early stage, rather than define it formally, let's think about how it might influence our daily lives. For example, think of your favourite search engine. On the surface it seems like a fairly simple interface: a text box where you type what you want to search for, and a button to start the search. The level of programming knowledge needed to implement a text box and a button is fairly rudimentary, and you could implement a search by writing a short program (probably less than 20 lines) to go through all the text on the web and displaying any that match. But obviously there's more to it than this! There are billions of searches are made every day, on billions on web pages, and the approach above will give answers (eventually), but will be so slow and ineffective that no-one would use it."
