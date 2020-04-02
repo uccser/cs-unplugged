@@ -2,6 +2,7 @@ version: '3'
 services:
   jobe:
     image: trampgeek/jobeinabox:latest
+    container_name: jobeinabox
     ports: 
       - "4000:80"
 
