@@ -1,9 +1,14 @@
 from django.http import HttpResponse
 
 import json
+import requests
+import os
+
 from topics.utils.add_lesson_ages_to_objects import add_lesson_ages_to_objects
 from django.shortcuts import get_object_or_404
 from django.views import generic
+from django.views import View
+from django.conf import settings
 from utils.translated_first import translated_first
 from topics.models import (
     Topic,
@@ -11,6 +16,7 @@ from topics.models import (
     ProgrammingChallengeNumber
 )
 
+import http.client
 
 class IndexView(generic.ListView):
     """View for the topics application homepage."""
@@ -96,4 +102,29 @@ class ProgrammingChallengeView(generic.DetailView):
         context["implementations"] = self.object.ordered_implementations()
         context["test_cases_json"] = json.dumps(list(self.object.oredered_test_cases().values()))
         context["test_cases"] = self.object.oredered_test_cases().values()
+        context["jobe_proxy_url"] = settings.JOBE_PROXY_URL
+
         return context
+
+
+class JobeProxyView(View):
+    """Proxy for Jobe Server
+    """
+
+    def post(self, request, *args, **kwargs):
+        
+        # Extracting data from the request body
+        body_unicode = request.body.decode('utf-8')
+        body = json.dumps(json.loads(body_unicode))
+
+        headers = {"Content-type": "application/json; charset=utf-8",
+                   "Accept": "application/json"}
+
+        # Set API key for production
+        if hasattr(settings, 'JOBE_API_KEY'):
+            headers["X-API-KEY"] = settings.JOBE_API_KEY
+
+        response = requests.post(settings.JOBE_SERVER_URL + "/jobe/index.php/restapi/runs/", data=body, headers=headers)
+        return HttpResponse(response.text)
+
+

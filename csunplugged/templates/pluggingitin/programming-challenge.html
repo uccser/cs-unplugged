@@ -83,6 +83,8 @@
 
   <script type="text/javascript">
     let test_cases = {{ test_cases_json|safe }};
+    let csrf_token = '{{ csrf_token }}';
+    let jobe_proxy_url = '{{ jobe_proxy_url }}'
   </script>
 
   <script src="{% static 'js/jobe-editor.js' %}"></script>

@@ -16,8 +16,13 @@ urlpatterns = [
         name="topic"
     ),
     url(
-        r"^(?P<topic_slug>[-\w]+)/(?P<programming_challenge_slug>[-\w]+)/$",  # noqa: E501
+        r"^(?P<topic_slug>[-\w]+)/(?P<programming_challenge_slug>[-\w]+)/$", 
         views.ProgrammingChallengeView.as_view(),
         name="programming_challenge"
+    ),
+    url(
+        r"^jobe_proxy$",  
+        views.JobeProxyView.as_view(),
+        name="jobe_proxy"
     ),
 ]

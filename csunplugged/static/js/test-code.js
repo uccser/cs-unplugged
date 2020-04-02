@@ -1,4 +1,4 @@
-const JOBE_SERVER = "http://localhost:4000/jobe/index.php/restapi/runs/";
+const JOBE_SERVER = jobe_proxy_url;
 
 async function run_code(program, givenInput, questionType) {
   let data = {
@@ -14,7 +14,8 @@ async function run_code(program, givenInput, questionType) {
     method: "POST",
     headers: {
       "Content-type": "application/json; charset=utf-8",
-      Accept: "application/json"
+      Accept: "application/json",
+      "X-CSRFToken": csrf_token
     },
     body: JSON.stringify(data)
   });
