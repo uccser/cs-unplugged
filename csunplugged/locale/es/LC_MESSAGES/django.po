@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-31 23:54+0000\n"
-"PO-Revision-Date: 2020-04-01 14:06\n"
+"PO-Revision-Date: 2020-04-02 14:06\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -1165,7 +1165,7 @@ msgstr ""
 
 #: templates/general/index.html:96
 msgid "Plugging it in"
-msgstr ""
+msgstr "Conexión"
 
 #: templates/general/people.html:21
 msgid "version 4.0.0 onwards"
