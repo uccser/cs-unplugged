@@ -1,10 +1,12 @@
+"""Models for the pluggingitin application."""
+
 from django.db import models
 from utils.TranslatableModel import TranslatableModel
 from topics.models import ProgrammingChallenge
 
 
 class TestCase(TranslatableModel):
-    """A test case for prgramming challenge question."""
+    """Model for a test case linked to a programming challenge question."""
 
     number = models.PositiveSmallIntegerField(default=1)
     test_input = models.TextField(blank=True)
@@ -18,4 +20,5 @@ class TestCase(TranslatableModel):
 
     class Meta:
         """Meta information for class."""
+
         verbose_name = 'Test Case'

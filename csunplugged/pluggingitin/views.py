@@ -1,3 +1,5 @@
+"""Views for the pluggingitin application."""
+
 from django.http import HttpResponse
 
 import json
@@ -105,11 +107,14 @@ class ProgrammingChallengeView(generic.DetailView):
 
 
 class JobeProxyView(View):
-    """Proxy for Jobe Server
-    """
+    """Proxy for Jobe Server."""
 
     def post(self, request, *args, **kwargs):
+        """Forward on request to Jobe from the frontend and adds API key if this is needed.
 
+        Returns:
+            The response from the Jobe server.
+        """
         # Extracting data from the request body
         body_unicode = request.body.decode('utf-8')
         body = json.dumps(json.loads(body_unicode))
