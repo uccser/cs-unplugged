@@ -1,15 +1,27 @@
+// Scripts used to manage code running and testing for the programming challenge editor screen.
+
 const JOBE_SERVER = jobe_proxy_url;
 
+/**
+ * Creates a request to the jobe proxy for the given program and input (if an 'input' question type). Recieves a response from jobe detailing if the code output
+ * or if there was any errors.
+ * @param {String} program The user code from the code mirror editor
+ * @param {String} givenInput The given input for the test case being run.
+ * @param {String} questionType The question type, used to determine whether the request should contain an 'input' field or not.
+ * @return {Object} The response from the Jobe server.
+ */
 async function run_code(program, givenInput, questionType) {
+  // Creates the run spec for Jobe
   let data = {
     run_spec: {
       language_id: "python3",
       sourcefilename: "test.py",
       sourcecode: program,
-      input: questionType == "input" ? givenInput  : ""
+      input: questionType == "input" ? givenInput : ""
     }
   };
 
+  // Sends request to the Jobe proxy and recieves a result.
   let response = await fetch(JOBE_SERVER, {
     method: "POST",
     headers: {
@@ -24,13 +36,31 @@ async function run_code(program, givenInput, questionType) {
   return result;
 }
 
-async function run_testcase(userProgram, givenInput, expectedOutput, questionType) {
+//
+/**
+ * Runs the code from the user program with some given input or function call.
+ * Tests the output against some given expected output and returns a testCaseResult object.
+ * @param {String} userProgram The user program from the code mirror editor.
+ * @param {String} givenInput The given input or function call.
+ * @param {String} expectedOutput The expected output for the given input.
+ * @param {String} questionType Whether the question is either an 'input' type or a 'function' type. This changes how the code is run.
+ * @return {Object} A test case result detailing if the code passed or if there was an error, the given input, user code output and expected output.
+ */
+async function run_testcase(
+  userProgram,
+  givenInput,
+  expectedOutput,
+  questionType
+) {
+  // Appends a function call to the end of the user call to test function type questions.
   if (questionType === "function") {
-    userProgram = userProgram.concat("\n" + givenInput)
+    userProgram = userProgram.concat("\n" + givenInput);
   }
 
+  // Send code to Jobe to get the code output.
   let userResult = await run_code(userProgram, givenInput, questionType);
 
+  // Test case result template
   testcaseResult = {
     status: "Passed",
     input: givenInput,
@@ -40,8 +70,11 @@ async function run_testcase(userProgram, givenInput, expectedOutput, questionTyp
 
   if (userResult.outcome == 15) {
     // Outcome 15: Run Successfully
-    let userOutput = userResult.stdout.replace(/\n$/, "")
-    if (userOutput === expectedOutput || (givenInput && userOutput.includes(expectedOutput))) {
+    let userOutput = userResult.stdout.replace(/\n$/, "");
+    if (
+      userOutput === expectedOutput ||
+      (givenInput && userOutput.includes(expectedOutput))
+    ) {
       testcaseResult.userOutput = userOutput;
     } else {
       testcaseResult.status = "Failed";
@@ -60,6 +93,12 @@ async function run_testcase(userProgram, givenInput, expectedOutput, questionTyp
   return testcaseResult;
 }
 
+/**
+ * Runs all the test cases for the current challenge against the users program.
+ * @param {String} userProgram The users code from the code mirror editor.
+ * @param {Array} testCases A list of test case objects.
+ * @return {Array} A list of all the test case results.
+ */
 async function run_all_testcases(userProgram, testCases) {
   allTestCaseResults = [];
 

@@ -1,8 +1,10 @@
-const code_tester = require('./test-code.js');
-var CodeMirror = require('codemirror');
-require('codemirror/mode/python/python.js');
+// Scripts used to manage the UI functionality for the programming challenge editor screen.
 
-// Set up code mirror
+const code_tester = require("./test-code.js");
+var CodeMirror = require("codemirror");
+require("codemirror/mode/python/python.js");
+
+// Set up code mirror editor
 let myTextarea = document.getElementById("codemirror_editor");
 let myCodeMirror = CodeMirror.fromTextArea(myTextarea, {
   mode: {
@@ -24,20 +26,27 @@ let myCodeMirror = CodeMirror.fromTextArea(myTextarea, {
   }
 });
 
-// Send code to jobe and get a result
+/**
+ * Retrieves code from the code mirror editor, runs all the test cases then updates the results table.
+ * Disables the "CHECK" button and shows a loading spinner while request is being processed.
+ */
 function sendCodeToJobe() {
   let code = myCodeMirror.getValue();
 
-  $("#editor_run_button").prop('disabled', true);
+  $("#editor_run_button").prop("disabled", true);
   $(".code_running_spinner").css("display", "inline-block");
 
   code_tester.run_all_testcases(code, test_cases).then(result => {
     updateResultsTable(result);
-    $("#editor_run_button").prop('disabled', false);
+    $("#editor_run_button").prop("disabled", false);
     $(".code_running_spinner").css("display", "none");
   });
 }
 
+/**
+ * Updates the results table given some test case results.
+ * @param {Array} results An array of test case results.
+ */
 function updateResultsTable(results) {
   for (result of results) {
     // Update status cell
@@ -66,5 +75,6 @@ function updateResultsTable(results) {
   }
 }
 
+// Setting up event listener for the check button to run the code.
 let submitButton = document.getElementById("editor_run_button");
 submitButton.addEventListener("click", sendCodeToJobe);
