@@ -6,7 +6,7 @@ async function run_code(program, givenInput, questionType) {
       language_id: "python3",
       sourcefilename: "test.py",
       sourcecode: program,
-      input: givenInput ? questionType == "input" : ""
+      input: questionType == "input" ? givenInput  : ""
     }
   };
 
