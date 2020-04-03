@@ -2,6 +2,7 @@ from django.db import models
 from utils.TranslatableModel import TranslatableModel
 from topics.models import ProgrammingChallenge
 
+
 class TestCase(TranslatableModel):
     """A test case for prgramming challenge question."""
 
@@ -18,4 +19,3 @@ class TestCase(TranslatableModel):
     class Meta:
         """Meta information for class."""
         verbose_name = 'Test Case'
-

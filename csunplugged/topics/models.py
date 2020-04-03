@@ -245,7 +245,6 @@ class ProgrammingChallenge(TranslatableModel):
         """
         return self.test_cases.all().select_related()
 
-
     def __str__(self):
         """Text representation of ProgrammingChallenge object.
 
