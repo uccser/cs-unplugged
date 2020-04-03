@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-31 23:54+0000\n"
-"PO-Revision-Date: 2020-04-02 14:06\n"
+"PO-Revision-Date: 2020-04-03 14:16\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -752,11 +752,11 @@ msgstr "CS Unplugged Clásico"
 
 #: templates/at-home/index.html:8
 msgid "CS Unplugged at home"
-msgstr ""
+msgstr "CS Unplugged en casa"
 
 #: templates/at-home/index.html:21
 msgid "Try something different away from the screen"
-msgstr ""
+msgstr "Prueba algo diferente lejos de la pantalla"
 
 #: templates/at-home/index.html:27
 #: templates/topics/not-available-warning.html:6
@@ -771,7 +771,7 @@ msgstr "Volver a la página de inicio "
 
 #: templates/at-home/index.html:55
 msgid "<strong>Welcome to Computer Science Unplugged!</strong> This is a collection of fun and engaging activities that enable children to explore fundamental ideas in Computer Science, <em>without</em> having to use a computer. Traditionally these activities have been designed to be used with school classes and larger groups, but we’ve got many ideas for you to try out if you’re at home."
-msgstr ""
+msgstr "<strong>¡Bienvenido a Computer Science Unplugged!</strong> Se trata de una colección de actividades divertidas y estimulantes que permiten a los niños explorar las ideas fundamentales de la informática, <em>sin</em> tener que usar un ordenador. Tradicionalmente, estas actividades han sido diseñadas para ser utilizadas con clases escolares y grupos grandes, pero tenemos muchas ideas que podrás probar si estás en casa."
 
 #: templates/base-at-home.html:28 templates/base-educators.html:28
 msgid "Language"
@@ -779,7 +779,7 @@ msgstr "Idioma"
 
 #: templates/base-at-home.html:58
 msgid "Back to CS Unplugged"
-msgstr ""
+msgstr "Volver a CS Unplugged"
 
 #: templates/base-educators.html:56 templates/core.html:136
 #: templates/general/index.html:67 templates/topics/index.html:8
@@ -827,7 +827,7 @@ msgstr "Enlaces útiles"
 
 #: templates/core.html:146
 msgid "At home"
-msgstr ""
+msgstr "En casa"
 
 #: templates/core.html:152
 msgid "Community"
@@ -868,7 +868,7 @@ msgstr "El material de CS Unplugged es de acceso libre y se encuentra en <a href
 
 #: templates/core.html:222
 msgid "Icons provided generously by <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://icons8.com/\">icons8</a>."
-msgstr ""
+msgstr "Iconos proporcionados generosamente por <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://icons8.com/\">icons8</a>."
 
 #: templates/core.html:244
 #, python-format
@@ -1161,7 +1161,7 @@ msgstr "Integraciones curriculares"
 
 #: templates/general/index.html:85
 msgid "Activities"
-msgstr ""
+msgstr "Actividades"
 
 #: templates/general/index.html:96
 msgid "Plugging it in"
@@ -1328,7 +1328,7 @@ msgstr "Las actividades son flexibles ante los errores cometidos por los alumnos
 #: templates/general/what-is-computer-science.html:24
 #, python-format
 msgid "In today's digital world, Computer Science has become an important subject for everyone to learn about. The knowledge and <a href=\"%(computational_thinking_url)s\">Computational Thinking skills</a> associated with it are now crucial to developing innovative digital technology, understanding modern society, and qualifications in this area are highly sought after."
-msgstr ""
+msgstr "En el mundo digital actual, la informática se ha convertido en una materia importante que todo el mundo debería estudiar. El conocimiento y las <a href=\"%(computational_thinking_url)s\">Habilidades del pensamiento computacional</a> asociados a ella ahora son cruciales para desarrollar tecnología digital innovadora y para comprender la sociedad moderna y la demanda de personas cualificadas en este campo es muy alta."
 
 #: templates/general/what-is-computer-science.html:31
 msgid "The CS Unplugged activities are intended to give you a feel for what the subject is - you can learn what it is by doing. At this early stage, rather than define it formally, let's think about how it might influence our daily lives. For example, think of your favourite search engine. On the surface it seems like a fairly simple interface: a text box where you type what you want to search for, and a button to start the search. The level of programming knowledge needed to implement a text box and a button is fairly rudimentary, and you could implement a search by writing a short program (probably less than 20 lines) to go through all the text on the web and displaying any that match. But obviously there's more to it than this! There are billions of searches are made every day, on billions on web pages, and the approach above will give answers (eventually), but will be so slow and ineffective that no-one would use it."
