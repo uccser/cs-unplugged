@@ -237,7 +237,7 @@ class ProgrammingChallenge(TranslatableModel):
         """
         return self.implementations.all().order_by("language__number").select_related()
 
-    def oredered_test_cases(self):
+    def related_test_cases(self):
         """Return a QuerySet of test cases.
 
         Returns:

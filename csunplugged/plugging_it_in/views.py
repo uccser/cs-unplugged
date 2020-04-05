@@ -99,8 +99,8 @@ class ProgrammingChallengeView(generic.DetailView):
         # Add all the connected learning outcomes
         context["learning_outcomes"] = self.object.learning_outcomes(manager="translated_objects").order_by("text")
         context["implementations"] = self.object.ordered_implementations()
-        context["test_cases_json"] = json.dumps(list(self.object.oredered_test_cases().values()))
-        context["test_cases"] = self.object.oredered_test_cases().values()
+        context["test_cases_json"] = json.dumps(list(self.object.related_test_cases().values()))
+        context["test_cases"] = self.object.related_test_cases().values()
         context["jobe_proxy_url"] = settings.JOBE_PROXY_URL
 
         return context
