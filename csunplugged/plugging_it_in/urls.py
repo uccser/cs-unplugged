@@ -1,10 +1,10 @@
-"""URL routing for the pluggingitin application."""
+"""URL routing for the plugging_it_in application."""
 
 from django.conf.urls import url
 
 from . import views
 
-app_name = "pluggingitin"
+app_name = "plugging_it_in"
 
 urlpatterns = [
     url(

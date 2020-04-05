@@ -1,4 +1,4 @@
-"""Views for the pluggingitin application."""
+"""Views for the plugging_it_in application."""
 
 from django.http import HttpResponse
 
@@ -20,7 +20,7 @@ from topics.models import (
 class IndexView(generic.ListView):
     """View for the topics application homepage."""
 
-    template_name = "pluggingitin/index.html"
+    template_name = "plugging_it_in/index.html"
     context_object_name = "programming_topics"
 
     def get_queryset(self):
@@ -50,7 +50,7 @@ class TopicView(generic.DetailView):
     """View for a specific topic."""
 
     model = Topic
-    template_name = "pluggingitin/topic.html"
+    template_name = "plugging_it_in/topic.html"
     slug_url_kwarg = "topic_slug"
 
     def get_context_data(self, **kwargs):
@@ -71,7 +71,7 @@ class ProgrammingChallengeView(generic.DetailView):
     """View for a specific programming challenge."""
 
     model = ProgrammingChallenge
-    template_name = "pluggingitin/programming-challenge.html"
+    template_name = "plugging_it_in/programming-challenge.html"
     context_object_name = "programming_challenge"
 
     def get_object(self, **kwargs):

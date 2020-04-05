@@ -11,7 +11,7 @@ from django.conf.urls.i18n import i18n_patterns
 urlpatterns = i18n_patterns(
     url(r"", include("general.urls", namespace="general")),
     url(r"^topics/", include("topics.urls", namespace="topics")),
-    url(r"^pluggingitin/", include("pluggingitin.urls", namespace="pluggingitin")),
+    url(r"^plugging-it-in/", include("plugging_it_in.urls", namespace="plugging_it_in")),
     url(r"^resources/", include("resources.urls", namespace="resources")),
     url(r"^at-home/", include("at_home.urls", namespace="at_home")),
 )

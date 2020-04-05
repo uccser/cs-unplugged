@@ -6,7 +6,7 @@ from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.TranslatableModelLoader import TranslatableModelLoader
 
-from pluggingitin.models import (
+from plugging_it_in.models import (
     TestCase
 )
 

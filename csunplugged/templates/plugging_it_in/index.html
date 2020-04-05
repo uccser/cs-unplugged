@@ -9,7 +9,7 @@
 {% endblock title %}
 
 {% block breadcrumbs %}
-  {% breadcrumb "Plugging it in" "pluggingitin:index" %}
+  {% breadcrumb "Plugging it in" "plugging-it-in:index" %}
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
@@ -23,7 +23,7 @@
       {% for topic in programming_topics %}
         {% if topic.programming_challenges.exists %}
           <div class="col-12 col-md-8 col-lg-6 mb-4">
-            <a class="link-item no-text-decoration d-block h-100{% if not topic.translation_available %} unavailable{% endif %}" href="{% url 'pluggingitin:topic' topic.slug %}">
+            <a class="link-item no-text-decoration d-block h-100{% if not topic.translation_available %} unavailable{% endif %}" href="{% url 'plugging_it_in:topic' topic.slug %}">
               <div class="row align-items-center h-100">
                 <div class="col-12 text-center text-md-{{LANGUAGE_START}}">
                   <h2>{{ topic.name }}</h2>

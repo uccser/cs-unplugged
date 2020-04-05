@@ -10,7 +10,7 @@
 {% endblock title %}
 
 {% block breadcrumbs %}
-  {% breadcrumb "Plugging It In" "pluggingitin:index" %}
+  {% breadcrumb "Plugging It In" "plugging_it_in:index" %}
   {% breadcrumb topic.name "topics:topic" topic.slug %}
 {% endblock breadcrumbs %}
 
@@ -31,7 +31,7 @@
 
 {% block content %}
   {% if programming_challenges %}
-    {% include "pluggingitin/programming-challenges-table.html" %}
+    {% include "plugging_it_in/programming-challenges-table.html" %}
   {% else %}
     <p>{% blocktrans trimmed %}No programming challenges for {{ topic }}.{% endblocktrans %}</p>
   {% endif %}

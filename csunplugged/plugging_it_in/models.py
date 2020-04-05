@@ -1,4 +1,4 @@
-"""Models for the pluggingitin application."""
+"""Models for the plugging_it_in application."""
 
 from django.db import models
 from utils.TranslatableModel import TranslatableModel
