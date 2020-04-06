@@ -484,9 +484,10 @@ ol, ul {
     }
     &-student-1 {
       border-top-color: $student-colour;
-      &:hover {
-        background-color: mix($student-colour, $white, 10%);
-      }
+      cursor: not-allowed;
+    //   &:hover {
+    //     background-color: mix($student-colour, $white, 10%);
+    //   }
     }
     &-orange {
       border-top-color: $orange;
