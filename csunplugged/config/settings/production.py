@@ -65,4 +65,4 @@ X_FRAME_OPTIONS = "DENY"
 
 # Jobe Server
 JOBE_SERVER_URL = "http://jobe2.cosc.canterbury.ac.nz"
-JOBE_PROXY_URL = ""
+JOBE_API_KEY = env("JOBE_API_KEY")  # noqa: F405

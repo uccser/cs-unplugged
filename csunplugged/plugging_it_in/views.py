@@ -9,6 +9,7 @@ from topics.utils.add_lesson_ages_to_objects import add_lesson_ages_to_objects
 from django.shortcuts import get_object_or_404
 from django.views import generic
 from django.views import View
+from django.urls import reverse
 from django.conf import settings
 from utils.translated_first import translated_first
 from topics.models import (
@@ -105,8 +106,7 @@ class ProgrammingChallengeView(generic.DetailView):
         context["implementations"] = self.object.ordered_implementations()
         context["test_cases_json"] = json.dumps(list(self.object.related_test_cases().values()))
         context["test_cases"] = self.object.related_test_cases().values()
-        context["jobe_proxy_url"] = settings.JOBE_PROXY_URL
-
+        context["jobe_proxy_url"] = reverse('plugging_it_in:jobe_proxy')
         return context
 
 

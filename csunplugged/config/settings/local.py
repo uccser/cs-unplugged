@@ -91,4 +91,3 @@ INSTALLED_APPS += ["dev.apps.DevConfig"]  # noqa: F405
 
 # Jobe Server
 JOBE_SERVER_URL = "http://jobeinabox"
-JOBE_PROXY_URL = "http://localhost/en/plugging-it-in/jobe_proxy"
