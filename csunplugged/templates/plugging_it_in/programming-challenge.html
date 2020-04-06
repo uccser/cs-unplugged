@@ -1,0 +1,68 @@
+{% extends "base-students.html" %}
+
+{% load i18n %}
+{% load static %}
+{% load render_html_field %}
+
+{% block title %}
+  {{ programming_challenge.name }}
+{% endblock title %}
+
+{% block body_container %}
+
+<div class="row programming__challenge-screen">
+{% if programming_challenge.translation_available %}
+  <div class="col-12 col-md-4 programming__info-area">
+    <h1>
+    {{ programming_challenge.name }}
+  </h1>
+  {% if not programming_challenge.translation_available %}
+    {% with model=programming_challenge parent=topic %}
+      {% include 'topics/not-available-warning.html' %}
+    {% endwith %}
+  {% else %}
+    <p class="w-100 text-white rounded p-2 mt-3 difficulty-level-{{ programming_challenge.difficulty.level }}">
+      <strong>{% trans "Challenge Level:" %}</strong> {{ programming_challenge.difficulty.name }}
+    </p>
+  {% endif %}
+  {% render_html_field programming_challenge.content %}
+  </div>
+  <div class="col-12 col-md-4 programming__editor">
+    <textarea id="codemirror_editor"></textarea>
+    <div class="programming__submit d-flex justify-content-between align-items-center">
+      <button id="editor_run_button" >CHECK</button>
+      <div class="code_running_spinner spinner-grow" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+    </div>
+  </div>
+
+  <div class="col-12 col-md-4 programming__results">
+    {% include "plugging_it_in/results-table.html" %}
+  </div>
+{% endif %}
+</div>
+
+{% endblock body_container %}
+
+{% block end_content %}
+  {% if programming_challenge.translation_available %}
+    {% if programming_challenge.extra_challenge %}
+      <h2>{% trans "Extra Challenge" %}</h2>
+      {% render_html_field programming_challenge.extra_challenge %}
+    {% endif %}
+  {% endif %}
+{% endblock end_content %}
+
+{% block scripts %}
+  <link rel="stylesheet" href="{% static '../node_modules/codemirror/lib/codemirror.css' %}" >
+  <link rel="stylesheet" href="{% static 'css/programming-editor.css' %}" >
+
+  <script type="text/javascript">
+    let test_cases = {{ test_cases_json|safe }};
+    let csrf_token = '{{ csrf_token }}';
+    let jobe_proxy_url = '{{ jobe_proxy_url }}';
+  </script>
+
+  <script src="{% static 'js/jobe-editor.js' %}"></script>
+{% endblock scripts %}

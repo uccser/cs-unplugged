@@ -1,5 +1,11 @@
 version: '3'
 services:
+  jobe:
+    image: trampgeek/jobeinabox:latest
+    container_name: jobeinabox
+    ports: 
+      - "4000:80"
+
   postgres:
     restart: always
     image: postgres:9.6.5

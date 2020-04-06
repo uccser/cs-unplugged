@@ -54,6 +54,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "general.apps.GeneralConfig",
     "topics.apps.TopicsConfig",
+    "plugging_it_in.apps.PluggingitinConfig",
     "resources.apps.ResourcesConfig",
     "search.apps.SearchConfig",
     "classic.apps.ClassicConfig",

@@ -1,0 +1,68 @@
+html,
+body,
+.programming__challenge-screen {
+  height: 100%;
+  width: 100%;
+}
+
+#sponsor-logos {
+  display: none;
+}
+
+#page-footer {
+  display: none;
+}
+
+.programming__challenge-screen {
+  margin: 0px;
+}
+
+.programming__info-area {
+  overflow-y: scroll;
+  height: 100%;
+  padding: 20px !important;
+}
+
+.programming__results {
+  padding: 0px !important;
+}
+
+.programming__editor {
+  height: 100%;
+  padding: 0px;
+
+  .CodeMirror {
+    margin: 0px;
+    height: 95%;
+  }
+
+  .programming__submit {
+    height: 5%;
+    background-color: #d6c1e1ff;
+
+    .code_running_spinner {
+      display: none;
+      color: white;
+      margin-right: 10px;
+    }
+
+    #editor_run_button {
+      border: none;
+      background-color: #06a284ff;
+      color: white;
+      height: 100%;
+      width: 20%;
+      transition: ease-in;
+    }
+
+    #editor_run_button:hover {
+      cursor: pointer;
+      background-color: #05856dff;
+    }
+
+    #editor_run_button:disabled {
+      background-color: #05856dff;
+      cursor: normal;
+    }
+  }
+}
