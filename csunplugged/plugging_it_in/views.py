@@ -43,6 +43,10 @@ class IndexView(generic.ListView):
         # Call the base implementation first to get a context
         context = super(IndexView, self).get_context_data(**kwargs)
         add_lesson_ages_to_objects(self.object_list)
+
+        # Add in a QuerySet of all the demo programming exercises (Temporary)
+        demo_challenge_ids = {1, 4, 8, 13, 15, 20}
+        context["demo_programming_challenges"] = ProgrammingChallenge.objects.filter(id__in=demo_challenge_ids)
         return context
 
 
