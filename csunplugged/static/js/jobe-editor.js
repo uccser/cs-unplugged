@@ -31,7 +31,9 @@ let myCodeMirror = CodeMirror.fromTextArea(myTextarea, {
  * Disables the "CHECK" button and shows a loading spinner while request is being processed.
  */
 function sendCodeToJobe() {
-  let code = myCodeMirror.getValue();
+  // Replaces all user input parameters to be blank so it matches the expected output
+  // Takes into consideration cases input("thing)"), input('thing)'), input(thing) and int(input(thing))
+  let code = myCodeMirror.getValue().replace(/(input\("[^"]+"\)|input\('[^']+'\)|input\([^)]+\))/mg, 'input()');
 
   $("#editor_run_button").prop("disabled", true);
   $(".code_running_spinner").css("display", "inline-block");

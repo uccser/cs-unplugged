@@ -72,9 +72,8 @@ async function run_testcase(
     // Outcome 15: Run Successfully
     let userOutput = userResult.stdout.replace(/\n$/, "");
     if (
-      userOutput === expectedOutput ||
-      (givenInput && userOutput.includes(expectedOutput))
-    ) {
+      userOutput === expectedOutput)
+    {
       testcaseResult.userOutput = userOutput;
     } else {
       testcaseResult.status = "Failed";
