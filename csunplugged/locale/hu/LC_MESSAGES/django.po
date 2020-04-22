@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-31 23:54+0000\n"
-"PO-Revision-Date: 2020-04-15 14:06\n"
+"PO-Revision-Date: 2020-04-22 14:07\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Hungarian\n"
 "Language: hu_HU\n"
@@ -293,7 +293,7 @@ msgstr ""
 #: resources/generators/SearchingCardsResourceGenerator.py:173
 #: resources/generators/SearchingCardsResourceGenerator.py:175
 msgid "{} to {}"
-msgstr ""
+msgstr "{}-tól {}-ig"
 
 #: resources/generators/ParityCardsResourceGenerator.py:17
 msgid "Black"
@@ -858,7 +858,7 @@ msgstr ""
 
 #: templates/general/about.html:34
 msgid "Thanks to generous sponsorships we have been able to create associated resources such as the videos, which are intended to help teachers see how the activities work (please don’t show them to your classes – let them experience the activities themselves!). All of the activities that we provide are open source – they are released under a <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons Attribution-ShareAlike licence</a>, so you can copy, share and modify the material."
-msgstr ""
+msgstr "A nagylelkű szponzorálásnak köszönhetően  olyan kapcsolódó anyagokat tudtunk létrehozni, mint például a videók, amelyek célja, hogy bemutassák a tanároknak azt, hogy a tevékenységek hogyan zajlanak (kérjük, ezeket ne mutassa meg az osztályoknak - hagyja, hogy maguk tapasztalják meg a tevékenységeket!) Az általunk nyújtott összes tevékenység nyílt forráskódú - <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\"> Creative Commons Attribution-ShareAlike licensz</a> alatt kerül kiadásra </a>, így másolhatja, megoszthatja és módosíthatja az anyagot."
 
 #: templates/general/about.html:42
 #, python-format
@@ -978,7 +978,7 @@ msgstr ""
 
 #: templates/general/computational-thinking.html:161
 msgid "Abstraction"
-msgstr ""
+msgstr "Elvonatkoztatás"
 
 #: templates/general/computational-thinking.html:166
 msgid "Abstraction is all about simplifying things to help us manage complexity. It requires identifying what the most important aspects of a problem are and hiding the other specific details that we don’t need to focus on. The important aspects can be used to create a model, or simplified representation, of the original thing we were dealing with. We can then work with this model to solve the problem, rather than having to deal with all the nitty gritty details at once. Computer Scientists often work with multiple levels of abstraction."
@@ -998,7 +998,7 @@ msgstr ""
 
 #: templates/general/computational-thinking.html:207
 msgid "Decomposition"
-msgstr ""
+msgstr "Felbontás"
 
 #: templates/general/computational-thinking.html:212
 msgid "Decomposition is about breaking down problems into smaller, more manageable, parts, and then focusing on solving each of these smaller problems. We can break a complex problem down until the smaller parts are so simple they become easy to solve. The solutions to each of these smaller, and simpler, problems build up to a solution to the big problem we started with. Decomposition helps make large problems much less intimidating!"
@@ -1034,7 +1034,7 @@ msgstr ""
 
 #: templates/general/computational-thinking.html:285
 msgid "Evaluation"
-msgstr ""
+msgstr "Értékelés"
 
 #: templates/general/computational-thinking.html:290
 msgid "Evaluation is about identifying the possible solutions to a problem and judging which is the best to use, if they will work in some situations but not others, and how they can be improved. When judging our solutions we need to think about a range of factors. For example how much time it will take these processes (algorithms) to solve the problem and will it reliably solve the problem, or if there are certain situations where it will perform in a very different way. Evaluation is something we do a lot in our everyday lives."
@@ -1046,7 +1046,7 @@ msgstr ""
 
 #: templates/general/computational-thinking.html:313
 msgid "Logic"
-msgstr ""
+msgstr "Logika"
 
 #: templates/general/computational-thinking.html:318
 msgid "When trying to solve problems we need to think logically. Logical reasoning is about trying to make sense of things by observing, collecting data, thinking about the facts you know, and then figuring things out based on what you already know. It helps us use our existing knowledge to establish rules and check facts."
@@ -1514,7 +1514,7 @@ msgstr ""
 #: templates/topics/lesson.html:124
 #: templates/topics/unit-plan-description.html:52
 msgid "Computational Thinking"
-msgstr ""
+msgstr "Informatikai Gondolkodás"
 
 #: templates/topics/lessons-table.html:10
 #, python-format
