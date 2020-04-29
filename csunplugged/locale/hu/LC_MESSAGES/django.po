@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-31 23:54+0000\n"
-"PO-Revision-Date: 2020-04-22 14:07\n"
+"PO-Revision-Date: 2020-04-29 14:04\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Hungarian\n"
 "Language: hu_HU\n"
@@ -17,178 +17,178 @@ msgstr ""
 
 #: classic/models.py:10
 msgid "Classic CS Unplugged page"
-msgstr ""
+msgstr "Klasszikus CS Unplugged oldal"
 
 #: config/settings/base.py:155
 msgid "Translation mode"
-msgstr ""
+msgstr "Fordítási mód"
 
 #: config/settings/base.py:161
 msgid "Translation mode (Bi-directional)"
-msgstr ""
+msgstr "Fordítási mód (kétirányú)"
 
 #: general/models.py:11
 msgid "General page"
-msgstr ""
+msgstr "Általános oldal"
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:10
 msgid "12 digits"
-msgstr ""
+msgstr "12 számjegy"
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:11
 msgid "13 digits"
-msgstr ""
+msgstr "13 számjegy"
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:24
 msgid "Barcode length"
-msgstr ""
+msgstr "Vonalkód hossza"
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:48
 msgid "{} Digit Barcode"
-msgstr ""
+msgstr "{} Számjegyes vonalkód"
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:53
 msgid "Separate!"
-msgstr ""
+msgstr "Válaszd szét!"
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:54
 msgid "Operate!"
-msgstr ""
+msgstr "Dolgozd fel!"
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:55
 msgid "Calculate!"
-msgstr ""
+msgstr "Számítsd ki!"
 
 #: resources/generators/BarcodeChecksumPosterResourceGenerator.py:66
 msgid "Remember that this algorithm uses modulo 10, so we are only interested in the number in the one's column."
-msgstr ""
+msgstr "Ne feledd, ez az algoritmus a modulo 10-et használja, így csak az első oszlop számai az érdekesek."
 
 #: resources/generators/BinaryCardsResourceGenerator.py:33
 msgid "Display Numbers"
-msgstr ""
+msgstr "Számok megjelenítése"
 
 #: resources/generators/BinaryCardsResourceGenerator.py:38
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:46
 msgid "Black on Card Back"
-msgstr ""
+msgstr "Fekete a kártya hátulja"
 
 #: resources/generators/BinaryCardsResourceGenerator.py:40
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:48
 msgid "Yes - Uses a lot of black ink, but conveys clearer card state. Print double sided."
-msgstr ""
+msgstr "Igen - több fekete tintát használ, de tisztább képet eredményez. Kétoldalas nyomtatás."
 
 #: resources/generators/BinaryCardsResourceGenerator.py:41
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:49
 msgid "No - Print single sided."
-msgstr ""
+msgstr "Nem - Egyoldalas nyomtatás."
 
 #: resources/generators/BinaryCardsResourceGenerator.py:104
 msgid "with numbers"
-msgstr ""
+msgstr "számokkal"
 
 #: resources/generators/BinaryCardsResourceGenerator.py:106
 msgid "without numbers"
-msgstr ""
+msgstr "számok nélkül"
 
 #: resources/generators/BinaryCardsResourceGenerator.py:109
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:110
 msgid "with black back"
-msgstr ""
+msgstr "fekete háttérrel"
 
 #: resources/generators/BinaryCardsResourceGenerator.py:111
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:112
 msgid "without black back"
-msgstr ""
+msgstr "fekete háttér nélkül"
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:20
 #: resources/generators/BinaryWindowsResourceGenerator.py:15
 msgid "Four (1 to 8)"
-msgstr ""
+msgstr "Négy (1-től 8-ig)"
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:21
 #: resources/generators/BinaryWindowsResourceGenerator.py:16
 msgid "Eight (1 to 128)"
-msgstr ""
+msgstr "Nyolc (1-től 128-ig)"
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:22
 msgid "Twelve (1 to 2048)"
-msgstr ""
+msgstr "Tizenkettő (1-től 2048-ig)"
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:35
 #: resources/generators/BinaryWindowsResourceGenerator.py:34
 msgid "Number of Bits"
-msgstr ""
+msgstr "A bitek száma"
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:41
 #: resources/generators/BinaryWindowsResourceGenerator.py:40
 msgid "Display Dot Counts"
-msgstr ""
+msgstr "Pontok számának megjelenítése"
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:106
 #: resources/generators/BinaryWindowsResourceGenerator.py:192
 msgid "with dot counts"
-msgstr ""
+msgstr "a pontok számával"
 
 #: resources/generators/BinaryCardsSmallResourceGenerator.py:108
 #: resources/generators/BinaryWindowsResourceGenerator.py:194
 msgid "without dot counts"
-msgstr ""
+msgstr "a pontok száma nélkül"
 
 #: resources/generators/BinaryToAlphabetResourceGenerator.py:12
 msgid "Student"
-msgstr ""
+msgstr "Tanuló"
 
 #: resources/generators/BinaryToAlphabetResourceGenerator.py:13
 msgid "Teacher (solutions)"
-msgstr ""
+msgstr "Tanár (megoldások)"
 
 #: resources/generators/BinaryToAlphabetResourceGenerator.py:27
 msgid "Worksheet Version"
-msgstr ""
+msgstr "Munkalap változat"
 
 #: resources/generators/BinaryToAlphabetResourceGenerator.py:59
 msgid "Base 10"
-msgstr ""
+msgstr "10-es alap"
 
 #: resources/generators/BinaryToAlphabetResourceGenerator.py:60
 msgid "Binary"
-msgstr ""
+msgstr "Bináris"
 
 #: resources/generators/BinaryToAlphabetResourceGenerator.py:61
 msgid "Letter"
-msgstr ""
+msgstr "Betű"
 
 #: resources/generators/BinaryWindowsResourceGenerator.py:20
 msgid "Binary (0 or 1)"
-msgstr ""
+msgstr "Bináris (0 vagy 1)"
 
 #: resources/generators/BinaryWindowsResourceGenerator.py:21
 msgid "Lightbulb (off or on)"
-msgstr ""
+msgstr "Villanykörte (ki- vagy bekapcsolása)"
 
 #: resources/generators/BinaryWindowsResourceGenerator.py:45
 msgid "Value Representation"
-msgstr ""
+msgstr "Érték ábrázolása"
 
 #: resources/generators/JobBadgesResourceGenerator.py:14
 msgid "Hello, I'm a Programmer"
-msgstr ""
+msgstr "Helló, én egy programozó vagyok"
 
 #: resources/generators/JobBadgesResourceGenerator.py:15
 msgid "Hello, I'm a Tester"
-msgstr ""
+msgstr "Helló, én egy tesztelő vagyok"
 
 #: resources/generators/JobBadgesResourceGenerator.py:16
 msgid "Hello, I'm a Bot"
-msgstr ""
+msgstr "Helló, én egy robot vagyok"
 
 #: resources/generators/LeftRightCardsResourceGenerator.py:14
 msgid "Left"
-msgstr ""
+msgstr "Bal"
 
 #: resources/generators/LeftRightCardsResourceGenerator.py:24
 msgid "Right"
-msgstr ""
+msgstr "Jobb"
 
 #: resources/generators/ModuloClockResourceGenerator.py:10
 #: resources/generators/ModuloClockResourceGenerator.py:83
@@ -197,47 +197,47 @@ msgstr ""
 #: resources/generators/SearchingCardsResourceGenerator.py:26
 #: resources/generators/SearchingCardsResourceGenerator.py:171
 msgid "Blank"
-msgstr ""
+msgstr "Üres"
 
 #: resources/generators/ModuloClockResourceGenerator.py:25
 msgid "Modulo"
-msgstr ""
+msgstr "Modulo"
 
 #: resources/generators/NumberHuntResourceGenerator.py:14
 msgid "Easy Numbers (2 digits)"
-msgstr ""
+msgstr "Egyszerű számok (2 számjegy)"
 
 #: resources/generators/NumberHuntResourceGenerator.py:15
 msgid "Medium Numbers (3 digits)"
-msgstr ""
+msgstr "Közepes számok (3 számjegy)"
 
 #: resources/generators/NumberHuntResourceGenerator.py:16
 msgid "Hard Numbers (4 digits)"
-msgstr ""
+msgstr "Nehéz számok (4 számjegy)"
 
 #: resources/generators/NumberHuntResourceGenerator.py:17
 msgid "None (Blank)"
-msgstr ""
+msgstr "Nincs (Üres)"
 
 #: resources/generators/NumberHuntResourceGenerator.py:20
 msgid "Sorted Numbers"
-msgstr ""
+msgstr "Rendezett számok"
 
 #: resources/generators/NumberHuntResourceGenerator.py:21
 msgid "Unsorted Numbers"
-msgstr ""
+msgstr "Rendezetlen számok"
 
 #: resources/generators/NumberHuntResourceGenerator.py:25
 msgid "Number Hunt"
-msgstr ""
+msgstr "Számvadászat"
 
 #: resources/generators/NumberHuntResourceGenerator.py:44
 msgid "My Boxes"
-msgstr ""
+msgstr "A dobozaim"
 
 #: resources/generators/NumberHuntResourceGenerator.py:54
 msgid "Opponent's Boxes"
-msgstr ""
+msgstr "Ellenfelem dobozai"
 
 #: resources/generators/NumberHuntResourceGenerator.py:65
 msgid "\n"
@@ -281,11 +281,11 @@ msgstr ""
 #: resources/generators/NumberHuntResourceGenerator.py:123
 #: resources/generators/SortingNetworkResourceGenerator.py:28
 msgid "Prefill with Numbers"
-msgstr ""
+msgstr "Előre kitöltés számokkal"
 
 #: resources/generators/NumberHuntResourceGenerator.py:129
 msgid "Numbers Unsorted/Sorted"
-msgstr ""
+msgstr "Számok rendezetlenül/rendezve"
 
 #: resources/generators/NumberHuntResourceGenerator.py:224
 #: resources/generators/SearchingCardsResourceGenerator.py:70
@@ -297,47 +297,47 @@ msgstr "{}-tól {}-ig"
 
 #: resources/generators/ParityCardsResourceGenerator.py:17
 msgid "Black"
-msgstr ""
+msgstr "Fekete"
 
 #: resources/generators/ParityCardsResourceGenerator.py:18
 msgid "Blue"
-msgstr ""
+msgstr "Kék"
 
 #: resources/generators/ParityCardsResourceGenerator.py:19
 msgid "Green"
-msgstr ""
+msgstr "Zöld"
 
 #: resources/generators/ParityCardsResourceGenerator.py:20
 msgid "Purple"
-msgstr ""
+msgstr "Lila"
 
 #: resources/generators/ParityCardsResourceGenerator.py:21
 msgid "Red"
-msgstr ""
+msgstr "Piros"
 
 #: resources/generators/ParityCardsResourceGenerator.py:34
 msgid "Card back colour"
-msgstr ""
+msgstr "Kártya hátának színe"
 
 #: resources/generators/PianoKeysResourceGenerator.py:54
 msgid "Piano key labels"
-msgstr ""
+msgstr "Zongorabillentyűk feliratai"
 
 #: resources/generators/PixelPainterResourceGenerator.py:12
 msgid "Black and White (2 possible binary values)"
-msgstr ""
+msgstr "Fekete és fehér (2 lehetséges bináris érték)"
 
 #: resources/generators/PixelPainterResourceGenerator.py:13
 msgid "Black and White (2 possible binary values) in Run Length Encoding"
-msgstr ""
+msgstr "Fekete és fehér (2 lehetséges bináris érték) a kódolási lefutás hosszában"
 
 #: resources/generators/PixelPainterResourceGenerator.py:14
 msgid "Greyscale (4 possible binary values)"
-msgstr ""
+msgstr "Szürkeskála (4 lehetséges bináris érték)"
 
 #: resources/generators/PixelPainterResourceGenerator.py:15
 msgid "Colour (8 possible binary values)"
-msgstr ""
+msgstr "Szín (8 lehetséges bináris érték)"
 
 #: resources/generators/PixelPainterResourceGenerator.py:19
 msgid "Star - 1 page"
@@ -349,105 +349,105 @@ msgstr "Teáscsésze - 1 oldal"
 
 #: resources/generators/PixelPainterResourceGenerator.py:21
 msgid "Cat - 1 page"
-msgstr ""
+msgstr "Macska - 1 oldal"
 
 #: resources/generators/PixelPainterResourceGenerator.py:22
 msgid "Fish - 6 pages"
-msgstr ""
+msgstr "Hal - 6 oldal"
 
 #: resources/generators/PixelPainterResourceGenerator.py:23
 msgid "Kauri tree - 6 pages"
-msgstr ""
+msgstr "Kaurifenyő - 6 oldal"
 
 #: resources/generators/PixelPainterResourceGenerator.py:24
 msgid "Butterfly - 6 pages"
-msgstr ""
+msgstr "Pillangó - 6 oldal"
 
 #: resources/generators/PixelPainterResourceGenerator.py:25
 msgid "Hot air balloon - 8 pages"
-msgstr ""
+msgstr "Forró levegős lufi - 8 oldal"
 
 #: resources/generators/PixelPainterResourceGenerator.py:26
 msgid "Boat - 9 pages"
-msgstr ""
+msgstr "Hajó - 9 oldal"
 
 #: resources/generators/PixelPainterResourceGenerator.py:27
 msgid "Parrots - 32 pages"
-msgstr ""
+msgstr "Papagájok - 32 oldal"
 
 #: resources/generators/PixelPainterResourceGenerator.py:36
 msgid "Black and White"
-msgstr ""
+msgstr "Fekete és fehér"
 
 #: resources/generators/PixelPainterResourceGenerator.py:43
 msgid "Run length encoding"
-msgstr ""
+msgstr "Futamhossz kódolás"
 
 #: resources/generators/PixelPainterResourceGenerator.py:50
 msgid "Greyscale"
-msgstr ""
+msgstr "Szürkeskála"
 
 #: resources/generators/PixelPainterResourceGenerator.py:59
 msgid "Colour"
-msgstr ""
+msgstr "Szín"
 
 #: resources/generators/PixelPainterResourceGenerator.py:74
 msgid "Star"
-msgstr ""
+msgstr "Csillag"
 
 #: resources/generators/PixelPainterResourceGenerator.py:75
 msgid "Teacup"
-msgstr ""
+msgstr "Teáscsésze"
 
 #: resources/generators/PixelPainterResourceGenerator.py:76
 msgid "Cat"
-msgstr ""
+msgstr "Macska"
 
 #: resources/generators/PixelPainterResourceGenerator.py:77
 msgid "Boat"
-msgstr ""
+msgstr "Hajó"
 
 #: resources/generators/PixelPainterResourceGenerator.py:78
 msgid "Fish"
-msgstr ""
+msgstr "Hal"
 
 #: resources/generators/PixelPainterResourceGenerator.py:79
 msgid "Hot air balloon"
-msgstr ""
+msgstr "Hőlégballon"
 
 #: resources/generators/PixelPainterResourceGenerator.py:80
 #: templates/general/people.html:154
 msgid "Parrots"
-msgstr ""
+msgstr "Papagájok"
 
 #: resources/generators/PixelPainterResourceGenerator.py:81
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:69
 msgid "Kauri tree"
-msgstr ""
+msgstr "Kaurifenyő"
 
 #: resources/generators/PixelPainterResourceGenerator.py:82
 msgid "Butterfly"
-msgstr ""
+msgstr "Pillangó"
 
 #: resources/generators/PixelPainterResourceGenerator.py:104
 msgid "Colouring type"
-msgstr ""
+msgstr "Színezés típusa"
 
 #: resources/generators/PixelPainterResourceGenerator.py:110
 msgid "Image"
-msgstr ""
+msgstr "Kép"
 
 #: resources/generators/PixelPainterResourceGenerator.py:410
 msgid "Pixel Painter"
-msgstr ""
+msgstr "Képpontos színező"
 
 #: resources/generators/PixelPainterResourceGenerator.py:412
 msgid "This page should be kept secret from students."
-msgstr ""
+msgstr "Ezt az oldalt rejtsük el a diákok elől."
 
 #: resources/generators/PixelPainterResourceGenerator.py:414
 msgid "Page grid reference for {} image"
-msgstr ""
+msgstr "Hiperhivatkozás a {} képhez"
 
 #: resources/generators/PixelPainterResourceGenerator.py:417
 msgid "Once pixels on each page are filled in correctly, cut each grid out and arrange in the following layout (page names are in the top right corner)."
@@ -455,100 +455,100 @@ msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:432
 msgid "The pixel values are using 2 bit colour values."
-msgstr ""
+msgstr "A pixelértékek 2 bites színértékeket használnak."
 
 #: resources/generators/PixelPainterResourceGenerator.py:434
 msgid "The pixel values are using 5 bit RGB colour values (2 red, 2 green, 1 blue)."
-msgstr ""
+msgstr "A pixelértékek 5 bites RGB színértékeket használnak (2 piros, 2 zöld, 1 kék)."
 
 #: resources/generators/PixelPainterResourceGenerator.py:436
 msgid "Extra pixel legends are at the end of this document for students."
-msgstr ""
+msgstr "További pixel jelmagyarázatok találhatók a dokumentum végén a tanulók számára."
 
 #: resources/generators/PixelPainterResourceGenerator.py:455
 msgid "Pixel legend"
-msgstr ""
+msgstr "Pixel jelmagyarázat"
 
 #: resources/generators/PixelPainterResourceGenerator.py:477
 msgid "Run Length Encodings"
-msgstr ""
+msgstr "Futamhossz kódolások"
 
 #: resources/generators/PixelPainterResourceGenerator.py:482
 msgid "Encoding for page {}"
-msgstr ""
+msgstr "Kódolás az oldalhoz {}"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:23
 msgid "Number of cards (15 or 31)"
-msgstr ""
+msgstr "Kártyák száma (15 vagy 31)"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:24
 msgid "1 to 99"
-msgstr ""
+msgstr "1-tól 99-ig"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:25
 msgid "1 to 999"
-msgstr ""
+msgstr "1-tól 999-ig"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:39
 msgid "Number of cards"
-msgstr ""
+msgstr "Kártyák száma"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:45
 msgid "Range of numbers"
-msgstr ""
+msgstr "Számtartomány"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:51
 msgid "Include teacher guide sheet"
-msgstr ""
+msgstr "Tanári útmutató lapot tartalmazza"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:76
 msgid "Add list of numbers below:"
-msgstr ""
+msgstr "Add meg a számok listáját:"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:126
 msgid "Teacher guide sheet for binary search activity"
-msgstr ""
+msgstr "Tanári útmutató a bináris keresés feladathoz"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:129
 msgid "Use this sheet to circle the number you are asking your class to look for when you are demonstrating how the binary search works. This allows you to demonstrate the maximum number of searches it would take. When students are playing the number hunt game, they can choose any number. Avoid those numbers that are underlined as they are key binary search positions (avoiding them is a good thing to do for demonstrations, but in practice students, or computers, won’t intentionally avoid these)."
-msgstr ""
+msgstr "Karikázd be a lapon azt a számot, amellyel bemutatod, hogyan működik a bináris keresés. Ez lehetővé teszi, hogy bemutasd a keresések maximális számát, amelyre szükség lenne. Amikor a diákok a számvadászatot játsszák, bármilyen számot választhatnak. Ne válaszd ki az aláhúzott számokat, mivel ezek kulcsfontosságú bináris keresési pozíciók (ezek kihagyása előnyös a demonstráció során, de a gyakorlatban a tanulók, illetve a számítógépek szándékosan nem fogják kihagyni ezeket)."
 
 #: resources/generators/SearchingCardsResourceGenerator.py:139
 msgid "Sorted numbers"
-msgstr ""
+msgstr "Rendezett számok"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:178
 msgid "with helper sheet"
-msgstr ""
+msgstr "segítő lappal"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:180
 msgid "without helper sheet"
-msgstr ""
+msgstr "segítő lap nélkül"
 
 #: resources/generators/SearchingCardsResourceGenerator.py:182
 msgid "{} cards"
-msgstr ""
+msgstr "{} kártyák"
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:19
 msgid "Small numbers (1 to 10)"
-msgstr ""
+msgstr "Kis számok (1-től 10-ig)"
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:23
 msgid "Large numbers (7 digit numbers)"
-msgstr ""
+msgstr "Nagy számok (7 számjegyű számok)"
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:27
 msgid "Letters"
-msgstr ""
+msgstr "Betűk"
 
 #. Translators: A set of letters from your language's alphabet, seperated by commas
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:29
 msgid "L,O,N,K,E,D,S,P,G,B,I,Y"
-msgstr ""
+msgstr "L,O,N,K,E,D,S,P,G,B,I,Y"
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:34
 msgid "Words"
-msgstr ""
+msgstr "Szavak"
 
 #. Translators: A set of words from your language with similar spelling, seperated by commas
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:36
@@ -557,145 +557,145 @@ msgstr ""
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:41
 msgid "Fractions"
-msgstr ""
+msgstr "Törtek"
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:47
 msgid "Butterfly life cycle"
-msgstr ""
+msgstr "Pillangó életciklus"
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:58
 msgid "Little Red Riding Hood"
-msgstr ""
+msgstr "Piroska"
 
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:91
 msgid "Card Type"
-msgstr ""
+msgstr "Kártya típusa"
 
 #: resources/generators/SortingNetworkResourceGenerator.py:10
 msgid "Easy Numbers (1 digits)"
-msgstr ""
+msgstr "Könnyű számok ( 1 számjegyű)"
 
 #: resources/generators/SortingNetworkResourceGenerator.py:11
 msgid "Medium Numbers (2 digits)"
-msgstr ""
+msgstr "Közepes számok ( 2 számjegyű)"
 
 #: resources/generators/SortingNetworkResourceGenerator.py:12
 msgid "Hard Numbers (3 digits)"
-msgstr ""
+msgstr "Nehéz számok (3 számjegy)"
 
 #: resources/generators/SortingNetworkResourceGenerator.py:13
 msgid "None (Blank - Useful as template)"
-msgstr ""
+msgstr "Nincs (Üres - sablonként hasznos)"
 
 #: resources/generators/TrainStationsResourceGenerator.py:9
 msgid "Circular"
-msgstr ""
+msgstr "Körkörös"
 
 #: resources/generators/TrainStationsResourceGenerator.py:10
 msgid "Twisted"
-msgstr ""
+msgstr "Csavart"
 
 #: resources/generators/TrainStationsResourceGenerator.py:23
 msgid "Train track shape"
-msgstr ""
+msgstr "A vasúti pálya alakja"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:14
 msgid "Student map"
-msgstr ""
+msgstr "Tanulói térkép"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:15
 msgid "Island posters"
-msgstr ""
+msgstr "Sziget plakátok"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:25
 msgid "Dead Man's Island"
-msgstr ""
+msgstr "Holt ember szigete"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:35
 msgid "Musket Hill"
-msgstr ""
+msgstr "Muskéta hegy"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:45
 msgid "Mutineers' Island"
-msgstr ""
+msgstr "Lázadók szigete"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:55
 msgid "Pirates' Island"
-msgstr ""
+msgstr "Kalózok szigete"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:65
 msgid "Shipwreck Bay"
-msgstr ""
+msgstr "Hajóroncs öböl"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:75
 msgid "Smugglers' Cove"
-msgstr ""
+msgstr "Csempészek öble"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:85
 msgid "Treasure Island"
-msgstr ""
+msgstr "Kincses sziget"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:105
 msgid "Printable type"
-msgstr ""
+msgstr "Nyomtatható típus"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:323
 msgid "Boat A"
-msgstr ""
+msgstr "A hajó"
 
 #: resources/generators/TreasureIslandResourceGenerator.py:326
 msgid "Boat B"
-msgstr ""
+msgstr "B hajó"
 
 #: resources/models.py:12
 msgid "Printable"
-msgstr ""
+msgstr "Nyomtatható"
 
 #: resources/utils/BaseResourceGenerator.py:18
 msgid "A4"
-msgstr ""
+msgstr "A4"
 
 #: resources/utils/BaseResourceGenerator.py:19
 msgid "US Letter"
-msgstr ""
+msgstr "US Letter méret"
 
 #: resources/utils/BaseResourceGenerator.py:50
 msgid "Paper Size"
-msgstr ""
+msgstr "Papír méret"
 
 #: resources/utils/BaseResourceGenerator.py:82
 msgid "Header Text"
-msgstr ""
+msgstr "Fejléc szövege"
 
 #: resources/utils/BaseResourceGenerator.py:83
 msgid "Example School: Room Four"
-msgstr ""
+msgstr "Példaiskola: Négyes szoba"
 
 #: resources/utils/BaseResourceGenerator.py:91
 msgid "Number of Copies"
-msgstr ""
+msgstr "Másolatok száma"
 
 #: resources/utils/resource_parameters.py:211
 #: templates/topics/all-curriculum-integration-list.html:57
 #: templates/topics/curriculum-integrations-table.html:32
 #: templates/topics/lessons-table.html:42
 msgid "Yes"
-msgstr ""
+msgstr "Igen"
 
 #: resources/utils/resource_parameters.py:211
 #: templates/topics/all-curriculum-integration-list.html:60
 #: templates/topics/curriculum-integrations-table.html:35
 #: templates/topics/lessons-table.html:46
 msgid "No"
-msgstr ""
+msgstr "Nem"
 
 #: templates/404.html:6 templates/404.html:13
 msgid "Page not found"
-msgstr ""
+msgstr "Az oldal nem található"
 
 #: templates/404.html:14
 msgid "We are sorry but we could not find a page for the link you provided."
-msgstr ""
+msgstr "Sajnáljuk, de nem található oldal a megadott linken."
 
 #: templates/404.html:15
 msgid "You may find one of the links below useful:"
@@ -938,7 +938,7 @@ msgstr ""
 
 #: templates/general/computational-thinking.html:87
 msgid "Computational Thinking in CS Unplugged"
-msgstr ""
+msgstr "Az Informatikai Gondolkodás a CS Unplugged-ban"
 
 #: templates/general/computational-thinking.html:89
 msgid "<p> Throughout the lessons and units in CS Unplugged there are many links to Computational Thinking. Teaching Computational Thinking through CS Unplugged activities teaches students how to: </p> <ul> <li>describe a problem,</li> <li>identify the important details needed to solve this problem,</li> <li>break the problem down into small, logical steps,</li> <li>use these steps to create a process (algorithm) that solves the problem,</li> <li>and then evaluate this process.</li> </ul>"
@@ -958,11 +958,11 @@ msgstr ""
 
 #: templates/general/computational-thinking.html:124
 msgid "Computational Thinking skills"
-msgstr ""
+msgstr "Informatikai Gondolkodási készségek"
 
 #: templates/general/computational-thinking.html:128
 msgid "Algorithmic thinking"
-msgstr ""
+msgstr "Algoritmikus gondolkodás"
 
 #: templates/general/computational-thinking.html:133
 msgid "Algorithms are at the heart of Computational Thinking and Computer Science, because in Computer Science the solutions to problems are not simply an answer (e.g. ‘42’, or a fact), they are algorithms. An algorithm is a step-by-step process that solves a problem or completes a task. If you follow the algorithm's steps correctly, you will arrive at a correct solution, even for different inputs. For example, we can use an algorithm to find the shortest route between two locations on a map; the same algorithm can be used for any pair of starting and finishing points, so the solution depends on the input to the algorithm. If we know the algorithm for solving a problem then we can solve that problem easily, whenever we want, without having to think! We can just follow the steps. Computers can’t think for themselves, so they need to be given algorithms to do things."
@@ -1018,7 +1018,7 @@ msgstr ""
 
 #: templates/general/computational-thinking.html:255
 msgid "Generalising and patterns"
-msgstr ""
+msgstr "Általánosítás és minták "
 
 #: templates/general/computational-thinking.html:260
 msgid "Generalising is also referred to as 'pattern recognition and generalisation'. Generalisation is taking a solution (or part of a solution) to a problem and generalising it so it can be applied to other similar problems and tasks. Since solutions in Computer Science are algorithms, this means we take an algorithm and make it general enough that it can be used for a range of problems. This process involves abstraction, because to make something more general we have to remove unnecessary details that are related to a specific problem or situation, but are not important to how the algorithm functions."
@@ -1126,7 +1126,7 @@ msgstr ""
 
 #: templates/general/index.html:85
 msgid "Activities"
-msgstr ""
+msgstr "Tevékenységek"
 
 #: templates/general/index.html:96
 msgid "Plugging it in"
@@ -1134,15 +1134,15 @@ msgstr ""
 
 #: templates/general/people.html:21
 msgid "version 4.0.0 onwards"
-msgstr ""
+msgstr "a 4.0.0 verziótól kezdve"
 
 #: templates/general/people.html:23
 msgid "Founders"
-msgstr ""
+msgstr "Alapítók"
 
 #: templates/general/people.html:31 templates/general/people.html:113
 msgid "Advisers"
-msgstr ""
+msgstr "Tanácsadók"
 
 #: templates/general/people.html:35
 msgid "Computer Scientist"
@@ -1150,29 +1150,29 @@ msgstr ""
 
 #: templates/general/people.html:38
 msgid "Current Team"
-msgstr ""
+msgstr "Jelenlegi csapat"
 
 #: templates/general/people.html:41
 msgid "Founder &amp; Content Writer"
-msgstr ""
+msgstr "Alapító&amp; Tartalomíró"
 
 #: templates/general/people.html:42 templates/general/people.html:43
 #: templates/general/people.html:47 templates/general/people.html:53
 msgid "Content Writer"
-msgstr ""
+msgstr "Tartalomíró"
 
 #: templates/general/people.html:44
 msgid "Project Manager &amp; Technical Team"
-msgstr ""
+msgstr "Projekt menedzser &amp; Műszaki csapat"
 
 #: templates/general/people.html:45 templates/general/people.html:46
 #: templates/general/people.html:54 templates/general/people.html:55
 msgid "Technical Team"
-msgstr ""
+msgstr "Műszaki csapat"
 
 #: templates/general/people.html:50
 msgid "Previous Team Members"
-msgstr ""
+msgstr "Korábbi csapattagok"
 
 #: templates/general/people.html:56
 msgid "Creative Content Developer &amp; Illustrator"
@@ -1260,7 +1260,7 @@ msgstr ""
 
 #: templates/general/principles.html:119
 msgid "For everyone"
-msgstr ""
+msgstr "Mindenki számára"
 
 #: templates/general/principles.html:122
 msgid "The programme is strongly international – we encourage variations that are relevant to local cultures (for example, some activities that require a large playground can be changed to a board game for schools that have very little open space; others use contexts that might not be familiar to students in a different culture). Translators should try the activities locally and involve teachers. It is better to adapt activities rather than translate them faithfully to something that would be less meaningful in the local culture. The activities are intended to be inclusive."
@@ -1268,7 +1268,7 @@ msgstr ""
 
 #: templates/general/principles.html:130
 msgid "Co-operative"
-msgstr ""
+msgstr "Együttműködő"
 
 #: templates/general/principles.html:133
 msgid "We encourage co-operation, communication and problem solving. Competition can also be effective if it is used appropriately, especially between teams rather than individuals, but having students working cooperatively is a great way to learn about problem solving."
@@ -1359,7 +1359,7 @@ msgstr ""
 
 #: templates/resources/resource.html:59
 msgid "Preview"
-msgstr ""
+msgstr "Előnézet"
 
 #: templates/resources/resource.html:74
 msgid "Related Lessons"
@@ -1369,7 +1369,7 @@ msgstr ""
 #: templates/topics/all-curriculum-integration-list.html:27
 #: topics/models.py:108
 msgid "Topic"
-msgstr ""
+msgstr "Téma"
 
 #: templates/resources/resource.html:79
 msgid "Ages"
