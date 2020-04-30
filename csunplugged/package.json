@@ -7,7 +7,7 @@
         "bootstrap": "4.4.1",
         "details-element-polyfill": "2.4.0",
         "popper.js": "1.15.0",
-        "jquery": "3.4.1",
+        "jquery": "3.5.0",
 	    "codemirror": "5.52.2"
     },
     "devDependencies": {
