@@ -10,6 +10,15 @@ class Command(BaseCommand):
 
     help = "Reads Classic CS Unplugged pages and adds these to database"
 
+    def add_arguments(self, parser):
+        """Add optional parameter to updatedata command."""
+        parser.add_argument(
+            "--lite-load",
+            action="store_true",
+            dest="lite_load",
+            help="Perform lite load (only load key content)",
+        )
+
     def handle(self, *args, **options):
         """Automatically called when the loadclassicpages command is given."""
         base_path = settings.CLASSIC_PAGES_CONTENT_BASE_PATH
