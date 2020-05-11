@@ -1,0 +1,28 @@
+"""Translation options for localised models.
+
+Utilised by django-modeltranslation. See http://django-modeltranslation.readthedocs.io
+"""
+
+from modeltranslation.translator import translator, TranslationOptions
+from at_home.models import Activity
+
+
+class ActivityTranslationOptions(TranslationOptions):
+    """Translation options for Activity model."""
+
+    fields = (
+        "name",
+        "introduction",
+        "inside_the_computer",
+        "project",
+        "more_information",
+        "activity_steps",
+    )
+    fallback_undefined = {
+        "inside_the_computer": None,
+        "project": None,
+        "more_information": None,
+    }
+
+
+translator.register(Activity, ActivityTranslationOptions)

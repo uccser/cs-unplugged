@@ -1,0 +1,96 @@
+{% extends "base-at-home.html" %}
+
+{% load i18n %}
+{% load static %}
+{% load translate_url %}
+
+{% block custom_title %}
+    {% trans "CS Unplugged at home" %}
+{% endblock custom_title %}
+
+{% block body_attribute_overrides %} class="homepage"{% endblock body_attribute_overrides %}
+{% block navbar_class_overrides %} trans-navbar{% endblock navbar_class_overrides %}
+
+{% block body_container %}
+    <div id="at-home-jumbotron" class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 text-center">
+                    <img src="{% static 'img/cs-unplugged-logo-at-home-white.svg' %}" class="my-5" alt="CS Unplugged at home logo">
+                    <h2 class="text-light">
+                        {% blocktrans trimmed %}
+                            Try something different away from the screen
+                        {% endblocktrans %}
+                    </h2>
+                    {% if LANGUAGE_CODE != "en" %}
+                        <div class="alert alert-danger text-dark" role="alert">
+                            {% blocktrans trimmed with language=current_language.name_local %}
+                            <h4>Sorry! This item is not yet available in {{ language }}.</h4>
+                            <p>This item is available in the following languages:</p>
+                            {% endblocktrans %}
+                            <p class="mb-0">
+                                {% with language='en' %}
+                                    <a class="btn btn-outline-primary" href="{% translate_url language %}">
+                                        English
+                                    </a>
+                                {% endwith %}
+                                <a class="btn btn-outline-danger" href="{% url 'general:home' %}">
+                                    {% trans "Return to homepage "%}
+                                </a>
+                            </p>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-3 text-center mb-4">
+                <img class="img-fluid content-image p-3" src="{% static 'img/topics/exercise-2.png' %}">
+            </div>
+            <div class="col-12 col-md-10 col-lg-6 mb-4">
+                <p class="lead mb-0">
+                    {% blocktrans trimmed %}
+                    <strong>Welcome to Computer Science Unplugged!</strong>
+                    This is a collection of fun and engaging activities that enable children to explore fundamental ideas in Computer Science, <em>without</em> having to use a computer.
+                    Traditionally these activities have been designed to be used with school classes and larger groups, but we’ve got many ideas for you to try out if you’re at home.
+                    {% endblocktrans %}
+                </p>
+            </div>
+
+            <div class="col-12 col-md-10 col-lg-3 text-center mb-4">
+                <img class="img-fluid content-image p-3" src="{% static 'img/topics/searching-algorithms-icon.png' %}">
+            </div>
+            <div class="w-100"></div>
+            <div class="col-6 col-md-4 col-lg-2 at-home-divider mb-4"></div>
+        </div>
+        <div class="row justify-content-between">
+            {% for activity in activities %}
+                <div class="col-12 col-md-8 col-lg-6 mb-4">
+                    <a class="link-item no-text-decoration d-block h-100{% if not activity.translation_available %} unavailable{% endif %}"
+                        href="{% url 'at_home:activity' activity.slug %}">
+                        <div class="row align-items-center h-100">
+                            <div class="col-12 text-center text-md-{{LANGUAGE_START}}">
+                                <h2>{{ activity.name }}</h2>
+                                {% if not activity.translation_available %}
+                                    {% include "generic/not-available-badge.html" %}
+                                {% endif %}
+                            </div>
+                            <div class="d-none col-md-5 d-md-flex justify-content-end align-items-end">
+                                {% if activity.icon %}
+                                    <img class="img-fluid" src="{% static activity.icon %}">
+                                {% endif %}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock body_container %}
+
+{% block scripts %}
+    <script src="{% static 'js/homepage.js' %}"></script>
+{% endblock scripts %}
