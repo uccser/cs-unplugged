@@ -77,12 +77,6 @@ class ActivityLoader(TranslatableModelLoader):
         for language, content in more_information_translations.items():
             activity_translations[language]['more_information'] = content.html_string
 
-        # if "other-resources" in topic_structure and topic_structure["other-resources"] is not None:
-        #     other_resources_filename = topic_structure["other-resources"]
-        #     other_resources_translations = self.get_markdown_translations(other_resources_filename)
-        #     for language, content in other_resources_translations.items():
-        #         topic_translations[language]["other_resources"] = content.html_string
-
         # Check if icon is given
         if 'icon' in self.activity_data['icon']:
             activity_icon = self.activity_data['icon']
@@ -93,7 +87,7 @@ class ActivityLoader(TranslatableModelLoader):
         else:
             activity_icon = None
 
-        # Create activity objects and save to the database
+        # Create or update activity objects and save to the database
         activity, created = Activity.objects.update_or_create(
             slug=self.activity_slug,
             defaults={
@@ -110,6 +104,16 @@ class ActivityLoader(TranslatableModelLoader):
             self.log('Added Activity: {}'.format(activity.name))
         else:
             self.log('Updated Activity: {}'.format(activity.name))
+
+        # structure_filename = os.path.join(unit_plan_file_path)
+        self.factory.create_challenge_loader(
+            activity,
+            base_path=self.base_path,
+            content_path=self.content_path,
+            structure_filename=self.structure_filename,
+            lite_loader=self.lite_loader,
+        ).load()
+
 
     def get_activity_step_translations(self):
         """Get dictionary of translations of activity steps.

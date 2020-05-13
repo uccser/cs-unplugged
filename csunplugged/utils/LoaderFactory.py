@@ -12,6 +12,7 @@ from topics.management.commands._TopicLoader import TopicLoader
 from topics.management.commands._UnitPlanLoader import UnitPlanLoader
 from topics.management.commands._ClassroomResourcesLoader import ClassroomResourcesLoader
 from at_home.management.commands._ActivityLoader import ActivityLoader
+from at_home.management.commands._ChallengeLoader import ChallengeLoader
 from resources.management.commands._ResourcesLoader import ResourcesLoader
 from classic.management.commands._ClassicPagesLoader import ClassicPagesLoader
 from general.management.commands._GeneralPagesLoader import GeneralPagesLoader
@@ -67,6 +68,10 @@ class LoaderFactory:
     def create_activity_loader(self, **kwargs):
         """Create activity loader."""
         return ActivityLoader(self, **kwargs)
+
+    def create_challenge_loader(self, activity, **kwargs):
+        """Create challenge loader."""
+        return ChallengeLoader(self, activity, **kwargs)
 
     def create_resources_loader(self, **kwargs):
         """Create resources loader."""

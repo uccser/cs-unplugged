@@ -4,7 +4,10 @@ Utilised by django-modeltranslation. See http://django-modeltranslation.readthed
 """
 
 from modeltranslation.translator import translator, TranslationOptions
-from at_home.models import Activity
+from at_home.models import (
+    Activity,
+    Challenge,
+)
 
 
 class ActivityTranslationOptions(TranslationOptions):
@@ -25,4 +28,14 @@ class ActivityTranslationOptions(TranslationOptions):
     }
 
 
+class ChallengeTranslationOptions(TranslationOptions):
+    """Translation options for Challenge model."""
+
+    fields = (
+        "question",
+        "answer",
+    )
+
+
 translator.register(Activity, ActivityTranslationOptions)
+translator.register(Challenge, ChallengeTranslationOptions)

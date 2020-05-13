@@ -3,13 +3,13 @@
     answer: yes,no,yes,no,yes,no
 2:
     question: Suppose there are 8 cards instead of 5. How would you represent the number 96? Give your answer by typing a 1 if the card is visible, and 0 if it isn’t. For example, the number 3 would be typed as "00000011". As an aside, this is a common way to write numbers in binary representation - typing 0 and 1 is simpler than yes and no.
-    answer: 01100000
+    answer: "01100000"
 3:
     question: What is the smallest number of dots that Arnold could represent with 8 cards?
-    answer: 0
+    answer: "0"
 4:
     question: What is the largest number of dots that Arnold could represent with 8 cards?
-    answer: 255
+    answer: "255"
 5:
     question: If we use 0 and 1 for "no" and "yes", how many dots would the binary number 1111111111?
-    answer: 1023
+    answer: "1023"

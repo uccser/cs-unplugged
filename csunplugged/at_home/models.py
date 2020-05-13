@@ -22,7 +22,6 @@ class Activity(TranslatableModel):
     more_information = models.TextField(default="")
     # The following is stored as HTML from a YAML file
     activity_steps = models.TextField(default="")
-    # TODO: Add challenges
 
     def get_absolute_url(self):
         """Return the canonical URL for an activity.
@@ -44,3 +43,42 @@ class Activity(TranslatableModel):
         """Set consistent ordering of activities."""
 
         ordering = ["order_number", ]
+
+
+class Challenge(TranslatableModel):
+    """Model for activity challenge in database."""
+
+    activity = models.ForeignKey(
+        Activity,
+        on_delete=models.CASCADE,
+        related_name="challenges",
+    )
+    order_number = models.PositiveSmallIntegerField(unique=True)
+    question = models.TextField(default="")
+    answer = models.CharField(max_length=200, default="")
+
+    def __str__(self):
+        """Text representation of a challenge object.
+
+        Returns:
+            ID of a challenge (str).
+        """
+        return f"Challenge #{self.order_number}"
+
+    class Meta:
+        """Set consistent ordering of activities."""
+
+        ordering = ["order_number", ]
+
+
+class ChallengeAttempt(models.Model):
+
+    challenge = models.ForeignKey(
+        Challenge,
+        on_delete=models.CASCADE,
+        related_name="challenge_attempts",
+    )
+    datetime = models.DateTimeField(auto_now_add=True)
+    language = models.CharField(max_length=25)
+    answer = models.CharField(max_length=200, default="")
+    correct = models.BooleanField()
