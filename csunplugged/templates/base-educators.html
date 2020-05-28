@@ -8,6 +8,8 @@
 
 {% get_language_info for LANGUAGE_CODE as current_language %}
 
+{% breadcrumb home_label "general:home" %}
+
 {% block navbar %}
     <nav class="navbar fixed-top navbar-expand-md navbar-dark py-1 d-print-none{% block navbar_class_overrides %}{% endblock navbar_class_overrides %}">
         <div class="container px-0">

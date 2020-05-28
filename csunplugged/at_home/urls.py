@@ -17,4 +17,10 @@ urlpatterns = [
         views.ActivityView.as_view(),
         name='activity'
     ),
+    # eg: /at-home/binary-challenge/challenges/
+    path(
+        '<slug:activity_slug>/challenges/',
+        views.ActivityChallengesView.as_view(),
+        name='activity_challenges'
+    ),
 ]

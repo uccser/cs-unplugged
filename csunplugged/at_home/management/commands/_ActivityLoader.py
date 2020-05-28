@@ -43,6 +43,22 @@ class ActivityLoader(TranslatableModelLoader):
         """
         activity_translations = self.get_blank_translation_dictionary()
 
+        try:
+            order_number = self.activity_data['order-number']
+            activity_icon = self.activity_data['icon']
+        except KeyError:
+            raise MissingRequiredFieldError(
+                self.structure_file_path,
+                [
+                    "order-number",
+                    "icon"
+                ],
+                "Activity"
+            )
+
+        # Check if icon is available
+        find_image_files([activity_icon], self.structure_file_path)
+
         # Introduction content
         content_translations = self.get_markdown_translations(INTRODUCTION_FILENAME)
         for language, content in content_translations.items():
@@ -77,21 +93,11 @@ class ActivityLoader(TranslatableModelLoader):
         for language, content in more_information_translations.items():
             activity_translations[language]['more_information'] = content.html_string
 
-        # Check if icon is given
-        if 'icon' in self.activity_data['icon']:
-            activity_icon = self.activity_data['icon']
-            if activity_icon is not None:
-                find_image_files([activity_icon], self.structure_file_path)
-            else:
-                activity_icon = None
-        else:
-            activity_icon = None
-
         # Create or update activity objects and save to the database
         activity, created = Activity.objects.update_or_create(
             slug=self.activity_slug,
             defaults={
-                'order_number': self.activity_data['order-number'],
+                'order_number': order_number,
                 'icon': activity_icon,
             }
         )

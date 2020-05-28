@@ -60,6 +60,13 @@
                         </li>
                     {% endif %}
                 </ul>
+
+                {% if challenges %}
+                    <hr>
+                    <a href="{% url 'at_home:activity_challenges' activity.slug %}">
+                        {% trans "Challenges for kids" %}
+                    </a>
+                {% endif %}
             </div>
         {% endif %}
     </div>

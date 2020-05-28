@@ -19,3 +19,23 @@ class ActivityView(generic.DetailView):
     template_name = "at_home/activity.html"
     context_object_name = "activity"
     slug_url_kwarg = "activity_slug"
+
+
+class ActivityChallengesView(generic.DetailView):
+    """View for challenges of a specific activity."""
+
+    model = Activity
+    template_name = "at_home/activity_challenges.html"
+    context_object_name = "activity"
+    slug_url_kwarg = "activity_slug"
+
+    def get_context_data(self, **kwargs):
+        """Provide the context data for the activity view.
+
+        Returns:
+            Dictionary of context data.
+        """
+        context = super(ActivityChallengesView, self).get_context_data(**kwargs)
+        context["challenges"] = self.object.challenges.all()
+        context["challenge_answers"] = dict()
+        return context
