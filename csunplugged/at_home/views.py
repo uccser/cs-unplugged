@@ -37,5 +37,4 @@ class ActivityChallengesView(generic.DetailView):
         """
         context = super(ActivityChallengesView, self).get_context_data(**kwargs)
         context["challenges"] = self.object.challenges.all()
-        context["challenge_answers"] = dict()
         return context

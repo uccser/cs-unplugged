@@ -11,6 +11,7 @@
 
 {% block breadcrumbs %}
     {% breadcrumb activity.name "at_home:activity" activity.slug %}
+    {% breadcrumb "Challenges" "at_home:activity_challenges" activity.slug %}
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
@@ -28,11 +29,14 @@
 {% block content_container %}
     <div class="col-12">
         <p>
-            Here is a series of five challenges for you to complete.
+            Here are five challenges that build on the ideas you’ve been working with.
             You might like to do one a day...
             The first one of each set should be fairly easy, but they get harder.
-            The prize?
+            You can type in your answer.
+            What do you get out of this?
             Just the warm feeling you get when you know you've solved one of Arnold's challenges, and the satisfaction of knowing that you've mastered a deep idea from computer science.
+        </p>
+        <p>
             Enjoy the challenges!
         </p>
 
@@ -55,16 +59,16 @@
                         <h3>Question</h3>
                         <div class="tab-content" id="challenge-pills-tabContent">
                             {% for challenge in challenges %}
-                                <div class="tab-pane fade {% if forloop.first%}show active{% endif %}" id="challenge-{{ challenge.order_number }}"
-                                    role="tabpanel" aria-labelledby="challenge-{{ challenge.order_number }}-tab">
+                                <div class="tab-pane mb-3 fade {% if forloop.first%}show active{% endif %}" id="challenge-{{ challenge.order_number }}"
+                                    role="tabpanel" aria-labelledby="challenge-{{ challenge.order_number }}-tab" data-challenge-number="{{ challenge.order_number }}">
                                         {% render_html_field challenge.question %}
                                 </div>
                             {% endfor %}
                         </div>
                         <!-- Add answer form and feedback -->
                         <h3>Answer</h3>
-                            <input class="form-control" type="text" placeholder="{% trans "Enter your answer here" %}">
-                            <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                            <input class="form-control mb-3" type="text" placeholder="{% trans "Enter your answer here" %}">
+                            <button id="submit-answer" class="btn btn-success mb-2">Submit</button>
                     </div>
 
                 </div>
@@ -76,5 +80,10 @@
 
 {% block scripts %}
     {% if activity.translation_available %}
+        <script type="text/javascript">
+            let challenges_json = {
+              {% for challenge in challenges %}{{ challenge.order_number }}: "{{ challenge.answer }}",{% endfor %}
+            };
+        </script>
     {% endif %}
 {% endblock scripts %}
