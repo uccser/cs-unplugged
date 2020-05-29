@@ -77,13 +77,20 @@ class ActivityLoader(TranslatableModelLoader):
         for language, content in inside_computer_translations.items():
             activity_translations[language]['inside_the_computer'] = content.html_string
 
-        project_translations = self.get_markdown_translations(
+
+        project_md_file_path = self.get_localised_file(
+            language,
             PROJECT_FILENAME,
-            heading_required=False,
-            remove_title=False,
         )
-        for language, content in project_translations.items():
-            activity_translations[language]['project'] = content.html_string
+        project_exists = os.path.exists(project_md_file_path)
+        if project_exists:
+            project_translations = self.get_markdown_translations(
+                PROJECT_FILENAME,
+                heading_required=False,
+                remove_title=False,
+            )
+            for language, content in project_translations.items():
+                activity_translations[language]['project'] = content.html_string
 
         more_information_translations = self.get_markdown_translations(
             MORE_INFORMATION_FILENAME,

@@ -7,6 +7,7 @@ from utils.check_required_files import find_image_files
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.InvalidYAMLValueError import InvalidYAMLValueError
 from at_home.models import Challenge
+import os.path
 
 CHALLENGES_FILENAME = 'challenges.yaml'
 
@@ -45,7 +46,7 @@ class ChallengeLoader(TranslatableModelLoader):
                 dict()
             ))
 
-            if challenge_data["image"] is not None:
+            if "image" in challenge_data:
                 challenge_image = challenge_data["image"]
                 # Check if challenge image is available
                 find_image_files([challenge_image], self.structure_file_path)

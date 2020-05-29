@@ -55,16 +55,16 @@
                         <h3>Question</h3>
                         <div class="tab-content" id="challenge-pills-tabContent">
                             {% for challenge in challenges %}
-                                <div class="tab-pane fade {% if forloop.first%}show active{% endif %}" id="challenge-{{ challenge.order_number }}"
+                                <div class="tab-pane fade {% if forloop.first%}show active{% endif %} mb-2" id="challenge-{{ challenge.order_number }}"
                                     role="tabpanel" aria-labelledby="challenge-{{ challenge.order_number }}-tab">
                                         {% render_html_field challenge.question %}
+                                        {% if challenge.image %}<img src="{% static challenge.image %}" class="img-fluid rounded">{% endif %}
                                 </div>
-                                {% if challenge.image %}<img src="{% static challenge.image %}" class="img-fluid">{% endif %}
                             {% endfor %}
                         </div>
                         <!-- Add answer form and feedback -->
                         <h3>Answer</h3>
-                            <input class="form-control" type="text" placeholder="{% trans "Enter your answer here" %}">
+                            <input class="form-control mb-2" type="text" placeholder="{% trans "Enter your answer here" %}">
                             <button type="submit" class="btn btn-primary mb-2">Submit</button>
                     </div>
 

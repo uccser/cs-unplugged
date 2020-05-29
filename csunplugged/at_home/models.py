@@ -18,7 +18,7 @@ class Activity(TranslatableModel):
     # The following are stored as HTML from Markdown files
     introduction = models.TextField(default="")
     inside_the_computer = models.TextField(default="")
-    project = models.TextField(default="")
+    project = models.TextField(default="", null=True, blank=True)
     more_information = models.TextField(default="")
     # The following is stored as HTML from a YAML file
     activity_steps = models.TextField(default="")
@@ -53,7 +53,7 @@ class Challenge(TranslatableModel):
         on_delete=models.CASCADE,
         related_name="challenges",
     )
-    order_number = models.PositiveSmallIntegerField(unique=True)
+    order_number = models.PositiveSmallIntegerField()
     question = models.TextField(default="")
     answer = models.CharField(max_length=200, default="")
     image = models.CharField(max_length=150, null=True, blank=True)
@@ -70,6 +70,7 @@ class Challenge(TranslatableModel):
         """Set consistent ordering of activities."""
 
         ordering = ["order_number", ]
+        unique_together = ['activity', 'order_number']
 
 
 class ChallengeAttempt(models.Model):
