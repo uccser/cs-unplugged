@@ -59,6 +59,7 @@
                                     role="tabpanel" aria-labelledby="challenge-{{ challenge.order_number }}-tab">
                                         {% render_html_field challenge.question %}
                                 </div>
+                                {% if challenge.image %}<img src="{% static challenge.image %}" class="img-fluid">{% endif %}
                             {% endfor %}
                         </div>
                         <!-- Add answer form and feedback -->

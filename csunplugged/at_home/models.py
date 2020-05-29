@@ -56,6 +56,7 @@ class Challenge(TranslatableModel):
     order_number = models.PositiveSmallIntegerField(unique=True)
     question = models.TextField(default="")
     answer = models.CharField(max_length=200, default="")
+    image = models.CharField(max_length=150, null=True, blank=True)
 
     def __str__(self):
         """Text representation of a challenge object.

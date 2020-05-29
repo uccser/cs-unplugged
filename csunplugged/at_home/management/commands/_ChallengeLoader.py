@@ -3,6 +3,7 @@
 from django.db import transaction
 from django.core.exceptions import ObjectDoesNotExist
 from utils.TranslatableModelLoader import TranslatableModelLoader
+from utils.check_required_files import find_image_files
 from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.InvalidYAMLValueError import InvalidYAMLValueError
 from at_home.models import Challenge
@@ -43,6 +44,11 @@ class ChallengeLoader(TranslatableModelLoader):
                 challenge_order_number,
                 dict()
             ))
+
+            if challenge_data["image"] is not None:
+                challenge_image = challenge_data["image"]
+                # Check if challenge image is available
+                find_image_files([challenge_image], self.structure_file_path)
 
             # Create or update challenge and save to databbase
             challenge, created = Challenge.objects.update_or_create(
