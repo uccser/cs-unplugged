@@ -1,5 +1,4 @@
-# Mind-reading magic using computer science
-
+# Mind-reading magic
 Video of the trick in action:
 
 {video url="https://vimeo.com/423871686"}
