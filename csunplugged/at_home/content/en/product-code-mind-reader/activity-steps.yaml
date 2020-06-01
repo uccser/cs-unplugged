@@ -12,7 +12,7 @@
     extra: Write down the digits on alternating lines as follows...
 # 12 digit barcode step 4
 -   image: img/at_home/product-code-mind-reader/12-digit-barcode-steps/product-code-mind-reader-step-4.jpg
-    description: Write the digits on two lines, putting every second digit on the other line. The example here is for the 12-digit product shown above (the child should read 0 48001 20802)
+    description: Write the digits on two lines, putting every second digit on the other line. The example here is for the 12-digit product shown above (the child should read 0 48001 20802 for that example).
 # 12 digit barcode step 5
 -   image: img/at_home/product-code-mind-reader/12-digit-barcode-steps/product-code-mind-reader-step-5.jpg
     description: Remember to keep the last digit secret!
@@ -49,11 +49,11 @@
     extra: Write down the digits on alternating lines as follows...
 # 13 digit barcode step 3
 -   image: img/at_home/product-code-mind-reader/13-digit-barcode-steps/product-code-mind-reader-step-3.jpg
-    description: Write the digits on two lines, putting every second digit on the other line. The example here is for the 12-digit product shown above (the child should read 0 48001 20802).
+    description: Write the digits on two lines, putting every second digit on the other line. The example here is for the 13-digit product shown above (the child should read 9 300644 10321 for that example).
 # 13 digit barcode step 4
 -   image: img/at_home/product-code-mind-reader/13-digit-barcode-steps/product-code-mind-reader-step-4.jpg
     description: Remember to keep the last digit secret!
-    extra: Continue writing the digits on alternating lines; as you get to the 12th digit (6th digit on the second row), remind them to not read the last one. There will be 6 digits on the first line, and 5 digits on the second line. The digits shown here are for the product code 5 413676 665391.
+    extra: Continue writing the digits on alternating lines; as you get to the 12th digit (6th digit on the second row), remind them to not read the last one. There will be 6 digits on the first line, and 6 digits on the second line. The digits shown here are for the product code 9 300644 103213.
 # 13 digit barcode step 5
 -   image: img/at_home/product-code-mind-reader/13-digit-barcode-steps/product-code-mind-reader-step-5.jpg
     description: I’ll add up the two lines of numbers.
@@ -69,7 +69,7 @@
 # 13 digit barcode step 8
 -   image: img/at_home/product-code-mind-reader/13-digit-barcode-steps/product-code-mind-reader-step-8.jpg
     description: What number should I add to that to get a multiple of 10?
-    extra: Work out the single digit number that will make your calculation add up to a number ending with 0. In the example it is 1; but if the calculation had been 83, the result would be 7; if it had been 70, then the result would be 0.
+    extra: Work out the single digit number that will make your calculation add up to a number ending with 0. In the example it is 3; but if the calculation had been 83, the result would be 7; if it had been 70, then the result would be 0.
 # 13 digit barcode step 9
 -   image: img/at_home/product-code-mind-reader/13-digit-barcode-steps/product-code-mind-reader-step-9.jpg
     description: From reading your mind (or using some computer science!) I’ve worked out what the last digit is on the product... am I right?
