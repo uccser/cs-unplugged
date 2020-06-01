@@ -20,11 +20,13 @@ class ActivityTranslationOptions(TranslationOptions):
         "project",
         "more_information",
         "activity_steps",
+        "activity_extra_information",
     )
     fallback_undefined = {
         "inside_the_computer": None,
         "project": None,
         "more_information": None,
+        "activity_extra_information": None,
     }
 
 

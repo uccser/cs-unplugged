@@ -76,6 +76,9 @@
 
         <h2 id="activity-steps">{% trans "Activity steps" %}</h2>
         {% render_html_field activity.activity_steps %}
+        {% if activity.activity_extra_information %}
+            {% render_html_field activity.activity_extra_information %}
+        {% endif %}
 
         {% if activity.inside_the_computer %}
             <h2 id="inside-the-computer">{% trans "Inside the computer" %}</h2>
