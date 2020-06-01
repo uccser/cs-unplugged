@@ -22,6 +22,7 @@ class Activity(TranslatableModel):
     more_information = models.TextField(default="")
     # The following is stored as HTML from a YAML file
     activity_steps = models.TextField(default="")
+    activity_extra_information = models.TextField(default="")
 
     def get_absolute_url(self):
         """Return the canonical URL for an activity.

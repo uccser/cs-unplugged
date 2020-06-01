@@ -14,6 +14,7 @@ from at_home.models import Activity
 
 INTRODUCTION_FILENAME = 'introduction.md'
 ACTIVITY_STEPS_FILENAME = 'activity-steps.yaml'
+ACTIVITY_EXTRA_INFORMATION_FILENMAE = 'activity-extra-information.md'
 INSIDE_THE_COMPUTER_FILENAME = 'inside-the-computer.md'
 PROJECT_FILENAME = 'project.md'
 MORE_INFORMATION_FILENAME = 'more-information.md'
@@ -69,6 +70,20 @@ class ActivityLoader(TranslatableModelLoader):
         for language, content in activity_steps_translations.items():
             activity_translations[language]['activity_steps'] = content
 
+        activity_extra_info_md_file_path = self.get_localised_file(
+            language,
+            ACTIVITY_EXTRA_INFORMATION_FILENMAE,
+        )
+        activity_extra_info_exists = os.path.exists(activity_extra_info_md_file_path)
+        if activity_extra_info_exists:
+            activity_extra_info_translations = self.get_markdown_translations(
+                ACTIVITY_EXTRA_INFORMATION_FILENMAE,
+                heading_required=False,
+                remove_title=False,
+            )
+            for language, content in activity_extra_info_translations.items():
+                activity_translations[language]['activity_extra_information'] = content.html_string
+
         inside_computer_translations = self.get_markdown_translations(
             INSIDE_THE_COMPUTER_FILENAME,
             heading_required=False,
@@ -76,7 +91,6 @@ class ActivityLoader(TranslatableModelLoader):
         )
         for language, content in inside_computer_translations.items():
             activity_translations[language]['inside_the_computer'] = content.html_string
-
 
         project_md_file_path = self.get_localised_file(
             language,
