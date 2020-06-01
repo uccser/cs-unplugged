@@ -66,7 +66,7 @@
             <div class="w-100"></div>
             <div class="col-6 col-md-4 col-lg-2 at-home-divider mb-4"></div>
         </div>
-        <div class="row justify-content-between">
+        <div id="activities" class="row justify-content-between">
             {% for activity in activities %}
                 <div class="col-12 col-md-6 col-lg-4 mb-4">
                     <div class="card text-center{% if not activity.translation_available %} unavailable{% endif %}">

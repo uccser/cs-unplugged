@@ -56,21 +56,33 @@
                 </div>
                 <div class="col-12 col-lg-9">
                     <div class="card mb-3 p-3">
-                        <h3>Question</h3>
                         <div class="tab-content" id="challenge-pills-tabContent">
                             {% for challenge in challenges %}
-                                <div class="tab-pane mb-3 fade {% if forloop.first%}show active{% endif %}" id="challenge-{{ challenge.order_number }}"
+                                <div class="tab-pane mb-3 {% if forloop.first%}show active{% endif %}" id="challenge-{{ challenge.order_number }}"
                                     role="tabpanel" aria-labelledby="challenge-{{ challenge.order_number }}-tab" data-challenge-number="{{ challenge.order_number }}">
+                                        <h3>{{ challenge }}</h3>
                                         {% render_html_field challenge.question %}
                                 </div>
                             {% endfor %}
                         </div>
                         <!-- Add answer form and feedback -->
-                        <h3>Answer</h3>
-                            <input class="form-control mb-3" type="text" placeholder="{% trans "Enter your answer here" %}">
-                            <button id="submit-answer" class="btn btn-success mb-2">Submit</button>
+                        <div id="challenges-form">
+                            <div class="form-group">
+                                <label for="challenge-user-input"><strong>Your answer</strong></label>
+                                <input id="challenge-user-input" class="form-control" type="text" placeholder="{% trans "Enter your answer here" %}">
+                                <div class="valid-feedback">
+                                    Correct! Great work!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Sorry, that is incorrect.
+                                </div>
+                                <div class="empty-feedback">
+                                    Please enter an answer.
+                                </div>
+                            </div>
+                            <button id="submit-answer" type=button" class="btn btn-primary mb-2">Submit answer</button>
+                        </div>
                     </div>
-
                 </div>
             </div>
 
@@ -81,9 +93,10 @@
 {% block scripts %}
     {% if activity.translation_available %}
         <script type="text/javascript">
-            let challenges_json = {
+            var challenges_json = {
               {% for challenge in challenges %}{{ challenge.order_number }}: "{{ challenge.answer }}",{% endfor %}
             };
         </script>
+        <script src="{% static 'js/at-home-challenges.js' %}"></script>
     {% endif %}
 {% endblock scripts %}
