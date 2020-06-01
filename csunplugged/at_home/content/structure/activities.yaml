@@ -8,3 +8,6 @@ activities:
     product-code-mind-reader:
         order-number: 3
         icon: img/at_home/product-code-mind-reader/13-digit-barcode-steps/product-code-mind-reader-step-6.jpg
+    squeezing-pictures:
+        order-number: 4
+        icon: img/at_home/squeezing-pictures/squeezing-pictures-thumbnail.jpeg
