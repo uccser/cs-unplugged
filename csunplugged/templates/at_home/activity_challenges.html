@@ -62,6 +62,7 @@
                                     role="tabpanel" aria-labelledby="challenge-{{ challenge.order_number }}-tab" data-challenge-number="{{ challenge.order_number }}">
                                         <h3>{{ challenge }}</h3>
                                         {% render_html_field challenge.question %}
+                                        {% if challenge.image %}<img src="{% static challenge.image %}" class="img-fluid rounded">{% endif %}
                                 </div>
                             {% endfor %}
                         </div>
