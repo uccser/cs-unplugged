@@ -26,13 +26,12 @@ class ActivityChallengesView(generic.ListView):
 
     model = Challenge
     template_name = "at_home/activity_challenges.html"
-    context_object_name = "challenge"
-    slug_url_kwarg = "activity_slug"
+    context_object_name = "challenges"
     allow_empty = False
 
     def get_queryset(self, **kwargs):
-        activity = Activity.objects.get(slug=self.kwargs['activity_slug'])
-        return Challenge.objects.filter(activity=activity)
+        self.activity = Activity.objects.get(slug=self.kwargs['activity_slug'])
+        return Challenge.objects.filter(activity=self.activity)
 
     def get_context_data(self, **kwargs):
         """Provide the context data for the activity view.
@@ -41,9 +40,5 @@ class ActivityChallengesView(generic.ListView):
             Dictionary of context data.
         """
         context = super(ActivityChallengesView, self).get_context_data(**kwargs)
-        activity = Activity.objects.get(slug=self.kwargs['activity_slug'])
-        challenges = Challenge.objects.filter(activity=activity)
-        context["activity"] = activity
-        context["challenges"] = challenges
-        context["challenge_answers"] = dict()
+        context["activity"] = self.activity
         return context
