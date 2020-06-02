@@ -1,0 +1,16 @@
+activities:
+    mind-reading-magic:
+        order-number: 1
+        icon: img/at_home/mind-reading-magic/mind-reading-magic-step-1.jpg
+    binary-challenge:
+        order-number: 2
+        icon: img/at_home/binary-challenge/binary-challenge-step-13.jpg
+    product-code-mind-reader:
+        order-number: 3
+        icon: img/at_home/product-code-mind-reader/13-digit-barcode-steps/product-code-mind-reader-step-4.jpg
+    kidbots:
+        order-number: 4
+        icon: img/at_home/kidbots/kidbots-step-7.jpg
+    squeezing-pictures:
+        order-number: 5
+        icon: img/at_home/squeezing-pictures/squeezing-pictures-thumbnail.jpeg

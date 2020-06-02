@@ -187,6 +187,13 @@ cmd_updatedata() {
 }
 defhelp updatedata 'Run updatedata command.'
 
+# Run Django loadactivities command
+cmd_loadactivities() {
+  echo "Loading activities..."
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py loadactivities
+}
+defhelp loadactivities 'Run loadactivities command.'
+
 # Build Docker images
 cmd_build() {
   echo "Building Docker images..."
@@ -227,6 +234,12 @@ cmd_shell() {
   docker-compose exec django bash
 }
 defhelp shell "Open shell to Django folder."
+
+# Run shell
+cmd_django_shell() {
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py shell
+}
+defhelp django_shell "Open Django shell."
 
 # Reboot Django Docker container
 cmd_reboot_django() {
