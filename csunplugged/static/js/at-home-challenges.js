@@ -19,6 +19,7 @@ $(document).ready(function() {
             // Display output
             if (result) {
                 displayFeedback('correct');
+                $(this).hide();
             } else {
                 displayFeedback('incorrect');
             }
@@ -35,6 +36,7 @@ $(document).ready(function() {
     $('#challenge-pills-tab .nav-link').click(function() {
         challenge_user_input.val('');
         displayFeedback();
+        $('#submit-answer').show();
     });
 });
 
@@ -46,9 +48,9 @@ function checkAnswer(challenge_number, user_answer) {
    * @param {string} user_answer - Answer submitted by user.
    * @return {boolean} Boolean if answer is correct.
    */
-    challenge_answer = challenge_json[challenge_number];
+    challenge_answer = challenges_json[challenge_number];
     user_answer = user_answer.toLowerCase().replace(/,\s/g, ',');
-    return challenge_number == user_answer;
+    return challenge_answer == user_answer;
 };
 
 
