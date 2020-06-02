@@ -74,12 +74,13 @@ class Challenge(TranslatableModel):
         unique_together = ['activity', 'order_number']
 
 
-class ChallengeAttempt(models.Model):
+class ChallengeSubmission(models.Model):
+    """Model for activity challenge submission in database."""
 
     challenge = models.ForeignKey(
         Challenge,
         on_delete=models.CASCADE,
-        related_name="challenge_attempts",
+        related_name="challenge_submissions",
     )
     datetime = models.DateTimeField(auto_now_add=True)
     language = models.CharField(max_length=25)
