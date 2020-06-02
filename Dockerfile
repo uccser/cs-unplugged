@@ -1,4 +1,4 @@
-FROM uccser/django:2.2.12
+FROM uccser/django:buster-3.8.3-python-2.2.12-django
 
 # Add metadata to Docker image
 LABEL maintainer="csse-education-research@canterbury.ac.nz"
