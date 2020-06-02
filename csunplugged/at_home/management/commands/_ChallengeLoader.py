@@ -45,6 +45,11 @@ class ChallengeLoader(TranslatableModelLoader):
                 challenge_order_number,
                 dict()
             ))
+            # Store all answers in lower case
+            # TODO: Check if this ruins answers, especially in translations
+            for language, translation in translations.items():
+                if 'answer' in translation:
+                    translation['answer'] = translation['answer'].lower()
 
             if "image" in challenge_data:
                 challenge_image = challenge_data["image"]
