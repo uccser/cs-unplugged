@@ -5,7 +5,7 @@
         <div class="card-header">
             Step {{ forloop.counter }}
         </div>
-        <img src="{% static step.image %}" class="card-img rounded-0">
+        <img src="{{ "{% static '" }}{{ step.image }}{{ "' %}" }}" class="card-img rounded-0">
         <div class="card-body">
             <h5 class="card-title">
                 {% render_html_field step.description %}
