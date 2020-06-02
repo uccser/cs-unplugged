@@ -89,6 +89,8 @@
                                 <a href="{% url 'at_home:activity_challenges' activity.slug %}" class="btn btn-outline-primary btn-block">
                                     {% trans "Arnold's Challenges" %}
                                 </a>
+                            {% else %}
+                                <div class="btn btn-block invisible"><br></div>
                             {% endif %}
                         </div>
                     </div>
