@@ -1,7 +1,7 @@
 """Views for the at home application."""
 
 from django.views import generic
-from at_home.models import Activity
+from at_home.models import Activity, Challenge
 
 
 class IndexView(generic.ListView):
@@ -21,13 +21,17 @@ class ActivityView(generic.DetailView):
     slug_url_kwarg = "activity_slug"
 
 
-class ActivityChallengesView(generic.DetailView):
+class ActivityChallengesView(generic.ListView):
     """View for challenges of a specific activity."""
 
-    model = Activity
+    model = Challenge
     template_name = "at_home/activity_challenges.html"
-    context_object_name = "activity"
-    slug_url_kwarg = "activity_slug"
+    context_object_name = "challenges"
+    allow_empty = False
+
+    def get_queryset(self, **kwargs):
+        self.activity = Activity.objects.get(slug=self.kwargs['activity_slug'])
+        return Challenge.objects.filter(activity=self.activity)
 
     def get_context_data(self, **kwargs):
         """Provide the context data for the activity view.
@@ -36,5 +40,5 @@ class ActivityChallengesView(generic.DetailView):
             Dictionary of context data.
         """
         context = super(ActivityChallengesView, self).get_context_data(**kwargs)
-        context["challenges"] = self.object.challenges.all()
+        context["activity"] = self.activity
         return context
