@@ -745,6 +745,10 @@ button:hover .icon-search {
     .card {
         border: 0;
         box-shadow: 0px 2px 5px 0px $gray-500;
+        .card-img-top {
+            max-height: 14rem;
+            object-fit: cover;
+        }
     }
 }
 
