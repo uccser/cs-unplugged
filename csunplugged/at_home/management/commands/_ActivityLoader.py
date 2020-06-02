@@ -1,6 +1,5 @@
 """Custom loader for loading an activity."""
 
-import yaml
 import os.path
 from django.db import transaction
 from django.template.loader import render_to_string
@@ -9,7 +8,6 @@ from utils.language_utils import get_available_languages, get_default_language
 from utils.check_required_files import find_image_files
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.errors.CouldNotFindYAMLFileError import CouldNotFindYAMLFileError
-from utils.errors.EmptyYAMLFileError import EmptyYAMLFileError
 from at_home.models import Activity
 
 INTRODUCTION_FILENAME = 'introduction.md'
@@ -140,7 +138,6 @@ class ActivityLoader(TranslatableModelLoader):
             structure_filename=self.structure_filename,
             lite_loader=self.lite_loader,
         ).load()
-
 
     def get_activity_step_translations(self):
         """Get dictionary of translations of activity steps.

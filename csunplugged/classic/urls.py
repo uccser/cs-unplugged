@@ -195,7 +195,7 @@ urlpatterns = [
     ),
     # All media files
     path(
-        'wp-content/',
+        'wp-content<path:media_path>',
         views.redirect_to_classic_unplugged,
     ),
 ]

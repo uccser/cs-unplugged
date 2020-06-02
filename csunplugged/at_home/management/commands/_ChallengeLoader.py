@@ -1,13 +1,9 @@
 """Custom loader for loading activity challenges."""
 
 from django.db import transaction
-from django.core.exceptions import ObjectDoesNotExist
 from utils.TranslatableModelLoader import TranslatableModelLoader
 from utils.check_required_files import find_image_files
-from utils.errors.KeyNotFoundError import KeyNotFoundError
-from utils.errors.InvalidYAMLValueError import InvalidYAMLValueError
 from at_home.models import Challenge
-import os.path
 
 CHALLENGES_FILENAME = 'challenges.yaml'
 
@@ -45,6 +41,11 @@ class ChallengeLoader(TranslatableModelLoader):
                 challenge_order_number,
                 dict()
             ))
+            # Store all answers in lower case
+            # TODO: Check if this ruins answers, especially in translations
+            for language, translation in translations.items():
+                if 'answer' in translation:
+                    translation['answer'] = translation['answer'].lower()
 
             if "image" in challenge_data:
                 challenge_image = challenge_data["image"]
