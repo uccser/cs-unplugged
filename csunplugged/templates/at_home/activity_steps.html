@@ -7,12 +7,14 @@
         </div>
         <img src="{{ "{% static '" }}{{ step.image }}{{ "' %}" }}" class="card-img rounded-0 activity-step-img">
         <div class="card-body">
-            <h5 class="card-title">
-                {% render_html_field step.description %}
-            </h5>
-            {% if step.extra %}
+            {% if step.presenter_says %}
+                <h5 class="card-title">
+                    {% render_html_field step.presenter_says %}
+                </h5>
+            {% endif %}
+            {% if step.presenter_commentary %}
                 <p class="card-text">
-                    {% render_html_field step.extra %}
+                    {% render_html_field step.presenter_commentary %}
                 </p>
             {% endif %}
         </div>

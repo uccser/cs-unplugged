@@ -1,28 +1,27 @@
 # Step 1
 -   image: img/at_home/mind-reading-magic/mind-reading-magic-step-1.jpg
-    description: Please put the cards down in 5 rows of 5 columns. You’ll end up with a 5 x 5 grid. Make sure the cards are randomly face-up and face-down.
-    extra: Ensure it is a random choice of sides, and have them avoid making a pattern.
+    presenter_says: Please put the cards down in 5 rows of 5 columns. You’ll end up with a 5 x 5 grid. Make sure the cards are randomly face-up and face-down.
+    presenter_commentary: Ensure it is a random choice of sides, and have them avoid making a pattern.
 # Step 2
 -   image: img/at_home/mind-reading-magic/mind-reading-magic-step-2.jpg
-    description: I will add another row and column of cards to make it a bit harder - I’ve been doing this for a while. 
-    extra: In each row and column, count the number of face-down cards. If that number is odd add a face-down card, otherwise add a face-up card (this means there is an even number of face-down cards in every row and every column). *Following this rule, if a line has cards of all the same, the card you add will be the same colour as those cards (since 0 and 6 are even numbers). The corner card (shown) will work correctly for both the new row and the new column.
+    presenter_says: I will add another row and column of cards to make it a bit harder - I’ve been doing this for a while. 
+    presenter_commentary: In each row and column, count the number of face-down cards. If that number is odd add a face-down card, otherwise add a face-up card (this means there is an even number of face-down cards in every row and every column). *Following this rule, if a line has cards of all the same, the card you add will be the same colour as those cards (since 0 and 6 are even numbers). The corner card (shown) will work correctly for both the new row and the new column.
 # Step 3
 -   image: img/at_home/mind-reading-magic/mind-reading-magic-step-3.jpg
-    description: While I close my eyes, please flip over one of the cards. Tell me when you have flipped it. Then, I’ll tell you which one you flipped.
-    extra: Cover your eyes, look away, or you can even leave the room.
+    presenter_says: While I close my eyes, please flip over one of the cards. Tell me when you have flipped it. Then, I’ll tell you which one you flipped.
+    presenter_commentary: Cover your eyes, look away, or you can even leave the room.
 # Step 4
--   image: img/at_home/mind-reading-magic/mind-reading-magic-step-4.jpg
-    description: Look at the cards, pretending that you’re trying to read their mind or sense which card it is.
-    extra: You are looking for the row that has an odd number of face-up cards, then the column that has an odd number of face-up cards. The single card that is where that row and column meet will be the one that was flipped.
+-   image: img/at_home/mind-reading-magic/mind-reading-magic-step-4.jpg 
+    presenter_commentary: Look at the cards, pretending that you’re trying to read their mind or sense which card it is. You are looking for the row that has an odd number of face-up cards, then the column that has an odd number of face-up cards. The single card that is where that row and column meet will be the one that was flipped.
 # Step 5
 -   image: img/at_home/mind-reading-magic/mind-reading-magic-step-5.jpg
-    description: Was it this card you flipped?
-    extra: Because the rows and columns started with an even number of face-up cards, the flipped card has changed its row and column to an odd number of cards.
+    presenter_says: Was it this card you flipped?
+    presenter_commentary: Because the rows and columns started with an even number of face-up cards, the flipped card has changed its row and column to an odd number of cards.
 # Step 6
 -   image: img/at_home/mind-reading-magic/mind-reading-magic-step-6.jpg
-    description: I’ve put it back to how it was. Can you guess how the trick is done?
-    extra: Flip the card you identified so that all rows and columns will now have an even number of face-up cards. Get them to count the number of face-up cards in each row and column, and help them identify that they are all even numbers. You could remove the extra cards you added and have them work out how to always make it up to an even number to reinforce the process.
+    presenter_says: I’ve put it back to how it was. Can you guess how the trick is done?
+    presenter_commentary: Flip the card you identified so that all rows and columns will now have an even number of face-up cards. Get them to count the number of face-up cards in each row and column, and help them identify that they are all even numbers. You could remove the presenter_commentary cards you added and have them work out how to always make it up to an even number to reinforce the process.
 # Step 7
 -   image: img/at_home/mind-reading-magic/mind-reading-magic-step-7.jpg
-    description: Do you want to try this with a friend?
-    extra: Encourage them to practise the process first before doing it with someone else, so that they can do it quickly without giving away the trick.
+    presenter_says: Do you want to try this with a friend?
+    presenter_commentary: Encourage them to practise the process first before doing it with someone else, so that they can do it quickly without giving away the trick.
