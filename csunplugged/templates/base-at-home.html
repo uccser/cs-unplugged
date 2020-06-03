@@ -8,6 +8,13 @@
 
 {% get_language_info for LANGUAGE_CODE as current_language %}
 
+{% block complete_breadcrumbs %}
+    {% trans "Home" as home_label %}
+    {% breadcrumb home_label "at_home:index" %}
+    {% block breadcrumbs %}
+    {% endblock breadcrumbs %}
+{% endblock complete_breadcrumbs %}
+
 {% block navbar %}
     <nav class="navbar navbar-at-home fixed-top navbar-expand-md navbar-dark py-1 d-print-none{% block navbar_class_overrides %}{% endblock navbar_class_overrides %}">
         <div class="container px-0">
@@ -52,7 +59,7 @@
                 </div>
             </div>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <div class="navbar-nav navbar-nav-i18n mr-auto">
+                <div class="navbar-nav navbar-nav-i18n-reverse">
                     <a class="nav-item nav-link" href="{% url 'general:home' %}">
                         <small>
                             {% trans "Back to CS Unplugged" %}

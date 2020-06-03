@@ -558,6 +558,10 @@ ol, ul {
   margin-#{$right}: auto !important;
   margin-#{$left}: 0 !important;
 }
+.navbar-nav-i18n-reverse {
+  margin-#{$right}: 0 !important;
+  margin-#{$left}: auto !important;
+}
 
 .img-container {
   img {
@@ -739,4 +743,104 @@ button:hover .icon-search {
     padding-left: 0.4rem !important;
     padding-right: 0.4rem !important;
   }
+}
+
+#activities {
+    .card {
+        border: 0;
+        box-shadow: 0px 2px 5px 0px $gray-500;
+        .card-img-top {
+            max-height: 14rem;
+            object-fit: cover;
+        }
+    }
+}
+#challenges-form {
+    .empty-feedback {
+        display: none;
+        width: 100%;
+        margin-top: 0.25rem;
+        font-size: 80%;
+        color: $red;
+    }
+    .is-empty ~ .empty-feedback {
+        display: block;
+    }
+}
+.activity-step-card {
+    border-color: rgba(0, 0, 0, 0.2);
+    .card-header {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+    $speech-bubble-background: mix($white, $at-home-colour, 95%);
+    .speech-bubble {
+        background: $speech-bubble-background;
+        border: 1px solid $at-home-colour;
+        border-radius: 1rem;
+        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.05);
+        font-size: 1.2rem;
+        line-height: 1.3;
+        margin: 0 auto 40px;
+        padding: 15px;
+        position: relative;
+        top: -3rem;
+        margin-bottom: -1.2rem;
+        blockquote {
+            font-family: $headings-font-family;
+            margin: 0 2.3rem;
+            position: relative;
+        }
+        blockquote:before {
+            content: open-quote;
+            color: rgba($at-home-colour, 0.3);
+            font-size: 4em;
+            position: absolute;
+            line-height: 1;
+            top: -0.5rem;
+            left: -2.3rem;
+        }
+        blockquote::after {
+            content: close-quote;
+            color: rgba($at-home-colour, 0.3);
+            font-size: 4em;
+            position: absolute;
+            float:right;
+            line-height: 1;
+            right: -2.3rem;
+            bottom: -3rem;
+        }
+
+        .speech-bubble-arrow {
+            border-left: 21px solid transparent;
+            border-top: 20px solid rgba(0, 0, 0, 0.05);
+            bottom: -25px;
+            position: absolute;
+            right: 15px;
+
+            &::before {
+                border-left: 23px solid transparent;
+                border-top: 23px solid $at-home-colour;
+                bottom: 2px;
+                content: "";
+                position: absolute;
+                right: 5px;
+            }
+            &::after {
+                border-left: 21px solid transparent;
+                border-top: 21px solid $speech-bubble-background;
+                bottom: 4px;
+                content: "";
+                position: absolute;
+                right: 6px;
+            }
+        }
+    }
+    .card-text {
+        font-size: 0.9rem;
+    }
+}
+.at-home-img {
+    max-height: 60vh;
+    object-fit: contain;
 }

@@ -1,7 +1,7 @@
 """URL configuration for testing general pages loader."""
 
-from django.conf.urls import url
+from django.urls import path
 
 urlpatterns = [
-    url(r"", lambda: True, name="page"),
+    path('', lambda: True, name='page'),
 ]

@@ -6,6 +6,9 @@ from utils.errors.KeyNotFoundError import KeyNotFoundError
 from utils.errors.MissingRequiredFieldError import MissingRequiredFieldError
 from utils.TranslatableModelLoader import TranslatableModelLoader
 
+from plugging_it_in.models import (
+    TestCase
+)
 
 from topics.models import (
     LearningOutcome,
@@ -167,6 +170,40 @@ class ProgrammingChallengesLoader(TranslatableModelLoader):
 
                 LOG_TEMPLATE = "Added language implementation: {}"
                 self.log(LOG_TEMPLATE.format(implementation.language), 2)
+
+            test_cases = challenge_structure.get("test-cases", None)
+            if (test_cases is not None):
+                for (testcase_id, testcase_type) in test_cases.items():
+                    test_case_translations = self.get_blank_translation_dictionary()
+
+                    testcase_filename_template = os.path.join(
+                        challenge_slug,
+                        'test-cases',
+                        "test-case-{}-{{}}.txt".format(testcase_id)
+                    )
+
+                    testcase_input = open(self.get_localised_file(
+                        "en", testcase_filename_template.format(testcase_type)), encoding='UTF-8').read()
+
+                    testcase_output = open(self.get_localised_file(
+                        "en", testcase_filename_template.format("output")), encoding='UTF-8').read()
+
+                    test_case = TestCase(
+                        number=testcase_id,
+                        test_input=testcase_input,
+                        expected_output=testcase_output,
+                        question_type=testcase_type,
+                        challenge=programming_challenge
+                    )
+
+                    required_fields = ['test_input', 'expected_output', 'question_type']
+
+                    self.populate_translations(test_case, test_case_translations)
+                    self.mark_translation_availability(test_case, required_fields=required_fields)
+                    test_case.save()
+
+                    LOG_TEMPLATE = "Added Programming Challenge Test Case: {}"
+                    self.log(LOG_TEMPLATE.format(testcase_id), 2)
 
             if "learning-outcomes" in challenge_structure:
                 learning_outcomes = challenge_structure["learning-outcomes"]

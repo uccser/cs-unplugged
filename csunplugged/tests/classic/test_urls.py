@@ -421,7 +421,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         )
 
     def test_wp_content(self):
-        response = self.client.get("/wp-content")
+        response = self.client.get("/wp-content/")
         self.assertRedirects(
             response,
             "http://classic.csunplugged.org/wp-content/",
