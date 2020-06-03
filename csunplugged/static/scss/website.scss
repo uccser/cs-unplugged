@@ -558,6 +558,10 @@ ol, ul {
   margin-#{$right}: auto !important;
   margin-#{$left}: 0 !important;
 }
+.navbar-nav-i18n-reverse {
+  margin-#{$right}: 0 !important;
+  margin-#{$left}: auto !important;
+}
 
 .img-container {
   img {
@@ -751,7 +755,6 @@ button:hover .icon-search {
         }
     }
 }
-
 #challenges-form {
     .empty-feedback {
         display: none;
@@ -763,4 +766,8 @@ button:hover .icon-search {
     .is-empty ~ .empty-feedback {
         display: block;
     }
+}
+.activity-step-img {
+    max-height: 60vh;
+    object-fit: contain;
 }
