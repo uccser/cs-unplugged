@@ -22,7 +22,7 @@
 # Step 7
 -   image: img/at_home/squeezing-pictures/squeezing-pictures-step-7.jpeg
     description: The next row starts with a 0 - what does that mean? (No white pixels at the start, so it has 11 black pixels only). Why not just have the number 11 without the 0? (Because that would mean 11 white pixels).
-    extra: Check that for 0, 11 they colour in the first 11 pixels.
+    extra: Check that for "0, 11" they colour in the first 11 pixels.
 # Step 8
 -   image: img/at_home/squeezing-pictures/squeezing-pictures-step-8.jpeg
     description: This one also starts with a 0, so what colour is the first pixel? (Black).
