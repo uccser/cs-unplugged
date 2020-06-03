@@ -59,14 +59,14 @@
                             </a>
                         </li>
                     {% endif %}
+                    {% if activity.challenges.all %}
+                        <li class="nav-item border-top mt-2 pt-2">
+                            <a class="nav-link" href="{% url 'at_home:activity_challenges' activity.slug %}">
+                                {% trans "Challenges for kids" %}
+                            </a>
+                        </li>
+                    {% endif %}
                 </ul>
-
-                {% if challenges %}
-                    <hr>
-                    <a href="{% url 'at_home:activity_challenges' activity.slug %}">
-                        {% trans "Challenges for kids" %}
-                    </a>
-                {% endif %}
             </div>
         {% endif %}
     </div>
