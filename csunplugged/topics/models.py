@@ -66,7 +66,7 @@ class LearningOutcome(TranslatableModel):
 
     #  Auto-incrementing 'id' field is automatically set by Django
     slug = models.SlugField(max_length=80, unique=True)
-    text = models.CharField(max_length=200, default="")
+    text = models.CharField(max_length=500, default="")
     curriculum_areas = models.ManyToManyField(
         CurriculumArea,
         related_name="learning_outcomes",
