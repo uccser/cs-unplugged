@@ -558,6 +558,10 @@ ol, ul {
   margin-#{$right}: auto !important;
   margin-#{$left}: 0 !important;
 }
+.navbar-nav-i18n-reverse {
+  margin-#{$right}: 0 !important;
+  margin-#{$left}: auto !important;
+}
 
 .img-container {
   img {
