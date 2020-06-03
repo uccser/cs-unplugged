@@ -23,6 +23,30 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+5.0.0
+==============================================================================
+
+- **Release date:** 3rd June 2020
+- **Downloads:** `Source downloads are available on GitHub <https://github.com/uccser/cs-unplugged/releases/>`__
+
+**Summary of changes:**
+
+This release adds the 'At Home' area of the website, and restructures the homepage for future areas.
+
+**Changelog:**
+
+- Add 'At Home' area of the website:
+    - Includes 5 activities.
+    - Includes challenges that are tested locally, with answered stored anonymously on the database for analysis.
+    - Enables admin application to allow reading of challenge submissions.
+- Update homepage to organise links for educators, home use, and students.
+- Update base Docker images to use Debian 10, Python 3.8.3, and Django 2.2.12.
+- Set static files to be uploaded using multiprocessing.
+
+- Dependency updates:
+
+  - Add requests 2.23.0.
+
 4.4.0
 ==============================================================================
 
