@@ -17,11 +17,11 @@
 # Step 5
 -   image: img/at_home/kidbots/kidbots-step-5.jpg
     presenter_says: Your challenge is to write instructions for me to follow to get to the ball.
-    presenter_commentary: The developer writes the instructions (program) for how to get from the start position to the end position i.e move the bot to the ball. They then give the instructions to the bot, who follows them - this is referred to as “running” the program. (Chances are that their first attempt won’t work; the attempt shown here is a typical one). <em>Do not start moving until all the instructions are written.</em> As a bot, you should always go back to the starting point, and follow the whole “program” each time; ignore any mid-course requests for changes!
+    presenter_commentary: The developer writes the instructions (program) for how to get from the start position to the end position i.e move the bot to the ball. They then give the instructions to the bot, who follows them - this is referred to as “running” the program. (Chances are that their first attempt won’t work; the attempt shown here is a typical one with the RRRR causing the Bot to turn on the spot). Do not start moving until all the instructions are written. As a bot, you should always go back to the starting point, and follow the whole “program” each time; ignore any mid-course requests for changes!
 # Step 6
 -   image: img/at_home/kidbots/kidbots-step-6.jpg
     presenter_says: (If you don’t get to the correct square) Nice try, but you need to debug your program!
-    presenter_commentary: It’s normal for computer programs to need debugging - a bug is simply when it doesn’t do what was wanted. This is a chance to introduce and use the term whenever the program is wrong. Enjoy errors such as sequences of turns that have you spinning on the spot! The developer can mark on the instructions (program where any bugs (mistakes) are found. Remember, it is good to find mistakes as then you get to debug (fix the mistakes). You could even make up a bug finding celebration dance if you like.
+    presenter_commentary: It’s normal for computer programs to need debugging - a bug is simply when it doesn’t do what was wanted. This is a chance to introduce and use the term whenever the program is wrong. Enjoy errors such as sequences of turns that have you spinning on the spot! The developer can mark on the instructions (program) where any bugs (mistakes) are found. Remember, it is good to find mistakes as then you get to debug (fix the mistakes). You could even make up a bug finding celebration dance if you like.
 # Step 7
 -   image: img/at_home/kidbots/kidbots-step-7.jpg
     presenter_says: (Once they get the correct answer). Well done, you’ve written a program that gets me to the right place.
