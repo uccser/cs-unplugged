@@ -11,7 +11,6 @@ from django.conf.urls.i18n import i18n_patterns
 urlpatterns = i18n_patterns(
     path('', include('general.urls', namespace='general')),
     path('topics/', include('topics.urls', namespace='topics')),
-    path('plugging-it-in/', include('plugging_it_in.urls', namespace='plugging_it_in')),
     path('resources/', include('resources.urls', namespace='resources')),
     path('at-home/', include('at_home.urls', namespace='at_home')),
 )
@@ -20,6 +19,11 @@ urlpatterns += [
     path('', include('classic.urls')),
     path('en/search/', include('search.urls', namespace='search')),
 ]
+
+if not settings.DJANGO_PRODUCTION:
+    urlpatterns += [
+        path('plugging-it-in/', include('plugging_it_in.urls', namespace='plugging_it_in')),
+    ]
 
 if settings.DEBUG:  # pragma: no cover
     import debug_toolbar
