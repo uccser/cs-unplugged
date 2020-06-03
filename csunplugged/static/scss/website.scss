@@ -751,7 +751,6 @@ button:hover .icon-search {
         }
     }
 }
-
 #challenges-form {
     .empty-feedback {
         display: none;
@@ -763,4 +762,8 @@ button:hover .icon-search {
     .is-empty ~ .empty-feedback {
         display: block;
     }
+}
+.activity-step-img {
+    max-height: 60vh;
+    object-fit: contain;
 }
