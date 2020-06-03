@@ -30,6 +30,11 @@ class ActivityChallengesView(generic.ListView):
     allow_empty = False
 
     def get_queryset(self, **kwargs):
+        """Return the queryset for the challenges view.
+
+        Returns:
+            Queryset of Challenge objects.
+        """
         self.activity = Activity.objects.get(slug=self.kwargs['activity_slug'])
         return Challenge.objects.filter(activity=self.activity)
 
