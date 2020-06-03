@@ -244,7 +244,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         page_encoding = []
         for row in range(0, page_rows):
             row_encoding = []
-            encoding_colour = "0"
+            encoding_colour = "1"
             encoding_count = 0
 
             for column in range(0, page_columns):
