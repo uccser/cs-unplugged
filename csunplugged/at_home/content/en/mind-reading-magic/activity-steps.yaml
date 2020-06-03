@@ -5,7 +5,7 @@
 # Step 2
 -   image: img/at_home/mind-reading-magic/mind-reading-magic-step-2.jpg
     description: I will add another row and column of cards to make it a bit harder - I’ve been doing this for a while. 
-    extra: In each row and column, count the number of face-down cards. If that number is odd add a face-down card, otherwise add a face-up card (this means there is an even number of face-down cards in every row and every column). *Following this rule, if a line has cards of all the same, the card you add will be the same colour as those cards (since 0 and 6 are even numbers). The corner card (shown) will work correctly for both the new row and the new column.
+    extra: In each row, count the number of face-up cards. If that number is odd then add a face-up card to the row, otherwise add a face-down card (this means there will now be an even number of face-up cards in every row). Then do the same for each column. Following this rule, if a line has cards of all the same, the card you add will be the same colour as those cards (since 0 and 6 are even numbers). The corner card (shown) will work correctly for both the new row and the new column.
 # Step 3
 -   image: img/at_home/mind-reading-magic/mind-reading-magic-step-3.jpg
     description: While I close my eyes, please flip over one of the cards. Tell me when you have flipped it. Then, I’ll tell you which one you flipped.
