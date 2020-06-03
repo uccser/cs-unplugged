@@ -45,7 +45,20 @@ This release adds the 'At Home' area of the website, and restructures the homepa
 
 - Dependency updates:
 
-  - Add requests 2.23.0.
+    - Add requests 2.23.0.
+    - Update coverage from 5.0 to 5.1.
+    - Update django-bootstrap-breadcrumbs from 0.9.1 to 0.9.2.
+    - Update django-debug-toolbar from 2.1 to 2.2.
+    - Update django-extensions from 2.2.5 to 2.2.9.
+    - Update django-widget-tweaks from 1.4.5 to 1.4.8.
+    - Update flake8 from 3.7.9 to 3.8.2.
+    - Update lxml from 4.4.2 to 4.5.1.
+    - Update Pillow from 6.2.1 to 7.1.2.
+    - Update pydocstyle from 5.0.1 to 5.0.2.
+    - Update PyYAML from 5.2 to 5.3.1.
+    - Update sphinx from 2.3.0 to 3.0.4.
+    - Update tqdm from 4.40.2 to 4.46.1.
+    - Update wheel from 0.33.6 to 0.34.2.
 
 4.4.0
 ==============================================================================
