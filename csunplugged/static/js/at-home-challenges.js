@@ -19,8 +19,9 @@ $(document).ready(function() {
 
     $('#challenge-pills-tab .nav-link').click(function() {
         challenge_user_input.val('');
+        challenge_user_input.prop('readonly', false);
         displayFeedback();
-        $('#submit-answer').show();
+        submit_answer_button.show();
     });
 });
 
@@ -38,12 +39,13 @@ function submitUserAnswer() {
         // Display output
         if (result) {
             displayFeedback('correct');
-            $(this).hide();
+            submit_answer_button.hide();
+            challenge_user_input.prop('readonly', true);
         } else {
             displayFeedback('incorrect');
         }
         // Log to database
-
+        logAnswer(activity_slug, challenge_number, user_answer, result)
     } else {
         displayFeedback('empty');
     }
@@ -82,6 +84,27 @@ function displayFeedback(status) {
 };
 
 
-function logAnswer() {
-
+function logAnswer(activity_slug, challenge_number, answer, correct) {
+   /**
+    * Log challenge submission to database.
+    * @param {string} activity_slug - Slug of activity.
+    * @param {integer} challenge_number - Number of current challenge.
+    * @param {string} answer - Answer submitted by user.
+    * @param {boolean} correct - Boolean if answer is correct.
+    */
+    var data = {
+        activity_slug: activity_slug,
+        challenge_number: challenge_number,
+        answer: answer,
+        correct: correct,
+    };
+    $.ajax({
+        url: response_url,
+        type: 'POST',
+        method: 'POST',
+        data: JSON.stringify(data),
+        contentType: 'application/json; charset=utf-8',
+        headers: { "X-CSRFToken": csrf_token },
+        dataType: 'json',
+    });
 };

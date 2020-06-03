@@ -1,7 +1,15 @@
 """Views for the at home application."""
 
+import json
 from django.views import generic
-from at_home.models import Activity, Challenge
+from django.http import JsonResponse
+from django.utils.translation import get_language
+from django.shortcuts import get_object_or_404
+from at_home.models import (
+    Activity,
+    Challenge,
+    ChallengeSubmission,
+)
 
 
 class IndexView(generic.ListView):
@@ -47,3 +55,38 @@ class ActivityChallengesView(generic.ListView):
         context = super(ActivityChallengesView, self).get_context_data(**kwargs)
         context["activity"] = self.activity
         return context
+
+
+def save_challenge_attempt(request):
+    """Save challenge attempt for a question.
+
+    Args:
+        request (Request): AJAX request from user.
+
+    Returns:
+        JSON response with result.
+    """
+    result = {
+        'success': False,
+    }
+    if request.is_ajax():
+        request_json = json.loads(request.body.decode('utf-8'))
+        activity_slug = request_json['activity_slug']
+        challenge_number = request_json['challenge_number']
+        answer = request_json['answer']
+        correct = request_json['correct']
+        language = get_language()
+
+        challenge = get_object_or_404(
+            Challenge,
+            order_number=challenge_number,
+            activity__slug=activity_slug,
+        )
+        ChallengeSubmission.objects.create(
+            challenge=challenge,
+            language=language,
+            answer=answer,
+            correct=correct,
+        )
+        result['success'] = True
+    return JsonResponse(result)
