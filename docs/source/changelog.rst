@@ -23,6 +23,16 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+5.0.1
+==============================================================================
+
+- **Release date:** 3rd June 2020
+- **Downloads:** `Source downloads are available on GitHub <https://github.com/uccser/cs-unplugged/releases/>`__
+
+**Changelog:**
+
+- Content fixes.
+
 5.0.0
 ==============================================================================
 

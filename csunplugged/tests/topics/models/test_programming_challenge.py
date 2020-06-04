@@ -1,5 +1,6 @@
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
+from topics.models import ProgrammingChallenge
 
 
 class ProgrammingChallengeModelTest(BaseTestWithDB):
@@ -45,4 +46,19 @@ class ProgrammingChallengeModelTest(BaseTestWithDB):
         self.assertEqual(
             challenge.get_absolute_url(),
             "/en/topics/topic-1/programming/challenge-1/"
+        )
+
+    def test_programming_challenge_related_test_cases(self):
+        topic = self.test_data.create_topic(1)
+        difficulty = self.test_data.create_difficulty_level(1)
+        challenge = self.test_data.create_programming_challenge(topic, 1, difficulty)
+        self.test_data.create_programming_challenge_test_case(
+            1,
+            challenge
+        )
+        self.assertQuerysetEqual(
+            ProgrammingChallenge.objects.get(slug="challenge-1").related_test_cases(),
+            [
+                "<TestCase: TestCase object (1)>",
+            ]
         )
