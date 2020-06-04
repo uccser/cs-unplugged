@@ -28,19 +28,19 @@
 
 {% block content_container %}
     <div class="col-12">
+        {% blocktrans trimmed %}
         <p>
-            {% blocktrans trimmed %}
             Here are five challenges that build on the ideas you’ve been working with.
             You might like to do one a day...
             The first one of each set should be fairly easy, but they get harder.
             You can type in your answer.
             What do you get out of this?
             Just the warm feeling you get when you know you've solved one of Arnold's challenges, and the satisfaction of knowing that you've mastered a deep idea from computer science.
-            {% endblocktrans %}
         </p>
         <p>
             Enjoy the challenges!
         </p>
+        {% endblocktrans %}
 
         {% if challenges %}
             <h2 id="challenges">{% trans "Challenges" %}</h2>
