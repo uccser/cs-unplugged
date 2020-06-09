@@ -1,4 +1,4 @@
-# Product code mind reader
+# Unlocking the secret in product codes
 
 ## What you need
 

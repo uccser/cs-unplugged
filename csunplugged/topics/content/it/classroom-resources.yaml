@@ -1,0 +1,39 @@
+---
+pens:
+  description: Penne
+paper:
+  description: Carta
+number-line-0-20:
+  description: Linea dei numeri da 0 a 20
+musical-instruments:
+  description: Strumenti musicali
+alphabet-cards:
+  description: Carte con le lettere dell'alfabeto
+parity-cards-set:
+  description: Un set di 36 carte di parità
+whiteboard:
+  description: Lavagna
+whiteboard-pens:
+  description: Pennarelli per la lavagna
+product-barcodes:
+  description: Un numero di articoli con codici a barre a 12 o 13 cifre
+payment-system:
+  description: Sistema di pagamento come gettoni o biglie
+pencils:
+  description: Matite
+stopwatch:
+  description: Cronometro
+handheld-whiteboards:
+  description: Lavagne portatili
+clipboards:
+  description: Cartelletta fermafogli
+blocks:
+  description: Blocchi
+hula-hoop:
+  description: Hula Hoop
+counters:
+  description: Banchi
+chalk:
+  description: Gesso
+coloring-pens:
+  description: Colorare con matite, pastelli o pennarelli

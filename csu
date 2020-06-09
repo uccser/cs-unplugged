@@ -290,6 +290,11 @@ cmd_test_backwards() {
 }
 defhelp test_backwards 'Run test suite backwards.'
 
+cmd_createsuperuser() {
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py createsuperuser
+}
+defhelp createsuperuser "Create superuser in Django system."
+
 # Generates the documentation (with warnings as errors)
 cmd_docs() {
   echo "Removing any existing documentation..."

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-18 02:10+0000\n"
-"PO-Revision-Date: 2019-12-16 08:41\n"
+"POT-Creation-Date: 2020-03-31 23:54+0000\n"
+"PO-Revision-Date: 2020-04-01 14:07\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -19,11 +19,11 @@ msgstr ""
 msgid "Classic CS Unplugged page"
 msgstr "CS Unplugged Original-Seite"
 
-#: config/settings/base.py:154
+#: config/settings/base.py:155
 msgid "Translation mode"
 msgstr "Übersetzungsmodus"
 
-#: config/settings/base.py:160
+#: config/settings/base.py:161
 msgid "Translation mode (Bi-directional)"
 msgstr "Übersetzungsmodus (bidirektional)"
 
@@ -740,106 +740,142 @@ msgstr "Eventuell ist einer der nachstehenden Links nützlich:"
 msgid "Homepage"
 msgstr "Startseite"
 
-#: templates/404.html:26 templates/base.html:91 templates/base.html:225
+#: templates/404.html:26 templates/base-educators.html:71
+#: templates/core.html:178
 msgid "Search"
 msgstr "Suchen"
 
-#: templates/404.html:32 templates/general/index.html:96
+#: templates/404.html:32 templates/general/index.html:106
 #: templates/general/people.html:74
 msgid "Classic CS Unplugged"
 msgstr "CS Unplugged Original"
 
-#: templates/base.html:25 templates/general/index.html:7
-#: templates/general/people.html:21
-msgid "CS Unplugged"
-msgstr "CS Unplugged"
+#: templates/at-home/index.html:8
+msgid "CS Unplugged at home"
+msgstr ""
 
-#: templates/base.html:60
+#: templates/at-home/index.html:21
+msgid "Try something different away from the screen"
+msgstr ""
+
+#: templates/at-home/index.html:27
+#: templates/topics/not-available-warning.html:6
+#, python-format
+msgid "<h4>Sorry! This item is not yet available in %(language)s.</h4> <p>This item is available in the following languages:</p>"
+msgstr "<h4>Tut uns leid! Dieses Unplugged-Element ist noch nicht in %(language)s verfügbar.</h4> <p>Es ist in den folgenden Sprachen verfügbar:</p>"
+
+#: templates/at-home/index.html:38
+#: templates/topics/not-available-warning.html:36
+msgid "Return to homepage "
+msgstr "Zurück zur Startseite "
+
+#: templates/at-home/index.html:55
+msgid "<strong>Welcome to Computer Science Unplugged!</strong> This is a collection of fun and engaging activities that enable children to explore fundamental ideas in Computer Science, <em>without</em> having to use a computer. Traditionally these activities have been designed to be used with school classes and larger groups, but we’ve got many ideas for you to try out if you’re at home."
+msgstr ""
+
+#: templates/base-at-home.html:28 templates/base-educators.html:28
 msgid "Language"
 msgstr "Sprache"
 
-#: templates/base.html:78 templates/base.html:188
-#: templates/general/index.html:74 templates/topics/index.html:8
+#: templates/base-at-home.html:58
+msgid "Back to CS Unplugged"
+msgstr ""
+
+#: templates/base-educators.html:56 templates/core.html:136
+#: templates/general/index.html:67 templates/topics/index.html:8
 #: templates/topics/index.html:16
 msgid "Topics"
 msgstr "Themen"
 
-#: templates/base.html:79 templates/base.html:193
-#: templates/general/index.html:81 templates/resources/index.html:8
+#: templates/base-educators.html:57 templates/core.html:141
+#: templates/general/index.html:72 templates/resources/index.html:8
 #: templates/resources/index.html:16 templates/topics/lesson.html:74
 msgid "Printables"
 msgstr "Ausdrucke"
 
-#: templates/base.html:80 templates/base.html:183
+#: templates/base-educators.html:58 templates/core.html:131
 #: templates/general/about.html:7 templates/general/about.html:15
 #: templates/general/base.html:10
 msgid "About"
 msgstr "Über uns"
 
-#: templates/base.html:103
+#: templates/core.html:25 templates/general/index.html:7
+#: templates/general/people.html:21
+msgid "CS Unplugged"
+msgstr "CS Unplugged"
+
+#: templates/core.html:51
 msgid "Home"
 msgstr "Startseite"
 
-#: templates/base.html:154
+#: templates/core.html:102
 msgid "Looking for something for high schools? Check out the <a href=\"http://csfieldguide.org.nz/\">Computer Science Field Guide</a>."
 msgstr "Suchen Sie etwas für weiterführende Schulen? Sehen Sie sich im <a href=\"http://csfieldguide.org.nz/\">Computer Science Field Guide</a> um."
 
-#: templates/base.html:166
+#: templates/core.html:114
 msgid "The primary goal of the Unplugged project is to promote Computer Science (and computing in general) to young people as an interesting, engaging, and intellectually stimulating discipline."
 msgstr "Das Hauptziel des Unplugged-Projekts besteht darin, jungen Menschen Informatik (und Computing im Allgemeinen) als interessantes, faszinierendes und intellektuell anregendes Wissensgebiet näherzubringen."
 
-#: templates/base.html:172
+#: templates/core.html:120
 #, python-format
 msgid "Read more about <a href=\"%(principles_url)s\">our principles here</a>."
 msgstr "Mehr über <a href=\"%(principles_url)s\">unsere Grundsätze finden Sie hier</a>."
 
-#: templates/base.html:179
+#: templates/core.html:127
 msgid "Useful Links"
 msgstr "Nützliche Links"
 
-#: templates/base.html:199
+#: templates/core.html:146
+msgid "At home"
+msgstr ""
+
+#: templates/core.html:152
 msgid "Community"
 msgstr "Community"
 
-#: templates/base.html:203
+#: templates/core.html:156
 msgid "Twitter"
 msgstr "Twitter"
 
-#: templates/base.html:208
+#: templates/core.html:161
 msgid "YouTube"
 msgstr "YouTube"
 
-#: templates/base.html:213
+#: templates/core.html:166
 msgid "GitHub"
 msgstr "GitHub"
 
-#: templates/base.html:219
+#: templates/core.html:172
 msgid "Help"
 msgstr "Hilfe"
 
-#: templates/base.html:231 templates/topics/glossary.html:8
+#: templates/core.html:184 templates/topics/glossary.html:8
 #: templates/topics/glossary.html:17
 msgid "Glossary"
 msgstr "Glossar"
 
-#: templates/base.html:236
+#: templates/core.html:189
 msgid "Feedback"
 msgstr "Feedback"
 
-#: templates/base.html:241 templates/general/contact.html:7
+#: templates/core.html:194 templates/general/contact.html:7
 msgid "Contact"
 msgstr "Kontakt"
 
-#: templates/base.html:265
+#: templates/core.html:218
 msgid "The CS Unplugged material is open source on <a href=\"https://github.com/uccser/cs-unplugged\">GitHub</a>, and this website's content is shared under a <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons Attribution-ShareAlike 4.0 International license</a>. The CS Unplugged is a project by the <a href=\"https://www.canterbury.ac.nz/engineering/schools/csse/research/cse/\">Computer Science Education Research Group</a> at the <a href=\"http://www.canterbury.ac.nz/\">University of Canterbury</a>, New Zealand."
 msgstr "Das Material von CS Unplugged steht als Open-Source-Material auf <a href=\"https://github.com/uccser/cs-unplugged\">GitHub</a> zur Verfügung und die Inhalte dieser Website sind unter einer <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">internationalen Creative Commons Attribution-ShareAlike 4.0 Lizenz</a> verfügbar. CS Unplugged ist ein Projekt der <a href=\"https://www.canterbury.ac.nz/engineering/schools/csse/research/cse/\">Computer Science Education Research Group</a> der <a href=\"http://www.canterbury.ac.nz/\">University of Canterbury</a>, Neuseeland."
 
-#: templates/base.html:288
+#: templates/core.html:222
+msgid "Icons provided generously by <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://icons8.com/\">icons8</a>."
+msgstr ""
+
+#: templates/core.html:244
 #, python-format
 msgid "This definition is not available in %(language)s, sorry!"
 msgstr "Diese Definition ist leider nicht in %(language)s verfügbar!"
 
-#: templates/base.html:295
+#: templates/core.html:251
 msgid "Close"
 msgstr "Schließen"
 
@@ -1077,7 +1113,7 @@ msgstr "<strong>Community Google Gruppe:</strong> Wir haben eine <a href=\"https
 
 #: templates/general/how-do-i-teach-cs-unplugged.html:8
 #: templates/general/how-do-i-teach-cs-unplugged.html:20
-#: templates/general/index.html:66
+#: templates/general/index.html:57
 msgid "How do I teach CS Unplugged?"
 msgstr "Wie unterrichte ich CS Unplugged?"
 
@@ -1102,38 +1138,34 @@ msgstr "Doch nur über Unplugged zu lesen ist nicht das gleiche Vergnügen, wie 
 msgid "View available topics"
 msgstr "Verfügbare Themen anzeigen"
 
-#: templates/general/index.html:15
+#: templates/general/index.html:18
 msgid "Computer Science<br>without a computer"
 msgstr "Informatik<br>ohne Computer"
 
-#: templates/general/index.html:22
+#: templates/general/index.html:30
 msgid "CS Unplugged is a collection of free teaching material that teaches Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around."
 msgstr "CS Unplugged ist eine Sammlung kostenloser Lehrmaterialien, durch die Informatik anhand von anregenden Spielen und Aufgaben mit Karten, Bindfaden, Wachsstiften und viel Herumrennen gelehrt wird."
 
-#: templates/general/index.html:29
-msgid "Welcome to the new CS Unplugged!"
-msgstr "Willkommen beim neuen CS Unplugged!"
-
-#: templates/general/index.html:33
-msgid "This updated website has unit plans, lesson plans, teaching videos, curriculum integration activities, and programming exercises to plug in the Computer Science concepts they have just learnt unplugged."
-msgstr "Auf dieser aktualisierten Website finden Sie Lehrpläne, Unterrichtspläne, Unterrichtsvideos, Aktivitäten zu Lehrplaninhalten und Programmierübungen, um die Schüler die zunächst ohne den Einsatz von Computern gelernten Informatikkonzepte am Computer in die Tat umsetzen zu lassen."
-
-#: templates/general/index.html:38
-msgid "The original activities are still available at <a href=\"https://classic.csunplugged.org/\">classic.csunplugged.org</a>."
-msgstr "Die ursprünglichen Aktivitäten sind nach wie vor auf <a href=\"https://classic.csunplugged.org/\">classic.csunplugged.org</a> verfügbar."
-
-#: templates/general/index.html:56
+#: templates/general/index.html:47
 #: templates/general/what-is-computer-science.html:8
 #: templates/general/what-is-computer-science.html:20
 msgid "What is Computer Science?"
 msgstr "Was ist Informatik?"
 
-#: templates/general/index.html:89
+#: templates/general/index.html:77
 #: templates/topics/all-curriculum-integration-list.html:8
 #: templates/topics/all-curriculum-integration-list.html:17
 #: templates/topics/topic.html:64
 msgid "Curriculum Integrations"
 msgstr "Lehrplaninhalte"
+
+#: templates/general/index.html:85
+msgid "Activities"
+msgstr ""
+
+#: templates/general/index.html:96
+msgid "Plugging it in"
+msgstr ""
 
 #: templates/general/people.html:21
 msgid "version 4.0.0 onwards"
@@ -1295,8 +1327,8 @@ msgstr "Die Aktivitäten werden durch Fehler von Studenten nicht beeinträchtigt
 
 #: templates/general/what-is-computer-science.html:24
 #, python-format
-msgid "In todays digital world, Computer Science has become an important subject for everyone to learn about. The knowledge and <a href=\"%(computational_thinking_url)s\">Computational Thinking skills</a> associated with it are now crucial to developing innovative digital technology, understanding modern society, and qualifications in this area are highly sought after."
-msgstr "Informatik hat sich in der unserer digitalen Welt zu einem wichtigen Gebiet entwickelt, mit dem sich jeder vertraut machen sollte. Die mit diesem Fachgebiet verbundenen Kenntnisse und <a href=\"%(computational_thinking_url)s\">informatischen Denkfähigkeiten</a> sind nun entscheidend für die Entwicklung innovativer digitaler Technologien und um die heutige Gesellschaft zu verstehen, und Qualifikationen auf diesem Gebiet stehen hoch im Kurs."
+msgid "In today's digital world, Computer Science has become an important subject for everyone to learn about. The knowledge and <a href=\"%(computational_thinking_url)s\">Computational Thinking skills</a> associated with it are now crucial to developing innovative digital technology, understanding modern society, and qualifications in this area are highly sought after."
+msgstr ""
 
 #: templates/general/what-is-computer-science.html:31
 msgid "The CS Unplugged activities are intended to give you a feel for what the subject is - you can learn what it is by doing. At this early stage, rather than define it formally, let's think about how it might influence our daily lives. For example, think of your favourite search engine. On the surface it seems like a fairly simple interface: a text box where you type what you want to search for, and a button to start the search. The level of programming knowledge needed to implement a text box and a button is fairly rudimentary, and you could implement a search by writing a short program (probably less than 20 lines) to go through all the text on the web and displaying any that match. But obviously there's more to it than this! There are billions of searches are made every day, on billions on web pages, and the approach above will give answers (eventually), but will be so slow and ineffective that no-one would use it."
@@ -1523,15 +1555,6 @@ msgstr "Informatisches Denken"
 #, python-format
 msgid "Ages %(lower)s to %(upper)s"
 msgstr "Alter %(lower)s bis %(upper)s"
-
-#: templates/topics/not-available-warning.html:6
-#, python-format
-msgid "<h4>Sorry! This item is not yet available in %(language)s.</h4> <p>This item is available in the following languages:</p>"
-msgstr "<h4>Tut uns leid! Dieses Unplugged-Element ist noch nicht in %(language)s verfügbar.</h4> <p>Es ist in den folgenden Sprachen verfügbar:</p>"
-
-#: templates/topics/not-available-warning.html:36
-msgid "Return to homepage "
-msgstr "Zurück zur Startseite "
 
 #: templates/topics/programming-challenge-language-solution.html:10
 #, python-format

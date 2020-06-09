@@ -52,17 +52,17 @@
                             </a>
                         </li>
                     {% endif %}
+                    {% if activity.challenges.all %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="#challenges">
+                                {% trans "Arnold's challenges" %}
+                            </a>
+                        </li>
+                    {% endif %}
                     {% if activity.more_information %}
                         <li class="nav-item">
                             <a class="nav-link" href="#more-information">
                                 {% trans "More information" %}
-                            </a>
-                        </li>
-                    {% endif %}
-                    {% if activity.challenges.all %}
-                        <li class="nav-item border-top mt-2 pt-2">
-                            <a class="nav-link" href="{% url 'at_home:activity_challenges' activity.slug %}">
-                                {% trans "Challenges for kids" %}
                             </a>
                         </li>
                     {% endif %}
@@ -88,6 +88,14 @@
         {% if activity.project %}
             <h2 id="project">{% trans "Project" %}</h2>
             {% render_html_field activity.project %}
+        {% endif %}
+
+        {% if activity.challenges.all %}
+            <h2 id="challenges">{% trans "Arnold's challenges" %}</h2>
+            <p class="mb-2">{% trans "Click here to view Arnold's challenges:" %}</p>
+            <a href="{% url 'at_home:activity_challenges' activity.slug %}" class="btn btn-outline-primary mb-3">
+                {% trans "Arnold's Challenges" %}
+            </a>
         {% endif %}
 
         {% if activity.more_information %}

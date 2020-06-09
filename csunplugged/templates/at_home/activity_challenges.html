@@ -46,7 +46,7 @@
                 <div class="col-12 col-lg-3 mb-2">
                     <div class="nav nav-pills flex-row flex-lg-column" id="challenge-pills-tab" role="tablist" aria-orientation="vertical">
                         {% for challenge in challenges %}
-                            <a class="nav-item nav-link p-2 {% if forloop.first%}active{% endif %}" id="challenge-{{ challenge.order_number }}-tab"
+                            <a class="nav-item nav-link p-2 text-center {% if forloop.first%}active{% endif %}" id="challenge-{{ challenge.order_number }}-tab"
                                 data-toggle="tab" href="#challenge-{{ challenge.order_number }}" role="tab"
                                 aria-controls="challenge-{{ challenge.order_number }}" aria-selected="{{ forloop.first }}">
                                 {{ challenge }}
@@ -61,8 +61,8 @@
                                 <div class="tab-pane mb-3 {% if forloop.first%}show active{% endif %}" id="challenge-{{ challenge.order_number }}"
                                     role="tabpanel" aria-labelledby="challenge-{{ challenge.order_number }}-tab" data-challenge-number="{{ challenge.order_number }}">
                                         <h3>{{ challenge }}</h3>
-                                        {% render_html_field challenge.question %}
-                                        {% if challenge.image %}<img src="{% static challenge.image %}" class="img-fluid rounded">{% endif %}
+                                        <p>{% render_html_field challenge.question %}</p>
+                                        {% if challenge.image %}<img src="{% static challenge.image %}" class="img-fluid rounded at-home-img">{% endif %}
                                 </div>
                             {% endfor %}
                         </div>
@@ -93,7 +93,11 @@
 
 {% block scripts %}
     {% if activity.translation_available %}
+        {% csrf_token %}
         <script type="text/javascript">
+            var csrf_token = jQuery("[name=csrfmiddlewaretoken]").val();
+            var activity_slug = "{{ activity.slug }}";
+            var response_url = "{% url 'at_home:save_challenge_attempt' %}";
             var challenges_json = {
               {% for challenge in challenges %}{{ challenge.order_number }}: "{{ challenge.answer }}",{% endfor %}
             };

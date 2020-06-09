@@ -7,11 +7,11 @@ The `urlpatterns` list routes URLs to views. For more information please see:
 from django.conf import settings
 from django.urls import include, path
 from django.conf.urls.i18n import i18n_patterns
+from django.contrib import admin
 
 urlpatterns = i18n_patterns(
     path('', include('general.urls', namespace='general')),
     path('topics/', include('topics.urls', namespace='topics')),
-    path('plugging-it-in/', include('plugging_it_in.urls', namespace='plugging_it_in')),
     path('resources/', include('resources.urls', namespace='resources')),
     path('at-home/', include('at_home.urls', namespace='at_home')),
 )
@@ -19,7 +19,13 @@ urlpatterns = i18n_patterns(
 urlpatterns += [
     path('', include('classic.urls')),
     path('en/search/', include('search.urls', namespace='search')),
+    path('admin/', admin.site.urls),
 ]
+
+if not settings.DJANGO_PRODUCTION:
+    urlpatterns += [
+        path('plugging-it-in/', include('plugging_it_in.urls', namespace='plugging_it_in')),
+    ]
 
 if settings.DEBUG:  # pragma: no cover
     import debug_toolbar

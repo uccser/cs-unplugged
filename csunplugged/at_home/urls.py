@@ -23,4 +23,9 @@ urlpatterns = [
         views.ActivityChallengesView.as_view(),
         name='activity_challenges'
     ),
+    path(
+        'ajax/save_challenge_attempt/',
+        views.save_challenge_attempt,
+        name='save_challenge_attempt'
+    ),
 ]
