@@ -5,7 +5,7 @@
         <div class="card-header">
             Step {{ forloop.counter }}
         </div>
-        <img src="{{ "{% static '" }}{{ step.image }}{{ "' %}" }}" class="card-img rounded-0 at-home-img">
+        <img src="{{ {% static ' }}{{ step.image }}{{ ' %} }}" class="card-img rounded-0 at-home-img" alt="{{ step.image_description }}">
         <div class="card-body">
             {% if step.presenter_says %}
                 <div class="speech-bubble">
