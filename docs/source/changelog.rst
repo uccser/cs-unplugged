@@ -31,7 +31,10 @@ All notable changes to this project will be documented in this file.
 
 **Changelog:**
 
-- Content fixes.
+- Fix bug in 'unlocking the secret in product codes' challenge number 4.
+- Add introduction video to the mind reading magic challenge.
+- Remove outdated demonstration video from mind reading magic more information section.
+- Minor content fixes.
 
 5.0.0
 ==============================================================================
