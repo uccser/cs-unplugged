@@ -26,7 +26,7 @@ All notable changes to this project will be documented in this file.
 5.0.1
 ==============================================================================
 
-- **Release date:** 3rd June 2020
+- **Release date:** 11th June 2020
 - **Downloads:** `Source downloads are available on GitHub <https://github.com/uccser/cs-unplugged/releases/>`__
 
 **Changelog:**
