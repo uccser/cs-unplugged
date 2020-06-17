@@ -23,6 +23,19 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+5.0.1
+==============================================================================
+
+- **Release date:** 11th June 2020
+- **Downloads:** `Source downloads are available on GitHub <https://github.com/uccser/cs-unplugged/releases/>`__
+
+**Changelog:**
+
+- Fix bug in 'unlocking the secret in product codes' challenge number 4.
+- Add introduction video to the mind reading magic challenge.
+- Remove outdated demonstration video from mind reading magic more information section.
+- Minor content fixes.
+
 5.0.0
 ==============================================================================
 

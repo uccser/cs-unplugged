@@ -1,5 +1,9 @@
 # Mind-reading magic
 
+Video of the trick in action:
+
+{video url="https://vimeo.com/423871686"}
+
 ## What you need
 
 - 36 double sided cards or puzzle pieces for which it’s easy to identify if they are face-up or face-down.

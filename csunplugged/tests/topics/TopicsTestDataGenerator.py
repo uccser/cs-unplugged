@@ -21,6 +21,7 @@ from topics.models import (
     ResourceDescription,
     ClassroomResource,
 )
+from plugging_it_in.models import TestCase
 
 
 class TopicsTestDataGenerator:
@@ -376,3 +377,20 @@ class TopicsTestDataGenerator:
             description="Description {}".format(number),
         )
         relationship.save()
+
+    def create_programming_challenge_test_case(self, number, challenge):
+        """Create test case object.
+
+        Args:
+            number: Identifier of the test case (int).
+            challenge: Challenge that the test case is for (Challenge object).
+
+        Returns:
+            TestCase object.
+        """
+        test_case = TestCase(
+            number=number,
+            challenge=challenge,
+        )
+        test_case.save()
+        return test_case

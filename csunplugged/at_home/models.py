@@ -58,6 +58,7 @@ class Challenge(TranslatableModel):
     question = models.TextField(default="")
     answer = models.CharField(max_length=200, default="")
     image = models.CharField(max_length=150, null=True, blank=True)
+    image_description = models.TextField(default="")
 
     def __str__(self):
         """Text representation of a challenge object.

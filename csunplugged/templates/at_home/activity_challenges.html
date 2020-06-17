@@ -28,6 +28,7 @@
 
 {% block content_container %}
     <div class="col-12">
+        {% blocktrans trimmed %}
         <p>
             Here are five challenges that build on the ideas you’ve been working with.
             You might like to do one a day...
@@ -39,6 +40,7 @@
         <p>
             Enjoy the challenges!
         </p>
+        {% endblocktrans %}
 
         {% if challenges %}
             <h2 id="challenges">{% trans "Challenges" %}</h2>
@@ -62,7 +64,9 @@
                                     role="tabpanel" aria-labelledby="challenge-{{ challenge.order_number }}-tab" data-challenge-number="{{ challenge.order_number }}">
                                         <h3>{{ challenge }}</h3>
                                         <p>{% render_html_field challenge.question %}</p>
-                                        {% if challenge.image %}<img src="{% static challenge.image %}" class="img-fluid rounded at-home-img">{% endif %}
+                                        {% if challenge.image %}
+                                            <img src="{% static challenge.image %}" class="img-fluid rounded at-home-img" alt="{{ challenge.image_description }}">
+                                        {% endif %}
                                 </div>
                             {% endfor %}
                         </div>
