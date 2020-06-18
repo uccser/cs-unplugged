@@ -48,10 +48,8 @@
     {% block navbar %}
     {% endblock navbar %}
 
-    {% trans "Home" as home_label %}
-    {% breadcrumb home_label "general:home" %}
-    {% block breadcrumbs %}
-    {% endblock breadcrumbs %}
+    {% block complete_breadcrumbs %}
+    {% endblock complete_breadcrumbs %}
 
     {% block body_container %}
       <div id="content-container" class="container">

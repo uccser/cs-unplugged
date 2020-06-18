@@ -1,201 +1,201 @@
 """URL redirect routing for the Classic CS Unplugged website."""
 
-from django.conf.urls import url
+from django.urls import path
 from classic import views
 
-
+app_name = 'classic'
 urlpatterns = [
-    url(
-        r"^activities",
+    path(
+        'activities',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^artificial-intelligence",
+    path(
+        'artificial-intelligence',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^binary-numbers",
+    path(
+        'binary-numbers',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^books",
+    path(
+        'books',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^changelog",
+    path(
+        'changelog',
         views.redirect_to_changelog,
     ),
-    url(
-        r"^class-simulation-computer-unfinished",
+    path(
+        'class-simulation-computer-unfinished',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^community",
+    path(
+        'community',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^community-activties",
+    path(
+        'community-activties',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^contact-us/",
+    path(
+        'contact-us/',
         views.redirect_to_contact,
     ),
-    url(
-        r"^contribute",
+    path(
+        'contribute',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^cryptographic-protocols",
+    path(
+        'cryptographic-protocols',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^curriculum-links",
+    path(
+        'curriculum-links',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^databases",
+    path(
+        'databases',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^divideandconquer",
+    path(
+        'divideandconquer',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^dominating-sets",
+    path(
+        'dominating-sets',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^error-detection",
+    path(
+        'error-detection',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^events",
+    path(
+        'events',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^finite-state-automata",
+    path(
+        'finite-state-automata',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^graph-colouring",
+    path(
+        'graph-colouring',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^harold-the-robot-2",
+    path(
+        'harold-the-robot-2',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^human-interface-design",
+    path(
+        'human-interface-design',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^image-representation",
+    path(
+        'image-representation',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^information-hiding",
+    path(
+        'information-hiding',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^information-theory",
+    path(
+        'information-theory',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^line-drawing",
+    path(
+        'line-drawing',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^minimal-spanning-trees",
+    path(
+        'minimal-spanning-trees',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^modem/",
+    path(
+        'modem/',
         views.redirect_to_modems_unplugged_2,
     ),
-    url(
-        r"^modems-unplugged-2",
+    path(
+        'modems-unplugged-2',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^network-protocols",
+    path(
+        'network-protocols',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^phylogenetics",
+    path(
+        'phylogenetics',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^programming-languages",
+    path(
+        'programming-languages',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^projects",
+    path(
+        'projects',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^promotional",
+    path(
+        'promotional',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^public-key-encryption",
+    path(
+        'public-key-encryption',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^research",
+    path(
+        'research',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^routing-and-deadlock",
+    path(
+        'routing-and-deadlock',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^scout-patrol-encryption",
+    path(
+        'scout-patrol-encryption',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^searching-algorithms",
+    path(
+        'searching-algorithms',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^sneak-peek/",
+    path(
+        'sneak-peek/',
         views.redirect_to_homepage,
     ),
-    url(
-        r"^sorting-algorithms",
+    path(
+        'sorting-algorithms',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^sorting-networks",
+    path(
+        'sorting-networks',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^steiner-trees",
+    path(
+        'steiner-trees',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^teachers",
+    path(
+        'teachers',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^text-compression",
+    path(
+        'text-compression',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^the-turing-test",
+    path(
+        'the-turing-test',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^translations",
+    path(
+        'translations',
         views.redirect_to_classic_unplugged,
     ),
-    url(
-        r"^videos",
+    path(
+        'videos',
         views.redirect_to_classic_unplugged,
     ),
     # All media files
-    url(
-        r"^wp-content/",
+    path(
+        'wp-content<path:media_path>',
         views.redirect_to_classic_unplugged,
     ),
 ]

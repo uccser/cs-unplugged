@@ -40,6 +40,9 @@ DJANGO_APPS = [
 
     # Useful template tags
     "django.contrib.humanize",
+
+    # Admin
+    "django.contrib.admin",
 ]
 
 THIRD_PARTY_APPS = [
@@ -340,4 +343,5 @@ CUSTOM_VERTO_TEMPLATES = os.path.join(str(ROOT_DIR.path("utils")), "custom_conve
 MODELTRANSLATION_CUSTOM_FIELDS = ("JSONField",)
 CLASSIC_PAGES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("classic")), "content")
 GENERAL_PAGES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("general")), "content")
+ACTIVITIES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("at_home")), "content")
 BREADCRUMBS_TEMPLATE = "django_bootstrap_breadcrumbs/bootstrap4.html"

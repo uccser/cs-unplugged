@@ -1,7 +1,7 @@
 """URL configuration for testing general pages model."""
 
-from django.conf.urls import url
+from django.urls import path
 
 urlpatterns = [
-    url(r"valid-url", lambda: True, name="url"),
+    path('valid-url', lambda: True, name='url'),
 ]

@@ -1,0 +1,50 @@
+# Step 1
+-   image: img/at_home/binary-challenge/binary-challenge-step-1.jpg
+    presenter_says: Cut out 5 cards, ideally made of cardboard.
+    presenter_commentary: This can be done in advance for younger children.
+    image_description: Child cutting out five cards.
+# Step 2
+-   image: img/at_home/binary-challenge/binary-challenge-step-2.jpg
+    presenter_says: Put one dot on one side of the right-most card, two dots on the card to its left...
+    presenter_commentary: It’s significant that the smallest is on the right; make sure the number of dots is increasing from <em>right to left</em>.
+    image_description: Child drawing dots on each of the cards.
+# Step 3
+-   image: img/at_home/binary-challenge/binary-challenge-step-3.jpg
+    presenter_says: ...then 4, 8 and 16 dots. Can you describe the pattern in the number of dots on each card?
+    presenter_commentary: The child may recognise that the number of dots doubles each time.
+    image_description: Child placing the cards such that the number of dots is increasing from right to left.
+# Step 4
+-   image: img/at_home/binary-challenge/binary-challenge-step-4.jpg
+    presenter_says: If there was one more card to the left, how many dots would it have?
+    presenter_commentary: They might be able to predict that if there was one more card it would have 32 dots on it. (This isn’t essential, but some children will enjoy extending the pattern, which would continue with 64, 128, 256 and so on.)
+    image_description: Adult pointing to where the next card in the sequence would go.
+# Step 5
+-   image: img/at_home/binary-challenge/binary-challenge-step-5.jpg
+    presenter_says: We can use these cards to represent numbers by turning some of them face down and counting up the number of dots that are showing. The rule is that each card is either fully visible, or fully hidden. How can you have exactly 5 dots showing?
+    presenter_commentary: Let the child experiment with flipping cards over. If they struggle, a good strategy is to start at the left, and ask them if they want the 16 dot card visible (no, because there would be too many dots), then the 8 card (still too many), then the 4 card (it’s less than 5, so looks hopeful), then the 2 card (let them count up the dots and realise that there would be 6 visible, which is more than 5), and finally the 1 card.
+    image_description: Child flipping over some cards so that five dots are showing.
+# Step 6
+-   image: img/at_home/binary-challenge/binary-challenge-step-6.jpg
+    presenter_says: So if we ask if each card is visible, it would be no, no, yes, no, yes?
+    presenter_commentary: Point to each card <em>from left to right</em>, and illustrate using "yes" and "no" to say if each card has the dots showing or not. The picture shows the only way to get exactly 5 dots visible.
+    image_description: Five dots are showing.
+# Step 7
+-   image: img/at_home/binary-challenge/binary-challenge-step-3.jpg
+    presenter_says: "Now I’ll give you a number: yes, no, yes, yes, no"
+    presenter_commentary: Get child to help put all 5 cards face up, then point to each card <em>from left to right</em> as you say "yes, no, yes, yes, no", and get child to hide the ones that are "no" (the pattern is shown in the next photo).
+    image_description: All cards are face up, showing all dots.
+# Step 8
+-   image: img/at_home/binary-challenge/binary-challenge-step-8.jpg
+    presenter_says: How many dots are showing?
+    presenter_commentary: Allow the child to count up the dots (for younger children, they may need to point to each dot as they count it), or they can add the numbers, to get 16+4+2, or 22 dots visible. You’ve communicated the number 22 by saying "yes, no, yes, yes, no". Because you used just two words or symbols, you have used binary to convey information.
+    image_description: Child counting up the number of dots.
+# Step 9
+-   image: img/at_home/binary-challenge/binary-challenge-step-9.jpg
+    presenter_says: Can you make exactly 11 dots visible?
+    presenter_commentary: Place all cards face up again, and let them experiment until they find the pattern shown.
+    image_description: Child flipping the cards so that eleven dots are showing.
+# Step 10
+-   image: img/at_home/binary-challenge/binary-challenge-step-10.jpg
+    presenter_says: We can communicate numbers by just saying "yes" and "no"! Let’s make up more numbers for each other.
+    presenter_commentary: Take turns at showing each other numbers. These could be to communicate things like the day of the month they were born in, or the number of the month they’re thinking of. As an extension, try counting all the numbers possible, starting at 0, 1, 2, 3...up to 31, and look for patterns that occur.
+    image_description: Child flipping cards.
