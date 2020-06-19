@@ -11,5 +11,5 @@
     question: What is the largest number of dots that Arnold could represent with 8 cards?
     answer: "255"
 5:
-    question: If we use 0 and 1 for "no" and "yes", how many dots would you get with the binary number 1111111111?
+    question: If we use 0 for a card's dots being hidden, and 1 for the dots being visible, how many dots would you get with the binary number 1111111111?
     answer: "1023"
