@@ -8,6 +8,8 @@ from django.conf import settings
 from django.urls import include, path
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
+import environ
+env = environ.Env()
 
 urlpatterns = i18n_patterns(
     path('', include('general.urls', namespace='general')),
@@ -22,7 +24,7 @@ urlpatterns += [
     path('admin/', admin.site.urls),
 ]
 
-if not settings.DJANGO_PRODUCTION:
+if not env("DEPLOYMENT", default=None) == "prod":
     urlpatterns += [
         path('plugging-it-in/', include('plugging_it_in.urls', namespace='plugging_it_in')),
     ]
