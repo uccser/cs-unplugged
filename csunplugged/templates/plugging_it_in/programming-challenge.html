@@ -3,16 +3,25 @@
 {% load i18n %}
 {% load static %}
 {% load render_html_field %}
+{% load django_bootstrap_breadcrumbs %}
 
 {% block title %}
   {{ programming_challenge.name }}
 {% endblock title %}
+
+{% block breadcrumbs %}
+  {% breadcrumb "Plugging It In" "plugging_it_in:index" %}
+  {% breadcrumb topic.name "plugging_it_in:topic" topic.slug %}
+  {% comment %} Bit of an issue with relating back to a single lesson since there could be multiple. {% endcomment %}
+  {% breadcrumb programming_challenge.name "plugging_it_in:programming_challenge" programming_challenge.slug %}
+{% endblock breadcrumbs %}
 
 {% block body_container %}
 
 <div class="row programming__challenge-screen">
 {% if programming_challenge.translation_available %}
   <div class="col-12 col-md-4 programming__info-area">
+    {% render_breadcrumbs %}
     <h1>
     {{ programming_challenge.name }}
   </h1>
@@ -47,7 +56,7 @@
       </div>
     </details>
   {% endif %}
-  
+
   {% render_html_field programming_challenge.content %}
   </div>
   <div class="col-12 col-md-4 programming__editor">
