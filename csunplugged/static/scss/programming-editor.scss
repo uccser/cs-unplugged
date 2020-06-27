@@ -34,37 +34,46 @@ body,
   padding: 0px;
 
   .CodeMirror {
+    height: 92%;
     margin: 0px;
-    height: 95%;
   }
 
   .programming__submit {
-    height: 5%;
-    background-color: #d6c1e1ff;
-
+    height: 8%;
+    background-color: white;
+    
     .code_running_spinner {
       display: none;
-      color: white;
+      color: #06a284ff;
       margin-right: 0.625rem;
     }
 
-    #editor_run_button {
-      border: none;
-      background-color: #06a284ff;
-      color: white;
+    .programming__submit_options {
+
       height: 100%;
-      width: 20%;
-      transition: ease-in;
-    }
+      padding-left: 30px;
+      align-items: center;
+    
+      .editor_button {
+        border: none;
+        background-color: #06a284ff;
+        color: white;
+        height: 60%;
+        padding: 0px 20px;
+        margin: 0px 10px;
+        border-radius: 10px;
+        transition: ease-in;
+      }
 
-    #editor_run_button:hover {
-      cursor: pointer;
-      background-color: #05856dff;
-    }
+      .editor_button:hover {
+        cursor: pointer;
+        background-color: #05856dff;
+      }
 
-    #editor_run_button:disabled {
-      background-color: #05856dff;
-      cursor: normal;
+      #editor_run_button:disabled {
+        background-color: #05856dff;
+        cursor: normal;
+      }
     }
   }
 }
