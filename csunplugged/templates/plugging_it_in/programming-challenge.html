@@ -12,8 +12,8 @@
 {% block breadcrumbs %}
   {% breadcrumb "Plugging It In" "plugging_it_in:index" %}
   {% breadcrumb topic.name "plugging_it_in:topic" topic.slug %}
-  {% comment %} Bit of an issue with relating back to a single lesson since there could be multiple. {% endcomment %}
-  {% breadcrumb programming_challenge.name "plugging_it_in:programming_challenge" programming_challenge.slug %}
+  {% breadcrumb lesson.name "plugging_it_in:lesson" topic.slug lesson.slug %}
+  {% breadcrumb programming_challenge.name "plugging_it_in:programming_challenge" topic.slug lesson.slug programming_challenge.slug %}
 {% endblock breadcrumbs %}
 
 {% block body_container %}

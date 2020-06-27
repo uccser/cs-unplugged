@@ -140,6 +140,10 @@ class ProgrammingChallengeView(generic.DetailView):
         context = super(ProgrammingChallengeView, self).get_context_data(**kwargs)
 
         context["topic"] = self.object.topic
+        lessons = self.object.lessons.all()
+        for lesson in lessons:
+            if lesson.slug == self.kwargs.get("lesson_slug", None):
+                context["lesson"] = lesson
 
         # Getting the related lessons - there may be multiple
         context["lessons"] = self.object.lessons.all()
