@@ -1,0 +1,29 @@
+{% extends "base-students.html" %}
+
+{% load i18n %}
+{% load static %}
+{% load render_html_field %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}
+  {{ topic.name }} Programming Exercises
+{% endblock title %}
+
+{% block breadcrumbs %}
+  {% breadcrumb "Plugging It In" "plugging_it_in:index" %}
+  {% breadcrumb topic.name "plugging_it_in:topic" topic.slug %}
+  {% breadcrumb lesson.name "plugging_it_in:lesson" lesson.slug %}
+{% endblock breadcrumbs %}
+
+{% block page_heading %}
+  <h1 id="{{ lesson.slug }}">{{ lesson.name }} programming exercises</h1>
+ 
+{% endblock page_heading %}
+
+{% block content %}
+  {% if programming_challenges %}
+    {% include "plugging_it_in/programming-challenges-table.html" %}
+  {% else %}
+    <p>{% blocktrans trimmed %}No programming challenges for {{ topic }}.{% endblocktrans %}</p>
+  {% endif %}
+{% endblock content %}

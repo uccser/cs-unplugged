@@ -18,7 +18,12 @@ urlpatterns = [
         name="topic"
     ),
     url(
-        r"^(?P<topic_slug>[-\w]+)/(?P<programming_challenge_slug>[-\w]+)/$",
+        r"^(?P<topic_slug>[-\w]+)/(?P<lesson_slug>[-\w]+)/$",
+        views.LessonView.as_view(),
+        name="lesson"
+    ),
+    url(
+        r"^(?P<topic_slug>[-\w]+)/(?P<lesson_slug>[-\w]+)/(?P<programming_challenge_slug>[-\w]+)/$",
         views.ProgrammingChallengeView.as_view(),
         name="programming_challenge"
     ),
