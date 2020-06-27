@@ -35,6 +35,28 @@
     </p>
   {% endif %}
 
+  {% if lessons %}
+    <div class="alert alert-info" role="alert">
+      <p>{% trans "This programming challenge is linked to the following lessons:" %}</p>
+
+      <ul class="mb-0">
+        {% for lesson in lessons %}
+          <li>
+            <a href="{% url 'topics:lesson' topic.slug lesson.unit_plan.slug lesson.slug %}">
+              {% blocktrans with set_num=lesson.challenge_set_number chal_num=lesson.challenge_number name=lesson.name trimmed %}
+              {{ name }}
+              {% endblocktrans %}
+              ({% for age_group in lesson.age_group.all %}{% blocktrans with lower=age_group.ages.lower upper=age_group.ages.upper trimmed %}{{ lower }} to {{ upper }}{% endblocktrans %}{% if not forloop.last %}, {% endif %}{% endfor %})
+            </a>
+            {% if not lesson.translation_available %}
+              {% include 'generic/not-available-badge.html' %}
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
   {% if learning_outcomes %}
     <details class="panel-learning-outcomes">
       <summary>

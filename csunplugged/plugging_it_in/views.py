@@ -16,6 +16,7 @@ from utils.group_lessons_by_age import group_lessons_by_age
 from topics.models import (
     Topic,
     ProgrammingChallenge,
+    ProgrammingChallengeNumber,
     UnitPlan,
     Lesson
 )
@@ -139,7 +140,17 @@ class ProgrammingChallengeView(generic.DetailView):
         context = super(ProgrammingChallengeView, self).get_context_data(**kwargs)
 
         context["topic"] = self.object.topic
-        # Add all the connected learning outcomes
+
+        # Getting the related lessons - there may be multiple
+        context["lessons"] = self.object.lessons.all()
+        for lesson in context["lessons"]:
+            challenge_numbers = ProgrammingChallengeNumber.objects.get(
+                lesson=lesson,
+                programming_challenge=self.object
+            )
+            lesson.challenge_set_number = challenge_numbers.challenge_set_number
+            lesson.challenge_number = challenge_numbers.challenge_number
+
         context["learning_outcomes"] = self.object.learning_outcomes(manager="translated_objects").order_by("text")
         context["implementations"] = self.object.ordered_implementations()
         context["test_cases_json"] = json.dumps(list(self.object.related_test_cases().values()))
