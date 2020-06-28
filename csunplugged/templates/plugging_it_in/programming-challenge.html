@@ -22,61 +22,63 @@
 {% if programming_challenge.translation_available %}
   <div class="col-12 col-md-4 programming__info-area">
 
-  {% if not programming_challenge.translation_available %}
-    {% with model=programming_challenge parent=topic %}
-      {% include 'topics/not-available-warning.html' %}
-    {% endwith %}
-  {% else %}
-    <p class="w-100 text-white rounded p-2 mt-3 difficulty-level-{{ programming_challenge.difficulty.level }}">
-      <strong>{% trans "Challenge Level:" %}</strong> {{ programming_challenge.difficulty.name }}
-    </p>
-  {% endif %}
+  <div class="programming__info-area-content">
+    {% if not programming_challenge.translation_available %}
+      {% with model=programming_challenge parent=topic %}
+        {% include 'topics/not-available-warning.html' %}
+      {% endwith %}
+    {% else %}
+      <p class="w-100 text-white rounded p-2 mt-3 difficulty-level-{{ programming_challenge.difficulty.level }}">
+        <strong>{% trans "Challenge Level:" %}</strong> {{ programming_challenge.difficulty.name }}
+      </p>
+    {% endif %}
 
-  {% if lessons %}
-    <div class="alert alert-info" role="alert">
-      <p>{% trans "This programming challenge is linked to the following lessons:" %}</p>
+    {% if lessons %}
+      <div class="alert alert-info" role="alert">
+        <p>{% trans "This programming challenge is linked to the following lessons:" %}</p>
 
-      <ul class="mb-0">
-        {% for lesson in lessons %}
-          <li>
-            <a href="{% url 'topics:lesson' topic.slug lesson.unit_plan.slug lesson.slug %}">
-              {% blocktrans with set_num=lesson.challenge_set_number chal_num=lesson.challenge_number name=lesson.name trimmed %}
-              {{ name }}
-              {% endblocktrans %}
-              ({% for age_group in lesson.age_group.all %}{% blocktrans with lower=age_group.ages.lower upper=age_group.ages.upper trimmed %}{{ lower }} to {{ upper }}{% endblocktrans %}{% if not forloop.last %}, {% endif %}{% endfor %})
-            </a>
-            {% if not lesson.translation_available %}
-              {% include 'generic/not-available-badge.html' %}
-            {% endif %}
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  {% endif %}
-
-  {% if learning_outcomes %}
-    <details class="panel-learning-outcomes">
-      <summary>
-        <strong>{% trans "Learning outcomes" %}</strong>
-        <img class="inline-image" src="{% static 'img/general/outcomes.png' %}">
-      </summary>
-      <div class="boxed-text-content">
-        <p>{% trans "Students will be able to:" %}</p>
-        <ul>
-          {% for learning_outcome in learning_outcomes %}
-          <li>
-            {{ learning_outcome.text }}<br>
-            {% for area in learning_outcome.curriculum_areas.all %}
-              {% include "topics/curriculum-area-badge.html" %}
-            {% endfor %}
-          </li>
+        <ul class="mb-0">
+          {% for lesson in lessons %}
+            <li>
+              <a href="{% url 'topics:lesson' topic.slug lesson.unit_plan.slug lesson.slug %}">
+                {% blocktrans with set_num=lesson.challenge_set_number chal_num=lesson.challenge_number name=lesson.name trimmed %}
+                {{ name }}
+                {% endblocktrans %}
+                ({% for age_group in lesson.age_group.all %}{% blocktrans with lower=age_group.ages.lower upper=age_group.ages.upper trimmed %}{{ lower }} to {{ upper }}{% endblocktrans %}{% if not forloop.last %}, {% endif %}{% endfor %})
+              </a>
+              {% if not lesson.translation_available %}
+                {% include 'generic/not-available-badge.html' %}
+              {% endif %}
+            </li>
           {% endfor %}
         </ul>
       </div>
-    </details>
-  {% endif %}
+    {% endif %}
 
-  {% render_html_field programming_challenge.content %}
+    {% if learning_outcomes %}
+      <details class="panel-learning-outcomes">
+        <summary>
+          <strong>{% trans "Learning outcomes" %}</strong>
+          <img class="inline-image" src="{% static 'img/general/outcomes.png' %}">
+        </summary>
+        <div class="boxed-text-content">
+          <p>{% trans "Students will be able to:" %}</p>
+          <ul>
+            {% for learning_outcome in learning_outcomes %}
+            <li>
+              {{ learning_outcome.text }}<br>
+              {% for area in learning_outcome.curriculum_areas.all %}
+                {% include "topics/curriculum-area-badge.html" %}
+              {% endfor %}
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </details>
+    {% endif %}
+
+    {% render_html_field programming_challenge.content %}
+    </div>
   </div>
   <div class="col-12 col-md-4 programming__editor">
     <textarea id="codemirror_editor"># Start Coding Here.</textarea>
