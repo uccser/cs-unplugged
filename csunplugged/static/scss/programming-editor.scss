@@ -1,10 +1,65 @@
 @import "node_modules/codemirror/lib/codemirror";
 
 html,
-body,
-.programming__challenge-screen {
+body {
   height: 100%;
   width: 100%;
+}
+
+.programming__challenge-screen {
+  height: 93%;
+  width: 100%;
+}
+
+.programming__options {
+  height: 7%;
+  background-color: #28368f;
+  color: white;
+  margin-left: 0px;
+
+  .progression-options {
+    .btn {
+      border-radius: 20px;
+    }
+
+    .prev {
+      border: 2px solid white;
+    }
+
+    .prev:hover {
+      color: #28368f;
+      background-color: white;
+    }
+
+    .next {
+      color: #28368f;
+      background-color: #ffea00;
+    }
+  }
+
+  .lesson-link {
+    font-size: 20px;
+  }
+
+  .lesson-link:hover {
+    cursor: pointer;
+  }
+  
+  .btn {
+    margin-right: 20px;
+    color: white;
+  }
+
+  .lesson-nav {
+    .btn:hover {
+      color: white;
+    }
+  }
+
+  p {
+    color: white;
+    margin-bottom: 0px !important;
+  }
 }
 
 #sponsor-logos {
@@ -41,7 +96,7 @@ body,
   .programming__submit {
     height: 8%;
     background-color: white;
-    
+
     .code_running_spinner {
       display: none;
       color: #06a284ff;

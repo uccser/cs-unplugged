@@ -21,10 +21,7 @@
 <div class="row programming__challenge-screen">
 {% if programming_challenge.translation_available %}
   <div class="col-12 col-md-4 programming__info-area">
-    {% render_breadcrumbs %}
-    <h1>
-    {{ programming_challenge.name }}
-  </h1>
+
   {% if not programming_challenge.translation_available %}
     {% with model=programming_challenge parent=topic %}
       {% include 'topics/not-available-warning.html' %}
@@ -98,6 +95,23 @@
     {% include "plugging_it_in/results-table.html" %}
   </div>
 {% endif %}
+</div>
+
+<div class="col-12 row programming__options d-flex justify-content-between align-items-center">
+  <div class="col-4 lesson-nav d-flex justify-content-start align-items-center">
+    <button class="btn"><i class="fa fa-bars"></i></button>
+    <p>{{programming_challenge.name}}</p>
+  </div>
+
+  <div class="col-4 progression-options d-flex justify-content-around align-items-center">
+    <button class="btn prev">Previous Challenge</button>
+    <p>7/12</p>
+    <button class="btn next">Next Challenge</button>
+  </div>
+
+  <a class="col-4 d-flex justify-content-end lesson-link" href="{% url "plugging_it_in:lesson" topic.slug lesson.slug %}">
+    <p >{{lesson.name}}</p>
+  </a>
 </div>
 
 {% endblock body_container %}
