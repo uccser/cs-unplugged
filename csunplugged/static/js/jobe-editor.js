@@ -104,7 +104,7 @@ function downloadCode() {
 
 // Side Navigation
 function openNav() {
-  document.getElementById("my_sidenav").style.width = "500px";
+  document.getElementById("my_sidenav").style.width = "800px";
   document.getElementById("sidebar_overlay").style.zIndex = "1031";
   document.getElementById("sidebar_overlay").style.opacity = "0.6";
 }

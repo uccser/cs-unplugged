@@ -33,9 +33,11 @@
 
     <p class='challenges-heading'>Challenges</p>
     <ol class='challenges-list'>
-      <li>1.1 Some cool challenge</li>
-      <li>1.2 Another cool challenge</li>
-      <li>2.3 Yet another cool challenge</li>
+        {% for programming_challenge in programming_challenges %}
+        <a href="{% url 'plugging_it_in:programming_challenge' topic.slug lesson.slug programming_challenge.slug %}">
+         <li>{{ programming_challenge.challenge_set_number }}.{{ programming_challenge.challenge_number }} {{ programming_challenge.name }}</li>
+        </a>
+        {% endfor %}
     </ol>
 </div>
 
