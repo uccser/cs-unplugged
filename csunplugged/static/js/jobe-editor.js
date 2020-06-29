@@ -123,11 +123,14 @@ submitButton.addEventListener("click", sendCodeToJobe);
 let downloadButton = document.getElementById("download_button");
 downloadButton.addEventListener("click", downloadCode);
 
-// Setting up event listener for the download button.
+// Setting up event listener for opening the navigation bar.
 let lessonsNavToggle = document.getElementById("lessons_nav_toggle");
 lessonsNavToggle.addEventListener("click", openNav);
 
-// Setting up event listener for the download button.
-let closeLessonsNav = document.getElementById("close_nav_button");
+// Setting up event listener for closing the navigation drawer.
+let closeLessonsNav = document.getElementById("sidebar_overlay");
 closeLessonsNav.addEventListener("click", closeNav);
+
+let closeLessonsNavButton = document.getElementById("close_nav_button");
+closeLessonsNavButton.addEventListener("click", closeNav);
 

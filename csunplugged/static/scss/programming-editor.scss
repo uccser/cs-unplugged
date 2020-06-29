@@ -1,5 +1,8 @@
 @import "node_modules/codemirror/lib/codemirror";
 
+$student-colour: #3044b3;
+$student-colour-light: #5a9fffff;;
+
 html,
 body {
   height: 100%;
@@ -169,34 +172,56 @@ body {
   background-color: white;
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 60px;
+  -webkit-box-shadow: 10px 0px 8px -3px rgba(0,1,17,0.27);
+  -moz-box-shadow: 10px 0px 8px -3px rgba(0,1,17,0.27);
+  box-shadow: 10px 0px 8px -3px rgba(0,1,17,0.27);
+
+  .sidebar-headings {
+    padding: 20px 0px;
+    background-color: rgb(248, 249, 250);
+  }
+
+  h5 {
+    margin-bottom: 0px;
+  }
+
+  h2, h5, p {
+    padding-left: 20px;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  hr {
+    height: 3px;
+    margin-top: 0px;
+    background: $student-colour-light;
+  }
+
+  .challenges-heading {
+    color: $student-colour;
+    font-weight: bold;
+  }
+
+  .challenges-list {
+    padding: 0px;
+  }
+ 
 }
 
-#sidebar_overlay {
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  z-index: 0;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  opacity: 0;
-  overflow-x: hidden;
-  transition: opacity 0.5s;
-  padding-top: 60px;
-}
-
-.sidenav a {
-  padding: 8px 8px 8px 32px;
+.sidenav li {
+  padding: 8px 8px 8px 20px;
   text-decoration: none;
-  font-size: 25px;
-  color: #818181;
+  font-size: 16px;
+  color: rgb(33, 37, 41);
   display: block;
   transition: 0.3s;
 }
 
-.sidenav a:hover {
-  color: #f1f1f1;
+.sidenav li:hover {
+  background-color: #e9f1fc;
+  cursor: pointer;
 }
 
 .sidenav .closebtn {
@@ -210,4 +235,17 @@ body {
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+}
+
+#sidebar_overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  opacity: 0;
+  overflow-x: hidden;
+  transition: opacity 0.5s;
 }
