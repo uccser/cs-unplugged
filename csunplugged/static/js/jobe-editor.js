@@ -102,6 +102,19 @@ function downloadCode() {
   download("code.py", myCodeMirror.getValue());
 }
 
+// Side Navigation
+function openNav() {
+  document.getElementById("my_sidenav").style.width = "500px";
+  document.getElementById("sidebar_overlay").style.zIndex = "1031";
+  document.getElementById("sidebar_overlay").style.opacity = "0.6";
+}
+
+function closeNav() {
+  document.getElementById("my_sidenav").style.width = "0";
+  document.getElementById("sidebar_overlay").style.zIndex = "0";
+  document.getElementById("sidebar_overlay").style.opacity = "0";
+}
+
 // Setting up event listener for the check button to run the code.
 let submitButton = document.getElementById("editor_run_button");
 submitButton.addEventListener("click", sendCodeToJobe);
@@ -109,3 +122,12 @@ submitButton.addEventListener("click", sendCodeToJobe);
 // Setting up event listener for the download button.
 let downloadButton = document.getElementById("download_button");
 downloadButton.addEventListener("click", downloadCode);
+
+// Setting up event listener for the download button.
+let lessonsNavToggle = document.getElementById("lessons_nav_toggle");
+lessonsNavToggle.addEventListener("click", openNav);
+
+// Setting up event listener for the download button.
+let closeLessonsNav = document.getElementById("close_nav_button");
+closeLessonsNav.addEventListener("click", closeNav);
+
