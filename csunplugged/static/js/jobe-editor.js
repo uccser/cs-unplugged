@@ -99,7 +99,7 @@ function download(filename, text) {
  * Downloads the editor code to a file called code.py.
  */
 function downloadCode() {
-  download("code.py", myCodeMirror.getValue());
+  download(current_challenge_slug + ".py", myCodeMirror.getValue());
 }
 
 // Setting up event listener for the check button to run the code.
