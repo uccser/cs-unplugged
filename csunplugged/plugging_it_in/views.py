@@ -145,7 +145,8 @@ class ProgrammingChallengeView(generic.DetailView):
             if lesson.slug == self.kwargs.get("lesson_slug", None):
                 context["lesson"] = lesson
                 context["programming_challenges"] = lesson.retrieve_related_programming_challenges()
-        
+                context["programming_exercises_json"] = json.dumps(list(lesson.retrieve_related_programming_challenges().values()))   
+
         # Getting the related lessons - there may be multiple
         context["lessons"] = self.object.lessons.all()
         for lesson in context["lessons"]:

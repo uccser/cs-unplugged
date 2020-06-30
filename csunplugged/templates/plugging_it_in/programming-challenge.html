@@ -131,9 +131,13 @@
   </div>
 
   <div class="col-4 progression-options d-flex justify-content-around align-items-center">
-    <button class="btn prev">Previous Challenge</button>
-    <p>7/12</p>
-    <button class="btn next">Next Challenge</button>
+    <a id='prev_challenge_button'>
+      <button  class="btn prev">Previous Challenge</button>
+    </a>
+    <p id="challenge_progression_text"></p>
+    <a id='next_challenge_button'>
+      <button class="btn next">Next Challenge</button>
+    </a>
   </div>
 
   <a class="col-4 d-flex justify-content-end lesson-link" href="{% url "plugging_it_in:lesson" topic.slug lesson.slug %}">
@@ -156,10 +160,14 @@
   <link rel="stylesheet" href="{% static 'css/programming-editor.css' %}" >
 
   <script type="text/javascript">
+    let current_challenge_slug = '{{ programming_challenge.slug }}';
     let test_cases = {{ test_cases_json|safe }};
+    let programming_exercises = {{ programming_exercises_json|safe }};
+    let lesson_url = "{% url 'plugging_it_in:lesson' topic.slug lesson.slug %}";
     let csrf_token = '{{ csrf_token }}';
     let jobe_proxy_url = '{{ jobe_proxy_url }}';
   </script>
 
   <script src="{% static 'js/jobe-editor.js' %}"></script>
+  <script src="{% static 'js/editor-options-menu.js' %}"></script>
 {% endblock scripts %}
