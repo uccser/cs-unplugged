@@ -81,7 +81,11 @@ async function run_testcase(
     }
   } else if (userResult.outcome == 11) {
     // Outcome 11: Compiler Error
-    testcaseResult.status = "Compiler Error";
+    testcaseResult.status = "Syntax Error";
+    testcaseResult.userOutput = userResult.cmpinfo;
+  } else if (userResult.outcome == 13) {
+    // Outcome 13: Time limit exceeeded
+    testcaseResult.status = "Time limit exceeded";
     testcaseResult.userOutput = userResult.cmpinfo;
   } else {
     // Any other error
