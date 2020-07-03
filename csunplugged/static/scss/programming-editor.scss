@@ -207,7 +207,14 @@ body {
   .challenges-list {
     padding: 0px;
   }
- 
+
+  .current-exercise {
+    background-color: #e9f1fc;
+  }
+
+  .current-exercise:hover {
+    background-color: #e9f1fc;
+  }
 }
 
 .sidenav li {
@@ -220,7 +227,7 @@ body {
 }
 
 .sidenav li:hover {
-  background-color: #e9f1fc;
+  background-color: #f4f7fcff;
   cursor: pointer;
 }
 

@@ -33,9 +33,9 @@
 
     <p class='challenges-heading'>Challenges</p>
     <ol class='challenges-list'>
-        {% for programming_challenge in programming_challenges %}
-        <a href="{% url 'plugging_it_in:programming_challenge' topic.slug lesson.slug programming_challenge.slug %}">
-         <li>{{ programming_challenge.challenge_set_number }}.{{ programming_challenge.challenge_number }} {{ programming_challenge.name }}</li>
+        {% for programming_challenge_item in programming_challenges %}
+        <a href="{% url 'plugging_it_in:programming_challenge' topic.slug lesson.slug programming_challenge_item.slug %}">
+         <li class="{% if programming_challenge.slug == programming_challenge_item.slug %}current-exercise{% endif %}">{{ programming_challenge_item.challenge_set_number }}.{{ programming_challenge_item.challenge_number }} {{ programming_challenge_item.name }}</li>
         </a>
         {% endfor %}
     </ol>
