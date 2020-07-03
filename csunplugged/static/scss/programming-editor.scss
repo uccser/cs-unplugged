@@ -96,6 +96,11 @@ body {
     border-radius: 15px;
   }
 
+  // Removing the testing examples section from content (temporary).
+  #testing-examples, #testing-examples + p, #testing-examples + p + table {
+    display: none;
+  }
+
 }
 
 .programming__results {

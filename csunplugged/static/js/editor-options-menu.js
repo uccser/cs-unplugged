@@ -68,3 +68,7 @@ function setupLessonNav() {
 
 // Apply the navigation setup
 setupLessonNav()
+
+// Add testing examples info to the requirements block (temporary)
+const static_requirement_info = "Your program should display the outputs in the table (shown on the right) for the given inputs provided.";
+$("#requirement + p").append(`</br></br> <p>${static_requirement_info}</p>`);
