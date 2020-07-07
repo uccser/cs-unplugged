@@ -391,15 +391,15 @@ class GlossaryList(generic.ListView):
 
     def get_context_data(self):
         """Get context data for template rendering."""
+        term_locale = "term_" + get_language()
         return {
             "glossary_terms": GlossaryTerm.objects.filter(
                 Q(languages__contains=[get_language()])
-            ).order_by("term_en"),
+            ).order_by(term_locale),
             "untranslated_glossary_terms": GlossaryTerm.objects.filter(
                 ~Q(languages__contains=[get_language()])
             ).order_by("term_en")
         }
-
 
 def glossary_json(request, **kwargs):
     """Provide JSON data for glossary term.
