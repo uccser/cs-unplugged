@@ -401,6 +401,7 @@ class GlossaryList(generic.ListView):
             ).order_by("term_en")
         }
 
+
 def glossary_json(request, **kwargs):
     """Provide JSON data for glossary term.
 
