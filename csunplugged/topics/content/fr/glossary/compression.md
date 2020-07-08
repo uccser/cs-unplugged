@@ -1,0 +1,3 @@
+# Compression
+
+La compression consiste à tenter de rendre quelque chose plus petit. Dans les ordinateurs, la compression de données consiste à utiliser un algorithme de compression pour réduire la taille des fichiers, afin qu'ils prennent moins de place et puissent être transférés plus rapidement. Cela consiste généralement à essayer de trouver des motifs répétitifs ou prédictibles dans un fichier, puis à les remplacer par des codes plus courts qui véhiculent la même information.

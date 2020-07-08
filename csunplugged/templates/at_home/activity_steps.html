@@ -1,0 +1,25 @@
+{% load static render_html_field %}
+
+{% for step in activity_steps %}
+    <div class="card activity-step-card mb-3">
+        <div class="card-header">
+            Step {{ forloop.counter }}
+        </div>
+        <img src="{{ "{% static '" }}{{ step.image }}{{ "' %}" }}" class="card-img rounded-0 at-home-img" alt="{{ step.image_description }}">
+        <div class="card-body">
+            {% if step.presenter_says %}
+                <div class="speech-bubble">
+                    <blockquote>
+                        {% render_html_field step.presenter_says %}
+                    </blockquote>
+                    <div class="speech-bubble-arrow"></div>
+                </div>
+            {% endif %}
+            {% if step.presenter_commentary %}
+                <p class="card-text">
+                    {% render_html_field step.presenter_commentary %}
+                </p>
+            {% endif %}
+        </div>
+    </div>
+{% endfor %}

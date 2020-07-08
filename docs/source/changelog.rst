@@ -23,6 +23,96 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+5.1.1
+==============================================================================
+
+- **Release date:** 7th July 2020
+- **Downloads:** `Source downloads are available on GitHub <https://github.com/uccser/cs-unplugged/releases/>`__
+
+**Changelog:**
+
+- Correction of font colour for digits in Product Code unit.
+
+5.1.0
+==============================================================================
+
+- **Release date:** 1st July 2020
+- **Downloads:** `Source downloads are available on GitHub <https://github.com/uccser/cs-unplugged/releases/>`__
+
+**Changelog:**
+
+- Add video to the end of the 'What is Computer Science?' page.
+- Show 'plugging it in' pages everywhere except on production.
+
+5.0.1
+==============================================================================
+
+- **Release date:** 11th June 2020
+- **Downloads:** `Source downloads are available on GitHub <https://github.com/uccser/cs-unplugged/releases/>`__
+
+**Changelog:**
+
+- Fix bug in 'unlocking the secret in product codes' challenge number 4.
+- Add introduction video to the mind reading magic challenge.
+- Remove outdated demonstration video from mind reading magic more information section.
+- Minor content fixes.
+
+5.0.0
+==============================================================================
+
+- **Release date:** 3rd June 2020
+- **Downloads:** `Source downloads are available on GitHub <https://github.com/uccser/cs-unplugged/releases/>`__
+
+**Summary of changes:**
+
+This release adds the 'At Home' area of the website, and restructures the homepage for future areas.
+
+**Changelog:**
+
+- Add 'At Home' area of the website:
+    - Includes 5 activities.
+    - Includes challenges that are tested locally, with answered stored anonymously on the database for analysis.
+    - Enables admin application to allow reading of challenge submissions.
+- Update homepage to organise links for educators, home use, and students.
+- Update base Docker images to use Debian 10, Python 3.8.3, and Django 2.2.12.
+- Set static files to be uploaded using multiprocessing.
+
+- Dependency updates:
+
+    - Add requests 2.23.0.
+    - Update coverage from 5.0 to 5.1.
+    - Update django-bootstrap-breadcrumbs from 0.9.1 to 0.9.2.
+    - Update django-debug-toolbar from 2.1 to 2.2.
+    - Update django-extensions from 2.2.5 to 2.2.9.
+    - Update django-widget-tweaks from 1.4.5 to 1.4.8.
+    - Update flake8 from 3.7.9 to 3.8.2.
+    - Update lxml from 4.4.2 to 4.5.1.
+    - Update Pillow from 6.2.1 to 7.1.2.
+    - Update pydocstyle from 5.0.1 to 5.0.2.
+    - Update PyYAML from 5.2 to 5.3.1.
+    - Update sphinx from 2.3.0 to 3.0.4.
+    - Update tqdm from 4.40.2 to 4.46.1.
+    - Update wheel from 0.33.6 to 0.34.2.
+
+4.4.0
+==============================================================================
+
+- **Release date:** 1st April 2020
+- **Downloads:** `Source downloads are available on GitHub`_
+
+**Summary of changes:**
+
+This release add a new CS Unplugged at home section.
+
+**Changelog:**
+
+- Add 'At home' application, with basic activities before new content is released.
+- Darken colours to improve readability of white text on backgrounds.
+- Update logo to increase the size of the 'CS' and lessened the rounded corners to improve readability.
+- Separate core HTML structure in templates to allow subsites to exist.
+- Update static pipeline to use NPM, based off other UCCSER repositories.
+- Add 'dev' helper script to align with other UCCSER repositories.
+
 4.3.0
 ==============================================================================
 

@@ -1,0 +1,44 @@
+# Step 1
+-   image: img/at_home/kidbots/kidbots-step-1.jpg
+    presenter_says: I’m going to be a Bot (robot), and you can be the Developer who writes programs for me.
+    presenter_commentary: If you’ve made badges, you can wear the “Bot” one, and give your helper the “Developer” one.
+    image_description: Two labels, one labelled developer and one labelled bot.
+# Step 2
+-   image: img/at_home/kidbots/kidbots-step-2.jpg
+    presenter_says: For me to move on the grid, you can only give me three instructions; forward, left and right. How do you want to write those instructions down?
+    presenter_commentary: Decide what symbols you will use to write the instructions (what “programming language” you will use). We suggest arrows (↑, ↰, ↱) or letters such as ‘F’ for ‘forward’, ‘L’ for ‘turn left’.
+    image_description: Ideas for symbols to use for instructions, such as letters or arrows.
+# Step 3
+-   image: img/at_home/kidbots/kidbots-step-3.jpg
+    presenter_says: Here’s how the three commands work.
+    presenter_commentary: Practice what each instruction means. ‘Forward’ means step forward into the square directly in front of you. ‘Turn left’ means pivot 90 degrees left on the spot, but stay in the same square. You can demonstrate each of these moves. (<em>Don’t</em> point this out explicitly to the developer, but ‘Turn left’ and ‘Turn right’ keeps you in the same square; it’s more fun if they realise this later!)
+    image_description: Child practicing the commands on the grid.
+# Step 4
+-   image: img/at_home/kidbots/kidbots-step-4.jpg
+    presenter_says: This is my starting square, and you need to give me instructions to get to the ball [or whatever object you want to get to].
+    presenter_commentary: You can decide on a start and an end position (here the ball is in the end position). The kind of distance shown here (a few squares forward and a few to the right) is good to start with.
+    image_description: Child standing in starting position on the grid.
+# Step 5
+-   image: img/at_home/kidbots/kidbots-step-5.jpg
+    presenter_says: Your challenge is to write instructions for me to follow to get to the ball.
+    presenter_commentary: The developer writes the instructions (program) for how to get from the start position to the end position i.e move the bot to the ball. They then give the instructions to the bot, who follows them - this is referred to as “running” the program. (Chances are that their first attempt won’t work; the attempt shown here is a typical one with the RRRR causing the Bot to turn on the spot). Do not start moving until all the instructions are written. As a bot, you should always go back to the starting point, and follow the whole “program” each time; ignore any mid-course requests for changes!
+    image_description: Instructions to get to the ball written down.
+# Step 6
+-   image: img/at_home/kidbots/kidbots-step-6.jpg
+    presenter_says: (If you don’t get to the correct square) Nice try, but you need to debug your program!
+    presenter_commentary: It’s normal for computer programs to need debugging - a bug is simply when it doesn’t do what was wanted. This is a chance to introduce and use the term whenever the program is wrong. Enjoy errors such as sequences of turns that have you spinning on the spot! The developer can mark on the instructions (program) where any bugs (mistakes) are found. Remember, it is good to find mistakes as then you get to debug (fix the mistakes). You could even make up a bug finding celebration dance if you like.
+    image_description: Child standing in an incorrect final position.
+# Step 7
+-   image: img/at_home/kidbots/kidbots-step-7.jpg
+    presenter_says: (Once they get the correct answer). Well done, you’ve written a program that gets me to the right place.
+    image_description: Child standing in the correct final position.
+# Step 8
+-   image: img/at_home/kidbots/kidbots-step-8.jpg
+    presenter_says: Is there another program you could have given the bot to get to the ball? Write the instructions/program for that route.
+    presenter_commentary: Follow the new instructions once they are written.
+    image_description: A second set of instructions written down.
+# Step 9
+-   image: img/at_home/kidbots/kidbots-step-9.jpg
+    presenter_says: What’s a long set of instructions to get the bot to the ball?
+    presenter_commentary: The developer may enjoy having the bot go around in circles, but they have to be careful to get the instructions just right! It’s good to reinforce the idea that there are multiple ways to write a correct program - in fact, the task has an infinite number of correct solutions! It also has an infinite number of incorrect solutions!
+    image_description: Child standing in a different starting position.

@@ -39,7 +39,6 @@ class LearningOutcomesLoader(TranslatableModelLoader):
             )
             self.populate_translations(outcome, translations)
             self.mark_translation_availability(outcome, required_fields=["text"])
-
             outcome.save()
 
             # Add curriculum areas

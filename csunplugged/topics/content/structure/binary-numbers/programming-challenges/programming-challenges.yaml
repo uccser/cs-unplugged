@@ -9,6 +9,8 @@ binary-numbers-no-calculations:
     - programming-explain-sequencing
     - programming-explain-output
   extra-challenge: extra-challenge.md
+  test-cases: 
+    1: input
 
 binary-numbers-using-variable:
   challenge-set-number: 1
@@ -33,6 +35,8 @@ binary-numbers-using-variables-as-operator:
     - programming-explain-sequencing
     - programming-outline-variable-updates
   extra-challenge: extra-challenge.md
+  test-cases: 
+    1: input
 
 binary-numbers-using-variable-operator-repeat:
   challenge-set-number: 1
@@ -46,6 +50,8 @@ binary-numbers-using-variable-operator-repeat:
     - programming-describe-variable-output
     - programming-identify-loop
   extra-challenge: extra-challenge.md
+  test-cases: 
+    1: input
 
 binary-numbers-one-line:
   challenge-set-number: 1
@@ -96,6 +102,10 @@ dots-largest-to-1:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
     - programming-identify-loop
+  test-cases: 
+    1: input
+    2: input
+    3: input
 
 left-right-given-largest:
   challenge-set-number: 3
@@ -162,6 +172,10 @@ count-5-bw-one-input-using-loop:
     - programming-identify-if-statement
     - programming-identify-loop
     - programming-demonstrate-indexing
+  test-cases: 
+    1: input
+    2: input
+    3: input
 
 count-bw-one-input-using-loop:
   challenge-set-number: 4
@@ -188,6 +202,12 @@ cards-given-number:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
     - programming-identify-if-statement
+  test-cases: 
+    1: input
+    2: input
+    3: input
+    4: input
+    5: input
 
 cards-given-number-one-line:
   challenge-set-number: 5
@@ -252,6 +272,10 @@ decimal-to-binary:
     - programming-describe-variables
     - programming-identify-if-statement
     - programming-identify-loop
+  test-cases: 
+    1: input
+    2: input
+    3: input
 
 decimal-to-binary-alternative:
   challenge-set-number: 7
@@ -304,3 +328,6 @@ binary-cards-as-dots:
     - programming-describe-variables
     - programming-identify-if-statement
     - programming-identify-loop
+  test-cases:
+    1: function
+    2: function

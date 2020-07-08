@@ -1,0 +1,2 @@
+- There’s a poster that shows how to do these calculations [here](https://csunplugged.org/en/resources/barcode-checksum-poster/).
+- There are more details about how check digits (and related methods) are used [here](https://csunplugged.org/en/topics/error-detection-and-correction/unit-plan/description/).

@@ -1,0 +1,49 @@
+# Step 1
+-   image: img/at_home/squeezing-pictures/squeezing-pictures-step-1.jpeg
+    presenter_says: These numbers are a code for a picture; you can use them to draw the picture on this grid. Each square on the grid is one pixel. Some pixels will stay white, and some you’ll need to colour in black.
+    presenter_commentary: Show numbers for “Picture  1” and empty grid.
+    image_description: An empty grid and some sequences of numbers.
+# Step 2
+-   image: img/at_home/squeezing-pictures/squeezing-pictures-step-2.jpeg
+    presenter_says: We start on the first line of squares. The 2 means it starts with 2 white pixels, and the 7 means to colour in 7 black pixels, so let’s colour those in.
+    presenter_commentary: Check that child skips two squares and starts colouring in the third one. They may want to count the black pixels, mark the last one, then colour a line for the row of black pixels.
+    image_description: Colouring in the first row of dquares on the grid.
+# Step 3
+-   image: img/at_home/squeezing-pictures/squeezing-pictures-step-3.jpeg
+    presenter_commentary: The completed first row has 2 white pixels followed by 7 black pixels.
+    image_description: First row of the grid is completed.
+# Step 4
+-   image: img/at_home/squeezing-pictures/squeezing-pictures-step-4.jpeg
+    presenter_commentary: If it gets confusing to follow the alternating white and black lengths, you could highlight the numbers corresponding to the runs of black pixels (every second number).
+    image_description: Every second number is highlighted.
+# Step 5
+-   image: img/at_home/squeezing-pictures/squeezing-pictures-step-5.jpeg
+    presenter_says: The next row is the same, so we have 2 white, then 7 black pixels.
+    image_description: Second row is completed.
+# Step 6
+-   image: img/at_home/squeezing-pictures/squeezing-pictures-step-6.jpeg
+    presenter_says: The third row is more complicated. The numbers always tell you how many white, then black, then white pixels there are, and so on. How many white pixels does it start with? (2) Then what does the 1 mean? (1 black pixel).
+    presenter_commentary: The idea that the numbers are alternating runs of white then black pixels is important. You will need to help count carefully, as getting out by one can completely change the picture! Work through the whole row (2, 1, 1, 3, 1, 1, 1, 1).
+    image_description: Third row is completed.
+# Step 7
+-   image: img/at_home/squeezing-pictures/squeezing-pictures-step-7.jpeg
+    presenter_says: The next row starts with a 0 - what does that mean? (No white pixels at the start, so it has 11 black pixels only). Why not just have the number 11 without the 0? (Because that would mean 11 white pixels).
+    presenter_commentary: Check that for "0, 11" they colour in the first 11 pixels.
+    image_description: Fourth row is completed.
+# Step 8
+-   image: img/at_home/squeezing-pictures/squeezing-pictures-step-8.jpeg
+    presenter_says: This one also starts with a 0, so what colour is the first pixel? (Black).
+    image_description: Fifth row is completed.
+# Step 9
+-   image: img/at_home/squeezing-pictures/squeezing-pictures-step-9.jpeg
+    presenter_says: What’s on the next row?
+    image_description: Sixth row is completed.
+# Step 10
+-   image: img/at_home/squeezing-pictures/squeezing-pictures-step-10.jpeg
+    presenter_says: And the final row?
+    image_description: Seventh row is completed.
+# Step 11
+-   image: img/at_home/squeezing-pictures/squeezing-pictures-step-11.jpeg
+    presenter_says: Normally pixels on a computer or printer are at least 20 times smaller than this, so let’s look at the picture from a distance to make your pixels smaller.
+    presenter_commentary: Depending on the size of the grid, you may want to stand some distance away to see the image clearly.
+    image_description: Looking at the picture from far away.

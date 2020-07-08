@@ -1,8 +1,9 @@
-{% extends "base.html" %}
+{% extends "base-educators.html" %}
 
 {% load i18n %}
 {% load static %}
 {% load django_bootstrap_breadcrumbs %}
+{% get_current_language as LANGUAGE_CODE %}
 
 {% block title %}
   {% trans "What is Computer Science?" %}
@@ -76,6 +77,13 @@
             Actually, it is kind of magic when you start understanding what can and can't be done.
           {% endblocktrans %}
         </p>
+
+        {% if LANGUAGE_CODE == "en" %}
+          <h5>{% trans "Mike Fellows, co-author of CS Unplugged, talks about how it came about" %}</h5>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe allowtransparency="true" class="embed-responsive-item" src="https://player.vimeo.com/video/434158077" frameborder="0" allowfullscreen="true"></iframe>
+          </div>
+        {% endif %}
 
         <p>
           <a href="{% url 'general:how_do_i_teach_cs_unplugged' %}" class="btn btn-outline-primary">
