@@ -391,7 +391,7 @@ class GlossaryList(generic.ListView):
 
     def get_context_data(self):
         """Get context data for template rendering."""
-        term_locale = "term_" + get_language()
+        term_locale = "term_" + get_language().replace("-", "_")
         return {
             "glossary_terms": GlossaryTerm.objects.filter(
                 Q(languages__contains=[get_language()])
