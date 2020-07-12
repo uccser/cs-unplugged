@@ -23,6 +23,27 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+5.1.1
+==============================================================================
+
+- **Release date:** 7th July 2020
+- **Downloads:** `Source downloads are available on GitHub <https://github.com/uccser/cs-unplugged/releases/>`__
+
+**Changelog:**
+
+- Correction of font colour for digits in Product Code unit.
+
+5.1.0
+==============================================================================
+
+- **Release date:** 1st July 2020
+- **Downloads:** `Source downloads are available on GitHub <https://github.com/uccser/cs-unplugged/releases/>`__
+
+**Changelog:**
+
+- Add video to the end of the 'What is Computer Science?' page.
+- Show 'plugging it in' pages everywhere except on production.
+
 5.0.1
 ==============================================================================
 
