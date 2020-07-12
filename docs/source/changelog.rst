@@ -23,6 +23,16 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+5.1.1
+==============================================================================
+
+- **Release date:** 7th July 2020
+- **Downloads:** `Source downloads are available on GitHub <https://github.com/uccser/cs-unplugged/releases/>`__
+
+**Changelog:**
+
+- Correction of font colour for digits in Product Code unit.
+
 5.1.0
 ==============================================================================
 
