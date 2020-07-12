@@ -22,7 +22,7 @@ body,
 .programming__info-area {
   overflow-y: scroll;
   height: 100%;
-  padding: 20px !important;
+  padding: 1.25rem !important;
 }
 
 .programming__results {
@@ -45,7 +45,7 @@ body,
     .code_running_spinner {
       display: none;
       color: white;
-      margin-right: 10px;
+      margin-right: 0.625rem;
     }
 
     #editor_run_button {

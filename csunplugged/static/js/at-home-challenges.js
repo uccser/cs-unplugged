@@ -30,7 +30,7 @@ function submitUserAnswer() {
     submit_answer_button.prop('disabled', true);
 
     // Get challenge number and user_answer.
-    var user_answer = challenge_user_input.val();
+    var user_answer = challenge_user_input.val().trim();
 
     // If empty, display message
     if (user_answer) {
