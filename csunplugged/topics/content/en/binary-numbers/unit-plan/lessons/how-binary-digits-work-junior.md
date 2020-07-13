@@ -12,7 +12,7 @@ Accept and record all answers to revisit at the end of the lesson.
 
 # See teaching this in action
 
-{video url="https://www.youtube.com/embed/Wy6-FXtLMV8"}
+{video url="https://vimeo.com/437725275"}
 
 {panel end}
 
