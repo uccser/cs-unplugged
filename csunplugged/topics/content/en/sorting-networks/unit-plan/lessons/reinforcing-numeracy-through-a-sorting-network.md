@@ -23,7 +23,7 @@ people probably can't speed it up).
 
 # See teaching this in action
 
-{video url="https://www.youtube.com/embed/M-z5pDjqtZk"}
+{video url="https://vimeo.com/437722996"}
 
 Some other videos showing different situations using Sorting Networks:
 
