@@ -16,7 +16,7 @@ How many people do you know check their dockets at the supermarket or in a shop 
 
 A demonstration of lesson two ("Product Code Check Digits") being taught is available here:
 
-{video url="https://www.youtube.com/embed/WjMPd6sgou0"}
+{video url="https://vimeo.com/437724764"}
 
 {panel end}
 
