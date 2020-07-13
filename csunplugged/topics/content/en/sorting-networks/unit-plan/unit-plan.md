@@ -11,7 +11,7 @@ A demonstration of sorting networks being taught is available here:
 Some other videos showing different situations using Sorting Networks:
 
 -   [Video 1](https://vimeo.com/437726931)
--   [Video 2](https://www.youtube.com/watch?v=30WcPnvfiKE)
+-   [Video 2](https://vimeo.com/437726955)
 
 {panel end}
 
