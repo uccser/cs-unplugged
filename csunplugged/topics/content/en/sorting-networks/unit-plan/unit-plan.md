@@ -10,7 +10,7 @@ A demonstration of sorting networks being taught is available here:
 
 Some other videos showing different situations using Sorting Networks:
 
--   [Video 1](https://www.youtube.com/watch?v=LOxfdsBBjKI)
+-   [Video 1](https://vimeo.com/437726931)
 -   [Video 2](https://www.youtube.com/watch?v=30WcPnvfiKE)
 
 {panel end}
