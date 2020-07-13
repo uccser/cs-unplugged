@@ -24,7 +24,7 @@ Or worst still the website you are wanting to go to for your learning or the DVD
 
 A demonstration of lesson one ("Parity magic") being taught is available here:
 
-{video url="https://www.youtube.com/embed/FnwBratAhfg"}
+{video url="https://vimeo.com/437726658"}
 
 {panel end}
 
