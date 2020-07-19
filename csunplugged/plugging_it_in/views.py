@@ -54,6 +54,7 @@ class IndexView(generic.ListView):
         context["demo_programming_challenges"] = ProgrammingChallenge.objects.filter(id__in=demo_challenge_ids)
         return context
 
+
 class TopicView(generic.DetailView):
     """View of lessons with programming exercises for a particular topic."""
 
@@ -87,6 +88,7 @@ class TopicView(generic.DetailView):
         context["grouped_lessons"] = group_lessons_by_age(self.object.lessons.all(), only_programming_exercises=True)
         return context
 
+
 class LessonView(generic.DetailView):
     """View for a specific lesson."""
 
@@ -110,6 +112,7 @@ class LessonView(generic.DetailView):
         # Add in a QuerySet of all the connected programming exercises for this topic
         context["programming_challenges"] = self.object.retrieve_related_programming_challenges()
         return context
+
 
 class ProgrammingChallengeView(generic.DetailView):
     """View for a specific programming challenge."""
@@ -145,7 +148,8 @@ class ProgrammingChallengeView(generic.DetailView):
             if lesson.slug == self.kwargs.get("lesson_slug", None):
                 context["lesson"] = lesson
                 context["programming_challenges"] = lesson.retrieve_related_programming_challenges()
-                context["programming_exercises_json"] = json.dumps(list(lesson.retrieve_related_programming_challenges().values()))   
+                context["programming_exercises_json"] = json.dumps(
+                    list(lesson.retrieve_related_programming_challenges().values()))
 
         # Getting the related lessons - there may be multiple
         context["lessons"] = self.object.lessons.all()
