@@ -12,7 +12,7 @@
 
 *BlockTag: crwdns20226:0crwdne20226:0*
 
-{video url="https://www.youtube.com/embed/WjMPd6sgou0"}
+{video url="https://vimeo.com/437724764"}
 
 *BlockTag: crwdns20227:0crwdne20227:0*
 

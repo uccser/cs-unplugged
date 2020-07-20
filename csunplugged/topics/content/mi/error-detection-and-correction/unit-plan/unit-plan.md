@@ -6,7 +6,7 @@
 
 {video url="https://vimeo.com/437726658"}
 
-{video url="https://www.youtube.com/embed/WjMPd6sgou0"}
+{video url="https://vimeo.com/437724764"}
 
 {panel end}
 
