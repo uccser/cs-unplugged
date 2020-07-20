@@ -12,7 +12,7 @@ Halten Sie alle Antworten als Vorschläge fest, um am Ende der Lektion darauf zu
 
 # Sehen Sie sich ein Unterrichtsbeispiel zum Thema an
 
-{video url="https://www.youtube.com/embed/Wy6-FXtLMV8"}
+{video url="https://vimeo.com/437725275"}
 
 {panel end}
 
