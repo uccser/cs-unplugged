@@ -6,7 +6,7 @@
 
 Ka kitea i konei tētahi whakaaturanga o te whakaako i ngā whatunga kōmaka:
 
-{video url="https://www.youtube.com/embed/M-z5pDjqtZk"}
+{video url="hhttps://vimeo.com/437722996"}
 
 Anei ētahi atu ataata e whakaatu ana i ngā wāhi kē e whakamahia ai ngā Whatunga Kōmaka:
 
