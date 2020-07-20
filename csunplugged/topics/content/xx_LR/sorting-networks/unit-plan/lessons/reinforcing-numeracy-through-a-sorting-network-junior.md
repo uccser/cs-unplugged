@@ -22,7 +22,7 @@ crwdns12518:0crwdne12518:0 crwdns12519:0crwdne12519:0
 
 *BlockTag: crwdns20081:0crwdne20081:0*
 
-{video url="hhttps://vimeo.com/437722996"}
+{video url="https://vimeo.com/437722996"}
 
 crwdns20082:0crwdne20082:0
 

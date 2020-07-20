@@ -6,7 +6,7 @@
 
 Hier finden Sie ein Unterrichtsbeispiel zu Sortiernetzwerken:
 
-{video url="hhttps://vimeo.com/437722996"}
+{video url="https://vimeo.com/437722996"}
 
 Die folgenden Videos zeigen weitere Beispiele zu Sortiernetzwerken:
 

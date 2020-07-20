@@ -16,7 +16,7 @@ Hier kommen eventuell Aufgaben wie das Aufräumen des Klassenzimmers, das Einsam
 
 # Unterrichtsbeispiel ansehen
 
-{video url="hhttps://vimeo.com/437722996"}
+{video url="https://vimeo.com/437722996"}
 
 Die folgenden Videos zeigen weitere Beispiele zu Sortiernetzwerken:
 
