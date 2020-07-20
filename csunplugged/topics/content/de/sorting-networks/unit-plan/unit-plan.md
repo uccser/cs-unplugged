@@ -10,8 +10,8 @@ Hier finden Sie ein Unterrichtsbeispiel zu Sortiernetzwerken:
 
 Die folgenden Videos zeigen weitere Beispiele zu Sortiernetzwerken:
 
-- [Video 1](https://www.youtube.com/watch?v=LOxfdsBBjKI)
-- [Video 2](https://www.youtube.com/watch?v=30WcPnvfiKE)
+- [Video 1](https://vimeo.com/437726931)
+- [Video 2](https://vimeo.com/437726955)
 
 {panel end}
 
