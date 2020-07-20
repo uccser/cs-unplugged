@@ -1,3 +1,5 @@
+{% load static %}
+
 {% load i18n %}
 
 {% get_current_language as LANGUAGE_CODE %}
@@ -37,10 +39,9 @@
             </a>
           </td>
             <td class="text-center" style="width:20%">
-            {% comment %} TODO {% endcomment %}
-            {% comment %} {% for implementation in programming_challenge.ordered_implementations %}
-              <img src="{% get_static_prefix %}{{ implementation.language.icon }}" class="inline-image-small" />
-            {% endfor %} {% endcomment %}
+            {% for language_icon in lesson.challenge_language_icons %}
+              <img src="{% get_static_prefix %}{{ language_icon.implementations__language__icon }}" class="inline-image-small" />
+            {% endfor %} 
             </td>
         </tr>
       {% endfor %}

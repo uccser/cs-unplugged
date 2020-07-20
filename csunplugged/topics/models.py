@@ -408,6 +408,14 @@ class Lesson(TranslatableModel):
             programming_challenge.challenge_number = challenge_numbers.challenge_number
         return programming_challenges
 
+    def challenge_language_icons(self):
+        """Retrieve the lesson's programming challenge language icons.
+
+        Returns:
+            QuerySet of language icons for this lesson.
+        """
+        return self.programming_challenges.all().values('implementations__language__icon').distinct()
+
     def get_absolute_url(self):
         """Return the canonical URL for a lesson.
 
