@@ -27,7 +27,7 @@ crwdns20302:0crwdne20302:0
 
 *BlockTag: crwdns20303:0crwdne20303:0*
 
-{video url="https://www.youtube.com/embed/FnwBratAhfg"}
+{video url="https://vimeo.com/437726658"}
 
 *BlockTag: crwdns20304:0crwdne20304:0*
 
