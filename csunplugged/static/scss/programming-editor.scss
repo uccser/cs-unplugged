@@ -94,10 +94,14 @@ body {
     width: 100%;
     border: 1px solid grey;
     border-radius: 15px;
+
+    h1 {
+      font-size: 2.0rem;
+    }
   }
 
   // Removing the testing examples section from content (temporary).
-  #testing-examples, #testing-examples + p, #testing-examples + p + table {
+  #testing-examples, #testing-examples + p, #testing-examples + p + table, #requirement {
     display: none;
   }
 

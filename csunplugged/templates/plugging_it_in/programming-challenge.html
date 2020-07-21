@@ -63,53 +63,7 @@
       {% endif %}
     {% endblock page_heading %}
 
-    {% if lessons %}
-      <div class="alert alert-info" role="alert">
-        <p>{% trans "This programming challenge is linked to the following unplugged lessons:" %}</p>
-
-        <ul class="mb-0">
-          {% for lesson in lessons %}
-            <li>
-              <a href="{% url 'topics:lesson' topic.slug lesson.unit_plan.slug lesson.slug %}">
-                {% blocktrans with set_num=lesson.challenge_set_number chal_num=lesson.challenge_number name=lesson.name trimmed %}
-                {{ name }}
-                {% endblocktrans %}
-                ({% for age_group in lesson.age_group.all %}{% blocktrans with lower=age_group.ages.lower upper=age_group.ages.upper trimmed %}{{ lower }} to {{ upper }}{% endblocktrans %}{% if not forloop.last %}, {% endif %}{% endfor %})
-              </a>
-              {% if not lesson.translation_available %}
-                {% include 'generic/not-available-badge.html' %}
-              {% endif %}
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    {% endif %}
-
-
     {% render_html_field programming_challenge.content %}
-
-    {% comment %} Learning Outcomes {% endcomment %}
-    {% if learning_outcomes %}
-      <details class="panel-learning-outcomes">
-        <summary>
-          <strong>{% trans "Learning outcomes" %}</strong>
-          <img class="inline-image" src="{% static 'img/general/outcomes.png' %}">
-        </summary>
-        <div class="boxed-text-content">
-          <p>{% trans "Students will be able to:" %}</p>
-          <ul>
-            {% for learning_outcome in learning_outcomes %}
-            <li>
-              {{ learning_outcome.text }}<br>
-              {% for area in learning_outcome.curriculum_areas.all %}
-                {% include "topics/curriculum-area-badge.html" %}
-              {% endfor %}
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
-      </details>
-    {% endif %}
 
     {% comment %} Challenge Hints {% endcomment %}
     {% for implementation in implementations %}
@@ -123,14 +77,6 @@
 
             <div class="boxed-text-content">
               {% render_html_field implementation.hints %}
-              <p class="text-center">
-                {% comment %} Link to old solution - in topics section {% endcomment %}
-                <a href="{% url 'topics:programming_challenge_solution' topic.slug programming_challenge.slug implementation.language.slug %}">
-                  {% blocktrans trimmed %}
-                    Show {{ implementation.language.name }} solution
-                  {% endblocktrans %}
-                </a>
-              </p>
             </div>
           </details>
         {% endif %}
