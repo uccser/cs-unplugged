@@ -34,6 +34,18 @@ body {
       border-radius: 20px;
     }
 
+    .progression-info {
+      text-align: center;
+
+      #challenge_progression_text {
+        font-size: 20px;
+      }
+
+      #lessons_nav_toggle:hover {
+        cursor: pointer;
+      }
+    }
+
     .prev {
       border: 2px solid white;
       color: white;

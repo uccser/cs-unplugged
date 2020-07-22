@@ -61,7 +61,8 @@ function setupLessonNav() {
   const isCurrentChallengeIndex = (element) => element.slug == current_challenge_slug;
   currentChallengeIndex = programming_exercises.findIndex(isCurrentChallengeIndex);
 
-  document.getElementById("challenge_progression_text").innerHTML = currentChallengeIndex+1 + "/" + programming_exercises.length;
+  const progressionText = `Question <strong>${currentChallengeIndex+1}</strong> of <strong>${programming_exercises.length}</strong>`;
+  document.getElementById("challenge_progression_text").innerHTML = progressionText;
   setPreviousChallenge(currentChallengeIndex)
   setNextChallenge(currentChallengeIndex)
 }
