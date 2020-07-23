@@ -25,8 +25,15 @@
     <a href="javascript:void(0)" class="closebtn" id="close_nav_button">&times;</a>
     
     <div class='sidebar-headings'>
-      <h2 class='lesson-heading'>{{lesson.name}}</h2>
-      <h5 class='topic-subheading'>{{topic.name}}</h5>
+      <a href="{% url "plugging_it_in:topic" topic.slug %}">
+        <h5 class='topic-subheading'>{{topic.name}}</h5>
+      </a>
+      <a href="{% url "plugging_it_in:lesson" topic.slug lesson.slug %}">
+        <h2 class='lesson-heading'>{{lesson.name}}</h2>
+      </a>
+      <a href="{% url 'topics:lesson' topic.slug lesson.unit_plan.slug lesson.slug %}">
+        <p>Jump to the CS Unplugged Lesson</p>
+      </a>
     </div>
 
     <hr>
@@ -35,7 +42,12 @@
     <ol class='challenges-list'>
         {% for programming_challenge_item in programming_challenges %}
         <a href="{% url 'plugging_it_in:programming_challenge' topic.slug lesson.slug programming_challenge_item.slug %}">
-         <li class="{% if programming_challenge.slug == programming_challenge_item.slug %}current-exercise{% endif %}">{{ programming_challenge_item.challenge_set_number }}.{{ programming_challenge_item.challenge_number }} {{ programming_challenge_item.name }}</li>
+         <li class="{% if programming_challenge.slug == programming_challenge_item.slug %}current-exercise{% endif %}">
+          <span class="badge badge-primary">
+            <h5>{{ programming_challenge_item.challenge_set_number }}.{{ programming_challenge_item.challenge_number }}</h5>
+          </span> 
+          {{ programming_challenge_item.name }}
+          </li>
         </a>
         {% endfor %}
     </ol>

@@ -25,7 +25,7 @@ body {
 
 .programming__options {
   height: 7%;
-  background-color: #28368f;
+  background-color: $student-colour;
   color: white;
   margin-left: 0px;
 
@@ -52,12 +52,12 @@ body {
     }
 
     .prev:hover {
-      color: #28368f;
+      color: $student-colour;
       background-color: white;
     }
 
     .next {
-      color: #28368f;
+      color: $student-colour;
       background-color: #ffea00;
     }
   }
@@ -216,12 +216,13 @@ body {
 
 // Side Drawer 
 .sidenav {
-  height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1032;
+  z-index: 1031;
   top: 0;
   left: 0;
+  margin-top: 50px;
+  height: calc( 100vh - 50px );
   background-color: white;
   overflow-x: hidden;
   transition: 0.5s;
@@ -232,13 +233,21 @@ body {
   .sidebar-headings {
     padding: 20px 0px;
     background-color: rgb(248, 249, 250);
+
+    h5, p {
+      margin-bottom: 0px;
+    }
+  
+    h2, h5, p {
+      padding-left: 20px;
+    }
+    
+    h2:hover, h5:hover, p:hover {
+      opacity: 0.8;
+    }
   }
 
-  h5 {
-    margin-bottom: 0px;
-  }
-
-  h2, h5, p {
+  p {
     padding-left: 20px;
   }
 
@@ -259,14 +268,24 @@ body {
 
   .challenges-list {
     padding: 0px;
-  }
 
-  .current-exercise {
-    background-color: #e9f1fc;
-  }
+    .badge {
+      margin-right: 10px;
+      min-width: 40px;
 
-  .current-exercise:hover {
-    background-color: #e9f1fc;
+      h5 {
+        color: white;
+        margin-bottom: 0px;
+      }
+    }
+
+    .current-exercise {
+      background-color: #e9f1fc;
+    }
+  
+    .current-exercise:hover {
+      background-color: #e9f1fc;
+    }
   }
 }
 
@@ -304,7 +323,7 @@ body {
   z-index: 0;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: #0f173aff;
   opacity: 0;
   overflow-x: hidden;
   transition: opacity 0.5s;
