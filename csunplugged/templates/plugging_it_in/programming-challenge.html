@@ -95,7 +95,8 @@
     </div>
   </div>
   <div class="col-12 col-md-4 programming__editor">
-    <textarea id="codemirror_editor"># Start Coding Here.</textarea>
+    <p class='pii-block-heading'>Enter your code in the editor below</p>
+    <textarea id="codemirror_editor"></textarea>
     <div class="programming__submit d-flex justify-content-between align-items-center">
       <div class="programming__submit_options d-flex justify-content-start">
         <button class="editor_button" id="editor_run_button" >CHECK</button>
@@ -108,6 +109,7 @@
   </div>
 
   <div class="col-12 col-md-4 programming__results">
+    <p class='pii-block-heading'>Your results will be displayed here</p>
     {% include "plugging_it_in/results-table.html" %}
   </div>
 {% endif %}
