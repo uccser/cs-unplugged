@@ -388,7 +388,7 @@ class Lesson(TranslatableModel):
         """
         return bool(self.programming_challenges.all())
 
-    def retrieve_related_programming_challenges(self):
+    def retrieve_related_programming_challenges(self, language_filter="all"):
         """Retrieve the lesson's programming challenges and update numbers.
 
         Returns:
@@ -399,6 +399,10 @@ class Lesson(TranslatableModel):
             "challenge_number",
             "name",
         )
+
+        if language_filter != "all":
+            programming_challenges = programming_challenges.filter(implementations__language__name=language_filter)
+
         for programming_challenge in programming_challenges:
             challenge_numbers = ProgrammingChallengeNumber.objects.get(
                 lesson=self,
