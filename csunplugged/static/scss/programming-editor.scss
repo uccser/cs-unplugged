@@ -11,8 +11,9 @@ body {
 }
 
 .programming__challenge-screen {
-  height: 93%;
+  height: 100%;
   width: 100%;
+  padding-bottom: 70px;
 }
 
 .navbar-student {
@@ -24,10 +25,13 @@ body {
 }
 
 .programming__options {
-  height: 7%;
+  height: 70px;
   background-color: $student-colour;
   color: white;
   margin-left: 0px;
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
 
   .progression-options {
     .btn {
@@ -147,23 +151,24 @@ body {
   font-size: 1.1em;
   font-weight: bolder;
   font-family: "Noto Sans", sans-serif;
-  margin: 0px;
-  height: 5%;
+  margin-bottom: 10px;
 }
 
 .programming__editor {
   height: 100%;
   padding: 20px 10px;
-
+  display: flex;
+  flex-direction: column;
+  
   .CodeMirror {
-    height: 88%;
+    flex-grow: 1;
     margin: 0px;
     border: 1px solid grey;
     border-radius: 15px;
   }
 
   .programming__submit {
-    height: 7%;
+    height: 55px;
 
     .code_running_spinner {
       display: none;
@@ -208,9 +213,24 @@ body {
 }
 
 .programming__results {
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+
   .results-table {
-    max-height: 95%;
+    flex-shrink: 1;
     overflow-y: auto;
+  }
+}
+
+// For small devices
+@media (max-width: 768px) { 
+  .programming__results, .programming__editor, .programming__info-area {
+    padding: 20px !important;
+  }
+
+  .programming__results {
+    padding-bottom: 90px !important;
   }
 }
 

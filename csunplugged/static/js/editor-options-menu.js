@@ -4,7 +4,8 @@
  * Opens the challenge navigation drawer. 
  */
 function openNav() {
-  document.getElementById("my_sidenav").style.width = "800px";
+  const width_val = Math.min(window.innerWidth, 800); // The side drawer should be 100% if it is smaller than 800
+  document.getElementById("my_sidenav").style.width = `${width_val}px`;
   document.getElementById("sidebar_overlay").style.zIndex = "1029";
   document.getElementById("sidebar_overlay").style.opacity = "0.6";
 }
