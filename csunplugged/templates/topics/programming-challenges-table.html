@@ -57,6 +57,16 @@
                 </ul>
               </div>
             {% endif %}
+
+            {% if programming_challenge.ordered_implementations %}
+              <strong>{% trans "Challenge Solutions" %}</strong>
+            {% endif %}
+            {% for implementation in programming_challenge.ordered_implementations %}
+              </br>
+              <a href="{% url 'topics:programming_challenge_solution' topic.slug programming_challenge.slug implementation.language.slug %}">
+                  Show {{ implementation.language.name }} solution
+              </a> 
+            {% endfor %}
           </div>
       </td>
     </tr>
