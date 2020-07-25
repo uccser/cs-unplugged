@@ -151,17 +151,6 @@ class ProgrammingChallengeView(generic.DetailView):
                 context["programming_exercises_json"] = json.dumps(
                     list(lesson.retrieve_related_programming_challenges("Python").values()))
 
-        # Getting the related lessons - there may be multiple
-        context["lessons"] = self.object.lessons.all()
-        for lesson in context["lessons"]:
-            challenge_numbers = ProgrammingChallengeNumber.objects.get(
-                lesson=lesson,
-                programming_challenge=self.object
-            )
-            lesson.challenge_set_number = challenge_numbers.challenge_set_number
-            lesson.challenge_number = challenge_numbers.challenge_number
-
-        context["learning_outcomes"] = self.object.learning_outcomes(manager="translated_objects").order_by("text")
         context["implementations"] = self.object.ordered_implementations()
         context["test_cases_json"] = json.dumps(list(self.object.related_test_cases().values()))
         context["test_cases"] = self.object.related_test_cases().values()
