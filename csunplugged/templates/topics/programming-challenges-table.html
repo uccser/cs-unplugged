@@ -13,7 +13,7 @@
   </thead>
   <tbody>
     {% for programming_challenge in programming_challenges %}
-    <tr class="align-middle{% if not programming_challenge.translation_available %} table-active{% endif %}">
+    <tr class="align-middle{% if not programming_challenge.translation_available %} table-active{% endif %} clickable" data-toggle="collapse" data-target="#accordion-{{ programming_challenge.challenge_set_number }}{{ programming_challenge.challenge_number }}">
       <td class="text-center">
         {{ programming_challenge.challenge_set_number }}.{{ programming_challenge.challenge_number }}
       </td>
@@ -35,6 +35,29 @@
         {% for implementation in programming_challenge.ordered_implementations %}
           <img src="{% get_static_prefix %}{{ implementation.language.icon }}" class="inline-image-small" />
         {% endfor %}
+      </td>
+    </tr>
+    <tr>
+      <td class="p-0"></td>
+      <td colspan="3"  class="p-0">
+          <div id="accordion-{{ programming_challenge.challenge_set_number }}{{ programming_challenge.challenge_number }}" style="padding: 0.75rem" class="collapse">
+            {% if programming_challenge.get_learning_outcomes %}
+              <strong>{% trans "Learning outcomes" %}</strong>
+              <div class="boxed-text-content">
+                <p>{% trans "Students will be able to:" %}</p>
+                <ul>
+                  {% for learning_outcome in programming_challenge.get_learning_outcomes %}
+                  <li>
+                    {{ learning_outcome.text }}<br>
+                    {% for area in learning_outcome.curriculum_areas.all %}
+                      {% include "topics/curriculum-area-badge.html" %}
+                    {% endfor %}
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+          </div>
       </td>
     </tr>
     {% endfor %}

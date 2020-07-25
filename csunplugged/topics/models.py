@@ -230,6 +230,9 @@ class ProgrammingChallenge(TranslatableModel):
         }
         return reverse("topics:programming_challenge", kwargs=kwargs)
 
+    def get_learning_outcomes(self):
+        return self.learning_outcomes(manager="translated_objects").order_by("text")
+
     def ordered_implementations(self):
         """Return an ordered QuerySet of implementations.
 
