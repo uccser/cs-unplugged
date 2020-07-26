@@ -16,7 +16,6 @@ from utils.group_lessons_by_age import group_lessons_by_age
 from topics.models import (
     Topic,
     ProgrammingChallenge,
-    ProgrammingChallengeNumber,
     UnitPlan,
     Lesson
 )
