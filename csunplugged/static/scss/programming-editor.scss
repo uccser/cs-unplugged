@@ -183,6 +183,7 @@ body {
       .editor_button {
         border: none;
         background-color: #5a9fffff;
+        border: 2px solid #5a9fffff;
         color: white;
         height: 80%;
         padding: 0px 20px;
@@ -195,12 +196,13 @@ body {
       .editor_button:hover, #download_button:hover {
         cursor: pointer;
         background-color: #1b7bffff;
+        border: 2px solid #1b7bffff;
         color: white;
       }
 
       #download_button {
-        border: 2px solid #1b7bffff;
-        color: #1b7bffff; 
+        border: 2px solid #5a9fffff;
+        color: #5a9fffff; 
         background-color: transparent;
       }
 
