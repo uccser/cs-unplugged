@@ -418,7 +418,11 @@ class Lesson(TranslatableModel):
         Returns:
             QuerySet of languages for this lesson.
         """
-        return ProgrammingChallengeLanguage.objects.filter(implementations__challenge__lessons=self).distinct()
+        return ProgrammingChallengeLanguage.objects \
+            .filter(implementations__challenge__lessons=self) \
+            .distinct() \
+            .order_by('name') \
+
 
     def get_absolute_url(self):
         """Return the canonical URL for a lesson.
