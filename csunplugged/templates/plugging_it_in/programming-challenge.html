@@ -49,6 +49,8 @@
               badge-danger
             {% elif saved_attempts|get_item:programming_challenge_item.slug|get_item:"status" == "passed" %}
               badge-success
+            {% elif saved_attempts|get_item:programming_challenge_item.slug|get_item:"status" == "started" %}
+              badge-warning
             {% endif %}
           {% else %}
               badge-secondary

@@ -193,9 +193,13 @@ class SaveAttemptView(View):
         body = json.loads(body_unicode)
 
         request.session['saved_attempts'] = request.session.get('saved_attempts', {})
-        request.session['saved_attempts'][body["challenge"]] = {
-            "status": body["status"],
-            "code": body["attempt"]
-        }
 
-        return HttpResponse("Saved the attempt.")
+        # To stop a "passed" or "failed" status being overridden by "started"
+        if not (body["status"] == "started" and request.session.get('saved_attempts', {}).get(body["challenge"], "") in {'passed', 'failed'}) and body["attempt"] != "":
+            request.session['saved_attempts'][body["challenge"]] = {
+                "status": body["status"],
+                "code": body["attempt"]
+            }
+            return HttpResponse("Saved the attempt.")
+        else:
+            return HttpResponse("Response does not need to be saved.")

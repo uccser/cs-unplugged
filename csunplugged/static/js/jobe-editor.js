@@ -156,3 +156,8 @@ $("#editor_run_button").click(sendCodeToJobe);
 
 // Setting up event listener for the download button.
 $("#download_button").click(downloadCode);
+
+// Save code when the user navigates using the next or prev buttons or opening nav
+$("#prev_challenge_button").on("click", () => save_code());
+$("#next_challenge_button").on("click", () => save_code());
+$("#lessons_nav_toggle").on("click", () => save_code());
