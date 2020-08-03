@@ -193,6 +193,9 @@ class SaveAttemptView(View):
         body = json.loads(body_unicode)
 
         request.session['saved_attempts'] = request.session.get('saved_attempts', {})
-        request.session['saved_attempts'][body["challenge"]] = body["attempt"]
+        request.session['saved_attempts'][body["challenge"]] = {
+            "status": body["status"],
+            "code": body["attempt"]
+        }
 
         return HttpResponse("Saved the attempt.")

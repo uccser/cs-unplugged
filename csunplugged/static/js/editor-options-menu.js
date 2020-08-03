@@ -11,7 +11,7 @@ function openNav() {
 }
 
 /**
- * Closes the challenge naviation drawer.
+ * Closes the challenge navigation drawer.
  */
 function closeNav() {
   document.getElementById("my_sidenav").style.width = "0";
@@ -20,15 +20,11 @@ function closeNav() {
 }
 
 // Setting up event listener for opening the navigation bar.
-let lessonsNavToggle = document.getElementById("lessons_nav_toggle");
-lessonsNavToggle.addEventListener("click", openNav);
+$("#lessons_nav_toggle").click(openNav);
 
 // Setting up event listener for closing the navigation drawer.
-let closeLessonsNav = document.getElementById("sidebar_overlay");
-closeLessonsNav.addEventListener("click", closeNav);
-
-let closeLessonsNavButton = document.getElementById("close_nav_button");
-closeLessonsNavButton.addEventListener("click", closeNav);
+$("#sidebar_overlay").click(closeNav);
+$("#close_nav_button").click(closeNav);
 
 /**
  * Sets the link to the next challenge if it is not the last challenge.

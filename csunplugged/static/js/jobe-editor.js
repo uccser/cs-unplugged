@@ -1,6 +1,7 @@
 // Scripts used to manage the UI functionality for the programming challenge editor screen.
 
 const code_tester = require("./test-code.js");
+
 var CodeMirror = require("codemirror");
 require("codemirror/mode/python/python.js");
 
@@ -27,7 +28,7 @@ let myCodeMirror = CodeMirror.fromTextArea(myTextarea, {
 });
 
 // Set the editor to show the saved attempt if it exists
-myCodeMirror.getDoc().setValue(saved_attempts[current_challenge_slug] ? saved_attempts[current_challenge_slug] : "");
+myCodeMirror.getDoc().setValue(saved_attempts[current_challenge_slug] ? saved_attempts[current_challenge_slug]["code"] : "");
 
 /**
  * Retrieves code from the code mirror editor, runs all the test cases then updates the results table.
@@ -41,27 +42,44 @@ function sendCodeToJobe() {
   $("#editor_run_button").prop("disabled", true);
   $(".code_running_spinner").css("display", "inline-block");
 
-  // Saved the users code
-  let raw_code = myCodeMirror.getValue();
-  save_code(raw_code)
-
   // Run the test_cases
   code_tester.run_all_testcases(code, test_cases).then(result => {
     updateResultsTable(result);
+
+    // Saving the users code
+    save_code(allCorrect(result) ? "passed" : "failed")
+
     $("#editor_run_button").prop("disabled", false);
     $(".code_running_spinner").css("display", "none");
   });
 }
 
 /**
- * Creates a request to save the users code in a django session.
- * @param {String} raw_code The users raw code attempt
+ * Returns if the user has passed all test cases.
+ * @param {Array} results An array of the test case results 
+ * @return {Array} If all the test cases passed returns "Passed", otherwise "Failed"
  */
-async function save_code(raw_code) {
+function allCorrect(results) {
+  for (result of results) {
+    if (result.status != "Passed") {
+      return false
+    }
+  }
+  return true
+}
+
+/**
+ * Creates a request to save the users code in a django session.
+ * @param {String} status If the user has Started, Passed or Failed the challenge.
+ */
+async function save_code(status="started") {
+  let raw_code = myCodeMirror.getValue();
+
   // Sets the saved attempt
   let data = {
       "challenge": current_challenge_slug,
-      "attempt": raw_code
+      "attempt": raw_code,
+      "status": status
   }
 
   // Saves the code in the django session
@@ -134,9 +152,7 @@ function downloadCode() {
 }
 
 // Setting up event listener for the check button to run the code.
-let submitButton = document.getElementById("editor_run_button");
-submitButton.addEventListener("click", sendCodeToJobe);
+$("#editor_run_button").click(sendCodeToJobe);
 
 // Setting up event listener for the download button.
-let downloadButton = document.getElementById("download_button");
-downloadButton.addEventListener("click", downloadCode);
+$("#download_button").click(downloadCode);
