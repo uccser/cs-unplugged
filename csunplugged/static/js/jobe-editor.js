@@ -80,7 +80,7 @@ function updateResultsTable(results) {
 /**
  * Downloads text to a file.
  * @param {String} filename The filename of the file to be downloaded. 
- * @param {string} text The text content of the file to be downloaded.
+ * @param {String} text The text content of the file to be downloaded.
  */
 function download(filename, text) {
   var element = document.createElement('a');
@@ -96,7 +96,7 @@ function download(filename, text) {
 }
 
 /**
- * Downloads the editor code to a file called code.py.
+ * Downloads the editor code to a file called <current_challenge_slug>.py.
  */
 function downloadCode() {
   download(current_challenge_slug + ".py", myCodeMirror.getValue());

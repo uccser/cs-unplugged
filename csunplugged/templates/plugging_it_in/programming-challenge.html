@@ -20,8 +20,7 @@
 
 <div class="row programming__challenge-screen">
 
-
-<div id="my_sidenav" class="sidenav">
+  <div id="my_sidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" id="close_nav_button">&times;</a>
     
     <div class='sidebar-headings'>
@@ -32,13 +31,13 @@
         <h2 class='lesson-heading'>{{lesson.name}}</h2>
       </a>
       <a href="{% url 'topics:lesson' topic.slug lesson.unit_plan.slug lesson.slug %}">
-        <p>Jump to the CS Unplugged Lesson</p>
+        <p>{% trans "Jump to the CS Unplugged Lesson" %}</p>
       </a>
     </div>
 
     <hr>
 
-    <p class='challenges-heading'>Challenges</p>
+    <p class='challenges-heading'>{% trans "Challenges" %}</p>
     <ol class='challenges-list'>
         {% for programming_challenge_item in programming_challenges %}
         <a href="{% url 'plugging_it_in:programming_challenge' topic.slug lesson.slug programming_challenge_item.slug %}">
@@ -51,80 +50,80 @@
         </a>
         {% endfor %}
     </ol>
-</div>
+  </div>
 
-<div id="sidebar_overlay">
-</div>
+  <div id="sidebar_overlay">
+  </div>
 
-{% if programming_challenge.translation_available %}
-  <div class="col-12 col-md-4 programming__info-area">
+  {% if programming_challenge.translation_available %}
+    <div class="col-12 col-md-4 programming__info-area">
 
-  <div class="programming__info-area-content">
-    {% block page_heading %}
-      <h1>
-        {{ programming_challenge.name }}
-      </h1>
-      {% if not programming_challenge.translation_available %}
-        {% with model=programming_challenge parent=topic %}
-          {% include 'topics/not-available-warning.html' %}
-        {% endwith %}
-      {% else %}
-        <p class="w-100 text-white rounded p-2 mt-3 difficulty-level-{{ programming_challenge.difficulty.level }}">
-          <strong>{% trans "Challenge Level:" %}</strong> {{ programming_challenge.difficulty.name }}
-        </p>
-      {% endif %}
-    {% endblock page_heading %}
-
-    {% render_html_field programming_challenge.content %}
-
-    {% comment %} Challenge Hints {% endcomment %}
-    {% for implementation in implementations %}
-        {% if implementation.language.name == "Python" and implementation.hints %}
-          <details>
-            <summary>
-              <strong>
-                {% trans "Hints" %}
-              </strong>
-            </summary>
-
-            <div class="boxed-text-content">
-              {% render_html_field implementation.hints %}
-            </div>
-          </details>
+    <div class="programming__info-area-content">
+      {% block page_heading %}
+        <h1>
+          {{ programming_challenge.name }}
+        </h1>
+        {% if not programming_challenge.translation_available %}
+          {% with model=programming_challenge parent=topic %}
+            {% include 'topics/not-available-warning.html' %}
+          {% endwith %}
+        {% else %}
+          <p class="w-100 text-white rounded p-2 mt-3 difficulty-level-{{ programming_challenge.difficulty.level }}">
+            <strong>{% trans "Challenge Level:" %}</strong> {{ programming_challenge.difficulty.name }}
+          </p>
         {% endif %}
-      {% endfor %}
+      {% endblock page_heading %}
 
-    {% comment %} Programming syntax reminders {% endcomment %}
-    <details>
-      <summary>
-        <strong>{% trans "Programming Reminders" %}</strong>
-      </summary>
-      <div class="boxed-text-content">
-        <p>[Some static content here]</p>
+      {% render_html_field programming_challenge.content %}
+
+      {% comment %} Challenge Hints {% endcomment %}
+      {% for implementation in implementations %}
+          {% if implementation.language.name == "Python" and implementation.hints %}
+            <details>
+              <summary>
+                <strong>
+                  {% trans "Hints" %}
+                </strong>
+              </summary>
+
+              <div class="boxed-text-content">
+                {% render_html_field implementation.hints %}
+              </div>
+            </details>
+          {% endif %}
+        {% endfor %}
+
+      {% comment %} Programming syntax reminders {% endcomment %}
+      <details>
+        <summary>
+          <strong>{% trans "Programming Reminders" %}</strong>
+        </summary>
+        <div class="boxed-text-content">
+          <p>[Some static content here]</p>
+        </div>
+      </details>
+
       </div>
-    </details>
-
     </div>
-  </div>
-  <div class="col-12 col-md-4 programming__editor">
-    <p class='pii-block-heading'>Enter your code in the editor below</p>
-    <textarea id="codemirror_editor"></textarea>
-    <div class="programming__submit d-flex justify-content-between align-items-center">
-      <div class="programming__submit_options d-flex justify-content-start">
-        <button class="editor_button" id="editor_run_button" >Check</button>
-        <button class="editor_button" id="download_button" >Download</button>
-      </div>
-      <div class="code_running_spinner spinner-grow" role="status">
-        <span class="sr-only">Loading...</span>
+    <div class="col-12 col-md-4 programming__editor">
+      <p class='pii-block-heading'>Enter your code in the editor below</p>
+      <textarea id="codemirror_editor"></textarea>
+      <div class="programming__submit d-flex justify-content-between align-items-center">
+        <div class="programming__submit_options d-flex justify-content-start">
+          <button class="editor_button" id="editor_run_button" >Check</button>
+          <button class="editor_button" id="download_button" >Download</button>
+        </div>
+        <div class="code_running_spinner spinner-grow" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="col-12 col-md-4 programming__results">
-    <p class='pii-block-heading'>Your results will be displayed here</p>
-    {% include "plugging_it_in/results-table.html" %}
-  </div>
-{% endif %}
+    <div class="col-12 col-md-4 programming__results">
+      <p class='pii-block-heading'>Your results will be displayed here</p>
+      {% include "plugging_it_in/results-table.html" %}
+    </div>
+  {% endif %}
 </div>
 
 <div class="col-12 row programming__options d-flex justify-content-center align-items-center">

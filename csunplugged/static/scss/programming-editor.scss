@@ -1,4 +1,7 @@
 @import "node_modules/codemirror/lib/codemirror";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
 
 $student-colour: #3044b3;
 $student-colour-light: #5a9fffff;;
@@ -227,7 +230,7 @@ body {
 }
 
 // For small devices
-@media (max-width: 768px) { 
+@include media-breakpoint-down(sm) { 
   .programming__results, .programming__editor, .programming__info-area {
     padding: 20px !important;
   }
@@ -335,10 +338,6 @@ body {
   z-index: 1004;
 }
 
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
 
 #sidebar_overlay {
   height: 100%;

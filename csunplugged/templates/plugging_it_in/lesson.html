@@ -6,7 +6,7 @@
 {% load django_bootstrap_breadcrumbs %}
 
 {% block title %}
-  {{ topic.name }} Programming Exercises
+  {% blocktrans with name=topic.name %}{{ name }} Programming Exercises{% endblocktrans %}
 {% endblock title %}
 
 {% block breadcrumbs %}
@@ -15,7 +15,7 @@
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-  <h1 id="{{ lesson.slug }}">{{ lesson.name }} programming exercises</h1>
+  <h1 id="{{ lesson.slug }}">{% blocktrans with name=lesson.name %}{{ name }} programming exercises{% endblocktrans %}</h1>
  
 {% endblock page_heading %}
 
@@ -24,7 +24,7 @@
     <nav>
       <div class="nav nav-tabs mt-2" id="nav-tab" role="tablist">
         {% for language in lesson.challenge_languages %}
-          <a class="nav-item nav-link {% if forloop.first %}active{% endif %} {% if language.name == "Scratch" %}disabled{% endif %}" id="{{language.name}}" data-toggle="tab" href="#nav-{{language.name}}" role="tab" aria-controls="{{language.name}}" aria-selected="false">
+          <a class="nav-item nav-link {% if forloop.first %}active{% endif %}{% if language.name == "Scratch" %}disabled{% endif %}" id="{{language.name}}" data-toggle="tab" href="#nav-{{language.name}}" role="tab" aria-controls="{{language.name}}" aria-selected="false">
             {{language.name}}
             <img src="{% get_static_prefix %}{{ language.icon }}" class="inline-image-small pl-1" />
           </a>

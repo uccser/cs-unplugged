@@ -24,7 +24,7 @@
                 {% include "generic/not-available-badge.html" %}
                 <br>
               {% endif %}
-              {% if language == "Python"%}
+              {% if language == "Python" %}
                 <a href="{% url 'plugging_it_in:programming_challenge' topic.slug lesson.slug programming_challenge.slug %}">
                   <strong>{{ programming_challenge.name }}</strong>
                 </a>
