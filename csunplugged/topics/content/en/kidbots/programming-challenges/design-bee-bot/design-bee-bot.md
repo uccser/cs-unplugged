@@ -17,11 +17,3 @@ Pressing the four commands stores them in a list called "source code", and press
 The HOME button returns the cat to the starting position; the UNDO button removes the last command from the list; and the CLEAR button empties the list.
 
 A project with the graphics needed is provided at [scratch.mit.edu/projects/159722851/](https://scratch.mit.edu/projects/159722851/), but you will need to write the program to make it work
-
-## Testing examples:
-
-You will need to test your program by typing in your own commands to the simulated Bee-Bot to see if it behaves as intended.
-So you're testing your Scratch program by writing programs for the Bee-Bot!
-
-To use the program, when the green flag is clicked, give instructions to the cat to catch the mouse by pressing the arrows for the Bee-Bot.
-Press the “Go” button when you are ready.

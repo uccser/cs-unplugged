@@ -7,8 +7,3 @@ one line of output.
 You need to use two variables, one for storing the number of dots
 (i.e. 1, 2, 4, 8 and 16) and one to store a the line of output
 (i.e. “1, 2, 4, 8, 16”).
-
-## Testing examples:
-
-The output will always show the numbers 1, 2, 4, 8 and 16 in one line (there
-is no input).
