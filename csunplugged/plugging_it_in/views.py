@@ -54,7 +54,7 @@ class IndexView(generic.ListView):
         return context
 
 
-class TopicView(generic.DetailView):
+class LessonsView(generic.DetailView):
     """View of lessons with programming exercises for a particular topic."""
 
     model = UnitPlan
@@ -63,10 +63,10 @@ class TopicView(generic.DetailView):
     context_object_name = "topic"
 
     def get_object(self, **kwargs):
-        """Retrieve object for the unit plan view.
+        """Retrieve object for the lessons view.
 
         Returns:
-            UnitPlan object, or raises 404 error if not found.
+            UnitPlan object with lessons, or raises 404 error if not found.
         """
         return get_object_or_404(
             self.model.objects.select_related(),
@@ -80,7 +80,7 @@ class TopicView(generic.DetailView):
             Dictionary of context data.
         """
         # Call the base implementation first to get a context
-        context = super(TopicView, self).get_context_data(**kwargs)
+        context = super(LessonsView, self).get_context_data(**kwargs)
         # Loading object under consistent context names for breadcrumbs
         context["topic"] = self.object.topic
         # Add all the connected lessons
@@ -88,21 +88,21 @@ class TopicView(generic.DetailView):
         return context
 
 
-class LessonView(generic.DetailView):
-    """View for a specific lesson."""
+class ProgrammingChallengeListView(generic.DetailView):
+    """View showing all the programming exercises for a specific lesson."""
 
     model = Lesson
     template_name = "plugging_it_in/lesson.html"
     slug_url_kwarg = "lesson_slug"
 
     def get_context_data(self, **kwargs):
-        """Provide the context data for the topic view.
+        """Provide the context data for the programming challenge list view.
 
         Returns:
             Dictionary of context data.
         """
         # Call the base implementation first to get a context
-        context = super(LessonView, self).get_context_data(**kwargs)
+        context = super(ProgrammingChallengeListView, self).get_context_data(**kwargs)
 
         context["topic"] = self.object.topic
 

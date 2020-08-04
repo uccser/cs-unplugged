@@ -4,7 +4,7 @@ from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 
 
-class TopicViewTest(BaseTestWithDB):
+class LessonsViewTest(BaseTestWithDB):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
