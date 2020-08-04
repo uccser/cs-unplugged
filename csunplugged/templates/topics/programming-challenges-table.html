@@ -13,9 +13,11 @@
   </thead>
   <tbody>
     {% for programming_challenge in programming_challenges %}
-    <tr class="align-middle{% if not programming_challenge.translation_available %} table-active{% endif %} clickable" data-toggle="collapse" data-target="#accordion-{{ programming_challenge.challenge_set_number }}{{ programming_challenge.challenge_number }}">
+    <tr class="align-middle{% if not programming_challenge.translation_available %} table-active{% endif %}">
       <td class="text-center">
-        {{ programming_challenge.challenge_set_number }}.{{ programming_challenge.challenge_number }}
+        <strong style="font-size: 20px">
+          {{ programming_challenge.challenge_set_number }}.{{ programming_challenge.challenge_number }}
+        </strong>
       </td>
       <td>
         {% if not programming_challenge.translation_available %}
@@ -26,6 +28,10 @@
           <strong>
             {{ programming_challenge.name }}
           </strong>
+        </a>
+        <br>
+        <a href="#" class="badge badge-outline" data-toggle="collapse" data-target="#accordion-{{ programming_challenge.challenge_set_number }}{{ programming_challenge.challenge_number }}">
+          Show more details
         </a>
       </td>
       <td class="text-center">
@@ -40,7 +46,7 @@
     <tr>
       <td class="p-0"></td>
       <td colspan="3"  class="p-0">
-          <div id="accordion-{{ programming_challenge.challenge_set_number }}{{ programming_challenge.challenge_number }}" style="padding: 0.75rem" class="collapse">
+          <div id="accordion-{{ programming_challenge.challenge_set_number }}{{ programming_challenge.challenge_number }}" style="padding: 0.75rem" class="collapse acc-programming-challenge">
             {% if programming_challenge.get_learning_outcomes %}
               <strong>{% trans "Learning outcomes" %}</strong>
               <div class="boxed-text-content">

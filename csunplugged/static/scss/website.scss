@@ -844,3 +844,12 @@ button:hover .icon-search {
     max-height: 60vh;
     object-fit: contain;
 }
+.badge-outline {
+  color: #3366ff;
+  background-color: transparent;
+  border: 1px solid #3366ff;
+}
+.badge-outline:hover {
+  color: white;
+  background-color: #3366ff;
+}
