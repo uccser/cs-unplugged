@@ -230,8 +230,8 @@ combien de cartes noires pouvez-vous voir sur cette ligne ?
 Et combien de cartes noires sur celle-ci ?
 
 04:25.600 --> 04:33.000
-["Quatre"] <04:27.400> ["Quatre"] <04:29.200> ["Deux"]
-<04:30.800> ["Quatre"] <04:32.400> ["Quatre"]
+["Quatre"] ["Quatre"] ["Deux"]
+["Quatre"] ["Quatre"]
 
 04:33.000 --> 04:38.200
 Ok, maintenant regardons les colonnes,
@@ -240,8 +240,8 @@ combien il y en a sur cette colonne ?
 NOTE changed 'how many is in' to 'how many are in'
 
 04:38.200 --> 04:48.000
-["Deux"] <04:40.400> ["Six"] <04:42.200> ["Quatre"]
-<04:43.600> ["Deux"] <04:45.000> ["Quatre"] <04:46.600> ["Quatre"]
+["Deux"] ["Six"] ["Quatre"]
+["Deux"] ["Quatre"] ["Quatre"]
 
 04:48.000 --> 04:52.000
 Hmm, qu'est-ce que ces nombres ont en commun ?
@@ -313,7 +313,7 @@ et vous aller me dire ce qu'il faut ajouter.
 
 06:02.800 --> 06:08.600
 Je vais également effacer les nombres 
-pour que vous n'ayez pas d'indices,<06:07.040> Ok ?
+pour que vous n'ayez pas d'indices, Ok ?
 
 06:08.600 --> 06:11.000
 Vous êtes prêts ?
@@ -324,27 +324,27 @@ et me dire ce que je dois faire ici.
 Que dois-je faire ici ?
 
 06:13.800 --> 06:18.800
-["Noir"] <06:15.600> ["Noir"]
-<06:17.200>[Brouhaha confus]
+["Noir"] ["Noir"]
+[Brouhaha confus]
 
 06:18.800 --> 06:22.400
 Noir
 
 06:22.400 --> 06:27.200
-["Blanc"] <06:25.200> ["Noir"]
+["Blanc"] ["Noir"]
 
 06:27.200 --> 06:30.600
 Très bien, maintenant toutes les lignes sont faites, passons aux colonnes.
 
 06:30.600 --> 06:37.800
-["Noir"] <06:32.200> ["Noir"]
-<06:34.400> ["Noir"] <06:36.200> ["Blanc"]
+["Noir"] ["Noir"]
+["Noir"] ["Blanc"]
 
 06:37.800 --> 06:40.200
 Oups, désolée
 
 06:40.200 --> 06:43.600
-["Noir"] <06:42.200> ["Blanc"]
+["Noir"] ["Blanc"]
 
 06:43.600 --> 06:47.200
 Ok je veux que vous regardiez ce qu'il se passe ici,
@@ -358,7 +358,7 @@ est-ce que cette colonne est correcte ?
 
 06:54.600 --> 06:58.000
 Est-ce que cette ligne est correcte ?
-<06:57.000> ["Oui"]
+["Oui"]
 
 06:58.000 --> 07:04.000
 Donc ce coin ici rassemble
@@ -423,7 +423,7 @@ Est-ce correct ? Oui
 
 08:07.400 --> 08:10.400
 Et celle-là ?
-<08:08.400>Trois, donc il doit y avoir un problème.
+Trois, donc il doit y avoir un problème.
 
 08:10.400 --> 08:14.600
 Ahahahaa ! Traçons un cercle autour de cette ligne,
@@ -434,11 +434,11 @@ Je pense qu'il y a un problème, car c'est un nombre impair.
 
 08:18.600 --> 08:21.400
 Doit-on vérifier la prochaine ligne ?
-<08:20.600>["Non"]
+["Non"]
 
 08:21.400 --> 08:24.400
 Pourquoi pas ?
-<08:22.040>Parce que nous avons déjà trouvé la réponse.
+Parce que nous avons déjà trouvé la réponse.
 
 08:24.400 --> 08:28.800
 Nous avons déjà trouvé la réponse et nous savons
@@ -492,7 +492,7 @@ que c'était la carte retournée.
 
 09:02.800 --> 09:11.400
 Très bien applaudissons-le, bravo !
-<09:07.600>Merci Robert.
+Merci Robert.
 
 09:11.400 --> 09:15.200
 Bien, pourquoi est-ce qu'on apprend ça avec

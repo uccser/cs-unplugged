@@ -197,9 +197,6 @@ Right let's have a look. Sammy Sammy Sammy.
 03:45.400 --> 03:47.000
 Right or wrong?
 
-03:47.000 --> 03:50.200
-[Confused chorus]
-
 03:50.200 --> 03:52.600
 Was I right? Awesome!
 
@@ -230,8 +227,8 @@ how many black cards can you see in this row?
 And how many black cards in this one?
 
 04:25.600 --> 04:33.000
-["Four"] <04:27.400> ["Four"] <04:29.200> ["Two"]
-<04:30.800> ["Four"] <04:32.400> ["Four"]
+["Four"] ["Four"] ["Two"]
+["Four"] ["Four"]
 
 04:33.000 --> 04:38.200
 Okay, now let's look at these columns,
@@ -240,8 +237,8 @@ how many are in this column?
 NOTE changed 'how many is in' to 'how many are in'
 
 04:38.200 --> 04:48.000
-["Two"] <04:40.400> ["Six"] <04:42.200> ["Four"]
-<04:43.600> ["Two"] <04:45.000> ["Four"] <04:46.600> ["Four"]
+["Two"] ["Six"] ["Four"]
+["Two"] ["Four"] ["Four"]
 
 04:48.000 --> 04:52.000
 Hmm, what do those numbers all have in common?
@@ -313,7 +310,7 @@ and you're going to tell me what to put.
 
 06:02.800 --> 06:08.600
 Now, I am also going to rub out the numbers
-so you've got no prompts,<06:07.040> okay?
+so you've got no prompts, okay?
 
 06:08.600 --> 06:11.000
 Are you ready?
@@ -324,27 +321,27 @@ and tell me what I have to do here.
 What do I have to do here?
 
 06:13.800 --> 06:18.800
-["Black"] <06:15.600> ["Black"]
-<06:17.200>[Confused chorus]
+["Black"] ["Black"]
+[Confused chorus]
 
 06:18.800 --> 06:22.400
 Black
 
 06:22.400 --> 06:27.200
-["White"] <06:25.200> ["Black"]
+["White"] ["Black"]
 
 06:27.200 --> 06:30.600
 Alright, now, all those rows are done, let's do the columns.
 
 06:30.600 --> 06:37.800
-["Black"] <06:32.200> ["Black"]
-<06:34.400> ["Black"] <06:36.200> ["White"]
+["Black"] ["Black"]
+["Black"] ["White"]
 
 06:37.800 --> 06:40.200
 Oops, sorry
 
 06:40.200 --> 06:43.600
-["Black"] <06:42.200> ["White"]
+["Black"] ["White"]
 
 06:43.600 --> 06:47.200
 Okay I want you to see what's happening here,
@@ -358,7 +355,7 @@ Does that make that column correct?
 
 06:54.600 --> 06:58.000
 Does it make that row correct?
-<06:57.000> ["Yes"]
+["Yes"]
 
 06:58.000 --> 07:04.000
 So that corner there, it actually is putting
@@ -423,7 +420,7 @@ Is that okay? Yes
 
 08:07.400 --> 08:10.400
 What about this one?
-<08:08.400>Three, so there must be a problem.
+Three, so there must be a problem.
 
 08:10.400 --> 08:14.600
 Ahahahahaa! Let's put a circle around there,
@@ -434,11 +431,11 @@ I think there is a problem, because it's an odd number.
 
 08:18.600 --> 08:21.400
 Do we have to check the next row?
-<08:20.600>["No"]
+["No"]
 
 08:21.400 --> 08:24.400
 Why not?
-<08:22.040>Because we're already found the answer.
+Because we're already found the answer.
 
 08:24.400 --> 08:28.800
 We've already found the answer and we know
@@ -492,7 +489,7 @@ that that was the one that was changed?
 
 09:02.800 --> 09:11.400
 Cool let's give him a hand well done, cool.
-<09:07.600>Thanks Robert.
+Thanks Robert.
 
 09:11.400 --> 09:15.200
 So, why are we learning this with
