@@ -19,35 +19,40 @@ function closeNav() {
   document.getElementById("sidebar_overlay").style.opacity = "0";
 }
 
-// Setting up event listener for opening the navigation bar.
-$("#lessons_nav_toggle").click(openNav);
-
-// Setting up event listener for closing the navigation drawer.
-$("#sidebar_overlay").click(closeNav);
-$("#close_nav_button").click(closeNav);
+/**
+ * Gets the index of the current challenge.
+ */
+function getCurrentIndex() {
+  const isCurrentChallengeIndex = (element) => element.slug == current_challenge_slug;
+  return programming_exercises.findIndex(isCurrentChallengeIndex);
+}
 
 /**
- * Sets the link to the next challenge if it is not the last challenge.
- * @param {Number} index The index of the current challenge
+ * Gets the link to the next challenge if it is not the last challenge.
  */
-function setNextChallenge(index) {
+function getNextChallengeURL() {
+  const index = getCurrentIndex();
+
   if (index !== programming_exercises.length-1) {
     const nextLesson = programming_exercises[index+1];
-    const nextLessonUrl = lesson_url + nextLesson.slug;
-    $("#next_challenge_button").attr("href", nextLessonUrl);
+    return nextLessonUrl = lesson_url + nextLesson.slug;
   }
+
+  return '#'
 }
 
 /**
  * Sets the link to the previous challenge if it is not the first challenge.
- * @param {Number} index The index of the current challenge
  */
-function setPreviousChallenge(index) {
+function getPreviousChallengeURL() {
+  const index = getCurrentIndex()
+
   if (index !== 0) {
     const prevLesson = programming_exercises[index-1];
-    const prevLessonUrl = lesson_url + prevLesson.slug;
-    $("#prev_challenge_button").attr("href", prevLessonUrl);
+    return prevLessonUrl = lesson_url + prevLesson.slug;
   }
+
+  return "#"
 }
 
 /**
@@ -55,18 +60,22 @@ function setPreviousChallenge(index) {
  * Also sets the text to show lesson progression.
  */
 function setupLessonNav() {
-  const isCurrentChallengeIndex = (element) => element.slug == current_challenge_slug;
-  currentChallengeIndex = programming_exercises.findIndex(isCurrentChallengeIndex);
+  // Setting up event listener for opening the navigation bar.
+  $("#lessons_nav_toggle").click(openNav);
 
-  const progressionText = `Question <strong>${currentChallengeIndex+1}</strong> of <strong>${programming_exercises.length}</strong>`;
+  // Setting up event listener for closing the navigation drawer.
+  $("#sidebar_overlay").click(closeNav);
+  $("#close_nav_button").click(closeNav);
+
+  // Sets the question progression text.
+  const progressionText = `Question <strong>${getCurrentIndex()+1}</strong> of <strong>${programming_exercises.length}</strong>`;
   document.getElementById("challenge_progression_text").innerHTML = progressionText;
-  setPreviousChallenge(currentChallengeIndex)
-  setNextChallenge(currentChallengeIndex)
+
+  // Add testing examples info to the requirements block (temporary)
+  const static_requirement_info = "Your program should display the outputs in the table (shown on the right) for the given inputs provided.";
+  $("#requirement + p").append(`</br></br> <p>${static_requirement_info}</p>`);
 }
 
-// Apply the navigation setup
-setupLessonNav()
-
-// Add testing examples info to the requirements block (temporary)
-const static_requirement_info = "Your program should display the outputs in the table (shown on the right) for the given inputs provided.";
-$("#requirement + p").append(`</br></br> <p>${static_requirement_info}</p>`);
+exports.setupLessonNav = setupLessonNav;
+exports.getPreviousChallengeURL = getPreviousChallengeURL;
+exports.getNextChallengeURL = getNextChallengeURL;

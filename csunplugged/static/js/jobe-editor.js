@@ -1,6 +1,7 @@
 // Scripts used to manage the UI functionality for the programming challenge editor screen.
 
-const code_tester = require("./test-code.js");
+const codeTester = require("./test-code.js");
+const editorUtils = require("./editor-options-menu.js")
 
 var CodeMirror = require("codemirror");
 require("codemirror/mode/python/python.js");
@@ -43,7 +44,7 @@ function sendCodeToJobe() {
   $(".code_running_spinner").css("display", "inline-block");
 
   // Run the test_cases
-  code_tester.run_all_testcases(code, test_cases).then(result => {
+  codeTester.run_all_testcases(code, test_cases).then(result => {
     updateResultsTable(result);
 
     // Saving the users code
@@ -83,7 +84,7 @@ async function save_code(status="started") {
   }
 
   // Saves the code in the django session
-  fetch(save_attempt_url, {
+  let response = await fetch(save_attempt_url, {
     method: "POST",
     headers: {
       "Content-type": "application/json; charset=utf-8",
@@ -92,6 +93,8 @@ async function save_code(status="started") {
     },
     body: JSON.stringify(data)
   });
+
+  return response;
 }
 
 /**
@@ -157,7 +160,11 @@ $("#editor_run_button").click(sendCodeToJobe);
 // Setting up event listener for the download button.
 $("#download_button").click(downloadCode);
 
+// Apply the navigation setup
+editorUtils.setupLessonNav()
+
 // Save code when the user navigates using the next or prev buttons or opening nav
-$("#prev_challenge_button").on("click", () => save_code());
-$("#next_challenge_button").on("click", () => save_code());
+// Manually navigating to the next page to ensure code is saved first before the page reloads.
+$("#prev_challenge_button").on("click", () => save_code().then(() => window.location.href = editorUtils.getPreviousChallengeURL()));
+$("#next_challenge_button").on("click", () => save_code().then(() => window.location.href = editorUtils.getNextChallengeURL()));
 $("#lessons_nav_toggle").on("click", () => save_code());
