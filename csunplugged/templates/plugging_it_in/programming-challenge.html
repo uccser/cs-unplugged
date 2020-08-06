@@ -126,18 +126,22 @@
   {% endif %}
 </div>
 
-<div class="col-12 row programming__options d-flex justify-content-center align-items-center">
-  <div class="col-12 progression-options d-flex justify-content-between align-items-center">
-    <a id='prev_challenge_button'>
-      <button  class="btn prev">Previous Challenge</button>
-    </a>
-    <div class="progression-info">
+<div class="col-12 programming__options">
+  <div class="row progression-options">
+    <div class="col-sm-4 col-6 order-2 order-sm-1 d-flex align-items-center my-1">
+      <a id='prev_challenge_button'>
+        <button class="btn prev">Previous Challenge</button>
+      </a>
+    </div>
+    <div class="progression-info col-sm-4 col-12 order-1 order-sm-2 my-2">
       <p id="challenge_progression_text"></p>
       <p id="lessons_nav_toggle">(Click here to select a challenge)</p>
     </div>
-    <a id='next_challenge_button'>
-      <button class="btn next">Next Challenge</button>
-    </a>
+    <div class="col-sm-4 col-6 order-3 order-sm-3 d-flex justify-content-end align-items-center my-1">
+      <a id='next_challenge_button'>
+        <button class="btn next">Next Challenge</button>
+      </a>
+    </div>
   </div>
 </div>
 
