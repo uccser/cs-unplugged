@@ -99,7 +99,7 @@
           <strong>{% trans "Programming Reminders" %}</strong>
         </summary>
         <div class="boxed-text-content">
-          <p>[Some static content here]</p>
+          {% include "plugging_it_in/static-syntax-hints.html" %}
         </div>
       </details>
 
@@ -170,4 +170,9 @@
 
   <script src="{% static 'js/jobe-editor.js' %}"></script>
   <script src="{% static 'js/editor-options-menu.js' %}"></script>
+
+  {% comment %} Add in highlight.js for code highlighting {% endcomment %}
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/xcode.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 {% endblock scripts %}
