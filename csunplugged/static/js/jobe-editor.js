@@ -52,20 +52,25 @@ function sendCodeToJobe() {
 function updateResultsTable(results) {
   for (result of results) {
     // Update status cell
-    let status_element = $("#test-case-" + result.id + "-status");
-    status_element.text(result.status);
+    $(`#test-case-${result.id}-status`).text(result.status);
+
+    // Update help modal
+    $(`#test-case-${result.id}-help-title`).text(result.status)
+    $(`#test-case-${result.id}-help`).text(result.helpInfo);
+    $(`#test-case-${result.id}-help-icon`).show()
 
     // Update output cell
-    var output_element = $("#test-case-" + result.id + "-output");
-    output_element.text(result.userOutput);
+    $(`#test-case-${result.id}-output`).text(result.userOutput);
 
     // Update row colors
-    var row_element = $("#test-case-" + result.id + "-row");
+    var row_element = $(`#test-case-${result.id}-row`);
     if (result.status == "Passed") {
       row_element.addClass("table-success");
       row_element.removeClass("table-danger");
       row_element.removeClass("table-warning");
-    } else if (result.status == "Compiler Error") {
+      $(`#test-case-${result.id}-help-icon`).hide()
+      
+    } else if (result.status == "Syntax Error") {
       row_element.addClass("table-warning");
       row_element.removeClass("table-danger");
       row_element.removeClass("table-success");

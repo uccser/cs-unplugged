@@ -226,6 +226,15 @@ body {
     flex-shrink: 1;
     overflow-y: auto;
   }
+
+  .help-icon {
+    height: 16px;
+    width: 16px;
+    color: white;
+    background-color: #212529;
+    border-radius: 8px;
+    font-weight: bold;
+  }
 }
 
 // For small devices
