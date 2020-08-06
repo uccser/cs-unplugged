@@ -1,0 +1,50 @@
+{% load static %}
+
+{% load i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+
+{% for age_group, lessons in grouped_lessons.items %}
+  <table class="table table-responsive table-center-vertical">
+    <thead class="thead-default">
+      <tr>
+        <th colspan="2">
+          {% blocktrans with lower=age_group.ages.lower upper=age_group.ages.upper trimmed %}
+          Ages {{ lower }} to {{ upper }}
+          {% endblocktrans %}
+          </th>
+        <th class="text-center">{% trans "Programming languages" %}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if age_group.description %}
+        <tr class="align-middle">
+          <td colspan="3" class="small">
+            {{ age_group.description }}
+          </td>
+        </tr>
+      {% endif %}
+      {% for lesson in lessons %}
+        <tr class="align-middle{% if not lesson.translation_available %} table-active unavailable{% endif %}">
+          <td class="text-center" style="width:10%">
+            {{ lesson.number }}
+          </td>
+          <td style="width:60%">
+            <a href="{% url 'plugging_it_in:lesson' topic.slug lesson.slug %}">
+              <strong>{{ lesson.name }}</strong>
+              {% if not lesson.translation_available %}
+                <br>
+                {% include "generic/not-available-badge.html" %}
+              {% endif %}
+            </a>
+          </td>
+            <td class="text-center" style="width:20%">
+            {% for language in lesson.challenge_languages %}
+              <img src="{% get_static_prefix %}{{ language.icon }}" class="inline-image-small" />
+            {% endfor %}
+            </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endfor %}

@@ -5,16 +5,19 @@ from django.http import HttpResponse
 import json
 import requests
 
-from topics.utils.add_lesson_ages_to_objects import add_lesson_ages_to_objects
 from django.shortcuts import get_object_or_404
 from django.views import generic
 from django.views import View
 from django.urls import reverse
 from django.conf import settings
+from topics.utils.add_lesson_ages_to_objects import add_lesson_ages_to_objects
 from utils.translated_first import translated_first
+from utils.group_lessons_by_age import group_lessons_by_age
 from topics.models import (
     Topic,
     ProgrammingChallenge,
+    UnitPlan,
+    Lesson
 )
 
 
@@ -51,24 +54,62 @@ class IndexView(generic.ListView):
         return context
 
 
-class TopicView(generic.DetailView):
-    """View for a specific topic."""
+class LessonsView(generic.DetailView):
+    """View of lessons with programming exercises for a particular topic."""
 
-    model = Topic
+    model = UnitPlan
     template_name = "plugging_it_in/topic.html"
     slug_url_kwarg = "topic_slug"
+    context_object_name = "topic"
+
+    def get_object(self, **kwargs):
+        """Retrieve object for the lessons view.
+
+        Returns:
+            UnitPlan object with lessons, or raises 404 error if not found.
+        """
+        return get_object_or_404(
+            self.model.objects.select_related(),
+            topic__slug=self.kwargs.get("topic_slug", None)
+        )
 
     def get_context_data(self, **kwargs):
-        """Provide the context data for the topic view.
+        """Provide the context data for the lessons view.
 
         Returns:
             Dictionary of context data.
         """
         # Call the base implementation first to get a context
-        context = super(TopicView, self).get_context_data(**kwargs)
+        context = super(LessonsView, self).get_context_data(**kwargs)
+        # Loading object under consistent context names for breadcrumbs
+        context["topic"] = self.object.topic
+        # Add all the connected lessons
+        context["grouped_lessons"] = group_lessons_by_age(self.object.lessons.all(), only_programming_exercises=True)
+        return context
+
+
+class ProgrammingChallengeListView(generic.DetailView):
+    """View showing all the programming exercises for a specific lesson."""
+
+    model = Lesson
+    template_name = "plugging_it_in/lesson.html"
+    slug_url_kwarg = "lesson_slug"
+
+    def get_context_data(self, **kwargs):
+        """Provide the context data for the programming challenge list view.
+
+        Returns:
+            Dictionary of context data.
+        """
+        # Call the base implementation first to get a context
+        context = super(ProgrammingChallengeListView, self).get_context_data(**kwargs)
+
+        context["topic"] = self.object.topic
+
+        context["lesson"] = self.object
 
         # Add in a QuerySet of all the connected programming exercises for this topic
-        context["programming_challenges"] = ProgrammingChallenge.objects.filter(topic=self.object)
+        context["programming_challenges"] = self.object.retrieve_related_programming_challenges()
         return context
 
 
@@ -101,8 +142,14 @@ class ProgrammingChallengeView(generic.DetailView):
         context = super(ProgrammingChallengeView, self).get_context_data(**kwargs)
 
         context["topic"] = self.object.topic
-        # Add all the connected learning outcomes
-        context["learning_outcomes"] = self.object.learning_outcomes(manager="translated_objects").order_by("text")
+        lessons = self.object.lessons.all()
+        for lesson in lessons:
+            if lesson.slug == self.kwargs.get("lesson_slug", None):
+                context["lesson"] = lesson
+                context["programming_challenges"] = lesson.retrieve_related_programming_challenges("Python")
+                context["programming_exercises_json"] = json.dumps(
+                    list(lesson.retrieve_related_programming_challenges("Python").values()))
+
         context["implementations"] = self.object.ordered_implementations()
         context["test_cases_json"] = json.dumps(list(self.object.related_test_cases().values()))
         context["test_cases"] = self.object.related_test_cases().values()

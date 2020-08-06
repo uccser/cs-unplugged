@@ -80,8 +80,12 @@ async function run_testcase(
       testcaseResult.userOutput = userResult.stdout;
     }
   } else if (userResult.outcome == 11) {
-    // Outcome 11: Compiler Error
-    testcaseResult.status = "Compiler Error";
+    // Outcome 11: Compiler Error from Jobe (this has been changed to Syntax Error for plugging it in)
+    testcaseResult.status = "Syntax Error";
+    testcaseResult.userOutput = userResult.cmpinfo;
+  } else if (userResult.outcome == 13) {
+    // Outcome 13: Time limit exceeeded
+    testcaseResult.status = "Time limit exceeded";
     testcaseResult.userOutput = userResult.cmpinfo;
   } else {
     // Any other error

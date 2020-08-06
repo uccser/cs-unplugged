@@ -77,6 +77,35 @@ function updateResultsTable(results) {
   }
 }
 
+/**
+ * Downloads text to a file.
+ * @param {String} filename The filename of the file to be downloaded. 
+ * @param {String} text The text content of the file to be downloaded.
+ */
+function download(filename, text) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+}
+
+/**
+ * Downloads the editor code to a file called <current_challenge_slug>.py.
+ */
+function downloadCode() {
+  download(current_challenge_slug + ".py", myCodeMirror.getValue());
+}
+
 // Setting up event listener for the check button to run the code.
 let submitButton = document.getElementById("editor_run_button");
 submitButton.addEventListener("click", sendCodeToJobe);
+
+// Setting up event listener for the download button.
+let downloadButton = document.getElementById("download_button");
+downloadButton.addEventListener("click", downloadCode);
