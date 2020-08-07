@@ -74,6 +74,14 @@ function setupLessonNav() {
   // Add testing examples info to the requirements block (temporary)
   const static_requirement_info = "Your program should display the outputs in the table (shown on the right) for the given inputs provided.";
   $("#requirement + p").append(`</br></br> <p>${static_requirement_info}</p>`);
+  
+  // Hides the next/prev challenge buttons if there is no challenge available in that direction.
+  const index = getCurrentIndex();
+  if (index === programming_exercises.length-1) {
+    $("#next_challenge_button").find('button').hide()
+  } else if (index === 0) {
+    $("#prev_challenge_button").find('button').hide()
+  }
 }
 
 exports.setupLessonNav = setupLessonNav;
