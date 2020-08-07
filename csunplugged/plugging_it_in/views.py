@@ -154,6 +154,8 @@ class ProgrammingChallengeView(generic.DetailView):
         context["test_cases_json"] = json.dumps(list(self.object.related_test_cases().values()))
         context["test_cases"] = self.object.related_test_cases().values()
         context["jobe_proxy_url"] = reverse('plugging_it_in:jobe_proxy')
+        context["saved_attempts"] = self.request.session.get('saved_attempts', {})
+
         return context
 
 
@@ -180,3 +182,27 @@ class JobeProxyView(View):
         response = requests.post(settings.JOBE_SERVER_URL + "/jobe/index.php/restapi/runs/",
                                  data=body, headers=headers)
         return HttpResponse(response.text)
+
+
+class SaveAttemptView(View):
+    """View to save the users challenge attempt."""
+
+    def post(self, request):
+        """Save the users attempt to a Django session."""
+        body_unicode = request.body.decode('utf-8')
+        body = json.loads(body_unicode)
+
+        request.session['saved_attempts'] = request.session.get('saved_attempts', {})
+
+        # To stop a "passed" or "failed" status being overridden by "started"
+        if (not (body["status"] == "started"
+                 and request.session.get('saved_attempts', {}).get(body["challenge"], {}).get("status", "")
+                 in {'passed', 'failed'})
+                and body["attempt"] != ""):
+            request.session['saved_attempts'][body["challenge"]] = {
+                "status": body["status"],
+                "code": body["attempt"]
+            }
+            return HttpResponse("Saved the attempt.")
+        else:
+            return HttpResponse("Response does not need to be saved.")

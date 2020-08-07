@@ -1,6 +1,8 @@
 // Scripts used to manage the UI functionality for the programming challenge editor screen.
 
-const code_tester = require("./test-code.js");
+const codeTester = require("./test-code.js");
+const editorUtils = require("./editor-options-menu.js")
+
 var CodeMirror = require("codemirror");
 require("codemirror/mode/python/python.js");
 
@@ -26,6 +28,9 @@ let myCodeMirror = CodeMirror.fromTextArea(myTextarea, {
   }
 });
 
+// Set the editor to show the saved attempt if it exists
+myCodeMirror.getDoc().setValue(saved_attempts[current_challenge_slug] ? saved_attempts[current_challenge_slug]["code"] : "");
+
 /**
  * Retrieves code from the code mirror editor, runs all the test cases then updates the results table.
  * Disables the "CHECK" button and shows a loading spinner while request is being processed.
@@ -38,11 +43,58 @@ function sendCodeToJobe() {
   $("#editor_run_button").prop("disabled", true);
   $(".code_running_spinner").css("display", "inline-block");
 
-  code_tester.run_all_testcases(code, test_cases).then(result => {
+  // Run the test_cases
+  codeTester.run_all_testcases(code, test_cases).then(result => {
     updateResultsTable(result);
+
+    // Saving the users code
+    save_code(allCorrect(result) ? "passed" : "failed")
+
     $("#editor_run_button").prop("disabled", false);
     $(".code_running_spinner").css("display", "none");
   });
+}
+
+/**
+ * Returns if the user has passed all test cases.
+ * @param {Array} results An array of the test case results 
+ * @return {Array} If all the test cases passed returns "Passed", otherwise "Failed"
+ */
+function allCorrect(results) {
+  for (result of results) {
+    if (result.status != "Passed") {
+      return false
+    }
+  }
+  return true
+}
+
+/**
+ * Creates a request to save the users code in a django session.
+ * @param {String} status If the user has Started, Passed or Failed the challenge.
+ */
+async function save_code(status="started") {
+  let raw_code = myCodeMirror.getValue();
+
+  // Sets the saved attempt
+  let data = {
+      "challenge": current_challenge_slug,
+      "attempt": raw_code,
+      "status": status
+  }
+
+  // Saves the code in the django session
+  let response = await fetch(save_attempt_url, {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json; charset=utf-8",
+      Accept: "application/json",
+      "X-CSRFToken": csrf_token
+    },
+    body: JSON.stringify(data)
+  });
+
+  return response;
 }
 
 /**
@@ -103,9 +155,16 @@ function downloadCode() {
 }
 
 // Setting up event listener for the check button to run the code.
-let submitButton = document.getElementById("editor_run_button");
-submitButton.addEventListener("click", sendCodeToJobe);
+$("#editor_run_button").click(sendCodeToJobe);
 
 // Setting up event listener for the download button.
-let downloadButton = document.getElementById("download_button");
-downloadButton.addEventListener("click", downloadCode);
+$("#download_button").click(downloadCode);
+
+// Apply the navigation setup
+editorUtils.setupLessonNav()
+
+// Save code when the user navigates using the next or prev buttons or opening nav
+// Manually navigating to the next page to ensure code is saved first before the page reloads.
+$("#prev_challenge_button").on("click", () => save_code().then(() => window.location.href = editorUtils.getPreviousChallengeURL()));
+$("#next_challenge_button").on("click", () => save_code().then(() => window.location.href = editorUtils.getNextChallengeURL()));
+$("#lessons_nav_toggle").on("click", () => save_code());
