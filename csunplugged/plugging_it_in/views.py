@@ -196,7 +196,8 @@ class SaveAttemptView(View):
 
         # To stop a "passed" or "failed" status being overridden by "started"
         if (not (body["status"] == "started"
-                 and request.session.get('saved_attempts', {}).get(body["challenge"], {}).get("status", "") in {'passed', 'failed'})
+                 and request.session.get('saved_attempts', {}).get(body["challenge"], {}).get("status", "")
+                 in {'passed', 'failed'})
                 and body["attempt"] != ""):
             request.session['saved_attempts'][body["challenge"]] = {
                 "status": body["status"],
