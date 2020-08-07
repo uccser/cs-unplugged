@@ -56,14 +56,14 @@
               <div class='col-2 d-flex align-items-center justify-content-center'>
               {% if programming_challenge_item.slug in saved_attempts %}
                 {% if saved_attempts|get_item:programming_challenge_item.slug|get_item:"status" == "failed" %}
-                  <p class="status-badge status-badge-incorrect">Incorrect</p> 
+                  <p class="status-badge bg-danger border-danger text-white">{% trans "Incorrect" %}</p> 
                 {% elif saved_attempts|get_item:programming_challenge_item.slug|get_item:"status" == "passed" %}
-                  <p class="status-badge status-badge-correct">Correct</p> 
+                  <p class="status-badge bg-success border-success text-white">{% trans "Correct" %}</p> 
                 {% elif saved_attempts|get_item:programming_challenge_item.slug|get_item:"status" == "started" %}
-                  <p class="status-badge status-badge-started">Started</p> 
+                  <p class="status-badge border-warning bg-warning">{% trans "Started" %}</p> 
                 {% endif %}
               {% else %}
-                <p class="status-badge">Not started</p> 
+                <p class="status-badge">{% trans "Not started" %}</p> 
               {% endif %}
               </div>
             </div>
