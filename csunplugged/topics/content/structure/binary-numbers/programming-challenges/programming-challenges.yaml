@@ -55,21 +55,6 @@ binary-numbers-using-variable-operator-repeat:
   test-cases: 
     1: input
 
-binary-numbers-one-line:
-  challenge-set-number: 1
-  challenge-number: 5
-  difficulty-level: 2
-  programming-languages:
-    - scratch
-    - python
-  learning-outcomes:
-    - programming-describe-variables
-    - programming-identify-loop
-    - programming-explain-join-concatenate
-  extra-challenge: extra-challenge.md
-  test-cases: 
-    1: input
-
 number-cards-display:
   challenge-set-number: 2
   challenge-number: 1
