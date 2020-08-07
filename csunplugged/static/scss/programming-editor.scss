@@ -28,7 +28,6 @@ body {
 }
 
 .programming__options {
-  height: 70px;
   background-color: $student-colour;
   color: white;
   margin-left: 0px;
@@ -227,6 +226,16 @@ body {
     flex-shrink: 1;
     overflow-y: auto;
   }
+
+  .help-icon {
+    height: 16px;
+    width: 16px;
+    color: white;
+    background-color: #212529;
+    border-radius: 8px;
+    font-weight: bold;
+    visibility: hidden;
+  }
 }
 
 // For small devices
@@ -236,7 +245,7 @@ body {
   }
 
   .programming__results {
-    padding-bottom: 90px !important;
+    padding-bottom: 160px !important;
   }
 }
 

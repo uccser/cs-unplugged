@@ -24,7 +24,7 @@
     <nav>
       <div class="nav nav-tabs mt-2" id="nav-tab" role="tablist">
         {% for language in lesson.challenge_languages %}
-          <a class="nav-item nav-link {% if forloop.first %}active{% endif %}{% if language.name == "Scratch" %}disabled{% endif %}" id="{{language.name}}" data-toggle="tab" href="#nav-{{language.name}}" role="tab" aria-controls="{{language.name}}" aria-selected="false">
+          <a class="nav-item nav-link {% if forloop.first %}active{% endif %}" id="{{language.name}}" data-toggle="tab" href="#nav-{{language.name}}" role="tab" aria-controls="{{language.name}}" aria-selected="false">
             {{language.name}}
             <img src="{% get_static_prefix %}{{ language.icon }}" class="inline-image-small pl-1" />
           </a>
@@ -34,6 +34,11 @@
     <div class="tab-content" id="nav-tabContent">
       {% for language in lesson.challenge_languages %}
         <div class="tab-pane fade {% if forloop.first %}show active{% endif %}" id="nav-{{language.name}}" role="tabpanel" aria-labelledby="{{language.name}}">
+          {% if language.name == "Scratch" %}
+            <div class="alert alert-danger my-3" role="alert">
+              {% trans "Scratch challenges have not been updated to our new plugging it in system. However, you can still access the old content using the links below." %}
+            </div>
+          {% endif %}
           {% include "plugging_it_in/programming-challenges-table.html" with language=language.name %}
         </div>
       {% endfor %}
