@@ -27,7 +27,7 @@
   {% if programming_challenges %}
     <div class="custom-control custom-checkbox py-3">
       <input type="checkbox" class="custom-control-input" id="show-all-checkbox">
-      <label class="custom-control-label" for="show-all-checkbox">Check to show all detailed content</label>
+      <label class="custom-control-label" for="show-all-checkbox">{% trans "Check to show all detailed content" %}</label>
     </div>
     {% include "topics/programming-challenges-table.html" %}
   {% else %}
@@ -41,8 +41,10 @@
     $("#show-all-checkbox").change(function() {
         if (this.checked) {
           $('.acc-programming-challenge').collapse('show')
+          $(".toggle-content").text('Show less details');
         } else {
           $('.acc-programming-challenge').collapse('hide')
+          $(".toggle-content").text('Show more details');
         }
     });
   </script>
