@@ -10,13 +10,11 @@ from django.views import generic
 from django.views import View
 from django.urls import reverse
 from django.conf import settings
-from topics.utils.add_lesson_ages_to_objects import add_lesson_ages_to_objects
 from utils.translated_first import translated_first
 from utils.group_lessons_by_age import group_lessons_by_age
 from topics.models import (
     Topic,
     ProgrammingChallenge,
-    UnitPlan,
     Lesson
 )
 
@@ -33,8 +31,13 @@ class IndexView(generic.ListView):
         Returns:
             Queryset of Topic objects ordered by name.
         """
-        programming_topics = Topic.objects.order_by("name").prefetch_related(
+        programming_topics = Topic.objects.order_by(
+            "name"
+        ).exclude(
+            programming_challenges__isnull=True
+        ).prefetch_related(
             "programming_challenges",
+            "lessons",
         )
         return translated_first(programming_topics)
 
@@ -46,46 +49,18 @@ class IndexView(generic.ListView):
         """
         # Call the base implementation first to get a context
         context = super(IndexView, self).get_context_data(**kwargs)
-        add_lesson_ages_to_objects(self.object_list)
-
-        # Add in a QuerySet of all the demo programming exercises (Temporary)
-        demo_challenge_ids = {1, 4, 8, 13, 15, 20}
-        context["demo_programming_challenges"] = ProgrammingChallenge.objects.filter(id__in=demo_challenge_ids)
+        for topic in self.object_list:
+            topic.grouped_lessons = group_lessons_by_age(
+                topic.lessons.all(),
+                only_programming_exercises=True
+            )
         return context
 
 
-class LessonsView(generic.DetailView):
-    """View of lessons with programming exercises for a particular topic."""
+class AboutView(generic.TemplateView):
+    """View for the about page that renders from a template."""
 
-    model = UnitPlan
-    template_name = "plugging_it_in/topic.html"
-    slug_url_kwarg = "topic_slug"
-    context_object_name = "topic"
-
-    def get_object(self, **kwargs):
-        """Retrieve object for the lessons view.
-
-        Returns:
-            UnitPlan object with lessons, or raises 404 error if not found.
-        """
-        return get_object_or_404(
-            self.model.objects.select_related(),
-            topic__slug=self.kwargs.get("topic_slug", None)
-        )
-
-    def get_context_data(self, **kwargs):
-        """Provide the context data for the lessons view.
-
-        Returns:
-            Dictionary of context data.
-        """
-        # Call the base implementation first to get a context
-        context = super(LessonsView, self).get_context_data(**kwargs)
-        # Loading object under consistent context names for breadcrumbs
-        context["topic"] = self.object.topic
-        # Add all the connected lessons
-        context["grouped_lessons"] = group_lessons_by_age(self.object.lessons.all(), only_programming_exercises=True)
-        return context
+    template_name = "plugging_it_in/about.html"
 
 
 class ProgrammingChallengeListView(generic.DetailView):

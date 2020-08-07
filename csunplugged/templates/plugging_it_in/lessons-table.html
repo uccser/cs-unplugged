@@ -5,46 +5,51 @@
 {% get_current_language as LANGUAGE_CODE %}
 
 {% for age_group, lessons in grouped_lessons.items %}
-  <table class="table table-responsive table-center-vertical">
-    <thead class="thead-default">
-      <tr>
-        <th colspan="2">
-          {% blocktrans with lower=age_group.ages.lower upper=age_group.ages.upper trimmed %}
-          Ages {{ lower }} to {{ upper }}
-          {% endblocktrans %}
-          </th>
-        <th class="text-center">{% trans "Programming languages" %}</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% if age_group.description %}
-        <tr class="align-middle">
-          <td colspan="3" class="small">
-            {{ age_group.description }}
-          </td>
-        </tr>
-      {% endif %}
-      {% for lesson in lessons %}
-        <tr class="align-middle{% if not lesson.translation_available %} table-active unavailable{% endif %}">
-          <td class="text-center" style="width:10%">
-            {{ lesson.number }}
-          </td>
-          <td style="width:60%">
-            <a href="{% url 'plugging_it_in:lesson' topic.slug lesson.slug %}">
-              <strong>{{ lesson.name }}</strong>
-              {% if not lesson.translation_available %}
-                <br>
-                {% include "generic/not-available-badge.html" %}
-              {% endif %}
-            </a>
-          </td>
-            <td class="text-center" style="width:20%">
-            {% for language in lesson.challenge_languages %}
-              <img src="{% get_static_prefix %}{{ language.icon }}" class="inline-image-small" />
-            {% endfor %}
-            </td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+    <div class="row align-items-center">
+        <div class="col-6 pb-2">
+            <strong>
+                {% blocktrans with lower=age_group.ages.lower upper=age_group.ages.upper trimmed %}
+                Ages {{ lower }} to {{ upper }}
+                {% endblocktrans %}
+            </strong>
+        </div>
+        <div class="col-6 pb-2 text-center">
+            <strong>
+                {% trans "Programming languages" %}
+            </strong>
+        </div>
+        <div class="w-100 mx-2 thick-underline"></div>
+        {% if age_group.description %}
+            <div class="col-12">
+                <p class="small">
+                    {{ age_group.description }}
+                </p>
+            </div>
+        {% endif %}
+        {% for lesson in lessons %}
+            <div class="col-auto text-center">
+                Lesson {{ lesson.number }}
+            </div>
+            <div class="col-4 ">
+                <a href="{% url 'plugging_it_in:lesson' topic.slug lesson.slug %}">
+                    <strong>{{ lesson.name }}</strong>
+                    {% if not lesson.translation_available %}
+                        <br>
+                        {% include "generic/not-available-badge.html" %}
+                    {% endif %}
+                </a>
+            </div>
+            <div class="col text-right">
+                {% for language in lesson.challenge_languages %}
+                    <a class="btn btn-link my-2" href="{% url 'plugging_it_in:lesson' topic.slug lesson.slug %}#nav-{{ language.slug }}">
+                        <img src="{% get_static_prefix %}{{ language.icon }}" class="inline-image-small" />
+                        View {{ language.name }} challenges
+                    </a>
+                {% endfor %}
+            </div>
+            {% if not forloop.last %}
+                <div class="w-100 mx-2 underline"></div>
+            {% endif %}
+        {% endfor %}
+    </div>
 {% endfor %}

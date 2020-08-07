@@ -1,7 +1,7 @@
 """URL routing for the plugging_it_in application."""
 
+from django.urls import path
 from django.conf.urls import url
-
 from . import views
 
 app_name = "plugging_it_in"
@@ -12,10 +12,10 @@ urlpatterns = [
         views.IndexView.as_view(),
         name="index"
     ),
-    url(
-        r"^(?P<topic_slug>[-\w]+)/$",
-        views.LessonsView.as_view(),
-        name="topic"
+    path(
+        'about/',
+        views.AboutView.as_view(),
+        name="about"
     ),
     url(
         r"^(?P<topic_slug>[-\w]+)/(?P<lesson_slug>[-\w]+)/$",
