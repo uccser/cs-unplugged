@@ -32,4 +32,9 @@ urlpatterns = [
         views.JobeProxyView.as_view(),
         name="jobe_proxy"
     ),
+    url(
+        r"^save_attempt$",
+        views.SaveAttemptView.as_view(),
+        name="save_attempt"
+    ),
 ]

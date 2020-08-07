@@ -351,3 +351,23 @@ body {
   overflow-x: hidden;
   transition: opacity 0.5s;
 }
+
+.nav-row-info {
+  padding: 0px;
+  padding-left: 30px;
+
+  p {
+    margin-bottom: 0px;
+    padding-left: 0px;
+  }
+}
+
+// Status badges
+.status-badge {
+  border: 1px solid #343a40;
+  color: #343a40;
+  border-radius: 5px; 
+  font-size: 10px;
+  padding: 0px 5px !important;
+  margin: 0px;
+}

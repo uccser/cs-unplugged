@@ -3,6 +3,7 @@
 {% load i18n %}
 {% load static %}
 {% load render_html_field %}
+{% load custom_tags %}
 {% load django_bootstrap_breadcrumbs %}
 
 {% block title %}
@@ -41,11 +42,31 @@
     <ol class='challenges-list'>
         {% for programming_challenge_item in programming_challenges %}
         <a href="{% url 'plugging_it_in:programming_challenge' topic.slug lesson.slug programming_challenge_item.slug %}">
-         <li class="{% if programming_challenge.slug == programming_challenge_item.slug %}current-exercise{% endif %}">
-          <span class="badge badge-primary">
-            <h5>{{ programming_challenge_item.challenge_set_number }}.{{ programming_challenge_item.challenge_number }}</h5>
-          </span> 
-          {{ programming_challenge_item.name }}
+         <li class="{% if programming_challenge.slug == programming_challenge_item.slug %}current-exercise{% endif %} row">
+            <div class='row'>
+              <div class='nav-row-info col-10 d-flex'>
+                <div class="d-flex align-items-center"> 
+                  <span class="badge badge-primary">
+                    <h5>{{ programming_challenge_item.challenge_set_number }}.{{ programming_challenge_item.challenge_number }}</h5>
+                  </span> 
+                </div>
+                <p>{{ programming_challenge_item.name }}</p>
+              </div>
+
+              <div class='col-2 d-flex align-items-center justify-content-center'>
+              {% if programming_challenge_item.slug in saved_attempts %}
+                {% if saved_attempts|get_item:programming_challenge_item.slug|get_item:"status" == "failed" %}
+                  <p class="status-badge bg-danger border-danger text-white">{% trans "Incorrect" %}</p> 
+                {% elif saved_attempts|get_item:programming_challenge_item.slug|get_item:"status" == "passed" %}
+                  <p class="status-badge bg-success border-success text-white">{% trans "Correct" %}</p> 
+                {% elif saved_attempts|get_item:programming_challenge_item.slug|get_item:"status" == "started" %}
+                  <p class="status-badge border-warning bg-warning">{% trans "Started" %}</p> 
+                {% endif %}
+              {% else %}
+                <p class="status-badge">{% trans "Not started" %}</p> 
+              {% endif %}
+              </div>
+            </div>
           </li>
         </a>
         {% endfor %}
@@ -162,8 +183,9 @@
     let lesson_url = "{% url 'plugging_it_in:lesson' topic.slug lesson.slug %}";
     let csrf_token = '{{ csrf_token }}';
     let jobe_proxy_url = '{{ jobe_proxy_url }}';
+    let save_attempt_url = "{% url 'plugging_it_in:save_attempt' %}"
+    let saved_attempts = {{ saved_attempts|safe }}
   </script>
 
   <script src="{% static 'js/jobe-editor.js' %}"></script>
-  <script src="{% static 'js/editor-options-menu.js' %}"></script>
 {% endblock scripts %}
