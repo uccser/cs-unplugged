@@ -23,7 +23,7 @@
 
   <div id="my_sidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" id="close_nav_button">&times;</a>
-    
+
     <div class='sidebar-headings'>
       <a href="{% url "plugging_it_in:topic" topic.slug %}">
         <h5 class='topic-subheading'>{{topic.name}}</h5>
@@ -45,10 +45,10 @@
          <li class="{% if programming_challenge.slug == programming_challenge_item.slug %}current-exercise{% endif %} row">
             <div class='row'>
               <div class='nav-row-info col-10 d-flex'>
-                <div class="d-flex align-items-center"> 
+                <div class="d-flex align-items-center">
                   <span class="badge badge-primary">
                     <h5>{{ programming_challenge_item.challenge_set_number }}.{{ programming_challenge_item.challenge_number }}</h5>
-                  </span> 
+                  </span>
                 </div>
                 <p>{{ programming_challenge_item.name }}</p>
               </div>
@@ -56,14 +56,14 @@
               <div class='col-2 d-flex align-items-center justify-content-center'>
               {% if programming_challenge_item.slug in saved_attempts %}
                 {% if saved_attempts|get_item:programming_challenge_item.slug|get_item:"status" == "failed" %}
-                  <p class="status-badge bg-danger border-danger text-white">{% trans "Incorrect" %}</p> 
+                  <p class="status-badge bg-danger border-danger text-white">{% trans "Incorrect" %}</p>
                 {% elif saved_attempts|get_item:programming_challenge_item.slug|get_item:"status" == "passed" %}
-                  <p class="status-badge bg-success border-success text-white">{% trans "Correct" %}</p> 
+                  <p class="status-badge bg-success border-success text-white">{% trans "Correct" %}</p>
                 {% elif saved_attempts|get_item:programming_challenge_item.slug|get_item:"status" == "started" %}
-                  <p class="status-badge border-warning bg-warning">{% trans "Started" %}</p> 
+                  <p class="status-badge border-warning bg-warning">{% trans "Started" %}</p>
                 {% endif %}
               {% else %}
-                <p class="status-badge">{% trans "Not started" %}</p> 
+                <p class="status-badge">{% trans "Not started" %}</p>
               {% endif %}
               </div>
             </div>
@@ -120,45 +120,49 @@
           <strong>{% trans "Programming Reminders" %}</strong>
         </summary>
         <div class="boxed-text-content">
-          <p>[Some static content here]</p>
+          {% include "plugging_it_in/static-syntax-hints.html" %}
         </div>
       </details>
 
       </div>
     </div>
     <div class="col-12 col-md-4 programming__editor">
-      <p class='pii-block-heading'>Enter your code in the editor below</p>
+      <p class='pii-block-heading'>{% trans "Enter your code in the editor below" %}</p>
       <textarea id="codemirror_editor"></textarea>
       <div class="programming__submit d-flex justify-content-between align-items-center">
         <div class="programming__submit_options d-flex justify-content-start">
-          <button class="editor_button" id="editor_run_button" >Check</button>
-          <button class="editor_button" id="download_button" >Download</button>
+          <button class="editor_button" id="editor_run_button" >{% trans "Check" %}</button>
+          <button class="editor_button" id="download_button" >{% trans "Download" %}</button>
         </div>
         <div class="code_running_spinner spinner-grow" role="status">
-          <span class="sr-only">Loading...</span>
+          <span class="sr-only"></span>
         </div>
       </div>
     </div>
 
     <div class="col-12 col-md-4 programming__results">
-      <p class='pii-block-heading'>Your results will be displayed here</p>
+      <p class='pii-block-heading'>{% trans "Your results will be displayed here" %}</p>
       {% include "plugging_it_in/results-table.html" %}
     </div>
   {% endif %}
 </div>
 
-<div class="col-12 row programming__options d-flex justify-content-center align-items-center">
-  <div class="col-12 progression-options d-flex justify-content-between align-items-center">
-    <a id='prev_challenge_button'>
-      <button  class="btn prev">Previous Challenge</button>
-    </a>
-    <div class="progression-info">
-      <p id="challenge_progression_text"></p>
-      <p id="lessons_nav_toggle">(Click here to select a challenge)</p>
+<div class="col-12 programming__options">
+  <div class="row progression-options">
+    <div class="col-sm-4 col-6 order-2 order-sm-1 d-flex align-items-center my-1">
+      <a id='prev_challenge_button'>
+        <button class="btn prev">{% trans "Previous Challenge" %}</button>
+      </a>
     </div>
-    <a id='next_challenge_button'>
-      <button class="btn next">Next Challenge</button>
-    </a>
+    <div class="progression-info col-sm-4 col-12 order-1 order-sm-2 my-2">
+      <p id="challenge_progression_text"></p>
+      <p id="lessons_nav_toggle">({% trans "Click here to select a challenge" %})</p>
+    </div>
+    <div class="col-sm-4 col-6 order-3 order-sm-3 d-flex justify-content-end align-items-center my-1">
+      <a id='next_challenge_button'>
+        <button class="btn next">{% trans "Next Challenge" %}</button>
+      </a>
+    </div>
   </div>
 </div>
 
@@ -188,4 +192,10 @@
   </script>
 
   <script src="{% static 'js/jobe-editor.js' %}"></script>
+  <script src="{% static 'js/editor-options-menu.js' %}"></script>
+
+  {% comment %} Add in highlight.js for code highlighting {% endcomment %}
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/xcode.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 {% endblock scripts %}
