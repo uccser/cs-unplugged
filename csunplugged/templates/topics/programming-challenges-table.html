@@ -2,41 +2,97 @@
 
 {% load i18n %}
 
-<table class="table table-responsive table-center-vertical">
-  <thead class="thead-default">
-    <tr>
-      <th class="text-center">{% trans "Number" %}</th>
-      <th>{% trans "Name" %}</th>
-      <th class="text-center">{% trans "Challenge Level" %}</th>
-      <th class="text-center">{% trans "Languages" %}</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for programming_challenge in programming_challenges %}
-    <tr class="align-middle{% if not programming_challenge.translation_available %} table-active{% endif %}">
-      <td class="text-center">
-        {{ programming_challenge.challenge_set_number }}.{{ programming_challenge.challenge_number }}
-      </td>
-      <td>
-        {% if not programming_challenge.translation_available %}
-          {% include "generic/not-available-badge.html" %}
-          <br>
-        {% endif %}
-        <a href="{% url 'topics:programming_challenge' topic.slug programming_challenge.slug %}">
-          <strong>
-            {{ programming_challenge.name }}
+<div class="table-responsive" >
+  <table class="table table-center-vertical">
+    <thead class="thead-default">
+      <tr>
+        <th class="text-center">{% trans "Number" %}</th>
+        <th>{% trans "Name" %}</th>
+        <th class="text-center">{% trans "Challenge Level" %}</th>
+        <th class="text-center">{% trans "Languages" %}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for programming_challenge in programming_challenges %}
+      <tr class="align-middle{% if not programming_challenge.translation_available %} table-active{% endif %}">
+        <td class="text-center">
+          <strong class="educators-programming-challenge-number">
+            {{ programming_challenge.challenge_set_number }}.{{ programming_challenge.challenge_number }}
           </strong>
-        </a>
-      </td>
-      <td class="text-center">
-        {% include "topics/programming-difficulty-badge.html" %}
-      </td>
-      <td class="text-center">
-        {% for implementation in programming_challenge.ordered_implementations %}
-          <img src="{% get_static_prefix %}{{ implementation.language.icon }}" class="inline-image-small" />
-        {% endfor %}
-      </td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
+        </td>
+        <td>
+          {% if not programming_challenge.translation_available %}
+            {% include "generic/not-available-badge.html" %}
+            <br>
+          {% endif %}
+          <a href="{% url 'topics:programming_challenge' topic.slug programming_challenge.slug %}">
+            <strong>
+              {{ programming_challenge.name }}
+            </strong>
+          </a>
+          <br>
+          <span id="toggle-{{ programming_challenge.challenge_set_number }}{{ programming_challenge.challenge_number }}" onclick="updateToggleButtonText({{ programming_challenge.challenge_set_number }}{{ programming_challenge.challenge_number }})" class="badge badge-outline toggle-content collapsed" data-toggle="collapse" data-target="#accordion-{{ programming_challenge.challenge_set_number }}{{ programming_challenge.challenge_number }}">
+            {% trans "Show more details" %}
+          </span>
+        </td>
+        <td class="text-center">
+          {% include "topics/programming-difficulty-badge.html" %}
+        </td>
+        <td class="text-center">
+          {% for implementation in programming_challenge.ordered_implementations %}
+            <img src="{% get_static_prefix %}{{ implementation.language.icon }}" class="inline-image-small" />
+          {% endfor %}
+        </td>
+      </tr>
+      <tr>
+        <td class="p-0"></td>
+        <td colspan="3"  class="p-0">
+            <div id="accordion-{{ programming_challenge.challenge_set_number }}{{ programming_challenge.challenge_number }}" class="collapse acc-programming-challenge">
+              {% if programming_challenge.get_learning_outcomes %}
+                <strong>{% trans "Learning outcomes" %}</strong>
+                <div class="boxed-text-content">
+                  <p>{% trans "Students will be able to:" %}</p>
+                  <ul>
+                    {% for learning_outcome in programming_challenge.get_learning_outcomes %}
+                    <li>
+                      {{ learning_outcome.text }}<br>
+                      {% for area in learning_outcome.curriculum_areas.all %}
+                        {% include "topics/curriculum-area-badge.html" %}
+                      {% endfor %}
+                    </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              {% endif %}
+
+              {% if programming_challenge.ordered_implementations %}
+                <strong>{% trans "Challenge Solutions" %}</strong>
+              {% endif %}
+              {% for implementation in programming_challenge.ordered_implementations %}
+                </br>
+                <a href="{% url 'topics:programming_challenge_solution' topic.slug programming_challenge.slug implementation.language.slug %}">
+                    {% blocktrans with name=implementation.language.name %}Show {{ name }} solution{% endblocktrans %}
+                </a> 
+              {% endfor %}
+            </div>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% block scripts %}
+  <link rel="stylesheet" href="{% static 'css/challenges-list.css' %}" >
+  <script type="text/javascript">
+    function updateToggleButtonText(challenge_num) {
+      challengeContentToggleId = `#toggle-${challenge_num}`;
+      if ($(challengeContentToggleId).hasClass('collapsed')) {
+        $(challengeContentToggleId).text('Show less details');
+      } else {
+        $(challengeContentToggleId).text('Show more details');
+      }
+    }
+  </script>
+{% endblock scripts %}
+
