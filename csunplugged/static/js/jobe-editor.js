@@ -57,7 +57,7 @@ function updateResultsTable(results) {
     // Update help modal
     $(`#test-case-${result.id}-help-title`).text(result.status)
     $(`#test-case-${result.id}-help`).text(result.helpInfo);
-    $(`#test-case-${result.id}-help-icon`).show()
+    $(`#test-case-${result.id}-help-icon`).css('visibility','visible');
 
     // Update output cell
     $(`#test-case-${result.id}-output`).text(result.userOutput);
@@ -68,7 +68,7 @@ function updateResultsTable(results) {
       row_element.addClass("table-success");
       row_element.removeClass("table-danger");
       row_element.removeClass("table-warning");
-      $(`#test-case-${result.id}-help-icon`).hide()
+      $(`#test-case-${result.id}-help-icon`).css('visibility','hidden');
       
     } else if (result.status == "Syntax Error") {
       row_element.addClass("table-warning");

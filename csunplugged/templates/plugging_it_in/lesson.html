@@ -36,7 +36,7 @@
         <div class="tab-pane fade {% if forloop.first %}show active{% endif %}" id="nav-{{language.name}}" role="tabpanel" aria-labelledby="{{language.name}}">
           {% if language.name == "Scratch" %}
             <div class="alert alert-danger my-3" role="alert">
-              Scratch challenges have not updated to our new plugging it in system. However, you can still access the old content using the links below.
+              {% trans "Scratch challenges have not been updated to our new plugging it in system. However, you can still access the old content using the links below." %}
             </div>
           {% endif %}
           {% include "plugging_it_in/programming-challenges-table.html" with language=language.name %}
