@@ -146,13 +146,15 @@ class ProgrammingChallengeView(generic.DetailView):
         for lesson in lessons:
             if lesson.slug == self.kwargs.get("lesson_slug", None):
                 context["lesson"] = lesson
-                context["programming_challenges"] = lesson.retrieve_related_programming_challenges("Python")
-                context["programming_exercises_json"] = json.dumps(
-                    list(lesson.retrieve_related_programming_challenges("Python").values()))
+                challlenges = lesson.retrieve_related_programming_challenges("Python")
+                context["programming_challenges"] = challlenges
+                context["programming_exercises_json"] = json.dumps(list(challlenges.values()))
 
         context["implementations"] = self.object.ordered_implementations()
-        context["test_cases_json"] = json.dumps(list(self.object.related_test_cases().values()))
-        context["test_cases"] = self.object.related_test_cases().values()
+
+        related_test_cases = self.object.related_test_cases().values()
+        context["test_cases_json"] = json.dumps(list(related_test_cases))
+        context["test_cases"] = related_test_cases
         context["jobe_proxy_url"] = reverse('plugging_it_in:jobe_proxy')
         return context
 
