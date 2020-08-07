@@ -1,4 +1,4 @@
-{% extends "base-students.html" %}
+{% extends "base-plugging-it-in.html" %}
 
 {% load i18n %}
 {% load static %}
@@ -10,13 +10,13 @@
 {% endblock title %}
 
 {% block breadcrumbs %}
-  {% breadcrumb topic.name "plugging_it_in:topic" topic.slug %}
+  {% breadcrumb topic.name "plugging_it_in:index" %}
   {% breadcrumb lesson.name "plugging_it_in:lesson" topic.slug lesson.slug %}
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
   <h1 id="{{ lesson.slug }}">{% blocktrans with name=lesson.name %}{{ name }} programming exercises{% endblocktrans %}</h1>
- 
+
 {% endblock page_heading %}
 
 {% block content %}

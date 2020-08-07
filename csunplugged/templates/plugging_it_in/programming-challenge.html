@@ -1,21 +1,13 @@
-{% extends "base-students.html" %}
+{% extends "base-plugging-it-in.html" %}
 
 {% load i18n %}
 {% load static %}
 {% load render_html_field %}
 {% load custom_tags %}
-{% load django_bootstrap_breadcrumbs %}
 
 {% block title %}
   {{ programming_challenge.name }}
 {% endblock title %}
-
-{% block breadcrumbs %}
-  {% breadcrumb "Plugging It In" "plugging_it_in:index" %}
-  {% breadcrumb topic.name "plugging_it_in:topic" topic.slug %}
-  {% breadcrumb lesson.name "plugging_it_in:lesson" topic.slug lesson.slug %}
-  {% breadcrumb programming_challenge.name "plugging_it_in:programming_challenge" topic.slug lesson.slug programming_challenge.slug %}
-{% endblock breadcrumbs %}
 
 {% block body_container %}
 
@@ -25,9 +17,7 @@
     <a href="javascript:void(0)" class="closebtn" id="close_nav_button">&times;</a>
 
     <div class='sidebar-headings'>
-      <a href="{% url "plugging_it_in:topic" topic.slug %}">
-        <h5 class='topic-subheading'>{{topic.name}}</h5>
-      </a>
+      <h5 class='topic-subheading'>{{topic.name}}</h5>
       <a href="{% url "plugging_it_in:lesson" topic.slug lesson.slug %}">
         <h2 class='lesson-heading'>{{lesson.name}}</h2>
       </a>

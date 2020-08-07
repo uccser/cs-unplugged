@@ -16,14 +16,14 @@
 {% endblock complete_breadcrumbs %}
 
 {% block navbar %}
-    <nav class="navbar navbar-student fixed-top navbar-expand-md navbar-dark py-1 d-print-none{% block navbar_class_overrides %}{% endblock navbar_class_overrides %}">
+    <nav class="navbar navbar-plugging-it-in fixed-top navbar-expand-md navbar-dark py-1 d-print-none{% block navbar_class_overrides %}{% endblock navbar_class_overrides %}">
         <div class="container px-0">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand mr-0" href="{% url 'general:home' %}">
-                <img src="{% static 'img/cs-unplugged-logo-white.svg' %}" id="navbar-brand-logo" class="d-inline-block align-top"
+            <a class="navbar-brand mr-0" href="{% url 'plugging_it_in:index' %}">
+                <img src="{% static 'img/cs-unplugged-logo-plugging-it-in-white.svg' %}" id="navbar-brand-logo" class="d-inline-block align-top"
                     alt="CS Unplugged logo">
             </a>
             <div class="dropdown ml-md-3 order-md-last">
