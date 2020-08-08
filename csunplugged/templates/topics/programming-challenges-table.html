@@ -2,6 +2,10 @@
 
 {% load i18n %}
 
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/challenges-list.css' %}" >
+{% endblock css %}
+
 <div class="table-responsive" >
   <table class="table table-center-vertical">
     <thead class="thead-default">
@@ -83,7 +87,6 @@
 </div>
 
 {% block scripts %}
-  <link rel="stylesheet" href="{% static 'css/challenges-list.css' %}" >
   <script type="text/javascript">
     function updateToggleButtonText(challenge_num) {
       challengeContentToggleId = `#toggle-${challenge_num}`;
