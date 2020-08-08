@@ -1,7 +1,7 @@
 .educators-programming-challenge-number {
     font-size: 1.2rem;
 }
-        .acc-programming-challenge {
+.acc-programming-challenge {
     padding: 0.75rem;
 }
 .badge-outline {
@@ -12,5 +12,8 @@
 .badge-outline:hover {
     color: white;
     background-color: #3366ff;
+    cursor: pointer;
+}
+.nav-item:hover {
     cursor: pointer;
 }

@@ -19,7 +19,14 @@ body {
   padding-bottom: 70px;
 }
 
-.navbar-student {
+// Apply similar styles to the base text area while it loads
+#codemirror_editor {
+  height: 100%;
+  border-radius: 15px;
+  border: 1px solid grey;
+}
+
+.navbar-plugging-it-in {
   .container {
     max-width: 100%;
     padding-left: 20px !important;
@@ -277,7 +284,7 @@ body {
       padding-left: 20px;
     }
     
-    h2:hover, h5:hover, p:hover {
+    h2:hover, p:hover {
       opacity: 0.8;
     }
   }
@@ -358,7 +365,7 @@ body {
   background-color: #0f173aff;
   opacity: 0;
   overflow-x: hidden;
-  transition: opacity 0.5s;
+  // transition: opacity 0.5s;
 }
 
 .nav-row-info {

@@ -9,6 +9,10 @@
   {{ programming_challenge.name }}
 {% endblock title %}
 
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/programming-editor.css' %}" >
+{% endblock css %}
+
 {% block body_container %}
 
 <div class="row programming__challenge-screen">
@@ -158,18 +162,7 @@
 
 {% endblock body_container %}
 
-{% block end_content %}
-  {% if programming_challenge.translation_available %}
-    {% if programming_challenge.extra_challenge %}
-      <h2>{% trans "Extra Challenge" %}</h2>
-      {% render_html_field programming_challenge.extra_challenge %}
-    {% endif %}
-  {% endif %}
-{% endblock end_content %}
-
 {% block scripts %}
-  <link rel="stylesheet" href="{% static 'css/programming-editor.css' %}" >
-
   <script type="text/javascript">
     let current_challenge_slug = '{{ programming_challenge.slug }}';
     let test_cases = {{ test_cases_json|safe }};

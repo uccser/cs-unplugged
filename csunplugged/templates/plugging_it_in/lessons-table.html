@@ -41,7 +41,7 @@
             </div>
             <div class="col text-right">
                 {% for language in lesson.challenge_languages %}
-                    <a class="btn btn-link my-2" href="{% url 'plugging_it_in:lesson' topic.slug lesson.slug %}#nav-{{ language.slug }}">
+                    <a class="btn btn-link my-2" href="{% url 'plugging_it_in:lesson' topic.slug lesson.slug %}#{{ language.slug }}">
                         <img src="{% get_static_prefix %}{{ language.icon }}" class="inline-image-small" />
                         View {{ language.name }} challenges
                     </a>

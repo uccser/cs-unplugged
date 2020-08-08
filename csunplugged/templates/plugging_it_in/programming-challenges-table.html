@@ -2,6 +2,10 @@
 
 {% load i18n %}
 
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/challenges-list.css' %}" >
+{% endblock css %}
+
 <div class='table-responsive'>
 <table class="table table-center-vertical">
   <thead class="thead-default">
@@ -13,7 +17,7 @@
   </thead>
   <tbody>
     {% for programming_challenge in programming_challenges %}
-      {% for implementation in programming_challenge.ordered_implementations %}
+      {% for implementation in programming_challenge.implementations.all %}
         {% if implementation.language.name == language %}
           <tr class="align-middle{% if not programming_challenge.translation_available %} table-active{% endif %}">
             <td class="text-center">
