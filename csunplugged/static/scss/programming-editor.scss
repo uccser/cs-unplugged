@@ -19,6 +19,13 @@ body {
   padding-bottom: 70px;
 }
 
+// Apply similar styles to the base text area while it loads
+#codemirror_editor {
+  height: 100%;
+  border-radius: 15px;
+  border: 1px solid grey;
+}
+
 .navbar-plugging-it-in {
   .container {
     max-width: 100%;
@@ -358,7 +365,7 @@ body {
   background-color: #0f173aff;
   opacity: 0;
   overflow-x: hidden;
-  transition: opacity 0.5s;
+  // transition: opacity 0.5s;
 }
 
 .nav-row-info {
