@@ -50,9 +50,9 @@ $ct-evaluation: #0F70B7;
 $ct-logic: #EA5B0C;
 $ct-pattern: #82358C;
 
-$educator-colour: $light-purple;
+$educator-colour: $red;
 $at-home-colour: #00554E;
-$student-colour: #3044b3;
+$plugging-it-in-colour: #3044b3;
 
 .at-home-divider {
     border-top: 3px solid $at-home-colour;
@@ -93,7 +93,7 @@ h6 {
 }
 .educator-colour { color: $educator-colour;}
 .at-home-colour { color: $at-home-colour;}
-.student-colour { color: $student-colour;}
+.plugging-it-in-colour { color: $plugging-it-in-colour;}
 
 input[type="text"].long-text-field {
   width: 20em;
@@ -142,6 +142,12 @@ $rounded-corner-radius: 0.5rem;
         font-size: 2rem;
     }
 }
+#plugging-it-in-jumbotron {
+    background: $plugging-it-in-colour;
+    h2 {
+        font-size: 2rem;
+    }
+}
 
 #homepage-cards {
   position: relative;
@@ -177,8 +183,8 @@ $rounded-corner-radius: 0.5rem;
   &.navbar-at-home {
     background-color: $at-home-colour;
   }
-  &.navbar-student {
-    background-color: $student-colour;
+  &.navbar-plugging-it-in {
+    background-color: $plugging-it-in-colour;
   }
 
   #navbar-brand-logo {
@@ -482,12 +488,11 @@ ol, ul {
         background-color: mix($at-home-colour, $white, 10%);
       }
     }
-    &-student-1 {
-      border-top-color: $student-colour;
-      cursor: not-allowed;
-    //   &:hover {
-    //     background-color: mix($student-colour, $white, 10%);
-    //   }
+    &-plugging-it-in-1 {
+      border-top-color: $plugging-it-in-colour;
+      &:hover {
+        background-color: mix($plugging-it-in-colour, $white, 10%);
+      }
     }
     &-orange {
       border-top-color: $orange;
@@ -744,7 +749,6 @@ button:hover .icon-search {
     padding-right: 0.4rem !important;
   }
 }
-
 #activities {
     .card {
         border: 0;
@@ -752,6 +756,18 @@ button:hover .icon-search {
         .card-img-top {
             max-height: 14rem;
             object-fit: cover;
+        }
+    }
+}
+#programming-topics {
+    .card {
+        border: 0;
+        box-shadow: 0px 2px 5px 0px $gray-500;
+        h2 {
+            color: $gray;
+        }
+        .card-title img {
+            max-height: 5rem;
         }
     }
 }
@@ -843,4 +859,17 @@ button:hover .icon-search {
 .at-home-img {
     max-height: 60vh;
     object-fit: contain;
+}
+
+.underline {
+    border-bottom: 1px solid #3044b326;
+}
+.thick-underline {
+    border-bottom: 1px solid #b8b8b8;
+}
+.card.unavailable {
+    background-color: rgba($black, 0.2);
+    img {
+        opacity: 0.5;
+    }
 }

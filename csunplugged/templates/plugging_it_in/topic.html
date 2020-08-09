@@ -1,4 +1,4 @@
-{% extends "base-students.html" %}
+{% extends "base-plugging-it-in.html" %}
 
 {% load i18n %}
 {% load static %}
@@ -6,16 +6,15 @@
 {% load django_bootstrap_breadcrumbs %}
 
 {% block title %}
-  {{ topic.name }} Programming Exercises
+  {{ topic.name }} lessons
 {% endblock title %}
 
 {% block breadcrumbs %}
-  {% breadcrumb "Plugging It In" "plugging_it_in:index" %}
   {% breadcrumb topic.name "topics:topic" topic.slug %}
 {% endblock breadcrumbs %}
 
 {% block page_heading %}
-  <h1 id="{{ topic.slug }}">{{ topic.name }} Programming Exercises</h1>
+  <h1 id="{{ topic.slug }}">{{ topic.name }} lessons</h1>
   {% if not topic.translation_available %}
     {% url "topics:index" as url %}
     {% trans "Return to list of topics" as url_label %}
@@ -30,9 +29,9 @@
 {% endblock page_heading %}
 
 {% block content %}
-  {% if programming_challenges %}
-    {% include "plugging_it_in/programming-challenges-table.html" %}
+  {% if grouped_lessons %}
+    {% include "plugging_it_in/lessons-table.html" %}
   {% else %}
-    <p>{% blocktrans trimmed %}No programming challenges for {{ topic }}.{% endblocktrans %}</p>
+    <p>{% blocktrans trimmed %}No lessons for {{ topic }}.{% endblocktrans %}</p>
   {% endif %}
 {% endblock content %}

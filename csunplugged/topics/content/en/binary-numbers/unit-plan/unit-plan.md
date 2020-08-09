@@ -8,7 +8,7 @@ It is called binary because there are only two different digits used, or two sta
 
 # See teaching this in action
 
-{video url="https://www.youtube.com/embed/Wy6-FXtLMV8"}
+{video url="https://vimeo.com/437725275"}
 
 {panel end}
 

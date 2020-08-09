@@ -228,7 +228,8 @@ class ProgrammingChallengeList(generic.base.TemplateView):
             slug=self.kwargs.get("lesson_slug", None),
         )
         context["lesson"] = lesson
-        context["programming_challenges"] = lesson.retrieve_related_programming_challenges()
+        context["programming_challenges"] = lesson.retrieve_related_programming_challenges().prefetch_related(
+            'learning_outcomes', 'learning_outcomes__curriculum_areas', 'implementations')
         context["unit_plan"] = lesson.unit_plan
         context["topic"] = lesson.topic
         return context
