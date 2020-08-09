@@ -21,7 +21,7 @@ Ka whakamahi ngā pākeke i ngā rorohiko mō ngā kaupapa nui, pērā ki te wha
 
 Ka kitea te whakaaturanga o te akomanga tuatahi ("Pūrite Miharo") kei konei:
 
-{video url="https://www.youtube.com/embed/FnwBratAhfg"}
+{video url="https://vimeo.com/437726658"}
 
 {panel end}
 

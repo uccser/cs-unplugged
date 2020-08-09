@@ -28,7 +28,7 @@ This activity will look at how computers correct this automatically.
 
 # See teaching this in action
 
-{video url="https://www.youtube.com/embed/FnwBratAhfg"}
+{video url="https://vimeo.com/437726658"}
 
 {panel end}
 

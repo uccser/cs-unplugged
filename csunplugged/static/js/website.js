@@ -97,4 +97,29 @@ function details_element_closed() {
       player.pauseVideo();
     }
   });
+  /**
+   * Pause any Vimeo videos playing within the closed details element.
+   */
+  $('iframe[src*="vimeo"]', this).each(function() {
+    var player = $(this).data('vimeo-player');
+    if (player === undefined) {
+      // If iframe has no ID
+      if (!this.id) {
+        var src = this.src;
+        var video_id = src.substring(src.lastIndexOf('/') + 1, src.indexOf('?'));
+        this.id = 'vimeo-embed-' + video_id;
+      }
+      // Create Vimeo player for iframe
+      player = new Vimeo.Player(this.id, {
+        events: {
+          'onReady': function (event) {
+            event.target.pause();
+          },
+        }
+      });
+      $(this).data('vimeo-player', player);
+    } else {
+      player.pause();
+    }
+  });
 }

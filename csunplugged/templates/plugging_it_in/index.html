@@ -1,63 +1,95 @@
-{% extends "base-students.html" %}
+{% extends "base-plugging-it-in.html" %}
 
 {% load i18n %}
 {% load static %}
-{% load django_bootstrap_breadcrumbs %}
+{% load translate_url %}
 
-{% block title %}
-  {% trans "Plugging It In" %}
-{% endblock title %}
+{% block custom_title %}
+    {% trans "CS Unplugged - Plugging It In" %}
+{% endblock custom_title %}
 
-{% block breadcrumbs %}
-  {% breadcrumb "Plugging it in" "plugging-it-in:index" %}
-{% endblock breadcrumbs %}
+{% block body_attribute_overrides %} class="homepage"{% endblock body_attribute_overrides %}
+{% block navbar_class_overrides %} trans-navbar{% endblock navbar_class_overrides %}
 
-{% block page_heading %}
-  <h1>{% trans "Plugging It In" %}</h1>
-{% endblock page_heading %}
-
-{% block content %}
-  {% if programming_topics %}
-    <p>{% trans "[PLUGGING IT IN BLURB.....] Lorem ipsum dolor sit amet, nec metus leo pulvinar urna. Vestibulum ut, wisi neque rutrum. Euismod volutpat integer libero justo, sit erat dapibus tortor duis arcu elit, class nisl massa dictum eleifend adipiscing, a nec ridiculus risus egestas augue id. Ligula non nulla at curabitur feugiat, vestibulum sit at vestibulum nam arcu." %}</p>
-
-    <h2 class="mt-4">Demo Programming Challenges</h2>
-    {% if demo_programming_challenges %}
-      {% include "plugging_it_in/programming-challenges-table-demo-temp.html" %}
-    {% else %}
-      <p>{% blocktrans trimmed %}No demo programming challenges.{% endblocktrans %}</p>
-    {% endif %}
-
-    <h2 class="mt-5">Topics</h2>
-    <div class="row justify-content-between">
-      {% for topic in programming_topics %}
-        {% if topic.programming_challenges.exists %}
-          <div class="col-12 col-md-8 col-lg-6 mb-4">
-            <a class="link-item no-text-decoration d-block h-100{% if not topic.translation_available %} unavailable{% endif %}" href="{% url 'plugging_it_in:topic' topic.slug %}">
-              <div class="row align-items-center h-100">
-                <div class="col-12 text-center text-md-{{LANGUAGE_START}}">
-                  <h2>{{ topic.name }}</h2>
-                  {% if not topic.translation_available %}
-                    {% include "generic/not-available-badge.html" %}
-                  {% endif %}
+{% block body_container %}
+    <div id="plugging-it-in-jumbotron" class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 text-center">
+                    <img src="{% static 'img/cs-unplugged-logo-plugging-it-in-white.svg' %}" class="my-5"
+                        alt="CS Unplugged Plugging It In logo">
+                    <h2 class="text-light">
+                        {% blocktrans trimmed %}
+                            Connecting Unplugged activities to coding
+                        {% endblocktrans %}
+                    </h2>
+                    {% if LANGUAGE_CODE != "en" %}
+                    <div class="alert alert-danger text-dark" role="alert">
+                        {% blocktrans trimmed with language=current_language.name_local %}
+                        <h4>Sorry! This item is not yet available in {{ language }}.</h4>
+                        <p>This item is available in the following languages:</p>
+                        {% endblocktrans %}
+                        <p class="mb-0">
+                            {% with language='en' %}
+                            <a class="btn btn-outline-primary" href="{% translate_url language %}">
+                                English
+                            </a>
+                            {% endwith %}
+                            <a class="btn btn-outline-danger" href="{% url 'general:home' %}">
+                                {% trans "Return to homepage "%}
+                            </a>
+                        </p>
+                    </div>
+                    {% endif %}
                 </div>
-                <div class="col-12 col-md-7 text-center text-md-{{LANGUAGE_START}}">
-                  <ul class="list-unstyled list-unstyled-i18n text-muted mb-0">
-                    <li>{{ topic.programming_challenges.count }} {% trans "programming challenges" %}</li>
-                  </ul>
-                </div>
-                <div class="d-none col-md-5 d-md-flex justify-content-end align-items-end">
-                  {% if topic.icon %}
-                    <img class="img-fluid" src="{% static topic.icon %}">
-                  {% endif %}
-                </div>
-              </div>
-            </a>
-          </div>
-        {% endif %}
-      {% endfor %}
+            </div>
+        </div>
     </div>
-  {% else %}
-    <p>{% trans "No topics are available." %}</p>
-    {% include "generic/classic-unplugged-button.html" %}
-  {% endif %}
-{% endblock content %}
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 col-lg-6 mb-4">
+                <p class="lead">
+                    {% blocktrans trimmed %}
+                    It’s good to link the ideas covered in the Unplugged activities with the skill of programming.
+                    This section allows you to program some of the Unplugged activities you have already covered.
+                    There are programming challenges at a variety of levels, so choose a difficulty level that’s appropriate for you.
+                    {% endblocktrans %}
+                </p>
+                <a href="{% url 'plugging_it_in:about' %}" class="btn btn-outline-primary mb-4">
+                    {% trans "More information for educators" %}
+                </a>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-6 text-center mb-4">
+                <img class="img-fluid content-image p-3" src="{% static 'img/plugging-it-in/students-at-computers.png' %}">
+            </div>
+        </div>
+        <div id="programming-topics" class="row justify-content-start">
+            {% for topic in programming_topics %}
+                <div class="col-12 mb-4">
+                    <div id="card-{{ topic.slug }}" class="card {% if not topic.translation_available %} unavailable{% endif %}">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h2>{{ topic.name }}</h2>
+                                    {% if topic.icon %}
+                                        <img class="img-fluid d-none d-lg-block" src="{% static topic.icon %}">
+                                    {% endif %}
+                                </div>
+                                {% if not topic.translation_available %}
+                                    {% include "generic/not-available-badge.html" %}
+                                {% endif %}
+                            </div>
+                            {% include "plugging_it_in/lessons-table.html" with grouped_lessons=topic.grouped_lessons %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock body_container %}
+
+{% block scripts %}
+    <script src="{% static 'js/homepage.js' %}"></script>
+{% endblock scripts %}

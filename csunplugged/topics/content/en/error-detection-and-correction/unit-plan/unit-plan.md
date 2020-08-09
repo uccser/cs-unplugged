@@ -4,9 +4,9 @@
 
 # See teaching this in action
 
-{video url="https://www.youtube.com/embed/FnwBratAhfg"}
+{video url="https://vimeo.com/437726658"}
 
-{video url="https://www.youtube.com/embed/WjMPd6sgou0"}
+{video url="https://vimeo.com/437724764"}
 
 {panel end}
 
@@ -65,7 +65,7 @@ this is all happening underneath the surface!
 
 A demonstration of lesson one ("Parity magic") being taught is available here:
 
-{video url="https://www.youtube.com/embed/FnwBratAhfg"}
+{video url="https://vimeo.com/437726658"}
 
 {panel end}
 
