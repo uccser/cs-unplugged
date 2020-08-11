@@ -79,23 +79,23 @@ async function run_testcase(
     } else {
       testcaseResult.status = "Failed";
       testcaseResult.userOutput = userResult.stdout;
-      testcaseResult.helpInfo = "Looks like your code was run successfully but didn’t match the expected output. Have a look at the ‘Expected Output’ and the 'Received Output’. See if you can spot the differences!"
+      testcaseResult.helpInfo = gettext("Looks like your code was run successfully but didn’t match the expected output. Have a look at the ‘Expected Output’ and the 'Received Output’. See if you can spot the differences!")
     }
   } else if (userResult.outcome == 11) {
     // Outcome 11: Compiler Error from Jobe (this has been changed to Syntax Error for plugging it in)
     testcaseResult.status = "Syntax Error";
     testcaseResult.userOutput = userResult.cmpinfo;
-    testcaseResult.helpInfo = "Oops, looks like there’s a spelling mistake or wrong character in your code. Try looking and see if you can find it! It might be a missing (parentheses) or a missing “quote mark”."
+    testcaseResult.helpInfo = gettext("Oops, looks like there’s a spelling mistake or wrong character in your code. Try looking and see if you can find it! It might be a missing (parentheses) or a missing “quote mark”.")
   } else if (userResult.outcome == 13) {
     // Outcome 13: Time limit exceeeded
     testcaseResult.status = "Time limit exceeded";
     testcaseResult.userOutput = userResult.cmpinfo;
-    testcaseResult.helpInfo = "Looks like your code took too long to run. Maybe you have an infinite loop somewhere in your code?"
+    testcaseResult.helpInfo = gettext("Looks like your code took too long to run. Maybe you have an infinite loop somewhere in your code?")
   } else {
     // Any other error
     testcaseResult.status = "Error";
     testcaseResult.userOutput = userResult.stderr;
-    testcaseResult.helpInfo = "Something went wrong when we tried to run your code. Have a look at the error output and see if you can solve this mystery error."
+    testcaseResult.helpInfo = gettext("Something went wrong when we tried to run your code. Have a look at the error output and see if you can solve this mystery error.")
   }
 
   return testcaseResult;
