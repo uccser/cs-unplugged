@@ -23,7 +23,7 @@ Translatable source files must always reside under an ``en`` directory tree.
 Translated files are downloaded into a directory named with the language's
 locale code, and with the same structure as the source tree.
 
-Django's `JavaScript translation catalog <https://docs.djangoproject.com/en/1.11/topics/i18n/translation/#internationalization-in-javascript-code>`_ enables the use of gettext() in JavaScript files to translate text.
+Django's `JavaScript translation catalog <https://docs.djangoproject.com/en/2.2/topics/i18n/translation/#internationalization-in-javascript-code>`_ enables the use of gettext() in JavaScript files to translate text.
 The JavaScript translation files are prepared before server start.
 
 .. note::
