@@ -60,12 +60,6 @@ defhelp start 'Start development environment (this also runs the update command)
 cmd_end() {
   echo "Stopping systems... (takes roughly 10 to 20 seconds)"
   docker-compose down
-  echo
-  echo "Deleting system volumes..."
-  volumes=($(docker volume ls -qf dangling=true ))
-  for volume in "${volumes[@]}"; do
-      docker volume rm "${volume}"
-  done
 }
 defhelp end 'Stop development environment.'
 
@@ -75,7 +69,7 @@ cmd_restart() {
 }
 defhelp restart 'Stop and then restart development environment.'
 
-# Run Django migrate and updatedata commands
+# Completely update system
 cmd_update() {
   cmd_static
 
@@ -163,6 +157,7 @@ defhelp makeresourcethumbnails 'Run Django makeresourcethumbnails command.'
 cmd_makemessages() {
   echo "Creating message files..."
   docker-compose exec django /docker_venv/bin/python3 ./manage.py makemessages -l en
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py makemessages --ignore=build/* -d djangojs
 }
 defhelp makemessages 'Run Django makemessages command.'
 
@@ -170,6 +165,7 @@ defhelp makemessages 'Run Django makemessages command.'
 cmd_compilemessages() {
   echo "Compiling message files..."
   docker-compose exec django /docker_venv/bin/python3 ./manage.py compilemessages
+  docker-compose exec django /docker_venv/bin/python3 ./manage.py compilejsi18n
 }
 defhelp compilemessages 'Run Django compilemessages command.'
 
@@ -205,6 +201,7 @@ defhelp build 'Build or rebuild Docker images.'
 cmd_static() {
   echo "Building static files..."
   docker-compose exec nginx gulp build
+  cmd_compilemessages
 }
 defhelp static 'Build static files.'
 
@@ -310,14 +307,6 @@ defhelp docs 'Generate documentation.'
 cmd_clean() {
   echo "If the following commands return an argument not found error,"
   echo "this is because there is nothing to delete for clean up."
-
-  echo
-  echo "Deleting unused volumes..."
-
-  unused_volumes=($(docker volume ls -qf dangling=true))
-  for vol in "${unused_volumes[@]}"; do
-      docker volume rm "${vol}"
-  done
 
   echo
   echo "Deleting exited containers..."
