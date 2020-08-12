@@ -2,7 +2,7 @@
 
 - Verwendet eine hohe Note für eine 1 und eine tiefe Note für eine 0
 - Stellt Buchstaben mithilfe der Binärzahlen 00001 bis 11010 (1 bis 26) dar
-- Dies wird anhand von Beispielen hier noch ausführlicher erläutert: <http://csunplugged.org/modems-unplugged-2/>
+- Dies wird anhand von Beispielen hier noch ausführlicher erläutert: <https://classic.csunplugged.org/modems-unplugged-2/>
 - Steganografie: das Verbergen einer Nachricht in etwas anderem – in diesem Fall einem Lied
 - Schreibt euer eigenes Lied, das eine verborgene Nachricht enthält 
 
