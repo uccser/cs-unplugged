@@ -1,6 +1,5 @@
 {% load i18n %}
 {% load static %}
-{% load statici18n %}
 {% load render_html_field %}
 {% load translate_url %}
 {% load django_bootstrap_breadcrumbs %}
@@ -263,7 +262,6 @@
       glossary_url = "{% url 'topics:glossary_json' %}";
     </script>
     <script src="{% static 'js/website.js' %}"></script>
-    <script type="text/javascript" src="{% statici18n LANGUAGE_CODE %}"></script>
     <script src="https://www.youtube.com/player_api"></script>
     <script src="https://player.vimeo.com/api/player.js"></script>
     <script type="text/javascript" async
