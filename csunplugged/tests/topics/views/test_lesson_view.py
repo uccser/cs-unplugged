@@ -343,10 +343,10 @@ class LessonViewTest(BaseTestWithDB):
             age_group_1
         )
         resource = self.resource_test_data.create_resource(
-            "grid",
-            "Grid",
-            "resources/grid.html",
-            "GridResourceGenerator",
+            "bare",
+            "Bare",
+            "resources/bare.html",
+            "BareResourceGenerator",
         )
         self.test_data.add_lesson_resource_relationship(lesson, resource, 1)
         kwargs = {
@@ -361,9 +361,9 @@ class LessonViewTest(BaseTestWithDB):
             [
                 {
                     "description": "Description 1",
-                    "slug": "grid",
-                    "name": "Grid",
-                    "thumbnail": "/staticfiles/img/resources/grid/thumbnails/en/grid-paper_size-a4.png",
+                    "slug": "bare",
+                    "name": "Bare",
+                    "thumbnail": "/staticfiles/img/resources/bare/thumbnails/en/bare-paper_size-a4.png",
                 }
             ]
         )
@@ -379,10 +379,10 @@ class LessonViewTest(BaseTestWithDB):
             age_group_1
         )
         resource1 = self.resource_test_data.create_resource(
-            "grid",
-            "Grid",
-            "resources/grid.html",
-            "GridResourceGenerator",
+            "bare",
+            "Bare",
+            "resources/bare.html",
+            "BareResourceGenerator",
         )
         self.test_data.add_lesson_resource_relationship(lesson, resource1, 1)
         resource2 = self.resource_test_data.create_resource(
@@ -410,9 +410,9 @@ class LessonViewTest(BaseTestWithDB):
                 },
                 {
                     "description": "Description 1",
-                    "slug": "grid",
-                    "name": "Grid",
-                    "thumbnail": "/staticfiles/img/resources/grid/thumbnails/en/grid-paper_size-a4.png",
+                    "slug": "bare",
+                    "name": "Bare",
+                    "thumbnail": "/staticfiles/img/resources/bare/thumbnails/en/bare-paper_size-a4.png",
                 },
             ]
         )

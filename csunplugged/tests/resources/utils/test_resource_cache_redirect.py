@@ -16,10 +16,10 @@ class CacheRedirectTest(BaseTestWithDB):
 
     def test_resources_cache_valid_resource(self):
         resource = self.test_data.create_resource(
-            "grid",
-            "Grid",
-            "resources/grid.html",
-            "GridResourceGenerator",
+            "bare",
+            "Bare",
+            "resources/bare.html",
+            "BareResourceGenerator",
         )
         query = QueryDict("paper_size=a4")
         generator = get_resource_generator(resource.generator_module, query)
@@ -27,5 +27,5 @@ class CacheRedirectTest(BaseTestWithDB):
         self.assertEqual(response.status_code, HTTPStatus.FOUND)
         self.assertEqual(
             response.url,
-            "/staticfiles/resources/grid/en/Grid%20(a4).pdf"
+            "/staticfiles/resources/bare/en/Bare%20(a4).pdf"
         )

@@ -625,10 +625,10 @@ class LessonsLoaderTest(BaseTestWithDB):
         topic = self.test_data.create_topic(1)
         unit_plan = self.test_data.create_unit_plan(topic, 1)
         self.resource_test_data.create_resource(
-            "grid",
-            "Grid",
-            "Grid description",
-            "GridResourceGenerator",
+            "bare",
+            "Bare",
+            "Bare description",
+            "BareResourceGenerator",
         )
         self.resource_test_data.create_resource(
             "arrows",
@@ -647,7 +647,7 @@ class LessonsLoaderTest(BaseTestWithDB):
             Lesson.objects.get(slug="lesson-1").generated_resources.order_by("name"),
             [
                 "<Resource: Arrows>",
-                "<Resource: Grid>",
+                "<Resource: Bare>",
             ],
         )
 
@@ -670,10 +670,10 @@ class LessonsLoaderTest(BaseTestWithDB):
         topic = self.test_data.create_topic(1)
         unit_plan = self.test_data.create_unit_plan(topic, 1)
         self.resource_test_data.create_resource(
-            "grid",
-            "Grid",
-            "Grid description",
-            "GridResourceGenerator",
+            "bare",
+            "Bare",
+            "Bare description",
+            "BareResourceGenerator",
         )
         lesson_loader = LessonsLoader(
             topic,
@@ -691,10 +691,10 @@ class LessonsLoaderTest(BaseTestWithDB):
         topic = self.test_data.create_topic(1)
         unit_plan = self.test_data.create_unit_plan(topic, 1)
         self.resource_test_data.create_resource(
-            "grid",
-            "Grid",
-            "Grid description",
-            "GridResourceGenerator",
+            "bare",
+            "Bare",
+            "Bare description",
+            "BareResourceGenerator",
         )
         lesson_loader = LessonsLoader(
             topic,

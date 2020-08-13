@@ -16,10 +16,10 @@ class GenerateResourceTest(BaseTestWithDB):
 
     def test_generate_view_valid_slug(self):
         resource = self.test_data.create_resource(
-            "grid",
-            "Grid",
-            "resources/grid.html",
-            "GridResourceGenerator",
+            "bare",
+            "Bare",
+            "resources/bare.html",
+            "BareResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -31,16 +31,16 @@ class GenerateResourceTest(BaseTestWithDB):
         self.assertEqual(HTTPStatus.OK, response.status_code)
         self.assertEqual(
             response.get("Content-Disposition"),
-            'attachment; filename*=UTF-8\'\'Grid%20%28a4%29.pdf; filename="Grid%20%28a4%29.pdf"'
+            'attachment; filename*=UTF-8\'\'Bare%20%28a4%29.pdf; filename="Bare%20%28a4%29.pdf"'
         )
 
     @override_settings(DJANGO_PRODUCTION=True)
     def test_generate_view_valid_slug_production_cache(self):
         resource = self.test_data.create_resource(
-            "grid",
-            "Grid",
-            "resources/grid.html",
-            "GridResourceGenerator",
+            "bare",
+            "Bare",
+            "resources/bare.html",
+            "BareResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -52,15 +52,15 @@ class GenerateResourceTest(BaseTestWithDB):
         self.assertEqual(HTTPStatus.FOUND, response.status_code)
         self.assertEqual(
             response.url,
-            "/staticfiles/resources/grid/en/Grid%20(a4).pdf"
+            "/staticfiles/resources/bare/en/Bare%20(a4).pdf"
         )
 
     def test_generate_view_valid_slug_missing_parameter(self):
         resource = self.test_data.create_resource(
-            "grid",
-            "Grid",
-            "resources/grid.html",
-            "GridResourceGenerator",
+            "bare",
+            "Bare",
+            "resources/bare.html",
+            "BareResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -71,10 +71,10 @@ class GenerateResourceTest(BaseTestWithDB):
 
     def test_generate_view_valid_slug_invalid_parameter(self):
         resource = self.test_data.create_resource(
-            "grid",
-            "Grid",
-            "resources/grid.html",
-            "GridResourceGenerator",
+            "bare",
+            "Bare",
+            "resources/bare.html",
+            "BareResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
@@ -87,10 +87,10 @@ class GenerateResourceTest(BaseTestWithDB):
 
     def test_generate_view_valid_slug_multiple_parameter(self):
         resource = self.test_data.create_resource(
-            "grid",
-            "Grid",
-            "resources/grid.html",
-            "GridResourceGenerator",
+            "bare",
+            "Bare",
+            "resources/bare.html",
+            "BareResourceGenerator",
         )
         kwargs = {
             "resource_slug": resource.slug,
