@@ -17,14 +17,10 @@ There are 3 types of files that contain translatable content:
 - Content Markdown files
 - Content YAML files containg translatable model strings
 - ``django.po`` file containing translatable system strings
-- JavaScript files
 
 Translatable source files must always reside under an ``en`` directory tree.
 Translated files are downloaded into a directory named with the language's
 locale code, and with the same structure as the source tree.
-
-Django's `JavaScript translation catalog <https://docs.djangoproject.com/en/2.2/topics/i18n/translation/#internationalization-in-javascript-code>`_ enables the use of gettext() in JavaScript files to translate text.
-The JavaScript translation files are prepared before server start.
 
 .. note::
 
