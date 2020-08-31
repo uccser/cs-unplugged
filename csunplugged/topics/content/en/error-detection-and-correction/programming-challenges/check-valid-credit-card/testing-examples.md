@@ -3,7 +3,7 @@
 Your program should display the outputs shown in this table for the given
 inputs provided:
 
-*Important: None of these is an actual credit card number, but the correct
+*Important: None of these are actual credit card numbers, but the correct
 ones have the correct checksum.*
 
 | Input            | Output                      |
