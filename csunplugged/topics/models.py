@@ -285,6 +285,8 @@ class ProgrammingChallengeLanguage(TranslatableModel):
 class ProgrammingChallengeImplementation(TranslatableModel):
     """Model for programming challenge language implementation in database."""
 
+    RETURN_TO_PARENT = _("Return to programming challenge")
+
     #  Auto-incrementing 'id' field is automatically set by Django
     topic = models.ForeignKey(
         Topic,
