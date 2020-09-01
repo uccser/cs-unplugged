@@ -1,1 +1,1 @@
-The binary representation for the number 11 is WBWW
+The binary representation for the number 11 is BWBWW
