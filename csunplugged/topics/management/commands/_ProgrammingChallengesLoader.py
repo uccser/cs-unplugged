@@ -110,7 +110,10 @@ class ProgrammingChallengesLoader(TranslatableModelLoader):
                 difficulty=difficulty_level
             )
             self.populate_translations(programming_challenge, challenge_translations)
-            self.mark_translation_availability(programming_challenge, required_fields=["name", "content", "testing_examples"])
+            self.mark_translation_availability(
+                programming_challenge,
+                required_fields=["name", "content", "testing_examples"]
+            )
 
             programming_challenge.save()
 
