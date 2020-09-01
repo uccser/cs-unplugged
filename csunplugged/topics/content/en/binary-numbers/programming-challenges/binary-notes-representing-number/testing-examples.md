@@ -1,3 +1,5 @@
+# Binary representation of a decimal number between 0 and 31 by playing musical notes
+
 ## Testing examples:
 
 Your program should display the outputs shown in this table for the given

@@ -1,3 +1,5 @@
+# Binary representation of any decimal number by playing musical notes
+
 ## Testing examples:
 
 Your program should display the outputs shown in this table for the given

@@ -1,3 +1,5 @@
+# Check if a series of numbers are divisors of another number
+
 ## Testing examples:
 
 Your program should display the outputs shown in this table for the given inputs provided;

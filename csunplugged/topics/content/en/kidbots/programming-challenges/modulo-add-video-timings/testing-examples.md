@@ -1,3 +1,5 @@
+# Add seconds, minutes and hours of two video clips
+
 ## Testing examples:
 
 Your program should display the outputs shown in this table for the given inputs provided;

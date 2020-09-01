@@ -1,3 +1,5 @@
+# Display number of dots from right to left in one line
+
 ## Testing examples:
 
 Your program should display the outputs shown in this table for the given

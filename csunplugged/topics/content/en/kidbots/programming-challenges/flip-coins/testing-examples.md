@@ -1,3 +1,5 @@
+# Flip a coin (probability of getting a head or a tail)
+
 ## Testing examples:
 
 Your program may have different outputs from the outputs shown in this table for the given inputs provided (as the head and tail flips are generated randomly and may differ every time your program is executed).

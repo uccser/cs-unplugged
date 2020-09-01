@@ -1,3 +1,5 @@
+# Design a Bee-Bot
+
 ## Testing examples:
 
 You will need to test your program by typing in your own commands to the simulated Bee-Bot to see if it behaves as intended.

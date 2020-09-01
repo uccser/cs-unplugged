@@ -1,3 +1,6 @@
+# 13 digit product codes: Check if total is a multiple of 10 (entered one at a time)
+
+
 ## Testing examples:
 
 Your program should display the outputs shown in this table for the given

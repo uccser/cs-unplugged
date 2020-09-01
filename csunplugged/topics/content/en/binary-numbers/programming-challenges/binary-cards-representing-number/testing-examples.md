@@ -1,3 +1,5 @@
+# Display the binary cards needed to represent a decimal number between 0 and 31
+
 ## Testing examples:
 
 Your program should display the outputs shown in this table for the given

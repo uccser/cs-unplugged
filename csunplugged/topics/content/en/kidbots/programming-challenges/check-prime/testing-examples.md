@@ -1,3 +1,5 @@
+# Check if a number is a prime or not
+
 ## Testing examples:
 
 Your program should display the outputs shown in this table for the given inputs provided;

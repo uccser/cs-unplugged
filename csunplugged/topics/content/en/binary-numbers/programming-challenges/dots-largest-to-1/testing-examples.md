@@ -1,3 +1,5 @@
+# Display number of dots from the given largest card to 1
+
 ## Testing examples:
 
 Your program should display the outputs shown in this table for the given

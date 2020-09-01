@@ -1,3 +1,5 @@
+# 12 and 13 digit product codes: Check for a valid product code (any length)
+
 ## Testing examples:
 
 Your program should display the outputs shown in this table for the given

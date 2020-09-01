@@ -1,3 +1,5 @@
+# Display the binary cards needed to represent a given number of dots
+
 ## Testing examples:
 
 Your program should display the outputs shown in this table for the given

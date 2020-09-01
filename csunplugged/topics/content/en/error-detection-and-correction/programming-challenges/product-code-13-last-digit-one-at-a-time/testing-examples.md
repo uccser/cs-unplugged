@@ -1,3 +1,5 @@
+# 13 digit product codes: Calculate the last digit (entered one digit at a time)
+
 ## Testing examples:
 
 Your program should display the outputs shown in this table for the given

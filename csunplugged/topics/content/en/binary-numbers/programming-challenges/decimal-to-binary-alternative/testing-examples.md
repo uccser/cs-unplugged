@@ -1,3 +1,5 @@
+# Convert a decimal number to a binary number (alternative method)
+
 ## Testing examples:
 
 Your program should display the outputs shown in this table for the given

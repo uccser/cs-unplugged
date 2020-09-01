@@ -1,3 +1,5 @@
+# Count dots on 5 black and white cards (without a loop)
+
 ## Testing examples:
 
 Your program should display the outputs shown in this table for the given

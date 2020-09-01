@@ -1,3 +1,5 @@
+# Display number of dots for a given number of cards
+
 ## Testing examples:
 
 Your program should display the outputs shown in this table for the given

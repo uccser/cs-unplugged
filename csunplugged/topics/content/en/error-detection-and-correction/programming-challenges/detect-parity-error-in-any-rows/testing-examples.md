@@ -1,3 +1,5 @@
+# Detect parity error in any number of rows (after each row is entered)
+
 ## Testing examples:
 
 Your program should display the outputs shown in these panels for the given

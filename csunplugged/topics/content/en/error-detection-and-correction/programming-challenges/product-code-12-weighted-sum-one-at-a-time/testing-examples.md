@@ -1,3 +1,5 @@
+# 12 digit product codes: Weighted sum of digits (entered one at a time)
+
 ## Testing examples:
 
 Your program should display the outputs shown in this table for the given
