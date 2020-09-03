@@ -27,7 +27,7 @@ Your program should display the outputs shown in this table for the given inputs
   </tr>
   <tr>
     <td>22<br>4</td>
-    <td>The new time is: 02:00</td>
+    <td>The new time is: 2:00</td>
   </tr>
   <tr>
     <td>22<br>22</td>

@@ -11,18 +11,18 @@ Your program should display the outputs shown in this table for the given inputs
   </tr>
   <tr>
     <td>11<br>1</td>
-    <td>The new time is 12 o’clock.</td>
+    <td>The new time is 12 o'clock.</td>
   </tr>
   <tr>
     <td>11<br>4</td>
-    <td>The new time is 3 o’clock.</td>
+    <td>The new time is 3 o'clock.</td>
   </tr>
   <tr>
     <td>11<br>12</td>
-    <td>The new time is 11 o’clock.</td>
+    <td>The new time is 11 o'clock.</td>
   </tr>
   <tr>
     <td>11<br>72</td>
-    <td>The new time is 11 o’clock.</td>
+    <td>The new time is 11 o'clock.</td>
   </tr>
 </table>
