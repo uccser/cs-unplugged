@@ -3,6 +3,6 @@
 -   Add the value of `number_of_dots` to the value of `total_number_of_dots`
     every time the end user enters ‘W’ as the input.
     Repeat this 5 times dividing the value of `number_of_dots` by 2 each time and
-    converting the result to an integer using `int()`.
+    round the result to the nearest integer using `round()`.
 -   Display the `total_number_of_dots` as the output.
 -   Use a for loop to repeat this five times
