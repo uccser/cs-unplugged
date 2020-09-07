@@ -75,6 +75,14 @@ class ProgrammingChallengesLoader(TranslatableModelLoader):
                 challenge_translations[language]["content"] = content.html_string
                 challenge_translations[language]["name"] = content.title
 
+            testing_examples_translations = self.get_markdown_translations(
+                os.path.join(challenge_slug, "testing-examples.md"),
+                heading_required=True,
+                required=True
+            )
+            for language, content in testing_examples_translations.items():
+                challenge_translations[language]["testing_examples"] = content.html_string
+
             challenge_extra_challenge_file = challenge_structure.get("extra-challenge", None)
             if challenge_extra_challenge_file:
                 extra_challenge_translations = self.get_markdown_translations(
@@ -102,7 +110,10 @@ class ProgrammingChallengesLoader(TranslatableModelLoader):
                 difficulty=difficulty_level
             )
             self.populate_translations(programming_challenge, challenge_translations)
-            self.mark_translation_availability(programming_challenge, required_fields=["name", "content"])
+            self.mark_translation_availability(
+                programming_challenge,
+                required_fields=["name", "content", "testing_examples"]
+            )
 
             programming_challenge.save()
 

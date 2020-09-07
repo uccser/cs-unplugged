@@ -225,6 +225,7 @@ class TopicsTestDataGenerator:
                                      challenge_set_number=1,
                                      challenge_number=1,
                                      content="<p>Example content.</p>",
+                                     testing_examples="<p>Testing example</p>",
                                      extra_challenge="<p>Example challenge.</p>",
                                      ):
         """Create programming challenge object.
@@ -253,6 +254,7 @@ class TopicsTestDataGenerator:
             challenge_set_number=challenge_set_number,
             challenge_number=challenge_number,
             content=content,
+            testing_examples=testing_examples,
             extra_challenge=extra_challenge,
             difficulty=difficulty,
             languages=["en"],
