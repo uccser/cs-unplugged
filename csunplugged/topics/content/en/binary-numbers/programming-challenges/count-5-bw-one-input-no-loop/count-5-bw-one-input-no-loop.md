@@ -7,14 +7,3 @@ representing bits, all as one line of input ('B' for black and 'W' for white),
 and displays the total number of dots as the output.
 You can do this without a loop, using 5 similar sets of blocks to process each
 of the 5 values.
-
-## Testing examples:
-
-Your program should display the outputs shown in this table for the given
-inputs provided:
-
-| Input                 | Output |
-|-----------------------|--------|
-| W<br>W<br>B<br>B<br>B | 24     |
-| B<br>B<br>B<br>B<br>B | 0      |
-| W<br>W<br>W<br>W<br>W | 31     |
