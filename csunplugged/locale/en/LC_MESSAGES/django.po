@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-08 08:03+0000\n"
+"POT-Creation-Date: 2020-09-08 22:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,11 +27,11 @@ msgstr ""
 msgid "Classic CS Unplugged page"
 msgstr ""
 
-#: config/settings/base.py:159
+#: config/settings/base.py:160
 msgid "Translation mode"
 msgstr ""
 
-#: config/settings/base.py:165
+#: config/settings/base.py:166
 msgid "Translation mode (Bi-directional)"
 msgstr ""
 
@@ -738,7 +738,7 @@ msgid "Homepage"
 msgstr ""
 
 #: templates/404.html:26 templates/base-educators.html:78
-#: templates/core.html:181
+#: templates/core.html:182
 msgid "Search"
 msgstr ""
 
@@ -853,93 +853,93 @@ msgstr ""
 msgid "Back to CS Unplugged"
 msgstr ""
 
-#: templates/base-educators.html:63 templates/core.html:134
+#: templates/base-educators.html:63 templates/core.html:135
 #: templates/general/index.html:66 templates/topics/index.html:8
 #: templates/topics/index.html:16
 msgid "Topics"
 msgstr ""
 
-#: templates/base-educators.html:64 templates/core.html:139
+#: templates/base-educators.html:64 templates/core.html:140
 #: templates/general/index.html:71 templates/resources/index.html:8
 #: templates/resources/index.html:16 templates/topics/lesson.html:74
 msgid "Printables"
 msgstr ""
 
-#: templates/base-educators.html:65 templates/core.html:129
+#: templates/base-educators.html:65 templates/core.html:130
 #: templates/general/about.html:7 templates/general/about.html:15
 #: templates/general/base.html:10
 msgid "About"
 msgstr ""
 
-#: templates/core.html:25 templates/general/index.html:7
+#: templates/core.html:26 templates/general/index.html:7
 #: templates/general/people.html:21
 msgid "CS Unplugged"
 msgstr ""
 
-#: templates/core.html:100
+#: templates/core.html:101
 msgid ""
 "Looking for something for high schools? Check out the <a href=\"http://"
 "csfieldguide.org.nz/\">Computer Science Field Guide</a>."
 msgstr ""
 
-#: templates/core.html:112
+#: templates/core.html:113
 msgid ""
 "The primary goal of the Unplugged project is to promote Computer Science "
 "(and computing in general) to young people as an interesting, engaging, and "
 "intellectually stimulating discipline."
 msgstr ""
 
-#: templates/core.html:118
+#: templates/core.html:119
 #, python-format
 msgid "Read more about <a href=\"%(principles_url)s\">our principles here</a>."
 msgstr ""
 
-#: templates/core.html:125
+#: templates/core.html:126
 msgid "Useful Links"
 msgstr ""
 
-#: templates/core.html:144
+#: templates/core.html:145
 msgid "At home"
 msgstr ""
 
-#: templates/core.html:150
+#: templates/core.html:151
 msgid "Community"
 msgstr ""
 
-#: templates/core.html:154
+#: templates/core.html:155
 msgid "Twitter"
 msgstr ""
 
-#: templates/core.html:159
+#: templates/core.html:160
 msgid "Vimeo"
 msgstr ""
 
-#: templates/core.html:164
+#: templates/core.html:165
 msgid "YouTube"
 msgstr ""
 
-#: templates/core.html:169
+#: templates/core.html:170
 msgid "GitHub"
 msgstr ""
 
-#: templates/core.html:175
+#: templates/core.html:176
 msgid "Help"
 msgstr ""
 
-#: templates/core.html:187 templates/topics/glossary.html:8
+#: templates/core.html:188 templates/topics/glossary.html:8
 #: templates/topics/glossary.html:17
 msgid "Glossary"
 msgstr ""
 
-#: templates/core.html:192
+#: templates/core.html:193
 msgid "Feedback"
 msgstr ""
 
-#: templates/core.html:197 templates/general/contact.html:7
+#: templates/core.html:198 templates/general/contact.html:7
 msgid "Contact"
 msgstr ""
 
-#: templates/core.html:221
+#: templates/core.html:222
 msgid ""
 "The CS Unplugged material is open source on <a href=\"https://github.com/"
 "uccser/cs-unplugged\">GitHub</a>, and this website's content is shared under "
@@ -951,18 +951,18 @@ msgid ""
 "Canterbury</a>, New Zealand."
 msgstr ""
 
-#: templates/core.html:225
+#: templates/core.html:226
 msgid ""
 "Icons provided generously by <a target=\"_blank\" rel=\"noopener noreferrer"
 "\" href=\"https://icons8.com/\">icons8</a>."
 msgstr ""
 
-#: templates/core.html:247
+#: templates/core.html:248
 #, python-format
 msgid "This definition is not available in %(language)s, sorry!"
 msgstr ""
 
-#: templates/core.html:254
+#: templates/core.html:255
 msgid "Close"
 msgstr ""
 
