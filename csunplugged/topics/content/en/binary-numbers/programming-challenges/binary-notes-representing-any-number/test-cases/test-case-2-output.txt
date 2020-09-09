@@ -1,1 +1,7 @@
-high, high, low, low, high, low, low
+high
+high
+low
+low
+high
+low
+low
