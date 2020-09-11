@@ -63,6 +63,17 @@ class ProgrammingChallengesStructureLoader(TranslatableModelLoader):
             else:
                 prog_language_icon = None
 
+            if prog_language == "python":
+                prog_reminders_filename = "programming-reminders-{0}.md".format(prog_language)
+                prog_reminders_filepath = os.path.abspath(
+                   "plugging_it_in/content/en/programming-reminders/" + prog_reminders_filename
+                )
+                programming_reminders_translations = self.get_markdown_translations(
+                    prog_reminders_filepath
+                )
+                for language, content in programming_reminders_translations.items():
+                    prog_languages_translations[language]["programming_reminders"] = content.html_string
+
             new_prog_language = ProgrammingChallengeLanguage(
                 slug=prog_language,
                 number=prog_language_number,

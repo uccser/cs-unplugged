@@ -272,6 +272,7 @@ class ProgrammingChallengeLanguage(TranslatableModel):
     name = models.CharField(max_length=200)
     number = models.PositiveSmallIntegerField()
     icon = models.CharField(max_length=100, null=True)
+    programming_reminders = models.TextField(default="")
 
     def __str__(self):
         """Text representation of ProgrammingChallengeLanguage object.
