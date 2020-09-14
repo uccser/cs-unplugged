@@ -1,6 +1,7 @@
 """Views for the plugging_it_in application."""
 
 from django.http import HttpResponse
+from django.http import Http404
 
 import json
 import requests
@@ -68,7 +69,18 @@ class ProgrammingChallengeListView(generic.DetailView):
 
     model = Lesson
     template_name = "plugging_it_in/lesson.html"
-    slug_url_kwarg = "lesson_slug"
+
+    def get_object(self, **kwargs):
+        """Retrieve object for the lesson view.
+
+        Returns:
+            Lesson object, or raises 404 error if not found.
+        """
+        return get_object_or_404(
+            self.model.objects.select_related(),
+            topic__slug=self.kwargs.get("topic_slug", None),
+            slug=self.kwargs.get("lesson_slug", None),
+        )
 
     def get_context_data(self, **kwargs):
         """Provide the context data for the programming challenge list view.
@@ -119,12 +131,17 @@ class ProgrammingChallengeView(generic.DetailView):
 
         context["topic"] = self.object.topic
         lessons = self.object.lessons.all()
+        found = False
         for lesson in lessons:
             if lesson.slug == self.kwargs.get("lesson_slug", None):
+                found = True
                 context["lesson"] = lesson
                 challlenges = lesson.retrieve_related_programming_challenges("Python")
                 context["programming_challenges"] = challlenges
                 context["programming_exercises_json"] = json.dumps(list(challlenges.values()))
+
+        if not found:
+            raise Http404("Lesson does not exist")
 
         context["implementations"] = self.object.ordered_implementations()
 
