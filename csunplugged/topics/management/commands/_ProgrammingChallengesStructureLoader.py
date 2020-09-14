@@ -67,13 +67,12 @@ class ProgrammingChallengesStructureLoader(TranslatableModelLoader):
             # scratch currently unsupported
             if prog_language == "python":
                 prog_reminders_filename = "programming-reminders-{0}.md".format(prog_language)
-                prog_reminders_filepath = os.path.join(
-                   self.base_path,
-                   self.get_localised_dir("en"),
-                   prog_reminders_filename
-                )
                 programming_reminders_translations = self.get_markdown_translations(
-                    prog_reminders_filepath
+                    os.path.join(
+                        self.base_path,
+                        self.get_localised_dir("en"),
+                        prog_reminders_filename
+                    )
                 )
                 for language, content in programming_reminders_translations.items():
                     prog_reminders_translations[language]["programming_reminders"] = content.html_string
