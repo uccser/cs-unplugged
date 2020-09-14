@@ -12,7 +12,7 @@ print(my_var)
 
 ## Variables
 
-```Python3
+```Python
 # Set a variable as a string
 fruit_name = "Apple"
 
@@ -28,19 +28,19 @@ pieces_of_fruit += 1
 
 ## Conditionals
 
-```Python3
+```Python
 # Find out the discount on fruit
 if pieces_of_fruit > 100:
-   print(“Bulk discount applies”)
+   print("Bulk discount applies")
 elif pieces_of_fruit > 5:
-   print(“Discount applies”)
+   print("Discount applies")
 else:
-   print(“No discount”)
+   print("No discount")
 ```
 
 ## For loops
 
-```Python3
+```Python
 # Print numbers 0-9 - remember Python starts counting from 0 
 for num in range(10):
     print(num)
@@ -48,7 +48,7 @@ for num in range(10):
 
 ## While loops
 
-```Python3
+```Python
 # Print numbers 0-9 using a while loop and a variable
 num = 0
 while num < 10:
@@ -61,14 +61,14 @@ while num < 10:
 
 ## Lists
 
-```Python3
+```Python
 # Create a list of fruit 
 fruit = ["Apple", "Banana", "Orange", "Pear"]
 ```
 
 ## Functions
 
-```Python3
+```Python
 # Create a function which prints a greeting
 def greeting(name):
     print("Hello " + name)
