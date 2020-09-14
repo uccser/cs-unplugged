@@ -152,7 +152,7 @@ class ProgrammingChallengeDifficultyTranslationOptions(TranslationOptions):
 class ProgrammingChallengeLanguageTranslationOptions(TranslationOptions):
     """Translation options for ProgrammingChallengeLanguage model."""
 
-    fields = ("name",)
+    fields = ("name", "programming_reminders")
     fallback_undefined = {
         "name": None,
     }
