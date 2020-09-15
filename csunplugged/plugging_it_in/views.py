@@ -145,8 +145,8 @@ class ProgrammingChallengeView(generic.DetailView):
 
         context["implementations"] = self.object.ordered_implementations()
 
-        related_test_cases = self.object.related_test_cases().values()
-        context["test_cases_json"] = json.dumps(list(related_test_cases))
+        related_test_cases = self.object.related_test_cases()
+        context["test_cases_json"] = json.dumps(list(related_test_cases.values()))
         context["test_cases"] = related_test_cases
         context["jobe_proxy_url"] = reverse('plugging_it_in:jobe_proxy')
         context["saved_attempts"] = self.request.session.get('saved_attempts', {})

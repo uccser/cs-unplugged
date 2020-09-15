@@ -1,6 +1,5 @@
 import json
 
-from http import HTTPStatus
 from django.urls import reverse
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator

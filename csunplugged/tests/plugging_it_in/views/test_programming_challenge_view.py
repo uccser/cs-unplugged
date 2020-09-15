@@ -1,3 +1,5 @@
+import json
+
 from http import HTTPStatus
 from django.urls import reverse
 from tests.BaseTestWithDB import BaseTestWithDB
@@ -206,22 +208,14 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
         url = reverse("plugging_it_in:programming_challenge", kwargs=kwargs)
         response = self.client.get(url)
 
-        # TODO - assert the json context
-        # Should only return the first challenge with the python language
-        # Not sure how to assert this - the challenge object doesn't seem to become json easily
-        # This is returned [{"topic_id": 15, "id": 18, "slug": "cha[259 chars]1"}]
-        # If acheiving this statically is also difficult as finding the topic id...
-        # self.assertEqual(
-        #     response.context["programming_exercises_json"],
-        #     {"slug": self.challenge.slug,
-        #     "difficulty_id": self.difficulty.id,
-        #     "languages": ["python"]
-        #     }
-        # )
+        self.assertEqual(
+            response.context["programming_exercises_json"],
+            json.dumps(list(self.lesson.retrieve_related_programming_challenges("Python").values()))
+        )
 
     def test_programming_challenge_view_test_cases_context(self):
         self.create_challenge()
-        self.test_data.create_programming_challenge_test_case(
+        test_case = self.test_data.create_programming_challenge_test_case(
             1,
             self.challenge
         )
@@ -233,14 +227,12 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
         url = reverse("plugging_it_in:programming_challenge", kwargs=kwargs)
         response = self.client.get(url)
 
-        # TODO: this returns the test cases queryset values() - its in a weird semi json format...
-        # Perhaps it can be done such that the testcases are returned and the values are only used when creating the json version
-        # self.assertQuerysetEqual(
-        #     response.context["test_cases"],
-        #     [
-        #         "<TestCase: TestCase object (1)>",
-        #     ]
-        # )
+        self.assertQuerysetEqual(
+            response.context["test_cases"],
+            [
+                f"<TestCase: TestCase object ({test_case.pk})>",
+            ]
+        )
 
     def test_programming_challenge_view_test_cases_json_context(self):
         self.create_challenge()
@@ -251,6 +243,7 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
         test_test_case.question_type = "input"
         test_test_case.expected_input = "test_input"
         test_test_case.expected_output = "test_output"
+        test_test_case.save()
 
         kwargs = {
             "topic_slug": self.topic.slug,
@@ -260,12 +253,10 @@ class ProgrammingChallengeViewTest(BaseTestWithDB):
         url = reverse("plugging_it_in:programming_challenge", kwargs=kwargs)
         response = self.client.get(url)
 
-        # TODO: the get related test cases uses select_related not sure if this is needed.
-        # This will get rid of number and languages I'd imagine. Thinking a query will need to be made to get the challenge and test case ids.
-        # self.assertQuerysetEqual(
-        #     response.context["test_cases_json"],
-        #     [{"id": "?", "languages": [], "number": 1, "test_input": "test_input", "expected_output": "test_output", "question_type": "input", "challenge_id": "?"}]
-        # )
+        self.assertEqual(
+            response.context["test_cases_json"],
+            json.dumps(list(self.challenge.related_test_cases().values()))
+        )
 
     def test_programming_challenge_view_jobe_proxy_url_context(self):
         self.create_challenge()
