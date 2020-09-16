@@ -1,5 +1,3 @@
-from plugging_it_in.models import TestCase
-
 from tests.BaseTestWithDB import BaseTestWithDB
 from tests.topics.TopicsTestDataGenerator import TopicsTestDataGenerator
 
@@ -15,8 +13,7 @@ class TestCaseModelTest(BaseTestWithDB):
         difficulty = self.test_data.create_difficulty_level(1)
         challenge = self.test_data.create_programming_challenge(topic, 1, difficulty)
 
-        self.test_data.create_programming_challenge_test_case(1, challenge)
-        self.test_case = TestCase.objects.get(id=1)
+        self.test_case = self.test_data.create_programming_challenge_test_case(1, challenge)
 
     def test_testcase_verbose_model_name(self):
         self.create_testcase()
