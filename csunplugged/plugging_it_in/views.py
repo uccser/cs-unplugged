@@ -11,8 +11,10 @@ from django.views import generic
 from django.views import View
 from django.urls import reverse
 from django.conf import settings
+from django.core.exceptions import ObjectDoesNotExist
 from utils.translated_first import translated_first
 from utils.group_lessons_by_age import group_lessons_by_age
+
 from topics.models import (
     Topic,
     ProgrammingChallenge,
@@ -130,17 +132,15 @@ class ProgrammingChallengeView(generic.DetailView):
         context = super(ProgrammingChallengeView, self).get_context_data(**kwargs)
 
         context["topic"] = self.object.topic
-        lessons = self.object.lessons.all()
-        found = False
-        for lesson in lessons:
-            if lesson.slug == self.kwargs.get("lesson_slug", None):
-                found = True
-                context["lesson"] = lesson
-                challlenges = lesson.retrieve_related_programming_challenges("Python")
-                context["programming_challenges"] = challlenges
-                context["programming_exercises_json"] = json.dumps(list(challlenges.values()))
 
-        if not found:
+        try:
+            lesson_slug = self.kwargs.get("lesson_slug", None)
+            lesson = Lesson.objects.get(slug=lesson_slug)
+            context["lesson"] = lesson
+            challlenges = lesson.retrieve_related_programming_challenges("Python")
+            context["programming_challenges"] = challlenges
+            context["programming_exercises_json"] = json.dumps(list(challlenges.values()))
+        except ObjectDoesNotExist:
             raise Http404("Lesson does not exist")
 
         context["implementations"] = self.object.ordered_implementations()
