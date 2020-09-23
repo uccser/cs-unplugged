@@ -67,8 +67,8 @@ function setupLessonNav() {
   $("#sidebar_overlay").click(closeNav);
   $("#close_nav_button").click(closeNav);
 
-  // Sets the question progression text.
-  const progressionText = `Question <strong>${getCurrentIndex()+1}</strong> of <strong>${programming_exercises.length}</strong>`;
+  // Sets the challenge progression text.
+  const progressionText = `Challenge ${getCurrentIndex()+1} of ${programming_exercises.length}`;
   document.getElementById("challenge_progression_text").innerHTML = progressionText;
 
   // Add testing examples info to the requirements block (temporary)

@@ -47,18 +47,6 @@ body {
       border-radius: 20px;
     }
 
-    .progression-info {
-      text-align: center;
-
-      #challenge_progression_text {
-        font-size: 20px;
-      }
-
-      #lessons_nav_toggle:hover {
-        cursor: pointer;
-      }
-    }
-
     .prev {
       border: 2px solid white;
       color: white;
@@ -71,7 +59,13 @@ body {
 
     .next {
       color: $student-colour;
-      background-color: #ffea00;
+      background-color: white;
+    }
+
+    .next:hover {
+      color: white;
+      background-color: $student-colour;
+      border-color: white;
     }
   }
 
@@ -118,12 +112,16 @@ body {
   height: 100%;
   padding: 20px 10px;
   padding-left: 20px;
+
+  #lessons_nav_toggle:hover {
+    cursor: pointer;
+  }
   
   .programming__info-area-content {
     background-color: white;
     overflow-y: auto;
     padding: 1.25rem !important;
-    height: 100%;
+    max-height: 100%;
     width: 100%;
     border: 1px solid grey;
     border-radius: 15px;
@@ -314,6 +312,7 @@ body {
     .badge {
       margin-right: 10px;
       min-width: 40px;
+      background-color: $student-colour;
 
       h5 {
         color: white;
