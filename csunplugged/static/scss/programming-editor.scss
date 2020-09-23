@@ -47,6 +47,14 @@ body {
       border-radius: 20px;
     }
 
+    .progression-info {
+      text-align: center;
+
+      #challenge_progression_text {
+        font-size: 20px;
+      }
+    }
+
     .prev {
       border: 2px solid white;
       color: white;

@@ -77,7 +77,9 @@
     <div class="col-12 col-md-4 programming__info-area">
       <div class="pii-block-heading">
         <img id="lessons_nav_toggle" class="img-fluid align-top" src="{% static 'img/plugging-it-in/icons8-menu-24.png' %}">
-        <p id="challenge_progression_text" class="d-inline"></p>
+        <p class="d-inline">
+          {% trans "Challenge " %} {{ programming_challenge.challenge_set_number }}.{{ programming_challenge.challenge_number }}
+        </p>
       </div>
 
     <div class="programming__info-area-content">
@@ -152,12 +154,15 @@
 
 <div class="col-12 programming__options">
   <div class="row progression-options py-2">
-    <div class="col-6 order-2 d-flex align-items-center my-1">
+    <div class="col-sm-4 col-6 order-2 order-sm-1 d-flex align-items-center my-1">
       <a id='prev_challenge_button'>
         <button class="btn prev">{% trans "Previous Challenge" %}</button>
       </a>
     </div>
-    <div class="col-6 order-3 d-flex justify-content-end align-items-center my-1">
+    <div class="progression-info col-sm-4 col-12 order-1 order-sm-2 my-2">
+      <p id="challenge_progression_text"></p>
+    </div>
+    <div class="col-sm-4 col-6 order-3 order-sm-3 d-flex justify-content-end align-items-center my-1">
       <a id='next_challenge_button'>
         <button class="btn next">{% trans "Next Challenge" %}</button>
       </a>
