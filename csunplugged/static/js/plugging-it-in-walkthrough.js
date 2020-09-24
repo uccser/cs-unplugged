@@ -1,0 +1,100 @@
+const introJS = require('intro.js');
+
+$(document).ready(function () {
+
+    var intro = introJS();
+    intro.setOptions({
+        steps: [
+            {
+                element: ".programming__info-area-content",
+                intro: "These are the instructions for creating your program, it describes what your program should do.",
+                step: 1,
+                position: "right"
+            },
+            {
+                element: ".CodeMirror",
+                intro: "This is where you enter your code to solve the challenge.",
+                step: 2
+            },
+            {
+                element: "#editor_run_button",
+                intro: "Clicking the 'Check' button will run your code against the test cases.",
+                step: 3
+            },
+            {
+                element: "#download_button",
+                intro: "Clicking the 'Download' button will download the program you have written to your computer.",
+                step: 4
+            },
+            {
+                element: "#test-case-table",
+                intro: "These are the test cases that will be run against your program.",
+                step: 5
+            },
+            {
+                element: "#test-case-table tbody tr:nth-child(1)",
+                intro: "Here is the first test case.",
+                step: 6
+            },
+            {
+                element: "#test-case-table tbody tr:nth-child(1) td:nth-child(1)",
+                intro: "This is the input that has been passed to your program for this particular test.",
+                step: 7
+            },
+            {
+                element: "#test-case-table tbody tr:nth-child(1) td:nth-child(2)",
+                intro: "This is the output that the test expects your program to print for the given input.",
+                step: 8
+            },
+            {
+                element: "#test-case-table tbody tr:nth-child(1) td:nth-child(3)",
+                intro: "This is the output that your program has printed for the given input.",
+                step: 9
+            },
+            {
+                element: "#test-case-table tbody tr:nth-child(1) td:nth-child(4)",
+                intro: "A test case will pass if the received output matches the expected output. If all test cases pass the question has been solved.",
+                step: 10
+            },
+            {
+                element: "#next_challenge_button button",
+                intro: "Click this button when you are ready to move on to the next challenge.",
+                step: 11,
+                position: "top"
+            },
+            {
+                element: "#lessons_nav_toggle",
+                intro: "You can navigate to other programming challenges here.",
+                step: 12
+            },
+        ]
+    });
+
+    $("#introjs-walkthrough").click(function() {
+        intro.start().onbeforechange(function() {
+            currentElement = $(this._introItems[this._currentStep].element);
+            node = currentElement.prop('nodeName');
+            // When looking at a full row of the table, force it to scroll to the far left
+            // so the highlight only overhangs to the right
+            if (node == 'TABLE' || node == 'TR') {
+                currentElement = currentElement.find('td:first-of-type')
+            }
+            containerId = 'test-case-table-container';
+            scroll_to_element(containerId, currentElement);
+        });
+    });
+});
+
+
+function scroll_to_element(containerId, element) {
+    var container = $('#' + containerId);
+    var contWidth = container.width();
+    var elemLeft = $(element).offset().left - container.offset().left;
+    var elemWidth = element.width();
+    var isInView = (elemLeft >= 0 && ((elemLeft + elemWidth) <= contWidth));
+
+    if (!isInView) {
+        var scrollLeftValue = element.offset().left;
+        container.scrollLeft(scrollLeftValue);
+    }
+}
