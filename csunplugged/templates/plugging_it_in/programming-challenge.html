@@ -106,17 +106,19 @@
               </div>
             </details>
           {% endif %}
-        {% endfor %}
 
-      {% comment %} Programming syntax reminders {% endcomment %}
-      <details>
-        <summary>
-          <strong>{% trans "Programming Reminders" %}</strong>
-        </summary>
-        <div class="boxed-text-content">
-          {% include "plugging_it_in/static-syntax-hints.html" %}
-        </div>
-      </details>
+          {% comment %} Programming syntax reminders {% endcomment %}
+          {% if implementation.language.name == "Python" and implementation.language.programming_reminders %}
+            <details>
+              <summary>
+                <strong>{% trans "Programming Reminders" %}</strong>
+              </summary>
+              <div class="boxed-text-content">
+                {% render_html_field implementation.language.programming_reminders %}
+              </div>
+            </details>
+          {% endif %}
+        {% endfor %}
 
       </div>
     </div>

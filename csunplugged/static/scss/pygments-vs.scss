@@ -1,0 +1,66 @@
+.codehilite {
+  background: #ffffff;
+  padding: 0.3em;
+  border-radius: 0.2em;
+  margin: 1em 0;
+
+  .hll {
+    background-color: #ffffcc;
+  }
+
+  .c {
+    color: #008000;
+  }
+
+  .err {
+    border: 1px solid #FF0000;
+  }
+
+  .k {
+    color: #0000ff;
+  }
+
+  .ch, .cm {
+    color: #008000;
+  }
+
+  .cp {
+    color: #0000ff;
+  }
+
+  .cpf, .c1, .cs {
+    color: #008000;
+  }
+
+  .ge {
+    font-style: italic;
+  }
+
+  .gh, .gp, .gs, .gu {
+    font-weight: bold;
+  }
+
+  .kc, .kd, .kn, .kp, .kr {
+    color: #0000ff;
+  }
+
+  .kt {
+    color: #2b91af;
+  }
+
+  .s {
+    color: #a31515;
+  }
+
+  .nc {
+    color: #2b91af;
+  }
+
+  .ow {
+    color: #0000ff;
+  }
+
+  .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .sr, .s1, .ss {
+    color: #a31515;
+  }
+}
