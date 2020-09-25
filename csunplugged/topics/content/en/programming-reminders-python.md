@@ -1,6 +1,6 @@
 # Programming Reminders
 
-## Print statements
+#### Print statements
 
 ```python3
 # Print a string directly
@@ -10,7 +10,7 @@ print("Hello World!")
 print(my_var)
 ```
 
-## Variables
+#### Variables
 
 ```Python
 # Set a variable as a string
@@ -26,7 +26,7 @@ cost_of_fruit = pieces_of_fruit * cost_per_item
 pieces_of_fruit += 1
 ```
 
-## Conditionals
+#### Conditionals
 
 ```Python
 # Find out the discount on fruit
@@ -38,7 +38,7 @@ else:
    print("No discount")
 ```
 
-## For loops
+#### For loops
 
 ```Python
 # Print numbers 0-9 - remember Python starts counting from 0 
@@ -46,7 +46,7 @@ for num in range(10):
     print(num)
 ```
 
-## While loops
+#### While loops
 
 ```Python
 # Print numbers 0-9 using a while loop and a variable
@@ -59,14 +59,14 @@ while num < 10:
     num += 1 
 ```
 
-## Lists
+#### Lists
 
 ```Python
 # Create a list of fruit 
 fruit = ["Apple", "Banana", "Orange", "Pear"]
 ```
 
-## Functions
+#### Functions
 
 ```Python
 # Create a function which prints a greeting
