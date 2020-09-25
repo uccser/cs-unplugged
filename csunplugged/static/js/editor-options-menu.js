@@ -68,11 +68,11 @@ function setupLessonNav() {
   $("#close_nav_button").click(closeNav);
 
   // Sets the question progression text.
-  const progressionText = `Question <strong>${getCurrentIndex()+1}</strong> of <strong>${programming_exercises.length}</strong>`;
+  const progressionText = gettext(`Question <strong>${getCurrentIndex()+1}</strong> of <strong>${programming_exercises.length}</strong>`);
   document.getElementById("challenge_progression_text").innerHTML = progressionText;
 
   // Add testing examples info to the requirements block (temporary)
-  const static_requirement_info = "Your program should display the outputs in the table (shown on the right) for the given inputs provided.";
+  const static_requirement_info = gettext("Your program should display the outputs in the table (shown on the right) for the given inputs provided.");
   $("#requirement + p").append(`</br></br> <p>${static_requirement_info}</p>`);
   
   // Hides the next/prev challenge buttons if there is no challenge available in that direction.

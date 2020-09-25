@@ -36,6 +36,7 @@ django-modeltranslation==0.15.2
 uniseg==0.7.1
 python-bidi==0.4.2
 django-bidi-utils==1.0
+django-statici18n==1.8.2
 
 # Plugging it in
 requests==2.24.0

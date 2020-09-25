@@ -28,7 +28,7 @@ function open_glossary_definition() {
 
   var slug = $(this).data("glossary-term");
   if (glossary_modal.attr("data-glossary-term") != slug) {
-    $("#glossary-modal-term").text("Loading glossary definition...");
+    $("#glossary-modal-term").text(gettext("Loading glossary definition..."));
     $("#glossary-modal-definition").html("");
     $.ajax({
       type: "GET",
@@ -68,7 +68,7 @@ function show_glossary_modal_error(jqXHR, text_status, error_thrown) {
    */
   var glossary_modal = $("#glossary-modal");
   glossary_modal.attr("data-glossary-term", "");
-  $("#glossary-modal-term").text("Error!");
+  $("#glossary-modal-term").text(gettext("Error!"));
 }
 
 function details_element_closed() {

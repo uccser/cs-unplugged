@@ -51,6 +51,7 @@ THIRD_PARTY_APPS = [
     "widget_tweaks",
     "modeltranslation",
     "bidiutils",
+    "statici18n",
 ]
 
 # Apps specific for this project go here.
@@ -346,3 +347,4 @@ CLASSIC_PAGES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("classic")), "c
 GENERAL_PAGES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("general")), "content")
 ACTIVITIES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("at_home")), "content")
 BREADCRUMBS_TEMPLATE = "django_bootstrap_breadcrumbs/bootstrap4.html"
+STATICI18N_ROOT = BUILD_ROOT
