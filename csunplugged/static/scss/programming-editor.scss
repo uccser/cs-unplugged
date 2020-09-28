@@ -402,3 +402,18 @@ body {
   padding: 0px 5px !important;
   margin: 0px;
 }
+
+#walkthrough-btn-container {
+  padding: 0px 15px !important;
+}
+
+#introjs-walkthrough {
+  color: $student-colour-light;
+  border-color: $student-colour-light;
+  border-radius: 20px;
+}
+
+#introjs-walkthrough:hover {
+  background-color: $student-colour-light;
+  color: white;
+}
