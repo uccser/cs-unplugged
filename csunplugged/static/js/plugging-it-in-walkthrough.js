@@ -67,14 +67,14 @@ $(document).ready(function () {
                 intro: "You can navigate to other programming challenges here.",
                 step: 12
             },
-        ]
+        ].filter(function (obj) {
+            style = $(obj.element).attr('style');
+            return style == undefined || !style.includes('display: none')
+        })
     });
 
     $("#introjs-walkthrough").click(function() {
         intro.start().onbeforechange(function(targetElement) {
-            if (targetElement.style.display == 'none') {
-                intro.nextStep()
-            }
             currentElement = $(this._introItems[this._currentStep].element);
             node = currentElement.prop('nodeName');
             // When looking at a full row of the table, force it to scroll to the far left
