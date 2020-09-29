@@ -38,7 +38,7 @@ $(document).ready(function () {
             },
             {
                 element: "#test-case-table tbody tr:nth-child(1) td:nth-child(1)",
-                intro: "This is the input that has been passed to your program for this particular test.",
+                intro: "This is the input that will be passed to your program for this particular test.",
                 step: 7
             },
             {
