@@ -4,6 +4,7 @@ $(document).ready(function () {
 
     var intro = introJS();
     intro.setOptions({
+        showStepNumbers: false,
         steps: [
             {
                 element: ".programming__info-area-content",
@@ -38,7 +39,8 @@ $(document).ready(function () {
             },
             {
                 element: "#test-case-table tbody tr:nth-child(1) td:nth-child(1)",
-                intro: "This is the input that will be passed to your program for this particular test.",
+                intro: "This is the input that will be passed to your program for this particular test. \
+                If this is blank, it means no input will be passed to your program.",
                 step: 7
             },
             {
@@ -48,7 +50,7 @@ $(document).ready(function () {
             },
             {
                 element: "#test-case-table tbody tr:nth-child(1) td:nth-child(3)",
-                intro: "This is the output that your program has printed for the given input.",
+                intro: "This is where your program will print its output. This is compared against the expected output.",
                 step: 9
             },
             {
@@ -64,8 +66,13 @@ $(document).ready(function () {
             },
             {
                 element: "#lessons_nav_toggle",
-                intro: "You can navigate to other programming challenges here.",
+                intro: "Click here to see the other challenges for this topic.",
                 step: 12
+            },
+            {
+                element: ".navbar-brand",
+                intro: "Click here to see the other topics available.",
+                step: 13
             },
         ].filter(function (obj) {
             style = $(obj.element).attr('style');
@@ -74,7 +81,7 @@ $(document).ready(function () {
     });
 
     $("#introjs-walkthrough").click(function() {
-        intro.start().onbeforechange(function(targetElement) {
+        intro.start().onbeforechange(function() {
             currentElement = $(this._introItems[this._currentStep].element);
             node = currentElement.prop('nodeName');
             // When looking at a full row of the table, force it to scroll to the far left
