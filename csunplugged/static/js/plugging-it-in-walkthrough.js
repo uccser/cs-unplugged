@@ -87,14 +87,17 @@ $(document).ready(function () {
 
 
 function scroll_to_element(containerId, element) {
+    // For use by the tutorials
     var container = $('#' + containerId);
     var contWidth = container.width();
-    var elemLeft = $(element).offset().left - container.offset().left;
+    var contLeft = container.offset().left;
+    var elemLeft = $(element).offset().left - contLeft; // wrt container
     var elemWidth = element.width();
-    var isInView = (elemLeft >= 0 && ((elemLeft + elemWidth) <= contWidth));
+    var isInView = elemLeft >= 0 && (elemLeft + elemWidth) <= contWidth;
 
     if (!isInView) {
-        var scrollLeftValue = element.offset().left;
-        container.scrollLeft(scrollLeftValue);
+        container.scrollLeft(0);
+        var scrollTo = $(element).offset().left - contLeft;
+        container.scrollLeft(scrollTo);
     }
 }
