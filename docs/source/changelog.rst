@@ -26,7 +26,7 @@ All notable changes to this project will be documented in this file.
 6.0.0
 ==============================================================================
 
-- **Release date:** 30th September 2020
+- **Release date:** 1st October 2020
 - **Downloads:** `Source downloads are available on GitHub <https://github.com/uccser/cs-unplugged/releases/>`__
 
 **Summary of changes:**
@@ -42,6 +42,7 @@ This release adds the 'Plugging it in' area of the website.
     - User code tested on the JOBE server.
     - Adds learning outcome and solution content to programming challenges table in the educators area.
     - Scratch questions are not supported.
+    - User triggered walk-through on programming challenge page. 
 - Order glossary terms alphabetically for all languages.
 - Solutions provided on the standard CSU site now pass the tests for the respective programming challenge on the CSU Plugging it in site.
 - Host videos on Vimeo instead of YouTube.
