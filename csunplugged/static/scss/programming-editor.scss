@@ -195,7 +195,7 @@ body {
 
     .code_running_spinner {
       display: none;
-      color: #5a9fffff;
+      color: $student-colour-light;
       margin-right: 0.625rem;
     }
 
@@ -205,8 +205,8 @@ body {
     
       .editor_button {
         border: none;
-        background-color: #5a9fffff;
-        border: 2px solid #5a9fffff;
+        background-color: $student-colour-light;
+        border: 2px solid $student-colour-light;
         color: white;
         height: 80%;
         padding: 0px 20px;
@@ -224,8 +224,8 @@ body {
       }
 
       #download_button {
-        border: 2px solid #5a9fffff;
-        color: #5a9fffff; 
+        border: 2px solid $student-colour-light;
+        color: $student-colour-light; 
         background-color: transparent;
       }
 
@@ -314,7 +314,7 @@ body {
   hr {
     height: 3px;
     margin-top: 0px;
-    background: $student-colour-light;
+    background: $student-colour;
   }
 
   .challenges-heading {
@@ -367,6 +367,7 @@ body {
   font-size: 36px;
   margin-left: 50px;
   z-index: 1004;
+  color: $student-colour
 }
 
 
@@ -411,11 +412,12 @@ body {
   color: $student-colour-light;
   border-color: $student-colour-light;
   border-radius: 20px;
-}
-
-#introjs-walkthrough:hover {
-  background-color: $student-colour-light;
-  color: white;
+  &:hover {
+    cursor: pointer;
+    background-color: #1b7bffff;
+    border-color: #1b7bffff;
+    color: white;
+  }
 }
 
 .introjs-fixParent{
