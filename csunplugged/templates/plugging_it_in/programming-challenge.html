@@ -11,6 +11,9 @@
 
 {% block css %}
   <link rel="stylesheet" href="{% static 'css/programming-editor.css' %}" >
+  <link rel="stylesheet" href="{% static 'css/third-party/introjs.css' %}" >
+  <!-- Add Modern template -->
+  <link rel="stylesheet" href="{% static 'css/third-party/introjs-modern.css' %}" >
 {% endblock css %}
 
 {% block body_container %}
@@ -146,8 +149,11 @@
     </div>
 
     <div class="col-12 col-md-4 programming__results">
-      <p class='pii-block-heading'>{% trans "Your results will be displayed here" %}</p>
+      <p class="pii-block-heading d-inline">{% trans "Your results will be displayed here" %}</p>
       {% include "plugging_it_in/results-table.html" %}
+      <div id="walkthrough-btn-container" class="row">
+        <button id="introjs-walkthrough" class="btn btn-outline-secondary btn-sm col-6 offset-6 my-2">{% trans "How does this page work?" %}</button>
+      </div>
     </div>
   {% endif %}
 </div>
@@ -186,6 +192,7 @@
 
   <script src="{% static 'js/jobe-editor.js' %}"></script>
   <script src="{% static 'js/editor-options-menu.js' %}"></script>
+  <script src="{% static 'js/plugging-it-in-walkthrough.js' %}"></script>
 
   {% comment %} Add in highlight.js for code highlighting {% endcomment %}
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/xcode.min.css">
