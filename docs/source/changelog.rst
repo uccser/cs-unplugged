@@ -42,7 +42,7 @@ This release adds the 'Plugging it in' area of the website.
     - User code tested on the JOBE server.
     - Scratch questions are not supported.
     - User triggered walk-through on programming challenge page. 
-- Adds learning outcome and solution content to programming challenges table in the educators area.
+- Add learning outcome and solution content to programming challenges table in the educators area.
 - Order glossary terms alphabetically for all languages.
 - Solutions provided on the standard CSU site now pass the tests for the respective programming challenge on the CSU Plugging it in site.
 - Host videos on Vimeo instead of YouTube.
