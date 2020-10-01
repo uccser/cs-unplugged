@@ -34,7 +34,7 @@ $(document).ready(function () {
             },
             {
                 element: "#test-case-table tbody tr:nth-child(1)",
-                intro: "This box shows what happened for the first test case.",
+                intro: "Here is the first test case.",
                 step: 6
             },
             {
