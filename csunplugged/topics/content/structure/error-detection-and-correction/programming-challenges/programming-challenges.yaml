@@ -1,8 +1,7 @@
 ################################################################################
-# CHALLENGE SETS IN THIS BLOCK were formerly numbered 1 through 6
-# They were renumbered 11 through 16 to allow visible content to use the numbers 1 through 6
+# CHALLENGE SETS IN THIS BLOCK are for the Parity Magic section
 count-black-squares-one-colour-input:
-  challenge-set-number: 11
+  challenge-set-number: 1
   challenge-number: 1
   difficulty-level: 1
   programming-languages:
@@ -13,7 +12,7 @@ count-black-squares-one-colour-input:
     - programming-explain-set-and-change-statement
 
 count-black-squares-one-line-input:
-  challenge-set-number: 11
+  challenge-set-number: 1
   challenge-number: 2
   difficulty-level: 2
   programming-languages:
@@ -24,7 +23,7 @@ count-black-squares-one-line-input:
     - programming-identify-if-statement
 
 check-odd-even-using-mod:
-  challenge-set-number: 12
+  challenge-set-number: 2
   challenge-number: 1
   difficulty-level: 2
   programming-languages:
@@ -34,7 +33,7 @@ check-odd-even-using-mod:
     - programming-identify-if-statement
 
 check-odd-even-using-subtraction:
-  challenge-set-number: 12
+  challenge-set-number: 2
   challenge-number: 2
   difficulty-level: 2
   programming-languages:
@@ -44,7 +43,7 @@ check-odd-even-using-subtraction:
     - programming-identify-if-statement
 
 detect-parity-error-in-row:
-  challenge-set-number: 13
+  challenge-set-number: 3
   challenge-number: 1
   difficulty-level: 2
   programming-languages:
@@ -55,7 +54,7 @@ detect-parity-error-in-row:
     - programming-explain-differences-if-else-if-statements
 
 detect-parity-error-in-six-rows:
-  challenge-set-number: 14
+  challenge-set-number: 4
   challenge-number: 1
   difficulty-level: 2
   programming-languages:
@@ -67,7 +66,7 @@ detect-parity-error-in-six-rows:
     - programming-explain-differences-if-else-if-statements
 
 detect-parity-error-in-any-rows:
-  challenge-set-number: 14
+  challenge-set-number: 4
   challenge-number: 2
   difficulty-level: 2
   programming-languages:
@@ -79,7 +78,7 @@ detect-parity-error-in-any-rows:
     - programming-explain-differences-if-else-if-statements
 
 detect-parity-error-in-any-rows-after-input:
-  challenge-set-number: 15
+  challenge-set-number: 5
   challenge-number: 1
   difficulty-level: 3
   programming-languages:
@@ -91,7 +90,7 @@ detect-parity-error-in-any-rows-after-input:
     - programming-identify-list-store-data
 
 detect-parity-error-in-any-rows-or-columns:
-  challenge-set-number: 16
+  challenge-set-number: 6
   challenge-number: 1
   difficulty-level: 3
   programming-languages:
@@ -102,9 +101,11 @@ detect-parity-error-in-any-rows-or-columns:
     - programming-describe-variables
     - programming-identify-list-store-data
   extra-challenge: extra-challenge.md
-  # END BLOCK
-  ##############################################################################
+# END BLOCK
+################################################################################
 
+################################################################################
+# CHALLENGE SETS IN THIS BLOCK are for the Product Code Check Digits section
 product-code-12-weighted-sum-one-at-a-time:
   challenge-set-number: 1
   challenge-number: 1
@@ -231,6 +232,8 @@ product-code-13-last-digit-one-line:
     - programming-explain-join-concatenate
     - programming-explain-set-and-change-statement
     - programming-demonstrate-indexing
+# END BLOCK
+################################################################################
 
 check-valid-credit-card:
   challenge-set-number: 20
