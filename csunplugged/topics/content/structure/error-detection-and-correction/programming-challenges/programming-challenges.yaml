@@ -1,5 +1,8 @@
+################################################################################
+# CHALLENGE SETS IN THIS BLOCK were formerly numbered 1 through 6
+# They were renumbered 11 through 16 to allow visible content to use the numbers 1 through 6
 count-black-squares-one-colour-input:
-  challenge-set-number: 1
+  challenge-set-number: 11
   challenge-number: 1
   difficulty-level: 1
   programming-languages:
@@ -10,7 +13,7 @@ count-black-squares-one-colour-input:
     - programming-explain-set-and-change-statement
 
 count-black-squares-one-line-input:
-  challenge-set-number: 1
+  challenge-set-number: 11
   challenge-number: 2
   difficulty-level: 2
   programming-languages:
@@ -21,7 +24,7 @@ count-black-squares-one-line-input:
     - programming-identify-if-statement
 
 check-odd-even-using-mod:
-  challenge-set-number: 2
+  challenge-set-number: 12
   challenge-number: 1
   difficulty-level: 2
   programming-languages:
@@ -31,7 +34,7 @@ check-odd-even-using-mod:
     - programming-identify-if-statement
 
 check-odd-even-using-subtraction:
-  challenge-set-number: 2
+  challenge-set-number: 12
   challenge-number: 2
   difficulty-level: 2
   programming-languages:
@@ -41,7 +44,7 @@ check-odd-even-using-subtraction:
     - programming-identify-if-statement
 
 detect-parity-error-in-row:
-  challenge-set-number: 3
+  challenge-set-number: 13
   challenge-number: 1
   difficulty-level: 2
   programming-languages:
@@ -52,7 +55,7 @@ detect-parity-error-in-row:
     - programming-explain-differences-if-else-if-statements
 
 detect-parity-error-in-six-rows:
-  challenge-set-number: 4
+  challenge-set-number: 14
   challenge-number: 1
   difficulty-level: 2
   programming-languages:
@@ -64,7 +67,7 @@ detect-parity-error-in-six-rows:
     - programming-explain-differences-if-else-if-statements
 
 detect-parity-error-in-any-rows:
-  challenge-set-number: 4
+  challenge-set-number: 14
   challenge-number: 2
   difficulty-level: 2
   programming-languages:
@@ -76,7 +79,7 @@ detect-parity-error-in-any-rows:
     - programming-explain-differences-if-else-if-statements
 
 detect-parity-error-in-any-rows-after-input:
-  challenge-set-number: 5
+  challenge-set-number: 15
   challenge-number: 1
   difficulty-level: 3
   programming-languages:
@@ -88,7 +91,7 @@ detect-parity-error-in-any-rows-after-input:
     - programming-identify-list-store-data
 
 detect-parity-error-in-any-rows-or-columns:
-  challenge-set-number: 6
+  challenge-set-number: 16
   challenge-number: 1
   difficulty-level: 3
   programming-languages:
@@ -99,9 +102,11 @@ detect-parity-error-in-any-rows-or-columns:
     - programming-describe-variables
     - programming-identify-list-store-data
   extra-challenge: extra-challenge.md
+  # END BLOCK
+  ##############################################################################
 
 product-code-12-weighted-sum-one-at-a-time:
-  challenge-set-number: 10
+  challenge-set-number: 1
   challenge-number: 1
   difficulty-level: 2
   programming-languages:
@@ -112,8 +117,8 @@ product-code-12-weighted-sum-one-at-a-time:
     - programming-explain-join-concatenate
 
 product-code-13-weighted-sum-one-at-a-time:
-  challenge-set-number: 10
-  challenge-number: 1
+  challenge-set-number: 1
+  challenge-number: 2
   difficulty-level: 2
   programming-languages:
     - scratch
@@ -123,8 +128,8 @@ product-code-13-weighted-sum-one-at-a-time:
     - programming-explain-join-concatenate
 
 product-code-12-multiple-10-one-at-a-time:
-  challenge-set-number: 10
-  challenge-number: 2
+  challenge-set-number: 2
+  challenge-number: 1
   difficulty-level: 2
   programming-languages:
     - scratch
@@ -136,7 +141,7 @@ product-code-12-multiple-10-one-at-a-time:
     - programming-explain-mod
 
 product-code-13-multiple-10-one-at-a-time:
-  challenge-set-number: 10
+  challenge-set-number: 2
   challenge-number: 2
   difficulty-level: 2
   programming-languages:
@@ -149,8 +154,8 @@ product-code-13-multiple-10-one-at-a-time:
     - programming-explain-mod
 
 product-code-12-multiple-10-one-line:
-  challenge-set-number: 10
-  challenge-number: 3
+  challenge-set-number: 3
+  challenge-number: 1
   difficulty-level: 2
   programming-languages:
     - scratch
@@ -160,8 +165,8 @@ product-code-12-multiple-10-one-line:
     - programming-describe-nested-statement
 
 product-code-13-multiple-10-one-line:
-  challenge-set-number: 10
-  challenge-number: 3
+  challenge-set-number: 3
+  challenge-number: 2
   difficulty-level: 2
   programming-languages:
     - scratch
@@ -171,8 +176,8 @@ product-code-13-multiple-10-one-line:
     - programming-describe-nested-statement
 
 product-code-check-valid-any-length:
-  challenge-set-number: 10
-  challenge-number: 4
+  challenge-set-number: 4
+  challenge-number: 1
   difficulty-level: 3
   programming-languages:
     - scratch
@@ -182,8 +187,8 @@ product-code-check-valid-any-length:
     - programming-describe-nested-statement
 
 product-code-12-last-digit-one-at-a-time:
-  challenge-set-number: 10
-  challenge-number: 5
+  challenge-set-number: 5
+  challenge-number: 1
   difficulty-level: 3
   programming-languages:
     - scratch
@@ -194,8 +199,8 @@ product-code-12-last-digit-one-at-a-time:
     - programming-identify-loop
 
 product-code-13-last-digit-one-at-a-time:
-  challenge-set-number: 10
-  challenge-number: 5
+  challenge-set-number: 5
+  challenge-number: 2
   difficulty-level: 3
   programming-languages:
     - scratch
@@ -206,8 +211,8 @@ product-code-13-last-digit-one-at-a-time:
     - programming-identify-loop
 
 product-code-12-last-digit-one-line:
-  challenge-set-number: 10
-  challenge-number: 6
+  challenge-set-number: 6
+  challenge-number: 1
   difficulty-level: 3
   programming-languages:
     - scratch
@@ -217,8 +222,8 @@ product-code-12-last-digit-one-line:
     - programming-demonstrate-indexing
 
 product-code-13-last-digit-one-line:
-  challenge-set-number: 10
-  challenge-number: 6
+  challenge-set-number: 6
+  challenge-number: 2
   difficulty-level: 3
   programming-languages:
     - scratch
