@@ -102,27 +102,41 @@
               {% include 'topics/not-available-warning.html' %}
             {% endwith %}
           {% else %}
-            <h4>{% trans "What it should look like" %}</h4>
-            {% render_html_field implementation.expected_result %}
+            {% if implementation.language.name == 'Python' %}
+              <div class="mt-3 pb-3">
+                <img id="pii-logo-educators" class="mx-auto d-block mb-3" src="{% static 'img/cs-unplugged-logo-plugging-it-in.svg' %}">
+                <!-- Case where there is more than one lesson doesn't exist and this page is going to be removed in the near future -->
+                {% with lesson=lessons.first %}
+                  <p class="text-center">
+                    <a href="{% url 'plugging_it_in:programming_challenge' topic.slug lesson.slug programming_challenge.slug %}" class="btn pii-navigation">
+                      {% trans "Try this challenge out in Plugging it in!" %}
+                    </a>
+                  </p>
+                {% endwith %}
+              </div>
+            {% else %}
+              <h4>{% trans "What it should look like" %}</h4>
+              {% render_html_field implementation.expected_result %}
 
-            {% if implementation.hints %}
-              <details>
-                <summary>
-                  <strong>
-                    {% trans "Hints" %}
-                  </strong>
-                </summary>
+              {% if implementation.hints %}
+                <details>
+                  <summary>
+                    <strong>
+                      {% trans "Hints" %}
+                    </strong>
+                  </summary>
 
-                <div class="boxed-text-content">
-                  {% render_html_field implementation.hints %}
-                </div>
-              </details>
+                  <div class="boxed-text-content">
+                    {% render_html_field implementation.hints %}
+                  </div>
+                </details>
+              {% endif %}
             {% endif %}
 
           <p class="text-center">
             <a href="{% url 'topics:programming_challenge_solution' topic.slug programming_challenge.slug implementation.language.slug %}">
-              {% blocktrans trimmed %}
-                Show {{ implementation.language.name }} solution
+              {% blocktrans with name=implementation.language.name %}
+                Show {{ name }} solution
               {% endblocktrans %}
             </a>
           </p>
