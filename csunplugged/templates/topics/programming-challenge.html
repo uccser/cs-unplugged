@@ -108,7 +108,7 @@
                 <!-- Case where there is more than one lesson doesn't exist and this page is going to be removed in the near future -->
                 {% with lesson=lessons.first %}
                   <p class="text-center">
-                    <a href="{% url 'plugging_it_in:programming_challenge' topic.slug lesson.slug programming_challenge.slug %}" class="btn pii-navigation">
+                    <a href="{% url 'plugging_it_in:programming_challenge' topic.slug lesson.slug programming_challenge.slug %}" class="btn pii-navigation" target="_blank" rel="nooperner noreferrer">
                       {% trans "Try this challenge out in Plugging it in!" %}
                     </a>
                   </p>
