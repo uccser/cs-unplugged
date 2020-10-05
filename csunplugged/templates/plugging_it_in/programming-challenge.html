@@ -148,9 +148,11 @@
       </div>
     </div>
   {% else %}
-    {% with model=programming_challenge parent=topic homepage='plugging_it_in:index' %}
-      {% include 'topics/not-available-warning.html' %}
-    {% endwith %}
+    <div class="col-md-6 offset-md-3 justify-content-center mt-3">
+      {% with model=programming_challenge parent=topic homepage='plugging_it_in:index' %}
+        {% include 'topics/not-available-warning.html' %}
+      {% endwith %}
+    </div>
   {% endif %}
 </div>
 
