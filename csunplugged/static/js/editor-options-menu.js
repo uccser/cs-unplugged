@@ -79,7 +79,8 @@ function setupLessonNav() {
   const index = getCurrentIndex();
   if (index === programming_exercises.length-1) {
     $("#next_challenge_button").find('button').hide()
-  } else if (index === 0) {
+  }
+  if (index === 0) {
     $("#prev_challenge_button").find('button').hide()
   }
 }
