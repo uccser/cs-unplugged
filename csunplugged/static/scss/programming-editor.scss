@@ -34,27 +34,6 @@ body {
   }
 }
 
-@include media-breakpoint-down(xs) {
-  .navbar-plugging-it-in {
-    padding: 0.25rem !important;
-
-    .container {
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-    }
-
-    #navbar-brand-logo {
-      height: 1.6rem;
-    }
-
-    .navbar-brand {
-      padding-top: 0 !important;
-      padding-bottom: 0 !important;
-      font-size: 1rem;
-    }
-  }
-}
-
 .programming__options {
   background-color: $student-colour;
   color: white;
