@@ -268,6 +268,10 @@ body {
   .programming__results {
     padding-bottom: 160px !important;
   }
+
+  #walkthrough-btn-container {
+    display: none; // The walkthrough is unnavigable on small screens
+  }
 }
 
 // Side Drawer 
