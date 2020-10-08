@@ -12,10 +12,11 @@ from resources.utils.get_resource_generator import get_resource_generator
 from resources.utils.resource_valid_configurations import resource_valid_configurations
 from resources.utils.resource_parameters import EnumResourceParameter
 from resources.utils.get_thumbnail import get_thumbnail_filename
-from multiprocessing.dummy import Pool
+from multiprocessing.dummy import Pool, Lock
 from sqlite3 import ProgrammingError as sqlite3_ProgrammingError
 
 THREADS = 6
+LOCK = Lock()
 
 BASE_PATH_TEMPLATE = "build/img/resources/{resource}/thumbnails/{language}"
 
@@ -94,7 +95,11 @@ class Command(BaseCommand):
         resource = parameter_set[0]
         combination = parameter_set[1]
         base_path = parameter_set[2]
+        LOCK.acquire()
         print("  - Creating thumbnail for {}".format(resource.name))
+        for key in combination.keys():
+            print("    - {}: {}".format(key, combination[key]))
+        LOCK.release()
         requested_options = QueryDict(urlencode(combination, doseq=True))
         generator = get_resource_generator(resource.generator_module, requested_options)
         filename = get_thumbnail_filename(resource.slug, combination)

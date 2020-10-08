@@ -11,10 +11,11 @@ from resources.models import Resource
 from resources.utils.get_resource_generator import get_resource_generator
 from resources.utils.resource_valid_configurations import resource_valid_configurations
 from resources.utils.resource_parameters import EnumResourceParameter
-from multiprocessing.dummy import Pool
+from multiprocessing.dummy import Pool, Lock
 from sqlite3 import ProgrammingError as sqlite3_ProgrammingError
 
 THREADS = 6
+LOCK = Lock()
 
 
 class Command(BaseCommand):
@@ -107,7 +108,11 @@ class Command(BaseCommand):
         combination = parameter_set[1]
         language_code = parameter_set[2]
         base_path = parameter_set[3]
-        print("  - Creating PDF in '{}'".format(language_code))
+        LOCK.acquire()
+        print("  - Creating PDF in '{}':".format(language_code))
+        for key in combination.keys():
+            print("    - {}: {}".format(key, combination[key]))
+        LOCK.release()
         with translation.override(language_code):
             if resource.copies:
                 combination["copies"] = settings.RESOURCE_COPY_AMOUNT
