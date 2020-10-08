@@ -96,7 +96,7 @@ class Command(BaseCommand):
         combination = parameter_set[1]
         base_path = parameter_set[2]
         LOCK.acquire()
-        print("  - Creating thumbnail for {}".format(resource.name))
+        print("  - Creating thumbnail for {}:".format(resource.name))
         for key in combination.keys():
             print("    - {}: {}".format(key, combination[key]))
         LOCK.release()
