@@ -4,9 +4,9 @@
 
 # Mātakitakihia te whakaako mō tēnei
 
-{video url="https://www.youtube.com/embed/FnwBratAhfg"}
+{video url="https://vimeo.com/437726658"}
 
-{video url="https://www.youtube.com/embed/WjMPd6sgou0"}
+{video url="https://vimeo.com/437724764"}
 
 {panel end}
 
@@ -28,7 +28,7 @@ I ngā ngohe o tēnei kōwae ako ka whakaaturia he tukanga hei rapu i ngā hapa,
 
 Ka kitea te whakaaturanga o te akomanga tuatahi ("Pūrite Miharo") kei konei:
 
-{video url="https://www.youtube.com/embed/FnwBratAhfg"}
+{video url="https://vimeo.com/437726658"}
 
 {panel end}
 

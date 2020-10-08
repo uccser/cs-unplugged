@@ -23,6 +23,8 @@ binary-numbers-using-variable:
     - programming-explain-sequencing
     - programming-describe-variables
   extra-challenge: extra-challenge.md
+  test-cases: 
+    1: input
 
 binary-numbers-using-variables-as-operator:
   challenge-set-number: 1
@@ -53,19 +55,6 @@ binary-numbers-using-variable-operator-repeat:
   test-cases: 
     1: input
 
-binary-numbers-one-line:
-  challenge-set-number: 1
-  challenge-number: 5
-  difficulty-level: 2
-  programming-languages:
-    - scratch
-    - python
-  learning-outcomes:
-    - programming-describe-variables
-    - programming-identify-loop
-    - programming-explain-join-concatenate
-  extra-challenge: extra-challenge.md
-
 number-cards-display:
   challenge-set-number: 2
   challenge-number: 1
@@ -77,6 +66,10 @@ number-cards-display:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
     - programming-identify-loop
+  test-cases: 
+    1: input
+    2: input
+    3: input
 
 dots-right-left:
   challenge-set-number: 2
@@ -90,6 +83,10 @@ dots-right-left:
     - programming-describe-variables
     - programming-explain-join-concatenate
   extra-challenge: extra-challenge.md
+  test-cases: 
+    1: input
+    2: input
+    3: input
 
 dots-largest-to-1:
   challenge-set-number: 3
@@ -120,6 +117,10 @@ left-right-given-largest:
     - programming-identify-loop
     - programming-explain-join-concatenate
   extra-challenge: extra-challenge.md
+  test-cases: 
+    1: input
+    2: input
+    3: input
 
 count-5-bw-no-loop:
   challenge-set-number: 4
@@ -132,6 +133,10 @@ count-5-bw-no-loop:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
     - programming-identify-if-statement
+  test-cases: 
+    1: input
+    2: input
+    3: input
 
 count-5-bw-using-loop:
   challenge-set-number: 4
@@ -145,6 +150,10 @@ count-5-bw-using-loop:
     - programming-describe-variables
     - programming-identify-if-statement
     - programming-identify-loop
+  test-cases: 
+    1: input
+    2: input
+    3: input
 
 count-5-bw-one-input-no-loop:
   challenge-set-number: 4
@@ -158,6 +167,10 @@ count-5-bw-one-input-no-loop:
     - programming-describe-variables
     - programming-identify-if-statement
     - programming-demonstrate-indexing
+  test-cases: 
+    1: input
+    2: input
+    3: input
 
 count-5-bw-one-input-using-loop:
   challenge-set-number: 4
@@ -190,6 +203,11 @@ count-bw-one-input-using-loop:
     - programming-identify-if-statement
     - programming-identify-loop
     - programming-demonstrate-indexing
+  test-cases: 
+    1: input
+    2: input
+    3: input
+    4: input
 
 cards-given-number:
   challenge-set-number: 5
@@ -221,6 +239,12 @@ cards-given-number-one-line:
     - programming-describe-variables
     - programming-identify-if-statement
   extra-challenge: extra-challenge.md
+  test-cases: 
+    1: input
+    2: input
+    3: input
+    4: input
+    5: input
 
 number-bits-representing-number:
   challenge-set-number: 6
@@ -233,6 +257,11 @@ number-bits-representing-number:
     - programming-explain-asking-input-end-user
     - programming-describe-variables
     - programming-identify-loop
+  test-cases: 
+    1: input
+    2: input
+    3: input
+    4: input
 
 binary-cards-representing-number:
   challenge-set-number: 7
@@ -246,6 +275,10 @@ binary-cards-representing-number:
     - programming-describe-variables
     - programming-identify-if-statement
     - programming-identify-loop
+  test-cases: 
+    1: input
+    2: input
+    3: input
 
 binary-cards-representing-any-number:
   challenge-set-number: 7
@@ -259,6 +292,10 @@ binary-cards-representing-any-number:
     - programming-describe-variables
     - programming-identify-if-statement
     - programming-identify-loop
+  test-cases: 
+    1: input
+    2: input
+    3: input
 
 decimal-to-binary:
   challenge-set-number: 7
@@ -289,6 +326,9 @@ decimal-to-binary-alternative:
     - programming-describe-variables
     - programming-identify-if-statement
     - programming-identify-loop
+  test-cases: 
+    1: input
+    2: input
 
 binary-notes-representing-number:
   challenge-set-number: 8
@@ -302,6 +342,10 @@ binary-notes-representing-number:
     - programming-describe-variables
     - programming-identify-if-statement
     - programming-identify-loop
+  test-cases: 
+    1: input
+    2: input
+    3: input
 
 binary-notes-representing-any-number:
   challenge-set-number: 8
@@ -316,6 +360,11 @@ binary-notes-representing-any-number:
     - programming-identify-if-statement
     - programming-identify-loop
   extra-challenge: extra-challenge.md
+  test-cases: 
+    1: input
+    2: input
+    3: input
+  
 
 binary-cards-as-dots:
   challenge-set-number: 9

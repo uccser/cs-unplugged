@@ -6,12 +6,12 @@
 
 Ka kitea i konei tētahi whakaaturanga o te whakaako i ngā whatunga kōmaka:
 
-{video url="https://www.youtube.com/embed/M-z5pDjqtZk"}
+{video url="https://vimeo.com/437722996"}
 
 Anei ētahi atu ataata e whakaatu ana i ngā wāhi kē e whakamahia ai ngā Whatunga Kōmaka:
 
-- [Ataata 1](https://www.youtube.com/watch?v=LOxfdsBBjKI)
-- [Ataata 2](https://www.youtube.com/watch?v=30WcPnvfiKE)
+- [Ataata 1](https://vimeo.com/437726931)
+- [Ataata 2](https://vimeo.com/437726955)
 
 {panel end}
 

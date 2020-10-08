@@ -10,7 +10,6 @@
 {% block body_attribute_overrides %} class="homepage"{% endblock body_attribute_overrides %}
 {% block navbar_class_overrides %} trans-navbar{% endblock navbar_class_overrides %}
 
-
 {% block body_container %}
     <div id="educator-jumbotron" class="jumbotron jumbotron-fluid">
         <div class="container">
@@ -90,12 +89,17 @@
                 </a>
             </div>
             <div class="col-12 col-md-4 mb-4">
-                <h2 class="student-colour">For students</h2>
-                <a class="link-item link-item-top link-item-top-student-1 no-text-decoration d-block mb-3 unavailable" href="#">
+                <h2 class="plugging-it-in-colour">For students</h2>
+                <a class="link-item link-item-top link-item-top-plugging-it-in-1 no-text-decoration d-block mb-3{% if prod_deployment %} unavailable"{% else %}" href="{% url 'plugging_it_in:index' %}"{% endif %}>
                     <h3 class="mb-0">
                         {% trans "Plugging it in" %}
                     </h3>
-                    <span class="badge badge-secondary">Coming soon</span>
+                    {% if prod_deployment %}
+                        <span class="badge badge-secondary">Coming soon</span>
+                    {% endif %}
+                    {% if LANGUAGE_CODE != "en" %}
+                        {% include "generic/not-available-badge.html" %}
+                    {% endif %}
                 </a>
             </div>
         </div>

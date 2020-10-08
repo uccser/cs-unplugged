@@ -3,15 +3,3 @@
 ## Requirement:
 
 Write a program that asks the user to type in a number between 0 and 127 (60 is middle C) as the input and displays the corresponding MIDI note name as well as playing the note (the midi value mod 12 will be 0 to 11 for C, C#, D, Eb, E, F, F#, G, G#, A, Bb, B - and these can be looked up in a list).
-
-## Testing examples:
-
-Your program should display the outputs shown in this table for the given inputs provided;
-
-| Input     | Output      |
-| --------- | ----------- |
-| 60        | C           |
-| 34        | Bb          |
-| 85        | C#          |
-| 127       | G           |
-| 0         | C           |

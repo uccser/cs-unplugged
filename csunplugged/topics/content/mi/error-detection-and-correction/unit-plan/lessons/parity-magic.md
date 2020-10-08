@@ -20,7 +20,7 @@ Ka whakamahi ngā pakeke i ngā rorohiko mō ngā kaupapa nui, pērā ki te whak
 
 # Mātakitakihia te whakaako mō tēnei
 
-{video url="https://www.youtube.com/embed/FnwBratAhfg"}
+{video url="https://vimeo.com/437726658"}
 
 {panel end}
 

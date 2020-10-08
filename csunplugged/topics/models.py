@@ -207,6 +207,7 @@ class ProgrammingChallenge(TranslatableModel):
     challenge_set_number = models.PositiveSmallIntegerField()
     challenge_number = models.PositiveSmallIntegerField()
     content = models.TextField(default="")
+    testing_examples = models.TextField(default="")
     extra_challenge = models.TextField(default="")
     learning_outcomes = models.ManyToManyField(
         LearningOutcome,
@@ -229,6 +230,14 @@ class ProgrammingChallenge(TranslatableModel):
             "programming_challenge_slug": self.slug
         }
         return reverse("topics:programming_challenge", kwargs=kwargs)
+
+    def get_learning_outcomes(self):
+        """Return an ordered QuerySet of translated learning outcomes.
+
+        Returns:
+            Ordered QuerySet.
+        """
+        return self.learning_outcomes(manager="translated_objects").order_by("text")
 
     def ordered_implementations(self):
         """Return an ordered QuerySet of implementations.
@@ -263,6 +272,7 @@ class ProgrammingChallengeLanguage(TranslatableModel):
     name = models.CharField(max_length=200)
     number = models.PositiveSmallIntegerField()
     icon = models.CharField(max_length=100, null=True)
+    programming_reminders = models.TextField(default="")
 
     def __str__(self):
         """Text representation of ProgrammingChallengeLanguage object.
@@ -275,6 +285,8 @@ class ProgrammingChallengeLanguage(TranslatableModel):
 
 class ProgrammingChallengeImplementation(TranslatableModel):
     """Model for programming challenge language implementation in database."""
+
+    RETURN_TO_PARENT = _("Return to programming challenge")
 
     #  Auto-incrementing 'id' field is automatically set by Django
     topic = models.ForeignKey(
@@ -388,7 +400,7 @@ class Lesson(TranslatableModel):
         """
         return bool(self.programming_challenges.all())
 
-    def retrieve_related_programming_challenges(self):
+    def retrieve_related_programming_challenges(self, language_filter="all"):
         """Retrieve the lesson's programming challenges and update numbers.
 
         Returns:
@@ -399,6 +411,10 @@ class Lesson(TranslatableModel):
             "challenge_number",
             "name",
         )
+
+        if language_filter != "all":
+            programming_challenges = programming_challenges.filter(implementations__language__name=language_filter)
+
         for programming_challenge in programming_challenges:
             challenge_numbers = ProgrammingChallengeNumber.objects.get(
                 lesson=self,
@@ -407,6 +423,18 @@ class Lesson(TranslatableModel):
             programming_challenge.challenge_set_number = challenge_numbers.challenge_set_number
             programming_challenge.challenge_number = challenge_numbers.challenge_number
         return programming_challenges
+
+    def challenge_languages(self):
+        """Retrieve the lesson's programming challenge languages.
+
+        Returns:
+            QuerySet of languages for this lesson.
+        """
+        return ProgrammingChallengeLanguage.objects \
+            .filter(implementations__challenge__lessons=self) \
+            .distinct() \
+            .order_by('name') \
+
 
     def get_absolute_url(self):
         """Return the canonical URL for a lesson.

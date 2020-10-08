@@ -1,0 +1,1 @@
+The binary representation for the number 0 is BBBBB
