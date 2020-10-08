@@ -7,7 +7,7 @@ from topics.models import (
 )
 
 
-def group_lessons_by_age(lessons):
+def group_lessons_by_age(lessons, only_programming_exercises=False):
     """Return ordered groups of lessons.
 
     Lessons are grouped by the lesson minimum age and maximum ages,
@@ -25,9 +25,10 @@ def group_lessons_by_age(lessons):
     grouped_lessons = OrderedDict()
     for age_group in AgeGroup.objects.distinct():
         for lesson in age_group.lessons.filter(id__in=lessons).order_by("lessonnumber"):
-            lesson.number = LessonNumber.objects.get(lesson=lesson, age_group=age_group).number
-            if age_group in grouped_lessons.keys():
-                grouped_lessons[age_group].append(lesson)
-            else:
-                grouped_lessons[age_group] = [lesson]
+            if not only_programming_exercises or (only_programming_exercises and lesson.has_programming_challenges()):
+                lesson.number = LessonNumber.objects.get(lesson=lesson, age_group=age_group).number
+                if age_group in grouped_lessons.keys():
+                    grouped_lessons[age_group].append(lesson)
+                else:
+                    grouped_lessons[age_group] = [lesson]
     return grouped_lessons

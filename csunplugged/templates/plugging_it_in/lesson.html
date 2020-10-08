@@ -1,0 +1,53 @@
+{% extends "base-plugging-it-in.html" %}
+
+{% load i18n %}
+{% load static %}
+{% load render_html_field %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}
+  {% blocktrans with name=topic.name %}{{ name }} Programming Exercises{% endblocktrans %}
+{% endblock title %}
+
+{% block breadcrumbs %}
+  {% breadcrumb topic.name "plugging_it_in:index" %}
+  {% breadcrumb lesson.name "plugging_it_in:lesson" topic.slug lesson.slug %}
+{% endblock breadcrumbs %}
+
+{% block page_heading %}
+  <h1 id="{{ lesson.slug }}">{% blocktrans with name=lesson.name %}{{ name }} programming exercises{% endblocktrans %}</h1>
+
+{% endblock page_heading %}
+
+{% block content %}
+  {% if programming_challenges %}
+    <nav>
+      <div class="nav nav-tabs mt-2" id="nav-tab" role="tablist">
+        {% for language in lesson.challenge_languages %}
+          <a class="nav-item nav-link {% if forloop.first %}active{% endif %}" id="{{language.slug}}-tab" data-toggle="tab" data-target="#nav-{{language.slug}}" role="tab" aria-controls="{{language.slug}}" aria-selected="false">
+            {{language.name}}
+            <img src="{% get_static_prefix %}{{ language.icon }}" class="inline-image-small pl-1" />
+          </a>
+        {% endfor %}
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+      {% for language in lesson.challenge_languages %}
+        <div class="tab-pane fade {% if forloop.first %}show active{% endif %}" id="nav-{{language.slug}}" role="tabpanel" aria-labelledby="{{language.slug}}">
+          {% if language.slug == "scratch" %}
+            <div class="alert alert-danger my-3" role="alert">
+              {% trans "Scratch challenges have not been updated to our new plugging it in system. However, you can still access the old content using the links below." %}
+            </div>
+          {% endif %}
+          {% include "plugging_it_in/programming-challenges-table.html" with language=language.name %}
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>{% blocktrans trimmed %}No programming challenges for {{ topic }}.{% endblocktrans %}</p>
+  {% endif %}
+{% endblock content %}
+
+{% block scripts %}
+    <script src="{% static 'js/plugging-it-in-challenges.js' %}"></script>
+{% endblock scripts %}

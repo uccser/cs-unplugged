@@ -6,12 +6,12 @@ NOTE
 Computer Science Education Research,
 University of Canterbury, New Zealand
 Subtitle file for the video "CS Unplugged: Parity Magic"
-Author: Alasdair Smith
-Date: 13/02/2017
+Author: Alasdair Smith 13/02/2017
+Edited by: Courtney Bracefield 05/08/2020
 
 00:00.000 --> 00:04.000
 Informatique Débranchée
-<i>L'informatique sans ordinateur</i>
+L'informatique sans ordinateur
 
 00:04.600 --> 00:06.200
 La Parité Magique
@@ -230,8 +230,8 @@ combien de cartes noires pouvez-vous voir sur cette ligne ?
 Et combien de cartes noires sur celle-ci ?
 
 04:25.600 --> 04:33.000
-["Quatre"] <04:27.400> ["Quatre"] <04:29.200> ["Deux"]
-<04:30.800> ["Quatre"] <04:32.400> ["Quatre"]
+["Quatre"] ["Quatre"] ["Deux"]
+["Quatre"] ["Quatre"]
 
 04:33.000 --> 04:38.200
 Ok, maintenant regardons les colonnes,
@@ -240,8 +240,8 @@ combien il y en a sur cette colonne ?
 NOTE changed 'how many is in' to 'how many are in'
 
 04:38.200 --> 04:48.000
-["Deux"] <04:40.400> ["Six"] <04:42.200> ["Quatre"]
-<04:43.600> ["Deux"] <04:45.000> ["Quatre"] <04:46.600> ["Quatre"]
+["Deux"] ["Six"] ["Quatre"]
+["Deux"] ["Quatre"] ["Quatre"]
 
 04:48.000 --> 04:52.000
 Hmm, qu'est-ce que ces nombres ont en commun ?
@@ -251,7 +251,7 @@ Comment sont-ils ? Comment est-ce qu'on pourrait classer ces nombres ?
 Oui ?
 
 04:56.000 --> 04:57.400
-<i>Nombres pairs ?</i>
+Nombres pairs ?
 
 04:57.400 --> 05:00.000
 Hmm, levez la main si vous êtes d'accord avec cette affirmation ?
@@ -279,8 +279,8 @@ NOTE Changed 'Why' to 'How'
 Qu'est-ce que j'étais en train de faire ?
 
 05:22.000 --> 05:28.000
-<i> Um, vous étiez en train de, heu,
-ajouter une carte noire pour pouvoir les mémoriser plus facilement ?</i>
+ Um, vous étiez en train de, heu,
+ajouter une carte noire pour pouvoir les mémoriser plus facilement ?
 
 05:28.000 --> 05:31.600
 Ah oui ? Si je ne fais pas ça
@@ -313,7 +313,7 @@ et vous aller me dire ce qu'il faut ajouter.
 
 06:02.800 --> 06:08.600
 Je vais également effacer les nombres 
-pour que vous n'ayez pas d'indices,<06:07.04> Ok ?
+pour que vous n'ayez pas d'indices, Ok ?
 
 06:08.600 --> 06:11.000
 Vous êtes prêts ?
@@ -324,27 +324,27 @@ et me dire ce que je dois faire ici.
 Que dois-je faire ici ?
 
 06:13.800 --> 06:18.800
-["Noir"] <06:15.600> ["Noir"]
-<06:17.200>[Brouhaha confus]
+["Noir"] ["Noir"]
+[Brouhaha confus]
 
 06:18.800 --> 06:22.400
-<i>Noir</i>
+Noir
 
 06:22.400 --> 06:27.200
-["Blanc"] <06:25.200> ["Noir"]
+["Blanc"] ["Noir"]
 
 06:27.200 --> 06:30.600
 Très bien, maintenant toutes les lignes sont faites, passons aux colonnes.
 
 06:30.600 --> 06:37.800
-["Noir"] <06:32.200> ["Noir"]
-<06:34.400> ["Noir"] <06:36.200> ["Blanc"]
+["Noir"] ["Noir"]
+["Noir"] ["Blanc"]
 
 06:37.800 --> 06:40.200
 Oups, désolée
 
 06:40.200 --> 06:43.600
-["Noir"] <06:42.200> ["Blanc"]
+["Noir"] ["Blanc"]
 
 06:43.600 --> 06:47.200
 Ok je veux que vous regardiez ce qu'il se passe ici,
@@ -358,7 +358,7 @@ est-ce que cette colonne est correcte ?
 
 06:54.600 --> 06:58.000
 Est-ce que cette ligne est correcte ?
-<06:57.000> ["Oui"]
+["Oui"]
 
 06:58.000 --> 07:04.000
 Donc ce coin ici rassemble
@@ -406,24 +406,24 @@ et nous allons t'aider un peu.
 Cette ligne ici, combien il y en a ?
 
 07:57.400 --> 07:59.000
-<i>Quatre</i>
-Est-ce correct ? <i>Oui</i>
+Quatre
+Est-ce correct ? Oui
 
 07:59.000 --> 08:02.200
-Qu'en est-il de celle-ci ? <i>Quatre</i>
-Est-ce correct ? <i>Oui</i>
+Qu'en est-il de celle-ci ? Quatre
+Est-ce correct ? Oui
 
 08:02.200 --> 08:04.800
-Qu'en est-il de celle-ci ? <i>Quatre</i>
-Est-ce correct ? <i>Oui</i>
+Qu'en est-il de celle-ci ? Quatre
+Est-ce correct ? Oui
 
 08:04.800 --> 08:07.400
-Et celle-ci ? <i>Deux</i>
-Est-ce correct ? <i>Oui</i>
+Et celle-ci ? Deux
+Est-ce correct ? Oui
 
 08:07.400 --> 08:10.400
 Et celle-là ?
-<08:08.400><i>Trois, donc il doit y avoir un problème.</i>
+Trois, donc il doit y avoir un problème.
 
 08:10.400 --> 08:14.600
 Ahahahaa ! Traçons un cercle autour de cette ligne,
@@ -434,11 +434,11 @@ Je pense qu'il y a un problème, car c'est un nombre impair.
 
 08:18.600 --> 08:21.400
 Doit-on vérifier la prochaine ligne ?
-<08:20.600>["Non"]
+["Non"]
 
 08:21.400 --> 08:24.400
 Pourquoi pas ?
-<08:22.04><i>Parce que nous avons déjà trouvé la réponse.</i>
+Parce que nous avons déjà trouvé la réponse.
 
 08:24.400 --> 08:28.800
 Nous avons déjà trouvé la réponse et nous savons
@@ -451,23 +451,23 @@ Combien il y en a ici ?
 NOTE changed 'is' to 'are'
 
 08:32.000 --> 08:32.800
-<i>Deux</i>
+Deux
 
 08:32.800 --> 08:34.000
 Est-ce que c'est juste ?
-<i> Oui</i>
+ Oui
 
 08:34.000 --> 08:36.800
-Et celle-ci ? <i>Six</i>
-Est-ce correct ? <i>Oui</i>
+Et celle-ci ? Six
+Est-ce correct ? Oui
 
 08:36.800 --> 08:39.600
-Qu'en est-il de celle-ci ? <i>Quatre</i>
-Est-ce correct ? <i>Oui</i>
+Qu'en est-il de celle-ci ? Quatre
+Est-ce correct ? Oui
 
 08:39.600 --> 08:43.600
 Et celle-là ?
-<i> Une, donc il y a un problème détecté.</i>
+ Une, donc il y a un problème détecté.
 
 08:43.600 --> 08:46.400
 Il y a un problème ici, regardons ça.
@@ -476,12 +476,12 @@ Il y a un problème ici, regardons ça.
 Donc, quelle carte a retourné Robert ?
 
 08:49.400 --> 08:53.600
-<i>Celle-ci, car elle est entourée ici
-et elle est entourée là.</i>
+Celle-ci, car elle est entourée ici
+et elle est entourée là.
 
 08:53.600 --> 08:57.000
-<i> Donc ça me donne directement
-l'endroit de la carte retournée.</i>
+ Donc ça me donne directement
+l'endroit de la carte retournée.
 
 08:57.000 --> 08:59.400
 Tu peux la retourner, beau travail !
@@ -492,7 +492,7 @@ que c'était la carte retournée.
 
 09:02.800 --> 09:11.400
 Très bien applaudissons-le, bravo !
-<09:07.600>Merci Robert.
+Merci Robert.
 
 09:11.400 --> 09:15.200
 Bien, pourquoi est-ce qu'on apprend ça avec

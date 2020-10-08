@@ -25,9 +25,9 @@ urlpatterns += [
 ]
 
 if not env("DEPLOYMENT", default=None) == "prod":
-    urlpatterns += [
+    urlpatterns += i18n_patterns(
         path('plugging-it-in/', include('plugging_it_in.urls', namespace='plugging_it_in')),
-    ]
+    )
 
 if settings.DEBUG:  # pragma: no cover
     import debug_toolbar

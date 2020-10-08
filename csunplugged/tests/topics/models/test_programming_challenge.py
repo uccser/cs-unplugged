@@ -52,13 +52,13 @@ class ProgrammingChallengeModelTest(BaseTestWithDB):
         topic = self.test_data.create_topic(1)
         difficulty = self.test_data.create_difficulty_level(1)
         challenge = self.test_data.create_programming_challenge(topic, 1, difficulty)
-        self.test_data.create_programming_challenge_test_case(
+        test_case = self.test_data.create_programming_challenge_test_case(
             1,
             challenge
         )
         self.assertQuerysetEqual(
             ProgrammingChallenge.objects.get(slug="challenge-1").related_test_cases(),
             [
-                "<TestCase: TestCase object (1)>",
+                f"<TestCase: TestCase object ({test_case.pk})>",
             ]
         )

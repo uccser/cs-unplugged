@@ -1,5 +1,5 @@
 For the input
-```
+```text
 6
 4
 3
@@ -7,7 +7,7 @@ For the input
 done
 ```
 the code will output:
-```
+```text
 Enter a number:
 Enter 'done' at any time to stop.
 Enter a number to check if it's a divisor of the number 6

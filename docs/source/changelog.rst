@@ -23,6 +23,51 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+6.0.0
+==============================================================================
+
+- **Release date:** 8th October 2020
+- **Downloads:** `Source downloads are available on GitHub <https://github.com/uccser/cs-unplugged/releases/>`__
+
+**Summary of changes:**
+
+This release adds the 'Plugging it in' area of the website.
+
+**Changelog:**
+
+- Add 'Plugging it in' area of the website:
+    - Includes 21 programming challenges in Python for Binary Numbers.
+    - Includes 9 programming challenges in Python for Kidbots.
+    - Saves a users code attempt and their status on the question.
+    - User code tested on the JOBE server.
+    - Scratch questions are not supported.
+    - User triggered walk-through on programming challenge page. 
+- Add learning outcome and solution content to programming challenges table in the educators area.
+- Replace content under the Python dropdown on programming challenge pages in CSU with a link to the same challenge in Plugging it in.
+- Order glossary terms alphabetically for all languages.
+- Solutions provided on the standard CSU site now pass the tests for the respective programming challenge on the CSU Plugging it in site.
+- Host videos on Vimeo instead of YouTube.
+- Re-number product code check digits programming challenges.
+- Edit the formatting of subtitle files for Vimeo.
+- Put testing examples for programming challenges into a separate markdown file.
+- Add Google Tag Manager.
+- Minor content fixes.
+
+- Dependency updates:
+
+    - Update coverage from 5.1 to 5.2.1.
+    - Update django-modeltranslation from 0.14.1 to 0.15.2.
+    - Update django-extensions from 2.2.9 to 3.0.8.
+    - Update flake8 from 3.8.2 to 3.8.3.
+    - Update lxml from 4.5.1 to 4.5.2.
+    - Update Pillow from 7.1.2 to 7.2.0.
+    - Update pydocstyle from 5.0.2 to 5.1.1.
+    - Update requests from 2.23.0 to 2.24.0.
+    - Update sphinx from 3.0.4 to 3.2.1.
+    - Update sphinx-rtd-theme from 0.4.3 to 0.5.0.
+    - Update tqdm from 4.46.1 to 4.48.2.
+    - Update wheel from 0.34.2 to 0.35.1.
+
 5.1.1
 ==============================================================================
 

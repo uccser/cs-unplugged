@@ -23,12 +23,12 @@ people probably can't speed it up).
 
 # See teaching this in action
 
-{video url="https://www.youtube.com/embed/M-z5pDjqtZk"}
+{video url="https://vimeo.com/437722996"}
 
 Some other videos showing different situations using Sorting Networks:
 
--   [Video 1](https://www.youtube.com/watch?v=LOxfdsBBjKI)
--   [Video 2](https://www.youtube.com/watch?v=30WcPnvfiKE)
+-   [Video 1](https://vimeo.com/437726931)
+-   [Video 2](https://vimeo.com/437726955)
 
 {panel end}
 
