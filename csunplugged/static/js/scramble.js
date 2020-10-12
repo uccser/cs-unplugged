@@ -12,6 +12,8 @@
 // BREAK EARLIER VERSIONS
 const VERSION = 0;
 
+const UTF16 = 65535; // Number of UTF-16 characters possible
+
 /**
  * Uses an implementation of the Vigenère cipher to encode the given string with
  * the given key string.
@@ -22,7 +24,7 @@ function encode(s, key) {
   characters = s.split('');
   len = key.length;
   for (var i=0; i < characters.length; i++) {
-    characters[i] = characters[i].charCodeAt(0) + key[i % len].charCodeAt(0);
+    characters[i] = (characters[i].charCodeAt(0) + key[i % len].charCodeAt(0)) % UTF16;
   }
   return [String.fromCharCode(...characters), VERSION]; // ... is ES6 spread
 }
@@ -40,7 +42,7 @@ function decode(s, key, version) {
   characters = s.split('');
   len = key.length;
   for (var i=0; i < characters.length; i++) {
-    characters[i] = characters[i].charCodeAt(0) - key[i % len].charCodeAt(0);
+    characters[i] = (characters[i].charCodeAt(0) - key[i % len].charCodeAt(0)) % UTF16;
   }
   return String.fromCharCode(...characters); // ... is ES6 spread
 }
