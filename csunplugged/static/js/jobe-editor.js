@@ -4,6 +4,7 @@ const codeTester = require("./test-code.js");
 const editorUtils = require("./editor-options-menu.js")
 
 var CodeMirror = require("codemirror");
+var Scramble = require("./scramble.js");
 require("codemirror/mode/python/python.js");
 
 // Set up code mirror editor
@@ -29,7 +30,17 @@ let myCodeMirror = CodeMirror.fromTextArea(myTextarea, {
 });
 
 // Set the editor to show the saved attempt if it exists
-myCodeMirror.getDoc().setValue(saved_attempts[current_challenge_slug] ? saved_attempts[current_challenge_slug]["code"] : "");
+var saved_attempt = saved_attempts[current_challenge_slug];
+if (saved_attempt) {
+  try {
+    myCodeMirror.getDoc().setValue(Scramble.decode(saved_attempt["code"], saved_attempt["encode_key"], saved_attempt["encode_ver"]));
+  } catch (e) { // Fall back to displaying nothing
+    console.warn(e);
+    myCodeMirror.getDoc().setValue("");
+  }
+} else {
+  myCodeMirror.getDoc().setValue("");
+}
 
 /**
  * Retrieves code from the code mirror editor, runs all the test cases then updates the results table.
@@ -75,12 +86,18 @@ function allCorrect(results) {
  */
 async function save_code(status="started") {
   let raw_code = myCodeMirror.getValue();
+  let scramble_key = Scramble.randomKey(6);
+  let scrambled = Scramble.encode(raw_code, scramble_key);
+  let scrambled_code = scrambled[0];
+  let scramble_version = scrambled[1];
 
   // Sets the saved attempt
   let data = {
       "challenge": current_challenge_slug,
-      "attempt": raw_code,
-      "status": status
+      "attempt": scrambled_code,
+      "status": status,
+      "encode_key": scramble_key,
+      "encode_ver": scramble_version,
   }
 
   // Saves the code in the django session

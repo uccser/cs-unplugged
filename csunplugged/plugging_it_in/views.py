@@ -196,7 +196,9 @@ class SaveAttemptView(View):
                 and body["attempt"] != ""):
             request.session['saved_attempts'][body["challenge"]] = {
                 "status": body["status"],
-                "code": body["attempt"]
+                "code": body["attempt"],
+                "encode_key": body['encode_key'],
+                "encode_ver": body['encode_ver'],
             }
             return HttpResponse("Saved the attempt.")
         else:

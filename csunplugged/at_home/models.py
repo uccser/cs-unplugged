@@ -87,3 +87,5 @@ class ChallengeSubmission(models.Model):
     language = models.CharField(max_length=25)
     answer = models.CharField(max_length=200, default="")
     correct = models.BooleanField()
+    encode_key = models.CharField(max_length=20, default="")
+    encode_ver = models.IntegerField(default=-1)
