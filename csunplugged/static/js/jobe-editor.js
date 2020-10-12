@@ -86,7 +86,7 @@ function allCorrect(results) {
  */
 async function save_code(status="started") {
   let raw_code = myCodeMirror.getValue();
-  let scramble_key = Scramble.randomKey(6);
+  let scramble_key = Scramble.randomKey(16);
   let scrambled = Scramble.encode(raw_code, scramble_key);
   let scrambled_code = scrambled[0];
   let scramble_version = scrambled[1];
