@@ -1,5 +1,5 @@
 /**                                                                           *
- *         A not necessarily secure class for encrypting JS strings           *
+ *         A not necessarily secure class for encoding JS strings             *
  *                                                                            *
  *              THE PURPOSE OF THIS MODULE IS NOT ENCRYPTION                  *
  *                                                                            *
