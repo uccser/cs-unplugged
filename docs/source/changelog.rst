@@ -26,12 +26,12 @@ All notable changes to this project will be documented in this file.
 6.0.1
 ==============================================================================
 
-- **Release date:** 14th October 2020
+- **Release date:** 15th October 2020
 - **Downloads:** `Source downloads are available on GitHub <https://github.com/uccser/cs-unplugged/releases/>`__
 
 **Changelog:**
 
-- Fix bug that allowed a user to insert executable Javascript into their copy of a Plugging it in challenge template.
+- Fix bug that allowed a user to insert working HTML into their copy of a Plugging it in challenge template.
 
 6.0.0
 ==============================================================================
