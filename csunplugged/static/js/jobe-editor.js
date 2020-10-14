@@ -28,9 +28,6 @@ let myCodeMirror = CodeMirror.fromTextArea(myTextarea, {
   }
 });
 
-// Set the editor to show the saved attempt if it exists
-myCodeMirror.getDoc().setValue(saved_attempts[current_challenge_slug] ? saved_attempts[current_challenge_slug]["code"] : "");
-
 /**
  * Retrieves code from the code mirror editor, runs all the test cases then updates the results table.
  * Disables the "CHECK" button and shows a loading spinner while request is being processed.

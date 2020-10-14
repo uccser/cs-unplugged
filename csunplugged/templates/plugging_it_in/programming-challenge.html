@@ -129,7 +129,7 @@
     </div>
     <div class="col-12 col-md-4 programming__editor">
       <p class='pii-block-heading'>{% trans "Enter your code in the editor below" %}</p>
-      <textarea id="codemirror_editor"></textarea>
+      <textarea id="codemirror_editor">{{ previous_submission|safe }}</textarea>
       <div class="programming__submit d-flex justify-content-between align-items-center">
         <div class="programming__submit_options d-flex justify-content-start">
           <button class="editor_button" id="editor_run_button" >{% trans "Check" %}</button>
@@ -188,7 +188,6 @@
     let csrf_token = '{{ csrf_token }}';
     let jobe_proxy_url = '{{ jobe_proxy_url }}';
     let save_attempt_url = "{% url 'plugging_it_in:save_attempt' %}"
-    let saved_attempts = {{ saved_attempts|safe }}
   </script>
 
   <script src="{% static 'js/jobe-editor.js' %}"></script>
