@@ -23,6 +23,16 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+6.0.1
+==============================================================================
+
+- **Release date:** 15th October 2020
+- **Downloads:** `Source downloads are available on GitHub <https://github.com/uccser/cs-unplugged/releases/>`__
+
+**Changelog:**
+
+- Fix bug that allowed a user to insert working HTML into their copy of a Plugging it in challenge template.
+
 6.0.0
 ==============================================================================
 
