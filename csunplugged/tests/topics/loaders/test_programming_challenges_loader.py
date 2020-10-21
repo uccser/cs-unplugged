@@ -65,6 +65,17 @@ class ProgrammingChallengesLoaderTest(BaseTestWithDB):
         with self.assertRaises(CouldNotFindMarkdownFileError):
             pc_loader.load()
 
+    def test_missing_testing_examples(self):
+        config_file = "missing-testing-examples.yaml"
+
+        self.test_data.create_difficulty_level("1")
+        self.test_data.create_programming_language("1")
+        topic = self.test_data.create_topic("1")
+
+        pc_loader = ProgrammingChallengesLoader(topic, structure_filename=config_file, base_path=self.base_path)
+        with self.assertRaises(CouldNotFindMarkdownFileError):
+            pc_loader.load()
+
     def test_missing_expected_result(self):
         config_file = "missing-expected-result.yaml"
 

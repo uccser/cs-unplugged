@@ -207,6 +207,7 @@ class ProgrammingChallenge(TranslatableModel):
     challenge_set_number = models.PositiveSmallIntegerField()
     challenge_number = models.PositiveSmallIntegerField()
     content = models.TextField(default="")
+    testing_examples = models.TextField(default="")
     extra_challenge = models.TextField(default="")
     learning_outcomes = models.ManyToManyField(
         LearningOutcome,
@@ -271,6 +272,7 @@ class ProgrammingChallengeLanguage(TranslatableModel):
     name = models.CharField(max_length=200)
     number = models.PositiveSmallIntegerField()
     icon = models.CharField(max_length=100, null=True)
+    programming_reminders = models.TextField(default="")
 
     def __str__(self):
         """Text representation of ProgrammingChallengeLanguage object.
