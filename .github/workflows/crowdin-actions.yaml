@@ -1,0 +1,156 @@
+name: Synchronise with Crowdin
+
+on:
+  schedule:
+    - cron:  '0 3 * * *'
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
+  CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+
+jobs:
+  synchronise-with-crowdin:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    
+    - name: Upload or update source files to Crowdin
+      uses: crowdin/github-action@1.0.10
+      with:
+        upload_sources: true
+
+    - name: Download Chinese (simplified) translations
+      uses: crowdin/github-action@1.0.10
+      with:
+        upload_sources: false
+        download_translations: true
+        download_language: 'zh-CN'
+        skip_untranslated_strings: true
+        skip_untranslated_files: true
+        export_only_approved: true
+        push_translations: true
+        commit_message: 'Update Chinese (simplified) Crowdin translations by Github Action'
+        localization_branch_name: translation-zh-cn
+        create_pull_request: true
+        pull_request_title: 'Update Chinese (simplified) language translations'
+        pull_request_body: 'This pull request will add/update Chinese (simplified) language files from Crowdin.'
+        pull_request_labels: 'internationalization'
+        pull_request_base_branch_name: develop
+        config: crowdin.yaml
+
+    - name: Download French translations
+      uses: crowdin/github-action@1.0.10
+      with:
+        upload_sources: false
+        download_translations: true
+        download_language: 'fr'
+        skip_untranslated_strings: true
+        skip_untranslated_files: true
+        export_only_approved: true
+        push_translations: true
+        commit_message: 'Update French Crowdin translations by Github Action'
+        localization_branch_name: translation-fr
+        create_pull_request: true
+        pull_request_title: 'Update French language translations'
+        pull_request_body: 'This pull request will add/update French language files from Crowdin.'
+        pull_request_labels: 'internationalization'
+        pull_request_base_branch_name: develop
+        config: crowdin.yaml
+
+    - name: Download German translations
+      uses: crowdin/github-action@1.0.10
+      with:
+        upload_sources: false
+        download_translations: true
+        download_language: 'de'
+        skip_untranslated_strings: true
+        skip_untranslated_files: true
+        export_only_approved: true
+        push_translations: true
+        commit_message: 'Update German Crowdin translations by Github Action'
+        localization_branch_name: translation-de
+        create_pull_request: true
+        pull_request_title: 'Update German language translations'
+        pull_request_body: 'This pull request will add/update German language files from Crowdin.'
+        pull_request_labels: 'internationalization'
+        pull_request_base_branch_name: develop
+        config: crowdin.yaml
+
+    - name: Download Indonesian translations
+      uses: crowdin/github-action@1.0.10
+      with:
+        upload_sources: false
+        download_translations: true
+        download_language: 'id'
+        skip_untranslated_strings: true
+        skip_untranslated_files: true
+        export_only_approved: true
+        push_translations: true
+        commit_message: 'Update Indonesian Crowdin translations by Github Action'
+        localization_branch_name: translation-id
+        create_pull_request: true
+        pull_request_title: 'Update Indonesian language translations'
+        pull_request_body: 'This pull request will add/update Indonesian language files from Crowdin.'
+        pull_request_labels: 'internationalization'
+        pull_request_base_branch_name: develop
+        config: crowdin.yaml
+
+    - name: Download Italian translations
+      uses: crowdin/github-action@1.0.10
+      with:
+        upload_sources: false
+        download_translations: true
+        download_language: 'it'
+        skip_untranslated_strings: true
+        skip_untranslated_files: true
+        export_only_approved: true
+        push_translations: true
+        commit_message: 'Update Italian Crowdin translations by Github Action'
+        localization_branch_name: translation-it
+        create_pull_request: true
+        pull_request_title: 'Update Italian language translations'
+        pull_request_body: 'This pull request will add/update Italian language files from Crowdin.'
+        pull_request_labels: 'internationalization'
+        pull_request_base_branch_name: develop
+        config: crowdin.yaml
+
+    - name: Download Te Reo Māori translations
+      uses: crowdin/github-action@1.0.10
+      with:
+        upload_sources: false
+        download_translations: true
+        download_language: 'mi'
+        skip_untranslated_strings: true
+        skip_untranslated_files: true
+        export_only_approved: true
+        push_translations: true
+        commit_message: 'Update Te Reo Māori Crowdin translations by Github Action'
+        localization_branch_name: translation-mi
+        create_pull_request: true
+        pull_request_title: 'Update Te Reo Māori language translations'
+        pull_request_body: 'This pull request will add/update Te Reo Māori language files from Crowdin.'
+        pull_request_labels: 'internationalization'
+        pull_request_base_branch_name: develop
+        config: crowdin.yaml
+
+    - name: Download Turkish translations
+      uses: crowdin/github-action@1.0.10
+      with:
+        upload_sources: false
+        download_translations: true
+        download_language: 'tr'
+        skip_untranslated_strings: true
+        skip_untranslated_files: true
+        export_only_approved: true
+        push_translations: true
+        commit_message: 'Update Turkish Crowdin translations by Github Action'
+        localization_branch_name: translation-tr
+        create_pull_request: true
+        pull_request_title: 'Update Turkish language translations'
+        pull_request_body: 'This pull request will add/update Turkish language files from Crowdin.'
+        pull_request_labels: 'internationalization'
+        pull_request_base_branch_name: develop
+        config: crowdin.yaml
