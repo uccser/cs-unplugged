@@ -53,10 +53,6 @@ body {
       #challenge_progression_text {
         font-size: 20px;
       }
-
-      #lessons_nav_toggle:hover {
-        cursor: pointer;
-      }
     }
 
     .prev {
@@ -71,7 +67,13 @@ body {
 
     .next {
       color: $student-colour;
-      background-color: #ffea00;
+      background-color: white;
+    }
+
+    .next:hover {
+      color: white;
+      background-color: $student-colour;
+      border-color: white;
     }
   }
 
@@ -118,12 +120,24 @@ body {
   height: 100%;
   padding: 20px 10px;
   padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+
+  #info-panel-heading {
+    margin-left: 5px;
+  }
+
+  #lessons_nav_toggle:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
   
   .programming__info-area-content {
+    flex-shrink: 1;
     background-color: white;
     overflow-y: auto;
     padding: 1.25rem !important;
-    height: 100%;
+    max-height: 100%;
     width: 100%;
     border: 1px solid grey;
     border-radius: 15px;
@@ -181,7 +195,7 @@ body {
 
     .code_running_spinner {
       display: none;
-      color: #5a9fffff;
+      color: $student-colour-light;
       margin-right: 0.625rem;
     }
 
@@ -191,8 +205,8 @@ body {
     
       .editor_button {
         border: none;
-        background-color: #5a9fffff;
-        border: 2px solid #5a9fffff;
+        background-color: $student-colour-light;
+        border: 2px solid $student-colour-light;
         color: white;
         height: 80%;
         padding: 0px 20px;
@@ -210,8 +224,8 @@ body {
       }
 
       #download_button {
-        border: 2px solid #5a9fffff;
-        color: #5a9fffff; 
+        border: 2px solid $student-colour-light;
+        color: $student-colour-light; 
         background-color: transparent;
       }
 
@@ -253,6 +267,10 @@ body {
 
   .programming__results {
     padding-bottom: 160px !important;
+  }
+
+  #walkthrough-btn-container {
+    display: none; // The walkthrough is unnavigable on small screens
   }
 }
 
@@ -300,7 +318,7 @@ body {
   hr {
     height: 3px;
     margin-top: 0px;
-    background: $student-colour-light;
+    background: $student-colour;
   }
 
   .challenges-heading {
@@ -314,6 +332,7 @@ body {
     .badge {
       margin-right: 10px;
       min-width: 40px;
+      background-color: $student-colour;
 
       h5 {
         color: white;
@@ -352,6 +371,7 @@ body {
   font-size: 36px;
   margin-left: 50px;
   z-index: 1004;
+  color: $student-colour
 }
 
 
@@ -386,4 +406,24 @@ body {
   font-size: 10px;
   padding: 0px 5px !important;
   margin: 0px;
+}
+
+#walkthrough-btn-container {
+  padding: 0px 15px !important;
+}
+
+#introjs-walkthrough {
+  color: $student-colour-light;
+  border-color: $student-colour-light;
+  border-radius: 20px;
+  &:hover {
+    cursor: pointer;
+    background-color: #1b7bffff;
+    border-color: #1b7bffff;
+    color: white;
+  }
+}
+
+.introjs-fixParent{
+  position: absolute !important;
 }
