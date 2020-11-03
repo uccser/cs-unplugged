@@ -15,6 +15,10 @@
     {% endblock breadcrumbs %}
 {% endblock complete_breadcrumbs %}
 
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/at-home-footer.css' %}" >
+{% endblock css %}
+
 {% block navbar %}
     <nav class="navbar navbar-at-home fixed-top navbar-expand-md navbar-dark py-1 d-print-none{% block navbar_class_overrides %}{% endblock navbar_class_overrides %}">
         <div class="container px-0">

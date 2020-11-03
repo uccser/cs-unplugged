@@ -67,8 +67,8 @@ function setupLessonNav() {
   $("#sidebar_overlay").click(closeNav);
   $("#close_nav_button").click(closeNav);
 
-  // Sets the question progression text.
-  const progressionText = `Question <strong>${getCurrentIndex()+1}</strong> of <strong>${programming_exercises.length}</strong>`;
+  // Sets the challenge progression text.
+  const progressionText = `Challenge <strong>${getCurrentIndex()+1}</strong> of <strong>${programming_exercises.length}</strong>`;
   document.getElementById("challenge_progression_text").innerHTML = progressionText;
 
   // Add testing examples info to the requirements block (temporary)
@@ -79,7 +79,8 @@ function setupLessonNav() {
   const index = getCurrentIndex();
   if (index === programming_exercises.length-1) {
     $("#next_challenge_button").find('button').hide()
-  } else if (index === 0) {
+  }
+  if (index === 0) {
     $("#prev_challenge_button").find('button').hide()
   }
 }

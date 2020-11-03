@@ -1,7 +1,8 @@
 @import "node_modules/bootstrap/scss/functions";
-@import "node_modules/bootstrap/scss/mixins";
-@import "bootstrap-overrides";
 @import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+@import "core-variables";
+@import "bootstrap-overrides";
 @import "node_modules/bootstrap/scss/root";
 @import "node_modules/bootstrap/scss/reboot";
 @import "node_modules/bootstrap/scss/type";
@@ -42,17 +43,6 @@
 @import "directional";
 @import url('https://fonts.googleapis.com/css?family=Sniglet');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
-
-$ct-abstraction: #E30613;
-$ct-algorithm: #0B983A;
-$ct-decomposition: #E4AB0D;
-$ct-evaluation: #0F70B7;
-$ct-logic: #EA5B0C;
-$ct-pattern: #82358C;
-
-$educator-colour: $red;
-$at-home-colour: #00554E;
-$plugging-it-in-colour: #3044b3;
 
 .at-home-divider {
     border-top: 3px solid $at-home-colour;
@@ -872,4 +862,22 @@ button:hover .icon-search {
     img {
         opacity: 0.5;
     }
+}
+
+.btn.plugging-it-in-navigation {
+  color: $plugging-it-in-colour;
+  border-color: $plugging-it-in-colour;
+
+  &:hover {
+      color: white;
+      background-color: $plugging-it-in-colour;
+  }
+
+  &:focus, &:active, &.active {
+      box-shadow: 0 0 0 .25rem #3044b33f; // This should be $plugging-it-in-colour at 25% opacity
+  }
+}
+
+#plugging-it-in-logo-educators {
+  height: 3em;
 }
