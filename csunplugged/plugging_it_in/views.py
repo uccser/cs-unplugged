@@ -1,6 +1,7 @@
 """Views for the plugging_it_in application."""
 
 from django.http import HttpResponse
+from django.http import Http404
 
 import json
 import requests
@@ -10,8 +11,10 @@ from django.views import generic
 from django.views import View
 from django.urls import reverse
 from django.conf import settings
+from django.core.exceptions import ObjectDoesNotExist
 from utils.translated_first import translated_first
 from utils.group_lessons_by_age import group_lessons_by_age
+
 from topics.models import (
     Topic,
     ProgrammingChallenge,
@@ -68,7 +71,18 @@ class ProgrammingChallengeListView(generic.DetailView):
 
     model = Lesson
     template_name = "plugging_it_in/lesson.html"
-    slug_url_kwarg = "lesson_slug"
+
+    def get_object(self, **kwargs):
+        """Retrieve object for the lesson view.
+
+        Returns:
+            Lesson object, or raises 404 error if not found.
+        """
+        return get_object_or_404(
+            self.model.objects.select_related(),
+            topic__slug=self.kwargs.get("topic_slug", None),
+            slug=self.kwargs.get("lesson_slug", None),
+        )
 
     def get_context_data(self, **kwargs):
         """Provide the context data for the programming challenge list view.
@@ -118,21 +132,28 @@ class ProgrammingChallengeView(generic.DetailView):
         context = super(ProgrammingChallengeView, self).get_context_data(**kwargs)
 
         context["topic"] = self.object.topic
-        lessons = self.object.lessons.all()
-        for lesson in lessons:
-            if lesson.slug == self.kwargs.get("lesson_slug", None):
-                context["lesson"] = lesson
-                challlenges = lesson.retrieve_related_programming_challenges("Python")
-                context["programming_challenges"] = challlenges
-                context["programming_exercises_json"] = json.dumps(list(challlenges.values()))
+
+        try:
+            lesson_slug = self.kwargs.get("lesson_slug", None)
+            lesson = Lesson.objects.get(slug=lesson_slug)
+            context["lesson"] = lesson
+            challlenges = lesson.retrieve_related_programming_challenges("Python")
+            context["programming_challenges"] = challlenges
+            context["programming_exercises_json"] = json.dumps(list(challlenges.values()))
+        except ObjectDoesNotExist:
+            raise Http404("Lesson does not exist")
 
         context["implementations"] = self.object.ordered_implementations()
 
-        related_test_cases = self.object.related_test_cases().values()
-        context["test_cases_json"] = json.dumps(list(related_test_cases))
+        related_test_cases = self.object.related_test_cases()
+        context["test_cases_json"] = json.dumps(list(related_test_cases.values()))
         context["test_cases"] = related_test_cases
         context["jobe_proxy_url"] = reverse('plugging_it_in:jobe_proxy')
         context["saved_attempts"] = self.request.session.get('saved_attempts', {})
+        try:
+            context["previous_submission"] = context["saved_attempts"][self.object.slug]['code']
+        except KeyError:
+            context["previous_submission"] = ''
 
         return context
 
