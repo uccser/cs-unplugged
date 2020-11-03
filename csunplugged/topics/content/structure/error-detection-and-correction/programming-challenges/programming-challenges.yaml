@@ -1,3 +1,5 @@
+################################################################################
+# CHALLENGE SETS IN THIS BLOCK are for the Parity Magic section
 count-black-squares-one-colour-input:
   challenge-set-number: 1
   challenge-number: 1
@@ -99,9 +101,13 @@ detect-parity-error-in-any-rows-or-columns:
     - programming-describe-variables
     - programming-identify-list-store-data
   extra-challenge: extra-challenge.md
+# END BLOCK
+################################################################################
 
+################################################################################
+# CHALLENGE SETS IN THIS BLOCK are for the Product Code Check Digits section
 product-code-12-weighted-sum-one-at-a-time:
-  challenge-set-number: 10
+  challenge-set-number: 1
   challenge-number: 1
   difficulty-level: 2
   programming-languages:
@@ -112,8 +118,8 @@ product-code-12-weighted-sum-one-at-a-time:
     - programming-explain-join-concatenate
 
 product-code-13-weighted-sum-one-at-a-time:
-  challenge-set-number: 10
-  challenge-number: 1
+  challenge-set-number: 1
+  challenge-number: 2
   difficulty-level: 2
   programming-languages:
     - scratch
@@ -123,8 +129,8 @@ product-code-13-weighted-sum-one-at-a-time:
     - programming-explain-join-concatenate
 
 product-code-12-multiple-10-one-at-a-time:
-  challenge-set-number: 10
-  challenge-number: 2
+  challenge-set-number: 2
+  challenge-number: 1
   difficulty-level: 2
   programming-languages:
     - scratch
@@ -136,7 +142,7 @@ product-code-12-multiple-10-one-at-a-time:
     - programming-explain-mod
 
 product-code-13-multiple-10-one-at-a-time:
-  challenge-set-number: 10
+  challenge-set-number: 2
   challenge-number: 2
   difficulty-level: 2
   programming-languages:
@@ -149,8 +155,8 @@ product-code-13-multiple-10-one-at-a-time:
     - programming-explain-mod
 
 product-code-12-multiple-10-one-line:
-  challenge-set-number: 10
-  challenge-number: 3
+  challenge-set-number: 3
+  challenge-number: 1
   difficulty-level: 2
   programming-languages:
     - scratch
@@ -160,8 +166,8 @@ product-code-12-multiple-10-one-line:
     - programming-describe-nested-statement
 
 product-code-13-multiple-10-one-line:
-  challenge-set-number: 10
-  challenge-number: 3
+  challenge-set-number: 3
+  challenge-number: 2
   difficulty-level: 2
   programming-languages:
     - scratch
@@ -171,8 +177,8 @@ product-code-13-multiple-10-one-line:
     - programming-describe-nested-statement
 
 product-code-check-valid-any-length:
-  challenge-set-number: 10
-  challenge-number: 4
+  challenge-set-number: 4
+  challenge-number: 1
   difficulty-level: 3
   programming-languages:
     - scratch
@@ -182,8 +188,8 @@ product-code-check-valid-any-length:
     - programming-describe-nested-statement
 
 product-code-12-last-digit-one-at-a-time:
-  challenge-set-number: 10
-  challenge-number: 5
+  challenge-set-number: 5
+  challenge-number: 1
   difficulty-level: 3
   programming-languages:
     - scratch
@@ -194,8 +200,8 @@ product-code-12-last-digit-one-at-a-time:
     - programming-identify-loop
 
 product-code-13-last-digit-one-at-a-time:
-  challenge-set-number: 10
-  challenge-number: 5
+  challenge-set-number: 5
+  challenge-number: 2
   difficulty-level: 3
   programming-languages:
     - scratch
@@ -206,8 +212,8 @@ product-code-13-last-digit-one-at-a-time:
     - programming-identify-loop
 
 product-code-12-last-digit-one-line:
-  challenge-set-number: 10
-  challenge-number: 6
+  challenge-set-number: 6
+  challenge-number: 1
   difficulty-level: 3
   programming-languages:
     - scratch
@@ -217,8 +223,8 @@ product-code-12-last-digit-one-line:
     - programming-demonstrate-indexing
 
 product-code-13-last-digit-one-line:
-  challenge-set-number: 10
-  challenge-number: 6
+  challenge-set-number: 6
+  challenge-number: 2
   difficulty-level: 3
   programming-languages:
     - scratch
@@ -226,6 +232,8 @@ product-code-13-last-digit-one-line:
     - programming-explain-join-concatenate
     - programming-explain-set-and-change-statement
     - programming-demonstrate-indexing
+# END BLOCK
+################################################################################
 
 check-valid-credit-card:
   challenge-set-number: 20

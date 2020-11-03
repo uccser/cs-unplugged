@@ -1,5 +1,5 @@
 For the input
-```
+```text
 5
 45
 54
@@ -8,7 +8,7 @@ For the input
 11
 ```
 the code should output:
-```
+```text
 Enter the number of hours for the first clip:
 Enter the number of minutes for the first clip:
 Enter the number of seconds for the first clip:

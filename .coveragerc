@@ -11,6 +11,7 @@ source =
     templates
     topics
     utils
+    plugging_it_in
 omit =
     # Omit migration files
     */migrations/*

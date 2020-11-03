@@ -63,6 +63,20 @@ class ProgrammingChallengesStructureLoader(TranslatableModelLoader):
             else:
                 prog_language_icon = None
 
+            prog_reminders_translations = self.get_blank_translation_dictionary()
+            # scratch currently unsupported
+            if prog_language == "python":
+                prog_reminders_filename = "programming-reminders-{0}.md".format(prog_language)
+                programming_reminders_translations = self.get_markdown_translations(
+                    os.path.join(
+                        self.base_path,
+                        self.get_localised_dir("en"),
+                        prog_reminders_filename
+                    )
+                )
+                for language, content in programming_reminders_translations.items():
+                    prog_reminders_translations[language]["programming_reminders"] = content.html_string
+
             new_prog_language = ProgrammingChallengeLanguage(
                 slug=prog_language,
                 number=prog_language_number,
@@ -71,6 +85,7 @@ class ProgrammingChallengesStructureLoader(TranslatableModelLoader):
 
             translations = prog_languages_translations.get(prog_language, dict())
             self.populate_translations(new_prog_language, translations)
+            self.populate_translations(new_prog_language, prog_reminders_translations)
             self.mark_translation_availability(new_prog_language, required_fields=["name"])
             new_prog_language.save()
 
