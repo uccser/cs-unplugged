@@ -8,18 +8,18 @@ $(document).ready(function () {
         steps: [
             {
                 element: ".programming__info-area-content",
-                intro: "These are the instructions for creating your program, it describes what your program should do.",
+                intro: "These are the requirements for the program you need to create - it describes what your program should do.",
                 step: 1,
                 position: "right"
             },
             {
                 element: ".CodeMirror",
-                intro: "This is where you enter your code to solve the challenge.",
+                intro: "This is where you type your code to solve the challenge.",
                 step: 2
             },
             {
                 element: "#editor_run_button",
-                intro: "Clicking the 'Check' button will run your code against the test cases.",
+                intro: "Clicking the 'Check' button will run your code to see if it works correctly for our test cases.",
                 step: 3
             },
             {
@@ -29,7 +29,7 @@ $(document).ready(function () {
             },
             {
                 element: "#test-case-table",
-                intro: "These are the test cases that will be run against your program.",
+                intro: "These are the test cases that will be used to see if your program is working correctly.",
                 step: 5
             },
             {

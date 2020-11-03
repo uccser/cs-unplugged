@@ -1,19 +1,29 @@
 @import "core-variables";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
 
 #page-footer {
     background-color: $plugging-it-in-colour;
 }
 
-.pii-navigation {
-    color: $plugging-it-in-colour;
-    border-color: $plugging-it-in-colour;
-    
-    &:hover {
-        color: white;
-        background-color: $plugging-it-in-colour;
+@include media-breakpoint-down(xs) {
+    .navbar-plugging-it-in {
+      padding: 0.25rem !important;
+  
+      .container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+  
+      #navbar-brand-logo {
+        height: 1.6rem;
+      }
+  
+      .navbar-brand {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        font-size: 1rem;
+      }
     }
-    
-    &:focus, &:active, &.active {
-        box-shadow: 0 0 0 .25rem #3044b33f; // This should be $plugging-it-in-colour at 25% opacity
-    }
-}
+  }
