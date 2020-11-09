@@ -1,6 +1,6 @@
 # Binäre Namenshalsketten
 
-{image file-path="img/topics/col_binary_necklace_copy.png"}
+{image file-path="img/topics/col_binary_necklace_copy.png" alt="An image of a person wearing a necklace."}
 
 Gestaltet eine Halskette oder einen Taschenanhänger mit euren Initialen als 5-Bit Binärcode.
 

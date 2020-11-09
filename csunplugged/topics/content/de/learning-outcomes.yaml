@@ -1,4 +1,5 @@
 ---
+#BINARY NUMBERS LEARNING OUTCOMES
 binary-convert-decimal:
   text: Anhand der Umwandlung einer beliebigen Dezimalzahl in eine Binärzahl veranschaulichen, wie das binäre Zahlensystem funktioniert.
 binary-justify-zeros-and-ones:
@@ -31,10 +32,13 @@ binary-match-letters-numbers:
   text: Buchstaben des Alphabets den sie darstellenden Zahlen zuordnen.
 binary-count-highest-number:
   text: Von der höchsten Zahl weiterzählen, um die insgesamte Anzahl an Punkten auf den Binärkarten zu ermitteln.
+#DRAMA LEARNING OUTCOMES
 drama-create-video-binary:
   text: Ein Anleitungsvideo erstellen, das aufzeigt, wie anhand des binären Zahlensystem gezählt wird.
+#ENGLISH LEARNING OUTCOMES
 speaking-clear-instructions-binary-cards:
   text: Anhand von klaren Beschreibungen erläutern, wie die Binärkarten beliebige Zahlen zwischen 0 und 63 darstellen können.
+#ERROR DETECTION AND CORRRECTION LEARNING OUTCOMES
 error-describe-steps-to-find-card:
   text: Die erforderlichen Schritte schildern, anhand deren die umgedrehte Karte ermittelt werden kann.
 error-explain-each-card-bit:
@@ -55,8 +59,10 @@ error-recognise-groups-of-5:
   text: Fünfergruppen erkennen und in Fünferschritten zählen.
 error-demonstrate-count-to-5:
   text: Durch Zuordnen ihrer Zählung zu den Karten demonstrieren, wie auf fünf gezählt wird.
+#LANUGAGE LEARNING OUTCOMES
 language-discuss-storing-characters:
   text: Erörtern, warum es wichtig ist, mehr als das Standardalphabet der englischen Sprache zu speichern.
+#NUMERACY LEARNING OUTCOMES
 numeracy-adding-given-number:
   text: Zahlen zu einer gegebenen Menge hinzufügen.
 numeracy-identify-even-odd:
@@ -89,6 +95,7 @@ numeracy-recognise-numbers-represented:
   text: Erkennen, dass Zahlen auf verschiedene Weise dargestellt werden können.
 numeracy-discuss-modulo-understanding-remainders:
   text: Erörtern, wie wir Reste besser verstehen, wenn wir wissen, wie Modulo funktioniert.
+#PROGRAMMING LEARNING OUTCOMES
 programming-explain-sequencing:
   text: Erläutern, wie beim Programmieren Abläufe gesteuert werden.
 programming-explain-output:
@@ -129,6 +136,7 @@ programming-identify-list-store-data:
   text: Identifizieren, wann eine Liste zum Speichern eines Datensatzes verwendet wird.
 programming-show-item-specified-position-list:
   text: Aufzeigen, wie auf ein Objekt an einer bestimmten Stelle in einer Liste zugegriffen werden kann.
+#SEARCHING ALGORITHMS LEARNING OUTCOMES
 search-algorithms-identify-unsorted-lists:
   text: Suchalgorithmen für unsortierte Listen (sequentielle Suche) ermitteln.
 search-algorithms-describe-time-size-input:
@@ -147,6 +155,7 @@ search-algorithms-describe-compare-values:
   text: Beschreiben, wie Zahlenwerte für Gleichheit und Ungleichheit (größer als, kleiner als) verglichen werden.
 search-algorithms-explain-unsorted-lists:
   text: Den Bereich der Anzahl der Vermutungen für unsortierte Listen im Vergleich zu sortierten Listen erklären.
+#UNPLUGGED PROGRAMMING LEARNING OUTCOMES
 unplugged-programming-apply-addition-multiplication:
   text: Addition und Multiplikation anwenden, um die Anzahl der vom Endbenutzer auszuführenden Aktionen zu ermitteln.
 unplugged-programming-design-fitness-achievable:
@@ -187,6 +196,7 @@ unplugged-programming-explain-tell-stories:
   text: Erläutern, wie Geschichten durch Kombinieren von mündlicher, schriftlicher und visueller Sprache erzählt werden können.
 unplugged-programming-recall-direction-words:
   text: Sich an Richtungsbegriffe für „los“, „vorwärts bewegen“, „links“, „rechts“ und Zahlen in einer anderen Sprache erinnern.
+#SORTING LEARNING OUTCOMES
 sorting-explain-parallel-algorithm:
   text: Erklären, wie der parallele Algorithmus eines Sortiernetzwerks funktioniert.
 sorting-use-selection-sort:

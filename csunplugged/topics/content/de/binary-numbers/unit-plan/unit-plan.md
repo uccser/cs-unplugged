@@ -38,13 +38,13 @@ Das binäre Zahlensystem beruht auf der Basis 2. Es gibt also nur zwei Ziffern, 
 
 Menschen verwenden normalerweise das dezimale Zahlensystem, das auf der Basis 10 beruht. Hier haben wir daher zehn Ziffern, bevor wir zum nächsten Stellenwert übergehen: 0, 1, 2, 3, 4, 5, 6, 7, 8 und 9.
 
-{image file-path="img/topics/binary_fingers.png"}
+{image file-path="img/topics/binary_fingers.png" alt="An image of one person holding up ten fingers and another person holding up two fingers."}
 
 {panel end}
 
 ## Praktische Auswirkungen
 
-{image file-path="img/topics/col_binary_01.png" alignment="right"}
+{image file-path="img/topics/col_binary_01.png" alignment="right" alt="An image of a zero and a one."}
 
 - Die Anzahl der zur Darstellung von Zeichen in einem Text verwendeten Bits wirkt sich auf den Umfang verfügbarer Zeichen aus. Eine kurze Darstellung ist kompakter, kann jedoch nicht die Zeichen aller Sprachen darstellen.
 
@@ -64,5 +64,5 @@ Menschen verwenden normalerweise das dezimale Zahlensystem, das auf der Basis 10
 
 - Was war hinsichtlich der durch das Unterrichten dieser Einheit erzielten Lernerfolge am überraschendsten?
 - Welche der Schüler sind bei den Aufgaben sehr systematisch vorgegangen?
-- Welche der Schüler sind bei den Aufgaben sehr detailliert vorgegangen?
+- Welche Schüler sind bei den Aktivitäten sehr detailliert vorgegangen?
 - Wie würde ich das Unterrichten dieser Einheit anders gestalten?
