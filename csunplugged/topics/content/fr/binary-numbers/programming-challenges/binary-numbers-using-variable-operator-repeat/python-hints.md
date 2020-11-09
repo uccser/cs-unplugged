@@ -1,0 +1,3 @@
+- Create a variable called `number_of_dots` and set it equal to a value to start
+- Display the value of the variable using the `print()` function
+- Use a for loop to display the variable and change its value 5 times

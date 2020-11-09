@@ -14,7 +14,7 @@ Il existe également une version interactive en ligne des cartes binaires [ici](
 
 {panel end}
 
-{image file-path="img/topics/col_binary_robot_boy_convo.png" alt="Garçon dessiné parlant à un robot" alignment="left"}
+{image file-path="img/topics/col_binary_robot_convo.png" alt="Garçon dessiné parlant à un robot" alignment="left"}
 
 Discutez de la manière dont vous communiqueriez une lettre de l'alphabet à quelqu'un si vous ne pouviez le faire qu'en utilisant des nombres entre 0 et 26. *(Les élèves recommanderont généralement d'utiliser un code de 1 pour a, 2 pour b, et ainsi de suite)*.
 

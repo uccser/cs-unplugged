@@ -1,0 +1,36 @@
+Click on the green flag to see the expected output of your program.
+
+{iframe link="https://scratch.mit.edu/projects/embed/165598015/?autostart=false"}
+
+{panel type="help"}
+
+# Recommended blocks
+
+<pre><code class="scratch:split:random">when green flag clicked
+</code></pre>
+
+<pre><code class="scratch:split:random">set [new month v] to [0]
+
+set [original month v] to (answer)
+
+set [months to add v] to (answer)
+
+set [new month v] to (((original month) + (months to add)) mod (12))
+</code></pre>
+
+<pre><code class="scratch:split:random">ask [Type in a number betweem 1 and 12 for a month of the year:] and wait
+
+ask [Enter the number of months to add to the month:] and wait
+</code></pre>
+
+<pre><code class="scratch:split:random">say (join (join (months to add) (join [ months after ] (item (original month) of [months v] :: list))) [ is December. ])
+
+say (join (join (join (join (months to add) (join [ months after ] (item (original month) of [months v] :: list))) [ is ]) (item (new month) of [months v] :: list)) [.])
+</code></pre>
+
+<pre><code class="scratch:split:random">if &lt;(new month) = [0]&gt; then
+else
+end
+</code></pre>
+
+{panel end}
