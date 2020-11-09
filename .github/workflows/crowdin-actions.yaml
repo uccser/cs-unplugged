@@ -1,8 +1,9 @@
 name: Synchronise with Crowdin
 
 on:
-  schedule:
-    - cron:  '0 3 * * *'
+  push:
+    branches:
+      - crowdin-github-action
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
