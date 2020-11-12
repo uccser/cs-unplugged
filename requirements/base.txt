@@ -38,4 +38,4 @@ python-bidi==0.4.2
 django-bidi-utils==1.0
 
 # Plugging it in
-requests==2.24.0
+requests==2.25.0
