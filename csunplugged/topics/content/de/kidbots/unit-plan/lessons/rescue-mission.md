@@ -63,7 +63,7 @@ Eventuell müssen manche Schüler das Programm zunächst in Aktion sehen, um den
 
 „Versuchen wir es also einmal und schauen, was passiert.“
 
-"Tester - could you please take these instructions and pass them onto the Bot. Unterstreiche alles, was nicht funktioniert, wenn du siehst, dass der Bot etwas macht, das nicht richtig aussieht, und gib mir dann das Whiteboard zurück, um herauszufinden, wie der Fehler behoben werden kann.“
+„Tester – Kannst du bitte diese Anweisungen nehmen und sie an den Bot weitergeben. Unterstreiche alles, was nicht funktioniert, wenn du siehst, dass der Bot etwas macht, das nicht richtig aussieht, und gib mir dann das Whiteboard zurück, um herauszufinden, wie der Fehler behoben werden kann.“
 
 {panel type="teaching"}
 
