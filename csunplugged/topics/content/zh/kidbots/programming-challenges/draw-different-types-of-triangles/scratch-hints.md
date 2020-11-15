@@ -1,5 +1,0 @@
-- A triangle with two sides equal is called an isosceles triangle.
-- In this challenge, the third side of the triangle can be drawn by connecting the third vertex (location of the sprite after drawing the angle in [challenge 6.1]('topics:programming_challenge' 'unplugged-programming' 'draw-different-types-of-angles')) to the first vertex (x:0 y:0).
-- An acute triangle is a triangle which all angles are less than 90 degrees.
-- A right triangle is a triangle which has a right angle (90 degrees).
-- An obtuse triangle: has an angle more than 90 degrees.
