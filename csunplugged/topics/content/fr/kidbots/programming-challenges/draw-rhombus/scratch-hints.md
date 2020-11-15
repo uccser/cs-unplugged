@@ -1,4 +1,0 @@
-- A rhombus has 4 equal straight sides.
-- Opposite sides of a rhombus are parallel and opposite angles are equal.
-- Adjacent angles in a rhombus add up to 180 degrees.
-- A rhombus with 90 degree angles is a square.
