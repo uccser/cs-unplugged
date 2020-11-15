@@ -1,3 +1,0 @@
-# Données brutes
-
-Par données brutes, on entend les "données non traitées" qui ont été collectées auprès d'une source et qui n'ont pas encore été nettoyées ou utilisées. Par exemple, si vous avez mesuré la température chaque jour de l'année et que vous disposez maintenant d'un tas de chiffres, on pourrait appeler cela vos "données non traitées". Si vous divisez ensuite ces données pour chaque mois de l'année et que vous en faites la moyenne pour obtenir la température moyenne de chaque mois, il s'agit de vos "données traitées".

@@ -1,1 +1,0 @@
-- The inside angles of a 5-pointed star are 36 degrees each.

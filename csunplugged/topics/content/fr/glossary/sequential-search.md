@@ -1,3 +1,0 @@
-# Recherche séquentielle
-
-Une recherche séquentielle consiste à examiner chaque élément des données, un par un, et à ne pas s'arrêter avant d'avoir trouvé ce que vous cherchez. Vous pouvez utiliser une recherche séquentielle sur n'importe quelles données, qu'elles soient triées ou non (bien que ce soit un moyen sans doute lent de retrouver ce que vous cherchez si les données sont triées !) Toutefois, la recherche séquentielle est la **seule** option que vous pouvez utiliser lorsque vous devez faire des recherches dans des données qui ne sont **pas triées**.
