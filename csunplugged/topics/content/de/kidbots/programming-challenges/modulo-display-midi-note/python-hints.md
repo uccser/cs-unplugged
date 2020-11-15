@@ -1,2 +1,0 @@
-- Make a list called `notes` and add the 12 notes: C, C#, D, Eb, E, F, F#, G, G#, A, Bb and B to your list (list of length 12).
-- When you apply the mod 12 function to the midi value you'll get a number ranging from 0 to 11, which works well for Python since the index of a list starts at 0, and will go to 11 for a length 12 list.
