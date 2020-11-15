@@ -1,2 +1,0 @@
-- Make two variables called “num1” and “num2” and set their values to the inputs entered by the user.
-- To make “num1” a tidy number, split “num2” into 2 parts (call these variables “10 minus num1” and “left from num2”) so the sum of one part and “num1” is equal to 10.

@@ -1,2 +1,0 @@
-- To simulate a coin toss, use the block `scratch: pick random (1) to (10)` and replace the number 10 with the number 2 (generating random numbers ‘1’ for tail, or ‘2’ for head).
-- To calculate the percentages of getting heads (or tails), multiply the total number of heads (or tails) by 100 then divide it by the total number of coin flips (entered as the input by the user).
