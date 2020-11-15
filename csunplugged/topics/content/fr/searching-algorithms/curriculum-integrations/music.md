@@ -1,5 +1,0 @@
-# Activité musicale
-
-Jouez une note sur un instrument caché (par exemple, un xylophone) et demandez à un élève de la trouver sur le piano en essayant de deviner la note et la comparant avec celle qui a été jouée. Si la note sur le piano est trop aiguë, explorez la moitié inférieure et vice versa. Une sorte de recherche dichotomique peut être utilisée pour se rapprocher de la bonne note. Vous pouvez aussi effectuer une recherche séquentielle - continuez de jouer des notes jusqu'à en entendre une qui soit la même que la note initiale.
-
-Cette activité repose sur la capacité de l'élève à entendre deux tons et trouver si l'un est plus aigu, plus grave ou égal à l'autre. Effectuer cette tâche avec précision peut demander une certaine expérience, et ça peut être encore plus compliqué si le timbre des deux sons est très différent.
