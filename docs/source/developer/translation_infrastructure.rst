@@ -34,8 +34,8 @@ locale code, and with the same structure as the source tree.
   - https://github.com/django/django/tree/master/django/conf/locale
   - https://github.com/django/django/blob/master/django/utils/translation/trans_real.py#L59
 
-The configuration specifying which files should be uploaded for translation is stored in the file ``.arnold.yaml`` in the repository root.
-Details about the structure of this file are available within the `Arnold repository <https://github.com/uccser/arnold>`__.
+The configuration specifying which files should be uploaded for translation is stored in the file ``crowdin.yaml`` in the repository root.
+Details about the structure of this file are available in the `Crowdin documentation <https://support.crowdin.com/configuration-file/>`__.
 
 Review Process
 ==============================================================================
@@ -47,7 +47,7 @@ For a translation of any given string to make it to production release, it must 
 Translation Pipeline
 ==============================================================================
 
-The translation pipeline is implemented by the `Arnold repository <https://github.com/uccser/arnold>`__.
+The translation pipeline is implemented by the `Crowdin GitHub Action <https://github.com/crowdin/github-action>`__.
 The following diagram gives a broad overview of the translation pipeline.
 The blue arrows indicate the path from a source file change through to the release of the translation for that change.
 
