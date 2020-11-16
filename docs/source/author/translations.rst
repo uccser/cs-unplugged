@@ -14,7 +14,7 @@ It's really easy to start contributing translations using CS Unplugged
 .. note::
 
   The in-context translation has been removed temporarily as translation infrastructure is being updated.
-  We aim to `re-add this feature in a future update <https://github.com/uccser/arnold/issues/4>`__.
+  We aim to re-add this feature in a future update.
 
 Crowdin Overview
 ==============================================================================
