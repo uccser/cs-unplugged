@@ -1,0 +1,34 @@
+# Step 1
+-   presenter_says: I’ve written a secret number on this paper, and you need to work out what it is. It’s between 1 and 100. Each time you tell me a number, I’ll tell you if my number is greater than or equal to your one. I won’t tell you if it’s equal - but you’ll still be able to work out my number!
+    presenter_commentary: Write a number on some paper, and fold it over so it can’t be seen. It can be any number from 1 to 100; in the example below the parent happens to have chosen 52 as the secret number.
+# Step 2
+-   image: img/at_home/guess-my-age/guess-my-age-step-2.jpeg
+    presenter_says: What number do you want to guess first?
+    presenter_commentary: Write a “greater than or equals” symbol followed by their guess. (In the example, the child has guessed 50.)
+    image_description: A greater than or equals sign followed by the number 50.
+# Step 3
+-   image: img/at_home/guess-my-age/guess-my-age-step-3.jpeg
+    presenter_says: \[Depending on the number:] “My secret number is not greater than or equal to your guess” or “My secret number is greater than or equal to your guess”.
+    presenter_commentary: Write a tick or cross depending on whether it is greater than or equal. Since 52 (the secret number) is greater than or equal to the guess (50), the presenter has written a cross. <i>Do not tell them if they have guessed your number!</i> They will need to work out when they have enough information to know the number, so this is different to traditional versions of games like “20 guesses”. The best guessing strategy is to start by guessing 50 (which the child happened to do in this case), but it’s fine if the child wants to use another approach - let them work it out for themselves!
+    image_description: A greater than or equals sign followed by the number 50 and a tick.
+# Step 4
+-   image: img/at_home/guess-my-age/guess-my-age-step-4.jpeg
+    presenter_says: Which number do you want to guess next? [Again, say one of these:] “My secret number is not greater than or equal to your guess” or “My secret number is greater than or equal to your guess”.
+    presenter_commentary: In this case the child has guessed 75. The secret number isn’t greater than equal to 75, so the presenter has marked it with a cross.
+    image_description: A greater than or equals sign followed by the number 75 and a cross.
+# Step 5
+-   image: img/at_home/guess-my-age/guess-my-age-step-5.jpeg
+    presenter_commentary: This repeats until the child can guess the number.
+    image_description: Two more guesses made, 62 and 56, each followed by a cross.
+# Step 6
+-   image: img/at_home/guess-my-age/guess-my-age-step-6.jpeg
+    presenter_commentary: In the example, the child happens to have named the secret number (52), but the presenter has only said that their guess is greater than or equal to the secret number.
+    image_description: Three more guesses made. Greater than or equal to 53 followed by a cross. Greater than or equal to 51 followed by a tick, and greater than or equal to 52 followed by a tick.
+# Step 7
+-   image: img/at_home/guess-my-age/guess-my-age-step-7.jpeg
+    presenter_commentary: As it happens, the student can deduce that the number must be 52 from the information available, since they found out earlier that it’s not greater than or equal to 53. It can take a bit of logic to work this out, but it’s always possible to narrow in on the number.
+    image_description: Student pointing to the number 52.
+# Step 8
+-   image: img/at_home/guess-my-age/guess-my-age-step-8.jpeg
+    presenter_commentary: You can play this game a few times so that they can refine their strategy and develop their logical thinking to find the answer. After a while they may discover that it’s strategic to keep dividing the range in half.
+    image_description: Child and Adult doing a high five.
