@@ -6,6 +6,6 @@ Every time the range doubles in size, you only need one more question to guess a
 In fact, you could guess a number from 1 to a million using only 20 questions - it doesn’t take that long, although you might want to use a calculator to half the range each time.
 This approach to narrowing down towards a solution is behind some very fast computer algorithms.
 
-Another idea in the activity is that you can achieve a lot with only “binary” yes/no decisions.
-You might think that you need to check if the final value is equal, but you can know for use only by using “greater than or equal”.
-Decisions that have two outcomes (often referred to as true or false) are the basis of “Boolean logic”, which is one of the key ideas used in the design of digital devices.
+Another idea in the activity is that you can achieve a lot with only "binary" yes/no decisions.
+You might think that you need to check if the final value is equal, but you can know for use only by using "greater than or equal".
+Decisions that have two outcomes (often referred to as true or false) are the basis of "Boolean logic", which is one of the key ideas used in the design of digital devices.
