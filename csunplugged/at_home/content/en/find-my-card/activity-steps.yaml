@@ -1,0 +1,69 @@
+# Step 1
+-   image: img/at_home/find-my-card/find-my-card-step-1.jpeg
+    presenter_says: Let's cut out 8 cards, ...
+    image_description: Child cutting card into 8 pieces.
+# Step 2
+-   image: img/at_home/find-my-card/find-my-card-step-2.jpeg
+    presenter_says: ... write the numbers from 0 to 7 on them, and put them out in order.
+    image_description: Child placing the 8 cards in order from lowest to highest.
+# Step 3
+-   image: img/at_home/find-my-card/find-my-card-step-3.jpeg
+    presenter_says: I’m thinking of one of the numbers. You can give me a number, and I’ll tell you if your guess is greater than or equal to the one I’m thinking of.
+    presenter_commentary: In this case the presenter is thinking of the number 6; the child has chosen card 3, so 6 is greater than or equal to 3.
+    image_description: Child pointing to the card showing number 3.
+# Step 4
+-   image: img/at_home/find-my-card/find-my-card-step-4.jpeg
+    presenter_says: (Depending on your number)<br>My number is greater than or equal to your guess, so which cards can you eliminate?<br><b>Or</b><br>My number is not greater than or equal to your guess, so which cards can you eliminate?
+    presenter_commentary: If your secret number is greater than or equal to their choice (as in the photo), the child can move all smaller cards to one side, to show how it is narrowed down (ideally the child can work out which cards can be eliminated; they need to be careful to be accurate!) If their guess is not greater than or equal (i.e. is smaller), they can eliminate the card with their guess and all larger cards.
+    image_description: Child moving all smaller cards to one side.
+# Step 5
+-   image: img/at_home/find-my-card/find-my-card-step-5.jpeg
+    presenter_says: What’s your next guess?
+    presenter_commentary: Continue this until one card is left; sometimes you will eliminate all cards to the left of their guess, and other times it will eliminate all cards to the right including their guess (that’s because of the "equal" in "greater than or equal"). In this case, the child has chosen card 6 (eliminating everything to the left of 6)...
+    image_description: Child moving all cards smaller than 6 to one side.
+# Step 6
+-   image: img/at_home/find-my-card/find-my-card-step-6.jpeg
+    presenter_says: What’s your next guess?
+    presenter_commentary: and then 7 (which eliminates the 7, leaving only 6 behind as the correct answer).
+    image_description: Only the card with the number 6 is left.
+# Step 7
+-   image: img/at_home/find-my-card/find-my-card-step-7.jpg
+    presenter_commentary: You can try this for other numbers while they refine their strategy. Guide them towards the strategy of choosing a number that will divide the list into exact halves (they should choose 4 first, then either 2 or 6, then either 1, 3, 5, or 7). It’s best if they gradually work this out from a few games, rather than being told the rule.
+    image_description: Child eliminates half of the cards.
+# Step 8
+-   image: img/at_home/find-my-card/find-my-card-step-8.jpeg
+    presenter_commentary: When there are just two cards, asking if it is "greater than or equal to 1" is the same as asking if it is 1, but it’s good to enforce that the only question allowed is "greater than or equal to".
+    image_description: Child pointing to the card with the number 1 on it.
+# Step 9
+-   image: img/at_home/find-my-card/find-my-card-step-9.jpeg
+    presenter_says: Here’s a chart that will help you to ask questions. I’m thinking of a new number from 0 to 7. Start at the top, and follow the "yes" or "no" line as I answer each question.
+    presenter_commentary: The child might recognise this as being the same strategy they have learned just before. Guide them to ask if your number is greater than or equal to 4 first, and then follow either the "yes" or "no" branch down the chart.
+    image_description: Child following the chart.
+# Step 10
+-   image: img/at_home/find-my-card/find-my-card-step-10.jpeg
+    presenter_commentary: In this case the presenter is thinking of the number 1, so the first answer was "no", and now the child asks if the number is greater than or equal to 2.
+    image_description: Child following the chart.
+# Step 11
+-   image: img/at_home/find-my-card/find-my-card-step-11.jpeg
+    presenter_commentary: Continue until they reach the bottom of the chart. That should tell them the number you’re thinking of. In this case, the sequence of three answers was "no, no, yes" to get to the answer, which is 1.
+    image_description: Child following the chart.
+# Step 12
+-   image: img/at_home/find-my-card/find-my-card-step-9.jpeg
+    presenter_says: We can do this without you having to ask the questions. If I give you the answers "yes, no, yes", where do you end up?
+    presenter_commentary: Help the child to see the path to 5.
+    image_description: Child following the chart.
+# Step 13
+-   image: img/at_home/find-my-card/find-my-card-step-9.jpeg
+    presenter_says: How about "no, no, no""
+    presenter_commentary: They should get to 0.
+    image_description: Child following the chart.
+# Step 14
+-   image: img/at_home/find-my-card/find-my-card-step-9.jpeg
+    presenter_says: Yes, yes, yes?
+    presenter_commentary: That gets to 7.
+    image_description: Child following the chart.
+# Step 15
+-   image: img/at_home/find-my-card/find-my-card-step-9.jpeg
+    presenter_says: We’ve figured out a way to communicate numbers just by saying yes and no! 
+    presenter_commentary: If you’ve done the binary challenge activity, they may realise this is a different way to achieve the same outcome - the three yes/no choices are the same as saying whether or not to flip over each of three cards with 4, 2, and 1 dots on them respectively. The chart that we used is called a "decision tree".
+    image_description: Child following the chart.
