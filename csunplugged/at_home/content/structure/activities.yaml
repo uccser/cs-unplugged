@@ -8,12 +8,12 @@ activities:
     guess-my-number:
         order-number: 3
         icon: img/at_home/guess-my-number/guess-my-number-thumbnail.jpeg
-    guess-the-sentence:
-        order-number: 4
-        icon: img/at_home/guess-the-sentence/guess-the-sentence-thumbnail.jpeg
     find-my-card:
-        order-number: 5
+        order-number: 4
         icon: img/at_home/find-my-card/find-my-card-step-2.jpeg
+    guess-the-sentence:
+        order-number: 5
+        icon: img/at_home/guess-the-sentence/guess-the-sentence-step-8.jpeg
     unlocking-the-secret-in-product-codes:
         order-number: 6
         icon: img/at_home/unlocking-the-secret-in-product-codes/13-digit-barcode-steps/unlocking-the-secret-in-product-codes-step-4.jpg

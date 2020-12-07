@@ -9,10 +9,27 @@
 # Step 3
 -   image: img/at_home/guess-the-sentence/guess-the-sentence-step-3.jpeg
     presenter_says: I’ve written down a word/sentence I’d like you to guess. What do you think the first letter is?
-    presenter_commentary: If the student’s guess of the first letter is correct, write it at the top of the paper in the first box, otherwise write it underneath the box. In the example here, the student guessed “I” incorrectly, so it is written under the first box.
+    presenter_commentary: If the student’s guess of the first letter is correct, write it at the top of the paper in the first box, otherwise write it underneath the box. In the example here, the student guessed "I" incorrectly, so it is written under the first box.
     image_description: Presenter writing the letter 'I' underneath the first box.
 # Step 4
 -   image: img/at_home/guess-the-sentence/guess-the-sentence-step-4.jpeg
     presenter_says: Sorry, that’s not it. I’ll write your guess down here so you don’t guess the same letter again. What’s your next guess? (Repeat this until they guess the first letter correctly.)
     presenter_commentary: Each wrong guess is written underneath; in this case the wrong guesses are I, A, Y and O. The student then guesses T, which is right, so that is written in the first box. Note that they must strictly guess each letter of the sentence before moving on to the next one. Sometimes when you can’t work out a letter, you almost need to go through every letter of the alphabet!
     image_description: Presenter writing the letter 'T' inside the first box.
+# Step 5
+-   image: img/at_home/guess-the-sentence/guess-the-sentence-step-5.jpeg
+    presenter_says: What do you think the next letter is?
+    presenter_commentary: The student then guesses the second letter; of course, the first letter will give them a clue. In this case, they immediately guess that the next letter is H.
+    image_description: Presenter writing the letter 'H' inside the second box.
+# Step 6
+-   image: img/at_home/guess-the-sentence/guess-the-sentence-step-6.jpeg
+    presenter_commentary: In this game, spaces and punctuation count as a "letter", so it can be better to say "what comes next?" rather than "what’s the next letter". You can draw a space by writing a line; in this example the student guessed a space after "THE" (wrong) and then after "THERE" (right).
+    image_description: The boxes now contain the word 'there' followed by a space.
+# Step 7
+-   image: img/at_home/guess-the-sentence/guess-the-sentence-step-7.jpeg
+    presenter_commentary: Some letters will be easy to guess, others may take quite a few attempts. This is the point of the activity - the ones that are hardest to guess are the most interesting ones!
+    image_description: Presenter writing the letter 'W' below the seventh box.
+# Step 8
+-   image: img/at_home/guess-the-sentence/guess-the-sentence-step-8.jpeg
+    presenter_commentary: Continue allowing the student to guess until they have the whole word or sentence. You may need to use more paper! Discuss with the student what they think information is. Which of the letters in this guessing game had the most information in them? (The ones that were hard to guess). Which didn’t have much information (the ones that were obvious).
+    image_description: Presenter continues to write letters either inside or below the boxes.
