@@ -31,7 +31,7 @@ All notable changes to this project will be documented in this file.
 
 **Changelog:**
 
-- Ignore certain files in Google Cloud.
+- Ignore the csunplugged/build/img folder in Google Cloud.
 
 
 6.1.1
