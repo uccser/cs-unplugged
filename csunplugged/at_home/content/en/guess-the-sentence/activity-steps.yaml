@@ -1,0 +1,18 @@
+# Step 1
+-   image: img/at_home/guess-the-sentence/guess-the-sentence-step-1.jpg
+    presenter_commentary: The presenter secretly writes down a word or sentence for the student to guess. Ensure the student doesn’t see what has been written. The example sentence here was used in an article about this idea, written in 1951 by Claude Shannon. However, you can use any sentence you want that is appropriate to the student’s ability to know the words.
+    image_description: A sentence that says 'There is no reverse on a motorcycle'.
+# Step 2
+-   image: img/at_home/guess-my-number/guess-my-number-step-2.jpeg
+    presenter_commentary: Draw about 10 boxes across the top of a piece of paper, with each box big enough to write a letter in (the student or the presenter can do this). 
+    image_description: Student drawing 10 boxes.
+# Step 3
+-   image: img/at_home/guess-the-sentence/guess-the-sentence-step-3.jpeg
+    presenter_says: I’ve written down a word/sentence I’d like you to guess. What do you think the first letter is?
+    presenter_commentary: If the student’s guess of the first letter is correct, write it at the top of the paper in the first box, otherwise write it underneath the box. In the example here, the student guessed “I” incorrectly, so it is written under the first box.
+    image_description: Presenter writing the letter 'I' underneath the first box.
+# Step 4
+-   image: img/at_home/guess-the-sentence/guess-the-sentence-step-4.jpeg
+    presenter_says: Sorry, that’s not it. I’ll write your guess down here so you don’t guess the same letter again. What’s your next guess? (Repeat this until they guess the first letter correctly.)
+    presenter_commentary: Each wrong guess is written underneath; in this case the wrong guesses are I, A, Y and O. The student then guesses T, which is right, so that is written in the first box. Note that they must strictly guess each letter of the sentence before moving on to the next one. Sometimes when you can’t work out a letter, you almost need to go through every letter of the alphabet!
+    image_description: Presenter writing the letter 'T' inside the first box.
