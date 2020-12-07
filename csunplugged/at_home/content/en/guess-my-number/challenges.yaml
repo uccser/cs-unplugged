@@ -1,0 +1,10 @@
+1:
+    question: Try this game guessing numbers between 1 and 1000. It sounds like it would be hard, but it doesn’t take much longer. (You might want to use a calculator though). Can you find a way to always do this in just 10 guesses?
+2:
+    question: Try this game guessing numbers between 1 and 1 million. Can you find a way to always do this in just 20 guesses?
+3:
+    question: Show a photo of a friend or a celebrity that the presenter knows the age of, but the child doesn’t. It’s probably a number between 1 and 100, but would you use the same strategy to guess it, or can you find it in fewer than 10 guesses? (If you know that some values are more likely, you can take advantage of this to guess faster; this is a phenomenon that is measured in an area of computer science called “information theory”; you can explore this more in the “Guess the sentence” activity.)
+4:
+    question: What if you don’t know the range of the number you’re guessing - can you find a strategy to guess any whole number that someone is thinking of, even if you don’t know what the biggest or smallest value might be?
+5:
+    question: Can you find a way to guess decimal numbers (like 3.14) using only the “is it greater than” strategy from this activity?
