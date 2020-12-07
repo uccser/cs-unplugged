@@ -27,7 +27,7 @@
     presenter_commentary: and then 7 (which eliminates the 7, leaving only 6 behind as the correct answer).
     image_description: Only the card with the number 6 is left.
 # Step 7
--   image: img/at_home/find-my-card/find-my-card-step-7-2.jpg
+-   image: img/at_home/find-my-card/find-my-card-step-7.jpg
     presenter_commentary: You can try this for other numbers while they refine their strategy. Guide them towards the strategy of choosing a number that will divide the list into exact halves (they should choose 4 first, then either 2 or 6, then either 1, 3, 5, or 7). It’s best if they gradually work this out from a few games, rather than being told the rule.
     image_description: Child eliminates half of the cards.
 # Step 8
