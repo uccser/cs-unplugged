@@ -33,7 +33,6 @@
             Here are five challenges that build on the ideas you’ve been working with.
             You might like to do one a day...
             The first one of each set should be fairly easy, but they get harder.
-            You can type in your answer.
             What do you get out of this?
             Just the warm feeling you get when you know you've solved one of Arnold's challenges, and the satisfaction of knowing that you've mastered a deep idea from computer science.
         </p>
@@ -71,22 +70,24 @@
                             {% endfor %}
                         </div>
                         <!-- Add answer form and feedback -->
-                        <div id="challenges-form">
-                            <div class="form-group">
-                                <label for="challenge-user-input"><strong>Your answer</strong></label>
-                                <input id="challenge-user-input" class="form-control" type="text" placeholder="{% trans "Enter your answer here" %}">
-                                <div class="valid-feedback">
-                                    Correct! Great work!
+                        {% if challenge.answer %}
+                            <div id="challenges-form">
+                                <div class="form-group">
+                                    <label for="challenge-user-input"><strong>Your answer</strong></label>
+                                    <input id="challenge-user-input" class="form-control" type="text" placeholder="{% trans "Enter your answer here" %}">
+                                    <div class="valid-feedback">
+                                        Correct! Great work!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Sorry, that is incorrect.
+                                    </div>
+                                    <div class="empty-feedback">
+                                        Please enter an answer.
+                                    </div>
                                 </div>
-                                <div class="invalid-feedback">
-                                    Sorry, that is incorrect.
-                                </div>
-                                <div class="empty-feedback">
-                                    Please enter an answer.
-                                </div>
+                                <button id="submit-answer" type=button" class="btn btn-primary mb-2">Submit answer</button>
                             </div>
-                            <button id="submit-answer" type=button" class="btn btn-primary mb-2">Submit answer</button>
-                        </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
