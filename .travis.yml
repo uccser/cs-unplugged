@@ -149,7 +149,7 @@ jobs:
           script: bash ./infrastructure/prod-deploy/deploy-app.sh
           skip_cleanup: true
           on:
-            branch: master
+            branch: hotfix-6.1.3
     - script: skip
       name: "Copy static files to Google Storage Bucket"
       deploy:
@@ -157,7 +157,7 @@ jobs:
           script: bash ./infrastructure/prod-deploy/deploy-static-files.sh
           skip_cleanup: true
           on:
-            branch: master
+            branch: hotfix-6.1.3
     - script: skip
       name: "Update Google Cloud Platform database"
       deploy:
@@ -165,7 +165,7 @@ jobs:
           script: bash ./infrastructure/prod-deploy/update-database.sh
           skip_cleanup: true
           on:
-            branch: master
+            branch: hotfix-6.1.3
     - script: skip
       name: "Copy resource PDFs to Google Storage Bucket - Part 1"
       deploy:
@@ -173,7 +173,7 @@ jobs:
           script: bash ./infrastructure/prod-deploy/deploy-resources-1.sh
           skip_cleanup: true
           on:
-            branch: master
+            branch: hotfix-6.1.3
     - script: skip
       name: "Copy resource PDFs to Google Storage Bucket - Part 2"
       deploy:
@@ -181,7 +181,7 @@ jobs:
           script: bash ./infrastructure/prod-deploy/deploy-resources-2.sh
           skip_cleanup: true
           on:
-            branch: master
+            branch: hotfix-6.1.3
     - script: skip
       name: "Copy resource PDFs to Google Storage Bucket - Part 3"
       deploy:
@@ -189,7 +189,7 @@ jobs:
           script: bash ./infrastructure/prod-deploy/deploy-resources-3.sh
           skip_cleanup: true
           on:
-            branch: master
+            branch: hotfix-6.1.3
     - script: skip
       name: "Copy resource PDFs to Google Storage Bucket - Part 4"
       deploy:
@@ -197,7 +197,7 @@ jobs:
           script: bash ./infrastructure/prod-deploy/deploy-resources-4.sh
           skip_cleanup: true
           on:
-            branch: master
+            branch: hotfix-6.1.3
     - script: skip
       name: "Copy resource PDFs to Google Storage Bucket - Part 5"
       deploy:
@@ -205,7 +205,7 @@ jobs:
           script: bash ./infrastructure/prod-deploy/deploy-resources-5.sh
           skip_cleanup: true
           on:
-            branch: master
+            branch: hotfix-6.1.3
     - script: skip
       name: "Copy resource PDFs to Google Storage Bucket - Part 6"
       deploy:
@@ -213,7 +213,7 @@ jobs:
           script: bash ./infrastructure/prod-deploy/deploy-resources-6.sh
           skip_cleanup: true
           on:
-            branch: master
+            branch: hotfix-6.1.3
     - script: skip
       name: "Copy resource PDFs to Google Storage Bucket - Part 7"
       deploy:
@@ -221,7 +221,7 @@ jobs:
           script: bash ./infrastructure/prod-deploy/deploy-resources-7.sh
           skip_cleanup: true
           on:
-            branch: master
+            branch: hotfix-6.1.3
     - script: skip
       name: "Copy resource PDFs to Google Storage Bucket - Part 8"
       deploy:
@@ -229,7 +229,7 @@ jobs:
           script: bash ./infrastructure/prod-deploy/deploy-resources-8.sh
           skip_cleanup: true
           on:
-            branch: master
+            branch: hotfix-6.1.3
     - script: skip
       name: "Copy resource PDFs to Google Storage Bucket - Part 9"
       deploy:
@@ -237,7 +237,7 @@ jobs:
           script: bash ./infrastructure/prod-deploy/deploy-resources-9.sh
           skip_cleanup: true
           on:
-            branch: master
+            branch: hotfix-6.1.3
     - script: skip
       name: "Copy resource PDFs to Google Storage Bucket - Part 10"
       deploy:
@@ -245,7 +245,7 @@ jobs:
           script: bash ./infrastructure/prod-deploy/deploy-resources-10.sh
           skip_cleanup: true
           on:
-            branch: master
+            branch: hotfix-6.1.3
     - script: skip
       name: "Copy resource PDFs to Google Storage Bucket - Part 11"
       deploy:
@@ -253,7 +253,7 @@ jobs:
           script: bash ./infrastructure/prod-deploy/deploy-resources-11.sh
           skip_cleanup: true
           on:
-            branch: master
+            branch: hotfix-6.1.3
 notifications:
   email: false
   slack:
@@ -265,4 +265,4 @@ stages:
   - name: develop deploy
     if: branch = develop
   - name: production deploy
-    if: branch = master
+    if: branch = hotfix-6.1.3
