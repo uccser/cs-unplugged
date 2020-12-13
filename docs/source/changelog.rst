@@ -23,6 +23,23 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+6.1.1
+==============================================================================
+
+- **Release date:** 8th December 2020
+- **Downloads:** `Source downloads are available on GitHub <https://github.com/uccser/cs-unplugged/releases/>`__
+
+**Changelog:**
+
+- Add 3 'At home' activities:
+    - Guess my number
+    - Find my card
+    - Guess the sentence
+
+- Dependency updates:
+
+    - Update lxml from 4.5.2 to 4.6.2.
+
 6.0.1
 ==============================================================================
 

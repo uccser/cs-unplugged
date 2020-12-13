@@ -6,12 +6,12 @@
 # Step 2
 -   image: img/at_home/guess-my-number/guess-my-number-step-2.jpeg
     presenter_says: What number do you want to guess first?
-    presenter_commentary: Write a “greater than or equals” symbol followed by their guess. (In the example, the child has guessed 50.)
+    presenter_commentary: Write a "greater than or equals" symbol followed by their guess. (In the example, the child has guessed 50.)
     image_description: A greater than or equals sign followed by the number 50.
 # Step 3
 -   image: img/at_home/guess-my-number/guess-my-number-step-3.jpeg
     presenter_says: (Depending on the number)<br>My secret number is not greater than or equal to your guess.<br><i>or</i><br>My secret number is greater than or equal to your guess.
-    presenter_commentary: Write a tick or cross depending on whether it is greater than or equal. Since 52 (the secret number) is greater than or equal to the guess (50), the presenter has written a cross. <br><i>Do not tell them if they have guessed your number!</i> They will need to work out when they have enough information to know the number, so this is different to traditional versions of games like “20 guesses”. The best guessing strategy is to start by guessing 50 (which the child happened to do in this case), but it’s fine if the child wants to use another approach - let them work it out for themselves!
+    presenter_commentary: Write a tick or cross depending on whether it is greater than or equal. Since 52 (the secret number) is greater than or equal to the guess (50), the presenter has written a cross. <br><i>Do not tell them if they have guessed your number!</i> They will need to work out when they have enough information to know the number, so this is different to traditional versions of games like "20 guesses". The best guessing strategy is to start by guessing 50 (which the child happened to do in this case), but it’s fine if the child wants to use another approach - let them work it out for themselves!
     image_description: A greater than or equals sign followed by the number 50 and a tick.
 # Step 4
 -   image: img/at_home/guess-my-number/guess-my-number-step-4.jpeg
