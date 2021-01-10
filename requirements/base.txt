@@ -35,7 +35,7 @@ cssselect==1.1.0
 <<<<<<< HEAD
 django-modeltranslation==0.16.1
 =======
-django-modeltranslation==0.16
+django-modeltranslation==0.16.1
 >>>>>>> develop
 uniseg==0.7.1
 python-bidi==0.4.2
