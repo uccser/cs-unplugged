@@ -34,6 +34,10 @@ cp -r csunplugged/locale/xx_LR csunplugged/locale/yy_RL
 ./csu start
 ./csu update
 
+sudo rm -rf csunplugged/build
+sudo rm -rf csunplugged/temp
+sudo rm -rf csunplugged/staticfiles
+
 # Publish Django system to Google App Engine.
 #
 # This deploys using the 'app-develop.yaml' decrypted earlier that contains
