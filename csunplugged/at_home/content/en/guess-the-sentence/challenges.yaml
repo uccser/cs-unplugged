@@ -1,0 +1,10 @@
+1:
+    question: Try to think of words that might be hard to guess because they have unusual letter combinations, such as rhubarb, Lloyd, asthma, queue, and zucchini. Try an experiment to see which words need the most guesses to work out. Then try getting someone to guess the sentence "rhubarb, rhubarb, rhubarb, rhubarb, rhubarb, rhubarb, rhubarb, rhubarb" one letter at a time. Does it become easy for them after the first few words? Get someone to try guessing a completely random mixture of letters, like "AIQENFPZQURVSXOS". How many guesses do they need for each letter?!
+2:
+    question: What are the most common letter combinations in your language? You could get a book, and look for pairs or triples of letters that occur often (such as "ed" and "th" in English). This is the kind of information that computers use to predict text!
+3:
+    question: Try playing this game using text in a foreign language - it can even be a language that you don’t know. Does it take more guesses? What if you have access to a book or web page written in that language - can you use it to get clues about what letters might come next, even if you haven’t seen the language before?
+4:
+    question: Create some text by tossing a coin about 10 times, and write down H and T depending on whether it comes up heads or tails e.g. "HTTHHHTHTHHTT". How many guesses do they need to make for each letter on average?
+5:
+    question: Suppose all you could do is say yes or no. Could you write a whole story if someone helped you? Find out about how Jean-Dominique Bauby wrote an entire book even though the only movement he could make was to blink to say yes or no!
