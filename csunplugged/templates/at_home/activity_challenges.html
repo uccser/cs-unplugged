@@ -33,7 +33,6 @@
             Here are five challenges that build on the ideas you’ve been working with.
             You might like to do one a day...
             The first one of each set should be fairly easy, but they get harder.
-            You can type in your answer.
             What do you get out of this?
             Just the warm feeling you get when you know you've solved one of Arnold's challenges, and the satisfaction of knowing that you've mastered a deep idea from computer science.
         </p>
@@ -49,7 +48,7 @@
                     <div class="nav nav-pills flex-row flex-lg-column" id="challenge-pills-tab" role="tablist" aria-orientation="vertical">
                         {% for challenge in challenges %}
                             <a class="nav-item nav-link p-2 text-center {% if forloop.first%}active{% endif %}" id="challenge-{{ challenge.order_number }}-tab"
-                                data-toggle="tab" href="#challenge-{{ challenge.order_number }}" role="tab"
+                                data-toggle="tab" href="#challenge-{{ challenge.order_number }}" role="tab" data-challenge-number="{{ challenge.order_number }}"
                                 aria-controls="challenge-{{ challenge.order_number }}" aria-selected="{{ forloop.first }}">
                                 {{ challenge }}
                             </a>
@@ -67,25 +66,27 @@
                                         {% if challenge.image %}
                                             <img src="{% static challenge.image %}" class="img-fluid rounded at-home-img" alt="{{ challenge.image_description }}">
                                         {% endif %}
+                                        <!-- Add answer form and feedback -->
+                                        {% if challenge.answer %}
+                                            <div id="challenges-form-{{ challenge.order_number }}" class="challenges-form">
+                                                <div class="form-group">
+                                                    <label for="challenge-user-input-{{ challenge.order_number }}"><strong>Your answer</strong></label>
+                                                    <input id="challenge-user-input-{{ challenge.order_number }}" class="form-control user-input" type="text" placeholder="{% trans "Enter your answer here" %}">
+                                                    <div class="valid-feedback">
+                                                        Correct! Great work!
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        Sorry, that is incorrect.
+                                                    </div>
+                                                    <div class="empty-feedback">
+                                                        Please enter an answer.
+                                                    </div>
+                                                </div>
+                                                <button id="submit-answer-{{ challenge.order_number }}" type=button" class="btn btn-primary mb-2 submit-btn">Submit answer</button>
+                                            </div>
+                                        {% endif %}
                                 </div>
                             {% endfor %}
-                        </div>
-                        <!-- Add answer form and feedback -->
-                        <div id="challenges-form">
-                            <div class="form-group">
-                                <label for="challenge-user-input"><strong>Your answer</strong></label>
-                                <input id="challenge-user-input" class="form-control" type="text" placeholder="{% trans "Enter your answer here" %}">
-                                <div class="valid-feedback">
-                                    Correct! Great work!
-                                </div>
-                                <div class="invalid-feedback">
-                                    Sorry, that is incorrect.
-                                </div>
-                                <div class="empty-feedback">
-                                    Please enter an answer.
-                                </div>
-                            </div>
-                            <button id="submit-answer" type=button" class="btn btn-primary mb-2">Submit answer</button>
                         </div>
                     </div>
                 </div>
