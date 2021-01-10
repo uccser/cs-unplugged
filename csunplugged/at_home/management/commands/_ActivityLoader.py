@@ -104,13 +104,19 @@ class ActivityLoader(TranslatableModelLoader):
             for language, content in project_translations.items():
                 activity_translations[language]['project'] = content.html_string
 
-        more_information_translations = self.get_markdown_translations(
+        more_information_md_file_path = self.get_localised_file(
+            language,
             MORE_INFORMATION_FILENAME,
-            heading_required=False,
-            remove_title=False,
         )
-        for language, content in more_information_translations.items():
-            activity_translations[language]['more_information'] = content.html_string
+        more_information_exists = os.path.exists(more_information_md_file_path)
+        if more_information_exists:
+            more_information_translations = self.get_markdown_translations(
+                MORE_INFORMATION_FILENAME,
+                heading_required=False,
+                remove_title=False,
+            )
+            for language, content in more_information_translations.items():
+                activity_translations[language]['more_information'] = content.html_string
 
         # Create or update activity objects and save to the database
         activity, created = Activity.objects.update_or_create(

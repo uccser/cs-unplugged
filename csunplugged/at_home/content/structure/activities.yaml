@@ -5,12 +5,21 @@ activities:
     binary-challenge:
         order-number: 2
         icon: img/at_home/binary-challenge/binary-challenge-step-10.jpg
-    unlocking-the-secret-in-product-codes:
+    guess-my-number:
         order-number: 3
+        icon: img/at_home/guess-my-number/guess-my-number-thumbnail.jpeg
+    find-my-card:
+        order-number: 4
+        icon: img/at_home/find-my-card/find-my-card-step-2.jpeg
+    guess-the-sentence:
+        order-number: 5
+        icon: img/at_home/guess-the-sentence/guess-the-sentence-step-8.jpeg
+    unlocking-the-secret-in-product-codes:
+        order-number: 6
         icon: img/at_home/unlocking-the-secret-in-product-codes/13-digit-barcode-steps/unlocking-the-secret-in-product-codes-step-4.jpg
     kidbots:
-        order-number: 4
+        order-number: 7
         icon: img/at_home/kidbots/kidbots-step-7.jpg
     squeezing-pictures:
-        order-number: 5
+        order-number: 8
         icon: img/at_home/squeezing-pictures/squeezing-pictures-thumbnail.jpeg
