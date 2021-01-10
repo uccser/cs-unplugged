@@ -1,31 +1,37 @@
-var challenge_user_input;
-var submit_answer_button;
+var challenge_number;
 
 $(document).ready(function() {
-    challenge_user_input = $('#challenge-user-input');
-    submit_answer_button = $('#submit-answer');
+    challenge_number = $('#challenge-pills-tabContent > .tab-pane.active').data('challenge-number');
+    var challenge_user_input = $('#challenge-user-input-' + challenge_number);
+    var submit_answer_button = $('#submit-answer-' + challenge_number);
 
     // Run when submit button is clicked.
-    submit_answer_button.click(function(){
-        submitUserAnswer();
+    $('.submit-btn').click(function(){
+        submitUserAnswer(challenge_number);
     });
 
     // Run when enter is pressed in input box.
-    challenge_user_input.keyup(function (e) {
+    $('.user-input').keyup(function (e) {
         if (e.keyCode === 13) {
-            submitUserAnswer();
+            submitUserAnswer(challenge_number);
         }
     });
 
     $('#challenge-pills-tab .nav-link').click(function() {
+        challenge_number = $(this).data('challenge-number');
+        challenge_user_input = $('#challenge-user-input-' + challenge_number);
+        submit_answer_button = $('#submit-answer-' + challenge_number);
         challenge_user_input.val('');
         challenge_user_input.prop('readonly', false);
-        displayFeedback();
+        challenge_user_input.removeClass('is-valid is-invalid is-empty');
         submit_answer_button.show();
     });
 });
 
-function submitUserAnswer() {
+
+function submitUserAnswer(challenge_number) {
+    challenge_user_input = $('#challenge-user-input-' + challenge_number);
+    submit_answer_button = $('#submit-answer-' + challenge_number);
     // Deactiviate button
     submit_answer_button.prop('disabled', true);
 
@@ -34,20 +40,19 @@ function submitUserAnswer() {
 
     // If empty, display message
     if (user_answer) {
-        var challenge_number = $('#challenge-pills-tabContent > .tab-pane.active').data('challenge-number');
         var result = checkAnswer(challenge_number, user_answer);
         // Display output
         if (result) {
-            displayFeedback('correct');
+            displayFeedback('correct', challenge_user_input);
             submit_answer_button.hide();
             challenge_user_input.prop('readonly', true);
         } else {
-            displayFeedback('incorrect');
+            displayFeedback('incorrect', challenge_user_input);
         }
         // Log to database
         logAnswer(activity_slug, challenge_number, user_answer, result)
     } else {
-        displayFeedback('empty');
+        displayFeedback('empty', challenge_user_input);
     }
 
     // Activate button
@@ -68,10 +73,11 @@ function checkAnswer(challenge_number, user_answer) {
 };
 
 
-function displayFeedback(status) {
+function displayFeedback(status, challenge_user_input) {
     /**
      * Update feedback to reflect given status.
      * @param {string} status - Type of feedback to provide.
+     * @param {object} challenge_user_input - The challenge input box
      */
     challenge_user_input.removeClass('is-valid is-invalid is-empty');
     if (status == 'correct') {
