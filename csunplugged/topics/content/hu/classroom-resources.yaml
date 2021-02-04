@@ -1,0 +1,41 @@
+---
+pens:
+  description: Tollak
+paper:
+  description: Papír
+number-line-0-20:
+  description: Számegyenes 0-tól 20-ig
+musical-instruments:
+  description: Hangszerek
+alphabet-cards:
+  description: ABC kártyák
+parity-cards-set:
+  description: Egy 36-os készlet paritás kártya
+whiteboard:
+  description: Fehér tábla
+whiteboard-pens:
+  description: Tábla filcek
+product-barcodes:
+  description: 12 vagy 13 számjegyű vonalkódos elemek száma
+payment-system:
+  description: Fizetési rendszer, mint zsetonok vagy golyók
+pencils:
+  description: Ceruzák
+stopwatch:
+  description: Stopperóra
+handheld-whiteboards:
+  description: Kézitáblák
+clipboards:
+  description: Kapcsos irattartók
+blocks:
+  description: Kockák
+hula-hoop:
+  description: Hullahopp karika
+counters:
+  description: Zsetonok
+chalk:
+  description: Kréta
+coloring-pens:
+  description: Ceruzák, zsírkréták vagy filctollak színe
+erasers:
+  description: Radírok

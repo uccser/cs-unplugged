@@ -1,0 +1,87 @@
+---
+computational-thinking:
+  name: Informatikai Gondolkodás
+algorithmic-thinking:
+  name: Algoritmikus Gondolkodás
+decomposition:
+  name: Felbontás
+abstraction:
+  name: Elvonatkoztatás
+generalising-and-patterns:
+  name: Általánosítás és minták
+logic:
+  name: Logika
+evaluation:
+  name: Értékelés
+computer-science:
+  name: Informatika
+data-representation:
+  name: Adatmegjelenítés
+algorithms:
+  name: Algoritmusok
+programming:
+  name: Programozás
+mathematics:
+  name: Matematika
+geometry:
+  name: Geometria
+measurement:
+  name: Mérés
+numeracy:
+  name: Számolás
+algebra:
+  name: Algebra
+statistics:
+  name: Statisztika
+literacy:
+  name: Írástudás
+reading:
+  name: Olvasás
+writing:
+  name: Írás
+listening:
+  name: Hallásértés
+speaking:
+  name: Beszédkészség
+library:
+  name: Könyvtárismeret
+word-study:
+  name: Szótanulás
+art:
+  name: Művészet
+language:
+  name: Nyelvtanulás
+performing-arts:
+  name: Előadó-művészet
+music:
+  name: Zene
+dance:
+  name: Tánc
+drama:
+  name: Dráma
+physical-education:
+  name: Testnevelés
+fitness:
+  name: Fitness
+sport:
+  name: Sport
+health:
+  name: Egészség
+science:
+  name: Tudomány
+biology:
+  name: Biológia
+physics:
+  name: Fizika
+astronomy:
+  name: Csillagászat
+chemistry:
+  name: Kémia
+geology:
+  name: Geológia
+social-studies:
+  name: Társadalomtudományok
+history:
+  name: Történelem
+geography:
+  name: Földrajz
