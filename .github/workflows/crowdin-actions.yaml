@@ -1,6 +1,7 @@
 name: Synchronise with Crowdin
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 3 * * *'
 
