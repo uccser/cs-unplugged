@@ -4,8 +4,8 @@ project_identifier: cs-unplugged
 preserve_hierarchy: true
 files: [
   {
-    source: /locale/en/LC_MESSAGES/*.po,
-    translation: /locale/%two_letters_code%/LC_MESSAGES/%original_file_name%,
+    source: csunplugged/locale/en/LC_MESSAGES/*.po,
+    translation: csunplugged/locale/%two_letters_code%/LC_MESSAGES/%original_file_name%,
     languages_mapping": {
       two_letters_code: {
         zh-CN: zh_Hans,
