@@ -16,14 +16,14 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    
+
     - name: Upload or update source files to Crowdin
-      uses: crowdin/github-action@1.0.10
+      uses: crowdin/github-action@1.0.17
       with:
         upload_sources: true
 
     - name: Download Chinese (simplified) translations
-      uses: crowdin/github-action@1.0.10
+      uses: crowdin/github-action@1.0.17
       with:
         upload_sources: false
         download_translations: true
@@ -41,7 +41,7 @@ jobs:
         config: crowdin.yaml
 
     - name: Download French translations
-      uses: crowdin/github-action@1.0.10
+      uses: crowdin/github-action@1.0.17
       with:
         upload_sources: false
         download_translations: true
@@ -59,7 +59,7 @@ jobs:
         config: crowdin.yaml
 
     - name: Download German translations
-      uses: crowdin/github-action@1.0.10
+      uses: crowdin/github-action@1.0.17
       with:
         upload_sources: false
         download_translations: true
@@ -77,7 +77,7 @@ jobs:
         config: crowdin.yaml
 
     - name: Download Indonesian translations
-      uses: crowdin/github-action@1.0.10
+      uses: crowdin/github-action@1.0.17
       with:
         upload_sources: false
         download_translations: true
@@ -95,7 +95,7 @@ jobs:
         config: crowdin.yaml
 
     - name: Download Italian translations
-      uses: crowdin/github-action@1.0.10
+      uses: crowdin/github-action@1.0.17
       with:
         upload_sources: false
         download_translations: true
@@ -113,7 +113,7 @@ jobs:
         config: crowdin.yaml
 
     - name: Download Te Reo Māori translations
-      uses: crowdin/github-action@1.0.10
+      uses: crowdin/github-action@1.0.17
       with:
         upload_sources: false
         download_translations: true
@@ -131,7 +131,7 @@ jobs:
         config: crowdin.yaml
 
     - name: Download Turkish translations
-      uses: crowdin/github-action@1.0.10
+      uses: crowdin/github-action@1.0.17
       with:
         upload_sources: false
         download_translations: true
