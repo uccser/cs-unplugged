@@ -22,7 +22,7 @@ Whoosh==2.7.4
 django-widget-tweaks==1.4.8
 
 # YAML Loading
-PyYAML==5.3.1
+PyYAML==5.4.1
 
 # System tools
 tqdm==4.51.0
