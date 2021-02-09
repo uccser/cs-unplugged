@@ -4,7 +4,7 @@
     "main": "gulpfile.js",
     "private": true,
     "dependencies": {
-        "bootstrap": "4.4.1",
+        "bootstrap": "4.6.0",
         "details-element-polyfill": "2.4.0",
         "intro.js": "2.9.3",
         "popper.js": "1.15.0",
