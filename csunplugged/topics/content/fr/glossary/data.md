@@ -1,0 +1,3 @@
+# Données
+
+La façon dont l'information est stockée. Les nombres sont un type de données que vous rencontrerez très souvent (par exemple, les numéros de compte, les numéros de client, les numéros de carte, les numéros de série, les numéros de produit, etc.). Il peut également s'agir de texte (comme les mots que nous recherchons), de dates et même d'images et de sons. Vous pouvez penser à tout ce qui est stocké dans la mémoire d'un ordinateur sous forme de données ; ce sont tous des éléments d'information.
