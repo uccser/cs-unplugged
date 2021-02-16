@@ -5,6 +5,9 @@ from string import ascii_lowercase
 
 SPACER = " "
 
+french_alphabet = list(ascii_lowercase) + ["Œ", "Æ", "â", "ê", "î", "ô", "û"]
+french_alphabet.insert(3, "ç")
+
 ALPHABETS = {
     # English
     "en": {
@@ -12,7 +15,7 @@ ALPHABETS = {
     },
     # French
     "fr": {
-        "letters": list(ascii_lowercase) + ["Œ", "Æ", "â", "ê", "î", "ô", "û", "ç"],
+        "letters": french_alphabet,
     },
     # Spanish
     "es": {
