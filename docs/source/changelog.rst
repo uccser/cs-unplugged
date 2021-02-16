@@ -23,6 +23,37 @@ All notable changes to this project will be documented in this file.
   fit the Semantic Versioning model. However these version numbers can still
   provide a good indication of the changes in each version.
 
+6.2.0
+==============================================================================
+
+- **Release date:** 16th February 2021
+- **Downloads:** `Source downloads are available on GitHub <https://github.com/uccser/cs-unplugged/releases/>`__
+
+**Changelog:**
+
+- Add initial French language content:
+    - Four lessons for Binary Numbers topic.
+    - All printables.
+    - All glossary definitions.
+
+- Update contributors list.
+- Switch to Crowdin GitHub Action for updating translation files.
+- Switch to using Dependabot for tracking dependency updates.
+
+- Dependency updates:
+
+    - Update coverage from 5.2.1 to 5.3.1.
+    - Update django-debug-toolbar from 2.2 to 3.1.1.
+    - Update django-extensions from 3.0.8 to 3.0.9.
+    - Update django-haystack from 2.8.1 to 3.0.
+    - Update django-modeltranslation from 0.15.2 to 0.16.1.
+    - Update flake8 from 3.8.3 to 3.8.4.
+    - Update Pillow from 7.2.0 to 8.1.0.
+    - Update requests from 2.24.0 to 2.25.1.
+    - Update sphinx from 3.2.1 to 3.4.3.
+    - Update sphinx-rtd-theme from 0.5.0 to 0.5.1.
+    - Update tqdm from 4.48.2 to 4.51.0.
+
 6.1.3
 ==============================================================================
 
@@ -91,7 +122,7 @@ This release adds the 'Plugging it in' area of the website.
     - Saves a users code attempt and their status on the question.
     - User code tested on the JOBE server.
     - Scratch questions are not supported.
-    - User triggered walk-through on programming challenge page. 
+    - User triggered walk-through on programming challenge page.
 - Add learning outcome and solution content to programming challenges table in the educators area.
 - Replace content under the Python dropdown on programming challenge pages in CSU with a link to the same challenge in Plugging it in.
 - Order glossary terms alphabetically for all languages.

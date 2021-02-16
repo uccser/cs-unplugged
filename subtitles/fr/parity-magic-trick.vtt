@@ -10,7 +10,7 @@ Author: Alasdair Smith 13/02/2017
 Edited by: Courtney Bracefield 05/08/2020
 
 00:00.000 --> 00:04.000
-Informatique Débranchée
+CS Unplugged
 L'informatique sans ordinateur
 
 00:04.600 --> 00:06.200
@@ -197,9 +197,6 @@ Ok voyons voir. Sammy Sammy Sammy.
 03:45.400 --> 03:47.000
 Correct ou pas ?
 
-03:47.000 --> 03:50.200
-[Brouhaha confus]
-
 03:50.200 --> 03:52.600
 J'avais juste ? Super !
 
@@ -251,7 +248,7 @@ Comment sont-ils ? Comment est-ce qu'on pourrait classer ces nombres ?
 Oui ?
 
 04:56.000 --> 04:57.400
-Nombres pairs ?
+Des nombres pairs ?
 
 04:57.400 --> 05:00.000
 Hmm, levez la main si vous êtes d'accord avec cette affirmation ?
@@ -279,7 +276,7 @@ NOTE Changed 'Why' to 'How'
 Qu'est-ce que j'étais en train de faire ?
 
 05:22.000 --> 05:28.000
- Um, vous étiez en train de, heu,
+Um, vous étiez en train de, heu,
 ajouter une carte noire pour pouvoir les mémoriser plus facilement ?
 
 05:28.000 --> 05:31.600
@@ -313,7 +310,7 @@ et vous aller me dire ce qu'il faut ajouter.
 
 06:02.800 --> 06:08.600
 Je vais également effacer les nombres 
-pour que vous n'ayez pas d'indices, Ok ?
+pour que vous n'ayez pas d'indices, OK ?
 
 06:08.600 --> 06:11.000
 Vous êtes prêts ?
@@ -325,7 +322,7 @@ Que dois-je faire ici ?
 
 06:13.800 --> 06:18.800
 ["Noir"] ["Noir"]
-[Brouhaha confus]
+[ voix indistinctes]
 
 06:18.800 --> 06:22.400
 Noir
@@ -455,7 +452,7 @@ Deux
 
 08:32.800 --> 08:34.000
 Est-ce que c'est juste ?
- Oui
+Oui
 
 08:34.000 --> 08:36.800
 Et celle-ci ? Six
@@ -467,20 +464,20 @@ Est-ce correct ? Oui
 
 08:39.600 --> 08:43.600
 Et celle-là ?
- Une, donc il y a un problème détecté.
+Une, donc il y a un problème détecté.
 
 08:43.600 --> 08:46.400
 Il y a un problème ici, regardons ça.
 
 08:46.400 --> 08:49.400
-Donc, quelle carte a retourné Robert ?
+Donc, quelle carte a été retournée Robert?
 
 08:49.400 --> 08:53.600
 Celle-ci, car elle est entourée ici
 et elle est entourée là.
 
 08:53.600 --> 08:57.000
- Donc ça me donne directement
+Donc ça me donne directement
 l'endroit de la carte retournée.
 
 08:57.000 --> 08:59.400

@@ -130,6 +130,7 @@ DEFAULT_LANGUAGES = (
     ("en", "English"),
     ("de", "Deutsche"),
     ("es", "Español"),
+    ("fr", "Français"),
     ("mi", "Te Reo Māori"),
     ("zh-hans", "简体中文"),
 )
