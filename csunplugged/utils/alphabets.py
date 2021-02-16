@@ -10,6 +10,10 @@ ALPHABETS = {
     "en": {
         "letters": list(ascii_lowercase),
     },
+    # French
+    "fr": {
+        "letters": list(ascii_lowercase) + ["Œ", "Æ", "â", "ê", "î", "ô", "û", "ç"],
+    },
     # Spanish
     "es": {
         "letters": list(ascii_lowercase) + ["ñ"],
