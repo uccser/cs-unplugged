@@ -100,7 +100,7 @@ class MakeResourcesCommandTest(BaseTestWithDB):
             "BareResourceGeneratorWithCopies",
             copies=True
         )
-        management.call_command("makeresources", "Resource 1")
+        management.call_command("makeresources", "resource1")
         filepath = os.path.join(RESOURCE_PATH, resource.slug, self.language, "Resource 1 (a4).pdf")
         pdf = PdfFileReader(open(filepath, "rb"))
         self.assertEqual(pdf.getNumPages(), 20)
@@ -125,7 +125,7 @@ class MakeResourcesCommandTest(BaseTestWithDB):
             "BareResourceGeneratorWithCopies",
             copies=True
         )
-        management.call_command("makeresources", "Resource 1")
+        management.call_command("makeresources", "resource1")
         filepath = os.path.join(RESOURCE_PATH, resource.slug, self.language, "Resource 1 (a4).pdf")
         pdf = PdfFileReader(open(filepath, "rb"))
         self.assertEqual(pdf.getNumPages(), 20)
@@ -165,7 +165,7 @@ class MakeResourcesCommandTest(BaseTestWithDB):
             "Description of resource 1",
             "BareResourceGenerator",
         )
-        management.call_command("makeresources", resource.name, LANGUAGE1)
+        management.call_command("makeresources", resource.slug, LANGUAGE1)
         # Check language 1 exists
         filepath = os.path.join(RESOURCE_PATH, resource.slug, LANGUAGE1, "Resource 1 (a4).pdf")
         pdf = PdfFileReader(open(filepath, "rb"))

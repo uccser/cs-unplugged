@@ -2,7 +2,6 @@
 
 import os
 import re
-import copy
 from django.core import management
 from config.settings.base import DEFAULT_LANGUAGES as LANGUAGES
 from tests.BaseTestWithDB import BaseTestWithDB
@@ -39,10 +38,11 @@ class ResourceGenerationTest(BaseTestWithDB):
 
         # Check if any languages are missed
         error_text = ''
+        template = "\n{slug} does not generate PDFs for the {mode} website for the following languages: {languages}"
         for mode in modes:
             for (resource_slug, languages) in required_resources[mode].items():
                 if languages:
-                    error_text += f"\n{resource_slug} does not generate PDFs for the {mode} website for the following languages: {languages}"
+                    error_text += template.format(slug=resource_slug, mode=mode, languages=languages)
 
         if error_text:
             raise Exception(error_text)
