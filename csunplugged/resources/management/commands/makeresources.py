@@ -21,10 +21,10 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         """Add optional parameter to makeresources command."""
         parser.add_argument(
-            "resource_name",
+            "resource_slug",
             nargs="?",
             default=None,
-            help="The resource name to generate",
+            help="The resource slug to generate",
         )
         parser.add_argument(
             "resource_language",
@@ -37,8 +37,8 @@ class Command(BaseCommand):
         """Automatically called when the makeresources command is given."""
         base_path = settings.RESOURCE_GENERATION_LOCATION
 
-        if options["resource_name"]:
-            resources = [Resource.objects.get(name=options["resource_name"])]
+        if options["resource_slug"]:
+            resources = [Resource.objects.get(slug=options["resource_slug"])]
         else:
             resources = Resource.objects.order_by("name")
 

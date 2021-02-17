@@ -8,8 +8,8 @@ source ./infrastructure/prod-deploy/load-prod-deploy-config-envs.sh
 ./csu update
 
 # Generate static PDF resources for deployment.
-docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Number Hunt" "mi"
-docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Number Hunt" "zh-hans"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "number-hunt" "mi"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "number-hunt" "zh-hans"
 
 # Install Google Cloud SDK
 ./infrastructure/install_google_cloud_sdk.sh
