@@ -8,10 +8,10 @@ source ./infrastructure/prod-deploy/load-prod-deploy-config-envs.sh
 ./csu update
 
 # Generate static PDF resources for deployment.
-docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Sorting Network"
-docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Sorting Network Cards"
-docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Train Stations"
-docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Treasure Island"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "sorting-network"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "sorting-network-cards"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "train-stations"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "treasure-island"
 
 # Install Google Cloud SDK
 ./infrastructure/install_google_cloud_sdk.sh

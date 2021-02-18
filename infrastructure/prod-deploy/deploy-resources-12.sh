@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./infrastructure/dev-deploy/load-dev-deploy-config-envs.sh
+source ./infrastructure/prod-deploy/load-prod-deploy-config-envs.sh
 
 # Deploy generated resource files to the development static file server.
 
@@ -8,17 +8,17 @@ source ./infrastructure/dev-deploy/load-dev-deploy-config-envs.sh
 ./csu update
 
 # Generate static PDF resources for deployment.
-docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "pixel-painter" "en"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "pixel-painter" "fr"
 
 # Install Google Cloud SDK
 ./infrastructure/install_google_cloud_sdk.sh
 
 # Decrypt secret files archive that contain credentials.
-./infrastructure/dev-deploy/decrypt-dev-secrets.sh
+./infrastructure/prod-deploy/decrypt-prod-secrets.sh
 
 # Authenticate with gcloud tool using the decrypted service account credentials.
 # See: https://cloud.google.com/sdk/gcloud/reference/auth/activate-service-account
-gcloud auth activate-service-account --key-file continuous-deployment-dev.json
+gcloud auth activate-service-account --key-file continuous-deployment-prod.json
 
 # Create empty SSH keys with an empty passphrase, for Google Cloud SDK to
 # copy files to a VM for building the Docker image.
@@ -31,4 +31,4 @@ ssh-keygen -q -N "" -f ~/.ssh/google_compute_engine
 # This copies the generated static files from tests to the Google Storage
 # Bucket.
 # See: https://cloud.google.com/python/django/flexible-environment#deploy_the_app_to_the_app_engine_flexible_environment
-gsutil rsync -R ./csunplugged/staticfiles/resources/ gs://cs-unplugged-dev.appspot.com/static/resources/
+gsutil rsync -R ./csunplugged/staticfiles/resources/ gs://cs-unplugged.appspot.com/static/resources/
