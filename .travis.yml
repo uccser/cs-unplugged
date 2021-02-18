@@ -141,6 +141,14 @@ jobs:
           skip_cleanup: true
           on:
             branch: develop
+    - script: skip
+      name: "Copy resource PDFs to Google Storage Bucket - Part 12"
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/dev-deploy/deploy-resources-12.sh
+          skip_cleanup: true
+          on:
+            branch: develop
     - stage: production deploy
       script: skip
       name: "Deploy app to Google App Engine"
@@ -251,6 +259,14 @@ jobs:
       deploy:
         - provider: script
           script: bash ./infrastructure/prod-deploy/deploy-resources-11.sh
+          skip_cleanup: true
+          on:
+            branch: master
+    - script: skip
+      name: "Copy resource PDFs to Google Storage Bucket - Part 12"
+      deploy:
+        - provider: script
+          script: bash ./infrastructure/prod-deploy/deploy-resources-12.sh
           skip_cleanup: true
           on:
             branch: master

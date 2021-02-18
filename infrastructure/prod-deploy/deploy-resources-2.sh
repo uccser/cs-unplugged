@@ -8,9 +8,9 @@ source ./infrastructure/prod-deploy/load-prod-deploy-config-envs.sh
 ./csu update
 
 # Generate static PDF resources for deployment.
-docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Modulo Clock"
-docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Parity Cards"
-docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "Piano Keys"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "modulo-clock"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "parity-cards"
+docker-compose exec django /docker_venv/bin/python3 ./manage.py makeresources "piano-keys"
 
 # Install Google Cloud SDK
 ./infrastructure/install_google_cloud_sdk.sh
