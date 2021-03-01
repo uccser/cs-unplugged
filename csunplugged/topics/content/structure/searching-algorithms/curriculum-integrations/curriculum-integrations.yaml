@@ -3,7 +3,7 @@ where-is-my-hat:
   curriculum-areas:
     - writing
   prerequisite-lessons:
-    sequential-and-binary-search-unit-plan:
+    unit-plan:
       - how-many-guesses
 
 biography:
@@ -19,7 +19,7 @@ drama-video:
     - drama
     - art
   prerequisite-lessons:
-    sequential-and-binary-search-unit-plan:
+    unit-plan:
       - how-many-guesses
       - divide-and-conquer
 music:
@@ -27,6 +27,6 @@ music:
   curriculum-areas:
     - music
   prerequisite-lessons:
-    sequential-and-binary-search-unit-plan:
+    unit-plan:
       - how-many-guesses
       - divide-and-conquer
