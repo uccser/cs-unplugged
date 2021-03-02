@@ -68,6 +68,27 @@ binary-count-highest-number:
     - decomposition
     - numeracy
 
+# DATA STRUCTURES FOR SEARCHING LEARNING OUTCOMES
+
+organise-find-data-bst:
+  curriculum-areas:
+    - algorithmic-thinking
+    - decomposition
+    - logic
+    - evaluation
+    - algorithms
+    - reading
+
+assess-efficiency-bst:
+  curriculum-areas:
+    - evaluation
+    - algorithms
+
+compare-efficiency-bst:
+  curriculum-areas:
+    - evaluation
+    - algorithms
+
 # DRAMA LEARNING OUTCOMES
 
 drama-create-video-binary:

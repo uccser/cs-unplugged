@@ -1,0 +1,6 @@
+unit-plans:
+  - unit-plan/unit-plan.yaml
+
+icon: img/topics/data-structures-for-searching-icon.png
+
+curriculum-integrations: curriculum-integrations/curriculum-integrations.yaml

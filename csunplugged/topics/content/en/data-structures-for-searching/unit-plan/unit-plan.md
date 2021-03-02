@@ -1,19 +1,5 @@
 # Data structures for searching
 
-{panel type="text"}
-
-# Preparatory knowledge
-
-[Binary searching and sequential searching lessons]('topics:unit_plan' 'searching-algorithms' 'unit-plan').
-
-Note: this activity is about Binary Search Trees, or BSTs.
-There is a previous activity about Binary Search, which uses a sorted list of values.
-Students often understandably confuse Binary Search and Binary Search Trees.
-Both are mentioned below, and although they have elements in common, they are distinct ideas.
-We’ll often use the abbreviation BST here to help to make it clear that we’re talking about the trees, and not just Binary Search.
-
-{panel end}
-
 {image file-path="img/topics/data-structures-for-searching-search-icon.png" alt="Searching through items."}
 
 The previous lessons in the Searching algorithms unit have shown that the way we organise data can affect which algorithms we can use for searching through it.
