@@ -24,7 +24,11 @@ The left-hand picture below shows what they will look like.
 The right-hand picture shows the numbers to put under each disc, but these shouldn't be visible to the students.
 The lesson explains how to lay these out.
 
-{image file-path="img/topics/data-structures-for-searching-overview.png" alt="Binary search tree drawn on the ground in chalk." caption="An example of what we will be creating. Each binary search tree has a different shape depending on the data"}
+{image file-path="img/topics/data-structures-for-searching-overview.png" alt="Binary search tree drawn on the ground in chalk." caption="true"}
+
+An example of what we will be creating. Each binary search tree has a different shape depending on the data.
+
+{image end}
 
 {panel end}
 
@@ -41,7 +45,9 @@ In this lesson we'll look at a method that is fast for adding and finding data.
 ## Lesson starter
 
 What are the names of the parts of a tree that you can see?
+
 Possible answers are: trunk, branches, leaves... Explain that we’ll use some of these words to talk about a binary search tree.
+
 Let’s look at an example of what happens in the physical world: If a cat or ball is stuck in a tree, and you want to describe where it is, starting at the base (root), could you guide the rescuer by saying which way to go at each fork in a branch?
 For example, below is a picture of a tree with a cat - using only "left" and "right", what are the directions you would give someone to climb up to where the cat is?
 Can you guide someone to anywhere in the tree just by giving them "left" and "right" directions?
@@ -65,11 +71,12 @@ Some students might observe that not all trees have two-way branches, although a
 Mark out the "tree" above on the ground.
 The numbers are shown for your convenience in the left picture, but they would be hidden (turning the disc upside down) as in the picture on the right when the students first see the tree.
 (Note that the colours and arrows aren't necessary, but can help to talk about the tree.)
+
 Show the students the "tree" that you have marked out.
 (If you are confident with the activity, you can mark out a tree with more than 12 discs - the larger the better.)
 
-    1. If this represented a tree, where would the root be? (It's the single disc nearest you). 
-       Which discs do you think are called the leaves? (These are the disks at the top with no branches coming out of them).
+If this represented a tree, where would the root be? (It's the single disc nearest you).
+Which discs do you think are called the leaves? (These are the disks at the top with no branches coming out of them).
 
 {panel type="teaching"}
 
@@ -134,7 +141,8 @@ For example, when you searched for the number 35 in the previous example, it cou
 
 You can build your own tree with any numbers that you want to be able to search.
 You could either make up some numbers, or use something like the years of historic events.
-It’s best to avoid having the same value twice, but we explain how to accommodate this below. 
+It’s best to avoid having the same value twice, but we explain how to accommodate this below.
+
 To build a tree, the very first value that you add to the tree will be the root, so just place that data on the ground.
 It's a very simple "tree" at this stage, with just one value in it!!
 But it gets more interesting as you add more values.
@@ -142,5 +150,5 @@ Once the root is put down, students can add each value as for "adding a value" a
 For example, suppose we're making a tree with the numbers 45, 23, 26 then 76.
 The tree would be built up as follows. Initially the tree will seem very simple with just 45 as the root, but it can grow rapidly as values are added.
 The shape will depend on the order that the numbers arrive in.
-Note that it pays to have the branches from the root drawn to be fairly wide, as the tree may need to be wide further down as more values are added.
+Note that it pays to have the branches from the root drawn to be fairly wide, as the tree may need to be wider further down as more values are added.
 The branches needn’t be straight, as long as it’s obvious which is left and which is right.

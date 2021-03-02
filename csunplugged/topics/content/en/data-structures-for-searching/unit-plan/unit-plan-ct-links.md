@@ -32,6 +32,8 @@ This is very helpful because it means they don’t need to spend their time re-i
 
 {panel end}
 
+{panel type="ct-decomposition"}
+
 # Decomposition
 
 Using data structures allows us to view a problem from a higher level, without having to focus on each individual part of how the problem, and its solution, work.

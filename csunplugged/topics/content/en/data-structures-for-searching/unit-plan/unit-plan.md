@@ -80,7 +80,7 @@ Hashing, and using hash functions supports programmers to make really fast searc
 This approach might seem almost fanciful at first because it relies a lot on randomness - making a very random value by chopping up and mixing the key you're searching for, and hoping that not too many other things come out to the same value.
 Fortunately the statistics around this are well understood, and people can design very fast and efficient hash tables. 
 
-{image file-path="img/topics/data-structures-for-searching-searching-girls.png" alt="Using a search engine."}
+{image file-path="img/topics/data-structures-for-searching-searching-girl.png" alt="Using a search engine."}
 
 There are many variations on hash tables and search trees, but chances are that if you are looking something up on a computer system it will be using software based on these ideas, whether it's checking your online account balance, getting the price of a product in a shop, or looking for a web page using a search engine.
 
