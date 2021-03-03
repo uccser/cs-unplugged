@@ -130,14 +130,14 @@ Ask students to search for the number 35.
 
 ## Variations
 
-**Adding a value**
+### Adding a value
 
 To do this, just search for where it should be, and add it on a new disc in the correct direction from the last disc that you got to (the added disc will be a new "leaf").
 For example, when you searched for the number 35 in the previous example, it could have been added on a new right branch from number 30.
 
 {image file-path="img/topics/data-structures-for-searching-binary-search-tree-6.png" alt="Binary tree with a new leaf added."}
 
-**Build your own tree**
+### Build your own tree
 
 You can build your own tree with any numbers that you want to be able to search.
 You could either make up some numbers, or use something like the years of historic events.
@@ -148,7 +148,84 @@ It's a very simple "tree" at this stage, with just one value in it!!
 But it gets more interesting as you add more values.
 Once the root is put down, students can add each value as for "adding a value" above i.e. search for where it belongs, and when you get to the end of the path, add it as a branch from the disc that you got to.
 For example, suppose we're making a tree with the numbers 45, 23, 26 then 76.
-The tree would be built up as follows. Initially the tree will seem very simple with just 45 as the root, but it can grow rapidly as values are added.
+The tree would be built up as follows.
+
+{image file-path="img/topics/data-structures-for-searching-steps-number.png" alt="Constructing a binary search tree with the numbers 45, 23, 26 and 76."}
+
+Initially the tree will seem very simple with just 45 as the root, but it can grow rapidly as values are added.
 The shape will depend on the order that the numbers arrive in.
 Note that it pays to have the branches from the root drawn to be fairly wide, as the tree may need to be wider further down as more values are added.
 The branches needn’t be straight, as long as it’s obvious which is left and which is right.
+
+{panel type="teaching"}
+
+# Teaching observations
+
+Students may ask what happens if two values are the same. This is something they could explore; if they do, here are some ideas that they are likely to come to:
+
+-    If you allow duplicate values in the tree, you need to be consistent about whether an equal value is down the left or right branch (for example, you could make a rule that the right branch is greater than or equal to the value at the branch)
+
+-    Or you could count the number of items at a node, so if you get a second one, you store a count of 2 at that node (this is an example of data associated with the value)
+
+-    In some cases duplicates shouldn't occur; for example, if the value is an ID or account number, there shouldn't be two people with the number. 
+
+{panel end}
+
+### Build your own tree with other data
+
+Instead of using numbers, we can put words in a tree.
+Discuss what "less than" would mean with words (students should observe that it could be dictionary order, so "less than" means earlier in the dictionary).
+Have a set of words written on the back of a card, or old CD (the words could be a spelling list).
+
+Here's an example using animal names; words that are earlier in the alphabet are down the left branch, and vice versa.
+This is the final version; below are the instructions for building it up with the class.
+
+{image file-path="img/topics/data-structures-for-searching-animal-tree-final.png" alt="An example of a full binary search tree with words as nodes."}
+
+Take a word randomly from a pile you have prepared, and use this as the first value that you add to the tree; or you could have students write down their favourite animal.
+The first word chosen becomes the root (in the example it is the word “elephant”).
+
+{image file-path="img/topics/data-structures-for-searching-animal-tree-1.png" alt="The word 'elephant' as the root node."}
+
+Take the next word, to start building your binary search tree.
+As a class, decide if it’s a word that starts with a letter that is lower than “e” or higher than “e”.
+In this example it’s the word “cow”, so it comes before "elephant" i.e. to the left.
+Have a student draw a long branch from the root.
+(It’s important to have this drawn out on a shallow angle (around 20 degrees) to leave space for later.
+Then place the word down at the end of this branch.
+
+{image file-path="img/topics/data-structures-for-searching-animal-tree-2.png" alt="The word 'cow' is added to the left of the root node."}
+
+Go back to the root word, then compare that with the next word (“dog” in the example).
+Is D higher or lower than E? It is lower, so go left, then compare “dog” with “cow”.
+Everyone should agree that it’s higher, so draw a long branch to the right.
+
+{image file-path="img/topics/data-structures-for-searching-animal-tree-3.png" alt="The word 'dog' is added to the right of the 'cow' node."}
+
+Repeat this process as a class until students understand how to add a new word correctly.
+
+Once they do, put students into groups of 3, where one person holds the word and makes the decisions, the other person draws the branch once a decision is made, and the third person confirms that the person is correct.
+(This is important because if the binary search tree is built incorrectly, then it won’t be reliable).
+Once the the teams are ready, have them line up behind the root word and set teams off in 20 second intervals, until all words have been placed on the tree.
+Once the binary search tree is set up, then work through different scenarios, including:
+
+-    Adding a new word - how many words can we add to our binary tree search? (There is no limit).
+
+-    Finding different words and counting how many nodes need to be checked. (Some will be near the root, but usually will be further down the tree.)
+
+-    Can we reliably accept that if a word isn’t found in the binary search tree by following the left/right rule, that it isn’t there? (If it is built accurately, then you can be sure that it's not down another branch of the tree that wasn't explored; if students make a mistake placing a node, this could be a learning point, since that node probably can’t be found in future searches).
+
+{panel type="teaching"}
+
+# Teaching observations
+
+It's ideal to draw the tree without any branches overlapping, so students need to draw their branches with wide angles, rather than close together.
+
+{panel end}
+
+### Use a much larger tree
+
+Here's a large one that you could use!
+Rather than draw it, you could use the blank version, and allow students to point at a node to ask what its value is, which you read off your secret version with the numbers on.
+They won’t need to write anything down - at every step they are simply making a left/right decision.
+Note that it's important that every value down the left branch of a node is smaller than the value in the node, and every value down the right branch is larger.
