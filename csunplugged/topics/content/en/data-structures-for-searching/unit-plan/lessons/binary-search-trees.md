@@ -229,3 +229,100 @@ Here's a large one that you could use!
 Rather than draw it, you could use the blank version, and allow students to point at a node to ask what its value is, which you read off your secret version with the numbers on.
 They won’t need to write anything down - at every step they are simply making a left/right decision.
 Note that it's important that every value down the left branch of a node is smaller than the value in the node, and every value down the right branch is larger.
+
+{image file-path="img/topics/data-structures-for-searching-big-tree-empty.png" alt="A large empty binary search tree."}
+
+Teacher’s Secret Version:
+
+{image file-path="img/topics/data-structures-for-searching-big-tree-final.png" alt="A large binary search tree."}
+
+Note: this large tree can be recreated using these numbers in this order:
+53, 86, 61, 27, 88, 30, 49, 23, 28, 55, 91, 12, 21, 72, 90, 32, 10, 99, 81, 60, 45, 20, 93, 97, 3, 31, 41, 58, 76, 
+84, 73, 18, 92, 7, 47, 36, 74, 5, 48, 98, 19, 15, 46, 75, 14, 16, 17, 96.
+
+{panel type="teaching"}
+
+# Teaching observations
+
+It's easy to make your own binary search tree, but just be sure to start at the root each time you add a new value, which will help to ensure that everything down a left branch is smaller than the node it's branching from.
+If something is put down the wrong branch then it will throw off the searching! If you're not sure, just use the examples we've given.
+If you run out of room, the tree doesn't have to be too tidy, as long as it's obvious at each node which way the left and right branches are (especially if there's only one branch, the direction needs to be obvious, although it could bend around after leaving the node).
+
+{image file-path="img/topics/data-structures-for-searching-demo-tree.png" alt="A small binary search tree."}
+
+{panel end}
+
+### Use a binary search tree to look up information
+
+In practice, we'd usually have some information associated with the value that we're looking for (such as a person's details).
+You could build a binary search tree that looks up the population of cities, dates of historical events, or the definition of foreign words (examples are shown below).
+Having students research the content of a disc and then place it provides an integrated learning opportunity.
+
+TODO: Add example
+
+{panel type="teaching"}
+
+# Teaching observations
+
+When creating the nodes for your own tree, write the key (the value that is being searched for) above any other corresponding information for that node.
+For example, if you will be searching for cities via alphabetical order, write the city name above the population.
+If searching by population write the population above the city name.
+
+{panel end}
+
+### How fast is a binary search tree?
+
+Here is a large binary search tree.
+How many nodes (discs) does it have?
+How many numbers would you compare getting from the root to the far end of the tree (which is called a leaf)?
+(There are 63 nodes, but the maximum number of discs you'll look at is 6 - that's pretty efficient!)
+What if there was another layer in the tree? (There would be 127 nodes, but you only need to look at 7 of them).
+In fact, every time the number of items being searched doubles, it only takes a little more time to search it.
+
+{image file-path="img/topics/data-structures-for-searching-big-balanced-tree.png" alt="A large, balanced binary search tree."}
+
+### When binary search trees go bad
+
+Have students create a new tree where you give them numbers in ascending order (e.g. 2, 12, 21, 23, 41, 45...), instead of random order.
+For example, below is a tree where we've added the numbers 5, 10, 15 and so on; as a result, every branch is a right branch.
+It works, but if we keep getting new numbers to add in increasing order, they will form a long chain of right branches, and it is slow to find things in it.
+As students add numbers like 50, 55, 60, and so on, and they will see that it gets to be a long way from the root to a leaf.
+Luckily it’s usual for data to arrive in a random order, and you don't get these patterns.
+The paradox about binary search trees is that they perform the worst when you give them ordered information, and are much better when it's random!
+In practice this situation can be avoided easily using some simple changes to the algorithm for adding nodes.
+
+{image file-path="img/topics/data-structures-for-searching-bad-tree.png" alt="A tree with only right branches."}
+
+### How does this relate to binary search?
+
+The binary search tree (BST) is a lot like a binary search, but because it uses a tree, it's much easier to add an item to it, because you just add it to the end of the tree as a new leaf.
+In contrast, to use binary search you need to have a sorted list, and if you want to add something to a sorted list you can’t just add it to the end - you have to move all the data in that list along one space, so that there is space in the list for the new piece of data.
+If a computer program is adding something to a sorted list, this means it has to take everything else in the list and move it to a new place in its memory, and this can take some time!
+This is why computer scientists choose to use trees in some situations, and sorted lists in others.
+
+{panel type="math"}
+
+# Mathematical links
+
+This activity relies heavily on comparing values; making one mistake will send students down the wrong branch of the tree!
+It can be made more challenging by using larger numbers (e.g. 5 digit numbers such as 32843 and 32480, which look similar, and require some care to compare precisely).
+
+{panel end}
+
+## Applying what we have just learnt
+
+A binary search tree is an elegant way to do searching.
+It has a lot in common with doing a binary search of a sorted list, but the two shouldn't be confused.
+In particular, a tree makes it very easy to add new values - you just link it to the last node you got to when searching for the value.
+In the sorted list for a binary search, you have to move everything up to make space for a new value.
+So in practice, binary search trees (and related structures) are more likely to be used than binary search, since data tends to be dynamic, with new values being added frequently.
+
+## Lesson reflection
+
+What surprises did you have with this lesson?
+Did you see how your knowledge of a binary search supported your learning about binary search trees?
+
+### Potential answers could include:
+
+-    Being surprised that binary trees work best with random numbers.
+-    Like binary search, there is a maximum of two options from each branch and the algorithm for deciding which way to go is the same for every branch.

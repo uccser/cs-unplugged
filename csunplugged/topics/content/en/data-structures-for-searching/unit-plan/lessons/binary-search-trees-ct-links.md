@@ -26,7 +26,6 @@ Binary search trees are a type of data structure, and so can be used with any ty
 When we use a binary search tree its structure also allows us to ignore much of the information it contains, and focus only on the information that we need at the time.
 This is because when we use it we only ever have to look at one node at a time, and have no need to look at any others in the tree, until we move on to another. 
 
-
 #### Examples of what you could look for:
 
 Did students recognise that a binary search tree can also be used to search for words, since we can put them into alphabetical order and compare them?
