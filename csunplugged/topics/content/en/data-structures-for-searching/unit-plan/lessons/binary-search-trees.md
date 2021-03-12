@@ -24,7 +24,7 @@ The left-hand picture below shows what they will look like.
 The right-hand picture shows the numbers to put under each disc, but these shouldn't be visible to the students.
 The lesson explains how to lay these out.
 
-{image file-path="img/topics/data-structures-for-searching-overview.png" alt="Binary search tree drawn on the ground in chalk." caption="true"}
+{image file-path="img/topics/binary-search-tree-hopscotch-tree.png" alt="Binary search tree drawn on the ground in chalk." caption="true"}
 
 An example of what we will be creating. Each binary search tree has a different shape depending on the data.
 
@@ -52,7 +52,7 @@ Let’s look at an example of what happens in the physical world: If a cat or ba
 For example, below is a picture of a tree with a cat - using only "left" and "right", what are the directions you would give someone to climb up to where the cat is?
 Can you guide someone to anywhere in the tree just by giving them "left" and "right" directions?
 
-{image file-path="img/topics/data-structures-for-searching-cat-tree.png" alt="A cat stuck in a tree."}
+{image file-path="img/topics/binary-search-tree-cat-in-tree.png" alt="A cat stuck in a tree."}
 
 {panel type="teaching"}
 
@@ -66,7 +66,7 @@ Some students might observe that not all trees have two-way branches, although a
 
 {panel end}
 
-{image file-path="img/topics/data-structures-for-searching-binary-search-trees.png" alt="Two binary search trees. One with numbers in the nodes and one without."}
+{image file-path="img/topics/binary-search-tree-numbers-completed-with-empty.png" alt="Two binary search trees. One with numbers in the nodes and one without."}
 
 Mark out the "tree" above on the ground.
 The numbers are shown for your convenience in the left picture, but they would be hidden (turning the disc upside down) as in the picture on the right when the students first see the tree.
@@ -94,7 +94,7 @@ It's helpful to use these terms with the class so that they get used to them.
 
 1. Reveal what is under the disc at the root, which in the example has the number 40.
 
-{image file-path="img/topics/data-structures-for-searching-binary-search-tree-2.png" alt="A binary search tree with the number 40 at the root."}
+{image file-path="img/topics/binary-search-tree-numbers-step-1.png" alt="A binary search tree with the number 40 at the root."}
 
 2. Explain that we're looking for the number 25 in this tree.
    There is a simple rule: everything down the left branch of a disc is smaller than the value shown, and everything down the right branch is larger.
@@ -104,16 +104,16 @@ It's helpful to use these terms with the class so that they get used to them.
 4. Turn the first disc back over (so that students don't easily remember what was on it), and follow the left branch, revealing the number under the next disc.
    In this case it is 23. Ask if 25 will be left or right from 23? (It is larger, so it will be down the right branch.)
 
-{image file-path="img/topics/data-structures-for-searching-binary-search-tree-3.png" alt="A binary search tree with the root hidden. The left branch from the root has the number 23 shown."}
+{image file-path="img/topics/binary-search-tree-numbers-step-2.png" alt="A binary search tree with the root hidden. The left branch from the root has the number 23 shown."}
 
 5. Hide the 23 again, and reveal the disc down the right branch, which is 30.
    Ask if we should go left or right? (Left, because 25 is less than 30; students may also observe that there's no choice, but that isn't relevant, as you must go left if the number is smaller).
 
-{image file-path="img/topics/data-structures-for-searching-binary-search-tree-4.png" alt="The right branch from node 23 shows the number 30."}
+{image file-path="img/topics/binary-search-tree-numbers-step-3.png" alt="The right branch from node 23 shows the number 30."}
 
 6. Hide the 30, and reveal the disc down the left, which is 25. You have located the disc you were searching for.
 
-{image file-path="img/topics/data-structures-for-searching-binary-search-tree-5.png" alt="The left branch from node 30 shows the number 25."}
+{image file-path="img/topics/binary-search-tree-numbers-step-4.png" alt="The left branch from node 30 shows the number 25."}
 
 ## Finding another number
 
@@ -135,7 +135,7 @@ Ask students to search for the number 35.
 To do this, just search for where it should be, and add it on a new disc in the correct direction from the last disc that you got to (the added disc will be a new "leaf").
 For example, when you searched for the number 35 in the previous example, it could have been added on a new right branch from number 30.
 
-{image file-path="img/topics/data-structures-for-searching-binary-search-tree-6.png" alt="Binary tree with a new leaf added."}
+{image file-path="img/topics/binary-search-tree-numbers-step-5.png" alt="Binary tree with a new leaf added."}
 
 ### Build your own tree
 
@@ -150,7 +150,7 @@ Once the root is put down, students can add each value as for "adding a value" a
 For example, suppose we're making a tree with the numbers 45, 23, 26 then 76.
 The tree would be built up as follows.
 
-{image file-path="img/topics/data-structures-for-searching-steps-number.png" alt="Constructing a binary search tree with the numbers 45, 23, 26 and 76."}
+{image file-path="img/topics/binary-search-tree-numbers-step-6.png" alt="Constructing a binary search tree with the numbers 45, 23, 26 and 76."}
 
 Initially the tree will seem very simple with just 45 as the root, but it can grow rapidly as values are added.
 The shape will depend on the order that the numbers arrive in.
@@ -180,12 +180,12 @@ Have a set of words written on the back of a card, or old CD (the words could be
 Here's an example using animal names; words that are earlier in the alphabet are down the left branch, and vice versa.
 This is the final version; below are the instructions for building it up with the class.
 
-{image file-path="img/topics/data-structures-for-searching-animal-tree-final.png" alt="An example of a full binary search tree with words as nodes."}
+{image file-path="img/topics/binary-search-tree-animals-completed.png" alt="An example of a full binary search tree with words as nodes."}
 
 Take a word randomly from a pile you have prepared, and use this as the first value that you add to the tree; or you could have students write down their favourite animal.
 The first word chosen becomes the root (in the example it is the word “elephant”).
 
-{image file-path="img/topics/data-structures-for-searching-animal-tree-1.png" alt="The word 'elephant' as the root node."}
+{image file-path="img/topics/binary-search-tree-animals-step-1.png" alt="The word 'elephant' as the root node."}
 
 Take the next word, to start building your binary search tree.
 As a class, decide if it’s a word that starts with a letter that is lower than “e” or higher than “e”.
@@ -194,13 +194,13 @@ Have a student draw a long branch from the root.
 (It’s important to have this drawn out on a shallow angle (around 20 degrees) to leave space for later.
 Then place the word down at the end of this branch.
 
-{image file-path="img/topics/data-structures-for-searching-animal-tree-2.png" alt="The word 'cow' is added to the left of the root node."}
+{image file-path="img/topics/binary-search-tree-animals-step-2.png" alt="The word 'cow' is added to the left of the root node."}
 
 Go back to the root word, then compare that with the next word (“dog” in the example).
 Is D higher or lower than E? It is lower, so go left, then compare “dog” with “cow”.
 Everyone should agree that it’s higher, so draw a long branch to the right.
 
-{image file-path="img/topics/data-structures-for-searching-animal-tree-3.png" alt="The word 'dog' is added to the right of the 'cow' node."}
+{image file-path="img/topics/binary-search-tree-animals-step-3.png" alt="The word 'dog' is added to the right of the 'cow' node."}
 
 Repeat this process as a class until students understand how to add a new word correctly.
 
@@ -230,15 +230,19 @@ Rather than draw it, you could use the blank version, and allow students to poin
 They won’t need to write anything down - at every step they are simply making a left/right decision.
 Note that it's important that every value down the left branch of a node is smaller than the value in the node, and every value down the right branch is larger.
 
-{image file-path="img/topics/data-structures-for-searching-big-tree-empty.png" alt="A large empty binary search tree."}
+{image file-path="img/topics/binary-search-tree-big-tree-blank.png" alt="A large empty binary search tree."}
 
-Teacher’s Secret Version:
+{panel type="teaching"}
 
-{image file-path="img/topics/data-structures-for-searching-big-tree-final.png" alt="A large binary search tree."}
+# Teacher's secret version
+
+{image file-path="img/topics/binary-search-tree-big-tree-completed.png" alt="A large binary search tree."}
 
 Note: this large tree can be recreated using these numbers in this order:
 53, 86, 61, 27, 88, 30, 49, 23, 28, 55, 91, 12, 21, 72, 90, 32, 10, 99, 81, 60, 45, 20, 93, 97, 3, 31, 41, 58, 76, 
 84, 73, 18, 92, 7, 47, 36, 74, 5, 48, 98, 19, 15, 46, 75, 14, 16, 17, 96.
+
+{panel end}
 
 {panel type="teaching"}
 
@@ -248,17 +252,18 @@ It's easy to make your own binary search tree, but just be sure to start at the 
 If something is put down the wrong branch then it will throw off the searching! If you're not sure, just use the examples we've given.
 If you run out of room, the tree doesn't have to be too tidy, as long as it's obvious at each node which way the left and right branches are (especially if there's only one branch, the direction needs to be obvious, although it could bend around after leaving the node).
 
-{image file-path="img/topics/data-structures-for-searching-demo-tree.png" alt="A small binary search tree."}
+{image file-path="img/topics/binary-search-tree-nine-node-tree.png" alt="An untidy, but readable binary search tree."}
 
 {panel end}
 
 ### Use a binary search tree to look up information
 
 In practice, we'd usually have some information associated with the value that we're looking for (such as a person's details).
-You could build a binary search tree that looks up the population of cities, dates of historical events, or the definition of foreign words (examples are shown below).
+You could build a binary search tree that looks up the population of cities, dates of historical events, or the definition of foreign words (an example is shown below).
 Having students research the content of a disc and then place it provides an integrated learning opportunity.
 
-TODO: Add example
+{image file-path="img/topics/binary-search-tree-cities.png" alt="A binary search tree where the nodes are cities with their population number, sorted in alphabetical order."}
+
 
 {panel type="teaching"}
 
@@ -279,7 +284,7 @@ How many numbers would you compare getting from the root to the far end of the t
 What if there was another layer in the tree? (There would be 127 nodes, but you only need to look at 7 of them).
 In fact, every time the number of items being searched doubles, it only takes a little more time to search it.
 
-{image file-path="img/topics/data-structures-for-searching-big-balanced-tree.png" alt="A large, balanced binary search tree."}
+{image file-path="img/topics/binary-search-tree-balanced-tree.png" alt="A large, balanced binary search tree."}
 
 ### When binary search trees go bad
 
@@ -291,7 +296,7 @@ Luckily it’s usual for data to arrive in a random order, and you don't get the
 The paradox about binary search trees is that they perform the worst when you give them ordered information, and are much better when it's random!
 In practice this situation can be avoided easily using some simple changes to the algorithm for adding nodes.
 
-{image file-path="img/topics/data-structures-for-searching-bad-tree.png" alt="A tree with only right branches."}
+{image file-path="img/topics/binary-search-tree-unbalanced-tree.png" alt="A binary search tree with only right branches."}
 
 ### How does this relate to binary search?
 
