@@ -3,26 +3,24 @@ services:
   jobe:
     image: trampgeek/jobeinabox:latest
     container_name: jobeinabox
-    ports: 
+    ports:
       - "4000:80"
 
   postgres:
     restart: always
     image: postgres:9.6.5
-    # Set port to non-standard value to not use Travis CI Postgres server.
-    command: postgres -p 5434
+    command: postgres -p 5432
 
   django:
     build:
       context: .
-      dockerfile: ./Dockerfile-local
-    command: /cs-unplugged/csunplugged/docker-development-entrypoint.sh
+      dockerfile: infrastructure/local-dev/Dockerfile
     volumes:
-      - .:/cs-unplugged
+      - /csunplugged:/app
     environment:
       - PORT=8080
       - USE_DOCKER=yes
-      - DATABASE_URL=postgres://postgres@postgres:5434/postgres
+      - DATABASE_URL=postgres://postgres@postgres:5432/postgres
       - DJANGO_SETTINGS_MODULE=config.settings.local
       - INCLUDE_INCONTEXT_L10N=True
     depends_on:
