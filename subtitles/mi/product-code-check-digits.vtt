@@ -1,0 +1,355 @@
+WEBVTT
+Kind: captions
+Language: mi
+
+NOTE
+Computer Science Education Research,
+University of Canterbury, New Zealand
+Subtitle file for the video "CS Unplugged - Product Code Check Digits (sample classroom lesson)"
+Author: Alasdair Smith
+Date: 01/10/2018
+
+00:00:04.120 --> 00:00:06.460
+[Mati takitaki waehere rawa]
+
+00:00:06.840 --> 00:00:09.620
+Ka pai, nā reira i tērā atu akoranga i tiro tātou ki te
+
+00:00:09.620 --> 00:00:14.060
+me pēhea ngā rorohiko e rapu i ngā hapa, ā, katahi ka whakatikatika.
+
+00:00:14.060 --> 00:00:20.380
+Whakatū o ringa mēnā kua tae koe ki te toa hokomaha, ā, kua whakamahi i te mīhini matawai kia pānui i āu kai
+
+00:00:20.380 --> 00:00:22.920
+ā, ka puta mai ia o ngā mea me ngā kai?
+
+00:00:22.920 --> 00:00:24.260
+Kua mahi koutou i tērā?
+
+00:00:24.260 --> 00:00:24.940
+Āe?
+
+00:00:24.950 --> 00:00:33.160
+Ringa ki raro, nā reira ka ahatia mēnā kua ngana ki te pānui i ngā mea, engari kua raru te mīhini, ā, kua hē te pānui?
+
+00:00:33.160 --> 00:00:35.240
+Ka ahatia te kaihokohoko?
+
+00:00:35.240 --> 00:00:38.540
+Ā, me aha te kaihokohoko?
+
+00:00:38.540 --> 00:00:44.460
+Me pātai atu ki a rātou, ā, ka mahi matawai rātou māu?
+
+00:00:44.460 --> 00:00:48.460
+Āe, i ētahi wā ka whakamahi i te mihini matawai, ā, i ētahi wā mā te tangata e patopato nē rā?
+
+00:00:48.460 --> 00:00:52.320
+Tē taea te mihini matawai ki te pānui i ngā mea i hoko koe, nā te mea kua pōkaitia. Me aha rātou
+
+00:00:52.320 --> 00:00:53.460
+me aha rātou?
+
+00:00:53.460 --> 00:00:57.980
+Kei runga i ā rātou kī, kei a rātou taua waehere pae, nē rā?
+
+00:00:57.980 --> 00:01:01.760
+-- Āe ka mahi i tērā.
+-- Ā, ka whakamahi i te mīhini mō te pānui kapokapo i ngā mea
+
+00:01:01.760 --> 00:01:02.720
+me te mea anō hoki--
+
+00:01:02.720 --> 00:01:06.420
+Āe, engari kāre tērā e whakamōhio mai he aha te mea.
+
+00:01:06.420 --> 00:01:12.020
+Kei raro iho i te mea, he waehere pae nē; ko te mea pango me te mā?
+
+00:01:12.020 --> 00:01:14.480
+Engari he nama anō kei raro.
+
+00:01:14.480 --> 00:01:18.080
+Ā, i te mutunga iho o aua nama he taki-tātai.
+
+00:01:18.080 --> 00:01:18.840
+Nē rā?
+
+00:01:18.840 --> 00:01:24.180
+He waehere pae iti ake kia āhei te tangata ki te whakauru ki te mihini.
+
+00:01:24.180 --> 00:01:25.420
+Āe marika.
+
+00:01:25.420 --> 00:01:29.180
+Nā reira, me patopato rātou i ngā nama, nā te mea tē taea te pānui nē rā?
+
+00:01:29.180 --> 00:01:34.300
+Ko te nama whakamutunga te taki-tātai. I tēnei rā ka ako koutou he aha tērā.
+
+00:01:34.300 --> 00:01:37.539
+Dylan, e āhei ana koe ki te tiki i tētahi mea nō te akomanga me
+
+00:01:37.540 --> 00:01:41.260
+tētahi waehere pae, ā, 13 ōna mati. Ka tiro tātou ki tōna āhua.
+
+00:01:45.260 --> 00:01:49.280
+Ka pai, karanga mai i ngā nama katoa, engari kaua e whāki mai te nama whakamutunga.
+
+00:01:49.280 --> 00:01:52.180
+Kei te pīrangi noa kia mōhio ki ngā mati 12 i mua.
+
+00:01:52.180 --> 00:02:12.780
+9, 3, 1, 0, 4, 9, 2, 0, 0, 0, 4 me te 5.
+
+00:02:12.780 --> 00:02:16.580
+Ka pai, ka pānui ā-waha anō i ēnei nama ki a koe hei tirohanga māu?
+
+00:02:16.580 --> 00:02:26.800
+9, 3, 1, 0, 4, 9, 2, 0, 0, 0, 4, 5.
+
+00:02:26.800 --> 00:02:27.560
+Tika?
+
+00:02:27.569 --> 00:02:28.569
+Ka pai.
+
+00:02:28.569 --> 00:02:32.310
+Ka pai, nā reira kua rau atu i ēnei nama ki runga i te papa mā, ināianei ko ā koutou mahi
+
+00:02:32.310 --> 00:02:34.879
+āwhina mai kia tāpirihia i te kapa o runga anake.
+
+00:02:34.880 --> 00:02:37.280
+-- Nā reira, 9+1 ka?
+-- 10.
+
+00:02:37.280 --> 00:02:39.220
+-- 10+4 ka?
+-- 14.
+
+00:02:39.220 --> 00:02:41.760
+-- 14+2 is?
+-- 16.
+
+00:02:41.760 --> 00:02:45.580
+-- 16+4 is?
+-- 20.
+
+00:02:45.580 --> 00:02:52.050
+Kei te tiro anake tātou ki te tīwae o ngā tahi,
+nā reira, ko tēhea nama o roto i te 20, kei roto i te tīwae o ngā tahi?
+
+00:02:52.050 --> 00:02:53.050
+Sam?
+
+00:02:53.050 --> 00:02:54.050
+2.
+
+00:02:54.050 --> 00:02:55.360
+Kei roto i te tīwae o ngā tekau, engari ka pai koe.
+
+00:02:55.360 --> 00:02:56.360
+Kore?
+
+00:02:56.360 --> 00:02:59.230
+Kore, nā reira ka mau i te kore i konei.
+
+00:02:59.230 --> 00:03:01.069
+Nā te mea me aro ki tēnei nama anake.
+
+00:03:01.069 --> 00:03:02.980
+Ināianei me tāpiri i te tīwae kei raro iho.
+
+00:03:02.980 --> 00:03:05.360
+-- 3+0 is?
+-- 3.
+
+00:03:05.360 --> 00:03:07.880
+-- 3+9 ka?
+-- 12.
+
+00:03:07.880 --> 00:03:12.120
+-- 12+0 is?
+-- 12, 12.
+
+00:03:12.120 --> 00:03:14.560
+-- 12+5 is?
+-- 17.
+
+00:03:14.560 --> 00:03:17.790
+17, engari anō me aro anake ki te tīwae o ngā tahi?
+
+00:03:17.790 --> 00:03:19.060
+7.
+
+00:03:19.060 --> 00:03:23.260
+Ināianei, ka whakarea te mea kei raro iho mā te 3, 
+engari anei te tiriki.
+
+00:03:23.260 --> 00:03:25.060
+Me aro anake ki te tīwae o ngā tahi.
+
+00:03:25.060 --> 00:03:29.400
+He aha te 7x3, me te mea anō hoki, he aha te wāriu i roto i te tīwae o ngā tahi?
+
+00:03:30.060 --> 00:03:30.900
+Freddy.
+
+00:03:30.900 --> 00:03:32.000
+1.
+
+00:03:32.000 --> 00:03:34.340
+Kōwai atu i whiwhi i te 1?
+
+00:03:34.340 --> 00:03:35.600
+Ka pai.
+
+00:03:36.580 --> 00:03:37.880
+He rite ki te 1.
+
+00:03:37.880 --> 00:03:39.520
+He aha te 0+1?
+
+00:03:40.780 --> 00:03:41.400
+1.
+
+00:03:41.400 --> 00:03:42.280
+Ka pai.
+
+00:03:42.280 --> 00:03:48.240
+Nā reira, mēnā me hanga ahau i te 0 - engari ko te 10 kē - nē rā?
+
+00:03:48.240 --> 00:03:51.040
+Nā te mea me aro anake ki te tīwae o ngā tahi.
+
+00:03:51.049 --> 00:03:56.459
+Mēnā me waihanga ahau i te 0, he aha te nama kua wareware i roto rā?
+
+00:03:56.460 --> 00:03:57.880
+Kore?
+
+00:03:57.880 --> 00:04:00.340
+Tahi tāpiri i te aha ka 10?
+
+00:04:00.340 --> 00:04:01.620
+9.
+
+00:04:01.620 --> 00:04:05.180
+Ko te 9 te taki-tātai.
+
+00:04:05.189 --> 00:04:06.659
+Tika, hē rānei?
+
+00:04:06.660 --> 00:04:07.500
+Tika.
+
+00:04:07.500 --> 00:04:08.000
+Ka pai.
+
+00:04:08.000 --> 00:04:13.840
+Ko tēnei te whārite pāngarau kei raro iho i ia waehere pae, nē?
+
+00:04:13.840 --> 00:04:19.520
+Ka pai, me tiro tātou ki tēnei mēnā kua hē taku rongo.
+
+00:04:19.520 --> 00:04:23.380
+Me kī tātou i rongo ahau i te 5, engari kē ko te 4.
+
+00:04:23.380 --> 00:04:28.680
+Nā reira ko te mea tuatahi ka tīnihia ko tēnei, ka noho tonu hei kore?
+
+00:04:28.680 --> 00:04:30.460
+-- Kāore. 
+-- Ka huri ki te aha īnaianei?
+
+00:04:30.460 --> 00:04:31.460
+1.
+
+00:04:31.460 --> 00:04:37.320
+Ka pai, ka tīnihia i te 1+1. Ehara ko te 1, nā reira he aha te whakautu?
+
+00:04:37.320 --> 00:04:38.060
+2.
+
+00:04:38.060 --> 00:04:39.520
+Ka huri ki te 2.
+
+00:04:39.520 --> 00:04:42.920
+Nā reira, 2 tāpirihia i te aha ka 10?
+
+00:04:42.920 --> 00:04:44.180
+Ko te 9?
+
+00:04:44.180 --> 00:04:45.040
+Kāo.
+
+00:04:45.040 --> 00:04:47.420
+Ka huri ki te 8.
+
+00:04:47.420 --> 00:04:54.160
+Nā reira, kua hē te taki-tātai nā te mea i patopato kotahi te nama e hē ana,
+
+00:04:54.160 --> 00:04:58.200
+ā, mā te mihini e whakamōhio atu kua hē.
+
+00:04:58.200 --> 00:05:00.520
+Nā reira me patopato i te nama anō.
+
+00:05:00.520 --> 00:05:05.360
+Nā reira, nā te mea he tangata tātou, ki ōu whakaaro he aha te hapa ka kite whānuitia
+
+00:05:05.360 --> 00:05:07.280
+i a tātou e patopato ana i ngā nama?
+
+00:05:07.280 --> 00:05:10.000
+He aha te hapa ka kitea whānuitia ana?
+
+00:05:10.000 --> 00:05:11.770
+-- Robert?
+-- Te nama.
+
+00:05:11.770 --> 00:05:16.200
+Āe, ko te nama, me aha tātou ki ngā nama kia whakarerekē i a rātou anō?
+
+00:05:17.000 --> 00:05:19.320
+Kaua e tuhi i ngā mea katoa?
+
+00:05:19.320 --> 00:05:21.900
+Ā, ka hē te pānui o te nama?
+
+00:05:21.910 --> 00:05:22.910
+Me aha au?
+
+00:05:22.910 --> 00:05:28.410
+Ka rau atu i te 1, ā, ahakoa ko te 9, 1, ka patopato koe i te 1, 9.
+
+00:05:28.410 --> 00:05:34.750
+Āe, nā reira i kite koe koinei te nama tuatahi, ā, koinei te nama tuarua,
+
+00:05:34.750 --> 00:05:37.690
+ko te nama tuatahi tēnei,
+ko te nama tuarua tēnei.
+
+00:05:37.690 --> 00:05:44.240
+Ko te take mō tēnei, i te nuinga o te wā ka huri kōaro ēnei mea e rua. Koinei tētahi o ngā hapa ka kite whānuitia.
+
+00:05:44.940 --> 00:05:48.800
+Tērā pea ka pānui i te 93, engari ka patopato i te 39.
+
+00:05:48.800 --> 00:05:50.800
+Tika? Kua mahi koutou i tērā i a koutou e patopato ana?
+
+00:05:50.800 --> 00:05:52.840
+Ā, ka rerekē, ka hē te whakatakoto o ngā pū?
+
+00:05:52.840 --> 00:06:00.100
+Ā, nā te taki-tātai e aukati ia tātou e haere ana ki
+
+00:06:00.100 --> 00:06:06.520
+te hoko i ngā kāri Pokemon, engari ka utua mo te karetao papa hiko kōmaru.
+
+00:06:06.520 --> 00:06:07.280
+Tika?
+

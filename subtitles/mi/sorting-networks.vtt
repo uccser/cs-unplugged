@@ -1,0 +1,296 @@
+WEBVTT
+Kind: captions
+Language: mi
+
+NOTE
+Computer Science Education Research,
+University of Canterbury, New Zealand
+Subtitle file for the video "CS Unplugged - Sorting Networks (sample classroom lesson)"
+Author: Alasdair Smith
+Date: 01/10/2018
+
+00:00:05.060 --> 00:00:10.000
+[Ngā Whatunga Kōmaka]
+
+00:00:11.480 --> 00:00:15.360
+I tēnei rā, kua puta tātou ki waho ki te ako i ētahi anō āhuatanga o ngā mahinga rorohiko
+
+00:00:15.360 --> 00:00:21.160
+ā, kei konei tēnei, pērā ki te rorohiko
+autaia, kua hangaia ki te tioka.
+
+00:00:21.160 --> 00:00:24.919
+Ākuanei ka whakaatu ahau ki a koutou, he aha ai, heoi anō
+kei te hiahia ahau, tokoono o koutou hei kaitūao.
+
+00:00:24.919 --> 00:00:26.150
+Tau kē.
+
+00:00:26.150 --> 00:00:30.710
+Ko tāku, te hoatu i tētahi kōpae ki a koe, ā,
+me haere koe ki te tū ki runga i ngā
+
+00:00:30.710 --> 00:00:33.430
+porowhita - ngā mea kei tawhiti rā.
+
+00:00:33.430 --> 00:00:35.830
+Rhylee, me haere koe ki
+tērā mea tawhiti atu rā.
+
+00:00:35.830 --> 00:00:39.090
+Robert haere ki roto i te porowhita ki tua atu.
+
+00:00:39.090 --> 00:00:42.900
+Ellie, ki te mea kei te whai atu.
+
+00:00:42.900 --> 00:00:45.150
+Kourosh haere ki kōrā.
+
+00:00:45.150 --> 00:00:47.629
+Lewis, haere ki te mea whakamutunga.
+
+00:00:47.629 --> 00:00:48.629
+Ka pai!
+
+00:00:48.629 --> 00:00:52.219
+Kei konei koutou, ko te tino kaupapa o tēnei 
+mahi, ko te mahi tahi.
+
+00:00:52.219 --> 00:00:55.850
+Me te raupapa i ngā raraunga.
+
+00:00:55.850 --> 00:00:59.460
+Ko koutou te tīmatanga o te raraunga, kua uru
+nei koutou, engari kāore e tika ana te raupapa,
+
+00:00:59.460 --> 00:01:05.460
+kei konei te nama 5, te nama 2, nama 1, 
+nama 3, nama 6, me te nama 4.
+
+00:01:05.460 --> 00:01:10.680
+I mua i te uru ki te rorohiko autaia, me ako koutou ki
+tēnei tohu.
+
+00:01:10.680 --> 00:01:12.900
+He aha te tikanga o tēnei tohu?
+
+00:01:12.900 --> 00:01:14.479
+He aha te tikanga Lewis?
+
+00:01:14.480 --> 00:01:15.420
+Paku tuatahi, rahi tuarua.
+
+00:01:15.420 --> 00:01:19.940
+Paku tuatahi, rahi tuarua. He aha ētahi kupu pāngarau
+ka taea e tātou te whakamahi mō te paku me te rahi
+
+00:01:19.940 --> 00:01:21.200
+-- āe?
+-- Iti iho me nui ake
+
+00:01:21.200 --> 00:01:27.100
+Iti iho me nui ake. Ka rawe, kei konei ko te 
+rārangi karaka te iti iho,
+
+00:01:27.100 --> 00:01:28.940
+ko te rārangi kahurangi te nui ake.
+
+00:01:28.940 --> 00:01:33.560
+Me titiro tātou, pēhea ngā mahi mō tēnei.
+Me neke koutou katoa ki roto i te pouaka.
+
+00:01:33.560 --> 00:01:37.980
+Mihi atu ki te tangata kei tō taha, 
+menemene atu ki a ia.
+
+00:01:37.990 --> 00:01:39.100
+Kaua e hahaki rawa.
+
+00:01:39.100 --> 00:01:42.500
+Nāianei, kia pēnei tō whakatau, kei ahau te 
+nama nui ake
+
+00:01:42.500 --> 00:01:44.600
+te nama iti iho rānei.
+
+00:01:44.600 --> 00:01:47.100
+Ka whai te nama nui ake
+i te rārangi kahurangi,
+
+00:01:47.100 --> 00:01:50.400
+ka whai te nama iti iho i te rārangi karaka, haere.
+
+00:01:51.120 --> 00:01:55.320
+Kātahi, titiro, mēnā kua neke katou koutou,
+ā, mihi atu, kātahi hoatu
+
+00:01:55.320 --> 00:01:58.000
+te menemene nui, ināianei.
+
+00:01:58.000 --> 00:02:02.960
+Kātahi, whakatau, kei a wai te nama iti iho, 
+kei a wai te nama nui ake.
+
+00:02:07.480 --> 00:02:08.640
+Kei te mārama koutou ki te mahi?
+
+00:02:08.649 --> 00:02:12.810
+Mahia anōtia tētahi, kāore ahau i kite i ngā
+menemene me te tuku mihi, nō reira menemene, mihi atu hoki.
+
+00:02:12.810 --> 00:02:13.810
+Kia ora.
+
+00:02:13.810 --> 00:02:15.980
+Kātahi, whakatau. Haere.
+
+00:02:20.420 --> 00:02:21.260
+Kia ora!
+
+00:02:21.480 --> 00:02:22.120
+Ka pai.
+
+00:02:23.500 --> 00:02:24.660
+He aha tō nama?
+
+00:02:25.840 --> 00:02:27.880
+Kei ahau te nama 4, ka haere pēnei ahau.
+
+00:02:27.880 --> 00:02:28.860
+Tino pai.
+
+00:02:33.980 --> 00:02:37.040
+Rawe. Huri mai koutou katoa, kia aro mai ki ahau,
+ā, ka kite tātou kua ahatia
+
+00:02:37.040 --> 00:02:40.860
+o tātou nama, huri mai, me te mau i ā koutou
+nama ki runga kia kitea ake ai?
+
+00:02:40.860 --> 00:02:44.000
+Anana Kourosh, he aha tō nama?
+
+00:02:44.000 --> 00:02:45.360
+-- Tahi.
+-- Ko tēhea tō nama Lewis?
+
+00:02:45.360 --> 00:02:46.360
+Rua.
+
+00:02:46.360 --> 00:02:47.100
+Toru.
+
+00:02:47.100 --> 00:02:47.640
+E whā.
+
+00:02:47.640 --> 00:02:48.540
+Rima.
+
+00:02:48.540 --> 00:02:49.280
+Ono.
+
+00:02:49.280 --> 00:02:51.060
+Nā reira, i ahatia ā tātou nama?
+
+00:02:51.080 --> 00:02:55.520
+I tukua ki tō tātou nei rorohiko autaia, arā
+ko te tioka pērā ki te rorohiko autaia,
+
+00:02:55.520 --> 00:02:58.480
+ka whai i te tukanga, ā, ka ahatia?
+
+00:02:59.140 --> 00:03:01.980
+Kua puta te raupapa tika.
+
+00:03:01.980 --> 00:03:04.680
+Nā, ki tō whakaaro, ka taea tēnei tukanga mō ngā mea katoa?
+[Tuhipoka: mā tēnei ngohe ka taea te kōmaka i ngā mea katoa!]
+
+00:03:04.680 --> 00:03:05.600
+Āe.
+[Tuhipoka: Mā tēnei ngohe ka taea te kōmaka i ngā mea katoa!]
+
+00:03:05.600 --> 00:03:07.840
+He aha ētahi o ngā momo mea
+ka taea te kōmaka, ki ō koutou whakaaro?
+
+00:03:07.840 --> 00:03:08.740
+-- Āe?
+-- He pukapuka.
+
+00:03:08.740 --> 00:03:10.060
+Ka taea te kōmaka i ngā pukapuka, he aha atu?
+
+00:03:10.580 --> 00:03:11.220
+Reta?
+
+00:03:11.220 --> 00:03:12.240
+Āe, he aha atu?
+
+00:03:12.240 --> 00:03:13.080
+Pere?
+
+00:03:13.080 --> 00:03:14.100
+Āe, he aha atu?
+
+00:03:14.100 --> 00:03:15.700
+Tuhipoka.
+
+00:03:15.700 --> 00:03:17.400
+Āe, he aha atu?
+
+00:03:17.400 --> 00:03:18.400
+Pēhea ngā nama nunui?
+
+00:03:18.409 --> 00:03:20.690
+Ka taea e tātou ngā nama tino nui rawa?
+
+00:03:20.690 --> 00:03:22.020
+-- Āe.
+-- Ka pai hoki.
+
+00:03:22.020 --> 00:03:26.440
+[Ngā ingoa o ngā pukapuka (raupapa ā-arapūreta)]
+
+00:03:34.640 --> 00:03:43.100
+[Ngā Nama Nunui (raupapa ā-nama)]
+
+00:03:44.360 --> 00:03:50.260
+[Pūreta (raupapa ā-arapūreta)]
+
+00:03:51.500 --> 00:03:58.460
+[Pere mau-ringa (hauoro, ka whakahī, ka heke rānei)]
+
+00:03:58.740 --> 00:04:00.440
+Ko tēhea te mārū, ko tēhea te teitei?
+
+00:04:00.440 --> 00:04:01.420
+Kei raro ahau.
+
+00:04:01.420 --> 00:04:03.040
+Ka pai, he tangi mārū tāu, kei raro koe.
+
+00:04:08.420 --> 00:04:11.020
+Ka pai, kia kotahi te tangi i te wā kotahi.
+
+00:04:11.880 --> 00:04:14.100
+Āe, ko tēhea te hauoro mārū iho?
+
+00:04:14.480 --> 00:04:15.560
+He raro iho, he mārū atu tēnei.
+
+00:04:15.560 --> 00:04:18.100
+Āe, whakatangihia kia kotahi wā anō, kia mōhio rawa.
+
+00:04:19.880 --> 00:04:21.500
+Ka pai tēnā.
+
+00:04:27.620 --> 00:04:30.240
+Whakatangihia anōtia, kia rangona kia kotahi anō te wā.
+
+00:04:30.240 --> 00:04:31.560
+Ka pai.
+
+00:04:31.560 --> 00:04:33.480
+Ka pai, haere tonu.
+
