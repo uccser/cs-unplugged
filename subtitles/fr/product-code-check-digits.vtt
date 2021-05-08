@@ -1,0 +1,388 @@
+WEBVTT
+Kind: captions
+Language: fr
+
+NOTE
+Computer Science Education Research,
+University of Canterbury, New Zealand
+Subtitle file for the video "CS Unplugged - Product Code Check Digits (sample classroom lesson)"
+Author: Alasdair Smith
+Date: 01/10/2018
+
+00:00:04.120 --> 00:00:06.460
+Chiffres de contrôle de code produit
+
+00:00:06.840 --> 00:00:09.620
+Cool, donc la dernière leçon que nous avons faite nous avons regardé
+
+00:00:09.620 --> 00:00:14.060
+comment les ordinateurs réussissent à détecter les erreurs
+et à les corriger.
+
+00:00:14.060 --> 00:00:20.380
+Levez la main si vous êtes déjà allés au supermarché
+et que vous avez scanné vos courses
+
+00:00:20.380 --> 00:00:22.920
+et que tous les articles s'affichaient ?
+
+00:00:22.920 --> 00:00:24.260
+Avez-vous déjà fait cela ?
+
+00:00:24.260 --> 00:00:24.940
+Oui ?
+
+00:00:24.950 --> 00:00:33.160
+Baissez les mains, donc que se passe-t-il quand vous scannez
+un produit et qu'il n'est pas lu correctement ?
+
+00:00:33.160 --> 00:00:35.240
+Que fait la personne à la caisse ?
+
+00:00:35.240 --> 00:00:38.540
+Ou que ferait la personne à la caisse ?
+
+00:00:38.540 --> 00:00:44.460
+Vous devez leur demander et ils vont scanner quelque chose ?
+
+00:00:44.460 --> 00:00:48.460
+Oui, ils scannent quelque chose, et parfois
+ils doivent saisir quelque chose au clavier non ?
+
+00:00:48.460 --> 00:00:52.320
+Ça peut ne pas être lu parce que le code barre
+peut être plié et ils doivent donc faire quelque chose
+
+00:00:52.320 --> 00:00:53.460
+que doivent-ils faire ?
+
+00:00:53.460 --> 00:00:57.980
+N'ont-ils pas quelque chose sur leur clavier, 
+N'ont-ils pas un machin à code barre.
+
+00:00:57.980 --> 00:01:01.760
+-- Oui ils ont ça.
+-- Et ils le scannent sur la machine
+
+00:01:01.760 --> 00:01:02.720
+et ça…
+
+00:01:02.720 --> 00:01:06.420
+C'est ça, mais ça ne nous dit toujours pas
+ce qu'est l'article.
+
+00:01:06.420 --> 00:01:12.020
+Donc en bas d'un article, il y a le
+code-barres ; en noir et blanc ?
+
+00:01:12.020 --> 00:01:14.480
+Mais il y a aussi des chiffres en dessous.
+
+00:01:14.480 --> 00:01:18.080
+Et ces chiffres ont quelque chose
+appelé une somme de contrôle à la fin.
+
+00:01:18.080 --> 00:01:18.840
+Oui ?
+
+00:01:18.840 --> 00:01:24.180
+C'est comme s'il y avait un code-barres qui était 
+un peu plus petit pour qu'il puisse être saisi par une personne.
+
+00:01:24.180 --> 00:01:25.420
+Oui oui tout à fait.
+
+00:01:25.420 --> 00:01:29.180
+Donc ils doivent taper les chiffres parce que
+la machine ne peut pas les lire correctement ?
+
+00:01:29.180 --> 00:01:34.300
+Donc le dernier chiffre est appelé "somme de contrôle"
+et je vais vous apprendre aujourd'hui comment ça fonctionne.
+
+00:01:34.300 --> 00:01:37.539
+Dylan, peux-tu aller chercher au fond de la classe 
+quelque chose qui…
+
+00:01:37.540 --> 00:01:41.260
+a un code-barres de 13 chiffres pour nous,
+et nous verrons comment ça fonctionne.
+
+00:01:45.260 --> 00:01:49.280
+Cool, donc lis-nous les chiffres tout haut
+mais je ne veux pas connaitre le 13e chiffre.
+
+00:01:49.280 --> 00:01:52.180
+Je veux seulement savoir les 12 premiers chiffres.
+
+00:01:52.180 --> 00:02:12.780
+9, 3, 1, 0, 4, 9, 2, 0, 0, 0, 4 et 5.
+
+00:02:12.780 --> 00:02:16.580
+Ok je vais juste te relire ça
+est-ce que tu peux vérifier ?
+
+00:02:16.580 --> 00:02:26.800
+9, 3, 1, 0, 4, 9, 2, 0, 0, 0, 0, 4, 5.
+
+00:02:26.800 --> 00:02:27.560
+C'est bon ?
+
+00:02:27.569 --> 00:02:28.569
+Cool.
+
+00:02:28.569 --> 00:02:32.310
+Ok maintenant nous avons ces chiffres sur le
+tableau, ce que je vais vous demander de faire
+
+00:02:32.310 --> 00:02:34.879
+c'est de m'aider à additionner la ligne du haut.
+
+00:02:34.880 --> 00:02:37.280
+-- Donc 9 + 1 font ?
+-- 10.
+
+00:02:37.280 --> 00:02:39.220
+-- 10 + 4 font ?
+-- 14.
+
+00:02:39.220 --> 00:02:41.760
+-- 14 + 2 ?
+-- 16.
+
+00:02:41.760 --> 00:02:45.580
+-- 16 + 4 ?
+-- 20.
+
+00:02:45.580 --> 00:02:52.050
+Et nous ne nous intéressons qu'à la colonne des unités,
+Quel est donc le chiffre dans la colonne des unités ?
+
+00:02:52.050 --> 00:02:53.050
+Sam ?
+
+00:02:53.050 --> 00:02:54.050
+2.
+
+00:02:54.050 --> 00:02:55.360
+C'est le chiffre des dizaines, bien essayé.
+
+00:02:55.360 --> 00:02:56.360
+Zéro ?
+
+00:02:56.360 --> 00:02:59.230
+Zéro, donc on va juste noter le zéro ici.
+
+00:02:59.230 --> 00:03:01.069
+Parce que c'est le seul chiffre
+qui nous intéresse.
+
+00:03:01.069 --> 00:03:02.980
+Maintenant nous allons additionner la ligne du bas.
+
+00:03:02.980 --> 00:03:05.360
+-- 3 + 0 font ?
+-- 3.
+
+00:03:05.360 --> 00:03:07.880
+-- 3 + 9 font ?
+-- 12.
+
+00:03:07.880 --> 00:03:12.120
+-- 12 + 0 font ?
+-- 12, 12.
+
+00:03:12.120 --> 00:03:14.560
+-- 12 + 5 font ?
+-- 17.
+
+00:03:14.560 --> 00:03:17.790
+17 mais on ne s'intéresse qu'à la colonne des unités ?
+
+00:03:17.790 --> 00:03:19.060
+7.
+
+00:03:19.060 --> 00:03:23.260
+Maintenant nous allons multiplier la ligne du bas par 3,
+mais attention.
+
+00:03:23.260 --> 00:03:25.060
+Nous nous intéressons seulement à la colonne des unités.
+
+00:03:25.060 --> 00:03:29.400
+Combien font 7 x 3 et quelle est
+la valeur des unités ?
+
+00:03:30.060 --> 00:03:30.900
+Freddy.
+
+00:03:30.900 --> 00:03:32.000
+1.
+
+00:03:32.000 --> 00:03:34.340
+Qui d'autre avait 1 ?
+
+00:03:34.340 --> 00:03:35.600
+Cool.
+
+00:03:36.580 --> 00:03:37.880
+C'est égal à 1.
+
+00:03:37.880 --> 00:03:39.520
+Combien font 0 + 1 ?
+
+00:03:40.780 --> 00:03:41.400
+1.
+
+00:03:41.400 --> 00:03:42.280
+Cool.
+
+00:03:42.280 --> 00:03:48.240
+Bien, si je devais faire
+0 — en fait ce serait un 10 — ok ?
+
+00:03:48.240 --> 00:03:51.040
+Parce que nous ne nous intéressons qu'aux unités.
+
+00:03:51.049 --> 00:03:56.459
+Si je devais faire 0, quel serait
+le chiffre manquant ici ?
+
+00:03:56.460 --> 00:03:57.880
+Zéro ?
+
+00:03:57.880 --> 00:04:00.340
+1 plus combien font 10 ?
+
+00:04:00.340 --> 00:04:01.620
+9.
+
+00:04:01.620 --> 00:04:05.180
+La somme de contrôle est 9.
+
+00:04:05.189 --> 00:04:06.659
+Vrai ou faux ?
+
+00:04:06.660 --> 00:04:07.500
+Vrai.
+
+00:04:07.500 --> 00:04:08.000
+Cool.
+
+00:04:08.000 --> 00:04:13.840
+Donc ceci est l'équation mathématique qui est
+derrière chaque code-barres.
+
+00:04:13.840 --> 00:04:19.520
+Ok, regardons ce qu'il se passe
+si j'entends quelque chose de faux.
+
+00:04:19.520 --> 00:04:23.380
+Supposons que j'ai entendu un 5 à la place du 4.
+
+00:04:23.380 --> 00:04:28.680
+Donc la première chose qui va changer est ceci,
+est-ce que ça resterait un zéro ?
+
+00:04:28.680 --> 00:04:30.460
+-- Non.
+-- Qu'est-ce que ça deviendrait ?
+
+00:04:30.460 --> 00:04:31.460
+1.
+
+00:04:31.460 --> 00:04:37.320
+Ok ce qui change le
+1+1 qui n'est plus 1, combien c'est ?
+
+00:04:37.320 --> 00:04:38.060
+2.
+
+00:04:38.060 --> 00:04:39.520
+Ça devient 2.
+
+00:04:39.520 --> 00:04:42.920
+Donc 2 plus combien font 10 ?
+
+00:04:42.920 --> 00:04:44.180
+Est-ce que c'est 9 ?
+
+00:04:44.180 --> 00:04:45.040
+Non.
+
+00:04:45.040 --> 00:04:47.420
+Ça devient 8.
+
+00:04:47.420 --> 00:04:54.160
+Et parce que j'ai écrit un faux chiffre,
+la somme de contrôle est incorrecte,
+
+00:04:54.160 --> 00:04:58.200
+et la machine vous dit que ce n'est pas correct.
+
+00:04:58.200 --> 00:05:00.520
+Et vous devez taper les chiffres une nouvelle fois.
+
+00:05:00.520 --> 00:05:05.360
+Et parce que nous sommes des humains, à votre avis
+quelle est l'erreur la plus commune
+
+00:05:05.360 --> 00:05:07.280
+quand nous tapons des chiffres ?
+
+00:05:07.280 --> 00:05:10.000
+Comment est-ce qu'on se tromperait le plus ?
+
+00:05:10.000 --> 00:05:11.770
+-- Robert ?
+-- Les chiffres.
+
+00:05:11.770 --> 00:05:16.200
+Oui les chiffres, qu'est-ce qu'on pourrait faire avec
+les chiffres qui les rendraient différents ?
+
+00:05:17.000 --> 00:05:19.320
+Ne pourrait-on pas tous les écrire ?
+
+00:05:19.320 --> 00:05:21.900
+Oui, est-ce que je lirais mal les chiffres ?
+
+00:05:21.910 --> 00:05:22.910
+Qu'est-ce que je ferais ?
+
+00:05:22.910 --> 00:05:28.410
+À la place de faire 9, 1,
+vous pourriez taper 1, 9.
+
+00:05:28.410 --> 00:05:34.750
+Oui, mais aviez-vous remarqué que celui-là était
+le premier chiffre, celui-ci le deuxième,
+
+00:05:34.750 --> 00:05:37.690
+celui-là est le premier chiffre,
+celui-ci le deuxième chiffre.
+
+00:05:37.690 --> 00:05:44.240
+C'est parce que l'erreur la plus commune
+que nous faisons est que nous échangeons 2 chiffres.
+
+00:05:44.940 --> 00:05:48.800
+Je pourrais lire 93, mais mes doigts taperaient 39.
+
+00:05:48.800 --> 00:05:50.800
+N'est-ce pas ? Avez-vous déjà fait ça quand vous tapez ?
+
+00:05:50.800 --> 00:05:52.840
+Et vous avez vos lettres dans le
+mauvais sens ?
+
+00:05:52.840 --> 00:06:00.100
+Et c'est pour ça : la somme de contrôle
+nous empêche de venir pour
+
+00:06:00.100 --> 00:06:06.520
+acheter un paquet de cartes Pokemon et de payer pour un ensemble de panneaux solaires pour robot.
+
+00:06:06.520 --> 00:06:07.280
+Ok ?
+

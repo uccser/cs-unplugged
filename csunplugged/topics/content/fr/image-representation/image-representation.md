@@ -1,0 +1,5 @@
+# Représentation d'image
+
+Les images sont partout sur les ordinateurs et autres appareils numériques, et constituent l'un des principaux moyens d'interaction avec eux. Les appareils numériques stockent tout à l'aide de nombres, alors comment sont utilisés ces nombres pour créer les images que l'on voit sur nos écrans d'ordinateur, nos smartphones ou nos tablettes ? Comment ces appareils convertissent une longue liste de nombres en photos, graphismes de jeux vidéos, et pages web ? Ce module explore comment nous pouvons représenter des photos et des couleurs en utilisant des nombres binaires, comment ils sont affichés en utilisant les pixels d'un écran, et pourquoi la façon dont nous représentons ces images change ce que nous voyons.
+
+Nous recommandons de terminer le Cours 1 (pour le groupe d'âge concerné) du module [Nombres Binaires]('topics:unit_plan' 'binary-numbers' 'unit-plan') avant de commencer ce module.
