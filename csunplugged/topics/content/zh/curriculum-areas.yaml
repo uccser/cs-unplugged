@@ -1,0 +1,87 @@
+---
+computational-thinking:
+  name: 计算思维
+algorithmic-thinking:
+  name: 算法思维
+decomposition:
+  name: 分解
+abstraction:
+  name: 抽象
+generalising-and-patterns:
+  name: 泛化和模式
+logic:
+  name: 逻辑
+evaluation:
+  name: 评估
+computer-science:
+  name: 计算机科学
+data-representation:
+  name: 数据表示法
+algorithms:
+  name: 算法
+programming:
+  name: 编程
+mathematics:
+  name: 数学
+geometry:
+  name: 几何
+measurement:
+  name: 测量
+numeracy:
+  name: 计算能力
+algebra:
+  name: 代数
+statistics:
+  name: 统计
+literacy:
+  name: 读写能力
+reading:
+  name: 阅读
+writing:
+  name: 写作
+listening:
+  name: 听力
+speaking:
+  name: 口语
+library:
+  name: 图书馆
+word-study:
+  name: 词汇学习
+art:
+  name: 艺术
+language:
+  name: 语言学习
+performing-arts:
+  name: 表演艺术
+music:
+  name: 音乐
+dance:
+  name: 舞蹈
+drama:
+  name: 戏剧
+physical-education:
+  name: 体育
+fitness:
+  name: 健身
+sport:
+  name: 运动
+health:
+  name: 健康
+science:
+  name: 科学
+biology:
+  name: 生物
+physics:
+  name: 物理
+astronomy:
+  name: 天文学
+chemistry:
+  name: 化学
+geology:
+  name: 地质学
+social-studies:
+  name: 社会学科
+history:
+  name: 历史
+geography:
+  name: 地理

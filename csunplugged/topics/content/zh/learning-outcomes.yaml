@@ -1,0 +1,220 @@
+---
+#BINARY NUMBERS LEARNING OUTCOMES
+binary-convert-decimal:
+  text: 通过将任意十进制数转换为二进制数的方法，演示二进制数系的工作原理。
+binary-justify-zeros-and-ones:
+  text: 解释为什么计算机中没有实际的 0 和 1。
+binary-argue-zeros-and-ones-stored:
+  text: 辩解 0 和 1 仍然是解释计算机存储内容的正确方式。
+binary-explain-different-states:
+  text: 解释为何可使用任意两种不同的状态或事物来表示二进制；这不必仅限于 0 和 1。
+binary-explain-logic-one-bit:
+  text: 解释为什么最右位需要代表一的逻辑。
+binary-explain-off-on:
+  text: 解释为什么必须针对给定的数字关闭或开启特定卡（位）。
+binary-predict-bit-value:
+  text: 预测下一个二进制位（卡）的值。
+binary-explain-doubling:
+  text: 解释为什么仅需再添加一个位即可代表两倍数字。
+binary-recognise-alphabet-bits:
+  text: 识别计算机如何通过简化方法将字母字符表示为位。
+binary-create-message-converting:
+  text: 通过将字母字符转换为十进制数，进而转换为二进制数的方法，创建其自身消息。
+binary-interpret-message-binary:
+  text: 使用二进制解释消息。
+binary-explain-codes-alphabets:
+  text: 解释如何创建更大字母的代码，其中包括大写字母、标点符号、符号和音调符号（例如，长音符、重音符）。
+binary-make-play-instructions-binary:
+  text: 创建戏剧表演，为如何利用二进制表示数字提供指导。
+binary-identify-opposite-pairs:
+  text: 识别相反的符号对，例如，笑脸和伤心脸。
+binary-match-letters-numbers:
+  text: 将字母表中的字母及其相应代表数字相匹配。
+binary-count-highest-number:
+  text: 从最大数字开始倒数，找到二进制卡中的总点数。
+#DRAMA LEARNING OUTCOMES
+drama-create-video-binary:
+  text: 创建教学视频，概述如何使用二进制数系进行计数。
+#ENGLISH LEARNING OUTCOMES
+speaking-clear-instructions-binary-cards:
+  text: 给予明确指导，说明二进制卡可如何展示 0 到 63 之间的任意数字
+#ERROR DETECTION AND CORRRECTION LEARNING OUTCOMES
+error-describe-steps-to-find-card:
+  text: 说明要找出遭到翻面的卡之所需步骤。
+error-explain-each-card-bit:
+  text: 说明每张卡都是一个位，且相关卡均可代表数据。
+error-explain-chose-parity-card:
+  text: 解释在设置同位列/行时，为什么选择每个附加位（卡）。
+error-explain-steps-product-code-checksum:
+  text: 说明计算产品代码校验和的所需步骤。
+error-discuss-checksum-algorithm-12-13-product-code:
+  text: 讨论为何校验和算法对 12 和 13 位产品代码均有效。
+error-explain-checksum-algorithm:
+  text: 说明为什么校验和算法如此可靠。
+error-follow-steps-find-card-turned-over:
+  text: 按照步骤，找出如何才能在奇偶校验中找到已翻面的位（卡）。
+error-explain-group-numbers:
+  text: 说明如何将数字归入偶数或奇数。
+error-recognise-groups-of-5:
+  text: 识别 5 的组别，并跳过五的计数
+error-demonstrate-count-to-5:
+  text: 演示如何通过将计数与卡相匹配的方式数到 5。
+#LANUGAGE LEARNING OUTCOMES
+language-discuss-storing-characters:
+  text: 讨论为何能够存储标准英语字母表以外的内容十分重要。
+#NUMERACY LEARNING OUTCOMES
+numeracy-adding-given-number:
+  text: 将数字添加至给定数量。
+numeracy-identify-even-odd:
+  text: 通过说明为何最右数字与其他数字不同的方式，识别偶数和奇数。
+numeracy-discuss-count-zeros-ones:
+  text: 讨论为何只用 0 和 1 即可数到任意数字。
+numeracy-explain-squaring:
+  text: 说明为何理解二进制数的增加方式，可助了解位值方面的知识。
+numeracy-compare-base10-base2:
+  text: 对比基值为 10（我们的数字系统）和基值为 2（二进制）的基值系统。
+numeracy-identify-larger-number:
+  text: 对比两个数字时，识别出更大的数字。
+numeracy-count-by-pointing:
+  text: 通过指向任一物品的方式，进行正确计数。
+numeracy-recognise-patterns:
+  text: 识别数字 1 至 8 之间的模式。
+numeracy-recognise-number-alphabet-order:
+  text: 识别字母表和数字均有顺序。
+numeracy-explain-even-odd-parity-problem:
+  text: 说明如何通过了解哪些奇数和偶数为平均值，来协助解决奇偶校验问题。
+numeracy-describe-rows-columns:
+  text: 说明什么是行，什么是列。
+numeracy-discuss-changing-one-card-state:
+  text: 讨论为何更改一张卡后，将改变其所在行和列的状态。
+numeracy-explain-modulo:
+  text: 说明取模运算符的操作方法。
+numeracy-identify-modulo-everyday-life:
+  text: 识别日常生活中哪些地方会出现取模现象。
+numeracy-recognise-numbers-represented:
+  text: 认识到数字可以不同方式表示。
+numeracy-discuss-modulo-understanding-remainders:
+  text: 讨论如何通过了解取模的运作方式，促进您对余数的理解。
+#PROGRAMMING LEARNING OUTCOMES
+programming-explain-sequencing:
+  text: 解释编程中序列的运作方式。
+programming-explain-output:
+  text: 说明为什么程序会给出特定的结果。
+programming-explain-variable-name:
+  text: 说明为什么为变量选好名称很重要。
+programming-describe-variables:
+  text: 描述变量存储值的方式，以及它们在程序中的使用方式。
+programming-describe-mathematical-operations:
+  text: 描述您如何在程序中使用数学运算。
+programming-outline-variable-updates:
+  text: 概述由于所用代码，存储变量值如何发生了更新。
+programming-describe-variable-output:
+  text: 描述变量可如何显示为输出。
+programming-describe-function:
+  text: 描述您在程序中加入函数的理由。
+programming-identify-loop:
+  text: 确定何时使用循环重复指令组，及其循环方式。
+programming-explain-join-concatenate:
+  text: 说明如何串联（连接）字符串。
+programming-explain-asking-input-end-user:
+  text: 说明如果要求终端用户输入，您需要考虑到哪些内容。
+programming-identify-if-statement:
+  text: 确定何时使用 if 语句检查条件集合。
+programming-demonstrate-indexing:
+  text: 演示如何在字符串中索引访问指定位置的字母。
+programming-explain-set-and-change-statement:
+  text: 说明当更新变量值时，set 语句和 change 语句的区别。
+programming-describe-variable-initial-value:
+  text: 描述为何应将变量设置为正确的初始值类型。
+programming-explain-mod:
+  text: 说明取模运算符在程序中的作用。
+programming-explain-differences-if-else-if-statements:
+  text: 说明 if-else 语句和 if 语句的差别，以及您曾如何在程序中对其加以应用。
+programming-describe-nested-statement:
+  text: 描述嵌套语句如何作用于您的程序。
+programming-identify-list-store-data:
+  text: 确定何时使用列表存储数据集。
+programming-show-item-specified-position-list:
+  text: 示范如何访问列表中指定位置的项目。
+#SEARCHING ALGORITHMS LEARNING OUTCOMES
+search-algorithms-identify-unsorted-lists:
+  text: 确定未排序列表的搜索算法（顺序检索）。
+search-algorithms-describe-time-size-input:
+  text: 描述所用时间如何随着输入大小而增加。
+search-algorithms-explore-probability-value-random-set:
+  text: 探索是否可能在随机集中找到特定值。
+search-algorithms-explain-range-unsorted-lists:
+  text: 说明未排序列表的猜测数范围。
+search-algorithms-identify-sequential-binary:
+  text: 确定已排序和未排序列表的搜索算法（顺序和二进位检索）。
+search-algorithms-explain-decomposition-binary:
+  text: 说明它们在二进位检索中如何使用分解分而治之。
+search-algorithms-describe-time-size-input-different:
+  text: 描述所用时间如何随着输入大小而增加，以及最重要的是，对于两种不同的算法，增加方式如何不同。
+search-algorithms-describe-compare-values:
+  text: 描述如何对比相等和不相等（大于、小于）的数值。
+search-algorithms-explain-unsorted-lists:
+  text: 说明与排序列表相对比，未排序列表的猜测数范围。
+#UNPLUGGED PROGRAMMING LEARNING OUTCOMES
+unplugged-programming-apply-addition-multiplication:
+  text: 运用加法和乘法，算出终端用户将完成的操作数量。
+unplugged-programming-design-fitness-achievable:
+  text: 为终端用户设计一系列可达成的健身项目。
+unplugged-programming-construct-fitness-workout:
+  text: 构建可将力量和有氧运动统筹结合的健身锻炼。
+unplugged-programming-design-language:
+  text: 设计易懂的 Fitness Unplugged 编程语言。
+unplugged-programming-give-instructions:
+  text: 提供指令组，将物体从起点移至所需终点。
+unplugged-programming-identify-bug-correct:
+  text: 确定错误发生的位置，并能够修正代码以将物体移至所需终点。
+unplugged-programming-explain-exact-instructions:
+  text: 说明为何给出非常精确的指令尤为重要。
+unplugged-programming-follow-instructions:
+  text: 正确地遵循指令。
+unplugged-programming-identify-2D-shapes:
+  text: 识别并命名 2D 形状。
+unplugged-programming-communicate-debugging:
+  text: 当代码有误时进行沟通，以便人员了解需要进行哪些除错任务。
+unplugged-programming-actively-listen-feedback:
+  text: 积极听取反馈并调试程序。
+unplugged-programming-give-accurate-instructions-pace:
+  text: 根据人员可以跟上的速度，给出准确指令。
+unplugged-programming-give-instructions-shape:
+  text: 在所需形状中，给出从起点处移动物体的指令组。
+unplugged-programming-identify-bug-shape:
+  text: 识别错误发生的位置，并能够修正代码以让物体在所需形状中移动。
+unplugged-programming-describe-draw-2D-shape:
+  text: 描述如何绘制指定 2D 形状，如方形或矩形。
+unplugged-programming-accurately-count:
+  text: 从一个空间至下一个空间，准确计数。
+unplugged-programming-give-precise-instructions:
+  text: 给出精确的指令组，针对物体进行编程，从而将物体从一点高效移动至另一点。
+unplugged-programming-give-instructions-move:
+  text: 给出指令组，针对物体进行编程，从而将物体从一点移动至另一点。
+unplugged-programming-explain-tell-stories:
+  text: 说明您可如何结合口头、书面和视觉语言诉说故事。
+unplugged-programming-recall-direction-words:
+  text: 针对‘前往’、‘向前’、‘左’、‘右’，调用另一语言的方向词，并针对数字调用另一种语言。
+#SORTING LEARNING OUTCOMES
+sorting-explain-parallel-algorithm:
+  text: 说明排序网络并行算法的运算原理。
+sorting-use-selection-sort:
+  text: 使用选择（数据比较）排序多个项目。
+sorting-identify-number-range:
+  text: 确定任何数字范围的前一个和后一个数字。
+sorting-identify-number-given-range:
+  text: 确定给定数字范围的前一个或后一个数字。
+sorting-organise-objects-size:
+  text: 将物体按最小到最大进行组织。
+sorting-recognise-sorting-method:
+  text: 认识到排序方法可应用于能够排序的任意值。
+sorting-demonstrate-alphabet-knowledge:
+  text: 演示您的字母知识如何支持排序单词或书籍。
+sorting-comparing-musical-pitch:
+  text: 对比乐谱和实际听觉上的音调。
+#IMAGE REPRESENTATION OUTCOMES
+image-rep-understand-digits-representing-images:
+  text: 了解如何使用数字来存储和呈现图像。
+image-rep-understand-pixels:
+  text: 了解计算机所显示的图像均是由像素组成的；每个像素都可以基于数字显示出不同的颜色。

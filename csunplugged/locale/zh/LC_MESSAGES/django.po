@@ -1,0 +1,1727 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cs-unplugged\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-31 23:54+0000\n"
+"PO-Revision-Date: 2021-02-04 22:33\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: cs-unplugged\n"
+"X-Crowdin-Project-ID: 291678\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /csunplugged/locale/en/LC_MESSAGES/django.po\n"
+"X-Crowdin-File-ID: 1345\n"
+
+#: classic/models.py:10
+msgid "Classic CS Unplugged page"
+msgstr "经典版 CS Unplugged 页面"
+
+#: config/settings/base.py:155
+msgid "Translation mode"
+msgstr "翻译模式"
+
+#: config/settings/base.py:161
+msgid "Translation mode (Bi-directional)"
+msgstr "翻译模式（双向）"
+
+#: general/models.py:11
+msgid "General page"
+msgstr "通用页面"
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:10
+msgid "12 digits"
+msgstr "12 位"
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:11
+msgid "13 digits"
+msgstr "13 位"
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:24
+msgid "Barcode length"
+msgstr "条形码长度"
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:48
+msgid "{} Digit Barcode"
+msgstr "{} 位条形码"
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:53
+msgid "Separate!"
+msgstr "分开！"
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:54
+msgid "Operate!"
+msgstr "操作！"
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:55
+msgid "Calculate!"
+msgstr "计算！"
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:66
+msgid "Remember that this algorithm uses modulo 10, so we are only interested in the number in the one's column."
+msgstr "请记住，此算法使用 10 作为模数。因此，我们将仅注意一栏中的数字。"
+
+#: resources/generators/BinaryCardsResourceGenerator.py:33
+msgid "Display Numbers"
+msgstr "显示数字"
+
+#: resources/generators/BinaryCardsResourceGenerator.py:38
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:46
+msgid "Black on Card Back"
+msgstr "卡背为黑色"
+
+#: resources/generators/BinaryCardsResourceGenerator.py:40
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:48
+msgid "Yes - Uses a lot of black ink, but conveys clearer card state. Print double sided."
+msgstr "是 - 使用大量黑墨，但更清晰地反映卡片状态。双面打印。"
+
+#: resources/generators/BinaryCardsResourceGenerator.py:41
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:49
+msgid "No - Print single sided."
+msgstr "否 - 单面打印。"
+
+#: resources/generators/BinaryCardsResourceGenerator.py:104
+msgid "with numbers"
+msgstr "有数字"
+
+#: resources/generators/BinaryCardsResourceGenerator.py:106
+msgid "without numbers"
+msgstr "无数字"
+
+#: resources/generators/BinaryCardsResourceGenerator.py:109
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:110
+msgid "with black back"
+msgstr "有黑色卡背"
+
+#: resources/generators/BinaryCardsResourceGenerator.py:111
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:112
+msgid "without black back"
+msgstr "无黑色卡背"
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:20
+#: resources/generators/BinaryWindowsResourceGenerator.py:15
+msgid "Four (1 to 8)"
+msgstr "四（1 至 8）"
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:21
+#: resources/generators/BinaryWindowsResourceGenerator.py:16
+msgid "Eight (1 to 128)"
+msgstr "八（1 至 128）"
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:22
+msgid "Twelve (1 to 2048)"
+msgstr "十二（1 至 2048）"
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:35
+#: resources/generators/BinaryWindowsResourceGenerator.py:34
+msgid "Number of Bits"
+msgstr "位数"
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:41
+#: resources/generators/BinaryWindowsResourceGenerator.py:40
+msgid "Display Dot Counts"
+msgstr "显示点数"
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:106
+#: resources/generators/BinaryWindowsResourceGenerator.py:192
+msgid "with dot counts"
+msgstr "有点数"
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:108
+#: resources/generators/BinaryWindowsResourceGenerator.py:194
+msgid "without dot counts"
+msgstr "无点数"
+
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:12
+msgid "Student"
+msgstr "学生"
+
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:13
+msgid "Teacher (solutions)"
+msgstr "教师 (解决方案)"
+
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:27
+msgid "Worksheet Version"
+msgstr "习题版"
+
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:59
+msgid "Base 10"
+msgstr "基数 10"
+
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:60
+msgid "Binary"
+msgstr "二进制"
+
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:61
+msgid "Letter"
+msgstr "字母"
+
+#: resources/generators/BinaryWindowsResourceGenerator.py:20
+msgid "Binary (0 or 1)"
+msgstr "二进制（0 或 1）"
+
+#: resources/generators/BinaryWindowsResourceGenerator.py:21
+msgid "Lightbulb (off or on)"
+msgstr "电灯（关或开）"
+
+#: resources/generators/BinaryWindowsResourceGenerator.py:45
+msgid "Value Representation"
+msgstr "值的表示法"
+
+#: resources/generators/JobBadgesResourceGenerator.py:14
+msgid "Hello, I'm a Programmer"
+msgstr "您好，我是一名程序员"
+
+#: resources/generators/JobBadgesResourceGenerator.py:15
+msgid "Hello, I'm a Tester"
+msgstr "您好，我是一名测试人员"
+
+#: resources/generators/JobBadgesResourceGenerator.py:16
+msgid "Hello, I'm a Bot"
+msgstr "您好，我是一台机器人"
+
+#: resources/generators/LeftRightCardsResourceGenerator.py:14
+msgid "Left"
+msgstr "左"
+
+#: resources/generators/LeftRightCardsResourceGenerator.py:24
+msgid "Right"
+msgstr "右"
+
+#: resources/generators/ModuloClockResourceGenerator.py:10
+#: resources/generators/ModuloClockResourceGenerator.py:83
+#: resources/generators/NumberHuntResourceGenerator.py:221
+#: resources/generators/PianoKeysResourceGenerator.py:12
+#: resources/generators/SearchingCardsResourceGenerator.py:26
+#: resources/generators/SearchingCardsResourceGenerator.py:171
+msgid "Blank"
+msgstr "空"
+
+#: resources/generators/ModuloClockResourceGenerator.py:25
+msgid "Modulo"
+msgstr "模数"
+
+#: resources/generators/NumberHuntResourceGenerator.py:14
+msgid "Easy Numbers (2 digits)"
+msgstr "简单数字（2 位）"
+
+#: resources/generators/NumberHuntResourceGenerator.py:15
+msgid "Medium Numbers (3 digits)"
+msgstr "中等难度数字（3 位）"
+
+#: resources/generators/NumberHuntResourceGenerator.py:16
+msgid "Hard Numbers (4 digits)"
+msgstr "高难度数字（4 位）"
+
+#: resources/generators/NumberHuntResourceGenerator.py:17
+msgid "None (Blank)"
+msgstr "无（空）"
+
+#: resources/generators/NumberHuntResourceGenerator.py:20
+msgid "Sorted Numbers"
+msgstr "已排序数字"
+
+#: resources/generators/NumberHuntResourceGenerator.py:21
+msgid "Unsorted Numbers"
+msgstr "未排序数字"
+
+#: resources/generators/NumberHuntResourceGenerator.py:25
+msgid "Number Hunt"
+msgstr "找数字"
+
+#: resources/generators/NumberHuntResourceGenerator.py:44
+msgid "My Boxes"
+msgstr "我的方框"
+
+#: resources/generators/NumberHuntResourceGenerator.py:54
+msgid "Opponent's Boxes"
+msgstr "对手的方框"
+
+#: resources/generators/NumberHuntResourceGenerator.py:65
+msgid "\n"
+"<h5>Instructions</h5>\n\n"
+"<p>\n"
+"    <strong>Step 1:</strong>\n"
+"    Choose a number in your boxes for your opponent to find.\n"
+"</p>\n\n"
+"<p>\n"
+"    The number my opponent is looking for: _____\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>Step 2:</strong>\n"
+"    Write down the number your opponent has chosen for you to find.\n"
+"</p>\n\n"
+"<p>\n"
+"    The number of the box I'm looking for: _____\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>Step 3:</strong>\n"
+"    Ask your opponent for the number stored in a random box.\n"
+"    For example: <em>\"What is the number in the dotted circle?\"</em>.\n"
+"    Write the number your opponent says in the box you asked about on the right.\n"
+"    Remember to listen for the number you are looking for.\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>Step 4:</strong>\n"
+"    Each time your opponent guesses a box, cross out that box.\n"
+"    Keep taking turns until each person's number is found.\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>Step 5:</strong>\n"
+"    Write down the total number of guesses for each person below.\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>My total guesses:</strong> _____<br>\n"
+"    <strong>Opponent's total guesses:</strong> _____\n"
+"</p>\n"
+msgstr "\n"
+"<h5>说明</h5>\n\n"
+"<p>\n"
+"    <strong>步骤 1：</strong>\n"
+"    在您的方框中选择一个数字，让对手进行查找。\n"
+"</p>\n\n"
+"<p>\n"
+"    对手所寻找的数字是: _____\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>步骤 2：</strong>\n"
+"    写下对手让您寻找的选定数字。\n"
+"</p>\n\n"
+"<p>\n"
+"    我正寻找的方框数字： _____\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>步骤 3：</strong>\n"
+"    询问对手随机方框中是什么数字。\n"
+"    例如: <em>\"虚线圆中的数字是什么？\"</em>.\n"
+"    在询问的方框右边写下对手所回答的数字。\n"
+"    请注意聆听您正寻找的数字。\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>步骤 4：</strong>\n"
+"    每当对手猜中一个方框时，划去它。\n"
+"    在找到每个人的数字前，一直轮流询问。\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>步骤 5：</strong>\n"
+"    在下方写下每人猜中的数量。\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>我一共猜中了：</strong> _____<br>\n"
+"    <strong>对手一共猜中了：</strong> _____\n"
+"</p>\n"
+
+#: resources/generators/NumberHuntResourceGenerator.py:123
+#: resources/generators/SortingNetworkResourceGenerator.py:28
+msgid "Prefill with Numbers"
+msgstr "使用数字进行预填充"
+
+#: resources/generators/NumberHuntResourceGenerator.py:129
+msgid "Numbers Unsorted/Sorted"
+msgstr "未排序/已排序数字"
+
+#: resources/generators/NumberHuntResourceGenerator.py:224
+#: resources/generators/SearchingCardsResourceGenerator.py:70
+#: resources/generators/SearchingCardsResourceGenerator.py:73
+#: resources/generators/SearchingCardsResourceGenerator.py:173
+#: resources/generators/SearchingCardsResourceGenerator.py:175
+msgid "{} to {}"
+msgstr "{} 至 {}"
+
+#: resources/generators/ParityCardsResourceGenerator.py:17
+msgid "Black"
+msgstr "黑色"
+
+#: resources/generators/ParityCardsResourceGenerator.py:18
+msgid "Blue"
+msgstr "蓝色"
+
+#: resources/generators/ParityCardsResourceGenerator.py:19
+msgid "Green"
+msgstr "绿色"
+
+#: resources/generators/ParityCardsResourceGenerator.py:20
+msgid "Purple"
+msgstr "紫色"
+
+#: resources/generators/ParityCardsResourceGenerator.py:21
+msgid "Red"
+msgstr "红色"
+
+#: resources/generators/ParityCardsResourceGenerator.py:34
+msgid "Card back colour"
+msgstr "卡背颜色"
+
+#: resources/generators/PianoKeysResourceGenerator.py:54
+msgid "Piano key labels"
+msgstr "钢琴键标签"
+
+#: resources/generators/PixelPainterResourceGenerator.py:12
+msgid "Black and White (2 possible binary values)"
+msgstr "黑白 (2 种可能的二进制数值)"
+
+#: resources/generators/PixelPainterResourceGenerator.py:13
+msgid "Black and White (2 possible binary values) in Run Length Encoding"
+msgstr "行程编码中的黑白（2 种可能的二进制数值）"
+
+#: resources/generators/PixelPainterResourceGenerator.py:14
+msgid "Greyscale (4 possible binary values)"
+msgstr "灰度（4 种可能的二进制数值）"
+
+#: resources/generators/PixelPainterResourceGenerator.py:15
+msgid "Colour (8 possible binary values)"
+msgstr "彩色（8 种可能的二进制数值）"
+
+#: resources/generators/PixelPainterResourceGenerator.py:19
+msgid "Star - 1 page"
+msgstr "星星 - 1 页"
+
+#: resources/generators/PixelPainterResourceGenerator.py:20
+msgid "Teacup - 1 page"
+msgstr "茶杯 - 1 页"
+
+#: resources/generators/PixelPainterResourceGenerator.py:21
+msgid "Cat - 1 page"
+msgstr "猫 - 1 页"
+
+#: resources/generators/PixelPainterResourceGenerator.py:22
+msgid "Fish - 6 pages"
+msgstr "鱼 - 6 页"
+
+#: resources/generators/PixelPainterResourceGenerator.py:23
+msgid "Kauri tree - 6 pages"
+msgstr "贝壳杉 - 6 页"
+
+#: resources/generators/PixelPainterResourceGenerator.py:24
+msgid "Butterfly - 6 pages"
+msgstr "蝴蝶 - 6 页"
+
+#: resources/generators/PixelPainterResourceGenerator.py:25
+msgid "Hot air balloon - 8 pages"
+msgstr "热气球 - 8 页"
+
+#: resources/generators/PixelPainterResourceGenerator.py:26
+msgid "Boat - 9 pages"
+msgstr "船只 - 9 页"
+
+#: resources/generators/PixelPainterResourceGenerator.py:27
+msgid "Parrots - 32 pages"
+msgstr "鹦鹉 - 32 页"
+
+#: resources/generators/PixelPainterResourceGenerator.py:36
+msgid "Black and White"
+msgstr "黑白"
+
+#: resources/generators/PixelPainterResourceGenerator.py:43
+msgid "Run length encoding"
+msgstr "行程编码"
+
+#: resources/generators/PixelPainterResourceGenerator.py:50
+msgid "Greyscale"
+msgstr "灰度"
+
+#: resources/generators/PixelPainterResourceGenerator.py:59
+msgid "Colour"
+msgstr "颜色"
+
+#: resources/generators/PixelPainterResourceGenerator.py:74
+msgid "Star"
+msgstr "星星"
+
+#: resources/generators/PixelPainterResourceGenerator.py:75
+msgid "Teacup"
+msgstr "茶杯"
+
+#: resources/generators/PixelPainterResourceGenerator.py:76
+msgid "Cat"
+msgstr "猫"
+
+#: resources/generators/PixelPainterResourceGenerator.py:77
+msgid "Boat"
+msgstr "船只"
+
+#: resources/generators/PixelPainterResourceGenerator.py:78
+msgid "Fish"
+msgstr "鱼"
+
+#: resources/generators/PixelPainterResourceGenerator.py:79
+msgid "Hot air balloon"
+msgstr "热气球"
+
+#: resources/generators/PixelPainterResourceGenerator.py:80
+#: templates/general/people.html:154
+msgid "Parrots"
+msgstr "鹦鹉"
+
+#: resources/generators/PixelPainterResourceGenerator.py:81
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:69
+msgid "Kauri tree"
+msgstr "贝壳杉"
+
+#: resources/generators/PixelPainterResourceGenerator.py:82
+msgid "Butterfly"
+msgstr "蝴蝶"
+
+#: resources/generators/PixelPainterResourceGenerator.py:104
+msgid "Colouring type"
+msgstr "上色类型"
+
+#: resources/generators/PixelPainterResourceGenerator.py:110
+msgid "Image"
+msgstr "图像"
+
+#: resources/generators/PixelPainterResourceGenerator.py:410
+msgid "Pixel Painter"
+msgstr "像素绘画"
+
+#: resources/generators/PixelPainterResourceGenerator.py:412
+msgid "This page should be kept secret from students."
+msgstr "此页面不应供学生访问。"
+
+#: resources/generators/PixelPainterResourceGenerator.py:414
+msgid "Page grid reference for {} image"
+msgstr "{} 图像的页面网格坐标"
+
+#: resources/generators/PixelPainterResourceGenerator.py:417
+msgid "Once pixels on each page are filled in correctly, cut each grid out and arrange in the following layout (page names are in the top right corner)."
+msgstr "一旦填入正确的每页像素后，将每个网格减下来，排为以下布局（页面名称位于右上角）。"
+
+#: resources/generators/PixelPainterResourceGenerator.py:432
+msgid "The pixel values are using 2 bit colour values."
+msgstr "像素值使用 2 位色值。"
+
+#: resources/generators/PixelPainterResourceGenerator.py:434
+msgid "The pixel values are using 5 bit RGB colour values (2 red, 2 green, 1 blue)."
+msgstr "像素值使用 5 位 RGB 色值（2 个红色、2 个绿色、1 个蓝色）。"
+
+#: resources/generators/PixelPainterResourceGenerator.py:436
+msgid "Extra pixel legends are at the end of this document for students."
+msgstr "学生可参考文件末尾的其他像素图例。"
+
+#: resources/generators/PixelPainterResourceGenerator.py:455
+msgid "Pixel legend"
+msgstr "像素图例"
+
+#: resources/generators/PixelPainterResourceGenerator.py:477
+msgid "Run Length Encodings"
+msgstr "行程编码"
+
+#: resources/generators/PixelPainterResourceGenerator.py:482
+msgid "Encoding for page {}"
+msgstr "页面 {} 的编码"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:23
+msgid "Number of cards (15 or 31)"
+msgstr "卡数（15 或 31）"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:24
+msgid "1 to 99"
+msgstr "1 至 99"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:25
+msgid "1 to 999"
+msgstr "1 至 999"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:39
+msgid "Number of cards"
+msgstr "卡数"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:45
+msgid "Range of numbers"
+msgstr "数字范围"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:51
+msgid "Include teacher guide sheet"
+msgstr "包含教师指南表"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:76
+msgid "Add list of numbers below:"
+msgstr "在下方添加数字列表："
+
+#: resources/generators/SearchingCardsResourceGenerator.py:126
+msgid "Teacher guide sheet for binary search activity"
+msgstr "二进制搜索活动的教师指南表"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:129
+msgid "Use this sheet to circle the number you are asking your class to look for when you are demonstrating how the binary search works. This allows you to demonstrate the maximum number of searches it would take. When students are playing the number hunt game, they can choose any number. Avoid those numbers that are underlined as they are key binary search positions (avoiding them is a good thing to do for demonstrations, but in practice students, or computers, won’t intentionally avoid these)."
+msgstr "演示二进制搜索的工作原理时，使用此表格圈出您要求班级学生查找的数字。 您可借此展示最大的搜索次数。 玩找数字游戏时，学生可选择任何数字。请避开那些加了下划线的数字，因为它们是关键的二进制搜索位置（在演示中避开它们是明智的选择，但在实践中，学生或计算机并不会故意避开）。"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:139
+msgid "Sorted numbers"
+msgstr "已排序数字"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:178
+msgid "with helper sheet"
+msgstr "有帮助表"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:180
+msgid "without helper sheet"
+msgstr "无帮助表"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:182
+msgid "{} cards"
+msgstr "{} 张卡"
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:19
+msgid "Small numbers (1 to 10)"
+msgstr "小数字（1 至 10）"
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:23
+msgid "Large numbers (7 digit numbers)"
+msgstr "大数字（7 位数字）"
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:27
+msgid "Letters"
+msgstr "字母"
+
+#. Translators: A set of letters from your language's alphabet, seperated by commas
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:29
+msgid "L,O,N,K,E,D,S,P,G,B,I,Y"
+msgstr "L,O,N,K,E,D,S,P,G,B,I,Y"
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:34
+msgid "Words"
+msgstr "单词"
+
+#. Translators: A set of words from your language with similar spelling, seperated by commas
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:36
+msgid "crocodile,crochet,kiwi,weka,kiwi,kiwano"
+msgstr "鳄鱼、钩边、奇异果、新西兰黑秧鸡、奇异果、刺角瓜"
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:41
+msgid "Fractions"
+msgstr "分数"
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:47
+msgid "Butterfly life cycle"
+msgstr "蝴蝶生命周期"
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:58
+msgid "Little Red Riding Hood"
+msgstr "小红帽"
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:91
+msgid "Card Type"
+msgstr "卡片类型"
+
+#: resources/generators/SortingNetworkResourceGenerator.py:10
+msgid "Easy Numbers (1 digits)"
+msgstr "简单数字（1 位数）"
+
+#: resources/generators/SortingNetworkResourceGenerator.py:11
+msgid "Medium Numbers (2 digits)"
+msgstr "中等难度数字（2 位数）"
+
+#: resources/generators/SortingNetworkResourceGenerator.py:12
+msgid "Hard Numbers (3 digits)"
+msgstr "高难度数字（3 位数）"
+
+#: resources/generators/SortingNetworkResourceGenerator.py:13
+msgid "None (Blank - Useful as template)"
+msgstr "无（空 - 可作为模板）"
+
+#: resources/generators/TrainStationsResourceGenerator.py:9
+msgid "Circular"
+msgstr "环形"
+
+#: resources/generators/TrainStationsResourceGenerator.py:10
+msgid "Twisted"
+msgstr "迂回"
+
+#: resources/generators/TrainStationsResourceGenerator.py:23
+msgid "Train track shape"
+msgstr "火车轨道形状"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:14
+msgid "Student map"
+msgstr "学生地图"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:15
+msgid "Island posters"
+msgstr "岛屿海报"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:25
+msgid "Dead Man's Island"
+msgstr "死人岛"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:35
+msgid "Musket Hill"
+msgstr "步枪山"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:45
+msgid "Mutineers' Island"
+msgstr "叛乱岛"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:55
+msgid "Pirates' Island"
+msgstr "海盗岛"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:65
+msgid "Shipwreck Bay"
+msgstr "沉船湾"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:75
+msgid "Smugglers' Cove"
+msgstr "走私湾"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:85
+msgid "Treasure Island"
+msgstr "宝藏岛"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:105
+msgid "Printable type"
+msgstr "可打印类型"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:323
+msgid "Boat A"
+msgstr "船只 A"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:326
+msgid "Boat B"
+msgstr "船只 B"
+
+#: resources/models.py:12
+msgid "Printable"
+msgstr "可打印"
+
+#: resources/utils/BaseResourceGenerator.py:18
+msgid "A4"
+msgstr "A4"
+
+#: resources/utils/BaseResourceGenerator.py:19
+msgid "US Letter"
+msgstr "US Letter"
+
+#: resources/utils/BaseResourceGenerator.py:50
+msgid "Paper Size"
+msgstr "纸张大小"
+
+#: resources/utils/BaseResourceGenerator.py:82
+msgid "Header Text"
+msgstr "标题文本"
+
+#: resources/utils/BaseResourceGenerator.py:83
+msgid "Example School: Room Four"
+msgstr "示例学校：教室四"
+
+#: resources/utils/BaseResourceGenerator.py:91
+msgid "Number of Copies"
+msgstr "份数"
+
+#: resources/utils/resource_parameters.py:211
+#: templates/topics/all-curriculum-integration-list.html:57
+#: templates/topics/curriculum-integrations-table.html:32
+#: templates/topics/lessons-table.html:42
+msgid "Yes"
+msgstr "是"
+
+#: resources/utils/resource_parameters.py:211
+#: templates/topics/all-curriculum-integration-list.html:60
+#: templates/topics/curriculum-integrations-table.html:35
+#: templates/topics/lessons-table.html:46
+msgid "No"
+msgstr "否"
+
+#: templates/404.html:6 templates/404.html:13
+msgid "Page not found"
+msgstr "未找到页面"
+
+#: templates/404.html:14
+msgid "We are sorry but we could not find a page for the link you provided."
+msgstr "很抱歉，无法找到您的链接页面。"
+
+#: templates/404.html:15
+msgid "You may find one of the links below useful:"
+msgstr "以下某个链接可能十分有用："
+
+#: templates/404.html:19
+msgid "Homepage"
+msgstr "主页"
+
+#: templates/404.html:26 templates/base-educators.html:71
+#: templates/core.html:178
+msgid "Search"
+msgstr "搜索"
+
+#: templates/404.html:32 templates/general/index.html:106
+#: templates/general/people.html:74
+msgid "Classic CS Unplugged"
+msgstr "经典版 CS Unplugged"
+
+#: templates/at-home/index.html:8
+msgid "CS Unplugged at home"
+msgstr "CS Unplugged 居家版"
+
+#: templates/at-home/index.html:21
+msgid "Try something different away from the screen"
+msgstr "尝试一些屏幕之外的不同内容"
+
+#: templates/at-home/index.html:27
+#: templates/topics/not-available-warning.html:6
+#, python-format
+msgid "<h4>Sorry! This item is not yet available in %(language)s.</h4> <p>This item is available in the following languages:</p>"
+msgstr "<h4>抱歉！本条目暂无可用%(language)s版本。</h4> <p>本条目设有以下语言版本：</p>"
+
+#: templates/at-home/index.html:38
+#: templates/topics/not-available-warning.html:36
+msgid "Return to homepage "
+msgstr "返回主页 "
+
+#: templates/at-home/index.html:55
+msgid "<strong>Welcome to Computer Science Unplugged!</strong> This is a collection of fun and engaging activities that enable children to explore fundamental ideas in Computer Science, <em>without</em> having to use a computer. Traditionally these activities have been designed to be used with school classes and larger groups, but we’ve got many ideas for you to try out if you’re at home."
+msgstr "<strong>欢迎使用 Computer Science Unplugged！</strong>我们融合一系列有趣而好玩的活动，让孩子们<em>无需</em>使用计算机即可了解与计算机科学相关的各种基本概念。以往，这些活动均通过学校课堂以及更多群体参加的方式进行组织，但如果您目前留在家中的话，我们亦有众多想法供您尝试。"
+
+#: templates/base-at-home.html:28 templates/base-educators.html:28
+msgid "Language"
+msgstr "语言"
+
+#: templates/base-at-home.html:58
+msgid "Back to CS Unplugged"
+msgstr "返回 CS Unplugged"
+
+#: templates/base-educators.html:56 templates/core.html:136
+#: templates/general/index.html:67 templates/topics/index.html:8
+#: templates/topics/index.html:16
+msgid "Topics"
+msgstr "主题"
+
+#: templates/base-educators.html:57 templates/core.html:141
+#: templates/general/index.html:72 templates/resources/index.html:8
+#: templates/resources/index.html:16 templates/topics/lesson.html:74
+msgid "Printables"
+msgstr "可打印页"
+
+#: templates/base-educators.html:58 templates/core.html:131
+#: templates/general/about.html:7 templates/general/about.html:15
+#: templates/general/base.html:10
+msgid "About"
+msgstr "关于"
+
+#: templates/core.html:25 templates/general/index.html:7
+#: templates/general/people.html:21
+msgid "CS Unplugged"
+msgstr "CS Unplugged"
+
+#: templates/core.html:51
+msgid "Home"
+msgstr "主页"
+
+#: templates/core.html:102
+msgid "Looking for something for high schools? Check out the <a href=\"http://csfieldguide.org.nz/\">Computer Science Field Guide</a>."
+msgstr "正在寻找高中课程？请前往<a href=\"http://csfieldguide.org.nz/\">计算机科学领域指南</a>查看。"
+
+#: templates/core.html:114
+msgid "The primary goal of the Unplugged project is to promote Computer Science (and computing in general) to young people as an interesting, engaging, and intellectually stimulating discipline."
+msgstr "Unplugged 项目的主要目标是向年轻人推广计算机科学（和一般计算），并向其呈现一个趣味无穷、引人入胜和启发思维的学科。"
+
+#: templates/core.html:120
+#, python-format
+msgid "Read more about <a href=\"%(principles_url)s\">our principles here</a>."
+msgstr "点击<a href=\"%(principles_url)s\">此处我们的原则</a>，了解更多信息。"
+
+#: templates/core.html:127
+msgid "Useful Links"
+msgstr "有用链接"
+
+#: templates/core.html:146
+msgid "At home"
+msgstr "居家版"
+
+#: templates/core.html:152
+msgid "Community"
+msgstr "社群"
+
+#: templates/core.html:156
+msgid "Twitter"
+msgstr "Twitter"
+
+#: templates/core.html:161
+msgid "YouTube"
+msgstr "YouTube"
+
+#: templates/core.html:166
+msgid "GitHub"
+msgstr "GitHub"
+
+#: templates/core.html:172
+msgid "Help"
+msgstr "帮助"
+
+#: templates/core.html:184 templates/topics/glossary.html:8
+#: templates/topics/glossary.html:17
+msgid "Glossary"
+msgstr "术语表"
+
+#: templates/core.html:189
+msgid "Feedback"
+msgstr "反馈"
+
+#: templates/core.html:194 templates/general/contact.html:7
+msgid "Contact"
+msgstr "联系"
+
+#: templates/core.html:218
+msgid "The CS Unplugged material is open source on <a href=\"https://github.com/uccser/cs-unplugged\">GitHub</a>, and this website's content is shared under a <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons Attribution-ShareAlike 4.0 International license</a>. The CS Unplugged is a project by the <a href=\"https://www.canterbury.ac.nz/engineering/schools/csse/research/cse/\">Computer Science Education Research Group</a> at the <a href=\"http://www.canterbury.ac.nz/\">University of Canterbury</a>, New Zealand."
+msgstr "CS Unplugged 资料属于 <a href=\"https://github.com/uccser/cs-unplugged\">GitHub</a> 上的开放资源，此网站的内容均根据 <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">创意公用授权-相同方式共享 4.0 国际许可</a>进行分享。CS Unplugged 是由<a href=\"https://www.canterbury.ac.nz/engineering/schools/csse/research/cse/\">计算机科学教育研究小组</a>在新西兰<a href=\"http://www.canterbury.ac.nz/\">坎特伯雷大学</a>开展的项目。"
+
+#: templates/core.html:222
+msgid "Icons provided generously by <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://icons8.com/\">icons8</a>."
+msgstr "所有图标均由 <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://icons8.com/\">icons8</a> 慷慨捐赠。"
+
+#: templates/core.html:244
+#, python-format
+msgid "This definition is not available in %(language)s, sorry!"
+msgstr "抱歉，尚无%(language)s定义！"
+
+#: templates/core.html:251
+msgid "Close"
+msgstr "关闭"
+
+#: templates/dev/index.html:22
+msgid "Unit Plan:"
+msgstr "单元计划："
+
+#: templates/general/about.html:20
+msgid "CS Unplugged is a collection of free learning activities that teach Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around. We originally developed this so that young students could dive head-first into Computer Science, experiencing the kinds of questions and challenges that computer scientists experience, but without having to learn programming first."
+msgstr "CS Unplugged 提供一系列的免费学习活动，并通过使用卡片、绳子、蜡笔和大量跑动的游戏和谜题来教授计算机科学。 我们开发此项目的最初宗旨在于，让青少年学生能够潜心研究计算机科学，体验计算机科学家们所经历过的各种问题和挑战，而无需提前学习编程。"
+
+#: templates/general/about.html:27
+msgid "The collection was originally intended as a resource for outreach and extension, but with the adoption of computing and computational thinking into many classrooms around the world, it is now widely used for teaching. The material has been used in many contexts outside the classroom as well, including science shows, talks for senior citizens, and special events."
+msgstr "此系列最初有意作为外展和扩展的资源，但随着计算和计算思维在全球大量教室中的应用，它现已广泛用于教学。 这些材料也被用于课堂以外的许多场合，包括科学节目、老年人讲座和特别活动。"
+
+#: templates/general/about.html:34
+msgid "Thanks to generous sponsorships we have been able to create associated resources such as the videos, which are intended to help teachers see how the activities work (please don’t show them to your classes – let them experience the activities themselves!). All of the activities that we provide are open source – they are released under a <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons Attribution-ShareAlike licence</a>, so you can copy, share and modify the material."
+msgstr "感谢慷慨赞助，我们现可创建视频等相关资源，从而帮助教师看到活动的操作原理（请不要向学生展示视频 - 让学生自己体验活动！）。我们所提供的全部活动均属于开放资源 – 根据<a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">创意公用授权-相同方式共享许可</a>发布。因此，您可复制、分享和修改资料。"
+
+#: templates/general/about.html:42
+#, python-format
+msgid "For an explanation on the connections between CS Unplugged and Computational Thinking skills, see our <a href=\"%(computational_thinking_url)s\">Computational Thinking and CS Unplugged page</a>."
+msgstr "如需了解 CS Unplugged 与计算思维技能之间的关联性，请参阅我们的<a href=\"%(computational_thinking_url)s\">计算思维和 CS Unplugged</a> 页面。"
+
+#: templates/general/about.html:49
+#, python-format
+msgid "To view the team of contributors who work on this project, see our <a href=\"%(people_url)s\">people page</a>."
+msgstr "如欲查看此项目背后的贡献者团队，请参见我们的<a href=\"%(people_url)s\">人员</a>页面。"
+
+#: templates/general/about.html:56
+#, python-format
+msgid "For details on how to contact us, see our <a href=\"%(contact_url)s\">contact us page</a>."
+msgstr "如欲了解我们的具体联系方式，请参见<a href=\"%(contact_url)s\">联系我们页面</a>。"
+
+#: templates/general/about.html:63
+#, python-format
+msgid "For more information about the principles behind CS Unplugged, see our <a href=\"%(principles_url)s\">principles page</a>."
+msgstr "如欲了解有关 CS Unplugged 背后原则的更多信息，请参见我们的<a href=\"%(principles_url)s\">原则页面</a>。"
+
+#: templates/general/base.html:7
+msgid "About pages"
+msgstr "关于页面"
+
+#: templates/general/base.html:11
+#: templates/general/computational-thinking.html:8
+#: templates/general/computational-thinking.html:17
+msgid "Computational Thinking and CS Unplugged"
+msgstr "计算思维及 CS Unplugged"
+
+#: templates/general/base.html:12 templates/general/principles.html:7
+#: templates/general/principles.html:17
+msgid "Principles"
+msgstr "原则"
+
+#: templates/general/base.html:13 templates/general/people.html:7
+#: templates/general/people.html:16
+msgid "People"
+msgstr "人员"
+
+#: templates/general/base.html:14 templates/general/contact.html:16
+msgid "Contact Us"
+msgstr "联系我们"
+
+#: templates/general/computational-thinking.html:21
+msgid "What is Computational Thinking?"
+msgstr "什么是计算思维？"
+
+#: templates/general/computational-thinking.html:24
+msgid "The world we live in has become a digital one, filled with technology and driven by Computer Science. Software and technology have transformed every subject and job area, from science and medicine, to art history and psychology. Digital technology is ubiquitous. To be informed and empowered citizens, the next generation of students need to understand this digital world that they live in."
+msgstr "我们所生活的世界已成为数字化世界，充斥着各种技术，在计算机科学的推动下不断成长。 软件和技术已改变每个学科和工作领域，从科学和医学，直到艺术史和心理学，不一而足。 数字技术无处不在。 如欲成为知情和享有权利的公民，下一代学生将需了解其所居住的这个数字世界。"
+
+#: templates/general/computational-thinking.html:33
+msgid "This is why Computational Thinking has been called the ‘21st Century Skill Set’, and is important for everyone to learn. It is critical to understanding how the digital world works, for harnessing the power of computers to solve tough problems, and making great things happen! It also enables us to think critically about not just the benefits of certain technologies, but also the potential harm, ethical implications, or unintended consequences of these."
+msgstr "正因如此，计算思维被称为‘21 世纪的技能组合’。对每个人而言，学习计算思维至关重要。只有在理解数字世界的工作原理后，才能应用计算机的威力解决艰难的问题，创造丰功伟业！此外，其能促使我们进行批判性思考，内容不仅包括特定技术所带来的好处，还有其中所包含的潜在危害、伦理含意或意外后果。"
+
+#: templates/general/computational-thinking.html:41
+msgid "But what exactly is Computational Thinking? Let’s have a look at a technical definition..."
+msgstr "然而，到底什么才是计算思维？让我们看看技术定义……"
+
+#: templates/general/computational-thinking.html:48
+msgid "\"Computational Thinking is the thought processes involved in formulating problems and their solutions so that the solutions are represented in a form that can be effectively carried out by an information-processing agent.\""
+msgstr "“计算思维是制定问题及其解决方案所涉及的思维过程，促使以可由信息处理代理有效执行的形式，表示解决方案。”"
+
+#: templates/general/computational-thinking.html:58
+msgid "Phew, it’s quite a mouthful isn’t it? But, as we like to say at CS Unplugged, it’s just big words for simple ideas! 'Information-processing agent' means anything that follows a set of instructions to complete a task (we call this 'computing'). Most of the time this 'agent' means a computer or other type of digital device - but it could also be a human! We’ll refer to it as a computer to make things a bit simpler. To represent solutions in a way that a computer can carry them out, we have to represent them as a step by step process - an <strong>algorithm</strong>. To create these algorithmic solutions we apply some special problem solving skills to. These skill are what make up Computational Thinking! And they are skills that are transferrable to any field."
+msgstr "啊，这定义太长了对吗？但是，在 CS Unplugged 中，我们想要对大家说，这些长篇阔论背后的想法非常简单！'信息处理代理'是指遵循一组指令完成任务的任何内容（我们称之为'计算'）。 大多数情况下，这个'代理'指的是计算机或其他类型的数字装置 - 但也可能是人类！ 为了让一切变得更简单一些，我们将其称为计算机。 旨在以计算机可执行的方式表示解决方案，我们必须将其表示为逐步求解的过程 - <strong>算法</ strong>。 为了创建这些算法解决方案，我们应用一些特殊的问题解决技能。 这些技能构成了计算思维！ 这些技能还可转移至任何领域。"
+
+#: templates/general/computational-thinking.html:72
+msgid "Computational Thinking could be described as 'thinking like a Computer Scientist', but it is now an important skill for everyone to learn, whether they want to be a Computer Scientist or not! It’s interesting, and important, to note that Computational Thinking, and Computer Science, aren’t entirely about computers, they are more about <strong>people</strong>. You might think that we write programs for computers, but really we write programs for people - to help them communicate, find information, and solve problems."
+msgstr "计算思维可描述为'像计算机科学家一样思考'。如今，无论是否想成为计算机科学家，每个人均需学习这一重要技能！ 非常有趣且重要的一点是，计算思维和计算机科学并非完全关于计算机，它们与<strong>人</ strong>的关系更大。 您可能认为是我们在为计算机编写程序，但实际上是在为人编写程序 - 助其沟通、查找信息和解决问题。"
+
+#: templates/general/computational-thinking.html:80
+msgid "For example, you might use an app on a smartphone to get directions to a friend's house; the app is an example of a computer program, and the smartphone is the \"information processing agent\" that runs the program for us. Whoever designed the algorithm for working out the best route, and all the details like the interface and how to store the map, applied computational thinking to design the system. But they didn't design it for the sake of the smartphone; they designed it to help the person using the smartphone."
+msgstr "例如，您可使用智能手机上的应用程序获取前往朋友家的路线；此应用程序是计算机程序的一个示例，而智能手机则是为我们运行程序的'信息处理代理'。无论是谁设计出算法，以制定最佳路线以及全部细节，例如界面和存储地图的方法等，他们均应用计算思维来设计系统。 但是，他们并非因智能手机而设计；其设计旨在为使用智能手机的个人提供服务。"
+
+#: templates/general/computational-thinking.html:87
+msgid "Computational Thinking in CS Unplugged"
+msgstr "CS Unplugged 中的计算思维"
+
+#: templates/general/computational-thinking.html:89
+msgid "<p> Throughout the lessons and units in CS Unplugged there are many links to Computational Thinking. Teaching Computational Thinking through CS Unplugged activities teaches students how to: </p> <ul> <li>describe a problem,</li> <li>identify the important details needed to solve this problem,</li> <li>break the problem down into small, logical steps,</li> <li>use these steps to create a process (algorithm) that solves the problem,</li> <li>and then evaluate this process.</li> </ul>"
+msgstr "<p> 在 CS Unplugged 的整个课程和单元中，设有许多关于计算思维的链接。通过 CS Unplugged 活动教授计算思维，将教会学生如何：</p> <ul> <li>描述问题、</li> <li>确定解决问题所需的重要细节、</li> <li>将问题分解为更小的逻辑步骤、</li> <li>使用这些步骤创建解决问题的过程（算法），</li> <li>随后评估这一过程。</li> </ul>"
+
+#: templates/general/computational-thinking.html:106
+msgid "These skills are transferable to any other curriculum area, but are particularly relevant to developing digital systems and solving problems using the capabilities of computers.</p>"
+msgstr "这些技能可转移至任何其他课程领域，但与开发数字系统和使用计算机功能解决问题尤为相关。</p>"
+
+#: templates/general/computational-thinking.html:111
+msgid "These Computational Thinking concepts are all connected to each other and support each other, but it's important to note that not all aspects of Computational Thinking will necessarily happen in every unit or lesson. In each unit and lesson we've highlighted the important connections for you to observe your students in action."
+msgstr "这些计算思维概念全部均相互联系、相互支持，但重点在于注意到，并非计算思维的每个方面都会在每个单元或课程中发生。 在每一个单元和课程中，我们均强调您应在学生行为中观察到的重要联系。"
+
+#: templates/general/computational-thinking.html:118
+msgid "There are a number of definitions of Computational Thinking, but most have a set of 5 or 6 problem solving skills that Computational Thinking embodies. For the Unplugged project we've identified the following six CT skills that are often mentioned in the literature; they are described below, and at the end of each Unplugged lesson we've identified ways that these skills appeared in the lesson, to help you see the CT connection with the lessons."
+msgstr "计算思维具有多种定义，但大多数均有计算思维所体现的一套 5 或 6 种解决问题的技能。 对于 Unplugged 项目，我们经确定文献中经常提到的以下六种 CT 技能；其描述如下所示，并且，在每个 Unplugged 课程结束时，我们都将确定这些技能在课程中的出现方式，从而助您查看与课程的 CT 关联。"
+
+#: templates/general/computational-thinking.html:124
+msgid "Computational Thinking skills"
+msgstr "计算思维技能"
+
+#: templates/general/computational-thinking.html:128
+msgid "Algorithmic thinking"
+msgstr "算法思维"
+
+#: templates/general/computational-thinking.html:133
+msgid "Algorithms are at the heart of Computational Thinking and Computer Science, because in Computer Science the solutions to problems are not simply an answer (e.g. ‘42’, or a fact), they are algorithms. An algorithm is a step-by-step process that solves a problem or completes a task. If you follow the algorithm's steps correctly, you will arrive at a correct solution, even for different inputs. For example, we can use an algorithm to find the shortest route between two locations on a map; the same algorithm can be used for any pair of starting and finishing points, so the solution depends on the input to the algorithm. If we know the algorithm for solving a problem then we can solve that problem easily, whenever we want, without having to think! We can just follow the steps. Computers can’t think for themselves, so they need to be given algorithms to do things."
+msgstr "算法是计算思维和计算机科学的核心。在计算机科学中，问题的解决方案不仅仅只是一个答案（例如'42'或一个事实），其实还是算法。算法是解决问题或完成任务的分步过程。若正确遵循算法的步骤，即使输入不同，也会得到正确的解决方案。例如，可以使用算法来找到地图上两个位置间的最短路径；相同的算法可用于任何一对起点和终点，因此，解决方案取决于算法中的输入。 若知道解决问题的算法，那么即可随时轻松地解决问题，而无需再进行思考！仅需按照步骤，进行操作即可。计算机无法自己思考，所以我们需要给它算法，让其完成目标。"
+
+#: templates/general/computational-thinking.html:144
+msgid "Algorithmic thinking is the process of creating algorithms. When we create an algorithm to solve a problem, we call this an algorithmic solution."
+msgstr "算法思维是创建算法的过程。当要创建算法来解决问题时，我们称之为算法解决方案。"
+
+#: templates/general/computational-thinking.html:151
+msgid "Computational algorithms (the kind that can run on digital devices) have relatively few ingredients because digital devices only have a few types of instruction that they can follow; the main things they can do are receive input, provide output, store values, follow instructions in a sequence, choose between options, and repeat instructions in a loop. Despite how limited this range of instructions is, we've described everything that digital devices can compute, and this is why algorithms are described restricted to these elements."
+msgstr "计算算法（可在数字装置上运行的类型）具有相对较少的成分，毕竟数字装置只有几种类型的指令可供遵循；它们可完成的事情主要是接收输入、提供输出、存储值、按照顺序执行指令、在选项之间进行选择，以及循环重复指令。尽管这一系列指令有限，但我们已描述数字装置可计算的所有内容，这也可解说为何仅限这些元素来描述算法。"
+
+#: templates/general/computational-thinking.html:161
+msgid "Abstraction"
+msgstr "抽象"
+
+#: templates/general/computational-thinking.html:166
+msgid "Abstraction is all about simplifying things to help us manage complexity. It requires identifying what the most important aspects of a problem are and hiding the other specific details that we don’t need to focus on. The important aspects can be used to create a model, or simplified representation, of the original thing we were dealing with. We can then work with this model to solve the problem, rather than having to deal with all the nitty gritty details at once. Computer Scientists often work with multiple levels of abstraction."
+msgstr "抽象就是为了简化，从而协助管理复杂性。这需要明确哪些才是问题的最重要方面，并隐藏无需关注的其他具体细节。重要的方面可用于创建正在处理的原始事项之模型或简化表示。此后，便可使用此模型解决问题，而不必赶着处理全部的繁琐细节。计算机科学家经常使用多层次的抽象。"
+
+#: templates/general/computational-thinking.html:176
+msgid "We use abstraction often in our everyday lives, for example when we use maps. Maps show us a simplified version of the world by leaving out unnecessary details, like where every individual tree in a park is, and only keeping the most relevant information the map reader will need, such as roads and street names."
+msgstr "我们经常在日常生活（例如使用地图时）中使用抽象。地图展示出世界的简化版本，为我们省略了不必要的细节，例如公园中每棵树的位置，并且仅保留地图阅读器所需的最相关信息，例如道路和街道名称。"
+
+#: templates/general/computational-thinking.html:183
+msgid "Digital devices use abstraction all the time; they try to hide as much unnecessary information from the user as possible. For example, let's say you took a nice scenic photo on your last camping trip, and now you want to edit it on your laptop and adjust the colours in it. Normally we could do this by opening a picture editing program, adjusting some colour sliders or maybe choosing a filter. When you do this there are a lot of complicated operations happening which the computer is hiding from you."
+msgstr "数字装置始终应用抽象；它们试图尽可能多地隐藏用户不需要的信息。例如，假设您在上次露营活动中拍摄了一张漂亮的风景照片，而现在要在笔记本电脑上进行编辑并调整颜色。通常，可通过打开图片编辑程序并调整一些颜色滑块或选择滤镜来实现此目的。执行此操作时，计算机隐藏了这个操作背后的许多复杂操作。"
+
+#: templates/general/computational-thinking.html:196
+msgid "The picture you took is stored on the computer as a big list of pixels, which are each a different colour, and each colour is represented by a set of numbers, and each of these numbers are stored as binary digits! That’s a lot of information. Imagine if when you adjusted the colours you had to go through and look at all the colour values of every pixel and change each and every one of those! That’s what the computer is doing for you, but since you don’t need to know this to accomplish your goal the computer hides this information away."
+msgstr "在计算机中，所拍摄的照片会存储为像素大列表，每个均呈现一个不同颜色，每一颜色均用一组数字表示，每一数字均存储为二进制数！这蕴藏着大量信息。假设您要调整颜色，就要查看每一个像素，查看每一个色值，并逐一更改！这就是计算机替您完成的事情，但鉴于完成目标并不需要您了解这个情况，计算机便把相关信息均隐藏起来。"
+
+#: templates/general/computational-thinking.html:207
+msgid "Decomposition"
+msgstr "分解"
+
+#: templates/general/computational-thinking.html:212
+msgid "Decomposition is about breaking down problems into smaller, more manageable, parts, and then focusing on solving each of these smaller problems. We can break a complex problem down until the smaller parts are so simple they become easy to solve. The solutions to each of these smaller, and simpler, problems build up to a solution to the big problem we started with. Decomposition helps make large problems much less intimidating!"
+msgstr "分解即将问题分解为更小、更易管理的部分，然后专注于解决每个小问题。 我们可以将复杂的问题分解为各个小部分，直至这些小部分变得简单而易于解决。这些可解决每个更小、更简单问题的解决方案，形成用于解决一开始面对的大问题之解决方案。分解有助于让大问题变得不那么吓人！"
+
+#: templates/general/computational-thinking.html:221
+msgid "Decomposition is an important skill for creating algorithms and processes that can be implemented on a computing device, because computers need very specific instructions. They need to be told each of the tiny steps they need to follow in order to do things."
+msgstr "创建可在计算装置上实现的算法和过程时，分解是一项重要技能，因为计算机需要非常具体的指令。它们需要得知完成任务所需的每一个小步骤。"
+
+#: templates/general/computational-thinking.html:228
+msgid "For example the overall task of making a cake can be decomposed into several smaller tasks, each of which can be performed easily."
+msgstr "例如，制作蛋糕的整体任务可分解为多个小任务，而每个小任务均可轻松完成。"
+
+#: templates/general/computational-thinking.html:233
+msgid "<p><strong>Make cake</strong></p> <ol> <li>Bake cake <ol> <li>Put ingredients in bowl (butter, sugar, egg, flour)</li> <li>Mix</li> <li>Pour into tin</li> <li>Put in oven for 30mins</li> <li>Take out of tin</li> </ol> </li> <li>Make icing</li> <li>Put on cake</li> </ol>"
+msgstr "<p><strong>制作蛋糕</strong></p> <ol> <li>烘焙蛋糕<ol> <li>在碗中放入原料（黄油、糖、鸡蛋、面粉）</li> <li>搅拌</li> <li>倒入蛋糕模具</li> <li>放入烤箱，烤 30 分钟</li> <li>取出蛋糕模具</li> </ol> </li> <li>制作糖衣</li> <li>放上蛋糕</li> </ol>"
+
+#: templates/general/computational-thinking.html:255
+msgid "Generalising and patterns"
+msgstr "泛化和模式"
+
+#: templates/general/computational-thinking.html:260
+msgid "Generalising is also referred to as 'pattern recognition and generalisation'. Generalisation is taking a solution (or part of a solution) to a problem and generalising it so it can be applied to other similar problems and tasks. Since solutions in Computer Science are algorithms, this means we take an algorithm and make it general enough that it can be used for a range of problems. This process involves abstraction, because to make something more general we have to remove unnecessary details that are related to a specific problem or situation, but are not important to how the algorithm functions."
+msgstr "泛化也称为'模式识别和泛化'。泛化采用问题的解决方案（或解决方案的一部分）并对其进行泛化，以便将其应用于其他类似的问题和任务中。由于计算机科学中的解决方案是算法，这意味着我们采用算法并将算法变得足够通用，以便将算法用于一系列问题。这个过程涉及抽象，毕竟为了让结果变得更加通用，必须删除与特定问题或情况相关但对于算法的工作原理并不重要的非必要细节。"
+
+#: templates/general/computational-thinking.html:269
+msgid "Spotting patterns is an important part of this process, when we think about problems we might recognise similarities between them and that they can be solved in similar ways. This is called pattern matching, and it’s something we do naturally all the time in our daily life."
+msgstr "发现模式是这一过程的重要组成部分。思考难题时，我们可能会认识到它们之间的相似之处，并知道可用类似方式将其解决。这称为模式匹配，是我们在日常生活中始终自然做出的事情。"
+
+#: templates/general/computational-thinking.html:276
+msgid "Generalised algorithms can be reused for a whole group of similar problems, which means we can come up with solutions quickly and effectively."
+msgstr "泛化的算法可以针对整组类似问题反复使用，这意味着我们可以快速有效地想出解决方案。"
+
+#: templates/general/computational-thinking.html:285
+msgid "Evaluation"
+msgstr "评估"
+
+#: templates/general/computational-thinking.html:290
+msgid "Evaluation is about identifying the possible solutions to a problem and judging which is the best to use, if they will work in some situations but not others, and how they can be improved. When judging our solutions we need to think about a range of factors. For example how much time it will take these processes (algorithms) to solve the problem and will it reliably solve the problem, or if there are certain situations where it will perform in a very different way. Evaluation is something we do a lot in our everyday lives."
+msgstr "评估就是确定问题的潜在解决方案，并判断出可用的最佳方案、判断该等方案是否可在某些情况下有用而在其他情况下无用，以及应如何改进。判断解决方案时，需要考虑一系列因素。例如，这些过程（算法）需要多长时间才能解决问题，是否能够可靠地解决问题，或者，是否会在某些情况下以非常不同的方式进行。评估是日常生活中的常做之事。"
+
+#: templates/general/computational-thinking.html:299
+msgid "There are different ways we can evaluate our algorithmic solutions. We can test their speed by implementing them on a computer; or we can analyse them by counting or calculating how many steps they are likely to take. We can test that our algorithmic solutions work correctly by giving them lots of different inputs, and checking they work as expected. When we do this we need to think about the different inputs we test, because we don’t want to check every possible input (often there's an infinite number of possible inputs!), but we still need to know if our algorithmic solutions will work for all inputs. Testing is something Computer Scientists and programmers do all the time. But because we can't usually test every possible input, we also try to evaluate a system using logical reasoning."
+msgstr "我们可使用不同方式评估算法解决方案。通过在计算机上运行，即可测试其速度；或者，通过计数或计算可采取的步骤数，即可对其分析。通过向算法解决方案提供大量不同的输入并检查其是否按预期运作，即可测试它们是否正确工作。这样做时，需要考虑测试的不同输入，因为我们并不想检查每个可能的输入（通常存在无限数量的可能输入！），但仍然需要知道算法解决方案是否对所有输入均有效。 测试是计算机科学家和程序员始终坚持执行的事情。但是，鉴于通常无法测试每个可能的输入，我们也尝试使用逻辑推理来评估系统。"
+
+#: templates/general/computational-thinking.html:313
+msgid "Logic"
+msgstr "逻辑"
+
+#: templates/general/computational-thinking.html:318
+msgid "When trying to solve problems we need to think logically. Logical reasoning is about trying to make sense of things by observing, collecting data, thinking about the facts you know, and then figuring things out based on what you already know. It helps us use our existing knowledge to establish rules and check facts."
+msgstr "尝试解决问题时，需要进行逻辑思考。逻辑推理是试图通过观察、收集数据、思考已知事实的方式理解事物，然后根据已知信息理清事情。这有助利用现有知识，建立规则并检查事实。"
+
+#: templates/general/computational-thinking.html:326
+msgid "For example, suppose you are writing software that works out the shortest route to a location from your house. In the following map it's 2 minutes to the library if you head north from your house, but if you head south it's 3 minutes to the next intersection. You might wonder if there's a better route to the library if you start by heading south, but logically there can't be because you'll already have walked for 3 minutes to get to the intersection."
+msgstr "例如，假设当前编写的软件能算出从家中到达某个地点的最短路径。在下面的地图中，如果从家中向北走，那么距离图书馆只有 2 分钟路程；但是如果向南走，那么距离下一个十字路口 有 3 分钟路程。您可能想要知道，如果一开始向南走，是否存在到达图书馆的更好路径，但逻辑上并不存在这个可能，因为您已步行 3 分钟抵达十字路口。"
+
+#: templates/general/computational-thinking.html:334
+msgid "At a deeper level, computers are built entirely on logic. They use 'True' and 'False' values, and use something called 'Boolean expressions', like “is age > 5”, to make decisions in computer programs."
+msgstr "从更深的层面上来说，计算机完全建立于逻辑之上。它们使用‘真’值和‘假’值以及‘布尔表达式’（例如，“年龄 > 5”），在计算机程序中进行决策。"
+
+#: templates/general/computational-thinking.html:341
+msgid "Tracking down a bug in a program also requires logical thinking, to work out where, and why, something in the program is going wrong."
+msgstr "追踪程序中的错误，也需通过逻辑思维来算出程序出错的位置和原因。"
+
+#: templates/general/contact.html:21
+msgid "<strong>Email:</strong> You can <a href=\"mailto:csse.education.research@gmail.com\">email the CS Unplugged team here</a>."
+msgstr "<strong>电子邮件：</strong> 您可点击<a href=\"mailto:csse.education.research@gmail.com\">此处发送电子邮件至 CS Unplugged 团队</a>。"
+
+#: templates/general/contact.html:27
+msgid "<strong>Twitter:</strong> <a href=\"https://twitter.com/UCCSEd\">@UCCSEd</a>"
+msgstr "<strong>Twitter:</strong> <a href=\"https://twitter.com/UCCSEd\">@UCCSEd</a>"
+
+#: templates/general/contact.html:33
+msgid "<strong>Community Google Group:</strong> We have a <a href=\"https://groups.google.com/forum/#!forum/cs-unplugged-sharing\">Google Group</a> you can join and talk about CS Unplugged."
+msgstr "<strong>Google 社群：</strong> 我们建有 <a href=\"https://groups.google.com/forum/#!forum/cs-unplugged-sharing\">Google 小组</a>，您可加入并讨论 CS Unplugged 话题。"
+
+#: templates/general/how-do-i-teach-cs-unplugged.html:8
+#: templates/general/how-do-i-teach-cs-unplugged.html:20
+#: templates/general/index.html:57
+msgid "How do I teach CS Unplugged?"
+msgstr "我应如何进行 CS Unplugged 教学？"
+
+#: templates/general/how-do-i-teach-cs-unplugged.html:23
+msgid "CS Unplugged is very much based on a constructivist approach: students are given challenges based on a few simple rules, and in the process of solving those challenges they uncover powerful ideas on their own. Not only is this a more memorable way to learn, but it empowers them to realise that these are ideas within their grasp. The activities are also very kinesthetic - the bigger the materials, the better."
+msgstr "CS Unplugged 在很大程度上以建构主义方法为基础：根据几个简单规则，给学生设置挑战。在解决这些挑战的过程中，他们将自行发现强有力的想法。这不仅是比较难忘的学习方法，还能让学生感觉到可自主掌握这些想法。此外，活动也非常具有动觉 - 材料越大越好。"
+
+#: templates/general/how-do-i-teach-cs-unplugged.html:35
+msgid "Because of this approach, you can also learn alongside the students. You'll need to read through the whole activity so that you're prepared for it, and we have provided videos for many of them so you can visualise them, but as the students discover how these ideas work out, you'll start to see patterns and ideas that the students are discovering as they understand the principles behind these topics from Computer Science."
+msgstr "因为在此方法下，您也可跟着学生一起学习。您将需要通读整个活动的资料，以便做好准备。我们的许多活动配有视频，可同时供您观看。但是，当学生发现如何得出这些想法时，您将开始看到学生发现的模式和想法，因为他们理解计算机科学这些主题背后的原则。"
+
+#: templates/general/how-do-i-teach-cs-unplugged.html:42
+msgid "If you're working within a school curriculum, you can find appropriate activities based on the learning objectives and age group. In several countries there are guides linking CS Unplugged to the local curriculum (e.g. <a href=\"https://www.digitaltechnologieshub.edu.au/\">Digital Technologies Hub for Australia</a>). But the unit plans listed follow the common topics that are appearing in school curricula, so you are likely to find something relevant from the titles. Note that CS Unplugged does not teach programming - the Kidbots activity is an excellent lead in to programming and the \"Plugging it in\" sections give some programming exercises to follow up with - but in general we are trying to show students what they could do with programming, before they have to learn it."
+msgstr "如要设置学校课程，可根据学习目标和年龄组找到合适活动。许多国家均设有指南，将 CS Unplugged 链接至本地课程（例如，<a href=\"https://www.digitaltechnologieshub.edu.au/\">澳大利亚数字技术中心</a>）。但是，所列出的单元计划均遵守学校课程中出现的常用主题，因此可从标题中找到相关内容。请注意，CS Unplugged 并不教授编程 - Kidbots 活动则可很好地导入编程，并且“ 在线知识导入 (Plugging it in)”部分提供部分用于跟进的编程练习 - 但一般情况下，在学生必须学习编程前，我们会先尝试向其展示可用编程做些什么。"
+
+#: templates/general/how-do-i-teach-cs-unplugged.html:51
+msgid "But reading about Unplugged isn't the fun way to engage with it - pick a lesson for your students, and dive into it!"
+msgstr "然而，阅读 Unplugged 并非了解其的有趣方式 - 为学生选出一个课程，一起深入研究！"
+
+#: templates/general/how-do-i-teach-cs-unplugged.html:58
+#: templates/general/what-is-computer-science.html:86
+msgid "View available topics"
+msgstr "查看可用主题"
+
+#: templates/general/index.html:18
+msgid "Computer Science<br>without a computer"
+msgstr "无需计算机的<br>计算机科学"
+
+#: templates/general/index.html:30
+msgid "CS Unplugged is a collection of free teaching material that teaches Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around."
+msgstr "CS Unplugged 提供一系列的免费教学素材，并通过使用卡片、绳子、蜡笔和大量跑动的游戏和谜题来教授计算机科学。"
+
+#: templates/general/index.html:47
+#: templates/general/what-is-computer-science.html:8
+#: templates/general/what-is-computer-science.html:20
+msgid "What is Computer Science?"
+msgstr "什么是计算机科学？"
+
+#: templates/general/index.html:77
+#: templates/topics/all-curriculum-integration-list.html:8
+#: templates/topics/all-curriculum-integration-list.html:17
+#: templates/topics/topic.html:64
+msgid "Curriculum Integrations"
+msgstr "课程整合"
+
+#: templates/general/index.html:85
+msgid "Activities"
+msgstr "活动"
+
+#: templates/general/index.html:96
+msgid "Plugging it in"
+msgstr "插上电"
+
+#: templates/general/people.html:21
+msgid "version 4.0.0 onwards"
+msgstr "版本 4.0.0 以上"
+
+#: templates/general/people.html:23
+msgid "Founders"
+msgstr "创始人"
+
+#: templates/general/people.html:31 templates/general/people.html:113
+msgid "Advisers"
+msgstr "广告客户"
+
+#: templates/general/people.html:35
+msgid "Computer Scientist"
+msgstr "计算机科学家"
+
+#: templates/general/people.html:38
+msgid "Current Team"
+msgstr "当前团队"
+
+#: templates/general/people.html:41
+msgid "Founder &amp; Content Writer"
+msgstr "创始人 &amp; 内容撰稿人"
+
+#: templates/general/people.html:42 templates/general/people.html:43
+#: templates/general/people.html:47 templates/general/people.html:53
+msgid "Content Writer"
+msgstr "内容撰稿人"
+
+#: templates/general/people.html:44
+msgid "Project Manager &amp; Technical Team"
+msgstr "项目经理 &amp; 技术团队"
+
+#: templates/general/people.html:45 templates/general/people.html:46
+#: templates/general/people.html:54 templates/general/people.html:55
+msgid "Technical Team"
+msgstr "技术团队"
+
+#: templates/general/people.html:50
+msgid "Previous Team Members"
+msgstr "先前的团队成员"
+
+#: templates/general/people.html:56
+msgid "Creative Content Developer &amp; Illustrator"
+msgstr "创意内容开发者 &amp; 插画家"
+
+#: templates/general/people.html:59
+msgid "Community Contributors"
+msgstr "社群贡献者"
+
+#: templates/general/people.html:68
+msgid "Translations"
+msgstr "翻译"
+
+#: templates/general/people.html:74
+msgid "up to version 3.2.2"
+msgstr "至版本 3.2.2"
+
+#: templates/general/people.html:76
+msgid "Contributors"
+msgstr "贡献者"
+
+#: templates/general/people.html:143
+msgid "Website"
+msgstr "网站"
+
+#: templates/general/principles.html:22
+msgid "The primary goal of the Unplugged project is to promote Computer Science (and computing in general) to young people as an interesting, engaging, and intellectually stimulating discipline. We want to capture people’s imagination and address common misconceptions about what it means to be a computer scientist. We want to convey fundamentals that do not depend on particular software or systems, ideas that will still be fresh in 10 years. We want to reach kids in elementary schools and provide supplementary material for university courses. We want to tread where high-tech educational solutions are infeasible; to cross the divide between the information-rich and information-poor, between industrialized countries and the developing world."
+msgstr "Unplugged 项目的主要目标是向年轻人推广计算机科学（和一般计算），并向其呈现一个趣味无穷、引人入胜和启发思维的学科。我们想要捕捉人类的想象力，并消除对计算机科学家意味着什么的常见误解；传播无需依赖特定软件或系统的基础知识，以及在 10 年后依然新颖的想法；触及小学生，并为大学课程提供补充素材；触及高科技教育解决方案无法实行之处；并跨越信息丰富和信息贫乏之间以及工业化国家和发展中国家之间的鸿沟。"
+
+#: templates/general/principles.html:32
+msgid "There are many worthy projects for promoting Computer Science. The main principles that distinguish the Unplugged activities are:"
+msgstr "我们有许多极具价值的项目，可用于推广计算机科学。区分 Unplugged 活动的主要原则是："
+
+#: templates/general/principles.html:38
+msgid "No Computers Required"
+msgstr "无需计算机"
+
+#: templates/general/principles.html:41
+msgid "The activities do not depend on computers. This avoids confusing Computer Science with programming or learning application software, makes the activities available to those who aren’t able to or don’t want to work with computers, and skips the barrier of learning to program before being able to explore ideas. It also provides physical, kinaesthetic experiences as part of learning computing, which can be a welcome break from sitting in front of a screen. For example, the parity magic trick is a card game that happens to use the same principle as error correction in computer memory. Unplugged isn’t a completely Luddite approach – we do exploit the internet and other computing facilities to share and develop the activities, and we hope that students will have to opportunity to learn to program so that they can put wheels on the ideas they have been exploring."
+msgstr "这些活动并不需要计算机进行。这就避免了将计算机科学与编程或学习应用软件混淆的可能，从而使那些无法或并不愿意操作计算机的人也可用到活动，并在具备探索想法的能力前，先跨过学习编程的障碍。它还提供物理和动觉体验，作为学习计算的一部分。与呆坐在计算机前相比，这是个不错的放松方式。例如，奇偶校验魔术是一种卡片游戏，使用和计算机存储器中与纠错相同的原理。Unplugged 并非完全 Luddite 的方法 - 我们确实利用互联网和其他计算设施来分享和开发活动，希望学生有机会学习编程，以便他们推动正在探索的想法。"
+
+#: templates/general/principles.html:50
+msgid "Real Computer Science"
+msgstr "真正的计算机科学"
+
+#: templates/general/principles.html:53
+msgid "Unplugged presents fundamental concepts in Computer Science such as algorithms, artificial intelligence, graphics, information theory, human computer interfaces, programming languages, and so on. We want to emphasize that programming is a means, not an end. Wikipedia provides a definition of Computer Science, and Peter Denning’s Great Principles project provides a more detailed analysis of the topics it covers."
+msgstr "Unplugged 提供计算机科学的基本概念，如算法、人工智能、图形、信息理论、人机界面、编程语言等。我们想要强调，编程是一种手段，而非目的。维基百科对计算机科学提供了定义，而 Peter Denning 的“伟大原理”项目则对其涵盖的主题进行更为详细的分析。"
+
+#: templates/general/principles.html:60
+msgid "Learning by doing"
+msgstr "在实践中学习"
+
+#: templates/general/principles.html:63
+msgid "The activities tend to be kinaesthetic, often on a large scale and involving team work. For example, the Sorting Network activity has teams of six running through a network drawn on the ground. The activities tend to allow students to discover answers for themselves, rather than just being given solutions or algorithms to follow; that is, a constructivist approach is encouraged (where the teacher uses the scaffolding provided by Unplugged to ask questions that lead them to discover the knowledge themselves), as we want students to realize that they are capable of finding solutions to problems on their own, rather than being given a solution to apply to the problem. For example, students don’t really need to be able to convert numbers to binary, but it is valuable for them to discover the patterns such as the doubling value of bits, patterns when you count in binary, and how the range increases exponentially as you add bits."
+msgstr "活动倾向于带有运动知觉，通常具有大规模，且涉及团队合作。例如，排序网络活动需要六个团队在地面上绘制的网状物上跑动。这些活动倾向于让学生自行发现答案，而不仅仅是向学生提供解决方案或算法并要求其遵守；换言之，我们鼓励建构主义方法（教师使用 Unplugged 提供的支架，提出引导学生自行发现知识的问题）。我们希望学生意识到，他们能够自行找到问题的解决方案， 而非只能在别人提供解决方案后将解决方案用于问题。例如，学生实际上无需能够将数字转换为二进制数，但是探索发现模式对其而言是非常宝贵的体验，例如位数的值翻倍、计算二进制时的模式，以及添加位时，范围如何呈指数增加。"
+
+#: templates/general/principles.html:71
+msgid "Fun"
+msgstr "趣味无穷"
+
+#: templates/general/principles.html:74
+msgid "The activities are fun and engaging, not just busy-work for the sake of it. Usually the explanations are quite brief – the teacher lays out the materials and a few rules, and the students follow the challenge from there. There are puzzles, challenges, competitions, problem solving and humour. Unplugged activities should leave students with a sense of genuine achievement. There is often a strong sense of story in the activities; problems are presented as part of a story rather than as an abstract mathematical challenge. Children are more interested in pirates than privacy, and absurd fictitious stories can be more memorable than compelling business applications."
+msgstr "这些活动既有趣又具有吸引力，不仅仅是有目的的忙碌操作。通常，说明均十分简短 - 教师列出素材和一些规则，学生接受挑战。活动涉及谜题、挑战、比赛和解决问题，且具有幽默感。Unplugged 的活动将给学生留下真正的成就感。活动中通常涉及很强的故事性；问题作为故事的各个部分呈现，而非只是提供抽象的数学挑战。相较隐私而言，孩子们对海盗更感兴趣，荒谬虚构的故事比引人注目的业务应用，更好记忆。"
+
+#: templates/general/principles.html:84
+msgid "No specialised equipment"
+msgstr "无专门设备"
+
+#: templates/general/principles.html:87
+msgid "The activities are low cost, using equipment commonly found in classrooms or stationery stores. Most require only paper and pencil, and perhaps cards, string, chalk, whiteboard markers, balls or similar items."
+msgstr "活动成本低，使用通常可在教室或文具店中即可找到的设备进行。大部分只需纸和笔，可能还有卡片、绳子、粉笔、白板笔、球或类似物品。"
+
+#: templates/general/principles.html:93
+msgid "Variations encouraged"
+msgstr "鼓励变更"
+
+#: templates/general/principles.html:96
+msgid "Unplugged is published under a Creative Commons licence, which permits free sharing (with acknowledgement). Variations, adaptations and extensions are encouraged. This also allows local publishing arrangements to take account of the kind of packaging that would make the material more accessible to local educational practitioners."
+msgstr "Unplugged 根据创意公用许可发布，允许免费分享（需带有确认）。我们鼓励他人进行变更、改编和扩展，同时也允许当地出版机构考虑哪种材料包可让当地教育从业者更好地获取这些材料。"
+
+#: templates/general/principles.html:103
+msgid "<p> Two specific situations that we get asked about are: </p> <ul> <li> <strong>For-profit classes (e.g. clubs with a subscription fee):</strong> It is fine to charge a fee for people to attend classes that you're running that uses this material. </li> <li> <strong>Selling packs of support material (such as pre-printed cards):</strong> It is fine to do this. We hope that you'll do it for a reasonable price, and it's even better if you can get someone to sponsor you so that you can give it away to educators, but the license allows you to set your own price. </li> </ul>"
+msgstr "<p>我们被问到的两个特定情况是：</ p> <ul> <li> <strong>营利性课程（例如有订阅费的俱乐部）：</ strong>允许他人付费获取您使用这些材料进行教学的课程。</ li> <li> <strong>销售支持材料包（例如预印卡）：</ strong>您可以这么做。我们希望定价合理。如果您能获取他人赞助，从而向教育工作者提供这些材料，那么就更好了。但许可证允许您自行设定价格。</ li> </ ul>"
+
+#: templates/general/principles.html:119
+msgid "For everyone"
+msgstr "任何人均适用"
+
+#: templates/general/principles.html:122
+msgid "The programme is strongly international – we encourage variations that are relevant to local cultures (for example, some activities that require a large playground can be changed to a board game for schools that have very little open space; others use contexts that might not be familiar to students in a different culture). Translators should try the activities locally and involve teachers. It is better to adapt activities rather than translate them faithfully to something that would be less meaningful in the local culture. The activities are intended to be inclusive."
+msgstr "此计划带有强烈的国际性 - 我们鼓励对其进行与当地文化相关的变更（例如，对于开放空间很小的学校，可将需要大操场的活动改为桌面游戏；其他需要用到不同文化下，学生可能不熟悉的环境）。翻译人员应在当地尝试活动并鼓励教师参与。翻译时，可适当调整活动，而非逐字逐句翻译，因为有些活动对于当地文化的意义不大。我们希望活动具有包容性。"
+
+#: templates/general/principles.html:130
+msgid "Co-operative"
+msgstr "携手合作"
+
+#: templates/general/principles.html:133
+msgid "We encourage co-operation, communication and problem solving. Competition can also be effective if it is used appropriately, especially between teams rather than individuals, but having students working cooperatively is a great way to learn about problem solving."
+msgstr "我们鼓励合作、沟通和解决问题。如果应用恰当，比赛也会很有效果。这对于团队（而非个人）之间展开比赛，尤为明显。但是，让学生携手合作是助其学习解决问题的绝妙方式。"
+
+#: templates/general/principles.html:139
+msgid "Stand-alone Activities"
+msgstr "独立活动"
+
+#: templates/general/principles.html:142
+msgid "As much as possible, the activities are stand-alone modules that can be used independently of each other, so that they can be used for enrichment in curricula or for outreach on their own rather than having to be used as a series. The ones that have been presented as lesson plans will sometimes require a series of lessons to be followed, but we will indicate if particular preparation is required."
+msgstr "活动应尽可能为独立模块，可单独进行使用。因此，他们可以丰富学校课程，或作为外展，并不需要势必作为系列使用。课程计划中列出的课程有时会要求跟进一系列课程，但将注明是否要求进行特定准备。"
+
+#: templates/general/principles.html:148
+msgid "Resilient"
+msgstr "弹性灵活"
+
+#: templates/general/principles.html:151
+msgid "The activities are resilient to errors made by students; they should not depend on getting many difficult steps exactly right, and minor mistakes should not prevent participants from understanding the principles. The instructions are usually just one or two rules and a goal that can be expressed in a single sentence (e.g. “Each card is either fully visible or not; how can you display exactly 11 dots?”, or “We need to get from any house to any other house; what is the smallest number of paving stones that make this possible”)."
+msgstr "活动中允许学生犯错；学生不应只遵循完全正确的许多复杂步骤，小错误并不影响参与者理解原则。指令通常只是一个或两个规则，而目标可用单个句子表示（例如，“每张卡要么完全可见，要么并非如此；你可以如何精确地显示 11 点？”，或者“我们需要从任何房子走到任何其他房子；如需完成这个任务，我们最少可以使用多少铺路石？”）。"
+
+#: templates/general/what-is-computer-science.html:24
+#, python-format
+msgid "In today's digital world, Computer Science has become an important subject for everyone to learn about. The knowledge and <a href=\"%(computational_thinking_url)s\">Computational Thinking skills</a> associated with it are now crucial to developing innovative digital technology, understanding modern society, and qualifications in this area are highly sought after."
+msgstr "在今天的数字世界当中，计算机科学已成为人人皆需学习的重要科目。与之相关的知识以及<a href=\"%(computational_thinking_url)s\">计算思维技能</a>对于开发创新数字技术、理解现代社会以及获得该领域相关资质而言最为重要。"
+
+#: templates/general/what-is-computer-science.html:31
+msgid "The CS Unplugged activities are intended to give you a feel for what the subject is - you can learn what it is by doing. At this early stage, rather than define it formally, let's think about how it might influence our daily lives. For example, think of your favourite search engine. On the surface it seems like a fairly simple interface: a text box where you type what you want to search for, and a button to start the search. The level of programming knowledge needed to implement a text box and a button is fairly rudimentary, and you could implement a search by writing a short program (probably less than 20 lines) to go through all the text on the web and displaying any that match. But obviously there's more to it than this! There are billions of searches are made every day, on billions on web pages, and the approach above will give answers (eventually), but will be so slow and ineffective that no-one would use it."
+msgstr "CS Unplugged 活动旨在让您了解是什么主题 - 您可通过这样做，了解它是什么。在这个早期阶段，暂时不要正式定义它，让我们来思考它可能如何影响日常生活。例如，想想您最喜欢的搜索引擎。从表面上看，它就像一个相当简单的界面：设有一个供您键入要搜索内容的文本框，以及一个用于开始搜索的按钮。执行文本框和按钮所需的编程知识水平相当基础，您可通过编写一个简短的程序（可能少于 20 行）执行搜索，以浏览网站上的所有文本并显示任何匹配项。但显然，事实并非如此简单！ 每天，搜索数量都将达到数十亿次。网页上有数十亿次搜索，上述方法会（最终）给出答案，但速度会变得极慢且无效率，没有人会使用它。"
+
+#: templates/general/what-is-computer-science.html:47
+msgid "This is where Computer Science comes in; many areas of Computer Science are employed to make the system work well, and most of them are illustrated through Unplugged. How could you search billions of items in a fraction of a second (Searching Algorithms)? How do you make sure that it's easy to use (Human-Computer Interaction)? We need to keep it secure - users don't want other people to know what they are searching for, and the search engine doesn't want commercial interests to manipulate search ranking (Computer Security and Encryption)? Search engines generally predict what you are about to search for (Artificial Intelligence). It needs to be reliable - a small mistake from one of the thousands of programmers at a search engine company shouldn't prevent the site working (Software Engineering). It needs to scale well - if it becomes 10 times as popular, you don't want it to need 100 times the computing resources (Algorithms). The relevance of a search generally depends on the relationships between web sites - you need a map showing which sites are linked to which other ones (Graphs)."
+msgstr "此种情况正是计算机科学大显身手之时。计算机科学有许多领域可确保系统运行良好，而 Unplugged 就对其中大部分领域进行了相关说明。您如何能够在几分之一秒内搜遍数十亿个条目（搜索算法）？您如何能够确保其易于使用（人机交互）？我们需要保证其安全性——用户不希望其他人知道他们在搜索什么，而搜索引擎亦不希望被商业利益操纵其搜索排名（计算机安全和加密）？搜索引擎通常会预测您要搜索的内容（人工智能）。它必须足够可靠——即便搜索引擎公司数千名程序员当中有人犯了一个小小的错误，搜索引擎网站的正常运行也不会受到丝毫影响（软件工程）。它需要具备良好的扩展性——即便访问量增加到 10 倍，其也无需消耗 100  倍的计算资源（算法）。搜索的相关性通常取决于网站之间的关系——您需要一张能够显示哪些网站链接至哪些其他网站的地图（图表）。"
+
+#: templates/general/what-is-computer-science.html:60
+msgid "The areas above cover much of what the subject of Computer Science is about. Programming is just a tool for implementing ideas (well, it's a very powerful tool, and requires considerable skill to use well). But programming on its own isn't enough to create software that people love to use, and Computer Science is the area that gives programmers the inside knowledge to make their software fast, efficient, reliable, secure, usable, intelligent, scalable, and even delightful!"
+msgstr "上述领域涵盖计算机科学这一学科的绝大部分内容。编程只是我们将想法付诸实现的一个工具（这是一个极其强大的工具，需要丰富技巧方可驾驭得当）。但是，仅靠编程本身并不足以帮助我们打造出人人爱用的软件。计算机科学为程序员提供了必要的独门秘籍，帮助他们了解如何让自己的软件变得快速、高效、可靠、安全、易用、智能、可扩展甚至令人愉悦！"
+
+#: templates/general/what-is-computer-science.html:72
+msgid "That's why we developed CS Unplugged - we want young students to be empowered to understand the great ideas that computer science covers, without having to become expert programmers first. They won't be learning exactly how to build the next search engine, social network or game app, but they will have an idea of what sort of techniques are needed to make it successful. We don't want them to see digital systems as some kind of magic that they can't participate in, but as something that they could understand and, for some, create themselves. Actually, it is kind of magic when you start understanding what can and can't be done."
+msgstr "这就是我们开发 CS Unplugged 的原因 - 希望青少年学生能够理解计算机科学所涵盖的伟大创意，而不必首先将自己打造为专业程序员。他们并不会精确学习如何构建下一个搜索引擎、社交网络或游戏应用程序，但将了解需要哪些类型的技术方可成功。我们不希望他们将数字系统看作是无法参与的某种魔法，而是看作他们能够理解的东西，并且对某些人来说，是可创造的东西。实际上，当您开始了解哪些可以完成、哪些无法完成时，它也呈现出魔幻的一面。"
+
+#: templates/general/what-is-computer-science.html:82
+msgid "Read 'How do I teach CS Unplugged?'"
+msgstr "阅读‘我应如何进行 CS Unplugged 教学？’"
+
+#: templates/generic/classic-unplugged-button.html:13
+msgid "More activities at the Classic CS Unplugged website"
+msgstr "更多活动请访问经典版 CS Unplugged 网站"
+
+#: templates/generic/classic-unplugged-button.html:15
+msgid "Translations for some activities available at the Classic CS Unplugged website"
+msgstr "请访问经典版 CS Unplugged 网站查看某些活动的翻译内容"
+
+#: templates/generic/not-available-badge.html:4
+#, python-format
+msgid "Not available in %(language)s"
+msgstr "无法提供%(language)s版本"
+
+#: templates/resources/index.html:19
+msgid "This page diplays a complete list of all available printables. If a lesson uses a printable, the lesson will contain a direct link to the printable with a description on how to use it."
+msgstr "本页面显示全部可用打印页的完整列表。如果课程使用可打印页，将提供可直接链接至可打印页的链接，同时对使用方法作出说明。"
+
+#: templates/resources/index.html:43
+msgid "No printables are available."
+msgstr "无可打印页。"
+
+#: templates/resources/resource.html:20
+msgid "Return to list of printables"
+msgstr "返回可打印页列表"
+
+#: templates/resources/resource.html:31
+msgid "Create Printable"
+msgstr "创建可打印页"
+
+#: templates/resources/resource.html:42
+msgid "Generate Printable"
+msgstr "生成可打印页"
+
+#: templates/resources/resource.html:46
+#, python-format
+msgid "The download of this Printable includes %(copies_amount)s unique copies."
+msgstr "本打印页的下载包括 %(copies_amount)s 份独特副本。"
+
+#: templates/resources/resource.html:51
+msgid "Download Printable"
+msgstr "下载可打印页"
+
+#: templates/resources/resource.html:59
+msgid "Preview"
+msgstr "预览"
+
+#: templates/resources/resource.html:74
+msgid "Related Lessons"
+msgstr "相关课程"
+
+#: templates/resources/resource.html:78
+#: templates/topics/all-curriculum-integration-list.html:27
+#: topics/models.py:108
+msgid "Topic"
+msgstr "主题"
+
+#: templates/resources/resource.html:79
+msgid "Ages"
+msgstr "年龄"
+
+#: templates/resources/resource.html:80
+#: templates/topics/programming-challenges-table.html:8
+msgid "Number"
+msgstr "序号"
+
+#: templates/resources/resource.html:81 topics/models.py:329
+msgid "Lesson"
+msgstr "课程"
+
+#: templates/search/result/curriculumintegration.html:15
+#: templates/search/result/lesson.html:19
+#: templates/search/result/programmingchallenge.html:15
+#: templates/search/result/unitplan.html:10
+msgid "Within topic"
+msgstr "主题内"
+
+#: templates/search/result/lesson.html:11 templates/topics/lesson.html:30
+#, python-format
+msgid "<strong>Ages %(lower)s to %(upper)s:</strong> Lesson %(number)s"
+msgstr "<strong>年龄 %(lower)s 至 %(upper)s:</strong> 课程 %(number)s"
+
+#: templates/search/result/lesson.html:23
+msgid "within unit plan"
+msgstr "单元计划内"
+
+#: templates/search/result/programmingchallenge.html:10
+#: templates/topics/programming-challenge.html:28
+msgid "Challenge Level:"
+msgstr "难度等级"
+
+#: templates/topics/all-curriculum-integration-list.html:19
+msgid "The following table lists curriculum integrations for all topics in the CS Unplugged content."
+msgstr "以下表格列出 CS Unplugged 内容中，全部主题的课程整合。"
+
+#: templates/topics/all-curriculum-integration-list.html:28
+#: templates/topics/curriculum-integrations-table.html:6
+msgid "Activity"
+msgstr "活动"
+
+#: templates/topics/all-curriculum-integration-list.html:29
+#: templates/topics/curriculum-integrations-table.html:7
+msgid "Curriculum Areas"
+msgstr "课程领域"
+
+#: templates/topics/all-curriculum-integration-list.html:30
+#: templates/topics/curriculum-integrations-table.html:8
+msgid "Prerequisite Lessons?"
+msgstr "先修课程？"
+
+#: templates/topics/computational-thinking-links.html:5
+msgid "Seeing the Computational Thinking connections"
+msgstr "查看计算思维之间的关联"
+
+#: templates/topics/computational-thinking-links.html:8
+msgid "Throughout the lessons there are links to computational thinking. Below we've noted some general links that apply to this content."
+msgstr "整个课程中都有计算思维的链接。我们在下方标出了一些适用于本内容的通用链接。"
+
+#: templates/topics/computational-thinking-links.html:15
+msgid "Teaching computational thinking through CSUnplugged activities supports students to learn how to describe a problem, identify what are the important details they need to solve this problem, and break it down into small, logical steps so that they can then create a process which solves the problem, and then evaluate this process. These skills are transferable to any other curriculum area, but are particularly relevant to developing digital systems and solving problems using the capabilities of computers."
+msgstr "通过 CSUnplugged 活动教授计算思维，将教会学生如何描述问题、确定解决问题所需的重要细节、将问题分解为更小的逻辑步骤、使用这些步骤创建解决问题的过程，随后评估这一过程。这些技能可转移至任何其他课程领域，但与开发数字系统和使用计算机功能解决问题尤为相关。"
+
+#: templates/topics/computational-thinking-links.html:23
+#, python-format
+msgid "These Computational Thinking concepts are all connected to each other and support each other, but it’s important to note that not all aspects of Computational Thinking happen in every unit or lesson. We’ve highlighted the important connections for you to observe your students in action. For more background information on what our definition of Computational Thinking is <a href=\"%(ct_url)s\">see our notes about computational thinking</a>."
+msgstr "这些计算思维概念全部均相互联系并相互支持，但重点在于注意到，并非计算思维的每个方面都会在每个单元或课程中发生。在每个单元和课程中，我们均强调了您应在学生行为中观察到的重要联系。如需了解有关我们对计算思维定义的更多背景信息，<a href=\"%(ct_url)s\">请参见我们对计算思维的注释</a>。"
+
+#: templates/topics/curriculum-integration.html:45
+msgid "Heads up!"
+msgstr "注意！"
+
+#: templates/topics/curriculum-integration.html:46
+msgid "To do this activity it's expected you understand the content covered in the following:"
+msgstr "在进行这项活动前，我们预期您能理解以下所涵盖的内容："
+
+#: templates/topics/glossary.html:29
+#, python-format
+msgid "The following glossary terms are not yet available in %(language)s. Sorry about that!"
+msgstr "抱歉，以下术语表暂时尚无%(language)s版本！"
+
+#: templates/topics/index.html:21
+msgid "Open a topic to see all related unit plans, lessons, curriculum integrations, and programming challenges."
+msgstr "打开一个主题，查看全部相关的单元计划、课程、课程整合以及编程挑战。"
+
+#: templates/topics/index.html:38 templates/topics/topic.html:46
+#, python-format
+msgid "Ages %(min_age)s to %(max_age)s"
+msgstr "年龄 %(min_age)s 至 %(max_age)s"
+
+#: templates/topics/index.html:44 templates/topics/topic.html:56
+msgid "lessons"
+msgstr "课程"
+
+#: templates/topics/index.html:48
+msgid "curriculum integrations"
+msgstr "课程整合"
+
+#: templates/topics/index.html:51
+msgid "programming challenges"
+msgstr "编程挑战"
+
+#: templates/topics/index.html:67
+msgid "No topics are available."
+msgstr "无可用主题。"
+
+#: templates/topics/lesson.html:27
+#, python-format
+msgid "<strong>Duration:</strong> %(duration)s minutes"
+msgstr "<strong>时长：</strong> %(duration)s 分钟"
+
+#: templates/topics/lesson.html:44
+#: templates/topics/programming-challenge.html:61
+msgid "Learning outcomes"
+msgstr "学习成果"
+
+#: templates/topics/lesson.html:48
+#: templates/topics/programming-challenge.html:65
+msgid "Students will be able to:"
+msgstr "学生将能够："
+
+#: templates/topics/lesson.html:91
+msgid "Classroom resources"
+msgstr "课堂资源"
+
+#: templates/topics/lesson.html:101 templates/topics/lessons-table.html:14
+msgid "Programming challenges"
+msgstr "编程挑战"
+
+#: templates/topics/lesson.html:104
+msgid "View related programming challenges"
+msgstr "查看相关的编程挑战"
+
+#: templates/topics/lesson.html:111
+#: templates/topics/unit-plan-description.html:40
+msgid "Table of contents"
+msgstr "目录"
+
+#: templates/topics/lesson.html:124
+#: templates/topics/unit-plan-description.html:52
+msgid "Computational Thinking"
+msgstr "计算思维"
+
+#: templates/topics/lessons-table.html:10
+#, python-format
+msgid "Ages %(lower)s to %(upper)s"
+msgstr "年龄 %(lower)s 至 %(upper)s"
+
+#: templates/topics/programming-challenge-language-solution.html:10
+#, python-format
+msgid "%(name)s solution"
+msgstr "%(name)s解决方案"
+
+#: templates/topics/programming-challenge-language-solution.html:27
+msgid "solution"
+msgstr "解决方案"
+
+#: templates/topics/programming-challenge-language-solution.html:39
+msgid "<strong>Heads Up!</strong> If you are ready to compare your programming to ours or are wanting to have a look at how we solved it, click 'View solution' below to view at least one way to write this program."
+msgstr "<strong>注意！</strong>若已准备好将您的编程与我们的编程进行比较，或想要了解我们的解决方式，请单击下方的“查看解决方案”以查看编写此程序的至少一种方法。"
+
+#: templates/topics/programming-challenge-language-solution.html:46
+msgid "View solution"
+msgstr "查看解决方案"
+
+#: templates/topics/programming-challenge-language-solution.html:50
+msgid "This is just one of many possible solutions:"
+msgstr "这只是众多潜在解决方案中的一种："
+
+#: templates/topics/programming-challenge-language-solution.html:57
+msgid "Back to programming challenge"
+msgstr "返回编程挑战"
+
+#: templates/topics/programming-challenge-language-solution.html:68
+#: templates/topics/programming-challenge.html:139
+msgid "Extra Challenge"
+msgstr "其他挑战"
+
+#: templates/topics/programming-challenge-lesson-list.html:9
+#: templates/topics/programming-challenge-lesson-list.html:19
+#, python-format
+msgid "%(name)s programming challenges"
+msgstr "%(name)s编程挑战"
+
+#: templates/topics/programming-challenge-lesson-list.html:30
+#, python-format
+msgid "No programming challenges for %(topic)s."
+msgstr "尚无%(topic)s编程挑战。"
+
+#: templates/topics/programming-challenge.html:38
+msgid "This programming challenge is linked to the following lessons:"
+msgstr "本编程挑战与以下课程相链接："
+
+#: templates/topics/programming-challenge.html:44
+#, python-format
+msgid "Challenge %(set_num)s.%(chal_num)s for %(name)s"
+msgstr "%(name)s挑战 %(set_num)s.%(chal_num)s "
+
+#: templates/topics/programming-challenge.html:47
+#, python-format
+msgid "%(lower)s to %(upper)s"
+msgstr "%(lower)s 至 %(upper)s"
+
+#: templates/topics/programming-challenge.html:83
+#: templates/topics/programming-challenges-table.html:11
+msgid "Languages"
+msgstr "语言"
+
+#: templates/topics/programming-challenge.html:104
+msgid "What it should look like"
+msgstr "应该是怎样的"
+
+#: templates/topics/programming-challenge.html:111
+msgid "Hints"
+msgstr "提示"
+
+#: templates/topics/programming-challenge.html:123
+#, python-format
+msgid "Show %(implementation.language.name)s solution"
+msgstr "显示 %(implementation.language.name)s 解决方案"
+
+#: templates/topics/programming-challenges-table.html:9
+msgid "Name"
+msgstr "名称"
+
+#: templates/topics/programming-challenges-table.html:10
+msgid "Challenge Level"
+msgstr "难度等级"
+
+#: templates/topics/topic-other-resources.html:9
+#, python-format
+msgid "%(topic.name)s other resources"
+msgstr "其他 %(topic.name)s 资源"
+
+#: templates/topics/topic-other-resources.html:25
+msgid "Other resources"
+msgstr "其他资源"
+
+#: templates/topics/topic-other-resources.html:30
+msgid "Sorry! We couldn't find any information on other resources for this topic."
+msgstr "抱歉！无法找到这一主题中其他资源的任何信息。"
+
+#: templates/topics/topic-other-resources.html:33
+msgid "Return to the topic"
+msgstr "返回主题"
+
+#: templates/topics/topic.html:21
+msgid "Return to list of topics"
+msgstr "返回主题列表"
+
+#: templates/topics/topic.html:33
+msgid "Unit Plans"
+msgstr "单元计划"
+
+#: templates/topics/topic.html:71
+msgid "Looking for more?"
+msgstr "是否要查找更多信息？"
+
+#: templates/topics/topic.html:74
+msgid "Click here for other resources"
+msgstr "点击此处，获取其他资源"
+
+#: templates/topics/unit-plan-description.html:8
+msgid "Description"
+msgstr "说明"
+
+#: templates/topics/unit-plan-description.html:19
+#: templates/topics/unit-plan.html:18
+msgid "Unit plan:"
+msgstr "单元计划："
+
+#: templates/topics/unit-plan.html:29
+msgid "What's it all about?"
+msgstr "这是什么？"
+
+#: templates/topics/unit-plan.html:35
+msgid "Read the full unit plan description"
+msgstr "阅读完整的单元计划说明"
+
+#: templates/topics/unit-plan.html:43
+msgid "Lessons"
+msgstr "课程"
+
+#: topics/models.py:31
+msgid "Curriculum Area"
+msgstr "课程领域"
+
+#: topics/models.py:64
+msgid "Learning Outcome"
+msgstr "学习成果"
+
+#: topics/models.py:91
+msgid "Classroom Resource"
+msgstr "课堂资源"
+
+#: topics/models.py:140
+msgid "Unit Plan"
+msgstr "单元计划"
+
+#: topics/models.py:141 topics/models.py:196 topics/models.py:452
+msgid "Return to topic"
+msgstr "返回主题"
+
+#: topics/models.py:195
+msgid "Programming Challenge"
+msgstr "编程挑战"
+
+#: topics/models.py:330
+msgid "Return to unit plan"
+msgstr "返回单元计划"
+
+#: topics/models.py:451
+msgid "Curriculum Integration"
+msgstr "课程整合"
+
