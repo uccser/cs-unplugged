@@ -1,6 +1,14 @@
 # Ignore app.yaml file that contains passwords, secret keys, etc
 /app*.yaml
 
+# Generated and collected static files directories
+build/*
+staticfiles/*
+temp/*
+
+# Search index
+whoosh_index/
+
 # Byte-compiled / optimized / DLL files
 *__pycache__/
 *.py[cod]
@@ -12,7 +20,6 @@
 # Distribution / packaging
 .Python
 env/
-build/
 develop-eggs/
 dist/
 downloads/
@@ -105,15 +112,6 @@ node_modules/
 
 # Custom git settings
 .gitconfig
-
-# Temporary folder
-temp/
-
-# Collected static files folder
-staticfiles/
-
-# Search index
-whoosh_index/
 
 # OSX system files
 .DS_Store
