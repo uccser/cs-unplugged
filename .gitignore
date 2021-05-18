@@ -2,9 +2,12 @@
 /app*.yaml
 
 # Generated and collected static files directories
-build/*
-staticfiles/*
-temp/*
+csunplugged/build/**
+!csunplugged/build/.keep
+csunplugged/staticfiles/**
+!csunplugged/staticfiles/.keep
+csunplugged/temp/**
+!csunplugged/temp/.keep
 
 # Search index
 whoosh_index/
