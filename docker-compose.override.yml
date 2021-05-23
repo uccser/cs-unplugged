@@ -1,0 +1,135 @@
+version: '3'
+
+services:
+    # Reverse proxy
+    # Accessible at localhost:8080
+    traefik:
+        image: traefik:v2.4.8
+        # TODO: Healthcheck currently broken
+        # healthcheck:
+        #     test: traefik healthcheck --ping
+        #     start_period: 5s
+        #     interval: 10s
+        #     timeout: 5s
+        #     retries: 3
+        # Enables the web UI and tells Traefik to listen to docker
+        command: --api.insecure=true --providers.docker
+        ports:
+            # The HTTP port
+            - "80:80"
+            # The Web UI (enabled by --api.insecure=true)
+            - "8080:8080"
+        volumes:
+            # So that Traefik can listen to the Docker events
+            - /var/run/docker.sock:/var/run/docker.sock
+        networks:
+            - local
+
+    django:
+        build:
+            dockerfile: ./infrastructure/local/django/Dockerfile
+        image: cs_unplugged_local_django
+        volumes:
+            - ./csunplugged/:/app/:z
+        env_file:
+            - ./infrastructure/local/django/.envs
+            - ./infrastructure/local/postgres/.envs
+        ports:
+            - "8000:8000"
+        command: /start
+        networks:
+            - local
+        labels:
+            - "traefik.http.routers.django.rule=Host(`cs-unplugged.localhost`)"
+
+    # File server
+    # Accessible at static.cs-unplugged.localhost
+    nginx:
+        volumes:
+            - ./csunplugged/staticfiles/:/usr/share/nginx/html:ro
+        networks:
+            - local
+        labels:
+            - "traefik.http.routers.nginx.rule=Host(`static.cs-unplugged.localhost`)"
+
+    # Node server for creating static files
+    node:
+        build:
+            context: .
+            dockerfile: ./infrastructure/local/node/Dockerfile
+        image: cs_unplugged_local_node
+        volumes:
+            # https://burnedikt.com/dockerized-node-development-and-mounting-node-volumes/#exclude-node_modules-from-the-mount
+            - ./csunplugged/package.json:/app/package.json:z
+            - ./csunplugged/gulpfile.js:/app/gulpfile.js:z
+            - ./csunplugged/static:/app/static:z
+            - ./csunplugged/build:/app/build:z
+            - ./csunplugged/temp:/app/temp:z
+        command: npm run dev
+        ports:
+            - "3000:3000"
+            # Expose browsersync UI: https://www.browsersync.io/docs/options/#option-ui
+            - "3001:3001"
+
+    postgres:
+        env_file:
+            - ./infrastructure/local/postgres/.envs
+        networks:
+            - local
+        volumes:
+            - local-postgres-data:/var/lib/postgresql/data:Z
+            - local-postgres-data-backups:/backups:z
+
+    # docs:
+    #     image: cs_unplugged_local_docs
+    #     build:
+    #         context: .
+    #         dockerfile: ./infrastructure/local/docs/Dockerfile
+    #     volumes:
+    #         - ./docs:/docs:z
+    #         - ./config:/app/config:z
+    #         - ./cs-unplugged:/app/cs_unplugged:z
+    #     ports:
+    #         - "7000:7000"
+    #     command: /start-docs
+    #     labels:
+    #         - "traefik.http.routers.docs.rule=Host(`docs.cs-unplugged.localhost`)"
+
+    # jobe:
+    #     networks:
+    #         - local
+
+networks:
+    local:
+        driver: bridge
+
+volumes:
+    local-postgres-data: {}
+    local-postgres-data-backups: {}
+
+#   django:
+#     build:
+#       context: .
+#       dockerfile: infrastructure/local-dev/Dockerfile
+#     volumes:
+#       - /csunplugged:/app
+#     environment:
+#       - PORT=8080
+#       # - DATABASE_URL=postgres://postgres@postgres:5432/postgres
+#       - DJANGO_SETTINGS_MODULE=config.settings.local
+#       - INCLUDE_INCONTEXT_L10N=True
+
+#   nginx:
+#     build:
+#       context: .
+#       dockerfile: ./infrastructure/nginx/Dockerfile
+#     volumes:
+#       - ./csunplugged/:/app/
+#       - /app/node_modules
+#     depends_on:
+#       - django
+#     ports:
+#       - "80:80"
+#   jobe:
+#     ports:
+#       - "4000:80"

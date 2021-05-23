@@ -14,9 +14,7 @@ from .base import *  # noqa: F403
 # DATABASE CONFIGURATION
 # ----------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
-DATABASES = {
-    "default": env.db("DATABASE_URL"),  # noqa: F405
-}
+DATABASES = {"default": env.db("DATABASE_URL")}
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 # DEBUG
@@ -29,6 +27,10 @@ TEMPLATES[0]["OPTIONS"]["debug"] = DEBUG  # noqa: F405
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Note: This key only used for development and testing.
 SECRET_KEY = env("DJANGO_SECRET_KEY", default="l@@)w&&%&u37+sjz^lsx^+29y_333oid3ygxzucar^8o(axo*f")  # noqa: F405
+
+# STATIC FILE CONFIGURATION
+# ------------------------------------------------------------------------------
+STATIC_URL = "http://static.cs-unplugged.localhost/"
 
 # Mail settings
 # ----------------------------------------------------------------------------
@@ -55,7 +57,13 @@ INSTALLED_APPS += ["debug_toolbar", ]  # noqa: F405
 
 INTERNAL_IPS = ["127.0.0.1", "10.0.2.2", ]
 
-ALLOWED_HOSTS = [".canterbury.ac.nz", "localhost", "127.0.0.1", "[::1]"]
+ALLOWED_HOSTS = [
+    ".canterbury.ac.nz",
+    "localhost",
+    "cs-unplugged.localhost",
+    "127.0.0.1",
+    "[::1]",
+]
 
 
 def show_django_debug_toolbar(request):

@@ -1,4 +1,115 @@
 #!/bin/bash
-# Calls csu script with same parameters.
+# Helper script for commands related to the CS Unplugged repository.
+#
+# Notes:
+#  - Changes to template only require user to refresh browser.
+#  - Changes to static files require the 'static' command to be run.
+#  - Changes to Python code are detected by gunicorn and should take effect
+#    on the server after a few seconds.
+#
+# Future plans:
+#  - Start systems when a command is given (for example: 'static') when the
+#    development system has not yet been started.
+#  - When 'start' is run open website in default browser without creating
+#    new terminal prompt.
 
-./csu "$@"
+set -e
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+CODE='\033[0;36m'
+NC='\033[0m' # No Color
+
+cmd_helps=()
+
+defhelp() {
+  local command="${1?}"
+  local text="${2?}"
+  local help_str
+  help_str="$(printf '   %-24s %s' "$command" "$text")"
+  cmd_helps+=("$help_str")
+}
+
+# Print out help information
+cmd_help() {
+  echo "Script for performing tasks related to the CS Unplugged repository."
+  echo
+  echo "Usage: ./dev [COMMAND]"
+  echo "Replace [COMMAND] with a word from the list below."
+  echo
+  echo "COMMAND list:"
+  for str in "${cmd_helps[@]}"; do
+    echo -e "$str"
+  done
+}
+defhelp help 'View all help.'
+
+# Start development environment
+cmd_start() {
+  echo "Creating systems..."
+  docker-compose up -d
+  # Alert user that system is ready
+  echo -e "\n${GREEN}System is up!${NC}"
+  echo -e "Run the command ${CODE}./dev update${NC} to load content."
+}
+defhelp start 'Start development environment.'
+
+# Stop development environment
+cmd_end() {
+  echo "Stopping systems..."
+  docker-compose down
+}
+defhelp end 'Stop development environment.'
+
+cmd_restart() {
+  cmd_end
+  cmd_start
+}
+defhelp restart 'Stop and then restart development environment.'
+
+# Run Django updatedata command
+cmd_updatedata() {
+  echo "Loading content..."
+  docker-compose run django python ./manage.py updatedata
+}
+defhelp updatedata 'Load content into database.'
+
+# # Update and collect static files
+# cmd_update_static() {
+#   docker-compose run node gulp build
+#   echo ""
+# #   cmd_collect_static
+#   echo ""
+#   echo -e "\n${GREEN}Static files are updated!${NC}"
+# }
+# defhelp update_static 'Update static files.'
+
+# Build Docker images
+cmd_build() {
+  echo "Building Docker images..."
+  docker-compose build
+}
+defhelp build 'Build or rebuild Docker images.'
+
+# --- Core script logic -------------------------------------------------------
+
+silent() {
+  "$@" > /dev/null 2>&1
+}
+
+# If no command given
+if [ $# -eq 0 ]; then
+  echo -e "${RED}ERROR: This script requires a command!${NC}"
+  cmd_help
+  exit 1
+fi
+cmd="$1"
+shift
+if silent type "cmd_$cmd"; then
+  "cmd_$cmd" "$@"
+  exit $?
+else
+  echo -e "${RED}ERROR: Unknown command!${NC}"
+  echo "Type './csu help' for available commands."
+  exit 1
+fi

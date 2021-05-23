@@ -1,199 +1,252 @@
-// gulp build : for a one off development build
-// gulp build --production : for a minified production build
+////////////////////////////////
+// Setup
+////////////////////////////////
 
-'use strict';
+// Gulp and package
+const { src, dest, parallel, series, watch } = require('gulp')
+const pjson = require('./package.json')
 
-const js_files_skip_optimisation = [
-  // Optimise all files
-  '**',
-  // But skip the following files
-  // For example: '!static/js/vendor/**/*.js'
-];
+// Plugins
+const autoprefixer = require('autoprefixer')
+const browserify = require('browserify')
+const browserSync = require('browser-sync').create()
+const buffer = require('vinyl-buffer');
+const c = require('ansi-colors')
+const concat = require('gulp-concat')
+const cssnano = require('cssnano')
+const errorHandler = require('gulp-error-handle')
+const filter = require('gulp-filter')
+const gulpif = require('gulp-if');
+const { hideBin } = require('yargs/helpers')
+const imagemin = require('gulp-imagemin')
+const log = require('fancy-log')
+const pixrem = require('pixrem')
+const pluginError = require('plugin-error')
+const postcss = require('gulp-postcss')
+const postcssFlexbugFixes = require('postcss-flexbugs-fixes')
+const reload = browserSync.reload
+const rename = require('gulp-rename')
+const sass = require('gulp-sass')
+const scratchblocks = require('scratchblocks')
+const sourcemaps = require('gulp-sourcemaps')
+const spawn = require('child_process').spawn
+const tap = require('gulp-tap')
+const terser = require('gulp-terser')
+const through = require('through2')
+const yargs = require('yargs/yargs')
 
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-var del = require('del');
-var gulpif = require('gulp-if');
-var exec = require('child_process').exec;
-var runSequence = require('run-sequence')
-var notify = require('gulp-notify');
-var buffer = require('vinyl-buffer');
-var argv = require('yargs').argv;
-const filter = require('gulp-filter');
-const errorHandler = require('gulp-error-handle');
+// Arguments
+const argv = yargs(hideBin(process.argv)).argv
+const PRODUCTION = !!argv.production;
 
-// sass
-var sass = require('gulp-sass');
-var postcss = require('gulp-postcss');
-var postcssFlexbugFixes = require('postcss-flexbugs-fixes');
-var autoprefixer = require('autoprefixer');
-var sourcemaps = require('gulp-sourcemaps');
+// Relative paths function
+function pathsConfig(appName) {
+    this.app = `./${pjson.name}`
+    const vendorsRoot = 'node_modules'
+    const staticSourceRoot = 'static'
+    const staticOutputRoot = 'build'
 
-// Scratch image rendering
-var scratchblocks = require('scratchblocks');
-var rename = require("gulp-rename");
-var through = require('through2');
-var PluginError = require('gulp-util').PluginError;
+    return {
+        app: this.app,
+        // Source files
+        bootstrap_source: `${vendorsRoot}/bootstrap/scss`,
+        css_source: `${staticSourceRoot}/css`,
+        scss_source: `${staticSourceRoot}/scss`,
+        js_source: `${staticSourceRoot}/js`,
+        images_source: `${staticSourceRoot}/img`,
+        scratch_source: 'temp',
+        vendor_js_source: [
+            `${vendorsRoot}/jquery/dist/jquery.slim.js`,
+            `${vendorsRoot}/popper.js/dist/umd/popper.js`,
+            `${vendorsRoot}/bootstrap/dist/js/bootstrap.js`,
+            `${vendorsRoot}/details-element-polyfill/dist/details-element-polyfill.js`,
+        ],
+        // Output files
+        css_output: `${staticOutputRoot}/css`,
+        fonts_output: `${staticOutputRoot}/fonts`,
+        images_output: `${staticOutputRoot}/img`,
+        js_output: `${staticOutputRoot}/js`,
+    }
+}
 
-// gulp build --production
-var production = !!argv.production;
-
-// js
-const tap = require('gulp-tap');
-const terser = require('gulp-terser');
-const browserify = require('browserify');
-const jshint = require('gulp-jshint');
-const stylish = require('jshint-stylish');
-
-// ----------------------------
-// Error notification methods
-// ----------------------------
-var handleError = function handle_error_func(task) {
-    return function (err) {
-        notify.onError({
-            message: task + ' failed, check the logs..',
-            sound: false
-        })(err);
-
-        gutil.log(gutil.colors.bgRed(task + ' error:'), gutil.colors.red(err));
-    };
-};
+var paths = pathsConfig()
 
 function catchError(error) {
-    gutil.log(
-        gutil.colors.bgRed('Error:'),
-        gutil.colors.red(error)
+    log.error(
+        c.bgRed('Error:'),
+        c.red(error)
     );
     this.emit('end');
 }
 
-// --------------------------
-// Delete build folder
-// --------------------------
-function clean() {
-    return del(['build/']);
-}
-// --------------------------
-// Copy static images
-// --------------------------
-function images() {
-    return gulp.src('static/img/**/*')
-        .pipe(gulp.dest('build/img'));
-}
-// --------------------------
-// CSS
-// --------------------------
+////////////////////////////////
+// Config
+////////////////////////////////
+
+// CSS/SCSS
+const processCss = [
+    autoprefixer(),         // adds vendor prefixes
+    pixrem(),               // add fallbacks for rem units
+    postcssFlexbugFixes(),  // adds flexbox fixes
+]
+const minifyCss = [
+    cssnano({ preset: 'default' })   // minify result
+]
+
+// JS
+
+const js_files_skip_optimisation = [
+    // Optimise all files
+    '**',
+    // But skip the following files
+    // For example: '!static/js/vendor/**/*.js'
+];
+
+////////////////////////////////
+// Tasks
+////////////////////////////////
+
+// Styles autoprefixing and minification
 function css() {
-    return gulp.src('static/css/**/*.css')
-        .pipe(gulp.dest('build/css'));
+    return src(`${paths.css_source}/**/*.css`)
+        .pipe(errorHandler(catchError))
+        .pipe(sourcemaps.init())
+        .pipe(postcss(processCss))
+        .pipe(sourcemaps.write())
+        .pipe(gulpif(PRODUCTION, postcss(minifyCss))) // Minifies the result
+        .pipe(dest(paths.css_output))
 }
 
-// --------------------------
+function scss() {
+    return src(`${paths.scss_source}/**/*.scss`)
+        .pipe(errorHandler(catchError))
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            includePaths: [
+                paths.bootstrap_source,
+                paths.scss_source
+            ],
+            sourceComments: !PRODUCTION,
+        }).on('error', sass.logError))
+        .pipe(postcss(processCss))
+        .pipe(sourcemaps.write())
+        .pipe(gulpif(PRODUCTION, postcss(minifyCss))) // Minifies the result
+        .pipe(dest(paths.css_output))
+}
+
+// Javascript
+function js() {
+    const js_filter = filter(js_files_skip_optimisation, { restore: true })
+    return src([
+            `${paths.js_source}/**/*.js`,
+            `!${paths.js_source}/modules/**/*.js`
+        ])
+        .pipe(errorHandler(catchError))
+        .pipe(sourcemaps.init())
+        .pipe(js_filter)
+        .pipe(tap(function (file) {
+            file.contents = browserify(file.path, { debug: true }).bundle().on('error', catchError);
+        }))
+        .pipe(buffer())
+        .pipe(gulpif(PRODUCTION, terser({ keep_fnames: true })))
+        .pipe(js_filter.restore)
+        .pipe(sourcemaps.write())
+        .pipe(dest(paths.js_output))
+}
+
+// Vendor Javascript (always minified)
+function vendorJs() {
+    return src(paths.vendor_js_source)
+        .pipe(errorHandler(catchError))
+        .pipe(concat('vendors.js'))
+        .pipe(dest(paths.js_output))
+        .pipe(terser())
+        .pipe(dest(paths.js_output))
+}
+
+// Image compression
+function img() {
+    return src(`${paths.images_source}/**/*`)
+        .pipe(gulpif(PRODUCTION, imagemin())) // Compresses PNG, JPEG, GIF and SVG images
+        .pipe(dest(paths.images_output))
+}
 // Scratch
-// --------------------------
 function scratchSVG() {
-    var PLUGIN_NAME = 'scratchSVG';
     return through.obj(function (file, encoding, callback) {
         if (file.isNull()) {
-            // nothing to do
             return callback(null, file);
         }
-
         if (file.isStream()) {
             // file.contents is a Stream - https://nodejs.org/api/stream.html
-            this.emit('error', new PluginError(PLUGIN_NAME, 'Streams not supported!'));
+            this.emit('error', new PluginError('scratchSVG', 'Streams not supported!'));
         } else if (file.isBuffer()) {
             // file.contents is a Buffer - https://nodejs.org/api/buffer.html
             var doc = scratchblocks.parse(file.contents.toString())
             doc.render(svg => {
                 var string = doc.exportSVGString();
-                // Remove invalid xmlns attribute due to issue https://github.com/scratchblocks/scratchblocks/issues/219
-                string = string.replace(
-                    /<use xmlns="http:\/\/www\.w3\.org\/1999\/xlink"/g,
-                    '<use'
-                );
-                file.contents = new Buffer(string);
+                file.contents = new Buffer.from(string);
             })
             return callback(null, file);
         }
     });
 };
 function scratch() {
-    return gulp.src('temp/scratch-blocks-*.txt')
+    return src(`${paths.scratch_source}/scratch-blocks-*.txt`)
         .pipe(scratchSVG())
         .pipe(rename(function (path) {
             path.extname = ".svg"
         }))
         // give it a file and save
-        .pipe(gulp.dest('build/img'));
+        .pipe(dest(paths.images_output))
 }
 
-// --------------------------
-// scss (libsass)
-// --------------------------
-function scss() {
-    return gulp.src('static/scss/**/*.scss')
-        .pipe(errorHandler(catchError))
-        // sourcemaps + scss + error handling
-        .pipe(gulpif(!production, sourcemaps.init()))
-        .pipe(sass({
-            sourceComments: !production,
-            outputStyle: production ? 'compressed' : 'nested'
-        }))
-        .on('error', handleError('SASS'))
-        // generate .maps
-        .pipe(gulpif(!production, sourcemaps.write({
-            'includeContent': false,
-            'sourceRoot': '.'
-        })))
-        // autoprefixer
-        .pipe(gulpif(!production, sourcemaps.init({
-            'loadMaps': true
-        })))
-        .pipe(postcss([autoprefixer({ browsers: ['last 2 versions'] }), postcssFlexbugFixes]))
-        // we don't serve the source files
-        // so include scss content inside the sourcemaps
-        .pipe(sourcemaps.write({
-            'includeContent': true
-        }))
-        .pipe(rename(function (path) {
-            path.dirname = path.dirname.replace("scss", "css");
-        }))
-        .pipe(gulp.dest('build/css'));
-}
-// --------------------------
-// JavaScript
-// --------------------------
-function js() {
-    const f = filter(js_files_skip_optimisation, { restore: true });
-    return gulp.src(['static/**/*.js', '!static/js/modules/**/*.js'])
-        .pipe(f)
-        .pipe(errorHandler(catchError))
-        .pipe(tap(function (file) {
-            file.contents = browserify(file.path, { debug: true }).bundle().on('error', catchError);
-        }))
-        .pipe(buffer())
-        .pipe(errorHandler(catchError))
-        .pipe(gulpif(production, sourcemaps.init({ loadMaps: true })))
-        .pipe(gulpif(production, terser({ keep_fnames: true })))
-        .pipe(gulpif(production, sourcemaps.write('./')))
-        .pipe(f.restore)
-        .pipe(gulp.dest('build'));
+// Browser sync server for live reload
+function initBrowserSync() {
+    browserSync.init(
+        [
+            // `${paths.css}/*.css`,
+            `${paths.js}/*.js`
+        ], {
+        // https://www.browsersync.io/docs/options/#option-proxy
+        proxy: {
+                target: 'cs-unplugged.localhost/:80',
+            proxyReq: [
+                function (proxyReq, req) {
+                    // Assign proxy "host" header same as current request at Browsersync server
+                    proxyReq.setHeader('Host', req.headers.host)
+                }
+            ]
+        },
+        // https://www.browsersync.io/docs/options/#option-open
+        // Disable as it doesn't work from inside a container
+        open: false
+    }
+    )
 }
 
-// // --------------------------
-// // CUSTOMS TASKS
-// // --------------------------
-// define complex tasks
-const build = gulp.series(clean, gulp.parallel(images, css, scss, scratch, js));
+// Watch
+function watchPaths() {
+    // watch(`${paths.sass}/*.scss`, scss)
+    watch([`${paths.js_source}/*.js`, `!${paths.js_source}/*.min.js`], js).on("change", reload)
+}
 
-// export tasks
-exports.clean = clean;
-exports.images = images;
-exports.css = css;
-exports.scss = scss;
-exports.js = js;
-exports.scratch = scratch;
+// Generate all assets
+const generateAssets = parallel(
+    css,
+    scss,
+    js,
+    vendorJs,
+    img
+)
 
-exports.build = build;
-exports.default = build;
+// Set up dev environment
+const dev = parallel(
+    initBrowserSync,
+    watchPaths
+)
+exports["generate-assets"] = generateAssets
+exports["dev"] = dev
+exports["scratch"] = scratch
+// TODO: Look at cleaning build folder
+exports.default = generateAssets
+// exports.default = series(generateAssets, dev)

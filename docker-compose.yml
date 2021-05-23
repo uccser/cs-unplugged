@@ -1,39 +1,31 @@
-version: '3'
+# Base docker-compose configuration for project.
+# Local development uses docker-compose.yml and docker-compose.override.yml
+# Production uses docker-compose.yml and docker-compose.prod.yml
+
+version: "3.8"
+
 services:
-  jobe:
-    image: trampgeek/jobeinabox:latest
-    container_name: jobeinabox
-    ports:
-      - "4000:80"
+    django:
+        build:
+            context: .
 
-  postgres:
-    restart: always
-    image: postgres:9.6.5
-    command: postgres -p 5432
+    # File server
+    nginx:
+        image: nginx:1.19.10
 
-  django:
-    build:
-      context: .
-      dockerfile: infrastructure/local-dev/Dockerfile
-    volumes:
-      - /csunplugged:/app
-    environment:
-      - PORT=8080
-      - USE_DOCKER=yes
-      - DATABASE_URL=postgres://postgres@postgres:5432/postgres
-      - DJANGO_SETTINGS_MODULE=config.settings.local
-      - INCLUDE_INCONTEXT_L10N=True
-    depends_on:
-      - postgres
+    # Database
+    postgres:
+        build:
+            context: .
+            # Always use production image
+            dockerfile: ./infrastructure/production/postgres/Dockerfile
+        image: cs_unplugged_production_postgres
+        healthcheck:
+            test: ["CMD-SHELL", "pg_isready -U postgres"]
+            start_period: 10s
+            interval: 10s
+            timeout: 5s
+            retries: 3
 
-  nginx:
-    build:
-      context: .
-      dockerfile: ./infrastructure/nginx/Dockerfile
-    volumes:
-      - ./csunplugged/:/app/
-      - /app/node_modules
-    depends_on:
-      - django
-    ports:
-      - "80:80"
+    # jobe:
+    #     image: trampgeek/jobeinabox:latest

@@ -1,7 +1,4 @@
 /** JavaScript to load on each page of website */
-$ = jQuery = require('jquery');
-require('bootstrap');
-require('details-element-polyfill');
 
 $(document).ready(function() {
   // Display glossary-modal

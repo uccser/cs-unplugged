@@ -1,0 +1,5 @@
+version: '3'
+
+networks:
+  cs-unplugged-dev:
+    driver: overlay

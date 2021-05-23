@@ -274,7 +274,6 @@ STATIC_ROOT = os.path.join(str(ROOT_DIR.path("staticfiles")), "")
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 BUILD_ROOT = os.path.join(str(ROOT_DIR.path("build")), "")
-STATIC_URL = "/staticfiles/"
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = [
