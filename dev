@@ -15,8 +15,8 @@
 
 set -e
 
-RED='\033[0;31m'
-GREEN='\033[0;32m'
+ERROR='\033[0;31m'
+SUCCESS='\033[0;32m'
 CODE='\033[0;36m'
 NC='\033[0m' # No Color
 
@@ -47,9 +47,9 @@ defhelp help 'View all help.'
 # Start development environment
 cmd_start() {
   echo "Creating systems..."
-  docker-compose up -d
+  docker-compose -f docker-compose.local.yml up -d
   # Alert user that system is ready
-  echo -e "\n${GREEN}System is up!${NC}"
+  echo -e "\n${SUCCESS}System is up!${NC}"
   echo -e "Run the command ${CODE}./dev update${NC} to load content."
 }
 defhelp start 'Start development environment.'
@@ -57,7 +57,7 @@ defhelp start 'Start development environment.'
 # Stop development environment
 cmd_end() {
   echo "Stopping systems..."
-  docker-compose down
+  docker-compose -f docker-compose.local.yml down
 }
 defhelp end 'Stop development environment.'
 
@@ -67,29 +67,98 @@ cmd_restart() {
 }
 defhelp restart 'Stop and then restart development environment.'
 
+# Update all content
+cmd_update() {
+  cmd_static
+
+  echo ""
+  cmd_migrate
+
+  echo ""
+  cmd_updatedata
+
+  cmd_rebuild_index
+  echo ""
+  cmd_makeresourcethumbnails
+  cmd_collect_static
+  echo ""
+  echo -e "\n${SUCCESS}Content is loaded!${NC}"
+  echo "Open your preferred web browser to the URL 'localhost'"
+}
+defhelp update 'Run Django migrate and updatedata commands and build static files.'
+
+# Run Django makemigrations command
+cmd_makemigrations() {
+  echo "Creating database migrations..."
+  docker-compose -f docker-compose.local.yml run --rm django python ./manage.py makemigrations --no-input
+}
+defhelp makemigrations 'Run Django makemigrations command.'
+
+# Run Django migrate command
+cmd_migrate() {
+  echo "Applying database migrations..."
+  docker-compose -f docker-compose.local.yml run --rm django python ./manage.py migrate
+}
+defhelp migrate 'Run Django migrate command.'
+
+# Reboot Django Docker container
+cmd_reboot_django() {
+  echo "Rebooting Django container..."
+  docker-compose -f docker-compose.local.yml restart django
+}
+defhelp reboot_django 'Reboot Django container.'
+
 # Run Django updatedata command
 cmd_updatedata() {
   echo "Loading content..."
-  docker-compose run django python ./manage.py updatedata
+  docker-compose -f docker-compose.local.yml run --rm django python ./manage.py updatedata
 }
 defhelp updatedata 'Load content into database.'
 
-# # Update and collect static files
-# cmd_update_static() {
-#   docker-compose run node gulp build
-#   echo ""
-# #   cmd_collect_static
-#   echo ""
-#   echo -e "\n${GREEN}Static files are updated!${NC}"
-# }
-# defhelp update_static 'Update static files.'
+# Update and collect static files
+cmd_update_static() {
+  docker-compose -f docker-compose.local.yml up node
+  echo ""
+  docker-compose -f docker-compose.local.yml run --rm django python manage.py collectstatic --no-input --clear
+  echo ""
+  echo -e "\n${SUCCESS}Static files are updated!${NC}"
+}
+defhelp update_static 'Update static files.'
+
+# Run Django command rebuild_index
+cmd_rebuild_index() {
+  echo "Rebuilding search index..."
+  docker-compose -f docker-compose.local.yml run --rm django python ./manage.py rebuild_index --noinput
+}
+defhelp rebuild_index "Run Django rebuild_index command."
+
+# Run Django makeresourcethumbnails command
+cmd_make_resource_thumbnails() {
+  echo "Creating thumbnails for resource PDFs..."
+  docker-compose -f docker-compose.local.yml run --rm django python ./manage.py makeresourcethumbnails
+}
+defhelp makeresourcethumbnails 'Run Django makeresourcethumbnails command.'
+
+# Run Django makeresources command
+cmd_make_resources() {
+  echo "Creating static resource PDFs..."
+  docker-compose -f docker-compose.local.yml run --rm django python ./manage.py makeresources
+}
+defhelp makeresources 'Run Django makeresources command.'
 
 # Build Docker images
 cmd_build() {
   echo "Building Docker images..."
-  docker-compose build
+  docker-compose -f docker-compose.local.yml build
 }
 defhelp build 'Build or rebuild Docker images.'
+
+# View Docker logs
+cmd_logs() {
+  echo "Building Docker images..."
+  docker-compose -f docker-compose.local.yml logs --timestamps "$@"
+}
+defhelp build 'View logs.'
 
 # --- Core script logic -------------------------------------------------------
 
@@ -99,7 +168,7 @@ silent() {
 
 # If no command given
 if [ $# -eq 0 ]; then
-  echo -e "${RED}ERROR: This script requires a command!${NC}"
+  echo -e "${ERROR}ERROR: This script requires a command!${NC}"
   cmd_help
   exit 1
 fi
@@ -109,7 +178,7 @@ if silent type "cmd_$cmd"; then
   "cmd_$cmd" "$@"
   exit $?
 else
-  echo -e "${RED}ERROR: Unknown command!${NC}"
+  echo -e "${ERROR}ERROR: Unknown command!${NC}"
   echo "Type './csu help' for available commands."
   exit 1
 fi

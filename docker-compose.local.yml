@@ -1,4 +1,4 @@
-version: '3'
+version: "3.8"
 
 services:
     # Reverse proxy
@@ -27,6 +27,7 @@ services:
 
     django:
         build:
+            context: .
             dockerfile: ./infrastructure/local/django/Dockerfile
         image: cs_unplugged_local_django
         volumes:
@@ -45,6 +46,7 @@ services:
     # File server
     # Accessible at static.cs-unplugged.localhost
     nginx:
+        image: nginx:1.19.10
         volumes:
             - ./csunplugged/staticfiles/:/usr/share/nginx/html:ro
         networks:
@@ -64,7 +66,6 @@ services:
             - ./csunplugged/gulpfile.js:/app/gulpfile.js:z
             - ./csunplugged/static:/app/static:z
             - ./csunplugged/build:/app/build:z
-            - ./csunplugged/temp:/app/temp:z
         command: npm run dev
         ports:
             - "3000:3000"
@@ -72,6 +73,17 @@ services:
             - "3001:3001"
 
     postgres:
+        build:
+            context: .
+            # Always use production image
+            dockerfile: ./infrastructure/production/postgres/Dockerfile
+        image: cs_unplugged_production_postgres
+        healthcheck:
+            test: ["CMD-SHELL", "pg_isready -U postgres"]
+            start_period: 10s
+            interval: 10s
+            timeout: 5s
+            retries: 3
         env_file:
             - ./infrastructure/local/postgres/.envs
         networks:
@@ -79,6 +91,23 @@ services:
         volumes:
             - local-postgres-data:/var/lib/postgresql/data:Z
             - local-postgres-data-backups:/backups:z
+
+
+    elasticsearch:
+        image: elasticsearch:5
+        restart: always
+        networks:
+            - local
+        volumes:
+            - local-search-index:/usr/share/elasticsearch/data:Z
+
+    jobe:
+        image: trampgeek/jobeinabox:latest
+        container_name: jobeinabox
+        ports:
+            - "4000:80"
+        networks:
+            - local
 
     # docs:
     #     image: cs_unplugged_local_docs
@@ -95,10 +124,6 @@ services:
     #     labels:
     #         - "traefik.http.routers.docs.rule=Host(`docs.cs-unplugged.localhost`)"
 
-    # jobe:
-    #     networks:
-    #         - local
-
 networks:
     local:
         driver: bridge
@@ -106,30 +131,4 @@ networks:
 volumes:
     local-postgres-data: {}
     local-postgres-data-backups: {}
-
-#   django:
-#     build:
-#       context: .
-#       dockerfile: infrastructure/local-dev/Dockerfile
-#     volumes:
-#       - /csunplugged:/app
-#     environment:
-#       - PORT=8080
-#       # - DATABASE_URL=postgres://postgres@postgres:5432/postgres
-#       - DJANGO_SETTINGS_MODULE=config.settings.local
-#       - INCLUDE_INCONTEXT_L10N=True
-
-#   nginx:
-#     build:
-#       context: .
-#       dockerfile: ./infrastructure/nginx/Dockerfile
-#     volumes:
-#       - ./csunplugged/:/app/
-#       - /app/node_modules
-#     depends_on:
-#       - django
-#     ports:
-#       - "80:80"
-#   jobe:
-#     ports:
-#       - "4000:80"
+    local-search-index: {}

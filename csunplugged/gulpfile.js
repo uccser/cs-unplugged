@@ -21,18 +21,14 @@ const { hideBin } = require('yargs/helpers')
 const imagemin = require('gulp-imagemin')
 const log = require('fancy-log')
 const pixrem = require('pixrem')
-const pluginError = require('plugin-error')
 const postcss = require('gulp-postcss')
 const postcssFlexbugFixes = require('postcss-flexbugs-fixes')
 const reload = browserSync.reload
-const rename = require('gulp-rename')
 const sass = require('gulp-sass')
-const scratchblocks = require('scratchblocks')
 const sourcemaps = require('gulp-sourcemaps')
 const spawn = require('child_process').spawn
 const tap = require('gulp-tap')
 const terser = require('gulp-terser')
-const through = require('through2')
 const yargs = require('yargs/yargs')
 
 // Arguments
@@ -54,12 +50,12 @@ function pathsConfig(appName) {
         scss_source: `${staticSourceRoot}/scss`,
         js_source: `${staticSourceRoot}/js`,
         images_source: `${staticSourceRoot}/img`,
-        scratch_source: 'temp',
         vendor_js_source: [
             `${vendorsRoot}/jquery/dist/jquery.slim.js`,
             `${vendorsRoot}/popper.js/dist/umd/popper.js`,
             `${vendorsRoot}/bootstrap/dist/js/bootstrap.js`,
             `${vendorsRoot}/details-element-polyfill/dist/details-element-polyfill.js`,
+            `${vendorsRoot}/scratchblocks/build/scratchblocks.min.js`,
         ],
         // Output files
         css_output: `${staticOutputRoot}/css`,
@@ -170,35 +166,6 @@ function img() {
         .pipe(gulpif(PRODUCTION, imagemin())) // Compresses PNG, JPEG, GIF and SVG images
         .pipe(dest(paths.images_output))
 }
-// Scratch
-function scratchSVG() {
-    return through.obj(function (file, encoding, callback) {
-        if (file.isNull()) {
-            return callback(null, file);
-        }
-        if (file.isStream()) {
-            // file.contents is a Stream - https://nodejs.org/api/stream.html
-            this.emit('error', new PluginError('scratchSVG', 'Streams not supported!'));
-        } else if (file.isBuffer()) {
-            // file.contents is a Buffer - https://nodejs.org/api/buffer.html
-            var doc = scratchblocks.parse(file.contents.toString())
-            doc.render(svg => {
-                var string = doc.exportSVGString();
-                file.contents = new Buffer.from(string);
-            })
-            return callback(null, file);
-        }
-    });
-};
-function scratch() {
-    return src(`${paths.scratch_source}/scratch-blocks-*.txt`)
-        .pipe(scratchSVG())
-        .pipe(rename(function (path) {
-            path.extname = ".svg"
-        }))
-        // give it a file and save
-        .pipe(dest(paths.images_output))
-}
 
 // Browser sync server for live reload
 function initBrowserSync() {
@@ -246,7 +213,6 @@ const dev = parallel(
 )
 exports["generate-assets"] = generateAssets
 exports["dev"] = dev
-exports["scratch"] = scratch
 // TODO: Look at cleaning build folder
 exports.default = generateAssets
 // exports.default = series(generateAssets, dev)

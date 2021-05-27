@@ -58,7 +58,7 @@ class JobeProxyViewTest(BaseTestWithDB):
         url = reverse("plugging_it_in:jobe_proxy")
 
         # Set the settings variable to call the mock JOBE server
-        with self.settings(JOBE_SERVER_URL='http://mockjobeserver'), self.settings(JOBE_API_KEY='mockapikey'):
+        with self.settings(JOBE_SERVER_URL='http://mockjobeserver'):
             response = self.client.post(url, json.dumps(test_program_data), content_type='application/json')
 
         # Assert that the function returns the correct response from the mock JOBE server.

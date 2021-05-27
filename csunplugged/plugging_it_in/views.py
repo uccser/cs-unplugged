@@ -171,15 +171,16 @@ class JobeProxyView(View):
         body_unicode = request.body.decode('utf-8')
         body = json.dumps(json.loads(body_unicode))
 
-        headers = {"Content-type": "application/json; charset=utf-8",
-                   "Accept": "application/json"}
+        headers = {
+            "Content-type": "application/json; charset=utf-8",
+            "Accept": "application/json",
+        }
 
-        # Set API key for production
-        if hasattr(settings, 'JOBE_API_KEY'):
-            headers["X-API-KEY"] = settings.JOBE_API_KEY
-
-        response = requests.post(settings.JOBE_SERVER_URL + "/jobe/index.php/restapi/runs/",
-                                 data=body, headers=headers)
+        response = requests.post(
+            settings.JOBE_SERVER_URL + "/jobe/index.php/restapi/runs/",
+            data=body,
+            headers=headers,
+        )
         return HttpResponse(response.text)
 
 

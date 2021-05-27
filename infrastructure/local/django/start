@@ -5,5 +5,6 @@ set -o pipefail
 set -o nounset
 
 python manage.py migrate
-python3 ./manage.py compilemessages
+python manage.py compilemessages
+python manage.py rebuild_index --noinput
 gunicorn -c ./gunicorn.conf.py -b :8000 config.wsgi --reload

@@ -6,11 +6,6 @@ csunplugged/build/**
 !csunplugged/build/.keep
 csunplugged/staticfiles/**
 !csunplugged/staticfiles/.keep
-csunplugged/temp/**
-!csunplugged/temp/.keep
-
-# Search index
-whoosh_index/
 
 # Byte-compiled / optimized / DLL files
 *__pycache__/

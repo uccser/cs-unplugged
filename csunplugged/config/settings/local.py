@@ -96,6 +96,3 @@ TEST_RUNNER = "django.test.runner.DiscoverRunner"
 # Your local stuff: Below this line define 3rd party library settings
 # ----------------------------------------------------------------------------
 INSTALLED_APPS += ["dev.apps.DevConfig"]  # noqa: F405
-
-# Jobe Server
-JOBE_SERVER_URL = "http://jobeinabox"

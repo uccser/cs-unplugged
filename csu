@@ -421,24 +421,6 @@ silent() {
   "$@" > /dev/null 2>&1
 }
 
-cmd_dev() {
-  local cmd="$1"
-  shift
-  if [ -z "$cmd" ]; then
-    echo -e "${RED}ERROR: command requires one parameter!${NC}"
-    cmd_help
-    return 1
-  fi
-  if silent type "cmd_$cmd"; then
-    "cmd_$cmd" "$@"
-    exit $?
-  else
-    echo -e "${RED}ERROR: Unknown command!${NC}"
-    echo "Type './csu help' for available commands."
-    return 1
-  fi
-}
-
 # If no command given
 if [ $# -eq 0 ]; then
   echo -e "${RED}ERROR: This script requires a command!${NC}"

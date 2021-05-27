@@ -62,7 +62,3 @@ SECURE_SSL_REDIRECT = env.bool("DJANGO_SECURE_SSL_REDIRECT", default=True)  # no
 CSRF_COOKIE_SECURE = True
 CSRF_COOKIE_HTTPONLY = True
 X_FRAME_OPTIONS = "DENY"
-
-# Jobe Server
-JOBE_SERVER_URL = "http://jobe2.cosc.canterbury.ac.nz"
-JOBE_API_KEY = env("JOBE_API_KEY")  # noqa: F405

@@ -17,12 +17,12 @@ yattag==1.12.2
 tinycss==0.4
 
 # Markdown
-verto==0.10.0
+verto==1.0.1
 python-markdown-math==0.6
 
 # Search
-django-haystack==3.0
-Whoosh==2.7.4
+django-haystack[elasticsearch]==3.0
+elasticsearch==5.5.3
 django-widget-tweaks==1.4.8
 
 # YAML Loading
