@@ -7,14 +7,14 @@ see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 ask [Enter a credit card number:] and wait
 ```
 
 
-```scratch:split:random
+```scratch
 repeat (8)
 end
 
@@ -27,13 +27,13 @@ else
 end
 ```
 
-```scratch:split:random
+```scratch
 say [Invalid credit card number!]
 
 say [Valid credit card number!]
 ```
 
-```scratch:split:random
+```scratch
 set [index v] to [1]
 
 set [credit card number v] to [0]

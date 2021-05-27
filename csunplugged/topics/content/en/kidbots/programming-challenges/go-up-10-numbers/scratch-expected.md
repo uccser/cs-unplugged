@@ -6,7 +6,7 @@ Click on the green flag to see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 set [number v] to (pick random (1) to (100))

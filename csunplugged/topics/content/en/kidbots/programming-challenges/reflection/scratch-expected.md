@@ -6,13 +6,13 @@ Click on the green flag to see the expected output of your program.
 
 # Recommended blocks for solution 1
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 clear
 
 clear
@@ -34,7 +34,7 @@ pen down
 pen up
 ```
 
-```scratch:split:random
+```scratch
 wait (1) secs
 
 wait (1) secs
@@ -64,7 +64,7 @@ wait (1) secs
 wait (1) secs
 ```
 
-```scratch:split:random
+```scratch
 go to x: (0) y: (100)
 
 go to x: (-100) y: (100)
@@ -104,13 +104,13 @@ go to x: (0) y: (100)
 
 # Recommended blocks for solution 2
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 wait (1) secs
 
 wait (1) secs
@@ -140,7 +140,7 @@ wait (1) secs
 wait (1) secs
 ```
 
-```scratch:split:random
+```scratch
 clear
 
 set pen size to (3)
@@ -162,13 +162,13 @@ pen down
 pen up
 ```
 
-```scratch:split:random
+```scratch
 set [angle v] to [90]
 
 set [mirror angle v] to ((360) - (angle))
 ```
 
-```scratch:split:random
+```scratch
 go to x: (0) y: (0)
 
 point in direction (0 v)

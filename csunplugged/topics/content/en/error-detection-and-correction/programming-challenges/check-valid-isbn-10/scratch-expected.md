@@ -7,19 +7,19 @@ see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 ask [Enter an ISBN-10 number:] and wait
 ```
 
-```scratch:split:random
+```scratch
 say [This is a valid ISBN-10 number!]
 
 say [This is an invalid ISBN-10 number!]
 ```
 
-```scratch:split:random
+```scratch
 change [total v] by ((multiplier) * (letter (index) of (ISBN-10 number)))
 
 change [multiplier v] by (-1)
@@ -37,7 +37,7 @@ change [total v] by ((multiplier) * (10))
 set [ISBN-10 number v] to (answer)
 ```
 
-```scratch:split:random
+```scratch
 if <((total) mod (11)) = [0]> then
 else
 end

@@ -7,7 +7,7 @@ see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 say (join [The last digit of the credit card should be: ] (((0) - ((total 2) + (total 1))) mod (10)))
@@ -15,7 +15,7 @@ say (join [The last digit of the credit card should be: ] (((0) - ((total 2) + (
 ask [Enter the first 15 digits of the credit card:] and wait
 ```
 
-```scratch:split:random
+```scratch
 if <((letter (index) of (first 15 digits)) * (2)) < [10]> then
 else
 end
@@ -27,7 +27,7 @@ repeat (8)
 end
 ```
 
-```scratch:split:random
+```scratch
 set [index v] to [1]
 
 set [first 15 digits v] to [0]

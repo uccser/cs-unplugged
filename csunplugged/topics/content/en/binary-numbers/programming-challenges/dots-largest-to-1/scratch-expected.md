@@ -6,7 +6,7 @@ Click on the green flag, enter the inputs provided in the “testing examples”
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 ask [Enter the largest number of dots on a card:] and wait
@@ -15,13 +15,13 @@ repeat until <(number of dots) = [1]>
 end
 ```
 
-```scratch:split:random
+```scratch
 set [number of dots v] to (answer)
 
 set [number of dots v] to ((number of dots) / (2))
 ```
 
-```scratch:split
+```scratch
 say (number of dots) for (1) secs
 
 say (number of dots) for (1) secs

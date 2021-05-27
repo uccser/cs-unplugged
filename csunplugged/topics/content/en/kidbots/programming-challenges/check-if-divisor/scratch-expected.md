@@ -6,23 +6,23 @@ Click on the green flag to see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 set [number1 v] to (answer)
 
 set [number2 v] to (answer)
 ```
 
-```scratch:split:random
+```scratch
 ask [Enter the 1st number:] and wait
 
 ask [Enter the 2nd number:] and wait
 ```
 
-```scratch:split:random
+```scratch
 say [Enter 2 numbers and I'll tell you if the second number is a divisor of the first number.] for (5) secs
 
 say (join (join (number2) [ is a divisor of the number ]) (number1))
@@ -30,7 +30,7 @@ say (join (join (number2) [ is a divisor of the number ]) (number1))
 say (join (join (number2) [ is not a divisor of the number ]) (number1))
 ```
 
-```scratch:split:random
+```scratch
 if <((number1) mod (number2)) = [0]> then
 else
 end

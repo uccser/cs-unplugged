@@ -6,7 +6,7 @@ Click on the green flag, enter the inputs provided in the “testing examples”
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 ask [Enter the largest card number:] and wait
@@ -17,7 +17,7 @@ repeat until <(number of dots) = [1]>
 end
 ```
 
-```scratch:split:random
+```scratch
 (join (answer) [, ])
 
 (join (binary cards) (join (number of dots) [, ]))
@@ -25,7 +25,7 @@ end
 (number of dots) / (2)
 ```
 
-```scratch:split:random
+```scratch
 set [number of dots v] to ()
 
 set [number of dots v] to (answer)

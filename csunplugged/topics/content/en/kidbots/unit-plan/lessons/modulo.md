@@ -248,7 +248,7 @@ The "modulo" or "mod" function is easily tested in most programming languages.
 In Scratch, you can just choose the "mod" block from the Operators, type in
 two numbers and double click it to see the result:
 
-```scratch:split
+```scratch
 (37)mod(10) // 7
 
 (-3)mod(10) // 7

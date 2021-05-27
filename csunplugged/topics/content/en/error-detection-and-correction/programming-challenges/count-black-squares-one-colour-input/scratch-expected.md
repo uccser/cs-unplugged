@@ -7,7 +7,7 @@ see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 ask [Please enter a black or white square (B for black or W for white):] and wait
@@ -15,13 +15,13 @@ ask [Please enter a black or white square (B for black or W for white):] and wai
 say (black cards total)
 ```
 
-```scratch:split:random
+```scratch
 set [black cards total v] to [0]
 
 change [black cards total v] by (1)
 ```
 
-```scratch:split:random
+```scratch
 repeat (5)
 end
 

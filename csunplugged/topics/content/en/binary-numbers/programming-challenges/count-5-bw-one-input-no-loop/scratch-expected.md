@@ -7,7 +7,7 @@ Click on the green flag, enter the inputs provided in the “testing examples”
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 ask [Please enter 5 cards ('B' for black and 'W' for white):] and wait
@@ -15,7 +15,7 @@ ask [Please enter 5 cards ('B' for black and 'W' for white):] and wait
 say (total number of dots)
 ```
 
-```scratch:split:random
+```scratch
 if <(letter (1) of (cards)) = [W]> then
 end
 
@@ -32,7 +32,7 @@ if <(letter (5) of (cards)) = [W]> then
 end
 ```
 
-```scratch:split:random
+```scratch
 set [total number of dots v] to [0]
 
 set [cards v] to (answer)

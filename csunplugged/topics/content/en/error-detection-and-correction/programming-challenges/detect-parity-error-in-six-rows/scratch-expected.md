@@ -7,14 +7,14 @@ see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 ask (join [Please enter 6 black or white cards for row ] (row number)) and wait
 ```
 
 
-```scratch:split:random
+```scratch
 repeat (6)
 end
 
@@ -29,13 +29,13 @@ else
 end
 ```
 
-```scratch:split:random
+```scratch
 say (join (join [Row ] (row number)) [ is OK!]) for (2) secs
 
 say (join [There is a parity error in row ] (row number)) for (2) secs
 ```
 
-```scratch:split:random
+```scratch
 set [row v] to []
 
 set [black cards total v] to [0]
