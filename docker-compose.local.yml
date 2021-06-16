@@ -4,7 +4,9 @@ services:
     # Reverse proxy
     # Accessible at localhost:8080
     traefik:
-        image: traefik:v2.4.8
+        build:
+            context: .
+            dockerfile: ./infrastructure/local/traefik/Dockerfile
         # TODO: Healthcheck currently broken
         # healthcheck:
         #     test: traefik healthcheck --ping
@@ -12,16 +14,17 @@ services:
         #     interval: 10s
         #     timeout: 5s
         #     retries: 3
-        # Enables the web UI and tells Traefik to listen to docker
-        command: --api.insecure=true --providers.docker
         ports:
-            # The HTTP port
+            # HTTP/HTTPS ports
             - "80:80"
-            # The Web UI (enabled by --api.insecure=true)
+            - "443:443"
+            # Web UI
             - "8080:8080"
         volumes:
             # So that Traefik can listen to the Docker events
-            - /var/run/docker.sock:/var/run/docker.sock
+            - /var/run/docker.sock:/var/run/docker.sock:ro
+            # Map the static config and certificates into the container
+            - ./infrastructure/local/traefik/:/etc/traefik/:ro
         networks:
             - local
 
@@ -35,13 +38,18 @@ services:
         env_file:
             - ./infrastructure/local/django/.envs
             - ./infrastructure/local/postgres/.envs
-        ports:
-            - "8000:8000"
         command: /start
         networks:
             - local
         labels:
+            # General labels
+            - "traefik.enable=true"
+            - "traefik.http.services.django.loadbalancer.server.port=8000"
+            # HTTPS
+            - "traefik.http.routers.django.entryPoints=web-secure"
+            - "traefik.http.routers.django.service=django"
             - "traefik.http.routers.django.rule=Host(`cs-unplugged.localhost`)"
+            - "traefik.http.routers.django.tls=true"
 
     # File server
     # Accessible at static.cs-unplugged.localhost
@@ -52,7 +60,14 @@ services:
         networks:
             - local
         labels:
+            # General labels
+            - "traefik.enable=true"
+            - "traefik.http.services.nginx.loadbalancer.server.port=80"
+            # HTTPS
+            - "traefik.http.routers.nginx.entryPoints=web-secure"
+            - "traefik.http.routers.nginx.service=nginx"
             - "traefik.http.routers.nginx.rule=Host(`static.cs-unplugged.localhost`)"
+            - "traefik.http.routers.nginx.tls=true"
 
     # Node server for creating static files
     node:
@@ -103,7 +118,6 @@ services:
 
     jobe:
         image: trampgeek/jobeinabox:latest
-        container_name: jobeinabox
         ports:
             - "4000:80"
         networks:

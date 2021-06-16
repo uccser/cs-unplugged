@@ -30,7 +30,7 @@ SECRET_KEY = env("DJANGO_SECRET_KEY", default="l@@)w&&%&u37+sjz^lsx^+29y_333oid3
 
 # STATIC FILE CONFIGURATION
 # ------------------------------------------------------------------------------
-STATIC_URL = "http://static.cs-unplugged.localhost/"
+STATIC_URL = "https://static.cs-unplugged.localhost/"
 
 # Mail settings
 # ----------------------------------------------------------------------------

@@ -50,13 +50,13 @@ local version of the website:
 
 .. code-block:: none
 
-  localhost/
+  cs-unplugged.localhost/
 
 You can also go to the url below to get a quick overview of what content is loaded:
 
 .. code-block:: none
 
-  localhost/__dev__/
+  cs-unplugged.localhost/__dev__/
 
 For more information about what this page displays, see :doc:`../developer/dev`.
 
@@ -140,7 +140,7 @@ the topic at:
 
 .. code-block:: none
 
-  localhost/en/topics/
+  cs-unplugged.localhost/en/topics/
 
 To create the required directories and Markdown files follow this flow chart:
 
@@ -179,7 +179,7 @@ Add the required fields, and their keys, to these YAML files:
 - The **lesson** config file. The required fields are listed in the section :ref:`lesson-file` section.
 
 Now you can run the ./csu update command.
-Once this has finished you will be able to view the topic at localhost/en/topics/
+Once this has finished you will be able to view the topic at ``cs-unplugged.localhost/en/topics/``
 
 The description of the topic is written in the **topic** Markdown file.
 This file:

@@ -349,7 +349,7 @@ Running ``./csu update`` performs the following tasks:
 - Create the required static files
 
 Once the script has performed all these tasks, the script will let you know the website is ready.
-Open your preferred web browser to the URL ``localhost`` to view the website.
+Open your preferred web browser to the URL ``cs-unplugged.localhost`` to view the website.
 
 In more detail, ``./csu update`` runs the Django ``makemigratations`` and ``migrate`` commands for updating the database schema, and then runs the custom ``updatedata`` command to load the topics content into the database.
 It also runs the ``static`` command to generate static files.

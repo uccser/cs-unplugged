@@ -68,7 +68,7 @@ If the CSS file does not include the changes made, run ``./csu static``.
 If you are editing SCSS files, check the ``./csu static`` command isn't reporting
 SCSS compilation errors.
 
-The website isn't displaying when I open ``localhost`` in a browser
+The website isn't displaying when I open ``cs-unplugged.localhost`` in a browser
 ----------------------------------------------------------------------------------------------
 
 Check you have run the ``./csu start`` command, and that it hasn't reported any

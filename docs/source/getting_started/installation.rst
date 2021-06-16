@@ -241,7 +241,7 @@ of Brooklyn Nine-Nine on Netflix).
 After the helper script builds the system images, it will automatically start
 the system, and will let you know when the system is ready.
 You should then be able to open your preferred web browser to the URL
-``localhost`` and see the CS Unplugged homepage.
+``cs-unplugged.localhost`` and see the CS Unplugged homepage.
 
 Congratulations if you made it this far and everything is working,
 you're all set to contribute to the CS Unplugged project.

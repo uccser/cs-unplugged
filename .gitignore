@@ -7,6 +7,9 @@ csunplugged/build/**
 csunplugged/staticfiles/**
 !csunplugged/staticfiles/.keep
 
+# Files for using HTTPS on local development
+infrastructure/local/traefik/certs/
+
 # Byte-compiled / optimized / DLL files
 *__pycache__/
 *.py[cod]
