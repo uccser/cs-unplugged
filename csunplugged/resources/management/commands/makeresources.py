@@ -78,7 +78,6 @@ class Command(BaseCommand):
             language_code (str): Code for language.
             base_path (str): Base path for outputting P
         """
-        print("  - Creating PDF in '{}'".format(language_code))
         with translation.override(language_code):
             if resource.copies:
                 combination["copies"] = settings.RESOURCE_COPY_AMOUNT
@@ -94,3 +93,4 @@ class Command(BaseCommand):
             pdf_file_output = open(os.path.join(pdf_directory, filename), "wb")
             pdf_file_output.write(pdf_file)
             pdf_file_output.close()
+        print("  - Created PDF '{}' in '{}'".format(filename, language_code))
