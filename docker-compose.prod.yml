@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+    postgres:
+        image: postgres:13.3
+        healthcheck:
+            test: ["CMD-SHELL", "pg_isready -U postgres"]
+            start_period: 10s
+            interval: 10s
+            timeout: 5s
+            retries: 3
+        restart: always
+        environment:
+            POSTGRES_DB_FILE: /run/secrets/postgres_db
+            POSTGRES_USER_FILE: /run/secrets/postgres_user
+            POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+        secrets:
+            - postgres_db
+            - postgres_user
+            - postgres_password
+        networks:
+            - local
+        volumes:
+            - local-postgres-data:/var/lib/postgresql/data:Z
+            - local-postgres-data-backups:/backups:z
+
+secrets:
+    postgres_db:
+        external: true
+    postgres_user:
+        external: true
+    postgres_password:
+        external: true
