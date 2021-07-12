@@ -36,7 +36,7 @@
         "node-gyp": "4.0.0",
         "postcss-flexbugs-fixes": "4.1.0",
         "run-sequence": "2.2.1",
-        "scratchblocks": "3.1.2",
+        "scratchblocks": "3.5.2",
         "through2": "2.0.3",
         "vinyl-buffer": "1.0.1",
         "yargs": "13.2.4"
