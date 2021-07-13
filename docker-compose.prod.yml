@@ -41,6 +41,34 @@ services:
             - postgres-data:/var/lib/postgresql/data:Z
             - postgres-data-backups:/backups:z
 
+    elasticsearch:
+        image: elasticsearch:5
+        deploy:
+            replicas: 1
+            placement:
+                constraints:
+                    - node.role==worker
+                    - node.labels.role==data
+            restart_policy:
+                condition: on-failure
+        networks:
+            - backend
+        volumes:
+            - search-index:/usr/share/elasticsearch/data:Z
+
+    jobe:
+        image: trampgeek/jobeinabox:latest
+        deploy:
+            replicas: 1
+            placement:
+                constraints:
+                    - node.role==worker
+                    - node.labels.role==apps
+            restart_policy:
+                condition: on-failure
+        networks:
+            - backend
+
 secrets:
     cs-unplugged_postgres_db:
         external: true
