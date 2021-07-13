@@ -36,7 +36,7 @@ services:
             - cs-unplugged_postgres_user
             - cs-unplugged_postgres_password
         networks:
-            - cs-unplugged_backend
+            - backend
         volumes:
             - postgres-data:/var/lib/postgresql/data:Z
             - postgres-data-backups:/backups:z
@@ -50,7 +50,7 @@ secrets:
         external: true
 
 networks:
-    cs-unplugged_backend:
+    backend:
         driver: overlay
 
 volumes:
