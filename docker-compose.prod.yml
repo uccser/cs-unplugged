@@ -1,7 +1,15 @@
-version: "3.8"
+version: '3.8'
+
+x-default-opts:
+  &default-opts
+  logging:
+    options:
+      max-size: '1m'
+      max-file: '3'
 
 services:
     postgres:
+        <<: *default-opts
         image: postgres:13.3
         # TODO: Write test script that reads secret files
         # to get correct username
@@ -11,7 +19,14 @@ services:
         #     interval: 10s
         #     timeout: 5s
         #     retries: 3
-        restart: always
+        deploy:
+            replicas: 1
+            placement:
+            constraints:
+                - node.role==worker
+                - node.labels.role==data
+            restart_policy:
+                condition: on-failure
         environment:
             POSTGRES_DB_FILE: /run/secrets/cs-unplugged_postgres_db
             POSTGRES_USER_FILE: /run/secrets/cs-unplugged_postgres_user
