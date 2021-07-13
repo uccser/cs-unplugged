@@ -13,29 +13,29 @@ services:
         #     retries: 3
         restart: always
         environment:
-            POSTGRES_DB_FILE: /run/secrets/postgres_db
-            POSTGRES_USER_FILE: /run/secrets/postgres_user
-            POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+            POSTGRES_DB_FILE: /run/secrets/cs-unplugged_postgres_db
+            POSTGRES_USER_FILE: /run/secrets/cs-unplugged_postgres_user
+            POSTGRES_PASSWORD_FILE: /run/secrets/cs-unplugged_postgres_password
         secrets:
-            - postgres_db
-            - postgres_user
-            - postgres_password
+            - cs-unplugged_postgres_db
+            - cs-unplugged_postgres_user
+            - cs-unplugged_postgres_password
         networks:
-            - backend
+            - cs-unplugged_backend
         volumes:
             - postgres-data:/var/lib/postgresql/data:Z
             - postgres-data-backups:/backups:z
 
 secrets:
-    postgres_db:
+    cs-unplugged_postgres_db:
         external: true
-    postgres_user:
+    cs-unplugged_postgres_user:
         external: true
-    postgres_password:
+    cs-unplugged_postgres_password:
         external: true
 
 networks:
-    backend:
+    cs-unplugged_backend:
         driver: overlay
 
 volumes:
