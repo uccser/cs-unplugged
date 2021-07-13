@@ -3,12 +3,14 @@ version: "3.8"
 services:
     postgres:
         image: postgres:13.3
-        healthcheck:
-            test: ["CMD-SHELL", "pg_isready -U postgres"]
-            start_period: 10s
-            interval: 10s
-            timeout: 5s
-            retries: 3
+        # TODO: Write test script that reads secret files
+        # to get correct username
+        # healthcheck:
+        #     test: ["CMD-SHELL", "pg_isready -U postgres"]
+        #     start_period: 10s
+        #     interval: 10s
+        #     timeout: 5s
+        #     retries: 3
         restart: always
         environment:
             POSTGRES_DB_FILE: /run/secrets/postgres_db
@@ -19,10 +21,10 @@ services:
             - postgres_user
             - postgres_password
         networks:
-            - local
+            - backend
         volumes:
-            - local-postgres-data:/var/lib/postgresql/data:Z
-            - local-postgres-data-backups:/backups:z
+            - postgres-data:/var/lib/postgresql/data:Z
+            - postgres-data-backups:/backups:z
 
 secrets:
     postgres_db:
@@ -31,3 +33,12 @@ secrets:
         external: true
     postgres_password:
         external: true
+
+networks:
+    backend:
+        driver: overlay
+
+volumes:
+    postgres-data: {}
+    postgres-data-backups: {}
+    search-index: {}
