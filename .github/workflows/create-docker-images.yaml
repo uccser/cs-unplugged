@@ -7,6 +7,7 @@ on:
 
 jobs:
   create-and-publish-dev-image:
+    name: Create and publish dev image
     # if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-20.04
     steps:
