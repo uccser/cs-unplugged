@@ -1,9 +1,9 @@
 name: Create and publish Docker images
 
 on:
-  # push:
-  #   branches: ['develop']
   workflow_dispatch:
+  push:
+    branches: ['develop', 'server-migration']
 
 jobs:
   create-and-publish-dev-image:
