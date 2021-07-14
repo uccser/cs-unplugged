@@ -22,7 +22,7 @@ jobs:
         run: ./dev start
 
       - name: Create production static files
-      run: ./dev static_prod
+        run: ./dev static_prod
 
       # - name: Migrate database
       #   run: ./dev migrate
