@@ -9,10 +9,6 @@ jobs:
   create-and-publish-dev-image:
     # if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-20.04
-    permissions:
-      contents: read
-      packages: write
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
