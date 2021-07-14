@@ -1,8 +1,8 @@
 name: Create and publish Docker images
 
 on:
-  push:
-    branches: ['develop']
+  # push:
+  #   branches: ['develop']
   workflow_dispatch:
 
 jobs:
