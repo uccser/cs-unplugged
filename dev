@@ -126,6 +126,13 @@ cmd_static() {
 }
 defhelp static 'Build static files.'
 
+# Build production static files
+cmd_static_prod() {
+  echo "Building production static files..."
+  docker-compose -f docker-compose.local.yml run --rm node npm run build
+}
+defhelp static_prod 'Build production static files.'
+
 # Collecting static files
 cmd_collect_static() {
   echo
