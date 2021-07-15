@@ -43,4 +43,4 @@ jobs:
           file: ./infrastructure/production/django/Dockerfile
           context: .
           push: true
-          tags: uccser/cs-unplugged:develop
+          tags: ghcr.io/uccser/cs-unplugged:develop
