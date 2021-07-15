@@ -19,7 +19,7 @@ jobs:
         run: ./dev start
 
       - name: Create production static files
-        run: ./dev static_prod
+        run: sudo ./dev static_prod
 
       # - name: Migrate database
       #   run: ./dev migrate
@@ -28,7 +28,7 @@ jobs:
       #   run: ./dev ???
 
       - name: Collect staticfiles
-        run: ./dev collect_static
+        run: sudo ./dev collect_static
 
       - name: Log in to the Container registry
         uses: docker/login-action@v1.10.0
