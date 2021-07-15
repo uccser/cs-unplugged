@@ -9,10 +9,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Start system
-        run: ./dev start
-      - name: Load content
-        run: ./dev update
+      - name: Test content
+        run: ./dev ci update
 
   test-general:
     name: General tests
@@ -20,7 +18,5 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Start system
-        run: ./dev start
-      - name: Load content
-        run: ./dev test_general
+      - name: Run general tests
+        run: ./dev ci test_general

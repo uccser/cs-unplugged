@@ -126,13 +126,6 @@ cmd_static() {
 }
 defhelp static 'Build static files.'
 
-# Build production static files
-cmd_static_prod() {
-  echo "Building production static files..."
-  docker-compose -f docker-compose.local.yml run --rm node npm run build
-}
-defhelp static_prod 'Build production static files.'
-
 # Collecting static files
 cmd_collect_static() {
   echo
@@ -240,24 +233,27 @@ cmd_createsuperuser() {
 defhelp createsuperuser "Create superuser in Django system."
 
 # --- Testing -----------------------------------------------------------------
+# For use in GitHub Actions environment
 
 cmd_ci() {
   cmd_start
-  cmd_static
-  cmd_collect_static
+  docker-compose -f docker-compose.local.yml run --rm --user="root" node npm run dev
+  docker-compose -f docker-compose.local.yml run --rm --user="root" django python manage.py collectstatic --no-input
   local cmd="$1"
   shift
   if [ -z "$cmd" ]; then
-    echo -e "${ERROR}ERROR: test command requires one parameter!${NC}"
+    echo -e "${ERROR}ERROR: ci command requires one parameter!${NC}"
     cmd_help
     exit 1
   fi
   if silent type "cmd_$cmd"; then
     "cmd_$cmd" "$@"
-    test_status=$?
-    cmd_test_coverage
-    coverage_status=$?
-    exit $test_status || $coverage_status
+    exit $?
+    # Previous logic for running test coverage
+    # test_status=$?
+    # cmd_test_coverage
+    # coverage_status=$?
+    # exit $test_status || $coverage_status
   else
     echo -e "${ERROR}ERROR: Unknown command!${NC}"
     echo "Type './dev help' for available commands."
