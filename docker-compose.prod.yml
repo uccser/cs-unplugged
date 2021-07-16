@@ -13,6 +13,14 @@ services:
         # env_file:
         #     - ./infrastructure/local/django/.envs
         #     - ./infrastructure/local/postgres/.envs
+        deploy:
+            replicas: 2
+            placement:
+                constraints:
+                    - node.role==worker
+                    - node.labels.role==apps
+            restart_policy:
+                condition: on-failure
         networks:
             - uccser-dev-public
             - backend
