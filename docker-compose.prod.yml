@@ -8,6 +8,26 @@ x-default-opts:
       max-file: '3'
 
 services:
+    django:
+        image: ghcr.io/uccser/cs-unplugged:develop
+        # env_file:
+        #     - ./infrastructure/local/django/.envs
+        #     - ./infrastructure/local/postgres/.envs
+        networks:
+            - uccser-dev-public
+            - backend
+        labels:
+            # General labels
+            - "traefik.enable=true"
+            - "traefik.http.services.django.loadbalancer.server.port=8000"
+            # HTTP
+            - "traefik.http.routers.django.entryPoints=web"
+            # HTTPS
+            - "traefik.http.routers.django.entryPoints=web-secure"
+            - "traefik.http.routers.django.service=django"
+            - "traefik.http.routers.django.rule=Host(`cs-unplugged-dev.csse.canterbury.ac.nz`)"
+            # - "traefik.http.routers.django.tls=true"
+
     postgres:
         <<: *default-opts
         image: postgres:13.3
@@ -42,6 +62,7 @@ services:
             - postgres-data-backups:/backups:z
 
     elasticsearch:
+        <<: *default-opts
         image: elasticsearch:5
         deploy:
             replicas: 1
@@ -57,6 +78,7 @@ services:
             - search-index:/usr/share/elasticsearch/data:Z
 
     jobe:
+        <<: *default-opts
         image: trampgeek/jobeinabox:latest
         deploy:
             replicas: 1
@@ -78,6 +100,8 @@ secrets:
         external: true
 
 networks:
+    uccser-dev-public:
+        external: true
     backend:
         driver: overlay
 
