@@ -31,18 +31,29 @@ else:
 # DATABASE CONFIGURATION
 # ----------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
+
+# Read in secret values
+with open(env("POSTGRES_DB_FILE")) as file:
+    POSTGRES_DB = file.read().strip()
+with open(env("POSTGRES_USER_FILE")) as file:
+    POSTGRES_USER = file.read().strip()
+with open(env("POSTGRES_PASSWORD_FILE")) as file:
+    POSTGRES_PASSWORD = file.read().strip()
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "csunplugged",
-        "USER": env("GOOGLE_CLOUD_SQL_DATABASE_USERNAME"),  # noqa: F405
-        "PASSWORD": env("GOOGLE_CLOUD_SQL_DATABASE_PASSWORD"),  # noqa: F405
-        "HOST": "/cloudsql/" + env("GOOGLE_CLOUD_SQL_CONNECTION_NAME"),  # noqa: F405
+        "NAME": POSTGRES_DB,
+        "USER": POSTGRES_USER,
+        "PASSWORD": POSTGRES_PASSWORD,
+        "HOST": env("POSTGRES_HOST"),
+        "PORT": env("POSTGRES_PORT"),
+        "ATOMIC_REQUESTS": True,
     }
 }
-DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
-# Static files
+# STATIC FILES
+# ------------------------------------------------------------------------------
 STATIC_URL = "https://storage.googleapis.com/" + env("GOOGLE_CLOUD_STORAGE_BUCKET_NAME") + "/static/"  # noqa: F405
 
 # SECURITY CONFIGURATION
