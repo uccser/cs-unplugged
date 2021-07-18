@@ -4,22 +4,23 @@ set -o errexit
 set -o pipefail
 set -o nounset
 
-# Read in secrets
-POSTGRES_DB=$(<${POSTGRES_DB_FILE})
-POSTGRES_USER=$(<${POSTGRES_USER_FILE})
-POSTGRES_PASSWORD=$(<${POSTGRES_PASSWORD_FILE})
-
 postgres_ready() {
 python << END
 import sys
-
 import psycopg2
+
+with open(${POSTGRES_DB_FILE}) as file:
+    POSTGRES_DB = file.read().strip()
+with open(${POSTGRES_USER_FILE}) as file:
+    POSTGRES_USER = file.read().strip()
+with open(${POSTGRES_PASSWORD_FILE}) as file:
+    POSTGRES_PASSWORD = file.read().strip()
 
 try:
     psycopg2.connect(
-        dbname="$POSTGRES_DB",
-        user="$POSTGRES_USER",
-        password="$POSTGRES_PASSWORD",
+        dbname=POSTGRES_DB,
+        user=POSTGRES_USER,
+        password=POSTGRES_PASSWORD,
         host="${POSTGRES_HOST}",
         port="${POSTGRES_PORT}",
     )
