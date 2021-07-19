@@ -58,7 +58,7 @@ COPY --chown=django:django ./infrastructure/production/django/entrypoint /entryp
 RUN sed -i 's/\r$//g' /entrypoint
 RUN chmod +x /entrypoint
 
-COPY --chown=django:django ./infrastructure/local/django/start /start
+COPY --chown=django:django ./infrastructure/production/django/start /start
 RUN sed -i 's/\r$//g' /start
 RUN chmod +x /start
 
@@ -70,3 +70,4 @@ RUN chown django:django ${APP_HOME}
 USER django
 
 ENTRYPOINT ["/entrypoint"]
+CMD ["/start"]
