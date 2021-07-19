@@ -201,7 +201,7 @@ defhelp style 'Run style checks.'
 # Run test suite
 cmd_test_suite() {
   echo "Running test suite..."
-  docker-compose -f docker-compose.local.yml run --rm --label traefik.enable=false django coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --nomigrations
+  docker-compose -f docker-compose.local.yml run --rm --label traefik.enable=false django coverage run --rcfile=./.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --nomigrations
 }
 defhelp test_suite 'Run test suite with code coverage.'
 
