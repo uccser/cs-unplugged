@@ -18,6 +18,17 @@ services:
                     - node.labels.role==apps
             restart_policy:
                 condition: on-failure
+            labels:
+                # General labels
+                - "traefik.enable=true"
+                - "traefik.http.services.django.loadbalancer.server.port=8000"
+                - "traefik.http.routers.django.service=django"
+                - "traefik.http.routers.django.rule=Host(`cs-unplugged-dev.csse.canterbury.ac.nz`)"
+                # HTTP
+                - "traefik.http.routers.django.entryPoints=web"
+                # HTTPS
+                # - "traefik.http.routers.django.entryPoints=web-secure"
+                # - "traefik.http.routers.django.tls=true"
         environment:
             POSTGRES_HOST: postgres
             POSTGRES_PORT: "5432"
@@ -33,17 +44,6 @@ services:
         networks:
             - uccser-dev-public
             - backend
-        labels:
-            # General labels
-            - "traefik.enable=true"
-            - "traefik.http.services.django.loadbalancer.server.port=8000"
-            # HTTP
-            - "traefik.http.routers.django.entryPoints=web"
-            # HTTPS
-            - "traefik.http.routers.django.entryPoints=web-secure"
-            - "traefik.http.routers.django.service=django"
-            - "traefik.http.routers.django.rule=Host(`cs-unplugged-dev.csse.canterbury.ac.nz`)"
-            # - "traefik.http.routers.django.tls=true"
 
     postgres:
         <<: *default-opts
