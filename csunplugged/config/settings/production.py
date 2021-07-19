@@ -13,7 +13,8 @@ from .base import *  # noqa: F403
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Raises ImproperlyConfigured exception if DJANGO_SECRET_KEY not in os.environ
-SECRET_KEY = env("DJANGO_SECRET_KEY")  # noqa: F405
+with open(env("DJANGO_SECRET_KEY_FILE")) as file:
+    SECRET_KEY = file.read().strip()
 
 # SECURITY WARNING: App Engine"s security features ensure that it is safe to
 # have ALLOWED_HOSTS = ["*"] when the app is deployed. If you deploy a Django
@@ -23,10 +24,7 @@ ALLOWED_HOSTS = ["*"]
 
 # URL Configuration
 # ------------------------------------------------------------------------------
-if env("DEPLOYMENT", default=None) == "prod":  # noqa: F405
-    PREPEND_WWW = True
-else:
-    PREPEND_WWW = False
+PREPEND_WWW = True
 
 # DATABASE CONFIGURATION
 # ----------------------------------------------------------------------------

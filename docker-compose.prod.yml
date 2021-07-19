@@ -21,10 +21,12 @@ services:
         environment:
             POSTGRES_HOST: postgres
             POSTGRES_PORT: "5432"
+            DJANGO_SECRET_KEY_FILE: /run/secrets/cs-unplugged_django_secret_key
             POSTGRES_DB_FILE: /run/secrets/cs-unplugged_postgres_db
             POSTGRES_USER_FILE: /run/secrets/cs-unplugged_postgres_user
             POSTGRES_PASSWORD_FILE: /run/secrets/cs-unplugged_postgres_password
         secrets:
+            - cs-unplugged_django_secret_key
             - cs-unplugged_postgres_db
             - cs-unplugged_postgres_user
             - cs-unplugged_postgres_password
@@ -107,6 +109,8 @@ services:
             - backend
 
 secrets:
+    cs-unplugged_django_secret_key:
+        external: true
     cs-unplugged_postgres_db:
         external: true
     cs-unplugged_postgres_user:

@@ -35,7 +35,7 @@ TEMPLATES[0]["OPTIONS"]["debug"] = DEBUG  # noqa: F405
 # ----------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Note: This key only used for development and testing.
-SECRET_KEY = env("DJANGO_SECRET_KEY", default="l@@)w&&%&u37+sjz^lsx^+29y_333oid3ygxzucar^8o(axo*f")  # noqa: F405
+SECRET_KEY = env("DJANGO_SECRET_KEY", default="DJANGO_SECRET_KEY_FOR_LOCAL_DEVELOPMENT")  # noqa: F405
 
 # STATIC FILE CONFIGURATION
 # ------------------------------------------------------------------------------
