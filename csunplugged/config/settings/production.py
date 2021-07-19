@@ -2,8 +2,7 @@
 """
 Django settings for production environment.
 
-- Load secret values from environment variables.
-- Set static URL to Google Cloud Storage Bucket.
+- Load secret values from files.
 """
 
 from .base import *  # noqa: F403
@@ -49,10 +48,6 @@ DATABASES = {
         "ATOMIC_REQUESTS": True,
     }
 }
-
-# STATIC FILES
-# ------------------------------------------------------------------------------
-STATIC_URL = "https://storage.googleapis.com/" + env("GOOGLE_CLOUD_STORAGE_BUCKET_NAME") + "/static/"  # noqa: F405
 
 # SECURITY CONFIGURATION
 # ------------------------------------------------------------------------------
