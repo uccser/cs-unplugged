@@ -10,9 +10,6 @@ x-default-opts:
 services:
     django:
         image: ghcr.io/uccser/cs-unplugged:develop
-        # env_file:
-        #     - ./infrastructure/local/django/.envs
-        #     - ./infrastructure/local/postgres/.envs
         deploy:
             replicas: 2
             placement:
