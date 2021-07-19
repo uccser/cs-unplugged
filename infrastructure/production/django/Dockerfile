@@ -63,7 +63,7 @@ RUN sed -i 's/\r$//g' /start
 RUN chmod +x /start
 
 # Copy application code to WORKDIR
-COPY --chown=django:django . ${APP_HOME}
+COPY --chown=django:django /csunplugged/ ${APP_HOME}
 # Make django owner of the WORKDIR directory as well.
 RUN chown django:django ${APP_HOME}
 

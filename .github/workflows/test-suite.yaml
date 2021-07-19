@@ -9,8 +9,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Test content
-        run: ./dev ci update
+      - name: Create static files
+        run: docker-compose -f docker-compose.local.yml run --rm --user="root" node npm run dev
+      - name: Migrate database
+        run: docker-compose -f docker-compose.local.yml run --rm django python ./manage.py migrate
+      - name: Load content
+        run: docker-compose -f docker-compose.local.yml run --rm django python ./manage.py updatedata
+      - name: Rebuild search
+        run: docker-compose -f docker-compose.local.yml run --rm django python ./manage.py rebuild_index --noinput
+      - name: Make resource thumbnails
+        run: docker-compose -f docker-compose.local.yml run --rm --user="root" django python ./manage.py makeresourcethumbnails
+      - name: Collect static cards
+        run: docker-compose -f docker-compose.local.yml run --rm --user="root" django python ./manage.py collectstatic --no-input
 
   test-general:
     name: General tests

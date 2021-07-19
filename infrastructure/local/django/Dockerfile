@@ -78,7 +78,4 @@ RUN chmod +x /start
 COPY ./csunplugged/static/fonts/ /usr/share/fonts/
 RUN fc-cache -fv
 
-# Copy application code to WORKDIR
-COPY . ${APP_HOME}
-
 ENTRYPOINT ["/entrypoint"]

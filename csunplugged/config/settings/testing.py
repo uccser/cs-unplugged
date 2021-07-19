@@ -8,9 +8,16 @@ from .base import *  # noqa: F403
 # ----------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
-    "default": env.db("DATABASE_URL"),  # noqa: F405
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": env("POSTGRES_DB"),
+        "USER": env("POSTGRES_USER"),
+        "PASSWORD": env("POSTGRES_PASSWORD"),
+        "HOST": env("POSTGRES_HOST"),
+        "PORT": env("POSTGRES_PORT"),
+        "ATOMIC_REQUESTS": True,
+    }
 }
-DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 # DEBUG
 # ----------------------------------------------------------------------------
