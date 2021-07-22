@@ -15,15 +15,14 @@ from .base import *  # noqa: F403
 with open(env("DJANGO_SECRET_KEY_FILE")) as file:
     SECRET_KEY = file.read().strip()
 
-# SECURITY WARNING: App Engine"s security features ensure that it is safe to
-# have ALLOWED_HOSTS = ["*"] when the app is deployed. If you deploy a Django
-# app not on App Engine, make sure to set an appropriate host here.
+# TODO: Review
 # See https://docs.djangoproject.com/en/1.10/ref/settings/
 ALLOWED_HOSTS = ["*"]
 
 # URL Configuration
 # ------------------------------------------------------------------------------
-PREPEND_WWW = True
+# TODO: Setup for different environments
+PREPEND_WWW = False
 
 # DATABASE CONFIGURATION
 # ----------------------------------------------------------------------------
