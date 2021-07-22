@@ -26,7 +26,7 @@ services:
                 - "traefik.http.routers.django.service=django"
                 - "traefik.http.routers.django.rule=Host(`cs-unplugged-dev.csse.canterbury.ac.nz`)"
                 # HTTPS
-                - "traefik.http.routers.django.entryPoints=web-secure"
+                - "traefik.http.routers.django.entryPoints=websecure"
                 - "traefik.http.routers.django.tls=true"
         environment:
             POSTGRES_HOST: postgres
