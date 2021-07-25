@@ -119,6 +119,7 @@ networks:
         external: true
     backend:
         driver: overlay
+        attachable: true
 
 volumes:
     postgres-data: {}
