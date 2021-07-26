@@ -350,4 +350,4 @@ CLASSIC_PAGES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("classic")), "c
 GENERAL_PAGES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("general")), "content")
 ACTIVITIES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("at_home")), "content")
 BREADCRUMBS_TEMPLATE = "django_bootstrap_breadcrumbs/bootstrap4.html"
-JOBE_SERVER_URL = "jobe"
+JOBE_SERVER_URL = "http://jobe"
