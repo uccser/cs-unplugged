@@ -1,12 +1,12 @@
 """Class for generator for a resource."""
 
+import os.path
 from abc import ABC, abstractmethod
 from resources.utils.resize_encode_resource_images import resize_encode_resource_images
 from utils.errors.ThumbnailPageNotFoundError import ThumbnailPageNotFoundError
 from utils.errors.MoreThanOneThumbnailPageFoundError import MoreThanOneThumbnailPageFoundError
 from django.conf import settings
 from django.template.loader import render_to_string
-from django.contrib.staticfiles import finders
 from django.utils.translation import ugettext_lazy as _
 from resources.utils.resource_parameters import (
     EnumResourceParameter,
@@ -192,7 +192,7 @@ class BaseResourceGenerator(ABC):
 
         pdf_html = render_to_string("resources/base-resource-pdf.html", context)
         html = HTML(string=pdf_html, base_url=settings.BUILD_ROOT)
-        css_file = finders.find("css/print-resource-pdf.css")
+        css_file = os.path.join(settings.STATIC_ROOT, "css/print-resource-pdf.css")
         css_string = open(css_file, encoding="UTF-8").read()
         base_css = CSS(string=css_string)
         return (html.write_pdf(stylesheets=[base_css]), filename)
@@ -254,7 +254,7 @@ class BaseResourceGenerator(ABC):
         context["all_data"] = [[thumbnail_data]]
         pdf_html = render_to_string("resources/base-resource-pdf.html", context)
         html = HTML(string=pdf_html, base_url=settings.BUILD_ROOT)
-        css_file = finders.find("css/print-resource-pdf.css")
+        css_file = os.path.join(settings.STATIC_ROOT, "css/print-resource-pdf.css")
         css_string = open(css_file, encoding="UTF-8").read()
         base_css = CSS(string=css_string)
         thumbnail = html.write_png(stylesheets=[base_css], resolution=72)
