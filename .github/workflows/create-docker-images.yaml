@@ -21,11 +21,17 @@ jobs:
       - name: Create production static files
         run: docker-compose -f docker-compose.local.yml run --rm --user="root" node npm run build
 
-      # - name: Migrate database
-      #   run: ./dev migrate
+      - name: Migrate database
+        run: docker-compose -f docker-compose.local.yml run --rm django python ./manage.py migrate
 
-      # - name: Load resources
-      #   run: ./dev ???
+      - name: Load resources
+        run: docker-compose -f docker-compose.local.yml run --rm django python ./manage.py loadresources
+
+      - name: Make resource thumbnails
+        run: docker-compose -f docker-compose.local.yml run --rm --user="root" django python ./manage.py makeresourcethumbnails
+
+      - name: Make resources
+        run: docker-compose -f docker-compose.local.yml run --rm --user="root" django python ./manage.py makeresources
 
       - name: Collect staticfiles
         run: docker-compose -f docker-compose.local.yml run --rm --user="root" django python manage.py collectstatic --no-input
