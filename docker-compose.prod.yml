@@ -24,7 +24,7 @@ services:
                 - "traefik.http.services.django.loadbalancer.server.port=8000"
                 - "traefik.http.routers.django.service=django"
                 - "traefik.http.routers.django.rule=Host(`cs-unplugged-dev.csse.canterbury.ac.nz`)"
-                - "traefik.http.routers.django.entryPoints=websecure"
+                # - "traefik.http.routers.django.entryPoints=websecure"
         environment:
             POSTGRES_HOST: postgres
             POSTGRES_PORT: "5432"
