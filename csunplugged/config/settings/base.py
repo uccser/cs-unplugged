@@ -338,6 +338,9 @@ HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10
 # OTHER SETTINGS
 # ------------------------------------------------------------------------------
 DJANGO_PRODUCTION = env.bool("DJANGO_PRODUCTION")
+GIT_SHA = env("GIT_SHA", default="local development")
+PRODUCTION_ENVIRONMENT = False
+STAGING_ENVIRONMENT = False
 TOPICS_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("topics")), "content")
 RESOURCES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("resources")), "content")
 RESOURCE_GENERATION_LOCATION = os.path.join(str(ROOT_DIR.path("build")), "resources")

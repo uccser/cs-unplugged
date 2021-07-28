@@ -21,6 +21,7 @@ RUN pip wheel --wheel-dir /usr/src/app/wheels -r ${BUILD_ENVIRONMENT}.txt
 # Python run stage ------------------------------------------------------------
 FROM python as python-run-stage
 
+ARG GIT_SHA
 ARG BUILD_ENVIRONMENT=production
 ARG APP_HOME=/app
 
@@ -28,6 +29,7 @@ ARG APP_HOME=/app
 ENV LANG C.UTF-8
 ENV DJANGO_PRODUCTION=True
 ENV DJANGO_SETTINGS_MODULE='config.settings.production'
+ENV GIT_SHA ${GIT_SHA}
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV BUILD_ENV ${BUILD_ENVIRONMENT}

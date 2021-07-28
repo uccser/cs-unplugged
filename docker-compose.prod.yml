@@ -61,9 +61,13 @@ services:
             restart_policy:
                 condition: on-failure
         environment:
+            DEPLOYMENT_ENVIRONMENT_FILE: /cs-unplugged_deployment_environment
             POSTGRES_DB_FILE: /run/secrets/cs-unplugged_postgres_db
             POSTGRES_USER_FILE: /run/secrets/cs-unplugged_postgres_user
             POSTGRES_PASSWORD_FILE: /run/secrets/cs-unplugged_postgres_password
+        configs:
+            # Either 'production' or 'staging'
+            - cs-unplugged_deployment_environment
         secrets:
             - cs-unplugged_postgres_db
             - cs-unplugged_postgres_user
@@ -103,6 +107,10 @@ services:
                 condition: on-failure
         networks:
             - backend
+
+configs:
+    cs-unplugged_deployment_environment:
+        external: true
 
 secrets:
     cs-unplugged_django_secret_key:

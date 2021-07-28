@@ -50,3 +50,4 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/uccser/cs-unplugged:develop
+          build-args: GIT_SHA=${GITHUB_SHA}

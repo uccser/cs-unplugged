@@ -228,7 +228,7 @@
           </small>
         </p>
         <p class="mb-0">
-          <small><a href="http://cs-unplugged.readthedocs.io/en/latest/changelog.html">{{ VERSION_NUMBER }}</a></small>
+          <small><a href="http://cs-unplugged.readthedocs.io/en/latest/changelog.html">{{ VERSION_NUMBER }}{% if not PRODUCTION_ENVIRONMENT %} - {{ GIT_SHA }}{% endif %}</a></small>
         </p>
       </div>
     </footer>

@@ -8,6 +8,15 @@ Django settings for production environment.
 from .base import *  # noqa: F403
 
 
+# TODO: Review
+# See https://docs.djangoproject.com/en/1.10/ref/settings/
+ALLOWED_HOSTS = ["*"]
+
+with open(env("DEPLOYMENT_ENVIRONMENT_FILE")) as file:
+    DEPLOYMENT_ENVIRONMENT = file.read().strip()
+PRODUCTION_ENVIRONMENT = DEPLOYMENT_ENVIRONMENT == "production"
+STAGING_ENVIRONMENT = DEPLOYMENT_ENVIRONMENT == "staging"
+
 # SECRET CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
@@ -15,14 +24,13 @@ from .base import *  # noqa: F403
 with open(env("DJANGO_SECRET_KEY_FILE")) as file:
     SECRET_KEY = file.read().strip()
 
-# TODO: Review
-# See https://docs.djangoproject.com/en/1.10/ref/settings/
-ALLOWED_HOSTS = ["*"]
-
 # URL Configuration
 # ------------------------------------------------------------------------------
 # TODO: Setup for different environments
-PREPEND_WWW = False
+if PRODUCTION_ENVIRONMENT:  # noqa: F405
+    PREPEND_WWW = True
+else:
+    PREPEND_WWW = False
 
 # DATABASE CONFIGURATION
 # ----------------------------------------------------------------------------

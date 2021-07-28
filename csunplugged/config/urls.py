@@ -16,6 +16,7 @@ urlpatterns = i18n_patterns(
     path('topics/', include('topics.urls', namespace='topics')),
     path('resources/', include('resources.urls', namespace='resources')),
     path('at-home/', include('at_home.urls', namespace='at_home')),
+    path('plugging-it-in/', include('plugging_it_in.urls', namespace='plugging_it_in')),
 )
 
 urlpatterns += [
@@ -23,11 +24,6 @@ urlpatterns += [
     path('en/search/', include('search.urls', namespace='search')),
     path('admin/', admin.site.urls),
 ]
-
-if not env("DEPLOYMENT", default=None) == "prod":
-    urlpatterns += i18n_patterns(
-        path('plugging-it-in/', include('plugging_it_in.urls', namespace='plugging_it_in')),
-    )
 
 if settings.DEBUG:  # pragma: no cover
     import debug_toolbar
