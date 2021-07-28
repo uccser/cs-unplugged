@@ -28,10 +28,13 @@ services:
         environment:
             POSTGRES_HOST: postgres
             POSTGRES_PORT: "5432"
+            DEPLOYMENT_ENVIRONMENT_FILE: /cs-unplugged_deployment_environment
             DJANGO_SECRET_KEY_FILE: /run/secrets/cs-unplugged_django_secret_key
             POSTGRES_DB_FILE: /run/secrets/cs-unplugged_postgres_db
             POSTGRES_USER_FILE: /run/secrets/cs-unplugged_postgres_user
             POSTGRES_PASSWORD_FILE: /run/secrets/cs-unplugged_postgres_password
+        configs:
+            - cs-unplugged_deployment_environment
         secrets:
             - cs-unplugged_django_secret_key
             - cs-unplugged_postgres_db
@@ -61,13 +64,9 @@ services:
             restart_policy:
                 condition: on-failure
         environment:
-            DEPLOYMENT_ENVIRONMENT_FILE: /cs-unplugged_deployment_environment
             POSTGRES_DB_FILE: /run/secrets/cs-unplugged_postgres_db
             POSTGRES_USER_FILE: /run/secrets/cs-unplugged_postgres_user
             POSTGRES_PASSWORD_FILE: /run/secrets/cs-unplugged_postgres_password
-        configs:
-            # Either 'production' or 'staging'
-            - cs-unplugged_deployment_environment
         secrets:
             - cs-unplugged_postgres_db
             - cs-unplugged_postgres_user
