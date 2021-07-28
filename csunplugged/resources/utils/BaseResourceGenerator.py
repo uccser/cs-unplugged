@@ -192,7 +192,7 @@ class BaseResourceGenerator(ABC):
 
         pdf_html = render_to_string("resources/base-resource-pdf.html", context)
         html = HTML(string=pdf_html, base_url=settings.BUILD_ROOT)
-        css_file = os.path.join(settings.STATIC_ROOT, "css/print-resource-pdf.css")
+        css_file = os.path.join(settings.BUILD_ROOT, "css/print-resource-pdf.css")
         css_string = open(css_file, encoding="UTF-8").read()
         base_css = CSS(string=css_string)
         return (html.write_pdf(stylesheets=[base_css]), filename)
@@ -254,7 +254,7 @@ class BaseResourceGenerator(ABC):
         context["all_data"] = [[thumbnail_data]]
         pdf_html = render_to_string("resources/base-resource-pdf.html", context)
         html = HTML(string=pdf_html, base_url=settings.BUILD_ROOT)
-        css_file = os.path.join(settings.STATIC_ROOT, "css/print-resource-pdf.css")
+        css_file = os.path.join(settings.BUILD_ROOT, "css/print-resource-pdf.css")
         css_string = open(css_file, encoding="UTF-8").read()
         base_css = CSS(string=css_string)
         thumbnail = html.write_png(stylesheets=[base_css], resolution=72)
