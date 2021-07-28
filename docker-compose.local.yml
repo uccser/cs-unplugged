@@ -101,20 +101,12 @@ services:
         networks:
             - local
 
-    # docs:
-    #     image: cs_unplugged_local_docs
-    #     build:
-    #         context: .
-    #         dockerfile: ./infrastructure/local/docs/Dockerfile
-    #     volumes:
-    #         - ./docs:/docs:z
-    #         - ./config:/app/config:z
-    #         - ./cs-unplugged:/app/cs_unplugged:z
-    #     ports:
-    #         - "7000:7000"
-    #     command: /start-docs
-    #     labels:
-    #         - "traefik.http.routers.docs.rule=Host(`docs.cs-unplugged.localhost`)"
+    docs:
+        image: ghcr.io/uccser/local-docs-image:latest
+        volumes:
+            - ./docs:/docs:z
+        ports:
+            - "7000:7000"
 
 networks:
     local:
