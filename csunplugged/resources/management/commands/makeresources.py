@@ -78,7 +78,7 @@ class Command(BaseCommand):
             language_code (str): Code for language.
             base_path (str): Base path for outputting P
         """
-        print("  - Creating PDF in '{}'".format(language_code))
+        print("  - Creating {} PDF in '{}' with parameters '{}".format(resource.name, language_code, combination))
         with translation.override(language_code):
             if resource.copies:
                 combination["copies"] = settings.RESOURCE_COPY_AMOUNT
