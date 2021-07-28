@@ -70,7 +70,7 @@ class ResourceViewTest(BaseTestWithDB):
         self.assertFalse(response.context["debug"])
         self.assertFalse(response.context["grouped_lessons"])
 
-    @override_settings(DJANGO_PRODUCTION=True)
+    @override_settings(DEPLOYED=True)
     def test_resource_view_resource_thumbnail_base_context_production_en(self):
         resource = self.test_data.create_resource(
             "grid",
@@ -88,7 +88,7 @@ class ResourceViewTest(BaseTestWithDB):
             "/staticfiles/img/resources/grid/thumbnails/{}/".format(self.language)
         )
 
-    @override_settings(DJANGO_PRODUCTION=True)
+    @override_settings(DEPLOYED=True)
     def test_resource_view_resource_thumbnail_base_context_production_de(self):
         with translation.override("de"):
             resource = self.test_data.create_resource(
@@ -107,7 +107,7 @@ class ResourceViewTest(BaseTestWithDB):
                 "/staticfiles/img/resources/grid/thumbnails/de/"
             )
 
-    @override_settings(DJANGO_PRODUCTION=True)
+    @override_settings(DEPLOYED=True)
     @override_settings(LANGUAGES=MULTIPLE_LANGUAGES_WITH_INCONTEXT)
     def test_resource_view_resource_thumbnail_base_context_production_in_context(self):
         resource = self.test_data.create_resource(

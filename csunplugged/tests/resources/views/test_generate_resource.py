@@ -34,7 +34,7 @@ class GenerateResourceTest(BaseTestWithDB):
             'attachment; filename*=UTF-8\'\'Grid%20%28a4%29.pdf; filename="Grid%20%28a4%29.pdf"'
         )
 
-    @override_settings(DJANGO_PRODUCTION=True)
+    @override_settings(DEPLOYED=True)
     def test_generate_view_valid_slug_production_cache(self):
         resource = self.test_data.create_resource(
             "grid",

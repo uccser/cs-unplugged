@@ -33,7 +33,7 @@ def get_thumbnail_base(resource_slug):
     Returns:
         String of thumbnail base.
     """
-    if settings.DJANGO_PRODUCTION:
+    if settings.DEPLOYED:
         resource_language = get_language()
         if resource_language in settings.INCONTEXT_L10N_PSEUDOLANGUAGES:
             resource_language = "en"

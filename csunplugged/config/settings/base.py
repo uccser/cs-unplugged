@@ -337,7 +337,7 @@ HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10
 
 # OTHER SETTINGS
 # ------------------------------------------------------------------------------
-DJANGO_PRODUCTION = env.bool("DJANGO_PRODUCTION")
+DEPLOYED = env.bool("DEPLOYED")
 GIT_SHA = env("GIT_SHA", default="local development")
 PRODUCTION_ENVIRONMENT = False
 STAGING_ENVIRONMENT = False
