@@ -21,14 +21,12 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         """Add optional parameter to makeresources command."""
         parser.add_argument(
-            "resource_slug",
-            nargs="?",
+            "--resource",
             default=None,
             help="The resource slug to generate",
         )
         parser.add_argument(
-            "resource_language",
-            nargs="?",
+            "--language",
             default=None,
             help="The language to generate the resource in",
         )
@@ -37,13 +35,13 @@ class Command(BaseCommand):
         """Automatically called when the makeresources command is given."""
         base_path = settings.RESOURCE_GENERATION_LOCATION
 
-        if options["resource_slug"]:
-            resources = [Resource.objects.get(slug=options["resource_slug"])]
+        if options["resource"]:
+            resources = [Resource.objects.get(slug=options["resource"])]
         else:
             resources = Resource.objects.order_by("name")
 
-        if options["resource_language"]:
-            generation_languages = [options["resource_language"]]
+        if options["language"]:
+            generation_languages = [options["language"]]
         else:
             generation_languages = []
             for language_code, _ in settings.LANGUAGES:
@@ -86,7 +84,7 @@ class Command(BaseCommand):
             generator = get_resource_generator(resource.generator_module, requested_options)
             (pdf_file, filename) = generator.pdf(resource.name)
 
-            pdf_directory = os.path.join(base_path, resource.slug, language_code)
+            pdf_directory = os.path.join(base_path, language_code, resource.slug)
             if not os.path.exists(pdf_directory):
                 os.makedirs(pdf_directory)
 
