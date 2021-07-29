@@ -72,6 +72,7 @@ jobs:
         uses: ammaraskar/sphinx-action@0.4
         with:
           docs-folder: docs/
+          build-command: sphinx-build -b html -W docs/ /docs/_build/
 
   create-and-publish-dev-image:
     name: Create and publish dev image
