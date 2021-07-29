@@ -1,11 +1,11 @@
 """Tests for resource generation."""
 
-import os
-import re
-from django.core import management
-from config.settings.base import DEFAULT_LANGUAGES as LANGUAGES
+# import os
+# import re
+# from django.core import management
+# from config.settings.base import DEFAULT_LANGUAGES as LANGUAGES
 from tests.BaseTestWithDB import BaseTestWithDB
-from resources.models import Resource
+# from resources.models import Resource
 
 
 class ResourceGenerationTest(BaseTestWithDB):
