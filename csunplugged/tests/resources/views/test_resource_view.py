@@ -85,7 +85,7 @@ class ResourceViewTest(BaseTestWithDB):
         response = self.client.get(url)
         self.assertEqual(
             response.context["resource_thumbnail_base"],
-            "/staticfiles/img/resources/grid/thumbnails/{}/".format(self.language)
+            "/static/img/resources/grid/thumbnails/{}/".format(self.language)
         )
 
     @override_settings(DEPLOYED=True)
@@ -104,7 +104,7 @@ class ResourceViewTest(BaseTestWithDB):
             response = self.client.get(url)
             self.assertEqual(
                 response.context["resource_thumbnail_base"],
-                "/staticfiles/img/resources/grid/thumbnails/de/"
+                "/static/img/resources/grid/thumbnails/de/"
             )
 
     @override_settings(DEPLOYED=True)
@@ -126,7 +126,7 @@ class ResourceViewTest(BaseTestWithDB):
             print(response.context["resource"])
             self.assertEqual(
                 response.context["resource_thumbnail_base"],
-                "/staticfiles/img/resources/grid/thumbnails/en/"
+                "/static/img/resources/grid/thumbnails/en/"
             )
 
     def test_resource_view_lesson_context(self):

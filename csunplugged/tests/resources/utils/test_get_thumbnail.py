@@ -68,7 +68,7 @@ class GetThumbnailTest(BaseTestWithDB):
     def test_get_thumbnail_base_local_development(self):
         self.assertEqual(
             get_thumbnail_base("resource"),
-            "/staticfiles/img/resources/resource/thumbnails/en/"
+            "/static/img/resources/resource/thumbnails/en/"
         )
 
     @override_settings(DEPLOYED=True)
@@ -107,7 +107,7 @@ class GetThumbnailTest(BaseTestWithDB):
         )
         self.assertEqual(
             get_thumbnail_static_path_for_resource(resource),
-            "/staticfiles/img/resources/resource/thumbnails/en/resource-paper_size-a4.png"
+            "/static/img/resources/resource/thumbnails/en/resource-paper_size-a4.png"
         )
 
     @override_settings(DEPLOYED=True)

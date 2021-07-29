@@ -27,5 +27,5 @@ class CacheRedirectTest(BaseTestWithDB):
         self.assertEqual(response.status_code, HTTPStatus.FOUND)
         self.assertEqual(
             response.url,
-            "/staticfiles/resources/grid/en/Grid%20(a4).pdf"
+            "/static/resources/grid/en/Grid%20(a4).pdf"
         )
