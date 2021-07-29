@@ -249,11 +249,6 @@ cmd_ci() {
   if silent type "cmd_$cmd"; then
     "cmd_$cmd" "$@"
     exit $?
-    # Previous logic for running test coverage
-    # test_status=$?
-    # cmd_test_coverage
-    # coverage_status=$?
-    # exit $test_status || $coverage_status
   else
     echo -e "${ERROR}ERROR: Unknown command!${NC}"
     echo "Type './dev help' for available commands."
@@ -266,13 +261,11 @@ cmd_test_general() {
 }
 
 cmd_test_resources() {
-  docker-compose -f docker-compose.local.yml run --rm --label traefik.enable=false django coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --tag=resource --nomigrations
-  test_status=$?
+  docker-compose -f docker-compose.local.yml run --rm --label traefik.enable=false django coverage run --rcfile=./.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --tag=resource --nomigrations
 }
 
 cmd_test_management() {
-  docker-compose -f docker-compose.local.yml run --rm --label traefik.enable=false django coverage run --rcfile=/cs-unplugged/.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --tag=management --nomigrations
-  test_status=$?
+  docker-compose -f docker-compose.local.yml run --rm --label traefik.enable=false django coverage run --rcfile=./.coveragerc ./manage.py test --settings=config.settings.testing --pattern "test_*.py" -v 3 --tag=management --nomigrations
 }
 
 # --- Core script logic -------------------------------------------------------
