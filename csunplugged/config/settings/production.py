@@ -12,7 +12,7 @@ from .base import *  # noqa: F403
 # See https://docs.djangoproject.com/en/1.10/ref/settings/
 ALLOWED_HOSTS = ["*"]
 
-with open(env("DEPLOYMENT_ENVIRONMENT_FILE")) as file:
+with open(env("DEPLOYMENT_ENVIRONMENT_FILE")) as file:  # noqa: F405
     DEPLOYMENT_ENVIRONMENT = file.read().strip()
 PRODUCTION_ENVIRONMENT = DEPLOYMENT_ENVIRONMENT == "production"
 STAGING_ENVIRONMENT = DEPLOYMENT_ENVIRONMENT == "staging"
@@ -21,7 +21,7 @@ STAGING_ENVIRONMENT = DEPLOYMENT_ENVIRONMENT == "staging"
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Raises ImproperlyConfigured exception if DJANGO_SECRET_KEY not in os.environ
-with open(env("DJANGO_SECRET_KEY_FILE")) as file:
+with open(env("DJANGO_SECRET_KEY_FILE")) as file:  # noqa: F405
     SECRET_KEY = file.read().strip()
 
 # URL Configuration
@@ -37,11 +37,11 @@ else:
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 # Read in secret values
-with open(env("POSTGRES_DB_FILE")) as file:
+with open(env("POSTGRES_DB_FILE")) as file:  # noqa: F405
     POSTGRES_DB = file.read().strip()
-with open(env("POSTGRES_USER_FILE")) as file:
+with open(env("POSTGRES_USER_FILE")) as file:  # noqa: F405
     POSTGRES_USER = file.read().strip()
-with open(env("POSTGRES_PASSWORD_FILE")) as file:
+with open(env("POSTGRES_PASSWORD_FILE")) as file:  # noqa: F405
     POSTGRES_PASSWORD = file.read().strip()
 
 DATABASES = {
@@ -50,8 +50,8 @@ DATABASES = {
         "NAME": POSTGRES_DB,
         "USER": POSTGRES_USER,
         "PASSWORD": POSTGRES_PASSWORD,
-        "HOST": env("POSTGRES_HOST"),
-        "PORT": env("POSTGRES_PORT"),
+        "HOST": env("POSTGRES_HOST"),  # noqa: F405
+        "PORT": env("POSTGRES_PORT"),  # noqa: F405
         "ATOMIC_REQUESTS": True,
     }
 }

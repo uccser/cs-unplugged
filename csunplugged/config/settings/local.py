@@ -17,11 +17,11 @@ from .base import *  # noqa: F403
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": env("POSTGRES_DB"),
-        "USER": env("POSTGRES_USER"),
-        "PASSWORD": env("POSTGRES_PASSWORD"),
-        "HOST": env("POSTGRES_HOST"),
-        "PORT": env("POSTGRES_PORT"),
+        "NAME": env("POSTGRES_DB"),  # noqa: F405
+        "USER": env("POSTGRES_USER"),  # noqa: F405
+        "PASSWORD": env("POSTGRES_PASSWORD"),  # noqa: F405
+        "HOST": env("POSTGRES_HOST"),  # noqa: F405
+        "PORT": env("POSTGRES_PORT"),  # noqa: F405
         "ATOMIC_REQUESTS": True,
     }
 }
