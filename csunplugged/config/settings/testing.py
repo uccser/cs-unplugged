@@ -54,10 +54,6 @@ CACHES = {
 # ----------------------------------------------------------------------------
 TEST_RUNNER = "django.test.runner.DiscoverRunner"
 
-# STATIC FILE CONFIGURATION
-# ------------------------------------------------------------------------------
-STATIC_URL = "https://static.cs-unplugged.localhost/"
-
 # PASSWORD HASHING
 # ----------------------------------------------------------------------------
 # Use fast password hasher so tests run faster
