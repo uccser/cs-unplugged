@@ -163,7 +163,49 @@ jobs:
           path: resource-thumbnails.tar.gz
           retention-days: 3
 
+  create-resources-en:
+    name: Create 'en' resources
+    if: (github.ref == 'refs/heads/develop') || (github.ref == 'refs/heads/server-migration')
+    runs-on: ubuntu-20.04
+    needs: [
+      test-content,
+      test-general,
+      test-resources,
+      test-management,
+      test-style,
+      test-docs
+    ]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
+      - name: Start system
+        run: docker-compose -f docker-compose.local.yml up -d
+
+      - name: Create production static files
+        run: docker-compose -f docker-compose.local.yml run --rm --user="root" node npm run build
+
+      - name: Migrate database
+        run: docker-compose -f docker-compose.local.yml run --rm django python ./manage.py migrate
+
+      - name: Load resources
+        run: docker-compose -f docker-compose.local.yml run --rm django python ./manage.py loadresources
+
+      - name: Make resources
+        run: docker-compose -f docker-compose.local.yml run --rm --user="root" django python ./manage.py makeresources --language en
+
+      - name: Collect staticfiles
+        run: docker-compose -f docker-compose.local.yml run --rm --user="root" django python manage.py collectstatic --no-input
+
+      - name: Archive static files
+        run: tar czf resources-en.tar.gz csunplugged/staticfiles/
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: resources-en
+          path: resources-en.tar.gz
+          retention-days: 3
 
   publish-dev-docker-image:
     name: Create and publish dev image
@@ -172,6 +214,7 @@ jobs:
     needs: [
       create-static-files,
       create-resource-thumbnails,
+      create-resources-en,
     ]
     steps:
       - name: Checkout repository
