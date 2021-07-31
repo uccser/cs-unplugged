@@ -147,14 +147,8 @@ jobs:
       - name: Make resource thumbnails
         run: docker-compose -f docker-compose.local.yml run --rm --user="root" django python ./manage.py makeresourcethumbnails --all-languages
 
-      # - name: Make resources
-      #   run: docker-compose -f docker-compose.local.yml run --rm --user="root" django python ./manage.py makeresources
-
-      - name: Collect staticfiles
-        run: docker-compose -f docker-compose.local.yml run --rm --user="root" django python manage.py collectstatic --no-input
-
       - name: Archive static files
-        run: tar czf resource-thumbnails.tar.gz csunplugged/staticfiles/
+        run: tar czf resource-thumbnails.tar.gz csunplugged/build/img/resources/
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
@@ -194,11 +188,8 @@ jobs:
       - name: Make resources
         run: docker-compose -f docker-compose.local.yml run --rm --user="root" django python ./manage.py makeresources --language en
 
-      - name: Collect staticfiles
-        run: docker-compose -f docker-compose.local.yml run --rm --user="root" django python manage.py collectstatic --no-input
-
       - name: Archive static files
-        run: tar czf resources-en.tar.gz csunplugged/staticfiles/
+        run: tar czf resources-en.tar.gz csunplugged/build/resources/
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
@@ -224,6 +215,9 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           path: artifacts/
+
+      - name: Show file tree
+        run: ls -R -l
 
       - name: Unpack all artifacts
         run: for f in archives/**/*.tar.gz ; do tar -xf "$f" -C csunplugged/staticfiles/ ; done
