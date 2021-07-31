@@ -220,7 +220,7 @@ jobs:
         run: ls -R -l
 
       - name: Unpack all artifacts
-        run: for f in artifacts/**/*.tar.gz ; do tar -xf "$f" -C csunplugged/staticfiles/ ; done
+        run: tar -xf artifacts/**/*.tar.gz
 
       - name: Log in to the Container registry
         uses: docker/login-action@v1.10.0
