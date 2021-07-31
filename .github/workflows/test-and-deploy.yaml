@@ -216,11 +216,11 @@ jobs:
         with:
           path: artifacts/
 
-      - name: Show file tree
-        run: ls -R -l
+      - name: Show file tree of artifacts directory
+        run: ls -R -l artifacts/
 
-      - name: Unpack all artifacts
-        run: tar -xf artifacts/**/*.tar.gz
+      - name: Unpack all artifact
+        run: ls artifacts/**/*.tar.gz |xargs -n1 tar -xf
 
       - name: Log in to the Container registry
         uses: docker/login-action@v1.10.0
