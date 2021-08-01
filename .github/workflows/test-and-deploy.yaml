@@ -219,8 +219,11 @@ jobs:
       - name: Show file tree of artifacts directory
         run: ls -R -l artifacts/
 
-      - name: Unpack all artifact
-        run: ls artifacts/**/*.tar.gz |xargs -n1 tar -xf
+      - name: Unpack all artifacts
+        run: |
+          tar -xf artifacts/static-files/static-files.tar.gz -C csunplugged/staticfiles/
+          tar -xf artifacts/resource-thumbnails/resource-thumbnails.tar.gz -C csunplugged/staticfiles/img/resources/
+          tar -xf artifacts/resources-en/resources-en.tar.gz -C csunplugged/staticfiles/resources/
 
       - name: Log in to the Container registry
         uses: docker/login-action@v1.10.0
