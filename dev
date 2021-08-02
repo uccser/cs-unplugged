@@ -74,6 +74,7 @@ defhelp restart 'Restart container.'
 # Update all content
 cmd_update() {
   cmd_static
+  cmd_collect_static
 
   echo ""
   cmd_migrate
