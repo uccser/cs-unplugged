@@ -232,11 +232,11 @@ jobs:
 
       - name: Unpack all artifacts
         run: |
-          mkdir csunplugged/staticfiles/
+          mkdir -p csunplugged/staticfiles/
           tar -xf artifacts/static-files/static-files.tar.gz -C csunplugged/staticfiles/
-          mkdir csunplugged/staticfiles/img/resources/
+          mkdir -p csunplugged/staticfiles/img/resources/
           tar -xf artifacts/resource-thumbnails/resource-thumbnails.tar.gz -C csunplugged/staticfiles/img/resources/
-          mkdir csunplugged/staticfiles/resources/
+          mkdir -p csunplugged/staticfiles/resources/
           ls artifacts/resources-*/resources.tar.gz | xargs -n1 tar -xf -C csunplugged/staticfiles/resources/
 
       - name: Log in to the Container registry
