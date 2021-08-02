@@ -52,7 +52,7 @@ class GenerateResourceTest(BaseTestWithDB):
         self.assertEqual(HTTPStatus.FOUND, response.status_code)
         self.assertEqual(
             response.url,
-            "/static/resources/grid/en/Grid%20(a4).pdf"
+            "/static/resources/en/grid/Grid%20(a4).pdf"
         )
 
     def test_generate_view_valid_slug_missing_parameter(self):
