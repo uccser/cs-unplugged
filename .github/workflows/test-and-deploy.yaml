@@ -107,7 +107,7 @@ jobs:
         run: docker-compose -f docker-compose.local.yml run --rm --user="root" django python manage.py collectstatic --no-input
 
       - name: Archive static files
-        run: tar czf static-files.tar.gz csunplugged/staticfiles/
+        run: tar czf static-files.tar.gz --directory csunplugged/staticfiles/ .
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
@@ -148,7 +148,7 @@ jobs:
         run: docker-compose -f docker-compose.local.yml run --rm --user="root" django python ./manage.py makeresourcethumbnails --all-languages
 
       - name: Archive static files
-        run: tar czf resource-thumbnails.tar.gz csunplugged/build/img/resources/
+        run: tar czf resource-thumbnails.tar.gz --directory csunplugged/build/img/resources/ .
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
@@ -200,7 +200,7 @@ jobs:
         run: docker-compose -f docker-compose.local.yml run --rm --user="root" django python ./manage.py makeresources --language ${{ matrix.language }}
 
       - name: Archive static files
-        run: tar czf resources.tar.gz csunplugged/build/resources/
+        run: tar czf resources.tar.gz --directory csunplugged/build/resources/ .
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
@@ -233,11 +233,11 @@ jobs:
       - name: Unpack all artifacts
         run: |
           mkdir -p csunplugged/staticfiles
-          tar -xf artifacts/static-files/static-files.tar.gz --directory csunplugged/staticfiles
+          tar -xz --file artifacts/static-files/static-files.tar.gz --directory csunplugged/staticfiles
           mkdir -p csunplugged/staticfiles/img/resources
-          tar -xf artifacts/resource-thumbnails/resource-thumbnails.tar.gz --directory csunplugged/staticfiles/img/resources
+          tar -xz --file artifacts/resource-thumbnails/resource-thumbnails.tar.gz --directory csunplugged/staticfiles/img/resources
           mkdir -p csunplugged/staticfiles/resources
-          ls artifacts/resources-*/resources.tar.gz | xargs -n1 tar -xf --directory csunplugged/staticfiles/resources
+          ls artifacts/resources-*/resources.tar.gz | xargs -n1 tar -xz --directory csunplugged/staticfiles/resources --file
 
       - name: Log in to the Container registry
         uses: docker/login-action@v1.10.0
