@@ -106,8 +106,18 @@ services:
         image: ghcr.io/uccser/local-docs-image:latest
         volumes:
             - ./docs:/docs:z
-        ports:
-            - "7000:7000"
+        networks:
+            - local
+        labels:
+            # General labels
+            - "traefik.enable=true"
+            - "traefik.http.services.docs.loadbalancer.server.port=7000"
+            # HTTPS
+            - "traefik.http.routers.docs.entryPoints=web-secure"
+            - "traefik.http.routers.docs.service=docs"
+            - "traefik.http.routers.docs.rule=Host(`docs.cs-unplugged.localhost`)"
+            - "traefik.http.routers.docs.tls=true"
+
 
 networks:
     local:
