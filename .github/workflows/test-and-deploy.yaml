@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Create Docker network
+        run: docker network create uccser-development-proxy
       - name: Start systems
         run: docker-compose -f docker-compose.local.yml up -d
       - name: Create static files
@@ -97,6 +99,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Create Docker network
+        run: docker network create uccser-development-proxy
+
       - name: Start system
         run: docker-compose -f docker-compose.local.yml up -d
 
@@ -131,6 +136,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+
+      - name: Create Docker network
+        run: docker network create uccser-development-proxy
 
       - name: Start system
         run: docker-compose -f docker-compose.local.yml up -d
@@ -183,6 +191,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+
+      - name: Create Docker network
+        run: docker network create uccser-development-proxy
 
       - name: Start system
         run: docker-compose -f docker-compose.local.yml up -d
