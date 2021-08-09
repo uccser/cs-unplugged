@@ -2,23 +2,23 @@
   <a href="https://www.csunplugged.org/">
     <img src="https://cloud.githubusercontent.com/assets/8001048/25562071/9c90501a-2dcf-11e7-959a-bf15dfee8362.png" alt="CS Unplugged" width="342" height="96">
   </a>
-
-  <p align="center">
-    CS Unplugged is a collection of free teaching material that teaches Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around.
-    <br>
-    <br>
-    <a href="https://www.csunplugged.org/">
-      Production website
-    </a>
-    (<code>master</code> branch)
-    <br>
-    <a href="https://cs-unplugged-dev.appspot.com/">
-      Development website
-    </a>
-    (<code>develop</code> branch)
-    [![Test and deploy](https://github.com/uccser/cs-unplugged/actions/workflows/test-and-deploy.yaml/badge.svg?branch=develop)](https://github.com/uccser/cs-unplugged/actions/workflows/test-and-deploy.yaml)
-  </p>
 </p>
+
+
+<center>
+
+CS Unplugged is a collection of free teaching material that teaches Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around.
+
+</center>
+
+<center>
+
+[Production website](https://www.csunplugged.org/) | [Development website](https://cs-unplugged-dev.csse.canterbury.ac.nz)
+:-: | :-:
+`master` branch | `develop` branch
+[![Test and deploy](https://github.com/uccser/cs-unplugged/actions/workflows/test-and-deploy.yaml/badge.svg?branch=master)](https://github.com/uccser/cs-unplugged/actions/workflows/test-and-deploy.yaml) | [![Test and deploy](https://github.com/uccser/cs-unplugged/actions/workflows/test-and-deploy.yaml/badge.svg?branch=develop)](https://github.com/uccser/cs-unplugged/actions/workflows/test-and-deploy.yaml)
+
+</center>
 
 ## Documentation
 
