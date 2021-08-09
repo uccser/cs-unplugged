@@ -26,7 +26,6 @@ with open(env("DJANGO_SECRET_KEY_FILE")) as file:  # noqa: F405
 
 # URL Configuration
 # ------------------------------------------------------------------------------
-# TODO: Setup for different environments
 if PRODUCTION_ENVIRONMENT:  # noqa: F405
     PREPEND_WWW = True
 else:

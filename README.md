@@ -11,24 +11,19 @@
       Production website
     </a>
     (<code>master</code> branch)
-    <a href="https://travis-ci.org/uccser/cs-unplugged">
-      <img src="https://travis-ci.org/uccser/cs-unplugged.svg?branch=master" alt="Master Build Status" />
-    </a>
     <br>
     <a href="https://cs-unplugged-dev.appspot.com/">
       Development website
     </a>
     (<code>develop</code> branch)
-    <a href="https://travis-ci.org/uccser/cs-unplugged">
-      <img src="https://travis-ci.org/uccser/cs-unplugged.svg?branch=develop" alt="Develop Build Status" />
-    </a>
+    [![Test and deploy](https://github.com/uccser/cs-unplugged/actions/workflows/test-and-deploy.yaml/badge.svg?branch=develop)](https://github.com/uccser/cs-unplugged/actions/workflows/test-and-deploy.yaml)
   </p>
 </p>
 
 ## Documentation
 
 Documentation for this project can be found on
-[ReadTheDocs](http://cs-unplugged.readthedocs.io/en/latest/),
+[ReadTheDocs](https://cs-unplugged.readthedocs.io/),
 and can also
 be built from the documentation source within the `docs/` directory.
 
@@ -36,7 +31,7 @@ be built from the documentation source within the `docs/` directory.
 
 We would love your help to make this resource the best it can be!
 Please read our
-[contribution guide](http://cs-unplugged.readthedocs.io/en/latest/getting_started/contributing_guide.html)
+[contribution guide](https://cs-unplugged.readthedocs.io/getting_started/contributing_guide.html)
 to get started.
 
 ## Licence
