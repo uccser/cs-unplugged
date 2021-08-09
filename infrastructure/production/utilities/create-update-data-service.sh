@@ -15,7 +15,7 @@ docker service create \
     --env=POSTGRES_DB_FILE="/run/secrets/cs-unplugged_postgres_db" \
     --env=POSTGRES_USER_FILE="/run/secrets/cs-unplugged_postgres_user" \
     --env=POSTGRES_PASSWORD_FILE="/run/secrets/cs-unplugged_postgres_password" \
-    --config cs-field-guide_deployment_environment \
+    --config cs-unplugged_deployment_environment \
     --secret cs-unplugged_django_secret_key \
     --secret cs-unplugged_postgres_db \
     --secret cs-unplugged_postgres_user \
