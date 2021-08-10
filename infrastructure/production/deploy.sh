@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Check for environment variables
 checkEnvVariableExists() {
     if [ -z ${!1} ]
@@ -14,7 +16,7 @@ checkEnvVariableExists CS_UNPLUGGED_IMAGE_TAG
 checkEnvVariableExists CS_UNPLUGGED_DOMAIN
 
 # Update Django service
-docker service update --compose-file docker-compose.prod.yml cs-unplugged_django
+docker stack deploy --compose-file docker-compose.prod.yml cs-unplugged_django
 
 # Run updata_data command
 if [ docker service ps cs-unplugged_update-data | grep cs-unplugged_update-data ]
