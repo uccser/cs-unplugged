@@ -16,7 +16,7 @@ checkEnvVariableExists CS_UNPLUGGED_IMAGE_TAG
 checkEnvVariableExists CS_UNPLUGGED_DOMAIN
 
 # Update Django service
-docker stack deploy --compose-file docker-compose.prod.yml cs-unplugged
+docker service update --force cs-unplugged_django
 
 # Run updata_data command
 if docker service ps cs-unplugged_update-data | grep cs-unplugged_update-data
@@ -25,7 +25,6 @@ then
 else
     docker service create \
     --name cs-unplugged_update-data \
-    --detach \
     --mode replicated-job \
     --label traefik.enable=false \
     --network cs-unplugged_backend \
