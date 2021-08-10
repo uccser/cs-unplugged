@@ -16,10 +16,10 @@ checkEnvVariableExists CS_UNPLUGGED_IMAGE_TAG
 checkEnvVariableExists CS_UNPLUGGED_DOMAIN
 
 # Update Django service
-docker stack deploy --compose-file docker-compose.prod.yml cs-unplugged_django
+docker stack deploy --compose-file docker-compose.prod.yml cs-unplugged
 
 # Run updata_data command
-if [ docker service ps cs-unplugged_update-data | grep cs-unplugged_update-data ]
+if docker service ps cs-unplugged_update-data | grep cs-unplugged_update-data
 then
     docker service update --force cs-unplugged_update-data
 else
