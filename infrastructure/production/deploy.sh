@@ -1,6 +1,27 @@
 #!/bin/bash
 
-docker service create \
+# Check for environment variables
+checkEnvVariableExists() {
+    if [ -z ${!1} ]
+    then
+        echo "ERROR: Define $1 environment variable."
+        exit 1
+    else
+        echo "INFO: $1 environment variable found."
+    fi
+}
+checkEnvVariableExists CS_UNPLUGGED_IMAGE_TAG
+checkEnvVariableExists CS_UNPLUGGED_DOMAIN
+
+# Update Django service
+docker service update --compose-file docker-compose.prod.yml cs-unplugged_django
+
+# Run updata_data command
+if [ docker service ps cs-unplugged_update-data | grep cs-unplugged_update-data ]
+then
+    docker service update --force cs-unplugged_update-data
+else
+    docker service create \
     --name cs-unplugged_update-data \
     --detach \
     --mode replicated-job \
@@ -21,4 +42,5 @@ docker service create \
     --secret cs-unplugged_postgres_user \
     --secret cs-unplugged_postgres_password \
     --restart-condition none \
-    ghcr.io/uccser/cs-unplugged:develop python ./manage.py updatedata
+    ghcr.io/uccser/cs-unplugged:${CS_UNPLUGGED_IMAGE_TAG} python ./manage.py updatedata
+fi

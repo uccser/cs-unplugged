@@ -5,6 +5,7 @@ The `urlpatterns` list routes URLs to views. For more information please see:
 """
 
 from django.conf import settings
+from django.http.response import HttpResponse
 from django.urls import include, path
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
@@ -23,6 +24,7 @@ urlpatterns += [
     path('', include('classic.urls')),
     path('en/search/', include('search.urls', namespace='search')),
     path('admin/', admin.site.urls),
+    path('healthcheck/', HttpResponse),
 ]
 
 if settings.DEBUG:  # pragma: no cover

@@ -54,6 +54,8 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     fontconfig \
     # Translations dependencies
     gettext \
+    # Healthcheck tool
+    curl \
     # Cleaning up unused files
     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
     && rm -rf /var/lib/apt/lists/*
@@ -77,5 +79,8 @@ RUN chmod +x /start
 # Copy and install fonts
 COPY ./csunplugged/static/fonts/ /usr/share/fonts/
 RUN fc-cache -fv
+
+HEALTHCHECK --interval=15s --timeout=30s --start-period=5s --retries=3 \
+    CMD curl --fail --silent http://localhost:8000/healthcheck/ || exit 1
 
 ENTRYPOINT ["/entrypoint"]

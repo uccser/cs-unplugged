@@ -9,7 +9,7 @@ x-default-opts:
 
 services:
     django:
-        image: ghcr.io/uccser/cs-unplugged:develop
+        image: ghcr.io/uccser/cs-unplugged:${CS_UNPLUGGED_IMAGE_TAG}
         deploy:
             replicas: 2
             placement:
@@ -21,10 +21,10 @@ services:
             labels:
                 - "traefik.enable=true"
                 - "traefik.docker.network=uccser-dev-public"
-                - "traefik.http.services.django.loadbalancer.server.port=8000"
-                - "traefik.http.routers.django.service=django"
-                - "traefik.http.routers.django.rule=Host(`cs-unplugged-dev.csse.canterbury.ac.nz`)"
-                # - "traefik.http.routers.django.entryPoints=websecure"
+                - "traefik.http.services.cs-unplugged-django.loadbalancer.server.port=8000"
+                - "traefik.http.routers.cs-unplugged-django.service=cs-unplugged-django"
+                - "traefik.http.routers.cs-unplugged-django.rule=Host(`${CS_UNPLUGGED_DOMAIN}`)"
+                - "traefik.http.routers.cs-unplugged-django.entryPoints=web"
         environment:
             POSTGRES_HOST: postgres
             POSTGRES_PORT: "5432"
