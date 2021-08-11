@@ -155,7 +155,6 @@ function vendorJs() {
     return src(paths.vendor_js_source)
         .pipe(errorHandler(catchError))
         .pipe(concat('vendors.js'))
-        .pipe(dest(paths.js_output))
         .pipe(terser())
         .pipe(dest(paths.js_output))
 }
