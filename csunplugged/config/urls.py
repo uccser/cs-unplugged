@@ -5,6 +5,7 @@ The `urlpatterns` list routes URLs to views. For more information please see:
 """
 
 from django.conf import settings
+from django.http.response import HttpResponse
 from django.urls import include, path
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
@@ -16,18 +17,15 @@ urlpatterns = i18n_patterns(
     path('topics/', include('topics.urls', namespace='topics')),
     path('resources/', include('resources.urls', namespace='resources')),
     path('at-home/', include('at_home.urls', namespace='at_home')),
+    path('plugging-it-in/', include('plugging_it_in.urls', namespace='plugging_it_in')),
 )
 
 urlpatterns += [
     path('', include('classic.urls')),
     path('en/search/', include('search.urls', namespace='search')),
     path('admin/', admin.site.urls),
+    path('healthcheck/', HttpResponse),
 ]
-
-if not env("DEPLOYMENT", default=None) == "prod":
-    urlpatterns += i18n_patterns(
-        path('plugging-it-in/', include('plugging_it_in.urls', namespace='plugging_it_in')),
-    )
 
 if settings.DEBUG:  # pragma: no cover
     import debug_toolbar

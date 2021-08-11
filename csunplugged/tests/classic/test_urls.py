@@ -47,7 +47,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/changelog")
         self.assertRedirects(
             response,
-            "http://cs-unplugged.readthedocs.io/en/latest/changelog.html",
+            "https://cs-unplugged.readthedocs.io/changelog.html",
             status_code=301,
             fetch_redirect_response=False
         )

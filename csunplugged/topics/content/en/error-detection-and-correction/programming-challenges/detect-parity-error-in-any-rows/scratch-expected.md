@@ -7,17 +7,17 @@ see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 ask [How many rows would you like to enter?] and wait
 
 ask (join (join (join [Please enter ] (number of rows)) [ cards for row ]) (row number)) and wait
 ```
 
-```scratch:split:random
+```scratch
 set [black cards total v] to [0]
 
 set [row number v] to [1]
@@ -37,13 +37,13 @@ change [row number v] by (1)
 set [black cards total v] to [0]
 ```
 
-```scratch:split:random
+```scratch
 say (join [There is a parity error is row ] (row number)) for (2) secs
 
 say (join (join [Row ] (row number)) [ is OK!]) for (2) secs
 ```
 
-```scratch:split:random
+```scratch
 if <(letter (index) of (row)) = [B]> then
 end
 

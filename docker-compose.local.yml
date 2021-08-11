@@ -1,0 +1,99 @@
+version: "3.8"
+
+services:
+    django:
+        build:
+            context: .
+            dockerfile: ./infrastructure/local/django/Dockerfile
+        image: cs_unplugged_local_django
+        volumes:
+            - ./csunplugged/:/app/:z
+        env_file:
+            - ./infrastructure/local/django/.envs
+            - ./infrastructure/local/postgres/.envs
+        command: /start
+        networks:
+            - uccser-development-proxy
+            - backend
+        labels:
+            # General labels
+            - "traefik.enable=true"
+            - "traefik.docker.network=uccser-development-proxy"
+            - "traefik.http.services.cs-unplugged-django.loadbalancer.server.port=8000"
+            # HTTPS
+            - "traefik.http.routers.cs-unplugged-django.entryPoints=web-secure"
+            - "traefik.http.routers.cs-unplugged-django.service=cs-unplugged-django"
+            - "traefik.http.routers.cs-unplugged-django.rule=Host(`cs-unplugged.localhost`)"
+            - "traefik.http.routers.cs-unplugged-django.tls=true"
+
+    # Node server for creating static files
+    node:
+        build:
+            context: .
+            dockerfile: ./infrastructure/local/node/Dockerfile
+        image: cs_unplugged_local_node
+        volumes:
+            # https://burnedikt.com/dockerized-node-development-and-mounting-node-volumes/#exclude-node_modules-from-the-mount
+            - ./csunplugged/package.json:/app/package.json:z
+            - ./csunplugged/gulpfile.js:/app/gulpfile.js:z
+            - ./csunplugged/static:/app/static:z
+            - ./csunplugged/build:/app/build:z
+        command: npm run dev
+
+    postgres:
+        image: postgres:13.3
+        healthcheck:
+            test: ["CMD-SHELL", "pg_isready -U postgres"]
+            start_period: 10s
+            interval: 10s
+            timeout: 5s
+            retries: 3
+        env_file:
+            - ./infrastructure/local/postgres/.envs
+        networks:
+            - backend
+        volumes:
+            - local-postgres-data:/var/lib/postgresql/data:Z
+            - local-postgres-data-backups:/backups:z
+
+
+    elasticsearch:
+        image: elasticsearch:5
+        restart: always
+        networks:
+            - backend
+        volumes:
+            - local-search-index:/usr/share/elasticsearch/data:Z
+
+    jobe:
+        image: trampgeek/jobeinabox:latest
+        networks:
+            - backend
+
+    docs:
+        image: ghcr.io/uccser/local-docs-image:latest
+        volumes:
+            - ./docs:/docs:z
+        networks:
+            - uccser-development-proxy
+        labels:
+            # General labels
+            - "traefik.enable=true"
+            - "traefik.http.services.cs-unplugged-docs.loadbalancer.server.port=7000"
+            # HTTPS
+            - "traefik.http.routers.cs-unplugged-docs.entryPoints=web-secure"
+            - "traefik.http.routers.cs-unplugged-docs.service=cs-unplugged-docs"
+            - "traefik.http.routers.cs-unplugged-docs.rule=Host(`docs.cs-unplugged.localhost`)"
+            - "traefik.http.routers.cs-unplugged-docs.tls=true"
+
+
+networks:
+    backend:
+        driver: bridge
+    uccser-development-proxy:
+        external: true
+
+volumes:
+    local-postgres-data: {}
+    local-postgres-data-backups: {}
+    local-search-index: {}

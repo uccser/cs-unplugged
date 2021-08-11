@@ -6,11 +6,11 @@ Click on the green flag to see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 set [prime factors v] to []
 
 set [number v] to (answer)
@@ -30,15 +30,15 @@ change [divisor v] by (-1)
 change [index v] by (1)
 ```
 
-```scratch:split:random
+```scratch
 ask [What's the number you want to find prime factors of?] and wait
 ```
 
-```scratch:split:random
+```scratch
 say (prime factors)
 ```
 
-```scratch:split:random
+```scratch
 if <((number) mod (divisor)) = [0]> then
 end
 
@@ -58,7 +58,7 @@ repeat until <<(is prime) = [false]> or <(index) = (number)>>
 end
 ```
 
-```scratch:split:random
+```scratch
 define check_prime (number)
 
 check_prime (divisor) :: custom

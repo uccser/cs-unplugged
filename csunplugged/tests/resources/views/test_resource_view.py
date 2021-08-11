@@ -70,7 +70,7 @@ class ResourceViewTest(BaseTestWithDB):
         self.assertFalse(response.context["debug"])
         self.assertFalse(response.context["grouped_lessons"])
 
-    @override_settings(DJANGO_PRODUCTION=True)
+    @override_settings(DEPLOYED=True)
     def test_resource_view_resource_thumbnail_base_context_production_en(self):
         resource = self.test_data.create_resource(
             "grid",
@@ -85,10 +85,10 @@ class ResourceViewTest(BaseTestWithDB):
         response = self.client.get(url)
         self.assertEqual(
             response.context["resource_thumbnail_base"],
-            "/staticfiles/img/resources/grid/thumbnails/{}/".format(self.language)
+            "/static/img/resources/grid/thumbnails/{}/".format(self.language)
         )
 
-    @override_settings(DJANGO_PRODUCTION=True)
+    @override_settings(DEPLOYED=True)
     def test_resource_view_resource_thumbnail_base_context_production_de(self):
         with translation.override("de"):
             resource = self.test_data.create_resource(
@@ -104,10 +104,10 @@ class ResourceViewTest(BaseTestWithDB):
             response = self.client.get(url)
             self.assertEqual(
                 response.context["resource_thumbnail_base"],
-                "/staticfiles/img/resources/grid/thumbnails/de/"
+                "/static/img/resources/grid/thumbnails/de/"
             )
 
-    @override_settings(DJANGO_PRODUCTION=True)
+    @override_settings(DEPLOYED=True)
     @override_settings(LANGUAGES=MULTIPLE_LANGUAGES_WITH_INCONTEXT)
     def test_resource_view_resource_thumbnail_base_context_production_in_context(self):
         resource = self.test_data.create_resource(
@@ -126,7 +126,7 @@ class ResourceViewTest(BaseTestWithDB):
             print(response.context["resource"])
             self.assertEqual(
                 response.context["resource_thumbnail_base"],
-                "/staticfiles/img/resources/grid/thumbnails/en/"
+                "/static/img/resources/grid/thumbnails/en/"
             )
 
     def test_resource_view_lesson_context(self):

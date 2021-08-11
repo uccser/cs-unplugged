@@ -363,7 +363,7 @@ class LessonViewTest(BaseTestWithDB):
                     "description": "Description 1",
                     "slug": "grid",
                     "name": "Grid",
-                    "thumbnail": "/staticfiles/img/resources/grid/thumbnails/en/grid-paper_size-a4.png",
+                    "thumbnail": "/static/img/resources/grid/thumbnails/en/grid-paper_size-a4.png",
                 }
             ]
         )
@@ -406,13 +406,13 @@ class LessonViewTest(BaseTestWithDB):
                     "description": "Description 2",
                     "slug": "arrows",
                     "name": "Arrows",
-                    "thumbnail": "/staticfiles/img/resources/arrows/thumbnails/en/arrows-paper_size-a4.png",
+                    "thumbnail": "/static/img/resources/arrows/thumbnails/en/arrows-paper_size-a4.png",
                 },
                 {
                     "description": "Description 1",
                     "slug": "grid",
                     "name": "Grid",
-                    "thumbnail": "/staticfiles/img/resources/grid/thumbnails/en/grid-paper_size-a4.png",
+                    "thumbnail": "/static/img/resources/grid/thumbnails/en/grid-paper_size-a4.png",
                 },
             ]
         )

@@ -7,19 +7,19 @@ see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 ask [Enter first 11 digits of the product code:] and wait
 ```
 
-```scratch:split:random
+```scratch
 say (join [The last digit of the product code is: ] (last digit))
 
 say [You must enter a 11 digit number!]
 ```
 
-```scratch:split:random
+```scratch
 repeat (5)
 end
 
@@ -28,7 +28,7 @@ else
 end
 ```
 
-```scratch:split:random
+```scratch
 set [index v] to [1]
 
 set [first 11 digits v] to [0]

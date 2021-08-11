@@ -6,11 +6,11 @@ Click on the green flag to see the expected output of your program.
 
 # Recommended blocks for solution 1
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 go to x: (50) y: (0)
 
 move (50) steps
@@ -27,7 +27,7 @@ move (50) steps
 
 ```
 
-```scratch:split:random
+```scratch
 clear
 
 set pen size to (3)
@@ -41,7 +41,7 @@ change pen color by (50)
 pen up
 ```
 
-```scratch:split:random
+```scratch
 repeat (6)
 end
 
@@ -55,11 +55,11 @@ end
 
 # Recommended blocks for solution 2
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 go to x: (50) y: (0)
 
 point in direction (0 v)
@@ -73,7 +73,7 @@ turn ccw ((360) / (3)) degrees
 move (50) steps
 ```
 
-```scratch:split:random
+```scratch
 clear
 
 set pen size to (3)
@@ -85,7 +85,7 @@ pen up
 pen down
 ```
 
-```scratch:split:random
+```scratch
 repeat (6)
 end
 
@@ -93,7 +93,7 @@ repeat (3)
 end
 ```
 
-```scratch:split:random
+```scratch
 define triangle
 
 triangle :: custom
@@ -105,11 +105,11 @@ triangle :: custom
 
 # Recommended blocks for solution 3
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 go to x: (0) y: (0)
 
 move (150) steps
@@ -127,7 +127,7 @@ go to x: (75) y: (-45)
 turn ccw (120) degrees
 ```
 
-```scratch:split:random
+```scratch
 clear
 
 set pen size to (3)
@@ -145,7 +145,7 @@ pen down
 pen up
 ```
 
-```scratch:split:random
+```scratch
 repeat (3)
 end
 

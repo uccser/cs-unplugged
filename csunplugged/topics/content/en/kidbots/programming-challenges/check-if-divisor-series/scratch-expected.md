@@ -6,29 +6,29 @@ Click on the green flag to see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 set [number1 v] to (answer)
 
 set [number2 v] to (answer)
 ```
 
-```scratch:split:random
+```scratch
 ask [Enter a number:] and wait
 
 ask (join [Enter a number to check if it's a divisor of the number ] (number1)) and wait
 ```
 
-```scratch:split:random
+```scratch
 say (join (join (number2) [ is a divisor of the number ]) (number1)) for (3) secs
 
 say (join (join (number2) [ is not a divisor of the number ]) (number1)) for (3) secs
 ```
 
-```scratch:split:random
+```scratch
 forever
 end
 

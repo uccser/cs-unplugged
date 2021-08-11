@@ -10,7 +10,7 @@ Click on the green flag to see the expected output of your program.
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 set [number of dots v] to [1]
 
 set [number of dots v] to [2]
@@ -22,7 +22,7 @@ set [number of dots v] to [8]
 set [number of dots v] to [16]
 ```
 
-```scratch:split:random
+```scratch
 say (number of dots) for (1) secs
 
 say (number of dots) for (1) secs

@@ -7,7 +7,7 @@ see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 ask [Enter a number:] and wait
@@ -15,7 +15,7 @@ ask [Enter a number:] and wait
 change [number v] by (-2)
 ```
 
-```scratch:split:random
+```scratch
 if <(number) < [0]> then
 end
 
@@ -29,13 +29,13 @@ if <(number) = [1]> then
 end
 ```
 
-```scratch:split:random
+```scratch
 say [You entered an odd number!]
 
 say [You entered an even number!]
 ```
 
-```scratch:split:random
+```scratch
 set [number v] to [0]
 
 set [number v] to (answer)

@@ -6,11 +6,11 @@ Click on the green flag to see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 clear
 
 pen down
@@ -18,11 +18,11 @@ pen down
 pen up
 ```
 
-```scratch:split:random
+```scratch
 set [sides v] to (answer)
 ```
 
-```scratch:split:random
+```scratch
 go to x: (0) y: (0)
 
 move (50) steps
@@ -30,15 +30,15 @@ move (50) steps
 turn cw ((360) / (sides)) degrees
 ```
 
-```scratch:split:random
+```scratch
 say [I'll draw a polygon with the number of sides you give me.] for (3) secs
 ```
 
-```scratch:split:random
+```scratch
 ask [Enter the number of sides:] and wait
 ```
 
-```scratch:split:random
+```scratch
 repeat (sides)
 end
 ```
