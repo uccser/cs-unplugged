@@ -37,7 +37,7 @@ cssselect==1.1.0
 
 # I18n
 django-modeltranslation==0.16.1
-uniseg==0.7.1
+uniseg==0.7.1.post2
 python-bidi==0.4.2
 django-bidi-utils==1.0
 
