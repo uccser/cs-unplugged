@@ -38,6 +38,11 @@
             <div class="alert alert-danger my-3" role="alert">
               {% trans "Scratch challenges have not been updated to our new plugging it in system. However, you can still access the old content using the links below." %}
             </div>
+          {% elif language.slug == "block-based" %}
+            <div class="alert alert-info my-3" role="alert">
+              {% trans "The following challenges uses Blockly, which have been adapted to look like Scratch." %}
+              {% trans "If you're a Scratch programmer, click here to find out what the differences are. If you would like it to be purely in Scratch, click here, however this does not have an interactive editor for you to create your programs." %}
+            </div>
           {% endif %}
           {% include "plugging_it_in/programming-challenges-table.html" with language=language.name %}
         </div>

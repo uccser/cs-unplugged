@@ -29,7 +29,11 @@
                 <br>
               {% endif %}
               {% if language == "Python" %}
-                <a href="{% url 'plugging_it_in:programming_challenge' topic.slug lesson.slug programming_challenge.slug %}">
+                <a href="{% url 'plugging_it_in:programming_challenge' topic.slug lesson.slug programming_challenge.slug 'python' %}">
+                  <strong>{{ programming_challenge.name }}</strong>
+                </a>
+              {% elif language == "Block-based" %}
+                <a href="{% url 'plugging_it_in:programming_challenge' topic.slug lesson.slug programming_challenge.slug 'block-based' %}">
                   <strong>{{ programming_challenge.name }}</strong>
                 </a>
               {% else %}
