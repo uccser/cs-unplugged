@@ -56,6 +56,7 @@ function pathsConfig(appName) {
             `${vendorsRoot}/bootstrap/dist/js/bootstrap.js`,
             `${vendorsRoot}/details-element-polyfill/dist/details-element-polyfill.js`,
             `${vendorsRoot}/scratchblocks/build/scratchblocks.min.js`,
+            `${vendorsRoot}/multiple-select/dist/multiple-select-es.js`,
         ],
         // Output files
         css_output: `${staticOutputRoot}/css`,

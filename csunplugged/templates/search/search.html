@@ -143,7 +143,6 @@
 {% endblock body_container %}
 
 {% block scripts %}
-  <script type="text/javascript" src="{% static 'js/multiple-select.js' %}"></script>
   <script type="text/javascript">
     var areaData = {
       {% for area in curriculum_areas %}
@@ -166,6 +165,5 @@
 {% endblock scripts %}
 
 {% block css %}
-  <link href="{% static 'css/multiple-select.css' %}" type="text/css" media="screen" rel="stylesheet" />
   <link href="{% static 'css/search.css' %}" type="text/css" media="screen" rel="stylesheet" />
 {% endblock css %}
