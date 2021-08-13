@@ -2,6 +2,7 @@
 
 const codeTester = require("./test-code.js");
 const editorUtils = require("./editor-options-menu.js")
+const utils = require("./utils.js")
 
 // Python editor imports
 var CodeMirror = require("codemirror");
@@ -72,6 +73,16 @@ if (programming_lang == "python") {
     };
     /* Injects the blockly workspace */
     workspace = Blockly.inject('blocklyDiv', options);
+
+    // Displays the user's previous submission 
+    if (previous_submission) {
+      // Decodes the previous_submission which contains HTML entities. Outputs a string, and it converts it to XML
+      console.log("PREVIOUS SUBMISSIONS")
+      console.log(previous_submission)
+      const xml_node = Blockly.Xml.textToDom(utils.decodeHTMLEntities(previous_submission))
+
+      Blockly.Xml.domToWorkspace(xml_node, workspace);
+    }
   })
 }
 
@@ -102,7 +113,7 @@ function sendCodeToJobe() {
     updateResultsTable(result);
 
     // Saving the users code
-    save_code(allCorrect(result) ? "passed" : "failed")
+    console.log(save_code(allCorrect(result) ? "passed" : "failed"))
 
     $("#editor_run_button").prop("disabled", false);
     $(".code_running_spinner").css("display", "none");
@@ -132,7 +143,8 @@ async function save_code(status="started") {
   if (programming_lang == "python") {
      raw_code = myCodeMirror.getValue();
   } else {
-    raw_code = Blockly.Xml.workspaceToDom(Blockly.getMainWorkspace());
+    xml_code = Blockly.Xml.workspaceToDom(Blockly.getMainWorkspace());
+    raw_code = Blockly.Xml.domToText(xml_code);
   }
   console.log("RAW CODE")
   console.log(raw_code)
@@ -140,7 +152,8 @@ async function save_code(status="started") {
   let data = {
       "challenge": current_challenge_slug,
       "attempt": raw_code,
-      "status": status
+      "status": status,
+      "programming_language": programming_lang
   }
 
   // Saves the code in the django session

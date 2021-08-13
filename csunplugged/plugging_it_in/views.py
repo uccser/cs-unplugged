@@ -204,13 +204,15 @@ class SaveAttemptView(View):
         request.session['saved_attempts'] = request.session.get('saved_attempts', {})
 
         # To stop a "passed" or "failed" status being overridden by "started"
+        # Saves the python attempt and blockly attempt in different places for the same question.
         if (not (body["status"] == "started"
                  and request.session.get('saved_attempts', {}).get(body["challenge"], {}).get("status", "")
                  in {'passed', 'failed'})
                 and body["attempt"] != ""):
-            request.session['saved_attempts'][body["challenge"]] = {
+            request.session['saved_attempts'][body["challenge"]][body["programming_language"]] = {
                 "status": body["status"],
-                "code": body["attempt"]
+                "code": body["attempt"],
+                "programming_language": body["programming_language"]
             }
             return HttpResponse("Saved the attempt.")
         else:
