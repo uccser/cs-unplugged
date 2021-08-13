@@ -160,6 +160,13 @@
         {% endfor %}
       {% endfor %}
     };
+    var areaGroupMapping = {
+      {% for area in curriculum_areas %}
+        {% if area.children %}
+            "{{ area.name }}": {{ area.pk }},
+        {% endif %}
+      {% endfor %}
+    };
   </script>
   <script type="text/javascript" src="{% static 'js/website-search.js' %}"></script>
 {% endblock scripts %}
