@@ -42,7 +42,7 @@
     <p class='challenges-heading'>{% trans "Challenges" %}</p>
     <ol class='challenges-list'>
       {% for programming_challenge_item in programming_challenges %}
-      <a href="{% url 'plugging_it_in:programming_challenge' topic.slug lesson.slug programming_challenge_item.slug %}">
+      <a href="{% url 'plugging_it_in:programming_challenge' topic.slug lesson.slug programming_challenge_item.slug programming_lang %}">
         <li class="{% if programming_challenge.slug == programming_challenge_item.slug %}current-exercise{% endif %} row">
           <div class='row'>
             <div class='nav-row-info col-10 d-flex'>
@@ -97,9 +97,10 @@
 
         {% render_html_field programming_challenge.content %}
 
-        {% comment %} Challenge Hints {% endcomment %}
-        {% for implementation in implementations %}
-          {% if implementation.language.name == "Python" and implementation.hints %}
+        {% for implementation in implementations %}  
+          {% comment %} Displays the hints/programming reminders or recommended blocks accordingly to what programming_lang is (e.g., python or block-based) {% endcomment %}
+          {% comment %} Challenge Hints {% endcomment %}
+          {% if implementation.language.name == programming_lang|capfirst and implementation.hints %}
             <details>
               <summary>
                 <strong>
@@ -114,7 +115,7 @@
           {% endif %}
 
           {% comment %} Programming syntax reminders {% endcomment %}
-          {% if implementation.language.name == "Python" and implementation.language.programming_reminders %}
+          {% if implementation.language.name == programming_lang|capfirst and implementation.language.programming_reminders %}
             <details>
               <summary>
                 <strong>{% trans "Programming Reminders" %}</strong>
@@ -122,32 +123,387 @@
               <div class="boxed-text-content">
                 {% render_html_field implementation.language.programming_reminders %}
               </div>
-            </details>
+            </details>          
+          {% endif %}
+
+          {% comment %} Recommended blocks {% endcomment %}
+          {% if implementation.language.name != 'Python' and implementation.language.name == programming_lang|capfirst and implementation.expected_result %}
+            <details>
+              <summary>
+                <strong>{% trans "Recommended Blocks" %}</strong>
+              </summary>
+              <div class="boxed-text-content">
+                {% render_html_field implementation.expected_result %}
+              </div>
+            </details>  
           {% endif %}
         {% endfor %}
       </div>
     </div>
-    <div class="col-12 col-md-4 programming__editor">
-      <p class='pii-block-heading'>{% trans "Enter your code in the editor below" %}</p>
-      <textarea id="codemirror_editor">{{ previous_submission|safe }}</textarea>
-      <div class="programming__submit d-flex justify-content-between align-items-center">
-        <div class="programming__submit_options d-flex justify-content-start">
-          <button class="editor_button" id="editor_run_button" >{% trans "Check" %}</button>
-          <button class="editor_button" id="download_button" >{% trans "Download" %}</button>
-        </div>
-        <div class="code_running_spinner spinner-grow" role="status">
-          <span class="sr-only"></span>
-        </div>
-      </div>
-    </div>
 
-    <div class="col-12 col-md-4 programming__results">
-      <p class="pii-block-heading d-inline">{% trans "Your results will be displayed here" %}</p>
-      {% include "plugging_it_in/results-table.html" %}
-      <div id="walkthrough-btn-container" class="row">
-        <button id="introjs-walkthrough" class="btn btn-outline-secondary btn-sm col-6 offset-6 my-2">{% trans "How does this page work?" %}</button>
+    {% comment %} Display the Python editor or the Blockly editor {% endcomment %}
+    {% if programming_lang == 'python' %}
+      <div class="col-12 col-md-4 programming__editor">
+        <p class='pii-block-heading'>{% trans "Enter your code in the editor below" %}</p>
+        <textarea id="codemirror_editor">{{ previous_submission|safe }}</textarea>
+        <div class="programming__submit d-flex justify-content-between align-items-center">
+          <div class="programming__submit_options d-flex justify-content-start">
+            <button class="editor_button" id="editor_check_button" >{% trans "Check" %}</button>
+            <button class="editor_button" id="download_button" >{% trans "Download" %}</button>
+          </div>
+          <div class="code_running_spinner spinner-grow" role="status">
+            <span class="sr-only"></span>
+          </div>
+        </div>
       </div>
-    </div>
+
+      <div class="col-12 col-md-4 programming__results">
+        <p class="pii-block-heading d-inline">{% trans "Your results will be displayed here" %}</p>
+        {% include "plugging_it_in/results-table.html" %}
+        <div id="walkthrough-btn-container" class="row">
+          <button id="introjs-walkthrough" class="btn btn-outline-secondary btn-sm col-6 offset-6 my-2">{% trans "How does this page work?" %}</button>
+        </div>
+      </div>
+
+    {% else %}  
+      <div class="col-12 col-md-5 programming__editor">
+        <p class='pii-block-heading'>{% trans "Create your program in the editor below" %}</p>
+        <div id="blocklyDiv" style="height: 100%; "></div>
+        <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+          <category name="Control" colour="#a5745b">
+            <block type="controls_if"></block>
+            <block type="logic_compare">
+              <field name="OP">EQ</field>
+            </block>
+            <block type="logic_operation">
+              <field name="OP">AND</field>
+            </block>
+            <block type="logic_negate"></block>
+            <block type="logic_boolean">
+              <field name="BOOL">TRUE</field>
+            </block>
+            <block type="logic_null"></block>
+            <block type="logic_ternary"></block>
+            <block type="controls_repeat_ext">
+              <value name="TIMES">
+                <shadow type="math_number">
+                  <field name="NUM">10</field>
+                </shadow>
+              </value>
+            </block>
+            <block type="controls_whileUntil">
+              <field name="MODE">WHILE</field>
+            </block>
+            <block type="controls_for">
+              <field name="VAR" id="syHPajql$jowW`$n$n=|">i</field>
+              <value name="FROM">
+                <shadow type="math_number">
+                  <field name="NUM">1</field>
+                </shadow>
+              </value>
+              <value name="TO">
+                <shadow type="math_number">
+                  <field name="NUM">10</field>
+                </shadow>
+              </value>
+              <value name="BY">
+                <shadow type="math_number">
+                  <field name="NUM">1</field>
+                </shadow>
+              </value>
+            </block>
+            <block type="controls_forEach">
+              <field name="VAR" id="io+yhc[K+dO04I0!FEx;">j</field>
+            </block>
+            <block type="controls_flow_statements" disabled="true">
+              <field name="FLOW">BREAK</field>
+            </block>
+          </category>
+          <category name="Math" colour="#5b67a5">
+            <block type="math_number">
+              <field name="NUM">0</field>
+            </block>
+            <block type="math_arithmetic">
+              <field name="OP">ADD</field>
+              <value name="A">
+                <shadow type="math_number">
+                  <field name="NUM">1</field>
+                </shadow>
+              </value>
+              <value name="B">
+                <shadow type="math_number">
+                  <field name="NUM">1</field>
+                </shadow>
+              </value>
+            </block>
+            <block type="math_single">
+              <field name="OP">ROOT</field>
+              <value name="NUM">
+                <shadow type="math_number">
+                  <field name="NUM">9</field>
+                </shadow>
+              </value>
+            </block>
+            <block type="math_trig">
+              <field name="OP">SIN</field>
+              <value name="NUM">
+                <shadow type="math_number">
+                  <field name="NUM">45</field>
+                </shadow>
+              </value>
+            </block>
+            <block type="math_constant">
+              <field name="CONSTANT">PI</field>
+            </block>
+            <block type="math_number_property">
+              <mutation divisor_input="false"></mutation>
+              <field name="PROPERTY">EVEN</field>
+              <value name="NUMBER_TO_CHECK">
+                <shadow type="math_number">
+                  <field name="NUM">0</field>
+                </shadow>
+              </value>
+            </block>
+            <block type="math_round">
+              <field name="OP">ROUND</field>
+              <value name="NUM">
+                <shadow type="math_number">
+                  <field name="NUM">3.1</field>
+                </shadow>
+              </value>
+            </block>
+            <block type="math_on_list">
+              <mutation op="SUM"></mutation>
+              <field name="OP">SUM</field>
+            </block>
+            <block type="math_modulo">
+              <value name="DIVIDEND">
+                <shadow type="math_number">
+                  <field name="NUM">64</field>
+                </shadow>
+              </value>
+              <value name="DIVISOR">
+                <shadow type="math_number">
+                  <field name="NUM">10</field>
+                </shadow>
+              </value>
+            </block>
+            <block type="math_constrain">
+              <value name="VALUE">
+                <shadow type="math_number">
+                  <field name="NUM">50</field>
+                </shadow>
+              </value>
+              <value name="LOW">
+                <shadow type="math_number">
+                  <field name="NUM">1</field>
+                </shadow>
+              </value>
+              <value name="HIGH">
+                <shadow type="math_number">
+                  <field name="NUM">100</field>
+                </shadow>
+              </value>
+            </block>
+            <block type="math_random_int">
+              <value name="FROM">
+                <shadow type="math_number">
+                  <field name="NUM">1</field>
+                </shadow>
+              </value>
+              <value name="TO">
+                <shadow type="math_number">
+                  <field name="NUM">100</field>
+                </shadow>
+              </value>
+            </block>
+            <block type="math_random_float"></block>
+          </category>
+          <category name="Text" colour="#5ba58c">
+            <block type="text">
+              <field name="TEXT"></field>
+            </block>
+            <block type="text_join">
+              <mutation items="2"></mutation>
+            </block>
+            <block type="text_append">
+              <field name="VAR" id=":L5gSy]ul/r[,B_5!/t8">item</field>
+              <value name="TEXT">
+                <shadow type="text">
+                  <field name="TEXT"></field>
+                </shadow>
+              </value>
+            </block>
+            <block type="text_length">
+              <value name="VALUE">
+                <shadow type="text">
+                  <field name="TEXT">abc</field>
+                </shadow>
+              </value>
+            </block>
+            <block type="text_isEmpty">
+              <value name="VALUE">
+                <shadow type="text">
+                  <field name="TEXT"></field>
+                </shadow>
+              </value>
+            </block>
+            <block type="text_indexOf">
+              <field name="END">FIRST</field>
+              <value name="VALUE">
+                <block type="variables_get">
+                  <field name="VAR" id="x,Zl7o=OyFqu`9w_v7A+">text</field>
+                </block>
+              </value>
+              <value name="FIND">
+                <shadow type="text">
+                  <field name="TEXT">abc</field>
+                </shadow>
+              </value>
+            </block>
+            <block type="text_charAt">
+              <mutation at="true"></mutation>
+              <field name="WHERE">FROM_START</field>
+              <value name="VALUE">
+                <block type="variables_get">
+                  <field name="VAR" id="x,Zl7o=OyFqu`9w_v7A+">text</field>
+                </block>
+              </value>
+            </block>
+            <block type="text_getSubstring">
+              <mutation at1="true" at2="true"></mutation>
+              <field name="WHERE1">FROM_START</field>
+              <field name="WHERE2">FROM_START</field>
+              <value name="STRING">
+                <block type="variables_get">
+                  <field name="VAR" id="x,Zl7o=OyFqu`9w_v7A+">text</field>
+                </block>
+              </value>
+            </block>
+            <block type="text_changeCase">
+              <field name="CASE">UPPERCASE</field>
+              <value name="TEXT">
+                <shadow type="text">
+                  <field name="TEXT">abc</field>
+                </shadow>
+              </value>
+            </block>
+            <block type="text_trim">
+              <field name="MODE">BOTH</field>
+              <value name="TEXT">
+                <shadow type="text">
+                  <field name="TEXT">abc</field>
+                </shadow>
+              </value>
+            </block>
+            <block type="text_print">
+              <value name="TEXT">
+                <shadow type="text">
+                  <field name="TEXT">abc</field>
+                </shadow>
+              </value>
+            </block>
+            <block type="text_prompt_ext">
+              <mutation type="TEXT"></mutation>
+              <field name="TYPE">TEXT</field>
+              <value name="TEXT">
+                <shadow type="text">
+                  <field name="TEXT">abc</field>
+                </shadow>
+              </value>
+            </block>
+          </category>
+          <category name="Lists" colour="#745ba5">
+            <block type="lists_create_with">
+              <mutation items="0"></mutation>
+            </block>
+            <block type="lists_create_with">
+              <mutation items="3"></mutation>
+            </block>
+            <block type="lists_repeat">
+              <value name="NUM">
+                <shadow type="math_number">
+                  <field name="NUM">5</field>
+                </shadow>
+              </value>
+            </block>
+            <block type="lists_length"></block>
+            <block type="lists_isEmpty"></block>
+            <block type="lists_indexOf">
+              <field name="END">FIRST</field>
+              <value name="VALUE">
+                <block type="variables_get">
+                  <field name="VAR" id="l?1Ne_YoM!bxpl#M5CKY">list</field>
+                </block>
+              </value>
+            </block>
+            <block type="lists_getIndex">
+              <mutation statement="false" at="true"></mutation>
+              <field name="MODE">GET</field>
+              <field name="WHERE">FROM_START</field>
+              <value name="VALUE">
+                <block type="variables_get">
+                  <field name="VAR" id="l?1Ne_YoM!bxpl#M5CKY">list</field>
+                </block>
+              </value>
+            </block>
+            <block type="lists_setIndex">
+              <mutation at="true"></mutation>
+              <field name="MODE">SET</field>
+              <field name="WHERE">FROM_START</field>
+              <value name="LIST">
+                <block type="variables_get">
+                  <field name="VAR" id="l?1Ne_YoM!bxpl#M5CKY">list</field>
+                </block>
+              </value>
+            </block>
+            <block type="lists_getSublist">
+              <mutation at1="true" at2="true"></mutation>
+              <field name="WHERE1">FROM_START</field>
+              <field name="WHERE2">FROM_START</field>
+              <value name="LIST">
+                <block type="variables_get">
+                  <field name="VAR" id="l?1Ne_YoM!bxpl#M5CKY">list</field>
+                </block>
+              </value>
+            </block>
+            <block type="lists_split">
+              <mutation mode="SPLIT"></mutation>
+              <field name="MODE">SPLIT</field>
+              <value name="DELIM">
+                <shadow type="text">
+                  <field name="TEXT">,</field>
+                </shadow>
+              </value>
+            </block>
+            <block type="lists_sort">
+              <field name="TYPE">NUMERIC</field>
+              <field name="DIRECTION">1</field>
+            </block>
+          </category>
+          <sep></sep>
+          <category name="Variables" colour="#a55b80" custom="VARIABLE"></category>
+        </xml>
+        <div class="programming__submit d-flex justify-content-between align-items-center">
+          <div class="programming__submit_options d-flex justify-content-start">
+            <button class="editor_button" id="blockly_editor_run_program_button" >{% trans "Run" %}</button>
+            <button class="editor_button" id="editor_check_button" >{% trans "Check" %}</button>
+            <button class="editor_button" id="download_button" >{% trans "Download" %}</button>
+          </div>
+          <div class="code_running_spinner spinner-grow" role="status">
+            <span class="sr-only"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-3 programming__results">
+        <p class="pii-block-heading d-inline">{% trans "Your results will be displayed here" %}</p>
+        {% include "plugging_it_in/results-table.html" %}
+        <div id="walkthrough-btn-container" class="row">
+          <button id="introjs-walkthrough" class="btn btn-outline-secondary btn-sm col-6 offset-6 my-2">{% trans "How does this page work?" %}</button>
+        </div>
+      </div>
+    {% endif %}
   {% else %}
     <div class="col-md-6 offset-md-3 justify-content-center mt-3">
       {% with model=programming_challenge parent=topic homepage='plugging_it_in:index' %}
@@ -188,6 +544,7 @@
     let csrf_token = '{{ csrf_token }}';
     let jobe_proxy_url = '{{ jobe_proxy_url }}';
     let save_attempt_url = "{% url 'plugging_it_in:save_attempt' %}"
+    let programming_lang = "{{ programming_lang }}"
   </script>
 
   <script src="{% static 'js/jobe-editor.js' %}"></script>

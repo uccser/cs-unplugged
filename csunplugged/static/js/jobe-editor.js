@@ -3,39 +3,96 @@
 const codeTester = require("./test-code.js");
 const editorUtils = require("./editor-options-menu.js")
 
+// Python editor imports
 var CodeMirror = require("codemirror");
 require("codemirror/mode/python/python.js");
 
-// Set up code mirror editor
-let myTextarea = document.getElementById("codemirror_editor");
-let myCodeMirror = CodeMirror.fromTextArea(myTextarea, {
-  mode: {
-    name: "python",
-    version: 3,
-    singleLineStringErrors: false
-  },
-  lineNumbers: true,
-  textWrapping: false,
-  styleActiveLine: true,
-  autofocus: true,
-  indentUnit: 4,
-  viewportMargin: Infinity,
-  // Replace tabs with 4 spaces. Taken from https://stackoverflow.com/questions/15183494/codemirror-tabs-to-spaces
-  extraKeys: {
-    Tab: function(cm) {
-      cm.replaceSelection("    ", "end");
+// Blockly editor imports
+const Blockly = require('blockly/core');
+require('blockly/blocks');
+require('blockly/python');
+require('blockly/javascript');
+const En = require('blockly/msg/en');
+Blockly.setLocale(En);
+
+// Has to be global as other functions are using these variables
+let myCodeMirror; 
+let workspace;
+// Set up code mirror or blockly editor depending what programming_lang is from URL (/python or /block-based)
+if (programming_lang == "python") {
+  let myTextarea = document.getElementById("codemirror_editor");
+  myCodeMirror = CodeMirror.fromTextArea(myTextarea, {
+    mode: {
+      name: "python",
+      version: 3,
+      singleLineStringErrors: false
+    },
+    lineNumbers: true,
+    textWrapping: false,
+    styleActiveLine: true,
+    autofocus: true,
+    indentUnit: 4,
+    viewportMargin: Infinity,
+    // Replace tabs with 4 spaces. Taken from https://stackoverflow.com/questions/15183494/codemirror-tabs-to-spaces
+    extraKeys: {
+      Tab: function(cm) {
+        cm.replaceSelection("    ", "end");
+      }
     }
-  }
-});
+  });
+
+} else {
+  // Set up blockly editor
+  document.addEventListener("DOMContentLoaded", function () {
+    const toolbox = document.getElementById('toolbox');
+    /* Workspace configurations */
+    const options = {
+      toolbox : toolbox,
+      collapse : true,
+      comments : true,
+      disable : true,
+      maxBlocks : Infinity,
+      trashcan : true,
+      horizontalLayout : false,
+      toolboxPosition : 'start',
+      css : true,
+      media : 'https://blockly-demo.appspot.com/static/media/',
+      rtl : false,
+      scrollbars : true,
+      sounds : true,
+      oneBasedIndex : true,
+      zoom : {
+        controls : true,
+        wheel : true,
+        startScale : 1,
+        maxScale : 3,
+        minScale : 0.3,
+        scaleSpeed : 1.2
+      }
+    };
+    /* Injects the blockly workspace */
+    workspace = Blockly.inject('blocklyDiv', options);
+  })
+}
 
 /**
  * Retrieves code from the code mirror editor, runs all the test cases then updates the results table.
  * Disables the "CHECK" button and shows a loading spinner while request is being processed.
  */
 function sendCodeToJobe() {
-  // Replaces all user input parameters to be blank so it matches the expected output
-  // Takes into consideration cases input("thing)"), input('thing)'), input(thing) and int(input(thing))
-  let code = myCodeMirror.getValue().replace(/(input\("[^"]+"\)|input\('[^']+'\)|input\([^)]+\))/mg, 'input()');
+  let code = '';
+   if (programming_lang == 'python') {
+       // Replaces all user input parameters to be blank so it matches the expected output
+       // Takes into consideration cases input("thing)"), input('thing)'), input(thing) and int(input(thing))
+     code = myCodeMirror.getValue().replace(/(input\("[^"]+"\)|input\('[^']+'\)|input\([^)]+\))/mg, 'input()');
+   } else {
+       // converts Blockly-code to Python
+     const lang = 'Python';
+     code = Blockly[lang].workspaceToCode(workspace);
+   }
+
+   console.log("SEND CODE TO JOBE")
+   console.log(code)
 
   $("#editor_run_button").prop("disabled", true);
   $(".code_running_spinner").css("display", "inline-block");
@@ -71,8 +128,14 @@ function allCorrect(results) {
  * @param {String} status If the user has Started, Passed or Failed the challenge.
  */
 async function save_code(status="started") {
-  let raw_code = myCodeMirror.getValue();
-
+  let raw_code;
+  if (programming_lang == "python") {
+     raw_code = myCodeMirror.getValue();
+  } else {
+    raw_code = Blockly.Xml.workspaceToDom(Blockly.getMainWorkspace());
+  }
+  console.log("RAW CODE")
+  console.log(raw_code)
   // Sets the saved attempt
   let data = {
       "challenge": current_challenge_slug,
@@ -100,6 +163,7 @@ async function save_code(status="started") {
  */
 function updateResultsTable(results) {
   for (result of results) {
+    console.log(result)
     // Update status cell
     $(`#test-case-${result.id}-status`).text(result.status);
 
@@ -153,14 +217,42 @@ function download(filename, text) {
  * Downloads the editor code to a file called <current_challenge_slug>.py.
  */
 function downloadCode() {
-  download(current_challenge_slug + ".py", myCodeMirror.getValue());
-}
+  let code;
+  if (programming_lang == "python") {
+    code = myCodeMirror.getValue()
+  } else {
+    const lang = 'Python'
+    code = Blockly[lang].workspaceToCode(workspace);
+  }
+  download(current_challenge_slug + ".py", code);
+ }
+
+/**
+ * Retrieves the code from the blockly editor, converts it to JavaScript, runs the code.
+ */
+function runCode() { 
+    // Convert blockly code to JavaScript
+    const lang = 'JavaScript'
+    const code = Blockly[lang].workspaceToCode(workspace);
+ 
+    console.log(code);
+ 
+    // Run JavaScript code
+    try {
+      eval(code);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
 // Setting up event listener for the check button to run the code.
-$("#editor_run_button").click(sendCodeToJobe);
+$("#editor_check_button").click(sendCodeToJobe);
 
 // Setting up event listener for the download button.
 $("#download_button").click(downloadCode);
+
+// Setting up event listener for the run button to run the code
+$("#blockly_editor_run_program_button").click(runCode);
 
 // Apply the navigation setup
 editorUtils.setupLessonNav()

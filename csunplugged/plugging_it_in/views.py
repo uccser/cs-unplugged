@@ -134,10 +134,19 @@ class ProgrammingChallengeView(generic.DetailView):
         context["topic"] = self.object.topic
 
         try:
+            programming_lang_slug = self.kwargs.get("programming_lang_slug", None)
+            context["programming_lang"] = programming_lang_slug.lower() # make sure the /python or /block-based is lower case, because this will get checked in the programming.
+
             lesson_slug = self.kwargs.get("lesson_slug", None)
             lesson = Lesson.objects.get(slug=lesson_slug)
             context["lesson"] = lesson
-            challlenges = lesson.retrieve_related_programming_challenges("Python")
+            
+            # Get Python challenges if programming_lang_slug == 'python' else get Block-based challanges
+            if (programming_lang_slug == "python"):
+                challlenges = lesson.retrieve_related_programming_challenges("Python")
+            else:
+                challlenges = lesson.retrieve_related_programming_challenges("Block-based")
+
             context["programming_challenges"] = challlenges
             context["programming_exercises_json"] = json.dumps(list(challlenges.values()))
         except ObjectDoesNotExist:
