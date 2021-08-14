@@ -160,7 +160,8 @@ class ProgrammingChallengeView(generic.DetailView):
         context["jobe_proxy_url"] = reverse('plugging_it_in:jobe_proxy')
         context["saved_attempts"] = self.request.session.get('saved_attempts', {})
         try:
-            context["previous_submission"] = context["saved_attempts"][self.object.slug]['code']
+            # Retrieves either the python or blockly code for a specific question, depending what the value of context["programming_lang"] is
+            context["previous_submission"] = context["saved_attempts"][self.object.slug][context["programming_lang"]]['code']
         except KeyError:
             context["previous_submission"] = ''
 
@@ -204,11 +205,11 @@ class SaveAttemptView(View):
         request.session['saved_attempts'] = request.session.get('saved_attempts', {})
 
         # To stop a "passed" or "failed" status being overridden by "started"
-        # Saves the python attempt and blockly attempt in different places for the same question.
         if (not (body["status"] == "started"
                  and request.session.get('saved_attempts', {}).get(body["challenge"], {}).get("status", "")
                  in {'passed', 'failed'})
                 and body["attempt"] != ""):
+            # Saves the python attempt and blockly attempt in different places for the same question.
             request.session['saved_attempts'][body["challenge"]][body["programming_language"]] = {
                 "status": body["status"],
                 "code": body["attempt"],

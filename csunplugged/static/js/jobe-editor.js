@@ -113,7 +113,7 @@ function sendCodeToJobe() {
     updateResultsTable(result);
 
     // Saving the users code
-    console.log(save_code(allCorrect(result) ? "passed" : "failed"))
+    save_code(allCorrect(result) ? "passed" : "failed")
 
     $("#editor_run_button").prop("disabled", false);
     $(".code_running_spinner").css("display", "none");
