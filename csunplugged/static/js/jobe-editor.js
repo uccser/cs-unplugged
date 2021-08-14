@@ -16,6 +16,17 @@ require('blockly/javascript');
 const En = require('blockly/msg/en');
 Blockly.setLocale(En);
 
+// Change default text of default blocks
+ const CustomEs = {
+  TEXT_PRINT_TITLE: "say %1",
+  TEXT_JOIN_TITLE_CREATEWITH: "join",
+  TEXT_INDEXOF_TITLE: "letter %1 %2 %3",
+  MATH_RANDOM_INT_TITLE: "pick random %1 to %2",
+  CONTROLS_REPEAT_TITLE: "repeat %1",
+  CONTROLS_FOR_INPUT_DO: ""
+ }
+ Blockly.setLocale(CustomEs);
+
 // Has to be global as other functions are using these variables
 let myCodeMirror; 
 let workspace;
@@ -45,6 +56,89 @@ if (programming_lang == "python") {
 } else {
   // Set up blockly editor
   document.addEventListener("DOMContentLoaded", function () {
+    // Custom Blockly blocks to look and act like Scratch
+    Blockly.defineBlocksWithJsonArray([
+      // Custom multiply block
+      {
+        "type": "custom_math_multiply",
+        "message0": "%1 * %2 %3",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "x",
+            "check": "Number"
+          },
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "input_value",
+            "name": "y",
+            "check": "Number"
+          }
+        ],
+        "inputsInline": true,
+        "output": "Number",
+        "colour": 120,
+        "tooltip": "Return the product of the two numbers.",
+        "helpUrl": ""
+      },
+      // Custom modulo block
+      {
+        "type": "custom_math_modulo",
+        "message0": "%1 mod %2 %3",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "a",
+            "check": "Number"
+          },
+          {
+            "type": "input_dummy",
+            "align": "CENTRE"
+          },
+          {
+            "type": "input_value",
+            "name": "n",
+            "check": "Number"
+          }
+        ],
+        "inputsInline": true,
+        "output": "Number",
+        "colour": 230,
+        "tooltip": "Return the modulo of the two numbers.",
+        "helpUrl": ""
+      }
+    ]);
+
+    // Custom modulo block
+    Blockly.JavaScript['custom_math_modulo'] = function(block) {
+      var value_a = Blockly.JavaScript.valueToCode(block, 'a', Blockly.JavaScript.ORDER_MODULUS);
+      var value_n = Blockly.JavaScript.valueToCode(block, 'n', Blockly.JavaScript.ORDER_MODULUS);
+      var code = '(' + value_a + ' % ' + value_n + ' + ' + value_n + ')' + ' % ' +  value_a;
+      return [code, Blockly.JavaScript.ORDER_ADDITION];
+    };
+    Blockly.Python['custom_math_modulo'] = function(block) {
+      var value_a = Blockly.Python.valueToCode(block, 'a', Blockly.Python.ORDER_ATOMIC);
+      var value_n = Blockly.Python.valueToCode(block, 'n', Blockly.Python.ORDER_ATOMIC);
+      var code = value_a + ' % ' + value_n;
+      return [code, Blockly.Python.ORDER_NONE];
+    };
+
+    // Custom multiply block
+    Blockly.JavaScript['custom_math_multiply'] = function(block) {
+      var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_MULTIPLICATION);
+      var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_MULTIPLICATION);
+      var code = value_x + ' * ' + value_y;
+      return [code, Blockly.JavaScript.ORDER_NONE];
+    };
+    Blockly.Python['custom_math_multiply'] = function(block) {
+      var value_x = Blockly.Python.valueToCode(block, 'x', Blockly.Python.ORDER_ATOMIC);
+      var value_y = Blockly.Python.valueToCode(block, 'y', Blockly.Python.ORDER_ATOMIC);
+      var code = value_x + ' * ' + value_y;
+      return [code, Blockly.Python.ORDER_NONE];
+    };
+
     const toolbox = document.getElementById('toolbox');
     /* Workspace configurations */
     const options = {

@@ -183,7 +183,6 @@
               <field name="BOOL">TRUE</field>
             </block>
             <block type="logic_null"></block>
-            <block type="logic_ternary"></block>
             <block type="controls_repeat_ext">
               <value name="TIMES">
                 <shadow type="math_number">
@@ -195,7 +194,7 @@
               <field name="MODE">WHILE</field>
             </block>
             <block type="controls_for">
-              <field name="VAR" id="syHPajql$jowW`$n$n=|">i</field>
+              <field name="VAR" id="C~3vhn!z)$kFIgo1uY@@">i</field>
               <value name="FROM">
                 <shadow type="math_number">
                   <field name="NUM">1</field>
@@ -213,13 +212,25 @@
               </value>
             </block>
             <block type="controls_forEach">
-              <field name="VAR" id="io+yhc[K+dO04I0!FEx;">j</field>
+              <field name="VAR" id="nl]?Fl371yL(iW8S]E47">j</field>
             </block>
             <block type="controls_flow_statements" disabled="true">
               <field name="FLOW">BREAK</field>
             </block>
           </category>
-          <category name="Math" colour="#5b67a5">
+          <category name="Math" colour="#5ba55b">
+            <block type="custom_math_multiply">
+              <value name="x">
+                <shadow type="math_number">
+                  <field name="NUM">1</field>
+                </shadow>
+              </value>
+              <value name="y">
+                <shadow type="math_number">
+                  <field name="NUM">1</field>
+                </shadow>
+              </value>
+            </block>
             <block type="math_number">
               <field name="NUM">0</field>
             </block>
@@ -276,6 +287,18 @@
               <mutation op="SUM"></mutation>
               <field name="OP">SUM</field>
             </block>
+            <block type="custom_math_modulo">
+              <value name="a">
+                <shadow type="math_number">
+                  <field name="NUM">-3</field>
+                </shadow>
+              </value>
+              <value name="n">
+                <shadow type="math_number">
+                  <field name="NUM">2</field>
+                </shadow>
+              </value>
+            </block>
             <block type="math_modulo">
               <value name="DIVIDEND">
                 <shadow type="math_number">
@@ -319,7 +342,7 @@
             </block>
             <block type="math_random_float"></block>
           </category>
-          <category name="Text" colour="#5ba58c">
+          <category name="Text" colour="#745ba5">
             <block type="text">
               <field name="TEXT"></field>
             </block>
@@ -327,7 +350,7 @@
               <mutation items="2"></mutation>
             </block>
             <block type="text_append">
-              <field name="VAR" id=":L5gSy]ul/r[,B_5!/t8">item</field>
+              <field name="VAR" id="ORK?8p5REPgQ?Er1F7.D">item</field>
               <value name="TEXT">
                 <shadow type="text">
                   <field name="TEXT"></field>
@@ -352,7 +375,7 @@
               <field name="END">FIRST</field>
               <value name="VALUE">
                 <block type="variables_get">
-                  <field name="VAR" id="x,Zl7o=OyFqu`9w_v7A+">text</field>
+                  <field name="VAR" id="x2O$~p~Zbcheb3G^q4Du">text</field>
                 </block>
               </value>
               <value name="FIND">
@@ -366,7 +389,7 @@
               <field name="WHERE">FROM_START</field>
               <value name="VALUE">
                 <block type="variables_get">
-                  <field name="VAR" id="x,Zl7o=OyFqu`9w_v7A+">text</field>
+                  <field name="VAR" id="x2O$~p~Zbcheb3G^q4Du">text</field>
                 </block>
               </value>
             </block>
@@ -376,7 +399,7 @@
               <field name="WHERE2">FROM_START</field>
               <value name="STRING">
                 <block type="variables_get">
-                  <field name="VAR" id="x,Zl7o=OyFqu`9w_v7A+">text</field>
+                  <field name="VAR" id="x2O$~p~Zbcheb3G^q4Du">text</field>
                 </block>
               </value>
             </block>
@@ -413,7 +436,7 @@
               </value>
             </block>
           </category>
-          <category name="Lists" colour="#745ba5">
+          <category name="Lists" colour="#5b80a5">
             <block type="lists_create_with">
               <mutation items="0"></mutation>
             </block>
@@ -433,7 +456,7 @@
               <field name="END">FIRST</field>
               <value name="VALUE">
                 <block type="variables_get">
-                  <field name="VAR" id="l?1Ne_YoM!bxpl#M5CKY">list</field>
+                  <field name="VAR" id=".:#z/k2m@O`G%QxgNXPJ">list</field>
                 </block>
               </value>
             </block>
@@ -443,7 +466,7 @@
               <field name="WHERE">FROM_START</field>
               <value name="VALUE">
                 <block type="variables_get">
-                  <field name="VAR" id="l?1Ne_YoM!bxpl#M5CKY">list</field>
+                  <field name="VAR" id=".:#z/k2m@O`G%QxgNXPJ">list</field>
                 </block>
               </value>
             </block>
@@ -453,7 +476,7 @@
               <field name="WHERE">FROM_START</field>
               <value name="LIST">
                 <block type="variables_get">
-                  <field name="VAR" id="l?1Ne_YoM!bxpl#M5CKY">list</field>
+                  <field name="VAR" id=".:#z/k2m@O`G%QxgNXPJ">list</field>
                 </block>
               </value>
             </block>
@@ -463,7 +486,7 @@
               <field name="WHERE2">FROM_START</field>
               <value name="LIST">
                 <block type="variables_get">
-                  <field name="VAR" id="l?1Ne_YoM!bxpl#M5CKY">list</field>
+                  <field name="VAR" id=".:#z/k2m@O`G%QxgNXPJ">list</field>
                 </block>
               </value>
             </block>
