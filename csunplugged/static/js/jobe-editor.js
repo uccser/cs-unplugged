@@ -58,9 +58,35 @@ if (programming_lang == "python") {
   document.addEventListener("DOMContentLoaded", function () {
     // Custom Blockly blocks to look and act like Scratch
     Blockly.defineBlocksWithJsonArray([
-      // Custom multiply block
+      // Operators modulo block
       {
-        "type": "custom_math_multiply",
+        "type": "operators_modulo",
+        "message0": "%1 mod %2 %3",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "a",
+            "check": "Number"
+          },
+          {
+            "type": "input_dummy",
+            "align": "CENTRE"
+          },
+          {
+            "type": "input_value",
+            "name": "n",
+            "check": "Number"
+          }
+        ],
+        "inputsInline": true,
+        "output": "Number",
+        "colour": 120,
+        "tooltip": "Return the modulo of the two numbers.",
+        "helpUrl": ""
+      },
+      // Operators multiply block
+      {
+        "type": "operators_multiply",
         "message0": "%1 * %2 %3",
         "args0": [
           {
@@ -83,61 +109,274 @@ if (programming_lang == "python") {
         "tooltip": "Return the product of the two numbers.",
         "helpUrl": ""
       },
-      // Custom modulo block
+      ,
+      // Operators divide block 
       {
-        "type": "custom_math_modulo",
-        "message0": "%1 mod %2 %3",
+        "type": "operators_divide",
+        "message0": "%1 / %2 %3",
         "args0": [
           {
             "type": "input_value",
-            "name": "a",
+            "name": "x",
             "check": "Number"
           },
           {
-            "type": "input_dummy",
-            "align": "CENTRE"
+            "type": "input_dummy"
           },
           {
             "type": "input_value",
-            "name": "n",
+            "name": "y",
             "check": "Number"
           }
         ],
         "inputsInline": true,
         "output": "Number",
-        "colour": 230,
-        "tooltip": "Return the modulo of the two numbers.",
+        "colour": 120,
+        "tooltip": "Return the quotient of the two numbers.",
+        "helpUrl": ""
+      },
+      // Operators add block 
+      {
+        "type": "operators_add",
+        "message0": "%1 + %2 %3",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "x",
+            "check": "Number"
+          },
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "input_value",
+            "name": "y",
+            "check": "Number"
+          }
+        ],
+        "inputsInline": true,
+        "output": "Number",
+        "colour": 120,
+        "tooltip": "Return the sum of the two numbers.",
+        "helpUrl": ""
+      },
+      // Operators subtract block
+      {
+        "type": "operators_subtract",
+        "message0": "%1 - %2 %3",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "x",
+            "check": "Number"
+          },
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "input_value",
+            "name": "y",
+            "check": "Number"
+          }
+        ],
+        "inputsInline": true,
+        "output": "Number",
+        "colour": 120,
+        "tooltip": "Return the difference of the two numbers.",
+        "helpUrl": ""
+      },
+      // Operators join/concatenate string block
+      {
+        "type": "operators_join_string",
+        "message0": "join %1 %2 %3",
+        "args0": [
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "input_value",
+            "name": "a",
+            "check": "String"
+          },
+          {
+            "type": "input_value",
+            "name": "b",
+            "check": "String"
+          }
+        ],
+        "inputsInline": true,
+        "output": "String",
+        "colour": 120,
+        "tooltip": "Returns a combination of the two input strings added together.",
+        "helpUrl": ""
+      },
+      // Operators letter <num> of <string> block
+      {
+        "type": "operators_letter_of",
+        "message0": "letter %1 %2 of %3 %4",
+        "args0": [
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "input_value",
+            "name": "index",
+            "check": "Number"
+          },
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "input_value",
+            "name": "word",
+            "check": "String"
+          }
+        ],
+        "output": "String",
+        "colour": 120,
+        "tooltip": "Returns the letter of the specified position. #1 is the first item.",
+        "helpUrl": ""
+      },
+      // Operators <string> contains <substring> block
+      {
+        "type": "operators_string_contains",
+        "message0": "%1 contains %2 %3 ?",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "word",
+            "check": "String"
+          },
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "input_value",
+            "name": "subword",
+            "check": "String"
+          }
+        ],
+        "inputsInline": true,
+        "output": "Boolean",
+        "colour": 120,
+        "tooltip": "Returns true if the second string is in the first string.",
         "helpUrl": ""
       }
     ]);
 
-    // Custom modulo block
-    Blockly.JavaScript['custom_math_modulo'] = function(block) {
+    // Operators <string> contains <substring> block
+    Blockly.JavaScript['operators_string_contains'] = function(block) {
+      var value_word = Blockly.JavaScript.valueToCode(block, 'word', Blockly.JavaScript.ORDER_ATOMIC);
+      var value_subword = Blockly.JavaScript.valueToCode(block, 'subword', Blockly.JavaScript.ORDER_ATOMIC);
+      var code = value_word + ".includes(" + value_subword + ")";
+      return [code, Blockly.JavaScript.ORDER_NONE];
+    };
+    Blockly.Python['operators_string_contains'] = function(block) {
+      var value_word = Blockly.Python.valueToCode(block, 'word', Blockly.Python.ORDER_ATOMIC);
+      var value_subword = Blockly.Python.valueToCode(block, 'subword', Blockly.Python.ORDER_ATOMIC);
+      var code = value_subword + " in " + value_word;
+      return [code, Blockly.Python.ORDER_NONE];
+    };
+
+    // Operators letter <num> of <string> block
+    Blockly.JavaScript['operators_letter_of'] = function(block) {
+      var value_index = Blockly.JavaScript.valueToCode(block, 'index', Blockly.JavaScript.ORDER_ATOMIC) - 1; // subtract 1 since index starts from 0 in JS
+      var value_word = Blockly.JavaScript.valueToCode(block, 'word', Blockly.JavaScript.ORDER_ATOMIC);
+      var code = value_word + ".charAt(" + value_index + ")";
+      return [code, Blockly.JavaScript.ORDER_NONE];
+    };
+    Blockly.Python['operators_letter_of'] = function(block) {
+      var value_index = Blockly.Python.valueToCode(block, 'index', Blockly.Python.ORDER_ATOMIC) - 1; // subtract 1 since index starts from 0 in Python
+      var value_word = Blockly.Python.valueToCode(block, 'word', Blockly.Python.ORDER_ATOMIC);
+      var code = value_word + "[" + value_index + "]";
+      return [code, Blockly.Python.ORDER_NONE];
+    };
+
+    // Operators join/concatenate string block
+    Blockly.JavaScript['operators_join_string'] = function(block) {
+      var value_a = Blockly.JavaScript.valueToCode(block, 'a', Blockly.JavaScript.ORDER_ATOMIC);
+      var value_b = Blockly.JavaScript.valueToCode(block, 'b', Blockly.JavaScript.ORDER_ATOMIC);
+      var code = value_a + ' + ' + value_b;
+      return [code, Blockly.JavaScript.ORDER_NONE];
+    };
+    Blockly.Python['operators_join_string'] = function(block) {
+      var value_a = Blockly.Python.valueToCode(block, 'a', Blockly.Python.ORDER_ATOMIC);
+      var value_b = Blockly.Python.valueToCode(block, 'b', Blockly.Python.ORDER_ATOMIC);
+      var code = value_a + ' + ' + value_b;
+      return [code, Blockly.Python.ORDER_NONE];
+    };
+
+    // Operators modulo block
+    Blockly.JavaScript['operators_modulo'] = function(block) {
       var value_a = Blockly.JavaScript.valueToCode(block, 'a', Blockly.JavaScript.ORDER_MODULUS);
       var value_n = Blockly.JavaScript.valueToCode(block, 'n', Blockly.JavaScript.ORDER_MODULUS);
       var code = '(' + value_a + ' % ' + value_n + ' + ' + value_n + ')' + ' % ' +  value_a;
       return [code, Blockly.JavaScript.ORDER_ADDITION];
     };
-    Blockly.Python['custom_math_modulo'] = function(block) {
+    Blockly.Python['operators_modulo'] = function(block) {
       var value_a = Blockly.Python.valueToCode(block, 'a', Blockly.Python.ORDER_ATOMIC);
       var value_n = Blockly.Python.valueToCode(block, 'n', Blockly.Python.ORDER_ATOMIC);
       var code = value_a + ' % ' + value_n;
       return [code, Blockly.Python.ORDER_NONE];
     };
 
-    // Custom multiply block
-    Blockly.JavaScript['custom_math_multiply'] = function(block) {
+    // Operators multiply block
+    Blockly.JavaScript['operators_multiply'] = function(block) {
       var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_MULTIPLICATION);
       var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_MULTIPLICATION);
       var code = value_x + ' * ' + value_y;
       return [code, Blockly.JavaScript.ORDER_NONE];
     };
-    Blockly.Python['custom_math_multiply'] = function(block) {
+    Blockly.Python['operators_multiply'] = function(block) {
       var value_x = Blockly.Python.valueToCode(block, 'x', Blockly.Python.ORDER_ATOMIC);
       var value_y = Blockly.Python.valueToCode(block, 'y', Blockly.Python.ORDER_ATOMIC);
       var code = value_x + ' * ' + value_y;
       return [code, Blockly.Python.ORDER_NONE];
     };
+
+    // Operators divide block
+    Blockly.JavaScript['operators_divide'] = function(block) {
+      var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
+      var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC);
+      var code = value_x + ' / ' + value_y;
+      return [code, Blockly.JavaScript.ORDER_NONE];
+    };
+    Blockly.Python['operators_divide'] = function(block) {
+      var value_x = Blockly.Python.valueToCode(block, 'x', Blockly.Python.ORDER_ATOMIC);
+      var value_y = Blockly.Python.valueToCode(block, 'y', Blockly.Python.ORDER_ATOMIC);
+      var code = value_x + ' / ' + value_y;
+      return [code, Blockly.Python.ORDER_NONE];
+    };
+
+    // Operators add block
+    Blockly.JavaScript['operators_add'] = function(block) {
+      var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
+      var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC);
+      var code = value_x + ' + ' + value_y;
+      return [code, Blockly.JavaScript.ORDER_NONE];
+    };
+    Blockly.Python['operators_add'] = function(block) {
+      var value_x = Blockly.Python.valueToCode(block, 'x', Blockly.Python.ORDER_ATOMIC);
+      var value_y = Blockly.Python.valueToCode(block, 'y', Blockly.Python.ORDER_ATOMIC);
+      var code = value_x + ' + ' + value_y;
+      return [code, Blockly.Python.ORDER_NONE];
+    };
+    
+    // Operators subtract blocks
+    Blockly.JavaScript['operators_subtract'] = function(block) {
+      var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
+      var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC);
+      var code = value_x + ' - ' + value_y;
+      return [code, Blockly.JavaScript.ORDER_NONE];
+    };
+    Blockly.Python['operators_subtract'] = function(block) {
+      var value_x = Blockly.Python.valueToCode(block, 'x', Blockly.Python.ORDER_ATOMIC);
+      var value_y = Blockly.Python.valueToCode(block, 'y', Blockly.Python.ORDER_ATOMIC);
+      var code = value_x + ' - ' + value_y;
+      return [code, Blockly.Python.ORDER_NONE];
+    };
+
+
 
     const toolbox = document.getElementById('toolbox');
     /* Workspace configurations */
