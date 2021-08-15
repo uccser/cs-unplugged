@@ -367,6 +367,61 @@ if (programming_lang == "python") {
         "tooltip": "Ask user for some text.",
         "helpUrl": ""
       },
+      // Controls if, then block
+      {
+        "type": "controls_if_then",
+        "message0": "if %1 then %2 %3",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "condition",
+            "check": "Boolean"
+          },
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "input_statement",
+            "name": "body"
+          }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 30,
+        "tooltip": "",
+        "helpUrl": ""
+      },
+      // Controls, if, then, else block
+      {
+        "type": "controls_if_then_else",
+        "message0": "if %1 then %2 %3 else %4 %5",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "condition",
+            "check": "Boolean"
+          },
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "input_statement",
+            "name": "body_1"
+          },
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "input_statement",
+            "name": "body_2"
+          }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 30,
+        "tooltip": "",
+        "helpUrl": ""
+      },
       // Controls stop block
       {
         "type": "controls_stop",
@@ -377,6 +432,50 @@ if (programming_lang == "python") {
         "helpUrl": ""
       },
     ]);
+    
+    // Controls, if, then, else block
+    Blockly.JavaScript['controls_if_then_else'] = function(block) {
+      var value_condition = Blockly.JavaScript.valueToCode(block, 'condition', Blockly.JavaScript.ORDER_ATOMIC) || 'false';
+      var statements_body_1 = Blockly.JavaScript.statementToCode(block, 'body_1');
+      var statements_body_2 = Blockly.JavaScript.statementToCode(block, 'body_2');
+      var code = 'if (' + value_condition + ') {\n' + statements_body_1 + '} else {\n' + statements_body_2 + '}\n';
+      return code;
+    };
+    Blockly.Python['controls_if_then_else'] = function(block) {
+      var value_condition = Blockly.Python.valueToCode(block, 'condition', Blockly.Python.ORDER_ATOMIC) || "False";
+      var statements_body_1 = Blockly.Python.statementToCode(block, 'body_1');
+      var statements_body_2 = Blockly.Python.statementToCode(block, 'body_2');
+
+      if (statements_body_1 === "") {
+        statements_body_1 = '  pass\n'; // 2 spaces for indentation in Python
+      }
+      if (statements_body_2 === "") {
+        statements_body_2 = '  pass'; // 2 spaces for indentation in Python
+      }
+
+      // TODO: Assemble Python into code variable.
+      var code = 'if ' + value_condition + ':\n' + statements_body_1 + 'else:\n' + statements_body_2 + '\n';
+      return code;
+    };
+
+    // Controls if, then block
+    Blockly.JavaScript['controls_if_then'] = function(block) {
+      var value_condition = Blockly.JavaScript.valueToCode(block, 'condition', Blockly.JavaScript.ORDER_ATOMIC) || 'false';
+      var statements_body = Blockly.JavaScript.statementToCode(block, 'body');
+      var code = 'if (' + value_condition + ') {\n' + statements_body + '}\n';
+      return code;
+    };
+    Blockly.Python['controls_if_then'] = function(block) {
+      var value_condition = Blockly.Python.valueToCode(block, 'condition', Blockly.Python.ORDER_ATOMIC) || "False";
+      var statements_body = Blockly.Python.statementToCode(block, 'body');
+
+      if (statements_body === "") {
+        statements_body = '  pass\n';
+      }
+
+      var code = 'if ' + value_condition + ':\n' + statements_body + '\n';
+      return code;
+    };
 
     // Looks say block
     Blockly.JavaScript['looks_say'] = function(block) {
@@ -405,14 +504,14 @@ if (programming_lang == "python") {
 
     // Operators logical OR block 
     Blockly.JavaScript['operators_or'] = function(block) {
-      var value_a = Blockly.JavaScript.valueToCode(block, 'a', Blockly.JavaScript.ORDER_ATOMIC);
-      var value_b = Blockly.JavaScript.valueToCode(block, 'b', Blockly.JavaScript.ORDER_ATOMIC);
+      var value_a = Blockly.JavaScript.valueToCode(block, 'a', Blockly.JavaScript.ORDER_LOGICAL_OR) || 'false';
+      var value_b = Blockly.JavaScript.valueToCode(block, 'b', Blockly.JavaScript.ORDER_LOGICAL_OR) || 'false';
       var code = value_a + ' || ' + value_b;
-      return [code, Blockly.JavaScript.ORDER_NONE];
+      return [code, Blockly.JavaScript.ORDER_LOGICAL_OR];
     };
     Blockly.Python['operators_or'] = function(block) {
-      var value_a = Blockly.Python.valueToCode(block, 'a', Blockly.Python.ORDER_ATOMIC);
-      var value_b = Blockly.Python.valueToCode(block, 'b', Blockly.Python.ORDER_ATOMIC);
+      var value_a = Blockly.Python.valueToCode(block, 'a', Blockly.Python.ORDER_ATOMIC) || 'False';
+      var value_b = Blockly.Python.valueToCode(block, 'b', Blockly.Python.ORDER_ATOMIC) || 'False';
       var code = value_a + ' or ' + value_b;
       return [code, Blockly.Python.ORDER_NONE];
     };
@@ -420,14 +519,14 @@ if (programming_lang == "python") {
 
     // Operators logical AND block
     Blockly.JavaScript['operators_and'] = function(block) {
-      var value_a = Blockly.JavaScript.valueToCode(block, 'a', Blockly.JavaScript.ORDER_ATOMIC);
-      var value_b = Blockly.JavaScript.valueToCode(block, 'b', Blockly.JavaScript.ORDER_ATOMIC);
+      var value_a = Blockly.JavaScript.valueToCode(block, 'a', Blockly.JavaScript.ORDER_ATOMIC) || 'false';
+      var value_b = Blockly.JavaScript.valueToCode(block, 'b', Blockly.JavaScript.ORDER_ATOMIC) || 'false';
       var code = value_a + ' && ' + value_b;
       return [code, Blockly.JavaScript.ORDER_NONE];
     };
     Blockly.Python['operators_and'] = function(block) {
-      var value_a = Blockly.Python.valueToCode(block, 'a', Blockly.Python.ORDER_ATOMIC);
-      var value_b = Blockly.Python.valueToCode(block, 'b', Blockly.Python.ORDER_ATOMIC);
+      var value_a = Blockly.Python.valueToCode(block, 'a', Blockly.Python.ORDER_ATOMIC) || 'False';
+      var value_b = Blockly.Python.valueToCode(block, 'b', Blockly.Python.ORDER_ATOMIC) || 'False';
       var code = value_a + ' and ' + value_b;
       return [code, Blockly.Python.ORDER_NONE];
     };
@@ -448,14 +547,14 @@ if (programming_lang == "python") {
     Blockly.JavaScript['sensing_ask_and_wait'] = function(block) {
       var value_question = Blockly.JavaScript.valueToCode(block, 'question', Blockly.JavaScript.ORDER_ATOMIC);
       // TODO: Assemble JavaScript into code variable.
-      var code = 'prompt(' + value_question + ')'
+      var code = 'prompt(' + value_question + ');\n'
       // TODO: Change ORDER_NONE to the correct strength.
       return [code, Blockly.JavaScript.ORDER_NONE];
     };
     Blockly.Python['sensing_ask_and_wait'] = function(block) {
       var value_question = Blockly.Python.valueToCode(block, 'question', Blockly.Python.ORDER_ATOMIC);
       // TODO: Assemble Python into code variable.
-      var code = 'input(' + value_question + ')';
+      var code = 'input(' + value_question + ')\n';
       // TODO: Change ORDER_NONE to the correct strength.
       return [code, Blockly.Python.ORDER_NONE];
     };
@@ -673,8 +772,6 @@ async function save_code(status="started") {
     xml_code = Blockly.Xml.workspaceToDom(Blockly.getMainWorkspace());
     raw_code = Blockly.Xml.domToText(xml_code);
   }
-  console.log("RAW CODE")
-  console.log(raw_code)
   // Sets the saved attempt
   let data = {
       "challenge": current_challenge_slug,
