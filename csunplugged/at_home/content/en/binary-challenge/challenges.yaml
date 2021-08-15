@@ -1,0 +1,15 @@
+1:
+    question: Suppose there were 6 cards instead of 5. What is the pattern of "yes" and "no" that you’d use to have 42 dots visible? Type your answer into the following box by typing the sequence of yes and nos with a comma between each one, and no spaces; for example, the number two would be "no,no,no,no,yes,no" (without the inverted commas).
+    answer: yes,no,yes,no,yes,no
+2:
+    question: Suppose there are 8 cards instead of 5. How would you represent the number 96? Give your answer by typing a 1 if the card is visible, and 0 if it isn’t. For example, the number 3 would be typed as "00000011". As an aside, this is a common way to write numbers in binary representation - typing 0 and 1 is simpler than yes and no.
+    answer: "01100000"
+3:
+    question: What is the smallest number of dots that Arnold could represent with 8 cards?
+    answer: "0"
+4:
+    question: What is the largest number of dots that Arnold could represent with 8 cards?
+    answer: "255"
+5:
+    question: If we use 0 for a card's dots being hidden, and 1 for the dots being visible, how many dots would you get with the binary number 1111111111?
+    answer: "1023"

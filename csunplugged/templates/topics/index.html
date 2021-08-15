@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base-educators.html" %}
 
 {% load i18n %}
 {% load static %}
@@ -19,7 +19,6 @@
 {% block content %}
   {% if topics %}
     <p>{% trans "Open a topic to see all related unit plans, lessons, curriculum integrations, and programming challenges." %}</p>
-
     <div class="row justify-content-between">
       {% for topic in topics %}
         <div class="col-12 col-md-8 col-lg-6 mb-4">
@@ -62,8 +61,10 @@
           </a>
         </div>
       {% endfor %}
+      {% include "generic/classic-unplugged-button.html" %}
     </div>
   {% else %}
     <p>{% trans "No topics are available." %}</p>
+    {% include "generic/classic-unplugged-button.html" %}
   {% endif %}
 {% endblock content %}

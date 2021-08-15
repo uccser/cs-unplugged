@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-11 01:02+0000\n"
+"POT-Creation-Date: 2020-03-31 23:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,11 +21,11 @@ msgstr ""
 msgid "Classic CS Unplugged page"
 msgstr ""
 
-#: config/settings/base.py:139
+#: config/settings/base.py:155
 msgid "Translation mode"
 msgstr ""
 
-#: config/settings/base.py:145
+#: config/settings/base.py:161
 msgid "Translation mode (Bi-directional)"
 msgstr ""
 
@@ -152,15 +152,15 @@ msgstr ""
 msgid "Worksheet Version"
 msgstr ""
 
-#: resources/generators/BinaryToAlphabetResourceGenerator.py:54
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:59
 msgid "Base 10"
 msgstr ""
 
-#: resources/generators/BinaryToAlphabetResourceGenerator.py:55
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:60
 msgid "Binary"
 msgstr ""
 
-#: resources/generators/BinaryToAlphabetResourceGenerator.py:56
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:61
 msgid "Letter"
 msgstr ""
 
@@ -356,119 +356,143 @@ msgid "Colour (8 possible binary values)"
 msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:19
-msgid "Fish - 6 pages"
+msgid "Star - 1 page"
 msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:20
-msgid "Kauri tree - 6 pages"
+msgid "Teacup - 1 page"
 msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:21
-msgid "Butterfly - 6 pages"
+msgid "Cat - 1 page"
 msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:22
-msgid "Hot air balloon - 8 pages"
+msgid "Fish - 6 pages"
 msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:23
-msgid "Boat - 9 pages"
+msgid "Kauri tree - 6 pages"
 msgstr ""
 
 #: resources/generators/PixelPainterResourceGenerator.py:24
+msgid "Butterfly - 6 pages"
+msgstr ""
+
+#: resources/generators/PixelPainterResourceGenerator.py:25
+msgid "Hot air balloon - 8 pages"
+msgstr ""
+
+#: resources/generators/PixelPainterResourceGenerator.py:26
+msgid "Boat - 9 pages"
+msgstr ""
+
+#: resources/generators/PixelPainterResourceGenerator.py:27
 msgid "Parrots - 32 pages"
 msgstr ""
 
-#: resources/generators/PixelPainterResourceGenerator.py:33
+#: resources/generators/PixelPainterResourceGenerator.py:36
 msgid "Black and White"
 msgstr ""
 
-#: resources/generators/PixelPainterResourceGenerator.py:40
+#: resources/generators/PixelPainterResourceGenerator.py:43
 msgid "Run length encoding"
 msgstr ""
 
-#: resources/generators/PixelPainterResourceGenerator.py:47
+#: resources/generators/PixelPainterResourceGenerator.py:50
 msgid "Greyscale"
 msgstr ""
 
-#: resources/generators/PixelPainterResourceGenerator.py:56
+#: resources/generators/PixelPainterResourceGenerator.py:59
 msgid "Colour"
 msgstr ""
 
-#: resources/generators/PixelPainterResourceGenerator.py:71
+#: resources/generators/PixelPainterResourceGenerator.py:74
+msgid "Star"
+msgstr ""
+
+#: resources/generators/PixelPainterResourceGenerator.py:75
+msgid "Teacup"
+msgstr ""
+
+#: resources/generators/PixelPainterResourceGenerator.py:76
+msgid "Cat"
+msgstr ""
+
+#: resources/generators/PixelPainterResourceGenerator.py:77
 msgid "Boat"
 msgstr ""
 
-#: resources/generators/PixelPainterResourceGenerator.py:72
+#: resources/generators/PixelPainterResourceGenerator.py:78
 msgid "Fish"
 msgstr ""
 
-#: resources/generators/PixelPainterResourceGenerator.py:73
+#: resources/generators/PixelPainterResourceGenerator.py:79
 msgid "Hot air balloon"
 msgstr ""
 
-#: resources/generators/PixelPainterResourceGenerator.py:74
+#: resources/generators/PixelPainterResourceGenerator.py:80
 #: templates/general/people.html:154
 msgid "Parrots"
 msgstr ""
 
-#: resources/generators/PixelPainterResourceGenerator.py:75
+#: resources/generators/PixelPainterResourceGenerator.py:81
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:69
 msgid "Kauri tree"
 msgstr ""
 
-#: resources/generators/PixelPainterResourceGenerator.py:76
+#: resources/generators/PixelPainterResourceGenerator.py:82
 msgid "Butterfly"
 msgstr ""
 
-#: resources/generators/PixelPainterResourceGenerator.py:98
+#: resources/generators/PixelPainterResourceGenerator.py:104
 msgid "Colouring type"
 msgstr ""
 
-#: resources/generators/PixelPainterResourceGenerator.py:104
+#: resources/generators/PixelPainterResourceGenerator.py:110
 msgid "Image"
 msgstr ""
 
-#: resources/generators/PixelPainterResourceGenerator.py:404
+#: resources/generators/PixelPainterResourceGenerator.py:410
 msgid "Pixel Painter"
 msgstr ""
 
-#: resources/generators/PixelPainterResourceGenerator.py:406
+#: resources/generators/PixelPainterResourceGenerator.py:412
 msgid "This page should be kept secret from students."
 msgstr ""
 
-#: resources/generators/PixelPainterResourceGenerator.py:408
+#: resources/generators/PixelPainterResourceGenerator.py:414
 msgid "Page grid reference for {} image"
 msgstr ""
 
-#: resources/generators/PixelPainterResourceGenerator.py:411
+#: resources/generators/PixelPainterResourceGenerator.py:417
 msgid ""
 "Once pixels on each page are filled in correctly, cut each grid out and "
 "arrange in the following layout (page names are in the top right corner)."
 msgstr ""
 
-#: resources/generators/PixelPainterResourceGenerator.py:426
+#: resources/generators/PixelPainterResourceGenerator.py:432
 msgid "The pixel values are using 2 bit colour values."
 msgstr ""
 
-#: resources/generators/PixelPainterResourceGenerator.py:428
+#: resources/generators/PixelPainterResourceGenerator.py:434
 msgid ""
 "The pixel values are using 5 bit RGB colour values (2 red, 2 green, 1 blue)."
 msgstr ""
 
-#: resources/generators/PixelPainterResourceGenerator.py:430
+#: resources/generators/PixelPainterResourceGenerator.py:436
 msgid "Extra pixel legends are at the end of this document for students."
 msgstr ""
 
-#: resources/generators/PixelPainterResourceGenerator.py:449
+#: resources/generators/PixelPainterResourceGenerator.py:455
 msgid "Pixel legend"
 msgstr ""
 
-#: resources/generators/PixelPainterResourceGenerator.py:471
+#: resources/generators/PixelPainterResourceGenerator.py:477
 msgid "Run Length Encodings"
 msgstr ""
 
-#: resources/generators/PixelPainterResourceGenerator.py:476
+#: resources/generators/PixelPainterResourceGenerator.py:482
 msgid "Encoding for page {}"
 msgstr ""
 
@@ -569,7 +593,7 @@ msgstr ""
 msgid "Little Red Riding Hood"
 msgstr ""
 
-#: resources/generators/SortingNetworkCardsResourceGenerator.py:108
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:91
 msgid "Card Type"
 msgstr ""
 
@@ -707,102 +731,142 @@ msgstr ""
 msgid "Homepage"
 msgstr ""
 
-#: templates/404.html:26 templates/base.html:91 templates/base.html:225
+#: templates/404.html:26 templates/base-educators.html:71
+#: templates/core.html:178
 msgid "Search"
 msgstr ""
 
-#: templates/404.html:32 templates/general/index.html:96
+#: templates/404.html:32 templates/general/index.html:106
 #: templates/general/people.html:74
 msgid "Classic CS Unplugged"
 msgstr ""
 
-#: templates/base.html:25 templates/general/index.html:7
-#: templates/general/people.html:21
-msgid "CS Unplugged"
+#: templates/at-home/index.html:8
+msgid "CS Unplugged at home"
 msgstr ""
 
-#: templates/base.html:60
+#: templates/at-home/index.html:21
+msgid "Try something different away from the screen"
+msgstr ""
+
+#: templates/at-home/index.html:27
+#: templates/topics/not-available-warning.html:6
+#, python-format
+msgid ""
+"<h4>Sorry! This item is not yet available in %(language)s.</h4> <p>This item "
+"is available in the following languages:</p>"
+msgstr ""
+
+#: templates/at-home/index.html:38
+#: templates/topics/not-available-warning.html:36
+msgid "Return to homepage "
+msgstr ""
+
+#: templates/at-home/index.html:55
+msgid ""
+"<strong>Welcome to Computer Science Unplugged!</strong> This is a collection "
+"of fun and engaging activities that enable children to explore fundamental "
+"ideas in Computer Science, <em>without</em> having to use a computer. "
+"Traditionally these activities have been designed to be used with school "
+"classes and larger groups, but we’ve got many ideas for you to try out if "
+"you’re at home."
+msgstr ""
+
+#: templates/base-at-home.html:28 templates/base-educators.html:28
 msgid "Language"
 msgstr ""
 
-#: templates/base.html:78 templates/base.html:188
-#: templates/general/index.html:74 templates/topics/index.html:8
+#: templates/base-at-home.html:58
+msgid "Back to CS Unplugged"
+msgstr ""
+
+#: templates/base-educators.html:56 templates/core.html:136
+#: templates/general/index.html:67 templates/topics/index.html:8
 #: templates/topics/index.html:16
 msgid "Topics"
 msgstr ""
 
-#: templates/base.html:79 templates/base.html:193
-#: templates/general/index.html:81 templates/resources/index.html:8
+#: templates/base-educators.html:57 templates/core.html:141
+#: templates/general/index.html:72 templates/resources/index.html:8
 #: templates/resources/index.html:16 templates/topics/lesson.html:74
 msgid "Printables"
 msgstr ""
 
-#: templates/base.html:80 templates/base.html:183
+#: templates/base-educators.html:58 templates/core.html:131
 #: templates/general/about.html:7 templates/general/about.html:15
 #: templates/general/base.html:10
 msgid "About"
 msgstr ""
 
-#: templates/base.html:103
+#: templates/core.html:25 templates/general/index.html:7
+#: templates/general/people.html:21
+msgid "CS Unplugged"
+msgstr ""
+
+#: templates/core.html:51
 msgid "Home"
 msgstr ""
 
-#: templates/base.html:154
+#: templates/core.html:102
 msgid ""
 "Looking for something for high schools? Check out the <a href=\"http://"
 "csfieldguide.org.nz/\">Computer Science Field Guide</a>."
 msgstr ""
 
-#: templates/base.html:166
+#: templates/core.html:114
 msgid ""
 "The primary goal of the Unplugged project is to promote Computer Science "
 "(and computing in general) to young people as an interesting, engaging, and "
 "intellectually stimulating discipline."
 msgstr ""
 
-#: templates/base.html:172
+#: templates/core.html:120
 #, python-format
 msgid "Read more about <a href=\"%(principles_url)s\">our principles here</a>."
 msgstr ""
 
-#: templates/base.html:179
+#: templates/core.html:127
 msgid "Useful Links"
 msgstr ""
 
-#: templates/base.html:199
+#: templates/core.html:146
+msgid "At home"
+msgstr ""
+
+#: templates/core.html:152
 msgid "Community"
 msgstr ""
 
-#: templates/base.html:203
+#: templates/core.html:156
 msgid "Twitter"
 msgstr ""
 
-#: templates/base.html:208
+#: templates/core.html:161
 msgid "YouTube"
 msgstr ""
 
-#: templates/base.html:213
+#: templates/core.html:166
 msgid "GitHub"
 msgstr ""
 
-#: templates/base.html:219
+#: templates/core.html:172
 msgid "Help"
 msgstr ""
 
-#: templates/base.html:231 templates/topics/glossary.html:8
+#: templates/core.html:184 templates/topics/glossary.html:8
 #: templates/topics/glossary.html:17
 msgid "Glossary"
 msgstr ""
 
-#: templates/base.html:236
+#: templates/core.html:189
 msgid "Feedback"
 msgstr ""
 
-#: templates/base.html:241 templates/general/contact.html:7
+#: templates/core.html:194 templates/general/contact.html:7
 msgid "Contact"
 msgstr ""
 
-#: templates/base.html:265
+#: templates/core.html:218
 msgid ""
 "The CS Unplugged material is open source on <a href=\"https://github.com/"
 "uccser/cs-unplugged\">GitHub</a>, and this website's content is shared under "
@@ -814,12 +878,18 @@ msgid ""
 "Canterbury</a>, New Zealand."
 msgstr ""
 
-#: templates/base.html:288
+#: templates/core.html:222
+msgid ""
+"Icons provided generously by <a target=\"_blank\" rel=\"noopener noreferrer"
+"\" href=\"https://icons8.com/\">icons8</a>."
+msgstr ""
+
+#: templates/core.html:244
 #, python-format
 msgid "This definition is not available in %(language)s, sorry!"
 msgstr ""
 
-#: templates/base.html:295
+#: templates/core.html:251
 msgid "Close"
 msgstr ""
 
@@ -860,18 +930,26 @@ msgstr ""
 #: templates/general/about.html:42
 #, python-format
 msgid ""
+"For an explanation on the connections between CS Unplugged and Computational "
+"Thinking skills, see our <a href=\"%(computational_thinking_url)s"
+"\">Computational Thinking and CS Unplugged page</a>."
+msgstr ""
+
+#: templates/general/about.html:49
+#, python-format
+msgid ""
 "To view the team of contributors who work on this project, see our <a href="
 "\"%(people_url)s\">people page</a>."
 msgstr ""
 
-#: templates/general/about.html:49
+#: templates/general/about.html:56
 #, python-format
 msgid ""
 "For details on how to contact us, see our <a href=\"%(contact_url)s"
 "\">contact us page</a>."
 msgstr ""
 
-#: templates/general/about.html:56
+#: templates/general/about.html:63
 #, python-format
 msgid ""
 "For more information about the principles behind CS Unplugged, see our <a "
@@ -884,7 +962,7 @@ msgstr ""
 
 #: templates/general/base.html:11
 #: templates/general/computational-thinking.html:8
-#: templates/general/computational-thinking.html:16
+#: templates/general/computational-thinking.html:17
 msgid "Computational Thinking and CS Unplugged"
 msgstr ""
 
@@ -902,11 +980,11 @@ msgstr ""
 msgid "Contact Us"
 msgstr ""
 
-#: templates/general/computational-thinking.html:20
+#: templates/general/computational-thinking.html:21
 msgid "What is Computational Thinking?"
 msgstr ""
 
-#: templates/general/computational-thinking.html:23
+#: templates/general/computational-thinking.html:24
 msgid ""
 "The world we live in has become a digital one, filled with technology and "
 "driven by Computer Science. Software and technology have transformed every "
@@ -916,7 +994,7 @@ msgid ""
 "world that they live in."
 msgstr ""
 
-#: templates/general/computational-thinking.html:32
+#: templates/general/computational-thinking.html:33
 msgid ""
 "This is why Computational Thinking has been called the ‘21st Century Skill "
 "Set’, and is important for everyone to learn. It is critical to "
@@ -927,20 +1005,20 @@ msgid ""
 "unintended consequences of these."
 msgstr ""
 
-#: templates/general/computational-thinking.html:40
+#: templates/general/computational-thinking.html:41
 msgid ""
 "But what exactly is Computational Thinking? Let’s have a look at a technical "
 "definition..."
 msgstr ""
 
-#: templates/general/computational-thinking.html:47
+#: templates/general/computational-thinking.html:48
 msgid ""
 "\"Computational Thinking is the thought processes involved in formulating "
 "problems and their solutions so that the solutions are represented in a form "
 "that can be effectively carried out by an information-processing agent.\""
 msgstr ""
 
-#: templates/general/computational-thinking.html:57
+#: templates/general/computational-thinking.html:58
 msgid ""
 "Phew, it’s quite a mouthful isn’t it? But, as we like to say at CS "
 "Unplugged, it’s just big words for simple ideas! 'Information-processing "
@@ -955,7 +1033,7 @@ msgid ""
 "transferrable to any field."
 msgstr ""
 
-#: templates/general/computational-thinking.html:71
+#: templates/general/computational-thinking.html:72
 msgid ""
 "Computational Thinking could be described as 'thinking like a Computer "
 "Scientist', but it is now an important skill for everyone to learn, whether "
@@ -967,7 +1045,7 @@ msgid ""
 "problems."
 msgstr ""
 
-#: templates/general/computational-thinking.html:79
+#: templates/general/computational-thinking.html:80
 msgid ""
 "For example, you might use an app on a smartphone to get directions to a "
 "friend's house; the app is an example of a computer program, and the "
@@ -979,11 +1057,11 @@ msgid ""
 "smartphone."
 msgstr ""
 
-#: templates/general/computational-thinking.html:86
+#: templates/general/computational-thinking.html:87
 msgid "Computational Thinking in CS Unplugged"
 msgstr ""
 
-#: templates/general/computational-thinking.html:88
+#: templates/general/computational-thinking.html:89
 msgid ""
 "<p> Throughout the lessons and units in CS Unplugged there are many links to "
 "Computational Thinking. Teaching Computational Thinking through CS Unplugged "
@@ -994,14 +1072,14 @@ msgid ""
 "then evaluate this process.</li> </ul>"
 msgstr ""
 
-#: templates/general/computational-thinking.html:105
+#: templates/general/computational-thinking.html:106
 msgid ""
 "These skills are transferable to any other curriculum area, but are "
 "particularly relevant to developing digital systems and solving problems "
 "using the capabilities of computers.</p>"
 msgstr ""
 
-#: templates/general/computational-thinking.html:110
+#: templates/general/computational-thinking.html:111
 msgid ""
 "These Computational Thinking concepts are all connected to each other and "
 "support each other, but it's important to note that not all aspects of "
@@ -1010,7 +1088,7 @@ msgid ""
 "observe your students in action."
 msgstr ""
 
-#: templates/general/computational-thinking.html:117
+#: templates/general/computational-thinking.html:118
 msgid ""
 "There are a number of definitions of Computational Thinking, but most have a "
 "set of 5 or 6 problem solving skills that Computational Thinking embodies. "
@@ -1020,15 +1098,15 @@ msgid ""
 "appeared in the lesson, to help you see the CT connection with the lessons."
 msgstr ""
 
-#: templates/general/computational-thinking.html:123
+#: templates/general/computational-thinking.html:124
 msgid "Computational Thinking skills"
 msgstr ""
 
-#: templates/general/computational-thinking.html:127
+#: templates/general/computational-thinking.html:128
 msgid "Algorithmic thinking"
 msgstr ""
 
-#: templates/general/computational-thinking.html:132
+#: templates/general/computational-thinking.html:133
 msgid ""
 "Algorithms are at the heart of Computational Thinking and Computer Science, "
 "because in Computer Science the solutions to problems are not simply an "
@@ -1044,13 +1122,13 @@ msgid ""
 "be given algorithms to do things."
 msgstr ""
 
-#: templates/general/computational-thinking.html:143
+#: templates/general/computational-thinking.html:144
 msgid ""
 "Algorithmic thinking is the process of creating algorithms. When we create "
 "an algorithm to solve a problem, we call this an algorithmic solution."
 msgstr ""
 
-#: templates/general/computational-thinking.html:150
+#: templates/general/computational-thinking.html:151
 msgid ""
 "Computational algorithms (the kind that can run on digital devices) have "
 "relatively few ingredients because digital devices only have a few types of "
@@ -1062,11 +1140,11 @@ msgid ""
 "restricted to these elements."
 msgstr ""
 
-#: templates/general/computational-thinking.html:160
+#: templates/general/computational-thinking.html:161
 msgid "Abstraction"
 msgstr ""
 
-#: templates/general/computational-thinking.html:165
+#: templates/general/computational-thinking.html:166
 msgid ""
 "Abstraction is all about simplifying things to help us manage complexity. It "
 "requires identifying what the most important aspects of a problem are and "
@@ -1078,7 +1156,7 @@ msgid ""
 "multiple levels of abstraction."
 msgstr ""
 
-#: templates/general/computational-thinking.html:175
+#: templates/general/computational-thinking.html:176
 msgid ""
 "We use abstraction often in our everyday lives, for example when we use "
 "maps. Maps show us a simplified version of the world by leaving out "
@@ -1087,7 +1165,7 @@ msgid ""
 "roads and street names."
 msgstr ""
 
-#: templates/general/computational-thinking.html:182
+#: templates/general/computational-thinking.html:183
 msgid ""
 "Digital devices use abstraction all the time; they try to hide as much "
 "unnecessary information from the user as possible. For example, let's say "
@@ -1098,7 +1176,7 @@ msgid ""
 "operations happening which the computer is hiding from you."
 msgstr ""
 
-#: templates/general/computational-thinking.html:195
+#: templates/general/computational-thinking.html:196
 msgid ""
 "The picture you took is stored on the computer as a big list of pixels, "
 "which are each a different colour, and each colour is represented by a set "
@@ -1110,11 +1188,11 @@ msgid ""
 "information away."
 msgstr ""
 
-#: templates/general/computational-thinking.html:206
+#: templates/general/computational-thinking.html:207
 msgid "Decomposition"
 msgstr ""
 
-#: templates/general/computational-thinking.html:211
+#: templates/general/computational-thinking.html:212
 msgid ""
 "Decomposition is about breaking down problems into smaller, more manageable, "
 "parts, and then focusing on solving each of these smaller problems. We can "
@@ -1124,7 +1202,7 @@ msgid ""
 "Decomposition helps make large problems much less intimidating!"
 msgstr ""
 
-#: templates/general/computational-thinking.html:220
+#: templates/general/computational-thinking.html:221
 msgid ""
 "Decomposition is an important skill for creating algorithms and processes "
 "that can be implemented on a computing device, because computers need very "
@@ -1132,13 +1210,13 @@ msgid ""
 "to follow in order to do things."
 msgstr ""
 
-#: templates/general/computational-thinking.html:227
+#: templates/general/computational-thinking.html:228
 msgid ""
 "For example the overall task of making a cake can be decomposed into several "
 "smaller tasks, each of which can be performed easily."
 msgstr ""
 
-#: templates/general/computational-thinking.html:232
+#: templates/general/computational-thinking.html:233
 msgid ""
 "<p><strong>Make cake</strong></p> <ol> <li>Bake cake <ol> <li>Put "
 "ingredients in bowl (butter, sugar, egg, flour)</li> <li>Mix</li> <li>Pour "
@@ -1146,11 +1224,11 @@ msgid ""
 "</li> <li>Make icing</li> <li>Put on cake</li> </ol>"
 msgstr ""
 
-#: templates/general/computational-thinking.html:254
+#: templates/general/computational-thinking.html:255
 msgid "Generalising and patterns"
 msgstr ""
 
-#: templates/general/computational-thinking.html:259
+#: templates/general/computational-thinking.html:260
 msgid ""
 "Generalising is also referred to as 'pattern recognition and "
 "generalisation'. Generalisation is taking a solution (or part of a solution) "
@@ -1163,7 +1241,7 @@ msgid ""
 "algorithm functions."
 msgstr ""
 
-#: templates/general/computational-thinking.html:268
+#: templates/general/computational-thinking.html:269
 msgid ""
 "Spotting patterns is an important part of this process, when we think about "
 "problems we might recognise similarities between them and that they can be "
@@ -1171,17 +1249,17 @@ msgid ""
 "we do naturally all the time in our daily life."
 msgstr ""
 
-#: templates/general/computational-thinking.html:275
+#: templates/general/computational-thinking.html:276
 msgid ""
 "Generalised algorithms can be reused for a whole group of similar problems, "
 "which means we can come up with solutions quickly and effectively."
 msgstr ""
 
-#: templates/general/computational-thinking.html:284
+#: templates/general/computational-thinking.html:285
 msgid "Evaluation"
 msgstr ""
 
-#: templates/general/computational-thinking.html:289
+#: templates/general/computational-thinking.html:290
 msgid ""
 "Evaluation is about identifying the possible solutions to a problem and "
 "judging which is the best to use, if they will work in some situations but "
@@ -1193,7 +1271,7 @@ msgid ""
 "lives."
 msgstr ""
 
-#: templates/general/computational-thinking.html:298
+#: templates/general/computational-thinking.html:299
 msgid ""
 "There are different ways we can evaluate our algorithmic solutions. We can "
 "test their speed by implementing them on a computer; or we can analyse them "
@@ -1208,11 +1286,11 @@ msgid ""
 "also try to evaluate a system using logical reasoning."
 msgstr ""
 
-#: templates/general/computational-thinking.html:312
+#: templates/general/computational-thinking.html:313
 msgid "Logic"
 msgstr ""
 
-#: templates/general/computational-thinking.html:317
+#: templates/general/computational-thinking.html:318
 msgid ""
 "When trying to solve problems we need to think logically. Logical reasoning "
 "is about trying to make sense of things by observing, collecting data, "
@@ -1221,7 +1299,7 @@ msgid ""
 "rules and check facts."
 msgstr ""
 
-#: templates/general/computational-thinking.html:325
+#: templates/general/computational-thinking.html:326
 msgid ""
 "For example, suppose you are writing software that works out the shortest "
 "route to a location from your house. In the following map it's 2 minutes to "
@@ -1231,14 +1309,14 @@ msgid ""
 "because you'll already have walked for 3 minutes to get to the intersection."
 msgstr ""
 
-#: templates/general/computational-thinking.html:333
+#: templates/general/computational-thinking.html:334
 msgid ""
 "At a deeper level, computers are built entirely on logic. They use 'True' "
 "and 'False' values, and use something called 'Boolean expressions', like “is "
 "age > 5”, to make decisions in computer programs."
 msgstr ""
 
-#: templates/general/computational-thinking.html:340
+#: templates/general/computational-thinking.html:341
 msgid ""
 "Tracking down a bug in a program also requires logical thinking, to work out "
 "where, and why, something in the program is going wrong."
@@ -1264,7 +1342,7 @@ msgstr ""
 
 #: templates/general/how-do-i-teach-cs-unplugged.html:8
 #: templates/general/how-do-i-teach-cs-unplugged.html:20
-#: templates/general/index.html:66
+#: templates/general/index.html:57
 msgid "How do I teach CS Unplugged?"
 msgstr ""
 
@@ -1310,49 +1388,40 @@ msgid ""
 msgstr ""
 
 #: templates/general/how-do-i-teach-cs-unplugged.html:58
-#: templates/general/what-is-computer-science.html:84
+#: templates/general/what-is-computer-science.html:86
 msgid "View available topics"
 msgstr ""
 
-#: templates/general/index.html:15
+#: templates/general/index.html:18
 msgid "Computer Science<br>without a computer"
 msgstr ""
 
-#: templates/general/index.html:22
+#: templates/general/index.html:30
 msgid ""
 "CS Unplugged is a collection of free teaching material that teaches Computer "
 "Science through engaging games and puzzles that use cards, string, crayons "
 "and lots of running around."
 msgstr ""
 
-#: templates/general/index.html:29
-msgid "Welcome to the new CS Unplugged!"
-msgstr ""
-
-#: templates/general/index.html:33
-msgid ""
-"This updated website has unit plans, lesson plans, teaching videos, "
-"curriculum integration activities, and programming exercises to plug in the "
-"Computer Science concepts they have just learnt unplugged."
-msgstr ""
-
-#: templates/general/index.html:38
-msgid ""
-"The original activities are still available at <a href=\"https://classic."
-"csunplugged.org/\">classic.csunplugged.org</a>."
-msgstr ""
-
-#: templates/general/index.html:56
+#: templates/general/index.html:47
 #: templates/general/what-is-computer-science.html:8
 #: templates/general/what-is-computer-science.html:20
 msgid "What is Computer Science?"
 msgstr ""
 
-#: templates/general/index.html:89
+#: templates/general/index.html:77
 #: templates/topics/all-curriculum-integration-list.html:8
 #: templates/topics/all-curriculum-integration-list.html:17
 #: templates/topics/topic.html:64
 msgid "Curriculum Integrations"
+msgstr ""
+
+#: templates/general/index.html:85
+msgid "Activities"
+msgstr ""
+
+#: templates/general/index.html:96
+msgid "Plugging it in"
 msgstr ""
 
 #: templates/general/people.html:21
@@ -1380,7 +1449,7 @@ msgid "Founder &amp; Content Writer"
 msgstr ""
 
 #: templates/general/people.html:42 templates/general/people.html:43
-#: templates/general/people.html:52 templates/general/people.html:53
+#: templates/general/people.html:47 templates/general/people.html:53
 msgid "Content Writer"
 msgstr ""
 
@@ -1393,7 +1462,7 @@ msgstr ""
 msgid "Technical Team"
 msgstr ""
 
-#: templates/general/people.html:49
+#: templates/general/people.html:50
 msgid "Previous Team Members"
 msgstr ""
 
@@ -1609,15 +1678,18 @@ msgid ""
 "make this possible”)."
 msgstr ""
 
-#: templates/general/what-is-computer-science.html:23
+#: templates/general/what-is-computer-science.html:24
+#, python-format
 msgid ""
-"The term \"Computer Science\" has become widely used in recent years as the "
-"skills associated with the subject have become crucial to developing "
-"innovative digital technology, and qualifications in this area are highly "
-"sought after."
+"In today's digital world, Computer Science has become an important subject "
+"for everyone to learn about. The knowledge and <a href="
+"\"%(computational_thinking_url)s\">Computational Thinking skills</a> "
+"associated with it are now crucial to developing innovative digital "
+"technology, understanding modern society, and qualifications in this area "
+"are highly sought after."
 msgstr ""
 
-#: templates/general/what-is-computer-science.html:29
+#: templates/general/what-is-computer-science.html:31
 msgid ""
 "The CS Unplugged activities are intended to give you a feel for what the "
 "subject is - you can learn what it is by doing. At this early stage, rather "
@@ -1634,9 +1706,9 @@ msgid ""
 "ineffective that no-one would use it."
 msgstr ""
 
-#: templates/general/what-is-computer-science.html:45
+#: templates/general/what-is-computer-science.html:47
 msgid ""
-"This is where computer science comes in; many areas of Computer Science are "
+"This is where Computer Science comes in; many areas of Computer Science are "
 "employed to make the system work well, and most of them are illustrated "
 "through Unplugged. How could you search billions of items in a fraction of a "
 "second (Searching Algorithms)? How do you make sure that it's easy to use "
@@ -1653,9 +1725,9 @@ msgid ""
 "showing which sites are linked to which other ones (Graphs)."
 msgstr ""
 
-#: templates/general/what-is-computer-science.html:58
+#: templates/general/what-is-computer-science.html:60
 msgid ""
-"The areas above cover much of what the subject of computer science is about. "
+"The areas above cover much of what the subject of Computer Science is about. "
 "Programming is just a tool for implementing ideas (well, it's a very "
 "powerful tool, and requires considerable skill to use well). But programming "
 "on its own isn't enough to create software that people love to use, and "
@@ -1664,7 +1736,7 @@ msgid ""
 "scalable, and even delightful!"
 msgstr ""
 
-#: templates/general/what-is-computer-science.html:70
+#: templates/general/what-is-computer-science.html:72
 msgid ""
 "That's why we developed CS Unplugged - we want young students to be "
 "empowered to understand the great ideas that computer science covers, "
@@ -1673,12 +1745,22 @@ msgid ""
 "they will have an idea of what sort of techniques are needed to make it "
 "successful. We don't want them to see digital systems as some kind of magic "
 "that they can't participate in, but as something that they could understand "
-"and, for some, create themselves. Actually, it is is kind of magic when you "
+"and, for some, create themselves. Actually, it is kind of magic when you "
 "start understanding what can and can't be done."
 msgstr ""
 
-#: templates/general/what-is-computer-science.html:80
+#: templates/general/what-is-computer-science.html:82
 msgid "Read 'How do I teach CS Unplugged?'"
+msgstr ""
+
+#: templates/generic/classic-unplugged-button.html:13
+msgid "More activities at the Classic CS Unplugged website"
+msgstr ""
+
+#: templates/generic/classic-unplugged-button.html:15
+msgid ""
+"Translations for some activities available at the Classic CS Unplugged "
+"website"
 msgstr ""
 
 #: templates/generic/not-available-badge.html:4
@@ -1843,20 +1925,20 @@ msgid ""
 "integrations, and programming challenges."
 msgstr ""
 
-#: templates/topics/index.html:39 templates/topics/topic.html:46
+#: templates/topics/index.html:38 templates/topics/topic.html:46
 #, python-format
 msgid "Ages %(min_age)s to %(max_age)s"
 msgstr ""
 
-#: templates/topics/index.html:45 templates/topics/topic.html:56
+#: templates/topics/index.html:44 templates/topics/topic.html:56
 msgid "lessons"
 msgstr ""
 
-#: templates/topics/index.html:49
+#: templates/topics/index.html:48
 msgid "curriculum integrations"
 msgstr ""
 
-#: templates/topics/index.html:52
+#: templates/topics/index.html:51
 msgid "programming challenges"
 msgstr ""
 
@@ -1870,12 +1952,12 @@ msgid "<strong>Duration:</strong> %(duration)s minutes"
 msgstr ""
 
 #: templates/topics/lesson.html:44
-#: templates/topics/programming-challenge.html:70
+#: templates/topics/programming-challenge.html:61
 msgid "Learning outcomes"
 msgstr ""
 
 #: templates/topics/lesson.html:48
-#: templates/topics/programming-challenge.html:74
+#: templates/topics/programming-challenge.html:65
 msgid "Students will be able to:"
 msgstr ""
 
@@ -1904,17 +1986,6 @@ msgstr ""
 #: templates/topics/lessons-table.html:10
 #, python-format
 msgid "Ages %(lower)s to %(upper)s"
-msgstr ""
-
-#: templates/topics/not-available-warning.html:6
-#, python-format
-msgid ""
-"<h4>Sorry! This item is not yet available in %(language)s.</h4> <p>This item "
-"is available in the following languages:</p>"
-msgstr ""
-
-#: templates/topics/not-available-warning.html:36
-msgid "Return to homepage "
 msgstr ""
 
 #: templates/topics/programming-challenge-language-solution.html:10
@@ -1946,7 +2017,7 @@ msgid "Back to programming challenge"
 msgstr ""
 
 #: templates/topics/programming-challenge-language-solution.html:68
-#: templates/topics/programming-challenge.html:148
+#: templates/topics/programming-challenge.html:139
 msgid "Extra Challenge"
 msgstr ""
 
@@ -1970,29 +2041,25 @@ msgstr ""
 msgid "Challenge %(set_num)s.%(chal_num)s for %(name)s"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:49
+#: templates/topics/programming-challenge.html:47
 #, python-format
 msgid "%(lower)s to %(upper)s"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:53
-msgid "and"
-msgstr ""
-
-#: templates/topics/programming-challenge.html:92
+#: templates/topics/programming-challenge.html:83
 #: templates/topics/programming-challenges-table.html:11
 msgid "Languages"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:113
+#: templates/topics/programming-challenge.html:104
 msgid "What it should look like"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:120
+#: templates/topics/programming-challenge.html:111
 msgid "Hints"
 msgstr ""
 
-#: templates/topics/programming-challenge.html:132
+#: templates/topics/programming-challenge.html:123
 #, python-format
 msgid "Show %(implementation.language.name)s solution"
 msgstr ""

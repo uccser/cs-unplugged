@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base-educators.html" %}
 
 {% load i18n %}
 {% load static %}
@@ -43,7 +43,13 @@
             If you're working within a school curriculum, you can find appropriate activities based on the learning objectives and age group.
             In several countries there are guides linking CS Unplugged to the local curriculum (e.g. <a href="https://www.digitaltechnologieshub.edu.au/">Digital Technologies Hub for Australia</a>).
             But the unit plans listed follow the common topics that are appearing in school curricula, so you are likely to find something relevant from the titles.
-            Note that CS Unplugged does not teach programming - the Kidbots activity is an excellent lead in to programming and the "Plugging it in" sections give some programming exercises to follow up with - but in general we are trying to show students what they could do with programming, before they have to learn it.
+          {% endblocktrans %}
+        </p>
+
+         <p>
+          {% url "plugging_it_in:index" as plugging_it_in_url %}
+          {% blocktrans trimmed %}
+            Note that CS Unplugged does not teach programming, but it does provide ways to support students with programming. There are activities such as Kidbots that provide an excellent lead into the ideas they will encounter when programming (such as sequence and debugging). There are also "Plugging it in" challenges that give some programming exercises to follow up from an Unplugged activity. These don’t teach students how to program, but will give students a chance to exercise their programming skills in a context relevant to an Unplugged activity that they have just experienced. There’s more information about using these <a href={{ plugging_it_in_url }}>here</a>.
           {% endblocktrans %}
         </p>
 

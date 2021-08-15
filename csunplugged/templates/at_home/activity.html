@@ -1,0 +1,107 @@
+{% extends "base-at-home.html" %}
+
+{% load i18n %}
+{% load static %}
+{% load render_html_field %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}
+    {{ activity.name }}
+{% endblock title %}
+
+{% block breadcrumbs %}
+    {% breadcrumb activity.name "at_home:activity" activity.slug %}
+{% endblock breadcrumbs %}
+
+{% block page_heading %}
+    <h1 id="{{ activity.slug }}">{{ activity.name }}</h1>
+    {% if not activity.translation_available %}
+      {% with model=activity %}
+        {% include "topics/not-available-warning.html" %}
+      {% endwith %}
+    {% endif %}
+{% endblock page_heading %}
+
+{% block content_container %}
+    <div class="col-12 col-md-4 order-md-2 print-col-12 print-order-1">
+        {% if activity.translation_available %}
+            <div id="sticky-sidebar" class="position-sticky d-print-none">
+                <h2 class="mt-2">{% trans "Table of contents" %}</h2>
+                <ul class="nav nav-pills flex-column" id="scrollspy-table-of-contents">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#{{ activity.slug }}">
+                            {{ activity.name }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#activity-steps">
+                            {% trans "Activity steps" %}
+                        </a>
+                    </li>
+                    {% if activity.inside_the_computer %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="#inside-the-computer">
+                                {% trans "Inside the computer" %}
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% if activity.project %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="#project">
+                                {% trans "Project" %}
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% if activity.challenges.all %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="#challenges">
+                                {% trans "Arnold's challenges" %}
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% if activity.more_information %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="#more-information">
+                                {% trans "More information" %}
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+    <div class="col-12 col-md-8 order-md-1 print-col-12 print-order-2">
+        {% if activity.translation_available %}
+        {% render_html_field activity.introduction %}
+
+        <h2 id="activity-steps">{% trans "Activity steps" %}</h2>
+        {% render_html_field activity.activity_steps %}
+        {% if activity.activity_extra_information %}
+            {% render_html_field activity.activity_extra_information %}
+        {% endif %}
+
+        {% if activity.inside_the_computer %}
+            <h2 id="inside-the-computer">{% trans "Inside the computer" %}</h2>
+            {% render_html_field activity.inside_the_computer %}
+        {% endif %}
+
+        {% if activity.project %}
+            <h2 id="project">{% trans "Project" %}</h2>
+            {% render_html_field activity.project %}
+        {% endif %}
+
+        {% if activity.challenges.all %}
+            <h2 id="challenges">{% trans "Arnold's challenges" %}</h2>
+            <p class="mb-2">{% trans "Click here to view Arnold's challenges:" %}</p>
+            <a href="{% url 'at_home:activity_challenges' activity.slug %}" class="btn btn-outline-primary mb-3">
+                {% trans "Arnold's Challenges" %}
+            </a>
+        {% endif %}
+
+        {% if activity.more_information %}
+            <h2 id="more-information">{% trans "More information" %}</h2>
+            {% render_html_field activity.more_information %}
+        {% endif %}
+    {% endif %}
+    </div>
+{% endblock content_container %}

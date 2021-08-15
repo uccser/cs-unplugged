@@ -1,0 +1,201 @@
+{% extends "base-plugging-it-in.html" %}
+
+{% load i18n %}
+{% load static %}
+{% load render_html_field %}
+{% load custom_tags %}
+
+{% block title %}
+  {{ programming_challenge.name }}
+{% endblock title %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/programming-editor.css' %}" >
+  <link rel="stylesheet" href="{% static 'css/third-party/introjs.css' %}" >
+  <!-- Add Modern template -->
+  <link rel="stylesheet" href="{% static 'css/third-party/introjs-modern.css' %}" >
+  <link rel="stylesheet" href="{% static 'css/plugging-it-in-base.css' %}" >
+{% endblock css %}
+
+{% block body_container %}
+
+<div class="row programming__challenge-screen">
+
+  <div id="my_sidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" id="close_nav_button">&times;</a>
+
+    <div class='sidebar-headings'>
+      <h5 class='topic-subheading'>{{topic.name}}</h5>
+      <a href="{% url 'plugging_it_in:lesson' topic.slug lesson.slug %}" target="_blank" rel="noopener noreferrer">
+        <h2 class='lesson-heading'>{{lesson.name}}</h2>
+      </a>
+      <a href="{% url 'topics:lesson' topic.slug lesson.unit_plan.slug lesson.slug %}" target="_blank" rel="noopener noreferrer">
+        <p>
+          {% trans "Jump to the CS Unplugged lesson" %}
+          <img class="d-inline" src="{% static 'img/plugging-it-in/icons8-external-link.svg' %}">
+        </p>
+      </a>
+    </div>
+
+    <hr>
+
+    <p class='challenges-heading'>{% trans "Challenges" %}</p>
+    <ol class='challenges-list'>
+      {% for programming_challenge_item in programming_challenges %}
+      <a href="{% url 'plugging_it_in:programming_challenge' topic.slug lesson.slug programming_challenge_item.slug %}">
+        <li class="{% if programming_challenge.slug == programming_challenge_item.slug %}current-exercise{% endif %} row">
+          <div class='row'>
+            <div class='nav-row-info col-10 d-flex'>
+              <div class="d-flex align-items-center">
+                <span class="badge">
+                  <h5>{{ programming_challenge_item.challenge_set_number }}.{{ programming_challenge_item.challenge_number }}</h5>
+                </span>
+              </div>
+              <p>{{ programming_challenge_item.name }}</p>
+            </div>
+
+            <div class='col-2 d-flex align-items-center justify-content-center'>
+            {% if programming_challenge_item.slug in saved_attempts %}
+              {% if saved_attempts|get_item:programming_challenge_item.slug|get_item:"status" == "failed" %}
+                <p class="status-badge bg-danger border-danger text-white">{% trans "Incorrect" %}</p>
+              {% elif saved_attempts|get_item:programming_challenge_item.slug|get_item:"status" == "passed" %}
+                <p class="status-badge bg-success border-success text-white">{% trans "Correct" %}</p>
+              {% elif saved_attempts|get_item:programming_challenge_item.slug|get_item:"status" == "started" %}
+                <p class="status-badge border-warning bg-warning">{% trans "Started" %}</p>
+              {% endif %}
+            {% else %}
+              <p class="status-badge">{% trans "Not started" %}</p>
+            {% endif %}
+            </div>
+          </div>
+        </li>
+      </a>
+      {% endfor %}
+    </ol>
+  </div>
+
+  <div id="sidebar_overlay">
+  </div>
+
+  {% if programming_challenge.translation_available %}
+    <div class="col-12 col-md-4 programming__info-area">
+      <div class="pii-block-heading">
+        <img id="lessons_nav_toggle" class="img-fluid align-top" src="{% static 'img/plugging-it-in/icons8-menu-24.png' %}">
+        <p id="info-panel-heading" class="d-inline">
+          {% trans "Challenge " %} {{ programming_challenge.challenge_set_number }}.{{ programming_challenge.challenge_number }}
+        </p>
+      </div>
+      <div class="programming__info-area-content">
+        {% block page_heading %}
+          <h1>
+            {{ programming_challenge.name }}
+          </h1>
+          <p class="w-100 text-white rounded p-2 mt-3 difficulty-level-{{ programming_challenge.difficulty.level }}">
+            <strong>{% trans "Challenge Level:" %}</strong> {{ programming_challenge.difficulty.name }}
+          </p>
+        {% endblock page_heading %}
+
+        {% render_html_field programming_challenge.content %}
+
+        {% comment %} Challenge Hints {% endcomment %}
+        {% for implementation in implementations %}
+          {% if implementation.language.name == "Python" and implementation.hints %}
+            <details>
+              <summary>
+                <strong>
+                  {% trans "Hints" %}
+                </strong>
+              </summary>
+
+              <div class="boxed-text-content">
+                {% render_html_field implementation.hints %}
+              </div>
+            </details>
+          {% endif %}
+
+          {% comment %} Programming syntax reminders {% endcomment %}
+          {% if implementation.language.name == "Python" and implementation.language.programming_reminders %}
+            <details>
+              <summary>
+                <strong>{% trans "Programming Reminders" %}</strong>
+              </summary>
+              <div class="boxed-text-content">
+                {% render_html_field implementation.language.programming_reminders %}
+              </div>
+            </details>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-12 col-md-4 programming__editor">
+      <p class='pii-block-heading'>{% trans "Enter your code in the editor below" %}</p>
+      <textarea id="codemirror_editor">{{ previous_submission|safe }}</textarea>
+      <div class="programming__submit d-flex justify-content-between align-items-center">
+        <div class="programming__submit_options d-flex justify-content-start">
+          <button class="editor_button" id="editor_run_button" >{% trans "Check" %}</button>
+          <button class="editor_button" id="download_button" >{% trans "Download" %}</button>
+        </div>
+        <div class="code_running_spinner spinner-grow" role="status">
+          <span class="sr-only"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-4 programming__results">
+      <p class="pii-block-heading d-inline">{% trans "Your results will be displayed here" %}</p>
+      {% include "plugging_it_in/results-table.html" %}
+      <div id="walkthrough-btn-container" class="row">
+        <button id="introjs-walkthrough" class="btn btn-outline-secondary btn-sm col-6 offset-6 my-2">{% trans "How does this page work?" %}</button>
+      </div>
+    </div>
+  {% else %}
+    <div class="col-md-6 offset-md-3 justify-content-center mt-3">
+      {% with model=programming_challenge parent=topic homepage='plugging_it_in:index' %}
+        {% include 'topics/not-available-warning.html' %}
+      {% endwith %}
+    </div>
+  {% endif %}
+</div>
+
+<div class="col-12 programming__options">
+  <div class="row progression-options py-2">
+    {% if programming_challenge.translation_available %}
+      <div class="col-sm-4 col-6 order-2 order-sm-1 d-flex align-items-center my-1">
+        <a id='prev_challenge_button'>
+          <button class="btn prev">{% trans "Previous Challenge" %}</button>
+        </a>
+      </div>
+      <div class="progression-info col-sm-4 col-12 order-1 order-sm-2 my-2">
+        <p id="challenge_progression_text"></p>
+      </div>
+      <div class="col-sm-4 col-6 order-3 order-sm-3 d-flex justify-content-end align-items-center my-1">
+        <a id='next_challenge_button'>
+          <button class="btn next">{% trans "Next Challenge" %}</button>
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock body_container %}
+
+{% block scripts %}
+  <script type="text/javascript">
+    let current_challenge_slug = '{{ programming_challenge.slug }}';
+    let test_cases = {{ test_cases_json|safe }};
+    let programming_exercises = {{ programming_exercises_json|safe }};
+    let lesson_url = "{% url 'plugging_it_in:lesson' topic.slug lesson.slug %}";
+    let csrf_token = '{{ csrf_token }}';
+    let jobe_proxy_url = '{{ jobe_proxy_url }}';
+    let save_attempt_url = "{% url 'plugging_it_in:save_attempt' %}"
+  </script>
+
+  <script src="{% static 'js/jobe-editor.js' %}"></script>
+  <script src="{% static 'js/editor-options-menu.js' %}"></script>
+  <script src="{% static 'js/plugging-it-in-walkthrough.js' %}"></script>
+
+  {% comment %} Add in highlight.js for code highlighting {% endcomment %}
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/xcode.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+{% endblock scripts %}

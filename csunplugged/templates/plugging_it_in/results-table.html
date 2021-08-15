@@ -1,0 +1,52 @@
+<div id="test-case-table-container" class="results-table table-responsive">
+    <table id="test-case-table" class="table table-sm table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Input</th>
+                <th scope="col">Expected output</th>
+                <th scope="col">Received output</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for test_case in test_cases %}
+            <tr id="test-case-{{ test_case.id }}-row">
+                <td>
+                    <pre class="mb-0 test-case-input"
+                        id="test-case-{{ test_case.id }}-input">{{ test_case.test_input }}</pre>
+                </td>
+                <td>
+                    <pre class="mb-0"
+                        id="test-case-{{ test_case.id }}-expected-output">{{ test_case.expected_output }}</pre>
+                </td>
+                <td>
+                    <pre class="mb-0 test-case-output" id="test-case-{{ test_case.id }}-output"></pre>
+                </td>
+                <td>
+                    <span id="test-case-{{ test_case.id }}-status">
+                        Not yet run
+                    </span>
+                    <a href="#" id="test-case-{{ test_case.id }}-help-icon" class="badge help-icon" data-toggle="modal" data-target="#modal-{{ test_case.id }}">
+                        ?
+                    </a>
+                </td>
+            </tr>
+
+            <!-- Modal -->
+            <div class="modal fade" id="modal-{{ test_case.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="test-case-{{ test_case.id }}-help-title"></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div id="test-case-{{ test_case.id }}-help" class="modal-body"></div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

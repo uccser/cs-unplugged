@@ -1,201 +1,216 @@
-// gulp build : for a one off development build
-// gulp build --production : for a minified production build
+////////////////////////////////
+// Setup
+////////////////////////////////
 
-'use strict';
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-var del = require('del');
-var gulpif = require('gulp-if');
-var exec = require('child_process').exec;
-var runSequence = require('run-sequence')
-var notify = require('gulp-notify');
-var buffer = require('vinyl-buffer');
-var argv = require('yargs').argv;
+// Gulp and package
+const { src, dest, parallel, series, watch } = require('gulp')
+const pjson = require('./package.json')
 
-// sass
-var sass = require('gulp-sass');
-var postcss = require('gulp-postcss');
-var postcssFlexbugFixes = require('postcss-flexbugs-fixes');
-var autoprefixer = require('autoprefixer');
-var sourcemaps = require('gulp-sourcemaps');
+// Plugins
+const autoprefixer = require('autoprefixer')
+const browserify = require('browserify')
+const browserSync = require('browser-sync').create()
+const buffer = require('vinyl-buffer');
+const c = require('ansi-colors')
+const concat = require('gulp-concat')
+const cssnano = require('cssnano')
+const errorHandler = require('gulp-error-handle')
+const filter = require('gulp-filter')
+const gulpif = require('gulp-if');
+const { hideBin } = require('yargs/helpers')
+const imagemin = require('gulp-imagemin')
+const log = require('fancy-log')
+const pixrem = require('pixrem')
+const postcss = require('gulp-postcss')
+const postcssFlexbugFixes = require('postcss-flexbugs-fixes')
+const reload = browserSync.reload
+const sass = require('gulp-sass')
+const sourcemaps = require('gulp-sourcemaps')
+const spawn = require('child_process').spawn
+const tap = require('gulp-tap')
+const terser = require('gulp-terser')
+const yargs = require('yargs/yargs')
 
-// linting
-var jshint = require('gulp-jshint');
-var stylish = require('jshint-stylish');
+// Arguments
+const argv = yargs(hideBin(process.argv)).argv
+const PRODUCTION = !!argv.production;
 
-// Scratch image rendering
-var scratchblocks = require('scratchblocks');
-var rename = require("gulp-rename");
-var through = require('through2');
-var PluginError = require('gulp-util').PluginError;
+// Relative paths function
+function pathsConfig(appName) {
+    this.app = `./${pjson.name}`
+    const vendorsRoot = 'node_modules'
+    const staticSourceRoot = 'static'
+    const staticOutputRoot = 'build'
 
-// gulp build --production
-var production = !!argv.production;
-// determine if we're doing a build
-// and if so, bypass the livereload
-var build = argv._.length ? argv._[0] === 'build' : true;
-
-// ----------------------------
-// Error notification methods
-// ----------------------------
-var beep = function() {
-  var os = require('os');
-  var file = 'gulp/error.wav';
-  if (os.platform() === 'linux') {
-    // linux
-    exec("aplay " + file);
-  } else {
-    // mac
-    console.log("afplay " + file);
-    exec("afplay " + file);
-  }
-};
-var handleError = function(task) {
-  return function(err) {
-    beep();
-
-      notify.onError({
-        message: task + ' failed, check the logs..',
-        sound: false
-      })(err);
-
-    gutil.log(gutil.colors.bgRed(task + ' error:'), gutil.colors.red(err));
-  };
-};
-
-var scratchSVG = function() {
-  var PLUGIN_NAME = 'scratchSVG';
-  return through.obj(function(file, encoding, callback) {
-    if (file.isNull()) {
-        // nothing to do
-        return callback(null, file);
+    return {
+        app: this.app,
+        // Source files
+        bootstrap_source: `${vendorsRoot}/bootstrap/scss`,
+        css_source: `${staticSourceRoot}/css`,
+        scss_source: `${staticSourceRoot}/scss`,
+        js_source: `${staticSourceRoot}/js`,
+        images_source: `${staticSourceRoot}/img`,
+        vendor_js_source: [
+            `${vendorsRoot}/jquery/dist/jquery.js`,
+            `${vendorsRoot}/popper.js/dist/umd/popper.js`,
+            `${vendorsRoot}/bootstrap/dist/js/bootstrap.js`,
+            `${vendorsRoot}/details-element-polyfill/dist/details-element-polyfill.js`,
+            `${vendorsRoot}/scratchblocks/build/scratchblocks.min.js`,
+            `${vendorsRoot}/multiple-select/dist/multiple-select-es.js`,
+        ],
+        // Output files
+        css_output: `${staticOutputRoot}/css`,
+        fonts_output: `${staticOutputRoot}/fonts`,
+        images_output: `${staticOutputRoot}/img`,
+        js_output: `${staticOutputRoot}/js`,
     }
+}
 
-    if (file.isStream()) {
-        // file.contents is a Stream - https://nodejs.org/api/stream.html
-        this.emit('error', new PluginError(PLUGIN_NAME, 'Streams not supported!'));
-    } else if (file.isBuffer()) {
-        // file.contents is a Buffer - https://nodejs.org/api/buffer.html
-        var doc = scratchblocks.parse(file.contents.toString())
-        doc.render(svg => {
-          var string = doc.exportSVGString();
-          // Remove invalid xmlns attribute due to issue https://github.com/scratchblocks/scratchblocks/issues/219
-          string = string.replace(
-            /<use xmlns="http:\/\/www\.w3\.org\/1999\/xlink"/g,
-            '<use'
-          );
-          file.contents = new Buffer(string);
-        })
-        return callback(null, file);
-    }
-  });
-};
-// --------------------------
-// CUSTOM TASK METHODS
-// --------------------------
-var tasks = {
-  // --------------------------
-  // Delete build folder
-  // --------------------------
-  clean: function() {
-    return del(['build/']);
-  },
-  // --------------------------
-  // Copy static images
-  // --------------------------
-  images: function() {
-    return gulp.src('static/img/**/*')
-      .pipe(gulp.dest('build/img'));
-  },
-  // --------------------------
-  // CSS
-  // --------------------------
-  css: function() {
-    return gulp.src('static/css/**/*.css')
-      .pipe(gulp.dest('build/css'));
-  },
-  // --------------------------
-  // JS
-  // --------------------------
-  js: function() {
-    return gulp.src('static/js/**/*.js')
-      .pipe(gulp.dest('build/js'));
-  },
-  // --------------------------
-  // Scratch
-  // --------------------------
-  scratch: function() {
-    return gulp.src('temp/scratch-blocks-*.txt')
-      .pipe(scratchSVG())
-      .pipe(rename(function (path) {
-        path.extname = ".svg"
-      }))
-      // give it a file and save
-      .pipe(gulp.dest('build/img'));
-  },
-  // --------------------------
-  // SASS (libsass)
-  // --------------------------
-  sass: function() {
-    return gulp.src('static/scss/*.scss')
-      // sourcemaps + sass + error handling
-      .pipe(gulpif(!production, sourcemaps.init()))
-      .pipe(sass({
-        sourceComments: !production,
-        outputStyle: production ? 'compressed' : 'nested'
-      }))
-      .on('error', handleError('SASS'))
-      // generate .maps
-      .pipe(gulpif(!production, sourcemaps.write({
-        'includeContent': false,
-        'sourceRoot': '.'
-      })))
-      // autoprefixer
-      .pipe(gulpif(!production, sourcemaps.init({
-        'loadMaps': true
-      })))
-      .pipe(postcss([autoprefixer({browsers: ['last 2 versions']}), postcssFlexbugFixes]))
-      // we don't serve the source files
-      // so include scss content inside the sourcemaps
-      .pipe(sourcemaps.write({
-        'includeContent': true
-      }))
-      // write sourcemaps to a specific directory
-      // give it a file and save
-      .pipe(gulp.dest('build/css'));
-  },
+var paths = pathsConfig()
 
-  // --------------------------
-  // linting
-  // --------------------------
-  lintjs: function() {
-    return gulp.src([
-        'gulpfile.js',
-        'static/js/index.js',
-        'static/js/**/*.js'
-      ]).pipe(jshint())
-      .pipe(jshint.reporter(stylish))
-      .on('error', function() {
-        beep();
-      });
-  },
-};
+function catchError(error) {
+    log.error(
+        c.bgRed('Error:'),
+        c.red(error)
+    );
+    this.emit('end');
+}
 
-// // --------------------------
-// // CUSTOMS TASKS
-// // --------------------------
-gulp.task('clean', tasks.clean);
-// // for production we require the clean method on every individual task
-var req = [];
-// // individual tasks
-gulp.task('images', req, tasks.images);
-gulp.task('js', req, tasks.js);
-gulp.task('css', req, tasks.css);
-gulp.task('sass', req, tasks.sass);
-gulp.task('scratch', req, tasks.scratch);
-gulp.task('lint:js', tasks.lintjs);
+////////////////////////////////
+// Config
+////////////////////////////////
 
-// // build task
-gulp.task('build', function(callback) {
-  runSequence('clean', ['images', 'css', 'js', 'sass'], callback);
-});
+// CSS/SCSS
+const processCss = [
+    autoprefixer(),         // adds vendor prefixes
+    pixrem(),               // add fallbacks for rem units
+    postcssFlexbugFixes(),  // adds flexbox fixes
+]
+const minifyCss = [
+    cssnano({ preset: 'default' })   // minify result
+]
+
+// JS
+
+const js_files_skip_optimisation = [
+    // Optimise all files
+    '**',
+    // But skip the following files
+    // For example: '!static/js/vendor/**/*.js'
+];
+
+////////////////////////////////
+// Tasks
+////////////////////////////////
+
+// Styles autoprefixing and minification
+function css() {
+    return src(`${paths.css_source}/**/*.css`)
+        .pipe(errorHandler(catchError))
+        .pipe(sourcemaps.init())
+        .pipe(postcss(processCss))
+        .pipe(sourcemaps.write())
+        .pipe(gulpif(PRODUCTION, postcss(minifyCss))) // Minifies the result
+        .pipe(dest(paths.css_output))
+}
+
+function scss() {
+    return src(`${paths.scss_source}/**/*.scss`)
+        .pipe(errorHandler(catchError))
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            includePaths: [
+                paths.bootstrap_source,
+                paths.scss_source
+            ],
+            sourceComments: !PRODUCTION,
+        }).on('error', sass.logError))
+        .pipe(postcss(processCss))
+        .pipe(sourcemaps.write())
+        .pipe(gulpif(PRODUCTION, postcss(minifyCss))) // Minifies the result
+        .pipe(dest(paths.css_output))
+}
+
+// Javascript
+function js() {
+    const js_filter = filter(js_files_skip_optimisation, { restore: true })
+    return src([
+            `${paths.js_source}/**/*.js`,
+            `!${paths.js_source}/modules/**/*.js`
+        ])
+        .pipe(errorHandler(catchError))
+        .pipe(sourcemaps.init())
+        .pipe(js_filter)
+        .pipe(tap(function (file) {
+            file.contents = browserify(file.path, { debug: true }).bundle().on('error', catchError);
+        }))
+        .pipe(buffer())
+        .pipe(gulpif(PRODUCTION, terser({ keep_fnames: true })))
+        .pipe(js_filter.restore)
+        .pipe(sourcemaps.write())
+        .pipe(dest(paths.js_output))
+}
+
+// Vendor Javascript (always minified)
+function vendorJs() {
+    return src(paths.vendor_js_source)
+        .pipe(errorHandler(catchError))
+        .pipe(concat('vendors.js'))
+        .pipe(terser())
+        .pipe(dest(paths.js_output))
+}
+
+// Image compression
+function img() {
+    return src(`${paths.images_source}/**/*`)
+        .pipe(gulpif(PRODUCTION, imagemin())) // Compresses PNG, JPEG, GIF and SVG images
+        .pipe(dest(paths.images_output))
+}
+
+// Browser sync server for live reload
+// TODO: Not yet working
+// function initBrowserSync() {
+//     browserSync.init({
+//         // https://www.browsersync.io/docs/options/#option-proxy
+//         proxy: {
+//                 target: 'cs-unplugged.localhost:8000',
+//                 proxyReq: [
+//                     function (proxyReq, req) {
+//                         // Assign proxy "host" header same as current request at Browsersync server
+//                         proxyReq.setHeader('Host', req.headers.host)
+//                     }
+//                 ]
+//             },
+//             // https://www.browsersync.io/docs/options/#option-open
+//             // Disable as it doesn't work from inside a container
+//             open: false
+//         }
+//     )
+// }
+
+// Watch
+function watchPaths() {
+    watch([`${paths.js_source}/**/*.js`], js).on("change", reload)
+    watch([`${paths.css_source}/**/*.css`], css).on("change", reload)
+    watch([`${paths.scss_source}/**/*.scss`], scss).on("change", reload)
+    watch([`${paths.images_source}/**/*`], img).on("change", reload)
+}
+
+// Generate all assets
+const generateAssets = parallel(
+    css,
+    scss,
+    js,
+    vendorJs,
+    img
+)
+
+// Set up dev environment
+const dev = parallel(
+    // initBrowserSync,
+    watchPaths
+)
+// TODO: Look at cleaning build folder
+exports["generate-assets"] = generateAssets
+exports["dev"] = dev
+exports.default = series(generateAssets, dev)

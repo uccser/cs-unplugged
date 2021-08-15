@@ -16,4 +16,4 @@ class ManagementCommandTest(BaseTestWithDB):
         management.call_command("updatedata")
 
     def test_updatedata_command_lite_load(self):
-        management.call_command("updatedata", lite_loader=True)
+        management.call_command("updatedata", lite_load=True)

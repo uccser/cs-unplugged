@@ -76,23 +76,6 @@ CARD_TYPE_DATA = {
             "kauri-tree/kauri-6.png",
         ],
     },
-    "maori_colours": {
-        "label": "Māori colours",
-        "values": [
-            "whero", "kākāriki", "kiwikiwi", "karaka",
-            "kōwhai", "pango", "māwhero", "mā"
-        ],
-        "font-size": 500,
-    },
-    "maori_numbers": {
-        "label": "Māori numbers",
-        "values": [
-            "tahi", "rua", "toru", "whā", "rima", "ono", "whitu", "waru",
-            "iwa", "tekau", "tekau mā tahi", "tekau mā waru", "tekau mā toru",
-            "tekau mā whā", "rua tekau", "rua tekau mā ono"
-        ],
-        "font-size": 300,
-    },
 }
 
 

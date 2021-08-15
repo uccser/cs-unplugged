@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 
 import environ
 import os.path
+import logging.config
 
 # Add custom languages not provided by Django
 import django.conf.locale
@@ -22,6 +23,9 @@ ROOT_DIR = environ.Path(__file__) - 3
 
 # Load operating system environment variables and then prepare to use them
 env = environ.Env()
+
+# Wipe default Django logging
+LOGGING_CONFIG = None
 
 # APP CONFIGURATION
 # ----------------------------------------------------------------------------
@@ -36,6 +40,9 @@ DJANGO_APPS = [
 
     # Useful template tags
     "django.contrib.humanize",
+
+    # Admin
+    "django.contrib.admin",
 ]
 
 THIRD_PARTY_APPS = [
@@ -50,9 +57,11 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "general.apps.GeneralConfig",
     "topics.apps.TopicsConfig",
+    "plugging_it_in.apps.PluggingitinConfig",
     "resources.apps.ResourcesConfig",
     "search.apps.SearchConfig",
     "classic.apps.ClassicConfig",
+    "at_home.apps.AtHomeConfig",
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -62,6 +71,7 @@ INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 # ----------------------------------------------------------------------------
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -121,10 +131,21 @@ DEFAULT_LANGUAGES = (
     ("en", "English"),
     ("de", "Deutsche"),
     ("es", "Español"),
+    ("fr", "Français"),
+    ("mi", "Te Reo Māori"),
     ("zh-hans", "简体中文"),
 )
 # Keep original values of languages for resource generation
 LANGUAGES = DEFAULT_LANGUAGES
+
+EXTRA_LANG_INFO = {
+    'mi': {
+        'bidi': False,
+        'code': 'mi',
+        'name': "Te Reo Māori",
+        'name_local': "Te Reo Māori",
+    }
+}
 
 if env.bool("INCLUDE_INCONTEXT_L10N", False):
     EXTRA_LANGUAGES = [
@@ -132,7 +153,7 @@ if env.bool("INCLUDE_INCONTEXT_L10N", False):
         (INCONTEXT_L10N_PSEUDOLANGUAGE_BIDI, "Translation mode (Bi-directional)"),
     ]
 
-    EXTRA_LANG_INFO = {
+    EXTRA_LANG_INFO.update({
         INCONTEXT_L10N_PSEUDOLANGUAGE: {
             'bidi': False,
             'code': INCONTEXT_L10N_PSEUDOLANGUAGE,
@@ -145,9 +166,8 @@ if env.bool("INCLUDE_INCONTEXT_L10N", False):
             'name': "Translation mode (Bi-directional)",
             'name_local': _("Translation mode (Bi-directional)"),
         }
-    }
+    })
 
-    django.conf.locale.LANG_INFO.update(EXTRA_LANG_INFO)
     # Add new languages to the list of all django languages
     global_settings.LANGUAGES = global_settings.LANGUAGES + EXTRA_LANGUAGES
     global_settings.LANGUAGES_BIDI = (global_settings.LANGUAGES_BIDI +
@@ -156,6 +176,7 @@ if env.bool("INCLUDE_INCONTEXT_L10N", False):
     LANGUAGES += tuple(EXTRA_LANGUAGES)
     LANGUAGES_BIDI = global_settings.LANGUAGES_BIDI
 
+django.conf.locale.LANG_INFO.update(EXTRA_LANG_INFO)
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#site-id
 SITE_ID = 1
@@ -210,10 +231,42 @@ TEMPLATES = [
                 "render_html_field": "config.templatetags.render_html_field",
                 "translate_url": "config.templatetags.translate_url",
                 "query_replace": "config.templatetags.query_replace",
+                'custom_tags': 'config.templatetags.custom_tags'
             },
         },
     },
 ]
+
+# LOGGING
+# ------------------------------------------------------------------------------
+logging.config.dictConfig({
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'console': {
+            # exact format is not important, this is the minimum information
+            'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'console',
+        },
+    },
+    'loggers': {
+        '': {
+            'level': 'INFO',
+            'handlers': ['console', ],
+        },
+        'csunplugged': {
+            'level': 'INFO',
+            'handlers': ['console', ],
+            # required to avoid double logging with root logger
+            'propagate': False,
+        },
+    },
+})
 
 # STATIC FILE CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -222,7 +275,6 @@ STATIC_ROOT = os.path.join(str(ROOT_DIR.path("staticfiles")), "")
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 BUILD_ROOT = os.path.join(str(ROOT_DIR.path("build")), "")
-STATIC_URL = "/staticfiles/"
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = [
@@ -234,6 +286,8 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
+
+STATIC_URL = "/static/"
 
 # MEDIA CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -273,19 +327,27 @@ AUTH_PASSWORD_VALIDATORS = [
 # ------------------------------------------------------------------------------
 # See: http://django-haystack.readthedocs.io/en/v2.6.0/settings.html
 HAYSTACK_CONNECTIONS = {
-    "default": {
-        "ENGINE": "haystack.backends.whoosh_backend.WhooshEngine",
-        "PATH": str(ROOT_DIR.path("whoosh_index")),
+    'default': {
+        'ENGINE': 'haystack.backends.elasticsearch5_backend.Elasticsearch5SearchEngine',
+        'URL': 'elasticsearch:9200',
+        'INDEX_NAME': 'haystack',
     },
 }
 HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10
 
 # OTHER SETTINGS
 # ------------------------------------------------------------------------------
-DJANGO_PRODUCTION = env.bool("DJANGO_PRODUCTION")
+DEPLOYED = env.bool("DEPLOYED")
+GIT_SHA = env("GIT_SHA", default=None)
+if GIT_SHA:
+    GIT_SHA = GIT_SHA[:8]
+else:
+    GIT_SHA = "local development"
+PRODUCTION_ENVIRONMENT = False
+STAGING_ENVIRONMENT = False
 TOPICS_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("topics")), "content")
 RESOURCES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("resources")), "content")
-RESOURCE_GENERATION_LOCATION = os.path.join(str(ROOT_DIR.path("staticfiles")), "resources")
+RESOURCE_GENERATION_LOCATION = os.path.join(str(ROOT_DIR.path("build")), "resources")
 RESOURCE_GENERATORS_PACKAGE = "resources.generators"
 RESOURCE_COPY_AMOUNT = 20
 SCRATCH_GENERATION_LOCATION = str(ROOT_DIR.path("temp"))
@@ -293,4 +355,6 @@ CUSTOM_VERTO_TEMPLATES = os.path.join(str(ROOT_DIR.path("utils")), "custom_conve
 MODELTRANSLATION_CUSTOM_FIELDS = ("JSONField",)
 CLASSIC_PAGES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("classic")), "content")
 GENERAL_PAGES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("general")), "content")
+ACTIVITIES_CONTENT_BASE_PATH = os.path.join(str(ROOT_DIR.path("at_home")), "content")
 BREADCRUMBS_TEMPLATE = "django_bootstrap_breadcrumbs/bootstrap4.html"
+JOBE_SERVER_URL = "http://jobe"

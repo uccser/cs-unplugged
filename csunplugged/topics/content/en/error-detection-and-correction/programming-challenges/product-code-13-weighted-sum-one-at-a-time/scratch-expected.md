@@ -7,18 +7,18 @@ see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 say (join [Total: ] (total))
 ```
 
-```scratch:split:random
+```scratch
 repeat (6)
 end
 ```
 
-```scratch:split:random
+```scratch
 ask (join (join [Enter digit ] (index)) [ of the product code:]) and wait
 
 ask (join (join [Enter digit ] (index)) [ of the product code:]) and wait
@@ -26,7 +26,7 @@ ask (join (join [Enter digit ] (index)) [ of the product code:]) and wait
 ask (join (join [Enter digit ] (index)) [ of the product code:]) and wait
 ```
 
-```scratch:split:random
+```scratch
 change [total 1 v] by (answer)
 
 set [total v] to ((total 1) + ((total 2) * (3)))

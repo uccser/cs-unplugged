@@ -1,0 +1,1725 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cs-unplugged\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-31 23:54+0000\n"
+"PO-Revision-Date: 2020-04-01 14:15\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Maori\n"
+"Language: mi_NZ\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: cs-unplugged\n"
+"X-Crowdin-Language: mi\n"
+"X-Crowdin-File: /csunplugged/locale/en/LC_MESSAGES/django.po\n"
+
+#: classic/models.py:10
+msgid "Classic CS Unplugged page"
+msgstr "Whārangi CS Unplugged Classic"
+
+#: config/settings/base.py:155
+msgid "Translation mode"
+msgstr "Momo whakawhitiwhiti reo"
+
+#: config/settings/base.py:161
+msgid "Translation mode (Bi-directional)"
+msgstr "Momo whakawhitiwhiti reo (ngā aronga e rua)"
+
+#: general/models.py:11
+msgid "General page"
+msgstr "Whārangi noa"
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:10
+msgid "12 digits"
+msgstr "12 ngā mati"
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:11
+msgid "13 digits"
+msgstr "13 ngā mati"
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:24
+msgid "Barcode length"
+msgstr "Roanga pae waehere"
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:48
+msgid "{} Digit Barcode"
+msgstr "{} Mati Pae-waehere"
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:53
+msgid "Separate!"
+msgstr "Whakawehea!"
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:54
+msgid "Operate!"
+msgstr "Pahekotia!"
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:55
+msgid "Calculate!"
+msgstr "Tātaihia!"
+
+#: resources/generators/BarcodeChecksumPosterResourceGenerator.py:66
+msgid "Remember that this algorithm uses modulo 10, so we are only interested in the number in the one's column."
+msgstr "Kia mōhio koe, ka whakamahia te tātai ā-porowhita 10 (modulo 10) mō tēnei hātepe, nā reira, ka aro tātou ki te nama i te tīwae-tahi anake."
+
+#: resources/generators/BinaryCardsResourceGenerator.py:33
+msgid "Display Numbers"
+msgstr "Whakaatu Nama"
+
+#: resources/generators/BinaryCardsResourceGenerator.py:38
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:46
+msgid "Black on Card Back"
+msgstr "He Pango o Muri o te Kāri"
+
+#: resources/generators/BinaryCardsResourceGenerator.py:40
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:48
+msgid "Yes - Uses a lot of black ink, but conveys clearer card state. Print double sided."
+msgstr "Āe - Ka tino whakapau tae pango, engari ka mārama ake te āhua o te kāri. Whakaritea te pūrere tā kia tāngia ngā taha e rua o te pepa."
+
+#: resources/generators/BinaryCardsResourceGenerator.py:41
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:49
+msgid "No - Print single sided."
+msgstr "Kāore - tāngia kia kotahi te taha o te pepa."
+
+#: resources/generators/BinaryCardsResourceGenerator.py:104
+msgid "with numbers"
+msgstr "whai nama"
+
+#: resources/generators/BinaryCardsResourceGenerator.py:106
+msgid "without numbers"
+msgstr "nama kore"
+
+#: resources/generators/BinaryCardsResourceGenerator.py:109
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:110
+msgid "with black back"
+msgstr "he pango kei muri"
+
+#: resources/generators/BinaryCardsResourceGenerator.py:111
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:112
+msgid "without black back"
+msgstr "kāore he pango kei muri"
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:20
+#: resources/generators/BinaryWindowsResourceGenerator.py:15
+msgid "Four (1 to 8)"
+msgstr "Whā (1 ki te 8)"
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:21
+#: resources/generators/BinaryWindowsResourceGenerator.py:16
+msgid "Eight (1 to 128)"
+msgstr "Waru (1 ki te 128)"
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:22
+msgid "Twelve (1 to 2048)"
+msgstr "Tekau mā rua (1 ki te 2048)"
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:35
+#: resources/generators/BinaryWindowsResourceGenerator.py:34
+msgid "Number of Bits"
+msgstr "Kaute Moka"
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:41
+#: resources/generators/BinaryWindowsResourceGenerator.py:40
+msgid "Display Dot Counts"
+msgstr "Whakaatu i te Kaute o ngā Ira"
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:106
+#: resources/generators/BinaryWindowsResourceGenerator.py:192
+msgid "with dot counts"
+msgstr "whai kaute ira"
+
+#: resources/generators/BinaryCardsSmallResourceGenerator.py:108
+#: resources/generators/BinaryWindowsResourceGenerator.py:194
+msgid "without dot counts"
+msgstr "kāore he kaute ira"
+
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:12
+msgid "Student"
+msgstr "Ākonga"
+
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:13
+msgid "Teacher (solutions)"
+msgstr "Kaiako (whakautu)"
+
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:27
+msgid "Worksheet Version"
+msgstr "Hei Pepa Mahi"
+
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:59
+msgid "Base 10"
+msgstr "Pūtake 10"
+
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:60
+msgid "Binary"
+msgstr "Tāhūrua"
+
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:61
+msgid "Letter"
+msgstr "Pū"
+
+#: resources/generators/BinaryWindowsResourceGenerator.py:20
+msgid "Binary (0 or 1)"
+msgstr "Tāhūrua (0, 1 rānei)"
+
+#: resources/generators/BinaryWindowsResourceGenerator.py:21
+msgid "Lightbulb (off or on)"
+msgstr "Pūrama (weto, kā rānei)"
+
+#: resources/generators/BinaryWindowsResourceGenerator.py:45
+msgid "Value Representation"
+msgstr "Whakaaturanga Uara"
+
+#: resources/generators/JobBadgesResourceGenerator.py:14
+msgid "Hello, I'm a Programmer"
+msgstr "Kia ora, he Kaituhiwaehere ahau"
+
+#: resources/generators/JobBadgesResourceGenerator.py:15
+msgid "Hello, I'm a Tester"
+msgstr "Kia ora, he Kaiwhakamātau ahau"
+
+#: resources/generators/JobBadgesResourceGenerator.py:16
+msgid "Hello, I'm a Bot"
+msgstr "Kia ora, he Karetao ahau"
+
+#: resources/generators/LeftRightCardsResourceGenerator.py:14
+msgid "Left"
+msgstr "Mauī"
+
+#: resources/generators/LeftRightCardsResourceGenerator.py:24
+msgid "Right"
+msgstr "Katau"
+
+#: resources/generators/ModuloClockResourceGenerator.py:10
+#: resources/generators/ModuloClockResourceGenerator.py:83
+#: resources/generators/NumberHuntResourceGenerator.py:221
+#: resources/generators/PianoKeysResourceGenerator.py:12
+#: resources/generators/SearchingCardsResourceGenerator.py:26
+#: resources/generators/SearchingCardsResourceGenerator.py:171
+msgid "Blank"
+msgstr "Wātea"
+
+#: resources/generators/ModuloClockResourceGenerator.py:25
+msgid "Modulo"
+msgstr "Tātai ā-porowhita"
+
+#: resources/generators/NumberHuntResourceGenerator.py:14
+msgid "Easy Numbers (2 digits)"
+msgstr "Tau Ngāwari (e 2 ngā mati)"
+
+#: resources/generators/NumberHuntResourceGenerator.py:15
+msgid "Medium Numbers (3 digits)"
+msgstr "Tau Waenga (e 3 ngā mati)"
+
+#: resources/generators/NumberHuntResourceGenerator.py:16
+msgid "Hard Numbers (4 digits)"
+msgstr "Tau Uaua (e 4 ngā mati)"
+
+#: resources/generators/NumberHuntResourceGenerator.py:17
+msgid "None (Blank)"
+msgstr "Kore (Wātea)"
+
+#: resources/generators/NumberHuntResourceGenerator.py:20
+msgid "Sorted Numbers"
+msgstr "He Nama Kua Māhititia"
+
+#: resources/generators/NumberHuntResourceGenerator.py:21
+msgid "Unsorted Numbers"
+msgstr "Nama Kāore i Māhititia"
+
+#: resources/generators/NumberHuntResourceGenerator.py:25
+msgid "Number Hunt"
+msgstr "Te Rapurapu Nama"
+
+#: resources/generators/NumberHuntResourceGenerator.py:44
+msgid "My Boxes"
+msgstr "Aku Pouaka"
+
+#: resources/generators/NumberHuntResourceGenerator.py:54
+msgid "Opponent's Boxes"
+msgstr "Ngā Pouaka a te Hoa Kakari"
+
+#: resources/generators/NumberHuntResourceGenerator.py:65
+msgid "\n"
+"<h5>Instructions</h5>\n\n"
+"<p>\n"
+"    <strong>Step 1:</strong>\n"
+"    Choose a number in your boxes for your opponent to find.\n"
+"</p>\n\n"
+"<p>\n"
+"    The number my opponent is looking for: _____\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>Step 2:</strong>\n"
+"    Write down the number your opponent has chosen for you to find.\n"
+"</p>\n\n"
+"<p>\n"
+"    The number of the box I'm looking for: _____\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>Step 3:</strong>\n"
+"    Ask your opponent for the number stored in a random box.\n"
+"    For example: <em>\"What is the number in the dotted circle?\"</em>.\n"
+"    Write the number your opponent says in the box you asked about on the right.\n"
+"    Remember to listen for the number you are looking for.\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>Step 4:</strong>\n"
+"    Each time your opponent guesses a box, cross out that box.\n"
+"    Keep taking turns until each person's number is found.\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>Step 5:</strong>\n"
+"    Write down the total number of guesses for each person below.\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>My total guesses:</strong> _____<br>\n"
+"    <strong>Opponent's total guesses:</strong> _____\n"
+"</p>\n"
+msgstr "\n"
+"<h5>Ngā Tohutohu</h5>\n\n"
+"<p>\n"
+"    <strong>Takahanga 1:</strong>\n"
+"    Kōwhiria tētahi nama o roto i ō pouaka hei kimihanga mā tō hoa kakari.\n"
+"</p>\n\n"
+"<p>\n"
+"    Te nama hei kimihanga mā taku hoa kakari: _____\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>Takahanga 2:</strong>\n"
+"    Tuhia te nama i kōwhiria e tō hoa kakari hei kimihanga māu.\n"
+"</p>\n\n"
+"<p>\n"
+"    Ko te nama o te pouaka e kimi ana ahau: _____\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>Takahanga 3:</strong>\n"
+"    Pātai atu ki tō hoa kakari mō te nama, kei roto i tētahi pouaka matapōkere.\n"
+"    Hei tauira: <em>\"He aha te nama kei roto i te porowhita ira?\"</em>.\n"
+"    Tuhia tōna nama ki roto i te pouaka i pātai atu koe, kei te taha katau.\n"
+"    Āta whakarongo, kei puta te nama e kimi ana koe.\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>Takahanga 4:</strong>\n"
+"    Ia wā ka pātai mai tō hoa kakari mō tētahi pouaka, rīpekangia taua pouaka.\n"
+"    Hurihuri ō koutou wā, kia tae ki te wā kua kite ngā nama e rua.\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>Takahanga 5:</strong>\n"
+"    Tuhia te kaute o ngā pātai mā ia tangata ki raro nei.\n"
+"</p>\n\n"
+"<p>\n"
+"    <strong>Aku pātai katoa:</strong> _____<br>\n"
+"    <strong>Ngā pātai o taku hoa:</strong> _____\n"
+"</p>\n"
+
+#: resources/generators/NumberHuntResourceGenerator.py:123
+#: resources/generators/SortingNetworkResourceGenerator.py:28
+msgid "Prefill with Numbers"
+msgstr "Tuatahi whakakīia ki ngā Nama"
+
+#: resources/generators/NumberHuntResourceGenerator.py:129
+msgid "Numbers Unsorted/Sorted"
+msgstr "He Nama Kāore i māhititia/Kua māhititia"
+
+#: resources/generators/NumberHuntResourceGenerator.py:224
+#: resources/generators/SearchingCardsResourceGenerator.py:70
+#: resources/generators/SearchingCardsResourceGenerator.py:73
+#: resources/generators/SearchingCardsResourceGenerator.py:173
+#: resources/generators/SearchingCardsResourceGenerator.py:175
+msgid "{} to {}"
+msgstr "{} ki {}"
+
+#: resources/generators/ParityCardsResourceGenerator.py:17
+msgid "Black"
+msgstr "Pango"
+
+#: resources/generators/ParityCardsResourceGenerator.py:18
+msgid "Blue"
+msgstr "Kahurangi"
+
+#: resources/generators/ParityCardsResourceGenerator.py:19
+msgid "Green"
+msgstr "Kākāriki"
+
+#: resources/generators/ParityCardsResourceGenerator.py:20
+msgid "Purple"
+msgstr "Waiporoporo"
+
+#: resources/generators/ParityCardsResourceGenerator.py:21
+msgid "Red"
+msgstr "Whero"
+
+#: resources/generators/ParityCardsResourceGenerator.py:34
+msgid "Card back colour"
+msgstr "Te tae o tua i te kāri"
+
+#: resources/generators/PianoKeysResourceGenerator.py:54
+msgid "Piano key labels"
+msgstr "Tapanga patuoro piana"
+
+#: resources/generators/PixelPainterResourceGenerator.py:12
+msgid "Black and White (2 possible binary values)"
+msgstr "Te Pango me te Mā (e āhei ana ngā uara e rua)"
+
+#: resources/generators/PixelPainterResourceGenerator.py:13
+msgid "Black and White (2 possible binary values) in Run Length Encoding"
+msgstr "Te Pango me te Mā (e rua ngā uara tāhūrua) i te Whakawaehere Roanga-Rerenga"
+
+#: resources/generators/PixelPainterResourceGenerator.py:14
+msgid "Greyscale (4 possible binary values)"
+msgstr "Āwhata hina (e 4 ngā uara tāhūrua)"
+
+#: resources/generators/PixelPainterResourceGenerator.py:15
+msgid "Colour (8 possible binary values)"
+msgstr "Tae (e 8 ngā uara tāhūrua e taea ai)"
+
+#: resources/generators/PixelPainterResourceGenerator.py:19
+msgid "Star - 1 page"
+msgstr "Whetū - 1 te whārangi"
+
+#: resources/generators/PixelPainterResourceGenerator.py:20
+msgid "Teacup - 1 page"
+msgstr "Kapu tī - 1 te whārangi"
+
+#: resources/generators/PixelPainterResourceGenerator.py:21
+msgid "Cat - 1 page"
+msgstr "Ngeru - 1 te whārangi"
+
+#: resources/generators/PixelPainterResourceGenerator.py:22
+msgid "Fish - 6 pages"
+msgstr "Ika - e 6 ngā whārangi"
+
+#: resources/generators/PixelPainterResourceGenerator.py:23
+msgid "Kauri tree - 6 pages"
+msgstr "Rākau kauri - e 6 ngā whārangi"
+
+#: resources/generators/PixelPainterResourceGenerator.py:24
+msgid "Butterfly - 6 pages"
+msgstr "Pūrerehua - e 6 ngā whārangi"
+
+#: resources/generators/PixelPainterResourceGenerator.py:25
+msgid "Hot air balloon - 8 pages"
+msgstr "Poihau-wera - e 8 ngā whārangi"
+
+#: resources/generators/PixelPainterResourceGenerator.py:26
+msgid "Boat - 9 pages"
+msgstr "Waka - e 9 ngā whārangi"
+
+#: resources/generators/PixelPainterResourceGenerator.py:27
+msgid "Parrots - 32 pages"
+msgstr "Kākā - 32 ngā whārangi"
+
+#: resources/generators/PixelPainterResourceGenerator.py:36
+msgid "Black and White"
+msgstr "Te Pango me te Mā"
+
+#: resources/generators/PixelPainterResourceGenerator.py:43
+msgid "Run length encoding"
+msgstr "Whakawaehere Roanga-Rerenga"
+
+#: resources/generators/PixelPainterResourceGenerator.py:50
+msgid "Greyscale"
+msgstr "Āwhata Hina"
+
+#: resources/generators/PixelPainterResourceGenerator.py:59
+msgid "Colour"
+msgstr "Tae"
+
+#: resources/generators/PixelPainterResourceGenerator.py:74
+msgid "Star"
+msgstr "Whetū"
+
+#: resources/generators/PixelPainterResourceGenerator.py:75
+msgid "Teacup"
+msgstr "Kapu tī"
+
+#: resources/generators/PixelPainterResourceGenerator.py:76
+msgid "Cat"
+msgstr "Ngeru"
+
+#: resources/generators/PixelPainterResourceGenerator.py:77
+msgid "Boat"
+msgstr "Waka"
+
+#: resources/generators/PixelPainterResourceGenerator.py:78
+msgid "Fish"
+msgstr "Ika"
+
+#: resources/generators/PixelPainterResourceGenerator.py:79
+msgid "Hot air balloon"
+msgstr "Poihau wera"
+
+#: resources/generators/PixelPainterResourceGenerator.py:80
+#: templates/general/people.html:154
+msgid "Parrots"
+msgstr "Kākā"
+
+#: resources/generators/PixelPainterResourceGenerator.py:81
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:69
+msgid "Kauri tree"
+msgstr "Rākau Kauri"
+
+#: resources/generators/PixelPainterResourceGenerator.py:82
+msgid "Butterfly"
+msgstr "Pūrerehua"
+
+#: resources/generators/PixelPainterResourceGenerator.py:104
+msgid "Colouring type"
+msgstr "Momo whakakī tae"
+
+#: resources/generators/PixelPainterResourceGenerator.py:110
+msgid "Image"
+msgstr "Whakaahua"
+
+#: resources/generators/PixelPainterResourceGenerator.py:410
+msgid "Pixel Painter"
+msgstr "Te Peita Tongi-iti"
+
+#: resources/generators/PixelPainterResourceGenerator.py:412
+msgid "This page should be kept secret from students."
+msgstr "Kaua e whākī atu tēnei whārangi ki ngā ākonga."
+
+#: resources/generators/PixelPainterResourceGenerator.py:414
+msgid "Page grid reference for {} image"
+msgstr "Taunga tukutuku mō te atahanga {}"
+
+#: resources/generators/PixelPainterResourceGenerator.py:417
+msgid "Once pixels on each page are filled in correctly, cut each grid out and arrange in the following layout (page names are in the top right corner)."
+msgstr "Ina, kua tika te tuhi i ngā tongi-iti, tapahia te tukutuku, ā, whakatakotoria kia pēnei ki raro nei (kei te taha katau o runga ngā ingoa o ngā whārangi)."
+
+#: resources/generators/PixelPainterResourceGenerator.py:432
+msgid "The pixel values are using 2 bit colour values."
+msgstr "Kei te whakamahi i ngā moka e rua mō ngā uara o ngā tae."
+
+#: resources/generators/PixelPainterResourceGenerator.py:434
+msgid "The pixel values are using 5 bit RGB colour values (2 red, 2 green, 1 blue)."
+msgstr "Kei te whakamahi ngā uara tongi-iti i ngā moka e 5, RGB mō ngā uara o ngā tae (2 whero, 2 kākāriki, 1 kahurangi)."
+
+#: resources/generators/PixelPainterResourceGenerator.py:436
+msgid "Extra pixel legends are at the end of this document for students."
+msgstr "Kei te pito mutunga o tēnei kōnae, he pātohu tongi-iti anō mā ngā ākonga."
+
+#: resources/generators/PixelPainterResourceGenerator.py:455
+msgid "Pixel legend"
+msgstr "Pātohu tongi-iti"
+
+#: resources/generators/PixelPainterResourceGenerator.py:477
+msgid "Run Length Encodings"
+msgstr "Ngā Whakawaehere Roanga-Rerenga"
+
+#: resources/generators/PixelPainterResourceGenerator.py:482
+msgid "Encoding for page {}"
+msgstr "Te whakawaehere mō te whārangi {}"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:23
+msgid "Number of cards (15 or 31)"
+msgstr "Te kaute kāri (15, 31 rānei)"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:24
+msgid "1 to 99"
+msgstr "1 ki te 99"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:25
+msgid "1 to 999"
+msgstr "1 ki te 999"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:39
+msgid "Number of cards"
+msgstr "Kaute kāri"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:45
+msgid "Range of numbers"
+msgstr "Awhe nama"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:51
+msgid "Include teacher guide sheet"
+msgstr "Whakauru i te pepa ārahi mā te kaiako"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:76
+msgid "Add list of numbers below:"
+msgstr "Whakaurua he rārangi nama ki raro nei:"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:126
+msgid "Teacher guide sheet for binary search activity"
+msgstr "Pepa ārahi mā te kaiako mō te ngohe rapu ā-tāhūrua"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:129
+msgid "Use this sheet to circle the number you are asking your class to look for when you are demonstrating how the binary search works. This allows you to demonstrate the maximum number of searches it would take. When students are playing the number hunt game, they can choose any number. Avoid those numbers that are underlined as they are key binary search positions (avoiding them is a good thing to do for demonstrations, but in practice students, or computers, won’t intentionally avoid these)."
+msgstr "Whakamahia tēnei pepa kia porowhitangia te nama ka rapua e tō akomanga, i tō mahi whakamārama atu ki a rātou i ngā tikanga o te rapu tāhūrua. Mā tēnei e mōhio ai rātou ko tēnei te mōrahi o ngā rapunga kia mahia. Ka taea e ngā ākonga te kōwhiri i ō rātou ake nama i a rātou e tākaro ana i te kēmu rapurapu. Engari, i a koe e mahi ana, kaua e whakamahi i ngā nama kua tārarotia, nā te mea he kī ērā mō te rapu tāhūrua (ko te whakamahi kore i aua nama tētahi tikanga pai mō te whakaaturanga, engari tūturu e kore te ākonga, te rorohiko rānei, e āta kōwhiri kia kaua e whakamahi i ērā nama)."
+
+#: resources/generators/SearchingCardsResourceGenerator.py:139
+msgid "Sorted numbers"
+msgstr "Nama kua māhititia"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:178
+msgid "with helper sheet"
+msgstr "me tētahi whārangi āwhina"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:180
+msgid "without helper sheet"
+msgstr "kāore he whārangi āwhina"
+
+#: resources/generators/SearchingCardsResourceGenerator.py:182
+msgid "{} cards"
+msgstr "kāri {}"
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:19
+msgid "Small numbers (1 to 10)"
+msgstr "He nama iti (1 ki te 10)"
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:23
+msgid "Large numbers (7 digit numbers)"
+msgstr "Nama nui (e 7 ngā mati)"
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:27
+msgid "Letters"
+msgstr "Reta"
+
+#. Translators: A set of letters from your language's alphabet, seperated by commas
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:29
+msgid "L,O,N,K,E,D,S,P,G,B,I,Y"
+msgstr "H,M,P,T,R,W,A,E,U"
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:34
+msgid "Words"
+msgstr "Kupu"
+
+#. Translators: A set of words from your language with similar spelling, seperated by commas
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:36
+msgid "crocodile,crochet,kiwi,weka,kiwi,kiwano"
+msgstr "mātou,matau,matua,pukamata,inati,nāhau,mōhou"
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:41
+msgid "Fractions"
+msgstr "Hautau"
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:47
+msgid "Butterfly life cycle"
+msgstr "Te hurihanga ora o te pūrerehua"
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:58
+msgid "Little Red Riding Hood"
+msgstr "Huriwhero"
+
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:91
+msgid "Card Type"
+msgstr "Momo Kāri"
+
+#: resources/generators/SortingNetworkResourceGenerator.py:10
+msgid "Easy Numbers (1 digits)"
+msgstr "He nama ngāwari (1 te mati)"
+
+#: resources/generators/SortingNetworkResourceGenerator.py:11
+msgid "Medium Numbers (2 digits)"
+msgstr "He nama waenganui (e 2 ngā mati)"
+
+#: resources/generators/SortingNetworkResourceGenerator.py:12
+msgid "Hard Numbers (3 digits)"
+msgstr "Ngā Nama Uaua (e 3 ngā mati)"
+
+#: resources/generators/SortingNetworkResourceGenerator.py:13
+msgid "None (Blank - Useful as template)"
+msgstr "Kore (Wātea - He pai hei tauira)"
+
+#: resources/generators/TrainStationsResourceGenerator.py:9
+msgid "Circular"
+msgstr "Porohitahita"
+
+#: resources/generators/TrainStationsResourceGenerator.py:10
+msgid "Twisted"
+msgstr "Takawirihia"
+
+#: resources/generators/TrainStationsResourceGenerator.py:23
+msgid "Train track shape"
+msgstr "Āhua o te ara tereina"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:14
+msgid "Student map"
+msgstr "Mahere ākonga"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:15
+msgid "Island posters"
+msgstr "Pānui whakaahua moutere"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:25
+msgid "Dead Man's Island"
+msgstr "Te Moutere Tūpāpaku"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:35
+msgid "Musket Hill"
+msgstr "Te Puke Pū Hoata"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:45
+msgid "Mutineers' Island"
+msgstr "Motu Whakakeke"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:55
+msgid "Pirates' Island"
+msgstr "Motu Pairete"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:65
+msgid "Shipwreck Bay"
+msgstr "Whanga Paeārau"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:75
+msgid "Smugglers' Cove"
+msgstr "Kokoru Tāhae Parakete"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:85
+msgid "Treasure Island"
+msgstr "Motu Taonga"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:105
+msgid "Printable type"
+msgstr "Te momo rite mō te tā"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:323
+msgid "Boat A"
+msgstr "Waka A"
+
+#: resources/generators/TreasureIslandResourceGenerator.py:326
+msgid "Boat B"
+msgstr "Waka E"
+
+#: resources/models.py:12
+msgid "Printable"
+msgstr "Ka taea te tā"
+
+#: resources/utils/BaseResourceGenerator.py:18
+msgid "A4"
+msgstr "A4"
+
+#: resources/utils/BaseResourceGenerator.py:19
+msgid "US Letter"
+msgstr "US Letter"
+
+#: resources/utils/BaseResourceGenerator.py:50
+msgid "Paper Size"
+msgstr "Nui o te Pepa"
+
+#: resources/utils/BaseResourceGenerator.py:82
+msgid "Header Text"
+msgstr "Tuhinga Pane"
+
+#: resources/utils/BaseResourceGenerator.py:83
+msgid "Example School: Room Four"
+msgstr "Tauira Kura: Rūma Whā"
+
+#: resources/utils/BaseResourceGenerator.py:91
+msgid "Number of Copies"
+msgstr "E hia ngā Kape"
+
+#: resources/utils/resource_parameters.py:211
+#: templates/topics/all-curriculum-integration-list.html:57
+#: templates/topics/curriculum-integrations-table.html:32
+#: templates/topics/lessons-table.html:42
+msgid "Yes"
+msgstr "Āe"
+
+#: resources/utils/resource_parameters.py:211
+#: templates/topics/all-curriculum-integration-list.html:60
+#: templates/topics/curriculum-integrations-table.html:35
+#: templates/topics/lessons-table.html:46
+msgid "No"
+msgstr "Kāore"
+
+#: templates/404.html:6 templates/404.html:13
+msgid "Page not found"
+msgstr "Kāore i kitea te whārangi"
+
+#: templates/404.html:14
+msgid "We are sorry but we could not find a page for the link you provided."
+msgstr "Aroha mai. Kāore i kitea tētahi whārangi mō taua hononga i tukuna mai e koe."
+
+#: templates/404.html:15
+msgid "You may find one of the links below useful:"
+msgstr "Tērā pea, ka whai take māu tētahi o ēnei hononga kei raro:"
+
+#: templates/404.html:19
+msgid "Homepage"
+msgstr "Whārangi Kāinga"
+
+#: templates/404.html:26 templates/base-educators.html:71
+#: templates/core.html:178
+msgid "Search"
+msgstr "Rapua"
+
+#: templates/404.html:32 templates/general/index.html:106
+#: templates/general/people.html:74
+msgid "Classic CS Unplugged"
+msgstr "CS Unplugged Ōkawa"
+
+#: templates/at-home/index.html:8
+msgid "CS Unplugged at home"
+msgstr ""
+
+#: templates/at-home/index.html:21
+msgid "Try something different away from the screen"
+msgstr ""
+
+#: templates/at-home/index.html:27
+#: templates/topics/not-available-warning.html:6
+#, python-format
+msgid "<h4>Sorry! This item is not yet available in %(language)s.</h4> <p>This item is available in the following languages:</p>"
+msgstr "<h4>Aroha mai! Kāore anō kia tukua tēnei tuemi i te reo %(language)s.</h4> <p>Engari ka taea ēnei reo:</p>"
+
+#: templates/at-home/index.html:38
+#: templates/topics/not-available-warning.html:36
+msgid "Return to homepage "
+msgstr "Hoki ki te whārangi kāinga "
+
+#: templates/at-home/index.html:55
+msgid "<strong>Welcome to Computer Science Unplugged!</strong> This is a collection of fun and engaging activities that enable children to explore fundamental ideas in Computer Science, <em>without</em> having to use a computer. Traditionally these activities have been designed to be used with school classes and larger groups, but we’ve got many ideas for you to try out if you’re at home."
+msgstr ""
+
+#: templates/base-at-home.html:28 templates/base-educators.html:28
+msgid "Language"
+msgstr "Reo"
+
+#: templates/base-at-home.html:58
+msgid "Back to CS Unplugged"
+msgstr ""
+
+#: templates/base-educators.html:56 templates/core.html:136
+#: templates/general/index.html:67 templates/topics/index.html:8
+#: templates/topics/index.html:16
+msgid "Topics"
+msgstr "Kaupapa"
+
+#: templates/base-educators.html:57 templates/core.html:141
+#: templates/general/index.html:72 templates/resources/index.html:8
+#: templates/resources/index.html:16 templates/topics/lesson.html:74
+msgid "Printables"
+msgstr "He Rauemi Tānga"
+
+#: templates/base-educators.html:58 templates/core.html:131
+#: templates/general/about.html:7 templates/general/about.html:15
+#: templates/general/base.html:10
+msgid "About"
+msgstr "Mō Tēnei"
+
+#: templates/core.html:25 templates/general/index.html:7
+#: templates/general/people.html:21
+msgid "CS Unplugged"
+msgstr "CS Unplugged"
+
+#: templates/core.html:51
+msgid "Home"
+msgstr "Kāinga"
+
+#: templates/core.html:102
+msgid "Looking for something for high schools? Check out the <a href=\"http://csfieldguide.org.nz/\">Computer Science Field Guide</a>."
+msgstr "Kei te kimi i ngā rauemi mō ngā wharekura? Tirohia te <a href=\"http://csfieldguide.org.nz/\">Computer Science Field Guide</a>."
+
+#: templates/core.html:114
+msgid "The primary goal of the Unplugged project is to promote Computer Science (and computing in general) to young people as an interesting, engaging, and intellectually stimulating discipline."
+msgstr "Ko te aronga tuatahi mō tēnei kaupapa Unplugged, ko te whakanui i te Pūtaiaio Rorohiko (me ngā mahinga rorohiko whānui) mō ngā taiohi, hei kaupapa whakakoakoa, whakarekareka hoki, whakahiki hoki i te hinengaro mō rātou."
+
+#: templates/core.html:120
+#, python-format
+msgid "Read more about <a href=\"%(principles_url)s\">our principles here</a>."
+msgstr "Pānui anō mō <a href=\"%(principles_url)s\">ō mātou mātāpono ki konei</a>."
+
+#: templates/core.html:127
+msgid "Useful Links"
+msgstr "He Hononga Hei Whakamahi"
+
+#: templates/core.html:146
+msgid "At home"
+msgstr ""
+
+#: templates/core.html:152
+msgid "Community"
+msgstr "Hapori"
+
+#: templates/core.html:156
+msgid "Twitter"
+msgstr "Tīhau"
+
+#: templates/core.html:161
+msgid "YouTube"
+msgstr "YouTube"
+
+#: templates/core.html:166
+msgid "GitHub"
+msgstr "GitHub"
+
+#: templates/core.html:172
+msgid "Help"
+msgstr "Āwhina"
+
+#: templates/core.html:184 templates/topics/glossary.html:8
+#: templates/topics/glossary.html:17
+msgid "Glossary"
+msgstr "Kuputaka"
+
+#: templates/core.html:189
+msgid "Feedback"
+msgstr "Whakahoki Kōrero"
+
+#: templates/core.html:194 templates/general/contact.html:7
+msgid "Contact"
+msgstr "Whakapā mai"
+
+#: templates/core.html:218
+msgid "The CS Unplugged material is open source on <a href=\"https://github.com/uccser/cs-unplugged\">GitHub</a>, and this website's content is shared under a <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons Attribution-ShareAlike 4.0 International license</a>. The CS Unplugged is a project by the <a href=\"https://www.canterbury.ac.nz/engineering/schools/csse/research/cse/\">Computer Science Education Research Group</a> at the <a href=\"http://www.canterbury.ac.nz/\">University of Canterbury</a>, New Zealand."
+msgstr "Kua tukuna ngā rauemi CS Unplugged hei rauemi whakatuwhera pūtake ki <a href=\"https://github.com/uccser/cs-unplugged\">GitHub</a>, ā, kua tuaritia ngā ihirangi o te pae tukutuku kei raro i te <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons Attribution-ShareAlike 4.0 International license</a>. He kaupapa te CS Unplugged nā te <a href=\"https://www.canterbury.ac.nz/engineering/schools/csse/research/cse/\">Computer Science Education Research Group</a> kei <a href=\"http://www.canterbury.ac.nz/\">Te Whare Wānanga o Waitaha</a>, Aotearoa."
+
+#: templates/core.html:222
+msgid "Icons provided generously by <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://icons8.com/\">icons8</a>."
+msgstr ""
+
+#: templates/core.html:244
+#, python-format
+msgid "This definition is not available in %(language)s, sorry!"
+msgstr "Kāore e taea te tautuhi mō te reo %(language)s, aroha mai!"
+
+#: templates/core.html:251
+msgid "Close"
+msgstr "Katia"
+
+#: templates/dev/index.html:22
+msgid "Unit Plan:"
+msgstr "Mahere Kōwae:"
+
+#: templates/general/about.html:20
+msgid "CS Unplugged is a collection of free learning activities that teach Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around. We originally developed this so that young students could dive head-first into Computer Science, experiencing the kinds of questions and challenges that computer scientists experience, but without having to learn programming first."
+msgstr "Ko CS Unplugged tētahi kohinga ngohe utu kore e whakaako ana i te Pūtaiao Rorohiko, mā ngā kēmu whakakoakoa me ngā panga e whakamahi nei i ngā kāri, aho hoki, pene hinu hoki, omaoma haere hoki. Ko te kaupapa i tīmata ai ēnei mahi, kia tukua ngā ākonga nohinohi ki te ruku ki te Pūtaiao Rorohiko, kia waia rātou ki ngā momo pātai, ngā momo wero hoki e pā ana ki te mahi pūtaiao rorohiko, engari me te kore ako i te tuhiwaehere i te tuatahi."
+
+#: templates/general/about.html:27
+msgid "The collection was originally intended as a resource for outreach and extension, but with the adoption of computing and computational thinking into many classrooms around the world, it is now widely used for teaching. The material has been used in many contexts outside the classroom as well, including science shows, talks for senior citizens, and special events."
+msgstr "Ko te aronga tūturu mō tēnei kohikohinga kia noho hei rauemi mō te toro atu me te tāpiri atu, engari, nā te kaha o te uru o ngā rorohiko me te whakaaro rorohiko ki roto i ngā akomanga maha o te ao, ka whakamahia whānuitia hei whakaako. Kua whakamahia ēnei rauemi i ngā horopaki maha kei waho i te akomanga hoki, pērā ki ngā whakaaturanga pūtaiao, ngā kauhau mā te hunga pakeke, me ngā tauwhāinga whakahirahira."
+
+#: templates/general/about.html:34
+msgid "Thanks to generous sponsorships we have been able to create associated resources such as the videos, which are intended to help teachers see how the activities work (please don’t show them to your classes – let them experience the activities themselves!). All of the activities that we provide are open source – they are released under a <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons Attribution-ShareAlike licence</a>, so you can copy, share and modify the material."
+msgstr "Nā te pūtea tautoko nui i taea ai e matou te hanga i ngā rauemi tautoko pērā ki ngā kiriata, hei āwhina i ngā kaiako kia kitea pēhea te whakamahi i ēnei ngohe i te akomanga (tēnā, kaua e whakaatu ki ō akomanga - tukua ngā ngohe hei mea whai wheako mā rātou!). He \"tukunga-utu-kore\" ngā ngohe katoa - kua tukuna i raro i tētahi raihana <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons Attribution-ShareAlike licence</a>, nā reira ka āhei koe te tārua, te tuari hoki, te whakahou hoki i ngā rauemi."
+
+#: templates/general/about.html:42
+#, python-format
+msgid "For an explanation on the connections between CS Unplugged and Computational Thinking skills, see our <a href=\"%(computational_thinking_url)s\">Computational Thinking and CS Unplugged page</a>."
+msgstr "Tirohia tā mātou <a href=\"%(computational_thinking_url)s\">whārangi mō te Whakaaro Rorohiko me te CS Unplugged</a> mō tētahi whakamāramatanga mō ngā hononga o ngā pūkenga o te CS Unplugged me te Whakaaro Rorohiko."
+
+#: templates/general/about.html:49
+#, python-format
+msgid "To view the team of contributors who work on this project, see our <a href=\"%(people_url)s\">people page</a>."
+msgstr "Kia kitea ai te tīma mō tēnei kaupapa, tirohia tā mātou <a href=\"%(people_url)s\">whārangi tangata</a>."
+
+#: templates/general/about.html:56
+#, python-format
+msgid "For details on how to contact us, see our <a href=\"%(contact_url)s\">contact us page</a>."
+msgstr "Ki te whakapā mai ki a mātou, haere ki te <a href=\"%(contact_url)s\">whārangi whakapā mai</a>."
+
+#: templates/general/about.html:63
+#, python-format
+msgid "For more information about the principles behind CS Unplugged, see our <a href=\"%(principles_url)s\">principles page</a>."
+msgstr "Kia toro atu mō ngā mātāpono o CS Unplugged, tirohia <a href=\"%(principles_url)s\">whārangi mō ngā mātāpono</a>."
+
+#: templates/general/base.html:7
+msgid "About pages"
+msgstr "Whārangi mō mātou"
+
+#: templates/general/base.html:11
+#: templates/general/computational-thinking.html:8
+#: templates/general/computational-thinking.html:17
+msgid "Computational Thinking and CS Unplugged"
+msgstr "Te Whakaaro Rorohiko me CS Unplugged"
+
+#: templates/general/base.html:12 templates/general/principles.html:7
+#: templates/general/principles.html:17
+msgid "Principles"
+msgstr "Ngā Mātāpono"
+
+#: templates/general/base.html:13 templates/general/people.html:7
+#: templates/general/people.html:16
+msgid "People"
+msgstr "Tāngata"
+
+#: templates/general/base.html:14 templates/general/contact.html:16
+msgid "Contact Us"
+msgstr "Whakapā mai"
+
+#: templates/general/computational-thinking.html:21
+msgid "What is Computational Thinking?"
+msgstr "He aha te Whakaaro Rorohiko?"
+
+#: templates/general/computational-thinking.html:24
+msgid "The world we live in has become a digital one, filled with technology and driven by Computer Science. Software and technology have transformed every subject and job area, from science and medicine, to art history and psychology. Digital technology is ubiquitous. To be informed and empowered citizens, the next generation of students need to understand this digital world that they live in."
+msgstr "Kua huri tēnei ao e noho nei tātou hei ao matihiko, kua kī i te hangarau, kua whakakahangia e te pūtaiao rorohiko. Kua whakahuria ngā marau katoa, me ngā momo tūmahi katoa e te hangarau me ngā pūmanawa rorohiko, mai i te pūtaiao me te rongoā ki te mātai hinengaro me te rangahau toi ataata. He hangarau matihiko ka kitea, puta noa i te ao. Kia whakamanatia, kia whai mōhio hoki ngā kirirarau, me mōhio rawa te whakatipuranga hou o ngā ākonga ki tēnei ao hangarau matihiko e noho nei rātou."
+
+#: templates/general/computational-thinking.html:33
+msgid "This is why Computational Thinking has been called the ‘21st Century Skill Set’, and is important for everyone to learn. It is critical to understanding how the digital world works, for harnessing the power of computers to solve tough problems, and making great things happen! It also enables us to think critically about not just the benefits of certain technologies, but also the potential harm, ethical implications, or unintended consequences of these."
+msgstr "Ko tēnei te take, e kīia ai te Whakaaro Rorohiko he 'kete pukenga rau tau 21'. Koia hoki te take he tino kaupapa ako tēnei mō te tangata ahakoa ko wai. He mōhiotanga nui tēnei, kia mārama ki ngā nekenekehanga o te ao hangarau matihiko, me te whakamahi i te rorohiko ki te whakaoti rapanga uaua, kia puta ai ngā otinga pai! He pai hoki tēnei kia taea ai te whakaaro hōhonu mō ngā painga o ngā momo hangarau, me ngā raru hoki, ngā pānga matatika, me ngā pānga pokerehū."
+
+#: templates/general/computational-thinking.html:41
+msgid "But what exactly is Computational Thinking? Let’s have a look at a technical definition..."
+msgstr "Heoi anō, he aha tēnei mea te Whakaaro Rorohiko? Anei te whakapapa hangarau..."
+
+#: templates/general/computational-thinking.html:48
+msgid "\"Computational Thinking is the thought processes involved in formulating problems and their solutions so that the solutions are represented in a form that can be effectively carried out by an information-processing agent.\""
+msgstr "\"Ko te \"Whakaaro Rorohiko\" tētahi momo tukanga whakaaro e whakamahia ki te wetewete i ngā āhuatanga o tētahi rapanga, me ngā otinga, kia whakatakotoria hei tauira e tika ana kia whakahaerengia e te rorohiko, i tētahi atu pūnaha whakahaere i te mōhiohio rānei.\""
+
+#: templates/general/computational-thinking.html:58
+msgid "Phew, it’s quite a mouthful isn’t it? But, as we like to say at CS Unplugged, it’s just big words for simple ideas! 'Information-processing agent' means anything that follows a set of instructions to complete a task (we call this 'computing'). Most of the time this 'agent' means a computer or other type of digital device - but it could also be a human! We’ll refer to it as a computer to make things a bit simpler. To represent solutions in a way that a computer can carry them out, we have to represent them as a step by step process - an <strong>algorithm</strong>. To create these algorithmic solutions we apply some special problem solving skills to. These skill are what make up Computational Thinking! And they are skills that are transferrable to any field."
+msgstr "Auē! Te pīroiroi hoki! Heoi anō, ki a mātou o te CS Unplugged, he nui ngā kupu, he ngāwari ngā huatau! Ko te tikanga o te 'kaikawe tukatuka mōhiohio', ko tētahi mea kei te whai i ngā tohutohu kia oti ai tētahi mahi (arā, ko te 'mahi rorohiko'). I te nuinga o ngā wā he rorohiko tēnei 'kaikawe', ko tētahi atu momo pūrere matihiko rānei, heoi, he tangata pea rānei! Heoi anō, kia ngāwari te kōrero i konei, ka kīia he rorohiko. Kia taea ai e ngā rorohiko te whai i ngā tohutohu, me āta raupapa aua tohutohu - ka kīia tērā he <strong>hātepe</strong>. Ki te hanga i aua otinga hātepe, me whakamahi i ētahi pūkenga motuhake hei whakaoti rapanga. Koinei ngā pūkenga o te Whakaaro Rorohiko! Waihoki he pūkenga pai ēnei mō ngā tūmomo mahi katoa."
+
+#: templates/general/computational-thinking.html:72
+msgid "Computational Thinking could be described as 'thinking like a Computer Scientist', but it is now an important skill for everyone to learn, whether they want to be a Computer Scientist or not! It’s interesting, and important, to note that Computational Thinking, and Computer Science, aren’t entirely about computers, they are more about <strong>people</strong>. You might think that we write programs for computers, but really we write programs for people - to help them communicate, find information, and solve problems."
+msgstr "Tērā pea ka kīia ko te Whakaaro Rorohiko te 'whakaaro pērā ki te Kaipūtaiao Rorohiko', engari i ēnei rā, he pūkenga nui ēnei momo mōhiotanga kia ako te tangata, ahakoa ka pīrangi kia mahi hei kaipūtaiao rorohiko, kāore rānei! Ko te mea rerekē nei, ehara i te mea mō te rorohiko anake ēnei mea te whakaaro rorohiko me te pūtaiao rorohiko, engari mā te <strong>tangata</strong> rawa ēnei. Tērā e pōhēhētia ka tuhiwaehere tātou mō te rorohiko, engari, ka tuhi waehere tātou mā te tangata - ki te hāpai i te whakawhitiwhiti me te rapu mōhiohio me te whakaoti i ngā rapanga."
+
+#: templates/general/computational-thinking.html:80
+msgid "For example, you might use an app on a smartphone to get directions to a friend's house; the app is an example of a computer program, and the smartphone is the \"information processing agent\" that runs the program for us. Whoever designed the algorithm for working out the best route, and all the details like the interface and how to store the map, applied computational thinking to design the system. But they didn't design it for the sake of the smartphone; they designed it to help the person using the smartphone."
+msgstr "Hei tauira, ka whakamahi pea koe i te taupānga o tō waea pūkoro ki te rapu i te ara ki te whare o tō hoa; he tauira papatono rorohiko te taupānga, ā, ko te waea pūkoro te \"kaikawe tukatuka mōhiohio\" e whakahaere ana i te papatono mā tātou. Ahakoa ko wai te tangata nāna nei te hātepe i hoahoa hei kimi i te ara pai rawa atu, me ngā āhuatanga katoa pērā i te atanga, ka pēhea hoki te whakaputu i te mahere, nāna i whakamahi i te whakaaro rorohiko hei hoahoa i te pūnaha. Heoi anō, kāore i hoahoatia e rātou mā te waea pūkoro noa iho; i hoahoatia e rātou hei āwhina i te tangata e whakamahi ana i te waea pūkoro."
+
+#: templates/general/computational-thinking.html:87
+msgid "Computational Thinking in CS Unplugged"
+msgstr "Te Whakaaro Rorohiko kei roto i te CS Unplugged"
+
+#: templates/general/computational-thinking.html:89
+msgid "<p> Throughout the lessons and units in CS Unplugged there are many links to Computational Thinking. Teaching Computational Thinking through CS Unplugged activities teaches students how to: </p> <ul> <li>describe a problem,</li> <li>identify the important details needed to solve this problem,</li> <li>break the problem down into small, logical steps,</li> <li>use these steps to create a process (algorithm) that solves the problem,</li> <li>and then evaluate this process.</li> </ul>"
+msgstr "<p> Kei roto i ngā akomanga, me ngā wāhanga o CS Unplugged, he maha ngā hononga ki te Whakaaro Rorohiko. Mā te whakaako i te Whakaaro Rorohiko mā ngā mahinga o CS Unplugged e ako ai ngā ākonga ki te: </p> <ul> <li>whakaahua i tētahi rapanga,</li> <li>tautuhi i ngā meka nui hei whakaoti i tēnei rapanga,</li> <li>whakawāhi i te rapanga ki ngā wāhanga mahi iti, arorau hoki,</li> <li>whakamahia ngā wāwāhinga ki te waihanga i tētahi tukanga (hātepe) e whakaoti ai te rapanga,</li> <li>kātahi ka aromātai i tēnei tukanga.</li> </ul>"
+
+#: templates/general/computational-thinking.html:106
+msgid "These skills are transferable to any other curriculum area, but are particularly relevant to developing digital systems and solving problems using the capabilities of computers.</p>"
+msgstr "He pūkenga ēnei ka taea te whakawhiti atu ki marautanga kē, heoi anō, he tino hāngai ki te waihanga i ngā pūnaha hangarau matihiko me te whakaoti rapanga mā ngā āheitanga o te rorohiko.</p>"
+
+#: templates/general/computational-thinking.html:111
+msgid "These Computational Thinking concepts are all connected to each other and support each other, but it's important to note that not all aspects of Computational Thinking will necessarily happen in every unit or lesson. In each unit and lesson we've highlighted the important connections for you to observe your students in action."
+msgstr "Ka honohono, ka tautoko hoki katoa ēnei ariā Whakaaro Rorohiko, engari ko te mea nui kia mōhio kāore e kitea ngā āhuatanga katoa o te Whakaaro Rorohiko i roto i ia wāhanga ako, i ia akoranga rānei. Kua tīpako mātou i ngā hononga whakahirahira i roto i ia wāhanga ako, i ia akoranga hoki kia mātakitaki ai koe i ō ākonga e mahi ana."
+
+#: templates/general/computational-thinking.html:118
+msgid "There are a number of definitions of Computational Thinking, but most have a set of 5 or 6 problem solving skills that Computational Thinking embodies. For the Unplugged project we've identified the following six CT skills that are often mentioned in the literature; they are described below, and at the end of each Unplugged lesson we've identified ways that these skills appeared in the lesson, to help you see the CT connection with the lessons."
+msgstr "He maha ngā tautuhinga mō te Whakaaro Rorohiko, heoi anō, mō te nuinga, ka kitea te huinga pūkenga e 5, e 6 rānei o ngā pūkenga whakaoti rapanga. Mō te hinonga Unplugged, kua whakatau mātou i ngā pūkenga Whakaaro Rorohiko e ono kei raro nei. Ka kitea whānuitia ēnei pūkenga i roto i ngā tuhinga rangahau; ka whakamāramatia ēnei kei raro, kei te mutunga hoki o ia akomanga Unplugged, me te whakamārama hoki i pēhea i tipu ai aua pūkenga i roto i ngā mahi kia kite ai koe i ngā hononga ki te Whakaaro Rorohiko."
+
+#: templates/general/computational-thinking.html:124
+msgid "Computational Thinking skills"
+msgstr "Ngā Pūkenga Whakaaro Rorohiko"
+
+#: templates/general/computational-thinking.html:128
+msgid "Algorithmic thinking"
+msgstr "Te Whakaaro Hātepe"
+
+#: templates/general/computational-thinking.html:133
+msgid "Algorithms are at the heart of Computational Thinking and Computer Science, because in Computer Science the solutions to problems are not simply an answer (e.g. ‘42’, or a fact), they are algorithms. An algorithm is a step-by-step process that solves a problem or completes a task. If you follow the algorithm's steps correctly, you will arrive at a correct solution, even for different inputs. For example, we can use an algorithm to find the shortest route between two locations on a map; the same algorithm can be used for any pair of starting and finishing points, so the solution depends on the input to the algorithm. If we know the algorithm for solving a problem then we can solve that problem easily, whenever we want, without having to think! We can just follow the steps. Computers can’t think for themselves, so they need to be given algorithms to do things."
+msgstr "Ka noho te hātepe hei ngākau mō te Whakaaro Rorohiko me te Pūtaiao Rorohiko, nā te mea, mō te pūtaiao rorohiko, ehara te whakautu te mea nui (hei tauira: '42', ko tētahi meka noa iho rānei), ko te hātepe te mea nui. Ko te hātepe he tohutohu māmā e āta rārangihia ana hei whakaoti rapanga. Ina whāia te raupapa o te hātepe kia tika, ka tae ki te otinga tika, ahakoa ngā tāuru. Hei tauira, ka whakamahia tētahi hātepe ki te kimi i te ara poto rawa mai i tētahi tūnga i te mahere, ki tētahi atu; ka taea te whakamahi i te hātepe ōrite mō ngā ara katoa, ahakoa te tīmatanga me te whakamutunga. Ka rerekē te tāuru ki te hātepe ka rerekē te otinga. Heoi anō, mehemea ka mōhio tātou i te hātepe hei whakaoti i te rapanga, he ngāwari te whakaoti, ahakoa te aha, me te kore whakaaro! Ka whāia noatia e tātou ngā tohutohu o te hātepe. Kāore e taea e te rorohiko te whakaaro, nā reira e hangaia ngā hātepe, kia taea e te rorohiko te whakaoti rapanga."
+
+#: templates/general/computational-thinking.html:144
+msgid "Algorithmic thinking is the process of creating algorithms. When we create an algorithm to solve a problem, we call this an algorithmic solution."
+msgstr "Ko te whakaaro hātepe, te tukanga mō te waihanga i ngā hātepe. Ina waihanga te tangata i te hātepe, ki te whakaoti i tētahi rapanga, ka kīia tērā te otinga hātepe."
+
+#: templates/general/computational-thinking.html:151
+msgid "Computational algorithms (the kind that can run on digital devices) have relatively few ingredients because digital devices only have a few types of instruction that they can follow; the main things they can do are receive input, provide output, store values, follow instructions in a sequence, choose between options, and repeat instructions in a loop. Despite how limited this range of instructions is, we've described everything that digital devices can compute, and this is why algorithms are described restricted to these elements."
+msgstr "He torutoru noa iho ngā wāhanga o ngā hātepe tātai (arā, ko ngā momo ka taea te whakahaere ki ngā pūrere matihiko), nā te mea he torutoru noa iho ngā momo tohutohu ka taea e ērā pūrere matihiko te whai; ko ngā mahi matua a aua pūrere matihiko ko te tiki tāuru, te tuku tāputa, te rokiroki i ngā uara, te whai i ngā tohutohu kua raupapangia, te whiriwhiri i ngā kōwhiringa, me te tāruarua i ngā tohutohu kei roto i tētahi koromeke. Ahakoa he ruarua noa iho ngā tohutohu, ko ērā te katoa o ngā āhuatanga ka taea e te pūrere matihiko te tātai, ā, nā tēnei ka kīia ai he whāititanga ō te hātepe i ēnei huānga."
+
+#: templates/general/computational-thinking.html:161
+msgid "Abstraction"
+msgstr "Waitaratanga"
+
+#: templates/general/computational-thinking.html:166
+msgid "Abstraction is all about simplifying things to help us manage complexity. It requires identifying what the most important aspects of a problem are and hiding the other specific details that we don’t need to focus on. The important aspects can be used to create a model, or simplified representation, of the original thing we were dealing with. We can then work with this model to solve the problem, rather than having to deal with all the nitty gritty details at once. Computer Scientists often work with multiple levels of abstraction."
+msgstr "Ko te tino whāinga o te waitaratanga, ko te whakangāwari i ngā kaupapa matatini. Me tautuhi ngā āhuatanga nui o te rapanga, te huna hoki i ngā tini āhuatanga kāore i te tino hāngai. Mā te wetewete i ngā āhuatanga whakahirahira e taea ai te waihanga i tētahi tauira, āhuahanga ngāwari rānei o te rapanga e aro atu ana tātou. Kātahi, ka taea e tātou te whai i taua tauira hei whakaoti rapanga, kia kaua e aro ki ngā tini āhuatanga iti i te wā kotahi. Ka mahi ai te Kaipūtaiao Rorohiko i ngā kaupae waitaratanga maha."
+
+#: templates/general/computational-thinking.html:176
+msgid "We use abstraction often in our everyday lives, for example when we use maps. Maps show us a simplified version of the world by leaving out unnecessary details, like where every individual tree in a park is, and only keeping the most relevant information the map reader will need, such as roads and street names."
+msgstr "Ka whakamahia noatia te waitaratanga e te tangata ia rā, ko tētahi tauira, ko te whakamahi i ngā mahere whenua. Kei te mahere, he whakaaturanga ngāwari o te whenua, me te mahue atu ko ngā mea iti pērā ki ngā rākau maha i te ngahere, ā, ka mau tonu ngā mōhiohiotanga whakahirahira anake e hiahiatia ana e te tangata, pērā ki ngā ingoa o ngā huarahi me ngā rōri."
+
+#: templates/general/computational-thinking.html:183
+msgid "Digital devices use abstraction all the time; they try to hide as much unnecessary information from the user as possible. For example, let's say you took a nice scenic photo on your last camping trip, and now you want to edit it on your laptop and adjust the colours in it. Normally we could do this by opening a picture editing program, adjusting some colour sliders or maybe choosing a filter. When you do this there are a lot of complicated operations happening which the computer is hiding from you."
+msgstr "Ka whakamahi ngā pūrere matihiko i te waitaratanga i ngā wā katoa; ka hunaia ngā mōhiohio take kore e taea ana i te kaiwhakamahi. Hei tauira, ina hiahia koe ki te whakatika i ngā tae o te whakaahua o tō haerenga ki tāwāhi, ka huakina ki te taupānga whakatika pikitia, ka nekehia ngā rēreti tae, ka whakamahia tētahi tātari kano rānei. He maha ngā mahinga whīwhiwhi o te rorohiko, engari ka hunaia te nuinga o ērā."
+
+#: templates/general/computational-thinking.html:196
+msgid "The picture you took is stored on the computer as a big list of pixels, which are each a different colour, and each colour is represented by a set of numbers, and each of these numbers are stored as binary digits! That’s a lot of information. Imagine if when you adjusted the colours you had to go through and look at all the colour values of every pixel and change each and every one of those! That’s what the computer is doing for you, but since you don’t need to know this to accomplish your goal the computer hides this information away."
+msgstr "Ka utaina tō whakaahua ki te rorohiko hei rārangi roa o ngā tongi-iti, he rerekē ngā tae, ā, he nama te whakaahuahanga mō ia tongi-iti, he mati tāhūrua ia nama! He maha te mōhiohio kore rawa e taea te whakatikatika i ngā uara kano o ia tongi-iti! Ko tērā kē te mahi a te rorohiko, nā te mea kāore he take kia mōhio koe ki aua mahi a te rorohiko ka hunaia."
+
+#: templates/general/computational-thinking.html:207
+msgid "Decomposition"
+msgstr "Whakamatariki"
+
+#: templates/general/computational-thinking.html:212
+msgid "Decomposition is about breaking down problems into smaller, more manageable, parts, and then focusing on solving each of these smaller problems. We can break a complex problem down until the smaller parts are so simple they become easy to solve. The solutions to each of these smaller, and simpler, problems build up to a solution to the big problem we started with. Decomposition helps make large problems much less intimidating!"
+msgstr "Ko te whakamatariki te whakawehewehe i te rapanga kia kitea ai ngā wāhanga iti, kia ngāwari ai hoki te whakahaere, kātahi ka taea te whakaoti i ēnei rapanga paku nei. Ka taea te whakawehewehe i ngā rapanga matatini ki ngā wāhanga iti, kia ngāwari ai te whakaoti. Mā te whakakotahi i ēnei otinga e hangaia ai te otinga nui katoa. Mā te whakamatariki e patua ai te taniwha whakamataku o ngā rapanga nui!"
+
+#: templates/general/computational-thinking.html:221
+msgid "Decomposition is an important skill for creating algorithms and processes that can be implemented on a computing device, because computers need very specific instructions. They need to be told each of the tiny steps they need to follow in order to do things."
+msgstr "Ko te whakamatariki tētahi pūkenga nui hei waihanga hātepe, hei waihanga tukanga hoki e taea ai te whakahaere i ngā pūrere matihiko, nā te mea, me tino whāiti te aronga o ngā tohutohu ki ngā rorohiko. Me āta tohutohu mō ia takahanga paku nei, he whāinga kia tutuki ai ngā mahi."
+
+#: templates/general/computational-thinking.html:228
+msgid "For example the overall task of making a cake can be decomposed into several smaller tasks, each of which can be performed easily."
+msgstr "Hei tauira, ka taea te whakamatariki i te mahi tunu keke, ki ngā mahinga iti iho, kia ngāwari ai te whakaoti i ia wāhanga o te mahi."
+
+#: templates/general/computational-thinking.html:233
+msgid "<p><strong>Make cake</strong></p> <ol> <li>Bake cake <ol> <li>Put ingredients in bowl (butter, sugar, egg, flour)</li> <li>Mix</li> <li>Pour into tin</li> <li>Put in oven for 30mins</li> <li>Take out of tin</li> </ol> </li> <li>Make icing</li> <li>Put on cake</li> </ol>"
+msgstr "<p><strong>Mahi Keke</strong></p> <ol> <li>Tunu Keke <ol> <li>Tukua ngā rawa ki te oko (pata, huka, hēki, puehu paraoa)</li> <li>Whakaranuhia</li> <li>Tukua ki te kēne</li> <li>Whakaurua ki te umu kia 30 miniti te roa</li> <li>Tangohia i te kēne</li> </ol> </li> <li>Mahia te pani reka</li> <li>Pania ki runga i te keke</li> </ol>"
+
+#: templates/general/computational-thinking.html:255
+msgid "Generalising and patterns"
+msgstr "Te whakatau whānui me ngā tauira"
+
+#: templates/general/computational-thinking.html:260
+msgid "Generalising is also referred to as 'pattern recognition and generalisation'. Generalisation is taking a solution (or part of a solution) to a problem and generalising it so it can be applied to other similar problems and tasks. Since solutions in Computer Science are algorithms, this means we take an algorithm and make it general enough that it can be used for a range of problems. This process involves abstraction, because to make something more general we have to remove unnecessary details that are related to a specific problem or situation, but are not important to how the algorithm functions."
+msgstr "Ka kīia hoki te 'whakatau whānui' ko 'te hopu tauira me te whakatau whānui'. Ko te 'whakatau whānui', ko te whakamahinga o tētahi otinga rapanga (he wahanga o te otinga rānei), kātahi ka whakawhānuitia taua otinga kia hāngai ki tētahi atu kaupapa, rapanga rānei, mahi rānei. Nā te mea he hātepe ngā otinga o te pūtaiao rorohiko, ka whakawhānuitia te hātepe kia taea ai te whakamahi i ngā rapanga maha. Ki te whakawhānuitia te hātepe, ka whakamahia te waitaratanga, nā te mea, kia whakawhānuitia tētahi kaupapa, me tango ngā taipitopito e hāngai ana ki ngā horopaki whāiti noa kia waiho ake ai ngā āhuatanga nui o te hātepe. \"Ruia taitea, kia tū ko taikaka anake\"."
+
+#: templates/general/computational-thinking.html:269
+msgid "Spotting patterns is an important part of this process, when we think about problems we might recognise similarities between them and that they can be solved in similar ways. This is called pattern matching, and it’s something we do naturally all the time in our daily life."
+msgstr "Ko te kimi i ngā tauira tētahi wāhanga nui o tēnei tukanga. Ki te tīmata te tangata ki te whakaaro mō te rapanga, ka kitea pea ngā āhuatanga ōrite, ā, ka whāia te tauira kia pērā hoki te whakaoti i te rapanga hou. Ka kīia tēnei te rapu tauriterite, ā, ka whakamahia whānuitia e te tangata i āna mahi ia rā, ia rā."
+
+#: templates/general/computational-thinking.html:276
+msgid "Generalised algorithms can be reused for a whole group of similar problems, which means we can come up with solutions quickly and effectively."
+msgstr "Ka taea te hangarua i ngā hātepe whakawhānui mō ngā momo rapanga āhua rite, kia ngāwari ai te waihanga i ngā otinga rapanga hou."
+
+#: templates/general/computational-thinking.html:285
+msgid "Evaluation"
+msgstr "Arotakenga"
+
+#: templates/general/computational-thinking.html:290
+msgid "Evaluation is about identifying the possible solutions to a problem and judging which is the best to use, if they will work in some situations but not others, and how they can be improved. When judging our solutions we need to think about a range of factors. For example how much time it will take these processes (algorithms) to solve the problem and will it reliably solve the problem, or if there are certain situations where it will perform in a very different way. Evaluation is something we do a lot in our everyday lives."
+msgstr "Mā te arotake, ka rapua ngā otinga e taea ana mō tētahi rapanga, kātahi ka whiriwhiri ko tēhea te otinga pai ake, ko tēhea e hāngai ana ki ētahi horopaki - kaua ki ētahi atu, ā, ka whakaaro hoki me pēhea te whakapai i te otinga kia kaha ake. I a tātou e arotake ana i te otinga, ka whakaaro hoki mō ngā āhuatanga maha. Me whakaaro mō te roa o te wā ka pau kia oti ai te hātepe (tukanga rānei). Ka whakaaro hoki mō te āhei o te hātepe ki te whakaoti i te rapanga, mō te tika, me ngā pānga o te horopaki rerekē. He mahi nui te arotake mā te tangata ia rā ia rā."
+
+#: templates/general/computational-thinking.html:299
+msgid "There are different ways we can evaluate our algorithmic solutions. We can test their speed by implementing them on a computer; or we can analyse them by counting or calculating how many steps they are likely to take. We can test that our algorithmic solutions work correctly by giving them lots of different inputs, and checking they work as expected. When we do this we need to think about the different inputs we test, because we don’t want to check every possible input (often there's an infinite number of possible inputs!), but we still need to know if our algorithmic solutions will work for all inputs. Testing is something Computer Scientists and programmers do all the time. But because we can't usually test every possible input, we also try to evaluate a system using logical reasoning."
+msgstr "He maha ngā huarahi hei arotake i ā mātou otinga hātepe. Ka āhei te ine i te tere o te hātepe ki te rorohiko; ka kaute rānei i ngā hipanga mahi o te hātepe. Ka whakamātauria te otinga mā te tuku i ngā tāurutanga maha, mā te āta arotake hoki i ngā putanga. Ina pērā te arotake, me mātua whakaaro mō ngā tāurutanga e tika ana, nā te mea, kāore pea e taea te whakamātau i ngā tāurutanga katoa (mō ētahi hātepe, kāore he mutunga mō ngā tāurutanga ka taea!). Heoi anō me arotake tonu te tika o te hātepe ina he rerekē ngā tāuru. Ko te whakamātautau i ngā pūnaha tētahi o ngā mahi nui mō ngā kaipūtaiao rorohiko. Nā te mea, kāore e taea te whakamātautau i ngā tāuru katoa, ka arotekengia te pūnaha mā te whakaaro arorau."
+
+#: templates/general/computational-thinking.html:313
+msgid "Logic"
+msgstr "Arorau"
+
+#: templates/general/computational-thinking.html:318
+msgid "When trying to solve problems we need to think logically. Logical reasoning is about trying to make sense of things by observing, collecting data, thinking about the facts you know, and then figuring things out based on what you already know. It helps us use our existing knowledge to establish rules and check facts."
+msgstr "Ki te whakaoti rapanga, me whakaaro arorau tātou. Ka whakamahia te whakaaro arorau ki te kimi māramatanga, mā te āta titiro, mā te kohikohi raraunga hoki, mā te whakaaro hoki mō ngā mea kei te mōhiotia kētia, kātahi ka whiriwhiri i te otinga i runga i aua mōhiotanga. Mā te whakaaro arorau e pai ake ai te whakamahi mōhiotanga hei waihanga i ngā whakatau, hei arotake hoki i ngā meka."
+
+#: templates/general/computational-thinking.html:326
+msgid "For example, suppose you are writing software that works out the shortest route to a location from your house. In the following map it's 2 minutes to the library if you head north from your house, but if you head south it's 3 minutes to the next intersection. You might wonder if there's a better route to the library if you start by heading south, but logically there can't be because you'll already have walked for 3 minutes to get to the intersection."
+msgstr "Hei tauira, mō te waihanga i tētahi papatono e whakatau ana i te ara poto rawa atu i tō whare ki tētahi atu wāhi. Kei te mahere ki raro nei, e 2 ngā miniti ki te whare pukapuka, ina ahu whakateraki atu i tō whare. Ina ahu atu koe ki te tonga, e 3 miniti ki te rīpekatanga o ngā huarahi. Mehemea ka whakaaro koe mō te ara pai e tīmata ai ki te ahu whakatetonga, mā te whakaaro arorau ka mōhio koe, kāore he ara poto ki te tonga nā te mea, ka pau te 3 miniti ki te hīkoi ki te rīpekatanga noa iho."
+
+#: templates/general/computational-thinking.html:334
+msgid "At a deeper level, computers are built entirely on logic. They use 'True' and 'False' values, and use something called 'Boolean expressions', like “is age > 5”, to make decisions in computer programs."
+msgstr "Mēnā ka hōhonu ake te tirohanga, ka kite tātou ka hangaia tonu ngā rorohiko ki te arorau noa iho. Ka whakamahia ngā uara 'Pono' me te 'Hē', me ngā kīanga 'Boolean' pērā ki te \"mēnā pakeke > 5\", ki te whakatau i ngā mahi a te papatono rorohiko."
+
+#: templates/general/computational-thinking.html:341
+msgid "Tracking down a bug in a program also requires logical thinking, to work out where, and why, something in the program is going wrong."
+msgstr "Ki te rapu i te hapa kei roto i tētahi papatono, me whakamahi te whakaaro arorau, kia kimi ai, kei whea, nā te aha hoki i hē ai te mahi a te papatono."
+
+#: templates/general/contact.html:21
+msgid "<strong>Email:</strong> You can <a href=\"mailto:csse.education.research@gmail.com\">email the CS Unplugged team here</a>."
+msgstr "<strong>Īmēra:</strong> Tuku <a href=\"mailto:csse.education.research@gmail.com\">īmēra ki te CS Unplugged team kei konei</a>."
+
+#: templates/general/contact.html:27
+msgid "<strong>Twitter:</strong> <a href=\"https://twitter.com/UCCSEd\">@UCCSEd</a>"
+msgstr "<strong>Twitter:</strong> <a href=\"https://twitter.com/UCCSEd\">@UCCSEd</a>"
+
+#: templates/general/contact.html:33
+msgid "<strong>Community Google Group:</strong> We have a <a href=\"https://groups.google.com/forum/#!forum/cs-unplugged-sharing\">Google Group</a> you can join and talk about CS Unplugged."
+msgstr "<strong>Community Google Group:</strong> He <a href=\"https://groups.google.com/forum/#!forum/cs-unplugged-sharing\">Rōpū Google</a> mō te whakawhiti whakaaro mō CS Unplugged."
+
+#: templates/general/how-do-i-teach-cs-unplugged.html:8
+#: templates/general/how-do-i-teach-cs-unplugged.html:20
+#: templates/general/index.html:57
+msgid "How do I teach CS Unplugged?"
+msgstr "Me pēhea ahau ka whakaako i te CS Unplugged?"
+
+#: templates/general/how-do-i-teach-cs-unplugged.html:23
+msgid "CS Unplugged is very much based on a constructivist approach: students are given challenges based on a few simple rules, and in the process of solving those challenges they uncover powerful ideas on their own. Not only is this a more memorable way to learn, but it empowers them to realise that these are ideas within their grasp. The activities are also very kinesthetic - the bigger the materials, the better."
+msgstr "Ka whai a CS Unplugged i te kaupapa o te ako mā te waihanga; ka tukuna he wero ki ngā ākonga, kia whai ai rātou i ngā tikanga māmā hei whakaoti i ngā wero. Heoi anō, i a rātou e whakaoti ana i aua rapanga, ka puawai mai ō rātou ake whakaaro. Atu i te mau pai o te akoranga, ka kite hoki rātou ka taea e rātou te hopu i ēnei mātauranga. He ngohe rāwekeweke ēnei - mā te nui ake o ngā rauemi e pai ake ai te ako."
+
+#: templates/general/how-do-i-teach-cs-unplugged.html:35
+msgid "Because of this approach, you can also learn alongside the students. You'll need to read through the whole activity so that you're prepared for it, and we have provided videos for many of them so you can visualise them, but as the students discover how these ideas work out, you'll start to see patterns and ideas that the students are discovering as they understand the principles behind these topics from Computer Science."
+msgstr "Nā tēnei kaupapa ako, ka taea hoki te ako tahi koutou ko āu ākonga. Pānuitia te katoa o te ngohe kia rite ai koe. Kua waihanga mātou i ngā kiriata mō ētahi ngohe kia kite ai koe i ngā mahi. Heoi, mā te wā ka kite atu koe ka mārama haere ngā ākonga ki ngā tauira me ngā whakaaro nui me ngā mātāpono mō ēnei kaupapa Pūtaiao Rorohiko."
+
+#: templates/general/how-do-i-teach-cs-unplugged.html:42
+msgid "If you're working within a school curriculum, you can find appropriate activities based on the learning objectives and age group. In several countries there are guides linking CS Unplugged to the local curriculum (e.g. <a href=\"https://www.digitaltechnologieshub.edu.au/\">Digital Technologies Hub for Australia</a>). But the unit plans listed follow the common topics that are appearing in school curricula, so you are likely to find something relevant from the titles. Note that CS Unplugged does not teach programming - the Kidbots activity is an excellent lead in to programming and the \"Plugging it in\" sections give some programming exercises to follow up with - but in general we are trying to show students what they could do with programming, before they have to learn it."
+msgstr "Ki te whai tō mahi i te marautanga o te kura, ka kitea he ngohe e hāngai ana ki ngā whāinga me te pakeke o ngā tamariki. Kei ētahi o ngā whenua o te ao he pukapuka arataki e honohono ana i te CS Unplugged ki te marautanga o te rohe (hei tauira: <a href=\"https://www.digitaltechnologieshub.edu.au/\">Te Digital Technologies Hub mō Ahitereiria</a>). Heoi anō, ka whai ngā mahere kōwae o konei i ngā kaupapa nui o ngā marau maha, nā, kāore e kore ka kitea tētahi mahi hāngai. Kia mōhio mai koe, kāore te CS Unplugged e whakaako i te tuhiwaehere. Heoi anō, ko te Kidbots (tamariki rorohiko) tētahi mahi pai hei whakarite kia tuhiwaehere, ā, kei ngā wāhanga \"Purua kia Mau\" (\"Plugging it in\") ētahi ngohe tuhiwaehere hei tautoko - engari mō te nuinga o ngā mahi mā te ākonga, he whakaaturanga o ngā mahi ka taea mā te tuhiwaehere, i mua i te ako i te tuhiwaehere."
+
+#: templates/general/how-do-i-teach-cs-unplugged.html:51
+msgid "But reading about Unplugged isn't the fun way to engage with it - pick a lesson for your students, and dive into it!"
+msgstr "Heoi anō, ehara te pānui noa mō te Unplugged i te āhuareka - tīpakongia tētahi ngohe mā ō ākonga, ā, rukuhia!"
+
+#: templates/general/how-do-i-teach-cs-unplugged.html:58
+#: templates/general/what-is-computer-science.html:86
+msgid "View available topics"
+msgstr "Tirohia ngā kaupapa e wātea ana"
+
+#: templates/general/index.html:18
+msgid "Computer Science<br>without a computer"
+msgstr "Te Pūtaiao Rorohiko<br>kāore he rorohiko"
+
+#: templates/general/index.html:30
+msgid "CS Unplugged is a collection of free teaching material that teaches Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around."
+msgstr "He kohinga te CS Unplugged o ngā rauemi whakaako hei whakaako atu i te Pūtaiao Rorohiko, mā ngā kēmu me ngā panga āhuareka. Ka whakamahia he kāri, he aho, he pene hinu me te omaoma haere."
+
+#: templates/general/index.html:47
+#: templates/general/what-is-computer-science.html:8
+#: templates/general/what-is-computer-science.html:20
+msgid "What is Computer Science?"
+msgstr "He aha te Pūtaiao Rorohiko?"
+
+#: templates/general/index.html:77
+#: templates/topics/all-curriculum-integration-list.html:8
+#: templates/topics/all-curriculum-integration-list.html:17
+#: templates/topics/topic.html:64
+msgid "Curriculum Integrations"
+msgstr "Te Whakaurunga Marautanga"
+
+#: templates/general/index.html:85
+msgid "Activities"
+msgstr ""
+
+#: templates/general/index.html:96
+msgid "Plugging it in"
+msgstr ""
+
+#: templates/general/people.html:21
+msgid "version 4.0.0 onwards"
+msgstr "tukunga 4.0.0 piki ake rānei"
+
+#: templates/general/people.html:23
+msgid "Founders"
+msgstr "Kaiwhakatō"
+
+#: templates/general/people.html:31 templates/general/people.html:113
+msgid "Advisers"
+msgstr "Ngā Kaitohutohu"
+
+#: templates/general/people.html:35
+msgid "Computer Scientist"
+msgstr "Kaipūtaiao Rorohiko"
+
+#: templates/general/people.html:38
+msgid "Current Team"
+msgstr "Te Tīma Ināianei"
+
+#: templates/general/people.html:41
+msgid "Founder &amp; Content Writer"
+msgstr "Kaiwhakatō &amp; Kaituhi Kōrero"
+
+#: templates/general/people.html:42 templates/general/people.html:43
+#: templates/general/people.html:47 templates/general/people.html:53
+msgid "Content Writer"
+msgstr "Kaituhi Kōrero"
+
+#: templates/general/people.html:44
+msgid "Project Manager &amp; Technical Team"
+msgstr "Kaiwhakahaere Kaupapa &amp; Tīma Hangarau"
+
+#: templates/general/people.html:45 templates/general/people.html:46
+#: templates/general/people.html:54 templates/general/people.html:55
+msgid "Technical Team"
+msgstr "Tīma Hangarau"
+
+#: templates/general/people.html:50
+msgid "Previous Team Members"
+msgstr "He Mema o te Tīma i Mua"
+
+#: templates/general/people.html:56
+msgid "Creative Content Developer &amp; Illustrator"
+msgstr "Kaiwaihanga Ihirangi Auaha &amp; Ringa Tā"
+
+#: templates/general/people.html:59
+msgid "Community Contributors"
+msgstr "Kaiāwhina o te Hapori"
+
+#: templates/general/people.html:68
+msgid "Translations"
+msgstr "Whakawhitinga Reo"
+
+#: templates/general/people.html:74
+msgid "up to version 3.2.2"
+msgstr "tae atu ki te tukunga 3.2.2"
+
+#: templates/general/people.html:76
+msgid "Contributors"
+msgstr "Kaiāwhina"
+
+#: templates/general/people.html:143
+msgid "Website"
+msgstr "Pae Tukutuku"
+
+#: templates/general/principles.html:22
+msgid "The primary goal of the Unplugged project is to promote Computer Science (and computing in general) to young people as an interesting, engaging, and intellectually stimulating discipline. We want to capture people’s imagination and address common misconceptions about what it means to be a computer scientist. We want to convey fundamentals that do not depend on particular software or systems, ideas that will still be fresh in 10 years. We want to reach kids in elementary schools and provide supplementary material for university courses. We want to tread where high-tech educational solutions are infeasible; to cross the divide between the information-rich and information-poor, between industrialized countries and the developing world."
+msgstr "Ko te whāinga tuatahi mō Unplugged ko te toko ake i te Pūtaiao Rorohiko (me ngā mahi rorohiko whānui) ki te hunga taiohi hei mahi pārekareka, whakaihiihi hoki, whakahihiko hoki i te mahara o te tangata. Ka hiahia mātou ki te hāpai ake i te auahatanga o te tangata me te whakatika i ngā pōhēhētanga mō te mahi a te kaipūtaiao rorohiko. Ka hiahia hoki mātou ki te tuku mōhiotanga kāore i te herea ki ngā momo taupānga me ngā momo pūnaha matihiko o ēnei rā. Ko te tūmanako ka pai tonu ngā ariā me ngā mahi ā ngā tau 10 e heke mai nei. Ka hiahia mātou ki te toro atu ki ngā tamariki o ngā kura tuatahi me te tuku rauemi tāpiri ki ngā akomanga whare wānanga hoki. E kimi hoki ana mātou i ngā ara pai mō ngā wāhi kāore e taea te whakamahi i ngā hangarau nui o te ao; ki te whakawhiti i te āpiti i waenga i te hunga whai rawa me te hunga pōhara o te ao mōhiohio, i ngā whenua ahumahi me ngā whenua kei te whanake tonu."
+
+#: templates/general/principles.html:32
+msgid "There are many worthy projects for promoting Computer Science. The main principles that distinguish the Unplugged activities are:"
+msgstr "He maha ngā kaupapa whaitake mō te whakanui i te Pūtaiao Rorohiko. Heoi anō, ko ngā mātāpono matua e noho motuhake ai ngā ngohe Unplugged:"
+
+#: templates/general/principles.html:38
+msgid "No Computers Required"
+msgstr "Kāore he Herenga Rorohiko"
+
+#: templates/general/principles.html:41
+msgid "The activities do not depend on computers. This avoids confusing Computer Science with programming or learning application software, makes the activities available to those who aren’t able to or don’t want to work with computers, and skips the barrier of learning to program before being able to explore ideas. It also provides physical, kinaesthetic experiences as part of learning computing, which can be a welcome break from sitting in front of a screen. For example, the parity magic trick is a card game that happens to use the same principle as error correction in computer memory. Unplugged isn’t a completely Luddite approach – we do exploit the internet and other computing facilities to share and develop the activities, and we hope that students will have to opportunity to learn to program so that they can put wheels on the ideas they have been exploring."
+msgstr "Kāore he herenga o ēnei ngohe ki te rorohiko. Nā reira, ka kore e pōhēhētia he ōrite te Pūtaiao Rorohiko ki te tuhiwaehere, ki te ako i ngā taupānga rānei. Ka taea hoki ēnei mahi e te tangata rorohiko kore, kāore e hiahia rānei ki te mahi rorohiko, ā, ka karo hoki ēnei i te mahi nui ki te ako i te tuhiwaehere i mua i te toro atu ki ngā ariā. Ka āhei te ako rorohiko mā ngā mahi ā-tinana. Ko te tūmanako, he whakangā pai ēnei i te noho noa ki mua tonu i te mata o te rorohiko. Ko te mahi Kāri Ōritetanga tētahi tauira o te kēmu kāri e whakamahi ana i ngā mātāpono ōrite ki te tukanga whakatika i ngā hapa o te mahara rorohiko. Ehara i te mea he mahi ēnei nō te ao kōhatu (Luddite), kei te whakamahi mātou i te ipurangi me ngā pūnaha rorohiko ki te hanga me te tuari i ngā rauemi. Ko te tūmanako hoki ka ako ngā ākonga ki te tuhiwaehere kia taea ai e rātou te tāpiri i ngā wīra ki ō rātou waka akoranga."
+
+#: templates/general/principles.html:50
+msgid "Real Computer Science"
+msgstr "Te Tino Pūtaiao Rorohiko"
+
+#: templates/general/principles.html:53
+msgid "Unplugged presents fundamental concepts in Computer Science such as algorithms, artificial intelligence, graphics, information theory, human computer interfaces, programming languages, and so on. We want to emphasize that programming is a means, not an end. Wikipedia provides a definition of Computer Science, and Peter Denning’s Great Principles project provides a more detailed analysis of the topics it covers."
+msgstr "Kei Unplugged, ka whakaaturia ngā ariā nūnui mō te Pūtaiao Rorohiko, pērā ki ngā hātepe, te ihumanea ā-hangarau, te whakaairoiro, te ariā mōhiohio, te atanga tangata me te rorohiko, ngā reo tuhiwaehere, te aha noa hoki. Ko te mea nui ki a mātou, he ara te tuhiwaehere, ehara i te otinga. Kei a Wikipedia he whakamārama mō te Computer Science (pūtaiao rorohiko), ā, kei te kaupapa o Peter Dennings Great Principles tētahi whakamārama hōhonu mō ngā kaupapa ka kōrerotia."
+
+#: templates/general/principles.html:60
+msgid "Learning by doing"
+msgstr "Te ako mā te mahi"
+
+#: templates/general/principles.html:63
+msgid "The activities tend to be kinaesthetic, often on a large scale and involving team work. For example, the Sorting Network activity has teams of six running through a network drawn on the ground. The activities tend to allow students to discover answers for themselves, rather than just being given solutions or algorithms to follow; that is, a constructivist approach is encouraged (where the teacher uses the scaffolding provided by Unplugged to ask questions that lead them to discover the knowledge themselves), as we want students to realize that they are capable of finding solutions to problems on their own, rather than being given a solution to apply to the problem. For example, students don’t really need to be able to convert numbers to binary, but it is valuable for them to discover the patterns such as the doubling value of bits, patterns when you count in binary, and how the range increases exponentially as you add bits."
+msgstr "Ko te nuinga o ngā ngohe, he mahi ā-tinana, he whārahi ētahi, he mahi ā-rōpū hoki. Hei tauira, mō te ngohe Whatunga Kōmaka, ka nekeneke ngā tīma - tokoono ngā tāngata kei ia tīma - i runga i te whatunga ka tuhia i runga i te papa. Ko te tikanga, ka tūhurahia ngā otinga e ngā ākonga anō, kāore e tukuna noatia ngā otinga, ngā hātepe rānei kia whāia; arā, kia ako ngā ākonga mā te waihanga i te whakaaro (ka whakamahi te kaiako i ngā rauemi o Unplugged, hei tautoko i a ia ki te hanga pātai, hei ārahi i ngā ākonga ki te tūhura i ngā mōhiotanga mō rātou anō) kia mōhio ai rātou, ka taea e rātou anō te rapu otinga, rapanga rānei, kia kaua rātou e tatari mā tētahi atu e hoatu te otinga. Hei tauira, ehara i te mea, me mātua mōhio ngā ākonga ki te panoni i ngā nama ki te tāhūrua, engari he pai kia mārama rātou ki ngā āhuatanga pērā ki te pūrua o ngā uara o ngā moka, ngā tauira ka puta ina kaute ā-tāhūrua, ā, ka tipu taupūtanga te whānui ina tāpiritia he moka anō."
+
+#: templates/general/principles.html:71
+msgid "Fun"
+msgstr "Whakakoakoa"
+
+#: templates/general/principles.html:74
+msgid "The activities are fun and engaging, not just busy-work for the sake of it. Usually the explanations are quite brief – the teacher lays out the materials and a few rules, and the students follow the challenge from there. There are puzzles, challenges, competitions, problem solving and humour. Unplugged activities should leave students with a sense of genuine achievement. There is often a strong sense of story in the activities; problems are presented as part of a story rather than as an abstract mathematical challenge. Children are more interested in pirates than privacy, and absurd fictitious stories can be more memorable than compelling business applications."
+msgstr "He āhuareka, he tākarokaro ēnei ngohe, ehara i te mahi mō te mahi noa. Ko te nuinga o ngā whakamāramatanga he poto - mā te kaiako e whakarite ngā rauemi me ētahi ture ruarua noa iho, ā, mā ngā ākonga e hiki te mānuka. He panga, he wero, he whakataetae, he rapanga hei whakaoti, he mahi whakakatakata. Mā te mahi Unplugged e rongo ai ngā ākonga i te reka o te whakatutukitanga. Ka kitea tonuhia he pakiwaitara i ngā ngohe; ehara i te mea he wero pāngarau waitaratanga noa iho. He pai ake ki ngā tamariki te hunga paireti i te matatapu, ā, ka ngāwari ake te maumahara i te korero paki pōhewahewa i te tauira pakihi ōkawa."
+
+#: templates/general/principles.html:84
+msgid "No specialised equipment"
+msgstr "Kāore he taputapu motuhake"
+
+#: templates/general/principles.html:87
+msgid "The activities are low cost, using equipment commonly found in classrooms or stationery stores. Most require only paper and pencil, and perhaps cards, string, chalk, whiteboard markers, balls or similar items."
+msgstr "He ngāwari te utu mō ēnei ngohe, ka whakamahia ngā taputapu ka kitea whānuitia i ngā akomanga me ngā toa pukapuka. Mō te nuinga, he pepa, he pene rākau noa iho hoki, he kāri pea, he aho, he tioka, he pene papamā, he pōro, ko ētahi atu mea pērā rānei."
+
+#: templates/general/principles.html:93
+msgid "Variations encouraged"
+msgstr "Ka tautokona ngā rerekētanga"
+
+#: templates/general/principles.html:96
+msgid "Unplugged is published under a Creative Commons licence, which permits free sharing (with acknowledgement). Variations, adaptations and extensions are encouraged. This also allows local publishing arrangements to take account of the kind of packaging that would make the material more accessible to local educational practitioners."
+msgstr "Kua whakaputaina a Unplugged i raro i tētahi raihana Creative Commons, e whakaaetia ana te tuari utu-kore (me te tuku mihi tohutoro). Ka tautokona te whakarerekē, te whakahāngai hoki ki kaupapa kē, te whakatāpiri hoki. Ka taea tonu te whakaputa i ngā tā ā-rohe kia taea ai te whakahāngai i te takai i ngā rauemi ki ngā hiahia o ngā kaiwhakaako o te rohe."
+
+#: templates/general/principles.html:103
+msgid "<p> Two specific situations that we get asked about are: </p> <ul> <li> <strong>For-profit classes (e.g. clubs with a subscription fee):</strong> It is fine to charge a fee for people to attend classes that you're running that uses this material. </li> <li> <strong>Selling packs of support material (such as pre-printed cards):</strong> It is fine to do this. We hope that you'll do it for a reasonable price, and it's even better if you can get someone to sponsor you so that you can give it away to educators, but the license allows you to set your own price. </li> </ul>"
+msgstr "<p> E rua ngā pātai auau e uia ai mātou: </p> <ul> <li> <strong>Ngā akomanga moni hua (hei tauira: he karapū e kohi i te utu whakauru):</strong> Kei te pai te kohi utu mō ngā akomanga e whakamahia ana ēnei rauemi. </li> <li>Kei te pai hoki te <strong>hoko atu i ngā rauemi (pērā ki ngā kāri kua tāngia):</strong> Ko tō mātou tūmanako kia ngāwari te utu, ā, he pai ake hoki te kimi kaitautoko māna e utu, kia taea ai te hoatu ngā rauemi mō te utu-kore, engari, e ai ki te raihana māu anō e whakatau te utu mō ngā rauemi ka hokona atu.</li> </ul>"
+
+#: templates/general/principles.html:119
+msgid "For everyone"
+msgstr "Mā te katoa"
+
+#: templates/general/principles.html:122
+msgid "The programme is strongly international – we encourage variations that are relevant to local cultures (for example, some activities that require a large playground can be changed to a board game for schools that have very little open space; others use contexts that might not be familiar to students in a different culture). Translators should try the activities locally and involve teachers. It is better to adapt activities rather than translate them faithfully to something that would be less meaningful in the local culture. The activities are intended to be inclusive."
+msgstr "He kaupapa mō ngā whenua katoa o te ao tēnei - ka tautoko mātou i te hanga i ngā whakarerekētanga kia hāngai ki ngā tikanga o tēnā, o tēnā o ngā iwi (hei tauira, mō ētahi o ngā mahi e whakamahi ana i te papa tākaro nui, ka taea hoki te mahi hei kēmū poari mēnā kāore i te nui te papa tākaro o te kura; mō ētahi atu o ngā ngohe, ka kitea he horopaki kāore i te tino mōhiotia e ngā ākonga o ngā iwi kē). Mā ngā tāngata e whakawhiti ana i ngā reo o ngā ngohe hei rapu i ngā horopaki, me ngā kaupapa e tika ana mō ō rātou ake iwi. Ko te tino tūmanako kia taea te uru ngā tāngata ki ēnei akoranga ahakoa ko wai ."
+
+#: templates/general/principles.html:130
+msgid "Co-operative"
+msgstr "Mahi tahi"
+
+#: templates/general/principles.html:133
+msgid "We encourage co-operation, communication and problem solving. Competition can also be effective if it is used appropriately, especially between teams rather than individuals, but having students working cooperatively is a great way to learn about problem solving."
+msgstr "He kaupapa nui ki a mātou, te mahi tahi, te whakawhitiwhiti whakaaro hoki, te whakaoti rapanga hoki. He pai hoki te whakataetae, ina e tika ana, he pai ake ngā tīma i te tangata takitahi. Heoi anō ko te mahi tahi, ko te tautoko tētahi o ngā ara tino pai hei ako i te whakaoti rapanga."
+
+#: templates/general/principles.html:139
+msgid "Stand-alone Activities"
+msgstr "He Ngohe Motuhake"
+
+#: templates/general/principles.html:142
+msgid "As much as possible, the activities are stand-alone modules that can be used independently of each other, so that they can be used for enrichment in curricula or for outreach on their own rather than having to be used as a series. The ones that have been presented as lesson plans will sometimes require a series of lessons to be followed, but we will indicate if particular preparation is required."
+msgstr "Ki ōna e taea ana, ka āhei te tū tahanga ia ngohe kia whakamahia hei ngohe motuhake, kia taea ai te whakauru hei ngohe tautoko mō ngā kōwae ako, me ngā marau, me te whakamahi ahakoa kāore i te mahia te katoa o ngā ngohe. Ko ētahi o ngā rauemi he mahere akoranga, heoi anō, ka whakamōhio atu mātou mehemea he whakaritenga hei mahi kia pai ai te raupapa o ngā mahi."
+
+#: templates/general/principles.html:148
+msgid "Resilient"
+msgstr "Aumangea"
+
+#: templates/general/principles.html:151
+msgid "The activities are resilient to errors made by students; they should not depend on getting many difficult steps exactly right, and minor mistakes should not prevent participants from understanding the principles. The instructions are usually just one or two rules and a goal that can be expressed in a single sentence (e.g. “Each card is either fully visible or not; how can you display exactly 11 dots?”, or “We need to get from any house to any other house; what is the smallest number of paving stones that make this possible”)."
+msgstr "Ko te tūmanako ka taea tonutia ēnei ngohe ahakoa ngā hapa o ngā ākonga, kia kore hoki he maha ngā hipanga uaua hei whai atu, kia ako hoki ngā ākonga i ngā mātāpono ahakoa ngā paku hapa e puta ana. Mō te nuinga, he ruarua noa iho ngā ture, ka taea hoki te whakapuaki i te tino whāinga i te rerenga kōrero kotahi (hei tauira: \"Mō ia kāri, ka kitea te katoa, kāore rānei; pēhea te whakaatu i ngā ira 11?, \"Ko tō tātou hiahia, kia taea te haere mai i tētahi o ngā whare kia tae ki ngā whare katoa, he aha te nama iti iho mō ngā kōhatu takahanga kia taea ai tēnei?\")."
+
+#: templates/general/what-is-computer-science.html:24
+#, python-format
+msgid "In today's digital world, Computer Science has become an important subject for everyone to learn about. The knowledge and <a href=\"%(computational_thinking_url)s\">Computational Thinking skills</a> associated with it are now crucial to developing innovative digital technology, understanding modern society, and qualifications in this area are highly sought after."
+msgstr ""
+
+#: templates/general/what-is-computer-science.html:31
+msgid "The CS Unplugged activities are intended to give you a feel for what the subject is - you can learn what it is by doing. At this early stage, rather than define it formally, let's think about how it might influence our daily lives. For example, think of your favourite search engine. On the surface it seems like a fairly simple interface: a text box where you type what you want to search for, and a button to start the search. The level of programming knowledge needed to implement a text box and a button is fairly rudimentary, and you could implement a search by writing a short program (probably less than 20 lines) to go through all the text on the web and displaying any that match. But obviously there's more to it than this! There are billions of searches are made every day, on billions on web pages, and the approach above will give answers (eventually), but will be so slow and ineffective that no-one would use it."
+msgstr "Ko te whāinga mā ēnei ngohe CS Unplugged e waia ai koe ki te kaupapa - e taea ai hoki te ako i te kaupapa nei mā te mahi i ēnei ngohe. I te tīmatanga me mārama tātou ki ngā pānga ki tō tātou nei ao, waihotia te tautuhi i te kaupapa mō āmuri. Hei tauira, whakaarohia tō tino pūkaha rapu. Tērā pea, he ngāwari noa iho te atanga: he pouaka hei patopato i ngā mea ka rapua me tētahi pātene hei tīmata i te rapu. Ka taea te hanga i taua pouaka me te pātene mā te mōhiotanga paku noa, ka taea hoki te hanga i te taupānga poto (kei raro i te 20 ngā rārangi o te waehere) kia rapu i ngā tuhinga katoa i runga i te ipurangi me te whakaatu i ngā kitenga. Heoi anō, he maha ngā āhuatanga e pā ana ki enei momo mahi. E hia kē ngā manomano rapunga ia rā, kei ngā whārangi maha anō hoki, ā, mā te momo whārangi ka kōrerohia kei runga nei, nāwai rā ka puta ngā kitenga, engari, mā te tino pōturi o tēnei momo, e kore ai pea e hiahia te tangata ki te whakamahi."
+
+#: templates/general/what-is-computer-science.html:47
+msgid "This is where Computer Science comes in; many areas of Computer Science are employed to make the system work well, and most of them are illustrated through Unplugged. How could you search billions of items in a fraction of a second (Searching Algorithms)? How do you make sure that it's easy to use (Human-Computer Interaction)? We need to keep it secure - users don't want other people to know what they are searching for, and the search engine doesn't want commercial interests to manipulate search ranking (Computer Security and Encryption)? Search engines generally predict what you are about to search for (Artificial Intelligence). It needs to be reliable - a small mistake from one of the thousands of programmers at a search engine company shouldn't prevent the site working (Software Engineering). It needs to scale well - if it becomes 10 times as popular, you don't want it to need 100 times the computing resources (Algorithms). The relevance of a search generally depends on the relationships between web sites - you need a map showing which sites are linked to which other ones (Graphs)."
+msgstr "Mā konei e whai wāhi ai te Pūtaiao Rorohiko; mā te āta whakamahi i ngā wāhanga maha o te pūtaiao rorohiko e piki ai te kaha o te pūnaha mā te Unplugged. Ka kitea te nuinga o ēnei kaupapa i konei i te Unplugged. Ka pēhea te rapu i tētahi o ngā tuemi manomano i tētahi wāhanga paku o te hēkona (Hātepe Rapu)? Me pēhea hoki ngā whakaritenga kia ngāwari ai te whakamahi (Pāhekoheko Tangata-Rorohiko)? Me haumaru hoki kia kaua e whakaatu ki tangata kē ngā mea ka rapua e koe, ki kaua hoki e tukuna ngā hunga arumoni ki te rāwekeweke i te kapatanga o ngā whārangi (Whakamarumaru Rorohiko, Whakamunatanga Rorohiko hoki)? Ka matapae hoki te nuinga o ngā pūkaha rapu i ngā kupu ka rapua (Atamai Tāwhaiwhai). Me horopū - kaua e tukuna mā te hapa paku o tētahi o te tini o ngā kaituhiwaehere e mahi ana i te kamupene pūkaha rapu e whakahoro i te paetukutuku (Mataarotanga Pūmanawa). Kia pai te piki i te taurahi - mēnā ka whakareatia ngā manuhiri mā te 10, ka kore e hiahiatia kia whakareatia ngā rauemi rorohiko mā te 100 (Hātepe). Ka whai te hāngai o ngā otinga rapu i ngā honohono o ngā paetukutuku, nā reira, ka hiahiatia he mahere o ngā hononga paetukutuku (Kauwhata)."
+
+#: templates/general/what-is-computer-science.html:60
+msgid "The areas above cover much of what the subject of Computer Science is about. Programming is just a tool for implementing ideas (well, it's a very powerful tool, and requires considerable skill to use well). But programming on its own isn't enough to create software that people love to use, and Computer Science is the area that gives programmers the inside knowledge to make their software fast, efficient, reliable, secure, usable, intelligent, scalable, and even delightful!"
+msgstr "Kua kōrerotia he wāhanga whānui o ngā kaupapa Pūtaiao Rorohiko kei runga nei. Ko te tuhiwaehere tētahi o ngā taputapu hei whakatinana i ngā whakaaro (āe rā, he tino taonga, ā, me whai pūkenga kia whakamahi i tēnei taputapu). Heoi, ehara i te mea mā te tuhiwaehere anake e hangaia ai ngā papatono pai mā te tangata. Mā te mōhio ki te pūtaiao rorohiko e mōhio ai hoki ngā kaituhiwaehere ki ngā huarahi kia tere, kia tiakina ngā rawa, kia haumaru, kia whai hua, kia mārama, kia taea te tipu, kia rawe hoki ngā pūmanawa rorohiko!"
+
+#: templates/general/what-is-computer-science.html:72
+msgid "That's why we developed CS Unplugged - we want young students to be empowered to understand the great ideas that computer science covers, without having to become expert programmers first. They won't be learning exactly how to build the next search engine, social network or game app, but they will have an idea of what sort of techniques are needed to make it successful. We don't want them to see digital systems as some kind of magic that they can't participate in, but as something that they could understand and, for some, create themselves. Actually, it is kind of magic when you start understanding what can and can't be done."
+msgstr "Koinei te take i hanga mātou i te CS Unplugged - e hiahia ana mātou ki te tautoko i ngā ākonga kia mōhio ki ngā kaupapa nui o te pūtaiao rorohiko me te kore eke ki ngā taumata o te tuhiwaehere i te tuatahi. Ehara i te mea, ka ako rātou ki te hanga i te pūkaha rapu, i te taupānga kēmu, i te whatunga pāpori rongonui rānei - hou rawa atu o te ao rānei. Heoi anō ka kite rātou i ētahi o ngā tikanga hei kōkiri i ēnei momo kaupapa. Kia mōhio ai rātou, ehara ngā pūnaha matihiko i te maunga teitei, he pīnakitanga kē ka taea e rātou te eke. Heoi anō ka taea te eke i ngā maunga teitei ina hopu rātou i tēnei mātauranga."
+
+#: templates/general/what-is-computer-science.html:82
+msgid "Read 'How do I teach CS Unplugged?'"
+msgstr "Pānuitia 'Me pēhea ka whakaako ahau i te CS Unplugged?'"
+
+#: templates/generic/classic-unplugged-button.html:13
+msgid "More activities at the Classic CS Unplugged website"
+msgstr "He ngohe anō kei te whārangi CS Unplugged Classic"
+
+#: templates/generic/classic-unplugged-button.html:15
+msgid "Translations for some activities available at the Classic CS Unplugged website"
+msgstr "He whakamāoritanga mō ētahi o ngā ngohe o te paetukutuku CS Unplugged Classic"
+
+#: templates/generic/not-available-badge.html:4
+#, python-format
+msgid "Not available in %(language)s"
+msgstr "Kāore e taea ki te reo %(language)s"
+
+#: templates/resources/index.html:19
+msgid "This page diplays a complete list of all available printables. If a lesson uses a printable, the lesson will contain a direct link to the printable with a description on how to use it."
+msgstr "Kei tēnei whārangi te rārangi o ngā rauemi tā katoa. Ina he rauemi tā mō tētahi akoranga, kei roto i taua akoranga anō tētahi hononga tōtika ki taua rauemi tā, me ngā whakamārama pēhea te whakamahi i taua rauemi."
+
+#: templates/resources/index.html:43
+msgid "No printables are available."
+msgstr "Kāore he rauemi tā mō tēnei."
+
+#: templates/resources/resource.html:20
+msgid "Return to list of printables"
+msgstr "Hoki ki te rārangi rauemi tā"
+
+#: templates/resources/resource.html:31
+msgid "Create Printable"
+msgstr "Waihanga Rauemi e taea te Tā"
+
+#: templates/resources/resource.html:42
+msgid "Generate Printable"
+msgstr "Whakaputa Rauemi ka taea te Tā"
+
+#: templates/resources/resource.html:46
+#, python-format
+msgid "The download of this Printable includes %(copies_amount)s unique copies."
+msgstr "Kei roto i te rauemi tā nei e %(copies_amount)s ngā tārua motuhake."
+
+#: templates/resources/resource.html:51
+msgid "Download Printable"
+msgstr "Tikiake i te Rauemi Tā"
+
+#: templates/resources/resource.html:59
+msgid "Preview"
+msgstr "Tiro-wawe"
+
+#: templates/resources/resource.html:74
+msgid "Related Lessons"
+msgstr "He Akoranga Whai Pānga"
+
+#: templates/resources/resource.html:78
+#: templates/topics/all-curriculum-integration-list.html:27
+#: topics/models.py:108
+msgid "Topic"
+msgstr "Kaupapa"
+
+#: templates/resources/resource.html:79
+msgid "Ages"
+msgstr "Ngā tau o ngā ākonga"
+
+#: templates/resources/resource.html:80
+#: templates/topics/programming-challenges-table.html:8
+msgid "Number"
+msgstr "Nama"
+
+#: templates/resources/resource.html:81 topics/models.py:329
+msgid "Lesson"
+msgstr "Akoranga"
+
+#: templates/search/result/curriculumintegration.html:15
+#: templates/search/result/lesson.html:19
+#: templates/search/result/programmingchallenge.html:15
+#: templates/search/result/unitplan.html:10
+msgid "Within topic"
+msgstr "Kei roto i te kaupapa"
+
+#: templates/search/result/lesson.html:11 templates/topics/lesson.html:30
+#, python-format
+msgid "<strong>Ages %(lower)s to %(upper)s:</strong> Lesson %(number)s"
+msgstr "<strong>Ngā tau %(lower)s ki %(upper)s:</strong> Akoranga %(number)s"
+
+#: templates/search/result/lesson.html:23
+msgid "within unit plan"
+msgstr "kei roto i te mahere kōwae ako"
+
+#: templates/search/result/programmingchallenge.html:10
+#: templates/topics/programming-challenge.html:28
+msgid "Challenge Level:"
+msgstr "Taumata Wero:"
+
+#: templates/topics/all-curriculum-integration-list.html:19
+msgid "The following table lists curriculum integrations for all topics in the CS Unplugged content."
+msgstr "Kei te tēpu e whai ake nei, ngā hononga marautanga mō ngā kaupapa katoa o te CS Unplugged."
+
+#: templates/topics/all-curriculum-integration-list.html:28
+#: templates/topics/curriculum-integrations-table.html:6
+msgid "Activity"
+msgstr "Ngā Mahinga"
+
+#: templates/topics/all-curriculum-integration-list.html:29
+#: templates/topics/curriculum-integrations-table.html:7
+msgid "Curriculum Areas"
+msgstr "Ngā Wāhanga Ako o te Marautanga"
+
+#: templates/topics/all-curriculum-integration-list.html:30
+#: templates/topics/curriculum-integrations-table.html:8
+msgid "Prerequisite Lessons?"
+msgstr "Ngā Akoranga Tōmua?"
+
+#: templates/topics/computational-thinking-links.html:5
+msgid "Seeing the Computational Thinking connections"
+msgstr "Kia kitea ngā hononga ki te Whakaaro Rorohiko"
+
+#: templates/topics/computational-thinking-links.html:8
+msgid "Throughout the lessons there are links to computational thinking. Below we've noted some general links that apply to this content."
+msgstr "Kei roto i te maha o ngā akoranga, he hononga ki te whakaaro rorohiko. Kei raro nei ētahi o aua hononga whānui e pā ana ki tēnei akoranga."
+
+#: templates/topics/computational-thinking-links.html:15
+msgid "Teaching computational thinking through CSUnplugged activities supports students to learn how to describe a problem, identify what are the important details they need to solve this problem, and break it down into small, logical steps so that they can then create a process which solves the problem, and then evaluate this process. These skills are transferable to any other curriculum area, but are particularly relevant to developing digital systems and solving problems using the capabilities of computers."
+msgstr "Mā te whakaako i te whakaaro rorohiko mā ngā ngohe CSUnplugged e āwhina ai ngā ākonga kia āhei rātou te whakaatu he aha te rapanga, te tautuhi hoki, ko ēhea o ngā taipitopito e tika ana hei whakaoti i te rapanga, hei wetewete hoki kia iti noa, kia arorau hoki ngā mahinga. Kātahi ka taea te waihanga i te tukanga hei whakaoti i te rapanga, hei aromātai hoki i tēnei tukanga. He pūkenga pai ēnei mō te whakawhanake i ngā pūnaha matihiko, hei whakaoti rapanga hoki mā ngā pūkenga o te rorohiko, engari ka taea hoki te whakamahi i aua pūkenga mō ngā marautanga katoa."
+
+#: templates/topics/computational-thinking-links.html:23
+#, python-format
+msgid "These Computational Thinking concepts are all connected to each other and support each other, but it’s important to note that not all aspects of Computational Thinking happen in every unit or lesson. We’ve highlighted the important connections for you to observe your students in action. For more background information on what our definition of Computational Thinking is <a href=\"%(ct_url)s\">see our notes about computational thinking</a>."
+msgstr "He maha ngā hononga i waenga i ēnei ariā Whakaaro Rorohiko, ka tautoko tētahi ki tētahi, engari me mātua mōhio, kāore e puta te katoa o ngā wāhanga o te Whakaaro Rorohiko i roto i ia kōwae, akoranga rānei. Kua tīpako mātou i ngā hononga nui kia kite ai ā koutou ākonga e mahi ana. Ki te kimi mōhiohio anō mō ā tātou kōrero mō te Whakaaro Rorohiko, <a href=\"%(ct_url)s\">toro atu kī ā mātou tuhinga mō te whakaaro rorohiko</a>."
+
+#: templates/topics/curriculum-integration.html:45
+msgid "Heads up!"
+msgstr "Kia mataara!"
+
+#: templates/topics/curriculum-integration.html:46
+msgid "To do this activity it's expected you understand the content covered in the following:"
+msgstr "Ki te whakamahi i tēnei ngohe, me matua mōhio ki ngā ihirangi kei roto i ēnei:"
+
+#: templates/topics/glossary.html:29
+#, python-format
+msgid "The following glossary terms are not yet available in %(language)s. Sorry about that!"
+msgstr "Kāore anō kia āhei ngā tuemi kuputaka i roto i ngā reo %(language)s. Aroha mai!"
+
+#: templates/topics/index.html:21
+msgid "Open a topic to see all related unit plans, lessons, curriculum integrations, and programming challenges."
+msgstr "Huakina mai tētahi kaupapa kia kitea ai ngā mahere kōwae ako, ngā akoranga, ngā whakaurunga marautanga, ngā wero tuhiwaehere hoki."
+
+#: templates/topics/index.html:38 templates/topics/topic.html:46
+#, python-format
+msgid "Ages %(min_age)s to %(max_age)s"
+msgstr "Ngā tau %(min_age)s ki %(max_age)s"
+
+#: templates/topics/index.html:44 templates/topics/topic.html:56
+msgid "lessons"
+msgstr "ngā akoranga"
+
+#: templates/topics/index.html:48
+msgid "curriculum integrations"
+msgstr "te whakaurunga marautanga"
+
+#: templates/topics/index.html:51
+msgid "programming challenges"
+msgstr "ngā wero tuhiwaehere"
+
+#: templates/topics/index.html:67
+msgid "No topics are available."
+msgstr "Kāore e kitea he kaupapa."
+
+#: templates/topics/lesson.html:27
+#, python-format
+msgid "<strong>Duration:</strong> %(duration)s minutes"
+msgstr "<strong>Roanga:</strong> %(duration)s miniti"
+
+#: templates/topics/lesson.html:44
+#: templates/topics/programming-challenge.html:61
+msgid "Learning outcomes"
+msgstr "Hua akoranga"
+
+#: templates/topics/lesson.html:48
+#: templates/topics/programming-challenge.html:65
+msgid "Students will be able to:"
+msgstr "Ka taea e ngā ākonga te:"
+
+#: templates/topics/lesson.html:91
+msgid "Classroom resources"
+msgstr "He rauemi akomanga"
+
+#: templates/topics/lesson.html:101 templates/topics/lessons-table.html:14
+msgid "Programming challenges"
+msgstr "Ngā wero tuhiwaehere"
+
+#: templates/topics/lesson.html:104
+msgid "View related programming challenges"
+msgstr "Tirohia ētahi wero tuhiwaehere whai pānga"
+
+#: templates/topics/lesson.html:111
+#: templates/topics/unit-plan-description.html:40
+msgid "Table of contents"
+msgstr "Ripanga ihirangi"
+
+#: templates/topics/lesson.html:124
+#: templates/topics/unit-plan-description.html:52
+msgid "Computational Thinking"
+msgstr "Whakaaro Rorohiko"
+
+#: templates/topics/lessons-table.html:10
+#, python-format
+msgid "Ages %(lower)s to %(upper)s"
+msgstr "Ngā tau %(lower)s ki %(upper)s"
+
+#: templates/topics/programming-challenge-language-solution.html:10
+#, python-format
+msgid "%(name)s solution"
+msgstr "te otinga a %(name)s"
+
+#: templates/topics/programming-challenge-language-solution.html:27
+msgid "solution"
+msgstr "otinga"
+
+#: templates/topics/programming-challenge-language-solution.html:39
+msgid "<strong>Heads Up!</strong> If you are ready to compare your programming to ours or are wanting to have a look at how we solved it, click 'View solution' below to view at least one way to write this program."
+msgstr "<strong>Kia Mataara!</strong> Mēnā, kua rite koe ki te whakataurite āu mahi tuhiwaehere ki ā mātou, kei te hiahia rānei koe ki te kite i pēhea tā mātou otinga, pāwhiritia 'Tirohia te otinga' kei raro nei, kia kite ai i tētahi, ētahi rānei o ngā tauira tuhiwaehere mō tēnei papatono."
+
+#: templates/topics/programming-challenge-language-solution.html:46
+msgid "View solution"
+msgstr "Tirohia te otinga"
+
+#: templates/topics/programming-challenge-language-solution.html:50
+msgid "This is just one of many possible solutions:"
+msgstr "Ko tēnei tētahi o ngā otinga mahia e taea ana:"
+
+#: templates/topics/programming-challenge-language-solution.html:57
+msgid "Back to programming challenge"
+msgstr "Hoki ki te wero waihanga papatono"
+
+#: templates/topics/programming-challenge-language-solution.html:68
+#: templates/topics/programming-challenge.html:139
+msgid "Extra Challenge"
+msgstr "He Wero Tāpiri"
+
+#: templates/topics/programming-challenge-lesson-list.html:9
+#: templates/topics/programming-challenge-lesson-list.html:19
+#, python-format
+msgid "%(name)s programming challenges"
+msgstr "Ngā wero a %(name)s"
+
+#: templates/topics/programming-challenge-lesson-list.html:30
+#, python-format
+msgid "No programming challenges for %(topic)s."
+msgstr "Kāore he wero mō %(topic)s."
+
+#: templates/topics/programming-challenge.html:38
+msgid "This programming challenge is linked to the following lessons:"
+msgstr "Ka honoa tēnei wero tuhiwaehere ki ngā akoranga e whai ake nei:"
+
+#: templates/topics/programming-challenge.html:44
+#, python-format
+msgid "Challenge %(set_num)s.%(chal_num)s for %(name)s"
+msgstr "Wero %(set_num)s.%(chal_num)s mō %(name)s"
+
+#: templates/topics/programming-challenge.html:47
+#, python-format
+msgid "%(lower)s to %(upper)s"
+msgstr "%(lower)s ki %(upper)s"
+
+#: templates/topics/programming-challenge.html:83
+#: templates/topics/programming-challenges-table.html:11
+msgid "Languages"
+msgstr "Ngā Reo"
+
+#: templates/topics/programming-challenge.html:104
+msgid "What it should look like"
+msgstr "Me pēhea te āhua"
+
+#: templates/topics/programming-challenge.html:111
+msgid "Hints"
+msgstr "Tīwhiri"
+
+#: templates/topics/programming-challenge.html:123
+#, python-format
+msgid "Show %(implementation.language.name)s solution"
+msgstr "Whakaatu otinga %(implementation.language.name)s"
+
+#: templates/topics/programming-challenges-table.html:9
+msgid "Name"
+msgstr "Ingoa"
+
+#: templates/topics/programming-challenges-table.html:10
+msgid "Challenge Level"
+msgstr "Taumata Wero"
+
+#: templates/topics/topic-other-resources.html:9
+#, python-format
+msgid "%(topic.name)s other resources"
+msgstr "he rauemi kē mō %(topic.name)s"
+
+#: templates/topics/topic-other-resources.html:25
+msgid "Other resources"
+msgstr "He rauemi kē atu"
+
+#: templates/topics/topic-other-resources.html:30
+msgid "Sorry! We couldn't find any information on other resources for this topic."
+msgstr "Aroha mai! Kāore e kitea te mōhiohiotanga mō rauemi kē atu i tēnei kaupapa."
+
+#: templates/topics/topic-other-resources.html:33
+msgid "Return to the topic"
+msgstr "Hoki ki te kaupapa"
+
+#: templates/topics/topic.html:21
+msgid "Return to list of topics"
+msgstr "Hoki ki te rārangi kaupapa"
+
+#: templates/topics/topic.html:33
+msgid "Unit Plans"
+msgstr "Mahere Kōwae Ako"
+
+#: templates/topics/topic.html:71
+msgid "Looking for more?"
+msgstr "Kei te kimi tonu?"
+
+#: templates/topics/topic.html:74
+msgid "Click here for other resources"
+msgstr "Pāwhiritia ki konei mō rauemi kē atu"
+
+#: templates/topics/unit-plan-description.html:8
+msgid "Description"
+msgstr "Whakaahua"
+
+#: templates/topics/unit-plan-description.html:19
+#: templates/topics/unit-plan.html:18
+msgid "Unit plan:"
+msgstr "Mahere kōwae ako:"
+
+#: templates/topics/unit-plan.html:29
+msgid "What's it all about?"
+msgstr "He aha te kaupapa nei?"
+
+#: templates/topics/unit-plan.html:35
+msgid "Read the full unit plan description"
+msgstr "Pānuitia te katoa o te whakaahua mahere kōwae ako"
+
+#: templates/topics/unit-plan.html:43
+msgid "Lessons"
+msgstr "Ngā Akoranga"
+
+#: topics/models.py:31
+msgid "Curriculum Area"
+msgstr "Wāhanga Marautanga"
+
+#: topics/models.py:64
+msgid "Learning Outcome"
+msgstr "Whāinga Ako"
+
+#: topics/models.py:91
+msgid "Classroom Resource"
+msgstr "Rauemi Akomanga"
+
+#: topics/models.py:140
+msgid "Unit Plan"
+msgstr "Mahere Kōwae"
+
+#: topics/models.py:141 topics/models.py:196 topics/models.py:452
+msgid "Return to topic"
+msgstr "Hoki ki te kaupapa"
+
+#: topics/models.py:195
+msgid "Programming Challenge"
+msgstr "Wero Tuhiwaehere"
+
+#: topics/models.py:330
+msgid "Return to unit plan"
+msgstr "Hoki ki te mahere kōwae ako"
+
+#: topics/models.py:451
+msgid "Curriculum Integration"
+msgstr "Ngā Honohono ki te Marautanga"
+

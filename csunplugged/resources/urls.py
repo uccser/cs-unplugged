@@ -1,26 +1,26 @@
 """URL routing for the resources application."""
 
-from django.conf.urls import url
+from django.urls import path
 
 from . import views
 
 app_name = "resources"
 urlpatterns = [
     # eg: /resource/
-    url(
-        r"^$",
+    path(
+        '',
         views.IndexView.as_view(),
         name="index"
     ),
     # eg: /resource/example-resource/
-    url(
-        r"^(?P<resource_slug>[-\w]+)/$",
+    path(
+        '<slug:resource_slug>/',
         views.resource,
         name="resource"
     ),
     # eg: /resource/example-resource/generate/
-    url(
-        r"^(?P<resource_slug>[-\w]+)/generate$",
+    path(
+        '<slug:resource_slug>/generate',
         views.generate_resource,
         name="generate"
     ),

@@ -2,16 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-11 01:02+0000\n"
-"PO-Revision-Date: 2018-10-26 14:44\n"
-"Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
+"POT-Creation-Date: 2020-03-31 23:54+0000\n"
+"PO-Revision-Date: 2020-04-02 14:21\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: crowdin.com\n"
 "X-Crowdin-Project: cs-unplugged\n"
 "X-Crowdin-Language: zh-CN\n"
 "X-Crowdin-File: /csunplugged/locale/en/LC_MESSAGES/django.po\n"
@@ -20,11 +19,11 @@ msgstr ""
 msgid "Classic CS Unplugged page"
 msgstr "经典版 CS Unplugged 页面"
 
-#: config/settings/base.py:139
+#: config/settings/base.py:155
 msgid "Translation mode"
 msgstr "翻译模式"
 
-#: config/settings/base.py:145
+#: config/settings/base.py:161
 msgid "Translation mode (Bi-directional)"
 msgstr "翻译模式（双向）"
 
@@ -147,15 +146,15 @@ msgstr "教师 (解决方案)"
 msgid "Worksheet Version"
 msgstr "习题版"
 
-#: resources/generators/BinaryToAlphabetResourceGenerator.py:54
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:59
 msgid "Base 10"
 msgstr "基数 10"
 
-#: resources/generators/BinaryToAlphabetResourceGenerator.py:55
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:60
 msgid "Binary"
 msgstr "二进制"
 
-#: resources/generators/BinaryToAlphabetResourceGenerator.py:56
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:61
 msgid "Letter"
 msgstr "字母"
 
@@ -376,116 +375,140 @@ msgid "Colour (8 possible binary values)"
 msgstr "彩色（8 种可能的二进制数值）"
 
 #: resources/generators/PixelPainterResourceGenerator.py:19
+msgid "Star - 1 page"
+msgstr "星星 - 1 页"
+
+#: resources/generators/PixelPainterResourceGenerator.py:20
+msgid "Teacup - 1 page"
+msgstr "茶杯 - 1 页"
+
+#: resources/generators/PixelPainterResourceGenerator.py:21
+msgid "Cat - 1 page"
+msgstr "猫 - 1 页"
+
+#: resources/generators/PixelPainterResourceGenerator.py:22
 msgid "Fish - 6 pages"
 msgstr "鱼 - 6 页"
 
-#: resources/generators/PixelPainterResourceGenerator.py:20
+#: resources/generators/PixelPainterResourceGenerator.py:23
 msgid "Kauri tree - 6 pages"
 msgstr "贝壳杉 - 6 页"
 
-#: resources/generators/PixelPainterResourceGenerator.py:21
+#: resources/generators/PixelPainterResourceGenerator.py:24
 msgid "Butterfly - 6 pages"
 msgstr "蝴蝶 - 6 页"
 
-#: resources/generators/PixelPainterResourceGenerator.py:22
+#: resources/generators/PixelPainterResourceGenerator.py:25
 msgid "Hot air balloon - 8 pages"
 msgstr "热气球 - 8 页"
 
-#: resources/generators/PixelPainterResourceGenerator.py:23
+#: resources/generators/PixelPainterResourceGenerator.py:26
 msgid "Boat - 9 pages"
 msgstr "船只 - 9 页"
 
-#: resources/generators/PixelPainterResourceGenerator.py:24
+#: resources/generators/PixelPainterResourceGenerator.py:27
 msgid "Parrots - 32 pages"
 msgstr "鹦鹉 - 32 页"
 
-#: resources/generators/PixelPainterResourceGenerator.py:33
+#: resources/generators/PixelPainterResourceGenerator.py:36
 msgid "Black and White"
 msgstr "黑白"
 
-#: resources/generators/PixelPainterResourceGenerator.py:40
+#: resources/generators/PixelPainterResourceGenerator.py:43
 msgid "Run length encoding"
 msgstr "行程编码"
 
-#: resources/generators/PixelPainterResourceGenerator.py:47
+#: resources/generators/PixelPainterResourceGenerator.py:50
 msgid "Greyscale"
 msgstr "灰度"
 
-#: resources/generators/PixelPainterResourceGenerator.py:56
+#: resources/generators/PixelPainterResourceGenerator.py:59
 msgid "Colour"
 msgstr "颜色"
 
-#: resources/generators/PixelPainterResourceGenerator.py:71
+#: resources/generators/PixelPainterResourceGenerator.py:74
+msgid "Star"
+msgstr "星星"
+
+#: resources/generators/PixelPainterResourceGenerator.py:75
+msgid "Teacup"
+msgstr "茶杯"
+
+#: resources/generators/PixelPainterResourceGenerator.py:76
+msgid "Cat"
+msgstr "猫"
+
+#: resources/generators/PixelPainterResourceGenerator.py:77
 msgid "Boat"
 msgstr "船只"
 
-#: resources/generators/PixelPainterResourceGenerator.py:72
+#: resources/generators/PixelPainterResourceGenerator.py:78
 msgid "Fish"
 msgstr "鱼"
 
-#: resources/generators/PixelPainterResourceGenerator.py:73
+#: resources/generators/PixelPainterResourceGenerator.py:79
 msgid "Hot air balloon"
 msgstr "热气球"
 
-#: resources/generators/PixelPainterResourceGenerator.py:74
+#: resources/generators/PixelPainterResourceGenerator.py:80
 #: templates/general/people.html:154
 msgid "Parrots"
 msgstr "鹦鹉"
 
-#: resources/generators/PixelPainterResourceGenerator.py:75
+#: resources/generators/PixelPainterResourceGenerator.py:81
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:69
 msgid "Kauri tree"
 msgstr "贝壳杉"
 
-#: resources/generators/PixelPainterResourceGenerator.py:76
+#: resources/generators/PixelPainterResourceGenerator.py:82
 msgid "Butterfly"
 msgstr "蝴蝶"
 
-#: resources/generators/PixelPainterResourceGenerator.py:98
+#: resources/generators/PixelPainterResourceGenerator.py:104
 msgid "Colouring type"
 msgstr "上色类型"
 
-#: resources/generators/PixelPainterResourceGenerator.py:104
+#: resources/generators/PixelPainterResourceGenerator.py:110
 msgid "Image"
 msgstr "图像"
 
-#: resources/generators/PixelPainterResourceGenerator.py:404
+#: resources/generators/PixelPainterResourceGenerator.py:410
 msgid "Pixel Painter"
 msgstr "像素绘画"
 
-#: resources/generators/PixelPainterResourceGenerator.py:406
+#: resources/generators/PixelPainterResourceGenerator.py:412
 msgid "This page should be kept secret from students."
 msgstr "此页面不应供学生访问。"
 
-#: resources/generators/PixelPainterResourceGenerator.py:408
+#: resources/generators/PixelPainterResourceGenerator.py:414
 msgid "Page grid reference for {} image"
 msgstr "{} 图像的页面网格坐标"
 
-#: resources/generators/PixelPainterResourceGenerator.py:411
+#: resources/generators/PixelPainterResourceGenerator.py:417
 msgid "Once pixels on each page are filled in correctly, cut each grid out and arrange in the following layout (page names are in the top right corner)."
 msgstr "一旦填入正确的每页像素后，将每个网格减下来，排为以下布局（页面名称位于右上角）。"
 
-#: resources/generators/PixelPainterResourceGenerator.py:426
+#: resources/generators/PixelPainterResourceGenerator.py:432
 msgid "The pixel values are using 2 bit colour values."
 msgstr "像素值使用 2 位色值。"
 
-#: resources/generators/PixelPainterResourceGenerator.py:428
+#: resources/generators/PixelPainterResourceGenerator.py:434
 msgid "The pixel values are using 5 bit RGB colour values (2 red, 2 green, 1 blue)."
 msgstr "像素值使用 5 位 RGB 色值（2 个红色、2 个绿色、1 个蓝色）。"
 
-#: resources/generators/PixelPainterResourceGenerator.py:430
+#: resources/generators/PixelPainterResourceGenerator.py:436
 msgid "Extra pixel legends are at the end of this document for students."
 msgstr "学生可参考文件末尾的其他像素图例。"
 
-#: resources/generators/PixelPainterResourceGenerator.py:449
+#: resources/generators/PixelPainterResourceGenerator.py:455
 msgid "Pixel legend"
 msgstr "像素图例"
 
-#: resources/generators/PixelPainterResourceGenerator.py:471
+#: resources/generators/PixelPainterResourceGenerator.py:477
 msgid "Run Length Encodings"
 msgstr "行程编码"
 
-#: resources/generators/PixelPainterResourceGenerator.py:476
+#: resources/generators/PixelPainterResourceGenerator.py:482
 msgid "Encoding for page {}"
 msgstr "页面 {} 的编码"
 
@@ -579,7 +602,7 @@ msgstr "蝴蝶生命周期"
 msgid "Little Red Riding Hood"
 msgstr "小红帽"
 
-#: resources/generators/SortingNetworkCardsResourceGenerator.py:108
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:91
 msgid "Card Type"
 msgstr "卡片类型"
 
@@ -717,106 +740,142 @@ msgstr "以下某个链接可能十分有用："
 msgid "Homepage"
 msgstr "主页"
 
-#: templates/404.html:26 templates/base.html:91 templates/base.html:225
+#: templates/404.html:26 templates/base-educators.html:71
+#: templates/core.html:178
 msgid "Search"
 msgstr "搜索"
 
-#: templates/404.html:32 templates/general/index.html:96
+#: templates/404.html:32 templates/general/index.html:106
 #: templates/general/people.html:74
 msgid "Classic CS Unplugged"
 msgstr "经典版 CS Unplugged"
 
-#: templates/base.html:25 templates/general/index.html:7
-#: templates/general/people.html:21
-msgid "CS Unplugged"
-msgstr "CS Unplugged"
+#: templates/at-home/index.html:8
+msgid "CS Unplugged at home"
+msgstr "CS Unplugged 居家版"
 
-#: templates/base.html:60
+#: templates/at-home/index.html:21
+msgid "Try something different away from the screen"
+msgstr "尝试一些屏幕之外的不同内容"
+
+#: templates/at-home/index.html:27
+#: templates/topics/not-available-warning.html:6
+#, python-format
+msgid "<h4>Sorry! This item is not yet available in %(language)s.</h4> <p>This item is available in the following languages:</p>"
+msgstr "<h4>抱歉！本条目暂无可用%(language)s版本。</h4> <p>本条目设有以下语言版本：</p>"
+
+#: templates/at-home/index.html:38
+#: templates/topics/not-available-warning.html:36
+msgid "Return to homepage "
+msgstr "返回主页 "
+
+#: templates/at-home/index.html:55
+msgid "<strong>Welcome to Computer Science Unplugged!</strong> This is a collection of fun and engaging activities that enable children to explore fundamental ideas in Computer Science, <em>without</em> having to use a computer. Traditionally these activities have been designed to be used with school classes and larger groups, but we’ve got many ideas for you to try out if you’re at home."
+msgstr "<strong>欢迎使用 Computer Science Unplugged！</strong>我们融合一系列有趣而好玩的活动，让孩子们<em>无需</em>使用计算机即可了解与计算机科学相关的各种基本概念。以往，这些活动均通过学校课堂以及更多群体参加的方式进行组织，但如果您目前留在家中的话，我们亦有众多想法供您尝试。"
+
+#: templates/base-at-home.html:28 templates/base-educators.html:28
 msgid "Language"
 msgstr "语言"
 
-#: templates/base.html:78 templates/base.html:188
-#: templates/general/index.html:74 templates/topics/index.html:8
+#: templates/base-at-home.html:58
+msgid "Back to CS Unplugged"
+msgstr "返回 CS Unplugged"
+
+#: templates/base-educators.html:56 templates/core.html:136
+#: templates/general/index.html:67 templates/topics/index.html:8
 #: templates/topics/index.html:16
 msgid "Topics"
 msgstr "主题"
 
-#: templates/base.html:79 templates/base.html:193
-#: templates/general/index.html:81 templates/resources/index.html:8
+#: templates/base-educators.html:57 templates/core.html:141
+#: templates/general/index.html:72 templates/resources/index.html:8
 #: templates/resources/index.html:16 templates/topics/lesson.html:74
 msgid "Printables"
 msgstr "可打印页"
 
-#: templates/base.html:80 templates/base.html:183
+#: templates/base-educators.html:58 templates/core.html:131
 #: templates/general/about.html:7 templates/general/about.html:15
 #: templates/general/base.html:10
 msgid "About"
 msgstr "关于"
 
-#: templates/base.html:103
+#: templates/core.html:25 templates/general/index.html:7
+#: templates/general/people.html:21
+msgid "CS Unplugged"
+msgstr "CS Unplugged"
+
+#: templates/core.html:51
 msgid "Home"
 msgstr "主页"
 
-#: templates/base.html:154
+#: templates/core.html:102
 msgid "Looking for something for high schools? Check out the <a href=\"http://csfieldguide.org.nz/\">Computer Science Field Guide</a>."
 msgstr "正在寻找高中课程？请前往<a href=\"http://csfieldguide.org.nz/\">计算机科学领域指南</a>查看。"
 
-#: templates/base.html:166
+#: templates/core.html:114
 msgid "The primary goal of the Unplugged project is to promote Computer Science (and computing in general) to young people as an interesting, engaging, and intellectually stimulating discipline."
 msgstr "Unplugged 项目的主要目标是向年轻人推广计算机科学（和一般计算），并向其呈现一个趣味无穷、引人入胜和启发思维的学科。"
 
-#: templates/base.html:172
+#: templates/core.html:120
 #, python-format
 msgid "Read more about <a href=\"%(principles_url)s\">our principles here</a>."
 msgstr "点击<a href=\"%(principles_url)s\">此处我们的原则</a>，了解更多信息。"
 
-#: templates/base.html:179
+#: templates/core.html:127
 msgid "Useful Links"
 msgstr "有用链接"
 
-#: templates/base.html:199
+#: templates/core.html:146
+msgid "At home"
+msgstr "居家版"
+
+#: templates/core.html:152
 msgid "Community"
 msgstr "社群"
 
-#: templates/base.html:203
+#: templates/core.html:156
 msgid "Twitter"
 msgstr "Twitter"
 
-#: templates/base.html:208
+#: templates/core.html:161
 msgid "YouTube"
 msgstr "YouTube"
 
-#: templates/base.html:213
+#: templates/core.html:166
 msgid "GitHub"
 msgstr "GitHub"
 
-#: templates/base.html:219
+#: templates/core.html:172
 msgid "Help"
 msgstr "帮助"
 
-#: templates/base.html:231 templates/topics/glossary.html:8
+#: templates/core.html:184 templates/topics/glossary.html:8
 #: templates/topics/glossary.html:17
 msgid "Glossary"
 msgstr "术语表"
 
-#: templates/base.html:236
+#: templates/core.html:189
 msgid "Feedback"
 msgstr "反馈"
 
-#: templates/base.html:241 templates/general/contact.html:7
+#: templates/core.html:194 templates/general/contact.html:7
 msgid "Contact"
 msgstr "联系"
 
-#: templates/base.html:265
+#: templates/core.html:218
 msgid "The CS Unplugged material is open source on <a href=\"https://github.com/uccser/cs-unplugged\">GitHub</a>, and this website's content is shared under a <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons Attribution-ShareAlike 4.0 International license</a>. The CS Unplugged is a project by the <a href=\"https://www.canterbury.ac.nz/engineering/schools/csse/research/cse/\">Computer Science Education Research Group</a> at the <a href=\"http://www.canterbury.ac.nz/\">University of Canterbury</a>, New Zealand."
 msgstr "CS Unplugged 资料属于 <a href=\"https://github.com/uccser/cs-unplugged\">GitHub</a> 上的开放资源，此网站的内容均根据 <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">创意公用授权-相同方式共享 4.0 国际许可</a>进行分享。CS Unplugged 是由<a href=\"https://www.canterbury.ac.nz/engineering/schools/csse/research/cse/\">计算机科学教育研究小组</a>在新西兰<a href=\"http://www.canterbury.ac.nz/\">坎特伯雷大学</a>开展的项目。"
 
-#: templates/base.html:288
+#: templates/core.html:222
+msgid "Icons provided generously by <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://icons8.com/\">icons8</a>."
+msgstr "所有图标均由 <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://icons8.com/\">icons8</a> 慷慨捐赠。"
+
+#: templates/core.html:244
 #, python-format
 msgid "This definition is not available in %(language)s, sorry!"
 msgstr "抱歉，尚无%(language)s定义！"
 
-#: templates/base.html:295
+#: templates/core.html:251
 msgid "Close"
 msgstr "关闭"
 
@@ -838,15 +897,20 @@ msgstr "感谢慷慨赞助，我们现可创建视频等相关资源，从而帮
 
 #: templates/general/about.html:42
 #, python-format
+msgid "For an explanation on the connections between CS Unplugged and Computational Thinking skills, see our <a href=\"%(computational_thinking_url)s\">Computational Thinking and CS Unplugged page</a>."
+msgstr "如需了解 CS Unplugged 与计算思维技能之间的关联性，请参阅我们的<a href=\"%(computational_thinking_url)s\">计算思维和 CS Unplugged</a> 页面。"
+
+#: templates/general/about.html:49
+#, python-format
 msgid "To view the team of contributors who work on this project, see our <a href=\"%(people_url)s\">people page</a>."
 msgstr "如欲查看此项目背后的贡献者团队，请参见我们的<a href=\"%(people_url)s\">人员</a>页面。"
 
-#: templates/general/about.html:49
+#: templates/general/about.html:56
 #, python-format
 msgid "For details on how to contact us, see our <a href=\"%(contact_url)s\">contact us page</a>."
 msgstr "如欲了解我们的具体联系方式，请参见<a href=\"%(contact_url)s\">联系我们页面</a>。"
 
-#: templates/general/about.html:56
+#: templates/general/about.html:63
 #, python-format
 msgid "For more information about the principles behind CS Unplugged, see our <a href=\"%(principles_url)s\">principles page</a>."
 msgstr "如欲了解有关 CS Unplugged 背后原则的更多信息，请参见我们的<a href=\"%(principles_url)s\">原则页面</a>。"
@@ -857,7 +921,7 @@ msgstr "关于页面"
 
 #: templates/general/base.html:11
 #: templates/general/computational-thinking.html:8
-#: templates/general/computational-thinking.html:16
+#: templates/general/computational-thinking.html:17
 msgid "Computational Thinking and CS Unplugged"
 msgstr "计算思维及 CS Unplugged"
 
@@ -875,163 +939,163 @@ msgstr "人员"
 msgid "Contact Us"
 msgstr "联系我们"
 
-#: templates/general/computational-thinking.html:20
+#: templates/general/computational-thinking.html:21
 msgid "What is Computational Thinking?"
 msgstr "什么是计算思维？"
 
-#: templates/general/computational-thinking.html:23
+#: templates/general/computational-thinking.html:24
 msgid "The world we live in has become a digital one, filled with technology and driven by Computer Science. Software and technology have transformed every subject and job area, from science and medicine, to art history and psychology. Digital technology is ubiquitous. To be informed and empowered citizens, the next generation of students need to understand this digital world that they live in."
 msgstr "我们所生活的世界已成为数字化世界，充斥着各种技术，在计算机科学的推动下不断成长。 软件和技术已改变每个学科和工作领域，从科学和医学，直到艺术史和心理学，不一而足。 数字技术无处不在。 如欲成为知情和享有权利的公民，下一代学生将需了解其所居住的这个数字世界。"
 
-#: templates/general/computational-thinking.html:32
+#: templates/general/computational-thinking.html:33
 msgid "This is why Computational Thinking has been called the ‘21st Century Skill Set’, and is important for everyone to learn. It is critical to understanding how the digital world works, for harnessing the power of computers to solve tough problems, and making great things happen! It also enables us to think critically about not just the benefits of certain technologies, but also the potential harm, ethical implications, or unintended consequences of these."
 msgstr "正因如此，计算思维被称为‘21 世纪的技能组合’。对每个人而言，学习计算思维至关重要。只有在理解数字世界的工作原理后，才能应用计算机的威力解决艰难的问题，创造丰功伟业！此外，其能促使我们进行批判性思考，内容不仅包括特定技术所带来的好处，还有其中所包含的潜在危害、伦理含意或意外后果。"
 
-#: templates/general/computational-thinking.html:40
+#: templates/general/computational-thinking.html:41
 msgid "But what exactly is Computational Thinking? Let’s have a look at a technical definition..."
 msgstr "然而，到底什么才是计算思维？让我们看看技术定义……"
 
-#: templates/general/computational-thinking.html:47
+#: templates/general/computational-thinking.html:48
 msgid "\"Computational Thinking is the thought processes involved in formulating problems and their solutions so that the solutions are represented in a form that can be effectively carried out by an information-processing agent.\""
 msgstr "“计算思维是制定问题及其解决方案所涉及的思维过程，促使以可由信息处理代理有效执行的形式，表示解决方案。”"
 
-#: templates/general/computational-thinking.html:57
+#: templates/general/computational-thinking.html:58
 msgid "Phew, it’s quite a mouthful isn’t it? But, as we like to say at CS Unplugged, it’s just big words for simple ideas! 'Information-processing agent' means anything that follows a set of instructions to complete a task (we call this 'computing'). Most of the time this 'agent' means a computer or other type of digital device - but it could also be a human! We’ll refer to it as a computer to make things a bit simpler. To represent solutions in a way that a computer can carry them out, we have to represent them as a step by step process - an <strong>algorithm</strong>. To create these algorithmic solutions we apply some special problem solving skills to. These skill are what make up Computational Thinking! And they are skills that are transferrable to any field."
 msgstr "啊，这定义太长了对吗？但是，在 CS Unplugged 中，我们想要对大家说，这些长篇阔论背后的想法非常简单！'信息处理代理'是指遵循一组指令完成任务的任何内容（我们称之为'计算'）。 大多数情况下，这个'代理'指的是计算机或其他类型的数字装置 - 但也可能是人类！ 为了让一切变得更简单一些，我们将其称为计算机。 旨在以计算机可执行的方式表示解决方案，我们必须将其表示为逐步求解的过程 - <strong>算法</ strong>。 为了创建这些算法解决方案，我们应用一些特殊的问题解决技能。 这些技能构成了计算思维！ 这些技能还可转移至任何领域。"
 
-#: templates/general/computational-thinking.html:71
+#: templates/general/computational-thinking.html:72
 msgid "Computational Thinking could be described as 'thinking like a Computer Scientist', but it is now an important skill for everyone to learn, whether they want to be a Computer Scientist or not! It’s interesting, and important, to note that Computational Thinking, and Computer Science, aren’t entirely about computers, they are more about <strong>people</strong>. You might think that we write programs for computers, but really we write programs for people - to help them communicate, find information, and solve problems."
 msgstr "计算思维可描述为'像计算机科学家一样思考'。如今，无论是否想成为计算机科学家，每个人均需学习这一重要技能！ 非常有趣且重要的一点是，计算思维和计算机科学并非完全关于计算机，它们与<strong>人</ strong>的关系更大。 您可能认为是我们在为计算机编写程序，但实际上是在为人编写程序 - 助其沟通、查找信息和解决问题。"
 
-#: templates/general/computational-thinking.html:79
+#: templates/general/computational-thinking.html:80
 msgid "For example, you might use an app on a smartphone to get directions to a friend's house; the app is an example of a computer program, and the smartphone is the \"information processing agent\" that runs the program for us. Whoever designed the algorithm for working out the best route, and all the details like the interface and how to store the map, applied computational thinking to design the system. But they didn't design it for the sake of the smartphone; they designed it to help the person using the smartphone."
 msgstr "例如，您可使用智能手机上的应用程序获取前往朋友家的路线；此应用程序是计算机程序的一个示例，而智能手机则是为我们运行程序的'信息处理代理'。无论是谁设计出算法，以制定最佳路线以及全部细节，例如界面和存储地图的方法等，他们均应用计算思维来设计系统。 但是，他们并非因智能手机而设计；其设计旨在为使用智能手机的个人提供服务。"
 
-#: templates/general/computational-thinking.html:86
+#: templates/general/computational-thinking.html:87
 msgid "Computational Thinking in CS Unplugged"
 msgstr "CS Unplugged 中的计算思维"
 
-#: templates/general/computational-thinking.html:88
+#: templates/general/computational-thinking.html:89
 msgid "<p> Throughout the lessons and units in CS Unplugged there are many links to Computational Thinking. Teaching Computational Thinking through CS Unplugged activities teaches students how to: </p> <ul> <li>describe a problem,</li> <li>identify the important details needed to solve this problem,</li> <li>break the problem down into small, logical steps,</li> <li>use these steps to create a process (algorithm) that solves the problem,</li> <li>and then evaluate this process.</li> </ul>"
 msgstr "<p> 在 CS Unplugged 的整个课程和单元中，设有许多关于计算思维的链接。通过 CS Unplugged 活动教授计算思维，将教会学生如何：</p> <ul> <li>描述问题、</li> <li>确定解决问题所需的重要细节、</li> <li>将问题分解为更小的逻辑步骤、</li> <li>使用这些步骤创建解决问题的过程（算法），</li> <li>随后评估这一过程。</li> </ul>"
 
-#: templates/general/computational-thinking.html:105
+#: templates/general/computational-thinking.html:106
 msgid "These skills are transferable to any other curriculum area, but are particularly relevant to developing digital systems and solving problems using the capabilities of computers.</p>"
 msgstr "这些技能可转移至任何其他课程领域，但与开发数字系统和使用计算机功能解决问题尤为相关。</p>"
 
-#: templates/general/computational-thinking.html:110
+#: templates/general/computational-thinking.html:111
 msgid "These Computational Thinking concepts are all connected to each other and support each other, but it's important to note that not all aspects of Computational Thinking will necessarily happen in every unit or lesson. In each unit and lesson we've highlighted the important connections for you to observe your students in action."
 msgstr "这些计算思维概念全部均相互联系、相互支持，但重点在于注意到，并非计算思维的每个方面都会在每个单元或课程中发生。 在每一个单元和课程中，我们均强调您应在学生行为中观察到的重要联系。"
 
-#: templates/general/computational-thinking.html:117
+#: templates/general/computational-thinking.html:118
 msgid "There are a number of definitions of Computational Thinking, but most have a set of 5 or 6 problem solving skills that Computational Thinking embodies. For the Unplugged project we've identified the following six CT skills that are often mentioned in the literature; they are described below, and at the end of each Unplugged lesson we've identified ways that these skills appeared in the lesson, to help you see the CT connection with the lessons."
 msgstr "计算思维具有多种定义，但大多数均有计算思维所体现的一套 5 或 6 种解决问题的技能。 对于 Unplugged 项目，我们经确定文献中经常提到的以下六种 CT 技能；其描述如下所示，并且，在每个 Unplugged 课程结束时，我们都将确定这些技能在课程中的出现方式，从而助您查看与课程的 CT 关联。"
 
-#: templates/general/computational-thinking.html:123
+#: templates/general/computational-thinking.html:124
 msgid "Computational Thinking skills"
 msgstr "计算思维技能"
 
-#: templates/general/computational-thinking.html:127
+#: templates/general/computational-thinking.html:128
 msgid "Algorithmic thinking"
 msgstr "算法思维"
 
-#: templates/general/computational-thinking.html:132
+#: templates/general/computational-thinking.html:133
 msgid "Algorithms are at the heart of Computational Thinking and Computer Science, because in Computer Science the solutions to problems are not simply an answer (e.g. ‘42’, or a fact), they are algorithms. An algorithm is a step-by-step process that solves a problem or completes a task. If you follow the algorithm's steps correctly, you will arrive at a correct solution, even for different inputs. For example, we can use an algorithm to find the shortest route between two locations on a map; the same algorithm can be used for any pair of starting and finishing points, so the solution depends on the input to the algorithm. If we know the algorithm for solving a problem then we can solve that problem easily, whenever we want, without having to think! We can just follow the steps. Computers can’t think for themselves, so they need to be given algorithms to do things."
 msgstr "算法是计算思维和计算机科学的核心。在计算机科学中，问题的解决方案不仅仅只是一个答案（例如'42'或一个事实），其实还是算法。算法是解决问题或完成任务的分步过程。若正确遵循算法的步骤，即使输入不同，也会得到正确的解决方案。例如，可以使用算法来找到地图上两个位置间的最短路径；相同的算法可用于任何一对起点和终点，因此，解决方案取决于算法中的输入。 若知道解决问题的算法，那么即可随时轻松地解决问题，而无需再进行思考！仅需按照步骤，进行操作即可。计算机无法自己思考，所以我们需要给它算法，让其完成目标。"
 
-#: templates/general/computational-thinking.html:143
+#: templates/general/computational-thinking.html:144
 msgid "Algorithmic thinking is the process of creating algorithms. When we create an algorithm to solve a problem, we call this an algorithmic solution."
 msgstr "算法思维是创建算法的过程。当要创建算法来解决问题时，我们称之为算法解决方案。"
 
-#: templates/general/computational-thinking.html:150
+#: templates/general/computational-thinking.html:151
 msgid "Computational algorithms (the kind that can run on digital devices) have relatively few ingredients because digital devices only have a few types of instruction that they can follow; the main things they can do are receive input, provide output, store values, follow instructions in a sequence, choose between options, and repeat instructions in a loop. Despite how limited this range of instructions is, we've described everything that digital devices can compute, and this is why algorithms are described restricted to these elements."
 msgstr "计算算法（可在数字装置上运行的类型）具有相对较少的成分，毕竟数字装置只有几种类型的指令可供遵循；它们可完成的事情主要是接收输入、提供输出、存储值、按照顺序执行指令、在选项之间进行选择，以及循环重复指令。尽管这一系列指令有限，但我们已描述数字装置可计算的所有内容，这也可解说为何仅限这些元素来描述算法。"
 
-#: templates/general/computational-thinking.html:160
+#: templates/general/computational-thinking.html:161
 msgid "Abstraction"
 msgstr "抽象"
 
-#: templates/general/computational-thinking.html:165
+#: templates/general/computational-thinking.html:166
 msgid "Abstraction is all about simplifying things to help us manage complexity. It requires identifying what the most important aspects of a problem are and hiding the other specific details that we don’t need to focus on. The important aspects can be used to create a model, or simplified representation, of the original thing we were dealing with. We can then work with this model to solve the problem, rather than having to deal with all the nitty gritty details at once. Computer Scientists often work with multiple levels of abstraction."
 msgstr "抽象就是为了简化，从而协助管理复杂性。这需要明确哪些才是问题的最重要方面，并隐藏无需关注的其他具体细节。重要的方面可用于创建正在处理的原始事项之模型或简化表示。此后，便可使用此模型解决问题，而不必赶着处理全部的繁琐细节。计算机科学家经常使用多层次的抽象。"
 
-#: templates/general/computational-thinking.html:175
+#: templates/general/computational-thinking.html:176
 msgid "We use abstraction often in our everyday lives, for example when we use maps. Maps show us a simplified version of the world by leaving out unnecessary details, like where every individual tree in a park is, and only keeping the most relevant information the map reader will need, such as roads and street names."
 msgstr "我们经常在日常生活（例如使用地图时）中使用抽象。地图展示出世界的简化版本，为我们省略了不必要的细节，例如公园中每棵树的位置，并且仅保留地图阅读器所需的最相关信息，例如道路和街道名称。"
 
-#: templates/general/computational-thinking.html:182
+#: templates/general/computational-thinking.html:183
 msgid "Digital devices use abstraction all the time; they try to hide as much unnecessary information from the user as possible. For example, let's say you took a nice scenic photo on your last camping trip, and now you want to edit it on your laptop and adjust the colours in it. Normally we could do this by opening a picture editing program, adjusting some colour sliders or maybe choosing a filter. When you do this there are a lot of complicated operations happening which the computer is hiding from you."
 msgstr "数字装置始终应用抽象；它们试图尽可能多地隐藏用户不需要的信息。例如，假设您在上次露营活动中拍摄了一张漂亮的风景照片，而现在要在笔记本电脑上进行编辑并调整颜色。通常，可通过打开图片编辑程序并调整一些颜色滑块或选择滤镜来实现此目的。执行此操作时，计算机隐藏了这个操作背后的许多复杂操作。"
 
-#: templates/general/computational-thinking.html:195
+#: templates/general/computational-thinking.html:196
 msgid "The picture you took is stored on the computer as a big list of pixels, which are each a different colour, and each colour is represented by a set of numbers, and each of these numbers are stored as binary digits! That’s a lot of information. Imagine if when you adjusted the colours you had to go through and look at all the colour values of every pixel and change each and every one of those! That’s what the computer is doing for you, but since you don’t need to know this to accomplish your goal the computer hides this information away."
 msgstr "在计算机中，所拍摄的照片会存储为像素大列表，每个均呈现一个不同颜色，每一颜色均用一组数字表示，每一数字均存储为二进制数！这蕴藏着大量信息。假设您要调整颜色，就要查看每一个像素，查看每一个色值，并逐一更改！这就是计算机替您完成的事情，但鉴于完成目标并不需要您了解这个情况，计算机便把相关信息均隐藏起来。"
 
-#: templates/general/computational-thinking.html:206
+#: templates/general/computational-thinking.html:207
 msgid "Decomposition"
 msgstr "分解"
 
-#: templates/general/computational-thinking.html:211
+#: templates/general/computational-thinking.html:212
 msgid "Decomposition is about breaking down problems into smaller, more manageable, parts, and then focusing on solving each of these smaller problems. We can break a complex problem down until the smaller parts are so simple they become easy to solve. The solutions to each of these smaller, and simpler, problems build up to a solution to the big problem we started with. Decomposition helps make large problems much less intimidating!"
 msgstr "分解即将问题分解为更小、更易管理的部分，然后专注于解决每个小问题。 我们可以将复杂的问题分解为各个小部分，直至这些小部分变得简单而易于解决。这些可解决每个更小、更简单问题的解决方案，形成用于解决一开始面对的大问题之解决方案。分解有助于让大问题变得不那么吓人！"
 
-#: templates/general/computational-thinking.html:220
+#: templates/general/computational-thinking.html:221
 msgid "Decomposition is an important skill for creating algorithms and processes that can be implemented on a computing device, because computers need very specific instructions. They need to be told each of the tiny steps they need to follow in order to do things."
 msgstr "创建可在计算装置上实现的算法和过程时，分解是一项重要技能，因为计算机需要非常具体的指令。它们需要得知完成任务所需的每一个小步骤。"
 
-#: templates/general/computational-thinking.html:227
+#: templates/general/computational-thinking.html:228
 msgid "For example the overall task of making a cake can be decomposed into several smaller tasks, each of which can be performed easily."
 msgstr "例如，制作蛋糕的整体任务可分解为多个小任务，而每个小任务均可轻松完成。"
 
-#: templates/general/computational-thinking.html:232
+#: templates/general/computational-thinking.html:233
 msgid "<p><strong>Make cake</strong></p> <ol> <li>Bake cake <ol> <li>Put ingredients in bowl (butter, sugar, egg, flour)</li> <li>Mix</li> <li>Pour into tin</li> <li>Put in oven for 30mins</li> <li>Take out of tin</li> </ol> </li> <li>Make icing</li> <li>Put on cake</li> </ol>"
 msgstr "<p><strong>制作蛋糕</strong></p> <ol> <li>烘焙蛋糕<ol> <li>在碗中放入原料（黄油、糖、鸡蛋、面粉）</li> <li>搅拌</li> <li>倒入蛋糕模具</li> <li>放入烤箱，烤 30 分钟</li> <li>取出蛋糕模具</li> </ol> </li> <li>制作糖衣</li> <li>放上蛋糕</li> </ol>"
 
-#: templates/general/computational-thinking.html:254
+#: templates/general/computational-thinking.html:255
 msgid "Generalising and patterns"
 msgstr "泛化和模式"
 
-#: templates/general/computational-thinking.html:259
+#: templates/general/computational-thinking.html:260
 msgid "Generalising is also referred to as 'pattern recognition and generalisation'. Generalisation is taking a solution (or part of a solution) to a problem and generalising it so it can be applied to other similar problems and tasks. Since solutions in Computer Science are algorithms, this means we take an algorithm and make it general enough that it can be used for a range of problems. This process involves abstraction, because to make something more general we have to remove unnecessary details that are related to a specific problem or situation, but are not important to how the algorithm functions."
 msgstr "泛化也称为'模式识别和泛化'。泛化采用问题的解决方案（或解决方案的一部分）并对其进行泛化，以便将其应用于其他类似的问题和任务中。由于计算机科学中的解决方案是算法，这意味着我们采用算法并将算法变得足够通用，以便将算法用于一系列问题。这个过程涉及抽象，毕竟为了让结果变得更加通用，必须删除与特定问题或情况相关但对于算法的工作原理并不重要的非必要细节。"
 
-#: templates/general/computational-thinking.html:268
+#: templates/general/computational-thinking.html:269
 msgid "Spotting patterns is an important part of this process, when we think about problems we might recognise similarities between them and that they can be solved in similar ways. This is called pattern matching, and it’s something we do naturally all the time in our daily life."
 msgstr "发现模式是这一过程的重要组成部分。思考难题时，我们可能会认识到它们之间的相似之处，并知道可用类似方式将其解决。这称为模式匹配，是我们在日常生活中始终自然做出的事情。"
 
-#: templates/general/computational-thinking.html:275
+#: templates/general/computational-thinking.html:276
 msgid "Generalised algorithms can be reused for a whole group of similar problems, which means we can come up with solutions quickly and effectively."
 msgstr "泛化的算法可以针对整组类似问题反复使用，这意味着我们可以快速有效地想出解决方案。"
 
-#: templates/general/computational-thinking.html:284
+#: templates/general/computational-thinking.html:285
 msgid "Evaluation"
 msgstr "评估"
 
-#: templates/general/computational-thinking.html:289
+#: templates/general/computational-thinking.html:290
 msgid "Evaluation is about identifying the possible solutions to a problem and judging which is the best to use, if they will work in some situations but not others, and how they can be improved. When judging our solutions we need to think about a range of factors. For example how much time it will take these processes (algorithms) to solve the problem and will it reliably solve the problem, or if there are certain situations where it will perform in a very different way. Evaluation is something we do a lot in our everyday lives."
 msgstr "评估就是确定问题的潜在解决方案，并判断出可用的最佳方案、判断该等方案是否可在某些情况下有用而在其他情况下无用，以及应如何改进。判断解决方案时，需要考虑一系列因素。例如，这些过程（算法）需要多长时间才能解决问题，是否能够可靠地解决问题，或者，是否会在某些情况下以非常不同的方式进行。评估是日常生活中的常做之事。"
 
-#: templates/general/computational-thinking.html:298
+#: templates/general/computational-thinking.html:299
 msgid "There are different ways we can evaluate our algorithmic solutions. We can test their speed by implementing them on a computer; or we can analyse them by counting or calculating how many steps they are likely to take. We can test that our algorithmic solutions work correctly by giving them lots of different inputs, and checking they work as expected. When we do this we need to think about the different inputs we test, because we don’t want to check every possible input (often there's an infinite number of possible inputs!), but we still need to know if our algorithmic solutions will work for all inputs. Testing is something Computer Scientists and programmers do all the time. But because we can't usually test every possible input, we also try to evaluate a system using logical reasoning."
 msgstr "我们可使用不同方式评估算法解决方案。通过在计算机上运行，即可测试其速度；或者，通过计数或计算可采取的步骤数，即可对其分析。通过向算法解决方案提供大量不同的输入并检查其是否按预期运作，即可测试它们是否正确工作。这样做时，需要考虑测试的不同输入，因为我们并不想检查每个可能的输入（通常存在无限数量的可能输入！），但仍然需要知道算法解决方案是否对所有输入均有效。 测试是计算机科学家和程序员始终坚持执行的事情。但是，鉴于通常无法测试每个可能的输入，我们也尝试使用逻辑推理来评估系统。"
 
-#: templates/general/computational-thinking.html:312
+#: templates/general/computational-thinking.html:313
 msgid "Logic"
 msgstr "逻辑"
 
-#: templates/general/computational-thinking.html:317
+#: templates/general/computational-thinking.html:318
 msgid "When trying to solve problems we need to think logically. Logical reasoning is about trying to make sense of things by observing, collecting data, thinking about the facts you know, and then figuring things out based on what you already know. It helps us use our existing knowledge to establish rules and check facts."
 msgstr "尝试解决问题时，需要进行逻辑思考。逻辑推理是试图通过观察、收集数据、思考已知事实的方式理解事物，然后根据已知信息理清事情。这有助利用现有知识，建立规则并检查事实。"
 
-#: templates/general/computational-thinking.html:325
+#: templates/general/computational-thinking.html:326
 msgid "For example, suppose you are writing software that works out the shortest route to a location from your house. In the following map it's 2 minutes to the library if you head north from your house, but if you head south it's 3 minutes to the next intersection. You might wonder if there's a better route to the library if you start by heading south, but logically there can't be because you'll already have walked for 3 minutes to get to the intersection."
 msgstr "例如，假设当前编写的软件能算出从家中到达某个地点的最短路径。在下面的地图中，如果从家中向北走，那么距离图书馆只有 2 分钟路程；但是如果向南走，那么距离下一个十字路口 有 3 分钟路程。您可能想要知道，如果一开始向南走，是否存在到达图书馆的更好路径，但逻辑上并不存在这个可能，因为您已步行 3 分钟抵达十字路口。"
 
-#: templates/general/computational-thinking.html:333
+#: templates/general/computational-thinking.html:334
 msgid "At a deeper level, computers are built entirely on logic. They use 'True' and 'False' values, and use something called 'Boolean expressions', like “is age > 5”, to make decisions in computer programs."
 msgstr "从更深的层面上来说，计算机完全建立于逻辑之上。它们使用‘真’值和‘假’值以及‘布尔表达式’（例如，“年龄 > 5”），在计算机程序中进行决策。"
 
-#: templates/general/computational-thinking.html:340
+#: templates/general/computational-thinking.html:341
 msgid "Tracking down a bug in a program also requires logical thinking, to work out where, and why, something in the program is going wrong."
 msgstr "追踪程序中的错误，也需通过逻辑思维来算出程序出错的位置和原因。"
 
@@ -1049,7 +1113,7 @@ msgstr "<strong>Google 社群：</strong> 我们建有 <a href=\"https://groups.
 
 #: templates/general/how-do-i-teach-cs-unplugged.html:8
 #: templates/general/how-do-i-teach-cs-unplugged.html:20
-#: templates/general/index.html:66
+#: templates/general/index.html:57
 msgid "How do I teach CS Unplugged?"
 msgstr "我应如何进行 CS Unplugged 教学？"
 
@@ -1070,42 +1134,38 @@ msgid "But reading about Unplugged isn't the fun way to engage with it - pick a 
 msgstr "然而，阅读 Unplugged 并非了解其的有趣方式 - 为学生选出一个课程，一起深入研究！"
 
 #: templates/general/how-do-i-teach-cs-unplugged.html:58
-#: templates/general/what-is-computer-science.html:84
+#: templates/general/what-is-computer-science.html:86
 msgid "View available topics"
 msgstr "查看可用主题"
 
-#: templates/general/index.html:15
+#: templates/general/index.html:18
 msgid "Computer Science<br>without a computer"
 msgstr "无需计算机的<br>计算机科学"
 
-#: templates/general/index.html:22
+#: templates/general/index.html:30
 msgid "CS Unplugged is a collection of free teaching material that teaches Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around."
 msgstr "CS Unplugged 提供一系列的免费教学素材，并通过使用卡片、绳子、蜡笔和大量跑动的游戏和谜题来教授计算机科学。"
 
-#: templates/general/index.html:29
-msgid "Welcome to the new CS Unplugged!"
-msgstr "欢迎访问全新 CS Unplugged！"
-
-#: templates/general/index.html:33
-msgid "This updated website has unit plans, lesson plans, teaching videos, curriculum integration activities, and programming exercises to plug in the Computer Science concepts they have just learnt unplugged."
-msgstr "更新的网站提供单元计划、课程计划、教学视频、课程整合活动以及编程练习，从而在线向学生导入他们刚刚在无计算机环境中学到的计算机科学概念。"
-
-#: templates/general/index.html:38
-msgid "The original activities are still available at <a href=\"https://classic.csunplugged.org/\">classic.csunplugged.org</a>."
-msgstr "原本的活动仍可在 <a href=\"https://classic.csunplugged.org/\">classic.csunplugged.org</a> 找到。"
-
-#: templates/general/index.html:56
+#: templates/general/index.html:47
 #: templates/general/what-is-computer-science.html:8
 #: templates/general/what-is-computer-science.html:20
 msgid "What is Computer Science?"
 msgstr "什么是计算机科学？"
 
-#: templates/general/index.html:89
+#: templates/general/index.html:77
 #: templates/topics/all-curriculum-integration-list.html:8
 #: templates/topics/all-curriculum-integration-list.html:17
 #: templates/topics/topic.html:64
 msgid "Curriculum Integrations"
 msgstr "课程整合"
+
+#: templates/general/index.html:85
+msgid "Activities"
+msgstr "活动"
+
+#: templates/general/index.html:96
+msgid "Plugging it in"
+msgstr "插上电"
 
 #: templates/general/people.html:21
 msgid "version 4.0.0 onwards"
@@ -1132,7 +1192,7 @@ msgid "Founder &amp; Content Writer"
 msgstr "创始人 &amp; 内容撰稿人"
 
 #: templates/general/people.html:42 templates/general/people.html:43
-#: templates/general/people.html:52 templates/general/people.html:53
+#: templates/general/people.html:47 templates/general/people.html:53
 msgid "Content Writer"
 msgstr "内容撰稿人"
 
@@ -1145,7 +1205,7 @@ msgstr "项目经理 &amp; 技术团队"
 msgid "Technical Team"
 msgstr "技术团队"
 
-#: templates/general/people.html:49
+#: templates/general/people.html:50
 msgid "Previous Team Members"
 msgstr "先前的团队成员"
 
@@ -1265,29 +1325,38 @@ msgstr "弹性灵活"
 msgid "The activities are resilient to errors made by students; they should not depend on getting many difficult steps exactly right, and minor mistakes should not prevent participants from understanding the principles. The instructions are usually just one or two rules and a goal that can be expressed in a single sentence (e.g. “Each card is either fully visible or not; how can you display exactly 11 dots?”, or “We need to get from any house to any other house; what is the smallest number of paving stones that make this possible”)."
 msgstr "活动中允许学生犯错；学生不应只遵循完全正确的许多复杂步骤，小错误并不影响参与者理解原则。指令通常只是一个或两个规则，而目标可用单个句子表示（例如，“每张卡要么完全可见，要么并非如此；你可以如何精确地显示 11 点？”，或者“我们需要从任何房子走到任何其他房子；如需完成这个任务，我们最少可以使用多少铺路石？”）。"
 
-#: templates/general/what-is-computer-science.html:23
-msgid "The term \"Computer Science\" has become widely used in recent years as the skills associated with the subject have become crucial to developing innovative digital technology, and qualifications in this area are highly sought after."
-msgstr "近年来，“计算机科学”一词得到广泛使用，因为与该主题相关的技能已成为开发创新数字技术的关键，并且在该领域的资质受到高度追捧。"
+#: templates/general/what-is-computer-science.html:24
+#, python-format
+msgid "In today's digital world, Computer Science has become an important subject for everyone to learn about. The knowledge and <a href=\"%(computational_thinking_url)s\">Computational Thinking skills</a> associated with it are now crucial to developing innovative digital technology, understanding modern society, and qualifications in this area are highly sought after."
+msgstr "在今天的数字世界当中，计算机科学已成为人人皆需学习的重要科目。与之相关的知识以及<a href=\"%(computational_thinking_url)s\">计算思维技能</a>对于开发创新数字技术、理解现代社会以及获得该领域相关资质而言最为重要。"
 
-#: templates/general/what-is-computer-science.html:29
+#: templates/general/what-is-computer-science.html:31
 msgid "The CS Unplugged activities are intended to give you a feel for what the subject is - you can learn what it is by doing. At this early stage, rather than define it formally, let's think about how it might influence our daily lives. For example, think of your favourite search engine. On the surface it seems like a fairly simple interface: a text box where you type what you want to search for, and a button to start the search. The level of programming knowledge needed to implement a text box and a button is fairly rudimentary, and you could implement a search by writing a short program (probably less than 20 lines) to go through all the text on the web and displaying any that match. But obviously there's more to it than this! There are billions of searches are made every day, on billions on web pages, and the approach above will give answers (eventually), but will be so slow and ineffective that no-one would use it."
 msgstr "CS Unplugged 活动旨在让您了解是什么主题 - 您可通过这样做，了解它是什么。在这个早期阶段，暂时不要正式定义它，让我们来思考它可能如何影响日常生活。例如，想想您最喜欢的搜索引擎。从表面上看，它就像一个相当简单的界面：设有一个供您键入要搜索内容的文本框，以及一个用于开始搜索的按钮。执行文本框和按钮所需的编程知识水平相当基础，您可通过编写一个简短的程序（可能少于 20 行）执行搜索，以浏览网站上的所有文本并显示任何匹配项。但显然，事实并非如此简单！ 每天，搜索数量都将达到数十亿次。网页上有数十亿次搜索，上述方法会（最终）给出答案，但速度会变得极慢且无效率，没有人会使用它。"
 
-#: templates/general/what-is-computer-science.html:45
-msgid "This is where computer science comes in; many areas of Computer Science are employed to make the system work well, and most of them are illustrated through Unplugged. How could you search billions of items in a fraction of a second (Searching Algorithms)? How do you make sure that it's easy to use (Human-Computer Interaction)? We need to keep it secure - users don't want other people to know what they are searching for, and the search engine doesn't want commercial interests to manipulate search ranking (Computer Security and Encryption)? Search engines generally predict what you are about to search for (Artificial Intelligence). It needs to be reliable - a small mistake from one of the thousands of programmers at a search engine company shouldn't prevent the site working (Software Engineering). It needs to scale well - if it becomes 10 times as popular, you don't want it to need 100 times the computing resources (Algorithms). The relevance of a search generally depends on the relationships between web sites - you need a map showing which sites are linked to which other ones (Graphs)."
-msgstr "这时，我们需要用到计算机科学；计算机科学有许多领域可确保系统运行良好，Unplugged 对其中大部分进行了说明。您可以如何在几分之一秒内搜索数十亿的条目（搜索算法）？您可以如何确保其易于使用（人机交互）？我们需要保证其安全性 - 用户不希望其他人知道他们在搜索什么，而搜索引擎不希望由商业利益操纵搜索排名（计算机安全和加密）？搜索引擎通常会预测您要搜索的内容（人工智能）。这需要具有可靠性 - 搜索引擎公司成千上万的程序员中，有人出现一个小错误并不应阻止网站运作（软件工程）。这需要具有极佳扩展性 - 当推广度加大 10 倍时，您不会希望用 100 倍的计算资源（算法）。搜索相关性通常取决于网站之间的关系 - 您需要一张地图，显示哪些网站链接至哪些其他网站（图表）。"
+#: templates/general/what-is-computer-science.html:47
+msgid "This is where Computer Science comes in; many areas of Computer Science are employed to make the system work well, and most of them are illustrated through Unplugged. How could you search billions of items in a fraction of a second (Searching Algorithms)? How do you make sure that it's easy to use (Human-Computer Interaction)? We need to keep it secure - users don't want other people to know what they are searching for, and the search engine doesn't want commercial interests to manipulate search ranking (Computer Security and Encryption)? Search engines generally predict what you are about to search for (Artificial Intelligence). It needs to be reliable - a small mistake from one of the thousands of programmers at a search engine company shouldn't prevent the site working (Software Engineering). It needs to scale well - if it becomes 10 times as popular, you don't want it to need 100 times the computing resources (Algorithms). The relevance of a search generally depends on the relationships between web sites - you need a map showing which sites are linked to which other ones (Graphs)."
+msgstr "此种情况正是计算机科学大显身手之时。计算机科学有许多领域可确保系统运行良好，而 Unplugged 就对其中大部分领域进行了相关说明。您如何能够在几分之一秒内搜遍数十亿个条目（搜索算法）？您如何能够确保其易于使用（人机交互）？我们需要保证其安全性——用户不希望其他人知道他们在搜索什么，而搜索引擎亦不希望被商业利益操纵其搜索排名（计算机安全和加密）？搜索引擎通常会预测您要搜索的内容（人工智能）。它必须足够可靠——即便搜索引擎公司数千名程序员当中有人犯了一个小小的错误，搜索引擎网站的正常运行也不会受到丝毫影响（软件工程）。它需要具备良好的扩展性——即便访问量增加到 10 倍，其也无需消耗 100  倍的计算资源（算法）。搜索的相关性通常取决于网站之间的关系——您需要一张能够显示哪些网站链接至哪些其他网站的地图（图表）。"
 
-#: templates/general/what-is-computer-science.html:58
-msgid "The areas above cover much of what the subject of computer science is about. Programming is just a tool for implementing ideas (well, it's a very powerful tool, and requires considerable skill to use well). But programming on its own isn't enough to create software that people love to use, and Computer Science is the area that gives programmers the inside knowledge to make their software fast, efficient, reliable, secure, usable, intelligent, scalable, and even delightful!"
-msgstr "上述领域涵盖计算机科学主题的大部分内容。编程只是实践想法的工具（这是一个非常强大的工具，需要相当多的技巧才能很好地使用）。但是，编程本身并不足以创建人们喜欢使用的软件，而计算机科学是为程序员提供内部知识以使其软件变得快速、高效、可靠、安全、可用、智能、可扩展甚至令人愉悦！"
+#: templates/general/what-is-computer-science.html:60
+msgid "The areas above cover much of what the subject of Computer Science is about. Programming is just a tool for implementing ideas (well, it's a very powerful tool, and requires considerable skill to use well). But programming on its own isn't enough to create software that people love to use, and Computer Science is the area that gives programmers the inside knowledge to make their software fast, efficient, reliable, secure, usable, intelligent, scalable, and even delightful!"
+msgstr "上述领域涵盖计算机科学这一学科的绝大部分内容。编程只是我们将想法付诸实现的一个工具（这是一个极其强大的工具，需要丰富技巧方可驾驭得当）。但是，仅靠编程本身并不足以帮助我们打造出人人爱用的软件。计算机科学为程序员提供了必要的独门秘籍，帮助他们了解如何让自己的软件变得快速、高效、可靠、安全、易用、智能、可扩展甚至令人愉悦！"
 
-#: templates/general/what-is-computer-science.html:70
-msgid "That's why we developed CS Unplugged - we want young students to be empowered to understand the great ideas that computer science covers, without having to become expert programmers first. They won't be learning exactly how to build the next search engine, social network or game app, but they will have an idea of what sort of techniques are needed to make it successful. We don't want them to see digital systems as some kind of magic that they can't participate in, but as something that they could understand and, for some, create themselves. Actually, it is is kind of magic when you start understanding what can and can't be done."
+#: templates/general/what-is-computer-science.html:72
+msgid "That's why we developed CS Unplugged - we want young students to be empowered to understand the great ideas that computer science covers, without having to become expert programmers first. They won't be learning exactly how to build the next search engine, social network or game app, but they will have an idea of what sort of techniques are needed to make it successful. We don't want them to see digital systems as some kind of magic that they can't participate in, but as something that they could understand and, for some, create themselves. Actually, it is kind of magic when you start understanding what can and can't be done."
 msgstr "这就是我们开发 CS Unplugged 的原因 - 希望青少年学生能够理解计算机科学所涵盖的伟大创意，而不必首先将自己打造为专业程序员。他们并不会精确学习如何构建下一个搜索引擎、社交网络或游戏应用程序，但将了解需要哪些类型的技术方可成功。我们不希望他们将数字系统看作是无法参与的某种魔法，而是看作他们能够理解的东西，并且对某些人来说，是可创造的东西。实际上，当您开始了解哪些可以完成、哪些无法完成时，它也呈现出魔幻的一面。"
 
-#: templates/general/what-is-computer-science.html:80
+#: templates/general/what-is-computer-science.html:82
 msgid "Read 'How do I teach CS Unplugged?'"
 msgstr "阅读‘我应如何进行 CS Unplugged 教学？’"
+
+#: templates/generic/classic-unplugged-button.html:13
+msgid "More activities at the Classic CS Unplugged website"
+msgstr "更多活动请访问经典版 CS Unplugged 网站"
+
+#: templates/generic/classic-unplugged-button.html:15
+msgid "Translations for some activities available at the Classic CS Unplugged website"
+msgstr "请访问经典版 CS Unplugged 网站查看某些活动的翻译内容"
 
 #: templates/generic/not-available-badge.html:4
 #, python-format
@@ -1424,20 +1493,20 @@ msgstr "抱歉，以下术语表暂时尚无%(language)s版本！"
 msgid "Open a topic to see all related unit plans, lessons, curriculum integrations, and programming challenges."
 msgstr "打开一个主题，查看全部相关的单元计划、课程、课程整合以及编程挑战。"
 
-#: templates/topics/index.html:39 templates/topics/topic.html:46
+#: templates/topics/index.html:38 templates/topics/topic.html:46
 #, python-format
 msgid "Ages %(min_age)s to %(max_age)s"
 msgstr "年龄 %(min_age)s 至 %(max_age)s"
 
-#: templates/topics/index.html:45 templates/topics/topic.html:56
+#: templates/topics/index.html:44 templates/topics/topic.html:56
 msgid "lessons"
 msgstr "课程"
 
-#: templates/topics/index.html:49
+#: templates/topics/index.html:48
 msgid "curriculum integrations"
 msgstr "课程整合"
 
-#: templates/topics/index.html:52
+#: templates/topics/index.html:51
 msgid "programming challenges"
 msgstr "编程挑战"
 
@@ -1451,12 +1520,12 @@ msgid "<strong>Duration:</strong> %(duration)s minutes"
 msgstr "<strong>时长：</strong> %(duration)s 分钟"
 
 #: templates/topics/lesson.html:44
-#: templates/topics/programming-challenge.html:70
+#: templates/topics/programming-challenge.html:61
 msgid "Learning outcomes"
 msgstr "学习成果"
 
 #: templates/topics/lesson.html:48
-#: templates/topics/programming-challenge.html:74
+#: templates/topics/programming-challenge.html:65
 msgid "Students will be able to:"
 msgstr "学生将能够："
 
@@ -1487,15 +1556,6 @@ msgstr "计算思维"
 msgid "Ages %(lower)s to %(upper)s"
 msgstr "年龄 %(lower)s 至 %(upper)s"
 
-#: templates/topics/not-available-warning.html:6
-#, python-format
-msgid "<h4>Sorry! This item is not yet available in %(language)s.</h4> <p>This item is available in the following languages:</p>"
-msgstr "<h4>抱歉！本条目暂无可用%(language)s版本。</h4> <p>本条目设有以下语言版本：</p>"
-
-#: templates/topics/not-available-warning.html:36
-msgid "Return to homepage "
-msgstr "返回主页 "
-
 #: templates/topics/programming-challenge-language-solution.html:10
 #, python-format
 msgid "%(name)s solution"
@@ -1522,7 +1582,7 @@ msgid "Back to programming challenge"
 msgstr "返回编程挑战"
 
 #: templates/topics/programming-challenge-language-solution.html:68
-#: templates/topics/programming-challenge.html:148
+#: templates/topics/programming-challenge.html:139
 msgid "Extra Challenge"
 msgstr "其他挑战"
 
@@ -1546,29 +1606,25 @@ msgstr "本编程挑战与以下课程相链接："
 msgid "Challenge %(set_num)s.%(chal_num)s for %(name)s"
 msgstr "%(name)s挑战 %(set_num)s.%(chal_num)s "
 
-#: templates/topics/programming-challenge.html:49
+#: templates/topics/programming-challenge.html:47
 #, python-format
 msgid "%(lower)s to %(upper)s"
 msgstr "%(lower)s 至 %(upper)s"
 
-#: templates/topics/programming-challenge.html:53
-msgid "and"
-msgstr "及"
-
-#: templates/topics/programming-challenge.html:92
+#: templates/topics/programming-challenge.html:83
 #: templates/topics/programming-challenges-table.html:11
 msgid "Languages"
 msgstr "语言"
 
-#: templates/topics/programming-challenge.html:113
+#: templates/topics/programming-challenge.html:104
 msgid "What it should look like"
 msgstr "应该是怎样的"
 
-#: templates/topics/programming-challenge.html:120
+#: templates/topics/programming-challenge.html:111
 msgid "Hints"
 msgstr "提示"
 
-#: templates/topics/programming-challenge.html:132
+#: templates/topics/programming-challenge.html:123
 #, python-format
 msgid "Show %(implementation.language.name)s solution"
 msgstr "显示 %(implementation.language.name)s 解决方案"

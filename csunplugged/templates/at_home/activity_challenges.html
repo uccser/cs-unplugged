@@ -1,0 +1,112 @@
+{% extends "base-at-home.html" %}
+
+{% load i18n %}
+{% load static %}
+{% load render_html_field %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}
+    {{ activity.name }}
+{% endblock title %}
+
+{% block breadcrumbs %}
+    {% breadcrumb activity.name "at_home:activity" activity.slug %}
+    {% breadcrumb "Challenges" "at_home:activity_challenges" activity.slug %}
+{% endblock breadcrumbs %}
+
+{% block page_heading %}
+    <h1 id="{{ activity.slug }}">
+        {{ activity.name }}
+        <br><small class="text-muted">Arnold's Challenges</small>
+    </h1>
+    {% if not activity.translation_available %}
+      {% with model=activity %}
+        {% include "topics/not-available-warning.html" %}
+      {% endwith %}
+    {% endif %}
+{% endblock page_heading %}
+
+{% block content_container %}
+    <div class="col-12">
+        {% blocktrans trimmed %}
+        <p>
+            Here are five challenges that build on the ideas you’ve been working with.
+            You might like to do one a day...
+            The first one of each set should be fairly easy, but they get harder.
+            What do you get out of this?
+            Just the warm feeling you get when you know you've solved one of Arnold's challenges, and the satisfaction of knowing that you've mastered a deep idea from computer science.
+        </p>
+        <p>
+            Enjoy the challenges!
+        </p>
+        {% endblocktrans %}
+
+        {% if challenges %}
+            <h2 id="challenges">{% trans "Challenges" %}</h2>
+            <div class="row">
+                <div class="col-12 col-lg-3 mb-2">
+                    <div class="nav nav-pills flex-row flex-lg-column" id="challenge-pills-tab" role="tablist" aria-orientation="vertical">
+                        {% for challenge in challenges %}
+                            <a class="nav-item nav-link p-2 text-center {% if forloop.first%}active{% endif %}" id="challenge-{{ challenge.order_number }}-tab"
+                                data-toggle="tab" href="#challenge-{{ challenge.order_number }}" role="tab" data-challenge-number="{{ challenge.order_number }}"
+                                aria-controls="challenge-{{ challenge.order_number }}" aria-selected="{{ forloop.first }}">
+                                {{ challenge }}
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-12 col-lg-9">
+                    <div class="card mb-3 p-3">
+                        <div class="tab-content" id="challenge-pills-tabContent">
+                            {% for challenge in challenges %}
+                                <div class="tab-pane mb-3 {% if forloop.first%}show active{% endif %}" id="challenge-{{ challenge.order_number }}"
+                                    role="tabpanel" aria-labelledby="challenge-{{ challenge.order_number }}-tab" data-challenge-number="{{ challenge.order_number }}">
+                                        <h3>{{ challenge }}</h3>
+                                        <p>{% render_html_field challenge.question %}</p>
+                                        {% if challenge.image %}
+                                            <img src="{% static challenge.image %}" class="img-fluid rounded at-home-img" alt="{{ challenge.image_description }}">
+                                        {% endif %}
+                                        <!-- Add answer form and feedback -->
+                                        {% if challenge.answer %}
+                                            <div id="challenges-form-{{ challenge.order_number }}" class="challenges-form">
+                                                <div class="form-group">
+                                                    <label for="challenge-user-input-{{ challenge.order_number }}"><strong>Your answer</strong></label>
+                                                    <input id="challenge-user-input-{{ challenge.order_number }}" class="form-control user-input" type="text" placeholder="{% trans "Enter your answer here" %}">
+                                                    <div class="valid-feedback">
+                                                        Correct! Great work!
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        Sorry, that is incorrect.
+                                                    </div>
+                                                    <div class="empty-feedback">
+                                                        Please enter an answer.
+                                                    </div>
+                                                </div>
+                                                <button id="submit-answer-{{ challenge.order_number }}" type=button" class="btn btn-primary mb-2 submit-btn">Submit answer</button>
+                                            </div>
+                                        {% endif %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        {% endif %}
+    </div>
+{% endblock content_container %}
+
+{% block scripts %}
+    {% if activity.translation_available %}
+        {% csrf_token %}
+        <script type="text/javascript">
+            var csrf_token = jQuery("[name=csrfmiddlewaretoken]").val();
+            var activity_slug = "{{ activity.slug }}";
+            var response_url = "{% url 'at_home:save_challenge_attempt' %}";
+            var challenges_json = {
+              {% for challenge in challenges %}{{ challenge.order_number }}: "{{ challenge.answer }}",{% endfor %}
+            };
+        </script>
+        <script src="{% static 'js/at-home-challenges.js' %}"></script>
+    {% endif %}
+{% endblock scripts %}

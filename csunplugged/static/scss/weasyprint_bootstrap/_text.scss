@@ -1,0 +1,27 @@
+// Customised Bootstrap text utility styles for use with Weasyprint
+
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/mixins";
+@import "node_modules/bootstrap/scss/variables";
+
+// Transformation
+
+.text-lowercase  { text-transform: lowercase !important; }
+.text-uppercase  { text-transform: uppercase !important; }
+.text-capitalize { text-transform: capitalize !important; }
+
+// Weight and italics
+
+.font-weight-normal { font-weight: $font-weight-normal; }
+.font-weight-bold   { font-weight: $font-weight-bold; }
+.font-italic        { font-style: italic; }
+
+// Contextual colors
+
+.text-white { color: #fff !important; }
+
+@each $color, $value in $theme-colors {
+  @include text-emphasis-variant(".text-#{$color}", $value);
+}
+
+.text-muted { color: $text-muted !important; }

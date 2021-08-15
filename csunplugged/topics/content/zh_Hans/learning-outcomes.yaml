@@ -1,4 +1,5 @@
 ---
+#BINARY NUMBERS LEARNING OUTCOMES
 binary-convert-decimal:
   text: 通过将任意十进制数转换为二进制数的方法，演示二进制数系的工作原理。
 binary-justify-zeros-and-ones:
@@ -31,10 +32,13 @@ binary-match-letters-numbers:
   text: 将字母表中的字母及其相应代表数字相匹配。
 binary-count-highest-number:
   text: 从最大数字开始倒数，找到二进制卡中的总点数。
+#DRAMA LEARNING OUTCOMES
 drama-create-video-binary:
   text: 创建教学视频，概述如何使用二进制数系进行计数。
+#ENGLISH LEARNING OUTCOMES
 speaking-clear-instructions-binary-cards:
   text: 给予明确指导，说明二进制卡可如何展示 0 到 63 之间的任意数字
+#ERROR DETECTION AND CORRRECTION LEARNING OUTCOMES
 error-describe-steps-to-find-card:
   text: 说明要找出遭到翻面的卡之所需步骤。
 error-explain-each-card-bit:
@@ -55,8 +59,10 @@ error-recognise-groups-of-5:
   text: 识别 5 的组别，并跳过五的计数
 error-demonstrate-count-to-5:
   text: 演示如何通过将计数与卡相匹配的方式数到 5。
+#LANUGAGE LEARNING OUTCOMES
 language-discuss-storing-characters:
   text: 讨论为何能够存储标准英语字母表以外的内容十分重要。
+#NUMERACY LEARNING OUTCOMES
 numeracy-adding-given-number:
   text: 将数字添加至给定数量。
 numeracy-identify-even-odd:
@@ -89,6 +95,7 @@ numeracy-recognise-numbers-represented:
   text: 认识到数字可以不同方式表示。
 numeracy-discuss-modulo-understanding-remainders:
   text: 讨论如何通过了解取模的运作方式，促进您对余数的理解。
+#PROGRAMMING LEARNING OUTCOMES
 programming-explain-sequencing:
   text: 解释编程中序列的运作方式。
 programming-explain-output:
@@ -129,6 +136,7 @@ programming-identify-list-store-data:
   text: 确定何时使用列表存储数据集。
 programming-show-item-specified-position-list:
   text: 示范如何访问列表中指定位置的项目。
+#SEARCHING ALGORITHMS LEARNING OUTCOMES
 search-algorithms-identify-unsorted-lists:
   text: 确定未排序列表的搜索算法（顺序检索）。
 search-algorithms-describe-time-size-input:
@@ -147,6 +155,7 @@ search-algorithms-describe-compare-values:
   text: 描述如何对比相等和不相等（大于、小于）的数值。
 search-algorithms-explain-unsorted-lists:
   text: 说明与排序列表相对比，未排序列表的猜测数范围。
+#UNPLUGGED PROGRAMMING LEARNING OUTCOMES
 unplugged-programming-apply-addition-multiplication:
   text: 运用加法和乘法，算出终端用户将完成的操作数量。
 unplugged-programming-design-fitness-achievable:
@@ -187,6 +196,7 @@ unplugged-programming-explain-tell-stories:
   text: 说明您可如何结合口头、书面和视觉语言诉说故事。
 unplugged-programming-recall-direction-words:
   text: 针对‘前往’、‘向前’、‘左’、‘右’，调用另一语言的方向词，并针对数字调用另一种语言。
+#SORTING LEARNING OUTCOMES
 sorting-explain-parallel-algorithm:
   text: 说明排序网络并行算法的运算原理。
 sorting-use-selection-sort:
@@ -203,3 +213,8 @@ sorting-demonstrate-alphabet-knowledge:
   text: 演示您的字母知识如何支持排序单词或书籍。
 sorting-comparing-musical-pitch:
   text: 对比乐谱和实际听觉上的音调。
+#IMAGE REPRESENTATION OUTCOMES
+image-rep-understand-digits-representing-images:
+  text: 了解如何使用数字来存储和呈现图像。
+image-rep-understand-pixels:
+  text: 了解计算机所显示的图像均是由像素组成的；每个像素都可以基于数字显示出不同的颜色。

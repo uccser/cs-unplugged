@@ -6,7 +6,7 @@ Click on the green flag to see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when flag clicked
 
 say [1] for (1) secs

@@ -1,0 +1,596 @@
+WEBVTT
+Kind: captions
+Language: fr
+
+NOTE
+Computer Science Education Research,
+University of Canterbury, New Zealand
+Subtitle file for the video "CS Unplugged: Parity Magic"
+Author: Alasdair Smith 13/02/2017
+Edited by: Courtney Bracefield 05/08/2020
+
+00:00.000 --> 00:04.000
+CS Unplugged
+L'informatique sans ordinateur
+
+00:04.600 --> 00:06.200
+La Parité Magique
+
+00:06.200 --> 00:10.000
+Alors, levez les mains ceux qui pensent
+que les ordinateurs sont un peu magiques
+
+00:10.000 --> 00:13.600
+ils font des choses et nous ne sommes pas vraiment sûr de savoir comment ils font.
+
+00:13.600 --> 00:18.400
+Est-ce que quelqu'un pense qu'ils sont magiques
+ou a pensé qu'ils l'étaient par le passé ? Bien.
+
+00:18.400 --> 00:21.600
+Aujourd'hui je vais vous apprendre un tour de magie.
+
+00:21.600 --> 00:26.400
+J'ai besoin d'un volontaire
+qui peut faire une grille de 5 par 5
+
+00:26.400 --> 00:32.800
+avec ces cartes magnétiques. Une carte peut être blanche,
+ou noire et ça doit être fait de manière totalement aléatoire.
+
+00:32.800 --> 00:36.200
+Qui veut le faire ?
+Oh merci Ellie, tu peux te lever ?
+
+00:36.200 --> 00:39.200
+Tu fais ça.
+J'espère qu'il y a assez de cartes.
+
+00:39.200 --> 00:42.000
+Si tu peux faire un carré de 5 par 5
+ici c'est très bien.
+
+00:42.000 --> 00:45.000
+Pendant qu'elle fait ça je voudrais
+vous expliquer un peu
+
+00:45.000 --> 00:51.200
+ce qu'il va se passer. Comme j'ai dit tout à l'heure
+ceci est un bit ; chacun de ces aimants représente
+
+00:51.200 --> 00:57.800
+un bit. Un bit peut être éteint,
+ou un bit peut être allumé.
+
+00:57.800 --> 01:04.200
+Où avons nous parlé des bits avant ?
+Tournez-vous vers la personne à côté de vous et dites-leur.
+
+NOTE
+[silence]
+
+01:18.000 --> 01:20.800
+Regardez par ici.
+
+01:20.800 --> 01:25.000
+Alors, les bits. Est-ce que quelqu'un a mentionné dans ses chuchotements,
+
+01:25.000 --> 01:30.600
+est-ce que quelqu'un a mentionné les mots "Nombres Binaires"
+quand nous avons parlé des nombres binaires l'autre jour ?
+
+NOTE changed 'word' to 'words' in the above sentence
+
+01:30.600 --> 01:34.600
+Oui ? Alors ce sont des bits, et ils peuvent
+être comme des nombres binaires
+
+01:34.600 --> 01:37.200
+Ils peuvent être allumés
+ou éteints.
+
+01:37.200 --> 01:40.000
+Bien est-ce qu'elle a un carré 5 par 5 ?
+
+01:40.000 --> 01:45.400
+Oui ? Merci Ellie, alors je vais rendre
+ce tour de magie un peu plus difficile pour moi,
+
+01:45.400 --> 01:51.200
+et je vais ajouter une colonne ici,
+
+01:51.200 --> 01:57.800
+et je vais ajouter une ligne en dessous,
+
+01:57.800 --> 02:00.600
+pour que ce soit plus difficile.
+
+02:06.600 --> 02:09.000
+Ok
+
+02:10.400 --> 02:13.400
+C'est bon, maintenant,
+
+02:13.400 --> 02:19.200
+j'ai vraiment une mauvaise mémoire
+et je ne vois pas très bien quand j'enlève mes lunettes.
+
+02:19.200 --> 02:21.600
+Ooh, je ne vois rien.
+
+02:21.600 --> 02:25.600
+Je vais demander à quelqu'un de se lever
+et de retourner une carte,
+
+02:25.600 --> 02:29.200
+levez la main ceux qui pensent que je vais réussir à deviner où est la carte ?
+
+02:29.200 --> 02:31.600
+Levez la main ceux qui pensent que c'est impossible
+si on a une mauvaise mémoire,
+
+02:31.600 --> 02:35.200
+ou que c'est impossible
+même si on a une bonne mémoire ? Levez la main ?
+
+02:35.200 --> 02:38.000
+Ok, voyons voir,
+Rhylee est-ce que tu peux retourner une carte ?
+
+02:38.000 --> 02:41.000
+Tous les autres vous devez vérifier
+soit qu'il retourne une carte
+
+02:41.000 --> 02:42.800
+soit vous vérifiez que je ne triche pas,
+
+02:42.800 --> 02:47.000
+et que je ne regarde pas.
+Je vais enlever mes lunettes pour être sûre.
+
+02:49.200 --> 02:51.800
+Tous le monde dit "terminé" quand il a terminé.
+
+02:51.800 --> 02:53.000
+["Terminé"]
+
+02:53.000 --> 02:59.000
+Très bien. Hmm, Rhylee, Rhylee, Rhylee.
+
+03:03.400 --> 03:05.400
+Correct ou pas ?
+
+03:05.400 --> 03:06.600
+["Correct"]
+
+03:06.600 --> 03:09.000
+Coup de chance, ça peut être un coup de chance non ?
+
+03:09.000 --> 03:12.200
+Merci Rhylee, applaudissons-le. Merci Rhylee.
+
+03:12.200 --> 03:15.800
+Ok, qui pense qu'il peut me piéger,
+peut-être parce que c'était sur la dernière ligne ?
+
+03:15.800 --> 03:18.600
+J'avais mémorisé la dernière ligne ? Peut-être peut-être.
+
+03:18.600 --> 03:22.200
+Sammy, je vais aller de ce côté cette fois
+donc je ne peux pas tricher,
+
+03:22.200 --> 03:26.200
+vous devez vérifier que Sammy retourne une carte
+et certains doivent vérifier que je ne triche pas
+
+03:26.200 --> 03:32.000
+et je vais même fermer les yeux
+pour être sûre que je ne triche pas.
+
+03:34.800 --> 03:36.000
+["Terminé"]
+
+03:36.000 --> 03:41.000
+Ok voyons voir. Sammy Sammy Sammy.
+
+03:45.400 --> 03:47.000
+Correct ou pas ?
+
+03:50.200 --> 03:52.600
+J'avais juste ? Super !
+
+03:52.600 --> 03:56.800
+Donc si je réussis deux fois de suite est-ce que c'est un tour de magie ?
+
+03:56.800 --> 04:01.000
+Ou est-ce qu'il y a autre chose ?
+Levez la main si vous pensez toujours que c'est un tour de magie.
+
+04:01.000 --> 04:04.200
+Levez la main si vous pensez qu'il se passe quelque chose.
+
+04:04.200 --> 04:09.000
+Cool, voyons voir ce qu'il se passe.
+
+04:10.600 --> 04:16.800
+Si nous avons la même configuration qu'au début
+et que l'on regarde les lignes,
+
+04:16.800 --> 04:22.000
+combien de cartes noires pouvez-vous voir sur cette ligne ?
+
+04:22.000 --> 04:23.400
+["Quatre"]
+
+04:23.400 --> 04:25.600
+Et combien de cartes noires sur celle-ci ?
+
+04:25.600 --> 04:33.000
+["Quatre"] ["Quatre"] ["Deux"]
+["Quatre"] ["Quatre"]
+
+04:33.000 --> 04:38.200
+Ok, maintenant regardons les colonnes,
+combien il y en a sur cette colonne ?
+
+NOTE changed 'how many is in' to 'how many are in'
+
+04:38.200 --> 04:48.000
+["Deux"] ["Six"] ["Quatre"]
+["Deux"] ["Quatre"] ["Quatre"]
+
+04:48.000 --> 04:52.000
+Hmm, qu'est-ce que ces nombres ont en commun ?
+
+04:52.000 --> 04:56.000
+Comment sont-ils ? Comment est-ce qu'on pourrait classer ces nombres ?
+Oui ?
+
+04:56.000 --> 04:57.400
+Des nombres pairs ?
+
+04:57.400 --> 05:00.000
+Hmm, levez la main si vous êtes d'accord avec cette affirmation ?
+
+05:00.000 --> 05:03.000
+Ce sont des nombres pairs et vous avez raison.
+
+05:03.000 --> 05:11.000
+Vous avez raison car j'ai dit que j'allais rendre le tour
+un peu plus difficile en ajoutant une ligne et une colonne.
+
+05:11.000 --> 05:12.800
+Est-ce que je l'ai rendu plus difficile ou plus facile ?
+
+05:12.800 --> 05:14.000
+["Plus facile"]
+
+05:14.000 --> 05:20.000
+Comment est-ce que je l'ai rendu plus facile
+en ajoutant une carte noire sur cette ligne ?
+
+NOTE Changed 'Why' to 'How'
+
+05:20.000 --> 05:22.000
+Qu'est-ce que j'étais en train de faire ?
+
+05:22.000 --> 05:28.000
+Um, vous étiez en train de, heu,
+ajouter une carte noire pour pouvoir les mémoriser plus facilement ?
+
+05:28.000 --> 05:31.600
+Ah oui ? Si je ne fais pas ça
+combien de cartes noires y a-t-il ?
+
+05:31.600 --> 05:32.800
+["Trois"]
+
+05:32.800 --> 05:36.600
+Quand j'ajoute une carte noire ici qu'est-ce que je fais ? Je transforme la ligne impaire en ?
+
+05:36.600 --> 05:42.400
+["Paire"] Très bien, donc en fait
+en ajoutant cette colonne et cette ligne,
+
+05:42.400 --> 05:50.200
+je fais en sorte qu'il y ait un nombre pair de cartes noires,
+comme ça je suis capable de corriger la faute, de corriger l'erreur
+
+05:50.200 --> 05:53.400
+quelle est la carte qui a été retournée.
+
+05:53.400 --> 05:59.200
+Regardons comment ça marche.
+Je vais retirer la colonne supplémentaire,
+
+05:59.200 --> 06:02.800
+et la ligne supplémentaire,
+et vous aller me dire ce qu'il faut ajouter.
+
+06:02.800 --> 06:08.600
+Je vais également effacer les nombres 
+pour que vous n'ayez pas d'indices, OK ?
+
+06:08.600 --> 06:11.000
+Vous êtes prêts ?
+Vous devez me dire noir ou blanc
+
+06:11.000 --> 06:13.800
+et me dire ce que je dois faire ici.
+Que dois-je faire ici ?
+
+06:13.800 --> 06:18.800
+["Noir"] ["Noir"]
+[ voix indistinctes]
+
+06:18.800 --> 06:22.400
+Noir
+
+06:22.400 --> 06:27.200
+["Blanc"] ["Noir"]
+
+06:27.200 --> 06:30.600
+Très bien, maintenant toutes les lignes sont faites, passons aux colonnes.
+
+06:30.600 --> 06:37.800
+["Noir"] ["Noir"]
+["Noir"] ["Blanc"]
+
+06:37.800 --> 06:40.200
+Oups, désolée
+
+06:40.200 --> 06:43.600
+["Noir"] ["Blanc"]
+
+06:43.600 --> 06:47.200
+Ok je veux que vous regardiez ce qu'il se passe ici,
+
+06:47.200 --> 06:53.400
+car si je pose un blanc ici :
+est-ce que cette colonne est correcte ?
+
+06:53.400 --> 06:54.600
+["Oui"]
+
+06:54.600 --> 06:58.000
+Est-ce que cette ligne est correcte ?
+["Oui"]
+
+06:58.000 --> 07:04.000
+Donc ce coin ici rassemble
+la ligne et la colonne,
+
+07:04.000 --> 07:07.600
+donc c'est une carte assez importante non ?
+
+07:07.600 --> 07:15.600
+Ok. Maintenant que vous avez vu comment ça marchait,
+qui pense qu'il peut le faire ?
+
+07:15.600 --> 07:18.600
+Qui voudrait essayer ?
+Robert, tu penses que tu peux le faire ?
+
+07:18.600 --> 07:21.800
+Ok, tu vas te mettre ici.
+Ferme les yeux, bien comme il faut
+
+07:21.800 --> 07:24.400
+ferme-les complètement.
+
+07:24.400 --> 07:28.800
+Et j'ai besoin que quelqu'un vienne
+et retourne une carte.
+
+07:28.800 --> 07:35.400
+Jack, viens et retourne une carte pour nous. Tournes-en une,
+les autres regardez et vérifiez qu'il n'en retourne qu'une,
+
+07:35.400 --> 07:40.600
+je vais vérifier que Robert
+ne va pas se retourner.
+
+07:49.000 --> 07:51.000
+Très bien, qu'est-ce qu'on dit à Robert ?
+["Terminé"]
+
+07:51.000 --> 07:54.200
+Ok, Robert viens par ici
+et nous allons t'aider un peu.
+
+07:54.200 --> 07:57.400
+Cette ligne ici, combien il y en a ?
+
+07:57.400 --> 07:59.000
+Quatre
+Est-ce correct ? Oui
+
+07:59.000 --> 08:02.200
+Qu'en est-il de celle-ci ? Quatre
+Est-ce correct ? Oui
+
+08:02.200 --> 08:04.800
+Qu'en est-il de celle-ci ? Quatre
+Est-ce correct ? Oui
+
+08:04.800 --> 08:07.400
+Et celle-ci ? Deux
+Est-ce correct ? Oui
+
+08:07.400 --> 08:10.400
+Et celle-là ?
+Trois, donc il doit y avoir un problème.
+
+08:10.400 --> 08:14.600
+Ahahahaa ! Traçons un cercle autour de cette ligne,
+
+08:14.600 --> 08:18.600
+car je crois que tu as raison.
+Je pense qu'il y a un problème, car c'est un nombre impair.
+
+08:18.600 --> 08:21.400
+Doit-on vérifier la prochaine ligne ?
+["Non"]
+
+08:21.400 --> 08:24.400
+Pourquoi pas ?
+Parce que nous avons déjà trouvé la réponse.
+
+08:24.400 --> 08:28.800
+Nous avons déjà trouvé la réponse et nous savons
+qu'il n'y a qu'une seule erreur à détecter, c'est bien ça ?
+
+08:28.800 --> 08:32.000
+Regardons maintenant les colonnes :
+Combien il y en a ici ?
+
+NOTE changed 'is' to 'are'
+
+08:32.000 --> 08:32.800
+Deux
+
+08:32.800 --> 08:34.000
+Est-ce que c'est juste ?
+Oui
+
+08:34.000 --> 08:36.800
+Et celle-ci ? Six
+Est-ce correct ? Oui
+
+08:36.800 --> 08:39.600
+Qu'en est-il de celle-ci ? Quatre
+Est-ce correct ? Oui
+
+08:39.600 --> 08:43.600
+Et celle-là ?
+Une, donc il y a un problème détecté.
+
+08:43.600 --> 08:46.400
+Il y a un problème ici, regardons ça.
+
+08:46.400 --> 08:49.400
+Donc, quelle carte a été retournée Robert?
+
+08:49.400 --> 08:53.600
+Celle-ci, car elle est entourée ici
+et elle est entourée là.
+
+08:53.600 --> 08:57.000
+Donc ça me donne directement
+l'endroit de la carte retournée.
+
+08:57.000 --> 08:59.400
+Tu peux la retourner, beau travail !
+
+08:59.400 --> 09:02.800
+Ok levez la main si vous êtes d'accord avec Robert
+que c'était la carte retournée.
+
+09:02.800 --> 09:11.400
+Très bien applaudissons-le, bravo !
+Merci Robert.
+
+09:11.400 --> 09:15.200
+Bien, pourquoi est-ce qu'on apprend ça avec
+un paquet d'aimants sur un tableau
+
+09:15.200 --> 09:17.500
+et en quoi est-ce relié aux ordinateurs ?
+
+09:17.500 --> 09:21.200
+Parce que, ce que nous avons ici
+est une représentation.
+
+09:21.200 --> 09:28.000
+Ces cartes que Ellie a posées, ce sont des données
+pour une musique qu'elle a écrite,
+
+09:28.000 --> 09:32.000
+et elle est en train de la téléverser sur Internet.
+
+09:32.000 --> 09:36.000
+Maintenant, en faisant ça,
+elle utilise probablement des cables téléphoniques,
+
+09:36.000 --> 09:41.600
+et ce qu'on va faire c'est ajouter
+une petit peu plus d'informations à son fichier,
+
+09:41.600 --> 09:46.300
+et ce qu'il se passe,
+c'est que si il y a une interférence ;
+
+09:46.300 --> 09:53.400
+si pour une raison quelconque
+le signal est éteint plutôt qu'allumé,
+
+09:53.400 --> 09:59.400
+tout cela pourra être
+corrigé dans l'ordinateur et le fichier sera le même
+
+09:59.400 --> 10:02.200
+pour la personne qui va le recevoir à l'autre bout de la ligne.
+
+10:02.200 --> 10:07.200
+Et c'est la même chose avec vos CDs et vos DVDs,
+levez la main si vous avez déjà eu un DVD
+
+10:07.200 --> 10:12.000
+qui commençait à avoir des problèmes,
+qui commençait à être pixelisé ou que le son ne marchait pas ?
+
+10:12.000 --> 10:20.600
+Bien, baissez les mains, si vous retournez votre DVD
+vous verrez beaucoup d'endroits brillants et mats,
+
+10:20.600 --> 10:26.200
+chaque petit endroit est un bit, et il y a des
+milliards de bits sur votre DVD.
+
+10:26.200 --> 10:31.000
+Et ce qu'il se passe, c'est que si vous avez une rayure dessus,
+ou si vous avez un grain de poussière,
+
+10:31.000 --> 10:35.400
+si vous n'aviez pas ces informations en plus,
+votre DVD ne marcherait plus,
+
+10:35.400 --> 10:37.000
+vous n'auriez plus qu'à le jeter à la poubelle.
+
+10:37.000 --> 10:43.400
+Mais, le DVD a ces informations en plus,
+et si un grain de poussière est dessus,
+
+10:43.400 --> 10:45.600
+il est toujours possible de corriger ça.
+
+10:45.600 --> 10:50.200
+Et il faut avoir une grosse rayure
+avant que ça commence à pixeliser.
+
+10:50.200 --> 10:53.600
+Avez-vous vu déjà vu des rayures ?
+Avez-vous retourné le DVD, regardé et dit
+
+10:53.600 --> 10:57.000
+"Woah, c'est vraiment sale et rayé.
+Ça doit être pour ça qu'il ne fonctionne pas."
+
+10:57.000 --> 10:58.400
+Avez-vous déjà fait ça ?
+
+10:58.400 --> 11:02.600
+Bien, et vous pouvez le nettoyer,
+et il marche de nouveau, avec de la chance ?
+
+11:02.600 --> 11:05.800
+Et c'est parce qu'il est dans un état
+
+11:05.800 --> 11:09.800
+dans lequel il peut être lu et il est possible
+de corriger toutes les erreurs et les détections
+
+11:09.800 --> 11:13.600
+Cool, merci.

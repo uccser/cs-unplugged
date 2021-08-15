@@ -59,4 +59,4 @@ def resize_encode_resource_image(image, max_pixel_height):
     # Convert from Image object to base64 string
     image_buffer = BytesIO()
     image.save(image_buffer, format="PNG")
-    return base64.b64encode(image_buffer.getvalue())
+    return base64.b64encode(image_buffer.getvalue()).decode('utf-8')

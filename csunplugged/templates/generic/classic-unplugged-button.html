@@ -1,0 +1,25 @@
+{% load i18n %}
+{% load static %}
+
+<div class="col-12 col-md-8 col-lg-6 mb-4">
+  {% if LANGUAGE_CODE == "en" %}
+    <a class="link-item no-text-decoration d-block h-100" href="https://classic.csunplugged.org/activities/">
+  {% else %}
+    <a class="link-item no-text-decoration d-block h-100" href="https://classic.csunplugged.org/books/">
+  {% endif %}
+    <div class="row align-items-center h-100">
+      <div class="col-12 text-center text-md-{{LANGUAGE_START}}">
+        {% if LANGUAGE_CODE == "en" %}
+          <h2>{% trans "More activities at the Classic CS Unplugged website" %}</h2>
+        {% else %}
+          <h2>{% trans "Translations for some activities available at the Classic CS Unplugged website" %}</h2>
+        {% endif %}
+      </div>
+      <div class="col-12 col-md-7 text-center text-md-{{LANGUAGE_START}}">
+      </div>
+      <div class="d-none col-md-5 d-md-flex justify-content-end align-items-end">
+        <img class="img-fluid" src="{% static 'img/classic-cs-unplugged-logo.png' %}">
+      </div>
+    </div>
+  </a>
+</div>

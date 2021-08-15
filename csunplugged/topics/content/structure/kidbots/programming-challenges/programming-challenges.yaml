@@ -496,6 +496,10 @@ modulo-even-odd-numbers:
   learning-outcomes:
     - programming-explain-asking-input-end-user
     - programming-identify-if-statement
+  test-cases: 
+    1: input
+    2: input
+    3: input
 
 modulo-check-divisor:
   challenge-set-number: 2
@@ -508,6 +512,9 @@ modulo-check-divisor:
     - programming-identify-if-statement
     - programming-explain-join-concatenate
     - programming-describe-variables
+  test-cases: 
+    1: input
+    2: input
 
 modulo-add-hours-12-hour-clock:
   challenge-set-number: 3
@@ -520,6 +527,11 @@ modulo-add-hours-12-hour-clock:
     - programming-identify-if-statement
     - programming-explain-join-concatenate
     - programming-describe-variables
+  test-cases: 
+    1: input
+    2: input
+    3: input
+    4: input
 
 modulo-add-hours-12-hour-clock-without-mod:
   challenge-set-number: 3
@@ -532,6 +544,11 @@ modulo-add-hours-12-hour-clock-without-mod:
     - programming-describe-mathematical-operations
     - programming-explain-join-concatenate
     - programming-describe-variables
+  test-cases: 
+    1: input
+    2: input
+    3: input
+    4: input
 
 modulo-add-hours-24-hour-clock:
   challenge-set-number: 3
@@ -545,6 +562,13 @@ modulo-add-hours-24-hour-clock:
     - programming-explain-join-concatenate
     - programming-describe-variables
   extra-challenge: extra-challenge.md
+  test-cases: 
+    1: input
+    2: input
+    3: input
+    4: input
+    5: input
+    6: input
 
 modulo-display-midi-note:
   challenge-set-number: 4
@@ -557,6 +581,12 @@ modulo-display-midi-note:
     - programming-explain-mod
     - programming-explain-asking-input-end-user
     - programming-identify-loop
+  test-cases: 
+    1: input
+    2: input
+    3: input
+    4: input
+    5: input
 
 modulo-add-months:
   challenge-set-number: 5
@@ -569,6 +599,12 @@ modulo-add-months:
     - programming-explain-join-concatenate
     - programming-describe-variables
     - programming-show-item-specified-position-list
+  test-cases: 
+    1: input
+    2: input
+    3: input
+    4: input
+    5: input
 
 modulo-add-video-timings:
   challenge-set-number: 6
@@ -581,6 +617,10 @@ modulo-add-video-timings:
     - programming-describe-variables
     - programming-explain-join-concatenate
     - programming-describe-mathematical-operations
+  test-cases: 
+    1: input
+    2: input
+    3: input
 
 modulo-check-leap-year:
   challenge-set-number: 7
@@ -593,3 +633,10 @@ modulo-check-leap-year:
     - programming-describe-mathematical-operations
     - programming-explain-mod
     - programming-identify-if-statement
+  test-cases: 
+    1: input
+    2: input
+    3: input
+    4: input
+    5: input
+    6: input

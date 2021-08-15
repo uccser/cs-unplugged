@@ -1,0 +1,286 @@
+{% load i18n %}
+{% load static %}
+{% load render_html_field %}
+{% load translate_url %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% get_language_info for LANGUAGE_CODE as current_language %}
+
+
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}" dir="{{LANGUAGE_DIRECTION}}">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% if LANGUAGE_CODE == "xx-lr" or LANGUAGE_CODE == "yy-rl" %}
+      <script type="text/javascript">
+        var _jipt = [];
+        _jipt.push(['project', 'cs-unplugged']);
+      </script>
+      <script type="text/javascript" src="//cdn.crowdin.com/jipt/jipt.js"></script>
+    {% endif %}
+    <title>
+      {% block custom_title %}
+        {% block title %}{% endblock title %} - {% trans "CS Unplugged" %}
+      {% endblock custom_title %}
+    </title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    {% if LANGUAGE_BIDI %}
+        <link rel="stylesheet" href="{% static 'css/website-rtl.css' %}">
+    {% else %}
+        <link rel="stylesheet" href="{% static 'css/website.css' %}">
+    {% endif %}
+    {% block css %}
+    {% endblock css %}
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'img/manifest.json' %}">
+    <link rel="mask-icon" href="{% static 'img/safari-pinned-tab.svg' %}" color="#ce2326">
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+    <meta name="msapplication-config" content="{% static 'img/browserconfig.xml' %}">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body style="text-align: {{LANGUAGE_START}};"{% block body_attribute_overrides %}{% endblock body_attribute_overrides %}>
+    {% block navbar %}
+    {% endblock navbar %}
+
+    {% block complete_breadcrumbs %}
+    {% endblock complete_breadcrumbs %}
+
+    {% block body_container %}
+      <div id="content-container" class="container">
+        <div class="row">
+          <div class="col-12">
+            {% render_breadcrumbs %}
+            {% block page_heading %}
+            {% endblock page_heading %}
+          </div>
+          {% block content_container %}
+            <div class="col-12">
+              {% block content %}
+              {% endblock content %}
+            </div>
+          {% endblock content_container %}
+          <div class="col-12 order-md-12">
+            {% block end_content %}
+            {% endblock end_content %}
+          </div>
+        </div>
+      </div>
+    {% endblock body_container %}
+
+    <div id="sponsor-logos" class="container white-footer mt-5 py-5 d-print-none">
+      <div class="row align-items-center text-center">
+        <div class="col-12 col-sm-6 col-md-4 my-4">
+          <a href="https://www.canterbury.ac.nz/engineering/schools/csse/research/cse/">
+            <img class="img-fluid" src="{% static 'img/uc-computer-science-education-logo.png' %}">
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 my-4">
+          <a href="https://www.google.com">
+            <img class="img-fluid px-4" src="{% static 'img/google-logo-colour.png' %}">
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 my-4">
+          <a href="https://www.microsoft.com/about/philanthropies/">
+            <img class="img-fluid px-3" src="{% static 'img/microsoft-philanthropies-logo' %}.png">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <footer id="page-footer" class="d-print-none">
+      <div class="background-csfg py-3 w-100 text-center">
+        <div class="container">
+          <p class="mb-0">
+            {% blocktrans trimmed %}
+            Looking for something for high schools?
+            Check out the <a href="http://csfieldguide.org.nz/">Computer Science Field Guide</a>.
+            {% endblocktrans %}
+          </p>
+        </div>
+      </div>
+
+      <div class="container py-3">
+        <div class="row justify-content-center mt-4">
+          <div class="col-12 col-md-6">
+            <p>
+              {% blocktrans trimmed %}
+              The primary goal of the Unplugged project is to promote Computer Science (and computing in general) to young people as an interesting, engaging, and intellectually stimulating discipline.
+              {% endblocktrans %}
+            </p>
+            <p>
+              {% url 'general:principles' as principles_url %}
+              {% blocktrans trimmed %}
+              Read more about <a href="{{ principles_url }}">our principles here</a>.
+              {% endblocktrans %}
+            </p>
+          </div>
+
+          <div class="col-6 col-md-2">
+            <p class="mb-1 font-weight-bold">{% trans "Useful Links" %}</p>
+            <ul class="list-unstyled list-unstyled-i18n">
+              <li>
+                <a href="{% url 'general:about' %}">
+                  {% trans "About" %}
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'topics:index' %}">
+                  {% trans "Topics" %}
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'resources:index' %}">
+                  {% trans "Printables" %}
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'at_home:index' %}">
+                  {% trans "At home" %}
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-2">
+            <p class="mb-1 font-weight-bold">{% trans "Community" %}</p>
+            <ul class="list-unstyled list-unstyled-i18n">
+              <li>
+                <a href="https://twitter.com/UCCSEd">
+                  {% trans "Twitter" %}
+                </a>
+              </li>
+              <li>
+                <a href="https://vimeo.com/uccser">
+                  {% trans "Vimeo" %}
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/csunplugged">
+                  {% trans "YouTube" %}
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/uccser/cs-unplugged">
+                  {% trans "GitHub" %}
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-2">
+            <p class="mb-1 font-weight-bold">{% trans "Help" %}</p>
+            <ul class="list-unstyled list-unstyled-i18n">
+              {% if LANGUAGE_CODE == "en" %}
+                <!-- Search is only currently available in English, see https://github.com/uccser/cs-unplugged/issues/989 -->
+                <li>
+                  <a href="{% url 'search:index' %}">
+                    {% trans "Search" %}
+                  </a>
+                </li>
+              {% endif %}
+              <li>
+                <a href="{% url 'topics:glossary' %}">
+                  {% trans "Glossary" %}
+                </a>
+              </li>
+              <li>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSccsE8TC-o0iptiT83iQ9R3nbUngkK0ch4G8sljCL8IpF-89Q/viewform">
+                  {% trans "Feedback" %}
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'general:contact' %}">
+                  {% trans "Contact" %}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="container py-3 footer-statement text-center">
+        <p class="mb-0">
+          <small>
+            {% for language in LANGUAGES %}
+              {% get_language_info for language.0 as lang %}
+              <a href="{% translate_url language.0 %}">
+                {{ lang.name_local|capfirst }}
+              </a>{% if not forloop.last %} | {% endif %}
+            {% endfor %}
+          </small>
+        </p>
+      </div>
+
+      <div class="container py-3 footer-statement text-center">
+        <p>
+          <small>
+            {% blocktrans trimmed %}
+            The CS Unplugged material is open source on <a href="https://github.com/uccser/cs-unplugged">GitHub</a>, and this website's content is shared under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International license</a>.
+            The CS Unplugged is a project by the <a href="https://www.canterbury.ac.nz/engineering/schools/csse/research/cse/">Computer Science Education Research Group</a> at the <a href="http://www.canterbury.ac.nz/">University of Canterbury</a>, New Zealand.
+            {% endblocktrans %}
+            {% blocktrans trimmed %}
+            Icons provided generously by <a target="_blank" rel="noopener noreferrer" href="https://icons8.com/">icons8</a>.
+            {% endblocktrans %}
+          </small>
+        </p>
+        <p class="mb-0">
+          <small><a href="https://cs-unplugged.readthedocs.io/changelog.html">{{ VERSION_NUMBER }}{% if not PRODUCTION_ENVIRONMENT %} - {{ GIT_SHA }}{% endif %}</a></small>
+        </p>
+      </div>
+    </footer>
+
+    <div class="modal fade" id="glossary-modal" tabindex="-1" role="dialog" aria-labelledby="glossary-modal-term" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="glossary-modal-term"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="alert alert-danger" role="alert" id="glossary-modal-translation-unavailable">
+              {% blocktrans trimmed with language=current_language.name_local %}
+                This definition is not available in {{ language }}, sorry!
+              {% endblocktrans %}
+            </div>
+            <div id="glossary-modal-definition"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Close" %}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script>
+      glossary_url = "{% url 'topics:glossary_json' %}";
+    </script>
+    <script src="{% static 'js/vendors.js' %}"></script>
+    <script src="{% static 'js/website.js' %}"></script>
+    <script src="https://www.youtube.com/player_api"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    {% block scripts %}
+    {% endblock scripts %}
+
+    {% if DEPLOYED %}
+      <!-- Google Tag Manager -->
+      <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5CVTLVL');
+      </script>
+      <!-- End Google Tag Manager -->
+    {% endif %}
+  </body>
+</html>

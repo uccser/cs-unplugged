@@ -6,11 +6,11 @@ Click on the green flag to see the expected output of your program.
 
 # Recommended blocks for solution 1
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 clear
 
 set pen size to (3)
@@ -20,7 +20,7 @@ pen down
 pen up
 ```
 
-```scratch:split:random
+```scratch
 go to x: (0) y: (0)
 
 point in direction (90 v)
@@ -32,7 +32,7 @@ turn ccw ((180) - (angle)) degrees
 move (100) steps
 ```
 
-```scratch:split:random
+```scratch
 say [The angle you entered is an acute angle.] for (3) secs
 
 say [The angle you entered is a right angle.] for (3) secs
@@ -44,13 +44,13 @@ say [The angle you entered is a straight angle.] for (3) secs
 say [The angle you entered is a reflex angle.] for (3) secs
 ```
 
-```scratch:split:random
+```scratch
 ask [Enter an angle between 0 and 360 (not including 0 and 360):] and wait
 
 set [angle v] to (answer)
 ```
 
-```scratch:split:random
+```scratch
 if <<(angle) > [0]> and <(angle) < [90]>> then
 end
 
@@ -73,11 +73,11 @@ end
 
 # Recommended blocks for solution 2
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 clear
 
 set pen size to (3)
@@ -87,7 +87,7 @@ pen down
 pen up
 ```
 
-```scratch:split:random
+```scratch
 go to x: (0) y: (0)
 
 point in direction (90 v)
@@ -99,13 +99,13 @@ turn ccw ((180) - (angle)) degrees
 move (100) steps
 ```
 
-```scratch:split:random
+```scratch
 ask [Enter an angle between 0 and 360 (not including 0 and 360):] and wait
 
 set [angle v] to (answer)
 ```
 
-```scratch:split:random
+```scratch
 say [The angle you entered is an acute angle.] for (3) secs
 
 say [The angle you entered is a right angle.] for (3) secs
@@ -117,7 +117,7 @@ say [The angle you entered is a straight angle.] for (3) secs
 say [The angle you entered is a reflex angle.] for (3) secs
 ```
 
-```scratch:split:random
+```scratch
 if <(angle) < [90]> then
 else
 end
@@ -130,7 +130,7 @@ if <(angle) = [90]> then
 else
 end
 
-if <(angle) = [180]> then 
+if <(angle) = [180]> then
 else
 end
 ```

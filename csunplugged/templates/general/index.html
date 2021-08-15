@@ -1,106 +1,116 @@
-{% extends "base.html" %}
+{% extends "base-educators.html" %}
 
 {% load i18n %}
 {% load static %}
 
 {% block custom_title %}
-  {% trans "CS Unplugged" %}
+    {% trans "CS Unplugged" %}
 {% endblock custom_title %}
 
+{% block body_attribute_overrides %} class="homepage"{% endblock body_attribute_overrides %}
+{% block navbar_class_overrides %} trans-navbar{% endblock navbar_class_overrides %}
 
 {% block body_container %}
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="text-center">
-        {% blocktrans trimmed %}
-        Computer Science<br>without a computer
-        {% endblocktrans %}
-      </h1>
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-10 col-lg-8">
-          <p class="lead text-center">
-            {% blocktrans trimmed %}
-            CS Unplugged is a collection of free teaching material that teaches Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around.
-            {% endblocktrans %}
-          </p>
-          <div id="welcome-alert" class="lead text-center">
-            <p>
-              <strong>
-              {% trans "Welcome to the new CS Unplugged!" %}
-              </strong>
-            </p>
-            <p>
-              {% blocktrans trimmed %}
-              This updated website has unit plans, lesson plans, teaching videos, curriculum integration activities, and programming exercises to plug in the Computer Science concepts they have just learnt unplugged.
-              {% endblocktrans %}
-            </p>
-            <p class="mb-0">
-              {% blocktrans trimmed %}
-              The original activities are still available at <a href="https://classic.csunplugged.org/">classic.csunplugged.org</a>.
-              {% endblocktrans %}
-            </p>
-          </div>
+    <div id="educator-jumbotron" class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="text-center text-white text-shadow">
+                {% blocktrans trimmed %}
+                    Computer Science<br>without a computer
+                {% endblocktrans %}
+            </h1>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-8 text-center">
+                    {% if LANGUAGE_CODE == "en" %}
+                        <a class="btn btn-warning text-wrap mb-3" role="button" href="{% url 'at_home:index' %}">
+                            <strong>COVID-19</strong>: Click here to see how to use CS Unplugged at home
+                        </a>
+                    {% endif %}
+                    <p class="lead text-light text-wrap text-shadow">
+                        {% blocktrans trimmed %}
+                            CS Unplugged is a collection of free teaching material that teaches Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around.
+                        {% endblocktrans %}
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 
-  <div id="homepage-cards" class="container">
-    <div class="row justify-content-center text-center">
-      <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <a class="link-item link-item-top link-item-top-blue no-text-decoration d-block h-100" href="{% url 'general:what_is_cs' %}">
-          <div class="img-container d-flex justify-content-center align-items-center">
-            <img class="img-fluid" src="{% static "img/general/what-is-cs.png" %}">
-          </div>
-          <h2 class="mb-0">
-            {% trans "What is Computer Science?" %}
-          </h2>
-        </a>
-      </div>
-      <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <a class="link-item link-item-top link-item-top-green no-text-decoration d-block h-100" href="{% url 'general:how_do_i_teach_cs_unplugged' %}">
-          <div class="img-container d-flex justify-content-center align-items-center">
-            <img class="img-fluid" src="{% static "img/general/how-do-i-teach-this.png" %}">
-          </div>
-          <h2 class="mb-0">
-            {% trans "How do I teach CS Unplugged?" %}
-          </h2>
-        </a>
-      </div>
-      <div class="w-100"></div>
-      <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <a class="link-item link-item-top link-item-top-yellow no-text-decoration d-block h-100" href="{% url 'topics:index' %}">
-          <h2 class="mb-0">
-            {% trans "Topics" %}
-          </h2>
-        </a>
-      </div>
-      <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <a class="link-item link-item-top link-item-top-teal no-text-decoration d-block h-100" href="{% url 'resources:index' %}">
-          <h2 class="mb-0">
-            {% trans "Printables" %}
-          </h2>
-        </a>
-      </div>
-      <div class="w-100"></div>
-      <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <a class="link-item link-item-top link-item-top-light-purple no-text-decoration d-block h-100" href="{% url 'topics:all_curriculum_integrations' %}">
-          <h2 class="mb-0">
-            {% trans "Curriculum Integrations" %}
-          </h2>
-        </a>
-      </div>
-      <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <a class="link-item link-item-top link-item-top-orange no-text-decoration d-block h-100" href="https://classic.csunplugged.org/">
-          <h2 class="mb-0">
-            {% trans "Classic CS Unplugged" %}
-          </h2>
-        </a>
-      </div>
+    <div id="homepage-cards" class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <a class="link-item link-item-top link-item-top-blue no-text-decoration d-block h-100" href="{% url 'general:what_is_cs' %}">
+                    <div class="img-container d-flex justify-content-center align-items-center">
+                        <img class="img-fluid" src="{% static "img/general/what-is-cs.png" %}">
+                    </div>
+                    <h2 class="mb-0">
+                        {% trans "What is Computer Science?" %}
+                    </h2>
+                </a>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <a class="link-item link-item-top link-item-top-yellow no-text-decoration d-block h-100" href="{% url 'general:how_do_i_teach_cs_unplugged' %}">
+                    <div class="img-container d-flex justify-content-center align-items-center">
+                        <img class="img-fluid" src="{% static "img/general/how-do-i-teach-this.png" %}">
+                    </div>
+                    <h2 class="mb-0">
+                        {% trans "How do I teach CS Unplugged?" %}
+                    </h2>
+                </a>
+            </div>
+        </div>
+        <div id="homepage-cards-columns" class="row justify-content-center text-center">
+            <div class="col-12 col-md-4 mb-4">
+                <h2 class="educator-colour">For educators</h2>
+                <a class="link-item link-item-top link-item-top-educator-1 no-text-decoration d-block mb-3" href="{% url 'topics:index' %}">
+                    <h3 class="mb-0">
+                        {% trans "Topics" %}
+                    </h3>
+                </a>
+                <a class="link-item link-item-top link-item-top-educator-2 no-text-decoration d-block mb-3" href="{% url 'resources:index' %}">
+                    <h3 class="mb-0">
+                        {% trans "Printables" %}
+                    </h3>
+                </a>
+                <a class="link-item link-item-top link-item-top-educator-3 no-text-decoration d-block mb-3" href="{% url 'topics:all_curriculum_integrations' %}">
+                    <h3 class="mb-0">
+                        {% trans "Curriculum Integrations" %}
+                    </h3>
+                </a>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <h2 class="at-home-colour">At home</h2>
+                <a class="link-item link-item-top link-item-top-at-home-1 no-text-decoration d-block mb-3" href="{% url 'at_home:index' %}">
+                    <h3 class="mb-0">
+                        {% trans "Activities" %}
+                    </h3>
+                    {% if LANGUAGE_CODE != "en" %}
+                        {% include "generic/not-available-badge.html" %}
+                    {% endif %}
+                </a>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <h2 class="plugging-it-in-colour">For students</h2>
+                <a class="link-item link-item-top link-item-top-plugging-it-in-1 no-text-decoration d-block mb-3" href="{% url 'plugging_it_in:index' %}">
+                    <h3 class="mb-0">
+                        {% trans "Plugging it in" %}
+                    </h3>
+                    {% if LANGUAGE_CODE != "en" %}
+                        {% include "generic/not-available-badge.html" %}
+                    {% endif %}
+                </a>
+            </div>
+        </div>
+        <div class="text-center my-5">
+            <p class="lead mb-2">The original activities are still available at</p>
+            <a class="link-item link-item-top link-item-top-orange no-text-decoration d-inline-block" href="https://classic.csunplugged.org/">
+                <h3 class="mb-0">
+                    {% trans "Classic CS Unplugged" %}
+                </h3>
+            </a>
+        </div>
     </div>
-  </div>
 {% endblock body_container %}
 
 {% block scripts %}
-  <script src="{% static 'js/homepage.js' %}"></script>
+    <script src="{% static 'js/homepage.js' %}"></script>
 {% endblock scripts %}

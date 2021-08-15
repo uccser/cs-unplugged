@@ -1,5 +1,7 @@
-@import "bootstrap/functions";
-@import "bootstrap/variables";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/multiple-select/dist/multiple-select";
+
 .area-badge {
   display: inline-block;
   color: #fff;

@@ -1,0 +1,37 @@
+{% extends "base-plugging-it-in.html" %}
+
+{% load i18n %}
+{% load static %}
+{% load render_html_field %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}
+  {{ topic.name }} lessons
+{% endblock title %}
+
+{% block breadcrumbs %}
+  {% breadcrumb topic.name "topics:topic" topic.slug %}
+{% endblock breadcrumbs %}
+
+{% block page_heading %}
+  <h1 id="{{ topic.slug }}">{{ topic.name }} lessons</h1>
+  {% if not topic.translation_available %}
+    {% url "topics:index" as url %}
+    {% trans "Return to list of topics" as url_label %}
+    {% with model=topic %}
+      {% include 'topics/not-available-warning.html' %}
+    {% endwith %}
+  {% endif %}
+
+  {% if topic.translation_available %}
+    {% render_html_field topic.content %}
+  {% endif %}
+{% endblock page_heading %}
+
+{% block content %}
+  {% if grouped_lessons %}
+    {% include "plugging_it_in/lessons-table.html" %}
+  {% else %}
+    <p>{% blocktrans trimmed %}No lessons for {{ topic }}.{% endblocktrans %}</p>
+  {% endif %}
+{% endblock content %}

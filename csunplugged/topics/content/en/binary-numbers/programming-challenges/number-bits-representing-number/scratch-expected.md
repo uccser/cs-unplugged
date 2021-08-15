@@ -6,7 +6,7 @@ Click on the green flag, enter the inputs provided in the “testing examples”
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 ask [Please enter the number of dots:] and wait
@@ -19,7 +19,7 @@ end
 say (join (join (join [You will need ] (bits)) [ bits to store number ]) (total number of dots))
 ```
 
-```scratch:split:random
+```scratch
 set [total number of dots v] to (answer)
 
 set [bits v] to [0]

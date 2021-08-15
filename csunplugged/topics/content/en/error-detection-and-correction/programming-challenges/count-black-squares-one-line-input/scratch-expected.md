@@ -7,7 +7,7 @@ see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 say (black cards total)
@@ -15,13 +15,13 @@ say (black cards total)
 ask [Please enter a sequence of black and white squares (B for black and W for white):] and wait
 ```
 
-```scratch:split:random
+```scratch
 change [index v] by (1)
 
 change [black cards total v] by (1)
 ```
 
-```scratch:split:random
+```scratch
 repeat (length of (cards))
 end
 
@@ -29,7 +29,7 @@ if <(letter (index) of (cards)) = [B]> then
 end
 ```
 
-```scratch:split:random
+```scratch
 set [black cards total v] to [0]
 
 set [index v] to [1]

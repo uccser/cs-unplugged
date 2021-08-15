@@ -1,6 +1,15 @@
 # Ignore app.yaml file that contains passwords, secret keys, etc
 /app*.yaml
 
+# Generated and collected static files directories
+csunplugged/build/**
+!csunplugged/build/.keep
+csunplugged/staticfiles/**
+!csunplugged/staticfiles/.keep
+
+# Files for using HTTPS on local development
+infrastructure/local/traefik/certs/
+
 # Byte-compiled / optimized / DLL files
 *__pycache__/
 *.py[cod]
@@ -12,7 +21,6 @@
 # Distribution / packaging
 .Python
 env/
-build/
 develop-eggs/
 dist/
 downloads/
@@ -67,6 +75,7 @@ instance/
 
 # Sphinx documentation
 docs/_build/
+docs/source/_build/
 
 # PyBuilder
 target/
@@ -104,15 +113,6 @@ node_modules/
 
 # Custom git settings
 .gitconfig
-
-# Temporary folder
-temp/
-
-# Collected static files folder
-staticfiles/
-
-# Search index
-whoosh_index/
 
 # OSX system files
 .DS_Store

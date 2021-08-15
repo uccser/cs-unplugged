@@ -1,51 +1,51 @@
-@import "bootstrap/functions";
-@import "bootstrap/variables";
-@import "bootstrap/mixins";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+@import "core-variables";
 @import "bootstrap-overrides";
-@import "bootstrap/root";
-@import "bootstrap/print";
-@import "bootstrap/reboot";
-@import "bootstrap/type";
-@import "bootstrap/images";
-@import "bootstrap/code";
-@import "bootstrap/grid";
-@import "bootstrap/tables";
-@import "bootstrap/forms";
-@import "bootstrap/buttons";
-@import "bootstrap/transitions";
-@import "bootstrap/dropdown";
-@import "bootstrap/button-group";
-@import "bootstrap/input-group";
-@import "bootstrap/custom-forms";
-@import "bootstrap/nav";
-@import "bootstrap/navbar";
-@import "bootstrap/card";
-@import "bootstrap/breadcrumb";
-@import "bootstrap/pagination";
-@import "bootstrap/badge";
-@import "bootstrap/jumbotron";
-@import "bootstrap/alert";
-@import "bootstrap/progress";
-@import "bootstrap/media";
-@import "bootstrap/list-group";
-@import "bootstrap/close";
-@import "bootstrap/modal";
-@import "bootstrap/tooltip";
-@import "bootstrap/popover";
-@import "bootstrap/carousel";
-@import "bootstrap/utilities";
-@import "pygments-colorful";
-@import "sticky-state";
+@import "node_modules/bootstrap/scss/root";
+@import "node_modules/bootstrap/scss/reboot";
+@import "node_modules/bootstrap/scss/type";
+@import "node_modules/bootstrap/scss/images";
+@import "node_modules/bootstrap/scss/code";
+@import "node_modules/bootstrap/scss/grid";
+@import "node_modules/bootstrap/scss/tables";
+@import "node_modules/bootstrap/scss/forms";
+@import "node_modules/bootstrap/scss/buttons";
+@import "node_modules/bootstrap/scss/transitions";
+@import "node_modules/bootstrap/scss/dropdown";
+@import "node_modules/bootstrap/scss/button-group";
+@import "node_modules/bootstrap/scss/input-group";
+@import "node_modules/bootstrap/scss/custom-forms";
+@import "node_modules/bootstrap/scss/nav";
+@import "node_modules/bootstrap/scss/navbar";
+@import "node_modules/bootstrap/scss/card";
+@import "node_modules/bootstrap/scss/breadcrumb";
+@import "node_modules/bootstrap/scss/pagination";
+@import "node_modules/bootstrap/scss/badge";
+@import "node_modules/bootstrap/scss/jumbotron";
+@import "node_modules/bootstrap/scss/alert";
+@import "node_modules/bootstrap/scss/progress";
+@import "node_modules/bootstrap/scss/media";
+@import "node_modules/bootstrap/scss/list-group";
+@import "node_modules/bootstrap/scss/close";
+@import "node_modules/bootstrap/scss/toasts";
+@import "node_modules/bootstrap/scss/modal";
+@import "node_modules/bootstrap/scss/tooltip";
+@import "node_modules/bootstrap/scss/popover";
+@import "node_modules/bootstrap/scss/carousel";
+@import "node_modules/bootstrap/scss/spinners";
+@import "node_modules/bootstrap/scss/utilities";
+@import "node_modules/bootstrap/scss/print";
+
+@import "pygments-vs";
 @import "directional";
 @import url('https://fonts.googleapis.com/css?family=Sniglet');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
 
-$ct-abstraction: #E30613;
-$ct-algorithm: #0B983A;
-$ct-decomposition: #E4AB0D;
-$ct-evaluation: #0F70B7;
-$ct-logic: #EA5B0C;
-$ct-pattern: #82358C;
+.at-home-divider {
+    border-top: 3px solid $at-home-colour;
+}
 
 img {
   &.content-image {
@@ -56,6 +56,9 @@ img {
   }
   &.inline-image-small {
     max-height: 1.4rem;
+  }
+  &.img-y-10 {
+      max-height: 10rem;
   }
 }
 
@@ -77,6 +80,9 @@ h6 {
 .subtitle {
   color: $gray-light;
 }
+.educator-colour { color: $educator-colour;}
+.at-home-colour { color: $at-home-colour;}
+.plugging-it-in-colour { color: $plugging-it-in-colour;}
 
 input[type="text"].long-text-field {
   width: 20em;
@@ -96,29 +102,53 @@ div.plugged-in-language-implementation {
 $rounded-corner-radius: 0.5rem;
 
 .jumbotron {
-  background: url("../img/red-hero-banner.png");
-  background-size: cover;
   width: 100%;
   padding-top: 80px;
   padding-bottom: 60px;
-  text-shadow: 0 2px 2px rgba(0,0,0,0.4);
 
-  h1 {
+  h1, h2 {
     font-family: $headings-font-family;
-    color: $white;
-    font-size: 3.5rem;
   }
-
   p {
-    color: $gray-lighter;
     font-size: 1rem;
   }
+}
+.text-shadow {
+    text-shadow: 0px 0px 9px rgba(0, 0, 0, 0.8);
+}
+
+#educator-jumbotron {
+    background: url("../img/red-hero-banner.png");
+    background-size: cover;
+    h1 {
+        font-size: 3.5rem;
+    }
+}
+#at-home-jumbotron {
+    background: url("../img/csu-at-home-tile.png");
+    background-repeat: repeat;
+    h2 {
+        font-size: 2rem;
+    }
+}
+#plugging-it-in-jumbotron {
+    background: $plugging-it-in-colour;
+    h2 {
+        font-size: 2rem;
+    }
 }
 
 #homepage-cards {
   position: relative;
   top: -80px;
   margin-bottom: -50px;
+}
+@include media-breakpoint-up(md) {
+    #homepage-cards-columns {
+        > div:not(:last-child) {
+            border-right: 1px solid #e8e8e8;
+        }
+    }
 }
 
 .badge-language-unavailable {
@@ -137,7 +167,14 @@ $rounded-corner-radius: 0.5rem;
 .navbar {
   background-color: $red;
   transition: background-color .3s ease 0s;
-  box-shadow: 0px 0px 3px 0px #6b0a19;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
+
+  &.navbar-at-home {
+    background-color: $at-home-colour;
+  }
+  &.navbar-plugging-it-in {
+    background-color: $plugging-it-in-colour;
+  }
 
   #navbar-brand-logo {
     height: 2rem;
@@ -410,22 +447,40 @@ ol, ul {
   &.link-item-top {
     border: 0;
     border-top: 7px solid $blue;
-    &-green {
-      border-top-color: $green;
-      &:hover {
-        background-color: mix($green, $white, 10%);
-      }
-    }
     &-yellow {
       border-top-color: $yellow;
       &:hover {
         background-color: mix($yellow, $white, 10%);
       }
     }
-    &-light-purple {
-      border-top-color: $light-purple;
+    &-educator-1 {
+      border-top-color: $educator-colour;
       &:hover {
-        background-color: mix($light-purple, $white, 10%);
+        background-color: mix($educator-colour, $white, 10%);
+      }
+    }
+    &-educator-2 {
+      border-top-color: mix($educator-colour, $white, 80%);
+      &:hover {
+        background-color: mix($educator-colour, $white, 10%);
+      }
+    }
+    &-educator-3 {
+      border-top-color: mix($educator-colour, $white, 60%);
+      &:hover {
+        background-color: mix($educator-colour, $white, 10%);
+      }
+    }
+    &-at-home-1 {
+      border-top-color: $at-home-colour;
+      &:hover {
+        background-color: mix($at-home-colour, $white, 10%);
+      }
+    }
+    &-plugging-it-in-1 {
+      border-top-color: $plugging-it-in-colour;
+      &:hover {
+        background-color: mix($plugging-it-in-colour, $white, 10%);
       }
     }
     &-orange {
@@ -496,6 +551,10 @@ ol, ul {
 .navbar-nav-i18n {
   margin-#{$right}: auto !important;
   margin-#{$left}: 0 !important;
+}
+.navbar-nav-i18n-reverse {
+  margin-#{$right}: 0 !important;
+  margin-#{$left}: auto !important;
 }
 
 .img-container {
@@ -617,14 +676,15 @@ h1, h2, h3, h4, h5, h6, details {
 
 #welcome-alert {
   @extend .alert;
-  background-color: rgba(245, 126, 126, 0.5);
-  border-color: rgba(189, 76, 76, 0.85);
+  background-color: rgba(245, 171, 126, 0.8);
+  border: none;
   strong {
     font-weight: bold;
     font-size: 1.1rem;
   }
   a {
     color: $gray-lighter;
+    text-decoration: underline;
   }
 }
 
@@ -677,4 +737,151 @@ button:hover .icon-search {
     padding-left: 0.4rem !important;
     padding-right: 0.4rem !important;
   }
+}
+#activities {
+    .card {
+        border: 0;
+        box-shadow: 0px 2px 5px 0px $gray-500;
+        .card-img-top {
+            max-height: 14rem;
+            object-fit: cover;
+        }
+    }
+}
+#programming-topics {
+    .card {
+        border: 0;
+        box-shadow: 0px 2px 5px 0px $gray-500;
+        h2 {
+            color: $gray;
+        }
+        .card-title img {
+            max-height: 5rem;
+        }
+    }
+}
+.challenges-form {
+    .empty-feedback {
+        display: none;
+        width: 100%;
+        margin-top: 0.25rem;
+        font-size: 80%;
+        color: $red;
+    }
+    .is-empty ~ .empty-feedback {
+        display: block;
+    }
+}
+.activity-step-card {
+    border-color: rgba(0, 0, 0, 0.2);
+    .card-header {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+    $speech-bubble-background: mix($white, $at-home-colour, 95%);
+    .speech-bubble {
+        background: $speech-bubble-background;
+        border: 1px solid $at-home-colour;
+        border-radius: 1rem;
+        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.05);
+        font-size: 1.2rem;
+        line-height: 1.3;
+        margin: 0 auto 2.5rem;
+        padding: 15px;
+        position: relative;
+        top: -3rem;
+        margin-bottom: -1.2rem;
+        blockquote {
+            font-family: $headings-font-family;
+            margin: 0 2.3rem;
+            position: relative;
+        }
+        blockquote:before {
+            content: open-quote;
+            color: rgba($at-home-colour, 0.3);
+            font-size: 4em;
+            position: absolute;
+            line-height: 1;
+            top: -0.5rem;
+            left: -2.3rem;
+        }
+        blockquote::after {
+            content: close-quote;
+            color: rgba($at-home-colour, 0.3);
+            font-size: 4em;
+            position: absolute;
+            float:right;
+            line-height: 1;
+            right: -2.3rem;
+            bottom: -3rem;
+        }
+
+        .speech-bubble-arrow {
+            border-left: 21px solid transparent;
+            border-top: 20px solid rgba(0, 0, 0, 0.05);
+            bottom: -25px;
+            position: absolute;
+            right: 15px;
+
+            &::before {
+                border-left: 23px solid transparent;
+                border-top: 23px solid $at-home-colour;
+                bottom: 2px;
+                content: "";
+                position: absolute;
+                right: 5px;
+            }
+            &::after {
+                border-left: 21px solid transparent;
+                border-top: 21px solid $speech-bubble-background;
+                bottom: 4px;
+                content: "";
+                position: absolute;
+                right: 6px;
+            }
+        }
+    }
+    .card-text {
+        font-size: 0.9rem;
+    }
+}
+.at-home-img {
+    max-height: 60vh;
+    object-fit: contain;
+}
+
+.underline {
+    border-bottom: 1px solid #3044b326;
+}
+.thick-underline {
+    border-bottom: 1px solid #b8b8b8;
+}
+.card.unavailable {
+    background-color: rgba($black, 0.2);
+    img {
+        opacity: 0.5;
+    }
+}
+
+.btn.plugging-it-in-navigation {
+  color: $plugging-it-in-colour;
+  border-color: $plugging-it-in-colour;
+
+  &:hover {
+      color: white;
+      background-color: $plugging-it-in-colour;
+  }
+
+  &:focus, &:active, &.active {
+      box-shadow: 0 0 0 .25rem #3044b33f; // This should be $plugging-it-in-colour at 25% opacity
+  }
+}
+
+#plugging-it-in-logo-educators {
+  height: 3em;
+}
+
+.scratchblocks-inline > svg {
+    height: 2.5rem;
+    width: auto;
 }

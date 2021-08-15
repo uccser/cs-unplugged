@@ -96,38 +96,6 @@ class SortingNetworkCardsResourceGeneratorTest(BaseGeneratorTest):
             "Fractions - letter"
         )
 
-    def test_subtitle_maori_colours_a4(self):
-        query = QueryDict("type=maori_colours&paper_size=a4")
-        generator = SortingNetworkCardsResourceGenerator(query)
-        self.assertEqual(
-            generator.subtitle,
-            "Māori colours - a4"
-        )
-
-    def test_subtitle_maori_colours_letter(self):
-        query = QueryDict("type=maori_colours&paper_size=letter")
-        generator = SortingNetworkCardsResourceGenerator(query)
-        self.assertEqual(
-            generator.subtitle,
-            "Māori colours - letter"
-        )
-
-    def test_subtitle_maori_numbers_a4(self):
-        query = QueryDict("type=maori_numbers&paper_size=a4")
-        generator = SortingNetworkCardsResourceGenerator(query)
-        self.assertEqual(
-            generator.subtitle,
-            "Māori numbers - a4"
-        )
-
-    def test_subtitle_maori_numbers_letter(self):
-        query = QueryDict("type=maori_numbers&paper_size=letter")
-        generator = SortingNetworkCardsResourceGenerator(query)
-        self.assertEqual(
-            generator.subtitle,
-            "Māori numbers - letter"
-        )
-
     def test_subtitle_butterfly_a4(self):
         query = QueryDict("type=butterfly&paper_size=a4")
         generator = SortingNetworkCardsResourceGenerator(query)

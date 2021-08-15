@@ -8,11 +8,11 @@
 
 *BlockTag: crwdns20225:0crwdne20225:0*
 
-{video url="https://www.youtube.com/embed/FnwBratAhfg"}
+{video url="https://vimeo.com/437726658"}
 
 *BlockTag: crwdns20226:0crwdne20226:0*
 
-{video url="https://www.youtube.com/embed/WjMPd6sgou0"}
+{video url="https://vimeo.com/437724764"}
 
 *BlockTag: crwdns20227:0crwdne20227:0*
 
@@ -44,7 +44,7 @@ crwdns20247:0crwdne20247:0
 
 *BlockTag: crwdns20248:0crwdne20248:0*
 
-{video url="https://www.youtube.com/embed/FnwBratAhfg"}
+{video url="https://vimeo.com/437726658"}
 
 *BlockTag: crwdns20249:0crwdne20249:0*
 

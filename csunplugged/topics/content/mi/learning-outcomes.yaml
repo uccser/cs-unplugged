@@ -1,0 +1,220 @@
+---
+#BINARY NUMBERS LEARNING OUTCOMES
+binary-convert-decimal:
+  text: Te whakaatu i ngā mahi o te pūnaha tāhūrua, mā te panoni o ngā tau-tekau ki ngā tau-tāhūrua.
+binary-justify-zeros-and-ones:
+  text: Parahau i te take, kāore ngā 0 me ngā 1 e rere haere ana kei roto i te rorohiko.
+binary-argue-zeros-and-ones-stored:
+  text: Whakapuaki whakaaro tautoko i te mea he pai tonu te whakamārama ka tiakina ngā raraunga kei roto i te rorohiko hei tohu 0, me te 1.
+binary-explain-different-states:
+  text: Whakamārama atu i te take ka taea e tātou te whakamahi i ngā ahunga e rua, ngā momo e rua rānei ki te whakaahuahanga i te tāhūrua; ehara ko ngā 0 me ngā 1 anake.
+binary-explain-logic-one-bit:
+  text: Whakamārama i te arorau me noho te moka kei te taha katau hei nama tahi.
+binary-explain-off-on:
+  text: Whakamārama i te take me kā, me weto rānei tētahi o ngā kāri (moka) kia puta ai tētahi nama.
+binary-predict-bit-value:
+  text: Matapae i te uara o te moka tāhūrua (te kāri) e whai ake nei.
+binary-explain-doubling:
+  text: Whakamārama i te take, ina tāpiritia kotahi te moka, ka whakareatia mā te rua ngā nama e taea ai te whakaahua.
+binary-recognise-alphabet-bits:
+  text: Āhukahuka i te hanga o ngā pū o te arapū i ngā rorohiko mā te moka.
+binary-create-message-converting:
+  text: Waihanga i tāna ake karere mā te whakahuri i ngā pū arapū, ki ngā nama, kātahi ka huri ki te tāhūrua.
+binary-interpret-message-binary:
+  text: Wetewete i te karere e whakamahi ana i te tāhūrua.
+binary-explain-codes-alphabets:
+  text: Whakamārama atu, ka pēhea e taea ai te hanga waehere mō ngā arapū nui ake, kia uru hoki ngā pū matua, ngā tohutuhi, tohu kē atu hoki (pērā ki te tohutō me ngā tohu whakahua kupu kē atu).
+binary-make-play-instructions-binary:
+  text: Tito i tētahi whakaari hei tuku i ngā tohutohu mō te hanga o tētahi nama tāhūrua.
+binary-identify-opposite-pairs:
+  text: Tautuhi i ngā takirua tauaro, pērā ki te mata harikoa me te mata pōuri.
+binary-match-letters-numbers:
+  text: Whakahāngai i ngā reta o te arapū ki ngā nama whakaahuahanga i aua reta.
+binary-count-highest-number:
+  text: Kaute tonu i te nama nui rawa, ki te kimi i te kaute o ngā tongi katoa o runga i ngā kāri tāhūrua.
+#DRAMA LEARNING OUTCOMES
+drama-create-video-binary:
+  text: Waihanga i tētahi ataata whakamārama mō te mahi kaute tāhurua.
+#ENGLISH LEARNING OUTCOMES
+speaking-clear-instructions-binary-cards:
+  text: Tuku i ngā tohutohu mārama, ki te whakaatu ka pēhea te whakaraupapa i ngā kāri tāhūrua ki te whakaputa i ngā nama i waenga i te 0 me te 63
+#ERROR DETECTION AND CORRRECTION LEARNING OUTCOMES
+error-describe-steps-to-find-card:
+  text: Whakaatu i ngā takahanga, kia kimi ai, ko tēhea te kāri i whakahurihia.
+error-explain-each-card-bit:
+  text: Whakamārama atu he moka ia kāri, ā, ka taea te whakamahi i ngā kāri hei whakaahuahanga mō te raraunga.
+error-explain-chose-parity-card:
+  text: Whakamārama i te take i kōwhiri ai rātou i te moka (kāri) tāpiri, i a rātou i whakarite ana i te rārangi/kapa taki ōritetanga.
+error-explain-steps-product-code-checksum:
+  text: Whakamārama mai ia mahi tātai kia puta ai te taki-tātai mō tētahi rawa.
+error-discuss-checksum-algorithm-12-13-product-code:
+  text: Matapakihia te take e tika ana te hātepe taki-tātai mō ngā taki-tātai 12 ngā mati me ngā taki-tātai 13 ngā mati.
+error-explain-checksum-algorithm:
+  text: Whakamārama mai te take ka horopū te hātepe taki-tātai.
+error-follow-steps-find-card-turned-over:
+  text: Whāia ngā tohutohu kia kite ai ka pēhea te kimi i te moka (kāri) i hurihia, mō te whakangaio ōritetanga.
+error-explain-group-numbers:
+  text: Whakamārama mai ka pēhea te whakahuihui i ngā nama ki tētahi rōpū taukehe me tētahi rōpū taurua.
+error-recognise-groups-of-5:
+  text: Āhukahuka i ngā huinga e rima, me te tatau māwhitiwhiti i ngā rima
+error-demonstrate-count-to-5:
+  text: Whakaatu mai ka pēhea te kaute ki te 5, mā te tūhonohono o te kaute ki ngā kāri.
+#LANUGAGE LEARNING OUTCOMES
+language-discuss-storing-characters:
+  text: Matapaki i te take me tiaki i ngā pū maha, ehara ko te arapū reo Pākehā noa iho.
+#NUMERACY LEARNING OUTCOMES
+numeracy-adding-given-number:
+  text: Tāpiri i ngā nama kia tae atu ki tētahi uara.
+numeracy-identify-even-odd:
+  text: Tautuhi i ngā taurua me ngā taukehe, mā te whakamārama i te take i rerekē ai te nama kei te taha matau rawa.
+numeracy-discuss-count-zeros-ones:
+  text: Matapaki me pēhea te whakamahi i ngā 0 me ngā 1 anake ki te kaute ki ngā nama katoa.
+numeracy-explain-squaring:
+  text: Whakamārama i te pai o te mōhio ki ngā tikanga whakapiki i ngā tāhūrua mō te mōhio ki te uara tū.
+numeracy-compare-base10-base2:
+  text: Whakatairite i ngā pūnaha pūtake tekau (ko tā tātou pūnaha kaute) me te pūnaha pūtake rua (tāhūrua).
+numeracy-identify-larger-number:
+  text: Tautuhi ko tēhea te nama nui ake, o ngā nama e rua ka whakariteritea.
+numeracy-count-by-pointing:
+  text: Kaute kia tika, mā te tohutohu ki ia mea i a ia e kaute ana.
+numeracy-recognise-patterns:
+  text: Āhukahuka mai i ngā tauira nama, mō te 1 ki te 8.
+numeracy-recognise-number-alphabet-order:
+  text: Āhukahuka i te raupapa o te arapū me ngā nama.
+numeracy-explain-even-odd-parity-problem:
+  text: Whakamārama i te take, mā te mārama ki ngā taukehe me ngā taurua kia taea ai te whakaoti i te hopanga ōritetanga.
+numeracy-describe-rows-columns:
+  text: Whakamārama ko ēhea ngā kapa, ko ēhea nga pou.
+numeracy-discuss-changing-one-card-state:
+  text: Matapaki i te take, mā te huringa o te kāri kotahi, ka huri hoki te kapa me te pou e noho ai taua kāri.
+numeracy-explain-modulo:
+  text: Whakamārama ka pēhea te whakamahi i te paheko tātai ā-porowhita.
+numeracy-identify-modulo-everyday-life:
+  text: Tautuhi i te wāhi whakamahia ai te tātai ā-porowhita i te ao whānui.
+numeracy-recognise-numbers-represented:
+  text: Kia āhukahuka he maha ngā whakaahuahanga o ngā nama.
+numeracy-discuss-modulo-understanding-remainders:
+  text: Matapaki i te pai o te mōhio ki te tātai ā-porowhita, hei tautoko i tō mōhio ki te toenga o ngā whakawehe.
+#PROGRAMMING LEARNING OUTCOMES
+programming-explain-sequencing:
+  text: Whakamārama mai i te tikanga o te raupapa i te tuhiwaehere.
+programming-explain-output:
+  text: Whakamārama he aha e puta ai te tāputa o tētahi papatono.
+programming-explain-variable-name:
+  text: Whakamārama mai i ngā take me kōwhiri tētahi ingoa pai mō ngā taurangi.
+programming-describe-variables:
+  text: Whakamārama ka pēhea ngā uara e tiakina e ngā taurangi, ka pēhea hoki e whakamahi ai i te papatono.
+programming-describe-mathematical-operations:
+  text: Whakamārama i pēhea koe i whakamahi ai i ngā paheko pāngarau i tō papatono.
+programming-outline-variable-updates:
+  text: Whakatakotoria atu ka pēhea te rokiroki i ngā uara kei roto i te taurangi kia whakahoungia i tō waehere.
+programming-describe-variable-output:
+  text: Whakamārama ka pēhea e whakaaturia ai te uara o te taurangi.
+programming-describe-function:
+  text: Whakamārama i te take i mahia ai tētahi taumahi i tō taupānga.
+programming-identify-loop:
+  text: Tautuhi ka pēhea, āhea hoki e mahia ai te koromeke ki te tukurua i tētahi rārangi o ngā tohutohu.
+programming-explain-join-concatenate:
+  text: Whakamārama ka pēhea e tāpiritia ai (ka honoa) ngā aho pūāhua.
+programming-explain-asking-input-end-user:
+  text: Whakamārama i ngā āhuatanga hei whakaaro ina ka pātai koe i te tāuru mai i te kaiwhakamahi.
+programming-identify-if-statement:
+  text: Tautuhi i te wāhi tika mō te tauākī 'mēnā' ('if' rānei), ki te whakamahi i te kōwhiringa.
+programming-demonstrate-indexing:
+  text: Whakaatu ka pēhea te whakamahi i te kuputohu o te aho ki te tiki i te pū kei taua wāhi o te aho.
+programming-explain-set-and-change-statement:
+  text: Whakamārama i te rerekētanga o te tauākī 'tautuhia' me te tauākī 'panonitia', ki te panoni i te uara o tētahi taurangi.
+programming-describe-variable-initial-value:
+  text: Whakamārama i te take me tautuhi te uara o te taurangi ki te momo uara tīmatanga e tika ana.
+programming-explain-mod:
+  text: Whakamārama i te mahi o te paheko tātai ā-porowhita i tō papatono.
+programming-explain-differences-if-else-if-statements:
+  text: Whakamārama i te rerenga kētanga o te tauākī mēnā-kē-atu me te tauākī mēnā-mahia, ā, whakamārama hoki i ngā mahi o ēnei tauākī i tāu ake papatono.
+programming-describe-nested-statement:
+  text: Whakamārama i te tikanga o te tauākī noho-kōhanga i te horopaki o tō papatono.
+programming-identify-list-store-data:
+  text: Tautuhi i ngā wā e tika ana kia whakamahia tētahi rārangi ki te rokiroki i ngā raraunga.
+programming-show-item-specified-position-list:
+  text: Whakaatu ka pēhea te tiki i te tuemi kei te tūnga o te rārangi i tautuhia ai.
+#SEARCHING ALGORITHMS LEARNING OUTCOMES
+search-algorithms-identify-unsorted-lists:
+  text: Tautuhi i te hātepe rapu e tika ana mō ngā rārangi kāore anō kia kōmakatia (he rapu ā-raupapa).
+search-algorithms-describe-time-size-input:
+  text: Whakamārama i te pānga o te nui o te tāuru ki te roa o te wā e haere ana te hātepe.
+search-algorithms-explore-probability-value-random-set:
+  text: Tūhura i te tūponotanga e kitea ai tētahi uara i roto i te huinga matapōkere.
+search-algorithms-explain-range-unsorted-lists:
+  text: Whakamārama atu i te whānuitanga o te kaute o ngā kapo noa mō te rārangi kore-kōmaka.
+search-algorithms-identify-sequential-binary:
+  text: Tautuhi i ngā hātepe rapu mō ngā rārangi kua kōmakatia, kāore rānei i te kōmakatia (te raparapa ā-raupapa me te raparapa tāhūrua).
+search-algorithms-explain-decomposition-binary:
+  text: Whakamārama i ā rātou whakamahinga o te whakamatariki mā te wehewehe me te patu, i ngā raparapa tāhūrua.
+search-algorithms-describe-time-size-input-different:
+  text: Whakamārama i te tipu o te wā rapu ki te tipu o te nui o te tāuru, ā, kia mārama hoki ki te rerekētanga o te tipu mō ētahi hātepe e rua.
+search-algorithms-describe-compare-values:
+  text: Whakaatu i ngā tikanga whakatairite, he ōrite, he tōrite (iti iho, nui ake rānei) rānei ngā uara o ētahi nama.
+search-algorithms-explain-unsorted-lists:
+  text: Whakamārama atu i te whānuitanga o te nama o ngā kapo noa mō te rārangi kore-kōmaka me te rārangi kōmaka.
+#UNPLUGGED PROGRAMMING LEARNING OUTCOMES
+unplugged-programming-apply-addition-multiplication:
+  text: Whakamahi i te tāpiri me te whakarea ki te tātai e hia ngā mahinga ka tukua e te kaiwhakamahi.
+unplugged-programming-design-fitness-achievable:
+  text: Hoahoa i te kohinga ngohe pakari tinana e taea ai e ngā kaiwhakamahi.
+unplugged-programming-construct-fitness-workout:
+  text: Hanga i te ngohe whakapakari tinana, kei roto ngā momo mahi whakakaha uaua, me ngā mahi ia-manawa.
+unplugged-programming-design-language:
+  text: Hoahoa i tētahi reo papatono kore-rorohiko kia ngāwari, kia mārama hoki.
+unplugged-programming-give-instructions:
+  text: Whakaatu i ngā tohutohu ka whakaneke i tētahi tūemi mai i te tūnga tīmatanga ki te tūnga otinga e tika ana.
+unplugged-programming-identify-bug-correct:
+  text: Tautuhi i hea tētahi hapa, kia taea hoki te whakatika i te waehere kia tukuna ai te tuemi kia neke ki te tūnga e hiahiatia ana.
+unplugged-programming-explain-exact-instructions:
+  text: Whakamārama i te take me tuku ngā tohutohu hāngai rawa, tika rawa.
+unplugged-programming-follow-instructions:
+  text: Whai i ngā tohutohu kia tika.
+unplugged-programming-identify-2D-shapes:
+  text: Tautuhi me te tapa i ngā āhua ahu-2.
+unplugged-programming-communicate-debugging:
+  text: Whakaatu, kāore te waehere i te tika, kia mōhio ai te tangata he aha te mea hei patuiro.
+unplugged-programming-actively-listen-feedback:
+  text: Āta whakarongo ki ngā whakahokinga kōrero, kātahi, patuiro.
+unplugged-programming-give-accurate-instructions-pace:
+  text: Hoatu i ngā tohutohu tika, i te terenga ka taea te whai.
+unplugged-programming-give-instructions-shape:
+  text: Whakaatu i ngā tohutohu hei whakaneke atu i tētahi tūemi mai i te tūnga tīmatanga, kia whai hoki i te ara e hiahiatia ana.
+unplugged-programming-identify-bug-shape:
+  text: Tautuhi i puta tētahi hapa i hea, ā, ka taea hoki te whakatika i te waehere, kia tukuna te tuemi ki te nekeneke i te āhua e hiahiatia.
+unplugged-programming-describe-draw-2D-shape:
+  text: Whakamārama me pēhea te tuhi i te āhua ahu-2 pērā ki ngā tapawhā me ngā tapawhā-rite.
+unplugged-programming-accurately-count:
+  text: Kaute kia tika mai i tētahi mokowā ki tētahi mokowā.
+unplugged-programming-give-precise-instructions:
+  text: Tuku i ngā tohutohu hāngai pū, ki te hanga i tētahi papatono hei whakaneke i tētahi ahanoa mai i tētahi tūnga ki tētahi tūnga.
+unplugged-programming-give-instructions-move:
+  text: Tuku i ngā tohutohu papatono hei whakaneke i tētahi ahanoa mai i tētahi tūnga ki tētahi tūnga.
+unplugged-programming-explain-tell-stories:
+  text: Whakamārama ka pēhea te hono i ngā kupu kōrero, te tuhituhi me ngā reo ataata hei tuku i te kōrero paki.
+unplugged-programming-recall-direction-words:
+  text: Tiki i ngā reo tohutohu o te reo kē mō te 'haere', 'neke ki mua', 'mauī', 'matau', me ngā nama.
+#SORTING LEARNING OUTCOMES
+sorting-explain-parallel-algorithm:
+  text: Whakamārama i ngā whakahaere o te hātepe whakarara mō te Whatunga Kōmaka.
+sorting-use-selection-sort:
+  text: Whakamahi i te tīpako (mā te whakatairite i te raraunga) ki te kōmaka i ngā tūemi maha.
+sorting-identify-number-range:
+  text: Tautuhi ko tēhea nama kei mua, ko tēhea kei muri ahakoa te whānui o te huinga nama.
+sorting-identify-number-given-range:
+  text: Tautuhi ko tēhea nama kei mua, ko tēhea kei muri kei roto i te whānui o tētahi huinga nama.
+sorting-organise-objects-size:
+  text: Whakaraupapa i ngā tūemi, mai i te mea iti ki te mea nui rawa.
+sorting-recognise-sorting-method:
+  text: Kia āhukahuka ka taea te whakamahi i tētahi hātepe kōmaka ki ngā momo uara katoa e taea ana te whakaraupapa.
+sorting-demonstrate-alphabet-knowledge:
+  text: Whakamārama i te whakamahi i tō mōhio ki te arapū hei whakarārangi i ngā kupu, i ngā pukapuka rānei.
+sorting-comparing-musical-pitch:
+  text: Whakatairite i te hauoro o te puoro mā te tuhi puoro mā te mahi whakarongo hoki.
+#IMAGE REPRESENTATION OUTCOMES
+image-rep-understand-digits-representing-images:
+  text: Kia mārama ki te rokiroki, ki te whakaahuahanga hoki i ngā ataata mā ngā mati.
+image-rep-understand-pixels:
+  text: Kia mārama, mō ngā ataata e whakaaturia i ngā rorohiko, kua hangaia ki ngā tongiiti, ka taea he tae rerekē mēnā he rerekē ngā mati mō taua tongiiti.

@@ -1,0 +1,41 @@
+---
+pens:
+  description: Stylos
+paper:
+  description: Papier
+number-line-0-20:
+  description: Numéro de ligne de 0 à 20
+musical-instruments:
+  description: Instruments de musique
+alphabet-cards:
+  description: Cartes alphabétiques
+parity-cards-set:
+  description: Un ensemble de 36 cartes de parité
+whiteboard:
+  description: Tableau blanc
+whiteboard-pens:
+  description: Stylos pour tableau blanc
+product-barcodes:
+  description: Un certain nombre d'objets avec des code-barres à 12 ou 13 chiffres
+payment-system:
+  description: Système de paiement tels que des jetons ou des billes
+pencils:
+  description: Crayons
+stopwatch:
+  description: Chronomètre
+handheld-whiteboards:
+  description: Ardoises
+clipboards:
+  description: Presse-papiers
+blocks:
+  description: Blocs
+hula-hoop:
+  description: Hula Hoop
+counters:
+  description: Compteurs
+chalk:
+  description: Craie
+coloring-pens:
+  description: Coloriage avec des crayons de couleur, des pastels ou des feutres
+erasers:
+  description: Gommes

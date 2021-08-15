@@ -1,0 +1,3 @@
+# Recherche binaire
+
+Un algorithme qui nous indique comment trouver efficacement une certaine valeur dans une liste **ordonnée (triée)**. Cela s'appelle une recherche 'binaire' car à chaque fois que l'on regarde une valeur dans la liste, on la divise en deux parties, dont l'une est éliminée et l'autre conservée. Ici, le mot "binaire" signifie simplement quelque chose qui a deux parties, comme un système d'étoiles binaire (avec deux étoiles); la recherche binaire ne doit pas être confondue avec les nombres binaires.

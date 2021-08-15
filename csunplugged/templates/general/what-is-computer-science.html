@@ -1,8 +1,9 @@
-{% extends "base.html" %}
+{% extends "base-educators.html" %}
 
 {% load i18n %}
 {% load static %}
 {% load django_bootstrap_breadcrumbs %}
+{% get_current_language as LANGUAGE_CODE %}
 
 {% block title %}
   {% trans "What is Computer Science?" %}
@@ -20,8 +21,10 @@
         <h1>{% trans "What is Computer Science?" %}</h1>
 
         <p>
+          {% url 'general:computational_thinking' as computational_thinking_url %}
           {% blocktrans trimmed %}
-            The term "Computer Science" has become widely used in recent years as the skills associated with the subject have become crucial to developing innovative digital technology, and qualifications in this area are highly sought after.
+            In today's digital world, Computer Science has become an important subject for everyone to learn about.
+            The knowledge and <a href="{{ computational_thinking_url }}">Computational Thinking skills</a> associated with it are now crucial to developing innovative digital technology, understanding modern society, and qualifications in this area are highly sought after.
           {% endblocktrans %}
         </p>
 
@@ -38,12 +41,12 @@
         </p>
 
         <div class="img-container img-wrap-right">
-          <img src="{% static "img/general/what-is-cs.png" %}">
+          <img src="{% static 'img/general/what-is-cs.png' %}">
         </div>
 
         <p>
           {% blocktrans trimmed %}
-            This is where computer science comes in; many areas of Computer Science are employed to make the system work well, and most of them are illustrated through Unplugged.
+            This is where Computer Science comes in; many areas of Computer Science are employed to make the system work well, and most of them are illustrated through Unplugged.
             How could you search billions of items in a fraction of a second (Searching Algorithms)?
             How do you make sure that it's easy to use (Human-Computer Interaction)?
             We need to keep it secure - users don't want other people to know what they are searching for, and the search engine doesn't want commercial interests to manipulate search ranking (Computer Security and Encryption)?
@@ -56,14 +59,14 @@
 
         <p>
           {% blocktrans trimmed %}
-            The areas above cover much of what the subject of computer science is about.
+            The areas above cover much of what the subject of Computer Science is about.
             Programming is just a tool for implementing ideas (well, it's a very powerful tool, and requires considerable skill to use well).
             But programming on its own isn't enough to create software that people love to use, and Computer Science is the area that gives programmers the inside knowledge to make their software fast, efficient, reliable, secure, usable, intelligent, scalable, and even delightful!
           {% endblocktrans %}
         </p>
 
         <div class="img-container img-wrap-right">
-          <img src="{% static "img/topics/col_binary_4_kids_4_cards.png" %}">
+          <img src="{% static 'img/topics/col_binary_4_kids_4_cards.png' %}">
         </div>
 
         <p>
@@ -71,9 +74,16 @@
             That's why we developed CS Unplugged - we want young students to be empowered to understand the great ideas that computer science covers, without having to become expert programmers first.
             They won't be learning exactly how to build the next search engine, social network or game app, but they will have an idea of what sort of techniques are needed to make it successful.
             We don't want them to see digital systems as some kind of magic that they can't participate in, but as something that they could understand and, for some, create themselves.
-            Actually, it is is kind of magic when you start understanding what can and can't be done.
+            Actually, it is kind of magic when you start understanding what can and can't be done.
           {% endblocktrans %}
         </p>
+
+        {% if LANGUAGE_CODE == "en" %}
+          <h5>{% trans "Mike Fellows, co-author of CS Unplugged, talks about how it came about" %}</h5>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe allowtransparency="true" class="embed-responsive-item" src="https://player.vimeo.com/video/434158077" frameborder="0" allowfullscreen="true"></iframe>
+          </div>
+        {% endif %}
 
         <p>
           <a href="{% url 'general:how_do_i_teach_cs_unplugged' %}" class="btn btn-outline-primary">

@@ -16,6 +16,9 @@ METHOD_VALUES = {
 }
 
 IMAGE_VALUES = {
+    "star": _("Star - 1 page"),
+    "teacup": _("Teacup - 1 page"),
+    "cat": _("Cat - 1 page"),
     "fish": _("Fish - 6 pages"),
     "kauri-tree": _("Kauri tree - 6 pages"),
     "butterfly": _("Butterfly - 6 pages"),
@@ -32,24 +35,24 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         "black-white": {
             "name": _("Black and White"),
             "labels": {
-                255: "0",
-                0: "1"
+                255: "1",
+                0: "0"
             }
         },
         "run-length-encoding": {
             "name": _("Run length encoding"),
             "labels": {
-                255: "0",
-                0: "1"
+                255: "1",
+                0: "0"
             }
         },
         "greyscale": {
             "name": _("Greyscale"),
             "labels": {
-                255: "00",
-                168: "01",
-                84: "10",
-                0: "11"
+                255: "11",
+                168: "10",
+                84: "01",
+                0: "00"
             }
         },
         "colour": {
@@ -68,6 +71,9 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
     }
 
     image_strings = {
+        "star": _("Star"),
+        "teacup": _("Teacup"),
+        "cat": _("Cat"),
         "boat": _("Boat"),
         "fish": _("Fish"),
         "hot-air-balloon": _("Hot air balloon"),
@@ -238,7 +244,7 @@ class PixelPainterResourceGenerator(BaseResourceGenerator):
         page_encoding = []
         for row in range(0, page_rows):
             row_encoding = []
-            encoding_colour = "0"
+            encoding_colour = "1"
             encoding_count = 0
 
             for column in range(0, page_columns):

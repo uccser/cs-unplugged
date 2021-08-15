@@ -1,0 +1,210 @@
+WEBVTT
+Kind: captions
+Language: fr
+
+NOTE
+Subtitle file for the video "CS Unplugged - Binary digits (sample classroom lesson)"
+
+00:00:07.359 --> 00:00:19.100
+Aujourd'hui, nous allons découvrir les chiffres binaire.
+Levez la main si vous avez entendu parler d'un bit dans un ordinateur. 
+Vous en avez entendu parler ?
+
+00:00:19.119 --> 00:00:30.900
+Le mot bits provient du terme anglais "binary digits". On prend la 1re lettre de "binary" et la fin de "digits" (chiffres en anglais) et on raccourcit en "bits".
+
+00:00:30.939 --> 00:00:36.600
+Bien maintenant nous avons 5 chiffres binaires qui se tiennent devant vous. Voyons ce que cela signifie.
+
+00:00:36.660 --> 00:00:42.020
+Je vais te donner le nombre 1, tu seras le chiffre binaire représentant 1 point.
+
+00:00:42.020 --> 00:00:44.530
+Tu seras le nombre binaire représentant 2 points.
+
+00:00:44.530 --> 00:00:48.600
+Quel est le prochain nombre ? Dites-le (4, 3)
+
+00:00:48.600 --> 00:00:52.600
+Levez la main si vous pensez que c'est 3. C'est notre façon de compter.
+
+00:00:52.600 --> 00:00:57.800
+Voyons si tu as raison avec le binaire. Oh ! C'est 4.
+
+00:00:57.850 --> 00:01:07.800
+Quel peut être le prochain nombre ? Oui ? (6 ou 5).
+C'est peut-être 6 ou 5. C'est 8 en fait.
+
+00:01:07.800 --> 00:01:14.400
+Que se passe-t-il avec ces nombres? Quel est le prochain nombre Oliver ? (16) A-t-il raison ?
+
+00:01:14.430 --> 00:01:23.500
+Quel est le nombre suivant, après 16 donc ? Jacob (32) Oh, qu'est-ce qui vient après 32 ?
+
+00:01:23.570 --> 00:01:32.100
+(136) Peut-être, une autre proposition ? Lachlin (64) A-t-il raison ? (oui).
+
+00:01:32.159 --> 00:01:42.300
+Quel est le nombre qui vient après 64 ? Thomas (128) Et ensuite ? Jacob (256) Bien.
+
+00:01:42.300 --> 00:01:53.000
+Quelqu'un connait-il le suivant ? Ben. (512) Donc, quand... Quel est le suivant Jacob ?
+
+00:01:53.000 --> 00:01:58.950
+Donc avec quelques chiffres binaires nous pouvons compter assez loin non ?
+
+00:01:58.950 --> 00:02:07.070
+Voyons ça, nous pouvons compter 1, 2, 4, 8, 16 points.
+
+00:02:07.070 --> 00:02:20.600
+Voyons ce que cela signifie à l'intérieur d'un ordinateur. Un bit peut être allumé ou éteint. Et ce bit peut être allumé ou éteint.
+
+00:02:20.670 --> 00:02:29.900
+Maintenant, vous allez penser à un nombre entre 1 et 31. Levez la main si vous pensez à un nombre. Ben, quel nombre ? (12).
+
+00:02:29.930 --> 00:02:40.200
+12. Nous voulons monter 12 points en binaires. Est-ce qu'on veut allumer ou éteindre le 16 ? (éteindre). Éteins-le s'il te plait.
+
+00:02:40.209 --> 00:02:53.500
+Si nous voulons faire le nombre 12, est-ce qu'on veut allumer le 8 ? (oui) OK, combien nous manque-t-il alors ? (4) Est-ce qu'on allume le 4 ? (oui).
+
+00:02:53.550 --> 00:03:04.000
+Et pour le 2 ? (éteint) Pourquoi ? Pourquoi est-ce qu'on éteint le 2 ? (Parce vous avez déjà 12 avec le 8 et le 4). Donc 1, on le laisse allumé ou ... ? (éteint)
+
+00:03:04.060 --> 00:03:16.100
+Qui peut me dire en binaire ce que serait 12, ce que cela représenterait ? (caché, montré, montré, caché, caché) Levez les pouces si vous êtes d'accord.
+
+00:03:16.170 --> 00:03:21.850
+Bien Elarn, veux-tu..., pouvez-vous tous montrer vos cartes ?
+
+00:03:21.850 --> 00:03:29.400
+Elarn, choisis un nombre que nous allons faire. (24) 24 Peux-tu juste montrer ta carte s'il te plait ?
+
+00:03:33.599 --> 00:03:45.670
+Pour 24, avons-nous besoin d'allumer 16 ? (oui) 8 allumé 
+ou éteint ? (allumé), 4 (éteint), 2 (éteint), 1 (éteint).
+
+00:03:45.670 --> 00:03:53.769
+Elarn, quel est le binaire de 24 points ? (allumé, allumé,
+éteint, éteint, éteint).
+
+00:03:53.769 --> 00:03:56.400
+Pouvez-vous faire le nombre 1 pour moi ? Comment pourrions nous faire ?
+
+00:03:56.470 --> 00:04:08.000
+Comment pouvons-nous faire le nombre 1 ? (noir, noir, noir, noir, blanc) Allez-y faites-le.
+
+00:04:08.000 --> 00:04:15.700
+Bien, nous avons avons bien le 1 maintenant.
+Est-il possible d'obtenir un nombre encore plus petit que 1 ? Will ?
+
+00:04:15.769 --> 00:04:22.700
+(0) Comment ferions-nous 0 ? (en éteignant le 1 blanc).
+
+00:04:22.720 --> 00:04:38.000
+Le plus petit nombre que nous pouvons faire est 0 et pour le
+plus grand nombre, si vous montrez tous vos cartes, avec 5 bits, quel est le plus grand 
+nombre que l'on peut faire ? Ben ? (31) Levez la main si vous êtes d'accord avec Ben. C'est bien 31.
+
+00:04:38.099 --> 00:04:49.300
+Si nous pouvons faire 31, quelle sera la prochaine carte ? Si je les rejoins et devient le 6e bit, quel est le prochain nombre ? (32) 32.
+
+00:04:49.389 --> 00:05:00.000
+Si j'allume 32, les autres doivent .... (s'éteindre) s'éteindre
+pour faire 32. Vous vous éteignez tous ? 
+
+00:05:00.000 --> 00:05:03.879
+Faisons quelques comptages et voyons ce qui se passe
+avec différents bits.
+
+00:05:03.879 --> 00:05:12.600
+Nous avons zéro. De quoi avons-nous besoin pour faire 1 ? Oui, donne les instructions (allume 1).
+
+00:05:12.629 --> 00:05:23.800
+2, comment faire 2 ? Dites-leur (éteint 1, allume 2) 3 ? Lachlin, vas-y (allume 1 et laisse 2 allumé).
+
+00:05:23.800 --> 00:05:43.500
+4 ? (éteins 2 et 1 et allume 4) 5 ? (allume 1...)
+Qu'est-ce que vous remarquez à propos du premier chiffre binaire ?
+
+00:05:43.550 --> 00:05:50.000
+Zander, qu'est-ce que tu remarques ? (Il fait 
+tout le travail) Il semble qu'il fasse tout le travail.
+
+00:05:50.099 --> 00:06:00.900
+Pourquoi semble-t-il faire tout le travail ?
+Ben ? (On ne peut pas faire de nombres impairs sans lui) Allumez tous vos cartes à nouveau.
+
+00:06:00.979 --> 00:06:07.699
+Quel est la différence entre le premier bit
+et les autres bits que vous voyez ?
+
+00:06:07.699 --> 00:06:16.439
+William ? (le nombre 1 est le seul nombre impair) C'est le seul nombre impair.
+
+00:06:16.439 --> 00:06:21.500
+Nous pouvons représenter beaucoup de nombres, hein ? Je me demande comment représenter des lettres ?
+
+00:06:21.520 --> 00:06:31.580
+Tournez vous vers vos voisins et trouvez 
+des idées pour représenter des lettres.
+
+00:06:31.580 --> 00:06:35.900
+Comment peut-on représenter une lettre ?
+
+00:06:51.080 --> 00:06:55.920
+5, 4, 3, 2, 1, regardez par ici.
+
+00:06:56.000 --> 00:07:04.000
+Que ceux qui ont un suggestion pour représenter les lettres lèvent la main.
+Quelle idée avez-vous trouvée ?
+
+00:07:04.000 --> 00:07:19.200
+(On peut représenter la lettre par un nombre. 26 pour Z et A par 1) 26 pour Z, A par 1, 
+Que serait B alors ? Jacob ?
+
+00:07:19.270 --> 00:07:27.300
+(2), que serait C ? (3), Que serait D ? (4), E ? (5). Je pense que vous avez saisi.
+
+00:07:27.310 --> 00:07:35.600
+Je me demande si vous pouvez vous en sortir avec ce que je vous
+envoie. Je vais vous envoyer un message.
+
+00:07:35.669 --> 00:07:44.100
+Noir, blanc, noir, noir, noir. Quel est ce nombre ? (8).
+
+00:07:44.129 --> 00:07:53.200
+Quelle est la 8e lettre de l'alphabet ? (H). Gardez ça en tête.
+
+00:07:53.229 --> 00:07:58.600
+Éteint, allumé, éteint, éteint, allumé. Quel est ce nombre ? (9)
+
+00:07:58.669 --> 00:08:13.500
+Qu'est-ce que je t'ai dis Zander ? (Le mot que vous avez dit est "Hi") C'est cela ? Tu es d'accord avec lui ? Nous avons fait "Hi" ?
+
+00:08:13.520 --> 00:08:20.900
+Mais ce ne sont que des points et des cartes qui sont allumées ou éteintes, peut-on réellement vous envoyer un message en faisant cela ?
+
+00:08:20.919 --> 00:08:38.000
+(oui) Voyons à quel point vous êtes bons. Voyons si je peux vous envoyer le mois 
+de ma naissance. Vous êtes prêts ? Éteint, allumé, allumé, éteint, éteint.
+
+00:08:38.070 --> 00:08:44.500
+Quel mois suis-je née ? Dis le moi, vous êtes nombreux à connaitre la réponse,
+vas-y. (Décembre) Tu as raison.
+
+00:08:44.510 --> 00:08:52.500
+Donc, en utilisant les chiffres binaire et des points
+nous pouvons communiquer n'importe quoi d'une lettre jusqu'à un nombre.
+
+00:08:52.540 --> 00:08:57.500
+Vous pouvez également faire des images, des sons,
+ou encore des vidéos.
+
+00:08:57.500 --> 00:09:03.730
+Tous se rapporte aux chiffres binaires (bits) parce qu'à l'intérieur d'un
+ordinateur il n'y a pas un très grand nombre de cartes comme celles-ci,
+
+00:09:03.730 --> 00:09:15.000
+ni un grand nombre de 0 et de 1, mais il y a 
+un grand nombre de choses qui doivent être allumées ou éteintes.

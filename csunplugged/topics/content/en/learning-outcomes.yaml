@@ -340,3 +340,11 @@ sorting-demonstrate-alphabet-knowledge:
 
 sorting-comparing-musical-pitch:
   text: Compare musical pitch in musical notation and aurally.
+
+# IMAGE REPRESENTATION OUTCOMES
+
+image-rep-understand-digits-representing-images:
+  text: Understand how images can be stored and represented using digits.
+
+image-rep-understand-pixels:
+  text: Understand that the images shown by computers are made up of pixels, each of which can display a different colour, based on digits.

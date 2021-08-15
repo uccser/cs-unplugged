@@ -1,0 +1,3 @@
+# Raraunga Taketake
+
+Ko te tikanga o te kupu raraunga taketake, ko ngā raraunga kāore anō kia uru ki te tukanga, kua kohia, engari kāore anō kia whakarauiritia, kia whakamahia rānei. Hei tauira, mehemea ka ine koe i te pāmahana o ia rā o te tau, ka puta tō kohinga o ngā nama, ka kīia ērā he 'raraunga taketake'. Mehemea ka whakawehewehea aua raraunga mō ia marama o te tau, ā, ka tātai koe i te toharite mō ia marama, ko tērā te 'raraunga tukatuka'.

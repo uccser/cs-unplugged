@@ -6,11 +6,11 @@ Click on the green flag to see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 set [coin v] to [0]
 
 set [number of heads v] to [0]
@@ -26,17 +26,17 @@ change [number of tails v] by (1)
 set [number of flips v] to (answer)
 ```
 
-```scratch:split:random
+```scratch
 ask [How many times would you like to flip a coin?] and wait
 ```
 
-```scratch:split:random
+```scratch
 say (join (round (((number of heads) * (100)) / (number of flips))) [% heads]) for (3) secs
 
 say (join (round (((number of tails) * (100)) / (number of flips))) [% tail]) for (3) secs
 ```
 
-```scratch:split:random
+```scratch
 if <(coin) = [1]> then
 else
 end

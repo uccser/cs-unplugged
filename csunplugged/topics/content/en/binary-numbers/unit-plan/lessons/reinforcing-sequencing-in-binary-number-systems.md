@@ -45,7 +45,7 @@ like iMovie or StopMotion.
 Early finishers can edit their work, add music and then be camera crew
 for others.
 
-Tips to before sending off for the 60 minute challenge:
+Tips to relay before sending students off for the 60 minute challenge:
 
 1.  The order of place values in a binary number is the same as the
 conventional (decimal) place value system, so the highest is on the left, smallest value on the right.

@@ -466,3 +466,14 @@ sorting-demonstrate-alphabet-knowledge:
 sorting-comparing-musical-pitch:
   curriculum-areas:
     - music
+
+# IMAGE REPRESENTATION OUTCOMES
+
+image-rep-understand-digits-representing-images:
+  curriculum-areas:
+    - data-representation
+    - abstraction
+
+image-rep-understand-pixels:
+  curriculum-areas:
+    - data-representation

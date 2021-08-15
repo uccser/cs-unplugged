@@ -1,0 +1,3 @@
+# Raraunga
+
+Te momo rokiroki i te mōhiohiotanga. Ko ngā nama tētahi o ngā momo raraunga e kitea whānuitia ana (hei tauira, he nama pūkete, he nama kiritaki, he nama kāri, he tau rangatū, he nama putanga, te aha, te aha). Mō ngā kupu hoki pea (pērā ki ngā kupu e rapua), ngā rā, ngā ata hoki me te puoro. Ahakoa te aha e rokiroki ana i te pūmahara o te rorohiko, tērā pea he raraunga tērā; he maramara mōhiohio.

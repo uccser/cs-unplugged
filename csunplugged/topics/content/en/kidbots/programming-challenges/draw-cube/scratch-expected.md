@@ -8,11 +8,11 @@ Click on the green flag to see the expected output of your program.
 
 # Recommended blocks for solution 1
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 clear
 
 set pen size to (3)
@@ -22,7 +22,7 @@ pen down
 pen up
 ```
 
-```scratch:split:random
+```scratch
 go to x: (0) y: (0)
 
 point in direction (90 v)
@@ -50,7 +50,7 @@ move (50) steps
 turn cw (45) degrees
 ```
 
-```scratch:split:random
+```scratch
 repeat (4)
 end
 
@@ -67,11 +67,11 @@ end
 
 # Recommended blocks for solution 2
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 clear
 
 set pen size to (3)
@@ -81,7 +81,7 @@ pen down
 pen up
 ```
 
-```scratch:split:random
+```scratch
 go to x: (0) y: (-100)
 
 point in direction (0 v)
@@ -115,7 +115,7 @@ move (100) steps
 turn ccw ((180) - (90)) degrees
 ```
 
-```scratch:split:random
+```scratch
 repeat (2)
 end
 

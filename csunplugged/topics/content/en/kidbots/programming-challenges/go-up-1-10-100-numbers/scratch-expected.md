@@ -6,11 +6,11 @@ Click on the green flag to see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 set [upper range v] to (answer)
 
 set [number v] to (pick random (1) to (upper range))
@@ -18,7 +18,7 @@ set [number v] to (pick random (1) to (upper range))
 set [numbers after v] to (item (random v) of [numbers after list v] :: list)
 ```
 
-```scratch:split:random
+```scratch
 ask [Enter a number as the upper range:] and wait
 
 ask (join (join [What is the number after ] (number)) [?]) and wait
@@ -26,7 +26,7 @@ ask (join (join [What is the number after ] (number)) [?]) and wait
 ask (join (join (join (join [What's ] (numbers after)) [ numbers after ]) (number)) [?]) and wait
 ```
 
-```scratch:split:random
+```scratch
 say [I'll generate a random number between 1 and a number you enter.] for (5) secs
 
 say [Well done!] for (3) secs
@@ -34,7 +34,7 @@ say [Well done!] for (3) secs
 say (join [Nice try! The right answer is: ] ((number) + (numbers after))) for (3) secs
 ```
 
-```scratch:split:random
+```scratch
 forever
 end
 

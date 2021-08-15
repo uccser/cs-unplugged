@@ -1,0 +1,3 @@
+# Rapu ā-raupapa
+
+Kei ngā rapu ā-raupapa, ka tirohia ia tuemi takitahi o te raraunga, ka whai tētahi ki tētahi ka haere tonu ki te wā ka kitea te tūemi i rapua ai. Ka taea te whakamahi i te rapu ā-raupapa i ngā raraunga katoa, kua kōmaka, kāore rānei (tērā pea, he pōturi pea mēnā kua kōmaka kē ngā raraunga!), Heoi anō, ko te rapu ā-raupapa **anake** te tukanga rapu mēnā he raraunga **kāore i te kōmaka**.

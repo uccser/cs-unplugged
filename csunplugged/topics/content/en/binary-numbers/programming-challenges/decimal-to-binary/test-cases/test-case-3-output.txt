@@ -1,0 +1,1 @@
+The binary representation for the number 1 is 1

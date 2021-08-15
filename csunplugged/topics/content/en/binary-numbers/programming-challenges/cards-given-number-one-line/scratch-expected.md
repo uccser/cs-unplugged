@@ -6,13 +6,13 @@ Click on the green flag, enter the inputs provided in the “testing examples”
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 ask [Please enter a number of dots less than or equal to 31:] and wait
 ```
 
-```scratch:split:random
+```scratch
 if <<(number of dots) > [16]> or <(number of dots) = [16]>> then
 end
 
@@ -33,7 +33,7 @@ else
 end
 ```
 
-```scratch:split:random
+```scratch
 set [number of dots v] to (answer)
 
 set [cards v] to []
@@ -60,7 +60,7 @@ set [number of dots v] to ((number of dots) - (1))
 
 ```
 
-```scratch:split:random
+```scratch
 say (cards)
 
 say [Please choose a number less than or equal to 31.]

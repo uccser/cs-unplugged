@@ -6,7 +6,7 @@ Click on the green flag, enter the inputs provided in the “testing examples”
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 
 repeat (5)
@@ -20,7 +20,7 @@ if <(answer) = [W]> then
 end
 ```
 
-```scratch:split:random
+```scratch
 set [number of dots v] to ((number of dots) / (2))
 
 set [total number of dots v] to ((total number of dots) + (number of dots))

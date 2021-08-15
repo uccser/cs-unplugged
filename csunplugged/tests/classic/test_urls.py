@@ -47,7 +47,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         response = self.client.get("/changelog")
         self.assertRedirects(
             response,
-            "http://cs-unplugged.readthedocs.io/en/latest/changelog.html",
+            "https://cs-unplugged.readthedocs.io/changelog.html",
             status_code=301,
             fetch_redirect_response=False
         )
@@ -421,7 +421,7 @@ class RedirectClassicUnpluggedURLsTest(BaseTestWithDB):
         )
 
     def test_wp_content(self):
-        response = self.client.get("/wp-content")
+        response = self.client.get("/wp-content/")
         self.assertRedirects(
             response,
             "http://classic.csunplugged.org/wp-content/",

@@ -1,0 +1,3 @@
+# Autres ressources
+
+Le [Guide du Terrain de l'Informatique (Computer Science Field Guide)](http://csfieldguide.org.nz/) contient un chapitre sur la [Représentation des Données (Data Representation)](http://csfieldguide.org.nz/en/chapters/data-representation.html) qui couvre les nombres binaires et la façon dont ils peuvent représenter différents types de données. Il a aussi une version interactive des [cartes binaires](http://csfieldguide.org.nz/en/interactives/binary-cards/index.html?digits=4&start=WWWW), vous pouvez trouver des informations supplémentaires sur la façon de les utiliser [ici](https://github.com/uccser/cs-field-guide/tree/develop/csfieldguide/static/interactives/binary-cards).

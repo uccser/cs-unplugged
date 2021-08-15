@@ -6,11 +6,11 @@ Click on the green flag to see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 clear
 
 pen down
@@ -18,7 +18,7 @@ pen down
 pen up
 ```
 
-```scratch:split:random
+```scratch
 set [sides v] to (answer)
 
 set [turning angle v] to ((360) / (sides))
@@ -26,7 +26,7 @@ set [turning angle v] to ((360) / (sides))
 set [inside angle v] to ((180) - (turning angle))
 ```
 
-```scratch:split:random
+```scratch
 go to x: (0) y: (0)
 
 point in direction (90 v)
@@ -36,15 +36,15 @@ move (50) steps
 turn cw (turning angle) degrees
 ```
 
-```scratch:split:random
+```scratch
 say (join (join [Each inside angle is ] (inside angle)) [ degrees.])
 ```
 
-```scratch:split:random
+```scratch
 ask [Enter the number of sides of a regular polygon:] and wait
 ```
 
-```scratch:split:random
+```scratch
 wait (1) secs
 
 repeat (sides)

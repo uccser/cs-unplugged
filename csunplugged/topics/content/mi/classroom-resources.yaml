@@ -1,0 +1,41 @@
+---
+pens:
+  description: He pene
+paper:
+  description: He pepa
+number-line-0-20:
+  description: Rārangi tau, mai i te 0 ki te 20
+musical-instruments:
+  description: He taonga puoro
+alphabet-cards:
+  description: He kāri arapū
+parity-cards-set:
+  description: He huinga o ngā kāri pūrite e 36
+whiteboard:
+  description: Papamā
+whiteboard-pens:
+  description: Pene papamā
+product-barcodes:
+  description: Ētahi tuemi kua whai i te waehere pae, ka 12, 13 rānei ngā mati
+payment-system:
+  description: He pūnaha utu, pērā ki ngā perepere, he māpere rānei
+pencils:
+  description: He pene rākau
+stopwatch:
+  description: Matawā tumu
+handheld-whiteboards:
+  description: Papamā kawe
+clipboards:
+  description: Papa rawhi
+blocks:
+  description: Paraka
+hula-hoop:
+  description: Pīrori Hura
+counters:
+  description: Perepere
+chalk:
+  description: Tioka
+coloring-pens:
+  description: Pene karakara, pene hinu, pene whītau rānei
+erasers:
+  description: Muku

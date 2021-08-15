@@ -1,0 +1,92 @@
+# 12 digit barcode step 1
+-   image: img/at_home/unlocking-the-secret-in-product-codes/12-digit-barcode-steps/unlocking-the-secret-in-product-codes-step-1.jpg
+    presenter_says: Find an item that has a 12 or 13 digit product code on it, such as a can or box from the kitchen. Make sure you don’t show me the product code.
+    presenter_commentary: You may want to have a product with you already so you can show them what you mean by the product code, and how to count the digits.
+    image_description: Child finding a product with a twelve or thirteen digit product code on it.
+# 12 digit barcode step 2
+-   image: img/at_home/unlocking-the-secret-in-product-codes/12-digit-barcode-steps/unlocking-the-secret-in-product-codes-step-2.jpg
+    presenter_says: How many digits are there under the bar code?
+    presenter_commentary: For this to work, there need to be either 12 or 13 digits (most products will have this many, such as the one shown here with 12 digits, although occasionally they will have 8, and some may have no barcode). Make sure they have counted all the digits - often there is one on its own to the left and/or to the right. <br><br> We’ve given illustrations here for both cases; continue with the current instructions if the product has 12 digits, otherwise skip below to the instructions for 13 digits at step 12.
+    image_description: A twelve digit product code.
+# 12 digit barcode step 3
+-   image: img/at_home/unlocking-the-secret-in-product-codes/12-digit-barcode-steps/unlocking-the-secret-in-product-codes-step-3.jpg
+    presenter_says: Please read me the digits underneath the bar code starting at the left, but <strong>do not</strong> tell me the last number.
+    presenter_commentary: Write down the digits on alternating lines as follows...
+    image_description: Child reading out each digit of the product code except the last digit.
+# 12 digit barcode step 4
+-   image: img/at_home/unlocking-the-secret-in-product-codes/12-digit-barcode-steps/unlocking-the-secret-in-product-codes-step-4.jpg
+    presenter_says: Write the digits on two lines, putting every second digit on the other line. The example here is for the 12-digit product shown above (the child should read 0 48001 20802 for that example).
+    image_description: First four digits are written down.
+# 12 digit barcode step 5
+-   image: img/at_home/unlocking-the-secret-in-product-codes/12-digit-barcode-steps/unlocking-the-secret-in-product-codes-step-5.jpg
+    presenter_says: Remember to keep the last digit secret!
+    presenter_commentary: Continue writing the digits on alternating lines; as you get to the 11th digit (6th digit on the first row), remind them to not read the last one. There will be 6 digits on the first line, and 5 digits on the second line. The digits shown here are for the product code 0 4800120802 5.
+    image_description: The rest of the digits are written down except the twelfth digit.
+# 12 digit barcode step 6
+-   image: img/at_home/unlocking-the-secret-in-product-codes/12-digit-barcode-steps/unlocking-the-secret-in-product-codes-step-6.jpg
+    presenter_says: I’ll add up the two lines of numbers.
+    presenter_commentary: Calculate the total of each line.
+    image_description: The total of each line is calculated.
+# 12 digit barcode step 7
+-   image: img/at_home/unlocking-the-secret-in-product-codes/12-digit-barcode-steps/unlocking-the-secret-in-product-codes-step-7.jpg
+    presenter_says: Let’s multiply the first sum by 3.
+    presenter_commentary: Multiply the total of the first line by 3.
+    image_description: The total of the first line is multiplied by three.
+# 12 digit barcode step 8
+-   image: img/at_home/unlocking-the-secret-in-product-codes/12-digit-barcode-steps/unlocking-the-secret-in-product-codes-step-8.jpg
+    presenter_says: We’ll add that to the total of the next line.
+    presenter_commentary: Add the value you just calculated to the total of the second line.
+    image_description: The value just calculated is added to the total of the second line.
+# 12 digit barcode step 9
+-   image: img/at_home/unlocking-the-secret-in-product-codes/12-digit-barcode-steps/unlocking-the-secret-in-product-codes-step-9.jpg
+    presenter_says: What number should I add to that to get a multiple of 10?
+    presenter_commentary: Work out the single digit number that will make your calculation add up to a number ending with 0. In the example it is 5; but if the calculation had been 83, the result would be 7; if it had been 70, then the result would be 0.
+    image_description: Working out what single digit number will make the calulation add up to a number ending in zero.
+# 12 digit barcode step 10
+-   image: img/at_home/unlocking-the-secret-in-product-codes/12-digit-barcode-steps/unlocking-the-secret-in-product-codes-step-10.jpg
+    presenter_says: From reading your mind (or using some computer science!) I’ve worked out what the last digit is on the product... am I right?
+    presenter_commentary: Check that the number (circled) matches the digit that was kept secret. If it doesn’t, it’s possible that the digits were read out incorrectly, but it would pay to check your calculation as well. If the digits were read incorrectly, this is a good learning point, as this is exactly the reason that this calculation is done on product codes!
+    image_description: The twelfth digit is five.
+# 13 digit barcode step 1
+-   image: img/at_home/unlocking-the-secret-in-product-codes/13-digit-barcode-steps/unlocking-the-secret-in-product-codes-step-1.jpg
+    presenter_says: Use these instructions if the chosen product code has 13 digits.
+    image_description: A thirteen digit product code.
+# 13 digit barcode step 2
+-   image: img/at_home/unlocking-the-secret-in-product-codes/13-digit-barcode-steps/unlocking-the-secret-in-product-codes-step-2.jpg
+    presenter_says: Please read me the digits underneath the bar code starting at the left, but <strong>do not</strong> tell me the last number.
+    presenter_commentary: Write down the digits on alternating lines as follows... The product in this example has the code 9 300644 103213.
+    image_description: Child reading out each digit of the product code except the last digit.
+# 13 digit barcode step 3
+-   image: img/at_home/unlocking-the-secret-in-product-codes/13-digit-barcode-steps/unlocking-the-secret-in-product-codes-step-3.jpg
+    presenter_says: Write the digits on two lines, putting every second digit on the other line. The example here is for the 13-digit product shown above (the child should read 9 300644 10321 for that example).
+    image_description: First four digits are written down.
+# 13 digit barcode step 4
+-   image: img/at_home/unlocking-the-secret-in-product-codes/13-digit-barcode-steps/unlocking-the-secret-in-product-codes-step-4.jpg
+    presenter_says: Remember to keep the last digit secret!
+    presenter_commentary: Continue writing the digits on alternating lines; as you get to the 12th digit (6th digit on the second row), remind them to not read the last one. There will be 6 digits on the first line, and 6 digits on the second line. The digits shown here are for the product code 9 300644 103213.
+    image_description: The rest of the digits are written down except the thirteenth digit.
+# 13 digit barcode step 5
+-   image: img/at_home/unlocking-the-secret-in-product-codes/13-digit-barcode-steps/unlocking-the-secret-in-product-codes-step-5.jpg
+    presenter_says: I’ll add up the two lines of numbers.
+    presenter_commentary: Calculate the total of each line.
+    image_description: The total of each line is calculated.
+# 13 digit barcode step 6
+-   image: img/at_home/unlocking-the-secret-in-product-codes/13-digit-barcode-steps/unlocking-the-secret-in-product-codes-step-6.jpg
+    presenter_says: Let’s multiply the second sum by 3.
+    presenter_commentary: Multiply the total of the second line by 3.
+    image_description: The total of the second line is multiplied by three.
+# 13 digit barcode step 7
+-   image: img/at_home/unlocking-the-secret-in-product-codes/13-digit-barcode-steps/unlocking-the-secret-in-product-codes-step-7.jpg
+    presenter_says: We’ll add that to the total of the first line.
+    presenter_commentary: Add the value you just calculated to the total of the first line.
+    image_description: The value just calculated is added to the total of the first line.
+# 13 digit barcode step 8
+-   image: img/at_home/unlocking-the-secret-in-product-codes/13-digit-barcode-steps/unlocking-the-secret-in-product-codes-step-8.jpg
+    presenter_says: What number should I add to that to get a multiple of 10?
+    presenter_commentary: Work out the single digit number that will make your calculation add up to a number ending with 0. In the example it is 3; but if the calculation had been 83, the result would be 7; if it had been 70, then the result would be 0.
+    image_description: Working out what single digit number will make the calulation add up to a number ending in zero.
+# 13 digit barcode step 9
+-   image: img/at_home/unlocking-the-secret-in-product-codes/13-digit-barcode-steps/unlocking-the-secret-in-product-codes-step-9.jpg
+    presenter_says: From reading your mind (or using some computer science!) I’ve worked out what the last digit is on the product... am I right?
+    presenter_commentary: Check that the number matches the digit that was kept secret. If it doesn’t, it’s possible that the digits were read out incorrectly, but it would pay to check your calculation as well. If the digits were read incorrectly, this is a good learning point, as this is exactly the reason that this calculation is done on product codes!
+    image_description: The thirteenth digit is three.

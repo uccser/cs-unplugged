@@ -25,17 +25,3 @@ unless you have advanced students wanting a difficult challenge.
 UPC-E product codes can be recognised because they do not have a double line
 from the bars extending down between the two sets of four digits i.e.
 the 8 digits are all written without any gaps.)
-
-## Testing examples:
-
-Your program should display the outputs shown in this table for the given
-inputs provided:
-
-| Input         | Output                |
-| ------------- | --------------------- |
-| 50184385      | Valid product code!   |
-| 036000241457  | Valid product code!   |
-| 50174385      | Invalid product code! |
-| 9330462119318 | Valid product code!   |
-| 9330463119318 | Invalid product code! |
-| 036002241457  | Invalid product code! |

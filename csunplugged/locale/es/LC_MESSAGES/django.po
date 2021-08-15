@@ -2,16 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs-unplugged\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-11 01:02+0000\n"
-"PO-Revision-Date: 2018-10-11 21:22\n"
-"Last-Translator: uccser-admin <csse-education-research@canterbury.ac.nz>\n"
+"POT-Creation-Date: 2020-03-31 23:54+0000\n"
+"PO-Revision-Date: 2020-04-03 14:16\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: crowdin.com\n"
 "X-Crowdin-Project: cs-unplugged\n"
 "X-Crowdin-Language: es-ES\n"
 "X-Crowdin-File: /csunplugged/locale/en/LC_MESSAGES/django.po\n"
@@ -20,11 +19,11 @@ msgstr ""
 msgid "Classic CS Unplugged page"
 msgstr "Página de CS Unplugged Clásico"
 
-#: config/settings/base.py:139
+#: config/settings/base.py:155
 msgid "Translation mode"
 msgstr "Modo de traducción"
 
-#: config/settings/base.py:145
+#: config/settings/base.py:161
 msgid "Translation mode (Bi-directional)"
 msgstr "Modo de traducción (bidireccional)"
 
@@ -147,15 +146,15 @@ msgstr "Profesor (soluciones)"
 msgid "Worksheet Version"
 msgstr "Versión de la hoja de ejercicios"
 
-#: resources/generators/BinaryToAlphabetResourceGenerator.py:54
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:59
 msgid "Base 10"
 msgstr "Base 10"
 
-#: resources/generators/BinaryToAlphabetResourceGenerator.py:55
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:60
 msgid "Binary"
 msgstr "Binario"
 
-#: resources/generators/BinaryToAlphabetResourceGenerator.py:56
+#: resources/generators/BinaryToAlphabetResourceGenerator.py:61
 msgid "Letter"
 msgstr "Letra"
 
@@ -376,116 +375,140 @@ msgid "Colour (8 possible binary values)"
 msgstr "Color (8 valores binarios posibles)"
 
 #: resources/generators/PixelPainterResourceGenerator.py:19
+msgid "Star - 1 page"
+msgstr "Estrella - 1 página"
+
+#: resources/generators/PixelPainterResourceGenerator.py:20
+msgid "Teacup - 1 page"
+msgstr "Taza de té - 1 página"
+
+#: resources/generators/PixelPainterResourceGenerator.py:21
+msgid "Cat - 1 page"
+msgstr "Gato - 1 página"
+
+#: resources/generators/PixelPainterResourceGenerator.py:22
 msgid "Fish - 6 pages"
 msgstr "Pez - 6 páginas"
 
-#: resources/generators/PixelPainterResourceGenerator.py:20
+#: resources/generators/PixelPainterResourceGenerator.py:23
 msgid "Kauri tree - 6 pages"
 msgstr "Árbol kauri - 6 páginas"
 
-#: resources/generators/PixelPainterResourceGenerator.py:21
+#: resources/generators/PixelPainterResourceGenerator.py:24
 msgid "Butterfly - 6 pages"
 msgstr "Mariposa - 6 páginas"
 
-#: resources/generators/PixelPainterResourceGenerator.py:22
+#: resources/generators/PixelPainterResourceGenerator.py:25
 msgid "Hot air balloon - 8 pages"
 msgstr "Globo aerostático - 8 páginas"
 
-#: resources/generators/PixelPainterResourceGenerator.py:23
+#: resources/generators/PixelPainterResourceGenerator.py:26
 msgid "Boat - 9 pages"
 msgstr "Barco - 9 páginas"
 
-#: resources/generators/PixelPainterResourceGenerator.py:24
+#: resources/generators/PixelPainterResourceGenerator.py:27
 msgid "Parrots - 32 pages"
 msgstr "Loros - 32 páginas"
 
-#: resources/generators/PixelPainterResourceGenerator.py:33
+#: resources/generators/PixelPainterResourceGenerator.py:36
 msgid "Black and White"
 msgstr "Blanco y negro"
 
-#: resources/generators/PixelPainterResourceGenerator.py:40
+#: resources/generators/PixelPainterResourceGenerator.py:43
 msgid "Run length encoding"
 msgstr "Run length encoding"
 
-#: resources/generators/PixelPainterResourceGenerator.py:47
+#: resources/generators/PixelPainterResourceGenerator.py:50
 msgid "Greyscale"
 msgstr "Escala de grises"
 
-#: resources/generators/PixelPainterResourceGenerator.py:56
+#: resources/generators/PixelPainterResourceGenerator.py:59
 msgid "Colour"
 msgstr "Color"
 
-#: resources/generators/PixelPainterResourceGenerator.py:71
+#: resources/generators/PixelPainterResourceGenerator.py:74
+msgid "Star"
+msgstr "Estrella"
+
+#: resources/generators/PixelPainterResourceGenerator.py:75
+msgid "Teacup"
+msgstr "Taza de té"
+
+#: resources/generators/PixelPainterResourceGenerator.py:76
+msgid "Cat"
+msgstr "Gato"
+
+#: resources/generators/PixelPainterResourceGenerator.py:77
 msgid "Boat"
 msgstr "Barco"
 
-#: resources/generators/PixelPainterResourceGenerator.py:72
+#: resources/generators/PixelPainterResourceGenerator.py:78
 msgid "Fish"
 msgstr "Pez"
 
-#: resources/generators/PixelPainterResourceGenerator.py:73
+#: resources/generators/PixelPainterResourceGenerator.py:79
 msgid "Hot air balloon"
 msgstr "Globo aerostático"
 
-#: resources/generators/PixelPainterResourceGenerator.py:74
+#: resources/generators/PixelPainterResourceGenerator.py:80
 #: templates/general/people.html:154
 msgid "Parrots"
 msgstr "Loros"
 
-#: resources/generators/PixelPainterResourceGenerator.py:75
+#: resources/generators/PixelPainterResourceGenerator.py:81
 #: resources/generators/SortingNetworkCardsResourceGenerator.py:69
 msgid "Kauri tree"
 msgstr "Árbol kauri"
 
-#: resources/generators/PixelPainterResourceGenerator.py:76
+#: resources/generators/PixelPainterResourceGenerator.py:82
 msgid "Butterfly"
 msgstr "Mariposa"
 
-#: resources/generators/PixelPainterResourceGenerator.py:98
+#: resources/generators/PixelPainterResourceGenerator.py:104
 msgid "Colouring type"
 msgstr "Tipo de coloración"
 
-#: resources/generators/PixelPainterResourceGenerator.py:104
+#: resources/generators/PixelPainterResourceGenerator.py:110
 msgid "Image"
 msgstr "Imagen"
 
-#: resources/generators/PixelPainterResourceGenerator.py:404
+#: resources/generators/PixelPainterResourceGenerator.py:410
 msgid "Pixel Painter"
 msgstr "Pintor de píxeles"
 
-#: resources/generators/PixelPainterResourceGenerator.py:406
+#: resources/generators/PixelPainterResourceGenerator.py:412
 msgid "This page should be kept secret from students."
 msgstr "Esta página no se debe mostrar a los alumnos."
 
-#: resources/generators/PixelPainterResourceGenerator.py:408
+#: resources/generators/PixelPainterResourceGenerator.py:414
 msgid "Page grid reference for {} image"
 msgstr "Referencia de cuadrícula de página para la imagen {}"
 
-#: resources/generators/PixelPainterResourceGenerator.py:411
+#: resources/generators/PixelPainterResourceGenerator.py:417
 msgid "Once pixels on each page are filled in correctly, cut each grid out and arrange in the following layout (page names are in the top right corner)."
 msgstr "Una vez que los píxeles de cada página se hayan rellenado correctamente, recorta cada cuadrícula y colócalas en el siguiente orden (los nombres de las páginas se encuentran en la esquina superior derecha)."
 
-#: resources/generators/PixelPainterResourceGenerator.py:426
+#: resources/generators/PixelPainterResourceGenerator.py:432
 msgid "The pixel values are using 2 bit colour values."
 msgstr "Los valores de los píxeles usan valores de color de 2 bits."
 
-#: resources/generators/PixelPainterResourceGenerator.py:428
+#: resources/generators/PixelPainterResourceGenerator.py:434
 msgid "The pixel values are using 5 bit RGB colour values (2 red, 2 green, 1 blue)."
 msgstr "Los valores de los píxeles usan valores de color RGB de 5 bits (2 rojos, 2 verdes, 1 azul)."
 
-#: resources/generators/PixelPainterResourceGenerator.py:430
+#: resources/generators/PixelPainterResourceGenerator.py:436
 msgid "Extra pixel legends are at the end of this document for students."
 msgstr "Hay leyendas adicionales sobre los píxeles para los alumnos al final de este documento."
 
-#: resources/generators/PixelPainterResourceGenerator.py:449
+#: resources/generators/PixelPainterResourceGenerator.py:455
 msgid "Pixel legend"
 msgstr "Leyenda de píxeles"
 
-#: resources/generators/PixelPainterResourceGenerator.py:471
+#: resources/generators/PixelPainterResourceGenerator.py:477
 msgid "Run Length Encodings"
 msgstr "Run length encoding"
 
-#: resources/generators/PixelPainterResourceGenerator.py:476
+#: resources/generators/PixelPainterResourceGenerator.py:482
 msgid "Encoding for page {}"
 msgstr "Codificación para la página {}"
 
@@ -579,7 +602,7 @@ msgstr "Ciclo vital de la mariposa"
 msgid "Little Red Riding Hood"
 msgstr "Caperucita Roja"
 
-#: resources/generators/SortingNetworkCardsResourceGenerator.py:108
+#: resources/generators/SortingNetworkCardsResourceGenerator.py:91
 msgid "Card Type"
 msgstr "Tipo de carta"
 
@@ -717,106 +740,142 @@ msgstr "Puede que alguno de los siguientes enlaces te resulte útil:"
 msgid "Homepage"
 msgstr "Página de inicio"
 
-#: templates/404.html:26 templates/base.html:91 templates/base.html:225
+#: templates/404.html:26 templates/base-educators.html:71
+#: templates/core.html:178
 msgid "Search"
 msgstr "Buscar"
 
-#: templates/404.html:32 templates/general/index.html:96
+#: templates/404.html:32 templates/general/index.html:106
 #: templates/general/people.html:74
 msgid "Classic CS Unplugged"
 msgstr "CS Unplugged Clásico"
 
-#: templates/base.html:25 templates/general/index.html:7
-#: templates/general/people.html:21
-msgid "CS Unplugged"
-msgstr "CS Unplugged"
+#: templates/at-home/index.html:8
+msgid "CS Unplugged at home"
+msgstr "CS Unplugged en casa"
 
-#: templates/base.html:60
+#: templates/at-home/index.html:21
+msgid "Try something different away from the screen"
+msgstr "Prueba algo diferente lejos de la pantalla"
+
+#: templates/at-home/index.html:27
+#: templates/topics/not-available-warning.html:6
+#, python-format
+msgid "<h4>Sorry! This item is not yet available in %(language)s.</h4> <p>This item is available in the following languages:</p>"
+msgstr "<h4>¡Lo sentimos! Este elemento todavía no está disponible en %(language)s.</h4> <p>Este elemento está disponible en los siguientes idiomas:</p>"
+
+#: templates/at-home/index.html:38
+#: templates/topics/not-available-warning.html:36
+msgid "Return to homepage "
+msgstr "Volver a la página de inicio "
+
+#: templates/at-home/index.html:55
+msgid "<strong>Welcome to Computer Science Unplugged!</strong> This is a collection of fun and engaging activities that enable children to explore fundamental ideas in Computer Science, <em>without</em> having to use a computer. Traditionally these activities have been designed to be used with school classes and larger groups, but we’ve got many ideas for you to try out if you’re at home."
+msgstr "<strong>¡Bienvenido a Computer Science Unplugged!</strong> Se trata de una colección de actividades divertidas y estimulantes que permiten a los niños explorar las ideas fundamentales de la informática, <em>sin</em> tener que usar un ordenador. Tradicionalmente, estas actividades han sido diseñadas para ser utilizadas con clases escolares y grupos grandes, pero tenemos muchas ideas que podrás probar si estás en casa."
+
+#: templates/base-at-home.html:28 templates/base-educators.html:28
 msgid "Language"
 msgstr "Idioma"
 
-#: templates/base.html:78 templates/base.html:188
-#: templates/general/index.html:74 templates/topics/index.html:8
+#: templates/base-at-home.html:58
+msgid "Back to CS Unplugged"
+msgstr "Volver a CS Unplugged"
+
+#: templates/base-educators.html:56 templates/core.html:136
+#: templates/general/index.html:67 templates/topics/index.html:8
 #: templates/topics/index.html:16
 msgid "Topics"
 msgstr "Temas"
 
-#: templates/base.html:79 templates/base.html:193
-#: templates/general/index.html:81 templates/resources/index.html:8
+#: templates/base-educators.html:57 templates/core.html:141
+#: templates/general/index.html:72 templates/resources/index.html:8
 #: templates/resources/index.html:16 templates/topics/lesson.html:74
 msgid "Printables"
 msgstr "Para imprimir"
 
-#: templates/base.html:80 templates/base.html:183
+#: templates/base-educators.html:58 templates/core.html:131
 #: templates/general/about.html:7 templates/general/about.html:15
 #: templates/general/base.html:10
 msgid "About"
 msgstr "Acerca de"
 
-#: templates/base.html:103
+#: templates/core.html:25 templates/general/index.html:7
+#: templates/general/people.html:21
+msgid "CS Unplugged"
+msgstr "CS Unplugged"
+
+#: templates/core.html:51
 msgid "Home"
 msgstr "Inicio"
 
-#: templates/base.html:154
+#: templates/core.html:102
 msgid "Looking for something for high schools? Check out the <a href=\"http://csfieldguide.org.nz/\">Computer Science Field Guide</a>."
 msgstr "¿Buscas cosas para institutos? Consulta la <a href=\"http://csfieldguide.org.nz/\">Computer Science Field Guide</a>."
 
-#: templates/base.html:166
+#: templates/core.html:114
 msgid "The primary goal of the Unplugged project is to promote Computer Science (and computing in general) to young people as an interesting, engaging, and intellectually stimulating discipline."
 msgstr "El objetivo principal del proyecto Unplugged es promocionar la Informática (y la computación en general) entre los jóvenes como una disciplina interesante, fascinante e intelectualmente estimulante."
 
-#: templates/base.html:172
+#: templates/core.html:120
 #, python-format
 msgid "Read more about <a href=\"%(principles_url)s\">our principles here</a>."
 msgstr "Lee más información acerca de <a href=\"%(principles_url)s\">nuestros principios aquí</a>."
 
-#: templates/base.html:179
+#: templates/core.html:127
 msgid "Useful Links"
 msgstr "Enlaces útiles"
 
-#: templates/base.html:199
+#: templates/core.html:146
+msgid "At home"
+msgstr "En casa"
+
+#: templates/core.html:152
 msgid "Community"
 msgstr "Comunidad"
 
-#: templates/base.html:203
+#: templates/core.html:156
 msgid "Twitter"
 msgstr "Twitter"
 
-#: templates/base.html:208
+#: templates/core.html:161
 msgid "YouTube"
 msgstr "YouTube"
 
-#: templates/base.html:213
+#: templates/core.html:166
 msgid "GitHub"
 msgstr "GitHub"
 
-#: templates/base.html:219
+#: templates/core.html:172
 msgid "Help"
 msgstr "Ayuda"
 
-#: templates/base.html:231 templates/topics/glossary.html:8
+#: templates/core.html:184 templates/topics/glossary.html:8
 #: templates/topics/glossary.html:17
 msgid "Glossary"
 msgstr "Glosario"
 
-#: templates/base.html:236
+#: templates/core.html:189
 msgid "Feedback"
 msgstr "Comentarios"
 
-#: templates/base.html:241 templates/general/contact.html:7
+#: templates/core.html:194 templates/general/contact.html:7
 msgid "Contact"
 msgstr "Contacto"
 
-#: templates/base.html:265
+#: templates/core.html:218
 msgid "The CS Unplugged material is open source on <a href=\"https://github.com/uccser/cs-unplugged\">GitHub</a>, and this website's content is shared under a <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons Attribution-ShareAlike 4.0 International license</a>. The CS Unplugged is a project by the <a href=\"https://www.canterbury.ac.nz/engineering/schools/csse/research/cse/\">Computer Science Education Research Group</a> at the <a href=\"http://www.canterbury.ac.nz/\">University of Canterbury</a>, New Zealand."
 msgstr "El material de CS Unplugged es de acceso libre y se encuentra en <a href=\"https://github.com/uccser/cs-unplugged\">GitHub</a>y el contenido de este sitio web se comparte bajo una <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">licencia Attribution-ShareAlike 4.0 International de Creative Commons</a>. CS Unplugged es un proyecto llevado a cabo por el <a href=\"https://www.canterbury.ac.nz/engineering/schools/csse/research/cse/\">Computer Science Education Research Group</a> de la <a href=\"http://www.canterbury.ac.nz/\">Universidad de Canterbury</a>, Nueva Zelanda."
 
-#: templates/base.html:288
+#: templates/core.html:222
+msgid "Icons provided generously by <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://icons8.com/\">icons8</a>."
+msgstr "Iconos proporcionados generosamente por <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://icons8.com/\">icons8</a>."
+
+#: templates/core.html:244
 #, python-format
 msgid "This definition is not available in %(language)s, sorry!"
 msgstr "¡Lamentablemente esta definición no está disponible en %(language)s!"
 
-#: templates/base.html:295
+#: templates/core.html:251
 msgid "Close"
 msgstr "Cerrar"
 
@@ -838,15 +897,20 @@ msgstr "Gracias a generosos patrocinios, hemos podido crear recursos asociados c
 
 #: templates/general/about.html:42
 #, python-format
+msgid "For an explanation on the connections between CS Unplugged and Computational Thinking skills, see our <a href=\"%(computational_thinking_url)s\">Computational Thinking and CS Unplugged page</a>."
+msgstr "Para ver una explicación sobre las conexiones entre CS Unplugged y las habilidades del pensamiento computacional, consulta nuestra <a href=\"%(computational_thinking_url)s\">página Pensamiento computacional y CS Unplugged</a>."
+
+#: templates/general/about.html:49
+#, python-format
 msgid "To view the team of contributors who work on this project, see our <a href=\"%(people_url)s\">people page</a>."
 msgstr "Para el ver el equipo de colaboradores que trabaja en este proyecto, consulta nuestra <a href=\"%(people_url)s\">página de personal</a>."
 
-#: templates/general/about.html:49
+#: templates/general/about.html:56
 #, python-format
 msgid "For details on how to contact us, see our <a href=\"%(contact_url)s\">contact us page</a>."
 msgstr "Para obtener más información sobre cómo contactar con nosotros, consulta nuestra <a href=\"%(contact_url)s\">página de contacto</a>."
 
-#: templates/general/about.html:56
+#: templates/general/about.html:63
 #, python-format
 msgid "For more information about the principles behind CS Unplugged, see our <a href=\"%(principles_url)s\">principles page</a>."
 msgstr "Para obtener más información acerca de los principios detrás de CS Unplugged, consulta nuestra <a href=\"%(principles_url)s\">página de principios</a>."
@@ -857,7 +921,7 @@ msgstr "Páginas Acerca de"
 
 #: templates/general/base.html:11
 #: templates/general/computational-thinking.html:8
-#: templates/general/computational-thinking.html:16
+#: templates/general/computational-thinking.html:17
 msgid "Computational Thinking and CS Unplugged"
 msgstr "Pensamiento computacional y CS Unplugged"
 
@@ -875,163 +939,163 @@ msgstr "Personal"
 msgid "Contact Us"
 msgstr "Contacto"
 
-#: templates/general/computational-thinking.html:20
+#: templates/general/computational-thinking.html:21
 msgid "What is Computational Thinking?"
 msgstr "¿Qué es el pensamiento computacional?"
 
-#: templates/general/computational-thinking.html:23
+#: templates/general/computational-thinking.html:24
 msgid "The world we live in has become a digital one, filled with technology and driven by Computer Science. Software and technology have transformed every subject and job area, from science and medicine, to art history and psychology. Digital technology is ubiquitous. To be informed and empowered citizens, the next generation of students need to understand this digital world that they live in."
 msgstr "El mundo donde vivimos se ha convertido en un mundo digital, lleno de tecnología e impulsado por la informática. El software y la tecnología han transformado todas las materias y áreas de trabajo, desde la ciencia y la medicina, hasta la historia del arte y la psicología. La tecnología digital es omnipresente. Para ser ciudadanos informados y empoderados, la próxima generación de estudiantes debe comprender este mundo digital en el que viven."
 
-#: templates/general/computational-thinking.html:32
+#: templates/general/computational-thinking.html:33
 msgid "This is why Computational Thinking has been called the ‘21st Century Skill Set’, and is important for everyone to learn. It is critical to understanding how the digital world works, for harnessing the power of computers to solve tough problems, and making great things happen! It also enables us to think critically about not just the benefits of certain technologies, but also the potential harm, ethical implications, or unintended consequences of these."
 msgstr "Esta es la razón por la que se ha llamado al pensamiento computacional el \"conjunto de habilidades del siglo XXI\" y es importante que todos lo aprendan. Es fundamental para comprender cómo funciona el mundo digital, para aprovechar el poder de los ordenadores para resolver problemas difíciles y hacer que sucedan cosas geniales. También nos permite pensar críticamente no solo sobre los beneficios de ciertas tecnologías, sino también sobre el daño potencial, las implicaciones éticas o las consecuencias no deseadas de estas."
 
-#: templates/general/computational-thinking.html:40
+#: templates/general/computational-thinking.html:41
 msgid "But what exactly is Computational Thinking? Let’s have a look at a technical definition..."
 msgstr "Pero, ¿qué es exactamente el pensamiento computacional? Echemos un vistazo a una definición técnica..."
 
-#: templates/general/computational-thinking.html:47
+#: templates/general/computational-thinking.html:48
 msgid "\"Computational Thinking is the thought processes involved in formulating problems and their solutions so that the solutions are represented in a form that can be effectively carried out by an information-processing agent.\""
 msgstr "\"El pensamiento computacional lo conforman los procesos de pensamiento involucrados en la formulación de problemas y sus soluciones para que las soluciones se representen de una forma que pueda ser llevada a cabo de manera eficaz por un agente de procesamiento de información.\""
 
-#: templates/general/computational-thinking.html:57
+#: templates/general/computational-thinking.html:58
 msgid "Phew, it’s quite a mouthful isn’t it? But, as we like to say at CS Unplugged, it’s just big words for simple ideas! 'Information-processing agent' means anything that follows a set of instructions to complete a task (we call this 'computing'). Most of the time this 'agent' means a computer or other type of digital device - but it could also be a human! We’ll refer to it as a computer to make things a bit simpler. To represent solutions in a way that a computer can carry them out, we have to represent them as a step by step process - an <strong>algorithm</strong>. To create these algorithmic solutions we apply some special problem solving skills to. These skill are what make up Computational Thinking! And they are skills that are transferrable to any field."
 msgstr "Vaya trabalenguas, ¿verdad? Pero, como nos gusta decir en CS Unplugged, ¡son solo palabras complicadas para ideas sencillas! \"Agente de procesamiento de información\" significa cualquier cosa que siga un conjunto de instrucciones para completar una tarea (a esto lo llamamos \"computación\"). La mayoría de las ocasiones, este \"agente\" es un ordenador u otro tipo de dispositivo digital - ¡pero también podría ser un humano! Nos referiremos a él como un ordenador para hacer las cosas un poco más simples. Para representar soluciones de manera que un ordenador pueda llevarlas a cabo, debemos representarlas como un proceso paso a paso - un <strong>algoritmo</strong>. Para crear estas soluciones algorítmicas, usamos algunas habilidades especiales de resolución de problemas. ¡Estas habilidades son las que forman el pensamiento computacional! Y son habilidades que se pueden transferir a cualquier campo."
 
-#: templates/general/computational-thinking.html:71
+#: templates/general/computational-thinking.html:72
 msgid "Computational Thinking could be described as 'thinking like a Computer Scientist', but it is now an important skill for everyone to learn, whether they want to be a Computer Scientist or not! It’s interesting, and important, to note that Computational Thinking, and Computer Science, aren’t entirely about computers, they are more about <strong>people</strong>. You might think that we write programs for computers, but really we write programs for people - to help them communicate, find information, and solve problems."
 msgstr "El pensamiento computacional se puede describir como \"pensar como un informático\", pero hoy en día es una habilidad importante que todo el mundo debería aprender, ¡aunque no quieran ser informáticos! Es interesante, e importante, señalar que el pensamiento computacional y la Informática no tratan solo de ordenadores, tienen más que ver con las <strong>personas</strong>. Podrías pensar que escribimos programas para ordenadores, pero realmente los escribimos para las personas - para ayudarlas a comunicarse, a encontrar información y a resolver problemas."
 
-#: templates/general/computational-thinking.html:79
+#: templates/general/computational-thinking.html:80
 msgid "For example, you might use an app on a smartphone to get directions to a friend's house; the app is an example of a computer program, and the smartphone is the \"information processing agent\" that runs the program for us. Whoever designed the algorithm for working out the best route, and all the details like the interface and how to store the map, applied computational thinking to design the system. But they didn't design it for the sake of the smartphone; they designed it to help the person using the smartphone."
 msgstr "Por ejemplo, puedes usar una aplicación en un smartphone para ver cómo llegar a la casa de un amigo; la aplicación es un ejemplo de un programa de ordenador y el smartphone es el \"agente de procesamiento de información\" que ejecuta el programa para nosotros. Quienes diseñaron el algoritmo para encontrar la mejor ruta y todos los detalles como la interfaz y cómo almacenar el mapa, aplicaron el pensamiento computacional para diseñar el sistema. Pero no lo diseñaron por el bien del smartphone; lo diseñaron para ayudar a la persona que lo usa."
 
-#: templates/general/computational-thinking.html:86
+#: templates/general/computational-thinking.html:87
 msgid "Computational Thinking in CS Unplugged"
 msgstr "Pensamiento computacional en CS Unplugged"
 
-#: templates/general/computational-thinking.html:88
+#: templates/general/computational-thinking.html:89
 msgid "<p> Throughout the lessons and units in CS Unplugged there are many links to Computational Thinking. Teaching Computational Thinking through CS Unplugged activities teaches students how to: </p> <ul> <li>describe a problem,</li> <li>identify the important details needed to solve this problem,</li> <li>break the problem down into small, logical steps,</li> <li>use these steps to create a process (algorithm) that solves the problem,</li> <li>and then evaluate this process.</li> </ul>"
 msgstr "<p> A lo largo de las lecciones y las unidades en CS Unplugged hay muchos enlaces al pensamiento computacional. La enseñanza del pensamiento computacional a través de las actividades de CS Unplugged le enseña a los alumnos cómo: </p> <ul> <li>describir un problema,</li> <li>identificar los detalles importantes necesarios para resolver este problema,</li> <li>descomponer el problema en pequeños y lógicos pasos,</li> <li>utilizar estos pasos para crear un proceso (algoritmo) que resuelva el problema,</li> <li>y luego evaluar este proceso.</li> </ul>"
 
-#: templates/general/computational-thinking.html:105
+#: templates/general/computational-thinking.html:106
 msgid "These skills are transferable to any other curriculum area, but are particularly relevant to developing digital systems and solving problems using the capabilities of computers.</p>"
 msgstr "Estas habilidades son transferibles a cualquier otra área curricular, pero son particularmente relevantes para desarrollar sistemas digitales y para resolver problemas utilizando la capacidad de los ordenadores.</p>"
 
-#: templates/general/computational-thinking.html:110
+#: templates/general/computational-thinking.html:111
 msgid "These Computational Thinking concepts are all connected to each other and support each other, but it's important to note that not all aspects of Computational Thinking will necessarily happen in every unit or lesson. In each unit and lesson we've highlighted the important connections for you to observe your students in action."
 msgstr "Estos conceptos del pensamiento computacional están todos conectados entre sí y se apoyan mutuamente, pero es importante tener en cuenta que no necesariamente todos los aspectos del pensamiento computacional ocurrirán en cada unidad o lección. En cada unidad y lección, hemos resaltado las conexiones importantes para que puedas observar a tus alumnos en acción."
 
-#: templates/general/computational-thinking.html:117
+#: templates/general/computational-thinking.html:118
 msgid "There are a number of definitions of Computational Thinking, but most have a set of 5 or 6 problem solving skills that Computational Thinking embodies. For the Unplugged project we've identified the following six CT skills that are often mentioned in the literature; they are described below, and at the end of each Unplugged lesson we've identified ways that these skills appeared in the lesson, to help you see the CT connection with the lessons."
 msgstr "Hay una serie de definiciones de pensamiento computacional, pero la mayoría tiene un conjunto de 5 o 6 habilidades de resolución de problemas que representan el pensamiento computacional. Para el proyecto Unplugged, hemos identificado las siguientes seis habilidades de PC que a menudo se mencionan en la bibliografía; se describen a continuación y al final de cada lección de Unplugged, hemos identificado las formas en que se manifestaron estas habilidades en la lección, para ayudarte a ver la conexión del PC con las lecciones."
 
-#: templates/general/computational-thinking.html:123
+#: templates/general/computational-thinking.html:124
 msgid "Computational Thinking skills"
 msgstr "Habilidades del pensamiento computacional"
 
-#: templates/general/computational-thinking.html:127
+#: templates/general/computational-thinking.html:128
 msgid "Algorithmic thinking"
 msgstr "Pensamiento algorítmico"
 
-#: templates/general/computational-thinking.html:132
+#: templates/general/computational-thinking.html:133
 msgid "Algorithms are at the heart of Computational Thinking and Computer Science, because in Computer Science the solutions to problems are not simply an answer (e.g. ‘42’, or a fact), they are algorithms. An algorithm is a step-by-step process that solves a problem or completes a task. If you follow the algorithm's steps correctly, you will arrive at a correct solution, even for different inputs. For example, we can use an algorithm to find the shortest route between two locations on a map; the same algorithm can be used for any pair of starting and finishing points, so the solution depends on the input to the algorithm. If we know the algorithm for solving a problem then we can solve that problem easily, whenever we want, without having to think! We can just follow the steps. Computers can’t think for themselves, so they need to be given algorithms to do things."
 msgstr "Los algoritmos están en el corazón del pensamiento computacional y la informática, porque en informática las soluciones a los problemas no son simplemente respuestas (p. ej. \"42\" o un hecho), sino que son algoritmos. Un algoritmo es un proceso que paso por paso resuelve un problema o completa una tarea. Si sigues los pasos del algoritmo correctamente, llegarás a una solución correcta, incluso para diferentes entradas. Por ejemplo, podemos usar un algoritmo para encontrar la ruta más corta entre dos ubicaciones en un mapa; el mismo algoritmo se puede usar para cualquier par de puntos de inicio y llegada, por lo que la solución depende de la entrada del algoritmo. Si conocemos el algoritmo para resolver un problema, entonces podemos resolver ese problema fácilmente, cuando queramos, ¡sin tener que pensar! Solo debemos seguir los pasos. Los ordenadores no pueden pensar por sí mismos, por lo que necesitan algoritmos para hacer las cosas."
 
-#: templates/general/computational-thinking.html:143
+#: templates/general/computational-thinking.html:144
 msgid "Algorithmic thinking is the process of creating algorithms. When we create an algorithm to solve a problem, we call this an algorithmic solution."
 msgstr "El pensamiento algorítmico es el proceso de creación de algoritmos. Cuando creamos un algoritmo para resolver un problema, lo llamamos una solución algorítmica."
 
-#: templates/general/computational-thinking.html:150
+#: templates/general/computational-thinking.html:151
 msgid "Computational algorithms (the kind that can run on digital devices) have relatively few ingredients because digital devices only have a few types of instruction that they can follow; the main things they can do are receive input, provide output, store values, follow instructions in a sequence, choose between options, and repeat instructions in a loop. Despite how limited this range of instructions is, we've described everything that digital devices can compute, and this is why algorithms are described restricted to these elements."
 msgstr "Los algoritmos computacionales (del tipo que se puede ejecutar en dispositivos digitales) tienen relativamente pocos ingredientes porque los dispositivos digitales solo tienen unos pocos tipos de instrucciones que pueden seguir; las principales cosas que pueden hacer son recibir entrada, proporcionar salida, almacenar valores, seguir instrucciones en una secuencia, elegir entre opciones y repetir instrucciones en un bucle. A pesar de lo limitada que es esta gama de instrucciones, hemos descrito todo lo que los dispositivos digitales pueden computar y esta es la razón por la que los algoritmos están restringidos a estos elementos."
 
-#: templates/general/computational-thinking.html:160
+#: templates/general/computational-thinking.html:161
 msgid "Abstraction"
 msgstr "Abstracción"
 
-#: templates/general/computational-thinking.html:165
+#: templates/general/computational-thinking.html:166
 msgid "Abstraction is all about simplifying things to help us manage complexity. It requires identifying what the most important aspects of a problem are and hiding the other specific details that we don’t need to focus on. The important aspects can be used to create a model, or simplified representation, of the original thing we were dealing with. We can then work with this model to solve the problem, rather than having to deal with all the nitty gritty details at once. Computer Scientists often work with multiple levels of abstraction."
 msgstr "La abstracción consiste en simplificar las cosas para ayudarnos a gestionar la complejidad. Requiere identificar cuáles son los aspectos más importantes de un problema y ocultar los otros detalles específicos en los que no necesitamos centrarnos. Los aspectos importantes se pueden usar para crear un modelo o una representación simplificada de la cosa original con la que estábamos tratando. Entonces podemos trabajar con este modelo para resolver el problema, en lugar de tener que lidiar con todos los detalles esenciales a la vez. Los informáticos a menudo trabajan con múltiples niveles de abstracción."
 
-#: templates/general/computational-thinking.html:175
+#: templates/general/computational-thinking.html:176
 msgid "We use abstraction often in our everyday lives, for example when we use maps. Maps show us a simplified version of the world by leaving out unnecessary details, like where every individual tree in a park is, and only keeping the most relevant information the map reader will need, such as roads and street names."
 msgstr "Usamos la abstracción a menudo en nuestra vida cotidiana, por ejemplo, cuando usamos mapas. Los mapas nos muestran una versión simplificada del mundo al omitir detalles innecesarios, como dónde se encuentra cada árbol en un parque y solo conservan la información más relevante que el lector del mapa necesitará, como carreteras y nombres de calles."
 
-#: templates/general/computational-thinking.html:182
+#: templates/general/computational-thinking.html:183
 msgid "Digital devices use abstraction all the time; they try to hide as much unnecessary information from the user as possible. For example, let's say you took a nice scenic photo on your last camping trip, and now you want to edit it on your laptop and adjust the colours in it. Normally we could do this by opening a picture editing program, adjusting some colour sliders or maybe choosing a filter. When you do this there are a lot of complicated operations happening which the computer is hiding from you."
 msgstr "Los dispositivos digitales usan la abstracción todo el tiempo; intentan ocultar tanta información innecesaria como sea posible. Por ejemplo, supongamos que hiciste una bonita foto panorámica en tu última acampada y ahora deseas editarla en el portátil y ajustar los colores. Normalmente podríamos hacer esto abriendo un programa de edición de imágenes, ajustando algunos controles deslizantes de color o tal vez eligiendo un filtro. Cuando haces esto suceden muchas operaciones complicadas que el ordenador te oculta."
 
-#: templates/general/computational-thinking.html:195
+#: templates/general/computational-thinking.html:196
 msgid "The picture you took is stored on the computer as a big list of pixels, which are each a different colour, and each colour is represented by a set of numbers, and each of these numbers are stored as binary digits! That’s a lot of information. Imagine if when you adjusted the colours you had to go through and look at all the colour values of every pixel and change each and every one of those! That’s what the computer is doing for you, but since you don’t need to know this to accomplish your goal the computer hides this information away."
 msgstr "La foto que hiciste se almacena en el ordenador como una gran lista de píxeles, cada uno de un color diferente y cada color se representa mediante un conjunto de números y cada uno de estos números se almacena como dígitos binarios. Eso es mucha información. ¡Imagínate si al ajustar los colores tuvieras que repasar y mirar todos los valores del color de cada píxel y cambiarlos todos! Eso es lo que el ordenador hace por ti, pero como tú no necesitas saber todo esto para lograr tu objetivo, el ordenador oculta esta información."
 
-#: templates/general/computational-thinking.html:206
+#: templates/general/computational-thinking.html:207
 msgid "Decomposition"
 msgstr "Descomposición"
 
-#: templates/general/computational-thinking.html:211
+#: templates/general/computational-thinking.html:212
 msgid "Decomposition is about breaking down problems into smaller, more manageable, parts, and then focusing on solving each of these smaller problems. We can break a complex problem down until the smaller parts are so simple they become easy to solve. The solutions to each of these smaller, and simpler, problems build up to a solution to the big problem we started with. Decomposition helps make large problems much less intimidating!"
 msgstr "La descomposición consiste en descomponer los problemas en partes más pequeñas y manejables, para luego enfocarse en resolver cada uno de estos problemas más pequeños. Podemos descomponer un problema complejo hasta que las partes más pequeñas sean tan simples que sean fáciles de resolver. Las soluciones para cada uno de estos problemas más pequeños y simples se convierten en una solución al gran problema con el que comenzamos. ¡La descomposición ayuda a que los problemas grandes sean mucho menos intimidantes!"
 
-#: templates/general/computational-thinking.html:220
+#: templates/general/computational-thinking.html:221
 msgid "Decomposition is an important skill for creating algorithms and processes that can be implemented on a computing device, because computers need very specific instructions. They need to be told each of the tiny steps they need to follow in order to do things."
 msgstr "La descomposición es una habilidad importante para crear algoritmos y procesos que se puedan implementar en un dispositivo informático, porque los ordenadores necesitan instrucciones muy específicas. Necesitan que les digan cada uno de los pequeños pasos que deben seguir para hacer las cosas."
 
-#: templates/general/computational-thinking.html:227
+#: templates/general/computational-thinking.html:228
 msgid "For example the overall task of making a cake can be decomposed into several smaller tasks, each of which can be performed easily."
 msgstr "Por ejemplo, la tarea general de hacer una tarta se puede descomponer en varias tareas más pequeñas, cada una de las cuales se puede realizar fácilmente."
 
-#: templates/general/computational-thinking.html:232
+#: templates/general/computational-thinking.html:233
 msgid "<p><strong>Make cake</strong></p> <ol> <li>Bake cake <ol> <li>Put ingredients in bowl (butter, sugar, egg, flour)</li> <li>Mix</li> <li>Pour into tin</li> <li>Put in oven for 30mins</li> <li>Take out of tin</li> </ol> </li> <li>Make icing</li> <li>Put on cake</li> </ol>"
 msgstr "<p><strong>Hacer tarta</strong></p> <ol> <li>Hornear tarta<ol> <li>Poner los ingredientes en un cuenco (mantequilla, azúcar, huevo, harina)</li> <li>Mezclar</li> <li>Verter en el molde</li> <li>Meter al horno durante 30 min.</li> <li>Sacarla del molde</li> </ol> </li> <li>Hacer el glaseado</li> <li>Poner sobre la tarta</li> </ol>"
 
-#: templates/general/computational-thinking.html:254
+#: templates/general/computational-thinking.html:255
 msgid "Generalising and patterns"
 msgstr "Generalización y patrones"
 
-#: templates/general/computational-thinking.html:259
+#: templates/general/computational-thinking.html:260
 msgid "Generalising is also referred to as 'pattern recognition and generalisation'. Generalisation is taking a solution (or part of a solution) to a problem and generalising it so it can be applied to other similar problems and tasks. Since solutions in Computer Science are algorithms, this means we take an algorithm and make it general enough that it can be used for a range of problems. This process involves abstraction, because to make something more general we have to remove unnecessary details that are related to a specific problem or situation, but are not important to how the algorithm functions."
 msgstr "La generalización también se conoce como \"reconocimiento y generalización de patrones\". La generalización consiste en tomar una solución (o parte de una solución) a un problema y generalizarla para que se pueda aplicar a otros problemas y tareas similares. Dado que las soluciones en informática son algoritmos, esto significa que debemos tomar un algoritmo y hacerlo lo suficientemente general de manera que se pueda usar para una variedad de problemas. Este proceso implica la abstracción, ya que para hacer algo más general, tenemos que eliminar detalles innecesarios que están relacionados con un problema o una situación específica, pero no son importantes para el funcionamiento del algoritmo."
 
-#: templates/general/computational-thinking.html:268
+#: templates/general/computational-thinking.html:269
 msgid "Spotting patterns is an important part of this process, when we think about problems we might recognise similarities between them and that they can be solved in similar ways. This is called pattern matching, and it’s something we do naturally all the time in our daily life."
 msgstr "La identificación de patrones es una parte importante de este proceso. Cuando pensamos en problemas, podemos detectar similitudes entre ellos y ver que se pueden resolver de manera similar. Esto se llama concordancia de patrones y es algo que hacemos de forma natural todo el tiempo en nuestra vida diaria."
 
-#: templates/general/computational-thinking.html:275
+#: templates/general/computational-thinking.html:276
 msgid "Generalised algorithms can be reused for a whole group of similar problems, which means we can come up with solutions quickly and effectively."
 msgstr "Los algoritmos generalizados se pueden reutilizar para un grupo completo de problemas similares, lo que significa que podemos encontrar soluciones de manera rápida y eficaz."
 
-#: templates/general/computational-thinking.html:284
+#: templates/general/computational-thinking.html:285
 msgid "Evaluation"
 msgstr "Evaluación"
 
-#: templates/general/computational-thinking.html:289
+#: templates/general/computational-thinking.html:290
 msgid "Evaluation is about identifying the possible solutions to a problem and judging which is the best to use, if they will work in some situations but not others, and how they can be improved. When judging our solutions we need to think about a range of factors. For example how much time it will take these processes (algorithms) to solve the problem and will it reliably solve the problem, or if there are certain situations where it will perform in a very different way. Evaluation is something we do a lot in our everyday lives."
 msgstr "La evaluación consiste en identificar las posibles soluciones a un problema y juzgar cuál nos conviene usar, si funcionarán en algunas situaciones pero no en otras y cómo se pueden mejorar. Al juzgar nuestras soluciones, debemos pensar en una variedad de factores. Por ejemplo, cuánto tiempo tardarán estos procesos (algoritmos) en resolver el problema y si lo resolverá de forma fiable o si hay ciertas situaciones en las que funcionará de una manera muy diferente. La evaluación es algo que practicamos constantemente en nuestra vida cotidiana."
 
-#: templates/general/computational-thinking.html:298
+#: templates/general/computational-thinking.html:299
 msgid "There are different ways we can evaluate our algorithmic solutions. We can test their speed by implementing them on a computer; or we can analyse them by counting or calculating how many steps they are likely to take. We can test that our algorithmic solutions work correctly by giving them lots of different inputs, and checking they work as expected. When we do this we need to think about the different inputs we test, because we don’t want to check every possible input (often there's an infinite number of possible inputs!), but we still need to know if our algorithmic solutions will work for all inputs. Testing is something Computer Scientists and programmers do all the time. But because we can't usually test every possible input, we also try to evaluate a system using logical reasoning."
 msgstr "Existen diferentes maneras de evaluar nuestras soluciones algorítmicas. Podemos probar su velocidad implementándolas en un ordenador; o podemos analizarlas contando o calculando cuántos pasos es probable que necesiten. Podemos probar que nuestras soluciones algorítmicas funcionan correctamente proporcionándoles muchas entradas diferentes y verificando que funcionan como esperamos. Cuando hacemos esto, tenemos que pensar en las diferentes entradas que probamos, porque no queremos verificar todas las entradas posibles (¡a menudo hay un número infinito de posibles entradas!), pero aún necesitamos saber si nuestras soluciones algorítmicas funcionarán para todas ellas. La realización de pruebas es algo que los informáticos y programadores hacen todo el tiempo. Pero como normalmente no podemos probar todas las entradas posibles, también tratamos de evaluar un sistema utilizando el razonamiento lógico."
 
-#: templates/general/computational-thinking.html:312
+#: templates/general/computational-thinking.html:313
 msgid "Logic"
 msgstr "Lógica"
 
-#: templates/general/computational-thinking.html:317
+#: templates/general/computational-thinking.html:318
 msgid "When trying to solve problems we need to think logically. Logical reasoning is about trying to make sense of things by observing, collecting data, thinking about the facts you know, and then figuring things out based on what you already know. It helps us use our existing knowledge to establish rules and check facts."
 msgstr "Al tratar de resolver problemas, debemos pensar de forma lógica. El razonamiento lógico consiste en tratar de darle sentido a las cosas observando, recopilando datos, pensando en los hechos conocidos y luego resolviendo las cosas en función de lo que ya se sabe. Nos ayuda a usar nuestro conocimiento existente para establecer reglas y verificar hechos."
 
-#: templates/general/computational-thinking.html:325
+#: templates/general/computational-thinking.html:326
 msgid "For example, suppose you are writing software that works out the shortest route to a location from your house. In the following map it's 2 minutes to the library if you head north from your house, but if you head south it's 3 minutes to the next intersection. You might wonder if there's a better route to the library if you start by heading south, but logically there can't be because you'll already have walked for 3 minutes to get to the intersection."
 msgstr "Por ejemplo, supongamos que estás desarrollando un programa que calcula la ruta más corta a una ubicación desde tu casa. En el siguiente mapa, la biblioteca se encuentra a 2 minutos si vas hacia el norte desde tu casa, pero si vas hacia el sur, el siguiente cruce se encuentra a 3 minutos. Quizás te preguntes si hay una ruta mejor hacia la biblioteca si comienzas dirigiéndote hacia el sur, pero lógicamente no puede existir porque ya habrías caminado durante 3 minutos para llegar al cruce."
 
-#: templates/general/computational-thinking.html:333
+#: templates/general/computational-thinking.html:334
 msgid "At a deeper level, computers are built entirely on logic. They use 'True' and 'False' values, and use something called 'Boolean expressions', like “is age > 5”, to make decisions in computer programs."
 msgstr "A un nivel más profundo, los ordenadores están construidos completamente sobre la lógica. Usan los valores \"Verdadero\" y \"Falso\" y usan una cosa llamada \"expresiones booleanas\", como \"edad > 5\", para tomar decisiones en los programas de ordenador."
 
-#: templates/general/computational-thinking.html:340
+#: templates/general/computational-thinking.html:341
 msgid "Tracking down a bug in a program also requires logical thinking, to work out where, and why, something in the program is going wrong."
 msgstr "Rastrear un error en un programa también requiere pensamiento lógico, para determinar dónde y por qué está fallando algo en el programa."
 
@@ -1049,7 +1113,7 @@ msgstr "<strong>Grupo de Google de la comunidad:</strong> Tenemos un <a href=\"h
 
 #: templates/general/how-do-i-teach-cs-unplugged.html:8
 #: templates/general/how-do-i-teach-cs-unplugged.html:20
-#: templates/general/index.html:66
+#: templates/general/index.html:57
 msgid "How do I teach CS Unplugged?"
 msgstr "¿Cómo enseño CS Unplugged?"
 
@@ -1070,42 +1134,38 @@ msgid "But reading about Unplugged isn't the fun way to engage with it - pick a 
 msgstr "Pero leer cosas sobre Unplugged no es la forma más divertida de experimentarlo - ¡elige una lección para tus alumnos y sumérgete en ella!"
 
 #: templates/general/how-do-i-teach-cs-unplugged.html:58
-#: templates/general/what-is-computer-science.html:84
+#: templates/general/what-is-computer-science.html:86
 msgid "View available topics"
 msgstr "Ver temas disponibles"
 
-#: templates/general/index.html:15
+#: templates/general/index.html:18
 msgid "Computer Science<br>without a computer"
 msgstr "Informática<br>sin un ordenador"
 
-#: templates/general/index.html:22
+#: templates/general/index.html:30
 msgid "CS Unplugged is a collection of free teaching material that teaches Computer Science through engaging games and puzzles that use cards, string, crayons and lots of running around."
 msgstr "CS Unplugged es una colección de material didáctico gratuito que enseña informática a través de interesantes juegos y puzles con la ayuda de cartas, cuerdas, lápices de colores y mucha actividad física."
 
-#: templates/general/index.html:29
-msgid "Welcome to the new CS Unplugged!"
-msgstr "¡Bienvenido al nuevo CS Unplugged!"
-
-#: templates/general/index.html:33
-msgid "This updated website has unit plans, lesson plans, teaching videos, curriculum integration activities, and programming exercises to plug in the Computer Science concepts they have just learnt unplugged."
-msgstr "Este sitio web actualizado cuenta con planes de estudios, planes de clases, vídeos didácticos, actividades de integración curricular y ejercicios de programación para practicar con el ordenador los conceptos de informática que acaban de aprender sin él."
-
-#: templates/general/index.html:38
-msgid "The original activities are still available at <a href=\"https://classic.csunplugged.org/\">classic.csunplugged.org</a>."
-msgstr "Las actividades originales siguen estando disponibles en <a href=\"https://classic.csunplugged.org/\">classic.csunplugged.org</a>."
-
-#: templates/general/index.html:56
+#: templates/general/index.html:47
 #: templates/general/what-is-computer-science.html:8
 #: templates/general/what-is-computer-science.html:20
 msgid "What is Computer Science?"
 msgstr "¿Qué es la informática?"
 
-#: templates/general/index.html:89
+#: templates/general/index.html:77
 #: templates/topics/all-curriculum-integration-list.html:8
 #: templates/topics/all-curriculum-integration-list.html:17
 #: templates/topics/topic.html:64
 msgid "Curriculum Integrations"
 msgstr "Integraciones curriculares"
+
+#: templates/general/index.html:85
+msgid "Activities"
+msgstr "Actividades"
+
+#: templates/general/index.html:96
+msgid "Plugging it in"
+msgstr "Conexión"
 
 #: templates/general/people.html:21
 msgid "version 4.0.0 onwards"
@@ -1132,7 +1192,7 @@ msgid "Founder &amp; Content Writer"
 msgstr "Fundador y creador de contenido"
 
 #: templates/general/people.html:42 templates/general/people.html:43
-#: templates/general/people.html:52 templates/general/people.html:53
+#: templates/general/people.html:47 templates/general/people.html:53
 msgid "Content Writer"
 msgstr "Creador de contenido"
 
@@ -1145,7 +1205,7 @@ msgstr "Gestor de proyectos y equipo técnico"
 msgid "Technical Team"
 msgstr "Equipo técnico"
 
-#: templates/general/people.html:49
+#: templates/general/people.html:50
 msgid "Previous Team Members"
 msgstr "Miembros anteriores del equipo"
 
@@ -1265,29 +1325,38 @@ msgstr "Flexible"
 msgid "The activities are resilient to errors made by students; they should not depend on getting many difficult steps exactly right, and minor mistakes should not prevent participants from understanding the principles. The instructions are usually just one or two rules and a goal that can be expressed in a single sentence (e.g. “Each card is either fully visible or not; how can you display exactly 11 dots?”, or “We need to get from any house to any other house; what is the smallest number of paving stones that make this possible”)."
 msgstr "Las actividades son flexibles ante los errores cometidos por los alumnos; no deberían depender de la realización correcta de muchos pasos difíciles y los errores menores no deberían evitar que los participantes entiendan los principios. Las instrucciones son generalmente solo una o dos reglas y un objetivo que se puede expresar en una sola oración (por ejemplo, \"Cada carta es completamente visible o no, ¿cómo se pueden mostrar exactamente 11 puntos?\" o \"Necesitamos llegar de cualquier casa a cualquier otra casa; cuál es el menor número de adoquines que lo hacen posible\")."
 
-#: templates/general/what-is-computer-science.html:23
-msgid "The term \"Computer Science\" has become widely used in recent years as the skills associated with the subject have become crucial to developing innovative digital technology, and qualifications in this area are highly sought after."
-msgstr "El término \"informática\" se ha utilizado ampliamente en los últimos años ya que las habilidades asociadas con el tema se han vuelto cruciales para el desarrollo de tecnología digital innovadora y la formación en esta área cuenta con mucha demanda."
+#: templates/general/what-is-computer-science.html:24
+#, python-format
+msgid "In today's digital world, Computer Science has become an important subject for everyone to learn about. The knowledge and <a href=\"%(computational_thinking_url)s\">Computational Thinking skills</a> associated with it are now crucial to developing innovative digital technology, understanding modern society, and qualifications in this area are highly sought after."
+msgstr "En el mundo digital actual, la informática se ha convertido en una materia importante que todo el mundo debería estudiar. El conocimiento y las <a href=\"%(computational_thinking_url)s\">Habilidades del pensamiento computacional</a> asociados a ella ahora son cruciales para desarrollar tecnología digital innovadora y para comprender la sociedad moderna y la demanda de personas cualificadas en este campo es muy alta."
 
-#: templates/general/what-is-computer-science.html:29
+#: templates/general/what-is-computer-science.html:31
 msgid "The CS Unplugged activities are intended to give you a feel for what the subject is - you can learn what it is by doing. At this early stage, rather than define it formally, let's think about how it might influence our daily lives. For example, think of your favourite search engine. On the surface it seems like a fairly simple interface: a text box where you type what you want to search for, and a button to start the search. The level of programming knowledge needed to implement a text box and a button is fairly rudimentary, and you could implement a search by writing a short program (probably less than 20 lines) to go through all the text on the web and displaying any that match. But obviously there's more to it than this! There are billions of searches are made every day, on billions on web pages, and the approach above will give answers (eventually), but will be so slow and ineffective that no-one would use it."
 msgstr "Las actividades de CS Unplugged están destinadas a darte una idea de lo que es el tema - puedes aprender lo que es haciendo cosas. En esta etapa temprana, en lugar de definirlo formalmente, pensemos en cómo puede influir en nuestra vida diaria. Por ejemplo, piensa en tu motor de búsqueda favorito. A simple vista parece una interfaz bastante simple: un cuadro de texto donde puedes escribir lo que deseas buscar y un botón para comenzar la búsqueda. El nivel de conocimiento de programación necesario para implementar un cuadro de texto y un botón es bastante rudimentario y puedes implementar una búsqueda escribiendo un programa corto (probablemente menos de 20 líneas) para revisar todos los textos en la web y mostrar todo lo que coincida. ¡Pero obviamente es más que eso! Se realizan billones de búsquedas todos los días, en billones de páginas web y el enfoque anterior dará respuestas (con el tiempo), pero será tan lento e ineficaz que nadie lo usaría."
 
-#: templates/general/what-is-computer-science.html:45
-msgid "This is where computer science comes in; many areas of Computer Science are employed to make the system work well, and most of them are illustrated through Unplugged. How could you search billions of items in a fraction of a second (Searching Algorithms)? How do you make sure that it's easy to use (Human-Computer Interaction)? We need to keep it secure - users don't want other people to know what they are searching for, and the search engine doesn't want commercial interests to manipulate search ranking (Computer Security and Encryption)? Search engines generally predict what you are about to search for (Artificial Intelligence). It needs to be reliable - a small mistake from one of the thousands of programmers at a search engine company shouldn't prevent the site working (Software Engineering). It needs to scale well - if it becomes 10 times as popular, you don't want it to need 100 times the computing resources (Algorithms). The relevance of a search generally depends on the relationships between web sites - you need a map showing which sites are linked to which other ones (Graphs)."
+#: templates/general/what-is-computer-science.html:47
+msgid "This is where Computer Science comes in; many areas of Computer Science are employed to make the system work well, and most of them are illustrated through Unplugged. How could you search billions of items in a fraction of a second (Searching Algorithms)? How do you make sure that it's easy to use (Human-Computer Interaction)? We need to keep it secure - users don't want other people to know what they are searching for, and the search engine doesn't want commercial interests to manipulate search ranking (Computer Security and Encryption)? Search engines generally predict what you are about to search for (Artificial Intelligence). It needs to be reliable - a small mistake from one of the thousands of programmers at a search engine company shouldn't prevent the site working (Software Engineering). It needs to scale well - if it becomes 10 times as popular, you don't want it to need 100 times the computing resources (Algorithms). The relevance of a search generally depends on the relationships between web sites - you need a map showing which sites are linked to which other ones (Graphs)."
 msgstr "Aquí es donde entra la informática; muchas áreas de la informática se emplean para hacer que el sistema funcione bien y la mayoría de ellas se ilustran en Unplugged. ¿Cómo podrías buscar entre millones de elementos en una fracción de segundo (algoritmos de búsqueda)? ¿Cómo te aseguras de que sea fácil de usar (interacción persona-ordenador)? Necesitamos que sea seguro - los usuarios no quieren que otras personas sepan lo que están buscando y el motor de búsqueda no quiere que los intereses comerciales manipulen la clasificación de búsqueda (seguridad y cifrado informáticos)? Los motores de búsqueda generalmente predicen lo que vas a buscar (inteligencia artificial). Tiene que ser fiable - un pequeño error de uno de los miles de programadores en una empresa de motores de búsqueda no debería hacer que el sitio deje de funcionar (ingeniería del software). Necesita funcionar bien a gran escala - si se vuelve 10 veces más popular, no querrás que necesite 100 veces los recursos informáticos (algoritmos). La relevancia de una búsqueda generalmente depende de las relaciones entre los sitios web - necesitas un mapa que muestre qué sitios están vinculados a otros (gráficos)."
 
-#: templates/general/what-is-computer-science.html:58
-msgid "The areas above cover much of what the subject of computer science is about. Programming is just a tool for implementing ideas (well, it's a very powerful tool, and requires considerable skill to use well). But programming on its own isn't enough to create software that people love to use, and Computer Science is the area that gives programmers the inside knowledge to make their software fast, efficient, reliable, secure, usable, intelligent, scalable, and even delightful!"
+#: templates/general/what-is-computer-science.html:60
+msgid "The areas above cover much of what the subject of Computer Science is about. Programming is just a tool for implementing ideas (well, it's a very powerful tool, and requires considerable skill to use well). But programming on its own isn't enough to create software that people love to use, and Computer Science is the area that gives programmers the inside knowledge to make their software fast, efficient, reliable, secure, usable, intelligent, scalable, and even delightful!"
 msgstr "Las áreas anteriores cubren gran parte de lo que trata el tema de la informática. La programación es solo una herramienta para implementar ideas (bueno, es una herramienta muy potente y requiere una habilidad considerable para usarse bien). Pero la programación por sí sola no es suficiente para crear un programa que le encante a la gente y la informática es el área que le da a los programadores el conocimiento interno para hacer que sus programas sean rápidos, eficientes, fiables, seguros, utilizables, inteligentes, escalables, ¡e incluso encantadores!"
 
-#: templates/general/what-is-computer-science.html:70
-msgid "That's why we developed CS Unplugged - we want young students to be empowered to understand the great ideas that computer science covers, without having to become expert programmers first. They won't be learning exactly how to build the next search engine, social network or game app, but they will have an idea of what sort of techniques are needed to make it successful. We don't want them to see digital systems as some kind of magic that they can't participate in, but as something that they could understand and, for some, create themselves. Actually, it is is kind of magic when you start understanding what can and can't be done."
+#: templates/general/what-is-computer-science.html:72
+msgid "That's why we developed CS Unplugged - we want young students to be empowered to understand the great ideas that computer science covers, without having to become expert programmers first. They won't be learning exactly how to build the next search engine, social network or game app, but they will have an idea of what sort of techniques are needed to make it successful. We don't want them to see digital systems as some kind of magic that they can't participate in, but as something that they could understand and, for some, create themselves. Actually, it is kind of magic when you start understanding what can and can't be done."
 msgstr "Por eso hemos desarrollado CS Unplugged - queremos que los estudiantes jóvenes se sientan capaces de entender las grandes ideas que cubre la informática, sin tener que convertirse en programadores expertos primero. No aprenderán exactamente cómo construir el siguiente motor de búsqueda, red social o juego, pero tendrán una idea del tipo de técnicas necesarias para que tenga éxito. No queremos que vean los sistemas digitales como una especie de magia en la que no pueden participar, sino como algo que pueden entender y, en algunos casos, crear por sí mismos. En realidad, es algo mágico cuando comienzas a entender lo que se puede y lo que no se puede hacer."
 
-#: templates/general/what-is-computer-science.html:80
+#: templates/general/what-is-computer-science.html:82
 msgid "Read 'How do I teach CS Unplugged?'"
 msgstr "Leer \"¿Cómo enseño CS Unplugged?\""
+
+#: templates/generic/classic-unplugged-button.html:13
+msgid "More activities at the Classic CS Unplugged website"
+msgstr "Más actividades en el sitio web de CS Unplugged Clásico"
+
+#: templates/generic/classic-unplugged-button.html:15
+msgid "Translations for some activities available at the Classic CS Unplugged website"
+msgstr "En el sitio web de CS Unplugged Clásico hay traducciones disponibles para algunas de las actividades"
 
 #: templates/generic/not-available-badge.html:4
 #, python-format
@@ -1424,20 +1493,20 @@ msgstr "Los siguientes términos del glosario todavía no están disponibles en 
 msgid "Open a topic to see all related unit plans, lessons, curriculum integrations, and programming challenges."
 msgstr "Abre un tema para ver todos los planes de estudios, lecciones, integraciones curriculares y desafíos de programación relacionados."
 
-#: templates/topics/index.html:39 templates/topics/topic.html:46
+#: templates/topics/index.html:38 templates/topics/topic.html:46
 #, python-format
 msgid "Ages %(min_age)s to %(max_age)s"
 msgstr "Edades %(min_age)s a %(max_age)s"
 
-#: templates/topics/index.html:45 templates/topics/topic.html:56
+#: templates/topics/index.html:44 templates/topics/topic.html:56
 msgid "lessons"
 msgstr "lecciones"
 
-#: templates/topics/index.html:49
+#: templates/topics/index.html:48
 msgid "curriculum integrations"
 msgstr "integraciones curriculares"
 
-#: templates/topics/index.html:52
+#: templates/topics/index.html:51
 msgid "programming challenges"
 msgstr "desafíos de programación"
 
@@ -1451,12 +1520,12 @@ msgid "<strong>Duration:</strong> %(duration)s minutes"
 msgstr "<strong>Duración:</strong> %(duration)s minutos"
 
 #: templates/topics/lesson.html:44
-#: templates/topics/programming-challenge.html:70
+#: templates/topics/programming-challenge.html:61
 msgid "Learning outcomes"
 msgstr "Resultados del aprendizaje"
 
 #: templates/topics/lesson.html:48
-#: templates/topics/programming-challenge.html:74
+#: templates/topics/programming-challenge.html:65
 msgid "Students will be able to:"
 msgstr "Los alumnos podrán:"
 
@@ -1487,15 +1556,6 @@ msgstr "Pensamiento computacional"
 msgid "Ages %(lower)s to %(upper)s"
 msgstr "Edades %(lower)s a %(upper)s"
 
-#: templates/topics/not-available-warning.html:6
-#, python-format
-msgid "<h4>Sorry! This item is not yet available in %(language)s.</h4> <p>This item is available in the following languages:</p>"
-msgstr "<h4>¡Lo sentimos! Este elemento todavía no está disponible en %(language)s.</h4> <p>Este elemento está disponible en los siguientes idiomas:</p>"
-
-#: templates/topics/not-available-warning.html:36
-msgid "Return to homepage "
-msgstr "Volver a la página de inicio "
-
 #: templates/topics/programming-challenge-language-solution.html:10
 #, python-format
 msgid "%(name)s solution"
@@ -1522,7 +1582,7 @@ msgid "Back to programming challenge"
 msgstr "Volver al desafío de programación"
 
 #: templates/topics/programming-challenge-language-solution.html:68
-#: templates/topics/programming-challenge.html:148
+#: templates/topics/programming-challenge.html:139
 msgid "Extra Challenge"
 msgstr "Desafío extra"
 
@@ -1546,29 +1606,25 @@ msgstr "Este desafío de programación está enlazado a las siguientes lecciones
 msgid "Challenge %(set_num)s.%(chal_num)s for %(name)s"
 msgstr "Desafío %(set_num)s.%(chal_num)s para %(name)s"
 
-#: templates/topics/programming-challenge.html:49
+#: templates/topics/programming-challenge.html:47
 #, python-format
 msgid "%(lower)s to %(upper)s"
 msgstr "%(lower)s a %(upper)s"
 
-#: templates/topics/programming-challenge.html:53
-msgid "and"
-msgstr "y"
-
-#: templates/topics/programming-challenge.html:92
+#: templates/topics/programming-challenge.html:83
 #: templates/topics/programming-challenges-table.html:11
 msgid "Languages"
 msgstr "Idiomas"
 
-#: templates/topics/programming-challenge.html:113
+#: templates/topics/programming-challenge.html:104
 msgid "What it should look like"
 msgstr "Cómo debería verse"
 
-#: templates/topics/programming-challenge.html:120
+#: templates/topics/programming-challenge.html:111
 msgid "Hints"
 msgstr "Pistas"
 
-#: templates/topics/programming-challenge.html:132
+#: templates/topics/programming-challenge.html:123
 #, python-format
 msgid "Show %(implementation.language.name)s solution"
 msgstr "Mostrar la solución %(implementation.language.name)s"

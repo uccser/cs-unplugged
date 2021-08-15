@@ -1,3 +1,4 @@
 # Pixel
 
-This term is an abbreviation of picture element, the name given to the tiny squares that make up a grid that is used to represent images on a computer.
+The word pixel is an abbreviation of *picture element*.
+On computer screens an image is almost always displayed using a grid of tiny coloured squares, which are called pixels.

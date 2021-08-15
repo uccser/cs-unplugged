@@ -26,7 +26,7 @@ broadcast [turn over card v]
 
 **Blocks for 1 dot card sprite**
 
-```scratch:inline
+```scratch
 when green flag clicked
 switch costume to [black v]
 
@@ -38,7 +38,7 @@ end
 
 **Blocks for 2 dots card sprite**
 
-```scratch:inline
+```scratch
 when green flag clicked
 switch costume to [black v]
 
@@ -50,7 +50,7 @@ end
 
 **Blocks for 4 dots card sprite**
 
-```scratch:inline
+```scratch
 when green flag clicked
 switch costume to [black v]
 
@@ -62,7 +62,7 @@ end
 
 **Blocks for 8 dots card sprite**
 
-```scratch:inline
+```scratch
 when green flag clicked
 switch costume to [black v]
 
@@ -74,7 +74,7 @@ end
 
 **Blocks for 16 dots card sprite**
 
-```scratch:inline
+```scratch
 when green flag clicked
 switch costume to [black v]
 
@@ -110,7 +110,7 @@ end
 
 **Blocks for 1 dot card sprite**
 
-```scratch:inline
+```scratch
 when green flag clicked
 switch costume to [black v]
 
@@ -120,7 +120,7 @@ switch costume to [white v]
 
 **Blocks for 2 dots card sprite**
 
-```scratch:inline
+```scratch
 when green flag clicked
 switch costume to [black v]
 
@@ -130,7 +130,7 @@ switch costume to [white v]
 
 **Blocks for 4 dots card sprite**
 
-```scratch:inline
+```scratch
 when green flag clicked
 switch costume to [black v]
 
@@ -140,7 +140,7 @@ switch costume to [white v]
 
 **Blocks for 8 dots card sprite**
 
-```scratch:inline
+```scratch
 when green flag clicked
 switch costume to [black v]
 
@@ -150,7 +150,7 @@ switch costume to [white v]
 
 **Blocks for 16 dots card sprite**
 
-```scratch:inline
+```scratch
 when green flag clicked
 switch costume to [black v]
 
@@ -184,7 +184,7 @@ end
 
 **Blocks for 1 dot card sprite**
 
-```scratch:inline
+```scratch
 when green flag clicked
 set [number of dots v] to [0]
 switch costume to [black v]
@@ -194,7 +194,7 @@ switch costume to [white v]
 
 **Blocks for 2 dots card sprite**
 
-```scratch:inline
+```scratch
 when green flag clicked
 set [number of dots v] to [0]
 switch costume to [black v]
@@ -204,7 +204,7 @@ switch costume to [white v]
 
 **Blocks for 4 dots card sprite**
 
-```scratch:inline
+```scratch
 when green flag clicked
 set [number of dots v] to [0]
 switch costume to [black v]
@@ -214,7 +214,7 @@ switch costume to [white v]
 
 **Blocks for 8 dots card sprite**
 
-```scratch:inline
+```scratch
 when green flag clicked
 set [number of dots v] to [0]
 switch costume to [black v]
@@ -224,7 +224,7 @@ switch costume to [white v]
 
 **Blocks for 16 dots card sprite**
 
-```scratch:inline
+```scratch
 when green flag clicked
 set [number of dots v] to [0]
 switch costume to [black v]

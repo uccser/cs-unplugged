@@ -5,7 +5,7 @@
     -   `bit_value` and set its value to 1.
         Find the smallest bit value which is larger than `decimal_number`
         by doubling value of `bit_value` until it is bigger than the `decimal_number`
-        (by using a while loop while decimal_number is less than or equal to bit_value).
+        (by using a while loop while `bit_value` is less than or equal to `decimal_number`).
 
 -   Set the variable `bit_value` to 1 and find the smallest `bit_value` which
     is larger than `decimal_number` by multiplying `bit_value` by 2

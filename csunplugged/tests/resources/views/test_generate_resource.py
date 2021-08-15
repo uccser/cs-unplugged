@@ -34,7 +34,7 @@ class GenerateResourceTest(BaseTestWithDB):
             'attachment; filename*=UTF-8\'\'Grid%20%28a4%29.pdf; filename="Grid%20%28a4%29.pdf"'
         )
 
-    @override_settings(DJANGO_PRODUCTION=True)
+    @override_settings(DEPLOYED=True)
     def test_generate_view_valid_slug_production_cache(self):
         resource = self.test_data.create_resource(
             "grid",
@@ -52,7 +52,7 @@ class GenerateResourceTest(BaseTestWithDB):
         self.assertEqual(HTTPStatus.FOUND, response.status_code)
         self.assertEqual(
             response.url,
-            "/staticfiles/resources/grid/en/Grid%20(a4).pdf"
+            "/static/resources/en/grid/Grid%20(a4).pdf"
         )
 
     def test_generate_view_valid_slug_missing_parameter(self):

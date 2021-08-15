@@ -1,0 +1,4 @@
+- Hangaia tētahi taurangi, e kīia ana ko `kaute_tongi` panonitia tōna uara ki te 1, 2, 4, 8, 16 hoki. Tūturu me whai tikanga te ingoa o te taurangi, kia ngāwari ai te pānui mā tangata kē. I te tauira kei runga nei, ka tapaina te taurangi ko te `kaute_tongi` nā te mea ka mau te kaute o ngā tongi kei runga i tētahi kāri.
+- Whakamahia `kaute_tongi = 0` ki te tautuhi i te uara mō tō taurangi hou. Mā tēnei waehere e whakatau ai te `kaute_tongi` ki te kore.
+- Mā te tauākī `print()` e āhei ai koe te whakaatu i ngā kōrero, ngā uara rānei o roto i ngā taiapa kei runga i te mata. Hei tauira: mā te `print(100)` e whakaatu ai te `100` i runga i te mata.
+- Me whakamahi e koe te tauākī `print()` mō ia nama e pīrangi ana koe ki te whakaatu.

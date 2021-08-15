@@ -6,11 +6,11 @@ Click on the green flag to see the expected output of your program.
 
 # Recommended blocks
 
-```scratch:split:random
+```scratch
 when green flag clicked
 ```
 
-```scratch:split:random
+```scratch
 clear
 
 pen down
@@ -18,7 +18,7 @@ pen down
 pen up
 ```
 
-```scratch:split:random
+```scratch
 move (100) steps
 
 turn cw (120) degrees
@@ -32,7 +32,7 @@ move (100) steps
 turn cw (120) degrees
 ```
 
-```scratch:split:random
+```scratch
 wait (1) secs
 
 wait (1) secs

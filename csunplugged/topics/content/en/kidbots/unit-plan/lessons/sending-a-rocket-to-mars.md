@@ -73,7 +73,7 @@ If you are putting arrows on the grid, the turning arrows will also need a forwa
 
 "So let’s try that, and see what happens.
 
-"Tester - could you please take these instructions and pass them onto the the Bot.
+"Tester - could you please take these instructions and pass them onto the Bot.
 Be ready to underline what doesn’t work when you see the Bot doing something that doesn’t look right, and hand the whiteboard back to me to figure out how to fix the bug."
 
 {panel type="teaching"}

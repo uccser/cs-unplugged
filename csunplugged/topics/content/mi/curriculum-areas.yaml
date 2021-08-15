@@ -1,0 +1,87 @@
+---
+computational-thinking:
+  name: Whakaaro Rorohiko
+algorithmic-thinking:
+  name: Whakaaro Hātepe
+decomposition:
+  name: Whakamatariki
+abstraction:
+  name: Waitaratanga
+generalising-and-patterns:
+  name: He Whakatau Whānui, he Tauira hoki
+logic:
+  name: Arorau
+evaluation:
+  name: Arotakenga
+computer-science:
+  name: Pūtaiao Rorohiko
+data-representation:
+  name: Whakaahuahanga Raraunga
+algorithms:
+  name: Hātepe
+programming:
+  name: Te Tuhiwaehere
+mathematics:
+  name: Pāngarau
+geometry:
+  name: Āhuahanga
+measurement:
+  name: Inenga
+numeracy:
+  name: Te Mōhio ki te Tatau
+algebra:
+  name: Taurangi
+statistics:
+  name: Tauanga
+literacy:
+  name: Te Mōhio ki te Pānui
+reading:
+  name: Pānui
+writing:
+  name: Tuhituhi
+listening:
+  name: Whakarongo
+speaking:
+  name: Kōrero
+library:
+  name: Whare Pukapuka
+word-study:
+  name: Te Mātai Kupu
+art:
+  name: Toi
+language:
+  name: Ako Reo
+performing-arts:
+  name: Ngā Mahi a te Rēhia
+music:
+  name: Puoro
+dance:
+  name: Kanikani
+drama:
+  name: Whakaari
+physical-education:
+  name: Akoranga Koiri
+fitness:
+  name: Whakapakari Tinana
+sport:
+  name: Hākinakina
+health:
+  name: Hauora
+science:
+  name: Pūtaiao
+biology:
+  name: Mātai Koiora
+physics:
+  name: Mātai Ahupūngao
+astronomy:
+  name: Mātai Arorangi
+chemistry:
+  name: Mātai Matū
+geology:
+  name: Mātai Aronuku
+social-studies:
+  name: Tikanga ā-Iwi
+history:
+  name: Hītori
+geography:
+  name: Matawhenua

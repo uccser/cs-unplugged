@@ -4,7 +4,7 @@ from urllib.parse import urljoin
 from django.shortcuts import redirect
 
 
-def redirect_to_classic_unplugged(request):
+def redirect_to_classic_unplugged(request, **kwargs):
     """Redirect request to classic.csunplugged.org domain.
 
     Returns a 301 permanent redirect HTTP response.
@@ -34,7 +34,7 @@ def redirect_to_changelog(request):
 
     Returns a 301 permanent redirect HTTP response.
     """
-    return redirect("http://cs-unplugged.readthedocs.io/en/latest/changelog.html", permanent=True)
+    return redirect("https://cs-unplugged.readthedocs.io/changelog.html", permanent=True)
 
 
 def redirect_to_modems_unplugged_2(request):

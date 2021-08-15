@@ -1,0 +1,51 @@
+{% load static %}
+
+{% load i18n %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/challenges-list.css' %}" >
+{% endblock css %}
+
+<div class='table-responsive'>
+<table class="table table-center-vertical">
+  <thead class="thead-default">
+    <tr>
+      <th class="text-center">{% trans "Number" %}</th>
+      <th>{% trans "Name" %}</th>
+      <th class="text-center">{% trans "Challenge Level" %}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for programming_challenge in programming_challenges %}
+      {% for implementation in programming_challenge.implementations.all %}
+        {% if implementation.language.name == language %}
+          <tr class="align-middle{% if not programming_challenge.translation_available %} table-active{% endif %}">
+            <td class="text-center">
+              {{ programming_challenge.challenge_set_number }}.{{ programming_challenge.challenge_number }}
+            </td>
+            <td>
+              {% if not programming_challenge.translation_available %}
+                {% include "generic/not-available-badge.html" %}
+                <br>
+              {% endif %}
+              {% if language == "Python" %}
+                <a href="{% url 'plugging_it_in:programming_challenge' topic.slug lesson.slug programming_challenge.slug %}">
+                  <strong>{{ programming_challenge.name }}</strong>
+                </a>
+              {% else %}
+                {% comment %} Links back to the old unplugged challenge {% endcomment %}
+                <a href="{% url 'topics:programming_challenge' topic.slug programming_challenge.slug %}">
+                  <strong>{{ programming_challenge.name }}</strong>
+                </a>
+              {% endif %}
+            </td>
+            <td class="text-center">
+              {% include "topics/programming-difficulty-badge.html" %}
+            </td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </tbody>
+</table>
+</div>

@@ -22,12 +22,12 @@ crwdns12581:0crwdne12581:0 crwdns12582:0crwdne12582:0
 
 *BlockTag: crwdns20024:0crwdne20024:0*
 
-{video url="https://www.youtube.com/embed/M-z5pDjqtZk"}
+{video url="https://vimeo.com/437722996"}
 
 crwdns20025:0crwdne20025:0
 
-- [crwdns20027:0crwdne20027:0](https://www.youtube.com/watch?v=LOxfdsBBjKI)
-- [crwdns20029:0crwdne20029:0](https://www.youtube.com/watch?v=30WcPnvfiKE)
+- [crwdns20027:0crwdne20027:0](https://vimeo.com/437726931)
+- [crwdns20029:0crwdne20029:0](https://vimeo.com/437726955)
 
 *BlockTag: crwdns20030:0crwdne20030:0*
 

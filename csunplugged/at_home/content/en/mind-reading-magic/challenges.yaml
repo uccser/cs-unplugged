@@ -1,0 +1,25 @@
+1:
+    question: Which card has Arnold flipped over in this picture? Type your answer using the letter, then the number e.g. A1.
+    answer: "A2"
+    image: img/at_home/mind-reading-magic/mind-reading-magic-challenge-1.jpg
+    image_description: One card has been flipped.
+2:
+    question: Which puzzle piece has Arnold flipped over in this picture? You’ll need to look carefully, as some of the pieces are almost the same colour when they are face down. Type your answer using the letter, then the number e.g. A1.
+    answer: "F7"
+    image: img/at_home/mind-reading-magic/mind-reading-magic-challenge-2.jpg
+    image_description: One puzzle piece has been flipped.
+3:
+    question: Which card has Arnold flipped over in this picture? Type your answer using the letter, then the number e.g. A1.
+    answer: "D6"
+    image: img/at_home/mind-reading-magic/mind-reading-magic-challenge-3.jpg
+    image_description: One card has been flipped.
+4:
+    question: The following grid has two cards flipped. You can’t be sure which two they are, but you can narrow it down to 4 that might be wrong. Type in which 4 they are - give your answers separated by commas, but no space, and increasing order e.g. A3 comes before B2, and A2 comes before A3, so the answer might look like “A3,B2,B5,C2”.
+    answer: "B4,B6,E4,E6"
+    image: img/at_home/mind-reading-magic/mind-reading-magic-challenge-4.jpg
+    image_description: Two cards have been flipped.
+5:
+    question: This row of cards used to have even parity, but Arnold has eaten one of them. Is the missing card face-up or face-down? Type “down” if the missing card would show the empty side, otherwise type “up” for your answer.
+    answer: "up"
+    image: img/at_home/mind-reading-magic/mind-reading-magic-challenge-5.jpg
+    image_description: One card has been removed.

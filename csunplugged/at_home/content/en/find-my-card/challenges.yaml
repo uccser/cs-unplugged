@@ -1,0 +1,13 @@
+1:
+    question: Design your own decision tree for guessing numbers between 0 and 15, and test it with a friend.
+2:
+    question: Design a decision tree for guessing numbers between 0 and 31. How many questions do you need to ask to guess one of these numbers?
+    answer: "5"
+3:
+    question: Think about a decision tree for guessing numbers from 0 to 255 (don’t draw it, as it will be very large!) If each question always divides the range in half, how many questions does it need to ask?
+    answer: "8"
+4:
+    question: Suppose you made a tree for guessing numbers from 0 to 511. If each question always divides the range in half, how many questions does it need to ask?
+    answer: "9"
+5:
+    question: Design a decision tree for guessing numbers from 0 to 7, but make the question at the top "x ≥ 2". Does this make some numbers quicker to guess, and others harder?
