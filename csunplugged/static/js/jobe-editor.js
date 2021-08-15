@@ -434,12 +434,16 @@ if (programming_lang == "python") {
       // Controls repeat block
       {
         "type": "controls_repeat_num_times",
-        "message0": "repeat %1 %2 %3",
+        "message0": "repeat %1 %2 %3 %4",
         "args0": [
           {
             "type": "input_value",
             "name": "num",
             "check": "Number"
+          },
+          {
+            "type": "input_dummy",
+            "align": "RIGHT"
           },
           {
             "type": "input_statement",
@@ -459,12 +463,15 @@ if (programming_lang == "python") {
       // Controls repeat until block
       {
         "type": "controls_repeat_until",
-        "message0": "repeat until %1 %2",
+        "message0": "repeat until %1 %2 %3",
         "args0": [
           {
             "type": "input_value",
             "name": "condition",
             "check": "Boolean"
+          },
+          {
+            "type": "input_dummy"
           },
           {
             "type": "input_statement",
