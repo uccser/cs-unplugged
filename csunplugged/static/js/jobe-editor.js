@@ -19,8 +19,6 @@ Blockly.setLocale(En);
 // Change default text of default blocks
  const CustomEs = {
   TEXT_PRINT_TITLE: "say %1",
-  TEXT_JOIN_TITLE_CREATEWITH: "join",
-  TEXT_INDEXOF_TITLE: "letter %1 %2 %3",
   MATH_RANDOM_INT_TITLE: "pick random %1 to %2",
   CONTROLS_REPEAT_TITLE: "repeat %1",
   CONTROLS_FOR_INPUT_DO: ""
@@ -58,6 +56,26 @@ if (programming_lang == "python") {
   document.addEventListener("DOMContentLoaded", function () {
     // Custom Blockly blocks to look and act like Scratch
     Blockly.defineBlocksWithJsonArray([
+      // Looks say block
+      {
+        "type": "looks_say",
+        "message0": "say %1 %2",
+        "args0": [
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "input_value",
+            "name": "value"
+          }
+        ],
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 240,
+        "tooltip": "Say the specified text, number or other value.",
+        "helpUrl": ""
+      },
       // Operators modulo block
       {
         "type": "operators_modulo",
@@ -80,7 +98,7 @@ if (programming_lang == "python") {
         ],
         "inputsInline": true,
         "output": "Number",
-        "colour": 120,
+        "colour": '#7459c0',
         "tooltip": "Return the modulo of the two numbers.",
         "helpUrl": ""
       },
@@ -359,6 +377,19 @@ if (programming_lang == "python") {
         "helpUrl": ""
       },
     ]);
+
+    // Looks say block
+    Blockly.JavaScript['looks_say'] = function(block) {
+      var value_value = Blockly.JavaScript.valueToCode(block, 'value', Blockly.JavaScript.ORDER_ATOMIC);
+      // TODO: Assemble JavaScript into code variable.
+      var code = 'alert(' + value_value + ');\n';
+      return code;
+    };
+    Blockly.Python['looks_say'] = function(block) {
+      var value_value = Blockly.Python.valueToCode(block, 'value', Blockly.Python.ORDER_ATOMIC);
+      var code = 'print(' + value_value + ')\n';
+      return code;
+    };
 
     // Operators round up block
     Blockly.JavaScript['operators_round'] = function(block) {
