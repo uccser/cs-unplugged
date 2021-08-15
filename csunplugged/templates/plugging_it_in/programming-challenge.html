@@ -171,7 +171,13 @@
         <div id="blocklyDiv" style="height: 100%; "></div>
         <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
           <category name="Looks" colour="#9966ff">
-
+            <block type="text_print">
+              <value name="TEXT">
+                <shadow type="text">
+                  <field name="TEXT">abc</field>
+                </shadow>
+              </value>
+            </block>
           </category>
           <category name="Control" colour="#ffab19">
             <block type="controls_if"></block>
@@ -489,13 +495,6 @@
             </block>
             <block type="text_trim">
               <field name="MODE">BOTH</field>
-              <value name="TEXT">
-                <shadow type="text">
-                  <field name="TEXT">abc</field>
-                </shadow>
-              </value>
-            </block>
-            <block type="text_print">
               <value name="TEXT">
                 <shadow type="text">
                   <field name="TEXT">abc</field>
