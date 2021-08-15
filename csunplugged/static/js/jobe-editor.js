@@ -318,6 +318,22 @@ if (programming_lang == "python") {
         "tooltip": "Returns true if at least one of the inputs is true.",
         "helpUrl": ""
       },
+      // Operators logical NOT block
+      {
+        "type": "operators_not",
+        "message0": "not %1",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "argument",
+            "check": "Boolean"
+          }
+        ],
+        "output": "Boolean",
+        "colour": 120,
+        "tooltip": "Return true if the input is false. Returns false if the input is true.",
+        "helpUrl": ""
+      },
       // Operators round up block
       {
         "type": "operators_round",
@@ -363,6 +379,85 @@ if (programming_lang == "python") {
         "output": "Number",
         "colour": 120,
         "tooltip": "Return a random integer between the two numbers (inclusive).",
+        "helpUrl": ""
+      },
+      // Operators single operand block
+      {
+        "type": "operators_single",
+        "message0": "%1 of %2",
+        "args0": [
+          {
+            "type": "field_dropdown",
+            "name": "OP",
+            "options": [
+              [
+                "abs",
+                "ABS"
+              ],
+              [
+                "floor",
+                "FLOOR"
+              ],
+              [
+                "ceiling",
+                "CEIL"
+              ],
+              [
+                "sqrt",
+                "ROOT"
+              ],
+              [
+                "sin",
+                "SIN"
+              ],
+              [
+                "cos",
+                "COS"
+              ],
+              [
+                "tan",
+                "TAN"
+              ],
+              [
+                "asin",
+                "ASIN"
+              ],
+              [
+                "acos",
+                "ACOS"
+              ],
+              [
+                "atan",
+                "ATAN"
+              ],
+              [
+                "ln",
+                "LN"
+              ],
+              [
+                "log",
+                "LOG10"
+              ],
+              [
+                "e ^",
+                "EXP"
+              ],
+              [
+                "10 ^",
+                "POW10"
+              ]
+            ]
+          },
+          {
+            "type": "input_value",
+            "name": "NUM",
+            "check": "Number",
+            "align": "RIGHT"
+          }
+        ],
+        "output": "Number",
+        "colour": 120,
+        "tooltip": "Block for advanced math operators with single operand.",
         "helpUrl": ""
       },
       // Sensing ask and wait block
@@ -503,6 +598,161 @@ if (programming_lang == "python") {
         "helpUrl": ""
       }
     ]);
+
+    // Operators single operand block
+    Blockly.JavaScript['operators_single'] = function(block) {
+      // Math operators with single operand.
+      var operator = block.getFieldValue('OP');
+      var code;
+      var arg;
+      if (operator == 'SIN' || operator == 'COS' || operator == 'TAN') {
+        arg = Blockly.JavaScript.valueToCode(block, 'NUM',
+            Blockly.JavaScript.ORDER_DIVISION) || '0';
+      } else {
+        arg = Blockly.JavaScript.valueToCode(block, 'NUM',
+            Blockly.JavaScript.ORDER_NONE) || '0';
+      }
+      // First, handle cases which generate values that don't need parentheses
+      // wrapping the code.
+      switch (operator) {
+        case 'ABS':
+          code = 'Math.abs(' + arg + ')';
+          break;
+        case 'FLOOR':
+          code = 'Math.floor(' + arg + ')';
+          break;
+        case 'CEIL':
+          code = 'Math.ceil(' + arg + ')';
+          break;
+        case 'ROOT':
+          code = 'Math.sqrt(' + arg + ')';
+          break;
+        case 'SIN':
+          code = 'Math.sin(' + arg + ' / 180 * Math.PI)';
+          break;
+        case 'COS':
+          code = 'Math.cos(' + arg + ' / 180 * Math.PI)';
+          break;
+        case 'TAN':
+          code = 'Math.tan(' + arg + ' / 180 * Math.PI)';
+          break;
+        case 'LN':
+          code = 'Math.log(' + arg + ')';
+          break;
+        case 'EXP':
+          code = 'Math.exp(' + arg + ')';
+          break;
+        case 'POW10':
+          code = 'Math.pow(10,' + arg + ')';
+          break;
+      }
+      if (code) {
+        return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+      }
+      // Second, handle cases which generate values that may need parentheses
+      // wrapping the code.
+      switch (operator) {
+        case 'LOG10':
+          code = 'Math.log(' + arg + ') / Math.log(10)';
+          break;
+        case 'ASIN':
+          code = 'Math.asin(' + arg + ') / Math.PI * 180';
+          break;
+        case 'ACOS':
+          code = 'Math.acos(' + arg + ') / Math.PI * 180';
+          break;
+        case 'ATAN':
+          code = 'Math.atan(' + arg + ') / Math.PI * 180';
+          break;
+        default:
+          throw Error('Unknown math operator: ' + operator);
+      }
+      return [code, Blockly.JavaScript.ORDER_DIVISION];
+    };
+    Blockly.Python['operators_single'] = function(block) {
+      // Math operators with single operand.
+      var operator = block.getFieldValue('OP');
+      var code;
+      var arg;
+      
+      Blockly.Python.definitions_['import_math'] = 'import math';
+      if (operator == 'SIN' || operator == 'COS' || operator == 'TAN') {
+        arg = Blockly.Python.valueToCode(block, 'NUM',
+            Blockly.Python.ORDER_MULTIPLICATIVE) || '0';
+      } else {
+        arg = Blockly.Python.valueToCode(block, 'NUM',
+            Blockly.Python.ORDER_NONE) || '0';
+      }
+
+      // First, handle cases which generate values that don't need parentheses
+      // wrapping the code.
+      switch (operator) {
+        case 'ABS':
+          code = 'math.fabs(' + arg + ')';
+          break;
+        case 'FLOOR':
+          code = 'math.floor(' + arg + ')';
+          break;
+        case 'CEIL':
+          code = 'math.ceil(' + arg + ')';
+          break;
+        case 'ROOT':
+          code = 'math.sqrt(' + arg + ')';
+          break;
+        case 'SIN':
+          code = 'math.sin(' + arg + ' / 180.0 * math.pi)';
+          break;
+        case 'COS':
+          code = 'math.cos(' + arg + ' / 180.0 * math.pi)';
+          break;
+        case 'TAN':
+          code = 'math.tan(' + arg + ' / 180.0 * math.pi)';
+          break;
+        case 'LN':
+          code = 'math.log(' + arg + ')';
+          break;
+        case 'LOG10':
+          code = 'math.log10(' + arg + ')';
+          break;
+        case 'EXP':
+          code = 'math.exp(' + arg + ')';
+          break;
+        case 'POW10':
+          code = 'math.pow(10,' + arg + ')';
+          break;
+      }
+      if (code) {
+        return [code, Blockly.Python.ORDER_FUNCTION_CALL];
+      }
+      // Second, handle cases which generate values that may need parentheses
+      // wrapping the code.
+      switch (operator) {
+        case 'ASIN':
+          code = 'math.asin(' + arg + ') / math.pi * 180';
+          break;
+        case 'ACOS':
+          code = 'math.acos(' + arg + ') / math.pi * 180';
+          break;
+        case 'ATAN':
+          code = 'math.atan(' + arg + ') / math.pi * 180';
+          break;
+        default:
+          throw Error('Unknown math operator: ' + operator);
+      }
+      return [code, Blockly.Python.ORDER_MULTIPLICATIVE];
+    };
+
+    // Operators logical NOT block
+    Blockly.JavaScript['operators_not'] = function(block) {
+      var value_argument = Blockly.JavaScript.valueToCode(block, 'argument', Blockly.JavaScript.ORDER_LOGICAL_NOT) || 'true';
+      var code = '!' + value_argument;
+      return [code, Blockly.JavaScript.ORDER_LOGICAL_NOT];
+    };
+    Blockly.Python['operators_not'] = function(block) {
+      var value_argument = Blockly.Python.valueToCode(block, 'argument', Blockly.Python.ORDER_LOGICAL_NOT);
+      var code = 'not ' + value_argument;
+      return [code, Blockly.Python.ORDER_LOGICAL_NOT];
+    };
 
     // Operators pick random int block
     Blockly.JavaScript['operators_random_int'] = function(block) {
